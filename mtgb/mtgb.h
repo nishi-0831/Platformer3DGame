@@ -52,7 +52,7 @@
 #include "WindowContext.h"
 #include "WindowContextResourceManager.h"
 #include "WindowManager.h"
-#include "DoubleWindow.h"
+#include "SingleWindow.h"
 #include "CameraSystem.h"
 #include "ImGuiShowable.h"
 #include "MTImGui.h"

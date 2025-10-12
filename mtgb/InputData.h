@@ -25,27 +25,27 @@ namespace mtgb
 	class InputUtil final
 	{
 	public:
-		static const bool GetKey(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetKeyUp(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetMouse(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetMouseDown(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetMouseUp(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetGamePad(const PadCode _padButtonCode,WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetGamePadDown(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetGamePadUp(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetGamePad(const FlightStickCode _flightStickCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetGamePadDown(const FlightStickCode _flightStickCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const bool GetGamePadUp(const FlightStickCode _flightStickCode, WindowContext _context = mtgb::WindowContext::Both);
+		static const bool GetKey(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetKeyUp(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetMouse(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetMouseDown(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetMouseUp(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetGamePad(const PadCode _padButtonCode,WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetGamePadDown(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetGamePadUp(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetGamePad(const FlightStickCode _flightStickCode, WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetGamePadDown(const FlightStickCode _flightStickCode, WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetGamePadUp(const FlightStickCode _flightStickCode, WindowContext _context = mtgb::WindowContext::First);
 		//static inline const size_t* GetActiveGamePadID() { return activeGamepadID.data(); }
 
-		static const float GetTrigger(FlightStickAxisCode _flightStickCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const float GetTrigger(PadAxisCode _padCode, WindowContext _context = mtgb::WindowContext::Both);
-		static const float GetAxis(Axis axis,WindowContext _context = mtgb::WindowContext::Both);
-		static const Vector2F GetAxis(WindowContext _context = mtgb::WindowContext::Both);
+		static const float GetTrigger(FlightStickAxisCode _flightStickCode, WindowContext _context = mtgb::WindowContext::First);
+		static const float GetTrigger(PadAxisCode _padCode, WindowContext _context = mtgb::WindowContext::First);
+		static const float GetAxis(Axis axis,WindowContext _context = mtgb::WindowContext::First);
+		static const Vector2F GetAxis(WindowContext _context = mtgb::WindowContext::First);
 
-		static const Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::Both);
-		static const Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::Both);
+		static const Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::First);
+		static const Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::First);
 
 	private:  // Utilities
 		static const size_t KEY_COUNT{ 256 };             // ÉLÅ[ÇÃêî

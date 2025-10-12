@@ -57,10 +57,7 @@ void mtgb::SceneSystem::Update()
 	{
 		Game::System<WindowManager>().ChangeFullScreenState(WindowContext::First);
 	}
-	if (InputUtil::GetKeyDown(KeyCode::F10))
-	{
-		Game::System<WindowManager>().ChangeFullScreenState(WindowContext::Second);
-	}
+	
 	if (InputUtil::GetKeyDown(KeyCode::F1))
 	{
 		MTImGui::Instance().ChangeAllWindowOpen();
@@ -73,7 +70,6 @@ void mtgb::SceneSystem::Update()
 	{
 		WinCtxRes::SwapWindow();
 		// CameraResourceÇÕåä∑ÇµÇ»Ç¢
-		//Game::System<WinCtxResManager>().SwapResource<InputResource>();
 	}
 	if (InputUtil::GetKeyDown(KeyCode::F8))
 	{
@@ -90,9 +86,7 @@ void mtgb::SceneSystem::Update()
 	Game::System<Input>().Update();
 	Game::System<WindowContextResourceManager>().Update();
 
-	WinCtxRes::ChangeResource(WindowContext::Second);
-	Game::System<Input>().Update();
-	Game::System<WindowContextResourceManager>().Update();
+	
 
 	// åªç›ÇÃÉVÅ[Éì
 	GameScene& currentScene{ *GameScene::pInstance_ };

@@ -34,13 +34,7 @@ void mtgb::RenderSystem::RenderDirectXWindows(GameScene& _scene)
 	DirectX11Draw::End();
 	Draw::ClearUICommands();
 
-	//二つ目のウィンドウ
-	WinCtxRes::ChangeResource(WindowContext::Second);
-	DirectX11Draw::Begin();
-	DrawGameObjects(_scene, [](GameObject* pGameObject) { return pGameObject->GetLayerFlag().Has(GameObjectLayer::B); });
-	Draw::FlushUIDrawCommands(GameObjectLayer::B);
-	DirectX11Draw::End();
-	Draw::ClearUICommands();
+	
 
 }
 

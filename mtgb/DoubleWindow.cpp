@@ -9,6 +9,7 @@
 #include "WindowContextResourceManager.h"
 #include "WindowContextUtil.h"
 #include "WindowResource.h"
+
 mtgb::DoubleWindow::DoubleWindow()
 {
 	context1_ = WindowContext::First;
@@ -75,6 +76,10 @@ void mtgb::DoubleWindow::Update()
 {
 	
 }
+
+
+
+
 
 void mtgb::DoubleWindow::SetDoubleWindowPos()
 {

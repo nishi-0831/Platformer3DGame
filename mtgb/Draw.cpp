@@ -285,7 +285,7 @@ mtgb::Draw::~Draw()
 
 void mtgb::Draw::Initialize()
 {
-	pFigure_ = new Figure{};
+	/*pFigure_ = new Figure{};
 	pFigure_->Initialize();
 
 	pFbxModel_ = new FbxModel{};
@@ -293,7 +293,7 @@ void mtgb::Draw::Initialize()
 	FbxParts* pParts{ pFbxModel_->GetFbxParts(0) };
 
 	pGround_ = new Ground{ pParts->GetNode() };
-	pGround_->Initialize();
+	pGround_->Initialize();*/
 }
 
 void mtgb::Draw::Update()

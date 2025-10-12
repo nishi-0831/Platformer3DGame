@@ -1,5 +1,5 @@
 #include "SampleGame.h"
-
+#include "Scenes/SampleScene.h"
 #pragma region ƒQ[ƒ€‘¤‚Å’Ç‰Á
 
 
@@ -48,7 +48,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 		CameraResource
 	>();
 
-	_register.Set<DoubleWindow>(SystemUpdateType::Frame);
+	_register.Set<SingleWindow>(SystemUpdateType::Frame);
 	_register.Set<CameraSystem>(SystemUpdateType::Frame);
 
 
@@ -83,7 +83,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	//Game::System<SceneSystem>().Move<PlayScene>();
 	//Game::System<SceneSystem>().Move<CheckTutorialScene>();
 #if TO_TEST_SCENE
-	//Game::System<SceneSystem>().Move<PlayScene>();
+	Game::System<SceneSystem>().Move<SampleScene>();
 #else
 #endif
 
