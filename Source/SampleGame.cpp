@@ -28,6 +28,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 
 	_register.Set<RenderSystem>(SystemUpdateType::DontCallMe);
 	_register.Set<AssetsManager>(SystemUpdateType::DontCallMe);
+	
 
 	_register.Set<Screen>(SystemUpdateType::DontCallMe);
 	_register.Set<WindowManager>(SystemUpdateType::Cycle);
@@ -67,6 +68,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	_register.Set<Text>(SystemUpdateType::Frame);
 
 	_register.Set<TransformCP>(SystemUpdateType::Frame, true);
+	_register.Set<MeshRendererCP>(SystemUpdateType::DontCallMe, true);
 	_register.Set<ColliderCP>(SystemUpdateType::Frame, true);
 	_register.Set<RigidBodyCP>(SystemUpdateType::Frame, true);
 	_register.Set<AudioPlayerCP>(SystemUpdateType::Frame, true);

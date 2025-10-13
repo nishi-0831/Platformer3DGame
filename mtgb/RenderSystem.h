@@ -3,7 +3,7 @@
 #include "GameScene.h"
 #include "ReleaseUtility.h"
 #include <functional>  // header ‚Å GameObjectLayerFlag ‚ªŽg‚¦‚È‚¢‚½‚ß
-
+#include"GameObjectLayer.h"
 namespace mtgb
 {
 	class GameObject;
@@ -18,6 +18,6 @@ namespace mtgb
 		void RenderDirectXWindows(GameScene& _scene);
 		void RenderImGuiWindows(GameScene& _scene);
 		void RenderGameView(GameScene& _scene);
-		void DrawGameObjects(GameScene& _scene, const std::function<bool(GameObject*)> _isDrawTargetCallback);
+		void DrawGameObjects(GameScene& _scene,GameObjectLayerFlag _layer);
 	};
 }

@@ -47,6 +47,8 @@
 #include "Audio.h"
 #include "OBJ.h"
 #include "ImGuiRenderer.h"
+#include "MeshRenderer.h"
+#include "MeshRendererCP.h"
 #include "Text.h"
 #include "Fbx.h"
 #include "WindowContext.h"

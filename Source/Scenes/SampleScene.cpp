@@ -1,5 +1,6 @@
 #include <mtgb.h>
 #include "SampleScene.h"
+#include "../Source/SampleGround.h"
 SampleScene::SampleScene()
 {
 }
@@ -10,6 +11,7 @@ SampleScene::~SampleScene()
 
 void SampleScene::Initialize()
 {
+	//Instantiate<SampleGround>();
 }
 
 void SampleScene::Update()
@@ -18,7 +20,7 @@ void SampleScene::Update()
 	{
 		Game::Exit();
 	}
-
+	
 }
 
 void SampleScene::Draw() const
