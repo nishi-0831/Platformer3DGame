@@ -4,7 +4,7 @@
 #include <string>
 #include "Game.h"
 
-#if _DEBUG
+
 
 #define massert(expression)                                                                                                                    \
 	if (!(expression))                                                                                                                          \
@@ -27,7 +27,16 @@
 		if (result == IDYES)\
 		{\
 			DWORD errorCode{ GetLastError() };\
-			MessageBox(NULL, (std::string{ "最終エラーコード:" } + std::to_string(errorCode)).c_str(), title.c_str(), MB_OK | MB_ICONSTOP | MB_SYSTEMMODAL);\
+			LPVOID lpMsgBuf;\
+			FormatMessage(\
+				FORMAT_MESSAGE_ALLOCATE_BUFFER  \
+				| FORMAT_MESSAGE_FROM_SYSTEM    \
+				| FORMAT_MESSAGE_IGNORE_INSERTS,\
+				NULL, errorCode, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),\
+				(LPTSTR)&lpMsgBuf,                          \
+				0,\
+				NULL);\
+			MessageBox(NULL, (LPCTSTR(lpMsgBuf)), title.c_str(), MB_OK | MB_ICONSTOP | MB_SYSTEMMODAL);\
 			throw "this massertion error";                                                                                                     \
 		}\
 		else if (result == IDNO)\
@@ -40,12 +49,4 @@
 		}\
 	}
 
-#else
 
-#define massert(expression) {}
-	/*if (!!expression)       
-	{                       
-		mtgb::Game::Exit(); 
-	}*/
-
-#endif
