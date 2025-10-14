@@ -69,6 +69,8 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	MTImGui::Instance().ShowWindow(ShowType::SceneView);
 
 	imGui.EndFrame();
+	//DirectX11Draw::End();
+
 }
 
 void mtgb::RenderSystem::RenderGameView(GameScene& _scene)

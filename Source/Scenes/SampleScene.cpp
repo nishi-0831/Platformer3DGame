@@ -1,6 +1,7 @@
 #include <mtgb.h>
 #include "SampleScene.h"
 #include "../Source/SampleGround.h"
+#include "../Source/Camera.h"
 SampleScene::SampleScene()
 {
 }
@@ -11,7 +12,17 @@ SampleScene::~SampleScene()
 
 void SampleScene::Initialize()
 {
-	//Instantiate<SampleGround>();
+	Game::System<ImGuiRenderer>().Manipulator().Initialize();
+
+	TypeRegistry::Instance();
+	TypeRegistry::Instance().Initialize();
+	MTImGui::Instance().Initialize();
+
+	Instantiate<SampleGround>();
+	Camera* pCamera{ Instantiate<Camera>() };
+	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
+
+	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
 }
 
 void SampleScene::Update()
@@ -20,7 +31,6 @@ void SampleScene::Update()
 	{
 		Game::Exit();
 	}
-	
 }
 
 void SampleScene::Draw() const

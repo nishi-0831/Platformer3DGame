@@ -17,6 +17,11 @@ mtgb::GameScene::~GameScene()
 	SAFE_CLEAR_CONTAINER_DELETE(pGameObjects_);
 }
 
+void mtgb::GameScene::RegisterGameObject(GameObject* _pGameObject)
+{
+	pGameObjects_.push_back(_pGameObject);
+}
+
 mtgb::CameraHandleInScene mtgb::GameScene::RegisterCameraGameObject(GameObject* _pGameObject) const
 {
 	Transform* pTransform{ &Transform::Get(_pGameObject->GetEntityId()) };

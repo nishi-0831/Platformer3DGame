@@ -40,7 +40,6 @@ namespace mtgb
 		void InitializeSpinAnglesFromCurrentPosition();
 		ImGuizmo::OPERATION operation_;
 		ImGuizmo::MODE mode_;
-		GameObject* pCamera_;
 		Transform* pCameraTransform_;
 		Transform* pTargetTransform_;
 		float angleX_, angleY_;

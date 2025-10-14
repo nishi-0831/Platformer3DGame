@@ -29,6 +29,7 @@ namespace mtgb
 
 		template<class GameObjectT, typename ...Args>
 		GameObjectT* Instantiate(Args... _args);
+		void RegisterGameObject(GameObject* _pGameObject);
 
 		/// <summary>
 		/// カメラオブジェクトとして登録する

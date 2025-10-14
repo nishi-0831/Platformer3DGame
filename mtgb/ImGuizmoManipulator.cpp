@@ -174,11 +174,11 @@ void mtgb::ImGuizmoManipulator::SpinCamera(float _distance)
 	if (lookDir.Size() == 0.0f)
 	{
 		// ÇªÇÃèÍâÒì]ÇÃéûÇÕoffsetÇÃï˚å¸Çå¸Ç≠
-		pCameraTransform_->rotate = Quaternion::LookRotation(offset, pCameraTransform_->Up());
+		pCameraTransform_->rotate = Quaternion::LookRotation(offset, Vector3::Up());
 	}
 	else
 	{
-		pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), pCameraTransform_->Up());
+		pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), Vector3::Up());
 	}
 }
 
@@ -240,20 +240,10 @@ mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
 	, followTarget_{true}
 	, followDistance_{10.0f}
 {
-	pCamera_ = new GameObject(
-		GameObjectBuilder()
-		.SetPosition({ 0,0,0 })
-		.SetName("Camera")
-		.Build());
-
-	pCameraTransform_ = &Game::System<TransformCP>().Get(pCamera_->GetEntityId());
-	hCamera_ = Game::System<CameraSystem>().RegisterDrawCamera(pCameraTransform_);
 }
 
 mtgb::ImGuizmoManipulator::~ImGuizmoManipulator()
-{
-	pCamera_->DestroyMe();
-	SAFE_DELETE(pCamera_);
+{	
 }
 
 void mtgb::ImGuizmoManipulator::SetCamera()
@@ -263,6 +253,15 @@ void mtgb::ImGuizmoManipulator::SetCamera()
 
 void mtgb::ImGuizmoManipulator::Initialize()
 {
+	GameObject* pCamera = new GameObject(
+		GameObjectBuilder()
+		.SetPosition({ 0,0,0 })
+		.SetName("Camera")
+		.Build());
+	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
+
+	pCameraTransform_ = &Game::System<TransformCP>().Get(pCamera->GetEntityId());
+	hCamera_ = Game::System<CameraSystem>().RegisterDrawCamera(pCameraTransform_);
 }
 
 void mtgb::ImGuizmoManipulator::ShowImGui()
@@ -404,8 +403,8 @@ void mtgb::ImGuizmoManipulator::UpdateCamera(const char* _name)
 			spinAngleX_ += mouseMove.y * rotateSensitivity_ * Time::DeltaTimeF(); // âîíºäpìx
 			
 			// âîíºäpìxÇêßå¿
-			const float MAX_VERTICAL = DirectX::XMConvertToRadians(89.0f);
-			spinAngleX_ = std::clamp(spinAngleX_, -MAX_VERTICAL, MAX_VERTICAL);
+			/*const float MAX_VERTICAL = DirectX::XMConvertToRadians(89.0f);
+			spinAngleX_ = std::clamp(spinAngleX_, -MAX_VERTICAL, MAX_VERTICAL);*/
 
 			static const float ROTATE_DISTANCE = 0.01f;
 			// ñ{ìñÇÕ0.0fÇìnÇµÇƒÇªÇÃèÍÇ≈âÒì]Ç≥ÇπÇΩÇ©Ç¡ÇΩÇ™è„éËÇ≠Ç¢Ç©Ç»Ç©Ç¡ÇΩ
