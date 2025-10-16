@@ -38,19 +38,20 @@ namespace mtstat
 		/// <param name="_statEnum">遷移可能となる条件を登録する状態</param>
 		/// <param name="_callback">boolを返すコールバック</param>
 		/// <returns></returns>
-		MTStat& RegisterTransition(StatEnumT _statEnum, const std::function<bool()>& _callback);
+		MTStat& RegisterTransition(StatEnumT _from, StatEnumT _to,const std::function<bool()>& _callback);
 		
-		/*/// <summary>
-		/// その状態が
-		/// </summary>
-		/// <param name="_statEnum"></param>
-		/// <returns></returns>
-		bool TryGetAchieveCondition(StatEnumT _statEnum);*/
+		MTStat& RegisterAnyTransition(StatEnumT _to, const std::function<bool()>& _callback);
+		bool TryGetNextState(StatEnumT& _nextState);
 		void Update() const;
 		void Change(const StatEnumT _nextStat);
 
 		const StatEnumT Current() const { return stat_; }
 
+		struct StateTransition
+		{
+			StatEnumT toState;
+			std::function<bool()> condition;
+		};
 	private:
 		StatEnumT stat_;  // 現在のステート
 		
@@ -61,12 +62,10 @@ namespace mtstat
 		std::function<void()> anyUpdateFunc_;
 		std::function<void()> anyStartFunc_;
 		std::function<void()> anyEndFunc_;
-
-		/// <summary>
-		/// <para> その状態が遷移可能となる条件 </para>
-		/// <para> どの状態へ遷移するかまでは知らない </para>
-		/// </summary>
-		std::map<StatEnumT, std::function<bool()>> transitionCondition_; 
+		
+		
+		std::map<StatEnumT, std::vector<StateTransition>> transitionsMap_;
+		std::vector<StateTransition> anyTransition_;
 	};
 
 	template<EnumT StatEnumT>
@@ -112,9 +111,32 @@ namespace mtstat
 	}
 
 	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(StatEnumT _statEnum, const std::function<bool()>& _callback)
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(StatEnumT _from, StatEnumT _to,const std::function<bool()>& _callback)
 	{
-		transitionCondition_[_statEnum] = _callback;
+		transitionsMap_[_from].emplace_back(_to,_callback);
+	}
+
+	template<EnumT StatEnumT>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterAnyTransition(StatEnumT _to, const std::function<bool()>& _callback)
+	{
+		anyTransition_.emplace_back(_to, _callback);
+	}
+
+	template<EnumT StatEnumT>
+	inline bool MTStat<StatEnumT>::TryGetNextState(StatEnumT& _nextState)
+	{
+		for (auto transitions : transitionsMap_)
+		{
+			for (auto transition : transitions.second)
+			{
+				if (transition.condition())
+				{
+					_nextState = transition.toState;
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	template<EnumT StatEnumT>

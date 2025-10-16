@@ -25,7 +25,7 @@ namespace mtgb
 		};
 		CameraOperation cameraOperation_;
 		mtstat::MTStat<CameraOperation> sCameraOperation_;
-		float rotateSensitibity_;
+		float rotateSensitivity_;
 		float moveSpeed_;
 		float orbitSpeed_;
 		float orbitDistance_;
