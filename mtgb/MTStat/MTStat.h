@@ -3,6 +3,7 @@
 #include <map>
 #include <concepts>
 #include <type_traits>
+#include <vector>
 
 namespace mtstat
 {
@@ -28,6 +29,23 @@ namespace mtstat
 		MTStat& OnAnyStart(const std::function<void()>& _callback);
 		MTStat& OnAnyUpdate(const std::function<void()>& _callback);
 		MTStat& OnAnyEnd(const std::function<void()>& _callback);
+
+		/// <summary>
+		/// <para> ‚»‚Ìó‘Ô‚ª‘JˆÚ‰Â”\‚Æ‚È‚éğŒ‚ğ“o˜^ </para>
+		/// <para> ‚Ç‚Ìó‘Ô‚É‘JˆÚ‚Å‚«‚é‚©‚Íw’è‚Å‚«‚È‚¢ </para>
+		/// <para> “o˜^‚Å‚«‚éğŒ‚Íˆê‚Â‚Ì‚İ </para>
+		/// </summary>
+		/// <param name="_statEnum">‘JˆÚ‰Â”\‚Æ‚È‚éğŒ‚ğ“o˜^‚·‚éó‘Ô</param>
+		/// <param name="_callback">bool‚ğ•Ô‚·ƒR[ƒ‹ƒoƒbƒN</param>
+		/// <returns></returns>
+		MTStat& RegisterTransition(StatEnumT _statEnum, const std::function<bool()>& _callback);
+		
+		/*/// <summary>
+		/// ‚»‚Ìó‘Ô‚ª
+		/// </summary>
+		/// <param name="_statEnum"></param>
+		/// <returns></returns>
+		bool TryGetAchieveCondition(StatEnumT _statEnum);*/
 		void Update() const;
 		void Change(const StatEnumT _nextStat);
 
@@ -43,6 +61,12 @@ namespace mtstat
 		std::function<void()> anyUpdateFunc_;
 		std::function<void()> anyStartFunc_;
 		std::function<void()> anyEndFunc_;
+
+		/// <summary>
+		/// <para> ‚»‚Ìó‘Ô‚ª‘JˆÚ‰Â”\‚Æ‚È‚éğŒ </para>
+		/// <para> ‚Ç‚Ìó‘Ô‚Ö‘JˆÚ‚·‚é‚©‚Ü‚Å‚Í’m‚ç‚È‚¢ </para>
+		/// </summary>
+		std::map<StatEnumT, std::function<bool()>> transitionCondition_; 
 	};
 
 	template<EnumT StatEnumT>
@@ -85,6 +109,12 @@ namespace mtstat
 	{
 		anyEndFunc_ = _callback;
 		return *this;
+	}
+
+	template<EnumT StatEnumT>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(StatEnumT _statEnum, const std::function<bool()>& _callback)
+	{
+		transitionCondition_[_statEnum] = _callback;
 	}
 
 	template<EnumT StatEnumT>

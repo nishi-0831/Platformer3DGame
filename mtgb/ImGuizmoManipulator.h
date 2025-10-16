@@ -42,7 +42,6 @@ namespace mtgb
 		ImGuizmo::MODE mode_;
 		Transform* pCameraTransform_;
 		Transform* pTargetTransform_;
-		float angleX_, angleY_;
 		float spinAngleX_,spinAngleY_;
 		CameraHandleInScene hCamera_;
 		uintptr_t currId_;
@@ -55,7 +54,6 @@ namespace mtgb
 			Spin
 		};
 		CameraOperation cameraOperation_;
-		bool updatingCameraTransform_;
 		bool followTarget_;
 		bool adjustTargetDirection_; // カメラがターゲットに追従する際、カメラの向きをターゲットの向きに合わせるか
 		float spinDistance_;
@@ -63,7 +61,6 @@ namespace mtgb
 		float spinSpeed_;
 		float moveSpeed_;
 		float rotateSensitivity_;
-		float thickness_;
 		float worldMat_[16], viewMat_[16], projMat_[16];
 		Matrix4x4 worldMatrix4x4, viewMatrix4x4_, projMatrix4x4_;
 		DirectX::XMFLOAT4X4 float4x4_;

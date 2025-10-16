@@ -3,6 +3,7 @@
 #include "Vector3.h"
 #include "Quaternion.h"
 #include "JoystickProxy.h"
+#include "MouseStateProxy.h"
 #include "Transform.h"
 #include "TypeRegistry.h"
 #include "ShowAttributes.h"
@@ -38,4 +39,12 @@ REGISTER_FIELD(assignmentStatus)
 REGISTER_FIELD(lastErrorMessage)
 REGISTER_FIELD(deviceName)
 REGISTER_FIELD(deviceProductName)
+REGISTER_END
+
+
+REGISTER_TYPE(MouseStateProxy)
+REGISTER_FIELD(lX)
+REGISTER_FIELD(lY)
+REGISTER_FIELD(lZ)
+REGISTER_FIELD(rgbButtons)
 REGISTER_END

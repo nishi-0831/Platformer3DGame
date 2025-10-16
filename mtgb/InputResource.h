@@ -9,6 +9,7 @@
 #include <map>
 #include <typeindex>
 #include "JoystickProxy.h"
+#include "MouseStateProxy.h"
 #include "Timer.h"
 #include "InputConfig.h"
 #include <string>
@@ -38,7 +39,8 @@ namespace mtgb
 		ComPtr<IDirectInputDevice8> pKeyDevice_;
 		ComPtr<IDirectInputDevice8> pMouseDevice_;
 		ComPtr<IDirectInputDevice8> pJoystickDevice_;
-		JoystickProxy* pProxy_;
+		JoystickProxy* pJoystickProxy_;
+		MouseStateProxy* pMouseStateProxy_;
 		GUID assignedJoystickGuid_;
 		bool isInitialized;
 		// WindowContextResource ÇâÓÇµÇƒåpè≥Ç≥ÇÍÇ‹ÇµÇΩ
