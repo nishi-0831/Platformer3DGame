@@ -255,10 +255,6 @@ void mtgb::MTImGui::SetupShowFunc()
             char description[256];
             WideCharToMultiByte(CP_UTF8, 0, _target->Description, -1, description, sizeof(description), nullptr, nullptr);
             ImGui::LabelText("Description", "%s", description);
-            /*std::string highPart = std::to_string(_target->AdapterLuid.HighPart);
-            ImGui::InputText("Adapter LUID:", highPart.data(), highPart.size() + 1, ImGuiInputTextFlags_ReadOnly);
-            ImGui::Text("Adapter LUID: %08X-%08X", _target->AdapterLuid.HighPart, _target->AdapterLuid.LowPart);
-            ImGui::Text("Flags: 0x%X", _target->Flags);*/
         });
 
     Set<DXGI_OUTPUT_DESC>([](DXGI_OUTPUT_DESC* _target, const char* _name)

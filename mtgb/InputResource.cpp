@@ -5,6 +5,7 @@
 #include "IncludingInput.h"
 #include "JoystickProxy.h"
 #include "MTImGui.h"
+#include "Debug.h"
 using namespace mtgb;
 namespace
 {
@@ -14,7 +15,8 @@ mtgb::InputResource::InputResource()
 	: pInputData_{nullptr}
 	, pKeyDevice_{nullptr}
 	, pMouseDevice_{nullptr}
-	, pProxy_{nullptr}
+	, pJoystickProxy_{nullptr}
+	, pMouseStateProxy_{nullptr}
 	, assignedJoystickGuid_{GUID_NULL}
 {
 	
@@ -29,7 +31,6 @@ mtgb::InputResource::InputResource(const InputResource& other)
 	: WindowContextResource(other)
 	, pKeyDevice_{ other.pKeyDevice_ }       
 	, pMouseDevice_{ other.pMouseDevice_ }
-	, pJoystickDevice_{ other.pJoystickDevice_ }
 	, isInitialized{ other.isInitialized }
 	, assignedJoystickGuid_{ other.assignedJoystickGuid_ }
 {
@@ -41,13 +42,21 @@ mtgb::InputResource::InputResource(const InputResource& other)
 	{
 		pInputData_ = nullptr;
 	}
-	if (other.pProxy_)
+	if (other.pJoystickProxy_)
 	{
-		pProxy_ = new JoystickProxy(*other.pProxy_);
+		pJoystickProxy_ = new JoystickProxy(*other.pJoystickProxy_);
 	}
 	else
 	{
-		pProxy_ = nullptr;
+		pJoystickProxy_ = nullptr;
+	}
+	if (other.pMouseStateProxy_)
+	{
+		pMouseStateProxy_ = new MouseStateProxy{ *other.pMouseStateProxy_ };
+	}
+	else
+	{
+		pMouseStateProxy_ = nullptr;
 	}
 }
 
@@ -63,8 +72,10 @@ void mtgb::InputResource::Initialize(WindowContext _windowContext)
 
 	// 入力状態を保持するデータ
 	pInputData_ = new InputData();
+
 	// ImGui表示用のプロキシ
-	pProxy_ = new JoystickProxy(pInputData_->joyStateCurrent_);
+	pMouseStateProxy_ = new MouseStateProxy(pInputData_->mouseStateCurrent_);
+	pJoystickProxy_ = new JoystickProxy(pInputData_->joyStateCurrent_);
 
 	// 入力の取り方を設定
 	pInputData_->config_.SetRange(1000);
@@ -106,11 +117,14 @@ void mtgb::InputResource::Update()
 {
 	Input& input = Game::System<Input>();
 	
-	pProxy_->UpdateFromInput(assignedJoystickGuid_);
-	pProxy_->UpdateInputData(pInputData_->joyStateCurrent_);
+	pJoystickProxy_->UpdateFromInput(assignedJoystickGuid_);
+	pJoystickProxy_->UpdateInputData(pInputData_->joyStateCurrent_);
 	
-	MTImGui::Instance().TypedShow<JoystickProxy>(pProxy_, name_.c_str(), ShowType::Inspector);
-	
+	MTImGui::Instance().TypedShow<JoystickProxy>(pJoystickProxy_, name_+":Joystick", ShowType::Inspector);
+
+	pMouseStateProxy_->UpdateInputData(pInputData_->mouseStateCurrent_);
+	MTImGui::Instance().TypedShow<MouseStateProxy>(pMouseStateProxy_, name_ + ":Mouse", ShowType::Inspector);
+	//LOGIMGUI("%ld", pMouseStateProxy_->lZ);
 }
 
 void InputResource::SetResource()
@@ -132,7 +146,7 @@ void InputResource::SetResource()
 void mtgb::InputResource::Release()
 {
 	SAFE_DELETE(pInputData_);
-	SAFE_DELETE(pProxy_);
+	SAFE_DELETE(pJoystickProxy_);
 	pKeyDevice_.Reset();
 	pMouseDevice_.Reset();
 	pJoystickDevice_.Reset();

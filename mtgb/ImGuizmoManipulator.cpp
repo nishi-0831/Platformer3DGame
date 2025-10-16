@@ -228,14 +228,10 @@ mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
 	:ImGuiShowable("Manipulater", ShowType::SceneView)
 	, operation_{ ImGuizmo::TRANSLATE }
 	, mode_{ ImGuizmo::LOCAL }
-	, angleX_{ 0.0f }
-	, angleY_{ 0.0f }
 	, spinDistance_{5.0f}
 	, moveSpeed_{10.0f}
 	, spinSpeed_{1.0f}
 	, rotateSensitivity_{1.0f}
-	, thickness_{2.0f}
-	, updatingCameraTransform_{ false }
 	, cameraOperation_{ CameraOperation::None }
 	, followTarget_{true}
 	, followDistance_{10.0f}
@@ -349,14 +345,13 @@ void mtgb::ImGuizmoManipulator::UpdateCamera(const char* _name)
 	FollowTarget();
 	if (!ImGui::IsWindowFocused())
 	{
-		updatingCameraTransform_ = false;
 		return;
 	}
-	if (IsMouseInWindow(_name) && !updatingCameraTransform_)
+	if (IsMouseInWindow(_name))
 	{
-		if (InputUtil::GetMouseDown(MouseCode::Right) || InputUtil::GetMouseDown(MouseCode::Middle) || InputUtil::GetMouseDown(MouseCode::Left))
+		if (InputUtil::GetMouse(MouseCode::Right) || InputUtil::GetMouse(MouseCode::Middle) || InputUtil::GetMouse(MouseCode::Left))
 		{
-			updatingCameraTransform_ = true;
+			
 
 			if (InputUtil::GetMouseDown(MouseCode::Middle))
 			{
@@ -374,23 +369,14 @@ void mtgb::ImGuizmoManipulator::UpdateCamera(const char* _name)
 				// Spin‘€ì—p‚ÌŠp“x‰Šú‰» - Œ»Ý‚ÌƒJƒƒ‰ˆÊ’u‚©‚ç‹tŽZ
 				InitializeSpinAnglesFromCurrentPosition();
 			}
-			else
-			{
-				cameraOperation_ = CameraOperation::None;
-			}
+			
+		}
+		else
+		{
+			cameraOperation_ = CameraOperation::None;
 		}
 	}
-	if (!updatingCameraTransform_)
-	{
-		return;
-	}
-
-
-	if (InputUtil::GetMouseUp(MouseCode::Right) || InputUtil::GetMouseUp(MouseCode::Middle) || InputUtil::GetMouseUp(MouseCode::Left))
-	{
-		updatingCameraTransform_ = false;
-		return;
-	}
+	
 
 	
 	if (cameraOperation_ == CameraOperation::Rotate)
@@ -428,7 +414,19 @@ void mtgb::ImGuizmoManipulator::UpdateCamera(const char* _name)
 		}
 	}
 
-	
+	if (cameraOperation_ == CameraOperation::None)
+	{
+		Vector3 mouseMove = InputUtil::GetMouseMove();
+		if (mouseMove.Size() != 0)
+		{
+			Vector3 forward = pCameraTransform_->Forward();
+
+			Vector3 move = forward * mouseMove.z;
+
+			pCameraTransform_->position += move * moveSpeed_ * Time::DeltaTimeF();
+		}
+	}
+
 	if (cameraOperation_ == CameraOperation::Spin)
 	{
 		Vector3 mouseMove = InputUtil::GetMouseMove();
