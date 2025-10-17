@@ -12,6 +12,7 @@ namespace mtgb
 		~ImGuiEditorCamera();
 		void Initialize();
 		void SetCamera();
+		
 		void SetWindowName(const char* _name);
 	private:
 		void DoDolly();
@@ -28,13 +29,12 @@ namespace mtgb
 
 		enum class CameraOperation
 		{
-			None,
+			Track,
 			Dolly, // カメラを左右に移動
 			
 			Pan,	// カメラ自身を軸として回転
 			Orbit	// ターゲットを軸として回転
 		};
-		CameraOperation cameraOperation_;
 		mtstat::MTStat<CameraOperation> sCameraOperation_;
 		float rotateSensitivity_;
 		float moveSpeed_;
