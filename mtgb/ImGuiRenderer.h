@@ -28,7 +28,7 @@ namespace mtgb
 	class Transform;
 	struct Vector3;
 	
-	
+	bool IsMouseInWindow(const char* _name);
 	
 	class ImGuiRenderer final : public ISystem
 	{

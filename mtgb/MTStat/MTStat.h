@@ -11,7 +11,8 @@ namespace mtstat
 	concept EnumT = std::is_enum_v<T>;
 	
 	/// <summary>
-	/// ポリモルフィズムを抜きにしたステートクラス
+	/// <para> ポリモルフィズムを抜きにしたステートクラス </para>
+	/// <para> メソッドチェーンで状態を記述することができる</para>
 	/// </summary>
 	/// <typeparam name="StatEnumT">ステートに使用する列挙型</typeparam>
 	template<EnumT StatEnumT>
@@ -31,16 +32,30 @@ namespace mtstat
 		MTStat& OnAnyEnd(const std::function<void()>& _callback);
 
 		/// <summary>
-		/// <para> その状態が遷移可能となる条件を登録 </para>
-		/// <para> どの状態に遷移できるかは指定できない </para>
-		/// <para> 登録できる条件は一つのみ </para>
+		/// <para> 指定した状態から別の状態への遷移条件を登録 </para>
+		/// <para> 登録順で評価され、優先度は付けられない </para>
 		/// </summary>
-		/// <param name="_statEnum">遷移可能となる条件を登録する状態</param>
-		/// <param name="_callback">boolを返すコールバック</param>
+		/// <param name="_from">遷移元となる状態。この状態にいるときに遷移条件が評価される </param>
+		/// <param name="_to">遷移先となる状態。条件が満たされたときにこの状態に遷移する</param>
+		/// <param name="_callback">遷移条件を判定するコールバック。trueを返すと遷移する</param>
 		/// <returns></returns>
 		MTStat& RegisterTransition(StatEnumT _from, StatEnumT _to,const std::function<bool()>& _callback);
 		
+		/// <summary>
+		/// <para> あらゆる状態から別の状態への遷移条件を登録 </para>
+		/// <para> 登録順で評価され、優先度は付けられない </para>
+		/// </summary>
+		/// <param name="_to">遷移先となる状態。条件が満たされたときにこの状態に遷移する</param>
+		/// <param name="_callback">条件が満たされたときにこの状態に遷移する</param>
+		/// <returns></returns>
 		MTStat& RegisterAnyTransition(StatEnumT _to, const std::function<bool()>& _callback);
+		
+		/// <summary>
+		/// <para> 遷移条件を満たした状態の取得を試みる </para>
+		/// <para> 条件を満たしている場合 trueが返ってきて、引数には遷移先の状態が格納される</para>
+		/// </summary>
+		/// <param name="_nextState"> 遷移可能な状態があればその値が格納される。戻り値がtrueの場合のみ有効 </param>
+		/// <returns> 遷移可能な条件があればtrue、なければfalse </returns>
 		bool TryGetNextState(StatEnumT& _nextState);
 		void Update() const;
 		void Change(const StatEnumT _nextStat);

@@ -124,7 +124,6 @@ void mtgb::ImGuizmoManipulator::Calculate()
 void mtgb::ImGuizmoManipulator::SpinCamera(float _distance)
 {
 	// ref:https://ja.wikipedia.org/wiki/%E7%90%83%E9%9D%A2%E5%BA%A7%E6%A8%99%E7%B3%BB
-	// 球面座標から直行直線座標への変換
 	
 	// 現在のカメラ位置から回転中心を計算
 	Vector3 center = Vector3::Zero();

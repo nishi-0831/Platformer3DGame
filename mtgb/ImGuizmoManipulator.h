@@ -25,7 +25,6 @@ namespace mtgb
 		void Initialize();
 		void ShowImGui() override;
 		void UpdateCamera(const char* _name);
-		bool IsMouseInWindow(const char* _name);
 		void GetMouseRay(Vector3* _near, Vector3* _far);
 		void SelectTransform();
 		void FollowTarget();
