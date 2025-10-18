@@ -22,7 +22,7 @@ namespace mtgb
 		void Update() override;
 
 		void TestDraw() const;
-
+		void Draw();
 		EntityId RayCastHitAll(const Vector3& _origin, const Vector3& _dir, float dist);
 		bool RayCastHit(const Vector3& _origin, const Vector3& _dir, float* dist, EntityId _entityId);
 		void IsHitAll(const Vector3& _center, float _radius, std::vector<EntityId>* _entityIds);

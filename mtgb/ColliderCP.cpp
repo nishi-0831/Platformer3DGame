@@ -93,6 +93,16 @@ void mtgb::ColliderCP::TestDraw() const
 	}
 	LOGF("ColliderCP END\n");
 }
+void mtgb::ColliderCP::Draw()
+{
+	for (size_t i = 0; i < poolId_.size(); i++)
+	{
+		if (poolId_[i] != INVALD_ENTITY)
+		{
+			pool_[i].Draw();
+		}
+	}
+}
 mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vector3& _dir, float dist)
 {
 	EntityId nearestEntity = INVALD_ENTITY;
@@ -101,8 +111,6 @@ mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vec
 	{
 		if (poolId_[i] != INVALD_ENTITY)
 		{
-			/*std::vector<Collider*> colliders{};
-			Game::System<ColliderCP>().TryGet(&colliders, poolId_[i]);*/
 
 			float nearest = dist;
 			Transform* pTransform{ nullptr };

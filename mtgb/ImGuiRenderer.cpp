@@ -80,11 +80,11 @@ void mtgb::ImGuiRenderer::Initialize()
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
 	ImGui_ImplDX11_Init(device.Get(), context.Get());
 
+	CreateD3DResources();
+
 	pManipulator_ = new ImGuizmoManipulator();
 	pEditorCamera_ = new ImGuiEditorCamera();
 	pEditorCamera_->SetViewPort(viewport_);
-	
-	CreateD3DResources();
 }
 
 void mtgb::ImGuiRenderer::Update()

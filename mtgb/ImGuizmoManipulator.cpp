@@ -18,6 +18,7 @@
 #include "SceneSystem.h"
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
+#include "Debug.h"
 namespace
 {
 	
@@ -27,12 +28,14 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 {
 	if (!pTargetTransform_)
 	{
+		ImGuizmo::Enable(false);
 		return;
 	}
-	uintptr_t ptrId = reinterpret_cast<uintptr_t>(pTargetTransform_);
+	ImGuizmo::Enable(true);
 
 	Calculate();
 
+	uintptr_t ptrId = reinterpret_cast<uintptr_t>(pTargetTransform_);
 	ImGui::PushID(&ptrId);
 
 	ImVec2 pos = ImGui::GetWindowPos();
@@ -65,33 +68,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 	ImGui::PopID();
 }
 
-//std::optional<ImVec2> mtgb::ImGuizmoManipulator::WorldToImGui(const Vector3& _vec)
-//{
-//	Game::System<CameraSystem>().GetViewMatrix(&viewMatrix4x4_);
-//	Game::System<CameraSystem>().GetProjMatrix(&projMatrix4x4_);
-//
-//	
-//	ImVec2 windowPos = ImGui::GetWindowPos();
-//	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
-//
-//
-//	Vector3 screenVec = DirectX::XMVector3Project(
-//		_vec,
-//		viewport_.TopLeftX,
-//		viewport_.TopLeftY,
-//		viewport_.Width,
-//		viewport_.Height,
-//		viewport_.MinDepth,
-//		viewport_.MaxDepth,
-//		projMatrix4x4_,
-//		viewMatrix4x4_,
-//		DirectX::XMMatrixIdentity());
-//
-//	if (screenVec.z < 0.0f || screenVec.z > 1.0f)
-//		return std::nullopt;
-//	//return ImVec2(screenVec.x, screenVec.y );
-//	return ImVec2(screenVec.x + windowPos.x, screenVec.y + windowPos.y + tabBarHeight);
-//}
+
 
 void mtgb::ImGuizmoManipulator::SetTarget(Transform* _pTarget)
 {
@@ -109,21 +86,27 @@ void mtgb::ImGuizmoManipulator::SubscribeGameObjectSelectionEvent()
 	eventManager.GetEvent<GameObjectSelectedEvent>().Subscribe(
 		[this](const GameObjectSelectedEvent& _event)
 		{
+			ImGuizmo::Enable(true);
 			Game::System<TransformCP>().TryGet(pTargetTransform_, _event.entityId);
-		});
+			LOGIMGUI("Manipulator:Selected");
+		},EventScope::Global);
 
 	eventManager.GetEvent<SelectionClearedEvent>().Subscribe(
 		[this](const SelectionClearedEvent& _event)
 		{
+			ImGuizmo::Enable(false);
 			pTargetTransform_ = nullptr;
-		});
+		}, EventScope::Global);
 
 	// 今後、同時に複数のオブジェクトを選択可能な場合になった際には修正
 	eventManager.GetEvent<GameObjectDeselectedEvent>().Subscribe(
 		[this](const GameObjectDeselectedEvent& _event)
 		{
+			ImGuizmo::Enable(false);
 			pTargetTransform_ = nullptr;
-		});
+			LOGIMGUI("Manipulator:Deselected");
+
+		}, EventScope::Global);
 }
 
 void mtgb::ImGuizmoManipulator::Calculate()
@@ -152,7 +135,7 @@ mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
 	, operation_{ ImGuizmo::TRANSLATE }
 	, mode_{ ImGuizmo::LOCAL }
 {
-
+	SubscribeGameObjectSelectionEvent();
 }
 
 mtgb::ImGuizmoManipulator::~ImGuizmoManipulator()
@@ -194,7 +177,7 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 		mode_ = ImGuizmo::WORLD;
 	}
 
-	
+	ImGui::ShowDemoWindow();
 }
 
 

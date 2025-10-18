@@ -1,4 +1,6 @@
 #include"../ImGui/imgui_impl_win32.h"
+#include "../ImGui/imgui_internal.h"
+
 #include "../ImGui/ImGuizmo.h"
 #include "ImGuiEditorCamera.h"
 #include "Game.h"
@@ -15,6 +17,7 @@
 #include "MTImGui.h"
 #include <cmath>
 #include <algorithm>
+#include "Debug.h"
 using namespace mtgb::ImGuiUtil;
 
 const char* ShowState(mtgb::CameraOperation _cameraOperation);
@@ -62,14 +65,12 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 				if (InputUtil::GetMouseDown(MouseCode::Left))
 				{
 					if ((!ImGuizmo::IsViewManipulateHovered()))
-						if (!ImGuizmo::IsOver())
+						
+						if (!ImGuizmo::IsUsing())
 						{
 							if (IsMouseInWindow(windowName_.c_str()))
 							{
-								if (pTargetTransform_ != nullptr)
-								{
-									SelectTransform();
-								}
+								SelectTransform();
 							}
 						}
 				}
@@ -100,6 +101,7 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 {
 	ImVec2 mousePos = ImGui::GetMousePos();
 	ImVec2 windowPos = ImGui::GetWindowPos();
+	
 	ImVec2 localPos = ImVec2(mousePos.x - windowPos.x, mousePos.y - windowPos.y);
 
 	TypeRegistry::Instance().CallFunc(&pCameraTransform_->position, "cameraPos");
@@ -310,7 +312,13 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 	Game::System<CameraSystem>().GetProjMatrix(&proj);
 	Game::System<CameraSystem>().GetViewMatrix(&view);
 	
-	ImGuiUtil::GetMouseRay(origin, end, proj, view, viewport_);
+	ImGuiWindow* window = ImGui::FindWindowByName(windowName_.c_str());
+
+	if (window == nullptr) return;
+
+	ImRect workRect = window->WorkRect;
+	ImVec2 workPos = workRect.Min;
+	ImGuiUtil::GetMouseRay(origin, end, proj, view, viewport_, { workPos.x,workPos.y });
 
 	vec = end - origin;
 
@@ -328,10 +336,17 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 		
 		mtgb::GameObjectSelectedEvent event{ .entityId = entityId };
 		Game::System<EventManager>().GetEvent<mtgb::GameObjectSelectedEvent>().Invoke(event);
+		LOGIMGUI("EditorCamera:Selected");
+
 	}
 	else
 	{
 		pTargetTransform_ = nullptr;
+		mtgb::GameObjectDeselectedEvent event{ .entityId = entityId };
+
+		Game::System<EventManager>().GetEvent<mtgb::GameObjectDeselectedEvent>().Invoke(event);
+		LOGIMGUI("EditorCamera:No Select");
+
 	}
 }
 

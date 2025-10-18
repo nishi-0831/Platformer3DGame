@@ -14,9 +14,6 @@ void mtgb::EventManager::Initialize()
 {
 	Game::System<SceneSystem>().OnMove([this]()
 		{
-			for (auto& event : events_)
-			{
-				event.second->UnsubscribeAll();
-			}
+			ClearSceneSubscriptions();
 		});
 }

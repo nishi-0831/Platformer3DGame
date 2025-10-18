@@ -12,9 +12,11 @@ namespace mtgb
 	public:
 		virtual ~EventBase() = default;
 		virtual void UnsubscribeAll() = 0;
+		virtual void UnsubscribeScene() = 0;
 	};
 
 	using EventHandlerId = std::size_t;
+	enum class EventScope {Scene,Global};
 	/// <summary>
 	/// <para>イベント用のテンプレートクラス。</para>
 	/// <para>任意のイベントデータ型に対してハンドラの登録、解除、一括解除、呼び出しを行う。</para>
@@ -24,15 +26,16 @@ namespace mtgb
 	class Event : public EventBase
 	{
 	public:
+
 		using EventHandler = std::function<void(const EventDataType&)>;
 
 		/// <summary>
 		/// ハンドラを登録し、登録に割り当てられた ID を返す
 		/// </summary>
-		EventHandlerId Subscribe(EventHandler _handler)
+		EventHandlerId Subscribe(EventHandler _handler,EventScope _scope = EventScope::Scene)
 		{
 			const EventHandlerId id = nextId++;
-			handlers_.emplace(id, std::move(_handler));
+			handlers_.emplace(id, HandlerEntry{ std::move(_handler) ,_scope});
 			return id;
 		}
 		
@@ -51,8 +54,30 @@ namespace mtgb
 		void UnsubscribeAll() override
 		{
 			handlers_.clear();
+
+			while (!pendingUnsubscribeIds.empty()) pendingUnsubscribeIds.pop();
 		}
 
+		void UnsubscribeScene() override
+		{
+			while (!pendingUnsubscribeIds.empty())
+			{
+				handlers_.erase(pendingUnsubscribeIds.front());
+				pendingUnsubscribeIds.pop();
+			}
+
+			for (auto itr = handlers_.begin(); itr != handlers_.end();)
+			{
+				if (itr->second.scope == EventScope::Scene)
+				{
+					itr = handlers_.erase(itr);
+				}
+				else
+				{
+					++itr;
+				}
+			}
+		}
 		/// <summary>
 		/// 保留中の解除要求を処理し、その後すべてのハンドラに対してイベントデータを渡して呼び出す
 		/// </summary>
@@ -65,14 +90,19 @@ namespace mtgb
 			}
 			for (auto& handler : handlers_)
 			{
-				if (handler.second)
+				if (handler.second.handler)
 				{
-					handler.second(_data);
+					handler.second.handler(_data);
 				}
 			}
 		}
 	private:
-		std::unordered_map<EventHandlerId,EventHandler> handlers_;
+		struct HandlerEntry
+		{
+			EventHandler handler;
+			EventScope scope;
+		};
+		std::unordered_map<EventHandlerId, HandlerEntry> handlers_;
 		std::queue<EventHandlerId> pendingUnsubscribeIds;
 		EventHandlerId nextId = 1;
 	};
@@ -93,8 +123,8 @@ namespace mtgb
 			// テンプレート型 `EventDataType` を識別するための type_index を作成
 			std::type_index typeIdx = std::type_index(typeid(EventDataType));
 
-			auto it = events_.find(typeIdx);
-			if (it == events_.end())
+			auto itr = events_.find(typeIdx);
+			if (itr == events_.end())
 			{
 				// 存在しない場合は新規作成してマップに登録
 				Event<EventDataType>* newEvent = new Event<EventDataType>();
@@ -103,9 +133,23 @@ namespace mtgb
 			}
 
 			// 既存のイベントを返す
-			return static_cast<Event<EventDataType>&>(*it->second);
+			return static_cast<Event<EventDataType>&>(*itr->second);
 		}
 
+		/// <summary>
+		/// <para> シーン遷移時に呼ぶべき関数 </para>
+		/// <para> 有効範囲がゲームシーンであるイベントを登録解除する </para>
+		/// </summary>
+		void ClearSceneSubscriptions()
+		{
+			for (auto& event : events_)
+			{
+				if (event.second)
+				{
+					event.second->UnsubscribeScene();
+				}
+			}
+		}
 	private:
 		std::unordered_map<std::type_index, EventBase*> events_;
 	};

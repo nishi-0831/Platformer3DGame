@@ -2,15 +2,11 @@
 #include "../ImGui/imgui_internal.h"
 #include <d3d11.h>
 
-void mtgb::ImGuiUtil::GetMouseRay(Vector3& _near, Vector3& _far, const Matrix4x4& _proj, const Matrix4x4& _view, const D3D11_VIEWPORT& _viewport)
+void mtgb::ImGuiUtil::GetMouseRay(Vector3& _near, Vector3& _far, const Matrix4x4& _proj, const Matrix4x4& _view, const D3D11_VIEWPORT& _viewport, const Vector2F& _windowPos)
 {
 	ImVec2 mousePos = ImGui::GetMousePos();
-	ImVec2 windowPos = ImGui::GetWindowPos();
-	ImVec2 gameViewSize_ = ImGui::GetWindowSize();
-
-	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
-
-	ImVec2 localPos = ImVec2(mousePos.x - windowPos.x, mousePos.y - windowPos.y - tabBarHeight);
+    
+	ImVec2 localPos = ImVec2(mousePos.x - _windowPos.x, mousePos.y - _windowPos.y);
 
 	Vector3 nearVec = { localPos.x,localPos.y,0.0f };
 
@@ -49,7 +45,7 @@ bool mtgb::ImGuiUtil::IsMouseInWindow(const char* _name)
 	if (window && window->WasActive)
 	{
 		ImVec2 mousePos = ImGui::GetIO().MousePos;
-		ImRect rect = window->InnerRect;
+		ImRect rect = window->WorkRect;
 		return rect.Contains(mousePos);
 	}
 	return false;

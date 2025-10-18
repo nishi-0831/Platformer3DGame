@@ -10,6 +10,7 @@
 #include "../ImGui/imgui.h"
 #include "Draw.h"
 #include "MeshRendererCP.h"
+#include "ColliderCP.h"
 void mtgb::RenderSystem::Initialize()
 {
 }
@@ -84,4 +85,9 @@ void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene,GameObjectLayerFlag _
 	_scene.Draw();
 
 	Game::System<MeshRendererCP>().RenderLayer(_layer);
+	if (_layer.Has(GameObjectLayer::SceneView))
+	{
+		Game::System<ColliderCP>().Draw();
+
+	}
 }

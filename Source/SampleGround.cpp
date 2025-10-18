@@ -7,9 +7,12 @@ mtgb::SampleGround::SampleGround() : GameObject(GameObjectBuilder()
 	.Build())
 	,pTransform_{Component<Transform>()}
 	,pMeshRenderer_{Component<MeshRenderer>()}
-	//,pCollider_{Component<Collider>()}
+	,pCollider_{Component<Collider>()}
 {
-	pMeshRenderer_->SetMesh(Fbx::Load("Model/Enemy01.fbx"));
+	pMeshRenderer_->SetMesh(Fbx::Load("Model/TestGround.fbx"));
+	pCollider_->type_ = Collider::TYPE_AABB;
+	pCollider_->SetCenter(pTransform_->position);
+	pCollider_->SetExtents(pTransform_->scale);
 }
 
 mtgb::SampleGround::~SampleGround()
@@ -23,5 +26,5 @@ void mtgb::SampleGround::Update()
 
 void mtgb::SampleGround::Draw() const
 {
-	//pCollider_->Draw();
+	pCollider_->Draw();
 }
