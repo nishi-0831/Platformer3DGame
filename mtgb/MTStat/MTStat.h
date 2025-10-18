@@ -129,6 +129,7 @@ namespace mtstat
 	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(StatEnumT _from, StatEnumT _to,const std::function<bool()>& _callback)
 	{
 		transitionsMap_[_from].emplace_back(_to,_callback);
+		return *this;
 	}
 
 	template<EnumT StatEnumT>
@@ -140,9 +141,9 @@ namespace mtstat
 	template<EnumT StatEnumT>
 	inline bool MTStat<StatEnumT>::TryGetNextState(StatEnumT& _nextState)
 	{
-		for (auto transitions : transitionsMap_)
-		{
-			for (auto transition : transitions.second)
+		if(transitionsMap_.count(stat_))
+		{ 
+			for (auto transition : transitionsMap_.at(stat_))
 			{
 				if (transition.condition())
 				{

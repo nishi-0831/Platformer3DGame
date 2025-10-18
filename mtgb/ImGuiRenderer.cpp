@@ -1,22 +1,12 @@
 #include "ImGuiRenderer.h"
 #include "Game.h"
-#include "ISystem.h"
-#include "ColliderCP.h"
-#include "CameraSystem.h"
 #include "DirectX11Draw.h"
 #include "DirectX11Manager.h"
-#include "GameObject.h"
 #include "WindowContextUtil.h"
-#include "GameTime.h"
-#include "InputData.h"
-#include "Vector3.h"
 #include "../ImGui/imgui_impl_win32.h"
 #include "../ImGui/imgui_impl_dx11.h"
-#include "../ImGui\imgui_internal.h"
-#include <cmath>
-#include "QuatToEuler.h"
-#include "InputResource.h"
 #include "Screen.h"
+#include "ImGuiUtil.h"
 namespace
 {
 	float titleBarHeight;
@@ -42,6 +32,8 @@ mtgb::ImGuiRenderer::ImGuiRenderer()
 }
 mtgb::ImGuiRenderer::~ImGuiRenderer()
 {
+	SAFE_DELETE(pEditorCamera_);
+	SAFE_DELETE(pManipulator_);
 }
 
 void mtgb::ImGuiRenderer::Initialize()
@@ -88,19 +80,18 @@ void mtgb::ImGuiRenderer::Initialize()
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
 	ImGui_ImplDX11_Init(device.Get(), context.Get());
 
-	manipulator_ = new ImGuizmoManipulator();
-
+	pManipulator_ = new ImGuizmoManipulator();
+	pEditorCamera_ = new ImGuiEditorCamera();
+	pEditorCamera_->SetViewPort(viewport_);
+	
 	CreateD3DResources();
 }
 
 void mtgb::ImGuiRenderer::Update()
 {
+	pEditorCamera_->UpdateState();
+}
 
-}
-void mtgb::ImGuiRenderer::UpdateCamera(const char* _name)
-{
-	manipulator_->UpdateCamera(_name);
-}
 void mtgb::ImGuiRenderer::BeginFrame()
 {
 	ImGui::SetCurrentContext(ImGui::GetCurrentContext());
@@ -114,14 +105,17 @@ void mtgb::ImGuiRenderer::BeginImGuizmoFrame()
 	ImGuizmo::BeginFrame();
 }
 
-
+void mtgb::ImGuiRenderer::SetWindowName(const char* _name)
+{
+	pEditorCamera_->SetWindowName(_name);
+}
 
 void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlag _flag)
 {
 	ImGuiWindowFlags flags = 0;
 	if (_flag == WindowFlag::NoMoveWhenHovered)
 	{
-		if (mtgb::IsMouseInWindow(_str))
+		if (mtgb::ImGuiUtil::IsMouseInWindow(_str))
 		{
 			flags |= ImGuiWindowFlags_NoMove;
 		}
@@ -142,7 +136,7 @@ void mtgb::ImGuiRenderer::SetImGuizmoRenderTargetView()
 }
 void mtgb::ImGuiRenderer::SetGameViewCamera()
 {
-	Game::System<CameraSystem>().SetDrawCamera(manipulator_->hCamera_);
+	pEditorCamera_->SetCamera();
 }
 void mtgb::ImGuiRenderer::Draw()
 {
@@ -172,81 +166,6 @@ void mtgb::ImGuiRenderer::RenderSceneView()
 	ImGui::Image((void*)pSRV_.Get(), ImVec2(static_cast<float>(winWidth_), static_cast<float>(winHeight_)));
 }
 
-
-
-
-
-void mtgb::ImGuizmoManipulator::GetMouseRay(Vector3* _near, Vector3* _far)
-{
-
-	Game::System<CameraSystem>().GetViewMatrix(&viewMatrix4x4_);
-	Game::System<CameraSystem>().GetProjMatrix(&projMatrix4x4_);
-
-	ImVec2 mousePos = ImGui::GetMousePos();
-	ImVec2 windowPos = ImGui::GetWindowPos();
-	ImVec2 gameViewSize_ = ImGui::GetWindowSize();
-	
-	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
-	
-	ImVec2 localPos = ImVec2(mousePos.x - windowPos.x, mousePos.y - windowPos.y - tabBarHeight);
-
-	Vector3 nearVec = {localPos.x,localPos.y,0.0f };
-	const D3D11_VIEWPORT& viewport = Game::System<ImGuiRenderer>().GetViewport();
-	*_near = DirectX::XMVector3Unproject(
-		nearVec,
-		viewport.TopLeftX,
-		viewport.TopLeftY,
-		viewport.Width,
-		viewport.Height,
-		viewport.MinDepth,
-		viewport.MaxDepth,
-		projMatrix4x4_,
-		viewMatrix4x4_,
-		DirectX::XMMatrixIdentity());
-
-	Vector3 farVec = { static_cast<float>(localPos.x),static_cast<float>(localPos.y),1.0f };
-	*_far = DirectX::XMVector3Unproject(
-		farVec,
-		viewport.TopLeftX,
-		viewport.TopLeftY,
-		viewport.Width,
-		viewport.Height,
-		viewport.MinDepth,
-		viewport.MaxDepth,
-		projMatrix4x4_,
-		viewMatrix4x4_,
-		DirectX::XMMatrixIdentity());
-
-}
-
-void mtgb::ImGuizmoManipulator::SelectTransform()
-{
-
-	Vector3 origin, end, vec;
-	GetMouseRay(&origin, &end);
-	vec = end - origin;
-	
-	// vec.Normalize()の結果を別変数に保存して、元の長さを保持
-	Vector3 direction = vec.Normalize();  // これで正規化されたベクトルが返される
-
-	const CameraSystem& camera = Game::System<CameraSystem>();
-	float distance = camera.GetFar() - camera.GetNear();          // 元の長さを計算
-
-	EntityId entityId = Game::System<ColliderCP>().RayCastHitAll(origin, direction, distance);
-	if (entityId != INVALD_ENTITY)
-	{
-		// EntityがTransformコンポーネントを持っていない可能性があるのでTryGet
-		Game::System<TransformCP>().TryGet(pTargetTransform_, entityId);
-	}
-	else
-	{
-		pTargetTransform_ = nullptr;
-	}
-}
-
-
-
-
 void mtgb::ImGuiRenderer::UpdateGameViewRect()
 {
 	gameViewPos_ = ImGui::GetWindowPos();
@@ -260,7 +179,7 @@ void mtgb::ImGuiRenderer::End()
 }
 void mtgb::ImGuiRenderer::Release()
 {
-	SAFE_DELETE(manipulator_);
+	SAFE_DELETE(pManipulator_);
 	ImGui_ImplDX11_Shutdown();
 	ImGui_ImplWin32_Shutdown();
 	ImGui::DestroyContext();
@@ -297,6 +216,8 @@ void mtgb::ImGuiRenderer::OnResize(UINT width, UINT height)
     // ImGui_ImplDX11_InvalidateDeviceObjects();
     // ImGui_ImplDX11_CreateDeviceObjects();
 }
+
+
 
 void mtgb::ImGuiRenderer::CreateD3DResources()
 {
@@ -340,15 +261,4 @@ void mtgb::ImGuiRenderer::CreateD3DResources()
 	//ImGui_ImplDX11_CreateDeviceObjects();
 }
 
-bool mtgb::IsMouseInWindow(const char* _name)
-{
-	//	ウィンドウを検索
-	ImGuiWindow* window = ImGui::FindWindowByName(_name);
-	if (window && window->WasActive)
-	{
-		ImVec2 mousePos = ImGui::GetIO().MousePos;
-		ImRect rect = window->InnerRect;
-		return rect.Contains(mousePos);
-	}
-	return false;
-}
+

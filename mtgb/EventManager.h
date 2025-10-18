@@ -80,6 +80,7 @@ namespace mtgb
 	class EventManager : public ISystem
 	{
 	public:
+		~EventManager();
 		void Initialize() override;
 		void Update() override {}
 

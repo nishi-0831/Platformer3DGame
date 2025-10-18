@@ -1,3 +1,5 @@
+#include"../ImGui/imgui_impl_win32.h"
+#include "../ImGui/ImGuizmo.h"
 #include "ImGuiEditorCamera.h"
 #include "Game.h"
 #include "GameObject.h"
@@ -6,7 +8,17 @@
 #include "InputData.h"
 #include "CameraSystem.h"
 #include "GameTime.h"
-#include "ImGuiRenderer.h"
+#include "ColliderCP.h"
+#include "ImGuiUtil.h"
+#include "EventManager.h"
+#include "GameObjectSelectionEvent.h"
+#include "MTImGui.h"
+#include <cmath>
+#include <algorithm>
+using namespace mtgb::ImGuiUtil;
+
+const char* ShowState(mtgb::CameraOperation _cameraOperation);
+
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	: orbitDistance_{10.0f}
 	, moveSpeed_{10.0f}
@@ -47,6 +59,20 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 		.OnUpdate(CameraOperation::Track, [this]
 			{
 				DoTrack();
+				if (InputUtil::GetMouseDown(MouseCode::Left))
+				{
+					if ((!ImGuizmo::IsViewManipulateHovered()))
+						if (!ImGuizmo::IsOver())
+						{
+							if (IsMouseInWindow(windowName_.c_str()))
+							{
+								if (pTargetTransform_ != nullptr)
+								{
+									SelectTransform();
+								}
+							}
+						}
+				}
 			})
 		.RegisterTransition(CameraOperation::Track, CameraOperation::Pan,
 			[this]()
@@ -70,17 +96,38 @@ mtgb::ImGuiEditorCamera::~ImGuiEditorCamera()
 {
 }
 
+void mtgb::ImGuiEditorCamera::ShowImGui()
+{
+	ImVec2 mousePos = ImGui::GetMousePos();
+	ImVec2 windowPos = ImGui::GetWindowPos();
+	ImVec2 localPos = ImVec2(mousePos.x - windowPos.x, mousePos.y - windowPos.y);
+
+	TypeRegistry::Instance().CallFunc(&pCameraTransform_->position, "cameraPos");
+	TypeRegistry::Instance().CallFunc(&pCameraTransform_->rotate, "cameraRot");
+	ImGui::InputFloat4("quat", pCameraTransform_->rotate.f);
+	ImGui::InputFloat("AngleX", &angleX_);
+	ImGui::InputFloat("AngleY", &angleY_);
+	const char* statName = ShowState(sCameraOperation_.Current());
+	ImGui::LabelText("State", "%s", statName);
+}
+
 void mtgb::ImGuiEditorCamera::Initialize()
 {
+	Vector3 eulerAngle{ 0,0,0 };
+
 	GameObject* pCamera = new GameObject(
 		GameObjectBuilder()
 		.SetPosition({ 0,0,0 })
+		.SetRotate(Quaternion::Euler(eulerAngle))
 		.SetName("Camera")
 		.Build());
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 
 	pCameraTransform_ = &Game::System<TransformCP>().Get(pCamera->GetEntityId());
 	hCamera_ = Game::System<CameraSystem>().RegisterDrawCamera(pCameraTransform_);
+
+	angleX_ = DirectX::XMConvertToRadians(eulerAngle.x + 90.0f);
+	angleY_ = DirectX::XMConvertToRadians(eulerAngle.y + 90.0f);
 }
 
 void mtgb::ImGuiEditorCamera::SetCamera()
@@ -88,9 +135,26 @@ void mtgb::ImGuiEditorCamera::SetCamera()
 	Game::System<CameraSystem>().SetDrawCamera(hCamera_);
 }
 
+void mtgb::ImGuiEditorCamera::UpdateState()
+{
+	sCameraOperation_.Update();
+
+	CameraOperation operation;
+	if (sCameraOperation_.TryGetNextState(operation))
+	{
+		sCameraOperation_.Change(operation);
+	}
+
+}
+
 void mtgb::ImGuiEditorCamera::SetWindowName(const char* _name)
 {
 	windowName_ = _name;
+}
+
+void mtgb::ImGuiEditorCamera::SetViewPort(const D3D11_VIEWPORT& _viewport)
+{
+	viewport_ = _viewport;
 }
 
 void mtgb::ImGuiEditorCamera::DoDolly()
@@ -115,16 +179,16 @@ void mtgb::ImGuiEditorCamera::DoPan()
 	if (mouseMove.Size() != 0)
 	{
 		// マウス移動量を角度に変換
-		angleY_ += mouseMove.x * rotateSensitivity_ * Time::DeltaTimeF(); // 水平角度
+		
+		
+		angleY_ -= mouseMove.x * rotateSensitivity_ * Time::DeltaTimeF(); // 水平角度
+		
 		angleX_ += mouseMove.y * rotateSensitivity_ * Time::DeltaTimeF(); // 鉛直角度
-
+	
 		// 鉛直角度を制限
-		/*const float MAX_VERTICAL = DirectX::XMConvertToRadians(89.0f);
-		angleX_ = std::clamp(angleX_, -MAX_VERTICAL, MAX_VERTICAL);*/
+		angleX_ = std::clamp(angleX_, DirectX::XMConvertToRadians(0.1f), DirectX::XMConvertToRadians(179.0f));
 
-		static const float ROTATE_DISTANCE = 0.01f;
-		// 本当は0.0fを渡してその場で回転させたかったが上手くいかなかった
-		MoveCameraSpherical(ROTATE_DISTANCE);
+		MoveCameraSphericalOnTheSpot();
 	}
 }
 
@@ -133,9 +197,11 @@ void mtgb::ImGuiEditorCamera::DoOrbit()
 	Vector3 mouseMove = InputUtil::GetMouseMove();
 	if (mouseMove.Size() != 0)
 	{
+		angleY_ -= mouseMove.x * orbitSpeed_ * Time::DeltaTimeF();
 		angleX_ += mouseMove.y * orbitSpeed_ * Time::DeltaTimeF();
-		angleY_ += mouseMove.x * orbitSpeed_ * Time::DeltaTimeF();
 
+		// 鉛直角度を制限
+		angleX_ = std::clamp(angleX_, DirectX::XMConvertToRadians(0.1f), DirectX::XMConvertToRadians(179.0f));
 		MoveCameraSpherical(orbitDistance_);
 	}
 }
@@ -169,7 +235,7 @@ void mtgb::ImGuiEditorCamera::MoveCameraSpherical(float _distance)
 	else
 	{
 		center = pCameraTransform_->position + (pCameraTransform_->Forward() * _distance);
-	}
+	} 
 
 	// θ (polar angle) : 鉛直方向
 	float theta = angleX_;
@@ -181,34 +247,109 @@ void mtgb::ImGuiEditorCamera::MoveCameraSpherical(float _distance)
 	Vector3 offset;
 
 	// 回転中心の方向を向く
-	Vector3 lookDir = Vector3::Zero();
-	if (_distance <= std::numeric_limits<float>::epsilon())
+	
+	// 変換
+	offset.x = _distance * sinf(theta) * cos(phi);
+	offset.y = -_distance * cos(theta);
+	offset.z = -_distance * sin(theta) * sin(phi);
+
+	// 位置を反映
+	pCameraTransform_->position = center + offset;
+
+	Vector3 lookDir = center - pCameraTransform_->position;
+		
+	pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), Vector3::Up());
+	
+}
+
+void mtgb::ImGuiEditorCamera::MoveCameraSphericalOnTheSpot()
+{
+	// ref:https://ja.wikipedia.org/wiki/%E7%90%83%E9%9D%A2%E5%BA%A7%E6%A8%99%E7%B3%BB
+	
+	// θ (polar angle) : 鉛直方向
+	float theta = angleX_;
+
+	// φ (azimuthal angle): 水平方向
+	float phi = angleY_;
+
+	// 回転中心からのオフセット
+	Vector3 offset;
+
+	// 変換
+	offset.x = sinf(theta) * cos(phi);
+	offset.y = cos(theta);
+	offset.z = sin(theta) * sin(phi);
+
+	// その場回転の時はoffsetの方向を向く
+	pCameraTransform_->rotate = Quaternion::LookRotation(offset, Vector3::Up());
+}
+
+void mtgb::ImGuiEditorCamera::FollowTarget()
+{
+	if (pTargetTransform_)
 	{
-		// 変換
-		offset.x = sinf(theta) * cos(phi);
-		offset.y = cos(theta);
-		offset.z = sin(theta) * sin(phi);
+		if (!followTarget_) return;
+
+		if (adjustTargetDirection_)
+		{
+			pCameraTransform_->rotate = pTargetTransform_->rotate;
+			pCameraTransform_->position = pTargetTransform_->position + (pTargetTransform_->Back() * followDistance_);
+		}
+		else
+		{
+			MoveCameraSpherical(followDistance_);
+		}
+	}
+
+}
+
+void mtgb::ImGuiEditorCamera::SelectTransform()
+{
+	Vector3 origin, end, vec;
+	Matrix4x4 proj, view;
+	Game::System<CameraSystem>().GetProjMatrix(&proj);
+	Game::System<CameraSystem>().GetViewMatrix(&view);
+	
+	ImGuiUtil::GetMouseRay(origin, end, proj, view, viewport_);
+
+	vec = end - origin;
+
+	// vec.Normalize()の結果を別変数に保存して、元の長さを保持
+	Vector3 direction = vec.Normalize();  // これで正規化されたベクトルが返される
+
+	const CameraSystem& camera = Game::System<CameraSystem>();
+	float distance = camera.GetFar() - camera.GetNear();          // 元の長さを計算
+
+	EntityId entityId = Game::System<ColliderCP>().RayCastHitAll(origin, direction, distance);
+	if (entityId != INVALD_ENTITY)
+	{
+		// EntityがTransformコンポーネントを持っていない可能性があるのでTryGet
+		Game::System<TransformCP>().TryGet(pTargetTransform_, entityId);
+		
+		mtgb::GameObjectSelectedEvent event{ .entityId = entityId };
+		Game::System<EventManager>().GetEvent<mtgb::GameObjectSelectedEvent>().Invoke(event);
 	}
 	else
 	{
-		// 変換
-		offset.x = _distance * sinf(theta) * cos(phi);
-		offset.y = -_distance * cos(theta);
-		offset.z = -_distance * sin(theta) * sin(phi);
-
-		// 位置を反映
-		pCameraTransform_->position = center + offset;
-
-		lookDir = center - pCameraTransform_->position;
+		pTargetTransform_ = nullptr;
 	}
+}
 
-	if (lookDir.Size() == 0.0f)
+const char* ShowState(mtgb::CameraOperation _cameraOperation)
+{
+	using mtgb::CameraOperation;
+
+	switch (_cameraOperation)
 	{
-		// その場回転の時はoffsetの方向を向く
-		pCameraTransform_->rotate = Quaternion::LookRotation(offset, Vector3::Up());
-	}
-	else
-	{
-		pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), Vector3::Up());
+	case CameraOperation::Track:
+		return "Track";
+	case CameraOperation::Dolly:
+		return "Dolly";
+	case CameraOperation::Pan:
+		return "Pan";
+	case CameraOperation::Orbit:
+		return "Orbit";
+	default:
+		return "Unknown";
 	}
 }

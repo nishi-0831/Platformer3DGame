@@ -12,13 +12,14 @@ SampleScene::~SampleScene()
 
 void SampleScene::Initialize()
 {
-	Game::System<ImGuiRenderer>().Manipulator().Initialize();
+	Game::System<ImGuiRenderer>().GetEditorCamera().Initialize();
 
 	TypeRegistry::Instance();
 	TypeRegistry::Instance().Initialize();
 	MTImGui::Instance().Initialize();
 
 	Instantiate<SampleGround>();
+
 	Camera* pCamera{ Instantiate<Camera>() };
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 

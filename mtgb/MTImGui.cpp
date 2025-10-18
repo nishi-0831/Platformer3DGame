@@ -12,7 +12,9 @@
 #include "WindowContextUtil.h"
 #include "InputResource.h"
 #include "WindowResource.h"
+#include "CameraSystem.h"
 #include "Debug.h"
+#include "ImGuiUtil.h"
 void mtgb::MTImGui::Initialize()
 {
     SetupShowFunc();
@@ -316,8 +318,12 @@ void mtgb::MTImGui::ShowListView(ShowType _show)
 }
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {
-    std::optional<ImVec2> p1 = Game::System<mtgb::ImGuiRenderer>().Manipulator().WorldToImGui(_start);
-    std::optional<ImVec2> p2 = Game::System<mtgb::ImGuiRenderer>().Manipulator().WorldToImGui(_start + _dir);
+    Matrix4x4 proj, view;
+    Game::System<CameraSystem>().GetProjMatrix(&proj);
+    Game::System<CameraSystem>().GetViewMatrix(&view);
+    D3D11_VIEWPORT viewport{ Game::System<mtgb::ImGuiRenderer>().GetViewport() };
+    std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_start,proj,view,viewport);
+    std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_start + _dir,proj,view,viewport);
 
     if (p1 && p2)
     {
@@ -326,8 +332,12 @@ void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, floa
 }
 void mtgb::MTImGui::DrawLineImpl(const Vector3& _from, const Vector3& _to, float _thickness)
 {
-    std::optional<ImVec2> p1 = Game::System<mtgb::ImGuiRenderer>().Manipulator().WorldToImGui(_from);
-    std::optional<ImVec2> p2 = Game::System<mtgb::ImGuiRenderer>().Manipulator().WorldToImGui(_to);
+    Matrix4x4 proj, view;
+    Game::System<CameraSystem>().GetProjMatrix(&proj);
+    Game::System<CameraSystem>().GetViewMatrix(&view);
+    D3D11_VIEWPORT viewport{ Game::System<mtgb::ImGuiRenderer>().GetViewport() };
+    std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_from,proj,view,viewport);
+    std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_to, proj, view, viewport);
 
     if (p1 && p2)
     {
@@ -351,7 +361,8 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
     {
         imGui.Begin(GetName(ShowType::SceneView),&state.isOpen, ImGuiRenderer::WindowFlag::NoMoveWhenHovered);
         
-        imGui.UpdateCamera(GetName(ShowType::SceneView));
+        imGui.SetWindowName(GetName(ShowType::SceneView));
+        imGui.GetEditorCamera();
         imGui.RenderSceneView();
         imGui.SetDrawList();
     }
@@ -409,7 +420,6 @@ void mtgb::MTImGui::DirectShow(std::function<void()> func, const std::string& na
     }
     
 }
-
 
 void mtgb::MTImGui::DrawLine(const Vector3& _from, const Vector3& _to, float _thickness)
 {

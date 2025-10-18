@@ -1,21 +1,12 @@
 #pragma once
 
-#include <type_traits>
-#include <assert.h>
-#include <typeinfo>
-#include <string>
 #include <d3d11.h>
-#include <DirectXMath.h>
 #include <wrl/client.h>
 #include "../ImGui/imgui.h"
 
 #include "ISystem.h"
-#include "IncludingWindows.h"
-#include "ImGuiShowable.h"
-#include "Handlers.h"
-#include "ShowType.h"
 #include "ImGuizmoManipulator.h"
-
+#include "ImGuiEditorCamera.h"
 using Microsoft::WRL::ComPtr;
 struct ID3D11RenderTargetView;
 struct ID3D11ShaderResourceView;
@@ -27,8 +18,6 @@ namespace mtgb
 	class GameObject;
 	class Transform;
 	struct Vector3;
-	
-	bool IsMouseInWindow(const char* _name);
 	
 	class ImGuiRenderer final : public ISystem
 	{
@@ -45,11 +34,8 @@ namespace mtgb
 		void Initialize() override;
 		void Update() override;
 		void BeginFrame();
-		void UpdateCamera(const char* _name);
 		void BeginImGuizmoFrame();
-
-		
-		
+		void SetWindowName(const char* _name);
 		
 		void Begin(const char* _str, bool* _isOpen = NULL ,WindowFlag _flag = WindowFlag::None);
 		
@@ -82,14 +68,16 @@ namespace mtgb
 		/// <param name="height">新しい高さ</param>
 		void OnResize(UINT width, UINT height);
 		
-		const D3D11_VIEWPORT& GetViewport() { return viewport_; }
-		ImGuizmoManipulator&  Manipulator() { return *manipulator_; };
+		D3D11_VIEWPORT GetViewport(){ return viewport_; }
+		ImGuiEditorCamera& GetEditorCamera() { return *pEditorCamera_; };
+		//ImGuizmoManipulator&  Manipulator() { return *pManipulator_; };
 	private:
 		void CreateD3DResources();
 		UINT winWidth_, winHeight_;
 		bool isManipulatingGuizmo_;
-		ImGuizmoManipulator* manipulator_;
-		
+		ImGuizmoManipulator* pManipulator_;
+		ImGuiEditorCamera* pEditorCamera_;
+
 		// Game Viewウィンドウの前フレーム情報
 		ImVec2 gameViewPos_;
 		ImVec2 gameViewSize_;

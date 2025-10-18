@@ -14,5 +14,6 @@ namespace mtgb
 	private:
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
+		Collider* pCollider_;
 	};
 }
