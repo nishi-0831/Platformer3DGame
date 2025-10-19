@@ -12,7 +12,7 @@ SampleScene::~SampleScene()
 
 void SampleScene::Initialize()
 {
-	Game::System<ImGuiRenderer>().GetEditorCamera().Initialize();
+	Game::System<ImGuiEditorCamera>().CreateCamera();
 
 	TypeRegistry::Instance();
 	TypeRegistry::Instance().Initialize();

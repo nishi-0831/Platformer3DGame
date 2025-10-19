@@ -361,8 +361,6 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
     {
         imGui.Begin(GetName(ShowType::SceneView),&state.isOpen, ImGuiRenderer::WindowFlag::NoMoveWhenHovered);
         
-        imGui.SetWindowName(GetName(ShowType::SceneView));
-        imGui.GetEditorCamera();
         imGui.RenderSceneView();
         imGui.SetDrawList();
     }

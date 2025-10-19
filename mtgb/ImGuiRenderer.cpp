@@ -32,8 +32,6 @@ mtgb::ImGuiRenderer::ImGuiRenderer()
 }
 mtgb::ImGuiRenderer::~ImGuiRenderer()
 {
-	SAFE_DELETE(pEditorCamera_);
-	SAFE_DELETE(pManipulator_);
 }
 
 void mtgb::ImGuiRenderer::Initialize()
@@ -82,14 +80,10 @@ void mtgb::ImGuiRenderer::Initialize()
 
 	CreateD3DResources();
 
-	pManipulator_ = new ImGuizmoManipulator();
-	pEditorCamera_ = new ImGuiEditorCamera();
-	pEditorCamera_->SetViewPort(viewport_);
 }
 
 void mtgb::ImGuiRenderer::Update()
 {
-	pEditorCamera_->UpdateState();
 }
 
 void mtgb::ImGuiRenderer::BeginFrame()
@@ -105,10 +99,7 @@ void mtgb::ImGuiRenderer::BeginImGuizmoFrame()
 	ImGuizmo::BeginFrame();
 }
 
-void mtgb::ImGuiRenderer::SetWindowName(const char* _name)
-{
-	pEditorCamera_->SetWindowName(_name);
-}
+
 
 void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlag _flag)
 {
@@ -134,10 +125,7 @@ void mtgb::ImGuiRenderer::SetImGuizmoRenderTargetView()
 	//Game::System<DirectX11Manager>().ChangeViewport(viewport_);
 	Game::System<DirectX11Manager>().ChangeRenderTargets(pRenderTargetView_,pDepthStencilView_);
 }
-void mtgb::ImGuiRenderer::SetGameViewCamera()
-{
-	pEditorCamera_->SetCamera();
-}
+
 void mtgb::ImGuiRenderer::Draw()
 {
 
@@ -179,7 +167,6 @@ void mtgb::ImGuiRenderer::End()
 }
 void mtgb::ImGuiRenderer::Release()
 {
-	SAFE_DELETE(pManipulator_);
 	ImGui_ImplDX11_Shutdown();
 	ImGui_ImplWin32_Shutdown();
 	ImGui::DestroyContext();

@@ -64,7 +64,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	imGui.SetImGuizmoRenderTargetView();
 
 	DirectX11Draw::Begin();
-	imGui.SetGameViewCamera();
+	Game::System<ImGuiEditorCamera>().SetCamera();
 	DrawGameObjects(_scene, AllLayer());
 
 	MTImGui::Instance().ShowWindow(ShowType::SceneView);

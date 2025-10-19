@@ -3,7 +3,7 @@
 #include "MTStat/MTStat.h"
 #include "ImGuiShowable.h"
 #include <string>
-#include <d3d11.h>
+#include "ISystem.h"
 namespace mtgb
 {
 	class Transform;
@@ -14,18 +14,17 @@ namespace mtgb
 		Pan,	// カメラ自身を軸として回転
 		Orbit	// ターゲットを軸として回転
 	};
-	class ImGuiEditorCamera : public ImGuiShowable
+	class ImGuiEditorCamera : public ImGuiShowable ,public ISystem
 	{
 	public:
 		ImGuiEditorCamera();
 		~ImGuiEditorCamera();
 		void ShowImGui() override;
-		void Initialize();
+		void Initialize() override;
 		void SetCamera();
 		
-		void UpdateState();
-		void SetWindowName(const char* _name);
-		void SetViewPort(const D3D11_VIEWPORT& _viewport);
+		void Update() override;
+		void CreateCamera();
 	private:
 		void DoDolly();
 		void DoPan();
@@ -40,7 +39,6 @@ namespace mtgb
 		Transform* pTargetTransform_;
 		float angleX_, angleY_;
 		CameraHandleInScene hCamera_;
-		D3D11_VIEWPORT viewport_;
 		mtstat::MTStat<CameraOperation> sCameraOperation_;
 		float rotateSensitivity_;
 		float moveSpeed_;

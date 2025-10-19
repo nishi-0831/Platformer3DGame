@@ -35,7 +35,6 @@ namespace mtgb
 		void Update() override;
 		void BeginFrame();
 		void BeginImGuizmoFrame();
-		void SetWindowName(const char* _name);
 		
 		void Begin(const char* _str, bool* _isOpen = NULL ,WindowFlag _flag = WindowFlag::None);
 		
@@ -44,7 +43,6 @@ namespace mtgb
 		/// </summary>
 		void SetImGuizmoRenderTargetView();
 
-		void SetGameViewCamera();
 		void Draw();
 		
 		void EndFrame();
@@ -69,14 +67,9 @@ namespace mtgb
 		void OnResize(UINT width, UINT height);
 		
 		D3D11_VIEWPORT GetViewport(){ return viewport_; }
-		ImGuiEditorCamera& GetEditorCamera() { return *pEditorCamera_; };
-		//ImGuizmoManipulator&  Manipulator() { return *pManipulator_; };
 	private:
 		void CreateD3DResources();
 		UINT winWidth_, winHeight_;
-		bool isManipulatingGuizmo_;
-		ImGuizmoManipulator* pManipulator_;
-		ImGuiEditorCamera* pEditorCamera_;
 
 		// Game Viewウィンドウの前フレーム情報
 		ImVec2 gameViewPos_;

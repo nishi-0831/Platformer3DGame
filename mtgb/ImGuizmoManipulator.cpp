@@ -19,6 +19,7 @@
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
 #include "Debug.h"
+#include "Entity.h"
 namespace
 {
 	
@@ -70,15 +71,9 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 
 
 
-void mtgb::ImGuizmoManipulator::SetTarget(Transform* _pTarget)
-{
-	pTargetTransform_ = _pTarget;
-}
 
-void mtgb::ImGuizmoManipulator::SetViewport(const D3D11_VIEWPORT& _viewport)
-{
-	viewport_ = _viewport;
-}
+
+
 
 void mtgb::ImGuizmoManipulator::SubscribeGameObjectSelectionEvent()
 {
@@ -86,26 +81,20 @@ void mtgb::ImGuizmoManipulator::SubscribeGameObjectSelectionEvent()
 	eventManager.GetEvent<GameObjectSelectedEvent>().Subscribe(
 		[this](const GameObjectSelectedEvent& _event)
 		{
-			ImGuizmo::Enable(true);
-			Game::System<TransformCP>().TryGet(pTargetTransform_, _event.entityId);
-			LOGIMGUI("Manipulator:Selected");
+			Select(_event.entityId);
 		},EventScope::Global);
 
 	eventManager.GetEvent<SelectionClearedEvent>().Subscribe(
 		[this](const SelectionClearedEvent& _event)
 		{
-			ImGuizmo::Enable(false);
-			pTargetTransform_ = nullptr;
+			Deselect();
 		}, EventScope::Global);
 
 	// 今後、同時に複数のオブジェクトを選択可能な場合になった際には修正
 	eventManager.GetEvent<GameObjectDeselectedEvent>().Subscribe(
 		[this](const GameObjectDeselectedEvent& _event)
 		{
-			ImGuizmo::Enable(false);
-			pTargetTransform_ = nullptr;
-			LOGIMGUI("Manipulator:Deselected");
-
+			Deselect();
 		}, EventScope::Global);
 }
 
@@ -130,16 +119,25 @@ void mtgb::ImGuizmoManipulator::Calculate()
 	memcpy(projMat_, &float4x4_, sizeof(projMat_));
 }
 
-mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
+mtgb::ImGuizmoManipulator::ImGuizmoManipulator(std::function<void(Command*)> _commandListener)
 	:ImGuiShowable("Manipulater", ShowType::SceneView)
 	, operation_{ ImGuizmo::TRANSLATE }
 	, mode_{ ImGuizmo::LOCAL }
+	, commandListener_{_commandListener}
 {
 	SubscribeGameObjectSelectionEvent();
 }
 
 mtgb::ImGuizmoManipulator::~ImGuizmoManipulator()
 {	
+}
+
+void mtgb::ImGuizmoManipulator::Initialize()
+{
+}
+
+void mtgb::ImGuizmoManipulator::Update()
+{
 }
 
 
@@ -178,6 +176,19 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 	}
 
 	ImGui::ShowDemoWindow();
+}
+
+void mtgb::ImGuizmoManipulator::Select(mtgb::EntityId _id)
+{
+	ImGuizmo::Enable(true);
+	Game::System<TransformCP>().TryGet(pTargetTransform_, _id);
+	LOGIMGUI("Manipulator:Selected");
+}
+
+void mtgb::ImGuizmoManipulator::Deselect()
+{
+	ImGuizmo::Enable(false);
+	pTargetTransform_ = nullptr;
 }
 
 

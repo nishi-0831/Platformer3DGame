@@ -15,13 +15,19 @@
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
 #include "MTImGui.h"
+#include "ImGuiRenderer.h"
 #include <cmath>
 #include <algorithm>
 #include "Debug.h"
+#include <d3d11.h>
 using namespace mtgb::ImGuiUtil;
 
 const char* ShowState(mtgb::CameraOperation _cameraOperation);
 
+namespace
+{
+	const mtgb::Vector3 INIT_ANGLE{ 0,0,0 };
+}
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	: orbitDistance_{10.0f}
 	, moveSpeed_{10.0f}
@@ -33,6 +39,8 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	, angleY_{0.0f}
 	, hCamera_{INVALD_ENTITY}
 {
+	windowName_ = MTImGui::Instance().GetName(ShowType::SceneView);
+
 	// Dolly
 	sCameraOperation_
 		.OnUpdate(CameraOperation::Dolly, [this]
@@ -115,21 +123,8 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 
 void mtgb::ImGuiEditorCamera::Initialize()
 {
-	Vector3 eulerAngle{ 0,0,0 };
 
-	GameObject* pCamera = new GameObject(
-		GameObjectBuilder()
-		.SetPosition({ 0,0,0 })
-		.SetRotate(Quaternion::Euler(eulerAngle))
-		.SetName("Camera")
-		.Build());
-	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
-
-	pCameraTransform_ = &Game::System<TransformCP>().Get(pCamera->GetEntityId());
-	hCamera_ = Game::System<CameraSystem>().RegisterDrawCamera(pCameraTransform_);
-
-	angleX_ = DirectX::XMConvertToRadians(eulerAngle.x + 90.0f);
-	angleY_ = DirectX::XMConvertToRadians(eulerAngle.y + 90.0f);
+	
 }
 
 void mtgb::ImGuiEditorCamera::SetCamera()
@@ -137,7 +132,7 @@ void mtgb::ImGuiEditorCamera::SetCamera()
 	Game::System<CameraSystem>().SetDrawCamera(hCamera_);
 }
 
-void mtgb::ImGuiEditorCamera::UpdateState()
+void mtgb::ImGuiEditorCamera::Update()
 {
 	sCameraOperation_.Update();
 
@@ -146,18 +141,25 @@ void mtgb::ImGuiEditorCamera::UpdateState()
 	{
 		sCameraOperation_.Change(operation);
 	}
-
 }
 
-void mtgb::ImGuiEditorCamera::SetWindowName(const char* _name)
+void mtgb::ImGuiEditorCamera::CreateCamera()
 {
-	windowName_ = _name;
+	GameObject* pCamera = new GameObject(
+		GameObjectBuilder()
+		.SetPosition({ 0,0,0 })
+		.SetRotate(Quaternion::Euler(INIT_ANGLE))
+		.SetName("Camera")
+		.Build());
+	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
+
+	pCameraTransform_ = &Game::System<TransformCP>().Get(pCamera->GetEntityId());
+	hCamera_ = Game::System<CameraSystem>().RegisterDrawCamera(pCameraTransform_);
+
+	angleX_ = DirectX::XMConvertToRadians(INIT_ANGLE.x + 90.0f);
+	angleY_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
 }
 
-void mtgb::ImGuiEditorCamera::SetViewPort(const D3D11_VIEWPORT& _viewport)
-{
-	viewport_ = _viewport;
-}
 
 void mtgb::ImGuiEditorCamera::DoDolly()
 {
@@ -318,7 +320,7 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 
 	ImRect workRect = window->WorkRect;
 	ImVec2 workPos = workRect.Min;
-	ImGuiUtil::GetMouseRay(origin, end, proj, view, viewport_, { workPos.x,workPos.y });
+	ImGuiUtil::GetMouseRay(origin, end, proj, view, Game::System<ImGuiRenderer>().GetViewport(), {workPos.x,workPos.y});
 
 	vec = end - origin;
 

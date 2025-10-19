@@ -54,6 +54,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 
 
 	_register.Set<ImGuiRenderer>(SystemUpdateType::Frame);
+	_register.Set<ImGuiEditorCamera>(SystemUpdateType::Frame);
 	_register.Set<ScoreManager>(SystemUpdateType::Frame);
 
 
@@ -78,6 +79,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 
 	_register.Set<Draw>(SystemUpdateType::DontCallMe);
 	_register.Set<EventManager>(SystemUpdateType::DontCallMe);
+	_register.Set<ImGuiEditor>(SystemUpdateType::Frame);
 
 	_register.Set<SceneSystem>(SystemUpdateType::Frame);
 
