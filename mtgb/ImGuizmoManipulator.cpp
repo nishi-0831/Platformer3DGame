@@ -17,7 +17,6 @@
 #include <algorithm>
 #include "SceneSystem.h"
 #include "EventManager.h"
-#include "GameObjectSelectionEvent.h"
 #include "Debug.h"
 #include "Entity.h"
 namespace
@@ -69,32 +68,26 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 	ImGui::PopID();
 }
 
-
-
-
-
-
-
 void mtgb::ImGuizmoManipulator::SubscribeGameObjectSelectionEvent()
 {
 	EventManager& eventManager{ Game::System<EventManager>() };
 	eventManager.GetEvent<GameObjectSelectedEvent>().Subscribe(
 		[this](const GameObjectSelectedEvent& _event)
 		{
-			Select(_event.entityId);
+			GenerateCommand(_event);
 		},EventScope::Global);
 
 	eventManager.GetEvent<SelectionClearedEvent>().Subscribe(
 		[this](const SelectionClearedEvent& _event)
 		{
-			Deselect();
+			
 		}, EventScope::Global);
 
 	// 今後、同時に複数のオブジェクトを選択可能な場合になった際には修正
 	eventManager.GetEvent<GameObjectDeselectedEvent>().Subscribe(
 		[this](const GameObjectDeselectedEvent& _event)
 		{
-			Deselect();
+			GenerateCommand(_event);
 		}, EventScope::Global);
 }
 
@@ -140,10 +133,6 @@ void mtgb::ImGuizmoManipulator::Update()
 {
 }
 
-
-
-
-
 void mtgb::ImGuizmoManipulator::ShowImGui()
 {
 	//ImGuizmoの操作モードを指定
@@ -178,11 +167,20 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 	ImGui::ShowDemoWindow();
 }
 
-void mtgb::ImGuizmoManipulator::Select(mtgb::EntityId _id)
+
+
+void mtgb::ImGuizmoManipulator::Select(EntityId _id)
 {
-	ImGuizmo::Enable(true);
-	Game::System<TransformCP>().TryGet(pTargetTransform_, _id);
-	LOGIMGUI("Manipulator:Selected");
+	if (_id == INVALD_ENTITY)
+	{
+		ImGuizmo::Enable(false);
+		pTargetTransform_ = nullptr;
+	}
+	else
+	{
+		ImGuizmo::Enable(true);
+		Game::System<TransformCP>().TryGet(pTargetTransform_, _id);
+	}
 }
 
 void mtgb::ImGuizmoManipulator::Deselect()
@@ -191,5 +189,28 @@ void mtgb::ImGuizmoManipulator::Deselect()
 	pTargetTransform_ = nullptr;
 }
 
+void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectSelectedEvent& _event)
+{
+	commandListener_(new SelectionCommand((_event),
+		[this](const GameObjectSelectedEvent _evt)
+		{
+			Select(_evt.entityId);
+		},
+		[this](const GameObjectSelectedEvent _evt)
+		{
+			Deselect();
+		}));
+}
 
-
+void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectDeselectedEvent& _event)
+{
+	commandListener_(new DeselectionCommand((_event),
+		[this](const GameObjectDeselectedEvent& _evt)
+		{
+			Deselect();
+		},
+		[this](const GameObjectDeselectedEvent& _evt)
+		{
+			Select(_evt.entityId);
+		}));
+}

@@ -343,8 +343,8 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 	}
 	else
 	{
+		mtgb::GameObjectDeselectedEvent event{ .entityId = pTargetTransform_->GetEntityId()};
 		pTargetTransform_ = nullptr;
-		mtgb::GameObjectDeselectedEvent event{ .entityId = entityId };
 
 		Game::System<EventManager>().GetEvent<mtgb::GameObjectDeselectedEvent>().Invoke(event);
 		LOGIMGUI("EditorCamera:No Select");

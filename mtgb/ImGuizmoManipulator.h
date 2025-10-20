@@ -6,6 +6,9 @@
 #include "../ImGui/ImGuizmo.h"
 #include <functional>
 #include "Command.h"
+#include "CommandHandlerRegistry.h"
+#include "GameObjectSelectionEvent.h"
+#include "SelectionCommand.h"
 namespace mtgb
 {
 	class GameObject;
@@ -22,9 +25,11 @@ namespace mtgb
 		void Update();
 		void ShowImGui() override;
 		
-	private:
 		void Select(EntityId _id);
 		void Deselect();
+	private:
+		void GenerateCommand(const GameObjectSelectedEvent& _event);
+		void GenerateCommand(const GameObjectDeselectedEvent& _event);
 		std::function<void(Command*)> commandListener_;
 		void SubscribeGameObjectSelectionEvent();
 

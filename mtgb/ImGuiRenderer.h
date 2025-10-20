@@ -49,8 +49,6 @@ namespace mtgb
 		void SetDrawList();
 		
 		void RenderSceneView();
-		bool IsHoveringWindow();
-		/*bool IsMouseInGameView();*/
 		void UpdateGameViewRect();
 		void End();
 		void Release();
