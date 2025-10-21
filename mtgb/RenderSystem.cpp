@@ -54,7 +54,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 
 	// Settingsï\é¶
 	MTImGui::Instance().ShowWindow(ShowType::Settings);
-
+	MTImGui::Instance().ShowWindow(ShowType::Editor);
 	// ÉçÉOï\é¶
 	MTImGui::Instance().ShowLog();
 

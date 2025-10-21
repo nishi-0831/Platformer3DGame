@@ -2,10 +2,11 @@
 #include "ISystem.h"
 #include "ImGuizmoManipulator.h"
 #include "ImGuiEditorCamera.h"
-#include "CommandHistoryManager.h"
+#include "CommandHistoryManagerWrapper.h"
+#include "ImGuiShowable.h"
 namespace mtgb
 {
-	class ImGuiEditor : public ISystem
+	class ImGuiEditor : public ISystem , ImGuiShowable
 	{
 	public:
 		ImGuiEditor();
@@ -14,9 +15,10 @@ namespace mtgb
 		void Initialize() override;
 		void Release() override;
 		void Update() override;
+		void ShowImGui() override;
 
 	private:
-		CommandHistoryManager* commandHistory_;
+		CommandHistoryManagerWrapper* pCommandHistory_;
 		ImGuizmoManipulator* pManipulator_;
 	};
 }

@@ -9,10 +9,10 @@ mtgb::SampleGround::SampleGround() : GameObject(GameObjectBuilder()
 	,pMeshRenderer_{Component<MeshRenderer>()}
 	,pCollider_{Component<Collider>()}
 {
-	pMeshRenderer_->SetMesh(Fbx::Load("Model/TestGround.fbx"));
+	pMeshRenderer_->SetMesh(Fbx::Load("Model/Box.fbx"));
 	pCollider_->type_ = Collider::TYPE_AABB;
 	pCollider_->SetCenter(pTransform_->position);
-	pCollider_->SetExtents(pTransform_->scale);
+	pCollider_->SetExtents(pTransform_->scale * 0.5f);
 }
 
 mtgb::SampleGround::~SampleGround()

@@ -61,7 +61,7 @@ namespace mtgb
 				selectFunc_(event_);
 			}
 		}
-		std::string Name() const override { return "SelectionCommand"; }
+		std::string Name() const override { return "DeselectionCommand"; }
 	private:
 		GameObjectDeselectedEvent event_;
 		ExecuteFn deselectFunc_;

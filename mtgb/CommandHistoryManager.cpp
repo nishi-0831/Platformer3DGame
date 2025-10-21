@@ -1,5 +1,6 @@
 #include "CommandHistoryManager.h"
 #include "ReleaseUtility.h"
+#include "CommandHistoryManagerWrapper.h"
 
 void CommandHistoryManager::ExecuteCommand(Command* _command)
 {
@@ -34,9 +35,11 @@ void CommandHistoryManager::ClearAllStack()
 	ClearRedoStack();
 }
 
+
+
 void CommandHistoryManager::ClearRedoStack()
 {
-	while (redoStack_.empty())
+	while (redoStack_.empty() == false)
 	{
 		SAFE_DELETE(redoStack_.top());
 		redoStack_.pop();

@@ -163,8 +163,6 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 	{
 		mode_ = ImGuizmo::WORLD;
 	}
-
-	ImGui::ShowDemoWindow();
 }
 
 
