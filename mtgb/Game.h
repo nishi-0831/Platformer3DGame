@@ -59,6 +59,7 @@ namespace mtgb
 			template<typename SystemT>
 			void Set(SystemUpdateType _type, const bool _isComponentCP = false) const
 			{
+
 				function_(
 					typeid(SystemT),
 					dynamic_cast<ISystem*>(new SystemT{}),

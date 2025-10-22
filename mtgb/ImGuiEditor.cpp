@@ -1,13 +1,20 @@
 #include "ImGuiEditor.h"
+#include "ReleaseUtility.h"
+#include "RegisterComponents.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
 	pCommandHistory_ = new CommandHistoryManagerWrapper(new CommandHistoryManager());
 	pManipulator_ = new ImGuizmoManipulator([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); });
+
+	pComponentFactory_ = new ComponentFactory();
+	// コンポーネントの作成関数を登録
+	mtgb::RegisterComponents(pComponentFactory_);
 }
 
 mtgb::ImGuiEditor::~ImGuiEditor()
 {
+	SAFE_DELETE(pComponentFactory_);
 }
 
 void mtgb::ImGuiEditor::Initialize()
@@ -26,6 +33,33 @@ void mtgb::ImGuiEditor::Update()
 void mtgb::ImGuiEditor::ShowImGui()
 {
 	pCommandHistory_->DrawImGuiStack();
+	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
+}
+
+void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
+{
+	if (pComponentFactory_->CreateComponent(_componentType,_entityId))
+	{
+		// コンポーネント作成成功
+	}
+	else
+	{
+		// 失敗
+	}
+}
+
+void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)
+{
+	std::vector<std::type_index> registeredTypes;
+	pComponentFactory_->GetRegisteredTypes(registeredTypes);
+
+	for (const auto& typeInfo : registeredTypes)
+	{
+		if (ImGui::Button(typeInfo.name()))
+		{
+			AddComponent(typeInfo, _entityId);
+		}
+	}
 }
 
 

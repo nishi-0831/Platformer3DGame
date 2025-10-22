@@ -3,7 +3,7 @@
 
 namespace mtgb
 {
-	class SampleGround : public GameObject
+	class SampleGround : public GameObject , public ImGuiShowable
 	{
 	public:
 		SampleGround();
@@ -11,6 +11,7 @@ namespace mtgb
 
 		void Update() override;
 		void Draw() const override;
+		void ShowImGui() override;
 	private:
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;

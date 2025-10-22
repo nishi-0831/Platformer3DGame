@@ -2,12 +2,14 @@
 #include <vector>
 #include <queue>
 #include <type_traits>
+#include <typeindex>
 #include <functional>
 #include "ShowType.h"
 #include "ImGuiShowable.h"
 #include "TypeRegistry.h"
 #include <optional>
 #include <tuple>
+#include "ComponentConcept.h"
 #include <map>
 namespace mtgb
 {
@@ -20,8 +22,12 @@ namespace mtgb
 	struct ImGuiWindowState
 	{
 		std::string selectedName;
-		bool isOpen = false;
+		EntityId entityId{ INVALD_ENTITY };
+		bool isOpen{ false };
 	};
+
+	
+
 	/// <summary>
 		/// ImGuiに表示をする際に使う
 		/// </summary>
@@ -120,6 +126,7 @@ namespace mtgb
 		void ChangeWindowOpen(ShowType _showType);
 		void ChangeAllWindowOpen();
 		void ShowLog();
+		void ShowComponents(EntityId _entityId);
 	private:
 		MTImGui();
 		MTImGui(const MTImGui& other) = delete;
@@ -137,7 +144,11 @@ namespace mtgb
 		std::map<ShowType, ShowQueue> showQueues_;
 		std::map<ShowType, ImGuiWindowState> imguiWindowStates_; // ShowTypeごとのウィンドウの状態
 
-		//std::queue<std::pair<std::string,std::function<void()>>> inspectorShowList_;
+		void RegisterAllComponentViewers();
+		template<ComponentT T>
+		void RegisterComponentViewer();
+
+		std::unordered_map<std::type_index, std::function<void(EntityId)>> componentShowFuncs_;
 		std::queue<std::function<void()>> sceneViewShowList_;
 
 		void DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness);
@@ -153,4 +164,6 @@ namespace mtgb
 		//PushShowFunc( [=] {proxy->ShowImGui(std::any(target), name); }, show);
 		DirectShow([=]() {TypeRegistry::Instance().CallFunc<Type>(target, name.c_str()); }, name, show);
 	}
+	
+	
 }

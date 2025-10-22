@@ -86,6 +86,7 @@ namespace mtgb
 		undoNames_.clear();
 		redoNames_.clear();
 	}
+
 	void CommandHistoryManagerWrapper::DrawImGuiStack() const
 	{
 		ImGui::BeginChild("CommandHistory", ImVec2(0, 0));

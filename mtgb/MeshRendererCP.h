@@ -4,13 +4,14 @@
 #include "GameObjectLayer.h"
 namespace mtgb
 {
+    class MeshRenderer;
     /// <summary>
     /// MeshRendererコンポーネントシステム
     /// </summary>
     class MeshRendererCP : public ComponentPool<MeshRenderer>
     {
     public:
-        void Initialize() override;
+        void Initialize();
         void Update() override;
 
         /// <summary>

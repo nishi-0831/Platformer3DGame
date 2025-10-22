@@ -8,6 +8,7 @@ mtgb::SampleGround::SampleGround() : GameObject(GameObjectBuilder()
 	,pTransform_{Component<Transform>()}
 	,pMeshRenderer_{Component<MeshRenderer>()}
 	,pCollider_{Component<Collider>()}
+	,ImGuiShowable(name_,ShowType::Inspector,Entity::entityId_)
 {
 	pMeshRenderer_->SetMesh(Fbx::Load("Model/Box.fbx"));
 	pCollider_->type_ = Collider::TYPE_AABB;
@@ -21,10 +22,15 @@ mtgb::SampleGround::~SampleGround()
 
 void mtgb::SampleGround::Update()
 {
-	MTImGui::Instance().TypedShow(&pTransform_->position, "Ground");
+	//MTImGui::Instance().TypedShow(&pTransform_->position, "Ground");
 }
 
 void mtgb::SampleGround::Draw() const
 {
 	pCollider_->Draw();
+}
+
+void mtgb::SampleGround::ShowImGui()
+{
+	MTImGui::Instance().ShowComponents(Entity::entityId_);
 }

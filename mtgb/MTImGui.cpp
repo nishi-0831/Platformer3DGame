@@ -1,5 +1,9 @@
 #include "MTImGui.h"
 #include "Transform.h"
+#include "Collider.h"
+#include "MeshRenderer.h"
+#include "RigidBody.h"
+#include "AudioPlayer.h"
 #include "Vector3.h"
 #include "ImGuiRenderer.h"
 #include "../ImGui/imgui.h"
@@ -8,13 +12,16 @@
 #include "RectContainsInfo.h"
 #include "RectDetector.h"
 #include <string>
-#include <format>
+#include "GameObject.h"
 #include "WindowContextUtil.h"
 #include "InputResource.h"
 #include "WindowResource.h"
 #include "CameraSystem.h"
 #include "Debug.h"
 #include "ImGuiUtil.h"
+#include "EventManager.h"
+#include "GameObjectSelectionEvent.h"
+#include "inttypes.h"
 void mtgb::MTImGui::Initialize()
 {
     SetupShowFunc();
@@ -203,6 +210,24 @@ void mtgb::MTImGui::ShowLog()
 }
 mtgb::MTImGui::MTImGui()
 {
+    RegisterAllComponentViewers();
+
+    // ゲームオブジェクトが選択されたときに、それを表示対象とする
+    Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe([this](const GameObjectSelectedEvent& _handler)
+        {
+            EntityId selectedEntityId = _handler.entityId;
+            if (selectedEntityId == INVALD_ENTITY) return;
+
+			for (ImGuiShowable* obj : showableObjs_)
+			{
+                if (selectedEntityId == obj->entityId_)
+                {
+                    imguiWindowStates_[ShowType::Inspector].selectedName = obj->displayName_;
+                    imguiWindowStates_[ShowType::Inspector].entityId = obj->entityId_;
+                }
+			}
+
+        }, EventScope::Global);
 }
 mtgb::MTImGui::~MTImGui()
 {
@@ -228,6 +253,26 @@ void mtgb::MTImGui::SetupShowFunc()
             TypeRegistry::Instance().CallFunc(&_target->position, "Position");
             TypeRegistry::Instance().CallFunc(&_target->rotate, "Rotation");
             TypeRegistry::Instance().CallFunc(&_target->scale, "Scale");
+        });
+
+    Set<MeshRenderer>([](MeshRenderer* _target, const char* _name)
+        {
+            ImGui::LabelText("ModelHandle", "%PRId32", _target->GetMesh());
+        });
+
+    Set<Collider>([](Collider* _target, const char* _name)
+        {
+            ImGui::Text("Collider Property");
+        });
+
+    Set<AudioPlayer>([](AudioPlayer* _target, const char* _name)
+        {
+            ImGui::Text("AudioPlayer Property");
+        });
+   
+    Set<RigidBody>([](RigidBody* _target, const char* _name)
+        {
+            TypeRegistry::Instance().CallFunc(&_target->velocity_, "Velocity");
         });
 
     Set<DirectX::XMVECTOR>([](DirectX::XMVECTOR* _target, const char* _name)
@@ -315,6 +360,26 @@ void mtgb::MTImGui::ShowListView(ShowType _show)
         selectedFunc();
     }
     ImGui::EndChild();
+}
+void mtgb::MTImGui::ShowComponents(EntityId _entityId)
+{
+    if (_entityId == INVALD_ENTITY) return;
+
+    const auto& types = IComponentPool::GetComponentTypes(_entityId);
+    if (types.has_value() == false) return;
+
+    for (const auto& typeIdx : (*types).get())
+    {
+        componentShowFuncs_[typeIdx](_entityId);
+    }
+}
+void mtgb::MTImGui::RegisterAllComponentViewers()
+{
+    RegisterComponentViewer<Transform>();
+    RegisterComponentViewer<Collider>();
+    RegisterComponentViewer<AudioPlayer>();
+    RegisterComponentViewer<RigidBody>();
+    RegisterComponentViewer<MeshRenderer>();
 }
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {
@@ -447,4 +512,17 @@ void mtgb::MTImGui::DrawVec(const Vector3& _start, const Vector3& _vec, float _t
     {
         sceneViewShowList_.push([=]() {DrawRayImpl(_start, _vec, _thickness); });
     }
+}
+
+template<mtgb::ComponentT T>
+inline void mtgb::MTImGui::RegisterComponentViewer()
+{
+    std::type_index typeIdx(typeid(T));
+
+    componentShowFuncs_[typeIdx] = [this](EntityId _entityId)
+        {
+            GameObject* obj =  mtgb::GameObject::FindGameObject(_entityId);
+            std::string name = obj->GetName() + ":Components";
+            TypeRegistry::Instance().CallFunc<T>(&(T::template Get(_entityId)), name.c_str());
+        };
 }

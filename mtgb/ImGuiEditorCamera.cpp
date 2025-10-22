@@ -343,6 +343,7 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 	}
 	else
 	{
+		if (entityId == INVALD_ENTITY) return;
 		mtgb::GameObjectDeselectedEvent event{ .entityId = pTargetTransform_->GetEntityId()};
 		pTargetTransform_ = nullptr;
 

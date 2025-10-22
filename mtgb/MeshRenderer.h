@@ -1,19 +1,21 @@
 #pragma once
 #include "IComponent.h"
+#include "MeshRendererCP.h"
 #include "Handlers.h"
 #include "GameObjectLayer.h"
 #include "ShaderType.h"
 namespace mtgb
 {
+    
     class MeshRendererCP;
-
     /// <summary>
     /// メッシュとマテリアルを管理する描画コンポーネント
     /// </summary>
-    class MeshRenderer : public IComponent<MeshRendererCP, MeshRenderer>
+    class MeshRenderer : public IComponent<mtgb::MeshRendererCP, MeshRenderer>
     {
     public:
-        using IComponent<MeshRendererCP, MeshRenderer>::IComponent;
+        friend MeshRendererCP;
+        using IComponent<mtgb::MeshRendererCP, MeshRenderer>::IComponent;
 
         MeshRenderer();
         /// <summary>

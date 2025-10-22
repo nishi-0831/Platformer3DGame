@@ -4,6 +4,7 @@
 #include "ImGuiEditorCamera.h"
 #include "CommandHistoryManagerWrapper.h"
 #include "ImGuiShowable.h"
+#include "ComponentFactory.h"
 namespace mtgb
 {
 	class ImGuiEditor : public ISystem , ImGuiShowable
@@ -18,6 +19,9 @@ namespace mtgb
 		void ShowImGui() override;
 
 	private:
+		void AddComponent(const std::type_index& _componentType, EntityId _entityId);
+		void ShowAddComponentDialog(EntityId _entityId);
+		ComponentFactory* pComponentFactory_;
 		CommandHistoryManagerWrapper* pCommandHistory_;
 		ImGuizmoManipulator* pManipulator_;
 	};

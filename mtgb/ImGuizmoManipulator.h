@@ -27,6 +27,7 @@ namespace mtgb
 		
 		void Select(EntityId _id);
 		void Deselect();
+		EntityId GetSelectedEntityId();
 	private:
 		void GenerateCommand(const GameObjectSelectedEvent& _event);
 		void GenerateCommand(const GameObjectDeselectedEvent& _event);

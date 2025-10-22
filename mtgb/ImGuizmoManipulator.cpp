@@ -187,6 +187,11 @@ void mtgb::ImGuizmoManipulator::Deselect()
 	pTargetTransform_ = nullptr;
 }
 
+mtgb::EntityId mtgb::ImGuizmoManipulator::GetSelectedEntityId()
+{
+	return pTargetTransform_->GetEntityId();
+}
+
 void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectSelectedEvent& _event)
 {
 	commandListener_(new SelectionCommand((_event),
