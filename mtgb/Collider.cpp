@@ -1,4 +1,5 @@
 #include "Collider.h"
+#include "ColliderMemento.h"
 #include "Transform.h"
 #include "DirectXMath.h"
 #include "Matrix4x4.h"
@@ -285,16 +286,16 @@ void mtgb::Collider::Draw() const
 
 	switch (type_)
 	{
-	case mtgb::Collider::TYPE_SPHERE:
+	case mtgb::ColliderType::TYPE_SPHERE:
 		copyTransform = *pTransform_;
 		copyTransform.scale *= Vector3::One() * computeSphere_.Radius;
 		//copyTransform.position += computeSphere_.Center;
 		copyTransform.Compute();
 		Draw::FBXModel(hSphereModel_, copyTransform, 0,ShaderType::Debug3D);
 		break;
-	case mtgb::Collider::TYPE_CAPSULE:
+	case mtgb::ColliderType::TYPE_CAPSULE:
 		break;
-	case mtgb::Collider::TYPE_AABB:
+	case mtgb::ColliderType::TYPE_AABB:
 
 
 		if (!isStatic_)
@@ -332,3 +333,10 @@ void mtgb::Collider::Draw() const
 
 mtgb::FBXModelHandle mtgb::Collider::hSphereModel_{ mtgb::INVALID_HANDLE };
 mtgb::FBXModelHandle mtgb::Collider::hBoxModel_{ mtgb::INVALID_HANDLE };
+
+void mtgb::Collider::RestoreFromMemento(const ColliderMemento& _memento)
+{
+	this->type_ = _memento.type_;
+	this->isStatic_ = _memento.isStatic_;
+	this->colliderTag_ = _memento.colliderTag_;
+}

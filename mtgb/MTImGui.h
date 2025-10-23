@@ -145,7 +145,8 @@ namespace mtgb
 		std::map<ShowType, ImGuiWindowState> imguiWindowStates_; // ShowTypeごとのウィンドウの状態
 
 		void RegisterAllComponentViewers();
-		template<ComponentT T>
+		template<typename T>
+		requires ComponentT <T>
 		void RegisterComponentViewer();
 
 		std::unordered_map<std::type_index, std::function<void(EntityId)>> componentShowFuncs_;

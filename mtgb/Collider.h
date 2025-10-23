@@ -8,29 +8,30 @@
 
 namespace mtgb
 {
+	class ColliderMemento;
 	class ColliderCP;
 	class Transform;
 
+	enum ColliderType : uint8_t
+	{
+		TYPE_SPHERE,  // 球(中心からの一定距離)
+		TYPE_CAPSULE,  // カプセル(線分からの一定距離)
+		TYPE_AABB,	  // 軸並行境界ボックス(各軸に平行な辺)
+	};
+	enum class ColliderTag
+	{
+		GAME_OBJECT, 
+		STAGE,
+		STAGE_BOUNDARY, // ステージの境界、範囲外のコライダーを意味するタグ
+	};
 	class Collider : public IComponent<ColliderCP, Collider>
 	{
 		friend ColliderCP;
 
 	public:
 
-		enum ColliderType : uint8_t
-		{
-			TYPE_SPHERE,  // 球(中心からの一定距離)
-			TYPE_CAPSULE,  // カプセル(線分からの一定距離)
-			TYPE_AABB,	  // 軸並行境界ボックス(各軸に平行な辺)
-		};
 
 		// 衝突判定をするか否かのタグ
-		enum class ColliderTag
-		{
-			GAME_OBJECT, 
-			STAGE,
-			STAGE_BOUNDARY, // ステージの境界、範囲外のコライダーを意味するタグ
-		};
 
 	public:
 		using IComponent<ColliderCP, Collider>::IComponent;
@@ -71,6 +72,8 @@ namespace mtgb
 		void SetExtents(const Vector3& _extents);
 		void SetRadius(float _radius);
 		ColliderTag GetColliderTag() const { return colliderTag_; }
+		
+		void RestoreFromMemento(const ColliderMemento& _memento);
 	public:
 		ColliderType type_;  // 当たり判定の形
 

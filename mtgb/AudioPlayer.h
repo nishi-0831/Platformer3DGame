@@ -9,6 +9,7 @@ namespace mtgb
 {
 	class AudioClip;
 	class AudioPlayerCP;
+	class AudioPlayerMemento;
 
 	/// <summary>
 	/// âπê∫Ççƒê∂Ç∑ÇÈÇ‚Ç¬
@@ -46,6 +47,8 @@ namespace mtgb
 		void SetVolume(float volume);
 
 		void Play();
+		
+		void RestoreFromMemento(const AudioPlayerMemento& _memento);
 
 	private:
 		IXAudio2SourceVoice* pSourceVoice_{ nullptr };

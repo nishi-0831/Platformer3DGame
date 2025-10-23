@@ -13,7 +13,7 @@ mtgb::Box3D::Box3D() : GameObject(GameObjectBuilder()
 	,ImGuiShowable(name_,ShowType::Inspector,Entity::entityId_)
 {
 	pMeshRenderer_->SetMesh(Fbx::Load("Model/Box.fbx"));
-	pCollider_->type_ = Collider::TYPE_AABB;
+	pCollider_->type_ = TYPE_AABB;
 	pCollider_->SetCenter(pTransform_->position);
 	pCollider_->SetExtents(pTransform_->scale * 0.5f);
 }

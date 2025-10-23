@@ -295,10 +295,10 @@ namespace mtgb
 				
 				EntityId terrainCellId = Game::CreateEntity();
 				// 静的なコライダー
-				Collider* pCollider = &(Game::System<ColliderCP>().Get(terrainCellId,Collider::ColliderTag::STAGE));
+				Collider* pCollider = &(Game::System<ColliderCP>().Get(terrainCellId,ColliderTag::STAGE));
 
 				pCollider->isStatic_ = true;
-				pCollider->type_ = Collider::TYPE_AABB;
+				pCollider->type_ = ColliderType::TYPE_AABB;
 				pCollider->SetCenter(center);
 				pCollider->SetExtents(extents);
 				_aabbs->push_back(pCollider);
@@ -540,8 +540,8 @@ namespace mtgb
 		// +Z方向に位置する壁
 		{
 			EntityId id = Game::CreateEntity();
-			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, Collider::ColliderTag::STAGE_BOUNDARY));
-			pCollider->type_ = Collider::TYPE_AABB;
+			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
+			pCollider->type_ = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -566,8 +566,8 @@ namespace mtgb
 		// -Z方向に位置する壁
 		{
 			EntityId id = Game::CreateEntity();
-			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, Collider::ColliderTag::STAGE_BOUNDARY));
-			pCollider->type_ = Collider::TYPE_AABB;
+			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
+			pCollider->type_ = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -592,8 +592,8 @@ namespace mtgb
 		// +X方向に位置する壁
 		{
 			EntityId id = Game::CreateEntity();
-			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, Collider::ColliderTag::STAGE_BOUNDARY));
-			pCollider->type_ = Collider::TYPE_AABB;
+			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
+			pCollider->type_ = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -618,8 +618,8 @@ namespace mtgb
 		// -X方向に位置する壁
 		{
 			EntityId id = Game::CreateEntity();
-			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, Collider::ColliderTag::STAGE_BOUNDARY));
-			pCollider->type_ = Collider::TYPE_AABB;
+			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
+			pCollider->type_ = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -644,8 +644,8 @@ namespace mtgb
 		// +Y方向に位置する壁(天井)
 		{
 			EntityId id = Game::CreateEntity();
-			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, Collider::ColliderTag::STAGE_BOUNDARY));
-			pCollider->type_ = Collider::TYPE_AABB;
+			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
+			pCollider->type_ = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{

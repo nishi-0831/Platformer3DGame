@@ -1,4 +1,5 @@
 #include "RigidBody.h"
+#include "RigidBodyMemento.h"
 #include "Transform.h"
 
 mtgb::RigidBody::RigidBody(const EntityId _entityId) :
@@ -17,4 +18,9 @@ void mtgb::RigidBody::OnCollisionEnter(const std::function<void(const EntityId)>
 {
 	isNeedUpdate_ = true;
 	onHit_ = _onHit;
+}
+
+void mtgb::RigidBody::RestoreFromMemento(const RigidBodyMemento& _memento)
+{
+	this->velocity_ = _memento.velocity_;
 }

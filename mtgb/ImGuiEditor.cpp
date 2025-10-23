@@ -3,6 +3,7 @@
 #include "RegisterComponents.h"
 #include "InputData.h"
 #include "GameObjectGenerator.h"
+#include "AddComponentCommand.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
@@ -53,9 +54,10 @@ void mtgb::ImGuiEditor::ShowImGui()
 
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
 {
-	if (pComponentFactory_->CreateComponent(_componentType,_entityId))
+	if (pComponentFactory_->AddComponent(_componentType,_entityId))
 	{
 		// コンポーネント作成成功
+		//auto cmd = new AddComponentCommand(_entityId,_componentType,)
 	}
 	else
 	{

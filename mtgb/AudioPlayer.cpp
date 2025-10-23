@@ -4,6 +4,7 @@
 #include "AudioClip.h"
 #include "WaveData.h"
 #include "ReleaseUtility.h"
+#include "AudioPlayerMemento.h"
 
 
 mtgb::AudioPlayer::~AudioPlayer()
@@ -56,4 +57,10 @@ void mtgb::AudioPlayer::SetVolume(float volume)
 void mtgb::AudioPlayer::Play()
 {
 	pSourceVoice_->Start();
+}
+
+void mtgb::AudioPlayer::RestoreFromMemento(const AudioPlayerMemento& _memento)
+{
+	// オーディオハンドルを復元
+	this->SetAudio(_memento.hAudio_);
 }

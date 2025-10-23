@@ -8,6 +8,7 @@ namespace mtgb
 {
     
     class MeshRendererCP;
+    class MeshRendererMemento;
     /// <summary>
     /// メッシュとマテリアルを管理する描画コンポーネント
     /// </summary>
@@ -40,6 +41,8 @@ namespace mtgb
         bool CanRender() const { return meshHandle_ != INVALID_HANDLE; }
 
         GameObjectLayerFlag GetLayer() const { return layer_; }
+
+        void RestoreFromMemento(const MeshRendererMemento& _memento);
     private:
         FBXModelHandle meshHandle_ = INVALID_HANDLE;
         GameObjectLayerFlag layer_{AllLayer()};

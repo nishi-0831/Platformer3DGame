@@ -8,6 +8,7 @@ namespace mtgb
 {
 	class RigidBodyCP;
 	class Transform;
+	class RigidBodyMemento;
 
 	class RigidBody : public IComponent<RigidBodyCP, RigidBody>
 	{
@@ -38,6 +39,8 @@ namespace mtgb
 		void OnCollisionEnter(const std::function<void(const EntityId)>& _onHit);
 		/*void OnCollisionStay();
 		void OnCollisionExit();*/
+		
+		void RestoreFromMemento(const RigidBodyMemento& _memento);
 	public:
 		Vector3 velocity_;  // ‘¬“x
 
