@@ -10,7 +10,7 @@ namespace mtgb
 	struct TransformCore
 	{
 		inline TransformCore():
-			parent{ INVALD_ENTITY },
+			parent{ INVALID_ENTITY },
 			position{},
 			scale{},
 			rotate{}

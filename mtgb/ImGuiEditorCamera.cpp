@@ -37,7 +37,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	, pTargetTransform_{nullptr}
 	, angleX_{0.0f}
 	, angleY_{0.0f}
-	, hCamera_{INVALD_ENTITY}
+	, hCamera_{INVALID_ENTITY}
 {
 	windowName_ = MTImGui::Instance().GetName(ShowType::SceneView);
 
@@ -331,7 +331,7 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 	float distance = camera.GetFar() - camera.GetNear();          // 元の長さを計算
 
 	EntityId entityId = Game::System<ColliderCP>().RayCastHitAll(origin, direction, distance);
-	if (entityId != INVALD_ENTITY)
+	if (entityId != INVALID_ENTITY)
 	{
 		// EntityがTransformコンポーネントを持っていない可能性があるのでTryGet
 		Game::System<TransformCP>().TryGet(pTargetTransform_, entityId);
@@ -343,9 +343,16 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 	}
 	else
 	{
-		if (entityId == INVALD_ENTITY) return;
-		mtgb::GameObjectDeselectedEvent event{ .entityId = pTargetTransform_->GetEntityId()};
-		pTargetTransform_ = nullptr;
+		mtgb::GameObjectDeselectedEvent event;
+		if (pTargetTransform_ != nullptr)
+		{
+			event = { .entityId = pTargetTransform_->GetEntityId()};
+			pTargetTransform_ = nullptr;
+		}
+		else
+		{
+			event = { .entityId = INVALID_ENTITY };
+		}
 
 		Game::System<EventManager>().GetEvent<mtgb::GameObjectDeselectedEvent>().Invoke(event);
 		LOGIMGUI("EditorCamera:No Select");

@@ -216,7 +216,7 @@ mtgb::MTImGui::MTImGui()
     Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe([this](const GameObjectSelectedEvent& _handler)
         {
             EntityId selectedEntityId = _handler.entityId;
-            if (selectedEntityId == INVALD_ENTITY) return;
+            if (selectedEntityId == INVALID_ENTITY) return;
 
 			for (ImGuiShowable* obj : showableObjs_)
 			{
@@ -363,7 +363,7 @@ void mtgb::MTImGui::ShowListView(ShowType _show)
 }
 void mtgb::MTImGui::ShowComponents(EntityId _entityId)
 {
-    if (_entityId == INVALD_ENTITY) return;
+    if (_entityId == INVALID_ENTITY) return;
 
     const auto& types = IComponentPool::GetComponentTypes(_entityId);
     if (types.has_value() == false) return;

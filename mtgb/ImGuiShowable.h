@@ -20,9 +20,9 @@ namespace mtgb
 	{
 		friend class MTImGui;
 	public:
-		ImGuiShowable(EntityId _entityId = INVALD_ENTITY);
-		ImGuiShowable(ShowType _showType, EntityId _entityId = INVALD_ENTITY);
-		ImGuiShowable(const std::string& _name,ShowType _showType, EntityId _entityId = INVALD_ENTITY);
+		ImGuiShowable(EntityId _entityId = INVALID_ENTITY);
+		ImGuiShowable(ShowType _showType, EntityId _entityId = INVALID_ENTITY);
+		ImGuiShowable(const std::string& _name,ShowType _showType, EntityId _entityId = INVALID_ENTITY);
 		virtual ~ImGuiShowable();
 
 		/// <summary>

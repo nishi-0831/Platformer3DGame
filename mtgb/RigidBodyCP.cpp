@@ -15,7 +15,7 @@ void mtgb::RigidBodyCP::Update()
 {
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		if (poolId_[i] != INVALD_ENTITY)
+		if (poolId_[i] != INVALID_ENTITY)
 		{
 			std::vector<Collider*> colliders{};
 			Game::System<ColliderCP>().TryGet(&colliders, poolId_[i]);

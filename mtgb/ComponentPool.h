@@ -174,7 +174,7 @@ namespace mtgb
 			{
 				if (poolId_[i] == _entityId)
 				{
-					poolId_[i] = INVALD_ENTITY;
+					poolId_[i] = INVALID_ENTITY;
 
 					// ìoò^âèú
 					IComponentPool::UnRegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
@@ -188,7 +188,7 @@ namespace mtgb
 			{
 				if (poolId_[i] == _entityId)
 				{
-					poolId_[i] = INVALD_ENTITY;
+					poolId_[i] = INVALID_ENTITY;
 				}
 			}
 		}

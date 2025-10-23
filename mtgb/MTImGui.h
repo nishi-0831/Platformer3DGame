@@ -22,7 +22,7 @@ namespace mtgb
 	struct ImGuiWindowState
 	{
 		std::string selectedName;
-		EntityId entityId{ INVALD_ENTITY };
+		EntityId entityId{ INVALID_ENTITY };
 		bool isOpen{ false };
 	};
 

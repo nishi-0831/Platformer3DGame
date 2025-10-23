@@ -34,7 +34,7 @@ void mtgb::ColliderCP::Update()
 	static Matrix4x4 matrix{};
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		if (poolId_[i] != INVALD_ENTITY)
+		if (poolId_[i] != INVALID_ENTITY)
 		{
 			pool_[i].onColliders_.clear();
 
@@ -58,11 +58,11 @@ void mtgb::ColliderCP::Update()
 
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		if (poolId_[i] != INVALD_ENTITY && i < poolId_.size() - 1)
+		if (poolId_[i] != INVALID_ENTITY && i < poolId_.size() - 1)
 		{
 			for (size_t j = i + 1; j < poolId_.size(); j++)
 			{
-				if (poolId_[j] != INVALD_ENTITY)
+				if (poolId_[j] != INVALID_ENTITY)
 				{
 					if (pool_[i].IsHit(pool_[j]))
 					{
@@ -85,7 +85,7 @@ void mtgb::ColliderCP::TestDraw() const
 	LOGF("ColliderCP BEGIN\n");
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		if (poolId_[i] != INVALD_ENTITY)
+		if (poolId_[i] != INVALID_ENTITY)
 		{
 			LOGF("EID:%d colSize=%d\n ", poolId_[i], pool_[i].onColliders_.size());
 			LOGIMGUI("EID:%d colSize=%d ", poolId_[i], pool_[i].onColliders_.size());
@@ -97,7 +97,7 @@ void mtgb::ColliderCP::Draw()
 {
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		if (poolId_[i] != INVALD_ENTITY)
+		if (poolId_[i] != INVALID_ENTITY)
 		{
 			pool_[i].Draw();
 		}
@@ -105,11 +105,11 @@ void mtgb::ColliderCP::Draw()
 }
 mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vector3& _dir, float dist)
 {
-	EntityId nearestEntity = INVALD_ENTITY;
+	EntityId nearestEntity = INVALID_ENTITY;
 
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		if (poolId_[i] != INVALD_ENTITY)
+		if (poolId_[i] != INVALID_ENTITY)
 		{
 
 			float nearest = dist;

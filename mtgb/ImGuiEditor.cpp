@@ -1,6 +1,7 @@
 #include "ImGuiEditor.h"
 #include "ReleaseUtility.h"
 #include "RegisterComponents.h"
+#include "InputData.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
@@ -28,6 +29,18 @@ void mtgb::ImGuiEditor::Release()
 void mtgb::ImGuiEditor::Update()
 {
 	pManipulator_->Update();
+
+	if (InputUtil::GetKey(KeyCode::LeftControl))
+	{
+		if (InputUtil::GetKeyDown(KeyCode::Z))
+		{
+			pCommandHistory_->UndoCommand();
+		}
+		if (InputUtil::GetKeyDown(KeyCode::Y))
+		{
+			pCommandHistory_->RedoCommand();
+		}
+	}
 }
 
 void mtgb::ImGuiEditor::ShowImGui()

@@ -169,7 +169,7 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 
 void mtgb::ImGuizmoManipulator::Select(EntityId _id)
 {
-	if (_id == INVALD_ENTITY)
+	if (_id == INVALID_ENTITY)
 	{
 		ImGuizmo::Enable(false);
 		pTargetTransform_ = nullptr;
@@ -189,6 +189,7 @@ void mtgb::ImGuizmoManipulator::Deselect()
 
 mtgb::EntityId mtgb::ImGuizmoManipulator::GetSelectedEntityId()
 {
+	if (pTargetTransform_ == nullptr) return INVALID_ENTITY;
 	return pTargetTransform_->GetEntityId();
 }
 

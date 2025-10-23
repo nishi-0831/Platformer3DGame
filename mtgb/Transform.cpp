@@ -53,7 +53,7 @@ void mtgb::Transform::GenerateParentRotationMatrix(Matrix4x4* _pMatrix) const
 mtgb::Transform* mtgb::Transform::GetParent() const
 {
 	// eId‚ª–³Œø’l‚È‚ç nullptr ‚ð•Ô‚·
-	if (parent == INVALD_ENTITY)
+	if (parent == INVALID_ENTITY)
 	{
 		return nullptr;
 	}
@@ -98,7 +98,7 @@ mtgb::Quaternion mtgb::Transform::GetWorldRotate() const
 
 void mtgb::Transform::GenerateWorldMatrixSelf(Matrix4x4* _pMatrix) const
 {
-	if (parent != INVALD_ENTITY)
+	if (parent != INVALID_ENTITY)
 	{
 		GetParent()->GenerateWorldMatrixSelf(_pMatrix);
 		*_pMatrix = matrixScale_ * matrixRotate_ * matrixTranslate_ * (*_pMatrix);
@@ -111,7 +111,7 @@ void mtgb::Transform::GenerateWorldMatrixSelf(Matrix4x4* _pMatrix) const
 
 void mtgb::Transform::GenerateWorldRotMatrixSelf(Matrix4x4* _pMatrix) const
 {
-	if (parent != INVALD_ENTITY)
+	if (parent != INVALID_ENTITY)
 	{
 		Matrix4x4 mWorldRotParent{};
 		GetParent()->GenerateWorldRotMatrixSelf(&mWorldRotParent);

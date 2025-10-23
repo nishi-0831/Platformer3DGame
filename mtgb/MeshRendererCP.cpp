@@ -14,7 +14,7 @@ void mtgb::MeshRendererCP::RenderAll()
 	for (MeshRenderer& renderer : pool_)
 	{
 		EntityId id = renderer.GetEntityId();
-		if (id == INVALD_ENTITY) continue;
+		if (id == INVALID_ENTITY) continue;
 		if (renderer.CanRender())
 		{
 			Draw::FBXModel(renderer.GetMesh(), Transform::Get(id), 0,renderer.GetShaderType());
@@ -28,7 +28,7 @@ void mtgb::MeshRendererCP::RenderLayer(GameObjectLayerFlag layerFlag)
 	{
 		EntityId id = renderer.GetEntityId();
 
-		if (id == INVALD_ENTITY) continue;
+		if (id == INVALID_ENTITY) continue;
 		if (layerFlag.Has(renderer.GetLayer()) == false) continue;
 
 		if (renderer.CanRender())

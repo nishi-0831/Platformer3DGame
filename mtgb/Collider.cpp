@@ -303,7 +303,7 @@ void mtgb::Collider::Draw() const
 		}
 		else
 		{
-			copyTransform.parent = INVALD_ENTITY;
+			copyTransform.parent = INVALID_ENTITY;
 		}
 		
 		// é≤ï¿çsÇ»ÇÃÇ≈âÒì]ÇÕÇ»Çµ
