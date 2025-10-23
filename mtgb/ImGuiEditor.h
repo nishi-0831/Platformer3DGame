@@ -21,6 +21,7 @@ namespace mtgb
 	private:
 		void AddComponent(const std::type_index& _componentType, EntityId _entityId);
 		void ShowAddComponentDialog(EntityId _entityId);
+		void ShowGenerateGameObjectButton();
 		ComponentFactory* pComponentFactory_;
 		CommandHistoryManagerWrapper* pCommandHistory_;
 		ImGuizmoManipulator* pManipulator_;

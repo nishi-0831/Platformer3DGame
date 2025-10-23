@@ -2,6 +2,7 @@
 #include "ReleaseUtility.h"
 #include "RegisterComponents.h"
 #include "InputData.h"
+#include "GameObjectGenerator.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
@@ -47,6 +48,7 @@ void mtgb::ImGuiEditor::ShowImGui()
 {
 	pCommandHistory_->DrawImGuiStack();
 	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
+	ShowGenerateGameObjectButton();
 }
 
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
@@ -72,6 +74,14 @@ void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)
 		{
 			AddComponent(typeInfo, _entityId);
 		}
+	}
+}
+
+void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
+{
+	if (ImGui::Button("GenerateGameObject"))
+	{
+		GameObjectGenerator::GeneratePrimitive(PrimitiveType::Box);
 	}
 }
 

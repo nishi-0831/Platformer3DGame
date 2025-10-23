@@ -1,6 +1,6 @@
 #include <mtgb.h>
 #include "SampleScene.h"
-#include "../Source/SampleGround.h"
+//#include "../Source/SampleGround.h"
 #include "../Source/Camera.h"
 SampleScene::SampleScene()
 {
@@ -18,7 +18,7 @@ void SampleScene::Initialize()
 	TypeRegistry::Instance().Initialize();
 	MTImGui::Instance().Initialize();
 
-	Instantiate<SampleGround>();
+	//Instantiate<Box3D>();
 
 	Camera* pCamera{ Instantiate<Camera>() };
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);

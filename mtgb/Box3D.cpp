@@ -1,9 +1,11 @@
-#include "SampleGround.h"
+#include "Box3D.h"
 
-mtgb::SampleGround::SampleGround() : GameObject(GameObjectBuilder()
+unsigned int mtgb::Box3D::generateCounter_{ 0 };
+
+mtgb::Box3D::Box3D() : GameObject(GameObjectBuilder()
 	.SetPosition({0,0,10})
 	.SetScale({1,1,1})
-	.SetName("SampleGround")
+	.SetName("Box3D (" + std::to_string(generateCounter_++) + ")")
 	.Build())
 	,pTransform_{Component<Transform>()}
 	,pMeshRenderer_{Component<MeshRenderer>()}
@@ -16,21 +18,20 @@ mtgb::SampleGround::SampleGround() : GameObject(GameObjectBuilder()
 	pCollider_->SetExtents(pTransform_->scale * 0.5f);
 }
 
-mtgb::SampleGround::~SampleGround()
+mtgb::Box3D::~Box3D()
 {
 }
 
-void mtgb::SampleGround::Update()
+void mtgb::Box3D::Update()
 {
-	//MTImGui::Instance().TypedShow(&pTransform_->position, "Ground");
 }
 
-void mtgb::SampleGround::Draw() const
+void mtgb::Box3D::Draw() const
 {
-	pCollider_->Draw();
+	//pCollider_->Draw();
 }
 
-void mtgb::SampleGround::ShowImGui()
+void mtgb::Box3D::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
 }

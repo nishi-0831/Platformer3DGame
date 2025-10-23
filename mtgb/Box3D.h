@@ -3,11 +3,11 @@
 
 namespace mtgb
 {
-	class SampleGround : public GameObject , public ImGuiShowable
+	class Box3D : public GameObject , public ImGuiShowable
 	{
 	public:
-		SampleGround();
-		~SampleGround();
+		Box3D();
+		~Box3D();
 
 		void Update() override;
 		void Draw() const override;
@@ -16,5 +16,6 @@ namespace mtgb
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
 		Collider* pCollider_;
+		static unsigned int generateCounter_;
 	};
 }

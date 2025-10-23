@@ -20,7 +20,7 @@ namespace mtgb
 		if (_command == nullptr) return;
 		inner_->ExecuteCommand(_command);
 
-		commandHistoryNames_.push_back(_command->Name());
+		commandHistoryNames_.push_back("Execute:" + _command->Name());
 		undoNames_.push_back(_command->Name());
 		redoNames_.clear();
 
@@ -41,7 +41,7 @@ namespace mtgb
 		inner_->UndoCommand();
 
 		if (undoNames_.empty()) return;
-		commandHistoryNames_.push_back(undoNames_.back());
+		commandHistoryNames_.push_back("Undo:" + undoNames_.back());
 		// undo -> redo ‚Ö–¼‘O‚ðˆÚ“®
 		redoNames_.push_back(undoNames_.back());
 		undoNames_.pop_back();
@@ -63,7 +63,7 @@ namespace mtgb
 		inner_->RedoCommand();
 
 		if (redoNames_.empty()) return;
-		commandHistoryNames_.push_back(redoNames_.back());
+		commandHistoryNames_.push_back("Redo:" + redoNames_.back());
 		undoNames_.push_back(redoNames_.back());
 		redoNames_.pop_back();
 
