@@ -12,12 +12,17 @@ namespace mtgb
 	/// </summary>
 	class AddComponentCommand : public Command
 	{
+	public:
 		AddComponentCommand(
 			EntityId _entityId,
 			const std::type_index& _typeIdx,
 			IComponentMemento* _memento,
 			ComponentFactory* _pComponentFactory);
 		~AddComponentCommand() = default;
+		void Execute() override;
+		void Undo() override;
+		
+		std::string Name() const override;
 	private:
 		EntityId entityId_;
 		std::type_index componentType_;
@@ -26,5 +31,7 @@ namespace mtgb
 
 		void ApplyMemento();
 		void RemoveComponent() const;
+
+		// Command ÇâÓÇµÇƒåpè≥Ç≥ÇÍÇ‹ÇµÇΩ
 	};
 }

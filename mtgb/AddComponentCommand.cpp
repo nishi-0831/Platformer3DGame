@@ -12,6 +12,18 @@ mtgb::AddComponentCommand::AddComponentCommand(
 {
 }
 
+void mtgb::AddComponentCommand::Execute()
+{
+    ApplyMemento();
+}
+
+void mtgb::AddComponentCommand::Undo()
+{
+    RemoveComponent();
+}
+
+
+
 void mtgb::AddComponentCommand::ApplyMemento() 
 {
 	if (memento_ == nullptr || pComponentFactory_)
@@ -24,4 +36,9 @@ void mtgb::AddComponentCommand::ApplyMemento()
 void mtgb::AddComponentCommand::RemoveComponent() const
 {
     Game::RemoveEntityComponent(entityId_);
+}
+
+std::string mtgb::AddComponentCommand::Name() const
+{
+    return "AddComponent";
 }

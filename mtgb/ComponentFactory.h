@@ -13,14 +13,14 @@ namespace mtgb
 	{
 	public:
 		// コンポーネント作成関数の型
-		using CreateFunction = std::function<void(EntityId _id)>;
+		using CreateFunction = std::function<IComponentMemento*(EntityId _id)>;
 		using CreateFromMementoFunction = std::function<void(const IComponentMemento& _memento)>;
 
 		template<typename T, typename M>
 		requires MementoT<T,M>
 		void RegisterComponent();
 
-		bool AddComponent(const std::type_index& _info, EntityId _id);
+		IComponentMemento* AddComponent(const std::type_index& _info, EntityId _id);
 		bool AddComponentFromMemento(const IComponentMemento& _memento);
 
 		void GetRegisteredTypes(std::vector<std::type_index>& _types) const
@@ -39,7 +39,8 @@ namespace mtgb
 		std::type_index typeIdx(typeid(T));
 		creators_[typeIdx] = [](EntityId _id)
 			{
-				 T::template Get(_id);
+				 T& component = T::template Get(_id);
+				 return component.SaveToMemento();
 			};
 		creatorsFromMemento_[typeIdx] = [](const IComponentMemento& _memento)
 			{

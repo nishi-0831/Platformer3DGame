@@ -16,6 +16,7 @@ namespace mtgb
 		friend ComponentPoolT;
 		friend ComponentPool<ComponentT>;
 	public:
+		using ComPool = ComponentPoolT;
 		IComponent() :
 			entityId_{ -1 }
 		{}

@@ -21,6 +21,7 @@ namespace mtgb
 
 	public:
 		using IComponent<mtgb::TransformCP, Transform>::IComponent;
+		
 		//Transform();
 		~Transform();
 		inline Transform& operator=(const Transform& _other)
