@@ -1,10 +1,12 @@
 #pragma once
+#include <unordered_map>
 #include "ISystem.h"
 #include "ImGuizmoManipulator.h"
 #include "ImGuiEditorCamera.h"
 #include "CommandHistoryManagerWrapper.h"
 #include "ImGuiShowable.h"
 #include "ComponentFactory.h"
+#include "IComponentMemento.h"
 namespace mtgb
 {
 	class ImGuiEditor : public ISystem , ImGuiShowable
@@ -25,5 +27,6 @@ namespace mtgb
 		ComponentFactory* pComponentFactory_;
 		CommandHistoryManagerWrapper* pCommandHistory_;
 		ImGuizmoManipulator* pManipulator_;
+		std::unordered_map<std::type_index, IComponentMemento*> defMementos_;
 	};
 }

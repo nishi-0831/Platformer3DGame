@@ -12,6 +12,8 @@ namespace mtgb
 		void Update() override;
 		void Draw() const override;
 		void ShowImGui() override;
+
+		std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const override;
 	private:
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;

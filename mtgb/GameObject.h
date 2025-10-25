@@ -5,6 +5,7 @@
 #include <bitset>
 #include <vector>
 #include "Transform.h"
+#include "IComponentMemento.h"
 
 constexpr size_t COMPONENT_CAPACITY{ (8 * 8) - 4 };
 
@@ -23,6 +24,7 @@ namespace mtgb
 		virtual inline void Update() {};
 		virtual inline void Draw() const {};
 		virtual inline void End() {};
+		virtual inline std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const {};
 
 		/// <summary>
 		/// ñºëOÇê›íËÇ∑ÇÈ

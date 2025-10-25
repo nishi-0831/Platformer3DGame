@@ -54,17 +54,17 @@ void mtgb::ImGuiEditor::ShowImGui()
 
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
 {
-	mtgb::IComponentMemento* memento = pComponentFactory_->AddComponent(_componentType, _entityId);
-	if (memento != nullptr)
-	{
-		// コンポーネント作成成功
-		auto cmd = new AddComponentCommand(_entityId, _componentType, memento,pComponentFactory_);
-		//pCommandHistory_.
-	}
-	else
-	{
-		// 失敗
-	}
+	
+	//if (memento != nullptr)
+	//{
+	//	// コンポーネント作成成功
+	//	auto cmd = new AddComponentCommand(_entityId, _componentType, memento,pComponentFactory_);
+	//	//pCommandHistory_.
+	//}
+	//else
+	//{
+	//	// 失敗
+	//} 
 }
 
 void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)

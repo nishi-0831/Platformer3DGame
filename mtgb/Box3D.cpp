@@ -1,5 +1,9 @@
 #include "Box3D.h"
-
+#include "TransformMemento.h"
+#include "MeshRendererMemento.h"
+#include "ColliderMemento.h"
+#include "Fbx.h"
+#include "Entity.h"
 unsigned int mtgb::Box3D::generateCounter_{ 0 };
 
 mtgb::Box3D::Box3D() : GameObject(GameObjectBuilder()
@@ -34,4 +38,31 @@ void mtgb::Box3D::Draw() const
 void mtgb::Box3D::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
+}
+
+std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entityId) const
+{
+	std::vector<IComponentMemento*> mementos;
+
+	mementos.push_back(new TransformMemento(
+		_entityId,
+		Vector3(0.0f, 0.0f, 10.0f),
+		Vector3(1.0f, 1.0f, 1.0f),
+		Quaternion()
+	));
+
+	mementos.push_back(new MeshRendererMemento(
+		_entityId,
+		Fbx::Load("Model/Box.fbx"),
+		AllLayer(),
+		ShaderType::FbxParts
+	));
+
+	mementos.push_back(new ColliderMemento(
+		_entityId,
+		ColliderType::TYPE_AABB,
+		false,						// is static
+		ColliderTag::GAME_OBJECT));
+
+	return mementos;
 }
