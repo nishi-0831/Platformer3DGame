@@ -1,10 +1,10 @@
 #include "AddComponentCommand.h"
-
+#include "IComponentPool.h"
 mtgb::AddComponentCommand::AddComponentCommand(
     mtgb::EntityId _entityId,
     const std::type_index& _typeIdx,
     mtgb::IComponentMemento* _memento,
-    mtgb::ComponentFactory* _componentFactory)
+    const mtgb::ComponentFactory& _componentFactory)
     : entityId_(_entityId)
     , componentType_(_typeIdx)
     , memento_(_memento)
@@ -26,26 +26,29 @@ void mtgb::AddComponentCommand::Undo()
 
 void mtgb::AddComponentCommand::ApplyMemento() 
 {
-    if (pComponentFactory_ == nullptr)
-        return;
-
+   
     if (memento_ == nullptr)
     {
-        memento_ = pComponentFactory_->AddComponent(componentType_, entityId_);
+        // entityIdから既存のコンポーネントを取得、なければ新規作成しMementoに保存する
+        memento_ = pComponentFactory_.AddComponent(componentType_, entityId_);
     }
     else
     {
         // Mementoからコンポーネントを復元
-        pComponentFactory_->AddComponentFromMemento(*memento_);
+        pComponentFactory_.AddComponentFromMemento(*memento_);
     }
 }
 
 void mtgb::AddComponentCommand::RemoveComponent() const
 {
-    Game::RemoveEntityComponent(entityId_);
+    std::optional<std::type_index> componentPoolType = IComponentPool::GetComponentPoolType(componentType_);
+    if (componentPoolType.has_value())
+    {
+        Game::RemoveEntityComponent(componentPoolType.value(), entityId_);
+    }
 }
 
 std::string mtgb::AddComponentCommand::Name() const
 {
-    return "AddComponent";
+    return std::string("AddComponent:" ) +componentType_.name();
 }

@@ -272,7 +272,7 @@ void mtgb::MTImGui::SetupShowFunc()
    
     Set<RigidBody>([](RigidBody* _target, const char* _name)
         {
-            TypeRegistry::Instance().CallFunc(&_target->velocity_, "Velocity");
+            TypeRegistry::Instance().CallFunc(&_target->velocity, "Velocity");
         });
 
     Set<DirectX::XMVECTOR>([](DirectX::XMVECTOR* _target, const char* _name)

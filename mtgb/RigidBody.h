@@ -1,7 +1,10 @@
 #pragma once
-#include "IComponent.h"
+#include "StatefulComponent.h"
+#include "IComponentMemento.h"
+
 #include "RigidBodyCP.h"
 #include "Vector3.h"
+#include "RigidBodyData.h"
 #include <functional>
 
 namespace mtgb
@@ -9,11 +12,12 @@ namespace mtgb
 	class RigidBodyCP;
 	class Transform;
 
-	class RigidBody : public IComponent<RigidBodyCP, RigidBody>
+	class RigidBody : public RigidBodyData, public StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData, ComponentMemento<RigidBody, RigidBodyData>>
 	{
 		friend RigidBodyCP;
 	public:
-		using IComponent<RigidBodyCP, RigidBody>::IComponent;
+		using StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData, ComponentMemento<RigidBody, RigidBodyData>>::StatefulComponent;
+
 		RigidBody(const EntityId _entityId);
 		~RigidBody();
 		inline RigidBody& operator=(const RigidBody& _other)
@@ -23,9 +27,9 @@ namespace mtgb
 				return *this;
 			}
 
-			this->velocity_ = _other.velocity_;
+			this->velocity = _other.velocity;
 			this->onHit_ = _other.onHit_;
-			this->isNeedUpdate_ = _other.isNeedUpdate_;
+			this->isNeedUpdate = _other.isNeedUpdate;
 			this->pTransform_ = _other.pTransform_;
 
 			return *this;
@@ -40,11 +44,13 @@ namespace mtgb
 		void OnCollisionExit();*/
 		
 	public:
-		Vector3 velocity_;  // ‘¬“x
+		//Vector3 velocity;  // ‘¬“x
 
 	private:
-		bool isNeedUpdate_;
+		//bool isNeedUpdate;
 		std::function<void(const EntityId)> onHit_;
 		Transform* pTransform_;  // TODO: Šë‚È‚¢Transform
 	};
+
+	using RigidBodyMemento = ComponentMemento<RigidBody, RigidBodyData>;
 }

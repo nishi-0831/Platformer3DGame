@@ -1,6 +1,6 @@
 #include "ComponentFactory.h"
 
-mtgb::IComponentMemento* mtgb::ComponentFactory::AddComponent(const std::type_index& _info, EntityId _id)
+mtgb::IComponentMemento* mtgb::ComponentFactory::AddComponent(const std::type_index& _info, EntityId _id) const
 {
 	std::type_index typeIdx{_info};
 	auto itr = creators_.find(typeIdx);
@@ -13,7 +13,7 @@ mtgb::IComponentMemento* mtgb::ComponentFactory::AddComponent(const std::type_in
 	return nullptr;
 }
 
-bool mtgb::ComponentFactory::AddComponentFromMemento(const IComponentMemento& _memento)
+bool mtgb::ComponentFactory::AddComponentFromMemento(const IComponentMemento& _memento) const
 {
 	std::type_index typeIdx{_memento.GetComponentType()};
 	auto itr = creatorsFromMemento_.find(typeIdx);

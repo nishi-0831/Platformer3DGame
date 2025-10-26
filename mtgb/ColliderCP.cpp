@@ -42,10 +42,10 @@ void mtgb::ColliderCP::Update()
 
 			//switch (pool_[i].type_)
 			//{
-			//case Collider::TYPE_CAPSULE:
+			//case Collider::ColliderType::TYPE_CAPSULE:
 			//	// TODO: ƒJƒvƒZƒ‹Œ^‚ÌŒvŽZ
 			//	break;
-			//case Collider::TYPE_SPHERE:
+			//case Collider::ColliderType::TYPE_SPHERE:
 			//	pool_[i].pTransform_->GenerateWorldMatrix(&matrix);
 			//	pool_[i].computeSphere_.Center = pool_[i].sphere_.offset_ * matrix;
 			//	pool_[i].computeSphere_.Radius = pool_[i].sphere_.radius_;

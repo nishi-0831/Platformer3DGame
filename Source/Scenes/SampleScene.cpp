@@ -19,7 +19,7 @@ void SampleScene::Initialize()
 	TypeRegistry::Instance().Initialize();
 	MTImGui::Instance().Initialize();
 
-	Instantiate<Box3D>();
+	//Instantiate<Box3D>();
 
 	Camera* pCamera{ Instantiate<Camera>() };
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);

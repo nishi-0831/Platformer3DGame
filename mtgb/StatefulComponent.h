@@ -19,9 +19,12 @@ namespace mtgb
 	public:
 		using IComponent<TComponentPool, TDerived>::IComponent;
 		
-		
+		virtual ~StatefulComponent() {};
+		virtual void Initialize() override {};
+
 		TMemento* SaveToMemento() const
 		{
+			
 			// concept‚ÅŒŸØÏ‚Ý‚È‚Ì‚Åstatic_cast
 			return new TMemento(this->GetEntityId(), static_cast<const TDerived&>(*this));
 		}
@@ -47,4 +50,5 @@ namespace mtgb
 		}
 	private:
 	};
+	
 }

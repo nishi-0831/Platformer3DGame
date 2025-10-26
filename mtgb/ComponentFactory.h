@@ -20,8 +20,8 @@ namespace mtgb
 		requires ComponentWithMementoT<T,M>
 		void RegisterComponent();
 
-		IComponentMemento* AddComponent(const std::type_index& _info, EntityId _id);
-		bool AddComponentFromMemento(const IComponentMemento& _memento);
+		IComponentMemento* AddComponent(const std::type_index& _info, EntityId _id) const;
+		bool AddComponentFromMemento(const IComponentMemento& _memento) const;
 
 		void GetRegisteredTypes(std::vector<std::type_index>& _types) const
 		{

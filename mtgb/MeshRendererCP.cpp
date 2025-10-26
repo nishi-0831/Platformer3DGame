@@ -11,24 +11,30 @@ void mtgb::MeshRendererCP::Update()
 
 void mtgb::MeshRendererCP::RenderAll()
 {
-	for (MeshRenderer& renderer : pool_)
+	/*for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		EntityId id = renderer.GetEntityId();
-		if (id == INVALID_ENTITY) continue;
+		EntityId id = poolId_[i];
+
+		if (poolId_[i] == INVALID_ENTITY) continue;
+
+		MeshRenderer& renderer = pool_[i];
 		if (renderer.CanRender())
 		{
-			Draw::FBXModel(renderer.GetMesh(), Transform::Get(id), 0,renderer.GetShaderType());
+			Draw::FBXModel(renderer.GetMesh(), Transform::Get(id), 0, renderer.GetShaderType());
 		}
-	}
+	}*/
+	RenderLayer(AllLayer());
 }
 
 void mtgb::MeshRendererCP::RenderLayer(GameObjectLayerFlag layerFlag)
 {
-	for (MeshRenderer& renderer : pool_)
+	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		EntityId id = renderer.GetEntityId();
+		EntityId id = poolId_[i];
 
-		if (id == INVALID_ENTITY) continue;
+		if (poolId_[i] == INVALID_ENTITY) continue;
+
+		MeshRenderer& renderer = pool_[i];
 		if (layerFlag.Has(renderer.GetLayer()) == false) continue;
 
 		if (renderer.CanRender())

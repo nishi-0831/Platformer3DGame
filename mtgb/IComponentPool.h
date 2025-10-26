@@ -21,12 +21,21 @@ namespace mtgb
 		virtual void Remove(const EntityId _entityId) = 0;
 
 		static void RegisterComponent(EntityId _entityId, const std::type_index& _typeIndex);
+		static void RegisterComponentPoolType(const std::type_index& _comp, const std::type_index& _pool);
 		static void UnRegisterComponent(EntityId _entityId, const std::type_index& _typeIndex);
 		static void ClearEntity(EntityId _entityId);
+		/// <summary>
+		/// Component‚É‘Î‰‚·‚éComponentPool‚ÌŒ^î•ñ‚ğ•Ô‚·
+		/// </summary>
+		/// <param name="_typeIndex">Component‚ÌŒ^î•ñ</param>
+		/// <returns></returns>
+		static std::optional<std::type_index> GetComponentPoolType(const std::type_index& _typeIndex);
 
 		static std::optional<std::reference_wrapper<const std::set<std::type_index>>> GetComponentTypes(EntityId _entityId);
 
 	protected:
+		// Component¨ComponentPool‚Ö‚Ìtype_index‚Ì«‘
+		static std::unordered_map<std::type_index, std::type_index> componentPoolTypeMap_;
 		static std::unordered_map<EntityId, std::set<std::type_index>> entityComponents_;
 		void RegisterCurrentScene(const std::function<void()>& _onMove);
 	};

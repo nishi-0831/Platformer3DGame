@@ -55,7 +55,7 @@ void mtgb::ImGuiEditor::ShowImGui()
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
 {
 	// コンポーネント作成成功
-	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, pComponentFactory_);
+	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, *pComponentFactory_);
 	pCommandHistory_->ExecuteCommand(cmd);
 }
 
@@ -77,7 +77,7 @@ void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 {
 	if (ImGui::Button("GenerateGameObject"))
 	{
-		//GameObjectGenerator::GeneratePrimitive(PrimitiveType::Box);
+		GameObjectGenerator::GeneratePrimitive([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); },*pComponentFactory_,PrimitiveType::Box);
 	}
 }
 

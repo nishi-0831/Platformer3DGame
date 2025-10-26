@@ -1,30 +1,20 @@
 #pragma once
 #include "IComponent.h"
 #include "ColliderCP.h"
+#include "StatefulComponent.h"
+#include "IComponentMemento.h"
+#include "ColliderData.h"
 #include <set>
 #include <DirectXCollision.h>
 #include "Vector3.h"
-
+#include "ColliderType.h"
+#include "Transform.h"
 
 namespace mtgb
 {
-	class ColliderMemento;
 	class ColliderCP;
-	class Transform;
-
-	enum ColliderType : uint8_t
-	{
-		TYPE_SPHERE,  // 球(中心からの一定距離)
-		TYPE_CAPSULE,  // カプセル(線分からの一定距離)
-		TYPE_AABB,	  // 軸並行境界ボックス(各軸に平行な辺)
-	};
-	enum class ColliderTag
-	{
-		GAME_OBJECT, 
-		STAGE,
-		STAGE_BOUNDARY, // ステージの境界、範囲外のコライダーを意味するタグ
-	};
-	class Collider : public IComponent<ColliderCP, Collider>
+	
+	class Collider : public ColliderData, public StatefulComponent<Collider, ColliderCP, ColliderData, ComponentMemento<Collider, ColliderData>>
 	{
 		friend ColliderCP;
 
@@ -34,7 +24,7 @@ namespace mtgb
 		// 衝突判定をするか否かのタグ
 
 	public:
-		using IComponent<ColliderCP, Collider>::IComponent;
+		
 		Collider(EntityId _entityId);
 		Collider(EntityId _entityId, ColliderTag _colliderTag);
 		~Collider();
@@ -71,31 +61,10 @@ namespace mtgb
 		void SetCenter(const Vector3& _center);
 		void SetExtents(const Vector3& _extents);
 		void SetRadius(float _radius);
-		ColliderTag GetColliderTag() const { return colliderTag_; }
+		ColliderTag GetColliderTag() const { return colliderTag; }
 		
 	public:
-		ColliderType type_;  // 当たり判定の形
-
-		// 静的な、Transform不要なコライダー用のフラグ
-		bool isStatic_;
-
-		//union
-		//{
-		//	struct
-		//	{
-		//		Vector3 offset_;  // オフセット
-		//		float radius_ = 1.0f;  // 半径
-		//	} sphere_;
-		//	struct
-		//	{
-		//		Vector3 center_;  // AABBの中心
-		//		Vector3 extents_; // AABBのサイズの半分
-		//	} aabb_;
-		//	struct
-		//	{
-		//		// カプセルのデータ
-		//	} capsule_;
-		//};
+		void OnPostRestore() override;
 
 		std::set<Collider*> onColliders_;
 
@@ -110,8 +79,10 @@ namespace mtgb
 		};
 
 		Transform* pTransform_;  // TODO: 危ないTransform
-		ColliderTag colliderTag_;
+		//ColliderTag colliderTag;
 		static FBXModelHandle hSphereModel_;
 		static FBXModelHandle hBoxModel_;
 	};
+
+	using ColliderMemento = ComponentMemento<Collider, ColliderData>;
 }

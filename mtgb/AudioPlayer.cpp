@@ -27,6 +27,7 @@ void mtgb::AudioPlayer::Initialize()
 
 void mtgb::AudioPlayer::SetAudio(const AudioHandle _hAudio)
 {
+	hAudio = _hAudio;
 	Audio& audio{ Game::System<Audio>() };
 	audio.Initialize();
 

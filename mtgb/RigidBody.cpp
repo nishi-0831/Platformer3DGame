@@ -3,10 +3,10 @@
 #include "Transform.h"
 
 mtgb::RigidBody::RigidBody(const EntityId _entityId) :
-	IComponent{ _entityId },
+	StatefulComponent{ _entityId },
+	RigidBodyData{.isNeedUpdate = false},
 	pTransform_{ &Transform::Get(_entityId) },
-	onHit_{ [](const EntityId){} },
-	isNeedUpdate_{ false }
+	onHit_{ [](const EntityId) {} }
 {
 }
 
@@ -16,7 +16,7 @@ mtgb::RigidBody::~RigidBody()
 
 void mtgb::RigidBody::OnCollisionEnter(const std::function<void(const EntityId)>& _onHit)
 {
-	isNeedUpdate_ = true;
+	isNeedUpdate = true;
 	onHit_ = _onHit;
 }
 

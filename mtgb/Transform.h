@@ -1,5 +1,9 @@
 #pragma once
-#include "IComponent.h"
+#include "StatefulComponent.h"
+#include "TransformData.h"
+#include "IComponentMemento.h"
+#include "TransformMemento.h"
+
 #include "Vector3.h"
 #include "Vector3Ref.h"
 #include "Quaternion.h"
@@ -14,14 +18,15 @@ namespace mtgb
 
 	class TransformCP;
 
-	class Transform : public IComponent<mtgb::TransformCP, Transform>, public TransformCore
+	class Transform : public TransformData, public StatefulComponent<Transform, TransformCP, TransformData, ComponentMemento<Transform, TransformData>>
 	{
-		friend TransformCP;
-
 	public:
-		using IComponent<mtgb::TransformCP, Transform>::IComponent;
-		
-		//Transform();
+		using StatefulComponent<Transform, TransformCP, TransformData, ComponentMemento<Transform, TransformData>>::StatefulComponent;
+		Transform()
+		{
+
+		}
+
 		~Transform();
 		inline Transform& operator=(const Transform& _other)
 		{
@@ -40,7 +45,7 @@ namespace mtgb
 			this->matrixScale_ = _other.matrixScale_;
 			this->matrixWorld_ = _other.matrixWorld_;
 
-//			massert(false && "Transformのコピー発生");
+			//			massert(false && "StatefulTransformのコピー発生");
 			return *this;
 		}
 
@@ -71,12 +76,12 @@ namespace mtgb
 		void GenerateParentRotationMatrix(Matrix4x4* _pMatrix) const;
 
 		/// <summary>
-		/// 親のTransformを取得
+		/// 親のStatefulTransformを取得
 		/// </summary>
-		/// <returns>Transformのポインタ</returns>
+		/// <returns>StatefulTransformのポインタ</returns>
 		Transform* GetParent() const;
 		/// <summary>
-		/// 親のTransformを設定
+		/// 親のStatefulTransformを設定
 		/// </summary>
 		/// <param name="_entityId">親にするエンティティ識別子</param>
 		void SetParent(const EntityId _entityId) { parent = _entityId; }
@@ -135,7 +140,7 @@ namespace mtgb
 		/// <returns>ワールド回転の四元数</returns>
 		Quaternion GetWorldRotate() const;
 
-		
+
 	private:
 		/// <summary>
 		/// 計算用自分自身のワールド行列を生成する
@@ -154,5 +159,9 @@ namespace mtgb
 		Matrix4x4 matrixScale_{};             // 計算された拡縮行列
 		Matrix4x4 matrixWorld_{};             // 計算されたワールド行列
 		Matrix4x4 matrixWorldRot_{};          // 計算されたワールド回転行列
+	private:
+
 	};
+
+	using TransformMemento = ComponentMemento<Transform, TransformData>;
 }

@@ -68,11 +68,13 @@ namespace mtgb
 	{
 		pool_.reserve(COMPONENT_CAPACITY);
 		poolId_.reserve(COMPONENT_CAPACITY);
+
 	}
 
 	template<class ComponentT, bool IsSingleton>
 	inline ComponentPool<ComponentT, IsSingleton>::~ComponentPool()
 	{
+
 	}
 
 	template<class ComponentT, bool IsSingleton>
@@ -114,6 +116,7 @@ namespace mtgb
 
 		// EntityIdに割り当てられたComponentとして登録
 		IComponentPool::RegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
+
 
 		return pool_.back(); // 追加&&初期化したコンポーネントを返す
 	}

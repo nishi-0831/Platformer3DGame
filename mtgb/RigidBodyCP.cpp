@@ -28,7 +28,7 @@ void mtgb::RigidBodyCP::Update()
 				}
 			}
 
-			pool_[i].pTransform_->position += pool_[i].velocity_ * Time::DeltaTimeF();
+			pool_[i].pTransform_->position += pool_[i].velocity * Time::DeltaTimeF();
 		}
 	}
 }

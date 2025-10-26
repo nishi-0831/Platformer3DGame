@@ -148,8 +148,9 @@ namespace mtgb
 		/// エンティティに対応するコンポーネントを削除する
 		/// </summary>
 		/// <param name="_entityId"></param>
-		static void RemoveEntityComponent(const EntityId _entityId);
+		static void RemoveEntityAllComponent(const EntityId _entityId);
 
+		static void RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId);
 		/// <summary>
 		/// EntityIdを生成して返す
 		/// </summary>

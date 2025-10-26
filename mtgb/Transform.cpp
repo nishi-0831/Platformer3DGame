@@ -1,12 +1,8 @@
 #include "Transform.h"
-#include "TransformMemento.h"
-//mtgb::Transform::Transform()
-//{
-//	Compute();
-//}
 
 mtgb::Transform::~Transform()
 {
+
 }
 
 void mtgb::Transform::Compute()

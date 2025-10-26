@@ -1,6 +1,5 @@
 #include "Collider.h"
 #include "ColliderMemento.h"
-#include "Transform.h"
 #include "DirectXMath.h"
 #include "Matrix4x4.h"
 #include "Draw.h"
@@ -18,30 +17,28 @@ namespace
 }
 
 mtgb::Collider::Collider(EntityId _entityId) 
-	: IComponent{ _entityId }
+	: StatefulComponent{_entityId}
+	, ColliderData{.isStatic = false,.colliderTag = ColliderTag::GAME_OBJECT}
 	, pTransform_{&Transform::Get(_entityId)}
-	, isStatic_{false}
-	, colliderTag_{ColliderTag::GAME_OBJECT}
 {
 }
 
 
-
 mtgb::Collider::Collider(EntityId _entityId, ColliderTag _colliderTag)
-	: IComponent{ _entityId }
-	, colliderTag_{_colliderTag}
+	: StatefulComponent{ _entityId }
 {
+	colliderTag = _colliderTag;
 
 	switch (_colliderTag)
 	{
 		// 現在はゲームオブジェクトは動的、ステージは静的と断定しているが
 		// 動的なステージなども追加されるかもしれないので注意
 	case ColliderTag::GAME_OBJECT:
-		isStatic_ = false;
+		isStatic = false;
 		pTransform_ = &Transform::Get(_entityId);
 		break;
 	case ColliderTag::STAGE:
-		isStatic_ = true;
+		isStatic = true;
 		pTransform_ = nullptr;
 		break;
 	}
@@ -54,15 +51,15 @@ mtgb::Collider::~Collider()
 
 void mtgb::Collider::UpdateBoundingData()
 {
-	switch (type_)
+	switch (type)
 	{
-	case TYPE_SPHERE:
+	case ColliderType::TYPE_SPHERE:
 		UpdateBoundingSphere();
 		break;
-	case TYPE_AABB:
+	case ColliderType::TYPE_AABB:
 		UpdateBoundingBox();
 		break;
-	case TYPE_CAPSULE:
+	case ColliderType::TYPE_CAPSULE:
 		// TODO: カプセル初期化
 		break;
 	}
@@ -70,7 +67,7 @@ void mtgb::Collider::UpdateBoundingData()
 
 void mtgb::Collider::UpdateBoundingSphere()
 {
-	// Transformから現在の位置を取得してBoundingSphereを更新
+	// StatefulTransformから現在の位置を取得してBoundingSphereを更新
 	
 	//pTransform_->GenerateWorldMatrix(&matrix);
 		
@@ -81,7 +78,7 @@ void mtgb::Collider::UpdateBoundingSphere()
 
 void mtgb::Collider::UpdateBoundingBox()
 {
-	if (!isStatic_)
+	if (!isStatic)
 	{
 		/*pTransform_->GenerateWorldMatrix(&matrix);
 		computeBox_.Center = Vector3(computeBox_.Center) * matrix;*/
@@ -94,40 +91,30 @@ bool mtgb::Collider::IsHit(const Collider& _other) const
 	using DirectX::XMVector3TransformCoord;
 
 	// ステージ同士は接触しないものとする
-	if (colliderTag_ == ColliderTag::STAGE && _other.colliderTag_ == ColliderTag::STAGE)
+	if (colliderTag == ColliderTag::STAGE && _other.colliderTag == ColliderTag::STAGE)
 	{
 		return false;
 	}
 
-	if (type_ == _other.type_)
+	if (type == _other.type)
 	{
-		if (type_ == TYPE_SPHERE)
+		if (type == ColliderType::TYPE_SPHERE)
 		{
-			//pTransform_->GenerateWorldMatrix(&matrix);
-			//Vector3 worldPosition{ Vector3(computeSphere_.Center) * matrix };
-
-			//_other.pTransform_->GenerateWorldMatrix(&matrix);
-			//Vector3 otherWorldPosition{ (_other.computeSphere_.Center) * matrix };
-
-			//float distance{ (otherWorldPosition - worldPosition).Size() };
-			//float hitDistance{ computeSphere_.Radius + _other.computeSphere_.Radius};
-
 			//// 距離が双方の球の半径よりも小さければ当たっている
-			//return (distance <= hitDistance);
 			return computeSphere_.Intersects(_other.computeSphere_);
 		}
-		else if (type_ == TYPE_AABB)
+		else if (type == ColliderType::TYPE_AABB)
 		{
 			return computeBox_.Intersects(_other.computeBox_);
 		}
 	}
 	else
 	{
-		if (type_ == TYPE_SPHERE)
+		if (type == ColliderType::TYPE_SPHERE)
 		{	
 			return computeSphere_.Intersects(_other.computeBox_);
 		}
-		else if (type_ == TYPE_AABB)
+		else if (type == ColliderType::TYPE_AABB)
 		{
 			return computeBox_.Intersects(_other.computeSphere_);
 		}
@@ -234,7 +221,7 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 {
 	static Matrix4x4 matrix{};
 
-	if (type_ == TYPE_SPHERE)
+	if (type == ColliderType::TYPE_SPHERE)
 	{
 		pTransform_->GenerateWorldMatrix(&matrix);
 		Vector3 worldPosition{ Vector3(computeSphere_.Center) * matrix };
@@ -247,7 +234,7 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 		// 距離が双方の球の半径よりも小さければ当たっている
 		return (distance <= hitDistance);
 	}
-	else if (type_ == TYPE_CAPSULE)
+	else if (type == ColliderType::TYPE_CAPSULE)
 	{
 		// TODO: カプセルと球の当たり判定
 
@@ -258,7 +245,7 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 
 void mtgb::Collider::SetCenter(const Vector3& _center)
 {
-	if (type_ == TYPE_AABB)
+	if (type == ColliderType::TYPE_AABB)
 	{
 		computeBox_.Center = _center;
 	}
@@ -266,16 +253,34 @@ void mtgb::Collider::SetCenter(const Vector3& _center)
 	{
 		computeSphere_.Center = _center;
 	}
+	center = _center;
 }
 
 void mtgb::Collider::SetExtents(const Vector3& _extents)
 {
 	computeBox_.Extents = _extents;
+	extents = _extents;
 }
 
 void mtgb::Collider::SetRadius(float _radius)
 {
 	computeSphere_.Radius = _radius;
+	radius = _radius;
+}
+
+void mtgb::Collider::OnPostRestore()
+{
+	SetCenter(center);
+	switch (type)
+	{
+	case ColliderType::TYPE_SPHERE:
+	case ColliderType::TYPE_CAPSULE:
+		SetRadius(radius);
+		break;
+	case ColliderType::TYPE_AABB:
+		SetExtents(extents);
+		break;
+	}
 }
 
 void mtgb::Collider::Draw() const
@@ -284,21 +289,21 @@ void mtgb::Collider::Draw() const
 
 	//Draw::SetShaderOnce(ShaderType::Debug3D);
 
-	switch (type_)
+	switch (type)
 	{
-	case mtgb::ColliderType::TYPE_SPHERE:
+	case ColliderType::TYPE_SPHERE:
 		copyTransform = *pTransform_;
 		copyTransform.scale *= Vector3::One() * computeSphere_.Radius;
 		//copyTransform.position += computeSphere_.Center;
 		copyTransform.Compute();
 		Draw::FBXModel(hSphereModel_, copyTransform, 0,ShaderType::Debug3D);
 		break;
-	case mtgb::ColliderType::TYPE_CAPSULE:
+	case ColliderType::TYPE_CAPSULE:
 		break;
-	case mtgb::ColliderType::TYPE_AABB:
+	case ColliderType::TYPE_AABB:
 
 
-		if (!isStatic_)
+		if (!isStatic)
 		{
 			copyTransform = *pTransform_;
 		}
@@ -310,15 +315,15 @@ void mtgb::Collider::Draw() const
 		// 軸並行なので回転はなし
 		copyTransform.rotate = Quaternion{};
 
-		if (isStatic_)
+		if (isStatic)
 		{
-			// 静的、transform不要なのでそのまま代入
+			// 静的、StatefulTransform不要なのでそのまま代入
 			copyTransform.position = computeBox_.Center;
 			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
 		else
 		{
-			// transformに合わせて位置、サイズを調整
+			// StatefulTransformに合わせて位置、サイズを調整
 			//copyTransform.position += computeBox_.Center;
 			copyTransform.scale *= computeBox_.Extents * 2.0f;
 		}

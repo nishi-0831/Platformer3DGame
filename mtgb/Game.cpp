@@ -47,12 +47,27 @@ void mtgb::Game::UpdateFixed()
 	}
 }
 
-void mtgb::Game::RemoveEntityComponent(const EntityId _entityId)
+void mtgb::Game::RemoveEntityAllComponent(const EntityId _entityId)
 {
 	for (auto&& cpSystem : pInstance_->pComponentPools_)
 	{
 		cpSystem->Remove(_entityId);
 	}
+}
+
+void mtgb::Game::RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId)
+{
+	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
+
+	if (itr == pInstance_->pRegisterSystems_.end())
+		return;
+
+	IComponentPool* pComponentPool = dynamic_cast<IComponentPool*>(itr->second);
+
+	if (pComponentPool == nullptr) return;
+
+	pComponentPool->Remove(_entityId);
+
 }
 
 mtgb::EntityId mtgb::Game::CreateEntity()

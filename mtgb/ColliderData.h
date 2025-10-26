@@ -1,5 +1,5 @@
 #pragma once
-#include "Collider.h"
+#include "ColliderType.h"
 #include "Vector3.h"
 namespace mtgb
 {
@@ -8,11 +8,11 @@ namespace mtgb
 	/// </summary>
 	struct ColliderData
 	{
-		ColliderType type{ ColliderType::TYPE_AABB };
-		bool isStatic{ false };
+		ColliderType type{ ColliderType::TYPE_AABB };// 当たり判定の形
+		bool isStatic{ false };// 静的な、Transform不要なコライダー用のフラグ
 		ColliderTag colliderTag{ ColliderTag::GAME_OBJECT };
 		Vector3 center;
 		float radius;
-		float extents;
+		Vector3 extents;
 	};
 }

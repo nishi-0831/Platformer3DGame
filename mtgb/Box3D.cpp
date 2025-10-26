@@ -1,8 +1,7 @@
 #include "Box3D.h"
-#include "StatefulTransform.h"
+#include "Transform.h"
 #include "Fbx.h"
 #include "Entity.h"
-#include "StatefulTransform.h"
 unsigned int mtgb::Box3D::generateCounter_{ 0 };
 
 mtgb::Box3D::Box3D() : GameObject(GameObjectBuilder()
@@ -10,15 +9,12 @@ mtgb::Box3D::Box3D() : GameObject(GameObjectBuilder()
 	.SetScale({1,1,1})
 	.SetName("Box3D (" + std::to_string(generateCounter_++) + ")")
 	.Build())
-	,pTransform_{Component<Transform>()}
+	//,pTransform_{Component<Transform>()}
 //	,pMeshRenderer_{Component<MeshRenderer>()}
-	,pCollider_{Component<Collider>()}
+	//,pCollider_{Component<Collider>()}
 	,ImGuiShowable(name_,ShowType::Inspector,Entity::entityId_)
 {
-	//pMeshRenderer_->SetMesh(Fbx::Load("Model/Box.fbx"));
-	pCollider_->type_ = TYPE_AABB;
-	pCollider_->SetCenter(pTransform_->position);
-	pCollider_->SetExtents(pTransform_->scale * 0.5f);
+	
 
 }
 
@@ -43,13 +39,34 @@ void mtgb::Box3D::ShowImGui()
 std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entityId) const
 {
 	std::vector<IComponentMemento*> mementos;
-	TransformData data
+	TransformData transformData
 	{
 		.position{0,0,10},
 		.scale{1,1,1}
 	};
-	mementos.emplace_back(_entityId, data);
 
+	ColliderData colliderData
+	{
+		.type{ColliderType::TYPE_AABB},
+		.isStatic{false},
+		.colliderTag{},
+		.center{transformData.position},
+		.radius{transformData.scale.x * 0.5f},
+		.extents{transformData.scale * 0.5f}
+	};
+
+	MeshRendererData meshData
+	{
+		.meshHandle{Fbx::Load("Model/Box.fbx")},
+		.layer{AllLayer()},
+		.shaderType{ShaderType::FbxParts}
+	};
+
+	mementos.push_back(new TransformMemento(_entityId,transformData));
+	mementos.push_back(new ColliderMemento(_entityId, colliderData));
+	mementos.push_back(new MeshRendererMemento(_entityId, meshData));
+
+	return mementos;
 }
 
 
