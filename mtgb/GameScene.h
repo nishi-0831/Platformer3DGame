@@ -61,7 +61,7 @@ namespace mtgb
 		/// <returns>ë∂ç›ÇµÇ»Ç¢Ç»ÇÁnullptr</returns>
 		GameObject* GetGameObject(const EntityId _entityId) const;
 
-
+		void DestroyGameObject(EntityId _entityId);
 	protected:
 		virtual void Initialize();
 		virtual void Update();

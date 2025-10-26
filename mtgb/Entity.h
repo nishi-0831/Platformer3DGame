@@ -9,10 +9,10 @@ namespace mtgb
 	class Entity
 	{
 	public:
-		Entity() :
-			entityId_{ ++entityCounter_ }  // id counterを加算してIdを入れる
+		Entity() 
 		{
 		}
+
 		virtual ~Entity()
 		{
 		}
@@ -24,9 +24,9 @@ namespace mtgb
 		inline const EntityId GetEntityId() const { return entityId_; }
 
 	protected:
-		EntityId entityId_;  // エンティティの識別子
+		EntityId entityId_{INVALID_ENTITY};  // エンティティの識別子
 
 	private:
-		static EntityId entityCounter_;  // エンティティ識別子のカウンタ
+		//static EntityId entityCounter_;  // エンティティ識別子のカウンタ
 	};
 }

@@ -97,4 +97,16 @@ mtgb::GameObject* mtgb::GameScene::GetGameObject(const EntityId _entityId) const
 	return nullptr;
 }
 
+void mtgb::GameScene::DestroyGameObject(EntityId _entityId) 
+{
+	for (auto& object : pGameObjects_)
+	{
+		if (object->GetEntityId() != _entityId)
+		{
+			continue;
+		}
+		object->DestroyMe();
+	}
+}
+
 mtgb::GameScene* mtgb::GameScene::pInstance_{ nullptr };

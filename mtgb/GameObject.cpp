@@ -2,7 +2,7 @@
 #include "SceneSystem.h"
 #include "Transform.h"
 #include "MTAssert.h"
-
+#include "EntityManager.h"
 
 mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 	name_{_desc.name},
@@ -16,6 +16,8 @@ mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 	layerFlag_{ _desc.layerFlag },
 	tag_{ _desc.tag }
 {
+	entityId_ = Game::System<EntityManager>().CreateEntity();
+
 	Transform* pTransform_{ Component<Transform>() };
 	pTransform_->position = _desc.position;
 	pTransform_->rotate = _desc.rotate;

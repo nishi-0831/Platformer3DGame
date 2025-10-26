@@ -52,9 +52,19 @@ namespace mtgb
 					return;
 				}
 
+				auto componentIndex = IComponentPool::GetComponentIndex(_memento.GetEntityId(), _memento.GetComponentType());
+
+				if (componentIndex.has_value() == false)
+					return;
+
 				// エンティティのIdからコンポーネントを取得
-				T& component = T::template Get(pMemento->GetEntityId());
-				component.RestoreFromMemento(*pMemento);
+				T* pComponent;
+				bool result = T::template Reuse(pComponent, pMemento->GetEntityId(), componentIndex.value());
+
+				if (result == false)
+					return;
+
+				pComponent->RestoreFromMemento(*pMemento);
 			};
 		types_.push_back(typeid(T));
 	}

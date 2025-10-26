@@ -29,6 +29,8 @@ namespace mtgb
 
 		void Release() override;
 
+
+		bool Reuse(ComponentT*  _pComponent,size_t _index, EntityId _entityId);
 		/// <summary>
 		/// コンポーネントを作成/取得する
 		/// </summary>
@@ -95,6 +97,21 @@ namespace mtgb
 	}
 
 	template<class ComponentT, bool IsSingleton>
+	inline bool ComponentPool<ComponentT, IsSingleton>::Reuse(ComponentT* _pComponent, size_t _index, EntityId _entityId)
+	{
+		if (_index >= poolId_.size())
+			return false;
+
+		if (poolId_[_index] != INVALID_ENTITY)
+			return;
+		
+		poolId_[_index] = _entityId;
+		ComponentT& component = pool_[_index];
+		component.entityId_ = _entityId;
+		_pComponent = &component;
+	}
+
+	template<class ComponentT, bool IsSingleton>
 	template<typename... Args>
 	inline ComponentT& ComponentPool<ComponentT, IsSingleton>::Get(EntityId _entityId, Args&&... _args)
 	{
@@ -114,9 +131,12 @@ namespace mtgb
 		pool_.back().Initialize();
 		assert(poolId_.size() < COMPONENT_CAPACITY);
 
+		// インデックスを記録
+		size_t poolIndex = pool_.size() - 1;
+		IComponentPool::RegisterComponentIndex(_entityId, std::type_index(typeid(ComponentT)), poolIndex);
+
 		// EntityIdに割り当てられたComponentとして登録
 		IComponentPool::RegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
-
 
 		return pool_.back(); // 追加&&初期化したコンポーネントを返す
 	}

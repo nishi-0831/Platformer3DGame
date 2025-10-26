@@ -20,7 +20,7 @@ void CommandHistoryManager::UndoCommand()
 void CommandHistoryManager::RedoCommand()
 {
 	Command* redoCommand = redoStack_.top();
-	redoCommand->Execute();
+	redoCommand->Redo();
 	undoStack_.push(redoCommand);
 	redoStack_.pop();
 }

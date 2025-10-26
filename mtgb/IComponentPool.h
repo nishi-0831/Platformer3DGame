@@ -20,10 +20,22 @@ namespace mtgb
 
 		virtual void Remove(const EntityId _entityId) = 0;
 
+		static void RegisterComponentIndex(EntityId _entityId, const std::type_index& _typeIndex,size_t _componentIndex);
+
+		/// <summary>
+		/// コンポーネントプール内のインデックスを取得
+		/// </summary>
+		/// <param name="_entityId"></param>
+		/// <param name="_typeIndex"></param>
+		/// <returns></returns>
+		static std::optional<size_t> GetComponentIndex(EntityId _entityId, const std::type_index& _typeIndex);
+
 		static void RegisterComponent(EntityId _entityId, const std::type_index& _typeIndex);
 		static void RegisterComponentPoolType(const std::type_index& _comp, const std::type_index& _pool);
 		static void UnRegisterComponent(EntityId _entityId, const std::type_index& _typeIndex);
 		static void ClearEntity(EntityId _entityId);
+
+		static void ClearComponentIndices(EntityId _entityId);
 		/// <summary>
 		/// Componentに対応するComponentPoolの型情報を返す
 		/// </summary>
@@ -37,6 +49,11 @@ namespace mtgb
 		// Component→ComponentPoolへのtype_indexの辞書
 		static std::unordered_map<std::type_index, std::type_index> componentPoolTypeMap_;
 		static std::unordered_map<EntityId, std::set<std::type_index>> entityComponents_;
+
+		// キー : Componentの型情報, 値 : プール内のインデックス
+		using ComponentIndexMap = std::unordered_map<std::type_index, size_t>;
+		// キー : EntityId, 値 : ComponentIndexMap
+		static std::unordered_map<EntityId, ComponentIndexMap> componentIndices_;
 		void RegisterCurrentScene(const std::function<void()>& _onMove);
 	};
 }

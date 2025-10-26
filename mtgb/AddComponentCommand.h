@@ -32,11 +32,12 @@ namespace mtgb
 		std::string Name() const override;
 	private:
 		EntityId entityId_;
+		size_t componentPoolIndex_;
 		std::type_index componentType_;
 		IComponentMemento* memento_;
 
 		// ComponentFactory‚ªnull‚Å‚ ‚é‚±‚Æ‚ð‹–—e‚µ‚È‚¢
-		const ComponentFactory& pComponentFactory_;
+		const ComponentFactory& componentFactory_;
 
 		
 		void ApplyMemento();

@@ -3,12 +3,32 @@
 
 std::unordered_map<mtgb::EntityId, std::set<std::type_index>> mtgb::IComponentPool::entityComponents_;
 std::unordered_map<std::type_index, std::type_index> mtgb::IComponentPool::componentPoolTypeMap_;
+std::unordered_map<mtgb::EntityId, mtgb::IComponentPool::ComponentIndexMap> mtgb::IComponentPool::componentIndices_;
+
 mtgb::IComponentPool::IComponentPool()
 {
 }
 
 mtgb::IComponentPool::~IComponentPool()
 {
+}
+
+void mtgb::IComponentPool::RegisterComponentIndex(EntityId _entityId, const std::type_index& _typeIndex, size_t _componentIndex)
+{
+	componentIndices_[_entityId][_typeIndex] = _componentIndex;
+}
+
+std::optional<size_t> mtgb::IComponentPool::GetComponentIndex(EntityId _entityId, const std::type_index& _typeIndex)
+{
+	auto entityItr = componentIndices_.find(_entityId);
+	if (entityItr == componentIndices_.end())
+		return std::nullopt;
+
+	auto indexItr = entityItr->second.find(_typeIndex);
+	if (indexItr == entityItr->second.end())
+		return std::nullopt;
+
+	return indexItr->second;
 }
 
 void mtgb::IComponentPool::RegisterComponent(mtgb::EntityId _entityId, const std::type_index& _typeIndex)
@@ -41,6 +61,11 @@ void mtgb::IComponentPool::ClearEntity(mtgb::EntityId _entityId)
 {
 	// 全てのコンポーネントが割り当てられていないという判定にする
 	entityComponents_[_entityId].clear();
+}
+
+void mtgb::IComponentPool::ClearComponentIndices(EntityId _entityId)
+{
+	componentIndices_.erase(_entityId);
 }
 
 std::optional<std::type_index> mtgb::IComponentPool::GetComponentPoolType(const std::type_index& _typeIndex)

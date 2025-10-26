@@ -151,11 +151,7 @@ namespace mtgb
 		static void RemoveEntityAllComponent(const EntityId _entityId);
 
 		static void RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId);
-		/// <summary>
-		/// EntityId‚ğ¶¬‚µ‚Ä•Ô‚·
-		/// </summary>
-		/// <returns>¶¬‚µ‚½EntityId</returns>
-		static EntityId CreateEntity();
+		
 	private:
 		/// <summary>
 		/// ƒVƒXƒeƒ€‚Ì‰Šú‰»‚ğ‚·‚é

@@ -8,7 +8,7 @@ mtgb::AddComponentCommand::AddComponentCommand(
     : entityId_(_entityId)
     , componentType_(_typeIdx)
     , memento_(_memento)
-    , pComponentFactory_(_componentFactory)
+    , componentFactory_(_componentFactory)
 {
 }
 
@@ -30,12 +30,13 @@ void mtgb::AddComponentCommand::ApplyMemento()
     if (memento_ == nullptr)
     {
         // entityIdから既存のコンポーネントを取得、なければ新規作成しMementoに保存する
-        memento_ = pComponentFactory_.AddComponent(componentType_, entityId_);
+        memento_ = componentFactory_.AddComponent(componentType_, entityId_);
     }
     else
     {
-        // Mementoからコンポーネントを復元
-        pComponentFactory_.AddComponentFromMemento(*memento_);
+            // Mementoからコンポーネントを復元
+            componentFactory_.AddComponentFromMemento(*memento_);
+        
     }
 }
 

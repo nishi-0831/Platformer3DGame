@@ -70,10 +70,7 @@ void mtgb::Game::RemoveEntityComponent(const std::type_index _typeIndex, EntityI
 
 }
 
-mtgb::EntityId mtgb::Game::CreateEntity()
-{
-	return Entity().GetEntityId();
-}
+
 
 void mtgb::Game::InitializeSystems(const std::list<ISystem*>& _uninitialized)
 {

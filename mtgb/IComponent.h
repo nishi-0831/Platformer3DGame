@@ -26,7 +26,8 @@ namespace mtgb
 		static ComponentT& Get(const EntityId _entityId);
 		template<typename... Args>
 		static ComponentT& Get(const EntityId _entityId, Args&&... _args);
-
+		
+		static bool Reuse(ComponentT* _pComponent, size_t _index, EntityId _entityId);
 		virtual void Initialize() {}
 
 		const EntityId GetEntityId() const { return entityId_; }
@@ -60,4 +61,6 @@ namespace mtgb
 	{
 		return Game::System<ComponentPoolT>().Get(_entityId);
 	}
+
+	//template<class ComponentPoolT,type>
 }

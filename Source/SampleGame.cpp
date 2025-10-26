@@ -23,6 +23,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	//_register(new MainWindow{}, SystemUpdateType::Cycle);
 
 	//_register.function_
+	_register.Set<EntityManager>(SystemUpdateType::DontCallMe);
 	_register.Set<Time>(SystemUpdateType::Cycle);
 	_register.Set<Timer>(SystemUpdateType::Frame);
 
