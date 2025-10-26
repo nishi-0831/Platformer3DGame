@@ -17,7 +17,7 @@ namespace mtgb
 		using CreateFromMementoFunction = std::function<void(const IComponentMemento& _memento)>;
 
 		template<typename T, typename M>
-		requires MementoT<T,M>
+		requires ComponentWithMementoT<T,M>
 		void RegisterComponent();
 
 		IComponentMemento* AddComponent(const std::type_index& _info, EntityId _id);
@@ -33,7 +33,7 @@ namespace mtgb
 		std::vector<std::type_index> types_;
 	};
 	template<typename T, typename M>
-		requires MementoT<T, M>
+		requires ComponentWithMementoT<T, M>
 	inline void ComponentFactory::RegisterComponent()
 	{
 		std::type_index typeIdx(typeid(T));

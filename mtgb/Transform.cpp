@@ -96,18 +96,7 @@ mtgb::Quaternion mtgb::Transform::GetWorldRotate() const
 	return XMQuaternionMultiply(XMQuaternionRotationMatrix(matrixWorldRot_), XMQuaternionIdentity());
 }
 
-mtgb::TransformMemento* mtgb::Transform::SaveToMemento() const
-{
-	return new mtgb::TransformMemento(this->GetEntityId(), this->position, this->scale, this->rotate);
-}
 
-void mtgb::Transform::RestoreFromMemento(const TransformMemento& _memento)
-{
-	this->position = _memento.position_;
-	this->scale = _memento.scale_;
-	this->rotate = _memento.rotate_;
-	this->Compute();
-}
 
 void mtgb::Transform::GenerateWorldMatrixSelf(Matrix4x4* _pMatrix) const
 {

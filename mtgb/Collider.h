@@ -73,7 +73,6 @@ namespace mtgb
 		void SetRadius(float _radius);
 		ColliderTag GetColliderTag() const { return colliderTag_; }
 		
-		void RestoreFromMemento(const ColliderMemento& _memento);
 	public:
 		ColliderType type_;  // “–‚½‚è”»’è‚ÌŒ`
 

@@ -20,7 +20,4 @@ void mtgb::RigidBody::OnCollisionEnter(const std::function<void(const EntityId)>
 	onHit_ = _onHit;
 }
 
-void mtgb::RigidBody::RestoreFromMemento(const RigidBodyMemento& _memento)
-{
-	this->velocity_ = _memento.velocity_;
-}
+

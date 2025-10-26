@@ -5,7 +5,7 @@
 
 namespace mtgb
 {
-	class AudioPlayerMemento : public IComponentMemento
+	/*class AudioPlayerMemento : public IComponentMemento
 	{
 		friend AudioPlayer;
 	public:
@@ -25,5 +25,5 @@ namespace mtgb
 	private:
 		EntityId entityId_;
 		AudioHandle hAudio_;
-	};
+	};*/
 }

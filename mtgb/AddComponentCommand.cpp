@@ -26,11 +26,18 @@ void mtgb::AddComponentCommand::Undo()
 
 void mtgb::AddComponentCommand::ApplyMemento() 
 {
-	if (memento_ == nullptr || pComponentFactory_)
-		return;
+    if (pComponentFactory_ == nullptr)
+        return;
 
-    // Mementoからコンポーネントを復元
-    pComponentFactory_->AddComponentFromMemento(*memento_);
+    if (memento_ == nullptr)
+    {
+        memento_ = pComponentFactory_->AddComponent(componentType_, entityId_);
+    }
+    else
+    {
+        // Mementoからコンポーネントを復元
+        pComponentFactory_->AddComponentFromMemento(*memento_);
+    }
 }
 
 void mtgb::AddComponentCommand::RemoveComponent() const

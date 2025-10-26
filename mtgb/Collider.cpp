@@ -334,9 +334,4 @@ void mtgb::Collider::Draw() const
 mtgb::FBXModelHandle mtgb::Collider::hSphereModel_{ mtgb::INVALID_HANDLE };
 mtgb::FBXModelHandle mtgb::Collider::hBoxModel_{ mtgb::INVALID_HANDLE };
 
-void mtgb::Collider::RestoreFromMemento(const ColliderMemento& _memento)
-{
-	this->type_ = _memento.type_;
-	this->isStatic_ = _memento.isStatic_;
-	this->colliderTag_ = _memento.colliderTag_;
-}
+

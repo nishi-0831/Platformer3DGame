@@ -6,7 +6,7 @@
 
 namespace mtgb
 {
-	class MeshRendererMemento : public IComponentMemento
+	/*class MeshRendererMemento : public IComponentMemento
 	{
 		friend MeshRenderer;
 	public:
@@ -29,5 +29,5 @@ namespace mtgb
 		FBXModelHandle hMesh_;
 		GameObjectLayerFlag layer_;
 		ShaderType shaderType_;
-	};
+	};*/
 }

@@ -14,12 +14,6 @@ namespace mtgb
         Vector3 position{ 0.0f, 0.0f, 0.0f };
         Vector3 scale{ 1.0f, 1.0f, 1.0f };
         Quaternion rotate{};
-
-        // デフォルト値を提供
-        static TransformData Default()
-        {
-            return TransformData{};
-        }
 	};
 
 

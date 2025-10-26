@@ -5,7 +5,7 @@
 
 namespace mtgb
 {
-	class RigidBodyMemento : public IComponentMemento
+	/*class RigidBodyMemento : public IComponentMemento
 	{
 		friend RigidBody;
 	public:
@@ -25,5 +25,5 @@ namespace mtgb
 	private:
 		EntityId entityId_;
 		Vector3 velocity_;
-	};
+	};*/
 }

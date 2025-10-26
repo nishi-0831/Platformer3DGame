@@ -515,7 +515,6 @@ void mtgb::MTImGui::DrawVec(const Vector3& _start, const Vector3& _vec, float _t
 }
 
 template<typename T>
-    requires mtgb::ComponentT <T>
 inline void mtgb::MTImGui::RegisterComponentViewer()
 {
     std::type_index typeIdx(typeid(T));

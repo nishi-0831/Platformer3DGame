@@ -146,7 +146,6 @@ namespace mtgb
 
 		void RegisterAllComponentViewers();
 		template<typename T>
-		requires ComponentT <T>
 		void RegisterComponentViewer();
 
 		std::unordered_map<std::type_index, std::function<void(EntityId)>> componentShowFuncs_;

@@ -48,7 +48,6 @@ namespace mtgb
 
 		void Play();
 		
-		void RestoreFromMemento(const AudioPlayerMemento& _memento);
 
 	private:
 		IXAudio2SourceVoice* pSourceVoice_{ nullptr };

@@ -24,7 +24,7 @@ namespace mtgb
 		virtual inline void Update() {};
 		virtual inline void Draw() const {};
 		virtual inline void End() {};
-		virtual inline std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const {};
+		virtual inline std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const { return std::vector<IComponentMemento*>(); };
 
 		/// <summary>
 		/// –¼‘O‚ğİ’è‚·‚é

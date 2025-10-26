@@ -5,7 +5,7 @@
 
 namespace mtgb
 {
-	class ColliderMemento : public IComponentMemento
+	/*class ColliderMemento : public IComponentMemento
 	{
 		friend Collider;
 	public:
@@ -29,5 +29,5 @@ namespace mtgb
 		ColliderType type_;
 		bool isStatic_;
 		ColliderTag colliderTag_;
-	};
+	};*/
 }

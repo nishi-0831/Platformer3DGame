@@ -59,8 +59,4 @@ void mtgb::AudioPlayer::Play()
 	pSourceVoice_->Start();
 }
 
-void mtgb::AudioPlayer::RestoreFromMemento(const AudioPlayerMemento& _memento)
-{
-	// オーディオハンドルを復元
-	this->SetAudio(_memento.hAudio_);
-}
+

@@ -13,7 +13,6 @@ namespace mtgb
 	using EntityId = int64_t;
 
 	class TransformCP;
-	class TransformMemento;
 
 	class Transform : public IComponent<mtgb::TransformCP, Transform>, public TransformCore
 	{
@@ -136,9 +135,7 @@ namespace mtgb
 		/// <returns>ワールド回転の四元数</returns>
 		Quaternion GetWorldRotate() const;
 
-		TransformMemento* SaveToMemento() const;
-
-		void RestoreFromMemento(const TransformMemento& _memento);
+		
 	private:
 		/// <summary>
 		/// 計算用自分自身のワールド行列を生成する

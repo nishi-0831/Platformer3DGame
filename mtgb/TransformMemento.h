@@ -4,7 +4,7 @@
 
 namespace mtgb
 {
-	class TransformMemento : public IComponentMemento
+	/*class TransformMemento : public IComponentMemento
 	{
 		friend Transform;
 	public :
@@ -34,5 +34,5 @@ namespace mtgb
 		Vector3 position_;
 		Vector3 scale_;
 		Quaternion rotate_;
-	};
+	};*/
 }

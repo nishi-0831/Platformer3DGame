@@ -1,5 +1,7 @@
 #pragma once
 #include "Entity.h"
+#include "Command.h"
+#include "ComponentFactory.h"
 namespace mtgb
 {
 	enum class PrimitiveType
