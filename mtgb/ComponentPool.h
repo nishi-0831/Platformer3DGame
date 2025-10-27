@@ -39,9 +39,9 @@ namespace mtgb
 		template<typename... Args>
 		ComponentT& Get(EntityId _entityId, Args&&... _args);
 
-		bool TryGet(ComponentT*& _pComponent, const EntityId _entityId) requires(IsSingleton);
+		bool TryGet(ComponentT*& _pComponent, const EntityId _entityId);
 
-		bool TryGet(std::vector<ComponentT*>* _pComponents, const EntityId _entityId) requires(!IsSingleton);
+		bool TryGet(std::vector<ComponentT*>* _pComponents, const EntityId _entityId);
 		
 		/*template<typename... Args>
 		ComponentT& Add(EntityId _entityId, Args&&... _args) requires(!IsSingleton);*/
@@ -103,12 +103,13 @@ namespace mtgb
 			return false;
 
 		if (poolId_[_index] != INVALID_ENTITY)
-			return;
+			return false;
 		
 		poolId_[_index] = _entityId;
 		ComponentT& component = pool_[_index];
 		component.entityId_ = _entityId;
 		_pComponent = &component;
+		return true;
 	}
 
 	template<class ComponentT, bool IsSingleton>
@@ -143,7 +144,7 @@ namespace mtgb
 
 	template<class ComponentT, bool IsSingleton>
 	inline bool ComponentPool<ComponentT, IsSingleton>::TryGet(
-		ComponentT*& _pComponent, const EntityId _entityId) requires(IsSingleton)
+		ComponentT*& _pComponent, const EntityId _entityId)
 	{
 		for (int i = 0; i < poolId_.size(); i++)
 		{
@@ -159,7 +160,7 @@ namespace mtgb
 
 	template<class ComponentT, bool IsSingleton>
 	inline bool ComponentPool<ComponentT, IsSingleton>::TryGet(
-		std::vector<ComponentT*>* _pComponents, const EntityId _entityId) requires(!IsSingleton)
+		std::vector<ComponentT*>* _pComponents, const EntityId _entityId) 
 	{
 		_pComponents->clear();
 		for (int i = 0; i < poolId_.size(); i++)

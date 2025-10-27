@@ -62,5 +62,10 @@ namespace mtgb
 		return Game::System<ComponentPoolT>().Get(_entityId);
 	}
 
-	//template<class ComponentPoolT,type>
+	template<class ComponentPoolT, typename ComponentT>
+	inline bool IComponent<ComponentPoolT, ComponentT>::Reuse(ComponentT* _pComponent, size_t _index, EntityId _entityId)
+	{
+		return Game::System<ComponentPoolT>().Reuse(_pComponent, _index, _entityId);
+	}
+
 }

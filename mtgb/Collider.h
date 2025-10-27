@@ -1,24 +1,24 @@
 #pragma once
-#include "IComponent.h"
-#include "ColliderCP.h"
 #include "StatefulComponent.h"
-#include "IComponentMemento.h"
 #include "ColliderData.h"
+#include "IComponentMemento.h"
 #include <set>
 #include <DirectXCollision.h>
 #include "Vector3.h"
 #include "ColliderType.h"
-#include "Transform.h"
+#include "ColliderCP.h"
+
 
 namespace mtgb
 {
 	class ColliderCP;
-	
+	class Transform;
 	class Collider : public ColliderData, public StatefulComponent<Collider, ColliderCP, ColliderData, ComponentMemento<Collider, ColliderData>>
 	{
-		friend ColliderCP;
 
 	public:
+		using StatefulComponent<Collider, ColliderCP, ColliderData, ComponentMemento<Collider, ColliderData>>::StatefulComponent;
+		friend ColliderCP;
 
 
 		// è’ìÀîªíËÇÇ∑ÇÈÇ©î€Ç©ÇÃÉ^ÉO

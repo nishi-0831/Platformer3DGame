@@ -4,6 +4,7 @@
 #include "Matrix4x4.h"
 #include "Draw.h"
 #include "Debug.h"
+#include "Transform.h"
 #include <cfloat>
 namespace
 {

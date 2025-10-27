@@ -45,7 +45,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 	//ÉMÉYÉÇï\é¶
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
-
+	
 	if (ImGuizmo::Manipulate(viewMat_, projMat_, operation_, mode_, worldMat_))
 	{
 		//ï“èWÇ≥ÇÍÇΩworldMatÇ©ÇÁposition,rotation,scaleÇ…ï™â
@@ -163,6 +163,10 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 	{
 		mode_ = ImGuizmo::WORLD;
 	}
+
+	bool isUsingManipulate = ImGuizmo::IsUsingViewManipulate;
+	std::string text = isUsingManipulate ? "true" : "false";
+	ImGui::Text("%s", text.c_str());
 }
 
 

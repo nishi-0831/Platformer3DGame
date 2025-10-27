@@ -1,4 +1,5 @@
 #pragma once
+#include "ISystem.h"
 #include "ComponentPool.h"
 #include "Collider.h"
 
@@ -12,7 +13,7 @@ namespace mtgb
 {
 	class Collider;
 	class GameObject;
-	class ColliderCP : public ComponentPool<Collider, false>
+	class ColliderCP : public ComponentPool<Collider>
 	{
 	public:
 		ColliderCP();

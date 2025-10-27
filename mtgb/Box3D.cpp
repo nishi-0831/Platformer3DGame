@@ -34,6 +34,7 @@ void mtgb::Box3D::Draw() const
 void mtgb::Box3D::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	ImGui::Text("EntityId:%d", Entity::entityId_);
 }
 
 std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entityId) const
