@@ -24,6 +24,21 @@ mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 	pTransform_->scale = _desc.scale;
 }
 
+mtgb::GameObject::GameObject()
+	: status_
+	{
+		.isActive_ = true,
+		.callUpdate_ = true,
+		.callDraw_ = true,
+		.toDestroy_ = FALSE
+	}
+	, layerFlag_{AllLayer()}
+	, tag_{GameObjectTag::Untagged}
+{
+	entityId_ = Game::System<EntityManager>().CreateEntity();
+
+}
+
 mtgb::GameObject::GameObject(const GameObject& _other)
 	:Entity()
 	,status_{_other.status_}

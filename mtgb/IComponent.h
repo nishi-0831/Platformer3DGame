@@ -27,7 +27,7 @@ namespace mtgb
 		template<typename... Args>
 		static ComponentT& Get(const EntityId _entityId, Args&&... _args);
 		
-		static bool Reuse(ComponentT* _pComponent, size_t _index, EntityId _entityId);
+		static ComponentT* Reuse(size_t _index, EntityId _entityId);
 		virtual void Initialize() {}
 
 		const EntityId GetEntityId() const { return entityId_; }
@@ -63,9 +63,9 @@ namespace mtgb
 	}
 
 	template<class ComponentPoolT, typename ComponentT>
-	inline bool IComponent<ComponentPoolT, ComponentT>::Reuse(ComponentT* _pComponent, size_t _index, EntityId _entityId)
+	inline ComponentT* IComponent<ComponentPoolT, ComponentT>::Reuse(size_t _index, EntityId _entityId)
 	{
-		return Game::System<ComponentPoolT>().Reuse(_pComponent, _index, _entityId);
+		return Game::System<ComponentPoolT>().Reuse(_index, _entityId);
 	}
 
 }

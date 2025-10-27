@@ -17,6 +17,7 @@ namespace mtgb
 	{
 	public:
 		GameObject(const GAME_OBJECT_DESC& _desc);
+		GameObject();
 		GameObject(const GameObject& _other);
 		virtual ~GameObject();
 

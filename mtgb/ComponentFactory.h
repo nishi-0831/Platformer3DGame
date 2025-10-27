@@ -60,19 +60,12 @@ namespace mtgb
 				
 				if (componentIndex.has_value())
 				{
-					bool result = T::template Reuse(pComponent, pMemento->GetEntityId(), componentIndex.value());
-					if (result == false)
-					{
-						return;
-					}
+					pComponent = T::template Reuse(componentIndex.value(), pMemento->GetEntityId());
 				}
 				else
 				{
 					pComponent = &(T::template Get(pMemento->GetEntityId()));
 				}
-
-					
-
 				pComponent->RestoreFromMemento(*pMemento);
 			};
 		types_.push_back(typeid(T));

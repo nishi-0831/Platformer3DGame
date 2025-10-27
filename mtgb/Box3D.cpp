@@ -4,18 +4,11 @@
 #include "Entity.h"
 unsigned int mtgb::Box3D::generateCounter_{ 0 };
 
-mtgb::Box3D::Box3D() : GameObject(GameObjectBuilder()
-	.SetPosition({0,0,10})
-	.SetScale({1,1,1})
-	.SetName("Box3D (" + std::to_string(generateCounter_++) + ")")
-	.Build())
-	//,pTransform_{Component<Transform>()}
-//	,pMeshRenderer_{Component<MeshRenderer>()}
-	//,pCollider_{Component<Collider>()}
-	,ImGuiShowable(name_,ShowType::Inspector,Entity::entityId_)
+mtgb::Box3D::Box3D() 
+	: GameObject()
+	, ImGuiShowable("Box3D", ShowType::Inspector, Entity::entityId_)
 {
-	
-
+	name_ = "Box3D";
 }
 
 mtgb::Box3D::~Box3D()

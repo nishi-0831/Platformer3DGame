@@ -30,7 +30,7 @@ namespace mtgb
 		void Release() override;
 
 
-		bool Reuse(ComponentT*  _pComponent,size_t _index, EntityId _entityId);
+		ComponentT* Reuse(size_t _index, EntityId _entityId);
 		/// <summary>
 		/// コンポーネントを作成/取得する
 		/// </summary>
@@ -97,19 +97,18 @@ namespace mtgb
 	}
 
 	template<class ComponentT, bool IsSingleton>
-	inline bool ComponentPool<ComponentT, IsSingleton>::Reuse(ComponentT* _pComponent, size_t _index, EntityId _entityId)
+	inline ComponentT* ComponentPool<ComponentT, IsSingleton>::Reuse(size_t _index, EntityId _entityId)
 	{
-		if (_index >= poolId_.size())
-			return false;
-
+		if (poolId_.size() <= _index)
+			return nullptr;
 		if (poolId_[_index] != INVALID_ENTITY)
-			return false;
-		
+			return nullptr;
+
 		poolId_[_index] = _entityId;
-		ComponentT& component = pool_[_index];
-		component.entityId_ = _entityId;
-		_pComponent = &component;
-		return true;
+
+		ComponentT* pComponent = &pool_[_index];
+		pComponent->entityId_ = _entityId;
+		return pComponent;
 	}
 
 	template<class ComponentT, bool IsSingleton>
