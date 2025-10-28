@@ -11,138 +11,131 @@
 
 
 
-
-
 // TypeRegistryのテンプレート実装
 template<typename T>
 void TypeRegistry::RegisterType()
 {
-	
 	using Type = std::remove_pointer_t<std::remove_cvref_t<T>>;
 	showFunctions_[typeid(Type)] = [this](std::any ptr, const char* name) -> Command*
+	{
+		if constexpr (refl::is_reflectable<Type>())
 		{
-			
-			if constexpr (refl::is_reflectable<Type>())
+			Type* registerInstance = nullptr;
+			if (ptr.type() == typeid(T*))
 			{
-				Type* registerInstance = nullptr;
-				if (ptr.type() == typeid(T*))
-				{
-					registerInstance = std::any_cast<T*>(ptr);
-				}
-				else if (ptr.type() == typeid(const T*))
-				{
-					registerInstance = const_cast<T*>(std::any_cast<const T*>(ptr));
-				}
-				massert(registerInstance != nullptr
-					&& "instanceのany_castに失敗:ptrがnullptrです @TypeRegistry::RegisterType");
-				constexpr auto type = refl::reflect<Type>();
+				registerInstance = std::any_cast<T*>(ptr);
+			}
+			else if (ptr.type() == typeid(const T*))
+			{
+				registerInstance = const_cast<T*>(std::any_cast<const T*>(ptr));
+			}
+			massert(registerInstance != nullptr
+				&& "instanceのany_castに失敗:ptrがnullptrです @TypeRegistry::RegisterType");
+			constexpr auto type = refl::reflect<Type>();
 
-				
-				bool showFuncExecuted = false;
-				//type.attributesの各属性をラムダ式の引数に渡して一つずつ処理
-				std::apply([&](auto&&... attrs)
-					{
+			bool showFuncExecuted = false;
+			Command* result = nullptr;
+
+			//type.attributesの各属性をラムダ式の引数に渡して一つずつ処理
+			std::apply([&](auto&&... attrs)
+				{
+					(
 						(
-							(
-								[&]
-								{
-									//属性のインスタンスの型を取得
-									//本来の型特性を知りたいのでdecay_tで純粋な値型に変換
-									using AttrType = std::decay_t<decltype(attrs)>;
-									//ShowFunc型のインスタンスか否か
-									if constexpr (refl::trait::is_instance_of_v<ShowFunc, AttrType>)
-									{
-										return attrs(registerInstance, name);
-										showFuncExecuted = true;
-									}
-								}()
-									),
-							...);
-					}, type.attributes);
-
-				if (!showFuncExecuted)
-				{
-					
-						ImGui::PushID(registerInstance);
-						//メンバごとに走査
-						refl::util::for_each(type.members, [&](auto&& member)
+							[&]
 							{
-								// メンバの実際の型を取得（ポインタかどうかを含む）
-								using MemberValueType = std::remove_cvref_t<decltype(member(*registerInstance))>;
-
-								if constexpr (std::is_pointer_v<MemberValueType>)
+								//属性のインスタンスの型を取得
+								//本来の型特性を知りたいのでdecay_tで純粋な値型に変換
+								using AttrType = std::decay_t<decltype(attrs)>;
+								//ShowFunc型のインスタンスか否か
+								if constexpr (refl::trait::is_instance_of_v<ShowFunc, AttrType>)
 								{
-									// ポインタ型の場合：そのまま渡す
-									auto memberValue = member(*registerInstance);
-
-									// メンバの型がリフレクションされているかチェック
-									if (!this->ShowMemberWithReflection(memberValue, member.name.c_str()))
-									{
-										// 属性をチェックして適切な表示方法を選択
-										bool hasCustomAttribute = false;
-
-										// メンバーの属性を取得
-										auto memberAttributes = refl::descriptor::get_attributes(member);
-
-
-
-										hasCustomAttribute = this->CheckCustomAttrs(memberAttributes, memberValue, member.name.c_str());
-
-										// カスタム属性がない場合はデフォルト表示
-										if (!hasCustomAttribute) {
-											return mtgb::DefaultShow(memberValue, member.name.c_str());
-										}
-									}
+									result = attrs(registerInstance, name);
+									showFuncExecuted = true;
 								}
-								else
-								{
-									// 値型の場合：アドレスを取得して渡す
-									auto memberPtr = &(member(*registerInstance));
+							}()
+						),
+						...);
+				}, type.attributes);
 
-									// メンバの型がリフレクションされているかチェック
-									if (!this->ShowMemberWithReflection(memberPtr, member.name.c_str()))
-									{
-										// 属性をチェックして適切な表示方法を選択
-										bool hasCustomAttribute = false;
-
-										// メンバーの属性を取得
-										auto memberAttributes = refl::descriptor::get_attributes(member);
-
-										hasCustomAttribute = this->CheckCustomAttrs(memberAttributes, memberPtr, member.name.c_str());
-
-										// カスタム属性がない場合はデフォルト表示
-										if (!hasCustomAttribute) {
-											return mtgb::DefaultShow(memberPtr, member.name.c_str());
-										}
-									}
-								}
-							});
-
-						ImGui::PopID();
-					
-				}
-			}
-			else
+			if (!showFuncExecuted)
 			{
-				//リフレクションされていない
-				ImGui::Text("%s,NotReflectable", name);
+				ImGui::PushID(registerInstance);
+				//メンバごとに走査
+				refl::util::for_each(type.members, [&](auto&& member) -> Command*
+					{
+						// メンバの実際の型を取得（ポインタかどうかを含む）
+						using MemberValueType = std::remove_cvref_t<decltype(member(*registerInstance))>;
+
+						if constexpr (std::is_pointer_v<MemberValueType>)
+						{
+							// ポインタ型の場合：そのまま渡す
+							auto memberValue = member(*registerInstance);
+
+							// メンバの型がリフレクションされているかチェック
+							if (!this->ShowMemberWithReflection(memberValue, member.name.c_str()))
+							{
+								// 属性をチェックして適切な表示方法を選択
+								bool hasCustomAttribute = false;
+								// メンバーの属性を取得
+								auto memberAttributes = refl::descriptor::get_attributes(member);
+								hasCustomAttribute = this->CheckCustomAttrs(memberAttributes, memberValue, member.name.c_str());
+
+								// カスタム属性がない場合はデフォルト表示
+								if (!hasCustomAttribute)
+								{
+									result = mtgb::DefaultShow(memberValue, member.name.c_str());
+								}
+							}
+						}
+						else
+						{
+							// 値型の場合：アドレスを取得して渡す
+							auto memberPtr = &(member(*registerInstance));
+
+							// メンバの型がリフレクションされているかチェック
+							if (this->ShowMemberWithReflection(memberPtr, member.name.c_str(),result) == false)
+							{
+								// 属性をチェックして適切な表示方法を選択
+								bool hasCustomAttribute = false;
+								// メンバーの属性を取得
+								auto memberAttributes = refl::descriptor::get_attributes(member);
+
+								result = this->CheckCustomAttrs(memberAttributes, memberPtr, member.name.c_str());
+								// カスタム属性がない場合はデフォルト表示
+								if (result == nullptr)
+								{
+									result = mtgb::DefaultShow(memberPtr, member.name.c_str());
+								}
+							}
+						}
+						return result;
+					});
+				ImGui::PopID();
+				return result;
 			}
-			return nullptr;
-		};
+			return result;
+		}
+		else
+		{
+			//リフレクションされていない
+			ImGui::Text("%s,NotReflectable", name);
+		}
+		return nullptr;
+	};
 }
 
 // メンバの型がリフレクションされているかチェックし、ShowFunc属性があればそれを使用
 template<typename T>
-bool TypeRegistry::ShowMemberWithReflection(T memberValue, const char* name)
+bool TypeRegistry::ShowMemberWithReflection(T memberValue, const char* name, Command* command)
 {
 	using MemberType = std::remove_pointer_t<std::remove_cvref_t<T>>;
-	
 	if constexpr (refl::is_reflectable<MemberType>())
 	{
 		constexpr auto memberType = refl::reflect<MemberType>();
 		
 		// メンバの型にShowFunc属性があるかチェック
 		bool showFuncExecuted = false;
+
 		std::apply([&](auto&&... attrs)
 			{
 				(
@@ -155,11 +148,11 @@ bool TypeRegistry::ShowMemberWithReflection(T memberValue, const char* name)
 								// ポインタの場合は値を渡し、値型の場合はそのまま渡す
 								if constexpr (std::is_pointer_v<T>)
 								{
-									attrs(memberValue, name);
+									command = attrs(memberValue, name);
 								}
 								else
 								{
-									attrs(&memberValue, name);
+									command = attrs(&memberValue, name);
 								}
 								showFuncExecuted = true;
 							}
@@ -195,9 +188,9 @@ bool TypeRegistry::ShowMemberWithReflection(T memberValue, const char* name)
 }
 
 template<typename ...Args, typename T>
-bool TypeRegistry::CheckCustomAttrs(std::tuple<Args...>& attrs, T valPtr, const char* name)
+Command* TypeRegistry::CheckCustomAttrs(std::tuple<Args...>& attrs, T valPtr, const char* name)
 {
-	bool ret = false;
+	Command* command = nullptr;
 	std::apply([&](auto&&... attr)
 		{
 			(
@@ -206,14 +199,13 @@ bool TypeRegistry::CheckCustomAttrs(std::tuple<Args...>& attrs, T valPtr, const 
 						using AttrType = std::decay_t<decltype(attr)>;
 						if constexpr (std::is_base_of_v<refl::attr::usage::member, AttrType>)
 						{
-							attr(valPtr, name);
-							ret = true;
+							command = attr(valPtr, name);	
 						}
 					}()
 				), 
 			...);
 		}, attrs);
-	return ret;
+	return command;
 }
 
 template<typename T>

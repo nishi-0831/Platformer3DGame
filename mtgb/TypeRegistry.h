@@ -39,7 +39,7 @@ private:
 	std::function<void(Command*)> commandListenner_;
 
 	template<typename... Args, typename T>
-	bool CheckCustomAttrs(std::tuple<Args...>& attrs, T valPtr, const char* name);
+	Command* CheckCustomAttrs(std::tuple<Args...>& attrs, T valPtr, const char* name);
 	
 	template<typename T>
 	void CheckProxyAttrs();
@@ -47,7 +47,7 @@ private:
 	
 
 	template<typename T>
-	bool ShowMemberWithReflection(T memberValue, const char* name);
+	bool ShowMemberWithReflection(T memberValue, const char* name, Command* command);
 
 	TypeRegistry();
 	TypeRegistry(const TypeRegistry&) = delete;
@@ -56,23 +56,24 @@ private:
 template<typename T>
 void TypeRegistry::CallFunc(T* instance, const char* name)
 {
+	Command* command = nullptr;
 	const auto& itr = showFunctions_.find(typeid(T));
 	if (itr != showFunctions_.end())
 	{
-		Command* command = itr->second(std::any(instance),name);
-		if (command == nullptr)
-			return;
-		// 操作コマンドを渡す
-		commandListenner_(command);
+		command = itr->second(std::any(instance),name);
 	}
 	else
 	{
-		 Command* command = mtgb::DefaultShow(instance, name);
-		if (command == nullptr)
-			return;
-		// 操作コマンドを渡す
-		commandListenner_(command);
+		command = mtgb::DefaultShow(instance, name);
 	}
+
+	if (command == nullptr)
+		return;
+	if (commandListenner_ == nullptr)
+		return;
+
+	// 操作コマンドを渡す
+	commandListenner_(command);
 }
 
 template<typename T>

@@ -26,7 +26,11 @@ void TypeRegistry::CallFunc(std::type_index typeIdx, std::any instance, const ch
 	const auto& itr = showFunctions_.find(typeIdx);
 	if (itr != showFunctions_.end())
 	{
-		itr->second(instance, name);
+		Command* command = itr->second(std::any(instance), name);
+		if (command == nullptr)
+			return;
+		// ‘€ìƒRƒ}ƒ“ƒh‚ğ“n‚·
+		commandListenner_(command);
 	}
 }
 bool TypeRegistry::IsRegisteredType(std::type_index typeIdx)

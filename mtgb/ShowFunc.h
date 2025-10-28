@@ -1,4 +1,5 @@
 #pragma once
+#include "Command.h"
 template <typename Func>
 struct ShowFunc : refl::attr::usage::type
 {
@@ -9,7 +10,7 @@ public:
 	{
 	}
 	template<typename T>
-	void operator()(T value, const char* name) const { func(value, name); }
+	Command* operator()(T value, const char* name) const { return func(value, name); }
 };
 
 // ShowFunc‚ğì¬‚·‚éƒwƒ‹ƒp[ŠÖ”

@@ -2,7 +2,7 @@
 #include "ImGuiInputCommand.h"
 Command* Vector3Show::operator()(mtgb::Vector3* vec, const char* name) const
 {
-	mtgb::Vector3& old = *vec;
+	mtgb::Vector3 old = *vec;
 
 	bool changed = ImGui::InputFloat3(name, &vec->x,"%.3f",ImGuiInputTextFlags_NoUndoRedo);
 
@@ -29,7 +29,7 @@ Command* QuaternionSHow::operator()(DirectX::XMVECTORF32* vec, const char* name)
 
 Command* Vector4Show::operator()(DirectX::XMVECTOR* _vec, const char* _name) const
 {
-	DirectX::XMVECTOR& old = *_vec;
+	DirectX::XMVECTOR old = *_vec;
 
 	bool changed = ImGui::InputFloat4(_name, _vec->m128_f32);;
 

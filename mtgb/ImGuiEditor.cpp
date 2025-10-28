@@ -4,16 +4,18 @@
 #include "InputData.h"
 #include "GameObjectGenerator.h"
 #include "AddComponentCommand.h"
+#include "TypeRegistry.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
 	pCommandHistory_ = new CommandHistoryManagerWrapper(new CommandHistoryManager());
 	pComponentFactory_ = new ComponentFactory();
+	// コンポーネントの作成関数を登録
 	mtgb::RegisterComponents(pComponentFactory_);
 
 	pManipulator_ = new ImGuizmoManipulator([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); },*pComponentFactory_);
 
-	// コンポーネントの作成関数を登録
+	TypeRegistry::Instance().RegisterCommandListener({ [this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); } });
 }
 
 mtgb::ImGuiEditor::~ImGuiEditor()
