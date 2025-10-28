@@ -1,7 +1,7 @@
 #include "TypeRegistry.h"
 #include "TypeRegistryImpl.h"
 #include "ReflectionInfo.h"
-
+#include "Command.h"
 void TypeRegistry::ProvisionalRegister(std::type_index typeIdx, std::function<void(void)> registerFunc)
 {
 	provisionalRegisterFunc_.emplace(typeIdx, registerFunc);
@@ -33,6 +33,11 @@ bool TypeRegistry::IsRegisteredType(std::type_index typeIdx)
 {
 	return showFunctions_.contains(typeIdx);
 }
+void TypeRegistry::RegisterCommandListener(std::function<void(Command*)> _commandListenner)
+{
+	commandListenner_ = _commandListenner;
+}
 TypeRegistry::TypeRegistry()
+	:commandListenner_{nullptr}
 {
 }

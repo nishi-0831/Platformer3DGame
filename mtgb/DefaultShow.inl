@@ -1,9 +1,15 @@
+#include "Command.h"
+#include "ImGuiInputCommand.h"
 // DefaultShow.inl - テンプレート実装ファイル
 namespace mtgb {
 
 template<typename T>
-void DefaultShow(T* value, const char* name)
+Command* DefaultShow(T* value, const char* name)
 {
+    T& oldValue = *value;
+
+    bool changed = false;
+
     using Type = std::remove_cvref_t<T>;
     if constexpr (std::is_array_v<Type>)
     {
@@ -20,7 +26,7 @@ void DefaultShow(T* value, const char* name)
             for (size_t i = 0; i < N; ++i)
             {
                 std::string elemName = std::string(name) + "[" + std::to_string(i) + "]";
-                DefaultShow(static_cast<ElemType*>(&(*value)[i]), elemName.c_str());
+                return  DefaultShow(static_cast<ElemType*>(&(*value)[i]), elemName.c_str());
             }
 
             ImGui::Unindent();
@@ -28,23 +34,23 @@ void DefaultShow(T* value, const char* name)
     }
     else if constexpr (std::is_same_v<Type, bool>)
     {
-        ImGui::Checkbox(name, reinterpret_cast<bool*>(value));
+        changed = ImGui::Checkbox(name, reinterpret_cast<bool*>(value));
     }
     else if constexpr (std::is_same_v<Type, float>)
     {
-        ImGui::InputFloat(name, reinterpret_cast<float*>(value));
+        changed = ImGui::InputFloat(name, reinterpret_cast<float*>(value));
     }
     else if constexpr (std::is_same_v<Type, float*>)
     {
-        ImGui::InputFloat(name, *reinterpret_cast<float**>(value));
+        changed = ImGui::InputFloat(name, *reinterpret_cast<float**>(value));
     }
     else if constexpr (std::is_same_v<Type,int>)
     {
-        ImGui::InputInt(name, reinterpret_cast<int*>(value));
+        changed = ImGui::InputInt(name, reinterpret_cast<int*>(value));
     }
     else if constexpr (std::is_same_v<Type, int*>)
     {
-        ImGui::InputInt(name, *reinterpret_cast<int**>(value));
+        changed = ImGui::InputInt(name, *reinterpret_cast<int**>(value));
     }
     else if constexpr (std::is_same_v<Type, long>)
     {
@@ -91,6 +97,13 @@ void DefaultShow(T* value, const char* name)
     {
         ImGui::Text("%s:Unknown,%s",name,typeid(Type).name() );
     }
+
+    // 変更がされていない場合はnullptr
+    if (changed == false)
+        return nullptr;
+
+    // 変更がされていたらコマンドを返す
+	return new ImGuiInputCommand<Type>(value, oldValue, *value, name);
 }
 
 } // namespace mtgb

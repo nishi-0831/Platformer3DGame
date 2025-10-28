@@ -11,7 +11,7 @@
 #include <string>
 using namespace mtgb;
 REGISTER_TYPE(Quaternion, ShowFunc(QuaternionSHow{}))
-REGISTER_FIELD(f)
+
 REGISTER_END
 
 REGISTER_TYPE(Vector3,ShowFunc(Vector3Show{}))

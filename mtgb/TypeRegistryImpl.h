@@ -19,7 +19,7 @@ void TypeRegistry::RegisterType()
 {
 	
 	using Type = std::remove_pointer_t<std::remove_cvref_t<T>>;
-	showFunctions_[typeid(Type)] = [this](std::any ptr, const char* name)
+	showFunctions_[typeid(Type)] = [this](std::any ptr, const char* name) -> Command*
 		{
 			
 			if constexpr (refl::is_reflectable<Type>())
@@ -37,7 +37,7 @@ void TypeRegistry::RegisterType()
 					&& "instanceのany_castに失敗:ptrがnullptrです @TypeRegistry::RegisterType");
 				constexpr auto type = refl::reflect<Type>();
 
-				// Check if ShowFunc is present and execute it
+				
 				bool showFuncExecuted = false;
 				//type.attributesの各属性をラムダ式の引数に渡して一つずつ処理
 				std::apply([&](auto&&... attrs)
@@ -52,7 +52,7 @@ void TypeRegistry::RegisterType()
 									//ShowFunc型のインスタンスか否か
 									if constexpr (refl::trait::is_instance_of_v<ShowFunc, AttrType>)
 									{
-										attrs(registerInstance, name);
+										return attrs(registerInstance, name);
 										showFuncExecuted = true;
 									}
 								}()
@@ -90,7 +90,7 @@ void TypeRegistry::RegisterType()
 
 										// カスタム属性がない場合はデフォルト表示
 										if (!hasCustomAttribute) {
-											mtgb::DefaultShow(memberValue, member.name.c_str());
+											return mtgb::DefaultShow(memberValue, member.name.c_str());
 										}
 									}
 								}
@@ -112,7 +112,7 @@ void TypeRegistry::RegisterType()
 
 										// カスタム属性がない場合はデフォルト表示
 										if (!hasCustomAttribute) {
-											mtgb::DefaultShow(memberPtr, member.name.c_str());
+											return mtgb::DefaultShow(memberPtr, member.name.c_str());
 										}
 									}
 								}
@@ -127,6 +127,7 @@ void TypeRegistry::RegisterType()
 				//リフレクションされていない
 				ImGui::Text("%s,NotReflectable", name);
 			}
+			return nullptr;
 		};
 }
 

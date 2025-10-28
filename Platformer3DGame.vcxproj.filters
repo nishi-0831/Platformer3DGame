@@ -188,6 +188,12 @@
     <Filter Include="03mtgb\Component\StatefulComponent">
       <UniqueIdentifier>{f2b7c0bd-8e81-4793-bb54-5c6704533862}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03mtgb\System\Debug\MTImGui\Editor">
+      <UniqueIdentifier>{e419886a-babd-4ec9-9885-572fae0dd387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03mtgb\System\Debug\MTImGui\PropertyInspector">
+      <UniqueIdentifier>{2e99a479-122b-4433-afe5-77df55d6d0c4}</UniqueIdentifier>
+    </Filter>
     <!--<Filter Include="mtgb">
       <UniqueIdentifier>{9d90928f-f713-44c3-a09a-4c269d6f0647}</UniqueIdentifier>
     </Filter>
@@ -607,16 +613,10 @@
     <ClCompile Include="mtgb\TransformGuizmo.cpp">
       <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\ImGuiShowable.cpp">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\MTImGui.cpp">
       <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\JoystickProxy.cpp">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\ImGuizmoManipulator.cpp">
       <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClCompile>
     <ClCompile Include="ImGui\imgui_ja_gryph_ranges.cpp">
@@ -675,9 +675,6 @@
     </ClCompile>
     <ClCompile Include="mtgb\EventManager.cpp">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\TypeRegistry.cpp">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\SingleWindow.cpp">
       <Filter>03mtgb\System\Window</Filter>
@@ -740,6 +737,24 @@
       <Filter>03mtgb\Core</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\GameObjectCreateCommand.cpp">
+      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\PropertyChangedEvent.cpp">
+      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\GuizmoManipulatedEvent.cpp">
+      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\ImGuiShowable.cpp">
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\ImGuizmoManipulator.cpp">
+      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\TypeRegistry.cpp">
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\ShowAttributes.cpp">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1083,34 +1098,13 @@
     <ClInclude Include="mtgb\TextAlignment.h">
       <Filter>03mtgb\System\Direct2D</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\TypeRegistryImpl.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\TransformGuizmo.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\ShowType.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\ShowFunc.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\ReflectionInfo.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\ShowAttributes.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\ImGuiShowable.h">
       <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\MTImGui.h">
       <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\JoystickProxy.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\ImGuizmoManipulator.h">
       <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClInclude>
     <ClInclude Include="ImGui\GraphEditor.h">
@@ -1133,9 +1127,6 @@
     </ClInclude>
     <ClInclude Include="mtgb\RenderSystem.h">
       <Filter>03mtgb\System\Draw</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\DefaultShow.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\InputConfig.h">
       <Filter>03mtgb\System\Input</Filter>
@@ -1221,9 +1212,6 @@
     <ClInclude Include="mtgb\EventManager.h">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\TypeRegistry.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\SingleWindow.h">
       <Filter>03mtgb\System\Window</Filter>
     </ClInclude>
@@ -1242,9 +1230,6 @@
     <ClInclude Include="mtgb\MouseStateProxy.h">
       <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\ImGuiEditorCamera.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\ImGuiUtil.h">
       <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClInclude>
@@ -1254,20 +1239,8 @@
     <ClInclude Include="mtgb\Command.h">
       <Filter>03mtgb\CoreType</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\CommandHistoryManager.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\ImGuiEditor.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\CommandHandlerRegistry.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\ComponentFactory.h">
       <Filter>03mtgb\System</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\CommandHistoryManagerWrapper.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\RegisterComponents.h">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
@@ -1277,9 +1250,6 @@
     </ClInclude>
     <ClInclude Include="mtgb\Box3D.h">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\GameObjectGenerator.h">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\SelectionCommand.h">
       <Filter>03mtgb\System\Debug\Command</Filter>
@@ -1347,6 +1317,60 @@
     <ClInclude Include="mtgb\GameObjectCreateCommand.h">
       <Filter>03mtgb\System\Debug\Command</Filter>
     </ClInclude>
+    <ClInclude Include="mtgb\PropertyChangedEvent.h">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\GuizmoManipulatedEvent.h">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ImGuiEditor.h">
+      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ImGuiEditorCamera.h">
+      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\DefaultShow.h">
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ImGuiShowable.h">
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ReflectionInfo.h">
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ShowAttributes.h">
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ShowFunc.h">
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ShowType.h">
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\TypeRegistry.h">
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\TypeRegistryImpl.h">
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\GameObjectGenerator.h">
+      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\CommandHandlerRegistry.h">
+      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\CommandHistoryManagerWrapper.h">
+      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\CommandHistoryManager.h">
+      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ImGuizmoManipulator.h">
+      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ImGuiInputCommand.h">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shader\2DCommon.hlsli" />
@@ -1361,7 +1385,7 @@
       <Filter>02Assets\Shader</Filter>
     </None>
     <None Include="mtgb\DefaultShow.inl">
-      <Filter>03mtgb\System\Debug\MTImGui</Filter>
+      <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

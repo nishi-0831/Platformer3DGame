@@ -5,9 +5,10 @@
 #include "../ImGui/imgui.h"
 #include "MTStringUtility.h"
 
+class Command;
 namespace mtgb {
     template<typename T>
-    void DefaultShow(T* value, const char* name);
+    Command* DefaultShow(T* value, const char* name);
 }
 
 // テンプレート実装をインラインで含める

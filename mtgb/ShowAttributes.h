@@ -8,22 +8,21 @@
 #include "ShowFunc.h"
 #include "QuatToEuler.h"
 
+class Command;
 struct Vector3Show : refl::attr::usage::type 
 {
-	void operator()(mtgb::Vector3* vec, const char* name) const
-	{
-		ImGui::InputFloat3(name, &vec->x);
-	}
+	Command* operator()(mtgb::Vector3* vec, const char* name) const;
 };
 
 
 struct QuaternionSHow : refl::attr::usage::type
 {
-	void operator()(DirectX::XMVECTORF32* vec, const char* name) const
-	{
-		mtgb::Vector3 vec3 = mtgb::QuatToEuler(*vec);
-		ImGui::InputFloat3(name, &vec3.x);
-	}
+	Command* operator()(DirectX::XMVECTORF32* vec, const char* name) const;
+};
+
+struct Vector4Show : refl::attr::usage::type 
+{
+	Command* operator()(DirectX::XMVECTOR* _vec, const char* _name)const;
 };
 
 template <typename T>

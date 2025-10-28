@@ -19,6 +19,7 @@
 #include "EventManager.h"
 #include "Debug.h"
 #include "Entity.h"
+#include "GuizmoManipulatedEvent.h"
 namespace
 {
 	
@@ -56,6 +57,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 			worldMat_[12], worldMat_[13], worldMat_[14], worldMat_[15]
 		);
 
+
 		DirectX::XMVECTOR scale, trans;
 		bool result = DirectX::XMMatrixDecompose(&scale, &pTargetTransform_->rotate.v, &trans, mat);
 		massert(result
@@ -63,7 +65,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 
 		DirectX::XMStoreFloat3(&pTargetTransform_->position, trans);
 		DirectX::XMStoreFloat3(&pTargetTransform_->scale, scale);
-
+		
 	}
 	ImGui::PopID();
 }
@@ -112,11 +114,14 @@ void mtgb::ImGuizmoManipulator::Calculate()
 	memcpy(projMat_, &float4x4_, sizeof(projMat_));
 }
 
-mtgb::ImGuizmoManipulator::ImGuizmoManipulator(std::function<void(Command*)> _commandListener)
+mtgb::ImGuizmoManipulator::ImGuizmoManipulator(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory)
 	:ImGuiShowable("Manipulater", ShowType::SceneView)
+	, componentFactory_{_componentFactory}
 	, operation_{ ImGuizmo::TRANSLATE }
 	, mode_{ ImGuizmo::LOCAL }
 	, commandListener_{_commandListener}
+	, isUsing_{false}
+	, wasUsing_{false}
 {
 	SubscribeGameObjectSelectionEvent();
 }
@@ -131,6 +136,26 @@ void mtgb::ImGuizmoManipulator::Initialize()
 
 void mtgb::ImGuizmoManipulator::Update()
 {
+	wasUsing_ = isUsing_;
+	isUsing_ = ImGuizmo::IsUsing();
+
+	// ギズモを使用 (動かしていなくても長押しを使用状態とみなす)
+	if (wasUsing_ == false && isUsing_ == true)
+	{
+		if (pTargetTransform_ == nullptr)
+			return;
+		pTargetPrevTransformMemento_ = pTargetTransform_->SaveToMemento();
+	}
+
+	// ギズモの使用を終了
+	if (wasUsing_ == true && isUsing_ == false)
+	{
+		if (pTargetPrevTransformMemento_ == nullptr || pTargetTransform_ == nullptr)
+			return;
+		
+		TransformMemento* memento =	pTargetTransform_->SaveToMemento();
+		GuizmoManipulatedEvent* event = new GuizmoManipulatedEvent(pTargetPrevTransformMemento_, memento, componentFactory_);
+	}
 }
 
 void mtgb::ImGuizmoManipulator::ShowImGui()
@@ -164,8 +189,9 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 		mode_ = ImGuizmo::WORLD;
 	}
 
-	bool isUsingManipulate = ImGuizmo::IsUsingViewManipulate;
-	std::string text = isUsingManipulate ? "true" : "false";
+	isUsing_ = ImGuizmo::IsUsing();
+	
+	std::string text = isUsing_ ? "true" : "false";
 	ImGui::Text("%s", text.c_str());
 }
 

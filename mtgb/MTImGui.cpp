@@ -275,11 +275,6 @@ void mtgb::MTImGui::SetupShowFunc()
             TypeRegistry::Instance().CallFunc(&_target->velocity, "Velocity");
         });
 
-    Set<DirectX::XMVECTOR>([](DirectX::XMVECTOR* _target, const char* _name)
-        {
-            ImGui::InputFloat4(_name, _target->m128_f32);
-        });
-
     Set<ScreenCoordContainsInfo>([](ScreenCoordContainsInfo* _target, const char* _name)
         {
             TypeRegistry::Instance().CallFunc(&_target->worldPos, "WorldPos");

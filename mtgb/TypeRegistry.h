@@ -6,6 +6,7 @@
 #include "DefaultShow.h"
 
 
+class Command;
 class TypeRegistry
 {
 public:
@@ -13,9 +14,11 @@ public:
 	void RegisterType();
 	
 	template<typename T>
-	void RegisterFunc(std::function<void(std::any, const char*)> func);
+	void RegisterFunc(std::function<Command*(std::any, const char*)> func);
 
 	static TypeRegistry& Instance();
+	// プログラム開始時に登録したい関数を登録
+	// マクロで登録していると初期化のタイミングが制御できない
 	void ProvisionalRegister(std::type_index typeIdx, std::function<void(void)> registerFunc);
 	void Initialize();
 	template<typename T>
@@ -23,9 +26,18 @@ public:
 
 	void CallFunc(std::type_index typeIdx, std::any instance, const char* name);
 	bool IsRegisteredType(std::type_index typeIdx);
+
+	void RegisterCommandListener(std::function<void(Command*)> _commandListener);
+
 private:
-	std::unordered_map<std::type_index, std::function<void(std::any, const char*)>> showFunctions_;
+	// 型情報をキー、std::functionを値とする
+	// 変更があった場合にはその操作をCommandとして返す
+	std::unordered_map<std::type_index, std::function<Command*(std::any, const char*)>> showFunctions_;
 	std::unordered_map<std::type_index, std::function<void(void)>> provisionalRegisterFunc_;
+
+	// 受け取り口へコマンドを登録する関数を持つstd::function
+	std::function<void(Command*)> commandListenner_;
+
 	template<typename... Args, typename T>
 	bool CheckCustomAttrs(std::tuple<Args...>& attrs, T valPtr, const char* name);
 	
@@ -47,16 +59,24 @@ void TypeRegistry::CallFunc(T* instance, const char* name)
 	const auto& itr = showFunctions_.find(typeid(T));
 	if (itr != showFunctions_.end())
 	{
-		itr->second(std::any(instance),name);
+		Command* command = itr->second(std::any(instance),name);
+		if (command == nullptr)
+			return;
+		// 操作コマンドを渡す
+		commandListenner_(command);
 	}
 	else
 	{
-		mtgb::DefaultShow(instance, name);
+		 Command* command = mtgb::DefaultShow(instance, name);
+		if (command == nullptr)
+			return;
+		// 操作コマンドを渡す
+		commandListenner_(command);
 	}
 }
 
 template<typename T>
-void TypeRegistry::RegisterFunc(std::function<void(std::any, const char*)> func)
+void TypeRegistry::RegisterFunc(std::function<Command* (std::any, const char*)> func)
 {
 	using Type = std::remove_cvref_t<T>;
 	std::type_index typeIdx(typeid(Type));
@@ -64,12 +84,6 @@ void TypeRegistry::RegisterFunc(std::function<void(std::any, const char*)> func)
 }
 namespace RegisterShowFuncHolder
 {
-	//using ShowFunc = std::function<void(std::any, const char*)>;
-	/*RegisterShowFuncHolder(ShowFunc _function):
-		function_{ _function }
-	{}*/
-	//ShowFunc function_;
-
 	/// <summary>
 	/// 型に対応したImGuiの表示処理をセットする
 	/// </summary>
@@ -78,9 +92,12 @@ namespace RegisterShowFuncHolder
 	template<typename Type>
 	void Set(std::function<void(Type* _target, const char* _name)> _func)
 	{
-		TypeRegistry::Instance().RegisterFunc<Type>([=](std::any target, const char* name)
+		//TODO : Setに渡した関数自体はCommandとして作られないという説明をするようコメントを更新
+
+		TypeRegistry::Instance().RegisterFunc<Type>([=](std::any target, const char* name) -> Command*
 			{
 				_func(std::any_cast<Type*>(target), name);
+				return nullptr;
 			});
 	}
 };

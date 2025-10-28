@@ -8,11 +8,12 @@ mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
 	pCommandHistory_ = new CommandHistoryManagerWrapper(new CommandHistoryManager());
-	pManipulator_ = new ImGuizmoManipulator([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); });
-
 	pComponentFactory_ = new ComponentFactory();
-	// コンポーネントの作成関数を登録
 	mtgb::RegisterComponents(pComponentFactory_);
+
+	pManipulator_ = new ImGuizmoManipulator([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); },*pComponentFactory_);
+
+	// コンポーネントの作成関数を登録
 }
 
 mtgb::ImGuiEditor::~ImGuiEditor()

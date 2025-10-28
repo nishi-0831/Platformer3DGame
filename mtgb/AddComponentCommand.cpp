@@ -34,9 +34,8 @@ void mtgb::AddComponentCommand::ApplyMemento()
     }
     else
     {
-            // Mementoからコンポーネントを復元
-            componentFactory_.AddComponentFromMemento(*memento_);
-        
+        // Mementoからコンポーネントを復元
+        componentFactory_.AddComponentFromMemento(*memento_);
     }
 }
 
