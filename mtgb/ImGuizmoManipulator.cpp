@@ -136,7 +136,6 @@ void mtgb::ImGuizmoManipulator::Initialize()
 
 void mtgb::ImGuizmoManipulator::Update()
 {
-	wasUsing_ = isUsing_;
 	isUsing_ = ImGuizmo::IsUsing();
 
 	// ギズモを使用 (動かしていなくても長押しを使用状態とみなす)
@@ -155,7 +154,10 @@ void mtgb::ImGuizmoManipulator::Update()
 		
 		TransformMemento* memento =	pTargetTransform_->SaveToMemento();
 		GuizmoManipulatedEvent* event = new GuizmoManipulatedEvent(pTargetPrevTransformMemento_, memento, componentFactory_);
+		commandListener_(event);
 	}
+
+	wasUsing_ = isUsing_;
 }
 
 void mtgb::ImGuizmoManipulator::ShowImGui()
