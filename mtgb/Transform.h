@@ -1,8 +1,7 @@
 #pragma once
 #include "StatefulComponent.h"
-#include "TransformData.h"
 #include "IComponentMemento.h"
-#include "TransformMemento.h"
+#include "TransformData.h"
 
 #include "Vector3.h"
 #include "Vector3Ref.h"
@@ -10,7 +9,6 @@
 #include "Matrix4x4.h"
 #include "cmtgb.h"
 #include "TransformCP.h"
-#include "TransformCore.h"
 
 namespace mtgb
 {

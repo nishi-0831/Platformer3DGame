@@ -2,6 +2,7 @@
 #include "cmtgb.h"
 #include "Game.h"
 #include "ComponentPool.h"
+#include <nlohmann/json.hpp>
 
 namespace mtgb
 {
@@ -32,6 +33,7 @@ namespace mtgb
 
 		const EntityId GetEntityId() const { return entityId_; }
 
+		virtual nlohmann::json Serialize() = 0;
 	private:
 		EntityId entityId_;
 	};

@@ -6,12 +6,18 @@
 #include "MouseStateProxy.h"
 #include "Transform.h"
 #include "TypeRegistry.h"
+#include "MeshRendererData.h"
 #include "ShowAttributes.h"
+#include "ColliderData.h"
+#include "RigidBodyData.h"
 //#include "TypeRegistryImpl.h"
 #include <string>
 using namespace mtgb;
 REGISTER_TYPE(Quaternion, ShowFunc(QuaternionSHow{}))
-
+REGISTER_MEMBER_FUNC(X,property("x"))
+REGISTER_MEMBER_FUNC(Y,property("y"))
+REGISTER_MEMBER_FUNC(Z,property("z"))
+REGISTER_MEMBER_FUNC(W, property("w"))
 REGISTER_END
 
 REGISTER_TYPE(Vector3,ShowFunc(Vector3Show{}))
@@ -19,10 +25,6 @@ REGISTER_FIELD(x)
 REGISTER_FIELD(y)
 REGISTER_FIELD(z)
 REGISTER_END
-
-
-
-
 
 REGISTER_TYPE(JoystickProxy)
 REGISTER_FIELD(lX)
@@ -47,4 +49,27 @@ REGISTER_FIELD(lX)
 REGISTER_FIELD(lY)
 REGISTER_FIELD(lZ)
 REGISTER_FIELD(rgbButtons)
+REGISTER_END
+
+
+REGISTER_TYPE(TransformData)
+REGISTER_FIELD(parent)
+REGISTER_FIELD(position)
+REGISTER_FIELD(scale)
+REGISTER_FIELD(rotate)
+REGISTER_END
+
+REGISTER_TYPE(MeshRendererData)
+REGISTER_FIELD(meshHandle)
+REGISTER_FIELD(layer)
+REGISTER_FIELD(shaderType)
+REGISTER_END
+
+REGISTER_TYPE(ColliderData)
+REGISTER_FIELD(type)
+REGISTER_FIELD(isStatic)
+REGISTER_FIELD(colliderTag)
+REGISTER_FIELD(center)
+REGISTER_FIELD(radius)
+REGISTER_FIELD(extents)
 REGISTER_END

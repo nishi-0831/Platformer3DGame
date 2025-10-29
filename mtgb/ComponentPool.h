@@ -3,7 +3,7 @@
 #include "cmtgb.h"
 #include "IComponentPool.h"
 #include "ISystem.h"
-
+#include <nlohmann/json.hpp>
 namespace mtgb
 {
 	static constexpr size_t COMPONENT_CAPACITY{ 8192 };
@@ -28,7 +28,7 @@ namespace mtgb
 		virtual void Update() override {}
 
 		void Release() override;
-
+		nlohmann::json Serialize(EntityId _entityId) override;
 
 		ComponentT* Reuse(size_t _index, EntityId _entityId);
 		/// <summary>
@@ -57,6 +57,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_pEntity">登録されているエンティティ</param>
 		void UnRegister(EntityId _entityId);
+
 
 	protected:
 		std::vector<ComponentT> pool_;  // コンポーネントそのものを格納するプール
@@ -94,6 +95,19 @@ namespace mtgb
 
 		//pool_.reserve(COMPONENT_CAPACITY);
 		//poolId_.reserve(COMPONENT_CAPACITY);
+	}
+
+	template<class ComponentT, bool IsSingleton>
+	inline  nlohmann::json ComponentPool<ComponentT, IsSingleton>::Serialize(EntityId _entityId)
+	{
+		for (int i = 0; i < poolId_.size(); i++)
+		{
+			if (poolId_[i] == _entityId)
+			{
+				return pool_[i].Serialize();
+			}
+		}
+		return nlohmann::json{};
 	}
 
 	template<class ComponentT, bool IsSingleton>

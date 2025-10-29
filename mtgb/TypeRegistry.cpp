@@ -30,7 +30,7 @@ void TypeRegistry::CallFunc(std::type_index typeIdx, std::any instance, const ch
 		if (command == nullptr)
 			return;
 		// ‘€ìƒRƒ}ƒ“ƒh‚ğ“n‚·
-		commandListenner_(command);
+		commandListener_(command);
 	}
 }
 bool TypeRegistry::IsRegisteredType(std::type_index typeIdx)
@@ -39,9 +39,9 @@ bool TypeRegistry::IsRegisteredType(std::type_index typeIdx)
 }
 void TypeRegistry::RegisterCommandListener(std::function<void(Command*)> _commandListenner)
 {
-	commandListenner_ = _commandListenner;
+	commandListener_ = _commandListenner;
 }
 TypeRegistry::TypeRegistry()
-	:commandListenner_{nullptr}
+	:commandListener_{nullptr}
 {
 }

@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <optional>
 #include <typeindex>
+#include <nlohmann/json.hpp>
 namespace mtgb
 {
 	using EntityId = int64_t;
@@ -19,7 +20,7 @@ namespace mtgb
 		virtual ~IComponentPool();
 
 		virtual void Remove(const EntityId _entityId) = 0;
-
+		virtual nlohmann::json Serialize(EntityId _entityId) = 0;
 		static void RegisterComponentIndex(EntityId _entityId, const std::type_index& _typeIndex,size_t _componentIndex);
 
 		/// <summary>

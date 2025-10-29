@@ -36,7 +36,7 @@ private:
 	std::unordered_map<std::type_index, std::function<void(void)>> provisionalRegisterFunc_;
 
 	// 受け取り口へコマンドを登録する関数を持つstd::function
-	std::function<void(Command*)> commandListenner_;
+	std::function<void(Command*)> commandListener_;
 
 	template<typename... Args, typename T>
 	Command* CheckCustomAttrs(std::tuple<Args...>& attrs, T valPtr, const char* name);
@@ -69,11 +69,11 @@ void TypeRegistry::CallFunc(T* instance, const char* name)
 
 	if (command == nullptr)
 		return;
-	if (commandListenner_ == nullptr)
+	if (commandListener_ == nullptr)
 		return;
 
 	// 操作コマンドを渡す
-	commandListenner_(command);
+	commandListener_(command);
 }
 
 template<typename T>

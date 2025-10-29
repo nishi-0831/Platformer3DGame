@@ -1,7 +1,7 @@
 #pragma once
 #include "IComponent.h"
 #include "ComponentConcept.h"
-
+#include "JsonConverterImpl.h"
 #define UseConcept 0
 namespace mtgb
 {
@@ -24,7 +24,6 @@ namespace mtgb
 
 		TMemento* SaveToMemento() const
 		{
-			
 			// conceptで検証済みなのでstatic_cast
 			return new TMemento(this->GetEntityId(), static_cast<const TDerived&>(*this));
 		}
@@ -39,7 +38,13 @@ namespace mtgb
 			OnPostRestore();
 		}
 
-
+		nlohmann::json Serialize() override
+		{
+			auto& derivedRef = static_cast<TDerived&>(*this);
+			TData& data = static_cast<TData&>(derivedRef);
+			//return nlohmann::json{};
+			return JsonConverter::Serialize(data);
+		}
 	protected:
 		/// <summary>
 		/// <para> Mementoから復元が行われた際に呼ばれるフック </para>
