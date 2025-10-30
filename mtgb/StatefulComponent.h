@@ -3,7 +3,7 @@
 #include "ComponentConcept.h"
 
 #include "nlohmann/json.hpp"
-#include "JsonConverterImpl.h"
+#include "JsonConverter.h"
 #define UseConcept 0
 namespace mtgb
 {
@@ -11,7 +11,7 @@ namespace mtgb
 	
 	class StatefulComponent : public IComponent<TComponentPool, TDerived>
 	{
-	public:
+	public:	
 		using IComponent<TComponentPool, TDerived>::IComponent;
 		
 		virtual ~StatefulComponent() {};
@@ -46,6 +46,7 @@ namespace mtgb
 		}
 	private:
 	};
+	
 	
 	
 	template<typename TDerived, typename TComponentPool, typename TData, typename TMemento>

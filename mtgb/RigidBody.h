@@ -2,9 +2,9 @@
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
 
-#include "RigidBodyCP.h"
 #include "Vector3.h"
 #include "RigidBodyData.h"
+#include "RigidBodyCP.h"
 #include <functional>
 
 namespace mtgb
@@ -14,9 +14,9 @@ namespace mtgb
 
 	class RigidBody : public RigidBodyData, public StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData, ComponentMemento<RigidBody, RigidBodyData>>
 	{
-		friend RigidBodyCP;
 	public:
 		using StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData, ComponentMemento<RigidBody, RigidBodyData>>::StatefulComponent;
+		friend RigidBodyCP;
 
 		RigidBody(const EntityId _entityId);
 		~RigidBody();
