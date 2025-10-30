@@ -2,9 +2,13 @@
 #include "JsonConverter.h"
 #include <refl.hpp>
 #include <string>
-#include <format>
+#include "ReflectionInfo.h"
 template <typename T>
 constexpr bool false_v = false;
+
+
+
+
 template<typename T>
 static nlohmann::json JsonConverter::Serialize(T& _value)
 {
@@ -19,7 +23,8 @@ static nlohmann::json JsonConverter::Serialize(T& _value)
 			{
 				if constexpr (refl::is_reflectable<decltype(_member(_value))>())
 				{
-					json memberJson = Serialize(_member(_value));
+					auto memberValue = _member(_value);
+					json memberJson = Serialize(memberValue);
 					j.merge_patch(memberJson);
 				}
 				else if constexpr (refl::trait::is_field_v<decltype(_member)>)
@@ -36,8 +41,11 @@ static nlohmann::json JsonConverter::Serialize(T& _value)
 	}
 	else
 	{
-		/*std::string message = std::format("{} is not reflectable", typeid(T).name());
-		static_assert(false_v<T>,message.c_str());*/
+		
+		static_assert(false_v<T>);
+
 	}
 	return j;
 }
+
+

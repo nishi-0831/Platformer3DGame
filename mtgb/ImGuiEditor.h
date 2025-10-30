@@ -21,6 +21,7 @@ namespace mtgb
 		void ShowImGui() override;
 
 	private:
+		void SaveMapData();
 		void AddComponent(const std::type_index& _componentType, EntityId _entityId);
 		void ShowAddComponentDialog(EntityId _entityId);
 		void ShowGenerateGameObjectButton();

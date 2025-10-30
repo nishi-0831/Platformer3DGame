@@ -109,4 +109,14 @@ void mtgb::GameScene::DestroyGameObject(EntityId _entityId)
 	}
 }
 
+nlohmann::json mtgb::GameScene::SerializeGameObjects() const
+{
+	nlohmann::json j{};
+	for (auto& object : pGameObjects_)
+	{
+		j.merge_patch(object->SerializeGameObject());
+	}
+	return j;
+}
+
 mtgb::GameScene* mtgb::GameScene::pInstance_{ nullptr };

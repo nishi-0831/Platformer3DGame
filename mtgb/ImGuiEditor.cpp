@@ -5,6 +5,11 @@
 #include "GameObjectGenerator.h"
 #include "AddComponentCommand.h"
 #include "TypeRegistry.h"
+#include "WindowContextUtil.h"
+#include <fstream>
+#include "SceneSystem.h"
+#include "GameScene.h"
+#include "Debug.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
@@ -45,6 +50,10 @@ void mtgb::ImGuiEditor::Update()
 		{
 			pCommandHistory_->RedoCommand();
 		}
+		if (InputUtil::GetKeyDown(KeyCode::S))
+		{
+			SaveMapData();
+		}
 	}
 }
 
@@ -53,6 +62,33 @@ void mtgb::ImGuiEditor::ShowImGui()
 	pCommandHistory_->DrawImGuiStack();
 	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
 	ShowGenerateGameObjectButton();
+}
+
+void mtgb::ImGuiEditor::SaveMapData()
+{
+	TCHAR fileName[255] = "";
+	OPENFILENAME ofn = {0};
+
+	ofn.lStructSize = sizeof(ofn);
+
+	ofn.hwndOwner = WinCtxRes::GetHWND(WindowContext::First);
+	ofn.lpstrFilter = "JSONƒtƒ@ƒCƒ‹(*.json)\0*.json";
+	ofn.lpstrFile = fileName;
+	ofn.nMaxFile = 255;
+	ofn.Flags = OFN_OVERWRITEPROMPT;
+
+	if (GetSaveFileName(&ofn))
+	{
+		std::ofstream openFile(fileName);
+
+		nlohmann::json j = Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects();
+		int width = 4;
+		openFile << std::setw(width) << j;
+
+		openFile.close();
+
+		LOGIMGUI_CAT("Editor", "File Saved");
+	}
 }
 
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)

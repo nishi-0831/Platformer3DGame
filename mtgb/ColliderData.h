@@ -8,7 +8,7 @@ namespace mtgb
 	/// </summary>
 	struct ColliderData
 	{
-		ColliderType type{ ColliderType::TYPE_AABB };// 当たり判定の形
+		ColliderType colliderType{ ColliderType::TYPE_AABB };// 当たり判定の形
 		bool isStatic{ false };// 静的な、Transform不要なコライダー用のフラグ
 		ColliderTag colliderTag{ ColliderTag::GAME_OBJECT };
 		Vector3 center;

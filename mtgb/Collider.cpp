@@ -52,7 +52,7 @@ mtgb::Collider::~Collider()
 
 void mtgb::Collider::UpdateBoundingData()
 {
-	switch (type)
+	switch (colliderType)
 	{
 	case ColliderType::TYPE_SPHERE:
 		UpdateBoundingSphere();
@@ -97,25 +97,25 @@ bool mtgb::Collider::IsHit(const Collider& _other) const
 		return false;
 	}
 
-	if (type == _other.type)
+	if (colliderType == _other.colliderType)
 	{
-		if (type == ColliderType::TYPE_SPHERE)
+		if (colliderType == ColliderType::TYPE_SPHERE)
 		{
 			//// ‹——£‚ª‘o•û‚Ì‹…‚Ì”¼Œa‚æ‚è‚à¬‚³‚¯‚ê‚Î“–‚½‚Á‚Ä‚¢‚é
 			return computeSphere_.Intersects(_other.computeSphere_);
 		}
-		else if (type == ColliderType::TYPE_AABB)
+		else if (colliderType == ColliderType::TYPE_AABB)
 		{
 			return computeBox_.Intersects(_other.computeBox_);
 		}
 	}
 	else
 	{
-		if (type == ColliderType::TYPE_SPHERE)
+		if (colliderType == ColliderType::TYPE_SPHERE)
 		{	
 			return computeSphere_.Intersects(_other.computeBox_);
 		}
-		else if (type == ColliderType::TYPE_AABB)
+		else if (colliderType == ColliderType::TYPE_AABB)
 		{
 			return computeBox_.Intersects(_other.computeSphere_);
 		}
@@ -222,7 +222,7 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 {
 	static Matrix4x4 matrix{};
 
-	if (type == ColliderType::TYPE_SPHERE)
+	if (colliderType == ColliderType::TYPE_SPHERE)
 	{
 		pTransform_->GenerateWorldMatrix(&matrix);
 		Vector3 worldPosition{ Vector3(computeSphere_.Center) * matrix };
@@ -235,7 +235,7 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 		// ‹——£‚ª‘o•û‚Ì‹…‚Ì”¼Œa‚æ‚è‚à¬‚³‚¯‚ê‚Î“–‚½‚Á‚Ä‚¢‚é
 		return (distance <= hitDistance);
 	}
-	else if (type == ColliderType::TYPE_CAPSULE)
+	else if (colliderType == ColliderType::TYPE_CAPSULE)
 	{
 		// TODO: ƒJƒvƒZƒ‹‚Æ‹…‚Ì“–‚½‚è”»’è
 
@@ -246,7 +246,7 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 
 void mtgb::Collider::SetCenter(const Vector3& _center)
 {
-	if (type == ColliderType::TYPE_AABB)
+	if (colliderType == ColliderType::TYPE_AABB)
 	{
 		computeBox_.Center = _center;
 	}
@@ -272,7 +272,7 @@ void mtgb::Collider::SetRadius(float _radius)
 void mtgb::Collider::OnPostRestore()
 {
 	SetCenter(center);
-	switch (type)
+	switch (colliderType)
 	{
 	case ColliderType::TYPE_SPHERE:
 	case ColliderType::TYPE_CAPSULE:
@@ -290,7 +290,7 @@ void mtgb::Collider::Draw() const
 
 	//Draw::SetShaderOnce(ShaderType::Debug3D);
 
-	switch (type)
+	switch (colliderType)
 	{
 	case ColliderType::TYPE_SPHERE:
 		copyTransform = *pTransform_;

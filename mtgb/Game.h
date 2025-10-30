@@ -14,7 +14,7 @@
 #include "Vector2Int.h"
 #include <typeindex>
 #include "ReleaseUtility.h"
-
+#include <nlohmann/json.hpp>
 namespace mtgb
 {
 	using EntityId = int64_t;
@@ -152,6 +152,7 @@ namespace mtgb
 
 		static void RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId);
 		
+		static nlohmann::json SerializeComponent(std::type_index _typeIndex, EntityId _entityId);
 	private:
 		/// <summary>
 		/// ƒVƒXƒeƒ€‚Ì‰Šú‰»‚ğ‚·‚é

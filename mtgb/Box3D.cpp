@@ -47,7 +47,7 @@ std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entity
 
 	ColliderData colliderData
 	{
-		.type{ColliderType::TYPE_AABB},
+		.colliderType{ColliderType::TYPE_AABB},
 		.isStatic{false},
 		.colliderTag{},
 		.center{transformData.position},

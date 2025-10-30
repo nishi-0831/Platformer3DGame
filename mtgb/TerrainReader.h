@@ -299,7 +299,7 @@ namespace mtgb
 				Collider* pCollider = &(Game::System<ColliderCP>().Get(terrainCellId,ColliderTag::STAGE));
 
 				pCollider->isStatic = true;
-				pCollider->type = ColliderType::ColliderType::TYPE_AABB;
+				pCollider->colliderType = ColliderType::ColliderType::TYPE_AABB;
 				pCollider->SetCenter(center);
 				pCollider->SetExtents(extents);
 				_aabbs->push_back(pCollider);
@@ -542,7 +542,7 @@ namespace mtgb
 		{
 			EntityId id = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
-			pCollider->type = ColliderType::TYPE__AABB;
+			pCollider->colliderType = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -568,7 +568,7 @@ namespace mtgb
 		{
 			EntityId id = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
-			pCollider->type = ColliderType::TYPE__AABB;
+			pCollider->colliderType = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -594,7 +594,7 @@ namespace mtgb
 		{
 			EntityId id = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
-			pCollider->type = ColliderType::TYPE__AABB;
+			pCollider->colliderType = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -620,7 +620,7 @@ namespace mtgb
 		{
 			EntityId id = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
-			pCollider->type = ColliderType::TYPE__AABB;
+			pCollider->colliderType = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -646,7 +646,7 @@ namespace mtgb
 		{
 			EntityId id = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
-			pCollider->type = ColliderType::TYPE__AABB;
+			pCollider->colliderType = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{

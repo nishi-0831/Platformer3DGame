@@ -1,19 +1,14 @@
 #pragma once
 #include "IComponent.h"
 #include "ComponentConcept.h"
+
+#include "nlohmann/json.hpp"
 #include "JsonConverterImpl.h"
 #define UseConcept 0
 namespace mtgb
 {
 	template<typename TDerived,typename TComponentPool,typename TData,typename TMemento>
-	requires 
-		// TDerivedはTDataを継承している
-#if UseConcept
-	DerivedFromDataT<TDerived,TData> &&
-#endif 
-
-		// TMementoはIComponentMementoを継承している
-		ComponentWithMementoT<TDerived,TMemento> 
+	
 	class StatefulComponent : public IComponent<TComponentPool, TDerived>
 	{
 	public:
@@ -38,13 +33,9 @@ namespace mtgb
 			OnPostRestore();
 		}
 
-		nlohmann::json Serialize() override
-		{
-			auto& derivedRef = static_cast<TDerived&>(*this);
-			TData& data = static_cast<TData&>(derivedRef);
-			//return nlohmann::json{};
-			return JsonConverter::Serialize(data);
-		}
+		nlohmann::json Serialize() override;
+		
+
 	protected:
 		/// <summary>
 		/// <para> Mementoから復元が行われた際に呼ばれるフック </para>
@@ -56,4 +47,18 @@ namespace mtgb
 	private:
 	};
 	
+	
+	template<typename TDerived, typename TComponentPool, typename TData, typename TMemento>
+	nlohmann::json StatefulComponent<TDerived, TComponentPool, TData, TMemento>::Serialize()
+	{
+		auto& derivedRef = static_cast<TDerived&>(*this);
+		TData& data = static_cast<TData&>(derivedRef);
+		//return nlohmann::json{};
+		return JsonConverter::Serialize<TData>(data);
+	}
+
+	
+
 }
+
+//#include "StatefulComponent.inl"

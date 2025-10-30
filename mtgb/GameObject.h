@@ -6,7 +6,7 @@
 #include <vector>
 #include "Transform.h"
 #include "IComponentMemento.h"
-
+#include <nlohmann/json.hpp>
 constexpr size_t COMPONENT_CAPACITY{ (8 * 8) - 4 };
 
 namespace mtgb
@@ -27,6 +27,7 @@ namespace mtgb
 		virtual inline void End() {};
 		virtual inline std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const { return std::vector<IComponentMemento*>(); };
 
+		nlohmann::json SerializeGameObject() const;
 		/// <summary>
 		/// 名前を設定する
 		/// </summary>
@@ -74,7 +75,7 @@ namespace mtgb
 		/// </summary>
 		/// <returns>削除予定 true / false</returns>
 		inline const bool IsToDestroy() const { return status_.toDestroy_; }
-		std::string GetName() { return name_; }
+		std::string GetName() const { return name_; }
 		/// <summary>
 		/// レイヤーフラグを取得
 		/// </summary>

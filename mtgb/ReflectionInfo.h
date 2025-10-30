@@ -4,7 +4,7 @@
 #include "Quaternion.h"
 #include "JoystickProxy.h"
 #include "MouseStateProxy.h"
-#include "Transform.h"
+#include "TransformData.h"
 #include "TypeRegistry.h"
 #include "MeshRendererData.h"
 #include "ShowAttributes.h"
@@ -66,7 +66,7 @@ REGISTER_FIELD(shaderType)
 REGISTER_END
 
 REGISTER_TYPE(ColliderData)
-REGISTER_FIELD(type)
+REGISTER_FIELD(colliderType)
 REGISTER_FIELD(isStatic)
 REGISTER_FIELD(colliderTag)
 REGISTER_FIELD(center)

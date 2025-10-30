@@ -15,7 +15,6 @@ namespace mtgb
 {
 	class GameObject;
 	struct Vector3;
-
 	class ImGuizmoManipulator : public ImGuiShowable
 	{
 	public:

@@ -6,7 +6,8 @@
 #include "MTStringUtility.h"
 
 class Command;
-namespace mtgb {
+namespace mtgb 
+{
     template<typename T>
     Command* DefaultShow(T* value, const char* name);
 }

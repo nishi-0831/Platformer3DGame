@@ -11,6 +11,7 @@ namespace mtgb
 	{
 	public:
 		RigidBodyCP();
+		RigidBodyCP(const RigidBodyCP&) = default;
 		~RigidBodyCP();
 
 		void Update() override;

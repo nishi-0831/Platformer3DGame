@@ -44,6 +44,11 @@ namespace mtgb
 		/// <returns></returns>
 		static std::optional<std::type_index> GetComponentPoolType(const std::type_index& _typeIndex);
 
+		/// <summary>
+		/// EntityId‚ª“o˜^‚³‚ê‚Ä‚¢‚éComponent‚ÌŒ^î•ñ‚ğ•Ô‚·
+		/// </summary>
+		/// <param name="_entityId"></param>
+		/// <returns></returns>
 		static std::optional<std::reference_wrapper<const std::set<std::type_index>>> GetComponentTypes(EntityId _entityId);
 
 	protected:

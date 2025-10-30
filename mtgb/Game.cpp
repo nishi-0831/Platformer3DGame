@@ -70,6 +70,25 @@ void mtgb::Game::RemoveEntityComponent(const std::type_index _typeIndex, EntityI
 
 }
 
+nlohmann::json mtgb::Game::SerializeComponent(std::type_index _typeIndex, EntityId _entityId)
+{
+	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
+	nlohmann::json j{};
+
+	if (itr == pInstance_->pRegisterSystems_.end())
+		return j;
+
+	IComponentPool* pComponentPool = dynamic_cast<IComponentPool*>(itr->second);
+
+
+	if (pComponentPool != nullptr)
+	{
+		j = pComponentPool->Serialize(_entityId);
+	}
+
+	return j;
+}
+
 
 
 void mtgb::Game::InitializeSystems(const std::list<ISystem*>& _uninitialized)

@@ -62,6 +62,8 @@ namespace mtgb
 		GameObject* GetGameObject(const EntityId _entityId) const;
 
 		void DestroyGameObject(EntityId _entityId);
+
+		nlohmann::json SerializeGameObjects() const;
 	protected:
 		virtual void Initialize();
 		virtual void Update();

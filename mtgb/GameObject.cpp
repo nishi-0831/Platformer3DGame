@@ -52,6 +52,29 @@ mtgb::GameObject::~GameObject()
 		"ゲームオブジェクトを削除するときは直接deleteを呼び出さないでください！");
 }
 
+nlohmann::json mtgb::GameObject::SerializeGameObject() const
+{
+	nlohmann::json j{};
+	j["name"] = GetName();
+	j["tag"] = GetTag();
+
+	auto componentTypes = IComponentPool::GetComponentTypes(entityId_);
+	if (componentTypes.has_value() == false)
+	{
+		return j;
+	}
+	for (const auto& typeIdx : (*componentTypes).get())
+	{
+		std::optional<std::type_index> componentPoolType = IComponentPool::GetComponentPoolType(typeIdx);
+		if (componentPoolType.has_value() == false)
+			continue;
+
+		nlohmann::json componentJson = Game::SerializeComponent(componentPoolType.value(), entityId_);
+		j.merge_patch(componentJson);
+	}
+	return j;
+}
+
 mtgb::GameObject* mtgb::GameObject::FindGameObject(const std::string& _name)
 {
 	return mtgb::Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_name);

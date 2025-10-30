@@ -1,6 +1,6 @@
 #include "MeshRendererCP.h"
-#include "Draw.h"
 #include  "Transform.h"
+#include "Draw.h"
 void mtgb::MeshRendererCP::Initialize()
 {
 }
