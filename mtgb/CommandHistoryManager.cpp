@@ -11,6 +11,8 @@ void CommandHistoryManager::ExecuteCommand(Command* _command)
 
 void CommandHistoryManager::UndoCommand()
 {
+	if (undoStack_.empty())
+		return;
 	Command* undoCommand = undoStack_.top();
 	undoCommand->Undo();
 	redoStack_.push(undoCommand);
@@ -19,6 +21,8 @@ void CommandHistoryManager::UndoCommand()
 
 void CommandHistoryManager::RedoCommand()
 {
+	if (redoStack_.empty())
+		return;
 	Command* redoCommand = redoStack_.top();
 	redoCommand->Redo();
 	undoStack_.push(redoCommand);

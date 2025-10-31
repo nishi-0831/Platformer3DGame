@@ -29,11 +29,6 @@ void mtgb::Box3D::ShowImGui()
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
 	ImGui::Text("EntityId:%d", Entity::entityId_);
 	static char text[256] = "ここにテキストを入力してください";
-
-	// 基本的なInputText - Undo/Redoは自動的に有効
-	if (ImGui::InputText("テキスト入力", text, sizeof(text))) {
-		// テキストが変更された時の処理
-	}
 }
 
 std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entityId) const

@@ -52,21 +52,31 @@ namespace mtgb
 					return;
 				}
 
-				// 以前に作成された
+				// 以前に作成された際に割り当てられたインデックスの取得を試みる
 				auto componentIndex = IComponentPool::GetComponentIndex(_memento.GetEntityId(), _memento.GetComponentType());
 
 				// エンティティのIdからコンポーネントを取得
 				T* pComponent = nullptr;
 				
+				// インデックスが有効かチェック
 				if (componentIndex.has_value())
 				{
+					// インデックスのコンポーネントの再利用を試みる
+					// コンポーネントがどのEntityにも利用されていないなら取得できる
 					pComponent = T::template Reuse(componentIndex.value(), pMemento->GetEntityId());
 				}
-				else
+				// コンポーネントの再利用に失敗、もしくは以前に作成されていない
+				if (pComponent == nullptr)
 				{
+					// コンポーネントの取得、もしくは作成を試みる
 					pComponent = &(T::template Get(pMemento->GetEntityId()));
 				}
-				pComponent->RestoreFromMemento(*pMemento);
+
+				// メメントからデータを復元
+				if (pComponent != nullptr)
+				{
+					pComponent->RestoreFromMemento(*pMemento);
+				}
 			};
 		types_.push_back(typeid(T));
 	}

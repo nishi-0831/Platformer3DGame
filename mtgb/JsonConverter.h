@@ -31,8 +31,8 @@ nlohmann::json JsonConverter::Serialize(T& _value)
 	if constexpr (refl::is_reflectable<Type>())
 	{
 		constexpr auto type = refl::reflect<Type>();
-
-		refl::util::for_each(type.members, [&](auto _member)
+		constexpr auto members = type.members;
+		refl::util::for_each(members, [&](auto _member)
 			{
 				if constexpr (refl::is_reflectable<decltype(_member(_value))>())
 				{
@@ -51,6 +51,10 @@ nlohmann::json JsonConverter::Serialize(T& _value)
 					j[key] = _member.invoke(_value);
 				}
 			});
+		if (members.size == 0)
+		{
+			
+		}
 	}
 	else
 	{
