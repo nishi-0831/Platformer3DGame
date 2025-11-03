@@ -2,9 +2,7 @@
 #include <refl.hpp>
 #include "../ImGui/imgui.h"
 #include "Vector3.h"
-#include "Quaternion.h"
-#include "ImGuiRenderer.h"
-#include "Transform.h"
+
 #include "ShowFunc.h"
 #include "QuatToEuler.h"
 
@@ -61,6 +59,19 @@ void ShowRange(T* instance, const char* name, T min, T max)
 		ImGui::Text("Unknown : %s", name);
 	}
 }
+
+struct DisplayName : refl::attr::usage::type
+{
+public:
+	constexpr DisplayName(const char* _displayName) noexcept
+		: displayName{ _displayName } {
+	}
+
+	constexpr std::string_view operator()() const noexcept { return std::string_view(displayName); }
+
+private:
+	const char* displayName;
+};
 
 template <typename T>
 struct ReadOnly : refl::attr::usage::member

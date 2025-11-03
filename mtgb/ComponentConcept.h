@@ -1,6 +1,5 @@
 #pragma once
 #include <concepts>
-#include "Entity.h"
 #include <type_traits>
 
 namespace mtgb

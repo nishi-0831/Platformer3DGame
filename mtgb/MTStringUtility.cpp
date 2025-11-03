@@ -2,6 +2,109 @@
 #include "IncludingWindows.h"
 #include "MTAssert.h"
 
+size_t mtgb::GetSizeUTF8Characters(const std::u8string& _string)
+{
+	enum BYTE_SIZE : int
+	{
+		BYTE_SIZE_IDK,
+		BYTE_SIZE1,
+		BYTE_SIZE2,
+		BYTE_SIZE3,
+		BYTE_SIZE4,
+	};
+
+	static auto isMatchByteSize
+	{
+		[](const uint8_t _byte, const uint8_t _idByte, const uint8_t _byteMask) -> bool
+		{
+			return (_byte & _byteMask) == _idByte;
+		}
+	};
+
+	// REF: https://ja.wikipedia.org/wiki/UTF-8
+	size_t charasCount{};
+	for (int byteIndex = 0; byteIndex < _string.size();)
+	{
+		BYTE_SIZE charaByteSize{};
+		if (isMatchByteSize(_string[byteIndex], 0b0000'0000, 0b1000'0000))
+		{
+			charaByteSize = BYTE_SIZE1;
+		}
+		else if (isMatchByteSize(_string[byteIndex], 0b1100'0000, 0b1110'0000))
+		{
+			charaByteSize = BYTE_SIZE2;
+		}
+		else if (isMatchByteSize(_string[byteIndex], 0b1110'0000, 0b1111'0000))
+		{
+			charaByteSize = BYTE_SIZE3;
+		}
+		else if (isMatchByteSize(_string[byteIndex], 0b1111'0000, 0b1111'1000))
+		{
+			charaByteSize = BYTE_SIZE4;
+		}
+
+		massert(charaByteSize != BYTE_SIZE_IDK && "バイトカウントが不一致 @SubStrBegin");
+
+		byteIndex += charaByteSize;
+		charasCount++;
+	}
+
+	return charasCount;
+}
+
+std::u8string mtgb::SubStrBegin(const std::u8string& _string, const int _count)
+{
+	enum BYTE_SIZE : int
+	{
+		BYTE_SIZE_IDK,
+		BYTE_SIZE1,
+		BYTE_SIZE2,
+		BYTE_SIZE3,
+		BYTE_SIZE4,
+	};
+
+	int charaCount{};  // utf8の文字数カウント
+	int byteCount{};  // 1文字を構成するバイト数カウント
+	int byteIndex{};
+
+	static auto isMatchByteSize
+	{
+		[](const uint8_t _byte, const uint8_t _idByte, const uint8_t _byteMask) -> bool
+		{
+			return (_byte & _byteMask) == _idByte;
+		}
+	};
+
+	// REF: https://ja.wikipedia.org/wiki/UTF-8
+	for (byteIndex = 0; charaCount < _count && byteIndex < _string.size();)
+	{
+		BYTE_SIZE charaByteSize{};
+		if (isMatchByteSize(_string[byteIndex], 0b0000'0000, 0b1000'0000))
+		{
+			charaByteSize = BYTE_SIZE1;
+		}
+		else if (isMatchByteSize(_string[byteIndex], 0b1100'0000, 0b1110'0000))
+		{
+			charaByteSize = BYTE_SIZE2;
+		}
+		else if (isMatchByteSize(_string[byteIndex], 0b1110'0000, 0b1111'0000))
+		{
+			charaByteSize = BYTE_SIZE3;
+		}
+		else if (isMatchByteSize(_string[byteIndex], 0b1111'0000, 0b1111'1000))
+		{
+			charaByteSize = BYTE_SIZE4;
+		}
+
+		massert(charaByteSize != BYTE_SIZE_IDK && "バイトカウントが不一致 @SubStrBegin");
+
+		byteIndex += charaByteSize;
+		charaCount++;
+	}
+
+	return _string.substr(0, byteIndex);
+}
+
 std::wstring mtgb::MultiToWide(const std::string& _string)
 {
 	return MultiToWide(_string.c_str());
@@ -183,4 +286,18 @@ std::string mtgb::UTF8ToMulti(const std::string& _string)
 std::string mtgb::UTF8ToMulti(const char* _string)
 {
 	return WideToMulti(UTF8ToWide(_string));
+}
+
+std::string mtgb::ExtractClassName(const std::string& _fullName)
+{
+	// "Box3D (0)" → "Box3D"
+	size_t pos = _fullName.rfind(" (");
+	if (pos != std::string::npos)
+	{
+		return _fullName.substr(0, pos);
+	}
+	else
+	{
+		return _fullName;
+	}
 }

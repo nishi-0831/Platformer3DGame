@@ -8,7 +8,7 @@ namespace mtgb
     /// <summary>
     /// MeshRendererコンポーネントシステム
     /// </summary>
-    class MeshRendererCP : public ComponentPool<MeshRenderer>
+    class MeshRendererCP : public ComponentPool<MeshRenderer,MeshRendererCP>
     {
     public:
         void Initialize();

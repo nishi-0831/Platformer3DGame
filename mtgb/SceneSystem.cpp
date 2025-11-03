@@ -62,12 +62,6 @@ void mtgb::SceneSystem::Update()
 	{
 		MTImGui::Instance().ChangeAllWindowOpen();
 	}
-	if (InputUtil::GetKeyDown(KeyCode::O))
-	{
-		Game::System<WinCtxResManager>().SwapResource<InputResource>();
-	}
-	
-	
 
 	if (InputUtil::GetKeyDown(KeyCode::P))
 	{
@@ -77,8 +71,6 @@ void mtgb::SceneSystem::Update()
 	WinCtxRes::ChangeResource(WindowContext::First);
 	Game::System<Input>().Update();
 	Game::System<WindowContextResourceManager>().Update();
-
-	
 
 	// åªç›ÇÃÉVÅ[Éì
 	GameScene& currentScene{ *GameScene::pInstance_ };

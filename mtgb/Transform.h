@@ -49,6 +49,7 @@ namespace mtgb
 			return *this;
 		}
 
+
 		/// <summary>
 		/// ŒvŽZ‚·‚é
 		/// </summary>

@@ -1,6 +1,7 @@
 #include "ImGuiEditor.h"
 #include "ReleaseUtility.h"
 #include "RegisterComponents.h"
+#include "RegisterGameObjectType.h"
 #include "InputData.h"
 #include "GameObjectGenerator.h"
 #include "AddComponentCommand.h"
@@ -15,8 +16,13 @@ mtgb::ImGuiEditor::ImGuiEditor()
 {
 	pCommandHistory_ = new CommandHistoryManagerWrapper(new CommandHistoryManager());
 	pComponentFactory_ = new ComponentFactory();
+	pGameObjectFactory_ = new GameObjectFactory();
+
 	// コンポーネントの作成関数を登録
 	mtgb::RegisterComponents(pComponentFactory_);
+
+	// ゲームオブジェクトの作成関数、名前を登録
+	mtgb::RegisterGameObjectType(pGameObjectFactory_);
 
 	pManipulator_ = new ImGuizmoManipulator([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); },*pComponentFactory_);
 
@@ -53,6 +59,10 @@ void mtgb::ImGuiEditor::Update()
 		if (InputUtil::GetKeyDown(KeyCode::S))
 		{
 			SaveMapData();
+		}
+		if (InputUtil::GetKeyDown(KeyCode::O))
+		{
+			LoadMapData();
 		}
 	}
 }
@@ -91,6 +101,43 @@ void mtgb::ImGuiEditor::SaveMapData()
 	}
 }
 
+void mtgb::ImGuiEditor::LoadMapData()
+{
+	TCHAR fileName[255] = "";
+	OPENFILENAME ifn = { 0 };
+
+	ifn.lStructSize = sizeof(ifn);
+	ifn.hwndOwner = WinCtxRes::GetHWND(WindowContext::First);
+	ifn.lpstrFilter = "JSONファイル(*.json)\0*.json";
+	ifn.lpstrFile = fileName;
+	ifn.nMaxFile = 255;
+
+	if (GetOpenFileName(&ifn) == false)
+		assert(false);
+
+	std::ifstream inputFile(fileName);
+	if (inputFile.fail())
+	{
+		assert(false);
+	}
+	nlohmann::json json;
+	try
+	{
+		inputFile >> json;
+	}
+	catch (const nlohmann::json::parse_error& e)
+	{
+		assert(false);
+	}
+
+	nlohmann::json gameObjs = json.at("GameObject");
+
+	for (nlohmann::json::iterator itr = gameObjs.begin(); itr != gameObjs.end(); itr++)
+	{
+		GameObjectGenerator::Generate([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); }, *pComponentFactory_,*pGameObjectFactory_, *itr);
+	}
+}
+
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
 {
 	// コンポーネント作成成功
@@ -114,9 +161,9 @@ void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)
 
 void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 {
-	if (ImGui::Button("GenerateGameObject"))
+	if (ImGui::Button("Generate Box3D"))
 	{
-		GameObjectGenerator::GeneratePrimitive([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); },*pComponentFactory_,PrimitiveType::Box);
+		GameObjectGenerator::Generate([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); },*pComponentFactory_,GenerateType::Box);
 	}
 }
 

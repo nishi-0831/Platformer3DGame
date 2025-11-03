@@ -58,12 +58,15 @@
     <ClCompile Include="mtgb\CommandHistoryManager.cpp" />
     <ClCompile Include="mtgb\CommandHistoryManagerWrapper.cpp" />
     <ClCompile Include="mtgb\ComponentFactory.cpp" />
+    <ClCompile Include="mtgb\ComponentRegistry.cpp" />
     <ClCompile Include="mtgb\EntityManager.cpp" />
     <ClCompile Include="mtgb\EventManager.cpp" />
     <ClCompile Include="mtgb\FbxModel.cpp" />
     <ClCompile Include="mtgb\GameObjectCreateCommand.cpp" />
+    <ClCompile Include="mtgb\GameObjectFactory.cpp" />
     <ClCompile Include="mtgb\GameObjectGenerator.cpp" />
     <ClCompile Include="mtgb\GameObjectLayer.cpp" />
+    <ClCompile Include="mtgb\GameObjectTypeRegistry.cpp" />
     <ClCompile Include="mtgb\Ground.cpp" />
     <ClCompile Include="mtgb\GuizmoManipulatedEvent.cpp" />
     <ClCompile Include="mtgb\HighlightEnemy.cpp" />
@@ -90,6 +93,7 @@
     <ClCompile Include="mtgb\QuatToEuler.cpp" />
     <ClCompile Include="mtgb\RayDetector.cpp" />
     <ClCompile Include="mtgb\RectDetector.cpp" />
+    <ClCompile Include="mtgb\RegisterGameObjectType.cpp" />
     <ClCompile Include="mtgb\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
@@ -255,14 +259,17 @@
     <ClInclude Include="mtgb\CommandHistoryManagerWrapper.h" />
     <ClInclude Include="mtgb\ComponentConcept.h" />
     <ClInclude Include="mtgb\ComponentFactory.h" />
+    <ClInclude Include="mtgb\ComponentRegistry.h" />
     <ClInclude Include="mtgb\DetectorConfigs.h" />
     <ClInclude Include="mtgb\EntityManager.h" />
     <ClInclude Include="mtgb\EventManager.h" />
     <ClInclude Include="mtgb\FlightStickCode.h" />
     <ClInclude Include="mtgb\GameObjectCreateCommand.h" />
+    <ClInclude Include="mtgb\GameObjectFactory.h" />
     <ClInclude Include="mtgb\GameObjectGenerator.h" />
     <ClInclude Include="mtgb\GameObjectSelectionEvent.h" />
     <ClInclude Include="mtgb\GameObjectTag.h" />
+    <ClInclude Include="mtgb\GameObjectTypeRegistry.h" />
     <ClInclude Include="mtgb\GuizmoManipulatedEvent.h" />
     <ClInclude Include="mtgb\IComponentMemento.h" />
     <ClInclude Include="mtgb\IComponentWithMemento.h">
@@ -297,6 +304,7 @@
     <ClInclude Include="mtgb\InputConfig.h" />
     <ClInclude Include="mtgb\IOriginalShader.h" />
     <ClInclude Include="mtgb\JoystickProxy.h" />
+    <ClInclude Include="mtgb\JsonADLSerializers.h" />
     <ClInclude Include="mtgb\JsonConverter.h" />
     <ClInclude Include="mtgb\Mathf.h" />
     <ClInclude Include="mtgb\MeshRenderer.h" />
@@ -325,6 +333,7 @@
     <ClInclude Include="mtgb\RectContainsInfo.h" />
     <ClInclude Include="mtgb\ReflectionInfo.h" />
     <ClInclude Include="mtgb\RegisterComponents.h" />
+    <ClInclude Include="mtgb\RegisterGameObjectType.h" />
     <ClInclude Include="mtgb\RenderSystem.h" />
     <ClInclude Include="mtgb\RigidBodyData.h" />
     <ClInclude Include="mtgb\RigidBodyMemento.h" />

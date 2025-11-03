@@ -13,10 +13,4 @@ void mtgb::RegisterComponents(ComponentFactory* _pComponentFactory)
 	_pComponentFactory->RegisterComponent<Collider,ColliderMemento>();
 	_pComponentFactory->RegisterComponent<AudioPlayer,AudioPlayerMemento>();
 	_pComponentFactory->RegisterComponent<MeshRenderer,MeshRendererMemento>();
-
-	IComponentPool::RegisterComponentPoolType(typeid(Transform), typeid(TransformCP));
-	IComponentPool::RegisterComponentPoolType(typeid(RigidBody), typeid(RigidBodyCP));
-	IComponentPool::RegisterComponentPoolType(typeid(Collider), typeid(ColliderCP));
-	IComponentPool::RegisterComponentPoolType(typeid(AudioPlayer), typeid(AudioPlayerCP));
-	IComponentPool::RegisterComponentPoolType(typeid(MeshRenderer), typeid(MeshRendererCP));
 }

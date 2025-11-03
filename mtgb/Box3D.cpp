@@ -2,13 +2,18 @@
 #include "Transform.h"
 #include "Fbx.h"
 #include "Entity.h"
+#include <format>
 unsigned int mtgb::Box3D::generateCounter_{ 0 };
 
 mtgb::Box3D::Box3D() 
 	: GameObject()
-	, ImGuiShowable("Box3D", ShowType::Inspector, Entity::entityId_)
+	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
 {
-	name_ = "Box3D";
+	// Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
+	/* name_ = Game::System<Hoge>().GetNameFromType(typeid(Box3D)); */
+	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Box3D));
+	name_ = std::format("{} ({})", typeName,generateCounter_++);
+	displayName_ = name_;
 }
 
 mtgb::Box3D::~Box3D()

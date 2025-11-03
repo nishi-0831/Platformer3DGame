@@ -1,5 +1,6 @@
 #include "AddComponentCommand.h"
 #include "IComponentPool.h"
+#include "ComponentRegistry.h"
 mtgb::AddComponentCommand::AddComponentCommand(
     mtgb::EntityId _entityId,
     const std::type_index& _typeIdx,
@@ -41,7 +42,7 @@ void mtgb::AddComponentCommand::ApplyMemento()
 
 void mtgb::AddComponentCommand::RemoveComponent() const
 {
-    std::optional<std::type_index> componentPoolType = IComponentPool::GetComponentPoolType(componentType_);
+    std::optional<std::type_index> componentPoolType = Game::System<ComponentRegistry>().GetComponentPoolType(componentType_);
     if (componentPoolType.has_value())
     {
         Game::RemoveEntityComponent(componentPoolType.value(), entityId_);

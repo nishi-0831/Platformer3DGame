@@ -4,22 +4,28 @@
 #include "Box3D.h"
 #include "AddComponentCommand.h"
 #include "GameObjectCreateCommand.h"
-void mtgb::GameObjectGenerator::GeneratePrimitive(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory, PrimitiveType _primitive)
+void mtgb::GameObjectGenerator::Generate(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory, GenerateType _primitive)
 {
-    if (PrimitiveType::Box == _primitive)
+    if (GenerateType::Box == _primitive)
     {
-
         GameObjectCreateCommand* cmd = new GameObjectCreateCommand([]() {return GameObject::Instantiate<Box3D>(); }, _componentFactory);
         _commandListener(cmd);
-
-        /*Box3D* box = GameObject::Instantiate<Box3D>();
-        auto mementos = box->GetDefaultMementos(box->GetEntityId());
-
-        for (mtgb::IComponentMemento* memento : mementos)
-        {
-            _commandListener( new AddComponentCommand(box->GetEntityId(), memento->GetComponentType(), memento, _componentFactory));
-        }*/
-        
     }
+}
+
+void mtgb::GameObjectGenerator::Generate(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory, const GameObjectFactory& _gameObjFactory, const nlohmann::json& _json)
+{
+    // Œ^–¼‚ðŽæ“¾
+    std::string classType = _json["classType"].get<std::string>();
     
+    GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
+        [&_gameObjFactory,classType]() 
+        {
+            return _gameObjFactory.Create(classType);
+        },
+        _componentFactory,
+        _json);
+
+    // ƒRƒ}ƒ“ƒh‚ð“n‚·
+    _commandListener(cmd);
 }

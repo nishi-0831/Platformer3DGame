@@ -4,6 +4,7 @@
 #include "IComponentPool.h"
 #include "ISystem.h"
 #include <nlohmann/json.hpp>
+#include "ComponentRegistry.h"
 namespace mtgb
 {
 	static constexpr size_t COMPONENT_CAPACITY{ 8192 };
@@ -16,7 +17,7 @@ namespace mtgb
 	/// </summary>
 	/// <typeparam name="ComponentT">コンポーネントの型</typeparam>
 	/// <typeparam name="IsSingleton">１つしか格納できないか true / false</typeparam>
-	template<class ComponentT, bool IsSingleton = true>
+	template<typename ComponentT,typename DerivedT, bool IsSingleton = true>
 	class ComponentPool : public IComponentPool, public ISystem
 	{
 	public:
@@ -29,7 +30,7 @@ namespace mtgb
 
 		void Release() override;
 		nlohmann::json Serialize(EntityId _entityId) override;
-
+		IComponentMemento* Deserialize(EntityId _entityId, const nlohmann::json& _json) override;
 		ComponentT* Reuse(size_t _index, EntityId _entityId);
 		/// <summary>
 		/// コンポーネントを作成/取得する
@@ -64,31 +65,33 @@ namespace mtgb
 		std::vector<EntityId> poolId_;  // コンポーネントの登録エンティティId
 	};
 
-	template<class ComponentT, bool IsSingleton>
-	inline ComponentPool<ComponentT, IsSingleton>::ComponentPool() :
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline ComponentPool<ComponentT, DerivedT, IsSingleton>::ComponentPool() :
 		pool_{},
 		poolId_{}
 	{
 		pool_.reserve(COMPONENT_CAPACITY);
 		poolId_.reserve(COMPONENT_CAPACITY);
 
+		Game::System<ComponentRegistry>().RegisterComponentPoolType(typeid(ComponentT), typeid(DerivedT));
+		Game::System<ComponentRegistry>().RegisterComponentKey(ComponentT::DisplayName(), typeid(ComponentT));
 	}
 
-	template<class ComponentT, bool IsSingleton>
-	inline ComponentPool<ComponentT, IsSingleton>::~ComponentPool()
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline ComponentPool< ComponentT,DerivedT, IsSingleton>::~ComponentPool()
 	{
 
 	}
 
-	template<class ComponentT, bool IsSingleton>
-	inline void ComponentPool<ComponentT, IsSingleton>::Initialize()
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::Initialize()
 	{
 		RegisterCurrentScene([&, this] { Release(); });
 		Start();
 	}
 
-	template<class ComponentT, bool IsSingleton>
-	inline void ComponentPool<ComponentT, IsSingleton>::Release()
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::Release()
 	{
 		pool_.clear();
 		poolId_.clear();
@@ -97,8 +100,8 @@ namespace mtgb
 		//poolId_.reserve(COMPONENT_CAPACITY);
 	}
 
-	template<class ComponentT, bool IsSingleton>
-	inline  nlohmann::json ComponentPool<ComponentT, IsSingleton>::Serialize(EntityId _entityId)
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline  nlohmann::json ComponentPool<ComponentT, DerivedT, IsSingleton>::Serialize(EntityId _entityId)
 	{
 		for (int i = 0; i < poolId_.size(); i++)
 		{
@@ -110,8 +113,14 @@ namespace mtgb
 		return nlohmann::json{};
 	}
 
-	template<class ComponentT, bool IsSingleton>
-	inline ComponentT* ComponentPool<ComponentT, IsSingleton>::Reuse(size_t _index, EntityId _entityId)
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline IComponentMemento* ComponentPool<ComponentT, DerivedT, IsSingleton>::Deserialize(EntityId _entityId, const nlohmann::json& _json)
+	{
+		return ComponentT::Deserialize(_entityId, _json);
+	}
+
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline ComponentT* ComponentPool<ComponentT, DerivedT, IsSingleton>::Reuse(size_t _index, EntityId _entityId)
 	{
 		if (poolId_.size() <= _index)
 			return nullptr;
@@ -125,9 +134,9 @@ namespace mtgb
 		return pComponent;
 	}
 
-	template<class ComponentT, bool IsSingleton>
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
 	template<typename... Args>
-	inline ComponentT& ComponentPool<ComponentT, IsSingleton>::Get(EntityId _entityId, Args&&... _args)
+	inline ComponentT& ComponentPool<ComponentT, DerivedT, IsSingleton>::Get(EntityId _entityId, Args&&... _args)
 	{
 		for (int i = 0; i < poolId_.size(); i++)
 		{
@@ -147,16 +156,16 @@ namespace mtgb
 
 		// インデックスを記録
 		size_t poolIndex = pool_.size() - 1;
-		IComponentPool::RegisterComponentIndex(_entityId, std::type_index(typeid(ComponentT)), poolIndex);
+		Game::System<ComponentRegistry>().RegisterComponentIndex(_entityId, std::type_index(typeid(ComponentT)), poolIndex);
 
 		// EntityIdに割り当てられたComponentとして登録
-		IComponentPool::RegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
+		Game::System<ComponentRegistry>().RegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
 
 		return pool_.back(); // 追加&&初期化したコンポーネントを返す
 	}
 
-	template<class ComponentT, bool IsSingleton>
-	inline bool ComponentPool<ComponentT, IsSingleton>::TryGet(
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline bool ComponentPool<ComponentT, DerivedT, IsSingleton>::TryGet(
 		ComponentT*& _pComponent, const EntityId _entityId)
 	{
 		for (int i = 0; i < poolId_.size(); i++)
@@ -171,8 +180,8 @@ namespace mtgb
 		return false;
 	}
 
-	template<class ComponentT, bool IsSingleton>
-	inline bool ComponentPool<ComponentT, IsSingleton>::TryGet(
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline bool ComponentPool<ComponentT, DerivedT, IsSingleton>::TryGet(
 		std::vector<ComponentT*>* _pComponents, const EntityId _entityId) 
 	{
 		_pComponents->clear();
@@ -188,22 +197,8 @@ namespace mtgb
 		return _pComponents->size() >= 0;
 	}
 
-	//template<class ComponentT, bool IsSingleton>
-	//template<typename... Args>
-	//inline ComponentT& ComponentPool<ComponentT, IsSingleton>::Add(EntityId _entityId, Args&&... _args) requires(!IsSingleton)
-	//{
-	//	// プールに存在しないなら新たに追加
-	//	poolId_.push_back(_entityId);
-	//	// NOTE: emplace_backで実体をそのまま追加
-	//	pool_.emplace_back(_entityId, std::forward<Args>(_args)...); // 可変長引数でコンストラクタ呼び出し
-	//	// 追加したら初期化処理
-	//	pool_[pool_.size() - 1].Initialize();
-
-	//	return pool_[pool_.size() - 1];  // 追加&&初期化したコンポーネントを返す
-	//}
-
-	template<class ComponentT, bool IsSingleton>
-	inline void ComponentPool<ComponentT, IsSingleton>::Remove(const EntityId _entityId)
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::Remove(const EntityId _entityId)
 	{
 		if constexpr (IsSingleton)
 		{
@@ -214,7 +209,7 @@ namespace mtgb
 					poolId_[i] = INVALID_ENTITY;
 
 					// 登録解除
-					IComponentPool::UnRegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
+					Game::System<ComponentRegistry>().UnRegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
 					return;  // 見つかったなら無効Idにして回帰
 				}
 			}
@@ -233,8 +228,8 @@ namespace mtgb
 
 	
 
-	template<class ComponentT, bool IsSingleton>
-	inline void ComponentPool<ComponentT, IsSingleton>::UnRegister(EntityId _entityId)
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::UnRegister(EntityId _entityId)
 	{
 		for (int i = 0; i < poolId_.size(); i++)
 		{

@@ -15,9 +15,8 @@ namespace mtgb
 	class IComponent
 	{
 		friend ComponentPoolT;
-		friend ComponentPool<ComponentT>;
+		friend ComponentPool<ComponentT,ComponentPoolT>;
 	public:
-		using ComPool = ComponentPoolT;
 		IComponent() :
 			entityId_{ -1 }
 		{}
@@ -33,7 +32,7 @@ namespace mtgb
 
 		const EntityId GetEntityId() const { return entityId_; }
 
-		virtual nlohmann::json Serialize() = 0;
+
 	private:
 		EntityId entityId_;
 	};

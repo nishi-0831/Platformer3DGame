@@ -13,7 +13,7 @@ namespace mtgb
 {
 	class Collider;
 	class GameObject;
-	class ColliderCP : public ComponentPool<Collider>
+	class ColliderCP : public ComponentPool<Collider,ColliderCP>
 	{
 	public:
 		ColliderCP();

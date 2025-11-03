@@ -360,7 +360,7 @@ void mtgb::MTImGui::ShowComponents(EntityId _entityId)
 {
     if (_entityId == INVALID_ENTITY) return;
 
-    const auto& types = IComponentPool::GetComponentTypes(_entityId);
+    const auto& types = Game::System<ComponentRegistry>().GetComponentTypes(_entityId);
     if (types.has_value() == false) return;
 
     for (const auto& typeIdx : (*types).get())

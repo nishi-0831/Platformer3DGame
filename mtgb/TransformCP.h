@@ -12,7 +12,7 @@ namespace mtgb
 	/// Transformコンポーネントのプール
 	/// </summary>
 	class TransformCP :
-		public ComponentPool<Transform>
+		public ComponentPool<Transform,TransformCP>
 	{
 	public:
 		TransformCP();

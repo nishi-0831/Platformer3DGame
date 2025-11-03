@@ -7,6 +7,7 @@
 #include <functional>
 #include <vector>
 #include "GameObject.h"
+#include <nlohmann/json.hpp>
 namespace mtgb
 {
 	
@@ -18,6 +19,12 @@ namespace mtgb
 			CreateFunc _createFunc,
 			const ComponentFactory& _componentFactory
 		);
+
+		GameObjectCreateCommand(
+			CreateFunc _createFunc,
+			const ComponentFactory& _componentFactory,
+			const nlohmann::json& _json
+		);
 		void Execute() override;
 		void Undo() override;
 		void Redo() override;
@@ -25,11 +32,13 @@ namespace mtgb
 		std::string Name() const override;
 	private:
 		void ApplyComponents();
-
+		void Deserialize(GameObject* _obj);
 		EntityId entityId_;
 		std::string gameObjectName_;
 		std::vector<IComponentMemento*> mementos_;
 		const ComponentFactory& componentFactory_;
 		CreateFunc createFunc_;
+		nlohmann::json json_;
+		bool deserialized_;
 	};
 }

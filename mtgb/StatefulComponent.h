@@ -14,6 +14,7 @@ namespace mtgb
 	public:	
 		using IComponent<TComponentPool, TDerived>::IComponent;
 		
+		StatefulComponent();
 		virtual ~StatefulComponent() {};
 		virtual void Initialize() override {};
 
@@ -33,8 +34,54 @@ namespace mtgb
 			OnPostRestore();
 		}
 
-		nlohmann::json Serialize() override;
-		
+		nlohmann::json Serialize()
+		{
+			auto& derivedRef = static_cast<TDerived&>(*this);
+			TData& data = static_cast<TData&>(derivedRef);
+
+			nlohmann::json dataJson = JsonConverter::Serialize<TData>(data);
+
+			std::string key = JsonConverter::GetDisplayName<TData>();
+			if (key.empty() == false)
+			{
+				nlohmann::json ret;
+				ret[key] = dataJson;
+				return ret;
+			}
+			return dataJson;
+		}
+
+		static TMemento* Deserialize(EntityId _entityId, const nlohmann::json& _json)
+		{
+			std::string key = JsonConverter::GetDisplayName<TData>();
+			if (key.empty())
+			{
+				if constexpr (refl::is_reflectable<TData>())
+				{
+					auto typeDescriptor = refl::reflect<TData>();
+					key = typeDescriptor.name.c_str();
+				}
+			}
+			nlohmann::json dataJson = _json.at(key);
+			
+			TData data;
+			JsonConverter::Deserialize(data, dataJson);
+			return new TMemento(_entityId, data);
+		}
+
+		static std::string DisplayName()
+		{
+			std::string componentName = JsonConverter::GetDisplayName<TData>();
+			if (componentName.empty())
+			{
+				if constexpr (refl::is_reflectable<TData>())
+				{
+					auto typeDescriptor = refl::reflect<TData>();
+					componentName = typeDescriptor.name.c_str();
+				}
+			}
+			return componentName;
+		}
 
 	protected:
 		/// <summary>
@@ -46,20 +93,8 @@ namespace mtgb
 		}
 	private:
 	};
-	
-	
-	
 	template<typename TDerived, typename TComponentPool, typename TData, typename TMemento>
-	nlohmann::json StatefulComponent<TDerived, TComponentPool, TData, TMemento>::Serialize()
-	{
-		auto& derivedRef = static_cast<TDerived&>(*this);
-		TData& data = static_cast<TData&>(derivedRef);
-		//return nlohmann::json{};
-		return JsonConverter::Serialize<TData>(data);
+	inline StatefulComponent<TDerived, TComponentPool, TData, TMemento>::StatefulComponent()
+	{	
 	}
-
-	
-
 }
-
-//#include "StatefulComponent.inl"

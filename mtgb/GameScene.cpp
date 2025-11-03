@@ -99,6 +99,9 @@ mtgb::GameObject* mtgb::GameScene::GetGameObject(const EntityId _entityId) const
 
 void mtgb::GameScene::DestroyGameObject(EntityId _entityId) 
 {
+	if (_entityId == INVALID_ENTITY)
+		return;
+
 	for (auto& object : pGameObjects_)
 	{
 		if (object->GetEntityId() != _entityId)
@@ -111,12 +114,18 @@ void mtgb::GameScene::DestroyGameObject(EntityId _entityId)
 
 nlohmann::json mtgb::GameScene::SerializeGameObjects() const
 {
-	nlohmann::json j{};
+	nlohmann::json j;
+	// ”z—ñ‚Æ‚µ‚Ä‰Šú‰»
+	j["GameObject"] = nlohmann::json::array();
 	for (auto& object : pGameObjects_)
 	{
-		j.merge_patch(object->SerializeGameObject());
+		if (!object) continue;
+		nlohmann::json objJson = object->Serialize();
+		j["GameObject"].push_back(objJson);
 	}
 	return j;
 }
+
+
 
 mtgb::GameScene* mtgb::GameScene::pInstance_{ nullptr };

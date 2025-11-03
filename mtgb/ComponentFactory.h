@@ -6,6 +6,7 @@
 
 #include "Entity.h"
 #include "IComponentMemento.h"
+#include "ComponentRegistry.h"
 #include <functional>
 namespace mtgb
 {
@@ -53,7 +54,7 @@ namespace mtgb
 				}
 
 				// 以前に作成された際に割り当てられたインデックスの取得を試みる
-				auto componentIndex = IComponentPool::GetComponentIndex(_memento.GetEntityId(), _memento.GetComponentType());
+				auto componentIndex = Game::System<ComponentRegistry>().GetComponentIndex(_memento.GetEntityId(), _memento.GetComponentType());
 
 				// エンティティのIdからコンポーネントを取得
 				T* pComponent = nullptr;

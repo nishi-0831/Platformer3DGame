@@ -27,7 +27,8 @@ namespace mtgb
 		virtual inline void End() {};
 		virtual inline std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const { return std::vector<IComponentMemento*>(); };
 
-		nlohmann::json SerializeGameObject() const;
+		nlohmann::json Serialize() const;
+		void Deserialize(const nlohmann::json& _json);
 		/// <summary>
 		/// –¼‘O‚ğİ’è‚·‚é
 		/// </summary>

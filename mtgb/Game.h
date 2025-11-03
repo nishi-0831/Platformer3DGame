@@ -1,6 +1,6 @@
 #pragma once
 //#include "GameScene.h"
-#include <cmtgb.h>
+#include "Entity.h"
 #include <string>
 #include <functional>
 #include <cstdint>
@@ -14,10 +14,11 @@
 #include "Vector2Int.h"
 #include <typeindex>
 #include "ReleaseUtility.h"
+#include "IComponentMemento.h"
 #include <nlohmann/json.hpp>
 namespace mtgb
 {
-	using EntityId = int64_t;
+	//using EntityId = int64_t;
 	class IComponentPool;
 
 	/// <summary>
@@ -153,6 +154,7 @@ namespace mtgb
 		static void RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId);
 		
 		static nlohmann::json SerializeComponent(std::type_index _typeIndex, EntityId _entityId);
+		static IComponentMemento* DeserializeComponent(std::type_index _typeIndex, EntityId _entityId,const nlohmann::json& _json);
 	private:
 		/// <summary>
 		/// ÉVÉXÉeÉÄÇÃèâä˙âªÇÇ∑ÇÈ

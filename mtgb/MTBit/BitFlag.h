@@ -83,6 +83,7 @@ namespace mtbit
 		BitFlag() = default;
 		BitFlag(const BitFlag&) = default;
 		BitFlag(const EnumStructT _e);
+		BitFlag(const std::bitset<BIT_COUNT>& _bitset);
 		~BitFlag() = default;
 
 		/// <summary>
@@ -117,6 +118,11 @@ namespace mtbit
 		/// <returns>インスタンス</returns>
 		static BitFlag New() { return BitFlag{}; }
 
+		/// <summary>
+		/// ビットフラグを返す
+		/// </summary>
+		/// <returns> ビットフラグ </returns>
+		std::bitset<BIT_COUNT> Value() const { return value_; }
 	private:
 		std::bitset<BIT_COUNT> value_;  // ビットフラグ
 	};
@@ -156,6 +162,12 @@ template<typename EnumStructT>
 inline mtbit::BitFlag<EnumStructT>::BitFlag(const EnumStructT _e)
 {
 	value_.set(static_cast<size_t>(_e));
+}
+
+template<typename EnumStructT>
+inline mtbit::BitFlag<EnumStructT>::BitFlag(const std::bitset<BIT_COUNT>& _bitset)
+	: value_{_bitset}
+{
 }
 
 template<typename EnumStructT>

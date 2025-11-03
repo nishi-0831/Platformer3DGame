@@ -4,7 +4,7 @@
 #include "Entity.h"
 #include "ComponentFactory.h"
 #include <typeindex>
-
+#include <string>
 namespace mtgb
 {
 	/// <summary>

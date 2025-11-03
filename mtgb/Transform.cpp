@@ -5,6 +5,8 @@ mtgb::Transform::~Transform()
 
 }
 
+
+
 void mtgb::Transform::Compute()
 {
 	using DirectX::XMMatrixTranslation;

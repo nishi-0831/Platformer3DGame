@@ -8,7 +8,7 @@ namespace mtgb
 	class AudioPlayer;
 
 	class AudioPlayerCP :
-		public ComponentPool<AudioPlayer>
+		public ComponentPool<AudioPlayer,AudioPlayerCP>
 	{
 	public:
 		AudioPlayerCP();

@@ -7,7 +7,7 @@ namespace mtgb
 {
 	class RigidBody;
 
-	class RigidBodyCP : public ComponentPool<RigidBody>
+	class RigidBodyCP : public ComponentPool<RigidBody, RigidBodyCP>
 	{
 	public:
 		RigidBodyCP();

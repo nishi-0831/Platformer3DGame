@@ -3,7 +3,7 @@
 #include "Transform.h"
 #include "MTAssert.h"
 #include "EntityManager.h"
-
+#include "MTStringUtility.h"
 mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 	name_{_desc.name},
 	status_
@@ -43,6 +43,7 @@ mtgb::GameObject::GameObject(const GameObject& _other)
 	:Entity()
 	,status_{_other.status_}
 	,componentsFlag_{_other.componentsFlag_}
+	, tag_{GameObjectTag::Untagged}
 {
 }
 
@@ -52,27 +53,34 @@ mtgb::GameObject::~GameObject()
 		"ゲームオブジェクトを削除するときは直接deleteを呼び出さないでください！");
 }
 
-nlohmann::json mtgb::GameObject::SerializeGameObject() const
+nlohmann::json mtgb::GameObject::Serialize() const
 {
 	nlohmann::json j{};
 	j["name"] = GetName();
+	j["classType"] = mtgb::ExtractClassName(GetName());
 	j["tag"] = GetTag();
-
-	auto componentTypes = IComponentPool::GetComponentTypes(entityId_);
+	j["EntityId"] = entityId_;
+	auto componentTypes = Game::System<ComponentRegistry>().GetComponentTypes(entityId_);
 	if (componentTypes.has_value() == false)
 	{
 		return j;
 	}
 	for (const auto& typeIdx : (*componentTypes).get())
 	{
-		std::optional<std::type_index> componentPoolType = IComponentPool::GetComponentPoolType(typeIdx);
+		std::optional<std::type_index> componentPoolType = Game::System<ComponentRegistry>().GetComponentPoolType(typeIdx);
 		if (componentPoolType.has_value() == false)
 			continue;
-
+		
 		nlohmann::json componentJson = Game::SerializeComponent(componentPoolType.value(), entityId_);
 		j.merge_patch(componentJson);
 	}
 	return j;
+}
+
+void mtgb::GameObject::Deserialize(const nlohmann::json& _json)
+{
+	name_ = _json.at("name").get<std::string>();
+	tag_ = _json.at("tag").get<GameObjectTag>();
 }
 
 mtgb::GameObject* mtgb::GameObject::FindGameObject(const std::string& _name)

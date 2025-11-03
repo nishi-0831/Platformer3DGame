@@ -52,20 +52,20 @@ REGISTER_FIELD(rgbButtons)
 REGISTER_END
 
 
-REGISTER_TYPE(TransformData)
+REGISTER_TYPE(TransformData, DisplayName{ "Transform" })
 REGISTER_FIELD(parent)
 REGISTER_FIELD(position)
 REGISTER_FIELD(scale)
 REGISTER_FIELD(rotate)
 REGISTER_END
 
-REGISTER_TYPE(MeshRendererData)
+REGISTER_TYPE(MeshRendererData, DisplayName{ "MeshRenderer" })
 REGISTER_FIELD(meshHandle)
 REGISTER_FIELD(layer)
 REGISTER_FIELD(shaderType)
 REGISTER_END
 
-REGISTER_TYPE(ColliderData)
+REGISTER_TYPE(ColliderData, DisplayName{ "Collider" })
 REGISTER_FIELD(colliderType)
 REGISTER_FIELD(isStatic)
 REGISTER_FIELD(colliderTag)
