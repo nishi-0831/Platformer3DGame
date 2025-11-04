@@ -12,10 +12,10 @@ namespace mtgb
 	class RigidBodyCP;
 	class Transform;
 
-	class RigidBody : public RigidBodyData, public StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData, ComponentMemento<RigidBody, RigidBodyData>>
+	class RigidBody : public RigidBodyData, public StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData>
 	{
 	public:
-		using StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData, ComponentMemento<RigidBody, RigidBodyData>>::StatefulComponent;
+		using StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData>::StatefulComponent;
 		friend RigidBodyCP;
 
 		RigidBody(const EntityId _entityId);

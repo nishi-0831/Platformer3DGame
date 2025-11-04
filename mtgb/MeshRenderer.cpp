@@ -1,5 +1,4 @@
 #include "MeshRenderer.h"
-#include "MeshRendererMemento.h"
 #include "Fbx.h"
 mtgb::MeshRenderer::MeshRenderer()
 {

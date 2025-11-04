@@ -1,30 +1,31 @@
 #pragma once
 #include "IComponent.h"
 #include "ComponentConcept.h"
+#include "IComponentMemento.h"
 
 #include "nlohmann/json.hpp"
 #include "JsonConverter.h"
 #define UseConcept 0
 namespace mtgb
 {
-	template<typename TDerived,typename TComponentPool,typename TData,typename TMemento>
+	template<typename TDerived,typename TComponentPool,typename TData>
 	
 	class StatefulComponent : public IComponent<TComponentPool, TDerived>
 	{
 	public:	
 		using IComponent<TComponentPool, TDerived>::IComponent;
+		using Memento = ComponentMemento<TDerived, TData>;
 		
-		StatefulComponent();
 		virtual ~StatefulComponent() {};
 		virtual void Initialize() override {};
 
-		TMemento* SaveToMemento() const
+		Memento* SaveToMemento() const
 		{
 			// conceptÇ≈åüèÿçœÇ›Ç»ÇÃÇ≈static_cast
-			return new TMemento(this->GetEntityId(), static_cast<const TDerived&>(*this));
+			return new Memento(this->GetEntityId(), static_cast<const TDerived&>(*this));
 		}
 
-		void RestoreFromMemento(const TMemento& _memento)
+		void RestoreFromMemento(const Memento& _memento)
 		{
 			// conceptÇ≈åüèÿçœÇ›Ç»ÇÃÇ≈static_cast
 			auto& derivedRef = static_cast<TDerived&>(*this);
@@ -51,7 +52,7 @@ namespace mtgb
 			return dataJson;
 		}
 
-		static TMemento* Deserialize(EntityId _entityId, const nlohmann::json& _json)
+		static Memento* Deserialize(EntityId _entityId, const nlohmann::json& _json)
 		{
 			std::string key = JsonConverter::GetDisplayName<TData>();
 			if (key.empty())
@@ -66,7 +67,7 @@ namespace mtgb
 			
 			TData data;
 			JsonConverter::Deserialize(data, dataJson);
-			return new TMemento(_entityId, data);
+			return new Memento(_entityId, data);
 		}
 
 		static std::string DisplayName()
@@ -93,8 +94,4 @@ namespace mtgb
 		}
 	private:
 	};
-	template<typename TDerived, typename TComponentPool, typename TData, typename TMemento>
-	inline StatefulComponent<TDerived, TComponentPool, TData, TMemento>::StatefulComponent()
-	{	
-	}
 }

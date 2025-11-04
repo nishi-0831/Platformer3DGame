@@ -1,5 +1,4 @@
 #include "RigidBody.h"
-#include "RigidBodyMemento.h"
 #include "Transform.h"
 
 mtgb::RigidBody::RigidBody(const EntityId _entityId) :

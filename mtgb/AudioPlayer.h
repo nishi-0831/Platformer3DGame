@@ -15,12 +15,12 @@ namespace mtgb
 	/// <summary>
 	/// ‰¹º‚ğÄ¶‚·‚é‚â‚Â
 	/// </summary>
-	class AudioPlayer : public AudioPlayerData,public StatefulComponent<AudioPlayer, AudioPlayerCP,AudioPlayerData,ComponentMemento<AudioPlayer,AudioPlayerData>>
+	class AudioPlayer : public AudioPlayerData,public StatefulComponent<AudioPlayer, AudioPlayerCP,AudioPlayerData>
 	{
 		friend AudioPlayerCP;
 
 	public:
-		using StatefulComponent<AudioPlayer, AudioPlayerCP, AudioPlayerData, ComponentMemento<AudioPlayer, AudioPlayerData>>::StatefulComponent;
+		using StatefulComponent<AudioPlayer, AudioPlayerCP, AudioPlayerData>::StatefulComponent;
 		//AudioPlayer();
 		~AudioPlayer();
 

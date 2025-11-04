@@ -16,12 +16,12 @@ namespace mtgb
 
 	class TransformCP;
 
-	class Transform : public TransformData, public StatefulComponent<Transform, TransformCP, TransformData, ComponentMemento<Transform, TransformData>>
+	class Transform : public TransformData, public StatefulComponent<Transform, TransformCP, TransformData>
 	{
 	public:
 		friend TransformCP;
 
-		using StatefulComponent<Transform, TransformCP, TransformData, ComponentMemento<Transform, TransformData>>::StatefulComponent;
+		using StatefulComponent<Transform, TransformCP, TransformData>::StatefulComponent;
 		Transform()
 		{
 

@@ -13,11 +13,11 @@ namespace mtgb
 {
 	class ColliderCP;
 	class Transform;
-	class Collider : public ColliderData, public StatefulComponent<Collider, ColliderCP, ColliderData, ComponentMemento<Collider, ColliderData>>
+	class Collider : public ColliderData, public StatefulComponent<Collider, ColliderCP, ColliderData>
 	{
 
 	public:
-		using StatefulComponent<Collider, ColliderCP, ColliderData, ComponentMemento<Collider, ColliderData>>::StatefulComponent;
+		using StatefulComponent<Collider, ColliderCP, ColliderData>::StatefulComponent;
 		friend ColliderCP;
 
 
