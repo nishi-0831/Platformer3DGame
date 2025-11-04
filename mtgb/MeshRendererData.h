@@ -3,6 +3,7 @@
 #include "GameObjectLayer.h"
 #include "Handlers.h"
 #include "DirectX11Draw.h"
+#include <string>
 namespace mtgb
 {
 	/// <summary>
@@ -10,6 +11,7 @@ namespace mtgb
 	/// </summary>
 	struct MeshRendererData
 	{
+		std::string meshFileName;
 		FBXModelHandle meshHandle{ INVALID_ENTITY };
 		GameObjectLayerFlag layer{ AllLayer() };
 		ShaderType shaderType{ ShaderType::FbxParts };

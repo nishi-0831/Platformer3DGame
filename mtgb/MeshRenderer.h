@@ -25,7 +25,6 @@ namespace mtgb
         /// </summary>
         void SetMesh(FBXModelHandle meshHandle) { meshHandle = meshHandle; }
 
-
         /// <summary>
         /// メッシュハンドルを取得
         /// </summary>
@@ -42,7 +41,8 @@ namespace mtgb
         bool CanRender() const { return meshHandle != INVALID_HANDLE; }
 
         GameObjectLayerFlag GetLayer() const { return layer; }
-
+    protected:
+        void OnPostRestore() override;
     private:
     };
 

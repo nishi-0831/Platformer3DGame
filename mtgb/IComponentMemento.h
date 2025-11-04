@@ -13,9 +13,6 @@ namespace mtgb
 	};
 
 	template<typename TComponent,typename TData>
-	requires
-		// TData は単純なメモリレイアウトの構造体
-		ComponentDataT<TData>
 	class ComponentMemento : public IComponentMemento
 	{
 	public:

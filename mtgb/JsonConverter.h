@@ -142,7 +142,12 @@ void JsonConverter::Deserialize(T& _value, const nlohmann::json& _json)
 	using json = nlohmann::json;
 	using Type = std::remove_pointer_t<std::remove_cvref_t<T>>;
 
-	if constexpr (detail::has_from_json<Type>::value)
+	if constexpr (is_builtin_type_v<Type>)
+	{
+		// ëgÇ›çûÇ›å^
+		_json.get_to(_value);
+	}
+	else if constexpr (detail::has_from_json<Type>::value)
 	{
 		_json.get_to(_value);
 	}

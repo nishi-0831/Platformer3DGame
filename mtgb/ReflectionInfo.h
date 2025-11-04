@@ -60,6 +60,7 @@ REGISTER_FIELD(rotate)
 REGISTER_END
 
 REGISTER_TYPE(MeshRendererData, DisplayName{ "MeshRenderer" })
+REGISTER_FIELD(meshFileName)
 REGISTER_FIELD(meshHandle)
 REGISTER_FIELD(layer)
 REGISTER_FIELD(shaderType)
