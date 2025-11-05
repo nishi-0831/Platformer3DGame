@@ -13,7 +13,7 @@ namespace mtgb
     /// <summary>
     /// メッシュとマテリアルを管理する描画コンポーネント
     /// </summary>
-    class MeshRenderer : public MeshRendererData, public StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererData>
+    class MeshRenderer :public StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererData>
     {
     public:
         using StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererData>::StatefulComponent;

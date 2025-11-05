@@ -13,7 +13,7 @@ namespace mtgb
 {
 	class ColliderCP;
 	class Transform;
-	class Collider : public ColliderData, public StatefulComponent<Collider, ColliderCP, ColliderData>
+	class Collider :  public StatefulComponent<Collider, ColliderCP, ColliderData>
 	{
 
 	public:

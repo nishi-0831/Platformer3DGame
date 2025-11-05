@@ -16,7 +16,7 @@ namespace mtgb
 
 	class TransformCP;
 
-	class Transform : public TransformData, public StatefulComponent<Transform, TransformCP, TransformData>
+	class Transform : public StatefulComponent<Transform, TransformCP, TransformData>
 	{
 	public:
 		friend TransformCP;

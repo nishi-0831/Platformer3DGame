@@ -1,7 +1,8 @@
 #include "ImGuiEditor.h"
 #include "ReleaseUtility.h"
 #include "RegisterComponents.h"
-#include "RegisterGameObjectType.h"
+#include "RegisterCommonGameObjectType.h"
+#include "../Source/RegisterGameObjectType.h"
 #include "InputData.h"
 #include "GameObjectGenerator.h"
 #include "AddComponentCommand.h"
@@ -22,6 +23,7 @@ mtgb::ImGuiEditor::ImGuiEditor()
 	mtgb::RegisterComponents(pComponentFactory_);
 
 	// ゲームオブジェクトの作成関数、名前を登録
+	mtgb::RegisterCommonGameObjectType(pGameObjectFactory_);
 	mtgb::RegisterGameObjectType(pGameObjectFactory_);
 
 	pManipulator_ = new ImGuizmoManipulator([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); },*pComponentFactory_);

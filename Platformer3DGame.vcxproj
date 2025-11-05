@@ -51,6 +51,7 @@
     </ClCompile>
     <ClCompile Include="mtgb\AddComponentCommand.cpp" />
     <ClCompile Include="mtgb\Box3D.cpp" />
+    <ClCompile Include="mtgb\BoxPlane.cpp" />
     <ClCompile Include="mtgb\CameraSystem.cpp" />
     <ClCompile Include="mtgb\CircleDetector.cpp" />
     <ClCompile Include="mtgb\Collider.cpp" />
@@ -93,7 +94,7 @@
     <ClCompile Include="mtgb\QuatToEuler.cpp" />
     <ClCompile Include="mtgb\RayDetector.cpp" />
     <ClCompile Include="mtgb\RectDetector.cpp" />
-    <ClCompile Include="mtgb\RegisterGameObjectType.cpp" />
+    <ClCompile Include="mtgb\RegisterCommonGameObjectType.cpp" />
     <ClCompile Include="mtgb\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
@@ -239,6 +240,8 @@
     <ClCompile Include="mtgb\WindowResource.cpp" />
     <ClCompile Include="mtgb\World.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
+    <ClCompile Include="Source\Player.cpp" />
+    <ClCompile Include="Source\RegisterGameObjectType.cpp" />
     <ClCompile Include="Source\SampleGame.cpp" />
     <ClCompile Include="Source\Scenes\SampleScene.cpp" />
     <ClCompile Include="Source\TheMain.cpp" />
@@ -247,6 +250,7 @@
     <ClInclude Include="mtgb\AddComponentCommand.h" />
     <ClInclude Include="mtgb\AudioPlayerData.h" />
     <ClInclude Include="mtgb\Box3D.h" />
+    <ClInclude Include="mtgb\BoxPlane.h" />
     <ClInclude Include="mtgb\CircleDetector.h" />
     <ClInclude Include="mtgb\ColliderData.h" />
     <ClInclude Include="mtgb\ColliderType.h" />
@@ -270,6 +274,8 @@
     <ClInclude Include="mtgb\GuizmoManipulatedEvent.h" />
     <ClInclude Include="mtgb\IComponentMemento.h" />
     <ClInclude Include="mtgb\IDetector.h" />
+    <ClInclude Include="mtgb\IGameObjectCreator.h" />
+    <ClInclude Include="mtgb\IGameObjectRegistrar.h" />
     <ClInclude Include="mtgb\ImGuiEditor.h" />
     <ClInclude Include="mtgb\ImGuiEditorCamera.h" />
     <ClInclude Include="mtgb\ImGuiInputCommand.h" />
@@ -323,7 +329,7 @@
     <ClInclude Include="mtgb\RectContainsInfo.h" />
     <ClInclude Include="mtgb\ReflectionInfo.h" />
     <ClInclude Include="mtgb\RegisterComponents.h" />
-    <ClInclude Include="mtgb\RegisterGameObjectType.h" />
+    <ClInclude Include="mtgb\RegisterCommonGameObjectType.h" />
     <ClInclude Include="mtgb\RenderSystem.h" />
     <ClInclude Include="mtgb\RigidBodyData.h" />
     <ClInclude Include="mtgb\ScoreManager.h" />
@@ -332,7 +338,6 @@
     <ClInclude Include="mtgb\ShowFunc.h" />
     <ClInclude Include="mtgb\ShowType.h" />
     <ClInclude Include="mtgb\SingleWindow.h" />
-    <ClInclude Include="mtgb\StatefulCollider.h" />
     <ClInclude Include="mtgb\StatefulComponent.h" />
     <ClInclude Include="mtgb\stdafx.h" />
     <ClInclude Include="mtgb\TerrainReader.h">
@@ -478,6 +483,11 @@
     <ClInclude Include="mtgb\World.h" />
     <ClInclude Include="mtgb\ProfileUtlity.h" />
     <ClInclude Include="Source\Camera.h" />
+    <ClInclude Include="Source\Player.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Source\RegisterGameObjectType.h" />
     <ClInclude Include="Source\SampleGame.h" />
     <ClInclude Include="mtgb\ShaderType.h" />
     <ClInclude Include="Source\Scenes\SampleScene.h" />

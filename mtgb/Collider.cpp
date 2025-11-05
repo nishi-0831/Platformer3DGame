@@ -17,8 +17,7 @@ namespace
 }
 
 mtgb::Collider::Collider(EntityId _entityId) 
-	: StatefulComponent{_entityId}
-	, ColliderData{.isStatic = false,.colliderTag = ColliderTag::GAME_OBJECT}
+	: StatefulComponent{ ColliderData{.isStatic = false,.colliderTag = ColliderTag::GAME_OBJECT},_entityId}
 	, pTransform_{&Transform::Get(_entityId)}
 {
 }

@@ -15,7 +15,7 @@ namespace mtgb
 	/// <summary>
 	/// ‰¹º‚ğÄ¶‚·‚é‚â‚Â
 	/// </summary>
-	class AudioPlayer : public AudioPlayerData,public StatefulComponent<AudioPlayer, AudioPlayerCP,AudioPlayerData>
+	class AudioPlayer : public StatefulComponent<AudioPlayer, AudioPlayerCP,AudioPlayerData>
 	{
 		friend AudioPlayerCP;
 

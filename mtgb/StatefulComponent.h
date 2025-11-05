@@ -10,35 +10,33 @@ namespace mtgb
 {
 	template<typename TDerived,typename TComponentPool,typename TData>
 	
-	class StatefulComponent : public IComponent<TComponentPool, TDerived>
+	class StatefulComponent : public TData , public IComponent<TComponentPool, TDerived>
 	{
 	public:	
 		using IComponent<TComponentPool, TDerived>::IComponent;
+		using TData::TData;
 		using Memento = ComponentMemento<TDerived, TData>;
 		
 		virtual ~StatefulComponent() {};
 		virtual void Initialize() override {};
-
+		StatefulComponent();
+		StatefulComponent(TData&& _data, EntityId _entityId);
 		Memento* SaveToMemento() const
 		{
-			// conceptÇ≈åüèÿçœÇ›Ç»ÇÃÇ≈static_cast
-			return new Memento(this->GetEntityId(), static_cast<const TDerived&>(*this));
+			return new Memento(this->GetEntityId(), static_cast<const TData&>(*this));
 		}
 
 		void RestoreFromMemento(const Memento& _memento)
 		{
-			// conceptÇ≈åüèÿçœÇ›Ç»ÇÃÇ≈static_cast
-			auto& derivedRef = static_cast<TDerived&>(*this);
 			const TData& data = _memento.GetData();
 
-			static_cast<TData&>(derivedRef) = data;
+			static_cast<TData&>(*this) = data;
 			OnPostRestore();
 		}
 
 		nlohmann::json Serialize()
 		{
-			auto& derivedRef = static_cast<TDerived&>(*this);
-			TData& data = static_cast<TData&>(derivedRef);
+			TData& data = static_cast<TData&>(*this);
 
 			nlohmann::json dataJson = JsonConverter::Serialize<TData>(data);
 
@@ -94,4 +92,17 @@ namespace mtgb
 		}
 	private:
 	};
+	template<typename TDerived, typename TComponentPool, typename TData>
+	inline StatefulComponent<TDerived, TComponentPool, TData>::StatefulComponent()
+		: TData()
+		, IComponent<TComponentPool, TDerived>()
+	{
+	}
+	template<typename TDerived, typename TComponentPool, typename TData>
+	inline StatefulComponent<TDerived, TComponentPool, TData>::StatefulComponent(TData&& _data, EntityId _entityId)
+		: TData{std::move(_data)}
+		, IComponent<TComponentPool, TDerived>{_entityId}
+
+	{
+	}
 }

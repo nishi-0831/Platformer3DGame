@@ -7,12 +7,13 @@
 #include "RigidBodyCP.h"
 #include <functional>
 
+
 namespace mtgb
 {
-	class RigidBodyCP;
-	class Transform;
 
-	class RigidBody : public RigidBodyData, public StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData>
+	class Transform;
+	class RigidBodyCP;
+	class RigidBody : public StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData>
 	{
 	public:
 		using StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData>::StatefulComponent;
@@ -43,6 +44,7 @@ namespace mtgb
 		/*void OnCollisionStay();
 		void OnCollisionExit();*/
 		
+		Vector3 ColliderSphere(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
 	public:
 		//Vector3 velocity;  // ‘¬“x
 

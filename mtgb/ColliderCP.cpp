@@ -39,20 +39,6 @@ void mtgb::ColliderCP::Update()
 			pool_[i].onColliders_.clear();
 
 			pool_[i].UpdateBoundingData();
-
-			//switch (pool_[i].type_)
-			//{
-			//case Collider::ColliderType::TYPE_CAPSULE:
-			//	// TODO: ƒJƒvƒZƒ‹Œ^‚ÌŒvŽZ
-			//	break;
-			//case Collider::ColliderType::TYPE_SPHERE:
-			//	pool_[i].pTransform_->GenerateWorldMatrix(&matrix);
-			//	pool_[i].computeSphere_.Center = pool_[i].sphere_.offset_ * matrix;
-			//	pool_[i].computeSphere_.Radius = pool_[i].sphere_.radius_;
-			//	break;
-			//default:
-			//	break;
-			//}
 		}
 	}
 
@@ -66,11 +52,33 @@ void mtgb::ColliderCP::Update()
 				{
 					if (pool_[i].IsHit(pool_[j]))
 					{
-						pool_[i].onColliders_.insert(&pool_[j]);
-						pool_[j].onColliders_.insert(&pool_[i]);
+						Collider& a = pool_[i];
+						Collider& b = pool_[j];
+						a.onColliders_.insert(&b);
+						b.onColliders_.insert(&a);
 						
-						/*LOGF("Add %d and %d\n", pool_[i].GetEntityId(), pool_[j].GetEntityId());
-						LOGIMGUI("Add %d and %d", pool_[i].GetEntityId(), pool_[j].GetEntityId());*/
+						if (a.colliderType == ColliderType::TYPE_SPHERE)
+						{
+							/*
+								Vector3 movement = RigidBody::ColliderSphere(a.computeSphere_,b.computeBox_); 
+								if(a.isKinematic == false)
+								{
+									RigidBody& rigidBody = RigidBody::Get(poolId_[i]);
+									rigidBody.velocity_ += movement;
+								}
+							*/
+						}
+						else if (b.colliderType == ColliderType::TYPE_SPHERE)
+						{
+							/*
+								Vector3 movement = RigidBody::ColliderSphere(b.computeSphere_,a.computeBox_); 
+								if(b.isKinematic == false)
+								{
+									RigidBody& rigidBody = RigidBody::Get(poolId_[j]);
+									rigidBody.velocity_ += movement;
+								}
+							*/
+						}
 					}
 				}
 			}
