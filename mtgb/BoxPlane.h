@@ -14,7 +14,7 @@ enum class BoxPlaneDir
 
 struct Plane
 {
-	Vector3 equation;
+	DirectX::XMVECTOR equation;
 	Vector3 normal;
 };
 
@@ -31,5 +31,7 @@ Plane GetPlane(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir);
 float GetPlaneAngleRad(const Plane& _plane, const Vector3& _vec);
 float GetPlaneAngleRad(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir, const Vector3& _vec);
 
-std::optional<Plane> GetSmallestAnglePlane(const DirectX::BoundingBox& _aabb, const Vector3& _vec);
+std::optional<Plane> TryGetFacingPlane(const DirectX::BoundingBox& _aabb, const Vector3& _vec);
+Vector3 GetPlaneIntersectLine(const Plane& _plane, const Vector3& _start, const Vector3& _end);
 
+float GetSignedDistance(const Plane& _plane, const Vector3& _point);

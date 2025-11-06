@@ -6,7 +6,7 @@
 #include "RigidBodyData.h"
 #include "RigidBodyCP.h"
 #include <functional>
-
+#include <DirectXCollision.h>
 
 namespace mtgb
 {
@@ -44,7 +44,7 @@ namespace mtgb
 		/*void OnCollisionStay();
 		void OnCollisionExit();*/
 		
-		Vector3 ColliderSphere(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
+		static Vector3 GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
 	public:
 		//Vector3 velocity;  // ‘¬“x
 

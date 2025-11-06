@@ -22,6 +22,10 @@ Player::Player()
 	pMeshRenderer_ = &(MeshRenderer::Get(Entity::entityId_));
 	pMeshRenderer_->meshFileName = "Model/Box.fbx";
 	pMeshRenderer_->meshHandle = Fbx::Load("Model/Box.fbx");
+
+	pCollider_ = &(Collider::Get(Entity::entityId_));
+	pCollider_->SetRadius(pTransform_->scale.x);
+	pCollider_->colliderType = ColliderType::TYPE_SPHERE;
 }
 
 Player::~Player()

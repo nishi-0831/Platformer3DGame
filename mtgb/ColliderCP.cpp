@@ -56,7 +56,12 @@ void mtgb::ColliderCP::Update()
 						Collider& b = pool_[j];
 						a.onColliders_.insert(&b);
 						b.onColliders_.insert(&a);
-						
+
+						DirectX::BoundingBox* aabb{ nullptr };
+						DirectX::BoundingSphere* sphere{ nullptr };
+
+						// ‰Ÿ‚µo‚µŒŸØ‚Ì‚½‚ß‚É‹…‚ªPlayerˆê‘Ì‚¾‚¯‚Æ‚¢‚¤‘O’ñ
+
 						if (a.colliderType == ColliderType::TYPE_SPHERE)
 						{
 							/*
@@ -67,6 +72,9 @@ void mtgb::ColliderCP::Update()
 									rigidBody.velocity_ += movement;
 								}
 							*/
+							Vector3 push = RigidBody::GetPushAmount(a.computeSphere_, b.computeBox_);
+							Transform& transform = Transform::Get(poolId_[i]);
+							transform.position += push;
 						}
 						else if (b.colliderType == ColliderType::TYPE_SPHERE)
 						{
@@ -78,6 +86,9 @@ void mtgb::ColliderCP::Update()
 									rigidBody.velocity_ += movement;
 								}
 							*/
+							Vector3 push = RigidBody::GetPushAmount(b.computeSphere_, a.computeBox_);
+							Transform& transform = Transform::Get(poolId_[j]);
+							transform.position += push;
 						}
 					}
 				}

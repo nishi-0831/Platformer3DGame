@@ -14,4 +14,5 @@ private:
 	Transform* pTransform_;
 	RigidBody* pRigidBody_;
 	MeshRenderer* pMeshRenderer_;
+	Collider* pCollider_;
 };

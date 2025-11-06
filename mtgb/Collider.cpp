@@ -70,7 +70,6 @@ void mtgb::Collider::UpdateBoundingSphere()
 	
 	//pTransform_->GenerateWorldMatrix(&matrix);
 		
-	//computeSphere_.Center = pTransform_->position + computeSphere_.Center;
 	//computeSphere_.Center = Vector3(computeSphere_.Center) * matrix;
 	computeSphere_.Center = pTransform_->position;
 }
@@ -82,6 +81,9 @@ void mtgb::Collider::UpdateBoundingBox()
 		/*pTransform_->GenerateWorldMatrix(&matrix);
 		computeBox_.Center = Vector3(computeBox_.Center) * matrix;*/
 		computeBox_.Center = pTransform_->position;
+		computeBox_.Extents.x = extents.x * pTransform_->scale.x;
+		computeBox_.Extents.y = extents.y * pTransform_->scale.y;
+		computeBox_.Extents.z = extents.z * pTransform_->scale.z;
 	}
 }
 
@@ -257,18 +259,23 @@ void mtgb::Collider::SetCenter(const Vector3& _center)
 
 void mtgb::Collider::SetExtents(const Vector3& _extents)
 {
-	computeBox_.Extents = _extents;
+	computeBox_.Extents.x = _extents.x * pTransform_->scale.x;
+	computeBox_.Extents.y = _extents.y * pTransform_->scale.y;
+	computeBox_.Extents.z = _extents.z * pTransform_->scale.z;
 	extents = _extents;
 }
 
 void mtgb::Collider::SetRadius(float _radius)
 {
-	computeSphere_.Radius = _radius;
+	computeSphere_.Radius = _radius * pTransform_->scale.x;
 	radius = _radius;
 }
 
 void mtgb::Collider::OnPostRestore()
 {
+	// TODO: コンポーネントの復元に依存関係を設定する
+	// 現在Transformよりも先に復元されてしまうためscaleの反映ができず、
+	// 次の更新時になってしまう
 	SetCenter(center);
 	switch (colliderType)
 	{
@@ -323,8 +330,7 @@ void mtgb::Collider::Draw() const
 		else
 		{
 			// StatefulTransformに合わせて位置、サイズを調整
-			//copyTransform.position += computeBox_.Center;
-			copyTransform.scale *= computeBox_.Extents * 2.0f;
+			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
 		
 		copyTransform.Compute();
