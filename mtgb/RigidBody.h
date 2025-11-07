@@ -31,11 +31,14 @@ namespace mtgb
 			this->velocity = _other.velocity;
 			this->onHit_ = _other.onHit_;
 			this->isNeedUpdate = _other.isNeedUpdate;
+			this->useGravity = _other.useGravity;
 			this->pTransform_ = _other.pTransform_;
 
 			return *this;
 		}
 
+		void UpdateVelocity();
+		void OnGround();
 		/// <summary>
 		/// 当たったときのイベントコールバック
 		/// </summary>
@@ -43,7 +46,7 @@ namespace mtgb
 		void OnCollisionEnter(const std::function<void(const EntityId)>& _onHit);
 		/*void OnCollisionStay();
 		void OnCollisionExit();*/
-		
+		bool IsJumping();
 		static Vector3 GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
 	public:
 		//Vector3 velocity;  // 速度

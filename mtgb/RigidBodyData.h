@@ -6,5 +6,8 @@ namespace mtgb
 	{
 		bool isNeedUpdate;
 		Vector3 velocity;
+		bool useGravity;
+		bool isGround;
+		bool isKinematic{ true };
 	};
 }

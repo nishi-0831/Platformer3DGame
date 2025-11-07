@@ -73,8 +73,8 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 
 	_register.Set<TransformCP>(SystemUpdateType::Frame, true);
 	_register.Set<MeshRendererCP>(SystemUpdateType::DontCallMe, true);
-	_register.Set<ColliderCP>(SystemUpdateType::Frame, true);
 	_register.Set<RigidBodyCP>(SystemUpdateType::Frame, true);
+	_register.Set<ColliderCP>(SystemUpdateType::Frame, true);
 	_register.Set<AudioPlayerCP>(SystemUpdateType::Frame, true);
 
 

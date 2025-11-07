@@ -4,6 +4,7 @@
 namespace 
 {
 	float speed = 1.0f;
+	float jumpHeight = 30.0f;
 }
 
 Player::Player()
@@ -18,6 +19,7 @@ Player::Player()
 	pTransform_->scale = { 1,1,1 };
 
 	pRigidBody_ = &(RigidBody::Get(Entity::entityId_));
+	pRigidBody_->isKinematic = false;
 
 	pMeshRenderer_ = &(MeshRenderer::Get(Entity::entityId_));
 	pMeshRenderer_->meshFileName = "Model/Box.fbx";
@@ -43,8 +45,21 @@ void Player::Update()
 
 	velocity.x = x * speed;
 	velocity.z = -y * speed;
+
+	if (InputUtil::GetKeyDown(KeyCode::Space))
+	{
+		if (pRigidBody_->IsJumping() == false)
+		{
+			pRigidBody_->velocity.y += jumpHeight;
+		}
+	}
 }
 
 void Player::Draw() const
 {
+}
+
+void Player::ShowImGui()
+{
+	MTImGui::Instance().ShowComponents(Entity::entityId_);
 }

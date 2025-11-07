@@ -8,9 +8,11 @@
 #include "RectContainsInfo.h"
 #include "RectF.h"
 #include "GameObjectTag.h"
-
+#include <optional>
 namespace mtgb
 {
+	
+
 	class Collider;
 	class GameObject;
 	class ColliderCP : public ComponentPool<Collider,ColliderCP>
@@ -22,7 +24,6 @@ namespace mtgb
 		void Start() override;
 		void Update() override;
 
-		void TestDraw() const;
 		void Draw();
 		EntityId RayCastHitAll(const Vector3& _origin, const Vector3& _dir, float dist);
 		bool RayCastHit(const Vector3& _origin, const Vector3& _dir, float* dist, EntityId _entityId);

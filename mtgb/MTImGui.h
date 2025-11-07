@@ -23,7 +23,7 @@ namespace mtgb
 	{
 		std::string selectedName;
 		EntityId entityId{ INVALID_ENTITY };
-		bool isOpen{ false };
+		bool isOpen{ true };
 	};
 
 	

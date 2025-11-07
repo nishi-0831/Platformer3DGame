@@ -57,38 +57,18 @@ void mtgb::ColliderCP::Update()
 						a.onColliders_.insert(&b);
 						b.onColliders_.insert(&a);
 
-						DirectX::BoundingBox* aabb{ nullptr };
-						DirectX::BoundingSphere* sphere{ nullptr };
-
-						// âüÇµèoÇµåüèÿÇÃÇΩÇﬂÇ…ãÖÇ™PlayeràÍëÃÇæÇØÇ∆Ç¢Ç§ëOíÒ
-
-						if (a.colliderType == ColliderType::TYPE_SPHERE)
+						RigidBody& aRigidBody = RigidBody::Get(a.GetEntityId());
+						if (aRigidBody.isKinematic == false)
 						{
-							/*
-								Vector3 movement = RigidBody::ColliderSphere(a.computeSphere_,b.computeBox_); 
-								if(a.isKinematic == false)
-								{
-									RigidBody& rigidBody = RigidBody::Get(poolId_[i]);
-									rigidBody.velocity_ += movement;
-								}
-							*/
-							Vector3 push = RigidBody::GetPushAmount(a.computeSphere_, b.computeBox_);
-							Transform& transform = Transform::Get(poolId_[i]);
-							transform.position += push;
+							b.Push(a);
+							continue;
 						}
-						else if (b.colliderType == ColliderType::TYPE_SPHERE)
+
+						RigidBody& bRigidBody = RigidBody::Get(b.GetEntityId());
+						if (bRigidBody.isKinematic == false)
 						{
-							/*
-								Vector3 movement = RigidBody::ColliderSphere(b.computeSphere_,a.computeBox_); 
-								if(b.isKinematic == false)
-								{
-									RigidBody& rigidBody = RigidBody::Get(poolId_[j]);
-									rigidBody.velocity_ += movement;
-								}
-							*/
-							Vector3 push = RigidBody::GetPushAmount(b.computeSphere_, a.computeBox_);
-							Transform& transform = Transform::Get(poolId_[j]);
-							transform.position += push;
+							a.Push(b);
+							continue;
 						}
 					}
 				}
@@ -97,21 +77,7 @@ void mtgb::ColliderCP::Update()
 	}
 }
 
-void mtgb::ColliderCP::TestDraw() const
-{
 
-	//Game::System<MTImGui>().Begin("ColliderCP");
-	LOGF("ColliderCP BEGIN\n");
-	for (size_t i = 0; i < poolId_.size(); i++)
-	{
-		if (poolId_[i] != INVALID_ENTITY)
-		{
-			LOGF("EID:%d colSize=%d\n ", poolId_[i], pool_[i].onColliders_.size());
-			LOGIMGUI("EID:%d colSize=%d ", poolId_[i], pool_[i].onColliders_.size());
-		}
-	}
-	LOGF("ColliderCP END\n");
-}
 void mtgb::ColliderCP::Draw()
 {
 	for (size_t i = 0; i < poolId_.size(); i++)
@@ -199,6 +165,8 @@ void mtgb::ColliderCP::RectContains(const RectF& _rect, GameObjectTag _tag, std:
 	if (foundGameObjects.empty()) return;
 	RectContainsImpl(_rect, foundGameObjects, _info, _context);
 }
+
+
 
 void mtgb::ColliderCP::RectContainsImpl(const RectF& _rect,const std::vector<GameObject*>& _objs, std::vector<ScreenCoordContainsInfo>* _info, WindowContext _context)
 {

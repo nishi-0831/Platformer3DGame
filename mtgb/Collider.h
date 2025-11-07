@@ -7,10 +7,15 @@
 #include "Vector3.h"
 #include "ColliderType.h"
 #include "ColliderCP.h"
-
+#include <optional>
 
 namespace mtgb
 {
+	struct IntersectInfo
+	{
+		Vector3 closest;
+		Vector3 push;
+	};
 	class ColliderCP;
 	class Transform;
 	class Collider :  public StatefulComponent<Collider, ColliderCP, ColliderData>
@@ -53,6 +58,7 @@ namespace mtgb
 		/// <returns></returns>
 		bool IsHit(const Vector3& _origin, const Vector3& _dir, float* dist);
 		bool IsHit(const Vector3& _center, float _radius) const;
+
 		void Draw() const;
 
 		// BoundingSphereÇèâä˙âª
@@ -63,6 +69,8 @@ namespace mtgb
 		void SetRadius(float _radius);
 		ColliderTag GetColliderTag() const { return colliderTag; }
 		
+		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
+		void Push(const Collider& _other);
 	public:
 		void OnPostRestore() override;
 

@@ -5,6 +5,7 @@
 #include "Debug.h"
 #include "Transform.h"
 #include <cfloat>
+#include "RigidBody.h"
 namespace
 {
 	mtgb::Matrix4x4 matrix{};
@@ -66,11 +67,6 @@ void mtgb::Collider::UpdateBoundingData()
 
 void mtgb::Collider::UpdateBoundingSphere()
 {
-	// StatefulTransformから現在の位置を取得してBoundingSphereを更新
-	
-	//pTransform_->GenerateWorldMatrix(&matrix);
-		
-	//computeSphere_.Center = Vector3(computeSphere_.Center) * matrix;
 	computeSphere_.Center = pTransform_->position;
 }
 
@@ -78,8 +74,6 @@ void mtgb::Collider::UpdateBoundingBox()
 {
 	if (!isStatic)
 	{
-		/*pTransform_->GenerateWorldMatrix(&matrix);
-		computeBox_.Center = Vector3(computeBox_.Center) * matrix;*/
 		computeBox_.Center = pTransform_->position;
 		computeBox_.Extents.x = extents.x * pTransform_->scale.x;
 		computeBox_.Extents.y = extents.y * pTransform_->scale.y;
@@ -269,6 +263,87 @@ void mtgb::Collider::SetRadius(float _radius)
 {
 	computeSphere_.Radius = _radius * pTransform_->scale.x;
 	radius = _radius;
+}
+
+std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb)
+{
+	IntersectInfo info;
+
+	Vector3 aabbMin = _aabb.Center - _aabb.Extents;
+	Vector3 aabbMax = _aabb.Center + _aabb.Extents;
+
+	// 最短地点
+	Vector3 closest;
+
+	// 各座標軸にクランプする
+	closest.x = std::clamp(_sphere.Center.x, aabbMin.x, aabbMax.x);
+	closest.y = std::clamp(_sphere.Center.y, aabbMin.y, aabbMax.y);
+	closest.z = std::clamp(_sphere.Center.z, aabbMin.z, aabbMax.z);
+
+
+	Vector3 v = _sphere.Center - closest;
+	float dist = v.Size();
+
+	// 距離がほぼゼロの場合
+	if (dist <= FLT_EPSILON)
+	{
+		// AABBの中心から球の中心への方向
+		v = Vector3::Normalize(_sphere.Center - _aabb.Center);
+		// 方向が決まらなければ押し出しはしない
+		if (v.Size() <= FLT_EPSILON)
+			return std::nullopt;
+		dist = 0.0f;
+	}
+	else
+	{
+		v = Vector3::Normalize(v);
+	}
+
+	// 押し出し量
+	float penetration = _sphere.Radius - dist;
+	if (penetration <= 0.0f)
+		return std::nullopt;
+
+	info.closest = closest;
+	// 最短地点から球の中心へ押し出す
+	info.push = v * penetration;
+	return info;
+}
+
+void mtgb::Collider::Push(const Collider& _other)
+{
+	std::optional<DirectX::BoundingBox> aabb;
+	std::optional<DirectX::BoundingSphere> sphere;
+
+	EntityId sphereTypeEntityId = INVALID_ENTITY;
+
+	// 球とAABBのみ押し出しを実装しているを実装している
+	if (colliderType == ColliderType::TYPE_SPHERE)
+	{
+		sphereTypeEntityId = GetEntityId();
+		sphere = computeSphere_;
+		aabb = _other.computeBox_;
+	}
+	else if (_other.colliderType == ColliderType::TYPE_SPHERE)
+	{
+		sphereTypeEntityId = _other.GetEntityId();
+		sphere = _other.computeSphere_;
+		aabb = computeBox_;
+	}
+	else
+	{
+		return;
+	}
+	Transform& transform = Transform::Get(sphereTypeEntityId);
+
+	std::optional<IntersectInfo> info = Intersect(sphere.value(), aabb.value());
+
+	if (info.value().closest.y < transform.position.y)
+	{
+		RigidBody& rigidBody = RigidBody::Get(sphereTypeEntityId);
+		rigidBody.OnGround();
+	}
+	transform.position += info.value().push;
 }
 
 void mtgb::Collider::OnPostRestore()

@@ -4,8 +4,13 @@
 #include "BoxPlane.h"
 #include <tuple>
 #include <vector>
+#include "GameTime.h"
+namespace
+{
+	float GRAVITY{ -0.1f };
+}
 mtgb::RigidBody::RigidBody(const EntityId _entityId) :
-	StatefulComponent{ RigidBodyData{.isNeedUpdate = false},_entityId },
+	StatefulComponent{ RigidBodyData{.isNeedUpdate = false,.useGravity = false},_entityId },
 	pTransform_{ &Transform::Get(_entityId) },
 	onHit_{ [](const EntityId) {} }
 {
@@ -15,10 +20,30 @@ mtgb::RigidBody::~RigidBody()
 {
 }
 
+void mtgb::RigidBody::UpdateVelocity()
+{
+	if (useGravity)
+	{
+		velocity += Vector3::Up() * GRAVITY;
+	}
+	pTransform_->position += velocity * Time::DeltaTimeF();
+}
+
+void mtgb::RigidBody::OnGround()
+{
+	isGround = true;
+	velocity.y = 0.0f;
+}
+
 void mtgb::RigidBody::OnCollisionEnter(const std::function<void(const EntityId)>& _onHit)
 {
 	isNeedUpdate = true;
 	onHit_ = _onHit;
+}
+
+bool mtgb::RigidBody::IsJumping()
+{
+	return velocity.y > 0.0f;
 }
 
 Vector3 mtgb::RigidBody::GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb)

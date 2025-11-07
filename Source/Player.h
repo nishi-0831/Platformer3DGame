@@ -9,7 +9,7 @@ public:
 
 	void Update() override;
 	void Draw() const override;
-
+	void ShowImGui() override;
 private:
 	Transform* pTransform_;
 	RigidBody* pRigidBody_;

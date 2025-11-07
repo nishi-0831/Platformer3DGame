@@ -3,6 +3,7 @@
 #include "GameTime.h"
 #include "ColliderCP.h"
 
+
 mtgb::RigidBodyCP::RigidBodyCP()
 {
 }
@@ -19,16 +20,15 @@ void mtgb::RigidBodyCP::Update()
 		{
 			std::vector<Collider*> colliders{};
 			Game::System<ColliderCP>().TryGet(&colliders, poolId_[i]);
-			//pool_[i]
+			RigidBody& rigidBody = pool_[i];
+			rigidBody.UpdateVelocity();
 			for (auto& collider : colliders)
 			{
 				for (auto& hitCollider : collider->onColliders_)
 				{
-					pool_[i].onHit_(hitCollider->GetEntityId());
+					rigidBody.onHit_(hitCollider->GetEntityId());
 				}
 			}
-
-			pool_[i].pTransform_->position += pool_[i].velocity * Time::DeltaTimeF();
 		}
 	}
 }
