@@ -187,25 +187,45 @@ const float mtgb::InputUtil::GetTrigger(PadAxisCode _padCode, WindowContext _con
 	
 }
 
-const float mtgb::InputUtil::GetAxis(Axis axis,WindowContext _context)
+const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType,WindowContext _context)
 {
 	const InputData& input = GetInput(_context);
 	float value = 0.0f;
-	switch (axis)
+	switch (_axis)
 	{
-	case Axis::X: value = static_cast<float>(input.joyStateCurrent_.lX) / input.config_.xRange; break;
-	case Axis::Y: value = static_cast<float>(input.joyStateCurrent_.lY) / input.config_.yRange; break;
-	case Axis::Z: value = static_cast<float>(input.joyStateCurrent_.lZ) / input.config_.zRange; break;
+	case Axis::X:
+		if (_stickType == StickType::LEFT)
+		{
+			value = static_cast<float>(input.joyStateCurrent_.lX);
+		}
+		else
+		{
+			value = static_cast<float>(input.joyStateCurrent_.lZ);
+		}
+		value /= input.config_.xRange; 
+		break;
+
+	case Axis::Y:
+		if (_stickType == StickType::LEFT)
+		{
+			value = static_cast<float>(input.joyStateCurrent_.lY);
+		}
+		else
+		{
+			value = static_cast<float>(input.joyStateCurrent_.lRz);
+		}
+		value /= input.config_.yRange;
+		break;
 	default: return 0.0f;
 	}
 	return input.config_.ApplyDeadZone(value);
 }
 
-const mtgb::Vector2F mtgb::InputUtil::GetAxis(WindowContext _context)
+const mtgb::Vector2F mtgb::InputUtil::GetAxis(StickType _stickType,WindowContext _context)
 {
 	const InputData& input = GetInput(_context);
 	return Vector2F{ 
-		GetAxis(Axis::X,_context),GetAxis(Axis::Y,_context)};
+		GetAxis(Axis::X,_stickType,_context),GetAxis(Axis::Y,_stickType,_context)};
 }
 
 const mtgb::Vector2Int mtgb::InputUtil::GetMousePosition(WindowContext _context)

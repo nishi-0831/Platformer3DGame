@@ -29,23 +29,22 @@ namespace
 	const mtgb::Vector3 INIT_ANGLE{ 0,0,0 };
 }
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
-	: orbitDistance_{10.0f}
-	, moveSpeed_{10.0f}
-	, orbitSpeed_{1.0f}
+	: moveSpeed_{10.0f}
 	, rotateSensitivity_{1.0f}
-	, pCameraTransform_{nullptr}
-	, pTargetTransform_{nullptr}
-	, angleX_{0.0f}
-	, angleY_{0.0f}
 	, hCamera_{INVALID_ENTITY}
 {
+	distance_ = 10.0f;
+	orbitSpeed_=1.0f;
+	
 	windowName_ = MTImGui::Instance().GetName(ShowType::SceneView);
 
 	// Dolly
 	sCameraOperation_
 		.OnUpdate(CameraOperation::Dolly, [this]
 			{
+
 				DoDolly();
+
 			})
 		.RegisterTransition(CameraOperation::Dolly, CameraOperation::Track, []() { return (InputUtil::GetMouse(MouseCode::Middle) == false); });
 
@@ -69,6 +68,9 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	sCameraOperation_
 		.OnUpdate(CameraOperation::Track, [this]
 			{
+				if (IsMouseInWindow(windowName_.c_str()) == false)
+					return;
+
 				DoTrack();
 				if (InputUtil::GetMouseDown(MouseCode::Left))
 				{
@@ -76,10 +78,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 						
 						if (!ImGuizmo::IsUsing())
 						{
-							if (IsMouseInWindow(windowName_.c_str()))
-							{
-								SelectTransform();
-							}
+							SelectTransform();
 						}
 				}
 			})
@@ -115,8 +114,8 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	TypeRegistry::Instance().CallFunc(&pCameraTransform_->position, "cameraPos");
 	TypeRegistry::Instance().CallFunc(&pCameraTransform_->rotate, "cameraRot");
 	ImGui::InputFloat4("quat", pCameraTransform_->rotate.f);
-	ImGui::InputFloat("AngleX", &angleX_);
-	ImGui::InputFloat("AngleY", &angleY_);
+	ImGui::InputFloat("AngleX", &polarAngleRad_);
+	ImGui::InputFloat("AngleY", &azimuthalAngleRad_);
 	const char* statName = ShowState(sCameraOperation_.Current());
 	ImGui::LabelText("State", "%s", statName);
 }
@@ -156,8 +155,8 @@ void mtgb::ImGuiEditorCamera::CreateCamera()
 	pCameraTransform_ = &Game::System<TransformCP>().Get(pCamera->GetEntityId());
 	hCamera_ = Game::System<CameraSystem>().RegisterDrawCamera(pCameraTransform_);
 
-	angleX_ = DirectX::XMConvertToRadians(INIT_ANGLE.x + 90.0f);
-	angleY_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
+	polarAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.x + 90.0f);
+	azimuthalAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
 }
 
 
@@ -183,30 +182,14 @@ void mtgb::ImGuiEditorCamera::DoPan()
 	if (mouseMove.Size() != 0)
 	{
 		// ƒ}ƒEƒXˆÚ“®—Ê‚ðŠp“x‚É•ÏŠ·
+		azimuthalAngleRad_ -= mouseMove.x * rotateSensitivity_ * Time::DeltaTimeF(); // …•½Šp“x
 		
-		
-		angleY_ -= mouseMove.x * rotateSensitivity_ * Time::DeltaTimeF(); // …•½Šp“x
-		
-		angleX_ += mouseMove.y * rotateSensitivity_ * Time::DeltaTimeF(); // ‰”’¼Šp“x
+		polarAngleRad_ += mouseMove.y * rotateSensitivity_ * Time::DeltaTimeF(); // ‰”’¼Šp“x
 	
 		// ‰”’¼Šp“x‚ð§ŒÀ
-		angleX_ = std::clamp(angleX_, DirectX::XMConvertToRadians(0.1f), DirectX::XMConvertToRadians(179.0f));
+		polarAngleRad_ = std::clamp(polarAngleRad_, DirectX::XMConvertToRadians(0.1f), DirectX::XMConvertToRadians(179.0f));
 
 		MoveCameraSphericalOnTheSpot();
-	}
-}
-
-void mtgb::ImGuiEditorCamera::DoOrbit()
-{
-	Vector3 mouseMove = InputUtil::GetMouseMove();
-	if (mouseMove.Size() != 0)
-	{
-		angleY_ -= mouseMove.x * orbitSpeed_ * Time::DeltaTimeF();
-		angleX_ += mouseMove.y * orbitSpeed_ * Time::DeltaTimeF();
-
-		// ‰”’¼Šp“x‚ð§ŒÀ
-		angleX_ = std::clamp(angleX_, DirectX::XMConvertToRadians(0.1f), DirectX::XMConvertToRadians(179.0f));
-		MoveCameraSpherical(orbitDistance_);
 	}
 }
 
@@ -223,58 +206,15 @@ void mtgb::ImGuiEditorCamera::DoTrack()
 	}
 }
 
-void mtgb::ImGuiEditorCamera::MoveCameraSpherical(float _distance)
-{
-	// ref:https://ja.wikipedia.org/wiki/%E7%90%83%E9%9D%A2%E5%BA%A7%E6%A8%99%E7%B3%BB
-
-	// Œ»Ý‚ÌƒJƒƒ‰ˆÊ’u‚©‚ç‰ñ“]’†S‚ðŒvŽZ
-	Vector3 center = Vector3::Zero();
-	// ƒ^[ƒQƒbƒg‚ð’†S‚É‰ñ“]
-	if (pTargetTransform_)
-	{
-		Vector3 toTarget = pTargetTransform_->position - pCameraTransform_->position;
-		center = pTargetTransform_->position + (Vector3::Normalize(-toTarget) * _distance);
-	}
-	// ƒ^[ƒQƒbƒg‚ª‚¢‚È‚¢ê‡‚Í³–Ê‚ðŒü‚¢‚Ä‰ñ“]
-	else
-	{
-		center = pCameraTransform_->position + (pCameraTransform_->Forward() * _distance);
-	} 
-
-	// ƒÆ (polar angle) : ‰”’¼•ûŒü
-	float theta = angleX_;
-
-	// ƒÓ (azimuthal angle): …•½•ûŒü
-	float phi = angleY_;
-
-	// ‰ñ“]’†S‚©‚ç‚ÌƒIƒtƒZƒbƒg
-	Vector3 offset;
-
-	// ‰ñ“]’†S‚Ì•ûŒü‚ðŒü‚­
-	
-	// •ÏŠ·
-	offset.x = _distance * sinf(theta) * cos(phi);
-	offset.y = -_distance * cos(theta);
-	offset.z = -_distance * sin(theta) * sin(phi);
-
-	// ˆÊ’u‚ð”½‰f
-	pCameraTransform_->position = center + offset;
-
-	Vector3 lookDir = center - pCameraTransform_->position;
-		
-	pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), Vector3::Up());
-	
-}
-
 void mtgb::ImGuiEditorCamera::MoveCameraSphericalOnTheSpot()
 {
 	// ref:https://ja.wikipedia.org/wiki/%E7%90%83%E9%9D%A2%E5%BA%A7%E6%A8%99%E7%B3%BB
 	
 	// ƒÆ (polar angle) : ‰”’¼•ûŒü
-	float theta = angleX_;
+	float theta = polarAngleRad_;
 
 	// ƒÓ (azimuthal angle): …•½•ûŒü
-	float phi = angleY_;
+	float phi = azimuthalAngleRad_;
 
 	// ‰ñ“]’†S‚©‚ç‚ÌƒIƒtƒZƒbƒg
 	Vector3 offset;
@@ -286,25 +226,6 @@ void mtgb::ImGuiEditorCamera::MoveCameraSphericalOnTheSpot()
 
 	// ‚»‚Ìê‰ñ“]‚ÌŽž‚Íoffset‚Ì•ûŒü‚ðŒü‚­
 	pCameraTransform_->rotate = Quaternion::LookRotation(offset, Vector3::Up());
-}
-
-void mtgb::ImGuiEditorCamera::FollowTarget()
-{
-	if (pTargetTransform_)
-	{
-		if (!followTarget_) return;
-
-		if (adjustTargetDirection_)
-		{
-			pCameraTransform_->rotate = pTargetTransform_->rotate;
-			pCameraTransform_->position = pTargetTransform_->position + (pTargetTransform_->Back() * followDistance_);
-		}
-		else
-		{
-			MoveCameraSpherical(followDistance_);
-		}
-	}
-
 }
 
 void mtgb::ImGuiEditorCamera::SelectTransform()
@@ -339,7 +260,6 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 		mtgb::GameObjectSelectedEvent event{ .entityId = entityId };
 		Game::System<EventManager>().GetEvent<mtgb::GameObjectSelectedEvent>().Invoke(event);
 		LOGIMGUI("EditorCamera:Selected");
-
 	}
 	else
 	{

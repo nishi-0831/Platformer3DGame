@@ -20,11 +20,13 @@ void SampleScene::Initialize()
 	TypeRegistry::Instance().Initialize();
 	MTImGui::Instance().Initialize();
 
-	Instantiate<Player>();
+	//Player* player = Instantiate<Player>();
 
+	//Camera* pCamera{ Instantiate<Camera>(player) };
 	Camera* pCamera{ Instantiate<Camera>() };
+	
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
-
+	//player->SetCamera(hCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
 }
 

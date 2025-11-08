@@ -41,8 +41,8 @@ namespace mtgb
 
 		static const float GetTrigger(FlightStickAxisCode _flightStickCode, WindowContext _context = mtgb::WindowContext::First);
 		static const float GetTrigger(PadAxisCode _padCode, WindowContext _context = mtgb::WindowContext::First);
-		static const float GetAxis(Axis axis,WindowContext _context = mtgb::WindowContext::First);
-		static const Vector2F GetAxis(WindowContext _context = mtgb::WindowContext::First);
+		static const float GetAxis(Axis _axis,StickType _stickType,WindowContext _context = mtgb::WindowContext::First);
+		static const Vector2F GetAxis(StickType _stickType,WindowContext _context = mtgb::WindowContext::First);
 
 		static const Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::First);
 		static const Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::First);

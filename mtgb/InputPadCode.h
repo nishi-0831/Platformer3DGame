@@ -38,8 +38,23 @@ enum struct PadCode : uint8_t
 	LStick = 6,
 	RStick = 7,
 	Start = 9,
+
+	Cross = 1,
+	Circle = 2,
+	Triangle = 3,
+	L1 = 4,
+	R1 = 5,
+	L2 = 6,
+	R2 = 7
 };
 
+// ×ボタン、dual shock 1
+
+enum struct StickType : uint8_t
+{
+	LEFT,
+	RIGHT
+};
 
 /// <summary>
 /// <para> フライトスティックのボタンコード </para>

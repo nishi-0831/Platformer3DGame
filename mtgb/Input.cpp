@@ -65,7 +65,6 @@ bool operator<(const GUID& lhs, const GUID& rhs)
 	return std::memcmp(&lhs, &rhs, sizeof(GUID)) < 0;
 }
 
-
 mtgb::Input::Input() :
 	pInputData_  { nullptr },
 	pDirectInput_{ nullptr },
@@ -77,7 +76,6 @@ mtgb::Input::Input() :
 mtgb::Input::~Input()
 {
 	Release();
-	
 }
 
 void mtgb::Input::Initialize()
@@ -686,7 +684,7 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 	diprg.diph.dwHeaderSize = sizeof(diprg.diph);
 	diprg.diph.dwHow = DIPH_BYOFFSET;
 
-	//X軸
+	// 左スティック、X軸
 	diprg.diph.dwObj = DIJOFS_X;
 	diprg.lMin = -_inputConfig.xRange;
 	diprg.lMax = _inputConfig.xRange;
@@ -695,7 +693,7 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 	massert(SUCCEEDED(hResult)
 		&& "値の範囲設定に失敗 @");
 
-	//y軸
+	// 右スティック、Y軸
 	diprg.diph.dwObj = DIJOFS_Y;
 	diprg.lMin = -_inputConfig.yRange;
 	diprg.lMax = _inputConfig.yRange;
@@ -704,14 +702,23 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 	massert(SUCCEEDED(hResult)
 		&& "値の範囲設定に失敗 @");
 
-	//z軸
-	/*diprg.diph.dwObj = DIJOFS_Z;
+	// 右スティック、X軸
+	diprg.diph.dwObj = DIJOFS_Z;
 	diprg.lMin = -_inputConfig.zRange;
 	diprg.lMax = _inputConfig.zRange;
 
 	hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
 	massert(SUCCEEDED(hResult)
-		&& "値の範囲設定に失敗 @");*/
+		&& "値の範囲設定に失敗 @");
+
+	// 右スティック、Y軸
+	diprg.diph.dwObj = DIJOFS_RZ;
+	diprg.lMin = -_inputConfig.zRange;
+	diprg.lMax = _inputConfig.zRange;
+
+	hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+	massert(SUCCEEDED(hResult)
+		&& "値の範囲設定に失敗");
 
 #pragma endregion
 }

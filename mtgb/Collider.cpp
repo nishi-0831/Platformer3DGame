@@ -118,7 +118,7 @@ bool mtgb::Collider::IsHit(const Collider& _other) const
 	return false;
 }
 
-bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* dist)
+bool mtgb::Collider::IsHit(const DirectX::BoundingSphere& _sphere, const Vector3& _origin, const Vector3& _dir, float* dist)
 {
 	/////
 	// DirectXCollision.hのBoundingSphere::Intersectsをコピペした。
@@ -137,8 +137,8 @@ bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* d
 		return false;
 	}
 	
-	XMVECTOR vCenter =  XMLoadFloat3(&computeSphere_.Center);
-	XMVECTOR vRadius =  XMVectorReplicatePtr(&computeSphere_.Radius);
+	XMVECTOR vCenter =  XMLoadFloat3(&_sphere.Center);
+	XMVECTOR vRadius =  XMVectorReplicatePtr(&_sphere.Radius);
 
 	//球の中心からレイの原点へのベクトル
 	XMVECTOR l = XMVectorSubtract(vCenter, _origin);
@@ -177,8 +177,6 @@ bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* d
 	{
 		return false;
 	}
-	//NoIntersection = XMVectorOrInt(NoIntersection, XMVectorGreater(m2, r2));
-
 
 	//衝突しているとして、最も近い地点を計算
 
@@ -207,6 +205,28 @@ bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* d
 	{
 		DirectX::XMStoreFloat(dist, t);
 		return true;
+	}
+
+	return false;
+}
+
+bool mtgb::Collider::IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* dist)
+{
+	return _aabb.Intersects(_origin, _dir, *dist);
+}
+
+bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* dist)
+{
+	switch (colliderType)
+	{
+	case ColliderType::TYPE_SPHERE:
+		return IsHit(computeSphere_, _origin, _dir, dist);
+		break;
+	case ColliderType::TYPE_AABB:
+		 return IsHit(computeBox_,_origin,_dir,dist);
+		break;
+	default:
+		return false;
 	}
 
 	return false;
@@ -337,6 +357,9 @@ void mtgb::Collider::Push(const Collider& _other)
 	Transform& transform = Transform::Get(sphereTypeEntityId);
 
 	std::optional<IntersectInfo> info = Intersect(sphere.value(), aabb.value());
+
+	if (info.has_value() == false)
+		return;
 
 	if (info.value().closest.y < transform.position.y)
 	{

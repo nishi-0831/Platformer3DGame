@@ -3,7 +3,7 @@
 
 namespace 
 {
-	float speed = 1.0f;
+	float speed = 5.0f;
 	float jumpHeight = 30.0f;
 }
 
@@ -36,17 +36,38 @@ Player::~Player()
 
 void Player::Update()
 {
-	Vector2F axis = InputUtil::GetAxis();
-
-	float x = axis.x;
-	float y = axis.y;
-
+	Vector2F axis = InputUtil::GetAxis(StickType::LEFT);
 	Vector3& velocity = pRigidBody_->velocity;
 
-	velocity.x = x * speed;
-	velocity.z = -y * speed;
+	if (axis.Size() != 0)
+	{
+		// “ü—Í•ûŒü
+		Vector3 inputDir{ axis.x,0.0f,-axis.y };
 
-	if (InputUtil::GetKeyDown(KeyCode::Space))
+		// ƒJƒƒ‰‚Ì‰ñ“]s—ñ‚ðŽæ“¾
+		Matrix4x4 cameraRotMat;
+		pCameraTransform_->GenerateWorldRotationMatrix(&cameraRotMat);
+		// “ü—Í•ûŒü‚ðƒJƒƒ‰‚ÌŒü‚«‚¾‚¯‰ñ“]
+		Vector3 dir = inputDir * cameraRotMat;
+		// Y¬•ª‚ðŽÌ‚Ä‚½XZ¬•ª‚Ì‚ÝŽæ“¾
+		Vector3 horizontalDir = Vector3{ dir.x,0.0f,dir.z };
+
+		Vector3 movement = Vector3::Normalize(horizontalDir) * speed;
+		velocity.x = movement.x;
+		velocity.z = movement.z;
+	}
+	else
+	{
+		// -------------------------------------------------------
+		// * ’ˆÓ
+		// “ü—Í‚ª‚È‚¢ê‡AXZ‚Ì‘¬“x‚ðƒ[ƒ‚É‚µ‚Ä‚¢‚é!!!!
+		// “ü—ÍˆÈŠO‚Å‘¬“x‚ð•Ï‚¦‚éê‡‚ÍC³!!!!
+		// -------------------------------------------------------
+		velocity.x = 0.0f;
+		velocity.z = 0.0f;
+	}
+
+	if (InputUtil::GetGamePadDown(PadCode::Cross))
 	{
 		if (pRigidBody_->IsJumping() == false)
 		{
@@ -62,4 +83,9 @@ void Player::Draw() const
 void Player::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
+}
+
+void Player::SetCamera(CameraHandleInScene _hCamera)
+{
+	pCameraTransform_ = &Game::System<CameraSystem>().GetTransform(_hCamera);
 }

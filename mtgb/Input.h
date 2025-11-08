@@ -17,8 +17,6 @@
 typedef struct HWND__* HWND;
 using Microsoft::WRL::ComPtr; // 追加
 
-
-
 namespace mtgb
 {
 	class InputResource;
@@ -173,7 +171,6 @@ namespace mtgb
 		static DeviceType GetDeviceType(const DIDEVICEINSTANCE& _inst);
 		HRESULT UpdateJoystickState(GUID guid);
 
-		
 		/// <summary>
 		/// <para> 予約の中から指定された種類のデバイスを要求しているものを探し、先着順で割り当てを行う </para>
 		/// <para> 見つからない場合はどの種類でも構わないという予約に割り当てる　</para>
@@ -214,5 +211,4 @@ namespace mtgb
 		std::map<GUID, JoystickContext> joystickContext_;
 		GUID currJoystickGuid_;
 	};
-	
 }

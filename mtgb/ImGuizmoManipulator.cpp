@@ -56,7 +56,6 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 			worldMat_[12], worldMat_[13], worldMat_[14], worldMat_[15]
 		);
 
-
 		DirectX::XMVECTOR scale, trans;
 		bool result = DirectX::XMMatrixDecompose(&scale, &pTargetTransform_->rotate.v, &trans, mat);
 		massert(result
@@ -98,7 +97,6 @@ void mtgb::ImGuizmoManipulator::Calculate()
 	pTargetTransform_->GenerateWorldMatrix(&worldMatrix4x4);
 	Game::System<mtgb::CameraSystem>().GetViewMatrix(&viewMatrix4x4_);
 	Game::System<mtgb::CameraSystem>().GetProjMatrix(&projMatrix4x4_);
-
 
 	//ƒ[ƒ‹ƒhs—ñ
 	DirectX::XMStoreFloat4x4(&float4x4_, worldMatrix4x4);

@@ -56,6 +56,8 @@ namespace mtgb
 		/// <para> レイの原点が球の内側の場合は、球を出る点までの距離</para>
 		/// </param>
 		/// <returns></returns>
+		bool IsHit(const DirectX::BoundingSphere& _sphere,const Vector3& _origin, const Vector3& _dir, float* dist);
+		bool IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* dist);
 		bool IsHit(const Vector3& _origin, const Vector3& _dir, float* dist);
 		bool IsHit(const Vector3& _center, float _radius) const;
 

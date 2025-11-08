@@ -69,6 +69,7 @@
 
 #include "GameObjectBuilder.h"
 #include "GameObject.h"
+#include "ICamera.h"
 
 #pragma region Resource
 

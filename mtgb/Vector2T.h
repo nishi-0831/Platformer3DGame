@@ -2,9 +2,13 @@
 #include <type_traits>
 #include <limits>
 #include <cmath>
+#include <concepts>
 namespace mtgb
 {
 	template<typename T>
+	concept Arithmetic = std::is_arithmetic_v<T>;
+
+	template<Arithmetic T>
 	struct Vector2T
 	{
 		T x;
@@ -32,6 +36,7 @@ namespace mtgb
 		Vector2T& operator=(Vector2T&&) = default;
 		~Vector2T() = default;
 
+		inline float Size() const { return std::sqrt(x * x + y * y); }
 #pragma region Žl‘¥‰‰ŽZ
 		inline Vector2T& operator*=(T _scalar) { x *= _scalar; y *= _scalar; return *this; }
 		inline Vector2T& operator*=(const Vector2T& _other) { x *= _other.x; y *= _other.y; return *this; }
@@ -145,11 +150,14 @@ namespace mtgb
 		template<typename T>
 		inline bool operator!=(const Vector2T<T>& _v1, const Vector2T<T>& _v2) { return !(_v1 == _v2); }
 #pragma endregion
-		template<typename T>
-		inline Vector2T<T>::Vector2T(T x, T y) :
-			x{ x },
-			y{ y }
-		{}
+		
 
+
+		template<Arithmetic T>
+		inline Vector2T<T>::Vector2T(T x, T y)
+			: x{ x }
+			, y{ y }
+		{
+		}
 
 }
