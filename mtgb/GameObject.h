@@ -24,6 +24,7 @@ namespace mtgb
 		virtual inline void Initialize() {};
 		virtual inline void Update() {};
 		virtual inline void Draw() const {};
+		virtual inline void Start() {};
 		virtual inline void End() {};
 		virtual inline std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const { return std::vector<IComponentMemento*>(); };
 
@@ -88,6 +89,9 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		GameObjectTag GetTag() const { return tag_; }
+
+		inline bool IsNotCalledStart() const { return isNotCalledStart_; }
+		inline void MarkAsCalledStart() { isNotCalledStart_ = false; }
 	protected:
 
 		std::string name_;
@@ -102,7 +106,7 @@ namespace mtgb
 
 		GameObjectLayerFlag layerFlag_;  // レイヤーのフラグ
 		GameObjectTag tag_; // ゲームオブジェクトのタグ
-
+		bool isNotCalledStart_; // Start関数が呼び出されたか
 		std::bitset<COMPONENT_CAPACITY> componentsFlag_;  // コンポーネントのフラグ
 	};
 

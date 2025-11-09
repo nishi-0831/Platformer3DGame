@@ -51,12 +51,6 @@ void mtgb::SceneSystem::Update()
 
 	// 更新、描画前にコールバック実行
 	ExecutePendingCallbacks();
-
-
-	if (InputUtil::GetKeyDown(KeyCode::F11))
-	{
-		Game::System<WindowManager>().ChangeFullScreenState(WindowContext::First);
-	}
 	
 	if (InputUtil::GetKeyDown(KeyCode::F1))
 	{
@@ -79,6 +73,11 @@ void mtgb::SceneSystem::Update()
 	currentScene.Update();
 	for (auto&& gameObject : currentScene.pGameObjects_)
 	{
+		if (gameObject->IsNotCalledStart())
+		{
+			gameObject->Start();
+			gameObject->MarkAsCalledStart();
+		}
 		gameObject->Update();
 	}
 	MTImGui::Instance().Update();

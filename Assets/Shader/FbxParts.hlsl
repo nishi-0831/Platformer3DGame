@@ -63,12 +63,13 @@ float4 PS(VS_OUT inData) : SV_Target
         specuer = pow(saturate(dot(r, inData.eye)), g_shuniness) * g_speculerColor;
     }
     
-    //return float4(1, 0, 0, 1);
+    //return float4(0.8, 0.8, 0.8, 1);
     //return diffuse * shade + diffuse * g_ambientColor + specuer;
     //float4 color = diffuse * shade + g_ambientColor + specuer;
     //color.a = 1;
     
     // ç≈èIìIÇ»êF
+    //float4 color = diffuse;
     float4 color = diffuse * shade + diffuse * ambient + specuer;
     return color;
 

@@ -11,6 +11,8 @@ Player::Player()
 	: GameObject()
 	, ImGuiShowable(ShowType::Inspector,Entity::entityId_)
 {
+	tag_ = GameObjectTag::Player;
+
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player));
 	name_ = typeName;
 	displayName_ = typeName;

@@ -4,6 +4,7 @@
 //#include "../Source/SampleGround.h"
 #include "../Source/Camera.h"
 #include "../Source/Player.h"
+#include "../Source/ScoreViewer.h"
 SampleScene::SampleScene()
 {
 }
@@ -20,13 +21,13 @@ void SampleScene::Initialize()
 	TypeRegistry::Instance().Initialize();
 	MTImGui::Instance().Initialize();
 
-	//Player* player = Instantiate<Player>();
+	Player* player = Instantiate<Player>();
 
-	//Camera* pCamera{ Instantiate<Camera>(player) };
-	Camera* pCamera{ Instantiate<Camera>() };
-	
+	Camera* pCamera{ Instantiate<Camera>(player) };
+	//Camera* pCamera{ Instantiate<Camera>() };
+	Instantiate<ScoreViewer>();
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
-	//player->SetCamera(hCamera);
+	player->SetCamera(hCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
 }
 

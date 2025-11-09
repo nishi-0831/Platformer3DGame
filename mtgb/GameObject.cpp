@@ -17,6 +17,7 @@ mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 	tag_{ _desc.tag }
 {
 	entityId_ = Game::System<EntityManager>().CreateEntity();
+	isNotCalledStart_ = true;
 
 	Transform* pTransform_{ Component<Transform>() };
 	pTransform_->position = _desc.position;
@@ -36,6 +37,7 @@ mtgb::GameObject::GameObject()
 	, tag_{GameObjectTag::Untagged}
 {
 	entityId_ = Game::System<EntityManager>().CreateEntity();
+	isNotCalledStart_ = true;
 
 }
 
@@ -45,6 +47,7 @@ mtgb::GameObject::GameObject(const GameObject& _other)
 	,componentsFlag_{_other.componentsFlag_}
 	, tag_{GameObjectTag::Untagged}
 {
+	isNotCalledStart_ = true;
 }
 
 mtgb::GameObject::~GameObject()

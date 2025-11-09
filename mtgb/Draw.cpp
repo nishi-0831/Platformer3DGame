@@ -6,7 +6,7 @@
 #include "OBJ.h"
 #include "Fbx.h"
 #include "FbxParts.h"
-#include "Text.h"
+#include "TextCache.h"
 #include "Model.h"
 #include "Transform.h"
 #include "CameraSystem.h"
@@ -139,8 +139,8 @@ void mtgb::Draw::Text(const TextHandle _hText, const Vector2F& _origin,TextAlign
 		DirectX11Draw::SetIsWriteToDepthBuffer(false);
 		CheckSetShader(ShaderType::Sprite2D);
 
-		TextLayoutData* layoutData = Game::System<mtgb::Text>().GetTextLayoutData(_hText);
-		FontFormatData* formatData = Game::System<mtgb::Text>().GetOrCreateTextFormat(layoutData->fontSize);
+		TextLayoutData* layoutData = Game::System<mtgb::TextCache>().GetTextLayoutData(_hText);
+		FontFormatData* formatData = Game::System<mtgb::TextCache>().GetOrCreateTextFormat(layoutData->fontSize);
 
 		Game::System<mtgb::DirectWrite>().SetTextAlignment(_alignment, layoutData->layout);
 
@@ -165,7 +165,7 @@ void mtgb::Draw::ImmediateTextW(const std::wstring& _text, RectF _rect, int _siz
 			DirectX11Draw::SetIsWriteToDepthBuffer(false);
 			CheckSetShader(ShaderType::Sprite2D);
 
-			FontFormatData* formatData = Game::System<mtgb::Text>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
+			FontFormatData* formatData = Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
 			Game::System<DirectWrite>().SetTextAlignment(_alignment, formatData->format);
 			const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
 
@@ -198,7 +198,7 @@ void mtgb::Draw::ImmediateText(const std::string& _text, RectF _rect, int _size,
 			DirectX11Draw::SetIsWriteToDepthBuffer(false);
 			CheckSetShader(ShaderType::Sprite2D);
 
-			FontFormatData* formatData = Game::System<mtgb::Text>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
+			FontFormatData* formatData = Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
 			Game::System<DirectWrite>().SetTextAlignment(_alignment, formatData->format);
 
 			const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
@@ -220,7 +220,7 @@ void mtgb::Draw::ImmediateText(std::string&& _text, RectF _rect, int _size, Text
 		DirectX11Draw::SetIsWriteToDepthBuffer(false);
 		CheckSetShader(ShaderType::Sprite2D);
 
-		FontFormatData* formatData = Game::System<mtgb::Text>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
+		FontFormatData* formatData = Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
 		Game::System<DirectWrite>().SetTextAlignment(_alignment, formatData->format);
 
 		const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
@@ -238,7 +238,7 @@ void mtgb::Draw::ImmediateText(std::string&& _text, RectF _rect, int _size, Text
 void mtgb::Draw::ChangeFontSize(int _size)
 {
 	currentDefaultFontSize_ = _size;
-	FontFormatData* fontFormatData = Game::System<mtgb::Text>().GetOrCreateTextFormat(_size);
+	FontFormatData* fontFormatData = Game::System<mtgb::TextCache>().GetOrCreateTextFormat(_size);
 	Game::System<DirectWrite>().ChangeFormat(fontFormatData->format, fontFormatData->pixelFontMetrics);
 }
 

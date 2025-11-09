@@ -53,7 +53,7 @@ namespace mtgb
 					return;
 				}
 
-				// 以前に作成された際に割り当てられたインデックスの取得を試みる
+				// Entityに割り当てられているインデックスの取得を試みる
 				auto componentIndex = Game::System<ComponentRegistry>().GetComponentIndex(_memento.GetEntityId(), _memento.GetComponentType());
 
 				// エンティティのIdからコンポーネントを取得
@@ -63,10 +63,10 @@ namespace mtgb
 				if (componentIndex.has_value())
 				{
 					// インデックスのコンポーネントの再利用を試みる
-					// コンポーネントがどのEntityにも利用されていないなら取得できる
+					// コンポーネントが自他含むEntityに利用されていないなら取得できる
 					pComponent = T::template Reuse(componentIndex.value(), pMemento->GetEntityId());
 				}
-				// コンポーネントの再利用に失敗、もしくは以前に作成されていない
+				// コンポーネントの再利用に失敗
 				if (pComponent == nullptr)
 				{
 					// コンポーネントの取得、もしくは作成を試みる

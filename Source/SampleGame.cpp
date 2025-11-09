@@ -20,30 +20,27 @@ SampleGame::~SampleGame()
 
 void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 {
-	//_register(new MainWindow{}, SystemUpdateType::Cycle);
+	Game::Set<ComponentRegistry>(SystemUpdateType::DontCallMe);
+	Game::Set<GameObjectTypeRegistry>(SystemUpdateType::DontCallMe);
 
-	//_register.function_
-	_register.Set<ComponentRegistry>(SystemUpdateType::DontCallMe);
-	_register.Set<GameObjectTypeRegistry>(SystemUpdateType::DontCallMe);
+	Game::Set<EntityManager>(SystemUpdateType::DontCallMe);
+	Game::Set<Time>(SystemUpdateType::Cycle);
+	Game::Set<Timer>(SystemUpdateType::Frame);
 
-	_register.Set<EntityManager>(SystemUpdateType::DontCallMe);
-	_register.Set<Time>(SystemUpdateType::Cycle);
-	_register.Set<Timer>(SystemUpdateType::Frame);
-
-	_register.Set<RenderSystem>(SystemUpdateType::DontCallMe);
-	_register.Set<AssetsManager>(SystemUpdateType::DontCallMe);
+	Game::Set<RenderSystem>(SystemUpdateType::DontCallMe);
+	Game::Set<AssetsManager>(SystemUpdateType::DontCallMe);
 	
 
-	_register.Set<Screen>(SystemUpdateType::DontCallMe);
-	_register.Set<WindowManager>(SystemUpdateType::Cycle);
+	Game::Set<Screen>(SystemUpdateType::DontCallMe);
+	Game::Set<WindowManager>(SystemUpdateType::Cycle);
 
-	_register.Set<DirectX11Manager>(SystemUpdateType::Frame);
-	_register.Set<Direct2D>(SystemUpdateType::Frame);
-	_register.Set<DirectWrite>(SystemUpdateType::Frame);
-	_register.Set<Input>(SystemUpdateType::DontCallMe);
+	Game::Set<DirectX11Manager>(SystemUpdateType::Frame);
+	Game::Set<Direct2D>(SystemUpdateType::Frame);
+	Game::Set<DirectWrite>(SystemUpdateType::Frame);
+	Game::Set<Input>(SystemUpdateType::DontCallMe);
 
 
-	_register.Set<WindowContextResourceManager>(SystemUpdateType::DontCallMe);
+	Game::Set<WindowContextResourceManager>(SystemUpdateType::DontCallMe);
 	Game::System<WindowContextResourceManager>().RegisterResourceTypes<
 		WindowResource,
 		DXGIResource,
@@ -53,39 +50,39 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 		CameraResource
 	>();
 
-	_register.Set<SingleWindow>(SystemUpdateType::Frame);
-	_register.Set<CameraSystem>(SystemUpdateType::Frame);
+	Game::Set<SingleWindow>(SystemUpdateType::Frame);
+	Game::Set<CameraSystem>(SystemUpdateType::Frame);
 
 
-	_register.Set<ImGuiRenderer>(SystemUpdateType::Frame);
-	_register.Set<ScoreManager>(SystemUpdateType::Frame);
+	Game::Set<ImGuiRenderer>(SystemUpdateType::Frame);
+	Game::Set<ScoreManager>(SystemUpdateType::Frame);
 
 
 	
 
-	_register.Set<Debug>(SystemUpdateType::Cycle);
+	Game::Set<Debug>(SystemUpdateType::Cycle);
 
-	_register.Set<Image>(SystemUpdateType::DontCallMe);
-	_register.Set<Audio>(SystemUpdateType::Frame);
-	_register.Set<OBJ>(SystemUpdateType::Frame);
-	_register.Set<Fbx>(SystemUpdateType::Frame);
-	_register.Set<Text>(SystemUpdateType::Frame);
+	Game::Set<Image>(SystemUpdateType::DontCallMe);
+	Game::Set<Audio>(SystemUpdateType::Frame);
+	Game::Set<OBJ>(SystemUpdateType::Frame);
+	Game::Set<Fbx>(SystemUpdateType::Frame);
+	Game::Set<TextCache>(SystemUpdateType::Frame);
 
-	_register.Set<TransformCP>(SystemUpdateType::Frame, true);
-	_register.Set<MeshRendererCP>(SystemUpdateType::DontCallMe, true);
-	_register.Set<RigidBodyCP>(SystemUpdateType::Frame, true);
-	_register.Set<ColliderCP>(SystemUpdateType::Frame, true);
-	_register.Set<AudioPlayerCP>(SystemUpdateType::Frame, true);
-
-
+	Game::Set<TransformCP>(SystemUpdateType::Frame);
+	Game::Set<MeshRendererCP>(SystemUpdateType::DontCallMe);
+	Game::Set<RigidBodyCP>(SystemUpdateType::Frame);
+	Game::Set<ColliderCP>(SystemUpdateType::Frame);
+	Game::Set<AudioPlayerCP>(SystemUpdateType::Frame);
 
 
-	_register.Set<Draw>(SystemUpdateType::DontCallMe);
-	_register.Set<EventManager>(SystemUpdateType::DontCallMe);
-	_register.Set<ImGuiEditorCamera>(SystemUpdateType::Frame);
-	_register.Set<ImGuiEditor>(SystemUpdateType::Frame);
 
-	_register.Set<SceneSystem>(SystemUpdateType::Frame);
+
+	Game::Set<Draw>(SystemUpdateType::DontCallMe);
+	Game::Set<EventManager>(SystemUpdateType::DontCallMe);
+	Game::Set<ImGuiEditorCamera>(SystemUpdateType::Frame);
+	Game::Set<ImGuiEditor>(SystemUpdateType::Frame);
+
+	Game::Set<SceneSystem>(SystemUpdateType::Frame);
 
 	// 開始時のシーン
 	//Game::System<SceneSystem>().Move<PlayScene>();

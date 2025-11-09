@@ -57,18 +57,27 @@ void mtgb::ColliderCP::Update()
 						a.onColliders_.insert(&b);
 						b.onColliders_.insert(&a);
 
-						RigidBody& aRigidBody = RigidBody::Get(a.GetEntityId());
-						if (aRigidBody.isKinematic == false)
+						RigidBody* aRigidBody{nullptr};
+						
+						bool existRigidBody = Game::System<RigidBodyCP>().TryGet(aRigidBody, a.GetEntityId());
+						if (existRigidBody)
 						{
-							b.Push(a);
-							continue;
+							if (aRigidBody->isKinematic == false)
+							{
+								b.Push(a);
+								continue;
+							}
 						}
-
-						RigidBody& bRigidBody = RigidBody::Get(b.GetEntityId());
-						if (bRigidBody.isKinematic == false)
+						
+						RigidBody* bRigidBody{ nullptr };
+						existRigidBody = Game::System<RigidBodyCP>().TryGet(bRigidBody, b.GetEntityId());
+						if (existRigidBody)
 						{
-							a.Push(b);
-							continue;
+							if (bRigidBody->isKinematic == false)
+							{
+								a.Push(b);
+								continue;
+							}
 						}
 					}
 				}

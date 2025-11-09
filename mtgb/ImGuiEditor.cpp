@@ -26,9 +26,10 @@ mtgb::ImGuiEditor::ImGuiEditor()
 	mtgb::RegisterCommonGameObjectType(pGameObjectFactory_);
 	mtgb::RegisterGameObjectType(pGameObjectFactory_);
 
-	pManipulator_ = new ImGuizmoManipulator([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); },*pComponentFactory_);
+	commandListener_ = [this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); };
+	pManipulator_ = new ImGuizmoManipulator(commandListener_,*pComponentFactory_);
 
-	TypeRegistry::Instance().RegisterCommandListener({ [this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); } });
+	TypeRegistry::Instance().RegisterCommandListener(commandListener_);
 }
 
 mtgb::ImGuiEditor::~ImGuiEditor()
@@ -72,7 +73,7 @@ void mtgb::ImGuiEditor::Update()
 void mtgb::ImGuiEditor::ShowImGui()
 {
 	pCommandHistory_->DrawImGuiStack();
-	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
+	//ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
 	ShowGenerateGameObjectButton();
 }
 
@@ -136,7 +137,7 @@ void mtgb::ImGuiEditor::LoadMapData()
 
 	for (nlohmann::json::iterator itr = gameObjs.begin(); itr != gameObjs.end(); itr++)
 	{
-		GameObjectGenerator::Generate([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); }, *pComponentFactory_,*pGameObjectFactory_, *itr);
+		GameObjectGenerator::GenerateFromJson(commandListener_, *pComponentFactory_,*pGameObjectFactory_, *itr);
 	}
 }
 
@@ -163,10 +164,15 @@ void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)
 
 void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 {
-	if (ImGui::Button("Generate Box3D"))
+	std::vector<std::string> names = Game::System<GameObjectTypeRegistry>().GetRegisteredNames();
+	for (const std::string& name : names)
 	{
-		GameObjectGenerator::Generate([this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); },*pComponentFactory_,GenerateType::Box);
+		if (ImGui::Button(name.c_str()))
+		{
+			GameObjectGenerator::Generate(commandListener_, *pComponentFactory_,*pGameObjectFactory_, name);
+		}
 	}
+	
 }
 
 

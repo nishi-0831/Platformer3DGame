@@ -54,7 +54,7 @@
 #include "OBJ.h"
 #include "ImGuiRenderer.h"
 #include "MeshRenderer.h"
-#include "Text.h"
+#include "TextCache.h"
 #include "Fbx.h"
 #include "WindowContext.h"
 #include "WindowContextResourceManager.h"

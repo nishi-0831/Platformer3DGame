@@ -61,8 +61,6 @@ namespace mtgb
 		~TextLayoutData();
 	};
 
-	
-
 	/// <summary>
 	/// DirectWrite用のシステム
 	/// </summary>
@@ -76,7 +74,6 @@ namespace mtgb
 		/// 初期化処理
 		/// </summary>
 		void Initialize() override;
-
 
 		void CreateFontFormatData(const std::wstring& fileName,int fontSize, FontFormatData** ppFontFormatData);
 		/// <summary>
@@ -121,10 +118,6 @@ namespace mtgb
 		void ChangeFormat(ComPtr<IDWriteTextFormat> format, mtgb::PixelFontMetrics& metrics);
 
 		void Release() override;
-
-		
-
-		
 		
 		/// <summary>
 		/// IDWriteTextLayoutを作成
@@ -135,8 +128,6 @@ namespace mtgb
 		/// <param name="ppTextLayout">作成されるIDWriteTextLayout</param>
 		void CreateTextLayout(const std::wstring & _str, int  _size, ComPtr<IDWriteTextFormat> _format, IDWriteTextLayout ** _ppTextLayout);
 		void CreateTextLayout(const std::wstring & _str, float  _width, float _height, int  _size, ComPtr<IDWriteTextFormat> _format, IDWriteTextLayout ** _ppTextLayout);
-
-		
 
 		/// <summary>
 		/// IDWriteTextFormatを作成
@@ -153,11 +144,8 @@ namespace mtgb
 		static PixelFontMetrics pixelFontMetrics_;
 		static ComPtr<IDWriteFactory> pDWriteFactory_;
 		static ComPtr<IDWriteTextFormat> pTextFormat_; // デフォルトフォーマット
-		//static IDWriteTextLayout* pTextLayout_;
 		static ComPtr<IDWriteFontCollection> pFontCollection_;
 		static ComPtr<IDWriteFontFamily> pFontFamily_;
 		static ComPtr<IDWriteFont> pDWriteFont_;
-		
-		//static int currentDefaultFontSize_; // 現在のデフォルトフォントサイズ
 	};
 }

@@ -69,19 +69,10 @@ void mtgb::GameObjectCreateCommand::ApplyComponents()
 
 void mtgb::GameObjectCreateCommand::Deserialize(GameObject* _obj)
 {
-    std::optional<std::set<std::type_index>> components = Game::System<ComponentRegistry>().GetComponentTypes(json_);
-
-    if (components.has_value() == false)
-        return;
-
-    for (const std::type_index& typeIndex : components.value())
+    auto mementos = Game::DeserializeComponents(entityId_, json_);
+    if (mementos.has_value())
     {
-        std::optional<std::type_index> componentPoolType = Game::System<ComponentRegistry>().GetComponentPoolType(typeIndex);
-
-        if (componentPoolType.has_value() == false)
-            continue;
-
-        mementos_.push_back(Game::DeserializeComponent(componentPoolType.value(), entityId_, json_));
+        mementos_ = mementos.value();
     }
 
     _obj->Deserialize(json_);

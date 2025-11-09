@@ -56,11 +56,6 @@ void mtgb::FbxParts::Initialize()
 	polygonVertexCount_ = pMesh_->GetPolygonVertexCount();  // ポリゴン頂点インデックス数 
 	InitializeMaterial();
 	IShader::Initialize();  // 頂点・インデックス・定数 バッファの初期化
-	//InitializeVertexBuffer(DirectX11Draw::pDevice_);
-	//InitializeIndexBuffer(DirectX11Draw::pDevice_);
-	//InitializeConstantBuffer(DirectX11Draw::pDevice_);
-
-	
 }
 
 void mtgb::FbxParts::Release()
@@ -91,7 +86,6 @@ void mtgb::FbxParts::Release()
 	}
 	SAFE_DELETE_ARRAY(ppIndexData_);
 	SAFE_DELETE_ARRAY(pMaterial_);
-	
 
 	pVertexBuffer_.Reset();
 	pConstantBuffer_.Reset();
@@ -196,75 +190,12 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 
 void mtgb::FbxParts::DrawSkinAnimation(const Transform& _transform, FbxTime _time)
 {
-#if 0
-	using namespace DirectX;
-
-	for (int i = 0; i < boneCount_; i++)
-	{
-		FbxAnimEvaluator* evaluator{ ppCluster_[i]->GetLink()->GetScene()->GetAnimationEvaluator() };
-		FbxMatrix mCurrent{ evaluator->GetNodeGlobalTransform(ppCluster_[i]->GetLink(), _time) };
-
-		// Fbx to DirectX matrix
-		XMFLOAT4X4 pose{};
-		for (DWORD x = 0; x < 4; x++)
-		{
-			for (DWORD y = 0; y < 4; y++)
-			{
-				pose(x, y) = static_cast<float>(mCurrent.Get(x, y));
-			}
-		}
-
-		XMFLOAT4X4 mat{};
-		XMMATRIX mMirror{ XMMatrixIdentity() };
-		XMStoreFloat4x4(&mat, mMirror);
-		mat.m[2][2] = -1.0f;
-
-		mMirror = XMLoadFloat4x4(&mat);
-
-		pBones_[i].newPose = XMLoadFloat4x4(&pose) * mMirror;
-		pBones_[i].diffPose = XMMatrixInverse(nullptr, pBones_[i].bindPose * mMirror);
-		pBones_[i].diffPose = pBones_[i].diffPose * pBones_[i].newPose;
-	}
-
-	for (DWORD i = 0; i < vertexCount_; i++)
-	{
-		Matrix4x4 matrix{};
-		for (int m = 0; m < boneCount_; m++)
-		{
-			if (pWeights_[i].pBoneIndex[m] < 0)
-			{
-				break;
-			}
-			matrix += pBones_[pWeights_[i].pBoneIndex[m]].diffPose * pWeights_[i].pBoneWeight[m];
-		}
-
-		XMVECTOR position{ XMLoadFloat3(&pWeights_[i].posOrigin) };
-		XMVECTOR normal{ XMLoadFloat3(&pWeights_[i].normalOrigin) };
-
-		XMStoreFloat3(&pVertexes_[i].position, XMVector3TransformCoord(position, matrix));
-		XMFLOAT3X3 mat{};
-		XMStoreFloat3x3(&mat, matrix);
-		matrix = XMLoadFloat3x3(&mat);
-		XMStoreFloat3(&pVertexes_[i].normal, XMVector3TransformCoord(normal, matrix));
-	}
-
-	D3D11_MAPPED_SUBRESOURCE mappedSubResource{};
-	DirectX11Draw::pContext_->Map(pVertexBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedSubResource);
-	if (mappedSubResource.pData)
-	{
-		memcpy_s(mappedSubResource.pData, mappedSubResource.RowPitch, pVertexes_, sizeof(Vertex) * vertexCount_);
-		DirectX11Draw::pContext_->Unmap(pVertexBuffer_.Get(), 0);
-	}
-	Draw(_transform);
-#endif
 	// アニメーション時間を設定
 	SetAnimationTime(_time);
 
 	// 通常の描画処理を呼び出し
 	Draw(_transform);
 }
-
-
 
 void mtgb::FbxParts::DrawMeshAnimation(const Transform& _transform, FbxTime _time)
 {

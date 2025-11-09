@@ -6,6 +6,7 @@
 #include "Handlers.h"
 #include "GameObjectLayer.h"
 #include "ShaderType.h"
+#include "IRenderable.h"
 namespace mtgb
 {
     
@@ -13,7 +14,7 @@ namespace mtgb
     /// <summary>
     /// メッシュとマテリアルを管理する描画コンポーネント
     /// </summary>
-    class MeshRenderer :public StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererData>
+    class MeshRenderer :public IRenderable ,public StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererData>
     {
     public:
         using StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererData>::StatefulComponent;
@@ -38,9 +39,12 @@ namespace mtgb
         /// <summary>
         /// 描画可能かチェック
         /// </summary>
-        bool CanRender() const { return meshHandle != INVALID_HANDLE; }
+        //bool CanRender() const { return meshHandle != INVALID_HANDLE; }
 
-        GameObjectLayerFlag GetLayer() const { return layer; }
+        GameObjectLayerFlag GetLayer() const override { return layer; }
+
+        void Render() const override;
+        bool CanRender() const override { return meshHandle != INVALID_HANDLE; };
     protected:
         void OnPostRestore() override;
     private:

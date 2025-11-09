@@ -2,7 +2,6 @@
 #include "ISystem.h"
 #include "GameScene.h"
 #include "ReleaseUtility.h"
-#include <functional>  // header ‚Å GameObjectLayerFlag ‚ªŽg‚¦‚È‚¢‚½‚ß
 #include"GameObjectLayer.h"
 namespace mtgb
 {
@@ -17,7 +16,6 @@ namespace mtgb
 	private:
 		void RenderDirectXWindows(GameScene& _scene);
 		void RenderImGuiWindows(GameScene& _scene);
-		void RenderGameView(GameScene& _scene);
 		void DrawGameObjects(GameScene& _scene,GameObjectLayerFlag _layer);
 	};
 }

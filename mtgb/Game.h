@@ -9,13 +9,14 @@
 #include <cassert>
 #include <typeinfo>
 #include <string_view>
-//#include <type_traits>
+#include <type_traits>
 #include "ISystem.h"
 #include "Vector2Int.h"
 #include <typeindex>
 #include "ReleaseUtility.h"
 #include "IComponentMemento.h"
 #include <nlohmann/json.hpp>
+#include "IRenderable.h"
 namespace mtgb
 {
 	//using EntityId = int64_t;
@@ -77,6 +78,8 @@ namespace mtgb
 		virtual ~Game();
 
 	protected:
+		template<typename T>
+		void Set(SystemUpdateType _systemUpdateType);
 		/// <summary>
 		/// <para>任意の更新順番でシステムを設定する</para>
 		/// <para>使うシステムを必要なだけこの関数内でnewしてください</para>
@@ -101,7 +104,8 @@ namespace mtgb
 		std::list<ISystem*> pFrameUpdateSystems_;  // 毎フレーム更新されるシステム
 		std::list<ISystem*> pFixedUpdateSystems_;  // 一定期間で更新されるシステム
 		std::vector<IComponentPool*> pComponentPools_;    // コンポーネントプールのシステム
-
+		std::vector<IRenderableCP*> pRenderablePools_; // 描画可能なコンポーネントプールのシステム
+		std::vector<std::type_index> registerOrder_; // 登録順を保持する配列
 	public:
 		/// <summary>
 		/// ゲームを起動する
@@ -155,6 +159,9 @@ namespace mtgb
 		
 		static nlohmann::json SerializeComponent(std::type_index _typeIndex, EntityId _entityId);
 		static IComponentMemento* DeserializeComponent(std::type_index _typeIndex, EntityId _entityId,const nlohmann::json& _json);
+		static std::optional<std::vector<IComponentMemento*>> DeserializeComponents(EntityId _entityId, const nlohmann::json& _json);
+
+		static std::span<IRenderableCP*> GetRenderableCPs();
 	private:
 		/// <summary>
 		/// システムの初期化をする
@@ -174,6 +181,41 @@ namespace mtgb
 		static Game* pInstance_;  // 唯一のゲームインスタンス
 		static bool toExit_;  // 終了フラグ
 	};
+
+	template<typename T>
+	inline void Game::Set(SystemUpdateType _systemUpdateType)
+	{
+		static_assert(std::is_base_of_v<ISystem, T>);
+
+		ISystem* pSystem = new T();
+		pInstance_->registerOrder_.push_back(typeid(T));
+
+		if constexpr (std::is_base_of_v<IComponentPool, T>)
+		{
+			pInstance_->pComponentPools_.push_back(dynamic_cast<IComponentPool*>(pSystem));
+		}
+		if constexpr (std::is_base_of_v<IRenderableCP, T>)
+		{
+			pInstance_->pRenderablePools_.push_back(dynamic_cast<IRenderableCP*>(pSystem));
+		}
+
+		pInstance_->pRegisterSystems_.insert({ typeid(T),pSystem });
+		switch (_systemUpdateType)
+		{
+		case SystemUpdateType::Cycle:
+			pInstance_->pCycleUpdateSystems_.push_back(pSystem);
+			break;
+		case SystemUpdateType::Frame:
+			pInstance_->pFrameUpdateSystems_.push_back(pSystem);
+			break;
+		case SystemUpdateType::Fixed:
+			pInstance_->pFixedUpdateSystems_.push_back(pSystem);
+			break;
+		case SystemUpdateType::DontCallMe:
+		default:
+			break;
+		}
+	}
 
 	template<typename GameT, typename ...Args>
 	inline void Game::Run(Args... _args)
@@ -218,7 +260,6 @@ namespace mtgb
 				}
 			}
 		});
-
 		// 各システムの初期化
 		pInstance_->InitializeSystems(systems);
 
@@ -229,7 +270,6 @@ namespace mtgb
 		pInstance_->ReleaseSystems(systems);
 		systems.clear();
 
-		
 		// インスタンスの解放
 		delete pInstance_;
 	}

@@ -74,17 +74,15 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 
 }
 
-void mtgb::RenderSystem::RenderGameView(GameScene& _scene)
-{
-	ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();
-
-}
-
 void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene,GameObjectLayerFlag _layer)
 {
 	_scene.Draw();
 
-	Game::System<MeshRendererCP>().RenderLayer(_layer);
+	std::span<IRenderableCP*> renderableCPs = Game::GetRenderableCPs();
+	for (IRenderableCP* cp : renderableCPs)
+	{
+		cp->RenderLayer(_layer);
+	}
 	if (_layer.Has(GameObjectLayer::SceneView))
 	{
 		Game::System<ColliderCP>().Draw();

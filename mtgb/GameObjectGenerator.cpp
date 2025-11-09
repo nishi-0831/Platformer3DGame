@@ -13,7 +13,7 @@ void mtgb::GameObjectGenerator::Generate(std::function<void(Command*)> _commandL
     }
 }
 
-void mtgb::GameObjectGenerator::Generate(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory, const GameObjectFactory& _gameObjFactory, const nlohmann::json& _json)
+void mtgb::GameObjectGenerator::GenerateFromJson(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory, const GameObjectFactory& _gameObjFactory, const nlohmann::json& _json)
 {
     // Œ^–¼‚ðŽæ“¾
     std::string classType = _json["classType"].get<std::string>();
@@ -27,5 +27,14 @@ void mtgb::GameObjectGenerator::Generate(std::function<void(Command*)> _commandL
         _json);
 
     // ƒRƒ}ƒ“ƒh‚ð“n‚·
+    _commandListener(cmd);
+}
+
+void mtgb::GameObjectGenerator::Generate(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory, const GameObjectFactory& _gameObjFactory, std::string_view _gameObjName)
+{
+    GameObjectCreateCommand* cmd = new GameObjectCreateCommand([&_gameObjFactory, _gameObjName]()
+        {
+            return _gameObjFactory.Create(_gameObjName);
+        }, _componentFactory);
     _commandListener(cmd);
 }

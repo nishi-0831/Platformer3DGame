@@ -101,24 +101,56 @@ IComponentMemento* mtgb::Game::DeserializeComponent(std::type_index _typeIndex, 
 	return pComponentPool->Deserialize(_entityId,_json);
 }
 
+std::optional<std::vector<IComponentMemento*>> mtgb::Game::DeserializeComponents(EntityId _entityId, const nlohmann::json& _json)
+{
+	std::vector<IComponentMemento*> ret;
+
+	std::optional<std::set<std::type_index>> components = Game::System<ComponentRegistry>().GetComponentTypes(_json);
+	if (components.has_value() == false)
+		return std::nullopt;
+
+	for (const std::type_index& typeIndex : components.value())
+	{
+		std::optional<std::type_index> componentPoolType = Game::System<ComponentRegistry>().GetComponentPoolType(typeIndex);
+
+		if (componentPoolType.has_value() == false)
+			continue;
+
+		ret.emplace_back(Game::DeserializeComponent(componentPoolType.value(), _entityId, _json));
+	}
+
+	return std::optional<std::vector<IComponentMemento*>>(std::move(ret));
+}
+
+std::span<IRenderableCP*> mtgb::Game::GetRenderableCPs()
+{
+	return { pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size()};
+}
+
 
 
 void mtgb::Game::InitializeSystems(const std::list<ISystem*>& _uninitialized)
 {
-	for (auto&& pRegisterSystem : _uninitialized)
+	for (auto itr = pInstance_->registerOrder_.begin(); itr != pInstance_->registerOrder_.end(); itr++)
 	{
-		pRegisterSystem->
-			Initialize();
+		pInstance_->pRegisterSystems_[*itr]->Initialize();
 	}
 }
 
 void mtgb::Game::ReleaseSystems(const std::list<ISystem*>& _runnings)
 {
-	for (auto itr = _runnings.rbegin(); itr != _runnings.rend(); itr++)
+	for (auto itr = pInstance_->registerOrder_.rbegin(); itr != pInstance_->registerOrder_.rend(); itr++)
+	{
+		ISystem* pSystem = pInstance_->pRegisterSystems_[*itr];
+		pSystem->Release();
+		delete pSystem;
+	}
+
+	/*for (auto itr = _runnings.rbegin(); itr != _runnings.rend(); itr++)
 	{
 		(*itr)->Release();
 		delete (*itr);
-	}
+	}*/
 }
 
 void mtgb::Game::RunLoopGameCycle()

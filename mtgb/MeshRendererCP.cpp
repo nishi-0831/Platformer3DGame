@@ -1,6 +1,4 @@
 #include "MeshRendererCP.h"
-#include  "Transform.h"
-#include "Draw.h"
 void mtgb::MeshRendererCP::Initialize()
 {
 }
@@ -9,24 +7,12 @@ void mtgb::MeshRendererCP::Update()
 {
 }
 
-void mtgb::MeshRendererCP::RenderAll()
+void mtgb::MeshRendererCP::RenderAll() const
 {
-	/*for (size_t i = 0; i < poolId_.size(); i++)
-	{
-		EntityId id = poolId_[i];
-
-		if (poolId_[i] == INVALID_ENTITY) continue;
-
-		MeshRenderer& renderer = pool_[i];
-		if (renderer.CanRender())
-		{
-			Draw::FBXModel(renderer.GetMesh(), Transform::Get(id), 0, renderer.GetShaderType());
-		}
-	}*/
 	RenderLayer(AllLayer());
 }
 
-void mtgb::MeshRendererCP::RenderLayer(GameObjectLayerFlag layerFlag)
+void mtgb::MeshRendererCP::RenderLayer(GameObjectLayerFlag _layerFlag) const
 {
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
@@ -34,12 +20,10 @@ void mtgb::MeshRendererCP::RenderLayer(GameObjectLayerFlag layerFlag)
 
 		if (poolId_[i] == INVALID_ENTITY) continue;
 
-		MeshRenderer& renderer = pool_[i];
-		if (layerFlag.Has(renderer.GetLayer()) == false) continue;
-
-		if (renderer.CanRender())
-		{
-			Draw::FBXModel(renderer.GetMesh(), Transform::Get(id), 0, renderer.GetShaderType());
-		}
+		const MeshRenderer& renderer = pool_[i];
+		if (renderer.CanRender() == false || _layerFlag.Has(renderer.GetLayer()) == false)
+			continue;
+		
+		renderer.Render();
 	}
 }
