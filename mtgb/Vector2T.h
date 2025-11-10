@@ -15,23 +15,23 @@ namespace mtgb
 		T y;
 
 		template<typename U>
-		Vector2T(const Vector2T<U>& other)
-			:x{ static_cast<T>(other.x) }
-			,y{ static_cast<T>(other.y)}
+		Vector2T(const Vector2T<U>& _other)
+			:x{ static_cast<T>(_other.x) }
+			,y{ static_cast<T>(_other.y)}
 		{ }
 		template<typename U>
-		Vector2T(U x, U y)
-			:x{ static_cast<T>(x)}
-			,y{ static_cast<T>(y)}
+		Vector2T(U _x, U _y)
+			:x{ static_cast<T>(_x)}
+			,y{ static_cast<T>(_y)}
 		{ }
 		
 		Vector2T() = default;
-		Vector2T(T x, T y);
+		Vector2T(T _x, T _y);
 		// コピーコンストラクタ
-		Vector2T(const Vector2T& other) = default;
+		Vector2T(const Vector2T& _other) = default;
 
 		// ムーブコンストラクタ
-		Vector2T(Vector2T&& other)  = default;
+		Vector2T(Vector2T&& _other)  = default;
 		Vector2T& operator=(const Vector2T&) = default;
 		Vector2T& operator=(Vector2T&&) = default;
 		~Vector2T() = default;
@@ -154,7 +154,7 @@ namespace mtgb
 
 
 		template<Arithmetic T>
-		inline Vector2T<T>::Vector2T(T x, T y)
+		inline Vector2T<T>::Vector2T(T _x, T _y)
 			: x{ x }
 			, y{ y }
 		{

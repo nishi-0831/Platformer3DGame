@@ -2,9 +2,14 @@
 #include <typeindex>
 #include <unordered_map>
 #include <string>
+#include <optional>
 #include "ISystem.h"
 namespace mtgb
 {
+    /// <summary>
+    /// REF: https://cpprefjp.github.io/reference/functional/hash.html
+    /// 透過的な検索を有効にするためにハッシュ関数を持つ関数オブジェクト型
+    /// </summary>
     struct TransparentStringHash
     {
         using is_transparent = void;
@@ -22,6 +27,7 @@ namespace mtgb
         }
     };
 
+    
     struct TransparentStringEq
     {
         using is_transparent = void;
@@ -75,11 +81,11 @@ namespace mtgb
         /// </summary>
         /// <param name="_typeName"></param>
         /// <returns></returns>
-        std::type_index GetTypeFromName(std::string_view _typeName) const
+        std::optional<std::type_index> GetTypeFromName(std::string_view _typeName) const
         {
             auto it = nameToType_.find(_typeName);
             if (it == nameToType_.end())
-                throw std::runtime_error("Unknown type: " + std::string(_typeName));
+                return std::nullopt;
             return it->second;
         }
 

@@ -5,6 +5,7 @@ unsigned int ScoreItem::generateCounter_{ 0 };
 
 ScoreItem::ScoreItem()
 	: GameObject()
+	, addScore_{100}
 {
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(ScoreItem));
 	name_ = std::format("{} ({})", typeName, generateCounter_++);
@@ -29,6 +30,7 @@ void ScoreItem::Start()
 			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
 			if (tag == GameObjectTag::Player)
 			{
+				Game::System<ScoreManager>().AddScore(addScore_);
 				DestroyMe();
 			}
 		});

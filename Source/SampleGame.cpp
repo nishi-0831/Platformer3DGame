@@ -73,7 +73,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<RigidBodyCP>(SystemUpdateType::Frame);
 	Game::Set<ColliderCP>(SystemUpdateType::Frame);
 	Game::Set<AudioPlayerCP>(SystemUpdateType::Frame);
-
+	Game::Set<TextRendererCP>(SystemUpdateType::Frame);
 
 
 

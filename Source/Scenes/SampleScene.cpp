@@ -5,6 +5,7 @@
 #include "../Source/Camera.h"
 #include "../Source/Player.h"
 #include "../Source/ScoreViewer.h"
+#include "../Source/ResultScene.h"
 SampleScene::SampleScene()
 {
 }
@@ -24,8 +25,9 @@ void SampleScene::Initialize()
 	Player* player = Instantiate<Player>();
 
 	Camera* pCamera{ Instantiate<Camera>(player) };
-	//Camera* pCamera{ Instantiate<Camera>() };
-	Instantiate<ScoreViewer>();
+	RectF rect{ 608,13,800,43 };
+	int fontSize{ 36 };
+	Instantiate<ScoreViewer>(rect,fontSize,TextAlignment::topLeft);
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 	player->SetCamera(hCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);

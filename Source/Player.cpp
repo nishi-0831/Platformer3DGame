@@ -39,6 +39,23 @@ Player::~Player()
 void Player::Update()
 {
 	Vector2F axis = InputUtil::GetAxis(StickType::LEFT);
+	if (InputUtil::GetKey(KeyCode::Left))
+	{
+		axis.x = -1;
+	}
+	if (InputUtil::GetKey(KeyCode::Right))
+	{
+		axis.x = 1;
+	}
+	if (InputUtil::GetKey(KeyCode::Up))
+	{
+		axis.y = 1;
+	}
+	if (InputUtil::GetKey(KeyCode::Down))
+	{
+		axis.y = -1;
+	}
+
 	Vector3& velocity = pRigidBody_->velocity;
 
 	if (axis.Size() != 0)
@@ -69,7 +86,7 @@ void Player::Update()
 		velocity.z = 0.0f;
 	}
 
-	if (InputUtil::GetGamePadDown(PadCode::Cross))
+	if (InputUtil::GetGamePadDown(PadCode::Cross) || InputUtil::GetKeyDown(KeyCode::Space))
 	{
 		if (pRigidBody_->IsJumping() == false)
 		{

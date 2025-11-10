@@ -18,6 +18,9 @@ void mtgb::TextRendererCP::RenderLayer(GameObjectLayerFlag _layerFlag) const
 		if (poolId_[i] == INVALID_ENTITY) continue;
 
 		const TextRenderer& renderer = pool_[i];
-		//if(_layerFlag.Has(renderer.GetL))
+		if (renderer.CanRender() && _layerFlag.Has(renderer.GetLayer()))
+		{
+			renderer.Render();
+		}
 	}
 }
