@@ -3,7 +3,7 @@
 #include "GameObject.h"
 #include "Transform.h"
 #include "CameraSystem.h"
-
+#include "GameObjectTypeRegistry.h"
 mtgb::GameScene::GameScene()
 {
 }
@@ -120,6 +120,12 @@ nlohmann::json mtgb::GameScene::SerializeGameObjects() const
 	for (auto& object : pGameObjects_)
 	{
 		if (!object) continue;
+
+		GameObjectTypeRegistry& gameObjTypeRegistry = Game::System<GameObjectTypeRegistry>();
+
+		if (gameObjTypeRegistry.IsRegistered(mtgb::ExtractClassName(object->GetName())) == false)
+			continue;
+
 		nlohmann::json objJson = object->Serialize();
 		j["GameObject"].push_back(objJson);
 	}

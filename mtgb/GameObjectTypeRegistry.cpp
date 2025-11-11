@@ -22,3 +22,8 @@ std::vector<std::string> mtgb::GameObjectTypeRegistry::GetRegisteredNames() cons
 
     return names;
 }
+
+bool mtgb::GameObjectTypeRegistry::IsRegistered(std::string_view _typeName)
+{
+    return nameToType_.contains(_typeName);
+}

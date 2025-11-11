@@ -9,7 +9,7 @@ namespace mtgb
 		TextBox();
 		TextBox(const TextRendererData& _data);
 		TextBox(TextRendererData&& _data);
-	private:
 		TextRenderer* pTextRenderer_;
+	private:
 	};
 }

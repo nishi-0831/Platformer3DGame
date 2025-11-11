@@ -2,8 +2,10 @@
 #include "RegisterGameObjectType.h"
 #include "Player.h"
 #include "ScoreItem.h"
+#include "Goal.h"
 void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegistrar)
 {
-	_pGameObjectRegistrar->Register<Player>("Player");
+	//_pGameObjectRegistrar->Register<Player>("Player");
 	_pGameObjectRegistrar->Register<ScoreItem>("ScoreItem");
+	_pGameObjectRegistrar->Register<Goal>("Goal");
 }

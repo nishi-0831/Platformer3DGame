@@ -33,7 +33,7 @@ void mtgb::Box3D::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
 	ImGui::Text("EntityId:%d", Entity::entityId_);
-	static char text[256] = "ここにテキストを入力してください";
+	
 }
 
 std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entityId) const

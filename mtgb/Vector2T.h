@@ -155,8 +155,8 @@ namespace mtgb
 
 		template<Arithmetic T>
 		inline Vector2T<T>::Vector2T(T _x, T _y)
-			: x{ x }
-			, y{ y }
+			: x{ _x }
+			, y{ _y }
 		{
 		}
 

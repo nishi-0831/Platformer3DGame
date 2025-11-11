@@ -98,6 +98,7 @@ namespace mtgb
         {
             return typeToName_.find(_typeIndex) != typeToName_.end();
         }
+        bool IsRegistered(std::string_view _typeName);
 	private:
         std::unordered_map<std::type_index, std::string> typeToName_;
         std::unordered_map<std::string, std::type_index,TransparentStringHash,TransparentStringEq> nameToType_;

@@ -25,12 +25,19 @@ namespace mtgb
 		{
 			return new Memento(this->GetEntityId(), static_cast<const TData&>(*this));
 		}
-
+		void CopyData(const TData& _data)
+		{
+			static_cast<TData&>(*this) =_data;
+		}
+		void MoveData(TData&& _data)
+		{
+			static_cast<TData&>(*this) = std::move(_data);
+		}
 		void RestoreFromMemento(const Memento& _memento)
 		{
 			const TData& data = _memento.GetData();
 
-			static_cast<TData&>(*this) = data;
+			CopyData(data);
 			OnPostRestore();
 		}
 

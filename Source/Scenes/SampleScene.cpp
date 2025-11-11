@@ -22,8 +22,10 @@ void SampleScene::Initialize()
 	TypeRegistry::Instance().Initialize();
 	MTImGui::Instance().Initialize();
 
+	
 	Player* player = Instantiate<Player>();
 
+	//Camera* pCamera{ Instantiate<Camera>() };
 	Camera* pCamera{ Instantiate<Camera>(player) };
 	RectF rect{ 608,13,800,43 };
 	int fontSize{ 36 };
