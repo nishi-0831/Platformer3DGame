@@ -1,5 +1,7 @@
 #include "SampleGame.h"
 #include "Scenes/SampleScene.h"
+#include "StageManager.h"
+#include "TitleScene.h"
 #pragma region ÉQÅ[ÉÄë§Ç≈í«â¡
 
 
@@ -79,6 +81,8 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 
 	Game::Set<Draw>(SystemUpdateType::DontCallMe);
 	Game::Set<EventManager>(SystemUpdateType::DontCallMe);
+	Game::Set<ComponentFactory>(SystemUpdateType::DontCallMe);
+	Game::Set<StageManger>(SystemUpdateType::DontCallMe);
 	Game::Set<ImGuiEditorCamera>(SystemUpdateType::Frame);
 	Game::Set<ImGuiEditor>(SystemUpdateType::Frame);
 
@@ -88,7 +92,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	//Game::System<SceneSystem>().Move<PlayScene>();
 	//Game::System<SceneSystem>().Move<CheckTutorialScene>();
 #if TO_TEST_SCENE
-	Game::System<SceneSystem>().Move<SampleScene>();
+	Game::System<SceneSystem>().Move<TitleScene>();
 #else
 #endif
 

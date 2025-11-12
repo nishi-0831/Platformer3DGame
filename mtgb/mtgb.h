@@ -67,6 +67,8 @@
 #include "MTImGui.h"
 #include "EventManager.h"
 #include "EntityManager.h"
+#include "GameObjectGenerator.h"
+#include "ComponentFactory.h"
 #pragma endregion
 
 #include "GameObjectBuilder.h"

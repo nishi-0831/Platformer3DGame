@@ -13,11 +13,18 @@ namespace mtgb
 	class GameObjectGenerator
 	{
 	public:
-		static void Generate(std::function<void(Command*)> _commandListener,const ComponentFactory& _componentFactory,GenerateType _primitive);
-		static void GenerateFromJson(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory, const GameObjectFactory& _gameObjFactory,const nlohmann::json& _json);
-		static void Generate(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory, const
-			GameObjectFactory& _gameObjFactory, std::string_view _gameObjName);
+
+		static void Initialize();
+		static void Generate(GenerateType _primitive);
+		static void GenerateFromJson(const nlohmann::json& _json);
+		static void Generate(std::string_view _gameObjName);
+		static void RegisterCommandListener(std::function<void(Command*)> _commandListener);
 	private:
-		GameObjectGenerator() = delete;
+		GameObjectGenerator() = default;
+		static GameObjectGenerator* GetInstance();
+		static GameObjectGenerator* pInstance_;
+		GameObjectFactory gameObjFactory_;
+		std::function<void(Command*)> commandListener_;
+
 	};
 }

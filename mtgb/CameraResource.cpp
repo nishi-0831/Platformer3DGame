@@ -6,7 +6,7 @@
 #include "MTAssert.h"
 #include "CameraSystem.h"
 mtgb::CameraResource::CameraResource()
-    //:pCamera_{nullptr}
+    : hCamera_{INVALID_HANDLE}
 {
 }
 mtgb::CameraResource::~CameraResource()
@@ -60,6 +60,11 @@ void mtgb::CameraResource::SetHCamera(CameraHandleInScene _hCamera)
 mtgb::CameraHandleInScene mtgb::CameraResource::GetHCamera()
 {
     return hCamera_;
+}
+
+bool mtgb::CameraResource::NotRegisterCamera()
+{
+    return hCamera_ == INVALID_HANDLE;
 }
 
 //void mtgb::CameraResource::SetCamera(GameObject* obj)

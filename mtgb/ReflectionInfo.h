@@ -77,4 +77,5 @@ REGISTER_END
 
 REGISTER_TYPE(RigidBodyData,DisplayName{"RigidBody"})
 REGISTER_FIELD(useGravity)
+REGISTER_FIELD(isKinematic)
 REGISTER_END

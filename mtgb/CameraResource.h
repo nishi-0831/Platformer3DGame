@@ -24,7 +24,7 @@ namespace mtgb
 
 		void SetHCamera(CameraHandleInScene _hCamera);
 		CameraHandleInScene GetHCamera();
-		//void SetCamera(GameObject* obj);
+		bool NotRegisterCamera();
 	private:
 		//GameObject* pCamera_;
 		CameraHandleInScene hCamera_;

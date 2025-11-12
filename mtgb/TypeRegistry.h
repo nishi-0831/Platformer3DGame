@@ -17,7 +17,6 @@ public:
 
 	static TypeRegistry& Instance();
 	// プログラム開始時に登録したい関数を登録
-	// マクロで登録していると初期化のタイミングが制御できない
 	void ProvisionalRegister(std::type_index typeIdx, std::function<void(void)> registerFunc);
 	void Initialize();
 	template<typename T>

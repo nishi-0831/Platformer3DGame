@@ -27,9 +27,8 @@ namespace mtgb
 		void AddComponent(const std::type_index& _componentType, EntityId _entityId);
 		void ShowAddComponentDialog(EntityId _entityId);
 		void ShowGenerateGameObjectButton();
-		ComponentFactory* pComponentFactory_;
+		//ComponentFactory* pComponentFactory_;
 		CommandHistoryManagerWrapper* pCommandHistory_;
-		GameObjectFactory* pGameObjectFactory_;
 		ImGuizmoManipulator* pManipulator_;
 		std::unordered_map<std::type_index, IComponentMemento*> defMementos_;
 		std::function<void(Command*)> commandListener_;

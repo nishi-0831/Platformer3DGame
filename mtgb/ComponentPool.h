@@ -31,6 +31,7 @@ namespace mtgb
 		void Release() override;
 		nlohmann::json Serialize(EntityId _entityId) override;
 		IComponentMemento* Deserialize(EntityId _entityId, const nlohmann::json& _json) override;
+		void Copy(EntityId _dest, EntityId _src) override;
 		ComponentT* Reuse(size_t _index, EntityId _entityId);
 		/// <summary>
 		/// コンポーネントを作成/取得する
@@ -117,6 +118,12 @@ namespace mtgb
 	inline IComponentMemento* ComponentPool<ComponentT, DerivedT, IsSingleton>::Deserialize(EntityId _entityId, const nlohmann::json& _json)
 	{
 		return ComponentT::Deserialize(_entityId, _json);
+	}
+
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::Copy(EntityId _dest, EntityId _src)
+	{
+		pool_[_dest].CopyData(pool_[_src]);
 	}
 
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>

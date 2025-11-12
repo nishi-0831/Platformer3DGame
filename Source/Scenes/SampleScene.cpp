@@ -1,12 +1,14 @@
 #include <mtgb.h>
 #include "SampleScene.h"
 #include "../mtgb/Box3D.h"
-//#include "../Source/SampleGround.h"
+#include "../Source/StageManager.h"
 #include "../Source/Camera.h"
 #include "../Source/Player.h"
 #include "../Source/ScoreViewer.h"
 #include "../Source/ResultScene.h"
+
 SampleScene::SampleScene()
+	: stageID_{StageID::STAGE_ONE}
 {
 }
 
@@ -22,17 +24,15 @@ void SampleScene::Initialize()
 	TypeRegistry::Instance().Initialize();
 	MTImGui::Instance().Initialize();
 
-	
-	Player* player = Instantiate<Player>();
-
-	//Camera* pCamera{ Instantiate<Camera>() };
-	Camera* pCamera{ Instantiate<Camera>(player) };
-	RectF rect{ 608,13,800,43 };
-	int fontSize{ 36 };
-	Instantiate<ScoreViewer>(rect,fontSize,TextAlignment::topLeft);
-	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
-	player->SetCamera(hCamera);
-	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
+	std::optional<nlohmann::json> json = Game::System<StageManger>().GetStageJson(stageID_);
+	if (json.has_value())
+	{
+		GameObjectGenerator::GenerateFromJson(json);
+	}
+	else
+	{
+		assert(false);
+	}
 }
 
 void SampleScene::Update()

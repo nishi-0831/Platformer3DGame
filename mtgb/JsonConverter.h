@@ -158,6 +158,9 @@ void JsonConverter::Deserialize(T& _value, const nlohmann::json& _json)
 		refl::util::for_each(members, [&](auto _member)
 			{
 				std::string key = _member.name.c_str();
+				if (_json.contains(key) == false)
+					return;
+
 				if constexpr (refl::is_reflectable<decltype(_member(_value))>())
 				{
 					auto& memberValue = _member(_value);
@@ -167,7 +170,8 @@ void JsonConverter::Deserialize(T& _value, const nlohmann::json& _json)
 					}
 					else
 					{
-						Deserialize(memberValue,_json.at(key));
+
+						Deserialize(memberValue, _json.at(key));
 					}
 				}
 				else if constexpr (refl::trait::is_field_v<decltype(_member)>)

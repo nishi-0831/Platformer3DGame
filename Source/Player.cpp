@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Player.h"
-
+#include "Camera.h"
 namespace 
 {
 	float speed = 5.0f;
@@ -16,20 +16,6 @@ Player::Player()
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player));
 	name_ = typeName;
 	displayName_ = typeName;
-	pTransform_ = &(Transform::Get(Entity::entityId_));
-	pTransform_->position = { 0,5,10 };
-	pTransform_->scale = { 1,1,1 };
-
-	pRigidBody_ = &(RigidBody::Get(Entity::entityId_));
-	pRigidBody_->isKinematic = false;
-
-	pMeshRenderer_ = &(MeshRenderer::Get(Entity::entityId_));
-	pMeshRenderer_->meshFileName = "Model/Box.fbx";
-	pMeshRenderer_->meshHandle = Fbx::Load("Model/Box.fbx");
-
-	pCollider_ = &(Collider::Get(Entity::entityId_));
-	pCollider_->SetRadius(pTransform_->scale.x);
-	pCollider_->colliderType = ColliderType::TYPE_SPHERE;
 }
 
 Player::~Player()
@@ -99,9 +85,58 @@ void Player::Draw() const
 {
 }
 
+void Player::Start()
+{
+	pTransform_ = Component<Transform>();
+	pCollider_ = Component<Collider>();
+	pMeshRenderer_ = Component<MeshRenderer>();
+	pRigidBody_ = Component<RigidBody>();
+
+	Camera* pCamera{ Instantiate<Camera>(this) };
+	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera);
+	SetCamera(hCamera);
+	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
+}
+
 void Player::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
+}
+
+std::vector<IComponentMemento*> Player::GetDefaultMementos(EntityId _entityId) const
+{
+	TransformData transformData
+	{
+		.position = { 0,5,10 },
+		.scale = { 1,1,1 }
+	};
+
+	RigidBodyData rigidBodyData
+	{
+		.useGravity = true,
+		.isKinematic = false,
+	};
+
+	MeshRendererData meshRendererData
+	{
+		.meshFileName = "Model/Box.fbx",
+		.meshHandle = Fbx::Load(meshRendererData.meshFileName)
+	};
+
+	ColliderData colliderData
+	{
+		.colliderType{ColliderType::TYPE_SPHERE},
+		.colliderTag{ColliderTag::GAME_OBJECT},
+		.radius{transformData.scale.x},
+	};
+
+	std::vector<IComponentMemento*> mementos;
+	mementos.push_back(new TransformMemento(_entityId, transformData));
+	mementos.push_back(new RigidBodyMemento(_entityId, rigidBodyData));
+	mementos.push_back(new ColliderMemento(_entityId, colliderData));
+	mementos.push_back(new MeshRendererMemento(_entityId, meshRendererData));
+
+	return mementos;
 }
 
 void Player::SetCamera(CameraHandleInScene _hCamera)

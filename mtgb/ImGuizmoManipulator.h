@@ -18,7 +18,7 @@ namespace mtgb
 	class ImGuizmoManipulator : public ImGuiShowable
 	{
 	public:
-		ImGuizmoManipulator(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory);
+		ImGuizmoManipulator(std::function<void(Command*)> _commandListener);
 		~ImGuizmoManipulator();
 
 		void Initialize();
@@ -29,6 +29,8 @@ namespace mtgb
 		void Deselect();
 		EntityId GetSelectedEntityId();
 	private:
+		void UpdateManpulator();
+		void UpdateOperationMode();
 		void GenerateCommand(const GameObjectSelectedEvent& _event);
 		void GenerateCommand(const GameObjectDeselectedEvent& _event);
 		void SubscribeGameObjectSelectionEvent();
@@ -38,8 +40,6 @@ namespace mtgb
 
 		std::function<void(Command*)> commandListener_;
 
-		// ComponentFactory‚ªnull‚Å‚ ‚é‚±‚Æ‚ð‹–—e‚µ‚È‚¢
-		const ComponentFactory& componentFactory_;
 		std::size_t hGameObjSelectionEvent;
 
 		Transform* pTargetTransform_;

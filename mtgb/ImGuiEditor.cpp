@@ -16,25 +16,16 @@ mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
 	pCommandHistory_ = new CommandHistoryManagerWrapper(new CommandHistoryManager());
-	pComponentFactory_ = new ComponentFactory();
-	pGameObjectFactory_ = new GameObjectFactory();
-
-	// コンポーネントの作成関数を登録
-	mtgb::RegisterComponents(pComponentFactory_);
-
-	// ゲームオブジェクトの作成関数、名前を登録
-	mtgb::RegisterCommonGameObjectType(pGameObjectFactory_);
-	mtgb::RegisterGameObjectType(pGameObjectFactory_);
 
 	commandListener_ = [this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); };
-	pManipulator_ = new ImGuizmoManipulator(commandListener_,*pComponentFactory_);
+	pManipulator_ = new ImGuizmoManipulator(commandListener_);
 
+	GameObjectGenerator::RegisterCommandListener(commandListener_);
 	TypeRegistry::Instance().RegisterCommandListener(commandListener_);
 }
 
 mtgb::ImGuiEditor::~ImGuiEditor()
 {
-	SAFE_DELETE(pComponentFactory_);
 }
 
 void mtgb::ImGuiEditor::Initialize()
@@ -116,7 +107,7 @@ void mtgb::ImGuiEditor::LoadMapData()
 	ifn.nMaxFile = 255;
 
 	if (GetOpenFileName(&ifn) == false)
-		assert(false);
+		return;
 
 	std::ifstream inputFile(fileName);
 	if (inputFile.fail())
@@ -130,28 +121,22 @@ void mtgb::ImGuiEditor::LoadMapData()
 	}
 	catch (const nlohmann::json::parse_error& e)
 	{
-		assert(false);
+		assert(false,e.what());
 	}
-
-	nlohmann::json gameObjs = json.at("GameObject");
-
-	for (nlohmann::json::iterator itr = gameObjs.begin(); itr != gameObjs.end(); itr++)
-	{
-		GameObjectGenerator::GenerateFromJson(commandListener_, *pComponentFactory_,*pGameObjectFactory_, *itr);
-	}
+	GameObjectGenerator::GenerateFromJson(json);
 }
 
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
 {
 	// コンポーネント作成成功
-	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, *pComponentFactory_);
+	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, Game::System<ComponentFactory>());
 	pCommandHistory_->ExecuteCommand(cmd);
 }
 
 void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)
 {
 	std::vector<std::type_index> registeredTypes;
-	pComponentFactory_->GetRegisteredTypes(registeredTypes);
+	Game::System<ComponentFactory>().GetRegisteredTypes(registeredTypes);
 
 	for (const auto& typeInfo : registeredTypes)
 	{
@@ -169,10 +154,9 @@ void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 	{
 		if (ImGui::Button(name.c_str()))
 		{
-			GameObjectGenerator::Generate(commandListener_, *pComponentFactory_,*pGameObjectFactory_, name);
+			GameObjectGenerator::Generate(name);
 		}
 	}
-	
 }
 
 

@@ -2,7 +2,7 @@
 #include "ResultScene.h"
 #include "../Source/ScoreViewer.h"
 #include "../Source/Camera.h"
-
+#include "../Source/TitleScene.h"
 namespace
 {
 	// 118,90 , 565,100
@@ -35,7 +35,10 @@ void ResultScene::Initialize()
 
 void ResultScene::Update()
 {
-
+	if (InputUtil::GetKeyDown(KeyCode::P))
+	{
+		Game::System<SceneSystem>().Move<TitleScene>();
+	}
 }
 
 void ResultScene::Draw() const

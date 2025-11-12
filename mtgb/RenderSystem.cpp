@@ -11,6 +11,7 @@
 #include "Draw.h"
 #include "MeshRendererCP.h"
 #include "ColliderCP.h"
+#include "CameraResource.h"
 void mtgb::RenderSystem::Initialize()
 {
 }
@@ -30,6 +31,12 @@ void mtgb::RenderSystem::RenderDirectXWindows(GameScene& _scene)
 {
 	//一つ目のウィンドウ
 	WinCtxRes::ChangeResource(WindowContext::First);
+	if (WinCtxRes::Get<CameraResource>(WindowContext::First).NotRegisterCamera())
+	{
+		Draw::ClearUICommands();
+		return;
+	}
+
 	DirectX11Draw::Begin();
 	DrawGameObjects(_scene, GameObjectLayer::A);
 	Draw::FlushUIDrawCommands(GameObjectLayer::A);

@@ -9,7 +9,9 @@ public:
 
 	void Update() override;
 	void Draw() const override;
+	void Start() override;
 	void ShowImGui() override;
+	std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const override;
 	void SetCamera(CameraHandleInScene _hCamera);
 private:
 	Transform* pTransform_;

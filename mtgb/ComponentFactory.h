@@ -1,18 +1,20 @@
 #pragma once
 #include <typeindex>
-#include <type_traits>
 #include <unordered_map>
 #include "ComponentConcept.h"
 
-#include "Entity.h"
+#include "ISystem.h"
 #include "IComponentMemento.h"
 #include "ComponentRegistry.h"
 #include <functional>
 namespace mtgb
 {
-	class ComponentFactory
+	class ComponentFactory : public ISystem
 	{
 	public:
+		void Initialize() override;
+		void Update() override;
+
 		// コンポーネント作成関数の型
 		using CreateFunction = std::function<IComponentMemento*(EntityId _id)>;
 		using CreateFromMementoFunction = std::function<void(const IComponentMemento& _memento)>;
@@ -32,6 +34,8 @@ namespace mtgb
 		std::unordered_map<std::type_index, CreateFunction> creators_;
 		std::unordered_map<std::type_index, CreateFromMementoFunction> creatorsFromMemento_;
 		std::vector<std::type_index> types_;
+
+		
 	};
 	template<typename T, typename M>
 		requires ComponentWithMementoT<T, M>

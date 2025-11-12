@@ -1,4 +1,6 @@
 #include "ComponentFactory.h"
+#include "RegisterComponents.h"
+
 
 mtgb::IComponentMemento* mtgb::ComponentFactory::AddComponent(const std::type_index& _info, EntityId _id) const
 {
@@ -23,4 +25,13 @@ bool mtgb::ComponentFactory::AddComponentFromMemento(const IComponentMemento& _m
 		return true;
 	}
 	return false;
+}
+
+void mtgb::ComponentFactory::Initialize()
+{
+	mtgb::RegisterComponents(this);
+}
+
+void mtgb::ComponentFactory::Update()
+{
 }

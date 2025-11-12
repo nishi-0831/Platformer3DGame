@@ -111,9 +111,8 @@ void mtgb::ImGuizmoManipulator::Calculate()
 	memcpy(projMat_, &float4x4_, sizeof(projMat_));
 }
 
-mtgb::ImGuizmoManipulator::ImGuizmoManipulator(std::function<void(Command*)> _commandListener, const ComponentFactory& _componentFactory)
+mtgb::ImGuizmoManipulator::ImGuizmoManipulator(std::function<void(Command*)> _commandListener)
 	:ImGuiShowable("Manipulater", ShowType::SceneView)
-	, componentFactory_{_componentFactory}
 	, operation_{ ImGuizmo::TRANSLATE }
 	, mode_{ ImGuizmo::LOCAL }
 	, commandListener_{_commandListener}
@@ -133,28 +132,8 @@ void mtgb::ImGuizmoManipulator::Initialize()
 
 void mtgb::ImGuizmoManipulator::Update()
 {
-	isUsing_ = ImGuizmo::IsUsing();
-
-	// ギズモを使用 (動かしていなくても長押しを使用状態とみなす)
-	if (wasUsing_ == false && isUsing_ == true)
-	{
-		if (pTargetTransform_ == nullptr)
-			return;
-		pTargetPrevTransformMemento_ = pTargetTransform_->SaveToMemento();
-	}
-
-	// ギズモの使用を終了
-	if (wasUsing_ == true && isUsing_ == false)
-	{
-		if (pTargetPrevTransformMemento_ == nullptr || pTargetTransform_ == nullptr)
-			return;
-		
-		TransformMemento* memento =	pTargetTransform_->SaveToMemento();
-		GuizmoManipulatedEvent* event = new GuizmoManipulatedEvent(pTargetPrevTransformMemento_, memento, componentFactory_);
-		commandListener_(event);
-	}
-
-	wasUsing_ = isUsing_;
+	UpdateManpulator();
+	UpdateOperationMode();
 }
 
 void mtgb::ImGuizmoManipulator::ShowImGui()
@@ -220,6 +199,48 @@ mtgb::EntityId mtgb::ImGuizmoManipulator::GetSelectedEntityId()
 {
 	if (pTargetTransform_ == nullptr) return INVALID_ENTITY;
 	return pTargetTransform_->GetEntityId();
+}
+
+void mtgb::ImGuizmoManipulator::UpdateManpulator()
+{
+	isUsing_ = ImGuizmo::IsUsing();
+
+	// ギズモを使用 (動かしていなくても長押しを使用状態とみなす)
+	if (wasUsing_ == false && isUsing_ == true)
+	{
+		if (pTargetTransform_ == nullptr)
+			return;
+		pTargetPrevTransformMemento_ = pTargetTransform_->SaveToMemento();
+	}
+
+	// ギズモの使用を終了
+	if (wasUsing_ == true && isUsing_ == false)
+	{
+		if (pTargetPrevTransformMemento_ == nullptr || pTargetTransform_ == nullptr)
+			return;
+
+		TransformMemento* memento = pTargetTransform_->SaveToMemento();
+		GuizmoManipulatedEvent* event = new GuizmoManipulatedEvent(pTargetPrevTransformMemento_, memento, Game::System<ComponentFactory>());
+		commandListener_(event);
+	}
+
+	wasUsing_ = isUsing_;
+}
+
+void mtgb::ImGuizmoManipulator::UpdateOperationMode()
+{
+	if (InputUtil::GetKeyDown(KeyCode::W))
+	{
+		operation_ = ImGuizmo::TRANSLATE;
+	}
+	if (InputUtil::GetKeyDown(KeyCode::E))
+	{
+		operation_ = ImGuizmo::SCALE;
+	}
+	if (InputUtil::GetKeyDown(KeyCode::R))
+	{
+		operation_ = ImGuizmo::ROTATE;
+	}
 }
 
 void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectSelectedEvent& _event)
