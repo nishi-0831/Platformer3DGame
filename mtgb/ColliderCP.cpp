@@ -100,30 +100,22 @@ void mtgb::ColliderCP::Draw()
 mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vector3& _dir, float dist)
 {
 	EntityId nearestEntity = INVALID_ENTITY;
-
+	float nearest = dist;
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
 		if (poolId_[i] != INVALID_ENTITY)
 		{
-
-			float nearest = dist;
-			Transform* pTransform{ nullptr };
 			float distance = 0.0f;
-			//pool_[i]
-			//for (auto& collider : colliders)
+			EntityId id = poolId_[i];
+			if (RayCastHit(_origin, _dir, &distance, id))
 			{
-				//if (collider->IsHit(_origin, _dir, &distance))
-				EntityId id = poolId_[i];
-				if(RayCastHit(_origin,_dir,&distance,id))
+				if (distance < nearest)
 				{
-					//Game::System<TransformCP>().TryGet(pTransform, id);
-					if(distance < nearest)
-					{
-						nearest = distance;
-						nearestEntity = id;
-					}
+					nearest = distance;
+					nearestEntity = id;
 				}
 			}
+
 		}
 	}
 	return nearestEntity;

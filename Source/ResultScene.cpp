@@ -3,6 +3,7 @@
 #include "../Source/ScoreViewer.h"
 #include "../Source/Camera.h"
 #include "../Source/TitleScene.h"
+#include "../Source/StageManager.h"
 namespace
 {
 	// 118,90 , 565,100
@@ -11,6 +12,7 @@ namespace
 	UIParams params{ .depth = 0,.layerFlag = AllLayer() };
 }
 ResultScene::ResultScene()
+	
 {
 }
 
@@ -27,10 +29,20 @@ void ResultScene::Initialize()
 	int fontSize{ 36 };
 	Instantiate<ScoreViewer>(rect, fontSize,TextAlignment::center);
 
-	hImage = Image::Load("Image/ClearImage.png");
 
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
+
+	bool clearedStage = Game::System<StageManger>().IsClearedCurrentStage();
+	
+	if (clearedStage)
+	{
+		hImage = Image::Load("Image/ClearImage.png");
+	}
+	else
+	{
+		hImage = Image::Load("Image/GameOverImage.png");
+	}
 }
 
 void ResultScene::Update()

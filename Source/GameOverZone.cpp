@@ -1,27 +1,24 @@
 #include "stdafx.h"
-#include "Goal.h"
+#include "GameOverZone.h"
 #include "ResultScene.h"
-#include "StageManager.h"
-unsigned int Goal::generateCounter_{ 0 };
+unsigned int GameOverZone::generateCounter_{ 0 };
 
-Goal::Goal()
-    :GameObject()
+GameOverZone::GameOverZone()
+    : GameObject()
 {
-    std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Goal));
+    std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(GameOverZone));
     name_ = std::format("{} ({})", typeName, generateCounter_++);
-    displayName_ = name_;
-
 }
 
-Goal::~Goal()
+GameOverZone::~GameOverZone()
 {
 }
 
-void Goal::Update()
+void GameOverZone::Update()
 {
 }
 
-void Goal::Start()
+void GameOverZone::Start()
 {
     pTransform_ = Component<Transform>();
     pRigidBody_ = Component<RigidBody>();
@@ -31,30 +28,22 @@ void Goal::Start()
             GameObjectTag tag = FindGameObject(_entityId)->GetTag();
             if (tag == GameObjectTag::Player)
             {
-                Game::System<StageManger>().ClearCurrentStage();
                 Game::System<SceneSystem>().Move<ResultScene>();
             }
         });
 }
 
-void Goal::Draw() const
+void GameOverZone::Draw() const
 {
-
 }
 
-void Goal::ShowImGui()
-{
-    MTImGui::Instance().ShowComponents(Entity::entityId_);
-    ImGui::Text("EntityId:%d", Entity::entityId_);
-}
-
-std::vector<IComponentMemento*> Goal::GetDefaultMementos(EntityId _entityId) const
+std::vector<IComponentMemento*> GameOverZone::GetDefaultMementos(EntityId _entityId) const
 {
     std::vector<IComponentMemento*> mementos;
 
     TransformData transformData
     {
-        .position{0,1,5},
+        .position{0,-3,0},
         .scale{1,1,1}
     };
 
@@ -67,16 +56,7 @@ std::vector<IComponentMemento*> Goal::GetDefaultMementos(EntityId _entityId) con
         .extents{transformData.scale * 0.5f}
     };
 
-    MeshRendererData meshData
-    {
-        .meshFileName{"Model/Box.fbx"},
-        .meshHandle{Fbx::Load(meshData.meshFileName)},
-        .layer{AllLayer()},
-        .shaderType{ShaderType::FbxParts}
-    };
-
     mementos.push_back(new TransformMemento(_entityId, transformData));
     mementos.push_back(new ColliderMemento(_entityId, colliderData));
-    mementos.push_back(new MeshRendererMemento(_entityId, meshData));
     return mementos;
 }
