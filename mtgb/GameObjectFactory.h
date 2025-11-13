@@ -14,8 +14,7 @@ namespace mtgb
 	{
 	public:
 		GameObjectFactory() = default;
-		template<typename T>
-		void Register(std::string_view _typeName);
+		
 
 		GameObject* Create(std::string_view _typeName) const;
 		void RegisterFactory(std::string_view _typeName, CreateFunc _creator) override;

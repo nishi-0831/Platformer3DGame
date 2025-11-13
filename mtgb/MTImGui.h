@@ -103,6 +103,7 @@ namespace mtgb
 		/// <param name="_thickness"></param>
 		void DrawVec(const Vector3& _start, const Vector3 & _vec, float _thickness);
 
+		EntityId GetSelectedEntityId();
 		static const char* GetName(ShowType _showType)
 		{
 			if (_showType == ShowType::Inspector)

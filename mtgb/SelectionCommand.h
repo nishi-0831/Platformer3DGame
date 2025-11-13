@@ -13,29 +13,29 @@ namespace mtgb
 {
 	class SelectionCommand : public Command
 	{
-		using ExecuteFn = std::function<void(const GameObjectSelectedEvent&)>;
-		using UndoFn = std::function<void(const GameObjectSelectedEvent&)>;
+		using ExecuteFn = std::function<void(EntityId _entityId)>;
+		using UndoFn = std::function<void(EntityId _entityId)>;
 	public:
-		SelectionCommand(const GameObjectSelectedEvent& _event,ExecuteFn _selectFunc, UndoFn _deselectFunc);
+		SelectionCommand(EntityId _entityId, ExecuteFn _selectFunc, UndoFn _deselectFunc);
 
 		void Execute() override
 		{
 			if (selectFunc_)
 			{
-				selectFunc_(event_);
+				selectFunc_(entityId_);
 			}
 		}
 		void Undo() override
 		{
 			if (deselectFunc_)
 			{
-				deselectFunc_(event_);
+				deselectFunc_(entityId_);
 			}
 		}
 		std::string Name() const override { return "SelectionCommand"; }
 		EntityId GetCommandTargetEntityId() const override;
 	private:
-		GameObjectSelectedEvent event_;
+		EntityId entityId_;
 		ExecuteFn selectFunc_;
 		UndoFn deselectFunc_;
 
@@ -43,29 +43,29 @@ namespace mtgb
 
 	class DeselectionCommand : public Command
 	{
-		using ExecuteFn = std::function<void(const GameObjectDeselectedEvent&)>;
-		using UndoFn = std::function<void(const GameObjectDeselectedEvent&)>;
+		using ExecuteFn = std::function<void(EntityId _entityId)>;
+		using UndoFn = std::function<void(EntityId _entityId)>;
 	public:
-		DeselectionCommand(const GameObjectDeselectedEvent& _event, ExecuteFn _deselectFunc, UndoFn _selectFunc);
+		DeselectionCommand(EntityId _entityId, ExecuteFn _deselectFunc, UndoFn _selectFunc);
 
 		void Execute() override
 		{
 			if (deselectFunc_)
 			{
-				deselectFunc_(event_);
+				deselectFunc_(entityId_);
 			}
 		}
 		void Undo() override
 		{
 			if (selectFunc_)
 			{
-				selectFunc_(event_);
+				selectFunc_(entityId_);
 			}
 		}
 		std::string Name() const override { return "DeselectionCommand"; }
 		EntityId GetCommandTargetEntityId() const override;
 	private:
-		GameObjectDeselectedEvent event_;
+		EntityId entityId_;
 		ExecuteFn deselectFunc_;
 		UndoFn selectFunc_;
 	};

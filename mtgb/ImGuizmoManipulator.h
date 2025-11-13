@@ -33,8 +33,9 @@ namespace mtgb
 		void UpdateOperationMode();
 		void GenerateCommand(const GameObjectSelectedEvent& _event);
 		void GenerateCommand(const GameObjectDeselectedEvent& _event);
-		void SubscribeGameObjectSelectionEvent();
-
+		void GenerateCommand(const GameObjectCreatedEvent& _event);
+		void SubscribeEvents();
+		
 		void DrawTransformGuizmo();
 		void Calculate();
 

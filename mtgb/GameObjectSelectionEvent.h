@@ -6,13 +6,18 @@ namespace mtgb
 {
 	struct GameObjectSelectedEvent
 	{
-		EntityId entityId{};
+		EntityId entityId;
 	};
 
 	struct GameObjectDeselectedEvent
 	{
-		EntityId entityId{};
+		EntityId entityId;
 	};
 
 	struct SelectionClearedEvent{};
+
+	struct GameObjectCreatedEvent
+	{
+		EntityId entityId;
+	};
 }

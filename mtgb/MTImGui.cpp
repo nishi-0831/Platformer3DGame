@@ -51,37 +51,6 @@ void mtgb::MTImGui::Update()
 
     updatingImGuiShowable_ = false;
 
-
-    // Settingsウィンドウに表示
-    DirectShow([]()
-        {
-            if (ImGui::Button("SwapWindow"))
-            {
-                Game::System<SceneSystem>().RegisterPendingCallback([]()
-                    {
-                        WinCtxRes::SwapWindow();
-                        // CameraResourceは交換しない
-                        Game::System<WinCtxResManager>().SwapResource<InputResource>();
-                    });
-			}
-
-            if (ImGui::Button("ChangeFullscreenNearestMonitor : FirstWindow"))
-            {
-                Game::System<SceneSystem>().RegisterPendingCallback([]()
-                    {
-                        Game::System<WindowManager>().ChangeFullScreenStateNearestMonitor(WindowContext::First);
-                    });
-            }
-
-            if (ImGui::Button("ChangeFullscreenNearestMonitor : SecondWindow"))
-            {
-                Game::System<SceneSystem>().RegisterPendingCallback([]()
-                    {
-                        Game::System<WindowManager>().ChangeFullScreenStateNearestMonitor(WindowContext::Second);
-                    });
-            }
-		}, "Window", ShowType::Settings);
-
 	DirectShow([]()
 		{
             if (ImGui::Button("EnumJoystick"))
@@ -100,8 +69,6 @@ void mtgb::MTImGui::Update()
                     });
 
             }
-			
-
 		}, "Input", ShowType::Settings);
 }
 void mtgb::MTImGui::SetWindowOpen(ShowType _showType, bool _flag)
@@ -509,6 +476,12 @@ void mtgb::MTImGui::DrawVec(const Vector3& _start, const Vector3& _vec, float _t
     {
         sceneViewShowList_.push([=]() {DrawRayImpl(_start, _vec, _thickness); });
     }
+}
+
+EntityId mtgb::MTImGui::GetSelectedEntityId()
+{
+    EntityId id = imguiWindowStates_[ShowType::Inspector].entityId;
+    return id;
 }
 
 template<typename T>

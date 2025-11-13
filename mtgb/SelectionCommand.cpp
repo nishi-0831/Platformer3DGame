@@ -1,7 +1,7 @@
 #include "SelectionCommand.h"
 
-mtgb::SelectionCommand::SelectionCommand(const GameObjectSelectedEvent& _event, ExecuteFn _selectFunc, UndoFn _deselectFunc)
-	: event_{_event}
+mtgb::SelectionCommand::SelectionCommand(EntityId _entityId, ExecuteFn _selectFunc, UndoFn _deselectFunc)
+	: entityId_{_entityId}
 	, selectFunc_{_selectFunc}
 	, deselectFunc_{_deselectFunc}
 {
@@ -9,11 +9,11 @@ mtgb::SelectionCommand::SelectionCommand(const GameObjectSelectedEvent& _event, 
 
 EntityId mtgb::SelectionCommand::GetCommandTargetEntityId() const
 {
-	return event_.entityId;
+	return entityId_;
 }
 
-mtgb::DeselectionCommand::DeselectionCommand(const GameObjectDeselectedEvent& _event, ExecuteFn _deselectFunc, UndoFn _selectFunc)
-	: event_{_event}
+mtgb::DeselectionCommand::DeselectionCommand(EntityId _entityId, ExecuteFn _deselectFunc, UndoFn _selectFunc)
+	: entityId_{_entityId}
 	, deselectFunc_ {_deselectFunc}
 	, selectFunc_{_selectFunc}
 {
@@ -21,5 +21,5 @@ mtgb::DeselectionCommand::DeselectionCommand(const GameObjectDeselectedEvent& _e
 
 EntityId mtgb::DeselectionCommand::GetCommandTargetEntityId() const
 {
-	return event_.entityId;
+	return entityId_;
 }
