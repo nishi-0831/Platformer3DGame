@@ -1,6 +1,6 @@
 #include "GuizmoManipulatedEvent.h"
 
-mtgb::GuizmoManipulatedEvent::GuizmoManipulatedEvent(TransformMemento* _pPrevMemento, TransformMemento* _pMemento, const ComponentFactory& _componentFactory)
+mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand(TransformMemento* _pPrevMemento, TransformMemento* _pMemento, const ComponentFactory& _componentFactory)
     : pPrevMemento_{ _pPrevMemento }
     , pMemento_{ _pMemento }
     , componentFactory_(_componentFactory)
@@ -8,22 +8,27 @@ mtgb::GuizmoManipulatedEvent::GuizmoManipulatedEvent(TransformMemento* _pPrevMem
 
 }
 
-void mtgb::GuizmoManipulatedEvent::Execute()
+void mtgb::GuizmoManipulateCommand::Execute()
 {
 
 }
 
-void mtgb::GuizmoManipulatedEvent::Undo()
+void mtgb::GuizmoManipulateCommand::Undo()
 {
     componentFactory_.AddComponentFromMemento(*pPrevMemento_);
 }
 
-void mtgb::GuizmoManipulatedEvent::Redo()
+void mtgb::GuizmoManipulateCommand::Redo()
 {
     componentFactory_.AddComponentFromMemento(*pMemento_);
 }
 
-std::string mtgb::GuizmoManipulatedEvent::Name() const
+std::string mtgb::GuizmoManipulateCommand::Name() const
 {
     return "GuizmoManipulatedEvent";
+}
+
+EntityId mtgb::GuizmoManipulateCommand::GetCommandTargetEntityId() const
+{
+    return pMemento_->GetEntityId();
 }

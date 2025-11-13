@@ -150,17 +150,45 @@ namespace mtgb
 		static void UpdateFixed();
 
 		/// <summary>
-		/// エンティティに対応するコンポーネントを削除する
+		/// コンポーネントプールのインターフェースを返す
+		/// </summary>
+		/// <param name="_typeIndex"></param>
+		/// <returns></returns>
+		static IComponentPool* GetCP(std::type_index _typeIndex);
+		/// <summary>
+		/// エンティティに対応する全てのコンポーネントを削除する
 		/// </summary>
 		/// <param name="_entityId"></param>
 		static void RemoveEntityAllComponent(const EntityId _entityId);
 
+		/// <summary>
+		/// エンティティに対応するコンポーネントを削除する
+		/// </summary>
+		/// <param name="_typeIndex"></param>
+		/// <param name="_entityId"></param>
 		static void RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId);
 		
+		/// <summary>
+		/// エンティティに対応するコンポーネントをJSONにシリアライズして返す
+		/// </summary>
+		/// <param name="_typeIndex"> コンポーネントプールのtype_index </param>
+		/// <param name="_entityId"></param>
+		/// <returns></returns>
 		static nlohmann::json SerializeComponent(std::type_index _typeIndex, EntityId _entityId);
+		/// <summary>
+		/// JSONからエンティティに対応するコンポーネントにデシリアライズして、メメントを返す
+		/// </summary>
+		/// <param name="_typeIndex">コンポーネントプールのtype_index</param>
+		/// <param name="_entityId"></param>
+		/// <param name="_json"></param>
+		/// <returns></returns>
 		static IComponentMemento* DeserializeComponent(std::type_index _typeIndex, EntityId _entityId,const nlohmann::json& _json);
 		static std::optional<std::vector<IComponentMemento*>> DeserializeComponents(EntityId _entityId, const nlohmann::json& _json);
 
+		/// <summary>
+		/// 描画可能なコンポーネントプールを返す
+		/// </summary>
+		/// <returns></returns>
 		static std::span<IRenderableCP*> GetRenderableCPs();
 	private:
 		/// <summary>

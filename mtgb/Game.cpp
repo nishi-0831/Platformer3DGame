@@ -47,6 +47,15 @@ void mtgb::Game::UpdateFixed()
 	}
 }
 
+IComponentPool* mtgb::Game::GetCP(std::type_index _typeIndex)
+{
+	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
+	if (itr == pInstance_->pRegisterSystems_.end())
+		return nullptr;
+
+	return dynamic_cast<IComponentPool*>(itr->second);
+}
+
 void mtgb::Game::RemoveEntityAllComponent(const EntityId _entityId)
 {
 	for (auto&& cpSystem : pInstance_->pComponentPools_)

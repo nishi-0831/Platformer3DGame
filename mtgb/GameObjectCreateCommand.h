@@ -30,6 +30,7 @@ namespace mtgb
 		void Redo() override;
 
 		std::string Name() const override;
+		EntityId GetCommandTargetEntityId() const override;
 	private:
 		void ApplyComponents();
 		void Deserialize(GameObject* _obj);

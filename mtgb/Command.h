@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-
+#include "cmtgb.h"
 class Command
 {
 public:
@@ -17,7 +17,7 @@ public:
 	virtual void Undo() = 0;
 
 	/// <summary>
-	/// 再実行(Executeと同じ)
+	/// 再実行(デフォルトではExecuteと同じ)
 	/// </summary>
 	virtual void Redo() { Execute(); }
 
@@ -27,4 +27,6 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	virtual std::string Name() const = 0;
+
+	virtual mtgb::EntityId GetCommandTargetEntityId() const = 0;
 };

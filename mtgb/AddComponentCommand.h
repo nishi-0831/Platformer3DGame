@@ -30,6 +30,7 @@ namespace mtgb
 		void Undo() override;
 		
 		std::string Name() const override;
+		EntityId GetCommandTargetEntityId() const override;
 	private:
 		EntityId entityId_;
 		size_t componentPoolIndex_;

@@ -53,3 +53,8 @@ std::string mtgb::AddComponentCommand::Name() const
 {
     return std::string("AddComponent:" ) +componentType_.name();
 }
+
+EntityId mtgb::AddComponentCommand::GetCommandTargetEntityId() const
+{
+    return entityId_;
+}

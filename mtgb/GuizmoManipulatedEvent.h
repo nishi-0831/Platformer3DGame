@@ -8,10 +8,10 @@
 
 namespace mtgb
 {
-	class GuizmoManipulatedEvent : public Command
+	class GuizmoManipulateCommand : public Command
 	{
 	public:
-		GuizmoManipulatedEvent(
+		GuizmoManipulateCommand(
 			TransformMemento* _pPrevMemento, 
 			TransformMemento* _pMemento,
 			const ComponentFactory& _componentFactory);
@@ -20,9 +20,10 @@ namespace mtgb
 		void Undo() override;
 		void Redo() override;
 		std::string Name() const override;
+		EntityId GetCommandTargetEntityId() const override;
+	private:
 		// ComponentFactory‚ªnull‚Å‚ ‚é‚±‚Æ‚ð‹–—e‚µ‚È‚¢
 		const ComponentFactory& componentFactory_;
-	private:
 		TransformMemento* pPrevMemento_;
 		TransformMemento* pMemento_;
 	};

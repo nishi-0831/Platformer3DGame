@@ -105,3 +105,8 @@ void mtgb::GameObject::FindGameObjects(GameObjectTag _tag, std::vector<GameObjec
 {
 	mtgb::Game::System<SceneSystem>().GetActiveScene()->GetGameObjects(_tag, _pFoundGameObjects);
 }
+
+std::string mtgb::GameObject::GetClassTypeName() const
+{
+	return mtgb::ExtractClassName(name_);
+}

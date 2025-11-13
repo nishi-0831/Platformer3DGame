@@ -7,10 +7,10 @@
 
 namespace mtgb
 {
-	class PropertyChangedEvent : public Command
+	class PropertyChangeCommand : public Command
 	{
 	public:
-		PropertyChangedEvent(
+		PropertyChangeCommand(
 			IComponentMemento* _pPrevMemento,
 			IComponentMemento* _pMemento,
 			const ComponentFactory& _componentfactory);
@@ -18,10 +18,11 @@ namespace mtgb
 		void Execute() override;
 		void Undo() override;
 		std::string Name() const override;
-		// ComponentFactory‚ªnull‚Å‚ ‚é‚±‚Æ‚ð‹–—e‚µ‚È‚¢
-		const ComponentFactory& componentFactory_;
+		EntityId GetCommandTargetEntityId() const override;
 
 	private:
+		// ComponentFactory‚ªnull‚Å‚ ‚é‚±‚Æ‚ð‹–—e‚µ‚È‚¢
+		const ComponentFactory& componentFactory_;
 		IComponentMemento* pPrevMemento_;
 		IComponentMemento* pMemento_;
 	};

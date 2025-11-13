@@ -126,6 +126,25 @@ void mtgb::ImGuiEditor::LoadMapData()
 	GameObjectGenerator::GenerateFromJson(json);
 }
 
+void mtgb::ImGuiEditor::DuplicateGameObject()
+{
+	EntityId currSelectedEntity = pManipulator_->GetSelectedEntityId();
+	GameObject* dest = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(currSelectedEntity);
+
+	std::optional<std::vector<std::type_index>> componentPoolTypes = Game::System<ComponentRegistry>().GetComponentPoolTypes(currSelectedEntity);
+	if (componentPoolTypes.has_value() == false)
+		return;
+	
+	for (std::type_index componentPoolType : componentPoolTypes.value())
+	{
+		IComponentPool* pComponentPool = Game::GetCP(componentPoolType);
+		if (pComponentPool == nullptr)
+			continue;
+
+		/*pComponentPool->Copy()*/
+	}
+}
+
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
 {
 	// コンポーネント作成成功

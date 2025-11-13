@@ -94,6 +94,25 @@ std::optional<std::type_index> mtgb::ComponentRegistry::GetComponentPoolType(con
 	return GetComponentPoolType(itr->second);
 }
 
+std::optional<std::vector<std::type_index>> mtgb::ComponentRegistry::GetComponentPoolTypes(EntityId _entityId)
+{
+	std::vector<std::type_index> componentPoolTypes;
+
+	auto componentTypes = entityComponents_.find(_entityId);
+	if (componentTypes != entityComponents_.end())
+		return std::nullopt;
+	
+	for (const std::type_index& componentType : componentTypes->second)
+	{
+		if (auto itr = componentTypeToPoolTypeMap_.find(componentType); itr != componentTypeToPoolTypeMap_.end())
+		{
+			componentPoolTypes.push_back(itr->second);
+		}
+	}
+	
+	return componentPoolTypes;
+}
+
 std::optional<std::reference_wrapper<const std::set<std::type_index>>> mtgb::ComponentRegistry::GetComponentTypes(EntityId _entityId)
 {
 	auto itr = entityComponents_.find(_entityId);

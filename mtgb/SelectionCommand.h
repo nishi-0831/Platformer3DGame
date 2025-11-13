@@ -33,6 +33,7 @@ namespace mtgb
 			}
 		}
 		std::string Name() const override { return "SelectionCommand"; }
+		EntityId GetCommandTargetEntityId() const override;
 	private:
 		GameObjectSelectedEvent event_;
 		ExecuteFn selectFunc_;
@@ -62,6 +63,7 @@ namespace mtgb
 			}
 		}
 		std::string Name() const override { return "DeselectionCommand"; }
+		EntityId GetCommandTargetEntityId() const override;
 	private:
 		GameObjectDeselectedEvent event_;
 		ExecuteFn deselectFunc_;

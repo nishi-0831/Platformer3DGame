@@ -63,7 +63,6 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 
 		DirectX::XMStoreFloat3(&pTargetTransform_->position, trans);
 		DirectX::XMStoreFloat3(&pTargetTransform_->scale, scale);
-		
 	}
 	ImGui::PopID();
 }
@@ -220,7 +219,7 @@ void mtgb::ImGuizmoManipulator::UpdateManpulator()
 			return;
 
 		TransformMemento* memento = pTargetTransform_->SaveToMemento();
-		GuizmoManipulatedEvent* event = new GuizmoManipulatedEvent(pTargetPrevTransformMemento_, memento, Game::System<ComponentFactory>());
+		GuizmoManipulateCommand* event = new GuizmoManipulateCommand(pTargetPrevTransformMemento_, memento, Game::System<ComponentFactory>());
 		commandListener_(event);
 	}
 

@@ -78,6 +78,7 @@ namespace mtgb
 		/// <returns>削除予定 true / false</returns>
 		inline const bool IsToDestroy() const { return status_.toDestroy_; }
 		std::string GetName() const { return name_; }
+		std::string GetClassTypeName() const;
 		/// <summary>
 		/// レイヤーフラグを取得
 		/// </summary>

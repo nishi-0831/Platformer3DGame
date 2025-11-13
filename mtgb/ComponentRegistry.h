@@ -60,6 +60,12 @@ namespace mtgb
 		std::optional<std::type_index> GetComponentPoolType(const std::string& _componentName);
 
 		/// <summary>
+		/// EntityId‚ª“o˜^‚³‚ê‚Ä‚¢‚éComponentPool‚ÌŒ^î•ñ‚Ì”z—ñ‚ğ•Ô‚·
+		/// </summary>
+		/// <param name="_entityId"></param>
+		/// <returns></returns>
+		std::optional<std::vector<std::type_index>> GetComponentPoolTypes(EntityId _entityId);
+		/// <summary>
 		/// EntityId‚ª“o˜^‚³‚ê‚Ä‚¢‚éComponent‚ÌŒ^î•ñ‚ğ•Ô‚·
 		/// </summary>
 		/// <param name="_entityId"></param>

@@ -24,6 +24,7 @@ namespace mtgb
 	private:
 		void SaveMapData();
 		void LoadMapData();
+		void DuplicateGameObject();
 		void AddComponent(const std::type_index& _componentType, EntityId _entityId);
 		void ShowAddComponentDialog(EntityId _entityId);
 		void ShowGenerateGameObjectButton();
