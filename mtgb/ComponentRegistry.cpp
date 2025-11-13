@@ -99,7 +99,7 @@ std::optional<std::vector<std::type_index>> mtgb::ComponentRegistry::GetComponen
 	std::vector<std::type_index> componentPoolTypes;
 
 	auto componentTypes = entityComponents_.find(_entityId);
-	if (componentTypes != entityComponents_.end())
+	if (componentTypes == entityComponents_.end())
 		return std::nullopt;
 	
 	for (const std::type_index& componentType : componentTypes->second)

@@ -24,14 +24,18 @@ namespace mtgb
 	private:
 		void SaveMapData();
 		void LoadMapData();
+		/// <summary>
+		/// 現在選択されているゲームオブジェクトの複製を行う
+		/// このクラスが直接行うべきでない処理をしているので、コマンドに分離すべき
+		/// </summary>
 		void DuplicateGameObject();
 		void AddComponent(const std::type_index& _componentType, EntityId _entityId);
 		void ShowAddComponentDialog(EntityId _entityId);
 		void ShowGenerateGameObjectButton();
-		//ComponentFactory* pComponentFactory_;
 		CommandHistoryManagerWrapper* pCommandHistory_;
 		ImGuizmoManipulator* pManipulator_;
 		std::unordered_map<std::type_index, IComponentMemento*> defMementos_;
 		std::function<void(Command*)> commandListener_;
+		EntityId id;
 	};
 }

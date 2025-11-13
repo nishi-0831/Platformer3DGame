@@ -123,7 +123,10 @@ namespace mtgb
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>
 	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::Copy(EntityId _dest, EntityId _src)
 	{
-		pool_[_dest].CopyData(pool_[_src]);
+		ComponentT& destCom = Get(_dest);
+		ComponentT& srcCom = Get(_src);
+		
+		destCom.CopyData(srcCom);
 	}
 
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>

@@ -17,7 +17,11 @@ mtgb::ImGuiEditor::ImGuiEditor()
 {
 	pCommandHistory_ = new CommandHistoryManagerWrapper(new CommandHistoryManager());
 
-	commandListener_ = [this](Command* _command) { pCommandHistory_->ExecuteCommand(_command); };
+	commandListener_ = [this](Command* _command)
+		{
+			pCommandHistory_->ExecuteCommand(_command); 
+			id = _command->GetCommandTargetEntityId();
+		};
 	pManipulator_ = new ImGuizmoManipulator(commandListener_);
 
 	GameObjectGenerator::RegisterCommandListener(commandListener_);
@@ -58,6 +62,11 @@ void mtgb::ImGuiEditor::Update()
 		{
 			LoadMapData();
 		}
+		if (InputUtil::GetKeyDown(KeyCode::D))
+		{
+			DuplicateGameObject();
+		}
+			
 	}
 }
 
@@ -129,7 +138,12 @@ void mtgb::ImGuiEditor::LoadMapData()
 void mtgb::ImGuiEditor::DuplicateGameObject()
 {
 	EntityId currSelectedEntity = pManipulator_->GetSelectedEntityId();
-	GameObject* dest = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(currSelectedEntity);
+	if (currSelectedEntity == INVALID_ENTITY)
+		return;
+
+	GameObject* src = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(currSelectedEntity);
+	std::string classTypeName = src->GetClassTypeName();
+	GameObjectGenerator::Generate(classTypeName);
 
 	std::optional<std::vector<std::type_index>> componentPoolTypes = Game::System<ComponentRegistry>().GetComponentPoolTypes(currSelectedEntity);
 	if (componentPoolTypes.has_value() == false)
@@ -141,7 +155,7 @@ void mtgb::ImGuiEditor::DuplicateGameObject()
 		if (pComponentPool == nullptr)
 			continue;
 
-		/*pComponentPool->Copy()*/
+		pComponentPool->Copy(id, src->GetEntityId());
 	}
 }
 

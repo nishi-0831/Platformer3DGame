@@ -19,7 +19,7 @@ namespace mtgb
 			, newValue_{ _newValue }
 			, name_{ _name }
 		{
-		};
+		}
 
 		void Execute() override
 		{
