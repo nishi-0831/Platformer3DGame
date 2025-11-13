@@ -1,6 +1,8 @@
 #include "GameObjectCreateCommand.h"
 #include "SceneSystem.h"
 #include "EntityManager.h"
+#include "EventManager.h"
+#include "GameObjectSelectionEvent.h"
 mtgb::GameObjectCreateCommand::GameObjectCreateCommand( CreateFunc _createFunc, const ComponentFactory& _componentFactory)
     : createFunc_{_createFunc}
     , componentFactory_{_componentFactory}
@@ -37,6 +39,9 @@ void mtgb::GameObjectCreateCommand::Execute()
     }
 
     ApplyComponents();
+
+    Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Invoke({ .entityId = obj->GetEntityId() });
+
 }
 
 void mtgb::GameObjectCreateCommand::Undo()

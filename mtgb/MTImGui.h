@@ -7,10 +7,8 @@
 #include "ShowType.h"
 #include "ImGuiShowable.h"
 #include "TypeRegistry.h"
-#include <optional>
-#include <tuple>
-#include "ComponentConcept.h"
 #include <map>
+#include "cmtgb.h"
 namespace mtgb
 {
 
@@ -92,7 +90,6 @@ namespace mtgb
 		/// <param name="_to">終点</param>
 		/// <param name="_thickness">線の太さ</param>
 		void DrawLine(const Vector3& _from, const Vector3& _to, float _thickness);
-
 		
 		/// <summary>
 		/// <para> ImGuiWindowにベクトルを描画 </para>
@@ -128,6 +125,7 @@ namespace mtgb
 		void ChangeAllWindowOpen();
 		void ShowLog();
 		void ShowComponents(EntityId _entityId);
+		void SelectGameObject(EntityId _entityId);
 	private:
 		MTImGui();
 		MTImGui(const MTImGui& other) = delete;

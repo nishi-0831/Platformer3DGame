@@ -93,7 +93,7 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 	eventManager.GetEvent<GameObjectCreatedEvent>().Subscribe(
 		[this](const GameObjectCreatedEvent& _event)
 		{
-
+			GenerateCommand(_event);
 		},EventScope::Global);
 }
 
@@ -280,11 +280,11 @@ void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectCreatedEvent& _e
 	commandListener_(new SelectionCommand((_event.entityId),
 		[this](EntityId _entityId)
 		{
-			Deselect();
+			Select(_entityId);
 		},
 		[this](EntityId _entityId)
 		{
-			Select(_entityId);
+			Deselect();
 		}));
 }
 

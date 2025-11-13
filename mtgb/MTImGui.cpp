@@ -61,14 +61,6 @@ void mtgb::MTImGui::Update()
 
                     });
             }
-            if (ImGui::Button("SwapInput"))
-            {
-                Game::System<SceneSystem>().RegisterPendingCallback([]()
-                    {
-                        Game::System<WinCtxResManager>().SwapResource<InputResource>();
-                    });
-
-            }
 		}, "Input", ShowType::Settings);
 }
 void mtgb::MTImGui::SetWindowOpen(ShowType _showType, bool _flag)
@@ -182,19 +174,12 @@ mtgb::MTImGui::MTImGui()
     // ゲームオブジェクトが選択されたときに、それを表示対象とする
     Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe([this](const GameObjectSelectedEvent& _handler)
         {
-            EntityId selectedEntityId = _handler.entityId;
-            if (selectedEntityId == INVALID_ENTITY) return;
-
-			for (ImGuiShowable* obj : showableObjs_)
-			{
-                if (selectedEntityId == obj->entityId_)
-                {
-                    imguiWindowStates_[ShowType::Inspector].selectedName = obj->displayName_;
-                    imguiWindowStates_[ShowType::Inspector].entityId = obj->entityId_;
-                }
-			}
-
+            SelectGameObject(_handler.entityId);
         }, EventScope::Global);
+    Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe([this](const GameObjectCreatedEvent& _event)
+        {
+            SelectGameObject(_event.entityId);
+        },EventScope::Global);
 }
 mtgb::MTImGui::~MTImGui()
 {
@@ -335,6 +320,20 @@ void mtgb::MTImGui::ShowComponents(EntityId _entityId)
     for (const auto& typeIdx : (*types).get())
     {
         componentShowFuncs_[typeIdx](_entityId);
+    }
+}
+void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
+{
+    EntityId selectedEntityId = _entityId;
+    if (selectedEntityId == INVALID_ENTITY) return;
+
+    for (ImGuiShowable* obj : showableObjs_)
+    {
+        if (selectedEntityId == obj->entityId_)
+        {
+            imguiWindowStates_[ShowType::Inspector].selectedName = obj->displayName_;
+            imguiWindowStates_[ShowType::Inspector].entityId = obj->entityId_;
+        }
     }
 }
 void mtgb::MTImGui::RegisterAllComponentViewers()

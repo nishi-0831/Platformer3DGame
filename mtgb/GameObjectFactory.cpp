@@ -11,7 +11,6 @@ mtgb::GameObject* mtgb::GameObjectFactory::Create(std::string_view _typeName) co
         return nullptr;
     
     GameObject* gameObj = itr->second();
-    Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Invoke({ .entityId = gameObj->GetEntityId() });
     return gameObj;
 }
 
