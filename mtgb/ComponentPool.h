@@ -30,6 +30,7 @@ namespace mtgb
 
 		void Release() override;
 		nlohmann::json Serialize(EntityId _entityId) override;
+		IComponentMemento* SaveToMemento(EntityId _entityId) const override;
 		IComponentMemento* Deserialize(EntityId _entityId, const nlohmann::json& _json) override;
 		void Copy(EntityId _dest, EntityId _src) override;
 		ComponentT* Reuse(size_t _index, EntityId _entityId);
@@ -115,6 +116,19 @@ namespace mtgb
 	}
 
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline IComponentMemento* ComponentPool<ComponentT, DerivedT, IsSingleton>::SaveToMemento(EntityId _entityId) const
+	{
+		for (int i = 0; i < poolId_.size(); i++)
+		{
+			if (poolId_[i] == _entityId)
+			{
+				return pool_[i].SaveToMemento();
+			}
+		}
+		return nullptr;
+	}
+
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
 	inline IComponentMemento* ComponentPool<ComponentT, DerivedT, IsSingleton>::Deserialize(EntityId _entityId, const nlohmann::json& _json)
 	{
 		return ComponentT::Deserialize(_entityId, _json);
@@ -138,6 +152,9 @@ namespace mtgb
 			return nullptr;
 
 		poolId_[_index] = _entityId;
+
+		// EntityId‚ÉŠ„‚è“–‚Ä‚ç‚ê‚½Component‚Æ‚µ‚Ä“o˜^
+		Game::System<ComponentRegistry>().RegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
 
 		ComponentT* pComponent = &pool_[_index];
 		pComponent->entityId_ = _entityId;

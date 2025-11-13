@@ -26,7 +26,6 @@ namespace mtgb
 		void LoadMapData();
 		/// <summary>
 		/// 現在選択されているゲームオブジェクトの複製を行う
-		/// このクラスが直接行うべきでない処理をしているので、コマンドに分離すべき
 		/// </summary>
 		void DuplicateGameObject();
 		void AddComponent(const std::type_index& _componentType, EntityId _entityId);

@@ -141,22 +141,7 @@ void mtgb::ImGuiEditor::DuplicateGameObject()
 	if (currSelectedEntity == INVALID_ENTITY)
 		return;
 
-	GameObject* src = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(currSelectedEntity);
-	std::string classTypeName = src->GetClassTypeName();
-	GameObjectGenerator::Generate(classTypeName);
-
-	std::optional<std::vector<std::type_index>> componentPoolTypes = Game::System<ComponentRegistry>().GetComponentPoolTypes(currSelectedEntity);
-	if (componentPoolTypes.has_value() == false)
-		return;
-	
-	for (std::type_index componentPoolType : componentPoolTypes.value())
-	{
-		IComponentPool* pComponentPool = Game::GetCP(componentPoolType);
-		if (pComponentPool == nullptr)
-			continue;
-
-		pComponentPool->Copy(id, src->GetEntityId());
-	}
+	GameObjectGenerator::Duplicate(currSelectedEntity);
 }
 
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)

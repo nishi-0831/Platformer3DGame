@@ -5,6 +5,7 @@
 #include "GameObjectCreateCommand.h"
 #include "RegisterCommonGameObjectType.h"
 #include "../Source/RegisterGameObjectType.h"
+#include "DuplicateGameObjectCommand.h"
 GameObjectGenerator* mtgb::GameObjectGenerator::pInstance_{ nullptr };
 
 void mtgb::GameObjectGenerator::Initialize()
@@ -62,6 +63,18 @@ void mtgb::GameObjectGenerator::Generate(std::string_view _gameObjName)
 void mtgb::GameObjectGenerator::RegisterCommandListener(std::function<void(Command*)> _commandListener)
 {
     GetInstance()->commandListener_ = _commandListener;
+}
+
+void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
+{
+    GameObject* src = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_srcEntityId);
+    std::string classTypeName = src->GetClassTypeName();
+
+    DuplicateGameObjectCommand* cmd = new DuplicateGameObjectCommand([classTypeName]()
+        {
+            return GetInstance()->gameObjFactory_.Create(classTypeName);
+        }, Game::System<ComponentFactory>(), _srcEntityId);
+    GetInstance()->commandListener_(cmd);
 }
 
 GameObjectGenerator* mtgb::GameObjectGenerator::GetInstance()
