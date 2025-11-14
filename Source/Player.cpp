@@ -4,7 +4,7 @@
 namespace 
 {
 	float speed = 5.0f;
-	float jumpHeight = 30.0f;
+	float jumpHeight = 15.0f;
 }
 
 Player::Player()
@@ -91,7 +91,7 @@ void Player::Start()
 	pCollider_ = Component<Collider>();
 	pMeshRenderer_ = Component<MeshRenderer>();
 	pRigidBody_ = Component<RigidBody>();
-
+	pRigidBody_->useGravity = true;
 	Camera* pCamera{ Instantiate<Camera>(this) };
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera);
 	SetCamera(hCamera);

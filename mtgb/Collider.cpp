@@ -84,7 +84,7 @@ void mtgb::Collider::UpdateBoundingBox()
 bool mtgb::Collider::IsHit(const Collider& _other) const
 {
 	using DirectX::XMVector3TransformCoord;
-
+	DirectX::ContainmentType containmentType = DirectX::DISJOINT;
 	// ƒXƒe[ƒW“¯m‚ÍÚG‚µ‚È‚¢‚à‚Ì‚Æ‚·‚é
 	if (colliderTag == ColliderTag::STAGE && _other.colliderTag == ColliderTag::STAGE)
 	{
@@ -96,23 +96,28 @@ bool mtgb::Collider::IsHit(const Collider& _other) const
 		if (colliderType == ColliderType::TYPE_SPHERE)
 		{
 			//// ‹——£‚ª‘o•û‚Ì‹…‚Ì”¼Œa‚æ‚è‚à¬‚³‚¯‚ê‚Î“–‚½‚Á‚Ä‚¢‚é
-			return computeSphere_.Intersects(_other.computeSphere_);
+			containmentType = computeSphere_.Contains(_other.computeSphere_);
 		}
 		else if (colliderType == ColliderType::TYPE_AABB)
 		{
-			return computeBox_.Intersects(_other.computeBox_);
+			containmentType = computeBox_.Contains(_other.computeBox_);
 		}
 	}
 	else
 	{
 		if (colliderType == ColliderType::TYPE_SPHERE)
 		{	
-			return computeSphere_.Intersects(_other.computeBox_);
+			containmentType = computeSphere_.Contains(_other.computeBox_);
 		}
 		else if (colliderType == ColliderType::TYPE_AABB)
 		{
-			return computeBox_.Intersects(_other.computeSphere_);
+			containmentType = computeBox_.Contains(_other.computeSphere_);
 		}
+	}
+
+	if (containmentType == DirectX::INTERSECTS || containmentType == DirectX::CONTAINS)
+	{
+		return true;
 	}
 
 	return false;

@@ -1,7 +1,7 @@
 #include "GameTime.h"
 #include "IncludingWindows.h"
 #include "Game.h"
-
+#include "Debug.h"
 #pragma comment(lib, "Winmm.lib")
 
 mtgb::Time::Time() :
@@ -30,7 +30,14 @@ void mtgb::Time::Update()
 	{
 		deltaTime_ = (current_.QuadPart - previous_.QuadPart) * MICRO_TO_SEC;
 		previous_ = current_;
-		Game::UpdateFrame();
+		if (waitFrame_ != 0)
+		{
+			waitFrame_--;
+		}
+		else
+		{
+			Game::UpdateFrame();
+		}
 	}
 
 	timeEndPeriod(1);
@@ -39,3 +46,4 @@ void mtgb::Time::Update()
 double mtgb::Time::deltaTime_{};
 const LONGLONG mtgb::Time::SEC_TO_MICRO{ 1000000 };
 const double mtgb::Time::MICRO_TO_SEC{ 0.0000001 };
+unsigned int mtgb::Time::waitFrame_{ 0 };

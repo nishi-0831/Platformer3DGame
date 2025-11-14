@@ -94,6 +94,11 @@ mtgb::Quaternion mtgb::Transform::GetWorldRotate() const
 	return XMQuaternionMultiply(XMQuaternionRotationMatrix(matrixWorldRot_), XMQuaternionIdentity());
 }
 
+void mtgb::Transform::OnPostRestore()
+{
+	Compute();
+}
+
 
 
 void mtgb::Transform::GenerateWorldMatrixSelf(Matrix4x4* _pMatrix) const

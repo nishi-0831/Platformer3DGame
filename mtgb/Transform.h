@@ -141,7 +141,7 @@ namespace mtgb
 		/// <returns>ワールド回転の四元数</returns>
 		Quaternion GetWorldRotate() const;
 
-
+		void OnPostRestore() override;
 	private:
 		/// <summary>
 		/// 計算用自分自身のワールド行列を生成する

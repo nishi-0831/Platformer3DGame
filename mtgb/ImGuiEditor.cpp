@@ -12,6 +12,7 @@
 #include "SceneSystem.h"
 #include "GameScene.h"
 #include "Debug.h"
+#include "GameTime.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
@@ -133,6 +134,9 @@ void mtgb::ImGuiEditor::LoadMapData()
 		assert(false,e.what());
 	}
 	GameObjectGenerator::GenerateFromJson(json);
+	
+	// 2ÉtÉåÅ[ÉÄë“ã@Ç≥ÇπÇÈ
+	Time::WaitFrame(2);
 }
 
 void mtgb::ImGuiEditor::DuplicateGameObject()

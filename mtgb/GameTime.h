@@ -20,7 +20,7 @@ namespace mtgb
 
 		static inline const double DeltaTime() { return deltaTime_; }
 		static inline const float DeltaTimeF() { return static_cast<const float>(deltaTime_); }
-
+		static inline void WaitFrame(unsigned int _frame) { waitFrame_ = _frame; };
 	private:
 		static const LONGLONG SEC_TO_MICRO;  // マイクロ秒を１秒に変換する
 		static const double MICRO_TO_SEC;  // 1秒をマイクロ秒に変換する
@@ -29,5 +29,6 @@ namespace mtgb
 	private:
 		LARGE_INTEGER current_;  // 現在のCPU時間 (マイクロ秒)
 		LARGE_INTEGER previous_;  // 前回のCPU時間 (マイクロ秒)
+		static unsigned int waitFrame_;
 	};
 }
