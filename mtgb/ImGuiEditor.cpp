@@ -67,7 +67,6 @@ void mtgb::ImGuiEditor::Update()
 		{
 			DuplicateGameObject();
 		}
-			
 	}
 }
 

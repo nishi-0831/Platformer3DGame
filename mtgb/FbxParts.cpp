@@ -12,7 +12,10 @@
 #include <cmath>
 #include <algorithm>
 
-
+namespace
+{
+	Vector4 lightDir{ 0,1,1,0 };
+}
 
 // FbxParts コンストラクタの初期化リストを拡張して、全メンバー変数を初期化
 mtgb::FbxParts::FbxParts(FbxNode* _parent)
@@ -153,7 +156,7 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 		cb.g_shininess = pMaterial_[i].shininess;
 		CAMERA.GetPosition(&cb.g_cameraPosition);
 		
-		cb.g_lightDirection = Vector4{ 0.0f, 0.0, 1.0f, 0.0f }; // ライトの向き
+		cb.g_lightDirection = lightDir; // ライトの向き
 		cb.g_isTexture = (pMaterial_[i].pTexture != nullptr);
 
 		DirectX11Draw::pContext_->Map(pConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &pdata_);

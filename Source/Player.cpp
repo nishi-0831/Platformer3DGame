@@ -35,11 +35,11 @@ void Player::Update()
 	}
 	if (InputUtil::GetKey(KeyCode::Up))
 	{
-		axis.y = 1;
+		axis.y = -1;
 	}
 	if (InputUtil::GetKey(KeyCode::Down))
 	{
-		axis.y = -1;
+		axis.y = 1;
 	}
 
 	Vector3& velocity = pRigidBody_->velocity;

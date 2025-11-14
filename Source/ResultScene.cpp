@@ -29,7 +29,6 @@ void ResultScene::Initialize()
 	int fontSize{ 36 };
 	Instantiate<ScoreViewer>(rect, fontSize,TextAlignment::center);
 
-
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
 

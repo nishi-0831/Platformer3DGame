@@ -49,7 +49,7 @@ bool StageManger::IsCleared(StageID _stageID)
 
 bool StageManger::IsClearedCurrentStage()
 {
-	return false;
+	return stageCleared_[currStage_];
 }
 
 void StageManger::ClearStage(StageID _stageID)

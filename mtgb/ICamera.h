@@ -41,7 +41,7 @@ namespace mtgb
 		bool followTarget_;
 		bool adjustTargetDirection_;
 		float distance_;
-
+		Vector3 lookAtPositionOffset_;
 		// -Y側、下側が0度、+Y側、上側が90度
 		float minPolarAngleRad_, maxPolarAngleRad_;
 		// +X側、右側が0度、-X側、左側が90度

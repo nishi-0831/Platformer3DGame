@@ -25,6 +25,7 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 	adjustTargetDirection_ = false;
 	minPolarAngleRad_ = DirectX::XMConvertToRadians(60.0f);
 	maxPolarAngleRad_ = DirectX::XMConvertToRadians(150.0f);
+	lookAtPositionOffset_ = { 0,0.5,0 };
 
 	pCameraTransform_ = Component<Transform>();
 	pTargetTransform_ = &Transform::Get(_pGameObj->GetEntityId());

@@ -15,6 +15,7 @@ mtgb::ICamera::ICamera()
 	, maxPolarAngleRad_{ DirectX::XMConvertToRadians(179.0f)}
 	, minAzimuthalAngleRad_{ -(std::numeric_limits<float>::max)() }
 	, maxAzimuthalAngleRad_{ (std::numeric_limits<float>::max)() }
+	, lookAtPositionOffset_{0,0,0}
 {
 }
 void mtgb::ICamera::MoveCameraSpherical(float _distance)
@@ -27,12 +28,12 @@ void mtgb::ICamera::MoveCameraSpherical(float _distance)
 	if (pTargetTransform_)
 	{
 		Vector3 toTarget = pTargetTransform_->position - pCameraTransform_->position;
-		center = pTargetTransform_->position + (Vector3::Normalize(-toTarget) * _distance);
+		center = pTargetTransform_->position + (Vector3::Normalize(-toTarget) * _distance) + lookAtPositionOffset_;
 	}
 	// ターゲットがいない場合は正面を向いて回転
 	else
 	{
-		center = pCameraTransform_->position + (pCameraTransform_->Forward() * _distance);
+		center = pCameraTransform_->position + (pCameraTransform_->Forward() * _distance) + lookAtPositionOffset_;
 	}
 
 	// θ (polar angle) : 鉛直方向
