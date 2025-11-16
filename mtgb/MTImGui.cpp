@@ -227,6 +227,7 @@ void mtgb::MTImGui::SetupShowFunc()
             TypeRegistry::Instance().CallFunc(&_target->velocity, "Velocity");
             TypeRegistry::Instance().CallFunc(&_target->useGravity, "UseGravity");
             TypeRegistry::Instance().CallFunc(&_target->isKinematic,"IsKinematic");
+            TypeRegistry::Instance().CallFunc(&_target->isGround,"IsGround");
         });
 
     Set<ScreenCoordContainsInfo>([](ScreenCoordContainsInfo* _target, const char* _name)

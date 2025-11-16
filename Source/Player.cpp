@@ -10,6 +10,8 @@ namespace
 Player::Player()
 	: GameObject()
 	, ImGuiShowable(ShowType::Inspector,Entity::entityId_)
+	, pCamera_{nullptr}
+	, pCameraTransform_{ nullptr }
 {
 	tag_ = GameObjectTag::Player;
 
@@ -77,8 +79,11 @@ void Player::Update()
 		if (pRigidBody_->IsJumping() == false)
 		{
 			pRigidBody_->velocity.y += jumpHeight;
+			//pRigidBody_->isGround = false;
 		}
 	}
+
+	pCamera_->SetFollowMode(pRigidBody_->isGround, pRigidBody_->velocity);
 }
 
 void Player::Draw() const
@@ -92,9 +97,11 @@ void Player::Start()
 	pMeshRenderer_ = Component<MeshRenderer>();
 	pRigidBody_ = Component<RigidBody>();
 	pRigidBody_->useGravity = true;
-	Camera* pCamera{ Instantiate<Camera>(this) };
-	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera);
-	SetCamera(hCamera);
+
+	pCamera_ =  Instantiate<Camera>(this);
+	pCameraTransform_ = &Transform::Get(pCamera_->GetEntityId());
+	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
+	
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
 }
 
@@ -139,7 +146,9 @@ std::vector<IComponentMemento*> Player::GetDefaultMementos(EntityId _entityId) c
 	return mementos;
 }
 
-void Player::SetCamera(CameraHandleInScene _hCamera)
+void Player::SetCamera(Camera* _pCamera)
 {
-	pCameraTransform_ = &Game::System<CameraSystem>().GetTransform(_hCamera);
+	
 }
+
+

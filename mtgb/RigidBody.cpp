@@ -7,7 +7,7 @@
 #include "GameTime.h"
 namespace
 {
-	float GRAVITY{ -15.0f };
+	float GRAVITY{ -20.0f };
 }
 mtgb::RigidBody::RigidBody(const EntityId _entityId) :
 	StatefulComponent{ RigidBodyData{.isNeedUpdate = false,.useGravity = false},_entityId },
@@ -27,6 +27,10 @@ void mtgb::RigidBody::UpdateVelocity()
 		velocity += Vector3::Up() * GRAVITY * Time::DeltaTimeF();
 	}
 	pTransform_->position += velocity * Time::DeltaTimeF();
+	if (velocity.y > 0.0f)
+	{
+		isGround = false;
+	}
 }
 
 void mtgb::RigidBody::OnGround()
