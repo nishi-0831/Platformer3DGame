@@ -200,7 +200,18 @@ const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType,WindowCont
 		}
 		else
 		{
-			value = static_cast<float>(input.joyStateCurrent_.lZ);
+			if (input.controllerType_ == ControllerType::DualShock)
+			{
+				value = static_cast<float>(input.joyStateCurrent_.lZ);
+			}
+			else if (input.controllerType_ == ControllerType::Xbox)
+			{
+				value = static_cast<float>(input.joyStateCurrent_.lRx);
+			}
+			else
+			{
+				value = static_cast<float>(input.joyStateCurrent_.lRx);
+			}
 		}
 		value /= input.config_.xRange; 
 		break;
@@ -212,7 +223,18 @@ const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType,WindowCont
 		}
 		else
 		{
-			value = static_cast<float>(input.joyStateCurrent_.lRz);
+			if (input.controllerType_ == ControllerType::DualShock)
+			{
+				value = static_cast<float>(input.joyStateCurrent_.lRz);
+			}
+			else if (input.controllerType_ == ControllerType::Xbox)
+			{
+				value = -static_cast<float>(input.joyStateCurrent_.lRy);
+			}
+			else
+			{
+				value = static_cast<float>(input.joyStateCurrent_.lRy);
+			}
 		}
 		value /= input.config_.yRange;
 		break;

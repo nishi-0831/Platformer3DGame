@@ -29,6 +29,13 @@ namespace mtgb
 		FlightStick
 	};
 
+	enum class ControllerType
+	{
+		Unknown,
+		DualShock,
+		Xbox
+	};
+
 	struct JoystickContext
 	{
 		TimerHandle timerHandle;
@@ -144,6 +151,12 @@ namespace mtgb
 		/// <returns>/returns>
 		bool IsNotSubscribed();
 
+		/// <summary>
+		/// ベンダーIDからコントローラーの種類を判別
+		/// </summary>
+		/// <param name="_pInputDevice"></param>
+		/// <returns></returns>
+		static ControllerType GetControllerTypeByVendor(ComPtr<IDirectInputDevice8> _pInputDevice);
 		/// <summary>
 		/// デバイスの名前を取得
 		/// </summary>

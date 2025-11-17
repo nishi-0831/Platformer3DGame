@@ -10,6 +10,9 @@ namespace
 	float groundedPolarAngleRad{ 0.0f };
 	float jumpOrbitSpeed{0.0f};
 	float groundedOrbitSpeed{ 0.0f };
+
+	float lastGroundedY;
+	float lookAtPosLerpProgress;
 }
 
 float EaseOutCirc(float x)
@@ -95,6 +98,7 @@ void mtgb::Camera::Update()
 		ImGui::Text("LerpedPolarAngle: %.3f deg", DirectX::XMConvertToDegrees(lerpedPolarAngle_));
 		ImGui::Text("Camera State: %d", static_cast<int>(cameraState_));
 		ImGui::Text("Target Velocity Y: %.3f", targetVelocityCache_.y);
+		ImGui::Text("lookAtPosLerpProgress: %.3f", lookAtPosLerpProgress);
 		ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
 		ImGui::Text("Normalized Screen Pos: (%.3f, %.3f)", normalizedX, normalizedY);
 	}, "Camera", ShowType::Inspector);
@@ -132,13 +136,22 @@ void mtgb::Camera::UpdateCameraState()
 	if (isGrounded_)
 	{
 		cameraState_ = CameraState::GROUNDED;
+		//lookAtPosLerpProgress = 1.0f;
+
 	}
 	else
 	{
+		if (wasGrounded_ && isGrounded_ == false)
+		{
+			lastGroundedY = pTargetTransform_->position.y;
+			lookAtPosLerpProgress = 0.0f;
+
+		}
 		// ジャンプ中：速度に基づいて状態を判定
 		if (targetVelocityCache_.y > 0.1f)
 		{
 			cameraState_ = CameraState::JUMP_ASCENDING;
+			
 		}
 		else if (targetVelocityCache_.y > -0.1f)
 		{
@@ -169,18 +182,6 @@ void mtgb::Camera::UpdateCameraState()
 			targetCameraLerpSpeed_ = 0.01f + 0.04 * scalar;  // カメラはほぼ動かない
 			targetAngleLerpSpeed_ = 0.01f;
 			break;
-
-		/*case CameraState::JUMP_APEX:
-			targetPolarAngle_ = polarAngleRad_ + DirectX::XMConvertToRadians(jumpApexPolarAngleDeg_);
-			targetCameraLerpSpeed_ = 0.05f;
-			targetAngleLerpSpeed_ = 0.01f;
-			break;*/
-
-		/*case CameraState::JUMP_DESCENDING:
-			targetPolarAngle_ = polarAngleRad_ + DirectX::XMConvertToRadians(jumpDescendingPolarAngleDeg_);
-			targetCameraLerpSpeed_ = 0.05f;
-			targetAngleLerpSpeed_ = 0.01f;
-			break;*/
 		}
 	}
 }
@@ -199,6 +200,8 @@ void mtgb::Camera::UpdateCameraAngle(float _deltaTime)
 		easedProgress = EaseOutCirc(angleLerpProgress_);
 		lerpedPolarAngle_ = std::lerp(lerpedPolarAngleStart_, targetPolarAngle_, easedProgress);
 		orbitSpeed_ = 1.0f;
+		lookAtPosLerpProgress += 0.6f * Time::DeltaTimeF();
+
 	}
 	else
 	{
@@ -211,6 +214,7 @@ void mtgb::Camera::UpdateCameraAngle(float _deltaTime)
 			targetPolarAngle_,
 			targetAngleLerpSpeed_
 		);
+		lookAtPosLerpProgress += 0.3f * Time::DeltaTimeF();
 	}
 	
 	// 角度の制限
@@ -228,7 +232,8 @@ void mtgb::Camera::MoveCameraSpherical(float _distance)
 		return;
 
 	// 注視点を計算
-	Vector3 lookAtTarget = pTargetTransform_->position + lookAtPositionOffset_;
+	float lerpedY = std::lerp(lastGroundedY, pTargetTransform_->position.y, lookAtPosLerpProgress);
+	Vector3 lookAtTarget = Vector3(pTargetTransform_->position.x,lerpedY,pTargetTransform_->position.z) + lookAtPositionOffset_;
 
 	// 現在のカメラ位置からターゲットへのベクトル
 	Vector3 toTarget = lookAtTarget - pCameraTransform_->position;
@@ -244,15 +249,8 @@ void mtgb::Camera::MoveCameraSpherical(float _distance)
 
 	Vector3 newCameraPos = lookAtTarget + offset;
 
-	// ジャンプ中はカメラ位置を補間で追従(状態に応じた速度)
-	pCameraTransform_->position.y = std::lerp(
-		pCameraTransform_->position.y,
-		newCameraPos.y,
-		targetCameraLerpSpeed_ * Time::DeltaTimeF() * 10.0f
-	);
 
-	pCameraTransform_->position.x = newCameraPos.x;
-	pCameraTransform_->position.z = newCameraPos.z;
+	pCameraTransform_->position = newCameraPos;
 	
 	// カメラの回転を設定
 	Vector3 lookDir = lookAtTarget - pCameraTransform_->position;

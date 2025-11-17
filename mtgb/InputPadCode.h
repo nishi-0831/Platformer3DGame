@@ -28,8 +28,8 @@ enum struct XInputPadCode : WORD
 /// </summary>
 enum struct PadCode : uint8_t
 {
-	A = 0,
-	B = 1,
+	B = 0,
+	A = 1,
 	X = 2,
 	Y = 3,
 	LB = 4,

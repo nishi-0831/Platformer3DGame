@@ -24,6 +24,10 @@ namespace
 		 yMin{ min },
 		 yMax{ max };
 	float acquireInterval = 10.0f;
+
+	const DWORD VENDOR_ID_DUAL_SHOCK{ 0x54c };
+	const DWORD VENDOR_ID_XBOX{ 0x45E };
+
 }
 
 using namespace mtgb;
@@ -478,6 +482,31 @@ bool mtgb::Input::IsNotSubscribed()
 	return requestedJoystickDevices_.empty();
 }
 
+ControllerType mtgb::Input::GetControllerTypeByVendor(ComPtr<IDirectInputDevice8> _pInputDevice)
+{
+	DIDEVICEINSTANCE deviceInstance = {};
+	deviceInstance.dwSize = sizeof(DIDEVICEINSTANCE);
+	HRESULT hResult = _pInputDevice->GetDeviceInfo(&deviceInstance);
+	if (FAILED(hResult))
+		return ControllerType::Unknown;
+
+	// ベンダーID
+	DWORD vendorId = HIWORD(deviceInstance.guidProduct.Data1);
+	DWORD productId = LOWORD(deviceInstance.guidProduct.Data1);
+
+	if (vendorId == VENDOR_ID_DUAL_SHOCK)
+	{
+		return ControllerType::DualShock;
+	}
+
+	if (vendorId == VENDOR_ID_XBOX)
+	{
+		return ControllerType::Xbox;
+	}
+
+	return ControllerType::Unknown;
+}
+
 std::string mtgb::Input::GetDeviceName(ComPtr<IDirectInputDevice8> _pInputDevice)
 {
 	DIDEVICEINSTANCE deviceInstance = {};
@@ -693,7 +722,7 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 	massert(SUCCEEDED(hResult)
 		&& "値の範囲設定に失敗 @");
 
-	// 右スティック、Y軸
+	// 左スティック、Y軸
 	diprg.diph.dwObj = DIJOFS_Y;
 	diprg.lMin = -_inputConfig.yRange;
 	diprg.lMax = _inputConfig.yRange;
@@ -702,23 +731,63 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 	massert(SUCCEEDED(hResult)
 		&& "値の範囲設定に失敗 @");
 
-	// 右スティック、X軸
-	diprg.diph.dwObj = DIJOFS_Z;
-	diprg.lMin = -_inputConfig.zRange;
-	diprg.lMax = _inputConfig.zRange;
+	ControllerType controllerType = GetControllerTypeByVendor(_pJoystickDevice);
+	switch (controllerType)
+	{
+	case ControllerType::DualShock:
+		// 右スティック、X軸
+		diprg.diph.dwObj = DIJOFS_Z;
+		diprg.lMin = -_inputConfig.xRange;
+		diprg.lMax = _inputConfig.xRange;
 
-	hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-	massert(SUCCEEDED(hResult)
-		&& "値の範囲設定に失敗 @");
+		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+		massert(SUCCEEDED(hResult)
+			&& "値の範囲設定に失敗 @");
 
-	// 右スティック、Y軸
-	diprg.diph.dwObj = DIJOFS_RZ;
-	diprg.lMin = -_inputConfig.zRange;
-	diprg.lMax = _inputConfig.zRange;
+		// 右スティック、Y軸
+		diprg.diph.dwObj = DIJOFS_RZ;
+		diprg.lMin = -_inputConfig.yRange;
+		diprg.lMax = _inputConfig.yRange;
 
-	hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-	massert(SUCCEEDED(hResult)
-		&& "値の範囲設定に失敗");
+		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+		massert(SUCCEEDED(hResult)
+			&& "値の範囲設定に失敗");
+		break;
+	case ControllerType::Xbox:
+		// 右スティック、X軸
+		diprg.diph.dwObj = DIJOFS_RX;
+		diprg.lMin = -_inputConfig.xRange;
+		diprg.lMax = _inputConfig.xRange;
+
+		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+		massert(SUCCEEDED(hResult)
+			&& "値の範囲設定に失敗");
+
+		// 左スティック、y軸
+		diprg.diph.dwObj = DIJOFS_RY;
+		diprg.lMin = -_inputConfig.yRange;
+		diprg.lMax = _inputConfig.yRange;
+
+		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+		massert(SUCCEEDED(hResult)
+			&& "値の範囲設定に失敗");
+		break;
+
+	default:
+		// 不明な場合は両方設定してしまう
+		// DualShock設定
+		diprg.diph.dwObj = DIJOFS_Z;
+		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+		diprg.diph.dwObj = DIJOFS_RZ;
+		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+
+		// Xbox設定
+		diprg.diph.dwObj = DIJOFS_RX;
+		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+		diprg.diph.dwObj = DIJOFS_RY;
+		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+		break;
+	}
 
 #pragma endregion
 }

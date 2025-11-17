@@ -80,8 +80,6 @@ void mtgb::InputResource::Initialize(WindowContext _windowContext)
 	// “ü—Í‚ÌŽæ‚è•û‚ðÝ’è
 	pInputData_->config_.SetRange(1000);
 	pInputData_->config_.SetDeadZone(0.1);
-	//pProxy_->SetDisplayName("proxy:"+ id++);
-	
 	
 	JoystickReservation reservation; 
 	reservation.config = pInputData_->config_;
@@ -104,6 +102,7 @@ void mtgb::InputResource::Initialize(WindowContext _windowContext)
 			assignedJoystickGuid_ = guid;
 			isInitialized = true;
 			Game::System<Input>().SetJoystickGuid(assignedJoystickGuid_);
+			pInputData_->controllerType_ = Input::GetControllerTypeByVendor(pJoystickDevice_);
 
 		};
 

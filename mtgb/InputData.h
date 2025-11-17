@@ -127,7 +127,7 @@ namespace mtgb
 		_DIMOUSESTATE mouseStatePrevious_;  // マウスの状態前回
 		DIJOYSTATE joyStateCurrent_;		// ジョイスティックの状態現在
 		DIJOYSTATE joyStatePrevious_;		// ジョイスティックの状態現在
-
+		ControllerType controllerType_;		// コントローラーの種類
 		InputConfig config_;//入力の取り方の設定
 
 		Vector2Int mousePosition_;          // マウスカーソルの座標
