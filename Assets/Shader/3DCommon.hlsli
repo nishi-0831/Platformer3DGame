@@ -13,7 +13,8 @@ cbuffer global : register(b0)
     float4 g_cameraPosition;  // 視点 (カメラの座標)
     float g_shuniness;  // ハイライトの強さ
     bool g_hasTexture;  // テクスチャを持っているか
-    float2 g_textureScale;
+    float2 padding;
+    float4 g_textureScale;
 };
 
 struct VS_OUT

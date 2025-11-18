@@ -12,7 +12,7 @@ namespace mtgb
 		void Update() override;
 		void Draw() const override;
 		void ShowImGui() override;
-
+		void Start() override;
 		std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const override;
 	private:
 		Transform* pTransform_;

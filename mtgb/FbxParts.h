@@ -53,7 +53,8 @@ namespace mtgb
 			Vector4 g_cameraPosition; // カメラの位置（ハイライトの計算に必要）
 			FLOAT g_shininess;     // スペキュラの強さ
 			BOOL g_isTexture;  // テクスチャの有無
-			Vector2 g_textureScale;
+			Vector2 g_padding;
+			Vector4 g_textureScale;
 		};
 
 		/// <summary>

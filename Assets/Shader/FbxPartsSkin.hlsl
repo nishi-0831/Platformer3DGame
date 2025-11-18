@@ -10,7 +10,7 @@ cbuffer BoneMatrices : register(b1) //ボーンのポーズ行列が入る
 {
     matrix g_boneMatrices[MAX_BONE_MATRICES];
     bool g_hasSkinnedMesh;
-    float padding[3];
+    float g_padding[3];
 };
 
 //スキニング後の頂点・法線が入る
@@ -66,31 +66,6 @@ Skin SkinVert(VSSkinIn input)
             }
         }
     }
-    
-    ////ボーン0
-    //uint iBone = input.boneIndex.x;
-    //float fWeight = input.boneWeight.x;
-    //matrix m = FetchBoneMatrix(iBone);
-    //Output.position += fWeight * mul(position, m);
-    //Output.normal += fWeight * mul(normal, (float3x3) m);
-    ////ボーン1
-    //iBone = input.boneIndex.y;
-    //fWeight = input.boneWeight.y;
-    //m = FetchBoneMatrix(iBone);
-    //Output.position += fWeight * mul(position, m);
-    //Output.normal += fWeight * mul(normal, (float3x3) m);
-    ////ボーン2
-    //iBone = input.boneIndex.z;
-    //fWeight = input.boneWeight.z;
-    //m = FetchBoneMatrix(iBone);
-    //Output.position += fWeight * mul(position, m);
-    //Output.normal += fWeight * mul(normal, (float3x3) m);
-    ////ボーン3
-    //iBone = input.boneIndex.w;
-    //fWeight = input.boneWeight.w;
-    //m = FetchBoneMatrix(iBone);
-    //Output.position += fWeight * mul(position, m);
-    //Output.normal += fWeight * mul(normal, (float3x3) m);
     
     return Output;
 }

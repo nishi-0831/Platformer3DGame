@@ -34,6 +34,11 @@ void mtgb::Box3D::ShowImGui()
 	ImGui::Text("EntityId:%d", Entity::entityId_);
 }
 
+void mtgb::Box3D::Start()
+{
+	Component<MeshRenderer>()->shaderType = ShaderType::Box3D;
+}
+
 std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entityId) const
 {
 	std::vector<IComponentMemento*> mementos;
