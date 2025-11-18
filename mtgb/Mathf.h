@@ -149,4 +149,23 @@ namespace mtgb::Mathf
 
 		return _targetPosition + MOVE * (sec);
 	}
+	struct SphericalCoord
+	{
+		float r;
+		float theta;
+		float phi;
+	};
+	static SphericalCoord CartesianToSpherical(const Vector3& _position)
+	{
+		float x = _position.x;
+		float y = _position.y;
+		float z = _position.z;
+
+		return SphericalCoord
+		{
+			.r = sqrtf(x * x + y * y + z * z),
+			.theta = std::acosf(y / sqrtf(x * x + y * y + z * z)),
+			.phi = std::signbit(z) * std::acosf(x / sqrtf(x * x + z * z))
+		};
+	}
 }
