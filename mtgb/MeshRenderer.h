@@ -42,7 +42,7 @@ namespace mtgb
         //bool CanRender() const { return meshHandle != INVALID_HANDLE; }
 
         GameObjectLayerFlag GetLayer() const override { return layer; }
-
+        void OnChangeMeshFileName();
         void Render() const override;
         bool CanRender() const override { return meshHandle != INVALID_HANDLE; };
     protected:

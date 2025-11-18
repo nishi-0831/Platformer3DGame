@@ -82,7 +82,7 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 				lastGroundCameraY = pCameraTransform_->position.y;
 
 				orbitSpeed_ = 1.0f;
-				lookAtPosLerpProgress += 0.3f * Time::DeltaTimeF();
+				lookAtPosLerpProgress += 0.5f * Time::DeltaTimeF();
 
 				// ジャンプ中：速度に基づいて状態を判定
 				if (targetVelocityCache_.y > 0.1f)

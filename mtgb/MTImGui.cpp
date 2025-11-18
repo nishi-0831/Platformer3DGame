@@ -209,7 +209,10 @@ void mtgb::MTImGui::SetupShowFunc()
 
     Set<MeshRenderer>([](MeshRenderer* _target, const char* _name)
         {
-            ImGui::LabelText("ModelHandle", "%PRId32", _target->GetMesh());
+            if (ImGui::InputText("FileName", _target->meshFileName.data(), _target->meshFileName.size()))
+            {
+                _target->OnChangeMeshFileName();
+            }
         });
 
     Set<Collider>([](Collider* _target, const char* _name)

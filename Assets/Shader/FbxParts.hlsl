@@ -15,7 +15,7 @@ VS_OUT VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOO
     // 視線ベクトル
     outData.eye = normalize(g_cameraPosition - worldPosition);  // 頂点への視線
     // UV座標
-    outData.uv = uv;
+    outData.uv = uv * g_textureScale.xy;
     
     return outData;
 }

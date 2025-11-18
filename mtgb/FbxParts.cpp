@@ -158,7 +158,7 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 		
 		cb.g_lightDirection = lightDir; // ƒ‰ƒCƒg‚ÌŒü‚«
 		cb.g_isTexture = (pMaterial_[i].pTexture != nullptr);
-
+		cb.g_textureScale = Vector2(_transform.scale.x, _transform.scale.y);
 		DirectX11Draw::pContext_->Map(pConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &pdata_);
 		memcpy_s(pdata_.pData, pdata_.RowPitch, (void*)(&cb), sizeof(cb));
 

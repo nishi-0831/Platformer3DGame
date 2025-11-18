@@ -7,6 +7,11 @@ mtgb::MeshRenderer::MeshRenderer()
 	
 }
 
+void mtgb::MeshRenderer::OnChangeMeshFileName()
+{
+	meshHandle = Fbx::Load(meshFileName);
+}
+
 void mtgb::MeshRenderer::Render() const
 {
 	Draw::FBXModel(meshHandle, Transform::Get(GetEntityId()), 0, shaderType);

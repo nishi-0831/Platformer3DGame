@@ -8,7 +8,7 @@
 #include <unordered_map>
 #include <fbxsdk.h>
 #include <wrl/client.h>
-
+#include "Vector2.h"
 using Microsoft::WRL::ComPtr;
 
 namespace fbxsdk
@@ -53,6 +53,7 @@ namespace mtgb
 			Vector4 g_cameraPosition; // カメラの位置（ハイライトの計算に必要）
 			FLOAT g_shininess;     // スペキュラの強さ
 			BOOL g_isTexture;  // テクスチャの有無
+			Vector2 g_textureScale;
 		};
 
 		/// <summary>

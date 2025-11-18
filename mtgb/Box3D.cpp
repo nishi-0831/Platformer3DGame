@@ -55,7 +55,7 @@ std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entity
 
 	MeshRendererData meshData
 	{
-		.meshFileName{"Model/Box.fbx"},
+		.meshFileName{"Model/WallBox.fbx"},
 		.meshHandle{Fbx::Load(meshData.meshFileName)},
 		.layer{AllLayer()},
 		.shaderType{ShaderType::FbxParts}
