@@ -72,8 +72,8 @@ void mtgb::ImGuiEditor::Update()
 
 void mtgb::ImGuiEditor::ShowImGui()
 {
-	pCommandHistory_->DrawImGuiStack();
-	//ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
+	//pCommandHistory_->DrawImGuiStack();
+	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
 	ShowGenerateGameObjectButton();
 }
 
@@ -150,14 +150,13 @@ void mtgb::ImGuiEditor::DuplicateGameObject()
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
 {
 	// コンポーネント作成成功
-	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, Game::System<ComponentFactory>());
+	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, Game::GetComponentFactory());
 	pCommandHistory_->ExecuteCommand(cmd);
 }
 
 void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)
 {
-	std::vector<std::type_index> registeredTypes;
-	Game::System<ComponentFactory>().GetRegisteredTypes(registeredTypes);
+	std::span<const std::type_index> registeredTypes = Game::GetComponentFactory().GetRegisteredTypes();
 
 	for (const auto& typeInfo : registeredTypes)
 	{

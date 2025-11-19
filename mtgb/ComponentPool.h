@@ -21,6 +21,7 @@ namespace mtgb
 	class ComponentPool : public IComponentPool, public ISystem
 	{
 	public:
+		using Component = ComponentT;
 		ComponentPool();
 		virtual ~ComponentPool();
 

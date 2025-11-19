@@ -16,7 +16,7 @@ namespace mtgb
 		using IComponent<TComponentPool, TDerived>::IComponent;
 		using TData::TData;
 		using Memento = ComponentMemento<TDerived, TData>;
-		
+		using ComponentPool = TComponentPool;
 		virtual ~StatefulComponent() {};
 		virtual void Initialize() override {};
 		StatefulComponent();

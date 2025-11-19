@@ -226,7 +226,7 @@ void mtgb::ImGuizmoManipulator::UpdateManpulator()
 			return;
 
 		TransformMemento* memento = pTargetTransform_->SaveToMemento();
-		GuizmoManipulateCommand* event = new GuizmoManipulateCommand(pTargetPrevTransformMemento_, memento, Game::System<ComponentFactory>());
+		GuizmoManipulateCommand* event = new GuizmoManipulateCommand(pTargetPrevTransformMemento_, memento, Game::GetComponentFactory());
 		commandListener_(event);
 	}
 

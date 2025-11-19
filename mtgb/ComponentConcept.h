@@ -67,5 +67,14 @@ namespace mtgb
 	concept ComponentWithMementoT =
 		// M ‚Í IComponentMemento ‚ğŒp³‚µ‚Ä‚¢‚éimemento‘¤‚Ì—vŒj
 		std::derived_from<M, IComponentMemento>;
+
+	template <typename T>
+	concept StatefulComponentT = 
+		requires 
+	{
+		typename T::Memento;
+	}&&
+		std::derived_from<typename T::Memento, IComponentMemento>;
+		
 		
 }

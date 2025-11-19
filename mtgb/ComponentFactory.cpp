@@ -27,11 +27,3 @@ bool mtgb::ComponentFactory::AddComponentFromMemento(const IComponentMemento& _m
 	return false;
 }
 
-void mtgb::ComponentFactory::Initialize()
-{
-	mtgb::RegisterComponents(this);
-}
-
-void mtgb::ComponentFactory::Update()
-{
-}

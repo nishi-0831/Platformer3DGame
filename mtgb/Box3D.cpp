@@ -10,7 +10,6 @@ mtgb::Box3D::Box3D()
 	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
 {
 	// Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
-	/* name_ = Game::System<Hoge>().GetNameFromType(typeid(Box3D)); */
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Box3D));
 	name_ = std::format("{} ({})", typeName,generateCounter_++);
 	displayName_ = name_;

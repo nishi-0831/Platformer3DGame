@@ -36,6 +36,15 @@ namespace mtgb::Mathf
 		return _a + (_b - _a) * rate;
 	}
 
+	static Vector3 Lerp(const Vector3& _a, const Vector3& _b, float _value)
+	{
+		return Vector3
+		{ 
+			Lerp(_a.x,_b.x,_value),
+			Lerp(_a.y,_b.y,_value),
+			Lerp(_a.z,_b.z,_value) 
+		};
+	}
 	/*static inline float LerpForward(const float _a, const float _b, const float _value)
 	{
 		float rate{ std::fmaxf(0.0f, std::fminf(_value, 1.0f)) };

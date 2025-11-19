@@ -370,6 +370,7 @@ void mtgb::Collider::Push(const Collider& _other)
 	{
 		RigidBody& rigidBody = RigidBody::Get(sphereTypeEntityId);
 		rigidBody.OnGround();
+		//transform.parent = this->pTransform_->GetEntityId();
 	}
 	transform.position += info.value().push;
 }

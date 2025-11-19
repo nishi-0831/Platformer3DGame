@@ -24,7 +24,7 @@ void mtgb::GameObjectGenerator::Generate(GenerateType _primitive)
 {
     if (GenerateType::Box == _primitive)
     {
-        GameObjectCreateCommand* cmd = new GameObjectCreateCommand([]() {return GameObject::Instantiate<Box3D>(); }, Game::System<ComponentFactory>());
+        GameObjectCreateCommand* cmd = new GameObjectCreateCommand([]() {return GameObject::Instantiate<Box3D>(); }, Game::GetComponentFactory());
         GetInstance()->commandListener_(cmd);
     }
 }
@@ -43,7 +43,7 @@ void mtgb::GameObjectGenerator::GenerateFromJson(const nlohmann::json& _json)
             {
                 return GetInstance()->gameObjFactory_.Create(classType);
             },
-            Game::System<ComponentFactory>(),
+            Game::GetComponentFactory(),
             j);
 
         // ƒRƒ}ƒ“ƒh‚ð“n‚·
@@ -56,7 +56,7 @@ void mtgb::GameObjectGenerator::Generate(std::string_view _gameObjName)
     GameObjectCreateCommand* cmd = new GameObjectCreateCommand([_gameObjName]()
         {
             return GetInstance()->gameObjFactory_.Create(_gameObjName);
-        }, Game::System<ComponentFactory>());
+        }, Game::GetComponentFactory());
     GetInstance()->commandListener_(cmd);
 }
 
@@ -73,7 +73,7 @@ void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
     DuplicateGameObjectCommand* cmd = new DuplicateGameObjectCommand([classTypeName]()
         {
             return GetInstance()->gameObjFactory_.Create(classTypeName);
-        }, Game::System<ComponentFactory>(), _srcEntityId);
+        }, Game::GetComponentFactory(), _srcEntityId);
     GetInstance()->commandListener_(cmd);
 }
 

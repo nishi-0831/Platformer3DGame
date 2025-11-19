@@ -36,8 +36,11 @@ void mtgb::ColliderCP::Update()
 	{
 		if (poolId_[i] != INVALID_ENTITY)
 		{
-			pool_[i].onColliders_.clear();
+			Collider& collider = pool_[i];
 
+			//pool_[i].onColliders_.clear();
+			collider.onColldiersPrev_ = collider.onColliders_;
+			collider.onColliders_.clear();
 			pool_[i].UpdateBoundingData();
 		}
 	}

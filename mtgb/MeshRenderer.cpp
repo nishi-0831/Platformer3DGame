@@ -2,9 +2,19 @@
 #include "Fbx.h"
 #include "Draw.h"
 #include "Transform.h"
+namespace
+{
+	constexpr size_t BUFFER_SIZE{ 256 };
+}
 mtgb::MeshRenderer::MeshRenderer()
 {
-	
+	meshFileName.resize(BUFFER_SIZE);
+}
+
+mtgb::MeshRenderer::MeshRenderer(EntityId _entityId)
+	: StatefulComponent(_entityId)
+{
+	meshFileName.resize(BUFFER_SIZE);
 }
 
 void mtgb::MeshRenderer::OnChangeMeshFileName()

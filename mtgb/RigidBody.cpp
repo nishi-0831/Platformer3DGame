@@ -45,6 +45,18 @@ void mtgb::RigidBody::OnCollisionEnter(const std::function<void(const EntityId)>
 	onHit_ = _onHit;
 }
 
+void mtgb::RigidBody::OnCollisionStay(const std::function<void(const EntityId)>& _onHit)
+{
+	isNeedUpdate = true;
+	onStay_ = _onHit;
+}
+
+void mtgb::RigidBody::OnCollisionExit(const std::function<void(const EntityId)>& _onExit)
+{
+	isNeedUpdate = true;
+	onExit_ = _onExit;
+}
+
 bool mtgb::RigidBody::IsJumping()
 {
 	return velocity.y > 0.0f;

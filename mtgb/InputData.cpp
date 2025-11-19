@@ -210,7 +210,7 @@ const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType,WindowCont
 			}
 			else
 			{
-				value = static_cast<float>(input.joyStateCurrent_.lRx);
+				value = static_cast<float>(input.joyStateCurrent_.lZ);
 			}
 		}
 		value /= input.config_.xRange; 
@@ -233,7 +233,7 @@ const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType,WindowCont
 			}
 			else
 			{
-				value = static_cast<float>(input.joyStateCurrent_.lRy);
+				value = static_cast<float>(input.joyStateCurrent_.lRz);
 			}
 		}
 		value /= input.config_.yRange;

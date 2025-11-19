@@ -22,8 +22,15 @@
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
 #include "inttypes.h"
+#include "../Source/MovingFloor.h"
+namespace
+{
+    constexpr size_t BUF_SIZE = 256;
+    std::string buf;
+}
 void mtgb::MTImGui::Initialize()
 {
+    buf.resize(BUF_SIZE);
     SetupShowFunc();
     Game::System<SceneSystem>().OnMove([]() 
         {
@@ -209,8 +216,25 @@ void mtgb::MTImGui::SetupShowFunc()
 
     Set<MeshRenderer>([](MeshRenderer* _target, const char* _name)
         {
-            if (ImGui::InputText("FileName", _target->meshFileName.data(), _target->meshFileName.size()))
+            constexpr size_t BUF_SZ = 256; // 必要ならサイズを調整
+            static std::unordered_map<EntityId, std::string> editBuffers;
+
+            std::string& buf = editBuffers[_target->GetEntityId()];
+            if (buf.empty())
             {
+                // 初回は現在の値をコピー
+                buf = _target->meshFileName;
+            }
+
+            // ImGuiに渡すバッファ容量を確保
+            if (buf.size() < BUF_SZ) buf.resize(BUF_SZ);
+
+            // Enterで確定されるようにフラグを指定
+            if (ImGui::InputText("FileName", buf.data(), BUF_SZ, ImGuiInputTextFlags_EnterReturnsTrue | ImGuiInputTextFlags_NoUndoRedo))
+            {
+                // 実際の文字列長に合わせてリサイズしてコミット
+                buf.resize(std::strlen(buf.c_str()));
+                _target->meshFileName = buf;
                 _target->OnChangeMeshFileName();
             }
         });
@@ -232,7 +256,12 @@ void mtgb::MTImGui::SetupShowFunc()
             TypeRegistry::Instance().CallFunc(&_target->isKinematic,"IsKinematic");
             TypeRegistry::Instance().CallFunc(&_target->isGround,"IsGround");
         });
-
+    Set<MovingFloor>([](MovingFloor* _target, const char* _name)
+        {
+            TypeRegistry::Instance().CallFunc(&_target->duration, "Duration");
+            TypeRegistry::Instance().CallFunc(&_target->to, "To");
+            TypeRegistry::Instance().CallFunc(&_target->from, "From");
+        });
     Set<ScreenCoordContainsInfo>([](ScreenCoordContainsInfo* _target, const char* _name)
         {
             TypeRegistry::Instance().CallFunc(&_target->worldPos, "WorldPos");
@@ -347,6 +376,7 @@ void mtgb::MTImGui::RegisterAllComponentViewers()
     RegisterComponentViewer<AudioPlayer>();
     RegisterComponentViewer<RigidBody>();
     RegisterComponentViewer<MeshRenderer>();
+    RegisterComponentViewer<MovingFloor>();
 }
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {

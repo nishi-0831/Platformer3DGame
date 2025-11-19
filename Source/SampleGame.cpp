@@ -3,6 +3,7 @@
 #include "StageManager.h"
 #include "TitleScene.h"
 #include "StageEditScene.h"
+#include "MovingFloorCP.h"
 #pragma region ÉQÅ[ÉÄë§Ç≈í«â¡
 
 
@@ -77,12 +78,11 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<ColliderCP>(SystemUpdateType::Frame);
 	Game::Set<AudioPlayerCP>(SystemUpdateType::Frame);
 	Game::Set<TextRendererCP>(SystemUpdateType::Frame);
-
+	Game::Set<MovingFloorCP>(SystemUpdateType::Frame);
 
 
 	Game::Set<Draw>(SystemUpdateType::DontCallMe);
 	Game::Set<EventManager>(SystemUpdateType::DontCallMe);
-	Game::Set<ComponentFactory>(SystemUpdateType::DontCallMe);
 	Game::Set<StageManger>(SystemUpdateType::DontCallMe);
 	Game::Set<ImGuiEditorCamera>(SystemUpdateType::Frame);
 	Game::Set<ImGuiEditor>(SystemUpdateType::Frame);

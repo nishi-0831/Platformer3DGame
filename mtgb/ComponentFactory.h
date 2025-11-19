@@ -1,26 +1,27 @@
 #pragma once
+#include "ISystem.h"
 #include <typeindex>
 #include <unordered_map>
 #include "ComponentConcept.h"
 
-#include "ISystem.h"
 #include "IComponentMemento.h"
 #include "ComponentRegistry.h"
 #include <functional>
+#include <span>
 namespace mtgb
 {
-	class ComponentFactory : public ISystem
+	class Game;
+
+	class ComponentFactory
 	{
 	public:
-		void Initialize() override;
-		void Update() override;
 
 		// コンポーネント作成関数の型
 		using CreateFunction = std::function<IComponentMemento*(EntityId _id)>;
 		using CreateFromMementoFunction = std::function<void(const IComponentMemento& _memento)>;
 
-		template<typename T, typename M>
-		requires ComponentWithMementoT<T,M>
+		template<typename T>
+		requires StatefulComponentT<T>
 		void RegisterComponent();
 
 		IComponentMemento* AddComponent(const std::type_index& _info, EntityId _id) const;
@@ -30,6 +31,11 @@ namespace mtgb
 		{
 			_types = types_;
 		}
+		std::span<const std::type_index> GetRegisteredTypes()
+		{
+			return types_;
+		}
+
 	private:
 		std::unordered_map<std::type_index, CreateFunction> creators_;
 		std::unordered_map<std::type_index, CreateFromMementoFunction> creatorsFromMemento_;
@@ -37,10 +43,12 @@ namespace mtgb
 
 		
 	};
-	template<typename T, typename M>
-		requires ComponentWithMementoT<T, M>
+	template<typename T>
+	requires StatefulComponentT<T>
 	inline void ComponentFactory::RegisterComponent()
 	{
+		using Memento = T::Memento;
+
 		std::type_index typeIdx(typeid(T));
 		creators_[typeIdx] = [](EntityId _id)
 			{
@@ -50,7 +58,7 @@ namespace mtgb
 		creatorsFromMemento_[typeIdx] = [](const IComponentMemento& _memento)
 			{
 				// memento をM型へダウンキャスト
-				const M* pMemento = dynamic_cast<const M*>(&_memento);
+				const Memento* pMemento = dynamic_cast<const Memento*>(&_memento);
 				if (pMemento == nullptr)
 				{
 					// 必要ならエラー処理
@@ -58,7 +66,7 @@ namespace mtgb
 				}
 
 				// Entityに割り当てられているインデックスの取得を試みる
-				auto componentIndex = Game::System<ComponentRegistry>().GetComponentIndex(_memento.GetEntityId(), _memento.GetComponentType());
+				auto componentIndex = Game::template System<ComponentRegistry>().GetComponentIndex(_memento.GetEntityId(), _memento.GetComponentType());
 
 				// エンティティのIdからコンポーネントを取得
 				T* pComponent = nullptr;

@@ -39,9 +39,6 @@ namespace mtgb
 			{
 				return *this;
 			}
-
-
-
 			return *this;
 		}
 
@@ -77,7 +74,7 @@ namespace mtgb
 		void OnPostRestore() override;
 
 		std::set<Collider*> onColliders_;
-
+		std::set<Collider*> onColldiersPrev_;
 		
 	private:
 		void UpdateBoundingSphere();

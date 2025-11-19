@@ -7,6 +7,7 @@
 #include "GameObjectLayer.h"
 #include "ShaderType.h"
 #include "IRenderable.h"
+#include "cmtgb.h"
 namespace mtgb
 {
     
@@ -21,6 +22,7 @@ namespace mtgb
         friend MeshRendererCP;
 
         MeshRenderer();
+        MeshRenderer(EntityId _entityId);
         /// <summary>
         /// メッシュハンドルを設定
         /// </summary>

@@ -44,16 +44,16 @@ namespace mtgb
 		/// </summary>
 		/// <param name="onHit_">void(const EntityId)</param>
 		void OnCollisionEnter(const std::function<void(const EntityId)>& _onHit);
-		/*void OnCollisionStay();
-		void OnCollisionExit();*/
+		void OnCollisionStay(const std::function<void(const EntityId)>& _onHit);
+		void OnCollisionExit(const std::function<void(const EntityId)>& _onExit);
 		bool IsJumping();
 		static Vector3 GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
 	public:
-		//Vector3 velocity;  // ‘¬“x
 
 	private:
-		//bool isNeedUpdate;
 		std::function<void(const EntityId)> onHit_;
+		std::function<void(const EntityId)> onStay_;
+		std::function<void(const EntityId)> onExit_;
 		Transform* pTransform_;  // TODO: Šë‚È‚¢Transform
 	};
 

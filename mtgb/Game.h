@@ -17,6 +17,7 @@
 #include "IComponentMemento.h"
 #include <nlohmann/json.hpp>
 #include "IRenderable.h"
+#include "ComponentFactory.h"
 namespace mtgb
 {
 	//using EntityId = int64_t;
@@ -106,6 +107,8 @@ namespace mtgb
 		std::vector<IComponentPool*> pComponentPools_;    // コンポーネントプールのシステム
 		std::vector<IRenderableCP*> pRenderablePools_; // 描画可能なコンポーネントプールのシステム
 		std::vector<std::type_index> registerOrder_; // 登録順を保持する配列
+
+		ComponentFactory componentFactory_;
 	public:
 		/// <summary>
 		/// ゲームを起動する
@@ -129,6 +132,7 @@ namespace mtgb
 		template<typename SystemT>
 		static inline SystemT& System();
 
+		static ComponentFactory& GetComponentFactory() { return pInstance_->componentFactory_; }
 		/// <summary>
 		/// ゲームのバージョンを取得
 		/// </summary>
@@ -221,6 +225,7 @@ namespace mtgb
 		if constexpr (std::is_base_of_v<IComponentPool, T>)
 		{
 			pInstance_->pComponentPools_.push_back(dynamic_cast<IComponentPool*>(pSystem));
+			pInstance_->componentFactory_.RegisterComponent<typename T::Component>();
 		}
 		if constexpr (std::is_base_of_v<IRenderableCP, T>)
 		{
