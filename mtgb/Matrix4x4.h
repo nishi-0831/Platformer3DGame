@@ -1,7 +1,7 @@
 #pragma once
 #include <DirectXMath.h>
 #include <string>
-
+#include <cmath>
 
 namespace mtgb
 {
@@ -31,6 +31,36 @@ namespace mtgb
 			return *this;
 		}
 		
+		inline bool Equals(const Matrix4x4& _other) const
+		{
+			//FLT_EPSILON
+			DirectX::XMFLOAT4X4 a{};
+			DirectX::XMFLOAT4X4 b{};
+			DirectX::XMStoreFloat4x4(&a, *this);
+			DirectX::XMStoreFloat4x4(&b, _other);
+
+			for (int i = 0; i < 4; i++)
+			{
+				for (int j = 0; j < 4; j++)
+				{
+					if (std::abs(a.m[i][j] - b.m[i][j] > FLT_EPSILON))
+					{
+						return false;
+					}
+				}
+			}
+			return false;
+		}
+
+		inline bool operator==(const Matrix4x4& _other) const
+		{
+			return Equals(_other);
+		}
+
+		inline bool operator!=(const Matrix4x4& _other) const
+		{
+			return !(*this == _other);
+		}
 		std::string ToString();
 	};
 }

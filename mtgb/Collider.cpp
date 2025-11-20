@@ -405,7 +405,7 @@ void mtgb::Collider::Draw() const
 		copyTransform = *pTransform_;
 		copyTransform.scale *= Vector3::One() * computeSphere_.Radius;
 		//copyTransform.position += computeSphere_.Center;
-		copyTransform.Compute();
+		//copyTransform.Compute();
 		Draw::FBXModel(hSphereModel_, copyTransform, 0,ShaderType::Debug3D);
 		break;
 	case ColliderType::TYPE_CAPSULE:
@@ -437,7 +437,7 @@ void mtgb::Collider::Draw() const
 			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
 		
-		copyTransform.Compute();
+		//copyTransform.Compute();
 		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::Debug3D);
 		break;
 	default:

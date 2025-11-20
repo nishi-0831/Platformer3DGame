@@ -213,11 +213,6 @@ void mtgb::MTImGui::SetupShowFunc()
             TypeRegistry::Instance().CallFunc(&_target->position, "Position");
             TypeRegistry::Instance().CallFunc(&_target->rotate, "Rotation");
             TypeRegistry::Instance().CallFunc(&_target->scale, "Scale");
-            TypeRegistry::Instance().CallFunc(&_target->localPosition_, "LocalPos");
-            TypeRegistry::Instance().CallFunc(&_target->localScale_, "LocalScale");
-            TypeRegistry::Instance().CallFunc(&_target->matrixWorld_, "MatrixWorld");
-            TypeRegistry::Instance().CallFunc(&_target->matrixLocal_, "MatrixLocal");
-
         });
 
     Set<MeshRenderer>([](MeshRenderer* _target, const char* _name)
@@ -248,6 +243,7 @@ void mtgb::MTImGui::SetupShowFunc()
     Set<Collider>([](Collider* _target, const char* _name)
         {
             ImGui::Text("Collider Property");
+            ImGui::Text("ColliderType %d", _target->colliderType);
         });
 
     Set<AudioPlayer>([](AudioPlayer* _target, const char* _name)

@@ -1,5 +1,9 @@
 #include "Transform.h"
-
+#include "MTImGui.h"
+namespace
+{
+	Matrix4x4 m;
+}
 mtgb::Transform::~Transform()
 {
 
@@ -19,18 +23,8 @@ void mtgb::Transform::Compute()
 	Matrix4x4 parentMat;
 	GenerateParentMatrix(&parentMat);
 
-	// 現在のワールド座標から行列を作成
-	Matrix4x4 currWorldMat =
-		XMMatrixScaling(scale.x, scale.y, scale.z) *
-		XMMatrixRotationQuaternion(XMQuaternionNormalize(rotate)) *
-		XMMatrixTranslation(position.x, position.y, position.z);
-
-	// ローカル行列を計算
-	Matrix4x4 parentInverse = DirectX::XMMatrixInverse(nullptr, parentMat);
-	matrixLocal_ = currWorldMat * parentInverse;
-
-	// ローカル座標系の値を更新
-	DecomposeMatrixImpl(&localPosition_, &localRotate_, &localScale_, matrixLocal_);
+	bool parentChanged = !(parentMat == prevParentMatrix_);
+	prevParentMatrix_ = parentMat;
 
 	// ローカル変換行列
 	matrixTranslate_ = XMMatrixTranslation(localPosition_.x, localPosition_.y, localPosition_.z);
@@ -38,15 +32,31 @@ void mtgb::Transform::Compute()
 		XMQuaternionNormalize(localRotate_));
 	matrixScale_ = XMMatrixScaling(localScale_.x, localScale_.y, localScale_.z);
 
-	// ワールド行列を再計算
-	matrixWorld_ = matrixLocal_ * parentMat;
-	//GenerateWorldMatrix(&matrixWorld_);             // ワールド行列更
+	// ワールド行列を計算
 	GenerateWorldRotationMatrix(&matrixWorldRot_);  // ワールド回転行列更新
-	
-	if (parent != INVALID_ENTITY)
+	// 現在のワールド座標から行列を作成
+	Matrix4x4 currWorldMat =
+		XMMatrixScaling(scale.x, scale.y, scale.z) *
+		XMMatrixRotationQuaternion(XMQuaternionNormalize(rotate)) *
+		XMMatrixTranslation(position.x, position.y, position.z);
+
+	Matrix4x4 parentInverse = DirectX::XMMatrixInverse(nullptr, parentMat);
+	matrixLocal_ = matrixScale_ * matrixRotate_ * matrixTranslate_ * parentInverse;
+	matrixWorld_ = matrixLocal_ * parentMat;
+	// ローカル行列を計算
+
+	// ローカル座標系の値を更新
+
+
+
+	DecomposeMatrixImpl(&localPosition_, &localRotate_, &localScale_, matrixLocal_);
+
+	if (parent != INVALID_ENTITY && parentChanged)
 	{
 		DecomposeMatrix(matrixWorld_);
 	}
+
+	// ワールド行列を再計算
 }
 
 void mtgb::Transform::GenerateLocalMatrix(Matrix4x4* _pMatrix) const

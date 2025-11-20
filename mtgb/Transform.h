@@ -174,6 +174,7 @@ namespace mtgb
 		Matrix4x4 matrixWorld_{};             // 計算されたワールド行列
 		Matrix4x4 matrixWorldRot_{};          // 計算されたワールド回転行列
 		Matrix4x4 matrixLocal_{};
+		Matrix4x4 prevParentMatrix_{};
 		Vector3 localPosition_;
 		Quaternion localRotate_;
 		Vector3 localScale_;
