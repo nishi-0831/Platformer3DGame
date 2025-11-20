@@ -16,8 +16,10 @@ protected:
 	void OnPostRestore() override;
 private:
 	void OnCollisionEnter(EntityId _entityId);
+	void OnCollisionExit(EntityId _entityId);
 	float dir_;
 	float elapsed_;
+	EntityId groundedEntity_;
 	Transform* pTransform_;
 	MeshRenderer* pMeshRenderer_;
 	Collider* pCollider_;

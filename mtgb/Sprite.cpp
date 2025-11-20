@@ -238,7 +238,7 @@ void mtgb::Sprite::Draw(const Transform* _pTransform, const Transform* _pCameraT
 			
 			// ボックスの座標変換
 			Matrix4x4 boxTranslate{}; 
-			_pTransform->GenerateParentMatrix(&boxTranslate);
+			_pTransform->GenerateLocalMatrix(&boxTranslate);
 
 			//// 画像サイズに合わせる
 			Matrix4x4 scalingBox = XMMatrixScaling(

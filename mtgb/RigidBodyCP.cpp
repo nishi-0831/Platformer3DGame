@@ -3,7 +3,7 @@
 #include "GameTime.h"
 #include "ColliderCP.h"
 #include <algorithm>
-
+#include "Debug.h"
 mtgb::RigidBodyCP::RigidBodyCP()
 {
 }
@@ -16,7 +16,7 @@ void mtgb::RigidBodyCP::Update()
 {
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		if (poolId_[i] != INVALID_ENTITY)
+		if (poolId_[i] == INVALID_ENTITY)
 			continue;
 
 		std::vector<Collider*> colliders{};
@@ -25,24 +25,35 @@ void mtgb::RigidBodyCP::Update()
 		rigidBody.UpdateVelocity();
 		for (auto& collider : colliders)
 		{
-
-			for (Collider* collider : collider->onColliders_)
+			for (Collider* onCollider : collider->onColliders_)
 			{
-				if (collider->onColldiersPrev_.find(collider) == collider->onColldiersPrev_.end())
+				// ˆÈ‘O‚ÍÕ“Ë‚µ‚Ä‚¢‚È‚¢‚©”Û‚©
+				if (collider->onColldiersPrev_.find(onCollider) == collider->onColldiersPrev_.end())
 				{
-					rigidBody.onHit_(collider->GetEntityId());
+					if (rigidBody.onHit_)
+					{
+						rigidBody.onHit_(onCollider->GetEntityId());
+					}
 				}
 				else
 				{
-					rigidBody.onStay_(collider->GetEntityId());
+					if (rigidBody.onStay_)
+					{
+						rigidBody.onStay_(onCollider->GetEntityId());
+					}
 				}
 			}
 
-			for (Collider* collider : collider->onColldiersPrev_)
+			for (Collider* onColliderPrev : collider->onColldiersPrev_)
 			{
-				if (collider->onColliders_.find(collider) == collider->onColliders_.end())
+				// Œ»Ý‚ÍÕ“Ë‚µ‚Ä‚¢‚È‚¢‚©”Û‚©
+				if (collider->onColliders_.find(onColliderPrev) == collider->onColliders_.end())
 				{
-					rigidBody.onExit_(collider->GetEntityId());
+					if (rigidBody.onExit_)
+					{
+						rigidBody.onExit_(onColliderPrev->GetEntityId());
+					}
+
 				}
 			}
 		}

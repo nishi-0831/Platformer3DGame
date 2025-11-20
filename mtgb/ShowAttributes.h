@@ -1,3 +1,4 @@
+
 #pragma once
 #include <refl.hpp>
 #include "../ImGui/imgui.h"
@@ -21,6 +22,14 @@ struct QuaternionSHow : refl::attr::usage::type
 struct Vector4Show : refl::attr::usage::type 
 {
 	Command* operator()(DirectX::XMVECTOR* _vec, const char* _name)const;
+};
+
+/// <summary>
+/// 行列の変更をUndo/Redo機能に対応できていない。
+/// </summary>
+struct MatrixShow : refl::attr::usage::type
+{
+	Command* operator()(DirectX::XMMATRIX* _mat, const char* _name)const;
 };
 
 template <typename T>

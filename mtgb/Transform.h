@@ -56,6 +56,11 @@ namespace mtgb
 		void Compute();
 
 		/// <summary>
+		/// ローカル行列を生成する
+		/// </summary>
+		/// <param name="_pMatrix">行列のポインタ渡し</param>
+		void GenerateLocalMatrix(Matrix4x4* _pMatrix) const;
+		/// <summary>
 		/// ワールド行列を生成する
 		/// </summary>
 		/// <param name="_pMatrix">行列のポインタ渡し</param>
@@ -77,6 +82,12 @@ namespace mtgb
 		void GenerateParentRotationMatrix(Matrix4x4* _pMatrix) const;
 
 		/// <summary>
+		/// 行列をスケール、回転、移動成分に分割、適用する
+		/// </summary>
+		/// <param name="_matrix">変換に使用する行列</param>
+		/// <returns>  </returns>
+		bool DecomposeMatrix(const Matrix4x4& _matrix);
+		/// <summary>
 		/// 親のStatefulTransformを取得
 		/// </summary>
 		/// <returns>StatefulTransformのポインタ</returns>
@@ -85,7 +96,7 @@ namespace mtgb
 		/// 親のStatefulTransformを設定
 		/// </summary>
 		/// <param name="_entityId">親にするエンティティ識別子</param>
-		void SetParent(const EntityId _entityId) { parent = _entityId; }
+		void SetParent(const EntityId _entityId);
 
 		/// <summary>
 		/// 回転する
@@ -143,6 +154,8 @@ namespace mtgb
 
 		void OnPostRestore() override;
 	private:
+		bool DecomposeMatrixImpl(Vector3* _pPos, Quaternion* _pRot, Vector3* _pScale, const Matrix4x4& _matrix);
+
 		/// <summary>
 		/// 計算用自分自身のワールド行列を生成する
 		/// </summary>
@@ -160,6 +173,10 @@ namespace mtgb
 		Matrix4x4 matrixScale_{};             // 計算された拡縮行列
 		Matrix4x4 matrixWorld_{};             // 計算されたワールド行列
 		Matrix4x4 matrixWorldRot_{};          // 計算されたワールド回転行列
+		Matrix4x4 matrixLocal_{};
+		Vector3 localPosition_;
+		Quaternion localRotate_;
+		Vector3 localScale_;
 	private:
 
 	};

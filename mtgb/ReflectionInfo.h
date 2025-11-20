@@ -10,6 +10,7 @@
 #include "ShowAttributes.h"
 #include "ColliderData.h"
 #include "RigidBodyData.h"
+#include "Matrix4x4.h"
 //#include "TypeRegistryImpl.h"
 #include <string>
 using namespace mtgb;
@@ -24,6 +25,9 @@ REGISTER_TYPE(Vector3,ShowFunc(Vector3Show{}))
 REGISTER_FIELD(x)
 REGISTER_FIELD(y)
 REGISTER_FIELD(z)
+REGISTER_END
+
+REGISTER_TYPE(Matrix4x4,ShowFunc(MatrixShow{}))
 REGISTER_END
 
 REGISTER_TYPE(JoystickProxy)

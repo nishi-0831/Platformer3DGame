@@ -209,9 +209,15 @@ void mtgb::MTImGui::SetupShowFunc()
 
     Set<Transform>([](Transform* _target, const char* _name)
         {
+            ImGui::Text("Parent: %lld", _target->parent);
             TypeRegistry::Instance().CallFunc(&_target->position, "Position");
             TypeRegistry::Instance().CallFunc(&_target->rotate, "Rotation");
             TypeRegistry::Instance().CallFunc(&_target->scale, "Scale");
+            TypeRegistry::Instance().CallFunc(&_target->localPosition_, "LocalPos");
+            TypeRegistry::Instance().CallFunc(&_target->localScale_, "LocalScale");
+            TypeRegistry::Instance().CallFunc(&_target->matrixWorld_, "MatrixWorld");
+            TypeRegistry::Instance().CallFunc(&_target->matrixLocal_, "MatrixLocal");
+
         });
 
     Set<MeshRenderer>([](MeshRenderer* _target, const char* _name)

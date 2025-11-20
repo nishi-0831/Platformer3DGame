@@ -38,3 +38,19 @@ Command* Vector4Show::operator()(DirectX::XMVECTOR* _vec, const char* _name) con
 
 	return new ImGuiInputCommand<DirectX::XMVECTOR>(_vec, old, *_vec,_name);
 }
+
+Command* MatrixShow::operator()(DirectX::XMMATRIX* _mat, const char* _name) const
+{
+	DirectX::XMMATRIX old = *_mat;
+
+	Vector4Show xShow;
+	xShow(&_mat->r[0], "x");
+	Vector4Show yShow;
+	yShow(&_mat->r[1], "y");
+	Vector4Show zShow;
+	zShow(&_mat->r[2], "z");
+	Vector4Show wShow;
+	wShow(&_mat->r[3], "w");
+	
+	return nullptr;
+}
