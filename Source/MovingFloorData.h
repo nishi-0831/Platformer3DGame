@@ -3,6 +3,6 @@
 struct MovingFloorData
 {
 	float duration;
-	Vector3 to;
-	Vector3 from;
+	mtgb::Vector3 to;
+	mtgb::Vector3 from;
 };

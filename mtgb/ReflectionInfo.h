@@ -10,6 +10,7 @@
 #include "ShowAttributes.h"
 #include "ColliderData.h"
 #include "RigidBodyData.h"
+#include "../Source/MovingFloorData.h"
 #include "Matrix4x4.h"
 //#include "TypeRegistryImpl.h"
 #include <string>
@@ -82,4 +83,10 @@ REGISTER_END
 REGISTER_TYPE(RigidBodyData,DisplayName{"RigidBody"})
 REGISTER_FIELD(useGravity)
 REGISTER_FIELD(isKinematic)
+REGISTER_END
+
+REGISTER_TYPE(MovingFloorData,DisplayName{"MovingFloor"})
+REGISTER_FIELD(duration)
+REGISTER_FIELD(to)
+REGISTER_FIELD(from)
 REGISTER_END

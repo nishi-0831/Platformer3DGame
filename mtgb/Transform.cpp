@@ -20,43 +20,39 @@ void mtgb::Transform::Compute()
 	using DirectX::XMMatrixScaling;
 
 	// 親の行列を取得
-	Matrix4x4 parentMat;
+	Matrix4x4 parentMat{};
 	GenerateParentMatrix(&parentMat);
+	
 
-	bool parentChanged = !(parentMat == prevParentMatrix_);
-	prevParentMatrix_ = parentMat;
-
-	// ローカル変換行列
-	matrixTranslate_ = XMMatrixTranslation(localPosition_.x, localPosition_.y, localPosition_.z);
-	matrixRotate_ = XMMatrixRotationQuaternion(
-		XMQuaternionNormalize(localRotate_));
-	matrixScale_ = XMMatrixScaling(localScale_.x, localScale_.y, localScale_.z);
-
-	// ワールド行列を計算
-	GenerateWorldRotationMatrix(&matrixWorldRot_);  // ワールド回転行列更新
 	// 現在のワールド座標から行列を作成
 	Matrix4x4 currWorldMat =
 		XMMatrixScaling(scale.x, scale.y, scale.z) *
 		XMMatrixRotationQuaternion(XMQuaternionNormalize(rotate)) *
 		XMMatrixTranslation(position.x, position.y, position.z);
+	Matrix4x4 parentInverse = DirectX::XMMatrixInverse(nullptr, prevParentMatrix_);
 
-	Matrix4x4 parentInverse = DirectX::XMMatrixInverse(nullptr, parentMat);
-	matrixLocal_ = matrixScale_ * matrixRotate_ * matrixTranslate_ * parentInverse;
-	matrixWorld_ = matrixLocal_ * parentMat;
-	// ローカル行列を計算
-
-	// ローカル座標系の値を更新
-
-
-
+	matrixLocal_ = currWorldMat * parentInverse;
 	DecomposeMatrixImpl(&localPosition_, &localRotate_, &localScale_, matrixLocal_);
 
-	if (parent != INVALID_ENTITY && parentChanged)
-	{
-		DecomposeMatrix(matrixWorld_);
-	}
+	matrixTranslate_ = XMMatrixTranslation(localPosition_.x, localPosition_.y, localPosition_.z);
+	matrixRotate_ = XMMatrixRotationQuaternion(
+		XMQuaternionNormalize(localRotate_));
+	matrixScale_ = XMMatrixScaling(localScale_.x, localScale_.y, localScale_.z);
 
-	// ワールド行列を再計算
+	GenerateWorldMatrix(&matrixWorld_);
+	// ワールド行列を計算
+	GenerateWorldRotationMatrix(&matrixWorldRot_);  // ワールド回転行列更新
+
+	// ワールド行列からワールド座標系の値を逆算して更新
+	DecomposeMatrixImpl(&position, &rotate, &scale, matrixWorld_);
+	if (parent != INVALID_ENTITY)
+	{
+		m = matrixLocal_ * matrixWorld_;
+		MTImGui::Instance().TypedShow(&m, "Mat");
+		//DecomposeMatrix(m);
+	}
+	bool parentChanged = !(parentMat == prevParentMatrix_);
+	prevParentMatrix_ = parentMat;
 }
 
 void mtgb::Transform::GenerateLocalMatrix(Matrix4x4* _pMatrix) const
@@ -139,6 +135,9 @@ void mtgb::Transform::SetParent(const EntityId _entityId)
 		DecomposeMatrixImpl(&localPosition_, &localRotate_, &localScale_, localMatrix);
 		
 		parent = _entityId;
+
+		GenerateParentMatrix(&prevParentMatrix_);
+		Compute();
 	}
 }
 

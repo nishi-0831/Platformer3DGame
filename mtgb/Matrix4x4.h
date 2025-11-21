@@ -49,7 +49,7 @@ namespace mtgb
 					}
 				}
 			}
-			return false;
+			return true;
 		}
 
 		inline bool operator==(const Matrix4x4& _other) const

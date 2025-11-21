@@ -213,6 +213,9 @@ void mtgb::MTImGui::SetupShowFunc()
             TypeRegistry::Instance().CallFunc(&_target->position, "Position");
             TypeRegistry::Instance().CallFunc(&_target->rotate, "Rotation");
             TypeRegistry::Instance().CallFunc(&_target->scale, "Scale");
+            TypeRegistry::Instance().CallFunc(&_target->matrixWorld_, "MatrixWorld");
+            TypeRegistry::Instance().CallFunc(&_target->matrixLocal_, "MatrixLocal");
+            TypeRegistry::Instance().CallFunc(&_target->prevParentMatrix_, "PrevParent");
         });
 
     Set<MeshRenderer>([](MeshRenderer* _target, const char* _name)
