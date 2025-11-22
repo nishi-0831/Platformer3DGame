@@ -45,12 +45,7 @@ void mtgb::Transform::Compute()
 
 	// ワールド行列からワールド座標系の値を逆算して更新
 	DecomposeMatrixImpl(&position, &rotate, &scale, matrixWorld_);
-	if (parent != INVALID_ENTITY)
-	{
-		m = matrixLocal_ * matrixWorld_;
-		MTImGui::Instance().TypedShow(&m, "Mat");
-		//DecomposeMatrix(m);
-	}
+
 	bool parentChanged = !(parentMat == prevParentMatrix_);
 	prevParentMatrix_ = parentMat;
 }
@@ -123,13 +118,11 @@ void mtgb::Transform::SetParent(const EntityId _entityId)
 	if (_entityId == GetEntityId() || _entityId == parent)
 		return;
 
-	if (_entityId == INVALID_ENTITY)
-	{
+	Transform& parentTransform = Get(_entityId);
 
-	}
+	
 	if (parent == INVALID_ENTITY)
 	{ 
-		Transform& parentTransform = Get(_entityId);
 		Matrix4x4 parentInverse = DirectX::XMMatrixInverse(nullptr, parentTransform.matrixWorld_);
 		Matrix4x4 localMatrix = matrixWorld_ * parentInverse;
 		DecomposeMatrixImpl(&localPosition_, &localRotate_, &localScale_, localMatrix);
@@ -137,8 +130,14 @@ void mtgb::Transform::SetParent(const EntityId _entityId)
 		parent = _entityId;
 
 		GenerateParentMatrix(&prevParentMatrix_);
-		Compute();
 	}
+	else if (_entityId == INVALID_ENTITY)
+	{
+		matrixLocal_ = matrixWorld_;
+		parent = _entityId;
+		prevParentMatrix_ = DirectX::XMMatrixIdentity();
+	}
+	Compute();
 }
 
 void mtgb::Transform::Rotation(const Vector3& _rotate)

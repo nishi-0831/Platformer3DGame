@@ -27,7 +27,7 @@ MovingFloor::MovingFloor(EntityId _entityId)
 		});
 	pRigidBody_->OnCollisionExit([this](EntityId _id)
 		{
-			//OnCollisionExit(_id);
+			OnCollisionExit(_id);
 		});
 	
 
@@ -100,7 +100,6 @@ void MovingFloor::OnCollisionEnter(EntityId _entityId)
 	
 	otherTransform.SetParent(GetEntityId());
 
-	otherTransform.Compute();
 	LOGIMGUI("OnCollisionEnter");
 
 }
@@ -115,21 +114,11 @@ void MovingFloor::OnCollisionExit(EntityId _entityId)
 
 	if (groundedEntity_ != _entityId)
 		return;
+	Transform& otherTransform = Transform::Get(_entityId);
 
-	Transform& childTransform = Transform::Get(groundedEntity_);
-	Matrix4x4 localMat;
-	childTransform.GenerateLocalMatrix(&localMat);
-
-	Matrix4x4 parentMat;
-	pTransform_->GenerateWorldMatrix(&parentMat);
-
-	Matrix4x4 newMat = localMat * parentMat;
-	childTransform.DecomposeMatrix(newMat);
-	childTransform.SetParent(INVALID_ENTITY);
-
-	childTransform.Compute();
-
+	otherTransform.SetParent(INVALID_ENTITY);
 	groundedEntity_ = INVALID_ENTITY;
+
 
 	LOGIMGUI("OnCollisionExit");
 }
