@@ -46,7 +46,6 @@ void mtgb::Transform::Compute()
 	// ワールド行列からワールド座標系の値を逆算して更新
 	DecomposeMatrixImpl(&position, &rotate, &scale, matrixWorld_);
 
-	bool parentChanged = !(parentMat == prevParentMatrix_);
 	prevParentMatrix_ = parentMat;
 }
 
