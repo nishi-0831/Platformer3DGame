@@ -342,7 +342,7 @@ void mtgb::Collider::Push(const Collider& _other)
 
 	EntityId sphereTypeEntityId = INVALID_ENTITY;
 
-	// ‹…‚ÆAABB‚Ì‚İ‰Ÿ‚µo‚µ‚ğÀ‘•‚µ‚Ä‚¢‚é‚ğÀ‘•‚µ‚Ä‚¢‚é
+	// ‹…‚ÆAABB‚Ì‚İ‰Ÿ‚µo‚µ‚ğÀ‘•‚µ‚Ä‚¢‚é
 	if (colliderType == ColliderType::TYPE_SPHERE && _other.colliderType == ColliderType::TYPE_AABB)
 	{
 		sphereTypeEntityId = GetEntityId();

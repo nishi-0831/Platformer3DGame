@@ -503,7 +503,10 @@ ControllerType mtgb::Input::GetControllerTypeByVendor(ComPtr<IDirectInputDevice8
 	{
 		return ControllerType::Xbox;
 	}
-
+	if (productId == VENDOR_ID_XBOX)
+	{
+		return ControllerType::Xbox;
+	}
 	return ControllerType::Unknown;
 }
 

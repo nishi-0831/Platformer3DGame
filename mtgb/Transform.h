@@ -49,7 +49,6 @@ namespace mtgb
 			return *this;
 		}
 
-
 		/// <summary>
 		/// 計算する
 		/// </summary>
@@ -97,7 +96,15 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_entityId">親にするエンティティ識別子</param>
 		void SetParent(const EntityId _entityId);
-
+		/// <summary>
+		/// 親子関係解消
+		/// </summary>
+		void UnsetParent();
+		/// <summary>
+		/// 親がいるか否か
+		/// </summary>
+		/// <returns>親がいる場合true、いない場合false</returns>
+		bool HasParent();
 		/// <summary>
 		/// 回転する
 		/// </summary>
@@ -178,6 +185,7 @@ namespace mtgb
 		Vector3 localPosition_;
 		Quaternion localRotate_;
 		Vector3 localScale_;
+		std::vector<EntityId> children_;
 	private:
 
 	};

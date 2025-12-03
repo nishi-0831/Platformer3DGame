@@ -116,7 +116,8 @@ void MovingFloor::OnCollisionExit(EntityId _entityId)
 		return;
 	Transform& otherTransform = Transform::Get(_entityId);
 
-	otherTransform.SetParent(INVALID_ENTITY);
+	otherTransform.UnsetParent();
+	//otherTransform.SetParent(INVALID_ENTITY);
 	groundedEntity_ = INVALID_ENTITY;
 
 

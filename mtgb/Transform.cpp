@@ -1,5 +1,6 @@
 #include "Transform.h"
 #include "MTImGui.h"
+#include "algorithm"
 namespace
 {
 	Matrix4x4 m;
@@ -22,14 +23,13 @@ void mtgb::Transform::Compute()
 	// e‚Ìs—ñ‚ðŽæ“¾
 	Matrix4x4 parentMat{};
 	GenerateParentMatrix(&parentMat);
-	
 
 	// Œ»Ý‚Ìƒ[ƒ‹ƒhÀ•W‚©‚çs—ñ‚ðì¬
 	Matrix4x4 currWorldMat =
 		XMMatrixScaling(scale.x, scale.y, scale.z) *
 		XMMatrixRotationQuaternion(XMQuaternionNormalize(rotate)) *
 		XMMatrixTranslation(position.x, position.y, position.z);
-	Matrix4x4 parentInverse = DirectX::XMMatrixInverse(nullptr, prevParentMatrix_);
+	Matrix4x4 parentInverse = DirectX::XMMatrixInverse(nullptr, parentMat);
 
 	matrixLocal_ = currWorldMat * parentInverse;
 	DecomposeMatrixImpl(&localPosition_, &localRotate_, &localScale_, matrixLocal_);
@@ -115,11 +115,17 @@ mtgb::Transform* mtgb::Transform::GetParent() const
 
 void mtgb::Transform::SetParent(const EntityId _entityId)
 {
+	// Ž©•ªŽ©gAŽ©•ª‚Ìe‚Ìê‡‚Íreturn
 	if (_entityId == GetEntityId() || _entityId == parent)
 		return;
 
 	Transform& parentTransform = Get(_entityId);
 
+	// Šù‚ÉŽq‚Æ‚µ‚Ä“o˜^‚µ‚Ä‚¢‚éê‡‚Íreturn
+	for (EntityId id : parentTransform.children_)
+	{
+		if (id == _entityId) return;
+	}
 	
 	if (parent == INVALID_ENTITY)
 	{ 
@@ -137,7 +143,30 @@ void mtgb::Transform::SetParent(const EntityId _entityId)
 		parent = _entityId;
 		prevParentMatrix_ = DirectX::XMMatrixIdentity();
 	}
+	parentTransform.children_.push_back(GetEntityId());
 	Compute();
+}
+
+void mtgb::Transform::UnsetParent()
+{
+	matrixLocal_ = matrixWorld_;
+	prevParentMatrix_ = DirectX::XMMatrixIdentity();
+
+	Transform& parentTransform = Get(parent);
+
+	// Žq‚ð“o˜^‰ðœ
+	std::remove_if(parentTransform.children_.begin(), parentTransform.children_.end(), [id = GetEntityId()](EntityId _childId)
+		{
+			return id == _childId;
+		});
+
+	// e‚ð“o˜^‰ðœ
+	parent = INVALID_ENTITY;
+}
+
+bool mtgb::Transform::HasParent()
+{
+	return parent != INVALID_ENTITY;
 }
 
 void mtgb::Transform::Rotation(const Vector3& _rotate)
@@ -146,7 +175,6 @@ void mtgb::Transform::Rotation(const Vector3& _rotate)
 	using DirectX::XMQuaternionRotationRollPitchYaw;
 	using DirectX::XMQuaternionNormalize;
 
-	//rotate
 	rotate = XMQuaternionMultiply(
 		rotate,
 		XMQuaternionRotationRollPitchYaw(_rotate.x, _rotate.y, _rotate.z));
@@ -178,12 +206,9 @@ void mtgb::Transform::OnPostRestore()
 	Compute();
 }
 
-
-
 void mtgb::Transform::GenerateWorldMatrixSelf(Matrix4x4* _pMatrix) const
 {
 	if (parent != INVALID_ENTITY)
-
 	{
 		GetParent()->GenerateWorldMatrixSelf(_pMatrix);
 		*_pMatrix = matrixScale_ * matrixRotate_ * matrixTranslate_ * (*_pMatrix);

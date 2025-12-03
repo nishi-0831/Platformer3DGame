@@ -112,8 +112,7 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 				orbitSpeed_ = 0.5f;
 				angleLerpProgress_ = 0.0f;
 				easedProgress = 0.0f;
-				// 目標角度へ滑らかに補間
-				
+				// 目標角度へ補間
 				lookAtPosLerpProgress += 0.3f * Time::DeltaTimeF();
 			});
 }
@@ -129,7 +128,7 @@ void mtgb::Camera::Update()
 
 	isTargetInDeadZone = IsTargetInDeadZone();
 
-	// ImGui表示（デバッグ用）
+	// ImGui表示(デバッグ用)
 	MTImGui::Instance().DirectShow([&]()
 	{
 		TypeRegistry::Instance().CallFunc<Transform>(pCameraTransform_, "Transform");
