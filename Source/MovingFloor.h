@@ -13,18 +13,13 @@ public:
 	
 	void Update();
 	
-	/// <summary>
-	/// 補間の進行状況を更新する
-	/// 経過時間を進め、端まで到達した場合は移動方向を反転する
-	/// </summary>
+	
 	void UpdateProgress();
-	/// <summary>
-	/// 現在の進行状況で補間された値を返す
-	/// </summary>
-	/// <returns></returns>
+	
 	Vector3 Evaluate();
 protected:
 	void OnPostRestore() override;
+	void OnPreSave() override;
 private:
 	void OnCollisionEnter(EntityId _entityId);
 	void OnCollisionExit(EntityId _entityId);

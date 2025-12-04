@@ -11,6 +11,7 @@
 #include "ColliderState.h"
 #include "RigidBodyState.h"
 #include "../Source/MovingFloorState.h"
+#include "Interpolator.h"
 #include "Matrix4x4.h"
 //#include "TypeRegistryImpl.h"
 #include <string>
@@ -48,7 +49,6 @@ REGISTER_FIELD(deviceName)
 REGISTER_FIELD(deviceProductName)
 REGISTER_END
 
-
 REGISTER_TYPE(MouseStateProxy)
 REGISTER_FIELD(lX)
 REGISTER_FIELD(lY)
@@ -56,6 +56,13 @@ REGISTER_FIELD(lZ)
 REGISTER_FIELD(rgbButtons)
 REGISTER_END
 
+REGISTER_TYPE(Interpolator)
+REGISTER_FIELD(dir)
+REGISTER_FIELD(elapsed)
+REGISTER_FIELD(duration)
+REGISTER_FIELD(start)
+REGISTER_FIELD(end)
+REGISTER_END
 
 REGISTER_TYPE(TransformState, DisplayName{ "Transform" })
 REGISTER_FIELD(parent)

@@ -21,8 +21,13 @@ namespace mtgb
 		virtual void Initialize() override {};
 		StatefulComponent();
 		StatefulComponent(TState&& _data, EntityId _entityId);
-		Memento* SaveToMemento() const
+		/// <summary>
+		/// 状態、EntityIdをメメントに保存、返す
+		/// </summary>
+		/// <returns>返されるメメント</returns>
+		Memento* SaveToMemento()
 		{
+			OnPreSave();
 			return new Memento(this->GetEntityId(), static_cast<const TState&>(*this));
 		}
 		void CopyData(const TState& _data)
@@ -33,6 +38,10 @@ namespace mtgb
 		{
 			static_cast<TState&>(*this) = std::move(_data);
 		}
+		/// <summary>
+		/// メメントから復元を行う
+		/// </summary>
+		/// <param name="_memento">復元に使われるメメント</param>
 		void RestoreFromMemento(const Memento& _memento)
 		{
 			const TState& data = _memento.GetState();
@@ -41,8 +50,14 @@ namespace mtgb
 			OnPostRestore();
 		}
 
+		/// <summary>
+		/// シリアライズを行い、JSONを返す
+		/// </summary>
+		/// <returns></returns>
 		nlohmann::json Serialize()
 		{
+
+			OnPreSave();
 			// 状態のみを持たせたTDataに変換
 			TState& data = static_cast<TState&>(*this);
 
@@ -104,7 +119,13 @@ namespace mtgb
 		{
 			// デフォルトでは何もしない
 		}
-
+		/// <summary>
+		/// メメント保存、シリアライズの直前に呼ばれるフック
+		/// </summary>
+		virtual void OnPreSave()
+		{
+			// デフォルトでは何もしない
+		}
 
 	private:
 	};
