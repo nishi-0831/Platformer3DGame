@@ -148,7 +148,7 @@ void mtgb::ImGuiEditorCamera::CreateCamera()
 		GameObjectBuilder()
 		.SetPosition({ 0,0,0 })
 		.SetRotate(Quaternion::Euler(INIT_ANGLE))
-		.SetName("Camera")
+		.SetName("EditorCamera")
 		.Build());
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 

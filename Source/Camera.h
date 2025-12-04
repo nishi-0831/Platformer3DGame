@@ -3,7 +3,7 @@
 
 namespace mtgb
 {
-	class Camera : public GameObject, public ICamera
+	class Camera : public GameObject
 	{
 	public:
 		Camera();
@@ -13,11 +13,9 @@ namespace mtgb
 		void Update() override;
 		void Draw() const override;
 
+		void DoOrbit();
 		void SetFollowMode(bool _isGrounded, const Vector3& _targetVelocity);
-		void SetDeadZone(float _screenPercentageX, float _screenPercentageY);
-		void MoveCameraSpherical(float _distance) override;
-		bool IsTargetInDeadZone() const;
-
+		void MoveCameraSpherical(float _distance);
 	private:
 		enum class CameraState
 		{
@@ -29,32 +27,27 @@ namespace mtgb
 		};
 		mtstat::MTStat<CameraState> cameraStat_;
 
+		Transform* pCameraTransform_;
+		Transform* pTargetTransform_;
+		InputType inputType_;
+		float polarAngleRad_;
+		float azimuthalAngleRad_;
+		// -Y側、下側が0度、+Y側、上側が90度
+		float minPolarAngleRad_, maxPolarAngleRad_;
+		// +X側、右側が0度、-X側、左側が90度
+		float minAzimuthalAngleRad_, maxAzimuthalAngleRad_;
+		Vector3 lookAtPositionOffset_;
+		float orbitSpeed_;
+		float distance_;
 		// ジャンプ状態管理
-		float targetCameraLerpSpeed_;	// カメラ位置の補間速度
-		float targetAngleLerpSpeed_;	// 角度変更の補間速度
-
-		// ジャンプパラメータ
-		float groundedPolarAngleDeg_;		// 着地時の角度
-		float jumpAscendingPolarAngleDeg_;	// ジャンプ上昇時の角度
-
-		float lerpedPolarAngleStart_;
-		float angleLerpProgress_;
 		bool isGrounded_;
-		bool wasGrounded_;
 		Vector3 targetVelocityCache_;
-		float lastGroundedY;
 		float lookAtPosLerpProgress;
 		float baseY;
 		float distY;
-		// デッドゾーン関連
-		float deadZoneScreenX_;
-		float deadZoneScreenYMin_;
-		float deadZoneScreenYMax_;
-		bool useDeadZone_;
 
 		// ヘルパー関数
 		void UpdateCameraState();
-		void UpdateCameraAngle(float _deltaTime);
 	};
 }
 

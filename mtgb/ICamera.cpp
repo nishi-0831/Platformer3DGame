@@ -9,6 +9,9 @@ mtgb::ICamera::ICamera()
 	, azimuthalAngleRad_{ 0.0f }
 	, followTarget_{false}
 	, adjustTargetDirection_{false}
+	, inputType_{InputType::MOUSE}
+	, orbitSpeed_{1.0f}
+	, rotateSensitivity_{1.0f}
 	, distance_{5.0f}
 	// デフォルトの角度制限（ラジアン）
 	, minPolarAngleRad_{ DirectX::XMConvertToRadians(0.1f)}

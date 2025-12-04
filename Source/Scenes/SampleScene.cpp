@@ -28,10 +28,13 @@ void SampleScene::Initialize()
 	if (json.has_value())
 	{
 		GameObjectGenerator::GenerateFromJson(json);
+		// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる
+		// TODO: マジックナンバーを修正
+		Time::WaitFrame(2);
 	}
 	else
 	{
-		assert(false);
+		assert(false && "JSONファイルが見つかりません");
 	}
 }
 

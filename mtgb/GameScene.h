@@ -29,6 +29,12 @@ namespace mtgb
 
 		template<class GameObjectT, typename ...Args>
 		GameObjectT* Instantiate(Args... _args);
+		/// <summary>
+		/// ゲームオブジェクトをシーンに登録する。
+		/// 既に登録されている場合は再度の登録はしない
+		/// TODO: 手動の場合、登録し忘れが発生する恐れがある。自動にすべき
+		/// </summary>
+		/// <param name="_pGameObject">登録するゲームオブジェクト</param>
 		void RegisterGameObject(GameObject* _pGameObject);
 
 		/// <summary>

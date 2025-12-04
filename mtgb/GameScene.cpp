@@ -19,6 +19,12 @@ mtgb::GameScene::~GameScene()
 
 void mtgb::GameScene::RegisterGameObject(GameObject* _pGameObject)
 {
+	for (GameObject* pObj : pGameObjects_)
+	{
+		// Šù‚É“o˜^Ï‚Ý‚Ìê‡‚Í‰½‚à‚µ‚È‚¢
+		if (pObj->GetEntityId() == _pGameObject->GetEntityId())
+			return;
+	}
 	pGameObjects_.push_back(_pGameObject);
 }
 
