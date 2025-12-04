@@ -1,7 +1,7 @@
 #pragma once
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
-#include "AudioPlayerData.h"
+#include "AudioPlayerState.h"
 #include "AudioPlayerCP.h"
 #include "Handlers.h"
 
@@ -15,12 +15,12 @@ namespace mtgb
 	/// <summary>
 	/// âπê∫Ççƒê∂Ç∑ÇÈÇ‚Ç¬
 	/// </summary>
-	class AudioPlayer : public StatefulComponent<AudioPlayer, AudioPlayerCP,AudioPlayerData>
+	class AudioPlayer : public StatefulComponent<AudioPlayer, AudioPlayerCP,AudioPlayerState>
 	{
 		friend AudioPlayerCP;
 
 	public:
-		using StatefulComponent<AudioPlayer, AudioPlayerCP, AudioPlayerData>::StatefulComponent;
+		using StatefulComponent<AudioPlayer, AudioPlayerCP, AudioPlayerState>::StatefulComponent;
 		//AudioPlayer();
 		~AudioPlayer();
 
@@ -55,5 +55,5 @@ namespace mtgb
 		AudioClip* pAudioClip_{ nullptr };
 	};
 
-	using AudioPlayerMemento = ComponentMemento<AudioPlayer, AudioPlayerData>;
+	using AudioPlayerMemento = ComponentMemento<AudioPlayer, AudioPlayerState>;
 }

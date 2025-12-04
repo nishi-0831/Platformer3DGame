@@ -52,18 +52,14 @@ MovingFloor::MovingFloor(EntityId _entityId)
 
 void MovingFloor::Update()
 {
+	// エディタ側で
 	to = pToTransform_->position;
 	from = pFromTransform_->position;
 
-	elapsed_ += Time::DeltaTimeF() * dir_;
-	float progress = elapsed_ / duration;
-	pTransform_->position = Mathf::Lerp(pToTransform_->position, pFromTransform_->position, progress);
+	UpdateProgress();
+	pTransform_->position = Evaluate();
 
-	if (progress > 1.0f || progress < 0.0f)
-	{
-		dir_ *= -1.0f;
-		elapsed_ = std::clamp(elapsed_, 0.0f, 1.0f);
-	}
+	// ImGuiにプロパティを表示
 	MTImGui::Instance().DirectShow([this]() 
 		{
 			for (auto collider : pCollider_->onColliders_)
@@ -74,6 +70,23 @@ void MovingFloor::Update()
 
 			}
 		}, "MovingFloor", ShowType::Inspector);
+}
+
+void MovingFloor::UpdateProgress()
+{
+	elapsed_ += Time::DeltaTimeF() * dir_;
+	float progress = elapsed_ / duration;
+	if (progress > 1.0f || progress < 0.0f)
+	{
+		dir_ *= -1.0f;
+		elapsed_ = std::clamp(elapsed_, 0.0f, 1.0f);
+	}
+}
+
+Vector3 MovingFloor::Evaluate()
+{
+	float progress = elapsed_ / duration;
+	return Mathf::Lerp(pToTransform_->position, pFromTransform_->position, progress);
 }
 
 void MovingFloor::OnPostRestore()

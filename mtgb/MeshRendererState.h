@@ -9,7 +9,7 @@ namespace mtgb
 	/// <summary>
 	/// MeshRenderer‚Ìó‘Ô‚Ì‚İ‚ğ•Û‚·‚é\‘¢‘Ì
 	/// </summary>
-	struct MeshRendererData
+	struct MeshRendererState
 	{
 		std::string meshFileName;
 		FBXModelHandle meshHandle{ INVALID_ENTITY };

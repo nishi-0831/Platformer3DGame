@@ -8,7 +8,7 @@ namespace mtgb
 	/// <summary>
 	/// Transform‚Ìó‘Ô‚Ì‚İ‚ğ•Û‚·‚é\‘¢‘Ì
 	/// </summary>
-	struct TransformData
+	struct TransformState
 	{
         EntityId parent{ INVALID_ENTITY };
         Vector3 position{ 0.0f, 0.0f, 0.0f };

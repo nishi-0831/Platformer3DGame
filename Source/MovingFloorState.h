@@ -1,6 +1,6 @@
 #pragma once
 #include "Vector3.h"
-struct MovingFloorData
+struct MovingFloorState
 {
 	float duration;
 	mtgb::Vector3 to;

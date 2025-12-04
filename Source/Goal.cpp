@@ -52,22 +52,22 @@ std::vector<IComponentMemento*> Goal::GetDefaultMementos(EntityId _entityId) con
 {
     std::vector<IComponentMemento*> mementos;
 
-    TransformData transformData
+    TransformState transformState
     {
         .position{0,1,5},
         .scale{1,1,1}
     };
 
-    ColliderData colliderData
+    ColliderState colliderState
     {
         .colliderType{ColliderType::TYPE_AABB},
         .isStatic{false},
         .colliderTag{},
-        .center{transformData.position},
-        .extents{transformData.scale * 0.5f}
+        .center{transformState.position},
+        .extents{transformState.scale * 0.5f}
     };
 
-    MeshRendererData meshData
+    MeshRendererState meshData
     {
         .meshFileName{"Model/Box.fbx"},
         .meshHandle{Fbx::Load(meshData.meshFileName)},
@@ -75,8 +75,8 @@ std::vector<IComponentMemento*> Goal::GetDefaultMementos(EntityId _entityId) con
         .shaderType{ShaderType::FbxParts}
     };
 
-    mementos.push_back(new TransformMemento(_entityId, transformData));
-    mementos.push_back(new ColliderMemento(_entityId, colliderData));
+    mementos.push_back(new TransformMemento(_entityId, transformState));
+    mementos.push_back(new ColliderMemento(_entityId, colliderState));
     mementos.push_back(new MeshRendererMemento(_entityId, meshData));
     return mementos;
 }

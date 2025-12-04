@@ -1,7 +1,7 @@
 #pragma once
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
-#include "TransformData.h"
+#include "TransformState.h"
 
 #include "Vector3.h"
 #include "Vector3Ref.h"
@@ -16,12 +16,12 @@ namespace mtgb
 
 	class TransformCP;
 
-	class Transform : public StatefulComponent<Transform, TransformCP, TransformData>
+	class Transform : public StatefulComponent<Transform, TransformCP, TransformState>
 	{
 	public:
 		friend TransformCP;
 
-		using StatefulComponent<Transform, TransformCP, TransformData>::StatefulComponent;
+		using StatefulComponent<Transform, TransformCP, TransformState>::StatefulComponent;
 		Transform()
 		{
 
@@ -182,5 +182,5 @@ namespace mtgb
 
 	};
 
-	using TransformMemento = ComponentMemento<Transform, TransformData>;
+	using TransformMemento = ComponentMemento<Transform, TransformState>;
 }
