@@ -33,4 +33,6 @@ private:
 	Transform* pTargetTransform_;
 	// ”­Œ©‚Æ”»’è‚·‚éŠp“x
 	float foundFOV_;
+	// „‰ñ‚Ég‚¤
+	Interpolator interpolator_;
 };

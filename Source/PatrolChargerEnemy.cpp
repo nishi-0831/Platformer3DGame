@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "PatrolChargerEnemy.h"
-
+#include "Debug.h"
 
 PatrolChargerEnemy::PatrolChargerEnemy()
     : pTransform_{Component<Transform>( GetEntityId())}
@@ -10,7 +10,7 @@ PatrolChargerEnemy::PatrolChargerEnemy()
     , pTargetTransform_{nullptr}
     , foundFOV_{45.0f}
 {
-
+    
 }
 
 PatrolChargerEnemy::~PatrolChargerEnemy()
@@ -27,7 +27,15 @@ void PatrolChargerEnemy::Draw() const
 
 void PatrolChargerEnemy::Start()
 {
-   
+    // Tag‚ªPlayer‚ÌGameObject‚ð’T‚·
+    GameObject* targetGameObj = FindGameObject(GameObjectTag::Player);
+    if (targetGameObj == nullptr)
+    {
+        LOGIMGUI("Not Found Target");
+        return;
+    }
+
+    pTargetTransform_ = &Transform::Get(targetGameObj->GetEntityId());
 }
 
 void PatrolChargerEnemy::ShowImGui()

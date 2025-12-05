@@ -63,6 +63,18 @@ mtgb::GameObject* mtgb::GameScene::GetGameObject(std::string _name) const
 	return nullptr;
 }
 
+GameObject* mtgb::GameScene::GetGameObject(GameObjectTag _tag) const
+{
+	for (auto& object : pGameObjects_)
+	{
+		if (object->GetTag() == _tag)
+		{
+			return object;
+		}
+	}
+	return nullptr;
+}
+
 void mtgb::GameScene::GetGameObjects(const std::string& _name, std::vector<GameObject*>* _pFoundGameObjects) const
 {
 	_pFoundGameObjects->clear();
