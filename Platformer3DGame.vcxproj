@@ -777,6 +777,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(FBX)\lib\x64\debug;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\lib\x64\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PreBuildEvent>
+      <Command>ECHO $(ProjectDir) &gt; $(ProjectDir)ProjectDirPath.txt
+"$(ProjectDir)Tools\ClangTest.exe" "$(ProjectDir)"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -798,6 +802,10 @@
       <AdditionalLibraryDirectories>$(FBX)\lib\x64\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
+    <PreBuildEvent>
+      <Command>ECHO $(ProjectDir) &gt; $(ProjectDir)ProjectDirPath.txt
+"$(ProjectDir)Tools\ClangTest.exe" "$(ProjectDir)"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
