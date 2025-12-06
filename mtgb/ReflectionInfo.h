@@ -4,13 +4,14 @@
 #include "Quaternion.h"
 #include "JoystickProxy.h"
 #include "MouseStateProxy.h"
-#include "TransformData.h"
+#include "TransformState.h"
 #include "TypeRegistry.h"
-#include "MeshRendererData.h"
+#include "MeshRendererState.h"
 #include "ShowAttributes.h"
-#include "ColliderData.h"
-#include "RigidBodyData.h"
-#include "../Source/MovingFloorData.h"
+#include "ColliderState.h"
+#include "RigidBodyState.h"
+#include "../Source/MovingFloorState.h"
+#include "Interpolator.h"
 #include "Matrix4x4.h"
 //#include "TypeRegistryImpl.h"
 #include <string>
@@ -48,7 +49,6 @@ REGISTER_FIELD(deviceName)
 REGISTER_FIELD(deviceProductName)
 REGISTER_END
 
-
 REGISTER_TYPE(MouseStateProxy)
 REGISTER_FIELD(lX)
 REGISTER_FIELD(lY)
@@ -56,22 +56,29 @@ REGISTER_FIELD(lZ)
 REGISTER_FIELD(rgbButtons)
 REGISTER_END
 
+REGISTER_TYPE(Interpolator)
+REGISTER_FIELD(dir)
+REGISTER_FIELD(elapsed)
+REGISTER_FIELD(duration)
+REGISTER_FIELD(start)
+REGISTER_FIELD(end)
+REGISTER_END
 
-REGISTER_TYPE(TransformData, DisplayName{ "Transform" })
+REGISTER_TYPE(TransformState, DisplayName{ "Transform" })
 REGISTER_FIELD(parent)
 REGISTER_FIELD(position)
 REGISTER_FIELD(scale)
 REGISTER_FIELD(rotate)
 REGISTER_END
 
-REGISTER_TYPE(MeshRendererData, DisplayName{ "MeshRenderer" })
+REGISTER_TYPE(MeshRendererState, DisplayName{ "MeshRenderer" })
 REGISTER_FIELD(meshFileName)
 REGISTER_FIELD(meshHandle)
 REGISTER_FIELD(layer)
 REGISTER_FIELD(shaderType)
 REGISTER_END
 
-REGISTER_TYPE(ColliderData, DisplayName{ "Collider" })
+REGISTER_TYPE(ColliderState, DisplayName{ "Collider" })
 REGISTER_FIELD(colliderType)
 REGISTER_FIELD(isStatic)
 REGISTER_FIELD(colliderTag)
@@ -80,12 +87,12 @@ REGISTER_FIELD(radius)
 REGISTER_FIELD(extents)
 REGISTER_END
 
-REGISTER_TYPE(RigidBodyData,DisplayName{"RigidBody"})
+REGISTER_TYPE(RigidBodyState,DisplayName{"RigidBody"})
 REGISTER_FIELD(useGravity)
 REGISTER_FIELD(isKinematic)
 REGISTER_END
 
-REGISTER_TYPE(MovingFloorData,DisplayName{"MovingFloor"})
+REGISTER_TYPE(MovingFloorState,DisplayName{"MovingFloor"})
 REGISTER_FIELD(duration)
 REGISTER_FIELD(to)
 REGISTER_FIELD(from)

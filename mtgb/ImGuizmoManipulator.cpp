@@ -70,6 +70,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 void mtgb::ImGuizmoManipulator::SubscribeEvents()
 {
 	EventManager& eventManager{ Game::System<EventManager>() };
+	// ゲームオブジェクト選択イベント
 	eventManager.GetEvent<GameObjectSelectedEvent>().Subscribe(
 		[this](const GameObjectSelectedEvent& _event)
 		{

@@ -93,7 +93,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	//Game::System<SceneSystem>().Move<PlayScene>();
 	//Game::System<SceneSystem>().Move<CheckTutorialScene>();
 #if TO_TEST_SCENE
-	Game::System<SceneSystem>().Move<StageEditScene>();
+	Game::System<SceneSystem>().Move<TitleScene>();
 #else
 #endif
 

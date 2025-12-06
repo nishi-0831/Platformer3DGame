@@ -3,7 +3,7 @@
 
 namespace mtgb
 {
-	struct AudioPlayerData
+	struct AudioPlayerState
 	{
 		AudioHandle hAudio;
 	};

@@ -41,23 +41,23 @@ void mtgb::Box3D::Start()
 std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entityId) const
 {
 	std::vector<IComponentMemento*> mementos;
-	TransformData transformData
+	TransformState transformState
 	{
 		.position{0,0,10},
 		.scale{1,1,1}
 	};
 
-	ColliderData colliderData
+	ColliderState colliderState
 	{
 		.colliderType{ColliderType::TYPE_AABB},
 		.isStatic{false},
 		.colliderTag{},
-		.center{transformData.position},
-		.radius{transformData.scale.x * 0.5f},
-		.extents{transformData.scale * 0.5f}
+		.center{transformState.position},
+		.radius{transformState.scale.x * 0.5f},
+		.extents{transformState.scale * 0.5f}
 	};
 
-	MeshRendererData meshData
+	MeshRendererState meshData
 	{
 		.meshFileName{"Model/WallBox.fbx"},
 		.meshHandle{Fbx::Load(meshData.meshFileName)},
@@ -65,8 +65,8 @@ std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entity
 		.shaderType{ShaderType::FbxParts}
 	};
 
-	mementos.push_back(new TransformMemento(_entityId,transformData));
-	mementos.push_back(new ColliderMemento(_entityId, colliderData));
+	mementos.push_back(new TransformMemento(_entityId,transformState));
+	mementos.push_back(new ColliderMemento(_entityId, colliderState));
 	mementos.push_back(new MeshRendererMemento(_entityId, meshData));
 
 	return mementos;

@@ -1,7 +1,7 @@
 #pragma once
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
-#include "MeshRendererData.h"
+#include "MeshRendererState.h"
 #include "MeshRendererCP.h"
 #include "Handlers.h"
 #include "GameObjectLayer.h"
@@ -15,10 +15,10 @@ namespace mtgb
     /// <summary>
     /// メッシュとマテリアルを管理する描画コンポーネント
     /// </summary>
-    class MeshRenderer :public IRenderable ,public StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererData>
+    class MeshRenderer :public IRenderable ,public StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererState>
     {
     public:
-        using StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererData>::StatefulComponent;
+        using StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererState>::StatefulComponent;
         friend MeshRendererCP;
 
         MeshRenderer();
@@ -52,5 +52,5 @@ namespace mtgb
     private:
     };
 
-    using MeshRendererMemento = ComponentMemento<MeshRenderer, MeshRendererData>;
+    using MeshRendererMemento = ComponentMemento<MeshRenderer, MeshRendererState>;
 }

@@ -112,36 +112,36 @@ void Player::ShowImGui()
 
 std::vector<IComponentMemento*> Player::GetDefaultMementos(EntityId _entityId) const
 {
-	TransformData transformData
+	TransformState transformState
 	{
 		.position = { 0,5,10 },
 		.scale = { 1,1,1 }
 	};
 
-	RigidBodyData rigidBodyData
+	RigidBodyState rigidBodyState
 	{
 		.useGravity = true,
 		.isKinematic = false,
 	};
 
-	MeshRendererData meshRendererData
+	MeshRendererState meshRendererState
 	{
 		.meshFileName = "Model/Box.fbx",
-		.meshHandle = Fbx::Load(meshRendererData.meshFileName)
+		.meshHandle = Fbx::Load(meshRendererState.meshFileName)
 	};
 
-	ColliderData colliderData
+	ColliderState colliderState
 	{
 		.colliderType{ColliderType::TYPE_SPHERE},
 		.colliderTag{ColliderTag::GAME_OBJECT},
-		.radius{transformData.scale.x},
+		.radius{transformState.scale.x},
 	};
 
 	std::vector<IComponentMemento*> mementos;
-	mementos.push_back(new TransformMemento(_entityId, transformData));
-	mementos.push_back(new RigidBodyMemento(_entityId, rigidBodyData));
-	mementos.push_back(new ColliderMemento(_entityId, colliderData));
-	mementos.push_back(new MeshRendererMemento(_entityId, meshRendererData));
+	mementos.push_back(new TransformMemento(_entityId, transformState));
+	mementos.push_back(new RigidBodyMemento(_entityId, rigidBodyState));
+	mementos.push_back(new ColliderMemento(_entityId, colliderState));
+	mementos.push_back(new MeshRendererMemento(_entityId, meshRendererState));
 
 	return mementos;
 }

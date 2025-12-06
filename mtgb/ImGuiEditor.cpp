@@ -134,7 +134,8 @@ void mtgb::ImGuiEditor::LoadMapData()
 	}
 	GameObjectGenerator::GenerateFromJson(json);
 	
-	// 2フレーム待機させる
+	// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる
+	// TODO: マジックナンバーを修正
 	Time::WaitFrame(2);
 }
 

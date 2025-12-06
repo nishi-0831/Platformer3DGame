@@ -1,6 +1,6 @@
 #pragma once
 #include "StatefulComponent.h"
-#include "ColliderData.h"
+#include "ColliderState.h"
 #include "IComponentMemento.h"
 #include <set>
 #include <DirectXCollision.h>
@@ -18,11 +18,11 @@ namespace mtgb
 	};
 	class ColliderCP;
 	class Transform;
-	class Collider :  public StatefulComponent<Collider, ColliderCP, ColliderData>
+	class Collider :  public StatefulComponent<Collider, ColliderCP, ColliderState>
 	{
 
 	public:
-		using StatefulComponent<Collider, ColliderCP, ColliderData>::StatefulComponent;
+		using StatefulComponent<Collider, ColliderCP, ColliderState>::StatefulComponent;
 		friend ColliderCP;
 
 
@@ -91,5 +91,5 @@ namespace mtgb
 		static FBXModelHandle hBoxModel_;
 	};
 
-	using ColliderMemento = ComponentMemento<Collider, ColliderData>;
+	using ColliderMemento = ComponentMemento<Collider, ColliderState>;
 }

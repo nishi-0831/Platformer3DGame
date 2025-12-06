@@ -29,6 +29,12 @@ namespace mtgb
 
 		template<class GameObjectT, typename ...Args>
 		GameObjectT* Instantiate(Args... _args);
+		/// <summary>
+		/// ゲームオブジェクトをシーンに登録する。
+		/// 既に登録されている場合は再度の登録はしない
+		/// TODO: 手動の場合、登録し忘れが発生する恐れがある。自動にすべき
+		/// </summary>
+		/// <param name="_pGameObject">登録するゲームオブジェクト</param>
 		void RegisterGameObject(GameObject* _pGameObject);
 
 		/// <summary>
@@ -38,7 +44,19 @@ namespace mtgb
 		/// <returns>登録されたカメラハンドル</returns>
 		CameraHandleInScene RegisterCameraGameObject(GameObject* _pGameObject) const;
 		
+		/// <summary>
+		/// 引数と名前が最初に一致したゲームオブジェクトを返す
+		/// </summary>
+		/// <param name="_name">探すゲームオブジェクトの名前</param>
+		/// <returns>一致する名前のゲームオブジェクトのポインタ、一致したのが存在しない場合はnullptr</returns>
 		GameObject* GetGameObject(std::string _name) const;
+
+		/// <summary>
+		/// 引数とタグが最初に一致したゲームオブジェクトを返す
+		/// </summary>
+		/// <param name="_name">探すゲームオブジェクトのタグ</param>
+		/// <returns>一致するタグのゲームオブジェクトのポインタ、一致したのが存在しない場合はnullptr</returns>
+		GameObject* GetGameObject(GameObjectTag _tag) const;
 		void GetGameObjects(const std::string& _name, std::vector<GameObject*>* _pFoundGameObjects) const;
 		void GetGameObjects(GameObjectTag _tag, std::vector<GameObject*>* _pFoundGameObjects) const;
 

@@ -86,6 +86,11 @@ void mtgb::GameObject::Deserialize(const nlohmann::json& _json)
 	tag_ = _json.at("tag").get<GameObjectTag>();
 }
 
+GameObject* mtgb::GameObject::FindGameObject(GameObjectTag _tag)
+{
+	return mtgb::Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_tag);
+}
+
 mtgb::GameObject* mtgb::GameObject::FindGameObject(const std::string& _name)
 {
 	return mtgb::Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_name);

@@ -3,7 +3,7 @@
 #include "IComponentMemento.h"
 
 #include "Vector3.h"
-#include "RigidBodyData.h"
+#include "RigidBodyState.h"
 #include "RigidBodyCP.h"
 #include <functional>
 #include <DirectXCollision.h>
@@ -13,10 +13,10 @@ namespace mtgb
 
 	class Transform;
 	class RigidBodyCP;
-	class RigidBody : public StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData>
+	class RigidBody : public StatefulComponent<RigidBody, RigidBodyCP, RigidBodyState>
 	{
 	public:
-		using StatefulComponent<RigidBody, RigidBodyCP, RigidBodyData>::StatefulComponent;
+		using StatefulComponent<RigidBody, RigidBodyCP, RigidBodyState>::StatefulComponent;
 		friend RigidBodyCP;
 
 		RigidBody(const EntityId _entityId);
@@ -57,5 +57,5 @@ namespace mtgb
 		Transform* pTransform_;  // TODO: Šë‚È‚¢Transform
 	};
 
-	using RigidBodyMemento = ComponentMemento<RigidBody, RigidBodyData>;
+	using RigidBodyMemento = ComponentMemento<RigidBody, RigidBodyState>;
 }

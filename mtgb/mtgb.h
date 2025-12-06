@@ -19,7 +19,7 @@
 #include "Easing.h"
 #include "Mathf.h"
 #include "RectDetector.h"
-
+#include "Interpolator.h"
 #include "DrawScreenUtility.h"
 
 #pragma endregion

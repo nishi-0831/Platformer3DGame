@@ -12,24 +12,24 @@ namespace mtgb
 		virtual EntityId GetEntityId() const = 0;
 	};
 
-	template<typename TComponent,typename TData>
+	template<typename TComponent,typename TState>
 	class ComponentMemento : public IComponentMemento
 	{
 	public:
 		using Component = TComponent;
-		using Data = TData;
+		using State = TState;
 
-		ComponentMemento(EntityId _entityId,const Data& _data) 
+		ComponentMemento(EntityId _entityId,const State& _state) 
 			: entityId_{_entityId}
-			, data_{ _data } 
+			, state_{ _state } 
 		{
 		}
 
 		std::type_index GetComponentType() const  override { return typeid(TComponent); }
 		EntityId GetEntityId() const override { return entityId_; }
-		const Data& GetData() const { return data_; }
+		const State& GetState() const { return state_; }
 	private:
-		Data data_;
+		State state_;
 		EntityId entityId_;
 	};
 }

@@ -19,6 +19,12 @@ mtgb::GameScene::~GameScene()
 
 void mtgb::GameScene::RegisterGameObject(GameObject* _pGameObject)
 {
+	for (GameObject* pObj : pGameObjects_)
+	{
+		// Šù‚É“o˜^Ï‚İ‚Ìê‡‚Í‰½‚à‚µ‚È‚¢
+		if (pObj->GetEntityId() == _pGameObject->GetEntityId())
+			return;
+	}
 	pGameObjects_.push_back(_pGameObject);
 }
 
@@ -53,6 +59,18 @@ mtgb::GameObject* mtgb::GameScene::GetGameObject(std::string _name) const
 			continue;
 		}
 		return object;
+	}
+	return nullptr;
+}
+
+GameObject* mtgb::GameScene::GetGameObject(GameObjectTag _tag) const
+{
+	for (auto& object : pGameObjects_)
+	{
+		if (object->GetTag() == _tag)
+		{
+			return object;
+		}
 	}
 	return nullptr;
 }

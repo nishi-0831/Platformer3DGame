@@ -22,7 +22,12 @@ TitleScene::~TitleScene()
 void TitleScene::Initialize()
 {
 	Game::System<ImGuiEditorCamera>().CreateCamera();
-	Camera* pCamera{ Instantiate<Camera>() };
+	GameObject* pCamera = new GameObject(
+		GameObjectBuilder()
+		.SetPosition({ 0,0,0 })
+		.SetName("SceneCamera")
+		.Build());
+	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 
 	hImage = Image::Load("Image/TitleImage.png");
 

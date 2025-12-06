@@ -27,6 +27,8 @@ const char* ShowState(mtgb::CameraOperation _cameraOperation);
 namespace
 {
 	const mtgb::Vector3 INIT_ANGLE{ 0,0,0 };
+	// 球面座標系の基準方向を正面(+z方向)とするためのオフセット
+	constexpr float SPHERICAL_COORDINATE_FRONT_OFFSET_DEG = 90.0f;
 }
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	: moveSpeed_{10.0f}
@@ -144,17 +146,22 @@ void mtgb::ImGuiEditorCamera::Update()
 
 void mtgb::ImGuiEditorCamera::CreateCamera()
 {
+	// カメラに使うGameObject作成
 	GameObject* pCamera = new GameObject(
 		GameObjectBuilder()
 		.SetPosition({ 0,0,0 })
 		.SetRotate(Quaternion::Euler(INIT_ANGLE))
-		.SetName("Camera")
+		.SetName("EditorCamera")
 		.Build());
+	// シーンに登録
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 
+	// Transformをアタッチ
 	pCameraTransform_ = &Game::System<TransformCP>().Get(pCamera->GetEntityId());
+	// Transformをカメラとして登録
 	hCamera_ = Game::System<CameraSystem>().RegisterDrawCamera(pCameraTransform_);
 
+	// 初期角度を設定
 	polarAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.x + 90.0f);
 	azimuthalAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
 }
