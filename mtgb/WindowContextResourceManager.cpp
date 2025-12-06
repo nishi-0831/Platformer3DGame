@@ -1,9 +1,7 @@
 #include "WindowContextResourceManager.h"
 
-
-
-
 mtgb::WindowContextResourceManager::WindowContextResourceManager()
+	: currentContext_{WindowContext::First}
 {
 }
 
@@ -18,15 +16,13 @@ void mtgb::WindowContextResourceManager::Initialize()
 
 void mtgb::WindowContextResourceManager::Update()
 {
-	auto& collection = collectionMap_[CurrContext()];
+	auto& collection = collectionMap_[currentContext_];
 
 	for (auto& resource : collection)
 	{
 		resource.second->Update();
 	}
 }
-
-
 
 void mtgb::WindowContextResourceManager::Release()
 {
@@ -35,16 +31,19 @@ void mtgb::WindowContextResourceManager::Release()
 
 void mtgb::WindowContextResourceManager::CreateResource(WindowContext windowContext)
 {
-	collectionMap_[windowContext] = defResource_.Clone();
-	collectionMap_[windowContext].ForEachInOrder(
-		[windowContext](const std::type_index&,WindowContextResource* resource)
-		{
-			if (resource)
-			{
-				resource->Initialize(windowContext);
-			}
-		}
-	);
+	auto [it, inserted] = collectionMap_.try_emplace(windowContext);
+	ResourceCollection& newCollection = it->second;
+
+	// リソースの登録順に作成される
+	for (const std::type_index& typeIdx : insertionOrder_)
+	{
+		auto itr = factoryMap_.find(typeIdx);
+		assert(itr != factoryMap_.end() && "指定されたtype_indexのファクトリ関数が見つかりません");
+		
+		// ファクトリ関数でリソース作成
+		WindowContextResource* pResource = itr->second(windowContext);
+		newCollection.Insert(typeIdx, pResource);
+	}
 }
 
 void mtgb::WindowContextResourceManager::ChangeActiveResource(WindowContext windowContext)
@@ -65,55 +64,24 @@ void mtgb::WindowContextResourceManager::OnResizeAll(WindowContext windowContext
 	auto itr = collectionMap_.find(windowContext);
 	if (itr == collectionMap_.end()) return;
 
-	collectionMap_[windowContext].ForEachInReverseOrder(
-		[](const std::type_index&, WindowContextResource* resource)
-		{
-			if (resource)
-			{
-				resource->Reset();
-			}
-		}
-	);
+	// サイズ変更対象のウィンドウのリソース群を取得
+	ResourceCollection& resourceCollection = collectionMap_[windowContext];
 
-	collectionMap_[windowContext].ForEachInOrder(
-		[windowContext, width, height](const std::type_index&, WindowContextResource* resource)
-		{
-			if (resource)
-			{
-				resource->OnResize(windowContext, width, height);
-			}
-		}
-	);
+	// リソース登録時とは逆順で、サイズ変更のために解放処理を行う
+	for (auto itr = insertionOrder_.rbegin(); itr != insertionOrder_.rend(); itr++)
+	{
+		std::type_index typeIdx = *itr;
+		resourceCollection[typeIdx]->Reset();
+	}
 
-
-
+	// リソース登録時と同じ順番で、サイズ変更後の処理を行う
+	for (const std::type_index& typeIdx : insertionOrder_)
+	{
+		resourceCollection[typeIdx]->OnResize(width, height);
+	}
 }
 
-//void mtgb::WindowContextResourceManager::SwapAllResource(WindowContext context1, WindowContext context2)
-//{
-//	// 念のため同じウィンドウを指定していないか確認
-//	if (context1 == context2)
-//	{
-//		return;
-//	}
-//
-//	// context1,2のResourceCollectionが登録されている確認
-//	auto itr1 = collectionMap_.find(context1);
-//	auto itr2 = collectionMap_.find(context2);
-//
-//	assert(itr1 != collectionMap_.end() && "指定されたWindowContextが見つかりません");
-//	assert(itr2 != collectionMap_.end() && "指定されたWindowContextが見つかりません");
-//
-//	/*itr1->second.ForEachInOrder(
-//		[&](const std::type_index& key, WindowContextResource* resource)
-//		{
-//			std::swap(itr1->second[key], itr2->second[key]);
-//		}
-//	);*/
-//
-//	// ResourceCollection全体をswap
-//	itr1->second.Swap(itr2->second);
-//}
+
 
 
 

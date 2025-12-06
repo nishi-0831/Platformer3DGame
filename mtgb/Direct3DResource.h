@@ -13,27 +13,25 @@ namespace mtgb
 	class Direct3DResource : public WindowContextResource
 	{
 	public:
-		Direct3DResource();
+		explicit Direct3DResource(WindowContext _windowContext);
 		~Direct3DResource();
-		//Direct3DResource(const Direct3DResource& other);
-		void Initialize(WindowContext _windowContext) override;
+		
 		void SetResource() override;
 		void Reset() override;
-		void OnResize(WindowContext _windowContext, UINT _width, UINT _height) override;
+		void OnResize(UINT _width, UINT _height) override;
 		void Release() override;
 
 		const D3D11_VIEWPORT& GetViewport();
 	private:
-		
 		D3D11_VIEWPORT viewPort_;
 		
 		ComPtr<ID3D11RenderTargetView> pRenderTargetView_;
 		ComPtr<ID3D11Texture2D> pDepthStencil_;
 		ComPtr<ID3D11DepthStencilView> pDepthStencilView_;
 
-
-		// WindowContextResource を介して継承されました
-		Direct3DResource* Clone() const override;
+		// コピーコンストラクタとコピー代入演算子を削除
+		Direct3DResource(const Direct3DResource&) = delete;
+		Direct3DResource& operator=(const Direct3DResource&) = delete;
 
 	};
 }

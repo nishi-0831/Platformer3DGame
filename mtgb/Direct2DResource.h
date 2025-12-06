@@ -1,17 +1,10 @@
 #pragma once
 #include "WindowContextResource.h"
-#include "WindowContextResourceManager.h"
 
-#include "Direct3DResource.h"
-#include "MTAssert.h"
-#include "Direct2D/Direct2D.h"
-#include "DirectWrite.h"
-#include "Game.h"
-#include "ISystem.h"
 #include <d2d1.h>
 #include "WindowContext.h"
-#include <map>
-#include <typeindex>
+#include <Windows.h>
+#include <wrl/client.h>
 
 typedef struct HWND__* HWND;
 
@@ -22,21 +15,20 @@ namespace mtgb
 	{
 		friend class DirectWrite;
 	public:
-		Direct2DResource();
+		explicit Direct2DResource(WindowContext _windowContext);
 		~Direct2DResource();
-		//Direct2DResource(const Direct2DResource& other);
-		void Initialize(WindowContext _windowContext) override;
+		
 		void Reset() override;
-		void OnResize(WindowContext _windowContext, UINT _width, UINT _height) override;
+		void OnResize(UINT _width, UINT _height) override;
 		void SetResource() override;
 		void Release() override;
 	private:
-
 		ComPtr<ID2D1RenderTarget> pRenderTarget_;
 		ComPtr<ID2D1SolidColorBrush> pD2DBrush_;
 
-		// WindowContextResource を介して継承されました
-		WindowContextResource* Clone() const override;
+		// コピーコンストラクタとコピー代入演算子を削除
+		Direct2DResource(const Direct2DResource&) = delete;
+		Direct2DResource& operator=(const Direct2DResource&) = delete;
 
 	};
 }

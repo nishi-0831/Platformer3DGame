@@ -5,40 +5,20 @@
 #include "SceneSystem.h"
 #include "MTAssert.h"
 #include "CameraSystem.h"
-mtgb::CameraResource::CameraResource()
-    : hCamera_{INVALID_HANDLE}
+
+mtgb::CameraResource::CameraResource(WindowContext _windowContext)
+    : WindowContextResource(_windowContext)
+    , hCamera_{INVALID_HANDLE}
 {
-}
-mtgb::CameraResource::~CameraResource()
-{
-    //SAFE_DELETE(pCamera_);
-}
-mtgb::CameraResource::CameraResource(const CameraResource& other)
-    :WindowContextResource(other)
-    , hCamera_(other.hCamera_)
-{
-    /*if (other.pCamera_ != nullptr)
-    {
-        pCamera_ = new GameObject(*other.pCamera_);
-    }
-    else
-    {
-        pCamera_ = nullptr;
-    }*/
 }
 
-void mtgb::CameraResource::Initialize(WindowContext _windowContext)
+mtgb::CameraResource::~CameraResource()
 {
 }
 
 void mtgb::CameraResource::SetResource()
 {
-    /*massert(pCamera_
-        && "pCamera_はnullptrです @CameraResource::SetResource");*/
-    /*if (pCamera_ != nullptr)
-    {
-        Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
-    }*/
+    // カメラ管理クラスに、カメラのハンドルを登録
     Game::System<CameraSystem>().SetDrawCamera(hCamera_);
 }
 
@@ -47,13 +27,9 @@ void mtgb::CameraResource::Release()
 
 }
 
-mtgb::WindowContextResource* mtgb::CameraResource::Clone() const
-{
-    return new CameraResource(*this);
-}
-
 void mtgb::CameraResource::SetHCamera(CameraHandleInScene _hCamera)
 {
+    // カメラのハンドルを受け取る
     hCamera_ = _hCamera;
 }
 
@@ -66,8 +42,3 @@ bool mtgb::CameraResource::NotRegisterCamera()
 {
     return hCamera_ == INVALID_HANDLE;
 }
-
-//void mtgb::CameraResource::SetCamera(GameObject* obj)
-//{
-//    pCamera_ = obj;
-//}

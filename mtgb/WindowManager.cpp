@@ -27,9 +27,9 @@ mtgb::WindowManager::~WindowManager()
 	delete pPeekedMessage_;
 }
 
-HWND mtgb::WindowManager::CreateWindowContext(WindowContext context)
+HWND mtgb::WindowManager::CreateWindowContext(WindowResource* _windowResource)
 {
-	WindowConfig config = WindowManager::GetWindowConfig(context);
+	WindowConfig config = WindowManager::GetWindowConfig(_windowResource->GetWindowContext());
 	// ウィンドウ作成処理
 	WNDCLASSEX windowClass{};
 	windowClass.cbSize = sizeof(WNDCLASSEX);
@@ -57,7 +57,7 @@ HWND mtgb::WindowManager::CreateWindowContext(WindowContext context)
 			WS_EX_OVERLAPPEDWINDOW) != FALSE
 		&& "AdjustWindowRectExに失敗 @WindowManager::CreateWindowContext");
 
-	WindowResource& windowResource = WindowManager::GetWindowResource(context);
+	
 
 	HWND hWnd = CreateWindowEx(
 		0,
@@ -71,7 +71,7 @@ HWND mtgb::WindowManager::CreateWindowContext(WindowContext context)
 		nullptr,
 		nullptr,
 		GetModuleHandle(NULL),
-		reinterpret_cast<LPVOID>(&windowResource)
+		reinterpret_cast<LPVOID>(_windowResource)
 	);
 
 	massert(hWnd != NULL

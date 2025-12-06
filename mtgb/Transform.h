@@ -45,7 +45,6 @@ namespace mtgb
 			this->matrixScale_ = _other.matrixScale_;
 			this->matrixWorld_ = _other.matrixWorld_;
 
-			//			massert(false && "StatefulTransform‚ÌƒRƒs[”­¶");
 			return *this;
 		}
 

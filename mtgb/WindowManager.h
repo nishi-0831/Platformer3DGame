@@ -27,7 +27,7 @@ namespace mtgb
 		WindowManager();
 		~WindowManager();
 
-		HWND CreateWindowContext(WindowContext context);
+		HWND CreateWindowContext(WindowResource* _windowResource);
 		Vector2Int GetWindowSize(WindowContext context);
 		
 

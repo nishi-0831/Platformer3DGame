@@ -305,7 +305,6 @@ std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSp
 	closest.y = std::clamp(_sphere.Center.y, aabbMin.y, aabbMax.y);
 	closest.z = std::clamp(_sphere.Center.z, aabbMin.z, aabbMax.z);
 
-
 	Vector3 v = _sphere.Center - closest;
 	float dist = v.Size();
 
@@ -370,7 +369,6 @@ void mtgb::Collider::Push(const Collider& _other)
 	{
 		RigidBody& rigidBody = RigidBody::Get(sphereTypeEntityId);
 		rigidBody.OnGround();
-		//transform.parent = this->pTransform_->GetEntityId();
 	}
 	transform.position += info.value().push;
 }
@@ -397,15 +395,12 @@ void mtgb::Collider::Draw() const
 {
 	static Transform copyTransform{};
 
-	//Draw::SetShaderOnce(ShaderType::Debug3D);
 
 	switch (colliderType)
 	{
 	case ColliderType::TYPE_SPHERE:
 		copyTransform = *pTransform_;
 		copyTransform.scale *= Vector3::One() * computeSphere_.Radius;
-		//copyTransform.position += computeSphere_.Center;
-		//copyTransform.Compute();
 		Draw::FBXModel(hSphereModel_, copyTransform, 0,ShaderType::Debug3D);
 		break;
 	case ColliderType::TYPE_CAPSULE:

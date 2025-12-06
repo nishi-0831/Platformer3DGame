@@ -14,29 +14,14 @@ namespace mtgb
     struct ResourceCollection
     {
         std::map<std::type_index, WindowContextResource*> resourceCollection_;//リソース群
-        std::vector<std::type_index> insertionOrder_;//挿入順
-
         ResourceCollection() = default;
-        ResourceCollection(const ResourceCollection& other);
-        //ResourceCollection(ResourceCollection&& other) noexcept;
         ~ResourceCollection();
 
-        ResourceCollection operator=(const ResourceCollection& other);
         WindowContextResource*& operator[](const std::type_index& key);
         const WindowContextResource* operator[](const std::type_index& key) const;
 
+        void Insert(const std::type_index& _key,WindowContextResource* _pResource);
         void Swap(ResourceCollection& other);
-        /// <summary>
-        /// コピーする
-        /// </summary>
-        /// <param name="other">コピーされるリソース群</param>
-        void Copy(const ResourceCollection& other);
-
-        /// <summary>
-        /// ピーしたものを返す
-        /// </summary>
-        /// <returns>コピーされたリソース群</returns>
-        ResourceCollection Clone() const;
         void Release();
 
         /// <summary>
@@ -61,29 +46,6 @@ namespace mtgb
         auto begin() const { return resourceCollection_.begin(); }
         auto end() const { return resourceCollection_.end(); }
 
-        /// <summary>
-        /// 挿入順でリソースに引数の関数を実行
-        /// </summary>
-        /// <typeparam name="Func">関数の型</typeparam>
-        /// <param name="func">実行する関数</param>
-        template<typename Func>
-        void ForEachInOrder(Func&& func)
-        {
-            for (const auto& key : insertionOrder_)
-            {
-                func(key, resourceCollection_[key]);
-            }
-
-        }
-
-        template<typename Func>
-        void ForEachInReverseOrder(Func&& _func)
-        {
-            for (auto itr = insertionOrder_.rbegin(); itr != insertionOrder_.rend(); itr++)
-            {
-                std::type_index key = *itr;
-                _func(key, resourceCollection_[key]);
-            }
-        }
+        
     };
 }

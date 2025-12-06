@@ -19,24 +19,17 @@ namespace mtgb
 	class DXGIResource : public WindowContextResource
 	{
 	public:
-		DXGIResource();
+		explicit DXGIResource(WindowContext _windowContext);
 		~DXGIResource();
-		//DXGIResource(const DXGIResource& other);
-		void Initialize(WindowContext _windowContext) override;
+		
 		void SetResource() override;
 		void Update() override;
 		void Reset() override;
-		void OnResize(WindowContext _windowContext, UINT _width, UINT _height) override;
+		void OnResize(UINT _width, UINT _height) override;
 		void Release() override;
 
 		/// <summary>
-		/// フルスクリーンの切り替え
-		/// </summary>
-		/// <param name="_fullscreen">trueならフルスクリーンになり、falseならウィンドウモード</param>
-		//void SetFullscreen(bool _fullscreen);
-
-		/// <summary>
-		/// 割り当てられたモニターの矩形を返す
+		/// 割り当てられたモニターの座標を返す
 		/// </summary>
 		RECT GetAssignedMonitorRect() const { return outputDesc_.DesktopCoordinates; }
 
@@ -45,19 +38,22 @@ namespace mtgb
 		ComPtr<IDXGISurface> pDXGISurface_;
 
 		/// <summary>
-		/// モニターの情報を交換する
+		/// モニター情報を交換する
 		/// </summary>
 		/// <param name="_other"></param>
 		void SwapMonitorInfo(DXGIResource& _other);
-
-		WindowContextResource* Clone() const override;
 	private:
 		
 		MonitorInfo monitorInfo_;
-		bool isMultiMonitor_ = true;
-		bool isBorderlessWindow = true;
+		bool isMultiMonitor_; // マルチ
+		bool isBorderlessWindow;
 		std::vector<DXGI_MODE_DESC> modeList_;
 		std::string name_;
 		DXGI_OUTPUT_DESC outputDesc_;
+
+		// コピーコンストラクタとコピー代入演算子を削除
+		DXGIResource(const DXGIResource&) = delete;
+		DXGIResource& operator=(const DXGIResource&) = delete;
+
 	};
 }

@@ -1,39 +1,19 @@
 #include "ResourceCollection.h"
 #include "WindowContextResource.h"
 
-//mtgb::ResourceCollection::ResourceCollection(ResourceCollection&& other) noexcept
-//    :resourceCollection_(std::move(other.resourceCollection_))
-//    , insertionOrder_(std::move(other.insertionOrder_))
-//{
-//}
-
 mtgb::ResourceCollection::~ResourceCollection()
 {
     Release();
 }
 
-mtgb::ResourceCollection::ResourceCollection(const ResourceCollection& other)
+void mtgb::ResourceCollection::Insert(const std::type_index& _key, WindowContextResource* _pResource)
 {
-    Copy(other);
+    resourceCollection_.insert(std::make_pair(_key, _pResource));
 }
 
 void mtgb::ResourceCollection::Swap(ResourceCollection& other)
 {
     std::swap(resourceCollection_, other.resourceCollection_);
-}
-
-void mtgb::ResourceCollection::Copy(const ResourceCollection& other)
-{
-    for (const auto& [key, ptr] : other.resourceCollection_)
-    {
-        resourceCollection_[key] = ptr ? ptr->Clone() : nullptr;
-    }
-    insertionOrder_ = other.insertionOrder_;
-}
-
-mtgb::ResourceCollection mtgb::ResourceCollection::Clone() const
-{
-    return ResourceCollection(*this);
 }
 
 void mtgb::ResourceCollection::Release()
@@ -45,23 +25,8 @@ void mtgb::ResourceCollection::Release()
     resourceCollection_.clear();
 }
 
-mtgb::ResourceCollection mtgb::ResourceCollection::operator=(const ResourceCollection& other)
-{
-    if (this != &other)
-    {
-        ////Šù‘¶ƒŠƒ\[ƒX‚Ì‰ð•ú
-        //Release();
-        this->Copy(other);
-    }
-    return *this;
-}
-
 mtgb::WindowContextResource*& mtgb::ResourceCollection::operator[](const std::type_index& key)
 {
-    if (resourceCollection_.find(key) == resourceCollection_.end())
-    {
-        insertionOrder_.push_back(key);
-    }
     return resourceCollection_[key];
 }
 

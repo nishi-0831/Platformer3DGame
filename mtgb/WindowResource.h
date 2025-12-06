@@ -17,6 +17,7 @@ namespace mtgb
 	// ウィンドウモード時の情報
 	struct WindowModeInfo
 	{
+		WindowModeInfo();
 		RECT windowedRect_;		//位置とサイズ
 		LONG windowedStyle_;	// スタイル
 		LONG windowedExStyle_;	// 拡張スタイル
@@ -28,33 +29,24 @@ namespace mtgb
 		LRESULT HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 		HWND GetHWND();
 
-		void Initialize(WindowContext _windowContext) override;
-		void SetResource() override;
-		
-		WindowResource(const WindowResource& other);
-		// WindowContextResource を介して継承されました
-		WindowResource* Clone() const override;
-		WindowResource();
+		explicit WindowResource(WindowContext _windowContext);
 		~WindowResource();
 
+		void SetResource() override;
+		
 		/// <summary>
-		/// <para> リソースの初期化が完了したというフラグを trueにする </para>
+		/// リソースの初期化が完了したというフラグを trueにする
 		/// </summary>
 		void MarkInitialized();
-		void OnResize(WindowContext _windowContext, UINT _width, UINT _height) override;
+		void OnResize(UINT _width, UINT _height) override;
 
 		/// <summary>
 		/// 直前のウィンドウモードに戻る
 		/// </summary>
 		void SetWindowMode();
-		/// <summary>
-		/// 初期のウィンドウモードに戻す
-		/// </summary>
-		//void SetInitialWindowMode();
 
 		void SetFullScreen(const RECT& _monitorRect);
 
-		
 		/// <summary>
 		/// フルスクリーンにする前に情報を保持しておく
 		/// </summary>
@@ -64,20 +56,21 @@ namespace mtgb
 		void SetPosition(const RECT& _monitorRect);
 	private:
 		void SetWindowModeImpl(WindowModeInfo _info);
-		WindowContext context_;
 		HWND hWnd_;
 		bool isActive_;
-		bool isFullscreen_; // フルスクリーンか否か
+		bool isFullscreen_;
 
 		WindowModeInfo currInfo_; // 現在のウィンドウモード時の情報
 		WindowModeInfo initialInfo_; // 初期のウィンドウモード時の情報
 
 
-		// 初期化が完了したか
 		bool isInitialized_;
 
-		// WindowContextResource を介して継承されました
 		void Release() override;
+
+		// コピーコンストラクタとコピー代入演算子を削除
+		WindowResource(const WindowResource&) = delete;
+		WindowResource& operator=(const WindowResource&) = delete;
 
 	};
 }

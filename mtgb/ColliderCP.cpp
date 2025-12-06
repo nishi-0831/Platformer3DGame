@@ -169,8 +169,6 @@ void mtgb::ColliderCP::RectContains(const RectF& _rect, GameObjectTag _tag, std:
 	RectContainsImpl(_rect, foundGameObjects, _info, _context);
 }
 
-
-
 void mtgb::ColliderCP::RectContainsImpl(const RectF& _rect,const std::vector<GameObject*>& _objs, std::vector<ScreenCoordContainsInfo>* _info, WindowContext _context)
 {
 	CameraSystem& camSys = Game::System<CameraSystem>();

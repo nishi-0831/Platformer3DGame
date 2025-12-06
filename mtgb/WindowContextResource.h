@@ -18,8 +18,7 @@ namespace mtgb
 	class WindowContextResource
 	{
 	public:
-		virtual ~WindowContextResource() {};
-		virtual void Initialize(WindowContext _windowContext) = 0;
+		virtual ~WindowContextResource() = default;
 		/// <summary>
 		/// ウィンドウを変更する際に固有のリソースをセットする
 		/// </summary>
@@ -28,23 +27,32 @@ namespace mtgb
 		/// <summary>
 		/// ウィンドウのサイズが変更される前の解放処理
 		/// </summary>
-		virtual void Reset() {};
+		virtual void Reset() {}
 		/// <summary>
 		/// ウィンドウのサイズが変更された後の処理
 		/// </summary>
 		/// <param name="_width">幅</param>
 		/// <param name="_height">高さ</param>
-		virtual void OnResize(WindowContext _windowContext,UINT _width, UINT _height){};
+		virtual void OnResize(UINT _width, UINT _height) {}
 		virtual void Release() = 0;
 
 		/// <summary>
 		/// 更新処理
 		/// </summary>
-		virtual void Update() {};
+		virtual void Update() {}
 		/// <summary>
-		/// リソースのコピーを作成、返す
+		/// ウィンドウの識別子を返す
 		/// </summary>
-		/// <returns>生成したオブジェクト</returns>
-		virtual WindowContextResource* Clone() const = 0;
+		/// <returns></returns>
+		WindowContext GetWindowContext() const { return windowContext_; }
+	protected:
+		explicit WindowContextResource(WindowContext _windowContext)
+			: windowContext_(_windowContext) {}
+		
+		WindowContext windowContext_;
+		
+		// コピーコンストラクタとコピー代入演算子を削除
+		WindowContextResource(const WindowContextResource&) = delete;
+		WindowContextResource& operator=(const WindowContextResource&) = delete;
 	};
 }

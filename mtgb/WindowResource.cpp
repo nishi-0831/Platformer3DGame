@@ -89,35 +89,10 @@ LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, 
 
 			UINT width = LOWORD(lParam);
 			UINT height = HIWORD(lParam);
-
-			// フルスクリーン切り替え時のリサイズ処理を有効化
-			//Game::System<WindowManager>().ResizeWindow(context_, width, height);
 		}
 		return S_OK;
 	}
-
-	//case WM_NCCALCSIZE:
-	//	// wParamについて：TRUEならNCCALCSIZE_PARAMS / FALSEならRect*
-	//	if (wParam) return 0;
-	//	break;
-	//case WM_NCHITTEST:
-	//{
-	//	LRESULT hitResult{ DefWindowProc(hWnd, msg, wParam, lParam) };
-	//	switch (hitResult)
-	//	{
-	//	case HTLEFT:
-	//	case HTRIGHT:
-	//	case HTTOP:
-	//	case HTBOTTOM:
-	//	case HTTOPLEFT:
-	//	case HTTOPRIGHT:
-	//	case HTBOTTOMLEFT:
-	//	case HTBOTTOMRIGHT:
-	//		return HTCLIENT; // サイズは変えさせない
-	//	default:
-	//		return hitResult;
-	//	}
-	//}
+	
 	default:  // それ以外のメッセージは譲渡
 		break;
 	}
@@ -132,12 +107,17 @@ HWND mtgb::WindowResource::GetHWND()
 	return hWnd_;
 }
 
-void WindowResource::Initialize(WindowContext _windowContext)
+mtgb::WindowResource::WindowResource(WindowContext _windowContext)
+	: WindowContextResource(_windowContext)
+	, hWnd_{nullptr}
+	, isActive_{false}
+	, isFullscreen_{false}
+	, currInfo_{}
+	, initialInfo_{}
+	, isInitialized_{false}
 {
-	hWnd_ = Game::System<WindowManager>().CreateWindowContext(_windowContext);
-
+	hWnd_ = Game::System<WindowManager>().CreateWindowContext(this);
 	isActive_ = true;
-	context_ = _windowContext;
 	isInitialized_ = false;
 
 	currInfo_.windowedStyle_ = GetWindowLong(hWnd_, GWL_STYLE);
@@ -152,24 +132,6 @@ void WindowResource::SetResource()
 
 }
 
-mtgb::WindowResource::WindowResource(const WindowResource& other)
-	:WindowContextResource(other)
-	,hWnd_(other.hWnd_)
-	,isActive_(other.isActive_)
-{
-
-}
-
-WindowResource* mtgb::WindowResource::Clone() const
-{
-	return new WindowResource(*this);
-}
-
-mtgb::WindowResource::WindowResource()
-	: isInitialized_{false}
-{
-}
-
 mtgb::WindowResource::~WindowResource()
 {
 	Release();
@@ -180,17 +142,17 @@ void mtgb::WindowResource::MarkInitialized()
 	isInitialized_ = true;
 }
 
-void mtgb::WindowResource::OnResize(WindowContext _windowContext, UINT _width, UINT _height)
+void mtgb::WindowResource::OnResize(UINT _width, UINT _height)
 {
 	if (_width == 0 || _height == 0) return;
 
 	Game::System<Screen>().SetSize(static_cast<int>(_width), static_cast<int>(_height));
 
 	//WindowConfigのサイズを更新
-	WindowConfig config = Game::System<WindowManager>().GetWindowConfig(_windowContext);
+	WindowConfig config = Game::System<WindowManager>().GetWindowConfig(windowContext_);
 	config.width = _width;
 	config.height = _height;
-	Game::System<WindowManager>().SetWindowConfig(_windowContext, config);
+	Game::System<WindowManager>().SetWindowConfig(windowContext_, config);
 
 }
 
@@ -198,12 +160,6 @@ void mtgb::WindowResource::SetWindowMode()
 {
 	SetWindowModeImpl(currInfo_);
 }
-
-
-//void mtgb::WindowResource::SetInitialWindowMode()
-//{
-//	SetWindowModeImpl(initialInfo_);
-//}
 
 void mtgb::WindowResource::SetFullScreen(const RECT& _monitorRect)
 {
@@ -274,4 +230,10 @@ void mtgb::WindowResource::Release()
 	DestroyWindow(hWnd_);
 }
 
+mtgb::WindowModeInfo::WindowModeInfo()
+	: windowedRect_{0,0,0,0}
+	, windowedStyle_{0}
+	, windowedExStyle_{0}
+{
 
+}

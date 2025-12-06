@@ -25,10 +25,9 @@ namespace mtgb
 	class InputResource : public WindowContextResource
 	{
 	public:
-		InputResource();
+		explicit InputResource(WindowContext _windowContext);
 		~InputResource();
-		InputResource(const InputResource& other);
-		void Initialize(WindowContext _windowContext) override;
+		
 		void Update() override;
 		void SetResource() override;
 		void Release() override;
@@ -43,7 +42,10 @@ namespace mtgb
 		MouseStateProxy* pMouseStateProxy_;
 		GUID assignedJoystickGuid_;
 		bool isInitialized;
-		// WindowContextResource を介して継承されました
-		WindowContextResource* Clone() const override;
+
+		// コピーコンストラクタとコピー代入演算子を削除
+		InputResource(const InputResource&) = delete;
+		InputResource& operator=(const InputResource&) = delete;
+
 	};
 }

@@ -4,30 +4,13 @@
 #include "WindowManager.h"
 using namespace mtgb;
 
-mtgb::Direct3DResource::Direct3DResource()
-	:pRenderTargetView_{nullptr},pDepthStencil_{nullptr},pDepthStencilView_{nullptr}
+mtgb::Direct3DResource::Direct3DResource(WindowContext _windowContext)
+	: WindowContextResource(_windowContext)
+	, pRenderTargetView_{nullptr}
+	, pDepthStencil_{nullptr}
+	, pDepthStencilView_{nullptr}
 {
-
-}
-
-mtgb::Direct3DResource::~Direct3DResource()
-{
-	Release();
-}
-
-//mtgb::Direct3DResource::Direct3DResource(const Direct3DResource& other)
-//	:WindowContextResource(other)
-//	,pRenderTargetView_{nullptr}
-//	,pDepthStencil_{nullptr}
-//	,pDepthStencilView_{nullptr}
-//	,viewPort_{other.viewPort_ }
-//{
-//
-//}
-
-void mtgb::Direct3DResource::Initialize(WindowContext _windowContext)
-{
-	// DirectX11Managerにアクセス
+	// DirectX11Manager にアクセス
 	auto& dx11Manager = Game::System<DirectX11Manager>();
 
 	DXGIResource& dxgi = Game::System<WindowContextResourceManager>().Get<DXGIResource>(_windowContext);
@@ -43,6 +26,11 @@ void mtgb::Direct3DResource::Initialize(WindowContext _windowContext)
 	dx11Manager.CreateDepthStencilAndDepthStencilView(SCREEN_SIZE, pDepthStencil_.ReleaseAndGetAddressOf(), pDepthStencilView_.ReleaseAndGetAddressOf());	
 }
 
+mtgb::Direct3DResource::~Direct3DResource()
+{
+	Release();
+}
+
 void mtgb::Direct3DResource::SetResource()
 {
 	DirectX11Manager& dx11Manager{ Game::System<DirectX11Manager>() };
@@ -52,16 +40,16 @@ void mtgb::Direct3DResource::SetResource()
 
 void mtgb::Direct3DResource::Reset()
 {
-	// 既存リリースを解放
+	// リソースを解放する
 	Release();
 }
 
-void mtgb::Direct3DResource::OnResize(WindowContext _windowContext, UINT _width, UINT _height)
+void mtgb::Direct3DResource::OnResize(UINT _width, UINT _height)
 {
-	// DirectX11Managerにアクセス
+	// DirectX11Manager にアクセス
 	auto& dx11Manager = Game::System<DirectX11Manager>();
 
-	DXGIResource& dxgi = Game::System<WindowContextResourceManager>().Get<DXGIResource>(_windowContext);
+	DXGIResource& dxgi = Game::System<WindowContextResourceManager>().Get<DXGIResource>(windowContext_);
 
 	// レンダーターゲットビューを作成
 	dx11Manager.CreateRenderTargetView(dxgi.pSwapChain1_.Get(), pRenderTargetView_.ReleaseAndGetAddressOf());
@@ -81,16 +69,9 @@ void mtgb::Direct3DResource::Release()
 	pRenderTargetView_.Reset();
 }
 
-
-
 const D3D11_VIEWPORT& mtgb::Direct3DResource::GetViewport()
 {
 	return viewPort_;
-}
-
-Direct3DResource* mtgb::Direct3DResource::Clone() const
-{
-	return new Direct3DResource(*this);
 }
 
 

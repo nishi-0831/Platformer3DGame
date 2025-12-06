@@ -6,31 +6,16 @@
 #include <processthreadsapi.h>
 using namespace mtgb;
 
-
-namespace
-{
-
-}
-
-mtgb::DXGIResource::DXGIResource()
-	:pSwapChain1_{nullptr}, pOutput_{nullptr}, pDXGISurface_{nullptr}
-{
-}
-
-mtgb::DXGIResource::~DXGIResource()
-{
-	Release();
-}
-
-//mtgb::DXGIResource::DXGIResource(const DXGIResource& other)
-//	:WindowContextResource(other)
-//	/*,pSwapChain1_{nullptr}
-//	,pOutput_{nullptr}
-//	,pDXGISurface_{nullptr}*/
-//{
-//}
-
-void DXGIResource::Initialize(WindowContext _windowContext)
+mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)
+	: WindowContextResource(_windowContext)
+	, pSwapChain1_{nullptr}
+	, pOutput_{nullptr}
+	, pDXGISurface_{nullptr}
+	, monitorInfo_{}
+	, isMultiMonitor_{true}
+	, isBorderlessWindow{true}
+	, name_{"UnknownWindow"}
+	, outputDesc_{}
 {
 	if (_windowContext == WindowContext::First)
 	{
@@ -41,16 +26,14 @@ void DXGIResource::Initialize(WindowContext _windowContext)
 		name_ = "SecondWindowDXGI";
 	}
 
-	// DirectX11Managerにアクセスしてリソースを作成
+	// DirectX11Manager にアクセスしてリソースを作成
 	auto& dx11Manager = Game::System<DirectX11Manager>();
 
 	HWND hWnd = WinCtxRes::GetHWND(_windowContext);
 
-	// マルチモニター対応するかどうか
+	// マルチモニター対応かどうか
 	
-	DWORD processId = GetCurrentProcessId();
-
-	if (isMultiMonitor_ && processId > 0)
+	if (isMultiMonitor_)
 	{	
 		
 		std::optional<MonitorInfo> optMonitorInfo = dx11Manager.AssignAvailableMonitor(pOutput_.ReleaseAndGetAddressOf());
@@ -59,45 +42,34 @@ void DXGIResource::Initialize(WindowContext _windowContext)
 			monitorInfo_ = *optMonitorInfo;
 		}
 
+		// ウィンドウサイズの変更時に利用するためにDescを取得
 		HRESULT hResult = pOutput_->GetDesc(&outputDesc_);
 		massert(SUCCEEDED(hResult)
-			&& "GetDescに失敗 @DXGIResource::Initialize");
+			&& "GetDesc に失敗 @DXGIResource::Initialize");
 
-		// ボーダレスウィンドウにするならDescだけ取得して解放
+		// ボーダレスウィンドウの場合、スワップチェーンのバッファサイズを変えるだけなので、Outputは不要。
+		// ID3D11Deviceの作成に使用したIDXGIAdapterと、IDXGIOutputの列挙に使用したIDXGIAdapterが異なると、スワップチェーンの作成に失敗する。
+		// 現状はID3D11Deviceは一つだけ作成しているので、IDXGIAdapterが異なる可能性を考慮してOutputは解放する
 		if (isBorderlessWindow)
 		{
 			pOutput_.Reset();
-			
 		}
-		/*UINT nomModes = 0;
-		pOutput_->GetDisplayModeList(
-			DXGI_FORMAT_R8G8B8A8_UNORM,
-			0,
-			&nomModes,
-			nullptr);
-
-		modeList_.resize(nomModes);
-
-		pOutput_->GetDisplayModeList(
-			DXGI_FORMAT_R8G8B8A8_UNORM,
-			0,
-			&nomModes,
-			modeList_.data());*/
-
-		
 	}
 	else 
 	{
 		pOutput_ = nullptr;
 	}
 
-	// スワップチェーンを作成
+	// スワップチェーンを作成(pOutput_がnullptrでもデフォルトのIDXGIAdapterから作成される)
 	dx11Manager.CreateSwapChain(hWnd, pOutput_.Get(), pSwapChain1_.ReleaseAndGetAddressOf());
 
-	//サーフェスとやらを作成
+	// サーフェスとして作成
 	dx11Manager.CreateDXGISurface(pSwapChain1_.Get(), pDXGISurface_.ReleaseAndGetAddressOf());
+}
 
-
+mtgb::DXGIResource::~DXGIResource()
+{
+	Release();
 }
 
 void DXGIResource::SetResource()
@@ -116,39 +88,27 @@ void mtgb::DXGIResource::Update()
 			TypeRegistry::Instance().CallFunc(&monitorInfo_.desc, "OutputDesc");
 			ImGui::PopID();
 			ImGui::Separator();
-
-			/*for (int i = 0; i < modeList_.size(); i++)
-			{
-				DXGI_MODE_DESC& modeDesc = modeList_[i];
-				ImGui::Text("DXGI_MODE_DESC");
-				ImGui::PushID(&modeDesc);
-				ImGui::Text("Width,Height:%u,%u",modeDesc.Width,modeDesc.Height);
-				ImGui::Text("RefreshRate:%u/%u",modeDesc.RefreshRate.Numerator,modeDesc.RefreshRate.Denominator);
-				ImGui::PopID();
-			}*/
 		}, name_.c_str(), ShowType::Settings);
 }
 
 void mtgb::DXGIResource::Reset()
 {
 	pDXGISurface_.Reset();
-	//pOutput_.Reset();
 }
 
-void mtgb::DXGIResource::OnResize(WindowContext _windowContext, UINT _width, UINT _height)
+void mtgb::DXGIResource::OnResize(UINT _width, UINT _height)
 {
 	HRESULT hResult = pSwapChain1_->ResizeBuffers(
 		0, _width, _height, DXGI_FORMAT_UNKNOWN, 0);
-	massert(SUCCEEDED(hResult) && "ResizeBuffersに失敗 @DXGIResource::OnResize");
+	massert(SUCCEEDED(hResult) && "ResizeBuffers に失敗 @DXGIResource::OnResize");
 
-	//再取得
+	// 再取得
 	Game::System<DirectX11Manager>().CreateDXGISurface(pSwapChain1_.Get(), pDXGISurface_.ReleaseAndGetAddressOf());
 }
 
 void mtgb::DXGIResource::Release()
 {
-	// REF:https://learn.microsoft.com/ja-jp/windows/win32/direct3ddxgi/d3d10-graphics-programming-guide-dxgi#full-screen-performance-tip
-	// SwapChainはフルスクリーンモードでは解放できないらしい
+	// SwapChain はフルスクリーンモードでは削除できないらしい
 	if (pSwapChain1_)
 	{
 		pSwapChain1_->SetFullscreenState(false, nullptr);
@@ -158,54 +118,10 @@ void mtgb::DXGIResource::Release()
 	pDXGISurface_.Reset();
 }
 
-//void mtgb::DXGIResource::SetFullscreen(bool _fullscreen)
-//{
-//	HRESULT hResult;
-//	if (_fullscreen)
-//	{
-//		const RECT& rc = outputDesc_.DesktopCoordinates;
-//		
-//		DXGI_MODE_DESC modeDesc =
-//		{
-//			.Width = static_cast<UINT>(rc.right - rc.left),
-//			.Height = static_cast<UINT>(rc.bottom - rc.top),
-//			.RefreshRate
-//			{
-//				.Numerator = 60,
-//				.Denominator = 1
-//			},
-//			.Format = DXGI_FORMAT_R8G8B8A8_UNORM,
-//			// スキャンライン順序の設定
-//			.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED, // 指定なし
-//			// 画像の拡大方法の設定
-//			// REF:https://learn.microsoft.com/ja-jp/previous-versions/windows/desktop/legacy/bb173066(v=vs.85)
-//			// UNSPECIFIED以外だとフルスクリーンに切り替える際にモード変更(?)が発生する可能性があるらしい
-//			.Scaling = DXGI_MODE_SCALING_UNSPECIFIED // 指定なし
-//		};
-//		
-//		// 旧:最初のモードを使用
-//		//hResult = pSwapChain1_->ResizeTarget(&modeList_[0]);
-//		//hResult = pSwapChain1_->ResizeTarget(&modeDesc);
-//		
-//	}
-//	
-//	//hResult = pSwapChain1_->SetFullscreenState(_fullscreen, _fullscreen ? pOutput_.Get() : nullptr);
-//	/*if (FAILED(hResult))
-//	{
-//		LOGIMGUI("WARN:%ld", hResult);
-//	}*/
-//	
-//}
-
 void mtgb::DXGIResource::SwapMonitorInfo(DXGIResource& _other)
 {
 	std::swap(monitorInfo_, _other.monitorInfo_);
 	std::swap(outputDesc_, _other.outputDesc_);
-}
-
-WindowContextResource* mtgb::DXGIResource::Clone() const
-{
-	return new DXGIResource(*this);
 }
 
 

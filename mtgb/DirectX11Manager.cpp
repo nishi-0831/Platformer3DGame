@@ -415,15 +415,18 @@ std::optional<mtgb::MonitorInfo> mtgb::DirectX11Manager::AssignAvailableMonitor(
 	// 未使用のモニターを探す
 	for (auto& info : DirectX11Draw::monitorInfos_)
 	{
-		if (!info.isRequested)
-		{
+		// すでに使用済み、もしくはアダプター、モニターのインデックスが未設定の場合はスキップ
+		if (info.isRequested || info.adapterIndex == MonitorInfo::INVALID_INDEX || info.outputIndex == MonitorInfo::INVALID_INDEX)
+			continue;
+		
+			// モニターを列挙して、IDXGIOutputの作成を試みる
 			HRESULT hResult = DirectX11Draw::pDXGIAdapters_[info.adapterIndex]->EnumOutputs(info.outputIndex, ppOutput);
 			if (SUCCEEDED(hResult))
 			{
+				// 作成成功
 				info.isRequested = true;
 				return info;
 			}
-		}
 	}
 
 	// 全て使用済みの場合は、0番目のモニターを返す
@@ -457,13 +460,6 @@ void mtgb::DirectX11Manager::ClearState()
 	// 描画コマンドを強制的にGPUに送り出す
 	DirectX11Draw::pContext_->Flush();
 
-	//ID3D11CommandList* pCmdList = nullptr;
-	//// 描画コマンドが残っているなら破棄
-	//DirectX11Draw::pContext_->FinishCommandList(FALSE, &pCmdList);
-	//if (pCmdList)
-	//{
-	//	pCmdList->Release();
-	//}
 	Game::System<Direct2D>().Reset();
 	DirectX11Draw::pDepthStencil_.Reset();
 	DirectX11Draw::pDepthStencilView_.Reset();
@@ -478,7 +474,6 @@ void mtgb::DirectX11Manager::SetDefaultStates()
 	
 	// 必要に応じて他のデフォルト状態も再設定
 	// 例：デフォルトサンプラーステート、ブレンドステートなど
-	/*DirectX11Draw::pContext_->PSGetSamplers*/
 }
 
 void mtgb::DirectX11Manager::EnumAvailableMonitors()
