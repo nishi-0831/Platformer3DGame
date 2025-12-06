@@ -1,44 +1,44 @@
 #include "3DCommon.hlsli"
 
-//定義
+// 定義
 #define MAX_BONE_MATRICES 128
 
 
 
 
-cbuffer BoneMatrices : register(b1) //ボーンのポーズ行列が入る
+cbuffer BoneMatrices : register(b1) // ボーンのポーズ行列が入る
 {
     matrix g_boneMatrices[MAX_BONE_MATRICES];
     bool g_hasSkinnedMesh;
     float g_padding[3];
 };
 
-//スキニング後の頂点・法線が入る
+// スキニング後の頂点・法線が入る
 struct Skin
 {
     float4 position;
     float3 normal;
 };
-//バーテックスバッファーの入力
+// バーテックスバッファーの入力
 struct VSSkinIn
 {
-    float3 position : POSITION; //位置   
-    float3 normal : NORMAL; //頂点法線
-    float2 uv : TEXCOORD; //テクスチャー座標
-    uint4 boneIndex : BONE_INDEX; //ボーンのインデックス
-    float4 boneWeight : BONE_WEIGHT; //ボーンの重み
+    float3 position : POSITION; // 位置   
+    float3 normal : NORMAL; // 頂点法線
+    float2 uv : TEXCOORD; // テクスチャーの座標
+    uint4 boneIndex : BONE_INDEX; // ボーンのインデックス
+    float4 boneWeight : BONE_WEIGHT; // ボーンの重み
 };
-//ピクセルシェーダーの入力（バーテックスバッファーの出力）　
+//ピクセルシェーダーの入力(バーテックスバッファーの出力)
 struct PSSkinIn
 {
     float4 position : SV_Position; //位置
     float3 normal : NORMAL; //頂点法線
     float2 uv : TEXCOORD; //テクスチャー座標
-    float4 Color : COLOR0; //最終カラー（頂点シェーダーにおいての）
+    float4 Color : COLOR0; //最終カラー(頂点シェーダーにおいての)
 };
 
 
-//頂点をスキニング（ボーンにより移動）する。サブ関数（バーテックスシェーダーで使用）
+//頂点をスキニング(ボーンにより移動)する。
 Skin SkinVert(VSSkinIn input)
 {
     Skin Output = (Skin) 0;
@@ -72,7 +72,7 @@ Skin SkinVert(VSSkinIn input)
 
 //
 //PSSkinIn VSSkin(VSSkinIn input )
-//バーテックスシェーダー
+// バーテックスシェーダー
 PSSkinIn VS(VSSkinIn input)
 {
     PSSkinIn output;

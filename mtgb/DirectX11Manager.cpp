@@ -457,13 +457,6 @@ void mtgb::DirectX11Manager::ClearState()
 	// 描画コマンドを強制的にGPUに送り出す
 	DirectX11Draw::pContext_->Flush();
 
-	//ID3D11CommandList* pCmdList = nullptr;
-	//// 描画コマンドが残っているなら破棄
-	//DirectX11Draw::pContext_->FinishCommandList(FALSE, &pCmdList);
-	//if (pCmdList)
-	//{
-	//	pCmdList->Release();
-	//}
 	Game::System<Direct2D>().Reset();
 	DirectX11Draw::pDepthStencil_.Reset();
 	DirectX11Draw::pDepthStencilView_.Reset();
@@ -475,10 +468,6 @@ void mtgb::DirectX11Manager::SetDefaultStates()
 {
 	// PrimitiveTopology を再設定
 	DirectX11Draw::pContext_->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-	
-	// 必要に応じて他のデフォルト状態も再設定
-	// 例：デフォルトサンプラーステート、ブレンドステートなど
-	/*DirectX11Draw::pContext_->PSGetSamplers*/
 }
 
 void mtgb::DirectX11Manager::EnumAvailableMonitors()

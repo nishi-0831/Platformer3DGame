@@ -22,15 +22,17 @@ void mtgb::Transform::Compute()
 	// 親の行列を取得
 	Matrix4x4 parentMat{};
 	GenerateParentMatrix(&parentMat);
-	
 
 	// 現在のワールド座標から行列を作成
 	Matrix4x4 currWorldMat =
 		XMMatrixScaling(scale.x, scale.y, scale.z) *
 		XMMatrixRotationQuaternion(XMQuaternionNormalize(rotate)) *
 		XMMatrixTranslation(position.x, position.y, position.z);
+
+	// 前回の親の逆行列
 	Matrix4x4 parentInverse = DirectX::XMMatrixInverse(nullptr, prevParentMatrix_);
 
+	// ワールド座標系の値(position,rotate,scale)に行われた変更をローカル座標系の値に適用
 	matrixLocal_ = currWorldMat * parentInverse;
 	DecomposeMatrixImpl(&localPosition_, &localRotate_, &localScale_, matrixLocal_);
 
@@ -39,14 +41,14 @@ void mtgb::Transform::Compute()
 		XMQuaternionNormalize(localRotate_));
 	matrixScale_ = XMMatrixScaling(localScale_.x, localScale_.y, localScale_.z);
 
-	GenerateWorldMatrix(&matrixWorld_);
 	// ワールド行列を計算
+	GenerateWorldMatrix(&matrixWorld_);
+	// ワールド回転行列を計算
 	GenerateWorldRotationMatrix(&matrixWorldRot_);  // ワールド回転行列更新
 
-	// ワールド行列からワールド座標系の値を逆算して更新
+	// 親の座標変換を適用
 	DecomposeMatrixImpl(&position, &rotate, &scale, matrixWorld_);
 
-	bool parentChanged = !(parentMat == prevParentMatrix_);
 	prevParentMatrix_ = parentMat;
 }
 

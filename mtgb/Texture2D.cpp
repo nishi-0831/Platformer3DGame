@@ -150,21 +150,6 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 
 	D3D11_MAPPED_SUBRESOURCE hMappedSubresource{};
 
-	//// テクスチャをマップ(登録)する
-	//hResult = DirectX11Draw::pContext_->Map(
-	//	pTexture,
-	//	0U,
-	//	D3D11_MAP_WRITE_DISCARD,
-	//	0U,
-	//	&hMappedSubresource);
-
-	//massert(SUCCEEDED(hResult)  // テクスチャのマップに成功
-	//	&& "テクスチャのマップに失敗 @Texture2D::Load");
-
-	
-
-	/*DirectX11Draw::pContext_->Unmap(pTexture, 0U);*/
-
 	const D3D11_SHADER_RESOURCE_VIEW_DESC SHADER_RESOURCE_VIEW_DESC
 	{
 		.Format = DXGI_FORMAT_R8G8B8A8_UNORM,
