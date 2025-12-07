@@ -1,4 +1,6 @@
 #pragma once
+#include "ReflectionMacro.h"
+#include "Transform.generated.h"
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
 #include "TransformState.h"
@@ -9,19 +11,21 @@
 #include "Matrix4x4.h"
 #include "cmtgb.h"
 #include "TransformCP.h"
-
 namespace mtgb
 {
 	using EntityId = int64_t;
-
+	
 	class TransformCP;
 
-	class Transform : public StatefulComponent<Transform, TransformCP, TransformState>
+	MT_COMPONENT()
+	class Transform : public IComponent<TransformCP,Transform>
 	{
 	public:
-		friend TransformCP;
+		MT_GENERATED_BODY()
 
-		using StatefulComponent<Transform, TransformCP, TransformState>::StatefulComponent;
+
+		friend TransformCP;
+		
 		Transform()
 		{
 
@@ -151,7 +155,15 @@ namespace mtgb
 		/// <returns>ワールド回転の四元数</returns>
 		Quaternion GetWorldRotate() const;
 
-		void OnPostRestore() override;
+		void OnPostRestore();
+		MT_PROPERTY()
+		EntityId parent;
+		MT_PROPERTY()
+		Vector3 position;
+		MT_PROPERTY()
+		Vector3 scale;
+		MT_PROPERTY()
+		Quaternion rotate;
 	private:
 		bool DecomposeMatrixImpl(Vector3* _pPos, Quaternion* _pRot, Vector3* _pScale, const Matrix4x4& _matrix);
 
@@ -165,6 +177,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_pMatrix">行列のポインタ渡し</param>
 		void GenerateWorldRotMatrixSelf(Matrix4x4* _pMatrix) const;
+
 
 	public://private:
 		Matrix4x4 matrixTranslate_{};         // 計算された移動行列
@@ -181,5 +194,5 @@ namespace mtgb
 
 	};
 
-	using TransformMemento = ComponentMemento<Transform, TransformState>;
+	
 }

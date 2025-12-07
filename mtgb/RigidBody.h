@@ -1,4 +1,6 @@
 #pragma once
+#include "ReflectionMacro.h"
+#include "RigidBody.generated.h"
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
 
@@ -13,10 +15,11 @@ namespace mtgb
 
 	class Transform;
 	class RigidBodyCP;
-	class RigidBody : public StatefulComponent<RigidBody, RigidBodyCP, RigidBodyState>
+	MT_COMPONENT()
+	class RigidBody : public IComponent<RigidBodyCP,RigidBody>
 	{
 	public:
-		using StatefulComponent<RigidBody, RigidBodyCP, RigidBodyState>::StatefulComponent;
+		MT_GENERATED_BODY()
 		friend RigidBodyCP;
 
 		RigidBody(const EntityId _entityId);
@@ -28,10 +31,10 @@ namespace mtgb
 				return *this;
 			}
 
-			this->velocity = _other.velocity;
+			this->velocity_ = _other.velocity_;
 			this->onHit_ = _other.onHit_;
-			this->isNeedUpdate = _other.isNeedUpdate;
-			this->useGravity = _other.useGravity;
+			this->isNeedUpdate_ = _other.isNeedUpdate_;
+			this->useGravity_ = _other.useGravity_;
 			this->pTransform_ = _other.pTransform_;
 
 			return *this;
@@ -39,6 +42,7 @@ namespace mtgb
 
 		void UpdateVelocity();
 		void OnGround();
+		void OnPostRestore() {};
 		/// <summary>
 		/// 当たったときのイベントコールバック
 		/// </summary>
@@ -49,13 +53,22 @@ namespace mtgb
 		bool IsJumping();
 		static Vector3 GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
 	public:
-
+		MT_PROPERTY()
+		bool isNeedUpdate_;
+		MT_PROPERTY()
+		Vector3 velocity_;
+		MT_PROPERTY()
+		bool useGravity_;
+		MT_PROPERTY()
+		bool isGround_;
+		MT_PROPERTY()
+		bool isKinematic_;
 	private:
+
 		std::function<void(const EntityId)> onHit_;
 		std::function<void(const EntityId)> onStay_;
 		std::function<void(const EntityId)> onExit_;
 		Transform* pTransform_;  // TODO: 危ないTransform
 	};
 
-	using RigidBodyMemento = ComponentMemento<RigidBody, RigidBodyState>;
 }

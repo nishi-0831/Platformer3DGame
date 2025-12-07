@@ -1,4 +1,6 @@
 #pragma once
+#include "ReflectionMacro.h"
+#include "Collider.generated.h"
 #include "StatefulComponent.h"
 #include "ColliderState.h"
 #include "IComponentMemento.h"
@@ -18,11 +20,13 @@ namespace mtgb
 	};
 	class ColliderCP;
 	class Transform;
-	class Collider :  public StatefulComponent<Collider, ColliderCP, ColliderState>
+	MT_COMPONENT()
+	class Collider :  public IComponent<ColliderCP,Collider>
 	{
 
 	public:
-		using StatefulComponent<Collider, ColliderCP, ColliderState>::StatefulComponent;
+		MT_GENERATED_BODY()
+
 		friend ColliderCP;
 
 
@@ -66,12 +70,12 @@ namespace mtgb
 		void SetCenter(const Vector3& _center);
 		void SetExtents(const Vector3& _extents);
 		void SetRadius(float _radius);
-		ColliderTag GetColliderTag() const { return colliderTag; }
+		ColliderTag GetColliderTag() const { return colliderTag_; }
 		
 		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
 		void Push(const Collider& _other);
 	public:
-		void OnPostRestore() override;
+		void OnPostRestore() ;
 
 		std::set<Collider*> onColliders_;
 		std::set<Collider*> onColldiersPrev_;
@@ -89,7 +93,19 @@ namespace mtgb
 		//ColliderTag colliderTag;
 		static FBXModelHandle hSphereModel_;
 		static FBXModelHandle hBoxModel_;
+		MT_PROPERTY()
+		// 当たり判定の形
+		ColliderType colliderType_;
+		MT_PROPERTY()
+		// 静的な、Transform不要なコライダー用のフラグ
+		bool isStatic_;
+		MT_PROPERTY()
+		ColliderTag colliderTag_;
+		MT_PROPERTY()
+		Vector3 center_;
+		MT_PROPERTY()
+		float radius_;
+		MT_PROPERTY()
+		Vector3 extents_;
 	};
-
-	using ColliderMemento = ComponentMemento<Collider, ColliderState>;
 }

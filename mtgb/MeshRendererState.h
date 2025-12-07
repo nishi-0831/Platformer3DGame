@@ -9,11 +9,11 @@ namespace mtgb
 	/// <summary>
 	/// MeshRenderer‚Ìó‘Ô‚Ì‚İ‚ğ•Û‚·‚é\‘¢‘Ì
 	/// </summary>
-	struct MeshRendererState
+	/*struct MeshRendererState
 	{
 		std::string meshFileName;
 		FBXModelHandle meshHandle{ INVALID_ENTITY };
 		GameObjectLayerFlag layer{ AllLayer() };
 		ShaderType shaderType{ ShaderType::FbxParts };
-	};
+	};*/
 }

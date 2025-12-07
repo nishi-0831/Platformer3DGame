@@ -1,4 +1,6 @@
 #pragma once
+#include "ReflectionMacro.h"
+#include "MeshRenderer.generated.h"
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
 #include "MeshRendererState.h"
@@ -12,13 +14,14 @@ namespace mtgb
 {
     
     class MeshRendererCP;
+    MT_COMPONENT()
     /// <summary>
     /// メッシュとマテリアルを管理する描画コンポーネント
     /// </summary>
-    class MeshRenderer :public IRenderable ,public StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererState>
+    class MeshRenderer :public IRenderable ,public IComponent<MeshRendererCP,MeshRenderer>
     {
     public:
-        using StatefulComponent<MeshRenderer, MeshRendererCP, MeshRendererState>::StatefulComponent;
+        MT_GENERATED_BODY()
         friend MeshRendererCP;
 
         MeshRenderer();
@@ -47,8 +50,17 @@ namespace mtgb
         void OnChangeMeshFileName();
         void Render() const override;
         bool CanRender() const override { return meshHandle != INVALID_HANDLE; };
+
+        MT_PROPERTY()
+        std::string meshFileName;
+        MT_PROPERTY()
+        FBXModelHandle meshHandle;
+        MT_PROPERTY()
+        GameObjectLayerFlag layer;
+        MT_PROPERTY()
+        ShaderType shaderType;
     protected:
-        void OnPostRestore() override;
+        void OnPostRestore();
     private:
     };
 

@@ -1,12 +1,17 @@
 #pragma once
+#include "ReflectionMacro.h"
 #include <mtgb.h>
+#include "MovingFloor.generated.h"
 #include "MovingFloorState.h"
 #include "MovingFloorCP.h"
 class MovingFloorCP;
-class MovingFloor : public StatefulComponent<MovingFloor, MovingFloorCP, MovingFloorState>
+
+MT_COMPONENT()
+class MovingFloor : public IComponent<MovingFloorCP,MovingFloor>
 {
 public:
-	using StatefulComponent<MovingFloor, MovingFloorCP, MovingFloorState>::StatefulComponent;
+	MT_GENERATED_BODY()
+
 	friend MovingFloorCP;
 	MovingFloor();
 	MovingFloor(EntityId _entityId);
@@ -18,8 +23,8 @@ public:
 	
 	Vector3 Evaluate();
 protected:
-	void OnPostRestore() override;
-	void OnPreSave() override;
+	void OnPostRestore();
+	void OnPreSave();
 private:
 	void OnCollisionEnter(EntityId _entityId);
 	void OnCollisionExit(EntityId _entityId);
@@ -35,5 +40,14 @@ private:
 	RigidBody* pRigidBody_;
 	Transform* pToTransform_;
 	Transform* pFromTransform_;
+
+	MT_PROPERTY()
+	// •âŠÔ‚É‚©‚©‚éŽžŠÔ
+	float duration_;
+	MT_PROPERTY()
+	Vector3 to_;
+	MT_PROPERTY()
+	Vector3 from_;
+
 	static unsigned int generateCounter_;
 };

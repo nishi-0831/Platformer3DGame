@@ -298,8 +298,8 @@ namespace mtgb
 				// 静的なコライダー
 				Collider* pCollider = &(Game::System<ColliderCP>().Get(terrainCellId,ColliderTag::STAGE));
 
-				pCollider->isStatic = true;
-				pCollider->colliderType = ColliderType::ColliderType::TYPE_AABB;
+				pCollider->isStatic_ = true;
+				pCollider->colliderType_ = ColliderType::ColliderType::TYPE_AABB;
 				pCollider->SetCenter(center);
 				pCollider->SetExtents(extents);
 				_aabbs->push_back(pCollider);
@@ -542,7 +542,7 @@ namespace mtgb
 		{
 			EntityId id = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
-			pCollider->colliderType = ColliderType::TYPE__AABB;
+			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -558,7 +558,7 @@ namespace mtgb
 				wallThickness / 2.0f
 			};
 
-			pCollider->isStatic = true;
+			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
 			pCollider->SetExtents(extents);
 			aabbs.push_back(pCollider);
@@ -568,7 +568,7 @@ namespace mtgb
 		{
 			EntityId id = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
-			pCollider->colliderType = ColliderType::TYPE__AABB;
+			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -584,7 +584,7 @@ namespace mtgb
 				wallThickness / 2.0f
 			};
 
-			pCollider->isStatic = true;
+			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
 			pCollider->SetExtents(extents);
 			aabbs.push_back(pCollider);
@@ -594,7 +594,7 @@ namespace mtgb
 		{
 			EntityId id = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
-			pCollider->colliderType = ColliderType::TYPE__AABB;
+			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -610,7 +610,7 @@ namespace mtgb
 				(stageMax - stageMin) / 2.0f
 			};
 
-			pCollider->isStatic = true;
+			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
 			pCollider->SetExtents(extents);
 			aabbs.push_back(pCollider);
@@ -620,7 +620,7 @@ namespace mtgb
 		{
 			EntityId id = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
-			pCollider->colliderType = ColliderType::TYPE__AABB;
+			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -636,7 +636,7 @@ namespace mtgb
 				(stageMax - stageMin) / 2.0f
 			};
 
-			pCollider->isStatic = true;
+			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
 			pCollider->SetExtents(extents);
 			aabbs.push_back(pCollider);
@@ -646,7 +646,7 @@ namespace mtgb
 		{
 			EntityId id = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
-			pCollider->colliderType = ColliderType::TYPE__AABB;
+			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
 			Vector3 center =
 			{
@@ -662,7 +662,7 @@ namespace mtgb
 				(stageMax - stageMin) / 2.0f
 			};
 
-			pCollider->isStatic = true;
+			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
 			pCollider->SetExtents(extents);
 			aabbs.push_back(pCollider);

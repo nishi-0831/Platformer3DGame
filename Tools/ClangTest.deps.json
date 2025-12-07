@@ -12,7 +12,11 @@
           "ClangSharp.Interop": "20.1.2.4",
           "Newtonsoft.Json": "13.0.4",
           "Scriban": "6.5.2",
-          "libClangSharp": "20.1.2",
+          "System.Data.HashFunction.Core": "2.0.0",
+          "System.Data.HashFunction.Interfaces": "2.0.0",
+          "System.Data.HashFunction.xxHash": "2.0.0",
+          "System.IO.Hashing": "10.0.0",
+          "System.Text.Encoding.CodePages": "10.0.0",
           "libClangSharp.runtime.win-x64": "20.1.2"
         },
         "runtime": {
@@ -31,10 +35,6 @@
         }
       },
       "ClangSharp.Interop/20.1.2.4": {
-        "dependencies": {
-          "libclang": "20.1.2",
-          "libClangSharp": "20.1.2"
-        },
         "runtime": {
           "lib/net8.0/ClangSharp.Interop.dll": {
             "assemblyVersion": "20.1.2.4",
@@ -42,8 +42,6 @@
           }
         }
       },
-      "libclang/20.1.2": {},
-      "libClangSharp/20.1.2": {},
       "libClangSharp.runtime.win-x64/20.1.2": {
         "runtimeTargets": {
           "runtimes/win-x64/native/libClangSharp.dll": {
@@ -66,6 +64,60 @@
           "lib/net7.0/Scriban.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.5.2.0"
+          }
+        }
+      },
+      "System.Data.HashFunction.Core/2.0.0": {
+        "dependencies": {
+          "System.Data.HashFunction.Interfaces": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/System.Data.HashFunction.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "System.Data.HashFunction.Interfaces/2.0.0": {
+        "runtime": {
+          "lib/netstandard1.1/System.Data.HashFunction.Interfaces.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "System.Data.HashFunction.xxHash/2.0.0": {
+        "dependencies": {
+          "System.Data.HashFunction.Core": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/System.Data.HashFunction.xxHash.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "System.IO.Hashing/10.0.0": {
+        "runtime": {
+          "lib/net9.0/System.IO.Hashing.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.52411"
+          }
+        }
+      },
+      "System.Text.Encoding.CodePages/10.0.0": {
+        "runtime": {
+          "lib/net9.0/System.Text.Encoding.CodePages.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.52411"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net9.0/System.Text.Encoding.CodePages.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.52411"
           }
         }
       }
@@ -91,20 +143,6 @@
       "path": "clangsharp.interop/20.1.2.4",
       "hashPath": "clangsharp.interop.20.1.2.4.nupkg.sha512"
     },
-    "libclang/20.1.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1A3NeS7Ko3KOZG14BuZv0ajii1y7yBEozKgYwZSG4xzGUc8kyKyVaX0KkzVHY+/jSPKvOgUuLONGDuJn0lGfsA==",
-      "path": "libclang/20.1.2",
-      "hashPath": "libclang.20.1.2.nupkg.sha512"
-    },
-    "libClangSharp/20.1.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/716OBKj0Pg3RVh9D1gTggCF0fvTJy3KtmommelcEtycqJ9tOkMKSVwHh57tADMFrxKA/b2fxXIDyoKknjhh2w==",
-      "path": "libclangsharp/20.1.2",
-      "hashPath": "libclangsharp.20.1.2.nupkg.sha512"
-    },
     "libClangSharp.runtime.win-x64/20.1.2": {
       "type": "package",
       "serviceable": true,
@@ -125,6 +163,41 @@
       "sha512": "sha512-JXli/Sh1WVZs/pqnPPRJTlwEsZHPJtndzxiaPnrteXDpAqVqHxh4ifhx4puTaYKVMPJUMOp9bnCpEVBpYlt/eQ==",
       "path": "scriban/6.5.2",
       "hashPath": "scriban.6.5.2.nupkg.sha512"
+    },
+    "System.Data.HashFunction.Core/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EOb5GB6QTumYBvl0P/uL1m8hVkUwdwnIiwYPzfRKn+zZPtVkruyOrl/cMnNOGRny68xkswvOSo9NytWoR/6ABw==",
+      "path": "system.data.hashfunction.core/2.0.0",
+      "hashPath": "system.data.hashfunction.core.2.0.0.nupkg.sha512"
+    },
+    "System.Data.HashFunction.Interfaces/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ESxg15JHcRWXfRgzVUF8FhRZ1xAuXo6zgaL4kCdB9DV2cnrAwRGiycCMlMsfOLXOMrkHZZbcBuKlO8pyxDCCOg==",
+      "path": "system.data.hashfunction.interfaces/2.0.0",
+      "hashPath": "system.data.hashfunction.interfaces.2.0.0.nupkg.sha512"
+    },
+    "System.Data.HashFunction.xxHash/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i1lanZeN7x1vIo9b8YCEKfF3iCr+uz66e/dmudfv88UEU2VBWthxpPvZNIZo4+Wx4hYpvbvYACWRCPyeCuYwiA==",
+      "path": "system.data.hashfunction.xxhash/2.0.0",
+      "hashPath": "system.data.hashfunction.xxhash.2.0.0.nupkg.sha512"
+    },
+    "System.IO.Hashing/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MqSp5IfX9RdWVwTED0WSRL1kZDNB7GlFj64O/NAJs4uO1beBHWEAFLlC7j8Fw/PkI+SUzooLVNvAe4aEkSwsRg==",
+      "path": "system.io.hashing/10.0.0",
+      "hashPath": "system.io.hashing.10.0.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QLP54mIATaBpjGlsZIxga38VPk1G9js0Kw651B+bvrXi2kSgGZYrxJSpM3whhTZCBK4HEBHX3fzfDQMw7CXHGQ==",
+      "path": "system.text.encoding.codepages/10.0.0",
+      "hashPath": "system.text.encoding.codepages.10.0.0.nupkg.sha512"
     }
   }
 }

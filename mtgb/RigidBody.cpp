@@ -22,44 +22,44 @@ mtgb::RigidBody::~RigidBody()
 
 void mtgb::RigidBody::UpdateVelocity()
 {
-	if (useGravity)
+	if (useGravity_)
 	{
-		velocity += Vector3::Up() * GRAVITY * Time::DeltaTimeF();
+		velocity_ += Vector3::Up() * GRAVITY * Time::DeltaTimeF();
 	}
-	pTransform_->position += velocity * Time::DeltaTimeF();
-	if (velocity.y > 0.0f)
+	pTransform_->position += velocity_ * Time::DeltaTimeF();
+	if (velocity_.y > 0.0f)
 	{
-		isGround = false;
+		isGround_ = false;
 	}
 }
 
 void mtgb::RigidBody::OnGround()
 {
-	isGround = true;
-	velocity.y = 0.0f;
+	isGround_ = true;
+	velocity_.y = 0.0f;
 }
 
 void mtgb::RigidBody::OnCollisionEnter(const std::function<void(const EntityId)>& _onHit)
 {
-	isNeedUpdate = true;
+	isNeedUpdate_ = true;
 	onHit_ = _onHit;
 }
 
 void mtgb::RigidBody::OnCollisionStay(const std::function<void(const EntityId)>& _onHit)
 {
-	isNeedUpdate = true;
+	isNeedUpdate_ = true;
 	onStay_ = _onHit;
 }
 
 void mtgb::RigidBody::OnCollisionExit(const std::function<void(const EntityId)>& _onExit)
 {
-	isNeedUpdate = true;
+	isNeedUpdate_ = true;
 	onExit_ = _onExit;
 }
 
 bool mtgb::RigidBody::IsJumping()
 {
-	return velocity.y > 0.0f;
+	return velocity_.y > 0.0f;
 }
 
 Vector3 mtgb::RigidBody::GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb)

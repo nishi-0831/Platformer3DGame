@@ -27,18 +27,18 @@ mtgb::Collider::Collider(EntityId _entityId)
 mtgb::Collider::Collider(EntityId _entityId, ColliderTag _colliderTag)
 	: StatefulComponent{ _entityId }
 {
-	colliderTag = _colliderTag;
+	colliderTag_ = _colliderTag;
 
 	switch (_colliderTag)
 	{
 		// 現在はゲームオブジェクトは動的、ステージは静的と断定しているが
 		// 動的なステージなども追加されるかもしれないので注意
 	case ColliderTag::GAME_OBJECT:
-		isStatic = false;
+		isStatic_ = false;
 		pTransform_ = &Transform::Get(_entityId);
 		break;
 	case ColliderTag::STAGE:
-		isStatic = true;
+		isStatic_ = true;
 		pTransform_ = nullptr;
 		break;
 	}
@@ -51,7 +51,7 @@ mtgb::Collider::~Collider()
 
 void mtgb::Collider::UpdateBoundingData()
 {
-	switch (colliderType)
+	switch (colliderType_)
 	{
 	case ColliderType::TYPE_SPHERE:
 		UpdateBoundingSphere();
@@ -72,12 +72,12 @@ void mtgb::Collider::UpdateBoundingSphere()
 
 void mtgb::Collider::UpdateBoundingBox()
 {
-	if (!isStatic)
+	if (!isStatic_)
 	{
 		computeBox_.Center = pTransform_->position;
-		computeBox_.Extents.x = extents.x * pTransform_->scale.x;
-		computeBox_.Extents.y = extents.y * pTransform_->scale.y;
-		computeBox_.Extents.z = extents.z * pTransform_->scale.z;
+		computeBox_.Extents.x = extents_.x * pTransform_->scale.x;
+		computeBox_.Extents.y = extents_.y * pTransform_->scale.y;
+		computeBox_.Extents.z = extents_.z * pTransform_->scale.z;
 	}
 }
 
@@ -86,30 +86,30 @@ bool mtgb::Collider::IsHit(const Collider& _other) const
 	using DirectX::XMVector3TransformCoord;
 	DirectX::ContainmentType containmentType = DirectX::DISJOINT;
 	// ステージ同士は接触しないものとする
-	if (colliderTag == ColliderTag::STAGE && _other.colliderTag == ColliderTag::STAGE)
+	if (colliderTag_ == ColliderTag::STAGE && _other.colliderTag_ == ColliderTag::STAGE)
 	{
 		return false;
 	}
 
-	if (colliderType == _other.colliderType)
+	if (colliderType_ == _other.colliderType_)
 	{
-		if (colliderType == ColliderType::TYPE_SPHERE)
+		if (colliderType_ == ColliderType::TYPE_SPHERE)
 		{
 			//// 距離が双方の球の半径よりも小さければ当たっている
 			containmentType = computeSphere_.Contains(_other.computeSphere_);
 		}
-		else if (colliderType == ColliderType::TYPE_AABB)
+		else if (colliderType_ == ColliderType::TYPE_AABB)
 		{
 			containmentType = computeBox_.Contains(_other.computeBox_);
 		}
 	}
 	else
 	{
-		if (colliderType == ColliderType::TYPE_SPHERE)
+		if (colliderType_ == ColliderType::TYPE_SPHERE)
 		{	
 			containmentType = computeSphere_.Contains(_other.computeBox_);
 		}
-		else if (colliderType == ColliderType::TYPE_AABB)
+		else if (colliderType_ == ColliderType::TYPE_AABB)
 		{
 			containmentType = computeBox_.Contains(_other.computeSphere_);
 		}
@@ -222,7 +222,7 @@ bool mtgb::Collider::IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _or
 
 bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* dist)
 {
-	switch (colliderType)
+	switch (colliderType_)
 	{
 	case ColliderType::TYPE_SPHERE:
 		return IsHit(computeSphere_, _origin, _dir, dist);
@@ -241,7 +241,7 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 {
 	static Matrix4x4 matrix{};
 
-	if (colliderType == ColliderType::TYPE_SPHERE)
+	if (colliderType_ == ColliderType::TYPE_SPHERE)
 	{
 		pTransform_->GenerateWorldMatrix(&matrix);
 		Vector3 worldPosition{ Vector3(computeSphere_.Center) * matrix };
@@ -254,7 +254,7 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 		// 距離が双方の球の半径よりも小さければ当たっている
 		return (distance <= hitDistance);
 	}
-	else if (colliderType == ColliderType::TYPE_CAPSULE)
+	else if (colliderType_ == ColliderType::TYPE_CAPSULE)
 	{
 		// TODO: カプセルと球の当たり判定
 
@@ -265,7 +265,7 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 
 void mtgb::Collider::SetCenter(const Vector3& _center)
 {
-	if (colliderType == ColliderType::TYPE_AABB)
+	if (colliderType_ == ColliderType::TYPE_AABB)
 	{
 		computeBox_.Center = _center;
 	}
@@ -273,7 +273,7 @@ void mtgb::Collider::SetCenter(const Vector3& _center)
 	{
 		computeSphere_.Center = _center;
 	}
-	center = _center;
+	center_ = _center;
 }
 
 void mtgb::Collider::SetExtents(const Vector3& _extents)
@@ -281,13 +281,13 @@ void mtgb::Collider::SetExtents(const Vector3& _extents)
 	computeBox_.Extents.x = _extents.x * pTransform_->scale.x;
 	computeBox_.Extents.y = _extents.y * pTransform_->scale.y;
 	computeBox_.Extents.z = _extents.z * pTransform_->scale.z;
-	extents = _extents;
+	extents_ = _extents;
 }
 
 void mtgb::Collider::SetRadius(float _radius)
 {
 	computeSphere_.Radius = _radius * pTransform_->scale.x;
-	radius = _radius;
+	radius_ = _radius;
 }
 
 std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb)
@@ -342,13 +342,13 @@ void mtgb::Collider::Push(const Collider& _other)
 	EntityId sphereTypeEntityId = INVALID_ENTITY;
 
 	// 球とAABBのみ押し出しを実装しているを実装している
-	if (colliderType == ColliderType::TYPE_SPHERE && _other.colliderType == ColliderType::TYPE_AABB)
+	if (colliderType_ == ColliderType::TYPE_SPHERE && _other.colliderType_ == ColliderType::TYPE_AABB)
 	{
 		sphereTypeEntityId = GetEntityId();
 		sphere = computeSphere_;
 		aabb = _other.computeBox_;
 	}
-	else if (_other.colliderType == ColliderType::TYPE_SPHERE && colliderType == ColliderType::TYPE_AABB)
+	else if (_other.colliderType_ == ColliderType::TYPE_SPHERE && colliderType_ == ColliderType::TYPE_AABB)
 	{
 		sphereTypeEntityId = _other.GetEntityId();
 		sphere = _other.computeSphere_;
@@ -378,15 +378,15 @@ void mtgb::Collider::OnPostRestore()
 	// TODO: コンポーネントの復元に依存関係を設定する
 	// 現在Transformよりも先に復元されてしまうためscaleの反映ができず、
 	// 次の更新時になってしまう
-	SetCenter(center);
-	switch (colliderType)
+	SetCenter(center_);
+	switch (colliderType_)
 	{
 	case ColliderType::TYPE_SPHERE:
 	case ColliderType::TYPE_CAPSULE:
-		SetRadius(radius);
+		SetRadius(radius_);
 		break;
 	case ColliderType::TYPE_AABB:
-		SetExtents(extents);
+		SetExtents(extents_);
 		break;
 	}
 }
@@ -396,7 +396,7 @@ void mtgb::Collider::Draw() const
 	static Transform copyTransform{};
 
 
-	switch (colliderType)
+	switch (colliderType_)
 	{
 	case ColliderType::TYPE_SPHERE:
 		copyTransform = *pTransform_;
@@ -408,7 +408,7 @@ void mtgb::Collider::Draw() const
 	case ColliderType::TYPE_AABB:
 
 
-		if (!isStatic)
+		if (!isStatic_)
 		{
 			copyTransform = *pTransform_;
 		}
@@ -420,7 +420,7 @@ void mtgb::Collider::Draw() const
 		// 軸並行なので回転はなし
 		copyTransform.rotate = Quaternion{};
 
-		if (isStatic)
+		if (isStatic_)
 		{
 			// 静的、StatefulTransform不要なのでそのまま代入
 			copyTransform.position = computeBox_.Center;

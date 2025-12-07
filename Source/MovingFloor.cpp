@@ -17,11 +17,11 @@ MovingFloor::MovingFloor(EntityId _entityId)
 	, dir_{1.0f}
 	, elapsed_{0.0f}
 {
-	duration = 1.0f;
+	duration_ = 1.0f;
 
 	// コライダーの設定
-	pCollider_->colliderType = ColliderType::TYPE_AABB;
-	pCollider_->extents = { 1,1,1 };
+	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
+	pCollider_->extents_ = { 1,1,1 };
 
 	// RigidBodyの設定
 	pRigidBody_->OnCollisionEnter([this](EntityId _id)
@@ -53,8 +53,8 @@ MovingFloor::MovingFloor(EntityId _entityId)
 	// コライダー作成、設定
 	Collider* pToCollider = to->Component<Collider>();
 	Collider* pFromCollider = from->Component<Collider>();
-	pToCollider->colliderType = ColliderType::TYPE_SPHERE;
-	pFromCollider->colliderType = ColliderType::TYPE_SPHERE;
+	pToCollider->colliderType_ = ColliderType::TYPE_SPHERE;
+	pFromCollider->colliderType_ = ColliderType::TYPE_SPHERE;
 	pToCollider->SetRadius(1.0f);
 	pFromCollider->SetRadius(1.0f);	
 }
@@ -79,7 +79,7 @@ void MovingFloor::Update()
 void MovingFloor::UpdateProgress()
 {
 	elapsed_ += Time::DeltaTimeF() * dir_;
-	float progress = elapsed_ / duration;
+	float progress = elapsed_ / duration_;
 	if (progress > 1.0f || progress < 0.0f)
 	{
 		dir_ *= -1.0f;
@@ -89,22 +89,22 @@ void MovingFloor::UpdateProgress()
 
 Vector3 MovingFloor::Evaluate()
 {
-	float progress = elapsed_ / duration;
+	float progress = elapsed_ / duration_;
 	return Mathf::Lerp(pToTransform_->position, pFromTransform_->position, progress);
 }
 
 void MovingFloor::OnPostRestore()
 {
 	// 読み込んだ値を始点、終点の座標に代入
-	pToTransform_->position = to;
-	pFromTransform_->position = from;
+	pToTransform_->position = to_;
+	pFromTransform_->position = from_;
 }
 
 void MovingFloor::OnPreSave()
 {
 	// 保存用の変数に始点、終点の座標を代入
-	to = pToTransform_->position;
-	from = pFromTransform_->position;
+	to_ = pToTransform_->position;
+	from_ = pFromTransform_->position;
 }
 
 void MovingFloor::OnCollisionEnter(EntityId _entityId)

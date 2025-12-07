@@ -49,11 +49,11 @@ std::vector<IComponentMemento*> GameOverZone::GetDefaultMementos(EntityId _entit
 
     ColliderState colliderState
     {
-        .colliderType{ColliderType::TYPE_AABB},
-        .isStatic{false},
-        .colliderTag{},
-        .center{transformState.position},
-        .extents{transformState.scale * 0.5f}
+        .colliderType_{ColliderType::TYPE_AABB},
+        .isStatic_{false},
+        .colliderTag_{},
+        .center_{transformState.position},
+        .extents_{transformState.scale * 0.5f}
     };
 
     mementos.push_back(new TransformMemento(_entityId, transformState));

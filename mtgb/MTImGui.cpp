@@ -246,7 +246,7 @@ void mtgb::MTImGui::SetupShowFunc()
     Set<Collider>([](Collider* _target, const char* _name)
         {
             ImGui::Text("Collider Property");
-            ImGui::Text("ColliderType %d", _target->colliderType);
+            ImGui::Text("ColliderType %d", _target->colliderType_);
         });
 
     Set<AudioPlayer>([](AudioPlayer* _target, const char* _name)
@@ -256,16 +256,16 @@ void mtgb::MTImGui::SetupShowFunc()
    
     Set<RigidBody>([](RigidBody* _target, const char* _name)
         {
-            TypeRegistry::Instance().CallFunc(&_target->velocity, "Velocity");
-            TypeRegistry::Instance().CallFunc(&_target->useGravity, "UseGravity");
-            TypeRegistry::Instance().CallFunc(&_target->isKinematic,"IsKinematic");
-            TypeRegistry::Instance().CallFunc(&_target->isGround,"IsGround");
+            TypeRegistry::Instance().CallFunc(&_target->velocity_, "Velocity");
+            TypeRegistry::Instance().CallFunc(&_target->useGravity_, "UseGravity");
+            TypeRegistry::Instance().CallFunc(&_target->isKinematic_,"IsKinematic");
+            TypeRegistry::Instance().CallFunc(&_target->isGround_,"IsGround");
         });
     Set<MovingFloor>([](MovingFloor* _target, const char* _name)
         {
-            TypeRegistry::Instance().CallFunc(&_target->duration, "Duration");
-            TypeRegistry::Instance().CallFunc(&_target->to, "To");
-            TypeRegistry::Instance().CallFunc(&_target->from, "From");
+            TypeRegistry::Instance().CallFunc(&_target->duration_, "Duration");
+            TypeRegistry::Instance().CallFunc(&_target->to_, "To");
+            TypeRegistry::Instance().CallFunc(&_target->from_, "From");
         });
     Set<ScreenCoordContainsInfo>([](ScreenCoordContainsInfo* _target, const char* _name)
         {

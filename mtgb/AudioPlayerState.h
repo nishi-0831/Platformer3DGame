@@ -3,9 +3,9 @@
 
 namespace mtgb
 {
-	struct AudioPlayerState
+	/*struct AudioPlayerState
 	{
 		AudioHandle hAudio;
-	};
+	};*/
 
 }

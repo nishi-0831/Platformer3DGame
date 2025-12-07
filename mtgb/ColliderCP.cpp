@@ -64,7 +64,7 @@ void mtgb::ColliderCP::Update()
 						bool existRigidBody = Game::System<RigidBodyCP>().TryGet(aRigidBody, a.GetEntityId());
 						if (existRigidBody)
 						{
-							if (aRigidBody->isKinematic == false)
+							if (aRigidBody->isKinematic_ == false)
 							{
 								b.Push(a);
 								continue;
@@ -75,7 +75,7 @@ void mtgb::ColliderCP::Update()
 						existRigidBody = Game::System<RigidBodyCP>().TryGet(bRigidBody, b.GetEntityId());
 						if (existRigidBody)
 						{
-							if (bRigidBody->isKinematic == false)
+							if (bRigidBody->isKinematic_ == false)
 							{
 								a.Push(b);
 								continue;

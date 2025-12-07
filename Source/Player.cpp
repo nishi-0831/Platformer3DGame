@@ -44,7 +44,7 @@ void Player::Update()
 		axis.y = 1;
 	}
 
-	Vector3& velocity = pRigidBody_->velocity;
+	Vector3& velocity = pRigidBody_->velocity_;
 
 	if (axis.Size() != 0)
 	{
@@ -78,12 +78,12 @@ void Player::Update()
 	{
 		if (pRigidBody_->IsJumping() == false)
 		{
-			pRigidBody_->velocity.y += jumpHeight;
+			pRigidBody_->velocity_.y += jumpHeight;
 			//pRigidBody_->isGround = false;
 		}
 	}
 
-	pCamera_->SetFollowMode(pRigidBody_->isGround, pRigidBody_->velocity);
+	pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
 }
 
 void Player::Draw() const
@@ -96,7 +96,7 @@ void Player::Start()
 	pCollider_ = Component<Collider>();
 	pMeshRenderer_ = Component<MeshRenderer>();
 	pRigidBody_ = Component<RigidBody>();
-	pRigidBody_->useGravity = true;
+	pRigidBody_->useGravity_ = true;
 
 	pCamera_ =  Instantiate<Camera>(this);
 	pCameraTransform_ = &Transform::Get(pCamera_->GetEntityId());

@@ -113,6 +113,7 @@
     <ClCompile Include="mtgb\TextRenderer.cpp" />
     <ClCompile Include="mtgb\TextRendererCP.cpp" />
     <ClCompile Include="mtgb\TimeLimit.cpp" />
+    <ClCompile Include="mtgb\Transform.generated.cpp" />
     <ClCompile Include="mtgb\TransformGuizmo.cpp" />
     <ClCompile Include="mtgb\TypeRegistry.cpp" />
     <ClCompile Include="mtgb\UIDrawCommand.cpp" />
@@ -292,6 +293,7 @@
     <ClInclude Include="mtgb\GameObjectTypeRegistry.h" />
     <ClInclude Include="mtgb\Interpolator.h" />
     <ClInclude Include="mtgb\IRenderable.h" />
+    <ClInclude Include="mtgb\ReflectionMacro.h" />
     <ClInclude Include="mtgb\TextBox.h" />
     <ClInclude Include="mtgb\TextRenderer.h" />
     <ClInclude Include="mtgb\GuizmoManipulatedEvent.h" />
@@ -371,6 +373,7 @@
     <ClInclude Include="mtgb\TextAlignment.h" />
     <ClInclude Include="mtgb\TextRendererCP.h" />
     <ClInclude Include="mtgb\TimeLimit.h" />
+    <ClInclude Include="mtgb\Transform.generated.h" />
     <ClInclude Include="mtgb\TransformCore.h" />
     <ClInclude Include="mtgb\TransformState.h" />
     <ClInclude Include="mtgb\TransformGuizmo.h" />
@@ -510,6 +513,7 @@
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\GameOverZone.h" />
     <ClInclude Include="Source\Goal.h" />
+    <ClInclude Include="Source\MovingFloor.generated.h" />
     <ClInclude Include="Source\MovingFloor.h" />
     <ClInclude Include="Source\MovingFloorCP.h" />
     <ClInclude Include="Source\MovingFloorState.h" />
@@ -724,7 +728,7 @@
     <LibraryPath>C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\lib\x64\debug;$(LibraryPath)</LibraryPath>
     <EnableClangTidyCodeAnalysis>false</EnableClangTidyCodeAnalysis>
     <RunCodeAnalysis>false</RunCodeAnalysis>
-    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;$(ProjectDir)mtgb;$(ProjectDir)refl-cpp;$(ProjectDir)packages\boost.1.87.0\lib\native\include;$(IncludePath)</IncludePath>
@@ -780,8 +784,8 @@
       <AdditionalLibraryDirectories>$(FBX)\lib\x64\debug;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\lib\x64\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>ECHO $(ProjectDir) &gt; $(ProjectDir)ProjectDirPath.txt
-"$(ProjectDir)Tools\ClangTest.exe" "$(ProjectDir)"</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -820,5 +824,16 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\boost.1.87.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost.1.87.0\build\boost.targets'))" />
     <Error Condition="!Exists('packages\nlohmann.json.3.12.0\build\native\nlohmann.json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nlohmann.json.3.12.0\build\native\nlohmann.json.targets'))" />
+  </Target>
+  <!-- 自動実行：EchoProjectDirPath → GenerateCode の順序で実行 -->
+  <Target Name="GenerateCodeTarget" BeforeTargets="ClCompile">
+    <!-- プロジェクトディレクトリを記録 -->
+    <Exec Command="ECHO $(ProjectDir) &gt; $(ProjectDir)ProjectDirPath.txt" />
+    <!-- コード生成ツール実行 -->
+    <Exec Command="&quot;$(ProjectDir)Tools\ClangTest.exe&quot; &quot;$(ProjectDir)&quot;" />
+  </Target>
+  <!-- 手動実行：全ファイルを再生成する -->
+  <Target Name="ForceRegenerateCode">
+    <Exec Command="&quot;$(ProjectDir)Tools\ClangTest.exe&quot; &quot;$(ProjectDir)&quot; --force" />
   </Target>
 </Project>

@@ -1,4 +1,6 @@
 #pragma once
+#include "ReflectionMacro.h"
+#include "AudioPlayer.generated.h"
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
 #include "AudioPlayerState.h"
@@ -12,15 +14,15 @@ namespace mtgb
 	class AudioClip;
 	class AudioPlayerCP;
 
+	MT_COMPONENT()
 	/// <summary>
 	/// âπê∫Ççƒê∂Ç∑ÇÈÇ‚Ç¬
 	/// </summary>
-	class AudioPlayer : public StatefulComponent<AudioPlayer, AudioPlayerCP,AudioPlayerState>
+	class AudioPlayer : public IComponent< AudioPlayerCP,AudioPlayer>
 	{
 		friend AudioPlayerCP;
 
 	public:
-		using StatefulComponent<AudioPlayer, AudioPlayerCP, AudioPlayerState>::StatefulComponent;
 		//AudioPlayer();
 		~AudioPlayer();
 
@@ -49,11 +51,11 @@ namespace mtgb
 
 		void Play();
 		
-
+		MT_PROPERTY()
+		AudioHandle hAudio;
 	private:
 		IXAudio2SourceVoice* pSourceVoice_{ nullptr };
 		AudioClip* pAudioClip_{ nullptr };
 	};
 
-	using AudioPlayerMemento = ComponentMemento<AudioPlayer, AudioPlayerState>;
 }
