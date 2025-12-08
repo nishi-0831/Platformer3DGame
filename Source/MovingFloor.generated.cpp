@@ -12,6 +12,9 @@ namespace mtgb
 		{
 			RegisterShowFuncHolder::Set<MovingFloor>([]( MovingFloor* _target, const char* _name)
 				{
+								TypeRegistry::Instance().CallFunc(&_target->duration_, "duration_");
+								TypeRegistry::Instance().CallFunc(&_target->to_, "to_");
+								TypeRegistry::Instance().CallFunc(&_target->from_, "from_");
 				});
 		}
 	};
