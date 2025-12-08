@@ -59,4 +59,8 @@ void mtgb::AudioPlayer::Play()
 	pSourceVoice_->Start();
 }
 
+void mtgb::AudioPlayer::OnPostRestore()
+{
+}
+
 

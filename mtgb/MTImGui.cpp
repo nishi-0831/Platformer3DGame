@@ -207,7 +207,7 @@ void mtgb::MTImGui::SetupShowFunc()
     // テンプレートパラメータに型を指定
     // 第一引数に型のポインタ、第二引数に登録する型の名前
 
-    Set<Transform>([](Transform* _target, const char* _name)
+    /*Set<Transform>([](Transform* _target, const char* _name)
         {
             ImGui::Text("Parent: %lld", _target->parent);
             TypeRegistry::Instance().CallFunc(&_target->position, "Position");
@@ -216,57 +216,34 @@ void mtgb::MTImGui::SetupShowFunc()
             TypeRegistry::Instance().CallFunc(&_target->matrixWorld_, "MatrixWorld");
             TypeRegistry::Instance().CallFunc(&_target->matrixLocal_, "MatrixLocal");
             TypeRegistry::Instance().CallFunc(&_target->prevParentMatrix_, "PrevParent");
-        });
+        });*/
 
-    Set<MeshRenderer>([](MeshRenderer* _target, const char* _name)
-        {
-            constexpr size_t BUF_SZ = 256; // 必要ならサイズを調整
-            static std::unordered_map<EntityId, std::string> editBuffers;
+    //Set<MeshRenderer>([](MeshRenderer* _target, const char* _name)
+    //    {
+    //        constexpr size_t BUF_SZ = 256; // 必要ならサイズを調整
+    //        static std::unordered_map<EntityId, std::string> editBuffers;
 
-            std::string& buf = editBuffers[_target->GetEntityId()];
-            if (buf.empty())
-            {
-                // 初回は現在の値をコピー
-                buf = _target->meshFileName;
-            }
+    //        std::string& buf = editBuffers[_target->GetEntityId()];
+    //        if (buf.empty())
+    //        {
+    //            // 初回は現在の値をコピー
+    //            buf = _target->meshFileName;
+    //        }
 
-            // ImGuiに渡すバッファ容量を確保
-            if (buf.size() < BUF_SZ) buf.resize(BUF_SZ);
+    //        // ImGuiに渡すバッファ容量を確保
+    //        if (buf.size() < BUF_SZ) buf.resize(BUF_SZ);
 
-            // Enterで確定されるようにフラグを指定
-            if (ImGui::InputText("FileName", buf.data(), BUF_SZ, ImGuiInputTextFlags_EnterReturnsTrue | ImGuiInputTextFlags_NoUndoRedo))
-            {
-                // 実際の文字列長に合わせてリサイズしてコミット
-                buf.resize(std::strlen(buf.c_str()));
-                _target->meshFileName = buf;
-                _target->OnChangeMeshFileName();
-            }
-        });
+    //        // Enterで確定されるようにフラグを指定
+    //        if (ImGui::InputText("FileName", buf.data(), BUF_SZ, ImGuiInputTextFlags_EnterReturnsTrue | ImGuiInputTextFlags_NoUndoRedo))
+    //        {
+    //            // 実際の文字列長に合わせてリサイズしてコミット
+    //            buf.resize(std::strlen(buf.c_str()));
+    //            _target->meshFileName = buf;
+    //            _target->OnChangeMeshFileName();
+    //        }
+    //    });
 
-    Set<Collider>([](Collider* _target, const char* _name)
-        {
-            ImGui::Text("Collider Property");
-            ImGui::Text("ColliderType %d", _target->colliderType_);
-        });
-
-    Set<AudioPlayer>([](AudioPlayer* _target, const char* _name)
-        {
-            ImGui::Text("AudioPlayer Property");
-        });
-   
-    Set<RigidBody>([](RigidBody* _target, const char* _name)
-        {
-            TypeRegistry::Instance().CallFunc(&_target->velocity_, "Velocity");
-            TypeRegistry::Instance().CallFunc(&_target->useGravity_, "UseGravity");
-            TypeRegistry::Instance().CallFunc(&_target->isKinematic_,"IsKinematic");
-            TypeRegistry::Instance().CallFunc(&_target->isGround_,"IsGround");
-        });
-    Set<MovingFloor>([](MovingFloor* _target, const char* _name)
-        {
-            TypeRegistry::Instance().CallFunc(&_target->duration_, "Duration");
-            TypeRegistry::Instance().CallFunc(&_target->to_, "To");
-            TypeRegistry::Instance().CallFunc(&_target->from_, "From");
-        });
+    
     Set<ScreenCoordContainsInfo>([](ScreenCoordContainsInfo* _target, const char* _name)
         {
             TypeRegistry::Instance().CallFunc(&_target->worldPos, "WorldPos");

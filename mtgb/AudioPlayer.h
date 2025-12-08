@@ -23,6 +23,7 @@ namespace mtgb
 		friend AudioPlayerCP;
 
 	public:
+		MT_GENERATED_BODY()
 		//AudioPlayer();
 		~AudioPlayer();
 
@@ -50,7 +51,7 @@ namespace mtgb
 		void SetVolume(float volume);
 
 		void Play();
-		
+		void OnPostRestore();
 		MT_PROPERTY()
 		AudioHandle hAudio;
 	private:

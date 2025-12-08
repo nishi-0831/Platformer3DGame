@@ -110,7 +110,7 @@ namespace mtgb
 		{
 			if (poolId_[i] == _entityId)
 			{
-				return pool_[i].Serialize();
+				return nlohmann::to_json(pool_[i]);
 			}
 		}
 		return nlohmann::json{};
@@ -132,7 +132,16 @@ namespace mtgb
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>
 	inline IComponentMemento* ComponentPool<ComponentT, DerivedT, IsSingleton>::Deserialize(EntityId _entityId, const nlohmann::json& _json)
 	{
-		return ComponentT::Deserialize(_entityId, _json);
+		for (int i = 0; i < poolId_.size(); i++)
+		{
+			if (poolId_[i] == _entityId)
+			{
+				ComponentT& component = pool_[i];
+				component = _json;
+				return component.SaveToMemento();
+			}
+		}
+		return nullptr;
 	}
 
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>
