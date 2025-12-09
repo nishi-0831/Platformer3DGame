@@ -2,12 +2,13 @@
 #include "ReflectionMacro.h"
 #include <mtgb.h>
 #include "MovingFloor.generated.h"
+#include "../mtgb/ISerializableObject.h"
 #include "MovingFloorState.h"
 #include "MovingFloorCP.h"
 class MovingFloorCP;
 
 MT_COMPONENT()
-class MovingFloor : public IComponent<MovingFloorCP,MovingFloor>
+class MovingFloor : public IComponent<MovingFloorCP,MovingFloor> , public ISerializableObject
 {
 public:
 	MT_GENERATED_BODY()

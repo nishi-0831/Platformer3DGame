@@ -120,8 +120,8 @@ std::vector<IComponentMemento*> Player::GetDefaultMementos(EntityId _entityId) c
 
 	RigidBodyState rigidBodyState
 	{
-		.useGravity = true,
-		.isKinematic = false,
+		.useGravity_ = true,
+		.isKinematic_ = false,
 	};
 
 	MeshRendererState meshRendererState
@@ -132,9 +132,9 @@ std::vector<IComponentMemento*> Player::GetDefaultMementos(EntityId _entityId) c
 
 	ColliderState colliderState
 	{
-		.colliderType{ColliderType::TYPE_SPHERE},
-		.colliderTag{ColliderTag::GAME_OBJECT},
-		.radius{transformState.scale.x},
+		.colliderType_{ColliderType::TYPE_SPHERE},
+		.colliderTag_{ColliderTag::GAME_OBJECT},
+		.radius_{transformState.scale.x},
 	};
 
 	std::vector<IComponentMemento*> mementos;

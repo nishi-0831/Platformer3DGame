@@ -2,6 +2,7 @@
 # include "AudioPlayer.generated.h"
 # include "AudioPlayer.h"
 # include "TypeRegistry.h"
+# include "MTImGui.h"
 
 namespace mtgb
 {
@@ -15,6 +16,7 @@ namespace mtgb
 								TypeRegistry::Instance().CallFunc(&_target->hAudio, "hAudio");
 				});
 		}
+		 MTImGui::Instance().RegisterComponentViewer<AudioPlayer>();
 	};
 
 	static AudioPlayer_Register audioplayer_register;

@@ -110,7 +110,8 @@ namespace mtgb
 		{
 			if (poolId_[i] == _entityId)
 			{
-				return nlohmann::to_json(pool_[i]);
+				nlohmann::json j = JsonConverter::Serialize<ComponentT>(pool_[i]);
+				return j;
 			}
 		}
 		return nlohmann::json{};
@@ -137,7 +138,7 @@ namespace mtgb
 			if (poolId_[i] == _entityId)
 			{
 				ComponentT& component = pool_[i];
-				component = _json;
+				JsonConverter::Deserialize<ComponentT>(component, _json);
 				return component.SaveToMemento();
 			}
 		}
@@ -147,10 +148,13 @@ namespace mtgb
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>
 	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::Copy(EntityId _dest, EntityId _src)
 	{
+		if (_dest == _src)
+			return;
+
 		ComponentT& destCom = Get(_dest);
 		ComponentT& srcCom = Get(_src);
 		
-		destCom.CopyData(srcCom);
+		destCom = srcCom;
 	}
 
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>

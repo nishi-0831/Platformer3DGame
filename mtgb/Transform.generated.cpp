@@ -2,6 +2,7 @@
 # include "Transform.generated.h"
 # include "Transform.h"
 # include "TypeRegistry.h"
+# include "MTImGui.h"
 
 namespace mtgb
 {
@@ -18,6 +19,7 @@ namespace mtgb
 								TypeRegistry::Instance().CallFunc(&_target->rotate, "rotate");
 				});
 		}
+		 MTImGui::Instance().RegisterComponentViewer<Transform>();
 	};
 
 	static Transform_Register transform_register;

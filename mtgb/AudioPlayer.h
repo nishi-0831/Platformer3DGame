@@ -1,6 +1,7 @@
 #pragma once
 #include "ReflectionMacro.h"
 #include "AudioPlayer.generated.h"
+#include "ISerializableObject.h"
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
 #include "AudioPlayerState.h"
@@ -18,7 +19,7 @@ namespace mtgb
 	/// <summary>
 	/// âπê∫Ççƒê∂Ç∑ÇÈÇ‚Ç¬
 	/// </summary>
-	class AudioPlayer : public IComponent< AudioPlayerCP,AudioPlayer>
+	class AudioPlayer : public IComponent< AudioPlayerCP,AudioPlayer> , public ISerializableObject
 	{
 		friend AudioPlayerCP;
 
@@ -51,7 +52,7 @@ namespace mtgb
 		void SetVolume(float volume);
 
 		void Play();
-		void OnPostRestore();
+		void OnPostRestore() override;
 		MT_PROPERTY()
 		AudioHandle hAudio;
 	private:

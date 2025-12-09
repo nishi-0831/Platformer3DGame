@@ -1,6 +1,7 @@
 #pragma once
 #include "ReflectionMacro.h"
 #include "Transform.generated.h"
+#include "ISerializableObject.h"
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
 #include "TransformState.h"
@@ -18,7 +19,7 @@ namespace mtgb
 	class TransformCP;
 
 	MT_COMPONENT()
-	class Transform : public IComponent<TransformCP,Transform>
+	class Transform : public IComponent<TransformCP,Transform> , public ISerializableObject
 	{
 	public:
 		MT_GENERATED_BODY()
@@ -155,7 +156,7 @@ namespace mtgb
 		/// <returns>ÉèÅ[ÉãÉhâÒì]ÇÃélå≥êî</returns>
 		Quaternion GetWorldRotate() const;
 
-		void OnPostRestore();
+		void OnPostRestore() override;
 		MT_PROPERTY()
 		EntityId parent;
 		MT_PROPERTY()

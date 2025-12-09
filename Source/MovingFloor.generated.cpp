@@ -2,6 +2,7 @@
 # include "MovingFloor.generated.h"
 # include "MovingFloor.h"
 # include "TypeRegistry.h"
+# include "MTImGui.h"
 
 namespace mtgb
 {
@@ -17,6 +18,7 @@ namespace mtgb
 								TypeRegistry::Instance().CallFunc(&_target->from_, "from_");
 				});
 		}
+		 MTImGui::Instance().RegisterComponentViewer<MovingFloor>();
 	};
 
 	static MovingFloor_Register movingfloor_register;

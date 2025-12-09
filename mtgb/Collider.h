@@ -1,6 +1,7 @@
 #pragma once
 #include "ReflectionMacro.h"
 #include "Collider.generated.h"
+#include "ISerializableObject.h"
 #include "StatefulComponent.h"
 #include "ColliderState.h"
 #include "IComponentMemento.h"
@@ -21,7 +22,7 @@ namespace mtgb
 	class ColliderCP;
 	class Transform;
 	MT_COMPONENT()
-	class Collider :  public IComponent<ColliderCP,Collider>
+	class Collider :  public IComponent<ColliderCP,Collider> , public ISerializableObject
 	{
 
 	public:
@@ -75,7 +76,7 @@ namespace mtgb
 		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
 		void Push(const Collider& _other);
 	public:
-		void OnPostRestore() ;
+		void OnPostRestore() override;
 
 		std::set<Collider*> onColliders_;
 		std::set<Collider*> onColldiersPrev_;

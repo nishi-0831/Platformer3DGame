@@ -1,6 +1,7 @@
 #pragma once
 #include "ReflectionMacro.h"
 #include "RigidBody.generated.h"
+#include "ISerializableObject.h"
 #include "StatefulComponent.h"
 #include "IComponentMemento.h"
 
@@ -16,7 +17,7 @@ namespace mtgb
 	class Transform;
 	class RigidBodyCP;
 	MT_COMPONENT()
-	class RigidBody : public IComponent<RigidBodyCP,RigidBody>
+	class RigidBody : public IComponent<RigidBodyCP,RigidBody> , public ISerializableObject
 	{
 	public:
 		MT_GENERATED_BODY()

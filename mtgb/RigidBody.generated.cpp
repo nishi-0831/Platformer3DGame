@@ -2,6 +2,7 @@
 # include "RigidBody.generated.h"
 # include "RigidBody.h"
 # include "TypeRegistry.h"
+# include "MTImGui.h"
 
 namespace mtgb
 {
@@ -19,6 +20,7 @@ namespace mtgb
 								TypeRegistry::Instance().CallFunc(&_target->isKinematic_, "isKinematic_");
 				});
 		}
+		 MTImGui::Instance().RegisterComponentViewer<RigidBody>();
 	};
 
 	static RigidBody_Register rigidbody_register;

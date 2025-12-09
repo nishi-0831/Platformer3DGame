@@ -2,6 +2,7 @@
 # include "Collider.generated.h"
 # include "Collider.h"
 # include "TypeRegistry.h"
+# include "MTImGui.h"
 
 namespace mtgb
 {
@@ -20,6 +21,7 @@ namespace mtgb
 								TypeRegistry::Instance().CallFunc(&_target->extents_, "extents_");
 				});
 		}
+		 MTImGui::Instance().RegisterComponentViewer<Collider>();
 	};
 
 	static Collider_Register collider_register;
