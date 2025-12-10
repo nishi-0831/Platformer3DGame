@@ -24,9 +24,9 @@ public:
 	void UpdateProgress();
 	
 	Vector3 Evaluate();
+	void OnPostRestore() override;
+	void OnPreSave() override;
 protected:
-	void OnPostRestore();
-	void OnPreSave();
 private:
 	void OnCollisionEnter(EntityId _entityId);
 	void OnCollisionExit(EntityId _entityId);

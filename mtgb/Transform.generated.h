@@ -47,9 +47,8 @@
 	} \
 	\
 	friend struct Transform_Register; \
-	friend void to_json(nlohmann::json& _j,Transform& _target) \
+	friend void to_json(nlohmann::json& _j,const Transform& _target) \
 	{ \
-	_target.OnPreSave(); \
 		_j["parent"] = JsonConverter::Serialize<EntityId>(_target.parent); \
 		_j["position"] = JsonConverter::Serialize<Vector3>(_target.position); \
 		_j["scale"] = JsonConverter::Serialize<Vector3>(_target.scale); \

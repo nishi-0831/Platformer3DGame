@@ -53,9 +53,8 @@
 	} \
 	\
 	friend struct Collider_Register; \
-	friend void to_json(nlohmann::json& _j,Collider& _target) \
+	friend void to_json(nlohmann::json& _j,const Collider& _target) \
 	{ \
-	_target.OnPreSave(); \
 		_j["colliderType_"] = JsonConverter::Serialize<ColliderType>(_target.colliderType_); \
 		_j["isStatic_"] = JsonConverter::Serialize<bool>(_target.isStatic_); \
 		_j["colliderTag_"] = JsonConverter::Serialize<ColliderTag>(_target.colliderTag_); \

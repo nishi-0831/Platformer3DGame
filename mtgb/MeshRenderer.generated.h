@@ -47,9 +47,8 @@
 	} \
 	\
 	friend struct MeshRenderer_Register; \
-	friend void to_json(nlohmann::json& _j,MeshRenderer& _target) \
+	friend void to_json(nlohmann::json& _j,const MeshRenderer& _target) \
 	{ \
-	_target.OnPreSave(); \
 		_j["meshFileName"] = JsonConverter::Serialize<std::string>(_target.meshFileName); \
 		_j["meshHandle"] = JsonConverter::Serialize<FBXModelHandle>(_target.meshHandle); \
 		_j["layer"] = JsonConverter::Serialize<GameObjectLayerFlag>(_target.layer); \

@@ -41,9 +41,8 @@
 	} \
 	\
 	friend struct RigidBody_Register; \
-	friend void to_json(nlohmann::json& _j,RigidBody& _target) \
+	friend void to_json(nlohmann::json& _j,const RigidBody& _target) \
 	{ \
-	_target.OnPreSave(); \
 		_j["useGravity_"] = JsonConverter::Serialize<bool>(_target.useGravity_); \
 		_j["isKinematic_"] = JsonConverter::Serialize<bool>(_target.isKinematic_); \
 	} \

@@ -44,9 +44,8 @@
 	} \
 	\
 	friend struct {{ class_name }}_Register; \
-	friend void to_json(nlohmann::json& _j,{{ class_name }}& _target) \
+	friend void to_json(nlohmann::json& _j,const {{ class_name }}& _target) \
 	{ \
-	_target.OnPreSave(); \
 {{- for member in properties }}
 		_j["{{ member.name }}"] = JsonConverter::Serialize<{{ member.type_name }}>(_target.{{ member.name }}); \
 {{- end }}

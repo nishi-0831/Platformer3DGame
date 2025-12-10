@@ -38,9 +38,8 @@
 	} \
 	\
 	friend struct AudioPlayer_Register; \
-	friend void to_json(nlohmann::json& _j,AudioPlayer& _target) \
+	friend void to_json(nlohmann::json& _j,const AudioPlayer& _target) \
 	{ \
-	_target.OnPreSave(); \
 		_j["hAudio"] = JsonConverter::Serialize<AudioHandle>(_target.hAudio); \
 	} \
 	friend void from_json(const nlohmann::json& _j, AudioPlayer& _target) \

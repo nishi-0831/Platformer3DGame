@@ -131,7 +131,9 @@ namespace mtgb
 		{
 			if (poolId_[i] == _entityId)
 			{
-				nlohmann::json j = JsonConverter::template Serialize<ComponentT>(pool_[i]);
+				ComponentT& component = pool_[i];
+				component.OnPreSave();
+				nlohmann::json j = JsonConverter::template Serialize<ComponentT>(component);
 				return j;
 			}
 		}
