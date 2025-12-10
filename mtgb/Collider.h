@@ -29,6 +29,7 @@ namespace mtgb
 		MT_GENERATED_BODY()
 
 		friend ColliderCP;
+		using IComponent::IComponent;
 
 
 		// 衝突判定をするか否かのタグ
@@ -81,6 +82,9 @@ namespace mtgb
 		std::set<Collider*> onColliders_;
 		std::set<Collider*> onColldiersPrev_;
 		
+		MT_PROPERTY()
+		// 当たり判定の形
+		ColliderType colliderType_;
 	private:
 		void UpdateBoundingSphere();
 		void UpdateBoundingBox();
@@ -94,9 +98,6 @@ namespace mtgb
 		//ColliderTag colliderTag;
 		static FBXModelHandle hSphereModel_;
 		static FBXModelHandle hBoxModel_;
-		MT_PROPERTY()
-		// 当たり判定の形
-		ColliderType colliderType_;
 		MT_PROPERTY()
 		// 静的な、Transform不要なコライダー用のフラグ
 		bool isStatic_;

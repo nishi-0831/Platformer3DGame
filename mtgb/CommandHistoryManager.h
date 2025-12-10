@@ -1,37 +1,26 @@
 #pragma once
-#include "Command.h"
-#include <stack>
-class CommandHistoryManager
+#include "ISystem.h"
+#include "CommandHistory.h"
+#include "GroupCommand.h"
+class CommandHistoryManager : public ISystem , public ICommandHistory
 {
 public:
-	/// <summary>
-	/// コマンドを実行、スタックに積む
-	/// </summary>
-	/// <param name="_command">実行、積まれる対象のコマンド</param>
-	void ExecuteCommand(Command* _command);
+	// ISystem を介して継承されました
+	CommandHistoryManager();
+	void Initialize() override;
+	void Update() override;
 
-	/// <summary>
-	/// 直前に実行したコマンドの取り消しを行う
-	/// </summary>
-	void UndoCommand();
-
-	/// <summary>
-	/// 直前に取り消したコマンドの再実行を行う
-	/// </summary>
-	void RedoCommand();
-
-	/// <summary>
-	/// <para> 全てのスタックの履歴を消去する </para>
-	/// <para> コマンドは全て解放される </para>
-	/// </summary>
-	void ClearAllStack();
+	void BeginGroupCommand();
+	void EndGroupCommand();
+	// ICommandHistory を介して継承されました
+	void ExecuteCommand(Command* _command) override;
+	void UndoCommand() override;
+	void RedoCommand() override;
+	void ClearAllStack() override;
+	void ClearRedoStack() override;
 private:
+	ICommandHistory* inner_;
+	bool isGrouping_;
+	GroupCommand* pGroupCommand_;
 
-	/// <summary>
-	/// <para> 再実行の履歴を消去する </para>
-	/// <para> コマンドは全て解放される </para>
-	/// </summary>
-	void ClearRedoStack();
-	std::stack<Command*> undoStack_;
-	std::stack<Command*> redoStack_;
 };

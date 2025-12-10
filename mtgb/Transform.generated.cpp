@@ -1,12 +1,12 @@
 // Transform.generated.cpp
-# include "Transform.generated.h"
+//# include "Transform.generated.h"
 # include "Transform.h"
 # include "TypeRegistry.h"
 # include "MTImGui.h"
 
 namespace mtgb
 {
-	// ImGuiï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^
+	// ImGui•\Ž¦ˆ—‚ð“o˜^
 	struct Transform_Register
 	{
 		Transform_Register()
@@ -18,8 +18,8 @@ namespace mtgb
 								TypeRegistry::Instance().CallFunc(&_target->scale, "scale");
 								TypeRegistry::Instance().CallFunc(&_target->rotate, "rotate");
 				});
+			MTImGui::Instance().RegisterComponentViewer<Transform>();
 		}
-		 MTImGui::Instance().RegisterComponentViewer<Transform>();
 	};
 
 	static Transform_Register transform_register;

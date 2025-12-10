@@ -1,6 +1,5 @@
 #include "ImGuiEditor.h"
 #include "ReleaseUtility.h"
-#include "RegisterComponents.h"
 #include "RegisterCommonGameObjectType.h"
 #include "../Source/RegisterGameObjectType.h"
 #include "InputData.h"
@@ -13,14 +12,14 @@
 #include "GameScene.h"
 #include "Debug.h"
 #include "GameTime.h"
+#include "CommandHistoryManager.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
-	pCommandHistory_ = new CommandHistoryManagerWrapper(new CommandHistoryManager());
 
 	commandListener_ = [this](Command* _command)
 		{
-			pCommandHistory_->ExecuteCommand(_command); 
+			Game::System<CommandHistoryManager>().ExecuteCommand(_command); 
 			id = _command->GetCommandTargetEntityId();
 		};
 	pManipulator_ = new ImGuizmoManipulator(commandListener_);
@@ -49,11 +48,11 @@ void mtgb::ImGuiEditor::Update()
 	{
 		if (InputUtil::GetKeyDown(KeyCode::Z))
 		{
-			pCommandHistory_->UndoCommand();
+			Game::System<CommandHistoryManager>().UndoCommand();
 		}
 		if (InputUtil::GetKeyDown(KeyCode::Y))
 		{
-			pCommandHistory_->RedoCommand();
+			Game::System<CommandHistoryManager>().RedoCommand();
 		}
 		if (InputUtil::GetKeyDown(KeyCode::S))
 		{
@@ -72,10 +71,14 @@ void mtgb::ImGuiEditor::Update()
 
 void mtgb::ImGuiEditor::ShowImGui()
 {
-	//pCommandHistory_->DrawImGuiStack();
+	//Game::System<CommandHistoryManager>().DrawImGuiStack();
 	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
 	ShowGenerateGameObjectButton();
 }
+
+
+
+
 
 void mtgb::ImGuiEditor::SaveMapData()
 {
@@ -152,7 +155,7 @@ void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, Enti
 {
 	// コンポーネント作成成功
 	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, Game::GetComponentFactory());
-	pCommandHistory_->ExecuteCommand(cmd);
+	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 
 void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)

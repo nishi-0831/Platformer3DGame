@@ -42,7 +42,7 @@ namespace JsonConverter::detail
 namespace JsonConverter
 {
 	template<typename T>
-	nlohmann::json Serialize(T& _value);
+	nlohmann::json Serialize(const T& _value);
 	template<typename T>
 	void Deserialize(T& _value, const nlohmann::json& _json);
 	template<typename... Attrs>
@@ -86,7 +86,7 @@ std::string JsonConverter::GetDisplayName() noexcept
 }
 
 template<typename T>
-nlohmann::json JsonConverter::Serialize(T& _value)
+nlohmann::json JsonConverter::Serialize(const T& _value)
 {
 	using json = nlohmann::json;
 	using Type = std::remove_pointer_t<std::remove_cvref_t<T>>;

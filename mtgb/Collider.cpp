@@ -18,7 +18,8 @@ namespace
 }
 
 mtgb::Collider::Collider(EntityId _entityId) 
-	: isStatic_{ false }
+	: IComponent(_entityId)
+	, isStatic_{ false }
 	, colliderTag_{ ColliderTag::GAME_OBJECT }
 	, pTransform_{&Transform::Get(_entityId)}
 {

@@ -25,6 +25,9 @@ namespace mtgb
 
 	public:
 		MT_GENERATED_BODY()
+
+		using IComponent::IComponent;
+
 		//AudioPlayer();
 		~AudioPlayer();
 

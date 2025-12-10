@@ -1,9 +1,34 @@
 #include "Transform.h"
+
 #include "MTImGui.h"
 namespace
 {
 	Matrix4x4 m;
 }
+
+mtgb::Transform::Transform()
+	: parent(INVALID_ENTITY)
+	, position{ Vector3::Zero() }
+	, rotate{ Quaternion::Identity() }
+	, scale{ Vector3::One() }
+	, localPosition_{ Vector3::Zero() }
+	, localRotate_{ Quaternion::Identity() }
+	, localScale_{ Vector3::One() }
+{
+}
+
+mtgb::Transform::Transform(EntityId _entityId)
+	: IComponent(_entityId)
+	, parent(INVALID_ENTITY)
+	, position{Vector3::Zero()}
+	, rotate{Quaternion::Identity()}
+	, scale{Vector3::One()}
+	, localPosition_{ Vector3::Zero() }
+	, localRotate_{ Quaternion::Identity() }
+	, localScale_{ Vector3::One() }
+{
+}
+
 mtgb::Transform::~Transform()
 {
 

@@ -186,8 +186,8 @@ namespace mtgb
 		/// <param name="_entityId"></param>
 		/// <param name="_json"></param>
 		/// <returns></returns>
-		static IComponentMemento* DeserializeComponent(std::type_index _typeIndex, EntityId _entityId,const nlohmann::json& _json);
-		static std::optional<std::vector<IComponentMemento*>> DeserializeComponents(EntityId _entityId, const nlohmann::json& _json);
+		static void DeserializeComponent(std::type_index _typeIndex, EntityId _entityId,const nlohmann::json& _json);
+		static void DeserializeComponents(EntityId _entityId, const nlohmann::json& _json);
 
 		/// <summary>
 		/// 描画可能なコンポーネントプールを返す

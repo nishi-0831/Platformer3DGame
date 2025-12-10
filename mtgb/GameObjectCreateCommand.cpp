@@ -30,18 +30,13 @@ void mtgb::GameObjectCreateCommand::Execute()
     if (json_.is_null() || json_.empty())
     {
         gameObjectName_ = obj->GetName();
-        mementos_ = obj->GetDefaultMementos(entityId_);
     }
     else if (deserialized_ == false)
     {
         Deserialize(obj);
         deserialized_ = true;
     }
-
-    ApplyComponents();
-
     Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Invoke({ .entityId = obj->GetEntityId() });
-
 }
 
 void mtgb::GameObjectCreateCommand::Undo()
@@ -66,24 +61,9 @@ EntityId mtgb::GameObjectCreateCommand::GetCommandTargetEntityId() const
     return entityId_;
 }
 
-void mtgb::GameObjectCreateCommand::ApplyComponents()
-{
-    for (IComponentMemento* memento : mementos_)
-    {
-        if (memento == nullptr)
-            continue;
 
-        componentFactory_.AddComponentFromMemento(*memento);
-    }
-}
 
 void mtgb::GameObjectCreateCommand::Deserialize(GameObject* _obj)
 {
-    auto mementos = Game::DeserializeComponents(entityId_, json_);
-    if (mementos.has_value())
-    {
-        mementos_ = mementos.value();
-    }
-
     _obj->Deserialize(json_);
 }

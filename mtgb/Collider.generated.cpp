@@ -6,7 +6,7 @@
 
 namespace mtgb
 {
-	// ImGuiï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^
+	// ImGui•\Ž¦ˆ—‚ð“o˜^
 	struct Collider_Register
 	{
 		Collider_Register()
@@ -20,8 +20,8 @@ namespace mtgb
 								TypeRegistry::Instance().CallFunc(&_target->radius_, "radius_");
 								TypeRegistry::Instance().CallFunc(&_target->extents_, "extents_");
 				});
+			MTImGui::Instance().RegisterComponentViewer<Collider>();
 		}
-		 MTImGui::Instance().RegisterComponentViewer<Collider>();
 	};
 
 	static Collider_Register collider_register;

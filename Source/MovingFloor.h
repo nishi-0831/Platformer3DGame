@@ -5,8 +5,8 @@
 #include "../mtgb/ISerializableObject.h"
 #include "MovingFloorState.h"
 #include "MovingFloorCP.h"
-class MovingFloorCP;
 
+class MovingFloorCP;
 MT_COMPONENT()
 class MovingFloor : public IComponent<MovingFloorCP,MovingFloor> , public ISerializableObject
 {
@@ -14,6 +14,7 @@ public:
 	MT_GENERATED_BODY()
 
 	friend MovingFloorCP;
+	using IComponent::IComponent;
 	MovingFloor();
 	MovingFloor(EntityId _entityId);
 	

@@ -5,11 +5,25 @@
 #include "ISystem.h"
 #include <nlohmann/json.hpp>
 #include "ComponentRegistry.h"
+#include "JsonConverter.h"
+#include "AddComponentCommandGeneric.h"
+#include "CommandHistoryManager.h"
 namespace mtgb
 {
 	static constexpr size_t COMPONENT_CAPACITY{ 8192 };
 
-	//class GameObject;
+	namespace detail
+	{
+		template<typename T,typename = void>
+		struct has_register_imgui : std::false_type {};
+
+		template<typename T>
+		struct has_register_imgui<T,std::void_t<decltype(T::RegisterImGui())>>
+			: std::true_type{ };
+
+		template<typename T>
+		inline constexpr bool has_register_imgui_v = has_register_imgui<T>::value;
+	}
 	class Entity;
 
 	/// <summary>
@@ -32,7 +46,7 @@ namespace mtgb
 		void Release() override;
 		nlohmann::json Serialize(EntityId _entityId) override;
 		IComponentMemento* SaveToMemento(EntityId _entityId) override;
-		IComponentMemento* Deserialize(EntityId _entityId, const nlohmann::json& _json) override;
+		void Deserialize(EntityId _entityId, const nlohmann::json& _json) override;
 		void Copy(EntityId _dest, EntityId _src) override;
 		ComponentT* Reuse(size_t _index, EntityId _entityId);
 		/// <summary>
@@ -66,6 +80,11 @@ namespace mtgb
 	protected:
 		std::vector<ComponentT> pool_;  // コンポーネントそのものを格納するプール
 		std::vector<EntityId> poolId_;  // コンポーネントの登録エンティティId
+	private:
+		template<typename T = ComponentT>
+		std::enable_if_t<detail::has_register_imgui_v<T>> RegisterImGuiIfExists();
+		template<typename T = ComponentT>
+		std::enable_if_t<!detail::has_register_imgui_v<T>> RegisterImGuiIfExists();
 	};
 
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>
@@ -77,7 +96,9 @@ namespace mtgb
 		poolId_.reserve(COMPONENT_CAPACITY);
 
 		Game::System<ComponentRegistry>().RegisterComponentPoolType(typeid(ComponentT), typeid(DerivedT));
-		Game::System<ComponentRegistry>().RegisterComponentKey(ComponentT::DisplayName(), typeid(ComponentT));
+		Game::System<ComponentRegistry>().RegisterComponentKey(ComponentT::TypeName(), typeid(ComponentT));
+
+		RegisterImGuiIfExists();
 	}
 
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>
@@ -110,7 +131,7 @@ namespace mtgb
 		{
 			if (poolId_[i] == _entityId)
 			{
-				nlohmann::json j = JsonConverter::Serialize<ComponentT>(pool_[i]);
+				nlohmann::json j = JsonConverter::template Serialize<ComponentT>(pool_[i]);
 				return j;
 			}
 		}
@@ -131,18 +152,13 @@ namespace mtgb
 	}
 
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>
-	inline IComponentMemento* ComponentPool<ComponentT, DerivedT, IsSingleton>::Deserialize(EntityId _entityId, const nlohmann::json& _json)
+	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::Deserialize(EntityId _entityId, const nlohmann::json& _json)
 	{
-		for (int i = 0; i < poolId_.size(); i++)
-		{
-			if (poolId_[i] == _entityId)
-			{
-				ComponentT& component = pool_[i];
-				JsonConverter::Deserialize<ComponentT>(component, _json);
-				return component.SaveToMemento();
-			}
-		}
-		return nullptr;
+		ComponentT& component = Get(_entityId);
+		JsonConverter::template Deserialize<ComponentT>(component, _json.at(ComponentT::TypeName()));
+		
+		Command* cmd = new AddComponentCommandGeneric<ComponentT>(component);
+		Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 	}
 
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>
@@ -205,6 +221,19 @@ namespace mtgb
 		return pool_.back(); // 追加&&初期化したコンポーネントを返す
 	}
 
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	template<typename T>
+	inline std::enable_if_t<detail::has_register_imgui_v<T>> ComponentPool<ComponentT, DerivedT, IsSingleton>::RegisterImGuiIfExists()
+	{
+		ComponentT::RegisterImGui();
+	}
+
+	template<typename ComponentT, typename DerivedT, bool IsSingleton>
+	template<typename T>
+	inline std::enable_if_t<!detail::has_register_imgui_v<T>> ComponentPool<ComponentT, DerivedT, IsSingleton>::RegisterImGuiIfExists()
+	{
+		// 何も行わない
+	}
 	template<typename ComponentT, typename DerivedT, bool IsSingleton>
 	inline bool ComponentPool<ComponentT, DerivedT, IsSingleton>::TryGet(
 		ComponentT*& _pComponent, const EntityId _entityId)

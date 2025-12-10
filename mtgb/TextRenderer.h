@@ -30,6 +30,6 @@ namespace mtgb
 		bool CanRender() const override;
 
 		GameObjectLayerFlag GetLayer() const override { return layer; }
-
+		static std::string TypeName() { return "TextRenderer"; }
 	};
 }

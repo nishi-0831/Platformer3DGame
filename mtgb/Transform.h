@@ -2,9 +2,8 @@
 #include "ReflectionMacro.h"
 #include "Transform.generated.h"
 #include "ISerializableObject.h"
-#include "StatefulComponent.h"
+#include "IComponent.h"
 #include "IComponentMemento.h"
-#include "TransformState.h"
 
 #include "Vector3.h"
 #include "Vector3Ref.h"
@@ -14,24 +13,21 @@
 #include "TransformCP.h"
 namespace mtgb
 {
-	using EntityId = int64_t;
 	
-	class TransformCP;
+	
 
 	MT_COMPONENT()
 	class Transform : public IComponent<TransformCP,Transform> , public ISerializableObject
 	{
 	public:
+	
 		MT_GENERATED_BODY()
 
-
 		friend TransformCP;
+		using IComponent::IComponent;
 		
-		Transform()
-		{
-
-		}
-
+		Transform();
+		Transform(EntityId _entityId);
 		~Transform();
 		inline Transform& operator=(const Transform& _other)
 		{

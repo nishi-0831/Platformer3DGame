@@ -9,10 +9,12 @@ namespace
 {
 	float GRAVITY{ -20.0f };
 }
-mtgb::RigidBody::RigidBody(const EntityId _entityId) :
-	StatefulComponent{ RigidBodyState{.isNeedUpdate = false,.useGravity = false},_entityId },
-	pTransform_{ &Transform::Get(_entityId) },
-	onHit_{ [](const EntityId) {} }
+mtgb::RigidBody::RigidBody(const EntityId _entityId) 
+	: IComponent{ _entityId }
+	, isNeedUpdate_{false}
+	, useGravity_{false}
+	, pTransform_{ &Transform::Get(_entityId) }
+	, onHit_{ [](const EntityId) {} }
 {
 }
 

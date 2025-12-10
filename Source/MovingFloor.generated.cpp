@@ -6,19 +6,16 @@
 
 namespace mtgb
 {
-	// ImGuiï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^
+	// ImGui•\¦ˆ—‚ğ“o˜^
 	struct MovingFloor_Register
 	{
 		MovingFloor_Register()
 		{
 			RegisterShowFuncHolder::Set<MovingFloor>([]( MovingFloor* _target, const char* _name)
 				{
-								TypeRegistry::Instance().CallFunc(&_target->duration_, "duration_");
-								TypeRegistry::Instance().CallFunc(&_target->to_, "to_");
-								TypeRegistry::Instance().CallFunc(&_target->from_, "from_");
 				});
+			MTImGui::Instance().RegisterComponentViewer<MovingFloor>();
 		}
-		 MTImGui::Instance().RegisterComponentViewer<MovingFloor>();
 	};
 
 	static MovingFloor_Register movingfloor_register;

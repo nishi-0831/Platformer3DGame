@@ -10,7 +10,7 @@ MovingFloor::MovingFloor()
 }
 
 MovingFloor::MovingFloor(EntityId _entityId)
-	: StatefulComponent(_entityId)
+	: IComponent(_entityId)
 	, pTransform_{ &Transform::Get(_entityId) }
 	, pRigidBody_{ &RigidBody::Get(_entityId) }
 	, pCollider_ { &Collider::Get(_entityId) }
@@ -21,7 +21,7 @@ MovingFloor::MovingFloor(EntityId _entityId)
 
 	// コライダーの設定
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
-	pCollider_->extents_ = { 1,1,1 };
+	pCollider_->SetExtents(Vector3( 1,1,1 ));
 
 	// RigidBodyの設定
 	pRigidBody_->OnCollisionEnter([this](EntityId _id)

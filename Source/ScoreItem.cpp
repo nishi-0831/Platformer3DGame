@@ -52,12 +52,12 @@ std::vector<IComponentMemento*> ScoreItem::GetDefaultMementos(EntityId _entityId
 
 	ColliderState colliderState
 	{
-		.colliderType{ColliderType::TYPE_SPHERE},
-		.isStatic{false},
-		.colliderTag{},
-		.center{transformState.position},
-		.radius{transformState.scale.x * 0.5f},
-		.extents{transformState.scale * 0.5f},
+		.colliderType_{ColliderType::TYPE_SPHERE},
+		.isStatic_{false},
+		.colliderTag_{},
+		.center_{transformState.position},
+		.radius_{transformState.scale.x * 0.5f},
+		.extents_{transformState.scale * 0.5f},
 	};
 
 	MeshRendererState meshData

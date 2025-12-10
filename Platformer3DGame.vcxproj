@@ -56,6 +56,7 @@
     <ClCompile Include="mtgb\CircleDetector.cpp" />
     <ClCompile Include="mtgb\Collider.cpp" />
     <ClCompile Include="mtgb\ColliderCP.cpp" />
+    <ClCompile Include="mtgb\CommandHistory.cpp" />
     <ClCompile Include="mtgb\CommandHistoryManager.cpp" />
     <ClCompile Include="mtgb\CommandHistoryManagerWrapper.cpp" />
     <ClCompile Include="mtgb\ComponentFactory.cpp" />
@@ -70,6 +71,7 @@
     <ClCompile Include="mtgb\GameObjectLayer.cpp" />
     <ClCompile Include="mtgb\GameObjectTypeRegistry.cpp" />
     <ClCompile Include="mtgb\Ground.cpp" />
+    <ClCompile Include="mtgb\GroupCommand.cpp" />
     <ClCompile Include="mtgb\GuizmoManipulatedEvent.cpp" />
     <ClCompile Include="mtgb\HighlightEnemy.cpp" />
     <ClCompile Include="mtgb\ICamera.cpp" />
@@ -102,18 +104,13 @@
     <ClCompile Include="mtgb\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="mtgb\RegisterComponents.cpp" />
     <ClCompile Include="mtgb\RenderSystem.cpp" />
     <ClCompile Include="mtgb\ScoreManager.cpp" />
     <ClCompile Include="mtgb\SelectionCommand.cpp" />
     <ClCompile Include="mtgb\ShowAttributes.cpp" />
     <ClCompile Include="mtgb\SingleWindow.cpp" />
     <ClCompile Include="mtgb\TerrainReader.cpp" />
-    <ClCompile Include="mtgb\TextBox.cpp" />
-    <ClCompile Include="mtgb\TextRenderer.cpp" />
-    <ClCompile Include="mtgb\TextRendererCP.cpp" />
     <ClCompile Include="mtgb\TimeLimit.cpp" />
-    <ClCompile Include="mtgb\Transform.generated.cpp" />
     <ClCompile Include="mtgb\TransformGuizmo.cpp" />
     <ClCompile Include="mtgb\TypeRegistry.cpp" />
     <ClCompile Include="mtgb\UIDrawCommand.cpp" />
@@ -259,7 +256,6 @@
     <ClCompile Include="Source\SampleGame.cpp" />
     <ClCompile Include="Source\Scenes\SampleScene.cpp" />
     <ClCompile Include="Source\ScoreItem.cpp" />
-    <ClCompile Include="Source\ScoreViewer.cpp" />
     <ClCompile Include="Source\StageEditScene.cpp" />
     <ClCompile Include="Source\StageManager.cpp" />
     <ClCompile Include="Source\TheMain.cpp" />
@@ -267,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mtgb\AddComponentCommand.h" />
+    <ClInclude Include="mtgb\AddComponentCommandGeneric.h" />
     <ClInclude Include="mtgb\AudioPlayerState.h" />
     <ClInclude Include="mtgb\Box3D.h" />
     <ClInclude Include="mtgb\BoxPlane.h" />
@@ -275,6 +272,7 @@
     <ClInclude Include="mtgb\ColliderType.h" />
     <ClInclude Include="mtgb\Command.h" />
     <ClInclude Include="mtgb\CommandHandlerRegistry.h" />
+    <ClInclude Include="mtgb\CommandHistory.h" />
     <ClInclude Include="mtgb\CommandHistoryManager.h" />
     <ClInclude Include="mtgb\CommandHistoryManagerWrapper.h" />
     <ClInclude Include="mtgb\ComponentConcept.h" />
@@ -291,12 +289,11 @@
     <ClInclude Include="mtgb\GameObjectSelectionEvent.h" />
     <ClInclude Include="mtgb\GameObjectTag.h" />
     <ClInclude Include="mtgb\GameObjectTypeRegistry.h" />
+    <ClInclude Include="mtgb\GroupCommand.h" />
     <ClInclude Include="mtgb\Interpolator.h" />
     <ClInclude Include="mtgb\IRenderable.h" />
     <ClInclude Include="mtgb\ISerializableObject.h" />
     <ClInclude Include="mtgb\ReflectionMacro.h" />
-    <ClInclude Include="mtgb\TextBox.h" />
-    <ClInclude Include="mtgb\TextRenderer.h" />
     <ClInclude Include="mtgb\GuizmoManipulatedEvent.h" />
     <ClInclude Include="mtgb\ICamera.h" />
     <ClInclude Include="mtgb\IComponentMemento.h" />
@@ -355,7 +352,6 @@
     <ClInclude Include="mtgb\RectT.h" />
     <ClInclude Include="mtgb\RectContainsInfo.h" />
     <ClInclude Include="mtgb\ReflectionInfo.h" />
-    <ClInclude Include="mtgb\RegisterComponents.h" />
     <ClInclude Include="mtgb\RegisterCommonGameObjectType.h" />
     <ClInclude Include="mtgb\RenderSystem.h" />
     <ClInclude Include="mtgb\RigidBodyState.h" />
@@ -372,7 +368,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="mtgb\TextAlignment.h" />
-    <ClInclude Include="mtgb\TextRendererCP.h" />
     <ClInclude Include="mtgb\TimeLimit.h" />
     <ClInclude Include="mtgb\Transform.generated.h" />
     <ClInclude Include="mtgb\TransformCore.h" />
@@ -532,10 +527,6 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Source\ScoreViewer.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="Source\StageEditScene.h" />
     <ClInclude Include="Source\StageID.h" />
     <ClInclude Include="Source\StageManager.h" />
@@ -551,6 +542,7 @@
       </SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Tools\GenerateComponentCpp.sbn" />
     <None Include="通信体系.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -778,6 +770,7 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

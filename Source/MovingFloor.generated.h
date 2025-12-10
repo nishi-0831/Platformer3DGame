@@ -1,46 +1,65 @@
 // MovingFloor.generated.h
 #pragma once
 
-
+#include <nlohmann/json.hpp>
+#include "JsonConverter.h"
+#include "MTImGui.h"
+#include <string>
 // ============================================================================
-// MovingFloorï¿½Ìï¿½Ô‚ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½Stateï¿½\ï¿½ï¿½ï¿½Ì‚Ì’ï¿½`ï¿½AUndo/Redoï¿½Égï¿½ï¿½Mementoï¿½ï¿½usingï¿½éŒ¾
+// MovingFloor‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
 // ============================================================================
 #define MT_COMPONENT_MovingFloor() \
 	struct MovingFloorState \
 	{ \
-			float duration_; \
-			Vector3 to_; \
-			Vector3 from_; \
 	}; \
 	class MovingFloor;\
 	using MovingFloorMemento = ComponentMemento<MovingFloor, MovingFloorState>;
 
 // ============================================================================
-// MovingFloorï¿½ï¿½MovingFloorMementoï¿½Ì‘ï¿½ï¿½İ•ÏŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// MovingFloor‚ÆMovingFloorMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
 // ============================================================================
 #define MT_GENERATED_BODY_MovingFloor() \
 	public: \
-	IComponentMemento* SaveToMemento() \
+	using Memento = MovingFloorMemento; \
+	MovingFloorMemento* SaveToMemento() \
 	{ \
+	OnPreSave(); \
 		MovingFloorState state; \
-		state.duration_ = this->duration_; \
-		state.to_ = this->to_; \
-		state.from_ = this->from_; \
 		return new ComponentMemento<MovingFloor, MovingFloorState>(GetEntityId(), state); \
 	} \
 	\
 	void RestoreFromMemento(const ComponentMemento<MovingFloor, MovingFloorState>& _memento) \
 	{ \
 		const MovingFloorState& state = _memento.GetState(); \
-		this->duration_ = state.duration_; \
-		this->to_ = state.to_; \
-		this->from_ = state.from_; \
 		OnPostRestore(); \
 	} \
 	\
 	friend struct MovingFloor_Register; \
-	NLOHMANN_DEFINE_TYPE_INTRUSIVE(MovingFloor, duration_, to_, from_)
+	friend void to_json(nlohmann::json& _j,MovingFloor& _target) \
+	{ \
+	_target.OnPreSave(); \
+	} \
+	friend void from_json(const nlohmann::json& _j, MovingFloor& _target) \
+	{ \
+		_target.OnPostRestore(); \
+	} \
+	static std::string TypeName(){ return "MovingFloor" ;} \
+	/* ImGui•\¦ˆ—‚Ì“o˜^ */ \
+	static void RegisterImGui() \
+	{ \
+		static bool registered = false; \
+		if (registered) return; \
+		registered = true; \
+		\
+		RegisterShowFuncHolder::Set<MovingFloor>([]( MovingFloor* _target, const char* _name) \
+			{ \
+			}); \
+		MTImGui::Instance().RegisterComponentViewer<MovingFloor>(); \
+	}
 
-// ï¿½}ï¿½Nï¿½ï¿½ï¿½ã‘ï¿½ï¿½
+#pragma warning(push)
+#pragma warning(disable:4005)
+// ƒ}ƒNƒã‘‚«
 #define MT_COMPONENT() MT_COMPONENT_MovingFloor()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_MovingFloor()
+#pragma warning(pop)

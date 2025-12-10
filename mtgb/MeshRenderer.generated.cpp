@@ -2,10 +2,11 @@
 # include "MeshRenderer.generated.h"
 # include "MeshRenderer.h"
 # include "TypeRegistry.h"
+# include "MTImGui.h"
 
 namespace mtgb
 {
-	// ImGuiï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^
+	// ImGui•\Ž¦ˆ—‚ð“o˜^
 	struct MeshRenderer_Register
 	{
 		MeshRenderer_Register()
@@ -17,6 +18,7 @@ namespace mtgb
 								TypeRegistry::Instance().CallFunc(&_target->layer, "layer");
 								TypeRegistry::Instance().CallFunc(&_target->shaderType, "shaderType");
 				});
+			MTImGui::Instance().RegisterComponentViewer<MeshRenderer>();
 		}
 	};
 

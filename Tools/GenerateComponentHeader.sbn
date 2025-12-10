@@ -1,7 +1,10 @@
 // {{ class_name }}.generated.h
 #pragma once
 
-
+#include <nlohmann/json.hpp>
+#include "JsonConverter.h"
+#include "MTImGui.h"
+#include <string>
 // ============================================================================
 // {{ class_name }}の状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言
 // ============================================================================
@@ -20,8 +23,10 @@
 // ============================================================================
 #define MT_GENERATED_BODY_{{ class_name }}() \
 	public: \
-	IComponentMemento* SaveToMemento() \
+	using Memento = {{ class_name }}Memento; \
+	{{ class_name }}Memento* SaveToMemento() \
 	{ \
+	OnPreSave(); \
 		{{ class_name }}State state; \
 {{- for member in properties }}
 		state.{{ member.name }} = this->{{ member.name }}; \
@@ -39,8 +44,40 @@
 	} \
 	\
 	friend struct {{ class_name }}_Register; \
-	NLOHMANN_DEFINE_TYPE_INTRUSIVE({{ class_name }}, {{ properties | array.map "name" | array.join ", " }})
+	friend void to_json(nlohmann::json& _j,{{ class_name }}& _target) \
+	{ \
+	_target.OnPreSave(); \
+{{- for member in properties }}
+		_j["{{ member.name }}"] = JsonConverter::Serialize<{{ member.type_name }}>(_target.{{ member.name }}); \
+{{- end }}
+	} \
+	friend void from_json(const nlohmann::json& _j, {{ class_name }}& _target) \
+	{ \
+{{- for member in properties }}
+		JsonConverter::Deserialize<{{ member.type_name }}>(_target.{{ member.name }}, _j.at("{{ member.name }}")); \
+{{- end }}
+		_target.OnPostRestore(); \
+	} \
+	static std::string TypeName(){ return "{{ class_name }}" ;} \
+	/* ImGui表示処理の登録 */ \
+	static void RegisterImGui() \
+	{ \
+		static bool registered = false; \
+		if (registered) return; \
+		registered = true; \
+		\
+		RegisterShowFuncHolder::Set<{{ class_name }}>([]( {{ class_name }}* _target, const char* _name) \
+			{ \
+{{- for member in properties }}
+				TypeRegistry::Instance().CallFunc(&_target->{{ member.name }}, "{{ member.name }}"); \
+{{- end }}
+			}); \
+		MTImGui::Instance().RegisterComponentViewer<{{ class_name }}>(); \
+	}
 
+#pragma warning(push)
+#pragma warning(disable:4005)
 // マクロ上書き
 #define MT_COMPONENT() MT_COMPONENT_{{ class_name }}()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_{{ class_name }}()
+#pragma warning(pop)

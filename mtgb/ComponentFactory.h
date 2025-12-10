@@ -17,11 +17,10 @@ namespace mtgb
 	public:
 
 		// コンポーネント作成関数の型
-		using CreateFunction = std::function<IComponentMemento*(EntityId _id)>;
+		using CreateFunction = std::function<IComponentMemento* (EntityId _id)>;
 		using CreateFromMementoFunction = std::function<void(const IComponentMemento& _memento)>;
 
 		template<typename T>
-		requires StatefulComponentT<T>
 		void RegisterComponent();
 
 		IComponentMemento* AddComponent(const std::type_index& _info, EntityId _id) const;
@@ -40,20 +39,18 @@ namespace mtgb
 		std::unordered_map<std::type_index, CreateFunction> creators_;
 		std::unordered_map<std::type_index, CreateFromMementoFunction> creatorsFromMemento_;
 		std::vector<std::type_index> types_;
-
-		
 	};
+
 	template<typename T>
-	requires StatefulComponentT<T>
-	inline void ComponentFactory::RegisterComponent()
+	void ComponentFactory::RegisterComponent()
 	{
 		using Memento = T::Memento;
 
 		std::type_index typeIdx(typeid(T));
 		creators_[typeIdx] = [](EntityId _id)
 			{
-				 T& component = T::template Get(_id);
-				 return component.SaveToMemento();
+				T& component = T::template Get(_id);
+				return component.SaveToMemento();
 			};
 		creatorsFromMemento_[typeIdx] = [](const IComponentMemento& _memento)
 			{
@@ -70,7 +67,7 @@ namespace mtgb
 
 				// エンティティのIdからコンポーネントを取得
 				T* pComponent = nullptr;
-				
+
 				// インデックスが有効かチェック
 				if (componentIndex.has_value())
 				{
@@ -93,4 +90,4 @@ namespace mtgb
 			};
 		types_.push_back(typeid(T));
 	}
-}
+};

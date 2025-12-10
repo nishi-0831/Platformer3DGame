@@ -1,7 +1,8 @@
 #pragma once
 #include "ReflectionMacro.h"
 #include "MeshRenderer.generated.h"
-#include "StatefulComponent.h"
+#include "IComponent.h"
+#include "ISerializableObject.h"
 #include "IComponentMemento.h"
 #include "MeshRendererState.h"
 #include "MeshRendererCP.h"
@@ -18,7 +19,7 @@ namespace mtgb
     /// <summary>
     /// メッシュとマテリアルを管理する描画コンポーネント
     /// </summary>
-    class MeshRenderer :public IRenderable ,public IComponent<MeshRendererCP,MeshRenderer>
+    class MeshRenderer :public IRenderable ,public IComponent<MeshRendererCP,MeshRenderer> , public ISerializableObject
     {
     public:
         MT_GENERATED_BODY()
@@ -60,7 +61,7 @@ namespace mtgb
         MT_PROPERTY()
         ShaderType shaderType;
     protected:
-        void OnPostRestore();
+        void OnPostRestore() override;
     private:
     };
 

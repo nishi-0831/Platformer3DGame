@@ -8,9 +8,10 @@
 #include "ComponentFactory.h"
 #include "IComponentMemento.h"
 #include "GameObjectFactory.h"
+#include "GroupCommand.h"
 namespace mtgb
 {
-	class ImGuiEditor : public ISystem , ImGuiShowable
+	class ImGuiEditor : public ISystem , public ImGuiShowable
 	{
 	public:
 		ImGuiEditor();
@@ -20,7 +21,7 @@ namespace mtgb
 		void Release() override;
 		void Update() override;
 		void ShowImGui() override;
-
+		
 	private:
 		void SaveMapData();
 		void LoadMapData();
@@ -31,10 +32,11 @@ namespace mtgb
 		void AddComponent(const std::type_index& _componentType, EntityId _entityId);
 		void ShowAddComponentDialog(EntityId _entityId);
 		void ShowGenerateGameObjectButton();
-		CommandHistoryManagerWrapper* pCommandHistory_;
+		//NamedCommandHistory* pCommandHistory_;
 		ImGuizmoManipulator* pManipulator_;
 		std::unordered_map<std::type_index, IComponentMemento*> defMementos_;
 		std::function<void(Command*)> commandListener_;
 		EntityId id;
+
 	};
 }

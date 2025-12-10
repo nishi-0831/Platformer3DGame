@@ -1,9 +1,12 @@
 // Transform.generated.h
 #pragma once
 
-
+#include <nlohmann/json.hpp>
+#include "JsonConverter.h"
+#include "MTImGui.h"
+#include <string>
 // ============================================================================
-// Transformï¿½Ìï¿½Ô‚ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½Stateï¿½\ï¿½ï¿½ï¿½Ì‚Ì’ï¿½`ï¿½AUndo/Redoï¿½Égï¿½ï¿½Mementoï¿½ï¿½usingï¿½éŒ¾
+// Transform‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
 // ============================================================================
 #define MT_COMPONENT_Transform() \
 	struct TransformState \
@@ -17,12 +20,14 @@
 	using TransformMemento = ComponentMemento<Transform, TransformState>;
 
 // ============================================================================
-// Transformï¿½ï¿½TransformMementoï¿½Ì‘ï¿½ï¿½İ•ÏŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// Transform‚ÆTransformMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
 // ============================================================================
 #define MT_GENERATED_BODY_Transform() \
 	public: \
-	IComponentMemento* SaveToMemento() \
+	using Memento = TransformMemento; \
+	TransformMemento* SaveToMemento() \
 	{ \
+	OnPreSave(); \
 		TransformState state; \
 		state.parent = this->parent; \
 		state.position = this->position; \
@@ -42,8 +47,43 @@
 	} \
 	\
 	friend struct Transform_Register; \
-	NLOHMANN_DEFINE_TYPE_INTRUSIVE(Transform, parent, position, scale, rotate)
+	friend void to_json(nlohmann::json& _j,Transform& _target) \
+	{ \
+	_target.OnPreSave(); \
+		_j["parent"] = JsonConverter::Serialize<EntityId>(_target.parent); \
+		_j["position"] = JsonConverter::Serialize<Vector3>(_target.position); \
+		_j["scale"] = JsonConverter::Serialize<Vector3>(_target.scale); \
+		_j["rotate"] = JsonConverter::Serialize<Quaternion>(_target.rotate); \
+	} \
+	friend void from_json(const nlohmann::json& _j, Transform& _target) \
+	{ \
+		JsonConverter::Deserialize<EntityId>(_target.parent, _j.at("parent")); \
+		JsonConverter::Deserialize<Vector3>(_target.position, _j.at("position")); \
+		JsonConverter::Deserialize<Vector3>(_target.scale, _j.at("scale")); \
+		JsonConverter::Deserialize<Quaternion>(_target.rotate, _j.at("rotate")); \
+		_target.OnPostRestore(); \
+	} \
+	static std::string TypeName(){ return "Transform" ;} \
+	/* ImGui•\¦ˆ—‚Ì“o˜^ */ \
+	static void RegisterImGui() \
+	{ \
+		static bool registered = false; \
+		if (registered) return; \
+		registered = true; \
+		\
+		RegisterShowFuncHolder::Set<Transform>([]( Transform* _target, const char* _name) \
+			{ \
+				TypeRegistry::Instance().CallFunc(&_target->parent, "parent"); \
+				TypeRegistry::Instance().CallFunc(&_target->position, "position"); \
+				TypeRegistry::Instance().CallFunc(&_target->scale, "scale"); \
+				TypeRegistry::Instance().CallFunc(&_target->rotate, "rotate"); \
+			}); \
+		MTImGui::Instance().RegisterComponentViewer<Transform>(); \
+	}
 
-// ï¿½}ï¿½Nï¿½ï¿½ï¿½ã‘ï¿½ï¿½
+#pragma warning(push)
+#pragma warning(disable:4005)
+// ƒ}ƒNƒã‘‚«
 #define MT_COMPONENT() MT_COMPONENT_Transform()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_Transform()
+#pragma warning(pop)

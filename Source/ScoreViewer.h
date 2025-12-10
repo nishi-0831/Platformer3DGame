@@ -13,5 +13,5 @@ public:
 
 private:
 	Transform* pTransform_;
-	TextRenderer* pTextRenderer_;
+	//TextRenderer* pTextRenderer_;
 };

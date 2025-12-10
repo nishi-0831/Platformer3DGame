@@ -691,9 +691,6 @@
     <ClCompile Include="mtgb\ImGuiUtil.cpp">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\RegisterComponents.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\ComponentFactory.cpp">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
@@ -757,18 +754,6 @@
     <ClCompile Include="Source\ScoreItem.cpp">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ScoreViewer.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\TextRendererCP.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\TextRenderer.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\TextBox.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Source\ResultScene.cpp">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
@@ -784,7 +769,7 @@
     <ClCompile Include="mtgb\CommandHistoryManagerWrapper.cpp">
       <Filter>03mtgb\System\Debug\Command</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\CommandHistoryManager.cpp">
+    <ClCompile Include="mtgb\CommandHistory.cpp">
       <Filter>03mtgb\System\Debug\Command</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\EventManager.cpp">
@@ -835,7 +820,10 @@
     <ClCompile Include="mtgb\MonitorInfo.cpp">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\Transform.generated.cpp">
+    <ClCompile Include="mtgb\GroupCommand.cpp">
+      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\CommandHistoryManager.cpp">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1320,9 +1308,6 @@
     <ClInclude Include="mtgb\ComponentFactory.h">
       <Filter>03mtgb\System</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\RegisterComponents.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\ComponentConcept.h">
       <Filter>03mtgb\Component</Filter>
     </ClInclude>
@@ -1410,7 +1395,7 @@
     <ClInclude Include="mtgb\CommandHistoryManagerWrapper.h">
       <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\CommandHistoryManager.h">
+    <ClInclude Include="mtgb\CommandHistory.h">
       <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\ImGuizmoManipulator.h">
@@ -1461,20 +1446,8 @@
     <ClInclude Include="Source\ScoreItem.h">
       <Filter>01Game</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ScoreViewer.h">
-      <Filter>01Game</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\TextRenderer.h">
-      <Filter>03mtgb\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\TextRendererCP.h">
-      <Filter>03mtgb\Component</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\IRenderable.h">
       <Filter>03mtgb\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\TextBox.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClInclude>
     <ClInclude Include="Source\ResultScene.h">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
@@ -1533,6 +1506,15 @@
     <ClInclude Include="mtgb\ISerializableObject.h">
       <Filter>03mtgb\Component</Filter>
     </ClInclude>
+    <ClInclude Include="mtgb\AddComponentCommandGeneric.h">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\GroupCommand.h">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\CommandHistoryManager.h">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shader\2DCommon.hlsli" />
@@ -1552,6 +1534,7 @@
     <None Include="mtgb\StatefulComponent.inl">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </None>
+    <None Include="Tools\GenerateComponentCpp.sbn" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\FbxParts.hlsl">

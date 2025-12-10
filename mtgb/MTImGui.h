@@ -126,6 +126,8 @@ namespace mtgb
 		void ShowLog();
 		void ShowComponents(EntityId _entityId);
 		void SelectGameObject(EntityId _entityId);
+		template<typename T>
+		void RegisterComponentViewer();
 	private:
 		MTImGui();
 		MTImGui(const MTImGui& other) = delete;
@@ -144,8 +146,6 @@ namespace mtgb
 		std::map<ShowType, ImGuiWindowState> imguiWindowStates_; // ShowTypeごとのウィンドウの状態
 
 		void RegisterAllComponentViewers();
-		template<typename T>
-		void RegisterComponentViewer();
 
 		std::unordered_map<std::type_index, std::function<void(EntityId)>> componentShowFuncs_;
 		std::queue<std::function<void()>> sceneViewShowList_;

@@ -23,7 +23,7 @@ namespace mtgb
 		virtual void Remove(const EntityId _entityId) = 0;
 		virtual nlohmann::json Serialize(EntityId _entityId) = 0;
 		virtual IComponentMemento* SaveToMemento(EntityId _entityId) = 0;
-		virtual IComponentMemento* Deserialize(EntityId _entityId, const nlohmann::json& _json) = 0;
+		virtual void Deserialize(EntityId _entityId, const nlohmann::json& _json) = 0;
 		virtual void Copy(EntityId _dest, EntityId _src) = 0;
 
 	protected:

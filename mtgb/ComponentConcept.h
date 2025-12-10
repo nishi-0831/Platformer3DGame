@@ -75,6 +75,11 @@ namespace mtgb
 		typename T::Memento;
 	}&&
 		std::derived_from<typename T::Memento, IComponentMemento>;
-		
+
+	template<class ComponentPoolT, typename TComponent>
+	class IComponent;
+
+	template<typename T>
+	concept ComponentT = std::derived_from<IComponent<typename T::ComponentPoolT, T>, T>;
 		
 }

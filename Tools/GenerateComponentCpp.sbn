@@ -1,6 +1,5 @@
 // {{ class_name }}.generated.cpp
 # include "{{ class_name }}.generated.h"
-# include "{{ header_file }}"
 # include "TypeRegistry.h"
 # include "MTImGui.h"
 
@@ -17,8 +16,8 @@ namespace mtgb
 								TypeRegistry::Instance().CallFunc(&_target->{{ member.name }}, "{{ member.name }}");
 					{{- end }}
 				});
+			MTImGui::Instance().RegisterComponentViewer<{{ class_name }}>();
 		}
-		 MTImGui::Instance().RegisterComponentViewer<{{ class_name }}>();
 	};
 
 	static {{ class_name }}_Register {{ class_name | string.downcase }}_register;

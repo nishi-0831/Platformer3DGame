@@ -14,9 +14,10 @@ namespace mtgb
 	template<class ComponentPoolT, typename ComponentT>
 	class IComponent
 	{
+	public:
+		using Pool = ComponentPoolT;
 		friend ComponentPoolT;
 		friend ComponentPool<ComponentT,ComponentPoolT>;
-	public:
 		IComponent() :
 			entityId_{ -1 }
 		{}

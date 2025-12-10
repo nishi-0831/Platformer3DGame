@@ -22,6 +22,7 @@ namespace mtgb
 	public:
 		MT_GENERATED_BODY()
 		friend RigidBodyCP;
+		using IComponent::IComponent;
 
 		RigidBody(const EntityId _entityId);
 		~RigidBody();
@@ -54,13 +55,10 @@ namespace mtgb
 		bool IsJumping();
 		static Vector3 GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
 	public:
-		MT_PROPERTY()
 		bool isNeedUpdate_;
-		MT_PROPERTY()
 		Vector3 velocity_;
 		MT_PROPERTY()
 		bool useGravity_;
-		MT_PROPERTY()
 		bool isGround_;
 		MT_PROPERTY()
 		bool isKinematic_;

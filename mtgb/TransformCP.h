@@ -1,7 +1,6 @@
 #pragma once
 #include "ISystem.h"
 #include "ComponentPool.h"
-#include "Transform.h"
 
 
 namespace mtgb
@@ -16,7 +15,7 @@ namespace mtgb
 	{
 	public:
 		TransformCP();
-		TransformCP(const TransformCP&) = default;
+		//TransformCP(const TransformCP&) = default;
 		~TransformCP();
 
 		void Update() override;

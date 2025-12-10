@@ -1,51 +1,76 @@
+#include "stdafx.h"
 #include "CommandHistoryManager.h"
-#include "ReleaseUtility.h"
-#include "CommandHistoryManagerWrapper.h"
+#include "assert.h"
+CommandHistoryManager::CommandHistoryManager()
+	: inner_{ new CommandHistory() }
+	, pGroupCommand_{ nullptr }
+	, isGrouping_{false}
+{
+}
+
+void CommandHistoryManager::Initialize()
+{
+}
+
+void CommandHistoryManager::Update()
+{
+}
+
+void CommandHistoryManager::BeginGroupCommand()
+{
+	if (isGrouping_)
+		return;
+
+	isGrouping_ = true;
+	SAFE_DELETE(pGroupCommand_);
+	pGroupCommand_ = new GroupCommand();
+}
+
+void CommandHistoryManager::EndGroupCommand()
+{
+	if (isGrouping_ == false)
+		return;
+	inner_->ExecuteCommand(pGroupCommand_);
+}
+
+
 
 void CommandHistoryManager::ExecuteCommand(Command* _command)
 {
-	_command->Execute();
-	undoStack_.push(_command);
-	ClearRedoStack();
+	if (isGrouping_ && pGroupCommand_ != nullptr)
+	{
+		pGroupCommand_->ExecuteCommand(_command);
+	}
 }
 
 void CommandHistoryManager::UndoCommand()
 {
-	if (undoStack_.empty())
-		return;
-	Command* undoCommand = undoStack_.top();
-	undoCommand->Undo();
-	redoStack_.push(undoCommand);
-	undoStack_.pop();
+	if (isGrouping_)
+	{
+		assert(false && " コマンドをまとめている最中のUndoは許可されていません。 CancellGroupCommand() を呼んでください ");
+	}
+
+	inner_->UndoCommand();
 }
 
 void CommandHistoryManager::RedoCommand()
 {
-	if (redoStack_.empty())
+	if (isGrouping_)
+	{
+		assert(false && " コマンドをまとめている最中のRedoは許可されていません。 CancellGroupCommand() を呼んでください ");
 		return;
-	Command* redoCommand = redoStack_.top();
-	redoCommand->Redo();
-	undoStack_.push(redoCommand);
-	redoStack_.pop();
+	}
+
+	inner_->RedoCommand();
 }
 
 void CommandHistoryManager::ClearAllStack()
 {
-	while (undoStack_.empty())
-	{
-		SAFE_DELETE(undoStack_.top());
-		undoStack_.pop();
-	}
-	ClearRedoStack();
+	SAFE_DELETE(pGroupCommand_);
+	inner_->ClearAllStack();
 }
-
-
 
 void CommandHistoryManager::ClearRedoStack()
 {
-	while (redoStack_.empty() == false)
-	{
-		SAFE_DELETE(redoStack_.top());
-		redoStack_.pop();
-	}
+	
 }

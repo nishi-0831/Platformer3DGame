@@ -1,9 +1,12 @@
 // MeshRenderer.generated.h
 #pragma once
 
-
+#include <nlohmann/json.hpp>
+#include "JsonConverter.h"
+#include "MTImGui.h"
+#include <string>
 // ============================================================================
-// MeshRendererï¿½Ìï¿½Ô‚ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½Stateï¿½\ï¿½ï¿½ï¿½Ì‚Ì’ï¿½`ï¿½AUndo/Redoï¿½Égï¿½ï¿½Mementoï¿½ï¿½usingï¿½éŒ¾
+// MeshRenderer‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
 // ============================================================================
 #define MT_COMPONENT_MeshRenderer() \
 	struct MeshRendererState \
@@ -17,12 +20,14 @@
 	using MeshRendererMemento = ComponentMemento<MeshRenderer, MeshRendererState>;
 
 // ============================================================================
-// MeshRendererï¿½ï¿½MeshRendererMementoï¿½Ì‘ï¿½ï¿½İ•ÏŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// MeshRenderer‚ÆMeshRendererMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
 // ============================================================================
 #define MT_GENERATED_BODY_MeshRenderer() \
 	public: \
-	IComponentMemento* SaveToMemento() \
+	using Memento = MeshRendererMemento; \
+	MeshRendererMemento* SaveToMemento() \
 	{ \
+	OnPreSave(); \
 		MeshRendererState state; \
 		state.meshFileName = this->meshFileName; \
 		state.meshHandle = this->meshHandle; \
@@ -42,8 +47,43 @@
 	} \
 	\
 	friend struct MeshRenderer_Register; \
-	NLOHMANN_DEFINE_TYPE_INTRUSIVE(MeshRenderer, meshFileName, meshHandle, layer, shaderType)
+	friend void to_json(nlohmann::json& _j,MeshRenderer& _target) \
+	{ \
+	_target.OnPreSave(); \
+		_j["meshFileName"] = JsonConverter::Serialize<std::string>(_target.meshFileName); \
+		_j["meshHandle"] = JsonConverter::Serialize<FBXModelHandle>(_target.meshHandle); \
+		_j["layer"] = JsonConverter::Serialize<GameObjectLayerFlag>(_target.layer); \
+		_j["shaderType"] = JsonConverter::Serialize<ShaderType>(_target.shaderType); \
+	} \
+	friend void from_json(const nlohmann::json& _j, MeshRenderer& _target) \
+	{ \
+		JsonConverter::Deserialize<std::string>(_target.meshFileName, _j.at("meshFileName")); \
+		JsonConverter::Deserialize<FBXModelHandle>(_target.meshHandle, _j.at("meshHandle")); \
+		JsonConverter::Deserialize<GameObjectLayerFlag>(_target.layer, _j.at("layer")); \
+		JsonConverter::Deserialize<ShaderType>(_target.shaderType, _j.at("shaderType")); \
+		_target.OnPostRestore(); \
+	} \
+	static std::string TypeName(){ return "MeshRenderer" ;} \
+	/* ImGui•\¦ˆ—‚Ì“o˜^ */ \
+	static void RegisterImGui() \
+	{ \
+		static bool registered = false; \
+		if (registered) return; \
+		registered = true; \
+		\
+		RegisterShowFuncHolder::Set<MeshRenderer>([]( MeshRenderer* _target, const char* _name) \
+			{ \
+				TypeRegistry::Instance().CallFunc(&_target->meshFileName, "meshFileName"); \
+				TypeRegistry::Instance().CallFunc(&_target->meshHandle, "meshHandle"); \
+				TypeRegistry::Instance().CallFunc(&_target->layer, "layer"); \
+				TypeRegistry::Instance().CallFunc(&_target->shaderType, "shaderType"); \
+			}); \
+		MTImGui::Instance().RegisterComponentViewer<MeshRenderer>(); \
+	}
 
-// ï¿½}ï¿½Nï¿½ï¿½ï¿½ã‘ï¿½ï¿½
+#pragma warning(push)
+#pragma warning(disable:4005)
+// ƒ}ƒNƒã‘‚«
 #define MT_COMPONENT() MT_COMPONENT_MeshRenderer()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_MeshRenderer()
+#pragma warning(pop)

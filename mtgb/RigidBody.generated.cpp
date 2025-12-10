@@ -6,7 +6,7 @@
 
 namespace mtgb
 {
-	// ImGuiï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^
+	// ImGui•\Ž¦ˆ—‚ð“o˜^
 	struct RigidBody_Register
 	{
 		RigidBody_Register()
@@ -19,8 +19,8 @@ namespace mtgb
 								TypeRegistry::Instance().CallFunc(&_target->isGround_, "isGround_");
 								TypeRegistry::Instance().CallFunc(&_target->isKinematic_, "isKinematic_");
 				});
+			MTImGui::Instance().RegisterComponentViewer<RigidBody>();
 		}
-		 MTImGui::Instance().RegisterComponentViewer<RigidBody>();
 	};
 
 	static RigidBody_Register rigidbody_register;

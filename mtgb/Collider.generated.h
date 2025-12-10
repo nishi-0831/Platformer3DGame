@@ -1,9 +1,12 @@
 // Collider.generated.h
 #pragma once
 
-
+#include <nlohmann/json.hpp>
+#include "JsonConverter.h"
+#include "MTImGui.h"
+#include <string>
 // ============================================================================
-// Colliderï¿½Ìï¿½Ô‚ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½Stateï¿½\ï¿½ï¿½ï¿½Ì‚Ì’ï¿½`ï¿½AUndo/Redoï¿½Égï¿½ï¿½Mementoï¿½ï¿½usingï¿½éŒ¾
+// Collider‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
 // ============================================================================
 #define MT_COMPONENT_Collider() \
 	struct ColliderState \
@@ -19,12 +22,14 @@
 	using ColliderMemento = ComponentMemento<Collider, ColliderState>;
 
 // ============================================================================
-// Colliderï¿½ï¿½ColliderMementoï¿½Ì‘ï¿½ï¿½İ•ÏŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// Collider‚ÆColliderMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
 // ============================================================================
 #define MT_GENERATED_BODY_Collider() \
 	public: \
-	IComponentMemento* SaveToMemento() \
+	using Memento = ColliderMemento; \
+	ColliderMemento* SaveToMemento() \
 	{ \
+	OnPreSave(); \
 		ColliderState state; \
 		state.colliderType_ = this->colliderType_; \
 		state.isStatic_ = this->isStatic_; \
@@ -48,8 +53,49 @@
 	} \
 	\
 	friend struct Collider_Register; \
-	NLOHMANN_DEFINE_TYPE_INTRUSIVE(Collider, colliderType_, isStatic_, colliderTag_, center_, radius_, extents_)
+	friend void to_json(nlohmann::json& _j,Collider& _target) \
+	{ \
+	_target.OnPreSave(); \
+		_j["colliderType_"] = JsonConverter::Serialize<ColliderType>(_target.colliderType_); \
+		_j["isStatic_"] = JsonConverter::Serialize<bool>(_target.isStatic_); \
+		_j["colliderTag_"] = JsonConverter::Serialize<ColliderTag>(_target.colliderTag_); \
+		_j["center_"] = JsonConverter::Serialize<Vector3>(_target.center_); \
+		_j["radius_"] = JsonConverter::Serialize<float>(_target.radius_); \
+		_j["extents_"] = JsonConverter::Serialize<Vector3>(_target.extents_); \
+	} \
+	friend void from_json(const nlohmann::json& _j, Collider& _target) \
+	{ \
+		JsonConverter::Deserialize<ColliderType>(_target.colliderType_, _j.at("colliderType_")); \
+		JsonConverter::Deserialize<bool>(_target.isStatic_, _j.at("isStatic_")); \
+		JsonConverter::Deserialize<ColliderTag>(_target.colliderTag_, _j.at("colliderTag_")); \
+		JsonConverter::Deserialize<Vector3>(_target.center_, _j.at("center_")); \
+		JsonConverter::Deserialize<float>(_target.radius_, _j.at("radius_")); \
+		JsonConverter::Deserialize<Vector3>(_target.extents_, _j.at("extents_")); \
+		_target.OnPostRestore(); \
+	} \
+	static std::string TypeName(){ return "Collider" ;} \
+	/* ImGui•\¦ˆ—‚Ì“o˜^ */ \
+	static void RegisterImGui() \
+	{ \
+		static bool registered = false; \
+		if (registered) return; \
+		registered = true; \
+		\
+		RegisterShowFuncHolder::Set<Collider>([]( Collider* _target, const char* _name) \
+			{ \
+				TypeRegistry::Instance().CallFunc(&_target->colliderType_, "colliderType_"); \
+				TypeRegistry::Instance().CallFunc(&_target->isStatic_, "isStatic_"); \
+				TypeRegistry::Instance().CallFunc(&_target->colliderTag_, "colliderTag_"); \
+				TypeRegistry::Instance().CallFunc(&_target->center_, "center_"); \
+				TypeRegistry::Instance().CallFunc(&_target->radius_, "radius_"); \
+				TypeRegistry::Instance().CallFunc(&_target->extents_, "extents_"); \
+			}); \
+		MTImGui::Instance().RegisterComponentViewer<Collider>(); \
+	}
 
-// ï¿½}ï¿½Nï¿½ï¿½ï¿½ã‘ï¿½ï¿½
+#pragma warning(push)
+#pragma warning(disable:4005)
+// ƒ}ƒNƒã‘‚«
 #define MT_COMPONENT() MT_COMPONENT_Collider()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_Collider()
+#pragma warning(pop)

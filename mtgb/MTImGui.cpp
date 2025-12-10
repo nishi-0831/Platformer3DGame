@@ -36,6 +36,16 @@ void mtgb::MTImGui::Initialize()
         {
             MTImGui::Instance().showableObjs_.clear();
         });
+
+    // ゲームオブジェクトが選択されたときに、それを表示対象とする
+    Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe([this](const GameObjectSelectedEvent& _handler)
+        {
+            SelectGameObject(_handler.entityId);
+        }, EventScope::Global);
+    Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe([this](const GameObjectCreatedEvent& _event)
+        {
+            SelectGameObject(_event.entityId);
+        }, EventScope::Global);
 }
 
 void mtgb::MTImGui::Update()
@@ -178,15 +188,7 @@ mtgb::MTImGui::MTImGui()
 {
     RegisterAllComponentViewers();
 
-    // ゲームオブジェクトが選択されたときに、それを表示対象とする
-    Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe([this](const GameObjectSelectedEvent& _handler)
-        {
-            SelectGameObject(_handler.entityId);
-        }, EventScope::Global);
-    Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe([this](const GameObjectCreatedEvent& _event)
-        {
-            SelectGameObject(_event.entityId);
-        },EventScope::Global);
+    
 }
 mtgb::MTImGui::~MTImGui()
 {

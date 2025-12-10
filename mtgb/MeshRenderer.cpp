@@ -12,7 +12,7 @@ mtgb::MeshRenderer::MeshRenderer()
 }
 
 mtgb::MeshRenderer::MeshRenderer(EntityId _entityId)
-	: StatefulComponent(_entityId)
+	: IComponent(_entityId)
 {
 	meshFileName.resize(BUFFER_SIZE);
 }

@@ -6,7 +6,7 @@
 
 namespace mtgb
 {
-	// ImGuiï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½^
+	// ImGui•\Ž¦ˆ—‚ð“o˜^
 	struct AudioPlayer_Register
 	{
 		AudioPlayer_Register()
@@ -15,8 +15,8 @@ namespace mtgb
 				{
 								TypeRegistry::Instance().CallFunc(&_target->hAudio, "hAudio");
 				});
+			MTImGui::Instance().RegisterComponentViewer<AudioPlayer>();
 		}
-		 MTImGui::Instance().RegisterComponentViewer<AudioPlayer>();
 	};
 
 	static AudioPlayer_Register audioplayer_register;

@@ -1,9 +1,12 @@
 // AudioPlayer.generated.h
 #pragma once
 
-
+#include <nlohmann/json.hpp>
+#include "JsonConverter.h"
+#include "MTImGui.h"
+#include <string>
 // ============================================================================
-// AudioPlayerï¿½Ìï¿½Ô‚ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½Stateï¿½\ï¿½ï¿½ï¿½Ì‚Ì’ï¿½`ï¿½AUndo/Redoï¿½Égï¿½ï¿½Mementoï¿½ï¿½usingï¿½éŒ¾
+// AudioPlayer‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
 // ============================================================================
 #define MT_COMPONENT_AudioPlayer() \
 	struct AudioPlayerState \
@@ -14,12 +17,14 @@
 	using AudioPlayerMemento = ComponentMemento<AudioPlayer, AudioPlayerState>;
 
 // ============================================================================
-// AudioPlayerï¿½ï¿½AudioPlayerMementoï¿½Ì‘ï¿½ï¿½İ•ÏŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// AudioPlayer‚ÆAudioPlayerMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
 // ============================================================================
 #define MT_GENERATED_BODY_AudioPlayer() \
 	public: \
-	IComponentMemento* SaveToMemento() \
+	using Memento = AudioPlayerMemento; \
+	AudioPlayerMemento* SaveToMemento() \
 	{ \
+	OnPreSave(); \
 		AudioPlayerState state; \
 		state.hAudio = this->hAudio; \
 		return new ComponentMemento<AudioPlayer, AudioPlayerState>(GetEntityId(), state); \
@@ -33,8 +38,34 @@
 	} \
 	\
 	friend struct AudioPlayer_Register; \
-	NLOHMANN_DEFINE_TYPE_INTRUSIVE(AudioPlayer, hAudio)
+	friend void to_json(nlohmann::json& _j,AudioPlayer& _target) \
+	{ \
+	_target.OnPreSave(); \
+		_j["hAudio"] = JsonConverter::Serialize<AudioHandle>(_target.hAudio); \
+	} \
+	friend void from_json(const nlohmann::json& _j, AudioPlayer& _target) \
+	{ \
+		JsonConverter::Deserialize<AudioHandle>(_target.hAudio, _j.at("hAudio")); \
+		_target.OnPostRestore(); \
+	} \
+	static std::string TypeName(){ return "AudioPlayer" ;} \
+	/* ImGui•\¦ˆ—‚Ì“o˜^ */ \
+	static void RegisterImGui() \
+	{ \
+		static bool registered = false; \
+		if (registered) return; \
+		registered = true; \
+		\
+		RegisterShowFuncHolder::Set<AudioPlayer>([]( AudioPlayer* _target, const char* _name) \
+			{ \
+				TypeRegistry::Instance().CallFunc(&_target->hAudio, "hAudio"); \
+			}); \
+		MTImGui::Instance().RegisterComponentViewer<AudioPlayer>(); \
+	}
 
-// ï¿½}ï¿½Nï¿½ï¿½ï¿½ã‘ï¿½ï¿½
+#pragma warning(push)
+#pragma warning(disable:4005)
+// ƒ}ƒNƒã‘‚«
 #define MT_COMPONENT() MT_COMPONENT_AudioPlayer()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_AudioPlayer()
+#pragma warning(pop)

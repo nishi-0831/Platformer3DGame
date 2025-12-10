@@ -8,13 +8,13 @@ namespace
 
 namespace mtgb
 {
-	CommandHistoryManagerWrapper::CommandHistoryManagerWrapper(CommandHistoryManager* _inner)
+	NamedCommandHistory::NamedCommandHistory(ICommandHistory* _inner)
 		: inner_{_inner}
 	{
 
 	}
 
-	void CommandHistoryManagerWrapper::ExecuteCommand(Command* _command)
+	void NamedCommandHistory::ExecuteCommand(Command* _command)
 	{
 		if (inner_ == nullptr) return;
 		if (_command == nullptr) return;
@@ -35,7 +35,7 @@ namespace mtgb
 		}
 	}
 
-	void CommandHistoryManagerWrapper::UndoCommand()
+	void NamedCommandHistory::UndoCommand()
 	{
 		if (inner_ == nullptr) return;
 		inner_->UndoCommand();
@@ -57,7 +57,7 @@ namespace mtgb
 		}
 	}
 
-	void CommandHistoryManagerWrapper::RedoCommand()
+	void NamedCommandHistory::RedoCommand()
 	{
 		if (inner_ == nullptr) return;
 		inner_->RedoCommand();
@@ -78,7 +78,7 @@ namespace mtgb
 		}
 	}
 
-	void CommandHistoryManagerWrapper::ClearAllStack()
+	void NamedCommandHistory::ClearAllStack()
 	{
 		if (inner_ == nullptr) return;
 		inner_->ClearAllStack();
@@ -87,7 +87,7 @@ namespace mtgb
 		redoNames_.clear();
 	}
 
-	void CommandHistoryManagerWrapper::DrawImGuiStack() const
+	void NamedCommandHistory::DrawImGuiStack() const
 	{
 		ImGui::BeginChild("CommandHistory", ImVec2(0, 0));
 
@@ -115,5 +115,9 @@ namespace mtgb
 		}
 
 		ImGui::EndChild();
+	}
+	void NamedCommandHistory::ClearRedoStack()
+	{		
+		redoNames_.clear();
 	}
 }

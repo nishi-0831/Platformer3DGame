@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "ResultScene.h"
-#include "../Source/ScoreViewer.h"
+//#include "../Source/ScoreViewer.h"
 #include "../Source/Camera.h"
 #include "../Source/TitleScene.h"
 #include "../Source/StageManager.h"
@@ -37,7 +37,7 @@ void ResultScene::Initialize()
 	// スコアを表示
 	RectF rect{ 0,0,800,600 };
 	int fontSize{ 36 };
-	Instantiate<ScoreViewer>(rect, fontSize,TextAlignment::center);
+	//Instantiate<ScoreViewer>(rect, fontSize,TextAlignment::center);
 
 	// カメラを管理クラスに登録
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);

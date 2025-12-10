@@ -97,26 +97,24 @@ nlohmann::json mtgb::Game::SerializeComponent(std::type_index _typeIndex, Entity
 	return j;
 }
 
-IComponentMemento* mtgb::Game::DeserializeComponent(std::type_index _typeIndex, EntityId _entityId, const nlohmann::json& _json)
+void mtgb::Game::DeserializeComponent(std::type_index _typeIndex, EntityId _entityId, const nlohmann::json& _json)
 {
 	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
 	if (itr == pInstance_->pRegisterSystems_.end())
-		return nullptr;
+		return ;
 
 	IComponentPool* pComponentPool = dynamic_cast<IComponentPool*>(itr->second);
 	if (pComponentPool == nullptr)
-		return nullptr;
+		return ;
 
-	return pComponentPool->Deserialize(_entityId,_json);
+	pComponentPool->Deserialize(_entityId,_json);
 }
 
-std::optional<std::vector<IComponentMemento*>> mtgb::Game::DeserializeComponents(EntityId _entityId, const nlohmann::json& _json)
+void mtgb::Game::DeserializeComponents(EntityId _entityId, const nlohmann::json& _json)
 {
-	std::vector<IComponentMemento*> ret;
-
 	std::optional<std::set<std::type_index>> components = Game::System<ComponentRegistry>().GetComponentTypes(_json);
 	if (components.has_value() == false)
-		return std::nullopt;
+		return ;
 
 	for (const std::type_index& typeIndex : components.value())
 	{
@@ -125,10 +123,10 @@ std::optional<std::vector<IComponentMemento*>> mtgb::Game::DeserializeComponents
 		if (componentPoolType.has_value() == false)
 			continue;
 
-		ret.emplace_back(Game::DeserializeComponent(componentPoolType.value(), _entityId, _json));
+		Game::DeserializeComponent(componentPoolType.value(), _entityId, _json);
 	}
 
-	return std::optional<std::vector<IComponentMemento*>>(std::move(ret));
+	
 }
 
 std::span<IRenderableCP*> mtgb::Game::GetRenderableCPs()
