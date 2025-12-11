@@ -41,6 +41,10 @@ void CommandHistoryManager::ExecuteCommand(Command* _command)
 	{
 		pGroupCommand_->ExecuteCommand(_command);
 	}
+	else
+	{
+		inner_->ExecuteCommand(_command);
+	}
 }
 
 void CommandHistoryManager::UndoCommand()
