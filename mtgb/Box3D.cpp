@@ -43,6 +43,7 @@ std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entity
 	std::vector<IComponentMemento*> mementos;
 	TransformState transformState
 	{
+		.parent{INVALID_ENTITY},
 		.position{0,0,10},
 		.scale{1,1,1}
 	};

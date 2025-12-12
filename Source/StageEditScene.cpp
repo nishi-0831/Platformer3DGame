@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include <mtgb.h>
 #include "StageEditScene.h"
-
+#include "BuddiesSkyCombatStageGenerator.h"
 StageEditScene::StageEditScene()
 {
 }
@@ -21,6 +21,10 @@ void StageEditScene::Initialize()
 
 void StageEditScene::Update()
 {
+	if (InputUtil::GetKeyDown(KeyCode::Space))
+	{
+		BuddiesSkyCombatStageGenerate();
+	}
 }
 
 void StageEditScene::Draw() const
