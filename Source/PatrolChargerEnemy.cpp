@@ -3,10 +3,10 @@
 #include "Debug.h"
 
 PatrolChargerEnemy::PatrolChargerEnemy()
-    : pTransform_{Component<Transform>( GetEntityId())}
-    , pRigidBody_{Component<RigidBody>(GetEntityId())}
-    , pMeshRenderer_{ Component<MeshRenderer>(GetEntityId()) }
-    , pCollider_{Component<Collider>(GetEntityId())}
+    : pTransform_{Component<Transform>()}
+    , pRigidBody_{Component<RigidBody>()}
+    , pMeshRenderer_{ Component<MeshRenderer>() }
+    , pCollider_{Component<Collider>()}
     , pTargetTransform_{nullptr}
     , foundFOV_{45.0f}
 {
