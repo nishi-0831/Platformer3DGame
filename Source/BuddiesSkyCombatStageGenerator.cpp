@@ -11,23 +11,26 @@ void BuddiesSkyCombatStageGenerate()
 	std::vector<GameObject*> gameObjs;
 	currentScene->GetGameObjects( &gameObjs);
 
-	json j;
+	json jsonArray = json::array();
 	for (GameObject* gameObj : gameObjs)
 	{
 		std::string className = mtgb::ExtractClassName(gameObj->GetName());
 		if (className == "Box3D")
 		{
+			json box3DJSON;
 			EntityId entityId = gameObj->GetEntityId();
 			Transform& transform = Transform::Get(entityId);
 			MeshRenderer& meshRenderer = MeshRenderer::Get(entityId);
 
-			j["position"]["x"] = transform.position.x;
-			j["position"]["y"] = transform.position.y;
-			j["position"]["z"] = transform.position.z;
-			j["scale"]["x"] = transform.scale.x;
-			j["scale"]["y"] = transform.scale.y;
-			j["scale"]["z"] = transform.scale.z;
-			j["fileName"] = meshRenderer.meshFileName;
+			box3DJSON["position"]["x"] = transform.position.x;
+			box3DJSON["position"]["y"] = transform.position.y;
+			box3DJSON["position"]["z"] = transform.position.z;
+			box3DJSON["scale"]["x"] = transform.scale.x;
+			box3DJSON["scale"]["y"] = transform.scale.y;
+			box3DJSON["scale"]["z"] = transform.scale.z;
+			box3DJSON["fileName"] = meshRenderer.meshFileName;
+
+			jsonArray.push_back(box3DJSON);
 		}
 	}
 	TCHAR fileName[255] = "";
@@ -46,7 +49,7 @@ void BuddiesSkyCombatStageGenerate()
 		std::ofstream openFile(fileName);
 
 		int width = 4;
-		openFile << std::setw(width) << j;
+		openFile << std::setw(width) << jsonArray;
 
 		openFile.close();
 
