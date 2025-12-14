@@ -207,44 +207,6 @@ void mtgb::MTImGui::SetupShowFunc()
 
     // テンプレートパラメータに型を指定
     // 第一引数に型のポインタ、第二引数に登録する型の名前
-
-    /*Set<Transform>([](Transform* _target, const char* _name)
-        {
-            ImGui::Text("Parent: %lld", _target->parent);
-            TypeRegistry::Instance().CallFunc(&_target->position, "Position");
-            TypeRegistry::Instance().CallFunc(&_target->rotate, "Rotation");
-            TypeRegistry::Instance().CallFunc(&_target->scale, "Scale");
-            TypeRegistry::Instance().CallFunc(&_target->matrixWorld_, "MatrixWorld");
-            TypeRegistry::Instance().CallFunc(&_target->matrixLocal_, "MatrixLocal");
-            TypeRegistry::Instance().CallFunc(&_target->prevParentMatrix_, "PrevParent");
-        });*/
-
-    //Set<MeshRenderer>([](MeshRenderer* _target, const char* _name)
-    //    {
-    //        constexpr size_t BUF_SZ = 256; // 必要ならサイズを調整
-    //        static std::unordered_map<EntityId, std::string> editBuffers;
-
-    //        std::string& buf = editBuffers[_target->GetEntityId()];
-    //        if (buf.empty())
-    //        {
-    //            // 初回は現在の値をコピー
-    //            buf = _target->meshFileName;
-    //        }
-
-    //        // ImGuiに渡すバッファ容量を確保
-    //        if (buf.size() < BUF_SZ) buf.resize(BUF_SZ);
-
-    //        // Enterで確定されるようにフラグを指定
-    //        if (ImGui::InputText("FileName", buf.data(), BUF_SZ, ImGuiInputTextFlags_EnterReturnsTrue | ImGuiInputTextFlags_NoUndoRedo))
-    //        {
-    //            // 実際の文字列長に合わせてリサイズしてコミット
-    //            buf.resize(std::strlen(buf.c_str()));
-    //            _target->meshFileName = buf;
-    //            _target->OnChangeMeshFileName();
-    //        }
-    //    });
-
-    
     Set<ScreenCoordContainsInfo>([](ScreenCoordContainsInfo* _target, const char* _name)
         {
             TypeRegistry::Instance().CallFunc(&_target->worldPos, "WorldPos");
@@ -485,6 +447,53 @@ void mtgb::MTImGui::DrawVec(const Vector3& _start, const Vector3& _vec, float _t
     else
     {
         sceneViewShowList_.push([=]() {DrawRayImpl(_start, _vec, _thickness); });
+    }
+}
+
+void mtgb::MTImGui::DrawCone(const Vector3& _position, const Vector3& _direction, float _fovAngleDegree, float _distance, float _thickness, int _segments)
+{
+    // 正規化された方向ベクトル
+    Vector3 forward = Vector3::Normalize(_direction);
+
+    // 円錐の底面の中心
+    Vector3 baseCenter = _position + forward * _distance;
+
+    // 円錐の底面の半径
+    // MEMO: tanθ = 対辺 / 底辺 : 対辺 = 底辺 * tanθ
+    float baseRadius = _distance * std::tanf(DirectX::XMConvertToRadians(_fovAngleDegree / 2.0f));
+
+	// 上下方向を決定
+	Vector3 up = std::fabsf(DirectX::XMVectorGetY(forward)) < 0.9f
+		? Vector3{ 0.0f,1.0f,0.0f }
+	    : Vector3{ 1.0f,0.0f,0.0f };
+
+    // 右方向を計算
+    Vector3 right = Vector3::Normalize(Vector3::Cross(forward, up));
+    
+    // 上方向を再計算
+    up = Vector3::Cross(right, forward);
+
+    // 底面の円周上の点を計算
+    std::vector<Vector3> baseCirclePoints(_segments);
+    for (int i = 0; i < _segments; i++)
+    {
+        float angle = DirectX::XM_2PI * i / _segments;
+        float x = baseRadius * std::cosf(angle);
+        float y = baseRadius * std::sinf(angle);
+        baseCirclePoints[i] = baseCenter + right * x + up * y;
+    }
+
+    // 円錐の側面を描画
+    for (int i = 0; i < _segments; i++)
+    {
+        DrawLine(_position, baseCirclePoints[i], _thickness);
+    }
+
+    // 底面の円を描画
+    for (int i = 0; i < _segments; i++)
+    {
+        int nextIdx = (i + 1) % _segments;
+        DrawLine(baseCirclePoints[i], baseCirclePoints[nextIdx], _thickness);
     }
 }
 

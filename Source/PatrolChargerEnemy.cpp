@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "PatrolChargerEnemy.h"
 #include "Debug.h"
+#include <format>
+
+unsigned int PatrolChargerEnemy::generateCounter_{0};
 
 PatrolChargerEnemy::PatrolChargerEnemy()
     : pTransform_{Component<Transform>()}
@@ -10,8 +13,18 @@ PatrolChargerEnemy::PatrolChargerEnemy()
     , pTargetTransform_{nullptr}
     , pInterpolator_{Component<Interpolator>()}
     , foundFOV_{45.0f}
+    , foundDistance_{5.0f}
 {
-    
+    // Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
+    std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(PatrolChargerEnemy));
+    name_ = std::format("{} ({})", typeName, generateCounter_++);
+    displayName_ = name_;
+    state_.OnUpdate(STATE::PATROL, [this]
+        {
+            this->Patrol();
+        });
+
+    state_.Change(STATE::PATROL);
 }
 
 PatrolChargerEnemy::~PatrolChargerEnemy()
@@ -20,6 +33,7 @@ PatrolChargerEnemy::~PatrolChargerEnemy()
 
 void PatrolChargerEnemy::Update()
 {
+    state_.Update();
 }
 
 void PatrolChargerEnemy::Draw() const
@@ -41,10 +55,38 @@ void PatrolChargerEnemy::Start()
 
 void PatrolChargerEnemy::ShowImGui()
 {
+    if (state_.Current() == STATE::PATROL)
+    {
+        ImGui::Text("STATE::PATROL");
+    }
+    else if (state_.Current() == STATE::CHARGE)
+    {
+		ImGui::Text("STATE::CHARGE");
+    }
+    else if (state_.Current() == STATE::WAIT)
+    {
+		ImGui::Text("STATE::WAIT");
+    }
+    else if (state_.Current() == STATE::RETURN_TO_PATROL)
+    {
+		ImGui::Text("STATE::RETURN_TO_PATROL");
+    }
+
+    // ‹–ì‚ğ‰~‚Æ‚µ‚Ä•`‰æ
+    MTImGui::Instance().DrawCone(
+        pTransform_->position,
+        pTransform_->Forward(),
+        foundFOV_,
+        foundDistance_,
+        1.0f, // ü‚Ì‘¾‚³
+        16 // ‰~‚Ì•ªŠ„”
+    );
 }
 
 void PatrolChargerEnemy::Patrol()
 {
+    pInterpolator_->UpdateProgress();
+    pTransform_->position = pInterpolator_->Evaluate();
 }
 
 void PatrolChargerEnemy::Charge()
@@ -70,9 +112,10 @@ void PatrolChargerEnemy::Search()
     // degree‚É’¼‚·
     float angleDegree = DirectX::XMConvertToDegrees(angleRadian);
 
-    // ”­Œ©‚µ‚½‚Æ”»’è‚·‚éŠp“x“à‚©
-    if (angleDegree <= foundFOV_)
+    // ”­Œ©‚µ‚½‚Æ”»’è‚·‚éŠp“xA‹——£‚©‚Ç‚¤‚©
+    if (angleDegree <= foundFOV_ && toTarget.Size() <= foundDistance_ )
     {
+        // ”­Œ©
         Quaternion targetRotation{ Quaternion::LookRotation(Vector3::Normalize(toTarget),pTransform_->Up()) };
 
         state_.Change(STATE::CHARGE);

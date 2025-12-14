@@ -67,6 +67,8 @@ namespace mtgb
 		static inline auto Right()   { return Vector3{  1,  0,  0 }; }
 		static inline auto Back()    { return Vector3{  0,  0, -1 }; }
 		static inline auto Forward() { return Vector3{  0,  0,  1 }; }
+
+		static inline Vector3 Cross(const Vector3& _v1, const Vector3& _v2) { return DirectX::XMVector3Cross(_v1, _v2); }
 	};
 
 	inline Vector3 operator*(const Vector3& _v, const DirectX::XMMATRIX _matrix) { return Vector3{ _v } *= _matrix; }

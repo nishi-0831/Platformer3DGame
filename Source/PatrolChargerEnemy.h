@@ -32,6 +32,9 @@ private:
 	Transform* pTargetTransform_;
 	// ”­Œ©‚Æ”»’è‚·‚éŠp“x
 	float foundFOV_;
+	// ”­Œ©‚Æ”»’è‚·‚é‹——£
+	float foundDistance_;
 	// „‰ñ‚Ég‚¤
 	Interpolator* pInterpolator_;
+	static unsigned int generateCounter_;
 };

@@ -5,6 +5,7 @@
 #include "Goal.h"
 #include "GameOverZone.h"
 #include "MovingFloor.h"
+#include "PatrolChargerEnemy.h"
 void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegistrar)
 {
 	_pGameObjectRegistrar->Register<MovingFloor>("MovingFloor");
@@ -12,4 +13,5 @@ void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegist
 	_pGameObjectRegistrar->Register<ScoreItem>("ScoreItem");
 	_pGameObjectRegistrar->Register<Goal>("Goal");
 	_pGameObjectRegistrar->Register<GameOverZone>("GameOverZone");
+	_pGameObjectRegistrar->Register<PatrolChargerEnemy>("PatrolChargerEnemy");
 }

@@ -102,6 +102,17 @@ namespace mtgb
 		/// <param name="_thickness"></param>
 		void DrawVec(const Vector3& _start, const Vector3 & _vec, float _thickness);
 
+		/// <summary>
+		/// ImGuiWindow‚É‰~‚ğ•`‰æ
+		/// </summary>
+		/// <param name="_position"> ‰~‚Ì’¸“_ </param>
+		/// <param name="_direction"> ‰~‚ÌŒü‚« </param>
+		/// <param name="_fovAngleDegree"> ‹–ìŠp(“x) </param>
+		/// <param name="_distance"> ‰~‚Ì‚‚³ </param>
+		/// <param name="_thickness"> ü‚Ì‘¾‚³ </param>
+		/// <param name="_segments"> ‰~‚Ì•ªŠ„”(‘½‚¢‚Ù‚ÇŠŠ‚ç‚©) </param>
+		void DrawCone(const Vector3& _position, const Vector3& _direction, float _fovAngleDegree,
+			float _distance, float _thickness = 1.0f, int _segments = 16);
 		EntityId GetSelectedEntityId();
 		static const char* GetName(ShowType _showType)
 		{
