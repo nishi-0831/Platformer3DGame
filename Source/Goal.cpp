@@ -6,7 +6,19 @@ unsigned int Goal::generateCounter_{ 0 };
 
 Goal::Goal()
     :GameObject()
+    , pTransform_{ Component<Transform>() }
+    , pCollider_{ Component<Collider>() }
+    , pRigidBody_{ Component<RigidBody>() }
+    , pMeshRenderer_{Component<MeshRenderer>()}
 {
+    pCollider_->colliderType_ = ColliderType::TYPE_AABB;
+    pCollider_->isStatic_ = false;
+    pCollider_->SetExtents(pTransform_->scale * 0.5f);
+    pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
+    pMeshRenderer_->SetMesh(Fbx::Load(pMeshRenderer_->meshFileName));
+    pMeshRenderer_->layer = AllLayer();
+    pMeshRenderer_->shaderType = ShaderType::FbxParts;
+
     std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Goal));
     name_ = std::format("{} ({})", typeName, generateCounter_++);
     displayName_ = name_;
@@ -48,35 +60,3 @@ void Goal::ShowImGui()
     ImGui::Text("EntityId:%d", Entity::entityId_);
 }
 
-std::vector<IComponentMemento*> Goal::GetDefaultMementos(EntityId _entityId) const
-{
-    std::vector<IComponentMemento*> mementos;
-
-    TransformState transformState
-    {
-        .position{0,1,5},
-        .scale{1,1,1}
-    };
-
-    ColliderState colliderState
-    {
-        .colliderType_{ColliderType::TYPE_AABB},
-        .isStatic_{false},
-        .colliderTag_{},
-        .center_{transformState.position},
-        .extents_{transformState.scale * 0.5f}
-    };
-
-    MeshRendererState meshData
-    {
-        .meshFileName{"Model/Box.fbx"},
-        .meshHandle{Fbx::Load(meshData.meshFileName)},
-        .layer{AllLayer()},
-        .shaderType{ShaderType::FbxParts}
-    };
-
-    mementos.push_back(new TransformMemento(_entityId, transformState));
-    mementos.push_back(new ColliderMemento(_entityId, colliderState));
-    mementos.push_back(new MeshRendererMemento(_entityId, meshData));
-    return mementos;
-}

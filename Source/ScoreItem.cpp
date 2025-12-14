@@ -5,8 +5,31 @@ unsigned int ScoreItem::generateCounter_{ 0 };
 
 ScoreItem::ScoreItem()
 	: GameObject()
+	, pTransform_{ Component<Transform>() }
+	, pCollider_{ Component<Collider>() }
+	, pRigidBody_{ Component<RigidBody>() }
+	, pMeshRenderer_{ Component<MeshRenderer>()}
 	, addScore_{100}
 {
+	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
+	pCollider_->isStatic_ = false;
+	pCollider_->SetRadius(pTransform_->scale.x * 0.5f);
+	
+	pRigidBody_->OnCollisionEnter([this](EntityId _entityId)
+		{
+			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
+			if (tag == GameObjectTag::Player)
+			{
+				Game::System<ScoreManager>().AddScore(addScore_);
+				DestroyMe();
+			}
+		});
+
+	pMeshRenderer_->meshFileName = "Model/Ruby.fbx";
+	pMeshRenderer_->SetMesh(Fbx::Load(pMeshRenderer_->meshFileName));
+	pMeshRenderer_->layer = AllLayer();
+	pMeshRenderer_->shaderType = ShaderType::FbxParts;
+
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(ScoreItem));
 	name_ = std::format("{} ({})", typeName, generateCounter_++);
 }
@@ -21,55 +44,9 @@ void ScoreItem::Update()
 
 void ScoreItem::Start()
 {
-	pTransform_ = Component<Transform>();
-	pCollider_ = Component<Collider>();
-	pRigidBody_ = Component<RigidBody>();
-
-	pRigidBody_->OnCollisionEnter([this](EntityId _entityId)
-		{
-			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
-			if (tag == GameObjectTag::Player)
-			{
-				Game::System<ScoreManager>().AddScore(addScore_);
-				DestroyMe();
-			}
-		});
+	
 }
 
 void ScoreItem::Draw() const
 {
-}
-
-std::vector<IComponentMemento*> ScoreItem::GetDefaultMementos(EntityId _entityId) const
-{
-    std::vector<IComponentMemento*> mementos;
-
-	TransformState transformState
-	{
-		.position{0,0,0},
-		.scale{1,1,1}
-	};
-
-	ColliderState colliderState
-	{
-		.colliderType_{ColliderType::TYPE_SPHERE},
-		.isStatic_{false},
-		.colliderTag_{},
-		.center_{transformState.position},
-		.radius_{transformState.scale.x * 0.5f},
-		.extents_{transformState.scale * 0.5f},
-	};
-
-	MeshRendererState meshData
-	{
-		.meshFileName{"Model/Ruby.fbx"},
-		.meshHandle{Fbx::Load(meshData.meshFileName)},
-		.layer{AllLayer()},
-		.shaderType{ShaderType::FbxParts}
-	};
-
-	mementos.push_back(new TransformMemento(_entityId, transformState));
-	mementos.push_back(new ColliderMemento(_entityId, colliderState));
-	mementos.push_back(new MeshRendererMemento(_entityId, meshData));
-    return mementos;
 }

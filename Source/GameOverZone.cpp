@@ -5,7 +5,13 @@ unsigned int GameOverZone::generateCounter_{ 0 };
 
 GameOverZone::GameOverZone()
     : GameObject()
+    , pTransform_{ Component<Transform>() }
+    , pCollider_{ Component<Collider>() }
 {
+    pTransform_->position = Vector3(0, -3, 0);
+    pCollider_->colliderType_ = ColliderType::TYPE_AABB;
+    pCollider_->isStatic_ = false;
+    pCollider_->SetExtents(pTransform_->scale * 0.5f);
     std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(GameOverZone));
     name_ = std::format("{} ({})", typeName, generateCounter_++);
 }
@@ -37,26 +43,3 @@ void GameOverZone::Draw() const
 {
 }
 
-std::vector<IComponentMemento*> GameOverZone::GetDefaultMementos(EntityId _entityId) const
-{
-    std::vector<IComponentMemento*> mementos;
-
-    TransformState transformState
-    {
-        .position{0,-3,0},
-        .scale{1,1,1}
-    };
-
-    ColliderState colliderState
-    {
-        .colliderType_{ColliderType::TYPE_AABB},
-        .isStatic_{false},
-        .colliderTag_{},
-        .center_{transformState.position},
-        .extents_{transformState.scale * 0.5f}
-    };
-
-    mementos.push_back(new TransformMemento(_entityId, transformState));
-    mementos.push_back(new ColliderMemento(_entityId, colliderState));
-    return mementos;
-}

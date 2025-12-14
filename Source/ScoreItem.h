@@ -11,11 +11,11 @@ public:
 	void Start() override;
 	void Draw() const override;
 
-	std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const override;
 private:
 	Transform* pTransform_;
 	Collider* pCollider_;
 	RigidBody* pRigidBody_;
+	MeshRenderer* pMeshRenderer_;
 	uint32_t addScore_;
 	static unsigned int generateCounter_;
 };

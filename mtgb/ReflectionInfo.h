@@ -6,7 +6,6 @@
 #include "MouseStateProxy.h"
 #include "TypeRegistry.h"
 #include "ShowAttributes.h"
-#include "../Source/MovingFloorState.h"
 #include "Interpolator.h"
 #include "Matrix4x4.h"
 //#include "TypeRegistryImpl.h"
@@ -52,13 +51,7 @@ REGISTER_FIELD(lZ)
 REGISTER_FIELD(rgbButtons)
 REGISTER_END
 
-REGISTER_TYPE(Interpolator)
-REGISTER_FIELD(dir)
-REGISTER_FIELD(elapsed)
-REGISTER_FIELD(duration)
-REGISTER_FIELD(start)
-REGISTER_FIELD(end)
-REGISTER_END
+
 
 //REGISTER_TYPE(TransformState, DisplayName{ "Transform" })
 //REGISTER_FIELD(parent)

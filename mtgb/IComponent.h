@@ -19,7 +19,7 @@ namespace mtgb
 		friend ComponentPoolT;
 		friend ComponentPool<ComponentT,ComponentPoolT>;
 		IComponent() :
-			entityId_{ -1 }
+			entityId_{ INVALID_ENTITY }
 		{}
 		IComponent(const EntityId _entityId);
 		virtual ~IComponent();

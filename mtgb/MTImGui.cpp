@@ -12,7 +12,6 @@
 #include "RectContainsInfo.h"
 #include "RectDetector.h"
 #include <string>
-#include "GameObject.h"
 #include "WindowContextUtil.h"
 #include "InputResource.h"
 #include "WindowResource.h"
@@ -355,12 +354,6 @@ void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
 }
 void mtgb::MTImGui::RegisterAllComponentViewers()
 {
-    RegisterComponentViewer<Transform>();
-    RegisterComponentViewer<Collider>();
-    RegisterComponentViewer<AudioPlayer>();
-    RegisterComponentViewer<RigidBody>();
-    RegisterComponentViewer<MeshRenderer>();
-    RegisterComponentViewer<MovingFloor>();
 }
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {
@@ -501,15 +494,3 @@ EntityId mtgb::MTImGui::GetSelectedEntityId()
     return id;
 }
 
-template<typename T>
-inline void mtgb::MTImGui::RegisterComponentViewer()
-{
-    std::type_index typeIdx(typeid(T));
-
-    componentShowFuncs_[typeIdx] = [this](EntityId _entityId)
-        {
-            GameObject* obj =  mtgb::GameObject::FindGameObject(_entityId);
-            std::string name = obj->GetName() + ":Components";
-            TypeRegistry::Instance().CallFunc<T>(&(T::template Get(_entityId)), name.c_str());
-        };
-}

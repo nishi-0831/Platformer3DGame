@@ -11,13 +11,12 @@ public:
 	void Draw() const override;
 	void Start() override;
 	void ShowImGui() override;
-	std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const override;
 	void SetCamera(Camera* _pCamera);
 private:
 	Transform* pTransform_;
-	const Transform* pCameraTransform_;
-	Camera* pCamera_;
-	RigidBody* pRigidBody_;
-	MeshRenderer* pMeshRenderer_;
 	Collider* pCollider_;
+	MeshRenderer* pMeshRenderer_;
+	RigidBody* pRigidBody_;
+	Camera* pCamera_;
+	const Transform* pCameraTransform_;
 };

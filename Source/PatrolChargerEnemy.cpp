@@ -8,6 +8,7 @@ PatrolChargerEnemy::PatrolChargerEnemy()
     , pMeshRenderer_{ Component<MeshRenderer>() }
     , pCollider_{Component<Collider>()}
     , pTargetTransform_{nullptr}
+    , pInterpolator_{Component<Interpolator>()}
     , foundFOV_{45.0f}
 {
     
@@ -40,11 +41,6 @@ void PatrolChargerEnemy::Start()
 
 void PatrolChargerEnemy::ShowImGui()
 {
-}
-
-std::vector<IComponentMemento*> PatrolChargerEnemy::GetDefaultMementos(EntityId _entityId) const
-{
-    return std::vector<IComponentMemento*>();
 }
 
 void PatrolChargerEnemy::Patrol()

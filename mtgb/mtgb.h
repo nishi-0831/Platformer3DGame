@@ -40,7 +40,7 @@
 #include "AudioPlayerCP.h"
 #include "ColliderCP.h"
 #include "MeshRendererCP.h"
-//#include "TextRendererCP.h"
+#include "InterpolatorCP.h"
 #include "GameTime.h"
 #include "Timer.h"
 #include "Draw.h"

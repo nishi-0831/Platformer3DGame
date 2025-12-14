@@ -85,6 +85,11 @@ namespace mtgb
 		MT_PROPERTY()
 		// 当たり判定の形
 		ColliderType colliderType_;
+		MT_PROPERTY()
+		// 静的な、Transform不要なコライダー用のフラグ
+		bool isStatic_;
+		MT_PROPERTY()
+		ColliderTag colliderTag_;
 	private:
 		void UpdateBoundingSphere();
 		void UpdateBoundingBox();
@@ -98,11 +103,6 @@ namespace mtgb
 		//ColliderTag colliderTag;
 		static FBXModelHandle hSphereModel_;
 		static FBXModelHandle hBoxModel_;
-		MT_PROPERTY()
-		// 静的な、Transform不要なコライダー用のフラグ
-		bool isStatic_;
-		MT_PROPERTY()
-		ColliderTag colliderTag_;
 		MT_PROPERTY()
 		Vector3 center_;
 		MT_PROPERTY()

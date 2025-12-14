@@ -11,7 +11,6 @@ public:
 	void Start() override;
 	void Draw() const override;
 
-	std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const override;
 private:
 	Transform* pTransform_;
 	Collider* pCollider_;

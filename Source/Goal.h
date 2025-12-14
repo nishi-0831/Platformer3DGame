@@ -1,7 +1,7 @@
 #pragma once
 #include <mtgb.h>
 
-class Goal : public mtgb::GameObject , public ImGuiShowable
+class Goal : public mtgb::GameObject, public ImGuiShowable
 {
 public:
 	Goal();
@@ -12,11 +12,11 @@ public:
 	void Draw() const override;
 	void ShowImGui() override;
 
-	std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const override;
 private:
 	Transform* pTransform_;
 	Collider* pCollider_;
 	RigidBody* pRigidBody_;
+	MeshRenderer* pMeshRenderer_;
 	static unsigned int generateCounter_;
 
 };

@@ -9,7 +9,6 @@ public:
 	void Draw() const override;
 	void Start() override;
 	void ShowImGui() override;
-	std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const override;
 private:
 	enum class STATE
 	{
@@ -34,5 +33,5 @@ private:
 	// ”­Œ©‚Æ”»’è‚·‚éŠp“x
 	float foundFOV_;
 	// „‰ñ‚Ég‚¤
-	Interpolator interpolator_;
+	Interpolator* pInterpolator_;
 };

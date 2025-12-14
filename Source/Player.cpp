@@ -8,16 +8,32 @@ namespace
 }
 
 Player::Player()
-	: GameObject()
+	: GameObject(GameObjectBuilder()
+		.SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
+		.SetPosition({0,5,10})
+		.SetTag(GameObjectTag::Player).Build())
 	, ImGuiShowable(ShowType::Inspector,Entity::entityId_)
-	, pCamera_{nullptr}
-	, pCameraTransform_{ nullptr }
+	, pTransform_{ Component<Transform>() }
+	, pCollider_ { Component<Collider>() }
+	
+	, pMeshRenderer_{ Component<MeshRenderer>() }
+	, pRigidBody_ { Component<RigidBody>() }
+	, pCamera_{ Instantiate<Camera>(this) }
+	, pCameraTransform_{ &Transform::Get(pCamera_->GetEntityId())}
 {
-	tag_ = GameObjectTag::Player;
+	pRigidBody_->useGravity_ = true;
+	pRigidBody_->isKinematic_ = false;
+	pMeshRenderer_->meshFileName = "Model/Box.fbx";
+	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
 
-	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player));
-	name_ = typeName;
-	displayName_ = typeName;
+	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE ;
+	pCollider_->SetRadius(pTransform_->scale.x);
+
+	displayName_ = name_;
+
+	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
+
+	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
 }
 
 Player::~Player()
@@ -92,58 +108,14 @@ void Player::Draw() const
 
 void Player::Start()
 {
-	pTransform_ = Component<Transform>();
-	pCollider_ = Component<Collider>();
-	pMeshRenderer_ = Component<MeshRenderer>();
-	pRigidBody_ = Component<RigidBody>();
-	pRigidBody_->useGravity_ = true;
-
-	pCamera_ =  Instantiate<Camera>(this);
-	pCameraTransform_ = &Transform::Get(pCamera_->GetEntityId());
-	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 	
-	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
+
+	
 }
 
 void Player::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
-}
-
-std::vector<IComponentMemento*> Player::GetDefaultMementos(EntityId _entityId) const
-{
-	TransformState transformState
-	{
-		.position = { 0,5,10 },
-		.scale = { 1,1,1 }
-	};
-
-	RigidBodyState rigidBodyState
-	{
-		.useGravity_ = true,
-		.isKinematic_ = false,
-	};
-
-	MeshRendererState meshRendererState
-	{
-		.meshFileName = "Model/Box.fbx",
-		.meshHandle = Fbx::Load(meshRendererState.meshFileName)
-	};
-
-	ColliderState colliderState
-	{
-		.colliderType_{ColliderType::TYPE_SPHERE},
-		.colliderTag_{ColliderTag::GAME_OBJECT},
-		.radius_{transformState.scale.x},
-	};
-
-	std::vector<IComponentMemento*> mementos;
-	mementos.push_back(new TransformMemento(_entityId, transformState));
-	mementos.push_back(new RigidBodyMemento(_entityId, rigidBodyState));
-	mementos.push_back(new ColliderMemento(_entityId, colliderState));
-	mementos.push_back(new MeshRendererMemento(_entityId, meshRendererState));
-
-	return mementos;
 }
 
 void Player::SetCamera(Camera* _pCamera)

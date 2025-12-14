@@ -5,23 +5,25 @@ namespace
 {
 	mtgb::Vector3 INIT_OFFSET{ 1.0f,0.0f,0.0f };
 }
+
 MovingFloor::MovingFloor()
+	: GameObject()
+	, groundedEntity_{INVALID_ENTITY}
+	, pTransform_{ &Transform::Get(entityId_) }
+	, pMeshRenderer_{&MeshRenderer::Get(entityId_)}
+	, pRigidBody_{ &RigidBody::Get(entityId_) }
+	, pCollider_{ &Collider::Get(entityId_) }
+	, pInterpolator_{ &Interpolator::Get(entityId_) }
 {
-}
-
-MovingFloor::MovingFloor(EntityId _entityId)
-	: IComponent(_entityId)
-	, pTransform_{ &Transform::Get(_entityId) }
-	, pRigidBody_{ &RigidBody::Get(_entityId) }
-	, pCollider_ { &Collider::Get(_entityId) }
-	, dir_{1.0f}
-	, elapsed_{0.0f}
-{
-	duration_ = 1.0f;
-
+	pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
+	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
+	pMeshRenderer_->layer = AllLayer();
+	pMeshRenderer_->shaderType = ShaderType::FbxParts;
+	// 型情報に登録された名前を取得
+	name_ = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(MovingFloor));
 	// コライダーの設定
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
-	pCollider_->SetExtents(Vector3( 1,1,1 ));
+	pCollider_->SetExtents(Vector3(1, 1, 1));
 
 	// RigidBodyの設定
 	pRigidBody_->OnCollisionEnter([this](EntityId _id)
@@ -32,79 +34,12 @@ MovingFloor::MovingFloor(EntityId _entityId)
 		{
 			OnCollisionExit(_id);
 		});
-	
-	// 始点、終点の作成
-
-	// ゲームオブジェクト作成
-	GameObject* to = new GameObject();
-	GameObject* from = new GameObject();
-
-	// ゲームオブジェクトをシーンに登録
-	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(to);
-	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(from);
-
-	// Transform作成
-	pToTransform_ = to->Component<Transform>();
-	pFromTransform_ = from->Component<Transform>();
-	// オフセット分動かす
-	pToTransform_->position = pTransform_->position - INIT_OFFSET;
-	pFromTransform_->position = pTransform_->position + INIT_OFFSET;
-
-	// コライダー作成、設定
-	Collider* pToCollider = to->Component<Collider>();
-	Collider* pFromCollider = from->Component<Collider>();
-	pToCollider->colliderType_ = ColliderType::TYPE_SPHERE;
-	pFromCollider->colliderType_ = ColliderType::TYPE_SPHERE;
-	pToCollider->SetRadius(1.0f);
-	pFromCollider->SetRadius(1.0f);	
 }
 
 void MovingFloor::Update()
 {
-	UpdateProgress();
-	pTransform_->position = Evaluate();
-
-	// ImGuiにプロパティを表示
-	MTImGui::Instance().DirectShow([this]() 
-		{
-			for (auto collider : pCollider_->onColliders_)
-			{
-				ImGui::PushID(collider->GetEntityId());
-				ImGui::Text("EntityId: %lld", collider->GetEntityId());
-				ImGui::PopID();
-			}
-		}, "MovingFloor", ShowType::Inspector);
-}
-
-void MovingFloor::UpdateProgress()
-{
-	elapsed_ += Time::DeltaTimeF() * dir_;
-	float progress = elapsed_ / duration_;
-	if (progress > 1.0f || progress < 0.0f)
-	{
-		dir_ *= -1.0f;
-		elapsed_ = std::clamp(elapsed_, 0.0f, 1.0f);
-	}
-}
-
-Vector3 MovingFloor::Evaluate()
-{
-	float progress = elapsed_ / duration_;
-	return Mathf::Lerp(pToTransform_->position, pFromTransform_->position, progress);
-}
-
-void MovingFloor::OnPostRestore()
-{
-	// 読み込んだ値を始点、終点の座標に代入
-	pToTransform_->position = to_;
-	pFromTransform_->position = from_;
-}
-
-void MovingFloor::OnPreSave()
-{
-	// 保存用の変数に始点、終点の座標を代入
-	to_ = pToTransform_->position;
-	from_ = pFromTransform_->position;
+	pInterpolator_->UpdateProgress();
+	pTransform_->position = pInterpolator_->Evaluate();
 }
 
 void MovingFloor::OnCollisionEnter(EntityId _entityId)

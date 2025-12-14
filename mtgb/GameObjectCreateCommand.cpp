@@ -30,8 +30,6 @@ void mtgb::GameObjectCreateCommand::Execute()
     if (json_.is_null() || json_.empty())
     {
         gameObjectName_ = obj->GetName();
-        mementos_ = obj->GetDefaultMementos(entityId_);
-        ApplyComponents();
     }
     else if (deserialized_ == false)
     {

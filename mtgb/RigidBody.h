@@ -2,7 +2,7 @@
 #include "ReflectionMacro.h"
 #include "RigidBody.generated.h"
 #include "ISerializableObject.h"
-#include "StatefulComponent.h"
+#include "IComponent.h"
 #include "IComponentMemento.h"
 
 #include "Vector3.h"

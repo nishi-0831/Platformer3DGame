@@ -7,8 +7,18 @@ unsigned int mtgb::Box3D::generateCounter_{ 0 };
 
 mtgb::Box3D::Box3D() 
 	: GameObject()
+	, pTransform_{ Component<Transform>() }
+	, pMeshRenderer_{ Component<MeshRenderer>()}
+	, pCollider_{ Component<Collider>() }
 	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
 {
+	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
+	pCollider_->isStatic_ = false;
+	pCollider_->SetExtents(pTransform_->scale * 0.5f);
+	pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
+	pMeshRenderer_->meshHandle =  Fbx::Load( pMeshRenderer_->meshFileName);
+	pMeshRenderer_->layer = AllLayer();
+	pMeshRenderer_->shaderType = ShaderType::FbxParts;
 	// å^èÓïÒÇ…ìoò^Ç≥ÇÍÇΩñºëOÇéÊìæ
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Box3D));
 	name_ = std::format("{} ({})", typeName,generateCounter_++);
@@ -37,39 +47,4 @@ void mtgb::Box3D::Start()
 {
 	Component<MeshRenderer>()->shaderType = ShaderType::Box3D;
 }
-
-std::vector<IComponentMemento*> mtgb::Box3D::GetDefaultMementos(EntityId _entityId) const
-{
-	std::vector<IComponentMemento*> mementos;
-	TransformState transformState
-	{
-		.position{0,0,10},
-		.scale{1,1,1}
-	};
-
-	ColliderState colliderState
-	{
-		.colliderType_{ColliderType::TYPE_AABB},
-		.isStatic_{false},
-		.colliderTag_{},
-		.center_{transformState.position},
-		.radius_{transformState.scale.x * 0.5f},
-		.extents_{transformState.scale * 0.5f}
-	};
-
-	MeshRendererState meshData
-	{
-		.meshFileName{"Model/WallBox.fbx"},
-		.meshHandle{Fbx::Load(meshData.meshFileName)},
-		.layer{AllLayer()},
-		.shaderType{ShaderType::FbxParts}
-	};
-
-	mementos.push_back(new TransformMemento(_entityId,transformState));
-	mementos.push_back(new ColliderMemento(_entityId, colliderState));
-	mementos.push_back(new MeshRendererMemento(_entityId, meshData));
-
-	return mementos;
-}
-
 

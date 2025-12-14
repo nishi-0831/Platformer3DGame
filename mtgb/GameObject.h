@@ -26,7 +26,6 @@ namespace mtgb
 		virtual inline void Draw() const {};
 		virtual inline void Start() {};
 		virtual inline void End() {};
-		virtual inline std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const { return std::vector<IComponentMemento*>(); };
 
 		nlohmann::json Serialize() const;
 		void Deserialize(const nlohmann::json& _json);

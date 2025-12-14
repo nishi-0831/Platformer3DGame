@@ -9,6 +9,8 @@
 #include "TypeRegistry.h"
 #include <map>
 #include "cmtgb.h"
+#include "GameObject.h"
+
 namespace mtgb
 {
 
@@ -163,6 +165,17 @@ namespace mtgb
 		//PushShowFunc( [=] {proxy->ShowImGui(std::any(target), name); }, show);
 		DirectShow([=]() {TypeRegistry::Instance().CallFunc<Type>(target, name.c_str()); }, name, show);
 	}
-	
+	template<typename T>
+	void mtgb::MTImGui::RegisterComponentViewer()
+	{
+		std::type_index typeIdx(typeid(T));
+
+		componentShowFuncs_[typeIdx] = [this](EntityId _entityId)
+			{
+				GameObject* obj = mtgb::GameObject::FindGameObject(_entityId);
+				std::string name = obj->GetName() + ":Components";
+				TypeRegistry::Instance().CallFunc<T>(&(T::template Get(_entityId)), name.c_str());
+			};
+	}
 	
 }
