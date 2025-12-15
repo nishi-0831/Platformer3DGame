@@ -19,10 +19,15 @@ namespace
 
 mtgb::Collider::Collider(EntityId _entityId) 
 	: IComponent(_entityId)
+	, colliderType_{ColliderType::TYPE_CAPSULE}
 	, isStatic_{ false }
 	, colliderTag_{ ColliderTag::GAME_OBJECT }
 	, pTransform_{&Transform::Get(_entityId)}
+	, center_{0.0f,0.0f,0.0f}
+	, radius_{1.0f}
+	, extents_{1.0f,1.0f ,1.0f }
 {
+
 }
 
 

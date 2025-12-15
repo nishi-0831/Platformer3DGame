@@ -21,7 +21,11 @@ private:
 	void Charge();
 	void Wait();
 	void ReturnToPatrol();
-	void Search();
+	bool Search();
+	/// <summary>
+	/// プレイヤーに体当たりした際の処理
+	/// </summary>
+	void OnChargePlayer();
 	mtstat::MTStat<STATE> state_;
 	Transform* pTransform_;
 	RigidBody* pRigidBody_;
@@ -37,4 +41,18 @@ private:
 	// 巡回に使う
 	Interpolator* pInterpolator_;
 	static unsigned int generateCounter_;
+
+	// 突進の速度
+	float chargeSpeed_;
+	// 突進をする時間。超えると諦めて帰る
+	float chargeTime_;
+	Vector3 distPos_;
+	// 待ち時間
+	float waitTime_;
+	// 次に遷移する状態
+	STATE nextState_;
+	// 捜索対象のEntityId
+	EntityId targetEntityId_;
+	// 巡回地点に戻る速度
+	float returnToPatrolSpeed_;
 };
