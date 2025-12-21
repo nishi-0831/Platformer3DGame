@@ -34,6 +34,8 @@ Player::Player()
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
+
+	Game::System<EffectManager>().RegisterEffect("Laser", "Effect/Laser01.efkefc");
 }
 
 Player::~Player()
@@ -100,6 +102,17 @@ void Player::Update()
 	}
 
 	pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
+	if (InputUtil::GetKeyDown(KeyCode::L))
+	{
+		Matrix4x4 mat;
+		pTransform_->GenerateWorldMatrix(&mat);
+		EffectParameters param;
+		param.worldMat = mat;
+		param.isLoop = false;
+		param.speed = 1.0f;
+
+		Game::System<EffectManager>().Play("Laser", param);
+	}
 }
 
 void Player::Draw() const

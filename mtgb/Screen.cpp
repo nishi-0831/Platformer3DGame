@@ -54,3 +54,8 @@ void mtgb::Screen::SetSize(int _width, int _height)
 
 	
 }
+
+int mtgb::Screen::GetFPS() const
+{
+	return fpsLimit_;
+}

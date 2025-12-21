@@ -62,6 +62,7 @@
     <ClCompile Include="mtgb\ComponentFactory.cpp" />
     <ClCompile Include="mtgb\ComponentRegistry.cpp" />
     <ClCompile Include="mtgb\DuplicateGameObjectCommand.cpp" />
+    <ClCompile Include="mtgb\EffekseerVFX.cpp" />
     <ClCompile Include="mtgb\EntityManager.cpp" />
     <ClCompile Include="mtgb\EventManager.cpp" />
     <ClCompile Include="mtgb\FbxModel.cpp" />
@@ -280,6 +281,7 @@
     <ClInclude Include="mtgb\ComponentRegistry.h" />
     <ClInclude Include="mtgb\DetectorConfigs.h" />
     <ClInclude Include="mtgb\DuplicateGameObjectCommand.h" />
+    <ClInclude Include="mtgb\EffekseerVFX.h" />
     <ClInclude Include="mtgb\EntityManager.h" />
     <ClInclude Include="mtgb\EventManager.h" />
     <ClInclude Include="mtgb\FlightStickCode.h" />
@@ -764,7 +766,7 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_AMD64_</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(FBX)\include;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;%(AdditionalIncludeDirectories);$(REFL_CPP)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(FBX)\include;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;%(AdditionalIncludeDirectories);$(REFL_CPP);E:\EffekseerForCpp\install_msvc2022_x64\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
@@ -773,7 +775,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(FBX)\lib\x64\debug;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\lib\x64\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(FBX)\lib\x64\debug;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\lib\x64\debug;%(AdditionalLibraryDirectories);E:\EffekseerForCpp\install_msvc2022_x64\lib</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -797,7 +799,7 @@
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(FBX)\lib\x64\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(FBX)\lib\x64\release;%(AdditionalLibraryDirectories);E:\EffekseerForCpp\install_msvc2022_x64\lib</AdditionalLibraryDirectories>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
     <PreBuildEvent>

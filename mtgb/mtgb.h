@@ -46,6 +46,7 @@
 #include "Draw.h"
 #include "SceneSystem.h"
 #include "RenderSystem.h"
+#include "EffekseerVFX.h"
 #include "ImGuiEditorCamera.h"
 #include "ImGuizmoManipulator.h"
 #include "ImGuiEditor.h"

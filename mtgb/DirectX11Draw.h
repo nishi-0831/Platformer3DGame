@@ -98,6 +98,8 @@ namespace mtgb
 		friend class DoubleWindow;
 		friend class SceneSystem;
 		friend class RenderSystem;
+		friend class EffekseerTest;
+		friend class EffectManager;
 	public:
 		/// <summary>
 		/// 描画するシェーダをセットする

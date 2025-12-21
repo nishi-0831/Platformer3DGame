@@ -87,7 +87,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<ImGuiEditor>(SystemUpdateType::Frame);
 
 	Game::Set<SceneSystem>(SystemUpdateType::Frame);
-
+	Game::Set<EffectManager>(SystemUpdateType::Frame);
 	// 開始時のシーン
 	//Game::System<SceneSystem>().Move<PlayScene>();
 	//Game::System<SceneSystem>().Move<CheckTutorialScene>();

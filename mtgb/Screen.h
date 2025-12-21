@@ -22,24 +22,17 @@ namespace mtgb
 		/// <returns></returns>
 		const Vector2F GetSizeRatio() const;
 		const mtgb::Vector2Int GetInitialSize() const;
-
-		
-
 		/// <summary>
 		/// <para> スクリーンのサイズを保持する</para>
 		/// </summary>
 		/// <param name="_width"></param>
 		/// <param name="_height"></param>
 		void SetSize(int _width, int _height);
-
+		int GetFPS() const;
 	private:
 		Vector2F sizeRatio_;
 		Vector2Int initialSize_;
 		Vector2Int size_;
-		//int initialWidth_; // スクリーンの横幅(初期値)
-		//int initialHeight_; // スクリーンの縦幅(初期値)
-		//int width_;     // スクリーンの横幅
-		//int height_;    // スクリーンの縦幅
-		int fpsLimit_;  // FPS制限 (1フレームあたりの更新フレーム数)
+		int fpsLimit_;  // FPS制限(1フレームあたりの更新フレーム数)
 	};
 }

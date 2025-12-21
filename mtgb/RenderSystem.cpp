@@ -12,6 +12,7 @@
 #include "MeshRendererCP.h"
 #include "ColliderCP.h"
 #include "CameraResource.h"
+#include "EffekseerVFX.h"
 void mtgb::RenderSystem::Initialize()
 {
 }
@@ -90,6 +91,8 @@ void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene,GameObjectLayerFlag _
 	{
 		cp->RenderLayer(_layer);
 	}
+	// TODO:EffectManager,ColliderCPもIRenderableCPインターフェースを継承させる
+	Game::System<EffectManager>().Draw();
 	if (_layer.Has(GameObjectLayer::SceneView))
 	{
 		Game::System<ColliderCP>().Draw();
