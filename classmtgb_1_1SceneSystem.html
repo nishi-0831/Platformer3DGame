@@ -1,0 +1,745 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::SceneSystem クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1SceneSystem.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1SceneSystem-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::SceneSystem クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::SceneSystem の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1SceneSystem__inherit__graph.svg" width="256" height="551"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::SceneSystem 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1SceneSystem__coll__graph.svg" width="599" height="1050"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3c81a73c01c843f37d6412815f1ed0d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a3c81a73c01c843f37d6412815f1ed0d1">SceneSystem</a> ()</td></tr>
+<tr class="separator:a3c81a73c01c843f37d6412815f1ed0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4cf7f06f505ad41b1e2d75cc355c9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a1d4cf7f06f505ad41b1e2d75cc355c9f">~SceneSystem</a> ()</td></tr>
+<tr class="separator:a1d4cf7f06f505ad41b1e2d75cc355c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb35a5ac6f3e420a76fe73368a8b8de"><td class="memTemplParams" colspan="2">template&lt;class NextSceneT , typename ... Args&gt; </td></tr>
+<tr class="memitem:abdb35a5ac6f3e420a76fe73368a8b8de"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#abdb35a5ac6f3e420a76fe73368a8b8de">Move</a> (Args... _args)</td></tr>
+<tr class="separator:abdb35a5ac6f3e420a76fe73368a8b8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa04d2c88d5b1443c31e548a22fb6fd7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1GameScene.html">GameScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#aa04d2c88d5b1443c31e548a22fb6fd7e">GetActiveScene</a> () const</td></tr>
+<tr class="memdesc:aa04d2c88d5b1443c31e548a22fb6fd7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在のシーンのポインタの取得  <br /></td></tr>
+<tr class="separator:aa04d2c88d5b1443c31e548a22fb6fd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1456f7056f3ef3744de355af626ff7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#ad1456f7056f3ef3744de355af626ff7a">Initialize</a> () override</td></tr>
+<tr class="separator:ad1456f7056f3ef3744de355af626ff7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3dbe7c990e9f3f537d144ff839af07f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#ab3dbe7c990e9f3f537d144ff839af07f">Update</a> () override</td></tr>
+<tr class="separator:ab3dbe7c990e9f3f537d144ff839af07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e0f261ef1fabbf54ee5672f7a58a173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a9e0f261ef1fabbf54ee5672f7a58a173">OnMove</a> (const std::function&lt; void()&gt; &amp;_onMove)</td></tr>
+<tr class="memdesc:a9e0f261ef1fabbf54ee5672f7a58a173"><td class="mdescLeft">&#160;</td><td class="mdescRight">シーン遷移時のイベントを受ける  <br /></td></tr>
+<tr class="separator:a9e0f261ef1fabbf54ee5672f7a58a173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a671e5098d02c002b858899681db3ca39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a671e5098d02c002b858899681db3ca39">RegisterPendingCallback</a> (std::function&lt; void()&gt; _callback)</td></tr>
+<tr class="separator:a671e5098d02c002b858899681db3ca39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4989a9da5f11fcb09154c1b251ec512"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#ac4989a9da5f11fcb09154c1b251ec512">ExecutePendingCallbacks</a> ()</td></tr>
+<tr class="separator:ac4989a9da5f11fcb09154c1b251ec512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2823e5390468dfc47213b845c55d3ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">Release</a> ()</td></tr>
+<tr class="memdesc:aa2823e5390468dfc47213b845c55d3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放処理  <br /></td></tr>
+<tr class="separator:aa2823e5390468dfc47213b845c55d3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a522b456af468f16e125631ece120c58d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a522b456af468f16e125631ece120c58d">ChangeScene</a> ()</td></tr>
+<tr class="separator:a522b456af468f16e125631ece120c58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a37950cec30abc52cdd104ccd15e500a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1GameScene.html">GameScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a></td></tr>
+<tr class="separator:a37950cec30abc52cdd104ccd15e500a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c396a4925af47ea26812331c463b9c0"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::function&lt; void()&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a></td></tr>
+<tr class="separator:a8c396a4925af47ea26812331c463b9c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4525886896621370f7e58956e470e444"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::function&lt; void()&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a></td></tr>
+<tr class="separator:a4525886896621370f7e58956e470e444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00010">10</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a3c81a73c01c843f37d6412815f1ed0d1" name="a3c81a73c01c843f37d6412815f1ed0d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c81a73c01c843f37d6412815f1ed0d1">&#9670;&#160;</a></span>SceneSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::SceneSystem::SceneSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>                             :</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>{ <span class="keyword">nullptr</span> },</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a>{}</div>
+<div class="line"><span class="lineno">   23</span>{</div>
+<div class="line"><span class="lineno">   24</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a37950cec30abc52cdd104ccd15e500a7"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">mtgb::SceneSystem::pNextScene_</a></div><div class="ttdeci">GameScene * pNextScene_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00058">SceneSystem.h:58</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a4525886896621370f7e58956e470e444"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">mtgb::SceneSystem::onMoveListener_</a></div><div class="ttdeci">std::vector&lt; std::function&lt; void()&gt; &gt; onMoveListener_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00061">SceneSystem.h:61</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1d4cf7f06f505ad41b1e2d75cc355c9f" name="a1d4cf7f06f505ad41b1e2d75cc355c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d4cf7f06f505ad41b1e2d75cc355c9f">&#9670;&#160;</a></span>~SceneSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::SceneSystem::~SceneSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00026">26</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>);</div>
+<div class="line"><span class="lineno">   29</span>}</div>
+<div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameScene_html_a280eb590943cbe7bb792522f60d34b9e"><div class="ttname"><a href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">mtgb::GameScene::pInstance_</a></div><div class="ttdeci">static GameScene * pInstance_</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8h_source.html#l00024">GameScene.h:24</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="GameScene_8h_source.html#l00024">mtgb::GameScene::pInstance_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a522b456af468f16e125631ece120c58d" name="a522b456af468f16e125631ece120c58d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a522b456af468f16e125631ece120c58d">&#9670;&#160;</a></span>ChangeScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::SceneSystem::ChangeScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00119">119</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>{</div>
+<div class="line"><span class="lineno">  121</span>    <span class="comment">// シーン遷移イベントを発動していく</span></div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; onMove : <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a>)</div>
+<div class="line"><span class="lineno">  123</span>    {</div>
+<div class="line"><span class="lineno">  124</span>        onMove();</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    <span class="comment">// もし現在のシーンがあるなら終了処理</span></div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>)</div>
+<div class="line"><span class="lineno">  129</span>    {</div>
+<div class="line"><span class="lineno">  130</span>        <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#ae9f7881aa324e201222b276fdacec76b">End</a>();</div>
+<div class="line"><span class="lineno">  131</span>    }</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="comment">// 解放してポインタ変更</span></div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>);</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a> = <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>;</div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <span class="comment">// チェンジしたシーンの初期化処理</span></div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a1bd20af76384c4d0d1e1fa448419b45d">Initialize</a>();</div>
+<div class="line"><span class="lineno">  140</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1GameScene_html_a1bd20af76384c4d0d1e1fa448419b45d"><div class="ttname"><a href="classmtgb_1_1GameScene.html#a1bd20af76384c4d0d1e1fa448419b45d">mtgb::GameScene::Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00037">GameScene.cpp:37</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameScene_html_ae9f7881aa324e201222b276fdacec76b"><div class="ttname"><a href="classmtgb_1_1GameScene.html#ae9f7881aa324e201222b276fdacec76b">mtgb::GameScene::End</a></div><div class="ttdeci">virtual void End()</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00049">GameScene.cpp:49</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="GameScene_8cpp_source.html#l00049">mtgb::GameScene::End()</a>, <a class="el" href="GameScene_8cpp_source.html#l00037">mtgb::GameScene::Initialize()</a>, <a class="el" href="GameScene_8h_source.html#l00024">mtgb::GameScene::pInstance_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1SceneSystem_a522b456af468f16e125631ece120c58d_cgraph.svg" width="426" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac4989a9da5f11fcb09154c1b251ec512" name="ac4989a9da5f11fcb09154c1b251ec512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4989a9da5f11fcb09154c1b251ec512">&#9670;&#160;</a></span>ExecutePendingCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::SceneSystem::ExecutePendingCallbacks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>次のフレームのシーンの更新、描画前に実行するコールバックを実行</p>
+<p>一回だけ実行され、その後破棄される </p>
+
+<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00110">110</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>{</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.empty())</div>
+<div class="line"><span class="lineno">  113</span>    {</div>
+<div class="line"><span class="lineno">  114</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.front()();</div>
+<div class="line"><span class="lineno">  115</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.pop();</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a8c396a4925af47ea26812331c463b9c0"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">mtgb::SceneSystem::pendingCallbacks_</a></div><div class="ttdeci">std::queue&lt; std::function&lt; void()&gt; &gt; pendingCallbacks_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00060">SceneSystem.h:60</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa04d2c88d5b1443c31e548a22fb6fd7e" name="aa04d2c88d5b1443c31e548a22fb6fd7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04d2c88d5b1443c31e548a22fb6fd7e">&#9670;&#160;</a></span>GetActiveScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1GameScene.html">GameScene</a> * mtgb::SceneSystem::GetActiveScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>現在のシーンのポインタの取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>シーンのポインタ</dd></dl>
+
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="GameScene_8h_source.html#l00024">mtgb::GameScene::pInstance_</a>.</p>
+
+</div>
+</div>
+<a id="ad1456f7056f3ef3744de355af626ff7a" name="ad1456f7056f3ef3744de355af626ff7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1456f7056f3ef3744de355af626ff7a">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::SceneSystem::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#a9e0f261ef1fabbf54ee5672f7a58a173">OnMove</a>([]() </div>
+<div class="line"><span class="lineno">   34</span>        {</div>
+<div class="line"><span class="lineno">   35</span>            Game::System&lt;Timer&gt;().Clear();</div>
+<div class="line"><span class="lineno">   36</span>        });</div>
+<div class="line"><span class="lineno">   37</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a9e0f261ef1fabbf54ee5672f7a58a173"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a9e0f261ef1fabbf54ee5672f7a58a173">mtgb::SceneSystem::OnMove</a></div><div class="ttdeci">void OnMove(const std::function&lt; void()&gt; &amp;_onMove)</div><div class="ttdoc">シーン遷移時のイベントを受ける</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00040">SceneSystem.h:40</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abdb35a5ac6f3e420a76fe73368a8b8de" name="abdb35a5ac6f3e420a76fe73368a8b8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb35a5ac6f3e420a76fe73368a8b8de">&#9670;&#160;</a></span>Move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class NextSceneT , typename ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::SceneSystem::Move </td>
+          <td>(</td>
+          <td class="paramtype">Args...&#160;</td>
+          <td class="paramname"><em>_args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>シーン遷移をする</p>
+<p>NOTE: 呼んだ瞬間、遷移先クラスのコンストラクタは呼ばれるが、</p>
+<p>-&mdash;: Initializeは次のフレームで呼ばれる。</p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">NextSceneT</td><td>遷移先のシーンクラスの型</td></tr>
+    <tr><td class="paramname">...Args</td><td>遷移先クラスのコンストラクタ可変長引数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">..._args</td><td>遷移先クラスのコンストラクタ引数</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00065">65</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>        <span class="comment">// 基底クラスがGameSceneであるか</span></div>
+<div class="line"><span class="lineno">   68</span>        <span class="keyword">static_assert</span>(std::is_base_of&lt;GameScene, NextSceneT&gt;().value</div>
+<div class="line"><span class="lineno">   69</span>            &amp;&amp; <span class="stringliteral">&quot;GameSceneクラスを継承していないクラスにシーン遷移できません。&quot;</span>);</div>
+<div class="line"><span class="lineno">   70</span>        </div>
+<div class="line"><span class="lineno">   71</span>        <span class="comment">// 既に次のシーンが割り当てられているなら解放する</span></div>
+<div class="line"><span class="lineno">   72</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a> = <span class="keyword">new</span> NextSceneT{ _args... };</div>
+<div class="line"><span class="lineno">   75</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="SceneSystem_8h_source.html#l00058">pNextScene_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
+
+</div>
+</div>
+<a id="a9e0f261ef1fabbf54ee5672f7a58a173" name="a9e0f261ef1fabbf54ee5672f7a58a173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e0f261ef1fabbf54ee5672f7a58a173">&#9670;&#160;</a></span>OnMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::SceneSystem::OnMove </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>_onMove</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>シーン遷移時のイベントを受ける </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_onMove</td><td>void()</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a>.push_back(_onMove); }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="SceneSystem_8h_source.html#l00061">onMoveListener_</a>.</p>
+
+</div>
+</div>
+<a id="a671e5098d02c002b858899681db3ca39" name="a671e5098d02c002b858899681db3ca39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a671e5098d02c002b858899681db3ca39">&#9670;&#160;</a></span>RegisterPendingCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::SceneSystem::RegisterPendingCallback </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>_callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>次のフレームのシーンの更新、描画前に実行するコールバックを登録 </p>
+<p>コールバックは一回だけ実行され、その後破棄される </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_callback</td><td>登録するコールバック</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00105">105</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>{</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.push(_callback);</div>
+<div class="line"><span class="lineno">  108</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa2823e5390468dfc47213b845c55d3ac" name="aa2823e5390468dfc47213b845c55d3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2823e5390468dfc47213b845c55d3ac">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::ISystem::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>開放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1Fbx.html#ada19e401d03b5d2056fba392808ec546">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1Input.html#aaeb9eca1ca02568bf898253c804baea7">mtgb::Input</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1Timer.html#ac8fce5b2c97551427a50a288e3fd76fd">mtgb::Timer</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b">mtgb::WindowManager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; AudioPlayer, AudioPlayerCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a> (計21項目)で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="ISystem_8h_source.html">ISystem.h</a> の <a class="el" href="ISystem_8h_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00147">mtgb::Game::ReleaseSystems()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ISystem_aa2823e5390468dfc47213b845c55d3ac_icgraph.svg" width="639" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab3dbe7c990e9f3f537d144ff839af07f" name="ab3dbe7c990e9f3f537d144ff839af07f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3dbe7c990e9f3f537d144ff839af07f">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::SceneSystem::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
+<div class="line"><span class="lineno">   41</span>    <span class="comment">// 次のシーンが用意されているならシーンチェンジする</span></div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>)</div>
+<div class="line"><span class="lineno">   43</span>    {</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#a522b456af468f16e125631ece120c58d">ChangeScene</a>();</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   48</span>    {</div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">return</span>;  <span class="comment">// シーンがないなら回帰</span></div>
+<div class="line"><span class="lineno">   50</span>    }</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <span class="comment">// 更新、描画前にコールバック実行</span></div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#ac4989a9da5f11fcb09154c1b251ec512">ExecutePendingCallbacks</a>();</div>
+<div class="line"><span class="lineno">   54</span>    </div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::F1))</div>
+<div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#a0300368012e12adb81b7db788b132b77">ChangeAllWindowOpen</a>();</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::P))</div>
+<div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        Game::System&lt;Input&gt;().EnumJoystick();</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#aba4a5d6cb4d9f8fc555f3ebaba2ed511">WinCtxRes::ChangeResource</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><span class="lineno">   66</span>    Game::System&lt;Input&gt;().Update();</div>
+<div class="line"><span class="lineno">   67</span>    Game::System&lt;WindowContextResourceManager&gt;().Update();</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">// 現在のシーン</span></div>
+<div class="line"><span class="lineno">   70</span>    GameScene&amp; currentScene{ *<a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a> };</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="comment">// 更新処理</span></div>
+<div class="line"><span class="lineno">   73</span>    currentScene.<a class="code hl_function" href="classmtgb_1_1GameScene.html#aee3999ef14c77f7a41365d751867d4ab">Update</a>();</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; gameObject : currentScene.pGameObjects_)</div>
+<div class="line"><span class="lineno">   75</span>    {</div>
+<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">if</span> (gameObject-&gt;IsNotCalledStart())</div>
+<div class="line"><span class="lineno">   77</span>        {</div>
+<div class="line"><span class="lineno">   78</span>            gameObject-&gt;Start();</div>
+<div class="line"><span class="lineno">   79</span>            gameObject-&gt;MarkAsCalledStart();</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+<div class="line"><span class="lineno">   81</span>        gameObject-&gt;Update();</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#aaa0a53f638051b52697b3db9d0a62095">Update</a>();</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    <span class="comment">// 描画処理</span></div>
+<div class="line"><span class="lineno">   86</span>    Game::System&lt;RenderSystem&gt;().Render(currentScene);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <span class="comment">// 削除処理</span></div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; itr = currentScene.pGameObjects_.begin();</div>
+<div class="line"><span class="lineno">   90</span>        itr != currentScene.pGameObjects_.end();)</div>
+<div class="line"><span class="lineno">   91</span>    {</div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">if</span> ((*itr)-&gt;IsToDestroy())</div>
+<div class="line"><span class="lineno">   93</span>        {</div>
+<div class="line"><span class="lineno">   94</span>            <a class="code hl_function" href="classmtgb_1_1Game.html#afa7f596ea64797f4dff66edd5582f1bf">Game::RemoveEntityAllComponent</a>((*itr)-&gt;GetEntityId());</div>
+<div class="line"><span class="lineno">   95</span>            <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(*itr);</div>
+<div class="line"><span class="lineno">   96</span>            itr = currentScene.pGameObjects_.erase(itr);</div>
+<div class="line"><span class="lineno">   97</span>        }</div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   99</span>        {</div>
+<div class="line"><span class="lineno">  100</span>            itr++;</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
+<div class="line"><span class="lineno">  102</span>    }</div>
+<div class="line"><span class="lineno">  103</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1GameScene_html_aee3999ef14c77f7a41365d751867d4ab"><div class="ttname"><a href="classmtgb_1_1GameScene.html#aee3999ef14c77f7a41365d751867d4ab">mtgb::GameScene::Update</a></div><div class="ttdeci">virtual void Update()</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00041">GameScene.cpp:41</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_afa7f596ea64797f4dff66edd5582f1bf"><div class="ttname"><a href="classmtgb_1_1Game.html#afa7f596ea64797f4dff66edd5582f1bf">mtgb::Game::RemoveEntityAllComponent</a></div><div class="ttdeci">static void RemoveEntityAllComponent(const EntityId _entityId)</div><div class="ttdoc">エンティティに対応する全てのコンポーネントを削除する</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00059">Game.cpp:59</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a4dade03e3bbb665d967f7411d82b8d94"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a0300368012e12adb81b7db788b132b77"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a0300368012e12adb81b7db788b132b77">mtgb::MTImGui::ChangeAllWindowOpen</a></div><div class="ttdeci">void ChangeAllWindowOpen()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00097">MTImGui.cpp:97</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00038">MTImGui.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aaa0a53f638051b52697b3db9d0a62095"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aaa0a53f638051b52697b3db9d0a62095">mtgb::MTImGui::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00050">MTImGui.cpp:50</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a522b456af468f16e125631ece120c58d"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a522b456af468f16e125631ece120c58d">mtgb::SceneSystem::ChangeScene</a></div><div class="ttdeci">void ChangeScene()</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00119">SceneSystem.cpp:119</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_ac4989a9da5f11fcb09154c1b251ec512"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#ac4989a9da5f11fcb09154c1b251ec512">mtgb::SceneSystem::ExecutePendingCallbacks</a></div><div class="ttdeci">void ExecutePendingCallbacks()</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00110">SceneSystem.cpp:110</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_aba4a5d6cb4d9f8fc555f3ebaba2ed511"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#aba4a5d6cb4d9f8fc555f3ebaba2ed511">mtgb::WinCtxRes::ChangeResource</a></div><div class="ttdeci">void ChangeResource(WindowContext ctx)</div><div class="ttdoc">リソースを切り替える</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00042">WindowContextUtil.cpp:42</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTImGui_8cpp_source.html#l00097">mtgb::MTImGui::ChangeAllWindowOpen()</a>, <a class="el" href="WindowContextUtil_8cpp_source.html#l00042">mtgb::WinCtxRes::ChangeResource()</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="InputData_8cpp_source.html#l00028">mtgb::InputUtil::GetKeyDown()</a>, <a class="el" href="MTImGui_8h_source.html#l00038">mtgb::MTImGui::Instance()</a>, <a class="el" href="GameScene_8h_source.html#l00024">mtgb::GameScene::pInstance_</a>, <a class="el" href="Game_8cpp_source.html#l00059">mtgb::Game::RemoveEntityAllComponent()</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>, <a class="el" href="GameScene_8cpp_source.html#l00041">mtgb::GameScene::Update()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00050">mtgb::MTImGui::Update()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1SceneSystem_ab3dbe7c990e9f3f537d144ff839af07f_cgraph.svg" width="1832" height="1327"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a4525886896621370f7e58956e470e444" name="a4525886896621370f7e58956e470e444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4525886896621370f7e58956e470e444">&#9670;&#160;</a></span>onMoveListener_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::function&lt;void()&gt; &gt; mtgb::SceneSystem::onMoveListener_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00061">61</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="SceneSystem_8h_source.html#l00040">OnMove()</a>.</p>
+
+</div>
+</div>
+<a id="a8c396a4925af47ea26812331c463b9c0" name="a8c396a4925af47ea26812331c463b9c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c396a4925af47ea26812331c463b9c0">&#9670;&#160;</a></span>pendingCallbacks_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::queue&lt;std::function&lt;void()&gt; &gt; mtgb::SceneSystem::pendingCallbacks_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00060">60</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a37950cec30abc52cdd104ccd15e500a7" name="a37950cec30abc52cdd104ccd15e500a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37950cec30abc52cdd104ccd15e500a7">&#9670;&#160;</a></span>pNextScene_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1GameScene.html">GameScene</a>* mtgb::SceneSystem::pNextScene_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00058">58</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="SceneSystem_8h_source.html#l00065">Move()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a></li>
+<li><a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1SceneSystem.html">SceneSystem</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Direct2DResource.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Direct2DResource_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Direct2DResource.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Direct2DResource_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContextResource_8h.html">WindowContextResource.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;d2d1.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContext_8h.html">WindowContext.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;Windows.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;wrl/client.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">    9</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>HWND__* <a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2DResource.html">   14</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1WindowContextResource.html">WindowContextResource</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2DResource.html#a06bd594120c61f67d4b51a426cf18ee6">   16</a></span>        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1DirectWrite.html">DirectWrite</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">explicit</span> <a class="code hl_class" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _windowContext);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#ae73760ddd83a0394c3c1c8b195de9b43">~Direct2DResource</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#a55b6cdeaa01bdaab438340f2b00a7cf4">Reset</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#abce19c903752c9cabeeaec008c5426f8">OnResize</a>(UINT _width, UINT _height) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#a407f2703f904fd5d79b005ae40be7be2">SetResource</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#a1935c788cf0e1fa355806c81f9dcf6dd">Release</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">   26</a></span>        ComPtr&lt;ID2D1RenderTarget&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">pRenderTarget_</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">   27</a></span>        ComPtr&lt;ID2D1SolidColorBrush&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">pD2DBrush_</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="comment">// コピーコンストラクタとコピー代入演算子を削除</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2DResource.html#a11bc6d1340774dc9a3a2ef0dff11c4de">   30</a></span>        <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#a11bc6d1340774dc9a3a2ef0dff11c4de">Direct2DResource</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2DResource.html#afdeb2f6bbd033dd141cac6be4844a127">   31</a></span>        <a class="code hl_class" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a>&amp; <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#afdeb2f6bbd033dd141cac6be4844a127">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    };</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="ttc" id="aDirect2DResource_8h_html_ac17599842f3c193b028cc578098f8b93"><div class="ttname"><a href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a></div><div class="ttdeci">struct HWND__ * HWND</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00009">Direct2DResource.h:9</a></div></div>
+<div class="ttc" id="aWindowContextResource_8h_html"><div class="ttname"><a href="WindowContextResource_8h.html">WindowContextResource.h</a></div></div>
+<div class="ttc" id="aWindowContext_8h_html"><div class="ttname"><a href="WindowContext_8h.html">WindowContext.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html">mtgb::Direct2DResource</a></div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00014">Direct2DResource.h:15</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a11bc6d1340774dc9a3a2ef0dff11c4de"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a11bc6d1340774dc9a3a2ef0dff11c4de">mtgb::Direct2DResource::Direct2DResource</a></div><div class="ttdeci">Direct2DResource(const Direct2DResource &amp;)=delete</div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a1935c788cf0e1fa355806c81f9dcf6dd"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a1935c788cf0e1fa355806c81f9dcf6dd">mtgb::Direct2DResource::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00065">Direct2DResource.cpp:65</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a407f2703f904fd5d79b005ae40be7be2"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a407f2703f904fd5d79b005ae40be7be2">mtgb::Direct2DResource::SetResource</a></div><div class="ttdeci">void SetResource() override</div><div class="ttdoc">ウィンドウを変更する際に固有のリソースをセットする</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00059">Direct2DResource.cpp:59</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a55b6cdeaa01bdaab438340f2b00a7cf4"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a55b6cdeaa01bdaab438340f2b00a7cf4">mtgb::Direct2DResource::Reset</a></div><div class="ttdeci">void Reset() override</div><div class="ttdoc">ウィンドウのサイズが変更される前の解放処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00036">Direct2DResource.cpp:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a9a33a1be9736a9bad442104d0656ba3d"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">mtgb::Direct2DResource::pD2DBrush_</a></div><div class="ttdeci">ComPtr&lt; ID2D1SolidColorBrush &gt; pD2DBrush_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00027">Direct2DResource.h:27</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_abce19c903752c9cabeeaec008c5426f8"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#abce19c903752c9cabeeaec008c5426f8">mtgb::Direct2DResource::OnResize</a></div><div class="ttdeci">void OnResize(UINT _width, UINT _height) override</div><div class="ttdoc">ウィンドウのサイズが変更された後の処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00041">Direct2DResource.cpp:41</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_ae73760ddd83a0394c3c1c8b195de9b43"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#ae73760ddd83a0394c3c1c8b195de9b43">mtgb::Direct2DResource::~Direct2DResource</a></div><div class="ttdeci">~Direct2DResource()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00031">Direct2DResource.cpp:31</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_aec67ceedb2aabf04ef6bd6e1b726c8f1"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">mtgb::Direct2DResource::pRenderTarget_</a></div><div class="ttdeci">ComPtr&lt; ID2D1RenderTarget &gt; pRenderTarget_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00026">Direct2DResource.h:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_afdeb2f6bbd033dd141cac6be4844a127"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#afdeb2f6bbd033dd141cac6be4844a127">mtgb::Direct2DResource::operator=</a></div><div class="ttdeci">Direct2DResource &amp; operator=(const Direct2DResource &amp;)=delete</div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html">mtgb::DirectWrite</a></div><div class="ttdoc">DirectWrite用のシステム</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00067">DirectWrite.h:68</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html">mtgb::WindowContextResource</a></div><div class="ttdoc">ウィンドウごとに固有のリソースのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00018">WindowContextResource.h:19</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">mtgb::WindowContext</a></div><div class="ttdeci">WindowContext</div><div class="ttdef"><b>Definition:</b> <a href="WindowContext_8h_source.html#l00012">WindowContext.h:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Direct2DResource_8h.html">Direct2DResource.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

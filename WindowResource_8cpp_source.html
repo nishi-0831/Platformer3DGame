@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: WindowResource.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('WindowResource_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">WindowResource.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="WindowResource_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Game_8h.html">Game.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ISystem_8h.html">ISystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="Input_8h.html">Input.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="WindowResource_8h.html">WindowResource.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../ImGui/imgui.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../ImGui/imgui_impl_win32.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../ImGui/imgui_impl_dx11.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContextUtil_8h.html">WindowContextUtil.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="Direct3DResource_8h.html">Direct3DResource.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="MTAssert_8h.html">MTAssert.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="Screen_8h.html">Screen.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">extern</span> <a class="code hl_define" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> LRESULT <a class="code hl_function" href="WindowResource_8cpp.html#a25447e4d5d2cabecf54cb9a5c84e7cde">ImGui_ImplWin32_WndProcHandler</a>(<a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> hwnd, UINT msg, WPARAM wParam, LPARAM lParam);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#acf07401470a2b365375026058b8c6cf8">   34</a></span>LRESULT <a class="code hl_function" href="classmtgb_1_1WindowResource.html#acf07401470a2b365375026058b8c6cf8">WindowResource::WndProc</a>(<a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> hWnd, UINT msg, WPARAM wParam, LPARAM lParam)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="classmtgb_1_1WindowResource.html">WindowResource</a>* pThis;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (msg == WM_NCCREATE)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="comment">//作成時のパラメータからthisを取得、キャスト</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        pThis = <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classmtgb_1_1WindowResource.html">WindowResource</a>*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span>LPCREATESTRUCT<span class="keyword">&gt;</span>(lParam)-&gt;lpCreateParams);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="comment">//thisのUSERDATAにthisを紐付ける</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        SetWindowLongPtr(hWnd, GWLP_USERDATA, <span class="keyword">reinterpret_cast&lt;</span>LONG_PTR<span class="keyword">&gt;</span>(pThis));</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        pThis-&gt;<a class="code hl_variable" href="classmtgb_1_1WindowResource.html#a32e0adb645c93c23d4edec8c2c90daa0">hWnd_</a> = hWnd;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="comment">//hWndにthisを紐づけておいたので取得</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        pThis = <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_class" href="classmtgb_1_1WindowResource.html">WindowResource</a>*<span class="keyword">&gt;</span>(GetWindowLongPtr(hWnd, GWLP_USERDATA));</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> (pThis)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            pThis-&gt;<a class="code hl_variable" href="classmtgb_1_1WindowResource.html#a32e0adb645c93c23d4edec8c2c90daa0">hWnd_</a> = hWnd;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (pThis)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> pThis-&gt;<a class="code hl_function" href="classmtgb_1_1WindowResource.html#a93d540c3169105253fca5f4dad0cfff2">HandleWindowMessage</a>(hWnd, msg, wParam, lParam);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> DefWindowProc(hWnd, msg, wParam, lParam);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#a93d540c3169105253fca5f4dad0cfff2">   62</a></span>LRESULT <a class="code hl_function" href="classmtgb_1_1WindowResource.html#a93d540c3169105253fca5f4dad0cfff2">WindowResource::HandleWindowMessage</a>(<a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> hWnd, UINT msg, WPARAM wParam, LPARAM lParam)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="imgui__impl__win32_8cpp.html#a87a3f9652a75339308cf5fd5699ef1fd">ImGui_ImplWin32_WndProcHandler</a>(hWnd, msg, wParam, lParam))</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">switch</span> (msg)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">case</span> WM_CLOSE:</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_function" href="classmtgb_1_1Game.html#a89610789c1e997fbf101d1137f9407a9">Game::Exit</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">case</span> WM_DESTROY:  <span class="comment">// ウィンドウを閉じた</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">case</span> WM_MOUSEMOVE:  <span class="comment">// マウスが動いた</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        Game::System&lt;Input&gt;().UpdateMousePositionData(LOWORD(lParam), HIWORD(lParam));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">case</span> WM_SIZE:  <span class="comment">// ウィンドウサイズが変わった</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">if</span> (<span class="keyword">this</span> &amp;&amp; wParam != SIZE_MINIMIZED)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmtgb_1_1WindowResource.html#a691ba8634774fac59cc415df21be09b2">isInitialized_</a>)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="comment">// まだ初期化されていないならスキップする</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            UINT width = LOWORD(lParam);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            UINT height = HIWORD(lParam);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">default</span>:  <span class="comment">// それ以外のメッセージは譲渡</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// NOTE: これが抜けているとウィンドウ表示されないし、エラーは出ないしで苦労する(した)</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> DefWindowProc(hWnd, msg, wParam, lParam);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#a6c36fec56557efa93127080f004bb162">  105</a></span><a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> <a class="code hl_function" href="classmtgb_1_1WindowResource.html#a6c36fec56557efa93127080f004bb162">mtgb::WindowResource::GetHWND</a>()</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> hWnd_;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#a77adc8fe1dc35a6a765618f9d244e705">  110</a></span><a class="code hl_function" href="classmtgb_1_1WindowResource.html#a77adc8fe1dc35a6a765618f9d244e705">mtgb::WindowResource::WindowResource</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _windowContext)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    : <a class="code hl_class" href="classmtgb_1_1WindowContextResource.html">WindowContextResource</a>(_windowContext)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    , hWnd_{nullptr}</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    , isActive_{false}</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    , isFullscreen_{false}</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    , currInfo_{}</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    , initialInfo_{}</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    , isInitialized_{false}</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>{</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_variable" href="classmtgb_1_1WindowResource.html#a32e0adb645c93c23d4edec8c2c90daa0">hWnd_</a> = Game::System&lt;WindowManager&gt;().CreateWindowContext(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_variable" href="classmtgb_1_1WindowResource.html#a90c7d75706d7718f53f63d875cc961cc">isActive_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_variable" href="classmtgb_1_1WindowResource.html#a691ba8634774fac59cc415df21be09b2">isInitialized_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <a class="code hl_variable" href="classmtgb_1_1WindowResource.html#ad252f6dbd0be3d1be2ee76557b170da4">currInfo_</a>.<a class="code hl_variable" href="structmtgb_1_1WindowModeInfo.html#a9fde2c305099ea0afaab9e783c77df43">windowedStyle_</a> = GetWindowLong(<a class="code hl_variable" href="classmtgb_1_1WindowResource.html#a32e0adb645c93c23d4edec8c2c90daa0">hWnd_</a>, GWL_STYLE);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <a class="code hl_variable" href="classmtgb_1_1WindowResource.html#ad252f6dbd0be3d1be2ee76557b170da4">currInfo_</a>.<a class="code hl_variable" href="structmtgb_1_1WindowModeInfo.html#abc75083af7c82c2a718df7bc3c02f572">windowedExStyle_</a> = GetWindowLong(<a class="code hl_variable" href="classmtgb_1_1WindowResource.html#a32e0adb645c93c23d4edec8c2c90daa0">hWnd_</a>, GWL_EXSTYLE);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    GetWindowRect(<a class="code hl_variable" href="classmtgb_1_1WindowResource.html#a32e0adb645c93c23d4edec8c2c90daa0">hWnd_</a>, &amp;<a class="code hl_variable" href="classmtgb_1_1WindowResource.html#ad252f6dbd0be3d1be2ee76557b170da4">currInfo_</a>.<a class="code hl_variable" href="structmtgb_1_1WindowModeInfo.html#af2df8dcedda8800c3108dba4a928ee3a">windowedRect_</a>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_variable" href="classmtgb_1_1WindowResource.html#a56641a11dde3b43e7ddcb5f0a1316a6f">initialInfo_</a> = <a class="code hl_variable" href="classmtgb_1_1WindowResource.html#ad252f6dbd0be3d1be2ee76557b170da4">currInfo_</a>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#a6684962cb67d75c40b6a0997ced71ffa">  130</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowResource.html#a6684962cb67d75c40b6a0997ced71ffa">WindowResource::SetResource</a>()</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>{</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#ad8fa5ddd6ddfac266dfc746a197217e9">  135</a></span><a class="code hl_function" href="classmtgb_1_1WindowResource.html#ad8fa5ddd6ddfac266dfc746a197217e9">mtgb::WindowResource::~WindowResource</a>()</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>{</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    Release();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#ade71f7a0b0074134fba25b2cc98b9e05">  140</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowResource.html#ade71f7a0b0074134fba25b2cc98b9e05">mtgb::WindowResource::MarkInitialized</a>()</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>{</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    isInitialized_ = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>}</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#af627f47fc36679088c4907c9aafd5de4">  145</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowResource.html#af627f47fc36679088c4907c9aafd5de4">mtgb::WindowResource::OnResize</a>(UINT _width, UINT _height)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordflow">if</span> (_width == 0 || _height == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    Game::System&lt;Screen&gt;().SetSize(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_width), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_height));</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="comment">//WindowConfigのサイズを更新</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_struct" href="structmtgb_1_1WindowConfig.html">WindowConfig</a> config = Game::System&lt;WindowManager&gt;().GetWindowConfig(windowContext_);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    config.<a class="code hl_variable" href="structmtgb_1_1WindowConfig.html#a31dc303d9521454755b8ce82c53313cf">width</a> = _width;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    config.<a class="code hl_variable" href="structmtgb_1_1WindowConfig.html#afdb4a804d67e0083764e334953fe6923">height</a> = _height;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    Game::System&lt;WindowManager&gt;().SetWindowConfig(windowContext_, config);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>}</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#ab1ac673e6eec005221b218cce5e91031">  159</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowResource.html#ab1ac673e6eec005221b218cce5e91031">mtgb::WindowResource::SetWindowMode</a>()</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>{</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    SetWindowModeImpl(currInfo_);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#aaf2e6b042672d8d39a622ceb480db9d3">  164</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowResource.html#aaf2e6b042672d8d39a622ceb480db9d3">mtgb::WindowResource::SetFullScreen</a>(<span class="keyword">const</span> RECT&amp; _monitorRect)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>{</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="comment">// フルスクリーンになる</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    isFullscreen_ = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    GetWindowInfo();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="comment">// ウィンドウスタイルを枠なしポップアップに変更</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    SetWindowLong(hWnd_, GWL_STYLE, currInfo_.windowedStyle_ &amp; ~(WS_CAPTION | WS_THICKFRAME));</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    SetWindowLong(hWnd_, GWL_EXSTYLE, currInfo_.windowedExStyle_ &amp; ~(WS_EX_DLGMODALFRAME | WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE | WS_EX_STATICEDGE));</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="comment">// 指定されたモニター座標を直接使用</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    SetWindowPos(hWnd_, HWND_TOP,</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        _monitorRect.left, _monitorRect.top,<span class="comment">// ウィンドウの位置</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        _monitorRect.right - _monitorRect.left,<span class="comment">// ウィンドウのサイズ(幅)</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        _monitorRect.bottom - _monitorRect.top,<span class="comment">// ウィンドウのサイズ(高さ)</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="comment">// オーナー(?)ウィンドウのZ順序は変更しない、スタイルの変更を適用</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        SWP_NOOWNERZORDER | SWP_FRAMECHANGED);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>}</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#ac4c37aa2725432035f7ae47d42a496d8">  187</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowResource.html#ac4c37aa2725432035f7ae47d42a496d8">mtgb::WindowResource::GetWindowInfo</a>()</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>{</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="comment">// 現在のウィンドウのスタイルと位置を保存</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    currInfo_.windowedStyle_ = GetWindowLong(hWnd_, GWL_STYLE);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    currInfo_.windowedExStyle_ = GetWindowLong(hWnd_, GWL_EXSTYLE);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    GetWindowRect(hWnd_, &amp;currInfo_.windowedRect_);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>}</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#a58647c1768a043dc64eda911d11885fc">  195</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowResource.html#a58647c1768a043dc64eda911d11885fc">mtgb::WindowResource::SetPosition</a>(<span class="keyword">const</span> RECT&amp; _monitorRect)</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>{</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    SetWindowPos(hWnd_, HWND_NOTOPMOST,</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        _monitorRect.left,</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        _monitorRect.top,</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        _monitorRect.right - _monitorRect.left,</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        _monitorRect.bottom - _monitorRect.top,</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="comment">// オーナーウィンドウ(?)のZ順序は変更しない、スタイルの変更を適用</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        SWP_NOOWNERZORDER);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    currInfo_.windowedRect_ = _monitorRect;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>}</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#ac53506d2b0eba7563456dec9ac9b6669">  208</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowResource.html#ac53506d2b0eba7563456dec9ac9b6669">mtgb::WindowResource::SetWindowModeImpl</a>(<a class="code hl_struct" href="structmtgb_1_1WindowModeInfo.html">WindowModeInfo</a> _info)</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>{</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="comment">// ウィンドウモードに戻る</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    isFullscreen_ = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="comment">// ウィンドウスタイルを元に戻す</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    SetWindowLong(hWnd_, GWL_STYLE, _info.<a class="code hl_variable" href="structmtgb_1_1WindowModeInfo.html#a9fde2c305099ea0afaab9e783c77df43">windowedStyle_</a>);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    SetWindowLong(hWnd_, GWL_EXSTYLE, _info.<a class="code hl_variable" href="structmtgb_1_1WindowModeInfo.html#abc75083af7c82c2a718df7bc3c02f572">windowedExStyle_</a>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="comment">// 保存しておいたウィンドウの位置、サイズを戻す</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    RECT rect = _info.<a class="code hl_variable" href="structmtgb_1_1WindowModeInfo.html#af2df8dcedda8800c3108dba4a928ee3a">windowedRect_</a>;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    SetWindowPos(hWnd_, HWND_NOTOPMOST,</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        rect.left,</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        rect.top,</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        rect.right - rect.left,</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        rect.bottom - rect.top,</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="comment">// オーナーウィンドウ(?)のZ順序は変更しない、スタイルの変更を適用</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        SWP_NOOWNERZORDER | SWP_FRAMECHANGED);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>}</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowResource.html#ae7487376806c79d522d1a9dc21b76444">  228</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowResource.html#ae7487376806c79d522d1a9dc21b76444">mtgb::WindowResource::Release</a>()</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>{</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    DestroyWindow(hWnd_);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>}</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="structmtgb_1_1WindowModeInfo.html#afd632e7adc26c503aeef4f458e60f476">  233</a></span><a class="code hl_function" href="structmtgb_1_1WindowModeInfo.html#afd632e7adc26c503aeef4f458e60f476">mtgb::WindowModeInfo::WindowModeInfo</a>()</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    : windowedRect_{0,0,0,0}</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    , windowedStyle_{0}</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    , windowedExStyle_{0}</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>{</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>}</div>
+<div class="ttc" id="aDirect2DResource_8h_html_ac17599842f3c193b028cc578098f8b93"><div class="ttname"><a href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a></div><div class="ttdeci">struct HWND__ * HWND</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00009">Direct2DResource.h:9</a></div></div>
+<div class="ttc" id="aDirect3DResource_8h_html"><div class="ttname"><a href="Direct3DResource_8h.html">Direct3DResource.h</a></div></div>
+<div class="ttc" id="aGame_8h_html"><div class="ttname"><a href="Game_8h.html">Game.h</a></div></div>
+<div class="ttc" id="aISystem_8h_html"><div class="ttname"><a href="ISystem_8h.html">ISystem.h</a></div></div>
+<div class="ttc" id="aInput_8h_html"><div class="ttname"><a href="Input_8h.html">Input.h</a></div></div>
+<div class="ttc" id="aMTAssert_8h_html"><div class="ttname"><a href="MTAssert_8h.html">MTAssert.h</a></div></div>
+<div class="ttc" id="aScreen_8h_html"><div class="ttname"><a href="Screen_8h.html">Screen.h</a></div></div>
+<div class="ttc" id="aWindowContextUtil_8h_html"><div class="ttname"><a href="WindowContextUtil_8h.html">WindowContextUtil.h</a></div></div>
+<div class="ttc" id="aWindowResource_8cpp_html_a25447e4d5d2cabecf54cb9a5c84e7cde"><div class="ttname"><a href="WindowResource_8cpp.html#a25447e4d5d2cabecf54cb9a5c84e7cde">ImGui_ImplWin32_WndProcHandler</a></div><div class="ttdeci">IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdoc">ウィンドウからのメッセージを受信してImGuiの入力やイベントを有効にするためのコールバック関数</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00714">imgui_impl_win32.cpp:714</a></div></div>
+<div class="ttc" id="aWindowResource_8h_html"><div class="ttname"><a href="WindowResource_8h.html">WindowResource.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a89610789c1e997fbf101d1137f9407a9"><div class="ttname"><a href="classmtgb_1_1Game.html#a89610789c1e997fbf101d1137f9407a9">mtgb::Game::Exit</a></div><div class="ttdeci">static void Exit()</div><div class="ttdoc">ゲームを終了する</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00029">Game.cpp:29</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html">mtgb::WindowContextResource</a></div><div class="ttdoc">ウィンドウごとに固有のリソースのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00018">WindowContextResource.h:19</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html"><div class="ttname"><a href="classmtgb_1_1WindowResource.html">mtgb::WindowResource</a></div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8h_source.html#l00025">WindowResource.h:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_a32e0adb645c93c23d4edec8c2c90daa0"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#a32e0adb645c93c23d4edec8c2c90daa0">mtgb::WindowResource::hWnd_</a></div><div class="ttdeci">HWND hWnd_</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8h_source.html#l00059">WindowResource.h:59</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_a56641a11dde3b43e7ddcb5f0a1316a6f"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#a56641a11dde3b43e7ddcb5f0a1316a6f">mtgb::WindowResource::initialInfo_</a></div><div class="ttdeci">WindowModeInfo initialInfo_</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8h_source.html#l00064">WindowResource.h:64</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_a58647c1768a043dc64eda911d11885fc"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#a58647c1768a043dc64eda911d11885fc">mtgb::WindowResource::SetPosition</a></div><div class="ttdeci">void SetPosition(const RECT &amp;_monitorRect)</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00195">WindowResource.cpp:195</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_a6684962cb67d75c40b6a0997ced71ffa"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#a6684962cb67d75c40b6a0997ced71ffa">mtgb::WindowResource::SetResource</a></div><div class="ttdeci">void SetResource() override</div><div class="ttdoc">ウィンドウを変更する際に固有のリソースをセットする</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00130">WindowResource.cpp:130</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_a691ba8634774fac59cc415df21be09b2"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#a691ba8634774fac59cc415df21be09b2">mtgb::WindowResource::isInitialized_</a></div><div class="ttdeci">bool isInitialized_</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8h_source.html#l00067">WindowResource.h:67</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_a6c36fec56557efa93127080f004bb162"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#a6c36fec56557efa93127080f004bb162">mtgb::WindowResource::GetHWND</a></div><div class="ttdeci">HWND GetHWND()</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00105">WindowResource.cpp:105</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_a77adc8fe1dc35a6a765618f9d244e705"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#a77adc8fe1dc35a6a765618f9d244e705">mtgb::WindowResource::WindowResource</a></div><div class="ttdeci">WindowResource(WindowContext _windowContext)</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00110">WindowResource.cpp:110</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_a90c7d75706d7718f53f63d875cc961cc"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#a90c7d75706d7718f53f63d875cc961cc">mtgb::WindowResource::isActive_</a></div><div class="ttdeci">bool isActive_</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8h_source.html#l00060">WindowResource.h:60</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_a93d540c3169105253fca5f4dad0cfff2"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#a93d540c3169105253fca5f4dad0cfff2">mtgb::WindowResource::HandleWindowMessage</a></div><div class="ttdeci">LRESULT HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00062">WindowResource.cpp:62</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_aaf2e6b042672d8d39a622ceb480db9d3"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#aaf2e6b042672d8d39a622ceb480db9d3">mtgb::WindowResource::SetFullScreen</a></div><div class="ttdeci">void SetFullScreen(const RECT &amp;_monitorRect)</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00164">WindowResource.cpp:164</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_ab1ac673e6eec005221b218cce5e91031"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#ab1ac673e6eec005221b218cce5e91031">mtgb::WindowResource::SetWindowMode</a></div><div class="ttdeci">void SetWindowMode()</div><div class="ttdoc">直前のウィンドウモードに戻る</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00159">WindowResource.cpp:159</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_ac4c37aa2725432035f7ae47d42a496d8"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#ac4c37aa2725432035f7ae47d42a496d8">mtgb::WindowResource::GetWindowInfo</a></div><div class="ttdeci">void GetWindowInfo()</div><div class="ttdoc">フルスクリーンにする前に情報を保持しておく</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00187">WindowResource.cpp:187</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_ac53506d2b0eba7563456dec9ac9b6669"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#ac53506d2b0eba7563456dec9ac9b6669">mtgb::WindowResource::SetWindowModeImpl</a></div><div class="ttdeci">void SetWindowModeImpl(WindowModeInfo _info)</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00208">WindowResource.cpp:208</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_acf07401470a2b365375026058b8c6cf8"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#acf07401470a2b365375026058b8c6cf8">mtgb::WindowResource::WndProc</a></div><div class="ttdeci">static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdoc">各ウィンドウに共通の処理を記述。これをWNDCLASSに渡す</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00034">WindowResource.cpp:34</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_ad252f6dbd0be3d1be2ee76557b170da4"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#ad252f6dbd0be3d1be2ee76557b170da4">mtgb::WindowResource::currInfo_</a></div><div class="ttdeci">WindowModeInfo currInfo_</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8h_source.html#l00063">WindowResource.h:63</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_ad8fa5ddd6ddfac266dfc746a197217e9"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#ad8fa5ddd6ddfac266dfc746a197217e9">mtgb::WindowResource::~WindowResource</a></div><div class="ttdeci">~WindowResource()</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00135">WindowResource.cpp:135</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_ade71f7a0b0074134fba25b2cc98b9e05"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#ade71f7a0b0074134fba25b2cc98b9e05">mtgb::WindowResource::MarkInitialized</a></div><div class="ttdeci">void MarkInitialized()</div><div class="ttdoc">リソースの初期化が完了したというフラグを trueにする</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00140">WindowResource.cpp:140</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_ae7487376806c79d522d1a9dc21b76444"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#ae7487376806c79d522d1a9dc21b76444">mtgb::WindowResource::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00228">WindowResource.cpp:228</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowResource_html_af627f47fc36679088c4907c9aafd5de4"><div class="ttname"><a href="classmtgb_1_1WindowResource.html#af627f47fc36679088c4907c9aafd5de4">mtgb::WindowResource::OnResize</a></div><div class="ttdeci">void OnResize(UINT _width, UINT _height) override</div><div class="ttdoc">ウィンドウのサイズが変更された後の処理</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00145">WindowResource.cpp:145</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a665f6b404eea9a640b1222a87236fe19"><div class="ttname"><a href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a></div><div class="ttdeci">#define IMGUI_IMPL_API</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00090">imgui.h:90</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a87a3f9652a75339308cf5fd5699ef1fd"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a87a3f9652a75339308cf5fd5699ef1fd">ImGui_ImplWin32_WndProcHandler</a></div><div class="ttdeci">IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdoc">ウィンドウからのメッセージを受信してImGuiの入力やイベントを有効にするためのコールバック関数</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00714">imgui_impl_win32.cpp:714</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">mtgb::WindowContext</a></div><div class="ttdeci">WindowContext</div><div class="ttdef"><b>Definition:</b> <a href="WindowContext_8h_source.html#l00012">WindowContext.h:13</a></div></div>
+<div class="ttc" id="astructmtgb_1_1WindowConfig_html"><div class="ttname"><a href="structmtgb_1_1WindowConfig.html">mtgb::WindowConfig</a></div><div class="ttdef"><b>Definition:</b> <a href="WindowManager_8h_source.html#l00014">WindowManager.h:15</a></div></div>
+<div class="ttc" id="astructmtgb_1_1WindowConfig_html_a31dc303d9521454755b8ce82c53313cf"><div class="ttname"><a href="structmtgb_1_1WindowConfig.html#a31dc303d9521454755b8ce82c53313cf">mtgb::WindowConfig::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> <a href="WindowManager_8h_source.html#l00018">WindowManager.h:18</a></div></div>
+<div class="ttc" id="astructmtgb_1_1WindowConfig_html_afdb4a804d67e0083764e334953fe6923"><div class="ttname"><a href="structmtgb_1_1WindowConfig.html#afdb4a804d67e0083764e334953fe6923">mtgb::WindowConfig::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> <a href="WindowManager_8h_source.html#l00019">WindowManager.h:19</a></div></div>
+<div class="ttc" id="astructmtgb_1_1WindowModeInfo_html"><div class="ttname"><a href="structmtgb_1_1WindowModeInfo.html">mtgb::WindowModeInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8h_source.html#l00018">WindowResource.h:19</a></div></div>
+<div class="ttc" id="astructmtgb_1_1WindowModeInfo_html_a9fde2c305099ea0afaab9e783c77df43"><div class="ttname"><a href="structmtgb_1_1WindowModeInfo.html#a9fde2c305099ea0afaab9e783c77df43">mtgb::WindowModeInfo::windowedStyle_</a></div><div class="ttdeci">LONG windowedStyle_</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8h_source.html#l00022">WindowResource.h:22</a></div></div>
+<div class="ttc" id="astructmtgb_1_1WindowModeInfo_html_abc75083af7c82c2a718df7bc3c02f572"><div class="ttname"><a href="structmtgb_1_1WindowModeInfo.html#abc75083af7c82c2a718df7bc3c02f572">mtgb::WindowModeInfo::windowedExStyle_</a></div><div class="ttdeci">LONG windowedExStyle_</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8h_source.html#l00023">WindowResource.h:23</a></div></div>
+<div class="ttc" id="astructmtgb_1_1WindowModeInfo_html_af2df8dcedda8800c3108dba4a928ee3a"><div class="ttname"><a href="structmtgb_1_1WindowModeInfo.html#af2df8dcedda8800c3108dba4a928ee3a">mtgb::WindowModeInfo::windowedRect_</a></div><div class="ttdeci">RECT windowedRect_</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8h_source.html#l00021">WindowResource.h:21</a></div></div>
+<div class="ttc" id="astructmtgb_1_1WindowModeInfo_html_afd632e7adc26c503aeef4f458e60f476"><div class="ttname"><a href="structmtgb_1_1WindowModeInfo.html#afd632e7adc26c503aeef4f458e60f476">mtgb::WindowModeInfo::WindowModeInfo</a></div><div class="ttdeci">WindowModeInfo()</div><div class="ttdef"><b>Definition:</b> <a href="WindowResource_8cpp_source.html#l00233">WindowResource.cpp:233</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="WindowResource_8cpp.html">WindowResource.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

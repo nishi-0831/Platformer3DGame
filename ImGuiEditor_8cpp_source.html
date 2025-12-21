@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: ImGuiEditor.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ImGuiEditor_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ImGuiEditor.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ImGuiEditor_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="ImGuiEditor_8h.html">ImGuiEditor.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ReleaseUtility_8h.html">ReleaseUtility.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="RegisterCommonGameObjectType_8h.html">RegisterCommonGameObjectType.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../Source/RegisterGameObjectType.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="InputData_8h.html">InputData.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="GameObjectGenerator_8h.html">GameObjectGenerator.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="AddComponentCommand_8h.html">AddComponentCommand.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="TypeRegistry_8h.html">TypeRegistry.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContextUtil_8h.html">WindowContextUtil.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="SceneSystem_8h.html">SceneSystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="GameScene_8h.html">GameScene.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="Debug_8h.html">Debug.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="GameTime_8h.html">GameTime.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="CommandHistoryManager_8h.html">CommandHistoryManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#a9ae66a9f1e3177a1998d59d45588c03b">   16</a></span><a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#a9ae66a9f1e3177a1998d59d45588c03b">mtgb::ImGuiEditor::ImGuiEditor</a>()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    : <a class="code hl_class" href="classmtgb_1_1ImGuiShowable.html">ImGuiShowable</a>(<span class="stringliteral">&quot;ImGuiEditor&quot;</span>,<a class="code hl_enumeration" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a>::<a class="code hl_enumvalue" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2a344a7f427fb765610ef96eb7bce95257">Editor</a>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">commandListener_</a> = [<span class="keyword">this</span>](<a class="code hl_class" href="classCommand.html">Command</a>* _command)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(_command); </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordtype">id</span> = _command-&gt;GetCommandTargetEntityId();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        };</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a61eb96ea761c9c2d2e1ed91aeca08305">pManipulator_</a> = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1ImGuizmoManipulator.html">ImGuizmoManipulator</a>(<a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">commandListener_</a>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a6b124991e9a49adede9355605b79eee0">GameObjectGenerator::RegisterCommandListener</a>(<a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">commandListener_</a>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#a2792a4750db12f7ce2337a986338ec24">RegisterCommandListener</a>(<a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">commandListener_</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#a175e94a52582414db85f4032a1e9c59e">   31</a></span><a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#a175e94a52582414db85f4032a1e9c59e">mtgb::ImGuiEditor::~ImGuiEditor</a>()</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#a14492af11ce87640680319a5c5649b39">   35</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#a14492af11ce87640680319a5c5649b39">mtgb::ImGuiEditor::Initialize</a>()</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">   39</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor::Release</a>()</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#a709041ea8c086f7bb5071f9c15be0d65">   43</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#a709041ea8c086f7bb5071f9c15be0d65">mtgb::ImGuiEditor::Update</a>()</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    pManipulator_-&gt;Update();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a920280bc3d6f2d8f967385d733aad1b2">InputUtil::GetKey</a>(KeyCode::LeftControl))</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::Z))</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            Game::System&lt;CommandHistoryManager&gt;().UndoCommand();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::Y))</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            Game::System&lt;CommandHistoryManager&gt;().RedoCommand();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::S))</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            SaveMapData();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::O))</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            LoadMapData();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::D))</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            DuplicateGameObject();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#a2891ff2c69c1abb5e788abc790a5db07">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#a2891ff2c69c1abb5e788abc790a5db07">mtgb::ImGuiEditor::ShowImGui</a>()</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">//Game::System&lt;CommandHistoryManager&gt;().DrawImGuiStack();</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    ShowAddComponentDialog(pManipulator_-&gt;GetSelectedEntityId());</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    ShowGenerateGameObjectButton();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#a19099e09efd8947cdbc48b114cf27407">   83</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#a19099e09efd8947cdbc48b114cf27407">mtgb::ImGuiEditor::SaveMapData</a>()</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    TCHAR fileName[255] = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    OPENFILENAME ofn = {0};</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    ofn.lStructSize = <span class="keyword">sizeof</span>(ofn);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    ofn.hwndOwner = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">WinCtxRes::GetHWND</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    ofn.lpstrFilter = <span class="stringliteral">&quot;JSONファイル(*.json)\0*.json&quot;</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    ofn.lpstrFile = fileName;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    ofn.nMaxFile = 255;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    ofn.Flags = OFN_OVERWRITEPROMPT;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (GetSaveFileName(&amp;ofn))</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        std::ofstream openFile(fileName);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        nlohmann::json j = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;SerializeGameObjects();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordtype">int</span> width = 4;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        openFile &lt;&lt; std::setw(width) &lt;&lt; j;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        openFile.close();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <a class="code hl_define" href="Debug_8h.html#a22dfbe5038b17240020faa877835bc46">LOGIMGUI_CAT</a>(<span class="stringliteral">&quot;Editor&quot;</span>, <span class="stringliteral">&quot;File Saved&quot;</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#ae5e6810893d4adec725a83bfe37bc579">  110</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#ae5e6810893d4adec725a83bfe37bc579">mtgb::ImGuiEditor::LoadMapData</a>()</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>{</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    TCHAR fileName[255] = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    OPENFILENAME ifn = { 0 };</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    ifn.lStructSize = <span class="keyword">sizeof</span>(ifn);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    ifn.hwndOwner = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">WinCtxRes::GetHWND</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    ifn.lpstrFilter = <span class="stringliteral">&quot;JSONファイル(*.json)\0*.json&quot;</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    ifn.lpstrFile = fileName;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    ifn.nMaxFile = 255;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">if</span> (GetOpenFileName(&amp;ifn) == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    std::ifstream inputFile(fileName);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">if</span> (inputFile.fail())</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        assert(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    nlohmann::json json;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        inputFile &gt;&gt; json;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> nlohmann::json::parse_error&amp; e)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        assert(<span class="keyword">false</span>,e.what());</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">GameObjectGenerator::GenerateFromJson</a>(json);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="comment">// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">// TODO: マジックナンバーを修正</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <a class="code hl_function" href="classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53">Time::WaitFrame</a>(2);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>}</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#ae43edf44b6b7a58bf12baacc5dcc48e7">  145</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#ae43edf44b6b7a58bf12baacc5dcc48e7">mtgb::ImGuiEditor::DuplicateGameObject</a>()</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> currSelectedEntity = pManipulator_-&gt;GetSelectedEntityId();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">if</span> (currSelectedEntity == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a9067a4b9b90df50f8037d54e41a2f468">GameObjectGenerator::Duplicate</a>(currSelectedEntity);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#acac1920ffcfc560c0d1d93bbb60478c0">  154</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#acac1920ffcfc560c0d1d93bbb60478c0">mtgb::ImGuiEditor::AddComponent</a>(<span class="keyword">const</span> std::type_index&amp; _componentType, <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>{</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="comment">// コンポーネント作成成功</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_class" href="classmtgb_1_1AddComponentCommand.html">AddComponentCommand</a>* cmd = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1AddComponentCommand.html">AddComponentCommand</a>(_entityId, _componentType, <span class="keyword">nullptr</span>, <a class="code hl_function" href="classmtgb_1_1Game.html#a66362917a1d96665e8160adcb72f031f">Game::GetComponentFactory</a>());</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#aa6724aea9919a87393ed404ec9f3f4b9">  161</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#aa6724aea9919a87393ed404ec9f3f4b9">mtgb::ImGuiEditor::ShowAddComponentDialog</a>(<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>{</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    std::span&lt;const std::type_index&gt; registeredTypes = <a class="code hl_function" href="classmtgb_1_1Game.html#a66362917a1d96665e8160adcb72f031f">Game::GetComponentFactory</a>().<a class="code hl_function" href="classmtgb_1_1ComponentFactory.html#aeb879ceb7a52658be2231319dcbc5b06">GetRegisteredTypes</a>();</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; typeInfo : registeredTypes)</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceImGui.html#a38094c568ce398db5a3abb9d3ac92030">ImGui::Button</a>(typeInfo.name()))</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            AddComponent(typeInfo, _entityId);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImGuiEditor.html#abd26972c5037adf41d1ce8f9317610bb">  174</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#abd26972c5037adf41d1ce8f9317610bb">mtgb::ImGuiEditor::ShowGenerateGameObjectButton</a>()</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>{</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    std::vector&lt;std::string&gt; names = Game::System&lt;GameObjectTypeRegistry&gt;().GetRegisteredNames();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string&amp; name : names)</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceImGui.html#a38094c568ce398db5a3abb9d3ac92030">ImGui::Button</a>(name.c_str()))</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a8b5503cfaba6ad2226fea687c2d74891">GameObjectGenerator::Generate</a>(name);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="ttc" id="aAddComponentCommand_8h_html"><div class="ttname"><a href="AddComponentCommand_8h.html">AddComponentCommand.h</a></div></div>
+<div class="ttc" id="aCommandHistoryManager_8h_html"><div class="ttname"><a href="CommandHistoryManager_8h.html">CommandHistoryManager.h</a></div></div>
+<div class="ttc" id="aDebug_8h_html"><div class="ttname"><a href="Debug_8h.html">Debug.h</a></div></div>
+<div class="ttc" id="aDebug_8h_html_a22dfbe5038b17240020faa877835bc46"><div class="ttname"><a href="Debug_8h.html#a22dfbe5038b17240020faa877835bc46">LOGIMGUI_CAT</a></div><div class="ttdeci">#define LOGIMGUI_CAT(category, format,...)</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8h_source.html#l00026">Debug.h:26</a></div></div>
+<div class="ttc" id="aGameObjectGenerator_8h_html"><div class="ttname"><a href="GameObjectGenerator_8h.html">GameObjectGenerator.h</a></div></div>
+<div class="ttc" id="aGameScene_8h_html"><div class="ttname"><a href="GameScene_8h.html">GameScene.h</a></div></div>
+<div class="ttc" id="aGameTime_8h_html"><div class="ttname"><a href="GameTime_8h.html">GameTime.h</a></div></div>
+<div class="ttc" id="aImGuiEditor_8h_html"><div class="ttname"><a href="ImGuiEditor_8h.html">ImGuiEditor.h</a></div></div>
+<div class="ttc" id="aInputData_8h_html"><div class="ttname"><a href="InputData_8h.html">InputData.h</a></div></div>
+<div class="ttc" id="aRegisterCommonGameObjectType_8h_html"><div class="ttname"><a href="RegisterCommonGameObjectType_8h.html">RegisterCommonGameObjectType.h</a></div></div>
+<div class="ttc" id="aReleaseUtility_8h_html"><div class="ttname"><a href="ReleaseUtility_8h.html">ReleaseUtility.h</a></div></div>
+<div class="ttc" id="aSceneSystem_8h_html"><div class="ttname"><a href="SceneSystem_8h.html">SceneSystem.h</a></div></div>
+<div class="ttc" id="aShowType_8h_html_ac3437429431adf559d607c0e46c396c2"><div class="ttname"><a href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a></div><div class="ttdeci">ShowType</div><div class="ttdef"><b>Definition:</b> <a href="ShowType_8h_source.html#l00005">ShowType.h:6</a></div></div>
+<div class="ttc" id="aShowType_8h_html_ac3437429431adf559d607c0e46c396c2a344a7f427fb765610ef96eb7bce95257"><div class="ttname"><a href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2a344a7f427fb765610ef96eb7bce95257">ShowType::Editor</a></div><div class="ttdeci">@ Editor</div></div>
+<div class="ttc" id="aTypeRegistry_8h_html"><div class="ttname"><a href="TypeRegistry_8h.html">TypeRegistry.h</a></div></div>
+<div class="ttc" id="aWindowContextUtil_8h_html"><div class="ttname"><a href="WindowContextUtil_8h.html">WindowContextUtil.h</a></div></div>
+<div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00004">Command.h:5</a></div></div>
+<div class="ttc" id="aclassTypeRegistry_html_a2792a4750db12f7ce2337a986338ec24"><div class="ttname"><a href="classTypeRegistry.html#a2792a4750db12f7ce2337a986338ec24">TypeRegistry::RegisterCommandListener</a></div><div class="ttdeci">void RegisterCommandListener(std::function&lt; void(Command *)&gt; _commandListener)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00040">TypeRegistry.cpp:40</a></div></div>
+<div class="ttc" id="aclassTypeRegistry_html_a45f221653ae5cef14b554cb67ead4274"><div class="ttname"><a href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a></div><div class="ttdeci">static TypeRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry.cpp:10</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1AddComponentCommand_html"><div class="ttname"><a href="classmtgb_1_1AddComponentCommand.html">mtgb::AddComponentCommand</a></div><div class="ttdoc">コンポーネント追加コマンド</div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00013">AddComponentCommand.h:14</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_aeb879ceb7a52658be2231319dcbc5b06"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#aeb879ceb7a52658be2231319dcbc5b06">mtgb::ComponentFactory::GetRegisteredTypes</a></div><div class="ttdeci">void GetRegisteredTypes(std::vector&lt; std::type_index &gt; &amp;_types) const</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8h_source.html#l00029">ComponentFactory.h:29</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a6b124991e9a49adede9355605b79eee0"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a6b124991e9a49adede9355605b79eee0">mtgb::GameObjectGenerator::RegisterCommandListener</a></div><div class="ttdeci">static void RegisterCommandListener(std::function&lt; void(Command *)&gt; _commandListener)</div><div class="ttdoc">コマンドを渡すことができるリスナーを登録</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00070">GameObjectGenerator.cpp:70</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a75cbc1b1bde2c45d36a91cacc6fbdd3f"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">mtgb::GameObjectGenerator::GenerateFromJson</a></div><div class="ttdeci">static void GenerateFromJson(const nlohmann::json &amp;_json)</div><div class="ttdoc">JSONからゲームオブジェクトを生成する</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00033">GameObjectGenerator.cpp:33</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a8b5503cfaba6ad2226fea687c2d74891"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a8b5503cfaba6ad2226fea687c2d74891">mtgb::GameObjectGenerator::Generate</a></div><div class="ttdeci">static void Generate(GenerateType _primitive)</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00024">GameObjectGenerator.cpp:24</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a9067a4b9b90df50f8037d54e41a2f468"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a9067a4b9b90df50f8037d54e41a2f468">mtgb::GameObjectGenerator::Duplicate</a></div><div class="ttdeci">static void Duplicate(EntityId _srcEntityId)</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00075">GameObjectGenerator.cpp:75</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a66362917a1d96665e8160adcb72f031f"><div class="ttname"><a href="classmtgb_1_1Game.html#a66362917a1d96665e8160adcb72f031f">mtgb::Game::GetComponentFactory</a></div><div class="ttdeci">static ComponentFactory &amp; GetComponentFactory()</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00135">Game.h:135</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a07981171778cc17d6d5a3d1234fc41ec"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">mtgb::ImGuiEditor::commandListener_</a></div><div class="ttdeci">std::function&lt; void(Command *)&gt; commandListener_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8h_source.html#l00038">ImGuiEditor.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a14492af11ce87640680319a5c5649b39"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a14492af11ce87640680319a5c5649b39">mtgb::ImGuiEditor::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00035">ImGuiEditor.cpp:35</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a175e94a52582414db85f4032a1e9c59e"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a175e94a52582414db85f4032a1e9c59e">mtgb::ImGuiEditor::~ImGuiEditor</a></div><div class="ttdeci">~ImGuiEditor()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00031">ImGuiEditor.cpp:31</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a19099e09efd8947cdbc48b114cf27407"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a19099e09efd8947cdbc48b114cf27407">mtgb::ImGuiEditor::SaveMapData</a></div><div class="ttdeci">void SaveMapData()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00083">ImGuiEditor.cpp:83</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a2891ff2c69c1abb5e788abc790a5db07"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a2891ff2c69c1abb5e788abc790a5db07">mtgb::ImGuiEditor::ShowImGui</a></div><div class="ttdeci">void ShowImGui() override</div><div class="ttdoc">指定した表示キューに積まれる</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00072">ImGuiEditor.cpp:72</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a61eb96ea761c9c2d2e1ed91aeca08305"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a61eb96ea761c9c2d2e1ed91aeca08305">mtgb::ImGuiEditor::pManipulator_</a></div><div class="ttdeci">ImGuizmoManipulator * pManipulator_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8h_source.html#l00036">ImGuiEditor.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a709041ea8c086f7bb5071f9c15be0d65"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a709041ea8c086f7bb5071f9c15be0d65">mtgb::ImGuiEditor::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00043">ImGuiEditor.cpp:43</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a8ec821695a48668c475bbcd206070e5d"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00039">ImGuiEditor.cpp:39</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a9ae66a9f1e3177a1998d59d45588c03b"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a9ae66a9f1e3177a1998d59d45588c03b">mtgb::ImGuiEditor::ImGuiEditor</a></div><div class="ttdeci">ImGuiEditor()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00016">ImGuiEditor.cpp:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_aa6724aea9919a87393ed404ec9f3f4b9"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#aa6724aea9919a87393ed404ec9f3f4b9">mtgb::ImGuiEditor::ShowAddComponentDialog</a></div><div class="ttdeci">void ShowAddComponentDialog(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00161">ImGuiEditor.cpp:161</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_abd26972c5037adf41d1ce8f9317610bb"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#abd26972c5037adf41d1ce8f9317610bb">mtgb::ImGuiEditor::ShowGenerateGameObjectButton</a></div><div class="ttdeci">void ShowGenerateGameObjectButton()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00174">ImGuiEditor.cpp:174</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_acac1920ffcfc560c0d1d93bbb60478c0"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#acac1920ffcfc560c0d1d93bbb60478c0">mtgb::ImGuiEditor::AddComponent</a></div><div class="ttdeci">void AddComponent(const std::type_index &amp;_componentType, EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00154">ImGuiEditor.cpp:154</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_ae43edf44b6b7a58bf12baacc5dcc48e7"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#ae43edf44b6b7a58bf12baacc5dcc48e7">mtgb::ImGuiEditor::DuplicateGameObject</a></div><div class="ttdeci">void DuplicateGameObject()</div><div class="ttdoc">現在選択されているゲームオブジェクトの複製を行う</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00145">ImGuiEditor.cpp:145</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_ae5e6810893d4adec725a83bfe37bc579"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#ae5e6810893d4adec725a83bfe37bc579">mtgb::ImGuiEditor::LoadMapData</a></div><div class="ttdeci">void LoadMapData()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00110">ImGuiEditor.cpp:110</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiShowable_html"><div class="ttname"><a href="classmtgb_1_1ImGuiShowable.html">mtgb::ImGuiShowable</a></div><div class="ttdoc">継承してShowImGuiをオーバライドして使う これを使わなくてもImGui表示はできるので、別の箇所に分離したいときなどにどうぞ</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiShowable_8h_source.html#l00019">ImGuiShowable.h:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuizmoManipulator_html"><div class="ttname"><a href="classmtgb_1_1ImGuizmoManipulator.html">mtgb::ImGuizmoManipulator</a></div><div class="ttdef"><b>Definition:</b> <a href="ImGuizmoManipulator_8h_source.html#l00018">ImGuizmoManipulator.h:19</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a4dade03e3bbb665d967f7411d82b8d94"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a920280bc3d6f2d8f967385d733aad1b2"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a920280bc3d6f2d8f967385d733aad1b2">mtgb::InputUtil::GetKey</a></div><div class="ttdeci">static const bool GetKey(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00018">InputData.cpp:18</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_a861d48000e2c98be1942c717ea17ae53"><div class="ttname"><a href="classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53">mtgb::Time::WaitFrame</a></div><div class="ttdeci">static void WaitFrame(unsigned int _frame)</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00023">GameTime.h:23</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a38094c568ce398db5a3abb9d3ac92030"><div class="ttname"><a href="namespaceImGui.html#a38094c568ce398db5a3abb9d3ac92030">ImGui::Button</a></div><div class="ttdeci">IMGUI_API bool Button(const char *label, const ImVec2 &amp;size=ImVec2(0, 0))</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l00808">imgui_widgets.cpp:808</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_ac3067c8903d57f25d01d82b155657099"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">mtgb::WinCtxRes::GetHWND</a></div><div class="ttdeci">HWND GetHWND(WindowContext ctx)</div><div class="ttdoc">そのウィンドウのHWNDを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00025">WindowContextUtil.cpp:25</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="ImGuiEditor_8cpp.html">ImGuiEditor.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

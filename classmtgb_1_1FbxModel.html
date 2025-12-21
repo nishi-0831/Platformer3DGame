@@ -1,0 +1,985 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::FbxModel クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1FbxModel.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#friends">フレンド</a> &#124;
+<a href="classmtgb_1_1FbxModel-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::FbxModel クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>1つのFbxファイルを扱うクラス  
+ <a href="classmtgb_1_1FbxModel.html#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="FbxModel_8h_source.html">FbxModel.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::FbxModel の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1FbxModel__inherit__graph.svg" width="243" height="727"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::FbxModel 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1FbxModel__coll__graph.svg" width="243" height="727"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:afcd74a4ae176339f98c68c7c1cd311bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#afcd74a4ae176339f98c68c7c1cd311bd">FbxModel</a> ()</td></tr>
+<tr class="separator:afcd74a4ae176339f98c68c7c1cd311bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0156d579a30758aeaee61102c4c1eeab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a0156d579a30758aeaee61102c4c1eeab">~FbxModel</a> ()</td></tr>
+<tr class="separator:a0156d579a30758aeaee61102c4c1eeab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58f0b2c3e5c0268c573ed445e35dcfd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a58f0b2c3e5c0268c573ed445e35dcfd7">Load</a> (const std::string &amp;_fileName) override</td></tr>
+<tr class="memdesc:a58f0b2c3e5c0268c573ed445e35dcfd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">3Dモデルの読み込みをする  <br /></td></tr>
+<tr class="separator:a58f0b2c3e5c0268c573ed445e35dcfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b8ac3b4407d0eb88400267b1dd2f13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a75b8ac3b4407d0eb88400267b1dd2f13">Draw</a> (const <a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp;_transfrom, int _frame) override</td></tr>
+<tr class="memdesc:a75b8ac3b4407d0eb88400267b1dd2f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">3Dモデルを描画する  <br /></td></tr>
+<tr class="separator:a75b8ac3b4407d0eb88400267b1dd2f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a22b37b7b4e4b028eb9533b093304b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a7a22b37b7b4e4b028eb9533b093304b8">Release</a> () override</td></tr>
+<tr class="memdesc:a7a22b37b7b4e4b028eb9533b093304b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">解放処理  <br /></td></tr>
+<tr class="separator:a7a22b37b7b4e4b028eb9533b093304b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7196235e488793d345b343e40c147342"><td class="memItemLeft" align="right" valign="top">FbxScene *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a7196235e488793d345b343e40c147342">GetFbxScene</a> ()</td></tr>
+<tr class="memdesc:a7196235e488793d345b343e40c147342"><td class="mdescLeft">&#160;</td><td class="mdescRight">FbxSceneを取得する  <br /></td></tr>
+<tr class="separator:a7196235e488793d345b343e40c147342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a812d3185698e7e97930d107de6c245f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1FbxParts.html">FbxParts</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a812d3185698e7e97930d107de6c245f6">GetFbxParts</a> (const int _index)</td></tr>
+<tr class="memdesc:a812d3185698e7e97930d107de6c245f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fbxパーツを取得する  <br /></td></tr>
+<tr class="separator:a812d3185698e7e97930d107de6c245f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7772d9e985829ba551adbc57165befb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a7772d9e985829ba551adbc57165befb5">GetBonePosition</a> (std::string _boneName)</td></tr>
+<tr class="memdesc:a7772d9e985829ba551adbc57165befb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">任意のボーンの位置を取得  <br /></td></tr>
+<tr class="separator:a7772d9e985829ba551adbc57165befb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe338c2f4ac140420bec57e90209d1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#adbe338c2f4ac140420bec57e90209d1a">GetAnimBonePosition</a> (std::string _boneName)</td></tr>
+<tr class="memdesc:adbe338c2f4ac140420bec57e90209d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキンメッシュアニメ中の現在の任意のボーンの位置を取得  <br /></td></tr>
+<tr class="separator:adbe338c2f4ac140420bec57e90209d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8166001954bc1d1a3eeefd79b49cfb6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#af8166001954bc1d1a3eeefd79b49cfb6">GetFileName</a> () const</td></tr>
+<tr class="memdesc:af8166001954bc1d1a3eeefd79b49cfb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ロードしたときのモデルファイルの名前を取得  <br /></td></tr>
+<tr class="separator:af8166001954bc1d1a3eeefd79b49cfb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:aeee0ddcee29e27e5df913cba1efeff18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#aeee0ddcee29e27e5df913cba1efeff18">CheckNode</a> (FbxNode *_pNode, std::vector&lt; <a class="el" href="classmtgb_1_1FbxParts.html">FbxParts</a> * &gt; &amp;_parts)</td></tr>
+<tr class="memdesc:aeee0ddcee29e27e5df913cba1efeff18"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノードの中身を調べる  <br /></td></tr>
+<tr class="separator:aeee0ddcee29e27e5df913cba1efeff18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a0c3027067420013bfb746c1cc8682048"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmtgb_1_1FbxParts.html">FbxParts</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a></td></tr>
+<tr class="separator:a0c3027067420013bfb746c1cc8682048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c4b7e6f6c5eadff47768fc4d23f22a7"><td class="memItemLeft" align="right" valign="top">FbxScene *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a></td></tr>
+<tr class="separator:a9c4b7e6f6c5eadff47768fc4d23f22a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b6ef7f31485b48e427b2bcd456ab2a6"><td class="memItemLeft" align="right" valign="top">FbxTime::EMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">frameRate_</a></td></tr>
+<tr class="separator:a5b6ef7f31485b48e427b2bcd456ab2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac61082efc681662072ca93c29fca6c97"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#ac61082efc681662072ca93c29fca6c97">animationSpeed_</a></td></tr>
+<tr class="separator:ac61082efc681662072ca93c29fca6c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59c08964cdaa5e81d32124a0030ef4fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a59c08964cdaa5e81d32124a0030ef4fb">startFrame_</a></td></tr>
+<tr class="separator:a59c08964cdaa5e81d32124a0030ef4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83ec50e4eba4f4fa81c5a5bcb882486"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#aa83ec50e4eba4f4fa81c5a5bcb882486">endFrame_</a></td></tr>
+<tr class="separator:aa83ec50e4eba4f4fa81c5a5bcb882486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcd8c266f7ea5ba29aa7bad440df3cd3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">fileName_</a></td></tr>
+<tr class="separator:afcd8c266f7ea5ba29aa7bad440df3cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e8b822a3b5076421a6fc00754aabcae"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a></td></tr>
+<tr class="separator:a4e8b822a3b5076421a6fc00754aabcae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+フレンド</h2></td></tr>
+<tr class="memitem:ad3185fd2e3fd900090c9d58d849d716b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a></td></tr>
+<tr class="separator:ad3185fd2e3fd900090c9d58d849d716b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>1つのFbxファイルを扱うクラス </p>
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00017">17</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="afcd74a4ae176339f98c68c7c1cd311bd" name="afcd74a4ae176339f98c68c7c1cd311bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcd74a4ae176339f98c68c7c1cd311bd">&#9670;&#160;</a></span>FbxModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::FbxModel::FbxModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00008">8</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>                       :</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#ac61082efc681662072ca93c29fca6c97">animationSpeed_</a>{ 1.0f },</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a59c08964cdaa5e81d32124a0030ef4fb">startFrame_</a>{ 0 },</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#aa83ec50e4eba4f4fa81c5a5bcb882486">endFrame_</a>{ 0 },</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">frameRate_</a>{ FbxTime::EMode::eFrames60 },</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>{ <span class="keyword">nullptr</span> },</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a>{ 1.0 }</div>
+<div class="line"><span class="lineno">   15</span>{</div>
+<div class="line"><span class="lineno">   16</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_a4e8b822a3b5076421a6fc00754aabcae"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">mtgb::FbxModel::unitScaleFactor_</a></div><div class="ttdeci">double unitScaleFactor_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00081">FbxModel.h:81</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_a59c08964cdaa5e81d32124a0030ef4fb"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#a59c08964cdaa5e81d32124a0030ef4fb">mtgb::FbxModel::startFrame_</a></div><div class="ttdeci">int startFrame_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00077">FbxModel.h:77</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_a5b6ef7f31485b48e427b2bcd456ab2a6"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">mtgb::FbxModel::frameRate_</a></div><div class="ttdeci">FbxTime::EMode frameRate_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00075">FbxModel.h:75</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_a9c4b7e6f6c5eadff47768fc4d23f22a7"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">mtgb::FbxModel::pFbxScene_</a></div><div class="ttdeci">FbxScene * pFbxScene_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00073">FbxModel.h:73</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_aa83ec50e4eba4f4fa81c5a5bcb882486"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#aa83ec50e4eba4f4fa81c5a5bcb882486">mtgb::FbxModel::endFrame_</a></div><div class="ttdeci">int endFrame_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00078">FbxModel.h:78</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_ac61082efc681662072ca93c29fca6c97"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#ac61082efc681662072ca93c29fca6c97">mtgb::FbxModel::animationSpeed_</a></div><div class="ttdeci">float animationSpeed_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00076">FbxModel.h:76</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0156d579a30758aeaee61102c4c1eeab" name="a0156d579a30758aeaee61102c4c1eeab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0156d579a30758aeaee61102c4c1eeab">&#9670;&#160;</a></span>~FbxModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::FbxModel::~FbxModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00018">18</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>{</div>
+<div class="line"><span class="lineno">   20</span>    </div>
+<div class="line"><span class="lineno">   21</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aeee0ddcee29e27e5df913cba1efeff18" name="aeee0ddcee29e27e5df913cba1efeff18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee0ddcee29e27e5df913cba1efeff18">&#9670;&#160;</a></span>CheckNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::FbxModel::CheckNode </td>
+          <td>(</td>
+          <td class="paramtype">FbxNode *&#160;</td>
+          <td class="paramname"><em>_pNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classmtgb_1_1FbxParts.html">FbxParts</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_parts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ノードの中身を調べる </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pNode</td><td>調べたいノード</td></tr>
+    <tr><td class="paramname">_parts</td><td>パーツリスト</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00149">149</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>{</div>
+<div class="line"><span class="lineno">  151</span>    <span class="comment">// ノードの属性情報</span></div>
+<div class="line"><span class="lineno">  152</span>    FbxNodeAttribute* pNodeAttribute{ _pNode-&gt;GetNodeAttribute() };</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">if</span> (pNodeAttribute == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  155</span>    {</div>
+<div class="line"><span class="lineno">  156</span>        <span class="keywordflow">return</span>;  <span class="comment">// ノードが nullptr なら回帰</span></div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    <span class="comment">// メッシュの情報が入っているなら</span></div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">if</span> (pNodeAttribute-&gt;GetAttributeType() == FbxNodeAttribute::eMesh)</div>
+<div class="line"><span class="lineno">  161</span>    {</div>
+<div class="line"><span class="lineno">  162</span>        <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>* pParts = <span class="keyword">new</span> <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>(_pNode,<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a>);</div>
+<div class="line"><span class="lineno">  163</span>        pParts-&gt;Initialize();</div>
+<div class="line"><span class="lineno">  164</span>        _pPartsList.push_back(pParts);</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <span class="comment">// 子の数</span></div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordtype">int</span> childCount{ _pNode-&gt;GetChildCount() };</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <span class="comment">// 1つずつチェック</span></div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; childCount; i++)</div>
+<div class="line"><span class="lineno">  172</span>    {</div>
+<div class="line"><span class="lineno">  173</span>        <a class="code hl_function" href="classmtgb_1_1FbxModel.html#aeee0ddcee29e27e5df913cba1efeff18">CheckNode</a>(_pNode-&gt;GetChild(i), _pPartsList);</div>
+<div class="line"><span class="lineno">  174</span>    }</div>
+<div class="line"><span class="lineno">  175</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_ad3185fd2e3fd900090c9d58d849d716b"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">mtgb::FbxModel::FbxParts</a></div><div class="ttdeci">friend class FbxParts</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00019">FbxModel.h:19</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_aeee0ddcee29e27e5df913cba1efeff18"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#aeee0ddcee29e27e5df913cba1efeff18">mtgb::FbxModel::CheckNode</a></div><div class="ttdeci">void CheckNode(FbxNode *_pNode, std::vector&lt; FbxParts * &gt; &amp;_parts)</div><div class="ttdoc">ノードの中身を調べる</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8cpp_source.html#l00149">FbxModel.cpp:149</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="FbxParts_8cpp_source.html#l00054">mtgb::FbxParts::Initialize()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1FbxModel_aeee0ddcee29e27e5df913cba1efeff18_cgraph.svg" width="679" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a75b8ac3b4407d0eb88400267b1dd2f13" name="a75b8ac3b4407d0eb88400267b1dd2f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75b8ac3b4407d0eb88400267b1dd2f13">&#9670;&#160;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::FbxModel::Draw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp;&#160;</td>
+          <td class="paramname"><em>_transfrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>3Dモデルを描画する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_transfrom</td><td>座標系</td></tr>
+    <tr><td class="paramname">_frame</td><td>アニメーションフレーム</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classmtgb_1_1IModelPack.html#abec9e3cc895fed962c81193dbe12d040">mtgb::IModelPack</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00098">98</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>{</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  101</span>    {</div>
+<div class="line"><span class="lineno">  102</span>        <span class="comment">// アニメーションタイムの姿勢行列を取得する</span></div>
+<div class="line"><span class="lineno">  103</span>        FbxTime time;</div>
+<div class="line"><span class="lineno">  104</span>        time.SetTime(0, 0, 0, _frame, 0, 0, <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">frameRate_</a>);</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>        <span class="comment">// ボーンがあるスキンアニメーション</span></div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;GetSkin() != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  108</span>        {</div>
+<div class="line"><span class="lineno">  109</span>            <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;DrawSkinAnimation(_transform, time);</div>
+<div class="line"><span class="lineno">  110</span>        }</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">else</span>  <span class="comment">// メッシュアニメーション</span></div>
+<div class="line"><span class="lineno">  112</span>        {</div>
+<div class="line"><span class="lineno">  113</span>            <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;DrawMeshAnimation(_transform, time);</div>
+<div class="line"><span class="lineno">  114</span>        }</div>
+<div class="line"><span class="lineno">  115</span>    }</div>
+<div class="line"><span class="lineno">  116</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_a0c3027067420013bfb746c1cc8682048"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">mtgb::FbxModel::pParts_</a></div><div class="ttdeci">std::vector&lt; FbxParts * &gt; pParts_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00071">FbxModel.h:71</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adbe338c2f4ac140420bec57e90209d1a" name="adbe338c2f4ac140420bec57e90209d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbe338c2f4ac140420bec57e90209d1a">&#9670;&#160;</a></span>GetAnimBonePosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> mtgb::FbxModel::GetAnimBonePosition </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>_boneName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>スキンメッシュアニメ中の現在の任意のボーンの位置を取得 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_boneName</td><td>ボーンの名前</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00138">138</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>{</div>
+<div class="line"><span class="lineno">  140</span>    Vector3 position_ = Vector3(0, 0, 0);</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  142</span>    {</div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;TryGetBonePositionAtNow(_boneName, &amp;position_))</div>
+<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">return</span> position_;</div>
+<div class="line"><span class="lineno">  147</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7772d9e985829ba551adbc57165befb5" name="a7772d9e985829ba551adbc57165befb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7772d9e985829ba551adbc57165befb5">&#9670;&#160;</a></span>GetBonePosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> mtgb::FbxModel::GetBonePosition </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>_boneName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>任意のボーンの位置を取得 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_boneName</td><td>ボーンの名前</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00127">127</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>{</div>
+<div class="line"><span class="lineno">  129</span>    Vector3 position_ = Vector3(0, 0, 0);</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  131</span>    {</div>
+<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;TryGetBonePosition(_boneName, &amp;position_))</div>
+<div class="line"><span class="lineno">  133</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> position_;</div>
+<div class="line"><span class="lineno">  136</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a812d3185698e7e97930d107de6c245f6" name="a812d3185698e7e97930d107de6c245f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a812d3185698e7e97930d107de6c245f6">&#9670;&#160;</a></span>GetFbxParts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1FbxParts.html">FbxParts</a> * mtgb::FbxModel::GetFbxParts </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>_index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fbxパーツを取得する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_index</td><td>インデックス</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>Fbxパーツのポインタ</dd></dl>
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00042">42</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[_index]; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="FbxModel_8h_source.html#l00071">pParts_</a>.</p>
+
+</div>
+</div>
+<a id="a7196235e488793d345b343e40c147342" name="a7196235e488793d345b343e40c147342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7196235e488793d345b343e40c147342">&#9670;&#160;</a></span>GetFbxScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FbxScene * mtgb::FbxModel::GetFbxScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>FbxSceneを取得する </p>
+<dl class="section return"><dt>戻り値</dt><dd>FbxSceneのポインタ</dd></dl>
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00035">35</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="FbxModel_8h_source.html#l00073">pFbxScene_</a>.</p>
+
+</div>
+</div>
+<a id="af8166001954bc1d1a3eeefd79b49cfb6" name="af8166001954bc1d1a3eeefd79b49cfb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8166001954bc1d1a3eeefd79b49cfb6">&#9670;&#160;</a></span>GetFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mtgb::FbxModel::GetFileName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ロードしたときのモデルファイルの名前を取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>ファイル名</dd></dl>
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">fileName_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_afcd8c266f7ea5ba29aa7bad440df3cd3"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">mtgb::FbxModel::fileName_</a></div><div class="ttdeci">std::string fileName_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00080">FbxModel.h:80</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="FbxModel_8h_source.html#l00080">fileName_</a>.</p>
+
+</div>
+</div>
+<a id="a58f0b2c3e5c0268c573ed445e35dcfd7" name="a58f0b2c3e5c0268c573ed445e35dcfd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58f0b2c3e5c0268c573ed445e35dcfd7">&#9670;&#160;</a></span>Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::FbxModel::Load </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>3Dモデルの読み込みをする </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_fileName</td><td>3Dモデルのファイル名</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classmtgb_1_1IModelPack.html#aeaa4df6775a1d66fb8370df8eecc3320">mtgb::IModelPack</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00023">23</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a> == <span class="keyword">nullptr</span>  <span class="comment">// まだ読み込まれていない</span></div>
+<div class="line"><span class="lineno">   26</span>        &amp;&amp; <span class="stringliteral">&quot;既にFbxModelは読み込まれているよ！ @FbxModel::Load&quot;</span>);</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    FbxManager* pFbxManager{ Game::System&lt;Fbx&gt;().GetFbxManager() };</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a> = FbxScene::Create(pFbxManager, <span class="stringliteral">&quot;fbxscene&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>    FbxString fileName{ _fileName.c_str() };</div>
+<div class="line"><span class="lineno">   32</span>    FbxImporter* fbxImporter{ FbxImporter::Create(pFbxManager, <span class="stringliteral">&quot;imp&quot;</span>) };</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    FbxIOSettings* ios = FbxIOSettings::Create(pFbxManager, IOSROOT);</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    pFbxManager-&gt;SetIOSettings(ios);</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!fbxImporter-&gt;Initialize(fileName.Buffer(), -1, ios)) {</div>
+<div class="line"><span class="lineno">   38</span>        MessageBoxA(NULL, fbxImporter-&gt;GetStatus().GetErrorString(), <span class="stringliteral">&quot;FBX Import Error&quot;</span>, MB_OK);</div>
+<div class="line"><span class="lineno">   39</span>        <span class="comment">// もしくはログ出力</span></div>
+<div class="line"><span class="lineno">   40</span>    }</div>
+<div class="line"><span class="lineno">   41</span>    <span class="comment">//none of the registered readers can process the file</span></div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">fileName_</a> = _fileName;</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordtype">char</span> str[MAX_PATH]{};</div>
+<div class="line"><span class="lineno">   47</span>    GetCurrentDirectory(MAX_PATH, str);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordtype">bool</span> succeed{ <span class="keyword">false</span> };</div>
+<div class="line"><span class="lineno">   50</span>    <span class="comment">//succeed = fbxImporter-&gt;Initialize(fileName.Buffer(), -1);</span></div>
+<div class="line"><span class="lineno">   51</span>    <span class="comment">//massert(succeed   &amp;&amp; &quot;fbxImporterの初期化に失敗した @Fbx::Load&quot;);</span></div>
+<div class="line"><span class="lineno">   52</span>    succeed = fbxImporter-&gt;Initialize(fileName.Buffer(), -1, pFbxManager-&gt;GetIOSettings());</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(succeed &amp;&amp; <span class="stringliteral">&quot;fbxImporterの初期化に失敗した @Fbx::Load&quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    succeed = fbxImporter-&gt;Import(<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>);</div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(succeed &amp;&amp; <span class="stringliteral">&quot;読み込みに失敗した @Fbx::Load&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a8fec617b8766eb3a0366bc02a8408d74">SAFE_DESTROY</a>(fbxImporter);  <span class="comment">// インポータは解放</span></div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    <span class="comment">// 3角ポリゴン</span></div>
+<div class="line"><span class="lineno">   61</span>    FbxGeometryConverter geometryConverter{ pFbxManager };</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <span class="comment">// アニメーションタイムモードの取得</span></div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">frameRate_</a> = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetGlobalSettings().GetTimeMode();</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="comment">// スケール単位を取得</span></div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a> = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetGlobalSettings().GetSystemUnit().GetScaleFactor();</div>
+<div class="line"><span class="lineno">   68</span>    <span class="comment">// 現在のカレントディレクトリを取得</span></div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordtype">char</span> defaultCurrentDirectory[MAX_PATH]{};</div>
+<div class="line"><span class="lineno">   70</span>    GetCurrentDirectory(MAX_PATH, defaultCurrentDirectory);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="comment">// カレントディレクトリを移動</span></div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordtype">char</span> directory[MAX_PATH]{};</div>
+<div class="line"><span class="lineno">   74</span>    _splitpath_s(_fileName.c_str(), <span class="keyword">nullptr</span>, 0, directory, MAX_PATH, <span class="keyword">nullptr</span>, 0, <span class="keyword">nullptr</span>, 0);</div>
+<div class="line"><span class="lineno">   75</span>    SetCurrentDirectory(directory);</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordtype">int</span> meshCount{ <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetSrcObjectCount&lt;FbxMesh&gt;() };</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; meshCount; i++)</div>
+<div class="line"><span class="lineno">   79</span>    {</div>
+<div class="line"><span class="lineno">   80</span>        FbxMesh* pMesh = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetSrcObject&lt;FbxMesh&gt;(i);</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">if</span> (pMesh == <span class="keyword">nullptr</span>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>        FbxNode* pNode = pMesh-&gt;GetNode();</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">if</span> (pNode == <span class="keyword">nullptr</span>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>        <span class="comment">// 作成前にノードのメッシュ有無確認</span></div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">if</span> (pNode-&gt;GetMesh() == <span class="keyword">nullptr</span>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>        <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>* pParts = <span class="keyword">new</span> <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>(pNode,<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a>);</div>
+<div class="line"><span class="lineno">   90</span>        pParts-&gt;Initialize();</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.push_back(pParts);</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    SetCurrentDirectory(defaultCurrentDirectory);</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>}</div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00009">MTAssert.h:9</a></div></div>
+<div class="ttc" id="aReleaseUtility_8h_html_a8fec617b8766eb3a0366bc02a8408d74"><div class="ttname"><a href="ReleaseUtility_8h.html#a8fec617b8766eb3a0366bc02a8408d74">SAFE_DESTROY</a></div><div class="ttdeci">#define SAFE_DESTROY(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00028">ReleaseUtility.h:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="FbxParts_8cpp_source.html#l00054">mtgb::FbxParts::Initialize()</a>, <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00028">SAFE_DESTROY</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="Fbx_8cpp_source.html#l00028">mtgb::Fbx::Load()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1FbxModel_a58f0b2c3e5c0268c573ed445e35dcfd7_cgraph.svg" width="635" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1FbxModel_a58f0b2c3e5c0268c573ed445e35dcfd7_icgraph.svg" width="595" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a7a22b37b7b4e4b028eb9533b093304b8" name="a7a22b37b7b4e4b028eb9533b093304b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a22b37b7b4e4b028eb9533b093304b8">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::FbxModel::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1IModelPack.html#a7baa74f1ab5e0cb57effb5f5dac67606">mtgb::IModelPack</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00118">118</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fbxParts : <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>)</div>
+<div class="line"><span class="lineno">  121</span>    {</div>
+<div class="line"><span class="lineno">  122</span>        fbxParts-&gt;Release();</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keyword">delete</span> fbxParts;</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">フレンドと関連関数の詳解</h2>
+<a id="ad3185fd2e3fd900090c9d58d849d716b" name="ad3185fd2e3fd900090c9d58d849d716b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3185fd2e3fd900090c9d58d849d716b">&#9670;&#160;</a></span>FbxParts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classmtgb_1_1FbxParts.html">FbxParts</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ac61082efc681662072ca93c29fca6c97" name="ac61082efc681662072ca93c29fca6c97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac61082efc681662072ca93c29fca6c97">&#9670;&#160;</a></span>animationSpeed_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::FbxModel::animationSpeed_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00076">76</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa83ec50e4eba4f4fa81c5a5bcb882486" name="aa83ec50e4eba4f4fa81c5a5bcb882486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83ec50e4eba4f4fa81c5a5bcb882486">&#9670;&#160;</a></span>endFrame_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mtgb::FbxModel::endFrame_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00078">78</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afcd8c266f7ea5ba29aa7bad440df3cd3" name="afcd8c266f7ea5ba29aa7bad440df3cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcd8c266f7ea5ba29aa7bad440df3cd3">&#9670;&#160;</a></span>fileName_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mtgb::FbxModel::fileName_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00080">80</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="FbxModel_8h_source.html#l00059">GetFileName()</a>.</p>
+
+</div>
+</div>
+<a id="a5b6ef7f31485b48e427b2bcd456ab2a6" name="a5b6ef7f31485b48e427b2bcd456ab2a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b6ef7f31485b48e427b2bcd456ab2a6">&#9670;&#160;</a></span>frameRate_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FbxTime::EMode mtgb::FbxModel::frameRate_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00075">75</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9c4b7e6f6c5eadff47768fc4d23f22a7" name="a9c4b7e6f6c5eadff47768fc4d23f22a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c4b7e6f6c5eadff47768fc4d23f22a7">&#9670;&#160;</a></span>pFbxScene_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FbxScene* mtgb::FbxModel::pFbxScene_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00073">73</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="FbxModel_8h_source.html#l00035">GetFbxScene()</a>.</p>
+
+</div>
+</div>
+<a id="a0c3027067420013bfb746c1cc8682048" name="a0c3027067420013bfb746c1cc8682048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c3027067420013bfb746c1cc8682048">&#9670;&#160;</a></span>pParts_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classmtgb_1_1FbxParts.html">FbxParts</a>*&gt; mtgb::FbxModel::pParts_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00071">71</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="FbxModel_8h_source.html#l00042">GetFbxParts()</a>.</p>
+
+</div>
+</div>
+<a id="a59c08964cdaa5e81d32124a0030ef4fb" name="a59c08964cdaa5e81d32124a0030ef4fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59c08964cdaa5e81d32124a0030ef4fb">&#9670;&#160;</a></span>startFrame_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mtgb::FbxModel::startFrame_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00077">77</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4e8b822a3b5076421a6fc00754aabcae" name="a4e8b822a3b5076421a6fc00754aabcae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e8b822a3b5076421a6fc00754aabcae">&#9670;&#160;</a></span>unitScaleFactor_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mtgb::FbxModel::unitScaleFactor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="FbxModel_8h_source.html">FbxModel.h</a> の <a class="el" href="FbxModel_8h_source.html#l00081">81</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="FbxModel_8h_source.html">FbxModel.h</a></li>
+<li><a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1FbxModel.html">FbxModel</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

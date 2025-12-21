@@ -1,0 +1,1805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::DirectX11Manager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1DirectX11Manager.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1DirectX11Manager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::DirectX11Manager クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="DirectX11Manager_8h_source.html">DirectX11Manager.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::DirectX11Manager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1DirectX11Manager__inherit__graph.svg" width="360" height="771"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::DirectX11Manager 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1DirectX11Manager__coll__graph.svg" width="360" height="771"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a6de71deea6f4e064c124f8e42056de29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a6de71deea6f4e064c124f8e42056de29">DirectX11Manager</a> ()</td></tr>
+<tr class="separator:a6de71deea6f4e064c124f8e42056de29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6628ee648c587956ee2e872a958b6931"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a6628ee648c587956ee2e872a958b6931">~DirectX11Manager</a> ()</td></tr>
+<tr class="separator:a6628ee648c587956ee2e872a958b6931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4524835900f0d4d7339e9e4cdd1a2e01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a4524835900f0d4d7339e9e4cdd1a2e01">Initialize</a> () override</td></tr>
+<tr class="separator:a4524835900f0d4d7339e9e4cdd1a2e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f31aed60a43843bbb5cf6738fd147fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a8f31aed60a43843bbb5cf6738fd147fd">Update</a> () override</td></tr>
+<tr class="separator:a8f31aed60a43843bbb5cf6738fd147fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8d30c1f67d663e07cd03f4df4cd2442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#ad8d30c1f67d663e07cd03f4df4cd2442">InitializeCommonResources</a> ()</td></tr>
+<tr class="separator:ad8d30c1f67d663e07cd03f4df4cd2442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68a3d01ec709c4df020e87fef939e9e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a68a3d01ec709c4df020e87fef939e9e9">CreateDXGISurface</a> (IDXGISwapChain1 *pSwapChain1, IDXGISurface **ppDXGISurface)</td></tr>
+<tr class="separator:a68a3d01ec709c4df020e87fef939e9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f2b6e0533285bf0f577eae8e2e4e36f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a8f2b6e0533285bf0f577eae8e2e4e36f">CreateSwapChain</a> (<a class="el" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> hWnd, IDXGIOutput *pOutput, IDXGISwapChain1 **ppSwapChain1)</td></tr>
+<tr class="separator:a8f2b6e0533285bf0f577eae8e2e4e36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eaa29d08d25bcf192e0654976cb0d5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a7eaa29d08d25bcf192e0654976cb0d5a">CreateRenderTargetView</a> (IDXGISwapChain1 *pSwapChain1, ID3D11RenderTargetView **ppRenderTargetView)</td></tr>
+<tr class="separator:a7eaa29d08d25bcf192e0654976cb0d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed10f75e1e88f14622c88e4135bda86e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#aed10f75e1e88f14622c88e4135bda86e">CreateViewport</a> (const <a class="el" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a> &amp;size, D3D11_VIEWPORT &amp;viewport)</td></tr>
+<tr class="separator:aed10f75e1e88f14622c88e4135bda86e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52015b0ca2011256df1d14622eb42c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a52015b0ca2011256df1d14622eb42c31">CreateDepthStencilAndDepthStencilView</a> (const <a class="el" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a> bufSize, ID3D11Texture2D **ppDepthStencil, ID3D11DepthStencilView **ppDepthStencilView)</td></tr>
+<tr class="separator:a52015b0ca2011256df1d14622eb42c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46655c9165065413565a44cd82099076"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a46655c9165065413565a44cd82099076">ChangeViewport</a> (const D3D11_VIEWPORT &amp;viewport)</td></tr>
+<tr class="separator:a46655c9165065413565a44cd82099076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68fb6eb4989ee1e0c374f3565c6ed250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a68fb6eb4989ee1e0c374f3565c6ed250">ChangeRenderTargets</a> (ComPtr&lt; ID3D11RenderTargetView &gt; pRenderTargetView, ComPtr&lt; ID3D11DepthStencilView &gt; pDepthStencilView)</td></tr>
+<tr class="separator:a68fb6eb4989ee1e0c374f3565c6ed250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73722e1f2b328443a1b614d22c2c4bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#ae73722e1f2b328443a1b614d22c2c4bb">ChangeSwapChain</a> (ComPtr&lt; IDXGISwapChain1 &gt; pSwapChain1)</td></tr>
+<tr class="separator:ae73722e1f2b328443a1b614d22c2c4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3504e33dbb728ccefb7349e376d55d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#ac3504e33dbb728ccefb7349e376d55d8">ClearState</a> ()</td></tr>
+<tr class="separator:ac3504e33dbb728ccefb7349e376d55d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b1a67f6eef29670a966162d1a3c4860"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a4b1a67f6eef29670a966162d1a3c4860">SetDefaultStates</a> ()</td></tr>
+<tr class="memdesc:a4b1a67f6eef29670a966162d1a3c4860"><td class="mdescLeft">&#160;</td><td class="mdescRight">ClearState後に必要なデフォルト状態を再設定  <br /></td></tr>
+<tr class="separator:a4b1a67f6eef29670a966162d1a3c4860"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ab1956176b49ae8a50a80a1e9137b83"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structmtgb_1_1MonitorInfo.html">MonitorInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a3ab1956176b49ae8a50a80a1e9137b83">AssignAvailableMonitor</a> (IDXGIOutput **ppOutput)</td></tr>
+<tr class="memdesc:a3ab1956176b49ae8a50a80a1e9137b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">利用可能なモニターを自動で割り当てる  <br /></td></tr>
+<tr class="separator:a3ab1956176b49ae8a50a80a1e9137b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae58910e1447272081cedabc0194d774"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#aae58910e1447272081cedabc0194d774">GetAvailableMonitorCount</a> () const</td></tr>
+<tr class="separator:aae58910e1447272081cedabc0194d774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0691f1df5a5ae0670b2d25a3f5353031"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">Release</a> () override</td></tr>
+<tr class="memdesc:a0691f1df5a5ae0670b2d25a3f5353031"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放処理  <br /></td></tr>
+<tr class="separator:a0691f1df5a5ae0670b2d25a3f5353031"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:aa3d4c815765c2e86d5d7b80ad6d2e3e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#aa3d4c815765c2e86d5d7b80ad6d2e3e1">EnumAvailableMonitors</a> ()</td></tr>
+<tr class="memdesc:aa3d4c815765c2e86d5d7b80ad6d2e3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">利用可能なモニターを列挙する  <br /></td></tr>
+<tr class="separator:aa3d4c815765c2e86d5d7b80ad6d2e3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81c78943f7bed780257d221ee23bc9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#af81c78943f7bed780257d221ee23bc9e">InitializeShaderBundle</a> ()</td></tr>
+<tr class="memdesc:af81c78943f7bed780257d221ee23bc9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">シェーダバンドルを初期化する  <br /></td></tr>
+<tr class="separator:af81c78943f7bed780257d221ee23bc9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0add2c4d52089ca67a1b60f16c95074"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a> (const std::wstring &amp;_fileName, const <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">ShaderType</a> &amp;_type, const D3D11_INPUT_ELEMENT_DESC *_pHLSLLayout, const unsigned int _layoutLength, const CD3D11_RASTERIZER_DESC *_pRasterizerDesc)</td></tr>
+<tr class="memdesc:aa0add2c4d52089ca67a1b60f16c95074"><td class="mdescLeft">&#160;</td><td class="mdescRight">シェーダファイルをコンパイルする  <br /></td></tr>
+<tr class="separator:aa0add2c4d52089ca67a1b60f16c95074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a60f943f84c4f292f9271b3c150d68513"><td class="memItemLeft" align="right" valign="top">std::vector&lt; DXGI_ADAPTER_DESC1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1DirectX11Manager.html#a60f943f84c4f292f9271b3c150d68513">adaptersDesc_</a></td></tr>
+<tr class="separator:a60f943f84c4f292f9271b3c150d68513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="DirectX11Manager_8h_source.html">DirectX11Manager.h</a> の <a class="el" href="DirectX11Manager_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a6de71deea6f4e064c124f8e42056de29" name="a6de71deea6f4e064c124f8e42056de29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6de71deea6f4e064c124f8e42056de29">&#9670;&#160;</a></span>DirectX11Manager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::DirectX11Manager::DirectX11Manager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6628ee648c587956ee2e872a958b6931" name="a6628ee648c587956ee2e872a958b6931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6628ee648c587956ee2e872a958b6931">&#9670;&#160;</a></span>~DirectX11Manager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::DirectX11Manager::~DirectX11Manager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
+<div class="line"><span class="lineno">   27</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a3ab1956176b49ae8a50a80a1e9137b83" name="a3ab1956176b49ae8a50a80a1e9137b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ab1956176b49ae8a50a80a1e9137b83">&#9670;&#160;</a></span>AssignAvailableMonitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structmtgb_1_1MonitorInfo.html">mtgb::MonitorInfo</a> &gt; mtgb::DirectX11Manager::AssignAvailableMonitor </td>
+          <td>(</td>
+          <td class="paramtype">IDXGIOutput **&#160;</td>
+          <td class="paramname"><em>ppOutput</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>利用可能なモニターを自動で割り当てる </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ppOutput</td><td>これにモニターを割り当てる</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>割り当てられたモニターのインデックス、失敗時は -1</dd></dl>
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00407">407</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  408</span>{</div>
+<div class="line"><span class="lineno">  409</span>    <span class="comment">// 初回の列挙</span></div>
+<div class="line"><span class="lineno">  410</span>    <span class="comment">/*if (DirectX11Draw::monitorInfos_.empty())</span></div>
+<div class="line"><span class="lineno">  411</span><span class="comment">    {</span></div>
+<div class="line"><span class="lineno">  412</span><span class="comment">        EnumAvailableMonitors();</span></div>
+<div class="line"><span class="lineno">  413</span><span class="comment">    }*/</span></div>
+<div class="line"><span class="lineno">  414</span> </div>
+<div class="line"><span class="lineno">  415</span>    <span class="comment">// 未使用のモニターを探す</span></div>
+<div class="line"><span class="lineno">  416</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; info : <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a4d7457fd297d3e6b14fe95c6f7fae9ac">DirectX11Draw::monitorInfos_</a>)</div>
+<div class="line"><span class="lineno">  417</span>    {</div>
+<div class="line"><span class="lineno">  418</span>        <span class="comment">// すでに使用済み、もしくはアダプター、モニターのインデックスが未設定の場合はスキップ</span></div>
+<div class="line"><span class="lineno">  419</span>        <span class="keywordflow">if</span> (info.isRequested || info.adapterIndex == <a class="code hl_variable" href="structmtgb_1_1MonitorInfo.html#ad5568d8dd9558b1c856424641e0f91bd">MonitorInfo::INVALID_INDEX</a> || info.outputIndex == <a class="code hl_variable" href="structmtgb_1_1MonitorInfo.html#ad5568d8dd9558b1c856424641e0f91bd">MonitorInfo::INVALID_INDEX</a>)</div>
+<div class="line"><span class="lineno">  420</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  421</span>        </div>
+<div class="line"><span class="lineno">  422</span>            <span class="comment">// モニターを列挙して、IDXGIOutputの作成を試みる</span></div>
+<div class="line"><span class="lineno">  423</span>            HRESULT hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#ae7451dbe79f12e76a418ec86c1b97d58">DirectX11Draw::pDXGIAdapters_</a>[info.adapterIndex]-&gt;EnumOutputs(info.outputIndex, ppOutput);</div>
+<div class="line"><span class="lineno">  424</span>            <span class="keywordflow">if</span> (SUCCEEDED(hResult))</div>
+<div class="line"><span class="lineno">  425</span>            {</div>
+<div class="line"><span class="lineno">  426</span>                <span class="comment">// 作成成功</span></div>
+<div class="line"><span class="lineno">  427</span>                info.isRequested = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  428</span>                <span class="keywordflow">return</span> info;</div>
+<div class="line"><span class="lineno">  429</span>            }</div>
+<div class="line"><span class="lineno">  430</span>    }</div>
+<div class="line"><span class="lineno">  431</span> </div>
+<div class="line"><span class="lineno">  432</span>    <span class="comment">// 全て使用済みの場合は、0番目のモニターを返す</span></div>
+<div class="line"><span class="lineno">  433</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a4d7457fd297d3e6b14fe95c6f7fae9ac">DirectX11Draw::monitorInfos_</a>.empty())</div>
+<div class="line"><span class="lineno">  434</span>    {</div>
+<div class="line"><span class="lineno">  435</span>        HRESULT hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#ae7451dbe79f12e76a418ec86c1b97d58">DirectX11Draw::pDXGIAdapters_</a>[0]-&gt;EnumOutputs(0, ppOutput);</div>
+<div class="line"><span class="lineno">  436</span>        <span class="keywordflow">if</span> (SUCCEEDED(hResult))</div>
+<div class="line"><span class="lineno">  437</span>        {</div>
+<div class="line"><span class="lineno">  438</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a4d7457fd297d3e6b14fe95c6f7fae9ac">DirectX11Draw::monitorInfos_</a>[0];</div>
+<div class="line"><span class="lineno">  439</span>        }</div>
+<div class="line"><span class="lineno">  440</span>    }</div>
+<div class="line"><span class="lineno">  441</span> </div>
+<div class="line"><span class="lineno">  442</span>    <span class="comment">// モニターの割り当て失敗</span></div>
+<div class="line"><span class="lineno">  443</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  444</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a4d7457fd297d3e6b14fe95c6f7fae9ac"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a4d7457fd297d3e6b14fe95c6f7fae9ac">mtgb::DirectX11Draw::monitorInfos_</a></div><div class="ttdeci">static std::vector&lt; MonitorInfo &gt; monitorInfos_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00145">DirectX11Draw.h:145</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_ae7451dbe79f12e76a418ec86c1b97d58"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#ae7451dbe79f12e76a418ec86c1b97d58">mtgb::DirectX11Draw::pDXGIAdapters_</a></div><div class="ttdeci">static std::vector&lt; ComPtr&lt; IDXGIAdapter1 &gt; &gt; pDXGIAdapters_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00143">DirectX11Draw.h:143</a></div></div>
+<div class="ttc" id="astructmtgb_1_1MonitorInfo_html_ad5568d8dd9558b1c856424641e0f91bd"><div class="ttname"><a href="structmtgb_1_1MonitorInfo.html#ad5568d8dd9558b1c856424641e0f91bd">mtgb::MonitorInfo::INVALID_INDEX</a></div><div class="ttdeci">static constexpr int INVALID_INDEX</div><div class="ttdef"><b>Definition:</b> <a href="MonitorInfo_8h_source.html#l00014">MonitorInfo.h:14</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MonitorInfo_8h_source.html#l00014">mtgb::MonitorInfo::INVALID_INDEX</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00145">mtgb::DirectX11Draw::monitorInfos_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00143">mtgb::DirectX11Draw::pDXGIAdapters_</a>.</p>
+
+</div>
+</div>
+<a id="a68fb6eb4989ee1e0c374f3565c6ed250" name="a68fb6eb4989ee1e0c374f3565c6ed250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68fb6eb4989ee1e0c374f3565c6ed250">&#9670;&#160;</a></span>ChangeRenderTargets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::ChangeRenderTargets </td>
+          <td>(</td>
+          <td class="paramtype">ComPtr&lt; ID3D11RenderTargetView &gt;&#160;</td>
+          <td class="paramname"><em>pRenderTargetView</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ComPtr&lt; ID3D11DepthStencilView &gt;&#160;</td>
+          <td class="paramname"><em>pDepthStencilView</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00394">394</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  395</span>{</div>
+<div class="line"><span class="lineno">  396</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a6247f3a9346fefc8db93c2d60c14d6dd">DirectX11Draw::pRenderTargetView_</a> = pRenderTargetView;</div>
+<div class="line"><span class="lineno">  397</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a0017c5b9f00e33a2a66f6a26d88fe425">DirectX11Draw::pDepthStencilView_</a> = pDepthStencilView;</div>
+<div class="line"><span class="lineno">  398</span> </div>
+<div class="line"><span class="lineno">  399</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;OMSetRenderTargets(1, pRenderTargetView.GetAddressOf(), pDepthStencilView.Get());</div>
+<div class="line"><span class="lineno">  400</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a0017c5b9f00e33a2a66f6a26d88fe425"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a0017c5b9f00e33a2a66f6a26d88fe425">mtgb::DirectX11Draw::pDepthStencilView_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11DepthStencilView &gt; pDepthStencilView_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00150">DirectX11Draw.h:150</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a6247f3a9346fefc8db93c2d60c14d6dd"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a6247f3a9346fefc8db93c2d60c14d6dd">mtgb::DirectX11Draw::pRenderTargetView_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11RenderTargetView &gt; pRenderTargetView_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00149">DirectX11Draw.h:149</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_acad8126bc4c4a3ab9b2c871cf5dc94d1"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">mtgb::DirectX11Draw::pContext_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11DeviceContext &gt; pContext_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00141">DirectX11Draw.h:141</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="DirectX11Draw_8h_source.html#l00141">mtgb::DirectX11Draw::pContext_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00150">mtgb::DirectX11Draw::pDepthStencilView_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00149">mtgb::DirectX11Draw::pRenderTargetView_</a>.</p>
+
+</div>
+</div>
+<a id="ae73722e1f2b328443a1b614d22c2c4bb" name="ae73722e1f2b328443a1b614d22c2c4bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73722e1f2b328443a1b614d22c2c4bb">&#9670;&#160;</a></span>ChangeSwapChain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::ChangeSwapChain </td>
+          <td>(</td>
+          <td class="paramtype">ComPtr&lt; IDXGISwapChain1 &gt;&#160;</td>
+          <td class="paramname"><em>pSwapChain1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00402">402</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  403</span>{</div>
+<div class="line"><span class="lineno">  404</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#ab8950632def39ee2d14a268319911cc6">DirectX11Draw::pSwapChain1_</a> = pSwapChain1;</div>
+<div class="line"><span class="lineno">  405</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_ab8950632def39ee2d14a268319911cc6"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#ab8950632def39ee2d14a268319911cc6">mtgb::DirectX11Draw::pSwapChain1_</a></div><div class="ttdeci">static ComPtr&lt; IDXGISwapChain1 &gt; pSwapChain1_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00148">DirectX11Draw.h:148</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="DirectX11Draw_8h_source.html#l00148">mtgb::DirectX11Draw::pSwapChain1_</a>.</p>
+
+</div>
+</div>
+<a id="a46655c9165065413565a44cd82099076" name="a46655c9165065413565a44cd82099076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46655c9165065413565a44cd82099076">&#9670;&#160;</a></span>ChangeViewport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::ChangeViewport </td>
+          <td>(</td>
+          <td class="paramtype">const D3D11_VIEWPORT &amp;&#160;</td>
+          <td class="paramname"><em>viewport</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00389">389</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  390</span>{</div>
+<div class="line"><span class="lineno">  391</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;RSSetViewports(1, &amp;viewport);</div>
+<div class="line"><span class="lineno">  392</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="DirectX11Draw_8h_source.html#l00141">mtgb::DirectX11Draw::pContext_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="Direct3DResource_8cpp_source.html#l00034">mtgb::Direct3DResource::SetResource()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1DirectX11Manager_a46655c9165065413565a44cd82099076_icgraph.svg" width="426" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac3504e33dbb728ccefb7349e376d55d8" name="ac3504e33dbb728ccefb7349e376d55d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3504e33dbb728ccefb7349e376d55d8">&#9670;&#160;</a></span>ClearState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::ClearState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00456">456</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  457</span>{</div>
+<div class="line"><span class="lineno">  458</span>    <span class="comment">// パイプラインにバインドされた全てをリセット</span></div>
+<div class="line"><span class="lineno">  459</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;ClearState();</div>
+<div class="line"><span class="lineno">  460</span>    <span class="comment">// 描画コマンドを強制的にGPUに送り出す</span></div>
+<div class="line"><span class="lineno">  461</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;Flush();</div>
+<div class="line"><span class="lineno">  462</span> </div>
+<div class="line"><span class="lineno">  463</span>    Game::System&lt;Direct2D&gt;().Reset();</div>
+<div class="line"><span class="lineno">  464</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a1d9cd9a0d13142311ac7e38b7178d0f1">DirectX11Draw::pDepthStencil_</a>.Reset();</div>
+<div class="line"><span class="lineno">  465</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a0017c5b9f00e33a2a66f6a26d88fe425">DirectX11Draw::pDepthStencilView_</a>.Reset();</div>
+<div class="line"><span class="lineno">  466</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a6247f3a9346fefc8db93c2d60c14d6dd">DirectX11Draw::pRenderTargetView_</a>.Reset();</div>
+<div class="line"><span class="lineno">  467</span>    <span class="comment">//DirectX11Draw::pSwapChain1_.Reset();</span></div>
+<div class="line"><span class="lineno">  468</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a1d9cd9a0d13142311ac7e38b7178d0f1"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a1d9cd9a0d13142311ac7e38b7178d0f1">mtgb::DirectX11Draw::pDepthStencil_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11Texture2D &gt; pDepthStencil_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00152">DirectX11Draw.h:152</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="DirectX11Draw_8h_source.html#l00141">mtgb::DirectX11Draw::pContext_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00152">mtgb::DirectX11Draw::pDepthStencil_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00150">mtgb::DirectX11Draw::pDepthStencilView_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00149">mtgb::DirectX11Draw::pRenderTargetView_</a>.</p>
+
+</div>
+</div>
+<a id="aa0add2c4d52089ca67a1b60f16c95074" name="aa0add2c4d52089ca67a1b60f16c95074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0add2c4d52089ca67a1b60f16c95074">&#9670;&#160;</a></span>CompileShader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::CompileShader </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>_fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">ShaderType</a> &amp;&#160;</td>
+          <td class="paramname"><em>_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const D3D11_INPUT_ELEMENT_DESC *&#160;</td>
+          <td class="paramname"><em>_pHLSLLayout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>_layoutLength</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CD3D11_RASTERIZER_DESC *&#160;</td>
+          <td class="paramname"><em>_pRasterizerDesc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>シェーダファイルをコンパイルする </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_fileName</td><td>ファイルパス</td></tr>
+    <tr><td class="paramname">_type</td><td>シェーダタイプ</td></tr>
+    <tr><td class="paramname">_pHLSLLayout</td><td>入力情報配列</td></tr>
+    <tr><td class="paramname">_layoutLength</td><td>入力情報配列の要素数</td></tr>
+    <tr><td class="paramname">_pRasterizerDesc</td><td>ラスタライザの設定</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00873">873</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  879</span>{</div>
+<div class="line"><span class="lineno">  880</span>    HLSLInclude hlslInclude{};</div>
+<div class="line"><span class="lineno">  881</span>    HRESULT hResult{};</div>
+<div class="line"><span class="lineno">  882</span> </div>
+<div class="line"><span class="lineno">  883</span><span class="preprocessor">#pragma region 頂点シェーダ</span></div>
+<div class="line"><span class="lineno">  884</span>    <span class="comment">// 項点シェーダのインタフェース</span></div>
+<div class="line"><span class="lineno">  885</span>    ID3DBlob* pCompileVS{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><span class="lineno">  886</span> </div>
+<div class="line"><span class="lineno">  887</span>    <span class="comment">// 頂点シェーダのコンパイル</span></div>
+<div class="line"><span class="lineno">  888</span>    hResult = D3DCompileFromFile(</div>
+<div class="line"><span class="lineno">  889</span>        _fileName.c_str(),  <span class="comment">// ファイルパス</span></div>
+<div class="line"><span class="lineno">  890</span>        <span class="keyword">nullptr</span>,            <span class="comment">// シェーダマクロの配列</span></div>
+<div class="line"><span class="lineno">  891</span>        &amp;hlslInclude,       <span class="comment">// インクルードするやつ</span></div>
+<div class="line"><span class="lineno">  892</span>        <span class="stringliteral">&quot;VS&quot;</span>,               <span class="comment">// エントリポイントの関数名</span></div>
+<div class="line"><span class="lineno">  893</span>        <span class="stringliteral">&quot;vs_5_0&quot;</span>,           <span class="comment">// シェーダのバージョン (オプションで付けるやつ)</span></div>
+<div class="line"><span class="lineno">  894</span>        0,                  <span class="comment">// オプションフラグ1</span></div>
+<div class="line"><span class="lineno">  895</span>        0,                  <span class="comment">// オプションフラグ2</span></div>
+<div class="line"><span class="lineno">  896</span>        &amp;pCompileVS,        <span class="comment">// コンパイル済みコードへのアクセスインタフェース</span></div>
+<div class="line"><span class="lineno">  897</span>        <span class="keyword">nullptr</span>);           <span class="comment">// エラーメッセージ受信用 無し</span></div>
+<div class="line"><span class="lineno">  898</span> </div>
+<div class="line"><span class="lineno">  899</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// 頂点シェーダのコンパイルに成功</span></div>
+<div class="line"><span class="lineno">  900</span>        &amp;&amp; <span class="stringliteral">&quot;頂点シェーダのコンパイルに失敗 @DirectX11Manager::CompileShader&quot;</span>);</div>
+<div class="line"><span class="lineno">  901</span> </div>
+<div class="line"><span class="lineno">  902</span>    <span class="comment">// 頂点シェーダを作成し、指定タイプのバンドルに格納する</span></div>
+<div class="line"><span class="lineno">  903</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateVertexShader(</div>
+<div class="line"><span class="lineno">  904</span>        pCompileVS-&gt;GetBufferPointer(),  <span class="comment">// コンパイルされたバッファのポインタ</span></div>
+<div class="line"><span class="lineno">  905</span>        pCompileVS-&gt;GetBufferSize(),     <span class="comment">// バッファのサイズ</span></div>
+<div class="line"><span class="lineno">  906</span>        <span class="keyword">nullptr</span>,                         <span class="comment">// リンケージクラス: 無し</span></div>
+<div class="line"><span class="lineno">  907</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a8c67af843c5c17a6dfb5c418ac22f345">DirectX11Draw::shaderBundle_</a>[<span class="keyword">static_cast&lt;</span>int8_t<span class="keyword">&gt;</span>(_type)].<a class="code hl_variable" href="structmtgb_1_1ShaderBundle.html#a15eb6181865f57211aabdd5ed1d40aa8">pVertexShader</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  908</span> </div>
+<div class="line"><span class="lineno">  909</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// 頂点シェーダの作成に成功</span></div>
+<div class="line"><span class="lineno">  910</span>        &amp;&amp; <span class="stringliteral">&quot;頂点シェーダの作成に失敗 @DirectX11Manager::CompileShader&quot;</span>);</div>
+<div class="line"><span class="lineno">  911</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">  912</span> </div>
+<div class="line"><span class="lineno">  913</span><span class="preprocessor">#pragma region ピクセルシェーダ</span></div>
+<div class="line"><span class="lineno">  914</span>    <span class="comment">// ピクセルシェーダのインタフェース</span></div>
+<div class="line"><span class="lineno">  915</span>    ID3DBlob* pCompilePS{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><span class="lineno">  916</span> </div>
+<div class="line"><span class="lineno">  917</span>    <span class="comment">// ピクセルシェーダのコンパイル</span></div>
+<div class="line"><span class="lineno">  918</span>    hResult = D3DCompileFromFile(</div>
+<div class="line"><span class="lineno">  919</span>        _fileName.c_str(),  <span class="comment">// ファイルパス</span></div>
+<div class="line"><span class="lineno">  920</span>        <span class="keyword">nullptr</span>,            <span class="comment">// シェーダマクロの配列</span></div>
+<div class="line"><span class="lineno">  921</span>        &amp;hlslInclude,       <span class="comment">// インクルードするやつ</span></div>
+<div class="line"><span class="lineno">  922</span>        <span class="stringliteral">&quot;PS&quot;</span>,               <span class="comment">// エントリポイントの関数名</span></div>
+<div class="line"><span class="lineno">  923</span>        <span class="stringliteral">&quot;ps_5_0&quot;</span>,           <span class="comment">// シェーダのバージョン (オプションで付けるやつ)</span></div>
+<div class="line"><span class="lineno">  924</span>        0,                  <span class="comment">// オプションフラグ1</span></div>
+<div class="line"><span class="lineno">  925</span>        0,                  <span class="comment">// オプションフラグ2</span></div>
+<div class="line"><span class="lineno">  926</span>        &amp;pCompilePS,        <span class="comment">// コンパイル済みコードへのアクセスインタフェース</span></div>
+<div class="line"><span class="lineno">  927</span>        <span class="keyword">nullptr</span>);           <span class="comment">// エラーメッセージ受信用 無し</span></div>
+<div class="line"><span class="lineno">  928</span> </div>
+<div class="line"><span class="lineno">  929</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// ピクセルシェーダのコンパイルに成功</span></div>
+<div class="line"><span class="lineno">  930</span>        &amp;&amp; <span class="stringliteral">&quot;ピクセルシェーダのコンパイルに失敗 @DirectX11Manager::CompileShader&quot;</span>);</div>
+<div class="line"><span class="lineno">  931</span> </div>
+<div class="line"><span class="lineno">  932</span>    <span class="comment">// ピクセルシェーダを作成し、指定タイプのバンドルに格納する</span></div>
+<div class="line"><span class="lineno">  933</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreatePixelShader(</div>
+<div class="line"><span class="lineno">  934</span>        pCompilePS-&gt;GetBufferPointer(),  <span class="comment">// コンパイルされたバッファのポインタ</span></div>
+<div class="line"><span class="lineno">  935</span>        pCompilePS-&gt;GetBufferSize(),     <span class="comment">// バッファのサイズ</span></div>
+<div class="line"><span class="lineno">  936</span>        <span class="keyword">nullptr</span>,                         <span class="comment">// リンケージクラス: 無し</span></div>
+<div class="line"><span class="lineno">  937</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a8c67af843c5c17a6dfb5c418ac22f345">DirectX11Draw::shaderBundle_</a>[<span class="keyword">static_cast&lt;</span>int8_t<span class="keyword">&gt;</span>(_type)].<a class="code hl_variable" href="structmtgb_1_1ShaderBundle.html#aad71829a629bed2cce28c4888e598049">pPixelShader</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  938</span> </div>
+<div class="line"><span class="lineno">  939</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// ピクセルシェーダの作成に成功</span></div>
+<div class="line"><span class="lineno">  940</span>        &amp;&amp; <span class="stringliteral">&quot;ピクセルシェーダの作成に失敗 @DirectX11Manager::CompileShader&quot;</span>);</div>
+<div class="line"><span class="lineno">  941</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">  942</span> </div>
+<div class="line"><span class="lineno">  943</span><span class="preprocessor">#pragma region 頂点レイアウト</span></div>
+<div class="line"><span class="lineno">  944</span>    <span class="comment">// 頂点レイアウトを作成し、指定タイプのバンドルに格納する</span></div>
+<div class="line"><span class="lineno">  945</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateInputLayout(</div>
+<div class="line"><span class="lineno">  946</span>        _pHLSLLayout,                    <span class="comment">// 入力データ型配列</span></div>
+<div class="line"><span class="lineno">  947</span>        _layoutLength,                   <span class="comment">// 入力データ型配列の要素数</span></div>
+<div class="line"><span class="lineno">  948</span>        pCompileVS-&gt;GetBufferPointer(),  <span class="comment">// コンパイルされたバッファのポインタ</span></div>
+<div class="line"><span class="lineno">  949</span>        pCompileVS-&gt;GetBufferSize(),     <span class="comment">// バッファのサイズ</span></div>
+<div class="line"><span class="lineno">  950</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a8c67af843c5c17a6dfb5c418ac22f345">DirectX11Draw::shaderBundle_</a>[<span class="keyword">static_cast&lt;</span>int8_t<span class="keyword">&gt;</span>(_type)].<a class="code hl_variable" href="structmtgb_1_1ShaderBundle.html#a001f5b937ba2fb6a1eb443676698c06a">pVertexLayout</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  951</span> </div>
+<div class="line"><span class="lineno">  952</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// 頂点レイアウトの作成に成功</span></div>
+<div class="line"><span class="lineno">  953</span>        &amp;&amp; <span class="stringliteral">&quot;頂点レイアウトの作成に失敗 @DirectX11Manager::CompileShader&quot;</span>);</div>
+<div class="line"><span class="lineno">  954</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">  955</span> </div>
+<div class="line"><span class="lineno">  956</span><span class="preprocessor">#pragma region ラスタライザ</span></div>
+<div class="line"><span class="lineno">  957</span>    <span class="comment">// ラスタライザを作成し、指定タイプのバンドルに格納する</span></div>
+<div class="line"><span class="lineno">  958</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateRasterizerState(</div>
+<div class="line"><span class="lineno">  959</span>        _pRasterizerDesc,  <span class="comment">// ラスタライザの設定</span></div>
+<div class="line"><span class="lineno">  960</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a8c67af843c5c17a6dfb5c418ac22f345">DirectX11Draw::shaderBundle_</a>[<span class="keyword">static_cast&lt;</span>int8_t<span class="keyword">&gt;</span>(_type)].pRasterizerState.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  961</span> </div>
+<div class="line"><span class="lineno">  962</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// ラスタライザの作成に成功</span></div>
+<div class="line"><span class="lineno">  963</span>        &amp;&amp; <span class="stringliteral">&quot;ラスタライザの作成に失敗 @DirectX11Manager::CompileShader&quot;</span>);</div>
+<div class="line"><span class="lineno">  964</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">  965</span> </div>
+<div class="line"><span class="lineno">  966</span> </div>
+<div class="line"><span class="lineno">  967</span>    <span class="comment">// 解放していく</span></div>
+<div class="line"><span class="lineno">  968</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pCompileVS);</div>
+<div class="line"><span class="lineno">  969</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pCompilePS);</div>
+<div class="line"><span class="lineno">  970</span>}</div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00009">MTAssert.h:9</a></div></div>
+<div class="ttc" id="aReleaseUtility_8h_html_a6038f7bdb274c2e159988a57dedbf93d"><div class="ttname"><a href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a></div><div class="ttdeci">#define SAFE_RELEASE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00020">ReleaseUtility.h:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a5339b5f02833ad0ae154686c4a0ae037"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">mtgb::DirectX11Draw::pDevice_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11Device &gt; pDevice_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00140">DirectX11Draw.h:140</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a8c67af843c5c17a6dfb5c418ac22f345"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a8c67af843c5c17a6dfb5c418ac22f345">mtgb::DirectX11Draw::shaderBundle_</a></div><div class="ttdeci">static ShaderBundle shaderBundle_[static_cast&lt; int8_t &gt;(ShaderType::Max)]</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00154">DirectX11Draw.h:154</a></div></div>
+<div class="ttc" id="astructmtgb_1_1ShaderBundle_html_a001f5b937ba2fb6a1eb443676698c06a"><div class="ttname"><a href="structmtgb_1_1ShaderBundle.html#a001f5b937ba2fb6a1eb443676698c06a">mtgb::ShaderBundle::pVertexLayout</a></div><div class="ttdeci">ComPtr&lt; ID3D11InputLayout &gt; pVertexLayout</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00062">DirectX11Draw.h:62</a></div></div>
+<div class="ttc" id="astructmtgb_1_1ShaderBundle_html_a15eb6181865f57211aabdd5ed1d40aa8"><div class="ttname"><a href="structmtgb_1_1ShaderBundle.html#a15eb6181865f57211aabdd5ed1d40aa8">mtgb::ShaderBundle::pVertexShader</a></div><div class="ttdeci">ComPtr&lt; ID3D11VertexShader &gt; pVertexShader</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00068">DirectX11Draw.h:68</a></div></div>
+<div class="ttc" id="astructmtgb_1_1ShaderBundle_html_aad71829a629bed2cce28c4888e598049"><div class="ttname"><a href="structmtgb_1_1ShaderBundle.html#aad71829a629bed2cce28c4888e598049">mtgb::ShaderBundle::pPixelShader</a></div><div class="ttdeci">ComPtr&lt; ID3D11PixelShader &gt; pPixelShader</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00074">DirectX11Draw.h:74</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00140">mtgb::DirectX11Draw::pDevice_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00074">mtgb::ShaderBundle::pPixelShader</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00062">mtgb::ShaderBundle::pVertexLayout</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00068">mtgb::ShaderBundle::pVertexShader</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00020">SAFE_RELEASE</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00154">mtgb::DirectX11Draw::shaderBundle_</a>.</p>
+
+</div>
+</div>
+<a id="a52015b0ca2011256df1d14622eb42c31" name="a52015b0ca2011256df1d14622eb42c31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52015b0ca2011256df1d14622eb42c31">&#9670;&#160;</a></span>CreateDepthStencilAndDepthStencilView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a>&#160;</td>
+          <td class="paramname"><em>bufSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11Texture2D **&#160;</td>
+          <td class="paramname"><em>ppDepthStencil</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11DepthStencilView **&#160;</td>
+          <td class="paramname"><em>ppDepthStencilView</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00345">345</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  346</span>{</div>
+<div class="line"><span class="lineno">  347</span>    HRESULT hResult{};</div>
+<div class="line"><span class="lineno">  348</span>    </div>
+<div class="line"><span class="lineno">  349</span>    <span class="comment">//const Vector2Int SCREEN_SIZE{ Game::System&lt;Screen&gt;().GetSize() };</span></div>
+<div class="line"><span class="lineno">  350</span>    </div>
+<div class="line"><span class="lineno">  351</span>    <span class="comment">// 深度バッファの設定</span></div>
+<div class="line"><span class="lineno">  352</span>    <span class="keyword">const</span> D3D11_TEXTURE2D_DESC DEPTH_TEXTURE2D_DESC</div>
+<div class="line"><span class="lineno">  353</span>    {</div>
+<div class="line"><span class="lineno">  354</span>        .Width = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(bufSize.x),</div>
+<div class="line"><span class="lineno">  355</span>        .Height = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(bufSize.y),</div>
+<div class="line"><span class="lineno">  356</span>        .MipLevels = 1,</div>
+<div class="line"><span class="lineno">  357</span>        .ArraySize = 1,</div>
+<div class="line"><span class="lineno">  358</span>        .Format = DXGI_FORMAT_D32_FLOAT,</div>
+<div class="line"><span class="lineno">  359</span>        .SampleDesc</div>
+<div class="line"><span class="lineno">  360</span>        {</div>
+<div class="line"><span class="lineno">  361</span>            .Count = 1,</div>
+<div class="line"><span class="lineno">  362</span>            .Quality = 0</div>
+<div class="line"><span class="lineno">  363</span>        },</div>
+<div class="line"><span class="lineno">  364</span>        .Usage = D3D11_USAGE_DEFAULT,</div>
+<div class="line"><span class="lineno">  365</span>        .BindFlags = D3D11_BIND_DEPTH_STENCIL,</div>
+<div class="line"><span class="lineno">  366</span>        .CPUAccessFlags = 0,</div>
+<div class="line"><span class="lineno">  367</span>        .MiscFlags = 0,</div>
+<div class="line"><span class="lineno">  368</span>    };</div>
+<div class="line"><span class="lineno">  369</span> </div>
+<div class="line"><span class="lineno">  370</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateTexture2D(</div>
+<div class="line"><span class="lineno">  371</span>        &amp;DEPTH_TEXTURE2D_DESC,</div>
+<div class="line"><span class="lineno">  372</span>        <span class="keyword">nullptr</span>,</div>
+<div class="line"><span class="lineno">  373</span>        ppDepthStencil);</div>
+<div class="line"><span class="lineno">  374</span> </div>
+<div class="line"><span class="lineno">  375</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// 深度ステンシルバッファの作成に失敗</span></div>
+<div class="line"><span class="lineno">  376</span>        &amp;&amp; <span class="stringliteral">&quot;深度ステンシルバッファの作成に失敗&quot;</span>);</div>
+<div class="line"><span class="lineno">  377</span> </div>
+<div class="line"><span class="lineno">  378</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateDepthStencilView(</div>
+<div class="line"><span class="lineno">  379</span>        *ppDepthStencil,</div>
+<div class="line"><span class="lineno">  380</span>        <span class="keyword">nullptr</span>,</div>
+<div class="line"><span class="lineno">  381</span>        ppDepthStencilView);</div>
+<div class="line"><span class="lineno">  382</span> </div>
+<div class="line"><span class="lineno">  383</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// 深度ステンシルビュの作成に成功</span></div>
+<div class="line"><span class="lineno">  384</span>        &amp;&amp; <span class="stringliteral">&quot;深度ステンシルビューの作成に失敗&quot;</span>);</div>
+<div class="line"><span class="lineno">  385</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00140">mtgb::DirectX11Draw::pDevice_</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00015">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
+
+</div>
+</div>
+<a id="a68a3d01ec709c4df020e87fef939e9e9" name="a68a3d01ec709c4df020e87fef939e9e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68a3d01ec709c4df020e87fef939e9e9">&#9670;&#160;</a></span>CreateDXGISurface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::CreateDXGISurface </td>
+          <td>(</td>
+          <td class="paramtype">IDXGISwapChain1 *&#160;</td>
+          <td class="paramname"><em>pSwapChain1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDXGISurface **&#160;</td>
+          <td class="paramname"><em>ppDXGISurface</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00230">230</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>{</div>
+<div class="line"><span class="lineno">  232</span>    HRESULT hResult{};</div>
+<div class="line"><span class="lineno">  233</span>    </div>
+<div class="line"><span class="lineno">  234</span>    <span class="comment">//バックバッファ受け取る</span></div>
+<div class="line"><span class="lineno">  235</span>    ComPtr&lt;ID3D11Texture2D&gt; pBackBuffer = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  236</span>    hResult = pSwapChain1-&gt;GetBuffer(0, _uuidof(ID3D11Texture2D), <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>**<span class="keyword">&gt;</span>(pBackBuffer.GetAddressOf()));</div>
+<div class="line"><span class="lineno">  237</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><span class="lineno">  238</span>        &amp;&amp; <span class="stringliteral">&quot;GetBufferに失敗 @DirectX11Manager::CreateDXGISurface&quot;</span>);</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>    <span class="comment">//バックバッファからIDXGISurfaceインターフェースを取り出す</span></div>
+<div class="line"><span class="lineno">  241</span>    hResult = pBackBuffer-&gt;QueryInterface(IID_PPV_ARGS(ppDXGISurface));</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>    pBackBuffer.Reset();</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><span class="lineno">  246</span>        &amp;&amp; <span class="stringliteral">&quot;QueryInterfaceに失敗 @DirectX11Manager::CreateDXGISurface&quot;</span>);</div>
+<div class="line"><span class="lineno">  247</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>.</p>
+
+</div>
+</div>
+<a id="a7eaa29d08d25bcf192e0654976cb0d5a" name="a7eaa29d08d25bcf192e0654976cb0d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eaa29d08d25bcf192e0654976cb0d5a">&#9670;&#160;</a></span>CreateRenderTargetView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::CreateRenderTargetView </td>
+          <td>(</td>
+          <td class="paramtype">IDXGISwapChain1 *&#160;</td>
+          <td class="paramname"><em>pSwapChain1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11RenderTargetView **&#160;</td>
+          <td class="paramname"><em>ppRenderTargetView</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00316">316</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  317</span>{</div>
+<div class="line"><span class="lineno">  318</span>    HRESULT hResult{};</div>
+<div class="line"><span class="lineno">  319</span>    </div>
+<div class="line"><span class="lineno">  320</span>    ComPtr&lt;ID3D11Texture2D&gt; pBackBuffer{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><span class="lineno">  321</span>    hResult = pSwapChain1-&gt;GetBuffer(0, __uuidof(ID3D11Texture2D), <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>**<span class="keyword">&gt;</span>(pBackBuffer.GetAddressOf()));</div>
+<div class="line"><span class="lineno">  322</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) </div>
+<div class="line"><span class="lineno">  323</span>        &amp;&amp; <span class="stringliteral">&quot;GetBufferに失敗 @DirectX11Manager::CreateRenderTargetView&quot;</span>);</div>
+<div class="line"><span class="lineno">  324</span> </div>
+<div class="line"><span class="lineno">  325</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateRenderTargetView(pBackBuffer.Get(), <span class="keyword">nullptr</span>, ppRenderTargetView);</div>
+<div class="line"><span class="lineno">  326</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><span class="lineno">  327</span>        &amp;&amp; <span class="stringliteral">&quot;CreateRenderTargetViewに失敗 @DirectX11Manager::CreateRenderTargetView&quot;</span>);</div>
+<div class="line"><span class="lineno">  328</span> </div>
+<div class="line"><span class="lineno">  329</span>    pBackBuffer.Reset();</div>
+<div class="line"><span class="lineno">  330</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00140">mtgb::DirectX11Draw::pDevice_</a>.</p>
+
+</div>
+</div>
+<a id="a8f2b6e0533285bf0f577eae8e2e4e36f" name="a8f2b6e0533285bf0f577eae8e2e4e36f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f2b6e0533285bf0f577eae8e2e4e36f">&#9670;&#160;</a></span>CreateSwapChain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::CreateSwapChain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a>&#160;</td>
+          <td class="paramname"><em>hWnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDXGIOutput *&#160;</td>
+          <td class="paramname"><em>pOutput</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDXGISwapChain1 **&#160;</td>
+          <td class="paramname"><em>ppSwapChain1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00251">251</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  252</span>{</div>
+<div class="line"><span class="lineno">  253</span>    HRESULT hResult{};</div>
+<div class="line"><span class="lineno">  254</span>    </div>
+<div class="line"><span class="lineno">  255</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a> SCREEN_SIZE{ Game::System&lt;Screen&gt;().GetSize() };</div>
+<div class="line"><span class="lineno">  256</span>    </div>
+<div class="line"><span class="lineno">  257</span>    DXGI_SWAP_CHAIN_DESC1 desc</div>
+<div class="line"><span class="lineno">  258</span>    {</div>
+<div class="line"><span class="lineno">  259</span>        .Width = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(SCREEN_SIZE.x),<span class="comment">//解像度(ピクセル数)。0ならウィンドウのサイズに合わせる</span></div>
+<div class="line"><span class="lineno">  260</span>        .Height = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(SCREEN_SIZE.y),<span class="comment">//解像度(ピクセル数)。0ならウィンドウのサイズに合わせる</span></div>
+<div class="line"><span class="lineno">  261</span>        .Format = DXGI_FORMAT_R8G8B8A8_UNORM,  <span class="comment">// 使える色数</span></div>
+<div class="line"><span class="lineno">  262</span>        .Stereo = FALSE,<span class="comment">//ステレオ(3D立体視)表示を有効にするか</span></div>
+<div class="line"><span class="lineno">  263</span>        .SampleDesc</div>
+<div class="line"><span class="lineno">  264</span>        {</div>
+<div class="line"><span class="lineno">  265</span>            .Count = 1,</div>
+<div class="line"><span class="lineno">  266</span>            .Quality = 0,</div>
+<div class="line"><span class="lineno">  267</span>        },</div>
+<div class="line"><span class="lineno">  268</span>        .BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT,</div>
+<div class="line"><span class="lineno">  269</span>        .BufferCount = 2,  <span class="comment">// 裏画面の枚数</span></div>
+<div class="line"><span class="lineno">  270</span>        .Scaling = DXGI_SCALING_STRETCH,</div>
+<div class="line"><span class="lineno">  271</span>        .SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD,</div>
+<div class="line"><span class="lineno">  272</span>        .AlphaMode = DXGI_ALPHA_MODE_UNSPECIFIED,</div>
+<div class="line"><span class="lineno">  273</span>        .Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH</div>
+<div class="line"><span class="lineno">  274</span>    };</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>    <span class="comment">// 仮のフラグ、</span></div>
+<div class="line"><span class="lineno">  277</span>    <span class="keywordtype">bool</span> fullscreen = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  278</span>    DXGI_SWAP_CHAIN_FULLSCREEN_DESC fullscreenDesc = </div>
+<div class="line"><span class="lineno">  279</span>    {</div>
+<div class="line"><span class="lineno">  280</span>        .RefreshRate</div>
+<div class="line"><span class="lineno">  281</span>            {</div>
+<div class="line"><span class="lineno">  282</span>                .Numerator = 60,</div>
+<div class="line"><span class="lineno">  283</span>                .Denominator = 1</div>
+<div class="line"><span class="lineno">  284</span>            },</div>
+<div class="line"><span class="lineno">  285</span>        .ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED,</div>
+<div class="line"><span class="lineno">  286</span>        .Scaling = DXGI_MODE_SCALING_UNSPECIFIED,</div>
+<div class="line"><span class="lineno">  287</span>        .Windowed = FALSE, <span class="comment">// フルスクリーン</span></div>
+<div class="line"><span class="lineno">  288</span>    };</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span>    <span class="keywordflow">if</span> (fullscreen)</div>
+<div class="line"><span class="lineno">  291</span>    {</div>
+<div class="line"><span class="lineno">  292</span>        hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a2813fc18fc4f954a2ecee6c32e0ad5da">DirectX11Draw::pDXGIFactory_</a>-&gt;CreateSwapChainForHwnd(</div>
+<div class="line"><span class="lineno">  293</span>            <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>.<a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ab0926fb61d0db1d7c5f68fa830731d9e">Get</a>(),</div>
+<div class="line"><span class="lineno">  294</span>            hWnd,</div>
+<div class="line"><span class="lineno">  295</span>            &amp;desc,</div>
+<div class="line"><span class="lineno">  296</span>            &amp;fullscreenDesc,<span class="comment">//フルスクリーンの設定</span></div>
+<div class="line"><span class="lineno">  297</span>            pOutput,<span class="comment">//出力</span></div>
+<div class="line"><span class="lineno">  298</span>            ppSwapChain1</div>
+<div class="line"><span class="lineno">  299</span>        );</div>
+<div class="line"><span class="lineno">  300</span>    }</div>
+<div class="line"><span class="lineno">  301</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  302</span>    {</div>
+<div class="line"><span class="lineno">  303</span>        hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a2813fc18fc4f954a2ecee6c32e0ad5da">DirectX11Draw::pDXGIFactory_</a>-&gt;CreateSwapChainForHwnd(</div>
+<div class="line"><span class="lineno">  304</span>            <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>.<a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ab0926fb61d0db1d7c5f68fa830731d9e">Get</a>(),</div>
+<div class="line"><span class="lineno">  305</span>            hWnd,</div>
+<div class="line"><span class="lineno">  306</span>            &amp;desc,</div>
+<div class="line"><span class="lineno">  307</span>            <span class="keyword">nullptr</span>,<span class="comment">//初期状態をフルスクリーンにしたい場合のみDESCを渡して、そうでないならnullptrにしておいて必要に応じてSetFullscreenStateで切り替える</span></div>
+<div class="line"><span class="lineno">  308</span>            pOutput,<span class="comment">//出力</span></div>
+<div class="line"><span class="lineno">  309</span>            ppSwapChain1</div>
+<div class="line"><span class="lineno">  310</span>        );</div>
+<div class="line"><span class="lineno">  311</span>    }</div>
+<div class="line"><span class="lineno">  312</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><span class="lineno">  313</span>        &amp;&amp; <span class="stringliteral">&quot;CreateSwapChainForHwndに失敗 @DirectX11Manager::CreateSwapChain&quot;</span>);</div>
+<div class="line"><span class="lineno">  314</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a2813fc18fc4f954a2ecee6c32e0ad5da"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a2813fc18fc4f954a2ecee6c32e0ad5da">mtgb::DirectX11Draw::pDXGIFactory_</a></div><div class="ttdeci">static ComPtr&lt; IDXGIFactory2 &gt; pDXGIFactory_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00144">DirectX11Draw.h:144</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_ab0926fb61d0db1d7c5f68fa830731d9e"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#ab0926fb61d0db1d7c5f68fa830731d9e">mtgb::WinCtxRes::Get</a></div><div class="ttdeci">ResourceT &amp; Get(WindowContext ctx)</div><div class="ttdoc">リソースを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8h_source.html#l00022">WindowContextUtil.h:22</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a00d8f33cd3151768d71476946783af58"><div class="ttname"><a href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">mtgb::Vector2Int</a></div><div class="ttdeci">Vector2T&lt; int &gt; Vector2Int</div><div class="ttdef"><b>Definition:</b> <a href="Vector2Int_8h_source.html#l00007">Vector2Int.h:7</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00140">mtgb::DirectX11Draw::pDevice_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00144">mtgb::DirectX11Draw::pDXGIFactory_</a>.</p>
+
+</div>
+</div>
+<a id="aed10f75e1e88f14622c88e4135bda86e" name="aed10f75e1e88f14622c88e4135bda86e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed10f75e1e88f14622c88e4135bda86e">&#9670;&#160;</a></span>CreateViewport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::CreateViewport </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">D3D11_VIEWPORT &amp;&#160;</td>
+          <td class="paramname"><em>viewport</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00332">332</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  333</span>{</div>
+<div class="line"><span class="lineno">  334</span>    viewport =</div>
+<div class="line"><span class="lineno">  335</span>    {</div>
+<div class="line"><span class="lineno">  336</span>        .TopLeftX = 0,</div>
+<div class="line"><span class="lineno">  337</span>        .TopLeftY = 0,</div>
+<div class="line"><span class="lineno">  338</span>        .Width = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(size.x),</div>
+<div class="line"><span class="lineno">  339</span>        .Height = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(size.y),</div>
+<div class="line"><span class="lineno">  340</span>        .MinDepth = 0,</div>
+<div class="line"><span class="lineno">  341</span>        .MaxDepth = 1,</div>
+<div class="line"><span class="lineno">  342</span>    };</div>
+<div class="line"><span class="lineno">  343</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00015">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
+
+</div>
+</div>
+<a id="aa3d4c815765c2e86d5d7b80ad6d2e3e1" name="aa3d4c815765c2e86d5d7b80ad6d2e3e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3d4c815765c2e86d5d7b80ad6d2e3e1">&#9670;&#160;</a></span>EnumAvailableMonitors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::EnumAvailableMonitors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>利用可能なモニターを列挙する </p>
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00479">479</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  480</span>{</div>
+<div class="line"><span class="lineno">  481</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a4d7457fd297d3e6b14fe95c6f7fae9ac">DirectX11Draw::monitorInfos_</a>.clear();</div>
+<div class="line"><span class="lineno">  482</span> </div>
+<div class="line"><span class="lineno">  483</span>    ComPtr&lt;IDXGIAdapter1&gt; pAdapter;</div>
+<div class="line"><span class="lineno">  484</span>    <span class="keywordflow">for</span> (UINT adapterIndex = 0; adapterIndex &lt; <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#ae7451dbe79f12e76a418ec86c1b97d58">DirectX11Draw::pDXGIAdapters_</a>.size();adapterIndex++)</div>
+<div class="line"><span class="lineno">  485</span>    {</div>
+<div class="line"><span class="lineno">  486</span>        ComPtr&lt;IDXGIOutput&gt; pOutput;</div>
+<div class="line"><span class="lineno">  487</span>        UINT outputIndex = 0;</div>
+<div class="line"><span class="lineno">  488</span>        <span class="keywordflow">while</span>(<a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#ae7451dbe79f12e76a418ec86c1b97d58">DirectX11Draw::pDXGIAdapters_</a>[adapterIndex]-&gt;EnumOutputs(outputIndex, pOutput.GetAddressOf()) != DXGI_ERROR_NOT_FOUND)</div>
+<div class="line"><span class="lineno">  489</span>        {</div>
+<div class="line"><span class="lineno">  490</span>        </div>
+<div class="line"><span class="lineno">  491</span>            MonitorInfo info{};</div>
+<div class="line"><span class="lineno">  492</span>            info.adapterIndex = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(adapterIndex);</div>
+<div class="line"><span class="lineno">  493</span>            info.outputIndex = outputIndex;</div>
+<div class="line"><span class="lineno">  494</span>            info.isRequested = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  495</span>            HRESULT hResult = pOutput-&gt;GetDesc(&amp;info.desc);</div>
+<div class="line"><span class="lineno">  496</span>            <span class="keywordflow">if</span> (SUCCEEDED(hResult))</div>
+<div class="line"><span class="lineno">  497</span>            {</div>
+<div class="line"><span class="lineno">  498</span>                <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a4d7457fd297d3e6b14fe95c6f7fae9ac">DirectX11Draw::monitorInfos_</a>.push_back(info);</div>
+<div class="line"><span class="lineno">  499</span>            }</div>
+<div class="line"><span class="lineno">  500</span>            pOutput.Reset();</div>
+<div class="line"><span class="lineno">  501</span>            outputIndex++;</div>
+<div class="line"><span class="lineno">  502</span>        }</div>
+<div class="line"><span class="lineno">  503</span>    }</div>
+<div class="line"><span class="lineno">  504</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MonitorInfo_8h_source.html#l00009">mtgb::MonitorInfo::adapterIndex</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00145">mtgb::DirectX11Draw::monitorInfos_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00143">mtgb::DirectX11Draw::pDXGIAdapters_</a>.</p>
+
+</div>
+</div>
+<a id="aae58910e1447272081cedabc0194d774" name="aae58910e1447272081cedabc0194d774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae58910e1447272081cedabc0194d774">&#9670;&#160;</a></span>GetAvailableMonitorCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mtgb::DirectX11Manager::GetAvailableMonitorCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00446">446</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  447</span>{</div>
+<div class="line"><span class="lineno">  448</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a4d7457fd297d3e6b14fe95c6f7fae9ac">DirectX11Draw::monitorInfos_</a>.size());</div>
+<div class="line"><span class="lineno">  449</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="DirectX11Draw_8h_source.html#l00145">mtgb::DirectX11Draw::monitorInfos_</a>.</p>
+
+</div>
+</div>
+<a id="a4524835900f0d4d7339e9e4cdd1a2e01" name="a4524835900f0d4d7339e9e4cdd1a2e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4524835900f0d4d7339e9e4cdd1a2e01">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#ad8d30c1f67d663e07cd03f4df4cd2442">InitializeCommonResources</a>();</div>
+<div class="line"><span class="lineno">   33</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_ad8d30c1f67d663e07cd03f4df4cd2442"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#ad8d30c1f67d663e07cd03f4df4cd2442">mtgb::DirectX11Manager::InitializeCommonResources</a></div><div class="ttdeci">void InitializeCommonResources()</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00059">DirectX11Manager.cpp:59</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad8d30c1f67d663e07cd03f4df4cd2442" name="ad8d30c1f67d663e07cd03f4df4cd2442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8d30c1f67d663e07cd03f4df4cd2442">&#9670;&#160;</a></span>InitializeCommonResources()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::InitializeCommonResources </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
+<div class="line"><span class="lineno">   61</span>    HRESULT hResult{};</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    STARTUPINFO startupInfo{};</div>
+<div class="line"><span class="lineno">   64</span>    GetStartupInfo(&amp;startupInfo);</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordtype">int</span> nCmdShow = startupInfo.wShowWindow;</div>
+<div class="line"><span class="lineno">   66</span>    </div>
+<div class="line"><span class="lineno">   67</span>    D3D_FEATURE_LEVEL level{};</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><span class="lineno">   70</span>        &amp;&amp; <span class="stringliteral">&quot;QueryInterfaceに失敗 @DirectX11Manager::InitializeCommonResources&quot;</span>);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    hResult = CreateDXGIFactory1(_uuidof(IDXGIFactory2), <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>**<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a2813fc18fc4f954a2ecee6c32e0ad5da">DirectX11Draw::pDXGIFactory_</a>.ReleaseAndGetAddressOf()));</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><span class="lineno">   74</span>        &amp;&amp; <span class="stringliteral">&quot;CreateDXGIFactory1に失敗 @DirectX11Manager::InitializeCommonResources&quot;</span>);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    UINT i = 0;</div>
+<div class="line"><span class="lineno">   77</span>    ComPtr&lt;IDXGIAdapter1&gt; pAdapter = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a2813fc18fc4f954a2ecee6c32e0ad5da">DirectX11Draw::pDXGIFactory_</a>-&gt;EnumAdapters1(i, pAdapter.GetAddressOf()) != DXGI_ERROR_NOT_FOUND)</div>
+<div class="line"><span class="lineno">   79</span>    {</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#ae7451dbe79f12e76a418ec86c1b97d58">DirectX11Draw::pDXGIAdapters_</a>.push_back(pAdapter);</div>
+<div class="line"><span class="lineno">   81</span>        ++i;</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>        DXGI_ADAPTER_DESC1 desc;</div>
+<div class="line"><span class="lineno">   84</span>        pAdapter-&gt;GetDesc1(&amp;desc);</div>
+<div class="line"><span class="lineno">   85</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Manager.html#a60f943f84c4f292f9271b3c150d68513">adaptersDesc_</a>.push_back(desc);</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="line"><span class="lineno">   87</span>    </div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa3d4c815765c2e86d5d7b80ad6d2e3e1">EnumAvailableMonitors</a>(); <span class="comment">// モニターの列挙</span></div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    hResult = D3D11CreateDevice(</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keyword">nullptr</span>,</div>
+<div class="line"><span class="lineno">   92</span>        D3D_DRIVER_TYPE_HARDWARE,</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keyword">nullptr</span>,</div>
+<div class="line"><span class="lineno">   94</span>        D3D11_CREATE_DEVICE_DEBUG | D3D11_CREATE_DEVICE_BGRA_SUPPORT,</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keyword">nullptr</span>,</div>
+<div class="line"><span class="lineno">   96</span>        0,</div>
+<div class="line"><span class="lineno">   97</span>        D3D11_SDK_VERSION,</div>
+<div class="line"><span class="lineno">   98</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>.ReleaseAndGetAddressOf(),</div>
+<div class="line"><span class="lineno">   99</span>        &amp;level,</div>
+<div class="line"><span class="lineno">  100</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>.ReleaseAndGetAddressOf()</div>
+<div class="line"><span class="lineno">  101</span>    );</div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><span class="lineno">  103</span>     &amp;&amp; <span class="stringliteral">&quot;D3D11CreateDeviceに失敗 @DirectX11Manager::InitializeCommonResources&quot;</span>);</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;QueryInterface(_uuidof(IDXGIDevice1), (<span class="keywordtype">void</span>**)<a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a749644e99c98e9819b425c5c98be7571">DirectX11Draw::pDXGIDevice_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#af81c78943f7bed780257d221ee23bc9e">InitializeShaderBundle</a>();  <span class="comment">// シェーダバンドルの初期化</span></div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    <span class="keyword">const</span> D3D11_SAMPLER_DESC SAMPLER_DESC</div>
+<div class="line"><span class="lineno">  110</span>    {</div>
+<div class="line"><span class="lineno">  111</span>        .Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR,</div>
+<div class="line"><span class="lineno">  112</span>        .AddressU = D3D11_TEXTURE_ADDRESS_WRAP,</div>
+<div class="line"><span class="lineno">  113</span>        .AddressV = D3D11_TEXTURE_ADDRESS_WRAP,</div>
+<div class="line"><span class="lineno">  114</span>        .AddressW = D3D11_TEXTURE_ADDRESS_WRAP,</div>
+<div class="line"><span class="lineno">  115</span>    };</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateSamplerState(&amp;SAMPLER_DESC, <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#aee9bc0c977bdb81200a5d302f38f1037">DirectX11Draw::pDefaultSamplerState_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><span class="lineno">  119</span>        &amp;&amp; <span class="stringliteral">&quot;デフォルトのサンプラ作成に失敗 @DirectX11Manager::InitializeCommonResources&quot;</span>);</div>
+<div class="line"><span class="lineno">  120</span><span class="preprocessor">#pragma region 深度ステンシルステート作成</span></div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="comment">// BlendMode::Defaultの作成</span></div>
+<div class="line"><span class="lineno">  123</span>    D3D11_DEPTH_STENCIL_DESC DEPTH_STENCIL_DESC</div>
+<div class="line"><span class="lineno">  124</span>    {</div>
+<div class="line"><span class="lineno">  125</span>        .DepthEnable = TRUE,    <span class="comment">//深度テストを行うかどうか</span></div>
+<div class="line"><span class="lineno">  126</span>        .DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ALL,</div>
+<div class="line"><span class="lineno">  127</span>        .DepthFunc = D3D11_COMPARISON_LESS_EQUAL, <span class="comment">// 深度の比較方法 : LESS_EQUALは深度が元データ以下の場合に成功</span></div>
+<div class="line"><span class="lineno">  128</span>        .StencilEnable = TRUE,  <span class="comment">//ステンシルテストを行うかどうか</span></div>
+<div class="line"><span class="lineno">  129</span>        .StencilReadMask = {},</div>
+<div class="line"><span class="lineno">  130</span>        .StencilWriteMask = {},</div>
+<div class="line"><span class="lineno">  131</span>        .FrontFace <span class="comment">// カメラを向いているピクセルの深度、ステンシルテストの結果に対する操作を指定</span></div>
+<div class="line"><span class="lineno">  132</span>        {</div>
+<div class="line"><span class="lineno">  133</span>            .StencilFailOp = D3D11_STENCIL_OP_KEEP, <span class="comment">// ステンシルテスト失敗時</span></div>
+<div class="line"><span class="lineno">  134</span>            .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP, <span class="comment">// ステンシルテスト成功、深度テスト失敗時</span></div>
+<div class="line"><span class="lineno">  135</span>            .StencilPassOp = D3D11_STENCIL_OP_KEEP, <span class="comment">// 深度、ステンシルの両方のテストに成功時</span></div>
+<div class="line"><span class="lineno">  136</span>            .StencilFunc = D3D11_COMPARISON_ALWAYS, <span class="comment">// ステンシルデータと既存のステンシルデータを比較する関数(公式のをコピペ)</span></div>
+<div class="line"><span class="lineno">  137</span>        },</div>
+<div class="line"><span class="lineno">  138</span>        .BackFace <span class="comment">// カメラを向いていないピクセルの深度、ステンシルテストの結果に対する操作を指定</span></div>
+<div class="line"><span class="lineno">  139</span>        {</div>
+<div class="line"><span class="lineno">  140</span>            .StencilFailOp = D3D11_STENCIL_OP_KEEP,</div>
+<div class="line"><span class="lineno">  141</span>            .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,</div>
+<div class="line"><span class="lineno">  142</span>            .StencilPassOp = D3D11_STENCIL_OP_KEEP,</div>
+<div class="line"><span class="lineno">  143</span>            .StencilFunc = D3D11_COMPARISON_ALWAYS,</div>
+<div class="line"><span class="lineno">  144</span>        }</div>
+<div class="line"><span class="lineno">  145</span>    };</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateDepthStencilState(</div>
+<div class="line"><span class="lineno">  148</span>        &amp;DEPTH_STENCIL_DESC,</div>
+<div class="line"><span class="lineno">  149</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a2515548af4829c457a1ccdadbe34958f">DirectX11Draw::pDepthStencilState_</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a7a1920d61156abc05a60135aefe8bc67">BlendMode::Default</a>)].ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// 深度ステンシルステートの作成に成功</span></div>
+<div class="line"><span class="lineno">  152</span>        &amp;&amp; <span class="stringliteral">&quot;BlendMode::Defaultの深度ステンシルステートの作成に失敗 @DirectX11Manager::InitializeCommonResources&quot;</span>);</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <span class="comment">// BlendMode::Spriteの作成</span></div>
+<div class="line"><span class="lineno">  155</span>    DEPTH_STENCIL_DESC =</div>
+<div class="line"><span class="lineno">  156</span>    {</div>
+<div class="line"><span class="lineno">  157</span>        .DepthEnable = FALSE,   <span class="comment">//深度テストを行うかどうか</span></div>
+<div class="line"><span class="lineno">  158</span>        .DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ZERO,</div>
+<div class="line"><span class="lineno">  159</span>        .DepthFunc = D3D11_COMPARISON_LESS_EQUAL,</div>
+<div class="line"><span class="lineno">  160</span>        .StencilEnable = FALSE,  <span class="comment">//ステンシルテストを行うかどうか</span></div>
+<div class="line"><span class="lineno">  161</span>        .StencilReadMask = {},</div>
+<div class="line"><span class="lineno">  162</span>        .StencilWriteMask = {},</div>
+<div class="line"><span class="lineno">  163</span>        .FrontFace</div>
+<div class="line"><span class="lineno">  164</span>        {</div>
+<div class="line"><span class="lineno">  165</span>            .StencilFailOp = D3D11_STENCIL_OP_KEEP,</div>
+<div class="line"><span class="lineno">  166</span>            .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,</div>
+<div class="line"><span class="lineno">  167</span>            .StencilPassOp = D3D11_STENCIL_OP_KEEP,</div>
+<div class="line"><span class="lineno">  168</span>            .StencilFunc = D3D11_COMPARISON_ALWAYS,</div>
+<div class="line"><span class="lineno">  169</span>        },</div>
+<div class="line"><span class="lineno">  170</span>        .BackFace</div>
+<div class="line"><span class="lineno">  171</span>        {</div>
+<div class="line"><span class="lineno">  172</span>            .StencilFailOp = D3D11_STENCIL_OP_KEEP,</div>
+<div class="line"><span class="lineno">  173</span>            .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,</div>
+<div class="line"><span class="lineno">  174</span>            .StencilPassOp = D3D11_STENCIL_OP_KEEP,</div>
+<div class="line"><span class="lineno">  175</span>            .StencilFunc = D3D11_COMPARISON_ALWAYS,</div>
+<div class="line"><span class="lineno">  176</span>        }</div>
+<div class="line"><span class="lineno">  177</span>    };</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateDepthStencilState(</div>
+<div class="line"><span class="lineno">  180</span>        &amp;DEPTH_STENCIL_DESC,</div>
+<div class="line"><span class="lineno">  181</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a2515548af4829c457a1ccdadbe34958f">DirectX11Draw::pDepthStencilState_</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd">BlendMode::Sprite</a>)].ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// 深度ステンシルステートの作成に成功</span></div>
+<div class="line"><span class="lineno">  184</span>        &amp;&amp; <span class="stringliteral">&quot;BlendMode::Spriteの深度ステンシルステートの作成に失敗 @DirectX11Manager::InitializeCommonResources&quot;</span>);</div>
+<div class="line"><span class="lineno">  185</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">  186</span><span class="preprocessor">#pragma region ブレンドステート作成</span></div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <span class="comment">// BlendMode::Defaultの作成</span></div>
+<div class="line"><span class="lineno">  189</span>    <span class="keyword">const</span> D3D11_BLEND_DESC BLEND_DESC</div>
+<div class="line"><span class="lineno">  190</span>    {</div>
+<div class="line"><span class="lineno">  191</span>        .AlphaToCoverageEnable = FALSE,</div>
+<div class="line"><span class="lineno">  192</span>        .IndependentBlendEnable = FALSE,</div>
+<div class="line"><span class="lineno">  193</span>        .RenderTarget</div>
+<div class="line"><span class="lineno">  194</span>        {</div>
+<div class="line"><span class="lineno">  195</span>            D3D11_RENDER_TARGET_BLEND_DESC</div>
+<div class="line"><span class="lineno">  196</span>            {</div>
+<div class="line"><span class="lineno">  197</span>                .BlendEnable = TRUE,</div>
+<div class="line"><span class="lineno">  198</span>                .SrcBlend = D3D11_BLEND_SRC_ALPHA,</div>
+<div class="line"><span class="lineno">  199</span>                .DestBlend = D3D11_BLEND_INV_SRC_ALPHA,</div>
+<div class="line"><span class="lineno">  200</span>                .BlendOp = D3D11_BLEND_OP_ADD,</div>
+<div class="line"><span class="lineno">  201</span>                .SrcBlendAlpha = D3D11_BLEND_ONE,</div>
+<div class="line"><span class="lineno">  202</span>                .DestBlendAlpha = D3D11_BLEND_ZERO,</div>
+<div class="line"><span class="lineno">  203</span>                .BlendOpAlpha = D3D11_BLEND_OP_ADD,</div>
+<div class="line"><span class="lineno">  204</span>                .RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL,</div>
+<div class="line"><span class="lineno">  205</span>            },</div>
+<div class="line"><span class="lineno">  206</span>        },</div>
+<div class="line"><span class="lineno">  207</span>    };</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateBlendState(</div>
+<div class="line"><span class="lineno">  210</span>        &amp;BLEND_DESC,</div>
+<div class="line"><span class="lineno">  211</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a0093c9c8db0badef6faa3a6b2e1031ac">DirectX11Draw::pBlendState_</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a7a1920d61156abc05a60135aefe8bc67">BlendMode::Default</a>)].ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// ブレンドステート作成に成功</span></div>
+<div class="line"><span class="lineno">  214</span>        &amp;&amp; <span class="stringliteral">&quot;BlendMode::Defaultのブレンドステート作成に失敗 @DirectX11Manager::InitializeCommonResources&quot;</span>);</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    <span class="comment">// BlendMode::Spriteの作成</span></div>
+<div class="line"><span class="lineno">  217</span>    <span class="comment">// 設定はBlendMode::Defaultと同じ</span></div>
+<div class="line"><span class="lineno">  218</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateBlendState(</div>
+<div class="line"><span class="lineno">  219</span>        &amp;BLEND_DESC,</div>
+<div class="line"><span class="lineno">  220</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a0093c9c8db0badef6faa3a6b2e1031ac">DirectX11Draw::pBlendState_</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd">BlendMode::Sprite</a>)].ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)  <span class="comment">// ブレンドステート作成に成功</span></div>
+<div class="line"><span class="lineno">  223</span>        &amp;&amp; <span class="stringliteral">&quot;ブレンドステート作成に失敗 @DirectX11Manager::InitializeCommonResources&quot;</span>);</div>
+<div class="line"><span class="lineno">  224</span>    </div>
+<div class="line"><span class="lineno">  225</span><span class="preprocessor">#pragma endregion</span></div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);</div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a0093c9c8db0badef6faa3a6b2e1031ac"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a0093c9c8db0badef6faa3a6b2e1031ac">mtgb::DirectX11Draw::pBlendState_</a></div><div class="ttdeci">static std::array&lt; ComPtr&lt; ID3D11BlendState &gt;, static_cast&lt; int8_t &gt;(BlendMode::Max)&gt; pBlendState_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00153">DirectX11Draw.h:153</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a2515548af4829c457a1ccdadbe34958f"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a2515548af4829c457a1ccdadbe34958f">mtgb::DirectX11Draw::pDepthStencilState_</a></div><div class="ttdeci">static std::array&lt; ComPtr&lt; ID3D11DepthStencilState &gt;, static_cast&lt; int8_t &gt;(BlendMode::Max)&gt; pDepthStencilState_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00151">DirectX11Draw.h:151</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a749644e99c98e9819b425c5c98be7571"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a749644e99c98e9819b425c5c98be7571">mtgb::DirectX11Draw::pDXGIDevice_</a></div><div class="ttdeci">static ComPtr&lt; IDXGIDevice1 &gt; pDXGIDevice_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00142">DirectX11Draw.h:142</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_aee9bc0c977bdb81200a5d302f38f1037"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#aee9bc0c977bdb81200a5d302f38f1037">mtgb::DirectX11Draw::pDefaultSamplerState_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11SamplerState &gt; pDefaultSamplerState_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00156">DirectX11Draw.h:156</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a60f943f84c4f292f9271b3c150d68513"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a60f943f84c4f292f9271b3c150d68513">mtgb::DirectX11Manager::adaptersDesc_</a></div><div class="ttdeci">std::vector&lt; DXGI_ADAPTER_DESC1 &gt; adaptersDesc_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8h_source.html#l00071">DirectX11Manager.h:71</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_aa3d4c815765c2e86d5d7b80ad6d2e3e1"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#aa3d4c815765c2e86d5d7b80ad6d2e3e1">mtgb::DirectX11Manager::EnumAvailableMonitors</a></div><div class="ttdeci">void EnumAvailableMonitors()</div><div class="ttdoc">利用可能なモニターを列挙する</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00479">DirectX11Manager.cpp:479</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_af81c78943f7bed780257d221ee23bc9e"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#af81c78943f7bed780257d221ee23bc9e">mtgb::DirectX11Manager::InitializeShaderBundle</a></div><div class="ttdeci">void InitializeShaderBundle()</div><div class="ttdoc">シェーダバンドルを初期化する</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00506">DirectX11Manager.cpp:506</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd"><div class="ttname"><a href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd">mtgb::BlendMode::Sprite</a></div><div class="ttdeci">@ Sprite</div></div>
+<div class="ttc" id="anamespacemtgb_html_aead6ef9b5b93082fb6419e3d5676e748a7a1920d61156abc05a60135aefe8bc67"><div class="ttname"><a href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a7a1920d61156abc05a60135aefe8bc67">mtgb::BlendMode::Default</a></div><div class="ttdeci">@ Default</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a7a1920d61156abc05a60135aefe8bc67">mtgb::Default</a>, <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00153">mtgb::DirectX11Draw::pBlendState_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00141">mtgb::DirectX11Draw::pContext_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00156">mtgb::DirectX11Draw::pDefaultSamplerState_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00151">mtgb::DirectX11Draw::pDepthStencilState_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00140">mtgb::DirectX11Draw::pDevice_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00143">mtgb::DirectX11Draw::pDXGIAdapters_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00142">mtgb::DirectX11Draw::pDXGIDevice_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00144">mtgb::DirectX11Draw::pDXGIFactory_</a>, <a class="el" href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd">mtgb::Sprite</a>.</p>
+
+</div>
+</div>
+<a id="af81c78943f7bed780257d221ee23bc9e" name="af81c78943f7bed780257d221ee23bc9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af81c78943f7bed780257d221ee23bc9e">&#9670;&#160;</a></span>InitializeShaderBundle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::InitializeShaderBundle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>シェーダバンドルを初期化する </p>
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00506">506</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  507</span>{</div>
+<div class="line"><span class="lineno">  508</span>    DWORD vectorSize{ <span class="keyword">sizeof</span>(Vector3) };</div>
+<div class="line"><span class="lineno">  509</span> </div>
+<div class="line"><span class="lineno">  510</span>    CD3D11_RASTERIZER_DESC cRasterizerDesc{};</div>
+<div class="line"><span class="lineno">  511</span> </div>
+<div class="line"><span class="lineno">  512</span>    <span class="comment">// 2D共通のインプットレイアウト</span></div>
+<div class="line"><span class="lineno">  513</span>    <span class="keyword">const</span> D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_2D[]</div>
+<div class="line"><span class="lineno">  514</span>    {</div>
+<div class="line"><span class="lineno">  515</span>        {</div>
+<div class="line"><span class="lineno">  516</span>            .SemanticName = <span class="stringliteral">&quot;POSITION&quot;</span>,</div>
+<div class="line"><span class="lineno">  517</span>            .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  518</span>            .Format = DXGI_FORMAT_R32G32B32_FLOAT,</div>
+<div class="line"><span class="lineno">  519</span>            .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  520</span>            .AlignedByteOffset = vectorSize * 0,</div>
+<div class="line"><span class="lineno">  521</span>            .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  522</span>            .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  523</span>        },</div>
+<div class="line"><span class="lineno">  524</span>        {</div>
+<div class="line"><span class="lineno">  525</span>            .SemanticName = <span class="stringliteral">&quot;TEXCOORD&quot;</span>,</div>
+<div class="line"><span class="lineno">  526</span>            .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  527</span>            .Format = DXGI_FORMAT_R32G32_FLOAT,</div>
+<div class="line"><span class="lineno">  528</span>            .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  529</span>            .AlignedByteOffset = vectorSize * 1,</div>
+<div class="line"><span class="lineno">  530</span>            .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  531</span>            .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  532</span>        },</div>
+<div class="line"><span class="lineno">  533</span>    };</div>
+<div class="line"><span class="lineno">  534</span> </div>
+<div class="line"><span class="lineno">  535</span>    <span class="comment">// 3D共通のインプットレイアウト</span></div>
+<div class="line"><span class="lineno">  536</span>    <span class="keyword">const</span> D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_3D[]</div>
+<div class="line"><span class="lineno">  537</span>    {</div>
+<div class="line"><span class="lineno">  538</span>        {</div>
+<div class="line"><span class="lineno">  539</span>            .SemanticName = <span class="stringliteral">&quot;POSITION&quot;</span>,</div>
+<div class="line"><span class="lineno">  540</span>            .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  541</span>            .Format = DXGI_FORMAT_R32G32B32_FLOAT,</div>
+<div class="line"><span class="lineno">  542</span>            .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  543</span>            .AlignedByteOffset = vectorSize * 0,</div>
+<div class="line"><span class="lineno">  544</span>            .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  545</span>            .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  546</span>        },</div>
+<div class="line"><span class="lineno">  547</span>        {</div>
+<div class="line"><span class="lineno">  548</span>            .SemanticName = <span class="stringliteral">&quot;NORMAL&quot;</span>,</div>
+<div class="line"><span class="lineno">  549</span>            .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  550</span>            .Format = DXGI_FORMAT_R32G32B32_FLOAT,</div>
+<div class="line"><span class="lineno">  551</span>            .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  552</span>            .AlignedByteOffset = vectorSize * 1,</div>
+<div class="line"><span class="lineno">  553</span>            .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  554</span>            .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  555</span>        },</div>
+<div class="line"><span class="lineno">  556</span>        {</div>
+<div class="line"><span class="lineno">  557</span>            .SemanticName = <span class="stringliteral">&quot;TEXCOORD&quot;</span>,</div>
+<div class="line"><span class="lineno">  558</span>            .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  559</span>            .Format = DXGI_FORMAT_R32G32_FLOAT,</div>
+<div class="line"><span class="lineno">  560</span>            .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  561</span>            .AlignedByteOffset = vectorSize * 2,</div>
+<div class="line"><span class="lineno">  562</span>            .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  563</span>            .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  564</span>        },</div>
+<div class="line"><span class="lineno">  565</span>    };</div>
+<div class="line"><span class="lineno">  566</span> </div>
+<div class="line"><span class="lineno">  567</span>    <span class="keyword">const</span> D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_SKINNED[]</div>
+<div class="line"><span class="lineno">  568</span>    {</div>
+<div class="line"><span class="lineno">  569</span>        {</div>
+<div class="line"><span class="lineno">  570</span>            .SemanticName = <span class="stringliteral">&quot;POSITION&quot;</span>,</div>
+<div class="line"><span class="lineno">  571</span>            .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  572</span>            .Format = DXGI_FORMAT_R32G32B32_FLOAT,</div>
+<div class="line"><span class="lineno">  573</span>            .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  574</span>            .AlignedByteOffset = vectorSize * 0,</div>
+<div class="line"><span class="lineno">  575</span>            .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  576</span>            .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  577</span>        },</div>
+<div class="line"><span class="lineno">  578</span>        {</div>
+<div class="line"><span class="lineno">  579</span>            .SemanticName = <span class="stringliteral">&quot;NORMAL&quot;</span>,</div>
+<div class="line"><span class="lineno">  580</span>            .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  581</span>            .Format = DXGI_FORMAT_R32G32B32_FLOAT,</div>
+<div class="line"><span class="lineno">  582</span>            .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  583</span>            .AlignedByteOffset = vectorSize * 1,</div>
+<div class="line"><span class="lineno">  584</span>            .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  585</span>            .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  586</span>        },</div>
+<div class="line"><span class="lineno">  587</span>        {</div>
+<div class="line"><span class="lineno">  588</span>            .SemanticName = <span class="stringliteral">&quot;TEXCOORD&quot;</span>,</div>
+<div class="line"><span class="lineno">  589</span>            .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  590</span>            .Format = DXGI_FORMAT_R32G32_FLOAT,</div>
+<div class="line"><span class="lineno">  591</span>            .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  592</span>            .AlignedByteOffset = vectorSize * 2,</div>
+<div class="line"><span class="lineno">  593</span>            .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  594</span>            .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  595</span>        },</div>
+<div class="line"><span class="lineno">  596</span>        {</div>
+<div class="line"><span class="lineno">  597</span>            .SemanticName = <span class="stringliteral">&quot;BONE_INDEX&quot;</span>,</div>
+<div class="line"><span class="lineno">  598</span>            .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  599</span>            .Format = DXGI_FORMAT_R32G32B32A32_UINT,</div>
+<div class="line"><span class="lineno">  600</span>            .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  601</span>            .AlignedByteOffset = vectorSize * 3,</div>
+<div class="line"><span class="lineno">  602</span>            .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  603</span>            .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  604</span>        },</div>
+<div class="line"><span class="lineno">  605</span>        {</div>
+<div class="line"><span class="lineno">  606</span>            .SemanticName = <span class="stringliteral">&quot;BONE_WEIGHT&quot;</span>,</div>
+<div class="line"><span class="lineno">  607</span>            .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  608</span>            .Format = DXGI_FORMAT_R32G32B32A32_FLOAT,</div>
+<div class="line"><span class="lineno">  609</span>            .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  610</span>            .AlignedByteOffset = vectorSize * 4,</div>
+<div class="line"><span class="lineno">  611</span>            .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  612</span>            .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  613</span>        },</div>
+<div class="line"><span class="lineno">  614</span>    };</div>
+<div class="line"><span class="lineno">  615</span> </div>
+<div class="line"><span class="lineno">  616</span>    <span class="comment">// 2D図形用シェーダの読み込み</span></div>
+<div class="line"><span class="lineno">  617</span>    {</div>
+<div class="line"><span class="lineno">  618</span>        cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC</div>
+<div class="line"><span class="lineno">  619</span>        {</div>
+<div class="line"><span class="lineno">  620</span>            .FillMode = D3D11_FILL_SOLID,   <span class="comment">// 塗りつぶし: solid</span></div>
+<div class="line"><span class="lineno">  621</span>            .CullMode = D3D11_CULL_BACK,    <span class="comment">// カリング: 陰面消去</span></div>
+<div class="line"><span class="lineno">  622</span>            .FrontCounterClockwise = TRUE,  <span class="comment">// 三角形の正面向き = 時計回り</span></div>
+<div class="line"><span class="lineno">  623</span>            .DepthBias = {},</div>
+<div class="line"><span class="lineno">  624</span>            .DepthBiasClamp = {},</div>
+<div class="line"><span class="lineno">  625</span>            .SlopeScaledDepthBias = {},</div>
+<div class="line"><span class="lineno">  626</span>            .DepthClipEnable = <span class="keyword">true</span>,        <span class="comment">// クリッピングを有効にする</span></div>
+<div class="line"><span class="lineno">  627</span>            .ScissorEnable = {},</div>
+<div class="line"><span class="lineno">  628</span>            .MultisampleEnable = {},</div>
+<div class="line"><span class="lineno">  629</span>            .AntialiasedLineEnable = {},</div>
+<div class="line"><span class="lineno">  630</span>        });</div>
+<div class="line"><span class="lineno">  631</span> </div>
+<div class="line"><span class="lineno">  632</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><span class="lineno">  633</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/Figure.hlsl&quot;</span>,</div>
+<div class="line"><span class="lineno">  634</span>            <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda666df2f48cd16f38212c093999248769">ShaderType::Figure</a>,</div>
+<div class="line"><span class="lineno">  635</span>            INPUT_ELEMENT_DESC_2D,</div>
+<div class="line"><span class="lineno">  636</span>            <span class="keyword">sizeof</span>(INPUT_ELEMENT_DESC_2D) / <span class="keyword">sizeof</span>(D3D11_INPUT_ELEMENT_DESC),</div>
+<div class="line"><span class="lineno">  637</span>            &amp;cRasterizerDesc);</div>
+<div class="line"><span class="lineno">  638</span>    }</div>
+<div class="line"><span class="lineno">  639</span> </div>
+<div class="line"><span class="lineno">  640</span>    <span class="comment">// 2Dスプライトシェーダの読み込み</span></div>
+<div class="line"><span class="lineno">  641</span>    {</div>
+<div class="line"><span class="lineno">  642</span>        cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC</div>
+<div class="line"><span class="lineno">  643</span>            {</div>
+<div class="line"><span class="lineno">  644</span>                .FillMode = D3D11_FILL_SOLID,   <span class="comment">// 塗りつぶし: solid</span></div>
+<div class="line"><span class="lineno">  645</span>                .CullMode = D3D11_CULL_NONE,    <span class="comment">// カリング: 陰面消去</span></div>
+<div class="line"><span class="lineno">  646</span>                .FrontCounterClockwise = TRUE,  <span class="comment">// 三角形の正面向き = 時計回り</span></div>
+<div class="line"><span class="lineno">  647</span>                .DepthBias = {},</div>
+<div class="line"><span class="lineno">  648</span>                .DepthBiasClamp = {},</div>
+<div class="line"><span class="lineno">  649</span>                .SlopeScaledDepthBias = {},</div>
+<div class="line"><span class="lineno">  650</span>                .DepthClipEnable = <span class="keyword">true</span>,        <span class="comment">// クリッピングを有効にする</span></div>
+<div class="line"><span class="lineno">  651</span>                .ScissorEnable = {},</div>
+<div class="line"><span class="lineno">  652</span>                .MultisampleEnable = {},</div>
+<div class="line"><span class="lineno">  653</span>                .AntialiasedLineEnable = {},</div>
+<div class="line"><span class="lineno">  654</span>            });</div>
+<div class="line"><span class="lineno">  655</span> </div>
+<div class="line"><span class="lineno">  656</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><span class="lineno">  657</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/Sprite.hlsl&quot;</span>,</div>
+<div class="line"><span class="lineno">  658</span>            <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda411b82db44407403782a5ccfe79bac26">ShaderType::Sprite2D</a>,</div>
+<div class="line"><span class="lineno">  659</span>            INPUT_ELEMENT_DESC_2D,</div>
+<div class="line"><span class="lineno">  660</span>            <span class="keyword">sizeof</span>(INPUT_ELEMENT_DESC_2D) / <span class="keyword">sizeof</span>(D3D11_INPUT_ELEMENT_DESC),</div>
+<div class="line"><span class="lineno">  661</span>            &amp;cRasterizerDesc);</div>
+<div class="line"><span class="lineno">  662</span>    }</div>
+<div class="line"><span class="lineno">  663</span> </div>
+<div class="line"><span class="lineno">  664</span>    <span class="comment">// FbxPartsシェーダの読み込み</span></div>
+<div class="line"><span class="lineno">  665</span>    {</div>
+<div class="line"><span class="lineno">  666</span>        cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC</div>
+<div class="line"><span class="lineno">  667</span>            {</div>
+<div class="line"><span class="lineno">  668</span>                .FillMode = D3D11_FILL_SOLID,   <span class="comment">// 塗りつぶし: solid</span></div>
+<div class="line"><span class="lineno">  669</span>                .CullMode = D3D11_CULL_BACK,    <span class="comment">// カリング: 陰面消去</span></div>
+<div class="line"><span class="lineno">  670</span>                .FrontCounterClockwise = TRUE,  <span class="comment">// 三角形の正面向き = 時計回り</span></div>
+<div class="line"><span class="lineno">  671</span>                .DepthBias = {},</div>
+<div class="line"><span class="lineno">  672</span>                .DepthBiasClamp = {},</div>
+<div class="line"><span class="lineno">  673</span>                .SlopeScaledDepthBias = {},</div>
+<div class="line"><span class="lineno">  674</span>                .DepthClipEnable = <span class="keyword">true</span>,        <span class="comment">// クリッピングを有効にする</span></div>
+<div class="line"><span class="lineno">  675</span>                .ScissorEnable = {},</div>
+<div class="line"><span class="lineno">  676</span>                .MultisampleEnable = {},</div>
+<div class="line"><span class="lineno">  677</span>                .AntialiasedLineEnable = {},</div>
+<div class="line"><span class="lineno">  678</span>            });</div>
+<div class="line"><span class="lineno">  679</span> </div>
+<div class="line"><span class="lineno">  680</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><span class="lineno">  681</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/FbxParts.hlsl&quot;</span>,</div>
+<div class="line"><span class="lineno">  682</span>            <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64">ShaderType::FbxParts</a>,</div>
+<div class="line"><span class="lineno">  683</span>            INPUT_ELEMENT_DESC_3D,</div>
+<div class="line"><span class="lineno">  684</span>            <span class="keyword">sizeof</span>(INPUT_ELEMENT_DESC_3D) / <span class="keyword">sizeof</span>(D3D11_INPUT_ELEMENT_DESC),</div>
+<div class="line"><span class="lineno">  685</span>            &amp;cRasterizerDesc);</div>
+<div class="line"><span class="lineno">  686</span>    }</div>
+<div class="line"><span class="lineno">  687</span> </div>
+<div class="line"><span class="lineno">  688</span>    <span class="comment">// Unlit3Dシェーダの読み込み</span></div>
+<div class="line"><span class="lineno">  689</span>    {</div>
+<div class="line"><span class="lineno">  690</span>        cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC</div>
+<div class="line"><span class="lineno">  691</span>            {</div>
+<div class="line"><span class="lineno">  692</span>                .FillMode = D3D11_FILL_SOLID,   <span class="comment">// 塗りつぶし: solid</span></div>
+<div class="line"><span class="lineno">  693</span>                .CullMode = D3D11_CULL_BACK,    <span class="comment">// カリング: 陰面消去</span></div>
+<div class="line"><span class="lineno">  694</span>                .FrontCounterClockwise = TRUE,  <span class="comment">// 三角形の正面向き = 時計回り</span></div>
+<div class="line"><span class="lineno">  695</span>                .DepthBias = {},</div>
+<div class="line"><span class="lineno">  696</span>                .DepthBiasClamp = {},</div>
+<div class="line"><span class="lineno">  697</span>                .SlopeScaledDepthBias = {},</div>
+<div class="line"><span class="lineno">  698</span>                .DepthClipEnable = <span class="keyword">true</span>,        <span class="comment">// クリッピングを有効にする</span></div>
+<div class="line"><span class="lineno">  699</span>                .ScissorEnable = {},</div>
+<div class="line"><span class="lineno">  700</span>                .MultisampleEnable = {},</div>
+<div class="line"><span class="lineno">  701</span>                .AntialiasedLineEnable = {},</div>
+<div class="line"><span class="lineno">  702</span>            });</div>
+<div class="line"><span class="lineno">  703</span> </div>
+<div class="line"><span class="lineno">  704</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><span class="lineno">  705</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/Unlit3D.hlsl&quot;</span>,</div>
+<div class="line"><span class="lineno">  706</span>            <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda0d5cb44a44795685855401fb93958bd5">ShaderType::Unlit3D</a>,</div>
+<div class="line"><span class="lineno">  707</span>            INPUT_ELEMENT_DESC_3D,</div>
+<div class="line"><span class="lineno">  708</span>            <span class="keyword">sizeof</span>(INPUT_ELEMENT_DESC_3D) / <span class="keyword">sizeof</span>(D3D11_INPUT_ELEMENT_DESC),</div>
+<div class="line"><span class="lineno">  709</span>            &amp;cRasterizerDesc);</div>
+<div class="line"><span class="lineno">  710</span>    }</div>
+<div class="line"><span class="lineno">  711</span> </div>
+<div class="line"><span class="lineno">  712</span>    <span class="comment">// Debug3Dシェーダの読み込み</span></div>
+<div class="line"><span class="lineno">  713</span>    {</div>
+<div class="line"><span class="lineno">  714</span>        cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC</div>
+<div class="line"><span class="lineno">  715</span>            {</div>
+<div class="line"><span class="lineno">  716</span>                .FillMode = D3D11_FILL_WIREFRAME,  <span class="comment">// 枠だけ: wireframe</span></div>
+<div class="line"><span class="lineno">  717</span>                .CullMode = D3D11_CULL_NONE,       <span class="comment">// カリング: 隠面消去しない</span></div>
+<div class="line"><span class="lineno">  718</span>                .FrontCounterClockwise = TRUE,     <span class="comment">// 三角形の正面向き = 時計回り</span></div>
+<div class="line"><span class="lineno">  719</span>                .DepthBias = {},</div>
+<div class="line"><span class="lineno">  720</span>                .DepthBiasClamp = {},</div>
+<div class="line"><span class="lineno">  721</span>                .SlopeScaledDepthBias = {},</div>
+<div class="line"><span class="lineno">  722</span>                .DepthClipEnable = <span class="keyword">true</span>,           <span class="comment">// クリッピングを有効にする</span></div>
+<div class="line"><span class="lineno">  723</span>                .ScissorEnable = {},</div>
+<div class="line"><span class="lineno">  724</span>                .MultisampleEnable = {},</div>
+<div class="line"><span class="lineno">  725</span>                .AntialiasedLineEnable = {},</div>
+<div class="line"><span class="lineno">  726</span>            });</div>
+<div class="line"><span class="lineno">  727</span> </div>
+<div class="line"><span class="lineno">  728</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><span class="lineno">  729</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/Debug3D.hlsl&quot;</span>,</div>
+<div class="line"><span class="lineno">  730</span>            <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>,</div>
+<div class="line"><span class="lineno">  731</span>            INPUT_ELEMENT_DESC_3D,</div>
+<div class="line"><span class="lineno">  732</span>            <span class="keyword">sizeof</span>(INPUT_ELEMENT_DESC_3D) / <span class="keyword">sizeof</span>(D3D11_INPUT_ELEMENT_DESC),</div>
+<div class="line"><span class="lineno">  733</span>            &amp;cRasterizerDesc);</div>
+<div class="line"><span class="lineno">  734</span>    }</div>
+<div class="line"><span class="lineno">  735</span> </div>
+<div class="line"><span class="lineno">  736</span>    <span class="comment">// 地形シェーダの読み込み</span></div>
+<div class="line"><span class="lineno">  737</span>    {</div>
+<div class="line"><span class="lineno">  738</span>        cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC</div>
+<div class="line"><span class="lineno">  739</span>            {</div>
+<div class="line"><span class="lineno">  740</span>                .FillMode = D3D11_FILL_SOLID,   <span class="comment">// 塗りつぶし</span></div>
+<div class="line"><span class="lineno">  741</span>                .CullMode = D3D11_CULL_BACK,    <span class="comment">// カリング: 隠面消去</span></div>
+<div class="line"><span class="lineno">  742</span>                .FrontCounterClockwise = TRUE,  <span class="comment">// 三角形の正面向き = 時計回り</span></div>
+<div class="line"><span class="lineno">  743</span>                .DepthBias = {},</div>
+<div class="line"><span class="lineno">  744</span>                .DepthBiasClamp = {},</div>
+<div class="line"><span class="lineno">  745</span>                .SlopeScaledDepthBias = {},</div>
+<div class="line"><span class="lineno">  746</span>                .DepthClipEnable = <span class="keyword">true</span>,        <span class="comment">// クリッピングを有効にする</span></div>
+<div class="line"><span class="lineno">  747</span>                .ScissorEnable = {},</div>
+<div class="line"><span class="lineno">  748</span>                .MultisampleEnable = {},</div>
+<div class="line"><span class="lineno">  749</span>                .AntialiasedLineEnable = {},</div>
+<div class="line"><span class="lineno">  750</span>            });</div>
+<div class="line"><span class="lineno">  751</span> </div>
+<div class="line"><span class="lineno">  752</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><span class="lineno">  753</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/Ground.hlsl&quot;</span>,</div>
+<div class="line"><span class="lineno">  754</span>            <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda3519d51443d41746a097cd54cd5c11cf">ShaderType::Ground</a>,</div>
+<div class="line"><span class="lineno">  755</span>            INPUT_ELEMENT_DESC_3D,</div>
+<div class="line"><span class="lineno">  756</span>            <span class="keyword">sizeof</span>(INPUT_ELEMENT_DESC_3D) / <span class="keyword">sizeof</span>(D3D11_INPUT_ELEMENT_DESC),</div>
+<div class="line"><span class="lineno">  757</span>            &amp;cRasterizerDesc);</div>
+<div class="line"><span class="lineno">  758</span>    }</div>
+<div class="line"><span class="lineno">  759</span> </div>
+<div class="line"><span class="lineno">  760</span>    <span class="comment">// Terrain</span></div>
+<div class="line"><span class="lineno">  761</span>    {</div>
+<div class="line"><span class="lineno">  762</span>        cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC</div>
+<div class="line"><span class="lineno">  763</span>            {</div>
+<div class="line"><span class="lineno">  764</span>                .FillMode = D3D11_FILL_SOLID,   <span class="comment">// 塗りつぶし</span></div>
+<div class="line"><span class="lineno">  765</span>                .CullMode = D3D11_CULL_BACK,    <span class="comment">// カリング: 隠面消去</span></div>
+<div class="line"><span class="lineno">  766</span>                .FrontCounterClockwise = TRUE,  <span class="comment">// 三角形の正面向き = 時計回り</span></div>
+<div class="line"><span class="lineno">  767</span>                .DepthBias = {},</div>
+<div class="line"><span class="lineno">  768</span>                .DepthBiasClamp = {},</div>
+<div class="line"><span class="lineno">  769</span>                .SlopeScaledDepthBias = {},</div>
+<div class="line"><span class="lineno">  770</span>                .DepthClipEnable = <span class="keyword">true</span>,        <span class="comment">// クリッピングを有効にする</span></div>
+<div class="line"><span class="lineno">  771</span>                .ScissorEnable = {},</div>
+<div class="line"><span class="lineno">  772</span>                .MultisampleEnable = {},</div>
+<div class="line"><span class="lineno">  773</span>                .AntialiasedLineEnable = {},</div>
+<div class="line"><span class="lineno">  774</span>            });</div>
+<div class="line"><span class="lineno">  775</span> </div>
+<div class="line"><span class="lineno">  776</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><span class="lineno">  777</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/Terrain.hlsl&quot;</span>,</div>
+<div class="line"><span class="lineno">  778</span>            <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda4ccfea7a25fae3c1d31555f0856d2b42">ShaderType::Terrain</a>,</div>
+<div class="line"><span class="lineno">  779</span>            INPUT_ELEMENT_DESC_3D,</div>
+<div class="line"><span class="lineno">  780</span>            <span class="keyword">sizeof</span>(INPUT_ELEMENT_DESC_3D) / <span class="keyword">sizeof</span>(D3D11_INPUT_ELEMENT_DESC),</div>
+<div class="line"><span class="lineno">  781</span>            &amp;cRasterizerDesc);</div>
+<div class="line"><span class="lineno">  782</span>    }</div>
+<div class="line"><span class="lineno">  783</span> </div>
+<div class="line"><span class="lineno">  784</span>    <span class="comment">// トレイルシェーダの読み込み</span></div>
+<div class="line"><span class="lineno">  785</span>    {</div>
+<div class="line"><span class="lineno">  786</span>        <span class="keyword">const</span> D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_TRAIL[]</div>
+<div class="line"><span class="lineno">  787</span>        {</div>
+<div class="line"><span class="lineno">  788</span>            {</div>
+<div class="line"><span class="lineno">  789</span>                .SemanticName = <span class="stringliteral">&quot;POSITION&quot;</span>,</div>
+<div class="line"><span class="lineno">  790</span>                .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  791</span>                .Format = DXGI_FORMAT_R32G32B32_FLOAT,</div>
+<div class="line"><span class="lineno">  792</span>                .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  793</span>                .AlignedByteOffset = vectorSize * 0,</div>
+<div class="line"><span class="lineno">  794</span>                .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  795</span>                .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  796</span>            },</div>
+<div class="line"><span class="lineno">  797</span>            {</div>
+<div class="line"><span class="lineno">  798</span>                .SemanticName = <span class="stringliteral">&quot;COLOR&quot;</span>,</div>
+<div class="line"><span class="lineno">  799</span>                .SemanticIndex = 0,</div>
+<div class="line"><span class="lineno">  800</span>                .Format = DXGI_FORMAT_R32G32B32A32_FLOAT,</div>
+<div class="line"><span class="lineno">  801</span>                .InputSlot = 0,</div>
+<div class="line"><span class="lineno">  802</span>                .AlignedByteOffset = vectorSize * 1,</div>
+<div class="line"><span class="lineno">  803</span>                .InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,</div>
+<div class="line"><span class="lineno">  804</span>                .InstanceDataStepRate = 0,</div>
+<div class="line"><span class="lineno">  805</span>            },</div>
+<div class="line"><span class="lineno">  806</span>        }; </div>
+<div class="line"><span class="lineno">  807</span>        cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC</div>
+<div class="line"><span class="lineno">  808</span>            {</div>
+<div class="line"><span class="lineno">  809</span>                .FillMode = D3D11_FILL_SOLID,   <span class="comment">// 塗りつぶし</span></div>
+<div class="line"><span class="lineno">  810</span>                .CullMode = D3D11_CULL_NONE,    <span class="comment">// カリング: 隠面消去</span></div>
+<div class="line"><span class="lineno">  811</span>                .FrontCounterClockwise = TRUE,  <span class="comment">// 三角形の正面向き = 時計回り</span></div>
+<div class="line"><span class="lineno">  812</span>                .DepthBias = {},</div>
+<div class="line"><span class="lineno">  813</span>                .DepthBiasClamp = {},</div>
+<div class="line"><span class="lineno">  814</span>                .SlopeScaledDepthBias = {},</div>
+<div class="line"><span class="lineno">  815</span>                .DepthClipEnable = <span class="keyword">true</span>,        <span class="comment">// クリッピングを有効にする</span></div>
+<div class="line"><span class="lineno">  816</span>                .ScissorEnable = {},</div>
+<div class="line"><span class="lineno">  817</span>                .MultisampleEnable = {},</div>
+<div class="line"><span class="lineno">  818</span>                .AntialiasedLineEnable = {},</div>
+<div class="line"><span class="lineno">  819</span>            });</div>
+<div class="line"><span class="lineno">  820</span> </div>
+<div class="line"><span class="lineno">  821</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><span class="lineno">  822</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/Trail.hlsl&quot;</span>,</div>
+<div class="line"><span class="lineno">  823</span>            <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdad518a06262ac68f1f006a4f802588130">ShaderType::Trail</a>,</div>
+<div class="line"><span class="lineno">  824</span>            INPUT_ELEMENT_DESC_TRAIL,</div>
+<div class="line"><span class="lineno">  825</span>            <span class="keyword">sizeof</span>(INPUT_ELEMENT_DESC_TRAIL) / <span class="keyword">sizeof</span>(D3D11_INPUT_ELEMENT_DESC),</div>
+<div class="line"><span class="lineno">  826</span>            &amp;cRasterizerDesc);</div>
+<div class="line"><span class="lineno">  827</span> </div>
+<div class="line"><span class="lineno">  828</span>        cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC</div>
+<div class="line"><span class="lineno">  829</span>            {</div>
+<div class="line"><span class="lineno">  830</span>                .FillMode = D3D11_FILL_SOLID,   <span class="comment">// 塗りつぶし: solid</span></div>
+<div class="line"><span class="lineno">  831</span>                .CullMode = D3D11_CULL_BACK,    <span class="comment">// カリング: 陰面消去</span></div>
+<div class="line"><span class="lineno">  832</span>                .FrontCounterClockwise = TRUE,  <span class="comment">// 三角形の正面向き = 時計回り</span></div>
+<div class="line"><span class="lineno">  833</span>                .DepthBias = {},</div>
+<div class="line"><span class="lineno">  834</span>                .DepthBiasClamp = {},</div>
+<div class="line"><span class="lineno">  835</span>                .SlopeScaledDepthBias = {},</div>
+<div class="line"><span class="lineno">  836</span>                .DepthClipEnable = <span class="keyword">true</span>,        <span class="comment">// クリッピングを有効にする</span></div>
+<div class="line"><span class="lineno">  837</span>                .ScissorEnable = {},</div>
+<div class="line"><span class="lineno">  838</span>                .MultisampleEnable = {},</div>
+<div class="line"><span class="lineno">  839</span>                .AntialiasedLineEnable = {},</div>
+<div class="line"><span class="lineno">  840</span>            });</div>
+<div class="line"><span class="lineno">  841</span> </div>
+<div class="line"><span class="lineno">  842</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><span class="lineno">  843</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/FbxPartsSkin.hlsl&quot;</span>,</div>
+<div class="line"><span class="lineno">  844</span>            <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda4f4ef2d5fdce24d142a29d1d8b273cf3">ShaderType::FbxPartsSkin</a>,</div>
+<div class="line"><span class="lineno">  845</span>            INPUT_ELEMENT_DESC_SKINNED,</div>
+<div class="line"><span class="lineno">  846</span>            <span class="keyword">sizeof</span>(INPUT_ELEMENT_DESC_SKINNED) / <span class="keyword">sizeof</span>(D3D11_INPUT_ELEMENT_DESC),</div>
+<div class="line"><span class="lineno">  847</span>            &amp;cRasterizerDesc);</div>
+<div class="line"><span class="lineno">  848</span>        </div>
+<div class="line"><span class="lineno">  849</span>        cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC</div>
+<div class="line"><span class="lineno">  850</span>            {</div>
+<div class="line"><span class="lineno">  851</span>                .FillMode = D3D11_FILL_SOLID,   <span class="comment">// 塗りつぶし: solid</span></div>
+<div class="line"><span class="lineno">  852</span>                .CullMode = D3D11_CULL_BACK,    <span class="comment">// カリング: 陰面消去</span></div>
+<div class="line"><span class="lineno">  853</span>                .FrontCounterClockwise = TRUE,  <span class="comment">// 三角形の正面向き = 時計回り</span></div>
+<div class="line"><span class="lineno">  854</span>                .DepthBias = {},</div>
+<div class="line"><span class="lineno">  855</span>                .DepthBiasClamp = {},</div>
+<div class="line"><span class="lineno">  856</span>                .SlopeScaledDepthBias = {},</div>
+<div class="line"><span class="lineno">  857</span>                .DepthClipEnable = <span class="keyword">true</span>,        <span class="comment">// クリッピングを有効にする</span></div>
+<div class="line"><span class="lineno">  858</span>                .ScissorEnable = {},</div>
+<div class="line"><span class="lineno">  859</span>                .MultisampleEnable = {},</div>
+<div class="line"><span class="lineno">  860</span>                .AntialiasedLineEnable = {},</div>
+<div class="line"><span class="lineno">  861</span>            });</div>
+<div class="line"><span class="lineno">  862</span> </div>
+<div class="line"><span class="lineno">  863</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><span class="lineno">  864</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/Box3D.hlsl&quot;</span>,</div>
+<div class="line"><span class="lineno">  865</span>            <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda171f0a41200dfd456bfe2c1f4818c74d">ShaderType::Box3D</a>,</div>
+<div class="line"><span class="lineno">  866</span>            INPUT_ELEMENT_DESC_SKINNED,</div>
+<div class="line"><span class="lineno">  867</span>            <span class="keyword">sizeof</span>(INPUT_ELEMENT_DESC_SKINNED) / <span class="keyword">sizeof</span>(D3D11_INPUT_ELEMENT_DESC),</div>
+<div class="line"><span class="lineno">  868</span>            &amp;cRasterizerDesc);</div>
+<div class="line"><span class="lineno">  869</span>        </div>
+<div class="line"><span class="lineno">  870</span>    }</div>
+<div class="line"><span class="lineno">  871</span>}</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">KeyCode::L</a></div><div class="ttdeci">@ L</div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_aa0add2c4d52089ca67a1b60f16c95074"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">mtgb::DirectX11Manager::CompileShader</a></div><div class="ttdeci">void CompileShader(const std::wstring &amp;_fileName, const ShaderType &amp;_type, const D3D11_INPUT_ELEMENT_DESC *_pHLSLLayout, const unsigned int _layoutLength, const CD3D11_RASTERIZER_DESC *_pRasterizerDesc)</div><div class="ttdoc">シェーダファイルをコンパイルする</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00873">DirectX11Manager.cpp:873</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda0d5cb44a44795685855401fb93958bd5"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda0d5cb44a44795685855401fb93958bd5">mtgb::ShaderType::Unlit3D</a></div><div class="ttdeci">@ Unlit3D</div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">mtgb::ShaderType::Debug3D</a></div><div class="ttdeci">@ Debug3D</div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda171f0a41200dfd456bfe2c1f4818c74d"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda171f0a41200dfd456bfe2c1f4818c74d">mtgb::ShaderType::Box3D</a></div><div class="ttdeci">@ Box3D</div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda3519d51443d41746a097cd54cd5c11cf"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda3519d51443d41746a097cd54cd5c11cf">mtgb::ShaderType::Ground</a></div><div class="ttdeci">@ Ground</div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda411b82db44407403782a5ccfe79bac26"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda411b82db44407403782a5ccfe79bac26">mtgb::ShaderType::Sprite2D</a></div><div class="ttdeci">@ Sprite2D</div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda4ccfea7a25fae3c1d31555f0856d2b42"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda4ccfea7a25fae3c1d31555f0856d2b42">mtgb::ShaderType::Terrain</a></div><div class="ttdeci">@ Terrain</div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda4f4ef2d5fdce24d142a29d1d8b273cf3"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda4f4ef2d5fdce24d142a29d1d8b273cf3">mtgb::ShaderType::FbxPartsSkin</a></div><div class="ttdeci">@ FbxPartsSkin</div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda666df2f48cd16f38212c093999248769"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda666df2f48cd16f38212c093999248769">mtgb::ShaderType::Figure</a></div><div class="ttdeci">@ Figure</div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64">mtgb::ShaderType::FbxParts</a></div><div class="ttdeci">@ FbxParts</div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fdad518a06262ac68f1f006a4f802588130"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdad518a06262ac68f1f006a4f802588130">mtgb::ShaderType::Trail</a></div><div class="ttdeci">@ Trail</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda171f0a41200dfd456bfe2c1f4818c74d">mtgb::Box3D</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">mtgb::Debug3D</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64">mtgb::FbxParts</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda4f4ef2d5fdce24d142a29d1d8b273cf3">mtgb::FbxPartsSkin</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda666df2f48cd16f38212c093999248769">mtgb::Figure</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda3519d51443d41746a097cd54cd5c11cf">mtgb::Ground</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda411b82db44407403782a5ccfe79bac26">mtgb::Sprite2D</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda4ccfea7a25fae3c1d31555f0856d2b42">mtgb::Terrain</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdad518a06262ac68f1f006a4f802588130">mtgb::Trail</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda0d5cb44a44795685855401fb93958bd5">mtgb::Unlit3D</a>.</p>
+
+</div>
+</div>
+<a id="a0691f1df5a5ae0670b2d25a3f5353031" name="a0691f1df5a5ae0670b2d25a3f5353031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0691f1df5a5ae0670b2d25a3f5353031">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>開放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">mtgb::ISystem</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00451">451</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  452</span>{</div>
+<div class="line"><span class="lineno">  453</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#ac581810b97d02a57a9432ed1d9e478c1">DirectX11Draw::Release</a>();</div>
+<div class="line"><span class="lineno">  454</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_ac581810b97d02a57a9432ed1d9e478c1"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#ac581810b97d02a57a9432ed1d9e478c1">mtgb::DirectX11Draw::Release</a></div><div class="ttdeci">static void Release()</div><div class="ttdoc">解放処理</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8cpp_source.html#l00089">DirectX11Draw.cpp:89</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="DirectX11Draw_8cpp_source.html#l00089">mtgb::DirectX11Draw::Release()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1DirectX11Manager_a0691f1df5a5ae0670b2d25a3f5353031_cgraph.svg" width="407" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4b1a67f6eef29670a966162d1a3c4860" name="a4b1a67f6eef29670a966162d1a3c4860"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b1a67f6eef29670a966162d1a3c4860">&#9670;&#160;</a></span>SetDefaultStates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::SetDefaultStates </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ClearState後に必要なデフォルト状態を再設定 </p>
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00470">470</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  471</span>{</div>
+<div class="line"><span class="lineno">  472</span>    <span class="comment">// PrimitiveTopology を再設定</span></div>
+<div class="line"><span class="lineno">  473</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);</div>
+<div class="line"><span class="lineno">  474</span>    </div>
+<div class="line"><span class="lineno">  475</span>    <span class="comment">// 必要に応じて他のデフォルト状態も再設定</span></div>
+<div class="line"><span class="lineno">  476</span>    <span class="comment">// 例：デフォルトサンプラーステート、ブレンドステートなど</span></div>
+<div class="line"><span class="lineno">  477</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="DirectX11Draw_8h_source.html#l00141">mtgb::DirectX11Draw::pContext_</a>.</p>
+
+</div>
+</div>
+<a id="a8f31aed60a43843bbb5cf6738fd147fd" name="a8f31aed60a43843bbb5cf6738fd147fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f31aed60a43843bbb5cf6738fd147fd">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::DirectX11Manager::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a> の <a class="el" href="DirectX11Manager_8cpp_source.html#l00035">35</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
+<div class="line"><span class="lineno">   37</span>    <span class="comment">//MTImGui::Instance().DirectShow([this]() {</span></div>
+<div class="line"><span class="lineno">   38</span>    <span class="comment">//      for (auto&amp; desc : adaptersDesc_)</span></div>
+<div class="line"><span class="lineno">   39</span>    <span class="comment">//      {</span></div>
+<div class="line"><span class="lineno">   40</span>    <span class="comment">//          ImGui::PushID(&amp;desc);</span></div>
+<div class="line"><span class="lineno">   41</span>    <span class="comment">//          TypeRegistry::Instance().CallFunc(&amp;desc, &quot;AdapterDesc&quot;);</span></div>
+<div class="line"><span class="lineno">   42</span>    <span class="comment">//          ImGui::PopID();</span></div>
+<div class="line"><span class="lineno">   43</span>    <span class="comment">//          ImGui::Separator();</span></div>
+<div class="line"><span class="lineno">   44</span>    <span class="comment">//      }</span></div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="comment">//      // モニター(DXGIOutput)の情報</span></div>
+<div class="line"><span class="lineno">   47</span>    <span class="comment">//      for (auto&amp; monitorInfo : DirectX11Draw::monitorInfos_)</span></div>
+<div class="line"><span class="lineno">   48</span>    <span class="comment">//      {</span></div>
+<div class="line"><span class="lineno">   49</span>    <span class="comment">//          ImGui::PushID(&amp;monitorInfo);</span></div>
+<div class="line"><span class="lineno">   50</span>    <span class="comment">//          ImGui::LabelText(&quot;adapterIndex&quot;, &quot;%d&quot;, monitorInfo.adapterIndex);</span></div>
+<div class="line"><span class="lineno">   51</span>    <span class="comment">//          ImGui::LabelText(&quot;outputIndex&quot;,&quot;%d&quot;, monitorInfo.outputIndex);</span></div>
+<div class="line"><span class="lineno">   52</span>    <span class="comment">//          TypeRegistry::Instance().CallFunc(&amp;monitorInfo.desc, &quot;OutputDesc&quot;);</span></div>
+<div class="line"><span class="lineno">   53</span>    <span class="comment">//          ImGui::PopID();</span></div>
+<div class="line"><span class="lineno">   54</span>    <span class="comment">//          ImGui::Separator();</span></div>
+<div class="line"><span class="lineno">   55</span>    <span class="comment">//      }</span></div>
+<div class="line"><span class="lineno">   56</span>    <span class="comment">//  }, &quot;Adapter,OutputDesc&quot;, ShowType::Settings);</span></div>
+<div class="line"><span class="lineno">   57</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a60f943f84c4f292f9271b3c150d68513" name="a60f943f84c4f292f9271b3c150d68513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f943f84c4f292f9271b3c150d68513">&#9670;&#160;</a></span>adaptersDesc_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;DXGI_ADAPTER_DESC1&gt; mtgb::DirectX11Manager::adaptersDesc_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="DirectX11Manager_8h_source.html">DirectX11Manager.h</a> の <a class="el" href="DirectX11Manager_8h_source.html#l00071">71</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="DirectX11Manager_8h_source.html">DirectX11Manager.h</a></li>
+<li><a class="el" href="DirectX11Manager_8cpp_source.html">DirectX11Manager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1DirectX11Manager.html">DirectX11Manager</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::GuizmoManipulateCommand クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1GuizmoManipulateCommand.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1GuizmoManipulateCommand-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::GuizmoManipulateCommand クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="GuizmoManipulatedEvent_8h_source.html">GuizmoManipulatedEvent.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::GuizmoManipulateCommand の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GuizmoManipulateCommand__inherit__graph.svg" width="344" height="566"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::GuizmoManipulateCommand 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GuizmoManipulateCommand__coll__graph.svg" width="555" height="712"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af49e598b56592cc4ce697763c52f0ac2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#af49e598b56592cc4ce697763c52f0ac2">GuizmoManipulateCommand</a> (TransformMemento *_pPrevMemento, TransformMemento *_pMemento, const <a class="el" href="classmtgb_1_1ComponentFactory.html">ComponentFactory</a> &amp;_componentFactory)</td></tr>
+<tr class="separator:af49e598b56592cc4ce697763c52f0ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d8637b0e0cbeb7bf22b0f76e7f65a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#a26d8637b0e0cbeb7bf22b0f76e7f65a9">Execute</a> () override</td></tr>
+<tr class="memdesc:a26d8637b0e0cbeb7bf22b0f76e7f65a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">実行  <br /></td></tr>
+<tr class="separator:a26d8637b0e0cbeb7bf22b0f76e7f65a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa80058c7683a9ab52abc8767551c6274"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#aa80058c7683a9ab52abc8767551c6274">Undo</a> () override</td></tr>
+<tr class="memdesc:aa80058c7683a9ab52abc8767551c6274"><td class="mdescLeft">&#160;</td><td class="mdescRight">取り消し  <br /></td></tr>
+<tr class="separator:aa80058c7683a9ab52abc8767551c6274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be5bb3a3edb5cd5648f6dc78c48301c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#a2be5bb3a3edb5cd5648f6dc78c48301c">Redo</a> () override</td></tr>
+<tr class="memdesc:a2be5bb3a3edb5cd5648f6dc78c48301c"><td class="mdescLeft">&#160;</td><td class="mdescRight">再実行(デフォルトではExecuteと同じ)  <br /></td></tr>
+<tr class="separator:a2be5bb3a3edb5cd5648f6dc78c48301c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c534f41f6fc602eb9aedd1f9da1ba16"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#a8c534f41f6fc602eb9aedd1f9da1ba16">Name</a> () const override</td></tr>
+<tr class="separator:a8c534f41f6fc602eb9aedd1f9da1ba16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfdcf7aa48f36daa07c048132ebb49af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#adfdcf7aa48f36daa07c048132ebb49af">GetCommandTargetEntityId</a> () const override</td></tr>
+<tr class="separator:adfdcf7aa48f36daa07c048132ebb49af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a103f4789d652ad796cc3a67907d6743e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmtgb_1_1ComponentFactory.html">ComponentFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#a103f4789d652ad796cc3a67907d6743e">componentFactory_</a></td></tr>
+<tr class="separator:a103f4789d652ad796cc3a67907d6743e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a50410d0804dafb3660068d733d615"><td class="memItemLeft" align="right" valign="top">TransformMemento *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#a27a50410d0804dafb3660068d733d615">pPrevMemento_</a></td></tr>
+<tr class="separator:a27a50410d0804dafb3660068d733d615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fdf222b4b67883d61d8ec97a592d9b6"><td class="memItemLeft" align="right" valign="top">TransformMemento *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#a8fdf222b4b67883d61d8ec97a592d9b6">pMemento_</a></td></tr>
+<tr class="separator:a8fdf222b4b67883d61d8ec97a592d9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="GuizmoManipulatedEvent_8h_source.html">GuizmoManipulatedEvent.h</a> の <a class="el" href="GuizmoManipulatedEvent_8h_source.html#l00011">11</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="af49e598b56592cc4ce697763c52f0ac2" name="af49e598b56592cc4ce697763c52f0ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49e598b56592cc4ce697763c52f0ac2">&#9670;&#160;</a></span>GuizmoManipulateCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand </td>
+          <td>(</td>
+          <td class="paramtype">TransformMemento *&#160;</td>
+          <td class="paramname"><em>_pPrevMemento</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TransformMemento *&#160;</td>
+          <td class="paramname"><em>_pMemento</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1ComponentFactory.html">ComponentFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>_componentFactory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html">GuizmoManipulatedEvent.cpp</a> の <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html#l00003">3</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>    : <a class="code hl_variable" href="classmtgb_1_1GuizmoManipulateCommand.html#a27a50410d0804dafb3660068d733d615">pPrevMemento_</a>{ _pPrevMemento }</div>
+<div class="line"><span class="lineno">    5</span>    , <a class="code hl_variable" href="classmtgb_1_1GuizmoManipulateCommand.html#a8fdf222b4b67883d61d8ec97a592d9b6">pMemento_</a>{ _pMemento }</div>
+<div class="line"><span class="lineno">    6</span>    , <a class="code hl_variable" href="classmtgb_1_1GuizmoManipulateCommand.html#a103f4789d652ad796cc3a67907d6743e">componentFactory_</a>(_componentFactory)</div>
+<div class="line"><span class="lineno">    7</span>{</div>
+<div class="line"><span class="lineno">    8</span> </div>
+<div class="line"><span class="lineno">    9</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1GuizmoManipulateCommand_html_a103f4789d652ad796cc3a67907d6743e"><div class="ttname"><a href="classmtgb_1_1GuizmoManipulateCommand.html#a103f4789d652ad796cc3a67907d6743e">mtgb::GuizmoManipulateCommand::componentFactory_</a></div><div class="ttdeci">const ComponentFactory &amp; componentFactory_</div><div class="ttdef"><b>Definition:</b> <a href="GuizmoManipulatedEvent_8h_source.html#l00026">GuizmoManipulatedEvent.h:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GuizmoManipulateCommand_html_a27a50410d0804dafb3660068d733d615"><div class="ttname"><a href="classmtgb_1_1GuizmoManipulateCommand.html#a27a50410d0804dafb3660068d733d615">mtgb::GuizmoManipulateCommand::pPrevMemento_</a></div><div class="ttdeci">TransformMemento * pPrevMemento_</div><div class="ttdef"><b>Definition:</b> <a href="GuizmoManipulatedEvent_8h_source.html#l00027">GuizmoManipulatedEvent.h:27</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GuizmoManipulateCommand_html_a8fdf222b4b67883d61d8ec97a592d9b6"><div class="ttname"><a href="classmtgb_1_1GuizmoManipulateCommand.html#a8fdf222b4b67883d61d8ec97a592d9b6">mtgb::GuizmoManipulateCommand::pMemento_</a></div><div class="ttdeci">TransformMemento * pMemento_</div><div class="ttdef"><b>Definition:</b> <a href="GuizmoManipulatedEvent_8h_source.html#l00028">GuizmoManipulatedEvent.h:28</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a26d8637b0e0cbeb7bf22b0f76e7f65a9" name="a26d8637b0e0cbeb7bf22b0f76e7f65a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26d8637b0e0cbeb7bf22b0f76e7f65a9">&#9670;&#160;</a></span>Execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::GuizmoManipulateCommand::Execute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>実行 </p>
+
+<p><a class="el" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Command</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html">GuizmoManipulatedEvent.cpp</a> の <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html#l00011">11</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span> </div>
+<div class="line"><span class="lineno">   14</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adfdcf7aa48f36daa07c048132ebb49af" name="adfdcf7aa48f36daa07c048132ebb49af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfdcf7aa48f36daa07c048132ebb49af">&#9670;&#160;</a></span>GetCommandTargetEntityId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> mtgb::GuizmoManipulateCommand::GetCommandTargetEntityId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classCommand.html#a23e1ca01a9937ac120ba579a69d83aac">Command</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html">GuizmoManipulatedEvent.cpp</a> の <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1GuizmoManipulateCommand.html#a8fdf222b4b67883d61d8ec97a592d9b6">pMemento_</a>-&gt;GetEntityId();</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8c534f41f6fc602eb9aedd1f9da1ba16" name="a8c534f41f6fc602eb9aedd1f9da1ba16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c534f41f6fc602eb9aedd1f9da1ba16">&#9670;&#160;</a></span>Name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mtgb::GuizmoManipulateCommand::Name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>コマンドの名前 (表示用) </p>
+<p>コピーによる負荷が大きい場合は string_viewなどへ切り替えることを視野に入れる </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p><a class="el" href="classCommand.html#aba62319b363ca36a4112803637ee5491">Command</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html">GuizmoManipulatedEvent.cpp</a> の <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html#l00026">26</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;GuizmoManipulatedEvent&quot;</span>;</div>
+<div class="line"><span class="lineno">   29</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2be5bb3a3edb5cd5648f6dc78c48301c" name="a2be5bb3a3edb5cd5648f6dc78c48301c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2be5bb3a3edb5cd5648f6dc78c48301c">&#9670;&#160;</a></span>Redo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::GuizmoManipulateCommand::Redo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>再実行(デフォルトではExecuteと同じ) </p>
+
+<p><a class="el" href="classCommand.html#a75ca9ed49533a4e30fb3e2fcfc549a22">Command</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html">GuizmoManipulatedEvent.cpp</a> の <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="classmtgb_1_1GuizmoManipulateCommand.html#a103f4789d652ad796cc3a67907d6743e">componentFactory_</a>.<a class="code hl_function" href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">AddComponentFromMemento</a>(*<a class="code hl_variable" href="classmtgb_1_1GuizmoManipulateCommand.html#a8fdf222b4b67883d61d8ec97a592d9b6">pMemento_</a>);</div>
+<div class="line"><span class="lineno">   24</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_a54182336964c12ecaf6908938e780ef6"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">mtgb::ComponentFactory::AddComponentFromMemento</a></div><div class="ttdeci">bool AddComponentFromMemento(const IComponentMemento &amp;_memento) const</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8cpp_source.html#l00017">ComponentFactory.cpp:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa80058c7683a9ab52abc8767551c6274" name="aa80058c7683a9ab52abc8767551c6274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa80058c7683a9ab52abc8767551c6274">&#9670;&#160;</a></span>Undo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::GuizmoManipulateCommand::Undo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>取り消し </p>
+
+<p><a class="el" href="classCommand.html#acee7d28a866913f07e880a675acc4720">Command</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html">GuizmoManipulatedEvent.cpp</a> の <a class="el" href="GuizmoManipulatedEvent_8cpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>{</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="classmtgb_1_1GuizmoManipulateCommand.html#a103f4789d652ad796cc3a67907d6743e">componentFactory_</a>.<a class="code hl_function" href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">AddComponentFromMemento</a>(*<a class="code hl_variable" href="classmtgb_1_1GuizmoManipulateCommand.html#a27a50410d0804dafb3660068d733d615">pPrevMemento_</a>);</div>
+<div class="line"><span class="lineno">   19</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a103f4789d652ad796cc3a67907d6743e" name="a103f4789d652ad796cc3a67907d6743e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a103f4789d652ad796cc3a67907d6743e">&#9670;&#160;</a></span>componentFactory_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmtgb_1_1ComponentFactory.html">ComponentFactory</a>&amp; mtgb::GuizmoManipulateCommand::componentFactory_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GuizmoManipulatedEvent_8h_source.html">GuizmoManipulatedEvent.h</a> の <a class="el" href="GuizmoManipulatedEvent_8h_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8fdf222b4b67883d61d8ec97a592d9b6" name="a8fdf222b4b67883d61d8ec97a592d9b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fdf222b4b67883d61d8ec97a592d9b6">&#9670;&#160;</a></span>pMemento_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TransformMemento* mtgb::GuizmoManipulateCommand::pMemento_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GuizmoManipulatedEvent_8h_source.html">GuizmoManipulatedEvent.h</a> の <a class="el" href="GuizmoManipulatedEvent_8h_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a27a50410d0804dafb3660068d733d615" name="a27a50410d0804dafb3660068d733d615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27a50410d0804dafb3660068d733d615">&#9670;&#160;</a></span>pPrevMemento_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TransformMemento* mtgb::GuizmoManipulateCommand::pPrevMemento_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GuizmoManipulatedEvent_8h_source.html">GuizmoManipulatedEvent.h</a> の <a class="el" href="GuizmoManipulatedEvent_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="GuizmoManipulatedEvent_8h_source.html">GuizmoManipulatedEvent.h</a></li>
+<li><a class="el" href="GuizmoManipulatedEvent_8cpp_source.html">GuizmoManipulatedEvent.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html">GuizmoManipulateCommand</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

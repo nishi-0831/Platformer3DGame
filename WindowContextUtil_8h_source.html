@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: WindowContextUtil.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('WindowContextUtil_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">WindowContextUtil.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="WindowContextUtil_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContextResourceManager_8h.html">WindowContextResourceManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="Game_8h.html">Game.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="ISystem_8h.html">ISystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespacemtgb.html#a9eed60a2e95d069321022fb7f7acf49d">    7</a></span>    <span class="keyword">using </span><a class="code hl_class" href="classmtgb_1_1WindowContextResourceManager.html">WinCtxResManager</a> = <a class="code hl_class" href="classmtgb_1_1WindowContextResourceManager.html">WindowContextResourceManager</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespacemtgb_1_1WinCtxRes.html">   13</a></span>    <span class="keyword">namespace </span>WinCtxRes</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ResourceT&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespacemtgb_1_1WinCtxRes.html#ab0926fb61d0db1d7c5f68fa830731d9e">   22</a></span>        ResourceT&amp; <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ab0926fb61d0db1d7c5f68fa830731d9e">Get</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> ctx)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">return</span> Game::System&lt;WinCtxResManager&gt;().Get&lt;ResourceT&gt;(ctx);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#aba4a5d6cb4d9f8fc555f3ebaba2ed511">ChangeResource</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> ctx);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespacemtgb_1_1WinCtxRes.html#aab085b2a33fdc4aac9d595eb57b58018">   37</a></span>        <a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#aab085b2a33fdc4aac9d595eb57b58018">CurrContext</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">GetHWND</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> ctx);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#a313dc121054a1ad972d12e05373daa9c">SwapWindow</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _ctx1 = <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>, <a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _ctx2 = <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="ttc" id="aDirect2DResource_8h_html_ac17599842f3c193b028cc578098f8b93"><div class="ttname"><a href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a></div><div class="ttdeci">struct HWND__ * HWND</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00009">Direct2DResource.h:9</a></div></div>
+<div class="ttc" id="aGame_8h_html"><div class="ttname"><a href="Game_8h.html">Game.h</a></div></div>
+<div class="ttc" id="aISystem_8h_html"><div class="ttname"><a href="ISystem_8h.html">ISystem.h</a></div></div>
+<div class="ttc" id="aWindowContextResourceManager_8h_html"><div class="ttname"><a href="WindowContextResourceManager_8h.html">WindowContextResourceManager.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResourceManager_html"><div class="ttname"><a href="classmtgb_1_1WindowContextResourceManager.html">mtgb::WindowContextResourceManager</a></div><div class="ttdoc">ウィンドウごとのリソースを管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResourceManager_8h_source.html#l00021">WindowContextResourceManager.h:22</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_a313dc121054a1ad972d12e05373daa9c"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#a313dc121054a1ad972d12e05373daa9c">mtgb::WinCtxRes::SwapWindow</a></div><div class="ttdeci">void SwapWindow(WindowContext _ctx1=WindowContext::First, WindowContext _ctx2=WindowContext::Second)</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00030">WindowContextUtil.cpp:30</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_aab085b2a33fdc4aac9d595eb57b58018"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#aab085b2a33fdc4aac9d595eb57b58018">mtgb::WinCtxRes::CurrContext</a></div><div class="ttdeci">WindowContext CurrContext()</div><div class="ttdoc">現在有効なウィンドウの識別子を返す</div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_ab0926fb61d0db1d7c5f68fa830731d9e"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#ab0926fb61d0db1d7c5f68fa830731d9e">mtgb::WinCtxRes::Get</a></div><div class="ttdeci">ResourceT &amp; Get(WindowContext ctx)</div><div class="ttdoc">リソースを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8h_source.html#l00022">WindowContextUtil.h:22</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_aba4a5d6cb4d9f8fc555f3ebaba2ed511"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#aba4a5d6cb4d9f8fc555f3ebaba2ed511">mtgb::WinCtxRes::ChangeResource</a></div><div class="ttdeci">void ChangeResource(WindowContext ctx)</div><div class="ttdoc">リソースを切り替える</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00042">WindowContextUtil.cpp:42</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_ac3067c8903d57f25d01d82b155657099"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">mtgb::WinCtxRes::GetHWND</a></div><div class="ttdeci">HWND GetHWND(WindowContext ctx)</div><div class="ttdoc">そのウィンドウのHWNDを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00025">WindowContextUtil.cpp:25</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">mtgb::WindowContext</a></div><div class="ttdeci">WindowContext</div><div class="ttdef"><b>Definition:</b> <a href="WindowContext_8h_source.html#l00012">WindowContext.h:13</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::WindowContext::Second</a></div><div class="ttdeci">@ Second</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="WindowContextUtil_8h.html">WindowContextUtil.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

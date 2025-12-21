@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Direct3DResource.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Direct3DResource_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Direct3DResource.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Direct3DResource_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Direct3DResource_8h.html">Direct3DResource.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ReleaseUtility_8h.html">ReleaseUtility.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="Screen_8h.html">Screen.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="WindowManager_8h.html">WindowManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct3DResource.html#a028867d4c20d19552419fab305472a72">    7</a></span><a class="code hl_function" href="classmtgb_1_1Direct3DResource.html#a028867d4c20d19552419fab305472a72">mtgb::Direct3DResource::Direct3DResource</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _windowContext)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    : <a class="code hl_class" href="classmtgb_1_1WindowContextResource.html">WindowContextResource</a>(_windowContext)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    , pRenderTargetView_{nullptr}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    , pDepthStencil_{nullptr}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    , pDepthStencilView_{nullptr}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">// DirectX11Manager にアクセス</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">auto</span>&amp; dx11Manager = Game::System&lt;DirectX11Manager&gt;();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&amp; dxgi = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&gt;(_windowContext);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// レンダーターゲットビューを作成</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    dx11Manager.CreateRenderTargetView(dxgi.<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a3918d704bf2193b2bfedca4374cbde2d">pSwapChain1_</a>.Get(), <a class="code hl_variable" href="classmtgb_1_1Direct3DResource.html#aded90256f06c3b2ec583586dec9bc7f7">pRenderTargetView_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// ビューポートを作成</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2Int</a> SCREEN_SIZE{ Game::System&lt;WindowManager&gt;().GetWindowSize(_windowContext)};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    dx11Manager.CreateViewport(SCREEN_SIZE, <a class="code hl_variable" href="classmtgb_1_1Direct3DResource.html#ad77dbf312ced6177dd54481d0dae0ca5">viewPort_</a>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// 深度ステンシルと深度ステンシルビューを作成</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    dx11Manager.CreateDepthStencilAndDepthStencilView(SCREEN_SIZE, <a class="code hl_variable" href="classmtgb_1_1Direct3DResource.html#aeebe27cd19f7fc5463d0b6a2289dfe3c">pDepthStencil_</a>.ReleaseAndGetAddressOf(), <a class="code hl_variable" href="classmtgb_1_1Direct3DResource.html#adcde9422486870dc79b18f52a18c5aad">pDepthStencilView_</a>.ReleaseAndGetAddressOf());   </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct3DResource.html#a16e72128287a7c2ef6232900503401bc">   29</a></span><a class="code hl_function" href="classmtgb_1_1Direct3DResource.html#a16e72128287a7c2ef6232900503401bc">mtgb::Direct3DResource::~Direct3DResource</a>()</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Release();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct3DResource.html#a51d1afc1532a4476c9e230031e91dc67">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct3DResource.html#a51d1afc1532a4476c9e230031e91dc67">mtgb::Direct3DResource::SetResource</a>()</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="classmtgb_1_1DirectX11Manager.html">DirectX11Manager</a>&amp; dx11Manager{ Game::System&lt;DirectX11Manager&gt;() };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    dx11Manager.<a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a46655c9165065413565a44cd82099076">ChangeViewport</a>(viewPort_);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    dx11Manager.ChangeRenderTargets(pRenderTargetView_, pDepthStencilView_);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct3DResource.html#a952e691f9175b3eb8a7d881f829aebbf">   41</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct3DResource.html#a952e691f9175b3eb8a7d881f829aebbf">mtgb::Direct3DResource::Reset</a>()</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// リソースを解放する</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    Release();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct3DResource.html#a581a88c3cd50ac50a5965fecf079d35c">   47</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct3DResource.html#a581a88c3cd50ac50a5965fecf079d35c">mtgb::Direct3DResource::OnResize</a>(UINT _width, UINT _height)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// DirectX11Manager にアクセス</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">auto</span>&amp; dx11Manager = Game::System&lt;DirectX11Manager&gt;();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&amp; dxgi = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&gt;(windowContext_);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// レンダーターゲットビューを作成</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    dx11Manager.CreateRenderTargetView(dxgi.<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a3918d704bf2193b2bfedca4374cbde2d">pSwapChain1_</a>.Get(), pRenderTargetView_.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">// ビューポートを作成</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2Int</a> SCREEN_SIZE{ <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_width),<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_height) };</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    dx11Manager.CreateViewport(SCREEN_SIZE, viewPort_);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">// 深度ステンシルと深度ステンシルビューを作成</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    dx11Manager.CreateDepthStencilAndDepthStencilView(SCREEN_SIZE, pDepthStencil_.ReleaseAndGetAddressOf(), pDepthStencilView_.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct3DResource.html#aaf0cbff705d735b6b2286b56d78c4a31">   65</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct3DResource.html#aaf0cbff705d735b6b2286b56d78c4a31">mtgb::Direct3DResource::Release</a>()</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    pDepthStencil_.Reset();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    pDepthStencilView_.Reset();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    pRenderTargetView_.Reset();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct3DResource.html#a0067d273c8cb49cd3d4f6559d885545a">   72</a></span><span class="keyword">const</span> D3D11_VIEWPORT&amp; <a class="code hl_function" href="classmtgb_1_1Direct3DResource.html#a0067d273c8cb49cd3d4f6559d885545a">mtgb::Direct3DResource::GetViewport</a>()</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> viewPort_;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="ttc" id="aDirect3DResource_8h_html"><div class="ttname"><a href="Direct3DResource_8h.html">Direct3DResource.h</a></div></div>
+<div class="ttc" id="aReleaseUtility_8h_html"><div class="ttname"><a href="ReleaseUtility_8h.html">ReleaseUtility.h</a></div></div>
+<div class="ttc" id="aScreen_8h_html"><div class="ttname"><a href="Screen_8h.html">Screen.h</a></div></div>
+<div class="ttc" id="aWindowManager_8h_html"><div class="ttname"><a href="WindowManager_8h.html">WindowManager.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html">mtgb::DXGIResource</a></div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00019">DXGIResource.h:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a3918d704bf2193b2bfedca4374cbde2d"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a3918d704bf2193b2bfedca4374cbde2d">mtgb::DXGIResource::pSwapChain1_</a></div><div class="ttdeci">ComPtr&lt; IDXGISwapChain1 &gt; pSwapChain1_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00036">DXGIResource.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_a0067d273c8cb49cd3d4f6559d885545a"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#a0067d273c8cb49cd3d4f6559d885545a">mtgb::Direct3DResource::GetViewport</a></div><div class="ttdeci">const D3D11_VIEWPORT &amp; GetViewport()</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8cpp_source.html#l00072">Direct3DResource.cpp:72</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_a028867d4c20d19552419fab305472a72"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#a028867d4c20d19552419fab305472a72">mtgb::Direct3DResource::Direct3DResource</a></div><div class="ttdeci">Direct3DResource(WindowContext _windowContext)</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8cpp_source.html#l00007">Direct3DResource.cpp:7</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_a16e72128287a7c2ef6232900503401bc"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#a16e72128287a7c2ef6232900503401bc">mtgb::Direct3DResource::~Direct3DResource</a></div><div class="ttdeci">~Direct3DResource()</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8cpp_source.html#l00029">Direct3DResource.cpp:29</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_a51d1afc1532a4476c9e230031e91dc67"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#a51d1afc1532a4476c9e230031e91dc67">mtgb::Direct3DResource::SetResource</a></div><div class="ttdeci">void SetResource() override</div><div class="ttdoc">ウィンドウを変更する際に固有のリソースをセットする</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8cpp_source.html#l00034">Direct3DResource.cpp:34</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_a581a88c3cd50ac50a5965fecf079d35c"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#a581a88c3cd50ac50a5965fecf079d35c">mtgb::Direct3DResource::OnResize</a></div><div class="ttdeci">void OnResize(UINT _width, UINT _height) override</div><div class="ttdoc">ウィンドウのサイズが変更された後の処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8cpp_source.html#l00047">Direct3DResource.cpp:47</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_a952e691f9175b3eb8a7d881f829aebbf"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#a952e691f9175b3eb8a7d881f829aebbf">mtgb::Direct3DResource::Reset</a></div><div class="ttdeci">void Reset() override</div><div class="ttdoc">ウィンドウのサイズが変更される前の解放処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8cpp_source.html#l00041">Direct3DResource.cpp:41</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_aaf0cbff705d735b6b2286b56d78c4a31"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#aaf0cbff705d735b6b2286b56d78c4a31">mtgb::Direct3DResource::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8cpp_source.html#l00065">Direct3DResource.cpp:65</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_ad77dbf312ced6177dd54481d0dae0ca5"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#ad77dbf312ced6177dd54481d0dae0ca5">mtgb::Direct3DResource::viewPort_</a></div><div class="ttdeci">D3D11_VIEWPORT viewPort_</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8h_source.html#l00026">Direct3DResource.h:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_adcde9422486870dc79b18f52a18c5aad"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#adcde9422486870dc79b18f52a18c5aad">mtgb::Direct3DResource::pDepthStencilView_</a></div><div class="ttdeci">ComPtr&lt; ID3D11DepthStencilView &gt; pDepthStencilView_</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8h_source.html#l00030">Direct3DResource.h:30</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_aded90256f06c3b2ec583586dec9bc7f7"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#aded90256f06c3b2ec583586dec9bc7f7">mtgb::Direct3DResource::pRenderTargetView_</a></div><div class="ttdeci">ComPtr&lt; ID3D11RenderTargetView &gt; pRenderTargetView_</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8h_source.html#l00028">Direct3DResource.h:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html_aeebe27cd19f7fc5463d0b6a2289dfe3c"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html#aeebe27cd19f7fc5463d0b6a2289dfe3c">mtgb::Direct3DResource::pDepthStencil_</a></div><div class="ttdeci">ComPtr&lt; ID3D11Texture2D &gt; pDepthStencil_</div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8h_source.html#l00029">Direct3DResource.h:29</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html">mtgb::DirectX11Manager</a></div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8h_source.html#l00031">DirectX11Manager.h:32</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a46655c9165065413565a44cd82099076"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a46655c9165065413565a44cd82099076">mtgb::DirectX11Manager::ChangeViewport</a></div><div class="ttdeci">void ChangeViewport(const D3D11_VIEWPORT &amp;viewport)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00389">DirectX11Manager.cpp:389</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html">mtgb::WindowContextResource</a></div><div class="ttdoc">ウィンドウごとに固有のリソースのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00018">WindowContextResource.h:19</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">mtgb::WindowContext</a></div><div class="ttdeci">WindowContext</div><div class="ttdef"><b>Definition:</b> <a href="WindowContext_8h_source.html#l00012">WindowContext.h:13</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector2T_html"><div class="ttname"><a href="structmtgb_1_1Vector2T.html">mtgb::Vector2T&lt; int &gt;</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Direct3DResource_8cpp.html">Direct3DResource.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

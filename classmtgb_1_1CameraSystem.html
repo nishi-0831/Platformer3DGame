@@ -1,0 +1,1306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::CameraSystem クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1CameraSystem.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1CameraSystem-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::CameraSystem クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::CameraSystem の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CameraSystem__inherit__graph.svg" width="290" height="712"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::CameraSystem 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CameraSystem__coll__graph.svg" width="290" height="712"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a94a1fdd31bf6685e33e61092c64196de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a94a1fdd31bf6685e33e61092c64196de">CameraSystem</a> ()</td></tr>
+<tr class="separator:a94a1fdd31bf6685e33e61092c64196de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd4be510dca78bb114717f2372f1658"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a4cd4be510dca78bb114717f2372f1658">~CameraSystem</a> ()</td></tr>
+<tr class="separator:a4cd4be510dca78bb114717f2372f1658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a586ac71b30731c38d58c29f35d5db87b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a586ac71b30731c38d58c29f35d5db87b">Initialize</a> () override</td></tr>
+<tr class="separator:a586ac71b30731c38d58c29f35d5db87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac22eafc15180c2a626c17c5b66784019"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#ac22eafc15180c2a626c17c5b66784019">Update</a> () override</td></tr>
+<tr class="separator:ac22eafc15180c2a626c17c5b66784019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9490ccd6504349a69c0b317ebcafddc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a9490ccd6504349a69c0b317ebcafddc4">RegisterDrawCamera</a> (<a class="el" href="classmtgb_1_1Transform.html">Transform</a> *pCameraTransform_)</td></tr>
+<tr class="memdesc:a9490ccd6504349a69c0b317ebcafddc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">カメラとなる座標系を登録する  <br /></td></tr>
+<tr class="separator:a9490ccd6504349a69c0b317ebcafddc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba275dc63e0e5abe275fa7927787e1dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#aba275dc63e0e5abe275fa7927787e1dc">UnregisterDrawCamera</a> (const <a class="el" href="classmtgb_1_1Transform.html">Transform</a> *pCameraTransform_)</td></tr>
+<tr class="memdesc:aba275dc63e0e5abe275fa7927787e1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">登録解除する  <br /></td></tr>
+<tr class="separator:aba275dc63e0e5abe275fa7927787e1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ff1134c30eba61f48c19789365b66c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a73ff1134c30eba61f48c19789365b66c">ClearDrawCameraAll</a> ()</td></tr>
+<tr class="memdesc:a73ff1134c30eba61f48c19789365b66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">すべての描画カメラをクリアする  <br /></td></tr>
+<tr class="separator:a73ff1134c30eba61f48c19789365b66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf82de40447449d80045f9a5b896c99c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#abf82de40447449d80045f9a5b896c99c">SetFOV</a> (const float _angle)</td></tr>
+<tr class="memdesc:abf82de40447449d80045f9a5b896c99c"><td class="mdescLeft">&#160;</td><td class="mdescRight">FOVをセットする  <br /></td></tr>
+<tr class="separator:abf82de40447449d80045f9a5b896c99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659c690b7a06029f943f94ecc940a8b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a659c690b7a06029f943f94ecc940a8b4">SetDrawCamera</a> (const <a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> _hCamera)</td></tr>
+<tr class="memdesc:a659c690b7a06029f943f94ecc940a8b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画対象となるカメラを指定する  <br /></td></tr>
+<tr class="separator:a659c690b7a06029f943f94ecc940a8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb3451a1ae30694094ac1ade1c411a0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#aafb3451a1ae30694094ac1ade1c411a0">GetDrawCamera</a> () const</td></tr>
+<tr class="memdesc:aafb3451a1ae30694094ac1ade1c411a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在描画対象となっているカメラのハンドルを取得  <br /></td></tr>
+<tr class="separator:aafb3451a1ae30694094ac1ade1c411a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6471cfa45f5b9ac2946134c15ef44ac4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a6471cfa45f5b9ac2946134c15ef44ac4">GetWorldToScreenPos</a> (<a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> _pos, const <a class="el" href="structmtgb_1_1WorldToScreenData.html">WorldToScreenData</a> &amp;_data) const</td></tr>
+<tr class="separator:a6471cfa45f5b9ac2946134c15ef44ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4aa0ab716c75802ec0be7c2e6df73f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#ace4aa0ab716c75802ec0be7c2e6df73f">GetWorldToScreenPos</a> (<a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> _pos, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context)</td></tr>
+<tr class="separator:ace4aa0ab716c75802ec0be7c2e6df73f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9110577e101a86aef1f50e3a3ee498f9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a9110577e101a86aef1f50e3a3ee498f9">GetTransform</a> () const</td></tr>
+<tr class="separator:a9110577e101a86aef1f50e3a3ee498f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed4b03044fdfe36284df379d45216bc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a1ed4b03044fdfe36284df379d45216bc">GetTransform</a> (<a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> _hCamera) const</td></tr>
+<tr class="separator:a1ed4b03044fdfe36284df379d45216bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0316906f5510c890175c7ddd091018f1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a0316906f5510c890175c7ddd091018f1">GetTransform</a> (<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context) const</td></tr>
+<tr class="separator:a0316906f5510c890175c7ddd091018f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a461e94d106ba457a07bf159b41ba89d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a461e94d106ba457a07bf159b41ba89d5">GetViewMatrix</a> (<a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *_pView) const</td></tr>
+<tr class="separator:a461e94d106ba457a07bf159b41ba89d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0742defdc8273a911ba750affe72c07a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a0742defdc8273a911ba750affe72c07a">GetViewMatrix</a> (<a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *_pView, <a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> _hCamera) const</td></tr>
+<tr class="separator:a0742defdc8273a911ba750affe72c07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6d385f2c639ca807ce0fa2f1d5c95b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a5a6d385f2c639ca807ce0fa2f1d5c95b">GetProjMatrix</a> (<a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *_pProj) const</td></tr>
+<tr class="separator:a5a6d385f2c639ca807ce0fa2f1d5c95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373ce46cac7f1700014b85f073766491"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a373ce46cac7f1700014b85f073766491">GetPosition</a> (<a class="el" href="structmtgb_1_1Vector4.html">Vector4</a> *_pPosition) const</td></tr>
+<tr class="separator:a373ce46cac7f1700014b85f073766491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c765497849e42efad89499c4628af5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#ab6c765497849e42efad89499c4628af5">GetNear</a> () const</td></tr>
+<tr class="separator:ab6c765497849e42efad89499c4628af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e47b7c8dcce95f8c93f077f054f1d5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a64e47b7c8dcce95f8c93f077f054f1d5">GetFar</a> () const</td></tr>
+<tr class="separator:a64e47b7c8dcce95f8c93f077f054f1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673419a51e4dc5da8a9b609ec1891822"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a673419a51e4dc5da8a9b609ec1891822">GetFov</a> () const</td></tr>
+<tr class="separator:a673419a51e4dc5da8a9b609ec1891822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70441e5dff61689c83f5ffabf594ed5b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmtgb_1_1WorldToScreenData.html">WorldToScreenData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a70441e5dff61689c83f5ffabf594ed5b">GetWorldToScreenData</a> (<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context)</td></tr>
+<tr class="separator:a70441e5dff61689c83f5ffabf594ed5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2823e5390468dfc47213b845c55d3ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">Release</a> ()</td></tr>
+<tr class="memdesc:aa2823e5390468dfc47213b845c55d3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放処理  <br /></td></tr>
+<tr class="separator:aa2823e5390468dfc47213b845c55d3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a4fa44a7bd621f09e8bc2d80ba0e363e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a4fa44a7bd621f09e8bc2d80ba0e363e1">CalculateWorldToScreenData</a> (<a class="el" href="structmtgb_1_1WorldToScreenData.html">WorldToScreenData</a> *_data, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context)</td></tr>
+<tr class="separator:a4fa44a7bd621f09e8bc2d80ba0e363e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a417c53c79fa0448d6d74bd490ea4d9f9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmtgb_1_1Transform.html">Transform</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a></td></tr>
+<tr class="separator:a417c53c79fa0448d6d74bd490ea4d9f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad03791f838d2d5822f6b866604c635f0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#ad03791f838d2d5822f6b866604c635f0">fov_</a></td></tr>
+<tr class="separator:ad03791f838d2d5822f6b866604c635f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e2aabd5a9293f245f5e50637de2f8d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#ac8e2aabd5a9293f245f5e50637de2f8d">near_</a></td></tr>
+<tr class="separator:ac8e2aabd5a9293f245f5e50637de2f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1ae2ea6bf694c01c499b6f7bce05348"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#aa1ae2ea6bf694c01c499b6f7bce05348">far_</a></td></tr>
+<tr class="separator:aa1ae2ea6bf694c01c499b6f7bce05348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af542f65adda4c369cb209587da8615b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#af542f65adda4c369cb209587da8615b9">hCurrentCamera_</a></td></tr>
+<tr class="separator:af542f65adda4c369cb209587da8615b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af342f222ff8a4a055517b5d4554a8401"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>, <a class="el" href="structmtgb_1_1WorldToScreenData.html">WorldToScreenData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#af342f222ff8a4a055517b5d4554a8401">worldToScreenDatas_</a></td></tr>
+<tr class="separator:af342f222ff8a4a055517b5d4554a8401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31167ffcc75b39751762e26f65eac3ed"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraSystem.html#a31167ffcc75b39751762e26f65eac3ed">currentFrameId_</a></td></tr>
+<tr class="separator:a31167ffcc75b39751762e26f65eac3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00012">12</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a94a1fdd31bf6685e33e61092c64196de" name="a94a1fdd31bf6685e33e61092c64196de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a1fdd31bf6685e33e61092c64196de">&#9670;&#160;</a></span>CameraSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::CameraSystem::CameraSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                               :</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>{},</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#ad03791f838d2d5822f6b866604c635f0">fov_</a>{ <a class="code hl_variable" href="namespaceanonymous__namespace_02CameraSystem_8cpp_03.html#a87b6f08c2660fdc64a18345348340d30">DEFAULT_FOV</a> },</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#ac8e2aabd5a9293f245f5e50637de2f8d">near_</a>{ <a class="code hl_variable" href="namespaceanonymous__namespace_02CameraSystem_8cpp_03.html#a0535eb348b8076b1af719f3e90231859">DEFAULT_NEAR</a> },</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#aa1ae2ea6bf694c01c499b6f7bce05348">far_</a>{ <a class="code hl_variable" href="namespaceanonymous__namespace_02CameraSystem_8cpp_03.html#a56ff756a83f7b287da0c74c8347e5c51">DEFAULT_FAR</a> },</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#af542f65adda4c369cb209587da8615b9">hCurrentCamera_</a>{ <a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">INVALID_HANDLE</a> },</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a31167ffcc75b39751762e26f65eac3ed">currentFrameId_</a>{0}</div>
+<div class="line"><span class="lineno">   28</span>{</div>
+<div class="line"><span class="lineno">   29</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a31167ffcc75b39751762e26f65eac3ed"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a31167ffcc75b39751762e26f65eac3ed">mtgb::CameraSystem::currentFrameId_</a></div><div class="ttdeci">uint64_t currentFrameId_</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8h_source.html#l00074">CameraSystem.h:74</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a417c53c79fa0448d6d74bd490ea4d9f9"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">mtgb::CameraSystem::pTransforms_</a></div><div class="ttdeci">std::vector&lt; Transform * &gt; pTransforms_</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8h_source.html#l00068">CameraSystem.h:68</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_aa1ae2ea6bf694c01c499b6f7bce05348"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#aa1ae2ea6bf694c01c499b6f7bce05348">mtgb::CameraSystem::far_</a></div><div class="ttdeci">float far_</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8h_source.html#l00071">CameraSystem.h:71</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_ac8e2aabd5a9293f245f5e50637de2f8d"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#ac8e2aabd5a9293f245f5e50637de2f8d">mtgb::CameraSystem::near_</a></div><div class="ttdeci">float near_</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8h_source.html#l00070">CameraSystem.h:70</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_ad03791f838d2d5822f6b866604c635f0"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#ad03791f838d2d5822f6b866604c635f0">mtgb::CameraSystem::fov_</a></div><div class="ttdeci">float fov_</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8h_source.html#l00069">CameraSystem.h:69</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_af542f65adda4c369cb209587da8615b9"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#af542f65adda4c369cb209587da8615b9">mtgb::CameraSystem::hCurrentCamera_</a></div><div class="ttdeci">CameraHandleInScene hCurrentCamera_</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8h_source.html#l00072">CameraSystem.h:72</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02CameraSystem_8cpp_03_html_a0535eb348b8076b1af719f3e90231859"><div class="ttname"><a href="namespaceanonymous__namespace_02CameraSystem_8cpp_03.html#a0535eb348b8076b1af719f3e90231859">anonymous_namespace{CameraSystem.cpp}::DEFAULT_NEAR</a></div><div class="ttdeci">static const float DEFAULT_NEAR</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00017">CameraSystem.cpp:17</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02CameraSystem_8cpp_03_html_a56ff756a83f7b287da0c74c8347e5c51"><div class="ttname"><a href="namespaceanonymous__namespace_02CameraSystem_8cpp_03.html#a56ff756a83f7b287da0c74c8347e5c51">anonymous_namespace{CameraSystem.cpp}::DEFAULT_FAR</a></div><div class="ttdeci">static const float DEFAULT_FAR</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00018">CameraSystem.cpp:18</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02CameraSystem_8cpp_03_html_a87b6f08c2660fdc64a18345348340d30"><div class="ttname"><a href="namespaceanonymous__namespace_02CameraSystem_8cpp_03.html#a87b6f08c2660fdc64a18345348340d30">anonymous_namespace{CameraSystem.cpp}::DEFAULT_FOV</a></div><div class="ttdeci">static const float DEFAULT_FOV</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00016">CameraSystem.cpp:16</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a461c37884dafe5e26f7d9b0e2f97148b"><div class="ttname"><a href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a></div><div class="ttdeci">static const int32_t INVALID_HANDLE</div><div class="ttdoc">無効なハンドル値</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00045">Handlers.h:45</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4cd4be510dca78bb114717f2372f1658" name="a4cd4be510dca78bb114717f2372f1658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd4be510dca78bb114717f2372f1658">&#9670;&#160;</a></span>~CameraSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::CameraSystem::~CameraSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a4fa44a7bd621f09e8bc2d80ba0e363e1" name="a4fa44a7bd621f09e8bc2d80ba0e363e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa44a7bd621f09e8bc2d80ba0e363e1">&#9670;&#160;</a></span>CalculateWorldToScreenData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::CalculateWorldToScreenData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1WorldToScreenData.html">WorldToScreenData</a> *&#160;</td>
+          <td class="paramname"><em>_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00243">243</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  244</span>{</div>
+<div class="line"><span class="lineno">  245</span>    _data-&gt;frameId = <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a31167ffcc75b39751762e26f65eac3ed">currentFrameId_</a>;</div>
+<div class="line"><span class="lineno">  246</span>    _data-&gt;viewport = WinCtxRes::Get&lt;Direct3DResource&gt;(_context).GetViewport();</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>    <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a5a6d385f2c639ca807ce0fa2f1d5c95b">GetProjMatrix</a>(&amp;_data-&gt;projMat);</div>
+<div class="line"><span class="lineno">  249</span>    <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a461e94d106ba457a07bf159b41ba89d5">GetViewMatrix</a>(&amp;_data-&gt;viewMat,WinCtxRes::Get&lt;CameraResource&gt;(_context).GetHCamera());</div>
+<div class="line"><span class="lineno">  250</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a461e94d106ba457a07bf159b41ba89d5"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a461e94d106ba457a07bf159b41ba89d5">mtgb::CameraSystem::GetViewMatrix</a></div><div class="ttdeci">void GetViewMatrix(Matrix4x4 *_pView) const</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00171">CameraSystem.cpp:171</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a5a6d385f2c639ca807ce0fa2f1d5c95b"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a5a6d385f2c639ca807ce0fa2f1d5c95b">mtgb::CameraSystem::GetProjMatrix</a></div><div class="ttdeci">void GetProjMatrix(Matrix4x4 *_pProj) const</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00187">CameraSystem.cpp:187</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="WorldToScreenData_8h_source.html#l00013">mtgb::WorldToScreenData::frameId</a>, <a class="el" href="WorldToScreenData_8h_source.html#l00011">mtgb::WorldToScreenData::projMat</a>, <a class="el" href="WorldToScreenData_8h_source.html#l00011">mtgb::WorldToScreenData::viewMat</a>, <a class="el" href="WorldToScreenData_8h_source.html#l00012">mtgb::WorldToScreenData::viewport</a>.</p>
+
+</div>
+</div>
+<a id="a73ff1134c30eba61f48c19789365b66c" name="a73ff1134c30eba61f48c19789365b66c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ff1134c30eba61f48c19789365b66c">&#9670;&#160;</a></span>ClearDrawCameraAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::ClearDrawCameraAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>すべての描画カメラをクリアする </p>
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00074">74</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>{</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.clear();</div>
+<div class="line"><span class="lineno">   77</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aafb3451a1ae30694094ac1ade1c411a0" name="aafb3451a1ae30694094ac1ade1c411a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb3451a1ae30694094ac1ade1c411a0">&#9670;&#160;</a></span>GetDrawCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> mtgb::CameraSystem::GetDrawCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>現在描画対象となっているカメラのハンドルを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>カメラのハンドル</dd></dl>
+
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00051">51</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#af542f65adda4c369cb209587da8615b9">hCurrentCamera_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="CameraSystem_8h_source.html#l00072">hCurrentCamera_</a>.</p>
+
+</div>
+</div>
+<a id="a64e47b7c8dcce95f8c93f077f054f1d5" name="a64e47b7c8dcce95f8c93f077f054f1d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64e47b7c8dcce95f8c93f077f054f1d5">&#9670;&#160;</a></span>GetFar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::CameraSystem::GetFar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00213">213</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>{</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#aa1ae2ea6bf694c01c499b6f7bce05348">far_</a>;</div>
+<div class="line"><span class="lineno">  216</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00238">mtgb::ImGuiEditorCamera::SelectTransform()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CameraSystem_a64e47b7c8dcce95f8c93f077f054f1d5_icgraph.svg" width="655" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a673419a51e4dc5da8a9b609ec1891822" name="a673419a51e4dc5da8a9b609ec1891822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a673419a51e4dc5da8a9b609ec1891822">&#9670;&#160;</a></span>GetFov()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::CameraSystem::GetFov </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00218">218</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>{</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#ad03791f838d2d5822f6b866604c635f0">fov_</a>;</div>
+<div class="line"><span class="lineno">  221</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab6c765497849e42efad89499c4628af5" name="ab6c765497849e42efad89499c4628af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c765497849e42efad89499c4628af5">&#9670;&#160;</a></span>GetNear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::CameraSystem::GetNear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00208">208</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  209</span>{</div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#ac8e2aabd5a9293f245f5e50637de2f8d">near_</a>;</div>
+<div class="line"><span class="lineno">  211</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00238">mtgb::ImGuiEditorCamera::SelectTransform()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CameraSystem_ab6c765497849e42efad89499c4628af5_icgraph.svg" width="655" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a373ce46cac7f1700014b85f073766491" name="a373ce46cac7f1700014b85f073766491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373ce46cac7f1700014b85f073766491">&#9670;&#160;</a></span>GetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::GetPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Vector4.html">Vector4</a> *&#160;</td>
+          <td class="paramname"><em>_pPosition</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00203">203</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>{</div>
+<div class="line"><span class="lineno">  205</span>    *_pPosition = <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a9110577e101a86aef1f50e3a3ee498f9">GetTransform</a>().<a class="code hl_function" href="classmtgb_1_1Transform.html#a6a5f7f7a32791143f366132d90dcc3e6">GetWorldPosition</a>();</div>
+<div class="line"><span class="lineno">  206</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a9110577e101a86aef1f50e3a3ee498f9"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a9110577e101a86aef1f50e3a3ee498f9">mtgb::CameraSystem::GetTransform</a></div><div class="ttdeci">const Transform &amp; GetTransform() const</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00139">CameraSystem.cpp:139</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a6a5f7f7a32791143f366132d90dcc3e6"><div class="ttname"><a href="classmtgb_1_1Transform.html#a6a5f7f7a32791143f366132d90dcc3e6">mtgb::Transform::GetWorldPosition</a></div><div class="ttdeci">Vector3 GetWorldPosition() const</div><div class="ttdoc">ワールド座標を取得</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00148">Transform.h:148</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5a6d385f2c639ca807ce0fa2f1d5c95b" name="a5a6d385f2c639ca807ce0fa2f1d5c95b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6d385f2c639ca807ce0fa2f1d5c95b">&#9670;&#160;</a></span>GetProjMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::GetProjMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *&#160;</td>
+          <td class="paramname"><em>_pProj</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00187">187</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  188</span>{</div>
+<div class="line"><span class="lineno">  189</span>    <span class="keyword">using </span>DirectX::XMMatrixPerspectiveFovLH;</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keyword">using </span>DirectX::XMConvertToRadians;</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a> SCREEN_SIZE{ Game::System&lt;Screen&gt;().GetSize() };</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>    *_pProj = XMMatrixPerspectiveFovLH(</div>
+<div class="line"><span class="lineno">  195</span>        XMConvertToRadians(<a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#ad03791f838d2d5822f6b866604c635f0">fov_</a>),</div>
+<div class="line"><span class="lineno">  196</span>        <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(SCREEN_SIZE.x) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(SCREEN_SIZE.y),</div>
+<div class="line"><span class="lineno">  197</span>        <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#ac8e2aabd5a9293f245f5e50637de2f8d">near_</a>,</div>
+<div class="line"><span class="lineno">  198</span>        <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#aa1ae2ea6bf694c01c499b6f7bce05348">far_</a>);</div>
+<div class="line"><span class="lineno">  199</span>}</div>
+<div class="ttc" id="anamespacemtgb_html_a00d8f33cd3151768d71476946783af58"><div class="ttname"><a href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">mtgb::Vector2Int</a></div><div class="ttdeci">Vector2T&lt; int &gt; Vector2Int</div><div class="ttdef"><b>Definition:</b> <a href="Vector2Int_8h_source.html#l00007">Vector2Int.h:7</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="TerrainReader_8h_source.html#l00311">mtgb::TerrainReader&lt; StageDataBit &gt;::TestDraw()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CameraSystem_a5a6d385f2c639ca807ce0fa2f1d5c95b_icgraph.svg" width="378" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9110577e101a86aef1f50e3a3ee498f9" name="a9110577e101a86aef1f50e3a3ee498f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9110577e101a86aef1f50e3a3ee498f9">&#9670;&#160;</a></span>GetTransform() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmtgb_1_1Transform.html">mtgb::Transform</a> &amp; mtgb::CameraSystem::GetTransform </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00139">139</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>{</div>
+<div class="line"><span class="lineno">  141</span>    <span class="comment">/*massert(0 &lt;= hCurrentCamera_ &amp;&amp; hCurrentCamera_ &lt; pTransforms_.size()</span></div>
+<div class="line"><span class="lineno">  142</span><span class="comment">        &amp;&amp; &quot;カメラハンドルが無効です。&quot;);</span></div>
+<div class="line"><span class="lineno">  143</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  144</span><span class="comment">    Transform* pTransform{ pTransforms_[hCurrentCamera_] };</span></div>
+<div class="line"><span class="lineno">  145</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  146</span><span class="comment">    massert(pTransform != nullptr</span></div>
+<div class="line"><span class="lineno">  147</span><span class="comment">        &amp;&amp; &quot;既に無効化されたカメラが参照されました。&quot;);</span></div>
+<div class="line"><span class="lineno">  148</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  149</span><span class="comment">    return *pTransform;*/</span></div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a9110577e101a86aef1f50e3a3ee498f9">GetTransform</a>(<a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#af542f65adda4c369cb209587da8615b9">hCurrentCamera_</a>);</div>
+<div class="line"><span class="lineno">  151</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1ed4b03044fdfe36284df379d45216bc" name="a1ed4b03044fdfe36284df379d45216bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed4b03044fdfe36284df379d45216bc">&#9670;&#160;</a></span>GetTransform() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmtgb_1_1Transform.html">mtgb::Transform</a> &amp; mtgb::CameraSystem::GetTransform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a>&#160;</td>
+          <td class="paramname"><em>_hCamera</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00153">153</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>{</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(0 &lt;= _hCamera &amp;&amp; _hCamera &lt; <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.size()</div>
+<div class="line"><span class="lineno">  156</span>        &amp;&amp; <span class="stringliteral">&quot;カメラハンドルが無効です。&quot;</span>);</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    Transform* pTransform{ <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>[_hCamera] };</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(pTransform != <span class="keyword">nullptr</span></div>
+<div class="line"><span class="lineno">  161</span>    &amp;&amp; <span class="stringliteral">&quot;既に無効化されたカメラが参照されました。&quot;</span>);</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">return</span> *pTransform;</div>
+<div class="line"><span class="lineno">  164</span>}</div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00009">MTAssert.h:9</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>.</p>
+
+</div>
+</div>
+<a id="a0316906f5510c890175c7ddd091018f1" name="a0316906f5510c890175c7ddd091018f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0316906f5510c890175c7ddd091018f1">&#9670;&#160;</a></span>GetTransform() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmtgb_1_1Transform.html">mtgb::Transform</a> &amp; mtgb::CameraSystem::GetTransform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00166">166</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>{</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a9110577e101a86aef1f50e3a3ee498f9">GetTransform</a>(WinCtxRes::Get&lt;CameraResource&gt;(_context).GetHCamera());</div>
+<div class="line"><span class="lineno">  169</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a461e94d106ba457a07bf159b41ba89d5" name="a461e94d106ba457a07bf159b41ba89d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a461e94d106ba457a07bf159b41ba89d5">&#9670;&#160;</a></span>GetViewMatrix() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::GetViewMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *&#160;</td>
+          <td class="paramname"><em>_pView</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00171">171</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>{</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a461e94d106ba457a07bf159b41ba89d5">GetViewMatrix</a>(_pView,<a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#af542f65adda4c369cb209587da8615b9">hCurrentCamera_</a>);</div>
+<div class="line"><span class="lineno">  174</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="TerrainReader_8h_source.html#l00311">mtgb::TerrainReader&lt; StageDataBit &gt;::TestDraw()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CameraSystem_a461e94d106ba457a07bf159b41ba89d5_icgraph.svg" width="378" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0742defdc8273a911ba750affe72c07a" name="a0742defdc8273a911ba750affe72c07a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0742defdc8273a911ba750affe72c07a">&#9670;&#160;</a></span>GetViewMatrix() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::GetViewMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *&#160;</td>
+          <td class="paramname"><em>_pView</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a>&#160;</td>
+          <td class="paramname"><em>_hCamera</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00176">176</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>{</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keyword">const</span> Transform&amp; cameraTransform{ <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a9110577e101a86aef1f50e3a3ee498f9">GetTransform</a>(_hCamera) };</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>    Vector4 vEyePt{ cameraTransform.<a class="code hl_function" href="classmtgb_1_1Transform.html#a6a5f7f7a32791143f366132d90dcc3e6">GetWorldPosition</a>() };  <span class="comment">// カメラ（視点）位置</span></div>
+<div class="line"><span class="lineno">  181</span>    Vector4 vLookatPt{ cameraTransform.<a class="code hl_function" href="structmtgb_1_1Vector3.html#a6dac9080e90e9a7257303df4ad41eabd">Forward</a>() + vEyePt };  <span class="comment">// 注視位置</span></div>
+<div class="line"><span class="lineno">  182</span>    Vector4 vUpVec{ cameraTransform.Up() };  <span class="comment">// 上方位置</span></div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>    *_pView = XMMatrixLookAtLH(vEyePt, vLookatPt, vUpVec);</div>
+<div class="line"><span class="lineno">  185</span>}</div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_a6dac9080e90e9a7257303df4ad41eabd"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a6dac9080e90e9a7257303df4ad41eabd">mtgb::Vector3::Forward</a></div><div class="ttdeci">static auto Forward()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00069">Vector3.h:69</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a70441e5dff61689c83f5ffabf594ed5b" name="a70441e5dff61689c83f5ffabf594ed5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70441e5dff61689c83f5ffabf594ed5b">&#9670;&#160;</a></span>GetWorldToScreenData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmtgb_1_1WorldToScreenData.html">mtgb::WorldToScreenData</a> &amp; mtgb::CameraSystem::GetWorldToScreenData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00223">223</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  224</span>{</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#af342f222ff8a4a055517b5d4554a8401">worldToScreenDatas_</a>.find(_context);</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>    <span class="comment">//新しく作成</span></div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#af342f222ff8a4a055517b5d4554a8401">worldToScreenDatas_</a>.end())</div>
+<div class="line"><span class="lineno">  229</span>    {</div>
+<div class="line"><span class="lineno">  230</span>        WorldToScreenData data;</div>
+<div class="line"><span class="lineno">  231</span>        <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a4fa44a7bd621f09e8bc2d80ba0e363e1">CalculateWorldToScreenData</a>(&amp;data, _context);</div>
+<div class="line"><span class="lineno">  232</span>        <span class="comment">//作成したものを返す</span></div>
+<div class="line"><span class="lineno">  233</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#af342f222ff8a4a055517b5d4554a8401">worldToScreenDatas_</a>.insert(std::make_pair(_context, data)).first-&gt;second;</div>
+<div class="line"><span class="lineno">  234</span>    }</div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a31167ffcc75b39751762e26f65eac3ed">currentFrameId_</a> != itr-&gt;second.frameId)</div>
+<div class="line"><span class="lineno">  236</span>    {</div>
+<div class="line"><span class="lineno">  237</span>        <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a4fa44a7bd621f09e8bc2d80ba0e363e1">CalculateWorldToScreenData</a>(&amp;itr-&gt;second, itr-&gt;first);</div>
+<div class="line"><span class="lineno">  238</span>    }</div>
+<div class="line"><span class="lineno">  239</span>    </div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">return</span> itr-&gt;second;</div>
+<div class="line"><span class="lineno">  241</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a4fa44a7bd621f09e8bc2d80ba0e363e1"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a4fa44a7bd621f09e8bc2d80ba0e363e1">mtgb::CameraSystem::CalculateWorldToScreenData</a></div><div class="ttdeci">void CalculateWorldToScreenData(WorldToScreenData *_data, WindowContext _context)</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00243">CameraSystem.cpp:243</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_af342f222ff8a4a055517b5d4554a8401"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#af342f222ff8a4a055517b5d4554a8401">mtgb::CameraSystem::worldToScreenDatas_</a></div><div class="ttdeci">std::map&lt; WindowContext, WorldToScreenData &gt; worldToScreenDatas_</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8h_source.html#l00073">CameraSystem.h:73</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="ColliderCP_8cpp_source.html#l00172">mtgb::ColliderCP::RectContainsImpl()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CameraSystem_a70441e5dff61689c83f5ffabf594ed5b_icgraph.svg" width="492" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6471cfa45f5b9ac2946134c15ef44ac4" name="a6471cfa45f5b9ac2946134c15ef44ac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6471cfa45f5b9ac2946134c15ef44ac4">&#9670;&#160;</a></span>GetWorldToScreenPos() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> mtgb::CameraSystem::GetWorldToScreenPos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td>
+          <td class="paramname"><em>_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1WorldToScreenData.html">WorldToScreenData</a> &amp;&#160;</td>
+          <td class="paramname"><em>_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00092">92</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>{</div>
+<div class="line"><span class="lineno">   94</span>    <span class="comment">//Vector3 screenPos = DirectX::XMVector3Project(</span></div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">return</span> DirectX::XMVector3Project(</div>
+<div class="line"><span class="lineno">   96</span>        _pos,</div>
+<div class="line"><span class="lineno">   97</span>        _data.viewport.TopLeftX,</div>
+<div class="line"><span class="lineno">   98</span>        _data.viewport.TopLeftY,</div>
+<div class="line"><span class="lineno">   99</span>        _data.viewport.Width,</div>
+<div class="line"><span class="lineno">  100</span>        _data.viewport.Height,</div>
+<div class="line"><span class="lineno">  101</span>        _data.viewport.MinDepth,</div>
+<div class="line"><span class="lineno">  102</span>        _data.viewport.MaxDepth,</div>
+<div class="line"><span class="lineno">  103</span>        _data.projMat,</div>
+<div class="line"><span class="lineno">  104</span>        _data.viewMat,</div>
+<div class="line"><span class="lineno">  105</span>        DirectX::XMMatrixIdentity());</div>
+<div class="line"><span class="lineno">  106</span>    </div>
+<div class="line"><span class="lineno">  107</span>    <span class="comment">/*if (screenPos.z &lt; 0.0f || screenPos.z &gt; 1.0f)</span></div>
+<div class="line"><span class="lineno">  108</span><span class="comment">        return Vector2F(-1, -1);</span></div>
+<div class="line"><span class="lineno">  109</span><span class="comment">    return Vector2F(screenPos.x, screenPos.y);*/</span></div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="WorldToScreenData_8h_source.html#l00011">mtgb::WorldToScreenData::projMat</a>, <a class="el" href="WorldToScreenData_8h_source.html#l00011">mtgb::WorldToScreenData::viewMat</a>, <a class="el" href="WorldToScreenData_8h_source.html#l00012">mtgb::WorldToScreenData::viewport</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ColliderCP_8cpp_source.html#l00172">mtgb::ColliderCP::RectContainsImpl()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CameraSystem_a6471cfa45f5b9ac2946134c15ef44ac4_icgraph.svg" width="484" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ace4aa0ab716c75802ec0be7c2e6df73f" name="ace4aa0ab716c75802ec0be7c2e6df73f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace4aa0ab716c75802ec0be7c2e6df73f">&#9670;&#160;</a></span>GetWorldToScreenPos() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> mtgb::CameraSystem::GetWorldToScreenPos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td>
+          <td class="paramname"><em>_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00113">113</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>{</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keyword">const</span> D3D11_VIEWPORT&amp; viewport = WinCtxRes::Get&lt;Direct3DResource&gt;(_context).GetViewport();</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_typedef" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> hCamera = WinCtxRes::Get&lt;CameraResource&gt;(_context).GetHCamera();</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    Matrix4x4 projMat,viewMat;</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a5a6d385f2c639ca807ce0fa2f1d5c95b">GetProjMatrix</a>(&amp;projMat);</div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a461e94d106ba457a07bf159b41ba89d5">GetViewMatrix</a>(&amp;viewMat,hCamera);</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">return</span> DirectX::XMVector3Project(</div>
+<div class="line"><span class="lineno">  123</span>        _pos,</div>
+<div class="line"><span class="lineno">  124</span>        viewport.TopLeftX,</div>
+<div class="line"><span class="lineno">  125</span>        viewport.TopLeftY,</div>
+<div class="line"><span class="lineno">  126</span>        viewport.Width,</div>
+<div class="line"><span class="lineno">  127</span>        viewport.Height,</div>
+<div class="line"><span class="lineno">  128</span>        viewport.MinDepth,</div>
+<div class="line"><span class="lineno">  129</span>        viewport.MaxDepth,</div>
+<div class="line"><span class="lineno">  130</span>        projMat,</div>
+<div class="line"><span class="lineno">  131</span>        viewMat,</div>
+<div class="line"><span class="lineno">  132</span>        DirectX::XMMatrixIdentity());</div>
+<div class="line"><span class="lineno">  133</span>    </div>
+<div class="line"><span class="lineno">  134</span>    </div>
+<div class="line"><span class="lineno">  135</span>    <span class="comment">//return Vector2F(screenPos.x, screenPos.y) * Game::System&lt;Screen&gt;().GetSizeRatio();</span></div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>}</div>
+<div class="ttc" id="anamespacemtgb_html_a6b7e58c2cf357b2a33701393679b1d09"><div class="ttname"><a href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">mtgb::CameraHandleInScene</a></div><div class="ttdeci">int32_t CameraHandleInScene</div><div class="ttdoc">シーン内で通用するカメラハンドル</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00035">Handlers.h:35</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a586ac71b30731c38d58c29f35d5db87b" name="a586ac71b30731c38d58c29f35d5db87b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586ac71b30731c38d58c29f35d5db87b">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00035">35</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
+<div class="line"><span class="lineno">   37</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9490ccd6504349a69c0b317ebcafddc4" name="a9490ccd6504349a69c0b317ebcafddc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9490ccd6504349a69c0b317ebcafddc4">&#9670;&#160;</a></span>RegisterDrawCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">mtgb::CameraHandleInScene</a> mtgb::CameraSystem::RegisterDrawCamera </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmtgb_1_1Transform.html">Transform</a> *&#160;</td>
+          <td class="paramname"><em>pCameraTransform_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>カメラとなる座標系を登録する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pCameraTransform_</td><td>座標系のポインタ</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>カメラハンドル</dd></dl>
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00044">44</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{</div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_typedef" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> handle{ <a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">INVALID_HANDLE</a> };</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    <span class="comment">// もしカメラが未登録なら</span></div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.size() == 0)</div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        handle = 0;</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a659c690b7a06029f943f94ecc940a8b4">SetDrawCamera</a>(handle);</div>
+<div class="line"><span class="lineno">   53</span>        <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.push_back(pCameraTransform_);</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> handle;</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="keyword">auto</span> itr{ std::find(<a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.begin(), <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.end(), pCameraTransform_) };</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <span class="comment">// 見つからなかった</span></div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.end())</div>
+<div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        handle = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.size());</div>
+<div class="line"><span class="lineno">   63</span>        <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.push_back(pCameraTransform_);</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">else</span>  <span class="comment">// 既にある</span></div>
+<div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>        <span class="comment">// インデックスを返す</span></div>
+<div class="line"><span class="lineno">   68</span>        handle = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a><span class="keyword">&gt;</span>(itr - <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.begin());</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">return</span> handle;</div>
+<div class="line"><span class="lineno">   72</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a659c690b7a06029f943f94ecc940a8b4"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a659c690b7a06029f943f94ecc940a8b4">mtgb::CameraSystem::SetDrawCamera</a></div><div class="ttdeci">void SetDrawCamera(const CameraHandleInScene _hCamera)</div><div class="ttdoc">描画対象となるカメラを指定する</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8h_source.html#l00046">CameraSystem.h:46</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Handlers_8h_source.html#l00045">mtgb::INVALID_HANDLE</a>.</p>
+
+</div>
+</div>
+<a id="aa2823e5390468dfc47213b845c55d3ac" name="aa2823e5390468dfc47213b845c55d3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2823e5390468dfc47213b845c55d3ac">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::ISystem::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>開放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1Fbx.html#ada19e401d03b5d2056fba392808ec546">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1Input.html#aaeb9eca1ca02568bf898253c804baea7">mtgb::Input</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1Timer.html#ac8fce5b2c97551427a50a288e3fd76fd">mtgb::Timer</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b">mtgb::WindowManager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; AudioPlayer, AudioPlayerCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a> (計21項目)で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="ISystem_8h_source.html">ISystem.h</a> の <a class="el" href="ISystem_8h_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00147">mtgb::Game::ReleaseSystems()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ISystem_aa2823e5390468dfc47213b845c55d3ac_icgraph.svg" width="639" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a659c690b7a06029f943f94ecc940a8b4" name="a659c690b7a06029f943f94ecc940a8b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659c690b7a06029f943f94ecc940a8b4">&#9670;&#160;</a></span>SetDrawCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::SetDrawCamera </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a>&#160;</td>
+          <td class="paramname"><em>_hCamera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>描画対象となるカメラを指定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_hCamera</td><td>指定するカメラのハンドル</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00046">46</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{ <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#af542f65adda4c369cb209587da8615b9">hCurrentCamera_</a> = _hCamera; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="CameraSystem_8h_source.html#l00072">hCurrentCamera_</a>.</p>
+
+</div>
+</div>
+<a id="abf82de40447449d80045f9a5b896c99c" name="abf82de40447449d80045f9a5b896c99c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf82de40447449d80045f9a5b896c99c">&#9670;&#160;</a></span>SetFOV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::SetFOV </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>_angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>FOVをセットする </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_angle</td><td>視野角度(Degree)</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00041">41</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>{ <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#ad03791f838d2d5822f6b866604c635f0">fov_</a> = _angle; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="CameraSystem_8h_source.html#l00069">fov_</a>.</p>
+
+</div>
+</div>
+<a id="aba275dc63e0e5abe275fa7927787e1dc" name="aba275dc63e0e5abe275fa7927787e1dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba275dc63e0e5abe275fa7927787e1dc">&#9670;&#160;</a></span>UnregisterDrawCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::UnregisterDrawCamera </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1Transform.html">Transform</a> *&#160;</td>
+          <td class="paramname"><em>pCameraTransform_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>登録解除する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pCameraTransform_</td><td>解除する座標系のポインタ</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00079">79</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>{</div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.begin(); itr != <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9">pTransforms_</a>.end(); itr++)</div>
+<div class="line"><span class="lineno">   82</span>    {</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> ((*itr) == pCameraTransform_)</div>
+<div class="line"><span class="lineno">   84</span>        {</div>
+<div class="line"><span class="lineno">   85</span>            (*itr) = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">return</span>;  <span class="comment">// 一致したらnullptrにして回帰</span></div>
+<div class="line"><span class="lineno">   87</span>        }</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
+<div class="line"><span class="lineno">   89</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac22eafc15180c2a626c17c5b66784019" name="ac22eafc15180c2a626c17c5b66784019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac22eafc15180c2a626c17c5b66784019">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraSystem::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a> の <a class="el" href="CameraSystem_8cpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#a31167ffcc75b39751762e26f65eac3ed">currentFrameId_</a>++;</div>
+<div class="line"><span class="lineno">   42</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a31167ffcc75b39751762e26f65eac3ed" name="a31167ffcc75b39751762e26f65eac3ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31167ffcc75b39751762e26f65eac3ed">&#9670;&#160;</a></span>currentFrameId_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t mtgb::CameraSystem::currentFrameId_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00074">74</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa1ae2ea6bf694c01c499b6f7bce05348" name="aa1ae2ea6bf694c01c499b6f7bce05348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1ae2ea6bf694c01c499b6f7bce05348">&#9670;&#160;</a></span>far_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::CameraSystem::far_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00071">71</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad03791f838d2d5822f6b866604c635f0" name="ad03791f838d2d5822f6b866604c635f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad03791f838d2d5822f6b866604c635f0">&#9670;&#160;</a></span>fov_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::CameraSystem::fov_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00069">69</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="CameraSystem_8h_source.html#l00041">SetFOV()</a>.</p>
+
+</div>
+</div>
+<a id="af542f65adda4c369cb209587da8615b9" name="af542f65adda4c369cb209587da8615b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af542f65adda4c369cb209587da8615b9">&#9670;&#160;</a></span>hCurrentCamera_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> mtgb::CameraSystem::hCurrentCamera_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00072">72</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="CameraSystem_8h_source.html#l00051">GetDrawCamera()</a>, <a class="el" href="CameraSystem_8h_source.html#l00046">SetDrawCamera()</a>.</p>
+
+</div>
+</div>
+<a id="ac8e2aabd5a9293f245f5e50637de2f8d" name="ac8e2aabd5a9293f245f5e50637de2f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8e2aabd5a9293f245f5e50637de2f8d">&#9670;&#160;</a></span>near_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::CameraSystem::near_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00070">70</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a417c53c79fa0448d6d74bd490ea4d9f9" name="a417c53c79fa0448d6d74bd490ea4d9f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a417c53c79fa0448d6d74bd490ea4d9f9">&#9670;&#160;</a></span>pTransforms_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classmtgb_1_1Transform.html">Transform</a>*&gt; mtgb::CameraSystem::pTransforms_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00068">68</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af342f222ff8a4a055517b5d4554a8401" name="af342f222ff8a4a055517b5d4554a8401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af342f222ff8a4a055517b5d4554a8401">&#9670;&#160;</a></span>worldToScreenDatas_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>, <a class="el" href="structmtgb_1_1WorldToScreenData.html">WorldToScreenData</a>&gt; mtgb::CameraSystem::worldToScreenDatas_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a> の <a class="el" href="CameraSystem_8h_source.html#l00073">73</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="CameraSystem_8h_source.html">CameraSystem.h</a></li>
+<li><a class="el" href="CameraSystem_8cpp_source.html">CameraSystem.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1CameraSystem.html">CameraSystem</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

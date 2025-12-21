@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: ShowAttributes.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ShowAttributes_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ShowAttributes.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ShowAttributes_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="refl_8hpp.html">refl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../ImGui/imgui.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Vector3_8h.html">Vector3.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="ShowFunc_8h.html">ShowFunc.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="QuatToEuler_8h.html">QuatToEuler.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="classCommand.html">Command</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structVector3Show.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structVector3Show.html">Vector3Show</a> : <a class="code hl_struct" href="structrefl_1_1attr_1_1usage_1_1type.html">refl::attr::usage::type</a> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="classCommand.html">Command</a>* <a class="code hl_function" href="structVector3Show.html#a66a9fb28b582681eadda961c904c0f9a">operator()</a>(<a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a>* vec, <span class="keyword">const</span> <span class="keywordtype">char</span>* name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structQuaternionSHow.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structQuaternionSHow.html">QuaternionSHow</a> : <a class="code hl_struct" href="structrefl_1_1attr_1_1usage_1_1type.html">refl::attr::usage::type</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="classCommand.html">Command</a>* <a class="code hl_function" href="structQuaternionSHow.html#a0f8d6b92e5c8dec38dfe813fbe2e445d">operator()</a>(DirectX::XMVECTORF32* vec, <span class="keyword">const</span> <span class="keywordtype">char</span>* name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structVector4Show.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structVector4Show.html">Vector4Show</a> : <a class="code hl_struct" href="structrefl_1_1attr_1_1usage_1_1type.html">refl::attr::usage::type</a> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="classCommand.html">Command</a>* <a class="code hl_function" href="structVector4Show.html#a2239a9d0fac86052952c281989298647">operator()</a>(DirectX::XMVECTOR* _vec, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name)<span class="keyword">const</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structMatrixShow.html">   30</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structMatrixShow.html">MatrixShow</a> : <a class="code hl_struct" href="structrefl_1_1attr_1_1usage_1_1type.html">refl::attr::usage::type</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_class" href="classCommand.html">Command</a>* <a class="code hl_function" href="structMatrixShow.html#a8d4d705b06f297cb718b86c2353fe536">operator()</a>(DirectX::XMMATRIX* _mat, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name)<span class="keyword">const</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structRange.html">   36</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structRange.html">Range</a> : <a class="code hl_struct" href="structrefl_1_1attr_1_1usage_1_1member.html">refl::attr::usage::member</a></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structRange.html#a82b57d51d85dd1feda18b8c19ed851ff">   38</a></span>    <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="code hl_variable" href="structRange.html#a82b57d51d85dd1feda18b8c19ed851ff">Min</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structRange.html#a99b445f0c983aef82b6e7eae8e2954ee">   39</a></span>    <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> <a class="code hl_variable" href="structRange.html#a99b445f0c983aef82b6e7eae8e2954ee">Max</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structRange.html#ad0bf1bcc67159d3b97632c24db8737af">   41</a></span>    <a class="code hl_function" href="structRange.html#ad0bf1bcc67159d3b97632c24db8737af">Range</a>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> min, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> max) : <a class="code hl_variable" href="structRange.html#a82b57d51d85dd1feda18b8c19ed851ff">Min</a>(min), <a class="code hl_variable" href="structRange.html#a99b445f0c983aef82b6e7eae8e2954ee">Max</a>(max) {}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> FieldType&gt;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structRange.html#ae677ccf450458095d70d04d731aa3974">   44</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="structRange.html#ae677ccf450458095d70d04d731aa3974">operator()</a>(FieldType* instance, <span class="keyword">const</span> <span class="keywordtype">char</span>* name)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_function" href="ShowAttributes_8h.html#ae99e316148b6b0aedce862e573f26c2c">ShowRange</a>(instance, name, <a class="code hl_variable" href="structRange.html#a82b57d51d85dd1feda18b8c19ed851ff">Min</a>, <a class="code hl_variable" href="structRange.html#a99b445f0c983aef82b6e7eae8e2954ee">Max</a>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structProxyFor.html">   50</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structProxyFor.html">ProxyFor</a> : <a class="code hl_struct" href="structrefl_1_1attr_1_1usage_1_1type.html">refl::attr::usage::type</a></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structProxyFor.html#a71e4edd6051bfafa8f8cc266a5e1fddd">   51</a></span>{ <span class="keyword">using </span><a class="code hl_typedef" href="structProxyFor.html#a71e4edd6051bfafa8f8cc266a5e1fddd">TargetType</a> = <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>; };</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="ShowAttributes_8h.html#ae99e316148b6b0aedce862e573f26c2c">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ShowAttributes_8h.html#ae99e316148b6b0aedce862e573f26c2c">ShowRange</a>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>* instance, <span class="keyword">const</span> <span class="keywordtype">char</span>* name, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> min, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> max)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, int&gt;)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_function" href="namespaceImGui.html#a580128c9b35d1a9fc5b7a057f6f5464a">ImGui::SliderInt</a>(name, instance, min, max);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, float&gt;)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_function" href="namespaceImGui.html#a864f761801792a0cc5ce3408f3392cfc">ImGui::SliderFloat</a>(name, instance, min, max);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_function" href="namespaceImGui.html#a9e7b83611fe441d54fad2effb4bf4965">ImGui::Text</a>(<span class="stringliteral">&quot;Unknown : %s&quot;</span>, name);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structDisplayName.html">   72</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structDisplayName.html">DisplayName</a> : <a class="code hl_struct" href="structrefl_1_1attr_1_1usage_1_1type.html">refl::attr::usage::type</a></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structDisplayName.html#a07ff1b976672d2906751b46be558b89b">   75</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="structDisplayName.html#a07ff1b976672d2906751b46be558b89b">DisplayName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* _displayName) noexcept</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        : <a class="code hl_variable" href="structDisplayName.html#abb0dfae84018b1f41f21c15c9e470ebe">displayName</a>{ _displayName } {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structDisplayName.html#aa0c0695c515880a4e8ca526da7570965">   79</a></span>    <span class="keyword">constexpr</span> std::string_view <a class="code hl_function" href="structDisplayName.html#aa0c0695c515880a4e8ca526da7570965">operator()</a>() const noexcept { <span class="keywordflow">return</span> std::string_view(<a class="code hl_variable" href="structDisplayName.html#abb0dfae84018b1f41f21c15c9e470ebe">displayName</a>); }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structDisplayName.html#abb0dfae84018b1f41f21c15c9e470ebe">   82</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="structDisplayName.html#abb0dfae84018b1f41f21c15c9e470ebe">displayName</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structReadOnly.html">   86</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structReadOnly.html">ReadOnly</a> : <a class="code hl_struct" href="structrefl_1_1attr_1_1usage_1_1member.html">refl::attr::usage::member</a></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> FieldType&gt;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structReadOnly.html#af4884a17963da79750e641996f281a1e">   89</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="structReadOnly.html#af4884a17963da79750e641996f281a1e">operator()</a>(FieldType* instance, <span class="keyword">const</span> <span class="keywordtype">char</span>* name)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
+<div class="ttc" id="aQuatToEuler_8h_html"><div class="ttname"><a href="QuatToEuler_8h.html">QuatToEuler.h</a></div></div>
+<div class="ttc" id="aShowAttributes_8h_html_ae99e316148b6b0aedce862e573f26c2c"><div class="ttname"><a href="ShowAttributes_8h.html#ae99e316148b6b0aedce862e573f26c2c">ShowRange</a></div><div class="ttdeci">void ShowRange(T *instance, const char *name, T min, T max)</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00056">ShowAttributes.h:56</a></div></div>
+<div class="ttc" id="aShowFunc_8h_html"><div class="ttname"><a href="ShowFunc_8h.html">ShowFunc.h</a></div></div>
+<div class="ttc" id="aVector3_8h_html"><div class="ttname"><a href="Vector3_8h.html">Vector3.h</a></div></div>
+<div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00004">Command.h:5</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a580128c9b35d1a9fc5b7a057f6f5464a"><div class="ttname"><a href="namespaceImGui.html#a580128c9b35d1a9fc5b7a057f6f5464a">ImGui::SliderInt</a></div><div class="ttdeci">IMGUI_API bool SliderInt(const char *label, int *v, int v_min, int v_max, const char *format=&quot;%d&quot;, ImGuiSliderFlags flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l03427">imgui_widgets.cpp:3427</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a864f761801792a0cc5ce3408f3392cfc"><div class="ttname"><a href="namespaceImGui.html#a864f761801792a0cc5ce3408f3392cfc">ImGui::SliderFloat</a></div><div class="ttdeci">IMGUI_API bool SliderFloat(const char *label, float *v, float v_min, float v_max, const char *format=&quot;%.3f&quot;, ImGuiSliderFlags flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l03396">imgui_widgets.cpp:3396</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a9e7b83611fe441d54fad2effb4bf4965"><div class="ttname"><a href="namespaceImGui.html#a9e7b83611fe441d54fad2effb4bf4965">ImGui::Text</a></div><div class="ttdeci">IMGUI_API void Text(const char *fmt,...) IM_FMTARGS(1)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l00273">imgui_widgets.cpp:273</a></div></div>
+<div class="ttc" id="arefl_8hpp_html"><div class="ttname"><a href="refl_8hpp.html">refl.hpp</a></div></div>
+<div class="ttc" id="astructDisplayName_html"><div class="ttname"><a href="structDisplayName.html">DisplayName</a></div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00072">ShowAttributes.h:73</a></div></div>
+<div class="ttc" id="astructDisplayName_html_a07ff1b976672d2906751b46be558b89b"><div class="ttname"><a href="structDisplayName.html#a07ff1b976672d2906751b46be558b89b">DisplayName::DisplayName</a></div><div class="ttdeci">constexpr DisplayName(const char *_displayName) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00075">ShowAttributes.h:75</a></div></div>
+<div class="ttc" id="astructDisplayName_html_aa0c0695c515880a4e8ca526da7570965"><div class="ttname"><a href="structDisplayName.html#aa0c0695c515880a4e8ca526da7570965">DisplayName::operator()</a></div><div class="ttdeci">constexpr std::string_view operator()() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00079">ShowAttributes.h:79</a></div></div>
+<div class="ttc" id="astructDisplayName_html_abb0dfae84018b1f41f21c15c9e470ebe"><div class="ttname"><a href="structDisplayName.html#abb0dfae84018b1f41f21c15c9e470ebe">DisplayName::displayName</a></div><div class="ttdeci">const char * displayName</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00082">ShowAttributes.h:82</a></div></div>
+<div class="ttc" id="astructMatrixShow_html"><div class="ttname"><a href="structMatrixShow.html">MatrixShow</a></div><div class="ttdoc">行列の変更をUndo/Redo機能に対応できていない。</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00030">ShowAttributes.h:31</a></div></div>
+<div class="ttc" id="astructMatrixShow_html_a8d4d705b06f297cb718b86c2353fe536"><div class="ttname"><a href="structMatrixShow.html#a8d4d705b06f297cb718b86c2353fe536">MatrixShow::operator()</a></div><div class="ttdeci">Command * operator()(DirectX::XMMATRIX *_mat, const char *_name) const</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8cpp_source.html#l00042">ShowAttributes.cpp:42</a></div></div>
+<div class="ttc" id="astructProxyFor_html"><div class="ttname"><a href="structProxyFor.html">ProxyFor</a></div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00050">ShowAttributes.h:51</a></div></div>
+<div class="ttc" id="astructProxyFor_html_a71e4edd6051bfafa8f8cc266a5e1fddd"><div class="ttname"><a href="structProxyFor.html#a71e4edd6051bfafa8f8cc266a5e1fddd">ProxyFor::TargetType</a></div><div class="ttdeci">T TargetType</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00051">ShowAttributes.h:51</a></div></div>
+<div class="ttc" id="astructQuaternionSHow_html"><div class="ttname"><a href="structQuaternionSHow.html">QuaternionSHow</a></div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00017">ShowAttributes.h:18</a></div></div>
+<div class="ttc" id="astructQuaternionSHow_html_a0f8d6b92e5c8dec38dfe813fbe2e445d"><div class="ttname"><a href="structQuaternionSHow.html#a0f8d6b92e5c8dec38dfe813fbe2e445d">QuaternionSHow::operator()</a></div><div class="ttdeci">Command * operator()(DirectX::XMVECTORF32 *vec, const char *name) const</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8cpp_source.html#l00022">ShowAttributes.cpp:22</a></div></div>
+<div class="ttc" id="astructRange_html"><div class="ttname"><a href="structRange.html">Range</a></div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00036">ShowAttributes.h:37</a></div></div>
+<div class="ttc" id="astructRange_html_a82b57d51d85dd1feda18b8c19ed851ff"><div class="ttname"><a href="structRange.html#a82b57d51d85dd1feda18b8c19ed851ff">Range::Min</a></div><div class="ttdeci">T Min</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00038">ShowAttributes.h:38</a></div></div>
+<div class="ttc" id="astructRange_html_a99b445f0c983aef82b6e7eae8e2954ee"><div class="ttname"><a href="structRange.html#a99b445f0c983aef82b6e7eae8e2954ee">Range::Max</a></div><div class="ttdeci">T Max</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00039">ShowAttributes.h:39</a></div></div>
+<div class="ttc" id="astructRange_html_ad0bf1bcc67159d3b97632c24db8737af"><div class="ttname"><a href="structRange.html#ad0bf1bcc67159d3b97632c24db8737af">Range::Range</a></div><div class="ttdeci">Range(T min, T max)</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00041">ShowAttributes.h:41</a></div></div>
+<div class="ttc" id="astructRange_html_ae677ccf450458095d70d04d731aa3974"><div class="ttname"><a href="structRange.html#ae677ccf450458095d70d04d731aa3974">Range::operator()</a></div><div class="ttdeci">void operator()(FieldType *instance, const char *name) const</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00044">ShowAttributes.h:44</a></div></div>
+<div class="ttc" id="astructReadOnly_html"><div class="ttname"><a href="structReadOnly.html">ReadOnly</a></div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00086">ShowAttributes.h:87</a></div></div>
+<div class="ttc" id="astructReadOnly_html_af4884a17963da79750e641996f281a1e"><div class="ttname"><a href="structReadOnly.html#af4884a17963da79750e641996f281a1e">ReadOnly::operator()</a></div><div class="ttdeci">void operator()(FieldType *instance, const char *name) const</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00089">ShowAttributes.h:89</a></div></div>
+<div class="ttc" id="astructVector3Show_html"><div class="ttname"><a href="structVector3Show.html">Vector3Show</a></div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00011">ShowAttributes.h:12</a></div></div>
+<div class="ttc" id="astructVector3Show_html_a66a9fb28b582681eadda961c904c0f9a"><div class="ttname"><a href="structVector3Show.html#a66a9fb28b582681eadda961c904c0f9a">Vector3Show::operator()</a></div><div class="ttdeci">Command * operator()(mtgb::Vector3 *vec, const char *name) const</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8cpp_source.html#l00003">ShowAttributes.cpp:3</a></div></div>
+<div class="ttc" id="astructVector4Show_html"><div class="ttname"><a href="structVector4Show.html">Vector4Show</a></div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00022">ShowAttributes.h:23</a></div></div>
+<div class="ttc" id="astructVector4Show_html_a2239a9d0fac86052952c281989298647"><div class="ttname"><a href="structVector4Show.html#a2239a9d0fac86052952c281989298647">Vector4Show::operator()</a></div><div class="ttdeci">Command * operator()(DirectX::XMVECTOR *_vec, const char *_name) const</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8cpp_source.html#l00030">ShowAttributes.cpp:30</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+<div class="ttc" id="astructrefl_1_1attr_1_1usage_1_1member_html"><div class="ttname"><a href="structrefl_1_1attr_1_1usage_1_1member.html">refl::attr::usage::member</a></div><div class="ttdef"><b>Definition:</b> <a href="refl_8hpp_source.html#l01984">refl.hpp:1984</a></div></div>
+<div class="ttc" id="astructrefl_1_1attr_1_1usage_1_1type_html"><div class="ttname"><a href="structrefl_1_1attr_1_1usage_1_1type.html">refl::attr::usage::type</a></div><div class="ttdef"><b>Definition:</b> <a href="refl_8hpp_source.html#l01966">refl.hpp:1966</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="ShowAttributes_8h.html">ShowAttributes.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

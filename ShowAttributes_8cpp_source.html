@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: ShowAttributes.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ShowAttributes_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ShowAttributes.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ShowAttributes_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="ShowAttributes_8h.html">ShowAttributes.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ImGuiInputCommand_8h.html">ImGuiInputCommand.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="structVector3Show.html#a66a9fb28b582681eadda961c904c0f9a">    3</a></span><a class="code hl_class" href="classCommand.html">Command</a>* <a class="code hl_function" href="structVector3Show.html#a66a9fb28b582681eadda961c904c0f9a">Vector3Show::operator()</a>(<a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a>* vec, <span class="keyword">const</span> <span class="keywordtype">char</span>* name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> old = *vec;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordtype">bool</span> changed = <a class="code hl_function" href="namespaceImGui.html#a970a00fd1a4226c697ea5fb807fb62d8">ImGui::InputFloat3</a>(name, &amp;vec-&gt;x,<span class="stringliteral">&quot;%.3f&quot;</span>,<a class="code hl_enumvalue" href="imgui_8h.html#a6b66455f4927d6c455800e5a2c4c5392a291bc2b81c417e82dd8f212fb3541b9c">ImGuiInputTextFlags_NoUndoRedo</a>);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span> (changed == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> ImGuiInputCommand&lt;mtgb::Vector3&gt;(vec, old, *vec, name);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structQuaternionSHow.html#a0f8d6b92e5c8dec38dfe813fbe2e445d">   22</a></span><a class="code hl_class" href="classCommand.html">Command</a>* <a class="code hl_function" href="structQuaternionSHow.html#a0f8d6b92e5c8dec38dfe813fbe2e445d">QuaternionSHow::operator()</a>(DirectX::XMVECTORF32* vec, <span class="keyword">const</span> <span class="keywordtype">char</span>* name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> vec3 = <a class="code hl_function" href="namespacemtgb.html#aa8ce9c7b20274faf74efdb56485e401d">mtgb::QuatToEuler</a>(*vec);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="namespaceImGui.html#a970a00fd1a4226c697ea5fb807fb62d8">ImGui::InputFloat3</a>(name, &amp;vec3.x,<span class="stringliteral">&quot;%.3f&quot;</span>,<a class="code hl_enumvalue" href="imgui_8h.html#a6b66455f4927d6c455800e5a2c4c5392aa392016c0f278e209a46b3d3c7595d82">ImGuiInputTextFlags_ReadOnly</a>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structVector4Show.html#a2239a9d0fac86052952c281989298647">   30</a></span><a class="code hl_class" href="classCommand.html">Command</a>* <a class="code hl_function" href="structVector4Show.html#a2239a9d0fac86052952c281989298647">Vector4Show::operator()</a>(DirectX::XMVECTOR* _vec, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    DirectX::XMVECTOR old = *_vec;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">bool</span> changed = <a class="code hl_function" href="namespaceImGui.html#a69675d2e9780a0e5a7a372f936b64d49">ImGui::InputFloat4</a>(_name, _vec-&gt;m128_f32);;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (changed == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> ImGuiInputCommand&lt;DirectX::XMVECTOR&gt;(_vec, old, *_vec,_name);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structMatrixShow.html#a8d4d705b06f297cb718b86c2353fe536">   42</a></span><a class="code hl_class" href="classCommand.html">Command</a>* <a class="code hl_function" href="structMatrixShow.html#a8d4d705b06f297cb718b86c2353fe536">MatrixShow::operator()</a>(DirectX::XMMATRIX* _mat, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    DirectX::XMMATRIX old = *_mat;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_struct" href="structVector4Show.html">Vector4Show</a> xShow;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    xShow(&amp;_mat-&gt;r[0], <span class="stringliteral">&quot;x&quot;</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_struct" href="structVector4Show.html">Vector4Show</a> yShow;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    yShow(&amp;_mat-&gt;r[1], <span class="stringliteral">&quot;y&quot;</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_struct" href="structVector4Show.html">Vector4Show</a> zShow;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    zShow(&amp;_mat-&gt;r[2], <span class="stringliteral">&quot;z&quot;</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_struct" href="structVector4Show.html">Vector4Show</a> wShow;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    wShow(&amp;_mat-&gt;r[3], <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="ttc" id="aImGuiInputCommand_8h_html"><div class="ttname"><a href="ImGuiInputCommand_8h.html">ImGuiInputCommand.h</a></div></div>
+<div class="ttc" id="aShowAttributes_8h_html"><div class="ttname"><a href="ShowAttributes_8h.html">ShowAttributes.h</a></div></div>
+<div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00004">Command.h:5</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a6b66455f4927d6c455800e5a2c4c5392a291bc2b81c417e82dd8f212fb3541b9c"><div class="ttname"><a href="imgui_8h.html#a6b66455f4927d6c455800e5a2c4c5392a291bc2b81c417e82dd8f212fb3541b9c">ImGuiInputTextFlags_NoUndoRedo</a></div><div class="ttdeci">@ ImGuiInputTextFlags_NoUndoRedo</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01288">imgui.h:1288</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a6b66455f4927d6c455800e5a2c4c5392aa392016c0f278e209a46b3d3c7595d82"><div class="ttname"><a href="imgui_8h.html#a6b66455f4927d6c455800e5a2c4c5392aa392016c0f278e209a46b3d3c7595d82">ImGuiInputTextFlags_ReadOnly</a></div><div class="ttdeci">@ ImGuiInputTextFlags_ReadOnly</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01281">imgui.h:1281</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a69675d2e9780a0e5a7a372f936b64d49"><div class="ttname"><a href="namespaceImGui.html#a69675d2e9780a0e5a7a372f936b64d49">ImGui::InputFloat4</a></div><div class="ttdeci">IMGUI_API bool InputFloat4(const char *label, float v[4], const char *format=&quot;%.3f&quot;, ImGuiInputTextFlags flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l03876">imgui_widgets.cpp:3876</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a970a00fd1a4226c697ea5fb807fb62d8"><div class="ttname"><a href="namespaceImGui.html#a970a00fd1a4226c697ea5fb807fb62d8">ImGui::InputFloat3</a></div><div class="ttdeci">IMGUI_API bool InputFloat3(const char *label, float v[3], const char *format=&quot;%.3f&quot;, ImGuiInputTextFlags flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l03871">imgui_widgets.cpp:3871</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_aa8ce9c7b20274faf74efdb56485e401d"><div class="ttname"><a href="namespacemtgb.html#aa8ce9c7b20274faf74efdb56485e401d">mtgb::QuatToEuler</a></div><div class="ttdeci">Vector3 QuatToEuler(DirectX::XMVECTORF32 _q)</div><div class="ttdef"><b>Definition:</b> <a href="QuatToEuler_8cpp_source.html#l00004">QuatToEuler.cpp:4</a></div></div>
+<div class="ttc" id="astructMatrixShow_html_a8d4d705b06f297cb718b86c2353fe536"><div class="ttname"><a href="structMatrixShow.html#a8d4d705b06f297cb718b86c2353fe536">MatrixShow::operator()</a></div><div class="ttdeci">Command * operator()(DirectX::XMMATRIX *_mat, const char *_name) const</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8cpp_source.html#l00042">ShowAttributes.cpp:42</a></div></div>
+<div class="ttc" id="astructQuaternionSHow_html_a0f8d6b92e5c8dec38dfe813fbe2e445d"><div class="ttname"><a href="structQuaternionSHow.html#a0f8d6b92e5c8dec38dfe813fbe2e445d">QuaternionSHow::operator()</a></div><div class="ttdeci">Command * operator()(DirectX::XMVECTORF32 *vec, const char *name) const</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8cpp_source.html#l00022">ShowAttributes.cpp:22</a></div></div>
+<div class="ttc" id="astructVector3Show_html_a66a9fb28b582681eadda961c904c0f9a"><div class="ttname"><a href="structVector3Show.html#a66a9fb28b582681eadda961c904c0f9a">Vector3Show::operator()</a></div><div class="ttdeci">Command * operator()(mtgb::Vector3 *vec, const char *name) const</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8cpp_source.html#l00003">ShowAttributes.cpp:3</a></div></div>
+<div class="ttc" id="astructVector4Show_html"><div class="ttname"><a href="structVector4Show.html">Vector4Show</a></div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8h_source.html#l00022">ShowAttributes.h:23</a></div></div>
+<div class="ttc" id="astructVector4Show_html_a2239a9d0fac86052952c281989298647"><div class="ttname"><a href="structVector4Show.html#a2239a9d0fac86052952c281989298647">Vector4Show::operator()</a></div><div class="ttdeci">Command * operator()(DirectX::XMVECTOR *_vec, const char *_name) const</div><div class="ttdef"><b>Definition:</b> <a href="ShowAttributes_8cpp_source.html#l00030">ShowAttributes.cpp:30</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="ShowAttributes_8cpp.html">ShowAttributes.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

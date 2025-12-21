@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Direct2D.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Direct2D_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Direct2D.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Direct2D_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="cmtgb_8h.html">cmtgb.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;d2d1.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;wrl/client.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>Microsoft::WRL::ComPtr;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">struct </span>ID2D1Factory;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">struct </span>IDXGISurface;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">struct </span>ID2D1SolidColorBrush;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">struct </span>ID2D1RenderTarget;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">struct </span>IDXGISwapChain1;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html">   18</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1Direct2D.html">Direct2D</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1ISystem.html">ISystem</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#a06bd594120c61f67d4b51a426cf18ee6">   20</a></span>        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1DirectWrite.html">DirectWrite</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_function" href="classmtgb_1_1Direct2D.html#afa16bd7d41493e2a76d9d7596a66cef1">~Direct2D</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#aeec060e7b5aa4b1c5170732b88c634f3">Initialize</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#ae8cad2910b002ebb61812eb32e16a20c">InitializeCommonResource</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a1049944e949e09a76253068ecbbd3484">CreateD2DRenderTarget</a>(IDXGISurface* pIDXGISurface, ID2D1RenderTarget** ppRenderTarget_);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a3db57726fee14226400c7d7d3468e681">CreateSolidColorBrush</a>(<span class="keyword">const</span> D2D1::ColorF&amp; color, ID2D1RenderTarget* pRenderTarget, ID2D1SolidColorBrush** ppD2DBrush);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a34d11db16f98dcb5bee96bf29530c5c6">ChangeRenderTarget</a>(ComPtr&lt;ID2D1SolidColorBrush&gt; pD2DBrush, ComPtr&lt;ID2D1RenderTarget&gt; pRenderTarget);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a0dae23e9d0c20e2e62528b452d63f7a8">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#aa99edab7a5edd30088bb447511de2363">Draw</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">Release</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#afdc8d1bab25d976fbc85655e31231997">Reset</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        D2D1_SIZE_F <a class="code hl_function" href="classmtgb_1_1Direct2D.html#ab1e32008048b1a4f376bb0cd1bf58314">GetRenderTargetSize</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">   36</a></span>        <span class="keyword">static</span> ComPtr&lt;ID2D1Factory&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">pD2DFactory_</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">   38</a></span>        <span class="keyword">static</span> ComPtr&lt;ID2D1SolidColorBrush&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">pDefD2DBrush_</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">   39</a></span>        <span class="keyword">static</span> ComPtr&lt;ID2D1RenderTarget&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">pDefRenderTarget_</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    };</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html"><div class="ttname"><a href="classmtgb_1_1Direct2D.html">mtgb::Direct2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00018">Direct2D.h:19</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a0dae23e9d0c20e2e62528b452d63f7a8"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a0dae23e9d0c20e2e62528b452d63f7a8">mtgb::Direct2D::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00085">Direct2D.cpp:85</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a1049944e949e09a76253068ecbbd3484"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a1049944e949e09a76253068ecbbd3484">mtgb::Direct2D::CreateD2DRenderTarget</a></div><div class="ttdeci">void CreateD2DRenderTarget(IDXGISurface *pIDXGISurface, ID2D1RenderTarget **ppRenderTarget_)</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00041">Direct2D.cpp:41</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a2cde9ffdc0a71dccc4cb52ad67368910"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D::Release</a></div><div class="ttdeci">void Release()</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00094">Direct2D.cpp:94</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a34d11db16f98dcb5bee96bf29530c5c6"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a34d11db16f98dcb5bee96bf29530c5c6">mtgb::Direct2D::ChangeRenderTarget</a></div><div class="ttdeci">void ChangeRenderTarget(ComPtr&lt; ID2D1SolidColorBrush &gt; pD2DBrush, ComPtr&lt; ID2D1RenderTarget &gt; pRenderTarget)</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00075">Direct2D.cpp:75</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a3db57726fee14226400c7d7d3468e681"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a3db57726fee14226400c7d7d3468e681">mtgb::Direct2D::CreateSolidColorBrush</a></div><div class="ttdeci">void CreateSolidColorBrush(const D2D1::ColorF &amp;color, ID2D1RenderTarget *pRenderTarget, ID2D1SolidColorBrush **ppD2DBrush)</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00066">Direct2D.cpp:66</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a517fd556b9f8bce9796427fea48af420"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">mtgb::Direct2D::pDefD2DBrush_</a></div><div class="ttdeci">static ComPtr&lt; ID2D1SolidColorBrush &gt; pDefD2DBrush_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00038">Direct2D.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_aa99edab7a5edd30088bb447511de2363"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#aa99edab7a5edd30088bb447511de2363">mtgb::Direct2D::Draw</a></div><div class="ttdeci">void Draw()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00090">Direct2D.cpp:90</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_ab1e32008048b1a4f376bb0cd1bf58314"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#ab1e32008048b1a4f376bb0cd1bf58314">mtgb::Direct2D::GetRenderTargetSize</a></div><div class="ttdeci">D2D1_SIZE_F GetRenderTargetSize()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00109">Direct2D.cpp:109</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_aba829b8ee709828b87b57771d7a2b983"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">mtgb::Direct2D::pD2DFactory_</a></div><div class="ttdeci">static ComPtr&lt; ID2D1Factory &gt; pD2DFactory_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00036">Direct2D.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_ae8cad2910b002ebb61812eb32e16a20c"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#ae8cad2910b002ebb61812eb32e16a20c">mtgb::Direct2D::InitializeCommonResource</a></div><div class="ttdeci">void InitializeCommonResource()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00032">Direct2D.cpp:32</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_aeec060e7b5aa4b1c5170732b88c634f3"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#aeec060e7b5aa4b1c5170732b88c634f3">mtgb::Direct2D::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00027">Direct2D.cpp:27</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_afa16bd7d41493e2a76d9d7596a66cef1"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#afa16bd7d41493e2a76d9d7596a66cef1">mtgb::Direct2D::~Direct2D</a></div><div class="ttdeci">~Direct2D()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00022">Direct2D.cpp:22</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_afaa4832cd7c29a441dcf8a771916261d"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">mtgb::Direct2D::pDefRenderTarget_</a></div><div class="ttdeci">static ComPtr&lt; ID2D1RenderTarget &gt; pDefRenderTarget_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00039">Direct2D.h:39</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_afdc8d1bab25d976fbc85655e31231997"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#afdc8d1bab25d976fbc85655e31231997">mtgb::Direct2D::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00103">Direct2D.cpp:103</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html">mtgb::DirectWrite</a></div><div class="ttdoc">DirectWrite用のシステム</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00067">DirectWrite.h:68</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ISystem_html"><div class="ttname"><a href="classmtgb_1_1ISystem.html">mtgb::ISystem</a></div><div class="ttdef"><b>Definition:</b> <a href="ISystem_8h_source.html#l00005">ISystem.h:6</a></div></div>
+<div class="ttc" id="acmtgb_8h_html"><div class="ttname"><a href="cmtgb_8h.html">cmtgb.h</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="dir_d378d99ecccfde9a3b9f76a1b8719c1a.html">Direct2D</a></li><li class="navelem"><a class="el" href="Direct2D_8h.html">Direct2D.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

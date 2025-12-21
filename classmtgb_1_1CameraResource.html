@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::CameraResource クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1CameraResource.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1CameraResource-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::CameraResource クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>ウィンドウごとに割り当てられたカメラ  
+ <a href="classmtgb_1_1CameraResource.html#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="CameraResource_8h_source.html">CameraResource.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::CameraResource の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CameraResource__inherit__graph.svg" width="282" height="698"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::CameraResource 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CameraResource__coll__graph.svg" width="282" height="698"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad3068705eaef4d8342efa0f4e9151ac7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraResource.html#ad3068705eaef4d8342efa0f4e9151ac7">CameraResource</a> (<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _windowContext)</td></tr>
+<tr class="separator:ad3068705eaef4d8342efa0f4e9151ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57a42c7fa210e992c9a2deb523f889fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraResource.html#a57a42c7fa210e992c9a2deb523f889fa">~CameraResource</a> ()</td></tr>
+<tr class="separator:a57a42c7fa210e992c9a2deb523f889fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaa8105ba7b7a783f42fd82b26824efa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraResource.html#afaa8105ba7b7a783f42fd82b26824efa">Release</a> () override</td></tr>
+<tr class="separator:afaa8105ba7b7a783f42fd82b26824efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaefa42c67a395edf2435eae378c9372d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraResource.html#aaefa42c67a395edf2435eae378c9372d">SetResource</a> () override</td></tr>
+<tr class="memdesc:aaefa42c67a395edf2435eae378c9372d"><td class="mdescLeft">&#160;</td><td class="mdescRight">カメラを切り替える  <br /></td></tr>
+<tr class="separator:aaefa42c67a395edf2435eae378c9372d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b9468fd7f46389a0ab4dd781e5d4c4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraResource.html#a0b9468fd7f46389a0ab4dd781e5d4c4f">SetHCamera</a> (<a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> _hCamera)</td></tr>
+<tr class="memdesc:a0b9468fd7f46389a0ab4dd781e5d4c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">カメラのハンドルをセットする  <br /></td></tr>
+<tr class="separator:a0b9468fd7f46389a0ab4dd781e5d4c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280ed872622d82212729bc0f10fe04fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraResource.html#a280ed872622d82212729bc0f10fe04fc">GetHCamera</a> ()</td></tr>
+<tr class="memdesc:a280ed872622d82212729bc0f10fe04fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">割り当てられているカメラのハンドルを返す  <br /></td></tr>
+<tr class="separator:a280ed872622d82212729bc0f10fe04fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300ec8f469f5f72bd70dcd85eafdb9dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraResource.html#a300ec8f469f5f72bd70dcd85eafdb9dc">NotRegisterCamera</a> ()</td></tr>
+<tr class="separator:a300ec8f469f5f72bd70dcd85eafdb9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a1be98828072a5924a3bd2240a7589"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#af7a1be98828072a5924a3bd2240a7589">Reset</a> ()</td></tr>
+<tr class="memdesc:af7a1be98828072a5924a3bd2240a7589"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウのサイズが変更される前の解放処理  <br /></td></tr>
+<tr class="separator:af7a1be98828072a5924a3bd2240a7589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1afb0355af2bb60bf6a971fee7bf2cf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#aa1afb0355af2bb60bf6a971fee7bf2cf">OnResize</a> (UINT _width, UINT _height)</td></tr>
+<tr class="memdesc:aa1afb0355af2bb60bf6a971fee7bf2cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウのサイズが変更された後の処理  <br /></td></tr>
+<tr class="separator:aa1afb0355af2bb60bf6a971fee7bf2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc960b1b40665791a3c1f36090250e46"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#acc960b1b40665791a3c1f36090250e46">Update</a> ()</td></tr>
+<tr class="memdesc:acc960b1b40665791a3c1f36090250e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新処理  <br /></td></tr>
+<tr class="separator:acc960b1b40665791a3c1f36090250e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c7d963d4b5d3d5ca59483bff874a98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#ae3c7d963d4b5d3d5ca59483bff874a98">GetWindowContext</a> () const</td></tr>
+<tr class="memdesc:ae3c7d963d4b5d3d5ca59483bff874a98"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウの識別子を返す  <br /></td></tr>
+<tr class="separator:ae3c7d963d4b5d3d5ca59483bff874a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a8c2d2eae95241847d06c966d7f39199a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">windowContext_</a></td></tr>
+<tr class="separator:a8c2d2eae95241847d06c966d7f39199a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a53f966f7d136dc5ebd2f6754c19a7d3b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraResource.html#a53f966f7d136dc5ebd2f6754c19a7d3b">CameraResource</a> (const <a class="el" href="classmtgb_1_1CameraResource.html">CameraResource</a> &amp;)=delete</td></tr>
+<tr class="separator:a53f966f7d136dc5ebd2f6754c19a7d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6921f9f1b64959b45b319fb05004a73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1CameraResource.html">CameraResource</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraResource.html#af6921f9f1b64959b45b319fb05004a73">operator=</a> (const <a class="el" href="classmtgb_1_1CameraResource.html">CameraResource</a> &amp;)=delete</td></tr>
+<tr class="separator:af6921f9f1b64959b45b319fb05004a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a22dd085f54422271020d8bf7d31b11b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CameraResource.html#a22dd085f54422271020d8bf7d31b11b6">hCamera_</a></td></tr>
+<tr class="separator:a22dd085f54422271020d8bf7d31b11b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ウィンドウごとに割り当てられたカメラ </p>
+
+<p class="definition"> <a class="el" href="CameraResource_8h_source.html">CameraResource.h</a> の <a class="el" href="CameraResource_8h_source.html#l00009">9</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ad3068705eaef4d8342efa0f4e9151ac7" name="ad3068705eaef4d8342efa0f4e9151ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3068705eaef4d8342efa0f4e9151ac7">&#9670;&#160;</a></span>CameraResource() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::CameraResource::CameraResource </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_windowContext</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraResource_8cpp_source.html">CameraResource.cpp</a> の <a class="el" href="CameraResource_8cpp_source.html#l00009">9</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>    : <a class="code hl_function" href="classmtgb_1_1WindowContextResource.html#a4ba279c7ed594388ea5c73153a9a9e94">WindowContextResource</a>(_windowContext)</div>
+<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classmtgb_1_1CameraResource.html#a22dd085f54422271020d8bf7d31b11b6">hCamera_</a>{<a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">INVALID_HANDLE</a>}</div>
+<div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1CameraResource_html_a22dd085f54422271020d8bf7d31b11b6"><div class="ttname"><a href="classmtgb_1_1CameraResource.html#a22dd085f54422271020d8bf7d31b11b6">mtgb::CameraResource::hCamera_</a></div><div class="ttdeci">CameraHandleInScene hCamera_</div><div class="ttdef"><b>Definition:</b> <a href="CameraResource_8h_source.html#l00037">CameraResource.h:37</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html_a4ba279c7ed594388ea5c73153a9a9e94"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html#a4ba279c7ed594388ea5c73153a9a9e94">mtgb::WindowContextResource::WindowContextResource</a></div><div class="ttdeci">WindowContextResource(WindowContext _windowContext)</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00049">WindowContextResource.h:49</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a461c37884dafe5e26f7d9b0e2f97148b"><div class="ttname"><a href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a></div><div class="ttdeci">static const int32_t INVALID_HANDLE</div><div class="ttdoc">無効なハンドル値</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00045">Handlers.h:45</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a57a42c7fa210e992c9a2deb523f889fa" name="a57a42c7fa210e992c9a2deb523f889fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57a42c7fa210e992c9a2deb523f889fa">&#9670;&#160;</a></span>~CameraResource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::CameraResource::~CameraResource </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraResource_8cpp_source.html">CameraResource.cpp</a> の <a class="el" href="CameraResource_8cpp_source.html#l00015">15</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a53f966f7d136dc5ebd2f6754c19a7d3b" name="a53f966f7d136dc5ebd2f6754c19a7d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53f966f7d136dc5ebd2f6754c19a7d3b">&#9670;&#160;</a></span>CameraResource() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::CameraResource::CameraResource </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1CameraResource.html">CameraResource</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a280ed872622d82212729bc0f10fe04fc" name="a280ed872622d82212729bc0f10fe04fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a280ed872622d82212729bc0f10fe04fc">&#9670;&#160;</a></span>GetHCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">mtgb::CameraHandleInScene</a> mtgb::CameraResource::GetHCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>割り当てられているカメラのハンドルを返す </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="CameraResource_8cpp_source.html">CameraResource.cpp</a> の <a class="el" href="CameraResource_8cpp_source.html#l00036">36</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1CameraResource.html#a22dd085f54422271020d8bf7d31b11b6">hCamera_</a>;</div>
+<div class="line"><span class="lineno">   39</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae3c7d963d4b5d3d5ca59483bff874a98" name="ae3c7d963d4b5d3d5ca59483bff874a98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c7d963d4b5d3d5ca59483bff874a98">&#9670;&#160;</a></span>GetWindowContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> mtgb::WindowContextResource::GetWindowContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウの識別子を返す </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00047">47</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">windowContext_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html_a8c2d2eae95241847d06c966d7f39199a"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">mtgb::WindowContextResource::windowContext_</a></div><div class="ttdeci">WindowContext windowContext_</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00052">WindowContextResource.h:52</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="WindowContextResource_8h_source.html#l00052">mtgb::WindowContextResource::windowContext_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="WindowManager_8cpp_source.html#l00030">mtgb::WindowManager::CreateWindowContext()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1WindowContextResource_ae3c7d963d4b5d3d5ca59483bff874a98_icgraph.svg" width="462" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a300ec8f469f5f72bd70dcd85eafdb9dc" name="a300ec8f469f5f72bd70dcd85eafdb9dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a300ec8f469f5f72bd70dcd85eafdb9dc">&#9670;&#160;</a></span>NotRegisterCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::CameraResource::NotRegisterCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>カメラのハンドルが未登録か否か </p>
+<dl class="section return"><dt>戻り値</dt><dd>未登録の場合true、登録済みの場合false</dd></dl>
+
+<p class="definition"> <a class="el" href="CameraResource_8cpp_source.html">CameraResource.cpp</a> の <a class="el" href="CameraResource_8cpp_source.html#l00041">41</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1CameraResource.html#a22dd085f54422271020d8bf7d31b11b6">hCamera_</a> == <a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">INVALID_HANDLE</a>;</div>
+<div class="line"><span class="lineno">   44</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Handlers_8h_source.html#l00045">mtgb::INVALID_HANDLE</a>.</p>
+
+</div>
+</div>
+<a id="aa1afb0355af2bb60bf6a971fee7bf2cf" name="aa1afb0355af2bb60bf6a971fee7bf2cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1afb0355af2bb60bf6a971fee7bf2cf">&#9670;&#160;</a></span>OnResize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::WindowContextResource::OnResize </td>
+          <td>(</td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>_height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウのサイズが変更された後の処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_width</td><td>幅</td></tr>
+    <tr><td class="paramname">_height</td><td>高さ</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classmtgb_1_1Direct2DResource.html#abce19c903752c9cabeeaec008c5426f8">mtgb::Direct2DResource</a>, <a class="el" href="classmtgb_1_1Direct3DResource.html#a581a88c3cd50ac50a5965fecf079d35c">mtgb::Direct3DResource</a>, <a class="el" href="classmtgb_1_1DXGIResource.html#aa8cd0b910870f18c6d3fd0a147178015">mtgb::DXGIResource</a>, <a class="el" href="classmtgb_1_1WindowResource.html#af627f47fc36679088c4907c9aafd5de4">mtgb::WindowResource</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00036">36</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af6921f9f1b64959b45b319fb05004a73" name="af6921f9f1b64959b45b319fb05004a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6921f9f1b64959b45b319fb05004a73">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1CameraResource.html">CameraResource</a> &amp; mtgb::CameraResource::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1CameraResource.html">CameraResource</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afaa8105ba7b7a783f42fd82b26824efa" name="afaa8105ba7b7a783f42fd82b26824efa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaa8105ba7b7a783f42fd82b26824efa">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraResource::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1WindowContextResource.html#a7291eab4bf997c9faf22903a78a2956d">mtgb::WindowContextResource</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CameraResource_8cpp_source.html">CameraResource.cpp</a> の <a class="el" href="CameraResource_8cpp_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af7a1be98828072a5924a3bd2240a7589" name="af7a1be98828072a5924a3bd2240a7589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a1be98828072a5924a3bd2240a7589">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::WindowContextResource::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウのサイズが変更される前の解放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1Direct2DResource.html#a55b6cdeaa01bdaab438340f2b00a7cf4">mtgb::Direct2DResource</a>, <a class="el" href="classmtgb_1_1Direct3DResource.html#a952e691f9175b3eb8a7d881f829aebbf">mtgb::Direct3DResource</a>, <a class="el" href="classmtgb_1_1DXGIResource.html#a536b5d467f5f0a2190062c3cc12a46b1">mtgb::DXGIResource</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0b9468fd7f46389a0ab4dd781e5d4c4f" name="a0b9468fd7f46389a0ab4dd781e5d4c4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b9468fd7f46389a0ab4dd781e5d4c4f">&#9670;&#160;</a></span>SetHCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraResource::SetHCamera </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a>&#160;</td>
+          <td class="paramname"><em>_hCamera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>カメラのハンドルをセットする </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_hCamera</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="CameraResource_8cpp_source.html">CameraResource.cpp</a> の <a class="el" href="CameraResource_8cpp_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
+<div class="line"><span class="lineno">   32</span>    <span class="comment">// カメラのハンドルを受け取る</span></div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="classmtgb_1_1CameraResource.html#a22dd085f54422271020d8bf7d31b11b6">hCamera_</a> = _hCamera;</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaefa42c67a395edf2435eae378c9372d" name="aaefa42c67a395edf2435eae378c9372d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaefa42c67a395edf2435eae378c9372d">&#9670;&#160;</a></span>SetResource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::CameraResource::SetResource </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>カメラを切り替える </p>
+
+<p><a class="el" href="classmtgb_1_1WindowContextResource.html#a7fd488edc0465eb2a0808dc5f6c218b1">mtgb::WindowContextResource</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CameraResource_8cpp_source.html">CameraResource.cpp</a> の <a class="el" href="CameraResource_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    <span class="comment">// カメラ管理クラスに、カメラのハンドルを登録</span></div>
+<div class="line"><span class="lineno">   22</span>    Game::System&lt;CameraSystem&gt;().SetDrawCamera(<a class="code hl_variable" href="classmtgb_1_1CameraResource.html#a22dd085f54422271020d8bf7d31b11b6">hCamera_</a>);</div>
+<div class="line"><span class="lineno">   23</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acc960b1b40665791a3c1f36090250e46" name="acc960b1b40665791a3c1f36090250e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc960b1b40665791a3c1f36090250e46">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::WindowContextResource::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新処理 </p>
+
+<p><a class="el" href="classmtgb_1_1DXGIResource.html#a4bdee96054d05221b6c3a821c9d76847">mtgb::DXGIResource</a>, <a class="el" href="classmtgb_1_1InputResource.html#ad1a7496289a816903d50af7232189601">mtgb::InputResource</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00042">42</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a22dd085f54422271020d8bf7d31b11b6" name="a22dd085f54422271020d8bf7d31b11b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22dd085f54422271020d8bf7d31b11b6">&#9670;&#160;</a></span>hCamera_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> mtgb::CameraResource::hCamera_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CameraResource_8h_source.html">CameraResource.h</a> の <a class="el" href="CameraResource_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8c2d2eae95241847d06c966d7f39199a" name="a8c2d2eae95241847d06c966d7f39199a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c2d2eae95241847d06c966d7f39199a">&#9670;&#160;</a></span>windowContext_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> mtgb::WindowContextResource::windowContext_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00052">52</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="WindowContextResource_8h_source.html#l00047">mtgb::WindowContextResource::GetWindowContext()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="CameraResource_8h_source.html">CameraResource.h</a></li>
+<li><a class="el" href="CameraResource_8cpp_source.html">CameraResource.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1CameraResource.html">CameraResource</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

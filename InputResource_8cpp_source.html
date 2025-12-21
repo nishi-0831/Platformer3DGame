@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: InputResource.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('InputResource_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">InputResource.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="InputResource_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="InputResource_8h.html">InputResource.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="InputData_8h.html">InputData.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="ReleaseUtility_8h.html">ReleaseUtility.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContextUtil_8h.html">WindowContextUtil.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="IncludingInput_8h.html">IncludingInput.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="JoystickProxy_8h.html">JoystickProxy.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="MTImGui_8h.html">MTImGui.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="Debug_8h.html">Debug.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classmtgb_1_1InputResource.html#a222fcbcdd894c45cc299e9571b2ec938">   11</a></span><a class="code hl_function" href="classmtgb_1_1InputResource.html#a222fcbcdd894c45cc299e9571b2ec938">mtgb::InputResource::InputResource</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _windowContext)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    : <a class="code hl_class" href="classmtgb_1_1WindowContextResource.html">WindowContextResource</a>(_windowContext)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    , pInputData_{nullptr}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    , pKeyDevice_{nullptr}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    , pMouseDevice_{nullptr}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    , pJoystickProxy_{nullptr}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    , pMouseStateProxy_{nullptr}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    , assignedJoystickGuid_{GUID_NULL}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    , isInitialized{false}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> hWnd = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">WinCtxRes::GetHWND</a>(_windowContext);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// キーボードの取得</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Game::System&lt;Input&gt;().CreateKeyDevice(hWnd, <a class="code hl_variable" href="classmtgb_1_1InputResource.html#ae02650cb9d956c3c4f25d471c4febde3">pKeyDevice_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// マウスの取得</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    Game::System&lt;Input&gt;().CreateMouseDevice(hWnd, <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a14b50443ae9452f830e0744c5c12a375">pMouseDevice_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// 入力状態を保持するデータ</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a> = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1InputData.html">InputData</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// ImGui表示用のプロキシ</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a89c0b9824c6cfa79f2c8f02b755731e1">pMouseStateProxy_</a> = <span class="keyword">new</span> <a class="code hl_struct" href="structmtgb_1_1MouseStateProxy.html">MouseStateProxy</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#a6a718a32150a6cd203d4b538229167be">mouseStateCurrent_</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a29a5520b4d1e2933ee134d8a30e684d0">pJoystickProxy_</a> = <span class="keyword">new</span> <a class="code hl_struct" href="structmtgb_1_1JoystickProxy.html">JoystickProxy</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#adaffd86f7528c4d04bb6eb5ec020fbdf">joyStateCurrent_</a>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// 入力の時間範囲を設定</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#aef0b5448a4b9c96c1364d973d12a77e6">config_</a>.<a class="code hl_function" href="structmtgb_1_1InputConfig.html#ab0bbd37131538f932f4c03db2be7053c">SetRange</a>(1000);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#aef0b5448a4b9c96c1364d973d12a77e6">config_</a>.<a class="code hl_function" href="structmtgb_1_1InputConfig.html#a7cfaa222e580256a0c7b282df8d55974">SetDeadZone</a>(0.1);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_struct" href="structmtgb_1_1JoystickReservation.html">JoystickReservation</a> reservation; </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    reservation.<a class="code hl_variable" href="structmtgb_1_1JoystickReservation.html#af7b822d0c5ed03a4e9a6ddb79ff9b327">config</a> = <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#aef0b5448a4b9c96c1364d973d12a77e6">config_</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    reservation.<a class="code hl_variable" href="structmtgb_1_1JoystickReservation.html#a2baa42362f565d337b1271c092b6c939">hWnd</a> = hWnd;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> (_windowContext == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        reservation.<a class="code hl_variable" href="structmtgb_1_1JoystickReservation.html#a2bf0f101c0498a7a37bc6afed996b8ae">deviceType</a> = <a class="code hl_enumvalue" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a88183b946cc5f0e8c96b2e66e1c74a7e">DeviceType::Unknown</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_variable" href="classmtgb_1_1InputResource.html#afdc5cffb72eab98fa5ba4e3a329faaf9">name_</a> = <span class="stringliteral">&quot;FirstWindowController&quot;</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_windowContext == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        reservation.<a class="code hl_variable" href="structmtgb_1_1JoystickReservation.html#a2bf0f101c0498a7a37bc6afed996b8ae">deviceType</a> = <a class="code hl_enumvalue" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97abb8134cd77c31c188e34a0355f88bbc3">DeviceType::GamePad</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_variable" href="classmtgb_1_1InputResource.html#afdc5cffb72eab98fa5ba4e3a329faaf9">name_</a> = <span class="stringliteral">&quot;SecondWindowController&quot;</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    reservation.<a class="code hl_variable" href="structmtgb_1_1JoystickReservation.html#a3bc949fc6f92803c0a815c7a9f6a0d77">onAssign</a> = [<span class="keyword">this</span>](ComPtr&lt;IDirectInputDevice8&gt; device, GUID guid)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a2f88241a8935e40a2bef98e87ba613ad">pJoystickDevice_</a> = device;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">assignedJoystickGuid_</a> = guid;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <a class="code hl_variable" href="classmtgb_1_1InputResource.html#afb11517f8a89a241f5d0bafde5788b02">isInitialized</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            Game::System&lt;Input&gt;().SetJoystickGuid(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">assignedJoystickGuid_</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#af3c96e2c25d30b5ee05f9afa661829e2">controllerType_</a> = <a class="code hl_function" href="classmtgb_1_1Input.html#a833b42780dae84db13b5b85c3e31eaaf">Input::GetControllerTypeByVendor</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a2f88241a8935e40a2bef98e87ba613ad">pJoystickDevice_</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        };</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    Game::System&lt;Input&gt;().RequestJoystickDevice(std::move(reservation));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    Game::System&lt;Input&gt;().EnumJoystick();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classmtgb_1_1InputResource.html#a0a806a902533238288f4ccf4407295c8">   70</a></span><a class="code hl_function" href="classmtgb_1_1InputResource.html#a0a806a902533238288f4ccf4407295c8">mtgb::InputResource::~InputResource</a>()</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    Release();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classmtgb_1_1InputResource.html#ad1a7496289a816903d50af7232189601">   75</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1InputResource.html#ad1a7496289a816903d50af7232189601">mtgb::InputResource::Update</a>()</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_class" href="classmtgb_1_1Input.html">Input</a>&amp; input = Game::System&lt;Input&gt;();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    pJoystickProxy_-&gt;UpdateFromInput(assignedJoystickGuid_);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    pJoystickProxy_-&gt;UpdateInputData(pInputData_-&gt;joyStateCurrent_);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#a6e1f2a4343ee349da40c7552ad9f26b2">TypedShow</a>&lt;<a class="code hl_struct" href="structmtgb_1_1JoystickProxy.html">JoystickProxy</a>&gt;(pJoystickProxy_, name_+<span class="stringliteral">&quot;:Joystick&quot;</span>, ShowType::Settings);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    pMouseStateProxy_-&gt;<a class="code hl_function" href="structmtgb_1_1JoystickProxy.html#a41478460177e8bf0ff956ddd61d309ad">UpdateInputData</a>(pInputData_-&gt;mouseStateCurrent_);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#a6e1f2a4343ee349da40c7552ad9f26b2">TypedShow</a>&lt;<a class="code hl_struct" href="structmtgb_1_1MouseStateProxy.html">MouseStateProxy</a>&gt;(pMouseStateProxy_, name_ + <span class="stringliteral">&quot;:Mouse&quot;</span>, ShowType::Settings);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classmtgb_1_1InputResource.html#a6ff97381a0878d1e4a4821450118a189">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1InputResource.html#a6ff97381a0878d1e4a4821450118a189">InputResource::SetResource</a>()</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>{</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_class" href="classmtgb_1_1Input.html">Input</a>&amp; input = Game::System&lt;Input&gt;();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    input.<a class="code hl_function" href="classmtgb_1_1Input.html#a2b4e6ca3ebbeeadb7cf0e57f7bfa8913">ChangeKeyDevice</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#ae02650cb9d956c3c4f25d471c4febde3">pKeyDevice_</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    input.<a class="code hl_function" href="classmtgb_1_1Input.html#a54420097a7f60b6499026125f930b111">ChangeMouseDevice</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a14b50443ae9452f830e0744c5c12a375">pMouseDevice_</a>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1InputResource.html#afb11517f8a89a241f5d0bafde5788b02">isInitialized</a>)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        input.<a class="code hl_function" href="classmtgb_1_1Input.html#a4fc49f4164594bc4fe70df03e05ce015">SetJoystickGuid</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">assignedJoystickGuid_</a>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        input.<a class="code hl_function" href="classmtgb_1_1Input.html#a4fc49f4164594bc4fe70df03e05ce015">SetJoystickGuid</a>(GUID_NULL);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    input.<a class="code hl_function" href="classmtgb_1_1Input.html#a4d5c1ffe0c2a005b307efac9ef855603">ChangeInputData</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classmtgb_1_1InputResource.html#ac35062b587ac9e98b13dcf7cb07d1aae">  104</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1InputResource.html#ac35062b587ac9e98b13dcf7cb07d1aae">mtgb::InputResource::Release</a>()</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(pInputData_);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(pJoystickProxy_);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    pKeyDevice_.Reset();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    pMouseDevice_.Reset();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    pJoystickDevice_.Reset();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="ttc" id="aDebug_8h_html"><div class="ttname"><a href="Debug_8h.html">Debug.h</a></div></div>
+<div class="ttc" id="aDirect2DResource_8h_html_ac17599842f3c193b028cc578098f8b93"><div class="ttname"><a href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a></div><div class="ttdeci">struct HWND__ * HWND</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00009">Direct2DResource.h:9</a></div></div>
+<div class="ttc" id="aIncludingInput_8h_html"><div class="ttname"><a href="IncludingInput_8h.html">IncludingInput.h</a></div></div>
+<div class="ttc" id="aInputData_8h_html"><div class="ttname"><a href="InputData_8h.html">InputData.h</a></div></div>
+<div class="ttc" id="aInputResource_8h_html"><div class="ttname"><a href="InputResource_8h.html">InputResource.h</a></div></div>
+<div class="ttc" id="aJoystickProxy_8h_html"><div class="ttname"><a href="JoystickProxy_8h.html">JoystickProxy.h</a></div></div>
+<div class="ttc" id="aMTImGui_8h_html"><div class="ttname"><a href="MTImGui_8h.html">MTImGui.h</a></div></div>
+<div class="ttc" id="aReleaseUtility_8h_html"><div class="ttname"><a href="ReleaseUtility_8h.html">ReleaseUtility.h</a></div></div>
+<div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
+<div class="ttc" id="aWindowContextUtil_8h_html"><div class="ttname"><a href="WindowContextUtil_8h.html">WindowContextUtil.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html"><div class="ttname"><a href="classmtgb_1_1InputData.html">mtgb::InputData</a></div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00116">InputData.h:117</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_a6a718a32150a6cd203d4b538229167be"><div class="ttname"><a href="classmtgb_1_1InputData.html#a6a718a32150a6cd203d4b538229167be">mtgb::InputData::mouseStateCurrent_</a></div><div class="ttdeci">_DIMOUSESTATE mouseStateCurrent_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00126">InputData.h:126</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_adaffd86f7528c4d04bb6eb5ec020fbdf"><div class="ttname"><a href="classmtgb_1_1InputData.html#adaffd86f7528c4d04bb6eb5ec020fbdf">mtgb::InputData::joyStateCurrent_</a></div><div class="ttdeci">DIJOYSTATE joyStateCurrent_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00128">InputData.h:128</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_aef0b5448a4b9c96c1364d973d12a77e6"><div class="ttname"><a href="classmtgb_1_1InputData.html#aef0b5448a4b9c96c1364d973d12a77e6">mtgb::InputData::config_</a></div><div class="ttdeci">InputConfig config_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00131">InputData.h:131</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_af3c96e2c25d30b5ee05f9afa661829e2"><div class="ttname"><a href="classmtgb_1_1InputData.html#af3c96e2c25d30b5ee05f9afa661829e2">mtgb::InputData::controllerType_</a></div><div class="ttdeci">ControllerType controllerType_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00130">InputData.h:130</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a0a806a902533238288f4ccf4407295c8"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a0a806a902533238288f4ccf4407295c8">mtgb::InputResource::~InputResource</a></div><div class="ttdeci">~InputResource()</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8cpp_source.html#l00070">InputResource.cpp:70</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a14b50443ae9452f830e0744c5c12a375"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a14b50443ae9452f830e0744c5c12a375">mtgb::InputResource::pMouseDevice_</a></div><div class="ttdeci">ComPtr&lt; IDirectInputDevice8 &gt; pMouseDevice_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00039">InputResource.h:39</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a222fcbcdd894c45cc299e9571b2ec938"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a222fcbcdd894c45cc299e9571b2ec938">mtgb::InputResource::InputResource</a></div><div class="ttdeci">InputResource(WindowContext _windowContext)</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8cpp_source.html#l00011">InputResource.cpp:11</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a29a5520b4d1e2933ee134d8a30e684d0"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a29a5520b4d1e2933ee134d8a30e684d0">mtgb::InputResource::pJoystickProxy_</a></div><div class="ttdeci">JoystickProxy * pJoystickProxy_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00041">InputResource.h:41</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a2f88241a8935e40a2bef98e87ba613ad"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a2f88241a8935e40a2bef98e87ba613ad">mtgb::InputResource::pJoystickDevice_</a></div><div class="ttdeci">ComPtr&lt; IDirectInputDevice8 &gt; pJoystickDevice_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00040">InputResource.h:40</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a57d9d9587ea793257a29ce7b857a2195"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">mtgb::InputResource::pInputData_</a></div><div class="ttdeci">InputData * pInputData_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00035">InputResource.h:35</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a6ff97381a0878d1e4a4821450118a189"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a6ff97381a0878d1e4a4821450118a189">mtgb::InputResource::SetResource</a></div><div class="ttdeci">void SetResource() override</div><div class="ttdoc">ウィンドウを変更する際に固有のリソースをセットする</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8cpp_source.html#l00088">InputResource.cpp:88</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a89c0b9824c6cfa79f2c8f02b755731e1"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a89c0b9824c6cfa79f2c8f02b755731e1">mtgb::InputResource::pMouseStateProxy_</a></div><div class="ttdeci">MouseStateProxy * pMouseStateProxy_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00042">InputResource.h:42</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a98beca7c75a095c65e56c3f883a60852"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">mtgb::InputResource::assignedJoystickGuid_</a></div><div class="ttdeci">GUID assignedJoystickGuid_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00043">InputResource.h:43</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_ac35062b587ac9e98b13dcf7cb07d1aae"><div class="ttname"><a href="classmtgb_1_1InputResource.html#ac35062b587ac9e98b13dcf7cb07d1aae">mtgb::InputResource::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8cpp_source.html#l00104">InputResource.cpp:104</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_ad1a7496289a816903d50af7232189601"><div class="ttname"><a href="classmtgb_1_1InputResource.html#ad1a7496289a816903d50af7232189601">mtgb::InputResource::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdoc">更新処理</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8cpp_source.html#l00075">InputResource.cpp:75</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_ae02650cb9d956c3c4f25d471c4febde3"><div class="ttname"><a href="classmtgb_1_1InputResource.html#ae02650cb9d956c3c4f25d471c4febde3">mtgb::InputResource::pKeyDevice_</a></div><div class="ttdeci">ComPtr&lt; IDirectInputDevice8 &gt; pKeyDevice_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00038">InputResource.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_afb11517f8a89a241f5d0bafde5788b02"><div class="ttname"><a href="classmtgb_1_1InputResource.html#afb11517f8a89a241f5d0bafde5788b02">mtgb::InputResource::isInitialized</a></div><div class="ttdeci">bool isInitialized</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00044">InputResource.h:44</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_afdc5cffb72eab98fa5ba4e3a329faaf9"><div class="ttname"><a href="classmtgb_1_1InputResource.html#afdc5cffb72eab98fa5ba4e3a329faaf9">mtgb::InputResource::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00037">InputResource.h:37</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html"><div class="ttname"><a href="classmtgb_1_1Input.html">mtgb::Input</a></div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00062">Input.h:63</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a2b4e6ca3ebbeeadb7cf0e57f7bfa8913"><div class="ttname"><a href="classmtgb_1_1Input.html#a2b4e6ca3ebbeeadb7cf0e57f7bfa8913">mtgb::Input::ChangeKeyDevice</a></div><div class="ttdeci">void ChangeKeyDevice(ComPtr&lt; IDirectInputDevice8 &gt; _pKeyDevice)</div><div class="ttdoc">入力状態を取得する対象のデバイスを切り替える</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00324">Input.cpp:324</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a4d5c1ffe0c2a005b307efac9ef855603"><div class="ttname"><a href="classmtgb_1_1Input.html#a4d5c1ffe0c2a005b307efac9ef855603">mtgb::Input::ChangeInputData</a></div><div class="ttdeci">void ChangeInputData(InputData *_pInputData)</div><div class="ttdoc">入力状態を格納する対象を切り返る</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00341">Input.cpp:341</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a4fc49f4164594bc4fe70df03e05ce015"><div class="ttname"><a href="classmtgb_1_1Input.html#a4fc49f4164594bc4fe70df03e05ce015">mtgb::Input::SetJoystickGuid</a></div><div class="ttdeci">void SetJoystickGuid(GUID _guid)</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00329">Input.cpp:329</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a54420097a7f60b6499026125f930b111"><div class="ttname"><a href="classmtgb_1_1Input.html#a54420097a7f60b6499026125f930b111">mtgb::Input::ChangeMouseDevice</a></div><div class="ttdeci">void ChangeMouseDevice(ComPtr&lt; IDirectInputDevice8 &gt; _pMouseDevice)</div><div class="ttdoc">入力状態を取得する対象のデバイスを切り替える</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00336">Input.cpp:336</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a833b42780dae84db13b5b85c3e31eaaf"><div class="ttname"><a href="classmtgb_1_1Input.html#a833b42780dae84db13b5b85c3e31eaaf">mtgb::Input::GetControllerTypeByVendor</a></div><div class="ttdeci">static ControllerType GetControllerTypeByVendor(ComPtr&lt; IDirectInputDevice8 &gt; _pInputDevice)</div><div class="ttdoc">ベンダーIDからコントローラーの種類を判別</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00485">Input.cpp:485</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00038">MTImGui.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a6e1f2a4343ee349da40c7552ad9f26b2"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a6e1f2a4343ee349da40c7552ad9f26b2">mtgb::MTImGui::TypedShow</a></div><div class="ttdeci">void TypedShow(T *target, const std::string &amp;name, ShowType show=ShowType::Inspector)</div><div class="ttdoc">型を指定して表示キューに積む 事前にSetupShowFuncで表示方法を登録する必要あり</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00173">MTImGui.h:173</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html">mtgb::WindowContextResource</a></div><div class="ttdoc">ウィンドウごとに固有のリソースのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00018">WindowContextResource.h:19</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_ac3067c8903d57f25d01d82b155657099"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">mtgb::WinCtxRes::GetHWND</a></div><div class="ttdeci">HWND GetHWND(WindowContext ctx)</div><div class="ttdoc">そのウィンドウのHWNDを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00025">WindowContextUtil.cpp:25</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a919a09feaf3649c048364fffc3053d97a88183b946cc5f0e8c96b2e66e1c74a7e"><div class="ttname"><a href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a88183b946cc5f0e8c96b2e66e1c74a7e">mtgb::DeviceType::Unknown</a></div><div class="ttdeci">@ Unknown</div></div>
+<div class="ttc" id="anamespacemtgb_html_a919a09feaf3649c048364fffc3053d97abb8134cd77c31c188e34a0355f88bbc3"><div class="ttname"><a href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97abb8134cd77c31c188e34a0355f88bbc3">mtgb::DeviceType::GamePad</a></div><div class="ttdeci">@ GamePad</div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">mtgb::WindowContext</a></div><div class="ttdeci">WindowContext</div><div class="ttdef"><b>Definition:</b> <a href="WindowContext_8h_source.html#l00012">WindowContext.h:13</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::WindowContext::Second</a></div><div class="ttdeci">@ Second</div></div>
+<div class="ttc" id="astructmtgb_1_1InputConfig_html_a7cfaa222e580256a0c7b282df8d55974"><div class="ttname"><a href="structmtgb_1_1InputConfig.html#a7cfaa222e580256a0c7b282df8d55974">mtgb::InputConfig::SetDeadZone</a></div><div class="ttdeci">void SetDeadZone(float _deadZone)</div><div class="ttdoc">指定した値(割合)をデッドゾーンに設定</div><div class="ttdef"><b>Definition:</b> <a href="InputConfig_8cpp_source.html#l00026">InputConfig.cpp:26</a></div></div>
+<div class="ttc" id="astructmtgb_1_1InputConfig_html_ab0bbd37131538f932f4c03db2be7053c"><div class="ttname"><a href="structmtgb_1_1InputConfig.html#ab0bbd37131538f932f4c03db2be7053c">mtgb::InputConfig::SetRange</a></div><div class="ttdeci">void SetRange(LONG _range)</div><div class="ttdef"><b>Definition:</b> <a href="InputConfig_8cpp_source.html#l00003">InputConfig.cpp:3</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickProxy_html"><div class="ttname"><a href="structmtgb_1_1JoystickProxy.html">mtgb::JoystickProxy</a></div><div class="ttdoc">ジョイスティックの入力をImGuiで表示する用</div><div class="ttdef"><b>Definition:</b> <a href="JoystickProxy_8h_source.html#l00010">JoystickProxy.h:11</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickProxy_html_a41478460177e8bf0ff956ddd61d309ad"><div class="ttname"><a href="structmtgb_1_1JoystickProxy.html#a41478460177e8bf0ff956ddd61d309ad">mtgb::JoystickProxy::UpdateInputData</a></div><div class="ttdeci">void UpdateInputData(const DIJOYSTATE &amp;js)</div><div class="ttdef"><b>Definition:</b> <a href="JoystickProxy_8cpp_source.html#l00033">JoystickProxy.cpp:33</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickReservation_html"><div class="ttname"><a href="structmtgb_1_1JoystickReservation.html">mtgb::JoystickReservation</a></div><div class="ttdoc">ジョイスティックの割り当て予約</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00053">Input.h:54</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickReservation_html_a2baa42362f565d337b1271c092b6c939"><div class="ttname"><a href="structmtgb_1_1JoystickReservation.html#a2baa42362f565d337b1271c092b6c939">mtgb::JoystickReservation::hWnd</a></div><div class="ttdeci">HWND hWnd</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00055">Input.h:55</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickReservation_html_a2bf0f101c0498a7a37bc6afed996b8ae"><div class="ttname"><a href="structmtgb_1_1JoystickReservation.html#a2bf0f101c0498a7a37bc6afed996b8ae">mtgb::JoystickReservation::deviceType</a></div><div class="ttdeci">DeviceType deviceType</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00057">Input.h:57</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickReservation_html_a3bc949fc6f92803c0a815c7a9f6a0d77"><div class="ttname"><a href="structmtgb_1_1JoystickReservation.html#a3bc949fc6f92803c0a815c7a9f6a0d77">mtgb::JoystickReservation::onAssign</a></div><div class="ttdeci">std::function&lt; void(ComPtr&lt; IDirectInputDevice8 &gt;, GUID)&gt; onAssign</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00058">Input.h:58</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickReservation_html_af7b822d0c5ed03a4e9a6ddb79ff9b327"><div class="ttname"><a href="structmtgb_1_1JoystickReservation.html#af7b822d0c5ed03a4e9a6ddb79ff9b327">mtgb::JoystickReservation::config</a></div><div class="ttdeci">InputConfig config</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00056">Input.h:56</a></div></div>
+<div class="ttc" id="astructmtgb_1_1MouseStateProxy_html"><div class="ttname"><a href="structmtgb_1_1MouseStateProxy.html">mtgb::MouseStateProxy</a></div><div class="ttdoc">マウスの入力をImGuiで表示する用</div><div class="ttdef"><b>Definition:</b> <a href="MouseStateProxy_8h_source.html#l00010">MouseStateProxy.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="InputResource_8cpp.html">InputResource.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

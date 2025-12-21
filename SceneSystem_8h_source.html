@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: SceneSystem.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('SceneSystem_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SceneSystem.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="SceneSystem_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ISystem_8h.html">ISystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="GameScene_8h.html">GameScene.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="ReleaseUtility_8h.html">ReleaseUtility.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classmtgb_1_1SceneSystem.html">   10</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1SceneSystem.html">SceneSystem</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1ISystem.html">ISystem</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#a3c81a73c01c843f37d6412815f1ed0d1">SceneSystem</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#a1d4cf7f06f505ad41b1e2d75cc355c9f">~SceneSystem</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">template</span>&lt;<span class="keyword">class </span>NextSceneT, <span class="keyword">typename</span> ...Args&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#abdb35a5ac6f3e420a76fe73368a8b8de">Move</a>(Args... _args);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classmtgb_1_1SceneSystem.html#aa04d2c88d5b1443c31e548a22fb6fd7e">   31</a></span>        <a class="code hl_class" href="classmtgb_1_1GameScene.html">GameScene</a>* <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#aa04d2c88d5b1443c31e548a22fb6fd7e">GetActiveScene</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>; }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#ad1456f7056f3ef3744de355af626ff7a">Initialize</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#ab3dbe7c990e9f3f537d144ff839af07f">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classmtgb_1_1SceneSystem.html#a9e0f261ef1fabbf54ee5672f7a58a173">   40</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#a9e0f261ef1fabbf54ee5672f7a58a173">OnMove</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; _onMove) { <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a>.push_back(_onMove); }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#a671e5098d02c002b858899681db3ca39">RegisterPendingCallback</a>(std::function&lt;<span class="keywordtype">void</span>()&gt; _callback);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#ac4989a9da5f11fcb09154c1b251ec512">ExecutePendingCallbacks</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#a522b456af468f16e125631ece120c58d">ChangeScene</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">   58</a></span>        <a class="code hl_class" href="classmtgb_1_1GameScene.html">GameScene</a>* <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">   60</a></span>        std::queue&lt;std::function&lt;void()&gt;&gt; <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>; <span class="comment">// 次のフレームのシーンの更新、描画前に実行するコールバック</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">   61</a></span>        std::vector&lt;std::function&lt;void()&gt;&gt; <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a>; <span class="comment">// シーン遷移時に実行するコールバック</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    };</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">template</span>&lt;<span class="keyword">class </span>NextSceneT, <span class="keyword">typename</span> ...Args&gt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classmtgb_1_1SceneSystem.html#abdb35a5ac6f3e420a76fe73368a8b8de">   65</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#abdb35a5ac6f3e420a76fe73368a8b8de">SceneSystem::Move</a>(Args... _args)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="comment">// 基底クラスがGameSceneであるか</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">static_assert</span>(std::is_base_of&lt;GameScene, NextSceneT&gt;().value</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            &amp;&amp; <span class="stringliteral">&quot;GameSceneクラスを継承していないクラスにシーン遷移できません。&quot;</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="comment">// 既に次のシーンが割り当てられているなら解放する</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a> = <span class="keyword">new</span> NextSceneT{ _args... };</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+<div class="ttc" id="aGameScene_8h_html"><div class="ttname"><a href="GameScene_8h.html">GameScene.h</a></div></div>
+<div class="ttc" id="aISystem_8h_html"><div class="ttname"><a href="ISystem_8h.html">ISystem.h</a></div></div>
+<div class="ttc" id="aReleaseUtility_8h_html"><div class="ttname"><a href="ReleaseUtility_8h.html">ReleaseUtility.h</a></div></div>
+<div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameScene_html"><div class="ttname"><a href="classmtgb_1_1GameScene.html">mtgb::GameScene</a></div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8h_source.html#l00018">GameScene.h:19</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameScene_html_a280eb590943cbe7bb792522f60d34b9e"><div class="ttname"><a href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">mtgb::GameScene::pInstance_</a></div><div class="ttdeci">static GameScene * pInstance_</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8h_source.html#l00024">GameScene.h:24</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ISystem_html"><div class="ttname"><a href="classmtgb_1_1ISystem.html">mtgb::ISystem</a></div><div class="ttdef"><b>Definition:</b> <a href="ISystem_8h_source.html#l00005">ISystem.h:6</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html">mtgb::SceneSystem</a></div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00010">SceneSystem.h:11</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a1d4cf7f06f505ad41b1e2d75cc355c9f"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a1d4cf7f06f505ad41b1e2d75cc355c9f">mtgb::SceneSystem::~SceneSystem</a></div><div class="ttdeci">~SceneSystem()</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00026">SceneSystem.cpp:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a37950cec30abc52cdd104ccd15e500a7"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">mtgb::SceneSystem::pNextScene_</a></div><div class="ttdeci">GameScene * pNextScene_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00058">SceneSystem.h:58</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a3c81a73c01c843f37d6412815f1ed0d1"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a3c81a73c01c843f37d6412815f1ed0d1">mtgb::SceneSystem::SceneSystem</a></div><div class="ttdeci">SceneSystem()</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00020">SceneSystem.cpp:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a4525886896621370f7e58956e470e444"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">mtgb::SceneSystem::onMoveListener_</a></div><div class="ttdeci">std::vector&lt; std::function&lt; void()&gt; &gt; onMoveListener_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00061">SceneSystem.h:61</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a522b456af468f16e125631ece120c58d"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a522b456af468f16e125631ece120c58d">mtgb::SceneSystem::ChangeScene</a></div><div class="ttdeci">void ChangeScene()</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00119">SceneSystem.cpp:119</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a671e5098d02c002b858899681db3ca39"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a671e5098d02c002b858899681db3ca39">mtgb::SceneSystem::RegisterPendingCallback</a></div><div class="ttdeci">void RegisterPendingCallback(std::function&lt; void()&gt; _callback)</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00105">SceneSystem.cpp:105</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a8c396a4925af47ea26812331c463b9c0"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">mtgb::SceneSystem::pendingCallbacks_</a></div><div class="ttdeci">std::queue&lt; std::function&lt; void()&gt; &gt; pendingCallbacks_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00060">SceneSystem.h:60</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a9e0f261ef1fabbf54ee5672f7a58a173"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a9e0f261ef1fabbf54ee5672f7a58a173">mtgb::SceneSystem::OnMove</a></div><div class="ttdeci">void OnMove(const std::function&lt; void()&gt; &amp;_onMove)</div><div class="ttdoc">シーン遷移時のイベントを受ける</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00040">SceneSystem.h:40</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_aa04d2c88d5b1443c31e548a22fb6fd7e"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#aa04d2c88d5b1443c31e548a22fb6fd7e">mtgb::SceneSystem::GetActiveScene</a></div><div class="ttdeci">GameScene * GetActiveScene() const</div><div class="ttdoc">現在のシーンのポインタの取得</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00031">SceneSystem.h:31</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_ab3dbe7c990e9f3f537d144ff839af07f"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#ab3dbe7c990e9f3f537d144ff839af07f">mtgb::SceneSystem::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00039">SceneSystem.cpp:39</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_abdb35a5ac6f3e420a76fe73368a8b8de"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#abdb35a5ac6f3e420a76fe73368a8b8de">mtgb::SceneSystem::Move</a></div><div class="ttdeci">void Move(Args... _args)</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00065">SceneSystem.h:65</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_ac4989a9da5f11fcb09154c1b251ec512"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#ac4989a9da5f11fcb09154c1b251ec512">mtgb::SceneSystem::ExecutePendingCallbacks</a></div><div class="ttdeci">void ExecutePendingCallbacks()</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00110">SceneSystem.cpp:110</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_ad1456f7056f3ef3744de355af626ff7a"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#ad1456f7056f3ef3744de355af626ff7a">mtgb::SceneSystem::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00031">SceneSystem.cpp:31</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="SceneSystem_8h.html">SceneSystem.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

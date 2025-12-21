@@ -1,0 +1,25 @@
+var classmtgb_1_1DXGIResource =
+[
+    [ "DXGIResource", "classmtgb_1_1DXGIResource.html#a7cc6bc8813f4dc5b7b8a5516266fee07", null ],
+    [ "~DXGIResource", "classmtgb_1_1DXGIResource.html#a49972ddb85c8d224ebe031aefd96fe37", null ],
+    [ "DXGIResource", "classmtgb_1_1DXGIResource.html#ac54b1e44c06ea8a50b51a09c7da44108", null ],
+    [ "GetAssignedMonitorRect", "classmtgb_1_1DXGIResource.html#af6a3047162fe339a8cd7892f215f90ec", null ],
+    [ "GetWindowContext", "classmtgb_1_1DXGIResource.html#ae3c7d963d4b5d3d5ca59483bff874a98", null ],
+    [ "OnResize", "classmtgb_1_1DXGIResource.html#aa8cd0b910870f18c6d3fd0a147178015", null ],
+    [ "operator=", "classmtgb_1_1DXGIResource.html#a074b46874395f00711925376636f411a", null ],
+    [ "Release", "classmtgb_1_1DXGIResource.html#a4effb8a45a057ae014ef1a540bd3c2e2", null ],
+    [ "Reset", "classmtgb_1_1DXGIResource.html#a536b5d467f5f0a2190062c3cc12a46b1", null ],
+    [ "SetResource", "classmtgb_1_1DXGIResource.html#a002bacadd246ad7dd2132e809c754a99", null ],
+    [ "SwapMonitorInfo", "classmtgb_1_1DXGIResource.html#a4a04bd4657789ca4e8cdb3a6a10993ab", null ],
+    [ "Update", "classmtgb_1_1DXGIResource.html#a4bdee96054d05221b6c3a821c9d76847", null ],
+    [ "isBorderlessWindow", "classmtgb_1_1DXGIResource.html#aca714b139ce42c2063a22cfad9d30cb9", null ],
+    [ "isMultiMonitor_", "classmtgb_1_1DXGIResource.html#a0dfda7b1c1c0bb86d4dca01b39c8dd0c", null ],
+    [ "modeList_", "classmtgb_1_1DXGIResource.html#a66ee8a699d985d5166a2737c5d3375a3", null ],
+    [ "monitorInfo_", "classmtgb_1_1DXGIResource.html#a0357e9d36b3927109859d1f2d03e84be", null ],
+    [ "name_", "classmtgb_1_1DXGIResource.html#ab70cc2094c985207912009f61c993a6e", null ],
+    [ "outputDesc_", "classmtgb_1_1DXGIResource.html#ac93dd45468f775ff05c8e70a7b675fbe", null ],
+    [ "pDXGISurface_", "classmtgb_1_1DXGIResource.html#a7f2694f639b46324e71a778d8ce5618a", null ],
+    [ "pOutput_", "classmtgb_1_1DXGIResource.html#a8af0c205fa8bb172a984ff16dbfa1f6f", null ],
+    [ "pSwapChain1_", "classmtgb_1_1DXGIResource.html#a3918d704bf2193b2bfedca4374cbde2d", null ],
+    [ "windowContext_", "classmtgb_1_1DXGIResource.html#a8c2d2eae95241847d06c966d7f39199a", null ]
+];

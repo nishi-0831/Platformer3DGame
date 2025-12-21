@@ -1,0 +1,816 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::Timer クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1Timer.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pri-static-methods">静的非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
+<a href="classmtgb_1_1Timer-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::Timer クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="Timer_8h_source.html">Timer.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::Timer の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Timer__inherit__graph.svg" width="250" height="639"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::Timer 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Timer__coll__graph.svg" width="354" height="626"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html">QUEUE_ELEMENT</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a77eeb0c0c25082dbf29d9adfc99ec4f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#a77eeb0c0c25082dbf29d9adfc99ec4f7">Timer</a> ()</td></tr>
+<tr class="separator:a77eeb0c0c25082dbf29d9adfc99ec4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60913f470fffad327884c63b118ca70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#ae60913f470fffad327884c63b118ca70">~Timer</a> ()</td></tr>
+<tr class="separator:ae60913f470fffad327884c63b118ca70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16eeb167c1381a3588e59f98a07738d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#a16eeb167c1381a3588e59f98a07738d7">Initialize</a> () override</td></tr>
+<tr class="separator:a16eeb167c1381a3588e59f98a07738d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7202a0d9281160408b01a963af5edc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#af7202a0d9281160408b01a963af5edc3">Update</a> () override</td></tr>
+<tr class="separator:af7202a0d9281160408b01a963af5edc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac36daf50c72f07f2bc0f0bda95eb2bc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#ac36daf50c72f07f2bc0f0bda95eb2bc8">EnqueueTimer</a> (<a class="el" href="structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html">QUEUE_ELEMENT</a> *_pElement)</td></tr>
+<tr class="separator:ac36daf50c72f07f2bc0f0bda95eb2bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:aad0243e357b289b770540ef60e37b916"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#aad0243e357b289b770540ef60e37b916">AddAram</a> (const float _time, const std::function&lt; void()&gt; &amp;_callback)</td></tr>
+<tr class="separator:aad0243e357b289b770540ef60e37b916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a627588bc1e9abd685afa4bc49e223617"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#a627588bc1e9abd685afa4bc49e223617">AddInterval</a> (const float _time, const std::function&lt; void()&gt; &amp;_callback, const bool _firstCall=false)</td></tr>
+<tr class="separator:a627588bc1e9abd685afa4bc49e223617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a08cb86268c3b009ae8c9b68afa55b9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#a7a08cb86268c3b009ae8c9b68afa55b9">Remove</a> (<a class="el" href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a> _hTimer)</td></tr>
+<tr class="separator:a7a08cb86268c3b009ae8c9b68afa55b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72fa14d52dc3763f02acc0c88891beff"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#a72fa14d52dc3763f02acc0c88891beff">Clear</a> ()</td></tr>
+<tr class="memdesc:a72fa14d52dc3763f02acc0c88891beff"><td class="mdescLeft">&#160;</td><td class="mdescRight">タイマーキューをすべてクリアする  <br /></td></tr>
+<tr class="separator:a72fa14d52dc3763f02acc0c88891beff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8fce5b2c97551427a50a288e3fd76fd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#ac8fce5b2c97551427a50a288e3fd76fd">Release</a> ()</td></tr>
+<tr class="memdesc:ac8fce5b2c97551427a50a288e3fd76fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放処理  <br /></td></tr>
+<tr class="separator:ac8fce5b2c97551427a50a288e3fd76fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静的非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a460bf244338d768fc56e13f4213c2310"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Timer.html">Timer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a> ()</td></tr>
+<tr class="separator:a460bf244338d768fc56e13f4213c2310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ac2b05933c2530496349c230509b114e1"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html">QUEUE_ELEMENT</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a></td></tr>
+<tr class="separator:ac2b05933c2530496349c230509b114e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21c4cc596f99313b8721c64c5dcce4bd"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html">QUEUE_ELEMENT</a> *, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#a21c4cc596f99313b8721c64c5dcce4bd">pReenqueueElements_</a></td></tr>
+<tr class="separator:a21c4cc596f99313b8721c64c5dcce4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa84d8715e102e9e61d7e01328e8d1b9e"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html">QUEUE_ELEMENT</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#aa84d8715e102e9e61d7e01328e8d1b9e">toErase_</a></td></tr>
+<tr class="separator:aa84d8715e102e9e61d7e01328e8d1b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:a36f74de191b4210a27b625e9166474c8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Timer.html">Timer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Timer.html#a36f74de191b4210a27b625e9166474c8">pInstance_</a> { nullptr }</td></tr>
+<tr class="separator:a36f74de191b4210a27b625e9166474c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="Timer_8h_source.html">Timer.h</a> の <a class="el" href="Timer_8h_source.html#l00014">14</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a77eeb0c0c25082dbf29d9adfc99ec4f7" name="a77eeb0c0c25082dbf29d9adfc99ec4f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77eeb0c0c25082dbf29d9adfc99ec4f7">&#9670;&#160;</a></span>Timer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Timer::Timer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8cpp_source.html">Timer.cpp</a> の <a class="el" href="Timer_8cpp_source.html#l00136">136</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>{</div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_variable" href="classmtgb_1_1Timer.html#a36f74de191b4210a27b625e9166474c8">pInstance_</a> = <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  139</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Timer_html_a36f74de191b4210a27b625e9166474c8"><div class="ttname"><a href="classmtgb_1_1Timer.html#a36f74de191b4210a27b625e9166474c8">mtgb::Timer::pInstance_</a></div><div class="ttdeci">static Timer * pInstance_</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8h_source.html#l00048">Timer.h:48</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae60913f470fffad327884c63b118ca70" name="ae60913f470fffad327884c63b118ca70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60913f470fffad327884c63b118ca70">&#9670;&#160;</a></span>~Timer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Timer::~Timer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8cpp_source.html">Timer.cpp</a> の <a class="el" href="Timer_8cpp_source.html#l00141">141</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>{</div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; pTimer : <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>)</div>
+<div class="line"><span class="lineno">  144</span>    {</div>
+<div class="line"><span class="lineno">  145</span>        <span class="keyword">delete</span> pTimer;</div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="line"><span class="lineno">  147</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Timer_html_a460bf244338d768fc56e13f4213c2310"><div class="ttname"><a href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">mtgb::Timer::Instance</a></div><div class="ttdeci">static Timer &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8h_source.html#l00045">Timer.h:45</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Timer_html_ac2b05933c2530496349c230509b114e1"><div class="ttname"><a href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">mtgb::Timer::pTimerQueue_</a></div><div class="ttdeci">std::list&lt; QUEUE_ELEMENT * &gt; pTimerQueue_</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8h_source.html#l00049">Timer.h:49</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aad0243e357b289b770540ef60e37b916" name="aad0243e357b289b770540ef60e37b916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad0243e357b289b770540ef60e37b916">&#9670;&#160;</a></span>AddAram()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a> mtgb::Timer::AddAram </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>_callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8cpp_source.html">Timer.cpp</a> の <a class="el" href="Timer_8cpp_source.html#l00005">5</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>{</div>
+<div class="line"><span class="lineno">    7</span>    QUEUE_ELEMENT* pElement{ <span class="keyword">new</span> QUEUE_ELEMENT{ _callback, _time } };</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_function" href="classmtgb_1_1Timer.html#ac36daf50c72f07f2bc0f0bda95eb2bc8">EnqueueTimer</a>(pElement);</div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a><span class="keyword">&gt;</span>(pElement);</div>
+<div class="line"><span class="lineno">   10</span>}</div>
+<div class="ttc" id="aTimer_8h_html_a1f65b0f3bb4c3a36cee385513f5cfa8d"><div class="ttname"><a href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a></div><div class="ttdeci">void * TimerHandle</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8h_source.html#l00010">Timer.h:10</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Timer_html_ac36daf50c72f07f2bc0f0bda95eb2bc8"><div class="ttname"><a href="classmtgb_1_1Timer.html#ac36daf50c72f07f2bc0f0bda95eb2bc8">mtgb::Timer::EnqueueTimer</a></div><div class="ttdeci">void EnqueueTimer(QUEUE_ELEMENT *_pElement)</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8cpp_source.html#l00149">Timer.cpp:149</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Timer_8cpp_source.html#l00149">EnqueueTimer()</a>, <a class="el" href="Timer_8h_source.html#l00045">Instance()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Timer_aad0243e357b289b770540ef60e37b916_cgraph.svg" width="434" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a627588bc1e9abd685afa4bc49e223617" name="a627588bc1e9abd685afa4bc49e223617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a627588bc1e9abd685afa4bc49e223617">&#9670;&#160;</a></span>AddInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a> mtgb::Timer::AddInterval </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>_callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>_firstCall</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8cpp_source.html">Timer.cpp</a> の <a class="el" href="Timer_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>{</div>
+<div class="line"><span class="lineno">   14</span>    QUEUE_ELEMENT* pElement{ <span class="keyword">new</span> QUEUE_ELEMENT{ _callback, _firstCall ? 0 : _time } };</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_variable" href="classmtgb_1_1Timer.html#a21c4cc596f99313b8721c64c5dcce4bd">pReenqueueElements_</a>.insert({ pElement, _time });</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_function" href="classmtgb_1_1Timer.html#ac36daf50c72f07f2bc0f0bda95eb2bc8">EnqueueTimer</a>(pElement);</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a><span class="keyword">&gt;</span>(pElement);</div>
+<div class="line"><span class="lineno">   18</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Timer_html_a21c4cc596f99313b8721c64c5dcce4bd"><div class="ttname"><a href="classmtgb_1_1Timer.html#a21c4cc596f99313b8721c64c5dcce4bd">mtgb::Timer::pReenqueueElements_</a></div><div class="ttdeci">std::map&lt; QUEUE_ELEMENT *, float &gt; pReenqueueElements_</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8h_source.html#l00050">Timer.h:50</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Input_8cpp_source.html#l00474">mtgb::Input::SetAcquireInterval()</a>, <a class="el" href="Input_8cpp_source.html#l00658">mtgb::Input::StartEnumTimer()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Timer_a627588bc1e9abd685afa4bc49e223617_icgraph.svg" width="470" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a72fa14d52dc3763f02acc0c88891beff" name="a72fa14d52dc3763f02acc0c88891beff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72fa14d52dc3763f02acc0c88891beff">&#9670;&#160;</a></span>Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Timer::Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>タイマーキューをすべてクリアする </p>
+
+<p class="definition"> <a class="el" href="Timer_8cpp_source.html">Timer.cpp</a> の <a class="el" href="Timer_8cpp_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; pTimer : <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>)</div>
+<div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keyword">delete</span> pTimer;</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>     <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.clear();</div>
+<div class="line"><span class="lineno">   51</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac36daf50c72f07f2bc0f0bda95eb2bc8" name="ac36daf50c72f07f2bc0f0bda95eb2bc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36daf50c72f07f2bc0f0bda95eb2bc8">&#9670;&#160;</a></span>EnqueueTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Timer::EnqueueTimer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html">QUEUE_ELEMENT</a> *&#160;</td>
+          <td class="paramname"><em>_pElement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8cpp_source.html">Timer.cpp</a> の <a class="el" href="Timer_8cpp_source.html#l00149">149</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>{</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordtype">float</span> lefter{ _pElement-&gt;timeLeft };  <span class="comment">// 減算用</span></div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordtype">float</span> righter{ 0 };     <span class="comment">// 加算用</span></div>
+<div class="line"><span class="lineno">  153</span>    <span class="comment">// 適切な挿入ポイントを見つける</span></div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.begin();</div>
+<div class="line"><span class="lineno">  155</span>        itr != <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.end();</div>
+<div class="line"><span class="lineno">  156</span>        itr++)</div>
+<div class="line"><span class="lineno">  157</span>    {</div>
+<div class="line"><span class="lineno">  158</span>        <span class="keywordflow">if</span> (lefter &lt;= righter + (*itr)-&gt;timeLeft)</div>
+<div class="line"><span class="lineno">  159</span>        {</div>
+<div class="line"><span class="lineno">  160</span>            _pElement-&gt;timeLeft = lefter - righter;</div>
+<div class="line"><span class="lineno">  161</span>            itr = <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.insert(itr, _pElement);</div>
+<div class="line"><span class="lineno">  162</span>            itr++;</div>
+<div class="line"><span class="lineno">  163</span>            (*itr)-&gt;timeLeft -= _pElement-&gt;timeLeft;</div>
+<div class="line"><span class="lineno">  164</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  165</span>        }</div>
+<div class="line"><span class="lineno">  166</span>        righter += (*itr)-&gt;timeLeft;</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+<div class="line"><span class="lineno">  168</span>    <span class="comment">// 見つからなかったら末端に追加</span></div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.push_back(_pElement);</div>
+<div class="line"><span class="lineno">  170</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Timer_8h_source.html#l00020">mtgb::Timer::QUEUE_ELEMENT::timeLeft</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="Timer_8cpp_source.html#l00005">AddAram()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Timer_ac36daf50c72f07f2bc0f0bda95eb2bc8_icgraph.svg" width="434" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a16eeb167c1381a3588e59f98a07738d7" name="a16eeb167c1381a3588e59f98a07738d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16eeb167c1381a3588e59f98a07738d7">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Timer::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="Timer_8cpp_source.html">Timer.cpp</a> の <a class="el" href="Timer_8cpp_source.html#l00063">63</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a460bf244338d768fc56e13f4213c2310" name="a460bf244338d768fc56e13f4213c2310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a460bf244338d768fc56e13f4213c2310">&#9670;&#160;</a></span>Instance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classmtgb_1_1Timer.html">Timer</a> &amp; mtgb::Timer::Instance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8h_source.html">Timer.h</a> の <a class="el" href="Timer_8h_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{ <span class="keywordflow">return</span> *<a class="code hl_variable" href="classmtgb_1_1Timer.html#a36f74de191b4210a27b625e9166474c8">pInstance_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Timer_8h_source.html#l00048">pInstance_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="Timer_8cpp_source.html#l00005">AddAram()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Timer_a460bf244338d768fc56e13f4213c2310_icgraph.svg" width="395" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac8fce5b2c97551427a50a288e3fd76fd" name="ac8fce5b2c97551427a50a288e3fd76fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8fce5b2c97551427a50a288e3fd76fd">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Timer::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>開放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">mtgb::ISystem</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="Timer_8cpp_source.html">Timer.cpp</a> の <a class="el" href="Timer_8cpp_source.html#l00053">53</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>{</div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_function" href="classmtgb_1_1Timer.html#a72fa14d52dc3763f02acc0c88891beff">Clear</a>();</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Timer.html#a36f74de191b4210a27b625e9166474c8">pInstance_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keyword">delete</span> <a class="code hl_variable" href="classmtgb_1_1Timer.html#a36f74de191b4210a27b625e9166474c8">pInstance_</a>;</div>
+<div class="line"><span class="lineno">   59</span>        <a class="code hl_variable" href="classmtgb_1_1Timer.html#a36f74de191b4210a27b625e9166474c8">pInstance_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+<div class="line"><span class="lineno">   61</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Timer_html_a72fa14d52dc3763f02acc0c88891beff"><div class="ttname"><a href="classmtgb_1_1Timer.html#a72fa14d52dc3763f02acc0c88891beff">mtgb::Timer::Clear</a></div><div class="ttdeci">static void Clear()</div><div class="ttdoc">タイマーキューをすべてクリアする</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8cpp_source.html#l00043">Timer.cpp:43</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7a08cb86268c3b009ae8c9b68afa55b9" name="a7a08cb86268c3b009ae8c9b68afa55b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a08cb86268c3b009ae8c9b68afa55b9">&#9670;&#160;</a></span>Remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Timer::Remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a>&#160;</td>
+          <td class="paramname"><em>_hTimer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8cpp_source.html">Timer.cpp</a> の <a class="el" href="Timer_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    QUEUE_ELEMENT* pElement{ <span class="keyword">reinterpret_cast&lt;</span>QUEUE_ELEMENT*<span class="keyword">&gt;</span>(_hTimer) };</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_function" href="classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310">Instance</a>().<a class="code hl_variable" href="classmtgb_1_1Timer.html#aa84d8715e102e9e61d7e01328e8d1b9e">toErase_</a>.insert(pElement);  <span class="comment">// 削除予定に追加する</span></div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <span class="comment">//if (Instance().pReenqueueElements_.count(pElement) &gt; 0)</span></div>
+<div class="line"><span class="lineno">   27</span>    <span class="comment">//{</span></div>
+<div class="line"><span class="lineno">   28</span>    <span class="comment">//  Instance().pReenqueueElements_.erase(pElement);</span></div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">   30</span>    <span class="comment">//for (auto itr = Instance().pTimerQueue_.begin(); itr != Instance().pTimerQueue_.end();)</span></div>
+<div class="line"><span class="lineno">   31</span>    <span class="comment">//{</span></div>
+<div class="line"><span class="lineno">   32</span>    <span class="comment">//  if ((*itr) == pElement)</span></div>
+<div class="line"><span class="lineno">   33</span>    <span class="comment">//  {</span></div>
+<div class="line"><span class="lineno">   34</span>    <span class="comment">//      itr = Instance().pTimerQueue_.erase(itr);</span></div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">//  }</span></div>
+<div class="line"><span class="lineno">   36</span>    <span class="comment">//  else</span></div>
+<div class="line"><span class="lineno">   37</span>    <span class="comment">//  {</span></div>
+<div class="line"><span class="lineno">   38</span>    <span class="comment">//      itr++;</span></div>
+<div class="line"><span class="lineno">   39</span>    <span class="comment">//  }</span></div>
+<div class="line"><span class="lineno">   40</span>    <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">   41</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Timer_html_aa84d8715e102e9e61d7e01328e8d1b9e"><div class="ttname"><a href="classmtgb_1_1Timer.html#aa84d8715e102e9e61d7e01328e8d1b9e">mtgb::Timer::toErase_</a></div><div class="ttdeci">std::set&lt; QUEUE_ELEMENT * &gt; toErase_</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8h_source.html#l00051">Timer.h:51</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Input_8cpp_source.html#l00666">mtgb::Input::StopEnumTimer()</a>, <a class="el" href="Input_8cpp_source.html#l00463">mtgb::Input::UnregisterJoystickGuid()</a>, <a class="el" href="Input_8cpp_source.html#l00799">mtgb::JoystickContext::~JoystickContext()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Timer_a7a08cb86268c3b009ae8c9b68afa55b9_icgraph.svg" width="478" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af7202a0d9281160408b01a963af5edc3" name="af7202a0d9281160408b01a963af5edc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7202a0d9281160408b01a963af5edc3">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Timer::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="Timer_8cpp_source.html">Timer.cpp</a> の <a class="el" href="Timer_8cpp_source.html#l00067">67</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.size() &lt;= 0)</div>
+<div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">return</span>;  <span class="comment">// タイマーキューが空なら回帰</span></div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.begin();</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span>        (*itr)-&gt;timeLeft -= <a class="code hl_function" href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">Time::DeltaTimeF</a>();</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordtype">float</span> diff{ (*itr)-&gt;timeLeft };  <span class="comment">// 差分</span></div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span> (diff &gt; 0)  <span class="comment">// 差分が0より大きい = 待機中</span></div>
+<div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">break</span>;  <span class="comment">// タイマー終了していないため離脱</span></div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">else</span>  <span class="comment">// 差分が0以下 = タイマー終了</span></div>
+<div class="line"><span class="lineno">   85</span>        {</div>
+<div class="line"><span class="lineno">   86</span>            (*itr)-&gt;on();  <span class="comment">// 実行</span></div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>            <span class="comment">// もし使いまわしする要素なら</span></div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Timer.html#a21c4cc596f99313b8721c64c5dcce4bd">pReenqueueElements_</a>.count(*itr) &gt; 0)</div>
+<div class="line"><span class="lineno">   90</span>            {</div>
+<div class="line"><span class="lineno">   91</span>                QUEUE_ELEMENT* pElement = *itr;</div>
+<div class="line"><span class="lineno">   92</span>                (*itr)-&gt;timeLeft = <a class="code hl_variable" href="classmtgb_1_1Timer.html#a21c4cc596f99313b8721c64c5dcce4bd">pReenqueueElements_</a>[*itr];</div>
+<div class="line"><span class="lineno">   93</span>                itr = <a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.erase(<a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.begin());  <span class="comment">// 消す</span></div>
+<div class="line"><span class="lineno">   94</span>                <a class="code hl_function" href="classmtgb_1_1Timer.html#ac36daf50c72f07f2bc0f0bda95eb2bc8">EnqueueTimer</a>(pElement);  <span class="comment">// 時間セットしてエンキュー</span></div>
+<div class="line"><span class="lineno">   95</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   96</span>            }</div>
+<div class="line"><span class="lineno">   97</span>            <span class="comment">// 使いまわさないなら</span></div>
+<div class="line"><span class="lineno">   98</span>            {</div>
+<div class="line"><span class="lineno">   99</span>                <span class="keyword">delete</span> (*itr);  <span class="comment">// 解放する</span></div>
+<div class="line"><span class="lineno">  100</span>                itr = <a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.erase(<a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.begin());  <span class="comment">// 消す</span></div>
+<div class="line"><span class="lineno">  101</span>            }</div>
+<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.end())</div>
+<div class="line"><span class="lineno">  103</span>            {</div>
+<div class="line"><span class="lineno">  104</span>                <span class="keywordflow">break</span>;  <span class="comment">// 後続がない = キューが空なら離脱</span></div>
+<div class="line"><span class="lineno">  105</span>            }</div>
+<div class="line"><span class="lineno">  106</span>            (*itr)-&gt;timeLeft += diff;  <span class="comment">// 差分を後続に反映</span></div>
+<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">continue</span>;  <span class="comment">// 後続も終了している可能性があるため継続</span></div>
+<div class="line"><span class="lineno">  108</span>        }</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
+<div class="line"><span class="lineno">  110</span>    <span class="comment">// 削除予定のやつを消す</span></div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Timer.html#a21c4cc596f99313b8721c64c5dcce4bd">pReenqueueElements_</a>.begin(); itr != <a class="code hl_variable" href="classmtgb_1_1Timer.html#a21c4cc596f99313b8721c64c5dcce4bd">pReenqueueElements_</a>.end();)</div>
+<div class="line"><span class="lineno">  112</span>    {</div>
+<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Timer.html#aa84d8715e102e9e61d7e01328e8d1b9e">toErase_</a>.count(itr-&gt;first))</div>
+<div class="line"><span class="lineno">  114</span>        {</div>
+<div class="line"><span class="lineno">  115</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> queueItr = <a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.begin(); queueItr != <a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.end();)</div>
+<div class="line"><span class="lineno">  116</span>            {</div>
+<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">if</span> ((*queueItr) == itr-&gt;first)</div>
+<div class="line"><span class="lineno">  118</span>                {</div>
+<div class="line"><span class="lineno">  119</span>                    queueItr = <a class="code hl_variable" href="classmtgb_1_1Timer.html#ac2b05933c2530496349c230509b114e1">pTimerQueue_</a>.erase(queueItr);</div>
+<div class="line"><span class="lineno">  120</span>                }</div>
+<div class="line"><span class="lineno">  121</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  122</span>                {</div>
+<div class="line"><span class="lineno">  123</span>                    queueItr++;</div>
+<div class="line"><span class="lineno">  124</span>                }</div>
+<div class="line"><span class="lineno">  125</span>            }</div>
+<div class="line"><span class="lineno">  126</span>            itr = <a class="code hl_variable" href="classmtgb_1_1Timer.html#a21c4cc596f99313b8721c64c5dcce4bd">pReenqueueElements_</a>.erase(itr);</div>
+<div class="line"><span class="lineno">  127</span>        }</div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  129</span>        {</div>
+<div class="line"><span class="lineno">  130</span>            itr++;</div>
+<div class="line"><span class="lineno">  131</span>        }</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_variable" href="classmtgb_1_1Timer.html#aa84d8715e102e9e61d7e01328e8d1b9e">toErase_</a>.clear();</div>
+<div class="line"><span class="lineno">  134</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_a65abdc2a0dc82415c4d4ff372815973d"><div class="ttname"><a href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">mtgb::Time::DeltaTimeF</a></div><div class="ttdeci">static const float DeltaTimeF()</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00022">GameTime.h:22</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="GameTime_8h_source.html#l00022">mtgb::Time::DeltaTimeF()</a>, <a class="el" href="Timer_8h_source.html#l00020">mtgb::Timer::QUEUE_ELEMENT::timeLeft</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Timer_af7202a0d9281160408b01a963af5edc3_cgraph.svg" width="398" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a36f74de191b4210a27b625e9166474c8" name="a36f74de191b4210a27b625e9166474c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f74de191b4210a27b625e9166474c8">&#9670;&#160;</a></span>pInstance_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Timer.html">mtgb::Timer</a> * mtgb::Timer::pInstance_ { nullptr }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8h_source.html">Timer.h</a> の <a class="el" href="Timer_8h_source.html#l00048">48</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Timer_8h_source.html#l00045">Instance()</a>.</p>
+
+</div>
+</div>
+<a id="a21c4cc596f99313b8721c64c5dcce4bd" name="a21c4cc596f99313b8721c64c5dcce4bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21c4cc596f99313b8721c64c5dcce4bd">&#9670;&#160;</a></span>pReenqueueElements_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;<a class="el" href="structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html">QUEUE_ELEMENT</a>*, float&gt; mtgb::Timer::pReenqueueElements_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8h_source.html">Timer.h</a> の <a class="el" href="Timer_8h_source.html#l00050">50</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac2b05933c2530496349c230509b114e1" name="ac2b05933c2530496349c230509b114e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2b05933c2530496349c230509b114e1">&#9670;&#160;</a></span>pTimerQueue_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;<a class="el" href="structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html">QUEUE_ELEMENT</a>*&gt; mtgb::Timer::pTimerQueue_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8h_source.html">Timer.h</a> の <a class="el" href="Timer_8h_source.html#l00049">49</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa84d8715e102e9e61d7e01328e8d1b9e" name="aa84d8715e102e9e61d7e01328e8d1b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa84d8715e102e9e61d7e01328e8d1b9e">&#9670;&#160;</a></span>toErase_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt;<a class="el" href="structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html">QUEUE_ELEMENT</a>*&gt; mtgb::Timer::toErase_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Timer_8h_source.html">Timer.h</a> の <a class="el" href="Timer_8h_source.html#l00051">51</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="Timer_8h_source.html">Timer.h</a></li>
+<li><a class="el" href="Timer_8cpp_source.html">Timer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1Timer.html">Timer</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

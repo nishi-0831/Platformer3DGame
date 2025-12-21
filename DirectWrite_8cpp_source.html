@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: DirectWrite.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('DirectWrite_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">DirectWrite.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="DirectWrite_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="DirectWrite_8h.html">DirectWrite.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="DirectX11Draw_8h.html">DirectX11Draw.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="MTAssert_8h.html">MTAssert.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Direct2D_8h.html">Direct2D/Direct2D.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;d3d11.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;d3d11sdklayers.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;d2d1.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;dwrite.h&gt;</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;dwrite_1.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;dxgidebug.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContextUtil_8h.html">WindowContextUtil.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="Direct2DResource_8h.html">Direct2DResource.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;clocale&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#pragma comment(lib,&quot;dwrite.lib&quot;</span>)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02DirectWrite_8cpp_03.html">   17</a></span><span class="keyword">namespace</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02DirectWrite_8cpp_03.html#ae53ec92b52acbb1e29b31dab9a785fc6">   19</a></span>    std::string <a class="code hl_variable" href="namespaceanonymous__namespace_02DirectWrite_8cpp_03.html#ae53ec92b52acbb1e29b31dab9a785fc6">sampleText</a> = <span class="stringliteral">&quot;Hello,World!&quot;</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02DirectWrite_8cpp_03.html#a8e2ef70a76d24f2aaf46a69a906707aa">   20</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceanonymous__namespace_02DirectWrite_8cpp_03.html#a8e2ef70a76d24f2aaf46a69a906707aa">DEFAULT_FONT_SIZE</a> = 72;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02DirectWrite_8cpp_03.html#af5fda1b4d0f9bb67f8c25c9331da75e3">   21</a></span>    <span class="keyword">const</span> <span class="keywordtype">wchar_t</span>* <a class="code hl_variable" href="namespaceanonymous__namespace_02DirectWrite_8cpp_03.html#af5fda1b4d0f9bb67f8c25c9331da75e3">fontFamilyName</a> = <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Noto Sans JP&quot;</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>ComPtr&lt;IDWriteFactory&gt; <a class="code hl_variable" href="classmtgb_1_1DirectWrite.html#abe11b685db42b66366bfd01bdade6506">mtgb::DirectWrite::pDWriteFactory_</a>{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>ComPtr&lt;IDWriteTextFormat&gt; <a class="code hl_variable" href="classmtgb_1_1DirectWrite.html#ae5913ffb188970dec6b71ddd41173104">mtgb::DirectWrite::pTextFormat_</a>{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//IDWriteTextLayout* mtgb::DirectWrite::pTextLayout_{ nullptr };</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>ComPtr&lt;IDWriteFontCollection&gt; <a class="code hl_variable" href="classmtgb_1_1DirectWrite.html#abe502c5e0c5ab340ace631a5562e544d">mtgb::DirectWrite::pFontCollection_</a>{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>ComPtr&lt;IDWriteFontFamily&gt; <a class="code hl_variable" href="classmtgb_1_1DirectWrite.html#a32ecc2d00f4df6fbb9726ea7d1152a2e">mtgb::DirectWrite::pFontFamily_</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>ComPtr&lt;IDWriteFont&gt; <a class="code hl_variable" href="classmtgb_1_1DirectWrite.html#a185ebf956e6fffe61fab1f07f530aabd">mtgb::DirectWrite::pDWriteFont_</a>{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>DWRITE_FONT_METRICS <a class="code hl_variable" href="classmtgb_1_1DirectWrite.html#aea2e5e3b54bfa21968f5b12d75e4009f">mtgb::DirectWrite::fontMetrics_</a>{};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><a class="code hl_struct" href="structmtgb_1_1PixelFontMetrics.html">mtgb::PixelFontMetrics</a> <a class="code hl_variable" href="classmtgb_1_1DirectWrite.html#adb2df42ba7516fad4f04d32e77700981">mtgb::DirectWrite::pixelFontMetrics_</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//int mtgb::DirectWrite::currentDefaultFontSize_{ DEFAULT_FONT_SIZE };</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//static std::wstring StrToWStr(const std::string&amp; str);</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structmtgb_1_1FontFormatData.html#aa7e5e2db5603f94ff646b9cac586c820">   37</a></span><a class="code hl_function" href="structmtgb_1_1FontFormatData.html#aa7e5e2db5603f94ff646b9cac586c820">mtgb::FontFormatData::FontFormatData</a>(<span class="keywordtype">int</span> size, IDWriteTextFormat* fmt, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1PixelFontMetrics.html">PixelFontMetrics</a>&amp; metrics)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    : fontSize(size)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    , pixelFontMetrics(metrics)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_variable" href="structmtgb_1_1FontFormatData.html#a0878f6d4b2468f8c11a31aa51bb5c108">format</a>.Attach(fmt);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structmtgb_1_1FontFormatData.html#a9c7e9c64100a464c2c9a15a213af22a8">   44</a></span><a class="code hl_function" href="structmtgb_1_1FontFormatData.html#a9c7e9c64100a464c2c9a15a213af22a8">mtgb::FontFormatData::~FontFormatData</a>()</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    format.Reset();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structmtgb_1_1TextLayoutData.html#ad7b12d445312c50d1270a01925ccc832">   49</a></span><a class="code hl_function" href="structmtgb_1_1TextLayoutData.html#ad7b12d445312c50d1270a01925ccc832">mtgb::TextLayoutData::TextLayoutData</a>(<span class="keyword">const</span> std::wstring&amp; _str, <span class="keywordtype">int</span> _size, <span class="keywordtype">float</span> _width, <span class="keywordtype">float</span> _height, IDWriteTextLayout* _layout, <span class="keywordtype">int</span> _handle)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    : str(_str), fontSize(_size), width(_width), height(_height), handle(_handle)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_variable" href="structmtgb_1_1TextLayoutData.html#a6e78f401281884d39e32dc2720e9679d">layout</a>.Attach(_layout);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structmtgb_1_1TextLayoutData.html#a9a0b3e73e936df9d184a9477d2f4e2c8">   55</a></span><a class="code hl_function" href="structmtgb_1_1TextLayoutData.html#a9a0b3e73e936df9d184a9477d2f4e2c8">mtgb::TextLayoutData::~TextLayoutData</a>()</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    layout.Reset();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a2da77e5b8d52721d26e53e7eb3eeda98">   60</a></span><a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a2da77e5b8d52721d26e53e7eb3eeda98">mtgb::DirectWrite::DirectWrite</a>()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a2879434105fb38317b41faec68497197">   64</a></span><a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a2879434105fb38317b41faec68497197">mtgb::DirectWrite::~DirectWrite</a>()</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a08ab0026decac5413d49ce5ef5b42a96">   68</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a08ab0026decac5413d49ce5ef5b42a96">mtgb::DirectWrite::Initialize</a>()</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    HRESULT hResult = DWriteCreateFactory(</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        DWRITE_FACTORY_TYPE_SHARED,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        _uuidof(IDWriteFactory),</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keyword">reinterpret_cast&lt;</span>IUnknown**<span class="keyword">&gt;</span>(pDWriteFactory_.GetAddressOf())</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    );</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        &amp;&amp; <span class="stringliteral">&quot;DWriteCreateFactoryに失敗 @DirectWrite::Initialize&quot;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a101abf0df66db47ec259c8ed1fb7d7fc">   81</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a101abf0df66db47ec259c8ed1fb7d7fc">mtgb::DirectWrite::CreateFontFormatData</a>(<span class="keyword">const</span> std::wstring&amp; fileName, <span class="keywordtype">int</span> fontSize, <a class="code hl_struct" href="structmtgb_1_1FontFormatData.html">FontFormatData</a>** ppFontFormatData)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    IDWriteFontCollection* fontCollection = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">//フォントコレクション取得</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    HRESULT hResult = pDWriteFactory_-&gt;GetSystemFontCollection(&amp;fontCollection);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    pFontCollection_.Attach(fontCollection);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_typedef" href="structcmd_8h.html#ae1e6edbbc26d6fbc71a90190d0266018">UINT32</a> index;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    BOOL exists;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    hResult = pFontCollection_-&gt;FindFamilyName(fileName.c_str(), &amp;index, &amp;exists);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        &amp;&amp; <span class="stringliteral">&quot;FindFamilyNameに失敗 @DirectWrite::FindFamilyName&quot;</span>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="comment">//ファミリーからIDWriteFontFamilyを取得</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    IDWriteFontFamily* fontFamily = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    hResult = pFontCollection_-&gt;GetFontFamily(index, &amp;fontFamily);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    pFontFamily_.Attach(fontFamily);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        &amp;&amp; <span class="stringliteral">&quot;GetFontFamilyに失敗 @DirectWrite::GetFontFamily&quot;</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">//IDWriteFontを取得</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    IDWriteFont* font = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    hResult = pFontFamily_-&gt;GetFirstMatchingFont(</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        DWRITE_FONT_WEIGHT_REGULAR,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        DWRITE_FONT_STRETCH_NORMAL,<span class="comment">//フォントのストレッチ。拡大縮小の度合い</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        DWRITE_FONT_STYLE_NORMAL,<span class="comment">//フォントスタイル</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        &amp;font</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    );</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    pDWriteFont_.Attach(font);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        &amp;&amp; <span class="stringliteral">&quot;GetFirstMatchingFontに失敗 @DirectWrite::Initialize&quot;</span>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment">//フォントのメトリクス取得</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    pDWriteFont_-&gt;GetMetrics(&amp;fontMetrics_);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">// 新しいフォーマットを作成</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    IDWriteTextFormat* format = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_struct" href="structmtgb_1_1PixelFontMetrics.html">PixelFontMetrics</a> metrics;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    CreateTextFormat(fontSize, &amp;format, metrics);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keyword">delete</span> *ppFontFormatData;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="comment">//FontFormatData* data = new FontFormatData(fontSize, format, metrics);</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    *ppFontFormatData = <span class="keyword">new</span> <a class="code hl_struct" href="structmtgb_1_1FontFormatData.html">FontFormatData</a>(fontSize, format, metrics);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a4bd26f445329dcfe094ab66a4d9f7203">  130</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a4bd26f445329dcfe094ab66a4d9f7203">mtgb::DirectWrite::Update</a>()</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>{</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a179b609cbe18e6eca870baf76ca8ccb5">  136</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a179b609cbe18e6eca870baf76ca8ccb5">mtgb::DirectWrite::CreateTextFormat</a>(<span class="keywordtype">int</span> size, IDWriteTextFormat** ppTextFormat, <a class="code hl_struct" href="structmtgb_1_1PixelFontMetrics.html">PixelFontMetrics</a>&amp; outMetrics)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">//テキストフォーマット作成</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    HRESULT hResult = pDWriteFactory_-&gt;CreateTextFormat(</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        fontFamilyName,<span class="comment">//フォントファミリーの名前</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        NULL,<span class="comment">//オリジナルのフォントを使う場合はそれ用のオブジェクトを渡す。NULLなら標準搭載のフォントファミリー</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        DWRITE_FONT_WEIGHT_REGULAR,<span class="comment">//フォントの太さ</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        DWRITE_FONT_STYLE_NORMAL,<span class="comment">//フォントスタイル</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        DWRITE_FONT_STRETCH_NORMAL,<span class="comment">//フォントのストレッチ。拡大縮小の度合い</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keyword">static_cast&lt;</span>FLOAT<span class="keyword">&gt;</span>(size),<span class="comment">//フォントのサイズ</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;en-us&quot;</span>,<span class="comment">//ロケール。en-usはアメリカ英語</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        ppTextFormat<span class="comment">//作成されるIDWriteTextFormat</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    );</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        &amp;&amp; <span class="stringliteral">&quot;CreateTextFormatに失敗 @DirectWrite::CreateTextFormat&quot;</span>);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="comment">//水平方向</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    hResult = (*ppTextFormat)-&gt;SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        &amp;&amp; <span class="stringliteral">&quot;SetTextAlignmentに失敗 @DirectWrite::CreateTextFormat&quot;</span>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="comment">//垂直方向</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    hResult = (*ppTextFormat)-&gt;SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_NEAR);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        &amp;&amp; <span class="stringliteral">&quot;SetParagraphAlignmentに失敗 @DirectWrite::CreateTextFormat&quot;</span>);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="comment">//デザイン単位からピクセル単位に変換</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    outMetrics.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a45fe99985ffb5bf108ab9471fe47d298">ascentPx</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(fontMetrics_.ascent) * <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(size) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(fontMetrics_.designUnitsPerEm);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    outMetrics.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a1b73e2e5f749bca1591c07d41b48289e">descentPx</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(fontMetrics_.descent) * <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(size) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(fontMetrics_.designUnitsPerEm);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    outMetrics.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a8874cb79a1e9ce031d2431fe8228d290">lineGapPx</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(fontMetrics_.lineGap) * <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(size) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(fontMetrics_.designUnitsPerEm);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="comment">//テキストの上端を指定座標にほぼぴったり揃えるためのオフセット</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    outMetrics.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a42fe6a78117959b2673120072e700b7c">textTopOffset</a> = -outMetrics.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a45fe99985ffb5bf108ab9471fe47d298">ascentPx</a> + (outMetrics.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a45fe99985ffb5bf108ab9471fe47d298">ascentPx</a> - outMetrics.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a1b73e2e5f749bca1591c07d41b48289e">descentPx</a>) - outMetrics.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a8874cb79a1e9ce031d2431fe8228d290">lineGapPx</a>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>}</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a504240749e353c0224b73475506863ef">  173</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a504240749e353c0224b73475506863ef">mtgb::DirectWrite::SetTextAlignment</a>(<a class="code hl_enumeration" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dba">TextAlignment</a> alignment, ComPtr&lt;IDWriteTextFormat&gt;format)</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>{</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">switch</span> (alignment)</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa79ad18f72445fe00af22637f175bf878">TextAlignment::topLeft</a>:</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        format-&gt;SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        format-&gt;SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_NEAR);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">TextAlignment::center</a>:</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        format-&gt;SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        format-&gt;SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa5d42a1b01d408cdd65bb03d50fa0dd22">TextAlignment::bottomLeft</a>:</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        format-&gt;SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        format-&gt;SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_NEAR);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa272d5b527ad3bc9396d52e072a96c88b">TextAlignment::middleLeft</a>:</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        format-&gt;SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        format-&gt;SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>}</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#ae60b43169a9e2789f5b96e2bc0f114f3">  196</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#ae60b43169a9e2789f5b96e2bc0f114f3">mtgb::DirectWrite::CreateTextLayout</a>(<span class="keyword">const</span> std::wstring&amp; _str, <span class="keywordtype">int</span>  _size, ComPtr&lt;IDWriteTextFormat&gt; _format, IDWriteTextLayout** _ppTextLayout)</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>{</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="comment">//テキストレイアウト作成</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    D2D1_SIZE_F rtSize = Game::System&lt;Direct2D&gt;().pDefRenderTarget_-&gt;GetSize();</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    CreateTextLayout(_str, rtSize.width, rtSize.height, _size, _format, _ppTextLayout);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>}</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a3162736c9719213cdcc45a4e00ab1abf">  203</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#ae60b43169a9e2789f5b96e2bc0f114f3">mtgb::DirectWrite::CreateTextLayout</a>(<span class="keyword">const</span> std::wstring&amp; _str, <span class="keywordtype">float</span>  _width, <span class="keywordtype">float</span> _height, <span class="keywordtype">int</span>  _size, ComPtr&lt;IDWriteTextFormat&gt; _format, IDWriteTextLayout** _ppTextLayout)</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>{</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> dip = 96.0f;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    FLOAT dpiX, dpiY;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    Game::System&lt;Direct2D&gt;().pDefRenderTarget_-&gt;GetDpi(&amp;dpiX, &amp;dpiY);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    _width = _width / dpiX * dip;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    _height = _height / dpiY * dip;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    HRESULT hResult = pDWriteFactory_-&gt;CreateTextLayout(_str.data(), <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(_str.size()), _format.Get(), _width, _height, _ppTextLayout);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        &amp;&amp; <span class="stringliteral">&quot;CreateTextLayoutに失敗 @DirectWrite::RegisterText&quot;</span>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>}</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#ac24e6e7708f1f9e9ac332456236ed7b7">  218</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#ac24e6e7708f1f9e9ac332456236ed7b7">mtgb::DirectWrite::ChangeFormat</a>(ComPtr&lt;IDWriteTextFormat&gt; format, <a class="code hl_struct" href="structmtgb_1_1PixelFontMetrics.html">mtgb::PixelFontMetrics</a>&amp; metrics)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>{</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    pTextFormat_ = format;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    pixelFontMetrics_ = metrics;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>}</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a417b0a5657098462840946abfc3a84f0">  224</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a417b0a5657098462840946abfc3a84f0">mtgb::DirectWrite::Draw</a>(ComPtr&lt;IDWriteTextLayout&gt; textLayout, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y)</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>{</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    D2D1_POINT_2F origin = { x, y };</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    Game::System&lt;Direct2D&gt;().pDefRenderTarget_-&gt;BeginDraw();</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    Game::System&lt;Direct2D&gt;().pDefRenderTarget_-&gt;DrawTextLayout(origin, textLayout.Get(), Game::System&lt;Direct2D&gt;().pDefD2DBrush_.Get());</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    Game::System&lt;Direct2D&gt;().pDefRenderTarget_-&gt;EndDraw();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>}</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a225b361b62e409def2eeaf2e9349f71e">  233</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a225b361b62e409def2eeaf2e9349f71e">mtgb::DirectWrite::ImmediateDraw</a>(<span class="keyword">const</span> std::wstring&amp; text, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y)</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>{</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    ImmediateDraw(text, pTextFormat_, pixelFontMetrics_, x, y);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>}</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a277ced05e6e3664428c39c11895c1635">  238</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a225b361b62e409def2eeaf2e9349f71e">mtgb::DirectWrite::ImmediateDraw</a>(<span class="keyword">const</span> std::wstring&amp; text, ComPtr&lt;IDWriteTextFormat&gt; format, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1PixelFontMetrics.html">PixelFontMetrics</a>&amp; pixelFontMetrics, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height)</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>{</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    Game::System&lt;Direct2D&gt;().pDefRenderTarget_-&gt;BeginDraw();</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    Game::System&lt;Direct2D&gt;().pDefRenderTarget_-&gt;DrawText(</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        text.c_str(),</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(text.length()),</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        format.Get(),</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        D2D1::RectF(</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            x,</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            y + pixelFontMetrics.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a42fe6a78117959b2673120072e700b7c">textTopOffset</a>,</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            x + width,</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            y + pixelFontMetrics.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a42fe6a78117959b2673120072e700b7c">textTopOffset</a> + height),</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        Game::System&lt;Direct2D&gt;().pDefD2DBrush_.Get()</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    );</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    Game::System&lt;Direct2D&gt;().pDefRenderTarget_-&gt;EndDraw();</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>}</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a1630eaf7c487f627d3d722461939a84e">  257</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a225b361b62e409def2eeaf2e9349f71e">mtgb::DirectWrite::ImmediateDraw</a>(<span class="keyword">const</span> std::wstring&amp; text, ComPtr&lt;IDWriteTextFormat&gt; format, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1PixelFontMetrics.html">PixelFontMetrics</a>&amp; pixelFontMetrics, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y)</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>{</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    D2D1_SIZE_F rtSize = Game::System&lt;Direct2D&gt;().pDefRenderTarget_-&gt;GetSize();</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    ImmediateDraw(text, format, pixelFontMetrics, x, y, rtSize.width, rtSize.height);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>}</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">  266</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite::Release</a>()</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>{</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    pDWriteFont_.Reset();</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    pFontFamily_.Reset();</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    pFontCollection_.Reset();</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    pTextFormat_.Reset();</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    pDWriteFactory_.Reset();</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>}</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment">//static std::wstring StrToWStr(const std::string&amp; str)</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="comment">//{</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="comment">//  //nullptrを指定すると現在のロケール名が取得できる</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="comment">//  std::string oldLocale = setlocale(LC_CTYPE, nullptr);</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="comment">//</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment">//  setlocale(LC_CTYPE, &quot;Japanese_Japan.932&quot;);</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="comment">//</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="comment">//  size_t len;</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="comment">//  //まずマルチバイト文字列(str)をワイド文字列に変換したときの長さを取得</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="comment">//  mbstowcs_s(&amp;len, nullptr, 0, str.c_str(), _TRUNCATE);</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="comment">//  //ワイド文字列のバッファ用意</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="comment">//  std::wstring wText;</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="comment">//  wText.resize(len);</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="comment">//</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="comment">//  //実際にワイド文字列に変換</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="comment">//  //_TRUNCATE定数で、バッファに収まらない文字は切り捨てるよう指定する</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="comment">//  mbstowcs_s(&amp;len, wText.data(), len, str.c_str(), _TRUNCATE);</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="comment">//</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="comment">//  setlocale(LC_CTYPE, oldLocale.c_str());</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="comment">//  return wText;</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="comment">//}</span></div>
+<div class="ttc" id="aDirect2DResource_8h_html"><div class="ttname"><a href="Direct2DResource_8h.html">Direct2DResource.h</a></div></div>
+<div class="ttc" id="aDirect2D_8h_html"><div class="ttname"><a href="Direct2D_8h.html">Direct2D.h</a></div></div>
+<div class="ttc" id="aDirectWrite_8h_html"><div class="ttname"><a href="DirectWrite_8h.html">DirectWrite.h</a></div></div>
+<div class="ttc" id="aDirectX11Draw_8h_html"><div class="ttname"><a href="DirectX11Draw_8h.html">DirectX11Draw.h</a></div></div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">KeyCode::L</a></div><div class="ttdeci">@ L</div></div>
+<div class="ttc" id="aMTAssert_8h_html"><div class="ttname"><a href="MTAssert_8h.html">MTAssert.h</a></div></div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00009">MTAssert.h:9</a></div></div>
+<div class="ttc" id="aWindowContextUtil_8h_html"><div class="ttname"><a href="WindowContextUtil_8h.html">WindowContextUtil.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a08ab0026decac5413d49ce5ef5b42a96"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a08ab0026decac5413d49ce5ef5b42a96">mtgb::DirectWrite::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdoc">初期化処理</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00068">DirectWrite.cpp:68</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a101abf0df66db47ec259c8ed1fb7d7fc"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a101abf0df66db47ec259c8ed1fb7d7fc">mtgb::DirectWrite::CreateFontFormatData</a></div><div class="ttdeci">void CreateFontFormatData(const std::wstring &amp;fileName, int fontSize, FontFormatData **ppFontFormatData)</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00081">DirectWrite.cpp:81</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a12660781164dad0bb224b682961153db"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00266">DirectWrite.cpp:266</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a179b609cbe18e6eca870baf76ca8ccb5"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a179b609cbe18e6eca870baf76ca8ccb5">mtgb::DirectWrite::CreateTextFormat</a></div><div class="ttdeci">void CreateTextFormat(int size, IDWriteTextFormat **ppTextFormat, PixelFontMetrics &amp;outMetrics)</div><div class="ttdoc">IDWriteTextFormatを作成</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00136">DirectWrite.cpp:136</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a185ebf956e6fffe61fab1f07f530aabd"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a185ebf956e6fffe61fab1f07f530aabd">mtgb::DirectWrite::pDWriteFont_</a></div><div class="ttdeci">static ComPtr&lt; IDWriteFont &gt; pDWriteFont_</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00149">DirectWrite.h:149</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a225b361b62e409def2eeaf2e9349f71e"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a225b361b62e409def2eeaf2e9349f71e">mtgb::DirectWrite::ImmediateDraw</a></div><div class="ttdeci">void ImmediateDraw(const std::wstring &amp;text, float x, float y)</div><div class="ttdoc">即時描画 文字列だけが頻繁に変化する場合に適している</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00233">DirectWrite.cpp:233</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a2879434105fb38317b41faec68497197"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a2879434105fb38317b41faec68497197">mtgb::DirectWrite::~DirectWrite</a></div><div class="ttdeci">~DirectWrite()</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00064">DirectWrite.cpp:64</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a2da77e5b8d52721d26e53e7eb3eeda98"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a2da77e5b8d52721d26e53e7eb3eeda98">mtgb::DirectWrite::DirectWrite</a></div><div class="ttdeci">DirectWrite()</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00060">DirectWrite.cpp:60</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a32ecc2d00f4df6fbb9726ea7d1152a2e"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a32ecc2d00f4df6fbb9726ea7d1152a2e">mtgb::DirectWrite::pFontFamily_</a></div><div class="ttdeci">static ComPtr&lt; IDWriteFontFamily &gt; pFontFamily_</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00148">DirectWrite.h:148</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a417b0a5657098462840946abfc3a84f0"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a417b0a5657098462840946abfc3a84f0">mtgb::DirectWrite::Draw</a></div><div class="ttdeci">void Draw(ComPtr&lt; IDWriteTextLayout &gt; textLayout, float x, float y)</div><div class="ttdoc">ハンドルに応じたテキストを描画 完全に同じ文字列を描画し続ける場合に適している</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00224">DirectWrite.cpp:224</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a4bd26f445329dcfe094ab66a4d9f7203"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a4bd26f445329dcfe094ab66a4d9f7203">mtgb::DirectWrite::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdoc">更新処理</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00130">DirectWrite.cpp:130</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_a504240749e353c0224b73475506863ef"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#a504240749e353c0224b73475506863ef">mtgb::DirectWrite::SetTextAlignment</a></div><div class="ttdeci">void SetTextAlignment(TextAlignment alignment, ComPtr&lt; IDWriteTextFormat &gt; format)</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00173">DirectWrite.cpp:173</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_abe11b685db42b66366bfd01bdade6506"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#abe11b685db42b66366bfd01bdade6506">mtgb::DirectWrite::pDWriteFactory_</a></div><div class="ttdeci">static ComPtr&lt; IDWriteFactory &gt; pDWriteFactory_</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00145">DirectWrite.h:145</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_abe502c5e0c5ab340ace631a5562e544d"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#abe502c5e0c5ab340ace631a5562e544d">mtgb::DirectWrite::pFontCollection_</a></div><div class="ttdeci">static ComPtr&lt; IDWriteFontCollection &gt; pFontCollection_</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00147">DirectWrite.h:147</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_ac24e6e7708f1f9e9ac332456236ed7b7"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#ac24e6e7708f1f9e9ac332456236ed7b7">mtgb::DirectWrite::ChangeFormat</a></div><div class="ttdeci">void ChangeFormat(ComPtr&lt; IDWriteTextFormat &gt; format, mtgb::PixelFontMetrics &amp;metrics)</div><div class="ttdoc">デフォルトフォントサイズを変更</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00218">DirectWrite.cpp:218</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_adb2df42ba7516fad4f04d32e77700981"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#adb2df42ba7516fad4f04d32e77700981">mtgb::DirectWrite::pixelFontMetrics_</a></div><div class="ttdeci">static PixelFontMetrics pixelFontMetrics_</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00144">DirectWrite.h:144</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_ae5913ffb188970dec6b71ddd41173104"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#ae5913ffb188970dec6b71ddd41173104">mtgb::DirectWrite::pTextFormat_</a></div><div class="ttdeci">static ComPtr&lt; IDWriteTextFormat &gt; pTextFormat_</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00146">DirectWrite.h:146</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_ae60b43169a9e2789f5b96e2bc0f114f3"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#ae60b43169a9e2789f5b96e2bc0f114f3">mtgb::DirectWrite::CreateTextLayout</a></div><div class="ttdeci">void CreateTextLayout(const std::wstring &amp;_str, int _size, ComPtr&lt; IDWriteTextFormat &gt; _format, IDWriteTextLayout **_ppTextLayout)</div><div class="ttdoc">IDWriteTextLayoutを作成</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00196">DirectWrite.cpp:196</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectWrite_html_aea2e5e3b54bfa21968f5b12d75e4009f"><div class="ttname"><a href="classmtgb_1_1DirectWrite.html#aea2e5e3b54bfa21968f5b12d75e4009f">mtgb::DirectWrite::fontMetrics_</a></div><div class="ttdeci">static DWRITE_FONT_METRICS fontMetrics_</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00143">DirectWrite.h:143</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02DirectWrite_8cpp_03_html_a8e2ef70a76d24f2aaf46a69a906707aa"><div class="ttname"><a href="namespaceanonymous__namespace_02DirectWrite_8cpp_03.html#a8e2ef70a76d24f2aaf46a69a906707aa">anonymous_namespace{DirectWrite.cpp}::DEFAULT_FONT_SIZE</a></div><div class="ttdeci">const int DEFAULT_FONT_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00020">DirectWrite.cpp:20</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02DirectWrite_8cpp_03_html_ae53ec92b52acbb1e29b31dab9a785fc6"><div class="ttname"><a href="namespaceanonymous__namespace_02DirectWrite_8cpp_03.html#ae53ec92b52acbb1e29b31dab9a785fc6">anonymous_namespace{DirectWrite.cpp}::sampleText</a></div><div class="ttdeci">std::string sampleText</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00019">DirectWrite.cpp:19</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02DirectWrite_8cpp_03_html_af5fda1b4d0f9bb67f8c25c9331da75e3"><div class="ttname"><a href="namespaceanonymous__namespace_02DirectWrite_8cpp_03.html#af5fda1b4d0f9bb67f8c25c9331da75e3">anonymous_namespace{DirectWrite.cpp}::fontFamilyName</a></div><div class="ttdeci">const wchar_t * fontFamilyName</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00021">DirectWrite.cpp:21</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_aaa050496bbbdc66aee7c9aeb96d51dba"><div class="ttname"><a href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dba">mtgb::TextAlignment</a></div><div class="ttdeci">TextAlignment</div><div class="ttdoc">テキストを矩形領域内のどこに表示するか</div><div class="ttdef"><b>Definition:</b> <a href="TextAlignment_8h_source.html#l00008">TextAlignment.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_aaa050496bbbdc66aee7c9aeb96d51dbaa272d5b527ad3bc9396d52e072a96c88b"><div class="ttname"><a href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa272d5b527ad3bc9396d52e072a96c88b">mtgb::TextAlignment::middleLeft</a></div><div class="ttdeci">@ middleLeft</div></div>
+<div class="ttc" id="anamespacemtgb_html_aaa050496bbbdc66aee7c9aeb96d51dbaa5d42a1b01d408cdd65bb03d50fa0dd22"><div class="ttname"><a href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa5d42a1b01d408cdd65bb03d50fa0dd22">mtgb::TextAlignment::bottomLeft</a></div><div class="ttdeci">@ bottomLeft</div></div>
+<div class="ttc" id="anamespacemtgb_html_aaa050496bbbdc66aee7c9aeb96d51dbaa79ad18f72445fe00af22637f175bf878"><div class="ttname"><a href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa79ad18f72445fe00af22637f175bf878">mtgb::TextAlignment::topLeft</a></div><div class="ttdeci">@ topLeft</div></div>
+<div class="ttc" id="anamespacemtgb_html_aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667"><div class="ttname"><a href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">mtgb::TextAlignment::center</a></div><div class="ttdeci">@ center</div></div>
+<div class="ttc" id="astructcmd_8h_html_ae1e6edbbc26d6fbc71a90190d0266018"><div class="ttname"><a href="structcmd_8h.html#ae1e6edbbc26d6fbc71a90190d0266018">UINT32</a></div><div class="ttdeci">unsigned int UINT32</div><div class="ttdoc">A type definition for a .</div><div class="ttdef"><b>Definition:</b> <a href="structcmd_8h_source.html#l00052">structcmd.h:52</a></div></div>
+<div class="ttc" id="astructmtgb_1_1FontFormatData_html"><div class="ttname"><a href="structmtgb_1_1FontFormatData.html">mtgb::FontFormatData</a></div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00038">DirectWrite.h:39</a></div></div>
+<div class="ttc" id="astructmtgb_1_1FontFormatData_html_a0878f6d4b2468f8c11a31aa51bb5c108"><div class="ttname"><a href="structmtgb_1_1FontFormatData.html#a0878f6d4b2468f8c11a31aa51bb5c108">mtgb::FontFormatData::format</a></div><div class="ttdeci">ComPtr&lt; IDWriteTextFormat &gt; format</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00041">DirectWrite.h:41</a></div></div>
+<div class="ttc" id="astructmtgb_1_1FontFormatData_html_a9c7e9c64100a464c2c9a15a213af22a8"><div class="ttname"><a href="structmtgb_1_1FontFormatData.html#a9c7e9c64100a464c2c9a15a213af22a8">mtgb::FontFormatData::~FontFormatData</a></div><div class="ttdeci">~FontFormatData()</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00044">DirectWrite.cpp:44</a></div></div>
+<div class="ttc" id="astructmtgb_1_1FontFormatData_html_aa7e5e2db5603f94ff646b9cac586c820"><div class="ttname"><a href="structmtgb_1_1FontFormatData.html#aa7e5e2db5603f94ff646b9cac586c820">mtgb::FontFormatData::FontFormatData</a></div><div class="ttdeci">FontFormatData(int size, IDWriteTextFormat *fmt, const PixelFontMetrics &amp;metrics)</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00037">DirectWrite.cpp:37</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PixelFontMetrics_html"><div class="ttname"><a href="structmtgb_1_1PixelFontMetrics.html">mtgb::PixelFontMetrics</a></div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00029">DirectWrite.h:30</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PixelFontMetrics_html_a1b73e2e5f749bca1591c07d41b48289e"><div class="ttname"><a href="structmtgb_1_1PixelFontMetrics.html#a1b73e2e5f749bca1591c07d41b48289e">mtgb::PixelFontMetrics::descentPx</a></div><div class="ttdeci">float descentPx</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00032">DirectWrite.h:32</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PixelFontMetrics_html_a42fe6a78117959b2673120072e700b7c"><div class="ttname"><a href="structmtgb_1_1PixelFontMetrics.html#a42fe6a78117959b2673120072e700b7c">mtgb::PixelFontMetrics::textTopOffset</a></div><div class="ttdeci">float textTopOffset</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00034">DirectWrite.h:34</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PixelFontMetrics_html_a45fe99985ffb5bf108ab9471fe47d298"><div class="ttname"><a href="structmtgb_1_1PixelFontMetrics.html#a45fe99985ffb5bf108ab9471fe47d298">mtgb::PixelFontMetrics::ascentPx</a></div><div class="ttdeci">float ascentPx</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00031">DirectWrite.h:31</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PixelFontMetrics_html_a8874cb79a1e9ce031d2431fe8228d290"><div class="ttname"><a href="structmtgb_1_1PixelFontMetrics.html#a8874cb79a1e9ce031d2431fe8228d290">mtgb::PixelFontMetrics::lineGapPx</a></div><div class="ttdeci">float lineGapPx</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00033">DirectWrite.h:33</a></div></div>
+<div class="ttc" id="astructmtgb_1_1TextLayoutData_html_a6e78f401281884d39e32dc2720e9679d"><div class="ttname"><a href="structmtgb_1_1TextLayoutData.html#a6e78f401281884d39e32dc2720e9679d">mtgb::TextLayoutData::layout</a></div><div class="ttdeci">ComPtr&lt; IDWriteTextLayout &gt; layout</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00056">DirectWrite.h:56</a></div></div>
+<div class="ttc" id="astructmtgb_1_1TextLayoutData_html_a9a0b3e73e936df9d184a9477d2f4e2c8"><div class="ttname"><a href="structmtgb_1_1TextLayoutData.html#a9a0b3e73e936df9d184a9477d2f4e2c8">mtgb::TextLayoutData::~TextLayoutData</a></div><div class="ttdeci">~TextLayoutData()</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00055">DirectWrite.cpp:55</a></div></div>
+<div class="ttc" id="astructmtgb_1_1TextLayoutData_html_ad7b12d445312c50d1270a01925ccc832"><div class="ttname"><a href="structmtgb_1_1TextLayoutData.html#ad7b12d445312c50d1270a01925ccc832">mtgb::TextLayoutData::TextLayoutData</a></div><div class="ttdeci">TextLayoutData(const std::wstring &amp;_str, int _size, float _width, float _height, IDWriteTextLayout *_layout, int _handle)</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8cpp_source.html#l00049">DirectWrite.cpp:49</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="DirectWrite_8cpp.html">DirectWrite.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

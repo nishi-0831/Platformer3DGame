@@ -1,0 +1,38 @@
+var classmtgb_1_1ImGuiRenderer =
+[
+    [ "WindowFlag", "classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61f", [
+      [ "None", "classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "NoMoveWhenHovered", "classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8", null ]
+    ] ],
+    [ "ImGuiRenderer", "classmtgb_1_1ImGuiRenderer.html#a9918c6f6ab2f085b2f10f18ba550c27a", null ],
+    [ "~ImGuiRenderer", "classmtgb_1_1ImGuiRenderer.html#a789972e2b431b1afe7789385145eab59", null ],
+    [ "Begin", "classmtgb_1_1ImGuiRenderer.html#a704d60c97459c9dd8e90a0010eead60c", null ],
+    [ "BeginFrame", "classmtgb_1_1ImGuiRenderer.html#a4684d4374beee1f52053b4634edae2c8", null ],
+    [ "BeginImGuizmoFrame", "classmtgb_1_1ImGuiRenderer.html#a6a554c68a5c78f9e77caf43d584c7507", null ],
+    [ "CreateD3DResources", "classmtgb_1_1ImGuiRenderer.html#a5e8eab8d4237edc15d0e30f92b9b75ea", null ],
+    [ "Draw", "classmtgb_1_1ImGuiRenderer.html#aaf0a1747d1772d631bc8c472b086d64c", null ],
+    [ "End", "classmtgb_1_1ImGuiRenderer.html#a725b57c53e525ab8e63e305f7898bae4", null ],
+    [ "EndFrame", "classmtgb_1_1ImGuiRenderer.html#a8659d92cdaecc531688232b504e8c637", null ],
+    [ "GetViewport", "classmtgb_1_1ImGuiRenderer.html#ac2ab8d15428a8eedfe82d7df92a137e6", null ],
+    [ "Initialize", "classmtgb_1_1ImGuiRenderer.html#a4db4a95a57f586a5fda30be1957f247a", null ],
+    [ "OnResize", "classmtgb_1_1ImGuiRenderer.html#a74f0efdd24aa11e4798dfbd1f685cbec", null ],
+    [ "Release", "classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b", null ],
+    [ "RenderSceneView", "classmtgb_1_1ImGuiRenderer.html#ab1b0148d8603765edd4109ca24dedf92", null ],
+    [ "ResetComPtrs", "classmtgb_1_1ImGuiRenderer.html#a434147aa5ce3fe561ed4760fdd56ec83", null ],
+    [ "SetDrawList", "classmtgb_1_1ImGuiRenderer.html#a97281ceb7ce6e422c152575fb26ad8cd", null ],
+    [ "SetImGuizmoRenderTargetView", "classmtgb_1_1ImGuiRenderer.html#aeac47500fe5c07d84ad9990d3c278e27", null ],
+    [ "Update", "classmtgb_1_1ImGuiRenderer.html#a2c61999c1786cd82207b81ae9a21169e", null ],
+    [ "UpdateGameViewRect", "classmtgb_1_1ImGuiRenderer.html#a961f6aa8f6af8502404b28fe26a1c0b9", null ],
+    [ "gameViewPos_", "classmtgb_1_1ImGuiRenderer.html#a73444827b59f04cbbf84972335c7c680", null ],
+    [ "gameViewRectValid_", "classmtgb_1_1ImGuiRenderer.html#a68872d72f2012d096f79a044791fa440", null ],
+    [ "gameViewSize_", "classmtgb_1_1ImGuiRenderer.html#abe7eca9a34d82a481876bbe28f1c7ffc", null ],
+    [ "pDepthStencil_", "classmtgb_1_1ImGuiRenderer.html#a2af79fd45b240f444485d9ed48df6283", null ],
+    [ "pDepthStencilView_", "classmtgb_1_1ImGuiRenderer.html#abcd64934d9d81640a12a30c821deb70d", null ],
+    [ "pRenderTargetView_", "classmtgb_1_1ImGuiRenderer.html#a413fcf45f8c9fb91b91c2a861e39a47d", null ],
+    [ "pSRV_", "classmtgb_1_1ImGuiRenderer.html#ae0ed85ffdc261e0d2a1acea1bb24f416", null ],
+    [ "pSRVTexture_", "classmtgb_1_1ImGuiRenderer.html#a1a1b3ac006d2f53f0a2ab739d64c4f93", null ],
+    [ "pTexture_", "classmtgb_1_1ImGuiRenderer.html#a500483dfe1d74a2846a818a29e3dab2c", null ],
+    [ "viewport_", "classmtgb_1_1ImGuiRenderer.html#ad917df25388e31a52ca448aa9eefe72c", null ],
+    [ "winHeight_", "classmtgb_1_1ImGuiRenderer.html#a159fff2b6d78b519c17a3bc61763e1fc", null ],
+    [ "winWidth_", "classmtgb_1_1ImGuiRenderer.html#aee7a0c8e2a933f21aa76308f9aeca39e", null ]
+];

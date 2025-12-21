@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: MTImGui.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('MTImGui_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MTImGui.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="MTImGui_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;typeindex&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="ShowType_8h.html">ShowType.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="ImGuiShowable_8h.html">ImGuiShowable.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="TypeRegistry_8h.html">TypeRegistry.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="cmtgb_8h.html">cmtgb.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="GameObject_8h.html">GameObject.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">struct </span>Vector3;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespacemtgb.html#a0afc2c9b3afd2fe0497e129f2c95aac4">   19</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="namespacemtgb.html#a0afc2c9b3afd2fe0497e129f2c95aac4">ShowItem</a> = std::pair&lt;std::string, std::function&lt;void()&gt;&gt;;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespacemtgb.html#a9cba5a7561465d14bb6b5a439ee0f2ca">   20</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="namespacemtgb.html#a9cba5a7561465d14bb6b5a439ee0f2ca">ShowQueue</a> = std::queue&lt;ShowItem&gt;;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structmtgb_1_1ImGuiWindowState.html">   22</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmtgb_1_1ImGuiWindowState.html">ImGuiWindowState</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structmtgb_1_1ImGuiWindowState.html#a1d334c88861013a2ed7ad266a1c0fe06">   24</a></span>        std::string <a class="code hl_variable" href="structmtgb_1_1ImGuiWindowState.html#a1d334c88861013a2ed7ad266a1c0fe06">selectedName</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structmtgb_1_1ImGuiWindowState.html#a105ce3287cdd36c4bcda7777012b56e4">   25</a></span>        <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <a class="code hl_variable" href="structmtgb_1_1ImGuiWindowState.html#a105ce3287cdd36c4bcda7777012b56e4">entityId</a>{ <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a> };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structmtgb_1_1ImGuiWindowState.html#aefb7b548cde73e6215ee6f4ee2442102">   26</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="structmtgb_1_1ImGuiWindowState.html#aefb7b548cde73e6215ee6f4ee2442102">isOpen</a>{ <span class="keyword">true</span> };</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    };</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html">   34</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1MTImGui.html">MTImGui</a> final</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">   38</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="classmtgb_1_1MTImGui.html">MTImGui</a>&amp; <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">Instance</a>()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keyword">static</span> <a class="code hl_class" href="classmtgb_1_1MTImGui.html">MTImGui</a> instance;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">return</span> instance;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a9d99d144b1fc6bbaacf6044db9ef8eba">Initialize</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#aaa0a53f638051b52697b3db9d0a62095">Update</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#aba6310f01ca3716db9817ef459b605f6">ShowWindow</a>(<a class="code hl_enumeration" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a> _showType);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a8d6b665b7ed12969fa847f876795cc78">ExecuteShowQueue</a>(<a class="code hl_enumeration" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a> show);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a6e1f2a4343ee349da40c7552ad9f26b2">TypedShow</a>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>* target, <span class="keyword">const</span> std::string&amp; name, <a class="code hl_enumeration" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a> show = ShowType::Inspector);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a1d6ee9e01b71d78d134826f69d96fad3">Register</a>(<a class="code hl_class" href="classmtgb_1_1ImGuiShowable.html">ImGuiShowable</a>* obj);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a9538e548e624acaeabc624c0b66c9708">Unregister</a>(<a class="code hl_class" href="classmtgb_1_1ImGuiShowable.html">ImGuiShowable</a>* obj);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">DirectShow</a>(std::function&lt;<span class="keywordtype">void</span>()&gt; <a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>, <span class="keyword">const</span> std::string&amp; name, <a class="code hl_enumeration" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a> show);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a003f5ff7f3d5b4d0417a5749961a950b">DrawLine</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _from, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _to, <span class="keywordtype">float</span> _thickness);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#acf51ffbbd4472a5c812be7dd6a978a7c">DrawVec</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _start, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> &amp; _vec, <span class="keywordtype">float</span> _thickness);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a82d1eeb545c6e973943f03f84b2f0104">DrawCone</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _position, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _direction, <span class="keywordtype">float</span> _fovAngleDegree,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <span class="keywordtype">float</span> _distance, <span class="keywordtype">float</span> _thickness = 1.0f, <span class="keywordtype">int</span> _segments = 16);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a564716ba7da2671ee65f0b962b6450a2">GetSelectedEntityId</a>();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#abbaf598c1d8788179eedebb776f1e494">  117</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="classmtgb_1_1MTImGui.html#abbaf598c1d8788179eedebb776f1e494">GetName</a>(<a class="code hl_enumeration" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a> _showType)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">if</span> (_showType == ShowType::Inspector)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Inspector&quot;</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="keywordflow">if</span> (_showType == ShowType::SceneView)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Game View&quot;</span>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">if</span> (_showType == ShowType::Settings)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Settings&quot;</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;None&quot;</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a5bb8af9192fcd710ad611277003d1b73">SetWindowOpen</a>(<a class="code hl_enumeration" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a> _showType, <span class="keywordtype">bool</span> _flag);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a597a4d65a42a28ac53a534d0e0ebcb5a">SetAllWindowOpen</a>(<span class="keywordtype">bool</span> _flag);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a65cbd581d9feb766034c960b21b2f08b">ChangeWindowOpen</a>(<a class="code hl_enumeration" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a> _showType);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a0300368012e12adb81b7db788b132b77">ChangeAllWindowOpen</a>();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a0ebe89de7aaa854c37e842ed796efb99">ShowLog</a>();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a7c0d4dec0a129e459a5dd5ff6c7c6d0c">ShowComponents</a>(<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a2afdafecc58adb6a1b5b428cba6b3120">SelectGameObject</a>(<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#af5b5a6853c9d8c4fcf0b7c6c3d2233f2">RegisterComponentViewer</a>();</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#ac531bcfd6339f8d63df4ecab9373b144">MTImGui</a>();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#ac339a2e06052b81b3cd5718a6952d16d">  146</a></span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#ac339a2e06052b81b3cd5718a6952d16d">MTImGui</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1MTImGui.html">MTImGui</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a734529bbde3e68f851b66fc7454e7e6f">~MTImGui</a>();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a66e27a522dc67b37932354e70e6d9674">SetupShowFunc</a>();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#aa45c0c8107a8ba97723a53cf21cb7325">ShowListView</a>(<a class="code hl_enumeration" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a> _show);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">  156</a></span>        std::vector&lt;ImGuiShowable*&gt; <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#a20a3e224eda5db1a17f5f454995280cf">  158</a></span>        std::map&lt;ShowType, ShowQueue&gt; <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a20a3e224eda5db1a17f5f454995280cf">showQueues_</a>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">  159</a></span>        std::map&lt;ShowType, ImGuiWindowState&gt; <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>; <span class="comment">// ShowTypeごとのウィンドウの状態</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a65cb2822d0702f16756b24f4f905f8c6">RegisterAllComponentViewers</a>();</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#ab4c0d63b673db1ed2204df0726b83644">  163</a></span>        std::unordered_map&lt;std::type_index, std::function&lt;void(<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>)&gt;&gt; <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab4c0d63b673db1ed2204df0726b83644">componentShowFuncs_</a>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">  164</a></span>        std::queue&lt;std::function&lt;void()&gt;&gt; <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a5d8544925ba99d693d6dfdab6cea75c7">DrawRayImpl</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _start, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _dir, <span class="keywordtype">float</span> _thickness);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a0ddaa80190cf7fc2738177a7a99882bc">DrawLineImpl</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _from, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _to, <span class="keywordtype">float</span> _thickness);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#aae069cb29eac26db322fbd733175cc33">  169</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#aae069cb29eac26db322fbd733175cc33">updatingImGuiShowable_</a>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    };</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#a6e1f2a4343ee349da40c7552ad9f26b2">  173</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a6e1f2a4343ee349da40c7552ad9f26b2">MTImGui::TypedShow</a>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>* target, <span class="keyword">const</span> std::string&amp; name, <a class="code hl_enumeration" href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a> show)</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keyword">using </span>Type = std::remove_pointer_t&lt;std::remove_cvref_t&lt;T&gt;&gt;;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="comment">//PushShowFunc( [=] {proxy-&gt;ShowImGui(std::any(target), name); }, show);</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">DirectShow</a>([=]() {<a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">CallFunc</a>&lt;Type&gt;(target, name.c_str()); }, name, show);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classmtgb_1_1MTImGui.html#af5b5a6853c9d8c4fcf0b7c6c3d2233f2">  180</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1MTImGui.html#af5b5a6853c9d8c4fcf0b7c6c3d2233f2">mtgb::MTImGui::RegisterComponentViewer</a>()</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        std::type_index typeIdx(<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>));</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        componentShowFuncs_[typeIdx] = [<span class="keyword">this</span>](<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* obj = <a class="code hl_function" href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a>(_entityId);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                std::string name = obj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#adca80cc33581de34dd622983ac232707">GetName</a>() + <span class="stringliteral">&quot;:Components&quot;</span>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">CallFunc</a>&lt;<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;(&amp;(T::template Get(_entityId)), name.c_str());</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            };</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>}</div>
+<div class="ttc" id="aGameObject_8h_html"><div class="ttname"><a href="GameObject_8h.html">GameObject.h</a></div></div>
+<div class="ttc" id="aImGuiShowable_8h_html"><div class="ttname"><a href="ImGuiShowable_8h.html">ImGuiShowable.h</a></div></div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
+<div class="ttc" id="aShowType_8h_html"><div class="ttname"><a href="ShowType_8h.html">ShowType.h</a></div></div>
+<div class="ttc" id="aShowType_8h_html_ac3437429431adf559d607c0e46c396c2"><div class="ttname"><a href="ShowType_8h.html#ac3437429431adf559d607c0e46c396c2">ShowType</a></div><div class="ttdeci">ShowType</div><div class="ttdef"><b>Definition:</b> <a href="ShowType_8h_source.html#l00005">ShowType.h:6</a></div></div>
+<div class="ttc" id="aTypeRegistry_8h_html"><div class="ttname"><a href="TypeRegistry_8h.html">TypeRegistry.h</a></div></div>
+<div class="ttc" id="aclassTypeRegistry_html_a0318948c24384561a2467165e2b43e8d"><div class="ttname"><a href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">TypeRegistry::CallFunc</a></div><div class="ttdeci">void CallFunc(T *instance, const char *name)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00055">TypeRegistry.h:55</a></div></div>
+<div class="ttc" id="aclassTypeRegistry_html_a45f221653ae5cef14b554cb67ead4274"><div class="ttname"><a href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a></div><div class="ttdeci">static TypeRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry.cpp:10</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00016">GameObject.h:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_a12efb7dd41cfcb6edffe8609eddd323e"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a></div><div class="ttdeci">static T * FindGameObject()</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00136">GameObject.h:136</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_adca80cc33581de34dd622983ac232707"><div class="ttname"><a href="classmtgb_1_1GameObject.html#adca80cc33581de34dd622983ac232707">mtgb::GameObject::GetName</a></div><div class="ttdeci">std::string GetName() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00080">GameObject.h:80</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiShowable_html"><div class="ttname"><a href="classmtgb_1_1ImGuiShowable.html">mtgb::ImGuiShowable</a></div><div class="ttdoc">継承してShowImGuiをオーバライドして使う これを使わなくてもImGui表示はできるので、別の箇所に分離したいときなどにどうぞ</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiShowable_8h_source.html#l00019">ImGuiShowable.h:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html"><div class="ttname"><a href="classmtgb_1_1MTImGui.html">mtgb::MTImGui</a></div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00034">MTImGui.h:35</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a003f5ff7f3d5b4d0417a5749961a950b"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a003f5ff7f3d5b4d0417a5749961a950b">mtgb::MTImGui::DrawLine</a></div><div class="ttdeci">void DrawLine(const Vector3 &amp;_from, const Vector3 &amp;_to, float _thickness)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00423">MTImGui.cpp:423</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a0300368012e12adb81b7db788b132b77"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a0300368012e12adb81b7db788b132b77">mtgb::MTImGui::ChangeAllWindowOpen</a></div><div class="ttdeci">void ChangeAllWindowOpen()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00097">MTImGui.cpp:97</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a0ddaa80190cf7fc2738177a7a99882bc"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a0ddaa80190cf7fc2738177a7a99882bc">mtgb::MTImGui::DrawLineImpl</a></div><div class="ttdeci">void DrawLineImpl(const Vector3 &amp;_from, const Vector3 &amp;_to, float _thickness)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00334">MTImGui.cpp:334</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a0ebe89de7aaa854c37e842ed796efb99"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a0ebe89de7aaa854c37e842ed796efb99">mtgb::MTImGui::ShowLog</a></div><div class="ttdeci">void ShowLog()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00104">MTImGui.cpp:104</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a1d6ee9e01b71d78d134826f69d96fad3"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a1d6ee9e01b71d78d134826f69d96fad3">mtgb::MTImGui::Register</a></div><div class="ttdeci">void Register(ImGuiShowable *obj)</div><div class="ttdoc">ImGuiShowable*インスタンスを登録、毎回ShowImGuiを呼ぶ ImGuiShowableは自動で登録される</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00393">MTImGui.cpp:393</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a20a3e224eda5db1a17f5f454995280cf"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a20a3e224eda5db1a17f5f454995280cf">mtgb::MTImGui::showQueues_</a></div><div class="ttdeci">std::map&lt; ShowType, ShowQueue &gt; showQueues_</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00158">MTImGui.h:158</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a2afdafecc58adb6a1b5b428cba6b3120"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a2afdafecc58adb6a1b5b428cba6b3120">mtgb::MTImGui::SelectGameObject</a></div><div class="ttdeci">void SelectGameObject(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00303">MTImGui.cpp:303</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00038">MTImGui.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a564716ba7da2671ee65f0b962b6450a2"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a564716ba7da2671ee65f0b962b6450a2">mtgb::MTImGui::GetSelectedEntityId</a></div><div class="ttdeci">EntityId GetSelectedEntityId()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00500">MTImGui.cpp:500</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a597a4d65a42a28ac53a534d0e0ebcb5a"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a597a4d65a42a28ac53a534d0e0ebcb5a">mtgb::MTImGui::SetAllWindowOpen</a></div><div class="ttdeci">void SetAllWindowOpen(bool _flag)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00086">MTImGui.cpp:86</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a5bb8af9192fcd710ad611277003d1b73"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a5bb8af9192fcd710ad611277003d1b73">mtgb::MTImGui::SetWindowOpen</a></div><div class="ttdeci">void SetWindowOpen(ShowType _showType, bool _flag)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00082">MTImGui.cpp:82</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a5c8cc34ff05c0cd0508f43da7fcb5a77"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">mtgb::MTImGui::sceneViewShowList_</a></div><div class="ttdeci">std::queue&lt; std::function&lt; void()&gt; &gt; sceneViewShowList_</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00164">MTImGui.h:164</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a5d8544925ba99d693d6dfdab6cea75c7"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a5d8544925ba99d693d6dfdab6cea75c7">mtgb::MTImGui::DrawRayImpl</a></div><div class="ttdeci">void DrawRayImpl(const Vector3 &amp;_start, const Vector3 &amp;_dir, float _thickness)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00320">MTImGui.cpp:320</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a65cb2822d0702f16756b24f4f905f8c6"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a65cb2822d0702f16756b24f4f905f8c6">mtgb::MTImGui::RegisterAllComponentViewers</a></div><div class="ttdeci">void RegisterAllComponentViewers()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00317">MTImGui.cpp:317</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a65cbd581d9feb766034c960b21b2f08b"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a65cbd581d9feb766034c960b21b2f08b">mtgb::MTImGui::ChangeWindowOpen</a></div><div class="ttdeci">void ChangeWindowOpen(ShowType _showType)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00093">MTImGui.cpp:93</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a66e27a522dc67b37932354e70e6d9674"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a66e27a522dc67b37932354e70e6d9674">mtgb::MTImGui::SetupShowFunc</a></div><div class="ttdeci">void SetupShowFunc()</div><div class="ttdoc">TypedShowの_targetの型に対応する関数を登録する</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00204">MTImGui.cpp:204</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a6e1f2a4343ee349da40c7552ad9f26b2"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a6e1f2a4343ee349da40c7552ad9f26b2">mtgb::MTImGui::TypedShow</a></div><div class="ttdeci">void TypedShow(T *target, const std::string &amp;name, ShowType show=ShowType::Inspector)</div><div class="ttdoc">型を指定して表示キューに積む 事前にSetupShowFuncで表示方法を登録する必要あり</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00173">MTImGui.h:173</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a734529bbde3e68f851b66fc7454e7e6f"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a734529bbde3e68f851b66fc7454e7e6f">mtgb::MTImGui::~MTImGui</a></div><div class="ttdeci">~MTImGui()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00192">MTImGui.cpp:192</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a7c0d4dec0a129e459a5dd5ff6c7c6d0c"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a7c0d4dec0a129e459a5dd5ff6c7c6d0c">mtgb::MTImGui::ShowComponents</a></div><div class="ttdeci">void ShowComponents(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00291">MTImGui.cpp:291</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a82d1eeb545c6e973943f03f84b2f0104"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a82d1eeb545c6e973943f03f84b2f0104">mtgb::MTImGui::DrawCone</a></div><div class="ttdeci">void DrawCone(const Vector3 &amp;_position, const Vector3 &amp;_direction, float _fovAngleDegree, float _distance, float _thickness=1.0f, int _segments=16)</div><div class="ttdoc">ImGuiWindowに円錐を描画</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00453">MTImGui.cpp:453</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a8d6b665b7ed12969fa847f876795cc78"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a8d6b665b7ed12969fa847f876795cc78">mtgb::MTImGui::ExecuteShowQueue</a></div><div class="ttdeci">void ExecuteShowQueue(ShowType show)</div><div class="ttdoc">表示キューを一括実行し、クリア</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00377">MTImGui.cpp:377</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a9538e548e624acaeabc624c0b66c9708"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a9538e548e624acaeabc624c0b66c9708">mtgb::MTImGui::Unregister</a></div><div class="ttdeci">void Unregister(ImGuiShowable *obj)</div><div class="ttdoc">登録解除 デストラクタで呼ばれる</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00398">MTImGui.cpp:398</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a9d99d144b1fc6bbaacf6044db9ef8eba"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a9d99d144b1fc6bbaacf6044db9ef8eba">mtgb::MTImGui::Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00030">MTImGui.cpp:30</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aa45c0c8107a8ba97723a53cf21cb7325"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aa45c0c8107a8ba97723a53cf21cb7325">mtgb::MTImGui::ShowListView</a></div><div class="ttdeci">void ShowListView(ShowType _show)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00245">MTImGui.cpp:245</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aa9081f2cfb7ed13e429f9da025d215d4"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">mtgb::MTImGui::DirectShow</a></div><div class="ttdeci">void DirectShow(std::function&lt; void()&gt; func, const std::string &amp;name, ShowType show)</div><div class="ttdoc">コールバックを表示キューに直接積む</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00409">MTImGui.cpp:409</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aaa0a53f638051b52697b3db9d0a62095"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aaa0a53f638051b52697b3db9d0a62095">mtgb::MTImGui::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00050">MTImGui.cpp:50</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aae069cb29eac26db322fbd733175cc33"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aae069cb29eac26db322fbd733175cc33">mtgb::MTImGui::updatingImGuiShowable_</a></div><div class="ttdeci">bool updatingImGuiShowable_</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00169">MTImGui.h:169</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_ab3c44ee869fffe6c512332131e09760e"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">mtgb::MTImGui::imguiWindowStates_</a></div><div class="ttdeci">std::map&lt; ShowType, ImGuiWindowState &gt; imguiWindowStates_</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00159">MTImGui.h:159</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_ab4c0d63b673db1ed2204df0726b83644"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#ab4c0d63b673db1ed2204df0726b83644">mtgb::MTImGui::componentShowFuncs_</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, std::function&lt; void(EntityId)&gt; &gt; componentShowFuncs_</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00163">MTImGui.h:163</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aba6310f01ca3716db9817ef459b605f6"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aba6310f01ca3716db9817ef459b605f6">mtgb::MTImGui::ShowWindow</a></div><div class="ttdeci">void ShowWindow(ShowType _showType)</div><div class="ttdoc">ImGuiウィンドウの表示、キュー内の表示関数の一括実行、ImGuiウィンドウのEnd()までを行う</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00348">MTImGui.cpp:348</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_abbaf598c1d8788179eedebb776f1e494"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#abbaf598c1d8788179eedebb776f1e494">mtgb::MTImGui::GetName</a></div><div class="ttdeci">static const char * GetName(ShowType _showType)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00117">MTImGui.h:117</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_ac339a2e06052b81b3cd5718a6952d16d"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#ac339a2e06052b81b3cd5718a6952d16d">mtgb::MTImGui::MTImGui</a></div><div class="ttdeci">MTImGui(const MTImGui &amp;other)=delete</div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_ac531bcfd6339f8d63df4ecab9373b144"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#ac531bcfd6339f8d63df4ecab9373b144">mtgb::MTImGui::MTImGui</a></div><div class="ttdeci">MTImGui()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00186">MTImGui.cpp:186</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_acf51ffbbd4472a5c812be7dd6a978a7c"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#acf51ffbbd4472a5c812be7dd6a978a7c">mtgb::MTImGui::DrawVec</a></div><div class="ttdeci">void DrawVec(const Vector3 &amp;_start, const Vector3 &amp;_vec, float _thickness)</div><div class="ttdoc">レイを表示</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00441">MTImGui.cpp:441</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_ad9df01701753e32c9a3490abab9fd569"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">mtgb::MTImGui::showableObjs_</a></div><div class="ttdeci">std::vector&lt; ImGuiShowable * &gt; showableObjs_</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00156">MTImGui.h:156</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_af5b5a6853c9d8c4fcf0b7c6c3d2233f2"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#af5b5a6853c9d8c4fcf0b7c6c3d2233f2">mtgb::MTImGui::RegisterComponentViewer</a></div><div class="ttdeci">void RegisterComponentViewer()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00180">MTImGui.h:180</a></div></div>
+<div class="ttc" id="acmtgb_8h_html"><div class="ttname"><a href="cmtgb_8h.html">cmtgb.h</a></div></div>
+<div class="ttc" id="agroup__group1_html_ga24f647174760cac13d2624b5ad74b00c"><div class="ttname"><a href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a></div><div class="ttdeci">void func()</div><div class="ttdef"><b>Definition:</b> <a href="group_8cpp_source.html#l00013">group.cpp:13</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a0afc2c9b3afd2fe0497e129f2c95aac4"><div class="ttname"><a href="namespacemtgb.html#a0afc2c9b3afd2fe0497e129f2c95aac4">mtgb::ShowItem</a></div><div class="ttdeci">std::pair&lt; std::string, std::function&lt; void()&gt; &gt; ShowItem</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00019">MTImGui.h:19</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a9cba5a7561465d14bb6b5a439ee0f2ca"><div class="ttname"><a href="namespacemtgb.html#a9cba5a7561465d14bb6b5a439ee0f2ca">mtgb::ShowQueue</a></div><div class="ttdeci">std::queue&lt; ShowItem &gt; ShowQueue</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00020">MTImGui.h:20</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
+<div class="ttc" id="astructmtgb_1_1ImGuiWindowState_html"><div class="ttname"><a href="structmtgb_1_1ImGuiWindowState.html">mtgb::ImGuiWindowState</a></div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00022">MTImGui.h:23</a></div></div>
+<div class="ttc" id="astructmtgb_1_1ImGuiWindowState_html_a105ce3287cdd36c4bcda7777012b56e4"><div class="ttname"><a href="structmtgb_1_1ImGuiWindowState.html#a105ce3287cdd36c4bcda7777012b56e4">mtgb::ImGuiWindowState::entityId</a></div><div class="ttdeci">EntityId entityId</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00025">MTImGui.h:25</a></div></div>
+<div class="ttc" id="astructmtgb_1_1ImGuiWindowState_html_a1d334c88861013a2ed7ad266a1c0fe06"><div class="ttname"><a href="structmtgb_1_1ImGuiWindowState.html#a1d334c88861013a2ed7ad266a1c0fe06">mtgb::ImGuiWindowState::selectedName</a></div><div class="ttdeci">std::string selectedName</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00024">MTImGui.h:24</a></div></div>
+<div class="ttc" id="astructmtgb_1_1ImGuiWindowState_html_aefb7b548cde73e6215ee6f4ee2442102"><div class="ttname"><a href="structmtgb_1_1ImGuiWindowState.html#aefb7b548cde73e6215ee6f4ee2442102">mtgb::ImGuiWindowState::isOpen</a></div><div class="ttdeci">bool isOpen</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00026">MTImGui.h:26</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="MTImGui_8h.html">MTImGui.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: RenderSystem.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('RenderSystem_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RenderSystem.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="RenderSystem_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="RenderSystem_8h.html">RenderSystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContextUtil_8h.html">WindowContextUtil.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="DirectX11Draw_8h.html">DirectX11Draw.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="ImGuiRenderer_8h.html">ImGuiRenderer.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="ImGuiShowable_8h.html">ImGuiShowable.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="SceneSystem_8h.html">SceneSystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="GameObject_8h.html">GameObject.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="Debug_8h.html">Debug.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="MTImGui_8h.html">MTImGui.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../ImGui/imgui.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="Draw_8h.html">Draw.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="MeshRendererCP_8h.html">MeshRendererCP.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="ColliderCP_8h.html">ColliderCP.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="CameraResource_8h.html">CameraResource.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="EffekseerVFX_8h.html">EffekseerVFX.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classmtgb_1_1RenderSystem.html#a2afa99a6c21b2e27a1357396835dbfd3">   16</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1RenderSystem.html#a2afa99a6c21b2e27a1357396835dbfd3">mtgb::RenderSystem::Initialize</a>()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classmtgb_1_1RenderSystem.html#a7b15d24a112d667918fe3cad8e3a347c">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1RenderSystem.html#a7b15d24a112d667918fe3cad8e3a347c">mtgb::RenderSystem::Update</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classmtgb_1_1RenderSystem.html#a3ccb190feae97795cc15ba376fd598ca">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1RenderSystem.html#a3ccb190feae97795cc15ba376fd598ca">mtgb::RenderSystem::Render</a>(<a class="code hl_class" href="classmtgb_1_1GameScene.html">GameScene</a>&amp; _scene)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    RenderDirectXWindows(_scene);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    RenderImGuiWindows(_scene);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classmtgb_1_1RenderSystem.html#a42c56c98a3b5cb6855cc83a2a4285836">   31</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1RenderSystem.html#a42c56c98a3b5cb6855cc83a2a4285836">mtgb::RenderSystem::RenderDirectXWindows</a>(<a class="code hl_class" href="classmtgb_1_1GameScene.html">GameScene</a>&amp; _scene)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">//一つ目のウィンドウ</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#aba4a5d6cb4d9f8fc555f3ebaba2ed511">WinCtxRes::ChangeResource</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (WinCtxRes::Get&lt;CameraResource&gt;(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>).NotRegisterCamera())</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a329b7551cf069a060c2dfc19c6cd79cc">Draw::ClearUICommands</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a375c5c0f9d40193107c6ee7def6a71a0">DirectX11Draw::Begin</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    DrawGameObjects(_scene, <a class="code hl_enumvalue" href="namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca7fc56270e7a70fa81a5935b72eacbe29">GameObjectLayer::A</a>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#ab49701b73420c858c1eec301402ec530">Draw::FlushUIDrawCommands</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca7fc56270e7a70fa81a5935b72eacbe29">GameObjectLayer::A</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#afc417a2e7d8b6251a6df9e1f0452ad46">DirectX11Draw::End</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a329b7551cf069a060c2dfc19c6cd79cc">Draw::ClearUICommands</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classmtgb_1_1RenderSystem.html#a14e39d4590efdf77c2085b12c6f3cdf5">   48</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1RenderSystem.html#a14e39d4590efdf77c2085b12c6f3cdf5">mtgb::RenderSystem::RenderImGuiWindows</a>(<a class="code hl_class" href="classmtgb_1_1GameScene.html">GameScene</a>&amp; _scene)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">using </span>mtbit::operator|;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">// ImGuiは一つ目のウィンドウに依存している</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#aba4a5d6cb4d9f8fc555f3ebaba2ed511">WinCtxRes::ChangeResource</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_class" href="classmtgb_1_1ImGuiRenderer.html">ImGuiRenderer</a>&amp; imGui = Game::System&lt;ImGuiRenderer&gt;();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a4684d4374beee1f52053b4634edae2c8">BeginFrame</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a6a554c68a5c78f9e77caf43d584c7507">BeginImGuizmoFrame</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">// Inspector表示</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#aba6310f01ca3716db9817ef459b605f6">ShowWindow</a>(ShowType::Inspector);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// Settings表示</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#aba6310f01ca3716db9817ef459b605f6">ShowWindow</a>(ShowType::Settings);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#aba6310f01ca3716db9817ef459b605f6">ShowWindow</a>(ShowType::Editor);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// ログ表示</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#a0ebe89de7aaa854c37e842ed796efb99">ShowLog</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// SceneView表示</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// RenderTargetViewをImGui用に切り替え</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#aeac47500fe5c07d84ad9990d3c278e27">SetImGuizmoRenderTargetView</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a375c5c0f9d40193107c6ee7def6a71a0">DirectX11Draw::Begin</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    Game::System&lt;ImGuiEditorCamera&gt;().SetCamera();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    DrawGameObjects(_scene, <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>());</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#aba6310f01ca3716db9817ef459b605f6">ShowWindow</a>(ShowType::SceneView);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a8659d92cdaecc531688232b504e8c637">EndFrame</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">//DirectX11Draw::End();</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classmtgb_1_1RenderSystem.html#a2fa6dee7a6277df1dd8837fda2a6058d">   85</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1RenderSystem.html#a2fa6dee7a6277df1dd8837fda2a6058d">mtgb::RenderSystem::DrawGameObjects</a>(<a class="code hl_class" href="classmtgb_1_1GameScene.html">GameScene</a>&amp; _scene,<a class="code hl_class" href="classmtbit_1_1BitFlag.html">GameObjectLayerFlag</a> _layer)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>{</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    _scene.<a class="code hl_function" href="classmtgb_1_1GameScene.html#a62c3eb59801fdd460e8b316a0a879bb4">Draw</a>();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    std::span&lt;IRenderableCP*&gt; renderableCPs = <a class="code hl_function" href="classmtgb_1_1Game.html#a3e92de67f7858ed8f5a9a5adcf9cb75b">Game::GetRenderableCPs</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classmtgb_1_1IRenderableCP.html">IRenderableCP</a>* cp : renderableCPs)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        cp-&gt;RenderLayer(_layer);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">// TODO:EffectManager,ColliderCPもIRenderableCPインターフェースを継承させる</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    Game::System&lt;EffectManager&gt;().Draw();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (_layer.<a class="code hl_function" href="classmtbit_1_1BitFlag.html#ad8f9b426c4a79b220e1044f078d0913f">Has</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca7f62a1b28904e8f2bcca181b7f4de53a">GameObjectLayer::SceneView</a>))</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        Game::System&lt;ColliderCP&gt;().Draw();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
+<div class="ttc" id="aCameraResource_8h_html"><div class="ttname"><a href="CameraResource_8h.html">CameraResource.h</a></div></div>
+<div class="ttc" id="aColliderCP_8h_html"><div class="ttname"><a href="ColliderCP_8h.html">ColliderCP.h</a></div></div>
+<div class="ttc" id="aDebug_8h_html"><div class="ttname"><a href="Debug_8h.html">Debug.h</a></div></div>
+<div class="ttc" id="aDirectX11Draw_8h_html"><div class="ttname"><a href="DirectX11Draw_8h.html">DirectX11Draw.h</a></div></div>
+<div class="ttc" id="aDraw_8h_html"><div class="ttname"><a href="Draw_8h.html">Draw.h</a></div></div>
+<div class="ttc" id="aEffekseerVFX_8h_html"><div class="ttname"><a href="EffekseerVFX_8h.html">EffekseerVFX.h</a></div></div>
+<div class="ttc" id="aGameObject_8h_html"><div class="ttname"><a href="GameObject_8h.html">GameObject.h</a></div></div>
+<div class="ttc" id="aImGuiRenderer_8h_html"><div class="ttname"><a href="ImGuiRenderer_8h.html">ImGuiRenderer.h</a></div></div>
+<div class="ttc" id="aImGuiShowable_8h_html"><div class="ttname"><a href="ImGuiShowable_8h.html">ImGuiShowable.h</a></div></div>
+<div class="ttc" id="aMTImGui_8h_html"><div class="ttname"><a href="MTImGui_8h.html">MTImGui.h</a></div></div>
+<div class="ttc" id="aMeshRendererCP_8h_html"><div class="ttname"><a href="MeshRendererCP_8h.html">MeshRendererCP.h</a></div></div>
+<div class="ttc" id="aRenderSystem_8h_html"><div class="ttname"><a href="RenderSystem_8h.html">RenderSystem.h</a></div></div>
+<div class="ttc" id="aSceneSystem_8h_html"><div class="ttname"><a href="SceneSystem_8h.html">SceneSystem.h</a></div></div>
+<div class="ttc" id="aWindowContextUtil_8h_html"><div class="ttname"><a href="WindowContextUtil_8h.html">WindowContextUtil.h</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html"><div class="ttname"><a href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt; GameObjectLayer &gt;</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_ad8f9b426c4a79b220e1044f078d0913f"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#ad8f9b426c4a79b220e1044f078d0913f">mtbit::BitFlag::Has</a></div><div class="ttdeci">bool Has(const EnumStructT _e) const</div><div class="ttdoc">指定フラグが立っているかどうか</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00174">BitFlag.h:174</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a375c5c0f9d40193107c6ee7def6a71a0"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a375c5c0f9d40193107c6ee7def6a71a0">mtgb::DirectX11Draw::Begin</a></div><div class="ttdeci">static void Begin()</div><div class="ttdoc">描画開始 (キャンバスをきれいにする)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8cpp_source.html#l00068">DirectX11Draw.cpp:68</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_afc417a2e7d8b6251a6df9e1f0452ad46"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#afc417a2e7d8b6251a6df9e1f0452ad46">mtgb::DirectX11Draw::End</a></div><div class="ttdeci">static void End()</div><div class="ttdoc">描画終了 (バックバッファとスワップする)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8cpp_source.html#l00077">DirectX11Draw.cpp:77</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_a329b7551cf069a060c2dfc19c6cd79cc"><div class="ttname"><a href="classmtgb_1_1Draw.html#a329b7551cf069a060c2dfc19c6cd79cc">mtgb::Draw::ClearUICommands</a></div><div class="ttdeci">static void ClearUICommands()</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00315">Draw.cpp:315</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_ab49701b73420c858c1eec301402ec530"><div class="ttname"><a href="classmtgb_1_1Draw.html#ab49701b73420c858c1eec301402ec530">mtgb::Draw::FlushUIDrawCommands</a></div><div class="ttdeci">static void FlushUIDrawCommands(GameObjectLayerFlag _layer)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00303">Draw.cpp:303</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameScene_html"><div class="ttname"><a href="classmtgb_1_1GameScene.html">mtgb::GameScene</a></div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8h_source.html#l00018">GameScene.h:19</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameScene_html_a62c3eb59801fdd460e8b316a0a879bb4"><div class="ttname"><a href="classmtgb_1_1GameScene.html#a62c3eb59801fdd460e8b316a0a879bb4">mtgb::GameScene::Draw</a></div><div class="ttdeci">virtual void Draw() const</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00045">GameScene.cpp:45</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a3e92de67f7858ed8f5a9a5adcf9cb75b"><div class="ttname"><a href="classmtgb_1_1Game.html#a3e92de67f7858ed8f5a9a5adcf9cb75b">mtgb::Game::GetRenderableCPs</a></div><div class="ttdeci">static std::span&lt; IRenderableCP * &gt; GetRenderableCPs()</div><div class="ttdoc">描画可能なコンポーネントプールを返す</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00132">Game.cpp:132</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IRenderableCP_html"><div class="ttname"><a href="classmtgb_1_1IRenderableCP.html">mtgb::IRenderableCP</a></div><div class="ttdoc">描画処理関連のインターフェースのコンポーネントプール</div><div class="ttdef"><b>Definition:</b> <a href="IRenderable_8h_source.html#l00008">IRenderable.h:9</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html">mtgb::ImGuiRenderer</a></div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00022">ImGuiRenderer.h:23</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a4684d4374beee1f52053b4634edae2c8"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a4684d4374beee1f52053b4634edae2c8">mtgb::ImGuiRenderer::BeginFrame</a></div><div class="ttdeci">void BeginFrame()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8cpp_source.html#l00089">ImGuiRenderer.cpp:89</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a6a554c68a5c78f9e77caf43d584c7507"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a6a554c68a5c78f9e77caf43d584c7507">mtgb::ImGuiRenderer::BeginImGuizmoFrame</a></div><div class="ttdeci">void BeginImGuizmoFrame()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8cpp_source.html#l00097">ImGuiRenderer.cpp:97</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a8659d92cdaecc531688232b504e8c637"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a8659d92cdaecc531688232b504e8c637">mtgb::ImGuiRenderer::EndFrame</a></div><div class="ttdeci">void EndFrame()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8cpp_source.html#l00134">ImGuiRenderer.cpp:134</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_aeac47500fe5c07d84ad9990d3c278e27"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#aeac47500fe5c07d84ad9990d3c278e27">mtgb::ImGuiRenderer::SetImGuizmoRenderTargetView</a></div><div class="ttdeci">void SetImGuizmoRenderTargetView()</div><div class="ttdoc">ImGuizmoウィンドウを描画するためにRTVをセット</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8cpp_source.html#l00118">ImGuiRenderer.cpp:118</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a0ebe89de7aaa854c37e842ed796efb99"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a0ebe89de7aaa854c37e842ed796efb99">mtgb::MTImGui::ShowLog</a></div><div class="ttdeci">void ShowLog()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00104">MTImGui.cpp:104</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00038">MTImGui.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aba6310f01ca3716db9817ef459b605f6"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aba6310f01ca3716db9817ef459b605f6">mtgb::MTImGui::ShowWindow</a></div><div class="ttdeci">void ShowWindow(ShowType _showType)</div><div class="ttdoc">ImGuiウィンドウの表示、キュー内の表示関数の一括実行、ImGuiウィンドウのEnd()までを行う</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00348">MTImGui.cpp:348</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1RenderSystem_html_a14e39d4590efdf77c2085b12c6f3cdf5"><div class="ttname"><a href="classmtgb_1_1RenderSystem.html#a14e39d4590efdf77c2085b12c6f3cdf5">mtgb::RenderSystem::RenderImGuiWindows</a></div><div class="ttdeci">void RenderImGuiWindows(GameScene &amp;_scene)</div><div class="ttdef"><b>Definition:</b> <a href="RenderSystem_8cpp_source.html#l00048">RenderSystem.cpp:48</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1RenderSystem_html_a2afa99a6c21b2e27a1357396835dbfd3"><div class="ttname"><a href="classmtgb_1_1RenderSystem.html#a2afa99a6c21b2e27a1357396835dbfd3">mtgb::RenderSystem::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="RenderSystem_8cpp_source.html#l00016">RenderSystem.cpp:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1RenderSystem_html_a2fa6dee7a6277df1dd8837fda2a6058d"><div class="ttname"><a href="classmtgb_1_1RenderSystem.html#a2fa6dee7a6277df1dd8837fda2a6058d">mtgb::RenderSystem::DrawGameObjects</a></div><div class="ttdeci">void DrawGameObjects(GameScene &amp;_scene, GameObjectLayerFlag _layer)</div><div class="ttdef"><b>Definition:</b> <a href="RenderSystem_8cpp_source.html#l00085">RenderSystem.cpp:85</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1RenderSystem_html_a3ccb190feae97795cc15ba376fd598ca"><div class="ttname"><a href="classmtgb_1_1RenderSystem.html#a3ccb190feae97795cc15ba376fd598ca">mtgb::RenderSystem::Render</a></div><div class="ttdeci">void Render(GameScene &amp;_scene)</div><div class="ttdef"><b>Definition:</b> <a href="RenderSystem_8cpp_source.html#l00024">RenderSystem.cpp:24</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1RenderSystem_html_a42c56c98a3b5cb6855cc83a2a4285836"><div class="ttname"><a href="classmtgb_1_1RenderSystem.html#a42c56c98a3b5cb6855cc83a2a4285836">mtgb::RenderSystem::RenderDirectXWindows</a></div><div class="ttdeci">void RenderDirectXWindows(GameScene &amp;_scene)</div><div class="ttdef"><b>Definition:</b> <a href="RenderSystem_8cpp_source.html#l00031">RenderSystem.cpp:31</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1RenderSystem_html_a7b15d24a112d667918fe3cad8e3a347c"><div class="ttname"><a href="classmtgb_1_1RenderSystem.html#a7b15d24a112d667918fe3cad8e3a347c">mtgb::RenderSystem::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="RenderSystem_8cpp_source.html#l00020">RenderSystem.cpp:20</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_aba4a5d6cb4d9f8fc555f3ebaba2ed511"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#aba4a5d6cb4d9f8fc555f3ebaba2ed511">mtgb::WinCtxRes::ChangeResource</a></div><div class="ttdeci">void ChangeResource(WindowContext ctx)</div><div class="ttdoc">リソースを切り替える</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00042">WindowContextUtil.cpp:42</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a100fdeed4f1f4e5f27e7ffb97ee743ca"><div class="ttname"><a href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">mtgb::AllLayer</a></div><div class="ttdeci">GameObjectLayerFlag AllLayer()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectLayer_8cpp_source.html#l00007">GameObjectLayer.cpp:7</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a768ec2ef24bbb7a474d0e57f2f5d975ca7f62a1b28904e8f2bcca181b7f4de53a"><div class="ttname"><a href="namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca7f62a1b28904e8f2bcca181b7f4de53a">mtgb::GameObjectLayer::SceneView</a></div><div class="ttdeci">@ SceneView</div></div>
+<div class="ttc" id="anamespacemtgb_html_a768ec2ef24bbb7a474d0e57f2f5d975ca7fc56270e7a70fa81a5935b72eacbe29"><div class="ttname"><a href="namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca7fc56270e7a70fa81a5935b72eacbe29">mtgb::GameObjectLayer::A</a></div><div class="ttdeci">@ A</div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="RenderSystem_8cpp.html">RenderSystem.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

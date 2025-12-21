@@ -1,0 +1,25 @@
+var classmtgb_1_1DirectWrite =
+[
+    [ "DirectWrite", "classmtgb_1_1DirectWrite.html#a2da77e5b8d52721d26e53e7eb3eeda98", null ],
+    [ "~DirectWrite", "classmtgb_1_1DirectWrite.html#a2879434105fb38317b41faec68497197", null ],
+    [ "ChangeFormat", "classmtgb_1_1DirectWrite.html#ac24e6e7708f1f9e9ac332456236ed7b7", null ],
+    [ "CreateFontFormatData", "classmtgb_1_1DirectWrite.html#a101abf0df66db47ec259c8ed1fb7d7fc", null ],
+    [ "CreateTextFormat", "classmtgb_1_1DirectWrite.html#a179b609cbe18e6eca870baf76ca8ccb5", null ],
+    [ "CreateTextLayout", "classmtgb_1_1DirectWrite.html#a3162736c9719213cdcc45a4e00ab1abf", null ],
+    [ "CreateTextLayout", "classmtgb_1_1DirectWrite.html#ae60b43169a9e2789f5b96e2bc0f114f3", null ],
+    [ "Draw", "classmtgb_1_1DirectWrite.html#a417b0a5657098462840946abfc3a84f0", null ],
+    [ "ImmediateDraw", "classmtgb_1_1DirectWrite.html#a1630eaf7c487f627d3d722461939a84e", null ],
+    [ "ImmediateDraw", "classmtgb_1_1DirectWrite.html#a277ced05e6e3664428c39c11895c1635", null ],
+    [ "ImmediateDraw", "classmtgb_1_1DirectWrite.html#a225b361b62e409def2eeaf2e9349f71e", null ],
+    [ "Initialize", "classmtgb_1_1DirectWrite.html#a08ab0026decac5413d49ce5ef5b42a96", null ],
+    [ "Release", "classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db", null ],
+    [ "SetTextAlignment", "classmtgb_1_1DirectWrite.html#a504240749e353c0224b73475506863ef", null ],
+    [ "Update", "classmtgb_1_1DirectWrite.html#a4bd26f445329dcfe094ab66a4d9f7203", null ],
+    [ "fontMetrics_", "classmtgb_1_1DirectWrite.html#aea2e5e3b54bfa21968f5b12d75e4009f", null ],
+    [ "pDWriteFactory_", "classmtgb_1_1DirectWrite.html#abe11b685db42b66366bfd01bdade6506", null ],
+    [ "pDWriteFont_", "classmtgb_1_1DirectWrite.html#a185ebf956e6fffe61fab1f07f530aabd", null ],
+    [ "pFontCollection_", "classmtgb_1_1DirectWrite.html#abe502c5e0c5ab340ace631a5562e544d", null ],
+    [ "pFontFamily_", "classmtgb_1_1DirectWrite.html#a32ecc2d00f4df6fbb9726ea7d1152a2e", null ],
+    [ "pixelFontMetrics_", "classmtgb_1_1DirectWrite.html#adb2df42ba7516fad4f04d32e77700981", null ],
+    [ "pTextFormat_", "classmtgb_1_1DirectWrite.html#ae5913ffb188970dec6b71ddd41173104", null ]
+];

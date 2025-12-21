@@ -1,0 +1,1009 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: imgui_impl_dx11.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('imgui__impl__dx11_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">imgui_impl_dx11.h ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="imgui_8h_source.html">imgui.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+imgui_impl_dx11.h の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h__incl.svg" width="582" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h__dep__incl.svg" width="903" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="imgui__impl__dx11_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImGui__ImplDX11__RenderState.html">ImGui_ImplDX11_RenderState</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a60cbe3d8f2a95057ca8c80be9572931c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8h.html#a60cbe3d8f2a95057ca8c80be9572931c">ImGui_ImplDX11_Init</a> (ID3D11Device *device, ID3D11DeviceContext *device_context)</td></tr>
+<tr class="separator:a60cbe3d8f2a95057ca8c80be9572931c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade24d515f742ddb132e8c67ac0ceb3f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8h.html#ade24d515f742ddb132e8c67ac0ceb3f4">ImGui_ImplDX11_Shutdown</a> ()</td></tr>
+<tr class="separator:ade24d515f742ddb132e8c67ac0ceb3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb8a78c16966fd0b479cd1ffbb89844"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8h.html#a9bb8a78c16966fd0b479cd1ffbb89844">ImGui_ImplDX11_NewFrame</a> ()</td></tr>
+<tr class="separator:a9bb8a78c16966fd0b479cd1ffbb89844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d1d4a3d19a213cb18b62a1a5b9de45f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8h.html#a4d1d4a3d19a213cb18b62a1a5b9de45f">ImGui_ImplDX11_RenderDrawData</a> (<a class="el" href="structImDrawData.html">ImDrawData</a> *draw_data)</td></tr>
+<tr class="separator:a4d1d4a3d19a213cb18b62a1a5b9de45f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eb95e896c6ec0c120df406a7dc06f6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8h.html#a1eb95e896c6ec0c120df406a7dc06f6d">ImGui_ImplDX11_CreateDeviceObjects</a> ()</td></tr>
+<tr class="separator:a1eb95e896c6ec0c120df406a7dc06f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38cdfde01faf3491228375ae0e1ab6ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8h.html#a38cdfde01faf3491228375ae0e1ab6ea">ImGui_ImplDX11_InvalidateDeviceObjects</a> ()</td></tr>
+<tr class="separator:a38cdfde01faf3491228375ae0e1ab6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa565b53019e62ce9fe83a48ea5111de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8h.html#aaa565b53019e62ce9fe83a48ea5111de">ImGui_ImplDX11_UpdateTexture</a> (<a class="el" href="structImTextureData.html">ImTextureData</a> *tex)</td></tr>
+<tr class="separator:aaa565b53019e62ce9fe83a48ea5111de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a1eb95e896c6ec0c120df406a7dc06f6d" name="a1eb95e896c6ec0c120df406a7dc06f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eb95e896c6ec0c120df406a7dc06f6d">&#9670;&#160;</a></span>ImGui_ImplDX11_CreateDeviceObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> bool ImGui_ImplDX11_CreateDeviceObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__dx11_8cpp_source.html">imgui_impl_dx11.cpp</a> の <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00430">430</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  431</span>{</div>
+<div class="line"><span class="lineno">  432</span>    <a class="code hl_struct" href="structImGui__ImplDX11__Data.html">ImGui_ImplDX11_Data</a>* bd = <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a6f2fc0574f090854d5aac193780c5f32">ImGui_ImplDX11_GetBackendData</a>();</div>
+<div class="line"><span class="lineno">  433</span>    <span class="keywordflow">if</span> (!bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>)</div>
+<div class="line"><span class="lineno">  434</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  435</span>    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a17219065c158199dda392d24b9b6e8a0">ImGui_ImplDX11_InvalidateDeviceObjects</a>();</div>
+<div class="line"><span class="lineno">  436</span> </div>
+<div class="line"><span class="lineno">  437</span>    <span class="comment">// By using D3DCompile() from &lt;d3dcompiler.h&gt; / d3dcompiler.lib, we introduce a dependency to a given version of d3dcompiler_XX.dll (see D3DCOMPILER_DLL_A)</span></div>
+<div class="line"><span class="lineno">  438</span>    <span class="comment">// If you would like to use this DX11 sample code but remove this dependency you can:</span></div>
+<div class="line"><span class="lineno">  439</span>    <span class="comment">//  1) compile once, save the compiled shader blobs into a file or source code and pass them to CreateVertexShader()/CreatePixelShader() [preferred solution]</span></div>
+<div class="line"><span class="lineno">  440</span>    <span class="comment">//  2) use code to detect any version of the DLL and grab a pointer to D3DCompile from the DLL.</span></div>
+<div class="line"><span class="lineno">  441</span>    <span class="comment">// See https://github.com/ocornut/imgui/pull/638 for sources and details.</span></div>
+<div class="line"><span class="lineno">  442</span> </div>
+<div class="line"><span class="lineno">  443</span>    <span class="comment">// Create the vertex shader</span></div>
+<div class="line"><span class="lineno">  444</span>    {</div>
+<div class="line"><span class="lineno">  445</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* vertexShader =</div>
+<div class="line"><span class="lineno">  446</span>            <span class="stringliteral">&quot;cbuffer vertexBuffer : register(b0) \</span></div>
+<div class="line"><span class="lineno">  447</span><span class="stringliteral">            {\</span></div>
+<div class="line"><span class="lineno">  448</span><span class="stringliteral">              float4x4 ProjectionMatrix; \</span></div>
+<div class="line"><span class="lineno">  449</span><span class="stringliteral">            };\</span></div>
+<div class="line"><span class="lineno">  450</span><span class="stringliteral">            struct VS_INPUT\</span></div>
+<div class="line"><span class="lineno">  451</span><span class="stringliteral">            {\</span></div>
+<div class="line"><span class="lineno">  452</span><span class="stringliteral">              float2 pos : POSITION;\</span></div>
+<div class="line"><span class="lineno">  453</span><span class="stringliteral">              float4 col : COLOR0;\</span></div>
+<div class="line"><span class="lineno">  454</span><span class="stringliteral">              float2 uv  : TEXCOORD0;\</span></div>
+<div class="line"><span class="lineno">  455</span><span class="stringliteral">            };\</span></div>
+<div class="line"><span class="lineno">  456</span><span class="stringliteral">            \</span></div>
+<div class="line"><span class="lineno">  457</span><span class="stringliteral">            struct PS_INPUT\</span></div>
+<div class="line"><span class="lineno">  458</span><span class="stringliteral">            {\</span></div>
+<div class="line"><span class="lineno">  459</span><span class="stringliteral">              float4 pos : SV_POSITION;\</span></div>
+<div class="line"><span class="lineno">  460</span><span class="stringliteral">              float4 col : COLOR0;\</span></div>
+<div class="line"><span class="lineno">  461</span><span class="stringliteral">              float2 uv  : TEXCOORD0;\</span></div>
+<div class="line"><span class="lineno">  462</span><span class="stringliteral">            };\</span></div>
+<div class="line"><span class="lineno">  463</span><span class="stringliteral">            \</span></div>
+<div class="line"><span class="lineno">  464</span><span class="stringliteral">            PS_INPUT main(VS_INPUT input)\</span></div>
+<div class="line"><span class="lineno">  465</span><span class="stringliteral">            {\</span></div>
+<div class="line"><span class="lineno">  466</span><span class="stringliteral">              PS_INPUT output;\</span></div>
+<div class="line"><span class="lineno">  467</span><span class="stringliteral">              output.pos = mul( ProjectionMatrix, float4(input.pos.xy, 0.f, 1.f));\</span></div>
+<div class="line"><span class="lineno">  468</span><span class="stringliteral">              output.col = input.col;\</span></div>
+<div class="line"><span class="lineno">  469</span><span class="stringliteral">              output.uv  = input.uv;\</span></div>
+<div class="line"><span class="lineno">  470</span><span class="stringliteral">              return output;\</span></div>
+<div class="line"><span class="lineno">  471</span><span class="stringliteral">            }&quot;</span>;</div>
+<div class="line"><span class="lineno">  472</span> </div>
+<div class="line"><span class="lineno">  473</span>        ID3DBlob* vertexShaderBlob;</div>
+<div class="line"><span class="lineno">  474</span>        <span class="keywordflow">if</span> (FAILED(D3DCompile(vertexShader, <a class="code hl_function" href="namespacerefl_1_1util_1_1detail.html#ab42400654840909e72927216b33ff09a">strlen</a>(vertexShader), <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;main&quot;</span>, <span class="stringliteral">&quot;vs_4_0&quot;</span>, 0, 0, &amp;vertexShaderBlob, <span class="keyword">nullptr</span>)))</div>
+<div class="line"><span class="lineno">  475</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// NB: Pass ID3DBlob* pErrorBlob to D3DCompile() to get error showing in (const char*)pErrorBlob-&gt;GetBufferPointer(). Make sure to Release() the blob!</span></div>
+<div class="line"><span class="lineno">  476</span>        <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateVertexShader(vertexShaderBlob-&gt;GetBufferPointer(), vertexShaderBlob-&gt;GetBufferSize(), <span class="keyword">nullptr</span>, &amp;bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bf35c9f2fb90f73893cf08b0110991e">pVertexShader</a>) != S_OK)</div>
+<div class="line"><span class="lineno">  477</span>        {</div>
+<div class="line"><span class="lineno">  478</span>            vertexShaderBlob-&gt;Release();</div>
+<div class="line"><span class="lineno">  479</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  480</span>        }</div>
+<div class="line"><span class="lineno">  481</span> </div>
+<div class="line"><span class="lineno">  482</span>        <span class="comment">// Create the input layout</span></div>
+<div class="line"><span class="lineno">  483</span>        D3D11_INPUT_ELEMENT_DESC local_layout[] =</div>
+<div class="line"><span class="lineno">  484</span>        {</div>
+<div class="line"><span class="lineno">  485</span>            { <span class="stringliteral">&quot;POSITION&quot;</span>, 0, DXGI_FORMAT_R32G32_FLOAT,   0, (UINT)offsetof(<a class="code hl_struct" href="structImDrawVert.html">ImDrawVert</a>, pos), D3D11_INPUT_PER_VERTEX_DATA, 0 },</div>
+<div class="line"><span class="lineno">  486</span>            { <span class="stringliteral">&quot;TEXCOORD&quot;</span>, 0, DXGI_FORMAT_R32G32_FLOAT,   0, (UINT)offsetof(<a class="code hl_struct" href="structImDrawVert.html">ImDrawVert</a>, uv),  D3D11_INPUT_PER_VERTEX_DATA, 0 },</div>
+<div class="line"><span class="lineno">  487</span>            { <span class="stringliteral">&quot;COLOR&quot;</span>,    0, DXGI_FORMAT_R8G8B8A8_UNORM, 0, (UINT)offsetof(<a class="code hl_struct" href="structImDrawVert.html">ImDrawVert</a>, col), D3D11_INPUT_PER_VERTEX_DATA, 0 },</div>
+<div class="line"><span class="lineno">  488</span>        };</div>
+<div class="line"><span class="lineno">  489</span>        <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateInputLayout(local_layout, 3, vertexShaderBlob-&gt;GetBufferPointer(), vertexShaderBlob-&gt;GetBufferSize(), &amp;bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a5d229535588d43fae7f026c6abee58d8">pInputLayout</a>) != S_OK)</div>
+<div class="line"><span class="lineno">  490</span>        {</div>
+<div class="line"><span class="lineno">  491</span>            vertexShaderBlob-&gt;Release();</div>
+<div class="line"><span class="lineno">  492</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  493</span>        }</div>
+<div class="line"><span class="lineno">  494</span>        vertexShaderBlob-&gt;Release();</div>
+<div class="line"><span class="lineno">  495</span> </div>
+<div class="line"><span class="lineno">  496</span>        <span class="comment">// Create the constant buffer</span></div>
+<div class="line"><span class="lineno">  497</span>        {</div>
+<div class="line"><span class="lineno">  498</span>            D3D11_BUFFER_DESC desc = {};</div>
+<div class="line"><span class="lineno">  499</span>            desc.ByteWidth = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structVERTEX__CONSTANT__BUFFER__DX11.html">VERTEX_CONSTANT_BUFFER_DX11</a>);</div>
+<div class="line"><span class="lineno">  500</span>            desc.Usage = D3D11_USAGE_DYNAMIC;</div>
+<div class="line"><span class="lineno">  501</span>            desc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;</div>
+<div class="line"><span class="lineno">  502</span>            desc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;</div>
+<div class="line"><span class="lineno">  503</span>            desc.MiscFlags = 0;</div>
+<div class="line"><span class="lineno">  504</span>            bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateBuffer(&amp;desc, <span class="keyword">nullptr</span>, &amp;bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#adb3cba912c1fc6f47b7ba491c5dcdf83">pVertexConstantBuffer</a>);</div>
+<div class="line"><span class="lineno">  505</span>        }</div>
+<div class="line"><span class="lineno">  506</span>    }</div>
+<div class="line"><span class="lineno">  507</span> </div>
+<div class="line"><span class="lineno">  508</span>    <span class="comment">// Create the pixel shader</span></div>
+<div class="line"><span class="lineno">  509</span>    {</div>
+<div class="line"><span class="lineno">  510</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* pixelShader =</div>
+<div class="line"><span class="lineno">  511</span>            <span class="stringliteral">&quot;struct PS_INPUT\</span></div>
+<div class="line"><span class="lineno">  512</span><span class="stringliteral">            {\</span></div>
+<div class="line"><span class="lineno">  513</span><span class="stringliteral">            float4 pos : SV_POSITION;\</span></div>
+<div class="line"><span class="lineno">  514</span><span class="stringliteral">            float4 col : COLOR0;\</span></div>
+<div class="line"><span class="lineno">  515</span><span class="stringliteral">            float2 uv  : TEXCOORD0;\</span></div>
+<div class="line"><span class="lineno">  516</span><span class="stringliteral">            };\</span></div>
+<div class="line"><span class="lineno">  517</span><span class="stringliteral">            sampler sampler0;\</span></div>
+<div class="line"><span class="lineno">  518</span><span class="stringliteral">            Texture2D texture0;\</span></div>
+<div class="line"><span class="lineno">  519</span><span class="stringliteral">            \</span></div>
+<div class="line"><span class="lineno">  520</span><span class="stringliteral">            float4 main(PS_INPUT input) : SV_Target\</span></div>
+<div class="line"><span class="lineno">  521</span><span class="stringliteral">            {\</span></div>
+<div class="line"><span class="lineno">  522</span><span class="stringliteral">            float4 out_col = input.col * texture0.Sample(sampler0, input.uv); \</span></div>
+<div class="line"><span class="lineno">  523</span><span class="stringliteral">            return out_col; \</span></div>
+<div class="line"><span class="lineno">  524</span><span class="stringliteral">            }&quot;</span>;</div>
+<div class="line"><span class="lineno">  525</span> </div>
+<div class="line"><span class="lineno">  526</span>        ID3DBlob* pixelShaderBlob;</div>
+<div class="line"><span class="lineno">  527</span>        <span class="keywordflow">if</span> (FAILED(D3DCompile(pixelShader, <a class="code hl_function" href="namespacerefl_1_1util_1_1detail.html#ab42400654840909e72927216b33ff09a">strlen</a>(pixelShader), <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;main&quot;</span>, <span class="stringliteral">&quot;ps_4_0&quot;</span>, 0, 0, &amp;pixelShaderBlob, <span class="keyword">nullptr</span>)))</div>
+<div class="line"><span class="lineno">  528</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// NB: Pass ID3DBlob* pErrorBlob to D3DCompile() to get error showing in (const char*)pErrorBlob-&gt;GetBufferPointer(). Make sure to Release() the blob!</span></div>
+<div class="line"><span class="lineno">  529</span>        <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreatePixelShader(pixelShaderBlob-&gt;GetBufferPointer(), pixelShaderBlob-&gt;GetBufferSize(), <span class="keyword">nullptr</span>, &amp;bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a0063b20fb683e66ce3b5d900d3b8e319">pPixelShader</a>) != S_OK)</div>
+<div class="line"><span class="lineno">  530</span>        {</div>
+<div class="line"><span class="lineno">  531</span>            pixelShaderBlob-&gt;Release();</div>
+<div class="line"><span class="lineno">  532</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  533</span>        }</div>
+<div class="line"><span class="lineno">  534</span>        pixelShaderBlob-&gt;Release();</div>
+<div class="line"><span class="lineno">  535</span>    }</div>
+<div class="line"><span class="lineno">  536</span> </div>
+<div class="line"><span class="lineno">  537</span>    <span class="comment">// Create the blending setup</span></div>
+<div class="line"><span class="lineno">  538</span>    {</div>
+<div class="line"><span class="lineno">  539</span>        D3D11_BLEND_DESC desc;</div>
+<div class="line"><span class="lineno">  540</span>        ZeroMemory(&amp;desc, <span class="keyword">sizeof</span>(desc));</div>
+<div class="line"><span class="lineno">  541</span>        desc.AlphaToCoverageEnable = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  542</span>        desc.RenderTarget[0].BlendEnable = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  543</span>        desc.RenderTarget[0].SrcBlend = D3D11_BLEND_SRC_ALPHA;</div>
+<div class="line"><span class="lineno">  544</span>        desc.RenderTarget[0].DestBlend = D3D11_BLEND_INV_SRC_ALPHA;</div>
+<div class="line"><span class="lineno">  545</span>        desc.RenderTarget[0].BlendOp = D3D11_BLEND_OP_ADD;</div>
+<div class="line"><span class="lineno">  546</span>        desc.RenderTarget[0].SrcBlendAlpha = D3D11_BLEND_ONE;</div>
+<div class="line"><span class="lineno">  547</span>        desc.RenderTarget[0].DestBlendAlpha = D3D11_BLEND_INV_SRC_ALPHA;</div>
+<div class="line"><span class="lineno">  548</span>        desc.RenderTarget[0].BlendOpAlpha = D3D11_BLEND_OP_ADD;</div>
+<div class="line"><span class="lineno">  549</span>        desc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;</div>
+<div class="line"><span class="lineno">  550</span>        bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateBlendState(&amp;desc, &amp;bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a0c74ff124f14c3385eb988379b40b503">pBlendState</a>);</div>
+<div class="line"><span class="lineno">  551</span>    }</div>
+<div class="line"><span class="lineno">  552</span> </div>
+<div class="line"><span class="lineno">  553</span>    <span class="comment">// Create the rasterizer state</span></div>
+<div class="line"><span class="lineno">  554</span>    {</div>
+<div class="line"><span class="lineno">  555</span>        D3D11_RASTERIZER_DESC desc;</div>
+<div class="line"><span class="lineno">  556</span>        ZeroMemory(&amp;desc, <span class="keyword">sizeof</span>(desc));</div>
+<div class="line"><span class="lineno">  557</span>        desc.FillMode = D3D11_FILL_SOLID;</div>
+<div class="line"><span class="lineno">  558</span>        desc.CullMode = D3D11_CULL_NONE;</div>
+<div class="line"><span class="lineno">  559</span>        desc.ScissorEnable = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  560</span>        desc.DepthClipEnable = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  561</span>        bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateRasterizerState(&amp;desc, &amp;bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8946b9b863465246576ba71969c6a423">pRasterizerState</a>);</div>
+<div class="line"><span class="lineno">  562</span>    }</div>
+<div class="line"><span class="lineno">  563</span> </div>
+<div class="line"><span class="lineno">  564</span>    <span class="comment">// Create depth-stencil State</span></div>
+<div class="line"><span class="lineno">  565</span>    {</div>
+<div class="line"><span class="lineno">  566</span>        D3D11_DEPTH_STENCIL_DESC desc;</div>
+<div class="line"><span class="lineno">  567</span>        ZeroMemory(&amp;desc, <span class="keyword">sizeof</span>(desc));</div>
+<div class="line"><span class="lineno">  568</span>        desc.DepthEnable = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  569</span>        desc.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ALL;</div>
+<div class="line"><span class="lineno">  570</span>        desc.DepthFunc = D3D11_COMPARISON_ALWAYS;</div>
+<div class="line"><span class="lineno">  571</span>        desc.StencilEnable = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  572</span>        desc.FrontFace.StencilFailOp = desc.FrontFace.StencilDepthFailOp = desc.FrontFace.StencilPassOp = D3D11_STENCIL_OP_KEEP;</div>
+<div class="line"><span class="lineno">  573</span>        desc.FrontFace.StencilFunc = D3D11_COMPARISON_ALWAYS;</div>
+<div class="line"><span class="lineno">  574</span>        desc.BackFace = desc.FrontFace;</div>
+<div class="line"><span class="lineno">  575</span>        bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateDepthStencilState(&amp;desc, &amp;bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a7b8a3074d8ca165caecc0e40826459ea">pDepthStencilState</a>);</div>
+<div class="line"><span class="lineno">  576</span>    }</div>
+<div class="line"><span class="lineno">  577</span> </div>
+<div class="line"><span class="lineno">  578</span>    <span class="comment">// Create texture sampler</span></div>
+<div class="line"><span class="lineno">  579</span>    <span class="comment">// (Bilinear sampling is required by default. Set &#39;io.Fonts-&gt;Flags |= ImFontAtlasFlags_NoBakedLines&#39; or &#39;style.AntiAliasedLinesUseTex = false&#39; to allow point/nearest sampling)</span></div>
+<div class="line"><span class="lineno">  580</span>    {</div>
+<div class="line"><span class="lineno">  581</span>        D3D11_SAMPLER_DESC desc;</div>
+<div class="line"><span class="lineno">  582</span>        ZeroMemory(&amp;desc, <span class="keyword">sizeof</span>(desc));</div>
+<div class="line"><span class="lineno">  583</span>        desc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;</div>
+<div class="line"><span class="lineno">  584</span>        desc.AddressU = D3D11_TEXTURE_ADDRESS_CLAMP;</div>
+<div class="line"><span class="lineno">  585</span>        desc.AddressV = D3D11_TEXTURE_ADDRESS_CLAMP;</div>
+<div class="line"><span class="lineno">  586</span>        desc.AddressW = D3D11_TEXTURE_ADDRESS_CLAMP;</div>
+<div class="line"><span class="lineno">  587</span>        desc.MipLODBias = 0.f;</div>
+<div class="line"><span class="lineno">  588</span>        desc.ComparisonFunc = D3D11_COMPARISON_ALWAYS;</div>
+<div class="line"><span class="lineno">  589</span>        desc.MinLOD = 0.f;</div>
+<div class="line"><span class="lineno">  590</span>        desc.MaxLOD = 0.f;</div>
+<div class="line"><span class="lineno">  591</span>        bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateSamplerState(&amp;desc, &amp;bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a6923f0afcddf320c664c4e6a568bc2d2">pFontSampler</a>);</div>
+<div class="line"><span class="lineno">  592</span>    }</div>
+<div class="line"><span class="lineno">  593</span> </div>
+<div class="line"><span class="lineno">  594</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  595</span>}</div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_a17219065c158199dda392d24b9b6e8a0"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#a17219065c158199dda392d24b9b6e8a0">ImGui_ImplDX11_InvalidateDeviceObjects</a></div><div class="ttdeci">void ImGui_ImplDX11_InvalidateDeviceObjects()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00597">imgui_impl_dx11.cpp:597</a></div></div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_a6f2fc0574f090854d5aac193780c5f32"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#a6f2fc0574f090854d5aac193780c5f32">ImGui_ImplDX11_GetBackendData</a></div><div class="ttdeci">static ImGui_ImplDX11_Data * ImGui_ImplDX11_GetBackendData()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00100">imgui_impl_dx11.cpp:100</a></div></div>
+<div class="ttc" id="anamespacerefl_1_1util_1_1detail_html_ab42400654840909e72927216b33ff09a"><div class="ttname"><a href="namespacerefl_1_1util_1_1detail.html#ab42400654840909e72927216b33ff09a">refl::util::detail::strlen</a></div><div class="ttdeci">constexpr size_t strlen(const char *const str)</div><div class="ttdef"><b>Definition:</b> <a href="refl_8hpp_source.html#l00407">refl.hpp:407</a></div></div>
+<div class="ttc" id="astructImDrawVert_html"><div class="ttname"><a href="structImDrawVert.html">ImDrawVert</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03235">imgui.h:3236</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html"><div class="ttname"><a href="structImGui__ImplDX11__Data.html">ImGui_ImplDX11_Data</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00071">imgui_impl_dx11.cpp:72</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a0063b20fb683e66ce3b5d900d3b8e319"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a0063b20fb683e66ce3b5d900d3b8e319">ImGui_ImplDX11_Data::pPixelShader</a></div><div class="ttdeci">ID3D11PixelShader * pPixelShader</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00081">imgui_impl_dx11.cpp:81</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a0c74ff124f14c3385eb988379b40b503"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a0c74ff124f14c3385eb988379b40b503">ImGui_ImplDX11_Data::pBlendState</a></div><div class="ttdeci">ID3D11BlendState * pBlendState</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00084">imgui_impl_dx11.cpp:84</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a5d229535588d43fae7f026c6abee58d8"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a5d229535588d43fae7f026c6abee58d8">ImGui_ImplDX11_Data::pInputLayout</a></div><div class="ttdeci">ID3D11InputLayout * pInputLayout</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00079">imgui_impl_dx11.cpp:79</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a6923f0afcddf320c664c4e6a568bc2d2"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a6923f0afcddf320c664c4e6a568bc2d2">ImGui_ImplDX11_Data::pFontSampler</a></div><div class="ttdeci">ID3D11SamplerState * pFontSampler</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00082">imgui_impl_dx11.cpp:82</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a7b8a3074d8ca165caecc0e40826459ea"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a7b8a3074d8ca165caecc0e40826459ea">ImGui_ImplDX11_Data::pDepthStencilState</a></div><div class="ttdeci">ID3D11DepthStencilState * pDepthStencilState</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00085">imgui_impl_dx11.cpp:85</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a8946b9b863465246576ba71969c6a423"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a8946b9b863465246576ba71969c6a423">ImGui_ImplDX11_Data::pRasterizerState</a></div><div class="ttdeci">ID3D11RasterizerState * pRasterizerState</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00083">imgui_impl_dx11.cpp:83</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a8bf35c9f2fb90f73893cf08b0110991e"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a8bf35c9f2fb90f73893cf08b0110991e">ImGui_ImplDX11_Data::pVertexShader</a></div><div class="ttdeci">ID3D11VertexShader * pVertexShader</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00078">imgui_impl_dx11.cpp:78</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_adb3cba912c1fc6f47b7ba491c5dcdf83"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#adb3cba912c1fc6f47b7ba491c5dcdf83">ImGui_ImplDX11_Data::pVertexConstantBuffer</a></div><div class="ttdeci">ID3D11Buffer * pVertexConstantBuffer</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00080">imgui_impl_dx11.cpp:80</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_add616242fee6ce2d404271daf9464953"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">ImGui_ImplDX11_Data::pd3dDevice</a></div><div class="ttdeci">ID3D11Device * pd3dDevice</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00073">imgui_impl_dx11.cpp:73</a></div></div>
+<div class="ttc" id="astructVERTEX__CONSTANT__BUFFER__DX11_html"><div class="ttname"><a href="structVERTEX__CONSTANT__BUFFER__DX11.html">VERTEX_CONSTANT_BUFFER_DX11</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00093">imgui_impl_dx11.cpp:94</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00100">ImGui_ImplDX11_GetBackendData()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00597">ImGui_ImplDX11_InvalidateDeviceObjects()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00084">ImGui_ImplDX11_Data::pBlendState</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00073">ImGui_ImplDX11_Data::pd3dDevice</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00085">ImGui_ImplDX11_Data::pDepthStencilState</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00082">ImGui_ImplDX11_Data::pFontSampler</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00079">ImGui_ImplDX11_Data::pInputLayout</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00081">ImGui_ImplDX11_Data::pPixelShader</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00083">ImGui_ImplDX11_Data::pRasterizerState</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00080">ImGui_ImplDX11_Data::pVertexConstantBuffer</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00078">ImGui_ImplDX11_Data::pVertexShader</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00677">ImGui_ImplDX11_NewFrame()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_a1eb95e896c6ec0c120df406a7dc06f6d_cgraph.svg" width="1428" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_a1eb95e896c6ec0c120df406a7dc06f6d_icgraph.svg" width="928" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a60cbe3d8f2a95057ca8c80be9572931c" name="a60cbe3d8f2a95057ca8c80be9572931c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60cbe3d8f2a95057ca8c80be9572931c">&#9670;&#160;</a></span>ImGui_ImplDX11_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> bool ImGui_ImplDX11_Init </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11Device *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11DeviceContext *&#160;</td>
+          <td class="paramname"><em>device_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__dx11_8cpp_source.html">imgui_impl_dx11.cpp</a> の <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00620">620</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  621</span>{</div>
+<div class="line"><span class="lineno">  622</span>    <a class="code hl_struct" href="structImGuiIO.html">ImGuiIO</a>&amp; io = <a class="code hl_function" href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a>();</div>
+<div class="line"><span class="lineno">  623</span>    <a class="code hl_define" href="imgui_8h.html#a4846e0a12ef734d9467d31572034bf07">IMGUI_CHECKVERSION</a>();</div>
+<div class="line"><span class="lineno">  624</span>    <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(io.<a class="code hl_variable" href="structImGuiIO.html#a9d1b2553e914286e9f92ab62f3d38265">BackendRendererUserData</a> == <span class="keyword">nullptr</span> &amp;&amp; <span class="stringliteral">&quot;Already initialized a renderer backend!&quot;</span>);</div>
+<div class="line"><span class="lineno">  625</span> </div>
+<div class="line"><span class="lineno">  626</span>    <span class="comment">// Setup backend capabilities flags</span></div>
+<div class="line"><span class="lineno">  627</span>    <a class="code hl_struct" href="structImGui__ImplDX11__Data.html">ImGui_ImplDX11_Data</a>* bd = <a class="code hl_define" href="imgui_8h.html#a5e3b2a8968432747cd4932c539d76723">IM_NEW</a>(<a class="code hl_struct" href="structImGui__ImplDX11__Data.html">ImGui_ImplDX11_Data</a>)();</div>
+<div class="line"><span class="lineno">  628</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a9d1b2553e914286e9f92ab62f3d38265">BackendRendererUserData</a> = (<span class="keywordtype">void</span>*)bd;</div>
+<div class="line"><span class="lineno">  629</span>    io.<a class="code hl_variable" href="structImGuiIO.html#ad0902d7c892cff675fc0a685e8f1481d">BackendRendererName</a> = <span class="stringliteral">&quot;imgui_impl_dx11&quot;</span>;</div>
+<div class="line"><span class="lineno">  630</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c">BackendFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbead612101d424ac3203d379e0e30671277">ImGuiBackendFlags_RendererHasVtxOffset</a>;  <span class="comment">// We can honor the ImDrawCmd::VtxOffset field, allowing for large meshes.</span></div>
+<div class="line"><span class="lineno">  631</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c">BackendFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea2d49d38bbe755cf849b7e96bcf3f3cb5">ImGuiBackendFlags_RendererHasTextures</a>;   <span class="comment">// We can honor ImGuiPlatformIO::Textures[] requests during render.</span></div>
+<div class="line"><span class="lineno">  632</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c">BackendFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea6c39c97e4b9b07b8005f45183eb5aba8">ImGuiBackendFlags_RendererHasViewports</a>;  <span class="comment">// We can create multi-viewports on the Renderer side (optional)</span></div>
+<div class="line"><span class="lineno">  633</span> </div>
+<div class="line"><span class="lineno">  634</span>    <a class="code hl_struct" href="structImGuiPlatformIO.html">ImGuiPlatformIO</a>&amp; platform_io = <a class="code hl_function" href="namespaceImGui.html#a3edc2b6129cbf1e8d247c6d03c344065">ImGui::GetPlatformIO</a>();</div>
+<div class="line"><span class="lineno">  635</span>    platform_io.<a class="code hl_variable" href="structImGuiPlatformIO.html#acefa834102821c5938a8a2056e75c025">Renderer_TextureMaxWidth</a> = platform_io.<a class="code hl_variable" href="structImGuiPlatformIO.html#ab462799d636fe4cddb8ff376d6cee386">Renderer_TextureMaxHeight</a> = D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION;</div>
+<div class="line"><span class="lineno">  636</span> </div>
+<div class="line"><span class="lineno">  637</span>    <span class="comment">// Get factory from device</span></div>
+<div class="line"><span class="lineno">  638</span>    IDXGIDevice* pDXGIDevice = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  639</span>    IDXGIAdapter* pDXGIAdapter = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  640</span>    IDXGIFactory* pFactory = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  641</span> </div>
+<div class="line"><span class="lineno">  642</span>    <span class="keywordflow">if</span> (device-&gt;QueryInterface(IID_PPV_ARGS(&amp;pDXGIDevice)) == S_OK)</div>
+<div class="line"><span class="lineno">  643</span>        <span class="keywordflow">if</span> (pDXGIDevice-&gt;GetParent(IID_PPV_ARGS(&amp;pDXGIAdapter)) == S_OK)</div>
+<div class="line"><span class="lineno">  644</span>            <span class="keywordflow">if</span> (pDXGIAdapter-&gt;GetParent(IID_PPV_ARGS(&amp;pFactory)) == S_OK)</div>
+<div class="line"><span class="lineno">  645</span>            {</div>
+<div class="line"><span class="lineno">  646</span>                bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a> = device;</div>
+<div class="line"><span class="lineno">  647</span>                bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a4433fbb47832e1caa0c6857225653809">pd3dDeviceContext</a> = device_context;</div>
+<div class="line"><span class="lineno">  648</span>                bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a976b5ed8ae9c9f70a6f3dd8afc759246">pFactory</a> = pFactory;</div>
+<div class="line"><span class="lineno">  649</span>            }</div>
+<div class="line"><span class="lineno">  650</span>    <span class="keywordflow">if</span> (pDXGIDevice) pDXGIDevice-&gt;Release();</div>
+<div class="line"><span class="lineno">  651</span>    <span class="keywordflow">if</span> (pDXGIAdapter) pDXGIAdapter-&gt;Release();</div>
+<div class="line"><span class="lineno">  652</span>    bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;AddRef();</div>
+<div class="line"><span class="lineno">  653</span>    bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a4433fbb47832e1caa0c6857225653809">pd3dDeviceContext</a>-&gt;AddRef();</div>
+<div class="line"><span class="lineno">  654</span> </div>
+<div class="line"><span class="lineno">  655</span>    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a3effeadf194bc4370ebc8e38553f77d4">ImGui_ImplDX11_InitMultiViewportSupport</a>();</div>
+<div class="line"><span class="lineno">  656</span> </div>
+<div class="line"><span class="lineno">  657</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  658</span>}</div>
+<div class="ttc" id="aimgui_8h_html_a29add481c904a47bbbd2980555524fbea2d49d38bbe755cf849b7e96bcf3f3cb5"><div class="ttname"><a href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea2d49d38bbe755cf849b7e96bcf3f3cb5">ImGuiBackendFlags_RendererHasTextures</a></div><div class="ttdeci">@ ImGuiBackendFlags_RendererHasTextures</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01763">imgui.h:1763</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a29add481c904a47bbbd2980555524fbea6c39c97e4b9b07b8005f45183eb5aba8"><div class="ttname"><a href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea6c39c97e4b9b07b8005f45183eb5aba8">ImGuiBackendFlags_RendererHasViewports</a></div><div class="ttdeci">@ ImGuiBackendFlags_RendererHasViewports</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01768">imgui.h:1768</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a29add481c904a47bbbd2980555524fbead612101d424ac3203d379e0e30671277"><div class="ttname"><a href="imgui_8h.html#a29add481c904a47bbbd2980555524fbead612101d424ac3203d379e0e30671277">ImGuiBackendFlags_RendererHasVtxOffset</a></div><div class="ttdeci">@ ImGuiBackendFlags_RendererHasVtxOffset</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01762">imgui.h:1762</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a4846e0a12ef734d9467d31572034bf07"><div class="ttname"><a href="imgui_8h.html#a4846e0a12ef734d9467d31572034bf07">IMGUI_CHECKVERSION</a></div><div class="ttdeci">#define IMGUI_CHECKVERSION()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00102">imgui.h:102</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a5e3b2a8968432747cd4932c539d76723"><div class="ttname"><a href="imgui_8h.html#a5e3b2a8968432747cd4932c539d76723">IM_NEW</a></div><div class="ttdeci">#define IM_NEW(_TYPE)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02220">imgui.h:2220</a></div></div>
+<div class="ttc" id="aimgui_8h_html_acb09e7dc42e8e3cefb0ecaa197978920"><div class="ttname"><a href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a></div><div class="ttdeci">#define IM_ASSERT(_EXPR)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00096">imgui.h:96</a></div></div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_a3effeadf194bc4370ebc8e38553f77d4"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#a3effeadf194bc4370ebc8e38553f77d4">ImGui_ImplDX11_InitMultiViewportSupport</a></div><div class="ttdeci">static void ImGui_ImplDX11_InitMultiViewportSupport()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00803">imgui_impl_dx11.cpp:803</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a3179e560812f878f3961ce803a5d9302"><div class="ttname"><a href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a></div><div class="ttdeci">IMGUI_API ImGuiIO &amp; GetIO()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l05074">imgui.cpp:5074</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a3edc2b6129cbf1e8d247c6d03c344065"><div class="ttname"><a href="namespaceImGui.html#a3edc2b6129cbf1e8d247c6d03c344065">ImGui::GetPlatformIO</a></div><div class="ttdeci">IMGUI_API ImGuiPlatformIO &amp; GetPlatformIO()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l05087">imgui.cpp:5087</a></div></div>
+<div class="ttc" id="astructImGuiIO_html"><div class="ttname"><a href="structImGuiIO.html">ImGuiIO</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02418">imgui.h:2419</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a92288d3e802788c8c408eac2c12e709c"><div class="ttname"><a href="structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c">ImGuiIO::BackendFlags</a></div><div class="ttdeci">ImGuiBackendFlags BackendFlags</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02425">imgui.h:2425</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a9d1b2553e914286e9f92ab62f3d38265"><div class="ttname"><a href="structImGuiIO.html#a9d1b2553e914286e9f92ab62f3d38265">ImGuiIO::BackendRendererUserData</a></div><div class="ttdeci">void * BackendRendererUserData</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02548">imgui.h:2548</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_ad0902d7c892cff675fc0a685e8f1481d"><div class="ttname"><a href="structImGuiIO.html#ad0902d7c892cff675fc0a685e8f1481d">ImGuiIO::BackendRendererName</a></div><div class="ttdeci">const char * BackendRendererName</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02546">imgui.h:2546</a></div></div>
+<div class="ttc" id="astructImGuiPlatformIO_html"><div class="ttname"><a href="structImGuiPlatformIO.html">ImGuiPlatformIO</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l04081">imgui.h:4082</a></div></div>
+<div class="ttc" id="astructImGuiPlatformIO_html_ab462799d636fe4cddb8ff376d6cee386"><div class="ttname"><a href="structImGuiPlatformIO.html#ab462799d636fe4cddb8ff376d6cee386">ImGuiPlatformIO::Renderer_TextureMaxHeight</a></div><div class="ttdeci">int Renderer_TextureMaxHeight</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l04116">imgui.h:4116</a></div></div>
+<div class="ttc" id="astructImGuiPlatformIO_html_acefa834102821c5938a8a2056e75c025"><div class="ttname"><a href="structImGuiPlatformIO.html#acefa834102821c5938a8a2056e75c025">ImGuiPlatformIO::Renderer_TextureMaxWidth</a></div><div class="ttdeci">int Renderer_TextureMaxWidth</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l04115">imgui.h:4115</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a4433fbb47832e1caa0c6857225653809"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a4433fbb47832e1caa0c6857225653809">ImGui_ImplDX11_Data::pd3dDeviceContext</a></div><div class="ttdeci">ID3D11DeviceContext * pd3dDeviceContext</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00074">imgui_impl_dx11.cpp:74</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a976b5ed8ae9c9f70a6f3dd8afc759246"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a976b5ed8ae9c9f70a6f3dd8afc759246">ImGui_ImplDX11_Data::pFactory</a></div><div class="ttdeci">IDXGIFactory * pFactory</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00075">imgui_impl_dx11.cpp:75</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8h_source.html#l02425">ImGuiIO::BackendFlags</a>, <a class="el" href="imgui_8h_source.html#l02546">ImGuiIO::BackendRendererName</a>, <a class="el" href="imgui_8h_source.html#l02548">ImGuiIO::BackendRendererUserData</a>, <a class="el" href="imgui_8cpp_source.html#l05074">ImGui::GetIO()</a>, <a class="el" href="imgui_8cpp_source.html#l05087">ImGui::GetPlatformIO()</a>, <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui_8h_source.html#l02220">IM_NEW</a>, <a class="el" href="imgui_8h_source.html#l00102">IMGUI_CHECKVERSION</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00803">ImGui_ImplDX11_InitMultiViewportSupport()</a>, <a class="el" href="imgui_8h_source.html#l01763">ImGuiBackendFlags_RendererHasTextures</a>, <a class="el" href="imgui_8h_source.html#l01768">ImGuiBackendFlags_RendererHasViewports</a>, <a class="el" href="imgui_8h_source.html#l01762">ImGuiBackendFlags_RendererHasVtxOffset</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00073">ImGui_ImplDX11_Data::pd3dDevice</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00074">ImGui_ImplDX11_Data::pd3dDeviceContext</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00075">ImGui_ImplDX11_Data::pFactory</a>, <a class="el" href="imgui_8h_source.html#l04116">ImGuiPlatformIO::Renderer_TextureMaxHeight</a>, <a class="el" href="imgui_8h_source.html#l04115">ImGuiPlatformIO::Renderer_TextureMaxWidth</a> (計17項目).</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiRenderer_8cpp_source.html#l00037">mtgb::ImGuiRenderer::Initialize()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_a60cbe3d8f2a95057ca8c80be9572931c_cgraph.svg" width="2219" height="667"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_a60cbe3d8f2a95057ca8c80be9572931c_icgraph.svg" width="382" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a38cdfde01faf3491228375ae0e1ab6ea" name="a38cdfde01faf3491228375ae0e1ab6ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38cdfde01faf3491228375ae0e1ab6ea">&#9670;&#160;</a></span>ImGui_ImplDX11_InvalidateDeviceObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void ImGui_ImplDX11_InvalidateDeviceObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__dx11_8cpp_source.html">imgui_impl_dx11.cpp</a> の <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00597">597</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  598</span>{</div>
+<div class="line"><span class="lineno">  599</span>    <a class="code hl_struct" href="structImGui__ImplDX11__Data.html">ImGui_ImplDX11_Data</a>* bd = <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a6f2fc0574f090854d5aac193780c5f32">ImGui_ImplDX11_GetBackendData</a>();</div>
+<div class="line"><span class="lineno">  600</span>    <span class="keywordflow">if</span> (!bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>)</div>
+<div class="line"><span class="lineno">  601</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  602</span> </div>
+<div class="line"><span class="lineno">  603</span>    <span class="comment">// Destroy all textures</span></div>
+<div class="line"><span class="lineno">  604</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="structImTextureData.html">ImTextureData</a>* tex : <a class="code hl_function" href="namespaceImGui.html#a3edc2b6129cbf1e8d247c6d03c344065">ImGui::GetPlatformIO</a>().Textures)</div>
+<div class="line"><span class="lineno">  605</span>        <span class="keywordflow">if</span> (tex-&gt;RefCount == 1)</div>
+<div class="line"><span class="lineno">  606</span>            <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a71f7f9967b99744a679b890dd10d1dce">ImGui_ImplDX11_DestroyTexture</a>(tex);</div>
+<div class="line"><span class="lineno">  607</span> </div>
+<div class="line"><span class="lineno">  608</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a6923f0afcddf320c664c4e6a568bc2d2">pFontSampler</a>)           { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a6923f0afcddf320c664c4e6a568bc2d2">pFontSampler</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a6923f0afcddf320c664c4e6a568bc2d2">pFontSampler</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  609</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">pIB</a>)                    { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">pIB</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">pIB</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  610</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">pVB</a>)                    { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">pVB</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">pVB</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  611</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a0c74ff124f14c3385eb988379b40b503">pBlendState</a>)            { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a0c74ff124f14c3385eb988379b40b503">pBlendState</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a0c74ff124f14c3385eb988379b40b503">pBlendState</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  612</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a7b8a3074d8ca165caecc0e40826459ea">pDepthStencilState</a>)     { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a7b8a3074d8ca165caecc0e40826459ea">pDepthStencilState</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a7b8a3074d8ca165caecc0e40826459ea">pDepthStencilState</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  613</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8946b9b863465246576ba71969c6a423">pRasterizerState</a>)       { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8946b9b863465246576ba71969c6a423">pRasterizerState</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8946b9b863465246576ba71969c6a423">pRasterizerState</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  614</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a0063b20fb683e66ce3b5d900d3b8e319">pPixelShader</a>)           { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a0063b20fb683e66ce3b5d900d3b8e319">pPixelShader</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a0063b20fb683e66ce3b5d900d3b8e319">pPixelShader</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  615</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#adb3cba912c1fc6f47b7ba491c5dcdf83">pVertexConstantBuffer</a>)  { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#adb3cba912c1fc6f47b7ba491c5dcdf83">pVertexConstantBuffer</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#adb3cba912c1fc6f47b7ba491c5dcdf83">pVertexConstantBuffer</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  616</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a5d229535588d43fae7f026c6abee58d8">pInputLayout</a>)           { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a5d229535588d43fae7f026c6abee58d8">pInputLayout</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a5d229535588d43fae7f026c6abee58d8">pInputLayout</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  617</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bf35c9f2fb90f73893cf08b0110991e">pVertexShader</a>)          { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bf35c9f2fb90f73893cf08b0110991e">pVertexShader</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bf35c9f2fb90f73893cf08b0110991e">pVertexShader</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  618</span>}</div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_a71f7f9967b99744a679b890dd10d1dce"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#a71f7f9967b99744a679b890dd10d1dce">ImGui_ImplDX11_DestroyTexture</a></div><div class="ttdeci">static void ImGui_ImplDX11_DestroyTexture(ImTextureData *tex)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00351">imgui_impl_dx11.cpp:351</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a2f521cc47128e7820fb503365a22c043"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">ImGui_ImplDX11_Data::pVB</a></div><div class="ttdeci">ID3D11Buffer * pVB</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00076">imgui_impl_dx11.cpp:76</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a8bb250812875f9e75249ed908869f066"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">ImGui_ImplDX11_Data::pIB</a></div><div class="ttdeci">ID3D11Buffer * pIB</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00077">imgui_impl_dx11.cpp:77</a></div></div>
+<div class="ttc" id="astructImTextureData_html"><div class="ttname"><a href="structImTextureData.html">ImTextureData</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03544">imgui.h:3545</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8cpp_source.html#l05087">ImGui::GetPlatformIO()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00351">ImGui_ImplDX11_DestroyTexture()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00100">ImGui_ImplDX11_GetBackendData()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00084">ImGui_ImplDX11_Data::pBlendState</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00073">ImGui_ImplDX11_Data::pd3dDevice</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00085">ImGui_ImplDX11_Data::pDepthStencilState</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00082">ImGui_ImplDX11_Data::pFontSampler</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00077">ImGui_ImplDX11_Data::pIB</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00079">ImGui_ImplDX11_Data::pInputLayout</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00081">ImGui_ImplDX11_Data::pPixelShader</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00083">ImGui_ImplDX11_Data::pRasterizerState</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00076">ImGui_ImplDX11_Data::pVB</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00080">ImGui_ImplDX11_Data::pVertexConstantBuffer</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00078">ImGui_ImplDX11_Data::pVertexShader</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00430">ImGui_ImplDX11_CreateDeviceObjects()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00660">ImGui_ImplDX11_Shutdown()</a>, <a class="el" href="ImGuiRenderer_8cpp_source.html#l00175">mtgb::ImGuiRenderer::ResetComPtrs()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_a38cdfde01faf3491228375ae0e1ab6ea_cgraph.svg" width="1154" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_a38cdfde01faf3491228375ae0e1ab6ea_icgraph.svg" width="1180" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9bb8a78c16966fd0b479cd1ffbb89844" name="a9bb8a78c16966fd0b479cd1ffbb89844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb8a78c16966fd0b479cd1ffbb89844">&#9670;&#160;</a></span>ImGui_ImplDX11_NewFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void ImGui_ImplDX11_NewFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__dx11_8cpp_source.html">imgui_impl_dx11.cpp</a> の <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00677">677</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  678</span>{</div>
+<div class="line"><span class="lineno">  679</span>    <a class="code hl_struct" href="structImGui__ImplDX11__Data.html">ImGui_ImplDX11_Data</a>* bd = <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a6f2fc0574f090854d5aac193780c5f32">ImGui_ImplDX11_GetBackendData</a>();</div>
+<div class="line"><span class="lineno">  680</span>    <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(bd != <span class="keyword">nullptr</span> &amp;&amp; <span class="stringliteral">&quot;Context or backend not initialized! Did you call ImGui_ImplDX11_Init()?&quot;</span>);</div>
+<div class="line"><span class="lineno">  681</span> </div>
+<div class="line"><span class="lineno">  682</span>    <span class="keywordflow">if</span> (!bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bf35c9f2fb90f73893cf08b0110991e">pVertexShader</a>)</div>
+<div class="line"><span class="lineno">  683</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="imgui__impl__dx11_8cpp.html#aef205e132b1e823fd6ab4c50e930ed4c">ImGui_ImplDX11_CreateDeviceObjects</a>())</div>
+<div class="line"><span class="lineno">  684</span>            <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(0 &amp;&amp; <span class="stringliteral">&quot;ImGui_ImplDX11_CreateDeviceObjects() failed!&quot;</span>);</div>
+<div class="line"><span class="lineno">  685</span>}</div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_aef205e132b1e823fd6ab4c50e930ed4c"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#aef205e132b1e823fd6ab4c50e930ed4c">ImGui_ImplDX11_CreateDeviceObjects</a></div><div class="ttdeci">bool ImGui_ImplDX11_CreateDeviceObjects()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00430">imgui_impl_dx11.cpp:430</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00430">ImGui_ImplDX11_CreateDeviceObjects()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00100">ImGui_ImplDX11_GetBackendData()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00078">ImGui_ImplDX11_Data::pVertexShader</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiRenderer_8cpp_source.html#l00089">mtgb::ImGuiRenderer::BeginFrame()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_a9bb8a78c16966fd0b479cd1ffbb89844_cgraph.svg" width="1686" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_a9bb8a78c16966fd0b479cd1ffbb89844_icgraph.svg" width="654" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4d1d4a3d19a213cb18b62a1a5b9de45f" name="a4d1d4a3d19a213cb18b62a1a5b9de45f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d1d4a3d19a213cb18b62a1a5b9de45f">&#9670;&#160;</a></span>ImGui_ImplDX11_RenderDrawData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void ImGui_ImplDX11_RenderDrawData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImDrawData.html">ImDrawData</a> *&#160;</td>
+          <td class="paramname"><em>draw_data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__dx11_8cpp_source.html">imgui_impl_dx11.cpp</a> の <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00168">168</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  169</span>{</div>
+<div class="line"><span class="lineno">  170</span>    <span class="comment">// Avoid rendering when minimized</span></div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">if</span> (draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#a74d53447c8882a3ce6dc7aaa3e081f39">DisplaySize</a>.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a> &lt;= 0.0f || draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#a74d53447c8882a3ce6dc7aaa3e081f39">DisplaySize</a>.<a class="code hl_variable" href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">y</a> &lt;= 0.0f)</div>
+<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_struct" href="structImGui__ImplDX11__Data.html">ImGui_ImplDX11_Data</a>* bd = <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a6f2fc0574f090854d5aac193780c5f32">ImGui_ImplDX11_GetBackendData</a>();</div>
+<div class="line"><span class="lineno">  175</span>    ID3D11DeviceContext* device = bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a4433fbb47832e1caa0c6857225653809">pd3dDeviceContext</a>;</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>    <span class="comment">// Catch up with texture updates. Most of the times, the list will have 1 element with an OK status, aka nothing to do.</span></div>
+<div class="line"><span class="lineno">  178</span>    <span class="comment">// (This almost always points to ImGui::GetPlatformIO().Textures[] but is part of ImDrawData to allow overriding or disabling texture updates).</span></div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">if</span> (draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#a4522647c9957944e867f3d0a685494b0">Textures</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">for</span> (<a class="code hl_struct" href="structImTextureData.html">ImTextureData</a>* tex : *draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#a4522647c9957944e867f3d0a685494b0">Textures</a>)</div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">if</span> (tex-&gt;<a class="code hl_variable" href="structImTextureData.html#a27b7e872abe8da79fa5167d24ef71fe8">Status</a> != <a class="code hl_enumvalue" href="imgui_8h.html#a5c1fe5a7adf4a423ab5044dfdabf7deca725efb0ac82df45f3e734d8bd05065e7">ImTextureStatus_OK</a>)</div>
+<div class="line"><span class="lineno">  182</span>                <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#ad89ca8616114258839701901cef9300c">ImGui_ImplDX11_UpdateTexture</a>(tex);</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>    <span class="comment">// Create and grow vertex/index buffers if needed</span></div>
+<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">if</span> (!bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">pVB</a> || bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a356854ee727216fab041b77a80afff1e">VertexBufferSize</a> &lt; draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#af0035b52cdf91932b25eaf2da853965a">TotalVtxCount</a>)</div>
+<div class="line"><span class="lineno">  186</span>    {</div>
+<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">pVB</a>) { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">pVB</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">pVB</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  188</span>        bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a356854ee727216fab041b77a80afff1e">VertexBufferSize</a> = draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#af0035b52cdf91932b25eaf2da853965a">TotalVtxCount</a> + 5000;</div>
+<div class="line"><span class="lineno">  189</span>        D3D11_BUFFER_DESC desc = {};</div>
+<div class="line"><span class="lineno">  190</span>        desc.Usage = D3D11_USAGE_DYNAMIC;</div>
+<div class="line"><span class="lineno">  191</span>        desc.ByteWidth = bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a356854ee727216fab041b77a80afff1e">VertexBufferSize</a> * <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structImDrawVert.html">ImDrawVert</a>);</div>
+<div class="line"><span class="lineno">  192</span>        desc.BindFlags = D3D11_BIND_VERTEX_BUFFER;</div>
+<div class="line"><span class="lineno">  193</span>        desc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;</div>
+<div class="line"><span class="lineno">  194</span>        desc.MiscFlags = 0;</div>
+<div class="line"><span class="lineno">  195</span>        <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateBuffer(&amp;desc, <span class="keyword">nullptr</span>, &amp;bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">pVB</a>) &lt; 0)</div>
+<div class="line"><span class="lineno">  196</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  197</span>    }</div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordflow">if</span> (!bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">pIB</a> || bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#ac7d5bcde5f9906da4cad27bf17b43777">IndexBufferSize</a> &lt; draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#a1ac8a5d441f464628295ef91a0602fc5">TotalIdxCount</a>)</div>
+<div class="line"><span class="lineno">  199</span>    {</div>
+<div class="line"><span class="lineno">  200</span>        <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">pIB</a>) { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">pIB</a>-&gt;Release(); bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">pIB</a> = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><span class="lineno">  201</span>        bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#ac7d5bcde5f9906da4cad27bf17b43777">IndexBufferSize</a> = draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#a1ac8a5d441f464628295ef91a0602fc5">TotalIdxCount</a> + 10000;</div>
+<div class="line"><span class="lineno">  202</span>        D3D11_BUFFER_DESC desc = {};</div>
+<div class="line"><span class="lineno">  203</span>        desc.Usage = D3D11_USAGE_DYNAMIC;</div>
+<div class="line"><span class="lineno">  204</span>        desc.ByteWidth = bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#ac7d5bcde5f9906da4cad27bf17b43777">IndexBufferSize</a> * <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="imgui_8h.html#afdc8744a5ac1a968b1ddfa47e13b2fa1">ImDrawIdx</a>);</div>
+<div class="line"><span class="lineno">  205</span>        desc.BindFlags = D3D11_BIND_INDEX_BUFFER;</div>
+<div class="line"><span class="lineno">  206</span>        desc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;</div>
+<div class="line"><span class="lineno">  207</span>        <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateBuffer(&amp;desc, <span class="keyword">nullptr</span>, &amp;bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">pIB</a>) &lt; 0)</div>
+<div class="line"><span class="lineno">  208</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  209</span>    }</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="comment">// Upload vertex/index data into a single contiguous GPU buffer</span></div>
+<div class="line"><span class="lineno">  212</span>    D3D11_MAPPED_SUBRESOURCE vtx_resource, idx_resource;</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">if</span> (device-&gt;Map(bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">pVB</a>, 0, D3D11_MAP_WRITE_DISCARD, 0, &amp;vtx_resource) != S_OK)</div>
+<div class="line"><span class="lineno">  214</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">if</span> (device-&gt;Map(bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">pIB</a>, 0, D3D11_MAP_WRITE_DISCARD, 0, &amp;idx_resource) != S_OK)</div>
+<div class="line"><span class="lineno">  216</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_struct" href="structImDrawVert.html">ImDrawVert</a>* vtx_dst = (<a class="code hl_struct" href="structImDrawVert.html">ImDrawVert</a>*)vtx_resource.pData;</div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_typedef" href="imgui_8h.html#afdc8744a5ac1a968b1ddfa47e13b2fa1">ImDrawIdx</a>* idx_dst = (<a class="code hl_typedef" href="imgui_8h.html#afdc8744a5ac1a968b1ddfa47e13b2fa1">ImDrawIdx</a>*)idx_resource.pData;</div>
+<div class="line"><span class="lineno">  219</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#adc0bbc2881c15f78bdabe51d82582f4e">CmdListsCount</a>; n++)</div>
+<div class="line"><span class="lineno">  220</span>    {</div>
+<div class="line"><span class="lineno">  221</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structImDrawList.html">ImDrawList</a>* draw_list = draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#ad78ff9e65c4037c492ceade5d3ddd633">CmdLists</a>[n];</div>
+<div class="line"><span class="lineno">  222</span>        memcpy(vtx_dst, draw_list-&gt;<a class="code hl_variable" href="structImDrawList.html#aa8ff4aee39cf3c3791b7e29a7b4264be">VtxBuffer</a>.<a class="code hl_variable" href="structImVector.html#ac0e46e8b30cb079d93c8f0aad7d7cbd0">Data</a>, draw_list-&gt;<a class="code hl_variable" href="structImDrawList.html#aa8ff4aee39cf3c3791b7e29a7b4264be">VtxBuffer</a>.<a class="code hl_variable" href="structImVector.html#abbfd157947f66280d27b21d70a16df8d">Size</a> * <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structImDrawVert.html">ImDrawVert</a>));</div>
+<div class="line"><span class="lineno">  223</span>        memcpy(idx_dst, draw_list-&gt;<a class="code hl_variable" href="structImDrawList.html#adf292ff70a954d82daf061c609e75dfc">IdxBuffer</a>.<a class="code hl_variable" href="structImVector.html#ac0e46e8b30cb079d93c8f0aad7d7cbd0">Data</a>, draw_list-&gt;<a class="code hl_variable" href="structImDrawList.html#adf292ff70a954d82daf061c609e75dfc">IdxBuffer</a>.<a class="code hl_variable" href="structImVector.html#abbfd157947f66280d27b21d70a16df8d">Size</a> * <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="imgui_8h.html#afdc8744a5ac1a968b1ddfa47e13b2fa1">ImDrawIdx</a>));</div>
+<div class="line"><span class="lineno">  224</span>        vtx_dst += draw_list-&gt;<a class="code hl_variable" href="structImDrawList.html#aa8ff4aee39cf3c3791b7e29a7b4264be">VtxBuffer</a>.<a class="code hl_variable" href="structImVector.html#abbfd157947f66280d27b21d70a16df8d">Size</a>;</div>
+<div class="line"><span class="lineno">  225</span>        idx_dst += draw_list-&gt;<a class="code hl_variable" href="structImDrawList.html#adf292ff70a954d82daf061c609e75dfc">IdxBuffer</a>.<a class="code hl_variable" href="structImVector.html#abbfd157947f66280d27b21d70a16df8d">Size</a>;</div>
+<div class="line"><span class="lineno">  226</span>    }</div>
+<div class="line"><span class="lineno">  227</span>    device-&gt;Unmap(bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a2f521cc47128e7820fb503365a22c043">pVB</a>, 0);</div>
+<div class="line"><span class="lineno">  228</span>    device-&gt;Unmap(bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a8bb250812875f9e75249ed908869f066">pIB</a>, 0);</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    <span class="comment">// Backup DX state that will be modified to restore it afterwards (unfortunately this is very ugly looking and verbose. Close your eyes!)</span></div>
+<div class="line"><span class="lineno">  231</span>    <span class="keyword">struct </span>BACKUP_DX11_STATE</div>
+<div class="line"><span class="lineno">  232</span>    {</div>
+<div class="line"><span class="lineno">  233</span>        UINT                        ScissorRectsCount, ViewportsCount;</div>
+<div class="line"><span class="lineno">  234</span>        D3D11_RECT                  ScissorRects[D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE];</div>
+<div class="line"><span class="lineno">  235</span>        D3D11_VIEWPORT              Viewports[D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE];</div>
+<div class="line"><span class="lineno">  236</span>        ID3D11RasterizerState*      RS;</div>
+<div class="line"><span class="lineno">  237</span>        ID3D11BlendState*           BlendState;</div>
+<div class="line"><span class="lineno">  238</span>        FLOAT                       BlendFactor[4];</div>
+<div class="line"><span class="lineno">  239</span>        UINT                        SampleMask;</div>
+<div class="line"><span class="lineno">  240</span>        UINT                        StencilRef;</div>
+<div class="line"><span class="lineno">  241</span>        ID3D11DepthStencilState*    DepthStencilState;</div>
+<div class="line"><span class="lineno">  242</span>        ID3D11ShaderResourceView*   PSShaderResource;</div>
+<div class="line"><span class="lineno">  243</span>        ID3D11SamplerState*         PSSampler;</div>
+<div class="line"><span class="lineno">  244</span>        ID3D11PixelShader*          PS;</div>
+<div class="line"><span class="lineno">  245</span>        ID3D11VertexShader*         VS;</div>
+<div class="line"><span class="lineno">  246</span>        ID3D11GeometryShader*       GS;</div>
+<div class="line"><span class="lineno">  247</span>        UINT                        PSInstancesCount, VSInstancesCount, GSInstancesCount;</div>
+<div class="line"><span class="lineno">  248</span>        ID3D11ClassInstance         *PSInstances[256], *VSInstances[256], *GSInstances[256];   <span class="comment">// 256 is max according to PSSetShader documentation</span></div>
+<div class="line"><span class="lineno">  249</span>        D3D11_PRIMITIVE_TOPOLOGY    PrimitiveTopology;</div>
+<div class="line"><span class="lineno">  250</span>        ID3D11Buffer*               IndexBuffer, *VertexBuffer, *VSConstantBuffer;</div>
+<div class="line"><span class="lineno">  251</span>        UINT                        IndexBufferOffset, VertexBufferStride, VertexBufferOffset;</div>
+<div class="line"><span class="lineno">  252</span>        DXGI_FORMAT                 IndexBufferFormat;</div>
+<div class="line"><span class="lineno">  253</span>        ID3D11InputLayout*          InputLayout;</div>
+<div class="line"><span class="lineno">  254</span>    };</div>
+<div class="line"><span class="lineno">  255</span>    BACKUP_DX11_STATE old = {};</div>
+<div class="line"><span class="lineno">  256</span>    old.ScissorRectsCount = old.ViewportsCount = D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE;</div>
+<div class="line"><span class="lineno">  257</span>    device-&gt;RSGetScissorRects(&amp;old.ScissorRectsCount, old.ScissorRects);</div>
+<div class="line"><span class="lineno">  258</span>    device-&gt;RSGetViewports(&amp;old.ViewportsCount, old.Viewports);</div>
+<div class="line"><span class="lineno">  259</span>    device-&gt;RSGetState(&amp;old.RS);</div>
+<div class="line"><span class="lineno">  260</span>    device-&gt;OMGetBlendState(&amp;old.BlendState, old.BlendFactor, &amp;old.SampleMask);</div>
+<div class="line"><span class="lineno">  261</span>    device-&gt;OMGetDepthStencilState(&amp;old.DepthStencilState, &amp;old.StencilRef);</div>
+<div class="line"><span class="lineno">  262</span>    device-&gt;PSGetShaderResources(0, 1, &amp;old.PSShaderResource);</div>
+<div class="line"><span class="lineno">  263</span>    device-&gt;PSGetSamplers(0, 1, &amp;old.PSSampler);</div>
+<div class="line"><span class="lineno">  264</span>    old.PSInstancesCount = old.VSInstancesCount = old.GSInstancesCount = 256;</div>
+<div class="line"><span class="lineno">  265</span>    device-&gt;PSGetShader(&amp;old.PS, old.PSInstances, &amp;old.PSInstancesCount);</div>
+<div class="line"><span class="lineno">  266</span>    device-&gt;VSGetShader(&amp;old.VS, old.VSInstances, &amp;old.VSInstancesCount);</div>
+<div class="line"><span class="lineno">  267</span>    device-&gt;VSGetConstantBuffers(0, 1, &amp;old.VSConstantBuffer);</div>
+<div class="line"><span class="lineno">  268</span>    device-&gt;GSGetShader(&amp;old.GS, old.GSInstances, &amp;old.GSInstancesCount);</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>    device-&gt;IAGetPrimitiveTopology(&amp;old.PrimitiveTopology);</div>
+<div class="line"><span class="lineno">  271</span>    device-&gt;IAGetIndexBuffer(&amp;old.IndexBuffer, &amp;old.IndexBufferFormat, &amp;old.IndexBufferOffset);</div>
+<div class="line"><span class="lineno">  272</span>    device-&gt;IAGetVertexBuffers(0, 1, &amp;old.VertexBuffer, &amp;old.VertexBufferStride, &amp;old.VertexBufferOffset);</div>
+<div class="line"><span class="lineno">  273</span>    device-&gt;IAGetInputLayout(&amp;old.InputLayout);</div>
+<div class="line"><span class="lineno">  274</span> </div>
+<div class="line"><span class="lineno">  275</span>    <span class="comment">// Setup desired DX state</span></div>
+<div class="line"><span class="lineno">  276</span>    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#acafea0f4b8151239ee8621c0ec157ba6">ImGui_ImplDX11_SetupRenderState</a>(draw_data, device);</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>    <span class="comment">// Setup render state structure (for callbacks and custom texture bindings)</span></div>
+<div class="line"><span class="lineno">  279</span>    <a class="code hl_struct" href="structImGuiPlatformIO.html">ImGuiPlatformIO</a>&amp; platform_io = <a class="code hl_function" href="namespaceImGui.html#a3edc2b6129cbf1e8d247c6d03c344065">ImGui::GetPlatformIO</a>();</div>
+<div class="line"><span class="lineno">  280</span>    <a class="code hl_struct" href="structImGui__ImplDX11__RenderState.html">ImGui_ImplDX11_RenderState</a> render_state;</div>
+<div class="line"><span class="lineno">  281</span>    render_state.<a class="code hl_variable" href="structImGui__ImplDX11__RenderState.html#aa5280394b74970e8f1f4d12078b7d915">Device</a> = bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>;</div>
+<div class="line"><span class="lineno">  282</span>    render_state.<a class="code hl_variable" href="structImGui__ImplDX11__RenderState.html#ad0c04f4dee7da14bdd804daa2d87f71e">DeviceContext</a> = bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a4433fbb47832e1caa0c6857225653809">pd3dDeviceContext</a>;</div>
+<div class="line"><span class="lineno">  283</span>    render_state.<a class="code hl_variable" href="structImGui__ImplDX11__RenderState.html#a8a5b8cf191eb19d637b78de8bbf37763">SamplerDefault</a> = bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a6923f0afcddf320c664c4e6a568bc2d2">pFontSampler</a>;</div>
+<div class="line"><span class="lineno">  284</span>    render_state.<a class="code hl_variable" href="structImGui__ImplDX11__RenderState.html#a0649b20a4a249e4af8a111b8a5cb1dc0">VertexConstantBuffer</a> = bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#adb3cba912c1fc6f47b7ba491c5dcdf83">pVertexConstantBuffer</a>;</div>
+<div class="line"><span class="lineno">  285</span>    platform_io.<a class="code hl_variable" href="structImGuiPlatformIO.html#a9b3404100e81ba5986d85dd12226bdd1">Renderer_RenderState</a> = &amp;render_state;</div>
+<div class="line"><span class="lineno">  286</span> </div>
+<div class="line"><span class="lineno">  287</span>    <span class="comment">// Render command lists</span></div>
+<div class="line"><span class="lineno">  288</span>    <span class="comment">// (Because we merged all buffers into a single one, we maintain our own offset into them)</span></div>
+<div class="line"><span class="lineno">  289</span>    <span class="keywordtype">int</span> global_idx_offset = 0;</div>
+<div class="line"><span class="lineno">  290</span>    <span class="keywordtype">int</span> global_vtx_offset = 0;</div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_struct" href="structImVec2.html">ImVec2</a> clip_off = draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#a1e7755e98f5e24b1f4d9152766e6346e">DisplayPos</a>;</div>
+<div class="line"><span class="lineno">  292</span>    <a class="code hl_struct" href="structImVec2.html">ImVec2</a> clip_scale = draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#ad57d704d2e5aecd79454c98c8a8111ec">FramebufferScale</a>;</div>
+<div class="line"><span class="lineno">  293</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#adc0bbc2881c15f78bdabe51d82582f4e">CmdListsCount</a>; n++)</div>
+<div class="line"><span class="lineno">  294</span>    {</div>
+<div class="line"><span class="lineno">  295</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structImDrawList.html">ImDrawList</a>* draw_list = draw_data-&gt;<a class="code hl_variable" href="structImDrawData.html#ad78ff9e65c4037c492ceade5d3ddd633">CmdLists</a>[n];</div>
+<div class="line"><span class="lineno">  296</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> cmd_i = 0; cmd_i &lt; draw_list-&gt;<a class="code hl_variable" href="structImDrawList.html#a67a4b5cc4c83bc3b81d96c46cbd38a07">CmdBuffer</a>.<a class="code hl_variable" href="structImVector.html#abbfd157947f66280d27b21d70a16df8d">Size</a>; cmd_i++)</div>
+<div class="line"><span class="lineno">  297</span>        {</div>
+<div class="line"><span class="lineno">  298</span>            <span class="keyword">const</span> <a class="code hl_struct" href="structImDrawCmd.html">ImDrawCmd</a>* pcmd = &amp;draw_list-&gt;<a class="code hl_variable" href="structImDrawList.html#a67a4b5cc4c83bc3b81d96c46cbd38a07">CmdBuffer</a>[cmd_i];</div>
+<div class="line"><span class="lineno">  299</span>            <span class="keywordflow">if</span> (pcmd-&gt;<a class="code hl_variable" href="structImDrawCmd.html#ad26dac4e939f5c4bb892cbca0f9e3af8">UserCallback</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  300</span>            {</div>
+<div class="line"><span class="lineno">  301</span>                <span class="comment">// User callback, registered via ImDrawList::AddCallback()</span></div>
+<div class="line"><span class="lineno">  302</span>                <span class="comment">// (ImDrawCallback_ResetRenderState is a special callback value used by the user to request the renderer to reset render state.)</span></div>
+<div class="line"><span class="lineno">  303</span>                <span class="keywordflow">if</span> (pcmd-&gt;<a class="code hl_variable" href="structImDrawCmd.html#ad26dac4e939f5c4bb892cbca0f9e3af8">UserCallback</a> == <a class="code hl_define" href="imgui_8h.html#a3384811ea4939104d12b6915d13f011f">ImDrawCallback_ResetRenderState</a>)</div>
+<div class="line"><span class="lineno">  304</span>                    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#acafea0f4b8151239ee8621c0ec157ba6">ImGui_ImplDX11_SetupRenderState</a>(draw_data, device);</div>
+<div class="line"><span class="lineno">  305</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  306</span>                    pcmd-&gt;<a class="code hl_variable" href="structImDrawCmd.html#ad26dac4e939f5c4bb892cbca0f9e3af8">UserCallback</a>(draw_list, pcmd);</div>
+<div class="line"><span class="lineno">  307</span>            }</div>
+<div class="line"><span class="lineno">  308</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  309</span>            {</div>
+<div class="line"><span class="lineno">  310</span>                <span class="comment">// Project scissor/clipping rectangles into framebuffer space</span></div>
+<div class="line"><span class="lineno">  311</span>                <a class="code hl_struct" href="structImVec2.html">ImVec2</a> clip_min((pcmd-&gt;<a class="code hl_variable" href="structImDrawCmd.html#a838918f420ff81cb8dc7265077592daa">ClipRect</a>.<a class="code hl_variable" href="structImVec4.html#a2090f651f5e5b78fedae8dab87343db6">x</a> - clip_off.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a>) * clip_scale.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a>, (pcmd-&gt;<a class="code hl_variable" href="structImDrawCmd.html#a838918f420ff81cb8dc7265077592daa">ClipRect</a>.<a class="code hl_variable" href="structImVec4.html#a6b4d00ae261be4fe54353c759c561fe7">y</a> - clip_off.<a class="code hl_variable" href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">y</a>) * clip_scale.<a class="code hl_variable" href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">y</a>);</div>
+<div class="line"><span class="lineno">  312</span>                <a class="code hl_struct" href="structImVec2.html">ImVec2</a> clip_max((pcmd-&gt;<a class="code hl_variable" href="structImDrawCmd.html#a838918f420ff81cb8dc7265077592daa">ClipRect</a>.<a class="code hl_variable" href="structImVec4.html#aba6a75356917a28c967954bb29133a1a">z</a> - clip_off.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a>) * clip_scale.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a>, (pcmd-&gt;<a class="code hl_variable" href="structImDrawCmd.html#a838918f420ff81cb8dc7265077592daa">ClipRect</a>.<a class="code hl_variable" href="structImVec4.html#afeed5acd9f0d2043175f4da229d12a38">w</a> - clip_off.<a class="code hl_variable" href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">y</a>) * clip_scale.<a class="code hl_variable" href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">y</a>);</div>
+<div class="line"><span class="lineno">  313</span>                <span class="keywordflow">if</span> (clip_max.x &lt;= clip_min.x || clip_max.y &lt;= clip_min.y)</div>
+<div class="line"><span class="lineno">  314</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  315</span> </div>
+<div class="line"><span class="lineno">  316</span>                <span class="comment">// Apply scissor/clipping rectangle</span></div>
+<div class="line"><span class="lineno">  317</span>                <span class="keyword">const</span> D3D11_RECT r = { (<a class="code hl_typedef" href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>)clip_min.x, (<a class="code hl_typedef" href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>)clip_min.y, (<a class="code hl_typedef" href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>)clip_max.x, (<a class="code hl_typedef" href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>)clip_max.y };</div>
+<div class="line"><span class="lineno">  318</span>                device-&gt;RSSetScissorRects(1, &amp;r);</div>
+<div class="line"><span class="lineno">  319</span> </div>
+<div class="line"><span class="lineno">  320</span>                <span class="comment">// Bind texture, Draw</span></div>
+<div class="line"><span class="lineno">  321</span>                ID3D11ShaderResourceView* texture_srv = (ID3D11ShaderResourceView*)pcmd-&gt;<a class="code hl_function" href="structImDrawCmd.html#a8ba7df6d136db6e33d850acc9291224f">GetTexID</a>();</div>
+<div class="line"><span class="lineno">  322</span>                device-&gt;PSSetShaderResources(0, 1, &amp;texture_srv);</div>
+<div class="line"><span class="lineno">  323</span>                device-&gt;DrawIndexed(pcmd-&gt;<a class="code hl_variable" href="structImDrawCmd.html#aafe2532964fb1f6905d67d84dd3e8730">ElemCount</a>, pcmd-&gt;<a class="code hl_variable" href="structImDrawCmd.html#adec5adcd0cc6cf0da193bf0437fbba47">IdxOffset</a> + global_idx_offset, pcmd-&gt;<a class="code hl_variable" href="structImDrawCmd.html#a604086d3c94a18b3a79f171ee37edabb">VtxOffset</a> + global_vtx_offset);</div>
+<div class="line"><span class="lineno">  324</span>            }</div>
+<div class="line"><span class="lineno">  325</span>        }</div>
+<div class="line"><span class="lineno">  326</span>        global_idx_offset += draw_list-&gt;<a class="code hl_variable" href="structImDrawList.html#adf292ff70a954d82daf061c609e75dfc">IdxBuffer</a>.<a class="code hl_variable" href="structImVector.html#abbfd157947f66280d27b21d70a16df8d">Size</a>;</div>
+<div class="line"><span class="lineno">  327</span>        global_vtx_offset += draw_list-&gt;<a class="code hl_variable" href="structImDrawList.html#aa8ff4aee39cf3c3791b7e29a7b4264be">VtxBuffer</a>.<a class="code hl_variable" href="structImVector.html#abbfd157947f66280d27b21d70a16df8d">Size</a>;</div>
+<div class="line"><span class="lineno">  328</span>    }</div>
+<div class="line"><span class="lineno">  329</span>    platform_io.<a class="code hl_variable" href="structImGuiPlatformIO.html#a9b3404100e81ba5986d85dd12226bdd1">Renderer_RenderState</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  330</span> </div>
+<div class="line"><span class="lineno">  331</span>    <span class="comment">// Restore modified DX state</span></div>
+<div class="line"><span class="lineno">  332</span>    device-&gt;RSSetScissorRects(old.ScissorRectsCount, old.ScissorRects);</div>
+<div class="line"><span class="lineno">  333</span>    device-&gt;RSSetViewports(old.ViewportsCount, old.Viewports);</div>
+<div class="line"><span class="lineno">  334</span>    device-&gt;RSSetState(old.RS); <span class="keywordflow">if</span> (old.RS) old.RS-&gt;Release();</div>
+<div class="line"><span class="lineno">  335</span>    device-&gt;OMSetBlendState(old.BlendState, old.BlendFactor, old.SampleMask); <span class="keywordflow">if</span> (old.BlendState) old.BlendState-&gt;Release();</div>
+<div class="line"><span class="lineno">  336</span>    device-&gt;OMSetDepthStencilState(old.DepthStencilState, old.StencilRef); <span class="keywordflow">if</span> (old.DepthStencilState) old.DepthStencilState-&gt;Release();</div>
+<div class="line"><span class="lineno">  337</span>    device-&gt;PSSetShaderResources(0, 1, &amp;old.PSShaderResource); <span class="keywordflow">if</span> (old.PSShaderResource) old.PSShaderResource-&gt;Release();</div>
+<div class="line"><span class="lineno">  338</span>    device-&gt;PSSetSamplers(0, 1, &amp;old.PSSampler); <span class="keywordflow">if</span> (old.PSSampler) old.PSSampler-&gt;Release();</div>
+<div class="line"><span class="lineno">  339</span>    device-&gt;PSSetShader(old.PS, old.PSInstances, old.PSInstancesCount); <span class="keywordflow">if</span> (old.PS) old.PS-&gt;Release();</div>
+<div class="line"><span class="lineno">  340</span>    <span class="keywordflow">for</span> (UINT i = 0; i &lt; old.PSInstancesCount; i++) <span class="keywordflow">if</span> (old.PSInstances[i]) old.PSInstances[i]-&gt;Release();</div>
+<div class="line"><span class="lineno">  341</span>    device-&gt;VSSetShader(old.VS, old.VSInstances, old.VSInstancesCount); <span class="keywordflow">if</span> (old.VS) old.VS-&gt;Release();</div>
+<div class="line"><span class="lineno">  342</span>    device-&gt;VSSetConstantBuffers(0, 1, &amp;old.VSConstantBuffer); <span class="keywordflow">if</span> (old.VSConstantBuffer) old.VSConstantBuffer-&gt;Release();</div>
+<div class="line"><span class="lineno">  343</span>    device-&gt;GSSetShader(old.GS, old.GSInstances, old.GSInstancesCount); <span class="keywordflow">if</span> (old.GS) old.GS-&gt;Release();</div>
+<div class="line"><span class="lineno">  344</span>    <span class="keywordflow">for</span> (UINT i = 0; i &lt; old.VSInstancesCount; i++) <span class="keywordflow">if</span> (old.VSInstances[i]) old.VSInstances[i]-&gt;Release();</div>
+<div class="line"><span class="lineno">  345</span>    device-&gt;IASetPrimitiveTopology(old.PrimitiveTopology);</div>
+<div class="line"><span class="lineno">  346</span>    device-&gt;IASetIndexBuffer(old.IndexBuffer, old.IndexBufferFormat, old.IndexBufferOffset); <span class="keywordflow">if</span> (old.IndexBuffer) old.IndexBuffer-&gt;Release();</div>
+<div class="line"><span class="lineno">  347</span>    device-&gt;IASetVertexBuffers(0, 1, &amp;old.VertexBuffer, &amp;old.VertexBufferStride, &amp;old.VertexBufferOffset); <span class="keywordflow">if</span> (old.VertexBuffer) old.VertexBuffer-&gt;Release();</div>
+<div class="line"><span class="lineno">  348</span>    device-&gt;IASetInputLayout(old.InputLayout); <span class="keywordflow">if</span> (old.InputLayout) old.InputLayout-&gt;Release();</div>
+<div class="line"><span class="lineno">  349</span>}</div>
+<div class="ttc" id="aInputConfig_8h_html_a2a3e0cda5f1249bef6db47c5eb8e3813"><div class="ttname"><a href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a></div><div class="ttdeci">long LONG</div><div class="ttdef"><b>Definition:</b> <a href="InputConfig_8h_source.html#l00003">InputConfig.h:3</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a3384811ea4939104d12b6915d13f011f"><div class="ttname"><a href="imgui_8h.html#a3384811ea4939104d12b6915d13f011f">ImDrawCallback_ResetRenderState</a></div><div class="ttdeci">#define ImDrawCallback_ResetRenderState</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03207">imgui.h:3207</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a5c1fe5a7adf4a423ab5044dfdabf7deca725efb0ac82df45f3e734d8bd05065e7"><div class="ttname"><a href="imgui_8h.html#a5c1fe5a7adf4a423ab5044dfdabf7deca725efb0ac82df45f3e734d8bd05065e7">ImTextureStatus_OK</a></div><div class="ttdeci">@ ImTextureStatus_OK</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03521">imgui.h:3521</a></div></div>
+<div class="ttc" id="aimgui_8h_html_afdc8744a5ac1a968b1ddfa47e13b2fa1"><div class="ttname"><a href="imgui_8h.html#afdc8744a5ac1a968b1ddfa47e13b2fa1">ImDrawIdx</a></div><div class="ttdeci">unsigned short ImDrawIdx</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03189">imgui.h:3189</a></div></div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_acafea0f4b8151239ee8621c0ec157ba6"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#acafea0f4b8151239ee8621c0ec157ba6">ImGui_ImplDX11_SetupRenderState</a></div><div class="ttdeci">static void ImGui_ImplDX11_SetupRenderState(ImDrawData *draw_data, ID3D11DeviceContext *device_ctx)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00110">imgui_impl_dx11.cpp:110</a></div></div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_ad89ca8616114258839701901cef9300c"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#ad89ca8616114258839701901cef9300c">ImGui_ImplDX11_UpdateTexture</a></div><div class="ttdeci">void ImGui_ImplDX11_UpdateTexture(ImTextureData *tex)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00367">imgui_impl_dx11.cpp:367</a></div></div>
+<div class="ttc" id="astructImDrawCmd_html"><div class="ttname"><a href="structImDrawCmd.html">ImDrawCmd</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03214">imgui.h:3215</a></div></div>
+<div class="ttc" id="astructImDrawCmd_html_a604086d3c94a18b3a79f171ee37edabb"><div class="ttname"><a href="structImDrawCmd.html#a604086d3c94a18b3a79f171ee37edabb">ImDrawCmd::VtxOffset</a></div><div class="ttdeci">unsigned int VtxOffset</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03218">imgui.h:3218</a></div></div>
+<div class="ttc" id="astructImDrawCmd_html_a838918f420ff81cb8dc7265077592daa"><div class="ttname"><a href="structImDrawCmd.html#a838918f420ff81cb8dc7265077592daa">ImDrawCmd::ClipRect</a></div><div class="ttdeci">ImVec4 ClipRect</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03216">imgui.h:3216</a></div></div>
+<div class="ttc" id="astructImDrawCmd_html_a8ba7df6d136db6e33d850acc9291224f"><div class="ttname"><a href="structImDrawCmd.html#a8ba7df6d136db6e33d850acc9291224f">ImDrawCmd::GetTexID</a></div><div class="ttdeci">ImTextureID GetTexID() const</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03952">imgui.h:3952</a></div></div>
+<div class="ttc" id="astructImDrawCmd_html_aafe2532964fb1f6905d67d84dd3e8730"><div class="ttname"><a href="structImDrawCmd.html#aafe2532964fb1f6905d67d84dd3e8730">ImDrawCmd::ElemCount</a></div><div class="ttdeci">unsigned int ElemCount</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03220">imgui.h:3220</a></div></div>
+<div class="ttc" id="astructImDrawCmd_html_ad26dac4e939f5c4bb892cbca0f9e3af8"><div class="ttname"><a href="structImDrawCmd.html#ad26dac4e939f5c4bb892cbca0f9e3af8">ImDrawCmd::UserCallback</a></div><div class="ttdeci">ImDrawCallback UserCallback</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03221">imgui.h:3221</a></div></div>
+<div class="ttc" id="astructImDrawCmd_html_adec5adcd0cc6cf0da193bf0437fbba47"><div class="ttname"><a href="structImDrawCmd.html#adec5adcd0cc6cf0da193bf0437fbba47">ImDrawCmd::IdxOffset</a></div><div class="ttdeci">unsigned int IdxOffset</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03219">imgui.h:3219</a></div></div>
+<div class="ttc" id="astructImDrawData_html_a1ac8a5d441f464628295ef91a0602fc5"><div class="ttname"><a href="structImDrawData.html#a1ac8a5d441f464628295ef91a0602fc5">ImDrawData::TotalIdxCount</a></div><div class="ttdeci">int TotalIdxCount</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03483">imgui.h:3483</a></div></div>
+<div class="ttc" id="astructImDrawData_html_a1e7755e98f5e24b1f4d9152766e6346e"><div class="ttname"><a href="structImDrawData.html#a1e7755e98f5e24b1f4d9152766e6346e">ImDrawData::DisplayPos</a></div><div class="ttdeci">ImVec2 DisplayPos</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03486">imgui.h:3486</a></div></div>
+<div class="ttc" id="astructImDrawData_html_a4522647c9957944e867f3d0a685494b0"><div class="ttname"><a href="structImDrawData.html#a4522647c9957944e867f3d0a685494b0">ImDrawData::Textures</a></div><div class="ttdeci">ImVector&lt; ImTextureData * &gt; * Textures</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03490">imgui.h:3490</a></div></div>
+<div class="ttc" id="astructImDrawData_html_a74d53447c8882a3ce6dc7aaa3e081f39"><div class="ttname"><a href="structImDrawData.html#a74d53447c8882a3ce6dc7aaa3e081f39">ImDrawData::DisplaySize</a></div><div class="ttdeci">ImVec2 DisplaySize</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03487">imgui.h:3487</a></div></div>
+<div class="ttc" id="astructImDrawData_html_ad57d704d2e5aecd79454c98c8a8111ec"><div class="ttname"><a href="structImDrawData.html#ad57d704d2e5aecd79454c98c8a8111ec">ImDrawData::FramebufferScale</a></div><div class="ttdeci">ImVec2 FramebufferScale</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03488">imgui.h:3488</a></div></div>
+<div class="ttc" id="astructImDrawData_html_ad78ff9e65c4037c492ceade5d3ddd633"><div class="ttname"><a href="structImDrawData.html#ad78ff9e65c4037c492ceade5d3ddd633">ImDrawData::CmdLists</a></div><div class="ttdeci">ImVector&lt; ImDrawList * &gt; CmdLists</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03485">imgui.h:3485</a></div></div>
+<div class="ttc" id="astructImDrawData_html_adc0bbc2881c15f78bdabe51d82582f4e"><div class="ttname"><a href="structImDrawData.html#adc0bbc2881c15f78bdabe51d82582f4e">ImDrawData::CmdListsCount</a></div><div class="ttdeci">int CmdListsCount</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03482">imgui.h:3482</a></div></div>
+<div class="ttc" id="astructImDrawData_html_af0035b52cdf91932b25eaf2da853965a"><div class="ttname"><a href="structImDrawData.html#af0035b52cdf91932b25eaf2da853965a">ImDrawData::TotalVtxCount</a></div><div class="ttdeci">int TotalVtxCount</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03484">imgui.h:3484</a></div></div>
+<div class="ttc" id="astructImDrawList_html"><div class="ttname"><a href="structImDrawList.html">ImDrawList</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03321">imgui.h:3322</a></div></div>
+<div class="ttc" id="astructImDrawList_html_a67a4b5cc4c83bc3b81d96c46cbd38a07"><div class="ttname"><a href="structImDrawList.html#a67a4b5cc4c83bc3b81d96c46cbd38a07">ImDrawList::CmdBuffer</a></div><div class="ttdeci">ImVector&lt; ImDrawCmd &gt; CmdBuffer</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03324">imgui.h:3324</a></div></div>
+<div class="ttc" id="astructImDrawList_html_aa8ff4aee39cf3c3791b7e29a7b4264be"><div class="ttname"><a href="structImDrawList.html#aa8ff4aee39cf3c3791b7e29a7b4264be">ImDrawList::VtxBuffer</a></div><div class="ttdeci">ImVector&lt; ImDrawVert &gt; VtxBuffer</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03326">imgui.h:3326</a></div></div>
+<div class="ttc" id="astructImDrawList_html_adf292ff70a954d82daf061c609e75dfc"><div class="ttname"><a href="structImDrawList.html#adf292ff70a954d82daf061c609e75dfc">ImDrawList::IdxBuffer</a></div><div class="ttdeci">ImVector&lt; ImDrawIdx &gt; IdxBuffer</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03325">imgui.h:3325</a></div></div>
+<div class="ttc" id="astructImGuiPlatformIO_html_a9b3404100e81ba5986d85dd12226bdd1"><div class="ttname"><a href="structImGuiPlatformIO.html#a9b3404100e81ba5986d85dd12226bdd1">ImGuiPlatformIO::Renderer_RenderState</a></div><div class="ttdeci">void * Renderer_RenderState</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l04119">imgui.h:4119</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_a356854ee727216fab041b77a80afff1e"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#a356854ee727216fab041b77a80afff1e">ImGui_ImplDX11_Data::VertexBufferSize</a></div><div class="ttdeci">int VertexBufferSize</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00086">imgui_impl_dx11.cpp:86</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Data_html_ac7d5bcde5f9906da4cad27bf17b43777"><div class="ttname"><a href="structImGui__ImplDX11__Data.html#ac7d5bcde5f9906da4cad27bf17b43777">ImGui_ImplDX11_Data::IndexBufferSize</a></div><div class="ttdeci">int IndexBufferSize</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00087">imgui_impl_dx11.cpp:87</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__RenderState_html"><div class="ttname"><a href="structImGui__ImplDX11__RenderState.html">ImGui_ImplDX11_RenderState</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8h_source.html#l00044">imgui_impl_dx11.h:45</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__RenderState_html_a0649b20a4a249e4af8a111b8a5cb1dc0"><div class="ttname"><a href="structImGui__ImplDX11__RenderState.html#a0649b20a4a249e4af8a111b8a5cb1dc0">ImGui_ImplDX11_RenderState::VertexConstantBuffer</a></div><div class="ttdeci">ID3D11Buffer * VertexConstantBuffer</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8h_source.html#l00049">imgui_impl_dx11.h:49</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__RenderState_html_a8a5b8cf191eb19d637b78de8bbf37763"><div class="ttname"><a href="structImGui__ImplDX11__RenderState.html#a8a5b8cf191eb19d637b78de8bbf37763">ImGui_ImplDX11_RenderState::SamplerDefault</a></div><div class="ttdeci">ID3D11SamplerState * SamplerDefault</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8h_source.html#l00048">imgui_impl_dx11.h:48</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__RenderState_html_aa5280394b74970e8f1f4d12078b7d915"><div class="ttname"><a href="structImGui__ImplDX11__RenderState.html#aa5280394b74970e8f1f4d12078b7d915">ImGui_ImplDX11_RenderState::Device</a></div><div class="ttdeci">ID3D11Device * Device</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8h_source.html#l00046">imgui_impl_dx11.h:46</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__RenderState_html_ad0c04f4dee7da14bdd804daa2d87f71e"><div class="ttname"><a href="structImGui__ImplDX11__RenderState.html#ad0c04f4dee7da14bdd804daa2d87f71e">ImGui_ImplDX11_RenderState::DeviceContext</a></div><div class="ttdeci">ID3D11DeviceContext * DeviceContext</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8h_source.html#l00047">imgui_impl_dx11.h:47</a></div></div>
+<div class="ttc" id="astructImTextureData_html_a27b7e872abe8da79fa5167d24ef71fe8"><div class="ttname"><a href="structImTextureData.html#a27b7e872abe8da79fa5167d24ef71fe8">ImTextureData::Status</a></div><div class="ttdeci">ImTextureStatus Status</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03548">imgui.h:3548</a></div></div>
+<div class="ttc" id="astructImVec2_html"><div class="ttname"><a href="structImVec2.html">ImVec2</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00292">imgui.h:293</a></div></div>
+<div class="ttc" id="astructImVec2_html_a1f9d136ca837e147b793b19d25a3a618"><div class="ttname"><a href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">ImVec2::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00294">imgui.h:294</a></div></div>
+<div class="ttc" id="astructImVec2_html_a5802a68560961ed8cb8cc5fb2a244c2d"><div class="ttname"><a href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">ImVec2::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00294">imgui.h:294</a></div></div>
+<div class="ttc" id="astructImVec4_html_a2090f651f5e5b78fedae8dab87343db6"><div class="ttname"><a href="structImVec4.html#a2090f651f5e5b78fedae8dab87343db6">ImVec4::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00307">imgui.h:307</a></div></div>
+<div class="ttc" id="astructImVec4_html_a6b4d00ae261be4fe54353c759c561fe7"><div class="ttname"><a href="structImVec4.html#a6b4d00ae261be4fe54353c759c561fe7">ImVec4::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00307">imgui.h:307</a></div></div>
+<div class="ttc" id="astructImVec4_html_aba6a75356917a28c967954bb29133a1a"><div class="ttname"><a href="structImVec4.html#aba6a75356917a28c967954bb29133a1a">ImVec4::z</a></div><div class="ttdeci">float z</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00307">imgui.h:307</a></div></div>
+<div class="ttc" id="astructImVec4_html_afeed5acd9f0d2043175f4da229d12a38"><div class="ttname"><a href="structImVec4.html#afeed5acd9f0d2043175f4da229d12a38">ImVec4::w</a></div><div class="ttdeci">float w</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00307">imgui.h:307</a></div></div>
+<div class="ttc" id="astructImVector_html_abbfd157947f66280d27b21d70a16df8d"><div class="ttname"><a href="structImVector.html#abbfd157947f66280d27b21d70a16df8d">ImVector::Size</a></div><div class="ttdeci">int Size</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02238">imgui.h:2238</a></div></div>
+<div class="ttc" id="astructImVector_html_ac0e46e8b30cb079d93c8f0aad7d7cbd0"><div class="ttname"><a href="structImVector.html#ac0e46e8b30cb079d93c8f0aad7d7cbd0">ImVector::Data</a></div><div class="ttdeci">T * Data</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02240">imgui.h:2240</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8h_source.html#l03216">ImDrawCmd::ClipRect</a>, <a class="el" href="imgui_8h_source.html#l03324">ImDrawList::CmdBuffer</a>, <a class="el" href="imgui_8h_source.html#l03485">ImDrawData::CmdLists</a>, <a class="el" href="imgui_8h_source.html#l03482">ImDrawData::CmdListsCount</a>, <a class="el" href="imgui_8h_source.html#l02240">ImVector&lt; T &gt;::Data</a>, <a class="el" href="imgui__impl__dx11_8h_source.html#l00046">ImGui_ImplDX11_RenderState::Device</a>, <a class="el" href="imgui__impl__dx11_8h_source.html#l00047">ImGui_ImplDX11_RenderState::DeviceContext</a>, <a class="el" href="imgui_8h_source.html#l03486">ImDrawData::DisplayPos</a>, <a class="el" href="imgui_8h_source.html#l03487">ImDrawData::DisplaySize</a>, <a class="el" href="imgui_8h_source.html#l03220">ImDrawCmd::ElemCount</a>, <a class="el" href="imgui_8h_source.html#l03488">ImDrawData::FramebufferScale</a>, <a class="el" href="imgui_8cpp_source.html#l05087">ImGui::GetPlatformIO()</a>, <a class="el" href="imgui_8h_source.html#l03952">ImDrawCmd::GetTexID()</a>, <a class="el" href="imgui_8h_source.html#l03325">ImDrawList::IdxBuffer</a>, <a class="el" href="imgui_8h_source.html#l03219">ImDrawCmd::IdxOffset</a>, <a class="el" href="imgui_8h_source.html#l03207">ImDrawCallback_ResetRenderState</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00100">ImGui_ImplDX11_GetBackendData()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00110">ImGui_ImplDX11_SetupRenderState()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00367">ImGui_ImplDX11_UpdateTexture()</a>, <a class="el" href="imgui_8h_source.html#l03521">ImTextureStatus_OK</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00087">ImGui_ImplDX11_Data::IndexBufferSize</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00073">ImGui_ImplDX11_Data::pd3dDevice</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00074">ImGui_ImplDX11_Data::pd3dDeviceContext</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00082">ImGui_ImplDX11_Data::pFontSampler</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00077">ImGui_ImplDX11_Data::pIB</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00076">ImGui_ImplDX11_Data::pVB</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00080">ImGui_ImplDX11_Data::pVertexConstantBuffer</a>, <a class="el" href="imgui_8h_source.html#l04119">ImGuiPlatformIO::Renderer_RenderState</a>, <a class="el" href="imgui__impl__dx11_8h_source.html#l00048">ImGui_ImplDX11_RenderState::SamplerDefault</a>, <a class="el" href="imgui_8h_source.html#l02238">ImVector&lt; T &gt;::Size</a>, <a class="el" href="imgui_8h_source.html#l03548">ImTextureData::Status</a>, <a class="el" href="imgui_8h_source.html#l03490">ImDrawData::Textures</a>, <a class="el" href="imgui_8h_source.html#l03483">ImDrawData::TotalIdxCount</a>, <a class="el" href="imgui_8h_source.html#l03484">ImDrawData::TotalVtxCount</a>, <a class="el" href="imgui_8h_source.html#l03221">ImDrawCmd::UserCallback</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00086">ImGui_ImplDX11_Data::VertexBufferSize</a>, <a class="el" href="imgui__impl__dx11_8h_source.html#l00049">ImGui_ImplDX11_RenderState::VertexConstantBuffer</a>, <a class="el" href="imgui_8h_source.html#l03326">ImDrawList::VtxBuffer</a>, <a class="el" href="imgui_8h_source.html#l03218">ImDrawCmd::VtxOffset</a>, <a class="el" href="imgui_8h_source.html#l00307">ImVec4::w</a>, <a class="el" href="imgui_8h_source.html#l00294">ImVec2::x</a>, <a class="el" href="imgui_8h_source.html#l00307">ImVec4::x</a>, <a class="el" href="imgui_8h_source.html#l00294">ImVec2::y</a>, <a class="el" href="imgui_8h_source.html#l00307">ImVec4::y</a>, <a class="el" href="imgui_8h_source.html#l00307">ImVec4::z</a> (計45項目).</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiRenderer_8cpp_source.html#l00134">mtgb::ImGuiRenderer::EndFrame()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00786">ImGui_ImplDX11_RenderWindow()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_a4d1d4a3d19a213cb18b62a1a5b9de45f_cgraph.svg" width="1483" height="435"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_a4d1d4a3d19a213cb18b62a1a5b9de45f_icgraph.svg" width="1207" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ade24d515f742ddb132e8c67ac0ceb3f4" name="ade24d515f742ddb132e8c67ac0ceb3f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade24d515f742ddb132e8c67ac0ceb3f4">&#9670;&#160;</a></span>ImGui_ImplDX11_Shutdown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void ImGui_ImplDX11_Shutdown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__dx11_8cpp_source.html">imgui_impl_dx11.cpp</a> の <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00660">660</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  661</span>{</div>
+<div class="line"><span class="lineno">  662</span>    <a class="code hl_struct" href="structImGui__ImplDX11__Data.html">ImGui_ImplDX11_Data</a>* bd = <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a6f2fc0574f090854d5aac193780c5f32">ImGui_ImplDX11_GetBackendData</a>();</div>
+<div class="line"><span class="lineno">  663</span>    <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(bd != <span class="keyword">nullptr</span> &amp;&amp; <span class="stringliteral">&quot;No renderer backend to shutdown, or already shutdown?&quot;</span>);</div>
+<div class="line"><span class="lineno">  664</span>    <a class="code hl_struct" href="structImGuiIO.html">ImGuiIO</a>&amp; io = <a class="code hl_function" href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a>();</div>
+<div class="line"><span class="lineno">  665</span> </div>
+<div class="line"><span class="lineno">  666</span>    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a8cd44140b72bfc42b7d5642f34bd0c4b">ImGui_ImplDX11_ShutdownMultiViewportSupport</a>();</div>
+<div class="line"><span class="lineno">  667</span>    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a17219065c158199dda392d24b9b6e8a0">ImGui_ImplDX11_InvalidateDeviceObjects</a>();</div>
+<div class="line"><span class="lineno">  668</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a976b5ed8ae9c9f70a6f3dd8afc759246">pFactory</a>)             { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a976b5ed8ae9c9f70a6f3dd8afc759246">pFactory</a>-&gt;Release(); }</div>
+<div class="line"><span class="lineno">  669</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>)           { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;Release(); }</div>
+<div class="line"><span class="lineno">  670</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a4433fbb47832e1caa0c6857225653809">pd3dDeviceContext</a>)    { bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a4433fbb47832e1caa0c6857225653809">pd3dDeviceContext</a>-&gt;Release(); }</div>
+<div class="line"><span class="lineno">  671</span>    io.<a class="code hl_variable" href="structImGuiIO.html#ad0902d7c892cff675fc0a685e8f1481d">BackendRendererName</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  672</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a9d1b2553e914286e9f92ab62f3d38265">BackendRendererUserData</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  673</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c">BackendFlags</a> &amp;= ~(<a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbead612101d424ac3203d379e0e30671277">ImGuiBackendFlags_RendererHasVtxOffset</a> | <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea2d49d38bbe755cf849b7e96bcf3f3cb5">ImGuiBackendFlags_RendererHasTextures</a> | <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea6c39c97e4b9b07b8005f45183eb5aba8">ImGuiBackendFlags_RendererHasViewports</a>);</div>
+<div class="line"><span class="lineno">  674</span>    <a class="code hl_function" href="imgui_8h.html#a3c856832c3fe1da8767a9353da3707e1">IM_DELETE</a>(bd);</div>
+<div class="line"><span class="lineno">  675</span>}</div>
+<div class="ttc" id="aimgui_8h_html_a3c856832c3fe1da8767a9353da3707e1"><div class="ttname"><a href="imgui_8h.html#a3c856832c3fe1da8767a9353da3707e1">IM_DELETE</a></div><div class="ttdeci">void IM_DELETE(T *p)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02221">imgui.h:2221</a></div></div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_a8cd44140b72bfc42b7d5642f34bd0c4b"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#a8cd44140b72bfc42b7d5642f34bd0c4b">ImGui_ImplDX11_ShutdownMultiViewportSupport</a></div><div class="ttdeci">static void ImGui_ImplDX11_ShutdownMultiViewportSupport()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00826">imgui_impl_dx11.cpp:826</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8h_source.html#l02425">ImGuiIO::BackendFlags</a>, <a class="el" href="imgui_8h_source.html#l02546">ImGuiIO::BackendRendererName</a>, <a class="el" href="imgui_8h_source.html#l02548">ImGuiIO::BackendRendererUserData</a>, <a class="el" href="imgui_8cpp_source.html#l05074">ImGui::GetIO()</a>, <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui_8h_source.html#l02221">IM_DELETE()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00100">ImGui_ImplDX11_GetBackendData()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00597">ImGui_ImplDX11_InvalidateDeviceObjects()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00826">ImGui_ImplDX11_ShutdownMultiViewportSupport()</a>, <a class="el" href="imgui_8h_source.html#l01763">ImGuiBackendFlags_RendererHasTextures</a>, <a class="el" href="imgui_8h_source.html#l01768">ImGuiBackendFlags_RendererHasViewports</a>, <a class="el" href="imgui_8h_source.html#l01762">ImGuiBackendFlags_RendererHasVtxOffset</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00073">ImGui_ImplDX11_Data::pd3dDevice</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00074">ImGui_ImplDX11_Data::pd3dDeviceContext</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00075">ImGui_ImplDX11_Data::pFactory</a> (計15項目).</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiRenderer_8cpp_source.html#l00168">mtgb::ImGuiRenderer::Release()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_ade24d515f742ddb132e8c67ac0ceb3f4_cgraph.svg" width="1566" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_ade24d515f742ddb132e8c67ac0ceb3f4_icgraph.svg" width="424" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aaa565b53019e62ce9fe83a48ea5111de" name="aaa565b53019e62ce9fe83a48ea5111de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa565b53019e62ce9fe83a48ea5111de">&#9670;&#160;</a></span>ImGui_ImplDX11_UpdateTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void ImGui_ImplDX11_UpdateTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImTextureData.html">ImTextureData</a> *&#160;</td>
+          <td class="paramname"><em>tex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__dx11_8cpp_source.html">imgui_impl_dx11.cpp</a> の <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00367">367</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  368</span>{</div>
+<div class="line"><span class="lineno">  369</span>    <a class="code hl_struct" href="structImGui__ImplDX11__Data.html">ImGui_ImplDX11_Data</a>* bd = <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a6f2fc0574f090854d5aac193780c5f32">ImGui_ImplDX11_GetBackendData</a>();</div>
+<div class="line"><span class="lineno">  370</span>    <span class="keywordflow">if</span> (tex-&gt;<a class="code hl_variable" href="structImTextureData.html#a27b7e872abe8da79fa5167d24ef71fe8">Status</a> == <a class="code hl_enumvalue" href="imgui_8h.html#a5c1fe5a7adf4a423ab5044dfdabf7decabc8c8136f55fa6a4e982a901b59303a1">ImTextureStatus_WantCreate</a>)</div>
+<div class="line"><span class="lineno">  371</span>    {</div>
+<div class="line"><span class="lineno">  372</span>        <span class="comment">// Create and upload new texture to graphics system</span></div>
+<div class="line"><span class="lineno">  373</span>        <span class="comment">//IMGUI_DEBUG_LOG(&quot;UpdateTexture #%03d: WantCreate %dx%d\n&quot;, tex-&gt;UniqueID, tex-&gt;Width, tex-&gt;Height);</span></div>
+<div class="line"><span class="lineno">  374</span>        <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(tex-&gt;<a class="code hl_variable" href="structImTextureData.html#a7baaf72ef91806a36d36224cd2429380">TexID</a> == <a class="code hl_define" href="imgui_8h.html#ac36937b7fa2bc27ad52014371b8ba741">ImTextureID_Invalid</a> &amp;&amp; tex-&gt;<a class="code hl_variable" href="structImTextureData.html#aeb0b0e1ff314a59d4e7c966f78b6af6e">BackendUserData</a> == <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  375</span>        <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(tex-&gt;<a class="code hl_variable" href="structImTextureData.html#a36e49d3d9647298f823dee2f451c6a76">Format</a> == <a class="code hl_enumvalue" href="imgui_8h.html#af1081cd8c3420a0f8e54208377732dc4aeff4b3fe62c240e9615efb6ba51982b7">ImTextureFormat_RGBA32</a>);</div>
+<div class="line"><span class="lineno">  376</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* pixels = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*)tex-&gt;<a class="code hl_function" href="structImTextureData.html#a70eaa73e5355debcada462a50e5bab0b">GetPixels</a>();</div>
+<div class="line"><span class="lineno">  377</span>        <a class="code hl_struct" href="structImGui__ImplDX11__Texture.html">ImGui_ImplDX11_Texture</a>* backend_tex = <a class="code hl_define" href="imgui_8h.html#a5e3b2a8968432747cd4932c539d76723">IM_NEW</a>(<a class="code hl_struct" href="structImGui__ImplDX11__Texture.html">ImGui_ImplDX11_Texture</a>)();</div>
+<div class="line"><span class="lineno">  378</span> </div>
+<div class="line"><span class="lineno">  379</span>        <span class="comment">// Create texture</span></div>
+<div class="line"><span class="lineno">  380</span>        D3D11_TEXTURE2D_DESC desc;</div>
+<div class="line"><span class="lineno">  381</span>        ZeroMemory(&amp;desc, <span class="keyword">sizeof</span>(desc));</div>
+<div class="line"><span class="lineno">  382</span>        desc.Width = (UINT)tex-&gt;<a class="code hl_variable" href="structImTextureData.html#aa538d7030c165670633e5f687bdcfccc">Width</a>;</div>
+<div class="line"><span class="lineno">  383</span>        desc.Height = (UINT)tex-&gt;<a class="code hl_variable" href="structImTextureData.html#aa08fa96ece19ccb228e9892c7ed645a3">Height</a>;</div>
+<div class="line"><span class="lineno">  384</span>        desc.MipLevels = 1;</div>
+<div class="line"><span class="lineno">  385</span>        desc.ArraySize = 1;</div>
+<div class="line"><span class="lineno">  386</span>        desc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;</div>
+<div class="line"><span class="lineno">  387</span>        desc.SampleDesc.Count = 1;</div>
+<div class="line"><span class="lineno">  388</span>        desc.Usage = D3D11_USAGE_DEFAULT;</div>
+<div class="line"><span class="lineno">  389</span>        desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;</div>
+<div class="line"><span class="lineno">  390</span>        desc.CPUAccessFlags = 0;</div>
+<div class="line"><span class="lineno">  391</span>        D3D11_SUBRESOURCE_DATA subResource;</div>
+<div class="line"><span class="lineno">  392</span>        subResource.pSysMem = pixels;</div>
+<div class="line"><span class="lineno">  393</span>        subResource.SysMemPitch = desc.Width * 4;</div>
+<div class="line"><span class="lineno">  394</span>        subResource.SysMemSlicePitch = 0;</div>
+<div class="line"><span class="lineno">  395</span>        bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateTexture2D(&amp;desc, &amp;subResource, &amp;backend_tex-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Texture.html#aebdc0038ffd10853b66d3d722a9de3ed">pTexture</a>);</div>
+<div class="line"><span class="lineno">  396</span>        <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(backend_tex-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Texture.html#aebdc0038ffd10853b66d3d722a9de3ed">pTexture</a> != <span class="keyword">nullptr</span> &amp;&amp; <span class="stringliteral">&quot;Backend failed to create texture!&quot;</span>);</div>
+<div class="line"><span class="lineno">  397</span> </div>
+<div class="line"><span class="lineno">  398</span>        <span class="comment">// Create texture view</span></div>
+<div class="line"><span class="lineno">  399</span>        D3D11_SHADER_RESOURCE_VIEW_DESC srvDesc;</div>
+<div class="line"><span class="lineno">  400</span>        ZeroMemory(&amp;srvDesc, <span class="keyword">sizeof</span>(srvDesc));</div>
+<div class="line"><span class="lineno">  401</span>        srvDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;</div>
+<div class="line"><span class="lineno">  402</span>        srvDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;</div>
+<div class="line"><span class="lineno">  403</span>        srvDesc.Texture2D.MipLevels = desc.MipLevels;</div>
+<div class="line"><span class="lineno">  404</span>        srvDesc.Texture2D.MostDetailedMip = 0;</div>
+<div class="line"><span class="lineno">  405</span>        bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#add616242fee6ce2d404271daf9464953">pd3dDevice</a>-&gt;CreateShaderResourceView(backend_tex-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Texture.html#aebdc0038ffd10853b66d3d722a9de3ed">pTexture</a>, &amp;srvDesc, &amp;backend_tex-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Texture.html#a8c251b4b8dfdc5520e20c6d6a39315de">pTextureView</a>);</div>
+<div class="line"><span class="lineno">  406</span>        <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(backend_tex-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Texture.html#a8c251b4b8dfdc5520e20c6d6a39315de">pTextureView</a> != <span class="keyword">nullptr</span> &amp;&amp; <span class="stringliteral">&quot;Backend failed to create texture!&quot;</span>);</div>
+<div class="line"><span class="lineno">  407</span> </div>
+<div class="line"><span class="lineno">  408</span>        <span class="comment">// Store identifiers</span></div>
+<div class="line"><span class="lineno">  409</span>        tex-&gt;<a class="code hl_function" href="structImTextureData.html#ab8d44d2241e397f28649e6cc606da1ec">SetTexID</a>((<a class="code hl_variable" href="imgui_8h.html#a1ddd80c599c084c0c6600ae8b55a0c56">ImTextureID</a>)(intptr_t)backend_tex-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Texture.html#a8c251b4b8dfdc5520e20c6d6a39315de">pTextureView</a>);</div>
+<div class="line"><span class="lineno">  410</span>        tex-&gt;<a class="code hl_function" href="structImTextureData.html#a95ba3b442e17cc2a7c9ab4b538011005">SetStatus</a>(<a class="code hl_enumvalue" href="imgui_8h.html#a5c1fe5a7adf4a423ab5044dfdabf7deca725efb0ac82df45f3e734d8bd05065e7">ImTextureStatus_OK</a>);</div>
+<div class="line"><span class="lineno">  411</span>        tex-&gt;<a class="code hl_variable" href="structImTextureData.html#aeb0b0e1ff314a59d4e7c966f78b6af6e">BackendUserData</a> = backend_tex;</div>
+<div class="line"><span class="lineno">  412</span>    }</div>
+<div class="line"><span class="lineno">  413</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tex-&gt;<a class="code hl_variable" href="structImTextureData.html#a27b7e872abe8da79fa5167d24ef71fe8">Status</a> == <a class="code hl_enumvalue" href="imgui_8h.html#a5c1fe5a7adf4a423ab5044dfdabf7deca1762b45b4b36de15ae3f55a0330cd614">ImTextureStatus_WantUpdates</a>)</div>
+<div class="line"><span class="lineno">  414</span>    {</div>
+<div class="line"><span class="lineno">  415</span>        <span class="comment">// Update selected blocks. We only ever write to textures regions which have never been used before!</span></div>
+<div class="line"><span class="lineno">  416</span>        <span class="comment">// This backend choose to use tex-&gt;Updates[] but you can use tex-&gt;UpdateRect to upload a single region.</span></div>
+<div class="line"><span class="lineno">  417</span>        <a class="code hl_struct" href="structImGui__ImplDX11__Texture.html">ImGui_ImplDX11_Texture</a>* backend_tex = (<a class="code hl_struct" href="structImGui__ImplDX11__Texture.html">ImGui_ImplDX11_Texture</a>*)tex-&gt;<a class="code hl_variable" href="structImTextureData.html#aeb0b0e1ff314a59d4e7c966f78b6af6e">BackendUserData</a>;</div>
+<div class="line"><span class="lineno">  418</span>        <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(backend_tex-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Texture.html#a8c251b4b8dfdc5520e20c6d6a39315de">pTextureView</a> == (ID3D11ShaderResourceView*)(intptr_t)tex-&gt;<a class="code hl_variable" href="structImTextureData.html#a7baaf72ef91806a36d36224cd2429380">TexID</a>);</div>
+<div class="line"><span class="lineno">  419</span>        <span class="keywordflow">for</span> (<a class="code hl_struct" href="structImTextureRect.html">ImTextureRect</a>&amp; r : tex-&gt;<a class="code hl_variable" href="structImTextureData.html#ad12cf0ce0834c23863a8889dba5993fd">Updates</a>)</div>
+<div class="line"><span class="lineno">  420</span>        {</div>
+<div class="line"><span class="lineno">  421</span>            D3D11_BOX box = { (UINT)r.<a class="code hl_variable" href="structImTextureRect.html#a5cfebc2e2faa940d06a853cc41183ecc">x</a>, (UINT)r.<a class="code hl_variable" href="structImTextureRect.html#ab17bd9d50d5ab5d75ccb904442f7d615">y</a>, (UINT)0, (UINT)(r.<a class="code hl_variable" href="structImTextureRect.html#a5cfebc2e2faa940d06a853cc41183ecc">x</a> + r.<a class="code hl_variable" href="structImTextureRect.html#ac4a29d2fbe0cdb9f2544d23fcad84754">w</a>), (UINT)(r.<a class="code hl_variable" href="structImTextureRect.html#ab17bd9d50d5ab5d75ccb904442f7d615">y</a> + r .<a class="code hl_variable" href="structImTextureRect.html#a67732c78184d1df0431ed00977ccb07a">h</a>), (UINT)1 };</div>
+<div class="line"><span class="lineno">  422</span>            bd-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Data.html#a4433fbb47832e1caa0c6857225653809">pd3dDeviceContext</a>-&gt;UpdateSubresource(backend_tex-&gt;<a class="code hl_variable" href="structImGui__ImplDX11__Texture.html#aebdc0038ffd10853b66d3d722a9de3ed">pTexture</a>, 0, &amp;box, tex-&gt;<a class="code hl_function" href="structImTextureData.html#ae7e2edcf13504e8c6de654c5e4127d3b">GetPixelsAt</a>(r.<a class="code hl_variable" href="structImTextureRect.html#a5cfebc2e2faa940d06a853cc41183ecc">x</a>, r.<a class="code hl_variable" href="structImTextureRect.html#ab17bd9d50d5ab5d75ccb904442f7d615">y</a>), (UINT)tex-&gt;<a class="code hl_function" href="structImTextureData.html#aa5742593953fabdb7cbee5608327914c">GetPitch</a>(), 0);</div>
+<div class="line"><span class="lineno">  423</span>        }</div>
+<div class="line"><span class="lineno">  424</span>        tex-&gt;<a class="code hl_function" href="structImTextureData.html#a95ba3b442e17cc2a7c9ab4b538011005">SetStatus</a>(<a class="code hl_enumvalue" href="imgui_8h.html#a5c1fe5a7adf4a423ab5044dfdabf7deca725efb0ac82df45f3e734d8bd05065e7">ImTextureStatus_OK</a>);</div>
+<div class="line"><span class="lineno">  425</span>    }</div>
+<div class="line"><span class="lineno">  426</span>    <span class="keywordflow">if</span> (tex-&gt;<a class="code hl_variable" href="structImTextureData.html#a27b7e872abe8da79fa5167d24ef71fe8">Status</a> == <a class="code hl_enumvalue" href="imgui_8h.html#a5c1fe5a7adf4a423ab5044dfdabf7decaf7a5a6304110d006fee7a00a80ed9971">ImTextureStatus_WantDestroy</a> &amp;&amp; tex-&gt;<a class="code hl_variable" href="structImTextureData.html#a36bf334c35ef4eb40d699282b4b7bf62">UnusedFrames</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  427</span>        <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a71f7f9967b99744a679b890dd10d1dce">ImGui_ImplDX11_DestroyTexture</a>(tex);</div>
+<div class="line"><span class="lineno">  428</span>}</div>
+<div class="ttc" id="aimgui_8h_html_a1ddd80c599c084c0c6600ae8b55a0c56"><div class="ttname"><a href="imgui_8h.html#a1ddd80c599c084c0c6600ae8b55a0c56">ImTextureID</a></div><div class="ttdeci">IM_MSVC_RUNTIME_CHECKS_RESTORE typedef ImU64 ImTextureID</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00337">imgui.h:337</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a5c1fe5a7adf4a423ab5044dfdabf7deca1762b45b4b36de15ae3f55a0330cd614"><div class="ttname"><a href="imgui_8h.html#a5c1fe5a7adf4a423ab5044dfdabf7deca1762b45b4b36de15ae3f55a0330cd614">ImTextureStatus_WantUpdates</a></div><div class="ttdeci">@ ImTextureStatus_WantUpdates</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03524">imgui.h:3524</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a5c1fe5a7adf4a423ab5044dfdabf7decabc8c8136f55fa6a4e982a901b59303a1"><div class="ttname"><a href="imgui_8h.html#a5c1fe5a7adf4a423ab5044dfdabf7decabc8c8136f55fa6a4e982a901b59303a1">ImTextureStatus_WantCreate</a></div><div class="ttdeci">@ ImTextureStatus_WantCreate</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03523">imgui.h:3523</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a5c1fe5a7adf4a423ab5044dfdabf7decaf7a5a6304110d006fee7a00a80ed9971"><div class="ttname"><a href="imgui_8h.html#a5c1fe5a7adf4a423ab5044dfdabf7decaf7a5a6304110d006fee7a00a80ed9971">ImTextureStatus_WantDestroy</a></div><div class="ttdeci">@ ImTextureStatus_WantDestroy</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03525">imgui.h:3525</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ac36937b7fa2bc27ad52014371b8ba741"><div class="ttname"><a href="imgui_8h.html#ac36937b7fa2bc27ad52014371b8ba741">ImTextureID_Invalid</a></div><div class="ttdeci">#define ImTextureID_Invalid</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00342">imgui.h:342</a></div></div>
+<div class="ttc" id="aimgui_8h_html_af1081cd8c3420a0f8e54208377732dc4aeff4b3fe62c240e9615efb6ba51982b7"><div class="ttname"><a href="imgui_8h.html#af1081cd8c3420a0f8e54208377732dc4aeff4b3fe62c240e9615efb6ba51982b7">ImTextureFormat_RGBA32</a></div><div class="ttdeci">@ ImTextureFormat_RGBA32</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03514">imgui.h:3514</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Texture_html"><div class="ttname"><a href="structImGui__ImplDX11__Texture.html">ImGui_ImplDX11_Texture</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00065">imgui_impl_dx11.cpp:66</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Texture_html_a8c251b4b8dfdc5520e20c6d6a39315de"><div class="ttname"><a href="structImGui__ImplDX11__Texture.html#a8c251b4b8dfdc5520e20c6d6a39315de">ImGui_ImplDX11_Texture::pTextureView</a></div><div class="ttdeci">ID3D11ShaderResourceView * pTextureView</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00068">imgui_impl_dx11.cpp:68</a></div></div>
+<div class="ttc" id="astructImGui__ImplDX11__Texture_html_aebdc0038ffd10853b66d3d722a9de3ed"><div class="ttname"><a href="structImGui__ImplDX11__Texture.html#aebdc0038ffd10853b66d3d722a9de3ed">ImGui_ImplDX11_Texture::pTexture</a></div><div class="ttdeci">ID3D11Texture2D * pTexture</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00067">imgui_impl_dx11.cpp:67</a></div></div>
+<div class="ttc" id="astructImTextureData_html_a36bf334c35ef4eb40d699282b4b7bf62"><div class="ttname"><a href="structImTextureData.html#a36bf334c35ef4eb40d699282b4b7bf62">ImTextureData::UnusedFrames</a></div><div class="ttdeci">int UnusedFrames</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03559">imgui.h:3559</a></div></div>
+<div class="ttc" id="astructImTextureData_html_a36e49d3d9647298f823dee2f451c6a76"><div class="ttname"><a href="structImTextureData.html#a36e49d3d9647298f823dee2f451c6a76">ImTextureData::Format</a></div><div class="ttdeci">ImTextureFormat Format</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03551">imgui.h:3551</a></div></div>
+<div class="ttc" id="astructImTextureData_html_a70eaa73e5355debcada462a50e5bab0b"><div class="ttname"><a href="structImTextureData.html#a70eaa73e5355debcada462a50e5bab0b">ImTextureData::GetPixels</a></div><div class="ttdeci">void * GetPixels()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03569">imgui.h:3569</a></div></div>
+<div class="ttc" id="astructImTextureData_html_a7baaf72ef91806a36d36224cd2429380"><div class="ttname"><a href="structImTextureData.html#a7baaf72ef91806a36d36224cd2429380">ImTextureData::TexID</a></div><div class="ttdeci">ImTextureID TexID</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03550">imgui.h:3550</a></div></div>
+<div class="ttc" id="astructImTextureData_html_a95ba3b442e17cc2a7c9ab4b538011005"><div class="ttname"><a href="structImTextureData.html#a95ba3b442e17cc2a7c9ab4b538011005">ImTextureData::SetStatus</a></div><div class="ttdeci">void SetStatus(ImTextureStatus status)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03578">imgui.h:3578</a></div></div>
+<div class="ttc" id="astructImTextureData_html_aa08fa96ece19ccb228e9892c7ed645a3"><div class="ttname"><a href="structImTextureData.html#aa08fa96ece19ccb228e9892c7ed645a3">ImTextureData::Height</a></div><div class="ttdeci">int Height</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03553">imgui.h:3553</a></div></div>
+<div class="ttc" id="astructImTextureData_html_aa538d7030c165670633e5f687bdcfccc"><div class="ttname"><a href="structImTextureData.html#aa538d7030c165670633e5f687bdcfccc">ImTextureData::Width</a></div><div class="ttdeci">int Width</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03552">imgui.h:3552</a></div></div>
+<div class="ttc" id="astructImTextureData_html_aa5742593953fabdb7cbee5608327914c"><div class="ttname"><a href="structImTextureData.html#aa5742593953fabdb7cbee5608327914c">ImTextureData::GetPitch</a></div><div class="ttdeci">int GetPitch() const</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03572">imgui.h:3572</a></div></div>
+<div class="ttc" id="astructImTextureData_html_ab8d44d2241e397f28649e6cc606da1ec"><div class="ttname"><a href="structImTextureData.html#ab8d44d2241e397f28649e6cc606da1ec">ImTextureData::SetTexID</a></div><div class="ttdeci">void SetTexID(ImTextureID tex_id)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03577">imgui.h:3577</a></div></div>
+<div class="ttc" id="astructImTextureData_html_ad12cf0ce0834c23863a8889dba5993fd"><div class="ttname"><a href="structImTextureData.html#ad12cf0ce0834c23863a8889dba5993fd">ImTextureData::Updates</a></div><div class="ttdeci">ImVector&lt; ImTextureRect &gt; Updates</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03558">imgui.h:3558</a></div></div>
+<div class="ttc" id="astructImTextureData_html_ae7e2edcf13504e8c6de654c5e4127d3b"><div class="ttname"><a href="structImTextureData.html#ae7e2edcf13504e8c6de654c5e4127d3b">ImTextureData::GetPixelsAt</a></div><div class="ttdeci">void * GetPixelsAt(int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03570">imgui.h:3570</a></div></div>
+<div class="ttc" id="astructImTextureData_html_aeb0b0e1ff314a59d4e7c966f78b6af6e"><div class="ttname"><a href="structImTextureData.html#aeb0b0e1ff314a59d4e7c966f78b6af6e">ImTextureData::BackendUserData</a></div><div class="ttdeci">void * BackendUserData</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03549">imgui.h:3549</a></div></div>
+<div class="ttc" id="astructImTextureRect_html"><div class="ttname"><a href="structImTextureRect.html">ImTextureRect</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03531">imgui.h:3532</a></div></div>
+<div class="ttc" id="astructImTextureRect_html_a5cfebc2e2faa940d06a853cc41183ecc"><div class="ttname"><a href="structImTextureRect.html#a5cfebc2e2faa940d06a853cc41183ecc">ImTextureRect::x</a></div><div class="ttdeci">unsigned short x</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03533">imgui.h:3533</a></div></div>
+<div class="ttc" id="astructImTextureRect_html_a67732c78184d1df0431ed00977ccb07a"><div class="ttname"><a href="structImTextureRect.html#a67732c78184d1df0431ed00977ccb07a">ImTextureRect::h</a></div><div class="ttdeci">unsigned short h</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03534">imgui.h:3534</a></div></div>
+<div class="ttc" id="astructImTextureRect_html_ab17bd9d50d5ab5d75ccb904442f7d615"><div class="ttname"><a href="structImTextureRect.html#ab17bd9d50d5ab5d75ccb904442f7d615">ImTextureRect::y</a></div><div class="ttdeci">unsigned short y</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03533">imgui.h:3533</a></div></div>
+<div class="ttc" id="astructImTextureRect_html_ac4a29d2fbe0cdb9f2544d23fcad84754"><div class="ttname"><a href="structImTextureRect.html#ac4a29d2fbe0cdb9f2544d23fcad84754">ImTextureRect::w</a></div><div class="ttdeci">unsigned short w</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03534">imgui.h:3534</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8h_source.html#l03549">ImTextureData::BackendUserData</a>, <a class="el" href="imgui_8h_source.html#l03551">ImTextureData::Format</a>, <a class="el" href="imgui_8h_source.html#l03572">ImTextureData::GetPitch()</a>, <a class="el" href="imgui_8h_source.html#l03569">ImTextureData::GetPixels()</a>, <a class="el" href="imgui_8h_source.html#l03570">ImTextureData::GetPixelsAt()</a>, <a class="el" href="imgui_8h_source.html#l03534">ImTextureRect::h</a>, <a class="el" href="imgui_8h_source.html#l03553">ImTextureData::Height</a>, <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui_8h_source.html#l02220">IM_NEW</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00351">ImGui_ImplDX11_DestroyTexture()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00100">ImGui_ImplDX11_GetBackendData()</a>, <a class="el" href="imgui_8h_source.html#l03514">ImTextureFormat_RGBA32</a>, <a class="el" href="imgui_8h_source.html#l00337">ImTextureID</a>, <a class="el" href="imgui_8h_source.html#l00342">ImTextureID_Invalid</a>, <a class="el" href="imgui_8h_source.html#l03521">ImTextureStatus_OK</a>, <a class="el" href="imgui_8h_source.html#l03523">ImTextureStatus_WantCreate</a>, <a class="el" href="imgui_8h_source.html#l03525">ImTextureStatus_WantDestroy</a>, <a class="el" href="imgui_8h_source.html#l03524">ImTextureStatus_WantUpdates</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00073">ImGui_ImplDX11_Data::pd3dDevice</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00074">ImGui_ImplDX11_Data::pd3dDeviceContext</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00067">ImGui_ImplDX11_Texture::pTexture</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00068">ImGui_ImplDX11_Texture::pTextureView</a>, <a class="el" href="imgui_8h_source.html#l03578">ImTextureData::SetStatus()</a>, <a class="el" href="imgui_8h_source.html#l03577">ImTextureData::SetTexID()</a>, <a class="el" href="imgui_8h_source.html#l03548">ImTextureData::Status</a>, <a class="el" href="imgui_8h_source.html#l03550">ImTextureData::TexID</a>, <a class="el" href="imgui_8h_source.html#l03559">ImTextureData::UnusedFrames</a>, <a class="el" href="imgui_8h_source.html#l03558">ImTextureData::Updates</a>, <a class="el" href="imgui_8h_source.html#l03534">ImTextureRect::w</a>, <a class="el" href="imgui_8h_source.html#l03552">ImTextureData::Width</a>, <a class="el" href="imgui_8h_source.html#l03533">ImTextureRect::x</a>, <a class="el" href="imgui_8h_source.html#l03533">ImTextureRect::y</a> (計32項目).</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00168">ImGui_ImplDX11_RenderDrawData()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_aaa565b53019e62ce9fe83a48ea5111de_cgraph.svg" width="1184" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__dx11_8h_aaa565b53019e62ce9fe83a48ea5111de_icgraph.svg" width="1490" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23797ae7e766fbcdeb3fb12569df6b46.html">ImGui</a></li><li class="navelem"><a class="el" href="imgui__impl__dx11_8h.html">imgui_impl_dx11.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

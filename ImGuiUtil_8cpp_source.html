@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: ImGuiUtil.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ImGuiUtil_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ImGuiUtil.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ImGuiUtil_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="ImGuiUtil_8h.html">ImGuiUtil.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../ImGui/imgui_internal.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;d3d11.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespacemtgb_1_1ImGuiUtil.html#adf7de16d75832fd676b25e91fcae9801">    5</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#adf7de16d75832fd676b25e91fcae9801">mtgb::ImGuiUtil::GetMouseRay</a>(<a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _near, <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _far, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&amp; _proj, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&amp; _view, <span class="keyword">const</span> D3D11_VIEWPORT&amp; _viewport, <span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2F</a>&amp; _windowPos)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_struct" href="structImVec2.html">ImVec2</a> mousePos = <a class="code hl_function" href="namespaceImGui.html#abf11873349874c5d302861583c00d451">ImGui::GetMousePos</a>();</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_struct" href="structImVec2.html">ImVec2</a> localPos = <a class="code hl_struct" href="structImVec2.html">ImVec2</a>(mousePos.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a> - _windowPos.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>, mousePos.<a class="code hl_variable" href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">y</a> - _windowPos.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#a6b5d8ad644dee9011b00557eaa04e255">y</a>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> nearVec = { localPos.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a>,localPos.<a class="code hl_variable" href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">y</a>,0.0f };</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    _near = DirectX::XMVector3Unproject(</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        nearVec,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        _viewport.TopLeftX,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        _viewport.TopLeftY,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        _viewport.Width,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        _viewport.Height,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        _viewport.MinDepth,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        _viewport.MaxDepth,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        _proj,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        _view,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        DirectX::XMMatrixIdentity());</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> farVec = { <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(localPos.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a>),<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(localPos.<a class="code hl_variable" href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">y</a>),1.0f };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    _far = DirectX::XMVector3Unproject(</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        farVec,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        _viewport.TopLeftX,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        _viewport.TopLeftY,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        _viewport.Width,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        _viewport.Height,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        _viewport.MinDepth,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        _viewport.MaxDepth,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        _proj,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        _view,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        DirectX::XMMatrixIdentity());</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespacemtgb_1_1ImGuiUtil.html#a78d80673fb8413b1ef7201b11bb135fe">   41</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a78d80673fb8413b1ef7201b11bb135fe">mtgb::ImGuiUtil::IsMouseInWindow</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* _name)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">//  ウィンドウを検索</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_struct" href="structImGuiWindow.html">ImGuiWindow</a>* window = <a class="code hl_function" href="namespaceImGui.html#abca25f22c02e73d5eb2e9c72c4557813">ImGui::FindWindowByName</a>(_name);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (window &amp;&amp; window-&gt;<a class="code hl_variable" href="structImGuiWindow.html#ab346ec3a2f305948af05ec1871610a8f">WasActive</a>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_struct" href="structImVec2.html">ImVec2</a> mousePos = <a class="code hl_function" href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a>().<a class="code hl_variable" href="structImGuiIO.html#ad2e9e547cb4d2abe8e7d27407efffeb8">MousePos</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_struct" href="structImRect.html">ImRect</a> rect = window-&gt;<a class="code hl_variable" href="structImGuiWindow.html#a3de436c30b33dac061c09e4334beaa3b">WorkRect</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> rect.<a class="code hl_function" href="structImRect.html#ac583156fd0e9306181fff5d120b262ea">Contains</a>(mousePos);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">   54</a></span>std::optional&lt;ImVec2&gt; <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">mtgb::ImGuiUtil::WorldToImGui</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _vec, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&amp; _proj, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&amp; _view, <span class="keyword">const</span> D3D11_VIEWPORT&amp; _viewport)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">float</span> tabBarHeight = <a class="code hl_function" href="namespaceImGui.html#ac452417b5004ca16a814a72cff153526">ImGui::GetCurrentWindow</a>()-&gt;<a class="code hl_variable" href="structImGuiWindow.html#ab3ed3b833fd1c242d4c25c4d549077ae">TitleBarHeight</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_struct" href="structImVec2.html">ImVec2</a> windowPos = <a class="code hl_function" href="namespaceImGui.html#a413d939f3ef416a47d6e5b48be955146">ImGui::GetWindowPos</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> screenVec = DirectX::XMVector3Project(</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        _vec,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        _viewport.TopLeftX,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        _viewport.TopLeftY,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        _viewport.Width,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        _viewport.Height,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        _viewport.MinDepth,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        _viewport.MaxDepth,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        _proj,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        _view,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        DirectX::XMMatrixIdentity());</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span> (screenVec.z &lt; 0.0f || screenVec.z &gt; 1.0f)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">//return ImVec2(screenVec.x, screenVec.y );</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structImVec2.html">ImVec2</a>(screenVec.x + windowPos.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a>, screenVec.y + windowPos.<a class="code hl_variable" href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">y</a> + tabBarHeight);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+<div class="ttc" id="aImGuiUtil_8h_html"><div class="ttname"><a href="ImGuiUtil_8h.html">ImGuiUtil.h</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a3179e560812f878f3961ce803a5d9302"><div class="ttname"><a href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a></div><div class="ttdeci">IMGUI_API ImGuiIO &amp; GetIO()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l05074">imgui.cpp:5074</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a413d939f3ef416a47d6e5b48be955146"><div class="ttname"><a href="namespaceImGui.html#a413d939f3ef416a47d6e5b48be955146">ImGui::GetWindowPos</a></div><div class="ttdeci">IMGUI_API ImVec2 GetWindowPos()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l08845">imgui.cpp:8845</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_abca25f22c02e73d5eb2e9c72c4557813"><div class="ttname"><a href="namespaceImGui.html#abca25f22c02e73d5eb2e9c72c4557813">ImGui::FindWindowByName</a></div><div class="ttdeci">IMGUI_API ImGuiWindow * FindWindowByName(const char *name)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l06691">imgui.cpp:6691</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_abf11873349874c5d302861583c00d451"><div class="ttname"><a href="namespaceImGui.html#abf11873349874c5d302861583c00d451">ImGui::GetMousePos</a></div><div class="ttdeci">IMGUI_API ImVec2 GetMousePos()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l10336">imgui.cpp:10336</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_ac452417b5004ca16a814a72cff153526"><div class="ttname"><a href="namespaceImGui.html#ac452417b5004ca16a814a72cff153526">ImGui::GetCurrentWindow</a></div><div class="ttdeci">ImGuiWindow * GetCurrentWindow()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03325">imgui_internal.h:3325</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1ImGuiUtil_html_a21fcd4256a75ac9b687c213c62d05d61"><div class="ttname"><a href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">mtgb::ImGuiUtil::WorldToImGui</a></div><div class="ttdeci">std::optional&lt; ImVec2 &gt; WorldToImGui(const Vector3 &amp;_vec, const Matrix4x4 &amp;_proj, const Matrix4x4 &amp;_view, const D3D11_VIEWPORT &amp;_viewport)</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiUtil_8cpp_source.html#l00054">ImGuiUtil.cpp:54</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1ImGuiUtil_html_a78d80673fb8413b1ef7201b11bb135fe"><div class="ttname"><a href="namespacemtgb_1_1ImGuiUtil.html#a78d80673fb8413b1ef7201b11bb135fe">mtgb::ImGuiUtil::IsMouseInWindow</a></div><div class="ttdeci">bool IsMouseInWindow(const char *_name)</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiUtil_8cpp_source.html#l00041">ImGuiUtil.cpp:41</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1ImGuiUtil_html_adf7de16d75832fd676b25e91fcae9801"><div class="ttname"><a href="namespacemtgb_1_1ImGuiUtil.html#adf7de16d75832fd676b25e91fcae9801">mtgb::ImGuiUtil::GetMouseRay</a></div><div class="ttdeci">void GetMouseRay(Vector3 &amp;_near, Vector3 &amp;_far, const Matrix4x4 &amp;_proj, const Matrix4x4 &amp;_view, const D3D11_VIEWPORT &amp;_viewport, const Vector2F &amp;_windowPos)</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiUtil_8cpp_source.html#l00005">ImGuiUtil.cpp:5</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_ad2e9e547cb4d2abe8e7d27407efffeb8"><div class="ttname"><a href="structImGuiIO.html#ad2e9e547cb4d2abe8e7d27407efffeb8">ImGuiIO::MousePos</a></div><div class="ttdeci">ImVec2 MousePos</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02606">imgui.h:2606</a></div></div>
+<div class="ttc" id="astructImGuiWindow_html"><div class="ttname"><a href="structImGuiWindow.html">ImGuiWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02789">imgui_internal.h:2790</a></div></div>
+<div class="ttc" id="astructImGuiWindow_html_a3de436c30b33dac061c09e4334beaa3b"><div class="ttname"><a href="structImGuiWindow.html#a3de436c30b33dac061c09e4334beaa3b">ImGuiWindow::WorkRect</a></div><div class="ttdeci">ImRect WorkRect</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02870">imgui_internal.h:2870</a></div></div>
+<div class="ttc" id="astructImGuiWindow_html_ab346ec3a2f305948af05ec1871610a8f"><div class="ttname"><a href="structImGuiWindow.html#ab346ec3a2f305948af05ec1871610a8f">ImGuiWindow::WasActive</a></div><div class="ttdeci">bool WasActive</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02830">imgui_internal.h:2830</a></div></div>
+<div class="ttc" id="astructImGuiWindow_html_ab3ed3b833fd1c242d4c25c4d549077ae"><div class="ttname"><a href="structImGuiWindow.html#ab3ed3b833fd1c242d4c25c4d549077ae">ImGuiWindow::TitleBarHeight</a></div><div class="ttdeci">float TitleBarHeight</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02810">imgui_internal.h:2810</a></div></div>
+<div class="ttc" id="astructImRect_html"><div class="ttname"><a href="structImRect.html">ImRect</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00569">imgui_internal.h:570</a></div></div>
+<div class="ttc" id="astructImRect_html_ac583156fd0e9306181fff5d120b262ea"><div class="ttname"><a href="structImRect.html#ac583156fd0e9306181fff5d120b262ea">ImRect::Contains</a></div><div class="ttdeci">bool Contains(const ImVec2 &amp;p) const</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00588">imgui_internal.h:588</a></div></div>
+<div class="ttc" id="astructImVec2_html"><div class="ttname"><a href="structImVec2.html">ImVec2</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00292">imgui.h:293</a></div></div>
+<div class="ttc" id="astructImVec2_html_a1f9d136ca837e147b793b19d25a3a618"><div class="ttname"><a href="structImVec2.html#a1f9d136ca837e147b793b19d25a3a618">ImVec2::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00294">imgui.h:294</a></div></div>
+<div class="ttc" id="astructImVec2_html_a5802a68560961ed8cb8cc5fb2a244c2d"><div class="ttname"><a href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">ImVec2::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00294">imgui.h:294</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Matrix4x4_html"><div class="ttname"><a href="structmtgb_1_1Matrix4x4.html">mtgb::Matrix4x4</a></div><div class="ttdef"><b>Definition:</b> <a href="Matrix4x4_8h_source.html#l00008">Matrix4x4.h:9</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector2T_html"><div class="ttname"><a href="structmtgb_1_1Vector2T.html">mtgb::Vector2T&lt; float &gt;</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector2T_html_a6b5d8ad644dee9011b00557eaa04e255"><div class="ttname"><a href="structmtgb_1_1Vector2T.html#a6b5d8ad644dee9011b00557eaa04e255">mtgb::Vector2T::y</a></div><div class="ttdeci">T y</div><div class="ttdef"><b>Definition:</b> <a href="Vector2T_8h_source.html#l00015">Vector2T.h:15</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector2T_html_ac78650fee4feebc437d7a6893be2b1c7"><div class="ttname"><a href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">mtgb::Vector2T::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="Vector2T_8h_source.html#l00014">Vector2T.h:14</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="ImGuiUtil_8cpp.html">ImGuiUtil.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

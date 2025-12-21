@@ -1,0 +1,27 @@
+var structmtgb_1_1Quaternion =
+[
+    [ "Quaternion", "structmtgb_1_1Quaternion.html#af66b78cad00145372b9e4fb7a0535ac3", null ],
+    [ "Quaternion", "structmtgb_1_1Quaternion.html#a724ab693b6296127cbe6013934bd59bf", null ],
+    [ "Quaternion", "structmtgb_1_1Quaternion.html#a62b6866144866b1c9f84c46be3bbc662", null ],
+    [ "Quaternion", "structmtgb_1_1Quaternion.html#a6933b361abcbeb349544899c6d526879", null ],
+    [ "Euler", "structmtgb_1_1Quaternion.html#ac6b986591bbb8505c74b8dc75118a52e", null ],
+    [ "FromToRotation", "structmtgb_1_1Quaternion.html#a7fde6fb6acbe4ec980ac0716a109657b", null ],
+    [ "GetInverse", "structmtgb_1_1Quaternion.html#a6350787aaaeeceba3d94d19e69fbaf90", null ],
+    [ "GetInverse", "structmtgb_1_1Quaternion.html#a7e4a7d027242791dc6dcd68692b70fb2", null ],
+    [ "GetSize", "structmtgb_1_1Quaternion.html#a8d6a7effc32f26a5dcf44986076b63bc", null ],
+    [ "GetSize", "structmtgb_1_1Quaternion.html#a792de53fa7e6318a5ba729fde561c329", null ],
+    [ "Identity", "structmtgb_1_1Quaternion.html#a888738793dd9da79895d4660ed254406", null ],
+    [ "LookRotation", "structmtgb_1_1Quaternion.html#a8ad5c00bfbfe1bd05b3d3ae721ba57a4", null ],
+    [ "operator*=", "structmtgb_1_1Quaternion.html#a2b165e632c74de3a6b73a7da3e59c311", null ],
+    [ "SLerp", "structmtgb_1_1Quaternion.html#aba9dfa09d2bf50113f6e5bef409e3333", null ],
+    [ "ToString", "structmtgb_1_1Quaternion.html#a0d97eb7a0b9d31da9c2a97e4a13cdab0", null ],
+    [ "W", "structmtgb_1_1Quaternion.html#a7afbdbc739d85ee451a37cd345427ac2", null ],
+    [ "W", "structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992", null ],
+    [ "X", "structmtgb_1_1Quaternion.html#aba6622ba793898732cdc31e9c22d0542", null ],
+    [ "X", "structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac", null ],
+    [ "Y", "structmtgb_1_1Quaternion.html#aabea3c13f3ad1ee6ce0394970dca61e7", null ],
+    [ "Y", "structmtgb_1_1Quaternion.html#aa4e533f5fd28821dc19f8c4037832d58", null ],
+    [ "Z", "structmtgb_1_1Quaternion.html#a393aa947763b49e6f5a595ad342c82b6", null ],
+    [ "Z", "structmtgb_1_1Quaternion.html#a63e96e97a32898ededd6c2e71eb30a33", null ],
+    [ "COUNT", "structmtgb_1_1Quaternion.html#a71140f5915ddfe76ebdc22f0bc902c9d", null ]
+];

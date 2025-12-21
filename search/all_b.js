@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['k_0',['K',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aa5f3c6a11b03839d46af9fb43c97c188',1,'InputKeyCode.h']]],
+  ['kana_1',['Kana',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a3713cbc241fd95e9d579846d44774452',1,'InputKeyCode.h']]],
+  ['kanji_2',['Kanji',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4ca287907cd4b5e536bb695cfbaddefe',1,'InputKeyCode.h']]],
+  ['keepaliveid_3',['KeepAliveID',['../namespaceImGui.html#a85a245c78a9f7c351636bdad6e60c488',1,'ImGui']]],
+  ['kern_4',['kern',['../structstbtt__fontinfo.html#a57cc83512daea60e97ed49354d634d37',1,'stbtt_fontinfo']]],
+  ['key_5',['Key',['../structImGuiInputEventKey.html#aa4efa74612b817e41b2a73f2f0d41b1c',1,'ImGuiInputEventKey::Key()'],['../structImGuiInputEvent.html#a7739f48af4f0fbad1ca79b5d9f82707e',1,'ImGuiInputEvent::Key()'],['../structImGuiLocEntry.html#aa2b09f545209e39a8487ab135c1d8af6',1,'ImGuiLocEntry::Key()']]],
+  ['key_6',['key',['../structImGuiStoragePair.html#a26f72e9d1e5d41624f6ec30d6734e00b',1,'ImGuiStoragePair']]],
+  ['key_5fbuffer_5fsize_7',['KEY_BUFFER_SIZE',['../namespaceanonymous__namespace_02Input_8cpp_03.html#aff82b88bcc9c1bee1b26f58a507323d0',1,'anonymous_namespace{Input.cpp}']]],
+  ['key_5fcount_8',['KEY_COUNT',['../classmtgb_1_1InputUtil.html#a139bf27e59a76d889968204a51348ad7',1,'mtgb::InputUtil::KEY_COUNT()'],['../classmtgb_1_1InputData.html#a0363449339ffa7256cd32525c463b195',1,'mtgb::InputData::KEY_COUNT()']]],
+  ['keyalt_9',['KeyAlt',['../structImGuiIO.html#a1e64ef08a4448a2cac874496130992cb',1,'ImGuiIO']]],
+  ['keyboardcodepage_10',['KeyboardCodePage',['../structImGui__ImplWin32__Data.html#a47341927f3324620368575f0888b32d6',1,'ImGui_ImplWin32_Data']]],
+  ['keycode_11',['KeyCode',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574',1,'InputKeyCode.h']]],
+  ['keyctrl_12',['KeyCtrl',['../structImGuiIO.html#a51de8f65dcabb80ef4e0d3c759ffcd7f',1,'ImGuiIO']]],
+  ['keymods_13',['KeyMods',['../structImGuiMultiSelectTempData.html#ad2b3719d60d53b2aeede94dcd193ed96',1,'ImGuiMultiSelectTempData::KeyMods()'],['../structImGuiBoxSelectState.html#a527a2f22d5d0de1b67693bd8ce484907',1,'ImGuiBoxSelectState::KeyMods()'],['../structImGuiIO.html#a77133a351ecaf34ea5df82866690dcaa',1,'ImGuiIO::KeyMods()']]],
+  ['keyrepeatdelay_14',['KeyRepeatDelay',['../structImGuiIO.html#a390537e7cba21b98a8f89df857ea59fb',1,'ImGuiIO']]],
+  ['keyrepeatrate_15',['KeyRepeatRate',['../structImGuiIO.html#accd71987c895c4aec6d1a8c368cc9e0e',1,'ImGuiIO']]],
+  ['keysdata_16',['KeysData',['../structImGuiIO.html#afe06dd845441e299d4e0904947882185',1,'ImGuiIO']]],
+  ['keyshift_17',['KeyShift',['../structImGuiIO.html#a3c7642214f88862af5b8467f98ac35c9',1,'ImGuiIO']]],
+  ['keysmaybecharinput_18',['KeysMayBeCharInput',['../structImGuiContext.html#aaed094785231d1e7a223d173da4ea8b1',1,'ImGuiContext']]],
+  ['keysownerdata_19',['KeysOwnerData',['../structImGuiContext.html#a88db24511afec580dd4c354bb149dca6',1,'ImGuiContext']]],
+  ['keysroutingtable_20',['KeysRoutingTable',['../structImGuiContext.html#a9dc46ee2f1b4a6322bae55844f880f02',1,'ImGuiContext']]],
+  ['keystatecurrent_5f_21',['keyStateCurrent_',['../classmtgb_1_1InputData.html#a791eecbd5868329fb5d0ecea3232d6af',1,'mtgb::InputData']]],
+  ['keystateprevious_5f_22',['keyStatePrevious_',['../classmtgb_1_1InputData.html#a830a80142d59dbd68c63d65dc59f40ec',1,'mtgb::InputData']]],
+  ['keysuper_23',['KeySuper',['../structImGuiIO.html#afda9e11e21b7ba21573671c38d9f4a81',1,'ImGuiIO']]],
+  ['keyxor_24',['KeyXOR',['../classmtgb_1_1InputUtil.html#a503e5b57aeb4202ac32fab94ee2a8b53',1,'mtgb::InputUtil']]]
+];

@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: DXGIResource.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('DXGIResource_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">DXGIResource.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="DXGIResource_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="DXGIResource_8h.html">DXGIResource.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ReleaseUtility_8h.html">ReleaseUtility.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContextUtil_8h.html">WindowContextUtil.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Debug_8h.html">Debug.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="MTImGui_8h.html">MTImGui.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;processthreadsapi.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classmtgb_1_1DXGIResource.html#a7cc6bc8813f4dc5b7b8a5516266fee07">    9</a></span><a class="code hl_function" href="classmtgb_1_1DXGIResource.html#a7cc6bc8813f4dc5b7b8a5516266fee07">mtgb::DXGIResource::DXGIResource</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _windowContext)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    : <a class="code hl_class" href="classmtgb_1_1WindowContextResource.html">WindowContextResource</a>(_windowContext)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    , pSwapChain1_{nullptr}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    , pOutput_{nullptr}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    , pDXGISurface_{nullptr}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    , monitorInfo_{}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    , isMultiMonitor_{true}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    , isBorderlessWindow{true}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    , name_{<span class="stringliteral">&quot;UnknownWindow&quot;</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    , outputDesc_{}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (_windowContext == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#ab70cc2094c985207912009f61c993a6e">name_</a> = <span class="stringliteral">&quot;FirstWindowDXGI&quot;</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_windowContext == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#ab70cc2094c985207912009f61c993a6e">name_</a> = <span class="stringliteral">&quot;SecondWindowDXGI&quot;</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// DirectX11Manager にアクセスしてリソースを作成</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">auto</span>&amp; dx11Manager = Game::System&lt;DirectX11Manager&gt;();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> hWnd = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">WinCtxRes::GetHWND</a>(_windowContext);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// マルチモニター対応かどうか</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a0dfda7b1c1c0bb86d4dca01b39c8dd0c">isMultiMonitor_</a>)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {   </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        std::optional&lt;MonitorInfo&gt; optMonitorInfo = dx11Manager.AssignAvailableMonitor(<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a8af0c205fa8bb172a984ff16dbfa1f6f">pOutput_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">if</span> (optMonitorInfo)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a0357e9d36b3927109859d1f2d03e84be">monitorInfo_</a> = *optMonitorInfo;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="comment">// ウィンドウサイズの変更時に利用するためにDescを取得</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        HRESULT hResult = <a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a8af0c205fa8bb172a984ff16dbfa1f6f">pOutput_</a>-&gt;GetDesc(&amp;<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#ac93dd45468f775ff05c8e70a7b675fbe">outputDesc_</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            &amp;&amp; <span class="stringliteral">&quot;GetDesc に失敗 @DXGIResource::Initialize&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="comment">// ボーダレスウィンドウの場合、スワップチェーンのバッファサイズを変えるだけなので、Outputは不要。</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="comment">// ID3D11Deviceの作成に使用したIDXGIAdapterと、IDXGIOutputの列挙に使用したIDXGIAdapterが異なると、スワップチェーンの作成に失敗する。</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="comment">// 現状はID3D11Deviceは一つだけ作成しているので、IDXGIAdapterが異なる可能性を考慮してOutputは解放する</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#aca714b139ce42c2063a22cfad9d30cb9">isBorderlessWindow</a>)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a8af0c205fa8bb172a984ff16dbfa1f6f">pOutput_</a>.Reset();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">else</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a8af0c205fa8bb172a984ff16dbfa1f6f">pOutput_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// スワップチェーンを作成(pOutput_がnullptrでもデフォルトのIDXGIAdapterから作成される)</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    dx11Manager.CreateSwapChain(hWnd, <a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a8af0c205fa8bb172a984ff16dbfa1f6f">pOutput_</a>.Get(), <a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a3918d704bf2193b2bfedca4374cbde2d">pSwapChain1_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// サーフェスとして作成</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    dx11Manager.CreateDXGISurface(<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a3918d704bf2193b2bfedca4374cbde2d">pSwapChain1_</a>.Get(), <a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a7f2694f639b46324e71a778d8ce5618a">pDXGISurface_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classmtgb_1_1DXGIResource.html#a49972ddb85c8d224ebe031aefd96fe37">   70</a></span><a class="code hl_function" href="classmtgb_1_1DXGIResource.html#a49972ddb85c8d224ebe031aefd96fe37">mtgb::DXGIResource::~DXGIResource</a>()</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    Release();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classmtgb_1_1DXGIResource.html#a002bacadd246ad7dd2132e809c754a99">   75</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DXGIResource.html#a002bacadd246ad7dd2132e809c754a99">DXGIResource::SetResource</a>()</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    Game::System&lt;DirectX11Manager&gt;().ChangeSwapChain(<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a3918d704bf2193b2bfedca4374cbde2d">pSwapChain1_</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classmtgb_1_1DXGIResource.html#a4bdee96054d05221b6c3a821c9d76847">   80</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DXGIResource.html#a4bdee96054d05221b6c3a821c9d76847">mtgb::DXGIResource::Update</a>()</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">DirectShow</a>([<span class="keyword">this</span>]</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="comment">// モニター(DXGIOutput)の情報</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <a class="code hl_function" href="namespaceImGui.html#a27a8533605dc5b8cabf161bf7715bbde">ImGui::PushID</a>(&amp;monitorInfo_);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <a class="code hl_function" href="namespaceImGui.html#ad92ccfbc33d448ff40cfcf9219177344">ImGui::LabelText</a>(<span class="stringliteral">&quot;adapterIndex&quot;</span>, <span class="stringliteral">&quot;%d&quot;</span>, monitorInfo_.adapterIndex);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <a class="code hl_function" href="namespaceImGui.html#ad92ccfbc33d448ff40cfcf9219177344">ImGui::LabelText</a>(<span class="stringliteral">&quot;outputIndex&quot;</span>, <span class="stringliteral">&quot;%d&quot;</span>, monitorInfo_.outputIndex);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">CallFunc</a>(&amp;monitorInfo_.desc, <span class="stringliteral">&quot;OutputDesc&quot;</span>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <a class="code hl_function" href="namespaceImGui.html#aba0b2d8f890a5d435ae43d0c4a2d4dd1">ImGui::PopID</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <a class="code hl_function" href="namespaceImGui.html#a191123597a5084d003c8beac7eeb029e">ImGui::Separator</a>();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }, name_.c_str(), ShowType::Settings);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classmtgb_1_1DXGIResource.html#a536b5d467f5f0a2190062c3cc12a46b1">   94</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DXGIResource.html#a536b5d467f5f0a2190062c3cc12a46b1">mtgb::DXGIResource::Reset</a>()</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    pDXGISurface_.Reset();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classmtgb_1_1DXGIResource.html#aa8cd0b910870f18c6d3fd0a147178015">   99</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DXGIResource.html#aa8cd0b910870f18c6d3fd0a147178015">mtgb::DXGIResource::OnResize</a>(UINT _width, UINT _height)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>{</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    HRESULT hResult = pSwapChain1_-&gt;ResizeBuffers(</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        0, _width, _height, DXGI_FORMAT_UNKNOWN, 0);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;ResizeBuffers に失敗 @DXGIResource::OnResize&quot;</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// 再取得</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    Game::System&lt;DirectX11Manager&gt;().CreateDXGISurface(pSwapChain1_.Get(), pDXGISurface_.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classmtgb_1_1DXGIResource.html#a4effb8a45a057ae014ef1a540bd3c2e2">  109</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DXGIResource.html#a4effb8a45a057ae014ef1a540bd3c2e2">mtgb::DXGIResource::Release</a>()</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">// SwapChain はフルスクリーンモードでは削除できないらしい</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">if</span> (pSwapChain1_)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        pSwapChain1_-&gt;SetFullscreenState(<span class="keyword">false</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    pSwapChain1_.Reset();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    pOutput_.Reset();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    pDXGISurface_.Reset();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classmtgb_1_1DXGIResource.html#a4a04bd4657789ca4e8cdb3a6a10993ab">  121</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DXGIResource.html#a4a04bd4657789ca4e8cdb3a6a10993ab">mtgb::DXGIResource::SwapMonitorInfo</a>(<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&amp; _other)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    std::swap(monitorInfo_, _other.<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a0357e9d36b3927109859d1f2d03e84be">monitorInfo_</a>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    std::swap(outputDesc_, _other.<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#ac93dd45468f775ff05c8e70a7b675fbe">outputDesc_</a>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="ttc" id="aDXGIResource_8h_html"><div class="ttname"><a href="DXGIResource_8h.html">DXGIResource.h</a></div></div>
+<div class="ttc" id="aDebug_8h_html"><div class="ttname"><a href="Debug_8h.html">Debug.h</a></div></div>
+<div class="ttc" id="aDirect2DResource_8h_html_ac17599842f3c193b028cc578098f8b93"><div class="ttname"><a href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a></div><div class="ttdeci">struct HWND__ * HWND</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00009">Direct2DResource.h:9</a></div></div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00009">MTAssert.h:9</a></div></div>
+<div class="ttc" id="aMTImGui_8h_html"><div class="ttname"><a href="MTImGui_8h.html">MTImGui.h</a></div></div>
+<div class="ttc" id="aReleaseUtility_8h_html"><div class="ttname"><a href="ReleaseUtility_8h.html">ReleaseUtility.h</a></div></div>
+<div class="ttc" id="aWindowContextUtil_8h_html"><div class="ttname"><a href="WindowContextUtil_8h.html">WindowContextUtil.h</a></div></div>
+<div class="ttc" id="aclassTypeRegistry_html_a0318948c24384561a2467165e2b43e8d"><div class="ttname"><a href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">TypeRegistry::CallFunc</a></div><div class="ttdeci">void CallFunc(T *instance, const char *name)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00055">TypeRegistry.h:55</a></div></div>
+<div class="ttc" id="aclassTypeRegistry_html_a45f221653ae5cef14b554cb67ead4274"><div class="ttname"><a href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a></div><div class="ttdeci">static TypeRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry.cpp:10</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html">mtgb::DXGIResource</a></div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00019">DXGIResource.h:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a002bacadd246ad7dd2132e809c754a99"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a002bacadd246ad7dd2132e809c754a99">mtgb::DXGIResource::SetResource</a></div><div class="ttdeci">void SetResource() override</div><div class="ttdoc">ウィンドウを変更する際に固有のリソースをセットする</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8cpp_source.html#l00075">DXGIResource.cpp:75</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a0357e9d36b3927109859d1f2d03e84be"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a0357e9d36b3927109859d1f2d03e84be">mtgb::DXGIResource::monitorInfo_</a></div><div class="ttdeci">MonitorInfo monitorInfo_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00047">DXGIResource.h:47</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a0dfda7b1c1c0bb86d4dca01b39c8dd0c"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a0dfda7b1c1c0bb86d4dca01b39c8dd0c">mtgb::DXGIResource::isMultiMonitor_</a></div><div class="ttdeci">bool isMultiMonitor_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00048">DXGIResource.h:48</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a3918d704bf2193b2bfedca4374cbde2d"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a3918d704bf2193b2bfedca4374cbde2d">mtgb::DXGIResource::pSwapChain1_</a></div><div class="ttdeci">ComPtr&lt; IDXGISwapChain1 &gt; pSwapChain1_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00036">DXGIResource.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a49972ddb85c8d224ebe031aefd96fe37"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a49972ddb85c8d224ebe031aefd96fe37">mtgb::DXGIResource::~DXGIResource</a></div><div class="ttdeci">~DXGIResource()</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8cpp_source.html#l00070">DXGIResource.cpp:70</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a4a04bd4657789ca4e8cdb3a6a10993ab"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a4a04bd4657789ca4e8cdb3a6a10993ab">mtgb::DXGIResource::SwapMonitorInfo</a></div><div class="ttdeci">void SwapMonitorInfo(DXGIResource &amp;_other)</div><div class="ttdoc">モニター情報を交換する</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8cpp_source.html#l00121">DXGIResource.cpp:121</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a4bdee96054d05221b6c3a821c9d76847"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a4bdee96054d05221b6c3a821c9d76847">mtgb::DXGIResource::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdoc">更新処理</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8cpp_source.html#l00080">DXGIResource.cpp:80</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a4effb8a45a057ae014ef1a540bd3c2e2"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a4effb8a45a057ae014ef1a540bd3c2e2">mtgb::DXGIResource::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8cpp_source.html#l00109">DXGIResource.cpp:109</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a536b5d467f5f0a2190062c3cc12a46b1"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a536b5d467f5f0a2190062c3cc12a46b1">mtgb::DXGIResource::Reset</a></div><div class="ttdeci">void Reset() override</div><div class="ttdoc">ウィンドウのサイズが変更される前の解放処理</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8cpp_source.html#l00094">DXGIResource.cpp:94</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a7cc6bc8813f4dc5b7b8a5516266fee07"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a7cc6bc8813f4dc5b7b8a5516266fee07">mtgb::DXGIResource::DXGIResource</a></div><div class="ttdeci">DXGIResource(WindowContext _windowContext)</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8cpp_source.html#l00009">DXGIResource.cpp:9</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a7f2694f639b46324e71a778d8ce5618a"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a7f2694f639b46324e71a778d8ce5618a">mtgb::DXGIResource::pDXGISurface_</a></div><div class="ttdeci">ComPtr&lt; IDXGISurface &gt; pDXGISurface_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00038">DXGIResource.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a8af0c205fa8bb172a984ff16dbfa1f6f"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a8af0c205fa8bb172a984ff16dbfa1f6f">mtgb::DXGIResource::pOutput_</a></div><div class="ttdeci">ComPtr&lt; IDXGIOutput &gt; pOutput_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00037">DXGIResource.h:37</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_aa8cd0b910870f18c6d3fd0a147178015"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#aa8cd0b910870f18c6d3fd0a147178015">mtgb::DXGIResource::OnResize</a></div><div class="ttdeci">void OnResize(UINT _width, UINT _height) override</div><div class="ttdoc">ウィンドウのサイズが変更された後の処理</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8cpp_source.html#l00099">DXGIResource.cpp:99</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_ab70cc2094c985207912009f61c993a6e"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#ab70cc2094c985207912009f61c993a6e">mtgb::DXGIResource::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00051">DXGIResource.h:51</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_ac93dd45468f775ff05c8e70a7b675fbe"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#ac93dd45468f775ff05c8e70a7b675fbe">mtgb::DXGIResource::outputDesc_</a></div><div class="ttdeci">DXGI_OUTPUT_DESC outputDesc_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00052">DXGIResource.h:52</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_aca714b139ce42c2063a22cfad9d30cb9"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#aca714b139ce42c2063a22cfad9d30cb9">mtgb::DXGIResource::isBorderlessWindow</a></div><div class="ttdeci">bool isBorderlessWindow</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00049">DXGIResource.h:49</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00038">MTImGui.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aa9081f2cfb7ed13e429f9da025d215d4"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">mtgb::MTImGui::DirectShow</a></div><div class="ttdeci">void DirectShow(std::function&lt; void()&gt; func, const std::string &amp;name, ShowType show)</div><div class="ttdoc">コールバックを表示キューに直接積む</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00409">MTImGui.cpp:409</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html">mtgb::WindowContextResource</a></div><div class="ttdoc">ウィンドウごとに固有のリソースのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00018">WindowContextResource.h:19</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a191123597a5084d003c8beac7eeb029e"><div class="ttname"><a href="namespaceImGui.html#a191123597a5084d003c8beac7eeb029e">ImGui::Separator</a></div><div class="ttdeci">IMGUI_API void Separator()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l01686">imgui_widgets.cpp:1686</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a27a8533605dc5b8cabf161bf7715bbde"><div class="ttname"><a href="namespaceImGui.html#a27a8533605dc5b8cabf161bf7715bbde">ImGui::PushID</a></div><div class="ttdeci">IMGUI_API void PushID(const char *str_id)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l09560">imgui.cpp:9560</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_aba0b2d8f890a5d435ae43d0c4a2d4dd1"><div class="ttname"><a href="namespaceImGui.html#aba0b2d8f890a5d435ae43d0c4a2d4dd1">ImGui::PopID</a></div><div class="ttdeci">IMGUI_API void PopID()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l09629">imgui.cpp:9629</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_ad92ccfbc33d448ff40cfcf9219177344"><div class="ttname"><a href="namespaceImGui.html#ad92ccfbc33d448ff40cfcf9219177344">ImGui::LabelText</a></div><div class="ttdeci">IMGUI_API void LabelText(const char *label, const char *fmt,...) IM_FMTARGS(2)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l00382">imgui_widgets.cpp:382</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_ac3067c8903d57f25d01d82b155657099"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">mtgb::WinCtxRes::GetHWND</a></div><div class="ttdeci">HWND GetHWND(WindowContext ctx)</div><div class="ttdoc">そのウィンドウのHWNDを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00025">WindowContextUtil.cpp:25</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">mtgb::WindowContext</a></div><div class="ttdeci">WindowContext</div><div class="ttdef"><b>Definition:</b> <a href="WindowContext_8h_source.html#l00012">WindowContext.h:13</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::WindowContext::Second</a></div><div class="ttdeci">@ Second</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="DXGIResource_8cpp.html">DXGIResource.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

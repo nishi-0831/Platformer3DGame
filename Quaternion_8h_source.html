@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Quaternion.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Quaternion_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Quaternion.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Quaternion_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;DirectXMath.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Vector3_8h.html">Vector3.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html">   12</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> : DirectX::XMVECTORF32</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a71140f5915ddfe76ebdc22f0bc902c9d">   14</a></span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structmtgb_1_1Quaternion.html#a71140f5915ddfe76ebdc22f0bc902c9d">COUNT</a>{ 4 };</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac">   16</a></span>        <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac">X</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> f[0]; }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#aa4e533f5fd28821dc19f8c4037832d58">   17</a></span>        <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; <a class="code hl_function" href="structmtgb_1_1Quaternion.html#aa4e533f5fd28821dc19f8c4037832d58">Y</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> f[1]; }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a63e96e97a32898ededd6c2e71eb30a33">   18</a></span>        <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a63e96e97a32898ededd6c2e71eb30a33">Z</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> f[2]; }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992">   19</a></span>        <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; <a class="code hl_function" href="structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992">W</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> f[3]; }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#aba6622ba793898732cdc31e9c22d0542">   20</a></span>        <span class="keyword">inline</span> <span class="keywordtype">float</span>&amp; <a class="code hl_function" href="structmtgb_1_1Quaternion.html#aba6622ba793898732cdc31e9c22d0542">X</a>() { <span class="keywordflow">return</span> f[0]; }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#aabea3c13f3ad1ee6ce0394970dca61e7">   21</a></span>        <span class="keyword">inline</span> <span class="keywordtype">float</span>&amp; <a class="code hl_function" href="structmtgb_1_1Quaternion.html#aabea3c13f3ad1ee6ce0394970dca61e7">Y</a>() { <span class="keywordflow">return</span> f[1]; }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a393aa947763b49e6f5a595ad342c82b6">   22</a></span>        <span class="keyword">inline</span> <span class="keywordtype">float</span>&amp; <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a393aa947763b49e6f5a595ad342c82b6">Z</a>() { <span class="keywordflow">return</span> f[2]; }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a7afbdbc739d85ee451a37cd345427ac2">   23</a></span>        <span class="keyword">inline</span> <span class="keywordtype">float</span>&amp; <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a7afbdbc739d85ee451a37cd345427ac2">W</a>() { <span class="keywordflow">return</span> f[3]; }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#af66b78cad00145372b9e4fb7a0535ac3">   25</a></span>        <a class="code hl_function" href="structmtgb_1_1Quaternion.html#af66b78cad00145372b9e4fb7a0535ac3">Quaternion</a>() :</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>{ 0, 0, 0, 0 }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        {}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a724ab693b6296127cbe6013934bd59bf">   28</a></span>        <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a724ab693b6296127cbe6013934bd59bf">Quaternion</a>(<span class="keywordtype">float</span> _x, <span class="keywordtype">float</span> _y, <span class="keywordtype">float</span> _z, <span class="keywordtype">float</span> _w)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac">X</a>() = _x;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <a class="code hl_function" href="structmtgb_1_1Quaternion.html#aa4e533f5fd28821dc19f8c4037832d58">Y</a>() = _y;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a63e96e97a32898ededd6c2e71eb30a33">Z</a>() = _z;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_function" href="structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992">W</a>() = _w;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a62b6866144866b1c9f84c46be3bbc662">   35</a></span>        <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a62b6866144866b1c9f84c46be3bbc662">Quaternion</a>(<span class="keyword">const</span> DirectX::XMVECTORF32&amp; _v)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            v = _v;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a6933b361abcbeb349544899c6d526879">   39</a></span>        <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a6933b361abcbeb349544899c6d526879">Quaternion</a>(<span class="keyword">const</span> DirectX::XMVECTOR&amp; _v)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            v = _v;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a888738793dd9da79895d4660ed254406">   48</a></span>        <span class="keyword">static</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a888738793dd9da79895d4660ed254406">Identity</a>() { <span class="keywordflow">return</span> DirectX::XMQuaternionIdentity(); }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="comment">//static </span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#ac6b986591bbb8505c74b8dc75118a52e">   57</a></span>        <span class="keyword">static</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> <a class="code hl_function" href="structmtgb_1_1Quaternion.html#ac6b986591bbb8505c74b8dc75118a52e">Euler</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _vec) { <span class="keywordflow">return</span> DirectX::XMQuaternionRotationRollPitchYaw(_vec.x, _vec.y, _vec.z); }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a6350787aaaeeceba3d94d19e69fbaf90">   62</a></span>        <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a6350787aaaeeceba3d94d19e69fbaf90">GetInverse</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> { -<a class="code hl_function" href="structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac">X</a>(), -<a class="code hl_function" href="structmtgb_1_1Quaternion.html#aa4e533f5fd28821dc19f8c4037832d58">Y</a>(), -<a class="code hl_function" href="structmtgb_1_1Quaternion.html#a63e96e97a32898ededd6c2e71eb30a33">Z</a>(), <a class="code hl_function" href="structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992">W</a>() }; }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a7e4a7d027242791dc6dcd68692b70fb2">   68</a></span>        <span class="keyword">static</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a7e4a7d027242791dc6dcd68692b70fb2">GetInverse</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; _q) { <span class="keywordflow">return</span> _q.<a class="code hl_function" href="structmtgb_1_1Quaternion.html#a6350787aaaeeceba3d94d19e69fbaf90">GetInverse</a>(); }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a8d6a7effc32f26a5dcf44986076b63bc">   73</a></span>        <span class="keywordtype">float</span> <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a8d6a7effc32f26a5dcf44986076b63bc">GetSize</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac">X</a>() * <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac">X</a>() + <a class="code hl_function" href="structmtgb_1_1Quaternion.html#aa4e533f5fd28821dc19f8c4037832d58">Y</a>() * <a class="code hl_function" href="structmtgb_1_1Quaternion.html#aa4e533f5fd28821dc19f8c4037832d58">Y</a>() + <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a63e96e97a32898ededd6c2e71eb30a33">Z</a>() * <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a63e96e97a32898ededd6c2e71eb30a33">Z</a>() + <a class="code hl_function" href="structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992">W</a>() * <a class="code hl_function" href="structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992">W</a>(); }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a792de53fa7e6318a5ba729fde561c329">   79</a></span>        <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a792de53fa7e6318a5ba729fde561c329">GetSize</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; _q) { <span class="keywordflow">return</span> _q.<a class="code hl_function" href="structmtgb_1_1Quaternion.html#a8d6a7effc32f26a5dcf44986076b63bc">GetSize</a>(); }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#aba9dfa09d2bf50113f6e5bef409e3333">   81</a></span>        <span class="keyword">static</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> <a class="code hl_function" href="structmtgb_1_1Quaternion.html#aba9dfa09d2bf50113f6e5bef409e3333">SLerp</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; _self, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; _to, <span class="keywordtype">float</span> _lerp)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">return</span> DirectX::XMQuaternionSlerp(_self, _to, _lerp);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keyword">static</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a8ad5c00bfbfe1bd05b3d3ae721ba57a4">LookRotation</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _dir, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _upVec);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a7fde6fb6acbe4ec980ac0716a109657b">  100</a></span>        <span class="keyword">static</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a7fde6fb6acbe4ec980ac0716a109657b">FromToRotation</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _fromDir, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _toDir)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="comment">// MEMO: 1. 正規化(v1, v2)</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="comment">// MEMO: 2. 外積で回転軸の正規化(v = (x, y, z))ゲット norm(Vf x Vt)</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="comment">// MEMO: 3. 内積で回転角度(th)ゲット acos(Vf ・ Vt)</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="comment">// MEMO: 4. 四元数生成 </span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="comment">// MEMO: -. q = (x sin(th / 2), y sin(th / 2), z sin(th / 2), cos(th / 2))</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> v1{ <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(_fromDir) };</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> v2{ <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(_toDir) };</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> axis{ DirectX::XMVector3Cross(v1, v2) };</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordtype">float</span> th{ acosf(DirectX::XMVector3Dot(v1, v2).m128_f32[0]) };</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordtype">float</span> s{ sinf(th * 0.5f) };</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <span class="keywordtype">float</span> w{ cosf(th * 0.5f) };</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">return</span> { axis.x * s, axis.y * s, axis.z * s, w };</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        std::string <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a0d97eb7a0b9d31da9c2a97e4a13cdab0">ToString</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a2b165e632c74de3a6b73a7da3e59c311">  125</a></span>        <span class="keyword">inline</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a2b165e632c74de3a6b73a7da3e59c311">operator*= </a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; _other) { *<span class="keyword">this</span> = DirectX::XMQuaternionMultiply(*<span class="keyword">this</span>, _other); <span class="keywordflow">return</span> *<span class="keyword">this</span>; };</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="comment">//inline Quaternion&amp; operator+=(const Quaternion&amp; _other) { f[0] += f[0]; f[1] += f[1]; f[2] += f[2]; f[3] += f[3]; return *this; }</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="comment">//inline Quaternion&amp; operator-=(const Quaternion&amp; _other) { f[0] -= f[0]; f[1] -= f[1]; f[2] -= f[2]; f[3] -= f[3]; return *this; }</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    };</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="namespacemtgb.html#a946c1351483e42da93e6f42c1cde43ff">  130</a></span>    <span class="keyword">inline</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> <a class="code hl_function" href="namespacemtgb.html#a946c1351483e42da93e6f42c1cde43ff">operator* </a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; _q1, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; _q2) { <span class="keywordflow">return</span> <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>{ _q1 } *= _q2; };</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+<div class="ttc" id="aVector3_8h_html"><div class="ttname"><a href="Vector3_8h.html">Vector3.h</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a946c1351483e42da93e6f42c1cde43ff"><div class="ttname"><a href="namespacemtgb.html#a946c1351483e42da93e6f42c1cde43ff">mtgb::operator*</a></div><div class="ttdeci">Quaternion operator*(const Quaternion &amp;_q1, const Quaternion &amp;_q2)</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00130">Quaternion.h:130</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html"><div class="ttname"><a href="structmtgb_1_1Quaternion.html">mtgb::Quaternion</a></div><div class="ttdoc">四元数の構造体</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00012">Quaternion.h:13</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a0d97eb7a0b9d31da9c2a97e4a13cdab0"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a0d97eb7a0b9d31da9c2a97e4a13cdab0">mtgb::Quaternion::ToString</a></div><div class="ttdeci">std::string ToString() const</div><div class="ttdoc">文字列に変換する</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8cpp_source.html#l00027">Quaternion.cpp:27</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a2b165e632c74de3a6b73a7da3e59c311"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a2b165e632c74de3a6b73a7da3e59c311">mtgb::Quaternion::operator*=</a></div><div class="ttdeci">Quaternion &amp; operator*=(const Quaternion &amp;_other)</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00125">Quaternion.h:125</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a2ea703d13738f74f3f3ebd242f929bac"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac">mtgb::Quaternion::X</a></div><div class="ttdeci">const float &amp; X() const</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00016">Quaternion.h:16</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a393aa947763b49e6f5a595ad342c82b6"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a393aa947763b49e6f5a595ad342c82b6">mtgb::Quaternion::Z</a></div><div class="ttdeci">float &amp; Z()</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00022">Quaternion.h:22</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a62b6866144866b1c9f84c46be3bbc662"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a62b6866144866b1c9f84c46be3bbc662">mtgb::Quaternion::Quaternion</a></div><div class="ttdeci">Quaternion(const DirectX::XMVECTORF32 &amp;_v)</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00035">Quaternion.h:35</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a6350787aaaeeceba3d94d19e69fbaf90"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a6350787aaaeeceba3d94d19e69fbaf90">mtgb::Quaternion::GetInverse</a></div><div class="ttdeci">Quaternion GetInverse() const</div><div class="ttdoc">逆四元数/共役を取得</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00062">Quaternion.h:62</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a63e96e97a32898ededd6c2e71eb30a33"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a63e96e97a32898ededd6c2e71eb30a33">mtgb::Quaternion::Z</a></div><div class="ttdeci">const float &amp; Z() const</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00018">Quaternion.h:18</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a6933b361abcbeb349544899c6d526879"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a6933b361abcbeb349544899c6d526879">mtgb::Quaternion::Quaternion</a></div><div class="ttdeci">Quaternion(const DirectX::XMVECTOR &amp;_v)</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00039">Quaternion.h:39</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a71140f5915ddfe76ebdc22f0bc902c9d"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a71140f5915ddfe76ebdc22f0bc902c9d">mtgb::Quaternion::COUNT</a></div><div class="ttdeci">static const size_t COUNT</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00014">Quaternion.h:14</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a724ab693b6296127cbe6013934bd59bf"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a724ab693b6296127cbe6013934bd59bf">mtgb::Quaternion::Quaternion</a></div><div class="ttdeci">Quaternion(float _x, float _y, float _z, float _w)</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00028">Quaternion.h:28</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a792de53fa7e6318a5ba729fde561c329"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a792de53fa7e6318a5ba729fde561c329">mtgb::Quaternion::GetSize</a></div><div class="ttdeci">static float GetSize(const Quaternion &amp;_q)</div><div class="ttdoc">四元数のサイズを取得する</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00079">Quaternion.h:79</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a7afbdbc739d85ee451a37cd345427ac2"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a7afbdbc739d85ee451a37cd345427ac2">mtgb::Quaternion::W</a></div><div class="ttdeci">float &amp; W()</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00023">Quaternion.h:23</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a7e4a7d027242791dc6dcd68692b70fb2"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a7e4a7d027242791dc6dcd68692b70fb2">mtgb::Quaternion::GetInverse</a></div><div class="ttdeci">static Quaternion GetInverse(const Quaternion &amp;_q)</div><div class="ttdoc">逆四元数/共役を取得</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00068">Quaternion.h:68</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a7fde6fb6acbe4ec980ac0716a109657b"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a7fde6fb6acbe4ec980ac0716a109657b">mtgb::Quaternion::FromToRotation</a></div><div class="ttdeci">static Quaternion FromToRotation(const Vector3 &amp;_fromDir, const Vector3 &amp;_toDir)</div><div class="ttdoc">今向いている方向と、これから向きたい方向から四元数を作成</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00100">Quaternion.h:100</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a888738793dd9da79895d4660ed254406"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a888738793dd9da79895d4660ed254406">mtgb::Quaternion::Identity</a></div><div class="ttdeci">static Quaternion Identity()</div><div class="ttdoc">単位四元数を取得</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00048">Quaternion.h:48</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a8ad5c00bfbfe1bd05b3d3ae721ba57a4"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a8ad5c00bfbfe1bd05b3d3ae721ba57a4">mtgb::Quaternion::LookRotation</a></div><div class="ttdeci">static Quaternion LookRotation(const Vector3 &amp;_dir, const Vector3 &amp;_upVec)</div><div class="ttdoc">ある方向への回転を取得する</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8cpp_source.html#l00006">Quaternion.cpp:6</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a8d6a7effc32f26a5dcf44986076b63bc"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a8d6a7effc32f26a5dcf44986076b63bc">mtgb::Quaternion::GetSize</a></div><div class="ttdeci">float GetSize() const</div><div class="ttdoc">四元数のサイズを取得する</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00073">Quaternion.h:73</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_aa4e533f5fd28821dc19f8c4037832d58"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#aa4e533f5fd28821dc19f8c4037832d58">mtgb::Quaternion::Y</a></div><div class="ttdeci">const float &amp; Y() const</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00017">Quaternion.h:17</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_aabea3c13f3ad1ee6ce0394970dca61e7"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#aabea3c13f3ad1ee6ce0394970dca61e7">mtgb::Quaternion::Y</a></div><div class="ttdeci">float &amp; Y()</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00021">Quaternion.h:21</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_aba6622ba793898732cdc31e9c22d0542"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#aba6622ba793898732cdc31e9c22d0542">mtgb::Quaternion::X</a></div><div class="ttdeci">float &amp; X()</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00020">Quaternion.h:20</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_aba9dfa09d2bf50113f6e5bef409e3333"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#aba9dfa09d2bf50113f6e5bef409e3333">mtgb::Quaternion::SLerp</a></div><div class="ttdeci">static Quaternion SLerp(const Quaternion &amp;_self, const Quaternion &amp;_to, float _lerp)</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00081">Quaternion.h:81</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_ac6b986591bbb8505c74b8dc75118a52e"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#ac6b986591bbb8505c74b8dc75118a52e">mtgb::Quaternion::Euler</a></div><div class="ttdeci">static Quaternion Euler(const Vector3 &amp;_vec)</div><div class="ttdoc">オイラー角を四元数に変換</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00057">Quaternion.h:57</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_af66b78cad00145372b9e4fb7a0535ac3"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#af66b78cad00145372b9e4fb7a0535ac3">mtgb::Quaternion::Quaternion</a></div><div class="ttdeci">Quaternion()</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00025">Quaternion.h:25</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_af8eb563825e363c5a18a7b247f55e992"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992">mtgb::Quaternion::W</a></div><div class="ttdeci">const float &amp; W() const</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00019">Quaternion.h:19</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_ae4cb4e8c99cfae50150e86f1f1450acc"><div class="ttname"><a href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">mtgb::Vector3::Normalize</a></div><div class="ttdeci">Vector3 &amp; Normalize()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00053">Vector3.h:53</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Quaternion_8h.html">Quaternion.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

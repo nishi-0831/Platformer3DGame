@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Box3D.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Box3D_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Box3D.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Box3D_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;<a class="code" href="mtgb_8h.html">mtgb.h</a>&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classmtgb_1_1Box3D.html">    6</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1Box3D.html">Box3D</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a> , <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1ImGuiShowable.html">ImGuiShowable</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_function" href="classmtgb_1_1Box3D.html#a0d73b760d88adeba97539f1d94eacb20">Box3D</a>();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_function" href="classmtgb_1_1Box3D.html#a0a175dbe66a9e2caeeb34bac08c4dcde">~Box3D</a>();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Box3D.html#a53f0cd9ddf0db87dcf31caa8566fab0d">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Box3D.html#ae38b6fb2eff14b96211b551171eccef4">Draw</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Box3D.html#aefca67a14d78b884ccbd71732ebf7de3">ShowImGui</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Box3D.html#a000341b44a22fe7f647e3762d8198ca6">Start</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classmtgb_1_1Box3D.html#aacf40a576e1af3cd9be550d772cbbf08">   17</a></span>        <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>* <a class="code hl_variable" href="classmtgb_1_1Box3D.html#aacf40a576e1af3cd9be550d772cbbf08">pTransform_</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classmtgb_1_1Box3D.html#a632a5f431dece5925682ea635866c338">   18</a></span>        <a class="code hl_class" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>* <a class="code hl_variable" href="classmtgb_1_1Box3D.html#a632a5f431dece5925682ea635866c338">pMeshRenderer_</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classmtgb_1_1Box3D.html#abca6052f524a8d77c2ca00236de45d46">   19</a></span>        <a class="code hl_class" href="classmtgb_1_1Collider.html">Collider</a>* <a class="code hl_variable" href="classmtgb_1_1Box3D.html#abca6052f524a8d77c2ca00236de45d46">pCollider_</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classmtgb_1_1Box3D.html#a184a407250752a23596847507a9223f3">   20</a></span>        <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classmtgb_1_1Box3D.html#a184a407250752a23596847507a9223f3">generateCounter_</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    };</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html"><div class="ttname"><a href="classmtgb_1_1Box3D.html">mtgb::Box3D</a></div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8h_source.html#l00006">Box3D.h:7</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html_a000341b44a22fe7f647e3762d8198ca6"><div class="ttname"><a href="classmtgb_1_1Box3D.html#a000341b44a22fe7f647e3762d8198ca6">mtgb::Box3D::Start</a></div><div class="ttdeci">void Start() override</div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8cpp_source.html#l00046">Box3D.cpp:46</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html_a0a175dbe66a9e2caeeb34bac08c4dcde"><div class="ttname"><a href="classmtgb_1_1Box3D.html#a0a175dbe66a9e2caeeb34bac08c4dcde">mtgb::Box3D::~Box3D</a></div><div class="ttdeci">~Box3D()</div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8cpp_source.html#l00028">Box3D.cpp:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html_a0d73b760d88adeba97539f1d94eacb20"><div class="ttname"><a href="classmtgb_1_1Box3D.html#a0d73b760d88adeba97539f1d94eacb20">mtgb::Box3D::Box3D</a></div><div class="ttdeci">Box3D()</div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8cpp_source.html#l00008">Box3D.cpp:8</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html_a184a407250752a23596847507a9223f3"><div class="ttname"><a href="classmtgb_1_1Box3D.html#a184a407250752a23596847507a9223f3">mtgb::Box3D::generateCounter_</a></div><div class="ttdeci">static unsigned int generateCounter_</div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8h_source.html#l00020">Box3D.h:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html_a53f0cd9ddf0db87dcf31caa8566fab0d"><div class="ttname"><a href="classmtgb_1_1Box3D.html#a53f0cd9ddf0db87dcf31caa8566fab0d">mtgb::Box3D::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8cpp_source.html#l00032">Box3D.cpp:32</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html_a632a5f431dece5925682ea635866c338"><div class="ttname"><a href="classmtgb_1_1Box3D.html#a632a5f431dece5925682ea635866c338">mtgb::Box3D::pMeshRenderer_</a></div><div class="ttdeci">MeshRenderer * pMeshRenderer_</div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8h_source.html#l00018">Box3D.h:18</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html_aacf40a576e1af3cd9be550d772cbbf08"><div class="ttname"><a href="classmtgb_1_1Box3D.html#aacf40a576e1af3cd9be550d772cbbf08">mtgb::Box3D::pTransform_</a></div><div class="ttdeci">Transform * pTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8h_source.html#l00017">Box3D.h:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html_abca6052f524a8d77c2ca00236de45d46"><div class="ttname"><a href="classmtgb_1_1Box3D.html#abca6052f524a8d77c2ca00236de45d46">mtgb::Box3D::pCollider_</a></div><div class="ttdeci">Collider * pCollider_</div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8h_source.html#l00019">Box3D.h:19</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html_ae38b6fb2eff14b96211b551171eccef4"><div class="ttname"><a href="classmtgb_1_1Box3D.html#ae38b6fb2eff14b96211b551171eccef4">mtgb::Box3D::Draw</a></div><div class="ttdeci">void Draw() const override</div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8cpp_source.html#l00036">Box3D.cpp:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Box3D_html_aefca67a14d78b884ccbd71732ebf7de3"><div class="ttname"><a href="classmtgb_1_1Box3D.html#aefca67a14d78b884ccbd71732ebf7de3">mtgb::Box3D::ShowImGui</a></div><div class="ttdeci">void ShowImGui() override</div><div class="ttdoc">指定した表示キューに積まれる</div><div class="ttdef"><b>Definition:</b> <a href="Box3D_8cpp_source.html#l00040">Box3D.cpp:40</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html"><div class="ttname"><a href="classmtgb_1_1Collider.html">mtgb::Collider</a></div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00025">Collider.h:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00016">GameObject.h:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiShowable_html"><div class="ttname"><a href="classmtgb_1_1ImGuiShowable.html">mtgb::ImGuiShowable</a></div><div class="ttdoc">継承してShowImGuiをオーバライドして使う これを使わなくてもImGui表示はできるので、別の箇所に分離したいときなどにどうぞ</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiShowable_8h_source.html#l00019">ImGuiShowable.h:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MeshRenderer_html"><div class="ttname"><a href="classmtgb_1_1MeshRenderer.html">mtgb::MeshRenderer</a></div><div class="ttdoc">メッシュとマテリアルを管理する描画コンポーネント</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8h_source.html#l00022">MeshRenderer.h:23</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html"><div class="ttname"><a href="classmtgb_1_1Transform.html">mtgb::Transform</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00020">Transform.h:21</a></div></div>
+<div class="ttc" id="amtgb_8h_html"><div class="ttname"><a href="mtgb_8h.html">mtgb.h</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Box3D_8h.html">Box3D.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

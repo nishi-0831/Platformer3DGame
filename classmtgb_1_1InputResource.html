@@ -1,0 +1,962 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::InputResource クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1InputResource.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1InputResource-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::InputResource クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="InputResource_8h_source.html">InputResource.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::InputResource の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputResource__inherit__graph.svg" width="282" height="830"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::InputResource 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputResource__coll__graph.svg" width="1274" height="1807"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a222fcbcdd894c45cc299e9571b2ec938"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#a222fcbcdd894c45cc299e9571b2ec938">InputResource</a> (<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _windowContext)</td></tr>
+<tr class="separator:a222fcbcdd894c45cc299e9571b2ec938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a806a902533238288f4ccf4407295c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#a0a806a902533238288f4ccf4407295c8">~InputResource</a> ()</td></tr>
+<tr class="separator:a0a806a902533238288f4ccf4407295c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a7496289a816903d50af7232189601"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#ad1a7496289a816903d50af7232189601">Update</a> () override</td></tr>
+<tr class="memdesc:ad1a7496289a816903d50af7232189601"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新処理  <br /></td></tr>
+<tr class="separator:ad1a7496289a816903d50af7232189601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff97381a0878d1e4a4821450118a189"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#a6ff97381a0878d1e4a4821450118a189">SetResource</a> () override</td></tr>
+<tr class="memdesc:a6ff97381a0878d1e4a4821450118a189"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウを変更する際に固有のリソースをセットする  <br /></td></tr>
+<tr class="separator:a6ff97381a0878d1e4a4821450118a189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35062b587ac9e98b13dcf7cb07d1aae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#ac35062b587ac9e98b13dcf7cb07d1aae">Release</a> () override</td></tr>
+<tr class="separator:ac35062b587ac9e98b13dcf7cb07d1aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd031967f72aa9ff2afc11b7dcdbd268"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmtgb_1_1InputData.html">InputData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#acd031967f72aa9ff2afc11b7dcdbd268">GetInput</a> ()</td></tr>
+<tr class="separator:acd031967f72aa9ff2afc11b7dcdbd268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a1be98828072a5924a3bd2240a7589"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#af7a1be98828072a5924a3bd2240a7589">Reset</a> ()</td></tr>
+<tr class="memdesc:af7a1be98828072a5924a3bd2240a7589"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウのサイズが変更される前の解放処理  <br /></td></tr>
+<tr class="separator:af7a1be98828072a5924a3bd2240a7589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1afb0355af2bb60bf6a971fee7bf2cf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#aa1afb0355af2bb60bf6a971fee7bf2cf">OnResize</a> (UINT _width, UINT _height)</td></tr>
+<tr class="memdesc:aa1afb0355af2bb60bf6a971fee7bf2cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウのサイズが変更された後の処理  <br /></td></tr>
+<tr class="separator:aa1afb0355af2bb60bf6a971fee7bf2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c7d963d4b5d3d5ca59483bff874a98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#ae3c7d963d4b5d3d5ca59483bff874a98">GetWindowContext</a> () const</td></tr>
+<tr class="memdesc:ae3c7d963d4b5d3d5ca59483bff874a98"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウの識別子を返す  <br /></td></tr>
+<tr class="separator:ae3c7d963d4b5d3d5ca59483bff874a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a57d9d9587ea793257a29ce7b857a2195"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1InputData.html">InputData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a></td></tr>
+<tr class="separator:a57d9d9587ea793257a29ce7b857a2195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a8c2d2eae95241847d06c966d7f39199a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">windowContext_</a></td></tr>
+<tr class="separator:a8c2d2eae95241847d06c966d7f39199a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad8deaa9bc391dcde9e9c00e50df22911"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#ad8deaa9bc391dcde9e9c00e50df22911">InputResource</a> (const <a class="el" href="classmtgb_1_1InputResource.html">InputResource</a> &amp;)=delete</td></tr>
+<tr class="separator:ad8deaa9bc391dcde9e9c00e50df22911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a227277ebec08778dc1e85a105a20adaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1InputResource.html">InputResource</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#a227277ebec08778dc1e85a105a20adaa">operator=</a> (const <a class="el" href="classmtgb_1_1InputResource.html">InputResource</a> &amp;)=delete</td></tr>
+<tr class="separator:a227277ebec08778dc1e85a105a20adaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:afdc5cffb72eab98fa5ba4e3a329faaf9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#afdc5cffb72eab98fa5ba4e3a329faaf9">name_</a></td></tr>
+<tr class="separator:afdc5cffb72eab98fa5ba4e3a329faaf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae02650cb9d956c3c4f25d471c4febde3"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; IDirectInputDevice8 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#ae02650cb9d956c3c4f25d471c4febde3">pKeyDevice_</a></td></tr>
+<tr class="separator:ae02650cb9d956c3c4f25d471c4febde3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14b50443ae9452f830e0744c5c12a375"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; IDirectInputDevice8 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#a14b50443ae9452f830e0744c5c12a375">pMouseDevice_</a></td></tr>
+<tr class="separator:a14b50443ae9452f830e0744c5c12a375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f88241a8935e40a2bef98e87ba613ad"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; IDirectInputDevice8 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#a2f88241a8935e40a2bef98e87ba613ad">pJoystickDevice_</a></td></tr>
+<tr class="separator:a2f88241a8935e40a2bef98e87ba613ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a5520b4d1e2933ee134d8a30e684d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1JoystickProxy.html">JoystickProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#a29a5520b4d1e2933ee134d8a30e684d0">pJoystickProxy_</a></td></tr>
+<tr class="separator:a29a5520b4d1e2933ee134d8a30e684d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c0b9824c6cfa79f2c8f02b755731e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1MouseStateProxy.html">MouseStateProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#a89c0b9824c6cfa79f2c8f02b755731e1">pMouseStateProxy_</a></td></tr>
+<tr class="separator:a89c0b9824c6cfa79f2c8f02b755731e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98beca7c75a095c65e56c3f883a60852"><td class="memItemLeft" align="right" valign="top">GUID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">assignedJoystickGuid_</a></td></tr>
+<tr class="separator:a98beca7c75a095c65e56c3f883a60852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb11517f8a89a241f5d0bafde5788b02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputResource.html#afb11517f8a89a241f5d0bafde5788b02">isInitialized</a></td></tr>
+<tr class="separator:afb11517f8a89a241f5d0bafde5788b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00025">25</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a222fcbcdd894c45cc299e9571b2ec938" name="a222fcbcdd894c45cc299e9571b2ec938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a222fcbcdd894c45cc299e9571b2ec938">&#9670;&#160;</a></span>InputResource() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::InputResource::InputResource </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_windowContext</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8cpp_source.html">InputResource.cpp</a> の <a class="el" href="InputResource_8cpp_source.html#l00011">11</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>    : <a class="code hl_class" href="classmtgb_1_1WindowContextResource.html">WindowContextResource</a>(_windowContext)</div>
+<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   14</span>    , <a class="code hl_variable" href="classmtgb_1_1InputResource.html#ae02650cb9d956c3c4f25d471c4febde3">pKeyDevice_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   15</span>    , <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a14b50443ae9452f830e0744c5c12a375">pMouseDevice_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   16</span>    , <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a29a5520b4d1e2933ee134d8a30e684d0">pJoystickProxy_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   17</span>    , <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a89c0b9824c6cfa79f2c8f02b755731e1">pMouseStateProxy_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   18</span>    , <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">assignedJoystickGuid_</a>{GUID_NULL}</div>
+<div class="line"><span class="lineno">   19</span>    , <a class="code hl_variable" href="classmtgb_1_1InputResource.html#afb11517f8a89a241f5d0bafde5788b02">isInitialized</a>{<span class="keyword">false</span>}</div>
+<div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> hWnd = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">WinCtxRes::GetHWND</a>(_windowContext);</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <span class="comment">// キーボードの取得</span></div>
+<div class="line"><span class="lineno">   24</span>    Game::System&lt;Input&gt;().CreateKeyDevice(hWnd, <a class="code hl_variable" href="classmtgb_1_1InputResource.html#ae02650cb9d956c3c4f25d471c4febde3">pKeyDevice_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <span class="comment">// マウスの取得</span></div>
+<div class="line"><span class="lineno">   27</span>    Game::System&lt;Input&gt;().CreateMouseDevice(hWnd, <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a14b50443ae9452f830e0744c5c12a375">pMouseDevice_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">// 入力状態を保持するデータ</span></div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a> = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1InputData.html">InputData</a>();</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>    <span class="comment">// ImGui表示用のプロキシ</span></div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a89c0b9824c6cfa79f2c8f02b755731e1">pMouseStateProxy_</a> = <span class="keyword">new</span> <a class="code hl_struct" href="structmtgb_1_1MouseStateProxy.html">MouseStateProxy</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#a6a718a32150a6cd203d4b538229167be">mouseStateCurrent_</a>);</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a29a5520b4d1e2933ee134d8a30e684d0">pJoystickProxy_</a> = <span class="keyword">new</span> <a class="code hl_struct" href="structmtgb_1_1JoystickProxy.html">JoystickProxy</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#adaffd86f7528c4d04bb6eb5ec020fbdf">joyStateCurrent_</a>);</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <span class="comment">// 入力の時間範囲を設定</span></div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#aef0b5448a4b9c96c1364d973d12a77e6">config_</a>.<a class="code hl_function" href="structmtgb_1_1InputConfig.html#ab0bbd37131538f932f4c03db2be7053c">SetRange</a>(1000);</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#aef0b5448a4b9c96c1364d973d12a77e6">config_</a>.<a class="code hl_function" href="structmtgb_1_1InputConfig.html#a7cfaa222e580256a0c7b282df8d55974">SetDeadZone</a>(0.1);</div>
+<div class="line"><span class="lineno">   39</span>    </div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_struct" href="structmtgb_1_1JoystickReservation.html">JoystickReservation</a> reservation; </div>
+<div class="line"><span class="lineno">   41</span>    reservation.<a class="code hl_variable" href="structmtgb_1_1JoystickReservation.html#af7b822d0c5ed03a4e9a6ddb79ff9b327">config</a> = <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#aef0b5448a4b9c96c1364d973d12a77e6">config_</a>;</div>
+<div class="line"><span class="lineno">   42</span>    reservation.<a class="code hl_variable" href="structmtgb_1_1JoystickReservation.html#a2baa42362f565d337b1271c092b6c939">hWnd</a> = hWnd;</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (_windowContext == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>)</div>
+<div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>        reservation.<a class="code hl_variable" href="structmtgb_1_1JoystickReservation.html#a2bf0f101c0498a7a37bc6afed996b8ae">deviceType</a> = <a class="code hl_enumvalue" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a88183b946cc5f0e8c96b2e66e1c74a7e">DeviceType::Unknown</a>;</div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_variable" href="classmtgb_1_1InputResource.html#afdc5cffb72eab98fa5ba4e3a329faaf9">name_</a> = <span class="stringliteral">&quot;FirstWindowController&quot;</span>;</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_windowContext == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>)</div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        reservation.<a class="code hl_variable" href="structmtgb_1_1JoystickReservation.html#a2bf0f101c0498a7a37bc6afed996b8ae">deviceType</a> = <a class="code hl_enumvalue" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97abb8134cd77c31c188e34a0355f88bbc3">DeviceType::GamePad</a>;</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_variable" href="classmtgb_1_1InputResource.html#afdc5cffb72eab98fa5ba4e3a329faaf9">name_</a> = <span class="stringliteral">&quot;SecondWindowController&quot;</span>;</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    reservation.<a class="code hl_variable" href="structmtgb_1_1JoystickReservation.html#a3bc949fc6f92803c0a815c7a9f6a0d77">onAssign</a> = [<span class="keyword">this</span>](ComPtr&lt;IDirectInputDevice8&gt; device, GUID guid)</div>
+<div class="line"><span class="lineno">   56</span>        {</div>
+<div class="line"><span class="lineno">   57</span>            <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a2f88241a8935e40a2bef98e87ba613ad">pJoystickDevice_</a> = device;</div>
+<div class="line"><span class="lineno">   58</span>            <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">assignedJoystickGuid_</a> = guid;</div>
+<div class="line"><span class="lineno">   59</span>            <a class="code hl_variable" href="classmtgb_1_1InputResource.html#afb11517f8a89a241f5d0bafde5788b02">isInitialized</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   60</span>            Game::System&lt;Input&gt;().SetJoystickGuid(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">assignedJoystickGuid_</a>);</div>
+<div class="line"><span class="lineno">   61</span>            <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#af3c96e2c25d30b5ee05f9afa661829e2">controllerType_</a> = <a class="code hl_function" href="classmtgb_1_1Input.html#a833b42780dae84db13b5b85c3e31eaaf">Input::GetControllerTypeByVendor</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a2f88241a8935e40a2bef98e87ba613ad">pJoystickDevice_</a>);</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>        };</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    Game::System&lt;Input&gt;().RequestJoystickDevice(std::move(reservation));</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    Game::System&lt;Input&gt;().EnumJoystick();</div>
+<div class="line"><span class="lineno">   68</span>}</div>
+<div class="ttc" id="aDirect2DResource_8h_html_ac17599842f3c193b028cc578098f8b93"><div class="ttname"><a href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a></div><div class="ttdeci">struct HWND__ * HWND</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00009">Direct2DResource.h:9</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html"><div class="ttname"><a href="classmtgb_1_1InputData.html">mtgb::InputData</a></div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00116">InputData.h:117</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_a6a718a32150a6cd203d4b538229167be"><div class="ttname"><a href="classmtgb_1_1InputData.html#a6a718a32150a6cd203d4b538229167be">mtgb::InputData::mouseStateCurrent_</a></div><div class="ttdeci">_DIMOUSESTATE mouseStateCurrent_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00126">InputData.h:126</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_adaffd86f7528c4d04bb6eb5ec020fbdf"><div class="ttname"><a href="classmtgb_1_1InputData.html#adaffd86f7528c4d04bb6eb5ec020fbdf">mtgb::InputData::joyStateCurrent_</a></div><div class="ttdeci">DIJOYSTATE joyStateCurrent_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00128">InputData.h:128</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_aef0b5448a4b9c96c1364d973d12a77e6"><div class="ttname"><a href="classmtgb_1_1InputData.html#aef0b5448a4b9c96c1364d973d12a77e6">mtgb::InputData::config_</a></div><div class="ttdeci">InputConfig config_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00131">InputData.h:131</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_af3c96e2c25d30b5ee05f9afa661829e2"><div class="ttname"><a href="classmtgb_1_1InputData.html#af3c96e2c25d30b5ee05f9afa661829e2">mtgb::InputData::controllerType_</a></div><div class="ttdeci">ControllerType controllerType_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00130">InputData.h:130</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a14b50443ae9452f830e0744c5c12a375"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a14b50443ae9452f830e0744c5c12a375">mtgb::InputResource::pMouseDevice_</a></div><div class="ttdeci">ComPtr&lt; IDirectInputDevice8 &gt; pMouseDevice_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00039">InputResource.h:39</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a29a5520b4d1e2933ee134d8a30e684d0"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a29a5520b4d1e2933ee134d8a30e684d0">mtgb::InputResource::pJoystickProxy_</a></div><div class="ttdeci">JoystickProxy * pJoystickProxy_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00041">InputResource.h:41</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a2f88241a8935e40a2bef98e87ba613ad"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a2f88241a8935e40a2bef98e87ba613ad">mtgb::InputResource::pJoystickDevice_</a></div><div class="ttdeci">ComPtr&lt; IDirectInputDevice8 &gt; pJoystickDevice_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00040">InputResource.h:40</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a57d9d9587ea793257a29ce7b857a2195"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">mtgb::InputResource::pInputData_</a></div><div class="ttdeci">InputData * pInputData_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00035">InputResource.h:35</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a89c0b9824c6cfa79f2c8f02b755731e1"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a89c0b9824c6cfa79f2c8f02b755731e1">mtgb::InputResource::pMouseStateProxy_</a></div><div class="ttdeci">MouseStateProxy * pMouseStateProxy_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00042">InputResource.h:42</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_a98beca7c75a095c65e56c3f883a60852"><div class="ttname"><a href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">mtgb::InputResource::assignedJoystickGuid_</a></div><div class="ttdeci">GUID assignedJoystickGuid_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00043">InputResource.h:43</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_ae02650cb9d956c3c4f25d471c4febde3"><div class="ttname"><a href="classmtgb_1_1InputResource.html#ae02650cb9d956c3c4f25d471c4febde3">mtgb::InputResource::pKeyDevice_</a></div><div class="ttdeci">ComPtr&lt; IDirectInputDevice8 &gt; pKeyDevice_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00038">InputResource.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_afb11517f8a89a241f5d0bafde5788b02"><div class="ttname"><a href="classmtgb_1_1InputResource.html#afb11517f8a89a241f5d0bafde5788b02">mtgb::InputResource::isInitialized</a></div><div class="ttdeci">bool isInitialized</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00044">InputResource.h:44</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_afdc5cffb72eab98fa5ba4e3a329faaf9"><div class="ttname"><a href="classmtgb_1_1InputResource.html#afdc5cffb72eab98fa5ba4e3a329faaf9">mtgb::InputResource::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8h_source.html#l00037">InputResource.h:37</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a833b42780dae84db13b5b85c3e31eaaf"><div class="ttname"><a href="classmtgb_1_1Input.html#a833b42780dae84db13b5b85c3e31eaaf">mtgb::Input::GetControllerTypeByVendor</a></div><div class="ttdeci">static ControllerType GetControllerTypeByVendor(ComPtr&lt; IDirectInputDevice8 &gt; _pInputDevice)</div><div class="ttdoc">ベンダーIDからコントローラーの種類を判別</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00485">Input.cpp:485</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html">mtgb::WindowContextResource</a></div><div class="ttdoc">ウィンドウごとに固有のリソースのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00018">WindowContextResource.h:19</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_ac3067c8903d57f25d01d82b155657099"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">mtgb::WinCtxRes::GetHWND</a></div><div class="ttdeci">HWND GetHWND(WindowContext ctx)</div><div class="ttdoc">そのウィンドウのHWNDを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00025">WindowContextUtil.cpp:25</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a919a09feaf3649c048364fffc3053d97a88183b946cc5f0e8c96b2e66e1c74a7e"><div class="ttname"><a href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a88183b946cc5f0e8c96b2e66e1c74a7e">mtgb::DeviceType::Unknown</a></div><div class="ttdeci">@ Unknown</div></div>
+<div class="ttc" id="anamespacemtgb_html_a919a09feaf3649c048364fffc3053d97abb8134cd77c31c188e34a0355f88bbc3"><div class="ttname"><a href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97abb8134cd77c31c188e34a0355f88bbc3">mtgb::DeviceType::GamePad</a></div><div class="ttdeci">@ GamePad</div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::WindowContext::Second</a></div><div class="ttdeci">@ Second</div></div>
+<div class="ttc" id="astructmtgb_1_1InputConfig_html_a7cfaa222e580256a0c7b282df8d55974"><div class="ttname"><a href="structmtgb_1_1InputConfig.html#a7cfaa222e580256a0c7b282df8d55974">mtgb::InputConfig::SetDeadZone</a></div><div class="ttdeci">void SetDeadZone(float _deadZone)</div><div class="ttdoc">指定した値(割合)をデッドゾーンに設定</div><div class="ttdef"><b>Definition:</b> <a href="InputConfig_8cpp_source.html#l00026">InputConfig.cpp:26</a></div></div>
+<div class="ttc" id="astructmtgb_1_1InputConfig_html_ab0bbd37131538f932f4c03db2be7053c"><div class="ttname"><a href="structmtgb_1_1InputConfig.html#ab0bbd37131538f932f4c03db2be7053c">mtgb::InputConfig::SetRange</a></div><div class="ttdeci">void SetRange(LONG _range)</div><div class="ttdef"><b>Definition:</b> <a href="InputConfig_8cpp_source.html#l00003">InputConfig.cpp:3</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickProxy_html"><div class="ttname"><a href="structmtgb_1_1JoystickProxy.html">mtgb::JoystickProxy</a></div><div class="ttdoc">ジョイスティックの入力をImGuiで表示する用</div><div class="ttdef"><b>Definition:</b> <a href="JoystickProxy_8h_source.html#l00010">JoystickProxy.h:11</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickReservation_html"><div class="ttname"><a href="structmtgb_1_1JoystickReservation.html">mtgb::JoystickReservation</a></div><div class="ttdoc">ジョイスティックの割り当て予約</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00053">Input.h:54</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickReservation_html_a2baa42362f565d337b1271c092b6c939"><div class="ttname"><a href="structmtgb_1_1JoystickReservation.html#a2baa42362f565d337b1271c092b6c939">mtgb::JoystickReservation::hWnd</a></div><div class="ttdeci">HWND hWnd</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00055">Input.h:55</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickReservation_html_a2bf0f101c0498a7a37bc6afed996b8ae"><div class="ttname"><a href="structmtgb_1_1JoystickReservation.html#a2bf0f101c0498a7a37bc6afed996b8ae">mtgb::JoystickReservation::deviceType</a></div><div class="ttdeci">DeviceType deviceType</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00057">Input.h:57</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickReservation_html_a3bc949fc6f92803c0a815c7a9f6a0d77"><div class="ttname"><a href="structmtgb_1_1JoystickReservation.html#a3bc949fc6f92803c0a815c7a9f6a0d77">mtgb::JoystickReservation::onAssign</a></div><div class="ttdeci">std::function&lt; void(ComPtr&lt; IDirectInputDevice8 &gt;, GUID)&gt; onAssign</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00058">Input.h:58</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickReservation_html_af7b822d0c5ed03a4e9a6ddb79ff9b327"><div class="ttname"><a href="structmtgb_1_1JoystickReservation.html#af7b822d0c5ed03a4e9a6ddb79ff9b327">mtgb::JoystickReservation::config</a></div><div class="ttdeci">InputConfig config</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00056">Input.h:56</a></div></div>
+<div class="ttc" id="astructmtgb_1_1MouseStateProxy_html"><div class="ttname"><a href="structmtgb_1_1MouseStateProxy.html">mtgb::MouseStateProxy</a></div><div class="ttdoc">マウスの入力をImGuiで表示する用</div><div class="ttdef"><b>Definition:</b> <a href="MouseStateProxy_8h_source.html#l00010">MouseStateProxy.h:11</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputResource_8h_source.html#l00043">assignedJoystickGuid_</a>, <a class="el" href="Input_8h_source.html#l00056">mtgb::JoystickReservation::config</a>, <a class="el" href="InputData_8h_source.html#l00131">mtgb::InputData::config_</a>, <a class="el" href="InputData_8h_source.html#l00130">mtgb::InputData::controllerType_</a>, <a class="el" href="Input_8h_source.html#l00057">mtgb::JoystickReservation::deviceType</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97abb8134cd77c31c188e34a0355f88bbc3">mtgb::GamePad</a>, <a class="el" href="Input_8cpp_source.html#l00485">mtgb::Input::GetControllerTypeByVendor()</a>, <a class="el" href="WindowContextUtil_8cpp_source.html#l00025">mtgb::WinCtxRes::GetHWND()</a>, <a class="el" href="Input_8h_source.html#l00055">mtgb::JoystickReservation::hWnd</a>, <a class="el" href="InputResource_8h_source.html#l00044">isInitialized</a>, <a class="el" href="InputData_8h_source.html#l00128">mtgb::InputData::joyStateCurrent_</a>, <a class="el" href="InputData_8h_source.html#l00126">mtgb::InputData::mouseStateCurrent_</a>, <a class="el" href="InputResource_8h_source.html#l00037">name_</a>, <a class="el" href="Input_8h_source.html#l00058">mtgb::JoystickReservation::onAssign</a>, <a class="el" href="InputResource_8h_source.html#l00035">pInputData_</a>, <a class="el" href="InputResource_8h_source.html#l00040">pJoystickDevice_</a>, <a class="el" href="InputResource_8h_source.html#l00041">pJoystickProxy_</a>, <a class="el" href="InputResource_8h_source.html#l00038">pKeyDevice_</a>, <a class="el" href="InputResource_8h_source.html#l00039">pMouseDevice_</a>, <a class="el" href="InputResource_8h_source.html#l00042">pMouseStateProxy_</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::Second</a>, <a class="el" href="InputConfig_8cpp_source.html#l00026">mtgb::InputConfig::SetDeadZone()</a>, <a class="el" href="InputConfig_8cpp_source.html#l00003">mtgb::InputConfig::SetRange()</a>, <a class="el" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a88183b946cc5f0e8c96b2e66e1c74a7e">mtgb::Unknown</a> (計25項目).</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputResource_a222fcbcdd894c45cc299e9571b2ec938_cgraph.svg" width="426" height="230"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0a806a902533238288f4ccf4407295c8" name="a0a806a902533238288f4ccf4407295c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a806a902533238288f4ccf4407295c8">&#9670;&#160;</a></span>~InputResource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::InputResource::~InputResource </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8cpp_source.html">InputResource.cpp</a> の <a class="el" href="InputResource_8cpp_source.html#l00070">70</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>{</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_function" href="classmtgb_1_1InputResource.html#ac35062b587ac9e98b13dcf7cb07d1aae">Release</a>();</div>
+<div class="line"><span class="lineno">   73</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputResource_html_ac35062b587ac9e98b13dcf7cb07d1aae"><div class="ttname"><a href="classmtgb_1_1InputResource.html#ac35062b587ac9e98b13dcf7cb07d1aae">mtgb::InputResource::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdef"><b>Definition:</b> <a href="InputResource_8cpp_source.html#l00104">InputResource.cpp:104</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad8deaa9bc391dcde9e9c00e50df22911" name="ad8deaa9bc391dcde9e9c00e50df22911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8deaa9bc391dcde9e9c00e50df22911">&#9670;&#160;</a></span>InputResource() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::InputResource::InputResource </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1InputResource.html">InputResource</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="acd031967f72aa9ff2afc11b7dcdbd268" name="acd031967f72aa9ff2afc11b7dcdbd268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd031967f72aa9ff2afc11b7dcdbd268">&#9670;&#160;</a></span>GetInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmtgb_1_1InputData.html">InputData</a> * mtgb::InputResource::GetInput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputResource_8h_source.html#l00035">pInputData_</a>.</p>
+
+</div>
+</div>
+<a id="ae3c7d963d4b5d3d5ca59483bff874a98" name="ae3c7d963d4b5d3d5ca59483bff874a98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c7d963d4b5d3d5ca59483bff874a98">&#9670;&#160;</a></span>GetWindowContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> mtgb::WindowContextResource::GetWindowContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウの識別子を返す </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00047">47</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">windowContext_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html_a8c2d2eae95241847d06c966d7f39199a"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">mtgb::WindowContextResource::windowContext_</a></div><div class="ttdeci">WindowContext windowContext_</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00052">WindowContextResource.h:52</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="WindowContextResource_8h_source.html#l00052">mtgb::WindowContextResource::windowContext_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="WindowManager_8cpp_source.html#l00030">mtgb::WindowManager::CreateWindowContext()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1WindowContextResource_ae3c7d963d4b5d3d5ca59483bff874a98_icgraph.svg" width="462" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa1afb0355af2bb60bf6a971fee7bf2cf" name="aa1afb0355af2bb60bf6a971fee7bf2cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1afb0355af2bb60bf6a971fee7bf2cf">&#9670;&#160;</a></span>OnResize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::WindowContextResource::OnResize </td>
+          <td>(</td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>_height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウのサイズが変更された後の処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_width</td><td>幅</td></tr>
+    <tr><td class="paramname">_height</td><td>高さ</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classmtgb_1_1Direct2DResource.html#abce19c903752c9cabeeaec008c5426f8">mtgb::Direct2DResource</a>, <a class="el" href="classmtgb_1_1Direct3DResource.html#a581a88c3cd50ac50a5965fecf079d35c">mtgb::Direct3DResource</a>, <a class="el" href="classmtgb_1_1DXGIResource.html#aa8cd0b910870f18c6d3fd0a147178015">mtgb::DXGIResource</a>, <a class="el" href="classmtgb_1_1WindowResource.html#af627f47fc36679088c4907c9aafd5de4">mtgb::WindowResource</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00036">36</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a227277ebec08778dc1e85a105a20adaa" name="a227277ebec08778dc1e85a105a20adaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a227277ebec08778dc1e85a105a20adaa">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1InputResource.html">InputResource</a> &amp; mtgb::InputResource::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1InputResource.html">InputResource</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac35062b587ac9e98b13dcf7cb07d1aae" name="ac35062b587ac9e98b13dcf7cb07d1aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35062b587ac9e98b13dcf7cb07d1aae">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::InputResource::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1WindowContextResource.html#a7291eab4bf997c9faf22903a78a2956d">mtgb::WindowContextResource</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="InputResource_8cpp_source.html">InputResource.cpp</a> の <a class="el" href="InputResource_8cpp_source.html#l00104">104</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>);</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a29a5520b4d1e2933ee134d8a30e684d0">pJoystickProxy_</a>);</div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#ae02650cb9d956c3c4f25d471c4febde3">pKeyDevice_</a>.Reset();</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a14b50443ae9452f830e0744c5c12a375">pMouseDevice_</a>.Reset();</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a2f88241a8935e40a2bef98e87ba613ad">pJoystickDevice_</a>.Reset();</div>
+<div class="line"><span class="lineno">  111</span>}</div>
+<div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
+
+</div>
+</div>
+<a id="af7a1be98828072a5924a3bd2240a7589" name="af7a1be98828072a5924a3bd2240a7589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a1be98828072a5924a3bd2240a7589">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::WindowContextResource::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウのサイズが変更される前の解放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1Direct2DResource.html#a55b6cdeaa01bdaab438340f2b00a7cf4">mtgb::Direct2DResource</a>, <a class="el" href="classmtgb_1_1Direct3DResource.html#a952e691f9175b3eb8a7d881f829aebbf">mtgb::Direct3DResource</a>, <a class="el" href="classmtgb_1_1DXGIResource.html#a536b5d467f5f0a2190062c3cc12a46b1">mtgb::DXGIResource</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6ff97381a0878d1e4a4821450118a189" name="a6ff97381a0878d1e4a4821450118a189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff97381a0878d1e4a4821450118a189">&#9670;&#160;</a></span>SetResource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputResource::SetResource </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウを変更する際に固有のリソースをセットする </p>
+
+<p><a class="el" href="classmtgb_1_1WindowContextResource.html#a7fd488edc0465eb2a0808dc5f6c218b1">mtgb::WindowContextResource</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="InputResource_8cpp_source.html">InputResource.cpp</a> の <a class="el" href="InputResource_8cpp_source.html#l00088">88</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>{</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_class" href="classmtgb_1_1Input.html">Input</a>&amp; input = Game::System&lt;Input&gt;();</div>
+<div class="line"><span class="lineno">   91</span>    input.<a class="code hl_function" href="classmtgb_1_1Input.html#a2b4e6ca3ebbeeadb7cf0e57f7bfa8913">ChangeKeyDevice</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#ae02650cb9d956c3c4f25d471c4febde3">pKeyDevice_</a>);</div>
+<div class="line"><span class="lineno">   92</span>    input.<a class="code hl_function" href="classmtgb_1_1Input.html#a54420097a7f60b6499026125f930b111">ChangeMouseDevice</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a14b50443ae9452f830e0744c5c12a375">pMouseDevice_</a>);</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1InputResource.html#afb11517f8a89a241f5d0bafde5788b02">isInitialized</a>)</div>
+<div class="line"><span class="lineno">   94</span>    {</div>
+<div class="line"><span class="lineno">   95</span>        input.<a class="code hl_function" href="classmtgb_1_1Input.html#a4fc49f4164594bc4fe70df03e05ce015">SetJoystickGuid</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">assignedJoystickGuid_</a>);</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   98</span>    {</div>
+<div class="line"><span class="lineno">   99</span>        input.<a class="code hl_function" href="classmtgb_1_1Input.html#a4fc49f4164594bc4fe70df03e05ce015">SetJoystickGuid</a>(GUID_NULL);</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span>    input.<a class="code hl_function" href="classmtgb_1_1Input.html#a4d5c1ffe0c2a005b307efac9ef855603">ChangeInputData</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>);</div>
+<div class="line"><span class="lineno">  102</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Input_html"><div class="ttname"><a href="classmtgb_1_1Input.html">mtgb::Input</a></div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00062">Input.h:63</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a2b4e6ca3ebbeeadb7cf0e57f7bfa8913"><div class="ttname"><a href="classmtgb_1_1Input.html#a2b4e6ca3ebbeeadb7cf0e57f7bfa8913">mtgb::Input::ChangeKeyDevice</a></div><div class="ttdeci">void ChangeKeyDevice(ComPtr&lt; IDirectInputDevice8 &gt; _pKeyDevice)</div><div class="ttdoc">入力状態を取得する対象のデバイスを切り替える</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00324">Input.cpp:324</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a4d5c1ffe0c2a005b307efac9ef855603"><div class="ttname"><a href="classmtgb_1_1Input.html#a4d5c1ffe0c2a005b307efac9ef855603">mtgb::Input::ChangeInputData</a></div><div class="ttdeci">void ChangeInputData(InputData *_pInputData)</div><div class="ttdoc">入力状態を格納する対象を切り返る</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00341">Input.cpp:341</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a4fc49f4164594bc4fe70df03e05ce015"><div class="ttname"><a href="classmtgb_1_1Input.html#a4fc49f4164594bc4fe70df03e05ce015">mtgb::Input::SetJoystickGuid</a></div><div class="ttdeci">void SetJoystickGuid(GUID _guid)</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00329">Input.cpp:329</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a54420097a7f60b6499026125f930b111"><div class="ttname"><a href="classmtgb_1_1Input.html#a54420097a7f60b6499026125f930b111">mtgb::Input::ChangeMouseDevice</a></div><div class="ttdeci">void ChangeMouseDevice(ComPtr&lt; IDirectInputDevice8 &gt; _pMouseDevice)</div><div class="ttdoc">入力状態を取得する対象のデバイスを切り替える</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00336">Input.cpp:336</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputResource_8h_source.html#l00043">assignedJoystickGuid_</a>, <a class="el" href="Input_8cpp_source.html#l00341">mtgb::Input::ChangeInputData()</a>, <a class="el" href="Input_8cpp_source.html#l00324">mtgb::Input::ChangeKeyDevice()</a>, <a class="el" href="Input_8cpp_source.html#l00336">mtgb::Input::ChangeMouseDevice()</a>, <a class="el" href="InputResource_8h_source.html#l00044">isInitialized</a>, <a class="el" href="InputResource_8h_source.html#l00035">pInputData_</a>, <a class="el" href="InputResource_8h_source.html#l00038">pKeyDevice_</a>, <a class="el" href="InputResource_8h_source.html#l00039">pMouseDevice_</a>, <a class="el" href="Input_8cpp_source.html#l00329">mtgb::Input::SetJoystickGuid()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputResource_a6ff97381a0878d1e4a4821450118a189_cgraph.svg" width="439" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad1a7496289a816903d50af7232189601" name="ad1a7496289a816903d50af7232189601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a7496289a816903d50af7232189601">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::InputResource::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新処理 </p>
+
+<p><a class="el" href="classmtgb_1_1WindowContextResource.html#acc960b1b40665791a3c1f36090250e46">mtgb::WindowContextResource</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="InputResource_8cpp_source.html">InputResource.cpp</a> の <a class="el" href="InputResource_8cpp_source.html#l00075">75</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>{</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_class" href="classmtgb_1_1Input.html">Input</a>&amp; input = Game::System&lt;Input&gt;();</div>
+<div class="line"><span class="lineno">   78</span>    </div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a29a5520b4d1e2933ee134d8a30e684d0">pJoystickProxy_</a>-&gt;<a class="code hl_function" href="structmtgb_1_1JoystickProxy.html#ae717dc3fdd903012c40dde213f41c88e">UpdateFromInput</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852">assignedJoystickGuid_</a>);</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a29a5520b4d1e2933ee134d8a30e684d0">pJoystickProxy_</a>-&gt;<a class="code hl_function" href="structmtgb_1_1JoystickProxy.html#a41478460177e8bf0ff956ddd61d309ad">UpdateInputData</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#adaffd86f7528c4d04bb6eb5ec020fbdf">joyStateCurrent_</a>);</div>
+<div class="line"><span class="lineno">   81</span>    </div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#a6e1f2a4343ee349da40c7552ad9f26b2">TypedShow</a>&lt;<a class="code hl_struct" href="structmtgb_1_1JoystickProxy.html">JoystickProxy</a>&gt;(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a29a5520b4d1e2933ee134d8a30e684d0">pJoystickProxy_</a>, <a class="code hl_variable" href="classmtgb_1_1InputResource.html#afdc5cffb72eab98fa5ba4e3a329faaf9">name_</a>+<span class="stringliteral">&quot;:Joystick&quot;</span>, ShowType::Settings);</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_variable" href="classmtgb_1_1InputResource.html#a89c0b9824c6cfa79f2c8f02b755731e1">pMouseStateProxy_</a>-&gt;<a class="code hl_function" href="structmtgb_1_1MouseStateProxy.html#a09f47018c7643218595f27a025ae6e48">UpdateInputData</a>(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a57d9d9587ea793257a29ce7b857a2195">pInputData_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1InputData.html#a6a718a32150a6cd203d4b538229167be">mouseStateCurrent_</a>);</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#a6e1f2a4343ee349da40c7552ad9f26b2">TypedShow</a>&lt;<a class="code hl_struct" href="structmtgb_1_1MouseStateProxy.html">MouseStateProxy</a>&gt;(<a class="code hl_variable" href="classmtgb_1_1InputResource.html#a89c0b9824c6cfa79f2c8f02b755731e1">pMouseStateProxy_</a>, <a class="code hl_variable" href="classmtgb_1_1InputResource.html#afdc5cffb72eab98fa5ba4e3a329faaf9">name_</a> + <span class="stringliteral">&quot;:Mouse&quot;</span>, ShowType::Settings);</div>
+<div class="line"><span class="lineno">   86</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00038">MTImGui.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a6e1f2a4343ee349da40c7552ad9f26b2"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a6e1f2a4343ee349da40c7552ad9f26b2">mtgb::MTImGui::TypedShow</a></div><div class="ttdeci">void TypedShow(T *target, const std::string &amp;name, ShowType show=ShowType::Inspector)</div><div class="ttdoc">型を指定して表示キューに積む 事前にSetupShowFuncで表示方法を登録する必要あり</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00173">MTImGui.h:173</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickProxy_html_a41478460177e8bf0ff956ddd61d309ad"><div class="ttname"><a href="structmtgb_1_1JoystickProxy.html#a41478460177e8bf0ff956ddd61d309ad">mtgb::JoystickProxy::UpdateInputData</a></div><div class="ttdeci">void UpdateInputData(const DIJOYSTATE &amp;js)</div><div class="ttdef"><b>Definition:</b> <a href="JoystickProxy_8cpp_source.html#l00033">JoystickProxy.cpp:33</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickProxy_html_ae717dc3fdd903012c40dde213f41c88e"><div class="ttname"><a href="structmtgb_1_1JoystickProxy.html#ae717dc3fdd903012c40dde213f41c88e">mtgb::JoystickProxy::UpdateFromInput</a></div><div class="ttdeci">void UpdateFromInput(GUID guid)</div><div class="ttdef"><b>Definition:</b> <a href="JoystickProxy_8cpp_source.html#l00020">JoystickProxy.cpp:20</a></div></div>
+<div class="ttc" id="astructmtgb_1_1MouseStateProxy_html_a09f47018c7643218595f27a025ae6e48"><div class="ttname"><a href="structmtgb_1_1MouseStateProxy.html#a09f47018c7643218595f27a025ae6e48">mtgb::MouseStateProxy::UpdateInputData</a></div><div class="ttdeci">void UpdateInputData(const _DIMOUSESTATE &amp;_ms)</div><div class="ttdef"><b>Definition:</b> <a href="MouseStateProxy_8cpp_source.html#l00012">MouseStateProxy.cpp:12</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTImGui_8h_source.html#l00038">mtgb::MTImGui::Instance()</a>, <a class="el" href="MTImGui_8h_source.html#l00173">mtgb::MTImGui::TypedShow()</a>, <a class="el" href="JoystickProxy_8cpp_source.html#l00033">mtgb::JoystickProxy::UpdateInputData()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputResource_ad1a7496289a816903d50af7232189601_cgraph.svg" width="2110" height="1542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a98beca7c75a095c65e56c3f883a60852" name="a98beca7c75a095c65e56c3f883a60852"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98beca7c75a095c65e56c3f883a60852">&#9670;&#160;</a></span>assignedJoystickGuid_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GUID mtgb::InputResource::assignedJoystickGuid_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00043">43</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="InputResource_8cpp_source.html#l00011">InputResource()</a>, <a class="el" href="InputResource_8cpp_source.html#l00088">SetResource()</a>.</p>
+
+</div>
+</div>
+<a id="afb11517f8a89a241f5d0bafde5788b02" name="afb11517f8a89a241f5d0bafde5788b02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb11517f8a89a241f5d0bafde5788b02">&#9670;&#160;</a></span>isInitialized</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::InputResource::isInitialized</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00044">44</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="InputResource_8cpp_source.html#l00011">InputResource()</a>, <a class="el" href="InputResource_8cpp_source.html#l00088">SetResource()</a>.</p>
+
+</div>
+</div>
+<a id="afdc5cffb72eab98fa5ba4e3a329faaf9" name="afdc5cffb72eab98fa5ba4e3a329faaf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc5cffb72eab98fa5ba4e3a329faaf9">&#9670;&#160;</a></span>name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mtgb::InputResource::name_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="InputResource_8cpp_source.html#l00011">InputResource()</a>.</p>
+
+</div>
+</div>
+<a id="a57d9d9587ea793257a29ce7b857a2195" name="a57d9d9587ea793257a29ce7b857a2195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d9d9587ea793257a29ce7b857a2195">&#9670;&#160;</a></span>pInputData_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1InputData.html">InputData</a>* mtgb::InputResource::pInputData_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00035">35</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="InputResource_8h_source.html#l00034">GetInput()</a>, <a class="el" href="InputResource_8cpp_source.html#l00011">InputResource()</a>, <a class="el" href="InputResource_8cpp_source.html#l00088">SetResource()</a>.</p>
+
+</div>
+</div>
+<a id="a2f88241a8935e40a2bef98e87ba613ad" name="a2f88241a8935e40a2bef98e87ba613ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f88241a8935e40a2bef98e87ba613ad">&#9670;&#160;</a></span>pJoystickDevice_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;IDirectInputDevice8&gt; mtgb::InputResource::pJoystickDevice_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="InputResource_8cpp_source.html#l00011">InputResource()</a>.</p>
+
+</div>
+</div>
+<a id="a29a5520b4d1e2933ee134d8a30e684d0" name="a29a5520b4d1e2933ee134d8a30e684d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29a5520b4d1e2933ee134d8a30e684d0">&#9670;&#160;</a></span>pJoystickProxy_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1JoystickProxy.html">JoystickProxy</a>* mtgb::InputResource::pJoystickProxy_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00041">41</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="InputResource_8cpp_source.html#l00011">InputResource()</a>.</p>
+
+</div>
+</div>
+<a id="ae02650cb9d956c3c4f25d471c4febde3" name="ae02650cb9d956c3c4f25d471c4febde3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae02650cb9d956c3c4f25d471c4febde3">&#9670;&#160;</a></span>pKeyDevice_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;IDirectInputDevice8&gt; mtgb::InputResource::pKeyDevice_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="InputResource_8cpp_source.html#l00011">InputResource()</a>, <a class="el" href="InputResource_8cpp_source.html#l00088">SetResource()</a>.</p>
+
+</div>
+</div>
+<a id="a14b50443ae9452f830e0744c5c12a375" name="a14b50443ae9452f830e0744c5c12a375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14b50443ae9452f830e0744c5c12a375">&#9670;&#160;</a></span>pMouseDevice_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;IDirectInputDevice8&gt; mtgb::InputResource::pMouseDevice_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00039">39</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="InputResource_8cpp_source.html#l00011">InputResource()</a>, <a class="el" href="InputResource_8cpp_source.html#l00088">SetResource()</a>.</p>
+
+</div>
+</div>
+<a id="a89c0b9824c6cfa79f2c8f02b755731e1" name="a89c0b9824c6cfa79f2c8f02b755731e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c0b9824c6cfa79f2c8f02b755731e1">&#9670;&#160;</a></span>pMouseStateProxy_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1MouseStateProxy.html">MouseStateProxy</a>* mtgb::InputResource::pMouseStateProxy_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputResource_8h_source.html">InputResource.h</a> の <a class="el" href="InputResource_8h_source.html#l00042">42</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="InputResource_8cpp_source.html#l00011">InputResource()</a>.</p>
+
+</div>
+</div>
+<a id="a8c2d2eae95241847d06c966d7f39199a" name="a8c2d2eae95241847d06c966d7f39199a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c2d2eae95241847d06c966d7f39199a">&#9670;&#160;</a></span>windowContext_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> mtgb::WindowContextResource::windowContext_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00052">52</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="WindowContextResource_8h_source.html#l00047">mtgb::WindowContextResource::GetWindowContext()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="InputResource_8h_source.html">InputResource.h</a></li>
+<li><a class="el" href="InputResource_8cpp_source.html">InputResource.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1InputResource.html">InputResource</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

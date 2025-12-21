@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtnet::IPEndPoint クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtnet_1_1IPEndPoint.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtnet_1_1IPEndPoint-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtnet::IPEndPoint クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>エンドポイントの情報  
+ <a href="classmtnet_1_1IPEndPoint.html#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="EndPoint_8h_source.html">EndPoint.h</a>&quot;</code></p>
+<div class="dynheader">
+mtnet::IPEndPoint 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtnet_1_1IPEndPoint__coll__graph.svg" width="266" height="338"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a8cb7042c0b71152fb3e9f41178e1d9e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#a8cb7042c0b71152fb3e9f41178e1d9e1">IPEndPoint</a> (const <a class="el" href="namespacemtnet.html#a047daf5a79469e45aadef2fc414f1f27">IPAddress</a> &amp;_ipAddress, <a class="el" href="namespacemtnet.html#ac0490bea78c7f28c83cf81b62f06e666">PortNumber</a> _portNumber)</td></tr>
+<tr class="memdesc:a8cb7042c0b71152fb3e9f41178e1d9e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">エンドポイントの情報  <br /></td></tr>
+<tr class="separator:a8cb7042c0b71152fb3e9f41178e1d9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3764cadcf9d27e5f947250bfd45fb831"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#a3764cadcf9d27e5f947250bfd45fb831">~IPEndPoint</a> ()</td></tr>
+<tr class="separator:a3764cadcf9d27e5f947250bfd45fb831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75cc9ba92c1b815cdb0b21a09a5b4157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtnet.html#a047daf5a79469e45aadef2fc414f1f27">mtnet::IPAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#a75cc9ba92c1b815cdb0b21a09a5b4157">GetIPAddress</a> ()</td></tr>
+<tr class="separator:a75cc9ba92c1b815cdb0b21a09a5b4157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a2c016d7ae403cdf10ad874cfc4fc4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#a4a2c016d7ae403cdf10ad874cfc4fc4d">SetIPAddress</a> (const <a class="el" href="namespacemtnet.html#a047daf5a79469e45aadef2fc414f1f27">IPAddress</a> &amp;_ipAddress)</td></tr>
+<tr class="separator:a4a2c016d7ae403cdf10ad874cfc4fc4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f23d6382346ede8623ad54d982858e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#a9f23d6382346ede8623ad54d982858e6">SetPortNumber</a> (<a class="el" href="namespacemtnet.html#ac0490bea78c7f28c83cf81b62f06e666">PortNumber</a> _portNumber)</td></tr>
+<tr class="separator:a9f23d6382346ede8623ad54d982858e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667de1bb3ae2017ac00847d98221cdf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtnet.html#ac0490bea78c7f28c83cf81b62f06e666">PortNumber</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#a667de1bb3ae2017ac00847d98221cdf2">GetPortNumber</a> () const</td></tr>
+<tr class="separator:a667de1bb3ae2017ac00847d98221cdf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82e9dbed8d1e393e5a84e5228d1c1bbe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#a82e9dbed8d1e393e5a84e5228d1c1bbe">TryGenerateSockAddrIn</a> (SOCKADDR_IN *_out) const</td></tr>
+<tr class="separator:a82e9dbed8d1e393e5a84e5228d1c1bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e07ad61c52e5f6cf54799d0a6871da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#a92e07ad61c52e5f6cf54799d0a6871da">TryGetOctets</a> (byte *_octet1, byte *_octet2, byte *_octet3, byte *_octet4) const</td></tr>
+<tr class="separator:a92e07ad61c52e5f6cf54799d0a6871da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:aefae15fe36180ec8e6faf37f2fd20dc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtnet.html#ac0490bea78c7f28c83cf81b62f06e666">PortNumber</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#aefae15fe36180ec8e6faf37f2fd20dc3">portNumber_</a></td></tr>
+<tr class="separator:aefae15fe36180ec8e6faf37f2fd20dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabbdff5b1e36a1a1be5b3ad6bc54b3e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtnet.html#a047daf5a79469e45aadef2fc414f1f27">IPAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#aabbdff5b1e36a1a1be5b3ad6bc54b3e6">ipAddress_</a></td></tr>
+<tr class="separator:aabbdff5b1e36a1a1be5b3ad6bc54b3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e5584b6c3a6dc8847cec408d366512e"><td class="memItemLeft" align="right" valign="top">ADDRINFO&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1IPEndPoint.html#a2e5584b6c3a6dc8847cec408d366512e">addressInfo_</a></td></tr>
+<tr class="separator:a2e5584b6c3a6dc8847cec408d366512e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>エンドポイントの情報 </p>
+
+<p class="definition"> <a class="el" href="EndPoint_8h_source.html">EndPoint.h</a> の <a class="el" href="EndPoint_8h_source.html#l00013">13</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a8cb7042c0b71152fb3e9f41178e1d9e1" name="a8cb7042c0b71152fb3e9f41178e1d9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb7042c0b71152fb3e9f41178e1d9e1">&#9670;&#160;</a></span>IPEndPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtnet::IPEndPoint::IPEndPoint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtnet.html#a047daf5a79469e45aadef2fc414f1f27">IPAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>_ipAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtnet.html#ac0490bea78c7f28c83cf81b62f06e666">PortNumber</a>&#160;</td>
+          <td class="paramname"><em>_portNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>エンドポイントの情報 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_ipAddress</td><td>IPアドレス</td></tr>
+    <tr><td class="paramname">_portNumber</td><td>ポート番号</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="EndPoint_8cpp_source.html">EndPoint.cpp</a> の <a class="el" href="EndPoint_8cpp_source.html#l00005">5</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    5</span>                                                                               :</div>
+<div class="line"><span class="lineno">    6</span>    <a class="code hl_variable" href="classmtnet_1_1IPEndPoint.html#a2e5584b6c3a6dc8847cec408d366512e">addressInfo_</a>{},</div>
+<div class="line"><span class="lineno">    7</span>    <a class="code hl_variable" href="classmtnet_1_1IPEndPoint.html#aabbdff5b1e36a1a1be5b3ad6bc54b3e6">ipAddress_</a>{ _ipAddress },</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_variable" href="classmtnet_1_1IPEndPoint.html#aefae15fe36180ec8e6faf37f2fd20dc3">portNumber_</a>{ _portNumber }</div>
+<div class="line"><span class="lineno">    9</span>{</div>
+<div class="line"><span class="lineno">   10</span>}</div>
+<div class="ttc" id="aclassmtnet_1_1IPEndPoint_html_a2e5584b6c3a6dc8847cec408d366512e"><div class="ttname"><a href="classmtnet_1_1IPEndPoint.html#a2e5584b6c3a6dc8847cec408d366512e">mtnet::IPEndPoint::addressInfo_</a></div><div class="ttdeci">ADDRINFO addressInfo_</div><div class="ttdef"><b>Definition:</b> <a href="EndPoint_8h_source.html#l00039">EndPoint.h:39</a></div></div>
+<div class="ttc" id="aclassmtnet_1_1IPEndPoint_html_aabbdff5b1e36a1a1be5b3ad6bc54b3e6"><div class="ttname"><a href="classmtnet_1_1IPEndPoint.html#aabbdff5b1e36a1a1be5b3ad6bc54b3e6">mtnet::IPEndPoint::ipAddress_</a></div><div class="ttdeci">IPAddress ipAddress_</div><div class="ttdef"><b>Definition:</b> <a href="EndPoint_8h_source.html#l00038">EndPoint.h:38</a></div></div>
+<div class="ttc" id="aclassmtnet_1_1IPEndPoint_html_aefae15fe36180ec8e6faf37f2fd20dc3"><div class="ttname"><a href="classmtnet_1_1IPEndPoint.html#aefae15fe36180ec8e6faf37f2fd20dc3">mtnet::IPEndPoint::portNumber_</a></div><div class="ttdeci">PortNumber portNumber_</div><div class="ttdef"><b>Definition:</b> <a href="EndPoint_8h_source.html#l00037">EndPoint.h:37</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3764cadcf9d27e5f947250bfd45fb831" name="a3764cadcf9d27e5f947250bfd45fb831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3764cadcf9d27e5f947250bfd45fb831">&#9670;&#160;</a></span>~IPEndPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtnet::IPEndPoint::~IPEndPoint </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EndPoint_8cpp_source.html">EndPoint.cpp</a> の <a class="el" href="EndPoint_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>{</div>
+<div class="line"><span class="lineno">   14</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a75cc9ba92c1b815cdb0b21a09a5b4157" name="a75cc9ba92c1b815cdb0b21a09a5b4157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75cc9ba92c1b815cdb0b21a09a5b4157">&#9670;&#160;</a></span>GetIPAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtnet.html#a047daf5a79469e45aadef2fc414f1f27">mtnet::IPAddress</a> mtnet::IPEndPoint::GetIPAddress </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EndPoint_8cpp_source.html">EndPoint.cpp</a> の <a class="el" href="EndPoint_8cpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>{</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespacemtnet.html#a047daf5a79469e45aadef2fc414f1f27">IPAddress</a>();</div>
+<div class="line"><span class="lineno">   19</span>}</div>
+<div class="ttc" id="anamespacemtnet_html_a047daf5a79469e45aadef2fc414f1f27"><div class="ttname"><a href="namespacemtnet.html#a047daf5a79469e45aadef2fc414f1f27">mtnet::IPAddress</a></div><div class="ttdeci">std::string IPAddress</div><div class="ttdef"><b>Definition:</b> <a href="MTNet_2Common_8h_source.html#l00014">MTNet/Common.h:14</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a667de1bb3ae2017ac00847d98221cdf2" name="a667de1bb3ae2017ac00847d98221cdf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a667de1bb3ae2017ac00847d98221cdf2">&#9670;&#160;</a></span>GetPortNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtnet.html#ac0490bea78c7f28c83cf81b62f06e666">PortNumber</a> mtnet::IPEndPoint::GetPortNumber </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EndPoint_8h_source.html">EndPoint.h</a> の <a class="el" href="EndPoint_8h_source.html#l00028">28</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtnet_1_1IPEndPoint.html#aefae15fe36180ec8e6faf37f2fd20dc3">portNumber_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="EndPoint_8h_source.html#l00037">portNumber_</a>.</p>
+
+</div>
+</div>
+<a id="a4a2c016d7ae403cdf10ad874cfc4fc4d" name="a4a2c016d7ae403cdf10ad874cfc4fc4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2c016d7ae403cdf10ad874cfc4fc4d">&#9670;&#160;</a></span>SetIPAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtnet::IPEndPoint::SetIPAddress </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtnet.html#a047daf5a79469e45aadef2fc414f1f27">IPAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>_ipAddress</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EndPoint_8h_source.html">EndPoint.h</a> の <a class="el" href="EndPoint_8h_source.html#l00026">26</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{ <a class="code hl_variable" href="classmtnet_1_1IPEndPoint.html#aabbdff5b1e36a1a1be5b3ad6bc54b3e6">ipAddress_</a> = _ipAddress; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="EndPoint_8h_source.html#l00038">ipAddress_</a>.</p>
+
+</div>
+</div>
+<a id="a9f23d6382346ede8623ad54d982858e6" name="a9f23d6382346ede8623ad54d982858e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f23d6382346ede8623ad54d982858e6">&#9670;&#160;</a></span>SetPortNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtnet::IPEndPoint::SetPortNumber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtnet.html#ac0490bea78c7f28c83cf81b62f06e666">PortNumber</a>&#160;</td>
+          <td class="paramname"><em>_portNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EndPoint_8h_source.html">EndPoint.h</a> の <a class="el" href="EndPoint_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{ <a class="code hl_variable" href="classmtnet_1_1IPEndPoint.html#aefae15fe36180ec8e6faf37f2fd20dc3">portNumber_</a> = _portNumber; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="EndPoint_8h_source.html#l00037">portNumber_</a>.</p>
+
+</div>
+</div>
+<a id="a82e9dbed8d1e393e5a84e5228d1c1bbe" name="a82e9dbed8d1e393e5a84e5228d1c1bbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82e9dbed8d1e393e5a84e5228d1c1bbe">&#9670;&#160;</a></span>TryGenerateSockAddrIn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtnet::IPEndPoint::TryGenerateSockAddrIn </td>
+          <td>(</td>
+          <td class="paramtype">SOCKADDR_IN *&#160;</td>
+          <td class="paramname"><em>_out</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EndPoint_8cpp_source.html">EndPoint.cpp</a> の <a class="el" href="EndPoint_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>    std::istringstream addressString{ <a class="code hl_variable" href="classmtnet_1_1IPEndPoint.html#aabbdff5b1e36a1a1be5b3ad6bc54b3e6">ipAddress_</a> };</div>
+<div class="line"><span class="lineno">   24</span>    std::string pickString{};</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    _addr-&gt;sin_family = AF_INET;</div>
+<div class="line"><span class="lineno">   27</span>    _addr-&gt;sin_port = htons(<a class="code hl_variable" href="classmtnet_1_1IPEndPoint.html#aefae15fe36180ec8e6faf37f2fd20dc3">portNumber_</a>);</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (!std::getline(addressString, pickString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">   30</span>    {</div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   32</span>    }</div>
+<div class="line"><span class="lineno">   33</span>    _addr-&gt;sin_addr.S_un.S_un_b.s_b1 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(pickString));</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (!std::getline(addressString, pickString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+<div class="line"><span class="lineno">   38</span>    _addr-&gt;sin_addr.S_un.S_un_b.s_b2 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(pickString));</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span> (!std::getline(addressString, pickString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span>    _addr-&gt;sin_addr.S_un.S_un_b.s_b3 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(pickString));</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (!std::getline(addressString, pickString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span>    _addr-&gt;sin_addr.S_un.S_un_b.s_b4 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(pickString));</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   51</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Socket_8cpp_source.html#l00090">mtnet::Socket::TryConnect()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtnet_1_1IPEndPoint_a82e9dbed8d1e393e5a84e5228d1c1bbe_icgraph.svg" width="426" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a92e07ad61c52e5f6cf54799d0a6871da" name="a92e07ad61c52e5f6cf54799d0a6871da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92e07ad61c52e5f6cf54799d0a6871da">&#9670;&#160;</a></span>TryGetOctets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtnet::IPEndPoint::TryGetOctets </td>
+          <td>(</td>
+          <td class="paramtype">byte *&#160;</td>
+          <td class="paramname"><em>_octet1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte *&#160;</td>
+          <td class="paramname"><em>_octet2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte *&#160;</td>
+          <td class="paramname"><em>_octet3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte *&#160;</td>
+          <td class="paramname"><em>_octet4</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EndPoint_8cpp_source.html">EndPoint.cpp</a> の <a class="el" href="EndPoint_8cpp_source.html#l00053">53</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>{</div>
+<div class="line"><span class="lineno">   55</span>    std::istringstream addressString{ <a class="code hl_variable" href="classmtnet_1_1IPEndPoint.html#aabbdff5b1e36a1a1be5b3ad6bc54b3e6">ipAddress_</a> };</div>
+<div class="line"><span class="lineno">   56</span>    std::string pickString{};</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (!std::getline(addressString, pickString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">   59</span>    {</div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+<div class="line"><span class="lineno">   62</span>    *_octet1 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(pickString));</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> (!std::getline(addressString, pickString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="line"><span class="lineno">   67</span>    *_octet2 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(pickString));</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (!std::getline(addressString, pickString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+<div class="line"><span class="lineno">   72</span>    *_octet3 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(pickString));</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span> (!std::getline(addressString, pickString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">   74</span>    {</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span>    *_octet4 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(pickString));</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   80</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a2e5584b6c3a6dc8847cec408d366512e" name="a2e5584b6c3a6dc8847cec408d366512e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e5584b6c3a6dc8847cec408d366512e">&#9670;&#160;</a></span>addressInfo_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ADDRINFO mtnet::IPEndPoint::addressInfo_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EndPoint_8h_source.html">EndPoint.h</a> の <a class="el" href="EndPoint_8h_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aabbdff5b1e36a1a1be5b3ad6bc54b3e6" name="aabbdff5b1e36a1a1be5b3ad6bc54b3e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabbdff5b1e36a1a1be5b3ad6bc54b3e6">&#9670;&#160;</a></span>ipAddress_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtnet.html#a047daf5a79469e45aadef2fc414f1f27">IPAddress</a> mtnet::IPEndPoint::ipAddress_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EndPoint_8h_source.html">EndPoint.h</a> の <a class="el" href="EndPoint_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="EndPoint_8h_source.html#l00026">SetIPAddress()</a>.</p>
+
+</div>
+</div>
+<a id="aefae15fe36180ec8e6faf37f2fd20dc3" name="aefae15fe36180ec8e6faf37f2fd20dc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefae15fe36180ec8e6faf37f2fd20dc3">&#9670;&#160;</a></span>portNumber_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtnet.html#ac0490bea78c7f28c83cf81b62f06e666">PortNumber</a> mtnet::IPEndPoint::portNumber_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EndPoint_8h_source.html">EndPoint.h</a> の <a class="el" href="EndPoint_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="EndPoint_8h_source.html#l00028">GetPortNumber()</a>, <a class="el" href="EndPoint_8h_source.html#l00027">SetPortNumber()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="EndPoint_8h_source.html">EndPoint.h</a></li>
+<li><a class="el" href="EndPoint_8cpp_source.html">EndPoint.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtnet.html">mtnet</a></li><li class="navelem"><a class="el" href="classmtnet_1_1IPEndPoint.html">IPEndPoint</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

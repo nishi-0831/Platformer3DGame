@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: GameObjectFactory.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('GameObjectFactory_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GameObjectFactory.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="GameObjectFactory_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="stdafx_8h.html">stdafx.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="GameObjectFactory_8h.html">GameObjectFactory.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="EventManager_8h.html">EventManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="GameObjectSelectionEvent_8h.html">GameObjectSelectionEvent.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">    7</a></span><a class="code hl_class" href="classmtgb_1_1GameObject.html">mtgb::GameObject</a>* <a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">mtgb::GameObjectFactory::Create</a>(std::string_view _typeName)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1GameObjectFactory.html#acbba0db833352c39ff303fe0ccfba0fd">creators_</a>.find(std::string(_typeName));</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1GameObjectFactory.html#acbba0db833352c39ff303fe0ccfba0fd">creators_</a>.end())</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* gameObj = itr-&gt;second();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">return</span> gameObj;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectFactory.html#a77ef45b65ed6c3872e27757978adf017">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#a77ef45b65ed6c3872e27757978adf017">mtgb::GameObjectFactory::RegisterFactory</a>(std::string_view _typeName, <a class="code hl_typedef" href="namespacemtgb.html#a7197e0be9ea5f400f5087d78da0e4123">CreateFunc</a> _creator)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    creators_.emplace(std::string(_typeName), std::move(_creator));</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="ttc" id="aEventManager_8h_html"><div class="ttname"><a href="EventManager_8h.html">EventManager.h</a></div></div>
+<div class="ttc" id="aGameObjectFactory_8h_html"><div class="ttname"><a href="GameObjectFactory_8h.html">GameObjectFactory.h</a></div></div>
+<div class="ttc" id="aGameObjectSelectionEvent_8h_html"><div class="ttname"><a href="GameObjectSelectionEvent_8h.html">GameObjectSelectionEvent.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectFactory_html_a77ef45b65ed6c3872e27757978adf017"><div class="ttname"><a href="classmtgb_1_1GameObjectFactory.html#a77ef45b65ed6c3872e27757978adf017">mtgb::GameObjectFactory::RegisterFactory</a></div><div class="ttdeci">void RegisterFactory(std::string_view _typeName, CreateFunc _creator) override</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectFactory_8cpp_source.html#l00017">GameObjectFactory.cpp:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectFactory_html_abeb1cfedb12a9e72059d992bdc9aaf67"><div class="ttname"><a href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">mtgb::GameObjectFactory::Create</a></div><div class="ttdeci">GameObject * Create(std::string_view _typeName) const</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectFactory_8cpp_source.html#l00007">GameObjectFactory.cpp:7</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectFactory_html_acbba0db833352c39ff303fe0ccfba0fd"><div class="ttname"><a href="classmtgb_1_1GameObjectFactory.html#acbba0db833352c39ff303fe0ccfba0fd">mtgb::GameObjectFactory::creators_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, CreateFunc &gt; creators_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectFactory_8h_source.html#l00022">GameObjectFactory.h:22</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00016">GameObject.h:17</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a7197e0be9ea5f400f5087d78da0e4123"><div class="ttname"><a href="namespacemtgb.html#a7197e0be9ea5f400f5087d78da0e4123">mtgb::CreateFunc</a></div><div class="ttdeci">std::function&lt; GameObject *()&gt; CreateFunc</div><div class="ttdef"><b>Definition:</b> <a href="IGameObjectRegistrar_8h_source.html#l00011">IGameObjectRegistrar.h:11</a></div></div>
+<div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="GameObjectFactory_8cpp.html">GameObjectFactory.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>
