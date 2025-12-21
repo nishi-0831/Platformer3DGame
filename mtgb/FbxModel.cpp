@@ -10,7 +10,8 @@ mtgb::FbxModel::FbxModel() :
 	startFrame_{ 0 },
 	endFrame_{ 0 },
 	frameRate_{ FbxTime::EMode::eFrames60 },
-	pFbxScene_{ nullptr }
+	pFbxScene_{ nullptr },
+	unitScaleFactor_{ 1.0 }
 {
 }
 
@@ -62,6 +63,8 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	// アニメーションタイムモードの取得
 	frameRate_ = pFbxScene_->GetGlobalSettings().GetTimeMode();
 
+	// スケール単位を取得
+	unitScaleFactor_ = pFbxScene_->GetGlobalSettings().GetSystemUnit().GetScaleFactor();
 	// 現在のカレントディレクトリを取得
 	char defaultCurrentDirectory[MAX_PATH]{};
 	GetCurrentDirectory(MAX_PATH, defaultCurrentDirectory);
@@ -83,7 +86,7 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 		// 作成前にノードのメッシュ有無確認
 		if (pNode->GetMesh() == nullptr) continue;
 
-		FbxParts* pParts = new FbxParts(pNode);
+		FbxParts* pParts = new FbxParts(pNode,unitScaleFactor_);
 		pParts->Initialize();
 		pParts_.push_back(pParts);
 	}
@@ -156,7 +159,7 @@ void mtgb::FbxModel::CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _pPartsL
 	// メッシュの情報が入っているなら
 	if (pNodeAttribute->GetAttributeType() == FbxNodeAttribute::eMesh)
 	{
-		FbxParts* pParts = new FbxParts(_pNode);
+		FbxParts* pParts = new FbxParts(_pNode,unitScaleFactor_);
 		pParts->Initialize();
 		_pPartsList.push_back(pParts);
 	}

@@ -102,7 +102,7 @@ namespace mtgb
 		};
 
 	public:
-		FbxParts(FbxNode* _parent);
+		FbxParts(FbxNode* _parent,double _unitScaleFactor);
 		~FbxParts();
 
 		FbxNode* GetNode() const { return pNode_; }
@@ -209,6 +209,8 @@ namespace mtgb
 		ComPtr<ID3D11Buffer> pBoneConstantBuffer_;
 
 		BoneMatrices boneMatrices_; //ボーン変換用行列
+		double unitScaleFactor_; // スケール単位係数 
+		float fbxToWorldScaleFactor_; // FBXからワールドのスケールに変換する係数
 	};
 
 }

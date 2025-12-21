@@ -18,23 +18,25 @@ namespace
 }
 
 // FbxParts コンストラクタの初期化リストを拡張して、全メンバー変数を初期化
-mtgb::FbxParts::FbxParts(FbxNode* _parent)
-	: vertexCount_(0)
-	, polygonCount_(0)
-	, indexCount_(0)
-	, materialCount_(0)
-	, polygonVertexCount_(0)
-	, pNode_(nullptr)
-	, pMaterial_(nullptr)
-	, pMesh_(nullptr)
-	, pSkin_(nullptr)
-	, ppCluster_(nullptr)
-	, boneCount_(0)
-	, pBones_(nullptr)
-	, pWeights_(nullptr)
-	, pVertexes_(nullptr)
-	, ppIndexData_(nullptr)
+mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
+	: vertexCount_{0}
+	, polygonCount_{0}
+	, indexCount_{0}
+	, materialCount_{0}
+	, polygonVertexCount_{0}
+	, pNode_{nullptr}
+	, pMaterial_{nullptr}
+	, pMesh_{nullptr}
+	, pSkin_{nullptr}
+	, ppCluster_{nullptr}
+	, boneCount_{0}
+	, pBones_{nullptr}
+	, pWeights_{nullptr}
+	, pVertexes_{nullptr}
+	, ppIndexData_{nullptr}
 	, ppIndexBuffer_{nullptr}
+	, unitScaleFactor_{_unitScaleFactor}
+	, fbxToWorldScaleFactor_{static_cast<float>(1.0f / _unitScaleFactor)}
 {
 	if (_parent != nullptr)
 	{
@@ -262,11 +264,12 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 
 			// 頂点の座標
 			FbxVector4 position = pMesh_->GetControlPointAt(index);
-			pVertexes_[index].position =
+			pVertexes_[index].position = 
 			{
-				static_cast<float>(position[0]),
-				static_cast<float>(position[1]),
-				-static_cast<float>(position[2]),
+				static_cast<float>(position[0]) * fbxToWorldScaleFactor_,
+				static_cast<float>(position[1]) * fbxToWorldScaleFactor_,
+				-static_cast<float>(position[2]) * fbxToWorldScaleFactor_,
+
 			};
 
 			// 頂点の法線

@@ -78,5 +78,6 @@ namespace mtgb
 		int endFrame_;  // アニメーション最後のフレーム
 
 		std::string fileName_;  // モデルファイルのパス
+		double unitScaleFactor_; // FbxSceneから取得したスケール単位
 	};
 }
