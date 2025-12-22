@@ -4,7 +4,7 @@
 #include <string>
 #include "Game.h"
 
-
+#if _DEBUG
 
 #define massert(expression)                                                                                                                    \
 	if (!(expression))                                                                                                                          \
@@ -48,5 +48,12 @@
 			mtgb::Game::Exit();\
 		}\
 	}
+
+#else
+
+#define massert(expression) (expression)
+
+
+#endif
 
 

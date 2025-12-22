@@ -5,7 +5,7 @@
 #include <typeindex>
 #include <type_traits>
 #include <any>
-#include <Windows.h>
+#include "IncludingWindows.h"
 #include "WindowContext.h"
 #include "DefaultShow.h"
 #include "TypeRegistry.h"  

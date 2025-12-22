@@ -3,7 +3,7 @@
 
 #include <d2d1.h>
 #include "WindowContext.h"
-#include <Windows.h>
+#include "IncludingWindows.h"
 #include <wrl/client.h>
 
 typedef struct HWND__* HWND;

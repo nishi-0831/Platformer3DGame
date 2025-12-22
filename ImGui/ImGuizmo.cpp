@@ -38,7 +38,8 @@
 #define _malloca(x) alloca(x)
 #define _freea(x)
 #endif
-
+#undef min
+#undef max
 // includes patches for multiview from
 // https://github.com/CedricGuillemet/ImGuizmo/issues/15
 

@@ -33,6 +33,8 @@
 #include <array>
 #include "GraphEditor.h"
 
+#undef min
+#undef max
 namespace GraphEditor {
 
 static inline float Distance(const ImVec2& a, const ImVec2& b)

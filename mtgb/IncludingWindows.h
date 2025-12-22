@@ -6,4 +6,5 @@
 //#include <WinSock2.h>
 
 #define _WINSOCKAPI_
+#define NOMINMAX
 #include <Windows.h>
