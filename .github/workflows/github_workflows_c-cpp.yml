@@ -1,0 +1,24 @@
+name: Doxygen GitHub Pages Deploy Action(test)
+
+on:
+  push:
+    branches:
+      - feature/generateHeader    # ← テスト用ブランチ
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      # ディレクトリを事前に作成
+      - name : Create output directory
+        run: mkdir -p docs/html
+      - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages    # ← テスト用の公開ブランチ
+          config_file: Doxyfile

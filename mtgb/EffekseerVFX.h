@@ -13,9 +13,8 @@
 namespace fs = std::filesystem;
 
 #pragma warning(disable:4100) // 'identifier' : unreferenced formal parameter
-#include <EffekseerRendererDX11/EffekseerRendererDX11.h>
-#include <Effekseer/Effekseer.h>
-
+#include <EffekseerRendererDX11.h>
+#include <Effekseer.h>
 
 #ifdef _DEBUG
 #pragma comment(lib, "Effekseerd.lib")
@@ -24,8 +23,6 @@ namespace fs = std::filesystem;
 #pragma comment(lib, "Effekseer.lib")
 #pragma comment(lib, "EffekseerRendererDX11.lib")
 #endif
-
-
 
 namespace mtgb 
 {

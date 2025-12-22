@@ -533,6 +533,7 @@
     <ClInclude Include="Source\TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".github\workflows\github_workflows_c-cpp.yml" />
     <None Include="Assets\Shader\2DCommon.hlsli" />
     <None Include="Assets\Shader\3DCommon.hlsli" />
     <None Include="mtgb\DefaultShow.inl" />
@@ -766,7 +767,7 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_AMD64_</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(FBX)\include;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;%(AdditionalIncludeDirectories);$(REFL_CPP);E:\EffekseerForCpp\install_msvc2022_x64\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(FBX)\include;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;%(AdditionalIncludeDirectories);$(REFL_CPP);$(ProjectDir)\EffekseeLib\install_msvc2022_x64\include\Effekseer</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
@@ -775,7 +776,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(FBX)\lib\x64\debug;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\lib\x64\debug;%(AdditionalLibraryDirectories);E:\EffekseerForCpp\install_msvc2022_x64\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(FBX)\lib\x64\debug;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\lib\x64\debug;%(AdditionalLibraryDirectories);$(ProjectDir)\EffekseeLib\install_msvc2022_x64\lib</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -791,7 +792,7 @@
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions);_AMD64_</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(FBX)\include;%(AdditionalIncludeDirectories);$(REFL_CPP)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(FBX)\include;%(AdditionalIncludeDirectories);$(REFL_CPP);C:\Users\240050\source\repos\Platformer3DGame\EffekseeLib\install_msvc2022_x64\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -799,7 +800,7 @@
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(FBX)\lib\x64\release;%(AdditionalLibraryDirectories);E:\EffekseerForCpp\install_msvc2022_x64\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(FBX)\lib\x64\release;%(AdditionalLibraryDirectories);E:\EffekseerForCpp\install_msvc2022_x64\lib;$(ProjectDir)\EffekseeLib\install_msvc2022_x64\lib</AdditionalLibraryDirectories>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
     <PreBuildEvent>
