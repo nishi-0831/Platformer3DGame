@@ -1,5 +1,7 @@
 var NAVTREEINDEX82 =
 {
+"install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h.html#a4b751cae64884e3f80e16c88924e3f59a2d00fbcd05d552791494b5799db714e1":[7,0,1,1,0,5,0,23,9],
+"install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h.html#a4b751cae64884e3f80e16c88924e3f59a4d2bc7c468d854a7046ae1ca6b7cf64e":[7,0,1,1,0,5,0,23,7],
 "install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h.html#a4b751cae64884e3f80e16c88924e3f59a4d2bc7c468d854a7046ae1ca6b7cf64e":[7,0,1,1,0,5,0,23,25],
 "install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h.html#a4b751cae64884e3f80e16c88924e3f59a4f5847ebfcf03e87d28d26da8e7c8280":[7,0,1,1,0,5,0,23,21],
 "install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h.html#a4b751cae64884e3f80e16c88924e3f59a4f5847ebfcf03e87d28d26da8e7c8280":[7,0,1,1,0,5,0,23,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX82 =
 "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23":[4,0,33,90,3],
 "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23":[4,0,33,90,7],
 "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23":[4,0,33,89,7],
-"namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23":[4,0,33,89,3],
-"namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a8d1827d8fca7d2d9db612616da97258a":[4,0,33,90,5],
-"namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a8d1827d8fca7d2d9db612616da97258a":[4,0,33,90,1]
+"namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23":[4,0,33,89,3]
 };

@@ -223,11 +223,11 @@ mtgb::AudioClip 連携図</div>
 <div class="line"><span class="lineno">  168</span>    <span class="comment">// データサイズ / 1秒間あたりの読みバイト数 = 総再生時間</span></div>
 <div class="line"><span class="lineno">  169</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1AudioClip.html#a01cdc411cc1cdc9ac63a2c8202d54ec2">pWaveData_</a>-&gt;<a class="code hl_variable" href="structmtgb_1_1WaveData.html#af79d650a93ac2b824c471eadc07446d4">bufferSize</a> / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1AudioClip.html#a01cdc411cc1cdc9ac63a2c8202d54ec2">pWaveData_</a>-&gt;<a class="code hl_variable" href="structmtgb_1_1WaveData.html#a5aa5b13b5f1dd0159ee77b69dcacbc18">waveFormat</a>.nAvgBytesPerSec);</div>
 <div class="line"><span class="lineno">  170</span>}</div>
-<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00009">MTAssert.h:9</a></div></div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00054">MTAssert.h:54</a></div></div>
 <div class="ttc" id="astructmtgb_1_1WaveData_html_a5aa5b13b5f1dd0159ee77b69dcacbc18"><div class="ttname"><a href="structmtgb_1_1WaveData.html#a5aa5b13b5f1dd0159ee77b69dcacbc18">mtgb::WaveData::waveFormat</a></div><div class="ttdeci">WAVEFORMATEX waveFormat</div><div class="ttdef"><b>Definition:</b> <a href="WaveData_8h_source.html#l00014">WaveData.h:14</a></div></div>
 <div class="ttc" id="astructmtgb_1_1WaveData_html_af79d650a93ac2b824c471eadc07446d4"><div class="ttname"><a href="structmtgb_1_1WaveData.html#af79d650a93ac2b824c471eadc07446d4">mtgb::WaveData::bufferSize</a></div><div class="ttdeci">size_t bufferSize</div><div class="ttdef"><b>Definition:</b> <a href="WaveData_8h_source.html#l00016">WaveData.h:16</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00054">massert</a>.</p>
 
 </div>
 </div>
@@ -288,7 +288,7 @@ mtgb::AudioClip 連携図</div>
 <div class="ttc" id="aclassmtgb_1_1AudioClip_html_a4cfa88ac3014ddb68a8695ae1e5d5c19"><div class="ttname"><a href="classmtgb_1_1AudioClip.html#a4cfa88ac3014ddb68a8695ae1e5d5c19">mtgb::AudioClip::LoadMp3</a></div><div class="ttdeci">void LoadMp3(mtbin::MemoryStream &amp;_ms, const byte *_first4)</div><div class="ttdoc">mp3読み込み</div><div class="ttdef"><b>Definition:</b> <a href="AudioClip_8cpp_source.html#l00119">AudioClip.cpp:119</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1AudioClip_html_ac777254052a742f725ca51dc4b5499b4"><div class="ttname"><a href="classmtgb_1_1AudioClip.html#ac777254052a742f725ca51dc4b5499b4">mtgb::AudioClip::LoadWave</a></div><div class="ttdeci">void LoadWave(mtbin::MemoryStream &amp;_ms, const byte *_first4)</div><div class="ttdoc">WAV読み込み</div><div class="ttdef"><b>Definition:</b> <a href="AudioClip_8cpp_source.html#l00050">AudioClip.cpp:50</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="MemoryStream_8h_source.html#l00120">mtbin::MemoryStream::Read()</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>, <a class="el" href="MemoryStream_8cpp_source.html#l00016">mtbin::MemoryStream::Seek()</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00054">massert</a>, <a class="el" href="MemoryStream_8h_source.html#l00120">mtbin::MemoryStream::Read()</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>, <a class="el" href="MemoryStream_8cpp_source.html#l00016">mtbin::MemoryStream::Seek()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -386,7 +386,7 @@ mtgb::AudioClip 連携図</div>
 <div class="ttc" id="astructdrmp3_html_ade030203edf619566625bd278421d4e7"><div class="ttname"><a href="structdrmp3.html#ade030203edf619566625bd278421d4e7">drmp3::channels</a></div><div class="ttdeci">drmp3_uint32 channels</div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00372">dr_mp3.h:372</a></div></div>
 <div class="ttc" id="astructmtgb_1_1WaveData_html_a244307cda5047b766a880f71895873b4"><div class="ttname"><a href="structmtgb_1_1WaveData.html#a244307cda5047b766a880f71895873b4">mtgb::WaveData::pBuffer</a></div><div class="ttdeci">byte * pBuffer</div><div class="ttdef"><b>Definition:</b> <a href="WaveData_8h_source.html#l00015">WaveData.h:15</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="dr__mp3_8h_source.html#l00372">drmp3::channels</a>, <a class="el" href="dr__mp3_8h.html#a8da91a2c2b1659be7393d799fed77754">drmp3_get_pcm_frame_count()</a>, <a class="el" href="dr__mp3_8h.html#a8bfd3fe758338cbb89cabde457d82c1c">drmp3_init_memory()</a>, <a class="el" href="dr__mp3_8h.html#a70055f4a3c02863990dfb3b2f5168a10">drmp3_read_pcm_frames_s16()</a>, <a class="el" href="dr__mp3_8h.html#a3a9812142141572d246f3233302c17fd">drmp3_uninit()</a>, <a class="el" href="MemoryStream_8h_source.html#l00076">mtbin::MemoryStream::GetLength()</a>, <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="MemoryStream_8h_source.html#l00120">mtbin::MemoryStream::Read()</a>, <a class="el" href="dr__mp3_8h_source.html#l00373">drmp3::sampleRate</a>.</p>
+<p class="reference">参照先 <a class="el" href="dr__mp3_8h_source.html#l00372">drmp3::channels</a>, <a class="el" href="dr__mp3_8h.html#a8da91a2c2b1659be7393d799fed77754">drmp3_get_pcm_frame_count()</a>, <a class="el" href="dr__mp3_8h.html#a8bfd3fe758338cbb89cabde457d82c1c">drmp3_init_memory()</a>, <a class="el" href="dr__mp3_8h.html#a70055f4a3c02863990dfb3b2f5168a10">drmp3_read_pcm_frames_s16()</a>, <a class="el" href="dr__mp3_8h.html#a3a9812142141572d246f3233302c17fd">drmp3_uninit()</a>, <a class="el" href="MemoryStream_8h_source.html#l00076">mtbin::MemoryStream::GetLength()</a>, <a class="el" href="MTAssert_8h_source.html#l00054">massert</a>, <a class="el" href="MemoryStream_8h_source.html#l00120">mtbin::MemoryStream::Read()</a>, <a class="el" href="dr__mp3_8h_source.html#l00373">drmp3::sampleRate</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -501,7 +501,7 @@ mtgb::AudioClip 連携図</div>
 <div class="line"><span class="lineno">  117</span>}</div>
 <div class="ttc" id="aclassmtbin_1_1MemoryStream_html_ae25220b721616a04c0eddfe69a27ae1e"><div class="ttname"><a href="classmtbin_1_1MemoryStream.html#ae25220b721616a04c0eddfe69a27ae1e">mtbin::MemoryStream::Current</a></div><div class="ttdeci">size_t Current() const</div><div class="ttdoc">現在の読み書き位置を取得</div><div class="ttdef"><b>Definition:</b> <a href="MemoryStream_8h_source.html#l00071">MemoryStream.h:71</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MemoryStream_8h_source.html#l00071">mtbin::MemoryStream::Current()</a>, <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="MemoryStream_8h_source.html#l00120">mtbin::MemoryStream::Read()</a>, <a class="el" href="MemoryStream_8cpp_source.html#l00016">mtbin::MemoryStream::Seek()</a>.</p>
+<p class="reference">参照先 <a class="el" href="MemoryStream_8h_source.html#l00071">mtbin::MemoryStream::Current()</a>, <a class="el" href="MTAssert_8h_source.html#l00054">massert</a>, <a class="el" href="MemoryStream_8h_source.html#l00120">mtbin::MemoryStream::Read()</a>, <a class="el" href="MemoryStream_8cpp_source.html#l00016">mtbin::MemoryStream::Seek()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">

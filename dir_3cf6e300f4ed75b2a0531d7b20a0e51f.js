@@ -275,7 +275,7 @@ var dir_3cf6e300f4ed75b2a0531d7b20a0e51f =
     [ "StatefulComponent.h", "StatefulComponent_8h.html", "StatefulComponent_8h" ],
     [ "StatefulComponent.inl", "StatefulComponent_8inl.html", null ],
     [ "stdafx.cpp", "stdafx_8cpp.html", null ],
-    [ "stdafx.h", "stdafx_8h.html", null ],
+    [ "stdafx.h", "stdafx_8h.html", "stdafx_8h" ],
     [ "SubWindow.h", "SubWindow_8h.html", "SubWindow_8h" ],
     [ "TerrainReader.cpp", "TerrainReader_8cpp.html", null ],
     [ "TerrainReader.h", "TerrainReader_8h.html", "TerrainReader_8h" ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX35 =
 {
+"classPatrolChargerEnemy.html#ac4f79d210ae0d1388e203d1d1b93ae6c":[6,0,240,50],
 "classPatrolChargerEnemy.html#acedb3317bc67249ae7692949f73fefa9":[6,0,240,34],
 "classPatrolChargerEnemy.html#ad7a69752dcdc509d547b1f3d9836a1ea":[6,0,240,64],
 "classPatrolChargerEnemy.html#ad93611d036708d8aacdd139cf75a414c":[6,0,240,47],
@@ -248,6 +249,5 @@ var NAVTREEINDEX35 =
 "classScoreViewer.html#ac4f79d210ae0d1388e203d1d1b93ae6c":[6,0,255,35],
 "classScoreViewer.html#ad099bd7715575bf27607729a9ce40f04":[6,0,255,6],
 "classScoreViewer.html#adca80cc33581de34dd622983ac232707":[6,0,255,18],
-"classScoreViewer.html#ae183ec7dea108c1dee3af98bbb4a1e03":[6,0,255,12],
-"classScoreViewer.html#ae98ecf286d6e93064a967ef02c41a438":[6,0,255,15]
+"classScoreViewer.html#ae183ec7dea108c1dee3af98bbb4a1e03":[6,0,255,12]
 };

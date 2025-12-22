@@ -1,5 +1,8 @@
 var NAVTREEINDEX105 =
 {
+"structImFontAtlasBuilder.html#ae3f83de5a911b1d2279f76784deb4d40":[6,0,89,14],
+"structImFontAtlasBuilder.html#afc61046a49637ba8f97fd123b33862b2":[6,0,89,18],
+"structImFontAtlasBuilder.html#afe30b0241eb02526da9aa14fbf3b67a4":[6,0,89,16],
 "structImFontAtlasPostProcessData.html":[6,0,90],
 "structImFontAtlasPostProcessData.html#a04067b9d01085cfc879abcbecf465c4f":[6,0,90,4],
 "structImFontAtlasPostProcessData.html#a172e9e6ffa3320eed20a0cb5bce9bc1c":[6,0,90,5],
@@ -117,18 +120,18 @@ var NAVTREEINDEX105 =
 "structImFontStackData.html#add27bef28f6878469f51724e7146a0e7":[6,0,98,0],
 "structImGradient_1_1Delegate.html":[6,0,10,0],
 "structImGradient_1_1Delegate.html":[4,0,42,0],
-"structImGradient_1_1Delegate.html#a3f06112bf1eadbb1479e1d5f40d1f36a":[6,0,10,0,1],
 "structImGradient_1_1Delegate.html#a3f06112bf1eadbb1479e1d5f40d1f36a":[4,0,42,0,1],
-"structImGradient_1_1Delegate.html#a43703f0fdb01efa07e04c1079f8394e0":[6,0,10,0,3],
+"structImGradient_1_1Delegate.html#a3f06112bf1eadbb1479e1d5f40d1f36a":[6,0,10,0,1],
 "structImGradient_1_1Delegate.html#a43703f0fdb01efa07e04c1079f8394e0":[4,0,42,0,3],
-"structImGradient_1_1Delegate.html#a7bd1c671008431e4f8e573773e32e13b":[6,0,10,0,2],
+"structImGradient_1_1Delegate.html#a43703f0fdb01efa07e04c1079f8394e0":[6,0,10,0,3],
 "structImGradient_1_1Delegate.html#a7bd1c671008431e4f8e573773e32e13b":[4,0,42,0,2],
+"structImGradient_1_1Delegate.html#a7bd1c671008431e4f8e573773e32e13b":[6,0,10,0,2],
 "structImGradient_1_1Delegate.html#a820f4c8a7f45bcbefdd13d4a23df4667":[4,0,42,0,0],
 "structImGradient_1_1Delegate.html#a820f4c8a7f45bcbefdd13d4a23df4667":[6,0,10,0,0],
-"structImGradient_1_1Delegate.html#a8fd0be4f3e460b8101e5d95e096b070d":[6,0,10,0,4],
 "structImGradient_1_1Delegate.html#a8fd0be4f3e460b8101e5d95e096b070d":[4,0,42,0,4],
-"structImGradient_1_1Delegate.html#adf7c4b6a24c6ba9f1c7b118193c236f5":[4,0,42,0,5],
+"structImGradient_1_1Delegate.html#a8fd0be4f3e460b8101e5d95e096b070d":[6,0,10,0,4],
 "structImGradient_1_1Delegate.html#adf7c4b6a24c6ba9f1c7b118193c236f5":[6,0,10,0,5],
+"structImGradient_1_1Delegate.html#adf7c4b6a24c6ba9f1c7b118193c236f5":[4,0,42,0,5],
 "structImGuiBoxSelectState.html":[6,0,106],
 "structImGuiBoxSelectState.html#a220cf66214aeee5a76fd3c5d5cf09be0":[6,0,106,4],
 "structImGuiBoxSelectState.html#a222395f607408b36a5340d74782eb412":[6,0,106,15],
@@ -246,8 +249,5 @@ var NAVTREEINDEX105 =
 "structImGuiContext.html#a3fcd07940c700bf8b106e414d28db79c":[6,0,109,82],
 "structImGuiContext.html#a41245f5433674e8e818058692e68c27f":[6,0,109,287],
 "structImGuiContext.html#a412d61294f8c686db6ecc366c845bd08":[6,0,109,251],
-"structImGuiContext.html#a418d69aff01c536fc3af893b517eaf78":[6,0,109,76],
-"structImGuiContext.html#a445c588479dbf5122c062ba8bcdb99e2":[6,0,109,223],
-"structImGuiContext.html#a44af675b4e2e615fe768cd5ce677c34e":[6,0,109,272],
-"structImGuiContext.html#a45d87c28d8ea54ea82cb5d26c12c13db":[6,0,109,222]
+"structImGuiContext.html#a418d69aff01c536fc3af893b517eaf78":[6,0,109,76]
 };
