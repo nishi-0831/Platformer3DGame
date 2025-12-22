@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::ScoreManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1ScoreManager.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
+<a href="classmtgb_1_1ScoreManager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::ScoreManager クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="ScoreManager_8h_source.html">ScoreManager.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::ScoreManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ScoreManager__inherit__graph.svg" width="246" height="507"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::ScoreManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ScoreManager__coll__graph.svg" width="246" height="507"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a486ec72f7e3b371528af2ce0f311690e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#a486ec72f7e3b371528af2ce0f311690e">ScoreManager</a> ()</td></tr>
+<tr class="separator:a486ec72f7e3b371528af2ce0f311690e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c725b4cfa3357f9417ca0b660e60ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#ac1c725b4cfa3357f9417ca0b660e60ca">~ScoreManager</a> ()</td></tr>
+<tr class="separator:ac1c725b4cfa3357f9417ca0b660e60ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a800a1719eaef014678f4382d69c72890"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#a800a1719eaef014678f4382d69c72890">Initialize</a> () override</td></tr>
+<tr class="separator:a800a1719eaef014678f4382d69c72890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbebc24602944500ef8dd102d9e357ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#adbebc24602944500ef8dd102d9e357ea">Update</a> () override</td></tr>
+<tr class="separator:adbebc24602944500ef8dd102d9e357ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2823e5390468dfc47213b845c55d3ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">Release</a> ()</td></tr>
+<tr class="memdesc:aa2823e5390468dfc47213b845c55d3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放処理  <br /></td></tr>
+<tr class="separator:aa2823e5390468dfc47213b845c55d3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3bbb0eecfcd23fd337b4774c69d6a62e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#a3bbb0eecfcd23fd337b4774c69d6a62e">AddScore</a> (uint32_t _score)</td></tr>
+<tr class="memdesc:a3bbb0eecfcd23fd337b4774c69d6a62e"><td class="mdescLeft">&#160;</td><td class="mdescRight">スコアの加点を行う  <br /></td></tr>
+<tr class="separator:a3bbb0eecfcd23fd337b4774c69d6a62e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07f4052ab15556af9d0d286b2fc5908a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#a07f4052ab15556af9d0d286b2fc5908a">AddQuota</a> (uint32_t _quota)</td></tr>
+<tr class="memdesc:a07f4052ab15556af9d0d286b2fc5908a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノルマの加点を行う  <br /></td></tr>
+<tr class="separator:a07f4052ab15556af9d0d286b2fc5908a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5142720678002f9473089ab256ae0887"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#a5142720678002f9473089ab256ae0887">GetScore</a> ()</td></tr>
+<tr class="memdesc:a5142720678002f9473089ab256ae0887"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在のスコアを取得する  <br /></td></tr>
+<tr class="separator:a5142720678002f9473089ab256ae0887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a331b2e534e1fdb28f741a15ece1b20e6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#a331b2e534e1fdb28f741a15ece1b20e6">SubtractScore</a> (uint32_t _score)</td></tr>
+<tr class="memdesc:a331b2e534e1fdb28f741a15ece1b20e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">スコアの減点を行う  <br /></td></tr>
+<tr class="separator:a331b2e534e1fdb28f741a15ece1b20e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af89f5fd34b4894a25d933de436616cf6"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#af89f5fd34b4894a25d933de436616cf6">GetQuotaScore</a> ()</td></tr>
+<tr class="memdesc:af89f5fd34b4894a25d933de436616cf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノルマのスコアを取得する  <br /></td></tr>
+<tr class="separator:af89f5fd34b4894a25d933de436616cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fca283ce8014905dacf4354da5630e6"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#a8fca283ce8014905dacf4354da5630e6">GetQuotaScoreMax</a> ()</td></tr>
+<tr class="memdesc:a8fca283ce8014905dacf4354da5630e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">スコアの最大値を取得する  <br /></td></tr>
+<tr class="separator:a8fca283ce8014905dacf4354da5630e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f404038201b44432c6e0ab18c5de98a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#a2f404038201b44432c6e0ab18c5de98a">ResetScore</a> ()</td></tr>
+<tr class="memdesc:a2f404038201b44432c6e0ab18c5de98a"><td class="mdescLeft">&#160;</td><td class="mdescRight">スコアをリセットする  <br /></td></tr>
+<tr class="separator:a2f404038201b44432c6e0ab18c5de98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a625453c9b55cb5a66fb9975db887fc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#a7a625453c9b55cb5a66fb9975db887fc">AchievedQuota</a> ()</td></tr>
+<tr class="memdesc:a7a625453c9b55cb5a66fb9975db887fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノルマを達成したか  <br /></td></tr>
+<tr class="separator:a7a625453c9b55cb5a66fb9975db887fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:ab38b6d729872400d0fdc7ea4e89c7877"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">score_</a> { 0 }</td></tr>
+<tr class="separator:ab38b6d729872400d0fdc7ea4e89c7877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63cd3dca53a48834b776fd2fe7c3c40a"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ScoreManager.html#a63cd3dca53a48834b776fd2fe7c3c40a">quotaScore_</a> { 0 }</td></tr>
+<tr class="separator:a63cd3dca53a48834b776fd2fe7c3c40a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="ScoreManager_8h_source.html">ScoreManager.h</a> の <a class="el" href="ScoreManager_8h_source.html#l00007">7</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a486ec72f7e3b371528af2ce0f311690e" name="a486ec72f7e3b371528af2ce0f311690e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a486ec72f7e3b371528af2ce0f311690e">&#9670;&#160;</a></span>ScoreManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::ScoreManager::ScoreManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a> の <a class="el" href="ScoreManager_8cpp_source.html#l00013">13</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>{</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#a63cd3dca53a48834b776fd2fe7c3c40a">quotaScore_</a> = <a class="code hl_variable" href="namespaceanonymous__namespace_02ScoreManager_8cpp_03.html#a64babfe08f84fb3b6ba883682a97329e">GAUGE_COUNT</a>;</div>
+<div class="line"><span class="lineno">   16</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a63cd3dca53a48834b776fd2fe7c3c40a"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a63cd3dca53a48834b776fd2fe7c3c40a">mtgb::ScoreManager::quotaScore_</a></div><div class="ttdeci">static int32_t quotaScore_</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8h_source.html#l00057">ScoreManager.h:57</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02ScoreManager_8cpp_03_html_a64babfe08f84fb3b6ba883682a97329e"><div class="ttname"><a href="namespaceanonymous__namespace_02ScoreManager_8cpp_03.html#a64babfe08f84fb3b6ba883682a97329e">anonymous_namespace{ScoreManager.cpp}::GAUGE_COUNT</a></div><div class="ttdeci">int GAUGE_COUNT</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00007">ScoreManager.cpp:7</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="ScoreManager_8h_source.html#l00057">quotaScore_</a>.</p>
+
+</div>
+</div>
+<a id="ac1c725b4cfa3357f9417ca0b660e60ca" name="ac1c725b4cfa3357f9417ca0b660e60ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1c725b4cfa3357f9417ca0b660e60ca">&#9670;&#160;</a></span>~ScoreManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::ScoreManager::~ScoreManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a> の <a class="el" href="ScoreManager_8cpp_source.html#l00018">18</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>{</div>
+<div class="line"><span class="lineno">   20</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a7a625453c9b55cb5a66fb9975db887fc" name="a7a625453c9b55cb5a66fb9975db887fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a625453c9b55cb5a66fb9975db887fc">&#9670;&#160;</a></span>AchievedQuota()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::ScoreManager::AchievedQuota </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ノルマを達成したか </p>
+<dl class="section return"><dt>戻り値</dt><dd>達成しているなら真を返す</dd></dl>
+
+<p class="definition"> <a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a> の <a class="el" href="ScoreManager_8cpp_source.html#l00060">60</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">score_</a> &gt;= <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#a63cd3dca53a48834b776fd2fe7c3c40a">quotaScore_</a>)</div>
+<div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   67</span>    {</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_ab38b6d729872400d0fdc7ea4e89c7877"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">mtgb::ScoreManager::score_</a></div><div class="ttdeci">static int32_t score_</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8h_source.html#l00055">ScoreManager.h:55</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a07f4052ab15556af9d0d286b2fc5908a" name="a07f4052ab15556af9d0d286b2fc5908a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07f4052ab15556af9d0d286b2fc5908a">&#9670;&#160;</a></span>AddQuota()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void mtgb::ScoreManager::AddQuota </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>_quota</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ノルマの加点を行う </p>
+
+<p class="definition"> <a class="el" href="ScoreManager_8h_source.html">ScoreManager.h</a> の <a class="el" href="ScoreManager_8h_source.html#l00022">22</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#a63cd3dca53a48834b776fd2fe7c3c40a">ScoreManager::quotaScore_</a> += _quota; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="ScoreManager_8h_source.html#l00057">quotaScore_</a>.</p>
+
+</div>
+</div>
+<a id="a3bbb0eecfcd23fd337b4774c69d6a62e" name="a3bbb0eecfcd23fd337b4774c69d6a62e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bbb0eecfcd23fd337b4774c69d6a62e">&#9670;&#160;</a></span>AddScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ScoreManager::AddScore </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>_score</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>スコアの加点を行う </p>
+
+<p class="definition"> <a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a> の <a class="el" href="ScoreManager_8cpp_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">score_</a> += _score;</div>
+<div class="line"><span class="lineno">   32</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af89f5fd34b4894a25d933de436616cf6" name="af89f5fd34b4894a25d933de436616cf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af89f5fd34b4894a25d933de436616cf6">&#9670;&#160;</a></span>GetQuotaScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t mtgb::ScoreManager::GetQuotaScore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ノルマのスコアを取得する </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a> の <a class="el" href="ScoreManager_8cpp_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#a63cd3dca53a48834b776fd2fe7c3c40a">quotaScore_</a>;</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8fca283ce8014905dacf4354da5630e6" name="a8fca283ce8014905dacf4354da5630e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fca283ce8014905dacf4354da5630e6">&#9670;&#160;</a></span>GetQuotaScoreMax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t mtgb::ScoreManager::GetQuotaScoreMax </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>スコアの最大値を取得する </p>
+<dl class="section return"><dt>戻り値</dt><dd>スコア値</dd></dl>
+
+<p class="definition"> <a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a> の <a class="el" href="ScoreManager_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespaceanonymous__namespace_02ScoreManager_8cpp_03.html#ad424ae43486c846f89af01e393843bd3">QUATA_SCORE_MAX</a>;</div>
+<div class="line"><span class="lineno">   53</span>}</div>
+<div class="ttc" id="anamespaceanonymous__namespace_02ScoreManager_8cpp_03_html_ad424ae43486c846f89af01e393843bd3"><div class="ttname"><a href="namespaceanonymous__namespace_02ScoreManager_8cpp_03.html#ad424ae43486c846f89af01e393843bd3">anonymous_namespace{ScoreManager.cpp}::QUATA_SCORE_MAX</a></div><div class="ttdeci">const int32_t QUATA_SCORE_MAX</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00006">ScoreManager.cpp:6</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5142720678002f9473089ab256ae0887" name="a5142720678002f9473089ab256ae0887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5142720678002f9473089ab256ae0887">&#9670;&#160;</a></span>GetScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t mtgb::ScoreManager::GetScore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>現在のスコアを取得する </p>
+
+<p class="definition"> <a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a> の <a class="el" href="ScoreManager_8cpp_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">score_</a>;</div>
+<div class="line"><span class="lineno">   37</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a800a1719eaef014678f4382d69c72890" name="a800a1719eaef014678f4382d69c72890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a800a1719eaef014678f4382d69c72890">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ScoreManager::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="ScoreManager_8h_source.html">ScoreManager.h</a> の <a class="el" href="ScoreManager_8h_source.html#l00012">12</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa2823e5390468dfc47213b845c55d3ac" name="aa2823e5390468dfc47213b845c55d3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2823e5390468dfc47213b845c55d3ac">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::ISystem::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>開放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1Fbx.html#ada19e401d03b5d2056fba392808ec546">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1Input.html#aaeb9eca1ca02568bf898253c804baea7">mtgb::Input</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1Timer.html#ac8fce5b2c97551427a50a288e3fd76fd">mtgb::Timer</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b">mtgb::WindowManager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; AudioPlayer, AudioPlayerCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a> (計21項目)で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="ISystem_8h_source.html">ISystem.h</a> の <a class="el" href="ISystem_8h_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00147">mtgb::Game::ReleaseSystems()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ISystem_aa2823e5390468dfc47213b845c55d3ac_icgraph.svg" width="639" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2f404038201b44432c6e0ab18c5de98a" name="a2f404038201b44432c6e0ab18c5de98a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f404038201b44432c6e0ab18c5de98a">&#9670;&#160;</a></span>ResetScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ScoreManager::ResetScore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>スコアをリセットする </p>
+
+<p class="definition"> <a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a> の <a class="el" href="ScoreManager_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">score_</a> = 0;</div>
+<div class="line"><span class="lineno">   58</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a331b2e534e1fdb28f741a15ece1b20e6" name="a331b2e534e1fdb28f741a15ece1b20e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331b2e534e1fdb28f741a15ece1b20e6">&#9670;&#160;</a></span>SubtractScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ScoreManager::SubtractScore </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>_score</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>スコアの減点を行う </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_score</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a> の <a class="el" href="ScoreManager_8cpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">score_</a> -= _score;</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">score_</a> = (std::max)(0, <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">score_</a>);</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adbebc24602944500ef8dd102d9e357ea" name="adbebc24602944500ef8dd102d9e357ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbebc24602944500ef8dd102d9e357ea">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ScoreManager::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a> の <a class="el" href="ScoreManager_8cpp_source.html#l00022">22</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">DirectShow</a>([<span class="keyword">this</span>]()</div>
+<div class="line"><span class="lineno">   25</span>        {</div>
+<div class="line"><span class="lineno">   26</span>            <a class="code hl_function" href="namespaceImGui.html#ad92ccfbc33d448ff40cfcf9219177344">ImGui::LabelText</a>(<span class="stringliteral">&quot;Score&quot;</span>,<span class="stringliteral">&quot;%d&quot;</span>, <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">score_</a>);</div>
+<div class="line"><span class="lineno">   27</span>        }, <span class="stringliteral">&quot;CurrentScore&quot;</span>, ShowType::Inspector);</div>
+<div class="line"><span class="lineno">   28</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00038">MTImGui.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aa9081f2cfb7ed13e429f9da025d215d4"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">mtgb::MTImGui::DirectShow</a></div><div class="ttdeci">void DirectShow(std::function&lt; void()&gt; func, const std::string &amp;name, ShowType show)</div><div class="ttdoc">コールバックを表示キューに直接積む</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00409">MTImGui.cpp:409</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_ad92ccfbc33d448ff40cfcf9219177344"><div class="ttname"><a href="namespaceImGui.html#ad92ccfbc33d448ff40cfcf9219177344">ImGui::LabelText</a></div><div class="ttdeci">IMGUI_API void LabelText(const char *label, const char *fmt,...) IM_FMTARGS(2)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l00382">imgui_widgets.cpp:382</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTImGui_8cpp_source.html#l00409">mtgb::MTImGui::DirectShow()</a>, <a class="el" href="MTImGui_8h_source.html#l00038">mtgb::MTImGui::Instance()</a>, <a class="el" href="imgui__widgets_8cpp_source.html#l00382">ImGui::LabelText()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ScoreManager_adbebc24602944500ef8dd102d9e357ea_cgraph.svg" width="2332" height="1319"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a63cd3dca53a48834b776fd2fe7c3c40a" name="a63cd3dca53a48834b776fd2fe7c3c40a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63cd3dca53a48834b776fd2fe7c3c40a">&#9670;&#160;</a></span>quotaScore_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t mtgb::ScoreManager::quotaScore_ { 0 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ScoreManager_8h_source.html">ScoreManager.h</a> の <a class="el" href="ScoreManager_8h_source.html#l00057">57</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="ScoreManager_8h_source.html#l00022">AddQuota()</a>, <a class="el" href="ScoreManager_8cpp_source.html#l00013">ScoreManager()</a>.</p>
+
+</div>
+</div>
+<a id="ab38b6d729872400d0fdc7ea4e89c7877" name="ab38b6d729872400d0fdc7ea4e89c7877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab38b6d729872400d0fdc7ea4e89c7877">&#9670;&#160;</a></span>score_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t mtgb::ScoreManager::score_ { 0 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ScoreManager_8h_source.html">ScoreManager.h</a> の <a class="el" href="ScoreManager_8h_source.html#l00055">55</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="ScoreManager_8h_source.html">ScoreManager.h</a></li>
+<li><a class="el" href="ScoreManager_8cpp_source.html">ScoreManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1ScoreManager.html">ScoreManager</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

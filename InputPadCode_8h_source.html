@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: InputPadCode.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('InputPadCode_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">InputPadCode.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="InputPadCode_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="IncludingInput_8h.html">IncludingInput.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9">    8</a></span><span class="keyword">enum struct</span> <a class="code hl_enumeration" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9">XInputPadCode</a> : WORD</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a258f49887ef8d14ac268c92b02503aaa">Up</a>      = XINPUT_GAMEPAD_DPAD_UP,</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a08a38277b0309070706f6652eeae9a53">Down</a>    = XINPUT_GAMEPAD_DPAD_DOWN,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a945d5e233cf7d6240f6b783b36a374ff">Left</a>    = XINPUT_GAMEPAD_DPAD_LEFT,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a92b09c7c48c520c3c55e497875da437c">Right</a>   = XINPUT_GAMEPAD_DPAD_RIGHT,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9aa6122a65eaa676f700ae68d393054a37">Start</a>   = XINPUT_GAMEPAD_START,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a0557fa923dcee4d0f86b1409f5c2167f">Back</a>    = XINPUT_GAMEPAD_BACK, <span class="comment">// いわゆるselectボタンのこと。</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a13841578260193a0850347461e9077ef">LStick</a>  = XINPUT_GAMEPAD_LEFT_THUMB,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a6586c39df95b83fe87341ccd0e3460b6">RStick</a>  = XINPUT_GAMEPAD_RIGHT_THUMB,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9ad02637eede24d64b59e9a7ee82f02462">Lbutton</a> = XINPUT_GAMEPAD_LEFT_SHOULDER,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a55f4be0f489e3738b19512132d728dec">Rbutton</a> = XINPUT_GAMEPAD_RIGHT_SHOULDER,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="classA.html">A</a>       = XINPUT_GAMEPAD_A,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="classB.html">B</a>       = XINPUT_GAMEPAD_B,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a02129bb861061d1a052c592e2dc6b383">X</a>       = XINPUT_GAMEPAD_X,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a57cec4137b614c87cb4e24a3d003a3e0">Y</a>       = XINPUT_GAMEPAD_Y,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">   29</a></span><span class="keyword">enum struct</span> <a class="code hl_enumeration" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a> : uint8_t</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="classB.html">B</a> = 0,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_class" href="classA.html">A</a> = 1,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a02129bb861061d1a052c592e2dc6b383">X</a> = 2,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a57cec4137b614c87cb4e24a3d003a3e0">Y</a> = 3,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9ac951270e425b15fc20c64da4341c1d89">LB</a> = 4,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9ac8ee22e1fc2165dfd3d2b04aef93b2f2">RB</a> = 5,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a0557fa923dcee4d0f86b1409f5c2167f">Back</a> = 6,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a13841578260193a0850347461e9077ef">LStick</a> = 6,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a6586c39df95b83fe87341ccd0e3460b6">RStick</a> = 7,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9aa6122a65eaa676f700ae68d393054a37">Start</a> = 9,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9ae76b449b9fc8536af7557ffa6321d269">Cross</a> = 1,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a30954d90085f6eaaf5817917fc5fecb3">Circle</a> = 2,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a5e5500cb2b82eb72d550de644bd1b64b">Triangle</a> = 3,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a9ec4c0afd450ceac7adb81c3bcfc9732">L1</a> = 4,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9acda522d4353b166cc2dee84673307b4e">R1</a> = 5,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a7e6aa2d53f6ee2b1a34b017fa403cb76">L2</a> = 6,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a8c6d22ff6f63fc6711cfa315cb80b314">R2</a> = 7</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">// ×ボタン、dual shock 1</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdae">   53</a></span><span class="keyword">enum struct</span> <a class="code hl_enumeration" href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdae">StickType</a> : uint8_t</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdaea684d325a7303f52e64011467ff5c5758">LEFT</a>,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdaea21507b40c80068eda19865706fdc2403">RIGHT</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">   63</a></span><span class="keyword">enum struct</span> <a class="code hl_enumeration" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">FlightStickCode</a> : uint8_t</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9a8807c97721e343cdc1fa2444cc00415b">Thumb</a> = 0, <span class="comment">// 親指</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9af698f67f5666aff10729d8a1cb1c14d2">Trigger</a> = 1,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9a6d0c69e60d65a93dd244ae95f90e679c">Button3</a> = 2,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9a91ff24acfc01cc2c3a4238a272a37d07">Button4</a> = 3,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="InputPadCode_8h.html#a71835e4bba80e1e21a9382000a7f734b">   71</a></span><span class="keyword">enum struct</span> <a class="code hl_enumeration" href="InputPadCode_8h.html#a71835e4bba80e1e21a9382000a7f734b">PadIDState</a></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a71835e4bba80e1e21a9382000a7f734baccc0377a8afbf50e7094f5c23a8af223">INVALID</a>,    <span class="comment">// 無効</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a71835e4bba80e1e21a9382000a7f734ba7cf39813627a388b0d88c4338e736f8f">ASSIGNED</a>,   <span class="comment">// 割り当て済み</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_enumvalue" href="InputPadCode_8h.html#a71835e4bba80e1e21a9382000a7f734ba5ef0153ec1486a4da1db6a130c2dcbaa">UNASSIGNED</a>, <span class="comment">// 空き</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
+<div class="ttc" id="aIncludingInput_8h_html"><div class="ttname"><a href="IncludingInput_8h.html">IncludingInput.h</a></div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a50648ae2c18c841f72153edc6cb7bdae"><div class="ttname"><a href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdae">StickType</a></div><div class="ttdeci">StickType</div><div class="ttdef"><b>Definition:</b> <a href="InputPadCode_8h_source.html#l00053">InputPadCode.h:54</a></div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a50648ae2c18c841f72153edc6cb7bdaea21507b40c80068eda19865706fdc2403"><div class="ttname"><a href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdaea21507b40c80068eda19865706fdc2403">StickType::RIGHT</a></div><div class="ttdeci">@ RIGHT</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a50648ae2c18c841f72153edc6cb7bdaea684d325a7303f52e64011467ff5c5758"><div class="ttname"><a href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdaea684d325a7303f52e64011467ff5c5758">StickType::LEFT</a></div><div class="ttdeci">@ LEFT</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a71835e4bba80e1e21a9382000a7f734b"><div class="ttname"><a href="InputPadCode_8h.html#a71835e4bba80e1e21a9382000a7f734b">PadIDState</a></div><div class="ttdeci">PadIDState</div><div class="ttdef"><b>Definition:</b> <a href="InputPadCode_8h_source.html#l00071">InputPadCode.h:72</a></div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a71835e4bba80e1e21a9382000a7f734ba5ef0153ec1486a4da1db6a130c2dcbaa"><div class="ttname"><a href="InputPadCode_8h.html#a71835e4bba80e1e21a9382000a7f734ba5ef0153ec1486a4da1db6a130c2dcbaa">PadIDState::UNASSIGNED</a></div><div class="ttdeci">@ UNASSIGNED</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a71835e4bba80e1e21a9382000a7f734ba7cf39813627a388b0d88c4338e736f8f"><div class="ttname"><a href="InputPadCode_8h.html#a71835e4bba80e1e21a9382000a7f734ba7cf39813627a388b0d88c4338e736f8f">PadIDState::ASSIGNED</a></div><div class="ttdeci">@ ASSIGNED</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a71835e4bba80e1e21a9382000a7f734baccc0377a8afbf50e7094f5c23a8af223"><div class="ttname"><a href="InputPadCode_8h.html#a71835e4bba80e1e21a9382000a7f734baccc0377a8afbf50e7094f5c23a8af223">PadIDState::INVALID</a></div><div class="ttdeci">@ INVALID</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a7f998f31f782d59044f459491efc3fc9"><div class="ttname"><a href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a></div><div class="ttdeci">PadCode</div><div class="ttdoc">ゲームパッドのDirectInputでのボタンコード</div><div class="ttdef"><b>Definition:</b> <a href="InputPadCode_8h_source.html#l00029">InputPadCode.h:30</a></div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a7f998f31f782d59044f459491efc3fc9a30954d90085f6eaaf5817917fc5fecb3"><div class="ttname"><a href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a30954d90085f6eaaf5817917fc5fecb3">PadCode::Circle</a></div><div class="ttdeci">@ Circle</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a7f998f31f782d59044f459491efc3fc9a5e5500cb2b82eb72d550de644bd1b64b"><div class="ttname"><a href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a5e5500cb2b82eb72d550de644bd1b64b">PadCode::Triangle</a></div><div class="ttdeci">@ Triangle</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a7f998f31f782d59044f459491efc3fc9a7e6aa2d53f6ee2b1a34b017fa403cb76"><div class="ttname"><a href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a7e6aa2d53f6ee2b1a34b017fa403cb76">PadCode::L2</a></div><div class="ttdeci">@ L2</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a7f998f31f782d59044f459491efc3fc9a8c6d22ff6f63fc6711cfa315cb80b314"><div class="ttname"><a href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a8c6d22ff6f63fc6711cfa315cb80b314">PadCode::R2</a></div><div class="ttdeci">@ R2</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a7f998f31f782d59044f459491efc3fc9a9ec4c0afd450ceac7adb81c3bcfc9732"><div class="ttname"><a href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a9ec4c0afd450ceac7adb81c3bcfc9732">PadCode::L1</a></div><div class="ttdeci">@ L1</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a7f998f31f782d59044f459491efc3fc9ac8ee22e1fc2165dfd3d2b04aef93b2f2"><div class="ttname"><a href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9ac8ee22e1fc2165dfd3d2b04aef93b2f2">PadCode::RB</a></div><div class="ttdeci">@ RB</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a7f998f31f782d59044f459491efc3fc9ac951270e425b15fc20c64da4341c1d89"><div class="ttname"><a href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9ac951270e425b15fc20c64da4341c1d89">PadCode::LB</a></div><div class="ttdeci">@ LB</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a7f998f31f782d59044f459491efc3fc9acda522d4353b166cc2dee84673307b4e"><div class="ttname"><a href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9acda522d4353b166cc2dee84673307b4e">PadCode::R1</a></div><div class="ttdeci">@ R1</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_a7f998f31f782d59044f459491efc3fc9ae76b449b9fc8536af7557ffa6321d269"><div class="ttname"><a href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9ae76b449b9fc8536af7557ffa6321d269">PadCode::Cross</a></div><div class="ttdeci">@ Cross</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9">XInputPadCode</a></div><div class="ttdeci">XInputPadCode</div><div class="ttdoc">ゲームパッドのボタンコード</div><div class="ttdef"><b>Definition:</b> <a href="InputPadCode_8h_source.html#l00008">InputPadCode.h:9</a></div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9a02129bb861061d1a052c592e2dc6b383"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a02129bb861061d1a052c592e2dc6b383">XInputPadCode::X</a></div><div class="ttdeci">@ X</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9a0557fa923dcee4d0f86b1409f5c2167f"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a0557fa923dcee4d0f86b1409f5c2167f">XInputPadCode::Back</a></div><div class="ttdeci">@ Back</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9a08a38277b0309070706f6652eeae9a53"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a08a38277b0309070706f6652eeae9a53">XInputPadCode::Down</a></div><div class="ttdeci">@ Down</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9a13841578260193a0850347461e9077ef"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a13841578260193a0850347461e9077ef">XInputPadCode::LStick</a></div><div class="ttdeci">@ LStick</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9a258f49887ef8d14ac268c92b02503aaa"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a258f49887ef8d14ac268c92b02503aaa">XInputPadCode::Up</a></div><div class="ttdeci">@ Up</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9a55f4be0f489e3738b19512132d728dec"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a55f4be0f489e3738b19512132d728dec">XInputPadCode::Rbutton</a></div><div class="ttdeci">@ Rbutton</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9a57cec4137b614c87cb4e24a3d003a3e0"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a57cec4137b614c87cb4e24a3d003a3e0">XInputPadCode::Y</a></div><div class="ttdeci">@ Y</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9a6586c39df95b83fe87341ccd0e3460b6"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a6586c39df95b83fe87341ccd0e3460b6">XInputPadCode::RStick</a></div><div class="ttdeci">@ RStick</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9a92b09c7c48c520c3c55e497875da437c"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a92b09c7c48c520c3c55e497875da437c">XInputPadCode::Right</a></div><div class="ttdeci">@ Right</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9a945d5e233cf7d6240f6b783b36a374ff"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a945d5e233cf7d6240f6b783b36a374ff">XInputPadCode::Left</a></div><div class="ttdeci">@ Left</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9aa6122a65eaa676f700ae68d393054a37"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9aa6122a65eaa676f700ae68d393054a37">XInputPadCode::Start</a></div><div class="ttdeci">@ Start</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_aa71c71268d67fbdf3e2b5d3f877f55d9ad02637eede24d64b59e9a7ee82f02462"><div class="ttname"><a href="InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9ad02637eede24d64b59e9a7ee82f02462">XInputPadCode::Lbutton</a></div><div class="ttdeci">@ Lbutton</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_acfaf289f0795cf30536449f798be91c9"><div class="ttname"><a href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">FlightStickCode</a></div><div class="ttdeci">FlightStickCode</div><div class="ttdef"><b>Definition:</b> <a href="InputPadCode_8h_source.html#l00063">InputPadCode.h:64</a></div></div>
+<div class="ttc" id="aInputPadCode_8h_html_acfaf289f0795cf30536449f798be91c9a6d0c69e60d65a93dd244ae95f90e679c"><div class="ttname"><a href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9a6d0c69e60d65a93dd244ae95f90e679c">FlightStickCode::Button3</a></div><div class="ttdeci">@ Button3</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_acfaf289f0795cf30536449f798be91c9a8807c97721e343cdc1fa2444cc00415b"><div class="ttname"><a href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9a8807c97721e343cdc1fa2444cc00415b">FlightStickCode::Thumb</a></div><div class="ttdeci">@ Thumb</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_acfaf289f0795cf30536449f798be91c9a91ff24acfc01cc2c3a4238a272a37d07"><div class="ttname"><a href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9a91ff24acfc01cc2c3a4238a272a37d07">FlightStickCode::Button4</a></div><div class="ttdeci">@ Button4</div></div>
+<div class="ttc" id="aInputPadCode_8h_html_acfaf289f0795cf30536449f798be91c9af698f67f5666aff10729d8a1cb1c14d2"><div class="ttname"><a href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9af698f67f5666aff10729d8a1cb1c14d2">FlightStickCode::Trigger</a></div><div class="ttdeci">@ Trigger</div></div>
+<div class="ttc" id="aclassA_html"><div class="ttname"><a href="classA.html">A</a></div><div class="ttdef"><b>Definition:</b> <a href="diagrams__a_8h_source.html#l00003">diagrams_a.h:3</a></div></div>
+<div class="ttc" id="aclassB_html"><div class="ttname"><a href="classB.html">B</a></div><div class="ttdef"><b>Definition:</b> <a href="diagrams__b_8h_source.html#l00004">diagrams_b.h:4</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="InputPadCode_8h.html">InputPadCode.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

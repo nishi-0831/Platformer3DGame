@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: LLGI.Platform.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('install__msvc2022__x64_2include_2LLGI_2LLGI_8Platform_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">install_msvc2022_x64/include/LLGI/LLGI.Platform.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Platform_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h.html">LLGI.Base.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#undef CreateWindow</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceLLGI.html">LLGI</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structLLGI_1_1PlatformParameter.html">   13</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structLLGI_1_1PlatformParameter.html">PlatformParameter</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structLLGI_1_1PlatformParameter.html#a23830e44fe4f0efaee8ab5dfa8d9086e">   15</a></span>    <a class="code hl_enumeration" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57">DeviceType</a> <a class="code hl_variable" href="structLLGI_1_1PlatformParameter.html#a23830e44fe4f0efaee8ab5dfa8d9086e">Device</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57a7a1920d61156abc05a60135aefe8bc67">DeviceType::Default</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structLLGI_1_1PlatformParameter.html#a7b457dcc5329944a134704d13f0a6f90">   16</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structLLGI_1_1PlatformParameter.html#a7b457dcc5329944a134704d13f0a6f90">WaitVSync</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceLLGI.html#a1c56ab27ebd742f7cbaa87614d9f82fd">   19</a></span><a class="code hl_class" href="classLLGI_1_1Window.html">Window</a>* <a class="code hl_function" href="namespaceLLGI.html#a1c56ab27ebd742f7cbaa87614d9f82fd">CreateWindow</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* title, <a class="code hl_struct" href="structLLGI_1_1Vec2I.html">Vec2I</a> windowSize);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceLLGI.html#abb5af8116885590d7c0ac59f776aa03c">   21</a></span><a class="code hl_class" href="classLLGI_1_1Platform.html">Platform</a>* <a class="code hl_function" href="namespaceLLGI.html#abb5af8116885590d7c0ac59f776aa03c">CreatePlatform</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structLLGI_1_1PlatformParameter.html">PlatformParameter</a>&amp; parameter, <a class="code hl_class" href="classLLGI_1_1Window.html">Window</a>* window);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classLLGI_1_1Platform.html">Platform</a> : <span class="keyword">public</span> <a class="code hl_class" href="classLLGI_1_1ReferenceObject.html">ReferenceObject</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#ad3ac34d1a0efaa636e0da8ad705d2dd7">   27</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classLLGI_1_1Platform.html#ad3ac34d1a0efaa636e0da8ad705d2dd7">waitVSync_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#a3c87636f67e3c42a375beeed2daa0782">   30</a></span>    <a class="code hl_function" href="classLLGI_1_1Platform.html#a3c87636f67e3c42a375beeed2daa0782">Platform</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#ae77bd9cf2ae7944b6418c6b80a89bd3a">   31</a></span>    <a class="code hl_function" href="classLLGI_1_1Platform.html#ae77bd9cf2ae7944b6418c6b80a89bd3a">~Platform</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#a297d8a122f3f7ca4f17b5444cc90c615">   33</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classLLGI_1_1Platform.html#a297d8a122f3f7ca4f17b5444cc90c615">NewFrame</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#a421669a98e4709427210de404036e61a">   34</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLLGI_1_1Platform.html#a421669a98e4709427210de404036e61a">Present</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#a1aea2a40de4c5c54afea0a441ccb0740">   35</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classLLGI_1_1Graphics.html">Graphics</a>* <a class="code hl_function" href="classLLGI_1_1Platform.html#a1aea2a40de4c5c54afea0a441ccb0740">CreateGraphics</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#a74a29e401d8a44414edbcc2d6fde0c72">   36</a></span>    <span class="keyword">virtual</span> <a class="code hl_enumeration" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57">DeviceType</a> <a class="code hl_function" href="classLLGI_1_1Platform.html#a74a29e401d8a44414edbcc2d6fde0c72">GetDeviceType</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57a7a1920d61156abc05a60135aefe8bc67">DeviceType::Default</a>; }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#a74443ed7d33539ccbb60946201b4bf96">   37</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classLLGI_1_1Platform.html#a74443ed7d33539ccbb60946201b4bf96">GetCurrentFrameIndex</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#ae8ba2b37dfa068eec3d09c8e10187fa1">   38</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classLLGI_1_1Platform.html#ae8ba2b37dfa068eec3d09c8e10187fa1">GetMaxFrameCount</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">     @brief change this window size</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">     @note</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">     the argument is ignored on Mac. This function notify that an window size is changed.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">    **/</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#afd83b61b651034625781a0c122a47424">   45</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLLGI_1_1Platform.html#afd83b61b651034625781a0c122a47424">SetWindowSize</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structLLGI_1_1Vec2I.html">Vec2I</a>&amp; windowSize);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#ab015971014eff2749da2b89427b64e3a">   47</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classLLGI_1_1Platform.html#ab015971014eff2749da2b89427b64e3a">GetWaitVSync</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1Platform.html#ad3ac34d1a0efaa636e0da8ad705d2dd7">waitVSync_</a>; }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classLLGI_1_1Platform.html#aec26a702fdb1193eb4206a9b2f945bd0">   55</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classLLGI_1_1RenderPass.html">RenderPass</a>* <a class="code hl_function" href="classLLGI_1_1Platform.html#aec26a702fdb1193eb4206a9b2f945bd0">GetCurrentScreen</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structLLGI_1_1Color8.html">Color8</a>&amp; clearColor = <a class="code hl_struct" href="structLLGI_1_1Color8.html">Color8</a>(), <span class="keywordtype">bool</span> isColorCleared = <span class="keyword">false</span>, <span class="keywordtype">bool</span> isDepthCleared = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>} <span class="comment">// namespace LLGI</span></div>
+<div class="ttc" id="aclassLLGI_1_1Graphics_html"><div class="ttname"><a href="classLLGI_1_1Graphics.html">LLGI::Graphics</a></div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00215">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h:216</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html"><div class="ttname"><a href="classLLGI_1_1Platform.html">LLGI::Platform</a></div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Platform_8h_source.html#l00023">install_msvc2022_x64/include/LLGI/LLGI.Platform.h:24</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_a1aea2a40de4c5c54afea0a441ccb0740"><div class="ttname"><a href="classLLGI_1_1Platform.html#a1aea2a40de4c5c54afea0a441ccb0740">LLGI::Platform::CreateGraphics</a></div><div class="ttdeci">virtual Graphics * CreateGraphics()</div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_a297d8a122f3f7ca4f17b5444cc90c615"><div class="ttname"><a href="classLLGI_1_1Platform.html#a297d8a122f3f7ca4f17b5444cc90c615">LLGI::Platform::NewFrame</a></div><div class="ttdeci">virtual bool NewFrame()</div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_a3c87636f67e3c42a375beeed2daa0782"><div class="ttname"><a href="classLLGI_1_1Platform.html#a3c87636f67e3c42a375beeed2daa0782">LLGI::Platform::Platform</a></div><div class="ttdeci">Platform()=default</div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_a421669a98e4709427210de404036e61a"><div class="ttname"><a href="classLLGI_1_1Platform.html#a421669a98e4709427210de404036e61a">LLGI::Platform::Present</a></div><div class="ttdeci">virtual void Present()</div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_a74443ed7d33539ccbb60946201b4bf96"><div class="ttname"><a href="classLLGI_1_1Platform.html#a74443ed7d33539ccbb60946201b4bf96">LLGI::Platform::GetCurrentFrameIndex</a></div><div class="ttdeci">virtual int GetCurrentFrameIndex() const</div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_a74a29e401d8a44414edbcc2d6fde0c72"><div class="ttname"><a href="classLLGI_1_1Platform.html#a74a29e401d8a44414edbcc2d6fde0c72">LLGI::Platform::GetDeviceType</a></div><div class="ttdeci">virtual DeviceType GetDeviceType() const</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Platform_8h_source.html#l00036">install_msvc2022_x64/include/LLGI/LLGI.Platform.h:36</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_ab015971014eff2749da2b89427b64e3a"><div class="ttname"><a href="classLLGI_1_1Platform.html#ab015971014eff2749da2b89427b64e3a">LLGI::Platform::GetWaitVSync</a></div><div class="ttdeci">bool GetWaitVSync() const</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Platform_8h_source.html#l00047">install_msvc2022_x64/include/LLGI/LLGI.Platform.h:47</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_ad3ac34d1a0efaa636e0da8ad705d2dd7"><div class="ttname"><a href="classLLGI_1_1Platform.html#ad3ac34d1a0efaa636e0da8ad705d2dd7">LLGI::Platform::waitVSync_</a></div><div class="ttdeci">bool waitVSync_</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Platform_8h_source.html#l00027">install_msvc2022_x64/include/LLGI/LLGI.Platform.h:27</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_ae77bd9cf2ae7944b6418c6b80a89bd3a"><div class="ttname"><a href="classLLGI_1_1Platform.html#ae77bd9cf2ae7944b6418c6b80a89bd3a">LLGI::Platform::~Platform</a></div><div class="ttdeci">~Platform() override=default</div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_ae8ba2b37dfa068eec3d09c8e10187fa1"><div class="ttname"><a href="classLLGI_1_1Platform.html#ae8ba2b37dfa068eec3d09c8e10187fa1">LLGI::Platform::GetMaxFrameCount</a></div><div class="ttdeci">virtual int GetMaxFrameCount() const</div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_aec26a702fdb1193eb4206a9b2f945bd0"><div class="ttname"><a href="classLLGI_1_1Platform.html#aec26a702fdb1193eb4206a9b2f945bd0">LLGI::Platform::GetCurrentScreen</a></div><div class="ttdeci">virtual RenderPass * GetCurrentScreen(const Color8 &amp;clearColor=Color8(), bool isColorCleared=false, bool isDepthCleared=false)</div><div class="ttdoc">get render pass of screen to show on a display.</div></div>
+<div class="ttc" id="aclassLLGI_1_1Platform_html_afd83b61b651034625781a0c122a47424"><div class="ttname"><a href="classLLGI_1_1Platform.html#afd83b61b651034625781a0c122a47424">LLGI::Platform::SetWindowSize</a></div><div class="ttdeci">virtual void SetWindowSize(const Vec2I &amp;windowSize)</div></div>
+<div class="ttc" id="aclassLLGI_1_1ReferenceObject_html"><div class="ttname"><a href="classLLGI_1_1ReferenceObject.html">LLGI::ReferenceObject</a></div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00384">install_msvc2022_x64/include/LLGI/LLGI.Base.h:385</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1RenderPass_html"><div class="ttname"><a href="classLLGI_1_1RenderPass.html">LLGI::RenderPass</a></div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00134">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h:135</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1Window_html"><div class="ttname"><a href="classLLGI_1_1Window.html">LLGI::Window</a></div><div class="ttdoc">window abstraction class</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00562">install_msvc2022_x64/include/LLGI/LLGI.Base.h:563</a></div></div>
+<div class="ttc" id="ainstall__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_html"><div class="ttname"><a href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h.html">LLGI.Base.h</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html"><div class="ttname"><a href="namespaceLLGI.html">LLGI</a></div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00018">install_msvc2022_x64/include/LLGI/LLGI.Base.h:19</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_a1c56ab27ebd742f7cbaa87614d9f82fd"><div class="ttname"><a href="namespaceLLGI.html#a1c56ab27ebd742f7cbaa87614d9f82fd">LLGI::CreateWindow</a></div><div class="ttdeci">Window * CreateWindow(const char *title, Vec2I windowSize)</div></div>
+<div class="ttc" id="anamespaceLLGI_html_aabec97556d4337960fcb79dae8b3ff57"><div class="ttname"><a href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57">LLGI::DeviceType</a></div><div class="ttdeci">DeviceType</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00025">install_msvc2022_x64/include/LLGI/LLGI.Base.h:26</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_aabec97556d4337960fcb79dae8b3ff57a7a1920d61156abc05a60135aefe8bc67"><div class="ttname"><a href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57a7a1920d61156abc05a60135aefe8bc67">LLGI::DeviceType::Default</a></div><div class="ttdeci">@ Default</div></div>
+<div class="ttc" id="anamespaceLLGI_html_abb5af8116885590d7c0ac59f776aa03c"><div class="ttname"><a href="namespaceLLGI.html#abb5af8116885590d7c0ac59f776aa03c">LLGI::CreatePlatform</a></div><div class="ttdeci">Platform * CreatePlatform(const PlatformParameter &amp;parameter, Window *window)</div></div>
+<div class="ttc" id="astructLLGI_1_1Color8_html"><div class="ttname"><a href="structLLGI_1_1Color8.html">LLGI::Color8</a></div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00222">install_msvc2022_x64/include/LLGI/LLGI.Base.h:223</a></div></div>
+<div class="ttc" id="astructLLGI_1_1PlatformParameter_html"><div class="ttname"><a href="structLLGI_1_1PlatformParameter.html">LLGI::PlatformParameter</a></div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Platform_8h_source.html#l00013">install_msvc2022_x64/include/LLGI/LLGI.Platform.h:14</a></div></div>
+<div class="ttc" id="astructLLGI_1_1PlatformParameter_html_a23830e44fe4f0efaee8ab5dfa8d9086e"><div class="ttname"><a href="structLLGI_1_1PlatformParameter.html#a23830e44fe4f0efaee8ab5dfa8d9086e">LLGI::PlatformParameter::Device</a></div><div class="ttdeci">DeviceType Device</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Platform_8h_source.html#l00015">install_msvc2022_x64/include/LLGI/LLGI.Platform.h:15</a></div></div>
+<div class="ttc" id="astructLLGI_1_1PlatformParameter_html_a7b457dcc5329944a134704d13f0a6f90"><div class="ttname"><a href="structLLGI_1_1PlatformParameter.html#a7b457dcc5329944a134704d13f0a6f90">LLGI::PlatformParameter::WaitVSync</a></div><div class="ttdeci">bool WaitVSync</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Platform_8h_source.html#l00016">install_msvc2022_x64/include/LLGI/LLGI.Platform.h:16</a></div></div>
+<div class="ttc" id="astructLLGI_1_1Vec2I_html"><div class="ttname"><a href="structLLGI_1_1Vec2I.html">LLGI::Vec2I</a></div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00148">install_msvc2022_x64/include/LLGI/LLGI.Base.h:149</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7c5410398a44882a19233b74a46ddf81.html">EffekseeLib</a></li><li class="navelem"><a class="el" href="dir_b0ac8dcbe24e7c0406791b44f304379a.html">install_msvc2022_x64</a></li><li class="navelem"><a class="el" href="dir_2507c8e16fd430c7f64ecdec46ac52eb.html">include</a></li><li class="navelem"><a class="el" href="dir_175955d568cede33a05a5ca40f94c610.html">LLGI</a></li><li class="navelem"><a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Platform_8h.html">LLGI.Platform.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

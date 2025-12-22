@@ -1,0 +1,1270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: LLGI::Texture クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classLLGI_1_1Texture.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classLLGI_1_1Texture-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">LLGI::Texture クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">LLGI.Texture.h</a>&quot;</code></p>
+<div class="dynheader">
+LLGI::Texture の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classLLGI_1_1Texture__inherit__graph.svg" width="231" height="654"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+LLGI::Texture 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classLLGI_1_1Texture__coll__graph.svg" width="231" height="654"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a7322b55d50d7146638376ddffcd638e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a7322b55d50d7146638376ddffcd638e6">Texture</a> ()=default</td></tr>
+<tr class="separator:a7322b55d50d7146638376ddffcd638e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c205b686b21c153e030c46d47f15f9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a6c205b686b21c153e030c46d47f15f9b">~Texture</a> () override=default</td></tr>
+<tr class="separator:a6c205b686b21c153e030c46d47f15f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88ec94e3cbfb123ffd417bb63d4b5e6"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#ad88ec94e3cbfb123ffd417bb63d4b5e6">Lock</a> ()</td></tr>
+<tr class="separator:ad88ec94e3cbfb123ffd417bb63d4b5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a7159fe9ffc97151c5fb969baa96434"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a5a7159fe9ffc97151c5fb969baa96434">Unlock</a> ()</td></tr>
+<tr class="separator:a5a7159fe9ffc97151c5fb969baa96434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7caac2369d1089673455e98d6d1404e"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#ab7caac2369d1089673455e98d6d1404e">Lock</a> (int32_t mipmapLevel)</td></tr>
+<tr class="memdesc:ab7caac2369d1089673455e98d6d1404e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock an image on mipmap  <br /></td></tr>
+<tr class="separator:ab7caac2369d1089673455e98d6d1404e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c85e7823fc2dde921093ba02abce3d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a09c85e7823fc2dde921093ba02abce3d">GenerateMipMaps</a> ()</td></tr>
+<tr class="memdesc:a09c85e7823fc2dde921093ba02abce3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate mipmaps based on level zero.  <br /></td></tr>
+<tr class="separator:a09c85e7823fc2dde921093ba02abce3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f0f198e8ebf10b1ad539fd9dce5ca63"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structLLGI_1_1Vec2I.html">Vec2I</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a6f0f198e8ebf10b1ad539fd9dce5ca63">GetSizeAs2D</a> () const</td></tr>
+<tr class="separator:a6f0f198e8ebf10b1ad539fd9dce5ca63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dceecbe22b57083f87b2b5827d7cc88"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a5dceecbe22b57083f87b2b5827d7cc88">IsRenderTexture</a> () const</td></tr>
+<tr class="separator:a5dceecbe22b57083f87b2b5827d7cc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea9a2dd97ff27a08445b3e81657f5982"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#aea9a2dd97ff27a08445b3e81657f5982">IsDepthTexture</a> () const</td></tr>
+<tr class="separator:aea9a2dd97ff27a08445b3e81657f5982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f07a606a845137f5a18c4cdc987ec4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cef">TextureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a00f07a606a845137f5a18c4cdc987ec4">GetType</a> () const</td></tr>
+<tr class="separator:a00f07a606a845137f5a18c4cdc987ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08b7edbb72828a8bbbff9d2bb0e1530"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59">TextureFormatType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#aa08b7edbb72828a8bbbff9d2bb0e1530">GetFormat</a> () const</td></tr>
+<tr class="separator:aa08b7edbb72828a8bbbff9d2bb0e1530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3ed49dc565dfd6fe61722969b55cf86"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#ab3ed49dc565dfd6fe61722969b55cf86">GetSamplingCount</a> () const</td></tr>
+<tr class="separator:ab3ed49dc565dfd6fe61722969b55cf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a528cd2f43fe300d51bfc077391c181fc"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a528cd2f43fe300d51bfc077391c181fc">GetMipmapCount</a> () const</td></tr>
+<tr class="separator:a528cd2f43fe300d51bfc077391c181fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7322b55d50d7146638376ddffcd638e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a7322b55d50d7146638376ddffcd638e6">Texture</a> ()=default</td></tr>
+<tr class="separator:a7322b55d50d7146638376ddffcd638e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c205b686b21c153e030c46d47f15f9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a6c205b686b21c153e030c46d47f15f9b">~Texture</a> () override=default</td></tr>
+<tr class="separator:a6c205b686b21c153e030c46d47f15f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88ec94e3cbfb123ffd417bb63d4b5e6"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#ad88ec94e3cbfb123ffd417bb63d4b5e6">Lock</a> ()</td></tr>
+<tr class="separator:ad88ec94e3cbfb123ffd417bb63d4b5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a7159fe9ffc97151c5fb969baa96434"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a5a7159fe9ffc97151c5fb969baa96434">Unlock</a> ()</td></tr>
+<tr class="separator:a5a7159fe9ffc97151c5fb969baa96434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7caac2369d1089673455e98d6d1404e"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#ab7caac2369d1089673455e98d6d1404e">Lock</a> (int32_t mipmapLevel)</td></tr>
+<tr class="memdesc:ab7caac2369d1089673455e98d6d1404e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock an image on mipmap  <br /></td></tr>
+<tr class="separator:ab7caac2369d1089673455e98d6d1404e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c85e7823fc2dde921093ba02abce3d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a09c85e7823fc2dde921093ba02abce3d">GenerateMipMaps</a> ()</td></tr>
+<tr class="memdesc:a09c85e7823fc2dde921093ba02abce3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate mipmaps based on level zero.  <br /></td></tr>
+<tr class="separator:a09c85e7823fc2dde921093ba02abce3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f0f198e8ebf10b1ad539fd9dce5ca63"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structLLGI_1_1Vec2I.html">Vec2I</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a6f0f198e8ebf10b1ad539fd9dce5ca63">GetSizeAs2D</a> () const</td></tr>
+<tr class="separator:a6f0f198e8ebf10b1ad539fd9dce5ca63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dceecbe22b57083f87b2b5827d7cc88"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a5dceecbe22b57083f87b2b5827d7cc88">IsRenderTexture</a> () const</td></tr>
+<tr class="separator:a5dceecbe22b57083f87b2b5827d7cc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea9a2dd97ff27a08445b3e81657f5982"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#aea9a2dd97ff27a08445b3e81657f5982">IsDepthTexture</a> () const</td></tr>
+<tr class="separator:aea9a2dd97ff27a08445b3e81657f5982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f07a606a845137f5a18c4cdc987ec4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cef">TextureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a00f07a606a845137f5a18c4cdc987ec4">GetType</a> () const</td></tr>
+<tr class="separator:a00f07a606a845137f5a18c4cdc987ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08b7edbb72828a8bbbff9d2bb0e1530"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59">TextureFormatType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#aa08b7edbb72828a8bbbff9d2bb0e1530">GetFormat</a> () const</td></tr>
+<tr class="separator:aa08b7edbb72828a8bbbff9d2bb0e1530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3ed49dc565dfd6fe61722969b55cf86"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#ab3ed49dc565dfd6fe61722969b55cf86">GetSamplingCount</a> () const</td></tr>
+<tr class="separator:ab3ed49dc565dfd6fe61722969b55cf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a528cd2f43fe300d51bfc077391c181fc"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a528cd2f43fe300d51bfc077391c181fc">GetMipmapCount</a> () const</td></tr>
+<tr class="separator:a528cd2f43fe300d51bfc077391c181fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a7ceba7114f344e194917b0ee53bc4aa2">AddRef</a> ()</td></tr>
+<tr class="separator:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a7ceba7114f344e194917b0ee53bc4aa2">AddRef</a> ()</td></tr>
+<tr class="separator:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc67e5807f15f2cc40c917ffe559804"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a2dc67e5807f15f2cc40c917ffe559804">GetRef</a> ()</td></tr>
+<tr class="separator:a2dc67e5807f15f2cc40c917ffe559804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc67e5807f15f2cc40c917ffe559804"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a2dc67e5807f15f2cc40c917ffe559804">GetRef</a> ()</td></tr>
+<tr class="separator:a2dc67e5807f15f2cc40c917ffe559804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5a802c449b55209998e7ca965c53d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a3e5a802c449b55209998e7ca965c53d4">Release</a> ()</td></tr>
+<tr class="separator:a3e5a802c449b55209998e7ca965c53d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5a802c449b55209998e7ca965c53d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a3e5a802c449b55209998e7ca965c53d4">Release</a> ()</td></tr>
+<tr class="separator:a3e5a802c449b55209998e7ca965c53d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a6d955aa85ee654c5338d8205da08e6b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cef">TextureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#a6d955aa85ee654c5338d8205da08e6b0">type_</a> = <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefa88183b946cc5f0e8c96b2e66e1c74a7e">TextureType::Unknown</a></td></tr>
+<tr class="separator:a6d955aa85ee654c5338d8205da08e6b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad52eb2998cdbb4289435b1917b6e91f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59">TextureFormatType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#ad52eb2998cdbb4289435b1917b6e91f0">format_</a> = <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a88183b946cc5f0e8c96b2e66e1c74a7e">TextureFormatType::Unknown</a></td></tr>
+<tr class="separator:ad52eb2998cdbb4289435b1917b6e91f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcdc1f12af0c8d8cedc3b2d2d6c971cc"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#abcdc1f12af0c8d8cedc3b2d2d6c971cc">samplingCount_</a> = 1</td></tr>
+<tr class="separator:abcdc1f12af0c8d8cedc3b2d2d6c971cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae780b00ae533ec43375a6e99b47cb3cc"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Texture.html#ae780b00ae533ec43375a6e99b47cb3cc">mipmapCount_</a> = 1</td></tr>
+<tr class="separator:ae780b00ae533ec43375a6e99b47cb3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a4b1a48d30647cb2cd751175568489089"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a></td></tr>
+<tr class="separator:a4b1a48d30647cb2cd751175568489089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00009">9</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a7322b55d50d7146638376ddffcd638e6" name="a7322b55d50d7146638376ddffcd638e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7322b55d50d7146638376ddffcd638e6">&#9670;&#160;</a></span>Texture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::Texture::Texture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c205b686b21c153e030c46d47f15f9b" name="a6c205b686b21c153e030c46d47f15f9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c205b686b21c153e030c46d47f15f9b">&#9670;&#160;</a></span>~Texture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::Texture::~Texture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7322b55d50d7146638376ddffcd638e6" name="a7322b55d50d7146638376ddffcd638e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7322b55d50d7146638376ddffcd638e6">&#9670;&#160;</a></span>Texture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::Texture::Texture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c205b686b21c153e030c46d47f15f9b" name="a6c205b686b21c153e030c46d47f15f9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c205b686b21c153e030c46d47f15f9b">&#9670;&#160;</a></span>~Texture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::Texture::~Texture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a7ceba7114f344e194917b0ee53bc4aa2" name="a7ceba7114f344e194917b0ee53bc4aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ceba7114f344e194917b0ee53bc4aa2">&#9670;&#160;</a></span>AddRef() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::AddRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00394">394</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  395</span>    {</div>
+<div class="line"><span class="lineno">  396</span>        std::atomic_fetch_add_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume);</div>
+<div class="line"><span class="lineno">  397</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  398</span>    }</div>
+<div class="ttc" id="aclassLLGI_1_1ReferenceObject_html_a4b1a48d30647cb2cd751175568489089"><div class="ttname"><a href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">LLGI::ReferenceObject::reference</a></div><div class="ttdeci">std::atomic&lt; int32_t &gt; reference</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">install_msvc2022_x64/include/LLGI/LLGI.Base.h:387</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a7ceba7114f344e194917b0ee53bc4aa2" name="a7ceba7114f344e194917b0ee53bc4aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ceba7114f344e194917b0ee53bc4aa2">&#9670;&#160;</a></span>AddRef() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::AddRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html#l00394">394</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  395</span>    {</div>
+<div class="line"><span class="lineno">  396</span>        std::atomic_fetch_add_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume);</div>
+<div class="line"><span class="lineno">  397</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  398</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a09c85e7823fc2dde921093ba02abce3d" name="a09c85e7823fc2dde921093ba02abce3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c85e7823fc2dde921093ba02abce3d">&#9670;&#160;</a></span>GenerateMipMaps() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LLGI::Texture::GenerateMipMaps </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate mipmaps based on level zero. </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a09c85e7823fc2dde921093ba02abce3d" name="a09c85e7823fc2dde921093ba02abce3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c85e7823fc2dde921093ba02abce3d">&#9670;&#160;</a></span>GenerateMipMaps() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LLGI::Texture::GenerateMipMaps </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate mipmaps based on level zero. </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa08b7edbb72828a8bbbff9d2bb0e1530" name="aa08b7edbb72828a8bbbff9d2bb0e1530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08b7edbb72828a8bbbff9d2bb0e1530">&#9670;&#160;</a></span>GetFormat() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59">TextureFormatType</a> LLGI::Texture::GetFormat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa08b7edbb72828a8bbbff9d2bb0e1530" name="aa08b7edbb72828a8bbbff9d2bb0e1530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08b7edbb72828a8bbbff9d2bb0e1530">&#9670;&#160;</a></span>GetFormat() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59">TextureFormatType</a> LLGI::Texture::GetFormat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a528cd2f43fe300d51bfc077391c181fc" name="a528cd2f43fe300d51bfc077391c181fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528cd2f43fe300d51bfc077391c181fc">&#9670;&#160;</a></span>GetMipmapCount() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t LLGI::Texture::GetMipmapCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00046">46</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1Texture.html#ae780b00ae533ec43375a6e99b47cb3cc">mipmapCount_</a>; }</div>
+<div class="ttc" id="aclassLLGI_1_1Texture_html_ae780b00ae533ec43375a6e99b47cb3cc"><div class="ttname"><a href="classLLGI_1_1Texture.html#ae780b00ae533ec43375a6e99b47cb3cc">LLGI::Texture::mipmapCount_</a></div><div class="ttdeci">int32_t mipmapCount_</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00016">install_msvc2022_x64/include/LLGI/LLGI.Texture.h:16</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00016">mipmapCount_</a>.</p>
+
+</div>
+</div>
+<a id="a528cd2f43fe300d51bfc077391c181fc" name="a528cd2f43fe300d51bfc077391c181fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528cd2f43fe300d51bfc077391c181fc">&#9670;&#160;</a></span>GetMipmapCount() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t LLGI::Texture::GetMipmapCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00046">46</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1Texture.html#ae780b00ae533ec43375a6e99b47cb3cc">mipmapCount_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00016">mipmapCount_</a>.</p>
+
+</div>
+</div>
+<a id="a2dc67e5807f15f2cc40c917ffe559804" name="a2dc67e5807f15f2cc40c917ffe559804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc67e5807f15f2cc40c917ffe559804">&#9670;&#160;</a></span>GetRef() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::GetRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00400">400</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  400</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a2dc67e5807f15f2cc40c917ffe559804" name="a2dc67e5807f15f2cc40c917ffe559804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc67e5807f15f2cc40c917ffe559804">&#9670;&#160;</a></span>GetRef() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::GetRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html#l00400">400</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  400</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="ab3ed49dc565dfd6fe61722969b55cf86" name="ab3ed49dc565dfd6fe61722969b55cf86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3ed49dc565dfd6fe61722969b55cf86">&#9670;&#160;</a></span>GetSamplingCount() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t LLGI::Texture::GetSamplingCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00044">44</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1Texture.html#abcdc1f12af0c8d8cedc3b2d2d6c971cc">samplingCount_</a>; }</div>
+<div class="ttc" id="aclassLLGI_1_1Texture_html_abcdc1f12af0c8d8cedc3b2d2d6c971cc"><div class="ttname"><a href="classLLGI_1_1Texture.html#abcdc1f12af0c8d8cedc3b2d2d6c971cc">LLGI::Texture::samplingCount_</a></div><div class="ttdeci">int32_t samplingCount_</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00015">install_msvc2022_x64/include/LLGI/LLGI.Texture.h:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00015">samplingCount_</a>.</p>
+
+</div>
+</div>
+<a id="ab3ed49dc565dfd6fe61722969b55cf86" name="ab3ed49dc565dfd6fe61722969b55cf86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3ed49dc565dfd6fe61722969b55cf86">&#9670;&#160;</a></span>GetSamplingCount() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t LLGI::Texture::GetSamplingCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00044">44</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1Texture.html#abcdc1f12af0c8d8cedc3b2d2d6c971cc">samplingCount_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00015">samplingCount_</a>.</p>
+
+</div>
+</div>
+<a id="a6f0f198e8ebf10b1ad539fd9dce5ca63" name="a6f0f198e8ebf10b1ad539fd9dce5ca63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f0f198e8ebf10b1ad539fd9dce5ca63">&#9670;&#160;</a></span>GetSizeAs2D() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structLLGI_1_1Vec2I.html">Vec2I</a> LLGI::Texture::GetSizeAs2D </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f0f198e8ebf10b1ad539fd9dce5ca63" name="a6f0f198e8ebf10b1ad539fd9dce5ca63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f0f198e8ebf10b1ad539fd9dce5ca63">&#9670;&#160;</a></span>GetSizeAs2D() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structLLGI_1_1Vec2I.html">Vec2I</a> LLGI::Texture::GetSizeAs2D </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00f07a606a845137f5a18c4cdc987ec4" name="a00f07a606a845137f5a18c4cdc987ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f07a606a845137f5a18c4cdc987ec4">&#9670;&#160;</a></span>GetType() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cef">TextureType</a> LLGI::Texture::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1Texture.html#a6d955aa85ee654c5338d8205da08e6b0">type_</a>; }</div>
+<div class="ttc" id="aclassLLGI_1_1Texture_html_a6d955aa85ee654c5338d8205da08e6b0"><div class="ttname"><a href="classLLGI_1_1Texture.html#a6d955aa85ee654c5338d8205da08e6b0">LLGI::Texture::type_</a></div><div class="ttdeci">TextureType type_</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00013">install_msvc2022_x64/include/LLGI/LLGI.Texture.h:13</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00013">type_</a>.</p>
+
+</div>
+</div>
+<a id="a00f07a606a845137f5a18c4cdc987ec4" name="a00f07a606a845137f5a18c4cdc987ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f07a606a845137f5a18c4cdc987ec4">&#9670;&#160;</a></span>GetType() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cef">TextureType</a> LLGI::Texture::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1Texture.html#a6d955aa85ee654c5338d8205da08e6b0">type_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00013">type_</a>.</p>
+
+</div>
+</div>
+<a id="aea9a2dd97ff27a08445b3e81657f5982" name="aea9a2dd97ff27a08445b3e81657f5982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea9a2dd97ff27a08445b3e81657f5982">&#9670;&#160;</a></span>IsDepthTexture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool LLGI::Texture::IsDepthTexture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea9a2dd97ff27a08445b3e81657f5982" name="aea9a2dd97ff27a08445b3e81657f5982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea9a2dd97ff27a08445b3e81657f5982">&#9670;&#160;</a></span>IsDepthTexture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool LLGI::Texture::IsDepthTexture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5dceecbe22b57083f87b2b5827d7cc88" name="a5dceecbe22b57083f87b2b5827d7cc88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dceecbe22b57083f87b2b5827d7cc88">&#9670;&#160;</a></span>IsRenderTexture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool LLGI::Texture::IsRenderTexture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5dceecbe22b57083f87b2b5827d7cc88" name="a5dceecbe22b57083f87b2b5827d7cc88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dceecbe22b57083f87b2b5827d7cc88">&#9670;&#160;</a></span>IsRenderTexture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool LLGI::Texture::IsRenderTexture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad88ec94e3cbfb123ffd417bb63d4b5e6" name="ad88ec94e3cbfb123ffd417bb63d4b5e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88ec94e3cbfb123ffd417bb63d4b5e6">&#9670;&#160;</a></span>Lock() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void * LLGI::Texture::Lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad88ec94e3cbfb123ffd417bb63d4b5e6" name="ad88ec94e3cbfb123ffd417bb63d4b5e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88ec94e3cbfb123ffd417bb63d4b5e6">&#9670;&#160;</a></span>Lock() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void * LLGI::Texture::Lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7caac2369d1089673455e98d6d1404e" name="ab7caac2369d1089673455e98d6d1404e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7caac2369d1089673455e98d6d1404e">&#9670;&#160;</a></span>Lock() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void * LLGI::Texture::Lock </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>mipmapLevel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lock an image on mipmap </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab7caac2369d1089673455e98d6d1404e" name="ab7caac2369d1089673455e98d6d1404e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7caac2369d1089673455e98d6d1404e">&#9670;&#160;</a></span>Lock() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void * LLGI::Texture::Lock </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>mipmapLevel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lock an image on mipmap </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3e5a802c449b55209998e7ca965c53d4" name="a3e5a802c449b55209998e7ca965c53d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5a802c449b55209998e7ca965c53d4">&#9670;&#160;</a></span>Release() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00402">402</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  403</span>    {</div>
+<div class="line"><span class="lineno">  404</span>        assert(<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a> &gt; 0);</div>
+<div class="line"><span class="lineno">  405</span> </div>
+<div class="line"><span class="lineno">  406</span>        <span class="keywordtype">bool</span> destroy = std::atomic_fetch_sub_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume) == 1;</div>
+<div class="line"><span class="lineno">  407</span>        <span class="keywordflow">if</span> (destroy)</div>
+<div class="line"><span class="lineno">  408</span>        {</div>
+<div class="line"><span class="lineno">  409</span>            <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  410</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  411</span>        }</div>
+<div class="line"><span class="lineno">  412</span> </div>
+<div class="line"><span class="lineno">  413</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  414</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a3e5a802c449b55209998e7ca965c53d4" name="a3e5a802c449b55209998e7ca965c53d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5a802c449b55209998e7ca965c53d4">&#9670;&#160;</a></span>Release() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html#l00402">402</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  403</span>    {</div>
+<div class="line"><span class="lineno">  404</span>        assert(<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a> &gt; 0);</div>
+<div class="line"><span class="lineno">  405</span> </div>
+<div class="line"><span class="lineno">  406</span>        <span class="keywordtype">bool</span> destroy = std::atomic_fetch_sub_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume) == 1;</div>
+<div class="line"><span class="lineno">  407</span>        <span class="keywordflow">if</span> (destroy)</div>
+<div class="line"><span class="lineno">  408</span>        {</div>
+<div class="line"><span class="lineno">  409</span>            <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  410</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  411</span>        }</div>
+<div class="line"><span class="lineno">  412</span> </div>
+<div class="line"><span class="lineno">  413</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  414</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a5a7159fe9ffc97151c5fb969baa96434" name="a5a7159fe9ffc97151c5fb969baa96434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a7159fe9ffc97151c5fb969baa96434">&#9670;&#160;</a></span>Unlock() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LLGI::Texture::Unlock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a7159fe9ffc97151c5fb969baa96434" name="a5a7159fe9ffc97151c5fb969baa96434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a7159fe9ffc97151c5fb969baa96434">&#9670;&#160;</a></span>Unlock() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LLGI::Texture::Unlock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ad52eb2998cdbb4289435b1917b6e91f0" name="ad52eb2998cdbb4289435b1917b6e91f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad52eb2998cdbb4289435b1917b6e91f0">&#9670;&#160;</a></span>format_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59">TextureFormatType</a> LLGI::Texture::format_ = <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a88183b946cc5f0e8c96b2e66e1c74a7e">TextureFormatType::Unknown</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae780b00ae533ec43375a6e99b47cb3cc" name="ae780b00ae533ec43375a6e99b47cb3cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae780b00ae533ec43375a6e99b47cb3cc">&#9670;&#160;</a></span>mipmapCount_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t LLGI::Texture::mipmapCount_ = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00016">16</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00046">GetMipmapCount()</a>.</p>
+
+</div>
+</div>
+<a id="a4b1a48d30647cb2cd751175568489089" name="a4b1a48d30647cb2cd751175568489089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b1a48d30647cb2cd751175568489089">&#9670;&#160;</a></span>reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt; int32_t &gt; LLGI::ReferenceObject::reference</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">387</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00394">LLGI::ReferenceObject::AddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00400">LLGI::ReferenceObject::GetRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00402">LLGI::ReferenceObject::Release()</a>.</p>
+
+</div>
+</div>
+<a id="abcdc1f12af0c8d8cedc3b2d2d6c971cc" name="abcdc1f12af0c8d8cedc3b2d2d6c971cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcdc1f12af0c8d8cedc3b2d2d6c971cc">&#9670;&#160;</a></span>samplingCount_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t LLGI::Texture::samplingCount_ = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00015">15</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00044">GetSamplingCount()</a>.</p>
+
+</div>
+</div>
+<a id="a6d955aa85ee654c5338d8205da08e6b0" name="a6d955aa85ee654c5338d8205da08e6b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d955aa85ee654c5338d8205da08e6b0">&#9670;&#160;</a></span>type_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cef">TextureType</a> LLGI::Texture::type_ = <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefa88183b946cc5f0e8c96b2e66e1c74a7e">TextureType::Unknown</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00013">13</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html#l00040">GetType()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Texture.h</a></li>
+<li><a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Texture_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Texture.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceLLGI.html">LLGI</a></li><li class="navelem"><a class="el" href="classLLGI_1_1Texture.html">Texture</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

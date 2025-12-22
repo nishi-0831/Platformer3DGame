@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Effekseer::CustomAlignedAllocator&lt; T &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structEffekseer_1_1CustomAlignedAllocator.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="structEffekseer_1_1CustomAlignedAllocator-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">Effekseer::CustomAlignedAllocator&lt; T &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">Effekseer.h</a>&quot;</code></p>
+<div class="dynheader">
+Effekseer::CustomAlignedAllocator&lt; T &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structEffekseer_1_1CustomAlignedAllocator__coll__graph.svg" width="234" height="470"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a613502ba487fb28663745e3c61d90a14"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#a613502ba487fb28663745e3c61d90a14">value_type</a> = <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a></td></tr>
+<tr class="separator:a613502ba487fb28663745e3c61d90a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a613502ba487fb28663745e3c61d90a14"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#a613502ba487fb28663745e3c61d90a14">value_type</a> = <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a></td></tr>
+<tr class="separator:a613502ba487fb28663745e3c61d90a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af3810cc1365e1dfcfb7e7e001ab53581"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#af3810cc1365e1dfcfb7e7e001ab53581">CustomAlignedAllocator</a> ()</td></tr>
+<tr class="separator:af3810cc1365e1dfcfb7e7e001ab53581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1c1806963f71142438b32b636425ba4"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:aa1c1806963f71142438b32b636425ba4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#aa1c1806963f71142438b32b636425ba4">CustomAlignedAllocator</a> (const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;)</td></tr>
+<tr class="separator:aa1c1806963f71142438b32b636425ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79cd79955c089d237cbc8d13b93bef56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#a79cd79955c089d237cbc8d13b93bef56">allocate</a> (std::size_t n)</td></tr>
+<tr class="separator:a79cd79955c089d237cbc8d13b93bef56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac253bae42c7067223d03fba824515d90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#ac253bae42c7067223d03fba824515d90">deallocate</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *p, std::size_t n)</td></tr>
+<tr class="separator:ac253bae42c7067223d03fba824515d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92267a9240c6e0c3ce0a1a7da8f7e8de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#a92267a9240c6e0c3ce0a1a7da8f7e8de">operator==</a> (const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;)</td></tr>
+<tr class="separator:a92267a9240c6e0c3ce0a1a7da8f7e8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd714a447dcf5b908c9e54ef92f7989"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#abcd714a447dcf5b908c9e54ef92f7989">operator!=</a> (const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;)</td></tr>
+<tr class="separator:abcd714a447dcf5b908c9e54ef92f7989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3810cc1365e1dfcfb7e7e001ab53581"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#af3810cc1365e1dfcfb7e7e001ab53581">CustomAlignedAllocator</a> ()</td></tr>
+<tr class="separator:af3810cc1365e1dfcfb7e7e001ab53581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1c1806963f71142438b32b636425ba4"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:aa1c1806963f71142438b32b636425ba4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#aa1c1806963f71142438b32b636425ba4">CustomAlignedAllocator</a> (const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;)</td></tr>
+<tr class="separator:aa1c1806963f71142438b32b636425ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79cd79955c089d237cbc8d13b93bef56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#a79cd79955c089d237cbc8d13b93bef56">allocate</a> (std::size_t n)</td></tr>
+<tr class="separator:a79cd79955c089d237cbc8d13b93bef56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac253bae42c7067223d03fba824515d90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#ac253bae42c7067223d03fba824515d90">deallocate</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *p, std::size_t n)</td></tr>
+<tr class="separator:ac253bae42c7067223d03fba824515d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92267a9240c6e0c3ce0a1a7da8f7e8de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#a92267a9240c6e0c3ce0a1a7da8f7e8de">operator==</a> (const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;)</td></tr>
+<tr class="separator:a92267a9240c6e0c3ce0a1a7da8f7e8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd714a447dcf5b908c9e54ef92f7989"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html#abcd714a447dcf5b908c9e54ef92f7989">operator!=</a> (const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;)</td></tr>
+<tr class="separator:abcd714a447dcf5b908c9e54ef92f7989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;<br />
+struct Effekseer::CustomAlignedAllocator&lt; T &gt;</div>
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01254">1254</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a613502ba487fb28663745e3c61d90a14" name="a613502ba487fb28663745e3c61d90a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a613502ba487fb28663745e3c61d90a14">&#9670;&#160;</a></span>value_type <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::value_type =  <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01256">1256</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a613502ba487fb28663745e3c61d90a14" name="a613502ba487fb28663745e3c61d90a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a613502ba487fb28663745e3c61d90a14">&#9670;&#160;</a></span>value_type <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::value_type =  <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01256">1256</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="af3810cc1365e1dfcfb7e7e001ab53581" name="af3810cc1365e1dfcfb7e7e001ab53581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3810cc1365e1dfcfb7e7e001ab53581">&#9670;&#160;</a></span>CustomAlignedAllocator() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::CustomAlignedAllocator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01258">1258</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1259</span>    {</div>
+<div class="line"><span class="lineno"> 1260</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa1c1806963f71142438b32b636425ba4" name="aa1c1806963f71142438b32b636425ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1c1806963f71142438b32b636425ba4">&#9670;&#160;</a></span>CustomAlignedAllocator() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::CustomAlignedAllocator </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01263">1263</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1264</span>    {</div>
+<div class="line"><span class="lineno"> 1265</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af3810cc1365e1dfcfb7e7e001ab53581" name="af3810cc1365e1dfcfb7e7e001ab53581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3810cc1365e1dfcfb7e7e001ab53581">&#9670;&#160;</a></span>CustomAlignedAllocator() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::CustomAlignedAllocator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01258">1258</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1259</span>    {</div>
+<div class="line"><span class="lineno"> 1260</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa1c1806963f71142438b32b636425ba4" name="aa1c1806963f71142438b32b636425ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1c1806963f71142438b32b636425ba4">&#9670;&#160;</a></span>CustomAlignedAllocator() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::CustomAlignedAllocator </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01263">1263</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1264</span>    {</div>
+<div class="line"><span class="lineno"> 1265</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a79cd79955c089d237cbc8d13b93bef56" name="a79cd79955c089d237cbc8d13b93bef56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79cd79955c089d237cbc8d13b93bef56">&#9670;&#160;</a></span>allocate() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> * <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::allocate </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01267">1267</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1268</span>    {</div>
+<div class="line"><span class="lineno"> 1269</span>        <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceEffekseer.html#abdc0a4b7d092501920dbe1dba2c1d217">GetAlignedMallocFunc</a>()(<span class="keyword">sizeof</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>) * <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(n), 16));</div>
+<div class="line"><span class="lineno"> 1270</span>    }</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
+<div class="ttc" id="anamespaceEffekseer_html_abdc0a4b7d092501920dbe1dba2c1d217"><div class="ttname"><a href="namespaceEffekseer.html#abdc0a4b7d092501920dbe1dba2c1d217">Effekseer::GetAlignedMallocFunc</a></div><div class="ttdeci">AlignedMallocFunc GetAlignedMallocFunc()</div><div class="ttdoc">メモリ確保関数を取得する。</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespaceEffekseer.html#abdc0a4b7d092501920dbe1dba2c1d217">Effekseer::GetAlignedMallocFunc()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structEffekseer_1_1CustomAlignedAllocator_a79cd79955c089d237cbc8d13b93bef56_cgraph.svg" width="486" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a79cd79955c089d237cbc8d13b93bef56" name="a79cd79955c089d237cbc8d13b93bef56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79cd79955c089d237cbc8d13b93bef56">&#9670;&#160;</a></span>allocate() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> * <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::allocate </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01267">1267</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1268</span>    {</div>
+<div class="line"><span class="lineno"> 1269</span>        <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceEffekseer.html#abdc0a4b7d092501920dbe1dba2c1d217">GetAlignedMallocFunc</a>()(<span class="keyword">sizeof</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>) * <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(n), 16));</div>
+<div class="line"><span class="lineno"> 1270</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespaceEffekseer.html#abdc0a4b7d092501920dbe1dba2c1d217">Effekseer::GetAlignedMallocFunc()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structEffekseer_1_1CustomAlignedAllocator_a79cd79955c089d237cbc8d13b93bef56_cgraph.svg" width="486" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac253bae42c7067223d03fba824515d90" name="ac253bae42c7067223d03fba824515d90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac253bae42c7067223d03fba824515d90">&#9670;&#160;</a></span>deallocate() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::deallocate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01271">1271</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1272</span>    {</div>
+<div class="line"><span class="lineno"> 1273</span>        <a class="code hl_function" href="namespaceEffekseer.html#aa2783d0e80874d3ff011675b1200768e">GetAlignedFreeFunc</a>()(p, <span class="keyword">sizeof</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>) * <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(n));</div>
+<div class="line"><span class="lineno"> 1274</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_html_aa2783d0e80874d3ff011675b1200768e"><div class="ttname"><a href="namespaceEffekseer.html#aa2783d0e80874d3ff011675b1200768e">Effekseer::GetAlignedFreeFunc</a></div><div class="ttdeci">AlignedFreeFunc GetAlignedFreeFunc()</div><div class="ttdoc">メモリ破棄関数を取得する。</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespaceEffekseer.html#aa2783d0e80874d3ff011675b1200768e">Effekseer::GetAlignedFreeFunc()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structEffekseer_1_1CustomAlignedAllocator_ac253bae42c7067223d03fba824515d90_cgraph.svg" width="471" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac253bae42c7067223d03fba824515d90" name="ac253bae42c7067223d03fba824515d90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac253bae42c7067223d03fba824515d90">&#9670;&#160;</a></span>deallocate() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::deallocate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01271">1271</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1272</span>    {</div>
+<div class="line"><span class="lineno"> 1273</span>        <a class="code hl_function" href="namespaceEffekseer.html#aa2783d0e80874d3ff011675b1200768e">GetAlignedFreeFunc</a>()(p, <span class="keyword">sizeof</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>) * <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(n));</div>
+<div class="line"><span class="lineno"> 1274</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespaceEffekseer.html#aa2783d0e80874d3ff011675b1200768e">Effekseer::GetAlignedFreeFunc()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structEffekseer_1_1CustomAlignedAllocator_ac253bae42c7067223d03fba824515d90_cgraph.svg" width="471" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="abcd714a447dcf5b908c9e54ef92f7989" name="abcd714a447dcf5b908c9e54ef92f7989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd714a447dcf5b908c9e54ef92f7989">&#9670;&#160;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01281">1281</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1282</span>    {</div>
+<div class="line"><span class="lineno"> 1283</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1284</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abcd714a447dcf5b908c9e54ef92f7989" name="abcd714a447dcf5b908c9e54ef92f7989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd714a447dcf5b908c9e54ef92f7989">&#9670;&#160;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01281">1281</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1282</span>    {</div>
+<div class="line"><span class="lineno"> 1283</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1284</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a92267a9240c6e0c3ce0a1a7da8f7e8de" name="a92267a9240c6e0c3ce0a1a7da8f7e8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92267a9240c6e0c3ce0a1a7da8f7e8de">&#9670;&#160;</a></span>operator==() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01276">1276</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1277</span>    {</div>
+<div class="line"><span class="lineno"> 1278</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1279</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a92267a9240c6e0c3ce0a1a7da8f7e8de" name="a92267a9240c6e0c3ce0a1a7da8f7e8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92267a9240c6e0c3ce0a1a7da8f7e8de">&#9670;&#160;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01276">1276</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1277</span>    {</div>
+<div class="line"><span class="lineno"> 1278</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1279</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a></li>
+<li><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceEffekseer.html">Effekseer</a></li><li class="navelem"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">CustomAlignedAllocator</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+var classmtgb_1_1StatefulComponent =
+[
+    [ "ComponentPool", "classmtgb_1_1StatefulComponent.html#a83da22e12bc3008a5c1be1cca8a6c6de", null ],
+    [ "Memento", "classmtgb_1_1StatefulComponent.html#a2e743596c2d3535e843f61dbb25a478f", null ],
+    [ "Pool", "classmtgb_1_1StatefulComponent.html#a4d48cdbe3ab7d92a0a73b29228f255d5", null ],
+    [ "~StatefulComponent", "classmtgb_1_1StatefulComponent.html#a089f7d39a79671e9f695dc5e1d71204d", null ],
+    [ "StatefulComponent", "classmtgb_1_1StatefulComponent.html#a125935d70cc85dd952bba75b8131b275", null ],
+    [ "StatefulComponent", "classmtgb_1_1StatefulComponent.html#a9ecb33c1675f0b0bf5995cc71817c894", null ],
+    [ "CopyData", "classmtgb_1_1StatefulComponent.html#a636aba87980ccc27450c8601143b8620", null ],
+    [ "Deserialize", "classmtgb_1_1StatefulComponent.html#ae6fd1c0a259962fe26dc0c9f5c9ad1e7", null ],
+    [ "DisplayName", "classmtgb_1_1StatefulComponent.html#afeaf5c89db20efd4e75b4126449b17e3", null ],
+    [ "Get", "classmtgb_1_1StatefulComponent.html#a931ae7565817c83a4e3c5f9004c074d5", null ],
+    [ "Get", "classmtgb_1_1StatefulComponent.html#a4e0db1b0f0dbd3823a06ae854eacef41", null ],
+    [ "GetEntityId", "classmtgb_1_1StatefulComponent.html#a735636df79e7cfd6336e9a97345e2b29", null ],
+    [ "Initialize", "classmtgb_1_1StatefulComponent.html#a3a7bc201ab8a621486081ebbdfdba214", null ],
+    [ "MoveData", "classmtgb_1_1StatefulComponent.html#ad5c962b67c6562ecee7ecf06933d9f76", null ],
+    [ "OnPostRestore", "classmtgb_1_1StatefulComponent.html#abbad7acd7c753cc6cce02bea1e3ae796", null ],
+    [ "OnPreSave", "classmtgb_1_1StatefulComponent.html#a371bbc193121ca7c31e33bc87c3dc000", null ],
+    [ "RestoreFromMemento", "classmtgb_1_1StatefulComponent.html#a8cdebd7c065389da1c6c969dc9c5f8eb", null ],
+    [ "Reuse", "classmtgb_1_1StatefulComponent.html#ab07fa68485a5cf4425eebf1718c82e73", null ],
+    [ "SaveToMemento", "classmtgb_1_1StatefulComponent.html#ae698bdc73cde5faf4ced638ca3e95b13", null ],
+    [ "Serialize", "classmtgb_1_1StatefulComponent.html#a303c66afd7c3844b0150b69b956d873b", null ],
+    [ "ComponentPool< ComponentT, ComponentPoolT >", "classmtgb_1_1StatefulComponent.html#a37d6b5582bd4cc3eea5feb793ae19aa4", null ],
+    [ "ComponentPoolT", "classmtgb_1_1StatefulComponent.html#aed716499a289d6dd69c0d40b683142aa", null ],
+    [ "entityId_", "classmtgb_1_1StatefulComponent.html#a8aa4f5300c39f9f4705a587fd0a72639", null ]
+];

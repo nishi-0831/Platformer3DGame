@@ -1,0 +1,1906 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::Game クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1Game.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pro-types">限定公開型</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pri-static-methods">静的非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
+<a href="classmtgb_1_1Game-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::Game クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>このクラスを継承し、作るゲームのクラスを作ってください  
+ <a href="classmtgb_1_1Game.html#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="Game_8h_source.html">Game.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::Game の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game__inherit__graph.svg" width="275" height="1387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::Game 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game__coll__graph.svg" width="404" height="1534"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game_1_1RegisterSystemFuncHolder.html">RegisterSystemFuncHolder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">システム登録の関数ホルダ  <a href="classmtgb_1_1Game_1_1RegisterSystemFuncHolder.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae241b7677e1c59407d3f80fdc2040547"><td class="memTemplParams" colspan="2">template&lt;typename GameT , typename ... Args&gt; </td></tr>
+<tr class="memitem:ae241b7677e1c59407d3f80fdc2040547"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#ae241b7677e1c59407d3f80fdc2040547">Run</a> (Args... _args)</td></tr>
+<tr class="memdesc:ae241b7677e1c59407d3f80fdc2040547"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームを起動する  <br /></td></tr>
+<tr class="separator:ae241b7677e1c59407d3f80fdc2040547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89610789c1e997fbf101d1137f9407a9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a89610789c1e997fbf101d1137f9407a9">Exit</a> ()</td></tr>
+<tr class="memdesc:a89610789c1e997fbf101d1137f9407a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームを終了する  <br /></td></tr>
+<tr class="separator:a89610789c1e997fbf101d1137f9407a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa75130a000b0a2cafdd38c92c3fa36c"><td class="memTemplParams" colspan="2">template&lt;typename SystemT &gt; </td></tr>
+<tr class="memitem:afa75130a000b0a2cafdd38c92c3fa36c"><td class="memTemplItemLeft" align="right" valign="top">static SystemT &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#afa75130a000b0a2cafdd38c92c3fa36c">System</a> ()</td></tr>
+<tr class="memdesc:afa75130a000b0a2cafdd38c92c3fa36c"><td class="mdescLeft">&#160;</td><td class="mdescRight">システムを取得する  <br /></td></tr>
+<tr class="separator:afa75130a000b0a2cafdd38c92c3fa36c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66362917a1d96665e8160adcb72f031f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1ComponentFactory.html">ComponentFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a66362917a1d96665e8160adcb72f031f">GetComponentFactory</a> ()</td></tr>
+<tr class="separator:a66362917a1d96665e8160adcb72f031f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd71b4a6969cdc1274cfa4fbcc617c6"><td class="memItemLeft" align="right" valign="top">static std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#afbd71b4a6969cdc1274cfa4fbcc617c6">Version</a> ()</td></tr>
+<tr class="memdesc:afbd71b4a6969cdc1274cfa4fbcc617c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームのバージョンを取得  <br /></td></tr>
+<tr class="separator:afbd71b4a6969cdc1274cfa4fbcc617c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94bdb4af96595d8c47294dfb6b762619"><td class="memItemLeft" align="right" valign="top">static std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a94bdb4af96595d8c47294dfb6b762619">Title</a> ()</td></tr>
+<tr class="memdesc:a94bdb4af96595d8c47294dfb6b762619"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームタイトルを取得  <br /></td></tr>
+<tr class="separator:a94bdb4af96595d8c47294dfb6b762619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3e67eb32ff2dca48fa29ab66123e71c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#af3e67eb32ff2dca48fa29ab66123e71c">UpdateFrame</a> ()</td></tr>
+<tr class="memdesc:af3e67eb32ff2dca48fa29ab66123e71c"><td class="mdescLeft">&#160;</td><td class="mdescRight">フレームの更新をする  <br /></td></tr>
+<tr class="separator:af3e67eb32ff2dca48fa29ab66123e71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a137f5152ae4da8972979646ae383b421"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a137f5152ae4da8972979646ae383b421">UpdateFixed</a> ()</td></tr>
+<tr class="memdesc:a137f5152ae4da8972979646ae383b421"><td class="mdescLeft">&#160;</td><td class="mdescRight">定期更新をする  <br /></td></tr>
+<tr class="separator:a137f5152ae4da8972979646ae383b421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ccdf8fa3e7bea6e9f5b651f2db9669a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1IComponentPool.html">IComponentPool</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a6ccdf8fa3e7bea6e9f5b651f2db9669a">GetCP</a> (std::type_index _typeIndex)</td></tr>
+<tr class="memdesc:a6ccdf8fa3e7bea6e9f5b651f2db9669a"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンポーネントプールのインターフェースを返す  <br /></td></tr>
+<tr class="separator:a6ccdf8fa3e7bea6e9f5b651f2db9669a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa7f596ea64797f4dff66edd5582f1bf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#afa7f596ea64797f4dff66edd5582f1bf">RemoveEntityAllComponent</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="memdesc:afa7f596ea64797f4dff66edd5582f1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">エンティティに対応する全てのコンポーネントを削除する  <br /></td></tr>
+<tr class="separator:afa7f596ea64797f4dff66edd5582f1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d3520ed9ed38945557f6cfc2a3e4224"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a4d3520ed9ed38945557f6cfc2a3e4224">RemoveEntityComponent</a> (const std::type_index _typeIndex, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="memdesc:a4d3520ed9ed38945557f6cfc2a3e4224"><td class="mdescLeft">&#160;</td><td class="mdescRight">エンティティに対応するコンポーネントを削除する  <br /></td></tr>
+<tr class="separator:a4d3520ed9ed38945557f6cfc2a3e4224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b552e60ee7d044929c35b08c3b46030"><td class="memItemLeft" align="right" valign="top">static nlohmann::json&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a8b552e60ee7d044929c35b08c3b46030">SerializeComponent</a> (std::type_index _typeIndex, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="memdesc:a8b552e60ee7d044929c35b08c3b46030"><td class="mdescLeft">&#160;</td><td class="mdescRight">エンティティに対応するコンポーネントをJSONにシリアライズして返す  <br /></td></tr>
+<tr class="separator:a8b552e60ee7d044929c35b08c3b46030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6782cd6f4a02abb3823fe54e10b83287"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a6782cd6f4a02abb3823fe54e10b83287">DeserializeComponent</a> (std::type_index _typeIndex, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId, const nlohmann::json &amp;_json)</td></tr>
+<tr class="memdesc:a6782cd6f4a02abb3823fe54e10b83287"><td class="mdescLeft">&#160;</td><td class="mdescRight">JSONからエンティティに対応するコンポーネントにデシリアライズして、メメントを返す  <br /></td></tr>
+<tr class="separator:a6782cd6f4a02abb3823fe54e10b83287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaa55851e01df60f0661fc0b24e65d7a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#aeaa55851e01df60f0661fc0b24e65d7a">DeserializeComponents</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId, const nlohmann::json &amp;_json)</td></tr>
+<tr class="separator:aeaa55851e01df60f0661fc0b24e65d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e92de67f7858ed8f5a9a5adcf9cb75b"><td class="memItemLeft" align="right" valign="top">static std::span&lt; <a class="el" href="classmtgb_1_1IRenderableCP.html">IRenderableCP</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a3e92de67f7858ed8f5a9a5adcf9cb75b">GetRenderableCPs</a> ()</td></tr>
+<tr class="memdesc:a3e92de67f7858ed8f5a9a5adcf9cb75b"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画可能なコンポーネントプールを返す  <br /></td></tr>
+<tr class="separator:a3e92de67f7858ed8f5a9a5adcf9cb75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
+限定公開型</h2></td></tr>
+<tr class="memitem:acd5aa6dfc99569b487836ee990a9686b"><td class="memItemLeft" align="right" valign="top">enum struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">SystemUpdateType</a> : int8_t { <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840">DontCallMe</a>
+, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938">Cycle</a>
+, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a">Frame</a>
+, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61">Fixed</a>
+ }</td></tr>
+<tr class="memdesc:acd5aa6dfc99569b487836ee990a9686b"><td class="mdescLeft">&#160;</td><td class="mdescRight">システムの更新タイミングタイプ  <a href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">[詳解]</a><br /></td></tr>
+<tr class="separator:acd5aa6dfc99569b487836ee990a9686b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc4e58fb45a5ba0503505d723f71370"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#accc4e58fb45a5ba0503505d723f71370">RegisterSystem</a> = std::function&lt; void(std::type_index _systemTypeName, <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a> *_system, const bool _isComponentPool, const <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">SystemUpdateType</a>)&gt;</td></tr>
+<tr class="memdesc:accc4e58fb45a5ba0503505d723f71370"><td class="mdescLeft">&#160;</td><td class="mdescRight">システム登録のコールバック関数  <br /></td></tr>
+<tr class="separator:accc4e58fb45a5ba0503505d723f71370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae512bb97ff6fdd2af8122b2d3c854389"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#ae512bb97ff6fdd2af8122b2d3c854389">Game</a> ()</td></tr>
+<tr class="separator:ae512bb97ff6fdd2af8122b2d3c854389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a315f86a443273ccc0c278f75620a7d18"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a315f86a443273ccc0c278f75620a7d18">~Game</a> ()</td></tr>
+<tr class="separator:a315f86a443273ccc0c278f75620a7d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1de12b363a5f77117915799c3a67e6c"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:aa1de12b363a5f77117915799c3a67e6c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#aa1de12b363a5f77117915799c3a67e6c">Set</a> (<a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">SystemUpdateType</a> _systemUpdateType)</td></tr>
+<tr class="separator:aa1de12b363a5f77117915799c3a67e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe3ba3323b5ad0730d9e9f09ad7f923"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#afbe3ba3323b5ad0730d9e9f09ad7f923">SetupSystems</a> (const <a class="el" href="classmtgb_1_1Game_1_1RegisterSystemFuncHolder.html">RegisterSystemFuncHolder</a> &amp;_registerSystem)=0</td></tr>
+<tr class="separator:afbe3ba3323b5ad0730d9e9f09ad7f923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f6935c2fedd362f4cc47926af6c79b"><td class="memItemLeft" align="right" valign="top">virtual std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a94f6935c2fedd362f4cc47926af6c79b">GetVersion</a> () const =0</td></tr>
+<tr class="memdesc:a94f6935c2fedd362f4cc47926af6c79b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームのバージョンを必ず返してください  <br /></td></tr>
+<tr class="separator:a94f6935c2fedd362f4cc47926af6c79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a175c8a3ebfd3bf724b97505fcfc1e80f"><td class="memItemLeft" align="right" valign="top">virtual std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a175c8a3ebfd3bf724b97505fcfc1e80f">GetTitle</a> () const =0</td></tr>
+<tr class="memdesc:a175c8a3ebfd3bf724b97505fcfc1e80f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームのタイトルを必ず返してください  <br /></td></tr>
+<tr class="separator:a175c8a3ebfd3bf724b97505fcfc1e80f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb1e92d082cafb5312252c5e7290206"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a5bb1e92d082cafb5312252c5e7290206">GetScreenSize</a> () const</td></tr>
+<tr class="separator:a5bb1e92d082cafb5312252c5e7290206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静的非公開メンバ関数</h2></td></tr>
+<tr class="memitem:acce77edf9df17d4d89bc0e2d970f6c4c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#acce77edf9df17d4d89bc0e2d970f6c4c">InitializeSystems</a> (const std::list&lt; <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a> * &gt; &amp;_uninitialized)</td></tr>
+<tr class="memdesc:acce77edf9df17d4d89bc0e2d970f6c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">システムの初期化をする  <br /></td></tr>
+<tr class="separator:acce77edf9df17d4d89bc0e2d970f6c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e951e959e15a61ba47b16a9867d013"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#ad8e951e959e15a61ba47b16a9867d013">ReleaseSystems</a> (const std::list&lt; <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a> * &gt; &amp;_runnings)</td></tr>
+<tr class="memdesc:ad8e951e959e15a61ba47b16a9867d013"><td class="mdescLeft">&#160;</td><td class="mdescRight">システムの解放処理をする  <br /></td></tr>
+<tr class="separator:ad8e951e959e15a61ba47b16a9867d013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaab9ce3626b3a5f3a0e26f602426494"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#abaab9ce3626b3a5f3a0e26f602426494">RunLoopGameCycle</a> ()</td></tr>
+<tr class="memdesc:abaab9ce3626b3a5f3a0e26f602426494"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームサイクルのループを開始  <br /></td></tr>
+<tr class="separator:abaab9ce3626b3a5f3a0e26f602426494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a111253becac127941567038874d0ea63"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::type_index, <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a></td></tr>
+<tr class="separator:a111253becac127941567038874d0ea63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07f5b935c789c28f30cb1ccec2861f7a"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a07f5b935c789c28f30cb1ccec2861f7a">pCycleUpdateSystems_</a></td></tr>
+<tr class="separator:a07f5b935c789c28f30cb1ccec2861f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b521a93cf53f75b719936f426190ea7"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a9b521a93cf53f75b719936f426190ea7">pFrameUpdateSystems_</a></td></tr>
+<tr class="separator:a9b521a93cf53f75b719936f426190ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af24d7c1f739c63b6e99bd90374ef6235"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#af24d7c1f739c63b6e99bd90374ef6235">pFixedUpdateSystems_</a></td></tr>
+<tr class="separator:af24d7c1f739c63b6e99bd90374ef6235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04533d63dd0f155852414fa434041a4c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmtgb_1_1IComponentPool.html">IComponentPool</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a04533d63dd0f155852414fa434041a4c">pComponentPools_</a></td></tr>
+<tr class="separator:a04533d63dd0f155852414fa434041a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673c637d5c84d84def22c034967aba5e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmtgb_1_1IRenderableCP.html">IRenderableCP</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a673c637d5c84d84def22c034967aba5e">pRenderablePools_</a></td></tr>
+<tr class="separator:a673c637d5c84d84def22c034967aba5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d40f252beb4df4acafd37c7b5255a8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::type_index &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a35d40f252beb4df4acafd37c7b5255a8">registerOrder_</a></td></tr>
+<tr class="separator:a35d40f252beb4df4acafd37c7b5255a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac65aa7149afd55f36b19108a7911c2e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1ComponentFactory.html">ComponentFactory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#ac65aa7149afd55f36b19108a7911c2e7">componentFactory_</a></td></tr>
+<tr class="separator:ac65aa7149afd55f36b19108a7911c2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:a75f42d44b202e2ea92bff2b2d9acadf8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Game.html">Game</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a> { nullptr }</td></tr>
+<tr class="separator:a75f42d44b202e2ea92bff2b2d9acadf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac05ce566c58ad2b53eaf2a5968db4bac"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#ac05ce566c58ad2b53eaf2a5968db4bac">toExit_</a> { false }</td></tr>
+<tr class="separator:ac05ce566c58ad2b53eaf2a5968db4bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>このクラスを継承し、作るゲームのクラスを作ってください </p>
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="accc4e58fb45a5ba0503505d723f71370" name="accc4e58fb45a5ba0503505d723f71370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc4e58fb45a5ba0503505d723f71370">&#9670;&#160;</a></span>RegisterSystem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmtgb_1_1Game.html#accc4e58fb45a5ba0503505d723f71370">mtgb::Game::RegisterSystem</a> =  std::function&lt;void( std::type_index _systemTypeName, <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a>* _system, const bool _isComponentPool, const <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">SystemUpdateType</a>)&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>システム登録のコールバック関数 </p>
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00046">46</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="acd5aa6dfc99569b487836ee990a9686b" name="acd5aa6dfc99569b487836ee990a9686b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd5aa6dfc99569b487836ee990a9686b">&#9670;&#160;</a></span>SystemUpdateType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum struct <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">mtgb::Game::SystemUpdateType</a> : int8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>システムの更新タイミングタイプ </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840" name="acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840"></a>DontCallMe&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938" name="acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938"></a>Cycle&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a" name="acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a"></a>Frame&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61" name="acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61"></a>Fixed&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00035">35</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>        {</div>
+<div class="line"><span class="lineno">   37</span>            <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840">DontCallMe</a>,  <span class="comment">// 呼び出さないで！</span></div>
+<div class="line"><span class="lineno">   38</span>            <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938">Cycle</a>,  <span class="comment">// 毎サイクル</span></div>
+<div class="line"><span class="lineno">   39</span>            <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a">Frame</a>,  <span class="comment">// 毎フレーム</span></div>
+<div class="line"><span class="lineno">   40</span>            <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61">Fixed</a>,  <span class="comment">// 一定の間隔</span></div>
+<div class="line"><span class="lineno">   41</span>        };</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a"><div class="ttname"><a href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a">mtgb::Game::SystemUpdateType::Frame</a></div><div class="ttdeci">@ Frame</div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840"><div class="ttname"><a href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840">mtgb::Game::SystemUpdateType::DontCallMe</a></div><div class="ttdeci">@ DontCallMe</div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61"><div class="ttname"><a href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61">mtgb::Game::SystemUpdateType::Fixed</a></div><div class="ttdeci">@ Fixed</div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938"><div class="ttname"><a href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938">mtgb::Game::SystemUpdateType::Cycle</a></div><div class="ttdeci">@ Cycle</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="ae512bb97ff6fdd2af8122b2d3c854389" name="ae512bb97ff6fdd2af8122b2d3c854389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae512bb97ff6fdd2af8122b2d3c854389">&#9670;&#160;</a></span>Game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Game::Game </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>               :</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>{},</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="classmtgb_1_1Game.html#a9b521a93cf53f75b719936f426190ea7">pFrameUpdateSystems_</a>{},</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_variable" href="classmtgb_1_1Game.html#af24d7c1f739c63b6e99bd90374ef6235">pFixedUpdateSystems_</a>{},</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="classmtgb_1_1Game.html#a04533d63dd0f155852414fa434041a4c">pComponentPools_</a>{}</div>
+<div class="line"><span class="lineno">   17</span>{</div>
+<div class="line"><span class="lineno">   18</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a04533d63dd0f155852414fa434041a4c"><div class="ttname"><a href="classmtgb_1_1Game.html#a04533d63dd0f155852414fa434041a4c">mtgb::Game::pComponentPools_</a></div><div class="ttdeci">std::vector&lt; IComponentPool * &gt; pComponentPools_</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00107">Game.h:107</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a111253becac127941567038874d0ea63"><div class="ttname"><a href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">mtgb::Game::pRegisterSystems_</a></div><div class="ttdeci">std::map&lt; std::type_index, ISystem * &gt; pRegisterSystems_</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00103">Game.h:103</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a9b521a93cf53f75b719936f426190ea7"><div class="ttname"><a href="classmtgb_1_1Game.html#a9b521a93cf53f75b719936f426190ea7">mtgb::Game::pFrameUpdateSystems_</a></div><div class="ttdeci">std::list&lt; ISystem * &gt; pFrameUpdateSystems_</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00105">Game.h:105</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_af24d7c1f739c63b6e99bd90374ef6235"><div class="ttname"><a href="classmtgb_1_1Game.html#af24d7c1f739c63b6e99bd90374ef6235">mtgb::Game::pFixedUpdateSystems_</a></div><div class="ttdeci">std::list&lt; ISystem * &gt; pFixedUpdateSystems_</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00106">Game.h:106</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a315f86a443273ccc0c278f75620a7d18" name="a315f86a443273ccc0c278f75620a7d18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a315f86a443273ccc0c278f75620a7d18">&#9670;&#160;</a></span>~Game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Game::~Game </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a6782cd6f4a02abb3823fe54e10b83287" name="a6782cd6f4a02abb3823fe54e10b83287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6782cd6f4a02abb3823fe54e10b83287">&#9670;&#160;</a></span>DeserializeComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::DeserializeComponent </td>
+          <td>(</td>
+          <td class="paramtype">std::type_index&#160;</td>
+          <td class="paramname"><em>_typeIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nlohmann::json &amp;&#160;</td>
+          <td class="paramname"><em>_json</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>JSONからエンティティに対応するコンポーネントにデシリアライズして、メメントを返す </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_typeIndex</td><td>コンポーネントプールのtype_index</td></tr>
+    <tr><td class="paramname">_entityId</td><td></td></tr>
+    <tr><td class="paramname">_json</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00100">100</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>{</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.find(_typeIndex);</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.end())</div>
+<div class="line"><span class="lineno">  104</span>        return ;</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    IComponentPool* pComponentPool = <span class="keyword">dynamic_cast&lt;</span>IComponentPool*<span class="keyword">&gt;</span>(itr-&gt;second);</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (pComponentPool == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  108</span>        return ;</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    pComponentPool-&gt;Deserialize(_entityId,_json);</div>
+<div class="line"><span class="lineno">  111</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a75f42d44b202e2ea92bff2b2d9acadf8"><div class="ttname"><a href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">mtgb::Game::pInstance_</a></div><div class="ttdeci">static Game * pInstance_</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00213">Game.h:213</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classmtgb_1_1IComponentPool.html#ad6171cf109f6eed2b4fea311a91e42fd">mtgb::IComponentPool::Deserialize()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00113">DeserializeComponents()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a6782cd6f4a02abb3823fe54e10b83287_cgraph.svg" width="488" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a6782cd6f4a02abb3823fe54e10b83287_icgraph.svg" width="1066" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aeaa55851e01df60f0661fc0b24e65d7a" name="aeaa55851e01df60f0661fc0b24e65d7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaa55851e01df60f0661fc0b24e65d7a">&#9670;&#160;</a></span>DeserializeComponents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::DeserializeComponents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nlohmann::json &amp;&#160;</td>
+          <td class="paramname"><em>_json</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00113">113</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>{</div>
+<div class="line"><span class="lineno">  115</span>    std::optional&lt;std::set&lt;std::type_index&gt;&gt; components = Game::System&lt;ComponentRegistry&gt;().GetComponentTypes(_json);</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (components.has_value() == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  117</span>        return ;</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> std::type_index&amp; typeIndex : components.value())</div>
+<div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>        std::optional&lt;std::type_index&gt; componentPoolType = Game::System&lt;ComponentRegistry&gt;().GetComponentPoolType(typeIndex);</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">if</span> (componentPoolType.has_value() == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  124</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>        <a class="code hl_function" href="classmtgb_1_1Game.html#a6782cd6f4a02abb3823fe54e10b83287">Game::DeserializeComponent</a>(componentPoolType.value(), _entityId, _json);</div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>    </div>
+<div class="line"><span class="lineno">  130</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a6782cd6f4a02abb3823fe54e10b83287"><div class="ttname"><a href="classmtgb_1_1Game.html#a6782cd6f4a02abb3823fe54e10b83287">mtgb::Game::DeserializeComponent</a></div><div class="ttdeci">static void DeserializeComponent(std::type_index _typeIndex, EntityId _entityId, const nlohmann::json &amp;_json)</div><div class="ttdoc">JSONからエンティティに対応するコンポーネントにデシリアライズして、メメントを返す</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00100">Game.cpp:100</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Game_8cpp_source.html#l00100">DeserializeComponent()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="GameObjectGenerator_8cpp_source.html#l00033">mtgb::GameObjectGenerator::GenerateFromJson()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_aeaa55851e01df60f0661fc0b24e65d7a_cgraph.svg" width="803" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_aeaa55851e01df60f0661fc0b24e65d7a_icgraph.svg" width="759" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a89610789c1e997fbf101d1137f9407a9" name="a89610789c1e997fbf101d1137f9407a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89610789c1e997fbf101d1137f9407a9">&#9670;&#160;</a></span>Exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::Exit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ゲームを終了する </p>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="classmtgb_1_1Game.html#ac05ce566c58ad2b53eaf2a5968db4bac">toExit_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   32</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_ac05ce566c58ad2b53eaf2a5968db4bac"><div class="ttname"><a href="classmtgb_1_1Game.html#ac05ce566c58ad2b53eaf2a5968db4bac">mtgb::Game::toExit_</a></div><div class="ttdeci">static bool toExit_</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00214">Game.h:214</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="WindowResource_8cpp_source.html#l00062">mtgb::WindowResource::HandleWindowMessage()</a>, <a class="el" href="SampleScene_8cpp_source.html#l00041">SampleScene::Update()</a>, <a class="el" href="MainWindow_8cpp_source.html#l00149">WndProc()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a89610789c1e997fbf101d1137f9407a9_icgraph.svg" width="868" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a66362917a1d96665e8160adcb72f031f" name="a66362917a1d96665e8160adcb72f031f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66362917a1d96665e8160adcb72f031f">&#9670;&#160;</a></span>GetComponentFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classmtgb_1_1ComponentFactory.html">ComponentFactory</a> &amp; mtgb::Game::GetComponentFactory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00135">135</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#ac65aa7149afd55f36b19108a7911c2e7">componentFactory_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_ac65aa7149afd55f36b19108a7911c2e7"><div class="ttname"><a href="classmtgb_1_1Game.html#ac65aa7149afd55f36b19108a7911c2e7">mtgb::Game::componentFactory_</a></div><div class="ttdeci">ComponentFactory componentFactory_</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00111">Game.h:111</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Game_8h_source.html#l00111">componentFactory_</a>, <a class="el" href="Game_8h_source.html#l00213">pInstance_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiEditor_8cpp_source.html#l00154">mtgb::ImGuiEditor::AddComponent()</a>, <a class="el" href="GameObjectGenerator_8cpp_source.html#l00075">mtgb::GameObjectGenerator::Duplicate()</a>, <a class="el" href="GameObjectGenerator_8cpp_source.html#l00024">mtgb::GameObjectGenerator::Generate()</a>, <a class="el" href="GameObjectGenerator_8cpp_source.html#l00033">mtgb::GameObjectGenerator::GenerateFromJson()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00161">mtgb::ImGuiEditor::ShowAddComponentDialog()</a>, <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00211">mtgb::ImGuizmoManipulator::UpdateManpulator()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a66362917a1d96665e8160adcb72f031f_icgraph.svg" width="768" height="371"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6ccdf8fa3e7bea6e9f5b651f2db9669a" name="a6ccdf8fa3e7bea6e9f5b651f2db9669a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ccdf8fa3e7bea6e9f5b651f2db9669a">&#9670;&#160;</a></span>GetCP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1IComponentPool.html">IComponentPool</a> * mtgb::Game::GetCP </td>
+          <td>(</td>
+          <td class="paramtype">std::type_index&#160;</td>
+          <td class="paramname"><em>_typeIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンポーネントプールのインターフェースを返す </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_typeIndex</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.find(_typeIndex);</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.end())</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>IComponentPool*<span class="keyword">&gt;</span>(itr-&gt;second);</div>
+<div class="line"><span class="lineno">   57</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="DuplicateGameObjectCommand_8cpp_source.html#l00037">mtgb::DuplicateGameObjectCommand::Execute()</a>, <a class="el" href="DuplicateGameObjectCommand_8cpp_source.html#l00088">mtgb::DuplicateGameObjectCommand::SaveToMementos()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a6ccdf8fa3e7bea6e9f5b651f2db9669a_icgraph.svg" width="422" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3e92de67f7858ed8f5a9a5adcf9cb75b" name="a3e92de67f7858ed8f5a9a5adcf9cb75b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e92de67f7858ed8f5a9a5adcf9cb75b">&#9670;&#160;</a></span>GetRenderableCPs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::span&lt; <a class="el" href="classmtgb_1_1IRenderableCP.html">IRenderableCP</a> * &gt; mtgb::Game::GetRenderableCPs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>描画可能なコンポーネントプールを返す </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00132">132</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>{</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> { <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a673c637d5c84d84def22c034967aba5e">pRenderablePools_</a>.data(), <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a673c637d5c84d84def22c034967aba5e">pRenderablePools_</a>.size()};</div>
+<div class="line"><span class="lineno">  135</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a673c637d5c84d84def22c034967aba5e"><div class="ttname"><a href="classmtgb_1_1Game.html#a673c637d5c84d84def22c034967aba5e">mtgb::Game::pRenderablePools_</a></div><div class="ttdeci">std::vector&lt; IRenderableCP * &gt; pRenderablePools_</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00108">Game.h:108</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="RenderSystem_8cpp_source.html#l00085">mtgb::RenderSystem::DrawGameObjects()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a3e92de67f7858ed8f5a9a5adcf9cb75b_icgraph.svg" width="450" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5bb1e92d082cafb5312252c5e7290206" name="a5bb1e92d082cafb5312252c5e7290206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb1e92d082cafb5312252c5e7290206">&#9670;&#160;</a></span>GetScreenSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">mtgb::Vector2Int</a> mtgb::Game::GetScreenSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespaceanonymous__namespace_02Game_8cpp_03.html#afe26f28a0ab0ce8e079bdc932b454744">DEFAULT_SCREEN_SIZE</a>;</div>
+<div class="line"><span class="lineno">   27</span>}</div>
+<div class="ttc" id="anamespaceanonymous__namespace_02Game_8cpp_03_html_afe26f28a0ab0ce8e079bdc932b454744"><div class="ttname"><a href="namespaceanonymous__namespace_02Game_8cpp_03.html#afe26f28a0ab0ce8e079bdc932b454744">anonymous_namespace{Game.cpp}::DEFAULT_SCREEN_SIZE</a></div><div class="ttdeci">static const mtgb::Vector2Int DEFAULT_SCREEN_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00009">Game.cpp:9</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a175c8a3ebfd3bf724b97505fcfc1e80f" name="a175c8a3ebfd3bf724b97505fcfc1e80f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a175c8a3ebfd3bf724b97505fcfc1e80f">&#9670;&#160;</a></span>GetTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string_view mtgb::Game::GetTitle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ゲームのタイトルを必ず返してください </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p><a class="el" href="classSampleGame.html#a797d8f7694629aa2eab457443d731ab8">SampleGame</a>で実装されています。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00145">Title()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a175c8a3ebfd3bf724b97505fcfc1e80f_icgraph.svg" width="624" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a94f6935c2fedd362f4cc47926af6c79b" name="a94f6935c2fedd362f4cc47926af6c79b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f6935c2fedd362f4cc47926af6c79b">&#9670;&#160;</a></span>GetVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string_view mtgb::Game::GetVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ゲームのバージョンを必ず返してください </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p><a class="el" href="classSampleGame.html#a83d95acc414cc236587416fd8075ed2d">SampleGame</a>で実装されています。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00140">Version()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a94f6935c2fedd362f4cc47926af6c79b_icgraph.svg" width="400" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="acce77edf9df17d4d89bc0e2d970f6c4c" name="acce77edf9df17d4d89bc0e2d970f6c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acce77edf9df17d4d89bc0e2d970f6c4c">&#9670;&#160;</a></span>InitializeSystems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::InitializeSystems </td>
+          <td>(</td>
+          <td class="paramtype">const std::list&lt; <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_uninitialized</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>システムの初期化をする </p>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00139">139</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>{</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a35d40f252beb4df4acafd37c7b5255a8">registerOrder_</a>.begin(); itr != <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a35d40f252beb4df4acafd37c7b5255a8">registerOrder_</a>.end(); itr++)</div>
+<div class="line"><span class="lineno">  142</span>    {</div>
+<div class="line"><span class="lineno">  143</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>[*itr]-&gt;Initialize();</div>
+<div class="line"><span class="lineno">  144</span>    }</div>
+<div class="line"><span class="lineno">  145</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a35d40f252beb4df4acafd37c7b5255a8"><div class="ttname"><a href="classmtgb_1_1Game.html#a35d40f252beb4df4acafd37c7b5255a8">mtgb::Game::registerOrder_</a></div><div class="ttdeci">std::vector&lt; std::type_index &gt; registerOrder_</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00109">Game.h:109</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00254">Run()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_acce77edf9df17d4d89bc0e2d970f6c4c_icgraph.svg" width="418" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad8e951e959e15a61ba47b16a9867d013" name="ad8e951e959e15a61ba47b16a9867d013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e951e959e15a61ba47b16a9867d013">&#9670;&#160;</a></span>ReleaseSystems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::ReleaseSystems </td>
+          <td>(</td>
+          <td class="paramtype">const std::list&lt; <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_runnings</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>システムの解放処理をする </p>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00147">147</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>{</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a35d40f252beb4df4acafd37c7b5255a8">registerOrder_</a>.rbegin(); itr != <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a35d40f252beb4df4acafd37c7b5255a8">registerOrder_</a>.rend(); itr++)</div>
+<div class="line"><span class="lineno">  150</span>    {</div>
+<div class="line"><span class="lineno">  151</span>        ISystem* pSystem = <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>[*itr];</div>
+<div class="line"><span class="lineno">  152</span>        pSystem-&gt;Release();</div>
+<div class="line"><span class="lineno">  153</span>        <span class="keyword">delete</span> pSystem;</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <span class="comment">/*for (auto itr = _runnings.rbegin(); itr != _runnings.rend(); itr++)</span></div>
+<div class="line"><span class="lineno">  157</span><span class="comment">    {</span></div>
+<div class="line"><span class="lineno">  158</span><span class="comment">        (*itr)-&gt;Release();</span></div>
+<div class="line"><span class="lineno">  159</span><span class="comment">        delete (*itr);</span></div>
+<div class="line"><span class="lineno">  160</span><span class="comment">    }*/</span></div>
+<div class="line"><span class="lineno">  161</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="ISystem_8h_source.html#l00016">mtgb::ISystem::Release()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00254">Run()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_ad8e951e959e15a61ba47b16a9867d013_cgraph.svg" width="455" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_ad8e951e959e15a61ba47b16a9867d013_icgraph.svg" width="414" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afa7f596ea64797f4dff66edd5582f1bf" name="afa7f596ea64797f4dff66edd5582f1bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7f596ea64797f4dff66edd5582f1bf">&#9670;&#160;</a></span>RemoveEntityAllComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::RemoveEntityAllComponent </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>エンティティに対応する全てのコンポーネントを削除する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_entityId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; cpSystem : <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a04533d63dd0f155852414fa434041a4c">pComponentPools_</a>)</div>
+<div class="line"><span class="lineno">   62</span>    {</div>
+<div class="line"><span class="lineno">   63</span>        cpSystem-&gt;Remove(_entityId);</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="SceneSystem_8cpp_source.html#l00039">mtgb::SceneSystem::Update()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_afa7f596ea64797f4dff66edd5582f1bf_icgraph.svg" width="422" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4d3520ed9ed38945557f6cfc2a3e4224" name="a4d3520ed9ed38945557f6cfc2a3e4224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d3520ed9ed38945557f6cfc2a3e4224">&#9670;&#160;</a></span>RemoveEntityComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::RemoveEntityComponent </td>
+          <td>(</td>
+          <td class="paramtype">const std::type_index&#160;</td>
+          <td class="paramname"><em>_typeIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>エンティティに対応するコンポーネントを削除する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_typeIndex</td><td></td></tr>
+    <tr><td class="paramname">_entityId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00067">67</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.find(_typeIndex);</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.end())</div>
+<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    IComponentPool* pComponentPool = <span class="keyword">dynamic_cast&lt;</span>IComponentPool*<span class="keyword">&gt;</span>(itr-&gt;second);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span> (pComponentPool == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    pComponentPool-&gt;Remove(_entityId);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classmtgb_1_1IComponentPool.html#abaccd6a01e05bba383c70d6401da9c13">mtgb::IComponentPool::Remove()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="AddComponentCommand_8cpp_source.html#l00043">mtgb::AddComponentCommand::RemoveComponent()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a4d3520ed9ed38945557f6cfc2a3e4224_cgraph.svg" width="432" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a4d3520ed9ed38945557f6cfc2a3e4224_icgraph.svg" width="492" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae241b7677e1c59407d3f80fdc2040547" name="ae241b7677e1c59407d3f80fdc2040547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae241b7677e1c59407d3f80fdc2040547">&#9670;&#160;</a></span>Run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename GameT , typename ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::Run </td>
+          <td>(</td>
+          <td class="paramtype">Args...&#160;</td>
+          <td class="paramname"><em>_args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ゲームを起動する </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">GameT</td><td></td></tr>
+    <tr><td class="paramname">...Args</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">..._args</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00254">254</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  255</span>    {</div>
+<div class="line"><span class="lineno">  256</span>        <span class="comment">// ゲームをインスタンスする</span></div>
+<div class="line"><span class="lineno">  257</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a> = <span class="keyword">new</span> GameT{ _args... };</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>        std::list&lt;ISystem*&gt; systems{};</div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>        <span class="comment">// 各システムの登録</span></div>
+<div class="line"><span class="lineno">  262</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Game.html#afbe3ba3323b5ad0730d9e9f09ad7f923">SetupSystems</a>(</div>
+<div class="line"><span class="lineno">  263</span>        {</div>
+<div class="line"><span class="lineno">  264</span>            [&amp;](</div>
+<div class="line"><span class="lineno">  265</span>                std::type_index _systemType,</div>
+<div class="line"><span class="lineno">  266</span>                ISystem* _pSystem,</div>
+<div class="line"><span class="lineno">  267</span>                <span class="keyword">const</span> <span class="keywordtype">bool</span> _isComponentPool,</div>
+<div class="line"><span class="lineno">  268</span>                <span class="keyword">const</span> <a class="code hl_enumeration" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">SystemUpdateType</a> _systemUpdateType)</div>
+<div class="line"><span class="lineno">  269</span>            {</div>
+<div class="line"><span class="lineno">  270</span>                assert(_pSystem != <span class="keyword">nullptr</span></div>
+<div class="line"><span class="lineno">  271</span>                    &amp;&amp; <span class="stringliteral">&quot;ISystemへのアップキャストに失敗、継承関係がpublicになっているか確認。&quot;</span>);</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>                systems.push_back(_pSystem);</div>
+<div class="line"><span class="lineno">  274</span>                <span class="keywordflow">if</span> (_isComponentPool)</div>
+<div class="line"><span class="lineno">  275</span>                {</div>
+<div class="line"><span class="lineno">  276</span>                    <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a04533d63dd0f155852414fa434041a4c">pComponentPools_</a>.push_back(<span class="keyword">dynamic_cast&lt;</span>IComponentPool*<span class="keyword">&gt;</span>(_pSystem));</div>
+<div class="line"><span class="lineno">  277</span>                }</div>
+<div class="line"><span class="lineno">  278</span>                <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.insert({ _systemType , _pSystem });</div>
+<div class="line"><span class="lineno">  279</span>                <span class="keywordflow">switch</span> (_systemUpdateType)</div>
+<div class="line"><span class="lineno">  280</span>                {</div>
+<div class="line"><span class="lineno">  281</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938">SystemUpdateType::Cycle</a>:</div>
+<div class="line"><span class="lineno">  282</span>                    <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a07f5b935c789c28f30cb1ccec2861f7a">pCycleUpdateSystems_</a>.push_back(_pSystem);</div>
+<div class="line"><span class="lineno">  283</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  284</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a">SystemUpdateType::Frame</a>:</div>
+<div class="line"><span class="lineno">  285</span>                    <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a9b521a93cf53f75b719936f426190ea7">pFrameUpdateSystems_</a>.push_back(_pSystem);</div>
+<div class="line"><span class="lineno">  286</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  287</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61">SystemUpdateType::Fixed</a>:</div>
+<div class="line"><span class="lineno">  288</span>                    <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#af24d7c1f739c63b6e99bd90374ef6235">pFixedUpdateSystems_</a>.push_back(_pSystem);</div>
+<div class="line"><span class="lineno">  289</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  290</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840">SystemUpdateType::DontCallMe</a>:</div>
+<div class="line"><span class="lineno">  291</span>                <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  292</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  293</span>                }</div>
+<div class="line"><span class="lineno">  294</span>            }</div>
+<div class="line"><span class="lineno">  295</span>        });</div>
+<div class="line"><span class="lineno">  296</span>        <span class="comment">// 各システムの初期化</span></div>
+<div class="line"><span class="lineno">  297</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Game.html#acce77edf9df17d4d89bc0e2d970f6c4c">InitializeSystems</a>(systems);</div>
+<div class="line"><span class="lineno">  298</span> </div>
+<div class="line"><span class="lineno">  299</span>        <span class="comment">// ゲームサイクル開始</span></div>
+<div class="line"><span class="lineno">  300</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Game.html#abaab9ce3626b3a5f3a0e26f602426494">RunLoopGameCycle</a>();</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>        <span class="comment">// 解放処理</span></div>
+<div class="line"><span class="lineno">  303</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Game.html#ad8e951e959e15a61ba47b16a9867d013">ReleaseSystems</a>(systems);</div>
+<div class="line"><span class="lineno">  304</span>        systems.clear();</div>
+<div class="line"><span class="lineno">  305</span> </div>
+<div class="line"><span class="lineno">  306</span>        <span class="comment">// インスタンスの解放</span></div>
+<div class="line"><span class="lineno">  307</span>        <span class="keyword">delete</span> <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>;</div>
+<div class="line"><span class="lineno">  308</span>    }</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a07f5b935c789c28f30cb1ccec2861f7a"><div class="ttname"><a href="classmtgb_1_1Game.html#a07f5b935c789c28f30cb1ccec2861f7a">mtgb::Game::pCycleUpdateSystems_</a></div><div class="ttdeci">std::list&lt; ISystem * &gt; pCycleUpdateSystems_</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00104">Game.h:104</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_abaab9ce3626b3a5f3a0e26f602426494"><div class="ttname"><a href="classmtgb_1_1Game.html#abaab9ce3626b3a5f3a0e26f602426494">mtgb::Game::RunLoopGameCycle</a></div><div class="ttdeci">static void RunLoopGameCycle()</div><div class="ttdoc">ゲームサイクルのループを開始</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00163">Game.cpp:163</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_acce77edf9df17d4d89bc0e2d970f6c4c"><div class="ttname"><a href="classmtgb_1_1Game.html#acce77edf9df17d4d89bc0e2d970f6c4c">mtgb::Game::InitializeSystems</a></div><div class="ttdeci">static void InitializeSystems(const std::list&lt; ISystem * &gt; &amp;_uninitialized)</div><div class="ttdoc">システムの初期化をする</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00139">Game.cpp:139</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_acd5aa6dfc99569b487836ee990a9686b"><div class="ttname"><a href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">mtgb::Game::SystemUpdateType</a></div><div class="ttdeci">SystemUpdateType</div><div class="ttdoc">システムの更新タイミングタイプ</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00035">Game.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_ad8e951e959e15a61ba47b16a9867d013"><div class="ttname"><a href="classmtgb_1_1Game.html#ad8e951e959e15a61ba47b16a9867d013">mtgb::Game::ReleaseSystems</a></div><div class="ttdeci">static void ReleaseSystems(const std::list&lt; ISystem * &gt; &amp;_runnings)</div><div class="ttdoc">システムの解放処理をする</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00147">Game.cpp:147</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_afbe3ba3323b5ad0730d9e9f09ad7f923"><div class="ttname"><a href="classmtgb_1_1Game.html#afbe3ba3323b5ad0730d9e9f09ad7f923">mtgb::Game::SetupSystems</a></div><div class="ttdeci">virtual void SetupSystems(const RegisterSystemFuncHolder &amp;_registerSystem)=0</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938">Cycle</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840">DontCallMe</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61">Fixed</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a">Frame</a>, <a class="el" href="Game_8cpp_source.html#l00139">InitializeSystems()</a>, <a class="el" href="Game_8h_source.html#l00107">pComponentPools_</a>, <a class="el" href="Game_8h_source.html#l00104">pCycleUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00106">pFixedUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00105">pFrameUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00213">pInstance_</a>, <a class="el" href="Game_8h_source.html#l00103">pRegisterSystems_</a>, <a class="el" href="Game_8cpp_source.html#l00147">ReleaseSystems()</a>, <a class="el" href="Game_8cpp_source.html#l00163">RunLoopGameCycle()</a>, <a class="el" href="classmtgb_1_1Game.html#afbe3ba3323b5ad0730d9e9f09ad7f923">SetupSystems()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_ae241b7677e1c59407d3f80fdc2040547_cgraph.svg" width="663" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="abaab9ce3626b3a5f3a0e26f602426494" name="abaab9ce3626b3a5f3a0e26f602426494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaab9ce3626b3a5f3a0e26f602426494">&#9670;&#160;</a></span>RunLoopGameCycle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::RunLoopGameCycle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ゲームサイクルのループを開始 </p>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00163">163</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  164</span>{</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  166</span>    {</div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; updateSystem : <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a07f5b935c789c28f30cb1ccec2861f7a">pCycleUpdateSystems_</a>)</div>
+<div class="line"><span class="lineno">  168</span>        {</div>
+<div class="line"><span class="lineno">  169</span>            updateSystem-&gt;Update();</div>
+<div class="line"><span class="lineno">  170</span>        }</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Game.html#ac05ce566c58ad2b53eaf2a5968db4bac">toExit_</a>)  <span class="comment">// 終了フラグが立っていたらサイクル離脱</span></div>
+<div class="line"><span class="lineno">  173</span>        {</div>
+<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  175</span>        }</div>
+<div class="line"><span class="lineno">  176</span>    }</div>
+<div class="line"><span class="lineno">  177</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00254">Run()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_abaab9ce3626b3a5f3a0e26f602426494_icgraph.svg" width="438" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8b552e60ee7d044929c35b08c3b46030" name="a8b552e60ee7d044929c35b08c3b46030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b552e60ee7d044929c35b08c3b46030">&#9670;&#160;</a></span>SerializeComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">nlohmann::json mtgb::Game::SerializeComponent </td>
+          <td>(</td>
+          <td class="paramtype">std::type_index&#160;</td>
+          <td class="paramname"><em>_typeIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>エンティティに対応するコンポーネントをJSONにシリアライズして返す </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_typeIndex</td><td>コンポーネントプールのtype_index </td></tr>
+    <tr><td class="paramname">_entityId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00082">82</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.find(_typeIndex);</div>
+<div class="line"><span class="lineno">   85</span>    nlohmann::json j;</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.end())</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">return</span> j;</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    IComponentPool* pComponentPool = <span class="keyword">dynamic_cast&lt;</span>IComponentPool*<span class="keyword">&gt;</span>(itr-&gt;second);</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> (pComponentPool != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   93</span>    {</div>
+<div class="line"><span class="lineno">   94</span>        j = pComponentPool-&gt;Serialize(_entityId);</div>
+<div class="line"><span class="lineno">   95</span>    }</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> j;</div>
+<div class="line"><span class="lineno">   98</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classmtgb_1_1IComponentPool.html#a4fec95065006abbbd4b115a45e9f6c75">mtgb::IComponentPool::Serialize()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="GameObject_8cpp_source.html#l00059">mtgb::GameObject::Serialize()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a8b552e60ee7d044929c35b08c3b46030_cgraph.svg" width="472" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a8b552e60ee7d044929c35b08c3b46030_icgraph.svg" width="511" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa1de12b363a5f77117915799c3a67e6c" name="aa1de12b363a5f77117915799c3a67e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1de12b363a5f77117915799c3a67e6c">&#9670;&#160;</a></span>Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::Set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">SystemUpdateType</a>&#160;</td>
+          <td class="paramname"><em>_systemUpdateType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00218">218</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>    {</div>
+<div class="line"><span class="lineno">  220</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;ISystem, T&gt;);</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>        ISystem* pSystem = <span class="keyword">new</span> <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>();</div>
+<div class="line"><span class="lineno">  223</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a35d40f252beb4df4acafd37c7b5255a8">registerOrder_</a>.push_back(<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>));</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_base_of_v&lt;IComponentPool, T&gt;)</div>
+<div class="line"><span class="lineno">  226</span>        {</div>
+<div class="line"><span class="lineno">  227</span>            <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a04533d63dd0f155852414fa434041a4c">pComponentPools_</a>.push_back(<span class="keyword">dynamic_cast&lt;</span>IComponentPool*<span class="keyword">&gt;</span>(pSystem));</div>
+<div class="line"><span class="lineno">  228</span>            <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#ac65aa7149afd55f36b19108a7911c2e7">componentFactory_</a>.<a class="code hl_function" href="classmtgb_1_1ComponentFactory.html#a3ba7025f5a17b1c0fc4208eb368ed7bc">RegisterComponent</a>&lt;<span class="keyword">typename</span> T::Component&gt;();</div>
+<div class="line"><span class="lineno">  229</span>        }</div>
+<div class="line"><span class="lineno">  230</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_base_of_v&lt;IRenderableCP, T&gt;)</div>
+<div class="line"><span class="lineno">  231</span>        {</div>
+<div class="line"><span class="lineno">  232</span>            <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a673c637d5c84d84def22c034967aba5e">pRenderablePools_</a>.push_back(<span class="keyword">dynamic_cast&lt;</span>IRenderableCP*<span class="keyword">&gt;</span>(pSystem));</div>
+<div class="line"><span class="lineno">  233</span>        }</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.insert({ <span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>),pSystem });</div>
+<div class="line"><span class="lineno">  236</span>        <span class="keywordflow">switch</span> (_systemUpdateType)</div>
+<div class="line"><span class="lineno">  237</span>        {</div>
+<div class="line"><span class="lineno">  238</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938">SystemUpdateType::Cycle</a>:</div>
+<div class="line"><span class="lineno">  239</span>            <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a07f5b935c789c28f30cb1ccec2861f7a">pCycleUpdateSystems_</a>.push_back(pSystem);</div>
+<div class="line"><span class="lineno">  240</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  241</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a">SystemUpdateType::Frame</a>:</div>
+<div class="line"><span class="lineno">  242</span>            <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a9b521a93cf53f75b719936f426190ea7">pFrameUpdateSystems_</a>.push_back(pSystem);</div>
+<div class="line"><span class="lineno">  243</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  244</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61">SystemUpdateType::Fixed</a>:</div>
+<div class="line"><span class="lineno">  245</span>            <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#af24d7c1f739c63b6e99bd90374ef6235">pFixedUpdateSystems_</a>.push_back(pSystem);</div>
+<div class="line"><span class="lineno">  246</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  247</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840">SystemUpdateType::DontCallMe</a>:</div>
+<div class="line"><span class="lineno">  248</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  249</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  250</span>        }</div>
+<div class="line"><span class="lineno">  251</span>    }</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
+<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_a3ba7025f5a17b1c0fc4208eb368ed7bc"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#a3ba7025f5a17b1c0fc4208eb368ed7bc">mtgb::ComponentFactory::RegisterComponent</a></div><div class="ttdeci">void RegisterComponent()</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8h_source.html#l00045">ComponentFactory.h:45</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Game_8h_source.html#l00111">componentFactory_</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938">Cycle</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840">DontCallMe</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61">Fixed</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a">Frame</a>, <a class="el" href="Game_8h_source.html#l00107">pComponentPools_</a>, <a class="el" href="Game_8h_source.html#l00104">pCycleUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00106">pFixedUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00105">pFrameUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00213">pInstance_</a>, <a class="el" href="Game_8h_source.html#l00103">pRegisterSystems_</a>, <a class="el" href="Game_8h_source.html#l00108">pRenderablePools_</a>, <a class="el" href="ComponentFactory_8h_source.html#l00045">mtgb::ComponentFactory::RegisterComponent()</a>, <a class="el" href="Game_8h_source.html#l00109">registerOrder_</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> (計15項目).</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_aa1de12b363a5f77117915799c3a67e6c_cgraph.svg" width="378" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afbe3ba3323b5ad0730d9e9f09ad7f923" name="afbe3ba3323b5ad0730d9e9f09ad7f923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbe3ba3323b5ad0730d9e9f09ad7f923">&#9670;&#160;</a></span>SetupSystems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::Game::SetupSystems </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1Game_1_1RegisterSystemFuncHolder.html">RegisterSystemFuncHolder</a> &amp;&#160;</td>
+          <td class="paramname"><em>_registerSystem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>任意の更新順番でシステムを設定する</p>
+<p>使うシステムを必要なだけこの関数内でnewしてください</p>
+
+<p><a class="el" href="classSampleGame.html#aa9d768e62ffe7c628d1874bf95311cac">SampleGame</a>で実装されています。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00254">Run()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_afbe3ba3323b5ad0730d9e9f09ad7f923_icgraph.svg" width="399" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afa75130a000b0a2cafdd38c92c3fa36c" name="afa75130a000b0a2cafdd38c92c3fa36c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa75130a000b0a2cafdd38c92c3fa36c">&#9670;&#160;</a></span>System()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename SystemT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SystemT &amp; mtgb::Game::System</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>システムを取得する </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">SystemT</td><td>システムの型</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>システムの参照ポインタ</dd></dl>
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00311">311</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  312</span>    {</div>
+<div class="line"><span class="lineno">  313</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* t = <span class="keyword">typeid</span>(SystemT).name();</div>
+<div class="line"><span class="lineno">  314</span> </div>
+<div class="line"><span class="lineno">  315</span>        ISystem* pSystem{ <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>[<span class="keyword">typeid</span>(SystemT)] };</div>
+<div class="line"><span class="lineno">  316</span> </div>
+<div class="line"><span class="lineno">  317</span>        assert(pSystem != <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>        <span class="comment">// 基底クラスがISystemであるか</span></div>
+<div class="line"><span class="lineno">  320</span>        <span class="keyword">static_assert</span>(std::is_base_of&lt;ISystem, SystemT&gt;().value</div>
+<div class="line"><span class="lineno">  321</span>            &amp;&amp; <span class="stringliteral">&quot;ISystemクラスを継承していないクラスのインスタンスは取得できません。&quot;</span>);</div>
+<div class="line"><span class="lineno">  322</span>        <span class="keywordflow">return</span> *(<span class="keyword">dynamic_cast&lt;</span>SystemT*<span class="keyword">&gt;</span>(pSystem));</div>
+<div class="line"><span class="lineno">  323</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Game_8h_source.html#l00213">pInstance_</a>, <a class="el" href="Game_8h_source.html#l00103">pRegisterSystems_</a>.</p>
+
+</div>
+</div>
+<a id="a94bdb4af96595d8c47294dfb6b762619" name="a94bdb4af96595d8c47294dfb6b762619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94bdb4af96595d8c47294dfb6b762619">&#9670;&#160;</a></span>Title()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string_view mtgb::Game::Title </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ゲームタイトルを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>ゲームタイトルの文字列</dd></dl>
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00145">145</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Game.html#a175c8a3ebfd3bf724b97505fcfc1e80f">GetTitle</a>(); }</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a175c8a3ebfd3bf724b97505fcfc1e80f"><div class="ttname"><a href="classmtgb_1_1Game.html#a175c8a3ebfd3bf724b97505fcfc1e80f">mtgb::Game::GetTitle</a></div><div class="ttdeci">virtual std::string_view GetTitle() const =0</div><div class="ttdoc">ゲームのタイトルを必ず返してください</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classmtgb_1_1Game.html#a175c8a3ebfd3bf724b97505fcfc1e80f">GetTitle()</a>, <a class="el" href="Game_8h_source.html#l00213">pInstance_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="MainWindow_8cpp_source.html#l00131">mtgb::MainWindow::GenerateWndClassEx()</a>, <a class="el" href="MainWindow_8cpp_source.html#l00052">mtgb::MainWindow::Initialize()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a94bdb4af96595d8c47294dfb6b762619_cgraph.svg" width="362" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_a94bdb4af96595d8c47294dfb6b762619_icgraph.svg" width="414" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a137f5152ae4da8972979646ae383b421" name="a137f5152ae4da8972979646ae383b421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137f5152ae4da8972979646ae383b421">&#9670;&#160;</a></span>UpdateFixed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::UpdateFixed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>定期更新をする </p>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00042">42</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; updateSystem : <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#af24d7c1f739c63b6e99bd90374ef6235">pFixedUpdateSystems_</a>)</div>
+<div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>        updateSystem-&gt;Update();</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af3e67eb32ff2dca48fa29ab66123e71c" name="af3e67eb32ff2dca48fa29ab66123e71c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3e67eb32ff2dca48fa29ab66123e71c">&#9670;&#160;</a></span>UpdateFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Game::UpdateFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>フレームの更新をする </p>
+
+<p class="definition"> <a class="el" href="Game_8cpp_source.html">Game.cpp</a> の <a class="el" href="Game_8cpp_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; updateSystem : <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a9b521a93cf53f75b719936f426190ea7">pFrameUpdateSystems_</a>)</div>
+<div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   38</span>        updateSystem-&gt;Update();</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="GameTime_8cpp_source.html#l00022">mtgb::Time::Update()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_af3e67eb32ff2dca48fa29ab66123e71c_icgraph.svg" width="410" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afbd71b4a6969cdc1274cfa4fbcc617c6" name="afbd71b4a6969cdc1274cfa4fbcc617c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbd71b4a6969cdc1274cfa4fbcc617c6">&#9670;&#160;</a></span>Version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string_view mtgb::Game::Version </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ゲームのバージョンを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>バージョン情報の文字列</dd></dl>
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00140">140</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Game.html#a94f6935c2fedd362f4cc47926af6c79b">GetVersion</a>(); }</div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a94f6935c2fedd362f4cc47926af6c79b"><div class="ttname"><a href="classmtgb_1_1Game.html#a94f6935c2fedd362f4cc47926af6c79b">mtgb::Game::GetVersion</a></div><div class="ttdeci">virtual std::string_view GetVersion() const =0</div><div class="ttdoc">ゲームのバージョンを必ず返してください</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classmtgb_1_1Game.html#a94f6935c2fedd362f4cc47926af6c79b">GetVersion()</a>, <a class="el" href="Game_8h_source.html#l00213">pInstance_</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Game_afbd71b4a6969cdc1274cfa4fbcc617c6_cgraph.svg" width="400" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ac65aa7149afd55f36b19108a7911c2e7" name="ac65aa7149afd55f36b19108a7911c2e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac65aa7149afd55f36b19108a7911c2e7">&#9670;&#160;</a></span>componentFactory_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1ComponentFactory.html">ComponentFactory</a> mtgb::Game::componentFactory_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00111">111</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00135">GetComponentFactory()</a>, <a class="el" href="Game_8h_source.html#l00218">Set()</a>.</p>
+
+</div>
+</div>
+<a id="a04533d63dd0f155852414fa434041a4c" name="a04533d63dd0f155852414fa434041a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04533d63dd0f155852414fa434041a4c">&#9670;&#160;</a></span>pComponentPools_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classmtgb_1_1IComponentPool.html">IComponentPool</a>*&gt; mtgb::Game::pComponentPools_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00107">107</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00254">Run()</a>, <a class="el" href="Game_8h_source.html#l00218">Set()</a>.</p>
+
+</div>
+</div>
+<a id="a07f5b935c789c28f30cb1ccec2861f7a" name="a07f5b935c789c28f30cb1ccec2861f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07f5b935c789c28f30cb1ccec2861f7a">&#9670;&#160;</a></span>pCycleUpdateSystems_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;<a class="el" href="classmtgb_1_1ISystem.html">ISystem</a>*&gt; mtgb::Game::pCycleUpdateSystems_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00104">104</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00254">Run()</a>, <a class="el" href="Game_8h_source.html#l00218">Set()</a>.</p>
+
+</div>
+</div>
+<a id="af24d7c1f739c63b6e99bd90374ef6235" name="af24d7c1f739c63b6e99bd90374ef6235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af24d7c1f739c63b6e99bd90374ef6235">&#9670;&#160;</a></span>pFixedUpdateSystems_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;<a class="el" href="classmtgb_1_1ISystem.html">ISystem</a>*&gt; mtgb::Game::pFixedUpdateSystems_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00106">106</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00254">Run()</a>, <a class="el" href="Game_8h_source.html#l00218">Set()</a>.</p>
+
+</div>
+</div>
+<a id="a9b521a93cf53f75b719936f426190ea7" name="a9b521a93cf53f75b719936f426190ea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b521a93cf53f75b719936f426190ea7">&#9670;&#160;</a></span>pFrameUpdateSystems_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;<a class="el" href="classmtgb_1_1ISystem.html">ISystem</a>*&gt; mtgb::Game::pFrameUpdateSystems_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00105">105</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00254">Run()</a>, <a class="el" href="Game_8h_source.html#l00218">Set()</a>.</p>
+
+</div>
+</div>
+<a id="a75f42d44b202e2ea92bff2b2d9acadf8" name="a75f42d44b202e2ea92bff2b2d9acadf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f42d44b202e2ea92bff2b2d9acadf8">&#9670;&#160;</a></span>pInstance_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Game.html">mtgb::Game</a> * mtgb::Game::pInstance_ { nullptr }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00213">213</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00135">GetComponentFactory()</a>, <a class="el" href="Game_8h_source.html#l00254">Run()</a>, <a class="el" href="Game_8h_source.html#l00218">Set()</a>, <a class="el" href="Game_8h_source.html#l00311">System()</a>, <a class="el" href="Game_8h_source.html#l00145">Title()</a>, <a class="el" href="Game_8h_source.html#l00140">Version()</a>.</p>
+
+</div>
+</div>
+<a id="a111253becac127941567038874d0ea63" name="a111253becac127941567038874d0ea63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a111253becac127941567038874d0ea63">&#9670;&#160;</a></span>pRegisterSystems_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::type_index, <a class="el" href="classmtgb_1_1ISystem.html">ISystem</a>*&gt; mtgb::Game::pRegisterSystems_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00103">103</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00254">Run()</a>, <a class="el" href="Game_8h_source.html#l00218">Set()</a>, <a class="el" href="Game_8h_source.html#l00311">System()</a>.</p>
+
+</div>
+</div>
+<a id="a673c637d5c84d84def22c034967aba5e" name="a673c637d5c84d84def22c034967aba5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a673c637d5c84d84def22c034967aba5e">&#9670;&#160;</a></span>pRenderablePools_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classmtgb_1_1IRenderableCP.html">IRenderableCP</a>*&gt; mtgb::Game::pRenderablePools_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00108">108</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00218">Set()</a>.</p>
+
+</div>
+</div>
+<a id="a35d40f252beb4df4acafd37c7b5255a8" name="a35d40f252beb4df4acafd37c7b5255a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d40f252beb4df4acafd37c7b5255a8">&#9670;&#160;</a></span>registerOrder_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::type_index&gt; mtgb::Game::registerOrder_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00109">109</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00218">Set()</a>.</p>
+
+</div>
+</div>
+<a id="ac05ce566c58ad2b53eaf2a5968db4bac" name="ac05ce566c58ad2b53eaf2a5968db4bac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac05ce566c58ad2b53eaf2a5968db4bac">&#9670;&#160;</a></span>toExit_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::Game::toExit_ { false }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00214">214</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="Game_8h_source.html">Game.h</a></li>
+<li><a class="el" href="Game_8cpp_source.html">Game.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1Game.html">Game</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

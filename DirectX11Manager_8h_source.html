@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: DirectX11Manager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('DirectX11Manager_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">DirectX11Manager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="DirectX11Manager_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ISystem_8h.html">ISystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;wrl/client.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Vector2Int_8h.html">Vector2Int.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;dxgi1_2.h&gt;</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="MonitorInfo_8h.html">MonitorInfo.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma comment(lib, &quot;d3d11.lib&quot;</span>)  <span class="comment">// DirectX11のライブラリ</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma comment(lib, &quot;dxgi.lib&quot;</span>)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma comment(lib, &quot;d3dcompiler.lib&quot;</span>)  <span class="comment">// シェーダコンパイラ用ライブラリ</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using </span>Microsoft::WRL::ComPtr;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">struct </span>D3D11_INPUT_ELEMENT_DESC;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">struct </span>CD3D11_RASTERIZER_DESC;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">struct </span>D3D11_VIEWPORT;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">struct </span>IDXGISwapChain1;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">struct </span>IDXGISurface;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">struct </span>IDXGIOutput;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">struct </span>ID3D11RenderTargetView;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">struct </span>ID3D11Texture2D;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">struct </span>ID3D11DepthStencilView;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="DirectX11Manager_8h.html#ac17599842f3c193b028cc578098f8b93">   25</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>HWND__* <a class="code hl_typedef" href="DirectX11Manager_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">enum struct</span> <a class="code hl_enumeration" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">ShaderType</a> : int8_t;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectX11Manager.html">   31</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1DirectX11Manager.html">DirectX11Manager</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1ISystem.html">ISystem</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a6de71deea6f4e064c124f8e42056de29">DirectX11Manager</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a6628ee648c587956ee2e872a958b6931">~DirectX11Manager</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a4524835900f0d4d7339e9e4cdd1a2e01">Initialize</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a8f31aed60a43843bbb5cf6738fd147fd">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#ad8d30c1f67d663e07cd03f4df4cd2442">InitializeCommonResources</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a68a3d01ec709c4df020e87fef939e9e9">CreateDXGISurface</a>(IDXGISwapChain1* pSwapChain1, IDXGISurface** ppDXGISurface);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="comment">//void CreateOutput(int index, IDXGIOutput** ppOutput);</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a8f2b6e0533285bf0f577eae8e2e4e36f">CreateSwapChain</a>(<a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> hWnd, IDXGIOutput* pOutput, IDXGISwapChain1** ppSwapChain1);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a7eaa29d08d25bcf192e0654976cb0d5a">CreateRenderTargetView</a>(IDXGISwapChain1* pSwapChain1, ID3D11RenderTargetView** ppRenderTargetView);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aed10f75e1e88f14622c88e4135bda86e">CreateViewport</a>(<span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2Int</a>&amp; size, D3D11_VIEWPORT&amp; viewport);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a52015b0ca2011256df1d14622eb42c31">CreateDepthStencilAndDepthStencilView</a>(<span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2Int</a> bufSize, ID3D11Texture2D** ppDepthStencil, ID3D11DepthStencilView** ppDepthStencilView);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a46655c9165065413565a44cd82099076">ChangeViewport</a>(<span class="keyword">const</span> D3D11_VIEWPORT&amp; viewport);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a68fb6eb4989ee1e0c374f3565c6ed250">ChangeRenderTargets</a>(ComPtr&lt;ID3D11RenderTargetView&gt; pRenderTargetView, ComPtr&lt;ID3D11DepthStencilView&gt; pDepthStencilView);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#ae73722e1f2b328443a1b614d22c2c4bb">ChangeSwapChain</a>(ComPtr&lt;IDXGISwapChain1&gt; pSwapChain1);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#ac3504e33dbb728ccefb7349e376d55d8">ClearState</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a4b1a67f6eef29670a966162d1a3c4860">SetDefaultStates</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        std::optional&lt;MonitorInfo&gt; <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a3ab1956176b49ae8a50a80a1e9137b83">AssignAvailableMonitor</a>(IDXGIOutput** ppOutput);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aae58910e1447272081cedabc0194d774">GetAvailableMonitorCount</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">Release</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classmtgb_1_1DirectX11Manager.html#a60f943f84c4f292f9271b3c150d68513">   71</a></span>        std::vector&lt;DXGI_ADAPTER_DESC1&gt; <a class="code hl_variable" href="classmtgb_1_1DirectX11Manager.html#a60f943f84c4f292f9271b3c150d68513">adaptersDesc_</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa3d4c815765c2e86d5d7b80ad6d2e3e1">EnumAvailableMonitors</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#af81c78943f7bed780257d221ee23bc9e">InitializeShaderBundle</a>();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">CompileShader</a>(</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keyword">const</span> std::wstring&amp; _fileName,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keyword">const</span> <a class="code hl_enumeration" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">ShaderType</a>&amp; _type,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keyword">const</span> D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _layoutLength,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keyword">const</span> CD3D11_RASTERIZER_DESC* _pRasterizerDesc);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    };</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+<div class="ttc" id="aDirect2DResource_8h_html_ac17599842f3c193b028cc578098f8b93"><div class="ttname"><a href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a></div><div class="ttdeci">struct HWND__ * HWND</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00009">Direct2DResource.h:9</a></div></div>
+<div class="ttc" id="aDirectX11Manager_8h_html_ac17599842f3c193b028cc578098f8b93"><div class="ttname"><a href="DirectX11Manager_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a></div><div class="ttdeci">struct HWND__ * HWND</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8h_source.html#l00025">DirectX11Manager.h:25</a></div></div>
+<div class="ttc" id="aISystem_8h_html"><div class="ttname"><a href="ISystem_8h.html">ISystem.h</a></div></div>
+<div class="ttc" id="aMonitorInfo_8h_html"><div class="ttname"><a href="MonitorInfo_8h.html">MonitorInfo.h</a></div></div>
+<div class="ttc" id="aVector2Int_8h_html"><div class="ttname"><a href="Vector2Int_8h.html">Vector2Int.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html">mtgb::DirectX11Manager</a></div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8h_source.html#l00031">DirectX11Manager.h:32</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a0691f1df5a5ae0670b2d25a3f5353031"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00451">DirectX11Manager.cpp:451</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a3ab1956176b49ae8a50a80a1e9137b83"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a3ab1956176b49ae8a50a80a1e9137b83">mtgb::DirectX11Manager::AssignAvailableMonitor</a></div><div class="ttdeci">std::optional&lt; MonitorInfo &gt; AssignAvailableMonitor(IDXGIOutput **ppOutput)</div><div class="ttdoc">利用可能なモニターを自動で割り当てる</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00407">DirectX11Manager.cpp:407</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a4524835900f0d4d7339e9e4cdd1a2e01"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a4524835900f0d4d7339e9e4cdd1a2e01">mtgb::DirectX11Manager::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00029">DirectX11Manager.cpp:29</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a46655c9165065413565a44cd82099076"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a46655c9165065413565a44cd82099076">mtgb::DirectX11Manager::ChangeViewport</a></div><div class="ttdeci">void ChangeViewport(const D3D11_VIEWPORT &amp;viewport)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00389">DirectX11Manager.cpp:389</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a4b1a67f6eef29670a966162d1a3c4860"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a4b1a67f6eef29670a966162d1a3c4860">mtgb::DirectX11Manager::SetDefaultStates</a></div><div class="ttdeci">void SetDefaultStates()</div><div class="ttdoc">ClearState後に必要なデフォルト状態を再設定</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00470">DirectX11Manager.cpp:470</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a52015b0ca2011256df1d14622eb42c31"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a52015b0ca2011256df1d14622eb42c31">mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView</a></div><div class="ttdeci">void CreateDepthStencilAndDepthStencilView(const Vector2Int bufSize, ID3D11Texture2D **ppDepthStencil, ID3D11DepthStencilView **ppDepthStencilView)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00345">DirectX11Manager.cpp:345</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a60f943f84c4f292f9271b3c150d68513"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a60f943f84c4f292f9271b3c150d68513">mtgb::DirectX11Manager::adaptersDesc_</a></div><div class="ttdeci">std::vector&lt; DXGI_ADAPTER_DESC1 &gt; adaptersDesc_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8h_source.html#l00071">DirectX11Manager.h:71</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a6628ee648c587956ee2e872a958b6931"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a6628ee648c587956ee2e872a958b6931">mtgb::DirectX11Manager::~DirectX11Manager</a></div><div class="ttdeci">~DirectX11Manager()</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00025">DirectX11Manager.cpp:25</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a68a3d01ec709c4df020e87fef939e9e9"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a68a3d01ec709c4df020e87fef939e9e9">mtgb::DirectX11Manager::CreateDXGISurface</a></div><div class="ttdeci">void CreateDXGISurface(IDXGISwapChain1 *pSwapChain1, IDXGISurface **ppDXGISurface)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00230">DirectX11Manager.cpp:230</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a68fb6eb4989ee1e0c374f3565c6ed250"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a68fb6eb4989ee1e0c374f3565c6ed250">mtgb::DirectX11Manager::ChangeRenderTargets</a></div><div class="ttdeci">void ChangeRenderTargets(ComPtr&lt; ID3D11RenderTargetView &gt; pRenderTargetView, ComPtr&lt; ID3D11DepthStencilView &gt; pDepthStencilView)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00394">DirectX11Manager.cpp:394</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a6de71deea6f4e064c124f8e42056de29"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a6de71deea6f4e064c124f8e42056de29">mtgb::DirectX11Manager::DirectX11Manager</a></div><div class="ttdeci">DirectX11Manager()</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00021">DirectX11Manager.cpp:21</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a7eaa29d08d25bcf192e0654976cb0d5a"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a7eaa29d08d25bcf192e0654976cb0d5a">mtgb::DirectX11Manager::CreateRenderTargetView</a></div><div class="ttdeci">void CreateRenderTargetView(IDXGISwapChain1 *pSwapChain1, ID3D11RenderTargetView **ppRenderTargetView)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00316">DirectX11Manager.cpp:316</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a8f2b6e0533285bf0f577eae8e2e4e36f"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a8f2b6e0533285bf0f577eae8e2e4e36f">mtgb::DirectX11Manager::CreateSwapChain</a></div><div class="ttdeci">void CreateSwapChain(HWND hWnd, IDXGIOutput *pOutput, IDXGISwapChain1 **ppSwapChain1)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00251">DirectX11Manager.cpp:251</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_a8f31aed60a43843bbb5cf6738fd147fd"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#a8f31aed60a43843bbb5cf6738fd147fd">mtgb::DirectX11Manager::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00035">DirectX11Manager.cpp:35</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_aa0add2c4d52089ca67a1b60f16c95074"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#aa0add2c4d52089ca67a1b60f16c95074">mtgb::DirectX11Manager::CompileShader</a></div><div class="ttdeci">void CompileShader(const std::wstring &amp;_fileName, const ShaderType &amp;_type, const D3D11_INPUT_ELEMENT_DESC *_pHLSLLayout, const unsigned int _layoutLength, const CD3D11_RASTERIZER_DESC *_pRasterizerDesc)</div><div class="ttdoc">シェーダファイルをコンパイルする</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00873">DirectX11Manager.cpp:873</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_aa3d4c815765c2e86d5d7b80ad6d2e3e1"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#aa3d4c815765c2e86d5d7b80ad6d2e3e1">mtgb::DirectX11Manager::EnumAvailableMonitors</a></div><div class="ttdeci">void EnumAvailableMonitors()</div><div class="ttdoc">利用可能なモニターを列挙する</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00479">DirectX11Manager.cpp:479</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_aae58910e1447272081cedabc0194d774"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#aae58910e1447272081cedabc0194d774">mtgb::DirectX11Manager::GetAvailableMonitorCount</a></div><div class="ttdeci">int GetAvailableMonitorCount() const</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00446">DirectX11Manager.cpp:446</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_ac3504e33dbb728ccefb7349e376d55d8"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#ac3504e33dbb728ccefb7349e376d55d8">mtgb::DirectX11Manager::ClearState</a></div><div class="ttdeci">void ClearState()</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00456">DirectX11Manager.cpp:456</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_ad8d30c1f67d663e07cd03f4df4cd2442"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#ad8d30c1f67d663e07cd03f4df4cd2442">mtgb::DirectX11Manager::InitializeCommonResources</a></div><div class="ttdeci">void InitializeCommonResources()</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00059">DirectX11Manager.cpp:59</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_ae73722e1f2b328443a1b614d22c2c4bb"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#ae73722e1f2b328443a1b614d22c2c4bb">mtgb::DirectX11Manager::ChangeSwapChain</a></div><div class="ttdeci">void ChangeSwapChain(ComPtr&lt; IDXGISwapChain1 &gt; pSwapChain1)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00402">DirectX11Manager.cpp:402</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_aed10f75e1e88f14622c88e4135bda86e"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#aed10f75e1e88f14622c88e4135bda86e">mtgb::DirectX11Manager::CreateViewport</a></div><div class="ttdeci">void CreateViewport(const Vector2Int &amp;size, D3D11_VIEWPORT &amp;viewport)</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00332">DirectX11Manager.cpp:332</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Manager_html_af81c78943f7bed780257d221ee23bc9e"><div class="ttname"><a href="classmtgb_1_1DirectX11Manager.html#af81c78943f7bed780257d221ee23bc9e">mtgb::DirectX11Manager::InitializeShaderBundle</a></div><div class="ttdeci">void InitializeShaderBundle()</div><div class="ttdoc">シェーダバンドルを初期化する</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Manager_8cpp_source.html#l00506">DirectX11Manager.cpp:506</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ISystem_html"><div class="ttname"><a href="classmtgb_1_1ISystem.html">mtgb::ISystem</a></div><div class="ttdef"><b>Definition:</b> <a href="ISystem_8h_source.html#l00005">ISystem.h:6</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fd"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">mtgb::ShaderType</a></div><div class="ttdeci">ShaderType</div><div class="ttdoc">シェーダタイプ</div><div class="ttdef"><b>Definition:</b> <a href="ShaderType_8h_source.html#l00009">ShaderType.h:10</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector2T_html"><div class="ttname"><a href="structmtgb_1_1Vector2T.html">mtgb::Vector2T&lt; int &gt;</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="DirectX11Manager_8h.html">DirectX11Manager.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

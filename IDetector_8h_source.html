@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: IDetector.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('IDetector_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">IDetector.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="IDetector_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContext_8h.html">WindowContext.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="RectContainsInfo_8h.html">RectContainsInfo.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="GameObjectTag_8h.html">GameObjectTag.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="RectF_8h.html">RectF.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classmtgb_1_1IDetector.html">   14</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1IDetector.html">IDetector</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classmtgb_1_1IDetector.html#a57a3b13d997d699fd5672c4b160a6cc5">   17</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classmtgb_1_1IDetector.html#a57a3b13d997d699fd5672c4b160a6cc5">~IDetector</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classmtgb_1_1IDetector.html#a9f2aabcb1bfc653f0fed9b5a4c3b8bd8">   22</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1IDetector.html#a9f2aabcb1bfc653f0fed9b5a4c3b8bd8">UpdateDetection</a>() = 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classmtgb_1_1IDetector.html#a5f445e7068fcf80bdcb6988a9b251c4c">   28</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classmtgb_1_1IDetector.html#a5f445e7068fcf80bdcb6988a9b251c4c">HasDetectedTargets</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classmtgb_1_1IDetector.html#a23bb8f1e34d7af0ec289118430a8a624">   34</a></span>        <span class="keyword">virtual</span> <span class="keyword">const</span> std::vector&lt;ScreenCoordContainsInfo&gt;&amp; <a class="code hl_function" href="classmtgb_1_1IDetector.html#a23bb8f1e34d7af0ec289118430a8a624">GetDetectedTargets</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classmtgb_1_1IDetector.html#a4711d21858256f57427e791e284fa349">   42</a></span>        <span class="keyword">virtual</span> <a class="code hl_struct" href="structEffekseer_1_1RectF.html">RectF</a> <a class="code hl_function" href="classmtgb_1_1IDetector.html#a4711d21858256f57427e791e284fa349">GetDetectionArea</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_struct" href="structEffekseer_1_1RectF.html">RectF</a>{}; };</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classmtgb_1_1IDetector.html#a1137be8815c17fc17838fe45e4cbd20c">   46</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1IDetector.html#a1137be8815c17fc17838fe45e4cbd20c">ForEach</a>(std::function&lt;<span class="keywordtype">void</span>(<a class="code hl_struct" href="structmtgb_1_1ScreenCoordContainsInfo.html">ScreenCoordContainsInfo</a>&amp;)&gt; _func) = 0;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classmtgb_1_1IDetector.html#a1e1ae8c4176b79878474feb2263cbcd9">   47</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1IDetector.html#a1e1ae8c4176b79878474feb2263cbcd9">ForEach</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1ScreenCoordContainsInfo.html">ScreenCoordContainsInfo</a>&amp;)&gt; _func) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classmtgb_1_1IDetector.html#a17cf45aaecf668eaa199bc0d99989621">   50</a></span>        std::vector&lt;ScreenCoordContainsInfo&gt; <a class="code hl_variable" href="classmtgb_1_1IDetector.html#a17cf45aaecf668eaa199bc0d99989621">detectedTargets_</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    };</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="ttc" id="aGameObjectTag_8h_html"><div class="ttname"><a href="GameObjectTag_8h.html">GameObjectTag.h</a></div></div>
+<div class="ttc" id="aRectContainsInfo_8h_html"><div class="ttname"><a href="RectContainsInfo_8h.html">RectContainsInfo.h</a></div></div>
+<div class="ttc" id="aRectF_8h_html"><div class="ttname"><a href="RectF_8h.html">RectF.h</a></div></div>
+<div class="ttc" id="aWindowContext_8h_html"><div class="ttname"><a href="WindowContext_8h.html">WindowContext.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IDetector_html"><div class="ttname"><a href="classmtgb_1_1IDetector.html">mtgb::IDetector</a></div><div class="ttdoc">検出システムのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="IDetector_8h_source.html#l00014">IDetector.h:15</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IDetector_html_a1137be8815c17fc17838fe45e4cbd20c"><div class="ttname"><a href="classmtgb_1_1IDetector.html#a1137be8815c17fc17838fe45e4cbd20c">mtgb::IDetector::ForEach</a></div><div class="ttdeci">virtual void ForEach(std::function&lt; void(ScreenCoordContainsInfo &amp;)&gt; _func)=0</div><div class="ttdoc">検出結果を操作</div></div>
+<div class="ttc" id="aclassmtgb_1_1IDetector_html_a17cf45aaecf668eaa199bc0d99989621"><div class="ttname"><a href="classmtgb_1_1IDetector.html#a17cf45aaecf668eaa199bc0d99989621">mtgb::IDetector::detectedTargets_</a></div><div class="ttdeci">std::vector&lt; ScreenCoordContainsInfo &gt; detectedTargets_</div><div class="ttdef"><b>Definition:</b> <a href="IDetector_8h_source.html#l00050">IDetector.h:50</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IDetector_html_a1e1ae8c4176b79878474feb2263cbcd9"><div class="ttname"><a href="classmtgb_1_1IDetector.html#a1e1ae8c4176b79878474feb2263cbcd9">mtgb::IDetector::ForEach</a></div><div class="ttdeci">virtual void ForEach(std::function&lt; void(const ScreenCoordContainsInfo &amp;)&gt; _func) const =0</div></div>
+<div class="ttc" id="aclassmtgb_1_1IDetector_html_a23bb8f1e34d7af0ec289118430a8a624"><div class="ttname"><a href="classmtgb_1_1IDetector.html#a23bb8f1e34d7af0ec289118430a8a624">mtgb::IDetector::GetDetectedTargets</a></div><div class="ttdeci">virtual const std::vector&lt; ScreenCoordContainsInfo &gt; &amp; GetDetectedTargets() const =0</div><div class="ttdoc">検出結果を取得</div></div>
+<div class="ttc" id="aclassmtgb_1_1IDetector_html_a4711d21858256f57427e791e284fa349"><div class="ttname"><a href="classmtgb_1_1IDetector.html#a4711d21858256f57427e791e284fa349">mtgb::IDetector::GetDetectionArea</a></div><div class="ttdeci">virtual RectF GetDetectionArea() const</div><div class="ttdoc">検出範囲を返す</div><div class="ttdef"><b>Definition:</b> <a href="IDetector_8h_source.html#l00042">IDetector.h:42</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IDetector_html_a57a3b13d997d699fd5672c4b160a6cc5"><div class="ttname"><a href="classmtgb_1_1IDetector.html#a57a3b13d997d699fd5672c4b160a6cc5">mtgb::IDetector::~IDetector</a></div><div class="ttdeci">virtual ~IDetector()=default</div></div>
+<div class="ttc" id="aclassmtgb_1_1IDetector_html_a5f445e7068fcf80bdcb6988a9b251c4c"><div class="ttname"><a href="classmtgb_1_1IDetector.html#a5f445e7068fcf80bdcb6988a9b251c4c">mtgb::IDetector::HasDetectedTargets</a></div><div class="ttdeci">virtual bool HasDetectedTargets() const =0</div><div class="ttdoc">検出された対象があるかどうか</div></div>
+<div class="ttc" id="aclassmtgb_1_1IDetector_html_a9f2aabcb1bfc653f0fed9b5a4c3b8bd8"><div class="ttname"><a href="classmtgb_1_1IDetector.html#a9f2aabcb1bfc653f0fed9b5a4c3b8bd8">mtgb::IDetector::UpdateDetection</a></div><div class="ttdeci">virtual void UpdateDetection()=0</div><div class="ttdoc">検出を実行</div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="astructEffekseer_1_1RectF_html"><div class="ttname"><a href="structEffekseer_1_1RectF.html">Effekseer::RectF</a></div><div class="ttdoc">四角形</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01740">install_msvc2022_x64/include/Effekseer/Effekseer.h:1741</a></div></div>
+<div class="ttc" id="astructmtgb_1_1ScreenCoordContainsInfo_html"><div class="ttname"><a href="structmtgb_1_1ScreenCoordContainsInfo.html">mtgb::ScreenCoordContainsInfo</a></div><div class="ttdoc">スクリーン座標系の含まれている対象の情報</div><div class="ttdef"><b>Definition:</b> <a href="RectContainsInfo_8h_source.html#l00010">RectContainsInfo.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="IDetector_8h.html">IDetector.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

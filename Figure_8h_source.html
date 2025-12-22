@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Figure.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Figure_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Figure.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Figure_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="IShader_8h.html">IShader.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="Vector3_8h.html">Vector3.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Vector4_8h.html">Vector4.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Matrix4x4_8h.html">Matrix4x4.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="RectInt_8h.html">RectInt.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="RectF_8h.html">RectF.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="Color_8h.html">Color.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classmtgb_1_1Figure.html">   12</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1Figure.html">Figure</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1IShader.html">IShader</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structmtgb_1_1Figure_1_1Vertex.html">   17</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structmtgb_1_1Figure_1_1Vertex.html">Vertex</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structmtgb_1_1Figure_1_1Vertex.html#abf320ae95da88517c430451c2f07d5f0">   19</a></span>            <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> <a class="code hl_variable" href="structmtgb_1_1Figure_1_1Vertex.html#abf320ae95da88517c430451c2f07d5f0">position</a>;  <span class="comment">// 座標</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        };</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structmtgb_1_1Figure_1_1ConstantBuffer.html">   25</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structmtgb_1_1Figure_1_1ConstantBuffer.html">ConstantBuffer</a></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structmtgb_1_1Figure_1_1ConstantBuffer.html#a228399769a6bb75a7933ed20578e436c">   27</a></span>            <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a> <a class="code hl_variable" href="structmtgb_1_1Figure_1_1ConstantBuffer.html#a228399769a6bb75a7933ed20578e436c">g_color</a>;  <span class="comment">// 色</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structmtgb_1_1Figure_1_1ConstantBuffer.html#afbbceb8e0e9366c81d75fbd973335d20">   28</a></span>            <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> <a class="code hl_variable" href="structmtgb_1_1Figure_1_1ConstantBuffer.html#afbbceb8e0e9366c81d75fbd973335d20">g_worldMatrix</a>;  <span class="comment">// 頂点座標変換行列</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_function" href="classmtgb_1_1Figure.html#ab3f134e325a73f469cf177fc4061ff4e">Figure</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_function" href="classmtgb_1_1Figure.html#a6aa5acb375af0131582e8397a2ff8880">~Figure</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordtype">void</span> <a class="code hl_class" href="classmtgb_1_1Draw.html">Draw</a>(</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1RectT.html">RectInt</a>&amp; _rect,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keyword">const</span> <a class="code hl_struct" href="structEffekseer_1_1Color.html">Color</a>&amp; _color);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">void</span> <a class="code hl_class" href="classmtgb_1_1Draw.html">Draw</a>(</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keyword">const</span> <a class="code hl_struct" href="structEffekseer_1_1RectF.html">RectF</a>&amp; _rect,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keyword">const</span> <a class="code hl_struct" href="structEffekseer_1_1Color.html">Color</a>&amp; _color);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Figure.html#a12826dfa51bbb20c64701355719126d1">InitializeVertexBuffer</a>(ID3D11Device* _pDevice) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Figure.html#a2d3e500525a664a9c75d6c2cd636e10b">InitializeIndexBuffer</a>(ID3D11Device* _pDevice) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Figure.html#ad48af94eb06c4aff2bd306cb6973b0d3">InitializeConstantBuffer</a>(ID3D11Device* _pDevice) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    };</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="ttc" id="aColor_8h_html"><div class="ttname"><a href="Color_8h.html">Color.h</a></div></div>
+<div class="ttc" id="aIShader_8h_html"><div class="ttname"><a href="IShader_8h.html">IShader.h</a></div></div>
+<div class="ttc" id="aMatrix4x4_8h_html"><div class="ttname"><a href="Matrix4x4_8h.html">Matrix4x4.h</a></div></div>
+<div class="ttc" id="aRectF_8h_html"><div class="ttname"><a href="RectF_8h.html">RectF.h</a></div></div>
+<div class="ttc" id="aRectInt_8h_html"><div class="ttname"><a href="RectInt_8h.html">RectInt.h</a></div></div>
+<div class="ttc" id="aVector3_8h_html"><div class="ttname"><a href="Vector3_8h.html">Vector3.h</a></div></div>
+<div class="ttc" id="aVector4_8h_html"><div class="ttname"><a href="Vector4_8h.html">Vector4.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html"><div class="ttname"><a href="classmtgb_1_1Draw.html">mtgb::Draw</a></div><div class="ttdoc">描画する系</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8h_source.html#l00028">Draw.h:29</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Figure_html"><div class="ttname"><a href="classmtgb_1_1Figure.html">mtgb::Figure</a></div><div class="ttdef"><b>Definition:</b> <a href="Figure_8h_source.html#l00012">Figure.h:13</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Figure_html_a12826dfa51bbb20c64701355719126d1"><div class="ttname"><a href="classmtgb_1_1Figure.html#a12826dfa51bbb20c64701355719126d1">mtgb::Figure::InitializeVertexBuffer</a></div><div class="ttdeci">void InitializeVertexBuffer(ID3D11Device *_pDevice) override</div><div class="ttdoc">頂点バッファの初期化</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8cpp_source.html#l00094">Figure.cpp:94</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Figure_html_a2d3e500525a664a9c75d6c2cd636e10b"><div class="ttname"><a href="classmtgb_1_1Figure.html#a2d3e500525a664a9c75d6c2cd636e10b">mtgb::Figure::InitializeIndexBuffer</a></div><div class="ttdeci">void InitializeIndexBuffer(ID3D11Device *_pDevice) override</div><div class="ttdoc">インデックスバッファの初期化</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8cpp_source.html#l00131">Figure.cpp:131</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Figure_html_a6aa5acb375af0131582e8397a2ff8880"><div class="ttname"><a href="classmtgb_1_1Figure.html#a6aa5acb375af0131582e8397a2ff8880">mtgb::Figure::~Figure</a></div><div class="ttdeci">~Figure()</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8cpp_source.html#l00016">Figure.cpp:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Figure_html_ab3f134e325a73f469cf177fc4061ff4e"><div class="ttname"><a href="classmtgb_1_1Figure.html#ab3f134e325a73f469cf177fc4061ff4e">mtgb::Figure::Figure</a></div><div class="ttdeci">Figure()</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8cpp_source.html#l00012">Figure.cpp:12</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Figure_html_ad48af94eb06c4aff2bd306cb6973b0d3"><div class="ttname"><a href="classmtgb_1_1Figure.html#ad48af94eb06c4aff2bd306cb6973b0d3">mtgb::Figure::InitializeConstantBuffer</a></div><div class="ttdeci">void InitializeConstantBuffer(ID3D11Device *_pDevice) override</div><div class="ttdoc">コンスタントバッファ</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8cpp_source.html#l00162">Figure.cpp:162</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IShader_html"><div class="ttname"><a href="classmtgb_1_1IShader.html">mtgb::IShader</a></div><div class="ttdef"><b>Definition:</b> <a href="IShader_8h_source.html#l00015">IShader.h:16</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="astructEffekseer_1_1Color_html"><div class="ttname"><a href="structEffekseer_1_1Color.html">Effekseer::Color</a></div><div class="ttdoc">色</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01620">install_msvc2022_x64/include/Effekseer/Effekseer.h:1621</a></div></div>
+<div class="ttc" id="astructEffekseer_1_1RectF_html"><div class="ttname"><a href="structEffekseer_1_1RectF.html">Effekseer::RectF</a></div><div class="ttdoc">四角形</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01740">install_msvc2022_x64/include/Effekseer/Effekseer.h:1741</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Figure_1_1ConstantBuffer_html"><div class="ttname"><a href="structmtgb_1_1Figure_1_1ConstantBuffer.html">mtgb::Figure::ConstantBuffer</a></div><div class="ttdoc">GPUに送るやつ</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8h_source.html#l00025">Figure.h:26</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Figure_1_1ConstantBuffer_html_a228399769a6bb75a7933ed20578e436c"><div class="ttname"><a href="structmtgb_1_1Figure_1_1ConstantBuffer.html#a228399769a6bb75a7933ed20578e436c">mtgb::Figure::ConstantBuffer::g_color</a></div><div class="ttdeci">Vector4 g_color</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8h_source.html#l00027">Figure.h:27</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Figure_1_1ConstantBuffer_html_afbbceb8e0e9366c81d75fbd973335d20"><div class="ttname"><a href="structmtgb_1_1Figure_1_1ConstantBuffer.html#afbbceb8e0e9366c81d75fbd973335d20">mtgb::Figure::ConstantBuffer::g_worldMatrix</a></div><div class="ttdeci">Matrix4x4 g_worldMatrix</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8h_source.html#l00028">Figure.h:28</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Figure_1_1Vertex_html"><div class="ttname"><a href="structmtgb_1_1Figure_1_1Vertex.html">mtgb::Figure::Vertex</a></div><div class="ttdoc">頂点情報</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8h_source.html#l00017">Figure.h:18</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Figure_1_1Vertex_html_abf320ae95da88517c430451c2f07d5f0"><div class="ttname"><a href="structmtgb_1_1Figure_1_1Vertex.html#abf320ae95da88517c430451c2f07d5f0">mtgb::Figure::Vertex::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Figure_8h_source.html#l00019">Figure.h:19</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Matrix4x4_html"><div class="ttname"><a href="structmtgb_1_1Matrix4x4.html">mtgb::Matrix4x4</a></div><div class="ttdef"><b>Definition:</b> <a href="Matrix4x4_8h_source.html#l00008">Matrix4x4.h:9</a></div></div>
+<div class="ttc" id="astructmtgb_1_1RectT_html"><div class="ttname"><a href="structmtgb_1_1RectT.html">mtgb::RectT</a></div><div class="ttdef"><b>Definition:</b> <a href="RectT_8h_source.html#l00011">RectT.h:12</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector4_html"><div class="ttname"><a href="structmtgb_1_1Vector4.html">mtgb::Vector4</a></div><div class="ttdoc">4次元ベクトル</div><div class="ttdef"><b>Definition:</b> <a href="Vector4_8h_source.html#l00010">Vector4.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Figure_8h.html">Figure.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

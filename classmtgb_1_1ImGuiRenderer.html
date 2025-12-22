@@ -1,0 +1,1398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::ImGuiRenderer クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1ImGuiRenderer.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1ImGuiRenderer-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::ImGuiRenderer クラス<span class="mlabels"><span class="mlabel">final</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::ImGuiRenderer の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer__inherit__graph.svg" width="258" height="742"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::ImGuiRenderer 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer__coll__graph.svg" width="1408" height="764"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a3fccf4056d9af7bc69cea6395627f61f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61f">WindowFlag</a> { <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa6adf97f83acf6453d4a6a4b1070f3754">None</a>
+, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8">NoMoveWhenHovered</a>
+ }</td></tr>
+<tr class="separator:a3fccf4056d9af7bc69cea6395627f61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9918c6f6ab2f085b2f10f18ba550c27a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9918c6f6ab2f085b2f10f18ba550c27a">ImGuiRenderer</a> ()</td></tr>
+<tr class="separator:a9918c6f6ab2f085b2f10f18ba550c27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a789972e2b431b1afe7789385145eab59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a789972e2b431b1afe7789385145eab59">~ImGuiRenderer</a> ()</td></tr>
+<tr class="separator:a789972e2b431b1afe7789385145eab59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db4a95a57f586a5fda30be1957f247a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a4db4a95a57f586a5fda30be1957f247a">Initialize</a> () override</td></tr>
+<tr class="separator:a4db4a95a57f586a5fda30be1957f247a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c61999c1786cd82207b81ae9a21169e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a2c61999c1786cd82207b81ae9a21169e">Update</a> () override</td></tr>
+<tr class="separator:a2c61999c1786cd82207b81ae9a21169e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4684d4374beee1f52053b4634edae2c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a4684d4374beee1f52053b4634edae2c8">BeginFrame</a> ()</td></tr>
+<tr class="separator:a4684d4374beee1f52053b4634edae2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a554c68a5c78f9e77caf43d584c7507"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a6a554c68a5c78f9e77caf43d584c7507">BeginImGuizmoFrame</a> ()</td></tr>
+<tr class="separator:a6a554c68a5c78f9e77caf43d584c7507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704d60c97459c9dd8e90a0010eead60c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a704d60c97459c9dd8e90a0010eead60c">Begin</a> (const char *_str, bool *_isOpen=NULL, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61f">WindowFlag</a> _flag=<a class="el" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa6adf97f83acf6453d4a6a4b1070f3754">WindowFlag::None</a>)</td></tr>
+<tr class="separator:a704d60c97459c9dd8e90a0010eead60c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeac47500fe5c07d84ad9990d3c278e27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#aeac47500fe5c07d84ad9990d3c278e27">SetImGuizmoRenderTargetView</a> ()</td></tr>
+<tr class="memdesc:aeac47500fe5c07d84ad9990d3c278e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">ImGuizmoウィンドウを描画するためにRTVをセット  <br /></td></tr>
+<tr class="separator:aeac47500fe5c07d84ad9990d3c278e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf0a1747d1772d631bc8c472b086d64c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#aaf0a1747d1772d631bc8c472b086d64c">Draw</a> ()</td></tr>
+<tr class="separator:aaf0a1747d1772d631bc8c472b086d64c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8659d92cdaecc531688232b504e8c637"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a8659d92cdaecc531688232b504e8c637">EndFrame</a> ()</td></tr>
+<tr class="separator:a8659d92cdaecc531688232b504e8c637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97281ceb7ce6e422c152575fb26ad8cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a97281ceb7ce6e422c152575fb26ad8cd">SetDrawList</a> ()</td></tr>
+<tr class="separator:a97281ceb7ce6e422c152575fb26ad8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b0148d8603765edd4109ca24dedf92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#ab1b0148d8603765edd4109ca24dedf92">RenderSceneView</a> ()</td></tr>
+<tr class="separator:ab1b0148d8603765edd4109ca24dedf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a961f6aa8f6af8502404b28fe26a1c0b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a961f6aa8f6af8502404b28fe26a1c0b9">UpdateGameViewRect</a> ()</td></tr>
+<tr class="separator:a961f6aa8f6af8502404b28fe26a1c0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a725b57c53e525ab8e63e305f7898bae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a725b57c53e525ab8e63e305f7898bae4">End</a> ()</td></tr>
+<tr class="separator:a725b57c53e525ab8e63e305f7898bae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef4f353cce28e09af4b18d95f4a253b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">Release</a> ()</td></tr>
+<tr class="memdesc:a9ef4f353cce28e09af4b18d95f4a253b"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放処理  <br /></td></tr>
+<tr class="separator:a9ef4f353cce28e09af4b18d95f4a253b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434147aa5ce3fe561ed4760fdd56ec83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a434147aa5ce3fe561ed4760fdd56ec83">ResetComPtrs</a> ()</td></tr>
+<tr class="separator:a434147aa5ce3fe561ed4760fdd56ec83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74f0efdd24aa11e4798dfbd1f685cbec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a74f0efdd24aa11e4798dfbd1f685cbec">OnResize</a> (UINT width, UINT height)</td></tr>
+<tr class="memdesc:a74f0efdd24aa11e4798dfbd1f685cbec"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウリサイズ時の処理  <br /></td></tr>
+<tr class="separator:a74f0efdd24aa11e4798dfbd1f685cbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2ab8d15428a8eedfe82d7df92a137e6"><td class="memItemLeft" align="right" valign="top">D3D11_VIEWPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#ac2ab8d15428a8eedfe82d7df92a137e6">GetViewport</a> ()</td></tr>
+<tr class="separator:ac2ab8d15428a8eedfe82d7df92a137e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5e8eab8d4237edc15d0e30f92b9b75ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a5e8eab8d4237edc15d0e30f92b9b75ea">CreateD3DResources</a> ()</td></tr>
+<tr class="separator:a5e8eab8d4237edc15d0e30f92b9b75ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:aee7a0c8e2a933f21aa76308f9aeca39e"><td class="memItemLeft" align="right" valign="top">UINT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#aee7a0c8e2a933f21aa76308f9aeca39e">winWidth_</a></td></tr>
+<tr class="separator:aee7a0c8e2a933f21aa76308f9aeca39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159fff2b6d78b519c17a3bc61763e1fc"><td class="memItemLeft" align="right" valign="top">UINT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a159fff2b6d78b519c17a3bc61763e1fc">winHeight_</a></td></tr>
+<tr class="separator:a159fff2b6d78b519c17a3bc61763e1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73444827b59f04cbbf84972335c7c680"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structImVec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a73444827b59f04cbbf84972335c7c680">gameViewPos_</a></td></tr>
+<tr class="separator:a73444827b59f04cbbf84972335c7c680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7eca9a34d82a481876bbe28f1c7ffc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structImVec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#abe7eca9a34d82a481876bbe28f1c7ffc">gameViewSize_</a></td></tr>
+<tr class="separator:abe7eca9a34d82a481876bbe28f1c7ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68872d72f2012d096f79a044791fa440"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a68872d72f2012d096f79a044791fa440">gameViewRectValid_</a></td></tr>
+<tr class="separator:a68872d72f2012d096f79a044791fa440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a413fcf45f8c9fb91b91c2a861e39a47d"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; ID3D11RenderTargetView &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a413fcf45f8c9fb91b91c2a861e39a47d">pRenderTargetView_</a></td></tr>
+<tr class="separator:a413fcf45f8c9fb91b91c2a861e39a47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0ed85ffdc261e0d2a1acea1bb24f416"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; ID3D11ShaderResourceView &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#ae0ed85ffdc261e0d2a1acea1bb24f416">pSRV_</a></td></tr>
+<tr class="separator:ae0ed85ffdc261e0d2a1acea1bb24f416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a1b3ac006d2f53f0a2ab739d64c4f93"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; ID3D11Texture2D &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a1a1b3ac006d2f53f0a2ab739d64c4f93">pSRVTexture_</a></td></tr>
+<tr class="separator:a1a1b3ac006d2f53f0a2ab739d64c4f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a500483dfe1d74a2846a818a29e3dab2c"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; ID3D11Texture2D &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a500483dfe1d74a2846a818a29e3dab2c">pTexture_</a></td></tr>
+<tr class="separator:a500483dfe1d74a2846a818a29e3dab2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af79fd45b240f444485d9ed48df6283"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; ID3D11Texture2D &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a2af79fd45b240f444485d9ed48df6283">pDepthStencil_</a></td></tr>
+<tr class="separator:a2af79fd45b240f444485d9ed48df6283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd64934d9d81640a12a30c821deb70d"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; ID3D11DepthStencilView &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#abcd64934d9d81640a12a30c821deb70d">pDepthStencilView_</a></td></tr>
+<tr class="separator:abcd64934d9d81640a12a30c821deb70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad917df25388e31a52ca448aa9eefe72c"><td class="memItemLeft" align="right" valign="top">D3D11_VIEWPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#ad917df25388e31a52ca448aa9eefe72c">viewport_</a></td></tr>
+<tr class="separator:ad917df25388e31a52ca448aa9eefe72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00022">22</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a3fccf4056d9af7bc69cea6395627f61f" name="a3fccf4056d9af7bc69cea6395627f61f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fccf4056d9af7bc69cea6395627f61f">&#9670;&#160;</a></span>WindowFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61f">mtgb::ImGuiRenderer::WindowFlag</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a3fccf4056d9af7bc69cea6395627f61fa6adf97f83acf6453d4a6a4b1070f3754" name="a3fccf4056d9af7bc69cea6395627f61fa6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8" name="a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8"></a>NoMoveWhenHovered&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>        {</div>
+<div class="line"><span class="lineno">   27</span>            <a class="code hl_enumvalue" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa6adf97f83acf6453d4a6a4b1070f3754">None</a>,</div>
+<div class="line"><span class="lineno">   28</span>            <a class="code hl_enumvalue" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8">NoMoveWhenHovered</a> <span class="comment">// マウスカーソルがウィンドウ内にあるとき移動禁止</span></div>
+<div class="line"><span class="lineno">   29</span>        };</div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8">mtgb::ImGuiRenderer::WindowFlag::NoMoveWhenHovered</a></div><div class="ttdeci">@ NoMoveWhenHovered</div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a3fccf4056d9af7bc69cea6395627f61fa6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa6adf97f83acf6453d4a6a4b1070f3754">mtgb::ImGuiRenderer::WindowFlag::None</a></div><div class="ttdeci">@ None</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a9918c6f6ab2f085b2f10f18ba550c27a" name="a9918c6f6ab2f085b2f10f18ba550c27a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9918c6f6ab2f085b2f10f18ba550c27a">&#9670;&#160;</a></span>ImGuiRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::ImGuiRenderer::ImGuiRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>    :<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a413fcf45f8c9fb91b91c2a861e39a47d">pRenderTargetView_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   23</span>    ,<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#ae0ed85ffdc261e0d2a1acea1bb24f416">pSRV_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   24</span>    ,<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a1a1b3ac006d2f53f0a2ab739d64c4f93">pSRVTexture_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   25</span>    ,<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a500483dfe1d74a2846a818a29e3dab2c">pTexture_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   26</span>    ,<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a2af79fd45b240f444485d9ed48df6283">pDepthStencil_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   27</span>    ,<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#abcd64934d9d81640a12a30c821deb70d">pDepthStencilView_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   28</span>    ,<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a68872d72f2012d096f79a044791fa440">gameViewRectValid_</a>{<span class="keyword">false</span>}</div>
+<div class="line"><span class="lineno">   29</span>    </div>
+<div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    </div>
+<div class="line"><span class="lineno">   32</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a1a1b3ac006d2f53f0a2ab739d64c4f93"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a1a1b3ac006d2f53f0a2ab739d64c4f93">mtgb::ImGuiRenderer::pSRVTexture_</a></div><div class="ttdeci">ComPtr&lt; ID3D11Texture2D &gt; pSRVTexture_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00080">ImGuiRenderer.h:80</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a2af79fd45b240f444485d9ed48df6283"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a2af79fd45b240f444485d9ed48df6283">mtgb::ImGuiRenderer::pDepthStencil_</a></div><div class="ttdeci">ComPtr&lt; ID3D11Texture2D &gt; pDepthStencil_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00082">ImGuiRenderer.h:82</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a413fcf45f8c9fb91b91c2a861e39a47d"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a413fcf45f8c9fb91b91c2a861e39a47d">mtgb::ImGuiRenderer::pRenderTargetView_</a></div><div class="ttdeci">ComPtr&lt; ID3D11RenderTargetView &gt; pRenderTargetView_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00078">ImGuiRenderer.h:78</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a500483dfe1d74a2846a818a29e3dab2c"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a500483dfe1d74a2846a818a29e3dab2c">mtgb::ImGuiRenderer::pTexture_</a></div><div class="ttdeci">ComPtr&lt; ID3D11Texture2D &gt; pTexture_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00081">ImGuiRenderer.h:81</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a68872d72f2012d096f79a044791fa440"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a68872d72f2012d096f79a044791fa440">mtgb::ImGuiRenderer::gameViewRectValid_</a></div><div class="ttdeci">bool gameViewRectValid_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00075">ImGuiRenderer.h:75</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_abcd64934d9d81640a12a30c821deb70d"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#abcd64934d9d81640a12a30c821deb70d">mtgb::ImGuiRenderer::pDepthStencilView_</a></div><div class="ttdeci">ComPtr&lt; ID3D11DepthStencilView &gt; pDepthStencilView_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00083">ImGuiRenderer.h:83</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_ae0ed85ffdc261e0d2a1acea1bb24f416"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#ae0ed85ffdc261e0d2a1acea1bb24f416">mtgb::ImGuiRenderer::pSRV_</a></div><div class="ttdeci">ComPtr&lt; ID3D11ShaderResourceView &gt; pSRV_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00079">ImGuiRenderer.h:79</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a789972e2b431b1afe7789385145eab59" name="a789972e2b431b1afe7789385145eab59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a789972e2b431b1afe7789385145eab59">&#9670;&#160;</a></span>~ImGuiRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::ImGuiRenderer::~ImGuiRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00033">33</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
+<div class="line"><span class="lineno">   35</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a704d60c97459c9dd8e90a0010eead60c" name="a704d60c97459c9dd8e90a0010eead60c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704d60c97459c9dd8e90a0010eead60c">&#9670;&#160;</a></span>Begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::Begin </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>_isOpen</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61f">WindowFlag</a>&#160;</td>
+          <td class="paramname"><em>_flag</em> = <code><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa6adf97f83acf6453d4a6a4b1070f3754">WindowFlag::None</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00104">104</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_typedef" href="imgui_8h.html#a0b8e067ab4f7a818828c8d89e531addc">ImGuiWindowFlags</a> flags = 0;</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (_flag == <a class="code hl_enumvalue" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8">WindowFlag::NoMoveWhenHovered</a>)</div>
+<div class="line"><span class="lineno">  108</span>    {</div>
+<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a78d80673fb8413b1ef7201b11bb135fe">mtgb::ImGuiUtil::IsMouseInWindow</a>(_str))</div>
+<div class="line"><span class="lineno">  110</span>        {</div>
+<div class="line"><span class="lineno">  111</span>            flags |= <a class="code hl_enumvalue" href="imgui_8h.html#ad2afd5a59df2ef70ff03f4a851168814adf58a4727cccc32a598a9cadc46f8ab7">ImGuiWindowFlags_NoMove</a>;</div>
+<div class="line"><span class="lineno">  112</span>        }</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_function" href="namespaceImGui.html#a581e58db0bc930bafa4a5d23093a2b99">ImGui::Begin</a>(_str, _isOpen, flags);</div>
+<div class="line"><span class="lineno">  115</span>}</div>
+<div class="ttc" id="aimgui_8h_html_a0b8e067ab4f7a818828c8d89e531addc"><div class="ttname"><a href="imgui_8h.html#a0b8e067ab4f7a818828c8d89e531addc">ImGuiWindowFlags</a></div><div class="ttdeci">int ImGuiWindowFlags</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00265">imgui.h:265</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ad2afd5a59df2ef70ff03f4a851168814adf58a4727cccc32a598a9cadc46f8ab7"><div class="ttname"><a href="imgui_8h.html#ad2afd5a59df2ef70ff03f4a851168814adf58a4727cccc32a598a9cadc46f8ab7">ImGuiWindowFlags_NoMove</a></div><div class="ttdeci">@ ImGuiWindowFlags_NoMove</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01184">imgui.h:1184</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a581e58db0bc930bafa4a5d23093a2b99"><div class="ttname"><a href="namespaceImGui.html#a581e58db0bc930bafa4a5d23093a2b99">ImGui::Begin</a></div><div class="ttdeci">IMGUI_API bool Begin(const char *name, bool *p_open=NULL, ImGuiWindowFlags flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l07586">imgui.cpp:7586</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1ImGuiUtil_html_a78d80673fb8413b1ef7201b11bb135fe"><div class="ttname"><a href="namespacemtgb_1_1ImGuiUtil.html#a78d80673fb8413b1ef7201b11bb135fe">mtgb::ImGuiUtil::IsMouseInWindow</a></div><div class="ttdeci">bool IsMouseInWindow(const char *_name)</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiUtil_8cpp_source.html#l00041">ImGuiUtil.cpp:41</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8cpp_source.html#l07586">ImGui::Begin()</a>, <a class="el" href="imgui_8h_source.html#l01184">ImGuiWindowFlags_NoMove</a>, <a class="el" href="ImGuiUtil_8cpp_source.html#l00041">mtgb::ImGuiUtil::IsMouseInWindow()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="MTImGui_8cpp_source.html#l00104">mtgb::MTImGui::ShowLog()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00348">mtgb::MTImGui::ShowWindow()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a704d60c97459c9dd8e90a0010eead60c_cgraph.svg" width="1354" height="2536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a704d60c97459c9dd8e90a0010eead60c_icgraph.svg" width="663" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4684d4374beee1f52053b4634edae2c8" name="a4684d4374beee1f52053b4634edae2c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4684d4374beee1f52053b4634edae2c8">&#9670;&#160;</a></span>BeginFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::BeginFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00089">89</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>{</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_function" href="namespaceImGui.html#a289dbbbffdadcf1231821d97a7c4a9be">ImGui::SetCurrentContext</a>(<a class="code hl_function" href="namespaceImGui.html#af557a6de5538099a0f6047eb994bbf42">ImGui::GetCurrentContext</a>());</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#ac732cf6c340b83e31fefa09cf396ef91">ImGui_ImplDX11_NewFrame</a>();</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_function" href="imgui__impl__win32_8cpp.html#ade4f55b90fdbd75a562d894d33f1909e">ImGui_ImplWin32_NewFrame</a>();</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_function" href="namespaceImGui.html#ab3f1fc018f903b7ad79fd10663375774">ImGui::NewFrame</a>();</div>
+<div class="line"><span class="lineno">   95</span>    </div>
+<div class="line"><span class="lineno">   96</span>}</div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_ac732cf6c340b83e31fefa09cf396ef91"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#ac732cf6c340b83e31fefa09cf396ef91">ImGui_ImplDX11_NewFrame</a></div><div class="ttdeci">void ImGui_ImplDX11_NewFrame()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00677">imgui_impl_dx11.cpp:677</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_ade4f55b90fdbd75a562d894d33f1909e"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#ade4f55b90fdbd75a562d894d33f1909e">ImGui_ImplWin32_NewFrame</a></div><div class="ttdeci">void ImGui_ImplWin32_NewFrame()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00484">imgui_impl_win32.cpp:484</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a289dbbbffdadcf1231821d97a7c4a9be"><div class="ttname"><a href="namespaceImGui.html#a289dbbbffdadcf1231821d97a7c4a9be">ImGui::SetCurrentContext</a></div><div class="ttdeci">IMGUI_API void SetCurrentContext(ImGuiContext *ctx)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l04007">imgui.cpp:4007</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_ab3f1fc018f903b7ad79fd10663375774"><div class="ttname"><a href="namespaceImGui.html#ab3f1fc018f903b7ad79fd10663375774">ImGui::NewFrame</a></div><div class="ttdeci">IMGUI_API void NewFrame()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l05508">imgui.cpp:5508</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_af557a6de5538099a0f6047eb994bbf42"><div class="ttname"><a href="namespaceImGui.html#af557a6de5538099a0f6047eb994bbf42">ImGui::GetCurrentContext</a></div><div class="ttdeci">IMGUI_API ImGuiContext * GetCurrentContext()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l04002">imgui.cpp:4002</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8cpp_source.html#l04002">ImGui::GetCurrentContext()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00677">ImGui_ImplDX11_NewFrame()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00484">ImGui_ImplWin32_NewFrame()</a>, <a class="el" href="imgui_8cpp_source.html#l05508">ImGui::NewFrame()</a>, <a class="el" href="imgui_8cpp_source.html#l04007">ImGui::SetCurrentContext()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="RenderSystem_8cpp_source.html#l00048">mtgb::RenderSystem::RenderImGuiWindows()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a4684d4374beee1f52053b4634edae2c8_cgraph.svg" width="1292" height="2467"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a4684d4374beee1f52053b4634edae2c8_icgraph.svg" width="396" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6a554c68a5c78f9e77caf43d584c7507" name="a6a554c68a5c78f9e77caf43d584c7507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a554c68a5c78f9e77caf43d584c7507">&#9670;&#160;</a></span>BeginImGuizmoFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::BeginImGuizmoFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00097">97</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>{</div>
+<div class="line"><span class="lineno">   99</span>    ImGuizmo::BeginFrame();</div>
+<div class="line"><span class="lineno">  100</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="RenderSystem_8cpp_source.html#l00048">mtgb::RenderSystem::RenderImGuiWindows()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a6a554c68a5c78f9e77caf43d584c7507_icgraph.svg" width="408" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5e8eab8d4237edc15d0e30f92b9b75ea" name="a5e8eab8d4237edc15d0e30f92b9b75ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e8eab8d4237edc15d0e30f92b9b75ea">&#9670;&#160;</a></span>CreateD3DResources()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::CreateD3DResources </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00209">209</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  210</span>{</div>
+<div class="line"><span class="lineno">  211</span>    ComPtr&lt;ID3D11Device&gt; device = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">mtgb::DirectX11Draw::pDevice_</a>;</div>
+<div class="line"><span class="lineno">  212</span>    ComPtr&lt;ID3D11DeviceContext&gt; context = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">mtgb::DirectX11Draw::pContext_</a>;</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>    Game::System&lt;DirectX11Manager&gt;().CreateViewport({ <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#aee7a0c8e2a933f21aa76308f9aeca39e">winWidth_</a>) ,<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a159fff2b6d78b519c17a3bc61763e1fc">winHeight_</a>) }, <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#ad917df25388e31a52ca448aa9eefe72c">viewport_</a>);</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    <span class="comment">// RTV用テクスチャ作成</span></div>
+<div class="line"><span class="lineno">  217</span>    D3D11_TEXTURE2D_DESC desc</div>
+<div class="line"><span class="lineno">  218</span>    {</div>
+<div class="line"><span class="lineno">  219</span>        .Width = <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#aee7a0c8e2a933f21aa76308f9aeca39e">winWidth_</a>,</div>
+<div class="line"><span class="lineno">  220</span>        .Height = <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a159fff2b6d78b519c17a3bc61763e1fc">winHeight_</a>,</div>
+<div class="line"><span class="lineno">  221</span>        .MipLevels = 1,</div>
+<div class="line"><span class="lineno">  222</span>        .ArraySize = 1,</div>
+<div class="line"><span class="lineno">  223</span>        .Format = DXGI_FORMAT_R8G8B8A8_UNORM,</div>
+<div class="line"><span class="lineno">  224</span>        .SampleDesc = { .Count = 1 },</div>
+<div class="line"><span class="lineno">  225</span>        .Usage = D3D11_USAGE_DEFAULT,</div>
+<div class="line"><span class="lineno">  226</span>        .BindFlags = D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE</div>
+<div class="line"><span class="lineno">  227</span>    };</div>
+<div class="line"><span class="lineno">  228</span>    </div>
+<div class="line"><span class="lineno">  229</span>    HRESULT hResult = device-&gt;CreateTexture2D(&amp;desc, <span class="keyword">nullptr</span>, <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a500483dfe1d74a2846a818a29e3dab2c">pTexture_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;CreateTexture2Dに失敗 @ImGuiRenderer::CreateD3DResources&quot;</span>);</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span>    hResult = device-&gt;CreateRenderTargetView(<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a500483dfe1d74a2846a818a29e3dab2c">pTexture_</a>.Get(), <span class="keyword">nullptr</span>, <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a413fcf45f8c9fb91b91c2a861e39a47d">pRenderTargetView_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  233</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;CreateRenderTargetViewに失敗 @ImGuiRenderer::CreateD3DResources&quot;</span>);</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>    <span class="comment">// SRV用テクスチャ作成</span></div>
+<div class="line"><span class="lineno">  236</span>    <span class="comment">//desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;</span></div>
+<div class="line"><span class="lineno">  237</span>    <span class="comment">//hResult = device-&gt;CreateTexture2D(&amp;desc, nullptr, pTexture_.GetAddressOf());</span></div>
+<div class="line"><span class="lineno">  238</span>    <span class="comment">//massert(SUCCEEDED(hResult) &amp;&amp; &quot;CreateTexture2Dに失敗 @ImGuiRenderer::CreateD3DResources&quot;);</span></div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>    hResult = device-&gt;CreateShaderResourceView(<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a500483dfe1d74a2846a818a29e3dab2c">pTexture_</a>.Get(), <span class="keyword">nullptr</span>, <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#ae0ed85ffdc261e0d2a1acea1bb24f416">pSRV_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  241</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;CreateShaderResourceViewに失敗 @ImGuiRenderer::CreateD3DResources&quot;</span>);</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>    <span class="comment">// 深度ステンシルと深度ステンシルビューを作成</span></div>
+<div class="line"><span class="lineno">  244</span>    Game::System&lt;DirectX11Manager&gt;().CreateDepthStencilAndDepthStencilView(</div>
+<div class="line"><span class="lineno">  245</span>        <a class="code hl_typedef" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#aee7a0c8e2a933f21aa76308f9aeca39e">winWidth_</a>), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a159fff2b6d78b519c17a3bc61763e1fc">winHeight_</a>)),</div>
+<div class="line"><span class="lineno">  246</span>        <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a500483dfe1d74a2846a818a29e3dab2c">pTexture_</a>.GetAddressOf(), <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#abcd64934d9d81640a12a30c821deb70d">pDepthStencilView_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>    <span class="comment">//ImGui_ImplDX11_CreateDeviceObjects();</span></div>
+<div class="line"><span class="lineno">  249</span>}</div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00009">MTAssert.h:9</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a5339b5f02833ad0ae154686c4a0ae037"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">mtgb::DirectX11Draw::pDevice_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11Device &gt; pDevice_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00140">DirectX11Draw.h:140</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_acad8126bc4c4a3ab9b2c871cf5dc94d1"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">mtgb::DirectX11Draw::pContext_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11DeviceContext &gt; pContext_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00141">DirectX11Draw.h:141</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a159fff2b6d78b519c17a3bc61763e1fc"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a159fff2b6d78b519c17a3bc61763e1fc">mtgb::ImGuiRenderer::winHeight_</a></div><div class="ttdeci">UINT winHeight_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00070">ImGuiRenderer.h:70</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_ad917df25388e31a52ca448aa9eefe72c"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#ad917df25388e31a52ca448aa9eefe72c">mtgb::ImGuiRenderer::viewport_</a></div><div class="ttdeci">D3D11_VIEWPORT viewport_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00084">ImGuiRenderer.h:84</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_aee7a0c8e2a933f21aa76308f9aeca39e"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#aee7a0c8e2a933f21aa76308f9aeca39e">mtgb::ImGuiRenderer::winWidth_</a></div><div class="ttdeci">UINT winWidth_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00070">ImGuiRenderer.h:70</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a00d8f33cd3151768d71476946783af58"><div class="ttname"><a href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">mtgb::Vector2Int</a></div><div class="ttdeci">Vector2T&lt; int &gt; Vector2Int</div><div class="ttdef"><b>Definition:</b> <a href="Vector2Int_8h_source.html#l00007">Vector2Int.h:7</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00141">mtgb::DirectX11Draw::pContext_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00140">mtgb::DirectX11Draw::pDevice_</a>.</p>
+
+</div>
+</div>
+<a id="aaf0a1747d1772d631bc8c472b086d64c" name="aaf0a1747d1772d631bc8c472b086d64c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf0a1747d1772d631bc8c472b086d64c">&#9670;&#160;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::Draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00129">129</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>{</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a725b57c53e525ab8e63e305f7898bae4" name="a725b57c53e525ab8e63e305f7898bae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a725b57c53e525ab8e63e305f7898bae4">&#9670;&#160;</a></span>End()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::End </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00164">164</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>{</div>
+<div class="line"><span class="lineno">  166</span>    <a class="code hl_function" href="namespaceImGui.html#a5479d93794a004c67ceb6d13f37c8254">ImGui::End</a>();</div>
+<div class="line"><span class="lineno">  167</span>}</div>
+<div class="ttc" id="anamespaceImGui_html_a5479d93794a004c67ceb6d13f37c8254"><div class="ttname"><a href="namespaceImGui.html#a5479d93794a004c67ceb6d13f37c8254">ImGui::End</a></div><div class="ttdeci">IMGUI_API void End()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l08537">imgui.cpp:8537</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8cpp_source.html#l08537">ImGui::End()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="MTImGui_8cpp_source.html#l00104">mtgb::MTImGui::ShowLog()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00348">mtgb::MTImGui::ShowWindow()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a725b57c53e525ab8e63e305f7898bae4_cgraph.svg" width="1643" height="2446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a725b57c53e525ab8e63e305f7898bae4_icgraph.svg" width="695" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8659d92cdaecc531688232b504e8c637" name="a8659d92cdaecc531688232b504e8c637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8659d92cdaecc531688232b504e8c637">&#9670;&#160;</a></span>EndFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::EndFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00134">134</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>{</div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_function" href="namespaceImGui.html#ab51a164f547317c16c441f1599e3946d">ImGui::Render</a>();</div>
+<div class="line"><span class="lineno">  137</span>    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#ad49984e658afc491c9b16312cf6bdd5b">ImGui_ImplDX11_RenderDrawData</a>(<a class="code hl_function" href="namespaceImGui.html#ab73131dc44b1267dac04f0c2bb0af983">ImGui::GetDrawData</a>());</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a>().ConfigFlags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a1853976c82e4686085530721ab586743a88d4a291a51aa304ab774557276eaf00">ImGuiConfigFlags_ViewportsEnable</a>)</div>
+<div class="line"><span class="lineno">  140</span>    {</div>
+<div class="line"><span class="lineno">  141</span>        <a class="code hl_function" href="namespaceImGui.html#aec5bbce3200aa681dac6a1915ef07f60">ImGui::UpdatePlatformWindows</a>();</div>
+<div class="line"><span class="lineno">  142</span>        <a class="code hl_function" href="namespaceImGui.html#a6b071e16d5fd79c23459135ff562bef5">ImGui::RenderPlatformWindowsDefault</a>();</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="line"><span class="lineno">  144</span>}</div>
+<div class="ttc" id="aimgui_8h_html_a1853976c82e4686085530721ab586743a88d4a291a51aa304ab774557276eaf00"><div class="ttname"><a href="imgui_8h.html#a1853976c82e4686085530721ab586743a88d4a291a51aa304ab774557276eaf00">ImGuiConfigFlags_ViewportsEnable</a></div><div class="ttdeci">@ ImGuiConfigFlags_ViewportsEnable</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01741">imgui.h:1741</a></div></div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_ad49984e658afc491c9b16312cf6bdd5b"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#ad49984e658afc491c9b16312cf6bdd5b">ImGui_ImplDX11_RenderDrawData</a></div><div class="ttdeci">void ImGui_ImplDX11_RenderDrawData(ImDrawData *draw_data)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00168">imgui_impl_dx11.cpp:168</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a3179e560812f878f3961ce803a5d9302"><div class="ttname"><a href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a></div><div class="ttdeci">IMGUI_API ImGuiIO &amp; GetIO()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l05074">imgui.cpp:5074</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a6b071e16d5fd79c23459135ff562bef5"><div class="ttname"><a href="namespaceImGui.html#a6b071e16d5fd79c23459135ff562bef5">ImGui::RenderPlatformWindowsDefault</a></div><div class="ttdeci">IMGUI_API void RenderPlatformWindowsDefault(void *platform_render_arg=NULL, void *renderer_render_arg=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l16988">imgui.cpp:16988</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_ab51a164f547317c16c441f1599e3946d"><div class="ttname"><a href="namespaceImGui.html#ab51a164f547317c16c441f1599e3946d">ImGui::Render</a></div><div class="ttdeci">IMGUI_API void Render()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l06146">imgui.cpp:6146</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_ab73131dc44b1267dac04f0c2bb0af983"><div class="ttname"><a href="namespaceImGui.html#ab73131dc44b1267dac04f0c2bb0af983">ImGui::GetDrawData</a></div><div class="ttdeci">IMGUI_API ImDrawData * GetDrawData()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l05101">imgui.cpp:5101</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_aec5bbce3200aa681dac6a1915ef07f60"><div class="ttname"><a href="namespaceImGui.html#aec5bbce3200aa681dac6a1915ef07f60">ImGui::UpdatePlatformWindows</a></div><div class="ttdeci">IMGUI_API void UpdatePlatformWindows()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l16876">imgui.cpp:16876</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8cpp_source.html#l05101">ImGui::GetDrawData()</a>, <a class="el" href="imgui_8cpp_source.html#l05074">ImGui::GetIO()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00168">ImGui_ImplDX11_RenderDrawData()</a>, <a class="el" href="imgui_8h_source.html#l01741">ImGuiConfigFlags_ViewportsEnable</a>, <a class="el" href="imgui_8cpp_source.html#l06146">ImGui::Render()</a>, <a class="el" href="imgui_8cpp_source.html#l16988">ImGui::RenderPlatformWindowsDefault()</a>, <a class="el" href="imgui_8cpp_source.html#l16876">ImGui::UpdatePlatformWindows()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="RenderSystem_8cpp_source.html#l00048">mtgb::RenderSystem::RenderImGuiWindows()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a8659d92cdaecc531688232b504e8c637_cgraph.svg" width="1523" height="1667"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a8659d92cdaecc531688232b504e8c637_icgraph.svg" width="396" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac2ab8d15428a8eedfe82d7df92a137e6" name="ac2ab8d15428a8eedfe82d7df92a137e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2ab8d15428a8eedfe82d7df92a137e6">&#9670;&#160;</a></span>GetViewport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">D3D11_VIEWPORT mtgb::ImGuiRenderer::GetViewport </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00067">67</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#ad917df25388e31a52ca448aa9eefe72c">viewport_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="ImGuiRenderer_8h_source.html#l00084">viewport_</a>.</p>
+
+</div>
+</div>
+<a id="a4db4a95a57f586a5fda30be1957f247a" name="a4db4a95a57f586a5fda30be1957f247a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db4a95a57f586a5fda30be1957f247a">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_typedef" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a> size = Game::System&lt;Screen&gt;().GetSize();</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#aee7a0c8e2a933f21aa76308f9aeca39e">winWidth_</a> = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(size.x);</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a159fff2b6d78b519c17a3bc61763e1fc">winHeight_</a> = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(size.y);</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_define" href="imgui_8h.html#a4846e0a12ef734d9467d31572034bf07">IMGUI_CHECKVERSION</a>();</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_function" href="namespaceImGui.html#a4ff6c9ad05a0eba37ce1b5ff1607810a">ImGui::CreateContext</a>();</div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_struct" href="structImGuiIO.html">ImGuiIO</a>&amp; io = <a class="code hl_function" href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a>();(void)io;</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c">BackendFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbeaa90c8780ae884d08435f6d97e24ac7c6">ImGuiBackendFlags_PlatformHasViewports</a>;</div>
+<div class="line"><span class="lineno">   49</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c">BackendFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea6c39c97e4b9b07b8005f45183eb5aba8">ImGuiBackendFlags_RendererHasViewports</a>;</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a6267b8a1ffa964035e6540f5e4296e39">ConfigFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#a1853976c82e4686085530721ab586743a926fc18370c8821625743c453cb043f2">ImGuiConfigFlags_DockingEnable</a>;</div>
+<div class="line"><span class="lineno">   52</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a6267b8a1ffa964035e6540f5e4296e39">ConfigFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#a1853976c82e4686085530721ab586743a88d4a291a51aa304ab774557276eaf00">ImGuiConfigFlags_ViewportsEnable</a>;</div>
+<div class="line"><span class="lineno">   53</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a6267b8a1ffa964035e6540f5e4296e39">ConfigFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#a1853976c82e4686085530721ab586743ad9b2a3221ab61f2df7dbac15e858c79e">ImGuiConfigFlags_NavEnableKeyboard</a>;     <span class="comment">// Enable Keyboard Controls</span></div>
+<div class="line"><span class="lineno">   54</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a6267b8a1ffa964035e6540f5e4296e39">ConfigFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#a1853976c82e4686085530721ab586743a6292b96f8f1fe5b55632d02ec14758f4">ImGuiConfigFlags_NavEnableGamepad</a>;      <span class="comment">// Enable Gamepad Controls</span></div>
+<div class="line"><span class="lineno">   55</span>    </div>
+<div class="line"><span class="lineno">   56</span>    </div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_struct" href="structImFont.html">ImFont</a>* font = io.<a class="code hl_variable" href="structImGuiIO.html#a24e4f5201fe8780267abc2acfc24254c">Fonts</a>-&gt;<a class="code hl_function" href="structImFontAtlas.html#a4c6bafad7f84b9de141e70b549b3601c">AddFontFromFileTTF</a>(<span class="stringliteral">&quot;c:\\Windows\\Fonts\\meiryo.ttc&quot;</span>, 18.0f, NULL, io.<a class="code hl_variable" href="structImGuiIO.html#a24e4f5201fe8780267abc2acfc24254c">Fonts</a>-&gt;<a class="code hl_function" href="structImFontAtlas.html#a2654afbbf73835bf08278cdc6c181a96">GetGlyphRangesJapanese</a>());</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(font != <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    <span class="comment">//ImGui_ImplWin32_EnableDpiAwareness();</span></div>
+<div class="line"><span class="lineno">   61</span>    <span class="comment">//float main_scale = ImGui_ImplWin32_GetDpiScaleForMonitor(::MonitorFromPoint(POINT{ 0, 0 }, MONITOR_DEFAULTTOPRIMARY));</span></div>
+<div class="line"><span class="lineno">   63</span><span class="comment"></span>    <span class="comment">//ImGuiStyle&amp; style = ImGui::GetStyle();</span></div>
+<div class="line"><span class="lineno">   64</span>    <span class="comment">//style.ScaleAllSizes(main_scale);        // Bake a fixed style scale. (until we have a solution for dynamic style scaling, changing this requires resetting Style + calling this again)</span></div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">//style.FontScaleDpi = main_scale;        // Set initial font scale. (using </span></div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="comment">//io.ConfigDpiScaleFonts = true;</span></div>
+<div class="line"><span class="lineno">   68</span>    <span class="comment">//io.ConfigDpiScaleViewports = true;</span></div>
+<div class="line"><span class="lineno">   69</span>    </div>
+<div class="line"><span class="lineno">   70</span>    <span class="comment">// Setup Dear ImGui style</span></div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_function" href="namespaceImGui.html#a26c67fc14081b359566d5e135cd8c767">ImGui::StyleColorsDark</a>();</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_function" href="namespaceImGui.html#a289dbbbffdadcf1231821d97a7c4a9be">ImGui::SetCurrentContext</a>(<a class="code hl_function" href="namespaceImGui.html#af557a6de5538099a0f6047eb994bbf42">ImGui::GetCurrentContext</a>());</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_function" href="imgui__impl__win32_8cpp.html#a9f752412a1f6dfdf6fc00dbbd90a8428">ImGui_ImplWin32_Init</a>(<a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">WinCtxRes::GetHWND</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>));</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ctx = <a class="code hl_function" href="namespaceImGui.html#af557a6de5538099a0f6047eb994bbf42">ImGui::GetCurrentContext</a>();</div>
+<div class="line"><span class="lineno">   77</span>    ComPtr&lt;ID3D11Device&gt; device = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">mtgb::DirectX11Draw::pDevice_</a>;</div>
+<div class="line"><span class="lineno">   78</span>    ComPtr&lt;ID3D11DeviceContext&gt; context = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">mtgb::DirectX11Draw::pContext_</a>;</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a6bbf28d9c3bbd7f8159772f07289e848">ImGui_ImplDX11_Init</a>(device.Get(), context.Get());</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a5e8eab8d4237edc15d0e30f92b9b75ea">CreateD3DResources</a>();</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a5e8eab8d4237edc15d0e30f92b9b75ea"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a5e8eab8d4237edc15d0e30f92b9b75ea">mtgb::ImGuiRenderer::CreateD3DResources</a></div><div class="ttdeci">void CreateD3DResources()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8cpp_source.html#l00209">ImGuiRenderer.cpp:209</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a1853976c82e4686085530721ab586743a6292b96f8f1fe5b55632d02ec14758f4"><div class="ttname"><a href="imgui_8h.html#a1853976c82e4686085530721ab586743a6292b96f8f1fe5b55632d02ec14758f4">ImGuiConfigFlags_NavEnableGamepad</a></div><div class="ttdeci">@ ImGuiConfigFlags_NavEnableGamepad</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01731">imgui.h:1731</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a1853976c82e4686085530721ab586743a926fc18370c8821625743c453cb043f2"><div class="ttname"><a href="imgui_8h.html#a1853976c82e4686085530721ab586743a926fc18370c8821625743c453cb043f2">ImGuiConfigFlags_DockingEnable</a></div><div class="ttdeci">@ ImGuiConfigFlags_DockingEnable</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01737">imgui.h:1737</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a1853976c82e4686085530721ab586743ad9b2a3221ab61f2df7dbac15e858c79e"><div class="ttname"><a href="imgui_8h.html#a1853976c82e4686085530721ab586743ad9b2a3221ab61f2df7dbac15e858c79e">ImGuiConfigFlags_NavEnableKeyboard</a></div><div class="ttdeci">@ ImGuiConfigFlags_NavEnableKeyboard</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01730">imgui.h:1730</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a29add481c904a47bbbd2980555524fbea6c39c97e4b9b07b8005f45183eb5aba8"><div class="ttname"><a href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea6c39c97e4b9b07b8005f45183eb5aba8">ImGuiBackendFlags_RendererHasViewports</a></div><div class="ttdeci">@ ImGuiBackendFlags_RendererHasViewports</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01768">imgui.h:1768</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a29add481c904a47bbbd2980555524fbeaa90c8780ae884d08435f6d97e24ac7c6"><div class="ttname"><a href="imgui_8h.html#a29add481c904a47bbbd2980555524fbeaa90c8780ae884d08435f6d97e24ac7c6">ImGuiBackendFlags_PlatformHasViewports</a></div><div class="ttdeci">@ ImGuiBackendFlags_PlatformHasViewports</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01766">imgui.h:1766</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a4846e0a12ef734d9467d31572034bf07"><div class="ttname"><a href="imgui_8h.html#a4846e0a12ef734d9467d31572034bf07">IMGUI_CHECKVERSION</a></div><div class="ttdeci">#define IMGUI_CHECKVERSION()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00102">imgui.h:102</a></div></div>
+<div class="ttc" id="aimgui_8h_html_acb09e7dc42e8e3cefb0ecaa197978920"><div class="ttname"><a href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a></div><div class="ttdeci">#define IM_ASSERT(_EXPR)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00096">imgui.h:96</a></div></div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_a6bbf28d9c3bbd7f8159772f07289e848"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#a6bbf28d9c3bbd7f8159772f07289e848">ImGui_ImplDX11_Init</a></div><div class="ttdeci">bool ImGui_ImplDX11_Init(ID3D11Device *device, ID3D11DeviceContext *device_context)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00620">imgui_impl_dx11.cpp:620</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a9f752412a1f6dfdf6fc00dbbd90a8428"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a9f752412a1f6dfdf6fc00dbbd90a8428">ImGui_ImplWin32_Init</a></div><div class="ttdeci">IMGUI_IMPL_API bool ImGui_ImplWin32_Init(void *hwnd)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00232">imgui_impl_win32.cpp:232</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a26c67fc14081b359566d5e135cd8c767"><div class="ttname"><a href="namespaceImGui.html#a26c67fc14081b359566d5e135cd8c767">ImGui::StyleColorsDark</a></div><div class="ttdeci">IMGUI_API void StyleColorsDark(ImGuiStyle *dst=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__draw_8cpp_source.html#l00184">imgui_draw.cpp:184</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a4ff6c9ad05a0eba37ce1b5ff1607810a"><div class="ttname"><a href="namespaceImGui.html#a4ff6c9ad05a0eba37ce1b5ff1607810a">ImGui::CreateContext</a></div><div class="ttdeci">IMGUI_API ImGuiContext * CreateContext(ImFontAtlas *shared_font_atlas=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l04031">imgui.cpp:4031</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_ac3067c8903d57f25d01d82b155657099"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">mtgb::WinCtxRes::GetHWND</a></div><div class="ttdeci">HWND GetHWND(WindowContext ctx)</div><div class="ttdoc">そのウィンドウのHWNDを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00025">WindowContextUtil.cpp:25</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+<div class="ttc" id="astructImFontAtlas_html_a2654afbbf73835bf08278cdc6c181a96"><div class="ttname"><a href="structImFontAtlas.html#a2654afbbf73835bf08278cdc6c181a96">ImFontAtlas::GetGlyphRangesJapanese</a></div><div class="ttdeci">IMGUI_API const ImWchar * GetGlyphRangesJapanese()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__draw_8cpp_source.html#l04886">imgui_draw.cpp:4886</a></div></div>
+<div class="ttc" id="astructImFontAtlas_html_a4c6bafad7f84b9de141e70b549b3601c"><div class="ttname"><a href="structImFontAtlas.html#a4c6bafad7f84b9de141e70b549b3601c">ImFontAtlas::AddFontFromFileTTF</a></div><div class="ttdeci">IMGUI_API ImFont * AddFontFromFileTTF(const char *filename, float size_pixels=0.0f, const ImFontConfig *font_cfg=NULL, const ImWchar *glyph_ranges=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__draw_8cpp_source.html#l03131">imgui_draw.cpp:3131</a></div></div>
+<div class="ttc" id="astructImFont_html"><div class="ttname"><a href="structImFont.html">ImFont</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03897">imgui.h:3898</a></div></div>
+<div class="ttc" id="astructImGuiIO_html"><div class="ttname"><a href="structImGuiIO.html">ImGuiIO</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02418">imgui.h:2419</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a24e4f5201fe8780267abc2acfc24254c"><div class="ttname"><a href="structImGuiIO.html#a24e4f5201fe8780267abc2acfc24254c">ImGuiIO::Fonts</a></div><div class="ttdeci">ImFontAtlas * Fonts</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02435">imgui.h:2435</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a6267b8a1ffa964035e6540f5e4296e39"><div class="ttname"><a href="structImGuiIO.html#a6267b8a1ffa964035e6540f5e4296e39">ImGuiIO::ConfigFlags</a></div><div class="ttdeci">ImGuiConfigFlags ConfigFlags</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02424">imgui.h:2424</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a92288d3e802788c8c408eac2c12e709c"><div class="ttname"><a href="structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c">ImGuiIO::BackendFlags</a></div><div class="ttdeci">ImGuiBackendFlags BackendFlags</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02425">imgui.h:2425</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__draw_8cpp_source.html#l03131">ImFontAtlas::AddFontFromFileTTF()</a>, <a class="el" href="imgui_8h_source.html#l02425">ImGuiIO::BackendFlags</a>, <a class="el" href="imgui_8h_source.html#l02424">ImGuiIO::ConfigFlags</a>, <a class="el" href="imgui_8cpp_source.html#l04031">ImGui::CreateContext()</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="imgui_8h_source.html#l02435">ImGuiIO::Fonts</a>, <a class="el" href="imgui_8cpp_source.html#l04002">ImGui::GetCurrentContext()</a>, <a class="el" href="imgui__draw_8cpp_source.html#l04886">ImFontAtlas::GetGlyphRangesJapanese()</a>, <a class="el" href="WindowContextUtil_8cpp_source.html#l00025">mtgb::WinCtxRes::GetHWND()</a>, <a class="el" href="imgui_8cpp_source.html#l05074">ImGui::GetIO()</a>, <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui_8h_source.html#l00102">IMGUI_CHECKVERSION</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00620">ImGui_ImplDX11_Init()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00232">ImGui_ImplWin32_Init()</a>, <a class="el" href="imgui_8h_source.html#l01766">ImGuiBackendFlags_PlatformHasViewports</a>, <a class="el" href="imgui_8h_source.html#l01768">ImGuiBackendFlags_RendererHasViewports</a>, <a class="el" href="imgui_8h_source.html#l01737">ImGuiConfigFlags_DockingEnable</a>, <a class="el" href="imgui_8h_source.html#l01731">ImGuiConfigFlags_NavEnableGamepad</a>, <a class="el" href="imgui_8h_source.html#l01730">ImGuiConfigFlags_NavEnableKeyboard</a>, <a class="el" href="imgui_8h_source.html#l01741">ImGuiConfigFlags_ViewportsEnable</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00141">mtgb::DirectX11Draw::pContext_</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00140">mtgb::DirectX11Draw::pDevice_</a>, <a class="el" href="imgui_8cpp_source.html#l04007">ImGui::SetCurrentContext()</a>, <a class="el" href="imgui__draw_8cpp_source.html#l00184">ImGui::StyleColorsDark()</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00015">mtgb::Vector2T&lt; T &gt;::y</a> (計26項目).</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a4db4a95a57f586a5fda30be1957f247a_cgraph.svg" width="1436" height="1754"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a74f0efdd24aa11e4798dfbd1f685cbec" name="a74f0efdd24aa11e4798dfbd1f685cbec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f0efdd24aa11e4798dfbd1f685cbec">&#9670;&#160;</a></span>OnResize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::OnResize </td>
+          <td>(</td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ウィンドウリサイズ時の処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>新しい幅</td></tr>
+    <tr><td class="paramname">height</td><td>新しい高さ</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00188">188</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>{</div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a5e8eab8d4237edc15d0e30f92b9b75ea">CreateD3DResources</a>();</div>
+<div class="line"><span class="lineno">  191</span>    <span class="comment">// ウィンドウサイズを更新</span></div>
+<div class="line"><span class="lineno">  192</span>    <span class="comment">/*winWidth_ = width;</span></div>
+<div class="line"><span class="lineno">  193</span><span class="comment">    winHeight_ = height;*/</span></div>
+<div class="line"><span class="lineno">  194</span>    </div>
+<div class="line"><span class="lineno">  195</span>    <span class="comment">// GameView の矩形情報をリセット</span></div>
+<div class="line"><span class="lineno">  196</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a68872d72f2012d096f79a044791fa440">gameViewRectValid_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  197</span>    </div>
+<div class="line"><span class="lineno">  198</span>    <span class="comment">// ImGuiのディスプレイサイズを更新</span></div>
+<div class="line"><span class="lineno">  199</span>    <span class="comment">/*ImGuiIO&amp; io = ImGui::GetIO();</span></div>
+<div class="line"><span class="lineno">  200</span><span class="comment">    io.DisplaySize = ImVec2(static_cast&lt;float&gt;(width), static_cast&lt;float&gt;(height));*/</span></div>
+<div class="line"><span class="lineno">  201</span>    </div>
+<div class="line"><span class="lineno">  202</span>    <span class="comment">// ImGuiのリソースを再作成する必要がある場合</span></div>
+<div class="line"><span class="lineno">  203</span>    <span class="comment">// ImGui_ImplDX11_InvalidateDeviceObjects();</span></div>
+<div class="line"><span class="lineno">  204</span>    <span class="comment">// ImGui_ImplDX11_CreateDeviceObjects();</span></div>
+<div class="line"><span class="lineno">  205</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9ef4f353cce28e09af4b18d95f4a253b" name="a9ef4f353cce28e09af4b18d95f4a253b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef4f353cce28e09af4b18d95f4a253b">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>開放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">mtgb::ISystem</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00168">168</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  169</span>{</div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#aa9731eb4cae116da513d6df90ff93387">ImGui_ImplDX11_Shutdown</a>();</div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_function" href="imgui__impl__win32_8cpp.html#a4eddd1969cc460312197f2df3dbc992a">ImGui_ImplWin32_Shutdown</a>();</div>
+<div class="line"><span class="lineno">  172</span>    <a class="code hl_function" href="namespaceImGui.html#ab9132deece575023170cd8e681d0581d">ImGui::DestroyContext</a>();</div>
+<div class="line"><span class="lineno">  173</span>}</div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_aa9731eb4cae116da513d6df90ff93387"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#aa9731eb4cae116da513d6df90ff93387">ImGui_ImplDX11_Shutdown</a></div><div class="ttdeci">void ImGui_ImplDX11_Shutdown()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00660">imgui_impl_dx11.cpp:660</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a4eddd1969cc460312197f2df3dbc992a"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a4eddd1969cc460312197f2df3dbc992a">ImGui_ImplWin32_Shutdown</a></div><div class="ttdeci">void ImGui_ImplWin32_Shutdown()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00243">imgui_impl_win32.cpp:243</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_ab9132deece575023170cd8e681d0581d"><div class="ttname"><a href="namespaceImGui.html#ab9132deece575023170cd8e681d0581d">ImGui::DestroyContext</a></div><div class="ttdeci">IMGUI_API void DestroyContext(ImGuiContext *ctx=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l04042">imgui.cpp:4042</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8cpp_source.html#l04042">ImGui::DestroyContext()</a>, <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00660">ImGui_ImplDX11_Shutdown()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00243">ImGui_ImplWin32_Shutdown()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a9ef4f353cce28e09af4b18d95f4a253b_cgraph.svg" width="1840" height="1580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab1b0148d8603765edd4109ca24dedf92" name="ab1b0148d8603765edd4109ca24dedf92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b0148d8603765edd4109ca24dedf92">&#9670;&#160;</a></span>RenderSceneView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::RenderSceneView </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00151">151</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>{</div>
+<div class="line"><span class="lineno">  153</span>    </div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_function" href="namespaceImGui.html#a1edd4a4d9fc6bbf0393cb22b17ec20c7">ImGui::Image</a>((<span class="keywordtype">void</span>*)<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#ae0ed85ffdc261e0d2a1acea1bb24f416">pSRV_</a>.Get(), <a class="code hl_struct" href="structImVec2.html">ImVec2</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#aee7a0c8e2a933f21aa76308f9aeca39e">winWidth_</a>), <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a159fff2b6d78b519c17a3bc61763e1fc">winHeight_</a>)));</div>
+<div class="line"><span class="lineno">  155</span>}</div>
+<div class="ttc" id="anamespaceImGui_html_a1edd4a4d9fc6bbf0393cb22b17ec20c7"><div class="ttname"><a href="namespaceImGui.html#a1edd4a4d9fc6bbf0393cb22b17ec20c7">ImGui::Image</a></div><div class="ttdeci">IMGUI_API void Image(ImTextureRef tex_ref, const ImVec2 &amp;image_size, const ImVec2 &amp;uv0=ImVec2(0, 0), const ImVec2 &amp;uv1=ImVec2(1, 1))</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l01138">imgui_widgets.cpp:1138</a></div></div>
+<div class="ttc" id="astructImVec2_html"><div class="ttname"><a href="structImVec2.html">ImVec2</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00292">imgui.h:293</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__widgets_8cpp_source.html#l01138">ImGui::Image()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="MTImGui_8cpp_source.html#l00348">mtgb::MTImGui::ShowWindow()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_ab1b0148d8603765edd4109ca24dedf92_cgraph.svg" width="2359" height="1142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_ab1b0148d8603765edd4109ca24dedf92_icgraph.svg" width="663" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a434147aa5ce3fe561ed4760fdd56ec83" name="a434147aa5ce3fe561ed4760fdd56ec83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a434147aa5ce3fe561ed4760fdd56ec83">&#9670;&#160;</a></span>ResetComPtrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::ResetComPtrs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00175">175</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>{</div>
+<div class="line"><span class="lineno">  177</span>    <span class="comment">// ImGuiが保持しているリソース解放</span></div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_function" href="imgui__impl__dx11_8cpp.html#a17219065c158199dda392d24b9b6e8a0">ImGui_ImplDX11_InvalidateDeviceObjects</a>();</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#ae0ed85ffdc261e0d2a1acea1bb24f416">pSRV_</a>.Reset();</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a413fcf45f8c9fb91b91c2a861e39a47d">pRenderTargetView_</a>.Reset();</div>
+<div class="line"><span class="lineno">  182</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#abcd64934d9d81640a12a30c821deb70d">pDepthStencilView_</a>.Reset();</div>
+<div class="line"><span class="lineno">  183</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a2af79fd45b240f444485d9ed48df6283">pDepthStencil_</a>.Reset();</div>
+<div class="line"><span class="lineno">  184</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a500483dfe1d74a2846a818a29e3dab2c">pTexture_</a>.Reset();</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>}</div>
+<div class="ttc" id="aimgui__impl__dx11_8cpp_html_a17219065c158199dda392d24b9b6e8a0"><div class="ttname"><a href="imgui__impl__dx11_8cpp.html#a17219065c158199dda392d24b9b6e8a0">ImGui_ImplDX11_InvalidateDeviceObjects</a></div><div class="ttdeci">void ImGui_ImplDX11_InvalidateDeviceObjects()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__dx11_8cpp_source.html#l00597">imgui_impl_dx11.cpp:597</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__impl__dx11_8cpp_source.html#l00597">ImGui_ImplDX11_InvalidateDeviceObjects()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a434147aa5ce3fe561ed4760fdd56ec83_cgraph.svg" width="1364" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a97281ceb7ce6e422c152575fb26ad8cd" name="a97281ceb7ce6e422c152575fb26ad8cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97281ceb7ce6e422c152575fb26ad8cd">&#9670;&#160;</a></span>SetDrawList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::SetDrawList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00146">146</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>{</div>
+<div class="line"><span class="lineno">  148</span>    ImGuizmo::SetDrawlist(<a class="code hl_function" href="namespaceImGui.html#aa100c22a9feafe843fa12c66590cbda0">ImGui::GetWindowDrawList</a>());</div>
+<div class="line"><span class="lineno">  149</span>}</div>
+<div class="ttc" id="anamespaceImGui_html_aa100c22a9feafe843fa12c66590cbda0"><div class="ttname"><a href="namespaceImGui.html#aa100c22a9feafe843fa12c66590cbda0">ImGui::GetWindowDrawList</a></div><div class="ttdeci">IMGUI_API ImDrawList * GetWindowDrawList()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l09079">imgui.cpp:9079</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8cpp_source.html#l09079">ImGui::GetWindowDrawList()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="MTImGui_8cpp_source.html#l00348">mtgb::MTImGui::ShowWindow()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a97281ceb7ce6e422c152575fb26ad8cd_cgraph.svg" width="663" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a97281ceb7ce6e422c152575fb26ad8cd_icgraph.svg" width="663" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aeac47500fe5c07d84ad9990d3c278e27" name="aeac47500fe5c07d84ad9990d3c278e27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac47500fe5c07d84ad9990d3c278e27">&#9670;&#160;</a></span>SetImGuizmoRenderTargetView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::SetImGuizmoRenderTargetView </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ImGuizmoウィンドウを描画するためにRTVをセット </p>
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00118">118</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{</div>
+<div class="line"><span class="lineno">  120</span>    <span class="comment">//ID3D11ShaderResourceView* nullSRV[16]{};</span></div>
+<div class="line"><span class="lineno">  122</span><span class="comment"></span>    <span class="comment">//DirectX11Draw::pContext_-&gt;PSSetShaderResources(0, 16, nullSRV);</span></div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="comment">//DirectX11Draw::pContext_-&gt;PSSetShaderResources(0, 0, pSRV_.GetAddressOf());</span></div>
+<div class="line"><span class="lineno">  125</span>    <span class="comment">//Game::System&lt;DirectX11Manager&gt;().ChangeViewport(viewport_);</span></div>
+<div class="line"><span class="lineno">  126</span>    Game::System&lt;DirectX11Manager&gt;().ChangeRenderTargets(<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a413fcf45f8c9fb91b91c2a861e39a47d">pRenderTargetView_</a>,<a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#abcd64934d9d81640a12a30c821deb70d">pDepthStencilView_</a>);</div>
+<div class="line"><span class="lineno">  127</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="RenderSystem_8cpp_source.html#l00048">mtgb::RenderSystem::RenderImGuiWindows()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_aeac47500fe5c07d84ad9990d3c278e27_icgraph.svg" width="470" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2c61999c1786cd82207b81ae9a21169e" name="a2c61999c1786cd82207b81ae9a21169e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c61999c1786cd82207b81ae9a21169e">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00085">85</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>{</div>
+<div class="line"><span class="lineno">   87</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a961f6aa8f6af8502404b28fe26a1c0b9" name="a961f6aa8f6af8502404b28fe26a1c0b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a961f6aa8f6af8502404b28fe26a1c0b9">&#9670;&#160;</a></span>UpdateGameViewRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImGuiRenderer::UpdateGameViewRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a> の <a class="el" href="ImGuiRenderer_8cpp_source.html#l00157">157</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  158</span>{</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a73444827b59f04cbbf84972335c7c680">gameViewPos_</a> = <a class="code hl_function" href="namespaceImGui.html#a413d939f3ef416a47d6e5b48be955146">ImGui::GetWindowPos</a>();</div>
+<div class="line"><span class="lineno">  160</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#abe7eca9a34d82a481876bbe28f1c7ffc">gameViewSize_</a> = <a class="code hl_function" href="namespaceImGui.html#aaa5c0bfac7125ba9850a08b6db2e90c9">ImGui::GetWindowSize</a>();</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiRenderer.html#a68872d72f2012d096f79a044791fa440">gameViewRectValid_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  162</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a73444827b59f04cbbf84972335c7c680"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a73444827b59f04cbbf84972335c7c680">mtgb::ImGuiRenderer::gameViewPos_</a></div><div class="ttdeci">ImVec2 gameViewPos_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00073">ImGuiRenderer.h:73</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_abe7eca9a34d82a481876bbe28f1c7ffc"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#abe7eca9a34d82a481876bbe28f1c7ffc">mtgb::ImGuiRenderer::gameViewSize_</a></div><div class="ttdeci">ImVec2 gameViewSize_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8h_source.html#l00074">ImGuiRenderer.h:74</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a413d939f3ef416a47d6e5b48be955146"><div class="ttname"><a href="namespaceImGui.html#a413d939f3ef416a47d6e5b48be955146">ImGui::GetWindowPos</a></div><div class="ttdeci">IMGUI_API ImVec2 GetWindowPos()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l08845">imgui.cpp:8845</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_aaa5c0bfac7125ba9850a08b6db2e90c9"><div class="ttname"><a href="namespaceImGui.html#aaa5c0bfac7125ba9850a08b6db2e90c9">ImGui::GetWindowSize</a></div><div class="ttdeci">IMGUI_API ImVec2 GetWindowSize()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l08888">imgui.cpp:8888</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8cpp_source.html#l08845">ImGui::GetWindowPos()</a>, <a class="el" href="imgui_8cpp_source.html#l08888">ImGui::GetWindowSize()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiRenderer_a961f6aa8f6af8502404b28fe26a1c0b9_cgraph.svg" width="680" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a73444827b59f04cbbf84972335c7c680" name="a73444827b59f04cbbf84972335c7c680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73444827b59f04cbbf84972335c7c680">&#9670;&#160;</a></span>gameViewPos_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structImVec2.html">ImVec2</a> mtgb::ImGuiRenderer::gameViewPos_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00073">73</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a68872d72f2012d096f79a044791fa440" name="a68872d72f2012d096f79a044791fa440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68872d72f2012d096f79a044791fa440">&#9670;&#160;</a></span>gameViewRectValid_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::ImGuiRenderer::gameViewRectValid_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00075">75</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abe7eca9a34d82a481876bbe28f1c7ffc" name="abe7eca9a34d82a481876bbe28f1c7ffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7eca9a34d82a481876bbe28f1c7ffc">&#9670;&#160;</a></span>gameViewSize_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structImVec2.html">ImVec2</a> mtgb::ImGuiRenderer::gameViewSize_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00074">74</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2af79fd45b240f444485d9ed48df6283" name="a2af79fd45b240f444485d9ed48df6283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af79fd45b240f444485d9ed48df6283">&#9670;&#160;</a></span>pDepthStencil_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;ID3D11Texture2D&gt; mtgb::ImGuiRenderer::pDepthStencil_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00082">82</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abcd64934d9d81640a12a30c821deb70d" name="abcd64934d9d81640a12a30c821deb70d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd64934d9d81640a12a30c821deb70d">&#9670;&#160;</a></span>pDepthStencilView_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;ID3D11DepthStencilView&gt; mtgb::ImGuiRenderer::pDepthStencilView_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00083">83</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a413fcf45f8c9fb91b91c2a861e39a47d" name="a413fcf45f8c9fb91b91c2a861e39a47d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a413fcf45f8c9fb91b91c2a861e39a47d">&#9670;&#160;</a></span>pRenderTargetView_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;ID3D11RenderTargetView&gt; mtgb::ImGuiRenderer::pRenderTargetView_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00078">78</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae0ed85ffdc261e0d2a1acea1bb24f416" name="ae0ed85ffdc261e0d2a1acea1bb24f416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ed85ffdc261e0d2a1acea1bb24f416">&#9670;&#160;</a></span>pSRV_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;ID3D11ShaderResourceView&gt; mtgb::ImGuiRenderer::pSRV_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00079">79</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1a1b3ac006d2f53f0a2ab739d64c4f93" name="a1a1b3ac006d2f53f0a2ab739d64c4f93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a1b3ac006d2f53f0a2ab739d64c4f93">&#9670;&#160;</a></span>pSRVTexture_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;ID3D11Texture2D&gt; mtgb::ImGuiRenderer::pSRVTexture_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00080">80</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a500483dfe1d74a2846a818a29e3dab2c" name="a500483dfe1d74a2846a818a29e3dab2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a500483dfe1d74a2846a818a29e3dab2c">&#9670;&#160;</a></span>pTexture_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;ID3D11Texture2D&gt; mtgb::ImGuiRenderer::pTexture_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00081">81</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad917df25388e31a52ca448aa9eefe72c" name="ad917df25388e31a52ca448aa9eefe72c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad917df25388e31a52ca448aa9eefe72c">&#9670;&#160;</a></span>viewport_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">D3D11_VIEWPORT mtgb::ImGuiRenderer::viewport_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00084">84</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiRenderer_8h_source.html#l00067">GetViewport()</a>.</p>
+
+</div>
+</div>
+<a id="a159fff2b6d78b519c17a3bc61763e1fc" name="a159fff2b6d78b519c17a3bc61763e1fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a159fff2b6d78b519c17a3bc61763e1fc">&#9670;&#160;</a></span>winHeight_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT mtgb::ImGuiRenderer::winHeight_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00070">70</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aee7a0c8e2a933f21aa76308f9aeca39e" name="aee7a0c8e2a933f21aa76308f9aeca39e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee7a0c8e2a933f21aa76308f9aeca39e">&#9670;&#160;</a></span>winWidth_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT mtgb::ImGuiRenderer::winWidth_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a> の <a class="el" href="ImGuiRenderer_8h_source.html#l00070">70</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="ImGuiRenderer_8h_source.html">ImGuiRenderer.h</a></li>
+<li><a class="el" href="ImGuiRenderer_8cpp_source.html">ImGuiRenderer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1ImGuiRenderer.html">ImGuiRenderer</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

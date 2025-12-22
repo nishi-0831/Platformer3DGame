@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: LLGI.Base.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">install_msvc2022_x64/include/LLGI/LLGI.Base.h ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;queue&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+install_msvc2022_x64/include/LLGI/LLGI.Base.h の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h__incl.svg" width="1098" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h__dep__incl.svg" width="1188" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLLGI_1_1Vec2I.html">LLGI::Vec2I</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLLGI_1_1Vec2F.html">LLGI::Vec2F</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLLGI_1_1Vec3I.html">LLGI::Vec3I</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLLGI_1_1Vec3F.html">LLGI::Vec3F</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLLGI_1_1Color8.html">LLGI::Color8</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLLGI_1_1ColorF.html">LLGI::ColorF</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLLGI_1_1DataStructure.html">LLGI::DataStructure</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html">LLGI::ReferenceObject</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLLGI_1_1ReferenceDeleter.html">LLGI::ReferenceDeleter&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1Window.html">LLGI::Window</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">window abstraction class  <a href="classLLGI_1_1Window.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1hash_3_01LLGI_1_1TextureFormatType_01_4.html">std::hash&lt; LLGI::TextureFormatType &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceLLGI"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html">LLGI</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacestd"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestd.html">std</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a9025c3ed978510d6395284e4a2b9e1c7"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a9025c3ed978510d6395284e4a2b9e1c7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a9025c3ed978510d6395284e4a2b9e1c7">LLGI::unique_ref</a> = std::unique_ptr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, ReferenceDeleter&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &gt;</td></tr>
+<tr class="separator:a9025c3ed978510d6395284e4a2b9e1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:aabec97556d4337960fcb79dae8b3ff57"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57">LLGI::DeviceType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57a7a1920d61156abc05a60135aefe8bc67">LLGI::Default</a>
+, <a class="el" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57a547c6656ffad5869900f92520f1f98cd">LLGI::DirectX12</a>
+, <a class="el" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57aeaa57a9b4248ce3968e718895e1c2f04">LLGI::Metal</a>
+, <a class="el" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57a38625270231b647116c80bcbc4f9d1d8">LLGI::Vulkan</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57a7a1920d61156abc05a60135aefe8bc67">LLGI::Default</a>
+, <a class="el" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57a547c6656ffad5869900f92520f1f98cd">LLGI::DirectX12</a>
+, <a class="el" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57aeaa57a9b4248ce3968e718895e1c2f04">LLGI::Metal</a>
+, <a class="el" href="namespaceLLGI.html#aabec97556d4337960fcb79dae8b3ff57a38625270231b647116c80bcbc4f9d1d8">LLGI::Vulkan</a>
+<br />
+ }</td></tr>
+<tr class="separator:aabec97556d4337960fcb79dae8b3ff57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b355ede135d40f536b08774f0811d1"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#ad8b355ede135d40f536b08774f0811d1">LLGI::ErrorCode</a> { <a class="el" href="namespaceLLGI.html#ad8b355ede135d40f536b08774f0811d1ae0aa021e21dddbd6d8cecec71e9cf564">LLGI::OK</a>
+, <a class="el" href="namespaceLLGI.html#ad8b355ede135d40f536b08774f0811d1ad7c8c85bf79bbe1b7188497c32c3b0ca">LLGI::Failed</a>
+, <a class="el" href="namespaceLLGI.html#ad8b355ede135d40f536b08774f0811d1ae0aa021e21dddbd6d8cecec71e9cf564">LLGI::OK</a>
+, <a class="el" href="namespaceLLGI.html#ad8b355ede135d40f536b08774f0811d1ad7c8c85bf79bbe1b7188497c32c3b0ca">LLGI::Failed</a>
+ }</td></tr>
+<tr class="separator:ad8b355ede135d40f536b08774f0811d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac6d31ed263faebce9197352e202b305"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305">LLGI::ShaderStageType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305ab22b929ba52471a02d18bb3a4e4472e6">LLGI::Vertex</a>
+, <a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305a08822b3ae4e2aede0afe08abe600e9c0">LLGI::Pixel</a>
+, <a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305aa623a8d0366bf079411aa30be45b2d10">LLGI::Compute</a>
+, <a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305a6a061313d22e51e0f25b7cd4dc065233">LLGI::Max</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305ab22b929ba52471a02d18bb3a4e4472e6">LLGI::Vertex</a>
+, <a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305a08822b3ae4e2aede0afe08abe600e9c0">LLGI::Pixel</a>
+, <a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305aa623a8d0366bf079411aa30be45b2d10">LLGI::Compute</a>
+, <a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305a6a061313d22e51e0f25b7cd4dc065233">LLGI::Max</a>
+<br />
+ }</td></tr>
+<tr class="separator:aac6d31ed263faebce9197352e202b305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f28b7f1b32d2c6dbfbc6ffb48ccd69c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69c">LLGI::CullingMode</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69caba360a794737bcc8657a5b6e870d7ba8">LLGI::Clockwise</a>
+, <a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69ca8f23635f9ec49db2161fc5cddf033a79">LLGI::CounterClockwise</a>
+, <a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69caf4bc09e4b14e963ece370fc2d51438bc">LLGI::DoubleSide</a>
+, <a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69caba360a794737bcc8657a5b6e870d7ba8">LLGI::Clockwise</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69ca8f23635f9ec49db2161fc5cddf033a79">LLGI::CounterClockwise</a>
+, <a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69caf4bc09e4b14e963ece370fc2d51438bc">LLGI::DoubleSide</a>
+<br />
+ }</td></tr>
+<tr class="separator:a3f28b7f1b32d2c6dbfbc6ffb48ccd69c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e0a47aad7e49508eb84ce01dbc9ddd7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7">LLGI::BlendEquationType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7aec211f7c20af43e742bf2570c3cb84f9">LLGI::Add</a>
+, <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7ae80155eceb940c89e2de63ad05868db2">LLGI::Sub</a>
+, <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7af6c51b2deb90598692ec688698bf9079">LLGI::ReverseSub</a>
+, <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7a78d811e98514cd165dda532286610fd2">LLGI::Min</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7a6a061313d22e51e0f25b7cd4dc065233">LLGI::Max</a>
+, <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7aec211f7c20af43e742bf2570c3cb84f9">LLGI::Add</a>
+, <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7ae80155eceb940c89e2de63ad05868db2">LLGI::Sub</a>
+, <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7af6c51b2deb90598692ec688698bf9079">LLGI::ReverseSub</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7a78d811e98514cd165dda532286610fd2">LLGI::Min</a>
+, <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7a6a061313d22e51e0f25b7cd4dc065233">LLGI::Max</a>
+<br />
+ }</td></tr>
+<tr class="separator:a3e0a47aad7e49508eb84ce01dbc9ddd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea330057a279b1f21ee2d9bc20dd5503"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">LLGI::BlendFuncType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad7ed4ee1df437474d005188535f74875">LLGI::Zero</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503a06c2cea18679d64399783748fa367bdd">LLGI::One</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503a2ad714e29d37896d79187312086bc6fe">LLGI::SrcColor</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503a09d3240b4e2481b1a729da24e9bfddf7">LLGI::OneMinusSrcColor</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad5c7b7f0102df3f7305c43f73fc3a498">LLGI::SrcAlpha</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ac00a6016489cff63d50d489ce52254cc">LLGI::OneMinusSrcAlpha</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503af72dbe2436b38a39e5927ed644e6818b">LLGI::DstAlpha</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503a4132e4b87a8d461be2c6ee8fc620cfb2">LLGI::OneMinusDstAlpha</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503afaedf511c99a5461048fd6a3b73da26c">LLGI::DstColor</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503a09f1a054ebd4d3850fd248bd2fa7b325">LLGI::OneMinusDstColor</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad7ed4ee1df437474d005188535f74875">LLGI::Zero</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503a06c2cea18679d64399783748fa367bdd">LLGI::One</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503a2ad714e29d37896d79187312086bc6fe">LLGI::SrcColor</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503a09d3240b4e2481b1a729da24e9bfddf7">LLGI::OneMinusSrcColor</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad5c7b7f0102df3f7305c43f73fc3a498">LLGI::SrcAlpha</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ac00a6016489cff63d50d489ce52254cc">LLGI::OneMinusSrcAlpha</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503af72dbe2436b38a39e5927ed644e6818b">LLGI::DstAlpha</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503a4132e4b87a8d461be2c6ee8fc620cfb2">LLGI::OneMinusDstAlpha</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503afaedf511c99a5461048fd6a3b73da26c">LLGI::DstColor</a>
+, <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503a09f1a054ebd4d3850fd248bd2fa7b325">LLGI::OneMinusDstColor</a>
+<br />
+ }</td></tr>
+<tr class="separator:aea330057a279b1f21ee2d9bc20dd5503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b79cd1ea31397c87173522301d26f4"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4">LLGI::VertexLayoutFormat</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4ad05d603c5884ae9ccc392513becba305">LLGI::R32G32B32_FLOAT</a>
+, <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4a82bb90f92345314d9299d3e77d87f259">LLGI::R32G32B32A32_FLOAT</a>
+, <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4af55c1c722034e92213df328d31e33c62">LLGI::R8G8B8A8_UNORM</a>
+, <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4a67db604c7206857ceb4fe94ee620cae4">LLGI::R8G8B8A8_UINT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4a034e2a26f1b92822236e0095a5ca1848">LLGI::R32G32_FLOAT</a>
+, <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4a2598f201b222b270e09b7913987d7272">LLGI::R32_FLOAT</a>
+, <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4ad05d603c5884ae9ccc392513becba305">LLGI::R32G32B32_FLOAT</a>
+, <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4a82bb90f92345314d9299d3e77d87f259">LLGI::R32G32B32A32_FLOAT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4af55c1c722034e92213df328d31e33c62">LLGI::R8G8B8A8_UNORM</a>
+, <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4a67db604c7206857ceb4fe94ee620cae4">LLGI::R8G8B8A8_UINT</a>
+, <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4a034e2a26f1b92822236e0095a5ca1848">LLGI::R32G32_FLOAT</a>
+, <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4a2598f201b222b270e09b7913987d7272">LLGI::R32_FLOAT</a>
+<br />
+ }</td></tr>
+<tr class="separator:a17b79cd1ea31397c87173522301d26f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14dd396e5b1dd56f4436f1049286a860"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860">LLGI::TopologyType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860a5e5500cb2b82eb72d550de644bd1b64b">LLGI::Triangle</a>
+, <a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860a4803e6b9e63dabf04de980788d6a13c4">LLGI::Line</a>
+, <a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860a2a3cd5946cfd317eb99c3d32e35e2d4c">LLGI::Point</a>
+, <a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860a5e5500cb2b82eb72d550de644bd1b64b">LLGI::Triangle</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860a4803e6b9e63dabf04de980788d6a13c4">LLGI::Line</a>
+, <a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860a2a3cd5946cfd317eb99c3d32e35e2d4c">LLGI::Point</a>
+<br />
+ }</td></tr>
+<tr class="separator:a14dd396e5b1dd56f4436f1049286a860"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3520e869c033fa3338893a9006bcc8"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#abb3520e869c033fa3338893a9006bcc8">LLGI::TextureWrapMode</a> { <a class="el" href="namespaceLLGI.html#abb3520e869c033fa3338893a9006bcc8a08825280e3f8137556325061ba67ff8c">LLGI::Clamp</a>
+, <a class="el" href="namespaceLLGI.html#abb3520e869c033fa3338893a9006bcc8a7020426cfb0a204051be4b3053d2acc8">LLGI::Repeat</a>
+, <a class="el" href="namespaceLLGI.html#abb3520e869c033fa3338893a9006bcc8a08825280e3f8137556325061ba67ff8c">LLGI::Clamp</a>
+, <a class="el" href="namespaceLLGI.html#abb3520e869c033fa3338893a9006bcc8a7020426cfb0a204051be4b3053d2acc8">LLGI::Repeat</a>
+ }</td></tr>
+<tr class="separator:abb3520e869c033fa3338893a9006bcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72d926a545b020c9a5f7285c221f0516"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a72d926a545b020c9a5f7285c221f0516">LLGI::TextureMinMagFilter</a> { <a class="el" href="namespaceLLGI.html#a72d926a545b020c9a5f7285c221f0516a60494f02d440f316319dd0fad40ad007">LLGI::Nearest</a>
+, <a class="el" href="namespaceLLGI.html#a72d926a545b020c9a5f7285c221f0516a32a843da6ea40ab3b17a3421ccdf671b">LLGI::Linear</a>
+, <a class="el" href="namespaceLLGI.html#a72d926a545b020c9a5f7285c221f0516a60494f02d440f316319dd0fad40ad007">LLGI::Nearest</a>
+, <a class="el" href="namespaceLLGI.html#a72d926a545b020c9a5f7285c221f0516a32a843da6ea40ab3b17a3421ccdf671b">LLGI::Linear</a>
+ }</td></tr>
+<tr class="separator:a72d926a545b020c9a5f7285c221f0516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42d4f01ef0b5e53e8ac3a23634c4d5d6"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6">LLGI::DepthFuncType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a6e7b34fa59e1bd229b207892956dc41c">LLGI::Never</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a1cfdf0e8d0c87a228c1f40d9bee7888b">LLGI::Less</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6af5f286e73bda105e538310b3190f75c5">LLGI::Equal</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6ad3e6fdac55bb7b0edd7834c968ba1f38">LLGI::LessEqual</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a8768a6821cd735aea4f5b0df88c1fc6a">LLGI::Greater</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a19bb0af2c3c530538cb41aff7f235b96">LLGI::NotEqual</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a758b05d899def79c9eb864ad4f96be1f">LLGI::GreaterEqual</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a68eec46437c384d8dad18d5464ebc35c">LLGI::Always</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a6e7b34fa59e1bd229b207892956dc41c">LLGI::Never</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a1cfdf0e8d0c87a228c1f40d9bee7888b">LLGI::Less</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6af5f286e73bda105e538310b3190f75c5">LLGI::Equal</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6ad3e6fdac55bb7b0edd7834c968ba1f38">LLGI::LessEqual</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a8768a6821cd735aea4f5b0df88c1fc6a">LLGI::Greater</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a19bb0af2c3c530538cb41aff7f235b96">LLGI::NotEqual</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a758b05d899def79c9eb864ad4f96be1f">LLGI::GreaterEqual</a>
+, <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a68eec46437c384d8dad18d5464ebc35c">LLGI::Always</a>
+<br />
+ }</td></tr>
+<tr class="separator:a42d4f01ef0b5e53e8ac3a23634c4d5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee880e8b7815815caf7090a00071957"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957">LLGI::CompareFuncType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a6e7b34fa59e1bd229b207892956dc41c">LLGI::Never</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a1cfdf0e8d0c87a228c1f40d9bee7888b">LLGI::Less</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957af5f286e73bda105e538310b3190f75c5">LLGI::Equal</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957ad3e6fdac55bb7b0edd7834c968ba1f38">LLGI::LessEqual</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a8768a6821cd735aea4f5b0df88c1fc6a">LLGI::Greater</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a19bb0af2c3c530538cb41aff7f235b96">LLGI::NotEqual</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a758b05d899def79c9eb864ad4f96be1f">LLGI::GreaterEqual</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a68eec46437c384d8dad18d5464ebc35c">LLGI::Always</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a6e7b34fa59e1bd229b207892956dc41c">LLGI::Never</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a1cfdf0e8d0c87a228c1f40d9bee7888b">LLGI::Less</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957af5f286e73bda105e538310b3190f75c5">LLGI::Equal</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957ad3e6fdac55bb7b0edd7834c968ba1f38">LLGI::LessEqual</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a8768a6821cd735aea4f5b0df88c1fc6a">LLGI::Greater</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a19bb0af2c3c530538cb41aff7f235b96">LLGI::NotEqual</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a758b05d899def79c9eb864ad4f96be1f">LLGI::GreaterEqual</a>
+, <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a68eec46437c384d8dad18d5464ebc35c">LLGI::Always</a>
+<br />
+ }</td></tr>
+<tr class="separator:a8ee880e8b7815815caf7090a00071957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e697d82a727af9e2cc83a4a45977283"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">LLGI::StencilOperatorType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">LLGI::Keep</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283ad7ed4ee1df437474d005188535f74875">LLGI::Zero</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a0ebe6df8a3ac338e0512acc741823fdb">LLGI::Replace</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283aa13ae544ad9721e3974570f63eb495d6">LLGI::IncClamp</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a922b8cd632a490708837a22681b05671">LLGI::DecClamp</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a9b8958acb7be504bb5f55f17c0eea366">LLGI::Invert</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283aac53820c7ca0c77c2193f6ab26251975">LLGI::IncRepeat</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283af518f532a401f986182fc911879ef542">LLGI::DecRepeat</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">LLGI::Keep</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283ad7ed4ee1df437474d005188535f74875">LLGI::Zero</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a0ebe6df8a3ac338e0512acc741823fdb">LLGI::Replace</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283aa13ae544ad9721e3974570f63eb495d6">LLGI::IncClamp</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a922b8cd632a490708837a22681b05671">LLGI::DecClamp</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a9b8958acb7be504bb5f55f17c0eea366">LLGI::Invert</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283aac53820c7ca0c77c2193f6ab26251975">LLGI::IncRepeat</a>
+, <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283af518f532a401f986182fc911879ef542">LLGI::DecRepeat</a>
+<br />
+ }</td></tr>
+<tr class="separator:a9e697d82a727af9e2cc83a4a45977283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e3110de31596d29acb0b96c0c6db0c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#af0e3110de31596d29acb0b96c0c6db0c">LLGI::ConstantBufferType</a> { <a class="el" href="namespaceLLGI.html#af0e3110de31596d29acb0b96c0c6db0caf9a0335a7d441261b3e96bfd8d7969f0">LLGI::LongTime</a>
+, <a class="el" href="namespaceLLGI.html#af0e3110de31596d29acb0b96c0c6db0ca085a3cce396fbb1bf82dbdab56b11043">LLGI::ShortTime</a>
+, <a class="el" href="namespaceLLGI.html#af0e3110de31596d29acb0b96c0c6db0caf9a0335a7d441261b3e96bfd8d7969f0">LLGI::LongTime</a>
+, <a class="el" href="namespaceLLGI.html#af0e3110de31596d29acb0b96c0c6db0ca085a3cce396fbb1bf82dbdab56b11043">LLGI::ShortTime</a>
+ }</td></tr>
+<tr class="separator:af0e3110de31596d29acb0b96c0c6db0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b751cae64884e3f80e16c88924e3f59"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59">LLGI::TextureFormatType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59af55c1c722034e92213df328d31e33c62">LLGI::R8G8B8A8_UNORM</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a0f09a2e0cf764ef602b892fc70b817bf">LLGI::B8G8R8A8_UNORM</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a6ee77dd485809c93542e95acf222420c">LLGI::R8_UNORM</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a4f5847ebfcf03e87d28d26da8e7c8280">LLGI::R16G16_FLOAT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a8877c88854b09a122f3533a4de543629">LLGI::R16G16B16A16_FLOAT</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a82bb90f92345314d9299d3e77d87f259">LLGI::R32G32B32A32_FLOAT</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a88ec7b741e9c3ccac7b61b1301ba11e8">LLGI::BC1</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a4d2bc7c468d854a7046ae1ca6b7cf64e">LLGI::BC2</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59aa9e959126c7c9b4230b56975a1ea015d">LLGI::BC3</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a2d00fbcd05d552791494b5799db714e1">LLGI::R8G8B8A8_UNORM_SRGB</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59accd7e8dd4e0f564ea24d1243ea3ef523">LLGI::B8G8R8A8_UNORM_SRGB</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a8728d460624388e7fcd0b5ea21b7e996">LLGI::BC1_SRGB</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59ad8823158bc0323e65b353b99dbec42c8">LLGI::BC2_SRGB</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a02bf65916f20a9561b709107c60cccf2">LLGI::BC3_SRGB</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59aa6b2eecc4252564f599b9a979e4e0602">LLGI::D32</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a2468f278a5fb00d246360a43b4c39f31">LLGI::D24S8</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59af64446518b4b850a4b2d6624ecff5791">LLGI::D32S8</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a88183b946cc5f0e8c96b2e66e1c74a7e">LLGI::Unknown</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59af55c1c722034e92213df328d31e33c62">LLGI::R8G8B8A8_UNORM</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a0f09a2e0cf764ef602b892fc70b817bf">LLGI::B8G8R8A8_UNORM</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a6ee77dd485809c93542e95acf222420c">LLGI::R8_UNORM</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a4f5847ebfcf03e87d28d26da8e7c8280">LLGI::R16G16_FLOAT</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a8877c88854b09a122f3533a4de543629">LLGI::R16G16B16A16_FLOAT</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a82bb90f92345314d9299d3e77d87f259">LLGI::R32G32B32A32_FLOAT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a88ec7b741e9c3ccac7b61b1301ba11e8">LLGI::BC1</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a4d2bc7c468d854a7046ae1ca6b7cf64e">LLGI::BC2</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59aa9e959126c7c9b4230b56975a1ea015d">LLGI::BC3</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a2d00fbcd05d552791494b5799db714e1">LLGI::R8G8B8A8_UNORM_SRGB</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59accd7e8dd4e0f564ea24d1243ea3ef523">LLGI::B8G8R8A8_UNORM_SRGB</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a8728d460624388e7fcd0b5ea21b7e996">LLGI::BC1_SRGB</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59ad8823158bc0323e65b353b99dbec42c8">LLGI::BC2_SRGB</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a02bf65916f20a9561b709107c60cccf2">LLGI::BC3_SRGB</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59aa6b2eecc4252564f599b9a979e4e0602">LLGI::D32</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a2468f278a5fb00d246360a43b4c39f31">LLGI::D24S8</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59af64446518b4b850a4b2d6624ecff5791">LLGI::D32S8</a>
+, <a class="el" href="namespaceLLGI.html#a4b751cae64884e3f80e16c88924e3f59a88183b946cc5f0e8c96b2e66e1c74a7e">LLGI::Unknown</a>
+<br />
+ }</td></tr>
+<tr class="separator:a4b751cae64884e3f80e16c88924e3f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5162fbb3ca9d4725bbaff2a501b636aa"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a5162fbb3ca9d4725bbaff2a501b636aa">LLGI::TextureUsageType</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a5162fbb3ca9d4725bbaff2a501b636aaa2e280b4687e26f5420576cb6f1309a3c">LLGI::NoneFlag</a> = 0
+, <a class="el" href="namespaceLLGI.html#a5162fbb3ca9d4725bbaff2a501b636aaa9b0bffda4bcb312168c0d6537cb04b4d">LLGI::RenderTarget</a> = 1 &lt;&lt; 0
+, <a class="el" href="namespaceLLGI.html#a5162fbb3ca9d4725bbaff2a501b636aaa4410ec34d9e6c1a68100ca0ce033fb17">LLGI::Array</a> = 1 &lt;&lt; 1
+, <a class="el" href="namespaceLLGI.html#a5162fbb3ca9d4725bbaff2a501b636aaab206a1b4ea1097761f78e8876f6da779">LLGI::External</a> = 1 &lt;&lt; 2
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a5162fbb3ca9d4725bbaff2a501b636aaa2e280b4687e26f5420576cb6f1309a3c">LLGI::NoneFlag</a> = 0
+, <a class="el" href="namespaceLLGI.html#a5162fbb3ca9d4725bbaff2a501b636aaa9b0bffda4bcb312168c0d6537cb04b4d">LLGI::RenderTarget</a> = 1 &lt;&lt; 0
+, <a class="el" href="namespaceLLGI.html#a5162fbb3ca9d4725bbaff2a501b636aaa4410ec34d9e6c1a68100ca0ce033fb17">LLGI::Array</a> = 1 &lt;&lt; 1
+, <a class="el" href="namespaceLLGI.html#a5162fbb3ca9d4725bbaff2a501b636aaab206a1b4ea1097761f78e8876f6da779">LLGI::External</a> = 1 &lt;&lt; 2
+<br />
+ }</td></tr>
+<tr class="separator:a5162fbb3ca9d4725bbaff2a501b636aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b629f1b4e2a3865c4e6ca076bf7a46d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46d">LLGI::BufferUsageType</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46da88fa71f0a6e0dfedbb46d91cc0b37a50">LLGI::Index</a> = 1 &lt;&lt; 0
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46dab22b929ba52471a02d18bb3a4e4472e6">LLGI::Vertex</a> = 1 &lt;&lt; 1
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46dacb17869fe51048b5a5c4c6106551a255">LLGI::Constant</a> = 1 &lt;&lt; 2
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46daa623a8d0366bf079411aa30be45b2d10">LLGI::Compute</a> = 1 &lt;&lt; 3
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46dac16a79d8306dc10ca7b16a409661847f">LLGI::MapRead</a> = 1 &lt;&lt; 4
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46da4a0138ad7aa1d1355c00c3e6fef8157d">LLGI::MapWrite</a> = 1 &lt;&lt; 5
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46da8ae5a8db126b80b474e270cfaa6c7ae3">LLGI::CopySrc</a> = 1 &lt;&lt; 6
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46da4cfcc67848d868b1d452fbf5d4866b78">LLGI::CopyDst</a> = 1 &lt;&lt; 7
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46da88fa71f0a6e0dfedbb46d91cc0b37a50">LLGI::Index</a> = 1 &lt;&lt; 0
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46dab22b929ba52471a02d18bb3a4e4472e6">LLGI::Vertex</a> = 1 &lt;&lt; 1
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46dacb17869fe51048b5a5c4c6106551a255">LLGI::Constant</a> = 1 &lt;&lt; 2
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46daa623a8d0366bf079411aa30be45b2d10">LLGI::Compute</a> = 1 &lt;&lt; 3
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46dac16a79d8306dc10ca7b16a409661847f">LLGI::MapRead</a> = 1 &lt;&lt; 4
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46da4a0138ad7aa1d1355c00c3e6fef8157d">LLGI::MapWrite</a> = 1 &lt;&lt; 5
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46da8ae5a8db126b80b474e270cfaa6c7ae3">LLGI::CopySrc</a> = 1 &lt;&lt; 6
+, <a class="el" href="namespaceLLGI.html#a8b629f1b4e2a3865c4e6ca076bf7a46da4cfcc67848d868b1d452fbf5d4866b78">LLGI::CopyDst</a> = 1 &lt;&lt; 7
+<br />
+ }</td></tr>
+<tr class="separator:a8b629f1b4e2a3865c4e6ca076bf7a46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabf2d26fa43e6a22ab601a9dcd315cef"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cef">LLGI::TextureType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefa2fc3359e12b2a9104121dcf04246f6a0">LLGI::Screen</a>
+, <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefacb5feb1b7314637725a2e73bdc9f7295">LLGI::Color</a>
+, <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefa675056ad1441b6375b2c5abd48c27ef1">LLGI::Depth</a>
+, <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefa5e520da5341f2fec6d3bbfe7ef357922">LLGI::Render</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefaa296104f0c61a9cf39f4824d05315e12">LLGI::Cube</a>
+, <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefa88183b946cc5f0e8c96b2e66e1c74a7e">LLGI::Unknown</a>
+, <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefa2fc3359e12b2a9104121dcf04246f6a0">LLGI::Screen</a>
+, <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefacb5feb1b7314637725a2e73bdc9f7295">LLGI::Color</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefa675056ad1441b6375b2c5abd48c27ef1">LLGI::Depth</a>
+, <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefa5e520da5341f2fec6d3bbfe7ef357922">LLGI::Render</a>
+, <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefaa296104f0c61a9cf39f4824d05315e12">LLGI::Cube</a>
+, <a class="el" href="namespaceLLGI.html#aabf2d26fa43e6a22ab601a9dcd315cefa88183b946cc5f0e8c96b2e66e1c74a7e">LLGI::Unknown</a>
+<br />
+ }</td></tr>
+<tr class="separator:aabf2d26fa43e6a22ab601a9dcd315cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f5360b4c51d8f4d41c16e76c80a82c5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a2f5360b4c51d8f4d41c16e76c80a82c5">LLGI::LogType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a2f5360b4c51d8f4d41c16e76c80a82c5a4059b0251f66a18cb56f544728796875">LLGI::Info</a>
+, <a class="el" href="namespaceLLGI.html#a2f5360b4c51d8f4d41c16e76c80a82c5a0eaadb4fcb48a0a0ed7bc9868be9fbaa">LLGI::Warning</a>
+, <a class="el" href="namespaceLLGI.html#a2f5360b4c51d8f4d41c16e76c80a82c5a902b0d55fddef6f8d651fe1035b7d4bd">LLGI::Error</a>
+, <a class="el" href="namespaceLLGI.html#a2f5360b4c51d8f4d41c16e76c80a82c5aa603905470e2a5b8c13e96b579ef0dba">LLGI::Debug</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceLLGI.html#a2f5360b4c51d8f4d41c16e76c80a82c5a4059b0251f66a18cb56f544728796875">LLGI::Info</a>
+, <a class="el" href="namespaceLLGI.html#a2f5360b4c51d8f4d41c16e76c80a82c5a0eaadb4fcb48a0a0ed7bc9868be9fbaa">LLGI::Warning</a>
+, <a class="el" href="namespaceLLGI.html#a2f5360b4c51d8f4d41c16e76c80a82c5a902b0d55fddef6f8d651fe1035b7d4bd">LLGI::Error</a>
+, <a class="el" href="namespaceLLGI.html#a2f5360b4c51d8f4d41c16e76c80a82c5aa603905470e2a5b8c13e96b579ef0dba">LLGI::Debug</a>
+<br />
+ }</td></tr>
+<tr class="separator:a2f5360b4c51d8f4d41c16e76c80a82c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a791c05d5c66bac723b21c09fa5ac84fe"><td class="memItemLeft" align="right" valign="top">Vec3F&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a791c05d5c66bac723b21c09fa5ac84fe">LLGI::operator*</a> (const Vec3F &amp;v1, float v2)</td></tr>
+<tr class="separator:a791c05d5c66bac723b21c09fa5ac84fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74acae4ee60dff8752b305fd943f9e26"><td class="memItemLeft" align="right" valign="top">TextureUsageType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a74acae4ee60dff8752b305fd943f9e26">LLGI::operator|</a> (TextureUsageType lhs, TextureUsageType rhs)</td></tr>
+<tr class="separator:a74acae4ee60dff8752b305fd943f9e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa897f379c27c6588eb9e2786394f4d38"><td class="memItemLeft" align="right" valign="top">TextureUsageType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#aa897f379c27c6588eb9e2786394f4d38">LLGI::operator&amp;</a> (TextureUsageType lhs, TextureUsageType rhs)</td></tr>
+<tr class="separator:aa897f379c27c6588eb9e2786394f4d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc7d4fb2f8de59d87a5c50e8ff0cf71c"><td class="memItemLeft" align="right" valign="top">BufferUsageType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#acc7d4fb2f8de59d87a5c50e8ff0cf71c">LLGI::operator|</a> (BufferUsageType lhs, BufferUsageType rhs)</td></tr>
+<tr class="separator:acc7d4fb2f8de59d87a5c50e8ff0cf71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1344ec3410164a3433e56258b0a9da62"><td class="memItemLeft" align="right" valign="top">BufferUsageType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a1344ec3410164a3433e56258b0a9da62">LLGI::operator&amp;</a> (BufferUsageType lhs, BufferUsageType rhs)</td></tr>
+<tr class="separator:a1344ec3410164a3433e56258b0a9da62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3135a2298dc334b72eb51d4b7a4f50a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#ad3135a2298dc334b72eb51d4b7a4f50a">LLGI::IsDepthFormat</a> (TextureFormatType format)</td></tr>
+<tr class="separator:ad3135a2298dc334b72eb51d4b7a4f50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39df3eeedb43de42ec643a97fe680957"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a39df3eeedb43de42ec643a97fe680957">LLGI::HasStencil</a> (TextureFormatType format)</td></tr>
+<tr class="separator:a39df3eeedb43de42ec643a97fe680957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a263886c00458b4ee2562d11fb13903cf"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a263886c00458b4ee2562d11fb13903cf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a263886c00458b4ee2562d11fb13903cf">LLGI::SafeAddRef</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t)</td></tr>
+<tr class="separator:a263886c00458b4ee2562d11fb13903cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81fdca049b6522d97c416107b2a14fbb"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a81fdca049b6522d97c416107b2a14fbb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a81fdca049b6522d97c416107b2a14fbb">LLGI::SafeRelease</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t)</td></tr>
+<tr class="separator:a81fdca049b6522d97c416107b2a14fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b0a49031d0f32b5a7a419a4296e6ce"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a75b0a49031d0f32b5a7a419a4296e6ce"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a75b0a49031d0f32b5a7a419a4296e6ce">LLGI::SafeAssign</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> value)</td></tr>
+<tr class="separator:a75b0a49031d0f32b5a7a419a4296e6ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f9e8d13e624fdb906f23af0c05c10d"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ae6f9e8d13e624fdb906f23af0c05c10d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#ae6f9e8d13e624fdb906f23af0c05c10d">LLGI::SafeDelete</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;t)</td></tr>
+<tr class="separator:ae6f9e8d13e624fdb906f23af0c05c10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c5adbbd2af2b38ed55b886891468f44"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a5c5adbbd2af2b38ed55b886891468f44"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a5c5adbbd2af2b38ed55b886891468f44">LLGI::BitwiseContains</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> value, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> elm)</td></tr>
+<tr class="separator:a5c5adbbd2af2b38ed55b886891468f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f38233e255c70ee8b0e35d15d4dfc56"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a9f38233e255c70ee8b0e35d15d4dfc56"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a9f38233e255c70ee8b0e35d15d4dfc56">LLGI::CreateSharedPtr</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *p, bool addRef=false)</td></tr>
+<tr class="separator:a9f38233e255c70ee8b0e35d15d4dfc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c80cc7a5c9aa63bf3a6556aa37b44f3"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a6c80cc7a5c9aa63bf3a6556aa37b44f3"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, ReferenceDeleter&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a6c80cc7a5c9aa63bf3a6556aa37b44f3">LLGI::CreateUniqueReference</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *ptr, bool addRef=false)</td></tr>
+<tr class="separator:a6c80cc7a5c9aa63bf3a6556aa37b44f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce254757b90b70a98051eb45c60d50c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a9ce254757b90b70a98051eb45c60d50c">LLGI::SetLogger</a> (const std::function&lt; void(LogType, const std::string &amp;)&gt; &amp;logger)</td></tr>
+<tr class="separator:a9ce254757b90b70a98051eb45c60d50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f8d32795a77b7e83ecf6a5c4a370f80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a0f8d32795a77b7e83ecf6a5c4a370f80">LLGI::Log</a> (LogType logType, const std::string &amp;message)</td></tr>
+<tr class="separator:a0f8d32795a77b7e83ecf6a5c4a370f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a169a54586117014742a407230d74fb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a0a169a54586117014742a407230d74fb">LLGI::GetAlignedSize</a> (size_t size, size_t alignment)</td></tr>
+<tr class="separator:a0a169a54586117014742a407230d74fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd0f6a4d28dbe694d0c4cc16f0c16da"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#afbd0f6a4d28dbe694d0c4cc16f0c16da">LLGI::to_string</a> (TextureFormatType format)</td></tr>
+<tr class="separator:afbd0f6a4d28dbe694d0c4cc16f0c16da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2ac200521ef4900930ee075d0fffa14"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#ab2ac200521ef4900930ee075d0fffa14">LLGI::GetTextureMemorySize</a> (TextureFormatType format, Vec3I size)</td></tr>
+<tr class="separator:ab2ac200521ef4900930ee075d0fffa14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a729a5ee49d3cf1ee7e883ee0da5f1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#af1a729a5ee49d3cf1ee7e883ee0da5f1">LLGI::GetMaximumMipLevels</a> (const Vec2I &amp;size)</td></tr>
+<tr class="separator:af1a729a5ee49d3cf1ee7e883ee0da5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a014c025ba72883fdeb2811c5241e3f03"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a014c025ba72883fdeb2811c5241e3f03">LLGI::RenderTargetMax</a> = 8</td></tr>
+<tr class="separator:a014c025ba72883fdeb2811c5241e3f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee88c8ecf87da2e271c3dd1ebe18620f"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#aee88c8ecf87da2e271c3dd1ebe18620f">LLGI::VertexLayoutMax</a> = 16</td></tr>
+<tr class="separator:aee88c8ecf87da2e271c3dd1ebe18620f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19abf6de60b187be9629cdf72f9ae6c0"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLLGI.html#a19abf6de60b187be9629cdf72f9ae6c0">LLGI::TextureSlotMax</a> = 8</td></tr>
+<tr class="separator:a19abf6de60b187be9629cdf72f9ae6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7c5410398a44882a19233b74a46ddf81.html">EffekseeLib</a></li><li class="navelem"><a class="el" href="dir_b0ac8dcbe24e7c0406791b44f304379a.html">install_msvc2022_x64</a></li><li class="navelem"><a class="el" href="dir_2507c8e16fd430c7f64ecdec46ac52eb.html">include</a></li><li class="navelem"><a class="el" href="dir_175955d568cede33a05a5ca40f94c610.html">LLGI</a></li><li class="navelem"><a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h.html">LLGI.Base.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

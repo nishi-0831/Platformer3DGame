@@ -1,0 +1,1988 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::Collider クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1Collider.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
+<a href="classmtgb_1_1Collider-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::Collider クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="Collider_8h_source.html">Collider.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::Collider の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider__inherit__graph.svg" width="512" height="1660"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::Collider 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider__coll__graph.svg" width="1380" height="2727"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a4d48cdbe3ab7d92a0a73b29228f255d5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a4d48cdbe3ab7d92a0a73b29228f255d5">Pool</a> = <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a></td></tr>
+<tr class="separator:a4d48cdbe3ab7d92a0a73b29228f255d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a66477d5dfc76828c27c936ba291e7645"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a66477d5dfc76828c27c936ba291e7645">Collider</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:a66477d5dfc76828c27c936ba291e7645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e905c0552de20976f38c78cd12e0ac8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a7e905c0552de20976f38c78cd12e0ac8">Collider</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId, <a class="el" href="ColliderType_8h.html#ac7af8ecfc927eb4be84ab71d0d3ec21e">ColliderTag</a> _colliderTag)</td></tr>
+<tr class="separator:a7e905c0552de20976f38c78cd12e0ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd99334500470ba50fbac7278e518d44"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#afd99334500470ba50fbac7278e518d44">~Collider</a> ()</td></tr>
+<tr class="separator:afd99334500470ba50fbac7278e518d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18e01128e00c24c71fef1ab528ff8fbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1Collider.html">Collider</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a18e01128e00c24c71fef1ab528ff8fbc">operator=</a> (const <a class="el" href="classmtgb_1_1Collider.html">Collider</a> &amp;_other)</td></tr>
+<tr class="separator:a18e01128e00c24c71fef1ab528ff8fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef88264b3a4fe0c05c4d1b5237fcd80"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a3ef88264b3a4fe0c05c4d1b5237fcd80">IsHit</a> (const <a class="el" href="classmtgb_1_1Collider.html">Collider</a> &amp;_other) const</td></tr>
+<tr class="separator:a3ef88264b3a4fe0c05c4d1b5237fcd80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af649ef21ea0e1d2951a39ee7cea70a48"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#af649ef21ea0e1d2951a39ee7cea70a48">IsHit</a> (const DirectX::BoundingSphere &amp;_sphere, const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_origin, const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_dir, float *dist)</td></tr>
+<tr class="memdesc:af649ef21ea0e1d2951a39ee7cea70a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイとの交差判定  <br /></td></tr>
+<tr class="separator:af649ef21ea0e1d2951a39ee7cea70a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a929ca83a0b917de1e361df0e1f005237"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a929ca83a0b917de1e361df0e1f005237">IsHit</a> (const DirectX::BoundingBox &amp;_aabb, const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_origin, const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_dir, float *dist)</td></tr>
+<tr class="separator:a929ca83a0b917de1e361df0e1f005237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d283520df5eae4b86dcd32a9297e39"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#ac3d283520df5eae4b86dcd32a9297e39">IsHit</a> (const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_origin, const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_dir, float *dist)</td></tr>
+<tr class="separator:ac3d283520df5eae4b86dcd32a9297e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdec13f40741bb10c27e7e8274d58d34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#abdec13f40741bb10c27e7e8274d58d34">IsHit</a> (const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_center, float _radius) const</td></tr>
+<tr class="separator:abdec13f40741bb10c27e7e8274d58d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a684b04422fd7be8aafddc9b8ad5b7b50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a684b04422fd7be8aafddc9b8ad5b7b50">Draw</a> () const</td></tr>
+<tr class="separator:a684b04422fd7be8aafddc9b8ad5b7b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad574872e82d1ef024d36b7bef562dc87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#ad574872e82d1ef024d36b7bef562dc87">UpdateBoundingData</a> ()</td></tr>
+<tr class="separator:ad574872e82d1ef024d36b7bef562dc87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32a5df5e9f6b7488ca20b393276ef421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a32a5df5e9f6b7488ca20b393276ef421">SetCenter</a> (const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_center)</td></tr>
+<tr class="separator:a32a5df5e9f6b7488ca20b393276ef421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae853925f6ef1aa2acd0684ec7c602d9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#ae853925f6ef1aa2acd0684ec7c602d9c">SetExtents</a> (const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_extents)</td></tr>
+<tr class="separator:ae853925f6ef1aa2acd0684ec7c602d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e61e476c9d384d64ccaac909a02a360"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a5e61e476c9d384d64ccaac909a02a360">SetRadius</a> (float _radius)</td></tr>
+<tr class="separator:a5e61e476c9d384d64ccaac909a02a360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad66549851919b9202d6ba734cc73e480"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ColliderType_8h.html#ac7af8ecfc927eb4be84ab71d0d3ec21e">ColliderTag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#ad66549851919b9202d6ba734cc73e480">GetColliderTag</a> () const</td></tr>
+<tr class="separator:ad66549851919b9202d6ba734cc73e480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e6edd11d59fcf2aab5356e754f44d32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a3e6edd11d59fcf2aab5356e754f44d32">Push</a> (const <a class="el" href="classmtgb_1_1Collider.html">Collider</a> &amp;_other)</td></tr>
+<tr class="separator:a3e6edd11d59fcf2aab5356e754f44d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b5984ef9fa3127bf14f0e9c483482c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a24b5984ef9fa3127bf14f0e9c483482c">OnPostRestore</a> () override</td></tr>
+<tr class="separator:a24b5984ef9fa3127bf14f0e9c483482c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f42a089e725be9599afab34ab245bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a65f42a089e725be9599afab34ab245bb">IComponent</a> ()</td></tr>
+<tr class="separator:a65f42a089e725be9599afab34ab245bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406a6445fabe38285a6d0ecc18ea6369"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a406a6445fabe38285a6d0ecc18ea6369">IComponent</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:a406a6445fabe38285a6d0ecc18ea6369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecaeb2d199af3bd978a34238ae7f733a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#aecaeb2d199af3bd978a34238ae7f733a">Initialize</a> ()</td></tr>
+<tr class="separator:aecaeb2d199af3bd978a34238ae7f733a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735636df79e7cfd6336e9a97345e2b29"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a> () const</td></tr>
+<tr class="separator:a735636df79e7cfd6336e9a97345e2b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86fe7f4e0ab2a86787b52d34ac5b6ec8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISerializableObject.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8">OnPreSave</a> ()</td></tr>
+<tr class="separator:a86fe7f4e0ab2a86787b52d34ac5b6ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae6496e49643dd3bf4881bb608df5fb78"><td class="memItemLeft" align="right" valign="top">static std::optional&lt; <a class="el" href="structmtgb_1_1IntersectInfo.html">IntersectInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#ae6496e49643dd3bf4881bb608df5fb78">Intersect</a> (const DirectX::BoundingSphere &amp;_sphere, const DirectX::BoundingBox &amp;_aabb)</td></tr>
+<tr class="separator:ae6496e49643dd3bf4881bb608df5fb78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a931ae7565817c83a4e3c5f9004c074d5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Collider.html">Collider</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Get</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:a931ae7565817c83a4e3c5f9004c074d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0db1b0f0dbd3823a06ae854eacef41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Collider.html">Collider</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a4e0db1b0f0dbd3823a06ae854eacef41">Get</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId, Args &amp;&amp;... _args)</td></tr>
+<tr class="separator:a4e0db1b0f0dbd3823a06ae854eacef41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07fa68485a5cf4425eebf1718c82e73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Collider.html">Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#ab07fa68485a5cf4425eebf1718c82e73">Reuse</a> (size_t _index, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:ab07fa68485a5cf4425eebf1718c82e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:abd87cae24cf82111cb7b75ef69c828e6"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#abd87cae24cf82111cb7b75ef69c828e6">ColliderCP</a></td></tr>
+<tr class="separator:abd87cae24cf82111cb7b75ef69c828e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed009e13fbc5e0eb0b75eb4f9fe2ca8e"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="classmtgb_1_1Collider.html">Collider</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#aed009e13fbc5e0eb0b75eb4f9fe2ca8e">onColliders_</a></td></tr>
+<tr class="separator:aed009e13fbc5e0eb0b75eb4f9fe2ca8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f0b1e752f3c817dd359aa296150c998"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="classmtgb_1_1Collider.html">Collider</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a6f0b1e752f3c817dd359aa296150c998">onColldiersPrev_</a></td></tr>
+<tr class="separator:a6f0b1e752f3c817dd359aa296150c998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31cbcdf00d33fe152a900e95867075ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ColliderType_8h.html#a7f138e75fc3cc79e825c39e040690395">ColliderType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a></td></tr>
+<tr class="separator:a31cbcdf00d33fe152a900e95867075ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0d2d14b244cd3db740e4dfdd50d479"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a></td></tr>
+<tr class="separator:a8d0d2d14b244cd3db740e4dfdd50d479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf112c66c62a831565deb33c4d606e46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ColliderType_8h.html#ac7af8ecfc927eb4be84ab71d0d3ec21e">ColliderTag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#acf112c66c62a831565deb33c4d606e46">colliderTag_</a></td></tr>
+<tr class="separator:acf112c66c62a831565deb33c4d606e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed716499a289d6dd69c0d40b683142aa"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#aed716499a289d6dd69c0d40b683142aa">ComponentPoolT</a></td></tr>
+<tr class="separator:aed716499a289d6dd69c0d40b683142aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d6b5582bd4cc3eea5feb793ae19aa4"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a37d6b5582bd4cc3eea5feb793ae19aa4">ComponentPool&lt; ComponentT, ComponentPoolT &gt;</a></td></tr>
+<tr class="separator:a37d6b5582bd4cc3eea5feb793ae19aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bae5c02897ed12d0d796f9f27e13bd0"><td class="memItemLeft" align="right" valign="top">DirectX::BoundingSphere&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a></td></tr>
+<tr class="separator:a2bae5c02897ed12d0d796f9f27e13bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb1e42452e04e839e1d276a63f7b478"><td class="memItemLeft" align="right" valign="top">DirectX::BoundingBox&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a></td></tr>
+<tr class="separator:aafb1e42452e04e839e1d276a63f7b478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3662a405cc505b7389a9936b6ac8ce2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a3662a405cc505b7389a9936b6ac8ce2f">UpdateBoundingSphere</a> ()</td></tr>
+<tr class="separator:a3662a405cc505b7389a9936b6ac8ce2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ebc5eb72e2b7f1bd004e47655d44369"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a6ebc5eb72e2b7f1bd004e47655d44369">UpdateBoundingBox</a> ()</td></tr>
+<tr class="separator:a6ebc5eb72e2b7f1bd004e47655d44369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a4da73130d244193724bf3f8e40eb0b5b"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a8dc90c2faacb38f2094b6365ff4f31df"><td class="memItemLeft" >&#160;&#160;&#160;DirectX::BoundingSphere&#160;&#160;&#160;<a class="el" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a></td></tr>
+<tr class="separator:a8dc90c2faacb38f2094b6365ff4f31df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dbfc3e907eaaddef9ca189f6782aadf"><td class="memItemLeft" >&#160;&#160;&#160;DirectX::BoundingBox&#160;&#160;&#160;<a class="el" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a></td></tr>
+<tr class="separator:a5dbfc3e907eaaddef9ca189f6782aadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4da73130d244193724bf3f8e40eb0b5b"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a4da73130d244193724bf3f8e40eb0b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4095dd71e264099938f79fbe65d057a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1Transform.html">Transform</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a></td></tr>
+<tr class="separator:ab4095dd71e264099938f79fbe65d057a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfdf4c07953199bf0c6214593fed2520"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a></td></tr>
+<tr class="separator:adfdf4c07953199bf0c6214593fed2520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18dd9cce2c089f4e9118bd0ab195853c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a18dd9cce2c089f4e9118bd0ab195853c">radius_</a></td></tr>
+<tr class="separator:a18dd9cce2c089f4e9118bd0ab195853c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2653ebf8d69b6409be288fec169bb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a></td></tr>
+<tr class="separator:adf2653ebf8d69b6409be288fec169bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aa4f5300c39f9f4705a587fd0a72639"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a></td></tr>
+<tr class="separator:a8aa4f5300c39f9f4705a587fd0a72639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:a21c200078b6404b94b71acc8d0602096"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096">hSphereModel_</a> { <a class="el" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a> }</td></tr>
+<tr class="separator:a21c200078b6404b94b71acc8d0602096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f5236811d09379ad76a79a801026bae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae">hBoxModel_</a> { <a class="el" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a> }</td></tr>
+<tr class="separator:a0f5236811d09379ad76a79a801026bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00025">25</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a4d48cdbe3ab7d92a0a73b29228f255d5" name="a4d48cdbe3ab7d92a0a73b29228f255d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d48cdbe3ab7d92a0a73b29228f255d5">&#9670;&#160;</a></span>Pool</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a> , <a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &gt;::Pool =  <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a66477d5dfc76828c27c936ba291e7645" name="a66477d5dfc76828c27c936ba291e7645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66477d5dfc76828c27c936ba291e7645">&#9670;&#160;</a></span>Collider() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Collider::Collider </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>    : <a class="code hl_function" href="classmtgb_1_1Collider.html#a65f42a089e725be9599afab34ab245bb">IComponent</a>(_entityId)</div>
+<div class="line"><span class="lineno">   22</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a>{ColliderType::TYPE_CAPSULE}</div>
+<div class="line"><span class="lineno">   23</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>{ <span class="keyword">false</span> }</div>
+<div class="line"><span class="lineno">   24</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#acf112c66c62a831565deb33c4d606e46">colliderTag_</a>{ ColliderTag::GAME_OBJECT }</div>
+<div class="line"><span class="lineno">   25</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>{&amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(_entityId)}</div>
+<div class="line"><span class="lineno">   26</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a>{0.0f,0.0f,0.0f}</div>
+<div class="line"><span class="lineno">   27</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#a18dd9cce2c089f4e9118bd0ab195853c">radius_</a>{1.0f}</div>
+<div class="line"><span class="lineno">   28</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>{1.0f,1.0f ,1.0f }</div>
+<div class="line"><span class="lineno">   29</span>{</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a18dd9cce2c089f4e9118bd0ab195853c"><div class="ttname"><a href="classmtgb_1_1Collider.html#a18dd9cce2c089f4e9118bd0ab195853c">mtgb::Collider::radius_</a></div><div class="ttdeci">float radius_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00109">Collider.h:109</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a31cbcdf00d33fe152a900e95867075ad"><div class="ttname"><a href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">mtgb::Collider::colliderType_</a></div><div class="ttdeci">ColliderType colliderType_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00087">Collider.h:87</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a65f42a089e725be9599afab34ab245bb"><div class="ttname"><a href="classmtgb_1_1Collider.html#a65f42a089e725be9599afab34ab245bb">mtgb::Collider::IComponent</a></div><div class="ttdeci">IComponent()</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00021">IComponent.h:21</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a8d0d2d14b244cd3db740e4dfdd50d479"><div class="ttname"><a href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">mtgb::Collider::isStatic_</a></div><div class="ttdeci">bool isStatic_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00090">Collider.h:90</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_ab4095dd71e264099938f79fbe65d057a"><div class="ttname"><a href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">mtgb::Collider::pTransform_</a></div><div class="ttdeci">Transform * pTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00102">Collider.h:102</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_acf112c66c62a831565deb33c4d606e46"><div class="ttname"><a href="classmtgb_1_1Collider.html#acf112c66c62a831565deb33c4d606e46">mtgb::Collider::colliderTag_</a></div><div class="ttdeci">ColliderTag colliderTag_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00092">Collider.h:92</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_adf2653ebf8d69b6409be288fec169bb5"><div class="ttname"><a href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">mtgb::Collider::extents_</a></div><div class="ttdeci">Vector3 extents_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00111">Collider.h:111</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_adfdf4c07953199bf0c6214593fed2520"><div class="ttname"><a href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">mtgb::Collider::center_</a></div><div class="ttdeci">Vector3 center_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00107">Collider.h:107</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a931ae7565817c83a4e3c5f9004c074d5"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get</a></div><div class="ttdeci">static Transform &amp; Get(const EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00027">IComponent.h:62</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7e905c0552de20976f38c78cd12e0ac8" name="a7e905c0552de20976f38c78cd12e0ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e905c0552de20976f38c78cd12e0ac8">&#9670;&#160;</a></span>Collider() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Collider::Collider </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ColliderType_8h.html#ac7af8ecfc927eb4be84ab71d0d3ec21e">ColliderTag</a>&#160;</td>
+          <td class="paramname"><em>_colliderTag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>    : <a class="code hl_function" href="classmtgb_1_1Collider.html#a66477d5dfc76828c27c936ba291e7645">Collider</a>(_entityId)</div>
+<div class="line"><span class="lineno">   36</span>{</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#acf112c66c62a831565deb33c4d606e46">colliderTag_</a> = _colliderTag;</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">switch</span> (_colliderTag)</div>
+<div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <span class="comment">// 現在はゲームオブジェクトは動的、ステージは静的と断定しているが</span></div>
+<div class="line"><span class="lineno">   42</span>        <span class="comment">// 動的なステージなども追加されるかもしれないので注意</span></div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">case</span> ColliderTag::GAME_OBJECT:</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   45</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a> = &amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(_entityId);</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">case</span> ColliderTag::STAGE:</div>
+<div class="line"><span class="lineno">   48</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   49</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
+<div class="line"><span class="lineno">   52</span>    </div>
+<div class="line"><span class="lineno">   53</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a66477d5dfc76828c27c936ba291e7645"><div class="ttname"><a href="classmtgb_1_1Collider.html#a66477d5dfc76828c27c936ba291e7645">mtgb::Collider::Collider</a></div><div class="ttdeci">Collider(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00020">Collider.cpp:20</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Collider_8h_source.html#l00092">colliderTag_</a>, <a class="el" href="IComponent_8h_source.html#l00062">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get()</a>, <a class="el" href="Collider_8h_source.html#l00090">isStatic_</a>, <a class="el" href="Collider_8h_source.html#l00102">pTransform_</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider_a7e905c0552de20976f38c78cd12e0ac8_cgraph.svg" width="454" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afd99334500470ba50fbac7278e518d44" name="afd99334500470ba50fbac7278e518d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd99334500470ba50fbac7278e518d44">&#9670;&#160;</a></span>~Collider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Collider::~Collider </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a684b04422fd7be8aafddc9b8ad5b7b50" name="a684b04422fd7be8aafddc9b8ad5b7b50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a684b04422fd7be8aafddc9b8ad5b7b50">&#9670;&#160;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Collider::Draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00401">401</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  402</span>{</div>
+<div class="line"><span class="lineno">  403</span>    <span class="keyword">static</span> Transform copyTransform{};</div>
+<div class="line"><span class="lineno">  404</span> </div>
+<div class="line"><span class="lineno">  405</span> </div>
+<div class="line"><span class="lineno">  406</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a>)</div>
+<div class="line"><span class="lineno">  407</span>    {</div>
+<div class="line"><span class="lineno">  408</span>    <span class="keywordflow">case</span> ColliderType::TYPE_SPHERE:</div>
+<div class="line"><span class="lineno">  409</span>        copyTransform = *<a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>;</div>
+<div class="line"><span class="lineno">  410</span>        copyTransform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a> *= <a class="code hl_function" href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">Vector3::One</a>() * <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Radius;</div>
+<div class="line"><span class="lineno">  411</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096">hSphereModel_</a>, copyTransform, 0,<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
+<div class="line"><span class="lineno">  412</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  413</span>    <span class="keywordflow">case</span> ColliderType::TYPE_CAPSULE:</div>
+<div class="line"><span class="lineno">  414</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  415</span>    <span class="keywordflow">case</span> ColliderType::TYPE_AABB:</div>
+<div class="line"><span class="lineno">  416</span> </div>
+<div class="line"><span class="lineno">  417</span> </div>
+<div class="line"><span class="lineno">  418</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
+<div class="line"><span class="lineno">  419</span>        {</div>
+<div class="line"><span class="lineno">  420</span>            copyTransform = *<a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>;</div>
+<div class="line"><span class="lineno">  421</span>        }</div>
+<div class="line"><span class="lineno">  422</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  423</span>        {</div>
+<div class="line"><span class="lineno">  424</span>            copyTransform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a> = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
+<div class="line"><span class="lineno">  425</span>        }</div>
+<div class="line"><span class="lineno">  426</span>        </div>
+<div class="line"><span class="lineno">  427</span>        <span class="comment">// 軸並行なので回転はなし</span></div>
+<div class="line"><span class="lineno">  428</span>        copyTransform.rotate = Quaternion{};</div>
+<div class="line"><span class="lineno">  429</span> </div>
+<div class="line"><span class="lineno">  430</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
+<div class="line"><span class="lineno">  431</span>        {</div>
+<div class="line"><span class="lineno">  432</span>            <span class="comment">// 静的、StatefulTransform不要なのでそのまま代入</span></div>
+<div class="line"><span class="lineno">  433</span>            copyTransform.position = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Center;</div>
+<div class="line"><span class="lineno">  434</span>            copyTransform.scale = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents * 2.0f;</div>
+<div class="line"><span class="lineno">  435</span>        }</div>
+<div class="line"><span class="lineno">  436</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  437</span>        {</div>
+<div class="line"><span class="lineno">  438</span>            <span class="comment">// StatefulTransformに合わせて位置、サイズを調整</span></div>
+<div class="line"><span class="lineno">  439</span>            copyTransform.scale = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents * 2.0f;</div>
+<div class="line"><span class="lineno">  440</span>        }</div>
+<div class="line"><span class="lineno">  441</span>        </div>
+<div class="line"><span class="lineno">  442</span>        <span class="comment">//copyTransform.Compute();</span></div>
+<div class="line"><span class="lineno">  443</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae">hBoxModel_</a>, copyTransform, 0, <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
+<div class="line"><span class="lineno">  444</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  445</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  446</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  447</span>    }</div>
+<div class="line"><span class="lineno">  448</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a0f5236811d09379ad76a79a801026bae"><div class="ttname"><a href="classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae">mtgb::Collider::hBoxModel_</a></div><div class="ttdeci">static FBXModelHandle hBoxModel_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00105">Collider.h:105</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a21c200078b6404b94b71acc8d0602096"><div class="ttname"><a href="classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096">mtgb::Collider::hSphereModel_</a></div><div class="ttdeci">static FBXModelHandle hSphereModel_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00104">Collider.h:104</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a2bae5c02897ed12d0d796f9f27e13bd0"><div class="ttname"><a href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">mtgb::Collider::computeSphere_</a></div><div class="ttdeci">DirectX::BoundingSphere computeSphere_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00098">Collider.h:98</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_aafb1e42452e04e839e1d276a63f7b478"><div class="ttname"><a href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">mtgb::Collider::computeBox_</a></div><div class="ttdeci">DirectX::BoundingBox computeBox_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00099">Collider.h:99</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_a623126b2353e4747da1340c91af6e4bf"><div class="ttname"><a href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">mtgb::Draw::FBXModel</a></div><div class="ttdeci">static void FBXModel(const FBXModelHandle _hFBXModel, const Transform &amp;_pTransform, const int _frame, ShaderType _shaderType=ShaderType::FbxParts)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00265">Draw.cpp:265</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_aa8373f7a6e81f61498f8ca020a5a5c31"><div class="ttname"><a href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">mtgb::Transform::scale</a></div><div class="ttdeci">Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00161">Transform.h:161</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_af0999d4fa78d99e9436e11f0f71e7f98"><div class="ttname"><a href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">mtgb::Transform::parent</a></div><div class="ttdeci">EntityId parent</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00157">Transform.h:157</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">mtgb::ShaderType::Debug3D</a></div><div class="ttdeci">@ Debug3D</div></div>
+<div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_ad65c77adcdae305e6190bf2329ea1887"><div class="ttname"><a href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">mtgb::Vector3::One</a></div><div class="ttdeci">static auto One()</div><div class="ttdoc">単位ベクトル</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00063">Vector3.h:63</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">mtgb::Debug3D</a>, <a class="el" href="Draw_8cpp_source.html#l00265">mtgb::Draw::FBXModel()</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>, <a class="el" href="Vector3_8h_source.html#l00063">mtgb::Vector3::One()</a>, <a class="el" href="Transform_8h_source.html#l00161">mtgb::Transform::scale</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider_a684b04422fd7be8aafddc9b8ad5b7b50_cgraph.svg" width="386" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a931ae7565817c83a4e3c5f9004c074d5" name="a931ae7565817c83a4e3c5f9004c074d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a931ae7565817c83a4e3c5f9004c074d5">&#9670;&#160;</a></span>Get() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &amp; <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a> , <a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &gt;::Get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId);</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e0db1b0f0dbd3823a06ae854eacef41" name="a4e0db1b0f0dbd3823a06ae854eacef41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0db1b0f0dbd3823a06ae854eacef41">&#9670;&#160;</a></span>Get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &amp; <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a> , <a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &gt;::Get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>_args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId, std::forward&lt;Args&gt;(_args)...);</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad66549851919b9202d6ba734cc73e480" name="ad66549851919b9202d6ba734cc73e480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad66549851919b9202d6ba734cc73e480">&#9670;&#160;</a></span>GetColliderTag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ColliderType_8h.html#ac7af8ecfc927eb4be84ab71d0d3ec21e">ColliderTag</a> mtgb::Collider::GetColliderTag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00075">75</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1Collider.html#acf112c66c62a831565deb33c4d606e46">colliderTag_</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a735636df79e7cfd6336e9a97345e2b29" name="a735636df79e7cfd6336e9a97345e2b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735636df79e7cfd6336e9a97345e2b29">&#9670;&#160;</a></span>GetEntityId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a> , <a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &gt;::GetEntityId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a8aa4f5300c39f9f4705a587fd0a72639"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">mtgb::IComponent&lt; ColliderCP, Collider &gt;::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00038">IComponent.h:38</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a65f42a089e725be9599afab34ab245bb" name="a65f42a089e725be9599afab34ab245bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f42a089e725be9599afab34ab245bb">&#9670;&#160;</a></span>IComponent() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1IComponent.html#aed716499a289d6dd69c0d40b683142aa">ComponentPoolT</a>, ComponentT &gt;::IComponent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                     :</div>
+<div class="line"><span class="lineno">   22</span>            <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>{ <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a> }</div>
+<div class="line"><span class="lineno">   23</span>        {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a406a6445fabe38285a6d0ecc18ea6369" name="a406a6445fabe38285a6d0ecc18ea6369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a406a6445fabe38285a6d0ecc18ea6369">&#9670;&#160;</a></span>IComponent() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1IComponent.html#aed716499a289d6dd69c0d40b683142aa">ComponentPoolT</a>, ComponentT &gt;::IComponent </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                                                                                      :</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>{ _entityId }</div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>        <span class="comment">//Game::System&lt;ComponentPoolT&gt;().Register(_entityId);</span></div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aecaeb2d199af3bd978a34238ae7f733a" name="aecaeb2d199af3bd978a34238ae7f733a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecaeb2d199af3bd978a34238ae7f733a">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a> , <a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &gt;::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae6496e49643dd3bf4881bb608df5fb78" name="ae6496e49643dd3bf4881bb608df5fb78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6496e49643dd3bf4881bb608df5fb78">&#9670;&#160;</a></span>Intersect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structmtgb_1_1IntersectInfo.html">IntersectInfo</a> &gt; mtgb::Collider::Intersect </td>
+          <td>(</td>
+          <td class="paramtype">const DirectX::BoundingSphere &amp;&#160;</td>
+          <td class="paramname"><em>_sphere</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DirectX::BoundingBox &amp;&#160;</td>
+          <td class="paramname"><em>_aabb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00300">300</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  301</span>{</div>
+<div class="line"><span class="lineno">  302</span>    IntersectInfo info;</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>    Vector3 aabbMin = _aabb.Center - _aabb.Extents;</div>
+<div class="line"><span class="lineno">  305</span>    Vector3 aabbMax = _aabb.Center + _aabb.Extents;</div>
+<div class="line"><span class="lineno">  306</span> </div>
+<div class="line"><span class="lineno">  307</span>    <span class="comment">// 最短地点</span></div>
+<div class="line"><span class="lineno">  308</span>    Vector3 closest;</div>
+<div class="line"><span class="lineno">  309</span> </div>
+<div class="line"><span class="lineno">  310</span>    <span class="comment">// 各座標軸にクランプする</span></div>
+<div class="line"><span class="lineno">  311</span>    closest.x = std::clamp(_sphere.Center.x, aabbMin.x, aabbMax.x);</div>
+<div class="line"><span class="lineno">  312</span>    closest.y = std::clamp(_sphere.Center.y, aabbMin.y, aabbMax.y);</div>
+<div class="line"><span class="lineno">  313</span>    closest.z = std::clamp(_sphere.Center.z, aabbMin.z, aabbMax.z);</div>
+<div class="line"><span class="lineno">  314</span> </div>
+<div class="line"><span class="lineno">  315</span>    Vector3 v = _sphere.Center - closest;</div>
+<div class="line"><span class="lineno">  316</span>    <span class="keywordtype">float</span> dist = v.Size();</div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>    <span class="comment">// 距離がほぼゼロの場合</span></div>
+<div class="line"><span class="lineno">  319</span>    <span class="keywordflow">if</span> (dist &lt;= FLT_EPSILON)</div>
+<div class="line"><span class="lineno">  320</span>    {</div>
+<div class="line"><span class="lineno">  321</span>        <span class="comment">// AABBの中心から球の中心への方向</span></div>
+<div class="line"><span class="lineno">  322</span>        v = <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(_sphere.Center - _aabb.Center);</div>
+<div class="line"><span class="lineno">  323</span>        <span class="comment">// 方向が決まらなければ押し出しはしない</span></div>
+<div class="line"><span class="lineno">  324</span>        <span class="keywordflow">if</span> (v.Size() &lt;= FLT_EPSILON)</div>
+<div class="line"><span class="lineno">  325</span>            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  326</span>        dist = 0.0f;</div>
+<div class="line"><span class="lineno">  327</span>    }</div>
+<div class="line"><span class="lineno">  328</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  329</span>    {</div>
+<div class="line"><span class="lineno">  330</span>        v = <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(v);</div>
+<div class="line"><span class="lineno">  331</span>    }</div>
+<div class="line"><span class="lineno">  332</span> </div>
+<div class="line"><span class="lineno">  333</span>    <span class="comment">// 押し出し量</span></div>
+<div class="line"><span class="lineno">  334</span>    <span class="keywordtype">float</span> penetration = _sphere.Radius - dist;</div>
+<div class="line"><span class="lineno">  335</span>    <span class="keywordflow">if</span> (penetration &lt;= 0.0f)</div>
+<div class="line"><span class="lineno">  336</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span>    info.closest = closest;</div>
+<div class="line"><span class="lineno">  339</span>    <span class="comment">// 最短地点から球の中心へ押し出す</span></div>
+<div class="line"><span class="lineno">  340</span>    info.push = v * penetration;</div>
+<div class="line"><span class="lineno">  341</span>    <span class="keywordflow">return</span> info;</div>
+<div class="line"><span class="lineno">  342</span>}</div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_ae4cb4e8c99cfae50150e86f1f1450acc"><div class="ttname"><a href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">mtgb::Vector3::Normalize</a></div><div class="ttdeci">Vector3 &amp; Normalize()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00053">Vector3.h:53</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Collider_8h_source.html#l00019">mtgb::IntersectInfo::closest</a>, <a class="el" href="Vector3_8h_source.html#l00053">mtgb::Vector3::Normalize()</a>, <a class="el" href="Collider_8h_source.html#l00020">mtgb::IntersectInfo::push</a>, <a class="el" href="Vector3_8h_source.html#l00051">mtgb::Vector3::Size()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider_ae6496e49643dd3bf4881bb608df5fb78_cgraph.svg" width="622" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3ef88264b3a4fe0c05c4d1b5237fcd80" name="a3ef88264b3a4fe0c05c4d1b5237fcd80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef88264b3a4fe0c05c4d1b5237fcd80">&#9670;&#160;</a></span>IsHit() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::Collider::IsHit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1Collider.html">Collider</a> &amp;&#160;</td>
+          <td class="paramname"><em>_other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00091">91</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keyword">using </span>DirectX::XMVector3TransformCoord;</div>
+<div class="line"><span class="lineno">   94</span>    DirectX::ContainmentType containmentType = DirectX::DISJOINT;</div>
+<div class="line"><span class="lineno">   95</span>    <span class="comment">// ステージ同士は接触しないものとする</span></div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#acf112c66c62a831565deb33c4d606e46">colliderTag_</a> == ColliderTag::STAGE &amp;&amp; _other.colliderTag_ == ColliderTag::STAGE)</div>
+<div class="line"><span class="lineno">   97</span>    {</div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> == _other.colliderType_)</div>
+<div class="line"><span class="lineno">  102</span>    {</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> == ColliderType::TYPE_SPHERE)</div>
+<div class="line"><span class="lineno">  104</span>        {</div>
+<div class="line"><span class="lineno">  106</span>            containmentType = <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Contains(_other.computeSphere_);</div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> == ColliderType::TYPE_AABB)</div>
+<div class="line"><span class="lineno">  109</span>        {</div>
+<div class="line"><span class="lineno">  110</span>            containmentType = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Contains(_other.computeBox_);</div>
+<div class="line"><span class="lineno">  111</span>        }</div>
+<div class="line"><span class="lineno">  112</span>    }</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  114</span>    {</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> == ColliderType::TYPE_SPHERE)</div>
+<div class="line"><span class="lineno">  116</span>        {   </div>
+<div class="line"><span class="lineno">  117</span>            containmentType = <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Contains(_other.computeBox_);</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> == ColliderType::TYPE_AABB)</div>
+<div class="line"><span class="lineno">  120</span>        {</div>
+<div class="line"><span class="lineno">  121</span>            containmentType = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Contains(_other.computeSphere_);</div>
+<div class="line"><span class="lineno">  122</span>        }</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">if</span> (containmentType == DirectX::INTERSECTS || containmentType == DirectX::CONTAINS)</div>
+<div class="line"><span class="lineno">  126</span>    {</div>
+<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  128</span>    }</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  131</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Collider_8h_source.html#l00092">colliderTag_</a>, <a class="el" href="Collider_8h_source.html#l00087">colliderType_</a>, <a class="el" href="Collider_8h_source.html#l00099">computeBox_</a>, <a class="el" href="Collider_8h_source.html#l00098">computeSphere_</a>.</p>
+
+</div>
+</div>
+<a id="a929ca83a0b917de1e361df0e1f005237" name="a929ca83a0b917de1e361df0e1f005237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a929ca83a0b917de1e361df0e1f005237">&#9670;&#160;</a></span>IsHit() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::Collider::IsHit </td>
+          <td>(</td>
+          <td class="paramtype">const DirectX::BoundingBox &amp;&#160;</td>
+          <td class="paramname"><em>_aabb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>dist</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00225">225</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  226</span>{</div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">return</span> _aabb.Intersects(_origin, _dir, *dist);</div>
+<div class="line"><span class="lineno">  228</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af649ef21ea0e1d2951a39ee7cea70a48" name="af649ef21ea0e1d2951a39ee7cea70a48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af649ef21ea0e1d2951a39ee7cea70a48">&#9670;&#160;</a></span>IsHit() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::Collider::IsHit </td>
+          <td>(</td>
+          <td class="paramtype">const DirectX::BoundingSphere &amp;&#160;</td>
+          <td class="paramname"><em>_sphere</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>dist</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>レイとの交差判定 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_origin</td><td>原点</td></tr>
+    <tr><td class="paramname">_dir</td><td>方向(内部で正規化される)</td></tr>
+    <tr><td class="paramname">dist</td><td>レイの原点からコライダーとの最初の交点までの距離を格納。レイの原点が球の内側の場合は、球を出る点までの距離</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00133">133</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
+<div class="line"><span class="lineno">  136</span>    <span class="comment">// DirectXCollision.hのBoundingSphere::Intersectsをコピペした。</span></div>
+<div class="line"><span class="lineno">  137</span>    <span class="comment">// 何故かIntersectsに実引数が正常に渡されないから。</span></div>
+<div class="line"><span class="lineno">  139</span><span class="comment"></span>    <span class="keyword">using namespace </span>DirectX;</div>
+<div class="line"><span class="lineno">  140</span>    <span class="comment">// まずBoundingSphereを最新状態に更新</span></div>
+<div class="line"><span class="lineno">  141</span>    <span class="comment">//const_cast&lt;Collider*&gt;(this)-&gt;UpdateBoundingData();</span></div>
+<div class="line"><span class="lineno">  142</span>    </div>
+<div class="line"><span class="lineno">  143</span>    <span class="comment">// 方向ベクトルを正規化（元のベクトルは保持）</span></div>
+<div class="line"><span class="lineno">  144</span>    Vector3 normalizedDir = <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(_dir);</div>
+<div class="line"><span class="lineno">  145</span>    </div>
+<div class="line"><span class="lineno">  146</span>    XMVECTOR vNormalizeDir = XMLoadFloat3(&amp;normalizedDir);</div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceanonymous__namespace_02Collider_8cpp_03.html#ab70424bac1fb43dc06ccf8e1f9d1504f">XMVECTORIsUnit</a>(vNormalizeDir))</div>
+<div class="line"><span class="lineno">  148</span>    {</div>
+<div class="line"><span class="lineno">  149</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  150</span>    }</div>
+<div class="line"><span class="lineno">  151</span>    </div>
+<div class="line"><span class="lineno">  152</span>    XMVECTOR vCenter =  XMLoadFloat3(&amp;_sphere.Center);</div>
+<div class="line"><span class="lineno">  153</span>    XMVECTOR vRadius =  XMVectorReplicatePtr(&amp;_sphere.Radius);</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    <span class="comment">//球の中心からレイの原点へのベクトル</span></div>
+<div class="line"><span class="lineno">  156</span>    XMVECTOR l = XMVectorSubtract(vCenter, _origin);</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="comment">//lをレイの方向に射影したスカラー</span></div>
+<div class="line"><span class="lineno">  159</span>    <span class="comment">//球の中心とレイの最も近い点の距離</span></div>
+<div class="line"><span class="lineno">  160</span>    XMVECTOR s = XMVector3Dot(l, normalizedDir);</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>    <span class="comment">//球の中心からレイの原点への距離の二乗</span></div>
+<div class="line"><span class="lineno">  163</span>    XMVECTOR l2 = XMVector3Dot(l, l);</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>    <span class="comment">//半径の二乗</span></div>
+<div class="line"><span class="lineno">  166</span>    XMVECTOR r2 = XMVectorMultiply(vRadius, vRadius);</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>    <span class="comment">//球の中心からレイへの垂線の二乗</span></div>
+<div class="line"><span class="lineno">  169</span>    <span class="comment">//三平方の定理でいうとlが斜辺にあたる</span></div>
+<div class="line"><span class="lineno">  170</span>    </div>
+<div class="line"><span class="lineno">  171</span>    XMVECTOR m2 = XMVectorNegativeMultiplySubtract(s, s, l2);</div>
+<div class="line"><span class="lineno">  172</span>    </div>
+<div class="line"><span class="lineno">  173</span>    </div>
+<div class="line"><span class="lineno">  174</span>    XMVECTOR NoIntersection;</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    <span class="comment">//もしレイの原点が球の外側、かつ</span></div>
+<div class="line"><span class="lineno">  177</span>    <span class="comment">//球の中心がレイの原点の後ろにあるならば接触していない</span></div>
+<div class="line"><span class="lineno">  178</span>    NoIntersection = XMVectorAndInt(</div>
+<div class="line"><span class="lineno">  179</span>        <span class="comment">//射影ベクトルが負ならレイの方向と反対、レイの原点より後ろにある</span></div>
+<div class="line"><span class="lineno">  180</span>        XMVectorLess(s, XMVectorZero())</div>
+<div class="line"><span class="lineno">  181</span>        <span class="comment">//l2の方が大きいなら球の外側にある</span></div>
+<div class="line"><span class="lineno">  182</span>        , XMVectorGreater(l2, r2));</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>    <span class="comment">//球の中心からレイへの垂線が球の半径よりも大きいか</span></div>
+<div class="line"><span class="lineno">  185</span>    <span class="comment">//レイの最も近い地点が球の外側にあるか</span></div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">if</span> (XMVector4Greater(m2, r2))</div>
+<div class="line"><span class="lineno">  189</span>    {</div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  191</span>    }</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>    <span class="comment">//衝突しているとして、最も近い地点を計算</span></div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>    <span class="comment">//球の中心とレイの最も近い点から球の表面までの距離</span></div>
+<div class="line"><span class="lineno">  196</span>    XMVECTOR q = XMVectorSqrt(XMVectorSubtract(r2, m2));</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>    <span class="comment">//r2-m2が負の値の場合はqに0を入れる</span></div>
+<div class="line"><span class="lineno">  199</span>    XMVECTOR mask = XMVectorGreater(m2, r2);</div>
+<div class="line"><span class="lineno">  200</span>    XMVECTOR zero = XMVectorZero();</div>
+<div class="line"><span class="lineno">  201</span>    <span class="comment">//maskがtrueの場合はzero、falseの場合はq</span></div>
+<div class="line"><span class="lineno">  202</span>    q = XMVectorSelect(q, zero, mask);</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    <span class="comment">//レイの原点から球との交点までの距離</span></div>
+<div class="line"><span class="lineno">  205</span>    <span class="comment">//手前</span></div>
+<div class="line"><span class="lineno">  206</span>    XMVECTOR t1 = XMVectorSubtract(s, q);</div>
+<div class="line"><span class="lineno">  207</span>    <span class="comment">//奥</span></div>
+<div class="line"><span class="lineno">  208</span>    XMVECTOR t2 = XMVectorAdd(s, q);</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>    <span class="comment">//レイの原点が球の内側か</span></div>
+<div class="line"><span class="lineno">  211</span>    XMVECTOR originInside = XMVectorLessOrEqual(l2, r2);</div>
+<div class="line"><span class="lineno">  212</span>    </div>
+<div class="line"><span class="lineno">  213</span>    <span class="comment">//第三引数がtrueなら第二引数、falseなら第一引数</span></div>
+<div class="line"><span class="lineno">  214</span>    XMVECTOR t = XMVectorSelect(t1, t2, originInside);</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">if</span> (XMVector4NotEqualInt(NoIntersection, XMVectorTrueInt()))</div>
+<div class="line"><span class="lineno">  217</span>    {</div>
+<div class="line"><span class="lineno">  218</span>        DirectX::XMStoreFloat(dist, t);</div>
+<div class="line"><span class="lineno">  219</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  220</span>    }</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  223</span>}</div>
+<div class="ttc" id="anamespaceanonymous__namespace_02Collider_8cpp_03_html_ab70424bac1fb43dc06ccf8e1f9d1504f"><div class="ttname"><a href="namespaceanonymous__namespace_02Collider_8cpp_03.html#ab70424bac1fb43dc06ccf8e1f9d1504f">anonymous_namespace{Collider.cpp}::XMVECTORIsUnit</a></div><div class="ttdeci">bool XMVECTORIsUnit(DirectX::FXMVECTOR _v)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00013">Collider.cpp:13</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Vector3_8h_source.html#l00053">mtgb::Vector3::Normalize()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider_af649ef21ea0e1d2951a39ee7cea70a48_cgraph.svg" width="595" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="abdec13f40741bb10c27e7e8274d58d34" name="abdec13f40741bb10c27e7e8274d58d34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdec13f40741bb10c27e7e8274d58d34">&#9670;&#160;</a></span>IsHit() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::Collider::IsHit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>_radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00247">247</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  248</span>{</div>
+<div class="line"><span class="lineno">  249</span>    <span class="keyword">static</span> Matrix4x4 <a class="code hl_variable" href="namespaceanonymous__namespace_02Collider_8cpp_03.html#a0f3f3d9de3a2ce7f1fd481d988992861">matrix</a>{};</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> == ColliderType::TYPE_SPHERE)</div>
+<div class="line"><span class="lineno">  252</span>    {</div>
+<div class="line"><span class="lineno">  253</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">GenerateWorldMatrix</a>(&amp;matrix);</div>
+<div class="line"><span class="lineno">  254</span>        Vector3 worldPosition{ Vector3(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Center) * <a class="code hl_variable" href="namespaceanonymous__namespace_02Collider_8cpp_03.html#a0f3f3d9de3a2ce7f1fd481d988992861">matrix</a> };</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span>        <span class="comment">// 引数で球を作る</span></div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>        <span class="keywordtype">float</span> distance{ (_center - worldPosition).Size() };</div>
+<div class="line"><span class="lineno">  259</span>        <span class="keywordtype">float</span> hitDistance{ <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Radius + _radius };</div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>        <span class="comment">// 距離が双方の球の半径よりも小さければ当たっている</span></div>
+<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">return</span> (distance &lt;= hitDistance);</div>
+<div class="line"><span class="lineno">  263</span>    }</div>
+<div class="line"><span class="lineno">  264</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> == ColliderType::TYPE_CAPSULE)</div>
+<div class="line"><span class="lineno">  265</span>    {</div>
+<div class="line"><span class="lineno">  266</span>        <span class="comment">// TODO: カプセルと球の当たり判定</span></div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>    }</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  271</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a2c166b8c575ce4893f881836eee54bc1"><div class="ttname"><a href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">mtgb::Transform::GenerateWorldMatrix</a></div><div class="ttdeci">void GenerateWorldMatrix(Matrix4x4 *_pMatrix) const</div><div class="ttdoc">ワールド行列を生成する</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00084">Transform.cpp:84</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02Collider_8cpp_03_html_a0f3f3d9de3a2ce7f1fd481d988992861"><div class="ttname"><a href="namespaceanonymous__namespace_02Collider_8cpp_03.html#a0f3f3d9de3a2ce7f1fd481d988992861">anonymous_namespace{Collider.cpp}::matrix</a></div><div class="ttdeci">mtgb::Matrix4x4 matrix</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00011">Collider.cpp:11</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac3d283520df5eae4b86dcd32a9297e39" name="ac3d283520df5eae4b86dcd32a9297e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3d283520df5eae4b86dcd32a9297e39">&#9670;&#160;</a></span>IsHit() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::Collider::IsHit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>dist</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00230">230</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>{</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a>)</div>
+<div class="line"><span class="lineno">  233</span>    {</div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">case</span> ColliderType::TYPE_SPHERE:</div>
+<div class="line"><span class="lineno">  235</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1Collider.html#a3ef88264b3a4fe0c05c4d1b5237fcd80">IsHit</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>, _origin, _dir, dist);</div>
+<div class="line"><span class="lineno">  236</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  237</span>    <span class="keywordflow">case</span> ColliderType::TYPE_AABB:</div>
+<div class="line"><span class="lineno">  238</span>         <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1Collider.html#a3ef88264b3a4fe0c05c4d1b5237fcd80">IsHit</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>,_origin,_dir,dist);</div>
+<div class="line"><span class="lineno">  239</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  241</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  242</span>    }</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  245</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a3ef88264b3a4fe0c05c4d1b5237fcd80"><div class="ttname"><a href="classmtgb_1_1Collider.html#a3ef88264b3a4fe0c05c4d1b5237fcd80">mtgb::Collider::IsHit</a></div><div class="ttdeci">bool IsHit(const Collider &amp;_other) const</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00091">Collider.cpp:91</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a24b5984ef9fa3127bf14f0e9c483482c" name="a24b5984ef9fa3127bf14f0e9c483482c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b5984ef9fa3127bf14f0e9c483482c">&#9670;&#160;</a></span>OnPostRestore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Collider::OnPostRestore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classISerializableObject.html#a657030a231a22470b5b09bd6e55a2c0e">ISerializableObject</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00383">383</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  384</span>{</div>
+<div class="line"><span class="lineno">  385</span>    <span class="comment">// TODO: コンポーネントの復元に依存関係を設定する</span></div>
+<div class="line"><span class="lineno">  386</span>    <span class="comment">// 現在Transformよりも先に復元されてしまうためscaleの反映ができず、</span></div>
+<div class="line"><span class="lineno">  387</span>    <span class="comment">// 次の更新時になってしまう</span></div>
+<div class="line"><span class="lineno">  388</span>    <a class="code hl_function" href="classmtgb_1_1Collider.html#a32a5df5e9f6b7488ca20b393276ef421">SetCenter</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a>);</div>
+<div class="line"><span class="lineno">  389</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a>)</div>
+<div class="line"><span class="lineno">  390</span>    {</div>
+<div class="line"><span class="lineno">  391</span>    <span class="keywordflow">case</span> ColliderType::TYPE_SPHERE:</div>
+<div class="line"><span class="lineno">  392</span>    <span class="keywordflow">case</span> ColliderType::TYPE_CAPSULE:</div>
+<div class="line"><span class="lineno">  393</span>        <a class="code hl_function" href="classmtgb_1_1Collider.html#a5e61e476c9d384d64ccaac909a02a360">SetRadius</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a18dd9cce2c089f4e9118bd0ab195853c">radius_</a>);</div>
+<div class="line"><span class="lineno">  394</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  395</span>    <span class="keywordflow">case</span> ColliderType::TYPE_AABB:</div>
+<div class="line"><span class="lineno">  396</span>        <a class="code hl_function" href="classmtgb_1_1Collider.html#ae853925f6ef1aa2acd0684ec7c602d9c">SetExtents</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>);</div>
+<div class="line"><span class="lineno">  397</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  398</span>    }</div>
+<div class="line"><span class="lineno">  399</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a32a5df5e9f6b7488ca20b393276ef421"><div class="ttname"><a href="classmtgb_1_1Collider.html#a32a5df5e9f6b7488ca20b393276ef421">mtgb::Collider::SetCenter</a></div><div class="ttdeci">void SetCenter(const Vector3 &amp;_center)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00273">Collider.cpp:273</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a5e61e476c9d384d64ccaac909a02a360"><div class="ttname"><a href="classmtgb_1_1Collider.html#a5e61e476c9d384d64ccaac909a02a360">mtgb::Collider::SetRadius</a></div><div class="ttdeci">void SetRadius(float _radius)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00294">Collider.cpp:294</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_ae853925f6ef1aa2acd0684ec7c602d9c"><div class="ttname"><a href="classmtgb_1_1Collider.html#ae853925f6ef1aa2acd0684ec7c602d9c">mtgb::Collider::SetExtents</a></div><div class="ttdeci">void SetExtents(const Vector3 &amp;_extents)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00286">Collider.cpp:286</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a86fe7f4e0ab2a86787b52d34ac5b6ec8" name="a86fe7f4e0ab2a86787b52d34ac5b6ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86fe7f4e0ab2a86787b52d34ac5b6ec8">&#9670;&#160;</a></span>OnPreSave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ISerializableObject::OnPreSave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1Interpolator.html#a61f7a7f008cc862e4b74638250a1d241">mtgb::Interpolator</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="ISerializableObject_8h_source.html">ISerializableObject.h</a> の <a class="el" href="ISerializableObject_8h_source.html#l00005">5</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    5</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a18e01128e00c24c71fef1ab528ff8fbc" name="a18e01128e00c24c71fef1ab528ff8fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18e01128e00c24c71fef1ab528ff8fbc">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Collider.html">Collider</a> &amp; mtgb::Collider::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1Collider.html">Collider</a> &amp;&#160;</td>
+          <td class="paramname"><em>_other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00042">42</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">if</span> (&amp;_other == <span class="keyword">this</span>)</div>
+<div class="line"><span class="lineno">   45</span>            {</div>
+<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   47</span>            }</div>
+<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   49</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3e6edd11d59fcf2aab5356e754f44d32" name="a3e6edd11d59fcf2aab5356e754f44d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e6edd11d59fcf2aab5356e754f44d32">&#9670;&#160;</a></span>Push()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Collider::Push </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1Collider.html">Collider</a> &amp;&#160;</td>
+          <td class="paramname"><em>_other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00344">344</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  345</span>{</div>
+<div class="line"><span class="lineno">  346</span>    std::optional&lt;DirectX::BoundingBox&gt; aabb;</div>
+<div class="line"><span class="lineno">  347</span>    std::optional&lt;DirectX::BoundingSphere&gt; sphere;</div>
+<div class="line"><span class="lineno">  348</span> </div>
+<div class="line"><span class="lineno">  349</span>    <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> sphereTypeEntityId = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
+<div class="line"><span class="lineno">  350</span> </div>
+<div class="line"><span class="lineno">  351</span>    <span class="comment">// 球とAABBのみ押し出しを実装しているを実装している</span></div>
+<div class="line"><span class="lineno">  352</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> == ColliderType::TYPE_SPHERE &amp;&amp; _other.colliderType_ == ColliderType::TYPE_AABB)</div>
+<div class="line"><span class="lineno">  353</span>    {</div>
+<div class="line"><span class="lineno">  354</span>        sphereTypeEntityId = <a class="code hl_function" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a>();</div>
+<div class="line"><span class="lineno">  355</span>        sphere = <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>;</div>
+<div class="line"><span class="lineno">  356</span>        aabb = _other.computeBox_;</div>
+<div class="line"><span class="lineno">  357</span>    }</div>
+<div class="line"><span class="lineno">  358</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_other.colliderType_ == ColliderType::TYPE_SPHERE &amp;&amp; <a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> == ColliderType::TYPE_AABB)</div>
+<div class="line"><span class="lineno">  359</span>    {</div>
+<div class="line"><span class="lineno">  360</span>        sphereTypeEntityId = _other.GetEntityId();</div>
+<div class="line"><span class="lineno">  361</span>        sphere = _other.computeSphere_;</div>
+<div class="line"><span class="lineno">  362</span>        aabb = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>;</div>
+<div class="line"><span class="lineno">  363</span>    }</div>
+<div class="line"><span class="lineno">  364</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  365</span>    {</div>
+<div class="line"><span class="lineno">  366</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  367</span>    }</div>
+<div class="line"><span class="lineno">  368</span>    Transform&amp; transform = <a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(sphereTypeEntityId);</div>
+<div class="line"><span class="lineno">  369</span> </div>
+<div class="line"><span class="lineno">  370</span>    std::optional&lt;IntersectInfo&gt; info = <a class="code hl_function" href="classmtgb_1_1Collider.html#ae6496e49643dd3bf4881bb608df5fb78">Intersect</a>(sphere.value(), aabb.value());</div>
+<div class="line"><span class="lineno">  371</span> </div>
+<div class="line"><span class="lineno">  372</span>    <span class="keywordflow">if</span> (info.has_value() == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  373</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  374</span> </div>
+<div class="line"><span class="lineno">  375</span>    <span class="keywordflow">if</span> (info.value().closest.y &lt; transform.position.y)</div>
+<div class="line"><span class="lineno">  376</span>    {</div>
+<div class="line"><span class="lineno">  377</span>        RigidBody&amp; rigidBody = <a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">RigidBody::Get</a>(sphereTypeEntityId);</div>
+<div class="line"><span class="lineno">  378</span>        rigidBody.OnGround();</div>
+<div class="line"><span class="lineno">  379</span>    }</div>
+<div class="line"><span class="lineno">  380</span>    transform.position += info.value().push;</div>
+<div class="line"><span class="lineno">  381</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_ae6496e49643dd3bf4881bb608df5fb78"><div class="ttname"><a href="classmtgb_1_1Collider.html#ae6496e49643dd3bf4881bb608df5fb78">mtgb::Collider::Intersect</a></div><div class="ttdeci">static std::optional&lt; IntersectInfo &gt; Intersect(const DirectX::BoundingSphere &amp;_sphere, const DirectX::BoundingBox &amp;_aabb)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00300">Collider.cpp:300</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a735636df79e7cfd6336e9a97345e2b29"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">mtgb::IComponent&lt; ColliderCP, Collider &gt;::GetEntityId</a></div><div class="ttdeci">const EntityId GetEntityId() const</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00034">IComponent.h:34</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Collider_8h_source.html#l00087">colliderType_</a>, <a class="el" href="Collider_8h_source.html#l00099">computeBox_</a>, <a class="el" href="Collider_8h_source.html#l00098">computeSphere_</a>, <a class="el" href="IComponent_8h_source.html#l00062">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get()</a>, <a class="el" href="IComponent_8h_source.html#l00062">mtgb::IComponent&lt; RigidBodyCP, RigidBody &gt;::Get()</a>, <a class="el" href="IComponent_8h_source.html#l00034">mtgb::IComponent&lt; ComponentPoolT, ComponentT &gt;::GetEntityId()</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>, <a class="el" href="RigidBody_8cpp_source.html#l00038">mtgb::RigidBody::OnGround()</a>, <a class="el" href="Transform_8h_source.html#l00159">mtgb::Transform::position</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ColliderCP_8cpp_source.html#l00032">mtgb::ColliderCP::Update()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider_a3e6edd11d59fcf2aab5356e754f44d32_cgraph.svg" width="436" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider_a3e6edd11d59fcf2aab5356e754f44d32_icgraph.svg" width="399" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab07fa68485a5cf4425eebf1718c82e73" name="ab07fa68485a5cf4425eebf1718c82e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab07fa68485a5cf4425eebf1718c82e73">&#9670;&#160;</a></span>Reuse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Collider.html">Collider</a>  * <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a> , <a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &gt;::Reuse </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Reuse(_index, _entityId);</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a32a5df5e9f6b7488ca20b393276ef421" name="a32a5df5e9f6b7488ca20b393276ef421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a5df5e9f6b7488ca20b393276ef421">&#9670;&#160;</a></span>SetCenter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Collider::SetCenter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_center</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00273">273</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  274</span>{</div>
+<div class="line"><span class="lineno">  275</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> == ColliderType::TYPE_AABB)</div>
+<div class="line"><span class="lineno">  276</span>    {</div>
+<div class="line"><span class="lineno">  277</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Center = _center;</div>
+<div class="line"><span class="lineno">  278</span>    }</div>
+<div class="line"><span class="lineno">  279</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  280</span>    {</div>
+<div class="line"><span class="lineno">  281</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Center = _center;</div>
+<div class="line"><span class="lineno">  282</span>    }</div>
+<div class="line"><span class="lineno">  283</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a> = _center;</div>
+<div class="line"><span class="lineno">  284</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="TerrainReader_8h_source.html#l00532">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateStageBoundaryCollider()</a>, <a class="el" href="TerrainReader_8h_source.html#l00267">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateTerrainAABBs()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider_a32a5df5e9f6b7488ca20b393276ef421_icgraph.svg" width="484" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae853925f6ef1aa2acd0684ec7c602d9c" name="ae853925f6ef1aa2acd0684ec7c602d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae853925f6ef1aa2acd0684ec7c602d9c">&#9670;&#160;</a></span>SetExtents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Collider::SetExtents </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_extents</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00286">286</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>{</div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents.x = _extents.x * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x;</div>
+<div class="line"><span class="lineno">  289</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents.y = _extents.y * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.y;</div>
+<div class="line"><span class="lineno">  290</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents.z = _extents.z * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.z;</div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a> = _extents;</div>
+<div class="line"><span class="lineno">  292</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone::GameOverZone()</a>, <a class="el" href="TerrainReader_8h_source.html#l00532">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateStageBoundaryCollider()</a>, <a class="el" href="TerrainReader_8h_source.html#l00267">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateTerrainAABBs()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider_ae853925f6ef1aa2acd0684ec7c602d9c_icgraph.svg" width="490" height="379"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5e61e476c9d384d64ccaac909a02a360" name="a5e61e476c9d384d64ccaac909a02a360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e61e476c9d384d64ccaac909a02a360">&#9670;&#160;</a></span>SetRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Collider::SetRadius </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>_radius</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00294">294</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  295</span>{</div>
+<div class="line"><span class="lineno">  296</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Radius = _radius * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x;</div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#a18dd9cce2c089f4e9118bd0ab195853c">radius_</a> = _radius;</div>
+<div class="line"><span class="lineno">  298</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Interpolator_8cpp_source.html#l00018">mtgb::Interpolator::Interpolator()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Collider_a5e61e476c9d384d64ccaac909a02a360_icgraph.svg" width="408" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6ebc5eb72e2b7f1bd004e47655d44369" name="a6ebc5eb72e2b7f1bd004e47655d44369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ebc5eb72e2b7f1bd004e47655d44369">&#9670;&#160;</a></span>UpdateBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Collider::UpdateBoundingBox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00080">80</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
+<div class="line"><span class="lineno">   83</span>    {</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Center = <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>;</div>
+<div class="line"><span class="lineno">   85</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents.x = <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>.x * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x;</div>
+<div class="line"><span class="lineno">   86</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents.y = <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>.y * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.y;</div>
+<div class="line"><span class="lineno">   87</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents.z = <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>.z * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.z;</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
+<div class="line"><span class="lineno">   89</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a71231187095137f6dd753ef9450bc18b"><div class="ttname"><a href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">mtgb::Transform::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00159">Transform.h:159</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad574872e82d1ef024d36b7bef562dc87" name="ad574872e82d1ef024d36b7bef562dc87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad574872e82d1ef024d36b7bef562dc87">&#9670;&#160;</a></span>UpdateBoundingData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Collider::UpdateBoundingData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a>)</div>
+<div class="line"><span class="lineno">   62</span>    {</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">case</span> ColliderType::TYPE_SPHERE:</div>
+<div class="line"><span class="lineno">   64</span>        <a class="code hl_function" href="classmtgb_1_1Collider.html#a3662a405cc505b7389a9936b6ac8ce2f">UpdateBoundingSphere</a>();</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">case</span> ColliderType::TYPE_AABB:</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_function" href="classmtgb_1_1Collider.html#a6ebc5eb72e2b7f1bd004e47655d44369">UpdateBoundingBox</a>();</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">case</span> ColliderType::TYPE_CAPSULE:</div>
+<div class="line"><span class="lineno">   70</span>        <span class="comment">// TODO: カプセル初期化</span></div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a3662a405cc505b7389a9936b6ac8ce2f"><div class="ttname"><a href="classmtgb_1_1Collider.html#a3662a405cc505b7389a9936b6ac8ce2f">mtgb::Collider::UpdateBoundingSphere</a></div><div class="ttdeci">void UpdateBoundingSphere()</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00075">Collider.cpp:75</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a6ebc5eb72e2b7f1bd004e47655d44369"><div class="ttname"><a href="classmtgb_1_1Collider.html#a6ebc5eb72e2b7f1bd004e47655d44369">mtgb::Collider::UpdateBoundingBox</a></div><div class="ttdeci">void UpdateBoundingBox()</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00080">Collider.cpp:80</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3662a405cc505b7389a9936b6ac8ce2f" name="a3662a405cc505b7389a9936b6ac8ce2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3662a405cc505b7389a9936b6ac8ce2f">&#9670;&#160;</a></span>UpdateBoundingSphere()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Collider::UpdateBoundingSphere </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00075">75</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>{</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Center = <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>;</div>
+<div class="line"><span class="lineno">   78</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a4da73130d244193724bf3f8e40eb0b5b" name="a4da73130d244193724bf3f8e40eb0b5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4da73130d244193724bf3f8e40eb0b5b">&#9670;&#160;</a></span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union  { ... }  mtgb::Collider::@25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfdf4c07953199bf0c6214593fed2520" name="adfdf4c07953199bf0c6214593fed2520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfdf4c07953199bf0c6214593fed2520">&#9670;&#160;</a></span>center_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Collider::center_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00107">107</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>.</p>
+
+</div>
+</div>
+<a id="abd87cae24cf82111cb7b75ef69c828e6" name="abd87cae24cf82111cb7b75ef69c828e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd87cae24cf82111cb7b75ef69c828e6">&#9670;&#160;</a></span>ColliderCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend mtgb::Collider::ColliderCP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acf112c66c62a831565deb33c4d606e46" name="acf112c66c62a831565deb33c4d606e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf112c66c62a831565deb33c4d606e46">&#9670;&#160;</a></span>colliderTag_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ColliderType_8h.html#ac7af8ecfc927eb4be84ab71d0d3ec21e">ColliderTag</a> mtgb::Collider::colliderTag_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00092">92</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Collider_8cpp_source.html#l00034">Collider()</a>, <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>, <a class="el" href="Collider_8cpp_source.html#l00091">IsHit()</a>.</p>
+
+</div>
+</div>
+<a id="a31cbcdf00d33fe152a900e95867075ad" name="a31cbcdf00d33fe152a900e95867075ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31cbcdf00d33fe152a900e95867075ad">&#9670;&#160;</a></span>colliderType_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ColliderType_8h.html#a7f138e75fc3cc79e825c39e040690395">ColliderType</a> mtgb::Collider::colliderType_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00087">87</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone::GameOverZone()</a>, <a class="el" href="TerrainReader_8h_source.html#l00532">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateStageBoundaryCollider()</a>, <a class="el" href="TerrainReader_8h_source.html#l00267">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateTerrainAABBs()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="Interpolator_8cpp_source.html#l00018">mtgb::Interpolator::Interpolator()</a>, <a class="el" href="Collider_8cpp_source.html#l00091">IsHit()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="Collider_8cpp_source.html#l00344">Push()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
+
+</div>
+</div>
+<a id="a37d6b5582bd4cc3eea5feb793ae19aa4" name="a37d6b5582bd4cc3eea5feb793ae19aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d6b5582bd4cc3eea5feb793ae19aa4">&#9670;&#160;</a></span>ComponentPool&lt; ComponentT, ComponentPoolT &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a> , <a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &gt;::ComponentPool&lt; <a class="el" href="classmtgb_1_1Collider.html">Collider</a> , <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a>  &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aed716499a289d6dd69c0d40b683142aa" name="aed716499a289d6dd69c0d40b683142aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed716499a289d6dd69c0d40b683142aa">&#9670;&#160;</a></span>ComponentPoolT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a> , <a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &gt;<a class="el" href="classmtgb_1_1Collider.html#abd87cae24cf82111cb7b75ef69c828e6">::ColliderCP</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aafb1e42452e04e839e1d276a63f7b478" name="aafb1e42452e04e839e1d276a63f7b478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb1e42452e04e839e1d276a63f7b478">&#9670;&#160;</a></span>computeBox_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DirectX::BoundingBox mtgb::Collider::computeBox_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00099">99</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Collider_8cpp_source.html#l00091">IsHit()</a>, <a class="el" href="Collider_8cpp_source.html#l00344">Push()</a>.</p>
+
+</div>
+</div>
+<a id="a2bae5c02897ed12d0d796f9f27e13bd0" name="a2bae5c02897ed12d0d796f9f27e13bd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bae5c02897ed12d0d796f9f27e13bd0">&#9670;&#160;</a></span>computeSphere_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DirectX::BoundingSphere mtgb::Collider::computeSphere_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00098">98</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Collider_8cpp_source.html#l00091">IsHit()</a>, <a class="el" href="Collider_8cpp_source.html#l00344">Push()</a>.</p>
+
+</div>
+</div>
+<a id="a8aa4f5300c39f9f4705a587fd0a72639" name="a8aa4f5300c39f9f4705a587fd0a72639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa4f5300c39f9f4705a587fd0a72639">&#9670;&#160;</a></span>entityId_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ColliderCP.html">ColliderCP</a> , <a class="el" href="classmtgb_1_1Collider.html">Collider</a>  &gt;::entityId_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adf2653ebf8d69b6409be288fec169bb5" name="adf2653ebf8d69b6409be288fec169bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2653ebf8d69b6409be288fec169bb5">&#9670;&#160;</a></span>extents_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Collider::extents_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00111">111</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>.</p>
+
+</div>
+</div>
+<a id="a0f5236811d09379ad76a79a801026bae" name="a0f5236811d09379ad76a79a801026bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f5236811d09379ad76a79a801026bae">&#9670;&#160;</a></span>hBoxModel_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">mtgb::FBXModelHandle</a> mtgb::Collider::hBoxModel_ { <a class="el" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a> }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00105">105</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="ColliderCP_8cpp_source.html#l00021">mtgb::ColliderCP::Start()</a>.</p>
+
+</div>
+</div>
+<a id="a21c200078b6404b94b71acc8d0602096" name="a21c200078b6404b94b71acc8d0602096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21c200078b6404b94b71acc8d0602096">&#9670;&#160;</a></span>hSphereModel_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">mtgb::FBXModelHandle</a> mtgb::Collider::hSphereModel_ { <a class="el" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a> }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00104">104</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="ColliderCP_8cpp_source.html#l00021">mtgb::ColliderCP::Start()</a>.</p>
+
+</div>
+</div>
+<a id="a8d0d2d14b244cd3db740e4dfdd50d479" name="a8d0d2d14b244cd3db740e4dfdd50d479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d0d2d14b244cd3db740e4dfdd50d479">&#9670;&#160;</a></span>isStatic_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::Collider::isStatic_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00090">90</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Collider_8cpp_source.html#l00034">Collider()</a>, <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone::GameOverZone()</a>, <a class="el" href="TerrainReader_8h_source.html#l00532">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateStageBoundaryCollider()</a>, <a class="el" href="TerrainReader_8h_source.html#l00267">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateTerrainAABBs()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
+
+</div>
+</div>
+<a id="a6f0b1e752f3c817dd359aa296150c998" name="a6f0b1e752f3c817dd359aa296150c998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f0b1e752f3c817dd359aa296150c998">&#9670;&#160;</a></span>onColldiersPrev_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt;<a class="el" href="classmtgb_1_1Collider.html">Collider</a>*&gt; mtgb::Collider::onColldiersPrev_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00083">83</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="ColliderCP_8cpp_source.html#l00032">mtgb::ColliderCP::Update()</a>, <a class="el" href="RigidBodyCP_8cpp_source.html#l00015">mtgb::RigidBodyCP::Update()</a>.</p>
+
+</div>
+</div>
+<a id="aed009e13fbc5e0eb0b75eb4f9fe2ca8e" name="aed009e13fbc5e0eb0b75eb4f9fe2ca8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed009e13fbc5e0eb0b75eb4f9fe2ca8e">&#9670;&#160;</a></span>onColliders_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt;<a class="el" href="classmtgb_1_1Collider.html">Collider</a>*&gt; mtgb::Collider::onColliders_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00082">82</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="ColliderCP_8cpp_source.html#l00032">mtgb::ColliderCP::Update()</a>, <a class="el" href="RigidBodyCP_8cpp_source.html#l00015">mtgb::RigidBodyCP::Update()</a>.</p>
+
+</div>
+</div>
+<a id="ab4095dd71e264099938f79fbe65d057a" name="ab4095dd71e264099938f79fbe65d057a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4095dd71e264099938f79fbe65d057a">&#9670;&#160;</a></span>pTransform_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Transform.html">Transform</a>* mtgb::Collider::pTransform_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00102">102</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Collider_8cpp_source.html#l00034">Collider()</a>.</p>
+
+</div>
+</div>
+<a id="a18dd9cce2c089f4e9118bd0ab195853c" name="a18dd9cce2c089f4e9118bd0ab195853c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18dd9cce2c089f4e9118bd0ab195853c">&#9670;&#160;</a></span>radius_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::Collider::radius_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00109">109</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="Collider_8h_source.html">Collider.h</a></li>
+<li><a class="el" href="Collider_8cpp_source.html">Collider.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1Collider.html">Collider</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

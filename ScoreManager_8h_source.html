@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: ScoreManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ScoreManager_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ScoreManager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ScoreManager_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ISystem_8h.html">ISystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classmtgb_1_1ScoreManager.html">    7</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1ScoreManager.html">ScoreManager</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1ISystem.html">ISystem</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#a486ec72f7e3b371528af2ce0f311690e">ScoreManager</a>();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#ac1c725b4cfa3357f9417ca0b660e60ca">~ScoreManager</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classmtgb_1_1ScoreManager.html#a800a1719eaef014678f4382d69c72890">   12</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#a800a1719eaef014678f4382d69c72890">Initialize</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#adbebc24602944500ef8dd102d9e357ea">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#a3bbb0eecfcd23fd337b4774c69d6a62e">AddScore</a>(uint32_t _score);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classmtgb_1_1ScoreManager.html#a07f4052ab15556af9d0d286b2fc5908a">   22</a></span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#a07f4052ab15556af9d0d286b2fc5908a">AddQuota</a>(uint32_t _quota) { <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#a63cd3dca53a48834b776fd2fe7c3c40a">ScoreManager::quotaScore_</a> += _quota; }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">static</span> int32_t <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#a5142720678002f9473089ab256ae0887">GetScore</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#a331b2e534e1fdb28f741a15ece1b20e6">SubtractScore</a>(uint32_t _score);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">static</span> int32_t <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#af89f5fd34b4894a25d933de436616cf6">GetQuotaScore</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keyword">static</span> int32_t <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#a8fca283ce8014905dacf4354da5630e6">GetQuotaScoreMax</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#a2f404038201b44432c6e0ab18c5de98a">ResetScore</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classmtgb_1_1ScoreManager.html#a7a625453c9b55cb5a66fb9975db887fc">AchievedQuota</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">   55</a></span>        <span class="keyword">static</span> int32_t <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">score_</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="comment">// ノルマのスコア</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classmtgb_1_1ScoreManager.html#a63cd3dca53a48834b776fd2fe7c3c40a">   57</a></span>        <span class="keyword">static</span> int32_t <a class="code hl_variable" href="classmtgb_1_1ScoreManager.html#a63cd3dca53a48834b776fd2fe7c3c40a">quotaScore_</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    };</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+<div class="ttc" id="aISystem_8h_html"><div class="ttname"><a href="ISystem_8h.html">ISystem.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ISystem_html"><div class="ttname"><a href="classmtgb_1_1ISystem.html">mtgb::ISystem</a></div><div class="ttdef"><b>Definition:</b> <a href="ISystem_8h_source.html#l00005">ISystem.h:6</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html">mtgb::ScoreManager</a></div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8h_source.html#l00007">ScoreManager.h:8</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a07f4052ab15556af9d0d286b2fc5908a"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a07f4052ab15556af9d0d286b2fc5908a">mtgb::ScoreManager::AddQuota</a></div><div class="ttdeci">static void AddQuota(uint32_t _quota)</div><div class="ttdoc">ノルマの加点を行う</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8h_source.html#l00022">ScoreManager.h:22</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a2f404038201b44432c6e0ab18c5de98a"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a2f404038201b44432c6e0ab18c5de98a">mtgb::ScoreManager::ResetScore</a></div><div class="ttdeci">static void ResetScore()</div><div class="ttdoc">スコアをリセットする</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00055">ScoreManager.cpp:55</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a331b2e534e1fdb28f741a15ece1b20e6"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a331b2e534e1fdb28f741a15ece1b20e6">mtgb::ScoreManager::SubtractScore</a></div><div class="ttdeci">static void SubtractScore(uint32_t _score)</div><div class="ttdoc">スコアの減点を行う</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00039">ScoreManager.cpp:39</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a3bbb0eecfcd23fd337b4774c69d6a62e"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a3bbb0eecfcd23fd337b4774c69d6a62e">mtgb::ScoreManager::AddScore</a></div><div class="ttdeci">static void AddScore(uint32_t _score)</div><div class="ttdoc">スコアの加点を行う</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00029">ScoreManager.cpp:29</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a486ec72f7e3b371528af2ce0f311690e"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a486ec72f7e3b371528af2ce0f311690e">mtgb::ScoreManager::ScoreManager</a></div><div class="ttdeci">ScoreManager()</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00013">ScoreManager.cpp:13</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a5142720678002f9473089ab256ae0887"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a5142720678002f9473089ab256ae0887">mtgb::ScoreManager::GetScore</a></div><div class="ttdeci">static int32_t GetScore()</div><div class="ttdoc">現在のスコアを取得する</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00034">ScoreManager.cpp:34</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a63cd3dca53a48834b776fd2fe7c3c40a"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a63cd3dca53a48834b776fd2fe7c3c40a">mtgb::ScoreManager::quotaScore_</a></div><div class="ttdeci">static int32_t quotaScore_</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8h_source.html#l00057">ScoreManager.h:57</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a7a625453c9b55cb5a66fb9975db887fc"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a7a625453c9b55cb5a66fb9975db887fc">mtgb::ScoreManager::AchievedQuota</a></div><div class="ttdeci">static bool AchievedQuota()</div><div class="ttdoc">ノルマを達成したか</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00060">ScoreManager.cpp:60</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a800a1719eaef014678f4382d69c72890"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a800a1719eaef014678f4382d69c72890">mtgb::ScoreManager::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8h_source.html#l00012">ScoreManager.h:12</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_a8fca283ce8014905dacf4354da5630e6"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#a8fca283ce8014905dacf4354da5630e6">mtgb::ScoreManager::GetQuotaScoreMax</a></div><div class="ttdeci">static int32_t GetQuotaScoreMax()</div><div class="ttdoc">スコアの最大値を取得する</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00050">ScoreManager.cpp:50</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_ab38b6d729872400d0fdc7ea4e89c7877"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#ab38b6d729872400d0fdc7ea4e89c7877">mtgb::ScoreManager::score_</a></div><div class="ttdeci">static int32_t score_</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8h_source.html#l00055">ScoreManager.h:55</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_ac1c725b4cfa3357f9417ca0b660e60ca"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#ac1c725b4cfa3357f9417ca0b660e60ca">mtgb::ScoreManager::~ScoreManager</a></div><div class="ttdeci">~ScoreManager()</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00018">ScoreManager.cpp:18</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_adbebc24602944500ef8dd102d9e357ea"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#adbebc24602944500ef8dd102d9e357ea">mtgb::ScoreManager::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00022">ScoreManager.cpp:22</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ScoreManager_html_af89f5fd34b4894a25d933de436616cf6"><div class="ttname"><a href="classmtgb_1_1ScoreManager.html#af89f5fd34b4894a25d933de436616cf6">mtgb::ScoreManager::GetQuotaScore</a></div><div class="ttdeci">static int32_t GetQuotaScore()</div><div class="ttdoc">ノルマのスコアを取得する</div><div class="ttdef"><b>Definition:</b> <a href="ScoreManager_8cpp_source.html#l00045">ScoreManager.cpp:45</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="ScoreManager_8h.html">ScoreManager.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

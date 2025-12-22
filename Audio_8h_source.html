@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Audio.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Audio_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Audio.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Audio_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ISystem_8h.html">ISystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="cmtgb_8h.html">cmtgb.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">struct </span>IXAudio2;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">struct </span>IXAudio2MasteringVoice;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">struct </span>IXAudio2SourceVoice;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">class </span>AudioClip;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">struct </span>WaveData;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">struct </span>AudioOneShot;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">   19</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">AudioHandle</a> = int32_t;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classmtgb_1_1Audio.html">   21</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1Audio.html">Audio</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1ISystem.html">ISystem</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_function" href="classmtgb_1_1Audio.html#aae184b0088069fde1d7ea6b0545e212c">Audio</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_function" href="classmtgb_1_1Audio.html#accd8889d5adbf9bd87c35f2a20643fb2">~Audio</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Audio.html#a11292aae0382213f7111390850af90b2">Initialize</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Audio.html#ad96a64c0eba4aab70cf1813a6cf61d66">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_class" href="classmtgb_1_1AudioClip.html">AudioClip</a>* <a class="code hl_function" href="classmtgb_1_1Audio.html#a93e8c81d0633a9e3f602279aa71884d0">GetAudioClip</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">AudioHandle</a> _hAudio);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Audio.html#a780883fe1665df2b75177b2a424f1e39">CreateSourceVoice</a>(IXAudio2SourceVoice** ppSourceVoice, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1WaveData.html">WaveData</a>* _pWaveData);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classmtgb_1_1Audio.html#aee53842230fcd88731004c6ae94e6da3">   45</a></span>        IXAudio2* <a class="code hl_variable" href="classmtgb_1_1Audio.html#aee53842230fcd88731004c6ae94e6da3">pXAudio2_</a>;                       <span class="comment">// XAudio2のインタフェース</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">   46</a></span>        IXAudio2MasteringVoice* <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>;  <span class="comment">// 主ボイス</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">static</span> <a class="code hl_typedef" href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">AudioHandle</a> <a class="code hl_function" href="classmtgb_1_1Audio.html#a10625927fffa45897931c2d2a3e3d545">Load</a>(<span class="keyword">const</span> std::string&amp; _fileName);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Audio.html#a04fc8f1a75711304baaa79b459567625">PlayOneShotBuffer</a>(<span class="keywordtype">byte</span>* pBuffer, <span class="keyword">const</span> <span class="keywordtype">size_t</span> _bufferSize);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Audio.html#a0035ef6351544d6bd6627a29876c6203">PlayOneShotFile</a>(<span class="keyword">const</span> std::string&amp; _fileName);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Audio.html#a65293994a87cfa4dd76136b9c5904666">Clear</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Audio.html#a84e7019d531a283500a047769ddd75b9">LoadAudioSource</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">AudioHandle</a> _hAudio, <span class="keywordtype">byte</span>* pBuffer, <span class="keyword">const</span> <span class="keywordtype">size_t</span> _bufferSize);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Audio.html#a5ee5289b011981ef278a9a886eaa88d2">EnqueueOneShot</a>(<a class="code hl_struct" href="structmtgb_1_1AudioOneShot.html">AudioOneShot</a>* _pOneShot);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classmtgb_1_1Audio.html#a062520910d81e6de34d74e0d8555640b">   87</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">AudioHandle</a> <a class="code hl_variable" href="classmtgb_1_1Audio.html#a062520910d81e6de34d74e0d8555640b">handleCounter_</a>;                      <span class="comment">// ハンドラ加算用</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classmtgb_1_1Audio.html#a2ae449cb1ac95dd815ca826147bcd7f2">   88</a></span>        <span class="keyword">static</span> std::map&lt;AudioHandle, AudioClip*&gt; <a class="code hl_variable" href="classmtgb_1_1Audio.html#a2ae449cb1ac95dd815ca826147bcd7f2">pAudioClips_</a>;  <span class="comment">// ハンドルとAudioClipの対応付map</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classmtgb_1_1Audio.html#ac64b43e321b672cdea78bdef4f9dbb7a">   89</a></span>        <span class="keyword">static</span> std::list&lt;AudioOneShot*&gt; <a class="code hl_variable" href="classmtgb_1_1Audio.html#ac64b43e321b672cdea78bdef4f9dbb7a">pOneShotQueue_</a>;         <span class="comment">// 単発音声のキュー</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    };</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="ttc" id="aISystem_8h_html"><div class="ttname"><a href="ISystem_8h.html">ISystem.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1AudioClip_html"><div class="ttname"><a href="classmtgb_1_1AudioClip.html">mtgb::AudioClip</a></div><div class="ttdef"><b>Definition:</b> <a href="AudioClip_8h_source.html#l00018">AudioClip.h:19</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html"><div class="ttname"><a href="classmtgb_1_1Audio.html">mtgb::Audio</a></div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00021">Audio.h:22</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a0035ef6351544d6bd6627a29876c6203"><div class="ttname"><a href="classmtgb_1_1Audio.html#a0035ef6351544d6bd6627a29876c6203">mtgb::Audio::PlayOneShotFile</a></div><div class="ttdeci">static void PlayOneShotFile(const std::string &amp;_fileName)</div><div class="ttdoc">音声ファイルのバッファを直再生する</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00185">Audio.cpp:185</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a04fc8f1a75711304baaa79b459567625"><div class="ttname"><a href="classmtgb_1_1Audio.html#a04fc8f1a75711304baaa79b459567625">mtgb::Audio::PlayOneShotBuffer</a></div><div class="ttdeci">static void PlayOneShotBuffer(byte *pBuffer, const size_t _bufferSize)</div><div class="ttdoc">Waveファイルのバッファを直再生する</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00153">Audio.cpp:153</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a062520910d81e6de34d74e0d8555640b"><div class="ttname"><a href="classmtgb_1_1Audio.html#a062520910d81e6de34d74e0d8555640b">mtgb::Audio::handleCounter_</a></div><div class="ttdeci">static AudioHandle handleCounter_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00087">Audio.h:87</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a10625927fffa45897931c2d2a3e3d545"><div class="ttname"><a href="classmtgb_1_1Audio.html#a10625927fffa45897931c2d2a3e3d545">mtgb::Audio::Load</a></div><div class="ttdeci">static AudioHandle Load(const std::string &amp;_fileName)</div><div class="ttdoc">音声ファイルをロードする</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00099">Audio.cpp:99</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a11292aae0382213f7111390850af90b2"><div class="ttname"><a href="classmtgb_1_1Audio.html#a11292aae0382213f7111390850af90b2">mtgb::Audio::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00030">Audio.cpp:30</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a175cf448fd62a8706ea9eadde9a7f368"><div class="ttname"><a href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">mtgb::Audio::pMasteringVoice_</a></div><div class="ttdeci">IXAudio2MasteringVoice * pMasteringVoice_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00046">Audio.h:46</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a2ae449cb1ac95dd815ca826147bcd7f2"><div class="ttname"><a href="classmtgb_1_1Audio.html#a2ae449cb1ac95dd815ca826147bcd7f2">mtgb::Audio::pAudioClips_</a></div><div class="ttdeci">static std::map&lt; AudioHandle, AudioClip * &gt; pAudioClips_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00088">Audio.h:88</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a5ee5289b011981ef278a9a886eaa88d2"><div class="ttname"><a href="classmtgb_1_1Audio.html#a5ee5289b011981ef278a9a886eaa88d2">mtgb::Audio::EnqueueOneShot</a></div><div class="ttdeci">static void EnqueueOneShot(AudioOneShot *_pOneShot)</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00257">Audio.cpp:257</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a65293994a87cfa4dd76136b9c5904666"><div class="ttname"><a href="classmtgb_1_1Audio.html#a65293994a87cfa4dd76136b9c5904666">mtgb::Audio::Clear</a></div><div class="ttdeci">static void Clear()</div><div class="ttdoc">再生キューをクリアする</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00234">Audio.cpp:234</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a780883fe1665df2b75177b2a424f1e39"><div class="ttname"><a href="classmtgb_1_1Audio.html#a780883fe1665df2b75177b2a424f1e39">mtgb::Audio::CreateSourceVoice</a></div><div class="ttdeci">void CreateSourceVoice(IXAudio2SourceVoice **ppSourceVoice, const WaveData *_pWaveData)</div><div class="ttdoc">SourceVoiceを作成する</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00090">Audio.cpp:90</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a84e7019d531a283500a047769ddd75b9"><div class="ttname"><a href="classmtgb_1_1Audio.html#a84e7019d531a283500a047769ddd75b9">mtgb::Audio::LoadAudioSource</a></div><div class="ttdeci">static void LoadAudioSource(const AudioHandle _hAudio, byte *pBuffer, const size_t _bufferSize)</div><div class="ttdoc">指定ハンドルの音声をロードする</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00251">Audio.cpp:251</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a93e8c81d0633a9e3f602279aa71884d0"><div class="ttname"><a href="classmtgb_1_1Audio.html#a93e8c81d0633a9e3f602279aa71884d0">mtgb::Audio::GetAudioClip</a></div><div class="ttdeci">AudioClip * GetAudioClip(const AudioHandle _hAudio)</div><div class="ttdoc">ロード済みのAudioClipを取得</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00082">Audio.cpp:82</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_aae184b0088069fde1d7ea6b0545e212c"><div class="ttname"><a href="classmtgb_1_1Audio.html#aae184b0088069fde1d7ea6b0545e212c">mtgb::Audio::Audio</a></div><div class="ttdeci">Audio()</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00014">Audio.cpp:14</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_ac64b43e321b672cdea78bdef4f9dbb7a"><div class="ttname"><a href="classmtgb_1_1Audio.html#ac64b43e321b672cdea78bdef4f9dbb7a">mtgb::Audio::pOneShotQueue_</a></div><div class="ttdeci">static std::list&lt; AudioOneShot * &gt; pOneShotQueue_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00089">Audio.h:89</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_accd8889d5adbf9bd87c35f2a20643fb2"><div class="ttname"><a href="classmtgb_1_1Audio.html#accd8889d5adbf9bd87c35f2a20643fb2">mtgb::Audio::~Audio</a></div><div class="ttdeci">~Audio()</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00020">Audio.cpp:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_ad96a64c0eba4aab70cf1813a6cf61d66"><div class="ttname"><a href="classmtgb_1_1Audio.html#ad96a64c0eba4aab70cf1813a6cf61d66">mtgb::Audio::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00047">Audio.cpp:47</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_aee53842230fcd88731004c6ae94e6da3"><div class="ttname"><a href="classmtgb_1_1Audio.html#aee53842230fcd88731004c6ae94e6da3">mtgb::Audio::pXAudio2_</a></div><div class="ttdeci">IXAudio2 * pXAudio2_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00045">Audio.h:45</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ISystem_html"><div class="ttname"><a href="classmtgb_1_1ISystem.html">mtgb::ISystem</a></div><div class="ttdef"><b>Definition:</b> <a href="ISystem_8h_source.html#l00005">ISystem.h:6</a></div></div>
+<div class="ttc" id="acmtgb_8h_html"><div class="ttname"><a href="cmtgb_8h.html">cmtgb.h</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_ac2d7fb406c37e3e2f261e1d2beb210aa"><div class="ttname"><a href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">mtgb::AudioHandle</a></div><div class="ttdeci">int32_t AudioHandle</div><div class="ttdoc">音声のハンドル</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00019">Audio.h:19</a></div></div>
+<div class="ttc" id="astructmtgb_1_1AudioOneShot_html"><div class="ttname"><a href="structmtgb_1_1AudioOneShot.html">mtgb::AudioOneShot</a></div><div class="ttdef"><b>Definition:</b> <a href="AudioOneShot_8h_source.html#l00009">AudioOneShot.h:10</a></div></div>
+<div class="ttc" id="astructmtgb_1_1WaveData_html"><div class="ttname"><a href="structmtgb_1_1WaveData.html">mtgb::WaveData</a></div><div class="ttdoc">Waveファイルのデータ格納構造体</div><div class="ttdef"><b>Definition:</b> <a href="WaveData_8h_source.html#l00009">WaveData.h:10</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Audio_8h.html">Audio.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

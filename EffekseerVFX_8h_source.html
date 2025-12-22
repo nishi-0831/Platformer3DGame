@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: EffekseerVFX.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('EffekseerVFX_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">EffekseerVFX.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="EffekseerVFX_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;DirectXMath.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="ISystem_8h.html">ISystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="IRenderable_8h.html">IRenderable.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="Matrix4x4_8h.html">Matrix4x4.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>fs = std::filesystem;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#pragma warning(disable:4100) </span><span class="comment">// &#39;identifier&#39; : unreferenced formal parameter</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;EffekseerRendererDX11.h&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;Effekseer.h&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifdef _DEBUG</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma comment(lib, &quot;Effekseerd.lib&quot;</span>)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma comment(lib, &quot;EffekseerRendererDX11d.lib&quot;</span>)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#pragma comment(lib, &quot;Effekseer.lib&quot;</span>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#pragma comment(lib, &quot;EffekseerRendererDX11.lib&quot;</span>)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">//全体で使うEffekseerのマネージャやレンダラなどのデータ</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespacemtgb.html#af0f2a1cbfc67b4a7e4d991121881af33">   30</a></span>    <span class="keyword">using </span><a class="code hl_class" href="classEffekseer_1_1RefPtr.html">RendererRef</a> = <a class="code hl_typedef" href="namespaceEffekseerRendererDX11.html#a235cdeb2a93253a219cf454c0524bf71">EffekseerRendererDX11::RendererRef</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structmtgb_1_1EffectParameters.html">   32</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmtgb_1_1EffectParameters.html">EffectParameters</a> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structmtgb_1_1EffectParameters.html#ae4286973c9f4c457d6f6e813bd3b2cda">   34</a></span>        <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> <a class="code hl_variable" href="structmtgb_1_1EffectParameters.html#ae4286973c9f4c457d6f6e813bd3b2cda">worldMat</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structmtgb_1_1EffectParameters.html#a49626e8014b235e96d63bef206d93eae">   35</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="structmtgb_1_1EffectParameters.html#a49626e8014b235e96d63bef206d93eae">isLoop</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structmtgb_1_1EffectParameters.html#a35c62e3a70bd554994aceb89956bef42">   36</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="structmtgb_1_1EffectParameters.html#a35c62e3a70bd554994aceb89956bef42">speed</a> = 1.0f;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    };</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>       </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">//個別のデータ保持用</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectData.html">   41</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1EffectData.html">EffectData</a></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_class" href="classmtgb_1_1EffectData.html">EffectData</a>(std::string_view _filePath);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_class" href="classmtgb_1_1EffectData.html">EffectData</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEffekseer_1_1RefPtr.html">Effekseer::ManagerRef</a>&amp; _manager, std::string_view _filePath);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1EffectData.html#abe36c47acd354ba9124000d4efe54843">Load</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEffekseer_1_1RefPtr.html">Effekseer::ManagerRef</a>&amp; _manager);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classmtgb_1_1EffectData.html#a5ae775b65279c46b2385a0968d6f0687">GetFilePath</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keyword">const</span> <a class="code hl_class" href="classEffekseer_1_1RefPtr.html">Effekseer::EffectRef</a>&amp; <a class="code hl_function" href="classmtgb_1_1EffectData.html#a906ae212b5ad48b30e92748a709b1bbe">GetEffectRef</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectData.html#a792208f185817f2df50fe267e1f6bc1e">   52</a></span>        <span class="keyword">const</span> fs::path <a class="code hl_variable" href="classmtgb_1_1EffectData.html#a792208f185817f2df50fe267e1f6bc1e">filePath_</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectData.html#ac0f882bb1b38192d161612ceff4b4cf2">   53</a></span>        <a class="code hl_class" href="classEffekseer_1_1RefPtr.html">Effekseer::EffectRef</a> <a class="code hl_variable" href="classmtgb_1_1EffectData.html#ac0f882bb1b38192d161612ceff4b4cf2">effectRef_</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    };</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectInstance.html">   56</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1EffectInstance.html">EffectInstance</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_class" href="classmtgb_1_1EffectInstance.html">EffectInstance</a>(<span class="keyword">const</span> std::shared_ptr&lt;EffectData&gt;&amp; _effectData);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        std::shared_ptr&lt;const EffectData&gt; <a class="code hl_function" href="classmtgb_1_1EffectInstance.html#a7bf12a1894a6984b6b38c08ce8e61b61">GetEffectData</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectInstance.html#a9401886b677dfce08aa47a7dd2ddb3c6">   63</a></span>        <span class="keywordtype">double</span> <a class="code hl_variable" href="classmtgb_1_1EffectInstance.html#a9401886b677dfce08aa47a7dd2ddb3c6">elapsedTime</a> = 0;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectInstance.html#a1bb79bfbfb05e9942184a30bea4e02c3">   64</a></span>        <a class="code hl_typedef" href="namespaceEffekseer.html#afba58b8d812da862190e9bbfc040824a">Effekseer::Handle</a> <a class="code hl_variable" href="classmtgb_1_1EffectInstance.html#a1bb79bfbfb05e9942184a30bea4e02c3">handle</a> = 0;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectInstance.html#ae314bb8dab04a4c005565fda97ed59b7">   65</a></span>        std::shared_ptr&lt;EffectParameters&gt; <a class="code hl_variable" href="classmtgb_1_1EffectInstance.html#ae314bb8dab04a4c005565fda97ed59b7">effectTransform</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectInstance.html#a2c208f54ac524af32dfbb7113ac07b58">   67</a></span>        <span class="keyword">const</span> std::shared_ptr&lt;EffectData&gt; <a class="code hl_variable" href="classmtgb_1_1EffectInstance.html#a2c208f54ac524af32dfbb7113ac07b58">pEffectData_</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    };</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectManager.html">   71</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1EffectManager.html">EffectManager</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1ISystem.html">ISystem</a></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectManager.html#ac8cfc10890fce8dc9ba4f7c27a85023f">   75</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classmtgb_1_1EffectManager.html#ac8cfc10890fce8dc9ba4f7c27a85023f">~EffectManager</a>() noexcept</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <a class="code hl_function" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">Release</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1EffectManager.html#af573255ecaa5d4b2861b54e941f6eb79">Initialize</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1EffectManager.html#a880852d119be039a092d3fb92dfbdec4">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1EffectManager.html#aeba28d0de673b6a6bbcee578af6cbbd2">Draw</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1EffectManager.html#a55ab6ef13c4f243470802607410a77a5">SetCamera</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1EffectManager.html#a50fd34cd6c6fb471a63f962537a7cd72">RegisterEffect</a>(std::string_view _effectName, std::string_view _filePath);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        std::shared_ptr&lt;EffectParameters&gt; <a class="code hl_function" href="classmtgb_1_1EffectManager.html#a8741e718696ac48a5f1d846dc8bc077b">Play</a>(std::string_view _effectName, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1EffectParameters.html">EffectParameters</a>&amp; _effectTransform, <span class="keywordtype">bool</span> _isUnique = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">   99</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">Release</a>() noexcept</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <a class="code hl_variable" href="classmtgb_1_1EffectManager.html#a5f3e1649405ef6e5608f0feb3865a9f1">managerRef_</a>.<a class="code hl_function" href="classEffekseer_1_1RefPtr.html#aec6bc94eb00e5a1673575236c341f8c6">Reset</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <a class="code hl_variable" href="classmtgb_1_1EffectManager.html#a3ccc41419350a4860a9e794d6e2e0cba">rendererRef_</a>.<a class="code hl_function" href="classEffekseer_1_1RefPtr.html#aec6bc94eb00e5a1673575236c341f8c6">Reset</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectManager.html#a1f7eb8d5b5373d954c05b70e3b9225ac">  105</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmtgb_1_1EffectManager.html#a1f7eb8d5b5373d954c05b70e3b9225ac">fps_</a>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectManager.html#a3ccc41419350a4860a9e794d6e2e0cba">  106</a></span>        <a class="code hl_class" href="classEffekseer_1_1RefPtr.html">RendererRef</a> <a class="code hl_variable" href="classmtgb_1_1EffectManager.html#a3ccc41419350a4860a9e794d6e2e0cba">rendererRef_</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectManager.html#a5f3e1649405ef6e5608f0feb3865a9f1">  107</a></span>        <a class="code hl_class" href="classEffekseer_1_1RefPtr.html">Effekseer::ManagerRef</a> <a class="code hl_variable" href="classmtgb_1_1EffectManager.html#a5f3e1649405ef6e5608f0feb3865a9f1">managerRef_</a>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectManager.html#a7e6ce820f401591e0901273ba2d25b5b">  108</a></span>        std::unordered_map&lt;std::string, std::shared_ptr&lt;EffectData&gt;&gt; <a class="code hl_variable" href="classmtgb_1_1EffectManager.html#a7e6ce820f401591e0901273ba2d25b5b">effectList_</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classmtgb_1_1EffectManager.html#a5dcf94034e3495b7ba6c456e856695e9">  109</a></span>        std::unordered_multimap&lt;std::string, std::unique_ptr&lt;EffectInstance&gt;&gt; <a class="code hl_variable" href="classmtgb_1_1EffectManager.html#a5dcf94034e3495b7ba6c456e856695e9">effectInstances_</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    };</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+<div class="ttc" id="aIRenderable_8h_html"><div class="ttname"><a href="IRenderable_8h.html">IRenderable.h</a></div></div>
+<div class="ttc" id="aISystem_8h_html"><div class="ttname"><a href="ISystem_8h.html">ISystem.h</a></div></div>
+<div class="ttc" id="aMatrix4x4_8h_html"><div class="ttname"><a href="Matrix4x4_8h.html">Matrix4x4.h</a></div></div>
+<div class="ttc" id="aclassEffekseer_1_1RefPtr_html"><div class="ttname"><a href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr&lt; Renderer &gt;</a></div></div>
+<div class="ttc" id="aclassEffekseer_1_1RefPtr_html_aec6bc94eb00e5a1673575236c341f8c6"><div class="ttname"><a href="classEffekseer_1_1RefPtr.html#aec6bc94eb00e5a1673575236c341f8c6">Effekseer::RefPtr::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00610">install_msvc2022_x64/include/Effekseer/Effekseer.h:610</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectData_html"><div class="ttname"><a href="classmtgb_1_1EffectData.html">mtgb::EffectData</a></div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00041">EffekseerVFX.h:42</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectData_html_a5ae775b65279c46b2385a0968d6f0687"><div class="ttname"><a href="classmtgb_1_1EffectData.html#a5ae775b65279c46b2385a0968d6f0687">mtgb::EffectData::GetFilePath</a></div><div class="ttdeci">const std::string &amp; GetFilePath() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8cpp_source.html#l00264">EffekseerVFX.cpp:264</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectData_html_a792208f185817f2df50fe267e1f6bc1e"><div class="ttname"><a href="classmtgb_1_1EffectData.html#a792208f185817f2df50fe267e1f6bc1e">mtgb::EffectData::filePath_</a></div><div class="ttdeci">const fs::path filePath_</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00052">EffekseerVFX.h:52</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectData_html_a906ae212b5ad48b30e92748a709b1bbe"><div class="ttname"><a href="classmtgb_1_1EffectData.html#a906ae212b5ad48b30e92748a709b1bbe">mtgb::EffectData::GetEffectRef</a></div><div class="ttdeci">const Effekseer::EffectRef &amp; GetEffectRef() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8cpp_source.html#l00269">EffekseerVFX.cpp:269</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectData_html_abe36c47acd354ba9124000d4efe54843"><div class="ttname"><a href="classmtgb_1_1EffectData.html#abe36c47acd354ba9124000d4efe54843">mtgb::EffectData::Load</a></div><div class="ttdeci">void Load(const Effekseer::ManagerRef &amp;_manager)</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8cpp_source.html#l00251">EffekseerVFX.cpp:251</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectData_html_ac0f882bb1b38192d161612ceff4b4cf2"><div class="ttname"><a href="classmtgb_1_1EffectData.html#ac0f882bb1b38192d161612ceff4b4cf2">mtgb::EffectData::effectRef_</a></div><div class="ttdeci">Effekseer::EffectRef effectRef_</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00053">EffekseerVFX.h:53</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectInstance_html"><div class="ttname"><a href="classmtgb_1_1EffectInstance.html">mtgb::EffectInstance</a></div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00056">EffekseerVFX.h:57</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectInstance_html_a1bb79bfbfb05e9942184a30bea4e02c3"><div class="ttname"><a href="classmtgb_1_1EffectInstance.html#a1bb79bfbfb05e9942184a30bea4e02c3">mtgb::EffectInstance::handle</a></div><div class="ttdeci">Effekseer::Handle handle</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00064">EffekseerVFX.h:64</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectInstance_html_a2c208f54ac524af32dfbb7113ac07b58"><div class="ttname"><a href="classmtgb_1_1EffectInstance.html#a2c208f54ac524af32dfbb7113ac07b58">mtgb::EffectInstance::pEffectData_</a></div><div class="ttdeci">const std::shared_ptr&lt; EffectData &gt; pEffectData_</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00067">EffekseerVFX.h:67</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectInstance_html_a7bf12a1894a6984b6b38c08ce8e61b61"><div class="ttname"><a href="classmtgb_1_1EffectInstance.html#a7bf12a1894a6984b6b38c08ce8e61b61">mtgb::EffectInstance::GetEffectData</a></div><div class="ttdeci">std::shared_ptr&lt; const EffectData &gt; GetEffectData() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8cpp_source.html#l00279">EffekseerVFX.cpp:279</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectInstance_html_a9401886b677dfce08aa47a7dd2ddb3c6"><div class="ttname"><a href="classmtgb_1_1EffectInstance.html#a9401886b677dfce08aa47a7dd2ddb3c6">mtgb::EffectInstance::elapsedTime</a></div><div class="ttdeci">double elapsedTime</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00063">EffekseerVFX.h:63</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectInstance_html_ae314bb8dab04a4c005565fda97ed59b7"><div class="ttname"><a href="classmtgb_1_1EffectInstance.html#ae314bb8dab04a4c005565fda97ed59b7">mtgb::EffectInstance::effectTransform</a></div><div class="ttdeci">std::shared_ptr&lt; EffectParameters &gt; effectTransform</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00065">EffekseerVFX.h:65</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html"><div class="ttname"><a href="classmtgb_1_1EffectManager.html">mtgb::EffectManager</a></div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00071">EffekseerVFX.h:72</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_a1f7eb8d5b5373d954c05b70e3b9225ac"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#a1f7eb8d5b5373d954c05b70e3b9225ac">mtgb::EffectManager::fps_</a></div><div class="ttdeci">float fps_</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00105">EffekseerVFX.h:105</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_a3ccc41419350a4860a9e794d6e2e0cba"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#a3ccc41419350a4860a9e794d6e2e0cba">mtgb::EffectManager::rendererRef_</a></div><div class="ttdeci">RendererRef rendererRef_</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00106">EffekseerVFX.h:106</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_a50fd34cd6c6fb471a63f962537a7cd72"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#a50fd34cd6c6fb471a63f962537a7cd72">mtgb::EffectManager::RegisterEffect</a></div><div class="ttdeci">void RegisterEffect(std::string_view _effectName, std::string_view _filePath)</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8cpp_source.html#l00198">EffekseerVFX.cpp:198</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_a55ab6ef13c4f243470802607410a77a5"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#a55ab6ef13c4f243470802607410a77a5">mtgb::EffectManager::SetCamera</a></div><div class="ttdeci">void SetCamera()</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8cpp_source.html#l00192">EffekseerVFX.cpp:192</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_a5dcf94034e3495b7ba6c456e856695e9"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#a5dcf94034e3495b7ba6c456e856695e9">mtgb::EffectManager::effectInstances_</a></div><div class="ttdeci">std::unordered_multimap&lt; std::string, std::unique_ptr&lt; EffectInstance &gt; &gt; effectInstances_</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00109">EffekseerVFX.h:109</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_a5f3e1649405ef6e5608f0feb3865a9f1"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#a5f3e1649405ef6e5608f0feb3865a9f1">mtgb::EffectManager::managerRef_</a></div><div class="ttdeci">Effekseer::ManagerRef managerRef_</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00107">EffekseerVFX.h:107</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_a7e6ce820f401591e0901273ba2d25b5b"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#a7e6ce820f401591e0901273ba2d25b5b">mtgb::EffectManager::effectList_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::shared_ptr&lt; EffectData &gt; &gt; effectList_</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00108">EffekseerVFX.h:108</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_a8741e718696ac48a5f1d846dc8bc077b"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#a8741e718696ac48a5f1d846dc8bc077b">mtgb::EffectManager::Play</a></div><div class="ttdeci">std::shared_ptr&lt; EffectParameters &gt; Play(std::string_view _effectName, const EffectParameters &amp;_effectTransform, bool _isUnique=false)</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8cpp_source.html#l00203">EffekseerVFX.cpp:203</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_a880852d119be039a092d3fb92dfbdec4"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#a880852d119be039a092d3fb92dfbdec4">mtgb::EffectManager::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8cpp_source.html#l00127">EffekseerVFX.cpp:127</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_ac8cfc10890fce8dc9ba4f7c27a85023f"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#ac8cfc10890fce8dc9ba4f7c27a85023f">mtgb::EffectManager::~EffectManager</a></div><div class="ttdeci">virtual ~EffectManager() noexcept</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00075">EffekseerVFX.h:75</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_ada82a449c50f127b983ca5635588dcfd"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">mtgb::EffectManager::Release</a></div><div class="ttdeci">void Release() noexcept</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00099">EffekseerVFX.h:99</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_aeba28d0de673b6a6bbcee578af6cbbd2"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#aeba28d0de673b6a6bbcee578af6cbbd2">mtgb::EffectManager::Draw</a></div><div class="ttdeci">void Draw()</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8cpp_source.html#l00179">EffekseerVFX.cpp:179</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1EffectManager_html_af573255ecaa5d4b2861b54e941f6eb79"><div class="ttname"><a href="classmtgb_1_1EffectManager.html#af573255ecaa5d4b2861b54e941f6eb79">mtgb::EffectManager::Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8cpp_source.html#l00103">EffekseerVFX.cpp:103</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ISystem_html"><div class="ttname"><a href="classmtgb_1_1ISystem.html">mtgb::ISystem</a></div><div class="ttdef"><b>Definition:</b> <a href="ISystem_8h_source.html#l00005">ISystem.h:6</a></div></div>
+<div class="ttc" id="anamespaceEffekseerRendererDX11_html_a235cdeb2a93253a219cf454c0524bf71"><div class="ttname"><a href="namespaceEffekseerRendererDX11.html#a235cdeb2a93253a219cf454c0524bf71">EffekseerRendererDX11::RendererRef</a></div><div class="ttdeci">::Effekseer::RefPtr&lt; Renderer &gt; RendererRef</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2EffekseerRendererDX11_8h_source.html#l00575">install_msvc2022_x64/include/Effekseer/EffekseerRendererDX11.h:575</a></div></div>
+<div class="ttc" id="anamespaceEffekseer_html_afba58b8d812da862190e9bbfc040824a"><div class="ttname"><a href="namespaceEffekseer.html#afba58b8d812da862190e9bbfc040824a">Effekseer::Handle</a></div><div class="ttdeci">int Handle</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00093">install_msvc2022_x64/include/Effekseer/Effekseer.h:93</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="astructmtgb_1_1EffectParameters_html"><div class="ttname"><a href="structmtgb_1_1EffectParameters.html">mtgb::EffectParameters</a></div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00032">EffekseerVFX.h:33</a></div></div>
+<div class="ttc" id="astructmtgb_1_1EffectParameters_html_a35c62e3a70bd554994aceb89956bef42"><div class="ttname"><a href="structmtgb_1_1EffectParameters.html#a35c62e3a70bd554994aceb89956bef42">mtgb::EffectParameters::speed</a></div><div class="ttdeci">float speed</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00036">EffekseerVFX.h:36</a></div></div>
+<div class="ttc" id="astructmtgb_1_1EffectParameters_html_a49626e8014b235e96d63bef206d93eae"><div class="ttname"><a href="structmtgb_1_1EffectParameters.html#a49626e8014b235e96d63bef206d93eae">mtgb::EffectParameters::isLoop</a></div><div class="ttdeci">bool isLoop</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00035">EffekseerVFX.h:35</a></div></div>
+<div class="ttc" id="astructmtgb_1_1EffectParameters_html_ae4286973c9f4c457d6f6e813bd3b2cda"><div class="ttname"><a href="structmtgb_1_1EffectParameters.html#ae4286973c9f4c457d6f6e813bd3b2cda">mtgb::EffectParameters::worldMat</a></div><div class="ttdeci">Matrix4x4 worldMat</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00034">EffekseerVFX.h:34</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Matrix4x4_html"><div class="ttname"><a href="structmtgb_1_1Matrix4x4.html">mtgb::Matrix4x4</a></div><div class="ttdef"><b>Definition:</b> <a href="Matrix4x4_8h_source.html#l00008">Matrix4x4.h:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="EffekseerVFX_8h.html">EffekseerVFX.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

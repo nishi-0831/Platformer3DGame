@@ -1,0 +1,1704 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Effekseer::RefPtr&lt; T &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classEffekseer_1_1RefPtr.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#friends">フレンド</a> &#124;
+<a href="classEffekseer_1_1RefPtr-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">Effekseer::RefPtr&lt; T &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>参照カウンタ向けスマートポインタ  
+ <a href="classEffekseer_1_1RefPtr.html#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">Effekseer.h</a>&quot;</code></p>
+<div class="dynheader">
+Effekseer::RefPtr&lt; T &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr__inherit__graph.svg" width="3080" height="815"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Effekseer::RefPtr&lt; T &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr__coll__graph.svg" width="215" height="367"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:aaa3eda6188a1e708d2a9a8b5cd853a05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#aaa3eda6188a1e708d2a9a8b5cd853a05">RefPtr</a> ()=default</td></tr>
+<tr class="separator:aaa3eda6188a1e708d2a9a8b5cd853a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a089e5652bca0d3c8069913b4ef3691"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a3a089e5652bca0d3c8069913b4ef3691">RefPtr</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *p)</td></tr>
+<tr class="separator:a3a089e5652bca0d3c8069913b4ef3691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae484ca21b4edb94f29453dda4d2edd17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#ae484ca21b4edb94f29453dda4d2edd17">RefPtr</a> (std::nullptr_t)</td></tr>
+<tr class="separator:ae484ca21b4edb94f29453dda4d2edd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a215badc2935221395097ab4ebf371f96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a215badc2935221395097ab4ebf371f96">~RefPtr</a> ()</td></tr>
+<tr class="separator:a215badc2935221395097ab4ebf371f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431098828812b7201f4d4145c0e0ff0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a431098828812b7201f4d4145c0e0ff0d">RefPtr</a> (const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;o)</td></tr>
+<tr class="separator:a431098828812b7201f4d4145c0e0ff0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6bc94eb00e5a1673575236c341f8c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#aec6bc94eb00e5a1673575236c341f8c6">Reset</a> ()</td></tr>
+<tr class="separator:aec6bc94eb00e5a1673575236c341f8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64a533a63160ff8837b933001b36b693"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a64a533a63160ff8837b933001b36b693">operator-&gt;</a> () const</td></tr>
+<tr class="separator:a64a533a63160ff8837b933001b36b693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac1da0f132c0266f00df2f13be41e47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a9ac1da0f132c0266f00df2f13be41e47">Get</a> () const</td></tr>
+<tr class="separator:a9ac1da0f132c0266f00df2f13be41e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c25d88a50b5fd790c46bcf524bc742b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a5c25d88a50b5fd790c46bcf524bc742b">operator=</a> (const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;o)</td></tr>
+<tr class="separator:a5c25d88a50b5fd790c46bcf524bc742b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3bf44bf38fbd2077716539c614cd8a6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:ad3bf44bf38fbd2077716539c614cd8a6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#ad3bf44bf38fbd2077716539c614cd8a6">operator=</a> (const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;o)</td></tr>
+<tr class="separator:ad3bf44bf38fbd2077716539c614cd8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ffc8cd62df69875c35c13470741f8ec"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:a0ffc8cd62df69875c35c13470741f8ec"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a0ffc8cd62df69875c35c13470741f8ec">operator=</a> (<a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&amp;o)</td></tr>
+<tr class="separator:a0ffc8cd62df69875c35c13470741f8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337baabc0b7bc7c001bc83195caa2045"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:a337baabc0b7bc7c001bc83195caa2045"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a337baabc0b7bc7c001bc83195caa2045">RefPtr</a> (const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;o)</td></tr>
+<tr class="separator:a337baabc0b7bc7c001bc83195caa2045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0458695f6537b6a8c787b33ae26b504"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:ae0458695f6537b6a8c787b33ae26b504"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#ae0458695f6537b6a8c787b33ae26b504">RefPtr</a> (<a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&amp;o)</td></tr>
+<tr class="separator:ae0458695f6537b6a8c787b33ae26b504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade91c216102aa50c0028d0f2c2a23fb4"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:ade91c216102aa50c0028d0f2c2a23fb4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#ade91c216102aa50c0028d0f2c2a23fb4">DownCast</a> () const</td></tr>
+<tr class="separator:ade91c216102aa50c0028d0f2c2a23fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa84fb49e5bc3c9a11e6d4ac8596f60"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a1aa84fb49e5bc3c9a11e6d4ac8596f60">Pin</a> ()</td></tr>
+<tr class="separator:a1aa84fb49e5bc3c9a11e6d4ac8596f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90e76d947da941676de10e39ada4e504"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a90e76d947da941676de10e39ada4e504">RefPtr</a> ()=default</td></tr>
+<tr class="separator:a90e76d947da941676de10e39ada4e504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a089e5652bca0d3c8069913b4ef3691"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a3a089e5652bca0d3c8069913b4ef3691">RefPtr</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *p)</td></tr>
+<tr class="separator:a3a089e5652bca0d3c8069913b4ef3691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae484ca21b4edb94f29453dda4d2edd17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#ae484ca21b4edb94f29453dda4d2edd17">RefPtr</a> (std::nullptr_t)</td></tr>
+<tr class="separator:ae484ca21b4edb94f29453dda4d2edd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a215badc2935221395097ab4ebf371f96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a215badc2935221395097ab4ebf371f96">~RefPtr</a> ()</td></tr>
+<tr class="separator:a215badc2935221395097ab4ebf371f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431098828812b7201f4d4145c0e0ff0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a431098828812b7201f4d4145c0e0ff0d">RefPtr</a> (const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;o)</td></tr>
+<tr class="separator:a431098828812b7201f4d4145c0e0ff0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6bc94eb00e5a1673575236c341f8c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#aec6bc94eb00e5a1673575236c341f8c6">Reset</a> ()</td></tr>
+<tr class="separator:aec6bc94eb00e5a1673575236c341f8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64a533a63160ff8837b933001b36b693"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a64a533a63160ff8837b933001b36b693">operator-&gt;</a> () const</td></tr>
+<tr class="separator:a64a533a63160ff8837b933001b36b693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac1da0f132c0266f00df2f13be41e47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a9ac1da0f132c0266f00df2f13be41e47">Get</a> () const</td></tr>
+<tr class="separator:a9ac1da0f132c0266f00df2f13be41e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c25d88a50b5fd790c46bcf524bc742b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a5c25d88a50b5fd790c46bcf524bc742b">operator=</a> (const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;o)</td></tr>
+<tr class="separator:a5c25d88a50b5fd790c46bcf524bc742b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3bf44bf38fbd2077716539c614cd8a6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:ad3bf44bf38fbd2077716539c614cd8a6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#ad3bf44bf38fbd2077716539c614cd8a6">operator=</a> (const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;o)</td></tr>
+<tr class="separator:ad3bf44bf38fbd2077716539c614cd8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ffc8cd62df69875c35c13470741f8ec"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:a0ffc8cd62df69875c35c13470741f8ec"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a0ffc8cd62df69875c35c13470741f8ec">operator=</a> (<a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&amp;o)</td></tr>
+<tr class="separator:a0ffc8cd62df69875c35c13470741f8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337baabc0b7bc7c001bc83195caa2045"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:a337baabc0b7bc7c001bc83195caa2045"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a337baabc0b7bc7c001bc83195caa2045">RefPtr</a> (const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;o)</td></tr>
+<tr class="separator:a337baabc0b7bc7c001bc83195caa2045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0458695f6537b6a8c787b33ae26b504"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:ae0458695f6537b6a8c787b33ae26b504"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#ae0458695f6537b6a8c787b33ae26b504">RefPtr</a> (<a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&amp;o)</td></tr>
+<tr class="separator:ae0458695f6537b6a8c787b33ae26b504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade91c216102aa50c0028d0f2c2a23fb4"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:ade91c216102aa50c0028d0f2c2a23fb4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#ade91c216102aa50c0028d0f2c2a23fb4">DownCast</a> () const</td></tr>
+<tr class="separator:ade91c216102aa50c0028d0f2c2a23fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa84fb49e5bc3c9a11e6d4ac8596f60"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a1aa84fb49e5bc3c9a11e6d4ac8596f60">Pin</a> ()</td></tr>
+<tr class="separator:a1aa84fb49e5bc3c9a11e6d4ac8596f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:af55800b4b0c380a19e2748dbe2d77423"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#af55800b4b0c380a19e2748dbe2d77423">Unpin</a> (void *p)</td></tr>
+<tr class="separator:af55800b4b0c380a19e2748dbe2d77423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db60c873809fafcc1adf784808a673b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a4db60c873809fafcc1adf784808a673b">FromPinned</a> (void *p)</td></tr>
+<tr class="separator:a4db60c873809fafcc1adf784808a673b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55800b4b0c380a19e2748dbe2d77423"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#af55800b4b0c380a19e2748dbe2d77423">Unpin</a> (void *p)</td></tr>
+<tr class="separator:af55800b4b0c380a19e2748dbe2d77423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db60c873809fafcc1adf784808a673b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a4db60c873809fafcc1adf784808a673b">FromPinned</a> (void *p)</td></tr>
+<tr class="separator:a4db60c873809fafcc1adf784808a673b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a033939eb66a104ed94fe39de9c49b32a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = nullptr</td></tr>
+<tr class="separator:a033939eb66a104ed94fe39de9c49b32a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+フレンド</h2></td></tr>
+<tr class="memitem:a161a8052754985bb8024c19c06fd9206"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:a161a8052754985bb8024c19c06fd9206"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html#a161a8052754985bb8024c19c06fd9206">RefPtr</a></td></tr>
+<tr class="separator:a161a8052754985bb8024c19c06fd9206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;<br />
+class Effekseer::RefPtr&lt; T &gt;</div><p>参照カウンタ向けスマートポインタ </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00578">578</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="aaa3eda6188a1e708d2a9a8b5cd853a05" name="aaa3eda6188a1e708d2a9a8b5cd853a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa3eda6188a1e708d2a9a8b5cd853a05">&#9670;&#160;</a></span>RefPtr() <span class="overload">[1/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00583">583</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3a089e5652bca0d3c8069913b4ef3691" name="a3a089e5652bca0d3c8069913b4ef3691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a089e5652bca0d3c8069913b4ef3691">&#9670;&#160;</a></span>RefPtr() <span class="overload">[2/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00588">588</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  589</span>    {</div>
+<div class="line"><span class="lineno">  590</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = p;</div>
+<div class="line"><span class="lineno">  591</span>    }</div>
+<div class="ttc" id="aclassEffekseer_1_1RefPtr_html_a033939eb66a104ed94fe39de9c49b32a"><div class="ttname"><a href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">Effekseer::RefPtr::ptr_</a></div><div class="ttdeci">T * ptr_</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">install_msvc2022_x64/include/Effekseer/Effekseer.h:580</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>.</p>
+
+</div>
+</div>
+<a id="ae484ca21b4edb94f29453dda4d2edd17" name="ae484ca21b4edb94f29453dda4d2edd17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae484ca21b4edb94f29453dda4d2edd17">&#9670;&#160;</a></span>RefPtr() <span class="overload">[3/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramtype">std::nullptr_t&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00593">593</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  594</span>    {</div>
+<div class="line"><span class="lineno">  595</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  596</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>.</p>
+
+</div>
+</div>
+<a id="a215badc2935221395097ab4ebf371f96" name="a215badc2935221395097ab4ebf371f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a215badc2935221395097ab4ebf371f96">&#9670;&#160;</a></span>~RefPtr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::~<a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00598">598</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  599</span>    {</div>
+<div class="line"><span class="lineno">  600</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  601</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_html_ac393052d7f83b62927ec9461c8825422"><div class="ttname"><a href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">Effekseer::SafeRelease</a></div><div class="ttdeci">void SafeRelease(T *&amp;val)</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">install_msvc2022_x64/include/Effekseer/Effekseer.h:564</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a215badc2935221395097ab4ebf371f96_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a431098828812b7201f4d4145c0e0ff0d" name="a431098828812b7201f4d4145c0e0ff0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a431098828812b7201f4d4145c0e0ff0d">&#9670;&#160;</a></span>RefPtr() <span class="overload">[4/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00603">603</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  604</span>    {</div>
+<div class="line"><span class="lineno">  605</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(o.ptr_);</div>
+<div class="line"><span class="lineno">  606</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  607</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = o.ptr_;</div>
+<div class="line"><span class="lineno">  608</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_html_ad20aa5e8318c42721a70f8912885fcce"><div class="ttname"><a href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">Effekseer::SafeAddRef</a></div><div class="ttdeci">void SafeAddRef(T *val)</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">install_msvc2022_x64/include/Effekseer/Effekseer.h:555</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a431098828812b7201f4d4145c0e0ff0d_cgraph.svg" width="370" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a337baabc0b7bc7c001bc83195caa2045" name="a337baabc0b7bc7c001bc83195caa2045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a337baabc0b7bc7c001bc83195caa2045">&#9670;&#160;</a></span>RefPtr() <span class="overload">[5/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00652">652</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  653</span>    {</div>
+<div class="line"><span class="lineno">  654</span>        <span class="keyword">auto</span> ptr = o.Get();</div>
+<div class="line"><span class="lineno">  655</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(ptr);</div>
+<div class="line"><span class="lineno">  656</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  657</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = ptr;</div>
+<div class="line"><span class="lineno">  658</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00620">Effekseer::RefPtr&lt; T &gt;::Get()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a337baabc0b7bc7c001bc83195caa2045_cgraph.svg" width="370" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae0458695f6537b6a8c787b33ae26b504" name="ae0458695f6537b6a8c787b33ae26b504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0458695f6537b6a8c787b33ae26b504">&#9670;&#160;</a></span>RefPtr() <span class="overload">[6/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00661">661</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  662</span>    {</div>
+<div class="line"><span class="lineno">  663</span>        <span class="keyword">auto</span> ptr = o.Get();</div>
+<div class="line"><span class="lineno">  664</span>        o.ptr_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  665</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  666</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = ptr;</div>
+<div class="line"><span class="lineno">  667</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_ae0458695f6537b6a8c787b33ae26b504_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a90e76d947da941676de10e39ada4e504" name="a90e76d947da941676de10e39ada4e504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90e76d947da941676de10e39ada4e504">&#9670;&#160;</a></span>RefPtr() <span class="overload">[7/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a089e5652bca0d3c8069913b4ef3691" name="a3a089e5652bca0d3c8069913b4ef3691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a089e5652bca0d3c8069913b4ef3691">&#9670;&#160;</a></span>RefPtr() <span class="overload">[8/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00588">588</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  589</span>    {</div>
+<div class="line"><span class="lineno">  590</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = p;</div>
+<div class="line"><span class="lineno">  591</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>.</p>
+
+</div>
+</div>
+<a id="ae484ca21b4edb94f29453dda4d2edd17" name="ae484ca21b4edb94f29453dda4d2edd17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae484ca21b4edb94f29453dda4d2edd17">&#9670;&#160;</a></span>RefPtr() <span class="overload">[9/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramtype">std::nullptr_t&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00593">593</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  594</span>    {</div>
+<div class="line"><span class="lineno">  595</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  596</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>.</p>
+
+</div>
+</div>
+<a id="a215badc2935221395097ab4ebf371f96" name="a215badc2935221395097ab4ebf371f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a215badc2935221395097ab4ebf371f96">&#9670;&#160;</a></span>~RefPtr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::~<a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00598">598</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  599</span>    {</div>
+<div class="line"><span class="lineno">  600</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  601</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a215badc2935221395097ab4ebf371f96_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a431098828812b7201f4d4145c0e0ff0d" name="a431098828812b7201f4d4145c0e0ff0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a431098828812b7201f4d4145c0e0ff0d">&#9670;&#160;</a></span>RefPtr() <span class="overload">[10/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00603">603</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  604</span>    {</div>
+<div class="line"><span class="lineno">  605</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(o.ptr_);</div>
+<div class="line"><span class="lineno">  606</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  607</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = o.ptr_;</div>
+<div class="line"><span class="lineno">  608</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a431098828812b7201f4d4145c0e0ff0d_cgraph.svg" width="370" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a337baabc0b7bc7c001bc83195caa2045" name="a337baabc0b7bc7c001bc83195caa2045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a337baabc0b7bc7c001bc83195caa2045">&#9670;&#160;</a></span>RefPtr() <span class="overload">[11/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00652">652</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  653</span>    {</div>
+<div class="line"><span class="lineno">  654</span>        <span class="keyword">auto</span> ptr = o.Get();</div>
+<div class="line"><span class="lineno">  655</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(ptr);</div>
+<div class="line"><span class="lineno">  656</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  657</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = ptr;</div>
+<div class="line"><span class="lineno">  658</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a337baabc0b7bc7c001bc83195caa2045_cgraph.svg" width="370" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae0458695f6537b6a8c787b33ae26b504" name="ae0458695f6537b6a8c787b33ae26b504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0458695f6537b6a8c787b33ae26b504">&#9670;&#160;</a></span>RefPtr() <span class="overload">[12/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::RefPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00661">661</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  662</span>    {</div>
+<div class="line"><span class="lineno">  663</span>        <span class="keyword">auto</span> ptr = o.Get();</div>
+<div class="line"><span class="lineno">  664</span>        o.ptr_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  665</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  666</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = ptr;</div>
+<div class="line"><span class="lineno">  667</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_ae0458695f6537b6a8c787b33ae26b504_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ade91c216102aa50c0028d0f2c2a23fb4" name="ade91c216102aa50c0028d0f2c2a23fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade91c216102aa50c0028d0f2c2a23fb4">&#9670;&#160;</a></span>DownCast() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::DownCast </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00670">670</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  671</span>    {</div>
+<div class="line"><span class="lineno">  672</span>        <span class="keyword">auto</span> ptr = <a class="code hl_function" href="classEffekseer_1_1RefPtr.html#a9ac1da0f132c0266f00df2f13be41e47">Get</a>();</div>
+<div class="line"><span class="lineno">  673</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(ptr);</div>
+<div class="line"><span class="lineno">  674</span>        <span class="keywordflow">return</span> RefPtr&lt;U&gt;(<span class="keyword">static_cast&lt;</span><a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>*<span class="keyword">&gt;</span>(ptr));</div>
+<div class="line"><span class="lineno">  675</span>    }</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">KeyCode::U</a></div><div class="ttdeci">@ U</div></div>
+<div class="ttc" id="aclassEffekseer_1_1RefPtr_html_a9ac1da0f132c0266f00df2f13be41e47"><div class="ttname"><a href="classEffekseer_1_1RefPtr.html#a9ac1da0f132c0266f00df2f13be41e47">Effekseer::RefPtr::Get</a></div><div class="ttdeci">T * Get() const</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00620">install_msvc2022_x64/include/Effekseer/Effekseer.h:620</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00620">Effekseer::RefPtr&lt; T &gt;::Get()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_ade91c216102aa50c0028d0f2c2a23fb4_cgraph.svg" width="364" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ade91c216102aa50c0028d0f2c2a23fb4" name="ade91c216102aa50c0028d0f2c2a23fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade91c216102aa50c0028d0f2c2a23fb4">&#9670;&#160;</a></span>DownCast() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::DownCast </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00670">670</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  671</span>    {</div>
+<div class="line"><span class="lineno">  672</span>        <span class="keyword">auto</span> ptr = <a class="code hl_function" href="classEffekseer_1_1RefPtr.html#a9ac1da0f132c0266f00df2f13be41e47">Get</a>();</div>
+<div class="line"><span class="lineno">  673</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(ptr);</div>
+<div class="line"><span class="lineno">  674</span>        <span class="keywordflow">return</span> RefPtr&lt;U&gt;(<span class="keyword">static_cast&lt;</span><a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>*<span class="keyword">&gt;</span>(ptr));</div>
+<div class="line"><span class="lineno">  675</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00620">Effekseer::RefPtr&lt; T &gt;::Get()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_ade91c216102aa50c0028d0f2c2a23fb4_cgraph.svg" width="364" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4db60c873809fafcc1adf784808a673b" name="a4db60c873809fafcc1adf784808a673b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db60c873809fafcc1adf784808a673b">&#9670;&#160;</a></span>FromPinned() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::FromPinned </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00689">689</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  690</span>    {</div>
+<div class="line"><span class="lineno">  691</span>        <span class="keyword">auto</span> ptr = <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>*<span class="keyword">&gt;</span>(p);</div>
+<div class="line"><span class="lineno">  692</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(ptr);</div>
+<div class="line"><span class="lineno">  693</span>        <span class="keywordflow">return</span> RefPtr&lt;T&gt;(ptr);</div>
+<div class="line"><span class="lineno">  694</span>    }</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a4db60c873809fafcc1adf784808a673b_cgraph.svg" width="364" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4db60c873809fafcc1adf784808a673b" name="a4db60c873809fafcc1adf784808a673b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db60c873809fafcc1adf784808a673b">&#9670;&#160;</a></span>FromPinned() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::FromPinned </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00689">689</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  690</span>    {</div>
+<div class="line"><span class="lineno">  691</span>        <span class="keyword">auto</span> ptr = <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>*<span class="keyword">&gt;</span>(p);</div>
+<div class="line"><span class="lineno">  692</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(ptr);</div>
+<div class="line"><span class="lineno">  693</span>        <span class="keywordflow">return</span> RefPtr&lt;T&gt;(ptr);</div>
+<div class="line"><span class="lineno">  694</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a4db60c873809fafcc1adf784808a673b_cgraph.svg" width="364" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9ac1da0f132c0266f00df2f13be41e47" name="a9ac1da0f132c0266f00df2f13be41e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac1da0f132c0266f00df2f13be41e47">&#9670;&#160;</a></span>Get() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> * <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::Get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00620">620</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  621</span>    {</div>
+<div class="line"><span class="lineno">  622</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>;</div>
+<div class="line"><span class="lineno">  623</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00670">Effekseer::RefPtr&lt; T &gt;::DownCast()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00703">Effekseer::operator!=()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00615">Effekseer::RefPtr&lt; T &gt;::operator-&gt;()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00709">Effekseer::operator&lt;()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00634">Effekseer::RefPtr&lt; T &gt;::operator=()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00698">Effekseer::operator==()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00652">Effekseer::RefPtr&lt; T &gt;::RefPtr()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a9ac1da0f132c0266f00df2f13be41e47_icgraph.svg" width="390" height="395"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9ac1da0f132c0266f00df2f13be41e47" name="a9ac1da0f132c0266f00df2f13be41e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac1da0f132c0266f00df2f13be41e47">&#9670;&#160;</a></span>Get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> * <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::Get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00620">620</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  621</span>    {</div>
+<div class="line"><span class="lineno">  622</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>;</div>
+<div class="line"><span class="lineno">  623</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>.</p>
+
+</div>
+</div>
+<a id="a64a533a63160ff8837b933001b36b693" name="a64a533a63160ff8837b933001b36b693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64a533a63160ff8837b933001b36b693">&#9670;&#160;</a></span>operator-&gt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> * <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00615">615</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  616</span>    {</div>
+<div class="line"><span class="lineno">  617</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classEffekseer_1_1RefPtr.html#a9ac1da0f132c0266f00df2f13be41e47">Get</a>();</div>
+<div class="line"><span class="lineno">  618</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00620">Effekseer::RefPtr&lt; T &gt;::Get()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a64a533a63160ff8837b933001b36b693_cgraph.svg" width="360" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a64a533a63160ff8837b933001b36b693" name="a64a533a63160ff8837b933001b36b693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64a533a63160ff8837b933001b36b693">&#9670;&#160;</a></span>operator-&gt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> * <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00615">615</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  616</span>    {</div>
+<div class="line"><span class="lineno">  617</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classEffekseer_1_1RefPtr.html#a9ac1da0f132c0266f00df2f13be41e47">Get</a>();</div>
+<div class="line"><span class="lineno">  618</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00620">Effekseer::RefPtr&lt; T &gt;::Get()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a64a533a63160ff8837b933001b36b693_cgraph.svg" width="360" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5c25d88a50b5fd790c46bcf524bc742b" name="a5c25d88a50b5fd790c46bcf524bc742b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c25d88a50b5fd790c46bcf524bc742b">&#9670;&#160;</a></span>operator=() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp; <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00625">625</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  626</span>    {</div>
+<div class="line"><span class="lineno">  627</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(o.ptr_);</div>
+<div class="line"><span class="lineno">  628</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  629</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = o.ptr_;</div>
+<div class="line"><span class="lineno">  630</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  631</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a5c25d88a50b5fd790c46bcf524bc742b_cgraph.svg" width="370" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5c25d88a50b5fd790c46bcf524bc742b" name="a5c25d88a50b5fd790c46bcf524bc742b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c25d88a50b5fd790c46bcf524bc742b">&#9670;&#160;</a></span>operator=() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp; <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00625">625</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  626</span>    {</div>
+<div class="line"><span class="lineno">  627</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(o.ptr_);</div>
+<div class="line"><span class="lineno">  628</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  629</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = o.ptr_;</div>
+<div class="line"><span class="lineno">  630</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  631</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a5c25d88a50b5fd790c46bcf524bc742b_cgraph.svg" width="370" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad3bf44bf38fbd2077716539c614cd8a6" name="ad3bf44bf38fbd2077716539c614cd8a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3bf44bf38fbd2077716539c614cd8a6">&#9670;&#160;</a></span>operator=() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00634">634</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  635</span>    {</div>
+<div class="line"><span class="lineno">  636</span>        <span class="keyword">auto</span> ptr = o.Get();</div>
+<div class="line"><span class="lineno">  637</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(ptr);</div>
+<div class="line"><span class="lineno">  638</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  639</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = ptr;</div>
+<div class="line"><span class="lineno">  640</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00620">Effekseer::RefPtr&lt; T &gt;::Get()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_ad3bf44bf38fbd2077716539c614cd8a6_cgraph.svg" width="370" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad3bf44bf38fbd2077716539c614cd8a6" name="ad3bf44bf38fbd2077716539c614cd8a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3bf44bf38fbd2077716539c614cd8a6">&#9670;&#160;</a></span>operator=() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00634">634</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  635</span>    {</div>
+<div class="line"><span class="lineno">  636</span>        <span class="keyword">auto</span> ptr = o.Get();</div>
+<div class="line"><span class="lineno">  637</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(ptr);</div>
+<div class="line"><span class="lineno">  638</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  639</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = ptr;</div>
+<div class="line"><span class="lineno">  640</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_ad3bf44bf38fbd2077716539c614cd8a6_cgraph.svg" width="370" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0ffc8cd62df69875c35c13470741f8ec" name="a0ffc8cd62df69875c35c13470741f8ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ffc8cd62df69875c35c13470741f8ec">&#9670;&#160;</a></span>operator=() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00643">643</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  644</span>    {</div>
+<div class="line"><span class="lineno">  645</span>        <span class="keyword">auto</span> ptr = o.Get();</div>
+<div class="line"><span class="lineno">  646</span>        o.ptr_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  647</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  648</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = ptr;</div>
+<div class="line"><span class="lineno">  649</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a0ffc8cd62df69875c35c13470741f8ec_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0ffc8cd62df69875c35c13470741f8ec" name="a0ffc8cd62df69875c35c13470741f8ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ffc8cd62df69875c35c13470741f8ec">&#9670;&#160;</a></span>operator=() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00643">643</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  644</span>    {</div>
+<div class="line"><span class="lineno">  645</span>        <span class="keyword">auto</span> ptr = o.Get();</div>
+<div class="line"><span class="lineno">  646</span>        o.ptr_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  647</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  648</span>        <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a> = ptr;</div>
+<div class="line"><span class="lineno">  649</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a0ffc8cd62df69875c35c13470741f8ec_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a1aa84fb49e5bc3c9a11e6d4ac8596f60" name="a1aa84fb49e5bc3c9a11e6d4ac8596f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aa84fb49e5bc3c9a11e6d4ac8596f60">&#9670;&#160;</a></span>Pin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::Pin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00677">677</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  678</span>    {</div>
+<div class="line"><span class="lineno">  679</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  680</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>;</div>
+<div class="line"><span class="lineno">  681</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a1aa84fb49e5bc3c9a11e6d4ac8596f60_cgraph.svg" width="384" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a1aa84fb49e5bc3c9a11e6d4ac8596f60" name="a1aa84fb49e5bc3c9a11e6d4ac8596f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aa84fb49e5bc3c9a11e6d4ac8596f60">&#9670;&#160;</a></span>Pin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::Pin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00677">677</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  678</span>    {</div>
+<div class="line"><span class="lineno">  679</span>        <a class="code hl_function" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">SafeAddRef</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  680</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>;</div>
+<div class="line"><span class="lineno">  681</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00555">Effekseer::SafeAddRef()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_a1aa84fb49e5bc3c9a11e6d4ac8596f60_cgraph.svg" width="384" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aec6bc94eb00e5a1673575236c341f8c6" name="aec6bc94eb00e5a1673575236c341f8c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6bc94eb00e5a1673575236c341f8c6">&#9670;&#160;</a></span>Reset() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00610">610</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  611</span>    {</div>
+<div class="line"><span class="lineno">  612</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  613</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="EffekseerVFX_8h_source.html#l00099">mtgb::EffectManager::Release()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_aec6bc94eb00e5a1673575236c341f8c6_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_aec6bc94eb00e5a1673575236c341f8c6_icgraph.svg" width="563" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aec6bc94eb00e5a1673575236c341f8c6" name="aec6bc94eb00e5a1673575236c341f8c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6bc94eb00e5a1673575236c341f8c6">&#9670;&#160;</a></span>Reset() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00610">610</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  611</span>    {</div>
+<div class="line"><span class="lineno">  612</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(<a class="code hl_variable" href="classEffekseer_1_1RefPtr.html#a033939eb66a104ed94fe39de9c49b32a">ptr_</a>);</div>
+<div class="line"><span class="lineno">  613</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">Effekseer::RefPtr&lt; T &gt;::ptr_</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_aec6bc94eb00e5a1673575236c341f8c6_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af55800b4b0c380a19e2748dbe2d77423" name="af55800b4b0c380a19e2748dbe2d77423"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af55800b4b0c380a19e2748dbe2d77423">&#9670;&#160;</a></span>Unpin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::Unpin </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00683">683</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  684</span>    {</div>
+<div class="line"><span class="lineno">  685</span>        <span class="keyword">auto</span> ptr = <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>*<span class="keyword">&gt;</span>(p);</div>
+<div class="line"><span class="lineno">  686</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(ptr);</div>
+<div class="line"><span class="lineno">  687</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_af55800b4b0c380a19e2748dbe2d77423_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af55800b4b0c380a19e2748dbe2d77423" name="af55800b4b0c380a19e2748dbe2d77423"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af55800b4b0c380a19e2748dbe2d77423">&#9670;&#160;</a></span>Unpin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::Unpin </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00683">683</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  684</span>    {</div>
+<div class="line"><span class="lineno">  685</span>        <span class="keyword">auto</span> ptr = <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>*<span class="keyword">&gt;</span>(p);</div>
+<div class="line"><span class="lineno">  686</span>        <a class="code hl_function" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">SafeRelease</a>(ptr);</div>
+<div class="line"><span class="lineno">  687</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00564">Effekseer::SafeRelease()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1RefPtr_af55800b4b0c380a19e2748dbe2d77423_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">フレンドと関連関数の詳解</h2>
+<a id="a161a8052754985bb8024c19c06fd9206" name="a161a8052754985bb8024c19c06fd9206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a161a8052754985bb8024c19c06fd9206">&#9670;&#160;</a></span>RefPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00583">583</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a033939eb66a104ed94fe39de9c49b32a" name="a033939eb66a104ed94fe39de9c49b32a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a033939eb66a104ed94fe39de9c49b32a">&#9670;&#160;</a></span>ptr_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> * <a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::ptr_ = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00580">580</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00620">Effekseer::RefPtr&lt; T &gt;::Get()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00625">Effekseer::RefPtr&lt; T &gt;::operator=()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00677">Effekseer::RefPtr&lt; T &gt;::Pin()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00588">Effekseer::RefPtr&lt; T &gt;::RefPtr()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00610">Effekseer::RefPtr&lt; T &gt;::Reset()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00598">Effekseer::RefPtr&lt; T &gt;::~RefPtr()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a></li>
+<li><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceEffekseer.html">Effekseer</a></li><li class="navelem"><a class="el" href="classEffekseer_1_1RefPtr.html">RefPtr</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

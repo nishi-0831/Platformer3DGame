@@ -1,0 +1,26 @@
+var classLLGI_1_1SingleFrameMemoryPool =
+[
+    [ "SingleFrameMemoryPool", "classLLGI_1_1SingleFrameMemoryPool.html#ad4df68fe0ad1b24781e8c40379c90287", null ],
+    [ "~SingleFrameMemoryPool", "classLLGI_1_1SingleFrameMemoryPool.html#ae26d4cc1b2366e512de0313d7753ccf4", null ],
+    [ "SingleFrameMemoryPool", "classLLGI_1_1SingleFrameMemoryPool.html#ad4df68fe0ad1b24781e8c40379c90287", null ],
+    [ "~SingleFrameMemoryPool", "classLLGI_1_1SingleFrameMemoryPool.html#ae26d4cc1b2366e512de0313d7753ccf4", null ],
+    [ "AddRef", "classLLGI_1_1SingleFrameMemoryPool.html#a7ceba7114f344e194917b0ee53bc4aa2", null ],
+    [ "AddRef", "classLLGI_1_1SingleFrameMemoryPool.html#a7ceba7114f344e194917b0ee53bc4aa2", null ],
+    [ "CreateBufferInternal", "classLLGI_1_1SingleFrameMemoryPool.html#a46313a01abf2daaafeb35fb8d68f22d8", null ],
+    [ "CreateBufferInternal", "classLLGI_1_1SingleFrameMemoryPool.html#a46313a01abf2daaafeb35fb8d68f22d8", null ],
+    [ "CreateConstantBuffer", "classLLGI_1_1SingleFrameMemoryPool.html#a4ea4b2cdc17f56355ecde386639c84cb", null ],
+    [ "CreateConstantBuffer", "classLLGI_1_1SingleFrameMemoryPool.html#a4ea4b2cdc17f56355ecde386639c84cb", null ],
+    [ "GetRef", "classLLGI_1_1SingleFrameMemoryPool.html#a2dc67e5807f15f2cc40c917ffe559804", null ],
+    [ "GetRef", "classLLGI_1_1SingleFrameMemoryPool.html#a2dc67e5807f15f2cc40c917ffe559804", null ],
+    [ "NewFrame", "classLLGI_1_1SingleFrameMemoryPool.html#ac55f72cb02d1a54803a98db244208363", null ],
+    [ "NewFrame", "classLLGI_1_1SingleFrameMemoryPool.html#ac55f72cb02d1a54803a98db244208363", null ],
+    [ "ReinitializeBuffer", "classLLGI_1_1SingleFrameMemoryPool.html#a723e7fc65559e6a10485742fdd69d015", null ],
+    [ "ReinitializeBuffer", "classLLGI_1_1SingleFrameMemoryPool.html#a723e7fc65559e6a10485742fdd69d015", null ],
+    [ "Release", "classLLGI_1_1SingleFrameMemoryPool.html#a3e5a802c449b55209998e7ca965c53d4", null ],
+    [ "Release", "classLLGI_1_1SingleFrameMemoryPool.html#a3e5a802c449b55209998e7ca965c53d4", null ],
+    [ "buffers_", "classLLGI_1_1SingleFrameMemoryPool.html#aec315a426bd80516c8bbd401230f23ab", null ],
+    [ "currentSwapBuffer_", "classLLGI_1_1SingleFrameMemoryPool.html#a353ce64aed50e840ae108834f9db4bb3", null ],
+    [ "offsets_", "classLLGI_1_1SingleFrameMemoryPool.html#a3b5a783b9b91616a4ac164a2cda06bc5", null ],
+    [ "reference", "classLLGI_1_1SingleFrameMemoryPool.html#a4b1a48d30647cb2cd751175568489089", null ],
+    [ "swapBufferCount_", "classLLGI_1_1SingleFrameMemoryPool.html#a37a049b16c1d37c76b59e3321d3fe2a6", null ]
+];

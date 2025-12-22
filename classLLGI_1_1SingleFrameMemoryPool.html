@@ -1,0 +1,877 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: LLGI::SingleFrameMemoryPool クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classLLGI_1_1SingleFrameMemoryPool.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classLLGI_1_1SingleFrameMemoryPool-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">LLGI::SingleFrameMemoryPool クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>provide a memory which is available in one frame  
+ <a href="classLLGI_1_1SingleFrameMemoryPool.html#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html">LLGI.Graphics.h</a>&quot;</code></p>
+<div class="dynheader">
+LLGI::SingleFrameMemoryPool の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classLLGI_1_1SingleFrameMemoryPool__inherit__graph.svg" width="250" height="771"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+LLGI::SingleFrameMemoryPool 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classLLGI_1_1SingleFrameMemoryPool__coll__graph.svg" width="250" height="771"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad4df68fe0ad1b24781e8c40379c90287"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#ad4df68fe0ad1b24781e8c40379c90287">SingleFrameMemoryPool</a> (int32_t swapBufferCount=3)</td></tr>
+<tr class="separator:ad4df68fe0ad1b24781e8c40379c90287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae26d4cc1b2366e512de0313d7753ccf4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#ae26d4cc1b2366e512de0313d7753ccf4">~SingleFrameMemoryPool</a> () override</td></tr>
+<tr class="separator:ae26d4cc1b2366e512de0313d7753ccf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac55f72cb02d1a54803a98db244208363"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#ac55f72cb02d1a54803a98db244208363">NewFrame</a> ()</td></tr>
+<tr class="memdesc:ac55f72cb02d1a54803a98db244208363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start new frame  <br /></td></tr>
+<tr class="separator:ac55f72cb02d1a54803a98db244208363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea4b2cdc17f56355ecde386639c84cb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#a4ea4b2cdc17f56355ecde386639c84cb">CreateConstantBuffer</a> (int32_t size)</td></tr>
+<tr class="separator:a4ea4b2cdc17f56355ecde386639c84cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4df68fe0ad1b24781e8c40379c90287"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#ad4df68fe0ad1b24781e8c40379c90287">SingleFrameMemoryPool</a> (int32_t swapBufferCount=3)</td></tr>
+<tr class="separator:ad4df68fe0ad1b24781e8c40379c90287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae26d4cc1b2366e512de0313d7753ccf4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#ae26d4cc1b2366e512de0313d7753ccf4">~SingleFrameMemoryPool</a> () override</td></tr>
+<tr class="separator:ae26d4cc1b2366e512de0313d7753ccf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac55f72cb02d1a54803a98db244208363"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#ac55f72cb02d1a54803a98db244208363">NewFrame</a> ()</td></tr>
+<tr class="memdesc:ac55f72cb02d1a54803a98db244208363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start new frame  <br /></td></tr>
+<tr class="separator:ac55f72cb02d1a54803a98db244208363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea4b2cdc17f56355ecde386639c84cb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#a4ea4b2cdc17f56355ecde386639c84cb">CreateConstantBuffer</a> (int32_t size)</td></tr>
+<tr class="separator:a4ea4b2cdc17f56355ecde386639c84cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a7ceba7114f344e194917b0ee53bc4aa2">AddRef</a> ()</td></tr>
+<tr class="separator:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a7ceba7114f344e194917b0ee53bc4aa2">AddRef</a> ()</td></tr>
+<tr class="separator:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc67e5807f15f2cc40c917ffe559804"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a2dc67e5807f15f2cc40c917ffe559804">GetRef</a> ()</td></tr>
+<tr class="separator:a2dc67e5807f15f2cc40c917ffe559804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc67e5807f15f2cc40c917ffe559804"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a2dc67e5807f15f2cc40c917ffe559804">GetRef</a> ()</td></tr>
+<tr class="separator:a2dc67e5807f15f2cc40c917ffe559804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5a802c449b55209998e7ca965c53d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a3e5a802c449b55209998e7ca965c53d4">Release</a> ()</td></tr>
+<tr class="separator:a3e5a802c449b55209998e7ca965c53d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5a802c449b55209998e7ca965c53d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a3e5a802c449b55209998e7ca965c53d4">Release</a> ()</td></tr>
+<tr class="separator:a3e5a802c449b55209998e7ca965c53d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a46313a01abf2daaafeb35fb8d68f22d8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#a46313a01abf2daaafeb35fb8d68f22d8">CreateBufferInternal</a> (int32_t size)</td></tr>
+<tr class="memdesc:a46313a01abf2daaafeb35fb8d68f22d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">create buffer  <br /></td></tr>
+<tr class="separator:a46313a01abf2daaafeb35fb8d68f22d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a723e7fc65559e6a10485742fdd69d015"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#a723e7fc65559e6a10485742fdd69d015">ReinitializeBuffer</a> (<a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> *cb, int32_t size)</td></tr>
+<tr class="memdesc:a723e7fc65559e6a10485742fdd69d015"><td class="mdescLeft">&#160;</td><td class="mdescRight">reinitialize buffer with a size  <br /></td></tr>
+<tr class="separator:a723e7fc65559e6a10485742fdd69d015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46313a01abf2daaafeb35fb8d68f22d8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#a46313a01abf2daaafeb35fb8d68f22d8">CreateBufferInternal</a> (int32_t size)</td></tr>
+<tr class="memdesc:a46313a01abf2daaafeb35fb8d68f22d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">create buffer  <br /></td></tr>
+<tr class="separator:a46313a01abf2daaafeb35fb8d68f22d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a723e7fc65559e6a10485742fdd69d015"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#a723e7fc65559e6a10485742fdd69d015">ReinitializeBuffer</a> (<a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> *cb, int32_t size)</td></tr>
+<tr class="memdesc:a723e7fc65559e6a10485742fdd69d015"><td class="mdescLeft">&#160;</td><td class="mdescRight">reinitialize buffer with a size  <br /></td></tr>
+<tr class="separator:a723e7fc65559e6a10485742fdd69d015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a353ce64aed50e840ae108834f9db4bb3"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#a353ce64aed50e840ae108834f9db4bb3">currentSwapBuffer_</a> = -1</td></tr>
+<tr class="separator:a353ce64aed50e840ae108834f9db4bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37a049b16c1d37c76b59e3321d3fe2a6"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#a37a049b16c1d37c76b59e3321d3fe2a6">swapBufferCount_</a> = 0</td></tr>
+<tr class="separator:a37a049b16c1d37c76b59e3321d3fe2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b5a783b9b91616a4ac164a2cda06bc5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#a3b5a783b9b91616a4ac164a2cda06bc5">offsets_</a></td></tr>
+<tr class="separator:a3b5a783b9b91616a4ac164a2cda06bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec315a426bd80516c8bbd401230f23ab"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html#aec315a426bd80516c8bbd401230f23ab">buffers_</a></td></tr>
+<tr class="separator:aec315a426bd80516c8bbd401230f23ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a4b1a48d30647cb2cd751175568489089"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a></td></tr>
+<tr class="separator:a4b1a48d30647cb2cd751175568489089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>provide a memory which is available in one frame </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00053">53</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ad4df68fe0ad1b24781e8c40379c90287" name="ad4df68fe0ad1b24781e8c40379c90287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4df68fe0ad1b24781e8c40379c90287">&#9670;&#160;</a></span>SingleFrameMemoryPool() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::SingleFrameMemoryPool::SingleFrameMemoryPool </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>swapBufferCount</em> = <code>3</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae26d4cc1b2366e512de0313d7753ccf4" name="ae26d4cc1b2366e512de0313d7753ccf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae26d4cc1b2366e512de0313d7753ccf4">&#9670;&#160;</a></span>~SingleFrameMemoryPool() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::SingleFrameMemoryPool::~SingleFrameMemoryPool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4df68fe0ad1b24781e8c40379c90287" name="ad4df68fe0ad1b24781e8c40379c90287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4df68fe0ad1b24781e8c40379c90287">&#9670;&#160;</a></span>SingleFrameMemoryPool() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::SingleFrameMemoryPool::SingleFrameMemoryPool </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>swapBufferCount</em> = <code>3</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae26d4cc1b2366e512de0313d7753ccf4" name="ae26d4cc1b2366e512de0313d7753ccf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae26d4cc1b2366e512de0313d7753ccf4">&#9670;&#160;</a></span>~SingleFrameMemoryPool() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::SingleFrameMemoryPool::~SingleFrameMemoryPool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a7ceba7114f344e194917b0ee53bc4aa2" name="a7ceba7114f344e194917b0ee53bc4aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ceba7114f344e194917b0ee53bc4aa2">&#9670;&#160;</a></span>AddRef() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::AddRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00394">394</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  395</span>    {</div>
+<div class="line"><span class="lineno">  396</span>        std::atomic_fetch_add_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume);</div>
+<div class="line"><span class="lineno">  397</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  398</span>    }</div>
+<div class="ttc" id="aclassLLGI_1_1ReferenceObject_html_a4b1a48d30647cb2cd751175568489089"><div class="ttname"><a href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">LLGI::ReferenceObject::reference</a></div><div class="ttdeci">std::atomic&lt; int32_t &gt; reference</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">install_msvc2022_x64/include/LLGI/LLGI.Base.h:387</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a7ceba7114f344e194917b0ee53bc4aa2" name="a7ceba7114f344e194917b0ee53bc4aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ceba7114f344e194917b0ee53bc4aa2">&#9670;&#160;</a></span>AddRef() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::AddRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html#l00394">394</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  395</span>    {</div>
+<div class="line"><span class="lineno">  396</span>        std::atomic_fetch_add_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume);</div>
+<div class="line"><span class="lineno">  397</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  398</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a46313a01abf2daaafeb35fb8d68f22d8" name="a46313a01abf2daaafeb35fb8d68f22d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46313a01abf2daaafeb35fb8d68f22d8">&#9670;&#160;</a></span>CreateBufferInternal() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> * LLGI::SingleFrameMemoryPool::CreateBufferInternal </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create buffer </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00064">64</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a46313a01abf2daaafeb35fb8d68f22d8" name="a46313a01abf2daaafeb35fb8d68f22d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46313a01abf2daaafeb35fb8d68f22d8">&#9670;&#160;</a></span>CreateBufferInternal() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> * LLGI::SingleFrameMemoryPool::CreateBufferInternal </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create buffer </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Graphics.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00064">64</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4ea4b2cdc17f56355ecde386639c84cb" name="a4ea4b2cdc17f56355ecde386639c84cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ea4b2cdc17f56355ecde386639c84cb">&#9670;&#160;</a></span>CreateConstantBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> * LLGI::SingleFrameMemoryPool::CreateConstantBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ea4b2cdc17f56355ecde386639c84cb" name="a4ea4b2cdc17f56355ecde386639c84cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ea4b2cdc17f56355ecde386639c84cb">&#9670;&#160;</a></span>CreateConstantBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> * LLGI::SingleFrameMemoryPool::CreateConstantBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2dc67e5807f15f2cc40c917ffe559804" name="a2dc67e5807f15f2cc40c917ffe559804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc67e5807f15f2cc40c917ffe559804">&#9670;&#160;</a></span>GetRef() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::GetRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00400">400</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  400</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a2dc67e5807f15f2cc40c917ffe559804" name="a2dc67e5807f15f2cc40c917ffe559804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc67e5807f15f2cc40c917ffe559804">&#9670;&#160;</a></span>GetRef() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::GetRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html#l00400">400</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  400</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="ac55f72cb02d1a54803a98db244208363" name="ac55f72cb02d1a54803a98db244208363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac55f72cb02d1a54803a98db244208363">&#9670;&#160;</a></span>NewFrame() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LLGI::SingleFrameMemoryPool::NewFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Start new frame </p>
+
+</div>
+</div>
+<a id="ac55f72cb02d1a54803a98db244208363" name="ac55f72cb02d1a54803a98db244208363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac55f72cb02d1a54803a98db244208363">&#9670;&#160;</a></span>NewFrame() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LLGI::SingleFrameMemoryPool::NewFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Start new frame </p>
+
+</div>
+</div>
+<a id="a723e7fc65559e6a10485742fdd69d015" name="a723e7fc65559e6a10485742fdd69d015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a723e7fc65559e6a10485742fdd69d015">&#9670;&#160;</a></span>ReinitializeBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> * LLGI::SingleFrameMemoryPool::ReinitializeBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> *&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>reinitialize buffer with a size </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00069">69</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a723e7fc65559e6a10485742fdd69d015" name="a723e7fc65559e6a10485742fdd69d015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a723e7fc65559e6a10485742fdd69d015">&#9670;&#160;</a></span>ReinitializeBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> * LLGI::SingleFrameMemoryPool::ReinitializeBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> *&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>reinitialize buffer with a size </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Graphics.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00069">69</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3e5a802c449b55209998e7ca965c53d4" name="a3e5a802c449b55209998e7ca965c53d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5a802c449b55209998e7ca965c53d4">&#9670;&#160;</a></span>Release() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00402">402</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  403</span>    {</div>
+<div class="line"><span class="lineno">  404</span>        assert(<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a> &gt; 0);</div>
+<div class="line"><span class="lineno">  405</span> </div>
+<div class="line"><span class="lineno">  406</span>        <span class="keywordtype">bool</span> destroy = std::atomic_fetch_sub_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume) == 1;</div>
+<div class="line"><span class="lineno">  407</span>        <span class="keywordflow">if</span> (destroy)</div>
+<div class="line"><span class="lineno">  408</span>        {</div>
+<div class="line"><span class="lineno">  409</span>            <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  410</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  411</span>        }</div>
+<div class="line"><span class="lineno">  412</span> </div>
+<div class="line"><span class="lineno">  413</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  414</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a3e5a802c449b55209998e7ca965c53d4" name="a3e5a802c449b55209998e7ca965c53d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5a802c449b55209998e7ca965c53d4">&#9670;&#160;</a></span>Release() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html#l00402">402</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  403</span>    {</div>
+<div class="line"><span class="lineno">  404</span>        assert(<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a> &gt; 0);</div>
+<div class="line"><span class="lineno">  405</span> </div>
+<div class="line"><span class="lineno">  406</span>        <span class="keywordtype">bool</span> destroy = std::atomic_fetch_sub_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume) == 1;</div>
+<div class="line"><span class="lineno">  407</span>        <span class="keywordflow">if</span> (destroy)</div>
+<div class="line"><span class="lineno">  408</span>        {</div>
+<div class="line"><span class="lineno">  409</span>            <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  410</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  411</span>        }</div>
+<div class="line"><span class="lineno">  412</span> </div>
+<div class="line"><span class="lineno">  413</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  414</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="aec315a426bd80516c8bbd401230f23ab" name="aec315a426bd80516c8bbd401230f23ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec315a426bd80516c8bbd401230f23ab">&#9670;&#160;</a></span>buffers_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; <a class="el" href="classLLGI_1_1Buffer.html">Buffer</a> * &gt; &gt; LLGI::SingleFrameMemoryPool::buffers_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00059">59</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a353ce64aed50e840ae108834f9db4bb3" name="a353ce64aed50e840ae108834f9db4bb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353ce64aed50e840ae108834f9db4bb3">&#9670;&#160;</a></span>currentSwapBuffer_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t LLGI::SingleFrameMemoryPool::currentSwapBuffer_ = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00056">56</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3b5a783b9b91616a4ac164a2cda06bc5" name="a3b5a783b9b91616a4ac164a2cda06bc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b5a783b9b91616a4ac164a2cda06bc5">&#9670;&#160;</a></span>offsets_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; int32_t &gt; LLGI::SingleFrameMemoryPool::offsets_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00058">58</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4b1a48d30647cb2cd751175568489089" name="a4b1a48d30647cb2cd751175568489089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b1a48d30647cb2cd751175568489089">&#9670;&#160;</a></span>reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt; int32_t &gt; LLGI::ReferenceObject::reference</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">387</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00394">LLGI::ReferenceObject::AddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00400">LLGI::ReferenceObject::GetRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00402">LLGI::ReferenceObject::Release()</a>.</p>
+
+</div>
+</div>
+<a id="a37a049b16c1d37c76b59e3321d3fe2a6" name="a37a049b16c1d37c76b59e3321d3fe2a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a049b16c1d37c76b59e3321d3fe2a6">&#9670;&#160;</a></span>swapBufferCount_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t LLGI::SingleFrameMemoryPool::swapBufferCount_ = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00057">57</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h</a></li>
+<li><a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Graphics_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Graphics.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceLLGI.html">LLGI</a></li><li class="navelem"><a class="el" href="classLLGI_1_1SingleFrameMemoryPool.html">SingleFrameMemoryPool</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

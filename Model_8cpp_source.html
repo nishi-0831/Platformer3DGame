@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Model.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Model_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Model.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Model_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Model_8h.html">Model.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="Fbx_8h.html">Fbx.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="PathUtility_8h.html">PathUtility.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="MTAssert_8h.html">MTAssert.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="mtgb_8h.html">mtgb.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classmtgb_1_1Model.html#a9d7704f3767d54eef96c5ec520b5019e">    8</a></span><a class="code hl_function" href="classmtgb_1_1Model.html#a9d7704f3767d54eef96c5ec520b5019e">mtgb::Model::Model</a>()</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classmtgb_1_1Model.html#af7776b721ba9cd833a034e5bfd3153ba">   12</a></span><a class="code hl_function" href="classmtgb_1_1Model.html#af7776b721ba9cd833a034e5bfd3153ba">mtgb::Model::~Model</a>()</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classmtgb_1_1Model.html#a9e579cd6f2c1835a16d25e0a0d01de80">   16</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Model.html#a9e579cd6f2c1835a16d25e0a0d01de80">mtgb::Model::Initialize</a>()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classmtgb_1_1Model.html#ab4f58752c5356facd629fc532c944cf4">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Model.html#ab4f58752c5356facd629fc532c944cf4">mtgb::Model::Update</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classmtgb_1_1Model.html#aabd8f96e73c74fc1af07ce8bb6d3d567">   24</a></span><a class="code hl_typedef" href="namespacemtgb.html#a6fb017445ece9b1ea7cb6b0eb027dc03">mtgb::ModelHandle</a> <a class="code hl_function" href="classmtgb_1_1Model.html#aabd8f96e73c74fc1af07ce8bb6d3d567">mtgb::Model::Load</a>(<span class="keyword">const</span> std::string_view&amp; _fileName)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="classmtgb_1_1Model.html">Model</a>&amp; instance{ Game::System&lt;Model&gt;() };</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// ファイルの拡張子</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::string_view fileExt{ <a class="code hl_function" href="namespacemtgb_1_1FilePath.html#a86807aa019b272d42e13030def1691b1">FilePath::GetExtension</a>(_fileName) };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">    Sprite* pSprite{ new Sprite{} };</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">    pSprite-&gt;Initialize();</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">    pSprite-&gt;Load(ToWString(_fileName));</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">    ImageHandle handle{ ++instance.handleCounter_ };</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">    instance.sprites_.insert({ handle , pSprite });</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"></span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">    return handle;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_struct" href="structmtgb_1_1Model_1_1ModelData.html">ModelData</a>* pModelData{ <span class="keyword">new</span> <a class="code hl_struct" href="structmtgb_1_1Model_1_1ModelData.html">ModelData</a>{} };</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (fileExt == <span class="stringliteral">&quot;fbx&quot;</span>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        instance.modelData_.insert({  } );</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fileExt == <span class="stringliteral">&quot;obj&quot;</span>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;objファイルは未実装です。&quot;</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="comment">// fbx, obj でもないなら</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;非対応のモデルファイルです。&quot;</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">INVALID_HANDLE</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="ttc" id="aFbx_8h_html"><div class="ttname"><a href="Fbx_8h.html">Fbx.h</a></div></div>
+<div class="ttc" id="aMTAssert_8h_html"><div class="ttname"><a href="MTAssert_8h.html">MTAssert.h</a></div></div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00009">MTAssert.h:9</a></div></div>
+<div class="ttc" id="aModel_8h_html"><div class="ttname"><a href="Model_8h.html">Model.h</a></div></div>
+<div class="ttc" id="aPathUtility_8h_html"><div class="ttname"><a href="PathUtility_8h.html">PathUtility.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Model_html"><div class="ttname"><a href="classmtgb_1_1Model.html">mtgb::Model</a></div><div class="ttdef"><b>Definition:</b> <a href="Model_8h_source.html#l00011">Model.h:12</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Model_html_a9d7704f3767d54eef96c5ec520b5019e"><div class="ttname"><a href="classmtgb_1_1Model.html#a9d7704f3767d54eef96c5ec520b5019e">mtgb::Model::Model</a></div><div class="ttdeci">Model()</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00008">Model.cpp:8</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Model_html_a9e579cd6f2c1835a16d25e0a0d01de80"><div class="ttname"><a href="classmtgb_1_1Model.html#a9e579cd6f2c1835a16d25e0a0d01de80">mtgb::Model::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00016">Model.cpp:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Model_html_aabd8f96e73c74fc1af07ce8bb6d3d567"><div class="ttname"><a href="classmtgb_1_1Model.html#aabd8f96e73c74fc1af07ce8bb6d3d567">mtgb::Model::Load</a></div><div class="ttdeci">static ModelHandle Load(const std::string_view &amp;_fileName)</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00024">Model.cpp:24</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Model_html_ab4f58752c5356facd629fc532c944cf4"><div class="ttname"><a href="classmtgb_1_1Model.html#ab4f58752c5356facd629fc532c944cf4">mtgb::Model::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00020">Model.cpp:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Model_html_af7776b721ba9cd833a034e5bfd3153ba"><div class="ttname"><a href="classmtgb_1_1Model.html#af7776b721ba9cd833a034e5bfd3153ba">mtgb::Model::~Model</a></div><div class="ttdeci">~Model()</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00012">Model.cpp:12</a></div></div>
+<div class="ttc" id="amtgb_8h_html"><div class="ttname"><a href="mtgb_8h.html">mtgb.h</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1FilePath_html_a86807aa019b272d42e13030def1691b1"><div class="ttname"><a href="namespacemtgb_1_1FilePath.html#a86807aa019b272d42e13030def1691b1">mtgb::FilePath::GetExtension</a></div><div class="ttdeci">std::string_view GetExtension(const std::string_view &amp;_fileName)</div><div class="ttdoc">ファイル名拡張子を取得する</div><div class="ttdef"><b>Definition:</b> <a href="PathUtility_8h_source.html#l00013">PathUtility.h:13</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a461c37884dafe5e26f7d9b0e2f97148b"><div class="ttname"><a href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a></div><div class="ttdeci">static const int32_t INVALID_HANDLE</div><div class="ttdoc">無効なハンドル値</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00045">Handlers.h:45</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a6fb017445ece9b1ea7cb6b0eb027dc03"><div class="ttname"><a href="namespacemtgb.html#a6fb017445ece9b1ea7cb6b0eb027dc03">mtgb::ModelHandle</a></div><div class="ttdeci">int32_t ModelHandle</div><div class="ttdoc">モデルのハンドル</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00020">Handlers.h:20</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Model_1_1ModelData_html"><div class="ttname"><a href="structmtgb_1_1Model_1_1ModelData.html">mtgb::Model::ModelData</a></div><div class="ttdoc">モデルの情報</div><div class="ttdef"><b>Definition:</b> <a href="Model_8h_source.html#l00017">Model.h:18</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Model_8cpp.html">Model.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

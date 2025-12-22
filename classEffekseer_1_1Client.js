@@ -1,0 +1,25 @@
+var classEffekseer_1_1Client =
+[
+    [ "Client", "classEffekseer_1_1Client.html#ae090cc606f94b071ab2083e15a4b6566", null ],
+    [ "~Client", "classEffekseer_1_1Client.html#a6c2d0a5ee68f0f2a5224c0ac467ad3fe", null ],
+    [ "Client", "classEffekseer_1_1Client.html#ae090cc606f94b071ab2083e15a4b6566", null ],
+    [ "~Client", "classEffekseer_1_1Client.html#a6c2d0a5ee68f0f2a5224c0ac467ad3fe", null ],
+    [ "AddRef", "classEffekseer_1_1Client.html#a3e3b54e8e5081e24f5784e4f9b8f6257", null ],
+    [ "AddRef", "classEffekseer_1_1Client.html#a3e3b54e8e5081e24f5784e4f9b8f6257", null ],
+    [ "Create", "classEffekseer_1_1Client.html#aaad20ff9a77cdd1c71d567adea435ee0", null ],
+    [ "Create", "classEffekseer_1_1Client.html#aaad20ff9a77cdd1c71d567adea435ee0", null ],
+    [ "GetRef", "classEffekseer_1_1Client.html#a95274c788c8c03d27a3e424facc728b6", null ],
+    [ "GetRef", "classEffekseer_1_1Client.html#a95274c788c8c03d27a3e424facc728b6", null ],
+    [ "IsConnected", "classEffekseer_1_1Client.html#a83c2f00111623d0fe4536a197b7ac9b7", null ],
+    [ "IsConnected", "classEffekseer_1_1Client.html#a83c2f00111623d0fe4536a197b7ac9b7", null ],
+    [ "Release", "classEffekseer_1_1Client.html#ad8d601188c0f088f4748aa2da8758bb5", null ],
+    [ "Release", "classEffekseer_1_1Client.html#ad8d601188c0f088f4748aa2da8758bb5", null ],
+    [ "Reload", "classEffekseer_1_1Client.html#a271c5dee6150867aa5029e9bd53408d9", null ],
+    [ "Reload", "classEffekseer_1_1Client.html#a271c5dee6150867aa5029e9bd53408d9", null ],
+    [ "Reload", "classEffekseer_1_1Client.html#a6a695ab48b123bcfebc9bc486c590482", null ],
+    [ "Reload", "classEffekseer_1_1Client.html#a6a695ab48b123bcfebc9bc486c590482", null ],
+    [ "Start", "classEffekseer_1_1Client.html#a8ccf03136f886a34baeabcfd6d3e5cb4", null ],
+    [ "Start", "classEffekseer_1_1Client.html#a8ccf03136f886a34baeabcfd6d3e5cb4", null ],
+    [ "Stop", "classEffekseer_1_1Client.html#aa490dfe72eeb567e6eff19d9e8b850c1", null ],
+    [ "Stop", "classEffekseer_1_1Client.html#aa490dfe72eeb567e6eff19d9e8b850c1", null ]
+];

@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: imgui_impl_win32.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('imgui__impl__win32_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">imgui_impl_win32.h ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="imgui_8h_source.html">imgui.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+imgui_impl_win32.h の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h__incl.svg" width="582" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h__dep__incl.svg" width="3331" height="491"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="imgui__impl__win32_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a9f752412a1f6dfdf6fc00dbbd90a8428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8h.html#a9f752412a1f6dfdf6fc00dbbd90a8428">ImGui_ImplWin32_Init</a> (void *hwnd)</td></tr>
+<tr class="separator:a9f752412a1f6dfdf6fc00dbbd90a8428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c65c5f453046a14119bc62234ac5b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8h.html#a62c65c5f453046a14119bc62234ac5b7">ImGui_ImplWin32_InitForOpenGL</a> (void *hwnd)</td></tr>
+<tr class="separator:a62c65c5f453046a14119bc62234ac5b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a64d684eab1b6aed8c2f23aaa427d49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8h.html#a4a64d684eab1b6aed8c2f23aaa427d49">ImGui_ImplWin32_Shutdown</a> ()</td></tr>
+<tr class="separator:a4a64d684eab1b6aed8c2f23aaa427d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfa678a90a3331b9e2d2214d190e0718"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8h.html#acfa678a90a3331b9e2d2214d190e0718">ImGui_ImplWin32_NewFrame</a> ()</td></tr>
+<tr class="separator:acfa678a90a3331b9e2d2214d190e0718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd8952480dd70d48de16334e5686dfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8h.html#a1dd8952480dd70d48de16334e5686dfc">ImGui_ImplWin32_EnableDpiAwareness</a> ()</td></tr>
+<tr class="separator:a1dd8952480dd70d48de16334e5686dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac16bf93a00e545ac237b661b4824b23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8h.html#aac16bf93a00e545ac237b661b4824b23">ImGui_ImplWin32_GetDpiScaleForHwnd</a> (void *hwnd)</td></tr>
+<tr class="separator:aac16bf93a00e545ac237b661b4824b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf9e14edd8ff4e36fa6331c5c0de0c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8h.html#a8cf9e14edd8ff4e36fa6331c5c0de0c2">ImGui_ImplWin32_GetDpiScaleForMonitor</a> (void *monitor)</td></tr>
+<tr class="separator:a8cf9e14edd8ff4e36fa6331c5c0de0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfca68b49882f693320d6cbd9ad839b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8h.html#abfca68b49882f693320d6cbd9ad839b5">ImGui_ImplWin32_EnableAlphaCompositing</a> (void *hwnd)</td></tr>
+<tr class="separator:abfca68b49882f693320d6cbd9ad839b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="abfca68b49882f693320d6cbd9ad839b5" name="abfca68b49882f693320d6cbd9ad839b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfca68b49882f693320d6cbd9ad839b5">&#9670;&#160;</a></span>ImGui_ImplWin32_EnableAlphaCompositing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void ImGui_ImplWin32_EnableAlphaCompositing </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hwnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__win32_8cpp_source.html">imgui_impl_win32.cpp</a> の <a class="el" href="imgui__impl__win32_8cpp_source.html#l01053">1053</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1054</span>{</div>
+<div class="line"><span class="lineno"> 1055</span>    <span class="keywordflow">if</span> (!<a class="code hl_define" href="imgui__impl__win32_8cpp.html#a742997db6a6fe03581d2244ea085618e">_IsWindowsVistaOrGreater</a>())</div>
+<div class="line"><span class="lineno"> 1056</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno"> 1057</span> </div>
+<div class="line"><span class="lineno"> 1058</span>    BOOL composition;</div>
+<div class="line"><span class="lineno"> 1059</span>    <span class="keywordflow">if</span> (FAILED(::DwmIsCompositionEnabled(&amp;composition)) || !composition)</div>
+<div class="line"><span class="lineno"> 1060</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno"> 1061</span> </div>
+<div class="line"><span class="lineno"> 1062</span>    BOOL opaque;</div>
+<div class="line"><span class="lineno"> 1063</span>    DWORD color;</div>
+<div class="line"><span class="lineno"> 1064</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="imgui__impl__win32_8cpp.html#ae8ca9bc7824bd084363ae25af2df8991">_IsWindows8OrGreater</a>() || (SUCCEEDED(::DwmGetColorizationColor(&amp;color, &amp;opaque)) &amp;&amp; !opaque))</div>
+<div class="line"><span class="lineno"> 1065</span>    {</div>
+<div class="line"><span class="lineno"> 1066</span>        HRGN region = ::CreateRectRgn(0, 0, -1, -1);</div>
+<div class="line"><span class="lineno"> 1067</span>        DWM_BLURBEHIND bb = {};</div>
+<div class="line"><span class="lineno"> 1068</span>        bb.dwFlags = DWM_BB_ENABLE | DWM_BB_BLURREGION;</div>
+<div class="line"><span class="lineno"> 1069</span>        bb.hRgnBlur = region;</div>
+<div class="line"><span class="lineno"> 1070</span>        bb.fEnable = TRUE;</div>
+<div class="line"><span class="lineno"> 1071</span>        ::DwmEnableBlurBehindWindow((<a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a>)hwnd, &amp;bb);</div>
+<div class="line"><span class="lineno"> 1072</span>        ::DeleteObject(region);</div>
+<div class="line"><span class="lineno"> 1073</span>    }</div>
+<div class="line"><span class="lineno"> 1074</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1075</span>    {</div>
+<div class="line"><span class="lineno"> 1076</span>        DWM_BLURBEHIND bb = {};</div>
+<div class="line"><span class="lineno"> 1077</span>        bb.dwFlags = DWM_BB_ENABLE;</div>
+<div class="line"><span class="lineno"> 1078</span>        ::DwmEnableBlurBehindWindow((<a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a>)hwnd, &amp;bb);</div>
+<div class="line"><span class="lineno"> 1079</span>    }</div>
+<div class="line"><span class="lineno"> 1080</span>}</div>
+<div class="ttc" id="aDirect2DResource_8h_html_ac17599842f3c193b028cc578098f8b93"><div class="ttname"><a href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a></div><div class="ttdeci">struct HWND__ * HWND</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00009">Direct2DResource.h:9</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a742997db6a6fe03581d2244ea085618e"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a742997db6a6fe03581d2244ea085618e">_IsWindowsVistaOrGreater</a></div><div class="ttdeci">#define _IsWindowsVistaOrGreater()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00956">imgui_impl_win32.cpp:956</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_ae8ca9bc7824bd084363ae25af2df8991"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#ae8ca9bc7824bd084363ae25af2df8991">_IsWindows8OrGreater</a></div><div class="ttdeci">#define _IsWindows8OrGreater()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00957">imgui_impl_win32.cpp:957</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__impl__win32_8cpp_source.html#l00957">_IsWindows8OrGreater</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00956">_IsWindowsVistaOrGreater</a>.</p>
+
+</div>
+</div>
+<a id="a1dd8952480dd70d48de16334e5686dfc" name="a1dd8952480dd70d48de16334e5686dfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd8952480dd70d48de16334e5686dfc">&#9670;&#160;</a></span>ImGui_ImplWin32_EnableDpiAwareness()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void ImGui_ImplWin32_EnableDpiAwareness </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__win32_8cpp_source.html">imgui_impl_win32.cpp</a> の <a class="el" href="imgui__impl__win32_8cpp_source.html#l00977">977</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  978</span>{</div>
+<div class="line"><span class="lineno">  979</span>    <span class="comment">// Make sure monitors will be updated with latest correct scaling</span></div>
+<div class="line"><span class="lineno">  980</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structImGui__ImplWin32__Data.html">ImGui_ImplWin32_Data</a>* bd = <a class="code hl_function" href="imgui__impl__win32_8cpp.html#a89061996e57d1d3850ca680093eaa688">ImGui_ImplWin32_GetBackendData</a>())</div>
+<div class="line"><span class="lineno">  981</span>        bd-&gt;WantUpdateMonitors = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  982</span> </div>
+<div class="line"><span class="lineno">  983</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="imgui__impl__win32_8cpp.html#a2b8cd4078bf40e54b53124033cf274a4">_IsWindows10OrGreater</a>())</div>
+<div class="line"><span class="lineno">  984</span>    {</div>
+<div class="line"><span class="lineno">  985</span>        <span class="keyword">static</span> HINSTANCE user32_dll = ::LoadLibraryA(<span class="stringliteral">&quot;user32.dll&quot;</span>); <span class="comment">// Reference counted per-process</span></div>
+<div class="line"><span class="lineno">  986</span>        <span class="keywordflow">if</span> (<a class="code hl_typedef" href="imgui__impl__win32_8cpp.html#ac4fd09e8ec8568aa443549a1286800b1">PFN_SetThreadDpiAwarenessContext</a> SetThreadDpiAwarenessContextFn = (<a class="code hl_typedef" href="imgui__impl__win32_8cpp.html#ac4fd09e8ec8568aa443549a1286800b1">PFN_SetThreadDpiAwarenessContext</a>)::GetProcAddress(user32_dll, <span class="stringliteral">&quot;SetThreadDpiAwarenessContext&quot;</span>))</div>
+<div class="line"><span class="lineno">  987</span>        {</div>
+<div class="line"><span class="lineno">  988</span>            SetThreadDpiAwarenessContextFn(<a class="code hl_define" href="imgui__impl__win32_8cpp.html#ac007743843b15f477f33dc5c3dd0507a">DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2</a>);</div>
+<div class="line"><span class="lineno">  989</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  990</span>        }</div>
+<div class="line"><span class="lineno">  991</span>    }</div>
+<div class="line"><span class="lineno">  992</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="imgui__impl__win32_8cpp.html#a7befc644ed0e43855853f48c1045e9d3">_IsWindows8Point1OrGreater</a>())</div>
+<div class="line"><span class="lineno">  993</span>    {</div>
+<div class="line"><span class="lineno">  994</span>        <span class="keyword">static</span> HINSTANCE shcore_dll = ::LoadLibraryA(<span class="stringliteral">&quot;shcore.dll&quot;</span>); <span class="comment">// Reference counted per-process</span></div>
+<div class="line"><span class="lineno">  995</span>        <span class="keywordflow">if</span> (<a class="code hl_typedef" href="imgui__impl__win32_8cpp.html#a36d30a5f5f7942a50b272fa13058cf96">PFN_SetProcessDpiAwareness</a> SetProcessDpiAwarenessFn = (<a class="code hl_typedef" href="imgui__impl__win32_8cpp.html#a36d30a5f5f7942a50b272fa13058cf96">PFN_SetProcessDpiAwareness</a>)::GetProcAddress(shcore_dll, <span class="stringliteral">&quot;SetProcessDpiAwareness&quot;</span>))</div>
+<div class="line"><span class="lineno">  996</span>        {</div>
+<div class="line"><span class="lineno">  997</span>            SetProcessDpiAwarenessFn(<a class="code hl_enumvalue" href="imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0aad0077e9938715939b18fc533eeae097">PROCESS_PER_MONITOR_DPI_AWARE</a>);</div>
+<div class="line"><span class="lineno">  998</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  999</span>        }</div>
+<div class="line"><span class="lineno"> 1000</span>    }</div>
+<div class="line"><span class="lineno"> 1001</span><span class="preprocessor">#if _WIN32_WINNT &gt;= 0x0600</span></div>
+<div class="line"><span class="lineno"> 1002</span>    ::SetProcessDPIAware();</div>
+<div class="line"><span class="lineno"> 1003</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno"> 1004</span>}</div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a0b4072c3e306aab56e4b1f41f66ecfd0aad0077e9938715939b18fc533eeae097"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0aad0077e9938715939b18fc533eeae097">PROCESS_PER_MONITOR_DPI_AWARE</a></div><div class="ttdeci">@ PROCESS_PER_MONITOR_DPI_AWARE</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00962">imgui_impl_win32.cpp:962</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a2b8cd4078bf40e54b53124033cf274a4"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a2b8cd4078bf40e54b53124033cf274a4">_IsWindows10OrGreater</a></div><div class="ttdeci">#define _IsWindows10OrGreater()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00959">imgui_impl_win32.cpp:959</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a36d30a5f5f7942a50b272fa13058cf96"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a36d30a5f5f7942a50b272fa13058cf96">PFN_SetProcessDpiAwareness</a></div><div class="ttdeci">HRESULT(WINAPI * PFN_SetProcessDpiAwareness)(PROCESS_DPI_AWARENESS)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00972">imgui_impl_win32.cpp:972</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a7befc644ed0e43855853f48c1045e9d3"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a7befc644ed0e43855853f48c1045e9d3">_IsWindows8Point1OrGreater</a></div><div class="ttdeci">#define _IsWindows8Point1OrGreater()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00958">imgui_impl_win32.cpp:958</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a89061996e57d1d3850ca680093eaa688"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a89061996e57d1d3850ca680093eaa688">ImGui_ImplWin32_GetBackendData</a></div><div class="ttdeci">static ImGui_ImplWin32_Data * ImGui_ImplWin32_GetBackendData()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00149">imgui_impl_win32.cpp:149</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_ac007743843b15f477f33dc5c3dd0507a"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#ac007743843b15f477f33dc5c3dd0507a">DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2</a></div><div class="ttdeci">#define DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00970">imgui_impl_win32.cpp:970</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_ac4fd09e8ec8568aa443549a1286800b1"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#ac4fd09e8ec8568aa443549a1286800b1">PFN_SetThreadDpiAwarenessContext</a></div><div class="ttdeci">DPI_AWARENESS_CONTEXT(WINAPI * PFN_SetThreadDpiAwarenessContext)(DPI_AWARENESS_CONTEXT)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00974">imgui_impl_win32.cpp:974</a></div></div>
+<div class="ttc" id="astructImGui__ImplWin32__Data_html"><div class="ttname"><a href="structImGui__ImplWin32__Data.html">ImGui_ImplWin32_Data</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00122">imgui_impl_win32.cpp:123</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__impl__win32_8cpp_source.html#l00959">_IsWindows10OrGreater</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00958">_IsWindows8Point1OrGreater</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00970">DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00149">ImGui_ImplWin32_GetBackendData()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00962">PROCESS_PER_MONITOR_DPI_AWARE</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_a1dd8952480dd70d48de16334e5686dfc_cgraph.svg" width="763" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aac16bf93a00e545ac237b661b4824b23" name="aac16bf93a00e545ac237b661b4824b23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac16bf93a00e545ac237b661b4824b23">&#9670;&#160;</a></span>ImGui_ImplWin32_GetDpiScaleForHwnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> float ImGui_ImplWin32_GetDpiScaleForHwnd </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hwnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__win32_8cpp_source.html">imgui_impl_win32.cpp</a> の <a class="el" href="imgui__impl__win32_8cpp_source.html#l01036">1036</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1037</span>{</div>
+<div class="line"><span class="lineno"> 1038</span>    HMONITOR monitor = ::MonitorFromWindow((<a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a>)hwnd, MONITOR_DEFAULTTONEAREST);</div>
+<div class="line"><span class="lineno"> 1039</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="imgui__impl__win32_8cpp.html#a765356269dc7e4f7f521d5f9c9bc42a5">ImGui_ImplWin32_GetDpiScaleForMonitor</a>(monitor);</div>
+<div class="line"><span class="lineno"> 1040</span>}</div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a765356269dc7e4f7f521d5f9c9bc42a5"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a765356269dc7e4f7f521d5f9c9bc42a5">ImGui_ImplWin32_GetDpiScaleForMonitor</a></div><div class="ttdeci">float ImGui_ImplWin32_GetDpiScaleForMonitor(void *monitor)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l01010">imgui_impl_win32.cpp:1010</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__impl__win32_8cpp_source.html#l01010">ImGui_ImplWin32_GetDpiScaleForMonitor()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__impl__win32_8cpp_source.html#l01340">ImGui_ImplWin32_GetWindowDpiScale()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_aac16bf93a00e545ac237b661b4824b23_cgraph.svg" width="510" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_aac16bf93a00e545ac237b661b4824b23_icgraph.svg" width="1478" height="94"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8cf9e14edd8ff4e36fa6331c5c0de0c2" name="a8cf9e14edd8ff4e36fa6331c5c0de0c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf9e14edd8ff4e36fa6331c5c0de0c2">&#9670;&#160;</a></span>ImGui_ImplWin32_GetDpiScaleForMonitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> float ImGui_ImplWin32_GetDpiScaleForMonitor </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>monitor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__win32_8cpp_source.html">imgui_impl_win32.cpp</a> の <a class="el" href="imgui__impl__win32_8cpp_source.html#l01010">1010</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1011</span>{</div>
+<div class="line"><span class="lineno"> 1012</span>    UINT xdpi = 96, ydpi = 96;</div>
+<div class="line"><span class="lineno"> 1013</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="imgui__impl__win32_8cpp.html#a7befc644ed0e43855853f48c1045e9d3">_IsWindows8Point1OrGreater</a>())</div>
+<div class="line"><span class="lineno"> 1014</span>    {</div>
+<div class="line"><span class="lineno"> 1015</span>        <span class="keyword">static</span> HINSTANCE shcore_dll = ::LoadLibraryA(<span class="stringliteral">&quot;shcore.dll&quot;</span>); <span class="comment">// Reference counted per-process</span></div>
+<div class="line"><span class="lineno"> 1016</span>        <span class="keyword">static</span> <a class="code hl_typedef" href="imgui__impl__win32_8cpp.html#a411247e61a6621babce2d06bb8a434db">PFN_GetDpiForMonitor</a> GetDpiForMonitorFn = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno"> 1017</span>        <span class="keywordflow">if</span> (GetDpiForMonitorFn == <span class="keyword">nullptr</span> &amp;&amp; shcore_dll != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno"> 1018</span>            GetDpiForMonitorFn = (<a class="code hl_typedef" href="imgui__impl__win32_8cpp.html#a411247e61a6621babce2d06bb8a434db">PFN_GetDpiForMonitor</a>)::GetProcAddress(shcore_dll, <span class="stringliteral">&quot;GetDpiForMonitor&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1019</span>        <span class="keywordflow">if</span> (GetDpiForMonitorFn != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno"> 1020</span>        {</div>
+<div class="line"><span class="lineno"> 1021</span>            GetDpiForMonitorFn((HMONITOR)monitor, <a class="code hl_enumvalue" href="imgui__impl__win32_8cpp.html#a6d3b6e6160452fd0315bf529461dadcfa75d3ba3b96559377e5cac23d6e380162">MDT_EFFECTIVE_DPI</a>, &amp;xdpi, &amp;ydpi);</div>
+<div class="line"><span class="lineno"> 1022</span>            <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(xdpi == ydpi); <span class="comment">// Please contact me if you hit this assert!</span></div>
+<div class="line"><span class="lineno"> 1023</span>            <span class="keywordflow">return</span> xdpi / 96.0f;</div>
+<div class="line"><span class="lineno"> 1024</span>        }</div>
+<div class="line"><span class="lineno"> 1025</span>    }</div>
+<div class="line"><span class="lineno"> 1026</span><span class="preprocessor">#ifndef NOGDI</span></div>
+<div class="line"><span class="lineno"> 1027</span>    <span class="keyword">const</span> HDC dc = ::GetDC(<span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno"> 1028</span>    xdpi = ::GetDeviceCaps(dc, LOGPIXELSX);</div>
+<div class="line"><span class="lineno"> 1029</span>    ydpi = ::GetDeviceCaps(dc, LOGPIXELSY);</div>
+<div class="line"><span class="lineno"> 1030</span>    <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(xdpi == ydpi); <span class="comment">// Please contact me if you hit this assert!</span></div>
+<div class="line"><span class="lineno"> 1031</span>    ::ReleaseDC(<span class="keyword">nullptr</span>, dc);</div>
+<div class="line"><span class="lineno"> 1032</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno"> 1033</span>    <span class="keywordflow">return</span> xdpi / 96.0f;</div>
+<div class="line"><span class="lineno"> 1034</span>}</div>
+<div class="ttc" id="aimgui_8h_html_acb09e7dc42e8e3cefb0ecaa197978920"><div class="ttname"><a href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a></div><div class="ttdeci">#define IM_ASSERT(_EXPR)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00096">imgui.h:96</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a411247e61a6621babce2d06bb8a434db"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a411247e61a6621babce2d06bb8a434db">PFN_GetDpiForMonitor</a></div><div class="ttdeci">HRESULT(WINAPI * PFN_GetDpiForMonitor)(HMONITOR, MONITOR_DPI_TYPE, UINT *, UINT *)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00973">imgui_impl_win32.cpp:973</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a6d3b6e6160452fd0315bf529461dadcfa75d3ba3b96559377e5cac23d6e380162"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a6d3b6e6160452fd0315bf529461dadcfa75d3ba3b96559377e5cac23d6e380162">MDT_EFFECTIVE_DPI</a></div><div class="ttdeci">@ MDT_EFFECTIVE_DPI</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00963">imgui_impl_win32.cpp:963</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__impl__win32_8cpp_source.html#l00958">_IsWindows8Point1OrGreater</a>, <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00963">MDT_EFFECTIVE_DPI</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__impl__win32_8cpp_source.html#l01036">ImGui_ImplWin32_GetDpiScaleForHwnd()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00453">ImGui_ImplWin32_UpdateMonitors_EnumFunc()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_a8cf9e14edd8ff4e36fa6331c5c0de0c2_icgraph.svg" width="1820" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9f752412a1f6dfdf6fc00dbbd90a8428" name="a9f752412a1f6dfdf6fc00dbbd90a8428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f752412a1f6dfdf6fc00dbbd90a8428">&#9670;&#160;</a></span>ImGui_ImplWin32_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> bool ImGui_ImplWin32_Init </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hwnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__win32_8cpp_source.html">imgui_impl_win32.cpp</a> の <a class="el" href="imgui__impl__win32_8cpp_source.html#l00232">232</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  233</span>{</div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="imgui__impl__win32_8cpp.html#aae36e87f5370bd86a7ea10c76f742ccb">ImGui_ImplWin32_InitEx</a>(hwnd, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  235</span>}</div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_aae36e87f5370bd86a7ea10c76f742ccb"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#aae36e87f5370bd86a7ea10c76f742ccb">ImGui_ImplWin32_InitEx</a></div><div class="ttdeci">static bool ImGui_ImplWin32_InitEx(void *hwnd, bool platform_has_own_dc)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00169">imgui_impl_win32.cpp:169</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__impl__win32_8cpp_source.html#l00169">ImGui_ImplWin32_InitEx()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiRenderer_8cpp_source.html#l00037">mtgb::ImGuiRenderer::Initialize()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_a9f752412a1f6dfdf6fc00dbbd90a8428_cgraph.svg" width="2354" height="1476"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_a9f752412a1f6dfdf6fc00dbbd90a8428_icgraph.svg" width="388" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a62c65c5f453046a14119bc62234ac5b7" name="a62c65c5f453046a14119bc62234ac5b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c65c5f453046a14119bc62234ac5b7">&#9670;&#160;</a></span>ImGui_ImplWin32_InitForOpenGL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> bool ImGui_ImplWin32_InitForOpenGL </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hwnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__win32_8cpp_source.html">imgui_impl_win32.cpp</a> の <a class="el" href="imgui__impl__win32_8cpp_source.html#l00237">237</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  238</span>{</div>
+<div class="line"><span class="lineno">  239</span>    <span class="comment">// OpenGL needs CS_OWNDC</span></div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="imgui__impl__win32_8cpp.html#aae36e87f5370bd86a7ea10c76f742ccb">ImGui_ImplWin32_InitEx</a>(hwnd, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  241</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__impl__win32_8cpp_source.html#l00169">ImGui_ImplWin32_InitEx()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_a62c65c5f453046a14119bc62234ac5b7_cgraph.svg" width="2424" height="1476"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="acfa678a90a3331b9e2d2214d190e0718" name="acfa678a90a3331b9e2d2214d190e0718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfa678a90a3331b9e2d2214d190e0718">&#9670;&#160;</a></span>ImGui_ImplWin32_NewFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void ImGui_ImplWin32_NewFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__win32_8cpp_source.html">imgui_impl_win32.cpp</a> の <a class="el" href="imgui__impl__win32_8cpp_source.html#l00484">484</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  485</span>{</div>
+<div class="line"><span class="lineno">  486</span>    <a class="code hl_struct" href="structImGui__ImplWin32__Data.html">ImGui_ImplWin32_Data</a>* bd = <a class="code hl_function" href="imgui__impl__win32_8cpp.html#a89061996e57d1d3850ca680093eaa688">ImGui_ImplWin32_GetBackendData</a>();</div>
+<div class="line"><span class="lineno">  487</span>    <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(bd != <span class="keyword">nullptr</span> &amp;&amp; <span class="stringliteral">&quot;Context or backend not initialized? Did you call ImGui_ImplWin32_Init()?&quot;</span>);</div>
+<div class="line"><span class="lineno">  488</span>    <a class="code hl_struct" href="structImGuiIO.html">ImGuiIO</a>&amp; io = <a class="code hl_function" href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a>();</div>
+<div class="line"><span class="lineno">  489</span>    <a class="code hl_struct" href="structImGuiPlatformIO.html">ImGuiPlatformIO</a>&amp; platform_io = <a class="code hl_function" href="namespaceImGui.html#a3edc2b6129cbf1e8d247c6d03c344065">ImGui::GetPlatformIO</a>();</div>
+<div class="line"><span class="lineno">  490</span> </div>
+<div class="line"><span class="lineno">  491</span>    <span class="comment">// Setup display size (every frame to accommodate for window resizing)</span></div>
+<div class="line"><span class="lineno">  492</span>    RECT rect = { 0, 0, 0, 0 };</div>
+<div class="line"><span class="lineno">  493</span>    ::GetClientRect(bd-&gt;<a class="code hl_variable" href="structImGui__ImplWin32__Data.html#a73c8b66f6315225a32f5143165d61df4">hWnd</a>, &amp;rect);</div>
+<div class="line"><span class="lineno">  494</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a042cfb90bdc9ccfe37f86b92ade759fd">DisplaySize</a> = <a class="code hl_struct" href="structImVec2.html">ImVec2</a>((<span class="keywordtype">float</span>)(rect.right - rect.left), (<span class="keywordtype">float</span>)(rect.bottom - rect.top));</div>
+<div class="line"><span class="lineno">  495</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplWin32__Data.html#af31389e4ad313cd005d908cdbba39311">WantUpdateMonitors</a>)</div>
+<div class="line"><span class="lineno">  496</span>        <a class="code hl_function" href="imgui__impl__win32_8cpp.html#a89e9a7d37283f923c83cb50573b5e1d9">ImGui_ImplWin32_UpdateMonitors</a>();</div>
+<div class="line"><span class="lineno">  497</span> </div>
+<div class="line"><span class="lineno">  498</span>    <span class="comment">// Setup time step</span></div>
+<div class="line"><span class="lineno">  499</span>    INT64 current_time = 0;</div>
+<div class="line"><span class="lineno">  500</span>    ::QueryPerformanceCounter((<a class="code hl_typedef" href="GameTime_8h.html#a9bf80943e02f031c99d510a40a6d52e6">LARGE_INTEGER</a>*)&amp;current_time);</div>
+<div class="line"><span class="lineno">  501</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a5068d5414a19c2a1bf58029bd732a7c7">DeltaTime</a> = (float)(current_time - bd-&gt;<a class="code hl_variable" href="structImGui__ImplWin32__Data.html#a0315351258bfd91d5263214c2549b8ce">Time</a>) / bd-&gt;<a class="code hl_variable" href="structImGui__ImplWin32__Data.html#a5972f4dac8c637341fd4ef430b197e40">TicksPerSecond</a>;</div>
+<div class="line"><span class="lineno">  502</span>    bd-&gt;<a class="code hl_variable" href="structImGui__ImplWin32__Data.html#a0315351258bfd91d5263214c2549b8ce">Time</a> = current_time;</div>
+<div class="line"><span class="lineno">  503</span> </div>
+<div class="line"><span class="lineno">  504</span>    <span class="comment">// Update OS mouse position</span></div>
+<div class="line"><span class="lineno">  505</span>    <a class="code hl_function" href="imgui__impl__win32_8cpp.html#a8bf20d5849d2009929f0df2a5378907f">ImGui_ImplWin32_UpdateMouseData</a>(io, platform_io);</div>
+<div class="line"><span class="lineno">  506</span> </div>
+<div class="line"><span class="lineno">  507</span>    <span class="comment">// Process workarounds for known Windows key handling issues</span></div>
+<div class="line"><span class="lineno">  508</span>    <a class="code hl_function" href="imgui__impl__win32_8cpp.html#a500ab5c51b0c6e816b77ca4c29739a34">ImGui_ImplWin32_ProcessKeyEventsWorkarounds</a>(io);</div>
+<div class="line"><span class="lineno">  509</span> </div>
+<div class="line"><span class="lineno">  510</span>    <span class="comment">// Update OS mouse cursor with the cursor requested by imgui</span></div>
+<div class="line"><span class="lineno">  511</span>    <a class="code hl_typedef" href="imgui_8h.html#a9223d6c82bb5d12c2eab5f829ca520ef">ImGuiMouseCursor</a> mouse_cursor = io.<a class="code hl_variable" href="structImGuiIO.html#a9b240460966bf2bd35c30f27b8db4028">MouseDrawCursor</a> ? <a class="code hl_enumvalue" href="imgui_8h.html#a2eb1181cc1d7872a061df8731141dde9a025f083574198762f5a7337ef2aaffef">ImGuiMouseCursor_None</a> : <a class="code hl_function" href="namespaceImGui.html#a3b955bb840a2411f7c19ac6687d57392">ImGui::GetMouseCursor</a>();</div>
+<div class="line"><span class="lineno">  512</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplWin32__Data.html#abe5e7a0c85bcc474f44efc6b2238fdc0">LastMouseCursor</a> != mouse_cursor)</div>
+<div class="line"><span class="lineno">  513</span>    {</div>
+<div class="line"><span class="lineno">  514</span>        bd-&gt;<a class="code hl_variable" href="structImGui__ImplWin32__Data.html#abe5e7a0c85bcc474f44efc6b2238fdc0">LastMouseCursor</a> = mouse_cursor;</div>
+<div class="line"><span class="lineno">  515</span>        <a class="code hl_function" href="imgui__impl__win32_8cpp.html#ab9ac21db89c81edd0193dc8247039b24">ImGui_ImplWin32_UpdateMouseCursor</a>(io, mouse_cursor);</div>
+<div class="line"><span class="lineno">  516</span>    }</div>
+<div class="line"><span class="lineno">  517</span> </div>
+<div class="line"><span class="lineno">  518</span>    <span class="comment">// Update game controllers (if enabled and available)</span></div>
+<div class="line"><span class="lineno">  519</span>    <a class="code hl_function" href="imgui__impl__win32_8cpp.html#af46d1fa2c9d2dc52fa9d62421f6c3893">ImGui_ImplWin32_UpdateGamepads</a>(io);</div>
+<div class="line"><span class="lineno">  520</span>}</div>
+<div class="ttc" id="aGameTime_8h_html_a9bf80943e02f031c99d510a40a6d52e6"><div class="ttname"><a href="GameTime_8h.html#a9bf80943e02f031c99d510a40a6d52e6">LARGE_INTEGER</a></div><div class="ttdeci">union _LARGE_INTEGER LARGE_INTEGER</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00005">GameTime.h:5</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a2eb1181cc1d7872a061df8731141dde9a025f083574198762f5a7337ef2aaffef"><div class="ttname"><a href="imgui_8h.html#a2eb1181cc1d7872a061df8731141dde9a025f083574198762f5a7337ef2aaffef">ImGuiMouseCursor_None</a></div><div class="ttdeci">@ ImGuiMouseCursor_None</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01991">imgui.h:1991</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a9223d6c82bb5d12c2eab5f829ca520ef"><div class="ttname"><a href="imgui_8h.html#a9223d6c82bb5d12c2eab5f829ca520ef">ImGuiMouseCursor</a></div><div class="ttdeci">int ImGuiMouseCursor</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00227">imgui.h:227</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a500ab5c51b0c6e816b77ca4c29739a34"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a500ab5c51b0c6e816b77ca4c29739a34">ImGui_ImplWin32_ProcessKeyEventsWorkarounds</a></div><div class="ttdeci">static void ImGui_ImplWin32_ProcessKeyEventsWorkarounds(ImGuiIO &amp;io)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00309">imgui_impl_win32.cpp:309</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a89e9a7d37283f923c83cb50573b5e1d9"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a89e9a7d37283f923c83cb50573b5e1d9">ImGui_ImplWin32_UpdateMonitors</a></div><div class="ttdeci">static void ImGui_ImplWin32_UpdateMonitors()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00476">imgui_impl_win32.cpp:476</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_a8bf20d5849d2009929f0df2a5378907f"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#a8bf20d5849d2009929f0df2a5378907f">ImGui_ImplWin32_UpdateMouseData</a></div><div class="ttdeci">static void ImGui_ImplWin32_UpdateMouseData(ImGuiIO &amp;io, ImGuiPlatformIO &amp;platform_io)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00345">imgui_impl_win32.cpp:345</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_ab9ac21db89c81edd0193dc8247039b24"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#ab9ac21db89c81edd0193dc8247039b24">ImGui_ImplWin32_UpdateMouseCursor</a></div><div class="ttdeci">static bool ImGui_ImplWin32_UpdateMouseCursor(ImGuiIO &amp;io, ImGuiMouseCursor imgui_cursor)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00264">imgui_impl_win32.cpp:264</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_af46d1fa2c9d2dc52fa9d62421f6c3893"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#af46d1fa2c9d2dc52fa9d62421f6c3893">ImGui_ImplWin32_UpdateGamepads</a></div><div class="ttdeci">static void ImGui_ImplWin32_UpdateGamepads(ImGuiIO &amp;io)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00398">imgui_impl_win32.cpp:398</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a3179e560812f878f3961ce803a5d9302"><div class="ttname"><a href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a></div><div class="ttdeci">IMGUI_API ImGuiIO &amp; GetIO()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l05074">imgui.cpp:5074</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a3b955bb840a2411f7c19ac6687d57392"><div class="ttname"><a href="namespaceImGui.html#a3b955bb840a2411f7c19ac6687d57392">ImGui::GetMouseCursor</a></div><div class="ttdeci">IMGUI_API ImGuiMouseCursor GetMouseCursor()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l10411">imgui.cpp:10411</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a3edc2b6129cbf1e8d247c6d03c344065"><div class="ttname"><a href="namespaceImGui.html#a3edc2b6129cbf1e8d247c6d03c344065">ImGui::GetPlatformIO</a></div><div class="ttdeci">IMGUI_API ImGuiPlatformIO &amp; GetPlatformIO()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l05087">imgui.cpp:5087</a></div></div>
+<div class="ttc" id="astructImGuiIO_html"><div class="ttname"><a href="structImGuiIO.html">ImGuiIO</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02418">imgui.h:2419</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a042cfb90bdc9ccfe37f86b92ade759fd"><div class="ttname"><a href="structImGuiIO.html#a042cfb90bdc9ccfe37f86b92ade759fd">ImGuiIO::DisplaySize</a></div><div class="ttdeci">ImVec2 DisplaySize</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02426">imgui.h:2426</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a5068d5414a19c2a1bf58029bd732a7c7"><div class="ttname"><a href="structImGuiIO.html#a5068d5414a19c2a1bf58029bd732a7c7">ImGuiIO::DeltaTime</a></div><div class="ttdeci">float DeltaTime</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02428">imgui.h:2428</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a9b240460966bf2bd35c30f27b8db4028"><div class="ttname"><a href="structImGuiIO.html#a9b240460966bf2bd35c30f27b8db4028">ImGuiIO::MouseDrawCursor</a></div><div class="ttdeci">bool MouseDrawCursor</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02467">imgui.h:2467</a></div></div>
+<div class="ttc" id="astructImGuiPlatformIO_html"><div class="ttname"><a href="structImGuiPlatformIO.html">ImGuiPlatformIO</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l04081">imgui.h:4082</a></div></div>
+<div class="ttc" id="astructImGui__ImplWin32__Data_html_a0315351258bfd91d5263214c2549b8ce"><div class="ttname"><a href="structImGui__ImplWin32__Data.html#a0315351258bfd91d5263214c2549b8ce">ImGui_ImplWin32_Data::Time</a></div><div class="ttdeci">INT64 Time</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00128">imgui_impl_win32.cpp:128</a></div></div>
+<div class="ttc" id="astructImGui__ImplWin32__Data_html_a5972f4dac8c637341fd4ef430b197e40"><div class="ttname"><a href="structImGui__ImplWin32__Data.html#a5972f4dac8c637341fd4ef430b197e40">ImGui_ImplWin32_Data::TicksPerSecond</a></div><div class="ttdeci">INT64 TicksPerSecond</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00129">imgui_impl_win32.cpp:129</a></div></div>
+<div class="ttc" id="astructImGui__ImplWin32__Data_html_a73c8b66f6315225a32f5143165d61df4"><div class="ttname"><a href="structImGui__ImplWin32__Data.html#a73c8b66f6315225a32f5143165d61df4">ImGui_ImplWin32_Data::hWnd</a></div><div class="ttdeci">HWND hWnd</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00124">imgui_impl_win32.cpp:124</a></div></div>
+<div class="ttc" id="astructImGui__ImplWin32__Data_html_abe5e7a0c85bcc474f44efc6b2238fdc0"><div class="ttname"><a href="structImGui__ImplWin32__Data.html#abe5e7a0c85bcc474f44efc6b2238fdc0">ImGui_ImplWin32_Data::LastMouseCursor</a></div><div class="ttdeci">ImGuiMouseCursor LastMouseCursor</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00130">imgui_impl_win32.cpp:130</a></div></div>
+<div class="ttc" id="astructImGui__ImplWin32__Data_html_af31389e4ad313cd005d908cdbba39311"><div class="ttname"><a href="structImGui__ImplWin32__Data.html#af31389e4ad313cd005d908cdbba39311">ImGui_ImplWin32_Data::WantUpdateMonitors</a></div><div class="ttdeci">bool WantUpdateMonitors</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00132">imgui_impl_win32.cpp:132</a></div></div>
+<div class="ttc" id="astructImVec2_html"><div class="ttname"><a href="structImVec2.html">ImVec2</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00292">imgui.h:293</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8h_source.html#l02428">ImGuiIO::DeltaTime</a>, <a class="el" href="imgui_8h_source.html#l02426">ImGuiIO::DisplaySize</a>, <a class="el" href="imgui_8cpp_source.html#l05074">ImGui::GetIO()</a>, <a class="el" href="imgui_8cpp_source.html#l10411">ImGui::GetMouseCursor()</a>, <a class="el" href="imgui_8cpp_source.html#l05087">ImGui::GetPlatformIO()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00124">ImGui_ImplWin32_Data::hWnd</a>, <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00149">ImGui_ImplWin32_GetBackendData()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00309">ImGui_ImplWin32_ProcessKeyEventsWorkarounds()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00398">ImGui_ImplWin32_UpdateGamepads()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00476">ImGui_ImplWin32_UpdateMonitors()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00264">ImGui_ImplWin32_UpdateMouseCursor()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00345">ImGui_ImplWin32_UpdateMouseData()</a>, <a class="el" href="imgui_8h_source.html#l01991">ImGuiMouseCursor_None</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00130">ImGui_ImplWin32_Data::LastMouseCursor</a>, <a class="el" href="imgui_8h_source.html#l02467">ImGuiIO::MouseDrawCursor</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00129">ImGui_ImplWin32_Data::TicksPerSecond</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00128">ImGui_ImplWin32_Data::Time</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00132">ImGui_ImplWin32_Data::WantUpdateMonitors</a> (計19項目).</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiRenderer_8cpp_source.html#l00089">mtgb::ImGuiRenderer::BeginFrame()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_acfa678a90a3331b9e2d2214d190e0718_cgraph.svg" width="1899" height="731"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_acfa678a90a3331b9e2d2214d190e0718_icgraph.svg" width="659" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4a64d684eab1b6aed8c2f23aaa427d49" name="a4a64d684eab1b6aed8c2f23aaa427d49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a64d684eab1b6aed8c2f23aaa427d49">&#9670;&#160;</a></span>ImGui_ImplWin32_Shutdown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> void ImGui_ImplWin32_Shutdown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__impl__win32_8cpp_source.html">imgui_impl_win32.cpp</a> の <a class="el" href="imgui__impl__win32_8cpp_source.html#l00243">243</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  244</span>{</div>
+<div class="line"><span class="lineno">  245</span>    <a class="code hl_struct" href="structImGui__ImplWin32__Data.html">ImGui_ImplWin32_Data</a>* bd = <a class="code hl_function" href="imgui__impl__win32_8cpp.html#a89061996e57d1d3850ca680093eaa688">ImGui_ImplWin32_GetBackendData</a>();</div>
+<div class="line"><span class="lineno">  246</span>    <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(bd != <span class="keyword">nullptr</span> &amp;&amp; <span class="stringliteral">&quot;No platform backend to shutdown, or already shutdown?&quot;</span>);</div>
+<div class="line"><span class="lineno">  247</span>    <a class="code hl_struct" href="structImGuiIO.html">ImGuiIO</a>&amp; io = <a class="code hl_function" href="namespaceImGui.html#a3179e560812f878f3961ce803a5d9302">ImGui::GetIO</a>();</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>    ::SetPropA(bd-&gt;<a class="code hl_variable" href="structImGui__ImplWin32__Data.html#a73c8b66f6315225a32f5143165d61df4">hWnd</a>, <span class="stringliteral">&quot;IMGUI_CONTEXT&quot;</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  250</span>    <a class="code hl_function" href="imgui__impl__win32_8cpp.html#ad8ebd1ef9a29f578a25c1b1aa7d42529">ImGui_ImplWin32_ShutdownMultiViewportSupport</a>();</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>    <span class="comment">// Unload XInput library</span></div>
+<div class="line"><span class="lineno">  253</span><span class="preprocessor">#ifndef IMGUI_IMPL_WIN32_DISABLE_GAMEPAD</span></div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">if</span> (bd-&gt;<a class="code hl_variable" href="structImGui__ImplWin32__Data.html#a7d7d8913825fdbb5d02784e3b6bb13d4">XInputDLL</a>)</div>
+<div class="line"><span class="lineno">  255</span>        ::FreeLibrary(bd-&gt;<a class="code hl_variable" href="structImGui__ImplWin32__Data.html#a7d7d8913825fdbb5d02784e3b6bb13d4">XInputDLL</a>);</div>
+<div class="line"><span class="lineno">  256</span><span class="preprocessor">#endif </span><span class="comment">// IMGUI_IMPL_WIN32_DISABLE_GAMEPAD</span></div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a58510e764707bf979d086f6bc4c8b670">BackendPlatformName</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  259</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a6c0c878d0d5ca6ef90f0968bd59309d3">BackendPlatformUserData</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  260</span>    io.<a class="code hl_variable" href="structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c">BackendFlags</a> &amp;= ~(<a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea394bf9fbce96b77be78b418d2d0e5186">ImGuiBackendFlags_HasMouseCursors</a> | <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea778655f9f19d7a7783d158397701ae9c">ImGuiBackendFlags_HasSetMousePos</a> | <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea3351643d21ff34cdd9c3d925b2d4bd3b">ImGuiBackendFlags_HasGamepad</a> | <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbeaa90c8780ae884d08435f6d97e24ac7c6">ImGuiBackendFlags_PlatformHasViewports</a> | <a class="code hl_enumvalue" href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea3405202fa72b2abc1ddeb3334c5d8543">ImGuiBackendFlags_HasMouseHoveredViewport</a>);</div>
+<div class="line"><span class="lineno">  261</span>    <a class="code hl_function" href="imgui_8h.html#a3c856832c3fe1da8767a9353da3707e1">IM_DELETE</a>(bd);</div>
+<div class="line"><span class="lineno">  262</span>}</div>
+<div class="ttc" id="aimgui_8h_html_a29add481c904a47bbbd2980555524fbea3351643d21ff34cdd9c3d925b2d4bd3b"><div class="ttname"><a href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea3351643d21ff34cdd9c3d925b2d4bd3b">ImGuiBackendFlags_HasGamepad</a></div><div class="ttdeci">@ ImGuiBackendFlags_HasGamepad</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01759">imgui.h:1759</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a29add481c904a47bbbd2980555524fbea3405202fa72b2abc1ddeb3334c5d8543"><div class="ttname"><a href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea3405202fa72b2abc1ddeb3334c5d8543">ImGuiBackendFlags_HasMouseHoveredViewport</a></div><div class="ttdeci">@ ImGuiBackendFlags_HasMouseHoveredViewport</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01767">imgui.h:1767</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a29add481c904a47bbbd2980555524fbea394bf9fbce96b77be78b418d2d0e5186"><div class="ttname"><a href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea394bf9fbce96b77be78b418d2d0e5186">ImGuiBackendFlags_HasMouseCursors</a></div><div class="ttdeci">@ ImGuiBackendFlags_HasMouseCursors</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01760">imgui.h:1760</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a29add481c904a47bbbd2980555524fbea778655f9f19d7a7783d158397701ae9c"><div class="ttname"><a href="imgui_8h.html#a29add481c904a47bbbd2980555524fbea778655f9f19d7a7783d158397701ae9c">ImGuiBackendFlags_HasSetMousePos</a></div><div class="ttdeci">@ ImGuiBackendFlags_HasSetMousePos</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01761">imgui.h:1761</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a29add481c904a47bbbd2980555524fbeaa90c8780ae884d08435f6d97e24ac7c6"><div class="ttname"><a href="imgui_8h.html#a29add481c904a47bbbd2980555524fbeaa90c8780ae884d08435f6d97e24ac7c6">ImGuiBackendFlags_PlatformHasViewports</a></div><div class="ttdeci">@ ImGuiBackendFlags_PlatformHasViewports</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01766">imgui.h:1766</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a3c856832c3fe1da8767a9353da3707e1"><div class="ttname"><a href="imgui_8h.html#a3c856832c3fe1da8767a9353da3707e1">IM_DELETE</a></div><div class="ttdeci">void IM_DELETE(T *p)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02221">imgui.h:2221</a></div></div>
+<div class="ttc" id="aimgui__impl__win32_8cpp_html_ad8ebd1ef9a29f578a25c1b1aa7d42529"><div class="ttname"><a href="imgui__impl__win32_8cpp.html#ad8ebd1ef9a29f578a25c1b1aa7d42529">ImGui_ImplWin32_ShutdownMultiViewportSupport</a></div><div class="ttdeci">static void ImGui_ImplWin32_ShutdownMultiViewportSupport()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l01456">imgui_impl_win32.cpp:1456</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a58510e764707bf979d086f6bc4c8b670"><div class="ttname"><a href="structImGuiIO.html#a58510e764707bf979d086f6bc4c8b670">ImGuiIO::BackendPlatformName</a></div><div class="ttdeci">const char * BackendPlatformName</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02545">imgui.h:2545</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a6c0c878d0d5ca6ef90f0968bd59309d3"><div class="ttname"><a href="structImGuiIO.html#a6c0c878d0d5ca6ef90f0968bd59309d3">ImGuiIO::BackendPlatformUserData</a></div><div class="ttdeci">void * BackendPlatformUserData</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02547">imgui.h:2547</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_a92288d3e802788c8c408eac2c12e709c"><div class="ttname"><a href="structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c">ImGuiIO::BackendFlags</a></div><div class="ttdeci">ImGuiBackendFlags BackendFlags</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02425">imgui.h:2425</a></div></div>
+<div class="ttc" id="astructImGui__ImplWin32__Data_html_a7d7d8913825fdbb5d02784e3b6bb13d4"><div class="ttname"><a href="structImGui__ImplWin32__Data.html#a7d7d8913825fdbb5d02784e3b6bb13d4">ImGui_ImplWin32_Data::XInputDLL</a></div><div class="ttdeci">HMODULE XInputDLL</div><div class="ttdef"><b>Definition:</b> <a href="imgui__impl__win32_8cpp_source.html#l00137">imgui_impl_win32.cpp:137</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8h_source.html#l02425">ImGuiIO::BackendFlags</a>, <a class="el" href="imgui_8h_source.html#l02545">ImGuiIO::BackendPlatformName</a>, <a class="el" href="imgui_8h_source.html#l02547">ImGuiIO::BackendPlatformUserData</a>, <a class="el" href="imgui_8cpp_source.html#l05074">ImGui::GetIO()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00124">ImGui_ImplWin32_Data::hWnd</a>, <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui_8h_source.html#l02221">IM_DELETE()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00149">ImGui_ImplWin32_GetBackendData()</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l01456">ImGui_ImplWin32_ShutdownMultiViewportSupport()</a>, <a class="el" href="imgui_8h_source.html#l01759">ImGuiBackendFlags_HasGamepad</a>, <a class="el" href="imgui_8h_source.html#l01760">ImGuiBackendFlags_HasMouseCursors</a>, <a class="el" href="imgui_8h_source.html#l01767">ImGuiBackendFlags_HasMouseHoveredViewport</a>, <a class="el" href="imgui_8h_source.html#l01761">ImGuiBackendFlags_HasSetMousePos</a>, <a class="el" href="imgui_8h_source.html#l01766">ImGuiBackendFlags_PlatformHasViewports</a>, <a class="el" href="imgui__impl__win32_8cpp_source.html#l00137">ImGui_ImplWin32_Data::XInputDLL</a> (計15項目).</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiRenderer_8cpp_source.html#l00168">mtgb::ImGuiRenderer::Release()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_a4a64d684eab1b6aed8c2f23aaa427d49_cgraph.svg" width="1352" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__impl__win32_8h_a4a64d684eab1b6aed8c2f23aaa427d49_icgraph.svg" width="431" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23797ae7e766fbcdeb3fb12569df6b46.html">ImGui</a></li><li class="navelem"><a class="el" href="imgui__impl__win32_8h.html">imgui_impl_win32.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

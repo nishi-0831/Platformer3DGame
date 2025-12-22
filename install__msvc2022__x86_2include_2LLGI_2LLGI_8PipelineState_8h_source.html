@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: LLGI.PipelineState.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('install__msvc2022__x86_2include_2LLGI_2LLGI_8PipelineState_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">install_msvc2022_x86/include/LLGI/LLGI.PipelineState.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="install__msvc2022__x86_2include_2LLGI_2LLGI_8PipelineState_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h.html">LLGI.Base.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceLLGI.html">LLGI</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span>PipelineState : <span class="keyword">public</span> ReferenceObject</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    std::shared_ptr&lt;RenderPassPipelineState&gt; <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#aa1715cd0b94c3af261d4bf2b88933b7a">renderPassPipelineState_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classLLGI_1_1PipelineState.html#ac6008fa66de918d719bb8333e478b4af">   15</a></span>    <a class="code hl_function" href="classLLGI_1_1PipelineState.html#ac6008fa66de918d719bb8333e478b4af">PipelineState</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classLLGI_1_1PipelineState.html#a345b2a058f8a5f03de666da5e613b933">   16</a></span>    <a class="code hl_function" href="classLLGI_1_1PipelineState.html#a345b2a058f8a5f03de666da5e613b933">~PipelineState</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69c">CullingMode</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a5639300d7b0c61e9f66b8fca120ddaa5">Culling</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69caba360a794737bcc8657a5b6e870d7ba8">CullingMode::Clockwise</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860">TopologyType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a810c24bc0572429de09c4b452e7ab003">Topology</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860a5e5500cb2b82eb72d550de644bd1b64b">TopologyType::Triangle</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#aa58ff61cc363881f78b6a97a76e2d90c">IsBlendEnabled</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#aef5c422cd1531472da84394ccef247b7">BlendSrcFunc</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad5c7b7f0102df3f7305c43f73fc3a498">BlendFuncType::SrcAlpha</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a7aefa27ed8776d6bf49a2730550cfdb4">BlendDstFunc</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ac00a6016489cff63d50d489ce52254cc">BlendFuncType::OneMinusSrcAlpha</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a9b638fba5013eac18ddfc97a861f7ed0">BlendSrcFuncAlpha</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad5c7b7f0102df3f7305c43f73fc3a498">BlendFuncType::SrcAlpha</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a5329728ff2ac250e82dcb0b970dc636a">BlendDstFuncAlpha</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ac00a6016489cff63d50d489ce52254cc">BlendFuncType::OneMinusSrcAlpha</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7">BlendEquationType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#aee2259aaaada76d7e9e61cd286a2e233">BlendEquationRGB</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7aec211f7c20af43e742bf2570c3cb84f9">BlendEquationType::Add</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7">BlendEquationType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a588f1e69e4627cfdb18f79d3b2750789">BlendEquationAlpha</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7aec211f7c20af43e742bf2570c3cb84f9">BlendEquationType::Add</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#ab8ab2bc3475802f22d557357d44cc5bc">IsDepthTestEnabled</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a95f8411509d3087d5fbd84d87b5431c0">IsDepthWriteEnabled</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6">DepthFuncType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#ac4c3a1cf345507a972e41bddb3f9381d">DepthFunc</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a1cfdf0e8d0c87a228c1f40d9bee7888b">DepthFuncType::Less</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    uint8_t <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#ae74762bfab1feff75b2512012490e8b0">StencilRef</a> = 0xff;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    uint8_t <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a65fb5b7dbc2f6d1ab59afb9a9f2ebbec">StencilReadMask</a> = 0xff;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    uint8_t <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#ad655affefd461e2502cac9bc59cea478">StencilWriteMask</a> = 0xff;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">StencilOperatorType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a4213da1f34cf4281115e7c259a6c06a9">StencilDepthFailOp</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">StencilOperatorType::Keep</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">StencilOperatorType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a879cb0b2ab4d4613c2e05b39849e3e89">StencilFailOp</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">StencilOperatorType::Keep</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">StencilOperatorType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a0c226bf5ddea4b064e661f249893bee5">StencilPassOp</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">StencilOperatorType::Keep</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_enumeration" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957">CompareFuncType</a> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a0d373fd0afd5edec5abc7711f6c746fb">StencilCompareFunc</a> = <a class="code hl_enumvalue" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a68eec46437c384d8dad18d5464ebc35c">CompareFuncType::Always</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#aa369648a345fa127b36f04481795b30a">IsStencilTestEnabled</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::array&lt;std::string, VertexLayoutMax&gt; <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#ae18b661721d9ff70e7f4800ab95b6c97">VertexLayoutNames</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::array&lt;VertexLayoutFormat, VertexLayoutMax&gt; <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a62504f3a1cd30c7167dcff12d40fb286">VertexLayouts</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::array&lt;int32_t, VertexLayoutMax&gt; <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a75da919b5ae2b2107d37747619282ad5">VertexLayoutSemantics</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    int32_t <a class="code hl_variable" href="classLLGI_1_1PipelineState.html#a15360aac518aa4275e464a21c3b8ee54">VertexLayoutCount</a> = 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classLLGI_1_1PipelineState.html#a5b6df985b4c32afa29f247bcd902d123">   54</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLLGI_1_1PipelineState.html#a5b6df985b4c32afa29f247bcd902d123">SetShader</a>(<a class="code hl_enumeration" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305">ShaderStageType</a> stage, <a class="code hl_class" href="classLLGI_1_1Shader.html">Shader</a>* shader);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classLLGI_1_1PipelineState.html#ad90de85dc8becfe66f37616955dfea6a">   56</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLLGI_1_1PipelineState.html#ad90de85dc8becfe66f37616955dfea6a">SetRenderPassPipelineState</a>(<a class="code hl_class" href="classLLGI_1_1RenderPassPipelineState.html">RenderPassPipelineState</a>* renderPassPipelineState);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classLLGI_1_1PipelineState.html#a1e65add1dbd8ea1b454d7198256fd878">   58</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classLLGI_1_1PipelineState.html#a1e65add1dbd8ea1b454d7198256fd878">Compile</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>} <span class="comment">// namespace LLGI</span></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a0c226bf5ddea4b064e661f249893bee5"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a0c226bf5ddea4b064e661f249893bee5">LLGI::PipelineState::StencilPassOp</a></div><div class="ttdeci">StencilOperatorType StencilPassOp</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00041">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:41</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a0d373fd0afd5edec5abc7711f6c746fb"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a0d373fd0afd5edec5abc7711f6c746fb">LLGI::PipelineState::StencilCompareFunc</a></div><div class="ttdeci">CompareFuncType StencilCompareFunc</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00043">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:43</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a15360aac518aa4275e464a21c3b8ee54"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a15360aac518aa4275e464a21c3b8ee54">LLGI::PipelineState::VertexLayoutCount</a></div><div class="ttdeci">int32_t VertexLayoutCount</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00052">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:52</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a1e65add1dbd8ea1b454d7198256fd878"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a1e65add1dbd8ea1b454d7198256fd878">LLGI::PipelineState::Compile</a></div><div class="ttdeci">virtual bool Compile()</div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a345b2a058f8a5f03de666da5e613b933"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a345b2a058f8a5f03de666da5e613b933">LLGI::PipelineState::~PipelineState</a></div><div class="ttdeci">~PipelineState() override=default</div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a4213da1f34cf4281115e7c259a6c06a9"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a4213da1f34cf4281115e7c259a6c06a9">LLGI::PipelineState::StencilDepthFailOp</a></div><div class="ttdeci">StencilOperatorType StencilDepthFailOp</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00039">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:39</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a5329728ff2ac250e82dcb0b970dc636a"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a5329728ff2ac250e82dcb0b970dc636a">LLGI::PipelineState::BlendDstFuncAlpha</a></div><div class="ttdeci">BlendFuncType BlendDstFuncAlpha</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00026">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:26</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a5639300d7b0c61e9f66b8fca120ddaa5"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a5639300d7b0c61e9f66b8fca120ddaa5">LLGI::PipelineState::Culling</a></div><div class="ttdeci">CullingMode Culling</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00018">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:18</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a588f1e69e4627cfdb18f79d3b2750789"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a588f1e69e4627cfdb18f79d3b2750789">LLGI::PipelineState::BlendEquationAlpha</a></div><div class="ttdeci">BlendEquationType BlendEquationAlpha</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00029">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:29</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a5b6df985b4c32afa29f247bcd902d123"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a5b6df985b4c32afa29f247bcd902d123">LLGI::PipelineState::SetShader</a></div><div class="ttdeci">virtual void SetShader(ShaderStageType stage, Shader *shader)</div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a62504f3a1cd30c7167dcff12d40fb286"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a62504f3a1cd30c7167dcff12d40fb286">LLGI::PipelineState::VertexLayouts</a></div><div class="ttdeci">std::array&lt; VertexLayoutFormat, VertexLayoutMax &gt; VertexLayouts</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00048">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:48</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a65fb5b7dbc2f6d1ab59afb9a9f2ebbec"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a65fb5b7dbc2f6d1ab59afb9a9f2ebbec">LLGI::PipelineState::StencilReadMask</a></div><div class="ttdeci">uint8_t StencilReadMask</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00036">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:36</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a75da919b5ae2b2107d37747619282ad5"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a75da919b5ae2b2107d37747619282ad5">LLGI::PipelineState::VertexLayoutSemantics</a></div><div class="ttdeci">std::array&lt; int32_t, VertexLayoutMax &gt; VertexLayoutSemantics</div><div class="ttdoc">only for DirectX12</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00051">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:51</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a7aefa27ed8776d6bf49a2730550cfdb4"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a7aefa27ed8776d6bf49a2730550cfdb4">LLGI::PipelineState::BlendDstFunc</a></div><div class="ttdeci">BlendFuncType BlendDstFunc</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00024">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:24</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a810c24bc0572429de09c4b452e7ab003"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a810c24bc0572429de09c4b452e7ab003">LLGI::PipelineState::Topology</a></div><div class="ttdeci">TopologyType Topology</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00019">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:19</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a879cb0b2ab4d4613c2e05b39849e3e89"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a879cb0b2ab4d4613c2e05b39849e3e89">LLGI::PipelineState::StencilFailOp</a></div><div class="ttdeci">StencilOperatorType StencilFailOp</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00040">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:40</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a95f8411509d3087d5fbd84d87b5431c0"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a95f8411509d3087d5fbd84d87b5431c0">LLGI::PipelineState::IsDepthWriteEnabled</a></div><div class="ttdeci">bool IsDepthWriteEnabled</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00032">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:32</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_a9b638fba5013eac18ddfc97a861f7ed0"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#a9b638fba5013eac18ddfc97a861f7ed0">LLGI::PipelineState::BlendSrcFuncAlpha</a></div><div class="ttdeci">BlendFuncType BlendSrcFuncAlpha</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00025">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:25</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_aa1715cd0b94c3af261d4bf2b88933b7a"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#aa1715cd0b94c3af261d4bf2b88933b7a">LLGI::PipelineState::renderPassPipelineState_</a></div><div class="ttdeci">std::shared_ptr&lt; RenderPassPipelineState &gt; renderPassPipelineState_</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00012">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:12</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_aa369648a345fa127b36f04481795b30a"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#aa369648a345fa127b36f04481795b30a">LLGI::PipelineState::IsStencilTestEnabled</a></div><div class="ttdeci">bool IsStencilTestEnabled</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00045">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:45</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_aa58ff61cc363881f78b6a97a76e2d90c"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#aa58ff61cc363881f78b6a97a76e2d90c">LLGI::PipelineState::IsBlendEnabled</a></div><div class="ttdeci">bool IsBlendEnabled</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00021">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:21</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_ab8ab2bc3475802f22d557357d44cc5bc"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#ab8ab2bc3475802f22d557357d44cc5bc">LLGI::PipelineState::IsDepthTestEnabled</a></div><div class="ttdeci">bool IsDepthTestEnabled</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00031">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:31</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_ac4c3a1cf345507a972e41bddb3f9381d"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#ac4c3a1cf345507a972e41bddb3f9381d">LLGI::PipelineState::DepthFunc</a></div><div class="ttdeci">DepthFuncType DepthFunc</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00033">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:33</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_ac6008fa66de918d719bb8333e478b4af"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#ac6008fa66de918d719bb8333e478b4af">LLGI::PipelineState::PipelineState</a></div><div class="ttdeci">PipelineState()</div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_ad655affefd461e2502cac9bc59cea478"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#ad655affefd461e2502cac9bc59cea478">LLGI::PipelineState::StencilWriteMask</a></div><div class="ttdeci">uint8_t StencilWriteMask</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00037">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:37</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_ad90de85dc8becfe66f37616955dfea6a"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#ad90de85dc8becfe66f37616955dfea6a">LLGI::PipelineState::SetRenderPassPipelineState</a></div><div class="ttdeci">virtual void SetRenderPassPipelineState(RenderPassPipelineState *renderPassPipelineState)</div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_ae18b661721d9ff70e7f4800ab95b6c97"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#ae18b661721d9ff70e7f4800ab95b6c97">LLGI::PipelineState::VertexLayoutNames</a></div><div class="ttdeci">std::array&lt; std::string, VertexLayoutMax &gt; VertexLayoutNames</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00047">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:47</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_ae74762bfab1feff75b2512012490e8b0"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#ae74762bfab1feff75b2512012490e8b0">LLGI::PipelineState::StencilRef</a></div><div class="ttdeci">uint8_t StencilRef</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00035">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:35</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_aee2259aaaada76d7e9e61cd286a2e233"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#aee2259aaaada76d7e9e61cd286a2e233">LLGI::PipelineState::BlendEquationRGB</a></div><div class="ttdeci">BlendEquationType BlendEquationRGB</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00028">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:28</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1PipelineState_html_aef5c422cd1531472da84394ccef247b7"><div class="ttname"><a href="classLLGI_1_1PipelineState.html#aef5c422cd1531472da84394ccef247b7">LLGI::PipelineState::BlendSrcFunc</a></div><div class="ttdeci">BlendFuncType BlendSrcFunc</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00023">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h:23</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1RenderPassPipelineState_html"><div class="ttname"><a href="classLLGI_1_1RenderPassPipelineState.html">LLGI::RenderPassPipelineState</a></div><div class="ttdoc">A class to send a data for RenderPass</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Graphics_8h_source.html#l00202">install_msvc2022_x64/include/LLGI/LLGI.Graphics.h:203</a></div></div>
+<div class="ttc" id="aclassLLGI_1_1Shader_html"><div class="ttname"><a href="classLLGI_1_1Shader.html">LLGI::Shader</a></div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Shader_8h_source.html#l00009">install_msvc2022_x64/include/LLGI/LLGI.Shader.h:10</a></div></div>
+<div class="ttc" id="ainstall__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_html"><div class="ttname"><a href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h.html">LLGI.Base.h</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html"><div class="ttname"><a href="namespaceLLGI.html">LLGI</a></div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00018">install_msvc2022_x64/include/LLGI/LLGI.Base.h:19</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_a14dd396e5b1dd56f4436f1049286a860"><div class="ttname"><a href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860">LLGI::TopologyType</a></div><div class="ttdeci">TopologyType</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00087">install_msvc2022_x64/include/LLGI/LLGI.Base.h:88</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_a14dd396e5b1dd56f4436f1049286a860a5e5500cb2b82eb72d550de644bd1b64b"><div class="ttname"><a href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860a5e5500cb2b82eb72d550de644bd1b64b">LLGI::TopologyType::Triangle</a></div><div class="ttdeci">@ Triangle</div></div>
+<div class="ttc" id="anamespaceLLGI_html_a3e0a47aad7e49508eb84ce01dbc9ddd7"><div class="ttname"><a href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7">LLGI::BlendEquationType</a></div><div class="ttdeci">BlendEquationType</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00054">install_msvc2022_x64/include/LLGI/LLGI.Base.h:55</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_a3e0a47aad7e49508eb84ce01dbc9ddd7aec211f7c20af43e742bf2570c3cb84f9"><div class="ttname"><a href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7aec211f7c20af43e742bf2570c3cb84f9">LLGI::BlendEquationType::Add</a></div><div class="ttdeci">@ Add</div></div>
+<div class="ttc" id="anamespaceLLGI_html_a3f28b7f1b32d2c6dbfbc6ffb48ccd69c"><div class="ttname"><a href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69c">LLGI::CullingMode</a></div><div class="ttdeci">CullingMode</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00047">install_msvc2022_x64/include/LLGI/LLGI.Base.h:48</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_a3f28b7f1b32d2c6dbfbc6ffb48ccd69caba360a794737bcc8657a5b6e870d7ba8"><div class="ttname"><a href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69caba360a794737bcc8657a5b6e870d7ba8">LLGI::CullingMode::Clockwise</a></div><div class="ttdeci">@ Clockwise</div></div>
+<div class="ttc" id="anamespaceLLGI_html_a42d4f01ef0b5e53e8ac3a23634c4d5d6"><div class="ttname"><a href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6">LLGI::DepthFuncType</a></div><div class="ttdeci">DepthFuncType</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00106">install_msvc2022_x64/include/LLGI/LLGI.Base.h:107</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_a42d4f01ef0b5e53e8ac3a23634c4d5d6a1cfdf0e8d0c87a228c1f40d9bee7888b"><div class="ttname"><a href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a1cfdf0e8d0c87a228c1f40d9bee7888b">LLGI::DepthFuncType::Less</a></div><div class="ttdeci">@ Less</div></div>
+<div class="ttc" id="anamespaceLLGI_html_a8ee880e8b7815815caf7090a00071957"><div class="ttname"><a href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957">LLGI::CompareFuncType</a></div><div class="ttdeci">CompareFuncType</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00118">install_msvc2022_x64/include/LLGI/LLGI.Base.h:119</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_a8ee880e8b7815815caf7090a00071957a68eec46437c384d8dad18d5464ebc35c"><div class="ttname"><a href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a68eec46437c384d8dad18d5464ebc35c">LLGI::CompareFuncType::Always</a></div><div class="ttdeci">@ Always</div></div>
+<div class="ttc" id="anamespaceLLGI_html_a9e697d82a727af9e2cc83a4a45977283"><div class="ttname"><a href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">LLGI::StencilOperatorType</a></div><div class="ttdeci">StencilOperatorType</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00130">install_msvc2022_x64/include/LLGI/LLGI.Base.h:131</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e"><div class="ttname"><a href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">LLGI::StencilOperatorType::Keep</a></div><div class="ttdeci">@ Keep</div></div>
+<div class="ttc" id="anamespaceLLGI_html_aac6d31ed263faebce9197352e202b305"><div class="ttname"><a href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305">LLGI::ShaderStageType</a></div><div class="ttdeci">ShaderStageType</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00039">install_msvc2022_x64/include/LLGI/LLGI.Base.h:40</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_aea330057a279b1f21ee2d9bc20dd5503"><div class="ttname"><a href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">LLGI::BlendFuncType</a></div><div class="ttdeci">BlendFuncType</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00063">install_msvc2022_x64/include/LLGI/LLGI.Base.h:64</a></div></div>
+<div class="ttc" id="anamespaceLLGI_html_aea330057a279b1f21ee2d9bc20dd5503ac00a6016489cff63d50d489ce52254cc"><div class="ttname"><a href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ac00a6016489cff63d50d489ce52254cc">LLGI::BlendFuncType::OneMinusSrcAlpha</a></div><div class="ttdeci">@ OneMinusSrcAlpha</div></div>
+<div class="ttc" id="anamespaceLLGI_html_aea330057a279b1f21ee2d9bc20dd5503ad5c7b7f0102df3f7305c43f73fc3a498"><div class="ttname"><a href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad5c7b7f0102df3f7305c43f73fc3a498">LLGI::BlendFuncType::SrcAlpha</a></div><div class="ttdeci">@ SrcAlpha</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7c5410398a44882a19233b74a46ddf81.html">EffekseeLib</a></li><li class="navelem"><a class="el" href="dir_926327d307dabae2aa59034eae1c6a7e.html">install_msvc2022_x86</a></li><li class="navelem"><a class="el" href="dir_21b11ca632b48926d9e67bf866c261a7.html">include</a></li><li class="navelem"><a class="el" href="dir_d55d93b16ed036a34b048c436ab2da93.html">LLGI</a></li><li class="navelem"><a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8PipelineState_8h.html">LLGI.PipelineState.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

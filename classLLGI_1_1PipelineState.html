@@ -1,0 +1,1142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: LLGI::PipelineState クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classLLGI_1_1PipelineState.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classLLGI_1_1PipelineState-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">LLGI::PipelineState クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">LLGI.PipelineState.h</a>&quot;</code></p>
+<div class="dynheader">
+LLGI::PipelineState の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classLLGI_1_1PipelineState__inherit__graph.svg" width="298" height="874"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+LLGI::PipelineState 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classLLGI_1_1PipelineState__coll__graph.svg" width="298" height="874"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ac6008fa66de918d719bb8333e478b4af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#ac6008fa66de918d719bb8333e478b4af">PipelineState</a> ()</td></tr>
+<tr class="separator:ac6008fa66de918d719bb8333e478b4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a345b2a058f8a5f03de666da5e613b933"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a345b2a058f8a5f03de666da5e613b933">~PipelineState</a> () override=default</td></tr>
+<tr class="separator:a345b2a058f8a5f03de666da5e613b933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b6df985b4c32afa29f247bcd902d123"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a5b6df985b4c32afa29f247bcd902d123">SetShader</a> (<a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305">ShaderStageType</a> stage, <a class="el" href="classLLGI_1_1Shader.html">Shader</a> *shader)</td></tr>
+<tr class="separator:a5b6df985b4c32afa29f247bcd902d123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad90de85dc8becfe66f37616955dfea6a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#ad90de85dc8becfe66f37616955dfea6a">SetRenderPassPipelineState</a> (<a class="el" href="classLLGI_1_1RenderPassPipelineState.html">RenderPassPipelineState</a> *renderPassPipelineState)</td></tr>
+<tr class="separator:ad90de85dc8becfe66f37616955dfea6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e65add1dbd8ea1b454d7198256fd878"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a1e65add1dbd8ea1b454d7198256fd878">Compile</a> ()</td></tr>
+<tr class="separator:a1e65add1dbd8ea1b454d7198256fd878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6008fa66de918d719bb8333e478b4af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#ac6008fa66de918d719bb8333e478b4af">PipelineState</a> ()</td></tr>
+<tr class="separator:ac6008fa66de918d719bb8333e478b4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a345b2a058f8a5f03de666da5e613b933"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a345b2a058f8a5f03de666da5e613b933">~PipelineState</a> () override=default</td></tr>
+<tr class="separator:a345b2a058f8a5f03de666da5e613b933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b6df985b4c32afa29f247bcd902d123"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a5b6df985b4c32afa29f247bcd902d123">SetShader</a> (<a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305">ShaderStageType</a> stage, <a class="el" href="classLLGI_1_1Shader.html">Shader</a> *shader)</td></tr>
+<tr class="separator:a5b6df985b4c32afa29f247bcd902d123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad90de85dc8becfe66f37616955dfea6a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#ad90de85dc8becfe66f37616955dfea6a">SetRenderPassPipelineState</a> (<a class="el" href="classLLGI_1_1RenderPassPipelineState.html">RenderPassPipelineState</a> *renderPassPipelineState)</td></tr>
+<tr class="separator:ad90de85dc8becfe66f37616955dfea6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e65add1dbd8ea1b454d7198256fd878"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a1e65add1dbd8ea1b454d7198256fd878">Compile</a> ()</td></tr>
+<tr class="separator:a1e65add1dbd8ea1b454d7198256fd878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a7ceba7114f344e194917b0ee53bc4aa2">AddRef</a> ()</td></tr>
+<tr class="separator:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a7ceba7114f344e194917b0ee53bc4aa2">AddRef</a> ()</td></tr>
+<tr class="separator:a7ceba7114f344e194917b0ee53bc4aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc67e5807f15f2cc40c917ffe559804"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a2dc67e5807f15f2cc40c917ffe559804">GetRef</a> ()</td></tr>
+<tr class="separator:a2dc67e5807f15f2cc40c917ffe559804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc67e5807f15f2cc40c917ffe559804"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a2dc67e5807f15f2cc40c917ffe559804">GetRef</a> ()</td></tr>
+<tr class="separator:a2dc67e5807f15f2cc40c917ffe559804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5a802c449b55209998e7ca965c53d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a3e5a802c449b55209998e7ca965c53d4">Release</a> ()</td></tr>
+<tr class="separator:a3e5a802c449b55209998e7ca965c53d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5a802c449b55209998e7ca965c53d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a3e5a802c449b55209998e7ca965c53d4">Release</a> ()</td></tr>
+<tr class="separator:a3e5a802c449b55209998e7ca965c53d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a5639300d7b0c61e9f66b8fca120ddaa5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69c">CullingMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a5639300d7b0c61e9f66b8fca120ddaa5">Culling</a> = <a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69caba360a794737bcc8657a5b6e870d7ba8">CullingMode::Clockwise</a></td></tr>
+<tr class="separator:a5639300d7b0c61e9f66b8fca120ddaa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a810c24bc0572429de09c4b452e7ab003"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860">TopologyType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a810c24bc0572429de09c4b452e7ab003">Topology</a> = <a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860a5e5500cb2b82eb72d550de644bd1b64b">TopologyType::Triangle</a></td></tr>
+<tr class="separator:a810c24bc0572429de09c4b452e7ab003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa58ff61cc363881f78b6a97a76e2d90c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#aa58ff61cc363881f78b6a97a76e2d90c">IsBlendEnabled</a> = true</td></tr>
+<tr class="separator:aa58ff61cc363881f78b6a97a76e2d90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef5c422cd1531472da84394ccef247b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#aef5c422cd1531472da84394ccef247b7">BlendSrcFunc</a> = <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad5c7b7f0102df3f7305c43f73fc3a498">BlendFuncType::SrcAlpha</a></td></tr>
+<tr class="separator:aef5c422cd1531472da84394ccef247b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aefa27ed8776d6bf49a2730550cfdb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a7aefa27ed8776d6bf49a2730550cfdb4">BlendDstFunc</a> = <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ac00a6016489cff63d50d489ce52254cc">BlendFuncType::OneMinusSrcAlpha</a></td></tr>
+<tr class="separator:a7aefa27ed8776d6bf49a2730550cfdb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b638fba5013eac18ddfc97a861f7ed0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a9b638fba5013eac18ddfc97a861f7ed0">BlendSrcFuncAlpha</a> = <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad5c7b7f0102df3f7305c43f73fc3a498">BlendFuncType::SrcAlpha</a></td></tr>
+<tr class="separator:a9b638fba5013eac18ddfc97a861f7ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5329728ff2ac250e82dcb0b970dc636a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a5329728ff2ac250e82dcb0b970dc636a">BlendDstFuncAlpha</a> = <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ac00a6016489cff63d50d489ce52254cc">BlendFuncType::OneMinusSrcAlpha</a></td></tr>
+<tr class="separator:a5329728ff2ac250e82dcb0b970dc636a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee2259aaaada76d7e9e61cd286a2e233"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7">BlendEquationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#aee2259aaaada76d7e9e61cd286a2e233">BlendEquationRGB</a> = <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7aec211f7c20af43e742bf2570c3cb84f9">BlendEquationType::Add</a></td></tr>
+<tr class="separator:aee2259aaaada76d7e9e61cd286a2e233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a588f1e69e4627cfdb18f79d3b2750789"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7">BlendEquationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a588f1e69e4627cfdb18f79d3b2750789">BlendEquationAlpha</a> = <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7aec211f7c20af43e742bf2570c3cb84f9">BlendEquationType::Add</a></td></tr>
+<tr class="separator:a588f1e69e4627cfdb18f79d3b2750789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ab2bc3475802f22d557357d44cc5bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#ab8ab2bc3475802f22d557357d44cc5bc">IsDepthTestEnabled</a> = false</td></tr>
+<tr class="separator:ab8ab2bc3475802f22d557357d44cc5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95f8411509d3087d5fbd84d87b5431c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a95f8411509d3087d5fbd84d87b5431c0">IsDepthWriteEnabled</a> = false</td></tr>
+<tr class="separator:a95f8411509d3087d5fbd84d87b5431c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c3a1cf345507a972e41bddb3f9381d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6">DepthFuncType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#ac4c3a1cf345507a972e41bddb3f9381d">DepthFunc</a> = <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a1cfdf0e8d0c87a228c1f40d9bee7888b">DepthFuncType::Less</a></td></tr>
+<tr class="separator:ac4c3a1cf345507a972e41bddb3f9381d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae74762bfab1feff75b2512012490e8b0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#ae74762bfab1feff75b2512012490e8b0">StencilRef</a> = 0xff</td></tr>
+<tr class="separator:ae74762bfab1feff75b2512012490e8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65fb5b7dbc2f6d1ab59afb9a9f2ebbec"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a65fb5b7dbc2f6d1ab59afb9a9f2ebbec">StencilReadMask</a> = 0xff</td></tr>
+<tr class="separator:a65fb5b7dbc2f6d1ab59afb9a9f2ebbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad655affefd461e2502cac9bc59cea478"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#ad655affefd461e2502cac9bc59cea478">StencilWriteMask</a> = 0xff</td></tr>
+<tr class="separator:ad655affefd461e2502cac9bc59cea478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4213da1f34cf4281115e7c259a6c06a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">StencilOperatorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a4213da1f34cf4281115e7c259a6c06a9">StencilDepthFailOp</a> = <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">StencilOperatorType::Keep</a></td></tr>
+<tr class="separator:a4213da1f34cf4281115e7c259a6c06a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a879cb0b2ab4d4613c2e05b39849e3e89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">StencilOperatorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a879cb0b2ab4d4613c2e05b39849e3e89">StencilFailOp</a> = <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">StencilOperatorType::Keep</a></td></tr>
+<tr class="separator:a879cb0b2ab4d4613c2e05b39849e3e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c226bf5ddea4b064e661f249893bee5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">StencilOperatorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a0c226bf5ddea4b064e661f249893bee5">StencilPassOp</a> = <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">StencilOperatorType::Keep</a></td></tr>
+<tr class="separator:a0c226bf5ddea4b064e661f249893bee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d373fd0afd5edec5abc7711f6c746fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957">CompareFuncType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a0d373fd0afd5edec5abc7711f6c746fb">StencilCompareFunc</a> = <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a68eec46437c384d8dad18d5464ebc35c">CompareFuncType::Always</a></td></tr>
+<tr class="separator:a0d373fd0afd5edec5abc7711f6c746fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa369648a345fa127b36f04481795b30a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#aa369648a345fa127b36f04481795b30a">IsStencilTestEnabled</a> = false</td></tr>
+<tr class="separator:aa369648a345fa127b36f04481795b30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae18b661721d9ff70e7f4800ab95b6c97"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::string, <a class="el" href="namespaceLLGI.html#aee88c8ecf87da2e271c3dd1ebe18620f">VertexLayoutMax</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#ae18b661721d9ff70e7f4800ab95b6c97">VertexLayoutNames</a></td></tr>
+<tr class="separator:ae18b661721d9ff70e7f4800ab95b6c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62504f3a1cd30c7167dcff12d40fb286"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4">VertexLayoutFormat</a>, <a class="el" href="namespaceLLGI.html#aee88c8ecf87da2e271c3dd1ebe18620f">VertexLayoutMax</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a62504f3a1cd30c7167dcff12d40fb286">VertexLayouts</a></td></tr>
+<tr class="separator:a62504f3a1cd30c7167dcff12d40fb286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75da919b5ae2b2107d37747619282ad5"><td class="memItemLeft" align="right" valign="top">std::array&lt; int32_t, <a class="el" href="namespaceLLGI.html#aee88c8ecf87da2e271c3dd1ebe18620f">VertexLayoutMax</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a75da919b5ae2b2107d37747619282ad5">VertexLayoutSemantics</a></td></tr>
+<tr class="memdesc:a75da919b5ae2b2107d37747619282ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">only for DirectX12  <br /></td></tr>
+<tr class="separator:a75da919b5ae2b2107d37747619282ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15360aac518aa4275e464a21c3b8ee54"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#a15360aac518aa4275e464a21c3b8ee54">VertexLayoutCount</a> = 0</td></tr>
+<tr class="separator:a15360aac518aa4275e464a21c3b8ee54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:aa1715cd0b94c3af261d4bf2b88933b7a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classLLGI_1_1RenderPassPipelineState.html">RenderPassPipelineState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1PipelineState.html#aa1715cd0b94c3af261d4bf2b88933b7a">renderPassPipelineState_</a> = nullptr</td></tr>
+<tr class="separator:aa1715cd0b94c3af261d4bf2b88933b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a4b1a48d30647cb2cd751175568489089"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a></td></tr>
+<tr class="separator:a4b1a48d30647cb2cd751175568489089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00009">9</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ac6008fa66de918d719bb8333e478b4af" name="ac6008fa66de918d719bb8333e478b4af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6008fa66de918d719bb8333e478b4af">&#9670;&#160;</a></span>PipelineState() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::PipelineState::PipelineState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a345b2a058f8a5f03de666da5e613b933" name="a345b2a058f8a5f03de666da5e613b933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a345b2a058f8a5f03de666da5e613b933">&#9670;&#160;</a></span>~PipelineState() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::PipelineState::~PipelineState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac6008fa66de918d719bb8333e478b4af" name="ac6008fa66de918d719bb8333e478b4af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6008fa66de918d719bb8333e478b4af">&#9670;&#160;</a></span>PipelineState() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::PipelineState::PipelineState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a345b2a058f8a5f03de666da5e613b933" name="a345b2a058f8a5f03de666da5e613b933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a345b2a058f8a5f03de666da5e613b933">&#9670;&#160;</a></span>~PipelineState() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LLGI::PipelineState::~PipelineState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a7ceba7114f344e194917b0ee53bc4aa2" name="a7ceba7114f344e194917b0ee53bc4aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ceba7114f344e194917b0ee53bc4aa2">&#9670;&#160;</a></span>AddRef() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::AddRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00394">394</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  395</span>    {</div>
+<div class="line"><span class="lineno">  396</span>        std::atomic_fetch_add_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume);</div>
+<div class="line"><span class="lineno">  397</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  398</span>    }</div>
+<div class="ttc" id="aclassLLGI_1_1ReferenceObject_html_a4b1a48d30647cb2cd751175568489089"><div class="ttname"><a href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">LLGI::ReferenceObject::reference</a></div><div class="ttdeci">std::atomic&lt; int32_t &gt; reference</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">install_msvc2022_x64/include/LLGI/LLGI.Base.h:387</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a7ceba7114f344e194917b0ee53bc4aa2" name="a7ceba7114f344e194917b0ee53bc4aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ceba7114f344e194917b0ee53bc4aa2">&#9670;&#160;</a></span>AddRef() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::AddRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html#l00394">394</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  395</span>    {</div>
+<div class="line"><span class="lineno">  396</span>        std::atomic_fetch_add_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume);</div>
+<div class="line"><span class="lineno">  397</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  398</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a1e65add1dbd8ea1b454d7198256fd878" name="a1e65add1dbd8ea1b454d7198256fd878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e65add1dbd8ea1b454d7198256fd878">&#9670;&#160;</a></span>Compile() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool LLGI::PipelineState::Compile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e65add1dbd8ea1b454d7198256fd878" name="a1e65add1dbd8ea1b454d7198256fd878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e65add1dbd8ea1b454d7198256fd878">&#9670;&#160;</a></span>Compile() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool LLGI::PipelineState::Compile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2dc67e5807f15f2cc40c917ffe559804" name="a2dc67e5807f15f2cc40c917ffe559804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc67e5807f15f2cc40c917ffe559804">&#9670;&#160;</a></span>GetRef() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::GetRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00400">400</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  400</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a2dc67e5807f15f2cc40c917ffe559804" name="a2dc67e5807f15f2cc40c917ffe559804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc67e5807f15f2cc40c917ffe559804">&#9670;&#160;</a></span>GetRef() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::GetRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html#l00400">400</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  400</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a3e5a802c449b55209998e7ca965c53d4" name="a3e5a802c449b55209998e7ca965c53d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5a802c449b55209998e7ca965c53d4">&#9670;&#160;</a></span>Release() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00402">402</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  403</span>    {</div>
+<div class="line"><span class="lineno">  404</span>        assert(<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a> &gt; 0);</div>
+<div class="line"><span class="lineno">  405</span> </div>
+<div class="line"><span class="lineno">  406</span>        <span class="keywordtype">bool</span> destroy = std::atomic_fetch_sub_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume) == 1;</div>
+<div class="line"><span class="lineno">  407</span>        <span class="keywordflow">if</span> (destroy)</div>
+<div class="line"><span class="lineno">  408</span>        {</div>
+<div class="line"><span class="lineno">  409</span>            <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  410</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  411</span>        }</div>
+<div class="line"><span class="lineno">  412</span> </div>
+<div class="line"><span class="lineno">  413</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  414</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="a3e5a802c449b55209998e7ca965c53d4" name="a3e5a802c449b55209998e7ca965c53d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5a802c449b55209998e7ca965c53d4">&#9670;&#160;</a></span>Release() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LLGI::ReferenceObject::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8Base_8h_source.html#l00402">402</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  403</span>    {</div>
+<div class="line"><span class="lineno">  404</span>        assert(<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a> &gt; 0);</div>
+<div class="line"><span class="lineno">  405</span> </div>
+<div class="line"><span class="lineno">  406</span>        <span class="keywordtype">bool</span> destroy = std::atomic_fetch_sub_explicit(&amp;<a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>, 1, std::memory_order_consume) == 1;</div>
+<div class="line"><span class="lineno">  407</span>        <span class="keywordflow">if</span> (destroy)</div>
+<div class="line"><span class="lineno">  408</span>        {</div>
+<div class="line"><span class="lineno">  409</span>            <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  410</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  411</span>        }</div>
+<div class="line"><span class="lineno">  412</span> </div>
+<div class="line"><span class="lineno">  413</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classLLGI_1_1ReferenceObject.html#a4b1a48d30647cb2cd751175568489089">reference</a>;</div>
+<div class="line"><span class="lineno">  414</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">LLGI::ReferenceObject::reference</a>.</p>
+
+</div>
+</div>
+<a id="ad90de85dc8becfe66f37616955dfea6a" name="ad90de85dc8becfe66f37616955dfea6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad90de85dc8becfe66f37616955dfea6a">&#9670;&#160;</a></span>SetRenderPassPipelineState() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LLGI::PipelineState::SetRenderPassPipelineState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLLGI_1_1RenderPassPipelineState.html">RenderPassPipelineState</a> *&#160;</td>
+          <td class="paramname"><em>renderPassPipelineState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad90de85dc8becfe66f37616955dfea6a" name="ad90de85dc8becfe66f37616955dfea6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad90de85dc8becfe66f37616955dfea6a">&#9670;&#160;</a></span>SetRenderPassPipelineState() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LLGI::PipelineState::SetRenderPassPipelineState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLLGI_1_1RenderPassPipelineState.html">RenderPassPipelineState</a> *&#160;</td>
+          <td class="paramname"><em>renderPassPipelineState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b6df985b4c32afa29f247bcd902d123" name="a5b6df985b4c32afa29f247bcd902d123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b6df985b4c32afa29f247bcd902d123">&#9670;&#160;</a></span>SetShader() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LLGI::PipelineState::SetShader </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305">ShaderStageType</a>&#160;</td>
+          <td class="paramname"><em>stage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classLLGI_1_1Shader.html">Shader</a> *&#160;</td>
+          <td class="paramname"><em>shader</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b6df985b4c32afa29f247bcd902d123" name="a5b6df985b4c32afa29f247bcd902d123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b6df985b4c32afa29f247bcd902d123">&#9670;&#160;</a></span>SetShader() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void LLGI::PipelineState::SetShader </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceLLGI.html#aac6d31ed263faebce9197352e202b305">ShaderStageType</a>&#160;</td>
+          <td class="paramname"><em>stage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classLLGI_1_1Shader.html">Shader</a> *&#160;</td>
+          <td class="paramname"><em>shader</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a7aefa27ed8776d6bf49a2730550cfdb4" name="a7aefa27ed8776d6bf49a2730550cfdb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aefa27ed8776d6bf49a2730550cfdb4">&#9670;&#160;</a></span>BlendDstFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a> LLGI::PipelineState::BlendDstFunc = <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ac00a6016489cff63d50d489ce52254cc">BlendFuncType::OneMinusSrcAlpha</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5329728ff2ac250e82dcb0b970dc636a" name="a5329728ff2ac250e82dcb0b970dc636a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5329728ff2ac250e82dcb0b970dc636a">&#9670;&#160;</a></span>BlendDstFuncAlpha</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a> LLGI::PipelineState::BlendDstFuncAlpha = <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ac00a6016489cff63d50d489ce52254cc">BlendFuncType::OneMinusSrcAlpha</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a588f1e69e4627cfdb18f79d3b2750789" name="a588f1e69e4627cfdb18f79d3b2750789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588f1e69e4627cfdb18f79d3b2750789">&#9670;&#160;</a></span>BlendEquationAlpha</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7">BlendEquationType</a> LLGI::PipelineState::BlendEquationAlpha = <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7aec211f7c20af43e742bf2570c3cb84f9">BlendEquationType::Add</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aee2259aaaada76d7e9e61cd286a2e233" name="aee2259aaaada76d7e9e61cd286a2e233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee2259aaaada76d7e9e61cd286a2e233">&#9670;&#160;</a></span>BlendEquationRGB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7">BlendEquationType</a> LLGI::PipelineState::BlendEquationRGB = <a class="el" href="namespaceLLGI.html#a3e0a47aad7e49508eb84ce01dbc9ddd7aec211f7c20af43e742bf2570c3cb84f9">BlendEquationType::Add</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aef5c422cd1531472da84394ccef247b7" name="aef5c422cd1531472da84394ccef247b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef5c422cd1531472da84394ccef247b7">&#9670;&#160;</a></span>BlendSrcFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a> LLGI::PipelineState::BlendSrcFunc = <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad5c7b7f0102df3f7305c43f73fc3a498">BlendFuncType::SrcAlpha</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9b638fba5013eac18ddfc97a861f7ed0" name="a9b638fba5013eac18ddfc97a861f7ed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b638fba5013eac18ddfc97a861f7ed0">&#9670;&#160;</a></span>BlendSrcFuncAlpha</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503">BlendFuncType</a> LLGI::PipelineState::BlendSrcFuncAlpha = <a class="el" href="namespaceLLGI.html#aea330057a279b1f21ee2d9bc20dd5503ad5c7b7f0102df3f7305c43f73fc3a498">BlendFuncType::SrcAlpha</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5639300d7b0c61e9f66b8fca120ddaa5" name="a5639300d7b0c61e9f66b8fca120ddaa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5639300d7b0c61e9f66b8fca120ddaa5">&#9670;&#160;</a></span>Culling</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69c">CullingMode</a> LLGI::PipelineState::Culling = <a class="el" href="namespaceLLGI.html#a3f28b7f1b32d2c6dbfbc6ffb48ccd69caba360a794737bcc8657a5b6e870d7ba8">CullingMode::Clockwise</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac4c3a1cf345507a972e41bddb3f9381d" name="ac4c3a1cf345507a972e41bddb3f9381d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c3a1cf345507a972e41bddb3f9381d">&#9670;&#160;</a></span>DepthFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6">DepthFuncType</a> LLGI::PipelineState::DepthFunc = <a class="el" href="namespaceLLGI.html#a42d4f01ef0b5e53e8ac3a23634c4d5d6a1cfdf0e8d0c87a228c1f40d9bee7888b">DepthFuncType::Less</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa58ff61cc363881f78b6a97a76e2d90c" name="aa58ff61cc363881f78b6a97a76e2d90c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa58ff61cc363881f78b6a97a76e2d90c">&#9670;&#160;</a></span>IsBlendEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LLGI::PipelineState::IsBlendEnabled = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab8ab2bc3475802f22d557357d44cc5bc" name="ab8ab2bc3475802f22d557357d44cc5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8ab2bc3475802f22d557357d44cc5bc">&#9670;&#160;</a></span>IsDepthTestEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LLGI::PipelineState::IsDepthTestEnabled = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a95f8411509d3087d5fbd84d87b5431c0" name="a95f8411509d3087d5fbd84d87b5431c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95f8411509d3087d5fbd84d87b5431c0">&#9670;&#160;</a></span>IsDepthWriteEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LLGI::PipelineState::IsDepthWriteEnabled = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa369648a345fa127b36f04481795b30a" name="aa369648a345fa127b36f04481795b30a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa369648a345fa127b36f04481795b30a">&#9670;&#160;</a></span>IsStencilTestEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LLGI::PipelineState::IsStencilTestEnabled = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00045">45</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4b1a48d30647cb2cd751175568489089" name="a4b1a48d30647cb2cd751175568489089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b1a48d30647cb2cd751175568489089">&#9670;&#160;</a></span>reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt; int32_t &gt; LLGI::ReferenceObject::reference</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.Base.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00387">387</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00394">LLGI::ReferenceObject::AddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00400">LLGI::ReferenceObject::GetRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8Base_8h_source.html#l00402">LLGI::ReferenceObject::Release()</a>.</p>
+
+</div>
+</div>
+<a id="aa1715cd0b94c3af261d4bf2b88933b7a" name="aa1715cd0b94c3af261d4bf2b88933b7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1715cd0b94c3af261d4bf2b88933b7a">&#9670;&#160;</a></span>renderPassPipelineState_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classLLGI_1_1RenderPassPipelineState.html">RenderPassPipelineState</a> &gt; LLGI::PipelineState::renderPassPipelineState_ = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00012">12</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0d373fd0afd5edec5abc7711f6c746fb" name="a0d373fd0afd5edec5abc7711f6c746fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d373fd0afd5edec5abc7711f6c746fb">&#9670;&#160;</a></span>StencilCompareFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957">CompareFuncType</a> LLGI::PipelineState::StencilCompareFunc = <a class="el" href="namespaceLLGI.html#a8ee880e8b7815815caf7090a00071957a68eec46437c384d8dad18d5464ebc35c">CompareFuncType::Always</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00043">43</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4213da1f34cf4281115e7c259a6c06a9" name="a4213da1f34cf4281115e7c259a6c06a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4213da1f34cf4281115e7c259a6c06a9">&#9670;&#160;</a></span>StencilDepthFailOp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">StencilOperatorType</a> LLGI::PipelineState::StencilDepthFailOp = <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">StencilOperatorType::Keep</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a879cb0b2ab4d4613c2e05b39849e3e89" name="a879cb0b2ab4d4613c2e05b39849e3e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a879cb0b2ab4d4613c2e05b39849e3e89">&#9670;&#160;</a></span>StencilFailOp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">StencilOperatorType</a> LLGI::PipelineState::StencilFailOp = <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">StencilOperatorType::Keep</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0c226bf5ddea4b064e661f249893bee5" name="a0c226bf5ddea4b064e661f249893bee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c226bf5ddea4b064e661f249893bee5">&#9670;&#160;</a></span>StencilPassOp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283">StencilOperatorType</a> LLGI::PipelineState::StencilPassOp = <a class="el" href="namespaceLLGI.html#a9e697d82a727af9e2cc83a4a45977283a02bce93bff905887ad2233110bf9c49e">StencilOperatorType::Keep</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00041">41</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a65fb5b7dbc2f6d1ab59afb9a9f2ebbec" name="a65fb5b7dbc2f6d1ab59afb9a9f2ebbec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65fb5b7dbc2f6d1ab59afb9a9f2ebbec">&#9670;&#160;</a></span>StencilReadMask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t LLGI::PipelineState::StencilReadMask = 0xff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae74762bfab1feff75b2512012490e8b0" name="ae74762bfab1feff75b2512012490e8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae74762bfab1feff75b2512012490e8b0">&#9670;&#160;</a></span>StencilRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t LLGI::PipelineState::StencilRef = 0xff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad655affefd461e2502cac9bc59cea478" name="ad655affefd461e2502cac9bc59cea478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad655affefd461e2502cac9bc59cea478">&#9670;&#160;</a></span>StencilWriteMask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t LLGI::PipelineState::StencilWriteMask = 0xff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a810c24bc0572429de09c4b452e7ab003" name="a810c24bc0572429de09c4b452e7ab003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a810c24bc0572429de09c4b452e7ab003">&#9670;&#160;</a></span>Topology</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860">TopologyType</a> LLGI::PipelineState::Topology = <a class="el" href="namespaceLLGI.html#a14dd396e5b1dd56f4436f1049286a860a5e5500cb2b82eb72d550de644bd1b64b">TopologyType::Triangle</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a15360aac518aa4275e464a21c3b8ee54" name="a15360aac518aa4275e464a21c3b8ee54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15360aac518aa4275e464a21c3b8ee54">&#9670;&#160;</a></span>VertexLayoutCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t LLGI::PipelineState::VertexLayoutCount = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00052">52</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae18b661721d9ff70e7f4800ab95b6c97" name="ae18b661721d9ff70e7f4800ab95b6c97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae18b661721d9ff70e7f4800ab95b6c97">&#9670;&#160;</a></span>VertexLayoutNames</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt; std::string, <a class="el" href="namespaceLLGI.html#aee88c8ecf87da2e271c3dd1ebe18620f">VertexLayoutMax</a> &gt; LLGI::PipelineState::VertexLayoutNames</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a62504f3a1cd30c7167dcff12d40fb286" name="a62504f3a1cd30c7167dcff12d40fb286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62504f3a1cd30c7167dcff12d40fb286">&#9670;&#160;</a></span>VertexLayouts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt; <a class="el" href="namespaceLLGI.html#a17b79cd1ea31397c87173522301d26f4">VertexLayoutFormat</a>, <a class="el" href="namespaceLLGI.html#aee88c8ecf87da2e271c3dd1ebe18620f">VertexLayoutMax</a> &gt; LLGI::PipelineState::VertexLayouts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a75da919b5ae2b2107d37747619282ad5" name="a75da919b5ae2b2107d37747619282ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75da919b5ae2b2107d37747619282ad5">&#9670;&#160;</a></span>VertexLayoutSemantics</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt; int32_t, <a class="el" href="namespaceLLGI.html#aee88c8ecf87da2e271c3dd1ebe18620f">VertexLayoutMax</a> &gt; LLGI::PipelineState::VertexLayoutSemantics</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>only for DirectX12 </p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a> の <a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html#l00051">51</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="install__msvc2022__x64_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x64/include/LLGI/LLGI.PipelineState.h</a></li>
+<li><a class="el" href="install__msvc2022__x86_2include_2LLGI_2LLGI_8PipelineState_8h_source.html">install_msvc2022_x86/include/LLGI/LLGI.PipelineState.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceLLGI.html">LLGI</a></li><li class="navelem"><a class="el" href="classLLGI_1_1PipelineState.html">PipelineState</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

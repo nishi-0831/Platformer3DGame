@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Input.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Input_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">Input.cpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Input_8h_source.html">Input.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IncludingWindows_8h_source.html">IncludingWindows.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IncludingInput_8h_source.html">IncludingInput.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InputData_8h_source.html">InputData.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ReleaseUtility_8h_source.html">ReleaseUtility.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MTAssert_8h_source.html">MTAssert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DoubleWindow_8h_source.html">DoubleWindow.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InputResource_8h_source.html">InputResource.h</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &quot;<a class="el" href="Game_8h_source.html">Game.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ISystem_8h_source.html">ISystem.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Debug_8h_source.html">Debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imgui_8h_source.html">../ImGui/imgui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Timer_8h_source.html">Timer.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Input.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Input_8cpp__incl.svg" width="3370" height="476"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="Input_8cpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceanonymous__namespace_02Input_8cpp_03"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html">anonymous_namespace{Input.cpp}</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ae5d4f7c49a6eb597055659c6416ebb2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Input_8cpp.html#ae5d4f7c49a6eb597055659c6416ebb2f">operator&lt;</a> (const GUID &amp;lhs, const GUID &amp;rhs)</td></tr>
+<tr class="separator:ae5d4f7c49a6eb597055659c6416ebb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac887364fb84e2f99c3a6c776fbfd0083"><td class="memItemLeft" align="right" valign="top">BOOL CALLBACK&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Input_8cpp.html#ac887364fb84e2f99c3a6c776fbfd0083">EnumJoysticksCallback</a> (const LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)</td></tr>
+<tr class="memdesc:ac887364fb84e2f99c3a6c776fbfd0083"><td class="mdescLeft">&#160;</td><td class="mdescRight">ジョイスティックが接続されている場合、デバイスに割り当てる  <br /></td></tr>
+<tr class="separator:ac887364fb84e2f99c3a6c776fbfd0083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:aff82b88bcc9c1bee1b26f58a507323d0"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html#aff82b88bcc9c1bee1b26f58a507323d0">anonymous_namespace{Input.cpp}::KEY_BUFFER_SIZE</a> { 256 }</td></tr>
+<tr class="separator:aff82b88bcc9c1bee1b26f58a507323d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31c8f07ff8ac45e2af877f166e333c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html#ae31c8f07ff8ac45e2af877f166e333c8">anonymous_namespace{Input.cpp}::min</a> = -1000</td></tr>
+<tr class="separator:ae31c8f07ff8ac45e2af877f166e333c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8395b1cf98db66aeb7585f483f44a13e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html#a8395b1cf98db66aeb7585f483f44a13e">anonymous_namespace{Input.cpp}::max</a> = 1000</td></tr>
+<tr class="separator:a8395b1cf98db66aeb7585f483f44a13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cbe03723084caef73bca9bed90e9904"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html#a3cbe03723084caef73bca9bed90e9904">anonymous_namespace{Input.cpp}::xMin</a> { min }</td></tr>
+<tr class="separator:a3cbe03723084caef73bca9bed90e9904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a988573242faa9b0b41aed297d7612322"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html#a988573242faa9b0b41aed297d7612322">anonymous_namespace{Input.cpp}::xMax</a> { max }</td></tr>
+<tr class="separator:a988573242faa9b0b41aed297d7612322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad312b20a24fcc678a984f598f1548c11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html#ad312b20a24fcc678a984f598f1548c11">anonymous_namespace{Input.cpp}::yMin</a> { min }</td></tr>
+<tr class="separator:ad312b20a24fcc678a984f598f1548c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02de9185d37663955965a745560c38aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="InputConfig_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html#a02de9185d37663955965a745560c38aa">anonymous_namespace{Input.cpp}::yMax</a> { max }</td></tr>
+<tr class="separator:a02de9185d37663955965a745560c38aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa46984c3b35dbe4dcd61b4ee91eef0b1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html#aa46984c3b35dbe4dcd61b4ee91eef0b1">anonymous_namespace{Input.cpp}::acquireInterval</a> = 10.0f</td></tr>
+<tr class="separator:aa46984c3b35dbe4dcd61b4ee91eef0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e12acbb09d3a7e0ecf8b4581a774bc7"><td class="memItemLeft" align="right" valign="top">const DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html#a3e12acbb09d3a7e0ecf8b4581a774bc7">anonymous_namespace{Input.cpp}::VENDOR_ID_DUAL_SHOCK</a> { 0x54c }</td></tr>
+<tr class="separator:a3e12acbb09d3a7e0ecf8b4581a774bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f78cdb7af176a63a98f5ad585dc3d0d"><td class="memItemLeft" align="right" valign="top">const DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Input_8cpp_03.html#a2f78cdb7af176a63a98f5ad585dc3d0d">anonymous_namespace{Input.cpp}::VENDOR_ID_XBOX</a> { 0x45E }</td></tr>
+<tr class="separator:a2f78cdb7af176a63a98f5ad585dc3d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ac887364fb84e2f99c3a6c776fbfd0083" name="ac887364fb84e2f99c3a6c776fbfd0083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac887364fb84e2f99c3a6c776fbfd0083">&#9670;&#160;</a></span>EnumJoysticksCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL CALLBACK EnumJoysticksCallback </td>
+          <td>(</td>
+          <td class="paramtype">const LPCDIDEVICEINSTANCE&#160;</td>
+          <td class="paramname"><em>lpddi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPVOID&#160;</td>
+          <td class="paramname"><em>pvRef</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ジョイスティックが接続されている場合、デバイスに割り当てる </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lpddi</td><td>デバイスの情報を持つインスタンス</td></tr>
+    <tr><td class="paramname">pvRef</td><td>EnumDevicesで渡した値</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="Input_8cpp_source.html">Input.cpp</a> の <a class="el" href="Input_8cpp_source.html#l00375">375</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  376</span>{</div>
+<div class="line"><span class="lineno">  377</span>    <span class="keyword">auto</span>&amp; input = Game::System&lt;Input&gt;();</div>
+<div class="line"><span class="lineno">  378</span> </div>
+<div class="line"><span class="lineno">  379</span>    <span class="comment">// 割り当て予約がなかったらデバイスを作成しない</span></div>
+<div class="line"><span class="lineno">  380</span>    <span class="keywordflow">if</span> (input.IsNotSubscribed())</div>
+<div class="line"><span class="lineno">  381</span>    {</div>
+<div class="line"><span class="lineno">  382</span>        <span class="keywordflow">return</span> DIENUM_STOP;</div>
+<div class="line"><span class="lineno">  383</span>    }</div>
+<div class="line"><span class="lineno">  384</span>    <a class="code hl_enumeration" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97">DeviceType</a> devType = <a class="code hl_function" href="classmtgb_1_1Input.html#a5e7d3ec55273498dde61ab62c818fecd">Input::GetDeviceType</a>(*lpddi);</div>
+<div class="line"><span class="lineno">  385</span> </div>
+<div class="line"><span class="lineno">  386</span>    <span class="keywordtype">int</span> reservationIndex = input.FindReservationIndexForDevice(devType);</div>
+<div class="line"><span class="lineno">  387</span> </div>
+<div class="line"><span class="lineno">  388</span>    <span class="keywordflow">if</span>(reservationIndex &lt; 0)</div>
+<div class="line"><span class="lineno">  389</span>    {</div>
+<div class="line"><span class="lineno">  390</span>        <span class="comment">// デバイスを要求している予約はない</span></div>
+<div class="line"><span class="lineno">  391</span>        <span class="keywordflow">return</span> DIENUM_CONTINUE;</div>
+<div class="line"><span class="lineno">  392</span>    }</div>
+<div class="line"><span class="lineno">  393</span>    LPDIRECTINPUT8 pDirectInput = <span class="keyword">reinterpret_cast&lt;</span>LPDIRECTINPUT8<span class="keyword">&gt;</span>(pvRef);</div>
+<div class="line"><span class="lineno">  394</span>    ComPtr&lt;IDirectInputDevice8&gt; pDevice = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  395</span> </div>
+<div class="line"><span class="lineno">  396</span>    <span class="comment">// 割り当て予約があり、未割当なのでデバイス作成</span></div>
+<div class="line"><span class="lineno">  397</span>    HRESULT hResult = pDirectInput-&gt;CreateDevice(lpddi-&gt;guidInstance, pDevice.GetAddressOf(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  398</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult)</div>
+<div class="line"><span class="lineno">  399</span>        &amp;&amp; <span class="stringliteral">&quot;ジョイスティックのデバイスの作成に失敗 @EnumJoysticksCallback&quot;</span>);</div>
+<div class="line"><span class="lineno">  400</span>    </div>
+<div class="line"><span class="lineno">  401</span>    <span class="keywordflow">if</span> (Game::System&lt;Input&gt;().RegisterJoystickGuid(lpddi-&gt;guidInstance) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  402</span>    {</div>
+<div class="line"><span class="lineno">  403</span>        <span class="comment">//既に割り当て済みの為、他のデバイスの列挙に移す</span></div>
+<div class="line"><span class="lineno">  404</span>        pDevice.Reset();</div>
+<div class="line"><span class="lineno">  405</span>        <span class="keywordflow">return</span> DIENUM_CONTINUE;</div>
+<div class="line"><span class="lineno">  406</span>    }</div>
+<div class="line"><span class="lineno">  407</span> </div>
+<div class="line"><span class="lineno">  408</span>    input.AssignJoystickToReservation(pDevice, <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(reservationIndex), lpddi-&gt;guidInstance);</div>
+<div class="line"><span class="lineno">  409</span>    <a class="code hl_define" href="Debug_8h.html#a22dfbe5038b17240020faa877835bc46">LOGIMGUI_CAT</a>(<span class="stringliteral">&quot;Input&quot;</span>, <span class="stringliteral">&quot;Assigned reservationIndex=%d&quot;</span>, reservationIndex);</div>
+<div class="line"><span class="lineno">  410</span> </div>
+<div class="line"><span class="lineno">  411</span>    <span class="comment">// 予約がまだ残っているなら続行</span></div>
+<div class="line"><span class="lineno">  412</span>    <span class="keywordflow">return</span> input.IsNotSubscribed() ? DIENUM_STOP : DIENUM_CONTINUE;</div>
+<div class="line"><span class="lineno">  413</span>}</div>
+<div class="ttc" id="aDebug_8h_html_a22dfbe5038b17240020faa877835bc46"><div class="ttname"><a href="Debug_8h.html#a22dfbe5038b17240020faa877835bc46">LOGIMGUI_CAT</a></div><div class="ttdeci">#define LOGIMGUI_CAT(category, format,...)</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8h_source.html#l00026">Debug.h:26</a></div></div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00009">MTAssert.h:9</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a5e7d3ec55273498dde61ab62c818fecd"><div class="ttname"><a href="classmtgb_1_1Input.html#a5e7d3ec55273498dde61ab62c818fecd">mtgb::Input::GetDeviceType</a></div><div class="ttdeci">static DeviceType GetDeviceType(ComPtr&lt; IDirectInputDevice8 &gt; _pInputDevice)</div><div class="ttdoc">デバイスのタイプを判別</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00563">Input.cpp:563</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a919a09feaf3649c048364fffc3053d97"><div class="ttname"><a href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97">mtgb::DeviceType</a></div><div class="ttdeci">DeviceType</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00025">Input.h:26</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Input_8cpp_source.html#l00563">mtgb::Input::GetDeviceType()</a>, <a class="el" href="Debug_8h_source.html#l00026">LOGIMGUI_CAT</a>, <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="Input_8cpp_source.html#l00415">mtgb::Input::EnumJoystick()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Input_8cpp_ac887364fb84e2f99c3a6c776fbfd0083_cgraph.svg" width="435" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Input_8cpp_ac887364fb84e2f99c3a6c776fbfd0083_icgraph.svg" width="426" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae5d4f7c49a6eb597055659c6416ebb2f" name="ae5d4f7c49a6eb597055659c6416ebb2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d4f7c49a6eb597055659c6416ebb2f">&#9670;&#160;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const GUID &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GUID &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Input_8cpp_source.html">Input.cpp</a> の <a class="el" href="Input_8cpp_source.html#l00067">67</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> std::memcmp(&amp;lhs, &amp;rhs, <span class="keyword">sizeof</span>(GUID)) &lt; 0;</div>
+<div class="line"><span class="lineno">   70</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Input_8cpp.html">Input.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: ScoreViewer.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ScoreViewer_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ScoreViewer.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ScoreViewer_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="stdafx_8h.html">stdafx.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ScoreViewer_8h.html">ScoreViewer.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;format&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html">    4</a></span><span class="keyword">namespace</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">// 608,13</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a8f98d5606f3aa8fdbd2fba270c4ec781">    7</a></span>    <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2F</a> <a class="code hl_variable" href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a8f98d5606f3aa8fdbd2fba270c4ec781">pos</a>{ 608,13 };</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a0a56c4246e1c9f976b9779d77a6dea80">    8</a></span>    <a class="code hl_enumeration" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dba">TextAlignment</a> <a class="code hl_variable" href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a0a56c4246e1c9f976b9779d77a6dea80">alignment</a>{ TextAlignment::topLeft };</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classScoreViewer.html#ab9054d98cbac280714897d3e307e832d">   10</a></span><a class="code hl_function" href="classScoreViewer.html#ab9054d98cbac280714897d3e307e832d">ScoreViewer::ScoreViewer</a>()</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    : pTransform_{Component&lt;<a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&gt;()}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    , pTextRenderer_{Component&lt;<a class="code hl_class" href="classmtgb_1_1TextRenderer.html">TextRenderer</a>&gt;()}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_struct" href="structmtgb_1_1TextRendererData.html">TextRendererData</a> data</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        .<a class="code hl_variable" href="structmtgb_1_1TextRendererData.html#a9aa4d2fdd118be0444bf7fa7719c1f78">rect</a> = <a class="code hl_struct" href="structEffekseer_1_1RectF.html">RectF</a>{608,13,800,43} ,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        .fontSize = 36,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        .params = {.depth = 0,.layerFlag = <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>()},</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        .alignment = TextAlignment::topLeft,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        .layer = <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    };</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    pTextRenderer_-&gt;text = <span class="stringliteral">&quot;Score&quot;</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    pTextRenderer_-&gt;rect = data.rect;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    pTextRenderer_-&gt;fontSize = data.fontSize;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    pTextRenderer_-&gt;params = data.params;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    pTextRenderer_-&gt;alignment = data.alignment;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    pTextRenderer_-&gt;layer = data.layer;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classScoreViewer.html#a560625b6738bb4d55573590752b76a44">   30</a></span><a class="code hl_function" href="classScoreViewer.html#ab9054d98cbac280714897d3e307e832d">ScoreViewer::ScoreViewer</a>(<a class="code hl_struct" href="structEffekseer_1_1RectF.html">RectF</a> _rect,  <span class="keywordtype">int</span> _fontSize, <a class="code hl_enumeration" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dba">TextAlignment</a> _textAlignment)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    : pTextRenderer_{ Component&lt;<a class="code hl_class" href="classmtgb_1_1TextRenderer.html">TextRenderer</a>&gt;() }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    pTextRenderer_-&gt;<a class="code hl_variable" href="structmtgb_1_1TextRendererData.html#a9aa4d2fdd118be0444bf7fa7719c1f78">rect</a> = _rect;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    pTextRenderer_-&gt;fontSize = _fontSize;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    pTextRenderer_-&gt;alignment = _textAlignment;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    pTextRenderer_-&gt;params = { .depth = 0,.layerFlag = <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>() };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    pTextRenderer_-&gt;layer = <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classScoreViewer.html#a75a23c49a5f69f39c6613e41ded7c69f">   41</a></span><a class="code hl_function" href="classScoreViewer.html#a75a23c49a5f69f39c6613e41ded7c69f">ScoreViewer::~ScoreViewer</a>()</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classScoreViewer.html#a97a102d5c40bc38f6662b6e644b07ade">   45</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classScoreViewer.html#a97a102d5c40bc38f6662b6e644b07ade">ScoreViewer::Update</a>()</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    int32_t currScore = Game::System&lt;ScoreManager&gt;().GetScore();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    pTextRenderer_-&gt;text = std::format( <span class="stringliteral">&quot;Score:{}&quot;</span>,currScore);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classScoreViewer.html#ad099bd7715575bf27607729a9ce40f04">   51</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classScoreViewer.html#ad099bd7715575bf27607729a9ce40f04">ScoreViewer::Draw</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">//Vector2F size = Game::System&lt;Screen&gt;().GetSizeF();</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">//std::string text = std::format(&quot;Score:{}&quot;,100);</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">//Draw::ImmediateText(text, pos, 24);</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="ttc" id="aScoreViewer_8h_html"><div class="ttname"><a href="ScoreViewer_8h.html">ScoreViewer.h</a></div></div>
+<div class="ttc" id="aclassScoreViewer_html_a75a23c49a5f69f39c6613e41ded7c69f"><div class="ttname"><a href="classScoreViewer.html#a75a23c49a5f69f39c6613e41ded7c69f">ScoreViewer::~ScoreViewer</a></div><div class="ttdeci">~ScoreViewer()</div><div class="ttdef"><b>Definition:</b> <a href="ScoreViewer_8cpp_source.html#l00041">ScoreViewer.cpp:41</a></div></div>
+<div class="ttc" id="aclassScoreViewer_html_a97a102d5c40bc38f6662b6e644b07ade"><div class="ttname"><a href="classScoreViewer.html#a97a102d5c40bc38f6662b6e644b07ade">ScoreViewer::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="ScoreViewer_8cpp_source.html#l00045">ScoreViewer.cpp:45</a></div></div>
+<div class="ttc" id="aclassScoreViewer_html_ab9054d98cbac280714897d3e307e832d"><div class="ttname"><a href="classScoreViewer.html#ab9054d98cbac280714897d3e307e832d">ScoreViewer::ScoreViewer</a></div><div class="ttdeci">ScoreViewer()</div><div class="ttdef"><b>Definition:</b> <a href="ScoreViewer_8cpp_source.html#l00010">ScoreViewer.cpp:10</a></div></div>
+<div class="ttc" id="aclassScoreViewer_html_ad099bd7715575bf27607729a9ce40f04"><div class="ttname"><a href="classScoreViewer.html#ad099bd7715575bf27607729a9ce40f04">ScoreViewer::Draw</a></div><div class="ttdeci">void Draw() const override</div><div class="ttdef"><b>Definition:</b> <a href="ScoreViewer_8cpp_source.html#l00051">ScoreViewer.cpp:51</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1TextRenderer_html"><div class="ttname"><a href="classmtgb_1_1TextRenderer.html">mtgb::TextRenderer</a></div><div class="ttdef"><b>Definition:</b> <a href="TextRenderer_8h_source.html#l00022">TextRenderer.h:23</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html"><div class="ttname"><a href="classmtgb_1_1Transform.html">mtgb::Transform</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00020">Transform.h:21</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02ScoreViewer_8cpp_03_html_a0a56c4246e1c9f976b9779d77a6dea80"><div class="ttname"><a href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a0a56c4246e1c9f976b9779d77a6dea80">anonymous_namespace{ScoreViewer.cpp}::alignment</a></div><div class="ttdeci">TextAlignment alignment</div><div class="ttdef"><b>Definition:</b> <a href="ScoreViewer_8cpp_source.html#l00008">ScoreViewer.cpp:8</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02ScoreViewer_8cpp_03_html_a8f98d5606f3aa8fdbd2fba270c4ec781"><div class="ttname"><a href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a8f98d5606f3aa8fdbd2fba270c4ec781">anonymous_namespace{ScoreViewer.cpp}::pos</a></div><div class="ttdeci">Vector2F pos</div><div class="ttdef"><b>Definition:</b> <a href="ScoreViewer_8cpp_source.html#l00007">ScoreViewer.cpp:7</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a100fdeed4f1f4e5f27e7ffb97ee743ca"><div class="ttname"><a href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">mtgb::AllLayer</a></div><div class="ttdeci">GameObjectLayerFlag AllLayer()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectLayer_8cpp_source.html#l00007">GameObjectLayer.cpp:7</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_aaa050496bbbdc66aee7c9aeb96d51dba"><div class="ttname"><a href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dba">mtgb::TextAlignment</a></div><div class="ttdeci">TextAlignment</div><div class="ttdoc">テキストを矩形領域内のどこに表示するか</div><div class="ttdef"><b>Definition:</b> <a href="TextAlignment_8h_source.html#l00008">TextAlignment.h:9</a></div></div>
+<div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
+<div class="ttc" id="astructEffekseer_1_1RectF_html"><div class="ttname"><a href="structEffekseer_1_1RectF.html">Effekseer::RectF</a></div><div class="ttdoc">四角形</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01740">install_msvc2022_x64/include/Effekseer/Effekseer.h:1741</a></div></div>
+<div class="ttc" id="astructmtgb_1_1TextRendererData_html"><div class="ttname"><a href="structmtgb_1_1TextRendererData.html">mtgb::TextRendererData</a></div><div class="ttdef"><b>Definition:</b> <a href="TextRenderer_8h_source.html#l00011">TextRenderer.h:12</a></div></div>
+<div class="ttc" id="astructmtgb_1_1TextRendererData_html_a9aa4d2fdd118be0444bf7fa7719c1f78"><div class="ttname"><a href="structmtgb_1_1TextRendererData.html#a9aa4d2fdd118be0444bf7fa7719c1f78">mtgb::TextRendererData::rect</a></div><div class="ttdeci">RectF rect</div><div class="ttdef"><b>Definition:</b> <a href="TextRenderer_8h_source.html#l00014">TextRenderer.h:14</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector2T_html"><div class="ttname"><a href="structmtgb_1_1Vector2T.html">mtgb::Vector2T&lt; float &gt;</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="ScoreViewer_8cpp.html">ScoreViewer.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

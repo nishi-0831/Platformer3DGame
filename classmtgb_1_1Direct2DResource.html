@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::Direct2DResource クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1Direct2DResource.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#friends">フレンド</a> &#124;
+<a href="classmtgb_1_1Direct2DResource-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::Direct2DResource クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="Direct2DResource_8h_source.html">Direct2DResource.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::Direct2DResource の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Direct2DResource__inherit__graph.svg" width="282" height="712"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::Direct2DResource 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Direct2DResource__coll__graph.svg" width="818" height="823"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2a180504724fffa1bc47f7c08c7493be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#a2a180504724fffa1bc47f7c08c7493be">Direct2DResource</a> (<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _windowContext)</td></tr>
+<tr class="separator:a2a180504724fffa1bc47f7c08c7493be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73760ddd83a0394c3c1c8b195de9b43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#ae73760ddd83a0394c3c1c8b195de9b43">~Direct2DResource</a> ()</td></tr>
+<tr class="separator:ae73760ddd83a0394c3c1c8b195de9b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55b6cdeaa01bdaab438340f2b00a7cf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#a55b6cdeaa01bdaab438340f2b00a7cf4">Reset</a> () override</td></tr>
+<tr class="memdesc:a55b6cdeaa01bdaab438340f2b00a7cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウのサイズが変更される前の解放処理  <br /></td></tr>
+<tr class="separator:a55b6cdeaa01bdaab438340f2b00a7cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abce19c903752c9cabeeaec008c5426f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#abce19c903752c9cabeeaec008c5426f8">OnResize</a> (UINT _width, UINT _height) override</td></tr>
+<tr class="memdesc:abce19c903752c9cabeeaec008c5426f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウのサイズが変更された後の処理  <br /></td></tr>
+<tr class="separator:abce19c903752c9cabeeaec008c5426f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a407f2703f904fd5d79b005ae40be7be2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#a407f2703f904fd5d79b005ae40be7be2">SetResource</a> () override</td></tr>
+<tr class="memdesc:a407f2703f904fd5d79b005ae40be7be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウを変更する際に固有のリソースをセットする  <br /></td></tr>
+<tr class="separator:a407f2703f904fd5d79b005ae40be7be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1935c788cf0e1fa355806c81f9dcf6dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#a1935c788cf0e1fa355806c81f9dcf6dd">Release</a> () override</td></tr>
+<tr class="separator:a1935c788cf0e1fa355806c81f9dcf6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc960b1b40665791a3c1f36090250e46"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#acc960b1b40665791a3c1f36090250e46">Update</a> ()</td></tr>
+<tr class="memdesc:acc960b1b40665791a3c1f36090250e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新処理  <br /></td></tr>
+<tr class="separator:acc960b1b40665791a3c1f36090250e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c7d963d4b5d3d5ca59483bff874a98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#ae3c7d963d4b5d3d5ca59483bff874a98">GetWindowContext</a> () const</td></tr>
+<tr class="memdesc:ae3c7d963d4b5d3d5ca59483bff874a98"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウィンドウの識別子を返す  <br /></td></tr>
+<tr class="separator:ae3c7d963d4b5d3d5ca59483bff874a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a8c2d2eae95241847d06c966d7f39199a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">windowContext_</a></td></tr>
+<tr class="separator:a8c2d2eae95241847d06c966d7f39199a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a11bc6d1340774dc9a3a2ef0dff11c4de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#a11bc6d1340774dc9a3a2ef0dff11c4de">Direct2DResource</a> (const <a class="el" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a> &amp;)=delete</td></tr>
+<tr class="separator:a11bc6d1340774dc9a3a2ef0dff11c4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdeb2f6bbd033dd141cac6be4844a127"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#afdeb2f6bbd033dd141cac6be4844a127">operator=</a> (const <a class="el" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a> &amp;)=delete</td></tr>
+<tr class="separator:afdeb2f6bbd033dd141cac6be4844a127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:aec67ceedb2aabf04ef6bd6e1b726c8f1"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; ID2D1RenderTarget &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">pRenderTarget_</a></td></tr>
+<tr class="separator:aec67ceedb2aabf04ef6bd6e1b726c8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a33a1be9736a9bad442104d0656ba3d"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; ID2D1SolidColorBrush &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">pD2DBrush_</a></td></tr>
+<tr class="separator:a9a33a1be9736a9bad442104d0656ba3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+フレンド</h2></td></tr>
+<tr class="memitem:a06bd594120c61f67d4b51a426cf18ee6"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Direct2DResource.html#a06bd594120c61f67d4b51a426cf18ee6">DirectWrite</a></td></tr>
+<tr class="separator:a06bd594120c61f67d4b51a426cf18ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="Direct2DResource_8h_source.html">Direct2DResource.h</a> の <a class="el" href="Direct2DResource_8h_source.html#l00014">14</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a2a180504724fffa1bc47f7c08c7493be" name="a2a180504724fffa1bc47f7c08c7493be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a180504724fffa1bc47f7c08c7493be">&#9670;&#160;</a></span>Direct2DResource() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Direct2DResource::Direct2DResource </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_windowContext</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Direct2DResource_8cpp_source.html">Direct2DResource.cpp</a> の <a class="el" href="Direct2DResource_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>    : <a class="code hl_class" href="classmtgb_1_1WindowContextResource.html">WindowContextResource</a>(_windowContext)</div>
+<div class="line"><span class="lineno">   14</span>    , <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">pRenderTarget_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   15</span>    , <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">pD2DBrush_</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    <span class="comment">// DXGI,Direct3Dのリソースを取得</span></div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&amp; dxgiResource = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&gt;(_windowContext);</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_class" href="classmtgb_1_1Direct3DResource.html">Direct3DResource</a>&amp; d3dResource = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1Direct3DResource.html">Direct3DResource</a>&gt;(_windowContext);</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <span class="comment">// Direct2DのComオブジェクト作成に使う</span></div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_class" href="classmtgb_1_1Direct2D.html">Direct2D</a>&amp; direct2D = Game::System&lt;Direct2D&gt;();</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    <span class="comment">// レンダーターゲット、ブラシを作成</span></div>
+<div class="line"><span class="lineno">   25</span>    direct2D.CreateD2DRenderTarget(dxgiResource.<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a7f2694f639b46324e71a778d8ce5618a">pDXGISurface_</a>.Get(), <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">pRenderTarget_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <span class="comment">// TODO: ブラシの色指定をハードコーディングせずに、外部ファイル、プログラムから指定できるようにする</span></div>
+<div class="line"><span class="lineno">   28</span>    direct2D.CreateSolidColorBrush(D2D1::ColorF::White, <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">pRenderTarget_</a>.Get(), <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">pD2DBrush_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">   29</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html">mtgb::DXGIResource</a></div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00019">DXGIResource.h:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a7f2694f639b46324e71a778d8ce5618a"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a7f2694f639b46324e71a778d8ce5618a">mtgb::DXGIResource::pDXGISurface_</a></div><div class="ttdeci">ComPtr&lt; IDXGISurface &gt; pDXGISurface_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00038">DXGIResource.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a9a33a1be9736a9bad442104d0656ba3d"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">mtgb::Direct2DResource::pD2DBrush_</a></div><div class="ttdeci">ComPtr&lt; ID2D1SolidColorBrush &gt; pD2DBrush_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00027">Direct2DResource.h:27</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_aec67ceedb2aabf04ef6bd6e1b726c8f1"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">mtgb::Direct2DResource::pRenderTarget_</a></div><div class="ttdeci">ComPtr&lt; ID2D1RenderTarget &gt; pRenderTarget_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00026">Direct2DResource.h:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html"><div class="ttname"><a href="classmtgb_1_1Direct2D.html">mtgb::Direct2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00018">Direct2D.h:19</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct3DResource_html"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html">mtgb::Direct3DResource</a></div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8h_source.html#l00013">Direct3DResource.h:14</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html">mtgb::WindowContextResource</a></div><div class="ttdoc">ウィンドウごとに固有のリソースのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00018">WindowContextResource.h:19</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Direct2DResource_8h_source.html#l00027">pD2DBrush_</a>, <a class="el" href="DXGIResource_8h_source.html#l00038">mtgb::DXGIResource::pDXGISurface_</a>, <a class="el" href="Direct2DResource_8h_source.html#l00026">pRenderTarget_</a>.</p>
+
+</div>
+</div>
+<a id="ae73760ddd83a0394c3c1c8b195de9b43" name="ae73760ddd83a0394c3c1c8b195de9b43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73760ddd83a0394c3c1c8b195de9b43">&#9670;&#160;</a></span>~Direct2DResource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Direct2DResource::~Direct2DResource </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Direct2DResource_8cpp_source.html">Direct2DResource.cpp</a> の <a class="el" href="Direct2DResource_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#a1935c788cf0e1fa355806c81f9dcf6dd">Release</a>();</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a1935c788cf0e1fa355806c81f9dcf6dd"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a1935c788cf0e1fa355806c81f9dcf6dd">mtgb::Direct2DResource::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00065">Direct2DResource.cpp:65</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a11bc6d1340774dc9a3a2ef0dff11c4de" name="a11bc6d1340774dc9a3a2ef0dff11c4de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11bc6d1340774dc9a3a2ef0dff11c4de">&#9670;&#160;</a></span>Direct2DResource() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Direct2DResource::Direct2DResource </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ae3c7d963d4b5d3d5ca59483bff874a98" name="ae3c7d963d4b5d3d5ca59483bff874a98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c7d963d4b5d3d5ca59483bff874a98">&#9670;&#160;</a></span>GetWindowContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> mtgb::WindowContextResource::GetWindowContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウの識別子を返す </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00047">47</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">windowContext_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1WindowContextResource_html_a8c2d2eae95241847d06c966d7f39199a"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">mtgb::WindowContextResource::windowContext_</a></div><div class="ttdeci">WindowContext windowContext_</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00052">WindowContextResource.h:52</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="WindowContextResource_8h_source.html#l00052">mtgb::WindowContextResource::windowContext_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="WindowManager_8cpp_source.html#l00030">mtgb::WindowManager::CreateWindowContext()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1WindowContextResource_ae3c7d963d4b5d3d5ca59483bff874a98_icgraph.svg" width="462" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="abce19c903752c9cabeeaec008c5426f8" name="abce19c903752c9cabeeaec008c5426f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce19c903752c9cabeeaec008c5426f8">&#9670;&#160;</a></span>OnResize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Direct2DResource::OnResize </td>
+          <td>(</td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>_height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウのサイズが変更された後の処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_width</td><td>幅</td></tr>
+    <tr><td class="paramname">_height</td><td>高さ</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classmtgb_1_1WindowContextResource.html#aa1afb0355af2bb60bf6a971fee7bf2cf">mtgb::WindowContextResource</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="Direct2DResource_8cpp_source.html">Direct2DResource.cpp</a> の <a class="el" href="Direct2DResource_8cpp_source.html#l00041">41</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#a1935c788cf0e1fa355806c81f9dcf6dd">Release</a>();</div>
+<div class="line"><span class="lineno">   44</span>    </div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">// DXGI,Direct3Dのリソースを取得</span></div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&amp; dxgiResource = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&gt;(<a class="code hl_variable" href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">windowContext_</a>);</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_class" href="classmtgb_1_1Direct3DResource.html">Direct3DResource</a>&amp; d3dResource = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1Direct3DResource.html">Direct3DResource</a>&gt;(<a class="code hl_variable" href="classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a">windowContext_</a>);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="comment">// Direct2DのComオブジェクト作成に使う</span></div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_class" href="classmtgb_1_1Direct2D.html">Direct2D</a>&amp; direct2D = Game::System&lt;Direct2D&gt;();</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <span class="comment">// レンダーターゲット、ブラシを作成</span></div>
+<div class="line"><span class="lineno">   53</span>    direct2D.CreateD2DRenderTarget(dxgiResource.<a class="code hl_variable" href="classmtgb_1_1DXGIResource.html#a7f2694f639b46324e71a778d8ce5618a">pDXGISurface_</a>.Get(), <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">pRenderTarget_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="comment">// TODO: ブラシの色指定をハードコーディングせずに、外部ファイル、プログラムから指定できるようにする</span></div>
+<div class="line"><span class="lineno">   56</span>    direct2D.CreateSolidColorBrush(D2D1::ColorF::White, <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">pRenderTarget_</a>.Get(), <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">pD2DBrush_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">   57</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="DXGIResource_8h_source.html#l00038">mtgb::DXGIResource::pDXGISurface_</a>.</p>
+
+</div>
+</div>
+<a id="afdeb2f6bbd033dd141cac6be4844a127" name="afdeb2f6bbd033dd141cac6be4844a127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdeb2f6bbd033dd141cac6be4844a127">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a> &amp; mtgb::Direct2DResource::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1935c788cf0e1fa355806c81f9dcf6dd" name="a1935c788cf0e1fa355806c81f9dcf6dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1935c788cf0e1fa355806c81f9dcf6dd">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Direct2DResource::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1WindowContextResource.html#a7291eab4bf997c9faf22903a78a2956d">mtgb::WindowContextResource</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="Direct2DResource_8cpp_source.html">Direct2DResource.cpp</a> の <a class="el" href="Direct2DResource_8cpp_source.html#l00065">65</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">pD2DBrush_</a>.Reset();</div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">pRenderTarget_</a>.Reset();</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a55b6cdeaa01bdaab438340f2b00a7cf4" name="a55b6cdeaa01bdaab438340f2b00a7cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55b6cdeaa01bdaab438340f2b00a7cf4">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Direct2DResource::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウのサイズが変更される前の解放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1WindowContextResource.html#af7a1be98828072a5924a3bd2240a7589">mtgb::WindowContextResource</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="Direct2DResource_8cpp_source.html">Direct2DResource.cpp</a> の <a class="el" href="Direct2DResource_8cpp_source.html#l00036">36</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#a1935c788cf0e1fa355806c81f9dcf6dd">Release</a>();</div>
+<div class="line"><span class="lineno">   39</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a407f2703f904fd5d79b005ae40be7be2" name="a407f2703f904fd5d79b005ae40be7be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a407f2703f904fd5d79b005ae40be7be2">&#9670;&#160;</a></span>SetResource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Direct2DResource::SetResource </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ウィンドウを変更する際に固有のリソースをセットする </p>
+
+<p><a class="el" href="classmtgb_1_1WindowContextResource.html#a7fd488edc0465eb2a0808dc5f6c218b1">mtgb::WindowContextResource</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="Direct2DResource_8cpp_source.html">Direct2DResource.cpp</a> の <a class="el" href="Direct2DResource_8cpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
+<div class="line"><span class="lineno">   61</span>    <span class="comment">// ブラシ、レンダーターゲットをセット</span></div>
+<div class="line"><span class="lineno">   62</span>    Game::System&lt;Direct2D&gt;().ChangeRenderTarget(<a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">pD2DBrush_</a>, <a class="code hl_variable" href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">pRenderTarget_</a>);</div>
+<div class="line"><span class="lineno">   63</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acc960b1b40665791a3c1f36090250e46" name="acc960b1b40665791a3c1f36090250e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc960b1b40665791a3c1f36090250e46">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::WindowContextResource::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新処理 </p>
+
+<p><a class="el" href="classmtgb_1_1DXGIResource.html#a4bdee96054d05221b6c3a821c9d76847">mtgb::DXGIResource</a>, <a class="el" href="classmtgb_1_1InputResource.html#ad1a7496289a816903d50af7232189601">mtgb::InputResource</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00042">42</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">フレンドと関連関数の詳解</h2>
+<a id="a06bd594120c61f67d4b51a426cf18ee6" name="a06bd594120c61f67d4b51a426cf18ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06bd594120c61f67d4b51a426cf18ee6">&#9670;&#160;</a></span>DirectWrite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classmtgb_1_1DirectWrite.html">DirectWrite</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Direct2DResource_8h_source.html">Direct2DResource.h</a> の <a class="el" href="Direct2DResource_8h_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a9a33a1be9736a9bad442104d0656ba3d" name="a9a33a1be9736a9bad442104d0656ba3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a33a1be9736a9bad442104d0656ba3d">&#9670;&#160;</a></span>pD2DBrush_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;ID2D1SolidColorBrush&gt; mtgb::Direct2DResource::pD2DBrush_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Direct2DResource_8h_source.html">Direct2DResource.h</a> の <a class="el" href="Direct2DResource_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Direct2DResource_8cpp_source.html#l00012">Direct2DResource()</a>.</p>
+
+</div>
+</div>
+<a id="aec67ceedb2aabf04ef6bd6e1b726c8f1" name="aec67ceedb2aabf04ef6bd6e1b726c8f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec67ceedb2aabf04ef6bd6e1b726c8f1">&#9670;&#160;</a></span>pRenderTarget_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComPtr&lt;ID2D1RenderTarget&gt; mtgb::Direct2DResource::pRenderTarget_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Direct2DResource_8h_source.html">Direct2DResource.h</a> の <a class="el" href="Direct2DResource_8h_source.html#l00026">26</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Direct2DResource_8cpp_source.html#l00012">Direct2DResource()</a>.</p>
+
+</div>
+</div>
+<a id="a8c2d2eae95241847d06c966d7f39199a" name="a8c2d2eae95241847d06c966d7f39199a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c2d2eae95241847d06c966d7f39199a">&#9670;&#160;</a></span>windowContext_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> mtgb::WindowContextResource::windowContext_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="WindowContextResource_8h_source.html">WindowContextResource.h</a> の <a class="el" href="WindowContextResource_8h_source.html#l00052">52</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="WindowContextResource_8h_source.html#l00047">mtgb::WindowContextResource::GetWindowContext()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="Direct2DResource_8h_source.html">Direct2DResource.h</a></li>
+<li><a class="el" href="Direct2DResource_8cpp_source.html">Direct2DResource.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

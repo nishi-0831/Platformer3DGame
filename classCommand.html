@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Command クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classCommand.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classCommand-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">Command クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="Command_8h_source.html">Command.h</a>&quot;</code></p>
+<div class="dynheader">
+Command の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCommand__inherit__graph.svg" width="2951" height="727"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Command 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCommand__coll__graph.svg" width="218" height="220"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:aa545a53d35818f9efb936daf3fa16c61"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#aa545a53d35818f9efb936daf3fa16c61">~Command</a> ()=default</td></tr>
+<tr class="separator:aa545a53d35818f9efb936daf3fa16c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a484c34647660fcfc8ee46b04ad5b32b6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Execute</a> ()=0</td></tr>
+<tr class="memdesc:a484c34647660fcfc8ee46b04ad5b32b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">実行  <br /></td></tr>
+<tr class="separator:a484c34647660fcfc8ee46b04ad5b32b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acee7d28a866913f07e880a675acc4720"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#acee7d28a866913f07e880a675acc4720">Undo</a> ()=0</td></tr>
+<tr class="memdesc:acee7d28a866913f07e880a675acc4720"><td class="mdescLeft">&#160;</td><td class="mdescRight">取り消し  <br /></td></tr>
+<tr class="separator:acee7d28a866913f07e880a675acc4720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ca9ed49533a4e30fb3e2fcfc549a22"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a75ca9ed49533a4e30fb3e2fcfc549a22">Redo</a> ()</td></tr>
+<tr class="memdesc:a75ca9ed49533a4e30fb3e2fcfc549a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">再実行(デフォルトではExecuteと同じ)  <br /></td></tr>
+<tr class="separator:a75ca9ed49533a4e30fb3e2fcfc549a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba62319b363ca36a4112803637ee5491"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#aba62319b363ca36a4112803637ee5491">Name</a> () const =0</td></tr>
+<tr class="separator:aba62319b363ca36a4112803637ee5491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23e1ca01a9937ac120ba579a69d83aac"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommand.html#a23e1ca01a9937ac120ba579a69d83aac">GetCommandTargetEntityId</a> () const =0</td></tr>
+<tr class="separator:a23e1ca01a9937ac120ba579a69d83aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="Command_8h_source.html">Command.h</a> の <a class="el" href="Command_8h_source.html#l00004">4</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="aa545a53d35818f9efb936daf3fa16c61" name="aa545a53d35818f9efb936daf3fa16c61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa545a53d35818f9efb936daf3fa16c61">&#9670;&#160;</a></span>~Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Command::~Command </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a484c34647660fcfc8ee46b04ad5b32b6" name="a484c34647660fcfc8ee46b04ad5b32b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a484c34647660fcfc8ee46b04ad5b32b6">&#9670;&#160;</a></span>Execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Command::Execute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>実行 </p>
+
+<p><a class="el" href="classmtgb_1_1AddComponentCommand.html#a35d594b1c67c67c864a70ff4280cbce7">mtgb::AddComponentCommand</a>, <a class="el" href="classmtgb_1_1AddComponentCommandGeneric.html#abcc39166b6eb7a5b904ba87d630dedd2">mtgb::AddComponentCommandGeneric&lt; T &gt;</a>, <a class="el" href="classmtgb_1_1DuplicateGameObjectCommand.html#a154ccd77ee6372d2e437f5589b5a7207">mtgb::DuplicateGameObjectCommand</a>, <a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#ad32c8184cb004960d92717176f5653d1">mtgb::GameObjectCreateCommand</a>, <a class="el" href="classmtgb_1_1GroupCommand.html#a927287a0045608b0ff5d3e0e95356077">mtgb::GroupCommand</a>, <a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#a26d8637b0e0cbeb7bf22b0f76e7f65a9">mtgb::GuizmoManipulateCommand</a>, <a class="el" href="classmtgb_1_1ImGuiInputCommand.html#ad6c3b9c82ef52e794071190a99e6d37a">mtgb::ImGuiInputCommand&lt; T &gt;</a>, <a class="el" href="classmtgb_1_1PropertyChangeCommand.html#a380c792476d56eb6445a2941fb926f95">mtgb::PropertyChangeCommand</a>, <a class="el" href="classmtgb_1_1SelectionCommand.html#ac6e749508418da850ac9332c15713de6">mtgb::SelectionCommand</a>, <a class="el" href="classmtgb_1_1DeselectionCommand.html#abf4ef313fbe8581cc1031451faffc65e">mtgb::DeselectionCommand</a>で実装されています。</p>
+
+<p class="reference">参照元 <a class="el" href="CommandHistory_8cpp_source.html#l00010">CommandHistory::ExecuteCommand()</a>, <a class="el" href="Command_8h_source.html#l00022">Redo()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCommand_a484c34647660fcfc8ee46b04ad5b32b6_icgraph.svg" width="759" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a23e1ca01a9937ac120ba579a69d83aac" name="a23e1ca01a9937ac120ba579a69d83aac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23e1ca01a9937ac120ba579a69d83aac">&#9670;&#160;</a></span>GetCommandTargetEntityId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a> Command::GetCommandTargetEntityId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1AddComponentCommand.html#ac6ebf2bfc42bd4bd5c7de4893ccb2433">mtgb::AddComponentCommand</a>, <a class="el" href="classmtgb_1_1AddComponentCommandGeneric.html#a36e976c830af06b16a3c9ec6194074d9">mtgb::AddComponentCommandGeneric&lt; T &gt;</a>, <a class="el" href="classmtgb_1_1DuplicateGameObjectCommand.html#a39bc473caa1d5a05a9831a140e760b3d">mtgb::DuplicateGameObjectCommand</a>, <a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#a79dd22c42a6ad7a87224e032b293deaf">mtgb::GameObjectCreateCommand</a>, <a class="el" href="classmtgb_1_1GroupCommand.html#a01282924c8cf945a75f7b767ec66e40b">mtgb::GroupCommand</a>, <a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#adfdcf7aa48f36daa07c048132ebb49af">mtgb::GuizmoManipulateCommand</a>, <a class="el" href="classmtgb_1_1ImGuiInputCommand.html#a2ec30bcc76b9ea332a28695024951414">mtgb::ImGuiInputCommand&lt; T &gt;</a>, <a class="el" href="classmtgb_1_1PropertyChangeCommand.html#a23d165978434600948f1429a67dc051d">mtgb::PropertyChangeCommand</a>, <a class="el" href="classmtgb_1_1SelectionCommand.html#ada5af9508fe2143b27b0b3234f464511">mtgb::SelectionCommand</a>, <a class="el" href="classmtgb_1_1DeselectionCommand.html#a7b791cd7929d4c592b25597a3ab6933d">mtgb::DeselectionCommand</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="aba62319b363ca36a4112803637ee5491" name="aba62319b363ca36a4112803637ee5491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba62319b363ca36a4112803637ee5491">&#9670;&#160;</a></span>Name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string Command::Name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>コマンドの名前 (表示用) </p>
+<p>コピーによる負荷が大きい場合は string_viewなどへ切り替えることを視野に入れる </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p><a class="el" href="classmtgb_1_1AddComponentCommand.html#af9ee68ad0735d9a574f4defe27405cc8">mtgb::AddComponentCommand</a>, <a class="el" href="classmtgb_1_1AddComponentCommandGeneric.html#aaf1cf7b1eec07f0e3bde9a353a0a34af">mtgb::AddComponentCommandGeneric&lt; T &gt;</a>, <a class="el" href="classmtgb_1_1DuplicateGameObjectCommand.html#af531198d949b1cc639005d685fbcf067">mtgb::DuplicateGameObjectCommand</a>, <a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#a0c5a7a1ed9267d9dd4cfd16319a193d3">mtgb::GameObjectCreateCommand</a>, <a class="el" href="classmtgb_1_1GroupCommand.html#a21bd4c94ed3f0a655f26b535f83a9e47">mtgb::GroupCommand</a>, <a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#a8c534f41f6fc602eb9aedd1f9da1ba16">mtgb::GuizmoManipulateCommand</a>, <a class="el" href="classmtgb_1_1ImGuiInputCommand.html#a0c30c47a9d0580507b6a6959803f8b53">mtgb::ImGuiInputCommand&lt; T &gt;</a>, <a class="el" href="classmtgb_1_1PropertyChangeCommand.html#a613db804f23705d2fd8b194353e9e611">mtgb::PropertyChangeCommand</a>, <a class="el" href="classmtgb_1_1SelectionCommand.html#a80d7e20175420b0386fda9c25d3cc289">mtgb::SelectionCommand</a>, <a class="el" href="classmtgb_1_1DeselectionCommand.html#ad06b0b37fd876ce8e8e952f2895ce1f0">mtgb::DeselectionCommand</a>で実装されています。</p>
+
+<p class="reference">参照元 <a class="el" href="CommandHistoryManagerWrapper_8cpp_source.html#l00017">mtgb::NamedCommandHistory::ExecuteCommand()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCommand_aba62319b363ca36a4112803637ee5491_icgraph.svg" width="420" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a75ca9ed49533a4e30fb3e2fcfc549a22" name="a75ca9ed49533a4e30fb3e2fcfc549a22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75ca9ed49533a4e30fb3e2fcfc549a22">&#9670;&#160;</a></span>Redo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Command::Redo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>再実行(デフォルトではExecuteと同じ) </p>
+
+<p><a class="el" href="classmtgb_1_1AddComponentCommandGeneric.html#a616e4423b31cd42908666a8eb6844ab6">mtgb::AddComponentCommandGeneric&lt; T &gt;</a>, <a class="el" href="classmtgb_1_1DuplicateGameObjectCommand.html#a92b8a4fc7b3350dd72693097946aebbb">mtgb::DuplicateGameObjectCommand</a>, <a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#a1a9c6151861a1884249eff76435efb14">mtgb::GameObjectCreateCommand</a>, <a class="el" href="classmtgb_1_1GroupCommand.html#aad9ddb87145b3d63d04bbe3071e7c598">mtgb::GroupCommand</a>, <a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#a2be5bb3a3edb5cd5648f6dc78c48301c">mtgb::GuizmoManipulateCommand</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="Command_8h_source.html">Command.h</a> の <a class="el" href="Command_8h_source.html#l00022">22</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <a class="code hl_function" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Execute</a>(); }</div>
+<div class="ttc" id="aclassCommand_html_a484c34647660fcfc8ee46b04ad5b32b6"><div class="ttname"><a href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Command::Execute</a></div><div class="ttdeci">virtual void Execute()=0</div><div class="ttdoc">実行</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Execute()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="CommandHistory_8cpp_source.html#l00027">CommandHistory::RedoCommand()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCommand_a75ca9ed49533a4e30fb3e2fcfc549a22_cgraph.svg" width="338" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCommand_a75ca9ed49533a4e30fb3e2fcfc549a22_icgraph.svg" width="432" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="acee7d28a866913f07e880a675acc4720" name="acee7d28a866913f07e880a675acc4720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acee7d28a866913f07e880a675acc4720">&#9670;&#160;</a></span>Undo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Command::Undo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>取り消し </p>
+
+<p><a class="el" href="classmtgb_1_1AddComponentCommand.html#a3a0505011dd9fe676c6d580a72c725f4">mtgb::AddComponentCommand</a>, <a class="el" href="classmtgb_1_1AddComponentCommandGeneric.html#a0e537b8eacf6f665695b29f685319bb7">mtgb::AddComponentCommandGeneric&lt; T &gt;</a>, <a class="el" href="classmtgb_1_1DuplicateGameObjectCommand.html#a33094258f1685fe4d92a7f6382f6a573">mtgb::DuplicateGameObjectCommand</a>, <a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#a4ef228c476089d83be188cd7a0d996d9">mtgb::GameObjectCreateCommand</a>, <a class="el" href="classmtgb_1_1GroupCommand.html#ad8bb1a289825212760d885bcf7b86977">mtgb::GroupCommand</a>, <a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#aa80058c7683a9ab52abc8767551c6274">mtgb::GuizmoManipulateCommand</a>, <a class="el" href="classmtgb_1_1ImGuiInputCommand.html#ab8aa71ab9f9bd4dc9b44fbec8ec155a1">mtgb::ImGuiInputCommand&lt; T &gt;</a>, <a class="el" href="classmtgb_1_1PropertyChangeCommand.html#a4755a6b26f6d5fa291778ead024f9c67">mtgb::PropertyChangeCommand</a>, <a class="el" href="classmtgb_1_1SelectionCommand.html#add95f1292466db23a9fc52c291dba564">mtgb::SelectionCommand</a>, <a class="el" href="classmtgb_1_1DeselectionCommand.html#acf153a304ebf32ccead64d06be3b1af7">mtgb::DeselectionCommand</a>で実装されています。</p>
+
+<p class="reference">参照元 <a class="el" href="CommandHistory_8cpp_source.html#l00017">CommandHistory::UndoCommand()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCommand_acee7d28a866913f07e880a675acc4720_icgraph.svg" width="434" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="Command_8h_source.html">Command.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classCommand.html">Command</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

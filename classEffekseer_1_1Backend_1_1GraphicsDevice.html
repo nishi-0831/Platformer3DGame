@@ -1,0 +1,2787 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Effekseer::Backend::GraphicsDevice クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classEffekseer_1_1Backend_1_1GraphicsDevice.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classEffekseer_1_1Backend_1_1GraphicsDevice-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">Effekseer::Backend::GraphicsDevice クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">Effekseer.h</a>&quot;</code></p>
+<div class="dynheader">
+Effekseer::Backend::GraphicsDevice の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1Backend_1_1GraphicsDevice__inherit__graph.svg" width="310" height="1058"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Effekseer::Backend::GraphicsDevice 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1Backend_1_1GraphicsDevice__coll__graph.svg" width="310" height="1058"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2972f5755cca187ae8bd4177d622c1b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a2972f5755cca187ae8bd4177d622c1b5">GraphicsDevice</a> ()=default</td></tr>
+<tr class="separator:a2972f5755cca187ae8bd4177d622c1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa03c45dc2cb1916dd830adc9c7516db3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#aa03c45dc2cb1916dd830adc9c7516db3">~GraphicsDevice</a> ()=default</td></tr>
+<tr class="separator:aa03c45dc2cb1916dd830adc9c7516db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd698833f11c309a3f1b383362e5bb2c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">VertexBufferRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#abd698833f11c309a3f1b383362e5bb2c">CreateVertexBuffer</a> (int32_t size, const void *initialData, bool isDynamic)</td></tr>
+<tr class="memdesc:abd698833f11c309a3f1b383362e5bb2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1VertexBuffer.html">VertexBuffer</a>  <br /></td></tr>
+<tr class="separator:abd698833f11c309a3f1b383362e5bb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fea0855dd68510a769d9a1141c9b211"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">IndexBufferRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a2fea0855dd68510a769d9a1141c9b211">CreateIndexBuffer</a> (int32_t elementCount, const void *initialData, <a class="el" href="namespaceEffekseer_1_1Backend.html#a5e60287cced3bbe9e611bb09549708da">IndexBufferStrideType</a> stride)</td></tr>
+<tr class="memdesc:a2fea0855dd68510a769d9a1141c9b211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1IndexBuffer.html">IndexBuffer</a>  <br /></td></tr>
+<tr class="separator:a2fea0855dd68510a769d9a1141c9b211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bb6e81e8601184840605bc2a20946da"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a0bb6e81e8601184840605bc2a20946da">UpdateVertexBuffer</a> (<a class="el" href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">VertexBufferRef</a> &amp;buffer, int32_t size, int32_t offset, const void *data)</td></tr>
+<tr class="memdesc:a0bb6e81e8601184840605bc2a20946da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update content of a vertex buffer  <br /></td></tr>
+<tr class="separator:a0bb6e81e8601184840605bc2a20946da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2153f18a07898492ece0b27cbaf96c1a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a2153f18a07898492ece0b27cbaf96c1a">UpdateIndexBuffer</a> (<a class="el" href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">IndexBufferRef</a> &amp;buffer, int32_t size, int32_t offset, const void *data)</td></tr>
+<tr class="memdesc:a2153f18a07898492ece0b27cbaf96c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update content of a index buffer  <br /></td></tr>
+<tr class="separator:a2153f18a07898492ece0b27cbaf96c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b02913deb78c31584259f5bf4448b8d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a3b02913deb78c31584259f5bf4448b8d">UpdateUniformBuffer</a> (<a class="el" href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">UniformBufferRef</a> &amp;buffer, int32_t size, int32_t offset, const void *data)</td></tr>
+<tr class="memdesc:a3b02913deb78c31584259f5bf4448b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update content of an uniform buffer  <br /></td></tr>
+<tr class="separator:a3b02913deb78c31584259f5bf4448b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ccdbd66c7b111b6b679efcc5f0be53e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#af4d4c25f783218222fd3b350bc74d2c3">VertexLayoutRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a3ccdbd66c7b111b6b679efcc5f0be53e">CreateVertexLayout</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1VertexLayoutElement.html">VertexLayoutElement</a> *elements, int32_t elementCount)</td></tr>
+<tr class="memdesc:a3ccdbd66c7b111b6b679efcc5f0be53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1VertexLayout.html">VertexLayout</a>  <br /></td></tr>
+<tr class="separator:a3ccdbd66c7b111b6b679efcc5f0be53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b76bdfe4bd65b92c59d5f9f046a71a1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">UniformBufferRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a8b76bdfe4bd65b92c59d5f9f046a71a1">CreateUniformBuffer</a> (int32_t size, const void *initialData)</td></tr>
+<tr class="memdesc:a8b76bdfe4bd65b92c59d5f9f046a71a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1UniformBuffer.html">UniformBuffer</a>  <br /></td></tr>
+<tr class="separator:a8b76bdfe4bd65b92c59d5f9f046a71a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a761d870bb99e5447db0926800b1e6d54"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ae222a2038e9e88a6860c01defc3d08de">PipelineStateRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a761d870bb99e5447db0926800b1e6d54">CreatePipelineState</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1PipelineStateParameter.html">PipelineStateParameter</a> &amp;param)</td></tr>
+<tr class="separator:a761d870bb99e5447db0926800b1e6d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4edb357211a9f149c64c9ae00c9668"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ac6186d34df2e83cddd2cc4e25a947a72">FrameBufferRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a1f4edb357211a9f149c64c9ae00c9668">CreateFrameBuffer</a> (const <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afe">TextureFormatType</a> *formats, int32_t formatCount, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afe">TextureFormatType</a> depthFormat)</td></tr>
+<tr class="separator:a1f4edb357211a9f149c64c9ae00c9668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17af7b6932e7261ecee6b6e5efde07d9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">RenderPassRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a17af7b6932e7261ecee6b6e5efde07d9">CreateRenderPass</a> (<a class="el" href="structEffekseer_1_1FixedSizeVector.html">FixedSizeVector</a>&lt; <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>, <a class="el" href="namespaceEffekseer_1_1Backend.html#af4cf86db48d4bf99b16026552fb52696">RenderTargetMax</a> &gt; &amp;textures, <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;depthTexture)</td></tr>
+<tr class="separator:a17af7b6932e7261ecee6b6e5efde07d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3326bcbc012361a47665a29db92fcb3d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a3326bcbc012361a47665a29db92fcb3d">CreateTexture</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1TextureParameter.html">TextureParameter</a> &amp;param, const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; uint8_t &gt; &amp;initialData=<a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; uint8_t &gt;())</td></tr>
+<tr class="separator:a3326bcbc012361a47665a29db92fcb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a415fcb74c00039af4550419aab4a6097"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a415fcb74c00039af4550419aab4a6097">CreateRenderTexture</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1RenderTextureParameter.html">RenderTextureParameter</a> &amp;param)</td></tr>
+<tr class="separator:a415fcb74c00039af4550419aab4a6097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad597241a8834fcd9dac97444d68393f8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#ad597241a8834fcd9dac97444d68393f8">CreateDepthTexture</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1DepthTextureParameter.html">DepthTextureParameter</a> &amp;param)</td></tr>
+<tr class="separator:ad597241a8834fcd9dac97444d68393f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af861eeb84bfcad0fa1bc332de3b79b7b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#af861eeb84bfcad0fa1bc332de3b79b7b">CopyTexture</a> (<a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;dst, <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;src, const std::array&lt; int, 3 &gt; &amp;dstPos, const std::array&lt; int, 3 &gt; &amp;srcPos, const std::array&lt; int, 3 &gt; &amp;size, int32_t dstLayer, int32_t srcLayer)</td></tr>
+<tr class="separator:af861eeb84bfcad0fa1bc332de3b79b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab22bdcdcaf11143fe6c231b69fde05df"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#ab22bdcdcaf11143fe6c231b69fde05df">CreateShaderFromKey</a> (const char *key)</td></tr>
+<tr class="memdesc:ab22bdcdcaf11143fe6c231b69fde05df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1Shader.html">Shader</a> from key  <br /></td></tr>
+<tr class="separator:ab22bdcdcaf11143fe6c231b69fde05df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9df19ad00a86bc43b9e473b6662fe425"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a9df19ad00a86bc43b9e473b6662fe425">CreateShaderFromCodes</a> (const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; <a class="el" href="classEffekseer_1_1StringView.html">StringView</a>&lt; char &gt; &gt; &amp;vsCodes, const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; <a class="el" href="classEffekseer_1_1StringView.html">StringView</a>&lt; char &gt; &gt; &amp;psCodes, <a class="el" href="namespaceEffekseer_1_1Backend.html#a9bfdb279843dbb5e726b07d0e9b74e92">UniformLayoutRef</a> layout=nullptr)</td></tr>
+<tr class="separator:a9df19ad00a86bc43b9e473b6662fe425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed47441d9728e28acfa96d343b977fa0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#aed47441d9728e28acfa96d343b977fa0">CreateShaderFromBinary</a> (const void *vsData, int32_t vsDataSize, const void *psData, int32_t psDataSize)</td></tr>
+<tr class="separator:aed47441d9728e28acfa96d343b977fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fa770117a60d0ca3e3154e4b4a52fee"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a6fa770117a60d0ca3e3154e4b4a52fee">Draw</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1DrawParameter.html">DrawParameter</a> &amp;drawParam)</td></tr>
+<tr class="memdesc:a6fa770117a60d0ca3e3154e4b4a52fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1ComputeBuffer.html">ComputeBuffer</a>  <br /></td></tr>
+<tr class="separator:a6fa770117a60d0ca3e3154e4b4a52fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa68541dbeb0e94e895e6ab5dbdcb7598"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#aa68541dbeb0e94e895e6ab5dbdcb7598">SetViewport</a> (int32_t x, int32_t y, int32_t width, int32_t height)</td></tr>
+<tr class="separator:aa68541dbeb0e94e895e6ab5dbdcb7598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addab169f35de720ca4d6c38a39b97e63"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#addab169f35de720ca4d6c38a39b97e63">BeginRenderPass</a> (<a class="el" href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">RenderPassRef</a> &amp;renderPass, bool isColorCleared, bool isDepthCleared, <a class="el" href="structEffekseer_1_1Color.html">Color</a> clearColor)</td></tr>
+<tr class="separator:addab169f35de720ca4d6c38a39b97e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acec0a661ae62ce85055ad5ed096ba0ca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#acec0a661ae62ce85055ad5ed096ba0ca">EndRenderPass</a> ()</td></tr>
+<tr class="separator:acec0a661ae62ce85055ad5ed096ba0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09157383df379732a4077558f8dbabd6"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a09157383df379732a4077558f8dbabd6">GetDeviceName</a> () const</td></tr>
+<tr class="separator:a09157383df379732a4077558f8dbabd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2972f5755cca187ae8bd4177d622c1b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a2972f5755cca187ae8bd4177d622c1b5">GraphicsDevice</a> ()=default</td></tr>
+<tr class="separator:a2972f5755cca187ae8bd4177d622c1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa03c45dc2cb1916dd830adc9c7516db3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#aa03c45dc2cb1916dd830adc9c7516db3">~GraphicsDevice</a> ()=default</td></tr>
+<tr class="separator:aa03c45dc2cb1916dd830adc9c7516db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd698833f11c309a3f1b383362e5bb2c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">VertexBufferRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#abd698833f11c309a3f1b383362e5bb2c">CreateVertexBuffer</a> (int32_t size, const void *initialData, bool isDynamic)</td></tr>
+<tr class="memdesc:abd698833f11c309a3f1b383362e5bb2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1VertexBuffer.html">VertexBuffer</a>  <br /></td></tr>
+<tr class="separator:abd698833f11c309a3f1b383362e5bb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fea0855dd68510a769d9a1141c9b211"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">IndexBufferRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a2fea0855dd68510a769d9a1141c9b211">CreateIndexBuffer</a> (int32_t elementCount, const void *initialData, <a class="el" href="namespaceEffekseer_1_1Backend.html#a5e60287cced3bbe9e611bb09549708da">IndexBufferStrideType</a> stride)</td></tr>
+<tr class="memdesc:a2fea0855dd68510a769d9a1141c9b211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1IndexBuffer.html">IndexBuffer</a>  <br /></td></tr>
+<tr class="separator:a2fea0855dd68510a769d9a1141c9b211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bb6e81e8601184840605bc2a20946da"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a0bb6e81e8601184840605bc2a20946da">UpdateVertexBuffer</a> (<a class="el" href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">VertexBufferRef</a> &amp;buffer, int32_t size, int32_t offset, const void *data)</td></tr>
+<tr class="memdesc:a0bb6e81e8601184840605bc2a20946da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update content of a vertex buffer  <br /></td></tr>
+<tr class="separator:a0bb6e81e8601184840605bc2a20946da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2153f18a07898492ece0b27cbaf96c1a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a2153f18a07898492ece0b27cbaf96c1a">UpdateIndexBuffer</a> (<a class="el" href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">IndexBufferRef</a> &amp;buffer, int32_t size, int32_t offset, const void *data)</td></tr>
+<tr class="memdesc:a2153f18a07898492ece0b27cbaf96c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update content of a index buffer  <br /></td></tr>
+<tr class="separator:a2153f18a07898492ece0b27cbaf96c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b02913deb78c31584259f5bf4448b8d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a3b02913deb78c31584259f5bf4448b8d">UpdateUniformBuffer</a> (<a class="el" href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">UniformBufferRef</a> &amp;buffer, int32_t size, int32_t offset, const void *data)</td></tr>
+<tr class="memdesc:a3b02913deb78c31584259f5bf4448b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update content of an uniform buffer  <br /></td></tr>
+<tr class="separator:a3b02913deb78c31584259f5bf4448b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ccdbd66c7b111b6b679efcc5f0be53e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#af4d4c25f783218222fd3b350bc74d2c3">VertexLayoutRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a3ccdbd66c7b111b6b679efcc5f0be53e">CreateVertexLayout</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1VertexLayoutElement.html">VertexLayoutElement</a> *elements, int32_t elementCount)</td></tr>
+<tr class="memdesc:a3ccdbd66c7b111b6b679efcc5f0be53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1VertexLayout.html">VertexLayout</a>  <br /></td></tr>
+<tr class="separator:a3ccdbd66c7b111b6b679efcc5f0be53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b76bdfe4bd65b92c59d5f9f046a71a1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">UniformBufferRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a8b76bdfe4bd65b92c59d5f9f046a71a1">CreateUniformBuffer</a> (int32_t size, const void *initialData)</td></tr>
+<tr class="memdesc:a8b76bdfe4bd65b92c59d5f9f046a71a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1UniformBuffer.html">UniformBuffer</a>  <br /></td></tr>
+<tr class="separator:a8b76bdfe4bd65b92c59d5f9f046a71a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a761d870bb99e5447db0926800b1e6d54"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ae222a2038e9e88a6860c01defc3d08de">PipelineStateRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a761d870bb99e5447db0926800b1e6d54">CreatePipelineState</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1PipelineStateParameter.html">PipelineStateParameter</a> &amp;param)</td></tr>
+<tr class="separator:a761d870bb99e5447db0926800b1e6d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4edb357211a9f149c64c9ae00c9668"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ac6186d34df2e83cddd2cc4e25a947a72">FrameBufferRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a1f4edb357211a9f149c64c9ae00c9668">CreateFrameBuffer</a> (const <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afe">TextureFormatType</a> *formats, int32_t formatCount, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afe">TextureFormatType</a> depthFormat)</td></tr>
+<tr class="separator:a1f4edb357211a9f149c64c9ae00c9668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17af7b6932e7261ecee6b6e5efde07d9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">RenderPassRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a17af7b6932e7261ecee6b6e5efde07d9">CreateRenderPass</a> (<a class="el" href="structEffekseer_1_1FixedSizeVector.html">FixedSizeVector</a>&lt; <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>, <a class="el" href="namespaceEffekseer_1_1Backend.html#af4cf86db48d4bf99b16026552fb52696">RenderTargetMax</a> &gt; &amp;textures, <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;depthTexture)</td></tr>
+<tr class="separator:a17af7b6932e7261ecee6b6e5efde07d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3326bcbc012361a47665a29db92fcb3d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a3326bcbc012361a47665a29db92fcb3d">CreateTexture</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1TextureParameter.html">TextureParameter</a> &amp;param, const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; uint8_t &gt; &amp;initialData=<a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; uint8_t &gt;())</td></tr>
+<tr class="separator:a3326bcbc012361a47665a29db92fcb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a415fcb74c00039af4550419aab4a6097"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a415fcb74c00039af4550419aab4a6097">CreateRenderTexture</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1RenderTextureParameter.html">RenderTextureParameter</a> &amp;param)</td></tr>
+<tr class="separator:a415fcb74c00039af4550419aab4a6097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad597241a8834fcd9dac97444d68393f8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#ad597241a8834fcd9dac97444d68393f8">CreateDepthTexture</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1DepthTextureParameter.html">DepthTextureParameter</a> &amp;param)</td></tr>
+<tr class="separator:ad597241a8834fcd9dac97444d68393f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af861eeb84bfcad0fa1bc332de3b79b7b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#af861eeb84bfcad0fa1bc332de3b79b7b">CopyTexture</a> (<a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;dst, <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;src, const std::array&lt; int, 3 &gt; &amp;dstPos, const std::array&lt; int, 3 &gt; &amp;srcPos, const std::array&lt; int, 3 &gt; &amp;size, int32_t dstLayer, int32_t srcLayer)</td></tr>
+<tr class="separator:af861eeb84bfcad0fa1bc332de3b79b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab22bdcdcaf11143fe6c231b69fde05df"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#ab22bdcdcaf11143fe6c231b69fde05df">CreateShaderFromKey</a> (const char *key)</td></tr>
+<tr class="memdesc:ab22bdcdcaf11143fe6c231b69fde05df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1Shader.html">Shader</a> from key  <br /></td></tr>
+<tr class="separator:ab22bdcdcaf11143fe6c231b69fde05df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9df19ad00a86bc43b9e473b6662fe425"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a9df19ad00a86bc43b9e473b6662fe425">CreateShaderFromCodes</a> (const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; <a class="el" href="classEffekseer_1_1StringView.html">StringView</a>&lt; char &gt; &gt; &amp;vsCodes, const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; <a class="el" href="classEffekseer_1_1StringView.html">StringView</a>&lt; char &gt; &gt; &amp;psCodes, <a class="el" href="namespaceEffekseer_1_1Backend.html#a9bfdb279843dbb5e726b07d0e9b74e92">UniformLayoutRef</a> layout=nullptr)</td></tr>
+<tr class="separator:a9df19ad00a86bc43b9e473b6662fe425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed47441d9728e28acfa96d343b977fa0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#aed47441d9728e28acfa96d343b977fa0">CreateShaderFromBinary</a> (const void *vsData, int32_t vsDataSize, const void *psData, int32_t psDataSize)</td></tr>
+<tr class="separator:aed47441d9728e28acfa96d343b977fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fa770117a60d0ca3e3154e4b4a52fee"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a6fa770117a60d0ca3e3154e4b4a52fee">Draw</a> (const <a class="el" href="structEffekseer_1_1Backend_1_1DrawParameter.html">DrawParameter</a> &amp;drawParam)</td></tr>
+<tr class="memdesc:a6fa770117a60d0ca3e3154e4b4a52fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classEffekseer_1_1Backend_1_1ComputeBuffer.html">ComputeBuffer</a>  <br /></td></tr>
+<tr class="separator:a6fa770117a60d0ca3e3154e4b4a52fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa68541dbeb0e94e895e6ab5dbdcb7598"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#aa68541dbeb0e94e895e6ab5dbdcb7598">SetViewport</a> (int32_t x, int32_t y, int32_t width, int32_t height)</td></tr>
+<tr class="separator:aa68541dbeb0e94e895e6ab5dbdcb7598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addab169f35de720ca4d6c38a39b97e63"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#addab169f35de720ca4d6c38a39b97e63">BeginRenderPass</a> (<a class="el" href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">RenderPassRef</a> &amp;renderPass, bool isColorCleared, bool isDepthCleared, <a class="el" href="structEffekseer_1_1Color.html">Color</a> clearColor)</td></tr>
+<tr class="separator:addab169f35de720ca4d6c38a39b97e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acec0a661ae62ce85055ad5ed096ba0ca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#acec0a661ae62ce85055ad5ed096ba0ca">EndRenderPass</a> ()</td></tr>
+<tr class="separator:acec0a661ae62ce85055ad5ed096ba0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09157383df379732a4077558f8dbabd6"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html#a09157383df379732a4077558f8dbabd6">GetDeviceName</a> () const</td></tr>
+<tr class="separator:a09157383df379732a4077558f8dbabd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc3feeee39b72aea152ed223dbd0fa7"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1ReferenceObject.html#a1cc3feeee39b72aea152ed223dbd0fa7">AddRef</a> ()</td></tr>
+<tr class="memdesc:a1cc3feeee39b72aea152ed223dbd0fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">参照カウンタを加算する。  <br /></td></tr>
+<tr class="separator:a1cc3feeee39b72aea152ed223dbd0fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc3feeee39b72aea152ed223dbd0fa7"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1ReferenceObject.html#a1cc3feeee39b72aea152ed223dbd0fa7">AddRef</a> ()</td></tr>
+<tr class="memdesc:a1cc3feeee39b72aea152ed223dbd0fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">参照カウンタを加算する。  <br /></td></tr>
+<tr class="separator:a1cc3feeee39b72aea152ed223dbd0fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b8c3d79c58ca527850733691053cf5a"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1ReferenceObject.html#a4b8c3d79c58ca527850733691053cf5a">GetRef</a> ()</td></tr>
+<tr class="memdesc:a4b8c3d79c58ca527850733691053cf5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">参照カウンタを取得する。  <br /></td></tr>
+<tr class="separator:a4b8c3d79c58ca527850733691053cf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b8c3d79c58ca527850733691053cf5a"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1ReferenceObject.html#a4b8c3d79c58ca527850733691053cf5a">GetRef</a> ()</td></tr>
+<tr class="memdesc:a4b8c3d79c58ca527850733691053cf5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">参照カウンタを取得する。  <br /></td></tr>
+<tr class="separator:a4b8c3d79c58ca527850733691053cf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0e9aa4d994b557d499b15359b580d8"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1ReferenceObject.html#a6b0e9aa4d994b557d499b15359b580d8">Release</a> ()</td></tr>
+<tr class="memdesc:a6b0e9aa4d994b557d499b15359b580d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">参照カウンタを減算する。0になった時、インスタンスを削除する。  <br /></td></tr>
+<tr class="separator:a6b0e9aa4d994b557d499b15359b580d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0e9aa4d994b557d499b15359b580d8"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1ReferenceObject.html#a6b0e9aa4d994b557d499b15359b580d8">Release</a> ()</td></tr>
+<tr class="memdesc:a6b0e9aa4d994b557d499b15359b580d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">参照カウンタを減算する。0になった時、インスタンスを削除する。  <br /></td></tr>
+<tr class="separator:a6b0e9aa4d994b557d499b15359b580d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a41ea94faafa807a4e2e22fb9e4517731"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a></td></tr>
+<tr class="separator:a41ea94faafa807a4e2e22fb9e4517731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02671">2671</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a2972f5755cca187ae8bd4177d622c1b5" name="a2972f5755cca187ae8bd4177d622c1b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2972f5755cca187ae8bd4177d622c1b5">&#9670;&#160;</a></span>GraphicsDevice() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Effekseer::Backend::GraphicsDevice::GraphicsDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa03c45dc2cb1916dd830adc9c7516db3" name="aa03c45dc2cb1916dd830adc9c7516db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03c45dc2cb1916dd830adc9c7516db3">&#9670;&#160;</a></span>~GraphicsDevice() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Effekseer::Backend::GraphicsDevice::~GraphicsDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2972f5755cca187ae8bd4177d622c1b5" name="a2972f5755cca187ae8bd4177d622c1b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2972f5755cca187ae8bd4177d622c1b5">&#9670;&#160;</a></span>GraphicsDevice() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Effekseer::Backend::GraphicsDevice::GraphicsDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa03c45dc2cb1916dd830adc9c7516db3" name="aa03c45dc2cb1916dd830adc9c7516db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03c45dc2cb1916dd830adc9c7516db3">&#9670;&#160;</a></span>~GraphicsDevice() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Effekseer::Backend::GraphicsDevice::~GraphicsDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a1cc3feeee39b72aea152ed223dbd0fa7" name="a1cc3feeee39b72aea152ed223dbd0fa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc3feeee39b72aea152ed223dbd0fa7">&#9670;&#160;</a></span>AddRef() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Effekseer::ReferenceObject::AddRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>参照カウンタを加算する。 </p>
+<dl class="section return"><dt>戻り値</dt><dd>加算後の参照カウンタ </dd></dl>
+
+<p><a class="el" href="classEffekseer_1_1IReference.html#a3e3b54e8e5081e24f5784e4f9b8f6257">Effekseer::IReference</a>を実装しています。</p>
+
+<p><a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#a66d28b35a1398c70e043c055f398f3f7">Effekseer::MaterialCompilerDX12</a>, <a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#a66d28b35a1398c70e043c055f398f3f7">Effekseer::MaterialCompilerDX12</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00486">486</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  487</span>    {</div>
+<div class="line"><span class="lineno">  488</span>        std::atomic_fetch_add_explicit(&amp;<a class="code hl_variable" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a>, 1, std::memory_order_consume);</div>
+<div class="line"><span class="lineno">  489</span> </div>
+<div class="line"><span class="lineno">  490</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a>;</div>
+<div class="line"><span class="lineno">  491</span>    }</div>
+<div class="ttc" id="aclassEffekseer_1_1ReferenceObject_html_a41ea94faafa807a4e2e22fb9e4517731"><div class="ttname"><a href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">Effekseer::ReferenceObject::m_reference</a></div><div class="ttdeci">std::atomic&lt; int32_t &gt; m_reference</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00474">install_msvc2022_x64/include/Effekseer/Effekseer.h:474</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00474">Effekseer::ReferenceObject::m_reference</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2EffekseerRendererDX12_2EffekseerMaterialCompilerDX12_8h_source.html#l00022">Effekseer::MaterialCompilerDX12::AddRef()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1ReferenceObject_a1cc3feeee39b72aea152ed223dbd0fa7_icgraph.svg" width="462" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a1cc3feeee39b72aea152ed223dbd0fa7" name="a1cc3feeee39b72aea152ed223dbd0fa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc3feeee39b72aea152ed223dbd0fa7">&#9670;&#160;</a></span>AddRef() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Effekseer::ReferenceObject::AddRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>参照カウンタを加算する。 </p>
+<dl class="section return"><dt>戻り値</dt><dd>加算後の参照カウンタ </dd></dl>
+
+<p><a class="el" href="classEffekseer_1_1IReference.html#a3e3b54e8e5081e24f5784e4f9b8f6257">Effekseer::IReference</a>を実装しています。</p>
+
+<p><a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#a66d28b35a1398c70e043c055f398f3f7">Effekseer::MaterialCompilerDX12</a>, <a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#a66d28b35a1398c70e043c055f398f3f7">Effekseer::MaterialCompilerDX12</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00486">486</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  487</span>    {</div>
+<div class="line"><span class="lineno">  488</span>        std::atomic_fetch_add_explicit(&amp;<a class="code hl_variable" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a>, 1, std::memory_order_consume);</div>
+<div class="line"><span class="lineno">  489</span> </div>
+<div class="line"><span class="lineno">  490</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a>;</div>
+<div class="line"><span class="lineno">  491</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00474">Effekseer::ReferenceObject::m_reference</a>.</p>
+
+</div>
+</div>
+<a id="addab169f35de720ca4d6c38a39b97e63" name="addab169f35de720ca4d6c38a39b97e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addab169f35de720ca4d6c38a39b97e63">&#9670;&#160;</a></span>BeginRenderPass() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Effekseer::Backend::GraphicsDevice::BeginRenderPass </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">RenderPassRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>renderPass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isColorCleared</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDepthCleared</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structEffekseer_1_1Color.html">Color</a>&#160;</td>
+          <td class="paramname"><em>clearColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02836">2836</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2837</span>    {</div>
+<div class="line"><span class="lineno"> 2838</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="addab169f35de720ca4d6c38a39b97e63" name="addab169f35de720ca4d6c38a39b97e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addab169f35de720ca4d6c38a39b97e63">&#9670;&#160;</a></span>BeginRenderPass() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Effekseer::Backend::GraphicsDevice::BeginRenderPass </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">RenderPassRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>renderPass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isColorCleared</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDepthCleared</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structEffekseer_1_1Color.html">Color</a>&#160;</td>
+          <td class="paramname"><em>clearColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02836">2836</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2837</span>    {</div>
+<div class="line"><span class="lineno"> 2838</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af861eeb84bfcad0fa1bc332de3b79b7b" name="af861eeb84bfcad0fa1bc332de3b79b7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af861eeb84bfcad0fa1bc332de3b79b7b">&#9670;&#160;</a></span>CopyTexture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Effekseer::Backend::GraphicsDevice::CopyTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; int, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dstPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; int, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>srcPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; int, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>dstLayer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>srcLayer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02792">2792</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2793</span>    {</div>
+<div class="line"><span class="lineno"> 2794</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2795</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af861eeb84bfcad0fa1bc332de3b79b7b" name="af861eeb84bfcad0fa1bc332de3b79b7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af861eeb84bfcad0fa1bc332de3b79b7b">&#9670;&#160;</a></span>CopyTexture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Effekseer::Backend::GraphicsDevice::CopyTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; int, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dstPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; int, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>srcPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; int, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>dstLayer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>srcLayer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02792">2792</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2793</span>    {</div>
+<div class="line"><span class="lineno"> 2794</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2795</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad597241a8834fcd9dac97444d68393f8" name="ad597241a8834fcd9dac97444d68393f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad597241a8834fcd9dac97444d68393f8">&#9670;&#160;</a></span>CreateDepthTexture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> Effekseer::Backend::GraphicsDevice::CreateDepthTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1DepthTextureParameter.html">DepthTextureParameter</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02787">2787</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2788</span>    {</div>
+<div class="line"><span class="lineno"> 2789</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>{};</div>
+<div class="line"><span class="lineno"> 2790</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_1_1Backend_html_a7d5a2bc2e1358969045327cf5064e13f"><div class="ttname"><a href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">Effekseer::Backend::TextureRef</a></div><div class="ttdeci">RefPtr&lt; Texture &gt; TextureRef</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02262">install_msvc2022_x64/include/Effekseer/Effekseer.h:2262</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad597241a8834fcd9dac97444d68393f8" name="ad597241a8834fcd9dac97444d68393f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad597241a8834fcd9dac97444d68393f8">&#9670;&#160;</a></span>CreateDepthTexture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> Effekseer::Backend::GraphicsDevice::CreateDepthTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1DepthTextureParameter.html">DepthTextureParameter</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02787">2787</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2788</span>    {</div>
+<div class="line"><span class="lineno"> 2789</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>{};</div>
+<div class="line"><span class="lineno"> 2790</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1f4edb357211a9f149c64c9ae00c9668" name="a1f4edb357211a9f149c64c9ae00c9668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4edb357211a9f149c64c9ae00c9668">&#9670;&#160;</a></span>CreateFrameBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ac6186d34df2e83cddd2cc4e25a947a72">FrameBufferRef</a> Effekseer::Backend::GraphicsDevice::CreateFrameBuffer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afe">TextureFormatType</a> *&#160;</td>
+          <td class="paramname"><em>formats</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>formatCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afe">TextureFormatType</a>&#160;</td>
+          <td class="paramname"><em>depthFormat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02767">2767</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2768</span>    {</div>
+<div class="line"><span class="lineno"> 2769</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ac6186d34df2e83cddd2cc4e25a947a72">FrameBufferRef</a>{};</div>
+<div class="line"><span class="lineno"> 2770</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_1_1Backend_html_ac6186d34df2e83cddd2cc4e25a947a72"><div class="ttname"><a href="namespaceEffekseer_1_1Backend.html#ac6186d34df2e83cddd2cc4e25a947a72">Effekseer::Backend::FrameBufferRef</a></div><div class="ttdeci">RefPtr&lt; FrameBuffer &gt; FrameBufferRef</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02261">install_msvc2022_x64/include/Effekseer/Effekseer.h:2261</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1f4edb357211a9f149c64c9ae00c9668" name="a1f4edb357211a9f149c64c9ae00c9668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4edb357211a9f149c64c9ae00c9668">&#9670;&#160;</a></span>CreateFrameBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ac6186d34df2e83cddd2cc4e25a947a72">FrameBufferRef</a> Effekseer::Backend::GraphicsDevice::CreateFrameBuffer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afe">TextureFormatType</a> *&#160;</td>
+          <td class="paramname"><em>formats</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>formatCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afe">TextureFormatType</a>&#160;</td>
+          <td class="paramname"><em>depthFormat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02767">2767</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2768</span>    {</div>
+<div class="line"><span class="lineno"> 2769</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ac6186d34df2e83cddd2cc4e25a947a72">FrameBufferRef</a>{};</div>
+<div class="line"><span class="lineno"> 2770</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2fea0855dd68510a769d9a1141c9b211" name="a2fea0855dd68510a769d9a1141c9b211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fea0855dd68510a769d9a1141c9b211">&#9670;&#160;</a></span>CreateIndexBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">IndexBufferRef</a> Effekseer::Backend::GraphicsDevice::CreateIndexBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>elementCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>initialData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a5e60287cced3bbe9e611bb09549708da">IndexBufferStrideType</a>&#160;</td>
+          <td class="paramname"><em>stride</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1IndexBuffer.html">IndexBuffer</a> </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elementCount</td><td>the number of element </td></tr>
+    <tr><td class="paramname">initialData</td><td>the initial data of buffer. If it is null, not initialized. </td></tr>
+    <tr><td class="paramname">stride</td><td>stride type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classEffekseer_1_1Backend_1_1IndexBuffer.html">IndexBuffer</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02697">2697</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2698</span>    {</div>
+<div class="line"><span class="lineno"> 2699</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">IndexBufferRef</a>{};</div>
+<div class="line"><span class="lineno"> 2700</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_1_1Backend_html_aedd350516d8320adc2d6f5e77c5f18b3"><div class="ttname"><a href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">Effekseer::Backend::IndexBufferRef</a></div><div class="ttdeci">RefPtr&lt; IndexBuffer &gt; IndexBufferRef</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02257">install_msvc2022_x64/include/Effekseer/Effekseer.h:2257</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2fea0855dd68510a769d9a1141c9b211" name="a2fea0855dd68510a769d9a1141c9b211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fea0855dd68510a769d9a1141c9b211">&#9670;&#160;</a></span>CreateIndexBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">IndexBufferRef</a> Effekseer::Backend::GraphicsDevice::CreateIndexBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>elementCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>initialData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a5e60287cced3bbe9e611bb09549708da">IndexBufferStrideType</a>&#160;</td>
+          <td class="paramname"><em>stride</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1IndexBuffer.html">IndexBuffer</a> </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elementCount</td><td>the number of element </td></tr>
+    <tr><td class="paramname">initialData</td><td>the initial data of buffer. If it is null, not initialized. </td></tr>
+    <tr><td class="paramname">stride</td><td>stride type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classEffekseer_1_1Backend_1_1IndexBuffer.html">IndexBuffer</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02697">2697</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2698</span>    {</div>
+<div class="line"><span class="lineno"> 2699</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">IndexBufferRef</a>{};</div>
+<div class="line"><span class="lineno"> 2700</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a761d870bb99e5447db0926800b1e6d54" name="a761d870bb99e5447db0926800b1e6d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a761d870bb99e5447db0926800b1e6d54">&#9670;&#160;</a></span>CreatePipelineState() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ae222a2038e9e88a6860c01defc3d08de">PipelineStateRef</a> Effekseer::Backend::GraphicsDevice::CreatePipelineState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1PipelineStateParameter.html">PipelineStateParameter</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02762">2762</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2763</span>    {</div>
+<div class="line"><span class="lineno"> 2764</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ae222a2038e9e88a6860c01defc3d08de">PipelineStateRef</a>{};</div>
+<div class="line"><span class="lineno"> 2765</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_1_1Backend_html_ae222a2038e9e88a6860c01defc3d08de"><div class="ttname"><a href="namespaceEffekseer_1_1Backend.html#ae222a2038e9e88a6860c01defc3d08de">Effekseer::Backend::PipelineStateRef</a></div><div class="ttdeci">RefPtr&lt; PipelineState &gt; PipelineStateRef</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02264">install_msvc2022_x64/include/Effekseer/Effekseer.h:2264</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a761d870bb99e5447db0926800b1e6d54" name="a761d870bb99e5447db0926800b1e6d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a761d870bb99e5447db0926800b1e6d54">&#9670;&#160;</a></span>CreatePipelineState() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ae222a2038e9e88a6860c01defc3d08de">PipelineStateRef</a> Effekseer::Backend::GraphicsDevice::CreatePipelineState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1PipelineStateParameter.html">PipelineStateParameter</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02762">2762</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2763</span>    {</div>
+<div class="line"><span class="lineno"> 2764</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ae222a2038e9e88a6860c01defc3d08de">PipelineStateRef</a>{};</div>
+<div class="line"><span class="lineno"> 2765</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a17af7b6932e7261ecee6b6e5efde07d9" name="a17af7b6932e7261ecee6b6e5efde07d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17af7b6932e7261ecee6b6e5efde07d9">&#9670;&#160;</a></span>CreateRenderPass() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">RenderPassRef</a> Effekseer::Backend::GraphicsDevice::CreateRenderPass </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEffekseer_1_1FixedSizeVector.html">FixedSizeVector</a>&lt; <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>, <a class="el" href="namespaceEffekseer_1_1Backend.html#af4cf86db48d4bf99b16026552fb52696">RenderTargetMax</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>textures</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>depthTexture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02772">2772</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2773</span>    {</div>
+<div class="line"><span class="lineno"> 2774</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">RenderPassRef</a>{};</div>
+<div class="line"><span class="lineno"> 2775</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_1_1Backend_html_afb5cd333fc5d84b1f55abf4dbd240e0b"><div class="ttname"><a href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">Effekseer::Backend::RenderPassRef</a></div><div class="ttdeci">RefPtr&lt; RenderPass &gt; RenderPassRef</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02263">install_msvc2022_x64/include/Effekseer/Effekseer.h:2263</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a17af7b6932e7261ecee6b6e5efde07d9" name="a17af7b6932e7261ecee6b6e5efde07d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17af7b6932e7261ecee6b6e5efde07d9">&#9670;&#160;</a></span>CreateRenderPass() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">RenderPassRef</a> Effekseer::Backend::GraphicsDevice::CreateRenderPass </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEffekseer_1_1FixedSizeVector.html">FixedSizeVector</a>&lt; <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>, <a class="el" href="namespaceEffekseer_1_1Backend.html#af4cf86db48d4bf99b16026552fb52696">RenderTargetMax</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>textures</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>depthTexture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02772">2772</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2773</span>    {</div>
+<div class="line"><span class="lineno"> 2774</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#afb5cd333fc5d84b1f55abf4dbd240e0b">RenderPassRef</a>{};</div>
+<div class="line"><span class="lineno"> 2775</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a415fcb74c00039af4550419aab4a6097" name="a415fcb74c00039af4550419aab4a6097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a415fcb74c00039af4550419aab4a6097">&#9670;&#160;</a></span>CreateRenderTexture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> Effekseer::Backend::GraphicsDevice::CreateRenderTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1RenderTextureParameter.html">RenderTextureParameter</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02782">2782</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2783</span>    {</div>
+<div class="line"><span class="lineno"> 2784</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>{};</div>
+<div class="line"><span class="lineno"> 2785</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a415fcb74c00039af4550419aab4a6097" name="a415fcb74c00039af4550419aab4a6097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a415fcb74c00039af4550419aab4a6097">&#9670;&#160;</a></span>CreateRenderTexture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> Effekseer::Backend::GraphicsDevice::CreateRenderTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1RenderTextureParameter.html">RenderTextureParameter</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02782">2782</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2783</span>    {</div>
+<div class="line"><span class="lineno"> 2784</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>{};</div>
+<div class="line"><span class="lineno"> 2785</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aed47441d9728e28acfa96d343b977fa0" name="aed47441d9728e28acfa96d343b977fa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed47441d9728e28acfa96d343b977fa0">&#9670;&#160;</a></span>CreateShaderFromBinary() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a> Effekseer::Backend::GraphicsDevice::CreateShaderFromBinary </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>vsData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>vsDataSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>psData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>psDataSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02812">2812</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2813</span>    {</div>
+<div class="line"><span class="lineno"> 2814</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>{};</div>
+<div class="line"><span class="lineno"> 2815</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_1_1Backend_html_ab08109f5ec88987c119b54ffabea9a4a"><div class="ttname"><a href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">Effekseer::Backend::ShaderRef</a></div><div class="ttdeci">RefPtr&lt; Shader &gt; ShaderRef</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02259">install_msvc2022_x64/include/Effekseer/Effekseer.h:2259</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aed47441d9728e28acfa96d343b977fa0" name="aed47441d9728e28acfa96d343b977fa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed47441d9728e28acfa96d343b977fa0">&#9670;&#160;</a></span>CreateShaderFromBinary() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a> Effekseer::Backend::GraphicsDevice::CreateShaderFromBinary </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>vsData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>vsDataSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>psData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>psDataSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02812">2812</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2813</span>    {</div>
+<div class="line"><span class="lineno"> 2814</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>{};</div>
+<div class="line"><span class="lineno"> 2815</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9df19ad00a86bc43b9e473b6662fe425" name="a9df19ad00a86bc43b9e473b6662fe425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9df19ad00a86bc43b9e473b6662fe425">&#9670;&#160;</a></span>CreateShaderFromCodes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a> Effekseer::Backend::GraphicsDevice::CreateShaderFromCodes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; <a class="el" href="classEffekseer_1_1StringView.html">StringView</a>&lt; char &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vsCodes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; <a class="el" href="classEffekseer_1_1StringView.html">StringView</a>&lt; char &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>psCodes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a9bfdb279843dbb5e726b07d0e9b74e92">UniformLayoutRef</a>&#160;</td>
+          <td class="paramname"><em>layout</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02807">2807</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2808</span>    {</div>
+<div class="line"><span class="lineno"> 2809</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>{};</div>
+<div class="line"><span class="lineno"> 2810</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9df19ad00a86bc43b9e473b6662fe425" name="a9df19ad00a86bc43b9e473b6662fe425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9df19ad00a86bc43b9e473b6662fe425">&#9670;&#160;</a></span>CreateShaderFromCodes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a> Effekseer::Backend::GraphicsDevice::CreateShaderFromCodes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; <a class="el" href="classEffekseer_1_1StringView.html">StringView</a>&lt; char &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vsCodes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; <a class="el" href="classEffekseer_1_1StringView.html">StringView</a>&lt; char &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>psCodes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a9bfdb279843dbb5e726b07d0e9b74e92">UniformLayoutRef</a>&#160;</td>
+          <td class="paramname"><em>layout</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02807">2807</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2808</span>    {</div>
+<div class="line"><span class="lineno"> 2809</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>{};</div>
+<div class="line"><span class="lineno"> 2810</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab22bdcdcaf11143fe6c231b69fde05df" name="ab22bdcdcaf11143fe6c231b69fde05df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab22bdcdcaf11143fe6c231b69fde05df">&#9670;&#160;</a></span>CreateShaderFromKey() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a> Effekseer::Backend::GraphicsDevice::CreateShaderFromKey </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1Shader.html">Shader</a> from key </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>a key which specifies a shader </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classEffekseer_1_1Backend_1_1Shader.html">Shader</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02802">2802</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2803</span>    {</div>
+<div class="line"><span class="lineno"> 2804</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>{};</div>
+<div class="line"><span class="lineno"> 2805</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab22bdcdcaf11143fe6c231b69fde05df" name="ab22bdcdcaf11143fe6c231b69fde05df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab22bdcdcaf11143fe6c231b69fde05df">&#9670;&#160;</a></span>CreateShaderFromKey() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a> Effekseer::Backend::GraphicsDevice::CreateShaderFromKey </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1Shader.html">Shader</a> from key </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>a key which specifies a shader </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classEffekseer_1_1Backend_1_1Shader.html">Shader</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02802">2802</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2803</span>    {</div>
+<div class="line"><span class="lineno"> 2804</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ab08109f5ec88987c119b54ffabea9a4a">ShaderRef</a>{};</div>
+<div class="line"><span class="lineno"> 2805</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3326bcbc012361a47665a29db92fcb3d" name="a3326bcbc012361a47665a29db92fcb3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3326bcbc012361a47665a29db92fcb3d">&#9670;&#160;</a></span>CreateTexture() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> Effekseer::Backend::GraphicsDevice::CreateTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1TextureParameter.html">TextureParameter</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>initialData</em> = <code><a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt;uint8_t&gt;()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02777">2777</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2778</span>    {</div>
+<div class="line"><span class="lineno"> 2779</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>{};</div>
+<div class="line"><span class="lineno"> 2780</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3326bcbc012361a47665a29db92fcb3d" name="a3326bcbc012361a47665a29db92fcb3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3326bcbc012361a47665a29db92fcb3d">&#9670;&#160;</a></span>CreateTexture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a> Effekseer::Backend::GraphicsDevice::CreateTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1TextureParameter.html">TextureParameter</a> &amp;&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>initialData</em> = <code><a class="el" href="namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447">CustomVector</a>&lt;uint8_t&gt;()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02777">2777</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2778</span>    {</div>
+<div class="line"><span class="lineno"> 2779</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#a7d5a2bc2e1358969045327cf5064e13f">TextureRef</a>{};</div>
+<div class="line"><span class="lineno"> 2780</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8b76bdfe4bd65b92c59d5f9f046a71a1" name="a8b76bdfe4bd65b92c59d5f9f046a71a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b76bdfe4bd65b92c59d5f9f046a71a1">&#9670;&#160;</a></span>CreateUniformBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">UniformBufferRef</a> Effekseer::Backend::GraphicsDevice::CreateUniformBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>initialData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1UniformBuffer.html">UniformBuffer</a> </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>the size of buffer </td></tr>
+    <tr><td class="paramname">initialData</td><td>the initial data of buffer. If it is null, not initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classEffekseer_1_1Backend_1_1UniformBuffer.html">UniformBuffer</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02757">2757</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2758</span>    {</div>
+<div class="line"><span class="lineno"> 2759</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">UniformBufferRef</a>{};</div>
+<div class="line"><span class="lineno"> 2760</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_1_1Backend_html_a52df63edd7bf5c0d1d23b641b38fdcef"><div class="ttname"><a href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">Effekseer::Backend::UniformBufferRef</a></div><div class="ttdeci">RefPtr&lt; UniformBuffer &gt; UniformBufferRef</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02258">install_msvc2022_x64/include/Effekseer/Effekseer.h:2258</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8b76bdfe4bd65b92c59d5f9f046a71a1" name="a8b76bdfe4bd65b92c59d5f9f046a71a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b76bdfe4bd65b92c59d5f9f046a71a1">&#9670;&#160;</a></span>CreateUniformBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">UniformBufferRef</a> Effekseer::Backend::GraphicsDevice::CreateUniformBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>initialData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1UniformBuffer.html">UniformBuffer</a> </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>the size of buffer </td></tr>
+    <tr><td class="paramname">initialData</td><td>the initial data of buffer. If it is null, not initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classEffekseer_1_1Backend_1_1UniformBuffer.html">UniformBuffer</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02757">2757</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2758</span>    {</div>
+<div class="line"><span class="lineno"> 2759</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">UniformBufferRef</a>{};</div>
+<div class="line"><span class="lineno"> 2760</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abd698833f11c309a3f1b383362e5bb2c" name="abd698833f11c309a3f1b383362e5bb2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd698833f11c309a3f1b383362e5bb2c">&#9670;&#160;</a></span>CreateVertexBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">VertexBufferRef</a> Effekseer::Backend::GraphicsDevice::CreateVertexBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>initialData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDynamic</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1VertexBuffer.html">VertexBuffer</a> </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>the size of buffer </td></tr>
+    <tr><td class="paramname">initialData</td><td>the initial data of buffer. If it is null, not initialized. </td></tr>
+    <tr><td class="paramname">isDynamic</td><td>whether is the buffer dynamic? (for DirectX9, 11 or OpenGL) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classEffekseer_1_1Backend_1_1VertexBuffer.html">VertexBuffer</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02685">2685</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2686</span>    {</div>
+<div class="line"><span class="lineno"> 2687</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">VertexBufferRef</a>{};</div>
+<div class="line"><span class="lineno"> 2688</span>    }</div>
+<div class="ttc" id="anamespaceEffekseer_1_1Backend_html_ab566da9724d7f3227923403d4ff1c904"><div class="ttname"><a href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">Effekseer::Backend::VertexBufferRef</a></div><div class="ttdeci">RefPtr&lt; VertexBuffer &gt; VertexBufferRef</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02256">install_msvc2022_x64/include/Effekseer/Effekseer.h:2256</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abd698833f11c309a3f1b383362e5bb2c" name="abd698833f11c309a3f1b383362e5bb2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd698833f11c309a3f1b383362e5bb2c">&#9670;&#160;</a></span>CreateVertexBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">VertexBufferRef</a> Effekseer::Backend::GraphicsDevice::CreateVertexBuffer </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>initialData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDynamic</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1VertexBuffer.html">VertexBuffer</a> </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>the size of buffer </td></tr>
+    <tr><td class="paramname">initialData</td><td>the initial data of buffer. If it is null, not initialized. </td></tr>
+    <tr><td class="paramname">isDynamic</td><td>whether is the buffer dynamic? (for DirectX9, 11 or OpenGL) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classEffekseer_1_1Backend_1_1VertexBuffer.html">VertexBuffer</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02685">2685</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2686</span>    {</div>
+<div class="line"><span class="lineno"> 2687</span>        <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">VertexBufferRef</a>{};</div>
+<div class="line"><span class="lineno"> 2688</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3ccdbd66c7b111b6b679efcc5f0be53e" name="a3ccdbd66c7b111b6b679efcc5f0be53e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ccdbd66c7b111b6b679efcc5f0be53e">&#9670;&#160;</a></span>CreateVertexLayout() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#af4d4c25f783218222fd3b350bc74d2c3">VertexLayoutRef</a> Effekseer::Backend::GraphicsDevice::CreateVertexLayout </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1VertexLayoutElement.html">VertexLayoutElement</a> *&#160;</td>
+          <td class="paramname"><em>elements</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>elementCount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1VertexLayout.html">VertexLayout</a> </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elements</td><td>a pointer of array of vertex layout elements </td></tr>
+    <tr><td class="paramname">elementCount</td><td>the number of elements </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02746">2746</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2747</span>    {</div>
+<div class="line"><span class="lineno"> 2748</span>        <span class="keywordflow">return</span> RefPtr&lt;VertexLayout&gt;{};</div>
+<div class="line"><span class="lineno"> 2749</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3ccdbd66c7b111b6b679efcc5f0be53e" name="a3ccdbd66c7b111b6b679efcc5f0be53e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ccdbd66c7b111b6b679efcc5f0be53e">&#9670;&#160;</a></span>CreateVertexLayout() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceEffekseer_1_1Backend.html#af4d4c25f783218222fd3b350bc74d2c3">VertexLayoutRef</a> Effekseer::Backend::GraphicsDevice::CreateVertexLayout </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1VertexLayoutElement.html">VertexLayoutElement</a> *&#160;</td>
+          <td class="paramname"><em>elements</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>elementCount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1VertexLayout.html">VertexLayout</a> </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elements</td><td>a pointer of array of vertex layout elements </td></tr>
+    <tr><td class="paramname">elementCount</td><td>the number of elements </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02746">2746</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2747</span>    {</div>
+<div class="line"><span class="lineno"> 2748</span>        <span class="keywordflow">return</span> RefPtr&lt;VertexLayout&gt;{};</div>
+<div class="line"><span class="lineno"> 2749</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6fa770117a60d0ca3e3154e4b4a52fee" name="a6fa770117a60d0ca3e3154e4b4a52fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fa770117a60d0ca3e3154e4b4a52fee">&#9670;&#160;</a></span>Draw() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Effekseer::Backend::GraphicsDevice::Draw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1DrawParameter.html">DrawParameter</a> &amp;&#160;</td>
+          <td class="paramname"><em>drawParam</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1ComputeBuffer.html">ComputeBuffer</a> </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>the size of buffer </td></tr>
+    <tr><td class="paramname">initialData</td><td>the initial data of buffer. If it is null, not initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classEffekseer_1_1Backend_1_1ComputeBuffer.html">ComputeBuffer</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02828">2828</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2829</span>    {</div>
+<div class="line"><span class="lineno"> 2830</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6fa770117a60d0ca3e3154e4b4a52fee" name="a6fa770117a60d0ca3e3154e4b4a52fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fa770117a60d0ca3e3154e4b4a52fee">&#9670;&#160;</a></span>Draw() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Effekseer::Backend::GraphicsDevice::Draw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structEffekseer_1_1Backend_1_1DrawParameter.html">DrawParameter</a> &amp;&#160;</td>
+          <td class="paramname"><em>drawParam</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <a class="el" href="classEffekseer_1_1Backend_1_1ComputeBuffer.html">ComputeBuffer</a> </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>the size of buffer </td></tr>
+    <tr><td class="paramname">initialData</td><td>the initial data of buffer. If it is null, not initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><a class="el" href="classEffekseer_1_1Backend_1_1ComputeBuffer.html">ComputeBuffer</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02828">2828</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2829</span>    {</div>
+<div class="line"><span class="lineno"> 2830</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acec0a661ae62ce85055ad5ed096ba0ca" name="acec0a661ae62ce85055ad5ed096ba0ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acec0a661ae62ce85055ad5ed096ba0ca">&#9670;&#160;</a></span>EndRenderPass() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Effekseer::Backend::GraphicsDevice::EndRenderPass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02840">2840</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2841</span>    {</div>
+<div class="line"><span class="lineno"> 2842</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acec0a661ae62ce85055ad5ed096ba0ca" name="acec0a661ae62ce85055ad5ed096ba0ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acec0a661ae62ce85055ad5ed096ba0ca">&#9670;&#160;</a></span>EndRenderPass() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Effekseer::Backend::GraphicsDevice::EndRenderPass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02840">2840</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2841</span>    {</div>
+<div class="line"><span class="lineno"> 2842</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a09157383df379732a4077558f8dbabd6" name="a09157383df379732a4077558f8dbabd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09157383df379732a4077558f8dbabd6">&#9670;&#160;</a></span>GetDeviceName() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string Effekseer::Backend::GraphicsDevice::GetDeviceName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02844">2844</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2845</span>    {</div>
+<div class="line"><span class="lineno"> 2846</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno"> 2847</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a09157383df379732a4077558f8dbabd6" name="a09157383df379732a4077558f8dbabd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09157383df379732a4077558f8dbabd6">&#9670;&#160;</a></span>GetDeviceName() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string Effekseer::Backend::GraphicsDevice::GetDeviceName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02844">2844</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2845</span>    {</div>
+<div class="line"><span class="lineno"> 2846</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno"> 2847</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4b8c3d79c58ca527850733691053cf5a" name="a4b8c3d79c58ca527850733691053cf5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b8c3d79c58ca527850733691053cf5a">&#9670;&#160;</a></span>GetRef() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Effekseer::ReferenceObject::GetRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>参照カウンタを取得する。 </p>
+<dl class="section return"><dt>戻り値</dt><dd>参照カウンタ </dd></dl>
+
+<p><a class="el" href="classEffekseer_1_1IReference.html#a95274c788c8c03d27a3e424facc728b6">Effekseer::IReference</a>を実装しています。</p>
+
+<p><a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#a4c2c3d1a9c1efdfba66916b61d945c71">Effekseer::MaterialCompilerDX12</a>, <a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#a4c2c3d1a9c1efdfba66916b61d945c71">Effekseer::MaterialCompilerDX12</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00493">493</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  494</span>    {</div>
+<div class="line"><span class="lineno">  495</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a>;</div>
+<div class="line"><span class="lineno">  496</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00474">Effekseer::ReferenceObject::m_reference</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2EffekseerRendererDX12_2EffekseerMaterialCompilerDX12_8h_source.html#l00032">Effekseer::MaterialCompilerDX12::GetRef()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1ReferenceObject_a4b8c3d79c58ca527850733691053cf5a_icgraph.svg" width="462" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4b8c3d79c58ca527850733691053cf5a" name="a4b8c3d79c58ca527850733691053cf5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b8c3d79c58ca527850733691053cf5a">&#9670;&#160;</a></span>GetRef() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Effekseer::ReferenceObject::GetRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>参照カウンタを取得する。 </p>
+<dl class="section return"><dt>戻り値</dt><dd>参照カウンタ </dd></dl>
+
+<p><a class="el" href="classEffekseer_1_1IReference.html#a95274c788c8c03d27a3e424facc728b6">Effekseer::IReference</a>を実装しています。</p>
+
+<p><a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#a4c2c3d1a9c1efdfba66916b61d945c71">Effekseer::MaterialCompilerDX12</a>, <a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#a4c2c3d1a9c1efdfba66916b61d945c71">Effekseer::MaterialCompilerDX12</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00493">493</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  494</span>    {</div>
+<div class="line"><span class="lineno">  495</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a>;</div>
+<div class="line"><span class="lineno">  496</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00474">Effekseer::ReferenceObject::m_reference</a>.</p>
+
+</div>
+</div>
+<a id="a6b0e9aa4d994b557d499b15359b580d8" name="a6b0e9aa4d994b557d499b15359b580d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b0e9aa4d994b557d499b15359b580d8">&#9670;&#160;</a></span>Release() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Effekseer::ReferenceObject::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>参照カウンタを減算する。0になった時、インスタンスを削除する。 </p>
+<dl class="section return"><dt>戻り値</dt><dd>減算後の参照カウンタ </dd></dl>
+
+<p><a class="el" href="classEffekseer_1_1IReference.html#ad8d601188c0f088f4748aa2da8758bb5">Effekseer::IReference</a>を実装しています。</p>
+
+<p><a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#afbe86bffff2e6278e7d0ef19fe8b4848">Effekseer::MaterialCompilerDX12</a>, <a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#afbe86bffff2e6278e7d0ef19fe8b4848">Effekseer::MaterialCompilerDX12</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00498">498</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  499</span>    {</div>
+<div class="line"><span class="lineno">  500</span>        <span class="keywordtype">bool</span> destroy = std::atomic_fetch_sub_explicit(&amp;<a class="code hl_variable" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a>, 1, std::memory_order_consume) == 1;</div>
+<div class="line"><span class="lineno">  501</span>        <span class="keywordflow">if</span> (destroy)</div>
+<div class="line"><span class="lineno">  502</span>        {</div>
+<div class="line"><span class="lineno">  503</span>            <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  504</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  505</span>        }</div>
+<div class="line"><span class="lineno">  506</span> </div>
+<div class="line"><span class="lineno">  507</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a>;</div>
+<div class="line"><span class="lineno">  508</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00474">Effekseer::ReferenceObject::m_reference</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2EffekseerRendererDX12_2EffekseerMaterialCompilerDX12_8h_source.html#l00027">Effekseer::MaterialCompilerDX12::Release()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEffekseer_1_1ReferenceObject_a6b0e9aa4d994b557d499b15359b580d8_icgraph.svg" width="462" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6b0e9aa4d994b557d499b15359b580d8" name="a6b0e9aa4d994b557d499b15359b580d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b0e9aa4d994b557d499b15359b580d8">&#9670;&#160;</a></span>Release() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Effekseer::ReferenceObject::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>参照カウンタを減算する。0になった時、インスタンスを削除する。 </p>
+<dl class="section return"><dt>戻り値</dt><dd>減算後の参照カウンタ </dd></dl>
+
+<p><a class="el" href="classEffekseer_1_1IReference.html#ad8d601188c0f088f4748aa2da8758bb5">Effekseer::IReference</a>を実装しています。</p>
+
+<p><a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#afbe86bffff2e6278e7d0ef19fe8b4848">Effekseer::MaterialCompilerDX12</a>, <a class="el" href="classEffekseer_1_1MaterialCompilerDX12.html#afbe86bffff2e6278e7d0ef19fe8b4848">Effekseer::MaterialCompilerDX12</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00498">498</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  499</span>    {</div>
+<div class="line"><span class="lineno">  500</span>        <span class="keywordtype">bool</span> destroy = std::atomic_fetch_sub_explicit(&amp;<a class="code hl_variable" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a>, 1, std::memory_order_consume) == 1;</div>
+<div class="line"><span class="lineno">  501</span>        <span class="keywordflow">if</span> (destroy)</div>
+<div class="line"><span class="lineno">  502</span>        {</div>
+<div class="line"><span class="lineno">  503</span>            <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  504</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  505</span>        }</div>
+<div class="line"><span class="lineno">  506</span> </div>
+<div class="line"><span class="lineno">  507</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classEffekseer_1_1ReferenceObject.html#a41ea94faafa807a4e2e22fb9e4517731">m_reference</a>;</div>
+<div class="line"><span class="lineno">  508</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00474">Effekseer::ReferenceObject::m_reference</a>.</p>
+
+</div>
+</div>
+<a id="aa68541dbeb0e94e895e6ab5dbdcb7598" name="aa68541dbeb0e94e895e6ab5dbdcb7598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa68541dbeb0e94e895e6ab5dbdcb7598">&#9670;&#160;</a></span>SetViewport() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Effekseer::Backend::GraphicsDevice::SetViewport </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02832">2832</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2833</span>    {</div>
+<div class="line"><span class="lineno"> 2834</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa68541dbeb0e94e895e6ab5dbdcb7598" name="aa68541dbeb0e94e895e6ab5dbdcb7598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa68541dbeb0e94e895e6ab5dbdcb7598">&#9670;&#160;</a></span>SetViewport() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Effekseer::Backend::GraphicsDevice::SetViewport </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02832">2832</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2833</span>    {</div>
+<div class="line"><span class="lineno"> 2834</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2153f18a07898492ece0b27cbaf96c1a" name="a2153f18a07898492ece0b27cbaf96c1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2153f18a07898492ece0b27cbaf96c1a">&#9670;&#160;</a></span>UpdateIndexBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Effekseer::Backend::GraphicsDevice::UpdateIndexBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">IndexBufferRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update content of a index buffer </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>buffer </td></tr>
+    <tr><td class="paramname">size</td><td>the size of updated buffer </td></tr>
+    <tr><td class="paramname">offset</td><td>the offset of updated buffer </td></tr>
+    <tr><td class="paramname">data</td><td>updating data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>Succeeded in updating? </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02723">2723</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2724</span>    {</div>
+<div class="line"><span class="lineno"> 2725</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2726</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2153f18a07898492ece0b27cbaf96c1a" name="a2153f18a07898492ece0b27cbaf96c1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2153f18a07898492ece0b27cbaf96c1a">&#9670;&#160;</a></span>UpdateIndexBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Effekseer::Backend::GraphicsDevice::UpdateIndexBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#aedd350516d8320adc2d6f5e77c5f18b3">IndexBufferRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update content of a index buffer </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>buffer </td></tr>
+    <tr><td class="paramname">size</td><td>the size of updated buffer </td></tr>
+    <tr><td class="paramname">offset</td><td>the offset of updated buffer </td></tr>
+    <tr><td class="paramname">data</td><td>updating data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>Succeeded in updating? </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02723">2723</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2724</span>    {</div>
+<div class="line"><span class="lineno"> 2725</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2726</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3b02913deb78c31584259f5bf4448b8d" name="a3b02913deb78c31584259f5bf4448b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b02913deb78c31584259f5bf4448b8d">&#9670;&#160;</a></span>UpdateUniformBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Effekseer::Backend::GraphicsDevice::UpdateUniformBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">UniformBufferRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update content of an uniform buffer </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>buffer </td></tr>
+    <tr><td class="paramname">size</td><td>the size of updated buffer </td></tr>
+    <tr><td class="paramname">offset</td><td>the offset of updated buffer </td></tr>
+    <tr><td class="paramname">data</td><td>updating data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>Succeeded in updating? </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02736">2736</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2737</span>    {</div>
+<div class="line"><span class="lineno"> 2738</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2739</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3b02913deb78c31584259f5bf4448b8d" name="a3b02913deb78c31584259f5bf4448b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b02913deb78c31584259f5bf4448b8d">&#9670;&#160;</a></span>UpdateUniformBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Effekseer::Backend::GraphicsDevice::UpdateUniformBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#a52df63edd7bf5c0d1d23b641b38fdcef">UniformBufferRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update content of an uniform buffer </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>buffer </td></tr>
+    <tr><td class="paramname">size</td><td>the size of updated buffer </td></tr>
+    <tr><td class="paramname">offset</td><td>the offset of updated buffer </td></tr>
+    <tr><td class="paramname">data</td><td>updating data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>Succeeded in updating? </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02736">2736</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2737</span>    {</div>
+<div class="line"><span class="lineno"> 2738</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2739</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0bb6e81e8601184840605bc2a20946da" name="a0bb6e81e8601184840605bc2a20946da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bb6e81e8601184840605bc2a20946da">&#9670;&#160;</a></span>UpdateVertexBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Effekseer::Backend::GraphicsDevice::UpdateVertexBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">VertexBufferRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update content of a vertex buffer </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>buffer </td></tr>
+    <tr><td class="paramname">size</td><td>the size of updated buffer </td></tr>
+    <tr><td class="paramname">offset</td><td>the offset of updated buffer </td></tr>
+    <tr><td class="paramname">data</td><td>updating data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>Succeeded in updating? </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l02710">2710</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2711</span>    {</div>
+<div class="line"><span class="lineno"> 2712</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2713</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0bb6e81e8601184840605bc2a20946da" name="a0bb6e81e8601184840605bc2a20946da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bb6e81e8601184840605bc2a20946da">&#9670;&#160;</a></span>UpdateVertexBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Effekseer::Backend::GraphicsDevice::UpdateVertexBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceEffekseer_1_1Backend.html#ab566da9724d7f3227923403d4ff1c904">VertexBufferRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update content of a vertex buffer </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>buffer </td></tr>
+    <tr><td class="paramname">size</td><td>the size of updated buffer </td></tr>
+    <tr><td class="paramname">offset</td><td>the offset of updated buffer </td></tr>
+    <tr><td class="paramname">data</td><td>updating data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>Succeeded in updating? </dd></dl>
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02710">2710</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2711</span>    {</div>
+<div class="line"><span class="lineno"> 2712</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2713</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a41ea94faafa807a4e2e22fb9e4517731" name="a41ea94faafa807a4e2e22fb9e4517731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ea94faafa807a4e2e22fb9e4517731">&#9670;&#160;</a></span>m_reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt; int32_t &gt; Effekseer::ReferenceObject::m_reference</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00474">474</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00486">Effekseer::ReferenceObject::AddRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00493">Effekseer::ReferenceObject::GetRef()</a>, <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l00498">Effekseer::ReferenceObject::Release()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x64/include/Effekseer/Effekseer.h</a></li>
+<li><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceEffekseer.html">Effekseer</a></li><li class="navelem"><a class="el" href="namespaceEffekseer_1_1Backend.html">Backend</a></li><li class="navelem"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html">GraphicsDevice</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

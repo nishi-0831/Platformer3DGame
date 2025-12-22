@@ -1,0 +1,970 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::MeshRenderer クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1MeshRenderer.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1MeshRenderer-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::MeshRenderer クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>メッシュとマテリアルを管理する描画コンポーネント  
+ <a href="classmtgb_1_1MeshRenderer.html#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::MeshRenderer の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MeshRenderer__inherit__graph.svg" width="764" height="1264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::MeshRenderer 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MeshRenderer__coll__graph.svg" width="1050" height="1292"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a4d48cdbe3ab7d92a0a73b29228f255d5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a4d48cdbe3ab7d92a0a73b29228f255d5">Pool</a> = <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a></td></tr>
+<tr class="separator:a4d48cdbe3ab7d92a0a73b29228f255d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a01ad064bac5d561b45d16ecb8e396b20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a01ad064bac5d561b45d16ecb8e396b20">MeshRenderer</a> ()</td></tr>
+<tr class="separator:a01ad064bac5d561b45d16ecb8e396b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dbadca7101608bcef526dc4d14e3717"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a0dbadca7101608bcef526dc4d14e3717">MeshRenderer</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:a0dbadca7101608bcef526dc4d14e3717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fab7b810122128d90103b7afccb7bce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a5fab7b810122128d90103b7afccb7bce">SetMesh</a> (<a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a> <a class="el" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a>)</td></tr>
+<tr class="memdesc:a5fab7b810122128d90103b7afccb7bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">メッシュハンドルを設定  <br /></td></tr>
+<tr class="separator:a5fab7b810122128d90103b7afccb7bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fdf9b92c204425caab8d35389203386"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a5fdf9b92c204425caab8d35389203386">GetMesh</a> () const</td></tr>
+<tr class="memdesc:a5fdf9b92c204425caab8d35389203386"><td class="mdescLeft">&#160;</td><td class="mdescRight">メッシュハンドルを取得  <br /></td></tr>
+<tr class="separator:a5fdf9b92c204425caab8d35389203386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fafd5895710639ea7fcdc245a44b96c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">ShaderType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a9fafd5895710639ea7fcdc245a44b96c">GetShaderType</a> () const</td></tr>
+<tr class="memdesc:a9fafd5895710639ea7fcdc245a44b96c"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用するシェーダーの種類を返す  <br /></td></tr>
+<tr class="separator:a9fafd5895710639ea7fcdc245a44b96c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d401a45dde9ffe721e1b7f8bafd4adc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9">GameObjectLayerFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a8d401a45dde9ffe721e1b7f8bafd4adc">GetLayer</a> () const override</td></tr>
+<tr class="memdesc:a8d401a45dde9ffe721e1b7f8bafd4adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画可能かチェック  <br /></td></tr>
+<tr class="separator:a8d401a45dde9ffe721e1b7f8bafd4adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a812c6d7db18eb7e087274554f6204"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a49a812c6d7db18eb7e087274554f6204">OnChangeMeshFileName</a> ()</td></tr>
+<tr class="separator:a49a812c6d7db18eb7e087274554f6204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4da90b8ef96622cec49f0729b7f4f2cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a4da90b8ef96622cec49f0729b7f4f2cc">Render</a> () const override</td></tr>
+<tr class="memdesc:a4da90b8ef96622cec49f0729b7f4f2cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画を行う  <br /></td></tr>
+<tr class="separator:a4da90b8ef96622cec49f0729b7f4f2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa50e74ecffe2de8797aaee29b27960"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#acaa50e74ecffe2de8797aaee29b27960">CanRender</a> () const override</td></tr>
+<tr class="memdesc:acaa50e74ecffe2de8797aaee29b27960"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画が可能か否か  <br /></td></tr>
+<tr class="separator:acaa50e74ecffe2de8797aaee29b27960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecaeb2d199af3bd978a34238ae7f733a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#aecaeb2d199af3bd978a34238ae7f733a">Initialize</a> ()</td></tr>
+<tr class="separator:aecaeb2d199af3bd978a34238ae7f733a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735636df79e7cfd6336e9a97345e2b29"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a> () const</td></tr>
+<tr class="separator:a735636df79e7cfd6336e9a97345e2b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86fe7f4e0ab2a86787b52d34ac5b6ec8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISerializableObject.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8">OnPreSave</a> ()</td></tr>
+<tr class="separator:a86fe7f4e0ab2a86787b52d34ac5b6ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a931ae7565817c83a4e3c5f9004c074d5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Get</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:a931ae7565817c83a4e3c5f9004c074d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0db1b0f0dbd3823a06ae854eacef41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a4e0db1b0f0dbd3823a06ae854eacef41">Get</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId, Args &amp;&amp;... _args)</td></tr>
+<tr class="separator:a4e0db1b0f0dbd3823a06ae854eacef41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07fa68485a5cf4425eebf1718c82e73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#ab07fa68485a5cf4425eebf1718c82e73">Reuse</a> (size_t _index, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:ab07fa68485a5cf4425eebf1718c82e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:aa9498d7188c35d4654140ec3e18b787d"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#aa9498d7188c35d4654140ec3e18b787d">MeshRendererCP</a></td></tr>
+<tr class="separator:aa9498d7188c35d4654140ec3e18b787d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4d3711bd5648afe69f1cce8f4c69878"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a></td></tr>
+<tr class="separator:aa4d3711bd5648afe69f1cce8f4c69878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c0ed09f31ca703c03bffe8f66b1846"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a></td></tr>
+<tr class="separator:a10c0ed09f31ca703c03bffe8f66b1846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f0118f84a374505712675047e040200"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9">GameObjectLayerFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200">layer</a></td></tr>
+<tr class="separator:a8f0118f84a374505712675047e040200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b08be900fee64333fce3e4352cf0a77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">ShaderType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a></td></tr>
+<tr class="separator:a4b08be900fee64333fce3e4352cf0a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed716499a289d6dd69c0d40b683142aa"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#aed716499a289d6dd69c0d40b683142aa">ComponentPoolT</a></td></tr>
+<tr class="separator:aed716499a289d6dd69c0d40b683142aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d6b5582bd4cc3eea5feb793ae19aa4"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a37d6b5582bd4cc3eea5feb793ae19aa4">ComponentPool&lt; ComponentT, ComponentPoolT &gt;</a></td></tr>
+<tr class="separator:a37d6b5582bd4cc3eea5feb793ae19aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a34771f773121e76108c53cd5b9a21f46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a34771f773121e76108c53cd5b9a21f46">OnPostRestore</a> () override</td></tr>
+<tr class="separator:a34771f773121e76108c53cd5b9a21f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a8aa4f5300c39f9f4705a587fd0a72639"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a></td></tr>
+<tr class="separator:a8aa4f5300c39f9f4705a587fd0a72639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>メッシュとマテリアルを管理する描画コンポーネント </p>
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00022">22</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a4d48cdbe3ab7d92a0a73b29228f255d5" name="a4d48cdbe3ab7d92a0a73b29228f255d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d48cdbe3ab7d92a0a73b29228f255d5">&#9670;&#160;</a></span>Pool</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a> , <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &gt;::Pool =  <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a01ad064bac5d561b45d16ecb8e396b20" name="a01ad064bac5d561b45d16ecb8e396b20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01ad064bac5d561b45d16ecb8e396b20">&#9670;&#160;</a></span>MeshRenderer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::MeshRenderer::MeshRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00009">9</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>{</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>.resize(BUFFER_SIZE);</div>
+<div class="line"><span class="lineno">   12</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1MeshRenderer_html_aa4d3711bd5648afe69f1cce8f4c69878"><div class="ttname"><a href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">mtgb::MeshRenderer::meshFileName</a></div><div class="ttdeci">std::string meshFileName</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8h_source.html#l00056">MeshRenderer.h:56</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MeshRenderer_8h_source.html#l00056">meshFileName</a>.</p>
+
+</div>
+</div>
+<a id="a0dbadca7101608bcef526dc4d14e3717" name="a0dbadca7101608bcef526dc4d14e3717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dbadca7101608bcef526dc4d14e3717">&#9670;&#160;</a></span>MeshRenderer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::MeshRenderer::MeshRenderer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00014">14</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>    : <a class="code hl_function" href="classmtgb_1_1IComponent.html#a65f42a089e725be9599afab34ab245bb">IComponent</a>(_entityId)</div>
+<div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>.resize(BUFFER_SIZE);</div>
+<div class="line"><span class="lineno">   18</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a65f42a089e725be9599afab34ab245bb"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a65f42a089e725be9599afab34ab245bb">mtgb::IComponent&lt; MeshRendererCP, MeshRenderer &gt;::IComponent</a></div><div class="ttdeci">IComponent()</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00021">IComponent.h:21</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MeshRenderer_8h_source.html#l00056">meshFileName</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="acaa50e74ecffe2de8797aaee29b27960" name="acaa50e74ecffe2de8797aaee29b27960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa50e74ecffe2de8797aaee29b27960">&#9670;&#160;</a></span>CanRender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::MeshRenderer::CanRender </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>描画が可能か否か </p>
+<dl class="section return"><dt>戻り値</dt><dd>可能ならtrue</dd></dl>
+
+<p><a class="el" href="classmtgb_1_1IRenderable.html#a4e8551bc91bebf3b092b65d817f76068">mtgb::IRenderable</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00053">53</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a> != <a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">INVALID_HANDLE</a>; };</div>
+<div class="ttc" id="aclassmtgb_1_1MeshRenderer_html_a10c0ed09f31ca703c03bffe8f66b1846"><div class="ttname"><a href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">mtgb::MeshRenderer::meshHandle</a></div><div class="ttdeci">FBXModelHandle meshHandle</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8h_source.html#l00058">MeshRenderer.h:58</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a461c37884dafe5e26f7d9b0e2f97148b"><div class="ttname"><a href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a></div><div class="ttdeci">static const int32_t INVALID_HANDLE</div><div class="ttdoc">無効なハンドル値</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00045">Handlers.h:45</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Handlers_8h_source.html#l00045">mtgb::INVALID_HANDLE</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="MeshRendererCP_8cpp_source.html#l00015">mtgb::MeshRendererCP::RenderLayer()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MeshRenderer_acaa50e74ecffe2de8797aaee29b27960_icgraph.svg" width="392" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a931ae7565817c83a4e3c5f9004c074d5" name="a931ae7565817c83a4e3c5f9004c074d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a931ae7565817c83a4e3c5f9004c074d5">&#9670;&#160;</a></span>Get() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &amp; <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a> , <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &gt;::Get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId);</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e0db1b0f0dbd3823a06ae854eacef41" name="a4e0db1b0f0dbd3823a06ae854eacef41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0db1b0f0dbd3823a06ae854eacef41">&#9670;&#160;</a></span>Get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &amp; <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a> , <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &gt;::Get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>_args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId, std::forward&lt;Args&gt;(_args)...);</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a735636df79e7cfd6336e9a97345e2b29" name="a735636df79e7cfd6336e9a97345e2b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735636df79e7cfd6336e9a97345e2b29">&#9670;&#160;</a></span>GetEntityId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a> , <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &gt;::GetEntityId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a8aa4f5300c39f9f4705a587fd0a72639"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">mtgb::IComponent&lt; MeshRendererCP, MeshRenderer &gt;::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00038">IComponent.h:38</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8d401a45dde9ffe721e1b7f8bafd4adc" name="a8d401a45dde9ffe721e1b7f8bafd4adc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d401a45dde9ffe721e1b7f8bafd4adc">&#9670;&#160;</a></span>GetLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9">GameObjectLayerFlag</a> mtgb::MeshRenderer::GetLayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>描画可能かチェック </p>
+
+<p><a class="el" href="classmtgb_1_1IRenderable.html#a793729872ce00cc8d43de69abe99183b">mtgb::IRenderable</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200">layer</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1MeshRenderer_html_a8f0118f84a374505712675047e040200"><div class="ttname"><a href="classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200">mtgb::MeshRenderer::layer</a></div><div class="ttdeci">GameObjectLayerFlag layer</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8h_source.html#l00060">MeshRenderer.h:60</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="MeshRendererCP_8cpp_source.html#l00015">mtgb::MeshRendererCP::RenderLayer()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MeshRenderer_a8d401a45dde9ffe721e1b7f8bafd4adc_icgraph.svg" width="392" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5fdf9b92c204425caab8d35389203386" name="a5fdf9b92c204425caab8d35389203386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fdf9b92c204425caab8d35389203386">&#9670;&#160;</a></span>GetMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a> mtgb::MeshRenderer::GetMesh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>メッシュハンドルを取得 </p>
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9fafd5895710639ea7fcdc245a44b96c" name="a9fafd5895710639ea7fcdc245a44b96c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fafd5895710639ea7fcdc245a44b96c">&#9670;&#160;</a></span>GetShaderType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">ShaderType</a> mtgb::MeshRenderer::GetShaderType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>使用するシェーダーの種類を返す </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00044">44</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1MeshRenderer_html_a4b08be900fee64333fce3e4352cf0a77"><div class="ttname"><a href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">mtgb::MeshRenderer::shaderType</a></div><div class="ttdeci">ShaderType shaderType</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8h_source.html#l00062">MeshRenderer.h:62</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aecaeb2d199af3bd978a34238ae7f733a" name="aecaeb2d199af3bd978a34238ae7f733a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecaeb2d199af3bd978a34238ae7f733a">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a> , <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &gt;::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a49a812c6d7db18eb7e087274554f6204" name="a49a812c6d7db18eb7e087274554f6204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a812c6d7db18eb7e087274554f6204">&#9670;&#160;</a></span>OnChangeMeshFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::MeshRenderer::OnChangeMeshFileName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a> = <a class="code hl_function" href="classmtgb_1_1Fbx.html#a973291cbc71c68589200aa4c0c88270e">Fbx::Load</a>(<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>);</div>
+<div class="line"><span class="lineno">   23</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Fbx_html_a973291cbc71c68589200aa4c0c88270e"><div class="ttname"><a href="classmtgb_1_1Fbx.html#a973291cbc71c68589200aa4c0c88270e">mtgb::Fbx::Load</a></div><div class="ttdeci">static FBXModelHandle Load(const std::string &amp;_fileName)</div><div class="ttdoc">Fbxファイルを読み込みする</div><div class="ttdef"><b>Definition:</b> <a href="Fbx_8cpp_source.html#l00028">Fbx.cpp:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Fbx_8cpp_source.html#l00028">mtgb::Fbx::Load()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MeshRenderer_a49a812c6d7db18eb7e087274554f6204_cgraph.svg" width="1052" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a34771f773121e76108c53cd5b9a21f46" name="a34771f773121e76108c53cd5b9a21f46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34771f773121e76108c53cd5b9a21f46">&#9670;&#160;</a></span>OnPostRestore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::MeshRenderer::OnPostRestore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classISerializableObject.html#a657030a231a22470b5b09bd6e55a2c0e">ISerializableObject</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a> = <a class="code hl_function" href="classmtgb_1_1Fbx.html#a973291cbc71c68589200aa4c0c88270e">Fbx::Load</a>(<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>);</div>
+<div class="line"><span class="lineno">   33</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Fbx_8cpp_source.html#l00028">mtgb::Fbx::Load()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MeshRenderer_a34771f773121e76108c53cd5b9a21f46_cgraph.svg" width="1016" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a86fe7f4e0ab2a86787b52d34ac5b6ec8" name="a86fe7f4e0ab2a86787b52d34ac5b6ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86fe7f4e0ab2a86787b52d34ac5b6ec8">&#9670;&#160;</a></span>OnPreSave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ISerializableObject::OnPreSave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1Interpolator.html#a61f7a7f008cc862e4b74638250a1d241">mtgb::Interpolator</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="ISerializableObject_8h_source.html">ISerializableObject.h</a> の <a class="el" href="ISerializableObject_8h_source.html#l00005">5</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    5</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4da90b8ef96622cec49f0729b7f4f2cc" name="a4da90b8ef96622cec49f0729b7f4f2cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4da90b8ef96622cec49f0729b7f4f2cc">&#9670;&#160;</a></span>Render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::MeshRenderer::Render </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>描画を行う </p>
+
+<p><a class="el" href="classmtgb_1_1IRenderable.html#aed145aa67c27f506fd9346c091ead156">mtgb::IRenderable</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a>, <a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(<a class="code hl_function" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a>()), 0, <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a>);</div>
+<div class="line"><span class="lineno">   28</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_a623126b2353e4747da1340c91af6e4bf"><div class="ttname"><a href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">mtgb::Draw::FBXModel</a></div><div class="ttdeci">static void FBXModel(const FBXModelHandle _hFBXModel, const Transform &amp;_pTransform, const int _frame, ShaderType _shaderType=ShaderType::FbxParts)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00265">Draw.cpp:265</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a735636df79e7cfd6336e9a97345e2b29"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">mtgb::IComponent&lt; MeshRendererCP, MeshRenderer &gt;::GetEntityId</a></div><div class="ttdeci">const EntityId GetEntityId() const</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00034">IComponent.h:34</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a931ae7565817c83a4e3c5f9004c074d5"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get</a></div><div class="ttdeci">static Transform &amp; Get(const EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00027">IComponent.h:62</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Draw_8cpp_source.html#l00265">mtgb::Draw::FBXModel()</a>, <a class="el" href="IComponent_8h_source.html#l00062">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="MeshRendererCP_8cpp_source.html#l00015">mtgb::MeshRendererCP::RenderLayer()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MeshRenderer_a4da90b8ef96622cec49f0729b7f4f2cc_cgraph.svg" width="440" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MeshRenderer_a4da90b8ef96622cec49f0729b7f4f2cc_icgraph.svg" width="392" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab07fa68485a5cf4425eebf1718c82e73" name="ab07fa68485a5cf4425eebf1718c82e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab07fa68485a5cf4425eebf1718c82e73">&#9670;&#160;</a></span>Reuse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  * <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a> , <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &gt;::Reuse </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Reuse(_index, _entityId);</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5fab7b810122128d90103b7afccb7bce" name="a5fab7b810122128d90103b7afccb7bce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fab7b810122128d90103b7afccb7bce">&#9670;&#160;</a></span>SetMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::MeshRenderer::SetMesh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a>&#160;</td>
+          <td class="paramname"><em>meshHandle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>メッシュハンドルを設定 </p>
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00033">33</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{ <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a> = <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MeshRenderer_a5fab7b810122128d90103b7afccb7bce_icgraph.svg" width="380" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a37d6b5582bd4cc3eea5feb793ae19aa4" name="a37d6b5582bd4cc3eea5feb793ae19aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d6b5582bd4cc3eea5feb793ae19aa4">&#9670;&#160;</a></span>ComponentPool&lt; ComponentT, ComponentPoolT &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a> , <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &gt;::ComponentPool&lt; <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a> , <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a>  &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aed716499a289d6dd69c0d40b683142aa" name="aed716499a289d6dd69c0d40b683142aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed716499a289d6dd69c0d40b683142aa">&#9670;&#160;</a></span>ComponentPoolT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a> , <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &gt;<a class="el" href="classmtgb_1_1MeshRenderer.html#aa9498d7188c35d4654140ec3e18b787d">::MeshRendererCP</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8aa4f5300c39f9f4705a587fd0a72639" name="a8aa4f5300c39f9f4705a587fd0a72639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa4f5300c39f9f4705a587fd0a72639">&#9670;&#160;</a></span>entityId_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1MeshRendererCP.html">MeshRendererCP</a> , <a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a>  &gt;::entityId_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8f0118f84a374505712675047e040200" name="a8f0118f84a374505712675047e040200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f0118f84a374505712675047e040200">&#9670;&#160;</a></span>layer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9">GameObjectLayerFlag</a> mtgb::MeshRenderer::layer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00060">60</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
+
+</div>
+</div>
+<a id="aa4d3711bd5648afe69f1cce8f4c69878" name="aa4d3711bd5648afe69f1cce8f4c69878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4d3711bd5648afe69f1cce8f4c69878">&#9670;&#160;</a></span>meshFileName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mtgb::MeshRenderer::meshFileName</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00056">56</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00009">MeshRenderer()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
+
+</div>
+</div>
+<a id="a10c0ed09f31ca703c03bffe8f66b1846" name="a10c0ed09f31ca703c03bffe8f66b1846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c0ed09f31ca703c03bffe8f66b1846">&#9670;&#160;</a></span>meshHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a> mtgb::MeshRenderer::meshHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00058">58</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>.</p>
+
+</div>
+</div>
+<a id="aa9498d7188c35d4654140ec3e18b787d" name="aa9498d7188c35d4654140ec3e18b787d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9498d7188c35d4654140ec3e18b787d">&#9670;&#160;</a></span>MeshRendererCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend mtgb::MeshRenderer::MeshRendererCP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4b08be900fee64333fce3e4352cf0a77" name="a4b08be900fee64333fce3e4352cf0a77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b08be900fee64333fce3e4352cf0a77">&#9670;&#160;</a></span>shaderType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">ShaderType</a> mtgb::MeshRenderer::shaderType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00062">62</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a></li>
+<li><a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1MeshRenderer.html">MeshRenderer</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

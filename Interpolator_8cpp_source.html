@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Interpolator.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Interpolator_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Interpolator.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Interpolator_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="stdafx_8h.html">stdafx.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="Interpolator_8h.html">Interpolator.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="GameTime_8h.html">GameTime.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Mathf_8h.html">Mathf.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="GameObject_8h.html">GameObject.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="SceneSystem_8h.html">SceneSystem.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02Interpolator_8cpp_03.html">    8</a></span><span class="keyword">namespace</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">// 始点、終点の初期設定</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// 座標のオフセット</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02Interpolator_8cpp_03.html#a4e0b8d2b5124f9d51c39adcb3ba23b07">   13</a></span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> <a class="code hl_variable" href="namespaceanonymous__namespace_02Interpolator_8cpp_03.html#a4e0b8d2b5124f9d51c39adcb3ba23b07">INIT_OFFSET</a>{ 1.0f,0.0f,0.0f };</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// コライダー(球)の半径</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02Interpolator_8cpp_03.html#a7ad5b56bb13d757ca5f0988e85498bd4">   15</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="namespaceanonymous__namespace_02Interpolator_8cpp_03.html#a7ad5b56bb13d757ca5f0988e85498bd4">INIT_RADIUS</a>{ 1.0f };</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classmtgb_1_1Interpolator.html#a477aeba7bd914c858ea17007c3f70383">   18</a></span><a class="code hl_function" href="classmtgb_1_1Interpolator.html#a477aeba7bd914c858ea17007c3f70383">mtgb::Interpolator::Interpolator</a>(<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    : pTransform_{ &amp;<a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>::Get(_entityId) }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    , dir_{ 1.0f }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    , elapsed_{ 0.0f }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    , duration_{ 1.0f }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    , startPos_{ <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>::Zero()}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    , endPos_{ <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>::Zero() }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    , pStartTransform_{ nullptr }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    , pEndTransform_{ nullptr }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    , pStartCollider_{ nullptr }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    , pEndCollider_{ nullptr }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// 始点、終点のゲームオブジェクト作成</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* start = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* end = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// ゲームオブジェクトをシーンに登録</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;RegisterGameObject(start);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;RegisterGameObject(end);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// Transform作成</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a74e5f738a34ca2110524e17f7eb63337">pStartTransform_</a> = start-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&gt;();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a68e75d8146eac766daced95a8fd577c9">pEndTransform_</a> = end-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&gt;();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// オフセット分動かす</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a74e5f738a34ca2110524e17f7eb63337">pStartTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> = <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a59922337bc5260bcd560fd0b834d30ff">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> - INIT_OFFSET;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a68e75d8146eac766daced95a8fd577c9">pEndTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> = <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a59922337bc5260bcd560fd0b834d30ff">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> + INIT_OFFSET;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// コライダー作成</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#aec4bc186401b0bbfd304fbef3431082f">pStartCollider_</a> = start-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1Collider.html">Collider</a>&gt;();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#acd843596315bdb961140d25be486a90c">pEndCollider_</a> = end-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1Collider.html">Collider</a>&gt;();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// コライダーを球に設定</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#aec4bc186401b0bbfd304fbef3431082f">pStartCollider_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> = ColliderType::TYPE_SPHERE;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#acd843596315bdb961140d25be486a90c">pEndCollider_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> = ColliderType::TYPE_SPHERE;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#aec4bc186401b0bbfd304fbef3431082f">pStartCollider_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Collider.html#a5e61e476c9d384d64ccaac909a02a360">SetRadius</a>(INIT_RADIUS);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#acd843596315bdb961140d25be486a90c">pEndCollider_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Collider.html#a5e61e476c9d384d64ccaac909a02a360">SetRadius</a>(INIT_RADIUS);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classmtgb_1_1Interpolator.html#aca59644d8836217cfde491379e788152">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Interpolator.html#aca59644d8836217cfde491379e788152">mtgb::Interpolator::UpdateTransform</a>()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// 進行度を更新</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    UpdateProgress();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">// 補間値に座標を更新</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    pTransform_-&gt;position = Evaluate();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classmtgb_1_1Interpolator.html#aa48383060f1a0c4bc19b1291b6d57d4b">   65</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Interpolator.html#aa48383060f1a0c4bc19b1291b6d57d4b">mtgb::Interpolator::UpdateProgress</a>()</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    elapsed_ += <a class="code hl_function" href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">Time::DeltaTimeF</a>() * dir_;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">float</span> progress = elapsed_ / duration_;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// 進行度が0から1を超えた場合、進行方向を反転させる</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span> (progress &gt; 1.0f || progress &lt; 0.0f)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        dir_ *= -1.0f;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        elapsed_ = std::clamp(elapsed_, 0.0f, 1.0f);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classmtgb_1_1Interpolator.html#a8f68a1a13b6c156c80385f8987957402">   77</a></span><a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> <a class="code hl_function" href="classmtgb_1_1Interpolator.html#a8f68a1a13b6c156c80385f8987957402">mtgb::Interpolator::Evaluate</a>()</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">// 始点から終点を進行度で補間</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">float</span> progres = elapsed_ / duration_;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemtgb_1_1Mathf.html#a02b347bda774f51913f17dd14c4646e5">Mathf::Lerp</a>(pStartTransform_-&gt;position, pEndTransform_-&gt;position, progres);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classmtgb_1_1Interpolator.html#adee3c60ecd18470db4715457f12cfe3d">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Interpolator.html#adee3c60ecd18470db4715457f12cfe3d">mtgb::Interpolator::SetEndpoints</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _start, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _end)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    pStartTransform_-&gt;position = _start;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    pEndTransform_-&gt;position = _end;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classmtgb_1_1Interpolator.html#adb172decee2741c5473b73a83c36e8f3">   90</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Interpolator.html#adb172decee2741c5473b73a83c36e8f3">mtgb::Interpolator::OnPostRestore</a>()</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">// 読み込んだ値を始点、終点の座標に代入</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    pStartTransform_-&gt;position = startPos_; </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    pEndTransform_-&gt;position = endPos_;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classmtgb_1_1Interpolator.html#a61f7a7f008cc862e4b74638250a1d241">   97</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Interpolator.html#a61f7a7f008cc862e4b74638250a1d241">mtgb::Interpolator::OnPreSave</a>()</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="comment">// シリアライズ用の変数に始点、終点の座標を代入</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    startPos_ = pStartTransform_-&gt;position;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    endPos_ = pEndTransform_-&gt;position;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+<div class="ttc" id="aGameObject_8h_html"><div class="ttname"><a href="GameObject_8h.html">GameObject.h</a></div></div>
+<div class="ttc" id="aGameTime_8h_html"><div class="ttname"><a href="GameTime_8h.html">GameTime.h</a></div></div>
+<div class="ttc" id="aInterpolator_8h_html"><div class="ttname"><a href="Interpolator_8h.html">Interpolator.h</a></div></div>
+<div class="ttc" id="aMathf_8h_html"><div class="ttname"><a href="Mathf_8h.html">Mathf.h</a></div></div>
+<div class="ttc" id="aSceneSystem_8h_html"><div class="ttname"><a href="SceneSystem_8h.html">SceneSystem.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html"><div class="ttname"><a href="classmtgb_1_1Collider.html">mtgb::Collider</a></div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00025">Collider.h:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a31cbcdf00d33fe152a900e95867075ad"><div class="ttname"><a href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">mtgb::Collider::colliderType_</a></div><div class="ttdeci">ColliderType colliderType_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00087">Collider.h:87</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a5e61e476c9d384d64ccaac909a02a360"><div class="ttname"><a href="classmtgb_1_1Collider.html#a5e61e476c9d384d64ccaac909a02a360">mtgb::Collider::SetRadius</a></div><div class="ttdeci">void SetRadius(float _radius)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00294">Collider.cpp:294</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00016">GameObject.h:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_aec1d6bd2a9c2953d360201599fc31d4a"><div class="ttname"><a href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">mtgb::GameObject::Component</a></div><div class="ttdeci">ComponentT * Component(Args &amp;&amp;... _args)</div><div class="ttdoc">コンポーネントを取得/追加</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00115">GameObject.h:115</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_a477aeba7bd914c858ea17007c3f70383"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#a477aeba7bd914c858ea17007c3f70383">mtgb::Interpolator::Interpolator</a></div><div class="ttdeci">Interpolator(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8cpp_source.html#l00018">Interpolator.cpp:18</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_a59922337bc5260bcd560fd0b834d30ff"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#a59922337bc5260bcd560fd0b834d30ff">mtgb::Interpolator::pTransform_</a></div><div class="ttdeci">Transform * pTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8h_source.html#l00045">Interpolator.h:45</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_a61f7a7f008cc862e4b74638250a1d241"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#a61f7a7f008cc862e4b74638250a1d241">mtgb::Interpolator::OnPreSave</a></div><div class="ttdeci">void OnPreSave() override</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8cpp_source.html#l00097">Interpolator.cpp:97</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_a68e75d8146eac766daced95a8fd577c9"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#a68e75d8146eac766daced95a8fd577c9">mtgb::Interpolator::pEndTransform_</a></div><div class="ttdeci">Transform * pEndTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8h_source.html#l00074">Interpolator.h:74</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_a74e5f738a34ca2110524e17f7eb63337"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#a74e5f738a34ca2110524e17f7eb63337">mtgb::Interpolator::pStartTransform_</a></div><div class="ttdeci">Transform * pStartTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8h_source.html#l00073">Interpolator.h:73</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_a8f68a1a13b6c156c80385f8987957402"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#a8f68a1a13b6c156c80385f8987957402">mtgb::Interpolator::Evaluate</a></div><div class="ttdeci">Vector3 Evaluate()</div><div class="ttdoc">現在の進行状況で補間された値を返す</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8cpp_source.html#l00077">Interpolator.cpp:77</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_aa48383060f1a0c4bc19b1291b6d57d4b"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#aa48383060f1a0c4bc19b1291b6d57d4b">mtgb::Interpolator::UpdateProgress</a></div><div class="ttdeci">void UpdateProgress()</div><div class="ttdoc">補間の進行状況を更新する 経過時間を進め、端まで到達した場合は移動方向を反転する</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8cpp_source.html#l00065">Interpolator.cpp:65</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_aca59644d8836217cfde491379e788152"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#aca59644d8836217cfde491379e788152">mtgb::Interpolator::UpdateTransform</a></div><div class="ttdeci">void UpdateTransform()</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8cpp_source.html#l00056">Interpolator.cpp:56</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_acd843596315bdb961140d25be486a90c"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#acd843596315bdb961140d25be486a90c">mtgb::Interpolator::pEndCollider_</a></div><div class="ttdeci">Collider * pEndCollider_</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8h_source.html#l00077">Interpolator.h:77</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_adb172decee2741c5473b73a83c36e8f3"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#adb172decee2741c5473b73a83c36e8f3">mtgb::Interpolator::OnPostRestore</a></div><div class="ttdeci">void OnPostRestore() override</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8cpp_source.html#l00090">Interpolator.cpp:90</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_adee3c60ecd18470db4715457f12cfe3d"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#adee3c60ecd18470db4715457f12cfe3d">mtgb::Interpolator::SetEndpoints</a></div><div class="ttdeci">void SetEndpoints(const Vector3 &amp;_start, const Vector3 &amp;_end)</div><div class="ttdoc">端点を設定する</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8cpp_source.html#l00084">Interpolator.cpp:84</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Interpolator_html_aec4bc186401b0bbfd304fbef3431082f"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#aec4bc186401b0bbfd304fbef3431082f">mtgb::Interpolator::pStartCollider_</a></div><div class="ttdeci">Collider * pStartCollider_</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8h_source.html#l00076">Interpolator.h:76</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_a65abdc2a0dc82415c4d4ff372815973d"><div class="ttname"><a href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">mtgb::Time::DeltaTimeF</a></div><div class="ttdeci">static const float DeltaTimeF()</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00022">GameTime.h:22</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html"><div class="ttname"><a href="classmtgb_1_1Transform.html">mtgb::Transform</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00020">Transform.h:21</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a71231187095137f6dd753ef9450bc18b"><div class="ttname"><a href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">mtgb::Transform::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00159">Transform.h:159</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02Interpolator_8cpp_03_html_a4e0b8d2b5124f9d51c39adcb3ba23b07"><div class="ttname"><a href="namespaceanonymous__namespace_02Interpolator_8cpp_03.html#a4e0b8d2b5124f9d51c39adcb3ba23b07">anonymous_namespace{Interpolator.cpp}::INIT_OFFSET</a></div><div class="ttdeci">mtgb::Vector3 INIT_OFFSET</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8cpp_source.html#l00013">Interpolator.cpp:13</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02Interpolator_8cpp_03_html_a7ad5b56bb13d757ca5f0988e85498bd4"><div class="ttname"><a href="namespaceanonymous__namespace_02Interpolator_8cpp_03.html#a7ad5b56bb13d757ca5f0988e85498bd4">anonymous_namespace{Interpolator.cpp}::INIT_RADIUS</a></div><div class="ttdeci">float INIT_RADIUS</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8cpp_source.html#l00015">Interpolator.cpp:15</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1Mathf_html_a02b347bda774f51913f17dd14c4646e5"><div class="ttname"><a href="namespacemtgb_1_1Mathf.html#a02b347bda774f51913f17dd14c4646e5">mtgb::Mathf::Lerp</a></div><div class="ttdeci">static float Lerp(const float _a, const float _b, const float _value)</div><div class="ttdoc">aからbを線形補間する</div><div class="ttdef"><b>Definition:</b> <a href="Mathf_8h_source.html#l00032">Mathf.h:32</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
+<div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Interpolator_8cpp.html">Interpolator.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

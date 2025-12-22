@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: ResultScene.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ResultScene_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ResultScene.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ResultScene_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="stdafx_8h.html">stdafx.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ResultScene_8h.html">ResultScene.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//#include &quot;../Source/ScoreViewer.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../Source/Camera.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../Source/TitleScene.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../Source/StageManager.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02ResultScene_8cpp_03.html">    7</a></span><span class="keyword">namespace</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">// 118,90 , 565,100</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02ResultScene_8cpp_03.html#a39320c243ef83b770479f95073bd21db">   10</a></span>    <a class="code hl_typedef" href="namespacemtgb.html#a619011839f99f1dc77148dee609d87c2">ImageHandle</a> <a class="code hl_variable" href="namespaceanonymous__namespace_02ResultScene_8cpp_03.html#a39320c243ef83b770479f95073bd21db">hImage</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02ResultScene_8cpp_03.html#a07e3113c6df1bd1b7ae89f4f97353b3a">   11</a></span>    <a class="code hl_struct" href="structEffekseer_1_1RectF.html">RectF</a> <a class="code hl_variable" href="namespaceanonymous__namespace_02ResultScene_8cpp_03.html#a07e3113c6df1bd1b7ae89f4f97353b3a">draw</a>{118,90,565,100};</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02ResultScene_8cpp_03.html#ac45668eb653962373edcaec788daa183">   12</a></span>    <a class="code hl_struct" href="structmtgb_1_1UIParams.html">UIParams</a> <a class="code hl_variable" href="namespaceanonymous__namespace_02ResultScene_8cpp_03.html#ac45668eb653962373edcaec788daa183">params</a>{ .<a class="code hl_variable" href="structmtgb_1_1UIParams.html#a28cb724bacff551cee9f87aee2ef901c">depth</a> = 0,.layerFlag = <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>() };</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classResultScene.html#a3cd26a2fd06414baef819e770b7859d7">   14</a></span><a class="code hl_function" href="classResultScene.html#a3cd26a2fd06414baef819e770b7859d7">ResultScene::ResultScene</a>()</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classResultScene.html#a5617fe5de7ba64b37bb397b579957e6a">   18</a></span><a class="code hl_function" href="classResultScene.html#a5617fe5de7ba64b37bb397b579957e6a">ResultScene::~ResultScene</a>()</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classResultScene.html#a1c074c08f803ed253f844d9189c88cfc">   22</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#a1c074c08f803ed253f844d9189c88cfc">ResultScene::Initialize</a>()</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// エディターのカメラを作成</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    Game::System&lt;ImGuiEditorCamera&gt;().CreateCamera();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// シーンのカメラを生成</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* pCamera = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>(</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_class" href="classmtgb_1_1GameObjectBuilder.html">GameObjectBuilder</a>()</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        .SetPosition({ 0,0,0 })</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        .SetName(<span class="stringliteral">&quot;SceneCamera&quot;</span>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        .Build());</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// ゲームオブジェクトを管理クラスに登録</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;RegisterGameObject(pCamera);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// スコアを表示</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_struct" href="structEffekseer_1_1RectF.html">RectF</a> rect{ 0,0,800,600 };</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">int</span> fontSize{ 36 };</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">//Instantiate&lt;ScoreViewer&gt;(rect, fontSize,TextAlignment::center);</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// カメラを管理クラスに登録</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_typedef" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> hCamera = <a class="code hl_function" href="classmtgb_1_1GameScene.html#a6fbe94e4fcf17b804cba13b30846dd92">RegisterCameraGameObject</a>(pCamera);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    WinCtxRes::Get&lt;CameraResource&gt;(WindowContext::First).SetHCamera(hCamera);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">// ステージをクリアしているか判定</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">bool</span> clearedStage = Game::System&lt;StageManger&gt;().IsClearedCurrentStage();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// クリアしているかによって表示する画像を変える</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">if</span> (clearedStage)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        hImage = <a class="code hl_function" href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">Image::Load</a>(<span class="stringliteral">&quot;Image/ClearImage.png&quot;</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        hImage = <a class="code hl_function" href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">Image::Load</a>(<span class="stringliteral">&quot;Image/GameOverImage.png&quot;</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classResultScene.html#ac56b2e5d453653aef1f63f2d0fe7f2e2">   60</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#ac56b2e5d453653aef1f63f2d0fe7f2e2">ResultScene::Update</a>()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::P))</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        Game::System&lt;SceneSystem&gt;().Move&lt;<a class="code hl_class" href="classTitleScene.html">TitleScene</a>&gt;();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classResultScene.html#a3630928e249318139f019fd274730f82">   68</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#a3630928e249318139f019fd274730f82">ResultScene::Draw</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a157c2546af7ac20d4828e7538f6bb468">Draw::Image</a>(hImage, draw);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classResultScene.html#aaef36889cb898aaf81c452f4354ffe70">   73</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#aaef36889cb898aaf81c452f4354ffe70">ResultScene::End</a>()</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="ttc" id="aResultScene_8h_html"><div class="ttname"><a href="ResultScene_8h.html">ResultScene.h</a></div></div>
+<div class="ttc" id="aclassResultScene_html_a1c074c08f803ed253f844d9189c88cfc"><div class="ttname"><a href="classResultScene.html#a1c074c08f803ed253f844d9189c88cfc">ResultScene::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00022">ResultScene.cpp:22</a></div></div>
+<div class="ttc" id="aclassResultScene_html_a3630928e249318139f019fd274730f82"><div class="ttname"><a href="classResultScene.html#a3630928e249318139f019fd274730f82">ResultScene::Draw</a></div><div class="ttdeci">void Draw() const override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00068">ResultScene.cpp:68</a></div></div>
+<div class="ttc" id="aclassResultScene_html_a3cd26a2fd06414baef819e770b7859d7"><div class="ttname"><a href="classResultScene.html#a3cd26a2fd06414baef819e770b7859d7">ResultScene::ResultScene</a></div><div class="ttdeci">ResultScene()</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00014">ResultScene.cpp:14</a></div></div>
+<div class="ttc" id="aclassResultScene_html_a5617fe5de7ba64b37bb397b579957e6a"><div class="ttname"><a href="classResultScene.html#a5617fe5de7ba64b37bb397b579957e6a">ResultScene::~ResultScene</a></div><div class="ttdeci">~ResultScene()</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00018">ResultScene.cpp:18</a></div></div>
+<div class="ttc" id="aclassResultScene_html_aaef36889cb898aaf81c452f4354ffe70"><div class="ttname"><a href="classResultScene.html#aaef36889cb898aaf81c452f4354ffe70">ResultScene::End</a></div><div class="ttdeci">void End() override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00073">ResultScene.cpp:73</a></div></div>
+<div class="ttc" id="aclassResultScene_html_ac56b2e5d453653aef1f63f2d0fe7f2e2"><div class="ttname"><a href="classResultScene.html#ac56b2e5d453653aef1f63f2d0fe7f2e2">ResultScene::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00060">ResultScene.cpp:60</a></div></div>
+<div class="ttc" id="aclassTitleScene_html"><div class="ttname"><a href="classTitleScene.html">TitleScene</a></div><div class="ttdef"><b>Definition:</b> <a href="TitleScene_8h_source.html#l00004">TitleScene.h:5</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_a157c2546af7ac20d4828e7538f6bb468"><div class="ttname"><a href="classmtgb_1_1Draw.html#a157c2546af7ac20d4828e7538f6bb468">mtgb::Draw::Image</a></div><div class="ttdeci">static void Image(const ImageHandle _hImage, const RectF &amp;_draw, const RectF &amp;_cut, const float _rotationZ, const UIParams &amp;_uiParams=defaultUIParams_)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00066">Draw.cpp:66</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectBuilder_html"><div class="ttname"><a href="classmtgb_1_1GameObjectBuilder.html">mtgb::GameObjectBuilder</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObjectBuilder_8h_source.html#l00035">GameObjectBuilder.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00016">GameObject.h:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameScene_html_a6fbe94e4fcf17b804cba13b30846dd92"><div class="ttname"><a href="classmtgb_1_1GameScene.html#a6fbe94e4fcf17b804cba13b30846dd92">mtgb::GameScene::RegisterCameraGameObject</a></div><div class="ttdeci">CameraHandleInScene RegisterCameraGameObject(GameObject *_pGameObject) const</div><div class="ttdoc">カメラオブジェクトとして登録する</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00031">GameScene.cpp:31</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Image_html_a739cb4329f2e2f2521fa782b260cfeb7"><div class="ttname"><a href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">mtgb::Image::Load</a></div><div class="ttdeci">static ImageHandle Load(const std::string_view &amp;_fileName)</div><div class="ttdoc">画像を読み込み、ハンドラを取得</div><div class="ttdef"><b>Definition:</b> <a href="Image_8cpp_source.html#l00028">Image.cpp:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a4dade03e3bbb665d967f7411d82b8d94"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02ResultScene_8cpp_03_html_a07e3113c6df1bd1b7ae89f4f97353b3a"><div class="ttname"><a href="namespaceanonymous__namespace_02ResultScene_8cpp_03.html#a07e3113c6df1bd1b7ae89f4f97353b3a">anonymous_namespace{ResultScene.cpp}::draw</a></div><div class="ttdeci">RectF draw</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00011">ResultScene.cpp:11</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02ResultScene_8cpp_03_html_a39320c243ef83b770479f95073bd21db"><div class="ttname"><a href="namespaceanonymous__namespace_02ResultScene_8cpp_03.html#a39320c243ef83b770479f95073bd21db">anonymous_namespace{ResultScene.cpp}::hImage</a></div><div class="ttdeci">ImageHandle hImage</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00010">ResultScene.cpp:10</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02ResultScene_8cpp_03_html_ac45668eb653962373edcaec788daa183"><div class="ttname"><a href="namespaceanonymous__namespace_02ResultScene_8cpp_03.html#ac45668eb653962373edcaec788daa183">anonymous_namespace{ResultScene.cpp}::params</a></div><div class="ttdeci">UIParams params</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00012">ResultScene.cpp:12</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a100fdeed4f1f4e5f27e7ffb97ee743ca"><div class="ttname"><a href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">mtgb::AllLayer</a></div><div class="ttdeci">GameObjectLayerFlag AllLayer()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectLayer_8cpp_source.html#l00007">GameObjectLayer.cpp:7</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a619011839f99f1dc77148dee609d87c2"><div class="ttname"><a href="namespacemtgb.html#a619011839f99f1dc77148dee609d87c2">mtgb::ImageHandle</a></div><div class="ttdeci">int32_t ImageHandle</div><div class="ttdoc">画像のハンドル</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00012">Handlers.h:12</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a6b7e58c2cf357b2a33701393679b1d09"><div class="ttname"><a href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">mtgb::CameraHandleInScene</a></div><div class="ttdeci">int32_t CameraHandleInScene</div><div class="ttdoc">シーン内で通用するカメラハンドル</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00035">Handlers.h:35</a></div></div>
+<div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
+<div class="ttc" id="astructEffekseer_1_1RectF_html"><div class="ttname"><a href="structEffekseer_1_1RectF.html">Effekseer::RectF</a></div><div class="ttdoc">四角形</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01740">install_msvc2022_x64/include/Effekseer/Effekseer.h:1741</a></div></div>
+<div class="ttc" id="astructmtgb_1_1UIParams_html"><div class="ttname"><a href="structmtgb_1_1UIParams.html">mtgb::UIParams</a></div><div class="ttdoc">UI描画時に指定する設定</div><div class="ttdef"><b>Definition:</b> <a href="UIDrawCommand_8h_source.html#l00009">UIDrawCommand.h:10</a></div></div>
+<div class="ttc" id="astructmtgb_1_1UIParams_html_a28cb724bacff551cee9f87aee2ef901c"><div class="ttname"><a href="structmtgb_1_1UIParams.html#a28cb724bacff551cee9f87aee2ef901c">mtgb::UIParams::depth</a></div><div class="ttdeci">int depth</div><div class="ttdef"><b>Definition:</b> <a href="UIDrawCommand_8h_source.html#l00011">UIDrawCommand.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="ResultScene_8cpp.html">ResultScene.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

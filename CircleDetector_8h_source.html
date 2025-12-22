@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: CircleDetector.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('CircleDetector_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">CircleDetector.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="CircleDetector_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="IDetector_8h.html">IDetector.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="DetectorConfigs_8h.html">DetectorConfigs.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="UIDrawCommand_8h.html">UIDrawCommand.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classmtgb_1_1CircleDetector.html">   12</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1CircleDetector.html">CircleDetector</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1IDetector.html">IDetector</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#ad74c50c952128b9e598f6b48163bc66f">CircleDetector</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#ad74c50c952128b9e598f6b48163bc66f">CircleDetector</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1CircleDetectorConfig.html">CircleDetectorConfig</a>&amp; _config);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#ad74c50c952128b9e598f6b48163bc66f">CircleDetector</a>(<a class="code hl_struct" href="structmtgb_1_1CircleDetectorConfig.html">CircleDetectorConfig</a>&amp;&amp; _config);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classmtgb_1_1CircleDetector.html#a14c87a0b9c408b8db664878ab404edca">   18</a></span>        <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#a14c87a0b9c408b8db664878ab404edca">~CircleDetector</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#a68b53e77c3cef60f8c6624dd29804201">UpdateDetection</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#a68b53e77c3cef60f8c6624dd29804201">UpdateDetection</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1CircleDetectorConfig.html">CircleDetectorConfig</a>&amp; _config);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#a0186fdae2b53827e86d08e4a52c52430">UpdateAndSetDetection</a>(<a class="code hl_struct" href="structmtgb_1_1CircleDetectorConfig.html">CircleDetectorConfig</a>&amp;&amp; _config);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#aa68e5d9f6ede47abe73144c82baaa713">HasDetectedTargets</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_struct" href="structEffekseer_1_1RectF.html">RectF</a> <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#a57e8356168ce7dc2d14cdeae1996448e">GetDetectionArea</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">const</span> std::vector&lt;ScreenCoordContainsInfo&gt;&amp; <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#ae955a0b4db6f216d6b96836d426b18e9">GetDetectedTargets</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#a0a611145fdd3062ca728be733ace6c2d">ForEach</a>(std::function&lt;<span class="keywordtype">void</span>(<a class="code hl_struct" href="structmtgb_1_1ScreenCoordContainsInfo.html">ScreenCoordContainsInfo</a>&amp;)&gt; _func) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#a0a611145fdd3062ca728be733ace6c2d">ForEach</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1ScreenCoordContainsInfo.html">ScreenCoordContainsInfo</a>&amp;)&gt; _func) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmtgb_1_1CircleDetector.html#a77c38b9a4121e3ce69c6eda3add26568">IsPointInCircle</a>(<span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2F</a>&amp; point, <span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2F</a>&amp; <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">center</a>, <span class="keywordtype">float</span> radius) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classmtgb_1_1CircleDetector.html#a2d012a00837e779d722758018ae9dfd5">   55</a></span>        <a class="code hl_struct" href="structmtgb_1_1CircleDetectorConfig.html">CircleDetectorConfig</a> <a class="code hl_variable" href="classmtgb_1_1CircleDetector.html#a2d012a00837e779d722758018ae9dfd5">config</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    };</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="ttc" id="aDetectorConfigs_8h_html"><div class="ttname"><a href="DetectorConfigs_8h.html">DetectorConfigs.h</a></div></div>
+<div class="ttc" id="aIDetector_8h_html"><div class="ttname"><a href="IDetector_8h.html">IDetector.h</a></div></div>
+<div class="ttc" id="aUIDrawCommand_8h_html"><div class="ttname"><a href="UIDrawCommand_8h.html">UIDrawCommand.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html">mtgb::CircleDetector</a></div><div class="ttdoc">円形範囲内の対象検出システム</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8h_source.html#l00012">CircleDetector.h:13</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_a0186fdae2b53827e86d08e4a52c52430"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#a0186fdae2b53827e86d08e4a52c52430">mtgb::CircleDetector::UpdateAndSetDetection</a></div><div class="ttdeci">void UpdateAndSetDetection(CircleDetectorConfig &amp;&amp;_config)</div><div class="ttdoc">設定を更新して検出を実行</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00082">CircleDetector.cpp:82</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_a0a611145fdd3062ca728be733ace6c2d"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#a0a611145fdd3062ca728be733ace6c2d">mtgb::CircleDetector::ForEach</a></div><div class="ttdeci">void ForEach(std::function&lt; void(ScreenCoordContainsInfo &amp;)&gt; _func) override</div><div class="ttdoc">検出結果を操作</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00111">CircleDetector.cpp:111</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_a14c87a0b9c408b8db664878ab404edca"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#a14c87a0b9c408b8db664878ab404edca">mtgb::CircleDetector::~CircleDetector</a></div><div class="ttdeci">~CircleDetector()=default</div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_a2d012a00837e779d722758018ae9dfd5"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#a2d012a00837e779d722758018ae9dfd5">mtgb::CircleDetector::config</a></div><div class="ttdeci">CircleDetectorConfig config</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8h_source.html#l00055">CircleDetector.h:55</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_a57e8356168ce7dc2d14cdeae1996448e"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#a57e8356168ce7dc2d14cdeae1996448e">mtgb::CircleDetector::GetDetectionArea</a></div><div class="ttdeci">RectF GetDetectionArea() const override</div><div class="ttdoc">検出範囲を返す</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00093">CircleDetector.cpp:93</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_a68b53e77c3cef60f8c6624dd29804201"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#a68b53e77c3cef60f8c6624dd29804201">mtgb::CircleDetector::UpdateDetection</a></div><div class="ttdeci">void UpdateDetection() override</div><div class="ttdoc">検出を実行</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00030">CircleDetector.cpp:30</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_a77c38b9a4121e3ce69c6eda3add26568"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#a77c38b9a4121e3ce69c6eda3add26568">mtgb::CircleDetector::IsPointInCircle</a></div><div class="ttdeci">bool IsPointInCircle(const Vector2F &amp;point, const Vector2F &amp;center, float radius) const</div><div class="ttdoc">点が円内にあるかチェック</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00127">CircleDetector.cpp:127</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_aa68e5d9f6ede47abe73144c82baaa713"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#aa68e5d9f6ede47abe73144c82baaa713">mtgb::CircleDetector::HasDetectedTargets</a></div><div class="ttdeci">bool HasDetectedTargets() const override</div><div class="ttdoc">検出された対象があるかどうか</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00088">CircleDetector.cpp:88</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_ad74c50c952128b9e598f6b48163bc66f"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#ad74c50c952128b9e598f6b48163bc66f">mtgb::CircleDetector::CircleDetector</a></div><div class="ttdeci">CircleDetector()</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00015">CircleDetector.cpp:15</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_ae955a0b4db6f216d6b96836d426b18e9"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#ae955a0b4db6f216d6b96836d426b18e9">mtgb::CircleDetector::GetDetectedTargets</a></div><div class="ttdeci">const std::vector&lt; ScreenCoordContainsInfo &gt; &amp; GetDetectedTargets() const override</div><div class="ttdoc">検出結果を取得</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00104">CircleDetector.cpp:104</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IDetector_html"><div class="ttname"><a href="classmtgb_1_1IDetector.html">mtgb::IDetector</a></div><div class="ttdoc">検出システムのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="IDetector_8h_source.html#l00014">IDetector.h:15</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667"><div class="ttname"><a href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">mtgb::TextAlignment::center</a></div><div class="ttdeci">@ center</div></div>
+<div class="ttc" id="astructEffekseer_1_1RectF_html"><div class="ttname"><a href="structEffekseer_1_1RectF.html">Effekseer::RectF</a></div><div class="ttdoc">四角形</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01740">install_msvc2022_x64/include/Effekseer/Effekseer.h:1741</a></div></div>
+<div class="ttc" id="astructmtgb_1_1CircleDetectorConfig_html"><div class="ttname"><a href="structmtgb_1_1CircleDetectorConfig.html">mtgb::CircleDetectorConfig</a></div><div class="ttdoc">円検出器の設定</div><div class="ttdef"><b>Definition:</b> <a href="DetectorConfigs_8h_source.html#l00038">DetectorConfigs.h:39</a></div></div>
+<div class="ttc" id="astructmtgb_1_1ScreenCoordContainsInfo_html"><div class="ttname"><a href="structmtgb_1_1ScreenCoordContainsInfo.html">mtgb::ScreenCoordContainsInfo</a></div><div class="ttdoc">スクリーン座標系の含まれている対象の情報</div><div class="ttdef"><b>Definition:</b> <a href="RectContainsInfo_8h_source.html#l00010">RectContainsInfo.h:11</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector2T_html"><div class="ttname"><a href="structmtgb_1_1Vector2T.html">mtgb::Vector2T&lt; float &gt;</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="CircleDetector_8h.html">CircleDetector.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: imgui_tables.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('imgui__tables_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">imgui_tables.cpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="imgui_8h_source.html">imgui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imgui__internal_8h_source.html">imgui_internal.h</a>&quot;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+imgui_tables.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp__incl.svg" width="710" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="imgui__tables_8cpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:adf4d73301961430d50d7edd96f92ce38"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#adf4d73301961430d50d7edd96f92ce38">IMGUI_DEFINE_MATH_OPERATORS</a></td></tr>
+<tr class="separator:adf4d73301961430d50d7edd96f92ce38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:af637396d73d2cb591c8f868648676d7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#af637396d73d2cb591c8f868648676d7e">TableFixFlags</a> (<a class="el" href="imgui_8h.html#ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</a> flags, <a class="el" href="structImGuiWindow.html">ImGuiWindow</a> *outer_window)</td></tr>
+<tr class="separator:af637396d73d2cb591c8f868648676d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b63d98a1335539e1b8fd4f2f911272"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#a69b63d98a1335539e1b8fd4f2f911272">TableSetupColumnFlags</a> (<a class="el" href="structImGuiTable.html">ImGuiTable</a> *table, <a class="el" href="structImGuiTableColumn.html">ImGuiTableColumn</a> *column, <a class="el" href="imgui_8h.html#afa2ab8df5653f1cc944f6cbc156bf874">ImGuiTableColumnFlags</a> flags_in)</td></tr>
+<tr class="separator:a69b63d98a1335539e1b8fd4f2f911272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd809766a609e995a1d82b5eb929c046"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#afd809766a609e995a1d82b5eb929c046">TableInitColumnDefaults</a> (<a class="el" href="structImGuiTable.html">ImGuiTable</a> *table, <a class="el" href="structImGuiTableColumn.html">ImGuiTableColumn</a> *column, <a class="el" href="imgui_8h.html#afa2ab8df5653f1cc944f6cbc156bf874">ImGuiTableColumnFlags</a> init_mask)</td></tr>
+<tr class="separator:afd809766a609e995a1d82b5eb929c046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fe13bb54f193aee05417275c4800fcf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="imgui_8h.html#a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#a6fe13bb54f193aee05417275c4800fcf">TableGetColumnBorderCol</a> (<a class="el" href="structImGuiTable.html">ImGuiTable</a> *table, int order_n, int column_n)</td></tr>
+<tr class="separator:a6fe13bb54f193aee05417275c4800fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebda24996274dd92b15914db2e5437cc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415a">ImGuiSortDirection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#aebda24996274dd92b15914db2e5437cc">TableGetColumnAvailSortDirection</a> (<a class="el" href="structImGuiTableColumn.html">ImGuiTableColumn</a> *column, int n)</td></tr>
+<tr class="separator:aebda24996274dd92b15914db2e5437cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d09bbccd87f5e0a938438e1d5d1b8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#a63d09bbccd87f5e0a938438e1d5d1b8f">IM_STATIC_ASSERT</a> (<a class="el" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aacdc60ed6ea075a0fe8b77b7e4b90bf42">ImGuiSortDirection_None</a>==0 &amp;&amp;<a class="el" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</a>==1 &amp;&amp;<a class="el" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</a>==2)</td></tr>
+<tr class="separator:a63d09bbccd87f5e0a938438e1d5d1b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee31ddcde025e65e280df28377eda27"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#a3ee31ddcde025e65e280df28377eda27">TableSettingsInit</a> (<a class="el" href="structImGuiTableSettings.html">ImGuiTableSettings</a> *settings, <a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> id, int columns_count, int columns_count_max)</td></tr>
+<tr class="separator:a3ee31ddcde025e65e280df28377eda27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b6b40518b7c2d52b582d792af63b45d"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#a0b6b40518b7c2d52b582d792af63b45d">TableSettingsCalcChunkSize</a> (int columns_count)</td></tr>
+<tr class="separator:a0b6b40518b7c2d52b582d792af63b45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72509642c50a5c4abc1efa33e69d2ca1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#a72509642c50a5c4abc1efa33e69d2ca1">TableSettingsHandler_ClearAll</a> (<a class="el" href="structImGuiContext.html">ImGuiContext</a> *ctx, <a class="el" href="structImGuiSettingsHandler.html">ImGuiSettingsHandler</a> *)</td></tr>
+<tr class="separator:a72509642c50a5c4abc1efa33e69d2ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbcb0e08aa823944c0b6fe412821562b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#afbcb0e08aa823944c0b6fe412821562b">TableSettingsHandler_ApplyAll</a> (<a class="el" href="structImGuiContext.html">ImGuiContext</a> *ctx, <a class="el" href="structImGuiSettingsHandler.html">ImGuiSettingsHandler</a> *)</td></tr>
+<tr class="separator:afbcb0e08aa823944c0b6fe412821562b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80e16664c0cb81be75c414c9010a810"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#af80e16664c0cb81be75c414c9010a810">TableSettingsHandler_ReadOpen</a> (<a class="el" href="structImGuiContext.html">ImGuiContext</a> *, <a class="el" href="structImGuiSettingsHandler.html">ImGuiSettingsHandler</a> *, const char *name)</td></tr>
+<tr class="separator:af80e16664c0cb81be75c414c9010a810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3f3f2dbb7e835738033a419bfdd73c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#aba3f3f2dbb7e835738033a419bfdd73c">TableSettingsHandler_ReadLine</a> (<a class="el" href="structImGuiContext.html">ImGuiContext</a> *, <a class="el" href="structImGuiSettingsHandler.html">ImGuiSettingsHandler</a> *, void *entry, const char *line)</td></tr>
+<tr class="separator:aba3f3f2dbb7e835738033a419bfdd73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7d20f2a36d3a68b646eaf68dd785900"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#af7d20f2a36d3a68b646eaf68dd785900">TableSettingsHandler_WriteAll</a> (<a class="el" href="structImGuiContext.html">ImGuiContext</a> *ctx, <a class="el" href="structImGuiSettingsHandler.html">ImGuiSettingsHandler</a> *handler, <a class="el" href="structImGuiTextBuffer.html">ImGuiTextBuffer</a> *buf)</td></tr>
+<tr class="separator:af7d20f2a36d3a68b646eaf68dd785900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80e2d054bb6c45be560915b84daadff"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#ad80e2d054bb6c45be560915b84daadff">DebugNodeTableGetSizingPolicyDesc</a> (<a class="el" href="imgui_8h.html#ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</a> sizing_policy)</td></tr>
+<tr class="separator:ad80e2d054bb6c45be560915b84daadff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa235e9c607930ebb1304d6df978d5fe8"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#aa235e9c607930ebb1304d6df978d5fe8">GetDraggedColumnOffset</a> (<a class="el" href="structImGuiOldColumns.html">ImGuiOldColumns</a> *columns, int column_index)</td></tr>
+<tr class="separator:aa235e9c607930ebb1304d6df978d5fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabc7ace6eaff201b41715fac3c12b154"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#aabc7ace6eaff201b41715fac3c12b154">GetColumnWidthEx</a> (<a class="el" href="structImGuiOldColumns.html">ImGuiOldColumns</a> *columns, int column_index, bool before_resize=false)</td></tr>
+<tr class="separator:aabc7ace6eaff201b41715fac3c12b154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a91994afd965f48e251d70ca6dad4fae2"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#a91994afd965f48e251d70ca6dad4fae2">TABLE_DRAW_CHANNEL_BG0</a> = 0</td></tr>
+<tr class="separator:a91994afd965f48e251d70ca6dad4fae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8acdce7d7f4fc7b4d3fc0b243d0c09ab"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#a8acdce7d7f4fc7b4d3fc0b243d0c09ab">TABLE_DRAW_CHANNEL_BG2_FROZEN</a> = 1</td></tr>
+<tr class="separator:a8acdce7d7f4fc7b4d3fc0b243d0c09ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9655126612649ebded9316e8c17028d"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#af9655126612649ebded9316e8c17028d">TABLE_DRAW_CHANNEL_NOCLIP</a> = 2</td></tr>
+<tr class="separator:af9655126612649ebded9316e8c17028d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ba128f7eb2e553aae0299b36983f91b"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#a9ba128f7eb2e553aae0299b36983f91b">TABLE_BORDER_SIZE</a> = 1.0f</td></tr>
+<tr class="separator:a9ba128f7eb2e553aae0299b36983f91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8b55f318d93b1be0a1228640e64b4c"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#aee8b55f318d93b1be0a1228640e64b4c">TABLE_RESIZE_SEPARATOR_HALF_THICKNESS</a> = 4.0f</td></tr>
+<tr class="separator:aee8b55f318d93b1be0a1228640e64b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6f19f4326452b1997bb2619879146fb"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#ab6f19f4326452b1997bb2619879146fb">TABLE_RESIZE_SEPARATOR_FEEDBACK_TIMER</a> = 0.06f</td></tr>
+<tr class="separator:ab6f19f4326452b1997bb2619879146fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb2cf051f615a5871bdc89a85d98ebd"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__tables_8cpp.html#aeeb2cf051f615a5871bdc89a85d98ebd">COLUMNS_HIT_RECT_HALF_THICKNESS</a> = 4.0f</td></tr>
+<tr class="separator:aeeb2cf051f615a5871bdc89a85d98ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="adf4d73301961430d50d7edd96f92ce38" name="adf4d73301961430d50d7edd96f92ce38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf4d73301961430d50d7edd96f92ce38">&#9670;&#160;</a></span>IMGUI_DEFINE_MATH_OPERATORS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMGUI_DEFINE_MATH_OPERATORS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l00195">195</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ad80e2d054bb6c45be560915b84daadff" name="ad80e2d054bb6c45be560915b84daadff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad80e2d054bb6c45be560915b84daadff">&#9670;&#160;</a></span>DebugNodeTableGetSizingPolicyDesc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char * DebugNodeTableGetSizingPolicyDesc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="imgui_8h.html#ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</a>&#160;</td>
+          <td class="paramname"><em>sizing_policy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l04003">4003</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4004</span>{</div>
+<div class="line"><span class="lineno"> 4005</span>    sizing_policy &amp;= <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba3ecb5e53fa94b99a023fa4eedf7d8c08">ImGuiTableFlags_SizingMask_</a>;</div>
+<div class="line"><span class="lineno"> 4006</span>    <span class="keywordflow">if</span> (sizing_policy == <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbada9884fa56bfee6554c08143b7a4cf57">ImGuiTableFlags_SizingFixedFit</a>)    { <span class="keywordflow">return</span> <span class="stringliteral">&quot;FixedFit&quot;</span>; }</div>
+<div class="line"><span class="lineno"> 4007</span>    <span class="keywordflow">if</span> (sizing_policy == <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0a9c6c052a002ac59f9dd7a547edd670">ImGuiTableFlags_SizingFixedSame</a>)   { <span class="keywordflow">return</span> <span class="stringliteral">&quot;FixedSame&quot;</span>; }</div>
+<div class="line"><span class="lineno"> 4008</span>    <span class="keywordflow">if</span> (sizing_policy == <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba6f36a3c3aff05b68a46d42f53e287c2c">ImGuiTableFlags_SizingStretchProp</a>) { <span class="keywordflow">return</span> <span class="stringliteral">&quot;StretchProp&quot;</span>; }</div>
+<div class="line"><span class="lineno"> 4009</span>    <span class="keywordflow">if</span> (sizing_policy == <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba5f7fc3063cc7f323eda96585b1fd520d">ImGuiTableFlags_SizingStretchSame</a>) { <span class="keywordflow">return</span> <span class="stringliteral">&quot;StretchSame&quot;</span>; }</div>
+<div class="line"><span class="lineno"> 4010</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;N/A&quot;</span>;</div>
+<div class="line"><span class="lineno"> 4011</span>}</div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba0a9c6c052a002ac59f9dd7a547edd670"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0a9c6c052a002ac59f9dd7a547edd670">ImGuiTableFlags_SizingFixedSame</a></div><div class="ttdeci">@ ImGuiTableFlags_SizingFixedSame</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02081">imgui.h:2081</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba3ecb5e53fa94b99a023fa4eedf7d8c08"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba3ecb5e53fa94b99a023fa4eedf7d8c08">ImGuiTableFlags_SizingMask_</a></div><div class="ttdeci">@ ImGuiTableFlags_SizingMask_</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02105">imgui.h:2105</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba5f7fc3063cc7f323eda96585b1fd520d"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba5f7fc3063cc7f323eda96585b1fd520d">ImGuiTableFlags_SizingStretchSame</a></div><div class="ttdeci">@ ImGuiTableFlags_SizingStretchSame</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02083">imgui.h:2083</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba6f36a3c3aff05b68a46d42f53e287c2c"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba6f36a3c3aff05b68a46d42f53e287c2c">ImGuiTableFlags_SizingStretchProp</a></div><div class="ttdeci">@ ImGuiTableFlags_SizingStretchProp</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02082">imgui.h:2082</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dbada9884fa56bfee6554c08143b7a4cf57"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbada9884fa56bfee6554c08143b7a4cf57">ImGuiTableFlags_SizingFixedFit</a></div><div class="ttdeci">@ ImGuiTableFlags_SizingFixedFit</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02080">imgui.h:2080</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8h_source.html#l02080">ImGuiTableFlags_SizingFixedFit</a>, <a class="el" href="imgui_8h_source.html#l02081">ImGuiTableFlags_SizingFixedSame</a>, <a class="el" href="imgui_8h_source.html#l02105">ImGuiTableFlags_SizingMask_</a>, <a class="el" href="imgui_8h_source.html#l02082">ImGuiTableFlags_SizingStretchProp</a>, <a class="el" href="imgui_8h_source.html#l02083">ImGuiTableFlags_SizingStretchSame</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l04013">ImGui::DebugNodeTable()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_ad80e2d054bb6c45be560915b84daadff_icgraph.svg" width="998" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aabc7ace6eaff201b41715fac3c12b154" name="aabc7ace6eaff201b41715fac3c12b154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabc7ace6eaff201b41715fac3c12b154">&#9670;&#160;</a></span>GetColumnWidthEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float GetColumnWidthEx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiOldColumns.html">ImGuiOldColumns</a> *&#160;</td>
+          <td class="paramname"><em>columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>column_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>before_resize</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l04206">4206</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4207</span>{</div>
+<div class="line"><span class="lineno"> 4208</span>    <span class="keywordflow">if</span> (column_index &lt; 0)</div>
+<div class="line"><span class="lineno"> 4209</span>        column_index = columns-&gt;<a class="code hl_variable" href="structImGuiOldColumns.html#acb97d32d656cf8e96f707e998a107689">Current</a>;</div>
+<div class="line"><span class="lineno"> 4210</span> </div>
+<div class="line"><span class="lineno"> 4211</span>    <span class="keywordtype">float</span> offset_norm;</div>
+<div class="line"><span class="lineno"> 4212</span>    <span class="keywordflow">if</span> (before_resize)</div>
+<div class="line"><span class="lineno"> 4213</span>        offset_norm = columns-&gt;<a class="code hl_variable" href="structImGuiOldColumns.html#ab4f542da960ccad64557fe388a8f82eb">Columns</a>[column_index + 1].OffsetNormBeforeResize - columns-&gt;<a class="code hl_variable" href="structImGuiOldColumns.html#ab4f542da960ccad64557fe388a8f82eb">Columns</a>[column_index].OffsetNormBeforeResize;</div>
+<div class="line"><span class="lineno"> 4214</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 4215</span>        offset_norm = columns-&gt;<a class="code hl_variable" href="structImGuiOldColumns.html#ab4f542da960ccad64557fe388a8f82eb">Columns</a>[column_index + 1].OffsetNorm - columns-&gt;<a class="code hl_variable" href="structImGuiOldColumns.html#ab4f542da960ccad64557fe388a8f82eb">Columns</a>[column_index].OffsetNorm;</div>
+<div class="line"><span class="lineno"> 4216</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceImGui.html#a81693b00fc61ae1f7791e5e84108de54">ImGui::GetColumnOffsetFromNorm</a>(columns, offset_norm);</div>
+<div class="line"><span class="lineno"> 4217</span>}</div>
+<div class="ttc" id="anamespaceImGui_html_a81693b00fc61ae1f7791e5e84108de54"><div class="ttname"><a href="namespaceImGui.html#a81693b00fc61ae1f7791e5e84108de54">ImGui::GetColumnOffsetFromNorm</a></div><div class="ttdeci">IMGUI_API float GetColumnOffsetFromNorm(const ImGuiOldColumns *columns, float offset_norm)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__tables_8cpp_source.html#l04161">imgui_tables.cpp:4161</a></div></div>
+<div class="ttc" id="astructImGuiOldColumns_html_ab4f542da960ccad64557fe388a8f82eb"><div class="ttname"><a href="structImGuiOldColumns.html#ab4f542da960ccad64557fe388a8f82eb">ImGuiOldColumns::Columns</a></div><div class="ttdeci">ImVector&lt; ImGuiOldColumnData &gt; Columns</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l01849">imgui_internal.h:1849</a></div></div>
+<div class="ttc" id="astructImGuiOldColumns_html_acb97d32d656cf8e96f707e998a107689"><div class="ttname"><a href="structImGuiOldColumns.html#acb97d32d656cf8e96f707e998a107689">ImGuiOldColumns::Current</a></div><div class="ttdeci">int Current</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l01840">imgui_internal.h:1840</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l01849">ImGuiOldColumns::Columns</a>, <a class="el" href="imgui__internal_8h_source.html#l01840">ImGuiOldColumns::Current</a>, <a class="el" href="imgui__tables_8cpp_source.html#l04161">ImGui::GetColumnOffsetFromNorm()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l04232">ImGui::SetColumnOffset()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_aabc7ace6eaff201b41715fac3c12b154_cgraph.svg" width="459" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_aabc7ace6eaff201b41715fac3c12b154_icgraph.svg" width="2055" height="1254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa235e9c607930ebb1304d6df978d5fe8" name="aa235e9c607930ebb1304d6df978d5fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa235e9c607930ebb1304d6df978d5fe8">&#9670;&#160;</a></span>GetDraggedColumnOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float GetDraggedColumnOffset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiOldColumns.html">ImGuiOldColumns</a> *&#160;</td>
+          <td class="paramname"><em>columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>column_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l04173">4173</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4174</span>{</div>
+<div class="line"><span class="lineno"> 4175</span>    <span class="comment">// Active (dragged) column always follow mouse. The reason we need this is that dragging a column to the right edge of an auto-resizing</span></div>
+<div class="line"><span class="lineno"> 4176</span>    <span class="comment">// window creates a feedback loop because we store normalized positions. So while dragging we enforce absolute positioning.</span></div>
+<div class="line"><span class="lineno"> 4177</span>    <a class="code hl_struct" href="structImGuiContext.html">ImGuiContext</a>&amp; g = *<a class="code hl_variable" href="imgui_8cpp.html#a26aa67b834c0453a50c5e3970a8eba07">GImGui</a>;</div>
+<div class="line"><span class="lineno"> 4178</span>    <a class="code hl_struct" href="structImGuiWindow.html">ImGuiWindow</a>* window = g.<a class="code hl_variable" href="structImGuiContext.html#aa923044f396241668aef5ed2f4c4d847">CurrentWindow</a>;</div>
+<div class="line"><span class="lineno"> 4179</span>    <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(column_index &gt; 0); <span class="comment">// We are not supposed to drag column 0.</span></div>
+<div class="line"><span class="lineno"> 4180</span>    <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(g.<a class="code hl_variable" href="structImGuiContext.html#a11c874eb6cf74ba9162bd1d01c4ccbcc">ActiveId</a> == columns-&gt;<a class="code hl_variable" href="structImGuiOldColumns.html#ae8e14ed159e758560d196a9012ea617d">ID</a> + <a class="code hl_typedef" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>(column_index));</div>
+<div class="line"><span class="lineno"> 4181</span> </div>
+<div class="line"><span class="lineno"> 4182</span>    <span class="keywordtype">float</span> x = g.<a class="code hl_variable" href="structImGuiContext.html#add4fdcc8c6a437d8f8e7c837418be83c">IO</a>.<a class="code hl_variable" href="structImGuiIO.html#ad2e9e547cb4d2abe8e7d27407efffeb8">MousePos</a>.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a> - g.<a class="code hl_variable" href="structImGuiContext.html#a28afb4e9b4ac155825f4b4c94cdc516c">ActiveIdClickOffset</a>.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a> + <a class="code hl_function" href="imgui__internal_8h.html#a34870cae27ccd450c17ec3d3910b2da4">ImTrunc</a>(<a class="code hl_variable" href="imgui__tables_8cpp.html#aeeb2cf051f615a5871bdc89a85d98ebd">COLUMNS_HIT_RECT_HALF_THICKNESS</a> * g.<a class="code hl_variable" href="structImGuiContext.html#a2c207eee4f861cd2f338bf26352f0631">CurrentDpiScale</a>) - window-&gt;<a class="code hl_variable" href="structImGuiWindow.html#a1453f685401a44f76256fb54a4aac451">Pos</a>.<a class="code hl_variable" href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">x</a>;</div>
+<div class="line"><span class="lineno"> 4183</span>    x = <a class="code hl_function" href="imgui__internal_8h.html#a7667efd95147d0422f140917c71a9226">ImMax</a>(x, <a class="code hl_function" href="namespaceImGui.html#a79c22e9c5c208b6c9534a273be71a9e6">ImGui::GetColumnOffset</a>(column_index - 1) + g.<a class="code hl_variable" href="structImGuiContext.html#a2e682502e1a3d2c399171dd3c4fc969d">Style</a>.<a class="code hl_variable" href="structImGuiStyle.html#a8fed04481e1d75bb95c97819f545e2ba">ColumnsMinSpacing</a>);</div>
+<div class="line"><span class="lineno"> 4184</span>    <span class="keywordflow">if</span> ((columns-&gt;<a class="code hl_variable" href="structImGuiOldColumns.html#aaf37a990d000be9d6d16181edbe1072c">Flags</a> &amp; <a class="code hl_enumvalue" href="imgui__internal_8h.html#a8b9b28a4b14227561a035ca721d38d2cac9d198e4b2362f973b7eceec610d57a2">ImGuiOldColumnFlags_NoPreserveWidths</a>))</div>
+<div class="line"><span class="lineno"> 4185</span>        x = <a class="code hl_function" href="imgui__internal_8h.html#a7f9d7828066a9d61b5630adcdf4655d3">ImMin</a>(x, <a class="code hl_function" href="namespaceImGui.html#a79c22e9c5c208b6c9534a273be71a9e6">ImGui::GetColumnOffset</a>(column_index + 1) - g.<a class="code hl_variable" href="structImGuiContext.html#a2e682502e1a3d2c399171dd3c4fc969d">Style</a>.<a class="code hl_variable" href="structImGuiStyle.html#a8fed04481e1d75bb95c97819f545e2ba">ColumnsMinSpacing</a>);</div>
+<div class="line"><span class="lineno"> 4186</span> </div>
+<div class="line"><span class="lineno"> 4187</span>    <span class="keywordflow">return</span> x;</div>
+<div class="line"><span class="lineno"> 4188</span>}</div>
+<div class="ttc" id="aimgui_8cpp_html_a26aa67b834c0453a50c5e3970a8eba07"><div class="ttname"><a href="imgui_8cpp.html#a26aa67b834c0453a50c5e3970a8eba07">GImGui</a></div><div class="ttdeci">ImGuiContext * GImGui</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l01388">imgui.cpp:1388</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a1785c9b6f4e16406764a85f32582236f"><div class="ttname"><a href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a></div><div class="ttdeci">unsigned int ImGuiID</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00156">imgui.h:156</a></div></div>
+<div class="ttc" id="aimgui_8h_html_acb09e7dc42e8e3cefb0ecaa197978920"><div class="ttname"><a href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a></div><div class="ttdeci">#define IM_ASSERT(_EXPR)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00096">imgui.h:96</a></div></div>
+<div class="ttc" id="aimgui__internal_8h_html_a34870cae27ccd450c17ec3d3910b2da4"><div class="ttname"><a href="imgui__internal_8h.html#a34870cae27ccd450c17ec3d3910b2da4">ImTrunc</a></div><div class="ttdeci">static float ImTrunc(float f)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00512">imgui_internal.h:512</a></div></div>
+<div class="ttc" id="aimgui__internal_8h_html_a7667efd95147d0422f140917c71a9226"><div class="ttname"><a href="imgui__internal_8h.html#a7667efd95147d0422f140917c71a9226">ImMax</a></div><div class="ttdeci">static T ImMax(T lhs, T rhs)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00495">imgui_internal.h:495</a></div></div>
+<div class="ttc" id="aimgui__internal_8h_html_a7f9d7828066a9d61b5630adcdf4655d3"><div class="ttname"><a href="imgui__internal_8h.html#a7f9d7828066a9d61b5630adcdf4655d3">ImMin</a></div><div class="ttdeci">static T ImMin(T lhs, T rhs)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00494">imgui_internal.h:494</a></div></div>
+<div class="ttc" id="aimgui__internal_8h_html_a8b9b28a4b14227561a035ca721d38d2cac9d198e4b2362f973b7eceec610d57a2"><div class="ttname"><a href="imgui__internal_8h.html#a8b9b28a4b14227561a035ca721d38d2cac9d198e4b2362f973b7eceec610d57a2">ImGuiOldColumnFlags_NoPreserveWidths</a></div><div class="ttdeci">@ ImGuiOldColumnFlags_NoPreserveWidths</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l01809">imgui_internal.h:1809</a></div></div>
+<div class="ttc" id="aimgui__tables_8cpp_html_aeeb2cf051f615a5871bdc89a85d98ebd"><div class="ttname"><a href="imgui__tables_8cpp.html#aeeb2cf051f615a5871bdc89a85d98ebd">COLUMNS_HIT_RECT_HALF_THICKNESS</a></div><div class="ttdeci">static const float COLUMNS_HIT_RECT_HALF_THICKNESS</div><div class="ttdef"><b>Definition:</b> <a href="imgui__tables_8cpp_source.html#l04171">imgui_tables.cpp:4171</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a79c22e9c5c208b6c9534a273be71a9e6"><div class="ttname"><a href="namespaceImGui.html#a79c22e9c5c208b6c9534a273be71a9e6">ImGui::GetColumnOffset</a></div><div class="ttdeci">IMGUI_API float GetColumnOffset(int column_index=-1)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__tables_8cpp_source.html#l04190">imgui_tables.cpp:4190</a></div></div>
+<div class="ttc" id="astructImGuiContext_html"><div class="ttname"><a href="structImGuiContext.html">ImGuiContext</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02332">imgui_internal.h:2333</a></div></div>
+<div class="ttc" id="astructImGuiContext_html_a11c874eb6cf74ba9162bd1d01c4ccbcc"><div class="ttname"><a href="structImGuiContext.html#a11c874eb6cf74ba9162bd1d01c4ccbcc">ImGuiContext::ActiveId</a></div><div class="ttdeci">ImGuiID ActiveId</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02401">imgui_internal.h:2401</a></div></div>
+<div class="ttc" id="astructImGuiContext_html_a28afb4e9b4ac155825f4b4c94cdc516c"><div class="ttname"><a href="structImGuiContext.html#a28afb4e9b4ac155825f4b4c94cdc516c">ImGuiContext::ActiveIdClickOffset</a></div><div class="ttdeci">ImVec2 ActiveIdClickOffset</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02412">imgui_internal.h:2412</a></div></div>
+<div class="ttc" id="astructImGuiContext_html_a2c207eee4f861cd2f338bf26352f0631"><div class="ttname"><a href="structImGuiContext.html#a2c207eee4f861cd2f338bf26352f0631">ImGuiContext::CurrentDpiScale</a></div><div class="ttdeci">float CurrentDpiScale</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02347">imgui_internal.h:2347</a></div></div>
+<div class="ttc" id="astructImGuiContext_html_a2e682502e1a3d2c399171dd3c4fc969d"><div class="ttname"><a href="structImGuiContext.html#a2e682502e1a3d2c399171dd3c4fc969d">ImGuiContext::Style</a></div><div class="ttdeci">ImGuiStyle Style</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02337">imgui_internal.h:2337</a></div></div>
+<div class="ttc" id="astructImGuiContext_html_aa923044f396241668aef5ed2f4c4d847"><div class="ttname"><a href="structImGuiContext.html#aa923044f396241668aef5ed2f4c4d847">ImGuiContext::CurrentWindow</a></div><div class="ttdeci">ImGuiWindow * CurrentWindow</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02377">imgui_internal.h:2377</a></div></div>
+<div class="ttc" id="astructImGuiContext_html_add4fdcc8c6a437d8f8e7c837418be83c"><div class="ttname"><a href="structImGuiContext.html#add4fdcc8c6a437d8f8e7c837418be83c">ImGuiContext::IO</a></div><div class="ttdeci">ImGuiIO IO</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02335">imgui_internal.h:2335</a></div></div>
+<div class="ttc" id="astructImGuiIO_html_ad2e9e547cb4d2abe8e7d27407efffeb8"><div class="ttname"><a href="structImGuiIO.html#ad2e9e547cb4d2abe8e7d27407efffeb8">ImGuiIO::MousePos</a></div><div class="ttdeci">ImVec2 MousePos</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02606">imgui.h:2606</a></div></div>
+<div class="ttc" id="astructImGuiOldColumns_html_aaf37a990d000be9d6d16181edbe1072c"><div class="ttname"><a href="structImGuiOldColumns.html#aaf37a990d000be9d6d16181edbe1072c">ImGuiOldColumns::Flags</a></div><div class="ttdeci">ImGuiOldColumnFlags Flags</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l01837">imgui_internal.h:1837</a></div></div>
+<div class="ttc" id="astructImGuiOldColumns_html_ae8e14ed159e758560d196a9012ea617d"><div class="ttname"><a href="structImGuiOldColumns.html#ae8e14ed159e758560d196a9012ea617d">ImGuiOldColumns::ID</a></div><div class="ttdeci">ImGuiID ID</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l01836">imgui_internal.h:1836</a></div></div>
+<div class="ttc" id="astructImGuiStyle_html_a8fed04481e1d75bb95c97819f545e2ba"><div class="ttname"><a href="structImGuiStyle.html#a8fed04481e1d75bb95c97819f545e2ba">ImGuiStyle::ColumnsMinSpacing</a></div><div class="ttdeci">float ColumnsMinSpacing</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02337">imgui.h:2337</a></div></div>
+<div class="ttc" id="astructImGuiWindow_html"><div class="ttname"><a href="structImGuiWindow.html">ImGuiWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02789">imgui_internal.h:2790</a></div></div>
+<div class="ttc" id="astructImGuiWindow_html_a1453f685401a44f76256fb54a4aac451"><div class="ttname"><a href="structImGuiWindow.html#a1453f685401a44f76256fb54a4aac451">ImGuiWindow::Pos</a></div><div class="ttdeci">ImVec2 Pos</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02801">imgui_internal.h:2801</a></div></div>
+<div class="ttc" id="astructImVec2_html_a5802a68560961ed8cb8cc5fb2a244c2d"><div class="ttname"><a href="structImVec2.html#a5802a68560961ed8cb8cc5fb2a244c2d">ImVec2::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00294">imgui.h:294</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l02401">ImGuiContext::ActiveId</a>, <a class="el" href="imgui__internal_8h_source.html#l02412">ImGuiContext::ActiveIdClickOffset</a>, <a class="el" href="imgui__tables_8cpp_source.html#l04171">COLUMNS_HIT_RECT_HALF_THICKNESS</a>, <a class="el" href="imgui_8h_source.html#l02337">ImGuiStyle::ColumnsMinSpacing</a>, <a class="el" href="imgui__internal_8h_source.html#l02347">ImGuiContext::CurrentDpiScale</a>, <a class="el" href="imgui__internal_8h_source.html#l02377">ImGuiContext::CurrentWindow</a>, <a class="el" href="imgui__internal_8h_source.html#l01837">ImGuiOldColumns::Flags</a>, <a class="el" href="imgui__tables_8cpp_source.html#l04190">ImGui::GetColumnOffset()</a>, <a class="el" href="imgui_8cpp_source.html#l01388">GImGui</a>, <a class="el" href="imgui__internal_8h_source.html#l01836">ImGuiOldColumns::ID</a>, <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui__internal_8h_source.html#l01809">ImGuiOldColumnFlags_NoPreserveWidths</a>, <a class="el" href="imgui__internal_8h_source.html#l00495">ImMax()</a>, <a class="el" href="imgui__internal_8h_source.html#l00494">ImMin()</a>, <a class="el" href="imgui__internal_8h_source.html#l00512">ImTrunc()</a>, <a class="el" href="imgui__internal_8h_source.html#l02335">ImGuiContext::IO</a>, <a class="el" href="imgui_8h_source.html#l02606">ImGuiIO::MousePos</a>, <a class="el" href="imgui__internal_8h_source.html#l02801">ImGuiWindow::Pos</a>, <a class="el" href="imgui__internal_8h_source.html#l02337">ImGuiContext::Style</a>, <a class="el" href="imgui_8h_source.html#l00294">ImVec2::x</a> (計20項目).</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l04463">ImGui::EndColumns()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_aa235e9c607930ebb1304d6df978d5fe8_cgraph.svg" width="2080" height="1902"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_aa235e9c607930ebb1304d6df978d5fe8_icgraph.svg" width="1858" height="1330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a63d09bbccd87f5e0a938438e1d5d1b8f" name="a63d09bbccd87f5e0a938438e1d5d1b8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63d09bbccd87f5e0a938438e1d5d1b8f">&#9670;&#160;</a></span>IM_STATIC_ASSERT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IM_STATIC_ASSERT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aacdc60ed6ea075a0fe8b77b7e4b90bf42">ImGuiSortDirection_None</a>&#160;</td>
+          <td class="paramname"> = <code>=0&#160;&amp;&amp;<a class="el" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</a>==1&#160;&amp;&amp;<a class="el" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</a>==2</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af637396d73d2cb591c8f868648676d7e" name="af637396d73d2cb591c8f868648676d7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af637396d73d2cb591c8f868648676d7e">&#9670;&#160;</a></span>TableFixFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</a> TableFixFlags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="imgui_8h.html#ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</a>&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structImGuiWindow.html">ImGuiWindow</a> *&#160;</td>
+          <td class="paramname"><em>outer_window</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l00271">271</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  272</span>{</div>
+<div class="line"><span class="lineno">  273</span>    <span class="comment">// Adjust flags: set default sizing policy</span></div>
+<div class="line"><span class="lineno">  274</span>    <span class="keywordflow">if</span> ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba3ecb5e53fa94b99a023fa4eedf7d8c08">ImGuiTableFlags_SizingMask_</a>) == 0)</div>
+<div class="line"><span class="lineno">  275</span>        flags |= ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba9844889ae8d1b7d9737b7488436dc8ec">ImGuiTableFlags_ScrollX</a>) || (outer_window-&gt;<a class="code hl_variable" href="structImGuiWindow.html#a7c29e810a533b9a647cce5d93d45057f">Flags</a> &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ad2afd5a59df2ef70ff03f4a851168814a3726656c8d1c5bd69b58a6949c790ca1">ImGuiWindowFlags_AlwaysAutoResize</a>)) ? <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbada9884fa56bfee6554c08143b7a4cf57">ImGuiTableFlags_SizingFixedFit</a> : <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba5f7fc3063cc7f323eda96585b1fd520d">ImGuiTableFlags_SizingStretchSame</a>;</div>
+<div class="line"><span class="lineno">  276</span> </div>
+<div class="line"><span class="lineno">  277</span>    <span class="comment">// Adjust flags: enable NoKeepColumnsVisible when using ImGuiTableFlags_SizingFixedSame</span></div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordflow">if</span> ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba3ecb5e53fa94b99a023fa4eedf7d8c08">ImGuiTableFlags_SizingMask_</a>) == <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0a9c6c052a002ac59f9dd7a547edd670">ImGuiTableFlags_SizingFixedSame</a>)</div>
+<div class="line"><span class="lineno">  279</span>        flags |= <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba9676cbb7244d6e74e7d312d28326af7b">ImGuiTableFlags_NoKeepColumnsVisible</a>;</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>    <span class="comment">// Adjust flags: enforce borders when resizable</span></div>
+<div class="line"><span class="lineno">  282</span>    <span class="keywordflow">if</span> (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbaf01e51eba480c57e9ecb0c7ccf57878d">ImGuiTableFlags_Resizable</a>)</div>
+<div class="line"><span class="lineno">  283</span>        flags |= <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba9c72a48557547426791fe01868940b28">ImGuiTableFlags_BordersInnerV</a>;</div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>    <span class="comment">// Adjust flags: disable NoHostExtendX/NoHostExtendY if we have any scrolling going on</span></div>
+<div class="line"><span class="lineno">  286</span>    <span class="keywordflow">if</span> (flags &amp; (<a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba9844889ae8d1b7d9737b7488436dc8ec">ImGuiTableFlags_ScrollX</a> | <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba49aac8fcc7905e7006918943c414303d">ImGuiTableFlags_ScrollY</a>))</div>
+<div class="line"><span class="lineno">  287</span>        flags &amp;= ~(<a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba7150c6964021a048b8379aed41e0205a">ImGuiTableFlags_NoHostExtendX</a> | <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbae0d8a05a918fdb4e917d2e0e9ee4b008">ImGuiTableFlags_NoHostExtendY</a>);</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>    <span class="comment">// Adjust flags: NoBordersInBodyUntilResize takes priority over NoBordersInBody</span></div>
+<div class="line"><span class="lineno">  290</span>    <span class="keywordflow">if</span> (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0ccda026163853b5fd8656c0cb3dacf3">ImGuiTableFlags_NoBordersInBodyUntilResize</a>)</div>
+<div class="line"><span class="lineno">  291</span>        flags &amp;= ~ImGuiTableFlags_NoBordersInBody;</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>    <span class="comment">// Adjust flags: disable saved settings if there&#39;s nothing to save</span></div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">if</span> ((flags &amp; (<a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbaf01e51eba480c57e9ecb0c7ccf57878d">ImGuiTableFlags_Resizable</a> | <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbae9caafa56bf7222b111f8334419e6c8c">ImGuiTableFlags_Hideable</a> | <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba2c2d05129f42cd655c68ff645b2c916e">ImGuiTableFlags_Reorderable</a> | <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0a75d3b76b87fb6cc9c99253c0744cb9">ImGuiTableFlags_Sortable</a>)) == 0)</div>
+<div class="line"><span class="lineno">  295</span>        flags |= <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba01b657161a28e6ca80a85ecdd9dda217">ImGuiTableFlags_NoSavedSettings</a>;</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>    <span class="comment">// Inherit _NoSavedSettings from top-level window (child windows always have _NoSavedSettings set)</span></div>
+<div class="line"><span class="lineno">  298</span>    <span class="keywordflow">if</span> (outer_window-&gt;<a class="code hl_variable" href="structImGuiWindow.html#aef9281297b0993c8f1b7c1ff7987cb61">RootWindow</a>-&gt;<a class="code hl_variable" href="structImGuiWindow.html#a7c29e810a533b9a647cce5d93d45057f">Flags</a> &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ad2afd5a59df2ef70ff03f4a851168814a8f03639de3e7e3a63fe6fa0b56cfb73f">ImGuiWindowFlags_NoSavedSettings</a>)</div>
+<div class="line"><span class="lineno">  299</span>        flags |= <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba01b657161a28e6ca80a85ecdd9dda217">ImGuiTableFlags_NoSavedSettings</a>;</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>    <span class="keywordflow">return</span> flags;</div>
+<div class="line"><span class="lineno">  302</span>}</div>
+<div class="ttc" id="aimgui_8h_html_ad2afd5a59df2ef70ff03f4a851168814a3726656c8d1c5bd69b58a6949c790ca1"><div class="ttname"><a href="imgui_8h.html#ad2afd5a59df2ef70ff03f4a851168814a3726656c8d1c5bd69b58a6949c790ca1">ImGuiWindowFlags_AlwaysAutoResize</a></div><div class="ttdeci">@ ImGuiWindowFlags_AlwaysAutoResize</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01188">imgui.h:1188</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ad2afd5a59df2ef70ff03f4a851168814a8f03639de3e7e3a63fe6fa0b56cfb73f"><div class="ttname"><a href="imgui_8h.html#ad2afd5a59df2ef70ff03f4a851168814a8f03639de3e7e3a63fe6fa0b56cfb73f">ImGuiWindowFlags_NoSavedSettings</a></div><div class="ttdeci">@ ImGuiWindowFlags_NoSavedSettings</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01190">imgui.h:1190</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba01b657161a28e6ca80a85ecdd9dda217"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba01b657161a28e6ca80a85ecdd9dda217">ImGuiTableFlags_NoSavedSettings</a></div><div class="ttdeci">@ ImGuiTableFlags_NoSavedSettings</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02064">imgui.h:2064</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba0a75d3b76b87fb6cc9c99253c0744cb9"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0a75d3b76b87fb6cc9c99253c0744cb9">ImGuiTableFlags_Sortable</a></div><div class="ttdeci">@ ImGuiTableFlags_Sortable</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02063">imgui.h:2063</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba0ccda026163853b5fd8656c0cb3dacf3"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0ccda026163853b5fd8656c0cb3dacf3">ImGuiTableFlags_NoBordersInBodyUntilResize</a></div><div class="ttdeci">@ ImGuiTableFlags_NoBordersInBodyUntilResize</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02078">imgui.h:2078</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba2c2d05129f42cd655c68ff645b2c916e"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba2c2d05129f42cd655c68ff645b2c916e">ImGuiTableFlags_Reorderable</a></div><div class="ttdeci">@ ImGuiTableFlags_Reorderable</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02061">imgui.h:2061</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba49aac8fcc7905e7006918943c414303d"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba49aac8fcc7905e7006918943c414303d">ImGuiTableFlags_ScrollY</a></div><div class="ttdeci">@ ImGuiTableFlags_ScrollY</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02097">imgui.h:2097</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba7150c6964021a048b8379aed41e0205a"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba7150c6964021a048b8379aed41e0205a">ImGuiTableFlags_NoHostExtendX</a></div><div class="ttdeci">@ ImGuiTableFlags_NoHostExtendX</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02085">imgui.h:2085</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba9676cbb7244d6e74e7d312d28326af7b"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba9676cbb7244d6e74e7d312d28326af7b">ImGuiTableFlags_NoKeepColumnsVisible</a></div><div class="ttdeci">@ ImGuiTableFlags_NoKeepColumnsVisible</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02087">imgui.h:2087</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba9844889ae8d1b7d9737b7488436dc8ec"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba9844889ae8d1b7d9737b7488436dc8ec">ImGuiTableFlags_ScrollX</a></div><div class="ttdeci">@ ImGuiTableFlags_ScrollX</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02096">imgui.h:2096</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba9c72a48557547426791fe01868940b28"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba9c72a48557547426791fe01868940b28">ImGuiTableFlags_BordersInnerV</a></div><div class="ttdeci">@ ImGuiTableFlags_BordersInnerV</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02070">imgui.h:2070</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dbae0d8a05a918fdb4e917d2e0e9ee4b008"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbae0d8a05a918fdb4e917d2e0e9ee4b008">ImGuiTableFlags_NoHostExtendY</a></div><div class="ttdeci">@ ImGuiTableFlags_NoHostExtendY</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02086">imgui.h:2086</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dbae9caafa56bf7222b111f8334419e6c8c"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbae9caafa56bf7222b111f8334419e6c8c">ImGuiTableFlags_Hideable</a></div><div class="ttdeci">@ ImGuiTableFlags_Hideable</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02062">imgui.h:2062</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dbaf01e51eba480c57e9ecb0c7ccf57878d"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbaf01e51eba480c57e9ecb0c7ccf57878d">ImGuiTableFlags_Resizable</a></div><div class="ttdeci">@ ImGuiTableFlags_Resizable</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02060">imgui.h:2060</a></div></div>
+<div class="ttc" id="astructImGuiWindow_html_a7c29e810a533b9a647cce5d93d45057f"><div class="ttname"><a href="structImGuiWindow.html#a7c29e810a533b9a647cce5d93d45057f">ImGuiWindow::Flags</a></div><div class="ttdeci">ImGuiWindowFlags Flags</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02794">imgui_internal.h:2794</a></div></div>
+<div class="ttc" id="astructImGuiWindow_html_aef9281297b0993c8f1b7c1ff7987cb61"><div class="ttname"><a href="structImGuiWindow.html#aef9281297b0993c8f1b7c1ff7987cb61">ImGuiWindow::RootWindow</a></div><div class="ttdeci">ImGuiWindow * RootWindow</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02892">imgui_internal.h:2892</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l02794">ImGuiWindow::Flags</a>, <a class="el" href="imgui_8h_source.html#l02070">ImGuiTableFlags_BordersInnerV</a>, <a class="el" href="imgui_8h_source.html#l02062">ImGuiTableFlags_Hideable</a>, <a class="el" href="imgui_8h_source.html#l02078">ImGuiTableFlags_NoBordersInBodyUntilResize</a>, <a class="el" href="imgui_8h_source.html#l02085">ImGuiTableFlags_NoHostExtendX</a>, <a class="el" href="imgui_8h_source.html#l02086">ImGuiTableFlags_NoHostExtendY</a>, <a class="el" href="imgui_8h_source.html#l02087">ImGuiTableFlags_NoKeepColumnsVisible</a>, <a class="el" href="imgui_8h_source.html#l02064">ImGuiTableFlags_NoSavedSettings</a>, <a class="el" href="imgui_8h_source.html#l02061">ImGuiTableFlags_Reorderable</a>, <a class="el" href="imgui_8h_source.html#l02060">ImGuiTableFlags_Resizable</a>, <a class="el" href="imgui_8h_source.html#l02096">ImGuiTableFlags_ScrollX</a>, <a class="el" href="imgui_8h_source.html#l02097">ImGuiTableFlags_ScrollY</a>, <a class="el" href="imgui_8h_source.html#l02080">ImGuiTableFlags_SizingFixedFit</a>, <a class="el" href="imgui_8h_source.html#l02081">ImGuiTableFlags_SizingFixedSame</a>, <a class="el" href="imgui_8h_source.html#l02105">ImGuiTableFlags_SizingMask_</a>, <a class="el" href="imgui_8h_source.html#l02083">ImGuiTableFlags_SizingStretchSame</a>, <a class="el" href="imgui_8h_source.html#l02063">ImGuiTableFlags_Sortable</a>, <a class="el" href="imgui_8h_source.html#l01188">ImGuiWindowFlags_AlwaysAutoResize</a>, <a class="el" href="imgui_8h_source.html#l01190">ImGuiWindowFlags_NoSavedSettings</a>, <a class="el" href="imgui__internal_8h_source.html#l02892">ImGuiWindow::RootWindow</a> (計20項目).</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l00317">ImGui::BeginTableEx()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_af637396d73d2cb591c8f868648676d7e_icgraph.svg" width="1868" height="878"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aebda24996274dd92b15914db2e5437cc" name="aebda24996274dd92b15914db2e5437cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebda24996274dd92b15914db2e5437cc">&#9670;&#160;</a></span>TableGetColumnAvailSortDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415a">ImGuiSortDirection</a> TableGetColumnAvailSortDirection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiTableColumn.html">ImGuiTableColumn</a> *&#160;</td>
+          <td class="paramname"><em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l02892">2892</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2893</span>{</div>
+<div class="line"><span class="lineno"> 2894</span>    <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(n &lt; column-&gt;SortDirectionsAvailCount);</div>
+<div class="line"><span class="lineno"> 2895</span>    <span class="keywordflow">return</span> (<a class="code hl_enumeration" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415a">ImGuiSortDirection</a>)((column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#abbbce32f24f22d04bf128d9c58b77c4d">SortDirectionsAvailList</a> &gt;&gt; (n &lt;&lt; 1)) &amp; 0x03);</div>
+<div class="line"><span class="lineno"> 2896</span>}</div>
+<div class="ttc" id="aimgui_8h_html_ab5f495ad9c69e579da19b149877c415a"><div class="ttname"><a href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415a">ImGuiSortDirection</a></div><div class="ttdeci">ImGuiSortDirection</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01562">imgui.h:1563</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_abbbce32f24f22d04bf128d9c58b77c4d"><div class="ttname"><a href="structImGuiTableColumn.html#abbbce32f24f22d04bf128d9c58b77c4d">ImGuiTableColumn::SortDirectionsAvailList</a></div><div class="ttdeci">ImU8 SortDirectionsAvailList</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03076">imgui_internal.h:3076</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui__internal_8h_source.html#l03076">ImGuiTableColumn::SortDirectionsAvailList</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l02899">ImGui::TableFixColumnSortDirection()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l02911">ImGui::TableGetColumnNextSortDirection()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l02958">ImGui::TableSortSpecsSanitize()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_aebda24996274dd92b15914db2e5437cc_icgraph.svg" width="3186" height="1866"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6fe13bb54f193aee05417275c4800fcf" name="a6fe13bb54f193aee05417275c4800fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fe13bb54f193aee05417275c4800fcf">&#9670;&#160;</a></span>TableGetColumnBorderCol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="imgui_8h.html#a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</a> TableGetColumnBorderCol </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiTable.html">ImGuiTable</a> *&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>order_n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>column_n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l02762">2762</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2763</span>{</div>
+<div class="line"><span class="lineno"> 2764</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_hovered = (table-&gt;<a class="code hl_variable" href="structImGuiTable.html#a1c47654491f288507621e4b2231b4f89">HoveredColumnBorder</a> == column_n);</div>
+<div class="line"><span class="lineno"> 2765</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_resized = (table-&gt;<a class="code hl_variable" href="structImGuiTable.html#af1ef3df199510dd5210d6501ce6c3996">ResizedColumn</a> == column_n) &amp;&amp; (table-&gt;<a class="code hl_variable" href="structImGuiTable.html#ac0ff33b9c82c9405189c4130a165cfdc">InstanceInteracted</a> == table-&gt;<a class="code hl_variable" href="structImGuiTable.html#a79fe77ae5bb4b1280fcfbbd2e98ad882">InstanceCurrent</a>);</div>
+<div class="line"><span class="lineno"> 2766</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_frozen_separator = (table-&gt;<a class="code hl_variable" href="structImGuiTable.html#add0b2bf413de36eab591d5e376d2f0b4">FreezeColumnsCount</a> == order_n + 1);</div>
+<div class="line"><span class="lineno"> 2767</span>    <span class="keywordflow">if</span> (is_resized || is_hovered)</div>
+<div class="line"><span class="lineno"> 2768</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceImGui.html#a0de2d9bd347d9866511eb8d014e62556">ImGui::GetColorU32</a>(is_resized ? <a class="code hl_enumvalue" href="imgui_8h.html#a8e46ef7d0c76fbb1916171edfa4ae9e7a54eef76e3369d1a0d281c80d481d914c">ImGuiCol_SeparatorActive</a> : <a class="code hl_enumvalue" href="imgui_8h.html#a8e46ef7d0c76fbb1916171edfa4ae9e7ae1d45fb6192c6d690bf7483014bcd730">ImGuiCol_SeparatorHovered</a>);</div>
+<div class="line"><span class="lineno"> 2769</span>    <span class="keywordflow">if</span> (is_frozen_separator || (table-&gt;<a class="code hl_variable" href="structImGuiTable.html#ac232807fd66991e640579fb3b02ae051">Flags</a> &amp; (<a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba1626e9b20a43d5c9e693b6768e2e9bf1">ImGuiTableFlags_NoBordersInBody</a> | <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0ccda026163853b5fd8656c0cb3dacf3">ImGuiTableFlags_NoBordersInBodyUntilResize</a>)))</div>
+<div class="line"><span class="lineno"> 2770</span>        <span class="keywordflow">return</span> table-&gt;<a class="code hl_variable" href="structImGuiTable.html#a936d4880c94acaaf59a1bdaafd4fb9cf">BorderColorStrong</a>;</div>
+<div class="line"><span class="lineno"> 2771</span>    <span class="keywordflow">return</span> table-&gt;<a class="code hl_variable" href="structImGuiTable.html#ac79c118ebe0c19a00fd0e6a83c7fcfd5">BorderColorLight</a>;</div>
+<div class="line"><span class="lineno"> 2772</span>}</div>
+<div class="ttc" id="aimgui_8h_html_a8e46ef7d0c76fbb1916171edfa4ae9e7a54eef76e3369d1a0d281c80d481d914c"><div class="ttname"><a href="imgui_8h.html#a8e46ef7d0c76fbb1916171edfa4ae9e7a54eef76e3369d1a0d281c80d481d914c">ImGuiCol_SeparatorActive</a></div><div class="ttdeci">@ ImGuiCol_SeparatorActive</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01803">imgui.h:1803</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a8e46ef7d0c76fbb1916171edfa4ae9e7ae1d45fb6192c6d690bf7483014bcd730"><div class="ttname"><a href="imgui_8h.html#a8e46ef7d0c76fbb1916171edfa4ae9e7ae1d45fb6192c6d690bf7483014bcd730">ImGuiCol_SeparatorHovered</a></div><div class="ttdeci">@ ImGuiCol_SeparatorHovered</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01802">imgui.h:1802</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba1626e9b20a43d5c9e693b6768e2e9bf1"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba1626e9b20a43d5c9e693b6768e2e9bf1">ImGuiTableFlags_NoBordersInBody</a></div><div class="ttdeci">@ ImGuiTableFlags_NoBordersInBody</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02077">imgui.h:2077</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a0de2d9bd347d9866511eb8d014e62556"><div class="ttname"><a href="namespaceImGui.html#a0de2d9bd347d9866511eb8d014e62556">ImGui::GetColorU32</a></div><div class="ttdeci">IMGUI_API ImU32 GetColorU32(ImGuiCol idx, float alpha_mul=1.0f)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l03465">imgui.cpp:3465</a></div></div>
+<div class="ttc" id="astructImGuiTable_html_a1c47654491f288507621e4b2231b4f89"><div class="ttname"><a href="structImGuiTable.html#a1c47654491f288507621e4b2231b4f89">ImGuiTable::HoveredColumnBorder</a></div><div class="ttdeci">ImGuiTableColumnIdx HoveredColumnBorder</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03198">imgui_internal.h:3198</a></div></div>
+<div class="ttc" id="astructImGuiTable_html_a79fe77ae5bb4b1280fcfbbd2e98ad882"><div class="ttname"><a href="structImGuiTable.html#a79fe77ae5bb4b1280fcfbbd2e98ad882">ImGuiTable::InstanceCurrent</a></div><div class="ttdeci">ImS16 InstanceCurrent</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03143">imgui_internal.h:3143</a></div></div>
+<div class="ttc" id="astructImGuiTable_html_a936d4880c94acaaf59a1bdaafd4fb9cf"><div class="ttname"><a href="structImGuiTable.html#a936d4880c94acaaf59a1bdaafd4fb9cf">ImGuiTable::BorderColorStrong</a></div><div class="ttdeci">ImU32 BorderColorStrong</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03155">imgui_internal.h:3155</a></div></div>
+<div class="ttc" id="astructImGuiTable_html_ac0ff33b9c82c9405189c4130a165cfdc"><div class="ttname"><a href="structImGuiTable.html#ac0ff33b9c82c9405189c4130a165cfdc">ImGuiTable::InstanceInteracted</a></div><div class="ttdeci">ImS16 InstanceInteracted</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03144">imgui_internal.h:3144</a></div></div>
+<div class="ttc" id="astructImGuiTable_html_ac232807fd66991e640579fb3b02ae051"><div class="ttname"><a href="structImGuiTable.html#ac232807fd66991e640579fb3b02ae051">ImGuiTable::Flags</a></div><div class="ttdeci">ImGuiTableFlags Flags</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03128">imgui_internal.h:3128</a></div></div>
+<div class="ttc" id="astructImGuiTable_html_ac79c118ebe0c19a00fd0e6a83c7fcfd5"><div class="ttname"><a href="structImGuiTable.html#ac79c118ebe0c19a00fd0e6a83c7fcfd5">ImGuiTable::BorderColorLight</a></div><div class="ttdeci">ImU32 BorderColorLight</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03156">imgui_internal.h:3156</a></div></div>
+<div class="ttc" id="astructImGuiTable_html_add0b2bf413de36eab591d5e376d2f0b4"><div class="ttname"><a href="structImGuiTable.html#add0b2bf413de36eab591d5e376d2f0b4">ImGuiTable::FreezeColumnsCount</a></div><div class="ttdeci">ImGuiTableColumnIdx FreezeColumnsCount</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03214">imgui_internal.h:3214</a></div></div>
+<div class="ttc" id="astructImGuiTable_html_af1ef3df199510dd5210d6501ce6c3996"><div class="ttname"><a href="structImGuiTable.html#af1ef3df199510dd5210d6501ce6c3996">ImGuiTable::ResizedColumn</a></div><div class="ttdeci">ImGuiTableColumnIdx ResizedColumn</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03201">imgui_internal.h:3201</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l03156">ImGuiTable::BorderColorLight</a>, <a class="el" href="imgui__internal_8h_source.html#l03155">ImGuiTable::BorderColorStrong</a>, <a class="el" href="imgui__internal_8h_source.html#l03128">ImGuiTable::Flags</a>, <a class="el" href="imgui__internal_8h_source.html#l03214">ImGuiTable::FreezeColumnsCount</a>, <a class="el" href="imgui_8cpp_source.html#l03465">ImGui::GetColorU32()</a>, <a class="el" href="imgui__internal_8h_source.html#l03198">ImGuiTable::HoveredColumnBorder</a>, <a class="el" href="imgui_8h_source.html#l01803">ImGuiCol_SeparatorActive</a>, <a class="el" href="imgui_8h_source.html#l01802">ImGuiCol_SeparatorHovered</a>, <a class="el" href="imgui_8h_source.html#l02077">ImGuiTableFlags_NoBordersInBody</a>, <a class="el" href="imgui_8h_source.html#l02078">ImGuiTableFlags_NoBordersInBodyUntilResize</a>, <a class="el" href="imgui__internal_8h_source.html#l03143">ImGuiTable::InstanceCurrent</a>, <a class="el" href="imgui__internal_8h_source.html#l03144">ImGuiTable::InstanceInteracted</a>, <a class="el" href="imgui__internal_8h_source.html#l03201">ImGuiTable::ResizedColumn</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l03329">ImGui::TableAngledHeadersRowEx()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l02775">ImGui::TableDrawBorders()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_a6fe13bb54f193aee05417275c4800fcf_cgraph.svg" width="647" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_a6fe13bb54f193aee05417275c4800fcf_icgraph.svg" width="2108" height="1898"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afd809766a609e995a1d82b5eb929c046" name="afd809766a609e995a1d82b5eb929c046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd809766a609e995a1d82b5eb929c046">&#9670;&#160;</a></span>TableInitColumnDefaults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void TableInitColumnDefaults </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiTable.html">ImGuiTable</a> *&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structImGuiTableColumn.html">ImGuiTableColumn</a> *&#160;</td>
+          <td class="paramname"><em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="imgui_8h.html#afa2ab8df5653f1cc944f6cbc156bf874">ImGuiTableColumnFlags</a>&#160;</td>
+          <td class="paramname"><em>init_mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l01574">1574</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1575</span>{</div>
+<div class="line"><span class="lineno"> 1576</span>    <a class="code hl_typedef" href="imgui_8h.html#afa2ab8df5653f1cc944f6cbc156bf874">ImGuiTableColumnFlags</a> flags = column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a46f41e471f2be0a226fef2782d8318e3">Flags</a>;</div>
+<div class="line"><span class="lineno"> 1577</span>    <span class="keywordflow">if</span> (init_mask &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbaf01e51eba480c57e9ecb0c7ccf57878d">ImGuiTableFlags_Resizable</a>)</div>
+<div class="line"><span class="lineno"> 1578</span>    {</div>
+<div class="line"><span class="lineno"> 1579</span>        <span class="keywordtype">float</span> init_width_or_weight = column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a3b3ca3f9832c94586083f40b4688b92e">InitStretchWeightOrWidth</a>;</div>
+<div class="line"><span class="lineno"> 1580</span>        column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a5c620f16932315085b34326466eee489">WidthRequest</a> = ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa0c7226a04c7a6c85e82e49ab6ffcbc16">ImGuiTableColumnFlags_WidthFixed</a>) &amp;&amp; init_width_or_weight &gt; 0.0f) ? init_width_or_weight : -1.0f;</div>
+<div class="line"><span class="lineno"> 1581</span>        column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a1e76d6659e59f751c863f360cdb6bdb9">StretchWeight</a> = (init_width_or_weight &gt; 0.0f &amp;&amp; (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa49d7e979d99f6bb61ff1f3f4cc5b3e19">ImGuiTableColumnFlags_WidthStretch</a>)) ? init_width_or_weight : -1.0f;</div>
+<div class="line"><span class="lineno"> 1582</span>        <span class="keywordflow">if</span> (init_width_or_weight &gt; 0.0f) <span class="comment">// Disable auto-fit if an explicit width/weight has been specified</span></div>
+<div class="line"><span class="lineno"> 1583</span>            column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a0cf98cb70102b97ccccbf5b4fc50117c">AutoFitQueue</a> = 0x00;</div>
+<div class="line"><span class="lineno"> 1584</span>    }</div>
+<div class="line"><span class="lineno"> 1585</span>    <span class="keywordflow">if</span> (init_mask &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba2c2d05129f42cd655c68ff645b2c916e">ImGuiTableFlags_Reorderable</a>)</div>
+<div class="line"><span class="lineno"> 1586</span>        column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a30b397fb788df97b1cf85242a173c31e">DisplayOrder</a> = (<a class="code hl_typedef" href="imgui__internal_8h.html#ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</a>)table-&gt;<a class="code hl_variable" href="structImGuiTable.html#a6b39e1812dd524fe2dd4a04b613588cf">Columns</a>.<a class="code hl_function" href="structImSpan.html#a7e80a5146acbfac4bb952f80daf3c305">index_from_ptr</a>(column);</div>
+<div class="line"><span class="lineno"> 1587</span>    <span class="keywordflow">if</span> (init_mask &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbae9caafa56bf7222b111f8334419e6c8c">ImGuiTableFlags_Hideable</a>)</div>
+<div class="line"><span class="lineno"> 1588</span>        column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a0e71a32a995e7e68b50cd88eb93e2098">IsUserEnabled</a> = column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a077efdc7e4bc41077533f4a6c83621a8">IsUserEnabledNextFrame</a> = (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa78019d9508bfba90bad1ff5f5279b4f1">ImGuiTableColumnFlags_DefaultHide</a>) ? 0 : 1;</div>
+<div class="line"><span class="lineno"> 1589</span>    <span class="keywordflow">if</span> (init_mask &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0a75d3b76b87fb6cc9c99253c0744cb9">ImGuiTableFlags_Sortable</a>)</div>
+<div class="line"><span class="lineno"> 1590</span>    {</div>
+<div class="line"><span class="lineno"> 1591</span>        <span class="comment">// Multiple columns using _DefaultSort will be reassigned unique SortOrder values when building the sort specs.</span></div>
+<div class="line"><span class="lineno"> 1592</span>        column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#ae068aee2c3b454f733a2c1cd5d89ff9b">SortOrder</a> = (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fab7d91025911950fffdf9ae51ce2b44cb">ImGuiTableColumnFlags_DefaultSort</a>) ? 0 : -1;</div>
+<div class="line"><span class="lineno"> 1593</span>        column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a5693cdc4775bdba3c1b295c77208e72d">SortDirection</a> = (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fab7d91025911950fffdf9ae51ce2b44cb">ImGuiTableColumnFlags_DefaultSort</a>) ? ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa121d9aafd0bfb353ff9dda73e3dacee8">ImGuiTableColumnFlags_PreferSortDescending</a>) ? (<a class="code hl_typedef" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a>)<a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</a> : (<a class="code hl_typedef" href="imgui_8h.html#a3834dc55ff790956b09b4baf387e2fe5">ImU8</a>)(<a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</a>)) : (<a class="code hl_typedef" href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a>)<a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aacdc60ed6ea075a0fe8b77b7e4b90bf42">ImGuiSortDirection_None</a>;</div>
+<div class="line"><span class="lineno"> 1594</span>    }</div>
+<div class="line"><span class="lineno"> 1595</span>}</div>
+<div class="ttc" id="aimgui_8h_html_a33644f626f44716357624c2755a9b9d1"><div class="ttname"><a href="imgui_8h.html#a33644f626f44716357624c2755a9b9d1">ImS8</a></div><div class="ttdeci">signed char ImS8</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00157">imgui.h:157</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a3834dc55ff790956b09b4baf387e2fe5"><div class="ttname"><a href="imgui_8h.html#a3834dc55ff790956b09b4baf387e2fe5">ImU8</a></div><div class="ttdeci">unsigned char ImU8</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00158">imgui.h:158</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa0c7226a04c7a6c85e82e49ab6ffcbc16"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa0c7226a04c7a6c85e82e49ab6ffcbc16">ImGuiTableColumnFlags_WidthFixed</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_WidthFixed</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02117">imgui.h:2117</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa121d9aafd0bfb353ff9dda73e3dacee8"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa121d9aafd0bfb353ff9dda73e3dacee8">ImGuiTableColumnFlags_PreferSortDescending</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_PreferSortDescending</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02128">imgui.h:2128</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa49d7e979d99f6bb61ff1f3f4cc5b3e19"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa49d7e979d99f6bb61ff1f3f4cc5b3e19">ImGuiTableColumnFlags_WidthStretch</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_WidthStretch</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02116">imgui.h:2116</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa78019d9508bfba90bad1ff5f5279b4f1"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa78019d9508bfba90bad1ff5f5279b4f1">ImGuiTableColumnFlags_DefaultHide</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_DefaultHide</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02114">imgui.h:2114</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fab7d91025911950fffdf9ae51ce2b44cb"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fab7d91025911950fffdf9ae51ce2b44cb">ImGuiTableColumnFlags_DefaultSort</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_DefaultSort</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02115">imgui.h:2115</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ab5f495ad9c69e579da19b149877c415aa2d631683c09b2cba6efdc6cda391444d"><div class="ttname"><a href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</a></div><div class="ttdeci">@ ImGuiSortDirection_Descending</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01567">imgui.h:1566</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3"><div class="ttname"><a href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</a></div><div class="ttdeci">@ ImGuiSortDirection_Ascending</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01565">imgui.h:1565</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ab5f495ad9c69e579da19b149877c415aacdc60ed6ea075a0fe8b77b7e4b90bf42"><div class="ttname"><a href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aacdc60ed6ea075a0fe8b77b7e4b90bf42">ImGuiSortDirection_None</a></div><div class="ttdeci">@ ImGuiSortDirection_None</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01564">imgui.h:1564</a></div></div>
+<div class="ttc" id="aimgui_8h_html_afa2ab8df5653f1cc944f6cbc156bf874"><div class="ttname"><a href="imgui_8h.html#afa2ab8df5653f1cc944f6cbc156bf874">ImGuiTableColumnFlags</a></div><div class="ttdeci">int ImGuiTableColumnFlags</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00261">imgui.h:261</a></div></div>
+<div class="ttc" id="aimgui__internal_8h_html_ae77491f08fc0762c8a390c9ea8e2a7e7"><div class="ttname"><a href="imgui__internal_8h.html#ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</a></div><div class="ttdeci">ImS16 ImGuiTableColumnIdx</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00220">imgui_internal.h:220</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_a077efdc7e4bc41077533f4a6c83621a8"><div class="ttname"><a href="structImGuiTableColumn.html#a077efdc7e4bc41077533f4a6c83621a8">ImGuiTableColumn::IsUserEnabledNextFrame</a></div><div class="ttdeci">bool IsUserEnabledNextFrame</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03064">imgui_internal.h:3064</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_a0cf98cb70102b97ccccbf5b4fc50117c"><div class="ttname"><a href="structImGuiTableColumn.html#a0cf98cb70102b97ccccbf5b4fc50117c">ImGuiTableColumn::AutoFitQueue</a></div><div class="ttdeci">ImU8 AutoFitQueue</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03071">imgui_internal.h:3071</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_a0e71a32a995e7e68b50cd88eb93e2098"><div class="ttname"><a href="structImGuiTableColumn.html#a0e71a32a995e7e68b50cd88eb93e2098">ImGuiTableColumn::IsUserEnabled</a></div><div class="ttdeci">bool IsUserEnabled</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03063">imgui_internal.h:3063</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_a1e76d6659e59f751c863f360cdb6bdb9"><div class="ttname"><a href="structImGuiTableColumn.html#a1e76d6659e59f751c863f360cdb6bdb9">ImGuiTableColumn::StretchWeight</a></div><div class="ttdeci">float StretchWeight</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03042">imgui_internal.h:3042</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_a30b397fb788df97b1cf85242a173c31e"><div class="ttname"><a href="structImGuiTableColumn.html#a30b397fb788df97b1cf85242a173c31e">ImGuiTableColumn::DisplayOrder</a></div><div class="ttdeci">ImGuiTableColumnIdx DisplayOrder</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03054">imgui_internal.h:3054</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_a3b3ca3f9832c94586083f40b4688b92e"><div class="ttname"><a href="structImGuiTableColumn.html#a3b3ca3f9832c94586083f40b4688b92e">ImGuiTableColumn::InitStretchWeightOrWidth</a></div><div class="ttdeci">float InitStretchWeightOrWidth</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03043">imgui_internal.h:3043</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_a46f41e471f2be0a226fef2782d8318e3"><div class="ttname"><a href="structImGuiTableColumn.html#a46f41e471f2be0a226fef2782d8318e3">ImGuiTableColumn::Flags</a></div><div class="ttdeci">ImGuiTableColumnFlags Flags</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03035">imgui_internal.h:3035</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_a5693cdc4775bdba3c1b295c77208e72d"><div class="ttname"><a href="structImGuiTableColumn.html#a5693cdc4775bdba3c1b295c77208e72d">ImGuiTableColumn::SortDirection</a></div><div class="ttdeci">ImU8 SortDirection</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03073">imgui_internal.h:3073</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_a5c620f16932315085b34326466eee489"><div class="ttname"><a href="structImGuiTableColumn.html#a5c620f16932315085b34326466eee489">ImGuiTableColumn::WidthRequest</a></div><div class="ttdeci">float WidthRequest</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03039">imgui_internal.h:3039</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_ae068aee2c3b454f733a2c1cd5d89ff9b"><div class="ttname"><a href="structImGuiTableColumn.html#ae068aee2c3b454f733a2c1cd5d89ff9b">ImGuiTableColumn::SortOrder</a></div><div class="ttdeci">ImGuiTableColumnIdx SortOrder</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03058">imgui_internal.h:3058</a></div></div>
+<div class="ttc" id="astructImGuiTable_html_a6b39e1812dd524fe2dd4a04b613588cf"><div class="ttname"><a href="structImGuiTable.html#a6b39e1812dd524fe2dd4a04b613588cf">ImGuiTable::Columns</a></div><div class="ttdeci">ImSpan&lt; ImGuiTableColumn &gt; Columns</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03131">imgui_internal.h:3131</a></div></div>
+<div class="ttc" id="astructImSpan_html_a7e80a5146acbfac4bb952f80daf3c305"><div class="ttname"><a href="structImSpan.html#a7e80a5146acbfac4bb952f80daf3c305">ImSpan::index_from_ptr</a></div><div class="ttdeci">int index_from_ptr(const T *it) const</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00684">imgui_internal.h:684</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l03071">ImGuiTableColumn::AutoFitQueue</a>, <a class="el" href="imgui__internal_8h_source.html#l03131">ImGuiTable::Columns</a>, <a class="el" href="imgui__internal_8h_source.html#l03054">ImGuiTableColumn::DisplayOrder</a>, <a class="el" href="imgui__internal_8h_source.html#l03035">ImGuiTableColumn::Flags</a>, <a class="el" href="imgui_8h_source.html#l01565">ImGuiSortDirection_Ascending</a>, <a class="el" href="imgui_8h_source.html#l01566">ImGuiSortDirection_Descending</a>, <a class="el" href="imgui_8h_source.html#l01564">ImGuiSortDirection_None</a>, <a class="el" href="imgui_8h_source.html#l02114">ImGuiTableColumnFlags_DefaultHide</a>, <a class="el" href="imgui_8h_source.html#l02115">ImGuiTableColumnFlags_DefaultSort</a>, <a class="el" href="imgui_8h_source.html#l02128">ImGuiTableColumnFlags_PreferSortDescending</a>, <a class="el" href="imgui_8h_source.html#l02117">ImGuiTableColumnFlags_WidthFixed</a>, <a class="el" href="imgui_8h_source.html#l02116">ImGuiTableColumnFlags_WidthStretch</a>, <a class="el" href="imgui_8h_source.html#l02062">ImGuiTableFlags_Hideable</a>, <a class="el" href="imgui_8h_source.html#l02061">ImGuiTableFlags_Reorderable</a>, <a class="el" href="imgui_8h_source.html#l02060">ImGuiTableFlags_Resizable</a>, <a class="el" href="imgui_8h_source.html#l02063">ImGuiTableFlags_Sortable</a>, <a class="el" href="imgui__internal_8h_source.html#l00684">ImSpan&lt; T &gt;::index_from_ptr()</a>, <a class="el" href="imgui__internal_8h_source.html#l03043">ImGuiTableColumn::InitStretchWeightOrWidth</a>, <a class="el" href="imgui__internal_8h_source.html#l03063">ImGuiTableColumn::IsUserEnabled</a>, <a class="el" href="imgui__internal_8h_source.html#l03064">ImGuiTableColumn::IsUserEnabledNextFrame</a>, <a class="el" href="imgui__internal_8h_source.html#l03073">ImGuiTableColumn::SortDirection</a>, <a class="el" href="imgui__internal_8h_source.html#l03058">ImGuiTableColumn::SortOrder</a>, <a class="el" href="imgui__internal_8h_source.html#l03042">ImGuiTableColumn::StretchWeight</a>, <a class="el" href="imgui__internal_8h_source.html#l03039">ImGuiTableColumn::WidthRequest</a> (計24項目).</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l03744">ImGui::TableLoadSettings()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l01599">ImGui::TableSetupColumn()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_afd809766a609e995a1d82b5eb929c046_cgraph.svg" width="420" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_afd809766a609e995a1d82b5eb929c046_icgraph.svg" width="2240" height="908"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0b6b40518b7c2d52b582d792af63b45d" name="a0b6b40518b7c2d52b582d792af63b45d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b6b40518b7c2d52b582d792af63b45d">&#9670;&#160;</a></span>TableSettingsCalcChunkSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t TableSettingsCalcChunkSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>columns_count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l03641">3641</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3642</span>{</div>
+<div class="line"><span class="lineno"> 3643</span>    <span class="keywordflow">return</span> <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structImGuiTableSettings.html">ImGuiTableSettings</a>) + (<span class="keywordtype">size_t</span>)columns_count * <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structImGuiTableColumnSettings.html">ImGuiTableColumnSettings</a>);</div>
+<div class="line"><span class="lineno"> 3644</span>}</div>
+<div class="ttc" id="astructImGuiTableColumnSettings_html"><div class="ttname"><a href="structImGuiTableColumnSettings.html">ImGuiTableColumnSettings</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03273">imgui_internal.h:3274</a></div></div>
+<div class="ttc" id="astructImGuiTableSettings_html"><div class="ttname"><a href="structImGuiTableSettings.html">ImGuiTableSettings</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03297">imgui_internal.h:3298</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l03977">ImGui::TableGcCompactSettings()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l03646">ImGui::TableSettingsCreate()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_a0b6b40518b7c2d52b582d792af63b45d_icgraph.svg" width="2403" height="1520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afbcb0e08aa823944c0b6fe412821562b" name="afbcb0e08aa823944c0b6fe412821562b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbcb0e08aa823944c0b6fe412821562b">&#9670;&#160;</a></span>TableSettingsHandler_ApplyAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void TableSettingsHandler_ApplyAll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiContext.html">ImGuiContext</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structImGuiSettingsHandler.html">ImGuiSettingsHandler</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l03825">3825</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3826</span>{</div>
+<div class="line"><span class="lineno"> 3827</span>    <a class="code hl_struct" href="structImGuiContext.html">ImGuiContext</a>&amp; g = *ctx;</div>
+<div class="line"><span class="lineno"> 3828</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i != g.<a class="code hl_variable" href="structImGuiContext.html#af98791565876933c63b1db9df4118116">Tables</a>.<a class="code hl_function" href="structImPool.html#a519f3e31d5750c6fef15642720f68a6c">GetMapSize</a>(); i++)</div>
+<div class="line"><span class="lineno"> 3829</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structImGuiTable.html">ImGuiTable</a>* table = g.<a class="code hl_variable" href="structImGuiContext.html#af98791565876933c63b1db9df4118116">Tables</a>.<a class="code hl_function" href="structImPool.html#a36a6b758775e849f3ccc20727376476a">TryGetMapData</a>(i))</div>
+<div class="line"><span class="lineno"> 3830</span>        {</div>
+<div class="line"><span class="lineno"> 3831</span>            table-&gt;IsSettingsRequestLoad = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 3832</span>            table-&gt;SettingsOffset = -1;</div>
+<div class="line"><span class="lineno"> 3833</span>        }</div>
+<div class="line"><span class="lineno"> 3834</span>}</div>
+<div class="ttc" id="astructImGuiContext_html_af98791565876933c63b1db9df4118116"><div class="ttname"><a href="structImGuiContext.html#af98791565876933c63b1db9df4118116">ImGuiContext::Tables</a></div><div class="ttdeci">ImPool&lt; ImGuiTable &gt; Tables</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02573">imgui_internal.h:2573</a></div></div>
+<div class="ttc" id="astructImGuiTable_html"><div class="ttname"><a href="structImGuiTable.html">ImGuiTable</a></div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03125">imgui_internal.h:3126</a></div></div>
+<div class="ttc" id="astructImPool_html_a36a6b758775e849f3ccc20727376476a"><div class="ttname"><a href="structImPool.html#a36a6b758775e849f3ccc20727376476a">ImPool::TryGetMapData</a></div><div class="ttdeci">T * TryGetMapData(ImPoolIdx n)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00772">imgui_internal.h:772</a></div></div>
+<div class="ttc" id="astructImPool_html_a519f3e31d5750c6fef15642720f68a6c"><div class="ttname"><a href="structImPool.html#a519f3e31d5750c6fef15642720f68a6c">ImPool::GetMapSize</a></div><div class="ttdeci">int GetMapSize() const</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00771">imgui_internal.h:771</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l00771">ImPool&lt; T &gt;::GetMapSize()</a>, <a class="el" href="imgui__internal_8h_source.html#l02573">ImGuiContext::Tables</a>, <a class="el" href="imgui__internal_8h_source.html#l00772">ImPool&lt; T &gt;::TryGetMapData()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l03921">ImGui::TableSettingsAddSettingsHandler()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_afbcb0e08aa823944c0b6fe412821562b_cgraph.svg" width="594" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_afbcb0e08aa823944c0b6fe412821562b_icgraph.svg" width="1048" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a72509642c50a5c4abc1efa33e69d2ca1" name="a72509642c50a5c4abc1efa33e69d2ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72509642c50a5c4abc1efa33e69d2ca1">&#9670;&#160;</a></span>TableSettingsHandler_ClearAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void TableSettingsHandler_ClearAll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiContext.html">ImGuiContext</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structImGuiSettingsHandler.html">ImGuiSettingsHandler</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l03815">3815</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3816</span>{</div>
+<div class="line"><span class="lineno"> 3817</span>    <a class="code hl_struct" href="structImGuiContext.html">ImGuiContext</a>&amp; g = *ctx;</div>
+<div class="line"><span class="lineno"> 3818</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i != g.<a class="code hl_variable" href="structImGuiContext.html#af98791565876933c63b1db9df4118116">Tables</a>.<a class="code hl_function" href="structImPool.html#a519f3e31d5750c6fef15642720f68a6c">GetMapSize</a>(); i++)</div>
+<div class="line"><span class="lineno"> 3819</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structImGuiTable.html">ImGuiTable</a>* table = g.<a class="code hl_variable" href="structImGuiContext.html#af98791565876933c63b1db9df4118116">Tables</a>.<a class="code hl_function" href="structImPool.html#a36a6b758775e849f3ccc20727376476a">TryGetMapData</a>(i))</div>
+<div class="line"><span class="lineno"> 3820</span>            table-&gt;SettingsOffset = -1;</div>
+<div class="line"><span class="lineno"> 3821</span>    g.<a class="code hl_variable" href="structImGuiContext.html#ad2ede9b6bf347485792dbd3c9ec4f5eb">SettingsTables</a>.<a class="code hl_function" href="structImChunkStream.html#a3bf3babbba7a8edafce99be0589379a3">clear</a>();</div>
+<div class="line"><span class="lineno"> 3822</span>}</div>
+<div class="ttc" id="astructImChunkStream_html_a3bf3babbba7a8edafce99be0589379a3"><div class="ttname"><a href="structImChunkStream.html#a3bf3babbba7a8edafce99be0589379a3">ImChunkStream::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00785">imgui_internal.h:785</a></div></div>
+<div class="ttc" id="astructImGuiContext_html_ad2ede9b6bf347485792dbd3c9ec4f5eb"><div class="ttname"><a href="structImGuiContext.html#ad2ede9b6bf347485792dbd3c9ec4f5eb">ImGuiContext::SettingsTables</a></div><div class="ttdeci">ImChunkStream&lt; ImGuiTableSettings &gt; SettingsTables</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02654">imgui_internal.h:2654</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l00785">ImChunkStream&lt; T &gt;::clear()</a>, <a class="el" href="imgui__internal_8h_source.html#l00771">ImPool&lt; T &gt;::GetMapSize()</a>, <a class="el" href="imgui__internal_8h_source.html#l02654">ImGuiContext::SettingsTables</a>, <a class="el" href="imgui__internal_8h_source.html#l02573">ImGuiContext::Tables</a>, <a class="el" href="imgui__internal_8h_source.html#l00772">ImPool&lt; T &gt;::TryGetMapData()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l03921">ImGui::TableSettingsAddSettingsHandler()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_a72509642c50a5c4abc1efa33e69d2ca1_cgraph.svg" width="594" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_a72509642c50a5c4abc1efa33e69d2ca1_icgraph.svg" width="1048" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aba3f3f2dbb7e835738033a419bfdd73c" name="aba3f3f2dbb7e835738033a419bfdd73c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba3f3f2dbb7e835738033a419bfdd73c">&#9670;&#160;</a></span>TableSettingsHandler_ReadLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void TableSettingsHandler_ReadLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiContext.html">ImGuiContext</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structImGuiSettingsHandler.html">ImGuiSettingsHandler</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l03855">3855</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3856</span>{</div>
+<div class="line"><span class="lineno"> 3857</span>    <span class="comment">// &quot;Column 0  UserID=0x42AD2D21 Width=100 Visible=1 Order=0 Sort=0v&quot;</span></div>
+<div class="line"><span class="lineno"> 3858</span>    <a class="code hl_struct" href="structImGuiTableSettings.html">ImGuiTableSettings</a>* settings = (<a class="code hl_struct" href="structImGuiTableSettings.html">ImGuiTableSettings</a>*)entry;</div>
+<div class="line"><span class="lineno"> 3859</span>    <span class="keywordtype">float</span> f = 0.0f;</div>
+<div class="line"><span class="lineno"> 3860</span>    <span class="keywordtype">int</span> column_n = 0, r = 0, n = 0;</div>
+<div class="line"><span class="lineno"> 3861</span> </div>
+<div class="line"><span class="lineno"> 3862</span>    <span class="keywordflow">if</span> (sscanf(line, <span class="stringliteral">&quot;RefScale=%f&quot;</span>, &amp;f) == 1) { settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#a398a341e350a8aaf3758e0d4b773f39b">RefScale</a> = f; <span class="keywordflow">return</span>; }</div>
+<div class="line"><span class="lineno"> 3863</span> </div>
+<div class="line"><span class="lineno"> 3864</span>    <span class="keywordflow">if</span> (sscanf(line, <span class="stringliteral">&quot;Column %d%n&quot;</span>, &amp;column_n, &amp;r) == 1)</div>
+<div class="line"><span class="lineno"> 3865</span>    {</div>
+<div class="line"><span class="lineno"> 3866</span>        <span class="keywordflow">if</span> (column_n &lt; 0 || column_n &gt;= settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#ae7802faa283782844c7d6f822e51fd98">ColumnsCount</a>)</div>
+<div class="line"><span class="lineno"> 3867</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno"> 3868</span>        line = <a class="code hl_function" href="imgui_8cpp.html#a8f93b897914903f6e1fe3ec400dfd271">ImStrSkipBlank</a>(line + r);</div>
+<div class="line"><span class="lineno"> 3869</span>        <span class="keywordtype">char</span> c = 0;</div>
+<div class="line"><span class="lineno"> 3870</span>        <a class="code hl_struct" href="structImGuiTableColumnSettings.html">ImGuiTableColumnSettings</a>* column = settings-&gt;<a class="code hl_function" href="structImGuiTableSettings.html#ae26859503d7552a9d4efe351d8f9f7a2">GetColumnSettings</a>() + column_n;</div>
+<div class="line"><span class="lineno"> 3871</span>        column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aaead6c42b6af8f565fbc8c927f944cec">Index</a> = (<a class="code hl_typedef" href="imgui__internal_8h.html#ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</a>)column_n;</div>
+<div class="line"><span class="lineno"> 3872</span>        <span class="keywordflow">if</span> (sscanf(line, <span class="stringliteral">&quot;UserID=0x%08X%n&quot;</span>, (<a class="code hl_typedef" href="imgui_8h.html#a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</a>*)&amp;n, &amp;r)==1) { line = <a class="code hl_function" href="imgui_8cpp.html#a8f93b897914903f6e1fe3ec400dfd271">ImStrSkipBlank</a>(line + r); column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#a8b68ca3c4df704ce887e11e9b2a4ac8b">UserID</a> = (<a class="code hl_typedef" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>)n; }</div>
+<div class="line"><span class="lineno"> 3873</span>        <span class="keywordflow">if</span> (sscanf(line, <span class="stringliteral">&quot;Width=%d%n&quot;</span>, &amp;n, &amp;r) == 1)            { line = <a class="code hl_function" href="imgui_8cpp.html#a8f93b897914903f6e1fe3ec400dfd271">ImStrSkipBlank</a>(line + r); column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aebe7c9f3741414220444af5bc9515244">WidthOrWeight</a> = (float)n; column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aba294c8530cde8eaaafc15423c5ad45b">IsStretch</a> = 0; settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#a9c936817432e02d76d8f9391aed70d85">SaveFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbaf01e51eba480c57e9ecb0c7ccf57878d">ImGuiTableFlags_Resizable</a>; }</div>
+<div class="line"><span class="lineno"> 3874</span>        <span class="keywordflow">if</span> (sscanf(line, <span class="stringliteral">&quot;Weight=%f%n&quot;</span>, &amp;f, &amp;r) == 1)           { line = <a class="code hl_function" href="imgui_8cpp.html#a8f93b897914903f6e1fe3ec400dfd271">ImStrSkipBlank</a>(line + r); column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aebe7c9f3741414220444af5bc9515244">WidthOrWeight</a> = f; column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aba294c8530cde8eaaafc15423c5ad45b">IsStretch</a> = 1; settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#a9c936817432e02d76d8f9391aed70d85">SaveFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbaf01e51eba480c57e9ecb0c7ccf57878d">ImGuiTableFlags_Resizable</a>; }</div>
+<div class="line"><span class="lineno"> 3875</span>        <span class="keywordflow">if</span> (sscanf(line, <span class="stringliteral">&quot;Visible=%d%n&quot;</span>, &amp;n, &amp;r) == 1)          { line = <a class="code hl_function" href="imgui_8cpp.html#a8f93b897914903f6e1fe3ec400dfd271">ImStrSkipBlank</a>(line + r); column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#a1fe29cc1c7ed80b21d323fde6b085980">IsEnabled</a> = (<a class="code hl_typedef" href="imgui_8h.html#a3834dc55ff790956b09b4baf387e2fe5">ImU8</a>)n; settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#a9c936817432e02d76d8f9391aed70d85">SaveFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbae9caafa56bf7222b111f8334419e6c8c">ImGuiTableFlags_Hideable</a>; }</div>
+<div class="line"><span class="lineno"> 3876</span>        <span class="keywordflow">if</span> (sscanf(line, <span class="stringliteral">&quot;Order=%d%n&quot;</span>, &amp;n, &amp;r) == 1)            { line = <a class="code hl_function" href="imgui_8cpp.html#a8f93b897914903f6e1fe3ec400dfd271">ImStrSkipBlank</a>(line + r); column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aabe71d9f937cfc3dc75c29510ee4c528">DisplayOrder</a> = (<a class="code hl_typedef" href="imgui__internal_8h.html#ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</a>)n; settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#a9c936817432e02d76d8f9391aed70d85">SaveFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba2c2d05129f42cd655c68ff645b2c916e">ImGuiTableFlags_Reorderable</a>; }</div>
+<div class="line"><span class="lineno"> 3877</span>        <span class="keywordflow">if</span> (sscanf(line, <span class="stringliteral">&quot;Sort=%d%c%n&quot;</span>, &amp;n, &amp;c, &amp;r) == 2)       { line = <a class="code hl_function" href="imgui_8cpp.html#a8f93b897914903f6e1fe3ec400dfd271">ImStrSkipBlank</a>(line + r); column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#a02bbac8295bbbdc8e5d7b53925340c9e">SortOrder</a> = (<a class="code hl_typedef" href="imgui__internal_8h.html#ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</a>)n; column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#ac080684798a74d8c0a52e5ee383f5f4c">SortDirection</a> = (c == <span class="charliteral">&#39;^&#39;</span>) ? <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</a> : <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</a>; settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#a9c936817432e02d76d8f9391aed70d85">SaveFlags</a> |= <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0a75d3b76b87fb6cc9c99253c0744cb9">ImGuiTableFlags_Sortable</a>; }</div>
+<div class="line"><span class="lineno"> 3878</span>    }</div>
+<div class="line"><span class="lineno"> 3879</span>}</div>
+<div class="ttc" id="aimgui_8cpp_html_a8f93b897914903f6e1fe3ec400dfd271"><div class="ttname"><a href="imgui_8cpp.html#a8f93b897914903f6e1fe3ec400dfd271">ImStrSkipBlank</a></div><div class="ttdeci">const char * ImStrSkipBlank(const char *str)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l02219">imgui.cpp:2219</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a118cff4eeb8d00e7d07ce3d6460eed36"><div class="ttname"><a href="imgui_8h.html#a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</a></div><div class="ttdeci">unsigned int ImU32</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00162">imgui.h:162</a></div></div>
+<div class="ttc" id="astructImGuiTableColumnSettings_html_a02bbac8295bbbdc8e5d7b53925340c9e"><div class="ttname"><a href="structImGuiTableColumnSettings.html#a02bbac8295bbbdc8e5d7b53925340c9e">ImGuiTableColumnSettings::SortOrder</a></div><div class="ttdeci">ImGuiTableColumnIdx SortOrder</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03279">imgui_internal.h:3279</a></div></div>
+<div class="ttc" id="astructImGuiTableColumnSettings_html_a1fe29cc1c7ed80b21d323fde6b085980"><div class="ttname"><a href="structImGuiTableColumnSettings.html#a1fe29cc1c7ed80b21d323fde6b085980">ImGuiTableColumnSettings::IsEnabled</a></div><div class="ttdeci">ImS8 IsEnabled</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03281">imgui_internal.h:3281</a></div></div>
+<div class="ttc" id="astructImGuiTableColumnSettings_html_a8b68ca3c4df704ce887e11e9b2a4ac8b"><div class="ttname"><a href="structImGuiTableColumnSettings.html#a8b68ca3c4df704ce887e11e9b2a4ac8b">ImGuiTableColumnSettings::UserID</a></div><div class="ttdeci">ImGuiID UserID</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03276">imgui_internal.h:3276</a></div></div>
+<div class="ttc" id="astructImGuiTableColumnSettings_html_aabe71d9f937cfc3dc75c29510ee4c528"><div class="ttname"><a href="structImGuiTableColumnSettings.html#aabe71d9f937cfc3dc75c29510ee4c528">ImGuiTableColumnSettings::DisplayOrder</a></div><div class="ttdeci">ImGuiTableColumnIdx DisplayOrder</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03278">imgui_internal.h:3278</a></div></div>
+<div class="ttc" id="astructImGuiTableColumnSettings_html_aaead6c42b6af8f565fbc8c927f944cec"><div class="ttname"><a href="structImGuiTableColumnSettings.html#aaead6c42b6af8f565fbc8c927f944cec">ImGuiTableColumnSettings::Index</a></div><div class="ttdeci">ImGuiTableColumnIdx Index</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03277">imgui_internal.h:3277</a></div></div>
+<div class="ttc" id="astructImGuiTableColumnSettings_html_aba294c8530cde8eaaafc15423c5ad45b"><div class="ttname"><a href="structImGuiTableColumnSettings.html#aba294c8530cde8eaaafc15423c5ad45b">ImGuiTableColumnSettings::IsStretch</a></div><div class="ttdeci">ImU8 IsStretch</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03282">imgui_internal.h:3282</a></div></div>
+<div class="ttc" id="astructImGuiTableColumnSettings_html_ac080684798a74d8c0a52e5ee383f5f4c"><div class="ttname"><a href="structImGuiTableColumnSettings.html#ac080684798a74d8c0a52e5ee383f5f4c">ImGuiTableColumnSettings::SortDirection</a></div><div class="ttdeci">ImU8 SortDirection</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03280">imgui_internal.h:3280</a></div></div>
+<div class="ttc" id="astructImGuiTableColumnSettings_html_aebe7c9f3741414220444af5bc9515244"><div class="ttname"><a href="structImGuiTableColumnSettings.html#aebe7c9f3741414220444af5bc9515244">ImGuiTableColumnSettings::WidthOrWeight</a></div><div class="ttdeci">float WidthOrWeight</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03275">imgui_internal.h:3275</a></div></div>
+<div class="ttc" id="astructImGuiTableSettings_html_a398a341e350a8aaf3758e0d4b773f39b"><div class="ttname"><a href="structImGuiTableSettings.html#a398a341e350a8aaf3758e0d4b773f39b">ImGuiTableSettings::RefScale</a></div><div class="ttdeci">float RefScale</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03301">imgui_internal.h:3301</a></div></div>
+<div class="ttc" id="astructImGuiTableSettings_html_a9c936817432e02d76d8f9391aed70d85"><div class="ttname"><a href="structImGuiTableSettings.html#a9c936817432e02d76d8f9391aed70d85">ImGuiTableSettings::SaveFlags</a></div><div class="ttdeci">ImGuiTableFlags SaveFlags</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03300">imgui_internal.h:3300</a></div></div>
+<div class="ttc" id="astructImGuiTableSettings_html_ae26859503d7552a9d4efe351d8f9f7a2"><div class="ttname"><a href="structImGuiTableSettings.html#ae26859503d7552a9d4efe351d8f9f7a2">ImGuiTableSettings::GetColumnSettings</a></div><div class="ttdeci">ImGuiTableColumnSettings * GetColumnSettings()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03307">imgui_internal.h:3307</a></div></div>
+<div class="ttc" id="astructImGuiTableSettings_html_ae7802faa283782844c7d6f822e51fd98"><div class="ttname"><a href="structImGuiTableSettings.html#ae7802faa283782844c7d6f822e51fd98">ImGuiTableSettings::ColumnsCount</a></div><div class="ttdeci">ImGuiTableColumnIdx ColumnsCount</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03302">imgui_internal.h:3302</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l03302">ImGuiTableSettings::ColumnsCount</a>, <a class="el" href="imgui__internal_8h_source.html#l03278">ImGuiTableColumnSettings::DisplayOrder</a>, <a class="el" href="imgui__internal_8h_source.html#l03307">ImGuiTableSettings::GetColumnSettings()</a>, <a class="el" href="imgui_8h_source.html#l01565">ImGuiSortDirection_Ascending</a>, <a class="el" href="imgui_8h_source.html#l01566">ImGuiSortDirection_Descending</a>, <a class="el" href="imgui_8h_source.html#l02062">ImGuiTableFlags_Hideable</a>, <a class="el" href="imgui_8h_source.html#l02061">ImGuiTableFlags_Reorderable</a>, <a class="el" href="imgui_8h_source.html#l02060">ImGuiTableFlags_Resizable</a>, <a class="el" href="imgui_8h_source.html#l02063">ImGuiTableFlags_Sortable</a>, <a class="el" href="imgui_8cpp_source.html#l02219">ImStrSkipBlank()</a>, <a class="el" href="imgui__internal_8h_source.html#l03277">ImGuiTableColumnSettings::Index</a>, <a class="el" href="imgui__internal_8h_source.html#l03281">ImGuiTableColumnSettings::IsEnabled</a>, <a class="el" href="imgui__internal_8h_source.html#l03282">ImGuiTableColumnSettings::IsStretch</a>, <a class="el" href="imgui__internal_8h_source.html#l03301">ImGuiTableSettings::RefScale</a>, <a class="el" href="imgui__internal_8h_source.html#l03300">ImGuiTableSettings::SaveFlags</a>, <a class="el" href="imgui__internal_8h_source.html#l03280">ImGuiTableColumnSettings::SortDirection</a>, <a class="el" href="imgui__internal_8h_source.html#l03279">ImGuiTableColumnSettings::SortOrder</a>, <a class="el" href="imgui__internal_8h_source.html#l03276">ImGuiTableColumnSettings::UserID</a>, <a class="el" href="imgui__internal_8h_source.html#l03275">ImGuiTableColumnSettings::WidthOrWeight</a> (計19項目).</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l03921">ImGui::TableSettingsAddSettingsHandler()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_aba3f3f2dbb7e835738033a419bfdd73c_cgraph.svg" width="375" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_aba3f3f2dbb7e835738033a419bfdd73c_icgraph.svg" width="1048" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af80e16664c0cb81be75c414c9010a810" name="af80e16664c0cb81be75c414c9010a810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80e16664c0cb81be75c414c9010a810">&#9670;&#160;</a></span>TableSettingsHandler_ReadOpen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * TableSettingsHandler_ReadOpen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiContext.html">ImGuiContext</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structImGuiSettingsHandler.html">ImGuiSettingsHandler</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l03836">3836</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3837</span>{</div>
+<div class="line"><span class="lineno"> 3838</span>    <a class="code hl_typedef" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> <span class="keywordtype">id</span> = 0;</div>
+<div class="line"><span class="lineno"> 3839</span>    <span class="keywordtype">int</span> columns_count = 0;</div>
+<div class="line"><span class="lineno"> 3840</span>    <span class="keywordflow">if</span> (sscanf(name, <span class="stringliteral">&quot;0x%08X,%d&quot;</span>, &amp;<span class="keywordtype">id</span>, &amp;columns_count) &lt; 2)</div>
+<div class="line"><span class="lineno"> 3841</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno"> 3842</span> </div>
+<div class="line"><span class="lineno"> 3843</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structImGuiTableSettings.html">ImGuiTableSettings</a>* settings = <a class="code hl_function" href="namespaceImGui.html#a8884e5118f923137c19aee0d84a438c9">ImGui::TableSettingsFindByID</a>(<span class="keywordtype">id</span>))</div>
+<div class="line"><span class="lineno"> 3844</span>    {</div>
+<div class="line"><span class="lineno"> 3845</span>        <span class="keywordflow">if</span> (settings-&gt;ColumnsCountMax &gt;= columns_count)</div>
+<div class="line"><span class="lineno"> 3846</span>        {</div>
+<div class="line"><span class="lineno"> 3847</span>            <a class="code hl_function" href="imgui__tables_8cpp.html#a3ee31ddcde025e65e280df28377eda27">TableSettingsInit</a>(settings, <span class="keywordtype">id</span>, columns_count, settings-&gt;ColumnsCountMax); <span class="comment">// Recycle</span></div>
+<div class="line"><span class="lineno"> 3848</span>            <span class="keywordflow">return</span> settings;</div>
+<div class="line"><span class="lineno"> 3849</span>        }</div>
+<div class="line"><span class="lineno"> 3850</span>        settings-&gt;ID = 0; <span class="comment">// Invalidate storage, we won&#39;t fit because of a count change</span></div>
+<div class="line"><span class="lineno"> 3851</span>    }</div>
+<div class="line"><span class="lineno"> 3852</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceImGui.html#a627a6a9580dc916a0a273afc16cefc19">ImGui::TableSettingsCreate</a>(<span class="keywordtype">id</span>, columns_count);</div>
+<div class="line"><span class="lineno"> 3853</span>}</div>
+<div class="ttc" id="aimgui__tables_8cpp_html_a3ee31ddcde025e65e280df28377eda27"><div class="ttname"><a href="imgui__tables_8cpp.html#a3ee31ddcde025e65e280df28377eda27">TableSettingsInit</a></div><div class="ttdeci">static void TableSettingsInit(ImGuiTableSettings *settings, ImGuiID id, int columns_count, int columns_count_max)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__tables_8cpp_source.html#l03629">imgui_tables.cpp:3629</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a627a6a9580dc916a0a273afc16cefc19"><div class="ttname"><a href="namespaceImGui.html#a627a6a9580dc916a0a273afc16cefc19">ImGui::TableSettingsCreate</a></div><div class="ttdeci">IMGUI_API ImGuiTableSettings * TableSettingsCreate(ImGuiID id, int columns_count)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__tables_8cpp_source.html#l03646">imgui_tables.cpp:3646</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a8884e5118f923137c19aee0d84a438c9"><div class="ttname"><a href="namespaceImGui.html#a8884e5118f923137c19aee0d84a438c9">ImGui::TableSettingsFindByID</a></div><div class="ttdeci">IMGUI_API ImGuiTableSettings * TableSettingsFindByID(ImGuiID id)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__tables_8cpp_source.html#l03655">imgui_tables.cpp:3655</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__tables_8cpp_source.html#l03646">ImGui::TableSettingsCreate()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l03655">ImGui::TableSettingsFindByID()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l03629">TableSettingsInit()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l03921">ImGui::TableSettingsAddSettingsHandler()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_af80e16664c0cb81be75c414c9010a810_cgraph.svg" width="1179" height="324"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_af80e16664c0cb81be75c414c9010a810_icgraph.svg" width="1048" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af7d20f2a36d3a68b646eaf68dd785900" name="af7d20f2a36d3a68b646eaf68dd785900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7d20f2a36d3a68b646eaf68dd785900">&#9670;&#160;</a></span>TableSettingsHandler_WriteAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void TableSettingsHandler_WriteAll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiContext.html">ImGuiContext</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structImGuiSettingsHandler.html">ImGuiSettingsHandler</a> *&#160;</td>
+          <td class="paramname"><em>handler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structImGuiTextBuffer.html">ImGuiTextBuffer</a> *&#160;</td>
+          <td class="paramname"><em>buf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l03881">3881</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3882</span>{</div>
+<div class="line"><span class="lineno"> 3883</span>    <a class="code hl_struct" href="structImGuiContext.html">ImGuiContext</a>&amp; g = *ctx;</div>
+<div class="line"><span class="lineno"> 3884</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="structImGuiTableSettings.html">ImGuiTableSettings</a>* settings = g.<a class="code hl_variable" href="structImGuiContext.html#ad2ede9b6bf347485792dbd3c9ec4f5eb">SettingsTables</a>.<a class="code hl_function" href="structImChunkStream.html#a10a9b29c856b3f84ce8811ebfaf2cfe8">begin</a>(); settings != NULL; settings = g.<a class="code hl_variable" href="structImGuiContext.html#ad2ede9b6bf347485792dbd3c9ec4f5eb">SettingsTables</a>.<a class="code hl_function" href="structImChunkStream.html#a3a99f21ce1867d694104d740ac7ab133">next_chunk</a>(settings))</div>
+<div class="line"><span class="lineno"> 3885</span>    {</div>
+<div class="line"><span class="lineno"> 3886</span>        <span class="keywordflow">if</span> (settings-&gt;ID == 0) <span class="comment">// Skip ditched settings</span></div>
+<div class="line"><span class="lineno"> 3887</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno"> 3888</span> </div>
+<div class="line"><span class="lineno"> 3889</span>        <span class="comment">// TableSaveSettings() may clear some of those flags when we establish that the data can be stripped</span></div>
+<div class="line"><span class="lineno"> 3890</span>        <span class="comment">// (e.g. Order was unchanged)</span></div>
+<div class="line"><span class="lineno"> 3891</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> save_size    = (settings-&gt;SaveFlags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbaf01e51eba480c57e9ecb0c7ccf57878d">ImGuiTableFlags_Resizable</a>) != 0;</div>
+<div class="line"><span class="lineno"> 3892</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> save_visible = (settings-&gt;SaveFlags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbae9caafa56bf7222b111f8334419e6c8c">ImGuiTableFlags_Hideable</a>) != 0;</div>
+<div class="line"><span class="lineno"> 3893</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> save_order   = (settings-&gt;SaveFlags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba2c2d05129f42cd655c68ff645b2c916e">ImGuiTableFlags_Reorderable</a>) != 0;</div>
+<div class="line"><span class="lineno"> 3894</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> save_sort    = (settings-&gt;SaveFlags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0a75d3b76b87fb6cc9c99253c0744cb9">ImGuiTableFlags_Sortable</a>) != 0;</div>
+<div class="line"><span class="lineno"> 3895</span>        <span class="comment">// We need to save the [Table] entry even if all the bools are false, since this records a table with &quot;default settings&quot;.</span></div>
+<div class="line"><span class="lineno"> 3896</span> </div>
+<div class="line"><span class="lineno"> 3897</span>        <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;reserve(<a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;size() + 30 + settings-&gt;ColumnsCount * 50); <span class="comment">// ballpark reserve</span></div>
+<div class="line"><span class="lineno"> 3898</span>        <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;appendf(<span class="stringliteral">&quot;[%s][0x%08X,%d]\n&quot;</span>, handler-&gt;<a class="code hl_variable" href="structImGuiSettingsHandler.html#a2b2821603e32a669c855dd97757c83c8">TypeName</a>, settings-&gt;ID, settings-&gt;ColumnsCount);</div>
+<div class="line"><span class="lineno"> 3899</span>        <span class="keywordflow">if</span> (settings-&gt;RefScale != 0.0f)</div>
+<div class="line"><span class="lineno"> 3900</span>            <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;appendf(<span class="stringliteral">&quot;RefScale=%g\n&quot;</span>, settings-&gt;RefScale);</div>
+<div class="line"><span class="lineno"> 3901</span>        <a class="code hl_struct" href="structImGuiTableColumnSettings.html">ImGuiTableColumnSettings</a>* column = settings-&gt;GetColumnSettings();</div>
+<div class="line"><span class="lineno"> 3902</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> column_n = 0; column_n &lt; settings-&gt;ColumnsCount; column_n++, column++)</div>
+<div class="line"><span class="lineno"> 3903</span>        {</div>
+<div class="line"><span class="lineno"> 3904</span>            <span class="comment">// &quot;Column 0  UserID=0x42AD2D21 Width=100 Visible=1 Order=0 Sort=0v&quot;</span></div>
+<div class="line"><span class="lineno"> 3905</span>            <span class="keywordtype">bool</span> save_column = column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#a8b68ca3c4df704ce887e11e9b2a4ac8b">UserID</a> != 0 || save_size || save_visible || save_order || (save_sort &amp;&amp; column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#a02bbac8295bbbdc8e5d7b53925340c9e">SortOrder</a> != -1);</div>
+<div class="line"><span class="lineno"> 3906</span>            <span class="keywordflow">if</span> (!save_column)</div>
+<div class="line"><span class="lineno"> 3907</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno"> 3908</span>            <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;appendf(<span class="stringliteral">&quot;Column %-2d&quot;</span>, column_n);</div>
+<div class="line"><span class="lineno"> 3909</span>            <span class="keywordflow">if</span> (column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#a8b68ca3c4df704ce887e11e9b2a4ac8b">UserID</a> != 0)                    { <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;appendf(<span class="stringliteral">&quot; UserID=%08X&quot;</span>, column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#a8b68ca3c4df704ce887e11e9b2a4ac8b">UserID</a>); }</div>
+<div class="line"><span class="lineno"> 3910</span>            <span class="keywordflow">if</span> (save_size &amp;&amp; column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aba294c8530cde8eaaafc15423c5ad45b">IsStretch</a>)         { <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;appendf(<span class="stringliteral">&quot; Weight=%.4f&quot;</span>, column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aebe7c9f3741414220444af5bc9515244">WidthOrWeight</a>); }</div>
+<div class="line"><span class="lineno"> 3911</span>            <span class="keywordflow">if</span> (save_size &amp;&amp; !column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aba294c8530cde8eaaafc15423c5ad45b">IsStretch</a>)        { <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;appendf(<span class="stringliteral">&quot; Width=%d&quot;</span>, (<span class="keywordtype">int</span>)column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aebe7c9f3741414220444af5bc9515244">WidthOrWeight</a>); }</div>
+<div class="line"><span class="lineno"> 3912</span>            <span class="keywordflow">if</span> (save_visible)                           { <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;appendf(<span class="stringliteral">&quot; Visible=%d&quot;</span>, column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#a1fe29cc1c7ed80b21d323fde6b085980">IsEnabled</a>); }</div>
+<div class="line"><span class="lineno"> 3913</span>            <span class="keywordflow">if</span> (save_order)                             { <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;appendf(<span class="stringliteral">&quot; Order=%d&quot;</span>, column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#aabe71d9f937cfc3dc75c29510ee4c528">DisplayOrder</a>); }</div>
+<div class="line"><span class="lineno"> 3914</span>            <span class="keywordflow">if</span> (save_sort &amp;&amp; column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#a02bbac8295bbbdc8e5d7b53925340c9e">SortOrder</a> != -1)   { <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;appendf(<span class="stringliteral">&quot; Sort=%d%c&quot;</span>, column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#a02bbac8295bbbdc8e5d7b53925340c9e">SortOrder</a>, (column-&gt;<a class="code hl_variable" href="structImGuiTableColumnSettings.html#ac080684798a74d8c0a52e5ee383f5f4c">SortDirection</a> == <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</a>) ? <span class="charliteral">&#39;v&#39;</span> : <span class="charliteral">&#39;^&#39;</span>); }</div>
+<div class="line"><span class="lineno"> 3915</span>            <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;append(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno"> 3916</span>        }</div>
+<div class="line"><span class="lineno"> 3917</span>        <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>-&gt;append(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno"> 3918</span>    }</div>
+<div class="line"><span class="lineno"> 3919</span>}</div>
+<div class="ttc" id="anamespaceanonymous__namespace_02MTImGui_8cpp_03_html_ac42254ac88728a2dc2542212c2756efe"><div class="ttname"><a href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">anonymous_namespace{MTImGui.cpp}::buf</a></div><div class="ttdeci">std::string buf</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00028">MTImGui.cpp:28</a></div></div>
+<div class="ttc" id="astructImChunkStream_html_a10a9b29c856b3f84ce8811ebfaf2cfe8"><div class="ttname"><a href="structImChunkStream.html#a10a9b29c856b3f84ce8811ebfaf2cfe8">ImChunkStream::begin</a></div><div class="ttdeci">T * begin()</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00789">imgui_internal.h:789</a></div></div>
+<div class="ttc" id="astructImChunkStream_html_a3a99f21ce1867d694104d740ac7ab133"><div class="ttname"><a href="structImChunkStream.html#a3a99f21ce1867d694104d740ac7ab133">ImChunkStream::next_chunk</a></div><div class="ttdeci">T * next_chunk(T *p)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00790">imgui_internal.h:790</a></div></div>
+<div class="ttc" id="astructImGuiSettingsHandler_html_a2b2821603e32a669c855dd97757c83c8"><div class="ttname"><a href="structImGuiSettingsHandler.html#a2b2821603e32a669c855dd97757c83c8">ImGuiSettingsHandler::TypeName</a></div><div class="ttdeci">const char * TypeName</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l02164">imgui_internal.h:2164</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l00789">ImChunkStream&lt; T &gt;::begin()</a>, <a class="el" href="imgui__internal_8h_source.html#l03278">ImGuiTableColumnSettings::DisplayOrder</a>, <a class="el" href="imgui_8h_source.html#l01565">ImGuiSortDirection_Ascending</a>, <a class="el" href="imgui_8h_source.html#l02062">ImGuiTableFlags_Hideable</a>, <a class="el" href="imgui_8h_source.html#l02061">ImGuiTableFlags_Reorderable</a>, <a class="el" href="imgui_8h_source.html#l02060">ImGuiTableFlags_Resizable</a>, <a class="el" href="imgui_8h_source.html#l02063">ImGuiTableFlags_Sortable</a>, <a class="el" href="imgui__internal_8h_source.html#l03281">ImGuiTableColumnSettings::IsEnabled</a>, <a class="el" href="imgui__internal_8h_source.html#l03282">ImGuiTableColumnSettings::IsStretch</a>, <a class="el" href="imgui__internal_8h_source.html#l00790">ImChunkStream&lt; T &gt;::next_chunk()</a>, <a class="el" href="imgui__internal_8h_source.html#l02654">ImGuiContext::SettingsTables</a>, <a class="el" href="imgui__internal_8h_source.html#l03280">ImGuiTableColumnSettings::SortDirection</a>, <a class="el" href="imgui__internal_8h_source.html#l03279">ImGuiTableColumnSettings::SortOrder</a>, <a class="el" href="imgui__internal_8h_source.html#l02164">ImGuiSettingsHandler::TypeName</a>, <a class="el" href="imgui__internal_8h_source.html#l03276">ImGuiTableColumnSettings::UserID</a>, <a class="el" href="imgui__internal_8h_source.html#l03275">ImGuiTableColumnSettings::WidthOrWeight</a> (計16項目).</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l03921">ImGui::TableSettingsAddSettingsHandler()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_af7d20f2a36d3a68b646eaf68dd785900_cgraph.svg" width="638" height="136"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_af7d20f2a36d3a68b646eaf68dd785900_icgraph.svg" width="1048" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3ee31ddcde025e65e280df28377eda27" name="a3ee31ddcde025e65e280df28377eda27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ee31ddcde025e65e280df28377eda27">&#9670;&#160;</a></span>TableSettingsInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void TableSettingsInit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiTableSettings.html">ImGuiTableSettings</a> *&#160;</td>
+          <td class="paramname"><em>settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>columns_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>columns_count_max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l03629">3629</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3630</span>{</div>
+<div class="line"><span class="lineno"> 3631</span>    <a class="code hl_define" href="imgui_8h.html#a4057509225bb55db4effa9c799a0ec61">IM_PLACEMENT_NEW</a>(settings) <a class="code hl_struct" href="structImGuiTableSettings.html">ImGuiTableSettings</a>();</div>
+<div class="line"><span class="lineno"> 3632</span>    <a class="code hl_struct" href="structImGuiTableColumnSettings.html">ImGuiTableColumnSettings</a>* settings_column = settings-&gt;<a class="code hl_function" href="structImGuiTableSettings.html#ae26859503d7552a9d4efe351d8f9f7a2">GetColumnSettings</a>();</div>
+<div class="line"><span class="lineno"> 3633</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; columns_count_max; n++, settings_column++)</div>
+<div class="line"><span class="lineno"> 3634</span>        <a class="code hl_define" href="imgui_8h.html#a4057509225bb55db4effa9c799a0ec61">IM_PLACEMENT_NEW</a>(settings_column) <a class="code hl_struct" href="structImGuiTableColumnSettings.html">ImGuiTableColumnSettings</a>();</div>
+<div class="line"><span class="lineno"> 3635</span>    settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#affa6cd90f4357ed81f37396094911d96">ID</a> = id;</div>
+<div class="line"><span class="lineno"> 3636</span>    settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#ae7802faa283782844c7d6f822e51fd98">ColumnsCount</a> = (<a class="code hl_typedef" href="imgui__internal_8h.html#ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</a>)columns_count;</div>
+<div class="line"><span class="lineno"> 3637</span>    settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#ac8dab6d2b13a5a77217d24ea237eecc1">ColumnsCountMax</a> = (<a class="code hl_typedef" href="imgui__internal_8h.html#ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</a>)columns_count_max;</div>
+<div class="line"><span class="lineno"> 3638</span>    settings-&gt;<a class="code hl_variable" href="structImGuiTableSettings.html#a2b19bf1e2dacda4ee39d3a5c216a53c7">WantApply</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 3639</span>}</div>
+<div class="ttc" id="aimgui_8h_html_a4057509225bb55db4effa9c799a0ec61"><div class="ttname"><a href="imgui_8h.html#a4057509225bb55db4effa9c799a0ec61">IM_PLACEMENT_NEW</a></div><div class="ttdeci">#define IM_PLACEMENT_NEW(_PTR)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02219">imgui.h:2219</a></div></div>
+<div class="ttc" id="astructImGuiTableSettings_html_a2b19bf1e2dacda4ee39d3a5c216a53c7"><div class="ttname"><a href="structImGuiTableSettings.html#a2b19bf1e2dacda4ee39d3a5c216a53c7">ImGuiTableSettings::WantApply</a></div><div class="ttdeci">bool WantApply</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03304">imgui_internal.h:3304</a></div></div>
+<div class="ttc" id="astructImGuiTableSettings_html_ac8dab6d2b13a5a77217d24ea237eecc1"><div class="ttname"><a href="structImGuiTableSettings.html#ac8dab6d2b13a5a77217d24ea237eecc1">ImGuiTableSettings::ColumnsCountMax</a></div><div class="ttdeci">ImGuiTableColumnIdx ColumnsCountMax</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03303">imgui_internal.h:3303</a></div></div>
+<div class="ttc" id="astructImGuiTableSettings_html_affa6cd90f4357ed81f37396094911d96"><div class="ttname"><a href="structImGuiTableSettings.html#affa6cd90f4357ed81f37396094911d96">ImGuiTableSettings::ID</a></div><div class="ttdeci">ImGuiID ID</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03299">imgui_internal.h:3299</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l03302">ImGuiTableSettings::ColumnsCount</a>, <a class="el" href="imgui__internal_8h_source.html#l03303">ImGuiTableSettings::ColumnsCountMax</a>, <a class="el" href="imgui__internal_8h_source.html#l03307">ImGuiTableSettings::GetColumnSettings()</a>, <a class="el" href="imgui__internal_8h_source.html#l03299">ImGuiTableSettings::ID</a>, <a class="el" href="imgui_8h_source.html#l02219">IM_PLACEMENT_NEW</a>, <a class="el" href="imgui__internal_8h_source.html#l03304">ImGuiTableSettings::WantApply</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l03646">ImGui::TableSettingsCreate()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l03836">TableSettingsHandler_ReadOpen()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_a3ee31ddcde025e65e280df28377eda27_cgraph.svg" width="346" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_a3ee31ddcde025e65e280df28377eda27_icgraph.svg" width="2282" height="1659"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a69b63d98a1335539e1b8fd4f2f911272" name="a69b63d98a1335539e1b8fd4f2f911272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b63d98a1335539e1b8fd4f2f911272">&#9670;&#160;</a></span>TableSetupColumnFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void TableSetupColumnFlags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structImGuiTable.html">ImGuiTable</a> *&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structImGuiTableColumn.html">ImGuiTableColumn</a> *&#160;</td>
+          <td class="paramname"><em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="imgui_8h.html#afa2ab8df5653f1cc944f6cbc156bf874">ImGuiTableColumnFlags</a>&#160;</td>
+          <td class="paramname"><em>flags_in</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l00744">744</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  745</span>{</div>
+<div class="line"><span class="lineno">  746</span>    <a class="code hl_typedef" href="imgui_8h.html#afa2ab8df5653f1cc944f6cbc156bf874">ImGuiTableColumnFlags</a> flags = flags_in;</div>
+<div class="line"><span class="lineno">  747</span> </div>
+<div class="line"><span class="lineno">  748</span>    <span class="comment">// Sizing Policy</span></div>
+<div class="line"><span class="lineno">  749</span>    <span class="keywordflow">if</span> ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa50a7e61431669eae857af604d2e9e783">ImGuiTableColumnFlags_WidthMask_</a>) == 0)</div>
+<div class="line"><span class="lineno">  750</span>    {</div>
+<div class="line"><span class="lineno">  751</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="imgui_8h.html#ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</a> table_sizing_policy = (table-&gt;<a class="code hl_variable" href="structImGuiTable.html#ac232807fd66991e640579fb3b02ae051">Flags</a> &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba3ecb5e53fa94b99a023fa4eedf7d8c08">ImGuiTableFlags_SizingMask_</a>);</div>
+<div class="line"><span class="lineno">  752</span>        <span class="keywordflow">if</span> (table_sizing_policy == <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbada9884fa56bfee6554c08143b7a4cf57">ImGuiTableFlags_SizingFixedFit</a> || table_sizing_policy == <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0a9c6c052a002ac59f9dd7a547edd670">ImGuiTableFlags_SizingFixedSame</a>)</div>
+<div class="line"><span class="lineno">  753</span>            flags |= <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa0c7226a04c7a6c85e82e49ab6ffcbc16">ImGuiTableColumnFlags_WidthFixed</a>;</div>
+<div class="line"><span class="lineno">  754</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  755</span>            flags |= <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa49d7e979d99f6bb61ff1f3f4cc5b3e19">ImGuiTableColumnFlags_WidthStretch</a>;</div>
+<div class="line"><span class="lineno">  756</span>    }</div>
+<div class="line"><span class="lineno">  757</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  758</span>    {</div>
+<div class="line"><span class="lineno">  759</span>        <a class="code hl_define" href="imgui_8h.html#acb09e7dc42e8e3cefb0ecaa197978920">IM_ASSERT</a>(<a class="code hl_function" href="imgui__internal_8h.html#a3cc719adb48b1aed8ab1196ecea7e828">ImIsPowerOfTwo</a>(flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa50a7e61431669eae857af604d2e9e783">ImGuiTableColumnFlags_WidthMask_</a>)); <span class="comment">// Check that only 1 of each set is used.</span></div>
+<div class="line"><span class="lineno">  760</span>    }</div>
+<div class="line"><span class="lineno">  761</span> </div>
+<div class="line"><span class="lineno">  762</span>    <span class="comment">// Resize</span></div>
+<div class="line"><span class="lineno">  763</span>    <span class="keywordflow">if</span> ((table-&gt;<a class="code hl_variable" href="structImGuiTable.html#ac232807fd66991e640579fb3b02ae051">Flags</a> &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dbaf01e51eba480c57e9ecb0c7ccf57878d">ImGuiTableFlags_Resizable</a>) == 0)</div>
+<div class="line"><span class="lineno">  764</span>        flags |= <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa8cf510f799fa6ab54b08014b228d4bd4">ImGuiTableColumnFlags_NoResize</a>;</div>
+<div class="line"><span class="lineno">  765</span> </div>
+<div class="line"><span class="lineno">  766</span>    <span class="comment">// Sorting</span></div>
+<div class="line"><span class="lineno">  767</span>    <span class="keywordflow">if</span> ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa864cb1df5600b8712f32928b452d5409">ImGuiTableColumnFlags_NoSortAscending</a>) &amp;&amp; (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75faba0a20f2dd9ae5cb7cd8e16fa2f22b21">ImGuiTableColumnFlags_NoSortDescending</a>))</div>
+<div class="line"><span class="lineno">  768</span>        flags |= <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa5c23a0b175b424ec153b3df1aec7f16e">ImGuiTableColumnFlags_NoSort</a>;</div>
+<div class="line"><span class="lineno">  769</span> </div>
+<div class="line"><span class="lineno">  770</span>    <span class="comment">// Indentation</span></div>
+<div class="line"><span class="lineno">  771</span>    <span class="keywordflow">if</span> ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fadd8fee6c534e2f0c85134acdde43ca20">ImGuiTableColumnFlags_IndentMask_</a>) == 0)</div>
+<div class="line"><span class="lineno">  772</span>        flags |= (table-&gt;<a class="code hl_variable" href="structImGuiTable.html#a6b39e1812dd524fe2dd4a04b613588cf">Columns</a>.<a class="code hl_function" href="structImSpan.html#a7e80a5146acbfac4bb952f80daf3c305">index_from_ptr</a>(column) == 0) ? <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa6ede602474fa7c8e8cad19df3c2669de">ImGuiTableColumnFlags_IndentEnable</a> : <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa11506a14729a210a9e8af1b3065655c9">ImGuiTableColumnFlags_IndentDisable</a>;</div>
+<div class="line"><span class="lineno">  773</span> </div>
+<div class="line"><span class="lineno">  774</span>    <span class="comment">// Alignment</span></div>
+<div class="line"><span class="lineno">  775</span>    <span class="comment">//if ((flags &amp; ImGuiTableColumnFlags_AlignMask_) == 0)</span></div>
+<div class="line"><span class="lineno">  776</span>    <span class="comment">//    flags |= ImGuiTableColumnFlags_AlignCenter;</span></div>
+<div class="line"><span class="lineno">  777</span>    <span class="comment">//IM_ASSERT(ImIsPowerOfTwo(flags &amp; ImGuiTableColumnFlags_AlignMask_)); // Check that only 1 of each set is used.</span></div>
+<div class="line"><span class="lineno">  778</span> </div>
+<div class="line"><span class="lineno">  779</span>    <span class="comment">// Preserve status flags</span></div>
+<div class="line"><span class="lineno">  780</span>    column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a46f41e471f2be0a226fef2782d8318e3">Flags</a> = flags | (column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a46f41e471f2be0a226fef2782d8318e3">Flags</a> &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa04c15c113a90dd6374f22461a25e54e5">ImGuiTableColumnFlags_StatusMask_</a>);</div>
+<div class="line"><span class="lineno">  781</span> </div>
+<div class="line"><span class="lineno">  782</span>    <span class="comment">// Build an ordered list of available sort directions</span></div>
+<div class="line"><span class="lineno">  783</span>    column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a49adaa46050cecbc2edff0c510973dd8">SortDirectionsAvailCount</a> = column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#ae246b9be801b5dac7cfedeb91c5a9e86">SortDirectionsAvailMask</a> = column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#abbbce32f24f22d04bf128d9c58b77c4d">SortDirectionsAvailList</a> = 0;</div>
+<div class="line"><span class="lineno">  784</span>    <span class="keywordflow">if</span> (table-&gt;<a class="code hl_variable" href="structImGuiTable.html#ac232807fd66991e640579fb3b02ae051">Flags</a> &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba0a75d3b76b87fb6cc9c99253c0744cb9">ImGuiTableFlags_Sortable</a>)</div>
+<div class="line"><span class="lineno">  785</span>    {</div>
+<div class="line"><span class="lineno">  786</span>        <span class="keywordtype">int</span> count = 0, mask = 0, list = 0;</div>
+<div class="line"><span class="lineno">  787</span>        <span class="keywordflow">if</span> ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa7c070fadceccbc37d4002539c8ad1f39">ImGuiTableColumnFlags_PreferSortAscending</a>)  != 0 &amp;&amp; (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa864cb1df5600b8712f32928b452d5409">ImGuiTableColumnFlags_NoSortAscending</a>)  == 0) { mask |= 1 &lt;&lt; <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</a>;  list |= <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</a>  &lt;&lt; (count &lt;&lt; 1); count++; }</div>
+<div class="line"><span class="lineno">  788</span>        <span class="keywordflow">if</span> ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa121d9aafd0bfb353ff9dda73e3dacee8">ImGuiTableColumnFlags_PreferSortDescending</a>) != 0 &amp;&amp; (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75faba0a20f2dd9ae5cb7cd8e16fa2f22b21">ImGuiTableColumnFlags_NoSortDescending</a>) == 0) { mask |= 1 &lt;&lt; <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</a>; list |= <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</a> &lt;&lt; (count &lt;&lt; 1); count++; }</div>
+<div class="line"><span class="lineno">  789</span>        <span class="keywordflow">if</span> ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa7c070fadceccbc37d4002539c8ad1f39">ImGuiTableColumnFlags_PreferSortAscending</a>)  == 0 &amp;&amp; (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa864cb1df5600b8712f32928b452d5409">ImGuiTableColumnFlags_NoSortAscending</a>)  == 0) { mask |= 1 &lt;&lt; <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</a>;  list |= <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</a>  &lt;&lt; (count &lt;&lt; 1); count++; }</div>
+<div class="line"><span class="lineno">  790</span>        <span class="keywordflow">if</span> ((flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa121d9aafd0bfb353ff9dda73e3dacee8">ImGuiTableColumnFlags_PreferSortDescending</a>) == 0 &amp;&amp; (flags &amp; <a class="code hl_enumvalue" href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75faba0a20f2dd9ae5cb7cd8e16fa2f22b21">ImGuiTableColumnFlags_NoSortDescending</a>) == 0) { mask |= 1 &lt;&lt; <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</a>; list |= <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aa2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</a> &lt;&lt; (count &lt;&lt; 1); count++; }</div>
+<div class="line"><span class="lineno">  791</span>        <span class="keywordflow">if</span> ((table-&gt;<a class="code hl_variable" href="structImGuiTable.html#ac232807fd66991e640579fb3b02ae051">Flags</a> &amp; <a class="code hl_enumvalue" href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba013b33632d68dae137f6c0e9db2518f8">ImGuiTableFlags_SortTristate</a>) || count == 0) { mask |= 1 &lt;&lt; <a class="code hl_enumvalue" href="imgui_8h.html#ab5f495ad9c69e579da19b149877c415aacdc60ed6ea075a0fe8b77b7e4b90bf42">ImGuiSortDirection_None</a>; count++; }</div>
+<div class="line"><span class="lineno">  792</span>        column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#abbbce32f24f22d04bf128d9c58b77c4d">SortDirectionsAvailList</a> = (<a class="code hl_typedef" href="imgui_8h.html#a3834dc55ff790956b09b4baf387e2fe5">ImU8</a>)list;</div>
+<div class="line"><span class="lineno">  793</span>        column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#ae246b9be801b5dac7cfedeb91c5a9e86">SortDirectionsAvailMask</a> = (<a class="code hl_typedef" href="imgui_8h.html#a3834dc55ff790956b09b4baf387e2fe5">ImU8</a>)mask;</div>
+<div class="line"><span class="lineno">  794</span>        column-&gt;<a class="code hl_variable" href="structImGuiTableColumn.html#a49adaa46050cecbc2edff0c510973dd8">SortDirectionsAvailCount</a> = (<a class="code hl_typedef" href="imgui_8h.html#a3834dc55ff790956b09b4baf387e2fe5">ImU8</a>)count;</div>
+<div class="line"><span class="lineno">  795</span>        <a class="code hl_function" href="namespaceImGui.html#a6eb757220d4d7276577cfadfd056c9fe">ImGui::TableFixColumnSortDirection</a>(table, column);</div>
+<div class="line"><span class="lineno">  796</span>    }</div>
+<div class="line"><span class="lineno">  797</span>}</div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa04c15c113a90dd6374f22461a25e54e5"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa04c15c113a90dd6374f22461a25e54e5">ImGuiTableColumnFlags_StatusMask_</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_StatusMask_</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02142">imgui.h:2142</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa11506a14729a210a9e8af1b3065655c9"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa11506a14729a210a9e8af1b3065655c9">ImGuiTableColumnFlags_IndentDisable</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_IndentDisable</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02130">imgui.h:2130</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa50a7e61431669eae857af604d2e9e783"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa50a7e61431669eae857af604d2e9e783">ImGuiTableColumnFlags_WidthMask_</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_WidthMask_</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02140">imgui.h:2140</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa5c23a0b175b424ec153b3df1aec7f16e"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa5c23a0b175b424ec153b3df1aec7f16e">ImGuiTableColumnFlags_NoSort</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_NoSort</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02122">imgui.h:2122</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa6ede602474fa7c8e8cad19df3c2669de"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa6ede602474fa7c8e8cad19df3c2669de">ImGuiTableColumnFlags_IndentEnable</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_IndentEnable</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02129">imgui.h:2129</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa7c070fadceccbc37d4002539c8ad1f39"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa7c070fadceccbc37d4002539c8ad1f39">ImGuiTableColumnFlags_PreferSortAscending</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_PreferSortAscending</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02127">imgui.h:2127</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa864cb1df5600b8712f32928b452d5409"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa864cb1df5600b8712f32928b452d5409">ImGuiTableColumnFlags_NoSortAscending</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_NoSortAscending</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02123">imgui.h:2123</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fa8cf510f799fa6ab54b08014b228d4bd4"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fa8cf510f799fa6ab54b08014b228d4bd4">ImGuiTableColumnFlags_NoResize</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_NoResize</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02118">imgui.h:2118</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75faba0a20f2dd9ae5cb7cd8e16fa2f22b21"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75faba0a20f2dd9ae5cb7cd8e16fa2f22b21">ImGuiTableColumnFlags_NoSortDescending</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_NoSortDescending</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02124">imgui.h:2124</a></div></div>
+<div class="ttc" id="aimgui_8h_html_a491e4f683c84c94222faa9ab5e7ae75fadd8fee6c534e2f0c85134acdde43ca20"><div class="ttname"><a href="imgui_8h.html#a491e4f683c84c94222faa9ab5e7ae75fadd8fee6c534e2f0c85134acdde43ca20">ImGuiTableColumnFlags_IndentMask_</a></div><div class="ttdeci">@ ImGuiTableColumnFlags_IndentMask_</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02141">imgui.h:2141</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ad3032e379f8aba2cb5c31b05cd40858d"><div class="ttname"><a href="imgui_8h.html#ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</a></div><div class="ttdeci">int ImGuiTableFlags</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l00260">imgui.h:260</a></div></div>
+<div class="ttc" id="aimgui_8h_html_ade214f01f7eda181bb321fb5d59457dba013b33632d68dae137f6c0e9db2518f8"><div class="ttname"><a href="imgui_8h.html#ade214f01f7eda181bb321fb5d59457dba013b33632d68dae137f6c0e9db2518f8">ImGuiTableFlags_SortTristate</a></div><div class="ttdeci">@ ImGuiTableFlags_SortTristate</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l02100">imgui.h:2100</a></div></div>
+<div class="ttc" id="aimgui__internal_8h_html_a3cc719adb48b1aed8ab1196ecea7e828"><div class="ttname"><a href="imgui__internal_8h.html#a3cc719adb48b1aed8ab1196ecea7e828">ImIsPowerOfTwo</a></div><div class="ttdeci">static bool ImIsPowerOfTwo(int v)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l00390">imgui_internal.h:390</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_a6eb757220d4d7276577cfadfd056c9fe"><div class="ttname"><a href="namespaceImGui.html#a6eb757220d4d7276577cfadfd056c9fe">ImGui::TableFixColumnSortDirection</a></div><div class="ttdeci">IMGUI_API void TableFixColumnSortDirection(ImGuiTable *table, ImGuiTableColumn *column)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__tables_8cpp_source.html#l02899">imgui_tables.cpp:2899</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_a49adaa46050cecbc2edff0c510973dd8"><div class="ttname"><a href="structImGuiTableColumn.html#a49adaa46050cecbc2edff0c510973dd8">ImGuiTableColumn::SortDirectionsAvailCount</a></div><div class="ttdeci">ImU8 SortDirectionsAvailCount</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03074">imgui_internal.h:3074</a></div></div>
+<div class="ttc" id="astructImGuiTableColumn_html_ae246b9be801b5dac7cfedeb91c5a9e86"><div class="ttname"><a href="structImGuiTableColumn.html#ae246b9be801b5dac7cfedeb91c5a9e86">ImGuiTableColumn::SortDirectionsAvailMask</a></div><div class="ttdeci">ImU8 SortDirectionsAvailMask</div><div class="ttdef"><b>Definition:</b> <a href="imgui__internal_8h_source.html#l03075">imgui_internal.h:3075</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="imgui__internal_8h_source.html#l03131">ImGuiTable::Columns</a>, <a class="el" href="imgui__internal_8h_source.html#l03035">ImGuiTableColumn::Flags</a>, <a class="el" href="imgui__internal_8h_source.html#l03128">ImGuiTable::Flags</a>, <a class="el" href="imgui_8h_source.html#l00096">IM_ASSERT</a>, <a class="el" href="imgui_8h_source.html#l01565">ImGuiSortDirection_Ascending</a>, <a class="el" href="imgui_8h_source.html#l01566">ImGuiSortDirection_Descending</a>, <a class="el" href="imgui_8h_source.html#l01564">ImGuiSortDirection_None</a>, <a class="el" href="imgui_8h_source.html#l02130">ImGuiTableColumnFlags_IndentDisable</a>, <a class="el" href="imgui_8h_source.html#l02129">ImGuiTableColumnFlags_IndentEnable</a>, <a class="el" href="imgui_8h_source.html#l02141">ImGuiTableColumnFlags_IndentMask_</a>, <a class="el" href="imgui_8h_source.html#l02118">ImGuiTableColumnFlags_NoResize</a>, <a class="el" href="imgui_8h_source.html#l02122">ImGuiTableColumnFlags_NoSort</a>, <a class="el" href="imgui_8h_source.html#l02123">ImGuiTableColumnFlags_NoSortAscending</a>, <a class="el" href="imgui_8h_source.html#l02124">ImGuiTableColumnFlags_NoSortDescending</a>, <a class="el" href="imgui_8h_source.html#l02127">ImGuiTableColumnFlags_PreferSortAscending</a>, <a class="el" href="imgui_8h_source.html#l02128">ImGuiTableColumnFlags_PreferSortDescending</a>, <a class="el" href="imgui_8h_source.html#l02142">ImGuiTableColumnFlags_StatusMask_</a>, <a class="el" href="imgui_8h_source.html#l02117">ImGuiTableColumnFlags_WidthFixed</a>, <a class="el" href="imgui_8h_source.html#l02140">ImGuiTableColumnFlags_WidthMask_</a>, <a class="el" href="imgui_8h_source.html#l02116">ImGuiTableColumnFlags_WidthStretch</a>, <a class="el" href="imgui_8h_source.html#l02060">ImGuiTableFlags_Resizable</a>, <a class="el" href="imgui_8h_source.html#l02080">ImGuiTableFlags_SizingFixedFit</a>, <a class="el" href="imgui_8h_source.html#l02081">ImGuiTableFlags_SizingFixedSame</a>, <a class="el" href="imgui_8h_source.html#l02105">ImGuiTableFlags_SizingMask_</a>, <a class="el" href="imgui_8h_source.html#l02063">ImGuiTableFlags_Sortable</a>, <a class="el" href="imgui_8h_source.html#l02100">ImGuiTableFlags_SortTristate</a>, <a class="el" href="imgui__internal_8h_source.html#l00390">ImIsPowerOfTwo()</a>, <a class="el" href="imgui__internal_8h_source.html#l00684">ImSpan&lt; T &gt;::index_from_ptr()</a>, <a class="el" href="imgui__internal_8h_source.html#l03074">ImGuiTableColumn::SortDirectionsAvailCount</a>, <a class="el" href="imgui__internal_8h_source.html#l03076">ImGuiTableColumn::SortDirectionsAvailList</a>, <a class="el" href="imgui__internal_8h_source.html#l03075">ImGuiTableColumn::SortDirectionsAvailMask</a>, <a class="el" href="imgui__tables_8cpp_source.html#l02899">ImGui::TableFixColumnSortDirection()</a> (計32項目).</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l01599">ImGui::TableSetupColumn()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l00803">ImGui::TableUpdateLayout()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_a69b63d98a1335539e1b8fd4f2f911272_cgraph.svg" width="731" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="imgui__tables_8cpp_a69b63d98a1335539e1b8fd4f2f911272_icgraph.svg" width="2275" height="2210"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="aeeb2cf051f615a5871bdc89a85d98ebd" name="aeeb2cf051f615a5871bdc89a85d98ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb2cf051f615a5871bdc89a85d98ebd">&#9670;&#160;</a></span>COLUMNS_HIT_RECT_HALF_THICKNESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float COLUMNS_HIT_RECT_HALF_THICKNESS = 4.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l04171">4171</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l04463">ImGui::EndColumns()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l04173">GetDraggedColumnOffset()</a>.</p>
+
+</div>
+</div>
+<a id="a9ba128f7eb2e553aae0299b36983f91b" name="a9ba128f7eb2e553aae0299b36983f91b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ba128f7eb2e553aae0299b36983f91b">&#9670;&#160;</a></span>TABLE_BORDER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float TABLE_BORDER_SIZE = 1.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l00266">266</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l00317">ImGui::BeginTableEx()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l01346">ImGui::EndTable()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l02775">ImGui::TableDrawBorders()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l01948">ImGui::TableEndRow()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l00803">ImGui::TableUpdateLayout()</a>.</p>
+
+</div>
+</div>
+<a id="a91994afd965f48e251d70ca6dad4fae2" name="a91994afd965f48e251d70ca6dad4fae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91994afd965f48e251d70ca6dad4fae2">&#9670;&#160;</a></span>TABLE_DRAW_CHANNEL_BG0</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int TABLE_DRAW_CHANNEL_BG0 = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l00263">263</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l03329">ImGui::TableAngledHeadersRowEx()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l02775">ImGui::TableDrawBorders()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l01948">ImGui::TableEndRow()</a>.</p>
+
+</div>
+</div>
+<a id="a8acdce7d7f4fc7b4d3fc0b243d0c09ab" name="a8acdce7d7f4fc7b4d3fc0b243d0c09ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8acdce7d7f4fc7b4d3fc0b243d0c09ab">&#9670;&#160;</a></span>TABLE_DRAW_CHANNEL_BG2_FROZEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int TABLE_DRAW_CHANNEL_BG2_FROZEN = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l00264">264</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l02592">ImGui::TableMergeDrawChannels()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l02524">ImGui::TableSetupDrawChannels()</a>.</p>
+
+</div>
+</div>
+<a id="af9655126612649ebded9316e8c17028d" name="af9655126612649ebded9316e8c17028d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9655126612649ebded9316e8c17028d">&#9670;&#160;</a></span>TABLE_DRAW_CHANNEL_NOCLIP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int TABLE_DRAW_CHANNEL_NOCLIP = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l00265">265</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l02166">ImGui::TableBeginCell()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l00803">ImGui::TableUpdateLayout()</a>.</p>
+
+</div>
+</div>
+<a id="ab6f19f4326452b1997bb2619879146fb" name="ab6f19f4326452b1997bb2619879146fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6f19f4326452b1997bb2619879146fb">&#9670;&#160;</a></span>TABLE_RESIZE_SEPARATOR_FEEDBACK_TIMER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float TABLE_RESIZE_SEPARATOR_FEEDBACK_TIMER = 0.06f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l00268">268</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l01285">ImGui::TableUpdateBorders()</a>.</p>
+
+</div>
+</div>
+<a id="aee8b55f318d93b1be0a1228640e64b4c" name="aee8b55f318d93b1be0a1228640e64b4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee8b55f318d93b1be0a1228640e64b4c">&#9670;&#160;</a></span>TABLE_RESIZE_SEPARATOR_HALF_THICKNESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float TABLE_RESIZE_SEPARATOR_HALF_THICKNESS = 4.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="imgui__tables_8cpp_source.html">imgui_tables.cpp</a> の <a class="el" href="imgui__tables_8cpp_source.html#l00267">267</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="imgui__tables_8cpp_source.html#l01346">ImGui::EndTable()</a>, <a class="el" href="imgui__tables_8cpp_source.html#l01285">ImGui::TableUpdateBorders()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23797ae7e766fbcdeb3fb12569df6b46.html">ImGui</a></li><li class="navelem"><a class="el" href="imgui__tables_8cpp.html">imgui_tables.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

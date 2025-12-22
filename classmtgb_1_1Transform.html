@@ -1,0 +1,2047 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::Transform クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1Transform.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1Transform-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::Transform クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="Transform_8h_source.html">Transform.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::Transform の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform__inherit__graph.svg" width="512" height="1528"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::Transform 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform__coll__graph.svg" width="1250" height="1688"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a4d48cdbe3ab7d92a0a73b29228f255d5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a4d48cdbe3ab7d92a0a73b29228f255d5">Pool</a> = <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a></td></tr>
+<tr class="separator:a4d48cdbe3ab7d92a0a73b29228f255d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a25aac3b6926049709392fd5e7db53673"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a25aac3b6926049709392fd5e7db53673">Transform</a> ()</td></tr>
+<tr class="separator:a25aac3b6926049709392fd5e7db53673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a602fedab5684c24ccb169c8317eb2a51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a602fedab5684c24ccb169c8317eb2a51">Transform</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:a602fedab5684c24ccb169c8317eb2a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2ecd1236eb6aaf9db72cd20c42c6140"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#af2ecd1236eb6aaf9db72cd20c42c6140">~Transform</a> ()</td></tr>
+<tr class="separator:af2ecd1236eb6aaf9db72cd20c42c6140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718d2732e3675357a0eca96181c1fd97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a718d2732e3675357a0eca96181c1fd97">operator=</a> (const <a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp;_other)</td></tr>
+<tr class="separator:a718d2732e3675357a0eca96181c1fd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691c9937c68a30c16c2a73dff99e7457"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a691c9937c68a30c16c2a73dff99e7457">Compute</a> ()</td></tr>
+<tr class="memdesc:a691c9937c68a30c16c2a73dff99e7457"><td class="mdescLeft">&#160;</td><td class="mdescRight">計算する  <br /></td></tr>
+<tr class="separator:a691c9937c68a30c16c2a73dff99e7457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa74f95c2a5b0f0e2e16bfdca5f227504"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#aa74f95c2a5b0f0e2e16bfdca5f227504">GenerateLocalMatrix</a> (<a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *_pMatrix) const</td></tr>
+<tr class="memdesc:aa74f95c2a5b0f0e2e16bfdca5f227504"><td class="mdescLeft">&#160;</td><td class="mdescRight">ローカル行列を生成する  <br /></td></tr>
+<tr class="separator:aa74f95c2a5b0f0e2e16bfdca5f227504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c166b8c575ce4893f881836eee54bc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">GenerateWorldMatrix</a> (<a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *_pMatrix) const</td></tr>
+<tr class="memdesc:a2c166b8c575ce4893f881836eee54bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ワールド行列を生成する  <br /></td></tr>
+<tr class="separator:a2c166b8c575ce4893f881836eee54bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca077ac0e5205e81189be3c5d3c45a2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#aca077ac0e5205e81189be3c5d3c45a2f">GenerateWorldRotationMatrix</a> (<a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *_pMatrix) const</td></tr>
+<tr class="memdesc:aca077ac0e5205e81189be3c5d3c45a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ワールド回転行列を生成する  <br /></td></tr>
+<tr class="separator:aca077ac0e5205e81189be3c5d3c45a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8039bd46912b56e7095e505a7ed76c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#af8039bd46912b56e7095e505a7ed76c8">GenerateParentMatrix</a> (<a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *_pMatrix) const</td></tr>
+<tr class="memdesc:af8039bd46912b56e7095e505a7ed76c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">親の行列を生成する  <br /></td></tr>
+<tr class="separator:af8039bd46912b56e7095e505a7ed76c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd2a9c2d3d1e2f705257b6369613b6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a6cd2a9c2d3d1e2f705257b6369613b6b">GenerateParentRotationMatrix</a> (<a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *_pMatrix) const</td></tr>
+<tr class="memdesc:a6cd2a9c2d3d1e2f705257b6369613b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">親の回転行列を生成する  <br /></td></tr>
+<tr class="separator:a6cd2a9c2d3d1e2f705257b6369613b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d9c2125d564d9aa3ae3b3dabf7b92f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a7d9c2125d564d9aa3ae3b3dabf7b92f1">DecomposeMatrix</a> (const <a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> &amp;_matrix)</td></tr>
+<tr class="memdesc:a7d9c2125d564d9aa3ae3b3dabf7b92f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">行列をスケール、回転、移動成分に分割、適用する  <br /></td></tr>
+<tr class="separator:a7d9c2125d564d9aa3ae3b3dabf7b92f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a243901c64e8c52b77f81b5119522db42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1Transform.html">Transform</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a243901c64e8c52b77f81b5119522db42">GetParent</a> () const</td></tr>
+<tr class="memdesc:a243901c64e8c52b77f81b5119522db42"><td class="mdescLeft">&#160;</td><td class="mdescRight">親のStatefulTransformを取得  <br /></td></tr>
+<tr class="separator:a243901c64e8c52b77f81b5119522db42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf8bda13bc892f5e39cac6d4e9a4d23d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#acf8bda13bc892f5e39cac6d4e9a4d23d">SetParent</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="memdesc:acf8bda13bc892f5e39cac6d4e9a4d23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">親のStatefulTransformを設定  <br /></td></tr>
+<tr class="separator:acf8bda13bc892f5e39cac6d4e9a4d23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca6db4ff526a9e78d3a0ed83f68c7b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a7ca6db4ff526a9e78d3a0ed83f68c7b8">Rotation</a> (const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_rotate)</td></tr>
+<tr class="memdesc:a7ca6db4ff526a9e78d3a0ed83f68c7b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転する  <br /></td></tr>
+<tr class="separator:a7ca6db4ff526a9e78d3a0ed83f68c7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea955de817d512302e6db6208559d70d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#aea955de817d512302e6db6208559d70d">Rotation</a> (const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;_axis, const float _angle)</td></tr>
+<tr class="memdesc:aea955de817d512302e6db6208559d70d"><td class="mdescLeft">&#160;</td><td class="mdescRight">軸ベクトルで回転する  <br /></td></tr>
+<tr class="separator:aea955de817d512302e6db6208559d70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b68f35d2f2fa181a62b5b53b545cc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#ac8b68f35d2f2fa181a62b5b53b545cc8">Up</a> () const</td></tr>
+<tr class="memdesc:ac8b68f35d2f2fa181a62b5b53b545cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">上方向のワールドベクトル  <br /></td></tr>
+<tr class="separator:ac8b68f35d2f2fa181a62b5b53b545cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a452b3dda2bf4e5d11b6407df0e8fffdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a452b3dda2bf4e5d11b6407df0e8fffdf">Down</a> () const</td></tr>
+<tr class="memdesc:a452b3dda2bf4e5d11b6407df0e8fffdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">下方向のワールドベクトル  <br /></td></tr>
+<tr class="separator:a452b3dda2bf4e5d11b6407df0e8fffdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24a811b1092b7bdbfdd9e49a07fb547"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#ad24a811b1092b7bdbfdd9e49a07fb547">Left</a> () const</td></tr>
+<tr class="memdesc:ad24a811b1092b7bdbfdd9e49a07fb547"><td class="mdescLeft">&#160;</td><td class="mdescRight">左方向のワールドベクトル  <br /></td></tr>
+<tr class="separator:ad24a811b1092b7bdbfdd9e49a07fb547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc5910056a55619be7fa22edf326f01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a3fc5910056a55619be7fa22edf326f01">Right</a> () const</td></tr>
+<tr class="memdesc:a3fc5910056a55619be7fa22edf326f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">右方向のワールドベクトル  <br /></td></tr>
+<tr class="separator:a3fc5910056a55619be7fa22edf326f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a993c483bf545481b35844f842b762a77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a993c483bf545481b35844f842b762a77">Back</a> () const</td></tr>
+<tr class="memdesc:a993c483bf545481b35844f842b762a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">後方向のワールドベクトル  <br /></td></tr>
+<tr class="separator:a993c483bf545481b35844f842b762a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95361d2c6ec0ff51183e7c1221e5ae0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a95361d2c6ec0ff51183e7c1221e5ae0e">Forward</a> () const</td></tr>
+<tr class="memdesc:a95361d2c6ec0ff51183e7c1221e5ae0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">前方向のワールドベクトル  <br /></td></tr>
+<tr class="separator:a95361d2c6ec0ff51183e7c1221e5ae0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5f7f7a32791143f366132d90dcc3e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a6a5f7f7a32791143f366132d90dcc3e6">GetWorldPosition</a> () const</td></tr>
+<tr class="memdesc:a6a5f7f7a32791143f366132d90dcc3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ワールド座標を取得  <br /></td></tr>
+<tr class="separator:a6a5f7f7a32791143f366132d90dcc3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b2594c47ba72c1ac97e477967e6e24b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Quaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a1b2594c47ba72c1ac97e477967e6e24b">GetWorldRotate</a> () const</td></tr>
+<tr class="memdesc:a1b2594c47ba72c1ac97e477967e6e24b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ワールド回転を取得  <br /></td></tr>
+<tr class="separator:a1b2594c47ba72c1ac97e477967e6e24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ace1530f04c63eed66eba461800436d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a5ace1530f04c63eed66eba461800436d">OnPostRestore</a> () override</td></tr>
+<tr class="separator:a5ace1530f04c63eed66eba461800436d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f42a089e725be9599afab34ab245bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a65f42a089e725be9599afab34ab245bb">IComponent</a> ()</td></tr>
+<tr class="separator:a65f42a089e725be9599afab34ab245bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406a6445fabe38285a6d0ecc18ea6369"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a406a6445fabe38285a6d0ecc18ea6369">IComponent</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:a406a6445fabe38285a6d0ecc18ea6369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecaeb2d199af3bd978a34238ae7f733a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#aecaeb2d199af3bd978a34238ae7f733a">Initialize</a> ()</td></tr>
+<tr class="separator:aecaeb2d199af3bd978a34238ae7f733a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735636df79e7cfd6336e9a97345e2b29"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a> () const</td></tr>
+<tr class="separator:a735636df79e7cfd6336e9a97345e2b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86fe7f4e0ab2a86787b52d34ac5b6ec8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISerializableObject.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8">OnPreSave</a> ()</td></tr>
+<tr class="separator:a86fe7f4e0ab2a86787b52d34ac5b6ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a931ae7565817c83a4e3c5f9004c074d5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Get</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:a931ae7565817c83a4e3c5f9004c074d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0db1b0f0dbd3823a06ae854eacef41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a4e0db1b0f0dbd3823a06ae854eacef41">Get</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId, Args &amp;&amp;... _args)</td></tr>
+<tr class="separator:a4e0db1b0f0dbd3823a06ae854eacef41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07fa68485a5cf4425eebf1718c82e73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Transform.html">Transform</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#ab07fa68485a5cf4425eebf1718c82e73">Reuse</a> (size_t _index, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:ab07fa68485a5cf4425eebf1718c82e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a86e985ae04a7ae18338592499540899c"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a86e985ae04a7ae18338592499540899c">TransformCP</a></td></tr>
+<tr class="separator:a86e985ae04a7ae18338592499540899c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0999d4fa78d99e9436e11f0f71e7f98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a></td></tr>
+<tr class="separator:af0999d4fa78d99e9436e11f0f71e7f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71231187095137f6dd753ef9450bc18b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a></td></tr>
+<tr class="separator:a71231187095137f6dd753ef9450bc18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8373f7a6e81f61498f8ca020a5a5c31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a></td></tr>
+<tr class="separator:aa8373f7a6e81f61498f8ca020a5a5c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4b47a931e7ef521e3265c8d9413966"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Quaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a></td></tr>
+<tr class="separator:a0e4b47a931e7ef521e3265c8d9413966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a747c425302d9fe125d0f1677dfdc5afc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a747c425302d9fe125d0f1677dfdc5afc">matrixTranslate_</a> {}</td></tr>
+<tr class="separator:a747c425302d9fe125d0f1677dfdc5afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c3875b8138cb5527ee7f78109bfeb1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a4c3875b8138cb5527ee7f78109bfeb1f">matrixRotate_</a> {}</td></tr>
+<tr class="separator:a4c3875b8138cb5527ee7f78109bfeb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23aa6fdb8d583e6529677a225dd2f000"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a23aa6fdb8d583e6529677a225dd2f000">matrixScale_</a> {}</td></tr>
+<tr class="separator:a23aa6fdb8d583e6529677a225dd2f000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d8352e3405342ac528753aebc79b22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a97d8352e3405342ac528753aebc79b22">matrixWorld_</a> {}</td></tr>
+<tr class="separator:a97d8352e3405342ac528753aebc79b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b0ad2e0bbfab2704ad7f674e5056c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#af4b0ad2e0bbfab2704ad7f674e5056c8">matrixWorldRot_</a> {}</td></tr>
+<tr class="separator:af4b0ad2e0bbfab2704ad7f674e5056c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe36893fee918dd88329c920e4df3639"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#afe36893fee918dd88329c920e4df3639">matrixLocal_</a> {}</td></tr>
+<tr class="separator:afe36893fee918dd88329c920e4df3639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b2ffbd206119728ed0e87106ab0c108"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a1b2ffbd206119728ed0e87106ab0c108">prevParentMatrix_</a> {}</td></tr>
+<tr class="separator:a1b2ffbd206119728ed0e87106ab0c108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e127f6d3bdd393ceda02f4844177e7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a0e127f6d3bdd393ceda02f4844177e7e">localPosition_</a></td></tr>
+<tr class="separator:a0e127f6d3bdd393ceda02f4844177e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92bd4cd3ab4f640714fb7ea658e61c8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Quaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a92bd4cd3ab4f640714fb7ea658e61c8e">localRotate_</a></td></tr>
+<tr class="separator:a92bd4cd3ab4f640714fb7ea658e61c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac21a7486e639c165633cb6622e7e285f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#ac21a7486e639c165633cb6622e7e285f">localScale_</a></td></tr>
+<tr class="separator:ac21a7486e639c165633cb6622e7e285f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed716499a289d6dd69c0d40b683142aa"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#aed716499a289d6dd69c0d40b683142aa">ComponentPoolT</a></td></tr>
+<tr class="separator:aed716499a289d6dd69c0d40b683142aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d6b5582bd4cc3eea5feb793ae19aa4"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a37d6b5582bd4cc3eea5feb793ae19aa4">ComponentPool&lt; ComponentT, ComponentPoolT &gt;</a></td></tr>
+<tr class="separator:a37d6b5582bd4cc3eea5feb793ae19aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a73757da5837d3a1b762f919081648aad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a73757da5837d3a1b762f919081648aad">DecomposeMatrixImpl</a> (<a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> *_pPos, <a class="el" href="structmtgb_1_1Quaternion.html">Quaternion</a> *_pRot, <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> *_pScale, const <a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> &amp;_matrix)</td></tr>
+<tr class="separator:a73757da5837d3a1b762f919081648aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70cf0810db594a65debc494b502087a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a70cf0810db594a65debc494b502087a8">GenerateWorldMatrixSelf</a> (<a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *_pMatrix) const</td></tr>
+<tr class="memdesc:a70cf0810db594a65debc494b502087a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">計算用自分自身のワールド行列を生成する  <br /></td></tr>
+<tr class="separator:a70cf0810db594a65debc494b502087a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0980afae12457b26a657ba1a1a8453c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Transform.html#a0980afae12457b26a657ba1a1a8453c7">GenerateWorldRotMatrixSelf</a> (<a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *_pMatrix) const</td></tr>
+<tr class="memdesc:a0980afae12457b26a657ba1a1a8453c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">計算用自分自身のワールド回転行列を生成する  <br /></td></tr>
+<tr class="separator:a0980afae12457b26a657ba1a1a8453c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a8aa4f5300c39f9f4705a587fd0a72639"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a></td></tr>
+<tr class="separator:a8aa4f5300c39f9f4705a587fd0a72639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00020">20</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a4d48cdbe3ab7d92a0a73b29228f255d5" name="a4d48cdbe3ab7d92a0a73b29228f255d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d48cdbe3ab7d92a0a73b29228f255d5">&#9670;&#160;</a></span>Pool</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a> , <a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &gt;::Pool =  <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a25aac3b6926049709392fd5e7db53673" name="a25aac3b6926049709392fd5e7db53673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25aac3b6926049709392fd5e7db53673">&#9670;&#160;</a></span>Transform() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Transform::Transform </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00009">9</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>    : <a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a>(<a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>{ <a class="code hl_function" href="structmtgb_1_1Vector3.html#a2371787a3f946ece7355e27003f0aac5">Vector3::Zero</a>() }</div>
+<div class="line"><span class="lineno">   12</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>{ <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a888738793dd9da79895d4660ed254406">Quaternion::Identity</a>() }</div>
+<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>{ <a class="code hl_function" href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">Vector3::One</a>() }</div>
+<div class="line"><span class="lineno">   14</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e127f6d3bdd393ceda02f4844177e7e">localPosition_</a>{ <a class="code hl_function" href="structmtgb_1_1Vector3.html#a2371787a3f946ece7355e27003f0aac5">Vector3::Zero</a>() }</div>
+<div class="line"><span class="lineno">   15</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#a92bd4cd3ab4f640714fb7ea658e61c8e">localRotate_</a>{ <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a888738793dd9da79895d4660ed254406">Quaternion::Identity</a>() }</div>
+<div class="line"><span class="lineno">   16</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#ac21a7486e639c165633cb6622e7e285f">localScale_</a>{ <a class="code hl_function" href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">Vector3::One</a>() }</div>
+<div class="line"><span class="lineno">   17</span>{</div>
+<div class="line"><span class="lineno">   18</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a0e127f6d3bdd393ceda02f4844177e7e"><div class="ttname"><a href="classmtgb_1_1Transform.html#a0e127f6d3bdd393ceda02f4844177e7e">mtgb::Transform::localPosition_</a></div><div class="ttdeci">Vector3 localPosition_</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00187">Transform.h:187</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a0e4b47a931e7ef521e3265c8d9413966"><div class="ttname"><a href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">mtgb::Transform::rotate</a></div><div class="ttdeci">Quaternion rotate</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00163">Transform.h:163</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a71231187095137f6dd753ef9450bc18b"><div class="ttname"><a href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">mtgb::Transform::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00159">Transform.h:159</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a92bd4cd3ab4f640714fb7ea658e61c8e"><div class="ttname"><a href="classmtgb_1_1Transform.html#a92bd4cd3ab4f640714fb7ea658e61c8e">mtgb::Transform::localRotate_</a></div><div class="ttdeci">Quaternion localRotate_</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00188">Transform.h:188</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_aa8373f7a6e81f61498f8ca020a5a5c31"><div class="ttname"><a href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">mtgb::Transform::scale</a></div><div class="ttdeci">Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00161">Transform.h:161</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_ac21a7486e639c165633cb6622e7e285f"><div class="ttname"><a href="classmtgb_1_1Transform.html#ac21a7486e639c165633cb6622e7e285f">mtgb::Transform::localScale_</a></div><div class="ttdeci">Vector3 localScale_</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00189">Transform.h:189</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_af0999d4fa78d99e9436e11f0f71e7f98"><div class="ttname"><a href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">mtgb::Transform::parent</a></div><div class="ttdeci">EntityId parent</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00157">Transform.h:157</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Quaternion_html_a888738793dd9da79895d4660ed254406"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a888738793dd9da79895d4660ed254406">mtgb::Quaternion::Identity</a></div><div class="ttdeci">static Quaternion Identity()</div><div class="ttdoc">単位四元数を取得</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00048">Quaternion.h:48</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_a2371787a3f946ece7355e27003f0aac5"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a2371787a3f946ece7355e27003f0aac5">mtgb::Vector3::Zero</a></div><div class="ttdeci">static auto Zero()</div><div class="ttdoc">零ベクトル</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00059">Vector3.h:59</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_ad65c77adcdae305e6190bf2329ea1887"><div class="ttname"><a href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">mtgb::Vector3::One</a></div><div class="ttdeci">static auto One()</div><div class="ttdoc">単位ベクトル</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00063">Vector3.h:63</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a602fedab5684c24ccb169c8317eb2a51" name="a602fedab5684c24ccb169c8317eb2a51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a602fedab5684c24ccb169c8317eb2a51">&#9670;&#160;</a></span>Transform() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Transform::Transform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>    : <a class="code hl_function" href="classmtgb_1_1Transform.html#a65f42a089e725be9599afab34ab245bb">IComponent</a>(_entityId)</div>
+<div class="line"><span class="lineno">   22</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a>(<a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">   23</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>{<a class="code hl_function" href="structmtgb_1_1Vector3.html#a2371787a3f946ece7355e27003f0aac5">Vector3::Zero</a>()}</div>
+<div class="line"><span class="lineno">   24</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>{<a class="code hl_function" href="structmtgb_1_1Quaternion.html#a888738793dd9da79895d4660ed254406">Quaternion::Identity</a>()}</div>
+<div class="line"><span class="lineno">   25</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>{<a class="code hl_function" href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">Vector3::One</a>()}</div>
+<div class="line"><span class="lineno">   26</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e127f6d3bdd393ceda02f4844177e7e">localPosition_</a>{ <a class="code hl_function" href="structmtgb_1_1Vector3.html#a2371787a3f946ece7355e27003f0aac5">Vector3::Zero</a>() }</div>
+<div class="line"><span class="lineno">   27</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#a92bd4cd3ab4f640714fb7ea658e61c8e">localRotate_</a>{ <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a888738793dd9da79895d4660ed254406">Quaternion::Identity</a>() }</div>
+<div class="line"><span class="lineno">   28</span>    , <a class="code hl_variable" href="classmtgb_1_1Transform.html#ac21a7486e639c165633cb6622e7e285f">localScale_</a>{ <a class="code hl_function" href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">Vector3::One</a>() }</div>
+<div class="line"><span class="lineno">   29</span>{</div>
+<div class="line"><span class="lineno">   30</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a65f42a089e725be9599afab34ab245bb"><div class="ttname"><a href="classmtgb_1_1Transform.html#a65f42a089e725be9599afab34ab245bb">mtgb::Transform::IComponent</a></div><div class="ttdeci">IComponent()</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00021">IComponent.h:21</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af2ecd1236eb6aaf9db72cd20c42c6140" name="af2ecd1236eb6aaf9db72cd20c42c6140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2ecd1236eb6aaf9db72cd20c42c6140">&#9670;&#160;</a></span>~Transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Transform::~Transform </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a993c483bf545481b35844f842b762a77" name="a993c483bf545481b35844f842b762a77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a993c483bf545481b35844f842b762a77">&#9670;&#160;</a></span>Back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Transform::Back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>後方向のワールドベクトル </p>
+<dl class="section return"><dt>戻り値</dt><dd>ワールド回転行列がかけられたベクトル</dd></dl>
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00137">137</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structmtgb_1_1Vector3.html#a35ab416123f8e74c67b127475b556d80">Vector3::Back</a>() * <a class="code hl_variable" href="classmtgb_1_1Transform.html#af4b0ad2e0bbfab2704ad7f674e5056c8">matrixWorldRot_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_af4b0ad2e0bbfab2704ad7f674e5056c8"><div class="ttname"><a href="classmtgb_1_1Transform.html#af4b0ad2e0bbfab2704ad7f674e5056c8">mtgb::Transform::matrixWorldRot_</a></div><div class="ttdeci">Matrix4x4 matrixWorldRot_</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00184">Transform.h:184</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_a35ab416123f8e74c67b127475b556d80"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a35ab416123f8e74c67b127475b556d80">mtgb::Vector3::Back</a></div><div class="ttdeci">static auto Back()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00068">Vector3.h:68</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Vector3_8h_source.html#l00068">mtgb::Vector3::Back()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_a993c483bf545481b35844f842b762a77_cgraph.svg" width="382" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a691c9937c68a30c16c2a73dff99e7457" name="a691c9937c68a30c16c2a73dff99e7457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691c9937c68a30c16c2a73dff99e7457">&#9670;&#160;</a></span>Compute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::Compute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>計算する </p>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keyword">using </span>DirectX::XMMatrixTranslation;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keyword">using </span>DirectX::XMMatrixRotationQuaternion;</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keyword">using </span>DirectX::XMQuaternionNormalize;</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keyword">using </span>DirectX::XMConvertToRadians;</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keyword">using </span>DirectX::XMMatrixScaling;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="comment">// 親の行列を取得</span></div>
+<div class="line"><span class="lineno">   48</span>    Matrix4x4 parentMat{};</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#af8039bd46912b56e7095e505a7ed76c8">GenerateParentMatrix</a>(&amp;parentMat);</div>
+<div class="line"><span class="lineno">   50</span>    </div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <span class="comment">// 現在のワールド座標から行列を作成</span></div>
+<div class="line"><span class="lineno">   53</span>    Matrix4x4 currWorldMat =</div>
+<div class="line"><span class="lineno">   54</span>        XMMatrixScaling(<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x, <a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.y, <a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.z) *</div>
+<div class="line"><span class="lineno">   55</span>        XMMatrixRotationQuaternion(XMQuaternionNormalize(<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>)) *</div>
+<div class="line"><span class="lineno">   56</span>        XMMatrixTranslation(<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>.x, <a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>.y, <a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>.z);</div>
+<div class="line"><span class="lineno">   57</span>    Matrix4x4 parentInverse = DirectX::XMMatrixInverse(<span class="keyword">nullptr</span>, <a class="code hl_variable" href="classmtgb_1_1Transform.html#a1b2ffbd206119728ed0e87106ab0c108">prevParentMatrix_</a>);</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="classmtgb_1_1Transform.html#afe36893fee918dd88329c920e4df3639">matrixLocal_</a> = currWorldMat * parentInverse;</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#a73757da5837d3a1b762f919081648aad">DecomposeMatrixImpl</a>(&amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e127f6d3bdd393ceda02f4844177e7e">localPosition_</a>, &amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a92bd4cd3ab4f640714fb7ea658e61c8e">localRotate_</a>, &amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#ac21a7486e639c165633cb6622e7e285f">localScale_</a>, <a class="code hl_variable" href="classmtgb_1_1Transform.html#afe36893fee918dd88329c920e4df3639">matrixLocal_</a>);</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_variable" href="classmtgb_1_1Transform.html#a747c425302d9fe125d0f1677dfdc5afc">matrixTranslate_</a> = XMMatrixTranslation(<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e127f6d3bdd393ceda02f4844177e7e">localPosition_</a>.x, <a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e127f6d3bdd393ceda02f4844177e7e">localPosition_</a>.y, <a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e127f6d3bdd393ceda02f4844177e7e">localPosition_</a>.z);</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_variable" href="classmtgb_1_1Transform.html#a4c3875b8138cb5527ee7f78109bfeb1f">matrixRotate_</a> = XMMatrixRotationQuaternion(</div>
+<div class="line"><span class="lineno">   64</span>        XMQuaternionNormalize(<a class="code hl_variable" href="classmtgb_1_1Transform.html#a92bd4cd3ab4f640714fb7ea658e61c8e">localRotate_</a>));</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_variable" href="classmtgb_1_1Transform.html#a23aa6fdb8d583e6529677a225dd2f000">matrixScale_</a> = XMMatrixScaling(<a class="code hl_variable" href="classmtgb_1_1Transform.html#ac21a7486e639c165633cb6622e7e285f">localScale_</a>.x, <a class="code hl_variable" href="classmtgb_1_1Transform.html#ac21a7486e639c165633cb6622e7e285f">localScale_</a>.y, <a class="code hl_variable" href="classmtgb_1_1Transform.html#ac21a7486e639c165633cb6622e7e285f">localScale_</a>.z);</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">GenerateWorldMatrix</a>(&amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a97d8352e3405342ac528753aebc79b22">matrixWorld_</a>);</div>
+<div class="line"><span class="lineno">   68</span>    <span class="comment">// ワールド行列を計算</span></div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#aca077ac0e5205e81189be3c5d3c45a2f">GenerateWorldRotationMatrix</a>(&amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#af4b0ad2e0bbfab2704ad7f674e5056c8">matrixWorldRot_</a>);  <span class="comment">// ワールド回転行列更新</span></div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="comment">// ワールド行列からワールド座標系の値を逆算して更新</span></div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#a73757da5837d3a1b762f919081648aad">DecomposeMatrixImpl</a>(&amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>, &amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>, &amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>, <a class="code hl_variable" href="classmtgb_1_1Transform.html#a97d8352e3405342ac528753aebc79b22">matrixWorld_</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_variable" href="classmtgb_1_1Transform.html#a1b2ffbd206119728ed0e87106ab0c108">prevParentMatrix_</a> = parentMat;</div>
+<div class="line"><span class="lineno">   75</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a1b2ffbd206119728ed0e87106ab0c108"><div class="ttname"><a href="classmtgb_1_1Transform.html#a1b2ffbd206119728ed0e87106ab0c108">mtgb::Transform::prevParentMatrix_</a></div><div class="ttdeci">Matrix4x4 prevParentMatrix_</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00186">Transform.h:186</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a23aa6fdb8d583e6529677a225dd2f000"><div class="ttname"><a href="classmtgb_1_1Transform.html#a23aa6fdb8d583e6529677a225dd2f000">mtgb::Transform::matrixScale_</a></div><div class="ttdeci">Matrix4x4 matrixScale_</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00182">Transform.h:182</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a2c166b8c575ce4893f881836eee54bc1"><div class="ttname"><a href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">mtgb::Transform::GenerateWorldMatrix</a></div><div class="ttdeci">void GenerateWorldMatrix(Matrix4x4 *_pMatrix) const</div><div class="ttdoc">ワールド行列を生成する</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00084">Transform.cpp:84</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a4c3875b8138cb5527ee7f78109bfeb1f"><div class="ttname"><a href="classmtgb_1_1Transform.html#a4c3875b8138cb5527ee7f78109bfeb1f">mtgb::Transform::matrixRotate_</a></div><div class="ttdeci">Matrix4x4 matrixRotate_</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00181">Transform.h:181</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a73757da5837d3a1b762f919081648aad"><div class="ttname"><a href="classmtgb_1_1Transform.html#a73757da5837d3a1b762f919081648aad">mtgb::Transform::DecomposeMatrixImpl</a></div><div class="ttdeci">bool DecomposeMatrixImpl(Vector3 *_pPos, Quaternion *_pRot, Vector3 *_pScale, const Matrix4x4 &amp;_matrix)</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00115">Transform.cpp:115</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a747c425302d9fe125d0f1677dfdc5afc"><div class="ttname"><a href="classmtgb_1_1Transform.html#a747c425302d9fe125d0f1677dfdc5afc">mtgb::Transform::matrixTranslate_</a></div><div class="ttdeci">Matrix4x4 matrixTranslate_</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00180">Transform.h:180</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a97d8352e3405342ac528753aebc79b22"><div class="ttname"><a href="classmtgb_1_1Transform.html#a97d8352e3405342ac528753aebc79b22">mtgb::Transform::matrixWorld_</a></div><div class="ttdeci">Matrix4x4 matrixWorld_</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00183">Transform.h:183</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_aca077ac0e5205e81189be3c5d3c45a2f"><div class="ttname"><a href="classmtgb_1_1Transform.html#aca077ac0e5205e81189be3c5d3c45a2f">mtgb::Transform::GenerateWorldRotationMatrix</a></div><div class="ttdeci">void GenerateWorldRotationMatrix(Matrix4x4 *_pMatrix) const</div><div class="ttdoc">ワールド回転行列を生成する</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00090">Transform.cpp:90</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_af8039bd46912b56e7095e505a7ed76c8"><div class="ttname"><a href="classmtgb_1_1Transform.html#af8039bd46912b56e7095e505a7ed76c8">mtgb::Transform::GenerateParentMatrix</a></div><div class="ttdeci">void GenerateParentMatrix(Matrix4x4 *_pMatrix) const</div><div class="ttdoc">親の行列を生成する</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00096">Transform.cpp:96</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_afe36893fee918dd88329c920e4df3639"><div class="ttname"><a href="classmtgb_1_1Transform.html#afe36893fee918dd88329c920e4df3639">mtgb::Transform::matrixLocal_</a></div><div class="ttdeci">Matrix4x4 matrixLocal_</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00185">Transform.h:185</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7d9c2125d564d9aa3ae3b3dabf7b92f1" name="a7d9c2125d564d9aa3ae3b3dabf7b92f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9c2125d564d9aa3ae3b3dabf7b92f1">&#9670;&#160;</a></span>DecomposeMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::Transform::DecomposeMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> &amp;&#160;</td>
+          <td class="paramname"><em>_matrix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>行列をスケール、回転、移動成分に分割、適用する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_matrix</td><td>変換に使用する行列</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00110">110</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>{</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1Transform.html#a73757da5837d3a1b762f919081648aad">DecomposeMatrixImpl</a>(&amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>, &amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>, &amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>, _matrix);</div>
+<div class="line"><span class="lineno">  113</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a73757da5837d3a1b762f919081648aad" name="a73757da5837d3a1b762f919081648aad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73757da5837d3a1b762f919081648aad">&#9670;&#160;</a></span>DecomposeMatrixImpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::Transform::DecomposeMatrixImpl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> *&#160;</td>
+          <td class="paramname"><em>_pPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Quaternion.html">Quaternion</a> *&#160;</td>
+          <td class="paramname"><em>_pRot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> *&#160;</td>
+          <td class="paramname"><em>_pScale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> &amp;&#160;</td>
+          <td class="paramname"><em>_matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00115">115</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>{</div>
+<div class="line"><span class="lineno">  117</span>    DirectX::XMVECTOR vPos = DirectX::XMLoadFloat3(_pPos);</div>
+<div class="line"><span class="lineno">  118</span>    DirectX::XMVECTOR vScale = DirectX::XMLoadFloat3(_pScale);</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordtype">bool</span> result = DirectX::XMMatrixDecompose(&amp;vScale, &amp;_pRot-&gt;v, &amp;vPos, _matrix);</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    DirectX::XMStoreFloat3(_pPos, vPos);</div>
+<div class="line"><span class="lineno">  123</span>    DirectX::XMStoreFloat3(_pScale, vScale);</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a452b3dda2bf4e5d11b6407df0e8fffdf" name="a452b3dda2bf4e5d11b6407df0e8fffdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a452b3dda2bf4e5d11b6407df0e8fffdf">&#9670;&#160;</a></span>Down()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Transform::Down </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>下方向のワールドベクトル </p>
+<dl class="section return"><dt>戻り値</dt><dd>ワールド回転行列がかけられたベクトル</dd></dl>
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00122">122</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structmtgb_1_1Vector3.html#a8bb4ae3a1ec429ba257d56cfce1a3b3e">Vector3::Down</a>() * <a class="code hl_variable" href="classmtgb_1_1Transform.html#af4b0ad2e0bbfab2704ad7f674e5056c8">matrixWorldRot_</a>; }</div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_a8bb4ae3a1ec429ba257d56cfce1a3b3e"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a8bb4ae3a1ec429ba257d56cfce1a3b3e">mtgb::Vector3::Down</a></div><div class="ttdeci">static auto Down()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00065">Vector3.h:65</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Vector3_8h_source.html#l00065">mtgb::Vector3::Down()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_a452b3dda2bf4e5d11b6407df0e8fffdf_cgraph.svg" width="392" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a95361d2c6ec0ff51183e7c1221e5ae0e" name="a95361d2c6ec0ff51183e7c1221e5ae0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95361d2c6ec0ff51183e7c1221e5ae0e">&#9670;&#160;</a></span>Forward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> mtgb::Transform::Forward </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>前方向のワールドベクトル </p>
+<dl class="section return"><dt>戻り値</dt><dd>ワールド回転行列がかけられたベクトル</dd></dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00186">186</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  187</span>{</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="structmtgb_1_1Vector3.html#a6dac9080e90e9a7257303df4ad41eabd">Vector3::Forward</a>() * <a class="code hl_variable" href="classmtgb_1_1Transform.html#af4b0ad2e0bbfab2704ad7f674e5056c8">matrixWorldRot_</a>;</div>
+<div class="line"><span class="lineno">  189</span>}</div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_a6dac9080e90e9a7257303df4ad41eabd"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a6dac9080e90e9a7257303df4ad41eabd">mtgb::Vector3::Forward</a></div><div class="ttdeci">static auto Forward()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00069">Vector3.h:69</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Vector3_8h_source.html#l00069">mtgb::Vector3::Forward()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00174">PatrolChargerEnemy::Search()</a>, <a class="el" href="RayDetector_8cpp_source.html#l00026">mtgb::RayDetector::UpdateDetection()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_a95361d2c6ec0ff51183e7c1221e5ae0e_cgraph.svg" width="422" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_a95361d2c6ec0ff51183e7c1221e5ae0e_icgraph.svg" width="403" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa74f95c2a5b0f0e2e16bfdca5f227504" name="aa74f95c2a5b0f0e2e16bfdca5f227504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa74f95c2a5b0f0e2e16bfdca5f227504">&#9670;&#160;</a></span>GenerateLocalMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::GenerateLocalMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *&#160;</td>
+          <td class="paramname"><em>_pMatrix</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ローカル行列を生成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pMatrix</td><td>行列のポインタ渡し</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00077">77</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>{</div>
+<div class="line"><span class="lineno">   79</span>    *_pMatrix *= <a class="code hl_variable" href="classmtgb_1_1Transform.html#a23aa6fdb8d583e6529677a225dd2f000">matrixScale_</a>;</div>
+<div class="line"><span class="lineno">   80</span>    *_pMatrix *= <a class="code hl_variable" href="classmtgb_1_1Transform.html#a4c3875b8138cb5527ee7f78109bfeb1f">matrixRotate_</a>;</div>
+<div class="line"><span class="lineno">   81</span>    *_pMatrix *= <a class="code hl_variable" href="classmtgb_1_1Transform.html#a747c425302d9fe125d0f1677dfdc5afc">matrixTranslate_</a>;</div>
+<div class="line"><span class="lineno">   82</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Sprite_8cpp_source.html#l00184">mtgb::Sprite::Draw()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_aa74f95c2a5b0f0e2e16bfdca5f227504_icgraph.svg" width="400" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af8039bd46912b56e7095e505a7ed76c8" name="af8039bd46912b56e7095e505a7ed76c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8039bd46912b56e7095e505a7ed76c8">&#9670;&#160;</a></span>GenerateParentMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::GenerateParentMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *&#160;</td>
+          <td class="paramname"><em>_pMatrix</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>親の行列を生成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pMatrix</td><td>行列のポインタ渡し</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00096">96</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>{</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#a25aac3b6926049709392fd5e7db53673">Transform</a>* <a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a> = <a class="code hl_function" href="classmtgb_1_1Transform.html#a243901c64e8c52b77f81b5119522db42">GetParent</a>();</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a>-&gt;GenerateWorldMatrixSelf(_pMatrix);</div>
+<div class="line"><span class="lineno">  103</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a243901c64e8c52b77f81b5119522db42"><div class="ttname"><a href="classmtgb_1_1Transform.html#a243901c64e8c52b77f81b5119522db42">mtgb::Transform::GetParent</a></div><div class="ttdeci">Transform * GetParent() const</div><div class="ttdoc">親のStatefulTransformを取得</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00127">Transform.cpp:127</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a25aac3b6926049709392fd5e7db53673"><div class="ttname"><a href="classmtgb_1_1Transform.html#a25aac3b6926049709392fd5e7db53673">mtgb::Transform::Transform</a></div><div class="ttdeci">Transform()</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00009">Transform.cpp:9</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Transform_8cpp_source.html#l00207">GenerateWorldMatrixSelf()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_af8039bd46912b56e7095e505a7ed76c8_cgraph.svg" width="454" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6cd2a9c2d3d1e2f705257b6369613b6b" name="a6cd2a9c2d3d1e2f705257b6369613b6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd2a9c2d3d1e2f705257b6369613b6b">&#9670;&#160;</a></span>GenerateParentRotationMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::GenerateParentRotationMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *&#160;</td>
+          <td class="paramname"><em>_pMatrix</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>親の回転行列を生成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pMatrix</td><td>行列のポインタ渡し</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00105">105</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>{</div>
+<div class="line"><span class="lineno">  107</span>    *_pMatrix *= <a class="code hl_variable" href="classmtgb_1_1Transform.html#a4c3875b8138cb5527ee7f78109bfeb1f">matrixRotate_</a>;</div>
+<div class="line"><span class="lineno">  108</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2c166b8c575ce4893f881836eee54bc1" name="a2c166b8c575ce4893f881836eee54bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c166b8c575ce4893f881836eee54bc1">&#9670;&#160;</a></span>GenerateWorldMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::GenerateWorldMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *&#160;</td>
+          <td class="paramname"><em>_pMatrix</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ワールド行列を生成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pMatrix</td><td>行列のポインタ渡し</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00084">84</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
+<div class="line"><span class="lineno">   86</span>    *_pMatrix = DirectX::XMMatrixIdentity();</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#a70cf0810db594a65debc494b502087a8">GenerateWorldMatrixSelf</a>(_pMatrix);</div>
+<div class="line"><span class="lineno">   88</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a70cf0810db594a65debc494b502087a8"><div class="ttname"><a href="classmtgb_1_1Transform.html#a70cf0810db594a65debc494b502087a8">mtgb::Transform::GenerateWorldMatrixSelf</a></div><div class="ttdeci">void GenerateWorldMatrixSelf(Matrix4x4 *_pMatrix) const</div><div class="ttdoc">計算用自分自身のワールド行列を生成する</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00207">Transform.cpp:207</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="FbxParts_8cpp_source.html#l00099">mtgb::FbxParts::Draw()</a>, <a class="el" href="Sprite_8cpp_source.html#l00184">mtgb::Sprite::Draw()</a>, <a class="el" href="OBJ_8cpp_source.html#l00137">mtgb::OBJ::Draw()</a>, <a class="el" href="Player_8cpp_source.html#l00045">Player::Update()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_a2c166b8c575ce4893f881836eee54bc1_icgraph.svg" width="419" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a70cf0810db594a65debc494b502087a8" name="a70cf0810db594a65debc494b502087a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70cf0810db594a65debc494b502087a8">&#9670;&#160;</a></span>GenerateWorldMatrixSelf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::GenerateWorldMatrixSelf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *&#160;</td>
+          <td class="paramname"><em>_pMatrix</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>計算用自分自身のワールド行列を生成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pMatrix</td><td>行列のポインタ渡し</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00207">207</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  208</span>{</div>
+<div class="line"><span class="lineno">  209</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a> != <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    {</div>
+<div class="line"><span class="lineno">  212</span>        <a class="code hl_function" href="classmtgb_1_1Transform.html#a243901c64e8c52b77f81b5119522db42">GetParent</a>()-&gt;<a class="code hl_function" href="classmtgb_1_1Transform.html#a70cf0810db594a65debc494b502087a8">GenerateWorldMatrixSelf</a>(_pMatrix);</div>
+<div class="line"><span class="lineno">  213</span>        *_pMatrix = <a class="code hl_variable" href="classmtgb_1_1Transform.html#a23aa6fdb8d583e6529677a225dd2f000">matrixScale_</a> * <a class="code hl_variable" href="classmtgb_1_1Transform.html#a4c3875b8138cb5527ee7f78109bfeb1f">matrixRotate_</a> * <a class="code hl_variable" href="classmtgb_1_1Transform.html#a747c425302d9fe125d0f1677dfdc5afc">matrixTranslate_</a> * (*_pMatrix);</div>
+<div class="line"><span class="lineno">  214</span>    }</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  216</span>    {</div>
+<div class="line"><span class="lineno">  217</span>        *_pMatrix = <a class="code hl_variable" href="classmtgb_1_1Transform.html#a23aa6fdb8d583e6529677a225dd2f000">matrixScale_</a> * <a class="code hl_variable" href="classmtgb_1_1Transform.html#a4c3875b8138cb5527ee7f78109bfeb1f">matrixRotate_</a> * <a class="code hl_variable" href="classmtgb_1_1Transform.html#a747c425302d9fe125d0f1677dfdc5afc">matrixTranslate_</a>;</div>
+<div class="line"><span class="lineno">  218</span>    }</div>
+<div class="line"><span class="lineno">  219</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="Transform_8cpp_source.html#l00096">GenerateParentMatrix()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_a70cf0810db594a65debc494b502087a8_icgraph.svg" width="454" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aca077ac0e5205e81189be3c5d3c45a2f" name="aca077ac0e5205e81189be3c5d3c45a2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca077ac0e5205e81189be3c5d3c45a2f">&#9670;&#160;</a></span>GenerateWorldRotationMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::GenerateWorldRotationMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *&#160;</td>
+          <td class="paramname"><em>_pMatrix</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ワールド回転行列を生成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pMatrix</td><td>行列のポインタ渡し</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00090">90</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>{</div>
+<div class="line"><span class="lineno">   92</span>    *_pMatrix = DirectX::XMMatrixIdentity();</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#a0980afae12457b26a657ba1a1a8453c7">GenerateWorldRotMatrixSelf</a>(_pMatrix);</div>
+<div class="line"><span class="lineno">   94</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a0980afae12457b26a657ba1a1a8453c7"><div class="ttname"><a href="classmtgb_1_1Transform.html#a0980afae12457b26a657ba1a1a8453c7">mtgb::Transform::GenerateWorldRotMatrixSelf</a></div><div class="ttdeci">void GenerateWorldRotMatrixSelf(Matrix4x4 *_pMatrix) const</div><div class="ttdoc">計算用自分自身のワールド回転行列を生成する</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00221">Transform.cpp:221</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Sprite_8cpp_source.html#l00184">mtgb::Sprite::Draw()</a>, <a class="el" href="Player_8cpp_source.html#l00045">Player::Update()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_aca077ac0e5205e81189be3c5d3c45a2f_icgraph.svg" width="400" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0980afae12457b26a657ba1a1a8453c7" name="a0980afae12457b26a657ba1a1a8453c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0980afae12457b26a657ba1a1a8453c7">&#9670;&#160;</a></span>GenerateWorldRotMatrixSelf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::GenerateWorldRotMatrixSelf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> *&#160;</td>
+          <td class="paramname"><em>_pMatrix</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>計算用自分自身のワールド回転行列を生成する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pMatrix</td><td>行列のポインタ渡し</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00221">221</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  222</span>{</div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a> != <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">  224</span>    {</div>
+<div class="line"><span class="lineno">  225</span>        Matrix4x4 mWorldRotParent{};</div>
+<div class="line"><span class="lineno">  226</span>        <a class="code hl_function" href="classmtgb_1_1Transform.html#a243901c64e8c52b77f81b5119522db42">GetParent</a>()-&gt;<a class="code hl_function" href="classmtgb_1_1Transform.html#a0980afae12457b26a657ba1a1a8453c7">GenerateWorldRotMatrixSelf</a>(&amp;mWorldRotParent);</div>
+<div class="line"><span class="lineno">  227</span>        *_pMatrix = <a class="code hl_variable" href="classmtgb_1_1Transform.html#a4c3875b8138cb5527ee7f78109bfeb1f">matrixRotate_</a> * mWorldRotParent;</div>
+<div class="line"><span class="lineno">  228</span>    }</div>
+<div class="line"><span class="lineno">  229</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  230</span>    {</div>
+<div class="line"><span class="lineno">  231</span>        *_pMatrix = <a class="code hl_variable" href="classmtgb_1_1Transform.html#a4c3875b8138cb5527ee7f78109bfeb1f">matrixRotate_</a>;</div>
+<div class="line"><span class="lineno">  232</span>    }</div>
+<div class="line"><span class="lineno">  233</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
+
+</div>
+</div>
+<a id="a931ae7565817c83a4e3c5f9004c074d5" name="a931ae7565817c83a4e3c5f9004c074d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a931ae7565817c83a4e3c5f9004c074d5">&#9670;&#160;</a></span>Get() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &amp; <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a> , <a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &gt;::Get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId);</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e0db1b0f0dbd3823a06ae854eacef41" name="a4e0db1b0f0dbd3823a06ae854eacef41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0db1b0f0dbd3823a06ae854eacef41">&#9670;&#160;</a></span>Get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &amp; <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a> , <a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &gt;::Get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>_args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId, std::forward&lt;Args&gt;(_args)...);</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a735636df79e7cfd6336e9a97345e2b29" name="a735636df79e7cfd6336e9a97345e2b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735636df79e7cfd6336e9a97345e2b29">&#9670;&#160;</a></span>GetEntityId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a> , <a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &gt;::GetEntityId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a8aa4f5300c39f9f4705a587fd0a72639"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">mtgb::IComponent&lt; TransformCP, Transform &gt;::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00038">IComponent.h:38</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a243901c64e8c52b77f81b5119522db42" name="a243901c64e8c52b77f81b5119522db42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a243901c64e8c52b77f81b5119522db42">&#9670;&#160;</a></span>GetParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Transform.html">mtgb::Transform</a> * mtgb::Transform::GetParent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>親のStatefulTransformを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>StatefulTransformのポインタ</dd></dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00127">127</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>{</div>
+<div class="line"><span class="lineno">  129</span>    <span class="comment">// 親Idが無効値なら nullptr を返す</span></div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a> == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">  131</span>    {</div>
+<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  133</span>    }</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  135</span>    {</div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">return</span> &amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a>);</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="line"><span class="lineno">  138</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a931ae7565817c83a4e3c5f9004c074d5"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get</a></div><div class="ttdeci">static Transform &amp; Get(const EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00027">IComponent.h:62</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="IComponent_8h_source.html#l00062">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get()</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_a243901c64e8c52b77f81b5119522db42_cgraph.svg" width="483" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6a5f7f7a32791143f366132d90dcc3e6" name="a6a5f7f7a32791143f366132d90dcc3e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a5f7f7a32791143f366132d90dcc3e6">&#9670;&#160;</a></span>GetWorldPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Transform::GetWorldPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ワールド座標を取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>ワールド座標のベクトル</dd></dl>
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00148">148</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structmtgb_1_1Vector3.html#a2371787a3f946ece7355e27003f0aac5">Vector3::Zero</a>() * <a class="code hl_variable" href="classmtgb_1_1Transform.html#a97d8352e3405342ac528753aebc79b22">matrixWorld_</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Vector3_8h_source.html#l00059">mtgb::Vector3::Zero()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00133">PatrolChargerEnemy::Charge()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00119">PatrolChargerEnemy::Patrol()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00160">PatrolChargerEnemy::ReturnToPatrol()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00174">PatrolChargerEnemy::Search()</a>, <a class="el" href="CircleDetector_8cpp_source.html#l00035">mtgb::CircleDetector::UpdateDetection()</a>, <a class="el" href="RayDetector_8cpp_source.html#l00026">mtgb::RayDetector::UpdateDetection()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_a6a5f7f7a32791143f366132d90dcc3e6_cgraph.svg" width="407" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_a6a5f7f7a32791143f366132d90dcc3e6_icgraph.svg" width="624" height="371"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a1b2594c47ba72c1ac97e477967e6e24b" name="a1b2594c47ba72c1ac97e477967e6e24b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b2594c47ba72c1ac97e477967e6e24b">&#9670;&#160;</a></span>GetWorldRotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Quaternion.html">mtgb::Quaternion</a> mtgb::Transform::GetWorldRotate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ワールド回転を取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>ワールド回転の四元数</dd></dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00191">191</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  192</span>{</div>
+<div class="line"><span class="lineno">  193</span>    <span class="keyword">using </span>DirectX::XMQuaternionRotationMatrix;</div>
+<div class="line"><span class="lineno">  194</span>    <span class="keyword">using </span>DirectX::XMQuaternionMultiply;</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keyword">using </span>DirectX::XMQuaternionIdentity;</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span> XMQuaternionMultiply(XMQuaternionRotationMatrix(<a class="code hl_variable" href="classmtgb_1_1Transform.html#af4b0ad2e0bbfab2704ad7f674e5056c8">matrixWorldRot_</a>), XMQuaternionIdentity());</div>
+<div class="line"><span class="lineno">  198</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a65f42a089e725be9599afab34ab245bb" name="a65f42a089e725be9599afab34ab245bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f42a089e725be9599afab34ab245bb">&#9670;&#160;</a></span>IComponent() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1IComponent.html#aed716499a289d6dd69c0d40b683142aa">ComponentPoolT</a>, ComponentT &gt;::IComponent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                     :</div>
+<div class="line"><span class="lineno">   22</span>            <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>{ <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a> }</div>
+<div class="line"><span class="lineno">   23</span>        {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a406a6445fabe38285a6d0ecc18ea6369" name="a406a6445fabe38285a6d0ecc18ea6369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a406a6445fabe38285a6d0ecc18ea6369">&#9670;&#160;</a></span>IComponent() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1IComponent.html#aed716499a289d6dd69c0d40b683142aa">ComponentPoolT</a>, ComponentT &gt;::IComponent </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                                                                                      :</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>{ _entityId }</div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>        <span class="comment">//Game::System&lt;ComponentPoolT&gt;().Register(_entityId);</span></div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aecaeb2d199af3bd978a34238ae7f733a" name="aecaeb2d199af3bd978a34238ae7f733a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecaeb2d199af3bd978a34238ae7f733a">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a> , <a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &gt;::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad24a811b1092b7bdbfdd9e49a07fb547" name="ad24a811b1092b7bdbfdd9e49a07fb547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad24a811b1092b7bdbfdd9e49a07fb547">&#9670;&#160;</a></span>Left()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Transform::Left </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>左方向のワールドベクトル </p>
+<dl class="section return"><dt>戻り値</dt><dd>ワールド回転行列がかけられたベクトル</dd></dl>
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00127">127</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structmtgb_1_1Vector3.html#a7b24f3b31f9d20c63bd0adbe050431b1">Vector3::Left</a>() * <a class="code hl_variable" href="classmtgb_1_1Transform.html#af4b0ad2e0bbfab2704ad7f674e5056c8">matrixWorldRot_</a>; }</div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_a7b24f3b31f9d20c63bd0adbe050431b1"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a7b24f3b31f9d20c63bd0adbe050431b1">mtgb::Vector3::Left</a></div><div class="ttdeci">static auto Left()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00066">Vector3.h:66</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Vector3_8h_source.html#l00066">mtgb::Vector3::Left()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_ad24a811b1092b7bdbfdd9e49a07fb547_cgraph.svg" width="366" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5ace1530f04c63eed66eba461800436d" name="a5ace1530f04c63eed66eba461800436d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ace1530f04c63eed66eba461800436d">&#9670;&#160;</a></span>OnPostRestore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::OnPostRestore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classISerializableObject.html#a657030a231a22470b5b09bd6e55a2c0e">ISerializableObject</a>を再実装しています。</p>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00200">200</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>{</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#a691c9937c68a30c16c2a73dff99e7457">Compute</a>();</div>
+<div class="line"><span class="lineno">  203</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a691c9937c68a30c16c2a73dff99e7457"><div class="ttname"><a href="classmtgb_1_1Transform.html#a691c9937c68a30c16c2a73dff99e7457">mtgb::Transform::Compute</a></div><div class="ttdeci">void Compute()</div><div class="ttdoc">計算する</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00039">Transform.cpp:39</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a86fe7f4e0ab2a86787b52d34ac5b6ec8" name="a86fe7f4e0ab2a86787b52d34ac5b6ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86fe7f4e0ab2a86787b52d34ac5b6ec8">&#9670;&#160;</a></span>OnPreSave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ISerializableObject::OnPreSave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1Interpolator.html#a61f7a7f008cc862e4b74638250a1d241">mtgb::Interpolator</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="ISerializableObject_8h_source.html">ISerializableObject.h</a> の <a class="el" href="ISerializableObject_8h_source.html#l00005">5</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    5</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a718d2732e3675357a0eca96181c1fd97" name="a718d2732e3675357a0eca96181c1fd97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a718d2732e3675357a0eca96181c1fd97">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp; mtgb::Transform::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmtgb_1_1Transform.html">Transform</a> &amp;&#160;</td>
+          <td class="paramname"><em>_other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>        {</div>
+<div class="line"><span class="lineno">   34</span>            <span class="keywordflow">if</span> (&amp;_other == <span class="keyword">this</span>)</div>
+<div class="line"><span class="lineno">   35</span>            {</div>
+<div class="line"><span class="lineno">   36</span>                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   37</span>            }</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>            this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a> = _other.parent;</div>
+<div class="line"><span class="lineno">   40</span>            this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> = _other.position;</div>
+<div class="line"><span class="lineno">   41</span>            this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a> = _other.scale;</div>
+<div class="line"><span class="lineno">   42</span>            this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a> = _other.rotate;</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>            this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a747c425302d9fe125d0f1677dfdc5afc">matrixTranslate_</a> = _other.matrixTranslate_;</div>
+<div class="line"><span class="lineno">   45</span>            this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a4c3875b8138cb5527ee7f78109bfeb1f">matrixRotate_</a> = _other.matrixRotate_;</div>
+<div class="line"><span class="lineno">   46</span>            this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a23aa6fdb8d583e6529677a225dd2f000">matrixScale_</a> = _other.matrixScale_;</div>
+<div class="line"><span class="lineno">   47</span>            this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a97d8352e3405342ac528753aebc79b22">matrixWorld_</a> = _other.matrixWorld_;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   50</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Transform_8h_source.html#l00157">parent</a>.</p>
+
+</div>
+</div>
+<a id="ab07fa68485a5cf4425eebf1718c82e73" name="ab07fa68485a5cf4425eebf1718c82e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab07fa68485a5cf4425eebf1718c82e73">&#9670;&#160;</a></span>Reuse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Transform.html">Transform</a>  * <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a> , <a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &gt;::Reuse </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Reuse(_index, _entityId);</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3fc5910056a55619be7fa22edf326f01" name="a3fc5910056a55619be7fa22edf326f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc5910056a55619be7fa22edf326f01">&#9670;&#160;</a></span>Right()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Transform::Right </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>右方向のワールドベクトル </p>
+<dl class="section return"><dt>戻り値</dt><dd>ワールド回転行列がかけられたベクトル</dd></dl>
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00132">132</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structmtgb_1_1Vector3.html#a9772610b28bfd6273576332184ca0d3f">Vector3::Right</a>() * <a class="code hl_variable" href="classmtgb_1_1Transform.html#af4b0ad2e0bbfab2704ad7f674e5056c8">matrixWorldRot_</a>; }</div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_a9772610b28bfd6273576332184ca0d3f"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a9772610b28bfd6273576332184ca0d3f">mtgb::Vector3::Right</a></div><div class="ttdeci">static auto Right()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00067">Vector3.h:67</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Vector3_8h_source.html#l00067">mtgb::Vector3::Right()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_a3fc5910056a55619be7fa22edf326f01_cgraph.svg" width="384" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aea955de817d512302e6db6208559d70d" name="aea955de817d512302e6db6208559d70d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea955de817d512302e6db6208559d70d">&#9670;&#160;</a></span>Rotation() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::Rotation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_axis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>_angle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>軸ベクトルで回転する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_axis</td><td>軸のベクトル</td></tr>
+    <tr><td class="paramname">_angle</td><td>回転角度(ラジアン)</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00179">179</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>{</div>
+<div class="line"><span class="lineno">  181</span>    <span class="keyword">using </span>DirectX::XMQuaternionRotationAxis;</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    <a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a> *= XMQuaternionRotationAxis(_axis, _angle);</div>
+<div class="line"><span class="lineno">  184</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7ca6db4ff526a9e78d3a0ed83f68c7b8" name="a7ca6db4ff526a9e78d3a0ed83f68c7b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca6db4ff526a9e78d3a0ed83f68c7b8">&#9670;&#160;</a></span>Rotation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::Rotation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>_rotate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>回転する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_rotate</td><td>オイラー角(ラジアン)</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00167">167</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>{</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keyword">using </span>DirectX::XMQuaternionMultiply;</div>
+<div class="line"><span class="lineno">  170</span>    <span class="keyword">using </span>DirectX::XMQuaternionRotationRollPitchYaw;</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keyword">using </span>DirectX::XMQuaternionNormalize;</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>    <span class="comment">//rotate</span></div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a> = XMQuaternionMultiply(</div>
+<div class="line"><span class="lineno">  175</span>        <a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>,</div>
+<div class="line"><span class="lineno">  176</span>        XMQuaternionRotationRollPitchYaw(_rotate.x, _rotate.y, _rotate.z));</div>
+<div class="line"><span class="lineno">  177</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acf8bda13bc892f5e39cac6d4e9a4d23d" name="acf8bda13bc892f5e39cac6d4e9a4d23d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf8bda13bc892f5e39cac6d4e9a4d23d">&#9670;&#160;</a></span>SetParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Transform::SetParent </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>親のStatefulTransformを設定 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_entityId</td><td>親にするエンティティ識別子</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Transform_8cpp_source.html">Transform.cpp</a> の <a class="el" href="Transform_8cpp_source.html#l00140">140</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>{</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">if</span> (_entityId == <a class="code hl_function" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a>() || _entityId == <a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a>)</div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#a25aac3b6926049709392fd5e7db53673">Transform</a>&amp; parentTransform = <a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Get</a>(_entityId);</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>    </div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a> == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">  149</span>    { </div>
+<div class="line"><span class="lineno">  150</span>        Matrix4x4 parentInverse = DirectX::XMMatrixInverse(<span class="keyword">nullptr</span>, parentTransform.matrixWorld_);</div>
+<div class="line"><span class="lineno">  151</span>        Matrix4x4 localMatrix = <a class="code hl_variable" href="classmtgb_1_1Transform.html#a97d8352e3405342ac528753aebc79b22">matrixWorld_</a> * parentInverse;</div>
+<div class="line"><span class="lineno">  152</span>        <a class="code hl_function" href="classmtgb_1_1Transform.html#a73757da5837d3a1b762f919081648aad">DecomposeMatrixImpl</a>(&amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e127f6d3bdd393ceda02f4844177e7e">localPosition_</a>, &amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a92bd4cd3ab4f640714fb7ea658e61c8e">localRotate_</a>, &amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#ac21a7486e639c165633cb6622e7e285f">localScale_</a>, localMatrix);</div>
+<div class="line"><span class="lineno">  153</span>        </div>
+<div class="line"><span class="lineno">  154</span>        <a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a> = _entityId;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>        <a class="code hl_function" href="classmtgb_1_1Transform.html#af8039bd46912b56e7095e505a7ed76c8">GenerateParentMatrix</a>(&amp;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a1b2ffbd206119728ed0e87106ab0c108">prevParentMatrix_</a>);</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_entityId == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">  159</span>    {</div>
+<div class="line"><span class="lineno">  160</span>        <a class="code hl_variable" href="classmtgb_1_1Transform.html#afe36893fee918dd88329c920e4df3639">matrixLocal_</a> = <a class="code hl_variable" href="classmtgb_1_1Transform.html#a97d8352e3405342ac528753aebc79b22">matrixWorld_</a>;</div>
+<div class="line"><span class="lineno">  161</span>        <a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a> = _entityId;</div>
+<div class="line"><span class="lineno">  162</span>        <a class="code hl_variable" href="classmtgb_1_1Transform.html#a1b2ffbd206119728ed0e87106ab0c108">prevParentMatrix_</a> = DirectX::XMMatrixIdentity();</div>
+<div class="line"><span class="lineno">  163</span>    }</div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_function" href="classmtgb_1_1Transform.html#a691c9937c68a30c16c2a73dff99e7457">Compute</a>();</div>
+<div class="line"><span class="lineno">  165</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a735636df79e7cfd6336e9a97345e2b29"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">mtgb::IComponent&lt; TransformCP, Transform &gt;::GetEntityId</a></div><div class="ttdeci">const EntityId GetEntityId() const</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00034">IComponent.h:34</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>, <a class="el" href="Transform_8h_source.html#l00183">matrixWorld_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="MovingFloor_8cpp_source.html#l00045">MovingFloor::OnCollisionEnter()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00067">MovingFloor::OnCollisionExit()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_acf8bda13bc892f5e39cac6d4e9a4d23d_icgraph.svg" width="708" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac8b68f35d2f2fa181a62b5b53b545cc8" name="ac8b68f35d2f2fa181a62b5b53b545cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8b68f35d2f2fa181a62b5b53b545cc8">&#9670;&#160;</a></span>Up()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Transform::Up </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>上方向のワールドベクトル </p>
+<dl class="section return"><dt>戻り値</dt><dd>ワールド回転行列がかけられたベクトル</dd></dl>
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00117">117</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structmtgb_1_1Vector3.html#ac8decf652b52e10bac464e25319bbe31">Vector3::Up</a>() * <a class="code hl_variable" href="classmtgb_1_1Transform.html#af4b0ad2e0bbfab2704ad7f674e5056c8">matrixWorldRot_</a>; }</div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html_ac8decf652b52e10bac464e25319bbe31"><div class="ttname"><a href="structmtgb_1_1Vector3.html#ac8decf652b52e10bac464e25319bbe31">mtgb::Vector3::Up</a></div><div class="ttdeci">static auto Up()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00064">Vector3.h:64</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Vector3_8h_source.html#l00064">mtgb::Vector3::Up()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Transform_ac8b68f35d2f2fa181a62b5b53b545cc8_cgraph.svg" width="352" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a37d6b5582bd4cc3eea5feb793ae19aa4" name="a37d6b5582bd4cc3eea5feb793ae19aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d6b5582bd4cc3eea5feb793ae19aa4">&#9670;&#160;</a></span>ComponentPool&lt; ComponentT, ComponentPoolT &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a> , <a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &gt;::ComponentPool&lt; <a class="el" href="classmtgb_1_1Transform.html">Transform</a> , <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a>  &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aed716499a289d6dd69c0d40b683142aa" name="aed716499a289d6dd69c0d40b683142aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed716499a289d6dd69c0d40b683142aa">&#9670;&#160;</a></span>ComponentPoolT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a> , <a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &gt;<a class="el" href="classmtgb_1_1Transform.html#a86e985ae04a7ae18338592499540899c">::TransformCP</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8aa4f5300c39f9f4705a587fd0a72639" name="a8aa4f5300c39f9f4705a587fd0a72639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa4f5300c39f9f4705a587fd0a72639">&#9670;&#160;</a></span>entityId_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1TransformCP.html">TransformCP</a> , <a class="el" href="classmtgb_1_1Transform.html">Transform</a>  &gt;::entityId_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0e127f6d3bdd393ceda02f4844177e7e" name="a0e127f6d3bdd393ceda02f4844177e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e127f6d3bdd393ceda02f4844177e7e">&#9670;&#160;</a></span>localPosition_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Transform::localPosition_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00187">187</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a92bd4cd3ab4f640714fb7ea658e61c8e" name="a92bd4cd3ab4f640714fb7ea658e61c8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92bd4cd3ab4f640714fb7ea658e61c8e">&#9670;&#160;</a></span>localRotate_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Quaternion.html">Quaternion</a> mtgb::Transform::localRotate_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00188">188</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac21a7486e639c165633cb6622e7e285f" name="ac21a7486e639c165633cb6622e7e285f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac21a7486e639c165633cb6622e7e285f">&#9670;&#160;</a></span>localScale_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Transform::localScale_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00189">189</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afe36893fee918dd88329c920e4df3639" name="afe36893fee918dd88329c920e4df3639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe36893fee918dd88329c920e4df3639">&#9670;&#160;</a></span>matrixLocal_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mtgb::Transform::matrixLocal_ {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00185">185</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4c3875b8138cb5527ee7f78109bfeb1f" name="a4c3875b8138cb5527ee7f78109bfeb1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c3875b8138cb5527ee7f78109bfeb1f">&#9670;&#160;</a></span>matrixRotate_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mtgb::Transform::matrixRotate_ {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00181">181</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a23aa6fdb8d583e6529677a225dd2f000" name="a23aa6fdb8d583e6529677a225dd2f000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23aa6fdb8d583e6529677a225dd2f000">&#9670;&#160;</a></span>matrixScale_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mtgb::Transform::matrixScale_ {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00182">182</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a747c425302d9fe125d0f1677dfdc5afc" name="a747c425302d9fe125d0f1677dfdc5afc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a747c425302d9fe125d0f1677dfdc5afc">&#9670;&#160;</a></span>matrixTranslate_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mtgb::Transform::matrixTranslate_ {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00180">180</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a97d8352e3405342ac528753aebc79b22" name="a97d8352e3405342ac528753aebc79b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d8352e3405342ac528753aebc79b22">&#9670;&#160;</a></span>matrixWorld_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mtgb::Transform::matrixWorld_ {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00183">183</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Transform_8cpp_source.html#l00140">SetParent()</a>.</p>
+
+</div>
+</div>
+<a id="af4b0ad2e0bbfab2704ad7f674e5056c8" name="af4b0ad2e0bbfab2704ad7f674e5056c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4b0ad2e0bbfab2704ad7f674e5056c8">&#9670;&#160;</a></span>matrixWorldRot_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mtgb::Transform::matrixWorldRot_ {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00184">184</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af0999d4fa78d99e9436e11f0f71e7f98" name="af0999d4fa78d99e9436e11f0f71e7f98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0999d4fa78d99e9436e11f0f71e7f98">&#9670;&#160;</a></span>parent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> mtgb::Transform::parent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00157">157</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Transform_8h_source.html#l00032">operator=()</a>, <a class="el" href="Transform_8generated_8cpp_source.html#l00012">mtgb::Transform_Register::Transform_Register()</a>.</p>
+
+</div>
+</div>
+<a id="a71231187095137f6dd753ef9450bc18b" name="a71231187095137f6dd753ef9450bc18b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71231187095137f6dd753ef9450bc18b">&#9670;&#160;</a></span>position</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Transform::position</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00159">159</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00133">PatrolChargerEnemy::Charge()</a>, <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00027">mtgb::ImGuizmoManipulator::DrawTransformGuizmo()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone::GameOverZone()</a>, <a class="el" href="Interpolator_8cpp_source.html#l00018">mtgb::Interpolator::Interpolator()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00045">MovingFloor::OnCollisionEnter()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00119">PatrolChargerEnemy::Patrol()</a>, <a class="el" href="Collider_8cpp_source.html#l00344">mtgb::Collider::Push()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00160">PatrolChargerEnemy::ReturnToPatrol()</a>, <a class="el" href="Transform_8generated_8cpp_source.html#l00012">mtgb::Transform_Register::Transform_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00039">MovingFloor::Update()</a>.</p>
+
+</div>
+</div>
+<a id="a1b2ffbd206119728ed0e87106ab0c108" name="a1b2ffbd206119728ed0e87106ab0c108"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b2ffbd206119728ed0e87106ab0c108">&#9670;&#160;</a></span>prevParentMatrix_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mtgb::Transform::prevParentMatrix_ {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00186">186</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0e4b47a931e7ef521e3265c8d9413966" name="a0e4b47a931e7ef521e3265c8d9413966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e4b47a931e7ef521e3265c8d9413966">&#9670;&#160;</a></span>rotate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Quaternion.html">Quaternion</a> mtgb::Transform::rotate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00163">163</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="FbxParts_8cpp_source.html#l00099">mtgb::FbxParts::Draw()</a>, <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00027">mtgb::ImGuizmoManipulator::DrawTransformGuizmo()</a>, <a class="el" href="Transform_8generated_8cpp_source.html#l00012">mtgb::Transform_Register::Transform_Register()</a>.</p>
+
+</div>
+</div>
+<a id="aa8373f7a6e81f61498f8ca020a5a5c31" name="aa8373f7a6e81f61498f8ca020a5a5c31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8373f7a6e81f61498f8ca020a5a5c31">&#9670;&#160;</a></span>scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a> mtgb::Transform::scale</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00161">161</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Collider_8cpp_source.html#l00401">mtgb::Collider::Draw()</a>, <a class="el" href="FbxParts_8cpp_source.html#l00099">mtgb::FbxParts::Draw()</a>, <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00027">mtgb::ImGuizmoManipulator::DrawTransformGuizmo()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone::GameOverZone()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="TerrainReader_8h_source.html#l00134">mtgb::TerrainReader&lt; StageDataBit &gt;::TerrainReader()</a>, <a class="el" href="Transform_8generated_8cpp_source.html#l00012">mtgb::Transform_Register::Transform_Register()</a>.</p>
+
+</div>
+</div>
+<a id="a86e985ae04a7ae18338592499540899c" name="a86e985ae04a7ae18338592499540899c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86e985ae04a7ae18338592499540899c">&#9670;&#160;</a></span>TransformCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend mtgb::Transform::TransformCP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Transform_8h_source.html">Transform.h</a> の <a class="el" href="Transform_8h_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="Transform_8h_source.html">Transform.h</a></li>
+<li><a class="el" href="Transform_8cpp_source.html">Transform.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1Transform.html">Transform</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

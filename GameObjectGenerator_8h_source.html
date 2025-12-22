@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: GameObjectGenerator.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('GameObjectGenerator_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">GameObjectGenerator.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="GameObjectGenerator_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="Entity_8h.html">Entity.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="Command_8h.html">Command.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="ComponentFactory_8h.html">ComponentFactory.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="GameObjectFactory_8h.html">GameObjectFactory.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184">    8</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184">GenerateType</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_enumvalue" href="namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184a3cfce651e667ab85486dd42a8185f98a">Box</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    };</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectGenerator.html">   12</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1GameObjectGenerator.html">GameObjectGenerator</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a6eb01f32085ac8d3a7d434e6b70439be">Initialize</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a8b5503cfaba6ad2226fea687c2d74891">Generate</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184">GenerateType</a> _primitive);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">GenerateFromJson</a>(<span class="keyword">const</span> nlohmann::json&amp; _json);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a8b5503cfaba6ad2226fea687c2d74891">Generate</a>(std::string_view _gameObjName);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a6b124991e9a49adede9355605b79eee0">RegisterCommandListener</a>(std::function&lt;<span class="keywordtype">void</span>(<a class="code hl_class" href="classCommand.html">Command</a>*)&gt; _commandListener);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a9067a4b9b90df50f8037d54e41a2f468">Duplicate</a>(<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _srcEntityId);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectGenerator.html#a04e2229c6a5c70c661d8e74c4e8d72b5">   34</a></span>        <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a04e2229c6a5c70c661d8e74c4e8d72b5">GameObjectGenerator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">static</span> <a class="code hl_class" href="classmtgb_1_1GameObjectGenerator.html">GameObjectGenerator</a>* <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a18ce9e48b01144a03fdd9b7d28dede3b">GetInstance</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectGenerator.html#a7b7b9545b5ef9b1d87dc1b1db830932b">   36</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="classmtgb_1_1GameObjectGenerator.html">GameObjectGenerator</a>* <a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#a7b7b9545b5ef9b1d87dc1b1db830932b">pInstance_</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">   37</a></span>        <a class="code hl_class" href="classmtgb_1_1GameObjectFactory.html">GameObjectFactory</a> <a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectGenerator.html#a8797f1085dbd61a40710ba9b5cc40d77">   38</a></span>        std::function&lt;void(<a class="code hl_class" href="classCommand.html">Command</a>*)&gt; <a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#a8797f1085dbd61a40710ba9b5cc40d77">commandListener_</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    };</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="ttc" id="aCommand_8h_html"><div class="ttname"><a href="Command_8h.html">Command.h</a></div></div>
+<div class="ttc" id="aComponentFactory_8h_html"><div class="ttname"><a href="ComponentFactory_8h.html">ComponentFactory.h</a></div></div>
+<div class="ttc" id="aEntity_8h_html"><div class="ttname"><a href="Entity_8h.html">Entity.h</a></div></div>
+<div class="ttc" id="aGameObjectFactory_8h_html"><div class="ttname"><a href="GameObjectFactory_8h.html">GameObjectFactory.h</a></div></div>
+<div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00004">Command.h:5</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectFactory_html"><div class="ttname"><a href="classmtgb_1_1GameObjectFactory.html">mtgb::GameObjectFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObjectFactory_8h_source.html#l00013">GameObjectFactory.h:14</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html">mtgb::GameObjectGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8h_source.html#l00012">GameObjectGenerator.h:13</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a04e2229c6a5c70c661d8e74c4e8d72b5"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a04e2229c6a5c70c661d8e74c4e8d72b5">mtgb::GameObjectGenerator::GameObjectGenerator</a></div><div class="ttdeci">GameObjectGenerator()=default</div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a18ce9e48b01144a03fdd9b7d28dede3b"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a18ce9e48b01144a03fdd9b7d28dede3b">mtgb::GameObjectGenerator::GetInstance</a></div><div class="ttdeci">static GameObjectGenerator * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00088">GameObjectGenerator.cpp:88</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a6b124991e9a49adede9355605b79eee0"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a6b124991e9a49adede9355605b79eee0">mtgb::GameObjectGenerator::RegisterCommandListener</a></div><div class="ttdeci">static void RegisterCommandListener(std::function&lt; void(Command *)&gt; _commandListener)</div><div class="ttdoc">コマンドを渡すことができるリスナーを登録</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00070">GameObjectGenerator.cpp:70</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a6eb01f32085ac8d3a7d434e6b70439be"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a6eb01f32085ac8d3a7d434e6b70439be">mtgb::GameObjectGenerator::Initialize</a></div><div class="ttdeci">static void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00012">GameObjectGenerator.cpp:12</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a75cbc1b1bde2c45d36a91cacc6fbdd3f"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">mtgb::GameObjectGenerator::GenerateFromJson</a></div><div class="ttdeci">static void GenerateFromJson(const nlohmann::json &amp;_json)</div><div class="ttdoc">JSONからゲームオブジェクトを生成する</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00033">GameObjectGenerator.cpp:33</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a7b7b9545b5ef9b1d87dc1b1db830932b"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a7b7b9545b5ef9b1d87dc1b1db830932b">mtgb::GameObjectGenerator::pInstance_</a></div><div class="ttdeci">static GameObjectGenerator * pInstance_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8h_source.html#l00036">GameObjectGenerator.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a8797f1085dbd61a40710ba9b5cc40d77"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a8797f1085dbd61a40710ba9b5cc40d77">mtgb::GameObjectGenerator::commandListener_</a></div><div class="ttdeci">std::function&lt; void(Command *)&gt; commandListener_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8h_source.html#l00038">GameObjectGenerator.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a8b5503cfaba6ad2226fea687c2d74891"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a8b5503cfaba6ad2226fea687c2d74891">mtgb::GameObjectGenerator::Generate</a></div><div class="ttdeci">static void Generate(GenerateType _primitive)</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00024">GameObjectGenerator.cpp:24</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a9067a4b9b90df50f8037d54e41a2f468"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a9067a4b9b90df50f8037d54e41a2f468">mtgb::GameObjectGenerator::Duplicate</a></div><div class="ttdeci">static void Duplicate(EntityId _srcEntityId)</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00075">GameObjectGenerator.cpp:75</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_add8addbbb1c3db289596e8508aa600ef"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">mtgb::GameObjectGenerator::gameObjFactory_</a></div><div class="ttdeci">GameObjectFactory gameObjFactory_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8h_source.html#l00037">GameObjectGenerator.h:37</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afa7b1f35c9a7018a0bf4aca436c19184"><div class="ttname"><a href="namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184">mtgb::GenerateType</a></div><div class="ttdeci">GenerateType</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8h_source.html#l00008">GameObjectGenerator.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afa7b1f35c9a7018a0bf4aca436c19184a3cfce651e667ab85486dd42a8185f98a"><div class="ttname"><a href="namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184a3cfce651e667ab85486dd42a8185f98a">mtgb::GenerateType::Box</a></div><div class="ttdeci">@ Box</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="GameObjectGenerator_8h.html">GameObjectGenerator.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

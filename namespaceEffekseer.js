@@ -1,0 +1,467 @@
+var namespaceEffekseer =
+[
+    [ "Backend", "namespaceEffekseer_1_1Backend.html", "namespaceEffekseer_1_1Backend" ],
+    [ "Client", "classEffekseer_1_1Client.html", "classEffekseer_1_1Client" ],
+    [ "Color", "structEffekseer_1_1Color.html", "structEffekseer_1_1Color" ],
+    [ "CustomAlignedAllocator", "structEffekseer_1_1CustomAlignedAllocator.html", "structEffekseer_1_1CustomAlignedAllocator" ],
+    [ "CustomAllocator", "structEffekseer_1_1CustomAllocator.html", "structEffekseer_1_1CustomAllocator" ],
+    [ "DefaultFileInterface", "classEffekseer_1_1DefaultFileInterface.html", "classEffekseer_1_1DefaultFileInterface" ],
+    [ "DefaultFileReader", "classEffekseer_1_1DefaultFileReader.html", "classEffekseer_1_1DefaultFileReader" ],
+    [ "DefaultFileWriter", "classEffekseer_1_1DefaultFileWriter.html", "classEffekseer_1_1DefaultFileWriter" ],
+    [ "Effect", "classEffekseer_1_1Effect.html", "classEffekseer_1_1Effect" ],
+    [ "EffectBasicRenderParameter", "structEffekseer_1_1EffectBasicRenderParameter.html", "structEffekseer_1_1EffectBasicRenderParameter" ],
+    [ "EffectFactory", "classEffekseer_1_1EffectFactory.html", "classEffekseer_1_1EffectFactory" ],
+    [ "EffectInstanceTerm", "structEffekseer_1_1EffectInstanceTerm.html", "structEffekseer_1_1EffectInstanceTerm" ],
+    [ "EffectModelParameter", "structEffekseer_1_1EffectModelParameter.html", "structEffekseer_1_1EffectModelParameter" ],
+    [ "EffectNode", "classEffekseer_1_1EffectNode.html", "classEffekseer_1_1EffectNode" ],
+    [ "EffectTerm", "structEffekseer_1_1EffectTerm.html", "structEffekseer_1_1EffectTerm" ],
+    [ "FileInterface", "classEffekseer_1_1FileInterface.html", "classEffekseer_1_1FileInterface" ],
+    [ "FileReader", "classEffekseer_1_1FileReader.html", "classEffekseer_1_1FileReader" ],
+    [ "FileWriter", "classEffekseer_1_1FileWriter.html", "classEffekseer_1_1FileWriter" ],
+    [ "FixedSizeVector", "structEffekseer_1_1FixedSizeVector.html", "structEffekseer_1_1FixedSizeVector" ],
+    [ "Gradient", "structEffekseer_1_1Gradient.html", "structEffekseer_1_1Gradient" ],
+    [ "IRandObject", "classEffekseer_1_1IRandObject.html", "classEffekseer_1_1IRandObject" ],
+    [ "IReference", "classEffekseer_1_1IReference.html", "classEffekseer_1_1IReference" ],
+    [ "Manager", "classEffekseer_1_1Manager.html", "classEffekseer_1_1Manager" ],
+    [ "Material", "classEffekseer_1_1Material.html", "classEffekseer_1_1Material" ],
+    [ "MaterialCompilerDX12", "classEffekseer_1_1MaterialCompilerDX12.html", "classEffekseer_1_1MaterialCompilerDX12" ],
+    [ "MaterialRenderData", "structEffekseer_1_1MaterialRenderData.html", "structEffekseer_1_1MaterialRenderData" ],
+    [ "MaterialTextureParameter", "structEffekseer_1_1MaterialTextureParameter.html", "structEffekseer_1_1MaterialTextureParameter" ],
+    [ "Matrix43", "structEffekseer_1_1Matrix43.html", "structEffekseer_1_1Matrix43" ],
+    [ "Matrix44", "structEffekseer_1_1Matrix44.html", "structEffekseer_1_1Matrix44" ],
+    [ "NodeRendererBasicParameter", "structEffekseer_1_1NodeRendererBasicParameter.html", "structEffekseer_1_1NodeRendererBasicParameter" ],
+    [ "NodeRendererDepthParameter", "structEffekseer_1_1NodeRendererDepthParameter.html", "structEffekseer_1_1NodeRendererDepthParameter" ],
+    [ "NodeRendererFlipbookParameter", "structEffekseer_1_1NodeRendererFlipbookParameter.html", "structEffekseer_1_1NodeRendererFlipbookParameter" ],
+    [ "RectF", "structEffekseer_1_1RectF.html", "structEffekseer_1_1RectF" ],
+    [ "ReferenceDeleter", "structEffekseer_1_1ReferenceDeleter.html", "structEffekseer_1_1ReferenceDeleter" ],
+    [ "ReferenceObject", "classEffekseer_1_1ReferenceObject.html", "classEffekseer_1_1ReferenceObject" ],
+    [ "RefPtr", "classEffekseer_1_1RefPtr.html", "classEffekseer_1_1RefPtr" ],
+    [ "RenderingUserData", "classEffekseer_1_1RenderingUserData.html", "classEffekseer_1_1RenderingUserData" ],
+    [ "Resource", "classEffekseer_1_1Resource.html", "classEffekseer_1_1Resource" ],
+    [ "Server", "classEffekseer_1_1Server.html", "classEffekseer_1_1Server" ],
+    [ "Setting", "classEffekseer_1_1Setting.html", "classEffekseer_1_1Setting" ],
+    [ "StringView", "classEffekseer_1_1StringView.html", "classEffekseer_1_1StringView" ],
+    [ "Texture", "classEffekseer_1_1Texture.html", "classEffekseer_1_1Texture" ],
+    [ "Vector2D", "structEffekseer_1_1Vector2D.html", "structEffekseer_1_1Vector2D" ],
+    [ "Vector3D", "structEffekseer_1_1Vector3D.html", "structEffekseer_1_1Vector3D" ],
+    [ "AlignedFreeFunc", "namespaceEffekseer.html#ad3a10cc398d9cec2b25ae1d5246eeaad", null ],
+    [ "AlignedMallocFunc", "namespaceEffekseer.html#a5deaa6c458647cbd4cb9ff70dc49c6ed", null ],
+    [ "ClientRef", "namespaceEffekseer.html#aa4b0ff5b79fac9f3c911d5a1cad50eb8", null ],
+    [ "CurveLoaderRef", "namespaceEffekseer.html#a26667348892d2dc485964f78c0d31970", null ],
+    [ "CurveRef", "namespaceEffekseer.html#a139c08ec7c4ee6d7b0a15774c03b9e74", null ],
+    [ "CustomAlignedMap", "namespaceEffekseer.html#a6c84d28d8356db6fad12225da8745d46", null ],
+    [ "CustomAlignedUnorderedMap", "namespaceEffekseer.html#aaf44b51c946340ffa3fc9d6966a99f62", null ],
+    [ "CustomAlignedVector", "namespaceEffekseer.html#a9383235d99f50a1c622790535660d37e", null ],
+    [ "CustomList", "namespaceEffekseer.html#a51b6a09551ac0d494fc6d977a9262f97", null ],
+    [ "CustomMap", "namespaceEffekseer.html#a1edee2836fcd91c4b6eb16fed372a318", null ],
+    [ "CustomSet", "namespaceEffekseer.html#a1640745b3e72a6acca6ed85c2f9015d3", null ],
+    [ "CustomString", "namespaceEffekseer.html#aa960725852c162fb8e105be43e99c91d", null ],
+    [ "CustomUnorderedMap", "namespaceEffekseer.html#aa07b6ae2a3bff0a3eace948645163e24", null ],
+    [ "CustomVector", "namespaceEffekseer.html#aa60b36c2880f9c0191673cc479ac6447", null ],
+    [ "EffectInstanceRemovingCallback", "namespaceEffekseer.html#ad1b0e3d132e7b22a43671196131ee48a", null ],
+    [ "EffectLoaderRef", "namespaceEffekseer.html#a373f6c146a52872cedbfd2ccf3945ac4", null ],
+    [ "EffectRef", "namespaceEffekseer.html#ad52afee0b12014c093586013185b6d61", null ],
+    [ "FileInterfaceRef", "namespaceEffekseer.html#adb7457f4cae3d07203805cac89043211", null ],
+    [ "FileReaderRef", "namespaceEffekseer.html#af4f1684aa96e054e01c162aced402012", null ],
+    [ "FileWriterRef", "namespaceEffekseer.html#af70767c490d341a3f1a700354f8d8ae8", null ],
+    [ "FreeFunc", "namespaceEffekseer.html#a66c3ac4c2bd5170cd0b94b83ae60de27", null ],
+    [ "Handle", "namespaceEffekseer.html#afba58b8d812da862190e9bbfc040824a", null ],
+    [ "MallocFunc", "namespaceEffekseer.html#ae51933ab120c115b3c76a79c3cb6a47b", null ],
+    [ "ManagerRef", "namespaceEffekseer.html#a23b8ad5f30700e069d7642ce3d42a70f", null ],
+    [ "MaterialLoaderRef", "namespaceEffekseer.html#a40ed6633ecef9eaaa7df9b9e51f2cec6", null ],
+    [ "MaterialRef", "namespaceEffekseer.html#a0e1649df3282d0e687e7fc93b5dcdf43", null ],
+    [ "ModelLoaderRef", "namespaceEffekseer.html#adfefaf4999078f6337d5f5152fbd080b", null ],
+    [ "ModelRef", "namespaceEffekseer.html#a7a22a5eeb0d215805d2c83d2da908dca", null ],
+    [ "ModelRendererRef", "namespaceEffekseer.html#a01aed9ee0ef75ca47bd0cf376735fc26", null ],
+    [ "ProceduralModelGeneratorRef", "namespaceEffekseer.html#a1a8d70a6810aefeebd68adcaf95e2052", null ],
+    [ "RandFunc", "namespaceEffekseer.html#ab8dc8b151c8aa89f3c643f6d004faaa7", null ],
+    [ "RibbonRendererRef", "namespaceEffekseer.html#af04c23223c9664e2231bec99ac1b9ad9", null ],
+    [ "RingRendererRef", "namespaceEffekseer.html#aeb3e1c856d614b4028a6ce9fd05aa00a", null ],
+    [ "ServerRef", "namespaceEffekseer.html#a5a8ef3b8cced3fd9698dcd8053a67ad0", null ],
+    [ "SettingRef", "namespaceEffekseer.html#a546b42223823c17e73a01774e27b60e0", null ],
+    [ "SoundDataRef", "namespaceEffekseer.html#ab391b9bb5147d56124749f93af63b428", null ],
+    [ "SoundLoaderRef", "namespaceEffekseer.html#a53932cba91979c7b393deb0f202aa4e0", null ],
+    [ "SoundPlayerRef", "namespaceEffekseer.html#a3ee3255650e13799153e56aede560928", null ],
+    [ "SpriteRendererRef", "namespaceEffekseer.html#a86547b5d3013ccaa93bee15460a43574", null ],
+    [ "TextureLoaderRef", "namespaceEffekseer.html#a652302cd69e6c2a4f74d7f220f2a20ba", null ],
+    [ "TextureRef", "namespaceEffekseer.html#a9e9cf10e68d7986c85d5f93ee8cae444", null ],
+    [ "ThreadNativeHandleType", "namespaceEffekseer.html#a3671928e196aff8c5b42e4652395436d", null ],
+    [ "TrackRendererRef", "namespaceEffekseer.html#af023c20b330c74cf1914e0d7032ef4f8", null ],
+    [ "AlphaBlendType", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949", [
+      [ "Opacity", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949abad6a5dd8c28e6b14f8e986615e3dc98", null ],
+      [ "Blend", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a09ac609fcdb514c9adca34e7f97b4ac4", null ],
+      [ "Add", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949aec211f7c20af43e742bf2570c3cb84f9", null ],
+      [ "Sub", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949ae80155eceb940c89e2de63ad05868db2", null ],
+      [ "Mul", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a62b6d55816cf737bfc6f42e60df1a3f2", null ],
+      [ "Opacity", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949abad6a5dd8c28e6b14f8e986615e3dc98", null ],
+      [ "Blend", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a09ac609fcdb514c9adca34e7f97b4ac4", null ],
+      [ "Add", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949aec211f7c20af43e742bf2570c3cb84f9", null ],
+      [ "Sub", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949ae80155eceb940c89e2de63ad05868db2", null ],
+      [ "Mul", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a62b6d55816cf737bfc6f42e60df1a3f2", null ]
+    ] ],
+    [ "AlphaBlendType", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949", [
+      [ "Opacity", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949abad6a5dd8c28e6b14f8e986615e3dc98", null ],
+      [ "Blend", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a09ac609fcdb514c9adca34e7f97b4ac4", null ],
+      [ "Add", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949aec211f7c20af43e742bf2570c3cb84f9", null ],
+      [ "Sub", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949ae80155eceb940c89e2de63ad05868db2", null ],
+      [ "Mul", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a62b6d55816cf737bfc6f42e60df1a3f2", null ],
+      [ "Opacity", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949abad6a5dd8c28e6b14f8e986615e3dc98", null ],
+      [ "Blend", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a09ac609fcdb514c9adca34e7f97b4ac4", null ],
+      [ "Add", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949aec211f7c20af43e742bf2570c3cb84f9", null ],
+      [ "Sub", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949ae80155eceb940c89e2de63ad05868db2", null ],
+      [ "Mul", "namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a62b6d55816cf737bfc6f42e60df1a3f2", null ]
+    ] ],
+    [ "BillboardType", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8", [
+      [ "Billboard", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8acf9f62d4906d63087d71916c1c94c058", null ],
+      [ "YAxisFixed", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a8d1827d8fca7d2d9db612616da97258a", null ],
+      [ "Fixed", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a4457d440870ad6d42bab9082d9bf9b61", null ],
+      [ "RotatedBillboard", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23", null ],
+      [ "Billboard", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8acf9f62d4906d63087d71916c1c94c058", null ],
+      [ "YAxisFixed", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a8d1827d8fca7d2d9db612616da97258a", null ],
+      [ "Fixed", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a4457d440870ad6d42bab9082d9bf9b61", null ],
+      [ "RotatedBillboard", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23", null ]
+    ] ],
+    [ "BillboardType", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8", [
+      [ "Billboard", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8acf9f62d4906d63087d71916c1c94c058", null ],
+      [ "YAxisFixed", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a8d1827d8fca7d2d9db612616da97258a", null ],
+      [ "Fixed", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a4457d440870ad6d42bab9082d9bf9b61", null ],
+      [ "RotatedBillboard", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23", null ],
+      [ "Billboard", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8acf9f62d4906d63087d71916c1c94c058", null ],
+      [ "YAxisFixed", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a8d1827d8fca7d2d9db612616da97258a", null ],
+      [ "Fixed", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a4457d440870ad6d42bab9082d9bf9b61", null ],
+      [ "RotatedBillboard", "namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23", null ]
+    ] ],
+    [ "ColorMode", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18", [
+      [ "COLOR_MODE_RGBA", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a6cdb9bdcad50b841d9b1fb52115ab2a3", null ],
+      [ "COLOR_MODE_HSVA", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18af6bd23c35497db7159d58659180b0bef", null ],
+      [ "COLOR_MODE_DWORD", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a1044b2ca94ce8805e366ff289d24c0de", null ],
+      [ "COLOR_MODE_RGBA", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a6cdb9bdcad50b841d9b1fb52115ab2a3", null ],
+      [ "COLOR_MODE_HSVA", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18af6bd23c35497db7159d58659180b0bef", null ],
+      [ "COLOR_MODE_DWORD", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a1044b2ca94ce8805e366ff289d24c0de", null ]
+    ] ],
+    [ "ColorMode", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18", [
+      [ "COLOR_MODE_RGBA", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a6cdb9bdcad50b841d9b1fb52115ab2a3", null ],
+      [ "COLOR_MODE_HSVA", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18af6bd23c35497db7159d58659180b0bef", null ],
+      [ "COLOR_MODE_DWORD", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a1044b2ca94ce8805e366ff289d24c0de", null ],
+      [ "COLOR_MODE_RGBA", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a6cdb9bdcad50b841d9b1fb52115ab2a3", null ],
+      [ "COLOR_MODE_HSVA", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18af6bd23c35497db7159d58659180b0bef", null ],
+      [ "COLOR_MODE_DWORD", "namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a1044b2ca94ce8805e366ff289d24c0de", null ]
+    ] ],
+    [ "ColorSpaceType", "namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107", [
+      [ "Gamma", "namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107ad9cdb0f6e0d556347c10a8695545a4b5", null ],
+      [ "Linear", "namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107a32a843da6ea40ab3b17a3421ccdf671b", null ],
+      [ "Gamma", "namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107ad9cdb0f6e0d556347c10a8695545a4b5", null ],
+      [ "Linear", "namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107a32a843da6ea40ab3b17a3421ccdf671b", null ]
+    ] ],
+    [ "ColorSpaceType", "namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107", [
+      [ "Gamma", "namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107ad9cdb0f6e0d556347c10a8695545a4b5", null ],
+      [ "Linear", "namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107a32a843da6ea40ab3b17a3421ccdf671b", null ],
+      [ "Gamma", "namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107ad9cdb0f6e0d556347c10a8695545a4b5", null ],
+      [ "Linear", "namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107a32a843da6ea40ab3b17a3421ccdf671b", null ]
+    ] ],
+    [ "CoordinateSystem", "namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765", [
+      [ "LH", "namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a2b9645dc7a42b738ac9fa5a75117b1c0", null ],
+      [ "RH", "namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a9508a19d7801e07ee7b7628c31bfdd47", null ],
+      [ "LH", "namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a2b9645dc7a42b738ac9fa5a75117b1c0", null ],
+      [ "RH", "namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a9508a19d7801e07ee7b7628c31bfdd47", null ]
+    ] ],
+    [ "CoordinateSystem", "namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765", [
+      [ "LH", "namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a2b9645dc7a42b738ac9fa5a75117b1c0", null ],
+      [ "RH", "namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a9508a19d7801e07ee7b7628c31bfdd47", null ],
+      [ "LH", "namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a2b9645dc7a42b738ac9fa5a75117b1c0", null ],
+      [ "RH", "namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a9508a19d7801e07ee7b7628c31bfdd47", null ]
+    ] ],
+    [ "CullingShape", "namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132", [
+      [ "NoneShape", "namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132af9522e8a7d1cc4f338498025afb612bf", null ],
+      [ "Sphere", "namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132ab7095f057db3fefa7325ad93a04e14fd", null ],
+      [ "NoneShape", "namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132af9522e8a7d1cc4f338498025afb612bf", null ],
+      [ "Sphere", "namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132ab7095f057db3fefa7325ad93a04e14fd", null ]
+    ] ],
+    [ "CullingShape", "namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132", [
+      [ "NoneShape", "namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132af9522e8a7d1cc4f338498025afb612bf", null ],
+      [ "Sphere", "namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132ab7095f057db3fefa7325ad93a04e14fd", null ],
+      [ "NoneShape", "namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132af9522e8a7d1cc4f338498025afb612bf", null ],
+      [ "Sphere", "namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132ab7095f057db3fefa7325ad93a04e14fd", null ]
+    ] ],
+    [ "CullingType", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00a", [
+      [ "Front", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa5835bab1ade0060909e31a06af2e2cde", null ],
+      [ "Back", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa0557fa923dcee4d0f86b1409f5c2167f", null ],
+      [ "Double", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aad909d38d705ce75386dd86e611a82f5b", null ],
+      [ "Front", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa5835bab1ade0060909e31a06af2e2cde", null ],
+      [ "Back", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa0557fa923dcee4d0f86b1409f5c2167f", null ],
+      [ "Double", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aad909d38d705ce75386dd86e611a82f5b", null ]
+    ] ],
+    [ "CullingType", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00a", [
+      [ "Front", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa5835bab1ade0060909e31a06af2e2cde", null ],
+      [ "Back", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa0557fa923dcee4d0f86b1409f5c2167f", null ],
+      [ "Double", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aad909d38d705ce75386dd86e611a82f5b", null ],
+      [ "Front", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa5835bab1ade0060909e31a06af2e2cde", null ],
+      [ "Back", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa0557fa923dcee4d0f86b1409f5c2167f", null ],
+      [ "Double", "namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aad909d38d705ce75386dd86e611a82f5b", null ]
+    ] ],
+    [ "EffectNodeType", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8", [
+      [ "Root", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8afa03eb688ad8aa1db593d33dabd89bad", null ],
+      [ "NoneType", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa4179d01d58ec2f9c54faeb814a6a50c", null ],
+      [ "Sprite", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a51f2b7b14433aa22c67d1f4fc18943cd", null ],
+      [ "Ribbon", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8af309bf4bccf801eb2fe4541107671578", null ],
+      [ "Ring", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8ad4db177c94738b72bf9ce61e988ab1f1", null ],
+      [ "Model", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa559b87068921eec05086ce5485e9784", null ],
+      [ "Track", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a92ea731d3af6677905303c88689f5d55", null ],
+      [ "Root", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8afa03eb688ad8aa1db593d33dabd89bad", null ],
+      [ "NoneType", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa4179d01d58ec2f9c54faeb814a6a50c", null ],
+      [ "Sprite", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a51f2b7b14433aa22c67d1f4fc18943cd", null ],
+      [ "Ribbon", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8af309bf4bccf801eb2fe4541107671578", null ],
+      [ "Ring", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8ad4db177c94738b72bf9ce61e988ab1f1", null ],
+      [ "Model", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa559b87068921eec05086ce5485e9784", null ],
+      [ "Track", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a92ea731d3af6677905303c88689f5d55", null ]
+    ] ],
+    [ "EffectNodeType", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8", [
+      [ "Root", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8afa03eb688ad8aa1db593d33dabd89bad", null ],
+      [ "NoneType", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa4179d01d58ec2f9c54faeb814a6a50c", null ],
+      [ "Sprite", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a51f2b7b14433aa22c67d1f4fc18943cd", null ],
+      [ "Ribbon", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8af309bf4bccf801eb2fe4541107671578", null ],
+      [ "Ring", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8ad4db177c94738b72bf9ce61e988ab1f1", null ],
+      [ "Model", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa559b87068921eec05086ce5485e9784", null ],
+      [ "Track", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a92ea731d3af6677905303c88689f5d55", null ],
+      [ "Root", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8afa03eb688ad8aa1db593d33dabd89bad", null ],
+      [ "NoneType", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa4179d01d58ec2f9c54faeb814a6a50c", null ],
+      [ "Sprite", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a51f2b7b14433aa22c67d1f4fc18943cd", null ],
+      [ "Ribbon", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8af309bf4bccf801eb2fe4541107671578", null ],
+      [ "Ring", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8ad4db177c94738b72bf9ce61e988ab1f1", null ],
+      [ "Model", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa559b87068921eec05086ce5485e9784", null ],
+      [ "Track", "namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a92ea731d3af6677905303c88689f5d55", null ]
+    ] ],
+    [ "LogType", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2", [
+      [ "Info", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a4059b0251f66a18cb56f544728796875", null ],
+      [ "Warning", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a0eaadb4fcb48a0a0ed7bc9868be9fbaa", null ],
+      [ "Error", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a902b0d55fddef6f8d651fe1035b7d4bd", null ],
+      [ "Debug", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2aa603905470e2a5b8c13e96b579ef0dba", null ],
+      [ "Info", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a4059b0251f66a18cb56f544728796875", null ],
+      [ "Warning", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a0eaadb4fcb48a0a0ed7bc9868be9fbaa", null ],
+      [ "Error", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a902b0d55fddef6f8d651fe1035b7d4bd", null ],
+      [ "Debug", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2aa603905470e2a5b8c13e96b579ef0dba", null ]
+    ] ],
+    [ "LogType", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2", [
+      [ "Info", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a4059b0251f66a18cb56f544728796875", null ],
+      [ "Warning", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a0eaadb4fcb48a0a0ed7bc9868be9fbaa", null ],
+      [ "Error", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a902b0d55fddef6f8d651fe1035b7d4bd", null ],
+      [ "Debug", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2aa603905470e2a5b8c13e96b579ef0dba", null ],
+      [ "Info", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a4059b0251f66a18cb56f544728796875", null ],
+      [ "Warning", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a0eaadb4fcb48a0a0ed7bc9868be9fbaa", null ],
+      [ "Error", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a902b0d55fddef6f8d651fe1035b7d4bd", null ],
+      [ "Debug", "namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2aa603905470e2a5b8c13e96b579ef0dba", null ]
+    ] ],
+    [ "MaterialFileType", "namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2c", [
+      [ "Code", "namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2caca0dbad92a874b2f69b549293387925e", null ],
+      [ "Compiled", "namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2ca4ead4fdae2e4938c155e1db52aa1546d", null ],
+      [ "Code", "namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2caca0dbad92a874b2f69b549293387925e", null ],
+      [ "Compiled", "namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2ca4ead4fdae2e4938c155e1db52aa1546d", null ]
+    ] ],
+    [ "MaterialFileType", "namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2c", [
+      [ "Code", "namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2caca0dbad92a874b2f69b549293387925e", null ],
+      [ "Compiled", "namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2ca4ead4fdae2e4938c155e1db52aa1546d", null ],
+      [ "Code", "namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2caca0dbad92a874b2f69b549293387925e", null ],
+      [ "Compiled", "namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2ca4ead4fdae2e4938c155e1db52aa1546d", null ]
+    ] ],
+    [ "ReloadingThreadType", "namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089", [
+      [ "Main", "namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089aa02c83a7dbd96295beaefb72c2bee2de", null ],
+      [ "Render", "namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089a5e520da5341f2fec6d3bbfe7ef357922", null ],
+      [ "Main", "namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089aa02c83a7dbd96295beaefb72c2bee2de", null ],
+      [ "Render", "namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089a5e520da5341f2fec6d3bbfe7ef357922", null ]
+    ] ],
+    [ "ReloadingThreadType", "namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089", [
+      [ "Main", "namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089aa02c83a7dbd96295beaefb72c2bee2de", null ],
+      [ "Render", "namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089a5e520da5341f2fec6d3bbfe7ef357922", null ],
+      [ "Main", "namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089aa02c83a7dbd96295beaefb72c2bee2de", null ],
+      [ "Render", "namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089a5e520da5341f2fec6d3bbfe7ef357922", null ]
+    ] ],
+    [ "RendererMaterialType", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025", [
+      [ "Default", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a7a1920d61156abc05a60135aefe8bc67", null ],
+      [ "BackDistortion", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025ae7bd8cfbd6771385c34a3653a6b13126", null ],
+      [ "Lighting", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a2e4b97fde8cf63085ec969fcc7e490c0", null ],
+      [ "File", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a0b27918290ff5323bea1e3b78a9cf04e", null ],
+      [ "Default", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a7a1920d61156abc05a60135aefe8bc67", null ],
+      [ "BackDistortion", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025ae7bd8cfbd6771385c34a3653a6b13126", null ],
+      [ "Lighting", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a2e4b97fde8cf63085ec969fcc7e490c0", null ],
+      [ "File", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a0b27918290ff5323bea1e3b78a9cf04e", null ]
+    ] ],
+    [ "RendererMaterialType", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025", [
+      [ "Default", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a7a1920d61156abc05a60135aefe8bc67", null ],
+      [ "BackDistortion", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025ae7bd8cfbd6771385c34a3653a6b13126", null ],
+      [ "Lighting", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a2e4b97fde8cf63085ec969fcc7e490c0", null ],
+      [ "File", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a0b27918290ff5323bea1e3b78a9cf04e", null ],
+      [ "Default", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a7a1920d61156abc05a60135aefe8bc67", null ],
+      [ "BackDistortion", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025ae7bd8cfbd6771385c34a3653a6b13126", null ],
+      [ "Lighting", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a2e4b97fde8cf63085ec969fcc7e490c0", null ],
+      [ "File", "namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a0b27918290ff5323bea1e3b78a9cf04e", null ]
+    ] ],
+    [ "RenderMode", "namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092", [
+      [ "Normal", "namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Wireframe", "namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a33e42d0f3b166a4c405127e4412fbef2", null ],
+      [ "Normal", "namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Wireframe", "namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a33e42d0f3b166a4c405127e4412fbef2", null ]
+    ] ],
+    [ "RenderMode", "namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092", [
+      [ "Normal", "namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Wireframe", "namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a33e42d0f3b166a4c405127e4412fbef2", null ],
+      [ "Normal", "namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Wireframe", "namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a33e42d0f3b166a4c405127e4412fbef2", null ]
+    ] ],
+    [ "ShadingModelType", "namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363", [
+      [ "Lit", "namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363ae5e556ecf935270736f5e46e73db06e4", null ],
+      [ "Unlit", "namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363acfc126be5c3f5c76fb082aa773f24b3d", null ],
+      [ "Lit", "namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363ae5e556ecf935270736f5e46e73db06e4", null ],
+      [ "Unlit", "namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363acfc126be5c3f5c76fb082aa773f24b3d", null ]
+    ] ],
+    [ "ShadingModelType", "namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363", [
+      [ "Lit", "namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363ae5e556ecf935270736f5e46e73db06e4", null ],
+      [ "Unlit", "namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363acfc126be5c3f5c76fb082aa773f24b3d", null ],
+      [ "Lit", "namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363ae5e556ecf935270736f5e46e73db06e4", null ],
+      [ "Unlit", "namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363acfc126be5c3f5c76fb082aa773f24b3d", null ]
+    ] ],
+    [ "TextureColorType", "namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986b", [
+      [ "Color", "namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986bacb5feb1b7314637725a2e73bdc9f7295", null ],
+      [ "Value", "namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986ba689202409e48743b914713f96d93947c", null ],
+      [ "Color", "namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986bacb5feb1b7314637725a2e73bdc9f7295", null ],
+      [ "Value", "namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986ba689202409e48743b914713f96d93947c", null ]
+    ] ],
+    [ "TextureColorType", "namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986b", [
+      [ "Color", "namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986bacb5feb1b7314637725a2e73bdc9f7295", null ],
+      [ "Value", "namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986ba689202409e48743b914713f96d93947c", null ],
+      [ "Color", "namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986bacb5feb1b7314637725a2e73bdc9f7295", null ],
+      [ "Value", "namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986ba689202409e48743b914713f96d93947c", null ]
+    ] ],
+    [ "TextureFilterType", "namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6ee", [
+      [ "Nearest", "namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea60494f02d440f316319dd0fad40ad007", null ],
+      [ "Linear", "namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea32a843da6ea40ab3b17a3421ccdf671b", null ],
+      [ "Nearest", "namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea60494f02d440f316319dd0fad40ad007", null ],
+      [ "Linear", "namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea32a843da6ea40ab3b17a3421ccdf671b", null ]
+    ] ],
+    [ "TextureFilterType", "namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6ee", [
+      [ "Nearest", "namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea60494f02d440f316319dd0fad40ad007", null ],
+      [ "Linear", "namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea32a843da6ea40ab3b17a3421ccdf671b", null ],
+      [ "Nearest", "namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea60494f02d440f316319dd0fad40ad007", null ],
+      [ "Linear", "namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea32a843da6ea40ab3b17a3421ccdf671b", null ]
+    ] ],
+    [ "TextureFormatType", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484", [
+      [ "ABGR8", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a241839feb78cf37a50e99a39bb64dab3", null ],
+      [ "BC1", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a88ec7b741e9c3ccac7b61b1301ba11e8", null ],
+      [ "BC2", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a4d2bc7c468d854a7046ae1ca6b7cf64e", null ],
+      [ "BC3", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484aa9e959126c7c9b4230b56975a1ea015d", null ],
+      [ "ABGR8", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a241839feb78cf37a50e99a39bb64dab3", null ],
+      [ "BC1", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a88ec7b741e9c3ccac7b61b1301ba11e8", null ],
+      [ "BC2", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a4d2bc7c468d854a7046ae1ca6b7cf64e", null ],
+      [ "BC3", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484aa9e959126c7c9b4230b56975a1ea015d", null ]
+    ] ],
+    [ "TextureFormatType", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484", [
+      [ "ABGR8", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a241839feb78cf37a50e99a39bb64dab3", null ],
+      [ "BC1", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a88ec7b741e9c3ccac7b61b1301ba11e8", null ],
+      [ "BC2", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a4d2bc7c468d854a7046ae1ca6b7cf64e", null ],
+      [ "BC3", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484aa9e959126c7c9b4230b56975a1ea015d", null ],
+      [ "ABGR8", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a241839feb78cf37a50e99a39bb64dab3", null ],
+      [ "BC1", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a88ec7b741e9c3ccac7b61b1301ba11e8", null ],
+      [ "BC2", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a4d2bc7c468d854a7046ae1ca6b7cf64e", null ],
+      [ "BC3", "namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484aa9e959126c7c9b4230b56975a1ea015d", null ]
+    ] ],
+    [ "TextureType", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4", [
+      [ "Color", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4acb5feb1b7314637725a2e73bdc9f7295", null ],
+      [ "Normal", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Distortion", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4ad3682f9ce9248e18f2d1cecf9f8fa049", null ],
+      [ "Color", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4acb5feb1b7314637725a2e73bdc9f7295", null ],
+      [ "Normal", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Distortion", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4ad3682f9ce9248e18f2d1cecf9f8fa049", null ]
+    ] ],
+    [ "TextureType", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4", [
+      [ "Color", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4acb5feb1b7314637725a2e73bdc9f7295", null ],
+      [ "Normal", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Distortion", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4ad3682f9ce9248e18f2d1cecf9f8fa049", null ],
+      [ "Color", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4acb5feb1b7314637725a2e73bdc9f7295", null ],
+      [ "Normal", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Distortion", "namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4ad3682f9ce9248e18f2d1cecf9f8fa049", null ]
+    ] ],
+    [ "TextureWrapType", "namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3", [
+      [ "Repeat", "namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a7020426cfb0a204051be4b3053d2acc8", null ],
+      [ "Clamp", "namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a08825280e3f8137556325061ba67ff8c", null ],
+      [ "Repeat", "namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a7020426cfb0a204051be4b3053d2acc8", null ],
+      [ "Clamp", "namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a08825280e3f8137556325061ba67ff8c", null ]
+    ] ],
+    [ "TextureWrapType", "namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3", [
+      [ "Repeat", "namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a7020426cfb0a204051be4b3053d2acc8", null ],
+      [ "Clamp", "namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a08825280e3f8137556325061ba67ff8c", null ],
+      [ "Repeat", "namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a7020426cfb0a204051be4b3053d2acc8", null ],
+      [ "Clamp", "namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a08825280e3f8137556325061ba67ff8c", null ]
+    ] ],
+    [ "TrailSmoothingType", "namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6", [
+      [ "Off", "namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6ad15305d7a4e34e02489c74a5ef542f36", null ],
+      [ "On", "namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6a521c36a31c2762741cf0f8890cbe05e3", null ],
+      [ "Off", "namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6ad15305d7a4e34e02489c74a5ef542f36", null ],
+      [ "On", "namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6a521c36a31c2762741cf0f8890cbe05e3", null ]
+    ] ],
+    [ "TrailSmoothingType", "namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6", [
+      [ "Off", "namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6ad15305d7a4e34e02489c74a5ef542f36", null ],
+      [ "On", "namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6a521c36a31c2762741cf0f8890cbe05e3", null ],
+      [ "Off", "namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6ad15305d7a4e34e02489c74a5ef542f36", null ],
+      [ "On", "namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6a521c36a31c2762741cf0f8890cbe05e3", null ]
+    ] ],
+    [ "TrailTimeType", "namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8", [
+      [ "FirstParticle", "namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8a7266a76da6d1a6f200dc7ec5405e38a5", null ],
+      [ "ParticleGroup", "namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8aa14dfc5cda0ff1982c33ae2ea2973e2e", null ],
+      [ "FirstParticle", "namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8a7266a76da6d1a6f200dc7ec5405e38a5", null ],
+      [ "ParticleGroup", "namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8aa14dfc5cda0ff1982c33ae2ea2973e2e", null ]
+    ] ],
+    [ "TrailTimeType", "namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8", [
+      [ "FirstParticle", "namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8a7266a76da6d1a6f200dc7ec5405e38a5", null ],
+      [ "ParticleGroup", "namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8aa14dfc5cda0ff1982c33ae2ea2973e2e", null ],
+      [ "FirstParticle", "namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8a7266a76da6d1a6f200dc7ec5405e38a5", null ],
+      [ "ParticleGroup", "namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8aa14dfc5cda0ff1982c33ae2ea2973e2e", null ]
+    ] ],
+    [ "ZSortType", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddaf", [
+      [ "None", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "NormalOrder", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa0d1c57b4a0586a7ad9e29190c1ed8f9d", null ],
+      [ "ReverseOrder", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafacafcd34d9001dc412b1b6e9e52d6083c", null ],
+      [ "None", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "NormalOrder", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa0d1c57b4a0586a7ad9e29190c1ed8f9d", null ],
+      [ "ReverseOrder", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafacafcd34d9001dc412b1b6e9e52d6083c", null ]
+    ] ],
+    [ "ZSortType", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddaf", [
+      [ "None", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "NormalOrder", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa0d1c57b4a0586a7ad9e29190c1ed8f9d", null ],
+      [ "ReverseOrder", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafacafcd34d9001dc412b1b6e9e52d6083c", null ],
+      [ "None", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "NormalOrder", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa0d1c57b4a0586a7ad9e29190c1ed8f9d", null ],
+      [ "ReverseOrder", "namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafacafcd34d9001dc412b1b6e9e52d6083c", null ]
+    ] ],
+    [ "Clamp", "namespaceEffekseer.html#a524a62e3d5b25946bcccd60ffe448c9c", null ],
+    [ "ConvertUtf16ToUtf8", "namespaceEffekseer.html#ad65c29e6091725f3e2ec45a4a0c3ed84", null ],
+    [ "ConvertUtf8ToUtf16", "namespaceEffekseer.html#af9fb041d64651e90b523d03da55c329e", null ],
+    [ "CreateReference", "namespaceEffekseer.html#a89525f4436569b41bee58c2cd07eeecc", null ],
+    [ "CreateUniqueReference", "namespaceEffekseer.html#a50baa1ca73337f329f802a2a6412623c", null ],
+    [ "GetAlignedFreeFunc", "namespaceEffekseer.html#aa2783d0e80874d3ff011675b1200768e", null ],
+    [ "GetAlignedMallocFunc", "namespaceEffekseer.html#abdc0a4b7d092501920dbe1dba2c1d217", null ],
+    [ "GetFreeFunc", "namespaceEffekseer.html#a9d17e25ff8ef31a6ad49ba8990638f97", null ],
+    [ "GetMallocFunc", "namespaceEffekseer.html#aab96c95b1a63e5f00b03b431f3e2580c", null ],
+    [ "Log", "namespaceEffekseer.html#ac4d56cf3a74b544d4257c84e7d365256", null ],
+    [ "MakeRefPtr", "namespaceEffekseer.html#a0cb7cf0ff979e0995814311c3a8fbc80", null ],
+    [ "Max", "namespaceEffekseer.html#afc3d4e56cf4f8d0f12ac7d4bee7591b9", null ],
+    [ "Min", "namespaceEffekseer.html#ad4d523c19d4088c7566fadd84449eba7", null ],
+    [ "operator!=", "namespaceEffekseer.html#a54794242ae9229987782a9f32263ecd2", null ],
+    [ "operator!=", "namespaceEffekseer.html#aa8177d14702c33e15d848b6e957f3908", null ],
+    [ "operator!=", "namespaceEffekseer.html#ae862482e04c3ac4a774f7aa8e65bb08f", null ],
+    [ "operator<", "namespaceEffekseer.html#a4fd72bed2ff4952b746829b3393d0dfa", null ],
+    [ "operator==", "namespaceEffekseer.html#aebb9e9d0bc046c936550453265dae108", null ],
+    [ "operator==", "namespaceEffekseer.html#a36ade20bcc238e4262a30fb493746861", null ],
+    [ "operator==", "namespaceEffekseer.html#ad5a147d08c21588967d515cfcf99e460", null ],
+    [ "SafeAddRef", "namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce", null ],
+    [ "SafeRelease", "namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422", null ],
+    [ "SetAlignedFreeFunc", "namespaceEffekseer.html#a0bbc88b1465e30febecf382e8d57ead2", null ],
+    [ "SetAlignedMallocFunc", "namespaceEffekseer.html#ae5f88739b46e5d366efda796f462e448", null ],
+    [ "SetFreeFunc", "namespaceEffekseer.html#a81e44801264e5f7a5bfd6fd41855bf22", null ],
+    [ "SetLogger", "namespaceEffekseer.html#a616e872915ae9f8cc337f3863aad9915", null ],
+    [ "SetMallocFunc", "namespaceEffekseer.html#acfc21ce1ff1399186dfae9cf66fbd5bd", null ],
+    [ "EFK_PI", "namespaceEffekseer.html#a254a2289cbee1d8ee2bde72590cc46b5", null ],
+    [ "LocalFieldSlotMax", "namespaceEffekseer.html#a120ca55b066c4c6159bb894c79bdfd91", null ],
+    [ "TextureSlotMax", "namespaceEffekseer.html#a53873df57bf6709d6122021dbc4b7e99", null ],
+    [ "UserGradientSlotMax", "namespaceEffekseer.html#a1b40ac6694c9a63fc6e17ea4a29ce0bb", null ],
+    [ "UserTextureSlotMax", "namespaceEffekseer.html#aa7f3ec05060870b8248e2fda7895ac48", null ],
+    [ "UserUniformSlotMax", "namespaceEffekseer.html#ab3ce5e997c45cb1d382dd774bd687f70", null ]
+];

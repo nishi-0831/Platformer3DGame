@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: StageManager.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('StageManager_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">StageManager.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="StageManager_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="stdafx_8h.html">stdafx.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="StageManager_8h.html">StageManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="classStageManger.html#afbd6f0d9b52e8a727cbffcc72d4021ee">    5</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classStageManger.html#afbd6f0d9b52e8a727cbffcc72d4021ee">StageManger::Initialize</a>()</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    std::string fileName = <span class="stringliteral">&quot;data5.json&quot;</span>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    std::ifstream inputFile(fileName);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    nlohmann::json j;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        inputFile &gt;&gt; j;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> nlohmann::json::parse_error&amp; e)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        assert(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_variable" href="classStageManger.html#aa5e7017c1dc67466fbb8639a2eb8dfd2">stageJsons_</a>[StageID::STAGE_ONE] = j;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classStageManger.html#a108cbad0041c4402cfc48874a411d843">   21</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classStageManger.html#a108cbad0041c4402cfc48874a411d843">StageManger::Update</a>()</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classStageManger.html#adda6a5853f7ca1d74cd1062c4d457e69">   25</a></span>std::optional&lt;nlohmann::json&gt; <a class="code hl_function" href="classStageManger.html#adda6a5853f7ca1d74cd1062c4d457e69">StageManger::GetStageJson</a>(<a class="code hl_enumeration" href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1">StageID</a> _stageID)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classStageManger.html#aa5e7017c1dc67466fbb8639a2eb8dfd2">stageJsons_</a>.contains(_stageID))</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classStageManger.html#aa5e7017c1dc67466fbb8639a2eb8dfd2">stageJsons_</a>[_stageID];</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classStageManger.html#aeee681fe335671374ca799baa2d58130">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classStageManger.html#aeee681fe335671374ca799baa2d58130">StageManger::InitializeStage</a>(<a class="code hl_enumeration" href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1">StageID</a> _stageID)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_variable" href="classStageManger.html#a4736fe5b67011b71fabca6d343efa7b9">stageCleared_</a>[_stageID] = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classStageManger.html#a2028e147a61bcfb6602fd3e19e4a986b">   39</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classStageManger.html#a2028e147a61bcfb6602fd3e19e4a986b">StageManger::StartStage</a>(<a class="code hl_enumeration" href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1">StageID</a> _stageID)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="classStageManger.html#aeee681fe335671374ca799baa2d58130">InitializeStage</a>(_stageID);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_variable" href="classStageManger.html#a0e3a935bd732620a564cd2bd4e7e02c0">currStage_</a> = _stageID;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classStageManger.html#aa4620d44cdf3f990e0578d706af8dc1f">   45</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classStageManger.html#aa4620d44cdf3f990e0578d706af8dc1f">StageManger::IsCleared</a>(<a class="code hl_enumeration" href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1">StageID</a> _stageID)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classStageManger.html#a4736fe5b67011b71fabca6d343efa7b9">stageCleared_</a>[_stageID];</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classStageManger.html#a70cb0ee524318599d85401616d093cf9">   50</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classStageManger.html#a70cb0ee524318599d85401616d093cf9">StageManger::IsClearedCurrentStage</a>()</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classStageManger.html#a4736fe5b67011b71fabca6d343efa7b9">stageCleared_</a>[<a class="code hl_variable" href="classStageManger.html#a0e3a935bd732620a564cd2bd4e7e02c0">currStage_</a>];</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classStageManger.html#a493d8c374b6fd1636eb0653f3ae437bd">   55</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classStageManger.html#a493d8c374b6fd1636eb0653f3ae437bd">StageManger::ClearStage</a>(<a class="code hl_enumeration" href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1">StageID</a> _stageID)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_variable" href="classStageManger.html#a4736fe5b67011b71fabca6d343efa7b9">stageCleared_</a>[_stageID] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classStageManger.html#ae2cdaba2c69479f9d060fbb0c7973ab1">   60</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classStageManger.html#ae2cdaba2c69479f9d060fbb0c7973ab1">StageManger::ClearCurrentStage</a>()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_variable" href="classStageManger.html#a4736fe5b67011b71fabca6d343efa7b9">stageCleared_</a>[<a class="code hl_variable" href="classStageManger.html#a0e3a935bd732620a564cd2bd4e7e02c0">currStage_</a>] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classStageManger.html#a3e8a04dabca286c27a5af5dce2d167c8">   65</a></span><a class="code hl_enumeration" href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1">StageID</a> <a class="code hl_function" href="classStageManger.html#a3e8a04dabca286c27a5af5dce2d167c8">StageManger::GetCurrentStage</a>()</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classStageManger.html#a0e3a935bd732620a564cd2bd4e7e02c0">currStage_</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+<div class="ttc" id="aStageID_8h_html_a2dec0eb07ce69be2b4cdaa2b2e2115e1"><div class="ttname"><a href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1">StageID</a></div><div class="ttdeci">StageID</div><div class="ttdef"><b>Definition:</b> <a href="StageID_8h_source.html#l00003">StageID.h:4</a></div></div>
+<div class="ttc" id="aStageManager_8h_html"><div class="ttname"><a href="StageManager_8h.html">StageManager.h</a></div></div>
+<div class="ttc" id="aclassStageManger_html_a0e3a935bd732620a564cd2bd4e7e02c0"><div class="ttname"><a href="classStageManger.html#a0e3a935bd732620a564cd2bd4e7e02c0">StageManger::currStage_</a></div><div class="ttdeci">StageID currStage_</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8h_source.html#l00049">StageManager.h:49</a></div></div>
+<div class="ttc" id="aclassStageManger_html_a108cbad0041c4402cfc48874a411d843"><div class="ttname"><a href="classStageManger.html#a108cbad0041c4402cfc48874a411d843">StageManger::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8cpp_source.html#l00021">StageManager.cpp:21</a></div></div>
+<div class="ttc" id="aclassStageManger_html_a2028e147a61bcfb6602fd3e19e4a986b"><div class="ttname"><a href="classStageManger.html#a2028e147a61bcfb6602fd3e19e4a986b">StageManger::StartStage</a></div><div class="ttdeci">void StartStage(StageID _stageID)</div><div class="ttdoc">ステージのクリア状況を初期化 現在プレイしているステージとする</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8cpp_source.html#l00039">StageManager.cpp:39</a></div></div>
+<div class="ttc" id="aclassStageManger_html_a3e8a04dabca286c27a5af5dce2d167c8"><div class="ttname"><a href="classStageManger.html#a3e8a04dabca286c27a5af5dce2d167c8">StageManger::GetCurrentStage</a></div><div class="ttdeci">StageID GetCurrentStage()</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8cpp_source.html#l00065">StageManager.cpp:65</a></div></div>
+<div class="ttc" id="aclassStageManger_html_a4736fe5b67011b71fabca6d343efa7b9"><div class="ttname"><a href="classStageManger.html#a4736fe5b67011b71fabca6d343efa7b9">StageManger::stageCleared_</a></div><div class="ttdeci">std::unordered_map&lt; StageID, bool &gt; stageCleared_</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8h_source.html#l00051">StageManager.h:51</a></div></div>
+<div class="ttc" id="aclassStageManger_html_a493d8c374b6fd1636eb0653f3ae437bd"><div class="ttname"><a href="classStageManger.html#a493d8c374b6fd1636eb0653f3ae437bd">StageManger::ClearStage</a></div><div class="ttdeci">void ClearStage(StageID _stageID)</div><div class="ttdoc">ステージをクリアした状態にする</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8cpp_source.html#l00055">StageManager.cpp:55</a></div></div>
+<div class="ttc" id="aclassStageManger_html_a70cb0ee524318599d85401616d093cf9"><div class="ttname"><a href="classStageManger.html#a70cb0ee524318599d85401616d093cf9">StageManger::IsClearedCurrentStage</a></div><div class="ttdeci">bool IsClearedCurrentStage()</div><div class="ttdoc">現在のステージをクリアされたか返す</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8cpp_source.html#l00050">StageManager.cpp:50</a></div></div>
+<div class="ttc" id="aclassStageManger_html_aa4620d44cdf3f990e0578d706af8dc1f"><div class="ttname"><a href="classStageManger.html#aa4620d44cdf3f990e0578d706af8dc1f">StageManger::IsCleared</a></div><div class="ttdeci">bool IsCleared(StageID _stageID)</div><div class="ttdoc">ステージをクリアされたか返す</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8cpp_source.html#l00045">StageManager.cpp:45</a></div></div>
+<div class="ttc" id="aclassStageManger_html_aa5e7017c1dc67466fbb8639a2eb8dfd2"><div class="ttname"><a href="classStageManger.html#aa5e7017c1dc67466fbb8639a2eb8dfd2">StageManger::stageJsons_</a></div><div class="ttdeci">std::unordered_map&lt; StageID, nlohmann::json &gt; stageJsons_</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8h_source.html#l00050">StageManager.h:50</a></div></div>
+<div class="ttc" id="aclassStageManger_html_adda6a5853f7ca1d74cd1062c4d457e69"><div class="ttname"><a href="classStageManger.html#adda6a5853f7ca1d74cd1062c4d457e69">StageManger::GetStageJson</a></div><div class="ttdeci">std::optional&lt; nlohmann::json &gt; GetStageJson(StageID _stageID)</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8cpp_source.html#l00025">StageManager.cpp:25</a></div></div>
+<div class="ttc" id="aclassStageManger_html_ae2cdaba2c69479f9d060fbb0c7973ab1"><div class="ttname"><a href="classStageManger.html#ae2cdaba2c69479f9d060fbb0c7973ab1">StageManger::ClearCurrentStage</a></div><div class="ttdeci">void ClearCurrentStage()</div><div class="ttdoc">現在のステージをクリアした状態にする</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8cpp_source.html#l00060">StageManager.cpp:60</a></div></div>
+<div class="ttc" id="aclassStageManger_html_aeee681fe335671374ca799baa2d58130"><div class="ttname"><a href="classStageManger.html#aeee681fe335671374ca799baa2d58130">StageManger::InitializeStage</a></div><div class="ttdeci">void InitializeStage(StageID _stageID)</div><div class="ttdoc">ステージのクリア状況を初期化</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8cpp_source.html#l00034">StageManager.cpp:34</a></div></div>
+<div class="ttc" id="aclassStageManger_html_afbd6f0d9b52e8a727cbffcc72d4021ee"><div class="ttname"><a href="classStageManger.html#afbd6f0d9b52e8a727cbffcc72d4021ee">StageManger::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="StageManager_8cpp_source.html#l00005">StageManager.cpp:5</a></div></div>
+<div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="StageManager_8cpp.html">StageManager.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtnet::HttpClient クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtnet_1_1HttpClient.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pri-static-methods">静的非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtnet_1_1HttpClient-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtnet::HttpClient クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="HttpClient_8h_source.html">HttpClient.h</a>&quot;</code></p>
+<div class="dynheader">
+mtnet::HttpClient 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtnet_1_1HttpClient__coll__graph.svg" width="326" height="499"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a6b203696a1aa50a6fca28b50895b4130"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#a6b203696a1aa50a6fca28b50895b4130">ResponceCallback</a> = std::function&lt; void(const std::string &amp;)&gt;</td></tr>
+<tr class="separator:a6b203696a1aa50a6fca28b50895b4130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00925ef84baed2620cae88d40b132a0f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#a00925ef84baed2620cae88d40b132a0f">BinaryResponceCallback</a> = std::function&lt; void(std::vector&lt; uint8_t &gt; &amp;)&gt;</td></tr>
+<tr class="separator:a00925ef84baed2620cae88d40b132a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5e26767511ea4788d00b6b739fe4c578"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#a5e26767511ea4788d00b6b739fe4c578">HttpClient</a> ()</td></tr>
+<tr class="separator:a5e26767511ea4788d00b6b739fe4c578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b0cd9941779e0c59c993fe298c9e4df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#a9b0cd9941779e0c59c993fe298c9e4df">~HttpClient</a> ()</td></tr>
+<tr class="separator:a9b0cd9941779e0c59c993fe298c9e4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f61318889eb6486dc842544d979574"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#a48f61318889eb6486dc842544d979574">Initialize</a> (const std::string &amp;_remoteUrl)</td></tr>
+<tr class="separator:a48f61318889eb6486dc842544d979574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1ed042be6d31217dac2a648f6f4de5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#ad1ed042be6d31217dac2a648f6f4de5f">Post</a> (<a class="el" href="classmtnet_1_1HttpHeaderBuilder.html">HttpHeaderBuilder</a> &amp;_header, const std::string &amp;_pathAndQuery, const <a class="el" href="classmtnet_1_1HttpClient.html#a6b203696a1aa50a6fca28b50895b4130">ResponceCallback</a> &amp;_onResponce, const std::string &amp;_body=&quot;&quot;)</td></tr>
+<tr class="memdesc:ad1ed042be6d31217dac2a648f6f4de5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ポストリクエストを送信する  <br /></td></tr>
+<tr class="separator:ad1ed042be6d31217dac2a648f6f4de5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefdd060b37f42dc3375fb7baef4e929f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#aefdd060b37f42dc3375fb7baef4e929f">Post</a> (<a class="el" href="classmtnet_1_1HttpHeaderBuilder.html">HttpHeaderBuilder</a> &amp;_header, const std::string &amp;_pathAndQuery, const std::string &amp;_body=&quot;&quot;)</td></tr>
+<tr class="separator:aefdd060b37f42dc3375fb7baef4e929f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b1442830112164b33eb5026c3873b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#ad3b1442830112164b33eb5026c3873b6">PostAndBinaryResponce</a> (<a class="el" href="classmtnet_1_1HttpHeaderBuilder.html">HttpHeaderBuilder</a> &amp;_header, const std::string &amp;_pathAndQuery, const <a class="el" href="classmtnet_1_1HttpClient.html#a00925ef84baed2620cae88d40b132a0f">BinaryResponceCallback</a> &amp;_onRecponce, const std::string &amp;_body=&quot;&quot;)</td></tr>
+<tr class="separator:ad3b1442830112164b33eb5026c3873b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b629b7ae9e7ac3cf922fc152abc7461"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#a5b629b7ae9e7ac3cf922fc152abc7461">Cleanup</a> ()</td></tr>
+<tr class="memdesc:a5b629b7ae9e7ac3cf922fc152abc7461"><td class="mdescLeft">&#160;</td><td class="mdescRight">WSAのクリーンアップ (アプリケーションを閉じるときに呼ぶ)  <br /></td></tr>
+<tr class="separator:a5b629b7ae9e7ac3cf922fc152abc7461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a95994ecf1069dad93236f937d90ca595"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#a95994ecf1069dad93236f937d90ca595">ToPercentURI</a> (const std::string &amp;str)</td></tr>
+<tr class="separator:a95994ecf1069dad93236f937d90ca595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静的非公開メンバ関数</h2></td></tr>
+<tr class="memitem:aa82f5e78e7fa74f5edd990686d19f1ba"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#aa82f5e78e7fa74f5edd990686d19f1ba">TryToIPAddresAndPort</a> (const std::string &amp;_srcUrl, BYTE *_pOctet1, BYTE *_pOctet2, BYTE *_pOctet3, BYTE *_pOctet4, USHORT *_pPortNumber)</td></tr>
+<tr class="memdesc:aa82f5e78e7fa74f5edd990686d19f1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">試しにURLをIPアドレスとポート番号に分解する  <br /></td></tr>
+<tr class="separator:aa82f5e78e7fa74f5edd990686d19f1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:aaad8bbba1270854afbfd74235c36e58a"><td class="memItemLeft" align="right" valign="top">WSADATA&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#aaad8bbba1270854afbfd74235c36e58a">wsaData_</a></td></tr>
+<tr class="separator:aaad8bbba1270854afbfd74235c36e58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe9df8549d7b92f6ba9fe3fc7abf80cc"><td class="memItemLeft" align="right" valign="top">SOCKET&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a></td></tr>
+<tr class="separator:afe9df8549d7b92f6ba9fe3fc7abf80cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d285aeaa0d40df7cbd91c14e018f93"><td class="memItemLeft" align="right" valign="top">SOCKADDR_IN&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a></td></tr>
+<tr class="separator:ae4d285aeaa0d40df7cbd91c14e018f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f95d48efbf75f345b9a3cd70d089516"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtnet_1_1HttpClient.html#a3f95d48efbf75f345b9a3cd70d089516">remoteUri_</a></td></tr>
+<tr class="separator:a3f95d48efbf75f345b9a3cd70d089516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="HttpClient_8h_source.html">HttpClient.h</a> の <a class="el" href="HttpClient_8h_source.html#l00012">12</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a00925ef84baed2620cae88d40b132a0f" name="a00925ef84baed2620cae88d40b132a0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00925ef84baed2620cae88d40b132a0f">&#9670;&#160;</a></span>BinaryResponceCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmtnet_1_1HttpClient.html#a00925ef84baed2620cae88d40b132a0f">mtnet::HttpClient::BinaryResponceCallback</a> =  std::function&lt;void(std::vector&lt;uint8_t&gt;&amp;)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="HttpClient_8h_source.html">HttpClient.h</a> の <a class="el" href="HttpClient_8h_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6b203696a1aa50a6fca28b50895b4130" name="a6b203696a1aa50a6fca28b50895b4130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b203696a1aa50a6fca28b50895b4130">&#9670;&#160;</a></span>ResponceCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmtnet_1_1HttpClient.html#a6b203696a1aa50a6fca28b50895b4130">mtnet::HttpClient::ResponceCallback</a> =  std::function&lt;void(const std::string&amp;)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="HttpClient_8h_source.html">HttpClient.h</a> の <a class="el" href="HttpClient_8h_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a5e26767511ea4788d00b6b739fe4c578" name="a5e26767511ea4788d00b6b739fe4c578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e26767511ea4788d00b6b739fe4c578">&#9670;&#160;</a></span>HttpClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtnet::HttpClient::HttpClient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="HttpClient_8cpp_source.html">HttpClient.cpp</a> の <a class="el" href="HttpClient_8cpp_source.html#l00010">10</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>                            :</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#aaad8bbba1270854afbfd74235c36e58a">wsaData_</a>{},</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>{ INVALID_SOCKET },  <span class="comment">// 無効ソケットをつけておく</span></div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a>{}</div>
+<div class="line"><span class="lineno">   14</span>{</div>
+<div class="line"><span class="lineno">   15</span>}</div>
+<div class="ttc" id="aclassmtnet_1_1HttpClient_html_aaad8bbba1270854afbfd74235c36e58a"><div class="ttname"><a href="classmtnet_1_1HttpClient.html#aaad8bbba1270854afbfd74235c36e58a">mtnet::HttpClient::wsaData_</a></div><div class="ttdeci">WSADATA wsaData_</div><div class="ttdef"><b>Definition:</b> <a href="HttpClient_8h_source.html#l00086">HttpClient.h:86</a></div></div>
+<div class="ttc" id="aclassmtnet_1_1HttpClient_html_ae4d285aeaa0d40df7cbd91c14e018f93"><div class="ttname"><a href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">mtnet::HttpClient::sockAddr_</a></div><div class="ttdeci">SOCKADDR_IN sockAddr_</div><div class="ttdef"><b>Definition:</b> <a href="HttpClient_8h_source.html#l00088">HttpClient.h:88</a></div></div>
+<div class="ttc" id="aclassmtnet_1_1HttpClient_html_afe9df8549d7b92f6ba9fe3fc7abf80cc"><div class="ttname"><a href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">mtnet::HttpClient::socket_</a></div><div class="ttdeci">SOCKET socket_</div><div class="ttdef"><b>Definition:</b> <a href="HttpClient_8h_source.html#l00087">HttpClient.h:87</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9b0cd9941779e0c59c993fe298c9e4df" name="a9b0cd9941779e0c59c993fe298c9e4df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b0cd9941779e0c59c993fe298c9e4df">&#9670;&#160;</a></span>~HttpClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtnet::HttpClient::~HttpClient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="HttpClient_8cpp_source.html">HttpClient.cpp</a> の <a class="el" href="HttpClient_8cpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
+<div class="line"><span class="lineno">   19</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a5b629b7ae9e7ac3cf922fc152abc7461" name="a5b629b7ae9e7ac3cf922fc152abc7461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b629b7ae9e7ac3cf922fc152abc7461">&#9670;&#160;</a></span>Cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtnet::HttpClient::Cleanup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WSAのクリーンアップ (アプリケーションを閉じるときに呼ぶ) </p>
+
+<p class="definition"> <a class="el" href="HttpClient_8cpp_source.html">HttpClient.cpp</a> の <a class="el" href="HttpClient_8cpp_source.html#l00195">195</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>{</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a> != INVALID_SOCKET)</div>
+<div class="line"><span class="lineno">  198</span>    {</div>
+<div class="line"><span class="lineno">  199</span>        closesocket(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>);  <span class="comment">// もし無効ソケットではないなら閉じてあげる</span></div>
+<div class="line"><span class="lineno">  200</span>        <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a> = INVALID_SOCKET;</div>
+<div class="line"><span class="lineno">  201</span>    }</div>
+<div class="line"><span class="lineno">  202</span>    WSACleanup();  <span class="comment">// WSAのクリーンアップ</span></div>
+<div class="line"><span class="lineno">  203</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a48f61318889eb6486dc842544d979574" name="a48f61318889eb6486dc842544d979574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f61318889eb6486dc842544d979574">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtnet::HttpClient::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_remoteUrl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>接続先のURLを指定して初期化</p>
+<p>接続先を変更するたびに呼び出す</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_remoteUrl</td><td>接続先のURL (X.X.X.X:Port)</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="HttpClient_8cpp_source.html">HttpClient.cpp</a> の <a class="el" href="HttpClient_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">int</span> result = WSAStartup(MAKEWORD(2, 2), &amp;<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#aaad8bbba1270854afbfd74235c36e58a">wsaData_</a>);</div>
+<div class="line"><span class="lineno">   24</span>    assert(result == 0 &amp;&amp;  <span class="comment">// WSAの起動は成功している</span></div>
+<div class="line"><span class="lineno">   25</span>        <span class="stringliteral">&quot;WSAStartup failed.&quot;</span>);</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a> != INVALID_SOCKET)</div>
+<div class="line"><span class="lineno">   28</span>    {</div>
+<div class="line"><span class="lineno">   29</span>        closesocket(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>);  <span class="comment">// もし無効ソケットではないなら閉じてあげる</span></div>
+<div class="line"><span class="lineno">   30</span>        <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a> = INVALID_SOCKET;</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <span class="comment">// MEMO: もしDNS解決するなら</span></div>
+<div class="line"><span class="lineno">   34</span>    <span class="comment">//     : locate host = gethostbyname(_remoteUrl.c_str());</span></div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">// NOTE: ただし、以下のdefineが必要かも</span></div>
+<div class="line"><span class="lineno">   36</span>    <span class="comment">//     : _WINSOCK_DEPRECATED_NO_WARNINGS</span></div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a> = {};</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a>.sin_family = AF_INET;</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    USHORT portNumber;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordtype">bool</span> succeed = <a class="code hl_function" href="classmtnet_1_1HttpClient.html#aa82f5e78e7fa74f5edd990686d19f1ba">TryToIPAddresAndPort</a>(</div>
+<div class="line"><span class="lineno">   43</span>        _remoteUrl,</div>
+<div class="line"><span class="lineno">   44</span>        &amp;<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a>.sin_addr.S_un.S_un_b.s_b1,</div>
+<div class="line"><span class="lineno">   45</span>        &amp;<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a>.sin_addr.S_un.S_un_b.s_b2,</div>
+<div class="line"><span class="lineno">   46</span>        &amp;<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a>.sin_addr.S_un.S_un_b.s_b3,</div>
+<div class="line"><span class="lineno">   47</span>        &amp;<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a>.sin_addr.S_un.S_un_b.s_b4,</div>
+<div class="line"><span class="lineno">   48</span>        &amp;portNumber);</div>
+<div class="line"><span class="lineno">   49</span>    </div>
+<div class="line"><span class="lineno">   50</span>    <span class="comment">// NOTE: ポート番号はビッグエンディアンであるため、htons関数を通す必要がある</span></div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a>.sin_port = htons(portNumber);  <span class="comment">// ポート番号をビッグエンディアンに変換する</span></div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#a3f95d48efbf75f345b9a3cd70d089516">remoteUri_</a> = _remoteUrl;</div>
+<div class="line"><span class="lineno">   54</span>}</div>
+<div class="ttc" id="aclassmtnet_1_1HttpClient_html_a3f95d48efbf75f345b9a3cd70d089516"><div class="ttname"><a href="classmtnet_1_1HttpClient.html#a3f95d48efbf75f345b9a3cd70d089516">mtnet::HttpClient::remoteUri_</a></div><div class="ttdeci">std::string remoteUri_</div><div class="ttdef"><b>Definition:</b> <a href="HttpClient_8h_source.html#l00089">HttpClient.h:89</a></div></div>
+<div class="ttc" id="aclassmtnet_1_1HttpClient_html_aa82f5e78e7fa74f5edd990686d19f1ba"><div class="ttname"><a href="classmtnet_1_1HttpClient.html#aa82f5e78e7fa74f5edd990686d19f1ba">mtnet::HttpClient::TryToIPAddresAndPort</a></div><div class="ttdeci">static bool TryToIPAddresAndPort(const std::string &amp;_srcUrl, BYTE *_pOctet1, BYTE *_pOctet2, BYTE *_pOctet3, BYTE *_pOctet4, USHORT *_pPortNumber)</div><div class="ttdoc">試しにURLをIPアドレスとポート番号に分解する</div><div class="ttdef"><b>Definition:</b> <a href="HttpClient_8cpp_source.html#l00205">HttpClient.cpp:205</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad1ed042be6d31217dac2a648f6f4de5f" name="ad1ed042be6d31217dac2a648f6f4de5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1ed042be6d31217dac2a648f6f4de5f">&#9670;&#160;</a></span>Post() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtnet::HttpClient::Post </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmtnet_1_1HttpHeaderBuilder.html">HttpHeaderBuilder</a> &amp;&#160;</td>
+          <td class="paramname"><em>_header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_pathAndQuery</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmtnet_1_1HttpClient.html#a6b203696a1aa50a6fca28b50895b4130">ResponceCallback</a> &amp;&#160;</td>
+          <td class="paramname"><em>_onResponce</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_body</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ポストリクエストを送信する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_header</td><td>ヘッダ</td></tr>
+    <tr><td class="paramname">_pathAndQuery</td><td><a href="http://">http://</a>*.*&zwj;/{この部分}</td></tr>
+    <tr><td class="paramname">_body</td><td>本体(任意)</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="HttpClient_8cpp_source.html">HttpClient.cpp</a> の <a class="el" href="HttpClient_8cpp_source.html#l00056">56</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{</div>
+<div class="line"><span class="lineno">   62</span>    _onResponce(<a class="code hl_function" href="classmtnet_1_1HttpClient.html#ad1ed042be6d31217dac2a648f6f4de5f">Post</a>(_header, _pathAndQuery, _body));</div>
+<div class="line"><span class="lineno">   63</span>}</div>
+<div class="ttc" id="aclassmtnet_1_1HttpClient_html_ad1ed042be6d31217dac2a648f6f4de5f"><div class="ttname"><a href="classmtnet_1_1HttpClient.html#ad1ed042be6d31217dac2a648f6f4de5f">mtnet::HttpClient::Post</a></div><div class="ttdeci">void Post(HttpHeaderBuilder &amp;_header, const std::string &amp;_pathAndQuery, const ResponceCallback &amp;_onResponce, const std::string &amp;_body=&quot;&quot;)</div><div class="ttdoc">ポストリクエストを送信する</div><div class="ttdef"><b>Definition:</b> <a href="HttpClient_8cpp_source.html#l00056">HttpClient.cpp:56</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aefdd060b37f42dc3375fb7baef4e929f" name="aefdd060b37f42dc3375fb7baef4e929f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefdd060b37f42dc3375fb7baef4e929f">&#9670;&#160;</a></span>Post() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mtnet::HttpClient::Post </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmtnet_1_1HttpHeaderBuilder.html">HttpHeaderBuilder</a> &amp;&#160;</td>
+          <td class="paramname"><em>_header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_pathAndQuery</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_body</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="HttpClient_8cpp_source.html">HttpClient.cpp</a> の <a class="el" href="HttpClient_8cpp_source.html#l00065">65</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    std::ostringstream getHttp{};</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    getHttp &lt;&lt; <span class="stringliteral">&quot;POST /&quot;</span> &lt;&lt; _pathAndQuery &lt;&lt; <span class="stringliteral">&quot; HTTP/1.1&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   70</span>    getHttp &lt;&lt; <span class="stringliteral">&quot;Host: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#a3f95d48efbf75f345b9a3cd70d089516">remoteUri_</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   71</span>    getHttp &lt;&lt; <span class="stringliteral">&quot;Connection: close&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   72</span>    getHttp &lt;&lt; <span class="stringliteral">&quot;Content-Length: &quot;</span> &lt;&lt; _body.size() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   73</span>    getHttp &lt;&lt; _header.oss_.str() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   74</span>    getHttp &lt;&lt; _body &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    std::string <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a> = getHttp.str();</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordtype">int</span> result{};</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a> = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    assert(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a> != INVALID_SOCKET  <span class="comment">// ソケットは正常に生成された</span></div>
+<div class="line"><span class="lineno">   83</span>        &amp;&amp; <span class="stringliteral">&quot;無効なソケットが生成された&quot;</span>);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    result = connect(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>, <span class="keyword">reinterpret_cast&lt;</span>SOCKADDR*<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a>), <span class="keyword">sizeof</span>(SOCKADDR_IN));</div>
+<div class="line"><span class="lineno">   86</span>    </div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (result != 0)</div>
+<div class="line"><span class="lineno">   88</span>    {</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordtype">int</span> error = WSAGetLastError();</div>
+<div class="line"><span class="lineno">   90</span>        printf(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
+<div class="line"><span class="lineno">   92</span>    </div>
+<div class="line"><span class="lineno">   93</span>    assert(result == 0  <span class="comment">// 接続できている</span></div>
+<div class="line"><span class="lineno">   94</span>        &amp;&amp; <span class="stringliteral">&quot;Could not connect&quot;</span>);</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    result = send(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>, getHttp.str().c_str(), <a class="code hl_function" href="namespacerefl_1_1util_1_1detail.html#ab42400654840909e72927216b33ff09a">strlen</a>(getHttp.str().c_str()), NULL);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    assert(result &gt; 0  <span class="comment">// 送信できている</span></div>
+<div class="line"><span class="lineno">   99</span>        &amp;&amp; <span class="stringliteral">&quot;Failed send&quot;</span>);</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordtype">char</span> buffer[<a class="code hl_variable" href="namespaceanonymous__namespace_02MeshRenderer_8cpp_03.html#ab8b83f0e494a9186dfb3ee816739c6cb">BUFFER_SIZE</a>]{};  <span class="comment">// 受信バッファ</span></div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordtype">int</span> receiveLength{};</div>
+<div class="line"><span class="lineno">  104</span>    std::string receiveString{};</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  107</span>    {</div>
+<div class="line"><span class="lineno">  108</span>        receiveLength = recv(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>, buffer, BUFFER_SIZE, NULL);</div>
+<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">if</span> (receiveLength == 0)  <span class="comment">// 0 なら止める</span></div>
+<div class="line"><span class="lineno">  110</span>        {</div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  112</span>        }</div>
+<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; receiveLength; i++)</div>
+<div class="line"><span class="lineno">  114</span>        {</div>
+<div class="line"><span class="lineno">  115</span>            receiveString.push_back(buffer[i]);</div>
+<div class="line"><span class="lineno">  116</span>        }</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    result = closesocket(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>);</div>
+<div class="line"><span class="lineno">  120</span>    assert(result == 0  <span class="comment">// 閉じられている</span></div>
+<div class="line"><span class="lineno">  121</span>        &amp;&amp; <span class="stringliteral">&quot;close error&quot;</span>);</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a> = INVALID_SOCKET;</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> receiveString;</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+<div class="ttc" id="anamespaceanonymous__namespace_02MTImGui_8cpp_03_html_ac42254ac88728a2dc2542212c2756efe"><div class="ttname"><a href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">anonymous_namespace{MTImGui.cpp}::buf</a></div><div class="ttdeci">std::string buf</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00028">MTImGui.cpp:28</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02MeshRenderer_8cpp_03_html_ab8b83f0e494a9186dfb3ee816739c6cb"><div class="ttname"><a href="namespaceanonymous__namespace_02MeshRenderer_8cpp_03.html#ab8b83f0e494a9186dfb3ee816739c6cb">anonymous_namespace{MeshRenderer.cpp}::BUFFER_SIZE</a></div><div class="ttdeci">constexpr size_t BUFFER_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8cpp_source.html#l00007">MeshRenderer.cpp:7</a></div></div>
+<div class="ttc" id="anamespacerefl_1_1util_1_1detail_html_ab42400654840909e72927216b33ff09a"><div class="ttname"><a href="namespacerefl_1_1util_1_1detail.html#ab42400654840909e72927216b33ff09a">refl::util::detail::strlen</a></div><div class="ttdeci">constexpr size_t strlen(const char *const str)</div><div class="ttdef"><b>Definition:</b> <a href="refl_8hpp_source.html#l00407">refl.hpp:407</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="HttpHeaderBuilder_8h_source.html#l00036">mtnet::HttpHeaderBuilder::oss_</a>.</p>
+
+</div>
+</div>
+<a id="ad3b1442830112164b33eb5026c3873b6" name="ad3b1442830112164b33eb5026c3873b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3b1442830112164b33eb5026c3873b6">&#9670;&#160;</a></span>PostAndBinaryResponce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtnet::HttpClient::PostAndBinaryResponce </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmtnet_1_1HttpHeaderBuilder.html">HttpHeaderBuilder</a> &amp;&#160;</td>
+          <td class="paramname"><em>_header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_pathAndQuery</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmtnet_1_1HttpClient.html#a00925ef84baed2620cae88d40b132a0f">BinaryResponceCallback</a> &amp;&#160;</td>
+          <td class="paramname"><em>_onRecponce</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_body</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="HttpClient_8cpp_source.html">HttpClient.cpp</a> の <a class="el" href="HttpClient_8cpp_source.html#l00127">127</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>{</div>
+<div class="line"><span class="lineno">  133</span>    std::ostringstream getHttp{};</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>    getHttp &lt;&lt; <span class="stringliteral">&quot;POST /&quot;</span> &lt;&lt; _pathAndQuery &lt;&lt; <span class="stringliteral">&quot; HTTP/1.1&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  136</span>    getHttp &lt;&lt; <span class="stringliteral">&quot;Host: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#a3f95d48efbf75f345b9a3cd70d089516">remoteUri_</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  137</span>    getHttp &lt;&lt; <span class="stringliteral">&quot;Connection: close&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  138</span>    getHttp &lt;&lt; <span class="stringliteral">&quot;Content-Length: &quot;</span> &lt;&lt; _body.size() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  139</span>    getHttp &lt;&lt; _header.oss_.str() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  140</span>    getHttp &lt;&lt; _body &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>    std::string <a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a> = getHttp.str();</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordtype">int</span> result{};</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a> = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    assert(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a> != INVALID_SOCKET  <span class="comment">// ソケットは正常に生成された</span></div>
+<div class="line"><span class="lineno">  149</span>        &amp;&amp; <span class="stringliteral">&quot;無効なソケットが生成された&quot;</span>);</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>    result = connect(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>, <span class="keyword">reinterpret_cast&lt;</span>SOCKADDR*<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#ae4d285aeaa0d40df7cbd91c14e018f93">sockAddr_</a>), <span class="keyword">sizeof</span>(SOCKADDR_IN));</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">if</span> (result != 0)</div>
+<div class="line"><span class="lineno">  154</span>    {</div>
+<div class="line"><span class="lineno">  155</span>        <span class="keywordtype">int</span> error = WSAGetLastError();</div>
+<div class="line"><span class="lineno">  156</span>        printf(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    assert(result == 0  <span class="comment">// 接続できている</span></div>
+<div class="line"><span class="lineno">  160</span>        &amp;&amp; <span class="stringliteral">&quot;Could not connect&quot;</span>);</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>    result = send(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>, getHttp.str().c_str(), <a class="code hl_function" href="namespacerefl_1_1util_1_1detail.html#ab42400654840909e72927216b33ff09a">strlen</a>(getHttp.str().c_str()), NULL);</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    assert(result &gt; 0  <span class="comment">// 送信できている</span></div>
+<div class="line"><span class="lineno">  165</span>        &amp;&amp; <span class="stringliteral">&quot;Failed send&quot;</span>);</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordtype">char</span> buffer[<a class="code hl_variable" href="namespaceanonymous__namespace_02MeshRenderer_8cpp_03.html#ab8b83f0e494a9186dfb3ee816739c6cb">BUFFER_SIZE</a>]{};  <span class="comment">// 受信バッファ</span></div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordtype">int</span> receiveLength{};</div>
+<div class="line"><span class="lineno">  170</span>    std::vector&lt;unsigned char&gt; buildBuffer{};</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  173</span>    {</div>
+<div class="line"><span class="lineno">  174</span>        receiveLength = recv(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>, buffer, BUFFER_SIZE, NULL);</div>
+<div class="line"><span class="lineno">  175</span>        <span class="keywordflow">if</span> (receiveLength &lt;= 0)  <span class="comment">// 0 以下なら止める</span></div>
+<div class="line"><span class="lineno">  176</span>        {</div>
+<div class="line"><span class="lineno">  177</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  178</span>        }</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>        buildBuffer.insert(buildBuffer.end(), buffer, buffer + receiveLength);</div>
+<div class="line"><span class="lineno">  181</span>    }</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    result = closesocket(<a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a>);</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">if</span> (result != 0)  <span class="comment">// 閉じられている</span></div>
+<div class="line"><span class="lineno">  185</span>    {</div>
+<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  187</span>    }</div>
+<div class="line"><span class="lineno">  188</span>    <span class="comment">//assert(result == 0  // 閉じられている</span></div>
+<div class="line"><span class="lineno">  189</span>    <span class="comment">//  &amp;&amp; &quot;close error&quot;);</span></div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_variable" href="classmtnet_1_1HttpClient.html#afe9df8549d7b92f6ba9fe3fc7abf80cc">socket_</a> = INVALID_SOCKET;</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    _onRecponce(buildBuffer);</div>
+<div class="line"><span class="lineno">  193</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="HttpHeaderBuilder_8h_source.html#l00036">mtnet::HttpHeaderBuilder::oss_</a>.</p>
+
+</div>
+</div>
+<a id="a95994ecf1069dad93236f937d90ca595" name="a95994ecf1069dad93236f937d90ca595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95994ecf1069dad93236f937d90ca595">&#9670;&#160;</a></span>ToPercentURI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mtnet::HttpClient::ToPercentURI </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>文字列をパーセントURIに変換する</p>
+<p>URI内で日本語などは 文字コード になる</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="HttpClient_8cpp_source.html">HttpClient.cpp</a> の <a class="el" href="HttpClient_8cpp_source.html#l00245">245</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  246</span>{</div>
+<div class="line"><span class="lineno">  247</span>    std::ostringstream encoded;</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c : str)</div>
+<div class="line"><span class="lineno">  250</span>    {</div>
+<div class="line"><span class="lineno">  251</span>        <span class="keywordflow">if</span> ((<span class="charliteral">&#39;0&#39;</span> &lt;= c &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>) ||</div>
+<div class="line"><span class="lineno">  252</span>            (<span class="charliteral">&#39;A&#39;</span> &lt;= c &amp;&amp; c &lt;= <span class="charliteral">&#39;Z&#39;</span>) ||</div>
+<div class="line"><span class="lineno">  253</span>            (<span class="charliteral">&#39;a&#39;</span> &lt;= c &amp;&amp; c &lt;= <span class="charliteral">&#39;z&#39;</span>) ||</div>
+<div class="line"><span class="lineno">  254</span>            c == <span class="charliteral">&#39;-&#39;</span> || c == <span class="charliteral">&#39;_&#39;</span> || c == <span class="charliteral">&#39;.&#39;</span> || c == <span class="charliteral">&#39;~&#39;</span>)</div>
+<div class="line"><span class="lineno">  255</span>        {</div>
+<div class="line"><span class="lineno">  256</span>            encoded &lt;&lt; c;</div>
+<div class="line"><span class="lineno">  257</span>        }</div>
+<div class="line"><span class="lineno">  258</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  259</span>        {</div>
+<div class="line"><span class="lineno">  260</span>            encoded &lt;&lt; &#39;%&#39; &lt;&lt; std::uppercase &lt;&lt; std::setw(2) &lt;&lt; std::setfill(&#39;0&#39;) &lt;&lt; std::hex &lt;&lt; static_cast&lt;int&gt;(c);</div>
+<div class="line"><span class="lineno">  261</span>        }</div>
+<div class="line"><span class="lineno">  262</span>    }</div>
+<div class="line"><span class="lineno">  263</span>    <span class="keywordflow">return</span> encoded.str();</div>
+<div class="line"><span class="lineno">  264</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa82f5e78e7fa74f5edd990686d19f1ba" name="aa82f5e78e7fa74f5edd990686d19f1ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa82f5e78e7fa74f5edd990686d19f1ba">&#9670;&#160;</a></span>TryToIPAddresAndPort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtnet::HttpClient::TryToIPAddresAndPort </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_srcUrl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BYTE *&#160;</td>
+          <td class="paramname"><em>_pOctet1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BYTE *&#160;</td>
+          <td class="paramname"><em>_pOctet2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BYTE *&#160;</td>
+          <td class="paramname"><em>_pOctet3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BYTE *&#160;</td>
+          <td class="paramname"><em>_pOctet4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">USHORT *&#160;</td>
+          <td class="paramname"><em>_pPortNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>試しにURLをIPアドレスとポート番号に分解する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_srcUrl</td><td>元のURL</td></tr>
+    <tr><td class="paramname">_pOctet1</td><td>ポインタ渡し:IPアドレスの1オクテット目</td></tr>
+    <tr><td class="paramname">_pOctet2</td><td>ポインタ渡し:IPアドレスの2オクテット目</td></tr>
+    <tr><td class="paramname">_pOctet3</td><td>ポインタ渡し:IPアドレスの3オクテット目</td></tr>
+    <tr><td class="paramname">_pOctet4</td><td>ポインタ渡し:IPアドレスの4オクテット目</td></tr>
+    <tr><td class="paramname">_pPortNumber</td><td>ポインタ渡し:ポート番号</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>成功した true / false</dd></dl>
+
+<p class="definition"> <a class="el" href="HttpClient_8cpp_source.html">HttpClient.cpp</a> の <a class="el" href="HttpClient_8cpp_source.html#l00205">205</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>{</div>
+<div class="line"><span class="lineno">  213</span>    std::istringstream iss{ _srcUrl };</div>
+<div class="line"><span class="lineno">  214</span>    std::string splitString{};</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">if</span> (!std::getline(iss, splitString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">  217</span>    {</div>
+<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  219</span>    }</div>
+<div class="line"><span class="lineno">  220</span>    *_pOctet1 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(splitString));</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">if</span> (!std::getline(iss, splitString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">  222</span>    {</div>
+<div class="line"><span class="lineno">  223</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  224</span>    }</div>
+<div class="line"><span class="lineno">  225</span>    *_pOctet2 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(splitString));</div>
+<div class="line"><span class="lineno">  226</span>    <span class="keywordflow">if</span> (!std::getline(iss, splitString, <span class="charliteral">&#39;.&#39;</span>))</div>
+<div class="line"><span class="lineno">  227</span>    {</div>
+<div class="line"><span class="lineno">  228</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  229</span>    }</div>
+<div class="line"><span class="lineno">  230</span>    *_pOctet3 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(splitString));</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">if</span> (!std::getline(iss, splitString, <span class="charliteral">&#39;:&#39;</span>))</div>
+<div class="line"><span class="lineno">  232</span>    {</div>
+<div class="line"><span class="lineno">  233</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  234</span>    }</div>
+<div class="line"><span class="lineno">  235</span>    *_pOctet4 = <span class="keyword">static_cast&lt;</span>UCHAR<span class="keyword">&gt;</span>(std::stoul(splitString));</div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">if</span> (!std::getline(iss, splitString, <span class="charliteral">&#39;/&#39;</span>))</div>
+<div class="line"><span class="lineno">  237</span>    {</div>
+<div class="line"><span class="lineno">  238</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  239</span>    }</div>
+<div class="line"><span class="lineno">  240</span>    *_pPortNumber = <span class="keyword">static_cast&lt;</span>USHORT<span class="keyword">&gt;</span>(std::stoul(splitString));</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  243</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a3f95d48efbf75f345b9a3cd70d089516" name="a3f95d48efbf75f345b9a3cd70d089516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f95d48efbf75f345b9a3cd70d089516">&#9670;&#160;</a></span>remoteUri_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mtnet::HttpClient::remoteUri_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="HttpClient_8h_source.html">HttpClient.h</a> の <a class="el" href="HttpClient_8h_source.html#l00089">89</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae4d285aeaa0d40df7cbd91c14e018f93" name="ae4d285aeaa0d40df7cbd91c14e018f93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d285aeaa0d40df7cbd91c14e018f93">&#9670;&#160;</a></span>sockAddr_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SOCKADDR_IN mtnet::HttpClient::sockAddr_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="HttpClient_8h_source.html">HttpClient.h</a> の <a class="el" href="HttpClient_8h_source.html#l00088">88</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afe9df8549d7b92f6ba9fe3fc7abf80cc" name="afe9df8549d7b92f6ba9fe3fc7abf80cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9df8549d7b92f6ba9fe3fc7abf80cc">&#9670;&#160;</a></span>socket_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SOCKET mtnet::HttpClient::socket_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="HttpClient_8h_source.html">HttpClient.h</a> の <a class="el" href="HttpClient_8h_source.html#l00087">87</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaad8bbba1270854afbfd74235c36e58a" name="aaad8bbba1270854afbfd74235c36e58a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad8bbba1270854afbfd74235c36e58a">&#9670;&#160;</a></span>wsaData_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WSADATA mtnet::HttpClient::wsaData_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="HttpClient_8h_source.html">HttpClient.h</a> の <a class="el" href="HttpClient_8h_source.html#l00086">86</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="HttpClient_8h_source.html">HttpClient.h</a></li>
+<li><a class="el" href="HttpClient_8cpp_source.html">HttpClient.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtnet.html">mtnet</a></li><li class="navelem"><a class="el" href="classmtnet_1_1HttpClient.html">HttpClient</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

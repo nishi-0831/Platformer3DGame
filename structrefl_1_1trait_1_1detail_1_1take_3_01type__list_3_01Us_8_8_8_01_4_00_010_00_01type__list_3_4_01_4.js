@@ -1,0 +1,4 @@
+var structrefl_1_1trait_1_1detail_1_1take_3_01type__list_3_01Us_8_8_8_01_4_00_010_00_01type__list_3_4_01_4 =
+[
+    [ "type", "structrefl_1_1trait_1_1detail_1_1take_3_01type__list_3_01Us_8_8_8_01_4_00_010_00_01type__list_3_4_01_4.html#a4641996d935c0b944511112085344152", null ]
+];

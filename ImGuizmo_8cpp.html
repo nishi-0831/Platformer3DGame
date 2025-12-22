@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: ImGuizmo.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ImGuizmo_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">ImGuizmo.cpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="imgui_8h_source.html">imgui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imgui__internal_8h_source.html">imgui_internal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ImGuizmo_8h_source.html">ImGuizmo.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ImGuizmo.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="ImGuizmo_8cpp__incl.svg" width="710" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="ImGuizmo_8cpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMGUIZMO__NAMESPACE_1_1vec__t.html">IMGUIZMO_NAMESPACE::vec_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMGUIZMO__NAMESPACE_1_1matrix__t.html">IMGUIZMO_NAMESPACE::matrix_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMGUIZMO__NAMESPACE_1_1Context.html">IMGUIZMO_NAMESPACE::Context</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceIMGUIZMO__NAMESPACE"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html">IMGUIZMO_NAMESPACE</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:adf4d73301961430d50d7edd96f92ce38"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ImGuizmo_8cpp.html#adf4d73301961430d50d7edd96f92ce38">IMGUI_DEFINE_MATH_OPERATORS</a></td></tr>
+<tr class="separator:adf4d73301961430d50d7edd96f92ce38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad331bcfc5026697e79431763161a9f18"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ImGuizmo_8cpp.html#ad331bcfc5026697e79431763161a9f18">_malloca</a>(x)&#160;&#160;&#160;alloca(x)</td></tr>
+<tr class="separator:ad331bcfc5026697e79431763161a9f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c4b67228a211e9277c6d64bbb5bc37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ImGuizmo_8cpp.html#ae6c4b67228a211e9277c6d64bbb5bc37">_freea</a>(x)</td></tr>
+<tr class="separator:ae6c4b67228a211e9277c6d64bbb5bc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:a600f5d05a2ad59d7138e05e291033ae4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4">IMGUIZMO_NAMESPACE::MOVETYPE</a> { <br />
+&#160;&#160;<a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4a739b7bab95df3777e0ec65226b51d685">IMGUIZMO_NAMESPACE::MT_NONE</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4ad3e9a25c5ff428d1b71c3add79cb6a43">IMGUIZMO_NAMESPACE::MT_MOVE_X</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4a67965c4addfbeab607e71cb29fbf2ce6">IMGUIZMO_NAMESPACE::MT_MOVE_Y</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4a919e38b105ea805873ae378d18f11cc1">IMGUIZMO_NAMESPACE::MT_MOVE_Z</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4a2b54848058985f38b364b4b81c3c873d">IMGUIZMO_NAMESPACE::MT_MOVE_YZ</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4abd349e808b1981b0eb401c56a7fbacd8">IMGUIZMO_NAMESPACE::MT_MOVE_ZX</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4ad59491071eba46eb6832e5a2d91a4345">IMGUIZMO_NAMESPACE::MT_MOVE_XY</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4aca96e0854c9cab7eec72da36bc1f41f7">IMGUIZMO_NAMESPACE::MT_MOVE_SCREEN</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4a4604018ac0fdf955455febaf5bc1c2c5">IMGUIZMO_NAMESPACE::MT_ROTATE_X</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4af0d63216c4da99a79141c49ddeb8d704">IMGUIZMO_NAMESPACE::MT_ROTATE_Y</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4a5f296470354940726e0d40bb2a7cf299">IMGUIZMO_NAMESPACE::MT_ROTATE_Z</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4a14fa2821926154364f49cb1fb7a7d2b8">IMGUIZMO_NAMESPACE::MT_ROTATE_SCREEN</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4acbd84ed4d179cb121408147e54cb9116">IMGUIZMO_NAMESPACE::MT_SCALE_X</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4a4634f49d1182cf7839db480ae143dbb0">IMGUIZMO_NAMESPACE::MT_SCALE_Y</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4a244bd4ebf5825a4fa1ff5f9faaa6dbbf">IMGUIZMO_NAMESPACE::MT_SCALE_Z</a>
+, <a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a600f5d05a2ad59d7138e05e291033ae4ad9ffabde538490bd47ed9cdc36a75715">IMGUIZMO_NAMESPACE::MT_SCALE_XYZ</a>
+<br />
+ }</td></tr>
+<tr class="separator:a600f5d05a2ad59d7138e05e291033ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a053488d4e2603b604fcd1bba495e95a7"><td class="memItemLeft" align="right" valign="top">static OPERATION&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a053488d4e2603b604fcd1bba495e95a7">IMGUIZMO_NAMESPACE::operator&amp;</a> (OPERATION lhs, OPERATION rhs)</td></tr>
+<tr class="separator:a053488d4e2603b604fcd1bba495e95a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63edb6455e4860b9179994915cb8fb71"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a63edb6455e4860b9179994915cb8fb71">IMGUIZMO_NAMESPACE::operator!=</a> (OPERATION lhs, int rhs)</td></tr>
+<tr class="separator:a63edb6455e4860b9179994915cb8fb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e246612ef192a30c592842f0767dfe4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a0e246612ef192a30c592842f0767dfe4">IMGUIZMO_NAMESPACE::Intersects</a> (OPERATION lhs, OPERATION rhs)</td></tr>
+<tr class="separator:a0e246612ef192a30c592842f0767dfe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40c2e8850aa1e5b28988c030b4374192"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a40c2e8850aa1e5b28988c030b4374192">IMGUIZMO_NAMESPACE::Contains</a> (OPERATION lhs, OPERATION rhs)</td></tr>
+<tr class="separator:a40c2e8850aa1e5b28988c030b4374192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c2fe307f1d4dab0f17e741e9d22415"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a29c2fe307f1d4dab0f17e741e9d22415">IMGUIZMO_NAMESPACE::FPU_MatrixF_x_MatrixF</a> (const float *a, const float *b, float *r)</td></tr>
+<tr class="separator:a29c2fe307f1d4dab0f17e741e9d22415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49fe9cd8bec2111c7c2942f0075bf3c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a49fe9cd8bec2111c7c2942f0075bf3c1">IMGUIZMO_NAMESPACE::Frustum</a> (float left, float right, float bottom, float top, float znear, float zfar, float *m16)</td></tr>
+<tr class="separator:a49fe9cd8bec2111c7c2942f0075bf3c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a8524247fd11c1e6e7c5f599c28f4c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a9a8524247fd11c1e6e7c5f599c28f4c1">IMGUIZMO_NAMESPACE::Perspective</a> (float fovyInDegrees, float aspectRatio, float znear, float zfar, float *m16)</td></tr>
+<tr class="separator:a9a8524247fd11c1e6e7c5f599c28f4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53c6510e43f23b38c27835da6869fc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ab53c6510e43f23b38c27835da6869fc9">IMGUIZMO_NAMESPACE::Cross</a> (const float *a, const float *b, float *r)</td></tr>
+<tr class="separator:ab53c6510e43f23b38c27835da6869fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b7c40a8b2cbd7f587baa57f07293201"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a6b7c40a8b2cbd7f587baa57f07293201">IMGUIZMO_NAMESPACE::Dot</a> (const float *a, const float *b)</td></tr>
+<tr class="separator:a6b7c40a8b2cbd7f587baa57f07293201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7183df1fcf4e6efe5260cac0cf59b245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a7183df1fcf4e6efe5260cac0cf59b245">IMGUIZMO_NAMESPACE::Normalize</a> (const float *a, float *r)</td></tr>
+<tr class="separator:a7183df1fcf4e6efe5260cac0cf59b245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395d4ea57f1198e615b4406518b54c5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a395d4ea57f1198e615b4406518b54c5b">IMGUIZMO_NAMESPACE::LookAt</a> (const float *eye, const float *at, const float *up, float *m16)</td></tr>
+<tr class="separator:a395d4ea57f1198e615b4406518b54c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1958995a492178d5da6dd2ee4a77e1e3"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a1958995a492178d5da6dd2ee4a77e1e3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a1958995a492178d5da6dd2ee4a77e1e3">IMGUIZMO_NAMESPACE::Clamp</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> x, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> y, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> z)</td></tr>
+<tr class="separator:a1958995a492178d5da6dd2ee4a77e1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2703669ecb8b4541ae1cd66f5096702a"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a2703669ecb8b4541ae1cd66f5096702a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a2703669ecb8b4541ae1cd66f5096702a">IMGUIZMO_NAMESPACE::max</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> x, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> y)</td></tr>
+<tr class="separator:a2703669ecb8b4541ae1cd66f5096702a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acacd28164e1d415e6cdf687e57539a2d"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:acacd28164e1d415e6cdf687e57539a2d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#acacd28164e1d415e6cdf687e57539a2d">IMGUIZMO_NAMESPACE::min</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> x, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> y)</td></tr>
+<tr class="separator:acacd28164e1d415e6cdf687e57539a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab3782ebd2a09b107a624e6c98d3d5b"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a1ab3782ebd2a09b107a624e6c98d3d5b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a1ab3782ebd2a09b107a624e6c98d3d5b">IMGUIZMO_NAMESPACE::IsWithin</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> x, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> y, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> z)</td></tr>
+<tr class="separator:a1ab3782ebd2a09b107a624e6c98d3d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76324649a802fbc72ff34c3256822518"><td class="memItemLeft" align="right" valign="top">vec_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a76324649a802fbc72ff34c3256822518">IMGUIZMO_NAMESPACE::makeVect</a> (float _x, float _y, float _z=0.f, float _w=0.f)</td></tr>
+<tr class="separator:a76324649a802fbc72ff34c3256822518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f694ce20a54ca1f2d224788ea430186"><td class="memItemLeft" align="right" valign="top">vec_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a1f694ce20a54ca1f2d224788ea430186">IMGUIZMO_NAMESPACE::makeVect</a> (<a class="el" href="structImVec2.html">ImVec2</a> v)</td></tr>
+<tr class="separator:a1f694ce20a54ca1f2d224788ea430186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d9d75f9cfb5de40c04c3d28ee040022"><td class="memItemLeft" align="right" valign="top">vec_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a9d9d75f9cfb5de40c04c3d28ee040022">IMGUIZMO_NAMESPACE::Normalized</a> (const vec_t &amp;v)</td></tr>
+<tr class="separator:a9d9d75f9cfb5de40c04c3d28ee040022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad706ba83a5b684862ba300ed589f96"><td class="memItemLeft" align="right" valign="top">vec_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a2ad706ba83a5b684862ba300ed589f96">IMGUIZMO_NAMESPACE::Cross</a> (const vec_t &amp;v1, const vec_t &amp;v2)</td></tr>
+<tr class="separator:a2ad706ba83a5b684862ba300ed589f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2acfd45435a6e1f227eabb40ea5056b9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a2acfd45435a6e1f227eabb40ea5056b9">IMGUIZMO_NAMESPACE::Dot</a> (const vec_t &amp;v1, const vec_t &amp;v2)</td></tr>
+<tr class="separator:a2acfd45435a6e1f227eabb40ea5056b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba093f474d6e3e926e16c4d9f90a802"><td class="memItemLeft" align="right" valign="top">vec_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#afba093f474d6e3e926e16c4d9f90a802">IMGUIZMO_NAMESPACE::BuildPlan</a> (const vec_t &amp;p_point1, const vec_t &amp;p_normal)</td></tr>
+<tr class="separator:afba093f474d6e3e926e16c4d9f90a802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637f1ce7aecd4411db6850cc795f9570"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a637f1ce7aecd4411db6850cc795f9570">IMGUIZMO_NAMESPACE::IsTranslateType</a> (int type)</td></tr>
+<tr class="separator:a637f1ce7aecd4411db6850cc795f9570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e1c9dc0594ebc034b106710a84aa25b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a4e1c9dc0594ebc034b106710a84aa25b">IMGUIZMO_NAMESPACE::IsRotateType</a> (int type)</td></tr>
+<tr class="separator:a4e1c9dc0594ebc034b106710a84aa25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e03bd27d23acf8964decdf003d412d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a55e03bd27d23acf8964decdf003d412d">IMGUIZMO_NAMESPACE::IsScaleType</a> (int type)</td></tr>
+<tr class="separator:a55e03bd27d23acf8964decdf003d412d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a835c788bbfd8713aa1133c196c98b78e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a835c788bbfd8713aa1133c196c98b78e">IMGUIZMO_NAMESPACE::GetMoveType</a> (OPERATION op, vec_t *gizmoHitProportion)</td></tr>
+<tr class="separator:a835c788bbfd8713aa1133c196c98b78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfb9915cdd8a71c7f58b5298dd28bd23"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#abfb9915cdd8a71c7f58b5298dd28bd23">IMGUIZMO_NAMESPACE::GetRotateType</a> (OPERATION op)</td></tr>
+<tr class="separator:abfb9915cdd8a71c7f58b5298dd28bd23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adefb74f61b224597bb181785574cced2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#adefb74f61b224597bb181785574cced2">IMGUIZMO_NAMESPACE::GetScaleType</a> (OPERATION op)</td></tr>
+<tr class="separator:adefb74f61b224597bb181785574cced2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f43ca16e43ba807e722c6f2ccd513ad"><td class="memItemLeft" align="right" valign="top">Style &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a0f43ca16e43ba807e722c6f2ccd513ad">IMGUIZMO_NAMESPACE::GetStyle</a> ()</td></tr>
+<tr class="separator:a0f43ca16e43ba807e722c6f2ccd513ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e9932acb58d4ac77d08ec5969d3ac6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="imgui_8h.html#a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ac6e9932acb58d4ac77d08ec5969d3ac6">IMGUIZMO_NAMESPACE::GetColorU32</a> (int idx)</td></tr>
+<tr class="separator:ac6e9932acb58d4ac77d08ec5969d3ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da1a3b77a0d6c9def26bb7fcd98214b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structImVec2.html">ImVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a9da1a3b77a0d6c9def26bb7fcd98214b">IMGUIZMO_NAMESPACE::worldToPos</a> (const vec_t &amp;worldPos, const matrix_t &amp;mat, <a class="el" href="structImVec2.html">ImVec2</a> position=<a class="el" href="structImVec2.html">ImVec2</a>(gContext.mX, gContext.mY), <a class="el" href="structImVec2.html">ImVec2</a> size=<a class="el" href="structImVec2.html">ImVec2</a>(gContext.mWidth, gContext.mHeight))</td></tr>
+<tr class="separator:a9da1a3b77a0d6c9def26bb7fcd98214b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a66153038f229a0456937db4c9f6002"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a7a66153038f229a0456937db4c9f6002">IMGUIZMO_NAMESPACE::ComputeCameraRay</a> (vec_t &amp;rayOrigin, vec_t &amp;rayDir, <a class="el" href="structImVec2.html">ImVec2</a> position=<a class="el" href="structImVec2.html">ImVec2</a>(gContext.mX, gContext.mY), <a class="el" href="structImVec2.html">ImVec2</a> size=<a class="el" href="structImVec2.html">ImVec2</a>(gContext.mWidth, gContext.mHeight))</td></tr>
+<tr class="separator:a7a66153038f229a0456937db4c9f6002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f1f0d318a148c1247edd11ac9dfc7ec"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a1f1f0d318a148c1247edd11ac9dfc7ec">IMGUIZMO_NAMESPACE::GetSegmentLengthClipSpace</a> (const vec_t &amp;start, const vec_t &amp;end, const bool localCoordinates=false)</td></tr>
+<tr class="separator:a1f1f0d318a148c1247edd11ac9dfc7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aaa59607812d70293d9534a06412e99"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a3aaa59607812d70293d9534a06412e99">IMGUIZMO_NAMESPACE::GetParallelogram</a> (const vec_t &amp;ptO, const vec_t &amp;ptA, const vec_t &amp;ptB)</td></tr>
+<tr class="separator:a3aaa59607812d70293d9534a06412e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8bfff9795986d58627b1e3a2886de2f"><td class="memItemLeft" align="right" valign="top">vec_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#aa8bfff9795986d58627b1e3a2886de2f">IMGUIZMO_NAMESPACE::PointOnSegment</a> (const vec_t &amp;point, const vec_t &amp;vertPos1, const vec_t &amp;vertPos2)</td></tr>
+<tr class="separator:aa8bfff9795986d58627b1e3a2886de2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608bec3302e96d95be93767a07d9d11a"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a608bec3302e96d95be93767a07d9d11a">IMGUIZMO_NAMESPACE::IntersectRayPlane</a> (const vec_t &amp;rOrigin, const vec_t &amp;rVector, const vec_t &amp;plan)</td></tr>
+<tr class="separator:a608bec3302e96d95be93767a07d9d11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f0ec14eb479a210ee24149c9acb511"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a55f0ec14eb479a210ee24149c9acb511">IMGUIZMO_NAMESPACE::DistanceToPlane</a> (const vec_t &amp;point, const vec_t &amp;plan)</td></tr>
+<tr class="separator:a55f0ec14eb479a210ee24149c9acb511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7070897ef654f961c4cd2a8fc78a1ba"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ae7070897ef654f961c4cd2a8fc78a1ba">IMGUIZMO_NAMESPACE::IsInContextRect</a> (<a class="el" href="structImVec2.html">ImVec2</a> p)</td></tr>
+<tr class="separator:ae7070897ef654f961c4cd2a8fc78a1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e503dcf56e8b94b2f58ae5a50e68d9d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a9e503dcf56e8b94b2f58ae5a50e68d9d">IMGUIZMO_NAMESPACE::IsHoveringWindow</a> ()</td></tr>
+<tr class="separator:a9e503dcf56e8b94b2f58ae5a50e68d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd5e3b4b9c162acec755b59c60641c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#abbd5e3b4b9c162acec755b59c60641c0">IMGUIZMO_NAMESPACE::SetRect</a> (float x, float y, float width, float height)</td></tr>
+<tr class="separator:abbd5e3b4b9c162acec755b59c60641c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02ac0691c0e2836e864981a8d344d62d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a02ac0691c0e2836e864981a8d344d62d">IMGUIZMO_NAMESPACE::SetOrthographic</a> (bool isOrthographic)</td></tr>
+<tr class="separator:a02ac0691c0e2836e864981a8d344d62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff4b7a807cc2f0b46c4403363b2ba665"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#aff4b7a807cc2f0b46c4403363b2ba665">IMGUIZMO_NAMESPACE::SetDrawlist</a> (<a class="el" href="structImDrawList.html">ImDrawList</a> *drawlist)</td></tr>
+<tr class="separator:aff4b7a807cc2f0b46c4403363b2ba665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a310401b0ff3d6811efddc5cefdd6f2d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a310401b0ff3d6811efddc5cefdd6f2d9">IMGUIZMO_NAMESPACE::SetImGuiContext</a> (<a class="el" href="structImGuiContext.html">ImGuiContext</a> *ctx)</td></tr>
+<tr class="separator:a310401b0ff3d6811efddc5cefdd6f2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e79232f8e04ed9a9da0bda4ed3ca1c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a7e79232f8e04ed9a9da0bda4ed3ca1c5">IMGUIZMO_NAMESPACE::BeginFrame</a> ()</td></tr>
+<tr class="separator:a7e79232f8e04ed9a9da0bda4ed3ca1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b0a4031623800800d4a129b07ff85bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a5b0a4031623800800d4a129b07ff85bc">IMGUIZMO_NAMESPACE::IsUsing</a> ()</td></tr>
+<tr class="separator:a5b0a4031623800800d4a129b07ff85bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c51fc1d5e31db659607cd37127ce57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a39c51fc1d5e31db659607cd37127ce57">IMGUIZMO_NAMESPACE::IsUsingViewManipulate</a> ()</td></tr>
+<tr class="separator:a39c51fc1d5e31db659607cd37127ce57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae2e2f539bf7d13638eac2f1e0a996f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a6ae2e2f539bf7d13638eac2f1e0a996f">IMGUIZMO_NAMESPACE::IsViewManipulateHovered</a> ()</td></tr>
+<tr class="separator:a6ae2e2f539bf7d13638eac2f1e0a996f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bccfaf3a762ab97e38445acdc75848e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a9bccfaf3a762ab97e38445acdc75848e">IMGUIZMO_NAMESPACE::IsUsingAny</a> ()</td></tr>
+<tr class="separator:a9bccfaf3a762ab97e38445acdc75848e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a368d3c0e65dfff9da9958a961fdaf2e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a368d3c0e65dfff9da9958a961fdaf2e2">IMGUIZMO_NAMESPACE::IsOver</a> ()</td></tr>
+<tr class="separator:a368d3c0e65dfff9da9958a961fdaf2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5351ffecc457ac412565d8a62b42661f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a5351ffecc457ac412565d8a62b42661f">IMGUIZMO_NAMESPACE::IsOver</a> (OPERATION op)</td></tr>
+<tr class="separator:a5351ffecc457ac412565d8a62b42661f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e7aca3e5a42308bc860f1b22fe6f4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ae4e7aca3e5a42308bc860f1b22fe6f4d">IMGUIZMO_NAMESPACE::Enable</a> (bool enable)</td></tr>
+<tr class="separator:ae4e7aca3e5a42308bc860f1b22fe6f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cc7533ff750257db246ff8b9d161295"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a7cc7533ff750257db246ff8b9d161295">IMGUIZMO_NAMESPACE::ComputeContext</a> (const float *view, const float *projection, float *matrix, MODE mode)</td></tr>
+<tr class="separator:a7cc7533ff750257db246ff8b9d161295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d548687810e9bb93dafcf38995b19b5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a1d548687810e9bb93dafcf38995b19b5">IMGUIZMO_NAMESPACE::ComputeColors</a> (<a class="el" href="imgui_8h.html#a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</a> *colors, int type, OPERATION operation)</td></tr>
+<tr class="separator:a1d548687810e9bb93dafcf38995b19b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35859961432b8c5eec1fb930f87a29f0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a35859961432b8c5eec1fb930f87a29f0">IMGUIZMO_NAMESPACE::ComputeTripodAxisAndVisibility</a> (const int axisIndex, vec_t &amp;dirAxis, vec_t &amp;dirPlaneX, vec_t &amp;dirPlaneY, bool &amp;belowAxisLimit, bool &amp;belowPlaneLimit, const bool localCoordinates=false)</td></tr>
+<tr class="separator:a35859961432b8c5eec1fb930f87a29f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5106c0292861175fdf76d5f0273ff9f6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a5106c0292861175fdf76d5f0273ff9f6">IMGUIZMO_NAMESPACE::ComputeSnap</a> (float *value, float snap)</td></tr>
+<tr class="separator:a5106c0292861175fdf76d5f0273ff9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0096c1819a0c078985f4fb456e591adb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a0096c1819a0c078985f4fb456e591adb">IMGUIZMO_NAMESPACE::ComputeSnap</a> (vec_t &amp;value, const float *snap)</td></tr>
+<tr class="separator:a0096c1819a0c078985f4fb456e591adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eee44e97434c9dddca71511e93caf7e"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a6eee44e97434c9dddca71511e93caf7e">IMGUIZMO_NAMESPACE::ComputeAngleOnPlan</a> ()</td></tr>
+<tr class="separator:a6eee44e97434c9dddca71511e93caf7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66e48fbd8ef0ffad6403510c485347e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ae66e48fbd8ef0ffad6403510c485347e">IMGUIZMO_NAMESPACE::DrawRotationGizmo</a> (OPERATION op, int type)</td></tr>
+<tr class="separator:ae66e48fbd8ef0ffad6403510c485347e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37b003b3b6f22cb30c1f7ce2c8d43891"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a37b003b3b6f22cb30c1f7ce2c8d43891">IMGUIZMO_NAMESPACE::DrawHatchedAxis</a> (const vec_t &amp;axis)</td></tr>
+<tr class="separator:a37b003b3b6f22cb30c1f7ce2c8d43891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d3d361aade2a1291d70611aa576422"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a76d3d361aade2a1291d70611aa576422">IMGUIZMO_NAMESPACE::DrawScaleGizmo</a> (OPERATION op, int type)</td></tr>
+<tr class="separator:a76d3d361aade2a1291d70611aa576422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74be51ecc6e7e35bf5648f1d27848adf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a74be51ecc6e7e35bf5648f1d27848adf">IMGUIZMO_NAMESPACE::DrawScaleUniveralGizmo</a> (OPERATION op, int type)</td></tr>
+<tr class="separator:a74be51ecc6e7e35bf5648f1d27848adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5c198ca076ed6778d53141aaf25e08"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a0d5c198ca076ed6778d53141aaf25e08">IMGUIZMO_NAMESPACE::DrawTranslationGizmo</a> (OPERATION op, int type)</td></tr>
+<tr class="separator:a0d5c198ca076ed6778d53141aaf25e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1414465e1bacda1b149bbf0a550f1615"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a1414465e1bacda1b149bbf0a550f1615">IMGUIZMO_NAMESPACE::CanActivate</a> ()</td></tr>
+<tr class="separator:a1414465e1bacda1b149bbf0a550f1615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedbac9a352c1488d57f65bd1631c8003"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#aedbac9a352c1488d57f65bd1631c8003">IMGUIZMO_NAMESPACE::HandleAndDrawLocalBounds</a> (const float *bounds, matrix_t *matrix, const float *snapValues, OPERATION operation)</td></tr>
+<tr class="separator:aedbac9a352c1488d57f65bd1631c8003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff973907013d81cd6b9ec8bdfd78e8c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a4ff973907013d81cd6b9ec8bdfd78e8c">IMGUIZMO_NAMESPACE::HandleTranslation</a> (float *matrix, float *deltaMatrix, OPERATION op, int &amp;type, const float *snap)</td></tr>
+<tr class="separator:a4ff973907013d81cd6b9ec8bdfd78e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e8d0f6bb00fc980a2adc12af495cd53"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a9e8d0f6bb00fc980a2adc12af495cd53">IMGUIZMO_NAMESPACE::HandleScale</a> (float *matrix, float *deltaMatrix, OPERATION op, int &amp;type, const float *snap)</td></tr>
+<tr class="separator:a9e8d0f6bb00fc980a2adc12af495cd53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d2643ed3b668a24f37115a3745342f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#af3d2643ed3b668a24f37115a3745342f">IMGUIZMO_NAMESPACE::HandleRotation</a> (float *matrix, float *deltaMatrix, OPERATION op, int &amp;type, const float *snap)</td></tr>
+<tr class="separator:af3d2643ed3b668a24f37115a3745342f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac30fce8d950790571ea13a08297c9f03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ac30fce8d950790571ea13a08297c9f03">IMGUIZMO_NAMESPACE::DecomposeMatrixToComponents</a> (const float *matrix, float *translation, float *rotation, float *scale)</td></tr>
+<tr class="separator:ac30fce8d950790571ea13a08297c9f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c59512494cf63fc0ab1ebbec5f58c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a19c59512494cf63fc0ab1ebbec5f58c7">IMGUIZMO_NAMESPACE::RecomposeMatrixFromComponents</a> (const float *translation, const float *rotation, const float *scale, float *matrix)</td></tr>
+<tr class="separator:a19c59512494cf63fc0ab1ebbec5f58c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf6842f10cdff2de78f3c8cd0726389"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#aedf6842f10cdff2de78f3c8cd0726389">IMGUIZMO_NAMESPACE::SetAlternativeWindow</a> (<a class="el" href="structImGuiWindow.html">ImGuiWindow</a> *window)</td></tr>
+<tr class="separator:aedf6842f10cdff2de78f3c8cd0726389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11754a207ad954f0a413a41ee455e315"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a11754a207ad954f0a413a41ee455e315">IMGUIZMO_NAMESPACE::SetID</a> (int id)</td></tr>
+<tr class="separator:a11754a207ad954f0a413a41ee455e315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ef2085fb33f6ca74e062b03dd712928"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a1ef2085fb33f6ca74e062b03dd712928">IMGUIZMO_NAMESPACE::GetID</a> (const char *str, const char *str_end)</td></tr>
+<tr class="separator:a1ef2085fb33f6ca74e062b03dd712928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885bb7c23e0290376dbdec4f10f8ad3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a885bb7c23e0290376dbdec4f10f8ad3f">IMGUIZMO_NAMESPACE::GetID</a> (const char *str)</td></tr>
+<tr class="separator:a885bb7c23e0290376dbdec4f10f8ad3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a424da761753ccac9c9f249765809d0d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a424da761753ccac9c9f249765809d0d6">IMGUIZMO_NAMESPACE::GetID</a> (const void *ptr)</td></tr>
+<tr class="separator:a424da761753ccac9c9f249765809d0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433051ea1a88df5f8066e65f03305d08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a433051ea1a88df5f8066e65f03305d08">IMGUIZMO_NAMESPACE::GetID</a> (int n)</td></tr>
+<tr class="separator:a433051ea1a88df5f8066e65f03305d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ba380f6bc423f9c1ea09f7829098062"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a5ba380f6bc423f9c1ea09f7829098062">IMGUIZMO_NAMESPACE::PushID</a> (const char *str_id)</td></tr>
+<tr class="separator:a5ba380f6bc423f9c1ea09f7829098062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab62df56f252c21cf634fe0a6b81bf557"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ab62df56f252c21cf634fe0a6b81bf557">IMGUIZMO_NAMESPACE::PushID</a> (const char *str_id_begin, const char *str_id_end)</td></tr>
+<tr class="separator:ab62df56f252c21cf634fe0a6b81bf557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d10a15a45d833be0c3753f683eef90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a78d10a15a45d833be0c3753f683eef90">IMGUIZMO_NAMESPACE::PushID</a> (const void *ptr_id)</td></tr>
+<tr class="separator:a78d10a15a45d833be0c3753f683eef90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a767eb3b377fb6f52e3494c2ce98d2928"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a767eb3b377fb6f52e3494c2ce98d2928">IMGUIZMO_NAMESPACE::PushID</a> (int int_id)</td></tr>
+<tr class="separator:a767eb3b377fb6f52e3494c2ce98d2928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1738141f8b12854d40442a15dfe4377c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a1738141f8b12854d40442a15dfe4377c">IMGUIZMO_NAMESPACE::PopID</a> ()</td></tr>
+<tr class="separator:a1738141f8b12854d40442a15dfe4377c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5fb6e9f6c58f6bb231ca710ae96c4b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ae5fb6e9f6c58f6bb231ca710ae96c4b7">IMGUIZMO_NAMESPACE::AllowAxisFlip</a> (bool value)</td></tr>
+<tr class="separator:ae5fb6e9f6c58f6bb231ca710ae96c4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf4c064ee250e23069b289fc3e0beee9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#abf4c064ee250e23069b289fc3e0beee9">IMGUIZMO_NAMESPACE::SetAxisLimit</a> (float value)</td></tr>
+<tr class="separator:abf4c064ee250e23069b289fc3e0beee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7158ae95c69a8778f98d5b34bdd48830"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a7158ae95c69a8778f98d5b34bdd48830">IMGUIZMO_NAMESPACE::SetAxisMask</a> (bool x, bool y, bool z)</td></tr>
+<tr class="separator:a7158ae95c69a8778f98d5b34bdd48830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a605622ddd4473a307711d0a53fa35b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a7a605622ddd4473a307711d0a53fa35b">IMGUIZMO_NAMESPACE::SetPlaneLimit</a> (float value)</td></tr>
+<tr class="separator:a7a605622ddd4473a307711d0a53fa35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d170aedb8147f986787b8bb96d85ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a12d170aedb8147f986787b8bb96d85ee">IMGUIZMO_NAMESPACE::IsOver</a> (float *position, float pixelRadius)</td></tr>
+<tr class="separator:a12d170aedb8147f986787b8bb96d85ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d9f13c118607e6ae36dfbc8904482d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a77d9f13c118607e6ae36dfbc8904482d">IMGUIZMO_NAMESPACE::Manipulate</a> (const float *view, const float *projection, OPERATION operation, MODE mode, float *matrix, float *deltaMatrix, const float *snap, const float *localBounds, const float *boundsSnap)</td></tr>
+<tr class="separator:a77d9f13c118607e6ae36dfbc8904482d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0299c443a324c9d3dd3c0a3188347c55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a0299c443a324c9d3dd3c0a3188347c55">IMGUIZMO_NAMESPACE::SetGizmoSizeClipSpace</a> (float value)</td></tr>
+<tr class="separator:a0299c443a324c9d3dd3c0a3188347c55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac474fcbb3031ecc3cb25604749f0dfc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ac474fcbb3031ecc3cb25604749f0dfc3">IMGUIZMO_NAMESPACE::ComputeFrustumPlanes</a> (vec_t *frustum, const float *clip)</td></tr>
+<tr class="separator:ac474fcbb3031ecc3cb25604749f0dfc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e43e125f953ef8035e0f600498f803"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a62e43e125f953ef8035e0f600498f803">IMGUIZMO_NAMESPACE::DrawCubes</a> (const float *view, const float *projection, const float *matrices, int matrixCount)</td></tr>
+<tr class="separator:a62e43e125f953ef8035e0f600498f803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf4dc750e99c0f4d188426435faab237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#adf4dc750e99c0f4d188426435faab237">IMGUIZMO_NAMESPACE::DrawGrid</a> (const float *view, const float *projection, const float *matrix, const float gridSize)</td></tr>
+<tr class="separator:adf4dc750e99c0f4d188426435faab237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6464b670b0b83ef0265842921c13d4b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a6464b670b0b83ef0265842921c13d4b0">IMGUIZMO_NAMESPACE::ViewManipulate</a> (float *view, const float *projection, OPERATION operation, MODE mode, float *matrix, float length, <a class="el" href="structImVec2.html">ImVec2</a> position, <a class="el" href="structImVec2.html">ImVec2</a> size, <a class="el" href="imgui_8h.html#a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</a> backgroundColor)</td></tr>
+<tr class="separator:a6464b670b0b83ef0265842921c13d4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c42aaf6b344a4c0c55e77cbac87eb42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a9c42aaf6b344a4c0c55e77cbac87eb42">IMGUIZMO_NAMESPACE::ViewManipulate</a> (float *view, float length, <a class="el" href="structImVec2.html">ImVec2</a> position, <a class="el" href="structImVec2.html">ImVec2</a> size, <a class="el" href="imgui_8h.html#a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</a> backgroundColor)</td></tr>
+<tr class="separator:a9c42aaf6b344a4c0c55e77cbac87eb42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a19837fe2fdbd098fdc757924e7c725da"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a19837fe2fdbd098fdc757924e7c725da">IMGUIZMO_NAMESPACE::ZPI</a> = 3.14159265358979323846f</td></tr>
+<tr class="separator:a19837fe2fdbd098fdc757924e7c725da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ee4a9f5b09f1104d02d7e8be98cd00"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a48ee4a9f5b09f1104d02d7e8be98cd00">IMGUIZMO_NAMESPACE::RAD2DEG</a> = (180.f / ZPI)</td></tr>
+<tr class="separator:a48ee4a9f5b09f1104d02d7e8be98cd00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69978eab949c3d088f7baba3f49c4bfa"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a69978eab949c3d088f7baba3f49c4bfa">IMGUIZMO_NAMESPACE::DEG2RAD</a> = (ZPI / 180.f)</td></tr>
+<tr class="separator:a69978eab949c3d088f7baba3f49c4bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c2241466aefc85fb41b7ced84f6bbb8"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a4c2241466aefc85fb41b7ced84f6bbb8">IMGUIZMO_NAMESPACE::screenRotateSize</a> = 0.06f</td></tr>
+<tr class="separator:a4c2241466aefc85fb41b7ced84f6bbb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc88b53620dd6d0e7eaa2f237a4fb6d9"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#acc88b53620dd6d0e7eaa2f237a4fb6d9">IMGUIZMO_NAMESPACE::rotationDisplayFactor</a> = 1.2f</td></tr>
+<tr class="separator:acc88b53620dd6d0e7eaa2f237a4fb6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42ab6f61b9c41084501c5ccece12941d"><td class="memItemLeft" align="right" valign="top">static const OPERATION&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a42ab6f61b9c41084501c5ccece12941d">IMGUIZMO_NAMESPACE::TRANSLATE_PLANS</a> [3] = { TRANSLATE_Y | TRANSLATE_Z, TRANSLATE_X | TRANSLATE_Z, TRANSLATE_X | TRANSLATE_Y }</td></tr>
+<tr class="separator:a42ab6f61b9c41084501c5ccece12941d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd228c3d8215181879021934508fee2e"><td class="memItemLeft" align="right" valign="top">static Context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#afd228c3d8215181879021934508fee2e">IMGUIZMO_NAMESPACE::gContext</a></td></tr>
+<tr class="separator:afd228c3d8215181879021934508fee2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af172afc39e5760e01e2f4a5b767cfe9b"><td class="memItemLeft" align="right" valign="top">static const vec_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#af172afc39e5760e01e2f4a5b767cfe9b">IMGUIZMO_NAMESPACE::directionUnary</a> [3] = { makeVect(1.f, 0.f, 0.f), makeVect(0.f, 1.f, 0.f), makeVect(0.f, 0.f, 1.f) }</td></tr>
+<tr class="separator:af172afc39e5760e01e2f4a5b767cfe9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1968d6100557de9e2aefc59b818161a"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#aa1968d6100557de9e2aefc59b818161a">IMGUIZMO_NAMESPACE::translationInfoMask</a> []</td></tr>
+<tr class="separator:aa1968d6100557de9e2aefc59b818161a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80a0818c3d1024cad0298512307eb28"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ab80a0818c3d1024cad0298512307eb28">IMGUIZMO_NAMESPACE::scaleInfoMask</a> [] = { &quot;X : %5.2f&quot;, &quot;Y : %5.2f&quot;, &quot;Z : %5.2f&quot;, &quot;XYZ : %5.2f&quot; }</td></tr>
+<tr class="separator:ab80a0818c3d1024cad0298512307eb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c35161c6bf1021523c1adb0cb5aec66"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a5c35161c6bf1021523c1adb0cb5aec66">IMGUIZMO_NAMESPACE::rotationInfoMask</a> [] = { &quot;X : %5.2f deg %5.2f rad&quot;, &quot;Y : %5.2f deg %5.2f rad&quot;, &quot;Z : %5.2f deg %5.2f rad&quot;, &quot;Screen : %5.2f deg %5.2f rad&quot; }</td></tr>
+<tr class="separator:a5c35161c6bf1021523c1adb0cb5aec66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab024869b986f859ff2a619f688c3dccb"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ab024869b986f859ff2a619f688c3dccb">IMGUIZMO_NAMESPACE::translationInfoIndex</a> [] = { 0,0,0, 1,0,0, 2,0,0, 1,2,0, 0,2,0, 0,1,0, 0,1,2 }</td></tr>
+<tr class="separator:ab024869b986f859ff2a619f688c3dccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8bed77016cd660755c6821f930cfd85"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ac8bed77016cd660755c6821f930cfd85">IMGUIZMO_NAMESPACE::quadMin</a> = 0.5f</td></tr>
+<tr class="separator:ac8bed77016cd660755c6821f930cfd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30a11224075bc508e7c153ac8b2472f"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#ad30a11224075bc508e7c153ac8b2472f">IMGUIZMO_NAMESPACE::quadMax</a> = 0.8f</td></tr>
+<tr class="separator:ad30a11224075bc508e7c153ac8b2472f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3010c31488385a247b843f9cb4347e0"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#af3010c31488385a247b843f9cb4347e0">IMGUIZMO_NAMESPACE::quadUV</a> [8] = { quadMin, quadMin, quadMin, quadMax, quadMax, quadMax, quadMax, quadMin }</td></tr>
+<tr class="separator:af3010c31488385a247b843f9cb4347e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23a33c278e5e4055babc7b863da9cce6"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a23a33c278e5e4055babc7b863da9cce6">IMGUIZMO_NAMESPACE::halfCircleSegmentCount</a> = 64</td></tr>
+<tr class="separator:a23a33c278e5e4055babc7b863da9cce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94076031745f5126cf627567bfbd8f32"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceIMGUIZMO__NAMESPACE.html#a94076031745f5126cf627567bfbd8f32">IMGUIZMO_NAMESPACE::snapTension</a> = 0.5f</td></tr>
+<tr class="separator:a94076031745f5126cf627567bfbd8f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ae6c4b67228a211e9277c6d64bbb5bc37" name="ae6c4b67228a211e9277c6d64bbb5bc37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c4b67228a211e9277c6d64bbb5bc37">&#9670;&#160;</a></span>_freea</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _freea</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuizmo_8cpp_source.html">ImGuizmo.cpp</a> の <a class="el" href="ImGuizmo_8cpp_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad331bcfc5026697e79431763161a9f18" name="ad331bcfc5026697e79431763161a9f18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad331bcfc5026697e79431763161a9f18">&#9670;&#160;</a></span>_malloca</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _malloca</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;alloca(x)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuizmo_8cpp_source.html">ImGuizmo.cpp</a> の <a class="el" href="ImGuizmo_8cpp_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adf4d73301961430d50d7edd96f92ce38" name="adf4d73301961430d50d7edd96f92ce38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf4d73301961430d50d7edd96f92ce38">&#9670;&#160;</a></span>IMGUI_DEFINE_MATH_OPERATORS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMGUI_DEFINE_MATH_OPERATORS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImGuizmo_8cpp_source.html">ImGuizmo.cpp</a> の <a class="el" href="ImGuizmo_8cpp_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_23797ae7e766fbcdeb3fb12569df6b46.html">ImGui</a></li><li class="navelem"><a class="el" href="ImGuizmo_8cpp.html">ImGuizmo.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Effekseer.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">install_msvc2022_x86/include/Effekseer/Effekseer.h ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;array&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;cfloat&gt;</code><br />
+<code>#include &lt;climits&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;pthread.h&gt;</code><br />
+<code>#include &lt;sys/time.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;list&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;new&gt;</code><br />
+<code>#include &lt;set&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &quot;<a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8Modules_8h_source.html">Effekseer.Modules.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+install_msvc2022_x86/include/Effekseer/Effekseer.h の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h__incl.svg" width="2162" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h__dep__incl.svg" width="484" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1IReference.html">Effekseer::IReference</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">参照カウンタのインターフェース  <a href="classEffekseer_1_1IReference.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1ReferenceObject.html">Effekseer::ReferenceObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">参照カウンタ  <a href="classEffekseer_1_1ReferenceObject.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1ReferenceDeleter.html">Effekseer::ReferenceDeleter&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">a deleter for <a class="el" href="classEffekseer_1_1IReference.html" title="参照カウンタのインターフェース">IReference</a>  <a href="structEffekseer_1_1ReferenceDeleter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RefPtr.html">Effekseer::RefPtr&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">参照カウンタ向けスマートポインタ  <a href="classEffekseer_1_1RefPtr.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1IRandObject.html">Effekseer::IRandObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This object generates random values.  <a href="classEffekseer_1_1IRandObject.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1FixedSizeVector.html">Effekseer::FixedSizeVector&lt; T, N &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Gradient.html">Effekseer::Gradient</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Gradient_1_1ColorKey.html">Effekseer::Gradient::ColorKey</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Gradient_1_1AlphaKey.html">Effekseer::Gradient::AlphaKey</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1MaterialTextureParameter.html">Effekseer::MaterialTextureParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">マテリアルに使用されるテクスチャ  <a href="structEffekseer_1_1MaterialTextureParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1MaterialRenderData.html">Effekseer::MaterialRenderData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">シェーダー向けマテリアルパラメーター  <a href="structEffekseer_1_1MaterialRenderData.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1NodeRendererDepthParameter.html">Effekseer::NodeRendererDepthParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">レンダラーに渡されるデプスに関するパラメーター  <a href="structEffekseer_1_1NodeRendererDepthParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1NodeRendererFlipbookParameter.html">Effekseer::NodeRendererFlipbookParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">レンダラーに渡されるフリップブックに関するパラメーター  <a href="structEffekseer_1_1NodeRendererFlipbookParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1NodeRendererBasicParameter.html">Effekseer::NodeRendererBasicParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">レンダラーに渡される共通に関するパラメーター  <a href="structEffekseer_1_1NodeRendererBasicParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1RenderingUserData.html">Effekseer::RenderingUserData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">プラグイン向けの描画拡張データ  <a href="classEffekseer_1_1RenderingUserData.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAllocator.html">Effekseer::CustomAllocator&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1CustomAlignedAllocator.html">Effekseer::CustomAlignedAllocator&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1StringView.html">Effekseer::StringView&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1StringView_1_1Hash.html">Effekseer::StringView&lt; T &gt;::Hash</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Vector2D.html">Effekseer::Vector2D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">3次元ベクトル  <a href="structEffekseer_1_1Vector2D.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Vector3D.html">Effekseer::Vector3D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">3次元ベクトル  <a href="structEffekseer_1_1Vector3D.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Color.html">Effekseer::Color</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">色  <a href="structEffekseer_1_1Color.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1RectF.html">Effekseer::RectF</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">四角形  <a href="structEffekseer_1_1RectF.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Matrix43.html">Effekseer::Matrix43</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">4x3行列  <a href="structEffekseer_1_1Matrix43.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Matrix44.html">Effekseer::Matrix44</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">行列  <a href="structEffekseer_1_1Matrix44.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1FileReader.html">Effekseer::FileReader</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1FileWriter.html">Effekseer::FileWriter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1FileInterface.html">Effekseer::FileInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">IOのためのファクトリークラス  <a href="classEffekseer_1_1FileInterface.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1DefaultFileReader.html">Effekseer::DefaultFileReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ 標準のファイル読み込みクラス  <a href="classEffekseer_1_1DefaultFileReader.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1DefaultFileWriter.html">Effekseer::DefaultFileWriter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1DefaultFileInterface.html">Effekseer::DefaultFileInterface</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Backend_1_1UniformLayoutElement.html">Effekseer::Backend::UniformLayoutElement</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1UniformLayout.html">Effekseer::Backend::UniformLayout</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Layouts in an uniform buffer  <a href="classEffekseer_1_1Backend_1_1UniformLayout.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1VertexBuffer.html">Effekseer::Backend::VertexBuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1IndexBuffer.html">Effekseer::Backend::IndexBuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1VertexLayout.html">Effekseer::Backend::VertexLayout</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1UniformBuffer.html">Effekseer::Backend::UniformBuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1PipelineState.html">Effekseer::Backend::PipelineState</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Backend_1_1TextureParameter.html">Effekseer::Backend::TextureParameter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1Texture.html">Effekseer::Backend::Texture</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1Shader.html">Effekseer::Backend::Shader</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1ComputeBuffer.html">Effekseer::Backend::ComputeBuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1FrameBuffer.html">Effekseer::Backend::FrameBuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1RenderPass.html">Effekseer::Backend::RenderPass</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Backend_1_1DrawParameter.html">Effekseer::Backend::DrawParameter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Backend_1_1VertexLayoutElement.html">Effekseer::Backend::VertexLayoutElement</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Backend_1_1PipelineStateParameter.html">Effekseer::Backend::PipelineStateParameter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Backend_1_1RenderTextureParameter.html">Effekseer::Backend::RenderTextureParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render texture  <a href="structEffekseer_1_1Backend_1_1RenderTextureParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Backend_1_1DepthTextureParameter.html">Effekseer::Backend::DepthTextureParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render texture  <a href="structEffekseer_1_1Backend_1_1DepthTextureParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Backend_1_1GraphicsDevice.html">Effekseer::Backend::GraphicsDevice</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Resource.html">Effekseer::Resource</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">リソース基底  <a href="classEffekseer_1_1Resource.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Texture.html">Effekseer::Texture</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャリソース  <a href="classEffekseer_1_1Texture.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Material.html">Effekseer::Material</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">マテリアルリソース  <a href="classEffekseer_1_1Material.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1EffectTerm.html">Effekseer::EffectTerm</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">エフェクトが存在する期間  <a href="structEffekseer_1_1EffectTerm.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1EffectInstanceTerm.html">Effekseer::EffectInstanceTerm</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">インスタンスが存在する期間  <a href="structEffekseer_1_1EffectInstanceTerm.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1EffectFactory.html">Effekseer::EffectFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">独自フォーマットをサポートするための、バイナリが読み込まれた時にEffectParameterのインスタンスを編集するクラス  <a href="classEffekseer_1_1EffectFactory.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Effect.html">Effekseer::Effect</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">エフェクトパラメータークラス  <a href="classEffekseer_1_1Effect.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1EffectBasicRenderParameter.html">Effekseer::EffectBasicRenderParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">共通描画パラメーター  <a href="structEffekseer_1_1EffectBasicRenderParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1EffectModelParameter.html">Effekseer::EffectModelParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">モデルパラメーター  <a href="structEffekseer_1_1EffectModelParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1EffectNode.html">Effekseer::EffectNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノードインスタンス生成クラス  <a href="classEffekseer_1_1EffectNode.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Manager.html">Effekseer::Manager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">エフェクト管理クラス  <a href="classEffekseer_1_1Manager.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Manager_1_1UpdateParameter.html">Effekseer::Manager::UpdateParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">マネージャーが更新されるときのパラメーター  <a href="structEffekseer_1_1Manager_1_1UpdateParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Manager_1_1DrawParameter.html">Effekseer::Manager::DrawParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classEffekseer_1_1Manager.html#afd4e1e2382e91d34fc37df97a0fed5f1" title="描画処理を行う。">Manager::Draw</a> and Manager::DrawHandleに使用するパラメーター  <a href="structEffekseer_1_1Manager_1_1DrawParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEffekseer_1_1Manager_1_1LayerParameter.html">Effekseer::Manager::LayerParameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manager::SetLayerParameterにレイヤーごとに設定するパラメーター  <a href="structEffekseer_1_1Manager_1_1LayerParameter.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Setting.html">Effekseer::Setting</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">設定クラス  <a href="classEffekseer_1_1Setting.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Server.html">Effekseer::Server</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">エディタといったクライアントからエフェクトを編集するためのサーバー  <a href="classEffekseer_1_1Server.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEffekseer_1_1Client.html">Effekseer::Client</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceEffekseer"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html">Effekseer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceEffekseer_1_1Backend"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html">Effekseer::Backend</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a4b2fd0bd069299f55649055bbd485d7f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#a4b2fd0bd069299f55649055bbd485d7f">EFK_STDCALL</a></td></tr>
+<tr class="separator:a4b2fd0bd069299f55649055bbd485d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70b4ca19a8eeb792fe80a0d14b5a5ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#ab70b4ca19a8eeb792fe80a0d14b5a5ce">ES_SAFE_ADDREF</a>(val)</td></tr>
+<tr class="separator:ab70b4ca19a8eeb792fe80a0d14b5a5ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552d766d4c7156ddd0042d4d94c8b562"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#a552d766d4c7156ddd0042d4d94c8b562">ES_SAFE_RELEASE</a>(val)</td></tr>
+<tr class="separator:a552d766d4c7156ddd0042d4d94c8b562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5278841d38f84c7fdf57770ece804d9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#a5278841d38f84c7fdf57770ece804d9b">ES_SAFE_DELETE</a>(val)</td></tr>
+<tr class="separator:a5278841d38f84c7fdf57770ece804d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09da01befa6b94eb8ca94be9b2bf558d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#a09da01befa6b94eb8ca94be9b2bf558d">ES_SAFE_DELETE_ARRAY</a>(val)</td></tr>
+<tr class="separator:a09da01befa6b94eb8ca94be9b2bf558d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72e44a15e7333fe9c1ce7a0ecc2e947"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#aa72e44a15e7333fe9c1ce7a0ecc2e947">EFK_ASSERT</a>(x)&#160;&#160;&#160;assert(x)</td></tr>
+<tr class="separator:aa72e44a15e7333fe9c1ce7a0ecc2e947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6a64a06c54a8ef2b8cd8ca491f154b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#aa6a64a06c54a8ef2b8cd8ca491f154b9">__EFFEKSEER_CUSTOM_ALLOCATOR_H__</a></td></tr>
+<tr class="separator:aa6a64a06c54a8ef2b8cd8ca491f154b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9370a43166c025ec921ec005658f427"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#aa9370a43166c025ec921ec005658f427">__EFFEKSEER_VECTOR2D_H__</a></td></tr>
+<tr class="separator:aa9370a43166c025ec921ec005658f427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa82b99d80736c984fa4fe4710ef5bd8b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#aa82b99d80736c984fa4fe4710ef5bd8b">__EFFEKSEER_VECTOR3D_H__</a></td></tr>
+<tr class="separator:aa82b99d80736c984fa4fe4710ef5bd8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5142c5c895ceca81575cd84f98c6747"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#ad5142c5c895ceca81575cd84f98c6747">__EFFEKSEER_COLOR_H__</a></td></tr>
+<tr class="separator:ad5142c5c895ceca81575cd84f98c6747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f173361dbdb0628d5e25e22ce2e43b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#ae0f173361dbdb0628d5e25e22ce2e43b">__EFFEKSEER_RECTF_H__</a></td></tr>
+<tr class="separator:ae0f173361dbdb0628d5e25e22ce2e43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e6c88e72faff324e24afcf93295d012"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#a0e6c88e72faff324e24afcf93295d012">__EFFEKSEER_MATRIX43_H__</a></td></tr>
+<tr class="separator:a0e6c88e72faff324e24afcf93295d012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aedefb50559cc2a41399284800ab81f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#a3aedefb50559cc2a41399284800ab81f">__EFFEKSEER_MATRIX44_H__</a></td></tr>
+<tr class="separator:a3aedefb50559cc2a41399284800ab81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee690e424571c16a5699f20728ba191d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#aee690e424571c16a5699f20728ba191d">__EFFEKSEER_FILE_H__</a></td></tr>
+<tr class="separator:aee690e424571c16a5699f20728ba191d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a88a4452a028e268f094f6441d5b27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#a42a88a4452a028e268f094f6441d5b27">__EFFEKSEER_DEFAULT_FILE_H__</a></td></tr>
+<tr class="separator:a42a88a4452a028e268f094f6441d5b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f688edcb38c2cfd21e5331c5692b2bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#a8f688edcb38c2cfd21e5331c5692b2bc">__EFFEKSEER_GRAPHICS_DEVICE_H__</a></td></tr>
+<tr class="separator:a8f688edcb38c2cfd21e5331c5692b2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad158afe60c39668ebaaea3264ebceaab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#ad158afe60c39668ebaaea3264ebceaab">__EFFEKSEER_RESOURCE_H__</a></td></tr>
+<tr class="separator:ad158afe60c39668ebaaea3264ebceaab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7875687b1f546a573428fe17ec3072f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#a7875687b1f546a573428fe17ec3072f6">__EFFEKSEER_EFFECT_H__</a></td></tr>
+<tr class="separator:a7875687b1f546a573428fe17ec3072f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa326d43fceccccf752fa148f82acb36e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#aa326d43fceccccf752fa148f82acb36e">__EFFEKSEER_MANAGER_H__</a></td></tr>
+<tr class="separator:aa326d43fceccccf752fa148f82acb36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd83d013d5507eb61316413dab584472"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#abd83d013d5507eb61316413dab584472">__EFFEKSEER_LOADER_H__</a></td></tr>
+<tr class="separator:abd83d013d5507eb61316413dab584472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa0f1f98693b485fa0a022af6b814927"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#aaa0f1f98693b485fa0a022af6b814927">__EFFEKSEER_SERVER_H__</a></td></tr>
+<tr class="separator:aaa0f1f98693b485fa0a022af6b814927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae50d8e705e1df13802125a3d76262513"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#ae50d8e705e1df13802125a3d76262513">__EFFEKSEER_CLIENT_H__</a></td></tr>
+<tr class="separator:ae50d8e705e1df13802125a3d76262513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a50b026abea014b47854bcd835b3b6233"><td class="memItemLeft" align="right" valign="top">typedef char16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html#a50b026abea014b47854bcd835b3b6233">EFK_CHAR</a></td></tr>
+<tr class="separator:a50b026abea014b47854bcd835b3b6233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:a8c32fd5b7ec7feed73314b2ae8086949"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949">Effekseer::AlphaBlendType</a> : int32_t { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949abad6a5dd8c28e6b14f8e986615e3dc98">Effekseer::Opacity</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a09ac609fcdb514c9adca34e7f97b4ac4">Effekseer::Blend</a> = 1
+, <a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949aec211f7c20af43e742bf2570c3cb84f9">Effekseer::Add</a> = 2
+, <a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949ae80155eceb940c89e2de63ad05868db2">Effekseer::Sub</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a62b6d55816cf737bfc6f42e60df1a3f2">Effekseer::Mul</a> = 4
+, <a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949abad6a5dd8c28e6b14f8e986615e3dc98">Effekseer::Opacity</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a09ac609fcdb514c9adca34e7f97b4ac4">Effekseer::Blend</a> = 1
+, <a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949aec211f7c20af43e742bf2570c3cb84f9">Effekseer::Add</a> = 2
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949ae80155eceb940c89e2de63ad05868db2">Effekseer::Sub</a> = 3
+, <a class="el" href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949a62b6d55816cf737bfc6f42e60df1a3f2">Effekseer::Mul</a> = 4
+<br />
+ }</td></tr>
+<tr class="memdesc:a8c32fd5b7ec7feed73314b2ae8086949"><td class="mdescLeft">&#160;</td><td class="mdescRight">アルファブレンド  <a href="namespaceEffekseer.html#a8c32fd5b7ec7feed73314b2ae8086949">[詳解]</a><br /></td></tr>
+<tr class="separator:a8c32fd5b7ec7feed73314b2ae8086949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3518502cfcb4ec4991f13c0b3e4c6ee"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6ee">Effekseer::TextureFilterType</a> : int32_t { <a class="el" href="namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea60494f02d440f316319dd0fad40ad007">Effekseer::Nearest</a> = 0
+, <a class="el" href="namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea32a843da6ea40ab3b17a3421ccdf671b">Effekseer::Linear</a> = 1
+, <a class="el" href="namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea60494f02d440f316319dd0fad40ad007">Effekseer::Nearest</a> = 0
+, <a class="el" href="namespaceEffekseer.html#ae3518502cfcb4ec4991f13c0b3e4c6eea32a843da6ea40ab3b17a3421ccdf671b">Effekseer::Linear</a> = 1
+ }</td></tr>
+<tr class="separator:ae3518502cfcb4ec4991f13c0b3e4c6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5320c83784602974b6278bf1a77b58a3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3">Effekseer::TextureWrapType</a> : int32_t { <a class="el" href="namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a7020426cfb0a204051be4b3053d2acc8">Effekseer::Repeat</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a08825280e3f8137556325061ba67ff8c">Effekseer::Clamp</a> = 1
+, <a class="el" href="namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a7020426cfb0a204051be4b3053d2acc8">Effekseer::Repeat</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a5320c83784602974b6278bf1a77b58a3a08825280e3f8137556325061ba67ff8c">Effekseer::Clamp</a> = 1
+ }</td></tr>
+<tr class="separator:a5320c83784602974b6278bf1a77b58a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ae9542a9c9309ec191be1ae5e6dc00a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00a">Effekseer::CullingType</a> : int32_t { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa5835bab1ade0060909e31a06af2e2cde">Effekseer::Front</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa0557fa923dcee4d0f86b1409f5c2167f">Effekseer::Back</a> = 1
+, <a class="el" href="namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aad909d38d705ce75386dd86e611a82f5b">Effekseer::Double</a> = 2
+, <a class="el" href="namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa5835bab1ade0060909e31a06af2e2cde">Effekseer::Front</a> = 0
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aa0557fa923dcee4d0f86b1409f5c2167f">Effekseer::Back</a> = 1
+, <a class="el" href="namespaceEffekseer.html#a3ae9542a9c9309ec191be1ae5e6dc00aad909d38d705ce75386dd86e611a82f5b">Effekseer::Double</a> = 2
+<br />
+ }</td></tr>
+<tr class="separator:a3ae9542a9c9309ec191be1ae5e6dc00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e51959dc188f6f19acc48c85860c6d8"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8">Effekseer::BillboardType</a> : int32_t { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8acf9f62d4906d63087d71916c1c94c058">Effekseer::Billboard</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a8d1827d8fca7d2d9db612616da97258a">Effekseer::YAxisFixed</a> = 1
+, <a class="el" href="namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a4457d440870ad6d42bab9082d9bf9b61">Effekseer::Fixed</a> = 2
+, <a class="el" href="namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23">Effekseer::RotatedBillboard</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8acf9f62d4906d63087d71916c1c94c058">Effekseer::Billboard</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a8d1827d8fca7d2d9db612616da97258a">Effekseer::YAxisFixed</a> = 1
+, <a class="el" href="namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a4457d440870ad6d42bab9082d9bf9b61">Effekseer::Fixed</a> = 2
+, <a class="el" href="namespaceEffekseer.html#a1e51959dc188f6f19acc48c85860c6d8a6bea508c98105aa330e11c3a0b258f23">Effekseer::RotatedBillboard</a> = 3
+<br />
+ }</td></tr>
+<tr class="separator:a1e51959dc188f6f19acc48c85860c6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8508f8823c5fcf36aac5d2ddee23765"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765">Effekseer::CoordinateSystem</a> : int32_t { <a class="el" href="namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a2b9645dc7a42b738ac9fa5a75117b1c0">Effekseer::LH</a>
+, <a class="el" href="namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a9508a19d7801e07ee7b7628c31bfdd47">Effekseer::RH</a>
+, <a class="el" href="namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a2b9645dc7a42b738ac9fa5a75117b1c0">Effekseer::LH</a>
+, <a class="el" href="namespaceEffekseer.html#ac8508f8823c5fcf36aac5d2ddee23765a9508a19d7801e07ee7b7628c31bfdd47">Effekseer::RH</a>
+ }</td></tr>
+<tr class="separator:ac8508f8823c5fcf36aac5d2ddee23765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c32bc0e986ad6c6ed7e2aca639d4132"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132">Effekseer::CullingShape</a> : int32_t { <a class="el" href="namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132af9522e8a7d1cc4f338498025afb612bf">Effekseer::NoneShape</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132ab7095f057db3fefa7325ad93a04e14fd">Effekseer::Sphere</a> = 1
+, <a class="el" href="namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132af9522e8a7d1cc4f338498025afb612bf">Effekseer::NoneShape</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a6c32bc0e986ad6c6ed7e2aca639d4132ab7095f057db3fefa7325ad93a04e14fd">Effekseer::Sphere</a> = 1
+ }</td></tr>
+<tr class="separator:a6c32bc0e986ad6c6ed7e2aca639d4132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a781925ba462884c4ef87fd38ffdedba4"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4">Effekseer::TextureType</a> : int32_t { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4acb5feb1b7314637725a2e73bdc9f7295">Effekseer::Color</a>
+, <a class="el" href="namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4a960b44c579bc2f6818d2daaf9e4c16f0">Effekseer::Normal</a>
+, <a class="el" href="namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4ad3682f9ce9248e18f2d1cecf9f8fa049">Effekseer::Distortion</a>
+, <a class="el" href="namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4acb5feb1b7314637725a2e73bdc9f7295">Effekseer::Color</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4a960b44c579bc2f6818d2daaf9e4c16f0">Effekseer::Normal</a>
+, <a class="el" href="namespaceEffekseer.html#a781925ba462884c4ef87fd38ffdedba4ad3682f9ce9248e18f2d1cecf9f8fa049">Effekseer::Distortion</a>
+<br />
+ }</td></tr>
+<tr class="separator:a781925ba462884c4ef87fd38ffdedba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a511023c52735acd2fd4116d7fabadc2c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2c">Effekseer::MaterialFileType</a> : int32_t { <a class="el" href="namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2caca0dbad92a874b2f69b549293387925e">Effekseer::Code</a>
+, <a class="el" href="namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2ca4ead4fdae2e4938c155e1db52aa1546d">Effekseer::Compiled</a>
+, <a class="el" href="namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2caca0dbad92a874b2f69b549293387925e">Effekseer::Code</a>
+, <a class="el" href="namespaceEffekseer.html#a511023c52735acd2fd4116d7fabadc2ca4ead4fdae2e4938c155e1db52aa1546d">Effekseer::Compiled</a>
+ }</td></tr>
+<tr class="separator:a511023c52735acd2fd4116d7fabadc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad44c2314bf2d674ae0e6d62db6ff4484"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484">Effekseer::TextureFormatType</a> : int32_t { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a241839feb78cf37a50e99a39bb64dab3">Effekseer::ABGR8</a>
+, <a class="el" href="namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a88ec7b741e9c3ccac7b61b1301ba11e8">Effekseer::BC1</a>
+, <a class="el" href="namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a4d2bc7c468d854a7046ae1ca6b7cf64e">Effekseer::BC2</a>
+, <a class="el" href="namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484aa9e959126c7c9b4230b56975a1ea015d">Effekseer::BC3</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a241839feb78cf37a50e99a39bb64dab3">Effekseer::ABGR8</a>
+, <a class="el" href="namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a88ec7b741e9c3ccac7b61b1301ba11e8">Effekseer::BC1</a>
+, <a class="el" href="namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484a4d2bc7c468d854a7046ae1ca6b7cf64e">Effekseer::BC2</a>
+, <a class="el" href="namespaceEffekseer.html#ad44c2314bf2d674ae0e6d62db6ff4484aa9e959126c7c9b4230b56975a1ea015d">Effekseer::BC3</a>
+<br />
+ }</td></tr>
+<tr class="separator:ad44c2314bf2d674ae0e6d62db6ff4484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a8ec04f4de0308b5fdb7d66675bddaf"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddaf">Effekseer::ZSortType</a> : int32_t { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa6adf97f83acf6453d4a6a4b1070f3754">Effekseer::None</a>
+, <a class="el" href="namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa0d1c57b4a0586a7ad9e29190c1ed8f9d">Effekseer::NormalOrder</a>
+, <a class="el" href="namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafacafcd34d9001dc412b1b6e9e52d6083c">Effekseer::ReverseOrder</a>
+, <a class="el" href="namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa6adf97f83acf6453d4a6a4b1070f3754">Effekseer::None</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafa0d1c57b4a0586a7ad9e29190c1ed8f9d">Effekseer::NormalOrder</a>
+, <a class="el" href="namespaceEffekseer.html#a7a8ec04f4de0308b5fdb7d66675bddafacafcd34d9001dc412b1b6e9e52d6083c">Effekseer::ReverseOrder</a>
+<br />
+ }</td></tr>
+<tr class="separator:a7a8ec04f4de0308b5fdb7d66675bddaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b82893021dd8e3697e46c1aa544092"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092">Effekseer::RenderMode</a> : int32_t { <a class="el" href="namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a960b44c579bc2f6818d2daaf9e4c16f0">Effekseer::Normal</a>
+, <a class="el" href="namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a33e42d0f3b166a4c405127e4412fbef2">Effekseer::Wireframe</a>
+, <a class="el" href="namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a960b44c579bc2f6818d2daaf9e4c16f0">Effekseer::Normal</a>
+, <a class="el" href="namespaceEffekseer.html#ad1b82893021dd8e3697e46c1aa544092a33e42d0f3b166a4c405127e4412fbef2">Effekseer::Wireframe</a>
+ }</td></tr>
+<tr class="separator:ad1b82893021dd8e3697e46c1aa544092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d52fd0ffe37a2b4d5d221608a61089"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089">Effekseer::ReloadingThreadType</a> { <a class="el" href="namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089aa02c83a7dbd96295beaefb72c2bee2de">Effekseer::Main</a>
+, <a class="el" href="namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089a5e520da5341f2fec6d3bbfe7ef357922">Effekseer::Render</a>
+, <a class="el" href="namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089aa02c83a7dbd96295beaefb72c2bee2de">Effekseer::Main</a>
+, <a class="el" href="namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089a5e520da5341f2fec6d3bbfe7ef357922">Effekseer::Render</a>
+ }</td></tr>
+<tr class="memdesc:a29d52fd0ffe37a2b4d5d221608a61089"><td class="mdescLeft">&#160;</td><td class="mdescRight">リロードの関数が呼ばれるスレッド  <a href="namespaceEffekseer.html#a29d52fd0ffe37a2b4d5d221608a61089">[詳解]</a><br /></td></tr>
+<tr class="separator:a29d52fd0ffe37a2b4d5d221608a61089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa74db661c8ab9bfe704dedd01c92d8f6"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6">Effekseer::TrailSmoothingType</a> : int32_t { <a class="el" href="namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6ad15305d7a4e34e02489c74a5ef542f36">Effekseer::Off</a> = 0
+, <a class="el" href="namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6a521c36a31c2762741cf0f8890cbe05e3">Effekseer::On</a> = 1
+, <a class="el" href="namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6ad15305d7a4e34e02489c74a5ef542f36">Effekseer::Off</a> = 0
+, <a class="el" href="namespaceEffekseer.html#aa74db661c8ab9bfe704dedd01c92d8f6a521c36a31c2762741cf0f8890cbe05e3">Effekseer::On</a> = 1
+ }</td></tr>
+<tr class="separator:aa74db661c8ab9bfe704dedd01c92d8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54f6cbb4b7fbc6907811551becd978f8"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8">Effekseer::TrailTimeType</a> : int32_t { <a class="el" href="namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8a7266a76da6d1a6f200dc7ec5405e38a5">Effekseer::FirstParticle</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8aa14dfc5cda0ff1982c33ae2ea2973e2e">Effekseer::ParticleGroup</a> = 1
+, <a class="el" href="namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8a7266a76da6d1a6f200dc7ec5405e38a5">Effekseer::FirstParticle</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a54f6cbb4b7fbc6907811551becd978f8aa14dfc5cda0ff1982c33ae2ea2973e2e">Effekseer::ParticleGroup</a> = 1
+ }</td></tr>
+<tr class="separator:a54f6cbb4b7fbc6907811551becd978f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e72038952c5555037d66c8d7f949e2"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2">Effekseer::LogType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a4059b0251f66a18cb56f544728796875">Effekseer::Info</a>
+, <a class="el" href="namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Effekseer::Warning</a>
+, <a class="el" href="namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a902b0d55fddef6f8d651fe1035b7d4bd">Effekseer::Error</a>
+, <a class="el" href="namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2aa603905470e2a5b8c13e96b579ef0dba">Effekseer::Debug</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a4059b0251f66a18cb56f544728796875">Effekseer::Info</a>
+, <a class="el" href="namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Effekseer::Warning</a>
+, <a class="el" href="namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2a902b0d55fddef6f8d651fe1035b7d4bd">Effekseer::Error</a>
+, <a class="el" href="namespaceEffekseer.html#a99e72038952c5555037d66c8d7f949e2aa603905470e2a5b8c13e96b579ef0dba">Effekseer::Debug</a>
+<br />
+ }</td></tr>
+<tr class="separator:a99e72038952c5555037d66c8d7f949e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0d774076aef727bebbeaf00d485f7e8"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8">Effekseer::EffectNodeType</a> : int32_t { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8afa03eb688ad8aa1db593d33dabd89bad">Effekseer::Root</a> = -1
+, <a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa4179d01d58ec2f9c54faeb814a6a50c">Effekseer::NoneType</a> = 0
+, <a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a51f2b7b14433aa22c67d1f4fc18943cd">Effekseer::Sprite</a> = 2
+, <a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8af309bf4bccf801eb2fe4541107671578">Effekseer::Ribbon</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8ad4db177c94738b72bf9ce61e988ab1f1">Effekseer::Ring</a> = 4
+, <a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa559b87068921eec05086ce5485e9784">Effekseer::Model</a> = 5
+, <a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a92ea731d3af6677905303c88689f5d55">Effekseer::Track</a> = 6
+, <a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8afa03eb688ad8aa1db593d33dabd89bad">Effekseer::Root</a> = -1
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa4179d01d58ec2f9c54faeb814a6a50c">Effekseer::NoneType</a> = 0
+, <a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a51f2b7b14433aa22c67d1f4fc18943cd">Effekseer::Sprite</a> = 2
+, <a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8af309bf4bccf801eb2fe4541107671578">Effekseer::Ribbon</a> = 3
+, <a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8ad4db177c94738b72bf9ce61e988ab1f1">Effekseer::Ring</a> = 4
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8aa559b87068921eec05086ce5485e9784">Effekseer::Model</a> = 5
+, <a class="el" href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8a92ea731d3af6677905303c88689f5d55">Effekseer::Track</a> = 6
+<br />
+ }</td></tr>
+<tr class="memdesc:ac0d774076aef727bebbeaf00d485f7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classA.html">A</a> type of node  <a href="namespaceEffekseer.html#ac0d774076aef727bebbeaf00d485f7e8">[詳解]</a><br /></td></tr>
+<tr class="separator:ac0d774076aef727bebbeaf00d485f7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a413785fd23a9c9737e0a72a3c773986b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986b">Effekseer::TextureColorType</a> : int32_t { <a class="el" href="namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986bacb5feb1b7314637725a2e73bdc9f7295">Effekseer::Color</a>
+, <a class="el" href="namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986ba689202409e48743b914713f96d93947c">Effekseer::Value</a>
+, <a class="el" href="namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986bacb5feb1b7314637725a2e73bdc9f7295">Effekseer::Color</a>
+, <a class="el" href="namespaceEffekseer.html#a413785fd23a9c9737e0a72a3c773986ba689202409e48743b914713f96d93947c">Effekseer::Value</a>
+ }</td></tr>
+<tr class="separator:a413785fd23a9c9737e0a72a3c773986b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a216621f05b0d1d2867fa518b1bc68107"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107">Effekseer::ColorSpaceType</a> : int32_t { <a class="el" href="namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107ad9cdb0f6e0d556347c10a8695545a4b5">Effekseer::Gamma</a>
+, <a class="el" href="namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107a32a843da6ea40ab3b17a3421ccdf671b">Effekseer::Linear</a>
+, <a class="el" href="namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107ad9cdb0f6e0d556347c10a8695545a4b5">Effekseer::Gamma</a>
+, <a class="el" href="namespaceEffekseer.html#a216621f05b0d1d2867fa518b1bc68107a32a843da6ea40ab3b17a3421ccdf671b">Effekseer::Linear</a>
+ }</td></tr>
+<tr class="separator:a216621f05b0d1d2867fa518b1bc68107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f894765a8defc6869b1c0a3dbb02363"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363">Effekseer::ShadingModelType</a> : int32_t { <a class="el" href="namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363ae5e556ecf935270736f5e46e73db06e4">Effekseer::Lit</a>
+, <a class="el" href="namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363acfc126be5c3f5c76fb082aa773f24b3d">Effekseer::Unlit</a>
+, <a class="el" href="namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363ae5e556ecf935270736f5e46e73db06e4">Effekseer::Lit</a>
+, <a class="el" href="namespaceEffekseer.html#a1f894765a8defc6869b1c0a3dbb02363acfc126be5c3f5c76fb082aa773f24b3d">Effekseer::Unlit</a>
+ }</td></tr>
+<tr class="separator:a1f894765a8defc6869b1c0a3dbb02363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626ea55bf2e667f3b9efd4313f2b6025"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025">Effekseer::RendererMaterialType</a> : int32_t { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a7a1920d61156abc05a60135aefe8bc67">Effekseer::Default</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025ae7bd8cfbd6771385c34a3653a6b13126">Effekseer::BackDistortion</a> = 6
+, <a class="el" href="namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a2e4b97fde8cf63085ec969fcc7e490c0">Effekseer::Lighting</a> = 7
+, <a class="el" href="namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a0b27918290ff5323bea1e3b78a9cf04e">Effekseer::File</a> = 128
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a7a1920d61156abc05a60135aefe8bc67">Effekseer::Default</a> = 0
+, <a class="el" href="namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025ae7bd8cfbd6771385c34a3653a6b13126">Effekseer::BackDistortion</a> = 6
+, <a class="el" href="namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a2e4b97fde8cf63085ec969fcc7e490c0">Effekseer::Lighting</a> = 7
+, <a class="el" href="namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025a0b27918290ff5323bea1e3b78a9cf04e">Effekseer::File</a> = 128
+<br />
+ }</td></tr>
+<tr class="memdesc:a626ea55bf2e667f3b9efd4313f2b6025"><td class="mdescLeft">&#160;</td><td class="mdescRight">material type  <a href="namespaceEffekseer.html#a626ea55bf2e667f3b9efd4313f2b6025">[詳解]</a><br /></td></tr>
+<tr class="separator:a626ea55bf2e667f3b9efd4313f2b6025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c2b5647443d5c3941d5f737dbe7ff18"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18">Effekseer::ColorMode</a> { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a6cdb9bdcad50b841d9b1fb52115ab2a3">Effekseer::COLOR_MODE_RGBA</a>
+, <a class="el" href="namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18af6bd23c35497db7159d58659180b0bef">Effekseer::COLOR_MODE_HSVA</a>
+, <a class="el" href="namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a1044b2ca94ce8805e366ff289d24c0de">Effekseer::COLOR_MODE_DWORD</a> = 0x7FFFFFFF
+, <a class="el" href="namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a6cdb9bdcad50b841d9b1fb52115ab2a3">Effekseer::COLOR_MODE_RGBA</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18af6bd23c35497db7159d58659180b0bef">Effekseer::COLOR_MODE_HSVA</a>
+, <a class="el" href="namespaceEffekseer.html#a2c2b5647443d5c3941d5f737dbe7ff18a1044b2ca94ce8805e366ff289d24c0de">Effekseer::COLOR_MODE_DWORD</a> = 0x7FFFFFFF
+<br />
+ }</td></tr>
+<tr class="separator:a2c2b5647443d5c3941d5f737dbe7ff18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6acda79daa572e9a44cd84493fbf6afe"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afe">Effekseer::Backend::TextureFormatType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afeaf55c1c722034e92213df328d31e33c62">Effekseer::Backend::R8G8B8A8_UNORM</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea0f09a2e0cf764ef602b892fc70b817bf">Effekseer::Backend::B8G8R8A8_UNORM</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea6ee77dd485809c93542e95acf222420c">Effekseer::Backend::R8_UNORM</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea1a8b847ff6031e79477869e481aff272">Effekseer::Backend::R16_FLOAT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea2598f201b222b270e09b7913987d7272">Effekseer::Backend::R32_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea4f5847ebfcf03e87d28d26da8e7c8280">Effekseer::Backend::R16G16_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea8877c88854b09a122f3533a4de543629">Effekseer::Backend::R16G16B16A16_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea82bb90f92345314d9299d3e77d87f259">Effekseer::Backend::R32G32B32A32_FLOAT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea88ec7b741e9c3ccac7b61b1301ba11e8">Effekseer::Backend::BC1</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea4d2bc7c468d854a7046ae1ca6b7cf64e">Effekseer::Backend::BC2</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afeaa9e959126c7c9b4230b56975a1ea015d">Effekseer::Backend::BC3</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea2d00fbcd05d552791494b5799db714e1">Effekseer::Backend::R8G8B8A8_UNORM_SRGB</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afeaccd7e8dd4e0f564ea24d1243ea3ef523">Effekseer::Backend::B8G8R8A8_UNORM_SRGB</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea8728d460624388e7fcd0b5ea21b7e996">Effekseer::Backend::BC1_SRGB</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afead8823158bc0323e65b353b99dbec42c8">Effekseer::Backend::BC2_SRGB</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea02bf65916f20a9561b709107c60cccf2">Effekseer::Backend::BC3_SRGB</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afeaa6b2eecc4252564f599b9a979e4e0602">Effekseer::Backend::D32</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea2468f278a5fb00d246360a43b4c39f31">Effekseer::Backend::D24S8</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afeaf64446518b4b850a4b2d6624ecff5791">Effekseer::Backend::D32S8</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea88183b946cc5f0e8c96b2e66e1c74a7e">Effekseer::Backend::Unknown</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afeaf55c1c722034e92213df328d31e33c62">Effekseer::Backend::R8G8B8A8_UNORM</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea0f09a2e0cf764ef602b892fc70b817bf">Effekseer::Backend::B8G8R8A8_UNORM</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea6ee77dd485809c93542e95acf222420c">Effekseer::Backend::R8_UNORM</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea1a8b847ff6031e79477869e481aff272">Effekseer::Backend::R16_FLOAT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea2598f201b222b270e09b7913987d7272">Effekseer::Backend::R32_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea4f5847ebfcf03e87d28d26da8e7c8280">Effekseer::Backend::R16G16_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea8877c88854b09a122f3533a4de543629">Effekseer::Backend::R16G16B16A16_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea82bb90f92345314d9299d3e77d87f259">Effekseer::Backend::R32G32B32A32_FLOAT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea88ec7b741e9c3ccac7b61b1301ba11e8">Effekseer::Backend::BC1</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea4d2bc7c468d854a7046ae1ca6b7cf64e">Effekseer::Backend::BC2</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afeaa9e959126c7c9b4230b56975a1ea015d">Effekseer::Backend::BC3</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea2d00fbcd05d552791494b5799db714e1">Effekseer::Backend::R8G8B8A8_UNORM_SRGB</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afeaccd7e8dd4e0f564ea24d1243ea3ef523">Effekseer::Backend::B8G8R8A8_UNORM_SRGB</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea8728d460624388e7fcd0b5ea21b7e996">Effekseer::Backend::BC1_SRGB</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afead8823158bc0323e65b353b99dbec42c8">Effekseer::Backend::BC2_SRGB</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea02bf65916f20a9561b709107c60cccf2">Effekseer::Backend::BC3_SRGB</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afeaa6b2eecc4252564f599b9a979e4e0602">Effekseer::Backend::D32</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea2468f278a5fb00d246360a43b4c39f31">Effekseer::Backend::D24S8</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afeaf64446518b4b850a4b2d6624ecff5791">Effekseer::Backend::D32S8</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a6acda79daa572e9a44cd84493fbf6afea88183b946cc5f0e8c96b2e66e1c74a7e">Effekseer::Backend::Unknown</a>
+<br />
+ }</td></tr>
+<tr class="separator:a6acda79daa572e9a44cd84493fbf6afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e60287cced3bbe9e611bb09549708da"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a5e60287cced3bbe9e611bb09549708da">Effekseer::Backend::IndexBufferStrideType</a> { <a class="el" href="namespaceEffekseer_1_1Backend.html#a5e60287cced3bbe9e611bb09549708daa96cdc37a3a7c2c8d3495d713d1d293e1">Effekseer::Backend::Stride2</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a5e60287cced3bbe9e611bb09549708daa08d73a8dedbfeee532f8aea75a0f7e3f">Effekseer::Backend::Stride4</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a5e60287cced3bbe9e611bb09549708daa96cdc37a3a7c2c8d3495d713d1d293e1">Effekseer::Backend::Stride2</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a5e60287cced3bbe9e611bb09549708daa08d73a8dedbfeee532f8aea75a0f7e3f">Effekseer::Backend::Stride4</a>
+ }</td></tr>
+<tr class="separator:a5e60287cced3bbe9e611bb09549708da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae608f1339fef0c7a3f8a6b1a2a26886c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#ae608f1339fef0c7a3f8a6b1a2a26886c">Effekseer::Backend::UniformBufferLayoutElementType</a> { <a class="el" href="namespaceEffekseer_1_1Backend.html#ae608f1339fef0c7a3f8a6b1a2a26886cacf637ffa2663b40ae52857aa0bdb1ec3">Effekseer::Backend::Vector4</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ae608f1339fef0c7a3f8a6b1a2a26886caba174bc08cddbfcdaed70c4053722b2f">Effekseer::Backend::Matrix44</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ae608f1339fef0c7a3f8a6b1a2a26886cacf637ffa2663b40ae52857aa0bdb1ec3">Effekseer::Backend::Vector4</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ae608f1339fef0c7a3f8a6b1a2a26886caba174bc08cddbfcdaed70c4053722b2f">Effekseer::Backend::Matrix44</a>
+ }</td></tr>
+<tr class="separator:ae608f1339fef0c7a3f8a6b1a2a26886c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0de338331e3c840a297dfc0628b1817"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#af0de338331e3c840a297dfc0628b1817">Effekseer::Backend::ShaderStageType</a> { <a class="el" href="namespaceEffekseer_1_1Backend.html#af0de338331e3c840a297dfc0628b1817ab22b929ba52471a02d18bb3a4e4472e6">Effekseer::Backend::Vertex</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af0de338331e3c840a297dfc0628b1817a08822b3ae4e2aede0afe08abe600e9c0">Effekseer::Backend::Pixel</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af0de338331e3c840a297dfc0628b1817ab22b929ba52471a02d18bb3a4e4472e6">Effekseer::Backend::Vertex</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af0de338331e3c840a297dfc0628b1817a08822b3ae4e2aede0afe08abe600e9c0">Effekseer::Backend::Pixel</a>
+ }</td></tr>
+<tr class="separator:af0de338331e3c840a297dfc0628b1817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1829689dddbd2f94a8a8c0b88e45ca35"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a1829689dddbd2f94a8a8c0b88e45ca35">Effekseer::Backend::TextureUsageType</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a1829689dddbd2f94a8a8c0b88e45ca35a6adf97f83acf6453d4a6a4b1070f3754">Effekseer::Backend::None</a> = 0
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1829689dddbd2f94a8a8c0b88e45ca35a9b0bffda4bcb312168c0d6537cb04b4d">Effekseer::Backend::RenderTarget</a> = 1 &lt;&lt; 0
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1829689dddbd2f94a8a8c0b88e45ca35a4410ec34d9e6c1a68100ca0ce033fb17">Effekseer::Backend::Array</a> = 1 &lt;&lt; 1
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1829689dddbd2f94a8a8c0b88e45ca35ab206a1b4ea1097761f78e8876f6da779">Effekseer::Backend::External</a> = 1 &lt;&lt; 2
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a1829689dddbd2f94a8a8c0b88e45ca35a6adf97f83acf6453d4a6a4b1070f3754">Effekseer::Backend::None</a> = 0
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1829689dddbd2f94a8a8c0b88e45ca35a9b0bffda4bcb312168c0d6537cb04b4d">Effekseer::Backend::RenderTarget</a> = 1 &lt;&lt; 0
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1829689dddbd2f94a8a8c0b88e45ca35a4410ec34d9e6c1a68100ca0ce033fb17">Effekseer::Backend::Array</a> = 1 &lt;&lt; 1
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1829689dddbd2f94a8a8c0b88e45ca35ab206a1b4ea1097761f78e8876f6da779">Effekseer::Backend::External</a> = 1 &lt;&lt; 2
+<br />
+ }</td></tr>
+<tr class="separator:a1829689dddbd2f94a8a8c0b88e45ca35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f9be85eb76d50aa141f3676328558bb"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a5f9be85eb76d50aa141f3676328558bb">Effekseer::Backend::TextureWrapType</a> { <a class="el" href="namespaceEffekseer_1_1Backend.html#a5f9be85eb76d50aa141f3676328558bba08825280e3f8137556325061ba67ff8c">Effekseer::Backend::Clamp</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a5f9be85eb76d50aa141f3676328558bba7020426cfb0a204051be4b3053d2acc8">Effekseer::Backend::Repeat</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a5f9be85eb76d50aa141f3676328558bba08825280e3f8137556325061ba67ff8c">Effekseer::Backend::Clamp</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a5f9be85eb76d50aa141f3676328558bba7020426cfb0a204051be4b3053d2acc8">Effekseer::Backend::Repeat</a>
+ }</td></tr>
+<tr class="separator:a5f9be85eb76d50aa141f3676328558bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a721e3982ed7d0cce1e6b32916faa69c0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a721e3982ed7d0cce1e6b32916faa69c0">Effekseer::Backend::TextureSamplingType</a> { <a class="el" href="namespaceEffekseer_1_1Backend.html#a721e3982ed7d0cce1e6b32916faa69c0a32a843da6ea40ab3b17a3421ccdf671b">Effekseer::Backend::Linear</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a721e3982ed7d0cce1e6b32916faa69c0a60494f02d440f316319dd0fad40ad007">Effekseer::Backend::Nearest</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a721e3982ed7d0cce1e6b32916faa69c0a32a843da6ea40ab3b17a3421ccdf671b">Effekseer::Backend::Linear</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a721e3982ed7d0cce1e6b32916faa69c0a60494f02d440f316319dd0fad40ad007">Effekseer::Backend::Nearest</a>
+ }</td></tr>
+<tr class="separator:a721e3982ed7d0cce1e6b32916faa69c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7e496e06819e4dada44b5f5d394d0b7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7">Effekseer::Backend::VertexLayoutFormat</a> { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7a2598f201b222b270e09b7913987d7272">Effekseer::Backend::R32_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7a034e2a26f1b92822236e0095a5ca1848">Effekseer::Backend::R32G32_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7ad05d603c5884ae9ccc392513becba305">Effekseer::Backend::R32G32B32_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7a82bb90f92345314d9299d3e77d87f259">Effekseer::Backend::R32G32B32A32_FLOAT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7af55c1c722034e92213df328d31e33c62">Effekseer::Backend::R8G8B8A8_UNORM</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7a67db604c7206857ceb4fe94ee620cae4">Effekseer::Backend::R8G8B8A8_UINT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7a2598f201b222b270e09b7913987d7272">Effekseer::Backend::R32_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7a034e2a26f1b92822236e0095a5ca1848">Effekseer::Backend::R32G32_FLOAT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7ad05d603c5884ae9ccc392513becba305">Effekseer::Backend::R32G32B32_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7a82bb90f92345314d9299d3e77d87f259">Effekseer::Backend::R32G32B32A32_FLOAT</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7af55c1c722034e92213df328d31e33c62">Effekseer::Backend::R8G8B8A8_UNORM</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#ad7e496e06819e4dada44b5f5d394d0b7a67db604c7206857ceb4fe94ee620cae4">Effekseer::Backend::R8G8B8A8_UINT</a>
+<br />
+ }</td></tr>
+<tr class="separator:ad7e496e06819e4dada44b5f5d394d0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e4f2c991705ca9c8b0e752061b3dc7b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a7e4f2c991705ca9c8b0e752061b3dc7b">Effekseer::Backend::TopologyType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a7e4f2c991705ca9c8b0e752061b3dc7ba5e5500cb2b82eb72d550de644bd1b64b">Effekseer::Backend::Triangle</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a7e4f2c991705ca9c8b0e752061b3dc7ba4803e6b9e63dabf04de980788d6a13c4">Effekseer::Backend::Line</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a7e4f2c991705ca9c8b0e752061b3dc7ba2a3cd5946cfd317eb99c3d32e35e2d4c">Effekseer::Backend::Point</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a7e4f2c991705ca9c8b0e752061b3dc7ba5e5500cb2b82eb72d550de644bd1b64b">Effekseer::Backend::Triangle</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a7e4f2c991705ca9c8b0e752061b3dc7ba4803e6b9e63dabf04de980788d6a13c4">Effekseer::Backend::Line</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a7e4f2c991705ca9c8b0e752061b3dc7ba2a3cd5946cfd317eb99c3d32e35e2d4c">Effekseer::Backend::Point</a>
+<br />
+ }</td></tr>
+<tr class="separator:a7e4f2c991705ca9c8b0e752061b3dc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a398ab50a1f32a2cf6dfa6bf24d0c47e0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a398ab50a1f32a2cf6dfa6bf24d0c47e0">Effekseer::Backend::CullingType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a398ab50a1f32a2cf6dfa6bf24d0c47e0aba360a794737bcc8657a5b6e870d7ba8">Effekseer::Backend::Clockwise</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a398ab50a1f32a2cf6dfa6bf24d0c47e0a8f23635f9ec49db2161fc5cddf033a79">Effekseer::Backend::CounterClockwise</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a398ab50a1f32a2cf6dfa6bf24d0c47e0af4bc09e4b14e963ece370fc2d51438bc">Effekseer::Backend::DoubleSide</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a398ab50a1f32a2cf6dfa6bf24d0c47e0aba360a794737bcc8657a5b6e870d7ba8">Effekseer::Backend::Clockwise</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a398ab50a1f32a2cf6dfa6bf24d0c47e0a8f23635f9ec49db2161fc5cddf033a79">Effekseer::Backend::CounterClockwise</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a398ab50a1f32a2cf6dfa6bf24d0c47e0af4bc09e4b14e963ece370fc2d51438bc">Effekseer::Backend::DoubleSide</a>
+<br />
+ }</td></tr>
+<tr class="separator:a398ab50a1f32a2cf6dfa6bf24d0c47e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64cd81ebdea85a51bb7e2afcc9c1b6c9"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9">Effekseer::Backend::BlendEquationType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9aec211f7c20af43e742bf2570c3cb84f9">Effekseer::Backend::Add</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9ae80155eceb940c89e2de63ad05868db2">Effekseer::Backend::Sub</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9af6c51b2deb90598692ec688698bf9079">Effekseer::Backend::ReverseSub</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9a78d811e98514cd165dda532286610fd2">Effekseer::Backend::Min</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9a6a061313d22e51e0f25b7cd4dc065233">Effekseer::Backend::Max</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9aec211f7c20af43e742bf2570c3cb84f9">Effekseer::Backend::Add</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9ae80155eceb940c89e2de63ad05868db2">Effekseer::Backend::Sub</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9af6c51b2deb90598692ec688698bf9079">Effekseer::Backend::ReverseSub</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9a78d811e98514cd165dda532286610fd2">Effekseer::Backend::Min</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a64cd81ebdea85a51bb7e2afcc9c1b6c9a6a061313d22e51e0f25b7cd4dc065233">Effekseer::Backend::Max</a>
+<br />
+ }</td></tr>
+<tr class="separator:a64cd81ebdea85a51bb7e2afcc9c1b6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4a0d2acc77fb8ccdb1243ad51ff46f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46f">Effekseer::Backend::BlendFuncType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fad7ed4ee1df437474d005188535f74875">Effekseer::Backend::Zero</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fa06c2cea18679d64399783748fa367bdd">Effekseer::Backend::One</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fa2ad714e29d37896d79187312086bc6fe">Effekseer::Backend::SrcColor</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fa09d3240b4e2481b1a729da24e9bfddf7">Effekseer::Backend::OneMinusSrcColor</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fad5c7b7f0102df3f7305c43f73fc3a498">Effekseer::Backend::SrcAlpha</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fac00a6016489cff63d50d489ce52254cc">Effekseer::Backend::OneMinusSrcAlpha</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46faf72dbe2436b38a39e5927ed644e6818b">Effekseer::Backend::DstAlpha</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fa4132e4b87a8d461be2c6ee8fc620cfb2">Effekseer::Backend::OneMinusDstAlpha</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fafaedf511c99a5461048fd6a3b73da26c">Effekseer::Backend::DstColor</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fa09f1a054ebd4d3850fd248bd2fa7b325">Effekseer::Backend::OneMinusDstColor</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fad7ed4ee1df437474d005188535f74875">Effekseer::Backend::Zero</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fa06c2cea18679d64399783748fa367bdd">Effekseer::Backend::One</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fa2ad714e29d37896d79187312086bc6fe">Effekseer::Backend::SrcColor</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fa09d3240b4e2481b1a729da24e9bfddf7">Effekseer::Backend::OneMinusSrcColor</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fad5c7b7f0102df3f7305c43f73fc3a498">Effekseer::Backend::SrcAlpha</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fac00a6016489cff63d50d489ce52254cc">Effekseer::Backend::OneMinusSrcAlpha</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46faf72dbe2436b38a39e5927ed644e6818b">Effekseer::Backend::DstAlpha</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fa4132e4b87a8d461be2c6ee8fc620cfb2">Effekseer::Backend::OneMinusDstAlpha</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fafaedf511c99a5461048fd6a3b73da26c">Effekseer::Backend::DstColor</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a1f4a0d2acc77fb8ccdb1243ad51ff46fa09f1a054ebd4d3850fd248bd2fa7b325">Effekseer::Backend::OneMinusDstColor</a>
+<br />
+ }</td></tr>
+<tr class="separator:a1f4a0d2acc77fb8ccdb1243ad51ff46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af677b0b5e02f8abdcca0403d6a1ef486"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486">Effekseer::Backend::DepthFuncType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a6e7b34fa59e1bd229b207892956dc41c">Effekseer::Backend::Never</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a1cfdf0e8d0c87a228c1f40d9bee7888b">Effekseer::Backend::Less</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486af5f286e73bda105e538310b3190f75c5">Effekseer::Backend::Equal</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486ad3e6fdac55bb7b0edd7834c968ba1f38">Effekseer::Backend::LessEqual</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a8768a6821cd735aea4f5b0df88c1fc6a">Effekseer::Backend::Greater</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a19bb0af2c3c530538cb41aff7f235b96">Effekseer::Backend::NotEqual</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a758b05d899def79c9eb864ad4f96be1f">Effekseer::Backend::GreaterEqual</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a68eec46437c384d8dad18d5464ebc35c">Effekseer::Backend::Always</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a6e7b34fa59e1bd229b207892956dc41c">Effekseer::Backend::Never</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a1cfdf0e8d0c87a228c1f40d9bee7888b">Effekseer::Backend::Less</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486af5f286e73bda105e538310b3190f75c5">Effekseer::Backend::Equal</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486ad3e6fdac55bb7b0edd7834c968ba1f38">Effekseer::Backend::LessEqual</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a8768a6821cd735aea4f5b0df88c1fc6a">Effekseer::Backend::Greater</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a19bb0af2c3c530538cb41aff7f235b96">Effekseer::Backend::NotEqual</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a758b05d899def79c9eb864ad4f96be1f">Effekseer::Backend::GreaterEqual</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#af677b0b5e02f8abdcca0403d6a1ef486a68eec46437c384d8dad18d5464ebc35c">Effekseer::Backend::Always</a>
+<br />
+ }</td></tr>
+<tr class="separator:af677b0b5e02f8abdcca0403d6a1ef486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a041d406f6ae307673aab23344fc8967b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967b">Effekseer::Backend::CompareFuncType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba6e7b34fa59e1bd229b207892956dc41c">Effekseer::Backend::Never</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba1cfdf0e8d0c87a228c1f40d9bee7888b">Effekseer::Backend::Less</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967baf5f286e73bda105e538310b3190f75c5">Effekseer::Backend::Equal</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967bad3e6fdac55bb7b0edd7834c968ba1f38">Effekseer::Backend::LessEqual</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba8768a6821cd735aea4f5b0df88c1fc6a">Effekseer::Backend::Greater</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba19bb0af2c3c530538cb41aff7f235b96">Effekseer::Backend::NotEqual</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba758b05d899def79c9eb864ad4f96be1f">Effekseer::Backend::GreaterEqual</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba68eec46437c384d8dad18d5464ebc35c">Effekseer::Backend::Always</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba6e7b34fa59e1bd229b207892956dc41c">Effekseer::Backend::Never</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba1cfdf0e8d0c87a228c1f40d9bee7888b">Effekseer::Backend::Less</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967baf5f286e73bda105e538310b3190f75c5">Effekseer::Backend::Equal</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967bad3e6fdac55bb7b0edd7834c968ba1f38">Effekseer::Backend::LessEqual</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba8768a6821cd735aea4f5b0df88c1fc6a">Effekseer::Backend::Greater</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba19bb0af2c3c530538cb41aff7f235b96">Effekseer::Backend::NotEqual</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba758b05d899def79c9eb864ad4f96be1f">Effekseer::Backend::GreaterEqual</a>
+, <a class="el" href="namespaceEffekseer_1_1Backend.html#a041d406f6ae307673aab23344fc8967ba68eec46437c384d8dad18d5464ebc35c">Effekseer::Backend::Always</a>
+<br />
+ }</td></tr>
+<tr class="separator:a041d406f6ae307673aab23344fc8967b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:afc3d4e56cf4f8d0f12ac7d4bee7591b9"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:afc3d4e56cf4f8d0f12ac7d4bee7591b9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#afc3d4e56cf4f8d0f12ac7d4bee7591b9">Effekseer::Max</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> t, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> u)</td></tr>
+<tr class="memdesc:afc3d4e56cf4f8d0f12ac7d4bee7591b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大値取得  <br /></td></tr>
+<tr class="separator:afc3d4e56cf4f8d0f12ac7d4bee7591b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d523c19d4088c7566fadd84449eba7"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:ad4d523c19d4088c7566fadd84449eba7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ad4d523c19d4088c7566fadd84449eba7">Effekseer::Min</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> t, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> u)</td></tr>
+<tr class="memdesc:ad4d523c19d4088c7566fadd84449eba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小値取得  <br /></td></tr>
+<tr class="separator:ad4d523c19d4088c7566fadd84449eba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a524a62e3d5b25946bcccd60ffe448c9c"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> , typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a5206560a306a2e085a437fd258eb57ce">V</a> &gt; </td></tr>
+<tr class="memitem:a524a62e3d5b25946bcccd60ffe448c9c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a524a62e3d5b25946bcccd60ffe448c9c">Effekseer::Clamp</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> t, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> max_, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a5206560a306a2e085a437fd258eb57ce">V</a> min_)</td></tr>
+<tr class="memdesc:a524a62e3d5b25946bcccd60ffe448c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">範囲内値取得  <br /></td></tr>
+<tr class="separator:a524a62e3d5b25946bcccd60ffe448c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65c29e6091725f3e2ec45a4a0c3ed84"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ad65c29e6091725f3e2ec45a4a0c3ed84">Effekseer::ConvertUtf16ToUtf8</a> (char *dst, int32_t dst_size, const char16_t *src)</td></tr>
+<tr class="memdesc:ad65c29e6091725f3e2ec45a4a0c3ed84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert UTF16 into UTF8  <br /></td></tr>
+<tr class="separator:ad65c29e6091725f3e2ec45a4a0c3ed84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9fb041d64651e90b523d03da55c329e"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#af9fb041d64651e90b523d03da55c329e">Effekseer::ConvertUtf8ToUtf16</a> (char16_t *dst, int32_t dst_size, const char *src)</td></tr>
+<tr class="memdesc:af9fb041d64651e90b523d03da55c329e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert UTF8 into UTF16  <br /></td></tr>
+<tr class="separator:af9fb041d64651e90b523d03da55c329e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50baa1ca73337f329f802a2a6412623c"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a50baa1ca73337f329f802a2a6412623c"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, ReferenceDeleter&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a50baa1ca73337f329f802a2a6412623c">Effekseer::CreateUniqueReference</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *ptr, bool addRef=false)</td></tr>
+<tr class="separator:a50baa1ca73337f329f802a2a6412623c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89525f4436569b41bee58c2cd07eeecc"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a89525f4436569b41bee58c2cd07eeecc"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a89525f4436569b41bee58c2cd07eeecc">Effekseer::CreateReference</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *ptr, bool addRef=false)</td></tr>
+<tr class="separator:a89525f4436569b41bee58c2cd07eeecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20aa5e8318c42721a70f8912885fcce"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ad20aa5e8318c42721a70f8912885fcce"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ad20aa5e8318c42721a70f8912885fcce">Effekseer::SafeAddRef</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *val)</td></tr>
+<tr class="separator:ad20aa5e8318c42721a70f8912885fcce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac393052d7f83b62927ec9461c8825422"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ac393052d7f83b62927ec9461c8825422"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ac393052d7f83b62927ec9461c8825422">Effekseer::SafeRelease</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> *&amp;val)</td></tr>
+<tr class="separator:ac393052d7f83b62927ec9461c8825422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ade20bcc238e4262a30fb493746861"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:a36ade20bcc238e4262a30fb493746861"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a36ade20bcc238e4262a30fb493746861">Effekseer::operator==</a> (const RefPtr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;lhs, const RefPtr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;rhs)</td></tr>
+<tr class="separator:a36ade20bcc238e4262a30fb493746861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8177d14702c33e15d848b6e957f3908"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:aa8177d14702c33e15d848b6e957f3908"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#aa8177d14702c33e15d848b6e957f3908">Effekseer::operator!=</a> (const RefPtr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;lhs, const RefPtr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;rhs)</td></tr>
+<tr class="separator:aa8177d14702c33e15d848b6e957f3908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fd72bed2ff4952b746829b3393d0dfa"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a4fd72bed2ff4952b746829b3393d0dfa"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a4fd72bed2ff4952b746829b3393d0dfa">Effekseer::operator&lt;</a> (const RefPtr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;lhs, const RefPtr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;rhs)</td></tr>
+<tr class="separator:a4fd72bed2ff4952b746829b3393d0dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a147d08c21588967d515cfcf99e460"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ad5a147d08c21588967d515cfcf99e460"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ad5a147d08c21588967d515cfcf99e460">Effekseer::operator==</a> (const RefPtr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;lhs, const std::nullptr_t &amp;rhs)</td></tr>
+<tr class="separator:ad5a147d08c21588967d515cfcf99e460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae862482e04c3ac4a774f7aa8e65bb08f"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ae862482e04c3ac4a774f7aa8e65bb08f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ae862482e04c3ac4a774f7aa8e65bb08f">Effekseer::operator!=</a> (const RefPtr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;lhs, const std::nullptr_t &amp;rhs)</td></tr>
+<tr class="separator:ae862482e04c3ac4a774f7aa8e65bb08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb7cf0ff979e0995814311c3a8fbc80"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class... Arg&gt; </td></tr>
+<tr class="memitem:a0cb7cf0ff979e0995814311c3a8fbc80"><td class="memTemplItemLeft" align="right" valign="top">RefPtr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a0cb7cf0ff979e0995814311c3a8fbc80">Effekseer::MakeRefPtr</a> (Arg &amp;&amp;... args)</td></tr>
+<tr class="separator:a0cb7cf0ff979e0995814311c3a8fbc80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a616e872915ae9f8cc337f3863aad9915"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a616e872915ae9f8cc337f3863aad9915">Effekseer::SetLogger</a> (const std::function&lt; void(LogType, const std::string &amp;)&gt; &amp;logger)</td></tr>
+<tr class="separator:a616e872915ae9f8cc337f3863aad9915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d56cf3a74b544d4257c84e7d365256"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ac4d56cf3a74b544d4257c84e7d365256">Effekseer::Log</a> (LogType logType, const std::string &amp;message)</td></tr>
+<tr class="separator:ac4d56cf3a74b544d4257c84e7d365256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab96c95b1a63e5f00b03b431f3e2580c"><td class="memItemLeft" align="right" valign="top">MallocFunc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#aab96c95b1a63e5f00b03b431f3e2580c">Effekseer::GetMallocFunc</a> ()</td></tr>
+<tr class="memdesc:aab96c95b1a63e5f00b03b431f3e2580c"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ確保関数を取得する。  <br /></td></tr>
+<tr class="separator:aab96c95b1a63e5f00b03b431f3e2580c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfc21ce1ff1399186dfae9cf66fbd5bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#acfc21ce1ff1399186dfae9cf66fbd5bd">Effekseer::SetMallocFunc</a> (MallocFunc <a class="el" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>)</td></tr>
+<tr class="separator:acfc21ce1ff1399186dfae9cf66fbd5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d17e25ff8ef31a6ad49ba8990638f97"><td class="memItemLeft" align="right" valign="top">FreeFunc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a9d17e25ff8ef31a6ad49ba8990638f97">Effekseer::GetFreeFunc</a> ()</td></tr>
+<tr class="memdesc:a9d17e25ff8ef31a6ad49ba8990638f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ破棄関数を取得する。  <br /></td></tr>
+<tr class="separator:a9d17e25ff8ef31a6ad49ba8990638f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e44801264e5f7a5bfd6fd41855bf22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a81e44801264e5f7a5bfd6fd41855bf22">Effekseer::SetFreeFunc</a> (FreeFunc <a class="el" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>)</td></tr>
+<tr class="separator:a81e44801264e5f7a5bfd6fd41855bf22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdc0a4b7d092501920dbe1dba2c1d217"><td class="memItemLeft" align="right" valign="top">AlignedMallocFunc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#abdc0a4b7d092501920dbe1dba2c1d217">Effekseer::GetAlignedMallocFunc</a> ()</td></tr>
+<tr class="memdesc:abdc0a4b7d092501920dbe1dba2c1d217"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ確保関数を取得する。  <br /></td></tr>
+<tr class="separator:abdc0a4b7d092501920dbe1dba2c1d217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5f88739b46e5d366efda796f462e448"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#ae5f88739b46e5d366efda796f462e448">Effekseer::SetAlignedMallocFunc</a> (AlignedMallocFunc <a class="el" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>)</td></tr>
+<tr class="separator:ae5f88739b46e5d366efda796f462e448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2783d0e80874d3ff011675b1200768e"><td class="memItemLeft" align="right" valign="top">AlignedFreeFunc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#aa2783d0e80874d3ff011675b1200768e">Effekseer::GetAlignedFreeFunc</a> ()</td></tr>
+<tr class="memdesc:aa2783d0e80874d3ff011675b1200768e"><td class="mdescLeft">&#160;</td><td class="mdescRight">メモリ破棄関数を取得する。  <br /></td></tr>
+<tr class="separator:aa2783d0e80874d3ff011675b1200768e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bbc88b1465e30febecf382e8d57ead2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a0bbc88b1465e30febecf382e8d57ead2">Effekseer::SetAlignedFreeFunc</a> (AlignedFreeFunc <a class="el" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>)</td></tr>
+<tr class="separator:a0bbc88b1465e30febecf382e8d57ead2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb9e9d0bc046c936550453265dae108"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:aebb9e9d0bc046c936550453265dae108"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#aebb9e9d0bc046c936550453265dae108">Effekseer::operator==</a> (const CustomAllocator&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;, const CustomAllocator&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;)</td></tr>
+<tr class="separator:aebb9e9d0bc046c936550453265dae108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54794242ae9229987782a9f32263ecd2"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; </td></tr>
+<tr class="memitem:a54794242ae9229987782a9f32263ecd2"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceEffekseer.html#a54794242ae9229987782a9f32263ecd2">Effekseer::operator!=</a> (const CustomAllocator&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; &amp;, const CustomAllocator&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt; &amp;)</td></tr>
+<tr class="separator:a54794242ae9229987782a9f32263ecd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d641dd4ab0c30f8238a0b95b79ebf09"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a8d641dd4ab0c30f8238a0b95b79ebf09">Effekseer::Backend::IsDepthTextureFormat</a> (TextureFormatType format)</td></tr>
+<tr class="separator:a8d641dd4ab0c30f8238a0b95b79ebf09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bb13ed8b919127d6000015627d65e3c"><td class="memItemLeft" align="right" valign="top">TextureUsageType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a0bb13ed8b919127d6000015627d65e3c">Effekseer::Backend::operator|</a> (TextureUsageType lhs, TextureUsageType rhs)</td></tr>
+<tr class="separator:a0bb13ed8b919127d6000015627d65e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72c36fcdf57fc10e2de672c68f543004"><td class="memItemLeft" align="right" valign="top">TextureUsageType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a72c36fcdf57fc10e2de672c68f543004">Effekseer::Backend::operator&amp;</a> (TextureUsageType lhs, TextureUsageType rhs)</td></tr>
+<tr class="separator:a72c36fcdf57fc10e2de672c68f543004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46e161f0455f7ed90ee62112438f52de"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#a46e161f0455f7ed90ee62112438f52de">Effekseer::Backend::GetVertexLayoutFormatSize</a> (VertexLayoutFormat format)</td></tr>
+<tr class="separator:a46e161f0455f7ed90ee62112438f52de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:af4cf86db48d4bf99b16026552fb52696"><td class="memItemLeft" align="right" valign="top">static const int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEffekseer_1_1Backend.html#af4cf86db48d4bf99b16026552fb52696">Effekseer::Backend::RenderTargetMax</a> = 4</td></tr>
+<tr class="separator:af4cf86db48d4bf99b16026552fb52696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ae50d8e705e1df13802125a3d76262513" name="ae50d8e705e1df13802125a3d76262513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae50d8e705e1df13802125a3d76262513">&#9670;&#160;</a></span>__EFFEKSEER_CLIENT_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_CLIENT_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l05052">5052</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad5142c5c895ceca81575cd84f98c6747" name="ad5142c5c895ceca81575cd84f98c6747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5142c5c895ceca81575cd84f98c6747">&#9670;&#160;</a></span>__EFFEKSEER_COLOR_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_COLOR_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01595">1595</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa6a64a06c54a8ef2b8cd8ca491f154b9" name="aa6a64a06c54a8ef2b8cd8ca491f154b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6a64a06c54a8ef2b8cd8ca491f154b9">&#9670;&#160;</a></span>__EFFEKSEER_CUSTOM_ALLOCATOR_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_CUSTOM_ALLOCATOR_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01103">1103</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a42a88a4452a028e268f094f6441d5b27" name="a42a88a4452a028e268f094f6441d5b27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a88a4452a028e268f094f6441d5b27">&#9670;&#160;</a></span>__EFFEKSEER_DEFAULT_FILE_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_DEFAULT_FILE_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02168">2168</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7875687b1f546a573428fe17ec3072f6" name="a7875687b1f546a573428fe17ec3072f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7875687b1f546a573428fe17ec3072f6">&#9670;&#160;</a></span>__EFFEKSEER_EFFECT_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_EFFECT_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02996">2996</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aee690e424571c16a5699f20728ba191d" name="aee690e424571c16a5699f20728ba191d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee690e424571c16a5699f20728ba191d">&#9670;&#160;</a></span>__EFFEKSEER_FILE_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_FILE_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02088">2088</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8f688edcb38c2cfd21e5331c5692b2bc" name="a8f688edcb38c2cfd21e5331c5692b2bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f688edcb38c2cfd21e5331c5692b2bc">&#9670;&#160;</a></span>__EFFEKSEER_GRAPHICS_DEVICE_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_GRAPHICS_DEVICE_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02232">2232</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abd83d013d5507eb61316413dab584472" name="abd83d013d5507eb61316413dab584472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd83d013d5507eb61316413dab584472">&#9670;&#160;</a></span>__EFFEKSEER_LOADER_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_LOADER_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l04711">4711</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa326d43fceccccf752fa148f82acb36e" name="aa326d43fceccccf752fa148f82acb36e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa326d43fceccccf752fa148f82acb36e">&#9670;&#160;</a></span>__EFFEKSEER_MANAGER_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_MANAGER_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l03783">3783</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0e6c88e72faff324e24afcf93295d012" name="a0e6c88e72faff324e24afcf93295d012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e6c88e72faff324e24afcf93295d012">&#9670;&#160;</a></span>__EFFEKSEER_MATRIX43_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_MATRIX43_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01771">1771</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3aedefb50559cc2a41399284800ab81f" name="a3aedefb50559cc2a41399284800ab81f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aedefb50559cc2a41399284800ab81f">&#9670;&#160;</a></span>__EFFEKSEER_MATRIX44_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_MATRIX44_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01940">1940</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae0f173361dbdb0628d5e25e22ce2e43b" name="ae0f173361dbdb0628d5e25e22ce2e43b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f173361dbdb0628d5e25e22ce2e43b">&#9670;&#160;</a></span>__EFFEKSEER_RECTF_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_RECTF_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01723">1723</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad158afe60c39668ebaaea3264ebceaab" name="ad158afe60c39668ebaaea3264ebceaab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad158afe60c39668ebaaea3264ebceaab">&#9670;&#160;</a></span>__EFFEKSEER_RESOURCE_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_RESOURCE_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l02887">2887</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaa0f1f98693b485fa0a022af6b814927" name="aaa0f1f98693b485fa0a022af6b814927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa0f1f98693b485fa0a022af6b814927">&#9670;&#160;</a></span>__EFFEKSEER_SERVER_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_SERVER_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l04956">4956</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa9370a43166c025ec921ec005658f427" name="aa9370a43166c025ec921ec005658f427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9370a43166c025ec921ec005658f427">&#9670;&#160;</a></span>__EFFEKSEER_VECTOR2D_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_VECTOR2D_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01407">1407</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa82b99d80736c984fa4fe4710ef5bd8b" name="aa82b99d80736c984fa4fe4710ef5bd8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa82b99d80736c984fa4fe4710ef5bd8b">&#9670;&#160;</a></span>__EFFEKSEER_VECTOR3D_H__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __EFFEKSEER_VECTOR3D_H__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l01460">1460</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa72e44a15e7333fe9c1ce7a0ecc2e947" name="aa72e44a15e7333fe9c1ce7a0ecc2e947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72e44a15e7333fe9c1ce7a0ecc2e947">&#9670;&#160;</a></span>EFK_ASSERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EFK_ASSERT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;assert(x)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00134">134</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4b2fd0bd069299f55649055bbd485d7f" name="a4b2fd0bd069299f55649055bbd485d7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b2fd0bd069299f55649055bbd485d7f">&#9670;&#160;</a></span>EFK_STDCALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EFK_STDCALL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab70b4ca19a8eeb792fe80a0d14b5a5ce" name="ab70b4ca19a8eeb792fe80a0d14b5a5ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab70b4ca19a8eeb792fe80a0d14b5a5ce">&#9670;&#160;</a></span>ES_SAFE_ADDREF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ES_SAFE_ADDREF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <span class="keyword">static_assert</span>(std::is_class&lt;<span class="keyword">decltype</span>(val)&gt;::value != <span class="keyword">true</span>, <span class="stringliteral">&quot;val must not be class/struct&quot;</span>); \</div>
+<div class="line">    if ((val) != <span class="keyword">nullptr</span>)                                                                       \</div>
+<div class="line">    {                                                                                           \</div>
+<div class="line">        (val)-&gt;AddRef();                                                                        \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00105">105</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5278841d38f84c7fdf57770ece804d9b" name="a5278841d38f84c7fdf57770ece804d9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5278841d38f84c7fdf57770ece804d9b">&#9670;&#160;</a></span>ES_SAFE_DELETE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ES_SAFE_DELETE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <span class="keyword">static_assert</span>(std::is_class&lt;<span class="keyword">decltype</span>(val)&gt;::value != <span class="keyword">true</span>, <span class="stringliteral">&quot;val must not be class/struct&quot;</span>); \</div>
+<div class="line">    if ((val) != <span class="keyword">nullptr</span>)                                                                       \</div>
+<div class="line">    {                                                                                           \</div>
+<div class="line">        delete (val);                                                                           \</div>
+<div class="line">        (val) = <span class="keyword">nullptr</span>;                                                                        \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00119">119</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a09da01befa6b94eb8ca94be9b2bf558d" name="a09da01befa6b94eb8ca94be9b2bf558d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09da01befa6b94eb8ca94be9b2bf558d">&#9670;&#160;</a></span>ES_SAFE_DELETE_ARRAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ES_SAFE_DELETE_ARRAY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <span class="keyword">static_assert</span>(std::is_class&lt;<span class="keyword">decltype</span>(val)&gt;::value != <span class="keyword">true</span>, <span class="stringliteral">&quot;val must not be class/struct&quot;</span>); \</div>
+<div class="line">    if ((val) != <span class="keyword">nullptr</span>)                                                                       \</div>
+<div class="line">    {                                                                                           \</div>
+<div class="line">        <span class="keyword">delete</span>[](val);                                                                          \</div>
+<div class="line">        (val) = <span class="keyword">nullptr</span>;                                                                        \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00126">126</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a552d766d4c7156ddd0042d4d94c8b562" name="a552d766d4c7156ddd0042d4d94c8b562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a552d766d4c7156ddd0042d4d94c8b562">&#9670;&#160;</a></span>ES_SAFE_RELEASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ES_SAFE_RELEASE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">val</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <span class="keyword">static_assert</span>(std::is_class&lt;<span class="keyword">decltype</span>(val)&gt;::value != <span class="keyword">true</span>, <span class="stringliteral">&quot;val must not be class/struct&quot;</span>); \</div>
+<div class="line">    if ((val) != <span class="keyword">nullptr</span>)                                                                       \</div>
+<div class="line">    {                                                                                           \</div>
+<div class="line">        (val)-&gt;Release();                                                                       \</div>
+<div class="line">        (val) = <span class="keyword">nullptr</span>;                                                                        \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00111">111</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">型定義詳解</h2>
+<a id="a50b026abea014b47854bcd835b3b6233" name="a50b026abea014b47854bcd835b3b6233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50b026abea014b47854bcd835b3b6233">&#9670;&#160;</a></span>EFK_CHAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef char16_t <a class="el" href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h.html#a50b026abea014b47854bcd835b3b6233">EFK_CHAR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html">install_msvc2022_x86/include/Effekseer/Effekseer.h</a> の <a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h_source.html#l00050">50</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7c5410398a44882a19233b74a46ddf81.html">EffekseeLib</a></li><li class="navelem"><a class="el" href="dir_926327d307dabae2aa59034eae1c6a7e.html">install_msvc2022_x86</a></li><li class="navelem"><a class="el" href="dir_21b11ca632b48926d9e67bf866c261a7.html">include</a></li><li class="navelem"><a class="el" href="dir_98b126a751df31dea24fd50fe43371ae.html">Effekseer</a></li><li class="navelem"><a class="el" href="install__msvc2022__x86_2include_2Effekseer_2Effekseer_8h.html">Effekseer.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

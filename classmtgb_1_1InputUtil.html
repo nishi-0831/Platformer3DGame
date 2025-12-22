@@ -1,0 +1,1715 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::InputUtil クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1InputUtil.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pri-static-methods">静的非公開メンバ関数</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
+<a href="classmtgb_1_1InputUtil-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::InputUtil クラス<span class="mlabels"><span class="mlabel">final</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="InputData_8h_source.html">InputData.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::InputUtil 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil__coll__graph.svg" width="344" height="1247"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a920280bc3d6f2d8f967385d733aad1b2"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a920280bc3d6f2d8f967385d733aad1b2">GetKey</a> (const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574">KeyCode</a> _keyCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a920280bc3d6f2d8f967385d733aad1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dade03e3bbb665d967f7411d82b8d94"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">GetKeyDown</a> (const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574">KeyCode</a> _keyCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a4dade03e3bbb665d967f7411d82b8d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a748b842b595db4b8adab088ce70d7390"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a748b842b595db4b8adab088ce70d7390">GetKeyUp</a> (const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574">KeyCode</a> _keyCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a748b842b595db4b8adab088ce70d7390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a201aee9895738d4fe5f142f7f871739b"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a201aee9895738d4fe5f142f7f871739b">GetMouse</a> (const <a class="el" href="InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e">MouseCode</a> _mouseCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a201aee9895738d4fe5f142f7f871739b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c547e49e5a5a25f25f1a2c939ad6eb"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#ac8c547e49e5a5a25f25f1a2c939ad6eb">GetMouseDown</a> (const <a class="el" href="InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e">MouseCode</a> _mouseCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:ac8c547e49e5a5a25f25f1a2c939ad6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8b92c4acff7e8b1bff497673f944407"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#ab8b92c4acff7e8b1bff497673f944407">GetMouseUp</a> (const <a class="el" href="InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e">MouseCode</a> _mouseCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:ab8b92c4acff7e8b1bff497673f944407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f96b6b12ac27d1b8600c25f565734f"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a44f96b6b12ac27d1b8600c25f565734f">GetGamePad</a> (const <a class="el" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a> _padButtonCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a44f96b6b12ac27d1b8600c25f565734f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcc52de1fac55087716b6e03816d4e13"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#abcc52de1fac55087716b6e03816d4e13">GetGamePadDown</a> (const <a class="el" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a> _padButtonCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:abcc52de1fac55087716b6e03816d4e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af80a155f9be4af34289d5b690e5ca6"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a0af80a155f9be4af34289d5b690e5ca6">GetGamePadUp</a> (const <a class="el" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a> _padButtonCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a0af80a155f9be4af34289d5b690e5ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8efda79e5fb32799e908a0c2985f76ba"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a8efda79e5fb32799e908a0c2985f76ba">GetGamePad</a> (const <a class="el" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">FlightStickCode</a> _flightStickCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a8efda79e5fb32799e908a0c2985f76ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ee65266627a430c82e8bbb89f05eb86"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a7ee65266627a430c82e8bbb89f05eb86">GetGamePadDown</a> (const <a class="el" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">FlightStickCode</a> _flightStickCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a7ee65266627a430c82e8bbb89f05eb86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab557f7d73cca30f9216a0f1c690a97b6"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#ab557f7d73cca30f9216a0f1c690a97b6">GetGamePadUp</a> (const <a class="el" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">FlightStickCode</a> _flightStickCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:ab557f7d73cca30f9216a0f1c690a97b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c7c1e3e2ac29258ccc9ade58feb344a"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a9c7c1e3e2ac29258ccc9ade58feb344a">GetTrigger</a> (<a class="el" href="namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09">FlightStickAxisCode</a> _flightStickCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a9c7c1e3e2ac29258ccc9ade58feb344a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accf62dc5bce5d6602ec75d49aec64bd4"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#accf62dc5bce5d6602ec75d49aec64bd4">GetTrigger</a> (<a class="el" href="namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ff">PadAxisCode</a> _padCode, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:accf62dc5bce5d6602ec75d49aec64bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0e27db46e915d4841584a7d914eb51"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a4e0e27db46e915d4841584a7d914eb51">GetAxis</a> (<a class="el" href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8a">Axis</a> _axis, <a class="el" href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdae">StickType</a> _stickType, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a4e0e27db46e915d4841584a7d914eb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b73e780d91c2c9c40cf4b0066d9b0da"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a7b73e780d91c2c9c40cf4b0066d9b0da">GetAxis</a> (<a class="el" href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdae">StickType</a> _stickType, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:a7b73e780d91c2c9c40cf4b0066d9b0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab114a89e91dcec537edcdd2513e78853"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#ab114a89e91dcec537edcdd2513e78853">GetMousePosition</a> (<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:ab114a89e91dcec537edcdd2513e78853"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1b184545e3cdf92bf935006ba045647"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#ae1b184545e3cdf92bf935006ba045647">GetMouseMove</a> (<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context=<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a>)</td></tr>
+<tr class="separator:ae1b184545e3cdf92bf935006ba045647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静的非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a503e5b57aeb4202ac32fab94ee2a8b53"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a503e5b57aeb4202ac32fab94ee2a8b53">KeyXOR</a> (const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574">KeyCode</a> _keyCode, const std::bitset&lt; <a class="el" href="classmtgb_1_1InputUtil.html#a139bf27e59a76d889968204a51348ad7">KEY_COUNT</a> &gt; &amp;_keyStateCurrent, const std::bitset&lt; <a class="el" href="classmtgb_1_1InputUtil.html#a139bf27e59a76d889968204a51348ad7">KEY_COUNT</a> &gt; &amp;_keyStatePrevious)</td></tr>
+<tr class="memdesc:a503e5b57aeb4202ac32fab94ee2a8b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">currとprevのxorを取得  <br /></td></tr>
+<tr class="separator:a503e5b57aeb4202ac32fab94ee2a8b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08467ce58c43c6e4da71c45e62ed43f8"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a08467ce58c43c6e4da71c45e62ed43f8">MouseXOR</a> (const <a class="el" href="InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e">MouseCode</a> _mouseCode, const _DIMOUSESTATE &amp;_mouseStateCurrent, const _DIMOUSESTATE &amp;_mouseStatePrevious)</td></tr>
+<tr class="separator:a08467ce58c43c6e4da71c45e62ed43f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49655ed15bd2f09cfa36f8b26211c279"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a> (const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574">KeyCode</a> _keyCode)</td></tr>
+<tr class="memdesc:a49655ed15bd2f09cfa36f8b26211c279"><td class="mdescLeft">&#160;</td><td class="mdescRight">キーコード構造体列挙型をインデックスに変換  <br /></td></tr>
+<tr class="separator:a49655ed15bd2f09cfa36f8b26211c279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2b1b4943ddae802325326f098ab1651"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#ae2b1b4943ddae802325326f098ab1651">Index</a> (const <a class="el" href="InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e">MouseCode</a> _moudeCode)</td></tr>
+<tr class="separator:ae2b1b4943ddae802325326f098ab1651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20c119cbf9f9f8c32d3db42ee6da9c7a"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a20c119cbf9f9f8c32d3db42ee6da9c7a">Index</a> (const <a class="el" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a> _padCode)</td></tr>
+<tr class="separator:a20c119cbf9f9f8c32d3db42ee6da9c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a38d2c8ff7b82db80c8b6626fa26413"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a0a38d2c8ff7b82db80c8b6626fa26413">Index</a> (const <a class="el" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">FlightStickCode</a> _flightStickCode)</td></tr>
+<tr class="separator:a0a38d2c8ff7b82db80c8b6626fa26413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62806c019f0c9cc77efe0ef832ff9ee2"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classmtgb_1_1InputData.html">InputData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a> (<a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context)</td></tr>
+<tr class="memdesc:a62806c019f0c9cc77efe0ef832ff9ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力状態を取得 どのウィンドウでも構わない場合はWindowContext::Firstのウィンドウが取得される  <br /></td></tr>
+<tr class="separator:a62806c019f0c9cc77efe0ef832ff9ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a0140bfc608b9c56fb322d26ed46d76"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a4a0140bfc608b9c56fb322d26ed46d76">PadXOR</a> (const <a class="el" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a> _padCode, const DIJOYSTATE &amp;_padStateCurrent, const DIJOYSTATE &amp;_padStatePrevious)</td></tr>
+<tr class="separator:a4a0140bfc608b9c56fb322d26ed46d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5e26916dda6519df6c170a22533f739"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#af5e26916dda6519df6c170a22533f739">GetGamePadImpl</a> (size_t _index, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context)</td></tr>
+<tr class="separator:af5e26916dda6519df6c170a22533f739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bbff255c42c1739636f9a134dc7f37e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a2bbff255c42c1739636f9a134dc7f37e">GetGamePadUpImpl</a> (size_t _index, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context)</td></tr>
+<tr class="separator:a2bbff255c42c1739636f9a134dc7f37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78536992bd7e38b512d843b008b39c6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#ae78536992bd7e38b512d843b008b39c6">GetGamePadDownImpl</a> (size_t _index, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context)</td></tr>
+<tr class="separator:ae78536992bd7e38b512d843b008b39c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:a139bf27e59a76d889968204a51348ad7"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1InputUtil.html#a139bf27e59a76d889968204a51348ad7">KEY_COUNT</a> { 256 }</td></tr>
+<tr class="separator:a139bf27e59a76d889968204a51348ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="InputData_8h_source.html">InputData.h</a> の <a class="el" href="InputData_8h_source.html#l00025">25</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a4e0e27db46e915d4841584a7d914eb51" name="a4e0e27db46e915d4841584a7d914eb51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0e27db46e915d4841584a7d914eb51">&#9670;&#160;</a></span>GetAxis() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float mtgb::InputUtil::GetAxis </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8a">Axis</a>&#160;</td>
+          <td class="paramname"><em>_axis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdae">StickType</a>&#160;</td>
+          <td class="paramname"><em>_stickType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00190">190</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>{</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keyword">const</span> InputData&amp; input = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context);</div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordtype">float</span> value = 0.0f;</div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">switch</span> (_axis)</div>
+<div class="line"><span class="lineno">  195</span>    {</div>
+<div class="line"><span class="lineno">  196</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa02129bb861061d1a052c592e2dc6b383">Axis::X</a>:</div>
+<div class="line"><span class="lineno">  197</span>        <span class="keywordflow">if</span> (_stickType == StickType::LEFT)</div>
+<div class="line"><span class="lineno">  198</span>        {</div>
+<div class="line"><span class="lineno">  199</span>            value = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.lX);</div>
+<div class="line"><span class="lineno">  200</span>        }</div>
+<div class="line"><span class="lineno">  201</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  202</span>        {</div>
+<div class="line"><span class="lineno">  203</span>            <span class="keywordflow">if</span> (input.controllerType_ == <a class="code hl_enumvalue" href="namespacemtgb.html#ad5fce522aec9941a8920f42294209e65ab53b94195dd24d77f138ebdfb78df4aa">ControllerType::DualShock</a>)</div>
+<div class="line"><span class="lineno">  204</span>            {</div>
+<div class="line"><span class="lineno">  205</span>                value = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.lZ);</div>
+<div class="line"><span class="lineno">  206</span>            }</div>
+<div class="line"><span class="lineno">  207</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input.controllerType_ == <a class="code hl_enumvalue" href="namespacemtgb.html#ad5fce522aec9941a8920f42294209e65a183709ebe3a1d675014d32b94ad7ed94">ControllerType::Xbox</a>)</div>
+<div class="line"><span class="lineno">  208</span>            {</div>
+<div class="line"><span class="lineno">  209</span>                value = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.lRx);</div>
+<div class="line"><span class="lineno">  210</span>            }</div>
+<div class="line"><span class="lineno">  211</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  212</span>            {</div>
+<div class="line"><span class="lineno">  213</span>                value = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.lZ);</div>
+<div class="line"><span class="lineno">  214</span>            }</div>
+<div class="line"><span class="lineno">  215</span>        }</div>
+<div class="line"><span class="lineno">  216</span>        value /= input.config_.xRange; </div>
+<div class="line"><span class="lineno">  217</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa57cec4137b614c87cb4e24a3d003a3e0">Axis::Y</a>:</div>
+<div class="line"><span class="lineno">  220</span>        <span class="keywordflow">if</span> (_stickType == StickType::LEFT)</div>
+<div class="line"><span class="lineno">  221</span>        {</div>
+<div class="line"><span class="lineno">  222</span>            value = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.lY);</div>
+<div class="line"><span class="lineno">  223</span>        }</div>
+<div class="line"><span class="lineno">  224</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  225</span>        {</div>
+<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">if</span> (input.controllerType_ == <a class="code hl_enumvalue" href="namespacemtgb.html#ad5fce522aec9941a8920f42294209e65ab53b94195dd24d77f138ebdfb78df4aa">ControllerType::DualShock</a>)</div>
+<div class="line"><span class="lineno">  227</span>            {</div>
+<div class="line"><span class="lineno">  228</span>                value = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.lRz);</div>
+<div class="line"><span class="lineno">  229</span>            }</div>
+<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input.controllerType_ == <a class="code hl_enumvalue" href="namespacemtgb.html#ad5fce522aec9941a8920f42294209e65a183709ebe3a1d675014d32b94ad7ed94">ControllerType::Xbox</a>)</div>
+<div class="line"><span class="lineno">  231</span>            {</div>
+<div class="line"><span class="lineno">  232</span>                value = -<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.lRy);</div>
+<div class="line"><span class="lineno">  233</span>            }</div>
+<div class="line"><span class="lineno">  234</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  235</span>            {</div>
+<div class="line"><span class="lineno">  236</span>                value = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.lRz);</div>
+<div class="line"><span class="lineno">  237</span>            }</div>
+<div class="line"><span class="lineno">  238</span>        }</div>
+<div class="line"><span class="lineno">  239</span>        value /= input.config_.yRange;</div>
+<div class="line"><span class="lineno">  240</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">default</span>: <span class="keywordflow">return</span> 0.0f;</div>
+<div class="line"><span class="lineno">  242</span>    }</div>
+<div class="line"><span class="lineno">  243</span>    <span class="keywordflow">return</span> input.config_.ApplyDeadZone(value);</div>
+<div class="line"><span class="lineno">  244</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a62806c019f0c9cc77efe0ef832ff9ee2"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">mtgb::InputUtil::GetInput</a></div><div class="ttdeci">static const InputData &amp; GetInput(WindowContext _context)</div><div class="ttdoc">入力状態を取得 どのウィンドウでも構わない場合はWindowContext::Firstのウィンドウが取得される</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00119">InputData.cpp:119</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_ad5fce522aec9941a8920f42294209e65a183709ebe3a1d675014d32b94ad7ed94"><div class="ttname"><a href="namespacemtgb.html#ad5fce522aec9941a8920f42294209e65a183709ebe3a1d675014d32b94ad7ed94">mtgb::ControllerType::Xbox</a></div><div class="ttdeci">@ Xbox</div></div>
+<div class="ttc" id="anamespacemtgb_html_ad5fce522aec9941a8920f42294209e65ab53b94195dd24d77f138ebdfb78df4aa"><div class="ttname"><a href="namespacemtgb.html#ad5fce522aec9941a8920f42294209e65ab53b94195dd24d77f138ebdfb78df4aa">mtgb::ControllerType::DualShock</a></div><div class="ttdeci">@ DualShock</div></div>
+<div class="ttc" id="anamespacemtgb_html_ad8e6de006fc9434a3c3d40499268cf8aa02129bb861061d1a052c592e2dc6b383"><div class="ttname"><a href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa02129bb861061d1a052c592e2dc6b383">mtgb::Axis::X</a></div><div class="ttdeci">@ X</div></div>
+<div class="ttc" id="anamespacemtgb_html_ad8e6de006fc9434a3c3d40499268cf8aa57cec4137b614c87cb4e24a3d003a3e0"><div class="ttname"><a href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa57cec4137b614c87cb4e24a3d003a3e0">mtgb::Axis::Y</a></div><div class="ttdeci">@ Y</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputConfig_8cpp_source.html#l00031">mtgb::InputConfig::ApplyDeadZone()</a>, <a class="el" href="InputData_8h_source.html#l00131">mtgb::InputData::config_</a>, <a class="el" href="InputData_8h_source.html#l00130">mtgb::InputData::controllerType_</a>, <a class="el" href="namespacemtgb.html#ad5fce522aec9941a8920f42294209e65ab53b94195dd24d77f138ebdfb78df4aa">mtgb::DualShock</a>, <a class="el" href="InputData_8h_source.html#l00128">mtgb::InputData::joyStateCurrent_</a>, <a class="el" href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa02129bb861061d1a052c592e2dc6b383">mtgb::X</a>, <a class="el" href="namespacemtgb.html#ad5fce522aec9941a8920f42294209e65a183709ebe3a1d675014d32b94ad7ed94">mtgb::Xbox</a>, <a class="el" href="InputConfig_8h_source.html#l00009">mtgb::InputConfig::xRange</a>, <a class="el" href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa57cec4137b614c87cb4e24a3d003a3e0">mtgb::Y</a>, <a class="el" href="InputConfig_8h_source.html#l00010">mtgb::InputConfig::yRange</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ICamera_8cpp_source.html#l00066">mtgb::ICamera::DoOrbit()</a>, <a class="el" href="Camera_8cpp_source.html#l00122">mtgb::Camera::DoOrbit()</a>, <a class="el" href="Player_8cpp_source.html#l00045">Player::Update()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a4e0e27db46e915d4841584a7d914eb51_cgraph.svg" width="384" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a4e0e27db46e915d4841584a7d914eb51_icgraph.svg" width="655" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a7b73e780d91c2c9c40cf4b0066d9b0da" name="a7b73e780d91c2c9c40cf4b0066d9b0da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b73e780d91c2c9c40cf4b0066d9b0da">&#9670;&#160;</a></span>GetAxis() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">mtgb::Vector2F</a> mtgb::InputUtil::GetAxis </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdae">StickType</a>&#160;</td>
+          <td class="paramname"><em>_stickType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00246">246</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  247</span>{</div>
+<div class="line"><span class="lineno">  248</span>    <span class="keyword">const</span> InputData&amp; input = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context);</div>
+<div class="line"><span class="lineno">  249</span>    <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a>{ </div>
+<div class="line"><span class="lineno">  250</span>        <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4e0e27db46e915d4841584a7d914eb51">GetAxis</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa02129bb861061d1a052c592e2dc6b383">Axis::X</a>,_stickType,_context),<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4e0e27db46e915d4841584a7d914eb51">GetAxis</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa57cec4137b614c87cb4e24a3d003a3e0">Axis::Y</a>,_stickType,_context)};</div>
+<div class="line"><span class="lineno">  251</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a4e0e27db46e915d4841584a7d914eb51"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a4e0e27db46e915d4841584a7d914eb51">mtgb::InputUtil::GetAxis</a></div><div class="ttdeci">static const float GetAxis(Axis _axis, StickType _stickType, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00190">InputData.cpp:190</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a0a8a0914ad55f984fdc2defcfff41f9d"><div class="ttname"><a href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">mtgb::Vector2F</a></div><div class="ttdeci">Vector2T&lt; float &gt; Vector2F</div><div class="ttdef"><b>Definition:</b> <a href="Vector2F_8h_source.html#l00005">Vector2F.h:5</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa02129bb861061d1a052c592e2dc6b383">mtgb::X</a>, <a class="el" href="namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa57cec4137b614c87cb4e24a3d003a3e0">mtgb::Y</a>.</p>
+
+</div>
+</div>
+<a id="a8efda79e5fb32799e908a0c2985f76ba" name="a8efda79e5fb32799e908a0c2985f76ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8efda79e5fb32799e908a0c2985f76ba">&#9670;&#160;</a></span>GetGamePad() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetGamePad </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">FlightStickCode</a>&#160;</td>
+          <td class="paramname"><em>_flightStickCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00104">104</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#af5e26916dda6519df6c170a22533f739">GetGamePadImpl</a>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_flightStickCode), _context);</div>
+<div class="line"><span class="lineno">  107</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a49655ed15bd2f09cfa36f8b26211c279"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">mtgb::InputUtil::Index</a></div><div class="ttdeci">static const size_t Index(const KeyCode _keyCode)</div><div class="ttdoc">キーコード構造体列挙型をインデックスに変換</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00072">InputData.h:72</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_af5e26916dda6519df6c170a22533f739"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#af5e26916dda6519df6c170a22533f739">mtgb::InputUtil::GetGamePadImpl</a></div><div class="ttdeci">static bool GetGamePadImpl(size_t _index, WindowContext _context)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00128">InputData.cpp:128</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a44f96b6b12ac27d1b8600c25f565734f" name="a44f96b6b12ac27d1b8600c25f565734f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f96b6b12ac27d1b8600c25f565734f">&#9670;&#160;</a></span>GetGamePad() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetGamePad </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a>&#160;</td>
+          <td class="paramname"><em>_padButtonCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00089">89</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>{</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#af5e26916dda6519df6c170a22533f739">GetGamePadImpl</a>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_padButtonCode), _context);</div>
+<div class="line"><span class="lineno">   92</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7ee65266627a430c82e8bbb89f05eb86" name="a7ee65266627a430c82e8bbb89f05eb86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ee65266627a430c82e8bbb89f05eb86">&#9670;&#160;</a></span>GetGamePadDown() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetGamePadDown </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">FlightStickCode</a>&#160;</td>
+          <td class="paramname"><em>_flightStickCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00109">109</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>{</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#ae78536992bd7e38b512d843b008b39c6">GetGamePadDownImpl</a>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_flightStickCode), _context);</div>
+<div class="line"><span class="lineno">  112</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_ae78536992bd7e38b512d843b008b39c6"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#ae78536992bd7e38b512d843b008b39c6">mtgb::InputUtil::GetGamePadDownImpl</a></div><div class="ttdeci">static bool GetGamePadDownImpl(size_t _index, WindowContext _context)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00150">InputData.cpp:150</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abcc52de1fac55087716b6e03816d4e13" name="abcc52de1fac55087716b6e03816d4e13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcc52de1fac55087716b6e03816d4e13">&#9670;&#160;</a></span>GetGamePadDown() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetGamePadDown </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a>&#160;</td>
+          <td class="paramname"><em>_padButtonCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00094">94</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>{</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#ae78536992bd7e38b512d843b008b39c6">GetGamePadDownImpl</a>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_padButtonCode), _context);</div>
+<div class="line"><span class="lineno">   97</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00045">Player::Update()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_abcc52de1fac55087716b6e03816d4e13_icgraph.svg" width="368" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae78536992bd7e38b512d843b008b39c6" name="ae78536992bd7e38b512d843b008b39c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae78536992bd7e38b512d843b008b39c6">&#9670;&#160;</a></span>GetGamePadDownImpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::InputUtil::GetGamePadDownImpl </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00150">150</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  151</span>{</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (_context == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">WindowContext::Both</a>)</div>
+<div class="line"><span class="lineno">  153</span>    {</div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#ae78536992bd7e38b512d843b008b39c6">GetGamePadDownImpl</a>(_index, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>) || <a class="code hl_function" href="classmtgb_1_1InputUtil.html#ae78536992bd7e38b512d843b008b39c6">GetGamePadDownImpl</a>(_index, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>);</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <span class="keyword">const</span> InputData&amp; input = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context);</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordtype">int</span> XOR = input.joyStateCurrent_.rgbButtons[_index] ^ input.joyStatePrevious_.rgbButtons[_index];</div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordtype">int</span> curr = input.joyStateCurrent_.rgbButtons[_index];</div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(XOR &amp; curr);</div>
+<div class="line"><span class="lineno">  161</span>}</div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::WindowContext::Both</a></div><div class="ttdeci">@ Both</div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::WindowContext::Second</a></div><div class="ttdeci">@ Second</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::Both</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="InputData_8h_source.html#l00128">mtgb::InputData::joyStateCurrent_</a>, <a class="el" href="InputData_8h_source.html#l00129">mtgb::InputData::joyStatePrevious_</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::Second</a>.</p>
+
+</div>
+</div>
+<a id="af5e26916dda6519df6c170a22533f739" name="af5e26916dda6519df6c170a22533f739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5e26916dda6519df6c170a22533f739">&#9670;&#160;</a></span>GetGamePadImpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::InputUtil::GetGamePadImpl </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00128">128</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>{</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">if</span> (_context == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">WindowContext::Both</a>)</div>
+<div class="line"><span class="lineno">  131</span>    {</div>
+<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#af5e26916dda6519df6c170a22533f739">GetGamePadImpl</a>(_index, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>) || <a class="code hl_function" href="classmtgb_1_1InputUtil.html#af5e26916dda6519df6c170a22533f739">GetGamePadImpl</a>(_index, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>);</div>
+<div class="line"><span class="lineno">  133</span>    }</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context).<a class="code hl_variable" href="classmtgb_1_1InputData.html#adaffd86f7528c4d04bb6eb5ec020fbdf">joyStateCurrent_</a>.rgbButtons[_index];</div>
+<div class="line"><span class="lineno">  135</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_adaffd86f7528c4d04bb6eb5ec020fbdf"><div class="ttname"><a href="classmtgb_1_1InputData.html#adaffd86f7528c4d04bb6eb5ec020fbdf">mtgb::InputData::joyStateCurrent_</a></div><div class="ttdeci">DIJOYSTATE joyStateCurrent_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00128">InputData.h:128</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::Both</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::Second</a>.</p>
+
+</div>
+</div>
+<a id="ab557f7d73cca30f9216a0f1c690a97b6" name="ab557f7d73cca30f9216a0f1c690a97b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab557f7d73cca30f9216a0f1c690a97b6">&#9670;&#160;</a></span>GetGamePadUp() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetGamePadUp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">FlightStickCode</a>&#160;</td>
+          <td class="paramname"><em>_flightStickCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00114">114</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>{</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span>  <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a2bbff255c42c1739636f9a134dc7f37e">GetGamePadUpImpl</a>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_flightStickCode), _context);</div>
+<div class="line"><span class="lineno">  117</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a2bbff255c42c1739636f9a134dc7f37e"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a2bbff255c42c1739636f9a134dc7f37e">mtgb::InputUtil::GetGamePadUpImpl</a></div><div class="ttdeci">static bool GetGamePadUpImpl(size_t _index, WindowContext _context)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00137">InputData.cpp:137</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0af80a155f9be4af34289d5b690e5ca6" name="a0af80a155f9be4af34289d5b690e5ca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0af80a155f9be4af34289d5b690e5ca6">&#9670;&#160;</a></span>GetGamePadUp() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetGamePadUp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a>&#160;</td>
+          <td class="paramname"><em>_padButtonCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00099">99</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a2bbff255c42c1739636f9a134dc7f37e">GetGamePadUpImpl</a>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_padButtonCode), _context);</div>
+<div class="line"><span class="lineno">  102</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2bbff255c42c1739636f9a134dc7f37e" name="a2bbff255c42c1739636f9a134dc7f37e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bbff255c42c1739636f9a134dc7f37e">&#9670;&#160;</a></span>GetGamePadUpImpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::InputUtil::GetGamePadUpImpl </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00137">137</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>{</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">if</span> (_context == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">WindowContext::Both</a>)</div>
+<div class="line"><span class="lineno">  140</span>    {</div>
+<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a2bbff255c42c1739636f9a134dc7f37e">GetGamePadUpImpl</a>(_index, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>) || <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a2bbff255c42c1739636f9a134dc7f37e">GetGamePadUpImpl</a>(_index, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>);</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>    <span class="keyword">const</span> InputData&amp; input = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context);</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordtype">int</span> XOR = input.joyStateCurrent_.rgbButtons[_index] ^ input.joyStatePrevious_.rgbButtons[_index];</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordtype">int</span> prev = input.joyStatePrevious_.rgbButtons[_index];</div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(XOR &amp; prev);</div>
+<div class="line"><span class="lineno">  148</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::Both</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="InputData_8h_source.html#l00128">mtgb::InputData::joyStateCurrent_</a>, <a class="el" href="InputData_8h_source.html#l00129">mtgb::InputData::joyStatePrevious_</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::Second</a>.</p>
+
+</div>
+</div>
+<a id="a62806c019f0c9cc77efe0ef832ff9ee2" name="a62806c019f0c9cc77efe0ef832ff9ee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62806c019f0c9cc77efe0ef832ff9ee2">&#9670;&#160;</a></span>GetInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmtgb_1_1InputData.html">mtgb::InputData</a> &amp; mtgb::InputUtil::GetInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>入力状態を取得 どのウィンドウでも構わない場合はWindowContext::Firstのウィンドウが取得される </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_context</td><td>ウィンドウを指定</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00119">119</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>{</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (_context == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">WindowContext::Both</a>)</div>
+<div class="line"><span class="lineno">  122</span>    {</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">return</span> *(Game::System&lt;WindowContextResourceManager&gt;().Get&lt;InputResource&gt;(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>).<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>());</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">return</span> *(Game::System&lt;WindowContextResourceManager&gt;().Get&lt;InputResource&gt;(_context).<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>());</div>
+<div class="line"><span class="lineno">  126</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::Both</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="InputData_8cpp_source.html#l00018">GetKey()</a>, <a class="el" href="InputData_8cpp_source.html#l00258">GetMouseMove()</a>, <a class="el" href="InputData_8cpp_source.html#l00253">GetMousePosition()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a62806c019f0c9cc77efe0ef832ff9ee2_icgraph.svg" width="954" height="428"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a920280bc3d6f2d8f967385d733aad1b2" name="a920280bc3d6f2d8f967385d733aad1b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920280bc3d6f2d8f967385d733aad1b2">&#9670;&#160;</a></span>GetKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetKey </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574">KeyCode</a>&#160;</td>
+          <td class="paramname"><em>_keyCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00018">18</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>{</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (_context == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">WindowContext::Both</a>)</div>
+<div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>).<a class="code hl_variable" href="classmtgb_1_1InputData.html#a791eecbd5868329fb5d0ecea3232d6af">keyStateCurrent_</a>[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)] || <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>).<a class="code hl_variable" href="classmtgb_1_1InputData.html#a791eecbd5868329fb5d0ecea3232d6af">keyStateCurrent_</a>[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)];</div>
+<div class="line"><span class="lineno">   23</span>    }</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context).<a class="code hl_variable" href="classmtgb_1_1InputData.html#a791eecbd5868329fb5d0ecea3232d6af">keyStateCurrent_</a>[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)];</div>
+<div class="line"><span class="lineno">   26</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_a791eecbd5868329fb5d0ecea3232d6af"><div class="ttname"><a href="classmtgb_1_1InputData.html#a791eecbd5868329fb5d0ecea3232d6af">mtgb::InputData::keyStateCurrent_</a></div><div class="ttdeci">std::bitset&lt; KEY_COUNT &gt; keyStateCurrent_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00123">InputData.h:123</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::Both</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="InputData_8cpp_source.html#l00119">GetInput()</a>, <a class="el" href="InputData_8h_source.html#l00072">Index()</a>, <a class="el" href="InputData_8h_source.html#l00123">mtgb::InputData::keyStateCurrent_</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::Second</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00033">mtgb::ImGuiEditorCamera::ImGuiEditorCamera()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00043">mtgb::ImGuiEditor::Update()</a>, <a class="el" href="Player_8cpp_source.html#l00045">Player::Update()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a920280bc3d6f2d8f967385d733aad1b2_cgraph.svg" width="418" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a920280bc3d6f2d8f967385d733aad1b2_icgraph.svg" width="426" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4dade03e3bbb665d967f7411d82b8d94" name="a4dade03e3bbb665d967f7411d82b8d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dade03e3bbb665d967f7411d82b8d94">&#9670;&#160;</a></span>GetKeyDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetKeyDown </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574">KeyCode</a>&#160;</td>
+          <td class="paramname"><em>_keyCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00028">28</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (_context == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">WindowContext::Both</a>)</div>
+<div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keyword">const</span> InputData&amp; inputFirstWnd = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keyword">const</span> InputData&amp; inputSecondWnd = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>);</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a503e5b57aeb4202ac32fab94ee2a8b53">KeyXOR</a>(_keyCode, inputFirstWnd.keyStateCurrent_, inputFirstWnd.keyStatePrevious_) &amp; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(inputFirstWnd.keyStateCurrent_[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)]))</div>
+<div class="line"><span class="lineno">   36</span>            || <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a503e5b57aeb4202ac32fab94ee2a8b53">KeyXOR</a>(_keyCode, inputSecondWnd.keyStateCurrent_, inputSecondWnd.keyStatePrevious_) &amp; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(inputSecondWnd.keyStateCurrent_[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)]));</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keyword">const</span> InputData&amp; input = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context);</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a503e5b57aeb4202ac32fab94ee2a8b53">KeyXOR</a>(_keyCode, input.keyStateCurrent_, input.keyStatePrevious_) &amp; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(input.keyStateCurrent_[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)]));</div>
+<div class="line"><span class="lineno">   41</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a503e5b57aeb4202ac32fab94ee2a8b53"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a503e5b57aeb4202ac32fab94ee2a8b53">mtgb::InputUtil::KeyXOR</a></div><div class="ttdeci">static const int KeyXOR(const KeyCode _keyCode, const std::bitset&lt; KEY_COUNT &gt; &amp;_keyStateCurrent, const std::bitset&lt; KEY_COUNT &gt; &amp;_keyStatePrevious)</div><div class="ttdoc">currとprevのxorを取得</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00057">InputData.h:57</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::Both</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="InputData_8h_source.html#l00123">mtgb::InputData::keyStateCurrent_</a>, <a class="el" href="InputData_8h_source.html#l00124">mtgb::InputData::keyStatePrevious_</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::Second</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiEditor_8cpp_source.html#l00043">mtgb::ImGuiEditor::Update()</a>, <a class="el" href="Input_8cpp_source.html#l00102">mtgb::Input::Update()</a>, <a class="el" href="SceneSystem_8cpp_source.html#l00039">mtgb::SceneSystem::Update()</a>, <a class="el" href="Player_8cpp_source.html#l00045">Player::Update()</a>, <a class="el" href="ResultScene_8cpp_source.html#l00060">ResultScene::Update()</a>, <a class="el" href="SampleScene_8cpp_source.html#l00041">SampleScene::Update()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00038">TitleScene::Update()</a>, <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00237">mtgb::ImGuizmoManipulator::UpdateOperationMode()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a4dade03e3bbb665d967f7411d82b8d94_icgraph.svg" width="480" height="428"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a748b842b595db4b8adab088ce70d7390" name="a748b842b595db4b8adab088ce70d7390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a748b842b595db4b8adab088ce70d7390">&#9670;&#160;</a></span>GetKeyUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetKeyUp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574">KeyCode</a>&#160;</td>
+          <td class="paramname"><em>_keyCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (_context == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">WindowContext::Both</a>)</div>
+<div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keyword">const</span> InputData&amp; inputFirstWnd = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keyword">const</span> InputData&amp; inputSecondWnd = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>);</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a503e5b57aeb4202ac32fab94ee2a8b53">KeyXOR</a>(_keyCode, inputFirstWnd.keyStateCurrent_, inputFirstWnd.keyStatePrevious_) &amp; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(inputFirstWnd.keyStatePrevious_[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)]))</div>
+<div class="line"><span class="lineno">   51</span>            || <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a503e5b57aeb4202ac32fab94ee2a8b53">KeyXOR</a>(_keyCode, inputSecondWnd.keyStateCurrent_, inputSecondWnd.keyStatePrevious_) &amp; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(inputSecondWnd.keyStatePrevious_[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)]));</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="keyword">const</span> InputData&amp; input = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context);</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">int</span> result{ <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a503e5b57aeb4202ac32fab94ee2a8b53">KeyXOR</a>(_keyCode, input.keyStateCurrent_, input.keyStatePrevious_) &amp; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(input.keyStatePrevious_[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)]) };</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(result);</div>
+<div class="line"><span class="lineno">   57</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::Both</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="InputData_8h_source.html#l00123">mtgb::InputData::keyStateCurrent_</a>, <a class="el" href="InputData_8h_source.html#l00124">mtgb::InputData::keyStatePrevious_</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::Second</a>.</p>
+
+</div>
+</div>
+<a id="a201aee9895738d4fe5f142f7f871739b" name="a201aee9895738d4fe5f142f7f871739b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a201aee9895738d4fe5f142f7f871739b">&#9670;&#160;</a></span>GetMouse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetMouse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e">MouseCode</a>&#160;</td>
+          <td class="paramname"><em>_mouseCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (_context == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">WindowContext::Both</a>)</div>
+<div class="line"><span class="lineno">   62</span>    {</div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a201aee9895738d4fe5f142f7f871739b">GetMouse</a>(_mouseCode, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>) || <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a201aee9895738d4fe5f142f7f871739b">GetMouse</a>(_mouseCode, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>);</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context).<a class="code hl_variable" href="classmtgb_1_1InputData.html#a6a718a32150a6cd203d4b538229167be">mouseStateCurrent_</a>.rgbButtons[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_mouseCode)] &amp; 0x80;</div>
+<div class="line"><span class="lineno">   66</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_a6a718a32150a6cd203d4b538229167be"><div class="ttname"><a href="classmtgb_1_1InputData.html#a6a718a32150a6cd203d4b538229167be">mtgb::InputData::mouseStateCurrent_</a></div><div class="ttdeci">_DIMOUSESTATE mouseStateCurrent_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00126">InputData.h:126</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a201aee9895738d4fe5f142f7f871739b"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a201aee9895738d4fe5f142f7f871739b">mtgb::InputUtil::GetMouse</a></div><div class="ttdeci">static const bool GetMouse(const MouseCode _mouseCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00059">InputData.cpp:59</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::Both</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::Second</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00033">mtgb::ImGuiEditorCamera::ImGuiEditorCamera()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a201aee9895738d4fe5f142f7f871739b_icgraph.svg" width="446" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac8c547e49e5a5a25f25f1a2c939ad6eb" name="ac8c547e49e5a5a25f25f1a2c939ad6eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8c547e49e5a5a25f25f1a2c939ad6eb">&#9670;&#160;</a></span>GetMouseDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetMouseDown </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e">MouseCode</a>&#160;</td>
+          <td class="paramname"><em>_mouseCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00068">68</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">if</span> (_context == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">WindowContext::Both</a>)</div>
+<div class="line"><span class="lineno">   71</span>    {</div>
+<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#ac8c547e49e5a5a25f25f1a2c939ad6eb">GetMouseDown</a>(_mouseCode, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>) || <a class="code hl_function" href="classmtgb_1_1InputUtil.html#ac8c547e49e5a5a25f25f1a2c939ad6eb">GetMouseDown</a>(_mouseCode, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>);</div>
+<div class="line"><span class="lineno">   73</span>    }</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keyword">const</span> InputData&amp; input = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context);</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a08467ce58c43c6e4da71c45e62ed43f8">MouseXOR</a>(_mouseCode, input.mouseStateCurrent_, input.mouseStatePrevious_) &amp; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(input.mouseStateCurrent_.rgbButtons[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_mouseCode)]));</div>
+<div class="line"><span class="lineno">   76</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a08467ce58c43c6e4da71c45e62ed43f8"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a08467ce58c43c6e4da71c45e62ed43f8">mtgb::InputUtil::MouseXOR</a></div><div class="ttdeci">static const int MouseXOR(const MouseCode _mouseCode, const _DIMOUSESTATE &amp;_mouseStateCurrent, const _DIMOUSESTATE &amp;_mouseStatePrevious)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00062">InputData.h:62</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_ac8c547e49e5a5a25f25f1a2c939ad6eb"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#ac8c547e49e5a5a25f25f1a2c939ad6eb">mtgb::InputUtil::GetMouseDown</a></div><div class="ttdeci">static const bool GetMouseDown(const MouseCode _mouseCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00068">InputData.cpp:68</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::Both</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="InputData_8h_source.html#l00126">mtgb::InputData::mouseStateCurrent_</a>, <a class="el" href="InputData_8h_source.html#l00127">mtgb::InputData::mouseStatePrevious_</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::Second</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00033">mtgb::ImGuiEditorCamera::ImGuiEditorCamera()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_ac8c547e49e5a5a25f25f1a2c939ad6eb_icgraph.svg" width="482" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae1b184545e3cdf92bf935006ba045647" name="ae1b184545e3cdf92bf935006ba045647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1b184545e3cdf92bf935006ba045647">&#9670;&#160;</a></span>GetMouseMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> mtgb::InputUtil::GetMouseMove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00258">258</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  259</span>{</div>
+<div class="line"><span class="lineno">  260</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div>
+<div class="line"><span class="lineno">  261</span>    {</div>
+<div class="line"><span class="lineno">  262</span>        <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">InputUtil::GetInput</a>(_context).<a class="code hl_variable" href="classmtgb_1_1InputData.html#a6a718a32150a6cd203d4b538229167be">mouseStateCurrent_</a>.lX),</div>
+<div class="line"><span class="lineno">  263</span>        <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">InputUtil::GetInput</a>(_context).<a class="code hl_variable" href="classmtgb_1_1InputData.html#a6a718a32150a6cd203d4b538229167be">mouseStateCurrent_</a>.lY),</div>
+<div class="line"><span class="lineno">  264</span>        <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">InputUtil::GetInput</a>(_context).<a class="code hl_variable" href="classmtgb_1_1InputData.html#a6a718a32150a6cd203d4b538229167be">mouseStateCurrent_</a>.lZ),</div>
+<div class="line"><span class="lineno">  265</span>    };</div>
+<div class="line"><span class="lineno">  266</span>}</div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputData_8cpp_source.html#l00119">GetInput()</a>, <a class="el" href="InputData_8h_source.html#l00126">mtgb::InputData::mouseStateCurrent_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00170">mtgb::ImGuiEditorCamera::DoDolly()</a>, <a class="el" href="ICamera_8cpp_source.html#l00066">mtgb::ICamera::DoOrbit()</a>, <a class="el" href="Camera_8cpp_source.html#l00122">mtgb::Camera::DoOrbit()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00186">mtgb::ImGuiEditorCamera::DoPan()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00203">mtgb::ImGuiEditorCamera::DoTrack()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_ae1b184545e3cdf92bf935006ba045647_cgraph.svg" width="474" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_ae1b184545e3cdf92bf935006ba045647_icgraph.svg" width="722" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab114a89e91dcec537edcdd2513e78853" name="ab114a89e91dcec537edcdd2513e78853"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab114a89e91dcec537edcdd2513e78853">&#9670;&#160;</a></span>GetMousePosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">mtgb::Vector2Int</a> mtgb::InputUtil::GetMousePosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00253">253</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  254</span>{</div>
+<div class="line"><span class="lineno">  255</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">InputUtil::GetInput</a>(_context).<a class="code hl_variable" href="classmtgb_1_1InputData.html#af645272b4c62f31c1be71d21703e9ab8">mousePosition_</a>;</div>
+<div class="line"><span class="lineno">  256</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputData_html_af645272b4c62f31c1be71d21703e9ab8"><div class="ttname"><a href="classmtgb_1_1InputData.html#af645272b4c62f31c1be71d21703e9ab8">mtgb::InputData::mousePosition_</a></div><div class="ttdeci">Vector2Int mousePosition_</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8h_source.html#l00133">InputData.h:133</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputData_8cpp_source.html#l00119">GetInput()</a>, <a class="el" href="InputData_8h_source.html#l00133">mtgb::InputData::mousePosition_</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_ab114a89e91dcec537edcdd2513e78853_cgraph.svg" width="438" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab8b92c4acff7e8b1bff497673f944407" name="ab8b92c4acff7e8b1bff497673f944407"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8b92c4acff7e8b1bff497673f944407">&#9670;&#160;</a></span>GetMouseUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool mtgb::InputUtil::GetMouseUp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e">MouseCode</a>&#160;</td>
+          <td class="paramname"><em>_mouseCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00078">78</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>{</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">if</span> (_context == <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">WindowContext::Both</a>)</div>
+<div class="line"><span class="lineno">   81</span>    {</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1InputUtil.html#ab8b92c4acff7e8b1bff497673f944407">GetMouseUp</a>(_mouseCode, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>) || <a class="code hl_function" href="classmtgb_1_1InputUtil.html#ab8b92c4acff7e8b1bff497673f944407">GetMouseUp</a>(_mouseCode, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">WindowContext::Second</a>);</div>
+<div class="line"><span class="lineno">   83</span>    }</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    <span class="keyword">const</span> InputData&amp; input = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context);</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a08467ce58c43c6e4da71c45e62ed43f8">MouseXOR</a>(_mouseCode, input.mouseStateCurrent_, input.mouseStatePrevious_) &amp; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(input.mouseStatePrevious_.rgbButtons[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_mouseCode)]));</div>
+<div class="line"><span class="lineno">   87</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_ab8b92c4acff7e8b1bff497673f944407"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#ab8b92c4acff7e8b1bff497673f944407">mtgb::InputUtil::GetMouseUp</a></div><div class="ttdeci">static const bool GetMouseUp(const MouseCode _mouseCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00078">InputData.cpp:78</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e">mtgb::Both</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="InputData_8h_source.html#l00126">mtgb::InputData::mouseStateCurrent_</a>, <a class="el" href="InputData_8h_source.html#l00127">mtgb::InputData::mouseStatePrevious_</a>, <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87">mtgb::Second</a>.</p>
+
+</div>
+</div>
+<a id="a9c7c1e3e2ac29258ccc9ade58feb344a" name="a9c7c1e3e2ac29258ccc9ade58feb344a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c7c1e3e2ac29258ccc9ade58feb344a">&#9670;&#160;</a></span>GetTrigger() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float mtgb::InputUtil::GetTrigger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09">FlightStickAxisCode</a>&#160;</td>
+          <td class="paramname"><em>_flightStickCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00167">167</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>{</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keyword">const</span> InputData&amp; input = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context);</div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">switch</span> (_flightStickCode)</div>
+<div class="line"><span class="lineno">  171</span>    {</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09a2d9b9a764fb0be4be10e1b2fce63f561">FlightStickAxisCode::Slider</a>: <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.rglSlider[0]) / JOY_AXIS_MAX;</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">default</span>: <span class="keywordflow">return</span> 0.0f;</div>
+<div class="line"><span class="lineno">  174</span>    }</div>
+<div class="line"><span class="lineno">  175</span>}</div>
+<div class="ttc" id="anamespacemtgb_html_a797dd9c444461d95b1013c74c135cf09a2d9b9a764fb0be4be10e1b2fce63f561"><div class="ttname"><a href="namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09a2d9b9a764fb0be4be10e1b2fce63f561">mtgb::FlightStickAxisCode::Slider</a></div><div class="ttdeci">@ Slider</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputData_8h_source.html#l00128">mtgb::InputData::joyStateCurrent_</a>, <a class="el" href="namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09a2d9b9a764fb0be4be10e1b2fce63f561">mtgb::Slider</a>.</p>
+
+</div>
+</div>
+<a id="accf62dc5bce5d6602ec75d49aec64bd4" name="accf62dc5bce5d6602ec75d49aec64bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accf62dc5bce5d6602ec75d49aec64bd4">&#9670;&#160;</a></span>GetTrigger() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float mtgb::InputUtil::GetTrigger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ff">PadAxisCode</a>&#160;</td>
+          <td class="paramname"><em>_padCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a>&#160;</td>
+          <td class="paramname"><em>_context</em> = <code><a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8cpp_source.html">InputData.cpp</a> の <a class="el" href="InputData_8cpp_source.html#l00177">177</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>{</div>
+<div class="line"><span class="lineno">  179</span>    <span class="keyword">const</span> InputData&amp; input = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a62806c019f0c9cc77efe0ef832ff9ee2">GetInput</a>(_context);</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">switch</span> (_padCode)</div>
+<div class="line"><span class="lineno">  182</span>    {</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ffac412c6d19da2afaf2dc8891f5bcb8901">PadAxisCode::LeftTrigger</a>: <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.lRy) / JOY_AXIS_MAX;</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ffa837ed99a897594cef0d37403a18f0df0">PadAxisCode::RightTrigger</a>: <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(input.joyStateCurrent_.lRx) / JOY_AXIS_MAX;</div>
+<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">default</span>: <span class="keywordflow">return</span> 0.0f;</div>
+<div class="line"><span class="lineno">  186</span>    }</div>
+<div class="line"><span class="lineno">  187</span>    </div>
+<div class="line"><span class="lineno">  188</span>}</div>
+<div class="ttc" id="anamespacemtgb_html_ad61bbafbad13195ce5319d2a5ff838ffa837ed99a897594cef0d37403a18f0df0"><div class="ttname"><a href="namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ffa837ed99a897594cef0d37403a18f0df0">mtgb::PadAxisCode::RightTrigger</a></div><div class="ttdeci">@ RightTrigger</div></div>
+<div class="ttc" id="anamespacemtgb_html_ad61bbafbad13195ce5319d2a5ff838ffac412c6d19da2afaf2dc8891f5bcb8901"><div class="ttname"><a href="namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ffac412c6d19da2afaf2dc8891f5bcb8901">mtgb::PadAxisCode::LeftTrigger</a></div><div class="ttdeci">@ LeftTrigger</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputData_8h_source.html#l00128">mtgb::InputData::joyStateCurrent_</a>, <a class="el" href="namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ffac412c6d19da2afaf2dc8891f5bcb8901">mtgb::LeftTrigger</a>, <a class="el" href="namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ffa837ed99a897594cef0d37403a18f0df0">mtgb::RightTrigger</a>.</p>
+
+</div>
+</div>
+<a id="a0a38d2c8ff7b82db80c8b6626fa26413" name="a0a38d2c8ff7b82db80c8b6626fa26413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a38d2c8ff7b82db80c8b6626fa26413">&#9670;&#160;</a></span>Index() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const size_t mtgb::InputUtil::Index </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputPadCode_8h.html#acfaf289f0795cf30536449f798be91c9">FlightStickCode</a>&#160;</td>
+          <td class="paramname"><em>_flightStickCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8h_source.html">InputData.h</a> の <a class="el" href="InputData_8h_source.html#l00086">86</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>        {</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(_flightStickCode);</div>
+<div class="line"><span class="lineno">   89</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a49655ed15bd2f09cfa36f8b26211c279" name="a49655ed15bd2f09cfa36f8b26211c279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49655ed15bd2f09cfa36f8b26211c279">&#9670;&#160;</a></span>Index() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const size_t mtgb::InputUtil::Index </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574">KeyCode</a>&#160;</td>
+          <td class="paramname"><em>_keyCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>キーコード構造体列挙型をインデックスに変換 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_keyCode</td><td>キーコード</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>キー配列のインデックス</dd></dl>
+
+<p class="definition"> <a class="el" href="InputData_8h_source.html">InputData.h</a> の <a class="el" href="InputData_8h_source.html#l00072">72</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>        {</div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(_keyCode);</div>
+<div class="line"><span class="lineno">   75</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="InputData_8cpp_source.html#l00018">GetKey()</a>, <a class="el" href="InputData_8h_source.html#l00057">KeyXOR()</a>, <a class="el" href="InputData_8h_source.html#l00062">MouseXOR()</a>, <a class="el" href="InputData_8h_source.html#l00099">PadXOR()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a49655ed15bd2f09cfa36f8b26211c279_icgraph.svg" width="662" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae2b1b4943ddae802325326f098ab1651" name="ae2b1b4943ddae802325326f098ab1651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b1b4943ddae802325326f098ab1651">&#9670;&#160;</a></span>Index() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const size_t mtgb::InputUtil::Index </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e">MouseCode</a>&#160;</td>
+          <td class="paramname"><em>_moudeCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8h_source.html">InputData.h</a> の <a class="el" href="InputData_8h_source.html#l00077">77</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>        {</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(_moudeCode);</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a20c119cbf9f9f8c32d3db42ee6da9c7a" name="a20c119cbf9f9f8c32d3db42ee6da9c7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20c119cbf9f9f8c32d3db42ee6da9c7a">&#9670;&#160;</a></span>Index() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const size_t mtgb::InputUtil::Index </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a>&#160;</td>
+          <td class="paramname"><em>_padCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8h_source.html">InputData.h</a> の <a class="el" href="InputData_8h_source.html#l00082">82</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>        {</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(_padCode);</div>
+<div class="line"><span class="lineno">   85</span>        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a503e5b57aeb4202ac32fab94ee2a8b53" name="a503e5b57aeb4202ac32fab94ee2a8b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a503e5b57aeb4202ac32fab94ee2a8b53">&#9670;&#160;</a></span>KeyXOR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const int mtgb::InputUtil::KeyXOR </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574">KeyCode</a>&#160;</td>
+          <td class="paramname"><em>_keyCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::bitset&lt; <a class="el" href="classmtgb_1_1InputUtil.html#a139bf27e59a76d889968204a51348ad7">KEY_COUNT</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_keyStateCurrent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::bitset&lt; <a class="el" href="classmtgb_1_1InputUtil.html#a139bf27e59a76d889968204a51348ad7">KEY_COUNT</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_keyStatePrevious</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>currとprevのxorを取得 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_keyCode</td><td>キーコード</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>0: 差無し, 1: 差有り</dd></dl>
+
+<p class="definition"> <a class="el" href="InputData_8h_source.html">InputData.h</a> の <a class="el" href="InputData_8h_source.html#l00057">57</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>        {</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">return</span> _keyStateCurrent[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)] ^ _keyStatePrevious[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_keyCode)];</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputData_8h_source.html#l00072">Index()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a503e5b57aeb4202ac32fab94ee2a8b53_cgraph.svg" width="402" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a08467ce58c43c6e4da71c45e62ed43f8" name="a08467ce58c43c6e4da71c45e62ed43f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08467ce58c43c6e4da71c45e62ed43f8">&#9670;&#160;</a></span>MouseXOR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const int mtgb::InputUtil::MouseXOR </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e">MouseCode</a>&#160;</td>
+          <td class="paramname"><em>_mouseCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const _DIMOUSESTATE &amp;&#160;</td>
+          <td class="paramname"><em>_mouseStateCurrent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const _DIMOUSESTATE &amp;&#160;</td>
+          <td class="paramname"><em>_mouseStatePrevious</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8h_source.html">InputData.h</a> の <a class="el" href="InputData_8h_source.html#l00062">62</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>        {</div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">return</span> _mouseStateCurrent.rgbButtons[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_mouseCode)] ^ _mouseStatePrevious.rgbButtons[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_mouseCode)];</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputData_8h_source.html#l00072">Index()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a08467ce58c43c6e4da71c45e62ed43f8_cgraph.svg" width="422" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4a0140bfc608b9c56fb322d26ed46d76" name="a4a0140bfc608b9c56fb322d26ed46d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a0140bfc608b9c56fb322d26ed46d76">&#9670;&#160;</a></span>PadXOR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const int mtgb::InputUtil::PadXOR </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9">PadCode</a>&#160;</td>
+          <td class="paramname"><em>_padCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DIJOYSTATE &amp;&#160;</td>
+          <td class="paramname"><em>_padStateCurrent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DIJOYSTATE &amp;&#160;</td>
+          <td class="paramname"><em>_padStatePrevious</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8h_source.html">InputData.h</a> の <a class="el" href="InputData_8h_source.html#l00099">99</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>        {</div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">return</span> _padStateCurrent.rgbButtons[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_padCode)] ^ _padStatePrevious.rgbButtons[<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a49655ed15bd2f09cfa36f8b26211c279">Index</a>(_padCode)];</div>
+<div class="line"><span class="lineno">  102</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="InputData_8h_source.html#l00072">Index()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1InputUtil_a4a0140bfc608b9c56fb322d26ed46d76_cgraph.svg" width="402" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a139bf27e59a76d889968204a51348ad7" name="a139bf27e59a76d889968204a51348ad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a139bf27e59a76d889968204a51348ad7">&#9670;&#160;</a></span>KEY_COUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t mtgb::InputUtil::KEY_COUNT { 256 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="InputData_8h_source.html">InputData.h</a> の <a class="el" href="InputData_8h_source.html#l00051">51</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="InputData_8h_source.html">InputData.h</a></li>
+<li><a class="el" href="InputData_8cpp_source.html">InputData.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1InputUtil.html">InputUtil</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

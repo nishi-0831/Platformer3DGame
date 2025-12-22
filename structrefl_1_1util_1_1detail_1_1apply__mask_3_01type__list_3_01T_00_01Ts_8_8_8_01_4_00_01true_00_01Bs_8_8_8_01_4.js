@@ -1,0 +1,4 @@
+var structrefl_1_1util_1_1detail_1_1apply__mask_3_01type__list_3_01T_00_01Ts_8_8_8_01_4_00_01true_00_01Bs_8_8_8_01_4 =
+[
+    [ "type", "structrefl_1_1util_1_1detail_1_1apply__mask_3_01type__list_3_01T_00_01Ts_8_8_8_01_4_00_01true_00_01Bs_8_8_8_01_4.html#afe8943c9ab36b219f0d47a653e1a99f8", null ]
+];

@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Camera.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Camera_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Camera.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Camera_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;<a class="code" href="mtgb_8h.html">mtgb.h</a>&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html">    6</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtgb_1_1Camera.html">Camera</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_function" href="classmtgb_1_1Camera.html#a330a3941c8fb9cb123da834577b1b33f">Camera</a>();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_function" href="classmtgb_1_1Camera.html#a330a3941c8fb9cb123da834577b1b33f">Camera</a>(<a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* _pGameObj);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_function" href="classmtgb_1_1Camera.html#a3dcbf401d4f246f91fd13253c6d8b1ec">~Camera</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Camera.html#a3fa552f30a150c210180fc745838576d">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Camera.html#ab7d95538f3b00e85efb86dffcb78c9bb">Draw</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Camera.html#a1e550faa0a97e2a0414c7f85f8b0b8f4">DoOrbit</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Camera.html#a4b88760a7bdb3cecd530bb3a4f6703e0">SetFollowMode</a>(<span class="keywordtype">bool</span> _isGrounded, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _targetVelocity);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Camera.html#aca293b287fbed1881b143b490189550c">MoveCameraSpherical</a>(<span class="keywordtype">float</span> _distance);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8be">   20</a></span>        <span class="keyword">enum class</span> <a class="code hl_enumeration" href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8be">CameraState</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <a class="code hl_enumvalue" href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bead2cecc546e3a75787d037760f75b3399">GROUNDED</a>,       <span class="comment">// 着地状態：通常のカメラ追従</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <a class="code hl_enumvalue" href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea6de49bfda8068b7bc3b0c0e3d2e43134">JUMPING</a>,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_enumvalue" href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0244540a9bd3943416d31b86dde18a12">JUMP_ASCENDING</a>, <span class="comment">// ジャンプ上昇中：角度を浅くしていく</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <a class="code hl_enumvalue" href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0250ccda82757fa2f3a692226cf90b08">JUMP_APEX</a>,      <span class="comment">// ジャンプ頂点：最小角度を維持</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <a class="code hl_enumvalue" href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea809e410f051d731545f04fa35e88d28c">JUMP_DESCENDING</a> <span class="comment">// ジャンプ下降中：角度を回復していく</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        };</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#afc3556c26a052dbb493a43c2478f43b8">   28</a></span>        <a class="code hl_class" href="classmtstat_1_1MTStat.html">mtstat::MTStat&lt;CameraState&gt;</a> <a class="code hl_variable" href="classmtgb_1_1Camera.html#afc3556c26a052dbb493a43c2478f43b8">cameraStat_</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#aae14c448903862c60f876df1c4997031">   30</a></span>        <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>* <a class="code hl_variable" href="classmtgb_1_1Camera.html#aae14c448903862c60f876df1c4997031">pCameraTransform_</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#a2ec4c41a25821ea84bbc08ea5e258e31">   31</a></span>        <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>* <a class="code hl_variable" href="classmtgb_1_1Camera.html#a2ec4c41a25821ea84bbc08ea5e258e31">pTargetTransform_</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#ad61c53c9034011cbbbe33f91da6b1e30">   32</a></span>        <a class="code hl_enumeration" href="namespacemtgb.html#a849b27857061661deeb701b23f338eca">InputType</a> <a class="code hl_variable" href="classmtgb_1_1Camera.html#ad61c53c9034011cbbbe33f91da6b1e30">inputType_</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#a80ecc06cfb9a90190eba39d29dae7ca5">   33</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmtgb_1_1Camera.html#a80ecc06cfb9a90190eba39d29dae7ca5">polarAngleRad_</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#acd23aeda59661578da9a3f39c0711ff6">   34</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmtgb_1_1Camera.html#acd23aeda59661578da9a3f39c0711ff6">azimuthalAngleRad_</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="comment">// -Y側、下側が0度、+Y側、上側が90度</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#afcaf594605bf316f66559c8a1ffe77e9">   36</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmtgb_1_1Camera.html#acd77891adf49b82605b3540d82ae17bf">minPolarAngleRad_</a>, <a class="code hl_variable" href="classmtgb_1_1Camera.html#afcaf594605bf316f66559c8a1ffe77e9">maxPolarAngleRad_</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">// +X側、右側が0度、-X側、左側が90度</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#a3a4c8aa006e4cdc69416f1166df1bdb3">   38</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmtgb_1_1Camera.html#a8ba20cdc83b533511da378c67245193b">minAzimuthalAngleRad_</a>, <a class="code hl_variable" href="classmtgb_1_1Camera.html#a3a4c8aa006e4cdc69416f1166df1bdb3">maxAzimuthalAngleRad_</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#ae13166877c2ce1695aed0aa107cc4323">   39</a></span>        <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> <a class="code hl_variable" href="classmtgb_1_1Camera.html#ae13166877c2ce1695aed0aa107cc4323">lookAtPositionOffset_</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#a4b2ecb4041d9d9babb056f4b580146ed">   40</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmtgb_1_1Camera.html#a4b2ecb4041d9d9babb056f4b580146ed">orbitSpeed_</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#a75bb15544051ec71b2ef0edf13867f25">   41</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmtgb_1_1Camera.html#a75bb15544051ec71b2ef0edf13867f25">distance_</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="comment">// ジャンプ状態管理</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#aa1ac2bfd2afad3a088799f4e34181cd1">   43</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="classmtgb_1_1Camera.html#aa1ac2bfd2afad3a088799f4e34181cd1">isGrounded_</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#a34fbf3c2b9e948971751cbdffc3fe76d">   44</a></span>        <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> <a class="code hl_variable" href="classmtgb_1_1Camera.html#a34fbf3c2b9e948971751cbdffc3fe76d">targetVelocityCache_</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#ad797ca3688083fb57f9a219bfffb6606">   45</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmtgb_1_1Camera.html#ad797ca3688083fb57f9a219bfffb6606">lookAtPosLerpProgress</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#a46bd98e85726b097a89a6689a36b0bd2">   46</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmtgb_1_1Camera.html#a46bd98e85726b097a89a6689a36b0bd2">baseY</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classmtgb_1_1Camera.html#ac13a5b4d2d772860862f033e5ccc4765">   47</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classmtgb_1_1Camera.html#ac13a5b4d2d772860862f033e5ccc4765">distY</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="comment">// ヘルパー関数</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Camera.html#aa6aa66b48cf302ad1afe506bf554c6ea">UpdateCameraState</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    };</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html"><div class="ttname"><a href="classmtgb_1_1Camera.html">mtgb::Camera</a></div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00006">Camera.h:7</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a1e550faa0a97e2a0414c7f85f8b0b8f4"><div class="ttname"><a href="classmtgb_1_1Camera.html#a1e550faa0a97e2a0414c7f85f8b0b8f4">mtgb::Camera::DoOrbit</a></div><div class="ttdeci">void DoOrbit()</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00122">Camera.cpp:122</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a2ec4c41a25821ea84bbc08ea5e258e31"><div class="ttname"><a href="classmtgb_1_1Camera.html#a2ec4c41a25821ea84bbc08ea5e258e31">mtgb::Camera::pTargetTransform_</a></div><div class="ttdeci">Transform * pTargetTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00031">Camera.h:31</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a330a3941c8fb9cb123da834577b1b33f"><div class="ttname"><a href="classmtgb_1_1Camera.html#a330a3941c8fb9cb123da834577b1b33f">mtgb::Camera::Camera</a></div><div class="ttdeci">Camera()</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00013">Camera.cpp:13</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a34fbf3c2b9e948971751cbdffc3fe76d"><div class="ttname"><a href="classmtgb_1_1Camera.html#a34fbf3c2b9e948971751cbdffc3fe76d">mtgb::Camera::targetVelocityCache_</a></div><div class="ttdeci">Vector3 targetVelocityCache_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00044">Camera.h:44</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a3a4c8aa006e4cdc69416f1166df1bdb3"><div class="ttname"><a href="classmtgb_1_1Camera.html#a3a4c8aa006e4cdc69416f1166df1bdb3">mtgb::Camera::maxAzimuthalAngleRad_</a></div><div class="ttdeci">float maxAzimuthalAngleRad_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00038">Camera.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a3dcbf401d4f246f91fd13253c6d8b1ec"><div class="ttname"><a href="classmtgb_1_1Camera.html#a3dcbf401d4f246f91fd13253c6d8b1ec">mtgb::Camera::~Camera</a></div><div class="ttdeci">~Camera()</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00087">Camera.cpp:87</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a3fa552f30a150c210180fc745838576d"><div class="ttname"><a href="classmtgb_1_1Camera.html#a3fa552f30a150c210180fc745838576d">mtgb::Camera::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00091">Camera.cpp:91</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a46bd98e85726b097a89a6689a36b0bd2"><div class="ttname"><a href="classmtgb_1_1Camera.html#a46bd98e85726b097a89a6689a36b0bd2">mtgb::Camera::baseY</a></div><div class="ttdeci">float baseY</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00046">Camera.h:46</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a4b2ecb4041d9d9babb056f4b580146ed"><div class="ttname"><a href="classmtgb_1_1Camera.html#a4b2ecb4041d9d9babb056f4b580146ed">mtgb::Camera::orbitSpeed_</a></div><div class="ttdeci">float orbitSpeed_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00040">Camera.h:40</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a4b88760a7bdb3cecd530bb3a4f6703e0"><div class="ttname"><a href="classmtgb_1_1Camera.html#a4b88760a7bdb3cecd530bb3a4f6703e0">mtgb::Camera::SetFollowMode</a></div><div class="ttdeci">void SetFollowMode(bool _isGrounded, const Vector3 &amp;_targetVelocity)</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00150">Camera.cpp:150</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a75bb15544051ec71b2ef0edf13867f25"><div class="ttname"><a href="classmtgb_1_1Camera.html#a75bb15544051ec71b2ef0edf13867f25">mtgb::Camera::distance_</a></div><div class="ttdeci">float distance_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00041">Camera.h:41</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a80ecc06cfb9a90190eba39d29dae7ca5"><div class="ttname"><a href="classmtgb_1_1Camera.html#a80ecc06cfb9a90190eba39d29dae7ca5">mtgb::Camera::polarAngleRad_</a></div><div class="ttdeci">float polarAngleRad_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00033">Camera.h:33</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a82a91e5d4dbd4d4126af0c2a3e7cd8be"><div class="ttname"><a href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8be">mtgb::Camera::CameraState</a></div><div class="ttdeci">CameraState</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00020">Camera.h:21</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a82a91e5d4dbd4d4126af0c2a3e7cd8bea0244540a9bd3943416d31b86dde18a12"><div class="ttname"><a href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0244540a9bd3943416d31b86dde18a12">mtgb::Camera::CameraState::JUMP_ASCENDING</a></div><div class="ttdeci">@ JUMP_ASCENDING</div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a82a91e5d4dbd4d4126af0c2a3e7cd8bea0250ccda82757fa2f3a692226cf90b08"><div class="ttname"><a href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0250ccda82757fa2f3a692226cf90b08">mtgb::Camera::CameraState::JUMP_APEX</a></div><div class="ttdeci">@ JUMP_APEX</div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a82a91e5d4dbd4d4126af0c2a3e7cd8bea6de49bfda8068b7bc3b0c0e3d2e43134"><div class="ttname"><a href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea6de49bfda8068b7bc3b0c0e3d2e43134">mtgb::Camera::CameraState::JUMPING</a></div><div class="ttdeci">@ JUMPING</div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a82a91e5d4dbd4d4126af0c2a3e7cd8bea809e410f051d731545f04fa35e88d28c"><div class="ttname"><a href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea809e410f051d731545f04fa35e88d28c">mtgb::Camera::CameraState::JUMP_DESCENDING</a></div><div class="ttdeci">@ JUMP_DESCENDING</div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a82a91e5d4dbd4d4126af0c2a3e7cd8bead2cecc546e3a75787d037760f75b3399"><div class="ttname"><a href="classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bead2cecc546e3a75787d037760f75b3399">mtgb::Camera::CameraState::GROUNDED</a></div><div class="ttdeci">@ GROUNDED</div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_a8ba20cdc83b533511da378c67245193b"><div class="ttname"><a href="classmtgb_1_1Camera.html#a8ba20cdc83b533511da378c67245193b">mtgb::Camera::minAzimuthalAngleRad_</a></div><div class="ttdeci">float minAzimuthalAngleRad_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00038">Camera.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_aa1ac2bfd2afad3a088799f4e34181cd1"><div class="ttname"><a href="classmtgb_1_1Camera.html#aa1ac2bfd2afad3a088799f4e34181cd1">mtgb::Camera::isGrounded_</a></div><div class="ttdeci">bool isGrounded_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00043">Camera.h:43</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_aa6aa66b48cf302ad1afe506bf554c6ea"><div class="ttname"><a href="classmtgb_1_1Camera.html#aa6aa66b48cf302ad1afe506bf554c6ea">mtgb::Camera::UpdateCameraState</a></div><div class="ttdeci">void UpdateCameraState()</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00157">Camera.cpp:157</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_aae14c448903862c60f876df1c4997031"><div class="ttname"><a href="classmtgb_1_1Camera.html#aae14c448903862c60f876df1c4997031">mtgb::Camera::pCameraTransform_</a></div><div class="ttdeci">Transform * pCameraTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00030">Camera.h:30</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_ab7d95538f3b00e85efb86dffcb78c9bb"><div class="ttname"><a href="classmtgb_1_1Camera.html#ab7d95538f3b00e85efb86dffcb78c9bb">mtgb::Camera::Draw</a></div><div class="ttdeci">void Draw() const override</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00118">Camera.cpp:118</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_ac13a5b4d2d772860862f033e5ccc4765"><div class="ttname"><a href="classmtgb_1_1Camera.html#ac13a5b4d2d772860862f033e5ccc4765">mtgb::Camera::distY</a></div><div class="ttdeci">float distY</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00047">Camera.h:47</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_aca293b287fbed1881b143b490189550c"><div class="ttname"><a href="classmtgb_1_1Camera.html#aca293b287fbed1881b143b490189550c">mtgb::Camera::MoveCameraSpherical</a></div><div class="ttdeci">void MoveCameraSpherical(float _distance)</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00161">Camera.cpp:161</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_acd23aeda59661578da9a3f39c0711ff6"><div class="ttname"><a href="classmtgb_1_1Camera.html#acd23aeda59661578da9a3f39c0711ff6">mtgb::Camera::azimuthalAngleRad_</a></div><div class="ttdeci">float azimuthalAngleRad_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00034">Camera.h:34</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_acd77891adf49b82605b3540d82ae17bf"><div class="ttname"><a href="classmtgb_1_1Camera.html#acd77891adf49b82605b3540d82ae17bf">mtgb::Camera::minPolarAngleRad_</a></div><div class="ttdeci">float minPolarAngleRad_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00036">Camera.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_ad61c53c9034011cbbbe33f91da6b1e30"><div class="ttname"><a href="classmtgb_1_1Camera.html#ad61c53c9034011cbbbe33f91da6b1e30">mtgb::Camera::inputType_</a></div><div class="ttdeci">InputType inputType_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00032">Camera.h:32</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_ad797ca3688083fb57f9a219bfffb6606"><div class="ttname"><a href="classmtgb_1_1Camera.html#ad797ca3688083fb57f9a219bfffb6606">mtgb::Camera::lookAtPosLerpProgress</a></div><div class="ttdeci">float lookAtPosLerpProgress</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00045">Camera.h:45</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_ae13166877c2ce1695aed0aa107cc4323"><div class="ttname"><a href="classmtgb_1_1Camera.html#ae13166877c2ce1695aed0aa107cc4323">mtgb::Camera::lookAtPositionOffset_</a></div><div class="ttdeci">Vector3 lookAtPositionOffset_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00039">Camera.h:39</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_afc3556c26a052dbb493a43c2478f43b8"><div class="ttname"><a href="classmtgb_1_1Camera.html#afc3556c26a052dbb493a43c2478f43b8">mtgb::Camera::cameraStat_</a></div><div class="ttdeci">mtstat::MTStat&lt; CameraState &gt; cameraStat_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00028">Camera.h:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Camera_html_afcaf594605bf316f66559c8a1ffe77e9"><div class="ttname"><a href="classmtgb_1_1Camera.html#afcaf594605bf316f66559c8a1ffe77e9">mtgb::Camera::maxPolarAngleRad_</a></div><div class="ttdeci">float maxPolarAngleRad_</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8h_source.html#l00036">Camera.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00016">GameObject.h:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html"><div class="ttname"><a href="classmtgb_1_1Transform.html">mtgb::Transform</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00020">Transform.h:21</a></div></div>
+<div class="ttc" id="aclassmtstat_1_1MTStat_html"><div class="ttname"><a href="classmtstat_1_1MTStat.html">mtstat::MTStat</a></div><div class="ttdef"><b>Definition:</b> <a href="MTStat_8h_source.html#l00019">MTStat.h:20</a></div></div>
+<div class="ttc" id="amtgb_8h_html"><div class="ttname"><a href="mtgb_8h.html">mtgb.h</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a849b27857061661deeb701b23f338eca"><div class="ttname"><a href="namespacemtgb.html#a849b27857061661deeb701b23f338eca">mtgb::InputType</a></div><div class="ttdeci">InputType</div><div class="ttdef"><b>Definition:</b> <a href="ICamera_8h_source.html#l00006">ICamera.h:7</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="Camera_8h.html">Camera.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

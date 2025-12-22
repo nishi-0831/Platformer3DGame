@@ -1,0 +1,27 @@
+var classEffekseer_1_1Server =
+[
+    [ "Server", "classEffekseer_1_1Server.html#af6f7a1893fb9dfe2d65a9288698e3f5a", null ],
+    [ "~Server", "classEffekseer_1_1Server.html#a492364188996ee80d8baa9cba8e443d3", null ],
+    [ "Server", "classEffekseer_1_1Server.html#af6f7a1893fb9dfe2d65a9288698e3f5a", null ],
+    [ "~Server", "classEffekseer_1_1Server.html#a492364188996ee80d8baa9cba8e443d3", null ],
+    [ "AddRef", "classEffekseer_1_1Server.html#a3e3b54e8e5081e24f5784e4f9b8f6257", null ],
+    [ "AddRef", "classEffekseer_1_1Server.html#a3e3b54e8e5081e24f5784e4f9b8f6257", null ],
+    [ "Create", "classEffekseer_1_1Server.html#a22a3eab65ad8771df7a8f39a86c8e6e5", null ],
+    [ "Create", "classEffekseer_1_1Server.html#a22a3eab65ad8771df7a8f39a86c8e6e5", null ],
+    [ "GetRef", "classEffekseer_1_1Server.html#a95274c788c8c03d27a3e424facc728b6", null ],
+    [ "GetRef", "classEffekseer_1_1Server.html#a95274c788c8c03d27a3e424facc728b6", null ],
+    [ "Register", "classEffekseer_1_1Server.html#a884f4b41c8cdea5f4f91eafa3efee3c5", null ],
+    [ "Register", "classEffekseer_1_1Server.html#a884f4b41c8cdea5f4f91eafa3efee3c5", null ],
+    [ "Release", "classEffekseer_1_1Server.html#ad8d601188c0f088f4748aa2da8758bb5", null ],
+    [ "Release", "classEffekseer_1_1Server.html#ad8d601188c0f088f4748aa2da8758bb5", null ],
+    [ "SetMaterialPath", "classEffekseer_1_1Server.html#ae6b976088093fcb79e85e1bca3534f05", null ],
+    [ "SetMaterialPath", "classEffekseer_1_1Server.html#ae6b976088093fcb79e85e1bca3534f05", null ],
+    [ "Start", "classEffekseer_1_1Server.html#afd333e58d1330710673caf909452a4c1", null ],
+    [ "Start", "classEffekseer_1_1Server.html#afd333e58d1330710673caf909452a4c1", null ],
+    [ "Stop", "classEffekseer_1_1Server.html#ac41b09333e7d792489cbeef127df89f6", null ],
+    [ "Stop", "classEffekseer_1_1Server.html#ac41b09333e7d792489cbeef127df89f6", null ],
+    [ "Unregister", "classEffekseer_1_1Server.html#ab4c3e63db920358ff41746b51d62e359", null ],
+    [ "Unregister", "classEffekseer_1_1Server.html#ab4c3e63db920358ff41746b51d62e359", null ],
+    [ "Update", "classEffekseer_1_1Server.html#a53be6d00062b8e88330da6a1671a0e22", null ],
+    [ "Update", "classEffekseer_1_1Server.html#a53be6d00062b8e88330da6a1671a0e22", null ]
+];

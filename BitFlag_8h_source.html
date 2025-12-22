@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: BitFlag.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('BitFlag_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BitFlag.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="BitFlag_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;bitset&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;concepts&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespacemtbit.html">    7</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtbit.html">mtbit</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">// 列挙型 かつ size_t型の暗黙的型変換ができない！ = enum struct</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="conceptmtbit_1_1IsEnumStruct.html">   11</a></span>    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmtbit_1_1IsEnumStruct.html">IsEnumStruct</a> = std::is_enum_v&lt;EnumStructT&gt; &amp;&amp; !std::is_convertible_v&lt;EnumStructT, std::underlying_type_t&lt;EnumStructT&gt;&gt;;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html">   18</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">static_assert</span>(<a class="code hl_concept" href="conceptmtbit_1_1IsEnumStruct.html">IsEnumStruct&lt;EnumStructT&gt;</a>, <span class="stringliteral">&quot;enum structのみ指定できます。&quot;</span>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="comment">// 指定された enum struct のサイズ分のビット数</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#a0ae5f880c73778f542cde8e1307a3a8a">   22</a></span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classmtbit_1_1BitFlag.html#a0ae5f880c73778f542cde8e1307a3a8a">BIT_COUNT</a>{ <span class="keyword">sizeof</span>(EnumStructT) * 8 };</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">   28</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">BitFlagEditor</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#af40d953c182ced003e1a4b5fdd9b9104">   30</a></span>            <span class="keyword">friend</span> <a class="code hl_variable" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#af40d953c182ced003e1a4b5fdd9b9104">BitFlag</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a37e823053b329e25de1be3e0ce7fa63f">   32</a></span>            <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a37e823053b329e25de1be3e0ce7fa63f">~BitFlagEditor</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#aa653f1aa0d1a87f42aa90eb8fb4e41ff">   39</a></span>            BitFlagEditor&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#aa653f1aa0d1a87f42aa90eb8fb4e41ff">On</a>(<span class="keyword">const</span> EnumStructT _e);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a5f49440847729642daf84e099b33a369">   45</a></span>            BitFlagEditor&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a5f49440847729642daf84e099b33a369">Off</a>(<span class="keyword">const</span> EnumStructT _e);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a7d0b8b2d59f32c42006be598232d9968">   51</a></span>            BitFlagEditor&amp; <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aec211f7c20af43e742bf2570c3cb84f9">Add</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a> _other);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a9ff72523beaf647dc160f1837d9c1d91">   57</a></span>            BitFlagEditor&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a9ff72523beaf647dc160f1837d9c1d91">Sub</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a> _other);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a6536f9aade15daac5b47392c79f5bd29">   62</a></span>            BitFlagEditor&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a6536f9aade15daac5b47392c79f5bd29">OnAll</a>();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a34d4fade815a773e92a3e21f7577ff4e">   67</a></span>            BitFlagEditor&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a34d4fade815a773e92a3e21f7577ff4e">OffAll</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#ad8c4d4ebadf9903670072d3a7f885e3a">   73</a></span>            <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a>&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#ad8c4d4ebadf9903670072d3a7f885e3a">EndEdit</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a8f648a9ffc04790c073d462ed8e16147">bitFlag_</a>; }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a514f9f60256df60bf7f94a9b813a7f42">   76</a></span>            <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a514f9f60256df60bf7f94a9b813a7f42">BitFlagEditor</a>(<a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a>&amp; _bitFlag) : <a class="code hl_variable" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a8f648a9ffc04790c073d462ed8e16147">bitFlag_</a>{ _bitFlag } {}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a8f648a9ffc04790c073d462ed8e16147">   79</a></span>            <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a>&amp; <a class="code hl_variable" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a8f648a9ffc04790c073d462ed8e16147">bitFlag_</a>;  <span class="comment">// 編集するビットフラグ</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        };</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#a651f499c087823b23052bb68bbb16496">   83</a></span>        <a class="code hl_function" href="classmtbit_1_1BitFlag.html#a651f499c087823b23052bb68bbb16496">BitFlag</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#ae3327cf65cd0f3432a1a109f1252be27">   84</a></span>        <a class="code hl_function" href="classmtbit_1_1BitFlag.html#ae3327cf65cd0f3432a1a109f1252be27">BitFlag</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#a86d94a63928fd190e4e85380322f60fb">   85</a></span>        <a class="code hl_function" href="classmtbit_1_1BitFlag.html#a86d94a63928fd190e4e85380322f60fb">BitFlag</a>(<span class="keyword">const</span> EnumStructT _e);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#a58efbec92de7be13fb28226ce5f4efa2">   86</a></span>        <a class="code hl_function" href="classmtbit_1_1BitFlag.html#a58efbec92de7be13fb28226ce5f4efa2">BitFlag</a>(<span class="keyword">const</span> std::bitset&lt;BIT_COUNT&gt;&amp; _bitset);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#ac0027884a1688c758c7b8d1e29438157">   87</a></span>        <a class="code hl_function" href="classmtbit_1_1BitFlag.html#ac0027884a1688c758c7b8d1e29438157">~BitFlag</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#a20eb2b5133c0927a7e03f10e703dd5db">   93</a></span>        <a class="code hl_class" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">BitFlagEditor</a> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#a20eb2b5133c0927a7e03f10e703dd5db">BeginEdit</a>() { <span class="keywordflow">return</span> <a class="code hl_class" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">BitFlagEditor</a>{ *<span class="keyword">this</span> }; }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#ad8f9b426c4a79b220e1044f078d0913f">  100</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#ad8f9b426c4a79b220e1044f078d0913f">Has</a>(<span class="keyword">const</span> EnumStructT _e) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#aa6419d268f5dd84a0d0f2c2a7a3adbfa">  106</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#aa6419d268f5dd84a0d0f2c2a7a3adbfa">Has</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a> _other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#acf842b35be13d00a1cb0c11edf4cebca">  113</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#acf842b35be13d00a1cb0c11edf4cebca">Is</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a> _other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#afc1956dac6e3fba2d8114e2c2a9709af">  119</a></span>        <span class="keyword">static</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#afc1956dac6e3fba2d8114e2c2a9709af">New</a>() { <span class="keywordflow">return</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a>{}; }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#a7772db8c567e98b14719504934ba3178">  125</a></span>        std::bitset&lt;BIT_COUNT&gt; <a class="code hl_function" href="classmtbit_1_1BitFlag.html#a7772db8c567e98b14719504934ba3178">Value</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">value_</a>; }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">  127</a></span>        std::bitset&lt;BIT_COUNT&gt; <a class="code hl_variable" href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">value_</a>;  <span class="comment">// ビットフラグ</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    };</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="conceptmtbit_1_1BitFlagEnumStruct.html">  131</a></span>    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmtbit_1_1BitFlagEnumStruct.html">BitFlagEnumStruct</a> = <a class="code hl_concept" href="conceptmtbit_1_1IsEnumStruct.html">IsEnumStruct&lt;T&gt;</a> &amp;&amp; <span class="keyword">requires</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> t)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;T&gt;</a><span class="keyword">&gt;</span>(t);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    };</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keyword">template</span>&lt;BitFlagEnumStruct EnumStructT&gt;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="namespacemtbit.html#ad30c8f975b210204f3355cd389dda3d2">  137</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a> <a class="code hl_function" href="namespacemtbit.html#ad30c8f975b210204f3355cd389dda3d2">operator|</a>(<span class="keyword">const</span> EnumStructT _e1, <span class="keyword">const</span> EnumStructT _e2) </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a>{ _e1 } | _e2;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="namespacemtbit.html#ab7aa3fbdda93a3837a12c32443e4986a">  143</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a> <a class="code hl_function" href="namespacemtbit.html#ad30c8f975b210204f3355cd389dda3d2">operator|</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a> _flag1, <span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a> _flag2)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a>{ _flag1 }.<a class="code hl_function" href="classmtbit_1_1BitFlag.html#a20eb2b5133c0927a7e03f10e703dd5db">BeginEdit</a>().<a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a7d0b8b2d59f32c42006be598232d9968">Add</a>(_flag2).<a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#ad8c4d4ebadf9903670072d3a7f885e3a">EndEdit</a>();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="namespacemtbit.html#a5deae7eb1ac00d019985051c4c273628">  149</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a> <a class="code hl_function" href="namespacemtbit.html#ad30c8f975b210204f3355cd389dda3d2">operator|</a>(<span class="keyword">const</span> EnumStructT _e, <span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a> _flag)</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a>{ _flag }.<a class="code hl_function" href="classmtbit_1_1BitFlag.html#a20eb2b5133c0927a7e03f10e703dd5db">BeginEdit</a>().<a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#aa653f1aa0d1a87f42aa90eb8fb4e41ff">On</a>(_e).<a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#ad8c4d4ebadf9903670072d3a7f885e3a">EndEdit</a>();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="namespacemtbit.html#a542812827fca1507b8718c98005b754b">  155</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a> <a class="code hl_function" href="namespacemtbit.html#ad30c8f975b210204f3355cd389dda3d2">operator|</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a> _flag, <span class="keyword">const</span> EnumStructT _e)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt;EnumStructT&gt;</a>{ _flag }.<a class="code hl_function" href="classmtbit_1_1BitFlag.html#a20eb2b5133c0927a7e03f10e703dd5db">BeginEdit</a>().<a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#aa653f1aa0d1a87f42aa90eb8fb4e41ff">On</a>(_e).<a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#ad8c4d4ebadf9903670072d3a7f885e3a">EndEdit</a>();</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#a86d94a63928fd190e4e85380322f60fb">  162</a></span><span class="keyword">inline</span> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#a651f499c087823b23052bb68bbb16496">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlag</a>(<span class="keyword">const</span> EnumStructT _e)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>{</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    value_.set(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(_e));</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>}</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#a58efbec92de7be13fb28226ce5f4efa2">  168</a></span><span class="keyword">inline</span> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#a651f499c087823b23052bb68bbb16496">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlag</a>(<span class="keyword">const</span> std::bitset&lt;BIT_COUNT&gt;&amp; _bitset)</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    : value_{_bitset}</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>{</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>}</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#ad8f9b426c4a79b220e1044f078d0913f">  174</a></span><span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#ad8f9b426c4a79b220e1044f078d0913f">mtbit::BitFlag&lt;EnumStructT&gt;::Has</a>(<span class="keyword">const</span> EnumStructT _e)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">return</span> value_[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(_e)];</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#aa6419d268f5dd84a0d0f2c2a7a3adbfa">  180</a></span><span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#ad8f9b426c4a79b220e1044f078d0913f">mtbit::BitFlag&lt;EnumStructT&gt;::Has</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a> _other)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordflow">return</span> (value_ &amp; _other.<a class="code hl_variable" href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">value_</a>).any();</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>}</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag.html#acf842b35be13d00a1cb0c11edf4cebca">  186</a></span><span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#acf842b35be13d00a1cb0c11edf4cebca">mtbit::BitFlag&lt;EnumStructT&gt;::Is</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a> _other)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">return</span> value_ == _other.<a class="code hl_variable" href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">value_</a>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>}</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#aa653f1aa0d1a87f42aa90eb8fb4e41ff">  192</a></span><span class="keyword">inline</span> <span class="keyword">typename</span> <a class="code hl_class" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor</a>&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#aa653f1aa0d1a87f42aa90eb8fb4e41ff">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor::On</a>(<span class="keyword">const</span> EnumStructT _e)</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>{</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    bitFlag_.value_.set(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(_e));</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a5f49440847729642daf84e099b33a369">  199</a></span><span class="keyword">inline</span> <span class="keyword">typename</span> <a class="code hl_class" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor</a>&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a5f49440847729642daf84e099b33a369">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor::Off</a>(<span class="keyword">const</span> EnumStructT _e)</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>{</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    bitFlag_.value_.reset(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(_e));</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a7d0b8b2d59f32c42006be598232d9968">  206</a></span><span class="keyword">inline</span> <span class="keyword">typename</span> <a class="code hl_class" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor</a>&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a7d0b8b2d59f32c42006be598232d9968">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor::Add</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a> _other)</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>{</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    bitFlag_.value_ |= _other.<a class="code hl_variable" href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">value_</a>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a9ff72523beaf647dc160f1837d9c1d91">  213</a></span><span class="keyword">inline</span> <span class="keyword">typename</span> <a class="code hl_class" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor</a>&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a9ff72523beaf647dc160f1837d9c1d91">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor::Sub</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtbit_1_1BitFlag.html">BitFlag</a> _other)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>{</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    bitFlag_.value_ &amp;= !_other.<a class="code hl_variable" href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">value_</a>;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>}</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a6536f9aade15daac5b47392c79f5bd29">  220</a></span><span class="keyword">inline</span> <span class="keyword">typename</span> <a class="code hl_class" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor</a>&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a6536f9aade15daac5b47392c79f5bd29">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor::OnAll</a>()</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>{</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    bitFlag_.value_.set();</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>}</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> EnumStructT&gt;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a34d4fade815a773e92a3e21f7577ff4e">  227</a></span><span class="keyword">inline</span> <span class="keyword">typename</span> <a class="code hl_class" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor</a>&amp; <a class="code hl_function" href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a34d4fade815a773e92a3e21f7577ff4e">mtbit::BitFlag&lt;EnumStructT&gt;::BitFlagEditor::OffAll</a>()</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>{</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    bitFlag_.value_.reset();</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>}</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574aec211f7c20af43e742bf2570c3cb84f9"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aec211f7c20af43e742bf2570c3cb84f9">KeyCode::Add</a></div><div class="ttdeci">@ Add</div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html">mtbit::BitFlag::BitFlagEditor</a></div><div class="ttdoc">操作可能なビットフラグ</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00028">BitFlag.h:29</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_a34d4fade815a773e92a3e21f7577ff4e"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a34d4fade815a773e92a3e21f7577ff4e">mtbit::BitFlag::BitFlagEditor::OffAll</a></div><div class="ttdeci">BitFlagEditor &amp; OffAll()</div><div class="ttdoc">すべてのフラグを降ろす</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00227">BitFlag.h:227</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_a37e823053b329e25de1be3e0ce7fa63f"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a37e823053b329e25de1be3e0ce7fa63f">mtbit::BitFlag::BitFlagEditor::~BitFlagEditor</a></div><div class="ttdeci">~BitFlagEditor()=default</div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_a514f9f60256df60bf7f94a9b813a7f42"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a514f9f60256df60bf7f94a9b813a7f42">mtbit::BitFlag::BitFlagEditor::BitFlagEditor</a></div><div class="ttdeci">BitFlagEditor(BitFlag &amp;_bitFlag)</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00076">BitFlag.h:76</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_a5f49440847729642daf84e099b33a369"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a5f49440847729642daf84e099b33a369">mtbit::BitFlag::BitFlagEditor::Off</a></div><div class="ttdeci">BitFlagEditor &amp; Off(const EnumStructT _e)</div><div class="ttdoc">指定のフラグを降ろす</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00199">BitFlag.h:199</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_a6536f9aade15daac5b47392c79f5bd29"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a6536f9aade15daac5b47392c79f5bd29">mtbit::BitFlag::BitFlagEditor::OnAll</a></div><div class="ttdeci">BitFlagEditor &amp; OnAll()</div><div class="ttdoc">すべてのフラグを立てる</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00220">BitFlag.h:220</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_a7d0b8b2d59f32c42006be598232d9968"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a7d0b8b2d59f32c42006be598232d9968">mtbit::BitFlag::BitFlagEditor::Add</a></div><div class="ttdeci">BitFlagEditor &amp; Add(const BitFlag _other)</div><div class="ttdoc">指定のフラグを追加する</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00206">BitFlag.h:206</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_a8f648a9ffc04790c073d462ed8e16147"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a8f648a9ffc04790c073d462ed8e16147">mtbit::BitFlag::BitFlagEditor::bitFlag_</a></div><div class="ttdeci">BitFlag &amp; bitFlag_</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00079">BitFlag.h:79</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_a9ff72523beaf647dc160f1837d9c1d91"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a9ff72523beaf647dc160f1837d9c1d91">mtbit::BitFlag::BitFlagEditor::Sub</a></div><div class="ttdeci">BitFlagEditor &amp; Sub(const BitFlag _other)</div><div class="ttdoc">指定のフラグを引く</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00213">BitFlag.h:213</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_aa653f1aa0d1a87f42aa90eb8fb4e41ff"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#aa653f1aa0d1a87f42aa90eb8fb4e41ff">mtbit::BitFlag::BitFlagEditor::On</a></div><div class="ttdeci">BitFlagEditor &amp; On(const EnumStructT _e)</div><div class="ttdoc">指定のフラグを立てる</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00192">BitFlag.h:192</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_ad8c4d4ebadf9903670072d3a7f885e3a"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#ad8c4d4ebadf9903670072d3a7f885e3a">mtbit::BitFlag::BitFlagEditor::EndEdit</a></div><div class="ttdeci">BitFlag &amp; EndEdit()</div><div class="ttdoc">フラグの操作を終了する</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00073">BitFlag.h:73</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_1_1BitFlagEditor_html_af40d953c182ced003e1a4b5fdd9b9104"><div class="ttname"><a href="classmtbit_1_1BitFlag_1_1BitFlagEditor.html#af40d953c182ced003e1a4b5fdd9b9104">mtbit::BitFlag::BitFlagEditor::BitFlag</a></div><div class="ttdeci">friend BitFlag</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00030">BitFlag.h:30</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html"><div class="ttname"><a href="classmtbit_1_1BitFlag.html">mtbit::BitFlag</a></div><div class="ttdoc">スコープ付き列挙型を使ったビットフラグ</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00018">BitFlag.h:19</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_a0ae5f880c73778f542cde8e1307a3a8a"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#a0ae5f880c73778f542cde8e1307a3a8a">mtbit::BitFlag::BIT_COUNT</a></div><div class="ttdeci">static constexpr size_t BIT_COUNT</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00022">BitFlag.h:22</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_a20eb2b5133c0927a7e03f10e703dd5db"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#a20eb2b5133c0927a7e03f10e703dd5db">mtbit::BitFlag::BeginEdit</a></div><div class="ttdeci">BitFlagEditor BeginEdit()</div><div class="ttdoc">フラグの操作を開始する</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00093">BitFlag.h:93</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_a58efbec92de7be13fb28226ce5f4efa2"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#a58efbec92de7be13fb28226ce5f4efa2">mtbit::BitFlag::BitFlag</a></div><div class="ttdeci">BitFlag(const std::bitset&lt; BIT_COUNT &gt; &amp;_bitset)</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00168">BitFlag.h:168</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_a651f499c087823b23052bb68bbb16496"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#a651f499c087823b23052bb68bbb16496">mtbit::BitFlag::BitFlag</a></div><div class="ttdeci">BitFlag()=default</div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_a6f41950facaa1b6a6d5f4754c11c6eb1"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">mtbit::BitFlag::value_</a></div><div class="ttdeci">std::bitset&lt; BIT_COUNT &gt; value_</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00127">BitFlag.h:127</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_a7772db8c567e98b14719504934ba3178"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#a7772db8c567e98b14719504934ba3178">mtbit::BitFlag::Value</a></div><div class="ttdeci">std::bitset&lt; BIT_COUNT &gt; Value() const</div><div class="ttdoc">ビットフラグを返す</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00125">BitFlag.h:125</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_a86d94a63928fd190e4e85380322f60fb"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#a86d94a63928fd190e4e85380322f60fb">mtbit::BitFlag::BitFlag</a></div><div class="ttdeci">BitFlag(const EnumStructT _e)</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00162">BitFlag.h:162</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_aa6419d268f5dd84a0d0f2c2a7a3adbfa"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#aa6419d268f5dd84a0d0f2c2a7a3adbfa">mtbit::BitFlag::Has</a></div><div class="ttdeci">bool Has(const BitFlag _other) const</div><div class="ttdoc">指定したフラグのいずれかが立っているかどうか</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00180">BitFlag.h:180</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_ac0027884a1688c758c7b8d1e29438157"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#ac0027884a1688c758c7b8d1e29438157">mtbit::BitFlag::~BitFlag</a></div><div class="ttdeci">~BitFlag()=default</div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_acf842b35be13d00a1cb0c11edf4cebca"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#acf842b35be13d00a1cb0c11edf4cebca">mtbit::BitFlag::Is</a></div><div class="ttdeci">bool Is(const BitFlag _other) const</div><div class="ttdoc">フラグが一致しているか</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00186">BitFlag.h:186</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_ad8f9b426c4a79b220e1044f078d0913f"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#ad8f9b426c4a79b220e1044f078d0913f">mtbit::BitFlag::Has</a></div><div class="ttdeci">bool Has(const EnumStructT _e) const</div><div class="ttdoc">指定フラグが立っているかどうか</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00174">BitFlag.h:174</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_ae3327cf65cd0f3432a1a109f1252be27"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#ae3327cf65cd0f3432a1a109f1252be27">mtbit::BitFlag::BitFlag</a></div><div class="ttdeci">BitFlag(const BitFlag &amp;)=default</div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html_afc1956dac6e3fba2d8114e2c2a9709af"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#afc1956dac6e3fba2d8114e2c2a9709af">mtbit::BitFlag::New</a></div><div class="ttdeci">static BitFlag New()</div><div class="ttdoc">インスタンスを作る</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00119">BitFlag.h:119</a></div></div>
+<div class="ttc" id="aconceptmtbit_1_1BitFlagEnumStruct_html"><div class="ttname"><a href="conceptmtbit_1_1BitFlagEnumStruct.html">mtbit::BitFlagEnumStruct</a></div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00131">BitFlag.h:131</a></div></div>
+<div class="ttc" id="aconceptmtbit_1_1IsEnumStruct_html"><div class="ttname"><a href="conceptmtbit_1_1IsEnumStruct.html">mtbit::IsEnumStruct</a></div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00011">BitFlag.h:11</a></div></div>
+<div class="ttc" id="anamespacemtbit_html"><div class="ttname"><a href="namespacemtbit.html">mtbit</a></div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00007">BitFlag.h:8</a></div></div>
+<div class="ttc" id="anamespacemtbit_html_ad30c8f975b210204f3355cd389dda3d2"><div class="ttname"><a href="namespacemtbit.html#ad30c8f975b210204f3355cd389dda3d2">mtbit::operator|</a></div><div class="ttdeci">mtbit::BitFlag&lt; EnumStructT &gt; operator|(const EnumStructT _e1, const EnumStructT _e2)</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00137">BitFlag.h:137</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="dir_4d3c3895e40e9c42637e8543ccd09f7d.html">MTBit</a></li><li class="navelem"><a class="el" href="BitFlag_8h.html">BitFlag.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

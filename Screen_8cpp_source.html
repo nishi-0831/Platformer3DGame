@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: Screen.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Screen_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Screen.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Screen_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Screen_8h.html">Screen.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="ProfileUtlity_8h.html">ProfileUtlity.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="WindowManager_8h.html">WindowManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Game_8h.html">Game.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContext_8h.html">WindowContext.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classmtgb_1_1Screen.html#acad812f34321a3d6371219c7ffb9de0c">    7</a></span><a class="code hl_function" href="classmtgb_1_1Screen.html#acad812f34321a3d6371219c7ffb9de0c">mtgb::Screen::Screen</a>() :</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    size_{0,0},</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    initialSize_{0,0},</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    sizeRatio_{1.0f,1.0f},</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    fpsLimit_{ 0 }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classmtgb_1_1Screen.html#a62e228a1e61475df2ddcf1ff84553489">   15</a></span><a class="code hl_function" href="classmtgb_1_1Screen.html#a62e228a1e61475df2ddcf1ff84553489">mtgb::Screen::~Screen</a>()</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classmtgb_1_1Screen.html#afc4a4d432967f0f8a1baa4c2cff6da5c">   19</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Screen.html#afc4a4d432967f0f8a1baa4c2cff6da5c">mtgb::Screen::Initialize</a>()</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// スクリーンの情報を取得</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    initialSize_.x   = <a class="code hl_function" href="classmtgb_1_1IProfile.html#a0d7216e8e0697d73b534605e3fb6b2a0">ProfileInt::Load</a>().<a class="code hl_function" href="classmtgb_1_1IProfile.html#a8bc61567afe56971c7e7388f73540782">Section</a>(<span class="stringliteral">&quot;SCREEN&quot;</span>).<a class="code hl_function" href="classmtgb_1_1IProfile.html#a8f591103a5fdc9491396ae1d7ecbf5ff">Param</a>(<span class="stringliteral">&quot;Width&quot;</span>) .<a class="code hl_function" href="classmtgb_1_1IProfile.html#a73b3e029e35f9f3615cc5042bd542e32">InitValue</a>(800).<a class="code hl_function" href="structmtgb_1_1ProfileInt.html#a2c226e7ba7a90e23e6c000df11fd112a">Get</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">//initialSize_.x   = 1920;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">//initialSize_.y   = 1080;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    initialSize_.y   = <a class="code hl_function" href="classmtgb_1_1IProfile.html#a0d7216e8e0697d73b534605e3fb6b2a0">ProfileInt::Load</a>().<a class="code hl_function" href="classmtgb_1_1IProfile.html#a8bc61567afe56971c7e7388f73540782">Section</a>(<span class="stringliteral">&quot;SCREEN&quot;</span>).<a class="code hl_function" href="classmtgb_1_1IProfile.html#a8f591103a5fdc9491396ae1d7ecbf5ff">Param</a>(<span class="stringliteral">&quot;Height&quot;</span>).<a class="code hl_function" href="classmtgb_1_1IProfile.html#a73b3e029e35f9f3615cc5042bd542e32">InitValue</a>(600).<a class="code hl_function" href="structmtgb_1_1ProfileInt.html#a2c226e7ba7a90e23e6c000df11fd112a">Get</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    fpsLimit_ = <a class="code hl_function" href="classmtgb_1_1IProfile.html#a0d7216e8e0697d73b534605e3fb6b2a0">ProfileInt::Load</a>().<a class="code hl_function" href="classmtgb_1_1IProfile.html#a8bc61567afe56971c7e7388f73540782">Section</a>(<span class="stringliteral">&quot;GAME&quot;</span>)  .<a class="code hl_function" href="classmtgb_1_1IProfile.html#a8f591103a5fdc9491396ae1d7ecbf5ff">Param</a>(<span class="stringliteral">&quot;Fps&quot;</span>)   .<a class="code hl_function" href="classmtgb_1_1IProfile.html#a73b3e029e35f9f3615cc5042bd542e32">InitValue</a>(60) .<a class="code hl_function" href="structmtgb_1_1ProfileInt.html#a2c226e7ba7a90e23e6c000df11fd112a">Get</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    size_ = initialSize_;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classmtgb_1_1Screen.html#ac4c5a3354c6fa086c32ea91d906d2cff">   31</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Screen.html#ac4c5a3354c6fa086c32ea91d906d2cff">mtgb::Screen::Update</a>()</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classmtgb_1_1Screen.html#a5d9888d9057ceb6a97ae3195314e4aaa">   36</a></span><span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">mtgb::Vector2F</a> <a class="code hl_function" href="classmtgb_1_1Screen.html#a5d9888d9057ceb6a97ae3195314e4aaa">mtgb::Screen::GetSizeRatio</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">return</span> sizeRatio_;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classmtgb_1_1Screen.html#a64e3ead7d40f580ec2ac0f6bdb6862e9">   41</a></span><span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">mtgb::Vector2Int</a> <a class="code hl_function" href="classmtgb_1_1Screen.html#a64e3ead7d40f580ec2ac0f6bdb6862e9">mtgb::Screen::GetInitialSize</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> initialSize_;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classmtgb_1_1Screen.html#a853fffd4a84a3cccdf1d000e9cb8b649">   48</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Screen.html#a853fffd4a84a3cccdf1d000e9cb8b649">mtgb::Screen::SetSize</a>(<span class="keywordtype">int</span> _width, <span class="keywordtype">int</span> _height)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    size_.x = _width;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    size_.y = _height;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    sizeRatio_ = { (<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(size_.x) / initialSize_.x),<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(size_.y) / initialSize_.y };</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classmtgb_1_1Screen.html#a47c974931bb422ad53e46bc25a713d0c">   58</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classmtgb_1_1Screen.html#a47c974931bb422ad53e46bc25a713d0c">mtgb::Screen::GetFPS</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">return</span> fpsLimit_;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+<div class="ttc" id="aGame_8h_html"><div class="ttname"><a href="Game_8h.html">Game.h</a></div></div>
+<div class="ttc" id="aProfileUtlity_8h_html"><div class="ttname"><a href="ProfileUtlity_8h.html">ProfileUtlity.h</a></div></div>
+<div class="ttc" id="aScreen_8h_html"><div class="ttname"><a href="Screen_8h.html">Screen.h</a></div></div>
+<div class="ttc" id="aWindowContext_8h_html"><div class="ttname"><a href="WindowContext_8h.html">WindowContext.h</a></div></div>
+<div class="ttc" id="aWindowManager_8h_html"><div class="ttname"><a href="WindowManager_8h.html">WindowManager.h</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IProfile_html_a0d7216e8e0697d73b534605e3fb6b2a0"><div class="ttname"><a href="classmtgb_1_1IProfile.html#a0d7216e8e0697d73b534605e3fb6b2a0">mtgb::IProfile&lt; int, ProfileInt &gt;::Load</a></div><div class="ttdeci">static ProfileInt Load()</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00020">ProfileUtlity.h:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IProfile_html_a73b3e029e35f9f3615cc5042bd542e32"><div class="ttname"><a href="classmtgb_1_1IProfile.html#a73b3e029e35f9f3615cc5042bd542e32">mtgb::IProfile::InitValue</a></div><div class="ttdeci">ExtendT &amp; InitValue(const T _initValue)</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00017">ProfileUtlity.h:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IProfile_html_a8bc61567afe56971c7e7388f73540782"><div class="ttname"><a href="classmtgb_1_1IProfile.html#a8bc61567afe56971c7e7388f73540782">mtgb::IProfile::Section</a></div><div class="ttdeci">ExtendT &amp; Section(const char *_section)</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00015">ProfileUtlity.h:15</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IProfile_html_a8f591103a5fdc9491396ae1d7ecbf5ff"><div class="ttname"><a href="classmtgb_1_1IProfile.html#a8f591103a5fdc9491396ae1d7ecbf5ff">mtgb::IProfile::Param</a></div><div class="ttdeci">ExtendT &amp; Param(const char *_param)</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00016">ProfileUtlity.h:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Screen_html_a47c974931bb422ad53e46bc25a713d0c"><div class="ttname"><a href="classmtgb_1_1Screen.html#a47c974931bb422ad53e46bc25a713d0c">mtgb::Screen::GetFPS</a></div><div class="ttdeci">int GetFPS() const</div><div class="ttdef"><b>Definition:</b> <a href="Screen_8cpp_source.html#l00058">Screen.cpp:58</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Screen_html_a5d9888d9057ceb6a97ae3195314e4aaa"><div class="ttname"><a href="classmtgb_1_1Screen.html#a5d9888d9057ceb6a97ae3195314e4aaa">mtgb::Screen::GetSizeRatio</a></div><div class="ttdeci">const Vector2F GetSizeRatio() const</div><div class="ttdoc">初期値を1としたときのスクリーンサイズの比率を返す</div><div class="ttdef"><b>Definition:</b> <a href="Screen_8cpp_source.html#l00036">Screen.cpp:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Screen_html_a62e228a1e61475df2ddcf1ff84553489"><div class="ttname"><a href="classmtgb_1_1Screen.html#a62e228a1e61475df2ddcf1ff84553489">mtgb::Screen::~Screen</a></div><div class="ttdeci">~Screen()</div><div class="ttdef"><b>Definition:</b> <a href="Screen_8cpp_source.html#l00015">Screen.cpp:15</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Screen_html_a64e3ead7d40f580ec2ac0f6bdb6862e9"><div class="ttname"><a href="classmtgb_1_1Screen.html#a64e3ead7d40f580ec2ac0f6bdb6862e9">mtgb::Screen::GetInitialSize</a></div><div class="ttdeci">const mtgb::Vector2Int GetInitialSize() const</div><div class="ttdef"><b>Definition:</b> <a href="Screen_8cpp_source.html#l00041">Screen.cpp:41</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Screen_html_a853fffd4a84a3cccdf1d000e9cb8b649"><div class="ttname"><a href="classmtgb_1_1Screen.html#a853fffd4a84a3cccdf1d000e9cb8b649">mtgb::Screen::SetSize</a></div><div class="ttdeci">void SetSize(int _width, int _height)</div><div class="ttdef"><b>Definition:</b> <a href="Screen_8cpp_source.html#l00048">Screen.cpp:48</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Screen_html_ac4c5a3354c6fa086c32ea91d906d2cff"><div class="ttname"><a href="classmtgb_1_1Screen.html#ac4c5a3354c6fa086c32ea91d906d2cff">mtgb::Screen::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="Screen_8cpp_source.html#l00031">Screen.cpp:31</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Screen_html_acad812f34321a3d6371219c7ffb9de0c"><div class="ttname"><a href="classmtgb_1_1Screen.html#acad812f34321a3d6371219c7ffb9de0c">mtgb::Screen::Screen</a></div><div class="ttdeci">Screen()</div><div class="ttdef"><b>Definition:</b> <a href="Screen_8cpp_source.html#l00007">Screen.cpp:7</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Screen_html_afc4a4d432967f0f8a1baa4c2cff6da5c"><div class="ttname"><a href="classmtgb_1_1Screen.html#afc4a4d432967f0f8a1baa4c2cff6da5c">mtgb::Screen::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="Screen_8cpp_source.html#l00019">Screen.cpp:19</a></div></div>
+<div class="ttc" id="astructmtgb_1_1ProfileInt_html_a2c226e7ba7a90e23e6c000df11fd112a"><div class="ttname"><a href="structmtgb_1_1ProfileInt.html#a2c226e7ba7a90e23e6c000df11fd112a">mtgb::ProfileInt::Get</a></div><div class="ttdeci">const int Get() const override</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00035">ProfileUtlity.h:35</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector2T_html"><div class="ttname"><a href="structmtgb_1_1Vector2T.html">mtgb::Vector2T&lt; float &gt;</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Screen_8cpp.html">Screen.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

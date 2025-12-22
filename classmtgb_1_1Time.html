@@ -1,0 +1,634 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::Time クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1Time.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
+<a href="classmtgb_1_1Time-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::Time クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>ゲーム内時間のシステムクラス  
+ <a href="classmtgb_1_1Time.html#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="GameTime_8h_source.html">GameTime.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::Time の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Time__inherit__graph.svg" width="218" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::Time 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Time__coll__graph.svg" width="218" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a96233c8e9dbb2fe07cfc51a0285c91bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#a96233c8e9dbb2fe07cfc51a0285c91bf">Time</a> ()</td></tr>
+<tr class="separator:a96233c8e9dbb2fe07cfc51a0285c91bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2f8ab31a0ed55ff7de7b793557461f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#abe2f8ab31a0ed55ff7de7b793557461f">~Time</a> ()</td></tr>
+<tr class="separator:abe2f8ab31a0ed55ff7de7b793557461f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6fe4a36d89d9a121ebb06722e4b9ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#a7d6fe4a36d89d9a121ebb06722e4b9ba">Initialize</a> () override</td></tr>
+<tr class="separator:a7d6fe4a36d89d9a121ebb06722e4b9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49391dbce8d82d23e81bc378ed71b6b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#a49391dbce8d82d23e81bc378ed71b6b2">Update</a> () override</td></tr>
+<tr class="separator:a49391dbce8d82d23e81bc378ed71b6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2823e5390468dfc47213b845c55d3ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">Release</a> ()</td></tr>
+<tr class="memdesc:aa2823e5390468dfc47213b845c55d3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放処理  <br /></td></tr>
+<tr class="separator:aa2823e5390468dfc47213b845c55d3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:aae0c02a40ac234ba42be555d54a177cb"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#aae0c02a40ac234ba42be555d54a177cb">DeltaTime</a> ()</td></tr>
+<tr class="separator:aae0c02a40ac234ba42be555d54a177cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65abdc2a0dc82415c4d4ff372815973d"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">DeltaTimeF</a> ()</td></tr>
+<tr class="separator:a65abdc2a0dc82415c4d4ff372815973d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861d48000e2c98be1942c717ea17ae53"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53">WaitFrame</a> (unsigned int _frame)</td></tr>
+<tr class="separator:a861d48000e2c98be1942c717ea17ae53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a59e9912dc7cc58bf9118b1cde5d79ed9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GameTime_8h.html#a9bf80943e02f031c99d510a40a6d52e6">LARGE_INTEGER</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#a59e9912dc7cc58bf9118b1cde5d79ed9">current_</a></td></tr>
+<tr class="separator:a59e9912dc7cc58bf9118b1cde5d79ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7fe1d2d9ac74d160e2193fd1c74d38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GameTime_8h.html#a9bf80943e02f031c99d510a40a6d52e6">LARGE_INTEGER</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#a1a7fe1d2d9ac74d160e2193fd1c74d38">previous_</a></td></tr>
+<tr class="separator:a1a7fe1d2d9ac74d160e2193fd1c74d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:a5acad02423449acca0f6ad975e054646"><td class="memItemLeft" align="right" valign="top">static const LONGLONG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#a5acad02423449acca0f6ad975e054646">SEC_TO_MICRO</a> { 1000000 }</td></tr>
+<tr class="separator:a5acad02423449acca0f6ad975e054646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a43af3667cc1ec543134dbea8718f9"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#ac6a43af3667cc1ec543134dbea8718f9">MICRO_TO_SEC</a> { 0.0000001 }</td></tr>
+<tr class="separator:ac6a43af3667cc1ec543134dbea8718f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a576b6e83d6cc29ba19aa8d671f8e608d"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#a576b6e83d6cc29ba19aa8d671f8e608d">deltaTime_</a> {}</td></tr>
+<tr class="separator:a576b6e83d6cc29ba19aa8d671f8e608d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57daec756b799bafc2050c2654b33ad"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad">waitFrame_</a> { 0 }</td></tr>
+<tr class="separator:ad57daec756b799bafc2050c2654b33ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ゲーム内時間のシステムクラス </p>
+
+<p class="definition"> <a class="el" href="GameTime_8h_source.html">GameTime.h</a> の <a class="el" href="GameTime_8h_source.html#l00012">12</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a96233c8e9dbb2fe07cfc51a0285c91bf" name="a96233c8e9dbb2fe07cfc51a0285c91bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96233c8e9dbb2fe07cfc51a0285c91bf">&#9670;&#160;</a></span>Time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Time::Time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8cpp_source.html">GameTime.cpp</a> の <a class="el" href="GameTime_8cpp_source.html#l00007">7</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>               :</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_variable" href="classmtgb_1_1Time.html#a59e9912dc7cc58bf9118b1cde5d79ed9">current_</a>{},</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_variable" href="classmtgb_1_1Time.html#a1a7fe1d2d9ac74d160e2193fd1c74d38">previous_</a>{}</div>
+<div class="line"><span class="lineno">   10</span>{</div>
+<div class="line"><span class="lineno">   11</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_a1a7fe1d2d9ac74d160e2193fd1c74d38"><div class="ttname"><a href="classmtgb_1_1Time.html#a1a7fe1d2d9ac74d160e2193fd1c74d38">mtgb::Time::previous_</a></div><div class="ttdeci">LARGE_INTEGER previous_</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00031">GameTime.h:31</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_a59e9912dc7cc58bf9118b1cde5d79ed9"><div class="ttname"><a href="classmtgb_1_1Time.html#a59e9912dc7cc58bf9118b1cde5d79ed9">mtgb::Time::current_</a></div><div class="ttdeci">LARGE_INTEGER current_</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00030">GameTime.h:30</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abe2f8ab31a0ed55ff7de7b793557461f" name="abe2f8ab31a0ed55ff7de7b793557461f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe2f8ab31a0ed55ff7de7b793557461f">&#9670;&#160;</a></span>~Time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::Time::~Time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8cpp_source.html">GameTime.cpp</a> の <a class="el" href="GameTime_8cpp_source.html#l00013">13</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>{</div>
+<div class="line"><span class="lineno">   15</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aae0c02a40ac234ba42be555d54a177cb" name="aae0c02a40ac234ba42be555d54a177cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae0c02a40ac234ba42be555d54a177cb">&#9670;&#160;</a></span>DeltaTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const double mtgb::Time::DeltaTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8h_source.html">GameTime.h</a> の <a class="el" href="GameTime_8h_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1Time.html#a576b6e83d6cc29ba19aa8d671f8e608d">deltaTime_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_a576b6e83d6cc29ba19aa8d671f8e608d"><div class="ttname"><a href="classmtgb_1_1Time.html#a576b6e83d6cc29ba19aa8d671f8e608d">mtgb::Time::deltaTime_</a></div><div class="ttdeci">static double deltaTime_</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00027">GameTime.h:27</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="GameTime_8h_source.html#l00027">deltaTime_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="EffekseerVFX_8cpp_source.html#l00127">mtgb::EffectManager::Update()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Time_aae0c02a40ac234ba42be555d54a177cb_icgraph.svg" width="391" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a65abdc2a0dc82415c4d4ff372815973d" name="a65abdc2a0dc82415c4d4ff372815973d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65abdc2a0dc82415c4d4ff372815973d">&#9670;&#160;</a></span>DeltaTimeF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const float mtgb::Time::DeltaTimeF </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8h_source.html">GameTime.h</a> の <a class="el" href="GameTime_8h_source.html#l00022">22</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1Time.html#a576b6e83d6cc29ba19aa8d671f8e608d">deltaTime_</a>); }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="GameTime_8h_source.html#l00027">deltaTime_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00133">PatrolChargerEnemy::Charge()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00170">mtgb::ImGuiEditorCamera::DoDolly()</a>, <a class="el" href="ICamera_8cpp_source.html#l00066">mtgb::ICamera::DoOrbit()</a>, <a class="el" href="Camera_8cpp_source.html#l00122">mtgb::Camera::DoOrbit()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00186">mtgb::ImGuiEditorCamera::DoPan()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00203">mtgb::ImGuiEditorCamera::DoTrack()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00160">PatrolChargerEnemy::ReturnToPatrol()</a>, <a class="el" href="Mathf_8h_source.html#l00104">mtgb::Mathf::TargetingPosition()</a>, <a class="el" href="Audio_8cpp_source.html#l00047">mtgb::Audio::Update()</a>, <a class="el" href="TimeLimit_8cpp_source.html#l00025">TimeLimit::Update()</a>, <a class="el" href="Timer_8cpp_source.html#l00067">mtgb::Timer::Update()</a>, <a class="el" href="Interpolator_8cpp_source.html#l00065">mtgb::Interpolator::UpdateProgress()</a>, <a class="el" href="RigidBody_8cpp_source.html#l00025">mtgb::RigidBody::UpdateVelocity()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00151">PatrolChargerEnemy::Wait()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Time_a65abdc2a0dc82415c4d4ff372815973d_icgraph.svg" width="927" height="762"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a7d6fe4a36d89d9a121ebb06722e4b9ba" name="a7d6fe4a36d89d9a121ebb06722e4b9ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6fe4a36d89d9a121ebb06722e4b9ba">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Time::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="GameTime_8cpp_source.html">GameTime.cpp</a> の <a class="el" href="GameTime_8cpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
+<div class="line"><span class="lineno">   19</span>    QueryPerformanceCounter(&amp;<a class="code hl_variable" href="classmtgb_1_1Time.html#a1a7fe1d2d9ac74d160e2193fd1c74d38">previous_</a>);</div>
+<div class="line"><span class="lineno">   20</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa2823e5390468dfc47213b845c55d3ac" name="aa2823e5390468dfc47213b845c55d3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2823e5390468dfc47213b845c55d3ac">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::ISystem::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>開放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1Fbx.html#ada19e401d03b5d2056fba392808ec546">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1Input.html#aaeb9eca1ca02568bf898253c804baea7">mtgb::Input</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1Timer.html#ac8fce5b2c97551427a50a288e3fd76fd">mtgb::Timer</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b">mtgb::WindowManager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; AudioPlayer, AudioPlayerCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a> (計21項目)で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="ISystem_8h_source.html">ISystem.h</a> の <a class="el" href="ISystem_8h_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00147">mtgb::Game::ReleaseSystems()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ISystem_aa2823e5390468dfc47213b845c55d3ac_icgraph.svg" width="639" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a49391dbce8d82d23e81bc378ed71b6b2" name="a49391dbce8d82d23e81bc378ed71b6b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49391dbce8d82d23e81bc378ed71b6b2">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Time::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="GameTime_8cpp_source.html">GameTime.cpp</a> の <a class="el" href="GameTime_8cpp_source.html#l00022">22</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
+<div class="line"><span class="lineno">   24</span>    timeBeginPeriod(1);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(QueryPerformanceCounter(&amp;<a class="code hl_variable" href="classmtgb_1_1Time.html#a59e9912dc7cc58bf9118b1cde5d79ed9">current_</a>) == TRUE</div>
+<div class="line"><span class="lineno">   27</span>        &amp;&amp; <span class="stringliteral">&quot;QueryPerformanceCounterの取得に失敗&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> ((<a class="code hl_variable" href="classmtgb_1_1Time.html#a59e9912dc7cc58bf9118b1cde5d79ed9">current_</a>.QuadPart - <a class="code hl_variable" href="classmtgb_1_1Time.html#a1a7fe1d2d9ac74d160e2193fd1c74d38">previous_</a>.QuadPart) * 60 &gt;= <a class="code hl_variable" href="classmtgb_1_1Time.html#a5acad02423449acca0f6ad975e054646">SEC_TO_MICRO</a>)</div>
+<div class="line"><span class="lineno">   30</span>    {</div>
+<div class="line"><span class="lineno">   31</span>        <a class="code hl_variable" href="classmtgb_1_1Time.html#a576b6e83d6cc29ba19aa8d671f8e608d">deltaTime_</a> = (<a class="code hl_variable" href="classmtgb_1_1Time.html#a59e9912dc7cc58bf9118b1cde5d79ed9">current_</a>.QuadPart - <a class="code hl_variable" href="classmtgb_1_1Time.html#a1a7fe1d2d9ac74d160e2193fd1c74d38">previous_</a>.QuadPart) * <a class="code hl_variable" href="classmtgb_1_1Time.html#ac6a43af3667cc1ec543134dbea8718f9">MICRO_TO_SEC</a>;</div>
+<div class="line"><span class="lineno">   32</span>        <a class="code hl_variable" href="classmtgb_1_1Time.html#a1a7fe1d2d9ac74d160e2193fd1c74d38">previous_</a> = <a class="code hl_variable" href="classmtgb_1_1Time.html#a59e9912dc7cc58bf9118b1cde5d79ed9">current_</a>;</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad">waitFrame_</a> != 0)</div>
+<div class="line"><span class="lineno">   34</span>        {</div>
+<div class="line"><span class="lineno">   35</span>            <a class="code hl_variable" href="classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad">waitFrame_</a>--;</div>
+<div class="line"><span class="lineno">   36</span>        }</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   38</span>        {</div>
+<div class="line"><span class="lineno">   39</span>            <a class="code hl_function" href="classmtgb_1_1Game.html#af3e67eb32ff2dca48fa29ab66123e71c">Game::UpdateFrame</a>();</div>
+<div class="line"><span class="lineno">   40</span>        }</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    timeEndPeriod(1);</div>
+<div class="line"><span class="lineno">   44</span>}</div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00009">MTAssert.h:9</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_af3e67eb32ff2dca48fa29ab66123e71c"><div class="ttname"><a href="classmtgb_1_1Game.html#af3e67eb32ff2dca48fa29ab66123e71c">mtgb::Game::UpdateFrame</a></div><div class="ttdeci">static void UpdateFrame()</div><div class="ttdoc">フレームの更新をする</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00034">Game.cpp:34</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_a5acad02423449acca0f6ad975e054646"><div class="ttname"><a href="classmtgb_1_1Time.html#a5acad02423449acca0f6ad975e054646">mtgb::Time::SEC_TO_MICRO</a></div><div class="ttdeci">static const LONGLONG SEC_TO_MICRO</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00025">GameTime.h:25</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_ac6a43af3667cc1ec543134dbea8718f9"><div class="ttname"><a href="classmtgb_1_1Time.html#ac6a43af3667cc1ec543134dbea8718f9">mtgb::Time::MICRO_TO_SEC</a></div><div class="ttdeci">static const double MICRO_TO_SEC</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00026">GameTime.h:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_ad57daec756b799bafc2050c2654b33ad"><div class="ttname"><a href="classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad">mtgb::Time::waitFrame_</a></div><div class="ttdeci">static unsigned int waitFrame_</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00032">GameTime.h:32</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00009">massert</a>, <a class="el" href="Game_8cpp_source.html#l00034">mtgb::Game::UpdateFrame()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Time_a49391dbce8d82d23e81bc378ed71b6b2_cgraph.svg" width="410" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a861d48000e2c98be1942c717ea17ae53" name="a861d48000e2c98be1942c717ea17ae53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861d48000e2c98be1942c717ea17ae53">&#9670;&#160;</a></span>WaitFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void mtgb::Time::WaitFrame </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>_frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8h_source.html">GameTime.h</a> の <a class="el" href="GameTime_8h_source.html#l00023">23</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{ <a class="code hl_variable" href="classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad">waitFrame_</a> = _frame; };</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="GameTime_8h_source.html#l00032">waitFrame_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00019">SampleScene::Initialize()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00110">mtgb::ImGuiEditor::LoadMapData()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Time_a861d48000e2c98be1942c717ea17ae53_icgraph.svg" width="408" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a59e9912dc7cc58bf9118b1cde5d79ed9" name="a59e9912dc7cc58bf9118b1cde5d79ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59e9912dc7cc58bf9118b1cde5d79ed9">&#9670;&#160;</a></span>current_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="GameTime_8h.html#a9bf80943e02f031c99d510a40a6d52e6">LARGE_INTEGER</a> mtgb::Time::current_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8h_source.html">GameTime.h</a> の <a class="el" href="GameTime_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a576b6e83d6cc29ba19aa8d671f8e608d" name="a576b6e83d6cc29ba19aa8d671f8e608d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a576b6e83d6cc29ba19aa8d671f8e608d">&#9670;&#160;</a></span>deltaTime_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mtgb::Time::deltaTime_ {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8h_source.html">GameTime.h</a> の <a class="el" href="GameTime_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="GameTime_8h_source.html#l00021">DeltaTime()</a>, <a class="el" href="GameTime_8h_source.html#l00022">DeltaTimeF()</a>.</p>
+
+</div>
+</div>
+<a id="ac6a43af3667cc1ec543134dbea8718f9" name="ac6a43af3667cc1ec543134dbea8718f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a43af3667cc1ec543134dbea8718f9">&#9670;&#160;</a></span>MICRO_TO_SEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double mtgb::Time::MICRO_TO_SEC { 0.0000001 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8h_source.html">GameTime.h</a> の <a class="el" href="GameTime_8h_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1a7fe1d2d9ac74d160e2193fd1c74d38" name="a1a7fe1d2d9ac74d160e2193fd1c74d38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a7fe1d2d9ac74d160e2193fd1c74d38">&#9670;&#160;</a></span>previous_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="GameTime_8h.html#a9bf80943e02f031c99d510a40a6d52e6">LARGE_INTEGER</a> mtgb::Time::previous_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8h_source.html">GameTime.h</a> の <a class="el" href="GameTime_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5acad02423449acca0f6ad975e054646" name="a5acad02423449acca0f6ad975e054646"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5acad02423449acca0f6ad975e054646">&#9670;&#160;</a></span>SEC_TO_MICRO</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const LONGLONG mtgb::Time::SEC_TO_MICRO { 1000000 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8h_source.html">GameTime.h</a> の <a class="el" href="GameTime_8h_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad57daec756b799bafc2050c2654b33ad" name="ad57daec756b799bafc2050c2654b33ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57daec756b799bafc2050c2654b33ad">&#9670;&#160;</a></span>waitFrame_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int mtgb::Time::waitFrame_ { 0 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="GameTime_8h_source.html">GameTime.h</a> の <a class="el" href="GameTime_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="GameTime_8h_source.html#l00023">WaitFrame()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="GameTime_8h_source.html">GameTime.h</a></li>
+<li><a class="el" href="GameTime_8cpp_source.html">GameTime.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1Time.html">Time</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

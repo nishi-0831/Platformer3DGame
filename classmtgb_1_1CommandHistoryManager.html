@@ -1,0 +1,698 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::CommandHistoryManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1CommandHistoryManager.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1CommandHistoryManager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::CommandHistoryManager クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="CommandHistoryManager_8h_source.html">CommandHistoryManager.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::CommandHistoryManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CommandHistoryManager__inherit__graph.svg" width="482" height="566"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::CommandHistoryManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CommandHistoryManager__coll__graph.svg" width="755" height="1214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2243fef14fd822e8fce8332e25300b11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#a2243fef14fd822e8fce8332e25300b11">CommandHistoryManager</a> ()</td></tr>
+<tr class="separator:a2243fef14fd822e8fce8332e25300b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dea20553a5ec80028b53df9f1dd70c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#a1dea20553a5ec80028b53df9f1dd70c9">Initialize</a> () override</td></tr>
+<tr class="separator:a1dea20553a5ec80028b53df9f1dd70c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a168c668b3aa0b41465c35eef00a885"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#a0a168c668b3aa0b41465c35eef00a885">Update</a> () override</td></tr>
+<tr class="separator:a0a168c668b3aa0b41465c35eef00a885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a241ec9659df0b9d9c9e48b830e9e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#ae0a241ec9659df0b9d9c9e48b830e9e9">BeginGroupCommand</a> ()</td></tr>
+<tr class="separator:ae0a241ec9659df0b9d9c9e48b830e9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24cbc05b64bc6f2ce35d6ccc09bf7514"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#a24cbc05b64bc6f2ce35d6ccc09bf7514">EndGroupCommand</a> ()</td></tr>
+<tr class="separator:a24cbc05b64bc6f2ce35d6ccc09bf7514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a582b6404b130e7ffa90622f7ba5a6728"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#a582b6404b130e7ffa90622f7ba5a6728">ExecuteCommand</a> (<a class="el" href="classCommand.html">Command</a> *_command) override</td></tr>
+<tr class="memdesc:a582b6404b130e7ffa90622f7ba5a6728"><td class="mdescLeft">&#160;</td><td class="mdescRight">コマンドを実行、スタックに積む  <br /></td></tr>
+<tr class="separator:a582b6404b130e7ffa90622f7ba5a6728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa772cfb5dd0f117656e6fdc0be8543bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#aa772cfb5dd0f117656e6fdc0be8543bc">UndoCommand</a> () override</td></tr>
+<tr class="memdesc:aa772cfb5dd0f117656e6fdc0be8543bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">直前に実行したコマンドの取り消しを行う  <br /></td></tr>
+<tr class="separator:aa772cfb5dd0f117656e6fdc0be8543bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ba3d71526335c23bfc5ff1fa7a5ddff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#a3ba3d71526335c23bfc5ff1fa7a5ddff">RedoCommand</a> () override</td></tr>
+<tr class="memdesc:a3ba3d71526335c23bfc5ff1fa7a5ddff"><td class="mdescLeft">&#160;</td><td class="mdescRight">直前に取り消したコマンドの再実行を行う  <br /></td></tr>
+<tr class="separator:a3ba3d71526335c23bfc5ff1fa7a5ddff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac341257841bb96c3d15b360676b6bdf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#ac341257841bb96c3d15b360676b6bdf9">ClearAllStack</a> () override</td></tr>
+<tr class="separator:ac341257841bb96c3d15b360676b6bdf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d13afcf9796f82dbb25e9c5b202940"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#a59d13afcf9796f82dbb25e9c5b202940">ClearRedoStack</a> () override</td></tr>
+<tr class="separator:a59d13afcf9796f82dbb25e9c5b202940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2823e5390468dfc47213b845c55d3ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">Release</a> ()</td></tr>
+<tr class="memdesc:aa2823e5390468dfc47213b845c55d3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放処理  <br /></td></tr>
+<tr class="separator:aa2823e5390468dfc47213b845c55d3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a39c40b005146bee06937856a4b3f4e9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classICommandHistory.html">ICommandHistory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a></td></tr>
+<tr class="separator:a39c40b005146bee06937856a4b3f4e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a766ca2aba5998bc49d6b10066a1af5e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a></td></tr>
+<tr class="separator:a766ca2aba5998bc49d6b10066a1af5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a9ab0077eb66e5a289efc1a3f07083b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1GroupCommand.html">GroupCommand</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a></td></tr>
+<tr class="separator:a1a9ab0077eb66e5a289efc1a3f07083b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="CommandHistoryManager_8h_source.html">CommandHistoryManager.h</a> の <a class="el" href="CommandHistoryManager_8h_source.html#l00007">7</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a2243fef14fd822e8fce8332e25300b11" name="a2243fef14fd822e8fce8332e25300b11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2243fef14fd822e8fce8332e25300b11">&#9670;&#160;</a></span>CommandHistoryManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CommandHistoryManager::CommandHistoryManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00004">4</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    5</span>    : <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>{ <span class="keyword">new</span> <a class="code hl_class" href="classCommandHistory.html">CommandHistory</a>() }</div>
+<div class="line"><span class="lineno">    6</span>    , <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>{ <span class="keyword">nullptr</span> }</div>
+<div class="line"><span class="lineno">    7</span>    , <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a>{<span class="keyword">false</span>}</div>
+<div class="line"><span class="lineno">    8</span>{</div>
+<div class="line"><span class="lineno">    9</span>}</div>
+<div class="ttc" id="aclassCommandHistory_html"><div class="ttname"><a href="classCommandHistory.html">CommandHistory</a></div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8h_source.html#l00039">CommandHistory.h:40</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CommandHistoryManager_html_a1a9ab0077eb66e5a289efc1a3f07083b"><div class="ttname"><a href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">mtgb::CommandHistoryManager::pGroupCommand_</a></div><div class="ttdeci">GroupCommand * pGroupCommand_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistoryManager_8h_source.html#l00026">CommandHistoryManager.h:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CommandHistoryManager_html_a39c40b005146bee06937856a4b3f4e9e"><div class="ttname"><a href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">mtgb::CommandHistoryManager::inner_</a></div><div class="ttdeci">ICommandHistory * inner_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistoryManager_8h_source.html#l00024">CommandHistoryManager.h:24</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CommandHistoryManager_html_a766ca2aba5998bc49d6b10066a1af5e3"><div class="ttname"><a href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">mtgb::CommandHistoryManager::isGrouping_</a></div><div class="ttdeci">bool isGrouping_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistoryManager_8h_source.html#l00025">CommandHistoryManager.h:25</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ae0a241ec9659df0b9d9c9e48b830e9e9" name="ae0a241ec9659df0b9d9c9e48b830e9e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a241ec9659df0b9d9c9e48b830e9e9">&#9670;&#160;</a></span>BeginGroupCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandHistoryManager::BeginGroupCommand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a>)</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>);</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a> = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1GroupCommand.html">GroupCommand</a>();</div>
+<div class="line"><span class="lineno">   27</span>}</div>
+<div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GroupCommand_html"><div class="ttname"><a href="classmtgb_1_1GroupCommand.html">mtgb::GroupCommand</a></div><div class="ttdef"><b>Definition:</b> <a href="GroupCommand_8h_source.html#l00007">GroupCommand.h:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="CommandHistoryManager_8h_source.html#l00025">isGrouping_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00026">pGroupCommand_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="GameObjectGenerator_8cpp_source.html#l00033">mtgb::GameObjectGenerator::GenerateFromJson()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CommandHistoryManager_ae0a241ec9659df0b9d9c9e48b830e9e9_icgraph.svg" width="727" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac341257841bb96c3d15b360676b6bdf9" name="ac341257841bb96c3d15b360676b6bdf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac341257841bb96c3d15b360676b6bdf9">&#9670;&#160;</a></span>ClearAllStack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandHistoryManager::ClearAllStack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>全てのスタックの履歴を消去する </p>
+<p>コマンドは全て解放される </p>
+
+<p><a class="el" href="classICommandHistory.html#a46dd59d4056abe64ed35e1363c0e822f">ICommandHistory</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00071">71</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>{</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>);</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#a46dd59d4056abe64ed35e1363c0e822f">ClearAllStack</a>();</div>
+<div class="line"><span class="lineno">   75</span>}</div>
+<div class="ttc" id="aclassICommandHistory_html_a46dd59d4056abe64ed35e1363c0e822f"><div class="ttname"><a href="classICommandHistory.html#a46dd59d4056abe64ed35e1363c0e822f">ICommandHistory::ClearAllStack</a></div><div class="ttdeci">virtual void ClearAllStack()=0</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classICommandHistory.html#a46dd59d4056abe64ed35e1363c0e822f">ICommandHistory::ClearAllStack()</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00024">inner_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00026">pGroupCommand_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CommandHistoryManager_ac341257841bb96c3d15b360676b6bdf9_cgraph.svg" width="492" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a59d13afcf9796f82dbb25e9c5b202940" name="a59d13afcf9796f82dbb25e9c5b202940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59d13afcf9796f82dbb25e9c5b202940">&#9670;&#160;</a></span>ClearRedoStack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandHistoryManager::ClearRedoStack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>再実行の履歴を消去する </p>
+<p>コマンドは全て解放される </p>
+
+<p><a class="el" href="classICommandHistory.html#a7b4259be93dc4eefcb4d70684be83a3f">ICommandHistory</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00077">77</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>{</div>
+<div class="line"><span class="lineno">   79</span>    </div>
+<div class="line"><span class="lineno">   80</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a24cbc05b64bc6f2ce35d6ccc09bf7514" name="a24cbc05b64bc6f2ce35d6ccc09bf7514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24cbc05b64bc6f2ce35d6ccc09bf7514">&#9670;&#160;</a></span>EndGroupCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandHistoryManager::EndGroupCommand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a> == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ExecuteCommand</a>(<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>);</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+<div class="ttc" id="aclassICommandHistory_html_aca75b9956f5f7d2790dacde7483d1649"><div class="ttname"><a href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ICommandHistory::ExecuteCommand</a></div><div class="ttdeci">virtual void ExecuteCommand(Command *_command)=0</div><div class="ttdoc">コマンドを実行、スタックに積む</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ICommandHistory::ExecuteCommand()</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00024">inner_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00025">isGrouping_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00026">pGroupCommand_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="GameObjectGenerator_8cpp_source.html#l00033">mtgb::GameObjectGenerator::GenerateFromJson()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CommandHistoryManager_a24cbc05b64bc6f2ce35d6ccc09bf7514_cgraph.svg" width="492" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CommandHistoryManager_a24cbc05b64bc6f2ce35d6ccc09bf7514_icgraph.svg" width="727" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a582b6404b130e7ffa90622f7ba5a6728" name="a582b6404b130e7ffa90622f7ba5a6728"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a582b6404b130e7ffa90622f7ba5a6728">&#9670;&#160;</a></span>ExecuteCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandHistoryManager::ExecuteCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCommand.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>_command</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コマンドを実行、スタックに積む </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_command</td><td>実行、積まれる対象のコマンド</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ICommandHistory</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00038">38</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a> &amp;&amp; <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1GroupCommand.html#aff7d93328690039cd1046e3ea869e4c1">ExecuteCommand</a>(_command);</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>        <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ExecuteCommand</a>(_command);</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1GroupCommand_html_aff7d93328690039cd1046e3ea869e4c1"><div class="ttname"><a href="classmtgb_1_1GroupCommand.html#aff7d93328690039cd1046e3ea869e4c1">mtgb::GroupCommand::ExecuteCommand</a></div><div class="ttdeci">void ExecuteCommand(Command *_pCommand)</div><div class="ttdef"><b>Definition:</b> <a href="GroupCommand_8cpp_source.html#l00051">GroupCommand.cpp:51</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ICommandHistory::ExecuteCommand()</a>, <a class="el" href="GroupCommand_8cpp_source.html#l00051">mtgb::GroupCommand::ExecuteCommand()</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00024">inner_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00025">isGrouping_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00026">pGroupCommand_</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CommandHistoryManager_a582b6404b130e7ffa90622f7ba5a6728_cgraph.svg" width="492" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a1dea20553a5ec80028b53df9f1dd70c9" name="a1dea20553a5ec80028b53df9f1dd70c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dea20553a5ec80028b53df9f1dd70c9">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandHistoryManager::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00011">11</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3ba3d71526335c23bfc5ff1fa7a5ddff" name="a3ba3d71526335c23bfc5ff1fa7a5ddff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ba3d71526335c23bfc5ff1fa7a5ddff">&#9670;&#160;</a></span>RedoCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandHistoryManager::RedoCommand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>直前に取り消したコマンドの再実行を行う </p>
+
+<p><a class="el" href="classICommandHistory.html#ae342a0cedc03344607d855c55d0f8458">ICommandHistory</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00060">60</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a>)</div>
+<div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot; コマンドをまとめている最中のRedoは許可されていません。 CancellGroupCommand() を呼んでください &quot;</span>);</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#ae342a0cedc03344607d855c55d0f8458">RedoCommand</a>();</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+<div class="ttc" id="aclassICommandHistory_html_ae342a0cedc03344607d855c55d0f8458"><div class="ttname"><a href="classICommandHistory.html#ae342a0cedc03344607d855c55d0f8458">ICommandHistory::RedoCommand</a></div><div class="ttdeci">virtual void RedoCommand()=0</div><div class="ttdoc">直前に取り消したコマンドの再実行を行う</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="CommandHistoryManager_8h_source.html#l00024">inner_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00025">isGrouping_</a>, <a class="el" href="classICommandHistory.html#ae342a0cedc03344607d855c55d0f8458">ICommandHistory::RedoCommand()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CommandHistoryManager_a3ba3d71526335c23bfc5ff1fa7a5ddff_cgraph.svg" width="540" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa2823e5390468dfc47213b845c55d3ac" name="aa2823e5390468dfc47213b845c55d3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2823e5390468dfc47213b845c55d3ac">&#9670;&#160;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mtgb::ISystem::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>開放処理 </p>
+
+<p><a class="el" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1Fbx.html#ada19e401d03b5d2056fba392808ec546">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1Input.html#aaeb9eca1ca02568bf898253c804baea7">mtgb::Input</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1Timer.html#ac8fce5b2c97551427a50a288e3fd76fd">mtgb::Timer</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b">mtgb::WindowManager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; AudioPlayer, AudioPlayerCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a> (計21項目)で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="ISystem_8h_source.html">ISystem.h</a> の <a class="el" href="ISystem_8h_source.html#l00016">16</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00147">mtgb::Game::ReleaseSystems()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ISystem_aa2823e5390468dfc47213b845c55d3ac_icgraph.svg" width="639" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa772cfb5dd0f117656e6fdc0be8543bc" name="aa772cfb5dd0f117656e6fdc0be8543bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa772cfb5dd0f117656e6fdc0be8543bc">&#9670;&#160;</a></span>UndoCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandHistoryManager::UndoCommand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>直前に実行したコマンドの取り消しを行う </p>
+
+<p><a class="el" href="classICommandHistory.html#a24df9bdb00bee6d77d4c2cf8c12de309">ICommandHistory</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a>)</div>
+<div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot; コマンドをまとめている最中のUndoは許可されていません。 CancellGroupCommand() を呼んでください &quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#a24df9bdb00bee6d77d4c2cf8c12de309">UndoCommand</a>();</div>
+<div class="line"><span class="lineno">   58</span>}</div>
+<div class="ttc" id="aclassICommandHistory_html_a24df9bdb00bee6d77d4c2cf8c12de309"><div class="ttname"><a href="classICommandHistory.html#a24df9bdb00bee6d77d4c2cf8c12de309">ICommandHistory::UndoCommand</a></div><div class="ttdeci">virtual void UndoCommand()=0</div><div class="ttdoc">直前に実行したコマンドの取り消しを行う</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="CommandHistoryManager_8h_source.html#l00024">inner_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00025">isGrouping_</a>, <a class="el" href="classICommandHistory.html#a24df9bdb00bee6d77d4c2cf8c12de309">ICommandHistory::UndoCommand()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CommandHistoryManager_aa772cfb5dd0f117656e6fdc0be8543bc_cgraph.svg" width="542" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0a168c668b3aa0b41465c35eef00a885" name="a0a168c668b3aa0b41465c35eef00a885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a168c668b3aa0b41465c35eef00a885">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandHistoryManager::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00015">15</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a39c40b005146bee06937856a4b3f4e9e" name="a39c40b005146bee06937856a4b3f4e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c40b005146bee06937856a4b3f4e9e">&#9670;&#160;</a></span>inner_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classICommandHistory.html">ICommandHistory</a>* mtgb::CommandHistoryManager::inner_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8h_source.html">CommandHistoryManager.h</a> の <a class="el" href="CommandHistoryManager_8h_source.html#l00024">24</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00071">ClearAllStack()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00029">EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00038">ExecuteCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00060">RedoCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00050">UndoCommand()</a>.</p>
+
+</div>
+</div>
+<a id="a766ca2aba5998bc49d6b10066a1af5e3" name="a766ca2aba5998bc49d6b10066a1af5e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a766ca2aba5998bc49d6b10066a1af5e3">&#9670;&#160;</a></span>isGrouping_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::CommandHistoryManager::isGrouping_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8h_source.html">CommandHistoryManager.h</a> の <a class="el" href="CommandHistoryManager_8h_source.html#l00025">25</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00019">BeginGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00029">EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00038">ExecuteCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00060">RedoCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00050">UndoCommand()</a>.</p>
+
+</div>
+</div>
+<a id="a1a9ab0077eb66e5a289efc1a3f07083b" name="a1a9ab0077eb66e5a289efc1a3f07083b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a9ab0077eb66e5a289efc1a3f07083b">&#9670;&#160;</a></span>pGroupCommand_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1GroupCommand.html">GroupCommand</a>* mtgb::CommandHistoryManager::pGroupCommand_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="CommandHistoryManager_8h_source.html">CommandHistoryManager.h</a> の <a class="el" href="CommandHistoryManager_8h_source.html#l00026">26</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00019">BeginGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00071">ClearAllStack()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00029">EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00038">ExecuteCommand()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="CommandHistoryManager_8h_source.html">CommandHistoryManager.h</a></li>
+<li><a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1CommandHistoryManager.html">CommandHistoryManager</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>
