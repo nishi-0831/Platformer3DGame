@@ -14,6 +14,7 @@
 			ColliderType colliderType_; \
 			bool isStatic_; \
 			ColliderTag colliderTag_; \
+			bool isTrigger_; \
 			Vector3 center_; \
 			float radius_; \
 			Vector3 extents_; \
@@ -34,6 +35,7 @@
 		state.colliderType_ = this->colliderType_; \
 		state.isStatic_ = this->isStatic_; \
 		state.colliderTag_ = this->colliderTag_; \
+		state.isTrigger_ = this->isTrigger_; \
 		state.center_ = this->center_; \
 		state.radius_ = this->radius_; \
 		state.extents_ = this->extents_; \
@@ -46,6 +48,7 @@
 		this->colliderType_ = state.colliderType_; \
 		this->isStatic_ = state.isStatic_; \
 		this->colliderTag_ = state.colliderTag_; \
+		this->isTrigger_ = state.isTrigger_; \
 		this->center_ = state.center_; \
 		this->radius_ = state.radius_; \
 		this->extents_ = state.extents_; \
@@ -58,18 +61,20 @@
 		_j["colliderType_"] = JsonConverter::Serialize<ColliderType>(_target.colliderType_); \
 		_j["isStatic_"] = JsonConverter::Serialize<bool>(_target.isStatic_); \
 		_j["colliderTag_"] = JsonConverter::Serialize<ColliderTag>(_target.colliderTag_); \
+		_j["isTrigger_"] = JsonConverter::Serialize<bool>(_target.isTrigger_); \
 		_j["center_"] = JsonConverter::Serialize<Vector3>(_target.center_); \
 		_j["radius_"] = JsonConverter::Serialize<float>(_target.radius_); \
 		_j["extents_"] = JsonConverter::Serialize<Vector3>(_target.extents_); \
 	} \
 	friend void from_json(const nlohmann::json& _j, Collider& _target) \
 	{ \
-		JsonConverter::Deserialize<ColliderType>(_target.colliderType_, _j.at("colliderType_")); \
-		JsonConverter::Deserialize<bool>(_target.isStatic_, _j.at("isStatic_")); \
-		JsonConverter::Deserialize<ColliderTag>(_target.colliderTag_, _j.at("colliderTag_")); \
-		JsonConverter::Deserialize<Vector3>(_target.center_, _j.at("center_")); \
-		JsonConverter::Deserialize<float>(_target.radius_, _j.at("radius_")); \
-		JsonConverter::Deserialize<Vector3>(_target.extents_, _j.at("extents_")); \
+		JsonConverter::Deserialize<ColliderType>(_target.colliderType_, _j,"colliderType_"); \
+		JsonConverter::Deserialize<bool>(_target.isStatic_, _j,"isStatic_"); \
+		JsonConverter::Deserialize<ColliderTag>(_target.colliderTag_, _j,"colliderTag_"); \
+		JsonConverter::Deserialize<bool>(_target.isTrigger_, _j,"isTrigger_"); \
+		JsonConverter::Deserialize<Vector3>(_target.center_, _j,"center_"); \
+		JsonConverter::Deserialize<float>(_target.radius_, _j,"radius_"); \
+		JsonConverter::Deserialize<Vector3>(_target.extents_, _j,"extents_"); \
 		_target.OnPostRestore(); \
 	} \
 	static std::string TypeName(){ return "Collider" ;} \
@@ -85,6 +90,7 @@
 				TypeRegistry::Instance().CallFunc(&_target->colliderType_, "colliderType_"); \
 				TypeRegistry::Instance().CallFunc(&_target->isStatic_, "isStatic_"); \
 				TypeRegistry::Instance().CallFunc(&_target->colliderTag_, "colliderTag_"); \
+				TypeRegistry::Instance().CallFunc(&_target->isTrigger_, "isTrigger_"); \
 				TypeRegistry::Instance().CallFunc(&_target->center_, "center_"); \
 				TypeRegistry::Instance().CallFunc(&_target->radius_, "radius_"); \
 				TypeRegistry::Instance().CallFunc(&_target->extents_, "extents_"); \

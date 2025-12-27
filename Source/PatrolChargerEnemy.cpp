@@ -7,6 +7,7 @@ unsigned int PatrolChargerEnemy::generateCounter_{ 0 };
 
 PatrolChargerEnemy::PatrolChargerEnemy()
 	: pTransform_{ Component<Transform>() }
+	, IActor(GetEntityId())
 	, pRigidBody_{ Component<RigidBody>() }
 	, pMeshRenderer_{ Component<MeshRenderer>() }
 	, pCollider_{ Component<Collider>() }
@@ -16,12 +17,12 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	, foundDistance_{ 5.0f }
 	, waitTimeTransitionCharge_{1.0f}
 	, waitTime_{ 3.0f }
-	, chargeSpeed_{ 2.0f }
+	, chargeSpeed_{ 4.0f }
 	, chargeTime_{5.0f}
 	, walkAnimSpeed_{0.5f}
 	, waitTimeAfterCharge_{2.0f}
 	, targetEntityId_{ INVALID_ENTITY }
-	, returnToPatrolSpeed_{ 1.0f }
+	, returnToPatrolSpeed_{ 2.0f }
 {
 	pMeshRenderer_->meshFileName = "Model/GolemAnim.fbx";
 	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
@@ -35,14 +36,11 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	name_ = std::format("{} ({})", typeName, generateCounter_++);
 	displayName_ = name_;
 	
-
 	pRigidBody_->OnCollisionEnter([this](EntityId _entityId)
 		{
-			if (_entityId == targetEntityId_)
-			{
-				this->OnChargePlayer();
-			}
+			OnCollisionEnter(_entityId);
 		});
+	pRigidBody_->isKinematic_ = false;
 
 	InitializeState();
 }
@@ -97,18 +95,26 @@ void PatrolChargerEnemy::ShowImGui()
 	{
 		ImGui::Text("STATE::RETURN_TO_PATROL");
 	}
-
-	// Ž‹–ì‚ð‰~‚Æ‚µ‚Ä•`‰æ
-	//MTImGui::Instance().DrawCone(
-	//    pTransform_->position,
-	//    pTransform_->Forward(),
-	//    foundFOV_,
-	//    foundDistance_,
-	//    1.0f, // ü‚Ì‘¾‚³
-	//    16 // ‰~‚Ì•ªŠ„”
-	//);
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
 
+}
+
+void PatrolChargerEnemy::OnStomped(IActor* _pOther)
+{
+	state_.Change(STATE::DYING);
+}
+
+void PatrolChargerEnemy::OnHitSide(IActor* _pOther)
+{
+	if (state_.Current() == STATE::CHARGE)
+	{
+		_pOther->TakeDamage(1);
+	}
+}
+
+void PatrolChargerEnemy::TakeDamage(int _damage)
+{
+	state_.Change(STATE::DYING);
 }
 
 void PatrolChargerEnemy::InitializeState()
@@ -144,7 +150,7 @@ void PatrolChargerEnemy::InitializeState()
 	state_
 		.OnStart(STATE::WAIT, [this]
 			{
-				animController_->PlayAnimation("Wait", true);
+				animController_->PlayAnimation("Idle", true);
 			})
 		.OnUpdate(STATE::WAIT, [this]
 		{
@@ -183,9 +189,13 @@ void PatrolChargerEnemy::Patrol()
 	Vector3 toTarget = pTargetTransform_->GetWorldPosition() - pTransform_->GetWorldPosition();
 	if (toTarget.Size() <= foundDistance_)
 	{
+		// ˆê’èŽžŠÔ‘Ò‹@‚µ‚Ä‚©‚ç“Ëió‘Ô‚É‘JˆÚ
 		state_.Change(STATE::WAIT);
 		waitTime_ = waitTimeTransitionCharge_;
 		nextState_ = STATE::CHARGE;
+
+		// ƒ^[ƒQƒbƒg‚Ì•ûŒü‚ðŒü‚­
+		pTransform_->rotate = Quaternion::LookRotation(Vector3::Normalize(toTarget), Vector3::Up());
 	}
 }
 
@@ -231,6 +241,7 @@ void PatrolChargerEnemy::ReturnToPatrol()
 	Vector3 returnPos = pInterpolator_->EvaluatePos();
 	Vector3 vToReturnPos = returnPos - pTransform_->GetWorldPosition();
 	pTransform_->position += Vector3::Normalize(vToReturnPos) * returnToPatrolSpeed_ * Time::DeltaTimeF();
+	pTransform_->rotate = Quaternion::LookRotation(Vector3::Normalize(vToReturnPos), Vector3::Up());
 
 	float returnDistance = 0.1f;
 	if (vToReturnPos.Size() <= returnDistance)
@@ -264,7 +275,6 @@ bool PatrolChargerEnemy::Search()
 		// ”­Œ©
 		//Quaternion targetRotation{ Quaternion::LookRotation(Vector3::Normalize(toTarget),pTransform_->Up()) };
 		//state_.Change(STATE::CHARGE);
-
 		return true;
 	}
 	return false;
@@ -276,4 +286,20 @@ void PatrolChargerEnemy::OnChargePlayer()
 	state_.Change(STATE::WAIT);
 	waitTime_ = waitTimeAfterCharge_;
 	nextState_ = STATE::RETURN_TO_PATROL;
+}
+
+void PatrolChargerEnemy::OnCollisionEnter(EntityId _entityId)
+{
+	/*if (_entityId != targetEntityId_)
+		return;
+
+	LOGIMGUI("collision enter player : ChargeEnemy");
+	GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
+	Transform& otherTransform = Transform::Get(_entityId);
+
+	if ( pTransform_->position.y <= otherTransform.position.y)
+	{
+		
+		return;
+	}*/
 }

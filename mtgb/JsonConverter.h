@@ -45,6 +45,8 @@ namespace JsonConverter
 	nlohmann::json Serialize(const T& _value);
 	template<typename T>
 	void Deserialize(T& _value, const nlohmann::json& _json);
+	template<typename T>
+	void Deserialize(T& _value, const nlohmann::json& _json, std::string_view _key);
 	template<typename... Attrs>
 	std::string GetDisplayName(const std::tuple<Attrs...>& _attrs) noexcept;
 	template<typename T>
@@ -179,6 +181,15 @@ void JsonConverter::Deserialize(T& _value, const nlohmann::json& _json)
 					_json.at(key).get_to(_member(_value));
 				}
 			});
+	}
+}
+
+template<typename T>
+void JsonConverter::Deserialize(T& _value, const nlohmann::json& _json, std::string_view _key)
+{
+	if (_json.contains(_key))
+	{
+		Deserialize(_value, _json.at(_key));
 	}
 }
 

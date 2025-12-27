@@ -1,6 +1,7 @@
 #pragma once
 #include <mtgb.h>
-class PatrolChargerEnemy : public mtgb::GameObject, mtgb::ImGuiShowable
+#include "IActor.h"
+class PatrolChargerEnemy : public mtgb::GameObject,public mtgb::ImGuiShowable,public IActor
 {
 public:
 	PatrolChargerEnemy();
@@ -9,11 +10,15 @@ public:
 	void Draw() const override;
 	void Start() override;
 	void ShowImGui() override;
+	void OnStomped(IActor* _pOther) override;
+	void OnHitSide(IActor* _pOther) override;
+	void TakeDamage(int _damage) override;
 private:
 	/// <summary>
 	/// ƒvƒŒƒCƒ„[‚É‘Ì“–‚½‚è‚µ‚½Û‚Ìˆ—
 	/// </summary>
 	void OnChargePlayer();
+	void OnCollisionEnter(EntityId _entityId);
 	Transform* pTransform_;
 	RigidBody* pRigidBody_;
 	MeshRenderer* pMeshRenderer_;

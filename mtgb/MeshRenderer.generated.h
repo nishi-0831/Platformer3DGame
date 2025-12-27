@@ -56,10 +56,10 @@
 	} \
 	friend void from_json(const nlohmann::json& _j, MeshRenderer& _target) \
 	{ \
-		JsonConverter::Deserialize<std::string>(_target.meshFileName, _j.at("meshFileName")); \
-		JsonConverter::Deserialize<FBXModelHandle>(_target.meshHandle, _j.at("meshHandle")); \
-		JsonConverter::Deserialize<GameObjectLayerFlag>(_target.layer, _j.at("layer")); \
-		JsonConverter::Deserialize<ShaderType>(_target.shaderType, _j.at("shaderType")); \
+		JsonConverter::Deserialize<std::string>(_target.meshFileName, _j,"meshFileName"); \
+		JsonConverter::Deserialize<FBXModelHandle>(_target.meshHandle, _j,"meshHandle"); \
+		JsonConverter::Deserialize<GameObjectLayerFlag>(_target.layer, _j,"layer"); \
+		JsonConverter::Deserialize<ShaderType>(_target.shaderType, _j,"shaderType"); \
 		_target.OnPostRestore(); \
 	} \
 	static std::string TypeName(){ return "MeshRenderer" ;} \

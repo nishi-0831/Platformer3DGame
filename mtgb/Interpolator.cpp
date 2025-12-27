@@ -48,8 +48,10 @@ mtgb::Interpolator::Interpolator(EntityId _entityId)
 
 	// コライダーを球に設定
 	pStartCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
+	pStartCollider_->isTrigger_ = true;
 	pEndCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
 	pStartCollider_->SetRadius(INIT_RADIUS);
+	pEndCollider_->isTrigger_ = true;
 	pEndCollider_->SetRadius(INIT_RADIUS);
 }
 
@@ -70,7 +72,7 @@ void mtgb::Interpolator::UpdateProgress()
 	if (progress > 1.0f || progress < 0.0f)
 	{
 		dir_ *= -1.0f;
-		elapsed_ = std::clamp(elapsed_, 0.0f, 1.0f);
+		elapsed_ = std::clamp(elapsed_, 0.0f, duration_);
 	}
 }
 

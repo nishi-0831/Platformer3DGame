@@ -4,6 +4,7 @@
 #include "TitleScene.h"
 #include "StageEditScene.h"
 #include "CommandHistoryManager.h"
+#include "ActorManager.h"
 #pragma region ゲーム側で追加
 
 
@@ -86,8 +87,9 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<ImGuiEditorCamera>(SystemUpdateType::Frame);
 	Game::Set<ImGuiEditor>(SystemUpdateType::Frame);
 
-	Game::Set<SceneSystem>(SystemUpdateType::Frame);
 	Game::Set<EffectManager>(SystemUpdateType::Frame);
+	Game::Set<ActorManager>(SystemUpdateType::DontCallMe);
+	Game::Set<SceneSystem>(SystemUpdateType::Frame);
 	// 開始時のシーン
 	//Game::System<SceneSystem>().Move<PlayScene>();
 	//Game::System<SceneSystem>().Move<CheckTutorialScene>();

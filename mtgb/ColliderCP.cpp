@@ -59,6 +59,9 @@ void mtgb::ColliderCP::Update()
 						a.onColliders_.insert(&b);
 						b.onColliders_.insert(&a);
 
+						if (a.isTrigger_ || b.isTrigger_)
+							continue;
+
 						RigidBody* aRigidBody{nullptr};
 						
 						bool existRigidBody = Game::System<RigidBodyCP>().TryGet(aRigidBody, a.GetEntityId());

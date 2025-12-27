@@ -56,10 +56,10 @@
 	} \
 	friend void from_json(const nlohmann::json& _j, Transform& _target) \
 	{ \
-		JsonConverter::Deserialize<EntityId>(_target.parent, _j.at("parent")); \
-		JsonConverter::Deserialize<Vector3>(_target.position, _j.at("position")); \
-		JsonConverter::Deserialize<Vector3>(_target.scale, _j.at("scale")); \
-		JsonConverter::Deserialize<Quaternion>(_target.rotate, _j.at("rotate")); \
+		JsonConverter::Deserialize<EntityId>(_target.parent, _j,"parent"); \
+		JsonConverter::Deserialize<Vector3>(_target.position, _j,"position"); \
+		JsonConverter::Deserialize<Vector3>(_target.scale, _j,"scale"); \
+		JsonConverter::Deserialize<Quaternion>(_target.rotate, _j,"rotate"); \
 		_target.OnPostRestore(); \
 	} \
 	static std::string TypeName(){ return "Transform" ;} \

@@ -133,7 +133,9 @@ namespace mtgb
 			{
 				ComponentT& component = pool_[i];
 				component.OnPreSave();
-				nlohmann::json j = JsonConverter::template Serialize<ComponentT>(component);
+				
+				nlohmann::json j;
+				j[ComponentT::TypeName()] = JsonConverter::template Serialize<ComponentT>(component);
 				return j;
 			}
 		}

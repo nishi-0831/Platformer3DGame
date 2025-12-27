@@ -53,7 +53,7 @@
 	friend void from_json(const nlohmann::json& _j, {{ class_name }}& _target) \
 	{ \
 {{- for member in properties }}
-		JsonConverter::Deserialize<{{ member.type_name }}>(_target.{{ member.name }}, _j.at("{{ member.name }}")); \
+		JsonConverter::Deserialize<{{ member.type_name }}>(_target.{{ member.name }}, _j,"{{ member.name }}"); \
 {{- end }}
 		_target.OnPostRestore(); \
 	} \

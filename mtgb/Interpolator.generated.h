@@ -60,11 +60,11 @@
 	} \
 	friend void from_json(const nlohmann::json& _j, Interpolator& _target) \
 	{ \
-		JsonConverter::Deserialize<float>(_target.dir_, _j.at("dir_")); \
-		JsonConverter::Deserialize<float>(_target.elapsed_, _j.at("elapsed_")); \
-		JsonConverter::Deserialize<float>(_target.duration_, _j.at("duration_")); \
-		JsonConverter::Deserialize<Vector3>(_target.startPos_, _j.at("startPos_")); \
-		JsonConverter::Deserialize<Vector3>(_target.endPos_, _j.at("endPos_")); \
+		JsonConverter::Deserialize<float>(_target.dir_, _j,"dir_"); \
+		JsonConverter::Deserialize<float>(_target.elapsed_, _j,"elapsed_"); \
+		JsonConverter::Deserialize<float>(_target.duration_, _j,"duration_"); \
+		JsonConverter::Deserialize<Vector3>(_target.startPos_, _j,"startPos_"); \
+		JsonConverter::Deserialize<Vector3>(_target.endPos_, _j,"endPos_"); \
 		_target.OnPostRestore(); \
 	} \
 	static std::string TypeName(){ return "Interpolator" ;} \

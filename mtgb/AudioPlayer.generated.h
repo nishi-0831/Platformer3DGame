@@ -44,7 +44,7 @@
 	} \
 	friend void from_json(const nlohmann::json& _j, AudioPlayer& _target) \
 	{ \
-		JsonConverter::Deserialize<AudioHandle>(_target.hAudio, _j.at("hAudio")); \
+		JsonConverter::Deserialize<AudioHandle>(_target.hAudio, _j,"hAudio"); \
 		_target.OnPostRestore(); \
 	} \
 	static std::string TypeName(){ return "AudioPlayer" ;} \

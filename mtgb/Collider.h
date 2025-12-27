@@ -90,6 +90,8 @@ namespace mtgb
 		bool isStatic_;
 		MT_PROPERTY()
 		ColliderTag colliderTag_;
+		MT_PROPERTY()
+		bool isTrigger_;
 	private:
 		void UpdateBoundingSphere();
 		void UpdateBoundingBox();

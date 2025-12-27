@@ -17,17 +17,18 @@ namespace
 	}
 }
 
-mtgb::Collider::Collider(EntityId _entityId) 
+mtgb::Collider::Collider(EntityId _entityId)
 	: IComponent(_entityId)
-	, colliderType_{ColliderType::TYPE_CAPSULE}
+	, colliderType_{ ColliderType::TYPE_CAPSULE }
 	, isStatic_{ false }
 	, colliderTag_{ ColliderTag::GAME_OBJECT }
-	, pTransform_{&Transform::Get(_entityId)}
-	, center_{0.0f,0.0f,0.0f}
-	, radius_{1.0f}
-	, extents_{1.0f,1.0f ,1.0f }
+	, isTrigger_{ false }
+	, pTransform_{ &Transform::Get(_entityId) }
+	, center_{ 0.0f,0.0f,0.0f }
+	, radius_{ 1.0f }
+	, extents_{ 1.0f,1.0f ,1.0f }
 {
-
+	
 }
 
 
@@ -348,7 +349,7 @@ void mtgb::Collider::Push(const Collider& _other)
 
 	EntityId sphereTypeEntityId = INVALID_ENTITY;
 
-	// ‹…‚ÆAABB‚Ì‚İ‰Ÿ‚µo‚µ‚ğÀ‘•‚µ‚Ä‚¢‚é‚ğÀ‘•‚µ‚Ä‚¢‚é
+	// ‹…‚ÆAABB‚Ì‚İ‰Ÿ‚µo‚µ‚ğÀ‘•‚µ‚Ä‚¢‚é
 	if (colliderType_ == ColliderType::TYPE_SPHERE && _other.colliderType_ == ColliderType::TYPE_AABB)
 	{
 		sphereTypeEntityId = GetEntityId();

@@ -48,8 +48,8 @@
 	} \
 	friend void from_json(const nlohmann::json& _j, RigidBody& _target) \
 	{ \
-		JsonConverter::Deserialize<bool>(_target.useGravity_, _j.at("useGravity_")); \
-		JsonConverter::Deserialize<bool>(_target.isKinematic_, _j.at("isKinematic_")); \
+		JsonConverter::Deserialize<bool>(_target.useGravity_, _j,"useGravity_"); \
+		JsonConverter::Deserialize<bool>(_target.isKinematic_, _j,"isKinematic_"); \
 		_target.OnPostRestore(); \
 	} \
 	static std::string TypeName(){ return "RigidBody" ;} \

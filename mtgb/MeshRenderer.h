@@ -30,7 +30,7 @@ namespace mtgb
         /// <summary>
         /// メッシュハンドルを設定
         /// </summary>
-        void SetMesh(FBXModelHandle meshHandle) { meshHandle = meshHandle; }
+        void SetMesh(FBXModelHandle _meshHandle) { meshHandle = _meshHandle; }
 
         /// <summary>
         /// メッシュハンドルを取得

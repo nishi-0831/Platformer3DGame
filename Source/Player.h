@@ -1,7 +1,8 @@
 #pragma once
 #include <mtgb.h>
 #include "Camera.h"
-class Player : public mtgb::GameObject , mtgb::ImGuiShowable
+#include "IActor.h"
+class Player : public mtgb::GameObject , public mtgb::ImGuiShowable,public IActor
 {
 public:
 	Player();
@@ -12,7 +13,15 @@ public:
 	void Start() override;
 	void ShowImGui() override;
 	void SetCamera(Camera* _pCamera);
+	// IActor ÇâÓÇµÇƒåpè≥Ç≥ÇÍÇ‹ÇµÇΩ
+	void OnStomped(IActor* pOther) override;
+	void OnHitSide(IActor* pOther) override;
+	void TakeDamage(int _damage) override;
 private:
+	Vector3 GetMoveDir();
+	void UpdatePosition();
+	void UpdateRotate();
+	void OnCollisionEnter(EntityId _entityId);
 	void InitializeState();
 	enum class STATE
 	{
@@ -30,4 +39,5 @@ private:
 	Camera* pCamera_;
 	const Transform* pCameraTransform_;
 	std::optional<FbxAnimationController> animController_;
+	int hp_;
 };
