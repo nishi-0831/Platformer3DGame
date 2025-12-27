@@ -3,9 +3,6 @@
 //定義
 #define MAX_BONE_MATRICES 128
 
-
-
-
 cbuffer BoneMatrices : register(b1) //ボーンのポーズ行列が入る
 {
 	matrix g_boneMatrices[MAX_BONE_MATRICES];
@@ -19,24 +16,26 @@ struct Skin
 	float4 position;
 	float3 normal;
 };
+
 //頂点バッファーの入力
 struct VSSkinIn
 {
 	float3 position : POSITION; //位置   
 	float3 normal : NORMAL; //頂点法線
-	float2 uv : TEXCOORD; //テクスチャー座標
+	float3 uv : TEXCOORD; //テクスチャー座標
 	uint4 boneIndex : BONE_INDEX; //ボーンのインデックス
 	float4 boneWeight : BONE_WEIGHT; //ボーンの重み
 };
+
 //ピクセルシェーダーの入力(頂点バッファーの出力)
 struct PSSkinIn
 {
 	float4 position : SV_Position; //位置
-	float3 normal : NORMAL; //頂点法線
+	float4 normal : NORMAL0; //頂点法線
 	float2 uv : TEXCOORD; //テクスチャー座標
-	float4 Color : COLOR0; //最終カラー(頂点シェーダーにおいての)
+	float4 worldPosition : NORMAL1; //ワールド座標
+	float4 eye : NORMAL2; //視線ベクトル
 };
-
 
 //頂点をスキニングする。頂点シェーダーで使用
 Skin SkinVert(VSSkinIn input)
@@ -45,33 +44,41 @@ Skin SkinVert(VSSkinIn input)
 	float4 pos = float4(input.position, 1.0f);
 	float3 normal = input.normal;
 	
-	if(g_hasSkinnedMesh && any(input.boneWeight.xyz > 0.0f))
+	// スキンメッシュの場合
+	if (g_hasSkinnedMesh && any(input.boneWeight > 0.0f))
 	{
-		float4 skinnedPos = float4(0, 0, 0, 0);
-		float3 skinnedNormal = float3(0, 0, 0);
+		Output.position = float4(0, 0, 0, 0);
+		Output.normal = float3(0, 0, 0);
 		
-		[unroll]
-		for (int i = 0; i < 4; i++)
-		{
-			if(input.boneWeight[i] > 0.0f)
-			{
-				// i番目のボーンの変換行列を取得
-				matrix boneMatrix = g_boneMatrices[input.boneIndex[i]];
-				
-				// 頂点座標を変換行列、ウェイトで変換
-				Output.position += mul(boneMatrix, pos) * input.boneWeight[i];
-				
-				// 法線も移動成分を取り除いて変換
-				Output.normal += mul((float3x3) boneMatrix, normal) * input.boneWeight[i];
-			}
-		}
+        for (int i = 0; i < 4; i++)
+        {
+            if (input.boneWeight[i] > 0.0f)
+            {
+		// i番目のボーンの変換行列を取得
+                matrix boneMatrix = g_boneMatrices[input.boneIndex[i]];
+		
+		// 頂点座標を変換（行列 × ベクトル の順序）
+                Output.position += input.boneWeight[i] * mul(pos, boneMatrix);
+		
+		// 法線も変換（回転のみ適用）
+                Output.normal += input.boneWeight[i] * mul(normal, (float3x3) boneMatrix);
+            }
+        }
+		
+		
+		
+		
+	}
+	else
+	{
+		// スキンメッシュでない場合は元の頂点をそのまま使う
+		Output.position = pos;
+		Output.normal = normal;
 	}
 	
 	return Output;
 }
 
-//
-//PSSkinIn VSSkin(VSSkinIn input )
 // 頂点シェーダー
 PSSkinIn VS(VSSkinIn input)
 {
@@ -80,28 +87,56 @@ PSSkinIn VS(VSSkinIn input)
 	Skin vSkinned = SkinVert(input);
 
 	output.position = mul(vSkinned.position, g_matrixWVP);
-	output.normal = normalize(mul(vSkinned.normal, (float3x3) g_matrixW));
-	output.uv = input.uv;
-	float3 LightDir = normalize(g_lightDir);
-	float3 PosWorld = mul(vSkinned.position, g_matrixW);
-	float3 ViewDir = normalize(g_cameraPosition - PosWorld);
-	float3 Normal = normalize(output.normal);
-	float4 NL = saturate(dot(Normal, LightDir));
-
-	float3 Reflect = normalize(2 * NL * Normal - LightDir);
-	float4 specular = pow(saturate(dot(Reflect, ViewDir)), g_shuniness);
-
-	output.Color = g_diffuseColor * NL + specular * g_speculerColor;
+	output.normal = mul(float4(vSkinned.normal, 0), g_matrixNormalTrans);
+	output.uv = input.uv.xy;
+	
+	output.worldPosition = mul(vSkinned.position, g_matrixW);
+	
+	// 視線ベクトル
+	output.eye = normalize(g_cameraPosition - output.worldPosition);
 	
 	return output;
 }
 
-//
-// float4 PSSkin(PSSkinIn input) : SV_Target
 //ピクセルシェーダー
-float4 PS(PSSkinIn input) : SV_Target
+float4 PS(PSSkinIn inData) : SV_Target
 {
-	float4 TexDiffuse = g_texture.Sample(g_sampler, input.uv);
-
-	return input.Color + TexDiffuse;
+	// 光源方向
+	float4 lightDir = normalize(g_lightDir);
+	
+	// 法線
+	inData.normal = normalize(inData.normal);
+	
+	// 拡散反射の計算
+	float4 shade = saturate(dot(inData.normal, -lightDir));
+	shade.a = 1; // 透明度は操作したくないため、強制的にアルファ値1
+	
+	float4 diffuse;
+	if (g_hasTexture == true)
+	{
+		// テクスチャ
+		diffuse = g_texture.Sample(g_sampler, inData.uv);
+	}
+	else
+	{
+		// 拡散反射成分
+		diffuse = g_diffuseColor;
+	}
+	
+	// 環境光
+	float4 ambient = float4(1, 1, 1, 1);
+	
+	// 鏡面反射成分
+	float4 specuer = float4(0, 0, 0, 0);
+	if (g_speculerColor.a != 0)
+	{
+		// 正反射ベクトル
+		float4 r = reflect(lightDir, inData.normal);
+		// 鏡面反射成分計算
+		specuer = pow(saturate(dot(r, inData.eye)), g_shuniness) * g_speculerColor;
+	}
+	
+	// 最終的な色
+	float4 color = diffuse * shade + diffuse * ambient + specuer;
+	return color;
 }

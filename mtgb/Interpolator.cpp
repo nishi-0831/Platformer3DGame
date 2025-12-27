@@ -59,7 +59,7 @@ void mtgb::Interpolator::UpdateTransform()
 	UpdateProgress();
 
 	// 補間値に座標を更新
-	pTransform_->position = Evaluate();
+	pTransform_->position = EvaluatePos();
 }
 
 void mtgb::Interpolator::UpdateProgress()
@@ -74,11 +74,33 @@ void mtgb::Interpolator::UpdateProgress()
 	}
 }
 
-mtgb::Vector3 mtgb::Interpolator::Evaluate()
+mtgb::Vector3 mtgb::Interpolator::EvaluatePos()
 {
 	// 始点から終点を進行度で補間
 	float progres = elapsed_ / duration_;
 	return Mathf::Lerp(pStartTransform_->position, pEndTransform_->position, progres);
+}
+
+Quaternion mtgb::Interpolator::CalculateRot()
+{
+	Vector3 to,from;
+
+	if (dir_ < 0.0f)
+	{	
+		// 終点から始点へ
+		to = pStartTransform_->position;
+		from = pEndTransform_->position;
+	}
+	else
+	{
+		// 始点から終点へ
+		to = pEndTransform_->position;
+		from = pStartTransform_->position;
+	}
+
+	// ベクトルから四元数作成
+	Vector3 rot = Vector3::Normalize(to - from);
+	return Quaternion::LookRotation(rot, Vector3::Up());
 }
 
 void mtgb::Interpolator::SetEndpoints(const Vector3& _start, const Vector3& _end)

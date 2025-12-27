@@ -35,7 +35,7 @@ mtgb::InputResource::InputResource(WindowContext _windowContext)
 
 	// “ü—Í‚ÌŽžŠÔ”ÍˆÍ‚ðÝ’è
 	pInputData_->config_.SetRange(1000);
-	pInputData_->config_.SetDeadZone(0.1);
+	pInputData_->config_.SetDeadZone(0.1f);
 	
 	JoystickReservation reservation; 
 	reservation.config = pInputData_->config_;

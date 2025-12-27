@@ -3,16 +3,31 @@
 namespace
 {
 	const mtgb::Vector3 INIT_ANGLE{ 0, 0, 0 };
+	/// <summary>
+	/// ラジアン単位の値を、0～2πの範囲に正規化する
+	/// </summary>
+	/// <param name="_angleRad"></param>
+	/// <returns></returns>
+	float NormalizeAngleRad(float _angleRad)
+	{
+		const float TWO_PI = DirectX::XM_2PI;
+
+		// 余りを計算
+		_angleRad = std::fmod(_angleRad, TWO_PI);
+
+		// 負の場合
+		if (_angleRad < 0.0f)
+		{
+			// 正の値に修正
+			_angleRad += TWO_PI;
+		}
+		return _angleRad;
+	}
 }
 
 float EaseOutCirc(float x)
 {
 	return std::sqrtf(1.0f - std::powf(x - 1.0f, 2.0f));
-}
-
-mtgb::Camera::Camera()
-{
-	pCameraTransform_ = Component<Transform>();
 }
 
 mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
@@ -27,35 +42,37 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 	, distance_{10.0f}
 	, minPolarAngleRad_{ DirectX::XMConvertToRadians(1.0f + 90.0f) }
 	, maxPolarAngleRad_{ DirectX::XMConvertToRadians(89.0f + 90.0f) }
+	, minAzimuthalAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
+	, maxAzimuthalAngleRad_{DirectX::XMConvertToRadians(359.0f + 90.0f)}
 	, lookAtPositionOffset_{ 0, 1, 0 }
 	, pCameraTransform_{Component<Transform>()}
 	, pTargetTransform_{&Transform::Get(_pGameObj->GetEntityId())}
 	, targetVelocityCache_{ Vector3::Zero()}
-	, baseY{0.0f}
-	, distY{0.0f}
-	, lookAtPosLerpProgress{0.0f}
+	, baseY_{0.0f}
+	, distY_{0.0f}
+	, lookAtPosLerpProgress_{0.0f}
 {
 	// カメラ補間速度の初期化
 	cameraStat_
 		.OnAnyUpdate([this]
 			{
-				lookAtPosLerpProgress = std::clamp(lookAtPosLerpProgress, 0.0f, 1.0f);
+				lookAtPosLerpProgress_ = std::clamp(lookAtPosLerpProgress_, 0.0f, 1.0f);
 				// 角度の制限
 				polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 			})
 		.OnStart(CameraState::GROUNDED, [this]
 			{
-				baseY = std::lerp(baseY, distY, lookAtPosLerpProgress);
+				baseY_ = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
 
-				lookAtPosLerpProgress = 0.0f;
+				lookAtPosLerpProgress_ = 0.0f;
 			})
 		.OnUpdate(CameraState::GROUNDED, [this]
 			{
-				distY = pTargetTransform_->position.y;
+				distY_ = pTargetTransform_->position.y;
 
 
 				orbitSpeed_ = 1.0f;
-				lookAtPosLerpProgress += 0.5f * Time::DeltaTimeF();
+				lookAtPosLerpProgress_ += 0.5f * Time::DeltaTimeF();
 
 				// ジャンプ中：速度に基づいて状態を判定
 				if (targetVelocityCache_.y > 0.1f)
@@ -66,21 +83,20 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 
 	cameraStat_.OnStart(CameraState::JUMPING, [this]
 		{
-			distY = pTargetTransform_->position.y;
-			baseY = std::lerp(baseY, distY, lookAtPosLerpProgress);
+			distY_ = pTargetTransform_->position.y;
+			baseY_ = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
 
-			lookAtPosLerpProgress = 0.0f;
+			lookAtPosLerpProgress_ = 0.0f;
 		}).OnUpdate(CameraState::JUMPING, [this]
 			{
 				if (isGrounded_)
 				{
 					cameraStat_.Change(CameraState::GROUNDED);
 				}
-				distY = pTargetTransform_->position.y;
+				distY_ = pTargetTransform_->position.y;
 				orbitSpeed_ = 0.5f;
 				// 目標角度へ滑らかに補間
-				
-				lookAtPosLerpProgress += 0.3f * Time::DeltaTimeF();
+				lookAtPosLerpProgress_ += 0.3f * Time::DeltaTimeF();
 			});
 }
 
@@ -94,7 +110,7 @@ void mtgb::Camera::Update()
 		return;
 
 
-	// ImGui表示（デバッグ用）
+	// ImGui表示(デバッグ用)
 	MTImGui::Instance().DirectShow([&]()
 	{
 		TypeRegistry::Instance().CallFunc<Transform>(pCameraTransform_, "Transform");
@@ -105,12 +121,11 @@ void mtgb::Camera::Update()
 		ImGui::Text("Polar Angle: %.3f deg", degX);
 		ImGui::Text("Azimuthal Angle: %.3f deg", degY);
 		ImGui::Text("Target Velocity Y: %.3f", targetVelocityCache_.y);
-		ImGui::Text("lookAtPosLerpProgress: %.3f", lookAtPosLerpProgress);
+		ImGui::Text("lookAtPosLerpProgress: %.3f", lookAtPosLerpProgress_);
 		ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
 	}, "Camera", ShowType::Inspector);
 
 	DoOrbit();
-	//UpdateCameraState();
 	cameraStat_.Update();
 	MoveCameraSpherical(distance_);
 }
@@ -122,11 +137,16 @@ void mtgb::Camera::Draw() const
 void mtgb::Camera::DoOrbit()
 {
 	Vector3 movement;
+
+	// デバイスから入力を取得する
 	switch (inputType_)
 	{
+		// マウス
 	case InputType::MOUSE:
 		movement = InputUtil::GetMouseMove();
 		break;
+
+		// ゲームパッド
 	case InputType::JOYPAD:
 		Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
 		movement.x = -vec2.x;
@@ -136,13 +156,18 @@ void mtgb::Camera::DoOrbit()
 
 	if (movement.Size() != 0)
 	{
+		//角度を変える
+
 		azimuthalAngleRad_ -= movement.x * orbitSpeed_ * Time::DeltaTimeF();
 		polarAngleRad_ += movement.y * orbitSpeed_ * Time::DeltaTimeF();
 
 		// 鉛直角度を制限
 		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
-		azimuthalAngleRad_ = std::clamp(azimuthalAngleRad_, minAzimuthalAngleRad_, maxAzimuthalAngleRad_);
 
+		// 水平角度を0～2πに正規化
+		azimuthalAngleRad_ = NormalizeAngleRad(azimuthalAngleRad_);
+
+		// カメラを動かす
 		MoveCameraSpherical(distance_);
 	}
 }
@@ -153,18 +178,13 @@ void mtgb::Camera::SetFollowMode(bool _isGrounded, const Vector3& _targetVelocit
 	targetVelocityCache_ = _targetVelocity;
 }
 
-
-void mtgb::Camera::UpdateCameraState()
-{
-}
-
 void mtgb::Camera::MoveCameraSpherical(float _distance)
 {
 	if (pTargetTransform_ == nullptr)
 		return;
 
 	// 注視点を計算
-	float lerpedY = std::lerp(baseY, distY,lookAtPosLerpProgress);
+	float lerpedY = std::lerp(baseY_, distY_,lookAtPosLerpProgress_);
 	Vector3 lookAtTarget = Vector3(pTargetTransform_->position.x, lerpedY,pTargetTransform_->position.z) + lookAtPositionOffset_;
 
 	// 球面座標で新しいカメラ位置を計算

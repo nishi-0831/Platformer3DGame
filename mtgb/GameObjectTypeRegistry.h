@@ -4,40 +4,9 @@
 #include <string>
 #include <optional>
 #include "ISystem.h"
+#include "StringComparators.h"
 namespace mtgb
 {
-    /// <summary>
-    /// REF: https://cpprefjp.github.io/reference/functional/hash.html
-    /// 透過的な検索を有効にするためにハッシュ関数を持つ関数オブジェクト型
-    /// </summary>
-    struct TransparentStringHash
-    {
-        using is_transparent = void;
-        size_t operator()(std::string_view _s) const noexcept
-        {
-            return std::hash<std::string_view> {}(_s);
-        }
-        size_t operator()(const std::string& _s) const noexcept
-        {
-            return std::hash<std::string_view>{}(_s);
-        }
-        size_t operator()(const char* _s) const noexcept
-        {
-            return std::hash<std::string_view>{}(_s);
-        }
-    };
-
-    
-    struct TransparentStringEq
-    {
-        using is_transparent = void;
-        bool operator()(std::string_view _a, std::string_view _b) const noexcept { return _a == _b; }
-        bool operator()(const std::string& _a, std::string_view _b) const noexcept { return _a == _b; }
-        bool operator()(std::string_view _a, const std::string& _b) const noexcept { return _a == _b; }
-        bool operator()(const std::string& _a, const std::string& _b) const noexcept { return _a == _b; }
-
-    };
-
 	class GameObjectTypeRegistry : public ISystem
 	{
 	public:

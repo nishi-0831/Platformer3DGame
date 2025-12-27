@@ -571,7 +571,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.SemanticIndex = 0,
 			.Format = DXGI_FORMAT_R32G32B32_FLOAT,
 			.InputSlot = 0,
-			.AlignedByteOffset = vectorSize * 0,
+			.AlignedByteOffset = 0,
 			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
 			.InstanceDataStepRate = 0,
 		},
@@ -580,16 +580,16 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.SemanticIndex = 0,
 			.Format = DXGI_FORMAT_R32G32B32_FLOAT,
 			.InputSlot = 0,
-			.AlignedByteOffset = vectorSize * 1,
+			.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT,
 			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
 			.InstanceDataStepRate = 0,
 		},
 		{
 			.SemanticName = "TEXCOORD",
 			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32_FLOAT,
+			.Format = DXGI_FORMAT_R32G32B32_FLOAT,
 			.InputSlot = 0,
-			.AlignedByteOffset = vectorSize * 2,
+			.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT,
 			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
 			.InstanceDataStepRate = 0,
 		},
@@ -598,7 +598,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.SemanticIndex = 0,
 			.Format = DXGI_FORMAT_R32G32B32A32_UINT,
 			.InputSlot = 0,
-			.AlignedByteOffset = vectorSize * 3,
+			.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT,
 			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
 			.InstanceDataStepRate = 0,
 		},
@@ -607,7 +607,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.SemanticIndex = 0,
 			.Format = DXGI_FORMAT_R32G32B32A32_FLOAT,
 			.InputSlot = 0,
-			.AlignedByteOffset = vectorSize * 4,
+			.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT,
 			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
 			.InstanceDataStepRate = 0,
 		},
@@ -619,7 +619,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 		{
 			.FillMode = D3D11_FILL_SOLID,   // 塗りつぶし: solid
 			.CullMode = D3D11_CULL_BACK,    // カリング: 陰面消去
-			.FrontCounterClockwise = TRUE,  // 三角形の正面向き = 時計回り
+			.FrontCounterClockwise = FALSE,  // 三角形の正面向き = 時計回り
 			.DepthBias = {},
 			.DepthBiasClamp = {},
 			.SlopeScaledDepthBias = {},
@@ -643,7 +643,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			{
 				.FillMode = D3D11_FILL_SOLID,   // 塗りつぶし: solid
 				.CullMode = D3D11_CULL_NONE,    // カリング: 陰面消去
-				.FrontCounterClockwise = TRUE,  // 三角形の正面向き = 時計回り
+				.FrontCounterClockwise = FALSE,  // 三角形の正面向き = 時計回り
 				.DepthBias = {},
 				.DepthBiasClamp = {},
 				.SlopeScaledDepthBias = {},
@@ -667,7 +667,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			{
 				.FillMode = D3D11_FILL_SOLID,   // 塗りつぶし: solid
 				.CullMode = D3D11_CULL_BACK,    // カリング: 陰面消去
-				.FrontCounterClockwise = TRUE,  // 三角形の正面向き = 時計回り
+				.FrontCounterClockwise = FALSE,  // 三角形の正面向き = 時計回り
 				.DepthBias = {},
 				.DepthBiasClamp = {},
 				.SlopeScaledDepthBias = {},
@@ -691,7 +691,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			{
 				.FillMode = D3D11_FILL_SOLID,   // 塗りつぶし: solid
 				.CullMode = D3D11_CULL_BACK,    // カリング: 陰面消去
-				.FrontCounterClockwise = TRUE,  // 三角形の正面向き = 時計回り
+				.FrontCounterClockwise = FALSE,  // 三角形の正面向き = 時計回り
 				.DepthBias = {},
 				.DepthBiasClamp = {},
 				.SlopeScaledDepthBias = {},
@@ -715,7 +715,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			{
 				.FillMode = D3D11_FILL_WIREFRAME,  // 枠だけ: wireframe
 				.CullMode = D3D11_CULL_NONE,       // カリング: 隠面消去しない
-				.FrontCounterClockwise = TRUE,     // 三角形の正面向き = 時計回り
+				.FrontCounterClockwise = FALSE,     // 三角形の正面向き = 時計回り
 				.DepthBias = {},
 				.DepthBiasClamp = {},
 				.SlopeScaledDepthBias = {},
@@ -739,7 +739,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			{
 				.FillMode = D3D11_FILL_SOLID,   // 塗りつぶし
 				.CullMode = D3D11_CULL_BACK,    // カリング: 隠面消去
-				.FrontCounterClockwise = TRUE,  // 三角形の正面向き = 時計回り
+				.FrontCounterClockwise = FALSE,  // 三角形の正面向き = 時計回り
 				.DepthBias = {},
 				.DepthBiasClamp = {},
 				.SlopeScaledDepthBias = {},
@@ -763,7 +763,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			{
 				.FillMode = D3D11_FILL_SOLID,   // 塗りつぶし
 				.CullMode = D3D11_CULL_BACK,    // カリング: 隠面消去
-				.FrontCounterClockwise = TRUE,  // 三角形の正面向き = 時計回り
+				.FrontCounterClockwise = FALSE,  // 三角形の正面向き = 時計回り
 				.DepthBias = {},
 				.DepthBiasClamp = {},
 				.SlopeScaledDepthBias = {},
@@ -808,7 +808,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			{
 				.FillMode = D3D11_FILL_SOLID,   // 塗りつぶし
 				.CullMode = D3D11_CULL_NONE,    // カリング: 隠面消去
-				.FrontCounterClockwise = TRUE,  // 三角形の正面向き = 時計回り
+				.FrontCounterClockwise = FALSE,  // 三角形の正面向き = 時計回り
 				.DepthBias = {},
 				.DepthBiasClamp = {},
 				.SlopeScaledDepthBias = {},
@@ -829,7 +829,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			{
 				.FillMode = D3D11_FILL_SOLID,   // 塗りつぶし: solid
 				.CullMode = D3D11_CULL_BACK,    // カリング: 陰面消去
-				.FrontCounterClockwise = TRUE,  // 三角形の正面向き = 時計回り
+				.FrontCounterClockwise = FALSE,  // 三角形の正面向き = 時計回り
 				.DepthBias = {},
 				.DepthBiasClamp = {},
 				.SlopeScaledDepthBias = {},
@@ -850,7 +850,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			{
 				.FillMode = D3D11_FILL_SOLID,   // 塗りつぶし: solid
 				.CullMode = D3D11_CULL_BACK,    // カリング: 陰面消去
-				.FrontCounterClockwise = TRUE,  // 三角形の正面向き = 時計回り
+				.FrontCounterClockwise = FALSE,  // 三角形の正面向き = 時計回り
 				.DepthBias = {},
 				.DepthBiasClamp = {},
 				.SlopeScaledDepthBias = {},

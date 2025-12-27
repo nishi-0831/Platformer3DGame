@@ -33,7 +33,9 @@ namespace mtgb
     {
         Matrix4x4 worldMat;
         bool isLoop = false;
+        bool destoryMe = false;
         float speed = 1.0f;
+        Effekseer::Handle handle = 0;
     };
        
     //個別のデータ保持用
@@ -61,8 +63,7 @@ namespace mtgb
         std::shared_ptr<const EffectData> GetEffectData() const noexcept;
 
         double elapsedTime = 0;
-        Effekseer::Handle handle = 0;
-        std::shared_ptr<EffectParameters> effectTransform;
+        std::shared_ptr<EffectParameters> pEffectParameters;
     private:
         const std::shared_ptr<EffectData> pEffectData_;
 

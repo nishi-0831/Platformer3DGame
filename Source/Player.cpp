@@ -23,7 +23,7 @@ Player::Player()
 {
 	pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
-	pMeshRenderer_->meshFileName = "Model/Box.fbx";
+	pMeshRenderer_->meshFileName = "Model/MinerAnim.fbx";
 	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
 
 	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE ;
@@ -34,8 +34,6 @@ Player::Player()
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
-
-	Game::System<EffectManager>().RegisterEffect("Laser", "Effect/Laser01.efkefc");
 }
 
 Player::~Player()
@@ -80,6 +78,13 @@ void Player::Update()
 		Vector3 movement = Vector3::Normalize(horizontalDir) * speed;
 		velocity.x = movement.x;
 		velocity.z = movement.z;
+
+		if (pRigidBody_->isGround_ && state_.Current() != STATE::RUN)
+		{
+			state_.Change(STATE::RUN);
+		}
+
+		pTransform_->rotate = Quaternion::LookRotation(dir, Vector3::Up());
 	}
 	else
 	{
@@ -90,6 +95,10 @@ void Player::Update()
 		// -------------------------------------------------------
 		velocity.x = 0.0f;
 		velocity.z = 0.0f;
+		if (pRigidBody_->isGround_ && state_.Current() != STATE::IDLE)
+		{
+			state_.Change(STATE::IDLE);
+		}
 	}
 
 	if (InputUtil::GetGamePadDown(PadCode::Cross) || InputUtil::GetKeyDown(KeyCode::Space))
@@ -97,22 +106,18 @@ void Player::Update()
 		if (pRigidBody_->IsJumping() == false)
 		{
 			pRigidBody_->velocity_.y += jumpHeight;
-			//pRigidBody_->isGround = false;
+			state_.Change(STATE::JUMP);
 		}
 	}
 
 	pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
-	if (InputUtil::GetKeyDown(KeyCode::L))
-	{
-		Matrix4x4 mat;
-		pTransform_->GenerateWorldMatrix(&mat);
-		EffectParameters param;
-		param.worldMat = mat;
-		param.isLoop = false;
-		param.speed = 1.0f;
 
-		Game::System<EffectManager>().Play("Laser", param);
+	if (animController_.has_value())
+	{
+		animController_->UpdateFrame();
+		pMeshRenderer_->SetFrame(animController_->GetCurrentFrame());
 	}
+	state_.Update();
 }
 
 void Player::Draw() const
@@ -121,9 +126,8 @@ void Player::Draw() const
 
 void Player::Start()
 {
-	
-
-	
+	InitializeState();
+	state_.Change(STATE::IDLE);
 }
 
 void Player::ShowImGui()
@@ -134,6 +138,36 @@ void Player::ShowImGui()
 void Player::SetCamera(Camera* _pCamera)
 {
 	
+}
+
+void Player::InitializeState()
+{
+	animController_ = Fbx::GetAnimationController(pMeshRenderer_->meshHandle);
+
+	state_
+		.OnStart(STATE::IDLE, [this]
+			{
+				animController_->PlayAnimation("Idle", true);
+			})
+		.OnStart(STATE::RUN, [this]
+			{
+				animController_->PlayAnimation("Run", true);
+			})
+		.OnStart(STATE::JUMP, [this]
+			{
+				animController_->PlayAnimation("Jump", false);
+			})
+		.OnUpdate(STATE::JUMP, [this]
+			{
+				if (animController_->IsFinishedAnimation() && pRigidBody_->isGround_ == false)
+				{
+					state_.Change(STATE::FALL);
+				}
+			})
+		.OnStart(STATE::FALL, [this]
+			{
+				animController_->PlayAnimation("Fall", true);
+			});
 }
 
 

@@ -70,3 +70,15 @@ void mtgb::Fbx::Release()
 	pFbxModels_.clear();
 	SAFE_DESTROY(pFbxManager_);
 }
+
+std::optional<FbxAnimationController> mtgb::Fbx::GetAnimationController(FBXModelHandle _hModel)
+{
+	Fbx& instance{ Game::System<Fbx>() };
+
+	massert((0 < _hModel) && (_hModel <= instance.handleCounter_)
+		&& "–³Œø‚Èƒnƒ“ƒhƒ‰ @Fbx::Draw");
+
+	massert(instance.pFbxModels_.count(_hModel) != 0
+		&& "ƒ‚ƒfƒ‹‚ª‘¶Ý‚µ‚È‚¢ @Fbx::Draw");
+	return instance.pFbxModels_[_hModel]->GetAnimationController();
+}

@@ -40,25 +40,20 @@ float4 PS(VS_OUT inData) : SV_Target
     float4 diffuse;
     if (g_hasTexture == true)
     {
-        //diffuse = g_diffuseColor;
         // テクスチャ
         diffuse = g_texture.Sample(g_sampler, inData.uv);
-
     }
     else
     {
         // 拡散反射成分
         diffuse = g_diffuseColor;
-        //diffuse = float4(255, 1, 1, 0.5);
     }
     
     // 環境光
-    //float4 ambient = g_ambientColor;
     float4 ambient = float4(1,1,1,1);
     
     // 鏡面反射成分 (いったん0に)
     float4 specuer = float4(0, 0, 0, 0);
-    //g_speculerColor //float4(255, 0, 0, 0);
     if (g_speculerColor.a != 0)
     {
         // 正反射ベクトル
@@ -67,10 +62,6 @@ float4 PS(VS_OUT inData) : SV_Target
         specuer = pow(saturate(dot(r, inData.eye)), g_shuniness) * g_speculerColor;
     }
     
-    //return float4(0.8, 0.8, 0.8, 1);
-    //return diffuse * shade + diffuse * g_ambientColor + specuer;
-    //float4 color = diffuse * shade + g_ambientColor + specuer;
-    //color.a = 1;
     
     // 最終的な色
     //float4 color = diffuse;

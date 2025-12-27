@@ -13,10 +13,21 @@ public:
 	void ShowImGui() override;
 	void SetCamera(Camera* _pCamera);
 private:
+	void InitializeState();
+	enum class STATE
+	{
+		IDLE,
+		RUN,
+		JUMP,
+		FALL,
+		DYING
+	};
+	mtstat::MTStat<STATE> state_;
 	Transform* pTransform_;
 	Collider* pCollider_;
 	MeshRenderer* pMeshRenderer_;
 	RigidBody* pRigidBody_;
 	Camera* pCamera_;
 	const Transform* pCameraTransform_;
+	std::optional<FbxAnimationController> animController_;
 };

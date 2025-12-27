@@ -118,6 +118,7 @@ namespace mtgb
         managerRef_->SetTrackRenderer(rendererRef_->CreateTrackRenderer());
         managerRef_->SetModelRenderer(rendererRef_->CreateModelRenderer());
 
+        
         managerRef_->SetTextureLoader(rendererRef_->CreateTextureLoader());
         managerRef_->SetModelLoader(rendererRef_->CreateModelLoader());
         managerRef_->SetMaterialLoader(rendererRef_->CreateMaterialLoader());
@@ -130,9 +131,16 @@ namespace mtgb
         for (auto iter = effectInstances_.begin(); iter != effectInstances_.end();)
         {
             auto& instance = *iter->second;
-            auto& handle = iter->second->handle;
-            auto& tranform = iter->second->effectTransform;
+            auto& effectParams = iter->second->pEffectParameters;
+            Handle& handle = effectParams->handle;
             
+            if (effectParams->destoryMe)
+            {
+                managerRef_->StopEffect(handle);
+                iter = effectInstances_.erase(iter);
+                continue;
+            }
+
             // 経過時間が0の場合、再生を始める
             if (instance.elapsedTime == 0)
             {
@@ -148,7 +156,7 @@ namespace mtgb
                 managerRef_->StopEffect(handle);
 
                 // ループを行うか
-                if (tranform->isLoop)
+                if (effectParams->isLoop)
                 {
                     // 経過時間を0にして、また再生されるように設定
                     instance.elapsedTime = 0;
@@ -165,8 +173,8 @@ namespace mtgb
                 // フレームを設定
                 rendererRef_->SetTime(static_cast<float>(instance.elapsedTime));
                 // エフェクトのインスタンスに対して行列、更新速度を設定
-                managerRef_->SetMatrix(handle, CnvMat43(tranform->worldMat));
-                managerRef_->SetSpeed(handle, tranform->speed);
+                managerRef_->SetMatrix(handle, CnvMat43(effectParams->worldMat));
+                managerRef_->SetSpeed(handle, effectParams->speed);
                 // 経過時間を進める
                 instance.elapsedTime += _deltaTime;
                 ++iter;
@@ -207,7 +215,7 @@ namespace mtgb
         {
             if (auto iter = effectInstances_.find(_effectName.data()); iter != effectInstances_.end())
             {
-                return iter->second->effectTransform;
+                return iter->second->pEffectParameters;
             }
         }
 
@@ -216,9 +224,9 @@ namespace mtgb
             // インスタンスを作成
             std::unique_ptr<EffectInstance> effectInstance = std::make_unique<EffectInstance>(iter->second);
             // トランスフォームを作成
-            effectInstance->effectTransform = std::make_shared<EffectParameters>(_effectTransform);
+            effectInstance->pEffectParameters = std::make_shared<EffectParameters>(_effectTransform);
             // 書き換え用にトランスフォームを返す
-            std::shared_ptr<EffectParameters>& effectTransform = effectInstance->effectTransform;
+            std::shared_ptr<EffectParameters>& effectTransform = effectInstance->pEffectParameters;
             // インスタンスを登録
             effectInstances_.emplace(_effectName, std::move(effectInstance));
 

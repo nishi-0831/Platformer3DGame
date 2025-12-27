@@ -28,10 +28,11 @@ namespace mtgb
 		/// </summary>
 		void UpdateProgress();
 		/// <summary>
-		/// 現在の進行状況で補間された値を返す
+		/// 現在の進行状況で補間された座標を返す
 		/// </summary>
 		/// <returns></returns>
-		Vector3 Evaluate();
+		Vector3 EvaluatePos();
+		Quaternion CalculateRot();
 		/// <summary>
 		/// 端点を設定する
 		/// </summary>

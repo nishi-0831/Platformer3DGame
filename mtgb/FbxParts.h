@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <fbxsdk.h>
 #include <wrl/client.h>
+#include <array>
 #include "Vector2.h"
 using Microsoft::WRL::ComPtr;
 
@@ -35,8 +36,10 @@ namespace mtgb
 			Vector3 position;  // ç¿ïW
 			Vector3 normal;  // ñ@ê¸
 			Vector3 uv;  // uvç¿ïW
-			uint32_t boneIndex[4];
-			float boneWeight[4];
+			std::array<uint32_t,4> boneIndex;
+			//uint32_t boneIndex[4];
+			std::array<float, 4> boneWeight;
+			//float boneWeight[4];
 		};
 
 	

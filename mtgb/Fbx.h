@@ -51,7 +51,7 @@ namespace mtgb
 		/// ‰ğ•úˆ—
 		/// </summary>
 		void Release();
-
+		static std::optional<FbxAnimationController> GetAnimationController(FBXModelHandle _hModel);
 		
 
 	private:

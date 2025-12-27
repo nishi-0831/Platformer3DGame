@@ -3,50 +3,38 @@
 #include "Debug.h"
 #include <format>
 
-unsigned int PatrolChargerEnemy::generateCounter_{0};
+unsigned int PatrolChargerEnemy::generateCounter_{ 0 };
 
 PatrolChargerEnemy::PatrolChargerEnemy()
-	: pTransform_{Component<Transform>()}
-	, pRigidBody_{Component<RigidBody>()}
+	: pTransform_{ Component<Transform>() }
+	, pRigidBody_{ Component<RigidBody>() }
 	, pMeshRenderer_{ Component<MeshRenderer>() }
-	, pCollider_{Component<Collider>()}
-	, pTargetTransform_{nullptr}
-	, pInterpolator_{Component<Interpolator>()}
-	, foundFOV_{45.0f}
-	, foundDistance_{5.0f}
+	, pCollider_{ Component<Collider>() }
+	, pTargetTransform_{ nullptr }
+	, pInterpolator_{ Component<Interpolator>() }
+	, foundFOV_{ 45.0f }
+	, foundDistance_{ 5.0f }
+	, waitTimeTransitionCharge_{1.0f}
 	, waitTime_{ 3.0f }
 	, chargeSpeed_{ 2.0f }
+	, chargeTime_{5.0f}
+	, walkAnimSpeed_{0.5f}
+	, waitTimeAfterCharge_{2.0f}
 	, targetEntityId_{ INVALID_ENTITY }
-	, returnToPatrolSpeed_{1.0f}
-	, distPos_{Vector3::Zero()}
+	, returnToPatrolSpeed_{ 1.0f }
 {
-	pMeshRenderer_->meshFileName = "Model/GolemAnim2.fbx";
+	pMeshRenderer_->meshFileName = "Model/GolemAnim.fbx";
 	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer = AllLayer();
 	pMeshRenderer_->shaderType = ShaderType::FbxPartsSkin;
+
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->SetExtents({ 1.0f ,1.0f ,1.0f });
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(PatrolChargerEnemy));
 	name_ = std::format("{} ({})", typeName, generateCounter_++);
 	displayName_ = name_;
-	state_.OnUpdate(STATE::PATROL, [this]
-		{
-			Patrol();
-		});
-	state_.OnUpdate(STATE::CHARGE, [this]
-		{
-			Charge();
-		});
-	state_.OnUpdate(STATE::WAIT, [this]
-		{
-			Wait();
-		});
-	state_.OnUpdate(STATE::RETURN_TO_PATROL, [this]
-		{
-			ReturnToPatrol();
-		});
-	state_.Change(STATE::PATROL);
+	
 
 	pRigidBody_->OnCollisionEnter([this](EntityId _entityId)
 		{
@@ -55,6 +43,8 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 				this->OnChargePlayer();
 			}
 		});
+
+	InitializeState();
 }
 
 PatrolChargerEnemy::~PatrolChargerEnemy()
@@ -63,6 +53,11 @@ PatrolChargerEnemy::~PatrolChargerEnemy()
 
 void PatrolChargerEnemy::Update()
 {
+	if (animController_.has_value())
+	{
+		animController_->UpdateFrame();
+		pMeshRenderer_->SetFrame(animController_->GetCurrentFrame());
+	}
 	state_.Update();
 }
 
@@ -116,34 +111,107 @@ void PatrolChargerEnemy::ShowImGui()
 
 }
 
+void PatrolChargerEnemy::InitializeState()
+{
+	// アニメーションのコントローラを取得
+	animController_ = Fbx::GetAnimationController(pMeshRenderer_->meshHandle);
+
+	state_
+		.OnStart(STATE::PATROL, [this]
+		{
+			animController_->PlayAnimation("Walk", true);
+			animController_->SetAnimationSpeed(walkAnimSpeed_);
+		})
+		.OnUpdate(STATE::PATROL, [this]
+			{
+				Patrol();
+			})
+		.OnEnd(STATE::PATROL, [this]
+			{
+				animController_->SetAnimationSpeed(1.0f);
+			});
+
+	state_
+		.OnStart(STATE::CHARGE, [this]
+		{
+			animController_->PlayAnimation("Run", true);
+		})
+		.OnUpdate(STATE::CHARGE, [this]
+		{
+			Charge();
+		});
+
+	state_
+		.OnStart(STATE::WAIT, [this]
+			{
+				animController_->PlayAnimation("Wait", true);
+			})
+		.OnUpdate(STATE::WAIT, [this]
+		{
+			Wait();
+		});
+
+	state_
+		.OnStart(STATE::RETURN_TO_PATROL, [this]
+			{
+				animController_->PlayAnimation("Walk", true);
+			})
+		.OnUpdate(STATE::RETURN_TO_PATROL, [this]
+		{
+			ReturnToPatrol();
+		});
+
+	state_
+		.OnStart(STATE::DYING, [this]
+			{
+				animController_->PlayAnimation("Dying", false);
+			})
+		.OnUpdate(STATE::DYING, [this]
+			{
+				Dying();
+			});
+
+	state_.Change(STATE::PATROL);
+}
+
 void PatrolChargerEnemy::Patrol()
 {
 	pInterpolator_->UpdateProgress();
-	pTransform_->position = pInterpolator_->Evaluate();
+	pTransform_->position = pInterpolator_->EvaluatePos();
+	pTransform_->rotate = pInterpolator_->CalculateRot();
 
 	Vector3 toTarget = pTargetTransform_->GetWorldPosition() - pTransform_->GetWorldPosition();
 	if (toTarget.Size() <= foundDistance_)
 	{
 		state_.Change(STATE::WAIT);
-		waitTime_ = 2.0f;
+		waitTime_ = waitTimeTransitionCharge_;
 		nextState_ = STATE::CHARGE;
 	}
 }
 
 void PatrolChargerEnemy::Charge()
 {
+	// 目標地点 
+	// -------------------------------------------------------
+	// 注意
+	// x,z軸のみターゲットの座標を使っている。y軸は自身の座標のまま。
+	// ターゲットとのy座標が異なると空中歩行してしまうから。
+	// 斜面を移動させる場合は修正が必要
+	// ------------------------------------------------------
+	Vector3 distPos = { pTargetTransform_->position.x ,pTransform_->position.y,pTargetTransform_->position.z };
+	Vector3 toTarget = distPos - pTransform_->GetWorldPosition();
+	Vector3 toTargetDir = Vector3::Normalize(toTarget);
 
-
-
-	distPos_ = { pTargetTransform_->position.x ,pTransform_->position.y,pTargetTransform_->position.z };
-	Vector3 toTarget = distPos_ - pTransform_->GetWorldPosition();
-	pTransform_->position += Vector3::Normalize(toTarget) * chargeSpeed_ * Time::DeltaTimeF();
+	// ターゲットの方を向いて、突進!!!
+	pTransform_->position += toTargetDir * chargeSpeed_ * Time::DeltaTimeF();
+	pTransform_->rotate = Quaternion::LookRotation(toTarget, Vector3::Up());
 
 	float detectionDistance = 0.1f;
 	if (toTarget.Size() <= detectionDistance)
 	{
+		// 一定時間待機してから巡回地点に戻る
 		state_.Change(STATE::WAIT);
-		waitTime_ = 1.0f;
+		waitTime_ = waitTimeAfterCharge_;
 		nextState_ = STATE::RETURN_TO_PATROL;
 	}
 }
@@ -160,7 +228,7 @@ void PatrolChargerEnemy::Wait()
 void PatrolChargerEnemy::ReturnToPatrol()
 {
 	// 以前捜索していた際の座標
-	Vector3 returnPos = pInterpolator_->Evaluate();
+	Vector3 returnPos = pInterpolator_->EvaluatePos();
 	Vector3 vToReturnPos = returnPos - pTransform_->GetWorldPosition();
 	pTransform_->position += Vector3::Normalize(vToReturnPos) * returnToPatrolSpeed_ * Time::DeltaTimeF();
 
@@ -168,6 +236,14 @@ void PatrolChargerEnemy::ReturnToPatrol()
 	if (vToReturnPos.Size() <= returnDistance)
 	{
 		state_.Change(STATE::PATROL);
+	}
+}
+
+void PatrolChargerEnemy::Dying()
+{
+	if (animController_->IsFinishedAnimation())
+	{
+		DestroyMe();
 	}
 }
 
@@ -198,6 +274,6 @@ void PatrolChargerEnemy::OnChargePlayer()
 {
 	LOGIMGUI("collision enter player : ChargeEnemy");
 	state_.Change(STATE::WAIT);
-	waitTime_ = 2.0f;
+	waitTime_ = waitTimeAfterCharge_;
 	nextState_ = STATE::RETURN_TO_PATROL;
 }

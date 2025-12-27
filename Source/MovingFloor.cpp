@@ -39,7 +39,7 @@ MovingFloor::MovingFloor()
 void MovingFloor::Update()
 {
 	pInterpolator_->UpdateProgress();
-	pTransform_->position = pInterpolator_->Evaluate();
+	pTransform_->position = pInterpolator_->EvaluatePos();
 }
 
 void MovingFloor::OnCollisionEnter(EntityId _entityId)

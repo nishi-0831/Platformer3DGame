@@ -28,17 +28,19 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	FbxManager* pFbxManager{ Game::System<Fbx>().GetFbxManager() };
 
 	pFbxScene_ = FbxScene::Create(pFbxManager, "fbxscene");
+	
+
 	FbxString fileName{ _fileName.c_str() };
 	FbxImporter* fbxImporter{ FbxImporter::Create(pFbxManager, "imp") };
 
 	FbxIOSettings* ios = FbxIOSettings::Create(pFbxManager, IOSROOT);
 
 	pFbxManager->SetIOSettings(ios);
-	if (!fbxImporter->Initialize(fileName.Buffer(), -1, ios)) {
+	if (!fbxImporter->Initialize(fileName.Buffer(), -1, ios)) 
+	{
 		MessageBoxA(NULL, fbxImporter->GetStatus().GetErrorString(), "FBX Import Error", MB_OK);
 		// もしくはログ出力
 	}
-	//none of the registered readers can process the file
 
 	fileName_ = _fileName;
 
@@ -47,8 +49,6 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	GetCurrentDirectory(MAX_PATH, str);
 
 	bool succeed{ false };
-	//succeed = fbxImporter->Initialize(fileName.Buffer(), -1);
-	//massert(succeed	&& "fbxImporterの初期化に失敗した @Fbx::Load");
 	succeed = fbxImporter->Initialize(fileName.Buffer(), -1, pFbxManager->GetIOSettings());
 	massert(succeed && "fbxImporterの初期化に失敗した @Fbx::Load");
 
@@ -56,6 +56,11 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	massert(succeed && "読み込みに失敗した @Fbx::Load");
 
 	SAFE_DESTROY(fbxImporter);  // インポータは解放
+
+	// DirectXの座標系に変換
+	FbxAxisSystem directXLeftHanded(FbxAxisSystem::eYAxis, FbxAxisSystem::eParityOdd, FbxAxisSystem::eLeftHanded);
+	// MEMO: DeepConvertにすることでシーン全体を変換できる。Convertだとルートのノードだけ
+	directXLeftHanded.DeepConvertScene(pFbxScene_);
 
 	// 3角ポリゴン
 	FbxGeometryConverter geometryConverter{ pFbxManager };
@@ -74,6 +79,7 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	_splitpath_s(_fileName.c_str(), nullptr, 0, directory, MAX_PATH, nullptr, 0, nullptr, 0);
 	SetCurrentDirectory(directory);
 
+	int animStackCount_ = pFbxScene_->GetSrcObjectCount<FbxAnimStack>();
 	int meshCount{ pFbxScene_->GetSrcObjectCount<FbxMesh>() };
 	for (int i = 0; i < meshCount; i++)
 	{
@@ -92,6 +98,7 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	}
 
 	SetCurrentDirectory(defaultCurrentDirectory);
+
 
 }
 
@@ -172,5 +179,10 @@ void mtgb::FbxModel::CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _pPartsL
 	{
 		CheckNode(_pNode->GetChild(i), _pPartsList);
 	}
+}
+
+std::optional<FbxAnimationController> mtgb::FbxModel::GetAnimationController()
+{
+	return FbxAnimationController(pFbxScene_);
 }
 

@@ -51,7 +51,7 @@ namespace mtgb
         void OnChangeMeshFileName();
         void Render() const override;
         bool CanRender() const override { return meshHandle != INVALID_HANDLE; };
-
+        void SetFrame(int _frame);
         MT_PROPERTY()
         std::string meshFileName;
         MT_PROPERTY()
@@ -63,6 +63,7 @@ namespace mtgb
     protected:
         void OnPostRestore() override;
     private:
+        int frame_;
     };
 
     using MeshRendererMemento = ComponentMemento<MeshRenderer, MeshRendererState>;

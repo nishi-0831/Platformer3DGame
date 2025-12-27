@@ -6,7 +6,7 @@
 
 #include "IModelPack.h"
 
-
+#include "FbxAnimationController.h"
 namespace mtgb
 {
 	class FbxParts;
@@ -57,6 +57,12 @@ namespace mtgb
 		/// </summary>
 		/// <returns>ファイル名</returns>
 		std::string GetFileName() const { return fileName_; }
+		
+		/// <summary>
+		/// アニメーションのコントローラを返す
+		/// </summary>
+		/// <returns></returns>
+		std::optional<FbxAnimationController> GetAnimationController();
 	private:
 
 		/// <summary>
@@ -65,7 +71,6 @@ namespace mtgb
 		/// <param name="_pNode">調べたいノード</param>
 		/// <param name="_parts">パーツリスト</param>
 		void CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _parts);
-
 
 	private:
 		std::vector<FbxParts*> pParts_;  // 複数あるかもしれないパーツ
