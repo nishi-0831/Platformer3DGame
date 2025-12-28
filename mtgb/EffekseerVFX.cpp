@@ -14,6 +14,7 @@ namespace mtgb
 	{
 		mtgb::EffectManager& effectManager = mtgb::Game::System<mtgb::EffectManager>();
 		effectManager.RegisterEffect("ScoreItem", "Effect/ScoreItem.efkefc");
+		effectManager.RegisterEffect("Stomp", "Effect/Stomp.efkefc");
 	}
 	using namespace Effekseer;
 	using namespace EffekseerRendererDX11;

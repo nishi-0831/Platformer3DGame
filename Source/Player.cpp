@@ -50,6 +50,15 @@ Player::~Player()
 
 void Player::Update()
 {
+	if (InputUtil::GetKeyDown(KeyCode::O))
+	{
+		EffectParameters params;
+		params.isLoop = false;
+		Matrix4x4 mat;
+		pTransform_->GenerateWorldMatrix(&mat);
+		params.worldMat = mat;
+		Game::System<EffectManager>().Play("Stomp", params);
+	}
 	if (state_.Current() != STATE::DYING)
 	{
 		UpdatePosition();

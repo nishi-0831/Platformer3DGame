@@ -51,6 +51,8 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 	, baseY_{0.0f}
 	, distY_{0.0f}
 	, lookAtPosLerpProgress_{0.0f}
+	, lerpSpeedGrounded_{ 1.0f }
+	, lerpSpeedJumping_{ 0.3f }
 {
 	// カメラ補間速度の初期化
 	cameraStat_
@@ -70,9 +72,8 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 			{
 				distY_ = pTargetTransform_->position.y;
 
-
 				orbitSpeed_ = 1.0f;
-				lookAtPosLerpProgress_ += 0.5f * Time::DeltaTimeF();
+				lookAtPosLerpProgress_ += lerpSpeedGrounded_ * Time::DeltaTimeF();
 
 				// ジャンプ中：速度に基づいて状態を判定
 				if (targetVelocityCache_.y > 0.1f)
@@ -96,7 +97,7 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 				distY_ = pTargetTransform_->position.y;
 				orbitSpeed_ = 0.5f;
 				// 目標角度へ滑らかに補間
-				lookAtPosLerpProgress_ += 0.3f * Time::DeltaTimeF();
+				lookAtPosLerpProgress_ += lerpSpeedJumping_ * Time::DeltaTimeF();
 			});
 }
 

@@ -72,6 +72,9 @@ namespace mtgb
 		void SetCenter(const Vector3& _center);
 		void SetExtents(const Vector3& _extents);
 		void SetRadius(float _radius);
+		Vector3 GetCenter();
+		Vector3 GetExtents();
+		float GetRadius();
 		ColliderTag GetColliderTag() const { return colliderTag_; }
 		
 		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);

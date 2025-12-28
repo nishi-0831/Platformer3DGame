@@ -102,6 +102,13 @@ void PatrolChargerEnemy::ShowImGui()
 void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 {
 	state_.Change(STATE::DYING);
+
+	EffectParameters params;
+	params.isLoop = false;
+	Vector3 effectPos = Vector3{ pTransform_->position.x,pTransform_->position.y + pCollider_->GetExtents().y,pTransform_->position.z };
+	Matrix4x4 mat = DirectX::XMMatrixTranslation(effectPos.x,effectPos.y,effectPos.z);
+	params.worldMat = mat;
+	Game::System<EffectManager>().Play("Stomp", params);
 }
 
 void PatrolChargerEnemy::OnHitSide(IActor* _pOther)

@@ -72,6 +72,8 @@ namespace mtgb
 		float baseY_;
 		// •âŠÔ‚ÌI“_
 		float distY_;
+		float lerpSpeedGrounded_;
+		float lerpSpeedJumping_;
 	};
 }
 

@@ -298,6 +298,31 @@ void mtgb::Collider::SetRadius(float _radius)
 	radius_ = _radius;
 }
 
+Vector3 mtgb::Collider::GetCenter()
+{
+	return center_;
+}
+
+Vector3 mtgb::Collider::GetExtents()
+{
+	if (colliderType_ == ColliderType::TYPE_AABB)
+	{
+		return computeBox_.Extents;
+	}
+	LOGIMGUI("colliderType is not AABB");
+	return Vector3::Zero();
+}
+
+float mtgb::Collider::GetRadius()
+{
+	if (colliderType_ == ColliderType::TYPE_SPHERE)
+	{
+		return computeSphere_.Radius;
+	}
+	LOGIMGUI("colliderType is not Sphere");
+	return 0.0f;
+}
+
 std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb)
 {
 	IntersectInfo info;
