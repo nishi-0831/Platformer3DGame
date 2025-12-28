@@ -21,6 +21,12 @@ ScoreItem::ScoreItem()
 			if (tag == GameObjectTag::Player)
 			{
 				Game::System<ScoreManager>().AddScore(addScore_);
+				EffectParameters params;
+				params.isLoop = false;
+				Matrix4x4 worldMat;
+				pTransform_->GenerateWorldMatrix(&worldMat);
+				params.worldMat = worldMat;
+				Game::System<EffectManager>().Play("ScoreItem", params);
 				DestroyMe();
 			}
 		});
