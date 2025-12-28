@@ -1,6 +1,10 @@
 #pragma once
-#include "StatefulComponent.h"
+#include "ReflectionMacro.h"
+#include "TextRenderer.generated.h"
+#include "IComponent.h"
+#include "ISerializableObject.h"
 #include "IComponentMemento.h"
+
 #include "RectF.h"
 #include "UIDrawCommand.h"
 #include "TextAlignment.h"
@@ -8,28 +12,27 @@
 #include "IRenderable.h"
 namespace mtgb
 {
-	struct TextRendererData
-	{
-		std::string text;
-		RectF rect;
-		int fontSize;
-		UIParams params;
-		TextAlignment alignment;
-		GameObjectLayerFlag layer;
-	};
-
 	class TextRendererCP;
-	class TextRenderer :public IRenderable , public StatefulComponent<TextRenderer, TextRendererCP,TextRendererData>
+
+	MT_COMPONENT()
+	class TextRenderer :public IRenderable , public IComponent<TextRendererCP,TextRenderer>, public ISerializableObject
 	{
 	public:
-		using StatefulComponent<TextRenderer, TextRendererCP, TextRendererData>::StatefulComponent;
-		friend TextRenderer;
+		MT_GENERATED_BODY()
+		friend TextRendererCP;
 
+		TextRenderer();
+		TextRenderer(EntityId _entityId);
 		void Render() const override;
 
 		bool CanRender() const override;
 
-		GameObjectLayerFlag GetLayer() const override { return layer; }
-		static std::string TypeName() { return "TextRenderer"; }
+		GameObjectLayerFlag GetLayer() const override { return params.layerFlag; }
+
+		TextAlignment alignment;
+		std::string text;
+		RectF rect;
+		int fontSize;
+		UIParams params;
 	};
 }

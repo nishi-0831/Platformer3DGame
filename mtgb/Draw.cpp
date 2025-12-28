@@ -5,7 +5,7 @@
 #include "Sprite.h"
 #include "OBJ.h"
 #include "Fbx.h"
-#include "FbxParts.h"
+#include "PlaneUVScroll.h"
 #include "TextCache.h"
 #include "Model.h"
 #include "Transform.h"
@@ -269,10 +269,16 @@ void mtgb::Draw::FBXModel(const FBXModelHandle _hFBXModel, const Transform& _pTr
 	Game::System<mtgb::Fbx>().Draw(_hFBXModel, _pTransform, _frame);
 }
 
-mtgb::Draw::Draw() :
-	pFigure_{ nullptr },
-	pGround_{ nullptr },
-	pFbxModel_{ nullptr }
+void mtgb::Draw::SeaUVScroll(const Transform& _transform)
+{
+	Game::System<Draw>().pSeaPlane_->Draw(_transform);
+}
+
+mtgb::Draw::Draw() 
+	: pFigure_{ nullptr }
+	, pGround_{ nullptr }
+	, pFbxModel_{ nullptr }
+	, pSeaPlane_{ nullptr }
 {
 }
 
@@ -281,6 +287,7 @@ mtgb::Draw::~Draw()
 	SAFE_DELETE(pFigure_);
 	SAFE_RELEASE(pFbxModel_);
 	SAFE_DELETE(pGround_);
+	SAFE_DELETE(pSeaPlane_);
 }
 
 void mtgb::Draw::Initialize()
@@ -294,6 +301,9 @@ void mtgb::Draw::Initialize()
 
 	pGround_ = new Ground{ pParts->GetNode() };
 	pGround_->Initialize();*/
+	pSeaPlane_ = new PlaneUVScroll();
+	pSeaPlane_->Initialize();
+	pSeaPlane_->LoadTexture(L"Image/Sea.png");
 }
 
 void mtgb::Draw::Update()

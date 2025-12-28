@@ -6,8 +6,6 @@
 cbuffer BoneMatrices : register(b1) //ボーンのポーズ行列が入る
 {
 	matrix g_boneMatrices[MAX_BONE_MATRICES];
-	bool g_hasSkinnedMesh;
-	float g_padding[3];
 };
 
 //スキニング後の頂点・法線が入る
@@ -45,7 +43,7 @@ Skin SkinVert(VSSkinIn input)
 	float3 normal = input.normal;
 	
 	// スキンメッシュの場合
-	if (g_hasSkinnedMesh && any(input.boneWeight > 0.0f))
+	if (any(input.boneWeight > 0.0f))
 	{
 		Output.position = float4(0, 0, 0, 0);
 		Output.normal = float3(0, 0, 0);
@@ -54,20 +52,16 @@ Skin SkinVert(VSSkinIn input)
         {
             if (input.boneWeight[i] > 0.0f)
             {
-		// i番目のボーンの変換行列を取得
+				// i番目のボーンの変換行列を取得
                 matrix boneMatrix = g_boneMatrices[input.boneIndex[i]];
 		
-		// 頂点座標を変換（行列 × ベクトル の順序）
+				// 頂点座標を変換(行列×ベクトル の順序)
                 Output.position += input.boneWeight[i] * mul(pos, boneMatrix);
 		
-		// 法線も変換（回転のみ適用）
+				// 法線も変換(回転のみ適用)
                 Output.normal += input.boneWeight[i] * mul(normal, (float3x3) boneMatrix);
             }
         }
-		
-		
-		
-		
 	}
 	else
 	{

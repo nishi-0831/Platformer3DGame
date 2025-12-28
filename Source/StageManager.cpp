@@ -4,7 +4,7 @@
 
 void StageManger::Initialize()
 {
-	std::string fileName = "data6.json";
+	std::string fileName = "data7.json";
 	std::ifstream inputFile(fileName);
 	nlohmann::json j;
 	try

@@ -78,9 +78,6 @@ namespace mtgb
 		struct BoneMatrices
 		{
 			Matrix4x4 boneMatrices[MAX_BONE_COUNT];  // 最大ボーン数
-			bool hasSkinnedMesh; //4バイト
-			// パディングを追加（16バイト境界に合わせる）
-			float padding[3];//12バイト
 		};
 		/// <summary>
 		/// ボーン (関節そのもの)
@@ -89,21 +86,7 @@ namespace mtgb
 		{
 			// REF: https://help.autodesk.com/view/MAYACRE/JPN/?guid=GUID-36808BCC-ACF9-4A9E-B0D8-B8F509FEC0D5
 			Matrix4x4 bindPose;  // 初期ポーズ時のボーン変換行列
-			Matrix4x4 newPose;  // アニメーションで変化時のボーン変換行列
-			//Matrix4x4 diffPose;  // bindPoseに対する newPoseの変化量
 		};
-
-		/// <summary>
-		/// ウェイト (関節同士の影響度合い)
-		/// </summary>
-		struct Weight
-		{
-			Vector3 posOrigin;  // もともとの頂点座標
-			Vector3 normalOrigin;  // もともとの法線
-			int* pBoneIndex;  // 関連するボーンのId
-			float* pBoneWeight;  // ボーンの重み
-		};
-
 	public:
 		FbxParts(FbxNode* _parent,double _unitScaleFactor);
 		~FbxParts();
@@ -201,9 +184,8 @@ namespace mtgb
 		FbxTime currentTime_; // 現在設定されているアニメーションの時間
 
 		int boneCount_;  // FBX に含まれている関節の数
-		Bone* pBones_;  // 各関節の情報配列
+		std::vector<Bone> bones_;  // 各関節の情報配列
 		std::unordered_map<std::string, Bone*> boneNamePair_;  // 関節名とのペア
-		Weight* pWeights_;  // ウェイト情報 (頂点に対する関節の影響度合い)
 		Vertex* pVertexes_;  // 頂点情報
 		
 		DWORD** ppIndexData_;  // インデックス情報
@@ -211,7 +193,7 @@ namespace mtgb
 		std::vector<ComPtr<ID3D11Buffer>> ppIndexBuffer_;
 		ComPtr<ID3D11Buffer> pBoneConstantBuffer_;
 
-		BoneMatrices boneMatrices_; //ボーン変換用行列
+		//BoneMatrices boneMatrices_; //ボーン変換用行列
 		double unitScaleFactor_; // スケール単位係数 
 		float fbxToWorldScaleFactor_; // FBXからワールドのスケールに変換する係数
 	};

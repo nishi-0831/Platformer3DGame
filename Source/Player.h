@@ -2,6 +2,8 @@
 #include <mtgb.h>
 #include "Camera.h"
 #include "IActor.h"
+#include "HPViewer.h"
+
 class Player : public mtgb::GameObject , public mtgb::ImGuiShowable,public IActor
 {
 public:
@@ -40,4 +42,5 @@ private:
 	const Transform* pCameraTransform_;
 	std::optional<FbxAnimationController> animController_;
 	int hp_;
+	HPViewer* pHPViewer_;
 };

@@ -79,6 +79,8 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<ColliderCP>(SystemUpdateType::Frame);
 	Game::Set<AudioPlayerCP>(SystemUpdateType::Frame);
 	Game::Set<InterpolatorCP>(SystemUpdateType::Frame);
+	Game::Set<ImageRendererCP>(SystemUpdateType::Frame);
+	Game::Set<TextRendererCP>(SystemUpdateType::Frame);
 
 	Game::Set<CommandHistoryManager>(SystemUpdateType::DontCallMe);
 	Game::Set<Draw>(SystemUpdateType::DontCallMe);

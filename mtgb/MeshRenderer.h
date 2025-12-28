@@ -4,7 +4,6 @@
 #include "IComponent.h"
 #include "ISerializableObject.h"
 #include "IComponentMemento.h"
-#include "MeshRendererState.h"
 #include "MeshRendererCP.h"
 #include "Handlers.h"
 #include "GameObjectLayer.h"

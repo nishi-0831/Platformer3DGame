@@ -26,6 +26,7 @@ Player::Player()
 	, pCamera_{ Instantiate<Camera>(this) }
 	, pCameraTransform_{ &Transform::Get(pCamera_->GetEntityId())}
 	, hp_{3}
+	, pHPViewer_{ nullptr }
 {
 	pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
@@ -60,9 +61,9 @@ void Player::Update()
 				state_.Change(STATE::JUMP);
 			}
 		}
+		UpdateRotate();
 	}
 
-	UpdateRotate();
 
 	pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
 
@@ -106,6 +107,10 @@ void Player::InitializeState()
 			{
 				animController_->PlayAnimation("Fall", true);
 			})
+		.OnStart(STATE::DYING, [this]
+			{
+				animController_->PlayAnimation("Dying", false);
+			})
 		.OnUpdate(STATE::DYING, [this]
 			{
 				if (animController_->IsFinishedAnimation())
@@ -123,6 +128,7 @@ void Player::Start()
 {
 	InitializeState();
 	state_.Change(STATE::IDLE);
+	pHPViewer_ = Instantiate<HPViewer>(hp_);
 }
 
 void Player::ShowImGui()
@@ -260,6 +266,8 @@ void Player::TakeDamage(int _damage)
 	{
 		state_.Change(STATE::DYING);
 	}
+
+	pHPViewer_->TakeDamage(_damage);
 }
 
 

@@ -19,24 +19,23 @@ namespace
 
 // FbxParts コンストラクタの初期化リストを拡張して、全メンバー変数を初期化
 mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
-	: vertexCount_{0}
-	, polygonCount_{0}
-	, indexCount_{0}
-	, materialCount_{0}
-	, polygonVertexCount_{0}
-	, pNode_{nullptr}
-	, pMaterial_{nullptr}
-	, pMesh_{nullptr}
-	, pSkin_{nullptr}
-	, ppCluster_{nullptr}
-	, boneCount_{0}
-	, pBones_{nullptr}
-	, pWeights_{nullptr}
-	, pVertexes_{nullptr}
-	, ppIndexData_{nullptr}
-	, ppIndexBuffer_{nullptr}
-	, unitScaleFactor_{_unitScaleFactor}
-	, fbxToWorldScaleFactor_{static_cast<float>(1.0f / _unitScaleFactor)}
+	: vertexCount_{ 0 }
+	, polygonCount_{ 0 }
+	, indexCount_{ 0 }
+	, materialCount_{ 0 }
+	, polygonVertexCount_{ 0 }
+	, pNode_{ nullptr }
+	, pMaterial_{ nullptr }
+	, pMesh_{ nullptr }
+	, pSkin_{ nullptr }
+	, ppCluster_{ nullptr }
+	, boneCount_{ 0 }
+	, pVertexes_{ nullptr }
+	, ppIndexData_{ nullptr }
+	, ppIndexBuffer_{ nullptr }
+	, unitScaleFactor_{ _unitScaleFactor }
+	, fbxToWorldScaleFactor_{ static_cast<float>(1.0f / _unitScaleFactor) }
+	, hasSkinnedMesh_{ false }
 {
 	if (_parent != nullptr)
 	{
@@ -65,18 +64,7 @@ void mtgb::FbxParts::Initialize()
 
 void mtgb::FbxParts::Release()
 {
-	SAFE_DELETE_ARRAY(pBones_);
 	SAFE_DELETE_ARRAY(ppCluster_);
-
-	if (pWeights_ != nullptr)
-	{
-		for (DWORD i = 0; i < vertexCount_; i++)
-		{
-			SAFE_DELETE_ARRAY(pWeights_[i].pBoneIndex);
-			SAFE_DELETE_ARRAY(pWeights_[i].pBoneWeight);
-		}
-		SAFE_DELETE_ARRAY(pWeights_);
-	}
 
 	SAFE_DELETE_ARRAY(pVertexes_);
 	for (DWORD i = 0; i < materialCount_; i++)
@@ -452,7 +440,7 @@ void mtgb::FbxParts::InitializeConstantBuffer(ID3D11Device* _pDevice)
 		massert(SUCCEEDED(hResult)
 			&& "ボーン行列用コンスタントバッファの作成に失敗 @FbxParts::InitializeConstantBuffer");
 
-		boneMatrices_.hasSkinnedMesh = true;
+		hasSkinnedMesh_ = true;
 	}
 }
 
@@ -662,7 +650,7 @@ void mtgb::FbxParts::InitializeSkelton()
 	}
 
 	// ボーン作る
-	pBones_ = new Bone[boneCount_];
+	bones_.resize(boneCount_);
 	for (int i = 0; i < boneCount_; i++)
 	{
 		FbxAMatrix matrix;
@@ -677,25 +665,16 @@ void mtgb::FbxParts::InitializeSkelton()
 			}
 		}
 
-		// 左手座標系への変換を適用
+		
 		DirectX::XMFLOAT4X4 mirrorMat{};
 		DirectX::XMStoreFloat4x4(&mirrorMat, DirectX::XMMatrixIdentity());
 		mirrorMat._11 *= -1.0f;
-		//mirrorMat._33 *= -1.0f;
 		DirectX::XMMATRIX mirrorMatrix = DirectX::XMLoadFloat4x4(&mirrorMat);
 		DirectX::XMMATRIX bindPoseMatrix = DirectX::XMLoadFloat4x4(&pose);
 
-		// バインドポーズ = ミラー × 元のバインドポーズ × ミラー
-		DirectX::XMMATRIX transformed = bindPoseMatrix;
-		//DirectX::XMMATRIX transformed = mirrorMatrix * bindPoseMatrix * mirrorMatrix;
-
-		// スケール係数を適用（FBXの単位からワールド単位へ変換）
-		/*DirectX::XMMATRIX scaleMatrix = DirectX::XMMatrixScaling(fbxToWorldScaleFactor_, fbxToWorldScaleFactor_, fbxToWorldScaleFactor_);
-		transformed = transformed * scaleMatrix;*/
-
-		DirectX::XMStoreFloat4x4(&pose, transformed);
-		pBones_[i].bindPose = DirectX::XMLoadFloat4x4(&pose);
-		boneNamePair_[ppCluster_[i]->GetLink()->GetName()] = pBones_ + i;
+		DirectX::XMStoreFloat4x4(&pose, bindPoseMatrix);
+		bones_[i].bindPose = DirectX::XMLoadFloat4x4(&pose);
+		boneNamePair_[ppCluster_[i]->GetLink()->GetName()] = &bones_[i];
 	}
 }
 
@@ -716,6 +695,7 @@ void mtgb::FbxParts::SetBoneMatrix()
 	// スケール係数の行列
 	XMMATRIX scaleMatrix = XMMatrixScaling(fbxToWorldScaleFactor_, fbxToWorldScaleFactor_, fbxToWorldScaleFactor_);
 
+	BoneMatrices boneMatrices_;
 	for (int i = 0; i < boneCount_; i++)
 	{
 		FbxAnimEvaluator* evaluator{ ppCluster_[i]->GetLink()->GetScene()->GetAnimationEvaluator() };
@@ -732,16 +712,8 @@ void mtgb::FbxParts::SetBoneMatrix()
 		}
 		Matrix4x4 currentPose = XMLoadFloat4x4(&pose);
 
-		// 現在のポーズに座標系変換を適用
-		// 左手座標系 = ミラー × 右手座標系ポーズ × ミラー
-		currentPose = currentPose;
-		//currentPose = mMirror * currentPose * mMirror;
-
-		// スケール係数を適用（FBXの単位からワールド単位へ変換）
-		//currentPose = currentPose * scaleMatrix;
-
 		// バインドポーズの逆行列
-		Matrix4x4 bindPoseInv = XMMatrixInverse(nullptr, pBones_[i].bindPose);
+		Matrix4x4 bindPoseInv = XMMatrixInverse(nullptr, bones_[i].bindPose);
 
 		// 最終的なボーン行列 = バインドポーズの逆行列 × 現在のポーズ
 		Matrix4x4 finalBoneMatrix = bindPoseInv * currentPose;
@@ -753,7 +725,7 @@ void mtgb::FbxParts::SetBoneMatrix()
 	D3D11_MAPPED_SUBRESOURCE mappedSubResource{};
 	DirectX11Draw::pContext_->Map(pBoneConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedSubResource);
 
-	memcpy_s(mappedSubResource.pData, mappedSubResource.RowPitch, (void*) & boneMatrices_, sizeof(BoneMatrices));
+	memcpy_s(mappedSubResource.pData, mappedSubResource.RowPitch, (void*) &boneMatrices_, sizeof(BoneMatrices));
 	DirectX11Draw::pContext_->Unmap(pBoneConstantBuffer_.Get(), 0);
 
 	

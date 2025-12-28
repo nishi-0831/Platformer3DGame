@@ -13,6 +13,7 @@
 #include "Debug.h"
 #include "GameTime.h"
 #include "CommandHistoryManager.h"
+#include "MeshRenderer.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
@@ -65,6 +66,12 @@ void mtgb::ImGuiEditor::Update()
 		if (InputUtil::GetKeyDown(KeyCode::D))
 		{
 			DuplicateGameObject();
+		}
+		if (InputUtil::GetKeyDown(KeyCode::Space))
+		{
+			EntityId currSelectedEntity = pManipulator_->GetSelectedEntityId();
+			MeshRenderer& meshRenderer = MeshRenderer::Get(currSelectedEntity);
+			//meshRenderer.shaderType = 
 		}
 	}
 }

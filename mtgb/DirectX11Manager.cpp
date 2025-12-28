@@ -661,6 +661,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			&cRasterizerDesc);
 	}
 
+	
 	// FbxPartsシェーダの読み込み
 	{
 		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
@@ -680,6 +681,15 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 		CompileShader(
 			L"Shader/FbxParts.hlsl",
 			ShaderType::FbxParts,
+			INPUT_ELEMENT_DESC_3D,
+			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc);
+	}
+
+	{
+		CompileShader(
+			L"Shader/SeaUVScroll.hlsl",
+			ShaderType::Sea,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc);
@@ -867,6 +877,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc);
 		
+
 	}
 }
 

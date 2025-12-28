@@ -18,6 +18,7 @@ namespace mtgb
 	class Transform;
 	class FbxModel;
 	class Ground;
+	class PlaneUVScroll;
 	//enum struct ShaderType : int8_t;
 	
 	
@@ -100,7 +101,8 @@ namespace mtgb
 			const Transform& _pTransform,
 			const int _frame,
 			ShaderType _shaderType = ShaderType::FbxParts);
-
+		static void SeaUVScroll(
+			const Transform& _transform);
 		/// <summary>
 		/// <para> 事前にLoadをしたテキストを描画 </para>
 		/// <para> 文字列内容、サイズが変化しない場合に適している </para>
@@ -237,6 +239,8 @@ namespace mtgb
 		FbxModel* pFbxModel_;
 		Figure* pFigure_;
 		Ground* pGround_;
+		PlaneUVScroll* pSeaPlane_;
+
 		static int currentDefaultFontSize_;
 		static TextAlignment currentDefaultTextAlignment_;
 		static UIParams defaultUIParams_;
