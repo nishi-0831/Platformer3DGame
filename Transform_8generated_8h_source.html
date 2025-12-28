@@ -156,10 +156,10 @@ $(document).ready(function(){initNavTree('Transform_8generated_8h_source.html','
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    } \</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    friend void from_json(const nlohmann::json&amp; _j, Transform&amp; _target) \</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    { \</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        JsonConverter::Deserialize&lt;EntityId&gt;(_target.parent, _j.at(&quot;parent&quot;)); \</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        JsonConverter::Deserialize&lt;Vector3&gt;(_target.position, _j.at(&quot;position&quot;)); \</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        JsonConverter::Deserialize&lt;Vector3&gt;(_target.scale, _j.at(&quot;scale&quot;)); \</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        JsonConverter::Deserialize&lt;Quaternion&gt;(_target.rotate, _j.at(&quot;rotate&quot;)); \</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        JsonConverter::Deserialize&lt;EntityId&gt;(_target.parent, _j,&quot;parent&quot;); \</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        JsonConverter::Deserialize&lt;Vector3&gt;(_target.position, _j,&quot;position&quot;); \</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        JsonConverter::Deserialize&lt;Vector3&gt;(_target.scale, _j,&quot;scale&quot;); \</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        JsonConverter::Deserialize&lt;Quaternion&gt;(_target.rotate, _j,&quot;rotate&quot;); \</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        _target.OnPostRestore(); \</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    } \</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    static std::string TypeName(){ return &quot;Transform&quot; ;} \</div>

@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('classmtgb_1_1ComponentPool.html',''); 
 <div class="dynheader">
 mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt; の継承関係図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ComponentPool__inherit__graph.svg" width="1844" height="1978"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ComponentPool__inherit__graph.svg" width="2147" height="1978"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -288,10 +288,10 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton&gt; </div
 <div class="line"><span class="lineno">  102</span>    }</div>
 <div class="ttc" id="aclassmtgb_1_1ComponentPool_html_a1a037eb9620331b340d705b109d7a3d5"><div class="ttname"><a href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">mtgb::ComponentPool::poolId_</a></div><div class="ttdeci">std::vector&lt; EntityId &gt; poolId_</div><div class="ttdef"><b>Definition:</b> <a href="ComponentPool_8h_source.html#l00082">ComponentPool.h:82</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ComponentPool_html_a7e94ec8a5981bee7000d7ab292a767d4"><div class="ttname"><a href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">mtgb::ComponentPool::pool_</a></div><div class="ttdeci">std::vector&lt; ComponentT &gt; pool_</div><div class="ttdef"><b>Definition:</b> <a href="ComponentPool_8h_source.html#l00081">ComponentPool.h:81</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1ComponentPool_html_aad8cb5427de9992720dbc1de18164eee"><div class="ttname"><a href="classmtgb_1_1ComponentPool.html#aad8cb5427de9992720dbc1de18164eee">mtgb::ComponentPool::RegisterImGuiIfExists</a></div><div class="ttdeci">std::enable_if_t&lt; detail::has_register_imgui_v&lt; T &gt; &gt; RegisterImGuiIfExists()</div><div class="ttdef"><b>Definition:</b> <a href="ComponentPool_8h_source.html#l00228">ComponentPool.h:228</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ComponentPool_html_aad8cb5427de9992720dbc1de18164eee"><div class="ttname"><a href="classmtgb_1_1ComponentPool.html#aad8cb5427de9992720dbc1de18164eee">mtgb::ComponentPool::RegisterImGuiIfExists</a></div><div class="ttdeci">std::enable_if_t&lt; detail::has_register_imgui_v&lt; T &gt; &gt; RegisterImGuiIfExists()</div><div class="ttdef"><b>Definition:</b> <a href="ComponentPool_8h_source.html#l00230">ComponentPool.h:230</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a1ced21cf2838c5ebbe6588362fd2bf8e"><div class="ttname"><a href="namespacemtgb.html#a1ced21cf2838c5ebbe6588362fd2bf8e">mtgb::COMPONENT_CAPACITY</a></div><div class="ttdeci">static constexpr size_t COMPONENT_CAPACITY</div><div class="ttdef"><b>Definition:</b> <a href="ComponentPool_8h_source.html#l00013">ComponentPool.h:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="ComponentPool_8h_source.html#l00013">mtgb::COMPONENT_CAPACITY</a>, <a class="el" href="ComponentPool_8h_source.html#l00081">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;::pool_</a>, <a class="el" href="ComponentPool_8h_source.html#l00082">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;::poolId_</a>, <a class="el" href="ComponentPool_8h_source.html#l00228">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;::RegisterImGuiIfExists()</a>.</p>
+<p class="reference">参照先 <a class="el" href="ComponentPool_8h_source.html#l00013">mtgb::COMPONENT_CAPACITY</a>, <a class="el" href="ComponentPool_8h_source.html#l00081">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;::pool_</a>, <a class="el" href="ComponentPool_8h_source.html#l00082">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;::poolId_</a>, <a class="el" href="ComponentPool_8h_source.html#l00230">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;::RegisterImGuiIfExists()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -369,17 +369,17 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton&gt; </div
 
 <p><a class="el" href="classmtgb_1_1IComponentPool.html#af31537171d4d3a72f1b245dbe9fb9afb">mtgb::IComponentPool</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00167">167</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  168</span>    {</div>
-<div class="line"><span class="lineno">  169</span>        <span class="keywordflow">if</span> (_dest == _src)</div>
-<div class="line"><span class="lineno">  170</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  171</span> </div>
-<div class="line"><span class="lineno">  172</span>        ComponentT&amp; destCom = <a class="code hl_function" href="classmtgb_1_1ComponentPool.html#a46d912d48cb0755f013969a21967d6ad">Get</a>(_dest);</div>
-<div class="line"><span class="lineno">  173</span>        ComponentT&amp; srcCom = <a class="code hl_function" href="classmtgb_1_1ComponentPool.html#a46d912d48cb0755f013969a21967d6ad">Get</a>(_src);</div>
-<div class="line"><span class="lineno">  174</span>        </div>
-<div class="line"><span class="lineno">  175</span>        destCom = srcCom;</div>
-<div class="line"><span class="lineno">  176</span>    }</div>
-<div class="ttc" id="aclassmtgb_1_1ComponentPool_html_a46d912d48cb0755f013969a21967d6ad"><div class="ttname"><a href="classmtgb_1_1ComponentPool.html#a46d912d48cb0755f013969a21967d6ad">mtgb::ComponentPool::Get</a></div><div class="ttdeci">ComponentT &amp; Get(EntityId _entityId, Args &amp;&amp;... _args)</div><div class="ttdoc">コンポーネントを作成/取得する</div><div class="ttdef"><b>Definition:</b> <a href="ComponentPool_8h_source.html#l00198">ComponentPool.h:198</a></div></div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00169">169</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>    {</div>
+<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">if</span> (_dest == _src)</div>
+<div class="line"><span class="lineno">  172</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>        ComponentT&amp; destCom = <a class="code hl_function" href="classmtgb_1_1ComponentPool.html#a46d912d48cb0755f013969a21967d6ad">Get</a>(_dest);</div>
+<div class="line"><span class="lineno">  175</span>        ComponentT&amp; srcCom = <a class="code hl_function" href="classmtgb_1_1ComponentPool.html#a46d912d48cb0755f013969a21967d6ad">Get</a>(_src);</div>
+<div class="line"><span class="lineno">  176</span>        </div>
+<div class="line"><span class="lineno">  177</span>        destCom = srcCom;</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+<div class="ttc" id="aclassmtgb_1_1ComponentPool_html_a46d912d48cb0755f013969a21967d6ad"><div class="ttname"><a href="classmtgb_1_1ComponentPool.html#a46d912d48cb0755f013969a21967d6ad">mtgb::ComponentPool::Get</a></div><div class="ttdeci">ComponentT &amp; Get(EntityId _entityId, Args &amp;&amp;... _args)</div><div class="ttdoc">コンポーネントを作成/取得する</div><div class="ttdef"><b>Definition:</b> <a href="ComponentPool_8h_source.html#l00200">ComponentPool.h:200</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -421,14 +421,14 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton&gt; </div
 
 <p><a class="el" href="classmtgb_1_1IComponentPool.html#ad6171cf109f6eed2b4fea311a91e42fd">mtgb::IComponentPool</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00157">157</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  158</span>    {</div>
-<div class="line"><span class="lineno">  159</span>        ComponentT&amp; component = <a class="code hl_function" href="classmtgb_1_1ComponentPool.html#a46d912d48cb0755f013969a21967d6ad">Get</a>(_entityId);</div>
-<div class="line"><span class="lineno">  160</span>        JsonConverter::template Deserialize&lt;ComponentT&gt;(component, _json.at(ComponentT::TypeName()));</div>
-<div class="line"><span class="lineno">  161</span>        </div>
-<div class="line"><span class="lineno">  162</span>        <a class="code hl_class" href="classCommand.html">Command</a>* cmd = <span class="keyword">new</span> AddComponentCommandGeneric&lt;ComponentT&gt;(component);</div>
-<div class="line"><span class="lineno">  163</span>        Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
-<div class="line"><span class="lineno">  164</span>    }</div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00159">159</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>    {</div>
+<div class="line"><span class="lineno">  161</span>        ComponentT&amp; component = <a class="code hl_function" href="classmtgb_1_1ComponentPool.html#a46d912d48cb0755f013969a21967d6ad">Get</a>(_entityId);</div>
+<div class="line"><span class="lineno">  162</span>        JsonConverter::template Deserialize&lt;ComponentT&gt;(component, _json.at(ComponentT::TypeName()));</div>
+<div class="line"><span class="lineno">  163</span>        </div>
+<div class="line"><span class="lineno">  164</span>        <a class="code hl_class" href="classCommand.html">Command</a>* cmd = <span class="keyword">new</span> AddComponentCommandGeneric&lt;ComponentT&gt;(component);</div>
+<div class="line"><span class="lineno">  165</span>        Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
+<div class="line"><span class="lineno">  166</span>    }</div>
 <div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00004">Command.h:5</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -480,33 +480,33 @@ template&lt;typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>コンポーネントの参照ポインタ (確実に存在する)</dd></dl>
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00198">198</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  199</span>    {</div>
-<div class="line"><span class="lineno">  200</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
-<div class="line"><span class="lineno">  201</span>        {</div>
-<div class="line"><span class="lineno">  202</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
-<div class="line"><span class="lineno">  203</span>            {</div>
-<div class="line"><span class="lineno">  204</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[i];</div>
-<div class="line"><span class="lineno">  205</span>            }</div>
-<div class="line"><span class="lineno">  206</span>        }</div>
-<div class="line"><span class="lineno">  207</span> </div>
-<div class="line"><span class="lineno">  208</span>        <span class="comment">// プールに存在しないなら新たに追加</span></div>
-<div class="line"><span class="lineno">  209</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.push_back(_entityId);</div>
-<div class="line"><span class="lineno">  210</span>        <span class="comment">// NOTE: emplace_backで実体をそのまま追加</span></div>
-<div class="line"><span class="lineno">  211</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.emplace_back(_entityId, std::forward&lt;Args&gt;(_args)...); <span class="comment">// 可変長引数でコンストラクタ呼び出し</span></div>
-<div class="line"><span class="lineno">  212</span>        <span class="comment">// 追加したら初期化処理</span></div>
-<div class="line"><span class="lineno">  213</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.back().Initialize();</div>
-<div class="line"><span class="lineno">  214</span>        assert(<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size() &lt; <a class="code hl_variable" href="namespacemtgb.html#a1ced21cf2838c5ebbe6588362fd2bf8e">COMPONENT_CAPACITY</a>);</div>
-<div class="line"><span class="lineno">  215</span> </div>
-<div class="line"><span class="lineno">  216</span>        <span class="comment">// インデックスを記録</span></div>
-<div class="line"><span class="lineno">  217</span>        <span class="keywordtype">size_t</span> poolIndex = <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.size() - 1;</div>
-<div class="line"><span class="lineno">  218</span>        Game::System&lt;ComponentRegistry&gt;().RegisterComponentIndex(_entityId, std::type_index(<span class="keyword">typeid</span>(ComponentT)), poolIndex);</div>
-<div class="line"><span class="lineno">  219</span> </div>
-<div class="line"><span class="lineno">  220</span>        <span class="comment">// EntityIdに割り当てられたComponentとして登録</span></div>
-<div class="line"><span class="lineno">  221</span>        Game::System&lt;ComponentRegistry&gt;().RegisterComponent(_entityId, std::type_index(<span class="keyword">typeid</span>(ComponentT)));</div>
-<div class="line"><span class="lineno">  222</span> </div>
-<div class="line"><span class="lineno">  223</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.back(); <span class="comment">// 追加&amp;&amp;初期化したコンポーネントを返す</span></div>
-<div class="line"><span class="lineno">  224</span>    }</div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00200">200</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>    {</div>
+<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  203</span>        {</div>
+<div class="line"><span class="lineno">  204</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
+<div class="line"><span class="lineno">  205</span>            {</div>
+<div class="line"><span class="lineno">  206</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[i];</div>
+<div class="line"><span class="lineno">  207</span>            }</div>
+<div class="line"><span class="lineno">  208</span>        }</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>        <span class="comment">// プールに存在しないなら新たに追加</span></div>
+<div class="line"><span class="lineno">  211</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.push_back(_entityId);</div>
+<div class="line"><span class="lineno">  212</span>        <span class="comment">// NOTE: emplace_backで実体をそのまま追加</span></div>
+<div class="line"><span class="lineno">  213</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.emplace_back(_entityId, std::forward&lt;Args&gt;(_args)...); <span class="comment">// 可変長引数でコンストラクタ呼び出し</span></div>
+<div class="line"><span class="lineno">  214</span>        <span class="comment">// 追加したら初期化処理</span></div>
+<div class="line"><span class="lineno">  215</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.back().Initialize();</div>
+<div class="line"><span class="lineno">  216</span>        assert(<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size() &lt; <a class="code hl_variable" href="namespacemtgb.html#a1ced21cf2838c5ebbe6588362fd2bf8e">COMPONENT_CAPACITY</a>);</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>        <span class="comment">// インデックスを記録</span></div>
+<div class="line"><span class="lineno">  219</span>        <span class="keywordtype">size_t</span> poolIndex = <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.size() - 1;</div>
+<div class="line"><span class="lineno">  220</span>        Game::System&lt;ComponentRegistry&gt;().RegisterComponentIndex(_entityId, std::type_index(<span class="keyword">typeid</span>(ComponentT)), poolIndex);</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>        <span class="comment">// EntityIdに割り当てられたComponentとして登録</span></div>
+<div class="line"><span class="lineno">  223</span>        Game::System&lt;ComponentRegistry&gt;().RegisterComponent(_entityId, std::type_index(<span class="keyword">typeid</span>(ComponentT)));</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.back(); <span class="comment">// 追加&amp;&amp;初期化したコンポーネントを返す</span></div>
+<div class="line"><span class="lineno">  226</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="ComponentPool_8h_source.html#l00013">mtgb::COMPONENT_CAPACITY</a>.</p>
 
@@ -604,10 +604,10 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00228">228</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  229</span>    {</div>
-<div class="line"><span class="lineno">  230</span>        ComponentT::RegisterImGui();</div>
-<div class="line"><span class="lineno">  231</span>    }</div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00230">230</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>    {</div>
+<div class="line"><span class="lineno">  232</span>        ComponentT::RegisterImGui();</div>
+<div class="line"><span class="lineno">  233</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="ComponentPool_8h_source.html#l00091">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;::ComponentPool()</a>.</p>
 <div class="dynheader">
@@ -643,10 +643,10 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00235">235</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  236</span>    {</div>
-<div class="line"><span class="lineno">  237</span>        <span class="comment">// 何も行わない</span></div>
-<div class="line"><span class="lineno">  238</span>    }</div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00237">237</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  238</span>    {</div>
+<div class="line"><span class="lineno">  239</span>        <span class="comment">// 何も行わない</span></div>
+<div class="line"><span class="lineno">  240</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -723,33 +723,33 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton&gt; </div
 
 <p><a class="el" href="classmtgb_1_1IComponentPool.html#abaccd6a01e05bba383c70d6401da9c13">mtgb::IComponentPool</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00273">273</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  274</span>    {</div>
-<div class="line"><span class="lineno">  275</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (IsSingleton)</div>
-<div class="line"><span class="lineno">  276</span>        {</div>
-<div class="line"><span class="lineno">  277</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
-<div class="line"><span class="lineno">  278</span>            {</div>
-<div class="line"><span class="lineno">  279</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
-<div class="line"><span class="lineno">  280</span>                {</div>
-<div class="line"><span class="lineno">  281</span>                    <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
-<div class="line"><span class="lineno">  282</span> </div>
-<div class="line"><span class="lineno">  283</span>                    <span class="comment">// 登録解除</span></div>
-<div class="line"><span class="lineno">  284</span>                    Game::System&lt;ComponentRegistry&gt;().UnRegisterComponent(_entityId, std::type_index(<span class="keyword">typeid</span>(ComponentT)));</div>
-<div class="line"><span class="lineno">  285</span>                    <span class="keywordflow">return</span>;  <span class="comment">// 見つかったなら無効Idにして回帰</span></div>
-<div class="line"><span class="lineno">  286</span>                }</div>
-<div class="line"><span class="lineno">  287</span>            }</div>
-<div class="line"><span class="lineno">  288</span>        }</div>
-<div class="line"><span class="lineno">  289</span>        <span class="keywordflow">else</span>  <span class="comment">// 複数ある可能性を考慮する</span></div>
-<div class="line"><span class="lineno">  290</span>        {</div>
-<div class="line"><span class="lineno">  291</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
-<div class="line"><span class="lineno">  292</span>            {</div>
-<div class="line"><span class="lineno">  293</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
-<div class="line"><span class="lineno">  294</span>                {</div>
-<div class="line"><span class="lineno">  295</span>                    <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
-<div class="line"><span class="lineno">  296</span>                }</div>
-<div class="line"><span class="lineno">  297</span>            }</div>
-<div class="line"><span class="lineno">  298</span>        }</div>
-<div class="line"><span class="lineno">  299</span>    }</div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00275">275</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  276</span>    {</div>
+<div class="line"><span class="lineno">  277</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (IsSingleton)</div>
+<div class="line"><span class="lineno">  278</span>        {</div>
+<div class="line"><span class="lineno">  279</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  280</span>            {</div>
+<div class="line"><span class="lineno">  281</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
+<div class="line"><span class="lineno">  282</span>                {</div>
+<div class="line"><span class="lineno">  283</span>                    <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>                    <span class="comment">// 登録解除</span></div>
+<div class="line"><span class="lineno">  286</span>                    Game::System&lt;ComponentRegistry&gt;().UnRegisterComponent(_entityId, std::type_index(<span class="keyword">typeid</span>(ComponentT)));</div>
+<div class="line"><span class="lineno">  287</span>                    <span class="keywordflow">return</span>;  <span class="comment">// 見つかったなら無効Idにして回帰</span></div>
+<div class="line"><span class="lineno">  288</span>                }</div>
+<div class="line"><span class="lineno">  289</span>            }</div>
+<div class="line"><span class="lineno">  290</span>        }</div>
+<div class="line"><span class="lineno">  291</span>        <span class="keywordflow">else</span>  <span class="comment">// 複数ある可能性を考慮する</span></div>
+<div class="line"><span class="lineno">  292</span>        {</div>
+<div class="line"><span class="lineno">  293</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  294</span>            {</div>
+<div class="line"><span class="lineno">  295</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
+<div class="line"><span class="lineno">  296</span>                {</div>
+<div class="line"><span class="lineno">  297</span>                    <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
+<div class="line"><span class="lineno">  298</span>                }</div>
+<div class="line"><span class="lineno">  299</span>            }</div>
+<div class="line"><span class="lineno">  300</span>        }</div>
+<div class="line"><span class="lineno">  301</span>    }</div>
 <div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
@@ -792,22 +792,22 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00179">179</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  180</span>    {</div>
-<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size() &lt;= _index)</div>
-<div class="line"><span class="lineno">  182</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  183</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[_index] != <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00181">181</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>    {</div>
+<div class="line"><span class="lineno">  183</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size() &lt;= _index)</div>
 <div class="line"><span class="lineno">  184</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  185</span> </div>
-<div class="line"><span class="lineno">  186</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[_index] = _entityId;</div>
+<div class="line"><span class="lineno">  185</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[_index] != <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">  187</span> </div>
-<div class="line"><span class="lineno">  188</span>        <span class="comment">// EntityIdに割り当てられたComponentとして登録</span></div>
-<div class="line"><span class="lineno">  189</span>        Game::System&lt;ComponentRegistry&gt;().RegisterComponent(_entityId, std::type_index(<span class="keyword">typeid</span>(ComponentT)));</div>
-<div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>        ComponentT* pComponent = &amp;<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[_index];</div>
-<div class="line"><span class="lineno">  192</span>        pComponent-&gt;entityId_ = _entityId;</div>
-<div class="line"><span class="lineno">  193</span>        <span class="keywordflow">return</span> pComponent;</div>
-<div class="line"><span class="lineno">  194</span>    }</div>
+<div class="line"><span class="lineno">  188</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[_index] = _entityId;</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>        <span class="comment">// EntityIdに割り当てられたComponentとして登録</span></div>
+<div class="line"><span class="lineno">  191</span>        Game::System&lt;ComponentRegistry&gt;().RegisterComponent(_entityId, std::type_index(<span class="keyword">typeid</span>(ComponentT)));</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>        ComponentT* pComponent = &amp;<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[_index];</div>
+<div class="line"><span class="lineno">  194</span>        pComponent-&gt;entityId_ = _entityId;</div>
+<div class="line"><span class="lineno">  195</span>        <span class="keywordflow">return</span> pComponent;</div>
+<div class="line"><span class="lineno">  196</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
 
@@ -841,17 +841,17 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton&gt; </div
 
 <p><a class="el" href="classmtgb_1_1IComponentPool.html#a2cd82c9285b921e15f437039704dd6aa">mtgb::IComponentPool</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00144">144</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  145</span>    {</div>
-<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
-<div class="line"><span class="lineno">  147</span>        {</div>
-<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
-<div class="line"><span class="lineno">  149</span>            {</div>
-<div class="line"><span class="lineno">  150</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[i].SaveToMemento();</div>
-<div class="line"><span class="lineno">  151</span>            }</div>
-<div class="line"><span class="lineno">  152</span>        }</div>
-<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  154</span>    }</div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00146">146</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>    {</div>
+<div class="line"><span class="lineno">  148</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  149</span>        {</div>
+<div class="line"><span class="lineno">  150</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
+<div class="line"><span class="lineno">  151</span>            {</div>
+<div class="line"><span class="lineno">  152</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[i].SaveToMemento();</div>
+<div class="line"><span class="lineno">  153</span>            }</div>
+<div class="line"><span class="lineno">  154</span>        }</div>
+<div class="line"><span class="lineno">  155</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  156</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -891,12 +891,14 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton&gt; </div
 <div class="line"><span class="lineno">  133</span>            {</div>
 <div class="line"><span class="lineno">  134</span>                ComponentT&amp; component = <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[i];</div>
 <div class="line"><span class="lineno">  135</span>                component.OnPreSave();</div>
-<div class="line"><span class="lineno">  136</span>                nlohmann::json j = JsonConverter::template Serialize&lt;ComponentT&gt;(component);</div>
-<div class="line"><span class="lineno">  137</span>                <span class="keywordflow">return</span> j;</div>
-<div class="line"><span class="lineno">  138</span>            }</div>
-<div class="line"><span class="lineno">  139</span>        }</div>
-<div class="line"><span class="lineno">  140</span>        <span class="keywordflow">return</span> nlohmann::json{};</div>
-<div class="line"><span class="lineno">  141</span>    }</div>
+<div class="line"><span class="lineno">  136</span>                </div>
+<div class="line"><span class="lineno">  137</span>                nlohmann::json j;</div>
+<div class="line"><span class="lineno">  138</span>                j[ComponentT::TypeName()] = JsonConverter::template Serialize&lt;ComponentT&gt;(component);</div>
+<div class="line"><span class="lineno">  139</span>                <span class="keywordflow">return</span> j;</div>
+<div class="line"><span class="lineno">  140</span>            }</div>
+<div class="line"><span class="lineno">  141</span>        }</div>
+<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">return</span> nlohmann::json{};</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -968,19 +970,19 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00240">240</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  242</span>    {</div>
-<div class="line"><span class="lineno">  243</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
-<div class="line"><span class="lineno">  244</span>        {</div>
-<div class="line"><span class="lineno">  245</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
-<div class="line"><span class="lineno">  246</span>            {</div>
-<div class="line"><span class="lineno">  247</span>                _pComponent = &amp;<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[i];  <span class="comment">// Idが一致した添字のコンポーネントを返す</span></div>
-<div class="line"><span class="lineno">  248</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  249</span>            }</div>
-<div class="line"><span class="lineno">  250</span>        }</div>
-<div class="line"><span class="lineno">  251</span> </div>
-<div class="line"><span class="lineno">  252</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  253</span>    }</div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00242">242</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  244</span>    {</div>
+<div class="line"><span class="lineno">  245</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  246</span>        {</div>
+<div class="line"><span class="lineno">  247</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
+<div class="line"><span class="lineno">  248</span>            {</div>
+<div class="line"><span class="lineno">  249</span>                _pComponent = &amp;<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[i];  <span class="comment">// Idが一致した添字のコンポーネントを返す</span></div>
+<div class="line"><span class="lineno">  250</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  251</span>            }</div>
+<div class="line"><span class="lineno">  252</span>        }</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  255</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1020,20 +1022,20 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00256">256</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  258</span>    {</div>
-<div class="line"><span class="lineno">  259</span>        _pComponents-&gt;clear();</div>
-<div class="line"><span class="lineno">  260</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
-<div class="line"><span class="lineno">  261</span>        {</div>
-<div class="line"><span class="lineno">  262</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
-<div class="line"><span class="lineno">  263</span>            {</div>
-<div class="line"><span class="lineno">  264</span>                _pComponents-&gt;push_back(&amp;<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[i]);  <span class="comment">// Idが一致した添字のコンポーネントを追加する</span></div>
-<div class="line"><span class="lineno">  265</span>            }</div>
-<div class="line"><span class="lineno">  266</span>        }</div>
-<div class="line"><span class="lineno">  267</span> </div>
-<div class="line"><span class="lineno">  268</span>        <span class="comment">// 何かしら追加されたなら見つかっている</span></div>
-<div class="line"><span class="lineno">  269</span>        <span class="keywordflow">return</span> _pComponents-&gt;size() &gt;= 0;</div>
-<div class="line"><span class="lineno">  270</span>    }</div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00258">258</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  260</span>    {</div>
+<div class="line"><span class="lineno">  261</span>        _pComponents-&gt;clear();</div>
+<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  263</span>        {</div>
+<div class="line"><span class="lineno">  264</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
+<div class="line"><span class="lineno">  265</span>            {</div>
+<div class="line"><span class="lineno">  266</span>                _pComponents-&gt;push_back(&amp;<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[i]);  <span class="comment">// Idが一致した添字のコンポーネントを追加する</span></div>
+<div class="line"><span class="lineno">  267</span>            }</div>
+<div class="line"><span class="lineno">  268</span>        }</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>        <span class="comment">// 何かしら追加されたなら見つかっている</span></div>
+<div class="line"><span class="lineno">  271</span>        <span class="keywordflow">return</span> _pComponents-&gt;size() &gt;= 0;</div>
+<div class="line"><span class="lineno">  272</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1071,18 +1073,18 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton&gt; </div
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00304">304</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  305</span>    {</div>
-<div class="line"><span class="lineno">  306</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
-<div class="line"><span class="lineno">  307</span>        {</div>
-<div class="line"><span class="lineno">  308</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
-<div class="line"><span class="lineno">  309</span>            {</div>
-<div class="line"><span class="lineno">  310</span>                <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.erase(<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.begin() + i);</div>
-<div class="line"><span class="lineno">  311</span>                <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.erase(<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.begin() + i);</div>
-<div class="line"><span class="lineno">  312</span>                <span class="keywordflow">return</span>;  <span class="comment">// ポインタが一致したなら消す</span></div>
-<div class="line"><span class="lineno">  313</span>            }</div>
-<div class="line"><span class="lineno">  314</span>        }</div>
-<div class="line"><span class="lineno">  315</span>    }</div>
+<p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00306">306</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  307</span>    {</div>
+<div class="line"><span class="lineno">  308</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  309</span>        {</div>
+<div class="line"><span class="lineno">  310</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == _entityId)</div>
+<div class="line"><span class="lineno">  311</span>            {</div>
+<div class="line"><span class="lineno">  312</span>                <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.erase(<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>.begin() + i);</div>
+<div class="line"><span class="lineno">  313</span>                <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.erase(<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>.begin() + i);</div>
+<div class="line"><span class="lineno">  314</span>                <span class="keywordflow">return</span>;  <span class="comment">// ポインタが一致したなら消す</span></div>
+<div class="line"><span class="lineno">  315</span>            }</div>
+<div class="line"><span class="lineno">  316</span>        }</div>
+<div class="line"><span class="lineno">  317</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1113,7 +1115,7 @@ template&lt;typename ComponentT , typename DerivedT , bool IsSingleton = true&gt
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
 
-<p><a class="el" href="classmtgb_1_1AudioPlayerCP.html#a9f91fb834f6e8413782c38de5b84bcd1">mtgb::AudioPlayerCP</a>, <a class="el" href="classmtgb_1_1ColliderCP.html#a4efce876b843c2f381cff7b6854e9988">mtgb::ColliderCP</a>, <a class="el" href="classmtgb_1_1InterpolatorCP.html#a4c3953ebb40bee8180f18924af4c133e">mtgb::InterpolatorCP</a>, <a class="el" href="classmtgb_1_1MeshRendererCP.html#a2bf1e9b89db13db0cf40c80c25585caf">mtgb::MeshRendererCP</a>, <a class="el" href="classmtgb_1_1RigidBodyCP.html#ab3052d653b853508f6ac92d1de8d5798">mtgb::RigidBodyCP</a>, <a class="el" href="classmtgb_1_1TextRendererCP.html#a7f7e28ca16cf4b28c539d7b6e2f86bc2">mtgb::TextRendererCP</a>, <a class="el" href="classmtgb_1_1TransformCP.html#a6aaf0d646171863988d398e8b06dfd31">mtgb::TransformCP</a>で再実装されています。</p>
+<p><a class="el" href="classmtgb_1_1AudioPlayerCP.html#a9f91fb834f6e8413782c38de5b84bcd1">mtgb::AudioPlayerCP</a>, <a class="el" href="classmtgb_1_1ColliderCP.html#a4efce876b843c2f381cff7b6854e9988">mtgb::ColliderCP</a>, <a class="el" href="classmtgb_1_1ImageRendererCP.html#a7c5daa6f354cf0042ee32ecd136b6c77">mtgb::ImageRendererCP</a>, <a class="el" href="classmtgb_1_1InterpolatorCP.html#a4c3953ebb40bee8180f18924af4c133e">mtgb::InterpolatorCP</a>, <a class="el" href="classmtgb_1_1MeshRendererCP.html#a2bf1e9b89db13db0cf40c80c25585caf">mtgb::MeshRendererCP</a>, <a class="el" href="classmtgb_1_1RigidBodyCP.html#ab3052d653b853508f6ac92d1de8d5798">mtgb::RigidBodyCP</a>, <a class="el" href="classmtgb_1_1TextRendererCP.html#a7f7e28ca16cf4b28c539d7b6e2f86bc2">mtgb::TextRendererCP</a>, <a class="el" href="classmtgb_1_1TransformCP.html#a6aaf0d646171863988d398e8b06dfd31">mtgb::TransformCP</a>で再実装されています。</p>
 
 <p class="definition"> <a class="el" href="ComponentPool_8h_source.html">ComponentPool.h</a> の <a class="el" href="ComponentPool_8h_source.html#l00044">44</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   44</span>{}</div>

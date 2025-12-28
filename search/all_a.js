@@ -23,9 +23,10 @@ var searchData=
   ['jsonconverter_20',['JsonConverter',['../namespaceJsonConverter.html',1,'']]],
   ['jsonconverter_2ecpp_21',['JsonConverter.cpp',['../JsonConverter_8cpp.html',1,'']]],
   ['jsonconverter_2eh_22',['JsonConverter.h',['../JsonConverter_8h.html',1,'']]],
-  ['jump_5fapex_23',['JUMP_APEX',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0250ccda82757fa2f3a692226cf90b08',1,'mtgb::Camera']]],
-  ['jump_5fascending_24',['JUMP_ASCENDING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0244540a9bd3943416d31b86dde18a12',1,'mtgb::Camera']]],
-  ['jump_5fdescending_25',['JUMP_DESCENDING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea809e410f051d731545f04fa35e88d28c',1,'mtgb::Camera']]],
-  ['jumpheight_26',['jumpHeight',['../namespaceanonymous__namespace_02Player_8cpp_03.html#a60751bcf1b6255d04fd1f12e661351cf',1,'anonymous_namespace{Player.cpp}']]],
-  ['jumping_27',['JUMPING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea6de49bfda8068b7bc3b0c0e3d2e43134',1,'mtgb::Camera']]]
+  ['jump_23',['JUMP',['../classPlayer.html#ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b',1,'Player']]],
+  ['jump_5fapex_24',['JUMP_APEX',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0250ccda82757fa2f3a692226cf90b08',1,'mtgb::Camera']]],
+  ['jump_5fascending_25',['JUMP_ASCENDING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0244540a9bd3943416d31b86dde18a12',1,'mtgb::Camera']]],
+  ['jump_5fdescending_26',['JUMP_DESCENDING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea809e410f051d731545f04fa35e88d28c',1,'mtgb::Camera']]],
+  ['jumpheight_27',['jumpHeight',['../namespaceanonymous__namespace_02Player_8cpp_03.html#a60751bcf1b6255d04fd1f12e661351cf',1,'anonymous_namespace{Player.cpp}']]],
+  ['jumping_28',['JUMPING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea6de49bfda8068b7bc3b0c0e3d2e43134',1,'mtgb::Camera']]]
 ];

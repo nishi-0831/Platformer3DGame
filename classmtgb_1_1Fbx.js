@@ -3,6 +3,7 @@ var classmtgb_1_1Fbx =
     [ "Fbx", "classmtgb_1_1Fbx.html#a35e4efe044bb9cb70aaf95f59d101a03", null ],
     [ "~Fbx", "classmtgb_1_1Fbx.html#a9869ed5e7d3105a628534689ff8f47b1", null ],
     [ "Draw", "classmtgb_1_1Fbx.html#a350a58c96f55e2c15f1eeb188213b1e5", null ],
+    [ "GetAnimationController", "classmtgb_1_1Fbx.html#a6b02a66b44f2e9171da72e4c2632032e", null ],
     [ "GetFbxManager", "classmtgb_1_1Fbx.html#a773985f89e817b97604d5b43071b69c9", null ],
     [ "Initialize", "classmtgb_1_1Fbx.html#a31a0e0eeb67d2ef9fc2ce2418cf29454", null ],
     [ "Load", "classmtgb_1_1Fbx.html#a973291cbc71c68589200aa4c0c88270e", null ],

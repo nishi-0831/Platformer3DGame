@@ -13,6 +13,7 @@ var searchData=
   ['head_10',['head',['../structrefl_1_1detail_1_1head.html',1,'refl::detail']]],
   ['highlightenemy_11',['HighlightEnemy',['../classHighlightEnemy.html',1,'']]],
   ['hlslinclude_12',['HLSLInclude',['../structmtgb_1_1HLSLInclude.html',1,'mtgb']]],
-  ['httpclient_13',['HttpClient',['../classmtnet_1_1HttpClient.html',1,'mtnet']]],
-  ['httpheaderbuilder_14',['HttpHeaderBuilder',['../classmtnet_1_1HttpHeaderBuilder.html',1,'mtnet']]]
+  ['hpviewer_13',['HPViewer',['../classmtgb_1_1HPViewer.html',1,'mtgb']]],
+  ['httpclient_14',['HttpClient',['../classmtnet_1_1HttpClient.html',1,'mtnet']]],
+  ['httpheaderbuilder_15',['HttpHeaderBuilder',['../classmtnet_1_1HttpHeaderBuilder.html',1,'mtnet']]]
 ];

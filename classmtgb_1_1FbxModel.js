@@ -4,6 +4,7 @@ var classmtgb_1_1FbxModel =
     [ "~FbxModel", "classmtgb_1_1FbxModel.html#a0156d579a30758aeaee61102c4c1eeab", null ],
     [ "CheckNode", "classmtgb_1_1FbxModel.html#aeee0ddcee29e27e5df913cba1efeff18", null ],
     [ "Draw", "classmtgb_1_1FbxModel.html#a75b8ac3b4407d0eb88400267b1dd2f13", null ],
+    [ "GetAnimationController", "classmtgb_1_1FbxModel.html#a5fa0e848fe5d532fa6fe390a8bf49891", null ],
     [ "GetAnimBonePosition", "classmtgb_1_1FbxModel.html#adbe338c2f4ac140420bec57e90209d1a", null ],
     [ "GetBonePosition", "classmtgb_1_1FbxModel.html#a7772d9e985829ba551adbc57165befb5", null ],
     [ "GetFbxParts", "classmtgb_1_1FbxModel.html#a812d3185698e7e97930d107de6c245f6", null ],

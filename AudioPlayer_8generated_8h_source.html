@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('AudioPlayer_8generated_8h_source.html'
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    } \</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    friend void from_json(const nlohmann::json&amp; _j, AudioPlayer&amp; _target) \</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    { \</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        JsonConverter::Deserialize&lt;AudioHandle&gt;(_target.hAudio, _j.at(&quot;hAudio&quot;)); \</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        JsonConverter::Deserialize&lt;AudioHandle&gt;(_target.hAudio, _j,&quot;hAudio&quot;); \</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        _target.OnPostRestore(); \</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    } \</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    static std::string TypeName(){ return &quot;AudioPlayer&quot; ;} \</div>

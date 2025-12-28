@@ -1019,7 +1019,7 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 
 <p>シェーダの初期化処理 </p>
 
-<p><a class="el" href="classmtgb_1_1FbxParts.html#a76ca4751bdeb002e74dd3d5d2a4d671b">mtgb::FbxParts</a>, <a class="el" href="classmtgb_1_1Ground.html#a0fbf29a15ce040e6443c6dd723970618">mtgb::Ground</a>, <a class="el" href="classmtgb_1_1TerrainReader.html#adbfe923f4bd60515b1ccc7fb56c963de">mtgb::TerrainReader&lt; StageDataBit &gt;</a>で再実装されています。</p>
+<p><a class="el" href="classmtgb_1_1FbxParts.html#a76ca4751bdeb002e74dd3d5d2a4d671b">mtgb::FbxParts</a>, <a class="el" href="classmtgb_1_1Ground.html#a0fbf29a15ce040e6443c6dd723970618">mtgb::Ground</a>, <a class="el" href="classmtgb_1_1PlaneUVScroll.html#a0e6e9039fb155de75cd4417a56119532">mtgb::PlaneUVScroll</a>, <a class="el" href="classmtgb_1_1TerrainReader.html#adbfe923f4bd60515b1ccc7fb56c963de">mtgb::TerrainReader&lt; StageDataBit &gt;</a>で再実装されています。</p>
 
 <p class="definition"> <a class="el" href="IShader_8cpp_source.html">IShader.cpp</a> の <a class="el" href="IShader_8cpp_source.html#l00014">14</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   15</span>{</div>
@@ -1033,11 +1033,11 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="DirectX11Draw_8h_source.html#l00140">mtgb::DirectX11Draw::pDevice_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="FbxParts_8cpp_source.html#l00054">mtgb::FbxParts::Initialize()</a>, <a class="el" href="Ground_8cpp_source.html#l00030">mtgb::Ground::Initialize()</a>, <a class="el" href="TerrainReader_8h_source.html#l00174">mtgb::TerrainReader&lt; StageDataBit &gt;::Initialize()</a>, <a class="el" href="Image_8cpp_source.html#l00028">mtgb::Image::Load()</a>.</p>
+<p class="reference">参照元 <a class="el" href="FbxParts_8cpp_source.html#l00053">mtgb::FbxParts::Initialize()</a>, <a class="el" href="Ground_8cpp_source.html#l00030">mtgb::Ground::Initialize()</a>, <a class="el" href="PlaneUVScroll_8cpp_source.html#l00028">mtgb::PlaneUVScroll::Initialize()</a>, <a class="el" href="TerrainReader_8h_source.html#l00174">mtgb::TerrainReader&lt; StageDataBit &gt;::Initialize()</a>, <a class="el" href="Image_8cpp_source.html#l00028">mtgb::Image::Load()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IShader_add59a2eace0eecf37919bb05a769dc7b_icgraph.svg" width="1096" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IShader_add59a2eace0eecf37919bb05a769dc7b_icgraph.svg" width="1096" height="532"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1286,7 +1286,7 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classmtgb_1_1FbxParts.html#a2ebacdb10f1a362d0cc2c2e51d2b6548">mtgb::FbxParts</a>, <a class="el" href="classmtgb_1_1Ground.html#a343fc25025587146515bb43226f7ab9f">mtgb::Ground</a>で再実装されています。</p>
+<p><a class="el" href="classmtgb_1_1FbxParts.html#a2ebacdb10f1a362d0cc2c2e51d2b6548">mtgb::FbxParts</a>, <a class="el" href="classmtgb_1_1Ground.html#a343fc25025587146515bb43226f7ab9f">mtgb::Ground</a>, <a class="el" href="classmtgb_1_1PlaneUVScroll.html#a06253eda7a41d5b9e240a0dcf6e7addd">mtgb::PlaneUVScroll</a>で再実装されています。</p>
 
 <p class="definition"> <a class="el" href="IShader_8cpp_source.html">IShader.cpp</a> の <a class="el" href="IShader_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
@@ -1295,6 +1295,14 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 <div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="classmtgb_1_1IShader.html#acfa72729f876f52ada9160eafa3716ac">pConstantBuffer_</a>.Reset();</div>
 <div class="line"><span class="lineno">   26</span>}</div>
 </div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="PlaneUVScroll_8cpp_source.html#l00033">mtgb::PlaneUVScroll::Release()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IShader_a36db64430ae252fe0278b5be3849c506_icgraph.svg" width="387" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>

@@ -1,0 +1,843 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Game: mtgb::ImageRenderer クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classmtgb_1_1ImageRenderer.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classmtgb_1_1ImageRenderer-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">mtgb::ImageRenderer クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="ImageRenderer_8h_source.html">ImageRenderer.h</a>&quot;</code></p>
+<div class="dynheader">
+mtgb::ImageRenderer の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImageRenderer__inherit__graph.svg" width="768" height="1176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+mtgb::ImageRenderer 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImageRenderer__coll__graph.svg" width="1291" height="2779"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a4d48cdbe3ab7d92a0a73b29228f255d5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a4d48cdbe3ab7d92a0a73b29228f255d5">Pool</a> = <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a></td></tr>
+<tr class="separator:a4d48cdbe3ab7d92a0a73b29228f255d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a57ec5f03612fd96a584202f42eadc7fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#a57ec5f03612fd96a584202f42eadc7fd">ImageRenderer</a> ()</td></tr>
+<tr class="separator:a57ec5f03612fd96a584202f42eadc7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad00bb1e9ae443623de53bd624cc95a86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#ad00bb1e9ae443623de53bd624cc95a86">ImageRenderer</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:ad00bb1e9ae443623de53bd624cc95a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1bba7d2f37d19350f437c22442c5c20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#af1bba7d2f37d19350f437c22442c5c20">Render</a> () const override</td></tr>
+<tr class="memdesc:af1bba7d2f37d19350f437c22442c5c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画を行う  <br /></td></tr>
+<tr class="separator:af1bba7d2f37d19350f437c22442c5c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab04ba17a8b253e38ee751c2a3e37d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#a5ab04ba17a8b253e38ee751c2a3e37d9">CanRender</a> () const override</td></tr>
+<tr class="memdesc:a5ab04ba17a8b253e38ee751c2a3e37d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画が可能か否か  <br /></td></tr>
+<tr class="separator:a5ab04ba17a8b253e38ee751c2a3e37d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac287a500f1e162b7e6f75984b4c0b7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9">GameObjectLayerFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#aac287a500f1e162b7e6f75984b4c0b7d">GetLayer</a> () const override</td></tr>
+<tr class="memdesc:aac287a500f1e162b7e6f75984b4c0b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイヤーを返す  <br /></td></tr>
+<tr class="separator:aac287a500f1e162b7e6f75984b4c0b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecaeb2d199af3bd978a34238ae7f733a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#aecaeb2d199af3bd978a34238ae7f733a">Initialize</a> ()</td></tr>
+<tr class="separator:aecaeb2d199af3bd978a34238ae7f733a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735636df79e7cfd6336e9a97345e2b29"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a> () const</td></tr>
+<tr class="separator:a735636df79e7cfd6336e9a97345e2b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86fe7f4e0ab2a86787b52d34ac5b6ec8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISerializableObject.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8">OnPreSave</a> ()</td></tr>
+<tr class="separator:a86fe7f4e0ab2a86787b52d34ac5b6ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a657030a231a22470b5b09bd6e55a2c0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISerializableObject.html#a657030a231a22470b5b09bd6e55a2c0e">OnPostRestore</a> ()</td></tr>
+<tr class="separator:a657030a231a22470b5b09bd6e55a2c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a931ae7565817c83a4e3c5f9004c074d5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Get</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:a931ae7565817c83a4e3c5f9004c074d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0db1b0f0dbd3823a06ae854eacef41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a4e0db1b0f0dbd3823a06ae854eacef41">Get</a> (const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId, Args &amp;&amp;... _args)</td></tr>
+<tr class="separator:a4e0db1b0f0dbd3823a06ae854eacef41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07fa68485a5cf4425eebf1718c82e73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#ab07fa68485a5cf4425eebf1718c82e73">Reuse</a> (size_t _index, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="separator:ab07fa68485a5cf4425eebf1718c82e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:ab876d56d261db5c61d183b37f0ab49ef"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#ab876d56d261db5c61d183b37f0ab49ef">ImageRendererCP</a></td></tr>
+<tr class="separator:ab876d56d261db5c61d183b37f0ab49ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a463331948d351892356c0a42fd213d05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a619011839f99f1dc77148dee609d87c2">ImageHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">handle_</a></td></tr>
+<tr class="separator:a463331948d351892356c0a42fd213d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9417209e21f703c27c8e989e5505331"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEffekseer_1_1RectF.html">RectF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331">drawRect_</a></td></tr>
+<tr class="separator:aa9417209e21f703c27c8e989e5505331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9578e487c32d0162f6c052fd0aa47f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEffekseer_1_1RectF.html">RectF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#a6c9578e487c32d0162f6c052fd0aa47f">cutRect_</a></td></tr>
+<tr class="separator:a6c9578e487c32d0162f6c052fd0aa47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad419747dc057c34e50631b2c0f7fae60"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#ad419747dc057c34e50631b2c0f7fae60">rotationZ_</a></td></tr>
+<tr class="separator:ad419747dc057c34e50631b2c0f7fae60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51326a3833672aec9459508d81bf2716"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1UIParams.html">UIParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#a51326a3833672aec9459508d81bf2716">uiParams_</a></td></tr>
+<tr class="separator:a51326a3833672aec9459508d81bf2716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa863cc3abc1f971e1d12c75239a5a584"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9">GameObjectLayerFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImageRenderer.html#aa863cc3abc1f971e1d12c75239a5a584">layer_</a></td></tr>
+<tr class="separator:aa863cc3abc1f971e1d12c75239a5a584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed716499a289d6dd69c0d40b683142aa"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#aed716499a289d6dd69c0d40b683142aa">ComponentPoolT</a></td></tr>
+<tr class="separator:aed716499a289d6dd69c0d40b683142aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d6b5582bd4cc3eea5feb793ae19aa4"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a37d6b5582bd4cc3eea5feb793ae19aa4">ComponentPool&lt; ComponentT, ComponentPoolT &gt;</a></td></tr>
+<tr class="separator:a37d6b5582bd4cc3eea5feb793ae19aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a8aa4f5300c39f9f4705a587fd0a72639"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a></td></tr>
+<tr class="separator:a8aa4f5300c39f9f4705a587fd0a72639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="ImageRenderer_8h_source.html">ImageRenderer.h</a> の <a class="el" href="ImageRenderer_8h_source.html#l00017">17</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a4d48cdbe3ab7d92a0a73b29228f255d5" name="a4d48cdbe3ab7d92a0a73b29228f255d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d48cdbe3ab7d92a0a73b29228f255d5">&#9670;&#160;</a></span>Pool</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a> , <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &gt;::Pool =  <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a57ec5f03612fd96a584202f42eadc7fd" name="a57ec5f03612fd96a584202f42eadc7fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57ec5f03612fd96a584202f42eadc7fd">&#9670;&#160;</a></span>ImageRenderer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::ImageRenderer::ImageRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00004">4</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
+<div class="line"><span class="lineno">    6</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad00bb1e9ae443623de53bd624cc95a86" name="ad00bb1e9ae443623de53bd624cc95a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad00bb1e9ae443623de53bd624cc95a86">&#9670;&#160;</a></span>ImageRenderer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mtgb::ImageRenderer::ImageRenderer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00007">7</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>    : <a class="code hl_class" href="classmtgb_1_1IComponent.html">IComponent</a>{_entityId}</div>
+<div class="line"><span class="lineno">    9</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">handle_</a>{<a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">INVALID_HANDLE</a>}</div>
+<div class="line"><span class="lineno">   10</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa863cc3abc1f971e1d12c75239a5a584">layer_</a>{<a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>()}</div>
+<div class="line"><span class="lineno">   11</span>{</div>
+<div class="line"><span class="lineno">   12</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html"><div class="ttname"><a href="classmtgb_1_1IComponent.html">mtgb::IComponent</a></div><div class="ttdoc">ゲームオブジェクトにつけるコンポーネントのインタフェース</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00015">IComponent.h:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_a463331948d351892356c0a42fd213d05"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">mtgb::ImageRenderer::handle_</a></div><div class="ttdeci">ImageHandle handle_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00033">ImageRenderer.h:33</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_aa863cc3abc1f971e1d12c75239a5a584"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#aa863cc3abc1f971e1d12c75239a5a584">mtgb::ImageRenderer::layer_</a></div><div class="ttdeci">GameObjectLayerFlag layer_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00038">ImageRenderer.h:38</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a100fdeed4f1f4e5f27e7ffb97ee743ca"><div class="ttname"><a href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">mtgb::AllLayer</a></div><div class="ttdeci">GameObjectLayerFlag AllLayer()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectLayer_8cpp_source.html#l00007">GameObjectLayer.cpp:7</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a461c37884dafe5e26f7d9b0e2f97148b"><div class="ttname"><a href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a></div><div class="ttdeci">static const int32_t INVALID_HANDLE</div><div class="ttdoc">無効なハンドル値</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00045">Handlers.h:45</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a5ab04ba17a8b253e38ee751c2a3e37d9" name="a5ab04ba17a8b253e38ee751c2a3e37d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ab04ba17a8b253e38ee751c2a3e37d9">&#9670;&#160;</a></span>CanRender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mtgb::ImageRenderer::CanRender </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>描画が可能か否か </p>
+<dl class="section return"><dt>戻り値</dt><dd>可能ならtrue</dd></dl>
+
+<p><a class="el" href="classmtgb_1_1IRenderable.html#a4e8551bc91bebf3b092b65d817f76068">mtgb::IRenderable</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">handle_</a> != <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
+<div class="line"><span class="lineno">   22</span>}</div>
+<div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ImageRendererCP_8cpp_source.html#l00017">mtgb::ImageRendererCP::RenderLayer()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImageRenderer_a5ab04ba17a8b253e38ee751c2a3e37d9_icgraph.svg" width="404" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a931ae7565817c83a4e3c5f9004c074d5" name="a931ae7565817c83a4e3c5f9004c074d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a931ae7565817c83a4e3c5f9004c074d5">&#9670;&#160;</a></span>Get() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &amp; <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a> , <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &gt;::Get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId);</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e0db1b0f0dbd3823a06ae854eacef41" name="a4e0db1b0f0dbd3823a06ae854eacef41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0db1b0f0dbd3823a06ae854eacef41">&#9670;&#160;</a></span>Get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &amp; <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a> , <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &gt;::Get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>_args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId, std::forward&lt;Args&gt;(_args)...);</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a735636df79e7cfd6336e9a97345e2b29" name="a735636df79e7cfd6336e9a97345e2b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735636df79e7cfd6336e9a97345e2b29">&#9670;&#160;</a></span>GetEntityId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a> , <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &gt;::GetEntityId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>; }</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a8aa4f5300c39f9f4705a587fd0a72639"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">mtgb::IComponent&lt; ImageRendererCP, ImageRenderer &gt;::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00038">IComponent.h:38</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aac287a500f1e162b7e6f75984b4c0b7d" name="aac287a500f1e162b7e6f75984b4c0b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac287a500f1e162b7e6f75984b4c0b7d">&#9670;&#160;</a></span>GetLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9">GameObjectLayerFlag</a> mtgb::ImageRenderer::GetLayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>レイヤーを返す </p>
+<dl class="section return"><dt>戻り値</dt><dd></dd></dl>
+
+<p><a class="el" href="classmtgb_1_1IRenderable.html#a793729872ce00cc8d43de69abe99183b">mtgb::IRenderable</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa863cc3abc1f971e1d12c75239a5a584">layer_</a>;</div>
+<div class="line"><span class="lineno">   27</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="ImageRendererCP_8cpp_source.html#l00017">mtgb::ImageRendererCP::RenderLayer()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImageRenderer_aac287a500f1e162b7e6f75984b4c0b7d_icgraph.svg" width="404" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aecaeb2d199af3bd978a34238ae7f733a" name="aecaeb2d199af3bd978a34238ae7f733a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecaeb2d199af3bd978a34238ae7f733a">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a> , <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &gt;::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a657030a231a22470b5b09bd6e55a2c0e" name="a657030a231a22470b5b09bd6e55a2c0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a657030a231a22470b5b09bd6e55a2c0e">&#9670;&#160;</a></span>OnPostRestore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ISerializableObject::OnPostRestore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1RigidBody.html#a4b9cc1a76b69e187bab4ebe39ecd49fe">mtgb::RigidBody</a>, <a class="el" href="classmtgb_1_1AudioPlayer.html#aec4b41ff9a652d016eb474881192a132">mtgb::AudioPlayer</a>, <a class="el" href="classmtgb_1_1Collider.html#a24b5984ef9fa3127bf14f0e9c483482c">mtgb::Collider</a>, <a class="el" href="classmtgb_1_1Interpolator.html#adb172decee2741c5473b73a83c36e8f3">mtgb::Interpolator</a>, <a class="el" href="classmtgb_1_1MeshRenderer.html#a34771f773121e76108c53cd5b9a21f46">mtgb::MeshRenderer</a>, <a class="el" href="classmtgb_1_1Transform.html#a5ace1530f04c63eed66eba461800436d">mtgb::Transform</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="ISerializableObject_8h_source.html">ISerializableObject.h</a> の <a class="el" href="ISerializableObject_8h_source.html#l00006">6</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a86fe7f4e0ab2a86787b52d34ac5b6ec8" name="a86fe7f4e0ab2a86787b52d34ac5b6ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86fe7f4e0ab2a86787b52d34ac5b6ec8">&#9670;&#160;</a></span>OnPreSave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ISerializableObject::OnPreSave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmtgb_1_1Interpolator.html#a61f7a7f008cc862e4b74638250a1d241">mtgb::Interpolator</a>で再実装されています。</p>
+
+<p class="definition"> <a class="el" href="ISerializableObject_8h_source.html">ISerializableObject.h</a> の <a class="el" href="ISerializableObject_8h_source.html#l00005">5</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    5</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af1bba7d2f37d19350f437c22442c5c20" name="af1bba7d2f37d19350f437c22442c5c20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1bba7d2f37d19350f437c22442c5c20">&#9670;&#160;</a></span>Render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::ImageRenderer::Render </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>描画を行う </p>
+
+<p><a class="el" href="classmtgb_1_1IRenderable.html#aed145aa67c27f506fd9346c091ead156">mtgb::IRenderable</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00014">14</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>{</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a157c2546af7ac20d4828e7538f6bb468">Draw::Image</a>(<a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">handle_</a>, <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331">drawRect_</a>, <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a51326a3833672aec9459508d81bf2716">uiParams_</a>);</div>
+<div class="line"><span class="lineno">   17</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_a157c2546af7ac20d4828e7538f6bb468"><div class="ttname"><a href="classmtgb_1_1Draw.html#a157c2546af7ac20d4828e7538f6bb468">mtgb::Draw::Image</a></div><div class="ttdeci">static void Image(const ImageHandle _hImage, const RectF &amp;_draw, const RectF &amp;_cut, const float _rotationZ, const UIParams &amp;_uiParams=defaultUIParams_)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00066">Draw.cpp:66</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_a51326a3833672aec9459508d81bf2716"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#a51326a3833672aec9459508d81bf2716">mtgb::ImageRenderer::uiParams_</a></div><div class="ttdeci">UIParams uiParams_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00037">ImageRenderer.h:37</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_aa9417209e21f703c27c8e989e5505331"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331">mtgb::ImageRenderer::drawRect_</a></div><div class="ttdeci">RectF drawRect_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00034">ImageRenderer.h:34</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Draw_8cpp_source.html#l00066">mtgb::Draw::Image()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="ImageRendererCP_8cpp_source.html#l00017">mtgb::ImageRendererCP::RenderLayer()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImageRenderer_af1bba7d2f37d19350f437c22442c5c20_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImageRenderer_af1bba7d2f37d19350f437c22442c5c20_icgraph.svg" width="404" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab07fa68485a5cf4425eebf1718c82e73" name="ab07fa68485a5cf4425eebf1718c82e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab07fa68485a5cf4425eebf1718c82e73">&#9670;&#160;</a></span>Reuse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  * <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a> , <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &gt;::Reuse </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_entityId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Reuse(_index, _entityId);</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a37d6b5582bd4cc3eea5feb793ae19aa4" name="a37d6b5582bd4cc3eea5feb793ae19aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d6b5582bd4cc3eea5feb793ae19aa4">&#9670;&#160;</a></span>ComponentPool&lt; ComponentT, ComponentPoolT &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a> , <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &gt;::ComponentPool&lt; <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a> , <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a>  &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aed716499a289d6dd69c0d40b683142aa" name="aed716499a289d6dd69c0d40b683142aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed716499a289d6dd69c0d40b683142aa">&#9670;&#160;</a></span>ComponentPoolT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a> , <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &gt;<a class="el" href="classmtgb_1_1ImageRenderer.html#ab876d56d261db5c61d183b37f0ab49ef">::ImageRendererCP</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6c9578e487c32d0162f6c052fd0aa47f" name="a6c9578e487c32d0162f6c052fd0aa47f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9578e487c32d0162f6c052fd0aa47f">&#9670;&#160;</a></span>cutRect_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEffekseer_1_1RectF.html">RectF</a> mtgb::ImageRenderer::cutRect_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImageRenderer_8h_source.html">ImageRenderer.h</a> の <a class="el" href="ImageRenderer_8h_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa9417209e21f703c27c8e989e5505331" name="aa9417209e21f703c27c8e989e5505331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9417209e21f703c27c8e989e5505331">&#9670;&#160;</a></span>drawRect_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEffekseer_1_1RectF.html">RectF</a> mtgb::ImageRenderer::drawRect_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImageRenderer_8h_source.html">ImageRenderer.h</a> の <a class="el" href="ImageRenderer_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="HPViewer_8cpp_source.html#l00027">mtgb::HPViewer::Update()</a>.</p>
+
+</div>
+</div>
+<a id="a8aa4f5300c39f9f4705a587fd0a72639" name="a8aa4f5300c39f9f4705a587fd0a72639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa4f5300c39f9f4705a587fd0a72639">&#9670;&#160;</a></span>entityId_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a> , <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &gt;::entityId_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a463331948d351892356c0a42fd213d05" name="a463331948d351892356c0a42fd213d05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a463331948d351892356c0a42fd213d05">&#9670;&#160;</a></span>handle_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a619011839f99f1dc77148dee609d87c2">ImageHandle</a> mtgb::ImageRenderer::handle_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImageRenderer_8h_source.html">ImageRenderer.h</a> の <a class="el" href="ImageRenderer_8h_source.html#l00033">33</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="HPViewer_8cpp_source.html#l00004">mtgb::HPViewer::HPViewer()</a>.</p>
+
+</div>
+</div>
+<a id="ab876d56d261db5c61d183b37f0ab49ef" name="ab876d56d261db5c61d183b37f0ab49ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab876d56d261db5c61d183b37f0ab49ef">&#9670;&#160;</a></span>ImageRendererCP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend mtgb::ImageRenderer::ImageRendererCP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImageRenderer_8h_source.html">ImageRenderer.h</a> の <a class="el" href="ImageRenderer_8h_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa863cc3abc1f971e1d12c75239a5a584" name="aa863cc3abc1f971e1d12c75239a5a584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa863cc3abc1f971e1d12c75239a5a584">&#9670;&#160;</a></span>layer_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9">GameObjectLayerFlag</a> mtgb::ImageRenderer::layer_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImageRenderer_8h_source.html">ImageRenderer.h</a> の <a class="el" href="ImageRenderer_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad419747dc057c34e50631b2c0f7fae60" name="ad419747dc057c34e50631b2c0f7fae60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad419747dc057c34e50631b2c0f7fae60">&#9670;&#160;</a></span>rotationZ_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::ImageRenderer::rotationZ_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImageRenderer_8h_source.html">ImageRenderer.h</a> の <a class="el" href="ImageRenderer_8h_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a51326a3833672aec9459508d81bf2716" name="a51326a3833672aec9459508d81bf2716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51326a3833672aec9459508d81bf2716">&#9670;&#160;</a></span>uiParams_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmtgb_1_1UIParams.html">UIParams</a> mtgb::ImageRenderer::uiParams_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ImageRenderer_8h_source.html">ImageRenderer.h</a> の <a class="el" href="ImageRenderer_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="ImageRenderer_8h_source.html">ImageRenderer.h</a></li>
+<li><a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

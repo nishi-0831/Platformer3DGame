@@ -1,5 +1,9 @@
 var NAVTREEINDEX0 =
 {
+"ActorManager_8cpp.html":[7,0,5,1],
+"ActorManager_8cpp_source.html":[7,0,5,1],
+"ActorManager_8h.html":[7,0,5,2],
+"ActorManager_8h_source.html":[7,0,5,2],
 "AddComponentCommandGeneric_8h.html":[7,0,3,7],
 "AddComponentCommandGeneric_8h_source.html":[7,0,3,7],
 "AddComponentCommand_8cpp.html":[7,0,3,5],
@@ -112,12 +116,13 @@ var NAVTREEINDEX0 =
 "CameraSystem_8cpp_source.html":[7,0,3,30],
 "CameraSystem_8h.html":[7,0,3,31],
 "CameraSystem_8h_source.html":[7,0,3,31],
-"Camera_8cpp.html":[7,0,5,1],
-"Camera_8cpp.html#a7fc49b98bb22fa08268c1fd845e0ff1b":[7,0,5,1,1],
-"Camera_8cpp.html#ad1117b13bac2e41664c3325153423204":[7,0,5,1,0],
-"Camera_8cpp_source.html":[7,0,5,1],
-"Camera_8h.html":[7,0,5,2],
-"Camera_8h_source.html":[7,0,5,2],
+"Camera_8cpp.html":[7,0,5,3],
+"Camera_8cpp.html#a7f97394dc6d258a7eaec586ec56e98ac":[7,0,5,3,1],
+"Camera_8cpp.html#a7fc49b98bb22fa08268c1fd845e0ff1b":[7,0,5,3,2],
+"Camera_8cpp.html#ad1117b13bac2e41664c3325153423204":[7,0,5,3,0],
+"Camera_8cpp_source.html":[7,0,5,3],
+"Camera_8h.html":[7,0,5,4],
+"Camera_8h_source.html":[7,0,5,4],
 "CircleDetector_8cpp.html":[7,0,3,32],
 "CircleDetector_8cpp.html#a55735a172a253178e6e8d0a5c3035ec2":[7,0,3,32,0],
 "CircleDetector_8cpp_source.html":[7,0,3,32],
@@ -244,10 +249,5 @@ var NAVTREEINDEX0 =
 "DirectX11Manager_8cpp_source.html":[7,0,3,73],
 "DirectX11Manager_8h.html":[7,0,3,74],
 "DirectX11Manager_8h.html#ac17599842f3c193b028cc578098f8b93":[7,0,3,74,1],
-"DirectX11Manager_8h_source.html":[7,0,3,74],
-"DoubleWindow_8cpp.html":[7,0,3,75],
-"DoubleWindow_8cpp_source.html":[7,0,3,75],
-"DoubleWindow_8h.html":[7,0,3,76],
-"DoubleWindow_8h.html#ac17599842f3c193b028cc578098f8b93":[7,0,3,76,1],
-"DoubleWindow_8h_source.html":[7,0,3,76]
+"DirectX11Manager_8h_source.html":[7,0,3,74]
 };

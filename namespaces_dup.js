@@ -4,6 +4,7 @@ var namespaces_dup =
       [ "ASSETS_DIRECTORY_PATH", "namespaceanonymous__namespace_02AssetsManager_8cpp_03.html#a5b9e249f0827b20a5fdbcd03bea2b846", null ]
     ] ],
     [ "anonymous_namespace{Camera.cpp}", "namespaceanonymous__namespace_02Camera_8cpp_03.html", [
+      [ "NormalizeAngleRad", "namespaceanonymous__namespace_02Camera_8cpp_03.html#a7f97394dc6d258a7eaec586ec56e98ac", null ],
       [ "INIT_ANGLE", "namespaceanonymous__namespace_02Camera_8cpp_03.html#a7fc49b98bb22fa08268c1fd845e0ff1b", null ]
     ] ],
     [ "anonymous_namespace{CameraSystem.cpp}", "namespaceanonymous__namespace_02CameraSystem_8cpp_03.html", [
@@ -89,9 +90,13 @@ var namespaces_dup =
       [ "buf", "namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe", null ],
       [ "BUF_SIZE", "namespaceanonymous__namespace_02MTImGui_8cpp_03.html#afeab63832507a6dade154cdc3c64f1e9", null ]
     ] ],
+    [ "anonymous_namespace{PlaneUVScroll.cpp}", "namespaceanonymous__namespace_02PlaneUVScroll_8cpp_03.html", [
+      [ "kLightDir", "namespaceanonymous__namespace_02PlaneUVScroll_8cpp_03.html#af028c8dd5e1e47eb55dca7bd59ce38b7", null ]
+    ] ],
     [ "anonymous_namespace{Player.cpp}", "namespaceanonymous__namespace_02Player_8cpp_03.html", [
       [ "jumpHeight", "namespaceanonymous__namespace_02Player_8cpp_03.html#a60751bcf1b6255d04fd1f12e661351cf", null ],
-      [ "speed", "namespaceanonymous__namespace_02Player_8cpp_03.html#a88914f5c347464720a53233c06bf1e87", null ]
+      [ "speed", "namespaceanonymous__namespace_02Player_8cpp_03.html#a88914f5c347464720a53233c06bf1e87", null ],
+      [ "TAKE_DAMGE_AMOUNT", "namespaceanonymous__namespace_02Player_8cpp_03.html#a52904d259661699f7b1ec96ad3b4769d", null ]
     ] ],
     [ "anonymous_namespace{ResultScene.cpp}", "namespaceanonymous__namespace_02ResultScene_8cpp_03.html", [
       [ "draw", "namespaceanonymous__namespace_02ResultScene_8cpp_03.html#a07e3113c6df1bd1b7ae89f4f97353b3a", null ],

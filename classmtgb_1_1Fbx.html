@@ -112,13 +112,13 @@ $(document).ready(function(){initNavTree('classmtgb_1_1Fbx.html',''); initResiza
 <div class="dynheader">
 mtgb::Fbx の継承関係図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Fbx__inherit__graph.svg" width="260" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Fbx__inherit__graph.svg" width="260" height="551"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 mtgb::Fbx 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Fbx__coll__graph.svg" width="260" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Fbx__coll__graph.svg" width="260" height="551"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -147,6 +147,8 @@ mtgb::Fbx 連携図</div>
 <tr class="memitem:a973291cbc71c68589200aa4c0c88270e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Fbx.html#a973291cbc71c68589200aa4c0c88270e">Load</a> (const std::string &amp;_fileName)</td></tr>
 <tr class="memdesc:a973291cbc71c68589200aa4c0c88270e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fbxファイルを読み込みする  <br /></td></tr>
 <tr class="separator:a973291cbc71c68589200aa4c0c88270e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b02a66b44f2e9171da72e4c2632032e"><td class="memItemLeft" align="right" valign="top">static std::optional&lt; <a class="el" href="classmtgb_1_1FbxAnimationController.html">FbxAnimationController</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Fbx.html#a6b02a66b44f2e9171da72e4c2632032e">GetAnimationController</a> (<a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a> _hModel)</td></tr>
+<tr class="separator:a6b02a66b44f2e9171da72e4c2632032e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
@@ -284,6 +286,55 @@ mtgb::Fbx 連携図</div>
 
 </div>
 </div>
+<a id="a6b02a66b44f2e9171da72e4c2632032e" name="a6b02a66b44f2e9171da72e4c2632032e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b02a66b44f2e9171da72e4c2632032e">&#9670;&#160;</a></span>GetAnimationController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="classmtgb_1_1FbxAnimationController.html">FbxAnimationController</a> &gt; mtgb::Fbx::GetAnimationController </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">FBXModelHandle</a>&#160;</td>
+          <td class="paramname"><em>_hModel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Fbx_8cpp_source.html">Fbx.cpp</a> の <a class="el" href="Fbx_8cpp_source.html#l00074">74</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>{</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_function" href="classmtgb_1_1Fbx.html#a35e4efe044bb9cb70aaf95f59d101a03">Fbx</a>&amp; instance{ Game::System&lt;Fbx&gt;() };</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>((0 &lt; _hModel) &amp;&amp; (_hModel &lt;= instance.handleCounter_)</div>
+<div class="line"><span class="lineno">   79</span>        &amp;&amp; <span class="stringliteral">&quot;無効なハンドラ @Fbx::Draw&quot;</span>);</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(instance.pFbxModels_.count(_hModel) != 0</div>
+<div class="line"><span class="lineno">   82</span>        &amp;&amp; <span class="stringliteral">&quot;モデルが存在しない @Fbx::Draw&quot;</span>);</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> instance.pFbxModels_[_hModel]-&gt;GetAnimationController();</div>
+<div class="line"><span class="lineno">   84</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Fbx_html_a35e4efe044bb9cb70aaf95f59d101a03"><div class="ttname"><a href="classmtgb_1_1Fbx.html#a35e4efe044bb9cb70aaf95f59d101a03">mtgb::Fbx::Fbx</a></div><div class="ttdeci">Fbx()</div><div class="ttdef"><b>Definition:</b> <a href="Fbx_8cpp_source.html#l00009">Fbx.cpp:9</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00054">massert</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00120">PatrolChargerEnemy::InitializeState()</a>, <a class="el" href="Player_8cpp_source.html#l00073">Player::InitializeState()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Fbx_a6b02a66b44f2e9171da72e4c2632032e_icgraph.svg" width="682" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a773985f89e817b97604d5b43071b69c9" name="a773985f89e817b97604d5b43071b69c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a773985f89e817b97604d5b43071b69c9">&#9670;&#160;</a></span>GetFbxManager()</h2>
 
@@ -403,12 +454,11 @@ mtgb::Fbx 連携図</div>
 <div class="line"><span class="lineno">   47</span>    </div>
 <div class="line"><span class="lineno">   48</span>    <span class="keywordflow">return</span> handle;</div>
 <div class="line"><span class="lineno">   49</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1Fbx_html_a35e4efe044bb9cb70aaf95f59d101a03"><div class="ttname"><a href="classmtgb_1_1Fbx.html#a35e4efe044bb9cb70aaf95f59d101a03">mtgb::Fbx::Fbx</a></div><div class="ttdeci">Fbx()</div><div class="ttdef"><b>Definition:</b> <a href="Fbx_8cpp_source.html#l00009">Fbx.cpp:9</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a6d92d01c70f7be66651f2c2f73fc3710"><div class="ttname"><a href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">mtgb::FBXModelHandle</a></div><div class="ttdeci">int32_t FBXModelHandle</div><div class="ttdoc">FBXモデルのハンドル</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00028">Handlers.h:28</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="FbxModel_8cpp_source.html#l00023">mtgb::FbxModel::Load()</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00020">mtgb::MeshRenderer::OnChangeMeshFileName()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00030">mtgb::MeshRenderer::OnPostRestore()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="ColliderCP_8cpp_source.html#l00021">mtgb::ColliderCP::Start()</a>, <a class="el" href="TerrainReader_8h_source.html#l00134">mtgb::TerrainReader&lt; StageDataBit &gt;::TerrainReader()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00030">mtgb::MeshRenderer::OnChangeMeshFileName()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00052">mtgb::MeshRenderer::OnPostRestore()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="ColliderCP_8cpp_source.html#l00021">mtgb::ColliderCP::Start()</a>, <a class="el" href="TerrainReader_8h_source.html#l00134">mtgb::TerrainReader&lt; StageDataBit &gt;::TerrainReader()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">

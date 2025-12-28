@@ -2,7 +2,8 @@ var classmtgb_1_1Interpolator =
 [
     [ "Pool", "classmtgb_1_1Interpolator.html#a4d48cdbe3ab7d92a0a73b29228f255d5", null ],
     [ "Interpolator", "classmtgb_1_1Interpolator.html#a477aeba7bd914c858ea17007c3f70383", null ],
-    [ "Evaluate", "classmtgb_1_1Interpolator.html#a8f68a1a13b6c156c80385f8987957402", null ],
+    [ "CalculateRot", "classmtgb_1_1Interpolator.html#ae23ff0c42b07ee80d90b2399261dea62", null ],
+    [ "EvaluatePos", "classmtgb_1_1Interpolator.html#a87bc04ca20b228bedf8edeef9326db5f", null ],
     [ "Get", "classmtgb_1_1Interpolator.html#a931ae7565817c83a4e3c5f9004c074d5", null ],
     [ "Get", "classmtgb_1_1Interpolator.html#a4e0db1b0f0dbd3823a06ae854eacef41", null ],
     [ "GetEntityId", "classmtgb_1_1Interpolator.html#a735636df79e7cfd6336e9a97345e2b29", null ],

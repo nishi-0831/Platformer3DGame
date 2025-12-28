@@ -11,6 +11,7 @@ var ShaderType_8h =
       [ "Trail", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fdad518a06262ac68f1f006a4f802588130", null ],
       [ "Terrain", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda4ccfea7a25fae3c1d31555f0856d2b42", null ],
       [ "Box3D", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda171f0a41200dfd456bfe2c1f4818c74d", null ],
+      [ "Sea", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fdad2379e01a93b56ed8fdc81907f7bf8c0", null ],
       [ "Max", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda6a061313d22e51e0f25b7cd4dc065233", null ]
     ] ]
 ];

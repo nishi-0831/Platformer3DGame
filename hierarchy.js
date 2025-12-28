@@ -98,6 +98,7 @@ var hierarchy =
     [ "mtgb::FbxParts::ConstantBuffer", "structmtgb_1_1FbxParts_1_1ConstantBuffer.html", null ],
     [ "mtgb::Figure::ConstantBuffer", "structmtgb_1_1Figure_1_1ConstantBuffer.html", null ],
     [ "mtgb::Ground::ConstantBuffer", "structmtgb_1_1Ground_1_1ConstantBuffer.html", null ],
+    [ "mtgb::PlaneUVScroll::ConstantBuffer", "structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html", null ],
     [ "mtgb::Sprite::ConstantBuffer", "structmtgb_1_1Sprite_1_1ConstantBuffer.html", null ],
     [ "refl::trait::contains< typename, typename >", "structrefl_1_1trait_1_1contains.html", null ],
     [ "refl::trait::contains_base< typename, typename >", "structrefl_1_1trait_1_1contains__base.html", null ],
@@ -153,9 +154,11 @@ var hierarchy =
         [ "Player", "classPlayer.html", null ],
         [ "ScoreItem", "classScoreItem.html", null ],
         [ "ScoreViewer", "classScoreViewer.html", null ],
+        [ "SeaPlane", "classSeaPlane.html", null ],
         [ "TimeLimit", "classTimeLimit.html", null ],
         [ "mtgb::Box3D", "classmtgb_1_1Box3D.html", null ],
         [ "mtgb::Camera", "classmtgb_1_1Camera.html", null ],
+        [ "mtgb::HPViewer", "classmtgb_1_1HPViewer.html", null ],
         [ "mtgb::TextBox", "classmtgb_1_1TextBox.html", null ]
       ] ]
     ] ],
@@ -194,6 +197,8 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "mtgb::FbxAnimationClip", "structmtgb_1_1FbxAnimationClip.html", null ],
+    [ "mtgb::FbxAnimationController", "classmtgb_1_1FbxAnimationController.html", null ],
     [ "refl::attr::usage::field", "structrefl_1_1attr_1_1usage_1_1field.html", [
       [ "refl::attr::usage::member", "structrefl_1_1attr_1_1usage_1_1member.html", [
         [ "Range< T >", "structRange.html", null ],
@@ -278,6 +283,10 @@ var hierarchy =
     [ "refl::detail::head< T,... >", "structrefl_1_1detail_1_1head.html", null ],
     [ "mtnet::HttpClient", "classmtnet_1_1HttpClient.html", null ],
     [ "mtnet::HttpHeaderBuilder", "classmtnet_1_1HttpHeaderBuilder.html", null ],
+    [ "IActor", "classIActor.html", [
+      [ "PatrolChargerEnemy", "classPatrolChargerEnemy.html", null ],
+      [ "Player", "classPlayer.html", null ]
+    ] ],
     [ "mtgb::ICamera", "classmtgb_1_1ICamera.html", [
       [ "mtgb::ImGuiEditorCamera", "classmtgb_1_1ImGuiEditorCamera.html", null ]
     ] ],
@@ -286,16 +295,15 @@ var hierarchy =
       [ "mtgb::CommandHistoryManager", "classmtgb_1_1CommandHistoryManager.html", null ],
       [ "mtgb::NamedCommandHistory", "classmtgb_1_1NamedCommandHistory.html", null ]
     ] ],
-    [ "mtgb::IComponent< ComponentPoolT, ComponentT >", "classmtgb_1_1IComponent.html", [
-      [ "mtgb::StatefulComponent< TextRenderer, TextRendererCP, TextRendererData >", "classmtgb_1_1StatefulComponent.html", [
-        [ "mtgb::TextRenderer", "classmtgb_1_1TextRenderer.html", null ]
-      ] ]
-    ] ],
+    [ "mtgb::IComponent< ComponentPoolT, ComponentT >", "classmtgb_1_1IComponent.html", null ],
     [ "mtgb::IComponent< AudioPlayerCP, AudioPlayer >", "classmtgb_1_1IComponent.html", [
       [ "mtgb::AudioPlayer", "classmtgb_1_1AudioPlayer.html", null ]
     ] ],
     [ "mtgb::IComponent< ColliderCP, Collider >", "classmtgb_1_1IComponent.html", [
       [ "mtgb::Collider", "classmtgb_1_1Collider.html", null ]
+    ] ],
+    [ "mtgb::IComponent< ImageRendererCP, ImageRenderer >", "classmtgb_1_1IComponent.html", [
+      [ "mtgb::ImageRenderer", "classmtgb_1_1ImageRenderer.html", null ]
     ] ],
     [ "mtgb::IComponent< InterpolatorCP, Interpolator >", "classmtgb_1_1IComponent.html", [
       [ "mtgb::Interpolator", "classmtgb_1_1Interpolator.html", null ]
@@ -309,7 +317,9 @@ var hierarchy =
     [ "mtgb::IComponent< TComponentPool, TDerived >", "classmtgb_1_1IComponent.html", [
       [ "mtgb::StatefulComponent< TDerived, TComponentPool, TState >", "classmtgb_1_1StatefulComponent.html", null ]
     ] ],
-    [ "mtgb::IComponent< TextRendererCP, TextRenderer >", "classmtgb_1_1IComponent.html", null ],
+    [ "mtgb::IComponent< TextRendererCP, TextRenderer >", "classmtgb_1_1IComponent.html", [
+      [ "mtgb::TextRenderer", "classmtgb_1_1TextRenderer.html", null ]
+    ] ],
     [ "mtgb::IComponent< TransformCP, Transform >", "classmtgb_1_1IComponent.html", [
       [ "mtgb::Transform", "classmtgb_1_1Transform.html", null ]
     ] ],
@@ -322,6 +332,9 @@ var hierarchy =
       ] ],
       [ "mtgb::ComponentPool< Collider, ColliderCP >", "classmtgb_1_1ComponentPool.html", [
         [ "mtgb::ColliderCP", "classmtgb_1_1ColliderCP.html", null ]
+      ] ],
+      [ "mtgb::ComponentPool< ImageRenderer, ImageRendererCP >", "classmtgb_1_1ComponentPool.html", [
+        [ "mtgb::ImageRendererCP", "classmtgb_1_1ImageRendererCP.html", null ]
       ] ],
       [ "mtgb::ComponentPool< Interpolator, InterpolatorCP >", "classmtgb_1_1ComponentPool.html", [
         [ "mtgb::InterpolatorCP", "classmtgb_1_1InterpolatorCP.html", null ]
@@ -463,6 +476,7 @@ var hierarchy =
       [ "Goal", "classGoal.html", null ],
       [ "PatrolChargerEnemy", "classPatrolChargerEnemy.html", null ],
       [ "Player", "classPlayer.html", null ],
+      [ "SeaPlane", "classSeaPlane.html", null ],
       [ "mtgb::Box3D", "classmtgb_1_1Box3D.html", null ],
       [ "mtgb::ImGuiEditor", "classmtgb_1_1ImGuiEditor.html", null ],
       [ "mtgb::ImGuiEditorCamera", "classmtgb_1_1ImGuiEditorCamera.html", null ],
@@ -676,10 +690,12 @@ var hierarchy =
       [ "EffekseerRenderer::SingleFrameMemoryPool", "classEffekseerRenderer_1_1SingleFrameMemoryPool.html", null ]
     ] ],
     [ "mtgb::IRenderable", "classmtgb_1_1IRenderable.html", [
+      [ "mtgb::ImageRenderer", "classmtgb_1_1ImageRenderer.html", null ],
       [ "mtgb::MeshRenderer", "classmtgb_1_1MeshRenderer.html", null ],
       [ "mtgb::TextRenderer", "classmtgb_1_1TextRenderer.html", null ]
     ] ],
     [ "mtgb::IRenderableCP", "classmtgb_1_1IRenderableCP.html", [
+      [ "mtgb::ImageRendererCP", "classmtgb_1_1ImageRendererCP.html", null ],
       [ "mtgb::MeshRendererCP", "classmtgb_1_1MeshRendererCP.html", null ],
       [ "mtgb::TextRendererCP", "classmtgb_1_1TextRendererCP.html", null ]
     ] ],
@@ -701,24 +717,29 @@ var hierarchy =
     [ "ISerializableObject", "classISerializableObject.html", [
       [ "mtgb::AudioPlayer", "classmtgb_1_1AudioPlayer.html", null ],
       [ "mtgb::Collider", "classmtgb_1_1Collider.html", null ],
+      [ "mtgb::ImageRenderer", "classmtgb_1_1ImageRenderer.html", null ],
       [ "mtgb::Interpolator", "classmtgb_1_1Interpolator.html", null ],
       [ "mtgb::MeshRenderer", "classmtgb_1_1MeshRenderer.html", null ],
       [ "mtgb::RigidBody", "classmtgb_1_1RigidBody.html", null ],
+      [ "mtgb::TextRenderer", "classmtgb_1_1TextRenderer.html", null ],
       [ "mtgb::Transform", "classmtgb_1_1Transform.html", null ]
     ] ],
     [ "mtgb::IShader", "classmtgb_1_1IShader.html", [
       [ "mtgb::FbxParts", "classmtgb_1_1FbxParts.html", null ],
       [ "mtgb::Figure", "classmtgb_1_1Figure.html", null ],
       [ "mtgb::Ground", "classmtgb_1_1Ground.html", null ],
+      [ "mtgb::PlaneUVScroll", "classmtgb_1_1PlaneUVScroll.html", null ],
       [ "mtgb::Sprite", "classmtgb_1_1Sprite.html", null ],
       [ "mtgb::TerrainReader< StageDataBit >", "classmtgb_1_1TerrainReader.html", null ]
     ] ],
     [ "ISystem", null, [
+      [ "ActorManager", "classActorManager.html", null ],
       [ "RankingManager", "classRankingManager.html", null ]
     ] ],
     [ "mtgb::ISystem", "classmtgb_1_1ISystem.html", [
       [ "mtgb::ComponentPool< AudioPlayer, AudioPlayerCP >", "classmtgb_1_1ComponentPool.html", null ],
       [ "mtgb::ComponentPool< Collider, ColliderCP >", "classmtgb_1_1ComponentPool.html", null ],
+      [ "mtgb::ComponentPool< ImageRenderer, ImageRendererCP >", "classmtgb_1_1ComponentPool.html", null ],
       [ "mtgb::ComponentPool< Interpolator, InterpolatorCP >", "classmtgb_1_1ComponentPool.html", null ],
       [ "mtgb::ComponentPool< MeshRenderer, MeshRendererCP >", "classmtgb_1_1ComponentPool.html", null ],
       [ "mtgb::ComponentPool< RigidBody, RigidBodyCP >", "classmtgb_1_1ComponentPool.html", null ],
@@ -959,9 +980,6 @@ var hierarchy =
     ] ],
     [ "text_layout_order", "structtext__layout__order.html", null ],
     [ "mtgb::TextLayoutData", "structmtgb_1_1TextLayoutData.html", null ],
-    [ "mtgb::TextRendererData", "structmtgb_1_1TextRendererData.html", [
-      [ "mtgb::StatefulComponent< TextRenderer, TextRendererCP, TextRendererData >", "classmtgb_1_1StatefulComponent.html", null ]
-    ] ],
     [ "mtgb::Texture2D", "classmtgb_1_1Texture2D.html", null ],
     [ "LLGI::TextureInitializationParameter", "structLLGI_1_1TextureInitializationParameter.html", null ],
     [ "Effekseer::Backend::TextureParameter", "structEffekseer_1_1Backend_1_1TextureParameter.html", null ],
@@ -969,6 +987,7 @@ var hierarchy =
     [ "EffekseerRendererDX11::TextureProperty", "structEffekseerRendererDX11_1_1TextureProperty.html", null ],
     [ "EffekseerRendererDX12::TextureProperty", "structEffekseerRendererDX12_1_1TextureProperty.html", null ],
     [ "EffekseerRendererGL::TextureProperty", "structEffekseerRendererGL_1_1TextureProperty.html", null ],
+    [ "mtgb::PlaneUVScroll::TimeBuffer", "structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html", null ],
     [ "refl::detail::transfer_const< T, U >", "structrefl_1_1detail_1_1transfer__const.html", null ],
     [ "refl::detail::transfer_const< T, transfer_volatile< T, U >::type >", "structrefl_1_1detail_1_1transfer__const.html", [
       [ "refl::detail::transfer_cv< T, U >", "structrefl_1_1detail_1_1transfer__cv.html", null ]
@@ -1041,12 +1060,12 @@ var hierarchy =
     [ "mtgb::FbxParts::Vertex", "structmtgb_1_1FbxParts_1_1Vertex.html", null ],
     [ "mtgb::Figure::Vertex", "structmtgb_1_1Figure_1_1Vertex.html", null ],
     [ "mtgb::Ground::Vertex", "structmtgb_1_1Ground_1_1Vertex.html", null ],
+    [ "mtgb::PlaneUVScroll::Vertex", "structmtgb_1_1PlaneUVScroll_1_1Vertex.html", null ],
     [ "mtgb::Sprite::Vertex", "structmtgb_1_1Sprite_1_1Vertex.html", null ],
     [ "VERTEX_CONSTANT_BUFFER_DX11", "structVERTEX__CONSTANT__BUFFER__DX11.html", null ],
     [ "Effekseer::Backend::VertexLayoutElement", "structEffekseer_1_1Backend_1_1VertexLayoutElement.html", null ],
     [ "GraphEditor::ViewState", "structGraphEditor_1_1ViewState.html", null ],
     [ "mtgb::WaveData", "structmtgb_1_1WaveData.html", null ],
-    [ "mtgb::FbxParts::Weight", "structmtgb_1_1FbxParts_1_1Weight.html", null ],
     [ "LLGI::Window", "classLLGI_1_1Window.html", null ],
     [ "mtgb::WindowConfig", "structmtgb_1_1WindowConfig.html", null ],
     [ "mtgb::WindowContextResource", "classmtgb_1_1WindowContextResource.html", [

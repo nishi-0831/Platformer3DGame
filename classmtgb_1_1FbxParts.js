@@ -5,7 +5,6 @@ var classmtgb_1_1FbxParts =
     [ "ConstantBuffer", "structmtgb_1_1FbxParts_1_1ConstantBuffer.html", "structmtgb_1_1FbxParts_1_1ConstantBuffer" ],
     [ "Material", "structmtgb_1_1FbxParts_1_1Material.html", "structmtgb_1_1FbxParts_1_1Material" ],
     [ "Vertex", "structmtgb_1_1FbxParts_1_1Vertex.html", "structmtgb_1_1FbxParts_1_1Vertex" ],
-    [ "Weight", "structmtgb_1_1FbxParts_1_1Weight.html", "structmtgb_1_1FbxParts_1_1Weight" ],
     [ "FbxParts", "classmtgb_1_1FbxParts.html#a455955eca54b84ae41c62313879731c8", null ],
     [ "~FbxParts", "classmtgb_1_1FbxParts.html#a381a781dfe7a40961b0b5be900e9c424", null ],
     [ "Draw", "classmtgb_1_1FbxParts.html#ac815823ba32d88817b7bd10b739945d6", null ],
@@ -30,8 +29,8 @@ var classmtgb_1_1FbxParts =
     [ "TryGetBonePosition", "classmtgb_1_1FbxParts.html#a17a7e481e5d26637ddd3cf89428b0f30", null ],
     [ "TryGetBonePositionAtNow", "classmtgb_1_1FbxParts.html#a05b2d9f529cfc1045075ee060b0c4487", null ],
     [ "boneCount_", "classmtgb_1_1FbxParts.html#a9bf9fad8382f5a25343682446d7e7297", null ],
-    [ "boneMatrices_", "classmtgb_1_1FbxParts.html#a78b0cc993d842b425f6439ea8dbc4c13", null ],
     [ "boneNamePair_", "classmtgb_1_1FbxParts.html#aae0fba41d4ce3eb2bcf4957bbb10df6f", null ],
+    [ "bones_", "classmtgb_1_1FbxParts.html#a97b6ac2916c9bbb93dc80f8682ed94f7", null ],
     [ "currentTime_", "classmtgb_1_1FbxParts.html#a990a152cad3970b77cba450cca3ff046", null ],
     [ "DirectX11Draw", "classmtgb_1_1FbxParts.html#a2821cad5959223883d09220781ece047", null ],
     [ "fbxToWorldScaleFactor_", "classmtgb_1_1FbxParts.html#a61462899106091aefd1f92e288e20577", null ],
@@ -39,7 +38,6 @@ var classmtgb_1_1FbxParts =
     [ "indexCount_", "classmtgb_1_1FbxParts.html#a53cab168c94bf1180c4b2d27f6380e59", null ],
     [ "materialCount_", "classmtgb_1_1FbxParts.html#abcbd5a3443c9c5ef018f6cf7ce02347f", null ],
     [ "pBoneConstantBuffer_", "classmtgb_1_1FbxParts.html#ac2b44b01edaf7740990b40343921cb77", null ],
-    [ "pBones_", "classmtgb_1_1FbxParts.html#a582941238093848310ed93a82d8bed0d", null ],
     [ "pConstantBuffer_", "classmtgb_1_1FbxParts.html#acfa72729f876f52ada9160eafa3716ac", null ],
     [ "pIndexBuffer_", "classmtgb_1_1FbxParts.html#aa684283886d8b16b40a26c0f7f9d2c69", null ],
     [ "pMaterial_", "classmtgb_1_1FbxParts.html#a49119504bc235a618cf7c102db8844bb", null ],
@@ -53,7 +51,6 @@ var classmtgb_1_1FbxParts =
     [ "pSkin_", "classmtgb_1_1FbxParts.html#aea98c37cebaa3e185a4668bbc849b96e", null ],
     [ "pVertexBuffer_", "classmtgb_1_1FbxParts.html#a1ca0458701c1f244741b2eec2035e529", null ],
     [ "pVertexes_", "classmtgb_1_1FbxParts.html#adaff9dd7bb6f471ea4900c4166fcb3ad", null ],
-    [ "pWeights_", "classmtgb_1_1FbxParts.html#a2250d227175ef0f541db62a3dabb3356", null ],
     [ "unitScaleFactor_", "classmtgb_1_1FbxParts.html#a5d7def2c53aeb2b9f5967f85d86b9abb", null ],
     [ "vertexCount_", "classmtgb_1_1FbxParts.html#a539e9d3e0bea5224d38edaf510529137", null ]
 ];

@@ -22,7 +22,8 @@ var searchData=
   ['helpmarker_19',['HelpMarker',['../imgui__demo_8cpp.html#ae82388701c37c8cbb88a0304ca0f033b',1,'imgui_demo.cpp']]],
   ['highlight_20',['Highlight',['../classHighlightEnemy.html#af7f69a378c89f91950f6356452ce6e72',1,'HighlightEnemy']]],
   ['highlightenemy_21',['HighlightEnemy',['../classHighlightEnemy.html#a2546fda38982b0ff04e00232c6961b60',1,'HighlightEnemy']]],
-  ['hsv_22',['HSV',['../structImColor.html#ac8cb52119648523038818a613becf010',1,'ImColor']]],
-  ['httpclient_23',['HttpClient',['../classmtnet_1_1HttpClient.html#a5e26767511ea4788d00b6b739fe4c578',1,'mtnet::HttpClient']]],
-  ['httpheaderbuilder_24',['HttpHeaderBuilder',['../classmtnet_1_1HttpHeaderBuilder.html#a7d2297bd48ef6bf15db973a004e6c244',1,'mtnet::HttpHeaderBuilder']]]
+  ['hpviewer_22',['HPViewer',['../classmtgb_1_1HPViewer.html#a442aad69f7ceb5eee45c60a759e6b959',1,'mtgb::HPViewer']]],
+  ['hsv_23',['HSV',['../structImColor.html#ac8cb52119648523038818a613becf010',1,'ImColor']]],
+  ['httpclient_24',['HttpClient',['../classmtnet_1_1HttpClient.html#a5e26767511ea4788d00b6b739fe4c578',1,'mtnet::HttpClient']]],
+  ['httpheaderbuilder_25',['HttpHeaderBuilder',['../classmtnet_1_1HttpHeaderBuilder.html#a7d2297bd48ef6bf15db973a004e6c244',1,'mtnet::HttpHeaderBuilder']]]
 ];

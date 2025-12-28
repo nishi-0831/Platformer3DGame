@@ -31,6 +31,7 @@ var classmtgb_1_1Draw =
     [ "Model", "classmtgb_1_1Draw.html#a7f104ebd8c1f1f3f4feb97aa8b6e62b6", null ],
     [ "OBJModel", "classmtgb_1_1Draw.html#a6c13f2b7ea296d14a9314569079dd061", null ],
     [ "Release", "classmtgb_1_1Draw.html#aa2823e5390468dfc47213b845c55d3ac", null ],
+    [ "SeaUVScroll", "classmtgb_1_1Draw.html#a3cb5ac08e794862c40f48e78bc028886", null ],
     [ "SetShaderOnce", "classmtgb_1_1Draw.html#a9b63b6fe736ad786997fbbefb880583d", null ],
     [ "Text", "classmtgb_1_1Draw.html#afd2da608b8ae2ab0d37ba37cc9d81e22", null ],
     [ "Update", "classmtgb_1_1Draw.html#a365d8262283c1a9007d2b01dcaf8e677", null ],
@@ -42,5 +43,6 @@ var classmtgb_1_1Draw =
     [ "pFbxModel_", "classmtgb_1_1Draw.html#a1788891c93c734c617b85c5ab0025f7c", null ],
     [ "pFigure_", "classmtgb_1_1Draw.html#ae19f5010072b57705d3b07010e284d72", null ],
     [ "pGround_", "classmtgb_1_1Draw.html#a1623c55bbc5647b809bfd0a7ddf14c9a", null ],
+    [ "pSeaPlane_", "classmtgb_1_1Draw.html#a612bedd03956982f4a65b0b2f17f4ef0", null ],
     [ "uiDrawCommands_", "classmtgb_1_1Draw.html#a314f12789d14f9d3b5d1420ca579d3b1", null ]
 ];

@@ -42,6 +42,7 @@ var classmtgb_1_1Collider =
     [ "hBoxModel_", "classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae", null ],
     [ "hSphereModel_", "classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096", null ],
     [ "isStatic_", "classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479", null ],
+    [ "isTrigger_", "classmtgb_1_1Collider.html#ae3cdd36ffab49d607691ce819c169b10", null ],
     [ "onColldiersPrev_", "classmtgb_1_1Collider.html#a6f0b1e752f3c817dd359aa296150c998", null ],
     [ "onColliders_", "classmtgb_1_1Collider.html#aed009e13fbc5e0eb0b75eb4f9fe2ca8e", null ],
     [ "pTransform_", "classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a", null ],
