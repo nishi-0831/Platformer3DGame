@@ -69,6 +69,8 @@ private:
 	float chargeTime_;
 	// 衝突後の待ち時間
 	float waitTimeAfterCharge_;
+	// 与えるダメージ数
+	int takeDamageNum_;
 	// --------------------
 	
 	// ------歩き状態-----
@@ -82,4 +84,7 @@ private:
 	// 次に遷移する状態
 	STATE nextState_;
 	// -------------------
+
+	// 踏みつけたアクターに加える力
+	float onStompedBounce_;
 };

@@ -29,7 +29,7 @@ void mtgb::RigidBody::UpdateVelocity()
 		velocity_ += Vector3::Up() * GRAVITY * Time::DeltaTimeF();
 	}
 	pTransform_->position += velocity_ * Time::DeltaTimeF();
-	if (velocity_.y > 0.0f)
+	if (FLT_EPSILON <= std::abs(velocity_.y))
 	{
 		isGround_ = false;
 	}
@@ -38,7 +38,7 @@ void mtgb::RigidBody::UpdateVelocity()
 void mtgb::RigidBody::OnGround()
 {
 	isGround_ = true;
-	velocity_.y = 0.0f;
+	velocity_.y = (std::max)(velocity_.y, 0.0f);
 }
 
 void mtgb::RigidBody::OnCollisionEnter(const std::function<void(const EntityId)>& _onHit)

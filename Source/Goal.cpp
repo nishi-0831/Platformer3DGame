@@ -14,7 +14,7 @@ Goal::Goal()
     pCollider_->colliderType_ = ColliderType::TYPE_AABB;
     pCollider_->isStatic_ = false;
     pCollider_->SetExtents(pTransform_->scale * 0.5f);
-    pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
+    pMeshRenderer_->meshFileName = "Model/Goal.fbx";
     pMeshRenderer_->SetMesh(Fbx::Load(pMeshRenderer_->meshFileName));
     pMeshRenderer_->layer = AllLayer();
     pMeshRenderer_->shaderType = ShaderType::FbxParts;
@@ -45,8 +45,20 @@ void Goal::Start()
             {
                 Game::System<StageManger>().ClearCurrentStage();
                 Game::System<SceneSystem>().Move<ResultScene>();
+                if (auto effect = pEffect_.lock())
+                {
+                    effect->destroyMe = true;
+                    effect->isLoop = true;
+                }
             }
         });
+
+    Matrix4x4 mat;
+    pTransform_->GenerateWorldMatrix(&mat);
+    EffectParameters params;
+    params.isLoop = true;
+    params.worldMat = mat;
+    pEffect_ = Game::System<EffectManager>().Play("Treasure", params);
 }
 
 void Goal::Draw() const

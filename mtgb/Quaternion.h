@@ -40,7 +40,10 @@ namespace mtgb
 		{
 			v = _v;
 		}
-
+		Quaternion(const DirectX::XMFLOAT4& _v)
+		{
+			v = DirectX::XMLoadFloat4(&_v);
+		}
 		/// <summary>
 		/// ’PˆÊlŒ³”‚ğæ“¾
 		/// </summary>

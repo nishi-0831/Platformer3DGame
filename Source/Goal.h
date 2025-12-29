@@ -18,5 +18,5 @@ private:
 	RigidBody* pRigidBody_;
 	MeshRenderer* pMeshRenderer_;
 	static unsigned int generateCounter_;
-
+	std::weak_ptr<EffectParameters> pEffect_;
 };

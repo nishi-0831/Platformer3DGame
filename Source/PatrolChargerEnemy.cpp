@@ -18,12 +18,15 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	, waitTimeTransitionCharge_{1.0f}
 	, waitTime_{ 3.0f }
 	, chargeSpeed_{ 4.0f }
-	, chargeTime_{5.0f}
-	, walkAnimSpeed_{0.5f}
-	, waitTimeAfterCharge_{2.0f}
+	, chargeTime_{ 5.0f }
+	, takeDamageNum_{1}
+	, walkAnimSpeed_{ 0.5f }
+	, waitTimeAfterCharge_{ 2.0f }
 	, targetEntityId_{ INVALID_ENTITY }
 	, returnToPatrolSpeed_{ 2.0f }
+	, onStompedBounce_{ 5.0f }
 {
+	tag_ = GameObjectTag::Enemy;
 	pMeshRenderer_->meshFileName = "Model/GolemAnim.fbx";
 	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer = AllLayer();
@@ -109,13 +112,17 @@ void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 	Matrix4x4 mat = DirectX::XMMatrixTranslation(effectPos.x,effectPos.y,effectPos.z);
 	params.worldMat = mat;
 	Game::System<EffectManager>().Play("Stomp", params);
+
+	EntityId id = _pOther->GetId();
+	RigidBody& otherRigidBody = RigidBody::Get(id);
+	otherRigidBody.velocity_.y += onStompedBounce_;
 }
 
 void PatrolChargerEnemy::OnHitSide(IActor* _pOther)
 {
 	if (state_.Current() == STATE::CHARGE)
 	{
-		_pOther->TakeDamage(1);
+		_pOther->TakeDamage(takeDamageNum_);
 	}
 }
 

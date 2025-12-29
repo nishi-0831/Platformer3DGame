@@ -8,8 +8,8 @@ ScoreItem::ScoreItem()
 	, pTransform_{ Component<Transform>() }
 	, pCollider_{ Component<Collider>() }
 	, pRigidBody_{ Component<RigidBody>() }
-	, pMeshRenderer_{ Component<MeshRenderer>()}
-	, addScore_{100}
+	, pMeshRenderer_{ Component<MeshRenderer>() }
+	, addScore_{ 100 }
 {
 	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
 	pCollider_->isStatic_ = false;
@@ -27,6 +27,8 @@ ScoreItem::ScoreItem()
 				pTransform_->GenerateWorldMatrix(&worldMat);
 				params.worldMat = worldMat;
 				Game::System<EffectManager>().Play("ScoreItem", params);
+
+				Audio::PlayOneShotFile("Sound/ItemGetSound.mp3");
 				DestroyMe();
 			}
 		});

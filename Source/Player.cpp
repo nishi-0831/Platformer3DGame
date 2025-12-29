@@ -50,15 +50,6 @@ Player::~Player()
 
 void Player::Update()
 {
-	if (InputUtil::GetKeyDown(KeyCode::O))
-	{
-		EffectParameters params;
-		params.isLoop = false;
-		Matrix4x4 mat;
-		pTransform_->GenerateWorldMatrix(&mat);
-		params.worldMat = mat;
-		Game::System<EffectManager>().Play("Stomp", params);
-	}
 	if (state_.Current() != STATE::DYING)
 	{
 		UpdatePosition();
@@ -67,7 +58,6 @@ void Player::Update()
 			if (pRigidBody_->IsJumping() == false)
 			{
 				pRigidBody_->velocity_.y += jumpHeight;
-				state_.Change(STATE::JUMP);
 			}
 		}
 		UpdateRotate();
@@ -97,9 +87,40 @@ void Player::InitializeState()
 			{
 				animController_->PlayAnimation("Idle", true);
 			})
+		.OnUpdate(STATE::IDLE, [this]
+			{
+				if (pRigidBody_->velocity_.y > 0.0f)
+				{
+					state_.Change(STATE::JUMP);
+					return;
+				}
+				if (GetMoveDir().Size() != 0)
+				{
+					state_.Change(STATE::RUN);
+					return;
+				}
+			})
 		.OnStart(STATE::RUN, [this]
 			{
 				animController_->PlayAnimation("Run", true);
+			})
+		.OnUpdate(STATE::RUN, [this]
+			{
+				if (pRigidBody_->velocity_.Size() == 0.0f)
+				{
+					state_.Change(STATE::IDLE);
+					return;
+				}
+				if (pRigidBody_->velocity_.y > 0.0f)
+				{
+					state_.Change(STATE::JUMP);
+					return;
+				}
+				if (pRigidBody_->velocity_.y < 0.0f)
+				{
+					state_.Change(STATE::FALL);
+					return;
+				}
 			})
 		.OnStart(STATE::JUMP, [this]
 			{
@@ -110,11 +131,25 @@ void Player::InitializeState()
 				if (animController_->IsFinishedAnimation() && pRigidBody_->isGround_ == false)
 				{
 					state_.Change(STATE::FALL);
+					return;
+				}
+				if (pRigidBody_->isGround_)
+				{
+					state_.Change(STATE::IDLE);
+					return;
 				}
 			})
 		.OnStart(STATE::FALL, [this]
 			{
 				animController_->PlayAnimation("Fall", true);
+			})
+		.OnUpdate(STATE::FALL, [this]
+			{
+				if (pRigidBody_->isGround_)
+				{
+					state_.Change(STATE::IDLE);
+					return;
+				}
 			})
 		.OnStart(STATE::DYING, [this]
 			{
@@ -143,6 +178,7 @@ void Player::Start()
 void Player::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
 }
 
 void Player::SetCamera(Camera* _pCamera)
@@ -196,10 +232,10 @@ void Player::UpdatePosition()
 		velocity.x = movement.x;
 		velocity.z = movement.z;
 
-		if (pRigidBody_->isGround_ && state_.Current() != STATE::RUN)
+		/*if (pRigidBody_->isGround_ && state_.Current() != STATE::RUN)
 		{
 			state_.Change(STATE::RUN);
-		}
+		}*/
 	}
 	else
 	{
@@ -210,10 +246,10 @@ void Player::UpdatePosition()
 		// -------------------------------------------------------
 		velocity.x = 0.0f;
 		velocity.z = 0.0f;
-		if (pRigidBody_->isGround_ && state_.Current() != STATE::IDLE)
+		/*if (pRigidBody_->isGround_ && state_.Current() != STATE::IDLE)
 		{
 			state_.Change(STATE::IDLE);
-		}
+		}*/
 	}
 }
 
@@ -240,12 +276,6 @@ void Player::OnCollisionEnter(EntityId _entityId)
 	if (isStomping)
 	{
 		pOtherActor->OnStomped(this);
-
-		if (otherObj->GetTag() == GameObjectTag::Enemy)
-		{
-			Vector3& velocity = pRigidBody_->velocity_;
-			velocity = Vector3(velocity.x, velocity.y + 10.0f, velocity.z);
-		}
 	}
 	else
 	{

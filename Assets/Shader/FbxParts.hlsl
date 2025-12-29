@@ -19,7 +19,7 @@ VS_OUT VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOO
     float selectedScale;
     
     // UVç¿ïW
-    outData.uv = uv * g_textureScale.xy;
+    outData.uv = uv;
     
     return outData;
 }

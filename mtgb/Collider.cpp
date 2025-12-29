@@ -76,6 +76,9 @@ void mtgb::Collider::UpdateBoundingData()
 void mtgb::Collider::UpdateBoundingSphere()
 {
 	computeSphere_.Center = pTransform_->position;
+	float maxScale = (std::max)(pTransform_->scale.x, pTransform_->scale.y);
+	maxScale = (std::max)(pTransform_->scale.z, maxScale);
+	computeSphere_.Radius = maxScale;
 }
 
 void mtgb::Collider::UpdateBoundingBox()
@@ -238,6 +241,7 @@ bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* d
 	case ColliderType::TYPE_AABB:
 		 return IsHit(computeBox_,_origin,_dir,dist);
 		break;
+
 	default:
 		return false;
 	}
@@ -365,6 +369,38 @@ std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSp
 	// 最短地点から球の中心へ押し出す
 	info.push = v * penetration;
 	return info;
+}
+
+std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingOrientedBox& _obb)
+{
+	IntersectInfo info;
+
+	Vector3 localCenter = _obb.Center - _sphere.Center;
+	Vector3 extents = _obb.Extents;
+	Quaternion rotate = _obb.Orientation;
+	Matrix4x4 rotMat = DirectX::XMMatrixRotationQuaternion(rotate);
+	Vector3 rotatedExtents = DirectX::XMVector3TransformCoord(extents,rotMat);
+
+	Vector3 closest;
+	closest.x = std::clamp(localCenter.x, -rotatedExtents.x, rotatedExtents.x);
+	closest.y = std::clamp(localCenter.y, -rotatedExtents.y, rotatedExtents.y);
+	closest.z = std::clamp(localCenter.z, -rotatedExtents.z, rotatedExtents.z);
+
+	Vector3 v = localCenter - closest;
+	float distance = v.Size();
+
+	if (distance <= _sphere.Radius)
+	{
+		// 衝突
+	}
+	float penetration = _sphere.Radius - distance;
+	if (penetration <= 0.0f)
+	{
+		return std::nullopt;
+	}
+
+	info.closest = closest;
+	info.push = Vector3::Normalize(v) * penetration;
 }
 
 void mtgb::Collider::Push(const Collider& _other)
