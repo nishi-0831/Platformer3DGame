@@ -61,6 +61,8 @@ namespace mtgb
 		/// <returns></returns>
 		bool IsHit(const DirectX::BoundingSphere& _sphere,const Vector3& _origin, const Vector3& _dir, float* dist);
 		bool IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* dist);
+		bool IsHit(const DirectX::BoundingOrientedBox& _obb, const Vector3& _origin, const Vector3& _dir, float* dist);
+
 		bool IsHit(const Vector3& _origin, const Vector3& _dir, float* dist);
 		bool IsHit(const Vector3& _center, float _radius) const;
 

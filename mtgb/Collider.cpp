@@ -69,6 +69,12 @@ void mtgb::Collider::UpdateBoundingData()
 		break;
 	case ColliderType::TYPE_CAPSULE:
 		// TODO: カプセル初期化
+	case ColliderType::TYPE_OBB:
+		computeOBB_.Center = pTransform_->position;
+		computeOBB_.Extents.x = extents_.x * pTransform_->scale.x;
+		computeOBB_.Extents.y = extents_.y * pTransform_->scale.y;
+		computeOBB_.Extents.z = extents_.z * pTransform_->scale.z;
+		DirectX::XMStoreFloat4(&computeOBB_.Orientation, pTransform_->rotate);
 		break;
 	}
 }
@@ -94,7 +100,6 @@ void mtgb::Collider::UpdateBoundingBox()
 
 bool mtgb::Collider::IsHit(const Collider& _other) const
 {
-	using DirectX::XMVector3TransformCoord;
 	DirectX::ContainmentType containmentType = DirectX::DISJOINT;
 	// ステージ同士は接触しないものとする
 	if (colliderTag_ == ColliderTag::STAGE && _other.colliderTag_ == ColliderTag::STAGE)
@@ -102,30 +107,53 @@ bool mtgb::Collider::IsHit(const Collider& _other) const
 		return false;
 	}
 
-	if (colliderType_ == _other.colliderType_)
+	switch (colliderType_)
 	{
-		if (colliderType_ == ColliderType::TYPE_SPHERE)
+	case ColliderType::TYPE_SPHERE:
+		switch (_other.colliderType_)
 		{
-			//// 距離が双方の球の半径よりも小さければ当たっている
+		case ColliderType::TYPE_SPHERE:
 			containmentType = computeSphere_.Contains(_other.computeSphere_);
-		}
-		else if (colliderType_ == ColliderType::TYPE_AABB)
-		{
-			containmentType = computeBox_.Contains(_other.computeBox_);
-		}
-	}
-	else
-	{
-		if (colliderType_ == ColliderType::TYPE_SPHERE)
-		{	
+			break;
+		case ColliderType::TYPE_AABB:
 			containmentType = computeSphere_.Contains(_other.computeBox_);
+			break;
+		case ColliderType::TYPE_OBB:
+			containmentType = computeSphere_.Contains(_other.computeOBB_);
+			break;
 		}
-		else if (colliderType_ == ColliderType::TYPE_AABB)
+		break;
+	case ColliderType::TYPE_AABB:
+		switch (_other.colliderType_)
 		{
+		case ColliderType::TYPE_SPHERE:
 			containmentType = computeBox_.Contains(_other.computeSphere_);
+			break;
+		case ColliderType::TYPE_AABB:
+			containmentType = computeBox_.Contains(_other.computeBox_);
+			break;
+		case ColliderType::TYPE_OBB:
+			containmentType = computeBox_.Contains(_other.computeOBB_);
+			break;
 		}
+		break;
+	case ColliderType::TYPE_OBB:
+		
+		switch (_other.colliderType_)
+		{
+		case ColliderType::TYPE_SPHERE:
+			containmentType = computeOBB_.Contains(_other.computeSphere_);
+			break;
+		case ColliderType::TYPE_AABB:
+			containmentType = computeOBB_.Contains(_other.computeBox_);
+			break;
+		case ColliderType::TYPE_OBB:
+			containmentType = computeOBB_.Contains(_other.computeOBB_);
+			break;
+		}
+		break;
 	}
-
+	
 	if (containmentType == DirectX::INTERSECTS || containmentType == DirectX::CONTAINS)
 	{
 		return true;
@@ -231,17 +259,23 @@ bool mtgb::Collider::IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _or
 	return _aabb.Intersects(_origin, _dir, *dist);
 }
 
-bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* dist)
+bool mtgb::Collider::IsHit(const DirectX::BoundingOrientedBox& _obb, const Vector3& _origin, const Vector3& _dir, float* dist)
+{
+	return _obb.Intersects(_origin, _dir, *dist);
+}
+
+bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist)
 {
 	switch (colliderType_)
 	{
 	case ColliderType::TYPE_SPHERE:
-		return IsHit(computeSphere_, _origin, _dir, dist);
+		return IsHit(computeSphere_, _origin, _dir, _dist);
 		break;
 	case ColliderType::TYPE_AABB:
-		 return IsHit(computeBox_,_origin,_dir,dist);
+		 return IsHit(computeBox_,_origin,_dir,_dist);
 		break;
-
+	case ColliderType::TYPE_OBB:
+		return IsHit(computeOBB_, _origin, _dir, _dist);
 	default:
 		return false;
 	}
@@ -281,18 +315,31 @@ void mtgb::Collider::SetCenter(const Vector3& _center)
 	{
 		computeBox_.Center = _center;
 	}
-	else
+	else if(colliderType_ == ColliderType::TYPE_AABB)
 	{
 		computeSphere_.Center = _center;
+	}
+	else if(colliderType_ == ColliderType::TYPE_OBB)
+	{
+		computeOBB_.Center = _center;
 	}
 	center_ = _center;
 }
 
 void mtgb::Collider::SetExtents(const Vector3& _extents)
 {
-	computeBox_.Extents.x = _extents.x * pTransform_->scale.x;
-	computeBox_.Extents.y = _extents.y * pTransform_->scale.y;
-	computeBox_.Extents.z = _extents.z * pTransform_->scale.z;
+	if (colliderType_ == ColliderType::TYPE_AABB)
+	{
+		computeBox_.Extents.x = _extents.x * pTransform_->scale.x;
+		computeBox_.Extents.y = _extents.y * pTransform_->scale.y;
+		computeBox_.Extents.z = _extents.z * pTransform_->scale.z;
+	}
+	else if (colliderType_ == ColliderType::TYPE_OBB)
+	{
+		computeOBB_.Extents.x = _extents.x * pTransform_->scale.x;
+		computeOBB_.Extents.y = _extents.y * pTransform_->scale.y;
+		computeOBB_.Extents.z = _extents.z * pTransform_->scale.z;
+	}
 	extents_ = _extents;
 }
 
@@ -312,6 +359,10 @@ Vector3 mtgb::Collider::GetExtents()
 	if (colliderType_ == ColliderType::TYPE_AABB)
 	{
 		return computeBox_.Extents;
+	}
+	if (colliderType_ == ColliderType::TYPE_OBB)
+	{
+		return computeOBB_.Extents;
 	}
 	LOGIMGUI("colliderType is not AABB");
 	return Vector3::Zero();
@@ -375,11 +426,14 @@ std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSp
 {
 	IntersectInfo info;
 
-	Vector3 localCenter = _obb.Center - _sphere.Center;
+	Vector3 localCenter = _sphere.Center - _obb.Center;
 	Vector3 extents = _obb.Extents;
 	Quaternion rotate = _obb.Orientation;
 	Matrix4x4 rotMat = DirectX::XMMatrixRotationQuaternion(rotate);
 	Vector3 rotatedExtents = DirectX::XMVector3TransformCoord(extents,rotMat);
+	rotatedExtents.x = std::abs(rotatedExtents.x);
+	rotatedExtents.y = std::abs(rotatedExtents.y);
+	rotatedExtents.z = std::abs(rotatedExtents.z);
 
 	Vector3 closest;
 	closest.x = std::clamp(localCenter.x, -rotatedExtents.x, rotatedExtents.x);
@@ -389,47 +443,67 @@ std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSp
 	Vector3 v = localCenter - closest;
 	float distance = v.Size();
 
-	if (distance <= _sphere.Radius)
+	if (distance <= FLT_EPSILON)
 	{
-		// 衝突
+		v = Vector3::Normalize(_sphere.Center - _obb.Center);
+		// 方向が決まらなければ押し出しはしない
+		if (v.Size() <= FLT_EPSILON)
+			return std::nullopt;
+		distance = 0.0f;
 	}
+
 	float penetration = _sphere.Radius - distance;
 	if (penetration <= 0.0f)
-	{
 		return std::nullopt;
-	}
 
 	info.closest = closest;
 	info.push = Vector3::Normalize(v) * penetration;
+	return info;
 }
 
 void mtgb::Collider::Push(const Collider& _other)
 {
 	std::optional<DirectX::BoundingBox> aabb;
 	std::optional<DirectX::BoundingSphere> sphere;
+	std::optional<IntersectInfo> info = std::nullopt;
 
 	EntityId sphereTypeEntityId = INVALID_ENTITY;
 
-	// 球とAABBのみ押し出しを実装している
-	if (colliderType_ == ColliderType::TYPE_SPHERE && _other.colliderType_ == ColliderType::TYPE_AABB)
+	switch (colliderType_)
 	{
+	case ColliderType::TYPE_SPHERE:
+		switch (_other.colliderType_)
+		{
+		case ColliderType::TYPE_AABB:
+			info = Intersect(computeSphere_, _other.computeBox_);
+			break;
+		case ColliderType::TYPE_OBB:
+			info = Intersect(computeSphere_, _other.computeOBB_);
+			break;
+		}
 		sphereTypeEntityId = GetEntityId();
-		sphere = computeSphere_;
-		aabb = _other.computeBox_;
-	}
-	else if (_other.colliderType_ == ColliderType::TYPE_SPHERE && colliderType_ == ColliderType::TYPE_AABB)
-	{
+		break;
+	case ColliderType::TYPE_AABB:
+		switch (_other.colliderType_)
+		{
+		case ColliderType::TYPE_SPHERE:
+			info = Intersect(_other.computeSphere_,computeBox_);
+			break;
+		}
 		sphereTypeEntityId = _other.GetEntityId();
-		sphere = _other.computeSphere_;
-		aabb = computeBox_;
+		break;
+	case ColliderType::TYPE_OBB:
+		switch (_other.colliderType_)
+		{
+		case ColliderType::TYPE_SPHERE:
+			info = Intersect(_other.computeSphere_, computeOBB_);
+			break;
+		}
+		sphereTypeEntityId = _other.GetEntityId();
+		break;
 	}
-	else
-	{
-		return;
-	}
-	Transform& transform = Transform::Get(sphereTypeEntityId);
 
-	std::optional<IntersectInfo> info = Intersect(sphere.value(), aabb.value());
+	Transform& transform = Transform::Get(sphereTypeEntityId);
 
 	if (info.has_value() == false)
 		return;
@@ -455,6 +529,7 @@ void mtgb::Collider::OnPostRestore()
 		SetRadius(radius_);
 		break;
 	case ColliderType::TYPE_AABB:
+	case ColliderType::TYPE_OBB:
 		SetExtents(extents_);
 		break;
 	}
@@ -476,14 +551,13 @@ void mtgb::Collider::Draw() const
 		break;
 	case ColliderType::TYPE_AABB:
 
-
-		if (!isStatic_)
+		if (isStatic_)
 		{
-			copyTransform = *pTransform_;
+			copyTransform.parent = INVALID_ENTITY;
 		}
 		else
 		{
-			copyTransform.parent = INVALID_ENTITY;
+			copyTransform = *pTransform_;
 		}
 		
 		// 軸並行なので回転はなし
@@ -491,17 +565,40 @@ void mtgb::Collider::Draw() const
 
 		if (isStatic_)
 		{
-			// 静的、StatefulTransform不要なのでそのまま代入
+			// 静的、Transform不要なのでそのまま代入
 			copyTransform.position = computeBox_.Center;
 			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
 		else
 		{
-			// StatefulTransformに合わせて位置、サイズを調整
+			// Transformに合わせて位置、サイズを調整
 			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
 		
-		//copyTransform.Compute();
+		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::Debug3D);
+		break;
+	case ColliderType::TYPE_OBB:
+		if (isStatic_)
+		{
+			copyTransform.parent = INVALID_ENTITY;
+		}
+		else
+		{
+			copyTransform = *pTransform_;
+		}
+		
+		if (isStatic_)
+		{
+			// 静的、Transform不要なのでそのまま代入
+			copyTransform.position = computeBox_.Center;
+			copyTransform.scale = computeBox_.Extents * 2.0f;
+		}
+		else
+		{
+			// Transformに合わせて位置、サイズを調整
+			copyTransform.scale = computeBox_.Extents * 2.0f;
+		}
+
 		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::Debug3D);
 		break;
 	default:

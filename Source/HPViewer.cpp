@@ -51,6 +51,10 @@ void mtgb::HPViewer::TakeDamage(int _damage)
 	
 	while (_damage > 0)
 	{
+		if (pHpImages_.empty())
+		{
+			break;
+		}
 		ImageRenderer* pImageRenderer =  pHpImages_.back();
 		EntityId id = pImageRenderer->GetEntityId();
 		FindGameObject(id)->DestroyMe();

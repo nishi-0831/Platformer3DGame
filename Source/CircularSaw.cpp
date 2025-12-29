@@ -71,13 +71,11 @@ mtgb::Saw::Saw()
 	, pCollider_{ Component<Collider>() }
 	, pRigidBody_{ Component<RigidBody>() }
 	, rotateAngleSec_{ 360.0f }
-	, radius_{3.0f}
-	, takeDamageAmount_{1}
+	, radius_{ 3.0f }
+	, takeDamageAmount_{ 1 }
 {
 	pTransform_->scale = Vector3{ radius_,radius_,radius_ };
-	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
-	//pCollider_->SetRadius(radius_);
-
+	pCollider_->colliderType_ = ColliderType::TYPE_OBB;
 	pMeshRenderer_->meshFileName = "Model/Saw.fbx";
 	pMeshRenderer_->meshHandle = Fbx::Load("Model/Saw.fbx");
 }
