@@ -26,7 +26,6 @@ void SampleScene::Initialize()
 	MTImGui::Instance().Initialize();
 
 	Instantiate<SkySphere>();
-	Instantiate<MovingFloor>();
 	std::optional<nlohmann::json> json = Game::System<StageManger>().GetStageJson(stageID_);
 	if (json.has_value())
 	{

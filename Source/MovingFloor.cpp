@@ -91,6 +91,8 @@ void MovingFloor::OnCollisionExit(EntityId _entityId)
 	// INVALID_ENTITY‚ğ“n‚µ‚ÄeqŠÖŒW‰ğÁ
 	otherTransform.SetParent(INVALID_ENTITY);
 	groundedEntity_ = INVALID_ENTITY;
+
+	LOGIMGUI("MovingFloorExit");
 }
 
 

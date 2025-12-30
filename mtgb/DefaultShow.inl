@@ -58,13 +58,13 @@ Command* DefaultShow(T* value, const char* name)
         {
             changed = ImGui::InputInt(name, *reinterpret_cast<int**>(value));
         }
-        else if constexpr (std::is_same_v<Type, long>)
+        else if constexpr (std::is_same_v<Type, long long>)
         {
-            ImGui::Text("%s : %4.2ld", name, *value);
+            ImGui::InputScalar(name, ImGuiDataType_S64, value);
         }
-        else if constexpr (std::is_same_v<Type, long*>)
+        else if constexpr (std::is_same_v<Type, long long*>)
         {
-            ImGui::Text("%s : %4.2ld", name, **reinterpret_cast<long**>(value));
+            ImGui::InputScalar(name, ImGuiDataType_S64, &value);
         }
         else if constexpr (std::is_same_v<Type, unsigned long>)
         {
