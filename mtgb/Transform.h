@@ -26,25 +26,8 @@ namespace mtgb
 		Transform();
 		Transform(EntityId _entityId);
 		~Transform();
-		inline Transform& operator=(const Transform& _other)
-		{
-			if (&_other == this)
-			{
-				return *this;
-			}
-
-			this->parent = _other.parent;
-			this->position = _other.position;
-			this->scale = _other.scale;
-			this->rotate = _other.rotate;
-
-			this->matrixTranslate_ = _other.matrixTranslate_;
-			this->matrixRotate_ = _other.matrixRotate_;
-			this->matrixScale_ = _other.matrixScale_;
-			this->matrixWorld_ = _other.matrixWorld_;
-
-			return *this;
-		}
+		Transform& operator=(const Transform& _other);
+		
 
 
 		/// <summary>

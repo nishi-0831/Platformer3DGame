@@ -7,6 +7,10 @@ VS_OUT VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOO
 
     outData.position = mul(position, g_matrixWVP);
 
+    // ñ@ê¸ÇÃïœå`
+    normal.w = 0;
+    outData.normal = mul(normal, g_matrixNormalTrans);
+    
     return outData;
 }
 
