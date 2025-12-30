@@ -57,6 +57,25 @@ mtgb::Collider::~Collider()
 {
 }
 
+Collider& mtgb::Collider::operator=(const Collider& _other)
+{
+	if (this == &_other)
+	{
+		return *this;
+	}
+	this->colliderType_ = _other.colliderType_;
+	this->isStatic_ = _other.isStatic_;
+	this->colliderTag_ = _other.colliderTag_;
+	this->isTrigger_ = _other.isTrigger_;
+
+	*(this->pTransform_) = *(_other.pTransform_);
+	this->center_ = _other.center_;
+	this->radius_ = _other.radius_;
+	this->extents_ = _other.extents_;
+
+	return *this;
+}
+
 void mtgb::Collider::UpdateBoundingData()
 {
 	switch (colliderType_)

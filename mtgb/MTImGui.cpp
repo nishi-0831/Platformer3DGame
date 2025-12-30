@@ -307,10 +307,10 @@ void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
 
     for (ImGuiShowable* obj : showableObjs_)
     {
-        if (selectedEntityId == obj->entityId_)
+        if (selectedEntityId == obj->targetEntityId_)
         {
             imguiWindowStates_[ShowType::Inspector].selectedName = obj->displayName_;
-            imguiWindowStates_[ShowType::Inspector].entityId = obj->entityId_;
+            imguiWindowStates_[ShowType::Inspector].entityId = obj->targetEntityId_;
         }
     }
 }

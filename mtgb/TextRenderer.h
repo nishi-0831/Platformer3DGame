@@ -23,6 +23,7 @@ namespace mtgb
 
 		TextRenderer();
 		TextRenderer(EntityId _entityId);
+		TextRenderer& operator=(const TextRenderer& _other);
 		void Render() const override;
 
 		bool CanRender() const override;

@@ -17,11 +17,9 @@
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
 {
-
 	commandListener_ = [this](Command* _command)
 		{
 			Game::System<CommandHistoryManager>().ExecuteCommand(_command); 
-			id = _command->GetCommandTargetEntityId();
 		};
 	pManipulator_ = new ImGuizmoManipulator(commandListener_);
 
@@ -67,11 +65,10 @@ void mtgb::ImGuiEditor::Update()
 		{
 			DuplicateGameObject();
 		}
-		if (InputUtil::GetKeyDown(KeyCode::Space))
+		if (InputUtil::GetKeyDown(KeyCode::Delete))
 		{
-			EntityId currSelectedEntity = pManipulator_->GetSelectedEntityId();
-			MeshRenderer& meshRenderer = MeshRenderer::Get(currSelectedEntity);
-			//meshRenderer.shaderType = 
+			// マニピュレータが選択しているゲームオブジェクトを取得
+			GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
 		}
 	}
 }
@@ -82,10 +79,6 @@ void mtgb::ImGuiEditor::ShowImGui()
 	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
 	ShowGenerateGameObjectButton();
 }
-
-
-
-
 
 void mtgb::ImGuiEditor::SaveMapData()
 {
@@ -140,7 +133,8 @@ void mtgb::ImGuiEditor::LoadMapData()
 	}
 	catch (const nlohmann::json::parse_error& e)
 	{
-		assert(false,e.what());
+		const char* errMsg = e.what();
+		assert(false && errMsg);
 	}
 	GameObjectGenerator::GenerateFromJson(json);
 	

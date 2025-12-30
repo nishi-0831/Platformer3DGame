@@ -7,6 +7,8 @@
 #include "../Source/RegisterGameObjectType.h"
 #include "DuplicateGameObjectCommand.h"
 #include "CommandHistoryManager.h"
+#include "DeleteGameObjectCommand.h"
+
 GameObjectGenerator* mtgb::GameObjectGenerator::pInstance_{ nullptr };
 
 void mtgb::GameObjectGenerator::Initialize()
@@ -82,6 +84,14 @@ void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
         {
             return GetInstance()->gameObjFactory_.Create(classTypeName);
         }, Game::GetComponentFactory(), _srcEntityId);
+    GetInstance()->commandListener_(cmd);
+}
+
+void mtgb::GameObjectGenerator::Delete(EntityId _entityId)
+{
+    GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
+    
+    DeleteGameObjectCommand* cmd = new DeleteGameObjectCommand(pGameObj, GetInstance()->gameObjFactory_, Game::GetComponentFactory());
     GetInstance()->commandListener_(cmd);
 }
 

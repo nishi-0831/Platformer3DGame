@@ -1,11 +1,12 @@
 #pragma once
 #include <mtgb.h>
 
-class MovingFloor : public GameObject
+class MovingFloor : public GameObject , public ImGuiShowable
 {
 public:
 	MovingFloor();
-	void Update();
+	void Update() override;
+	void ShowImGui() override;
 private:
 	void OnCollisionEnter(EntityId _entityId);
 	void OnCollisionExit(EntityId _entityId);

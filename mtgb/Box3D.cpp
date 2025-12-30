@@ -45,6 +45,5 @@ void mtgb::Box3D::ShowImGui()
 
 void mtgb::Box3D::Start()
 {
-	Component<MeshRenderer>()->shaderType = ShaderType::Box3D;
 }
 

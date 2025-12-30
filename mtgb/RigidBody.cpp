@@ -22,6 +22,26 @@ mtgb::RigidBody::~RigidBody()
 {
 }
 
+RigidBody& mtgb::RigidBody::operator=(const RigidBody& _other)
+{
+	if (&_other == this)
+	{
+		return *this;
+	}
+
+	this->velocity_ = _other.velocity_;
+	this->onHit_ = _other.onHit_;
+	this->onStay_ = _other.onStay_;
+	this->onExit_ = _other.onExit_;
+	this->isNeedUpdate_ = _other.isNeedUpdate_;
+	this->useGravity_ = _other.useGravity_;
+	*(this->pTransform_) = *(_other.pTransform_);
+	this->isGround_ = _other.isGround_;
+	this->isKinematic_ = _other.isKinematic_;
+
+	return *this;
+}
+
 void mtgb::RigidBody::UpdateVelocity()
 {
 	if (useGravity_)

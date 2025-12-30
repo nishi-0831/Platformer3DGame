@@ -21,6 +21,7 @@ namespace mtgb
 		using IComponent::IComponent;
 
 		Interpolator(EntityId _entityId);
+		Interpolator& operator=(const Interpolator& _other);
 		void UpdateTransform();
 		/// <summary>
 		/// 補間の進行状況を更新する

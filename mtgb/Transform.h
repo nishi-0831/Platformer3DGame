@@ -13,9 +13,6 @@
 #include "TransformCP.h"
 namespace mtgb
 {
-	
-	
-
 	MT_COMPONENT()
 	class Transform : public IComponent<TransformCP,Transform> , public ISerializableObject
 	{

@@ -42,6 +42,12 @@ void MovingFloor::Update()
 	pTransform_->position = pInterpolator_->EvaluatePos();
 }
 
+void MovingFloor::ShowImGui()
+{
+	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	ImGui::Text("EntityId:%d", Entity::entityId_);
+}
+
 void MovingFloor::OnCollisionEnter(EntityId _entityId)
 {
 	GameObject* gameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
@@ -62,6 +68,7 @@ void MovingFloor::OnCollisionEnter(EntityId _entityId)
 	groundedEntity_ = _entityId;
 	
 	otherTransform.SetParent(GetEntityId());
+	LOGIMGUI("MovingFloorEnter");
 }
 
 void MovingFloor::OnCollisionExit(EntityId _entityId)

@@ -39,14 +39,7 @@ namespace mtgb
 		Collider(EntityId _entityId);
 		Collider(EntityId _entityId, ColliderTag _colliderTag);
 		~Collider();
-		inline Collider& operator= (const Collider& _other)
-		{
-			if (&_other == this)
-			{
-				return *this;
-			}
-			return *this;
-		}
+		Collider& operator=(const Collider& _other);
 
 		bool IsHit(const Collider& _other) const;
 		/// <summary>

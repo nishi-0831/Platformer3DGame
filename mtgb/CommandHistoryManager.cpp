@@ -31,9 +31,8 @@ void CommandHistoryManager::EndGroupCommand()
 	if (isGrouping_ == false)
 		return;
 	inner_->ExecuteCommand(pGroupCommand_);
+	isGrouping_ = false;
 }
-
-
 
 void CommandHistoryManager::ExecuteCommand(Command* _command)
 {

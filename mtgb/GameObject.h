@@ -93,18 +93,18 @@ namespace mtgb
 
 		inline bool IsNotCalledStart() const { return isNotCalledStart_; }
 		inline void MarkAsCalledStart() { isNotCalledStart_ = false; }
-	protected:
-
-		std::string name_;
-
 		struct Status
 		{
 			uint8_t isActive_ : 1;
 			uint8_t callUpdate_ : 1;
 			uint8_t callDraw_ : 1;
 			uint8_t toDestroy_ : 1;  // 削除予定か
-		} status_;
+		};
+	protected:
 
+		std::string name_;
+
+		Status status_;
 		GameObjectLayerFlag layerFlag_;  // レイヤーのフラグ
 		GameObjectTag tag_; // ゲームオブジェクトのタグ
 		bool isNotCalledStart_; // Start関数が呼び出されたか

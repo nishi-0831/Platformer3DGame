@@ -32,14 +32,11 @@ namespace mtgb
 		std::string Name() const override;
 		EntityId GetCommandTargetEntityId() const override;
 	private:
-		void ApplyComponents();
 		void Deserialize(GameObject* _obj);
 		EntityId entityId_;
 		std::string gameObjectName_;
 		const ComponentFactory& componentFactory_;
 		CreateFunc createFunc_;
 		nlohmann::json json_;
-		bool deserialized_;
-		std::vector<IComponentMemento*> mementos_;
 	};
 }

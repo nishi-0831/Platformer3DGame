@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "CircularSaw.h"
 
+unsigned int mtgb::CircularSaw::generateCounter_{ 0 };
+
 mtgb::CircularSaw::CircularSaw()
 	: GameObject()
 	, pTransform_{ Component<Transform>() }
@@ -8,32 +10,21 @@ mtgb::CircularSaw::CircularSaw()
 	, pCollider_{ Component<Collider>() }
 	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
 	, sawRadius_{ 2.5f }
-	, rotateAngleSec_{ 30.0f }
+	, rotateAngleSec_{ 45.0f }
 	, sawOffset_{ 5.0f }
 	, rotateAngleSecSaw_{ 360.0f }
 {
+	pTransform_->position.z = -5.0f;
+
 	pMeshRenderer_->meshFileName = "Model/SawColumn.fbx";
 	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
 
-	GameObject* pPillerObject = new GameObject();
-	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pPillerObject);
-	EntityId pillerId = pPillerObject->GetEntityId();
-	pPillarMeshRenderer_ = &(MeshRenderer::Get(pillerId));
-	pPillarMeshRenderer_->meshFileName = "Model/SawPillar.fbx";
-	pPillarMeshRenderer_->meshHandle = Fbx::Load(pPillarMeshRenderer_->meshFileName);
-	pPillarTransform_ = &(Transform::Get(pillerId));
-	pPillarTransform_->SetParent(GetEntityId());
-	pPillarTransform_->position = pTransform_->position;
-	pPillarTransform_->scale.z = sawOffset_;
-	
-	pSaw_ = Instantiate<Saw>();
-	Transform& sawTransform = Transform::Get(pSaw_->GetEntityId());
-	sawTransform.position = pTransform_->position + pTransform_->Forward() * sawOffset_;
-	sawTransform.SetParent(GetEntityId());
-
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->isStatic_ = false;
-	displayName_ = "Saw";
+	// Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
+	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(CircularSaw));
+	name_ = std::format("{} ({})", typeName, generateCounter_++);
+	displayName_ = name_;
 }
 
 mtgb::CircularSaw::~CircularSaw()
@@ -45,7 +36,6 @@ void mtgb::CircularSaw::Update()
 	float angleRad = DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
 	Quaternion rot = DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
 	pTransform_->rotate = rot * pTransform_->rotate;
-	//RotatePillar();
 }
 
 void mtgb::CircularSaw::Draw() const
@@ -58,7 +48,30 @@ void mtgb::CircularSaw::ShowImGui()
 
 void mtgb::CircularSaw::Start()
 {
+	pTransform_->Compute();
+
+	// ƒmƒRƒMƒŠ‚ğì¬
+	pSaw_ = Instantiate<Saw>();
 	Transform& sawTransform = Transform::Get(pSaw_->GetEntityId());
+	// ƒmƒRƒMƒŠ‚ğƒIƒtƒZƒbƒg•ª‚¸‚ç‚µ‚Ä”z’u
+	sawTransform.position = pTransform_->position + pTransform_->Forward() * sawOffset_;
+	// q‚É‚·‚é
+	sawTransform.SetParent(GetEntityId());
+
+	// x’Œ‚ğì¬
+	GameObject* pPillerObject = new GameObject();
+	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pPillerObject);
+	EntityId pillerId = pPillerObject->GetEntityId();
+	pPillarMeshRenderer_ = &(MeshRenderer::Get(pillerId));
+	pPillarMeshRenderer_->meshFileName = "Model/SawPillar.fbx";
+	pPillarMeshRenderer_->meshHandle = Fbx::Load(pPillarMeshRenderer_->meshFileName);
+	pPillarTransform_ = &(Transform::Get(pillerId));
+	pPillarTransform_->SetParent(GetEntityId());
+	pPillarTransform_->position = pTransform_->position;
+	// ‰ñ“]‚ÌŒ´“_‚©‚çƒmƒRƒMƒŠ‚Ü‚Åx’Œ‚ğL‚Î‚·
+	pPillarTransform_->scale.z = sawOffset_;
+	
+	// ‰ñ“]‚ÌŒ´“_‚©‚çƒmƒRƒMƒŠ‚Ì•ûŒü‚ğŒü‚©‚¹‚é
 	Vector3 toSawDir = Vector3::Normalize(sawTransform.position - pTransform_->position);
 	pPillarTransform_->rotate = Quaternion::LookRotation(toSawDir, pTransform_->Up());
 }

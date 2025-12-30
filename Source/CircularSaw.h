@@ -13,7 +13,6 @@ namespace mtgb
 		void Draw() const override;
 		void Start() override;
 		void ShowImGui() override;
-
 	private:
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;

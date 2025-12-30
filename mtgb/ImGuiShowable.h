@@ -30,7 +30,7 @@ namespace mtgb
 		/// </summary>
 		virtual void ShowImGui();
 	protected:
-		EntityId entityId_; // Entity‚Ìê‡‚ÍId‚ğ“n‚·‚±‚Æ
+		EntityId targetEntityId_; // Entity‚Ìê‡‚ÍId‚ğ“n‚·‚±‚Æ
 		std::string displayName_; // •\¦‚³‚ê‚éÛ‚Ì–¼‘O
 		ShowType show_; // •\¦‚µ‚½‚¢ImGuiWindow
 	};

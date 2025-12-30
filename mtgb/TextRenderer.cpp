@@ -13,6 +13,21 @@ mtgb::TextRenderer::TextRenderer(EntityId _entityId)
     , params{.depth = 0,.layerFlag = AllLayer() }
 {
 }
+TextRenderer& mtgb::TextRenderer::operator=(const TextRenderer& _other)
+{
+    if (this == &_other)
+    {
+        return *this;
+    }
+    this->alignment = _other.alignment;
+    this->text = _other.text;
+    this->rect = _other.rect;
+    this->fontSize = _other.fontSize;
+    this->params = _other.params;
+
+    OnPostRestore();
+	return *this;
+}
 void mtgb::TextRenderer::Render() const
 {
     Draw::ImmediateText(text, rect, fontSize, alignment, params);

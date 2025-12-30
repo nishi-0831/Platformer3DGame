@@ -7,7 +7,6 @@ mtgb::GameObjectCreateCommand::GameObjectCreateCommand( CreateFunc _createFunc, 
     : createFunc_{_createFunc}
     , componentFactory_{_componentFactory}
     , json_{ nlohmann::json::object() }
-    , deserialized_{false}
     , entityId_{INVALID_ENTITY}
 {
 }
@@ -31,11 +30,11 @@ void mtgb::GameObjectCreateCommand::Execute()
     {
         gameObjectName_ = obj->GetName();
     }
-    else if (deserialized_ == false)
+    else
     {
         Deserialize(obj);
-        deserialized_ = true;
     }
+    
     Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Invoke({ .entityId = obj->GetEntityId() });
 }
 
@@ -59,20 +58,6 @@ std::string mtgb::GameObjectCreateCommand::Name() const
 EntityId mtgb::GameObjectCreateCommand::GetCommandTargetEntityId() const
 {
     return entityId_;
-}
-
-
-
-void mtgb::GameObjectCreateCommand::ApplyComponents()
-{
-    for (IComponentMemento* memento : mementos_)
-    {
-        if (memento == nullptr)
-            continue;
-
-        componentFactory_.AddComponentFromMemento(*memento);
-    }
-
 }
 
 void mtgb::GameObjectCreateCommand::Deserialize(GameObject* _obj)

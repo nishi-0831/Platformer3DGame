@@ -82,11 +82,11 @@ void mtgb::FbxAnimationController::UpdateFrame()
     {
         if (isLooping_)
         {
-            currentFrame_ = endFrame;
+            currentFrame_ = static_cast<float>(endFrame);
         }
         else
         {
-            currentFrame_ = startFrame;
+            currentFrame_ = static_cast<float>(startFrame);
             isPlaying_ = false;
             isFinished_ = true;
         }
@@ -95,11 +95,11 @@ void mtgb::FbxAnimationController::UpdateFrame()
     {
         if (isLooping_)
         {
-            currentFrame_ = startFrame;
+            currentFrame_ = static_cast<float>(startFrame);
         }
         else
         {
-            currentFrame_ = endFrame;
+            currentFrame_ = static_cast<float>(endFrame);
             isPlaying_ = false;
             isFinished_ = true;
         }

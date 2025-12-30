@@ -30,6 +30,7 @@ namespace mtgb
 		/// </summary>
 		static void RegisterCommandListener(std::function<void(Command*)> _commandListener);
 		static void Duplicate(EntityId _srcEntityId);
+		static void Delete(EntityId _entityId);
 	private:
 		GameObjectGenerator() = default;
 		static GameObjectGenerator* GetInstance();

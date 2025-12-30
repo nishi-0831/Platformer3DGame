@@ -9,7 +9,7 @@ namespace
     uint32_t defNameCount = 0;
 }
 mtgb::ImGuiShowable::ImGuiShowable(mtgb::EntityId _entityId)
-    : entityId_{_entityId}
+    : targetEntityId_{_entityId}
     , show_{ShowType::Inspector}
 {
     MTImGui::Instance().Register(this);
@@ -28,7 +28,7 @@ void mtgb::ImGuiShowable::ShowImGui()
 }
 
 mtgb::ImGuiShowable::ImGuiShowable(ShowType _showType, mtgb::EntityId _entityId)
-    : entityId_{ _entityId }
+    : targetEntityId_{ _entityId }
     , show_{_showType}
 {
     MTImGui::Instance().Register(this);

@@ -23,7 +23,11 @@ namespace mtgb
 		{}
 		IComponent(const EntityId _entityId);
 		virtual ~IComponent();
-
+		IComponent& operator=(const IComponent& _other)
+		{
+			// entityId_ ÇÕÉRÉsÅ[ÇµÇ»Ç¢
+			return *this;	
+		}
 		static ComponentT& Get(const EntityId _entityId);
 		template<typename... Args>
 		static ComponentT& Get(const EntityId _entityId, Args&&... _args);

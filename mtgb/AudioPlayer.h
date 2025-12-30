@@ -37,8 +37,9 @@ namespace mtgb
 			{
 				return *this;
 			}
+			this->hAudio = _other.hAudio;
 			this->pSourceVoice_ = _other.pSourceVoice_;
-			//			massert(false && "AudioPlayer‚ÌƒRƒs[”­¶");
+			OnPostRestore();
 			return *this;
 		}
 

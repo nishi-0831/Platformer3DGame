@@ -22,6 +22,7 @@ namespace mtgb
 
 		ImageRenderer();
 		ImageRenderer(EntityId _entityId);
+		ImageRenderer& operator=(const ImageRenderer& _other) = default;
 
 		// IRenderable ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
 		void Render() const override;

@@ -48,7 +48,6 @@ void mtgb::Transform::Compute()
 	Matrix4x4 parentMat{};
 	GenerateParentMatrix(&parentMat);
 	
-
 	// 現在のワールド座標から行列を作成
 	Matrix4x4 currWorldMat =
 		XMMatrixScaling(scale.x, scale.y, scale.z) *

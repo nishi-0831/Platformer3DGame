@@ -39,8 +39,9 @@ mtgb::Interpolator::Interpolator(EntityId _entityId)
 	pStartTransform_ = start->Component<Transform>();
 	pEndTransform_ = end->Component<Transform>();
 	// オフセット分動かす
-	pStartTransform_->position = pTransform_->position - INIT_OFFSET;
-	pEndTransform_->position = pTransform_->position + INIT_OFFSET;
+	
+	pStartTransform_->position = pTransform_->position - Vector3{ pTransform_->scale * INIT_OFFSET };
+	pEndTransform_->position = pTransform_->position + Vector3{ pTransform_->scale * INIT_OFFSET };
 
 	// コライダー作成
 	pStartCollider_ = start->Component<Collider>();
@@ -53,6 +54,27 @@ mtgb::Interpolator::Interpolator(EntityId _entityId)
 	pStartCollider_->SetRadius(INIT_RADIUS);
 	pEndCollider_->isTrigger_ = true;
 	pEndCollider_->SetRadius(INIT_RADIUS);
+}
+
+Interpolator& mtgb::Interpolator::operator=(const Interpolator& _other)
+{
+	if (this == &_other)
+	{
+		return *this;
+	}
+
+	this->dir_ = _other.dir_;
+	this->elapsed_ = _other.elapsed_;
+	this->duration_ = _other.duration_;
+	this->startPos_ = _other.startPos_;
+	this->endPos_ = _other.endPos_;
+	*(this->pTransform_) = *(_other.pTransform_);
+	*(this->pStartTransform_) = *(_other.pStartTransform_);
+	*(this->pEndTransform_) = *(_other.pEndTransform_);
+	*(this->pStartCollider_) = *(_other.pStartCollider_);
+	*(this->pEndCollider_) = *(_other.pEndCollider_);
+
+	return *this;
 }
 
 void mtgb::Interpolator::UpdateTransform()

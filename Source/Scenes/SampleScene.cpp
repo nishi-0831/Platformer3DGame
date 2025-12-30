@@ -7,7 +7,7 @@
 #include "../Source/ScoreViewer.h"
 #include "../Source/ResultScene.h"
 #include "../Source/SkySphere.h"
-#include "../Source/CircularSaw.h"
+#include "../Source/MovingFloor.h"
 SampleScene::SampleScene()
 	: stageID_{StageID::STAGE_ONE}
 {
@@ -26,7 +26,7 @@ void SampleScene::Initialize()
 	MTImGui::Instance().Initialize();
 
 	Instantiate<SkySphere>();
-	Instantiate<CircularSaw>();
+	Instantiate<MovingFloor>();
 	std::optional<nlohmann::json> json = Game::System<StageManger>().GetStageJson(stageID_);
 	if (json.has_value())
 	{

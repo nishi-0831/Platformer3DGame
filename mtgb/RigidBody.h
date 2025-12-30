@@ -26,21 +26,7 @@ namespace mtgb
 
 		RigidBody(const EntityId _entityId);
 		~RigidBody();
-		inline RigidBody& operator=(const RigidBody& _other)
-		{
-			if (&_other == this)
-			{
-				return *this;
-			}
-
-			this->velocity_ = _other.velocity_;
-			this->onHit_ = _other.onHit_;
-			this->isNeedUpdate_ = _other.isNeedUpdate_;
-			this->useGravity_ = _other.useGravity_;
-			this->pTransform_ = _other.pTransform_;
-
-			return *this;
-		}
+		RigidBody& operator=(const RigidBody& _other);
 
 		void UpdateVelocity();
 		void OnGround();
