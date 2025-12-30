@@ -47,7 +47,8 @@ void mtgb::Transform::Compute()
 	// 親の行列を取得
 	Matrix4x4 parentMat{};
 	GenerateParentMatrix(&parentMat);
-	
+
+
 	// 現在のワールド座標から行列を作成
 	Matrix4x4 currWorldMat =
 		XMMatrixScaling(scale.x, scale.y, scale.z) *
@@ -58,11 +59,6 @@ void mtgb::Transform::Compute()
 	matrixLocal_ = currWorldMat * parentInverse;
 	DecomposeMatrixImpl(&localPosition_, &localRotate_, &localScale_, matrixLocal_);
 
-	matrixTranslate_ = XMMatrixTranslation(localPosition_.x, localPosition_.y, localPosition_.z);
-	matrixRotate_ = XMMatrixRotationQuaternion(
-		XMQuaternionNormalize(localRotate_));
-	matrixScale_ = XMMatrixScaling(localScale_.x, localScale_.y, localScale_.z);
-
 	GenerateWorldMatrix(&matrixWorld_);
 	// ワールド行列を計算
 	GenerateWorldRotationMatrix(&matrixWorldRot_);  // ワールド回転行列更新
@@ -71,6 +67,7 @@ void mtgb::Transform::Compute()
 	DecomposeMatrixImpl(&position, &rotate, &scale, matrixWorld_);
 
 	prevParentMatrix_ = parentMat;
+
 }
 
 void mtgb::Transform::GenerateLocalMatrix(Matrix4x4* _pMatrix) const
@@ -206,27 +203,28 @@ void mtgb::Transform::OnPostRestore()
 void mtgb::Transform::GenerateWorldMatrixSelf(Matrix4x4* _pMatrix) const
 {
 	if (parent != INVALID_ENTITY)
-
 	{
 		GetParent()->GenerateWorldMatrixSelf(_pMatrix);
-		*_pMatrix = matrixScale_ * matrixRotate_ * matrixTranslate_ * (*_pMatrix);
+		*_pMatrix = matrixLocal_ * (*_pMatrix);
 	}
 	else
 	{
-		*_pMatrix = matrixScale_ * matrixRotate_ * matrixTranslate_;
+		*_pMatrix = matrixLocal_;
 	}
 }
 
 void mtgb::Transform::GenerateWorldRotMatrixSelf(Matrix4x4* _pMatrix) const
 {
+	Matrix4x4 matLocalRot = DirectX::XMMatrixRotationQuaternion(XMQuaternionNormalize(localRotate_));
 	if (parent != INVALID_ENTITY)
 	{
 		Matrix4x4 mWorldRotParent{};
 		GetParent()->GenerateWorldRotMatrixSelf(&mWorldRotParent);
-		*_pMatrix = matrixRotate_ * mWorldRotParent;
+		*_pMatrix = matLocalRot * mWorldRotParent;
 	}
 	else
 	{
-		*_pMatrix = matrixRotate_;
+		*_pMatrix = matLocalRot;
 	}
+
 }
