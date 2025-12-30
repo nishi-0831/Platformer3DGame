@@ -217,7 +217,7 @@ mtgb::CommandHistoryManager 連携図</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="CommandHistoryManager_8h_source.html#l00025">isGrouping_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00026">pGroupCommand_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="GameObjectGenerator_8cpp_source.html#l00033">mtgb::GameObjectGenerator::GenerateFromJson()</a>.</p>
+<p class="reference">参照元 <a class="el" href="GameObjectGenerator_8cpp_source.html#l00035">mtgb::GameObjectGenerator::GenerateFromJson()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -254,11 +254,11 @@ mtgb::CommandHistoryManager 連携図</div>
 
 <p><a class="el" href="classICommandHistory.html#a46dd59d4056abe64ed35e1363c0e822f">ICommandHistory</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00071">71</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>{</div>
-<div class="line"><span class="lineno">   73</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>);</div>
-<div class="line"><span class="lineno">   74</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#a46dd59d4056abe64ed35e1363c0e822f">ClearAllStack</a>();</div>
-<div class="line"><span class="lineno">   75</span>}</div>
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00070">70</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>{</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>);</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#a46dd59d4056abe64ed35e1363c0e822f">ClearAllStack</a>();</div>
+<div class="line"><span class="lineno">   74</span>}</div>
 <div class="ttc" id="aclassICommandHistory_html_a46dd59d4056abe64ed35e1363c0e822f"><div class="ttname"><a href="classICommandHistory.html#a46dd59d4056abe64ed35e1363c0e822f">ICommandHistory::ClearAllStack</a></div><div class="ttdeci">virtual void ClearAllStack()=0</div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="classICommandHistory.html#a46dd59d4056abe64ed35e1363c0e822f">ICommandHistory::ClearAllStack()</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00024">inner_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00026">pGroupCommand_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
@@ -298,10 +298,10 @@ mtgb::CommandHistoryManager 連携図</div>
 
 <p><a class="el" href="classICommandHistory.html#a7b4259be93dc4eefcb4d70684be83a3f">ICommandHistory</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00077">77</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>{</div>
-<div class="line"><span class="lineno">   79</span>    </div>
-<div class="line"><span class="lineno">   80</span>}</div>
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00076">76</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{</div>
+<div class="line"><span class="lineno">   78</span>    </div>
+<div class="line"><span class="lineno">   79</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -325,12 +325,13 @@ mtgb::CommandHistoryManager 連携図</div>
 <div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a> == <span class="keyword">false</span>)</div>
 <div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ExecuteCommand</a>(<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>);</div>
-<div class="line"><span class="lineno">   34</span>}</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   35</span>}</div>
 <div class="ttc" id="aclassICommandHistory_html_aca75b9956f5f7d2790dacde7483d1649"><div class="ttname"><a href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ICommandHistory::ExecuteCommand</a></div><div class="ttdeci">virtual void ExecuteCommand(Command *_command)=0</div><div class="ttdoc">コマンドを実行、スタックに積む</div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ICommandHistory::ExecuteCommand()</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00024">inner_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00025">isGrouping_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00026">pGroupCommand_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="GameObjectGenerator_8cpp_source.html#l00033">mtgb::GameObjectGenerator::GenerateFromJson()</a>.</p>
+<p class="reference">参照元 <a class="el" href="GameObjectGenerator_8cpp_source.html#l00035">mtgb::GameObjectGenerator::GenerateFromJson()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -380,17 +381,17 @@ mtgb::CommandHistoryManager 連携図</div>
 
 <p><a class="el" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ICommandHistory</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00038">38</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a> &amp;&amp; <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   41</span>    {</div>
-<div class="line"><span class="lineno">   42</span>        <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1GroupCommand.html#aff7d93328690039cd1046e3ea869e4c1">ExecuteCommand</a>(_command);</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   45</span>    {</div>
-<div class="line"><span class="lineno">   46</span>        <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ExecuteCommand</a>(_command);</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="line"><span class="lineno">   48</span>}</div>
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a> &amp;&amp; <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1GroupCommand.html#aff7d93328690039cd1046e3ea869e4c1">ExecuteCommand</a>(_command);</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>        <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ExecuteCommand</a>(_command);</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="line"><span class="lineno">   47</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1GroupCommand_html_aff7d93328690039cd1046e3ea869e4c1"><div class="ttname"><a href="classmtgb_1_1GroupCommand.html#aff7d93328690039cd1046e3ea869e4c1">mtgb::GroupCommand::ExecuteCommand</a></div><div class="ttdeci">void ExecuteCommand(Command *_pCommand)</div><div class="ttdef"><b>Definition:</b> <a href="GroupCommand_8cpp_source.html#l00051">GroupCommand.cpp:51</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="classICommandHistory.html#aca75b9956f5f7d2790dacde7483d1649">ICommandHistory::ExecuteCommand()</a>, <a class="el" href="GroupCommand_8cpp_source.html#l00051">mtgb::GroupCommand::ExecuteCommand()</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00024">inner_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00025">isGrouping_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00026">pGroupCommand_</a>.</p>
@@ -461,16 +462,16 @@ mtgb::CommandHistoryManager 連携図</div>
 
 <p><a class="el" href="classICommandHistory.html#ae342a0cedc03344607d855c55d0f8458">ICommandHistory</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00060">60</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>{</div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a>)</div>
-<div class="line"><span class="lineno">   63</span>    {</div>
-<div class="line"><span class="lineno">   64</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot; コマンドをまとめている最中のRedoは許可されていません。 CancellGroupCommand() を呼んでください &quot;</span>);</div>
-<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   66</span>    }</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#ae342a0cedc03344607d855c55d0f8458">RedoCommand</a>();</div>
-<div class="line"><span class="lineno">   69</span>}</div>
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a>)</div>
+<div class="line"><span class="lineno">   62</span>    {</div>
+<div class="line"><span class="lineno">   63</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot; コマンドをまとめている最中のRedoは許可されていません。 CancellGroupCommand() を呼んでください &quot;</span>);</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#ae342a0cedc03344607d855c55d0f8458">RedoCommand</a>();</div>
+<div class="line"><span class="lineno">   68</span>}</div>
 <div class="ttc" id="aclassICommandHistory_html_ae342a0cedc03344607d855c55d0f8458"><div class="ttname"><a href="classICommandHistory.html#ae342a0cedc03344607d855c55d0f8458">ICommandHistory::RedoCommand</a></div><div class="ttdeci">virtual void RedoCommand()=0</div><div class="ttdoc">直前に取り消したコマンドの再実行を行う</div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="CommandHistoryManager_8h_source.html#l00024">inner_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00025">isGrouping_</a>, <a class="el" href="classICommandHistory.html#ae342a0cedc03344607d855c55d0f8458">ICommandHistory::RedoCommand()</a>.</p>
@@ -550,15 +551,15 @@ mtgb::CommandHistoryManager 連携図</div>
 
 <p><a class="el" href="classICommandHistory.html#a24df9bdb00bee6d77d4c2cf8c12de309">ICommandHistory</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a>)</div>
-<div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot; コマンドをまとめている最中のUndoは許可されていません。 CancellGroupCommand() を呼んでください &quot;</span>);</div>
-<div class="line"><span class="lineno">   55</span>    }</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#a24df9bdb00bee6d77d4c2cf8c12de309">UndoCommand</a>();</div>
-<div class="line"><span class="lineno">   58</span>}</div>
+<p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00049">49</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a>)</div>
+<div class="line"><span class="lineno">   52</span>    {</div>
+<div class="line"><span class="lineno">   53</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot; コマンドをまとめている最中のUndoは許可されていません。 CancellGroupCommand() を呼んでください &quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e">inner_</a>-&gt;<a class="code hl_function" href="classICommandHistory.html#a24df9bdb00bee6d77d4c2cf8c12de309">UndoCommand</a>();</div>
+<div class="line"><span class="lineno">   57</span>}</div>
 <div class="ttc" id="aclassICommandHistory_html_a24df9bdb00bee6d77d4c2cf8c12de309"><div class="ttname"><a href="classICommandHistory.html#a24df9bdb00bee6d77d4c2cf8c12de309">ICommandHistory::UndoCommand</a></div><div class="ttdeci">virtual void UndoCommand()=0</div><div class="ttdoc">直前に実行したコマンドの取り消しを行う</div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="CommandHistoryManager_8h_source.html#l00024">inner_</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00025">isGrouping_</a>, <a class="el" href="classICommandHistory.html#a24df9bdb00bee6d77d4c2cf8c12de309">ICommandHistory::UndoCommand()</a>.</p>
@@ -625,7 +626,7 @@ mtgb::CommandHistoryManager 連携図</div>
 
 <p class="definition"> <a class="el" href="CommandHistoryManager_8h_source.html">CommandHistoryManager.h</a> の <a class="el" href="CommandHistoryManager_8h_source.html#l00024">24</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00071">ClearAllStack()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00029">EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00038">ExecuteCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00060">RedoCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00050">UndoCommand()</a>.</p>
+<p class="reference">参照元 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00070">ClearAllStack()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00029">EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00037">ExecuteCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00059">RedoCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00049">UndoCommand()</a>.</p>
 
 </div>
 </div>
@@ -651,7 +652,7 @@ mtgb::CommandHistoryManager 連携図</div>
 
 <p class="definition"> <a class="el" href="CommandHistoryManager_8h_source.html">CommandHistoryManager.h</a> の <a class="el" href="CommandHistoryManager_8h_source.html#l00025">25</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00019">BeginGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00029">EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00038">ExecuteCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00060">RedoCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00050">UndoCommand()</a>.</p>
+<p class="reference">参照元 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00019">BeginGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00029">EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00037">ExecuteCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00059">RedoCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00049">UndoCommand()</a>.</p>
 
 </div>
 </div>
@@ -677,7 +678,7 @@ mtgb::CommandHistoryManager 連携図</div>
 
 <p class="definition"> <a class="el" href="CommandHistoryManager_8h_source.html">CommandHistoryManager.h</a> の <a class="el" href="CommandHistoryManager_8h_source.html#l00026">26</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00019">BeginGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00071">ClearAllStack()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00029">EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00038">ExecuteCommand()</a>.</p>
+<p class="reference">参照元 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00019">BeginGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00070">ClearAllStack()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00029">EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00037">ExecuteCommand()</a>.</p>
 
 </div>
 </div>

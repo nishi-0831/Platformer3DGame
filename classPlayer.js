@@ -52,7 +52,6 @@ var classPlayer =
     [ "componentsFlag_", "classPlayer.html#a35133fe4a732ae022cb58038be9daf25", null ],
     [ "displayName_", "classPlayer.html#a53eca55c2c3901c5713e857417100496", null ],
     [ "entityId_", "classPlayer.html#a6cc5a321c4352e0a78ba6350d80f1cc6", null ],
-    [ "entityId_", "classPlayer.html#aa0d120af9aaa2ce8a9809642816211bb", null ],
     [ "hp_", "classPlayer.html#a164d7c42c13f07b9944221a69e9f037a", null ],
     [ "id_", "classPlayer.html#ae8597ca6571e2a5246047e9dcf9f25af", null ],
     [ "isNotCalledStart_", "classPlayer.html#aee8629c2c936df1173a2f9efe7747ab9", null ],
@@ -67,6 +66,7 @@ var classPlayer =
     [ "pTransform_", "classPlayer.html#a8af32a474c38d7640cf4e419a3c20de5", null ],
     [ "show_", "classPlayer.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "state_", "classPlayer.html#a8d086ab892906df0ca3f36dbbb22901e", null ],
-    [ "status_", "classPlayer.html#ab2aa5980cc440b5742c66d67d670e275", null ],
-    [ "tag_", "classPlayer.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
+    [ "status_", "classPlayer.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
+    [ "tag_", "classPlayer.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
+    [ "targetEntityId_", "classPlayer.html#a04e42ed23c57183524dc34a01aa2a138", null ]
 ];

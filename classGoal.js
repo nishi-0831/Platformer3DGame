@@ -34,16 +34,17 @@ var classGoal =
     [ "componentsFlag_", "classGoal.html#a35133fe4a732ae022cb58038be9daf25", null ],
     [ "displayName_", "classGoal.html#a53eca55c2c3901c5713e857417100496", null ],
     [ "entityId_", "classGoal.html#a6cc5a321c4352e0a78ba6350d80f1cc6", null ],
-    [ "entityId_", "classGoal.html#aa0d120af9aaa2ce8a9809642816211bb", null ],
     [ "generateCounter_", "classGoal.html#ad52e348dde437e53b9d706f5d23ca226", null ],
     [ "isNotCalledStart_", "classGoal.html#aee8629c2c936df1173a2f9efe7747ab9", null ],
     [ "layerFlag_", "classGoal.html#af889133148e81bfcd2341b8573e5abc6", null ],
     [ "name_", "classGoal.html#ac4f79d210ae0d1388e203d1d1b93ae6c", null ],
     [ "pCollider_", "classGoal.html#ad8d499052a305d71f6b7a2fc9ab50f5c", null ],
+    [ "pEffect_", "classGoal.html#ad4c77f62c5dcf310e2921465ce9f4081", null ],
     [ "pMeshRenderer_", "classGoal.html#aff809895e2b0ac3d310b252d97397d91", null ],
     [ "pRigidBody_", "classGoal.html#a6d0f5cbe4a8d8669097aec54879e0783", null ],
     [ "pTransform_", "classGoal.html#a43f12f4da882e9ac79dc04a46a93f672", null ],
     [ "show_", "classGoal.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
-    [ "status_", "classGoal.html#ab2aa5980cc440b5742c66d67d670e275", null ],
-    [ "tag_", "classGoal.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
+    [ "status_", "classGoal.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
+    [ "tag_", "classGoal.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
+    [ "targetEntityId_", "classGoal.html#a04e42ed23c57183524dc34a01aa2a138", null ]
 ];

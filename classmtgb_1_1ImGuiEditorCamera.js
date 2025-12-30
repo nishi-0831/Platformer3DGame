@@ -20,7 +20,6 @@ var classmtgb_1_1ImGuiEditorCamera =
     [ "azimuthalAngleRad_", "classmtgb_1_1ImGuiEditorCamera.html#a36f85e873dd70c51e0e521e872bcf3c4", null ],
     [ "displayName_", "classmtgb_1_1ImGuiEditorCamera.html#a53eca55c2c3901c5713e857417100496", null ],
     [ "distance_", "classmtgb_1_1ImGuiEditorCamera.html#a653a6ea58d0a0fa68ac1f761ef9cf73a", null ],
-    [ "entityId_", "classmtgb_1_1ImGuiEditorCamera.html#aa0d120af9aaa2ce8a9809642816211bb", null ],
     [ "followTarget_", "classmtgb_1_1ImGuiEditorCamera.html#a5aab7f1f3c6c5754d2c6f16e984385ee", null ],
     [ "hCamera_", "classmtgb_1_1ImGuiEditorCamera.html#aa527eec9451e4ea5295b7238b3e84e7e", null ],
     [ "inputType_", "classmtgb_1_1ImGuiEditorCamera.html#a9c2519679aff7dc504162a9c9d093594", null ],
@@ -37,5 +36,6 @@ var classmtgb_1_1ImGuiEditorCamera =
     [ "rotateSensitivity_", "classmtgb_1_1ImGuiEditorCamera.html#a4cc558e81c1cc2334baf16f529a78b8e", null ],
     [ "sCameraOperation_", "classmtgb_1_1ImGuiEditorCamera.html#a95de1629b5d552bd0f2930961676bee6", null ],
     [ "show_", "classmtgb_1_1ImGuiEditorCamera.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
+    [ "targetEntityId_", "classmtgb_1_1ImGuiEditorCamera.html#a04e42ed23c57183524dc34a01aa2a138", null ],
     [ "windowName_", "classmtgb_1_1ImGuiEditorCamera.html#ae47540e8207e26b9f72a6d3c471b60d0", null ]
 ];

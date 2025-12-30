@@ -37,6 +37,6 @@ var classScoreViewer =
     [ "layerFlag_", "classScoreViewer.html#af889133148e81bfcd2341b8573e5abc6", null ],
     [ "name_", "classScoreViewer.html#ac4f79d210ae0d1388e203d1d1b93ae6c", null ],
     [ "pTransform_", "classScoreViewer.html#a5256e7c64b92a1091d22a26ba6805777", null ],
-    [ "status_", "classScoreViewer.html#ab2aa5980cc440b5742c66d67d670e275", null ],
+    [ "status_", "classScoreViewer.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classScoreViewer.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
 ];

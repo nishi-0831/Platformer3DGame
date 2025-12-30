@@ -64,6 +64,8 @@ var dir_3cf6e300f4ed75b2a0531d7b20a0e51f =
     [ "Debug.h", "Debug_8h.html", "Debug_8h" ],
     [ "DefaultShow.h", "DefaultShow_8h.html", "DefaultShow_8h" ],
     [ "DefaultShow.inl", "DefaultShow_8inl.html", "DefaultShow_8inl" ],
+    [ "DeleteGameObjectCommand.cpp", "DeleteGameObjectCommand_8cpp.html", null ],
+    [ "DeleteGameObjectCommand.h", "DeleteGameObjectCommand_8h.html", "DeleteGameObjectCommand_8h" ],
     [ "DetectorConfigs.h", "DetectorConfigs_8h.html", "DetectorConfigs_8h" ],
     [ "Direct2DResource.cpp", "Direct2DResource_8cpp.html", null ],
     [ "Direct2DResource.h", "Direct2DResource_8h.html", "Direct2DResource_8h" ],

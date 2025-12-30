@@ -39,6 +39,6 @@ var classGameOverZone =
     [ "pCollider_", "classGameOverZone.html#ad9191b158da0274226454f02df75336b", null ],
     [ "pRigidBody_", "classGameOverZone.html#a0f37a267c53e5918f9bdee26cd2ad6d9", null ],
     [ "pTransform_", "classGameOverZone.html#a808517e790f65110d93d2ce61dca7473", null ],
-    [ "status_", "classGameOverZone.html#ab2aa5980cc440b5742c66d67d670e275", null ],
+    [ "status_", "classGameOverZone.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classGameOverZone.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
 ];

@@ -39,6 +39,6 @@ var classHighlightEnemy =
     [ "layerFlag_", "classHighlightEnemy.html#af889133148e81bfcd2341b8573e5abc6", null ],
     [ "name_", "classHighlightEnemy.html#ac4f79d210ae0d1388e203d1d1b93ae6c", null ],
     [ "secondWndRectDetector_", "classHighlightEnemy.html#a96e79c57d4bd05741122a9a56895eb07", null ],
-    [ "status_", "classHighlightEnemy.html#ab2aa5980cc440b5742c66d67d670e275", null ],
+    [ "status_", "classHighlightEnemy.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classHighlightEnemy.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
 ];

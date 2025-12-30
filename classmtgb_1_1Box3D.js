@@ -34,7 +34,6 @@ var classmtgb_1_1Box3D =
     [ "componentsFlag_", "classmtgb_1_1Box3D.html#a35133fe4a732ae022cb58038be9daf25", null ],
     [ "displayName_", "classmtgb_1_1Box3D.html#a53eca55c2c3901c5713e857417100496", null ],
     [ "entityId_", "classmtgb_1_1Box3D.html#a6cc5a321c4352e0a78ba6350d80f1cc6", null ],
-    [ "entityId_", "classmtgb_1_1Box3D.html#aa0d120af9aaa2ce8a9809642816211bb", null ],
     [ "generateCounter_", "classmtgb_1_1Box3D.html#a184a407250752a23596847507a9223f3", null ],
     [ "isNotCalledStart_", "classmtgb_1_1Box3D.html#aee8629c2c936df1173a2f9efe7747ab9", null ],
     [ "layerFlag_", "classmtgb_1_1Box3D.html#af889133148e81bfcd2341b8573e5abc6", null ],
@@ -43,6 +42,7 @@ var classmtgb_1_1Box3D =
     [ "pMeshRenderer_", "classmtgb_1_1Box3D.html#a632a5f431dece5925682ea635866c338", null ],
     [ "pTransform_", "classmtgb_1_1Box3D.html#aacf40a576e1af3cd9be550d772cbbf08", null ],
     [ "show_", "classmtgb_1_1Box3D.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
-    [ "status_", "classmtgb_1_1Box3D.html#ab2aa5980cc440b5742c66d67d670e275", null ],
-    [ "tag_", "classmtgb_1_1Box3D.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
+    [ "status_", "classmtgb_1_1Box3D.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
+    [ "tag_", "classmtgb_1_1Box3D.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
+    [ "targetEntityId_", "classmtgb_1_1Box3D.html#a04e42ed23c57183524dc34a01aa2a138", null ]
 ];

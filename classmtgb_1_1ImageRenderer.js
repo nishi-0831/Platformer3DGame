@@ -11,6 +11,7 @@ var classmtgb_1_1ImageRenderer =
     [ "Initialize", "classmtgb_1_1ImageRenderer.html#aecaeb2d199af3bd978a34238ae7f733a", null ],
     [ "OnPostRestore", "classmtgb_1_1ImageRenderer.html#a657030a231a22470b5b09bd6e55a2c0e", null ],
     [ "OnPreSave", "classmtgb_1_1ImageRenderer.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8", null ],
+    [ "operator=", "classmtgb_1_1ImageRenderer.html#a096b19eeaef3b93a7070b7879442ce9b", null ],
     [ "Render", "classmtgb_1_1ImageRenderer.html#af1bba7d2f37d19350f437c22442c5c20", null ],
     [ "Reuse", "classmtgb_1_1ImageRenderer.html#ab07fa68485a5cf4425eebf1718c82e73", null ],
     [ "ComponentPool< ComponentT, ComponentPoolT >", "classmtgb_1_1ImageRenderer.html#a37d6b5582bd4cc3eea5feb793ae19aa4", null ],

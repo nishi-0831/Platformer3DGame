@@ -1,6 +1,7 @@
 var classmtgb_1_1GameObjectGenerator =
 [
     [ "GameObjectGenerator", "classmtgb_1_1GameObjectGenerator.html#a04e2229c6a5c70c661d8e74c4e8d72b5", null ],
+    [ "Delete", "classmtgb_1_1GameObjectGenerator.html#aa6417b60c46ac80df9f0a65c6e9d37fb", null ],
     [ "Duplicate", "classmtgb_1_1GameObjectGenerator.html#a9067a4b9b90df50f8037d54e41a2f468", null ],
     [ "Generate", "classmtgb_1_1GameObjectGenerator.html#a8b5503cfaba6ad2226fea687c2d74891", null ],
     [ "Generate", "classmtgb_1_1GameObjectGenerator.html#a60c94afee608e8e1ee0c8a9f21a8a77e", null ],

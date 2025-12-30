@@ -46,6 +46,6 @@ var classTimeLimit =
     [ "onEndTimerCallbacks_", "classTimeLimit.html#a82b8d2b94700c9b4c46e37ada09e1887", null ],
     [ "PLAY_SCENE_TIMER", "classTimeLimit.html#a56b4805562adb6f7f1bcba64fa41c089", null ],
     [ "remainingTime_", "classTimeLimit.html#ae926e8eae5dea636c9d745fd3b59e196", null ],
-    [ "status_", "classTimeLimit.html#ab2aa5980cc440b5742c66d67d670e275", null ],
+    [ "status_", "classTimeLimit.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classTimeLimit.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
 ];

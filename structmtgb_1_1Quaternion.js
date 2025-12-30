@@ -4,6 +4,7 @@ var structmtgb_1_1Quaternion =
     [ "Quaternion", "structmtgb_1_1Quaternion.html#a724ab693b6296127cbe6013934bd59bf", null ],
     [ "Quaternion", "structmtgb_1_1Quaternion.html#a62b6866144866b1c9f84c46be3bbc662", null ],
     [ "Quaternion", "structmtgb_1_1Quaternion.html#a6933b361abcbeb349544899c6d526879", null ],
+    [ "Quaternion", "structmtgb_1_1Quaternion.html#a9daf02fbbf1f61783f05ee5639f7347f", null ],
     [ "Euler", "structmtgb_1_1Quaternion.html#ac6b986591bbb8505c74b8dc75118a52e", null ],
     [ "FromToRotation", "structmtgb_1_1Quaternion.html#a7fde6fb6acbe4ec980ac0716a109657b", null ],
     [ "GetInverse", "structmtgb_1_1Quaternion.html#a6350787aaaeeceba3d94d19e69fbaf90", null ],

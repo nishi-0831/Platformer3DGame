@@ -41,6 +41,6 @@ var classScoreItem =
     [ "pMeshRenderer_", "classScoreItem.html#a8e7d649ec5f4c860d61ccc316721ed0d", null ],
     [ "pRigidBody_", "classScoreItem.html#a3fdd78fef7438c27555707428fdd23e2", null ],
     [ "pTransform_", "classScoreItem.html#a749535d837e3a1412069ea0149009745", null ],
-    [ "status_", "classScoreItem.html#ab2aa5980cc440b5742c66d67d670e275", null ],
+    [ "status_", "classScoreItem.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classScoreItem.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
 ];

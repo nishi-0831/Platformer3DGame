@@ -7,5 +7,6 @@ var EffekseerVFX_8cpp =
     [ "GetMaxFrame", "EffekseerVFX_8cpp.html#ae2e78311ae690898379d70c5b3cfc4e7", null ],
     [ "GetProjMat", "EffekseerVFX_8cpp.html#aac0b060ba7e63adf3890fa1623d6220c", null ],
     [ "GetViewMat", "EffekseerVFX_8cpp.html#af06513c2a65b3e93fd8c430fcbd36109", null ],
+    [ "RegisterEffects", "EffekseerVFX_8cpp.html#a5987db2855b6e573b78631bd21b0b9e2", null ],
     [ "MAX_SQUARE", "EffekseerVFX_8cpp.html#a386990ddd9c5071735e442afea1af977", null ]
 ];

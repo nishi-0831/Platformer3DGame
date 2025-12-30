@@ -134,27 +134,28 @@ $(document).ready(function(){initNavTree('AudioPlayer_8h_source.html',''); initR
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            this-&gt;pSourceVoice_ = _other.<a class="code hl_variable" href="classmtgb_1_1AudioPlayer.html#ae0fec4610e35155dea9bf4e2d9f700cf">pSourceVoice_</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="comment">//          massert(false &amp;&amp; &quot;AudioPlayerのコピー発生&quot;);</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">void</span> Initialize() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">void</span> SetAudio(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">AudioHandle</a> _hAudio);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordtype">void</span> SetVolume(<span class="keywordtype">float</span> volume);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">void</span> Play();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordtype">void</span> OnPostRestore() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_define" href="ReflectionMacro_8h.html#a1ddf9f2a08e2449dbc58868aa342463f">MT_PROPERTY</a>()</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classmtgb_1_1AudioPlayer.html#aa4a0d4c4e1b977076b7842fe09d95b3a">   60</a></span>        <a class="code hl_typedef" href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">AudioHandle</a> hAudio;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    private:</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classmtgb_1_1AudioPlayer.html#ae0fec4610e35155dea9bf4e2d9f700cf">   62</a></span>        IXAudio2SourceVoice* pSourceVoice_{ <span class="keyword">nullptr</span> };</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classmtgb_1_1AudioPlayer.html#a32207dd41c171ea635446090f7a29e26">   63</a></span>        <a class="code hl_class" href="classmtgb_1_1AudioClip.html">AudioClip</a>* pAudioClip_{ <span class="keyword">nullptr</span> };</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    };</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            this-&gt;hAudio = _other.<a class="code hl_variable" href="classmtgb_1_1AudioPlayer.html#aa4a0d4c4e1b977076b7842fe09d95b3a">hAudio</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            this-&gt;pSourceVoice_ = _other.pSourceVoice_;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            OnPostRestore();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">void</span> Initialize() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">void</span> SetAudio(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">AudioHandle</a> _hAudio);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordtype">void</span> SetVolume(<span class="keywordtype">float</span> volume);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordtype">void</span> Play();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">void</span> OnPostRestore() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_define" href="ReflectionMacro_8h.html#a1ddf9f2a08e2449dbc58868aa342463f">MT_PROPERTY</a>()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classmtgb_1_1AudioPlayer.html#aa4a0d4c4e1b977076b7842fe09d95b3a">   61</a></span>        <a class="code hl_typedef" href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">AudioHandle</a> hAudio;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    private:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classmtgb_1_1AudioPlayer.html#ae0fec4610e35155dea9bf4e2d9f700cf">   63</a></span>        IXAudio2SourceVoice* pSourceVoice_{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classmtgb_1_1AudioPlayer.html#a32207dd41c171ea635446090f7a29e26">   64</a></span>        <a class="code hl_class" href="classmtgb_1_1AudioClip.html">AudioClip</a>* pAudioClip_{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    };</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
 <div class="ttc" id="aAudioPlayerCP_8h_html"><div class="ttname"><a href="AudioPlayerCP_8h.html">AudioPlayerCP.h</a></div></div>
 <div class="ttc" id="aAudioPlayerState_8h_html"><div class="ttname"><a href="AudioPlayerState_8h.html">AudioPlayerState.h</a></div></div>
 <div class="ttc" id="aAudioPlayer_8generated_8h_html"><div class="ttname"><a href="AudioPlayer_8generated_8h.html">AudioPlayer.generated.h</a></div></div>
@@ -171,7 +172,7 @@ $(document).ready(function(){initNavTree('AudioPlayer_8h_source.html',''); initR
 <div class="ttc" id="aclassmtgb_1_1AudioPlayerCP_html"><div class="ttname"><a href="classmtgb_1_1AudioPlayerCP.html">mtgb::AudioPlayerCP</a></div><div class="ttdef"><b>Definition:</b> <a href="AudioPlayerCP_8h_source.html#l00010">AudioPlayerCP.h:12</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1AudioPlayer_html"><div class="ttname"><a href="classmtgb_1_1AudioPlayer.html">mtgb::AudioPlayer</a></div><div class="ttdoc">音声を再生するやつ</div><div class="ttdef"><b>Definition:</b> <a href="AudioPlayer_8h_source.html#l00022">AudioPlayer.h:23</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1AudioPlayer_html_a83b38450f3e764142ce4d1e7f84cd5b1"><div class="ttname"><a href="classmtgb_1_1AudioPlayer.html#a83b38450f3e764142ce4d1e7f84cd5b1">mtgb::AudioPlayer::AudioPlayerCP</a></div><div class="ttdeci">friend AudioPlayerCP</div><div class="ttdef"><b>Definition:</b> <a href="AudioPlayer_8h_source.html#l00024">AudioPlayer.h:24</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1AudioPlayer_html_ae0fec4610e35155dea9bf4e2d9f700cf"><div class="ttname"><a href="classmtgb_1_1AudioPlayer.html#ae0fec4610e35155dea9bf4e2d9f700cf">mtgb::AudioPlayer::pSourceVoice_</a></div><div class="ttdeci">IXAudio2SourceVoice * pSourceVoice_</div><div class="ttdef"><b>Definition:</b> <a href="AudioPlayer_8h_source.html#l00062">AudioPlayer.h:62</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1AudioPlayer_html_aa4a0d4c4e1b977076b7842fe09d95b3a"><div class="ttname"><a href="classmtgb_1_1AudioPlayer.html#aa4a0d4c4e1b977076b7842fe09d95b3a">mtgb::AudioPlayer::hAudio</a></div><div class="ttdeci">AudioHandle hAudio</div><div class="ttdef"><b>Definition:</b> <a href="AudioPlayer_8h_source.html#l00061">AudioPlayer.h:61</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponent_html"><div class="ttname"><a href="classmtgb_1_1IComponent.html">mtgb::IComponent</a></div><div class="ttdoc">ゲームオブジェクトにつけるコンポーネントのインタフェース</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00015">IComponent.h:16</a></div></div>
 <div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_ac2d7fb406c37e3e2f261e1d2beb210aa"><div class="ttname"><a href="namespacemtgb.html#ac2d7fb406c37e3e2f261e1d2beb210aa">mtgb::AudioHandle</a></div><div class="ttdeci">int32_t AudioHandle</div><div class="ttdoc">音声のハンドル</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00019">Audio.h:19</a></div></div>

@@ -37,6 +37,6 @@ var classmtgb_1_1TextBox =
     [ "layerFlag_", "classmtgb_1_1TextBox.html#af889133148e81bfcd2341b8573e5abc6", null ],
     [ "name_", "classmtgb_1_1TextBox.html#ac4f79d210ae0d1388e203d1d1b93ae6c", null ],
     [ "pTextRenderer_", "classmtgb_1_1TextBox.html#ae90a0857bea108c6792cdad00da91b47", null ],
-    [ "status_", "classmtgb_1_1TextBox.html#ab2aa5980cc440b5742c66d67d670e275", null ],
+    [ "status_", "classmtgb_1_1TextBox.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classmtgb_1_1TextBox.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
 ];

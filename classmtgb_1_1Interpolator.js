@@ -12,6 +12,7 @@ var classmtgb_1_1Interpolator =
     [ "Initialize", "classmtgb_1_1Interpolator.html#aecaeb2d199af3bd978a34238ae7f733a", null ],
     [ "OnPostRestore", "classmtgb_1_1Interpolator.html#adb172decee2741c5473b73a83c36e8f3", null ],
     [ "OnPreSave", "classmtgb_1_1Interpolator.html#a61f7a7f008cc862e4b74638250a1d241", null ],
+    [ "operator=", "classmtgb_1_1Interpolator.html#a88e1274e9119d71bebcce15896aa6b2f", null ],
     [ "Reuse", "classmtgb_1_1Interpolator.html#ab07fa68485a5cf4425eebf1718c82e73", null ],
     [ "SetEndpoints", "classmtgb_1_1Interpolator.html#adee3c60ecd18470db4715457f12cfe3d", null ],
     [ "UpdateProgress", "classmtgb_1_1Interpolator.html#aa48383060f1a0c4bc19b1291b6d57d4b", null ],

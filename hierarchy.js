@@ -57,6 +57,7 @@ var hierarchy =
     [ "Command", "classCommand.html", [
       [ "mtgb::AddComponentCommand", "classmtgb_1_1AddComponentCommand.html", null ],
       [ "mtgb::AddComponentCommandGeneric< T >", "classmtgb_1_1AddComponentCommandGeneric.html", null ],
+      [ "mtgb::DeleteGameObjectCommand", "classmtgb_1_1DeleteGameObjectCommand.html", null ],
       [ "mtgb::DeselectionCommand", "classmtgb_1_1DeselectionCommand.html", null ],
       [ "mtgb::DuplicateGameObjectCommand", "classmtgb_1_1DuplicateGameObjectCommand.html", null ],
       [ "mtgb::GameObjectCreateCommand", "classmtgb_1_1GameObjectCreateCommand.html", null ],
@@ -158,7 +159,10 @@ var hierarchy =
         [ "TimeLimit", "classTimeLimit.html", null ],
         [ "mtgb::Box3D", "classmtgb_1_1Box3D.html", null ],
         [ "mtgb::Camera", "classmtgb_1_1Camera.html", null ],
+        [ "mtgb::CircularSaw", "classmtgb_1_1CircularSaw.html", null ],
         [ "mtgb::HPViewer", "classmtgb_1_1HPViewer.html", null ],
+        [ "mtgb::Saw", "classmtgb_1_1Saw.html", null ],
+        [ "mtgb::SkySphere", "classmtgb_1_1SkySphere.html", null ],
         [ "mtgb::TextBox", "classmtgb_1_1TextBox.html", null ]
       ] ]
     ] ],
@@ -285,7 +289,8 @@ var hierarchy =
     [ "mtnet::HttpHeaderBuilder", "classmtnet_1_1HttpHeaderBuilder.html", null ],
     [ "IActor", "classIActor.html", [
       [ "PatrolChargerEnemy", "classPatrolChargerEnemy.html", null ],
-      [ "Player", "classPlayer.html", null ]
+      [ "Player", "classPlayer.html", null ],
+      [ "mtgb::Saw", "classmtgb_1_1Saw.html", null ]
     ] ],
     [ "mtgb::ICamera", "classmtgb_1_1ICamera.html", [
       [ "mtgb::ImGuiEditorCamera", "classmtgb_1_1ImGuiEditorCamera.html", null ]
@@ -474,13 +479,17 @@ var hierarchy =
     [ "ImGuiSettingsHandler", "structImGuiSettingsHandler.html", null ],
     [ "mtgb::ImGuiShowable", "classmtgb_1_1ImGuiShowable.html", [
       [ "Goal", "classGoal.html", null ],
+      [ "MovingFloor", "classMovingFloor.html", null ],
       [ "PatrolChargerEnemy", "classPatrolChargerEnemy.html", null ],
       [ "Player", "classPlayer.html", null ],
       [ "SeaPlane", "classSeaPlane.html", null ],
       [ "mtgb::Box3D", "classmtgb_1_1Box3D.html", null ],
+      [ "mtgb::CircularSaw", "classmtgb_1_1CircularSaw.html", null ],
       [ "mtgb::ImGuiEditor", "classmtgb_1_1ImGuiEditor.html", null ],
       [ "mtgb::ImGuiEditorCamera", "classmtgb_1_1ImGuiEditorCamera.html", null ],
-      [ "mtgb::ImGuizmoManipulator", "classmtgb_1_1ImGuizmoManipulator.html", null ]
+      [ "mtgb::ImGuizmoManipulator", "classmtgb_1_1ImGuizmoManipulator.html", null ],
+      [ "mtgb::Saw", "classmtgb_1_1Saw.html", null ],
+      [ "mtgb::SkySphere", "classmtgb_1_1SkySphere.html", null ]
     ] ],
     [ "ImGuiShrinkWidthItem", "structImGuiShrinkWidthItem.html", null ],
     [ "ImGuiSizeCallbackData", "structImGuiSizeCallbackData.html", null ],

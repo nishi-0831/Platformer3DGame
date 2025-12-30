@@ -51,6 +51,8 @@ var classmtgb_1_1Camera =
     [ "isGrounded_", "classmtgb_1_1Camera.html#aa1ac2bfd2afad3a088799f4e34181cd1", null ],
     [ "isNotCalledStart_", "classmtgb_1_1Camera.html#aee8629c2c936df1173a2f9efe7747ab9", null ],
     [ "layerFlag_", "classmtgb_1_1Camera.html#af889133148e81bfcd2341b8573e5abc6", null ],
+    [ "lerpSpeedGrounded_", "classmtgb_1_1Camera.html#a1c051c714b3301af6c6e723cfd4fe968", null ],
+    [ "lerpSpeedJumping_", "classmtgb_1_1Camera.html#a9ba40fa75566bd87966b9f1282bc72dd", null ],
     [ "lookAtPositionOffset_", "classmtgb_1_1Camera.html#ae13166877c2ce1695aed0aa107cc4323", null ],
     [ "lookAtPosLerpProgress_", "classmtgb_1_1Camera.html#ac6f9bcd0b0a4f7d9751da7d6031f846d", null ],
     [ "maxAzimuthalAngleRad_", "classmtgb_1_1Camera.html#a3a4c8aa006e4cdc69416f1166df1bdb3", null ],
@@ -62,7 +64,7 @@ var classmtgb_1_1Camera =
     [ "pCameraTransform_", "classmtgb_1_1Camera.html#aae14c448903862c60f876df1c4997031", null ],
     [ "polarAngleRad_", "classmtgb_1_1Camera.html#a80ecc06cfb9a90190eba39d29dae7ca5", null ],
     [ "pTargetTransform_", "classmtgb_1_1Camera.html#a2ec4c41a25821ea84bbc08ea5e258e31", null ],
-    [ "status_", "classmtgb_1_1Camera.html#ab2aa5980cc440b5742c66d67d670e275", null ],
+    [ "status_", "classmtgb_1_1Camera.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classmtgb_1_1Camera.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
     [ "targetVelocityCache_", "classmtgb_1_1Camera.html#a34fbf3c2b9e948971751cbdffc3fe76d", null ]
 ];

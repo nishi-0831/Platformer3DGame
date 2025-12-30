@@ -7,6 +7,6 @@ var classmtgb_1_1ImGuiShowable =
     [ "ShowImGui", "classmtgb_1_1ImGuiShowable.html#a6b09f6b7222072d37f5bc36e8c2fcd71", null ],
     [ "MTImGui", "classmtgb_1_1ImGuiShowable.html#ace1dc6d658ad9a738ab1ebe3478d2955", null ],
     [ "displayName_", "classmtgb_1_1ImGuiShowable.html#a53eca55c2c3901c5713e857417100496", null ],
-    [ "entityId_", "classmtgb_1_1ImGuiShowable.html#aa0d120af9aaa2ce8a9809642816211bb", null ],
-    [ "show_", "classmtgb_1_1ImGuiShowable.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ]
+    [ "show_", "classmtgb_1_1ImGuiShowable.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
+    [ "targetEntityId_", "classmtgb_1_1ImGuiShowable.html#a04e42ed23c57183524dc34a01aa2a138", null ]
 ];

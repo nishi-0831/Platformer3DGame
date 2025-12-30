@@ -11,6 +11,7 @@ var classmtgb_1_1TextRenderer =
     [ "Initialize", "classmtgb_1_1TextRenderer.html#aecaeb2d199af3bd978a34238ae7f733a", null ],
     [ "OnPostRestore", "classmtgb_1_1TextRenderer.html#a657030a231a22470b5b09bd6e55a2c0e", null ],
     [ "OnPreSave", "classmtgb_1_1TextRenderer.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8", null ],
+    [ "operator=", "classmtgb_1_1TextRenderer.html#ab1a000a1f275ad459719d7c0c727f22f", null ],
     [ "Render", "classmtgb_1_1TextRenderer.html#a7cd4639801f6cfa02d7008ca51a51f25", null ],
     [ "Reuse", "classmtgb_1_1TextRenderer.html#ab07fa68485a5cf4425eebf1718c82e73", null ],
     [ "alignment", "classmtgb_1_1TextRenderer.html#a22704c0d66d73d6548cff8d2ab35dc52", null ],

@@ -15,8 +15,7 @@ var classmtgb_1_1ImGuiEditor =
     [ "commandListener_", "classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec", null ],
     [ "defMementos_", "classmtgb_1_1ImGuiEditor.html#a95453cc3a8bedbad66fee787de86fa87", null ],
     [ "displayName_", "classmtgb_1_1ImGuiEditor.html#a53eca55c2c3901c5713e857417100496", null ],
-    [ "entityId_", "classmtgb_1_1ImGuiEditor.html#aa0d120af9aaa2ce8a9809642816211bb", null ],
-    [ "id", "classmtgb_1_1ImGuiEditor.html#a5fea57dfc0e295815ac07de4c668d30b", null ],
     [ "pManipulator_", "classmtgb_1_1ImGuiEditor.html#a61eb96ea761c9c2d2e1ed91aeca08305", null ],
-    [ "show_", "classmtgb_1_1ImGuiEditor.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ]
+    [ "show_", "classmtgb_1_1ImGuiEditor.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
+    [ "targetEntityId_", "classmtgb_1_1ImGuiEditor.html#a04e42ed23c57183524dc34a01aa2a138", null ]
 ];

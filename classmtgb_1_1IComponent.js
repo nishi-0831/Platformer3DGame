@@ -8,6 +8,7 @@ var classmtgb_1_1IComponent =
     [ "Get", "classmtgb_1_1IComponent.html#a4e0db1b0f0dbd3823a06ae854eacef41", null ],
     [ "GetEntityId", "classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29", null ],
     [ "Initialize", "classmtgb_1_1IComponent.html#aecaeb2d199af3bd978a34238ae7f733a", null ],
+    [ "operator=", "classmtgb_1_1IComponent.html#a2697651bbfe444abc399a1a8dcfdb31f", null ],
     [ "Reuse", "classmtgb_1_1IComponent.html#ab07fa68485a5cf4425eebf1718c82e73", null ],
     [ "ComponentPool< ComponentT, ComponentPoolT >", "classmtgb_1_1IComponent.html#a37d6b5582bd4cc3eea5feb793ae19aa4", null ],
     [ "ComponentPoolT", "classmtgb_1_1IComponent.html#aed716499a289d6dd69c0d40b683142aa", null ],

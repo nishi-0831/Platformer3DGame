@@ -14,6 +14,7 @@ var classmtgb_1_1MeshRenderer =
     [ "OnChangeMeshFileName", "classmtgb_1_1MeshRenderer.html#a49a812c6d7db18eb7e087274554f6204", null ],
     [ "OnPostRestore", "classmtgb_1_1MeshRenderer.html#a34771f773121e76108c53cd5b9a21f46", null ],
     [ "OnPreSave", "classmtgb_1_1MeshRenderer.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8", null ],
+    [ "operator=", "classmtgb_1_1MeshRenderer.html#a412c36d93f2a3db76473820a8d3ef93b", null ],
     [ "Render", "classmtgb_1_1MeshRenderer.html#a4da90b8ef96622cec49f0729b7f4f2cc", null ],
     [ "Reuse", "classmtgb_1_1MeshRenderer.html#ab07fa68485a5cf4425eebf1718c82e73", null ],
     [ "SetFrame", "classmtgb_1_1MeshRenderer.html#a87aa31911dd5d33c871aa1db85902996", null ],

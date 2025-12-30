@@ -29,7 +29,7 @@ var classmtgb_1_1Transform =
     [ "Left", "classmtgb_1_1Transform.html#ad24a811b1092b7bdbfdd9e49a07fb547", null ],
     [ "OnPostRestore", "classmtgb_1_1Transform.html#a5ace1530f04c63eed66eba461800436d", null ],
     [ "OnPreSave", "classmtgb_1_1Transform.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8", null ],
-    [ "operator=", "classmtgb_1_1Transform.html#a718d2732e3675357a0eca96181c1fd97", null ],
+    [ "operator=", "classmtgb_1_1Transform.html#ad954f3d73ba23e3267c7810db5ec3a60", null ],
     [ "Reuse", "classmtgb_1_1Transform.html#ab07fa68485a5cf4425eebf1718c82e73", null ],
     [ "Right", "classmtgb_1_1Transform.html#a3fc5910056a55619be7fa22edf326f01", null ],
     [ "Rotation", "classmtgb_1_1Transform.html#aea955de817d512302e6db6208559d70d", null ],
