@@ -2,6 +2,8 @@
 
 namespace
 {
+	float normalizedX;
+	float normalizedY;
 	const mtgb::Vector3 INIT_ANGLE{ 0, 0, 0 };
 	/// <summary>
 	/// ラジアン単位の値を、0～2πの範囲に正規化する
@@ -53,6 +55,7 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 	, lookAtPosLerpProgress_{0.0f}
 	, lerpSpeedGrounded_{ 1.0f }
 	, lerpSpeedJumping_{ 0.3f }
+	, lerpSpeedScalar_{2.0f}
 {
 	// カメラ補間速度の初期化
 	cameraStat_
@@ -73,7 +76,10 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 				distY_ = pTargetTransform_->position.y;
 
 				orbitSpeed_ = 1.0f;
-				lookAtPosLerpProgress_ += lerpSpeedGrounded_ * Time::DeltaTimeF();
+				
+				// 被写体が画面外にある場合は追従速度を上げる
+				float lerpSpeed = IsTargetOffScreen() ? lerpSpeedGrounded_ * lerpSpeedScalar_ : lerpSpeedGrounded_;
+				lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
 
 				// ジャンプ中：速度に基づいて状態を判定
 				if (targetVelocityCache_.y > 0.1f)
@@ -96,8 +102,10 @@ mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
 				}
 				distY_ = pTargetTransform_->position.y;
 				orbitSpeed_ = 0.5f;
-				// 目標角度へ滑らかに補間
-				lookAtPosLerpProgress_ += lerpSpeedJumping_ * Time::DeltaTimeF();
+				
+				// 被写体が画面外にある場合は追従速度を上げる
+				float lerpSpeed = IsTargetOffScreen() ? lerpSpeedJumping_ * lerpSpeedScalar_ : lerpSpeedJumping_;
+				lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
 			});
 }
 
@@ -124,6 +132,11 @@ void mtgb::Camera::Update()
 		ImGui::Text("Target Velocity Y: %.3f", targetVelocityCache_.y);
 		ImGui::Text("lookAtPosLerpProgress: %.3f", lookAtPosLerpProgress_);
 		ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
+		ImGui::Text("Is Off Screen: %s", IsTargetOffScreen() ? "true" : "false");
+		TypeRegistry::Instance().CallFunc<float>(&normalizedX, "normalizedX");
+		TypeRegistry::Instance().CallFunc<float>(&normalizedY, "normalizedY");
+
+		
 	}, "Camera", ShowType::Inspector);
 
 	DoOrbit();
@@ -177,6 +190,24 @@ void mtgb::Camera::SetFollowMode(bool _isGrounded, const Vector3& _targetVelocit
 {
 	isGrounded_ = _isGrounded;
 	targetVelocityCache_ = _targetVelocity;
+}
+
+bool mtgb::Camera::IsTargetOffScreen() const
+{
+	if (pTargetTransform_ == nullptr || pCameraTransform_ == nullptr)
+		return false;
+
+	Vector3 targetScreenPos = Game::System<CameraSystem>().GetWorldToScreenPos(
+		pTargetTransform_->position,
+		WindowContext::First
+	);
+	Vector2F screenSize = Game::System<Screen>().GetSizeF();
+
+	normalizedX = targetScreenPos.x / screenSize.x;
+	normalizedY = targetScreenPos.y / screenSize.y;
+
+
+	return (normalizedY >= 1.0f) || (normalizedY <= 0.0f) || (normalizedX >= 1.0f) || (normalizedX <= 0.0f);
 }
 
 void mtgb::Camera::MoveCameraSpherical(float _distance)

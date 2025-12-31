@@ -25,6 +25,7 @@ namespace mtgb
 		/// <param name="_targetVelocity"> 被写体の速度 </param>
 		void SetFollowMode(bool _isGrounded, const Vector3& _targetVelocity);
 	private:
+		bool IsTargetOffScreen() const;
 		/// <summary>
 		/// 球面座標系でカメラを動かす
 		/// 視点を中心に回転させる
@@ -74,6 +75,7 @@ namespace mtgb
 		float distY_;
 		float lerpSpeedGrounded_;
 		float lerpSpeedJumping_;
+		float lerpSpeedScalar_;
 	};
 }
 
