@@ -21,6 +21,7 @@ MovingFloor::MovingFloor()
 	pMeshRenderer_->shaderType = ShaderType::FbxParts;
 	// 型情報に登録された名前を取得
 	name_ = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(MovingFloor));
+	displayName_ = name_;
 	// コライダーの設定
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->SetExtents(Vector3(1, 1, 1));

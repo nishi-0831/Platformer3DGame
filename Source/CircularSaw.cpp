@@ -87,7 +87,7 @@ mtgb::Saw::Saw()
 	, radius_{ 3.0f }
 	, takeDamageAmount_{ 1 }
 {
-	pTransform_->scale = Vector3{ radius_,radius_,radius_ };
+	pTransform_->scale = Vector3{ radius_,1.0f,radius_ };
 	pCollider_->colliderType_ = ColliderType::TYPE_OBB;
 	pMeshRenderer_->meshFileName = "Model/Saw.fbx";
 	pMeshRenderer_->meshHandle = Fbx::Load("Model/Saw.fbx");

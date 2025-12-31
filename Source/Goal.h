@@ -13,10 +13,12 @@ public:
 	void ShowImGui() override;
 
 private:
+	void OnClear();
 	Transform* pTransform_;
 	Collider* pCollider_;
 	RigidBody* pRigidBody_;
 	MeshRenderer* pMeshRenderer_;
 	static unsigned int generateCounter_;
 	std::weak_ptr<EffectParameters> pEffect_;
+	float transitionSceneDelay_;
 };

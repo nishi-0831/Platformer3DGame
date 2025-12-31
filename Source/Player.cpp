@@ -28,7 +28,7 @@ Player::Player()
 	, hp_{3}
 	, pHPViewer_{ nullptr }
 {
-	pRigidBody_->useGravity_ = true;
+	//pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
 	pRigidBody_->OnCollisionEnter([this](EntityId _entityId) {OnCollisionEnter(_entityId); });
 	pMeshRenderer_->meshFileName = "Model/MinerAnim.fbx";
@@ -65,6 +65,7 @@ void Player::Update()
 			if (pRigidBody_->IsJumping() == false)
 			{
 				pRigidBody_->velocity_.y += jumpHeight;
+				Audio::PlayOneShotFile("Sound/Jump.mp3");
 			}
 		}
 		UpdateRotate();

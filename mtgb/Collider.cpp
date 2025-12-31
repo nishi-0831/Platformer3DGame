@@ -26,7 +26,7 @@ mtgb::Collider::Collider(EntityId _entityId)
 	, pTransform_{ &Transform::Get(_entityId) }
 	, center_{ 0.0f,0.0f,0.0f }
 	, radius_{ 1.0f }
-	, extents_{ 1.0f,1.0f ,1.0f }
+	, extents_{ 0.5f,0.5f ,0.5 }
 {
 	
 }
@@ -89,7 +89,7 @@ void mtgb::Collider::UpdateBoundingData()
 	case ColliderType::TYPE_CAPSULE:
 		// TODO: カプセル初期化
 	case ColliderType::TYPE_OBB:
-		computeOBB_.Center = pTransform_->position;
+		computeOBB_.Center = pTransform_->position + center_;
 		computeOBB_.Extents.x = extents_.x * pTransform_->scale.x;
 		computeOBB_.Extents.y = extents_.y * pTransform_->scale.y;
 		computeOBB_.Extents.z = extents_.z * pTransform_->scale.z;
@@ -100,17 +100,17 @@ void mtgb::Collider::UpdateBoundingData()
 
 void mtgb::Collider::UpdateBoundingSphere()
 {
-	computeSphere_.Center = pTransform_->position;
+	computeSphere_.Center = pTransform_->position + center_;
 	float maxScale = (std::max)(pTransform_->scale.x, pTransform_->scale.y);
 	maxScale = (std::max)(pTransform_->scale.z, maxScale);
-	computeSphere_.Radius = maxScale;
+	computeSphere_.Radius = maxScale * radius_;
 }
 
 void mtgb::Collider::UpdateBoundingBox()
 {
 	if (!isStatic_)
 	{
-		computeBox_.Center = pTransform_->position;
+		computeBox_.Center = pTransform_->position + center_;
 		computeBox_.Extents.x = extents_.x * pTransform_->scale.x;
 		computeBox_.Extents.y = extents_.y * pTransform_->scale.y;
 		computeBox_.Extents.z = extents_.z * pTransform_->scale.z;
@@ -563,7 +563,9 @@ void mtgb::Collider::Draw() const
 	{
 	case ColliderType::TYPE_SPHERE:
 		copyTransform = *pTransform_;
+		copyTransform.position += center_;
 		copyTransform.scale *= Vector3::One() * computeSphere_.Radius;
+		copyTransform.Compute();
 		Draw::FBXModel(hSphereModel_, copyTransform, 0,ShaderType::Debug3D);
 		break;
 	case ColliderType::TYPE_CAPSULE:
@@ -591,9 +593,10 @@ void mtgb::Collider::Draw() const
 		else
 		{
 			// Transformに合わせて位置、サイズを調整
+			copyTransform.position += center_;
 			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
-		
+		copyTransform.Compute();
 		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::Debug3D);
 		break;
 	case ColliderType::TYPE_OBB:
@@ -615,9 +618,10 @@ void mtgb::Collider::Draw() const
 		else
 		{
 			// Transformに合わせて位置、サイズを調整
+			copyTransform.position += center_;
 			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
-
+		copyTransform.Compute();
 		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::Debug3D);
 		break;
 	default:

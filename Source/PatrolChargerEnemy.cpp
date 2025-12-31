@@ -104,18 +104,27 @@ void PatrolChargerEnemy::ShowImGui()
 
 void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 {
+	if (state_.Current() != STATE::DYING)
+	{
+		// 踏まれたエフェクト再生
+		EffectParameters params;
+		params.isLoop = false;
+		Vector3 effectPos = Vector3{ pTransform_->position.x,pTransform_->position.y + pCollider_->GetExtents().y,pTransform_->position.z };
+		Matrix4x4 mat = DirectX::XMMatrixTranslation(effectPos.x,effectPos.y,effectPos.z);
+		params.worldMat = mat;
+		Game::System<EffectManager>().Play("Stomp", params);
+
+		// 踏まれたSE再生
+		Audio::PlayOneShotFile("Sound/Stomp.mp3");
+
+
+		// 踏んだアクターを上に飛ばす
+		EntityId id = _pOther->GetId();
+		RigidBody& otherRigidBody = RigidBody::Get(id);
+		otherRigidBody.velocity_.y += onStompedBounce_;
+	}
+
 	state_.Change(STATE::DYING);
-
-	EffectParameters params;
-	params.isLoop = false;
-	Vector3 effectPos = Vector3{ pTransform_->position.x,pTransform_->position.y + pCollider_->GetExtents().y,pTransform_->position.z };
-	Matrix4x4 mat = DirectX::XMMatrixTranslation(effectPos.x,effectPos.y,effectPos.z);
-	params.worldMat = mat;
-	Game::System<EffectManager>().Play("Stomp", params);
-
-	EntityId id = _pOther->GetId();
-	RigidBody& otherRigidBody = RigidBody::Get(id);
-	otherRigidBody.velocity_.y += onStompedBounce_;
 }
 
 void PatrolChargerEnemy::OnHitSide(IActor* _pOther)

@@ -10,6 +10,7 @@ Goal::Goal()
     , pCollider_{ Component<Collider>() }
     , pRigidBody_{ Component<RigidBody>() }
     , pMeshRenderer_{Component<MeshRenderer>()}
+    , transitionSceneDelay_{4.0f}
 {
     pCollider_->colliderType_ = ColliderType::TYPE_AABB;
     pCollider_->isStatic_ = false;
@@ -48,8 +49,7 @@ void Goal::Start()
             GameObjectTag tag = FindGameObject(_entityId)->GetTag();
             if (tag == GameObjectTag::Player)
             {
-                Game::System<StageManger>().ClearCurrentStage();
-                Game::System<SceneSystem>().Move<ResultScene>();
+                OnClear();
             }
         });
 
@@ -70,5 +70,16 @@ void Goal::ShowImGui()
 {
     MTImGui::Instance().ShowComponents(Entity::entityId_);
     ImGui::Text("EntityId:%d", Entity::entityId_);
+}
+
+void Goal::OnClear()
+{
+    Audio::PlayOneShotFile("Sound/ClearScene.mp3");
+
+    Timer::AddAram(transitionSceneDelay_, []
+        {
+            Game::System<StageManger>().ClearCurrentStage();
+            Game::System<SceneSystem>().Move<ResultScene>();
+        });
 }
 
