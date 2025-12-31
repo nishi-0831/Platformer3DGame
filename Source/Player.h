@@ -31,7 +31,8 @@ private:
 		RUN,
 		JUMP,
 		FALL,
-		DYING
+		DYING,
+		VICTORY
 	};
 	mtstat::MTStat<STATE> state_;
 	Transform* pTransform_;

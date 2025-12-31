@@ -10,3 +10,8 @@ struct PlayerHpReachedZeroEvent
 {
 	mtgb::EntityId playerEntityId;
 };
+
+struct PlayerReachedGoalEvent
+{
+
+};

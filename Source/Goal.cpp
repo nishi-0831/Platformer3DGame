@@ -2,6 +2,7 @@
 #include "Goal.h"
 #include "ResultScene.h"
 #include "StageManager.h"
+#include "GameEvents.h"
 unsigned int Goal::generateCounter_{ 0 };
 
 Goal::Goal()
@@ -81,5 +82,7 @@ void Goal::OnClear()
             Game::System<StageManger>().ClearCurrentStage();
             Game::System<SceneSystem>().Move<ResultScene>();
         });
+
+    Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Invoke(PlayerReachedGoalEvent{});
 }
 

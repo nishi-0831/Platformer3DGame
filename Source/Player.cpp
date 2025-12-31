@@ -49,6 +49,13 @@ Player::Player()
 			// 強制的にHPをゼロにする
 			TakeDamage(hp_);
 		}, EventScope::Scene);
+
+	// ゴールイベントを購読
+	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Subscribe([this](const PlayerReachedGoalEvent& _event)
+		{
+			pRigidBody_->velocity_ = Vector3::Zero();
+			state_.Change(STATE::VICTORY);
+		}, EventScope::Scene);
 }
 
 Player::~Player()
@@ -57,7 +64,7 @@ Player::~Player()
 
 void Player::Update()
 {
-	if (state_.Current() != STATE::DYING)
+	if (state_.Current() != STATE::DYING && state_.Current() != STATE::VICTORY)
 	{
 		UpdatePosition();
 		if (InputUtil::GetGamePadDown(PadCode::Cross) || InputUtil::GetKeyDown(KeyCode::Space))
@@ -70,12 +77,9 @@ void Player::Update()
 		}
 		UpdateRotate();
 	}
-
-
 	pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
 	
 	state_.Update();
-	
 }
 
 void Player::InitializeState()
@@ -164,9 +168,9 @@ void Player::InitializeState()
 			{
 				animController_->PlayAnimation("Dying", false);
 			})
-		.OnUpdate(STATE::DYING, [this]
+		.OnStart(STATE::VICTORY, [this]
 			{
-				
+				animController_->PlayAnimation("Dancing", true);
 			});
 }
 
