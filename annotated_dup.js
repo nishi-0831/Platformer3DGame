@@ -377,7 +377,8 @@ var annotated_dup =
     ] ],
     [ "nlohmann", "namespacenlohmann.html", [
       [ "adl_serializer< ::mtbit::BitFlag< EnumStructT > >", "structnlohmann_1_1adl__serializer_3_01_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html", "structnlohmann_1_1adl__serializer_3_01_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4" ],
-      [ "adl_serializer< std::bitset< N > >", "structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html", "structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4" ]
+      [ "adl_serializer< std::bitset< N > >", "structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html", "structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4" ],
+      [ "adl_serializer<::mtgb::Color >", "structnlohmann_1_1adl__serializer_3_1_1mtgb_1_1Color_01_4.html", "structnlohmann_1_1adl__serializer_3_1_1mtgb_1_1Color_01_4" ]
     ] ],
     [ "pyexample", "namespacepyexample.html", [
       [ "PyClass", "classpyexample_1_1PyClass.html", "classpyexample_1_1PyClass" ]
@@ -585,8 +586,10 @@ var annotated_dup =
     [ "ExampleMemberInfo", "structExampleMemberInfo.html", "structExampleMemberInfo" ],
     [ "ExampleSelectionWithDeletion", "structExampleSelectionWithDeletion.html", "structExampleSelectionWithDeletion" ],
     [ "ExampleTreeNode", "structExampleTreeNode.html", "structExampleTreeNode" ],
+    [ "FadeOutScreen", "classFadeOutScreen.html", "classFadeOutScreen" ],
     [ "Fn_Test", "classFn__Test.html", "classFn__Test" ],
     [ "font_size_order", "structfont__size__order.html", null ],
+    [ "GameOverManager", "classGameOverManager.html", "classGameOverManager" ],
     [ "GameOverZone", "classGameOverZone.html", "classGameOverZone" ],
     [ "GLFWgamepadstate", "structGLFWgamepadstate.html", "structGLFWgamepadstate" ],
     [ "GLFWgammaramp", "structGLFWgammaramp.html", "structGLFWgammaramp" ],
@@ -766,6 +769,9 @@ var annotated_dup =
     [ "PatrolChargerEnemy", "classPatrolChargerEnemy.html", "classPatrolChargerEnemy" ],
     [ "Plane", "structPlane.html", "structPlane" ],
     [ "Player", "classPlayer.html", "classPlayer" ],
+    [ "PlayerFellOutEvent", "structPlayerFellOutEvent.html", "structPlayerFellOutEvent" ],
+    [ "PlayerHpReachedZeroEvent", "structPlayerHpReachedZeroEvent.html", "structPlayerHpReachedZeroEvent" ],
+    [ "PlayerReachedGoalEvent", "structPlayerReachedGoalEvent.html", null ],
     [ "Property", "structProperty.html", "structProperty" ],
     [ "ProxyFor", "structProxyFor.html", "structProxyFor" ],
     [ "QTstyle_Test", "classQTstyle__Test.html", "classQTstyle__Test" ],

@@ -11,12 +11,15 @@ var searchData=
   ['platform_8',['Platform',['../classLLGI_1_1Platform.html',1,'LLGI']]],
   ['platformparameter_9',['PlatformParameter',['../structLLGI_1_1PlatformParameter.html',1,'LLGI']]],
   ['player_10',['Player',['../classPlayer.html',1,'']]],
-  ['prepend_11',['prepend',['../structrefl_1_1trait_1_1prepend.html',1,'refl::trait']]],
-  ['profileint_12',['ProfileInt',['../structmtgb_1_1ProfileInt.html',1,'mtgb']]],
-  ['property_13',['Property',['../structProperty.html',1,'']]],
-  ['property_14',['property',['../structrefl_1_1attr_1_1property.html',1,'refl::attr']]],
-  ['propertychangecommand_15',['PropertyChangeCommand',['../classmtgb_1_1PropertyChangeCommand.html',1,'mtgb']]],
-  ['proxy_16',['proxy',['../structrefl_1_1runtime_1_1proxy.html',1,'refl::runtime']]],
-  ['proxyfor_17',['ProxyFor',['../structProxyFor.html',1,'']]],
-  ['pyclass_18',['PyClass',['../classdocstring_1_1PyClass.html',1,'docstring.PyClass'],['../classpyexample_1_1PyClass.html',1,'pyexample.PyClass']]]
+  ['playerfelloutevent_11',['PlayerFellOutEvent',['../structPlayerFellOutEvent.html',1,'']]],
+  ['playerhpreachedzeroevent_12',['PlayerHpReachedZeroEvent',['../structPlayerHpReachedZeroEvent.html',1,'']]],
+  ['playerreachedgoalevent_13',['PlayerReachedGoalEvent',['../structPlayerReachedGoalEvent.html',1,'']]],
+  ['prepend_14',['prepend',['../structrefl_1_1trait_1_1prepend.html',1,'refl::trait']]],
+  ['profileint_15',['ProfileInt',['../structmtgb_1_1ProfileInt.html',1,'mtgb']]],
+  ['property_16',['Property',['../structProperty.html',1,'']]],
+  ['property_17',['property',['../structrefl_1_1attr_1_1property.html',1,'refl::attr']]],
+  ['propertychangecommand_18',['PropertyChangeCommand',['../classmtgb_1_1PropertyChangeCommand.html',1,'mtgb']]],
+  ['proxy_19',['proxy',['../structrefl_1_1runtime_1_1proxy.html',1,'refl::runtime']]],
+  ['proxyfor_20',['ProxyFor',['../structProxyFor.html',1,'']]],
+  ['pyclass_21',['PyClass',['../classdocstring_1_1PyClass.html',1,'docstring.PyClass'],['../classpyexample_1_1PyClass.html',1,'pyexample.PyClass']]]
 ];

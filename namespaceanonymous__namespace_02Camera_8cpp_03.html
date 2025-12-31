@@ -110,6 +110,10 @@ $(document).ready(function(){initNavTree('namespaceanonymous__namespace_02Camera
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 変数</h2></td></tr>
+<tr class="memitem:a1b2a977c29c9d3c76f7a339a4af2c3c5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Camera_8cpp_03.html#a1b2a977c29c9d3c76f7a339a4af2c3c5">normalizedX</a></td></tr>
+<tr class="separator:a1b2a977c29c9d3c76f7a339a4af2c3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3fa807d32260003db354deefa6cba53"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Camera_8cpp_03.html#ad3fa807d32260003db354deefa6cba53">normalizedY</a></td></tr>
+<tr class="separator:ad3fa807d32260003db354deefa6cba53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fc49b98bb22fa08268c1fd845e0ff1b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02Camera_8cpp_03.html#a7fc49b98bb22fa08268c1fd845e0ff1b">INIT_ANGLE</a> { 0, 0, 0 }</td></tr>
 <tr class="separator:a7fc49b98bb22fa08268c1fd845e0ff1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -139,21 +143,21 @@ $(document).ready(function(){initNavTree('namespaceanonymous__namespace_02Camera
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="Camera_8cpp_source.html">Camera.cpp</a> の <a class="el" href="Camera_8cpp_source.html#l00011">11</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>    {</div>
-<div class="line"><span class="lineno">   13</span>        <span class="keyword">const</span> <span class="keywordtype">float</span> TWO_PI = DirectX::XM_2PI;</div>
-<div class="line"><span class="lineno">   14</span> </div>
-<div class="line"><span class="lineno">   15</span>        <span class="comment">// 余りを計算</span></div>
-<div class="line"><span class="lineno">   16</span>        _angleRad = std::fmod(_angleRad, TWO_PI);</div>
-<div class="line"><span class="lineno">   17</span> </div>
-<div class="line"><span class="lineno">   18</span>        <span class="comment">// 負の場合</span></div>
-<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">if</span> (_angleRad &lt; 0.0f)</div>
-<div class="line"><span class="lineno">   20</span>        {</div>
-<div class="line"><span class="lineno">   21</span>            <span class="comment">// 正の値に修正</span></div>
-<div class="line"><span class="lineno">   22</span>            _angleRad += TWO_PI;</div>
-<div class="line"><span class="lineno">   23</span>        }</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">return</span> _angleRad;</div>
-<div class="line"><span class="lineno">   25</span>    }</div>
+<p class="definition"> <a class="el" href="Camera_8cpp_source.html">Camera.cpp</a> の <a class="el" href="Camera_8cpp_source.html#l00013">13</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>    {</div>
+<div class="line"><span class="lineno">   15</span>        <span class="keyword">const</span> <span class="keywordtype">float</span> TWO_PI = DirectX::XM_2PI;</div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>        <span class="comment">// 余りを計算</span></div>
+<div class="line"><span class="lineno">   18</span>        _angleRad = std::fmod(_angleRad, TWO_PI);</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>        <span class="comment">// 負の場合</span></div>
+<div class="line"><span class="lineno">   21</span>        <span class="keywordflow">if</span> (_angleRad &lt; 0.0f)</div>
+<div class="line"><span class="lineno">   22</span>        {</div>
+<div class="line"><span class="lineno">   23</span>            <span class="comment">// 正の値に修正</span></div>
+<div class="line"><span class="lineno">   24</span>            _angleRad += TWO_PI;</div>
+<div class="line"><span class="lineno">   25</span>        }</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> _angleRad;</div>
+<div class="line"><span class="lineno">   27</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -170,7 +174,39 @@ $(document).ready(function(){initNavTree('namespaceanonymous__namespace_02Camera
       </table>
 </div><div class="memdoc">
 
+<p class="definition"> <a class="el" href="Camera_8cpp_source.html">Camera.cpp</a> の <a class="el" href="Camera_8cpp_source.html#l00007">7</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1b2a977c29c9d3c76f7a339a4af2c3c5" name="a1b2a977c29c9d3c76f7a339a4af2c3c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b2a977c29c9d3c76f7a339a4af2c3c5">&#9670;&#160;</a></span>normalizedX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float anonymous_namespace{Camera.cpp}::normalizedX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p class="definition"> <a class="el" href="Camera_8cpp_source.html">Camera.cpp</a> の <a class="el" href="Camera_8cpp_source.html#l00005">5</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad3fa807d32260003db354deefa6cba53" name="ad3fa807d32260003db354deefa6cba53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3fa807d32260003db354deefa6cba53">&#9670;&#160;</a></span>normalizedY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float anonymous_namespace{Camera.cpp}::normalizedY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Camera_8cpp_source.html">Camera.cpp</a> の <a class="el" href="Camera_8cpp_source.html#l00006">6</a> 行目に定義があります。</p>
 
 </div>
 </div>

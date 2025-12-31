@@ -5,7 +5,9 @@ var namespaces_dup =
     ] ],
     [ "anonymous_namespace{Camera.cpp}", "namespaceanonymous__namespace_02Camera_8cpp_03.html", [
       [ "NormalizeAngleRad", "namespaceanonymous__namespace_02Camera_8cpp_03.html#a7f97394dc6d258a7eaec586ec56e98ac", null ],
-      [ "INIT_ANGLE", "namespaceanonymous__namespace_02Camera_8cpp_03.html#a7fc49b98bb22fa08268c1fd845e0ff1b", null ]
+      [ "INIT_ANGLE", "namespaceanonymous__namespace_02Camera_8cpp_03.html#a7fc49b98bb22fa08268c1fd845e0ff1b", null ],
+      [ "normalizedX", "namespaceanonymous__namespace_02Camera_8cpp_03.html#a1b2a977c29c9d3c76f7a339a4af2c3c5", null ],
+      [ "normalizedY", "namespaceanonymous__namespace_02Camera_8cpp_03.html#ad3fa807d32260003db354deefa6cba53", null ]
     ] ],
     [ "anonymous_namespace{CameraSystem.cpp}", "namespaceanonymous__namespace_02CameraSystem_8cpp_03.html", [
       [ "DEFAULT_FAR", "namespaceanonymous__namespace_02CameraSystem_8cpp_03.html#a56ff756a83f7b287da0c74c8347e5c51", null ],

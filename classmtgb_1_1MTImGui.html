@@ -242,7 +242,7 @@ mtgb::MTImGui 連携図</div>
 <div class="line"><span class="lineno">  189</span> </div>
 <div class="line"><span class="lineno">  190</span>    </div>
 <div class="line"><span class="lineno">  191</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a65cb2822d0702f16756b24f4f905f8c6"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a65cb2822d0702f16756b24f4f905f8c6">mtgb::MTImGui::RegisterAllComponentViewers</a></div><div class="ttdeci">void RegisterAllComponentViewers()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00317">MTImGui.cpp:317</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a65cb2822d0702f16756b24f4f905f8c6"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a65cb2822d0702f16756b24f4f905f8c6">mtgb::MTImGui::RegisterAllComponentViewers</a></div><div class="ttdeci">void RegisterAllComponentViewers()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00326">MTImGui.cpp:326</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -410,25 +410,25 @@ mtgb::MTImGui 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00409">409</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  410</span>{</div>
-<div class="line"><span class="lineno">  411</span>    <span class="keywordflow">if</span> (show == ShowType::SceneView)</div>
-<div class="line"><span class="lineno">  412</span>    {</div>
-<div class="line"><span class="lineno">  413</span>        <span class="comment">// SceneViewは名前不要</span></div>
-<div class="line"><span class="lineno">  414</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.push(<a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>);</div>
-<div class="line"><span class="lineno">  415</span>    }</div>
-<div class="line"><span class="lineno">  416</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  417</span>    {</div>
-<div class="line"><span class="lineno">  418</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a20a3e224eda5db1a17f5f454995280cf">showQueues_</a>[show].emplace(name, <a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>);</div>
-<div class="line"><span class="lineno">  419</span>    }</div>
-<div class="line"><span class="lineno">  420</span>    </div>
-<div class="line"><span class="lineno">  421</span>}</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00418">418</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  419</span>{</div>
+<div class="line"><span class="lineno">  420</span>    <span class="keywordflow">if</span> (show == ShowType::SceneView)</div>
+<div class="line"><span class="lineno">  421</span>    {</div>
+<div class="line"><span class="lineno">  422</span>        <span class="comment">// SceneViewは名前不要</span></div>
+<div class="line"><span class="lineno">  423</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.push(<a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>);</div>
+<div class="line"><span class="lineno">  424</span>    }</div>
+<div class="line"><span class="lineno">  425</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  426</span>    {</div>
+<div class="line"><span class="lineno">  427</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a20a3e224eda5db1a17f5f454995280cf">showQueues_</a>[show].emplace(name, <a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>);</div>
+<div class="line"><span class="lineno">  428</span>    }</div>
+<div class="line"><span class="lineno">  429</span>    </div>
+<div class="line"><span class="lineno">  430</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_a5c8cc34ff05c0cd0508f43da7fcb5a77"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">mtgb::MTImGui::sceneViewShowList_</a></div><div class="ttdeci">std::queue&lt; std::function&lt; void()&gt; &gt; sceneViewShowList_</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00164">MTImGui.h:164</a></div></div>
 <div class="ttc" id="agroup__group1_html_ga24f647174760cac13d2624b5ad74b00c"><div class="ttname"><a href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a></div><div class="ttdeci">void func()</div><div class="ttdef"><b>Definition:</b> <a href="group_8cpp_source.html#l00013">group.cpp:13</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="group_8cpp_source.html#l00013">func()</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="MTImGui_8h_source.html#l00173">TypedShow()</a>, <a class="el" href="DXGIResource_8cpp_source.html#l00080">mtgb::DXGIResource::Update()</a>, <a class="el" href="ScoreManager_8cpp_source.html#l00022">mtgb::ScoreManager::Update()</a>, <a class="el" href="Camera_8cpp_source.html#l00108">mtgb::Camera::Update()</a>.</p>
+<p class="reference">参照元 <a class="el" href="MTImGui_8h_source.html#l00173">TypedShow()</a>, <a class="el" href="DXGIResource_8cpp_source.html#l00080">mtgb::DXGIResource::Update()</a>, <a class="el" href="ScoreManager_8cpp_source.html#l00022">mtgb::ScoreManager::Update()</a>, <a class="el" href="Camera_8cpp_source.html#l00116">mtgb::Camera::Update()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -507,53 +507,53 @@ mtgb::MTImGui 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00453">453</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  454</span>{</div>
-<div class="line"><span class="lineno">  455</span>    <span class="comment">// 正規化された方向ベクトル</span></div>
-<div class="line"><span class="lineno">  456</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> forward = <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(_direction);</div>
-<div class="line"><span class="lineno">  457</span> </div>
-<div class="line"><span class="lineno">  458</span>    <span class="comment">// 円錐の底面の中心</span></div>
-<div class="line"><span class="lineno">  459</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> baseCenter = _position + forward * _distance;</div>
-<div class="line"><span class="lineno">  460</span> </div>
-<div class="line"><span class="lineno">  461</span>    <span class="comment">// 円錐の底面の半径</span></div>
-<div class="line"><span class="lineno">  462</span>    <span class="comment">// MEMO: tanθ = 対辺 / 底辺 : 対辺 = 底辺 * tanθ</span></div>
-<div class="line"><span class="lineno">  463</span>    <span class="keywordtype">float</span> baseRadius = _distance * std::tanf(DirectX::XMConvertToRadians(_fovAngleDegree / 2.0f));</div>
-<div class="line"><span class="lineno">  464</span> </div>
-<div class="line"><span class="lineno">  465</span>    <span class="comment">// 上下方向を決定</span></div>
-<div class="line"><span class="lineno">  466</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> up = std::fabsf(DirectX::XMVectorGetY(forward)) &lt; 0.9f</div>
-<div class="line"><span class="lineno">  467</span>        ? <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>{ 0.0f,1.0f,0.0f }</div>
-<div class="line"><span class="lineno">  468</span>        : <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>{ 1.0f,0.0f,0.0f };</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00462">462</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  463</span>{</div>
+<div class="line"><span class="lineno">  464</span>    <span class="comment">// 正規化された方向ベクトル</span></div>
+<div class="line"><span class="lineno">  465</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> forward = <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(_direction);</div>
+<div class="line"><span class="lineno">  466</span> </div>
+<div class="line"><span class="lineno">  467</span>    <span class="comment">// 円錐の底面の中心</span></div>
+<div class="line"><span class="lineno">  468</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> baseCenter = _position + forward * _distance;</div>
 <div class="line"><span class="lineno">  469</span> </div>
-<div class="line"><span class="lineno">  470</span>    <span class="comment">// 右方向を計算</span></div>
-<div class="line"><span class="lineno">  471</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> right = <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(<a class="code hl_function" href="structmtgb_1_1Vector3.html#a0e2a07550f9811f9bdbba1e26f8d6e2c">Vector3::Cross</a>(forward, up));</div>
-<div class="line"><span class="lineno">  472</span>    </div>
-<div class="line"><span class="lineno">  473</span>    <span class="comment">// 上方向を再計算</span></div>
-<div class="line"><span class="lineno">  474</span>    up = <a class="code hl_function" href="structmtgb_1_1Vector3.html#a0e2a07550f9811f9bdbba1e26f8d6e2c">Vector3::Cross</a>(right, forward);</div>
-<div class="line"><span class="lineno">  475</span> </div>
-<div class="line"><span class="lineno">  476</span>    <span class="comment">// 底面の円周上の点を計算</span></div>
-<div class="line"><span class="lineno">  477</span>    std::vector&lt;Vector3&gt; baseCirclePoints(_segments);</div>
-<div class="line"><span class="lineno">  478</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _segments; i++)</div>
-<div class="line"><span class="lineno">  479</span>    {</div>
-<div class="line"><span class="lineno">  480</span>        <span class="keywordtype">float</span> angle = DirectX::XM_2PI * i / _segments;</div>
-<div class="line"><span class="lineno">  481</span>        <span class="keywordtype">float</span> x = baseRadius * std::cosf(angle);</div>
-<div class="line"><span class="lineno">  482</span>        <span class="keywordtype">float</span> y = baseRadius * std::sinf(angle);</div>
-<div class="line"><span class="lineno">  483</span>        baseCirclePoints[i] = baseCenter + right * x + up * y;</div>
-<div class="line"><span class="lineno">  484</span>    }</div>
-<div class="line"><span class="lineno">  485</span> </div>
-<div class="line"><span class="lineno">  486</span>    <span class="comment">// 円錐の側面を描画</span></div>
+<div class="line"><span class="lineno">  470</span>    <span class="comment">// 円錐の底面の半径</span></div>
+<div class="line"><span class="lineno">  471</span>    <span class="comment">// MEMO: tanθ = 対辺 / 底辺 : 対辺 = 底辺 * tanθ</span></div>
+<div class="line"><span class="lineno">  472</span>    <span class="keywordtype">float</span> baseRadius = _distance * std::tanf(DirectX::XMConvertToRadians(_fovAngleDegree / 2.0f));</div>
+<div class="line"><span class="lineno">  473</span> </div>
+<div class="line"><span class="lineno">  474</span>    <span class="comment">// 上下方向を決定</span></div>
+<div class="line"><span class="lineno">  475</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> up = std::fabsf(DirectX::XMVectorGetY(forward)) &lt; 0.9f</div>
+<div class="line"><span class="lineno">  476</span>        ? <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>{ 0.0f,1.0f,0.0f }</div>
+<div class="line"><span class="lineno">  477</span>        : <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>{ 1.0f,0.0f,0.0f };</div>
+<div class="line"><span class="lineno">  478</span> </div>
+<div class="line"><span class="lineno">  479</span>    <span class="comment">// 右方向を計算</span></div>
+<div class="line"><span class="lineno">  480</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> right = <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(<a class="code hl_function" href="structmtgb_1_1Vector3.html#a0e2a07550f9811f9bdbba1e26f8d6e2c">Vector3::Cross</a>(forward, up));</div>
+<div class="line"><span class="lineno">  481</span>    </div>
+<div class="line"><span class="lineno">  482</span>    <span class="comment">// 上方向を再計算</span></div>
+<div class="line"><span class="lineno">  483</span>    up = <a class="code hl_function" href="structmtgb_1_1Vector3.html#a0e2a07550f9811f9bdbba1e26f8d6e2c">Vector3::Cross</a>(right, forward);</div>
+<div class="line"><span class="lineno">  484</span> </div>
+<div class="line"><span class="lineno">  485</span>    <span class="comment">// 底面の円周上の点を計算</span></div>
+<div class="line"><span class="lineno">  486</span>    std::vector&lt;Vector3&gt; baseCirclePoints(_segments);</div>
 <div class="line"><span class="lineno">  487</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _segments; i++)</div>
 <div class="line"><span class="lineno">  488</span>    {</div>
-<div class="line"><span class="lineno">  489</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a003f5ff7f3d5b4d0417a5749961a950b">DrawLine</a>(_position, baseCirclePoints[i], _thickness);</div>
-<div class="line"><span class="lineno">  490</span>    }</div>
-<div class="line"><span class="lineno">  491</span> </div>
-<div class="line"><span class="lineno">  492</span>    <span class="comment">// 底面の円を描画</span></div>
-<div class="line"><span class="lineno">  493</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _segments; i++)</div>
-<div class="line"><span class="lineno">  494</span>    {</div>
-<div class="line"><span class="lineno">  495</span>        <span class="keywordtype">int</span> nextIdx = (i + 1) % _segments;</div>
-<div class="line"><span class="lineno">  496</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a003f5ff7f3d5b4d0417a5749961a950b">DrawLine</a>(baseCirclePoints[i], baseCirclePoints[nextIdx], _thickness);</div>
-<div class="line"><span class="lineno">  497</span>    }</div>
-<div class="line"><span class="lineno">  498</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a003f5ff7f3d5b4d0417a5749961a950b"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a003f5ff7f3d5b4d0417a5749961a950b">mtgb::MTImGui::DrawLine</a></div><div class="ttdeci">void DrawLine(const Vector3 &amp;_from, const Vector3 &amp;_to, float _thickness)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00423">MTImGui.cpp:423</a></div></div>
+<div class="line"><span class="lineno">  489</span>        <span class="keywordtype">float</span> angle = DirectX::XM_2PI * i / _segments;</div>
+<div class="line"><span class="lineno">  490</span>        <span class="keywordtype">float</span> x = baseRadius * std::cosf(angle);</div>
+<div class="line"><span class="lineno">  491</span>        <span class="keywordtype">float</span> y = baseRadius * std::sinf(angle);</div>
+<div class="line"><span class="lineno">  492</span>        baseCirclePoints[i] = baseCenter + right * x + up * y;</div>
+<div class="line"><span class="lineno">  493</span>    }</div>
+<div class="line"><span class="lineno">  494</span> </div>
+<div class="line"><span class="lineno">  495</span>    <span class="comment">// 円錐の側面を描画</span></div>
+<div class="line"><span class="lineno">  496</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _segments; i++)</div>
+<div class="line"><span class="lineno">  497</span>    {</div>
+<div class="line"><span class="lineno">  498</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a003f5ff7f3d5b4d0417a5749961a950b">DrawLine</a>(_position, baseCirclePoints[i], _thickness);</div>
+<div class="line"><span class="lineno">  499</span>    }</div>
+<div class="line"><span class="lineno">  500</span> </div>
+<div class="line"><span class="lineno">  501</span>    <span class="comment">// 底面の円を描画</span></div>
+<div class="line"><span class="lineno">  502</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _segments; i++)</div>
+<div class="line"><span class="lineno">  503</span>    {</div>
+<div class="line"><span class="lineno">  504</span>        <span class="keywordtype">int</span> nextIdx = (i + 1) % _segments;</div>
+<div class="line"><span class="lineno">  505</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a003f5ff7f3d5b4d0417a5749961a950b">DrawLine</a>(baseCirclePoints[i], baseCirclePoints[nextIdx], _thickness);</div>
+<div class="line"><span class="lineno">  506</span>    }</div>
+<div class="line"><span class="lineno">  507</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a003f5ff7f3d5b4d0417a5749961a950b"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a003f5ff7f3d5b4d0417a5749961a950b">mtgb::MTImGui::DrawLine</a></div><div class="ttdeci">void DrawLine(const Vector3 &amp;_from, const Vector3 &amp;_to, float _thickness)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00432">MTImGui.cpp:432</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html_a0e2a07550f9811f9bdbba1e26f8d6e2c"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a0e2a07550f9811f9bdbba1e26f8d6e2c">mtgb::Vector3::Cross</a></div><div class="ttdeci">static Vector3 Cross(const Vector3 &amp;_v1, const Vector3 &amp;_v2)</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00071">Vector3.h:71</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html_ae4cb4e8c99cfae50150e86f1f1450acc"><div class="ttname"><a href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">mtgb::Vector3::Normalize</a></div><div class="ttdeci">Vector3 &amp; Normalize()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00053">Vector3.h:53</a></div></div>
@@ -609,18 +609,18 @@ mtgb::MTImGui 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00423">423</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  424</span>{</div>
-<div class="line"><span class="lineno">  425</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1MTImGui.html#aae069cb29eac26db322fbd733175cc33">updatingImGuiShowable_</a>)</div>
-<div class="line"><span class="lineno">  426</span>    {</div>
-<div class="line"><span class="lineno">  427</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a0ddaa80190cf7fc2738177a7a99882bc">DrawLineImpl</a>(_from, _to, _thickness);</div>
-<div class="line"><span class="lineno">  428</span>    }</div>
-<div class="line"><span class="lineno">  429</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  430</span>    {</div>
-<div class="line"><span class="lineno">  431</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.push([=]() {<a class="code hl_function" href="classmtgb_1_1MTImGui.html#a0ddaa80190cf7fc2738177a7a99882bc">DrawLineImpl</a>(_from, _to, _thickness); });</div>
-<div class="line"><span class="lineno">  432</span>    }</div>
-<div class="line"><span class="lineno">  433</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a0ddaa80190cf7fc2738177a7a99882bc"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a0ddaa80190cf7fc2738177a7a99882bc">mtgb::MTImGui::DrawLineImpl</a></div><div class="ttdeci">void DrawLineImpl(const Vector3 &amp;_from, const Vector3 &amp;_to, float _thickness)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00334">MTImGui.cpp:334</a></div></div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00432">432</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  433</span>{</div>
+<div class="line"><span class="lineno">  434</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1MTImGui.html#aae069cb29eac26db322fbd733175cc33">updatingImGuiShowable_</a>)</div>
+<div class="line"><span class="lineno">  435</span>    {</div>
+<div class="line"><span class="lineno">  436</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a0ddaa80190cf7fc2738177a7a99882bc">DrawLineImpl</a>(_from, _to, _thickness);</div>
+<div class="line"><span class="lineno">  437</span>    }</div>
+<div class="line"><span class="lineno">  438</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  439</span>    {</div>
+<div class="line"><span class="lineno">  440</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.push([=]() {<a class="code hl_function" href="classmtgb_1_1MTImGui.html#a0ddaa80190cf7fc2738177a7a99882bc">DrawLineImpl</a>(_from, _to, _thickness); });</div>
+<div class="line"><span class="lineno">  441</span>    }</div>
+<div class="line"><span class="lineno">  442</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a0ddaa80190cf7fc2738177a7a99882bc"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a0ddaa80190cf7fc2738177a7a99882bc">mtgb::MTImGui::DrawLineImpl</a></div><div class="ttdeci">void DrawLineImpl(const Vector3 &amp;_from, const Vector3 &amp;_to, float _thickness)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00343">MTImGui.cpp:343</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_aae069cb29eac26db322fbd733175cc33"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aae069cb29eac26db322fbd733175cc33">mtgb::MTImGui::updatingImGuiShowable_</a></div><div class="ttdeci">bool updatingImGuiShowable_</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00169">MTImGui.h:169</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -665,20 +665,20 @@ mtgb::MTImGui 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00334">334</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  335</span>{</div>
-<div class="line"><span class="lineno">  336</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> proj, view;</div>
-<div class="line"><span class="lineno">  337</span>    Game::System&lt;CameraSystem&gt;().GetProjMatrix(&amp;proj);</div>
-<div class="line"><span class="lineno">  338</span>    Game::System&lt;CameraSystem&gt;().GetViewMatrix(&amp;view);</div>
-<div class="line"><span class="lineno">  339</span>    D3D11_VIEWPORT viewport{ Game::System&lt;mtgb::ImGuiRenderer&gt;().GetViewport() };</div>
-<div class="line"><span class="lineno">  340</span>    std::optional&lt;ImVec2&gt; p1 = <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">ImGuiUtil::WorldToImGui</a>(_from,proj,view,viewport);</div>
-<div class="line"><span class="lineno">  341</span>    std::optional&lt;ImVec2&gt; p2 = <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">ImGuiUtil::WorldToImGui</a>(_to, proj, view, viewport);</div>
-<div class="line"><span class="lineno">  342</span> </div>
-<div class="line"><span class="lineno">  343</span>    <span class="keywordflow">if</span> (p1 &amp;&amp; p2)</div>
-<div class="line"><span class="lineno">  344</span>    {</div>
-<div class="line"><span class="lineno">  345</span>        <a class="code hl_function" href="namespaceImGui.html#aa100c22a9feafe843fa12c66590cbda0">ImGui::GetWindowDrawList</a>()-&gt;<a class="code hl_function" href="structImDrawList.html#aa21e5a1c6e00239581f97d344fc0db61">AddLine</a>(p1.value(), p2.value(), <a class="code hl_define" href="imgui_8h.html#a08fc9855cd3e3fcbb7fcd93b38bd7057">IM_COL32_WHITE</a>, _thickness);</div>
-<div class="line"><span class="lineno">  346</span>    }</div>
-<div class="line"><span class="lineno">  347</span>}</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00343">343</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  344</span>{</div>
+<div class="line"><span class="lineno">  345</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> proj, view;</div>
+<div class="line"><span class="lineno">  346</span>    Game::System&lt;CameraSystem&gt;().GetProjMatrix(&amp;proj);</div>
+<div class="line"><span class="lineno">  347</span>    Game::System&lt;CameraSystem&gt;().GetViewMatrix(&amp;view);</div>
+<div class="line"><span class="lineno">  348</span>    D3D11_VIEWPORT viewport{ Game::System&lt;mtgb::ImGuiRenderer&gt;().GetViewport() };</div>
+<div class="line"><span class="lineno">  349</span>    std::optional&lt;ImVec2&gt; p1 = <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">ImGuiUtil::WorldToImGui</a>(_from,proj,view,viewport);</div>
+<div class="line"><span class="lineno">  350</span>    std::optional&lt;ImVec2&gt; p2 = <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">ImGuiUtil::WorldToImGui</a>(_to, proj, view, viewport);</div>
+<div class="line"><span class="lineno">  351</span> </div>
+<div class="line"><span class="lineno">  352</span>    <span class="keywordflow">if</span> (p1 &amp;&amp; p2)</div>
+<div class="line"><span class="lineno">  353</span>    {</div>
+<div class="line"><span class="lineno">  354</span>        <a class="code hl_function" href="namespaceImGui.html#aa100c22a9feafe843fa12c66590cbda0">ImGui::GetWindowDrawList</a>()-&gt;<a class="code hl_function" href="structImDrawList.html#aa21e5a1c6e00239581f97d344fc0db61">AddLine</a>(p1.value(), p2.value(), <a class="code hl_define" href="imgui_8h.html#a08fc9855cd3e3fcbb7fcd93b38bd7057">IM_COL32_WHITE</a>, _thickness);</div>
+<div class="line"><span class="lineno">  355</span>    }</div>
+<div class="line"><span class="lineno">  356</span>}</div>
 <div class="ttc" id="aimgui_8h_html_a08fc9855cd3e3fcbb7fcd93b38bd7057"><div class="ttname"><a href="imgui_8h.html#a08fc9855cd3e3fcbb7fcd93b38bd7057">IM_COL32_WHITE</a></div><div class="ttdeci">#define IM_COL32_WHITE</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l03002">imgui.h:3002</a></div></div>
 <div class="ttc" id="anamespaceImGui_html_aa100c22a9feafe843fa12c66590cbda0"><div class="ttname"><a href="namespaceImGui.html#aa100c22a9feafe843fa12c66590cbda0">ImGui::GetWindowDrawList</a></div><div class="ttdeci">IMGUI_API ImDrawList * GetWindowDrawList()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l09079">imgui.cpp:9079</a></div></div>
 <div class="ttc" id="anamespacemtgb_1_1ImGuiUtil_html_a21fcd4256a75ac9b687c213c62d05d61"><div class="ttname"><a href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">mtgb::ImGuiUtil::WorldToImGui</a></div><div class="ttdeci">std::optional&lt; ImVec2 &gt; WorldToImGui(const Vector3 &amp;_vec, const Matrix4x4 &amp;_proj, const Matrix4x4 &amp;_view, const D3D11_VIEWPORT &amp;_viewport)</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiUtil_8cpp_source.html#l00054">ImGuiUtil.cpp:54</a></div></div>
@@ -735,20 +735,20 @@ mtgb::MTImGui 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00320">320</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  321</span>{</div>
-<div class="line"><span class="lineno">  322</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> proj, view;</div>
-<div class="line"><span class="lineno">  323</span>    Game::System&lt;CameraSystem&gt;().GetProjMatrix(&amp;proj);</div>
-<div class="line"><span class="lineno">  324</span>    Game::System&lt;CameraSystem&gt;().GetViewMatrix(&amp;view);</div>
-<div class="line"><span class="lineno">  325</span>    D3D11_VIEWPORT viewport{ Game::System&lt;mtgb::ImGuiRenderer&gt;().GetViewport() };</div>
-<div class="line"><span class="lineno">  326</span>    std::optional&lt;ImVec2&gt; p1 = <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">ImGuiUtil::WorldToImGui</a>(_start,proj,view,viewport);</div>
-<div class="line"><span class="lineno">  327</span>    std::optional&lt;ImVec2&gt; p2 = <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">ImGuiUtil::WorldToImGui</a>(_start + _dir,proj,view,viewport);</div>
-<div class="line"><span class="lineno">  328</span> </div>
-<div class="line"><span class="lineno">  329</span>    <span class="keywordflow">if</span> (p1 &amp;&amp; p2)</div>
-<div class="line"><span class="lineno">  330</span>    {</div>
-<div class="line"><span class="lineno">  331</span>        <a class="code hl_function" href="namespaceImGui.html#aa100c22a9feafe843fa12c66590cbda0">ImGui::GetWindowDrawList</a>()-&gt;<a class="code hl_function" href="structImDrawList.html#aa21e5a1c6e00239581f97d344fc0db61">AddLine</a>(p1.value(), p2.value(), <a class="code hl_define" href="imgui_8h.html#a08fc9855cd3e3fcbb7fcd93b38bd7057">IM_COL32_WHITE</a>, _thickness);</div>
-<div class="line"><span class="lineno">  332</span>    }</div>
-<div class="line"><span class="lineno">  333</span>}</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00329">329</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  330</span>{</div>
+<div class="line"><span class="lineno">  331</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> proj, view;</div>
+<div class="line"><span class="lineno">  332</span>    Game::System&lt;CameraSystem&gt;().GetProjMatrix(&amp;proj);</div>
+<div class="line"><span class="lineno">  333</span>    Game::System&lt;CameraSystem&gt;().GetViewMatrix(&amp;view);</div>
+<div class="line"><span class="lineno">  334</span>    D3D11_VIEWPORT viewport{ Game::System&lt;mtgb::ImGuiRenderer&gt;().GetViewport() };</div>
+<div class="line"><span class="lineno">  335</span>    std::optional&lt;ImVec2&gt; p1 = <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">ImGuiUtil::WorldToImGui</a>(_start,proj,view,viewport);</div>
+<div class="line"><span class="lineno">  336</span>    std::optional&lt;ImVec2&gt; p2 = <a class="code hl_function" href="namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61">ImGuiUtil::WorldToImGui</a>(_start + _dir,proj,view,viewport);</div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span>    <span class="keywordflow">if</span> (p1 &amp;&amp; p2)</div>
+<div class="line"><span class="lineno">  339</span>    {</div>
+<div class="line"><span class="lineno">  340</span>        <a class="code hl_function" href="namespaceImGui.html#aa100c22a9feafe843fa12c66590cbda0">ImGui::GetWindowDrawList</a>()-&gt;<a class="code hl_function" href="structImDrawList.html#aa21e5a1c6e00239581f97d344fc0db61">AddLine</a>(p1.value(), p2.value(), <a class="code hl_define" href="imgui_8h.html#a08fc9855cd3e3fcbb7fcd93b38bd7057">IM_COL32_WHITE</a>, _thickness);</div>
+<div class="line"><span class="lineno">  341</span>    }</div>
+<div class="line"><span class="lineno">  342</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="imgui__draw_8cpp_source.html#l01479">ImDrawList::AddLine()</a>, <a class="el" href="imgui_8cpp_source.html#l09079">ImGui::GetWindowDrawList()</a>, <a class="el" href="imgui_8h_source.html#l03002">IM_COL32_WHITE</a>, <a class="el" href="ImGuiUtil_8cpp_source.html#l00054">mtgb::ImGuiUtil::WorldToImGui()</a>.</p>
 <div class="dynheader">
@@ -812,18 +812,18 @@ mtgb::MTImGui 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00441">441</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  442</span>{</div>
-<div class="line"><span class="lineno">  443</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1MTImGui.html#aae069cb29eac26db322fbd733175cc33">updatingImGuiShowable_</a>)</div>
-<div class="line"><span class="lineno">  444</span>    {</div>
-<div class="line"><span class="lineno">  445</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a5d8544925ba99d693d6dfdab6cea75c7">DrawRayImpl</a>(_start, _vec, _thickness);</div>
-<div class="line"><span class="lineno">  446</span>    }</div>
-<div class="line"><span class="lineno">  447</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  448</span>    {</div>
-<div class="line"><span class="lineno">  449</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.push([=]() {<a class="code hl_function" href="classmtgb_1_1MTImGui.html#a5d8544925ba99d693d6dfdab6cea75c7">DrawRayImpl</a>(_start, _vec, _thickness); });</div>
-<div class="line"><span class="lineno">  450</span>    }</div>
-<div class="line"><span class="lineno">  451</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a5d8544925ba99d693d6dfdab6cea75c7"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a5d8544925ba99d693d6dfdab6cea75c7">mtgb::MTImGui::DrawRayImpl</a></div><div class="ttdeci">void DrawRayImpl(const Vector3 &amp;_start, const Vector3 &amp;_dir, float _thickness)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00320">MTImGui.cpp:320</a></div></div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00450">450</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  451</span>{</div>
+<div class="line"><span class="lineno">  452</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1MTImGui.html#aae069cb29eac26db322fbd733175cc33">updatingImGuiShowable_</a>)</div>
+<div class="line"><span class="lineno">  453</span>    {</div>
+<div class="line"><span class="lineno">  454</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a5d8544925ba99d693d6dfdab6cea75c7">DrawRayImpl</a>(_start, _vec, _thickness);</div>
+<div class="line"><span class="lineno">  455</span>    }</div>
+<div class="line"><span class="lineno">  456</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  457</span>    {</div>
+<div class="line"><span class="lineno">  458</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.push([=]() {<a class="code hl_function" href="classmtgb_1_1MTImGui.html#a5d8544925ba99d693d6dfdab6cea75c7">DrawRayImpl</a>(_start, _vec, _thickness); });</div>
+<div class="line"><span class="lineno">  459</span>    }</div>
+<div class="line"><span class="lineno">  460</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a5d8544925ba99d693d6dfdab6cea75c7"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a5d8544925ba99d693d6dfdab6cea75c7">mtgb::MTImGui::DrawRayImpl</a></div><div class="ttdeci">void DrawRayImpl(const Vector3 &amp;_start, const Vector3 &amp;_dir, float _thickness)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00329">MTImGui.cpp:329</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -851,22 +851,22 @@ mtgb::MTImGui 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00377">377</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  378</span>{</div>
-<div class="line"><span class="lineno">  379</span>    <span class="keywordflow">if</span> (show == ShowType::SceneView)</div>
-<div class="line"><span class="lineno">  380</span>    {</div>
-<div class="line"><span class="lineno">  381</span>        <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.empty())</div>
-<div class="line"><span class="lineno">  382</span>        {</div>
-<div class="line"><span class="lineno">  383</span>            <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.front()();</div>
-<div class="line"><span class="lineno">  384</span>            <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.pop();</div>
-<div class="line"><span class="lineno">  385</span>        }</div>
-<div class="line"><span class="lineno">  386</span>    }</div>
-<div class="line"><span class="lineno">  387</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  388</span>    {</div>
-<div class="line"><span class="lineno">  389</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#aa45c0c8107a8ba97723a53cf21cb7325">ShowListView</a>(show);</div>
-<div class="line"><span class="lineno">  390</span>    }</div>
-<div class="line"><span class="lineno">  391</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aa45c0c8107a8ba97723a53cf21cb7325"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aa45c0c8107a8ba97723a53cf21cb7325">mtgb::MTImGui::ShowListView</a></div><div class="ttdeci">void ShowListView(ShowType _show)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00245">MTImGui.cpp:245</a></div></div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00386">386</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  387</span>{</div>
+<div class="line"><span class="lineno">  388</span>    <span class="keywordflow">if</span> (show == ShowType::SceneView)</div>
+<div class="line"><span class="lineno">  389</span>    {</div>
+<div class="line"><span class="lineno">  390</span>        <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.empty())</div>
+<div class="line"><span class="lineno">  391</span>        {</div>
+<div class="line"><span class="lineno">  392</span>            <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.front()();</div>
+<div class="line"><span class="lineno">  393</span>            <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a5c8cc34ff05c0cd0508f43da7fcb5a77">sceneViewShowList_</a>.pop();</div>
+<div class="line"><span class="lineno">  394</span>        }</div>
+<div class="line"><span class="lineno">  395</span>    }</div>
+<div class="line"><span class="lineno">  396</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  397</span>    {</div>
+<div class="line"><span class="lineno">  398</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#aa45c0c8107a8ba97723a53cf21cb7325">ShowListView</a>(show);</div>
+<div class="line"><span class="lineno">  399</span>    }</div>
+<div class="line"><span class="lineno">  400</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aa45c0c8107a8ba97723a53cf21cb7325"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aa45c0c8107a8ba97723a53cf21cb7325">mtgb::MTImGui::ShowListView</a></div><div class="ttdeci">void ShowListView(ShowType _show)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00254">MTImGui.cpp:254</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -937,11 +937,11 @@ mtgb::MTImGui 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00500">500</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  501</span>{</div>
-<div class="line"><span class="lineno">  502</span>    <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <span class="keywordtype">id</span> = <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[ShowType::Inspector].entityId;</div>
-<div class="line"><span class="lineno">  503</span>    <span class="keywordflow">return</span> id;</div>
-<div class="line"><span class="lineno">  504</span>}</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00509">509</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  510</span>{</div>
+<div class="line"><span class="lineno">  511</span>    <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <span class="keywordtype">id</span> = <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[ShowType::Inspector].entityId;</div>
+<div class="line"><span class="lineno">  512</span>    <span class="keywordflow">return</span> id;</div>
+<div class="line"><span class="lineno">  513</span>}</div>
 <div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -980,7 +980,7 @@ mtgb::MTImGui 連携図</div>
 <div class="line"><span class="lineno">   46</span>            <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a2afdafecc58adb6a1b5b428cba6b3120">SelectGameObject</a>(_event.<a class="code hl_variable" href="structmtgb_1_1GameObjectCreatedEvent.html#a76cc0b9822eedeebecaa90650835b5e7">entityId</a>);</div>
 <div class="line"><span class="lineno">   47</span>        }, <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8">EventScope::Global</a>);</div>
 <div class="line"><span class="lineno">   48</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a2afdafecc58adb6a1b5b428cba6b3120"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a2afdafecc58adb6a1b5b428cba6b3120">mtgb::MTImGui::SelectGameObject</a></div><div class="ttdeci">void SelectGameObject(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00303">MTImGui.cpp:303</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a2afdafecc58adb6a1b5b428cba6b3120"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a2afdafecc58adb6a1b5b428cba6b3120">mtgb::MTImGui::SelectGameObject</a></div><div class="ttdeci">void SelectGameObject(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00312">MTImGui.cpp:312</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00038">MTImGui.h:38</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_a66e27a522dc67b37932354e70e6d9674"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a66e27a522dc67b37932354e70e6d9674">mtgb::MTImGui::SetupShowFunc</a></div><div class="ttdeci">void SetupShowFunc()</div><div class="ttdoc">TypedShowの_targetの型に対応する関数を登録する</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00204">MTImGui.cpp:204</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_ad9df01701753e32c9a3490abab9fd569"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">mtgb::MTImGui::showableObjs_</a></div><div class="ttdeci">std::vector&lt; ImGuiShowable * &gt; showableObjs_</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00156">MTImGui.h:156</a></div></div>
@@ -991,13 +991,13 @@ mtgb::MTImGui 連携図</div>
 <div class="ttc" id="astructmtgb_1_1GameObjectSelectedEvent_html"><div class="ttname"><a href="structmtgb_1_1GameObjectSelectedEvent.html">mtgb::GameObjectSelectedEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObjectSelectionEvent_8h_source.html#l00007">GameObjectSelectionEvent.h:8</a></div></div>
 <div class="ttc" id="astructmtgb_1_1GameObjectSelectedEvent_html_a7af2b6d42119e79388d953a01e7ad30c"><div class="ttname"><a href="structmtgb_1_1GameObjectSelectedEvent.html#a7af2b6d42119e79388d953a01e7ad30c">mtgb::GameObjectSelectedEvent::entityId</a></div><div class="ttdeci">EntityId entityId</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectSelectionEvent_8h_source.html#l00009">GameObjectSelectionEvent.h:9</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="GameObjectSelectionEvent_8h_source.html#l00009">mtgb::GameObjectSelectedEvent::entityId</a>, <a class="el" href="GameObjectSelectionEvent_8h_source.html#l00021">mtgb::GameObjectCreatedEvent::entityId</a>, <a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8">mtgb::Global</a>, <a class="el" href="MTImGui_8h_source.html#l00038">Instance()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00303">SelectGameObject()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00204">SetupShowFunc()</a>, <a class="el" href="MTImGui_8h_source.html#l00156">showableObjs_</a>.</p>
+<p class="reference">参照先 <a class="el" href="GameObjectSelectionEvent_8h_source.html#l00009">mtgb::GameObjectSelectedEvent::entityId</a>, <a class="el" href="GameObjectSelectionEvent_8h_source.html#l00021">mtgb::GameObjectCreatedEvent::entityId</a>, <a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8">mtgb::Global</a>, <a class="el" href="MTImGui_8h_source.html#l00038">Instance()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00312">SelectGameObject()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00204">SetupShowFunc()</a>, <a class="el" href="MTImGui_8h_source.html#l00156">showableObjs_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00020">SampleScene::Initialize()</a>, <a class="el" href="StageEditScene_8cpp_source.html#l00013">StageEditScene::Initialize()</a>.</p>
+<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00022">SampleScene::Initialize()</a>, <a class="el" href="StageEditScene_8cpp_source.html#l00013">StageEditScene::Initialize()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MTImGui_a9d99d144b1fc6bbaacf6044db9ef8eba_cgraph.svg" width="2195" height="1872"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MTImGui_a9d99d144b1fc6bbaacf6044db9ef8eba_cgraph.svg" width="1556" height="2250"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -1039,7 +1039,7 @@ mtgb::MTImGui 連携図</div>
 <div class="line"><span class="lineno">   42</span>        }</div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_ac531bcfd6339f8d63df4ecab9373b144"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#ac531bcfd6339f8d63df4ecab9373b144">mtgb::MTImGui::MTImGui</a></div><div class="ttdeci">MTImGui()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00186">MTImGui.cpp:186</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="AudioPlayer_8generated_8cpp_source.html#l00012">mtgb::AudioPlayer_Register::AudioPlayer_Register()</a>, <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00033">mtgb::ImGuiEditorCamera::ImGuiEditorCamera()</a>, <a class="el" href="ImGuiShowable_8cpp_source.html#l00011">mtgb::ImGuiShowable::ImGuiShowable()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00030">Initialize()</a>, <a class="el" href="SampleScene_8cpp_source.html#l00020">SampleScene::Initialize()</a>, <a class="el" href="StageEditScene_8cpp_source.html#l00013">StageEditScene::Initialize()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8generated_8cpp_source.html#l00012">mtgb::MovingFloor_Register::MovingFloor_Register()</a>, <a class="el" href="RenderSystem_8cpp_source.html#l00048">mtgb::RenderSystem::RenderImGuiWindows()</a>, <a class="el" href="RigidBody_8generated_8cpp_source.html#l00012">mtgb::RigidBody_Register::RigidBody_Register()</a>, <a class="el" href="Box3D_8cpp_source.html#l00040">mtgb::Box3D::ShowImGui()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00115">mtgb::Saw::ShowImGui()</a>, <a class="el" href="Goal_8cpp_source.html#l00069">Goal::ShowImGui()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00045">MovingFloor::ShowImGui()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00083">PatrolChargerEnemy::ShowImGui()</a>, <a class="el" href="Player_8cpp_source.html#l00178">Player::ShowImGui()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00039">SeaPlane::ShowImGui()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00035">mtgb::SkySphere::ShowImGui()</a>, <a class="el" href="Transform_8generated_8cpp_source.html#l00012">mtgb::Transform_Register::Transform_Register()</a>, <a class="el" href="DXGIResource_8cpp_source.html#l00080">mtgb::DXGIResource::Update()</a>, <a class="el" href="HighlightEnemy_8cpp_source.html#l00054">HighlightEnemy::Update()</a>, <a class="el" href="InputResource_8cpp_source.html#l00075">mtgb::InputResource::Update()</a>, <a class="el" href="SceneSystem_8cpp_source.html#l00039">mtgb::SceneSystem::Update()</a>, <a class="el" href="ScoreManager_8cpp_source.html#l00022">mtgb::ScoreManager::Update()</a>, <a class="el" href="Camera_8cpp_source.html#l00108">mtgb::Camera::Update()</a>, <a class="el" href="ImGuiShowable_8cpp_source.html#l00044">mtgb::ImGuiShowable::~ImGuiShowable()</a> (計27項目).</p>
+<p class="reference">参照元 <a class="el" href="AudioPlayer_8generated_8cpp_source.html#l00012">mtgb::AudioPlayer_Register::AudioPlayer_Register()</a>, <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00033">mtgb::ImGuiEditorCamera::ImGuiEditorCamera()</a>, <a class="el" href="ImGuiShowable_8cpp_source.html#l00011">mtgb::ImGuiShowable::ImGuiShowable()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00030">Initialize()</a>, <a class="el" href="SampleScene_8cpp_source.html#l00022">SampleScene::Initialize()</a>, <a class="el" href="StageEditScene_8cpp_source.html#l00013">StageEditScene::Initialize()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8generated_8cpp_source.html#l00012">mtgb::MovingFloor_Register::MovingFloor_Register()</a>, <a class="el" href="RenderSystem_8cpp_source.html#l00048">mtgb::RenderSystem::RenderImGuiWindows()</a>, <a class="el" href="RigidBody_8generated_8cpp_source.html#l00012">mtgb::RigidBody_Register::RigidBody_Register()</a>, <a class="el" href="Box3D_8cpp_source.html#l00040">mtgb::Box3D::ShowImGui()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00115">mtgb::Saw::ShowImGui()</a>, <a class="el" href="Goal_8cpp_source.html#l00070">Goal::ShowImGui()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00046">MovingFloor::ShowImGui()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00083">PatrolChargerEnemy::ShowImGui()</a>, <a class="el" href="Player_8cpp_source.html#l00188">Player::ShowImGui()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00039">SeaPlane::ShowImGui()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00035">mtgb::SkySphere::ShowImGui()</a>, <a class="el" href="Transform_8generated_8cpp_source.html#l00012">mtgb::Transform_Register::Transform_Register()</a>, <a class="el" href="DXGIResource_8cpp_source.html#l00080">mtgb::DXGIResource::Update()</a>, <a class="el" href="HighlightEnemy_8cpp_source.html#l00054">HighlightEnemy::Update()</a>, <a class="el" href="InputResource_8cpp_source.html#l00075">mtgb::InputResource::Update()</a>, <a class="el" href="SceneSystem_8cpp_source.html#l00039">mtgb::SceneSystem::Update()</a>, <a class="el" href="ScoreManager_8cpp_source.html#l00022">mtgb::ScoreManager::Update()</a>, <a class="el" href="Camera_8cpp_source.html#l00116">mtgb::Camera::Update()</a>, <a class="el" href="ImGuiShowable_8cpp_source.html#l00044">mtgb::ImGuiShowable::~ImGuiShowable()</a> (計27項目).</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1073,10 +1073,10 @@ mtgb::MTImGui 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00393">393</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  394</span>{</div>
-<div class="line"><span class="lineno">  395</span>    <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>.push_back(obj);</div>
-<div class="line"><span class="lineno">  396</span>}</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00402">402</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  403</span>{</div>
+<div class="line"><span class="lineno">  404</span>    <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>.push_back(obj);</div>
+<div class="line"><span class="lineno">  405</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="ImGuiShowable_8cpp_source.html#l00011">mtgb::ImGuiShowable::ImGuiShowable()</a>.</p>
 <div class="dynheader">
@@ -1111,9 +1111,9 @@ mtgb::MTImGui 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00317">317</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  318</span>{</div>
-<div class="line"><span class="lineno">  319</span>}</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00326">326</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  327</span>{</div>
+<div class="line"><span class="lineno">  328</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1183,20 +1183,20 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00303">303</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  304</span>{</div>
-<div class="line"><span class="lineno">  305</span>    <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> selectedEntityId = _entityId;</div>
-<div class="line"><span class="lineno">  306</span>    <span class="keywordflow">if</span> (selectedEntityId == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  307</span> </div>
-<div class="line"><span class="lineno">  308</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classmtgb_1_1ImGuiShowable.html">ImGuiShowable</a>* obj : <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>)</div>
-<div class="line"><span class="lineno">  309</span>    {</div>
-<div class="line"><span class="lineno">  310</span>        <span class="keywordflow">if</span> (selectedEntityId == obj-&gt;targetEntityId_)</div>
-<div class="line"><span class="lineno">  311</span>        {</div>
-<div class="line"><span class="lineno">  312</span>            <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[ShowType::Inspector].selectedName = obj-&gt;displayName_;</div>
-<div class="line"><span class="lineno">  313</span>            <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[ShowType::Inspector].entityId = obj-&gt;targetEntityId_;</div>
-<div class="line"><span class="lineno">  314</span>        }</div>
-<div class="line"><span class="lineno">  315</span>    }</div>
-<div class="line"><span class="lineno">  316</span>}</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00312">312</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  313</span>{</div>
+<div class="line"><span class="lineno">  314</span>    <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> selectedEntityId = _entityId;</div>
+<div class="line"><span class="lineno">  315</span>    <span class="keywordflow">if</span> (selectedEntityId == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  316</span> </div>
+<div class="line"><span class="lineno">  317</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classmtgb_1_1ImGuiShowable.html">ImGuiShowable</a>* obj : <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>)</div>
+<div class="line"><span class="lineno">  318</span>    {</div>
+<div class="line"><span class="lineno">  319</span>        <span class="keywordflow">if</span> (selectedEntityId == obj-&gt;targetEntityId_)</div>
+<div class="line"><span class="lineno">  320</span>        {</div>
+<div class="line"><span class="lineno">  321</span>            <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[ShowType::Inspector].selectedName = obj-&gt;displayName_;</div>
+<div class="line"><span class="lineno">  322</span>            <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[ShowType::Inspector].entityId = obj-&gt;targetEntityId_;</div>
+<div class="line"><span class="lineno">  323</span>        }</div>
+<div class="line"><span class="lineno">  324</span>    }</div>
+<div class="line"><span class="lineno">  325</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiShowable_html"><div class="ttname"><a href="classmtgb_1_1ImGuiShowable.html">mtgb::ImGuiShowable</a></div><div class="ttdoc">継承してShowImGuiをオーバライドして使う これを使わなくてもImGui表示はできるので、別の箇所に分離したいときなどにどうぞ</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiShowable_8h_source.html#l00019">ImGuiShowable.h:20</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
 </div><!-- fragment -->
@@ -1303,24 +1303,37 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="line"><span class="lineno">  241</span>            <a class="code hl_function" href="namespaceImGui.html#ad92ccfbc33d448ff40cfcf9219177344">ImGui::LabelText</a>(<span class="stringliteral">&quot;DesktopCoordinates&quot;</span>, <span class="stringliteral">&quot;(%ld,%ld) - (%ld,%ld)&quot;</span>, _target-&gt;DesktopCoordinates.left, _target-&gt;DesktopCoordinates.top,</div>
 <div class="line"><span class="lineno">  242</span>                _target-&gt;DesktopCoordinates.right, _target-&gt;DesktopCoordinates.bottom);</div>
 <div class="line"><span class="lineno">  243</span>        });</div>
-<div class="line"><span class="lineno">  244</span>}</div>
+<div class="line"><span class="lineno">  244</span>    Set&lt;Color&gt;([](<a class="code hl_struct" href="structEffekseer_1_1Color.html">Color</a>* _target, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name)</div>
+<div class="line"><span class="lineno">  245</span>        {</div>
+<div class="line"><span class="lineno">  246</span>            <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a> vec4 =_target-&gt;ToVector4Norm();</div>
+<div class="line"><span class="lineno">  247</span>            <a class="code hl_function" href="namespaceImGui.html#ac3f45e2aa0b1d591cc8a2cdf8b566a45">ImGui::ColorEdit4</a>(_name, vec4.f, <a class="code hl_enumvalue" href="imgui_8h.html#aef500c7434555b6cd61e14e3603c2cdaa3c7d9b5472dbfa4d677dc548b596ea24">ImGuiColorEditFlags_Uint8</a>);</div>
+<div class="line"><span class="lineno">  248</span>            <span class="comment">/*ImGui::InputScalar(&quot;r&quot;, ImGuiDataType_U8, &amp;_target-&gt;component[static_cast&lt;int32_t&gt;(::mtgb::Color::Component::Red)]);</span></div>
+<div class="line"><span class="lineno">  249</span><span class="comment">            ImGui::InputScalar(&quot;g&quot;, ImGuiDataType_U8, &amp;_target-&gt;component[static_cast&lt;int32_t&gt;(::mtgb::Color::Component::Green)]);</span></div>
+<div class="line"><span class="lineno">  250</span><span class="comment">            ImGui::InputScalar(&quot;b&quot;, ImGuiDataType_U8, &amp;_target-&gt;component[static_cast&lt;int32_t&gt;(::mtgb::Color::Component::Blue)]);</span></div>
+<div class="line"><span class="lineno">  251</span><span class="comment">            ImGui::InputScalar(&quot;a&quot;, ImGuiDataType_U8, &amp;_target-&gt;component[static_cast&lt;int32_t&gt;(::mtgb::Color::Component::Alpha)]);*/</span></div>
+<div class="line"><span class="lineno">  252</span>        });</div>
+<div class="line"><span class="lineno">  253</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1RectDetector_html"><div class="ttname"><a href="classmtgb_1_1RectDetector.html">mtgb::RectDetector</a></div><div class="ttdoc">矩形内の対象検出システム</div><div class="ttdef"><b>Definition:</b> <a href="RectDetector_8h_source.html#l00018">RectDetector.h:19</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1RectDetector_html_a2c8df94fbb0a74025efda9efa4f551e2"><div class="ttname"><a href="classmtgb_1_1RectDetector.html#a2c8df94fbb0a74025efda9efa4f551e2">mtgb::RectDetector::GetDetectedTargets</a></div><div class="ttdeci">const std::vector&lt; ScreenCoordContainsInfo &gt; &amp; GetDetectedTargets() const override</div><div class="ttdoc">検出結果を取得</div><div class="ttdef"><b>Definition:</b> <a href="RectDetector_8cpp_source.html#l00094">RectDetector.cpp:94</a></div></div>
+<div class="ttc" id="aimgui_8h_html_aef500c7434555b6cd61e14e3603c2cdaa3c7d9b5472dbfa4d677dc548b596ea24"><div class="ttname"><a href="imgui_8h.html#aef500c7434555b6cd61e14e3603c2cdaa3c7d9b5472dbfa4d677dc548b596ea24">ImGuiColorEditFlags_Uint8</a></div><div class="ttdeci">@ ImGuiColorEditFlags_Uint8</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01935">imgui.h:1935</a></div></div>
 <div class="ttc" id="anamespaceImGui_html_a9e7b83611fe441d54fad2effb4bf4965"><div class="ttname"><a href="namespaceImGui.html#a9e7b83611fe441d54fad2effb4bf4965">ImGui::Text</a></div><div class="ttdeci">IMGUI_API void Text(const char *fmt,...) IM_FMTARGS(1)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l00273">imgui_widgets.cpp:273</a></div></div>
+<div class="ttc" id="anamespaceImGui_html_ac3f45e2aa0b1d591cc8a2cdf8b566a45"><div class="ttname"><a href="namespaceImGui.html#ac3f45e2aa0b1d591cc8a2cdf8b566a45">ImGui::ColorEdit4</a></div><div class="ttdeci">IMGUI_API bool ColorEdit4(const char *label, float col[4], ImGuiColorEditFlags flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l05573">imgui_widgets.cpp:5573</a></div></div>
 <div class="ttc" id="anamespaceImGui_html_ad92ccfbc33d448ff40cfcf9219177344"><div class="ttname"><a href="namespaceImGui.html#ad92ccfbc33d448ff40cfcf9219177344">ImGui::LabelText</a></div><div class="ttdeci">IMGUI_API void LabelText(const char *label, const char *fmt,...) IM_FMTARGS(2)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l00382">imgui_widgets.cpp:382</a></div></div>
 <div class="ttc" id="anamespaceRegisterShowFuncHolder_html_af08ace69b5719a63c9be6b507e8aee41"><div class="ttname"><a href="namespaceRegisterShowFuncHolder.html#af08ace69b5719a63c9be6b507e8aee41">RegisterShowFuncHolder::Set</a></div><div class="ttdeci">void Set(std::function&lt; void(Type *_target, const char *_name)&gt; _func)</div><div class="ttdoc">型に対応したImGuiの表示処理をセットする</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00092">TypeRegistry.h:92</a></div></div>
+<div class="ttc" id="astructEffekseer_1_1Color_html"><div class="ttname"><a href="structEffekseer_1_1Color.html">Effekseer::Color</a></div><div class="ttdoc">色</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01620">install_msvc2022_x64/include/Effekseer/Effekseer.h:1621</a></div></div>
 <div class="ttc" id="astructmtgb_1_1ScreenCoordContainsInfo_html"><div class="ttname"><a href="structmtgb_1_1ScreenCoordContainsInfo.html">mtgb::ScreenCoordContainsInfo</a></div><div class="ttdoc">スクリーン座標系の含まれている対象の情報</div><div class="ttdef"><b>Definition:</b> <a href="RectContainsInfo_8h_source.html#l00010">RectContainsInfo.h:11</a></div></div>
 <div class="ttc" id="astructmtgb_1_1ScreenCoordContainsInfo_html_a8269488fd5f3a6878767c4e6138f1cd5"><div class="ttname"><a href="structmtgb_1_1ScreenCoordContainsInfo.html#a8269488fd5f3a6878767c4e6138f1cd5">mtgb::ScreenCoordContainsInfo::screenPos</a></div><div class="ttdeci">Vector3 screenPos</div><div class="ttdef"><b>Definition:</b> <a href="RectContainsInfo_8h_source.html#l00013">RectContainsInfo.h:13</a></div></div>
 <div class="ttc" id="astructmtgb_1_1ScreenCoordContainsInfo_html_a92267c0bf0844d1a16201cfa75936abd"><div class="ttname"><a href="structmtgb_1_1ScreenCoordContainsInfo.html#a92267c0bf0844d1a16201cfa75936abd">mtgb::ScreenCoordContainsInfo::entityId</a></div><div class="ttdeci">EntityId entityId</div><div class="ttdef"><b>Definition:</b> <a href="RectContainsInfo_8h_source.html#l00014">RectContainsInfo.h:14</a></div></div>
 <div class="ttc" id="astructmtgb_1_1ScreenCoordContainsInfo_html_addb87291f6125a4ff03e53bf772098b9"><div class="ttname"><a href="structmtgb_1_1ScreenCoordContainsInfo.html#addb87291f6125a4ff03e53bf772098b9">mtgb::ScreenCoordContainsInfo::worldPos</a></div><div class="ttdeci">Vector3 worldPos</div><div class="ttdef"><b>Definition:</b> <a href="RectContainsInfo_8h_source.html#l00012">RectContainsInfo.h:12</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector4_html"><div class="ttname"><a href="structmtgb_1_1Vector4.html">mtgb::Vector4</a></div><div class="ttdoc">4次元ベクトル</div><div class="ttdef"><b>Definition:</b> <a href="Vector4_8h_source.html#l00010">Vector4.h:11</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00055">TypeRegistry::CallFunc()</a>, <a class="el" href="RectContainsInfo_8h_source.html#l00014">mtgb::ScreenCoordContainsInfo::entityId</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry::Instance()</a>, <a class="el" href="imgui__widgets_8cpp_source.html#l00382">ImGui::LabelText()</a>, <a class="el" href="RectContainsInfo_8h_source.html#l00013">mtgb::ScreenCoordContainsInfo::screenPos</a>, <a class="el" href="TypeRegistry_8h_source.html#l00092">RegisterShowFuncHolder::Set()</a>, <a class="el" href="imgui__widgets_8cpp_source.html#l00273">ImGui::Text()</a>, <a class="el" href="RectContainsInfo_8h_source.html#l00012">mtgb::ScreenCoordContainsInfo::worldPos</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00055">TypeRegistry::CallFunc()</a>, <a class="el" href="imgui__widgets_8cpp_source.html#l05573">ImGui::ColorEdit4()</a>, <a class="el" href="RectContainsInfo_8h_source.html#l00014">mtgb::ScreenCoordContainsInfo::entityId</a>, <a class="el" href="imgui_8h_source.html#l01935">ImGuiColorEditFlags_Uint8</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry::Instance()</a>, <a class="el" href="imgui__widgets_8cpp_source.html#l00382">ImGui::LabelText()</a>, <a class="el" href="RectContainsInfo_8h_source.html#l00013">mtgb::ScreenCoordContainsInfo::screenPos</a>, <a class="el" href="TypeRegistry_8h_source.html#l00092">RegisterShowFuncHolder::Set()</a>, <a class="el" href="imgui__widgets_8cpp_source.html#l00273">ImGui::Text()</a>, <a class="el" href="RectContainsInfo_8h_source.html#l00012">mtgb::ScreenCoordContainsInfo::worldPos</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="MTImGui_8cpp_source.html#l00030">Initialize()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MTImGui_a66e27a522dc67b37932354e70e6d9674_cgraph.svg" width="1960" height="1890"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1MTImGui_a66e27a522dc67b37932354e70e6d9674_cgraph.svg" width="1819" height="2562"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -1381,22 +1394,22 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00291">291</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  292</span>{</div>
-<div class="line"><span class="lineno">  293</span>    <span class="keywordflow">if</span> (_entityId == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  294</span> </div>
-<div class="line"><span class="lineno">  295</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; types = Game::System&lt;ComponentRegistry&gt;().GetComponentTypes(_entityId);</div>
-<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">if</span> (types.has_value() == <span class="keyword">false</span>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  297</span> </div>
-<div class="line"><span class="lineno">  298</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; typeIdx : (*types).get())</div>
-<div class="line"><span class="lineno">  299</span>    {</div>
-<div class="line"><span class="lineno">  300</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab4c0d63b673db1ed2204df0726b83644">componentShowFuncs_</a>[typeIdx](_entityId);</div>
-<div class="line"><span class="lineno">  301</span>    }</div>
-<div class="line"><span class="lineno">  302</span>}</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00300">300</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  301</span>{</div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordflow">if</span> (_entityId == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; types = Game::System&lt;ComponentRegistry&gt;().GetComponentTypes(_entityId);</div>
+<div class="line"><span class="lineno">  305</span>    <span class="keywordflow">if</span> (types.has_value() == <span class="keyword">false</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  306</span> </div>
+<div class="line"><span class="lineno">  307</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; typeIdx : (*types).get())</div>
+<div class="line"><span class="lineno">  308</span>    {</div>
+<div class="line"><span class="lineno">  309</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab4c0d63b673db1ed2204df0726b83644">componentShowFuncs_</a>[typeIdx](_entityId);</div>
+<div class="line"><span class="lineno">  310</span>    }</div>
+<div class="line"><span class="lineno">  311</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00040">mtgb::Box3D::ShowImGui()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00115">mtgb::Saw::ShowImGui()</a>, <a class="el" href="Goal_8cpp_source.html#l00069">Goal::ShowImGui()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00045">MovingFloor::ShowImGui()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00083">PatrolChargerEnemy::ShowImGui()</a>, <a class="el" href="Player_8cpp_source.html#l00178">Player::ShowImGui()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00039">SeaPlane::ShowImGui()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00035">mtgb::SkySphere::ShowImGui()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00040">mtgb::Box3D::ShowImGui()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00115">mtgb::Saw::ShowImGui()</a>, <a class="el" href="Goal_8cpp_source.html#l00070">Goal::ShowImGui()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00046">MovingFloor::ShowImGui()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00083">PatrolChargerEnemy::ShowImGui()</a>, <a class="el" href="Player_8cpp_source.html#l00188">Player::ShowImGui()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00039">SeaPlane::ShowImGui()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00035">mtgb::SkySphere::ShowImGui()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1430,52 +1443,52 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00245">245</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  246</span>{</div>
-<div class="line"><span class="lineno">  247</span>    <span class="keyword">auto</span>&amp; selectedName = <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[_show].selectedName;</div>
-<div class="line"><span class="lineno">  248</span>    <span class="keyword">auto</span>&amp; queue = <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a20a3e224eda5db1a17f5f454995280cf">showQueues_</a>[_show];</div>
-<div class="line"><span class="lineno">  249</span> </div>
-<div class="line"><span class="lineno">  250</span>    <span class="keywordtype">bool</span> isSelected = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  251</span>    std::function&lt;void()&gt; selectedFunc = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  252</span> </div>
-<div class="line"><span class="lineno">  253</span>    <a class="code hl_function" href="namespaceImGui.html#aebac8b07ee9ea0e452c98813a3e907c3">ImGui::BeginChild</a>(<span class="stringliteral">&quot;List&quot;</span>, <a class="code hl_struct" href="structImVec2.html">ImVec2</a>(200, 0), <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  254</span> </div>
-<div class="line"><span class="lineno">  255</span>    <span class="keywordflow">while</span> (!queue.empty())</div>
-<div class="line"><span class="lineno">  256</span>    {</div>
-<div class="line"><span class="lineno">  257</span>        <span class="keyword">const</span> std::string&amp; name = queue.front().first;</div>
-<div class="line"><span class="lineno">  258</span>        <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a> = queue.front().second;</div>
-<div class="line"><span class="lineno">  259</span> </div>
-<div class="line"><span class="lineno">  260</span>        <span class="keywordflow">if</span> (!isSelected)</div>
-<div class="line"><span class="lineno">  261</span>        {</div>
-<div class="line"><span class="lineno">  262</span>            isSelected = selectedName == name;</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00254">254</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  255</span>{</div>
+<div class="line"><span class="lineno">  256</span>    <span class="keyword">auto</span>&amp; selectedName = <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[_show].selectedName;</div>
+<div class="line"><span class="lineno">  257</span>    <span class="keyword">auto</span>&amp; queue = <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a20a3e224eda5db1a17f5f454995280cf">showQueues_</a>[_show];</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>    <span class="keywordtype">bool</span> isSelected = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  260</span>    std::function&lt;void()&gt; selectedFunc = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <a class="code hl_function" href="namespaceImGui.html#aebac8b07ee9ea0e452c98813a3e907c3">ImGui::BeginChild</a>(<span class="stringliteral">&quot;List&quot;</span>, <a class="code hl_struct" href="structImVec2.html">ImVec2</a>(200, 0), <span class="keyword">true</span>);</div>
 <div class="line"><span class="lineno">  263</span> </div>
-<div class="line"><span class="lineno">  264</span>            <span class="comment">// コピーキャプチャの場合は値が更新されないので、</span></div>
-<div class="line"><span class="lineno">  265</span>            <span class="comment">// 選択済みの名前と一致していたら関数を更新</span></div>
-<div class="line"><span class="lineno">  266</span>            selectedFunc = <a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>;</div>
-<div class="line"><span class="lineno">  267</span>        }</div>
+<div class="line"><span class="lineno">  264</span>    <span class="keywordflow">while</span> (!queue.empty())</div>
+<div class="line"><span class="lineno">  265</span>    {</div>
+<div class="line"><span class="lineno">  266</span>        <span class="keyword">const</span> std::string&amp; name = queue.front().first;</div>
+<div class="line"><span class="lineno">  267</span>        <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a> = queue.front().second;</div>
 <div class="line"><span class="lineno">  268</span> </div>
-<div class="line"><span class="lineno">  269</span>        <span class="comment">// 選択された項目の名前、表示関数を記録</span></div>
-<div class="line"><span class="lineno">  270</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceImGui.html#af98575238bda183a523df19fb447af60">ImGui::Selectable</a>(name.c_str(), selectedName == name))</div>
-<div class="line"><span class="lineno">  271</span>        {</div>
-<div class="line"><span class="lineno">  272</span>            isSelected = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  273</span>            <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[_show].selectedName = name;</div>
-<div class="line"><span class="lineno">  274</span>            selectedFunc = <a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>;</div>
-<div class="line"><span class="lineno">  275</span>        }</div>
-<div class="line"><span class="lineno">  276</span> </div>
-<div class="line"><span class="lineno">  277</span>        queue.pop();</div>
-<div class="line"><span class="lineno">  278</span>    }</div>
-<div class="line"><span class="lineno">  279</span>    <a class="code hl_function" href="namespaceImGui.html#af8de559a88c1442d6df8c1b04c86e997">ImGui::EndChild</a>();</div>
-<div class="line"><span class="lineno">  280</span> </div>
-<div class="line"><span class="lineno">  281</span>    <span class="comment">// Listの横に property表示</span></div>
-<div class="line"><span class="lineno">  282</span>    <a class="code hl_function" href="namespaceImGui.html#addd433eb3aae59119e341e80db474f66">ImGui::SameLine</a>();</div>
-<div class="line"><span class="lineno">  283</span> </div>
-<div class="line"><span class="lineno">  284</span>    <a class="code hl_function" href="namespaceImGui.html#aebac8b07ee9ea0e452c98813a3e907c3">ImGui::BeginChild</a>(<span class="stringliteral">&quot;property&quot;</span>, <a class="code hl_struct" href="structImVec2.html">ImVec2</a>(0, 0), <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  285</span>    <span class="keywordflow">if</span> (selectedFunc &amp;&amp; isSelected)</div>
-<div class="line"><span class="lineno">  286</span>    {</div>
-<div class="line"><span class="lineno">  287</span>        selectedFunc();</div>
-<div class="line"><span class="lineno">  288</span>    }</div>
-<div class="line"><span class="lineno">  289</span>    <a class="code hl_function" href="namespaceImGui.html#af8de559a88c1442d6df8c1b04c86e997">ImGui::EndChild</a>();</div>
-<div class="line"><span class="lineno">  290</span>}</div>
+<div class="line"><span class="lineno">  269</span>        <span class="keywordflow">if</span> (!isSelected)</div>
+<div class="line"><span class="lineno">  270</span>        {</div>
+<div class="line"><span class="lineno">  271</span>            isSelected = selectedName == name;</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>            <span class="comment">// コピーキャプチャの場合は値が更新されないので、</span></div>
+<div class="line"><span class="lineno">  274</span>            <span class="comment">// 選択済みの名前と一致していたら関数を更新</span></div>
+<div class="line"><span class="lineno">  275</span>            selectedFunc = <a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>;</div>
+<div class="line"><span class="lineno">  276</span>        }</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>        <span class="comment">// 選択された項目の名前、表示関数を記録</span></div>
+<div class="line"><span class="lineno">  279</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceImGui.html#af98575238bda183a523df19fb447af60">ImGui::Selectable</a>(name.c_str(), selectedName == name))</div>
+<div class="line"><span class="lineno">  280</span>        {</div>
+<div class="line"><span class="lineno">  281</span>            isSelected = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  282</span>            <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[_show].selectedName = name;</div>
+<div class="line"><span class="lineno">  283</span>            selectedFunc = <a class="code hl_function" href="group__group1.html#ga24f647174760cac13d2624b5ad74b00c">func</a>;</div>
+<div class="line"><span class="lineno">  284</span>        }</div>
+<div class="line"><span class="lineno">  285</span> </div>
+<div class="line"><span class="lineno">  286</span>        queue.pop();</div>
+<div class="line"><span class="lineno">  287</span>    }</div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_function" href="namespaceImGui.html#af8de559a88c1442d6df8c1b04c86e997">ImGui::EndChild</a>();</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span>    <span class="comment">// Listの横に property表示</span></div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_function" href="namespaceImGui.html#addd433eb3aae59119e341e80db474f66">ImGui::SameLine</a>();</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>    <a class="code hl_function" href="namespaceImGui.html#aebac8b07ee9ea0e452c98813a3e907c3">ImGui::BeginChild</a>(<span class="stringliteral">&quot;property&quot;</span>, <a class="code hl_struct" href="structImVec2.html">ImVec2</a>(0, 0), <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">if</span> (selectedFunc &amp;&amp; isSelected)</div>
+<div class="line"><span class="lineno">  295</span>    {</div>
+<div class="line"><span class="lineno">  296</span>        selectedFunc();</div>
+<div class="line"><span class="lineno">  297</span>    }</div>
+<div class="line"><span class="lineno">  298</span>    <a class="code hl_function" href="namespaceImGui.html#af8de559a88c1442d6df8c1b04c86e997">ImGui::EndChild</a>();</div>
+<div class="line"><span class="lineno">  299</span>}</div>
 <div class="ttc" id="anamespaceImGui_html_addd433eb3aae59119e341e80db474f66"><div class="ttname"><a href="namespaceImGui.html#addd433eb3aae59119e341e80db474f66">ImGui::SameLine</a></div><div class="ttdeci">IMGUI_API void SameLine(float offset_from_start_x=0.0f, float spacing=-1.0f)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l11800">imgui.cpp:11800</a></div></div>
 <div class="ttc" id="anamespaceImGui_html_aebac8b07ee9ea0e452c98813a3e907c3"><div class="ttname"><a href="namespaceImGui.html#aebac8b07ee9ea0e452c98813a3e907c3">ImGui::BeginChild</a></div><div class="ttdeci">IMGUI_API bool BeginChild(const char *str_id, const ImVec2 &amp;size=ImVec2(0, 0), ImGuiChildFlags child_flags=0, ImGuiWindowFlags window_flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l06486">imgui.cpp:6486</a></div></div>
 <div class="ttc" id="anamespaceImGui_html_af8de559a88c1442d6df8c1b04c86e997"><div class="ttname"><a href="namespaceImGui.html#af8de559a88c1442d6df8c1b04c86e997">ImGui::EndChild</a></div><div class="ttdeci">IMGUI_API void EndChild()</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8cpp_source.html#l06626">imgui.cpp:6626</a></div></div>
@@ -1644,39 +1657,39 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00348">348</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  349</span>{</div>
-<div class="line"><span class="lineno">  350</span>    <a class="code hl_class" href="classmtgb_1_1ImGuiRenderer.html">ImGuiRenderer</a>&amp; imGui = Game::System&lt;ImGuiRenderer&gt;();</div>
-<div class="line"><span class="lineno">  351</span>    <span class="keyword">auto</span>&amp; state = <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[_showType];</div>
-<div class="line"><span class="lineno">  352</span>    <span class="keywordflow">if</span> (!state.isOpen)</div>
-<div class="line"><span class="lineno">  353</span>    {</div>
-<div class="line"><span class="lineno">  354</span>        <span class="keyword">auto</span>&amp; queue = <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a20a3e224eda5db1a17f5f454995280cf">showQueues_</a>[_showType];</div>
-<div class="line"><span class="lineno">  355</span>        <span class="keywordflow">while</span> (!queue.empty())</div>
-<div class="line"><span class="lineno">  356</span>        {</div>
-<div class="line"><span class="lineno">  357</span>            queue.pop();</div>
-<div class="line"><span class="lineno">  358</span>        }</div>
-<div class="line"><span class="lineno">  359</span>    }</div>
-<div class="line"><span class="lineno">  360</span> </div>
-<div class="line"><span class="lineno">  361</span>    <span class="keywordflow">if</span> (_showType == ShowType::SceneView)</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00357">357</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  358</span>{</div>
+<div class="line"><span class="lineno">  359</span>    <a class="code hl_class" href="classmtgb_1_1ImGuiRenderer.html">ImGuiRenderer</a>&amp; imGui = Game::System&lt;ImGuiRenderer&gt;();</div>
+<div class="line"><span class="lineno">  360</span>    <span class="keyword">auto</span>&amp; state = <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ab3c44ee869fffe6c512332131e09760e">imguiWindowStates_</a>[_showType];</div>
+<div class="line"><span class="lineno">  361</span>    <span class="keywordflow">if</span> (!state.isOpen)</div>
 <div class="line"><span class="lineno">  362</span>    {</div>
-<div class="line"><span class="lineno">  363</span>        imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a704d60c97459c9dd8e90a0010eead60c">Begin</a>(<a class="code hl_function" href="classmtgb_1_1MTImGui.html#abbaf598c1d8788179eedebb776f1e494">GetName</a>(ShowType::SceneView),&amp;state.isOpen, <a class="code hl_enumvalue" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8">ImGuiRenderer::WindowFlag::NoMoveWhenHovered</a>);</div>
-<div class="line"><span class="lineno">  364</span>        </div>
-<div class="line"><span class="lineno">  365</span>        imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#ab1b0148d8603765edd4109ca24dedf92">RenderSceneView</a>();</div>
-<div class="line"><span class="lineno">  366</span>        imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a97281ceb7ce6e422c152575fb26ad8cd">SetDrawList</a>();</div>
-<div class="line"><span class="lineno">  367</span>    }</div>
-<div class="line"><span class="lineno">  368</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  369</span>    {</div>
-<div class="line"><span class="lineno">  370</span>        imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a704d60c97459c9dd8e90a0010eead60c">Begin</a>(<a class="code hl_function" href="classmtgb_1_1MTImGui.html#abbaf598c1d8788179eedebb776f1e494">GetName</a>(_showType), &amp;state.isOpen);</div>
-<div class="line"><span class="lineno">  371</span>    }</div>
-<div class="line"><span class="lineno">  372</span> </div>
-<div class="line"><span class="lineno">  373</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a8d6b665b7ed12969fa847f876795cc78">ExecuteShowQueue</a>(_showType);</div>
-<div class="line"><span class="lineno">  374</span> </div>
-<div class="line"><span class="lineno">  375</span>    imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a725b57c53e525ab8e63e305f7898bae4">End</a>();</div>
-<div class="line"><span class="lineno">  376</span>}</div>
+<div class="line"><span class="lineno">  363</span>        <span class="keyword">auto</span>&amp; queue = <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#a20a3e224eda5db1a17f5f454995280cf">showQueues_</a>[_showType];</div>
+<div class="line"><span class="lineno">  364</span>        <span class="keywordflow">while</span> (!queue.empty())</div>
+<div class="line"><span class="lineno">  365</span>        {</div>
+<div class="line"><span class="lineno">  366</span>            queue.pop();</div>
+<div class="line"><span class="lineno">  367</span>        }</div>
+<div class="line"><span class="lineno">  368</span>    }</div>
+<div class="line"><span class="lineno">  369</span> </div>
+<div class="line"><span class="lineno">  370</span>    <span class="keywordflow">if</span> (_showType == ShowType::SceneView)</div>
+<div class="line"><span class="lineno">  371</span>    {</div>
+<div class="line"><span class="lineno">  372</span>        imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a704d60c97459c9dd8e90a0010eead60c">Begin</a>(<a class="code hl_function" href="classmtgb_1_1MTImGui.html#abbaf598c1d8788179eedebb776f1e494">GetName</a>(ShowType::SceneView),&amp;state.isOpen, <a class="code hl_enumvalue" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8">ImGuiRenderer::WindowFlag::NoMoveWhenHovered</a>);</div>
+<div class="line"><span class="lineno">  373</span>        </div>
+<div class="line"><span class="lineno">  374</span>        imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#ab1b0148d8603765edd4109ca24dedf92">RenderSceneView</a>();</div>
+<div class="line"><span class="lineno">  375</span>        imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a97281ceb7ce6e422c152575fb26ad8cd">SetDrawList</a>();</div>
+<div class="line"><span class="lineno">  376</span>    }</div>
+<div class="line"><span class="lineno">  377</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  378</span>    {</div>
+<div class="line"><span class="lineno">  379</span>        imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a704d60c97459c9dd8e90a0010eead60c">Begin</a>(<a class="code hl_function" href="classmtgb_1_1MTImGui.html#abbaf598c1d8788179eedebb776f1e494">GetName</a>(_showType), &amp;state.isOpen);</div>
+<div class="line"><span class="lineno">  380</span>    }</div>
+<div class="line"><span class="lineno">  381</span> </div>
+<div class="line"><span class="lineno">  382</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a8d6b665b7ed12969fa847f876795cc78">ExecuteShowQueue</a>(_showType);</div>
+<div class="line"><span class="lineno">  383</span> </div>
+<div class="line"><span class="lineno">  384</span>    imGui.<a class="code hl_function" href="classmtgb_1_1ImGuiRenderer.html#a725b57c53e525ab8e63e305f7898bae4">End</a>();</div>
+<div class="line"><span class="lineno">  385</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8">mtgb::ImGuiRenderer::WindowFlag::NoMoveWhenHovered</a></div><div class="ttdeci">@ NoMoveWhenHovered</div></div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_a97281ceb7ce6e422c152575fb26ad8cd"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#a97281ceb7ce6e422c152575fb26ad8cd">mtgb::ImGuiRenderer::SetDrawList</a></div><div class="ttdeci">void SetDrawList()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8cpp_source.html#l00146">ImGuiRenderer.cpp:146</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiRenderer_html_ab1b0148d8603765edd4109ca24dedf92"><div class="ttname"><a href="classmtgb_1_1ImGuiRenderer.html#ab1b0148d8603765edd4109ca24dedf92">mtgb::ImGuiRenderer::RenderSceneView</a></div><div class="ttdeci">void RenderSceneView()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiRenderer_8cpp_source.html#l00151">ImGuiRenderer.cpp:151</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a8d6b665b7ed12969fa847f876795cc78"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a8d6b665b7ed12969fa847f876795cc78">mtgb::MTImGui::ExecuteShowQueue</a></div><div class="ttdeci">void ExecuteShowQueue(ShowType show)</div><div class="ttdoc">表示キューを一括実行し、クリア</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00377">MTImGui.cpp:377</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a8d6b665b7ed12969fa847f876795cc78"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a8d6b665b7ed12969fa847f876795cc78">mtgb::MTImGui::ExecuteShowQueue</a></div><div class="ttdeci">void ExecuteShowQueue(ShowType show)</div><div class="ttdoc">表示キューを一括実行し、クリア</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00386">MTImGui.cpp:386</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_abbaf598c1d8788179eedebb776f1e494"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#abbaf598c1d8788179eedebb776f1e494">mtgb::MTImGui::GetName</a></div><div class="ttdeci">static const char * GetName(ShowType _showType)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00117">MTImGui.h:117</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="ImGuiRenderer_8cpp_source.html#l00104">mtgb::ImGuiRenderer::Begin()</a>, <a class="el" href="ImGuiRenderer_8cpp_source.html#l00164">mtgb::ImGuiRenderer::End()</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8">mtgb::ImGuiRenderer::NoMoveWhenHovered</a>, <a class="el" href="ImGuiRenderer_8cpp_source.html#l00151">mtgb::ImGuiRenderer::RenderSceneView()</a>, <a class="el" href="ImGuiRenderer_8cpp_source.html#l00146">mtgb::ImGuiRenderer::SetDrawList()</a>.</p>
@@ -1761,9 +1774,9 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="line"><span class="lineno">  176</span>        <span class="comment">//PushShowFunc( [=] {proxy-&gt;ShowImGui(std::any(target), name); }, show);</span></div>
 <div class="line"><span class="lineno">  177</span>        <a class="code hl_function" href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">DirectShow</a>([=]() {<a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">CallFunc</a>&lt;Type&gt;(target, name.c_str()); }, name, show);</div>
 <div class="line"><span class="lineno">  178</span>    }</div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aa9081f2cfb7ed13e429f9da025d215d4"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">mtgb::MTImGui::DirectShow</a></div><div class="ttdeci">void DirectShow(std::function&lt; void()&gt; func, const std::string &amp;name, ShowType show)</div><div class="ttdoc">コールバックを表示キューに直接積む</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00409">MTImGui.cpp:409</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aa9081f2cfb7ed13e429f9da025d215d4"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">mtgb::MTImGui::DirectShow</a></div><div class="ttdeci">void DirectShow(std::function&lt; void()&gt; func, const std::string &amp;name, ShowType show)</div><div class="ttdoc">コールバックを表示キューに直接積む</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00418">MTImGui.cpp:418</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00055">TypeRegistry::CallFunc()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00409">DirectShow()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry::Instance()</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00055">TypeRegistry::CallFunc()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00418">DirectShow()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry::Instance()</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="HighlightEnemy_8cpp_source.html#l00054">HighlightEnemy::Update()</a>, <a class="el" href="InputResource_8cpp_source.html#l00075">mtgb::InputResource::Update()</a>.</p>
 <div class="dynheader">
@@ -1805,14 +1818,14 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00398">398</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  399</span>{</div>
-<div class="line"><span class="lineno">  400</span>    <span class="keyword">auto</span> it = std::find(<a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>.begin(), <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>.end(), obj);</div>
-<div class="line"><span class="lineno">  401</span>    <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>.end()) </div>
-<div class="line"><span class="lineno">  402</span>    {</div>
-<div class="line"><span class="lineno">  403</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>.erase(it);</div>
-<div class="line"><span class="lineno">  404</span>    }</div>
-<div class="line"><span class="lineno">  405</span>}</div>
+<p class="definition"> <a class="el" href="MTImGui_8cpp_source.html">MTImGui.cpp</a> の <a class="el" href="MTImGui_8cpp_source.html#l00407">407</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  408</span>{</div>
+<div class="line"><span class="lineno">  409</span>    <span class="keyword">auto</span> it = std::find(<a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>.begin(), <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>.end(), obj);</div>
+<div class="line"><span class="lineno">  410</span>    <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>.end()) </div>
+<div class="line"><span class="lineno">  411</span>    {</div>
+<div class="line"><span class="lineno">  412</span>        <a class="code hl_variable" href="classmtgb_1_1MTImGui.html#ad9df01701753e32c9a3490abab9fd569">showableObjs_</a>.erase(it);</div>
+<div class="line"><span class="lineno">  413</span>    }</div>
+<div class="line"><span class="lineno">  414</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="ImGuiShowable_8cpp_source.html#l00044">mtgb::ImGuiShowable::~ImGuiShowable()</a>.</p>
 <div class="dynheader">

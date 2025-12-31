@@ -313,7 +313,7 @@ mtgb::Collider 連携図</div>
 <div class="line"><span class="lineno">   26</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>{ &amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(_entityId) }</div>
 <div class="line"><span class="lineno">   27</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a>{ 0.0f,0.0f,0.0f }</div>
 <div class="line"><span class="lineno">   28</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#a18dd9cce2c089f4e9118bd0ab195853c">radius_</a>{ 1.0f }</div>
-<div class="line"><span class="lineno">   29</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>{ 1.0f,1.0f ,1.0f }</div>
+<div class="line"><span class="lineno">   29</span>    , <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>{ 0.5f,0.5f ,0.5 }</div>
 <div class="line"><span class="lineno">   30</span>{</div>
 <div class="line"><span class="lineno">   31</span>    </div>
 <div class="line"><span class="lineno">   32</span>}</div>
@@ -434,80 +434,83 @@ mtgb::Collider 連携図</div>
 <div class="line"><span class="lineno">  563</span>    {</div>
 <div class="line"><span class="lineno">  564</span>    <span class="keywordflow">case</span> ColliderType::TYPE_SPHERE:</div>
 <div class="line"><span class="lineno">  565</span>        copyTransform = *<a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>;</div>
-<div class="line"><span class="lineno">  566</span>        copyTransform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a> *= <a class="code hl_function" href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">Vector3::One</a>() * <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Radius;</div>
-<div class="line"><span class="lineno">  567</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096">hSphereModel_</a>, copyTransform, 0,<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
-<div class="line"><span class="lineno">  568</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  569</span>    <span class="keywordflow">case</span> ColliderType::TYPE_CAPSULE:</div>
+<div class="line"><span class="lineno">  566</span>        copyTransform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> += <a class="code hl_variable" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a>;</div>
+<div class="line"><span class="lineno">  567</span>        copyTransform.scale *= <a class="code hl_function" href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">Vector3::One</a>() * <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Radius;</div>
+<div class="line"><span class="lineno">  568</span>        copyTransform.Compute();</div>
+<div class="line"><span class="lineno">  569</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096">hSphereModel_</a>, copyTransform, 0,<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
 <div class="line"><span class="lineno">  570</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  571</span>    <span class="keywordflow">case</span> ColliderType::TYPE_AABB:</div>
-<div class="line"><span class="lineno">  572</span> </div>
-<div class="line"><span class="lineno">  573</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
-<div class="line"><span class="lineno">  574</span>        {</div>
-<div class="line"><span class="lineno">  575</span>            copyTransform.parent = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
-<div class="line"><span class="lineno">  576</span>        }</div>
-<div class="line"><span class="lineno">  577</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  578</span>        {</div>
-<div class="line"><span class="lineno">  579</span>            copyTransform = *<a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>;</div>
-<div class="line"><span class="lineno">  580</span>        }</div>
-<div class="line"><span class="lineno">  581</span>        </div>
-<div class="line"><span class="lineno">  582</span>        <span class="comment">// 軸並行なので回転はなし</span></div>
-<div class="line"><span class="lineno">  583</span>        copyTransform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a> = Quaternion{};</div>
-<div class="line"><span class="lineno">  584</span> </div>
-<div class="line"><span class="lineno">  585</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
-<div class="line"><span class="lineno">  586</span>        {</div>
-<div class="line"><span class="lineno">  587</span>            <span class="comment">// 静的、Transform不要なのでそのまま代入</span></div>
-<div class="line"><span class="lineno">  588</span>            copyTransform.position = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Center;</div>
-<div class="line"><span class="lineno">  589</span>            copyTransform.scale = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents * 2.0f;</div>
-<div class="line"><span class="lineno">  590</span>        }</div>
-<div class="line"><span class="lineno">  591</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  592</span>        {</div>
-<div class="line"><span class="lineno">  593</span>            <span class="comment">// Transformに合わせて位置、サイズを調整</span></div>
-<div class="line"><span class="lineno">  594</span>            copyTransform.scale = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents * 2.0f;</div>
-<div class="line"><span class="lineno">  595</span>        }</div>
-<div class="line"><span class="lineno">  596</span>        </div>
-<div class="line"><span class="lineno">  597</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae">hBoxModel_</a>, copyTransform, 0, <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
-<div class="line"><span class="lineno">  598</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  599</span>    <span class="keywordflow">case</span> ColliderType::TYPE_OBB:</div>
-<div class="line"><span class="lineno">  600</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
-<div class="line"><span class="lineno">  601</span>        {</div>
-<div class="line"><span class="lineno">  602</span>            copyTransform.parent = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
-<div class="line"><span class="lineno">  603</span>        }</div>
-<div class="line"><span class="lineno">  604</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  605</span>        {</div>
-<div class="line"><span class="lineno">  606</span>            copyTransform = *<a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>;</div>
-<div class="line"><span class="lineno">  607</span>        }</div>
-<div class="line"><span class="lineno">  608</span>        </div>
-<div class="line"><span class="lineno">  609</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
-<div class="line"><span class="lineno">  610</span>        {</div>
-<div class="line"><span class="lineno">  611</span>            <span class="comment">// 静的、Transform不要なのでそのまま代入</span></div>
-<div class="line"><span class="lineno">  612</span>            copyTransform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Center;</div>
-<div class="line"><span class="lineno">  613</span>            copyTransform.scale = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents * 2.0f;</div>
-<div class="line"><span class="lineno">  614</span>        }</div>
-<div class="line"><span class="lineno">  615</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  616</span>        {</div>
-<div class="line"><span class="lineno">  617</span>            <span class="comment">// Transformに合わせて位置、サイズを調整</span></div>
-<div class="line"><span class="lineno">  618</span>            copyTransform.scale = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents * 2.0f;</div>
-<div class="line"><span class="lineno">  619</span>        }</div>
-<div class="line"><span class="lineno">  620</span> </div>
-<div class="line"><span class="lineno">  621</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae">hBoxModel_</a>, copyTransform, 0, <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
-<div class="line"><span class="lineno">  622</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  623</span>    <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  624</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  625</span>    }</div>
-<div class="line"><span class="lineno">  626</span>}</div>
+<div class="line"><span class="lineno">  571</span>    <span class="keywordflow">case</span> ColliderType::TYPE_CAPSULE:</div>
+<div class="line"><span class="lineno">  572</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  573</span>    <span class="keywordflow">case</span> ColliderType::TYPE_AABB:</div>
+<div class="line"><span class="lineno">  574</span> </div>
+<div class="line"><span class="lineno">  575</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
+<div class="line"><span class="lineno">  576</span>        {</div>
+<div class="line"><span class="lineno">  577</span>            copyTransform.parent = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
+<div class="line"><span class="lineno">  578</span>        }</div>
+<div class="line"><span class="lineno">  579</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  580</span>        {</div>
+<div class="line"><span class="lineno">  581</span>            copyTransform = *<a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>;</div>
+<div class="line"><span class="lineno">  582</span>        }</div>
+<div class="line"><span class="lineno">  583</span>        </div>
+<div class="line"><span class="lineno">  584</span>        <span class="comment">// 軸並行なので回転はなし</span></div>
+<div class="line"><span class="lineno">  585</span>        copyTransform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a> = Quaternion{};</div>
+<div class="line"><span class="lineno">  586</span> </div>
+<div class="line"><span class="lineno">  587</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
+<div class="line"><span class="lineno">  588</span>        {</div>
+<div class="line"><span class="lineno">  589</span>            <span class="comment">// 静的、Transform不要なのでそのまま代入</span></div>
+<div class="line"><span class="lineno">  590</span>            copyTransform.position = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Center;</div>
+<div class="line"><span class="lineno">  591</span>            copyTransform.scale = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents * 2.0f;</div>
+<div class="line"><span class="lineno">  592</span>        }</div>
+<div class="line"><span class="lineno">  593</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  594</span>        {</div>
+<div class="line"><span class="lineno">  595</span>            <span class="comment">// Transformに合わせて位置、サイズを調整</span></div>
+<div class="line"><span class="lineno">  596</span>            copyTransform.position += <a class="code hl_variable" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a>;</div>
+<div class="line"><span class="lineno">  597</span>            copyTransform.scale = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents * 2.0f;</div>
+<div class="line"><span class="lineno">  598</span>        }</div>
+<div class="line"><span class="lineno">  599</span>        copyTransform.Compute();</div>
+<div class="line"><span class="lineno">  600</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae">hBoxModel_</a>, copyTransform, 0, <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
+<div class="line"><span class="lineno">  601</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  602</span>    <span class="keywordflow">case</span> ColliderType::TYPE_OBB:</div>
+<div class="line"><span class="lineno">  603</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
+<div class="line"><span class="lineno">  604</span>        {</div>
+<div class="line"><span class="lineno">  605</span>            copyTransform.parent = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
+<div class="line"><span class="lineno">  606</span>        }</div>
+<div class="line"><span class="lineno">  607</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  608</span>        {</div>
+<div class="line"><span class="lineno">  609</span>            copyTransform = *<a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>;</div>
+<div class="line"><span class="lineno">  610</span>        }</div>
+<div class="line"><span class="lineno">  611</span>        </div>
+<div class="line"><span class="lineno">  612</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
+<div class="line"><span class="lineno">  613</span>        {</div>
+<div class="line"><span class="lineno">  614</span>            <span class="comment">// 静的、Transform不要なのでそのまま代入</span></div>
+<div class="line"><span class="lineno">  615</span>            copyTransform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Center;</div>
+<div class="line"><span class="lineno">  616</span>            copyTransform.scale = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents * 2.0f;</div>
+<div class="line"><span class="lineno">  617</span>        }</div>
+<div class="line"><span class="lineno">  618</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  619</span>        {</div>
+<div class="line"><span class="lineno">  620</span>            <span class="comment">// Transformに合わせて位置、サイズを調整</span></div>
+<div class="line"><span class="lineno">  621</span>            copyTransform.position += <a class="code hl_variable" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a>;</div>
+<div class="line"><span class="lineno">  622</span>            copyTransform.scale = <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents * 2.0f;</div>
+<div class="line"><span class="lineno">  623</span>        }</div>
+<div class="line"><span class="lineno">  624</span>        copyTransform.Compute();</div>
+<div class="line"><span class="lineno">  625</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae">hBoxModel_</a>, copyTransform, 0, <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
+<div class="line"><span class="lineno">  626</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  627</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  628</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  629</span>    }</div>
+<div class="line"><span class="lineno">  630</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html_a0f5236811d09379ad76a79a801026bae"><div class="ttname"><a href="classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae">mtgb::Collider::hBoxModel_</a></div><div class="ttdeci">static FBXModelHandle hBoxModel_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00107">Collider.h:107</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html_a21c200078b6404b94b71acc8d0602096"><div class="ttname"><a href="classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096">mtgb::Collider::hSphereModel_</a></div><div class="ttdeci">static FBXModelHandle hSphereModel_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00106">Collider.h:106</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html_a2bae5c02897ed12d0d796f9f27e13bd0"><div class="ttname"><a href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">mtgb::Collider::computeSphere_</a></div><div class="ttdeci">DirectX::BoundingSphere computeSphere_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00099">Collider.h:99</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html_aafb1e42452e04e839e1d276a63f7b478"><div class="ttname"><a href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">mtgb::Collider::computeBox_</a></div><div class="ttdeci">DirectX::BoundingBox computeBox_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00100">Collider.h:100</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Draw_html_a623126b2353e4747da1340c91af6e4bf"><div class="ttname"><a href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">mtgb::Draw::FBXModel</a></div><div class="ttdeci">static void FBXModel(const FBXModelHandle _hFBXModel, const Transform &amp;_pTransform, const int _frame, ShaderType _shaderType=ShaderType::FbxParts)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00265">Draw.cpp:265</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_a623126b2353e4747da1340c91af6e4bf"><div class="ttname"><a href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">mtgb::Draw::FBXModel</a></div><div class="ttdeci">static void FBXModel(const FBXModelHandle _hFBXModel, const Transform &amp;_pTransform, const int _frame, ShaderType _shaderType=ShaderType::FbxParts)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00262">Draw.cpp:262</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html_a0e4b47a931e7ef521e3265c8d9413966"><div class="ttname"><a href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">mtgb::Transform::rotate</a></div><div class="ttdeci">Quaternion rotate</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00143">Transform.h:143</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html_a71231187095137f6dd753ef9450bc18b"><div class="ttname"><a href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">mtgb::Transform::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00139">Transform.h:139</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Transform_html_aa8373f7a6e81f61498f8ca020a5a5c31"><div class="ttname"><a href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">mtgb::Transform::scale</a></div><div class="ttdeci">Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00141">Transform.h:141</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">mtgb::ShaderType::Debug3D</a></div><div class="ttdeci">@ Debug3D</div></div>
 <div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html_ad65c77adcdae305e6190bf2329ea1887"><div class="ttname"><a href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">mtgb::Vector3::One</a></div><div class="ttdeci">static auto One()</div><div class="ttdoc">単位ベクトル</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00063">Vector3.h:63</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">mtgb::Debug3D</a>, <a class="el" href="Draw_8cpp_source.html#l00265">mtgb::Draw::FBXModel()</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>, <a class="el" href="Vector3_8h_source.html#l00063">mtgb::Vector3::One()</a>, <a class="el" href="Transform_8h_source.html#l00141">mtgb::Transform::scale</a>.</p>
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">mtgb::Debug3D</a>, <a class="el" href="Draw_8cpp_source.html#l00262">mtgb::Draw::FBXModel()</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>, <a class="el" href="Vector3_8h_source.html#l00063">mtgb::Vector3::One()</a>, <a class="el" href="Transform_8h_source.html#l00139">mtgb::Transform::position</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1770,8 +1773,9 @@ mtgb::Collider 連携図</div>
 <div class="line"><span class="lineno">  361</span>    }</div>
 <div class="line"><span class="lineno">  362</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a> = _extents;</div>
 <div class="line"><span class="lineno">  363</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_aa8373f7a6e81f61498f8ca020a5a5c31"><div class="ttname"><a href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">mtgb::Transform::scale</a></div><div class="ttdeci">Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00141">Transform.h:141</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone::GameOverZone()</a>, <a class="el" href="TerrainReader_8h_source.html#l00532">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateStageBoundaryCollider()</a>, <a class="el" href="TerrainReader_8h_source.html#l00267">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateTerrainAABBs()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00007">GameOverZone::GameOverZone()</a>, <a class="el" href="TerrainReader_8h_source.html#l00532">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateStageBoundaryCollider()</a>, <a class="el" href="TerrainReader_8h_source.html#l00267">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateTerrainAABBs()</a>, <a class="el" href="Goal_8cpp_source.html#l00008">Goal::Goal()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1840,7 +1844,7 @@ mtgb::Collider 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">  110</span>{</div>
 <div class="line"><span class="lineno">  111</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a>)</div>
 <div class="line"><span class="lineno">  112</span>    {</div>
-<div class="line"><span class="lineno">  113</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Center = <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>;</div>
+<div class="line"><span class="lineno">  113</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Center = <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> + <a class="code hl_variable" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a>;</div>
 <div class="line"><span class="lineno">  114</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents.x = <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>.x * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x;</div>
 <div class="line"><span class="lineno">  115</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents.y = <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>.y * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.y;</div>
 <div class="line"><span class="lineno">  116</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#aafb1e42452e04e839e1d276a63f7b478">computeBox_</a>.Extents.z = <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>.z * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.z;</div>
@@ -1877,7 +1881,7 @@ mtgb::Collider 連携図</div>
 <div class="line"><span class="lineno">   89</span>    <span class="keywordflow">case</span> ColliderType::TYPE_CAPSULE:</div>
 <div class="line"><span class="lineno">   90</span>        <span class="comment">// TODO: カプセル初期化</span></div>
 <div class="line"><span class="lineno">   91</span>    <span class="keywordflow">case</span> ColliderType::TYPE_OBB:</div>
-<div class="line"><span class="lineno">   92</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#a42601a25185058b79be4c3982bd21c4f">computeOBB_</a>.Center = <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>;</div>
+<div class="line"><span class="lineno">   92</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#a42601a25185058b79be4c3982bd21c4f">computeOBB_</a>.Center = <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> + <a class="code hl_variable" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a>;</div>
 <div class="line"><span class="lineno">   93</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#a42601a25185058b79be4c3982bd21c4f">computeOBB_</a>.Extents.x = <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>.x * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x;</div>
 <div class="line"><span class="lineno">   94</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#a42601a25185058b79be4c3982bd21c4f">computeOBB_</a>.Extents.y = <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>.y * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.y;</div>
 <div class="line"><span class="lineno">   95</span>        <a class="code hl_variable" href="classmtgb_1_1Collider.html#a42601a25185058b79be4c3982bd21c4f">computeOBB_</a>.Extents.z = <a class="code hl_variable" href="classmtgb_1_1Collider.html#adf2653ebf8d69b6409be288fec169bb5">extents_</a>.z * <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.z;</div>
@@ -1915,10 +1919,10 @@ mtgb::Collider 連携図</div>
 
 <p class="definition"> <a class="el" href="Collider_8cpp_source.html">Collider.cpp</a> の <a class="el" href="Collider_8cpp_source.html#l00101">101</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  102</span>{</div>
-<div class="line"><span class="lineno">  103</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Center = <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>;</div>
+<div class="line"><span class="lineno">  103</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Center = <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> + <a class="code hl_variable" href="classmtgb_1_1Collider.html#adfdf4c07953199bf0c6214593fed2520">center_</a>;</div>
 <div class="line"><span class="lineno">  104</span>    <span class="keywordtype">float</span> maxScale = (std::max)(<a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x, <a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.y);</div>
 <div class="line"><span class="lineno">  105</span>    maxScale = (std::max)(<a class="code hl_variable" href="classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.z, maxScale);</div>
-<div class="line"><span class="lineno">  106</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Radius = maxScale;</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_variable" href="classmtgb_1_1Collider.html#a2bae5c02897ed12d0d796f9f27e13bd0">computeSphere_</a>.Radius = maxScale * <a class="code hl_variable" href="classmtgb_1_1Collider.html#a18dd9cce2c089f4e9118bd0ab195853c">radius_</a>;</div>
 <div class="line"><span class="lineno">  107</span>}</div>
 </div><!-- fragment -->
 </div>
@@ -2012,7 +2016,7 @@ mtgb::Collider 連携図</div>
 
 <p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00086">86</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00006">mtgb::CircularSaw::CircularSaw()</a>, <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone::GameOverZone()</a>, <a class="el" href="TerrainReader_8h_source.html#l00532">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateStageBoundaryCollider()</a>, <a class="el" href="TerrainReader_8h_source.html#l00267">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateTerrainAABBs()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="Interpolator_8cpp_source.html#l00018">mtgb::Interpolator::Interpolator()</a>, <a class="el" href="Collider_8cpp_source.html#l00120">IsHit()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="Collider_8cpp_source.html#l00060">operator=()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="Collider_8cpp_source.html#l00483">Push()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00079">mtgb::Saw::Saw()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a> (計16項目).</p>
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00006">mtgb::CircularSaw::CircularSaw()</a>, <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00007">GameOverZone::GameOverZone()</a>, <a class="el" href="TerrainReader_8h_source.html#l00532">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateStageBoundaryCollider()</a>, <a class="el" href="TerrainReader_8h_source.html#l00267">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateTerrainAABBs()</a>, <a class="el" href="Goal_8cpp_source.html#l00008">Goal::Goal()</a>, <a class="el" href="Interpolator_8cpp_source.html#l00018">mtgb::Interpolator::Interpolator()</a>, <a class="el" href="Collider_8cpp_source.html#l00120">IsHit()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="Collider_8cpp_source.html#l00060">operator=()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="Collider_8cpp_source.html#l00483">Push()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00079">mtgb::Saw::Saw()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a> (計16項目).</p>
 
 </div>
 </div>
@@ -2234,7 +2238,7 @@ mtgb::Collider 連携図</div>
 
 <p class="definition"> <a class="el" href="Collider_8h_source.html">Collider.h</a> の <a class="el" href="Collider_8h_source.html#l00089">89</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00006">mtgb::CircularSaw::CircularSaw()</a>, <a class="el" href="Collider_8cpp_source.html#l00035">Collider()</a>, <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone::GameOverZone()</a>, <a class="el" href="TerrainReader_8h_source.html#l00532">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateStageBoundaryCollider()</a>, <a class="el" href="TerrainReader_8h_source.html#l00267">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateTerrainAABBs()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="Collider_8cpp_source.html#l00060">operator=()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00006">mtgb::CircularSaw::CircularSaw()</a>, <a class="el" href="Collider_8cpp_source.html#l00035">Collider()</a>, <a class="el" href="Collider_8generated_8cpp_source.html#l00012">mtgb::Collider_Register::Collider_Register()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00007">GameOverZone::GameOverZone()</a>, <a class="el" href="TerrainReader_8h_source.html#l00532">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateStageBoundaryCollider()</a>, <a class="el" href="TerrainReader_8h_source.html#l00267">mtgb::TerrainReader&lt; StageDataBit &gt;::GenerateTerrainAABBs()</a>, <a class="el" href="Goal_8cpp_source.html#l00008">Goal::Goal()</a>, <a class="el" href="Collider_8cpp_source.html#l00060">operator=()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>.</p>
 
 </div>
 </div>

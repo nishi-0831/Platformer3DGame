@@ -250,19 +250,21 @@ GameOverZone 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameOverZone_8cpp_source.html">GameOverZone.cpp</a> の <a class="el" href="GameOverZone_8cpp_source.html#l00006">6</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    7</span>    : <a class="code hl_function" href="classmtgb_1_1GameObject.html#a81d29105f581c405cbc7b7dd1cc48652">GameObject</a>()</div>
-<div class="line"><span class="lineno">    8</span>    , <a class="code hl_variable" href="classGameOverZone.html#a808517e790f65110d93d2ce61dca7473">pTransform_</a>{ Component&lt;Transform&gt;() }</div>
-<div class="line"><span class="lineno">    9</span>    , <a class="code hl_variable" href="classGameOverZone.html#ad9191b158da0274226454f02df75336b">pCollider_</a>{ Component&lt;Collider&gt;() }</div>
-<div class="line"><span class="lineno">   10</span>{</div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="classGameOverZone.html#a808517e790f65110d93d2ce61dca7473">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> = <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>(0, -3, 0);</div>
-<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="classGameOverZone.html#ad9191b158da0274226454f02df75336b">pCollider_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> = ColliderType::TYPE_AABB;</div>
-<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="classGameOverZone.html#ad9191b158da0274226454f02df75336b">pCollider_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="classGameOverZone.html#ad9191b158da0274226454f02df75336b">pCollider_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Collider.html#ae853925f6ef1aa2acd0684ec7c602d9c">SetExtents</a>(<a class="code hl_variable" href="classGameOverZone.html#a808517e790f65110d93d2ce61dca7473">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a> * 0.5f);</div>
-<div class="line"><span class="lineno">   15</span>    std::string typeName = Game::System&lt;GameObjectTypeRegistry&gt;().GetNameFromType(<span class="keyword">typeid</span>(<a class="code hl_class" href="classGameOverZone.html">GameOverZone</a>));</div>
-<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="classmtgb_1_1GameObject.html#ac4f79d210ae0d1388e203d1d1b93ae6c">name_</a> = std::format(<span class="stringliteral">&quot;{} ({})&quot;</span>, typeName, <a class="code hl_variable" href="classGameOverZone.html#aeb4cbd19846eba033a6727153acc74dd">generateCounter_</a>++);</div>
-<div class="line"><span class="lineno">   17</span>}</div>
+<p class="definition"> <a class="el" href="GameOverZone_8cpp_source.html">GameOverZone.cpp</a> の <a class="el" href="GameOverZone_8cpp_source.html#l00007">7</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>    : <a class="code hl_function" href="classmtgb_1_1GameObject.html#a81d29105f581c405cbc7b7dd1cc48652">GameObject</a>()</div>
+<div class="line"><span class="lineno">    9</span>    , <a class="code hl_variable" href="classGameOverZone.html#a808517e790f65110d93d2ce61dca7473">pTransform_</a>{ Component&lt;Transform&gt;() }</div>
+<div class="line"><span class="lineno">   10</span>    , <a class="code hl_variable" href="classGameOverZone.html#ad9191b158da0274226454f02df75336b">pCollider_</a>{ Component&lt;Collider&gt;() }</div>
+<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classGameOverZone.html#a0f37a267c53e5918f9bdee26cd2ad6d9">pRigidBody_</a>{ Component&lt;RigidBody&gt;() }</div>
+<div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="classGameOverZone.html#a808517e790f65110d93d2ce61dca7473">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> = <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>(0, -3, 0);</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="classGameOverZone.html#ad9191b158da0274226454f02df75336b">pCollider_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> = ColliderType::TYPE_AABB;</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_variable" href="classGameOverZone.html#ad9191b158da0274226454f02df75336b">pCollider_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479">isStatic_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="classGameOverZone.html#ad9191b158da0274226454f02df75336b">pCollider_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Collider.html#ae853925f6ef1aa2acd0684ec7c602d9c">SetExtents</a>(<a class="code hl_variable" href="classGameOverZone.html#a808517e790f65110d93d2ce61dca7473">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a> * 0.5f);</div>
+<div class="line"><span class="lineno">   17</span>    std::string typeName = Game::System&lt;GameObjectTypeRegistry&gt;().GetNameFromType(<span class="keyword">typeid</span>(<a class="code hl_class" href="classGameOverZone.html">GameOverZone</a>));</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="classmtgb_1_1GameObject.html#ac4f79d210ae0d1388e203d1d1b93ae6c">name_</a> = std::format(<span class="stringliteral">&quot;{} ({})&quot;</span>, typeName, <a class="code hl_variable" href="classGameOverZone.html#aeb4cbd19846eba033a6727153acc74dd">generateCounter_</a>++);</div>
+<div class="line"><span class="lineno">   19</span>}</div>
 <div class="ttc" id="aclassGameOverZone_html"><div class="ttname"><a href="classGameOverZone.html">GameOverZone</a></div><div class="ttdef"><b>Definition:</b> <a href="GameOverZone_8h_source.html#l00004">GameOverZone.h:5</a></div></div>
+<div class="ttc" id="aclassGameOverZone_html_a0f37a267c53e5918f9bdee26cd2ad6d9"><div class="ttname"><a href="classGameOverZone.html#a0f37a267c53e5918f9bdee26cd2ad6d9">GameOverZone::pRigidBody_</a></div><div class="ttdeci">RigidBody * pRigidBody_</div><div class="ttdef"><b>Definition:</b> <a href="GameOverZone_8h_source.html#l00017">GameOverZone.h:17</a></div></div>
 <div class="ttc" id="aclassGameOverZone_html_a808517e790f65110d93d2ce61dca7473"><div class="ttname"><a href="classGameOverZone.html#a808517e790f65110d93d2ce61dca7473">GameOverZone::pTransform_</a></div><div class="ttdeci">Transform * pTransform_</div><div class="ttdef"><b>Definition:</b> <a href="GameOverZone_8h_source.html#l00015">GameOverZone.h:15</a></div></div>
 <div class="ttc" id="aclassGameOverZone_html_ad9191b158da0274226454f02df75336b"><div class="ttname"><a href="classGameOverZone.html#ad9191b158da0274226454f02df75336b">GameOverZone::pCollider_</a></div><div class="ttdeci">Collider * pCollider_</div><div class="ttdef"><b>Definition:</b> <a href="GameOverZone_8h_source.html#l00016">GameOverZone.h:16</a></div></div>
 <div class="ttc" id="aclassGameOverZone_html_aeb4cbd19846eba033a6727153acc74dd"><div class="ttname"><a href="classGameOverZone.html#aeb4cbd19846eba033a6727153acc74dd">GameOverZone::generateCounter_</a></div><div class="ttdeci">static unsigned int generateCounter_</div><div class="ttdef"><b>Definition:</b> <a href="GameOverZone_8h_source.html#l00018">GameOverZone.h:18</a></div></div>
@@ -300,9 +302,9 @@ GameOverZone 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameOverZone_8cpp_source.html">GameOverZone.cpp</a> の <a class="el" href="GameOverZone_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
-<div class="line"><span class="lineno">   21</span>}</div>
+<p class="definition"> <a class="el" href="GameOverZone_8cpp_source.html">GameOverZone.cpp</a> の <a class="el" href="GameOverZone_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -434,7 +436,7 @@ template&lt;class ComponentT , typename ... Args&gt; </div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="GameObject_8h_source.html#l00107">mtgb::GameObject::status_</a>, <a class="el" href="GameObject_8h_source.html#l00101">mtgb::GameObject::Status::toDestroy_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00267">PatrolChargerEnemy::Dying()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
+<p class="reference">参照元 <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00276">PatrolChargerEnemy::Dying()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -469,9 +471,9 @@ template&lt;class ComponentT , typename ... Args&gt; </div>
 
 <p><a class="el" href="classmtgb_1_1GameObject.html#a2e99c391b9e37c5486fef7c59a655eb4">mtgb::GameObject</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="GameOverZone_8cpp_source.html">GameOverZone.cpp</a> の <a class="el" href="GameOverZone_8cpp_source.html#l00042">42</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
-<div class="line"><span class="lineno">   44</span>}</div>
+<p class="definition"> <a class="el" href="GameOverZone_8cpp_source.html">GameOverZone.cpp</a> の <a class="el" href="GameOverZone_8cpp_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -531,7 +533,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="line"><span class="lineno">  139</span>        <span class="keywordflow">return</span> mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;template GetGameObject&lt;T&gt;();</div>
 <div class="line"><span class="lineno">  140</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="MTImGui_8h_source.html#l00180">mtgb::MTImGui::RegisterComponentViewer()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00027">Start()</a>, <a class="el" href="Goal_8cpp_source.html#l00036">Goal::Start()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00069">PatrolChargerEnemy::Start()</a>.</p>
+<p class="reference">参照元 <a class="el" href="MTImGui_8h_source.html#l00180">mtgb::MTImGui::RegisterComponentViewer()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00029">Start()</a>, <a class="el" href="Goal_8cpp_source.html#l00043">Goal::Start()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00069">PatrolChargerEnemy::Start()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -836,11 +838,11 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Entity_8h_source.html#l00027">mtgb::Entity::entityId_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00147">mtgb::ImGuiEditorCamera::CreateCamera()</a>, <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand()</a>, <a class="el" href="DuplicateGameObjectCommand_8cpp_source.html#l00037">mtgb::DuplicateGameObjectCommand::Execute()</a>, <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00020">mtgb::GameObjectCreateCommand::Execute()</a>, <a class="el" href="HPViewer_8cpp_source.html#l00004">mtgb::HPViewer::HPViewer()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00051">MovingFloor::OnCollisionEnter()</a>, <a class="el" href="GameScene_8cpp_source.html#l00031">mtgb::GameScene::RegisterCameraGameObject()</a>, <a class="el" href="GameScene_8cpp_source.html#l00020">mtgb::GameScene::RegisterGameObject()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00049">mtgb::CircularSaw::Start()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00069">PatrolChargerEnemy::Start()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00147">mtgb::ImGuiEditorCamera::CreateCamera()</a>, <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand()</a>, <a class="el" href="DuplicateGameObjectCommand_8cpp_source.html#l00037">mtgb::DuplicateGameObjectCommand::Execute()</a>, <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00020">mtgb::GameObjectCreateCommand::Execute()</a>, <a class="el" href="HPViewer_8cpp_source.html#l00004">mtgb::HPViewer::HPViewer()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00052">MovingFloor::OnCollisionEnter()</a>, <a class="el" href="GameScene_8cpp_source.html#l00032">mtgb::GameScene::RegisterCameraGameObject()</a>, <a class="el" href="GameScene_8cpp_source.html#l00021">mtgb::GameScene::RegisterGameObject()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00049">mtgb::CircularSaw::Start()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00069">PatrolChargerEnemy::Start()</a>, <a class="el" href="Player_8cpp_source.html#l00297">Player::TakeDamage()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Entity_a7f534d8f54f1d8bd4e6e0a6902ba7736_icgraph.svg" width="736" height="614"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Entity_a7f534d8f54f1d8bd4e6e0a6902ba7736_icgraph.svg" width="736" height="664"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -993,7 +995,7 @@ template&lt;typename GameSceneT &gt; </div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="GameObject_8h_source.html#l00109">mtgb::GameObject::tag_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00051">MovingFloor::OnCollisionEnter()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00074">MovingFloor::OnCollisionExit()</a>.</p>
+<p class="reference">参照元 <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00052">MovingFloor::OnCollisionEnter()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00075">MovingFloor::OnCollisionExit()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1335,27 +1337,28 @@ template&lt;class GameObjectT , typename ... Args&gt; </div>
 
 <p><a class="el" href="classmtgb_1_1GameObject.html#ab789e97f62042a1008064735ca7c90a3">mtgb::GameObject</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="GameOverZone_8cpp_source.html">GameOverZone.cpp</a> の <a class="el" href="GameOverZone_8cpp_source.html#l00027">27</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>{</div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="classGameOverZone.html#a808517e790f65110d93d2ce61dca7473">pTransform_</a> = Component&lt;Transform&gt;();</div>
-<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="classGameOverZone.html#a0f37a267c53e5918f9bdee26cd2ad6d9">pRigidBody_</a> = Component&lt;RigidBody&gt;();</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="classGameOverZone.html#a0f37a267c53e5918f9bdee26cd2ad6d9">pRigidBody_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1RigidBody.html#aaa524adbfab57ba462e3c7a08871ad2a">OnCollisionEnter</a>([<span class="keyword">this</span>](<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</div>
-<div class="line"><span class="lineno">   33</span>        {</div>
-<div class="line"><span class="lineno">   34</span>            <a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a> tag = <a class="code hl_function" href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">FindGameObject</a>(_entityId)-&gt;GetTag();</div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">if</span> (tag == GameObjectTag::Player)</div>
-<div class="line"><span class="lineno">   36</span>            {</div>
-<div class="line"><span class="lineno">   37</span>                Game::System&lt;SceneSystem&gt;().Move&lt;<a class="code hl_class" href="classResultScene.html">ResultScene</a>&gt;();</div>
-<div class="line"><span class="lineno">   38</span>            }</div>
-<div class="line"><span class="lineno">   39</span>        });</div>
-<div class="line"><span class="lineno">   40</span>}</div>
-<div class="ttc" id="aclassGameOverZone_html_a0f37a267c53e5918f9bdee26cd2ad6d9"><div class="ttname"><a href="classGameOverZone.html#a0f37a267c53e5918f9bdee26cd2ad6d9">GameOverZone::pRigidBody_</a></div><div class="ttdeci">RigidBody * pRigidBody_</div><div class="ttdef"><b>Definition:</b> <a href="GameOverZone_8h_source.html#l00017">GameOverZone.h:17</a></div></div>
-<div class="ttc" id="aclassResultScene_html"><div class="ttname"><a href="classResultScene.html">ResultScene</a></div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8h_source.html#l00004">ResultScene.h:5</a></div></div>
+<p class="definition"> <a class="el" href="GameOverZone_8cpp_source.html">GameOverZone.cpp</a> の <a class="el" href="GameOverZone_8cpp_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="classGameOverZone.html#a808517e790f65110d93d2ce61dca7473">pTransform_</a> = Component&lt;Transform&gt;();</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="classGameOverZone.html#a0f37a267c53e5918f9bdee26cd2ad6d9">pRigidBody_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1RigidBody.html#aaa524adbfab57ba462e3c7a08871ad2a">OnCollisionEnter</a>([<span class="keyword">this</span>](<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</div>
+<div class="line"><span class="lineno">   34</span>        {</div>
+<div class="line"><span class="lineno">   35</span>            <a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a> tag = <a class="code hl_function" href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">FindGameObject</a>(_entityId)-&gt;GetTag();</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">if</span> (tag == GameObjectTag::Player)</div>
+<div class="line"><span class="lineno">   37</span>            {</div>
+<div class="line"><span class="lineno">   38</span>                <span class="comment">// 落下イベント通知</span></div>
+<div class="line"><span class="lineno">   39</span>                <a class="code hl_struct" href="structPlayerFellOutEvent.html">PlayerFellOutEvent</a> <span class="keyword">event</span>{ .<a class="code hl_variable" href="structPlayerFellOutEvent.html#a54f532b66231e1e244b8373366c60cf7">playerEntityId</a> = _entityId };</div>
+<div class="line"><span class="lineno">   40</span>                Game::System&lt;EventManager&gt;().GetEvent&lt;<a class="code hl_struct" href="structPlayerFellOutEvent.html">PlayerFellOutEvent</a>&gt;().Invoke(event);</div>
+<div class="line"><span class="lineno">   41</span>            }</div>
+<div class="line"><span class="lineno">   42</span>        });</div>
+<div class="line"><span class="lineno">   43</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html_a12efb7dd41cfcb6edffe8609eddd323e"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a></div><div class="ttdeci">static T * FindGameObject()</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00136">GameObject.h:136</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1RigidBody_html_aaa524adbfab57ba462e3c7a08871ad2a"><div class="ttname"><a href="classmtgb_1_1RigidBody.html#aaa524adbfab57ba462e3c7a08871ad2a">mtgb::RigidBody::OnCollisionEnter</a></div><div class="ttdeci">void OnCollisionEnter(const std::function&lt; void(const EntityId)&gt; &amp;_onHit)</div><div class="ttdoc">当たったときのイベントコールバック</div><div class="ttdef"><b>Definition:</b> <a href="RigidBody_8cpp_source.html#l00064">RigidBody.cpp:64</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
+<div class="ttc" id="astructPlayerFellOutEvent_html"><div class="ttname"><a href="structPlayerFellOutEvent.html">PlayerFellOutEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="GameEvents_8h_source.html#l00004">GameEvents.h:5</a></div></div>
+<div class="ttc" id="astructPlayerFellOutEvent_html_a54f532b66231e1e244b8373366c60cf7"><div class="ttname"><a href="structPlayerFellOutEvent.html#a54f532b66231e1e244b8373366c60cf7">PlayerFellOutEvent::playerEntityId</a></div><div class="ttdeci">mtgb::EntityId playerEntityId</div><div class="ttdef"><b>Definition:</b> <a href="GameEvents_8h_source.html#l00006">GameEvents.h:6</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="GameObject_8h_source.html#l00136">mtgb::GameObject::FindGameObject()</a>, <a class="el" href="RigidBody_8cpp_source.html#l00064">mtgb::RigidBody::OnCollisionEnter()</a>, <a class="el" href="GameOverZone_8h_source.html#l00017">pRigidBody_</a>, <a class="el" href="GameOverZone_8h_source.html#l00015">pTransform_</a>.</p>
+<p class="reference">参照先 <a class="el" href="GameObject_8h_source.html#l00136">mtgb::GameObject::FindGameObject()</a>, <a class="el" href="RigidBody_8cpp_source.html#l00064">mtgb::RigidBody::OnCollisionEnter()</a>, <a class="el" href="GameEvents_8h_source.html#l00006">PlayerFellOutEvent::playerEntityId</a>, <a class="el" href="GameOverZone_8h_source.html#l00017">pRigidBody_</a>, <a class="el" href="GameOverZone_8h_source.html#l00015">pTransform_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1390,9 +1393,9 @@ template&lt;class GameObjectT , typename ... Args&gt; </div>
 
 <p><a class="el" href="classmtgb_1_1GameObject.html#a3c037070db43bd5eac32ffbc3b721124">mtgb::GameObject</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="GameOverZone_8cpp_source.html">GameOverZone.cpp</a> の <a class="el" href="GameOverZone_8cpp_source.html#l00023">23</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
-<div class="line"><span class="lineno">   25</span>}</div>
+<p class="definition"> <a class="el" href="GameOverZone_8cpp_source.html">GameOverZone.cpp</a> の <a class="el" href="GameOverZone_8cpp_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
+<div class="line"><span class="lineno">   27</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1443,7 +1446,7 @@ template&lt;class GameObjectT , typename ... Args&gt; </div>
 
 <p class="definition"> <a class="el" href="Entity_8h_source.html">Entity.h</a> の <a class="el" href="Entity_8h_source.html#l00027">27</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="GameObject_8h_source.html#l00115">mtgb::GameObject::Component()</a>, <a class="el" href="Entity_8h_source.html#l00024">mtgb::Entity::GetEntityId()</a>, <a class="el" href="Box3D_8cpp_source.html#l00040">mtgb::Box3D::ShowImGui()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00115">mtgb::Saw::ShowImGui()</a>, <a class="el" href="Goal_8cpp_source.html#l00069">Goal::ShowImGui()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00045">MovingFloor::ShowImGui()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00083">PatrolChargerEnemy::ShowImGui()</a>, <a class="el" href="Player_8cpp_source.html#l00178">Player::ShowImGui()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00039">SeaPlane::ShowImGui()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00035">mtgb::SkySphere::ShowImGui()</a>.</p>
+<p class="reference">参照元 <a class="el" href="GameObject_8h_source.html#l00115">mtgb::GameObject::Component()</a>, <a class="el" href="Entity_8h_source.html#l00024">mtgb::Entity::GetEntityId()</a>, <a class="el" href="Box3D_8cpp_source.html#l00040">mtgb::Box3D::ShowImGui()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00115">mtgb::Saw::ShowImGui()</a>, <a class="el" href="Goal_8cpp_source.html#l00070">Goal::ShowImGui()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00046">MovingFloor::ShowImGui()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00083">PatrolChargerEnemy::ShowImGui()</a>, <a class="el" href="Player_8cpp_source.html#l00188">Player::ShowImGui()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00039">SeaPlane::ShowImGui()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00035">mtgb::SkySphere::ShowImGui()</a>.</p>
 
 </div>
 </div>
@@ -1469,7 +1472,7 @@ template&lt;class GameObjectT , typename ... Args&gt; </div>
 
 <p class="definition"> <a class="el" href="GameOverZone_8h_source.html">GameOverZone.h</a> の <a class="el" href="GameOverZone_8h_source.html#l00018">18</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone()</a>.</p>
+<p class="reference">参照元 <a class="el" href="GameOverZone_8cpp_source.html#l00007">GameOverZone()</a>.</p>
 
 </div>
 </div>
@@ -1547,7 +1550,7 @@ template&lt;class GameObjectT , typename ... Args&gt; </div>
 
 <p class="definition"> <a class="el" href="GameObject_8h_source.html">GameObject.h</a> の <a class="el" href="GameObject_8h_source.html#l00105">105</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00006">mtgb::CircularSaw::CircularSaw()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone()</a>, <a class="el" href="GameObject_8h_source.html#l00080">mtgb::GameObject::GetName()</a>, <a class="el" href="Goal_8cpp_source.html#l00007">Goal::Goal()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>, <a class="el" href="GameObject_8h_source.html#l00036">mtgb::GameObject::SetName()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00004">mtgb::SkySphere::SkySphere()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00006">mtgb::CircularSaw::CircularSaw()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00007">GameOverZone()</a>, <a class="el" href="GameObject_8h_source.html#l00080">mtgb::GameObject::GetName()</a>, <a class="el" href="Goal_8cpp_source.html#l00008">Goal::Goal()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00009">MovingFloor::MovingFloor()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>, <a class="el" href="GameObject_8h_source.html#l00036">mtgb::GameObject::SetName()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00004">mtgb::SkySphere::SkySphere()</a>.</p>
 
 </div>
 </div>
@@ -1573,7 +1576,7 @@ template&lt;class GameObjectT , typename ... Args&gt; </div>
 
 <p class="definition"> <a class="el" href="GameOverZone_8h_source.html">GameOverZone.h</a> の <a class="el" href="GameOverZone_8h_source.html#l00016">16</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone()</a>.</p>
+<p class="reference">参照元 <a class="el" href="GameOverZone_8cpp_source.html#l00007">GameOverZone()</a>.</p>
 
 </div>
 </div>
@@ -1599,7 +1602,7 @@ template&lt;class GameObjectT , typename ... Args&gt; </div>
 
 <p class="definition"> <a class="el" href="GameOverZone_8h_source.html">GameOverZone.h</a> の <a class="el" href="GameOverZone_8h_source.html#l00017">17</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="GameOverZone_8cpp_source.html#l00027">Start()</a>.</p>
+<p class="reference">参照元 <a class="el" href="GameOverZone_8cpp_source.html#l00029">Start()</a>.</p>
 
 </div>
 </div>
@@ -1625,7 +1628,7 @@ template&lt;class GameObjectT , typename ... Args&gt; </div>
 
 <p class="definition"> <a class="el" href="GameOverZone_8h_source.html">GameOverZone.h</a> の <a class="el" href="GameOverZone_8h_source.html#l00015">15</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="GameOverZone_8cpp_source.html#l00006">GameOverZone()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00027">Start()</a>.</p>
+<p class="reference">参照元 <a class="el" href="GameOverZone_8cpp_source.html#l00007">GameOverZone()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00029">Start()</a>.</p>
 
 </div>
 </div>

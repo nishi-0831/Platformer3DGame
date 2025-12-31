@@ -5,7 +5,8 @@ var classPlayer =
       [ "RUN", "classPlayer.html#ad93c54e92318d7c7abb43d424154f019a855520d2a5b0b1a64b939e7e30889e2a", null ],
       [ "JUMP", "classPlayer.html#ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b", null ],
       [ "FALL", "classPlayer.html#ad93c54e92318d7c7abb43d424154f019a479ab1b75080105c17b10096543dc8c5", null ],
-      [ "DYING", "classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52", null ]
+      [ "DYING", "classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52", null ],
+      [ "VICTORY", "classPlayer.html#ad93c54e92318d7c7abb43d424154f019ae0651864a549515538cb104b7b32e75d", null ]
     ] ],
     [ "Player", "classPlayer.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8", null ],
     [ "~Player", "classPlayer.html#a749d2c00e1fe0f5c2746f7505a58c062", null ],

@@ -26,6 +26,7 @@ var classGoal =
     [ "IsNotCalledStart", "classGoal.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
     [ "IsToDestroy", "classGoal.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
     [ "MarkAsCalledStart", "classGoal.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
+    [ "OnClear", "classGoal.html#acd66daf86518b8b8ce105e578af16d32", null ],
     [ "Serialize", "classGoal.html#a13ff8ad56cd9b118123bb5a30e32c970", null ],
     [ "SetName", "classGoal.html#a8186af4bb8e2b39bf5cfd978a114f49a", null ],
     [ "ShowImGui", "classGoal.html#a5f1f112e02c9f0f6115686aef99099f1", null ],
@@ -46,5 +47,6 @@ var classGoal =
     [ "show_", "classGoal.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "status_", "classGoal.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classGoal.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
-    [ "targetEntityId_", "classGoal.html#a04e42ed23c57183524dc34a01aa2a138", null ]
+    [ "targetEntityId_", "classGoal.html#a04e42ed23c57183524dc34a01aa2a138", null ],
+    [ "transitionSceneDelay_", "classGoal.html#adf26b5077697781e2e8e31296740a36f", null ]
 ];

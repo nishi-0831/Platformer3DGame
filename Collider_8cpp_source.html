@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('Collider_8cpp_source.html',''); initRe
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    , pTransform_{ &amp;<a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>::Get(_entityId) }</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    , center_{ 0.0f,0.0f,0.0f }</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    , radius_{ 1.0f }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    , extents_{ 1.0f,1.0f ,1.0f }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    , extents_{ 0.5f,0.5f ,0.5 }</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
@@ -189,7 +189,7 @@ $(document).ready(function(){initNavTree('Collider_8cpp_source.html',''); initRe
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">case</span> ColliderType::TYPE_CAPSULE:</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="comment">// TODO: カプセル初期化</span></div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">case</span> ColliderType::TYPE_OBB:</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        computeOBB_.Center = pTransform_-&gt;position;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        computeOBB_.Center = pTransform_-&gt;position + center_;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        computeOBB_.Extents.x = extents_.x * pTransform_-&gt;scale.x;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        computeOBB_.Extents.y = extents_.y * pTransform_-&gt;scale.y;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        computeOBB_.Extents.z = extents_.z * pTransform_-&gt;scale.z;</div>
@@ -200,17 +200,17 @@ $(document).ready(function(){initNavTree('Collider_8cpp_source.html',''); initRe
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classmtgb_1_1Collider.html#a3662a405cc505b7389a9936b6ac8ce2f">  101</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Collider.html#a3662a405cc505b7389a9936b6ac8ce2f">mtgb::Collider::UpdateBoundingSphere</a>()</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>{</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    computeSphere_.Center = pTransform_-&gt;position;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    computeSphere_.Center = pTransform_-&gt;position + center_;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">float</span> maxScale = (std::max)(pTransform_-&gt;scale.x, pTransform_-&gt;scale.y);</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    maxScale = (std::max)(pTransform_-&gt;scale.z, maxScale);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    computeSphere_.Radius = maxScale;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    computeSphere_.Radius = maxScale * radius_;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classmtgb_1_1Collider.html#a6ebc5eb72e2b7f1bd004e47655d44369">  109</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Collider.html#a6ebc5eb72e2b7f1bd004e47655d44369">mtgb::Collider::UpdateBoundingBox</a>()</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">if</span> (!isStatic_)</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        computeBox_.Center = pTransform_-&gt;position;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        computeBox_.Center = pTransform_-&gt;position + center_;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        computeBox_.Extents.x = extents_.x * pTransform_-&gt;scale.x;</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        computeBox_.Extents.y = extents_.y * pTransform_-&gt;scale.y;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        computeBox_.Extents.z = extents_.z * pTransform_-&gt;scale.z;</div>
@@ -661,72 +661,76 @@ $(document).ready(function(){initNavTree('Collider_8cpp_source.html',''); initRe
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>    {</div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    <span class="keywordflow">case</span> ColliderType::TYPE_SPHERE:</div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>        copyTransform = *pTransform_;</div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>        copyTransform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a> *= <a class="code hl_function" href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">Vector3::One</a>() * computeSphere_.Radius;</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(hSphereModel_, copyTransform, 0,<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    <span class="keywordflow">case</span> ColliderType::TYPE_CAPSULE:</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>        copyTransform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> += center_;</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>        copyTransform.scale *= <a class="code hl_function" href="structmtgb_1_1Vector3.html#ad65c77adcdae305e6190bf2329ea1887">Vector3::One</a>() * computeSphere_.Radius;</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>        copyTransform.Compute();</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(hSphereModel_, copyTransform, 0,<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <span class="keywordflow">case</span> ColliderType::TYPE_AABB:</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span> </div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>        <span class="keywordflow">if</span> (isStatic_)</div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>        {</div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>            copyTransform.parent = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>        }</div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>        {</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>            copyTransform = *pTransform_;</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>        }</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>        </div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>        <span class="comment">// 軸並行なので回転はなし</span></div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>        copyTransform.rotate = <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>{};</div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span> </div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>        <span class="keywordflow">if</span> (isStatic_)</div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>        {</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>            <span class="comment">// 静的、Transform不要なのでそのまま代入</span></div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>            copyTransform.position = computeBox_.Center;</div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>            copyTransform.scale = computeBox_.Extents * 2.0f;</div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>        }</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>        {</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>            <span class="comment">// Transformに合わせて位置、サイズを調整</span></div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>            copyTransform.scale = computeBox_.Extents * 2.0f;</div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>        }</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>        </div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(hBoxModel_, copyTransform, 0, <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>    <span class="keywordflow">case</span> ColliderType::TYPE_OBB:</div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>        <span class="keywordflow">if</span> (isStatic_)</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>        {</div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>            copyTransform.parent = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        }</div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        {</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>            copyTransform = *pTransform_;</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>        }</div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>        </div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>        <span class="keywordflow">if</span> (isStatic_)</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>        {</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>            <span class="comment">// 静的、Transform不要なのでそのまま代入</span></div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>            copyTransform.position = computeBox_.Center;</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>            copyTransform.scale = computeBox_.Extents * 2.0f;</div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>        }</div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>        {</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>            <span class="comment">// Transformに合わせて位置、サイズを調整</span></div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>            copyTransform.scale = computeBox_.Extents * 2.0f;</div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>        }</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span> </div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(hBoxModel_, copyTransform, 0, <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>    }</div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>}</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span> </div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span><a class="code hl_typedef" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">mtgb::FBXModelHandle</a> <a class="code hl_variable" href="classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096">mtgb::Collider::hSphereModel_</a>{ <a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a> };</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span><a class="code hl_typedef" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">mtgb::FBXModelHandle</a> <a class="code hl_variable" href="classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae">mtgb::Collider::hBoxModel_</a>{ <a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a> };</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span> </div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <span class="keywordflow">case</span> ColliderType::TYPE_CAPSULE:</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    <span class="keywordflow">case</span> ColliderType::TYPE_AABB:</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span> </div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>        <span class="keywordflow">if</span> (isStatic_)</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>        {</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>            copyTransform.parent = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>        }</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>        {</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>            copyTransform = *pTransform_;</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>        }</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>        </div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>        <span class="comment">// 軸並行なので回転はなし</span></div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>        copyTransform.rotate = <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>{};</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span> </div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>        <span class="keywordflow">if</span> (isStatic_)</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>        {</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>            <span class="comment">// 静的、Transform不要なのでそのまま代入</span></div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>            copyTransform.position = computeBox_.Center;</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>            copyTransform.scale = computeBox_.Extents * 2.0f;</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>        }</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>        {</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>            <span class="comment">// Transformに合わせて位置、サイズを調整</span></div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>            copyTransform.position += center_;</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>            copyTransform.scale = computeBox_.Extents * 2.0f;</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>        }</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>        copyTransform.Compute();</div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(hBoxModel_, copyTransform, 0, <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>    <span class="keywordflow">case</span> ColliderType::TYPE_OBB:</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        <span class="keywordflow">if</span> (isStatic_)</div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>        {</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>            copyTransform.parent = <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>        }</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>        {</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>            copyTransform = *pTransform_;</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>        }</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>        </div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>        <span class="keywordflow">if</span> (isStatic_)</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>        {</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>            <span class="comment">// 静的、Transform不要なのでそのまま代入</span></div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>            copyTransform.position = computeBox_.Center;</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>            copyTransform.scale = computeBox_.Extents * 2.0f;</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>        }</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>        {</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>            <span class="comment">// Transformに合わせて位置、サイズを調整</span></div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>            copyTransform.position += center_;</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>            copyTransform.scale = computeBox_.Extents * 2.0f;</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>        }</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>        copyTransform.Compute();</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(hBoxModel_, copyTransform, 0, <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951">ShaderType::Debug3D</a>);</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    }</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>}</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span> </div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span><a class="code hl_typedef" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">mtgb::FBXModelHandle</a> <a class="code hl_variable" href="classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096">mtgb::Collider::hSphereModel_</a>{ <a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a> };</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span><a class="code hl_typedef" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">mtgb::FBXModelHandle</a> <a class="code hl_variable" href="classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae">mtgb::Collider::hBoxModel_</a>{ <a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a> };</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span> </div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
 <div class="ttc" id="aColliderType_8h_html_a7f138e75fc3cc79e825c39e040690395"><div class="ttname"><a href="ColliderType_8h.html#a7f138e75fc3cc79e825c39e040690395">ColliderType</a></div><div class="ttdeci">ColliderType</div><div class="ttdef"><b>Definition:</b> <a href="ColliderType_8h_source.html#l00002">ColliderType.h:3</a></div></div>
 <div class="ttc" id="aColliderType_8h_html_a7f138e75fc3cc79e825c39e040690395a379bc40db198d5a77b1dde275375efba"><div class="ttname"><a href="ColliderType_8h.html#a7f138e75fc3cc79e825c39e040690395a379bc40db198d5a77b1dde275375efba">ColliderType::TYPE_CAPSULE</a></div><div class="ttdeci">@ TYPE_CAPSULE</div></div>
 <div class="ttc" id="aColliderType_8h_html_ac7af8ecfc927eb4be84ab71d0d3ec21e"><div class="ttname"><a href="ColliderType_8h.html#ac7af8ecfc927eb4be84ab71d0d3ec21e">ColliderTag</a></div><div class="ttdeci">ColliderTag</div><div class="ttdef"><b>Definition:</b> <a href="ColliderType_8h_source.html#l00010">ColliderType.h:11</a></div></div>
@@ -769,7 +773,7 @@ $(document).ready(function(){initNavTree('Collider_8cpp_source.html',''); initRe
 <div class="ttc" id="aclassmtgb_1_1Collider_html_ae6496e49643dd3bf4881bb608df5fb78"><div class="ttname"><a href="classmtgb_1_1Collider.html#ae6496e49643dd3bf4881bb608df5fb78">mtgb::Collider::Intersect</a></div><div class="ttdeci">static std::optional&lt; IntersectInfo &gt; Intersect(const DirectX::BoundingSphere &amp;_sphere, const DirectX::BoundingBox &amp;_aabb)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00400">Collider.cpp:400</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html_ae853925f6ef1aa2acd0684ec7c602d9c"><div class="ttname"><a href="classmtgb_1_1Collider.html#ae853925f6ef1aa2acd0684ec7c602d9c">mtgb::Collider::SetExtents</a></div><div class="ttdeci">void SetExtents(const Vector3 &amp;_extents)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00348">Collider.cpp:348</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html_afd99334500470ba50fbac7278e518d44"><div class="ttname"><a href="classmtgb_1_1Collider.html#afd99334500470ba50fbac7278e518d44">mtgb::Collider::~Collider</a></div><div class="ttdeci">~Collider()</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00056">Collider.cpp:56</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Draw_html_a623126b2353e4747da1340c91af6e4bf"><div class="ttname"><a href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">mtgb::Draw::FBXModel</a></div><div class="ttdeci">static void FBXModel(const FBXModelHandle _hFBXModel, const Transform &amp;_pTransform, const int _frame, ShaderType _shaderType=ShaderType::FbxParts)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00265">Draw.cpp:265</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_a623126b2353e4747da1340c91af6e4bf"><div class="ttname"><a href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">mtgb::Draw::FBXModel</a></div><div class="ttdeci">static void FBXModel(const FBXModelHandle _hFBXModel, const Transform &amp;_pTransform, const int _frame, ShaderType _shaderType=ShaderType::FbxParts)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00262">Draw.cpp:262</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponent_html"><div class="ttname"><a href="classmtgb_1_1IComponent.html">mtgb::IComponent</a></div><div class="ttdoc">ゲームオブジェクトにつけるコンポーネントのインタフェース</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00015">IComponent.h:16</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponent_html_a735636df79e7cfd6336e9a97345e2b29"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">mtgb::IComponent::GetEntityId</a></div><div class="ttdeci">const EntityId GetEntityId() const</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00038">IComponent.h:38</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponent_html_a931ae7565817c83a4e3c5f9004c074d5"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get</a></div><div class="ttdeci">static Transform &amp; Get(const EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00031">IComponent.h:66</a></div></div>
@@ -777,7 +781,6 @@ $(document).ready(function(){initNavTree('Collider_8cpp_source.html',''); initRe
 <div class="ttc" id="aclassmtgb_1_1RigidBody_html_a01d621d88d2e4f392c7895941e80856d"><div class="ttname"><a href="classmtgb_1_1RigidBody.html#a01d621d88d2e4f392c7895941e80856d">mtgb::RigidBody::OnGround</a></div><div class="ttdeci">void OnGround()</div><div class="ttdef"><b>Definition:</b> <a href="RigidBody_8cpp_source.html#l00058">RigidBody.cpp:58</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html"><div class="ttname"><a href="classmtgb_1_1Transform.html">mtgb::Transform</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00017">Transform.h:18</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html_a71231187095137f6dd753ef9450bc18b"><div class="ttname"><a href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">mtgb::Transform::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00139">Transform.h:139</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Transform_html_aa8373f7a6e81f61498f8ca020a5a5c31"><div class="ttname"><a href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">mtgb::Transform::scale</a></div><div class="ttdeci">Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00141">Transform.h:141</a></div></div>
 <div class="ttc" id="anamespaceanonymous__namespace_02Collider_8cpp_03_html_a0f3f3d9de3a2ce7f1fd481d988992861"><div class="ttname"><a href="namespaceanonymous__namespace_02Collider_8cpp_03.html#a0f3f3d9de3a2ce7f1fd481d988992861">anonymous_namespace{Collider.cpp}::matrix</a></div><div class="ttdeci">mtgb::Matrix4x4 matrix</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00011">Collider.cpp:11</a></div></div>
 <div class="ttc" id="anamespaceanonymous__namespace_02Collider_8cpp_03_html_a2ef5ee57daf726048a36564a5cfa5e16"><div class="ttname"><a href="namespaceanonymous__namespace_02Collider_8cpp_03.html#a2ef5ee57daf726048a36564a5cfa5e16">anonymous_namespace{Collider.cpp}::unitVectorEpsilon</a></div><div class="ttdeci">DirectX::XMVECTORF32 unitVectorEpsilon</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00012">Collider.cpp:12</a></div></div>
 <div class="ttc" id="anamespaceanonymous__namespace_02Collider_8cpp_03_html_ab70424bac1fb43dc06ccf8e1f9d1504f"><div class="ttname"><a href="namespaceanonymous__namespace_02Collider_8cpp_03.html#ab70424bac1fb43dc06ccf8e1f9d1504f">anonymous_namespace{Collider.cpp}::XMVECTORIsUnit</a></div><div class="ttdeci">bool XMVECTORIsUnit(DirectX::FXMVECTOR _v)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00013">Collider.cpp:13</a></div></div>

@@ -9,6 +9,7 @@ var hierarchy =
     [ "mtgb::AABB", "structmtgb_1_1AABB.html", null ],
     [ "nlohmann::adl_serializer< ::mtbit::BitFlag< EnumStructT > >", "structnlohmann_1_1adl__serializer_3_01_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html", null ],
     [ "nlohmann::adl_serializer< std::bitset< N > >", "structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html", null ],
+    [ "nlohmann::adl_serializer<::mtgb::Color >", "structnlohmann_1_1adl__serializer_3_1_1mtgb_1_1Color_01_4.html", null ],
     [ "Afterdoc_Test", "classAfterdoc__Test.html", null ],
     [ "Effekseer::Gradient::AlphaKey", "structEffekseer_1_1Gradient_1_1AlphaKey.html", null ],
     [ "refl::util::detail::apply_mask< typename,... >", "structrefl_1_1util_1_1detail_1_1apply__mask.html", null ],
@@ -147,6 +148,8 @@ var hierarchy =
     [ "Effekseer::EffectTerm", "structEffekseer_1_1EffectTerm.html", null ],
     [ "mtgb::Entity", "classmtgb_1_1Entity.html", [
       [ "mtgb::GameObject", "classmtgb_1_1GameObject.html", [
+        [ "FadeOutScreen", "classFadeOutScreen.html", null ],
+        [ "GameOverManager", "classGameOverManager.html", null ],
         [ "GameOverZone", "classGameOverZone.html", null ],
         [ "Goal", "classGoal.html", null ],
         [ "HighlightEnemy", "classHighlightEnemy.html", null ],
@@ -860,6 +863,9 @@ var hierarchy =
     [ "refl::descriptor::detail::placeholder", "structrefl_1_1descriptor_1_1detail_1_1placeholder.html", null ],
     [ "Plane", "structPlane.html", null ],
     [ "LLGI::PlatformParameter", "structLLGI_1_1PlatformParameter.html", null ],
+    [ "PlayerFellOutEvent", "structPlayerFellOutEvent.html", null ],
+    [ "PlayerHpReachedZeroEvent", "structPlayerHpReachedZeroEvent.html", null ],
+    [ "PlayerReachedGoalEvent", "structPlayerReachedGoalEvent.html", null ],
     [ "Property< T >", "structProperty.html", null ],
     [ "docstring.PyClass", "classdocstring_1_1PyClass.html", null ],
     [ "pyexample.PyClass", "classpyexample_1_1PyClass.html", null ],

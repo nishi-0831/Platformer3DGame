@@ -120,7 +120,7 @@ nlohmann::adl_serializer&lt; std::bitset&lt; N &gt; &gt; 連携図</div>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;std::size_t N&gt;<br />
 struct nlohmann::adl_serializer&lt; std::bitset&lt; N &gt; &gt;</div>
-<p class="definition"> <a class="el" href="JsonADLSerializers_8h_source.html">JsonADLSerializers.h</a> の <a class="el" href="JsonADLSerializers_8h_source.html#l00008">8</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="JsonADLSerializers_8h_source.html">JsonADLSerializers.h</a> の <a class="el" href="JsonADLSerializers_8h_source.html#l00011">11</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="a4d83b5c39fb21c28be6271dda6ceff73" name="a4d83b5c39fb21c28be6271dda6ceff73"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d83b5c39fb21c28be6271dda6ceff73">&#9670;&#160;</a></span>from_json()</h2>
@@ -158,23 +158,23 @@ template&lt;std::size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="JsonADLSerializers_8h_source.html">JsonADLSerializers.h</a> の <a class="el" href="JsonADLSerializers_8h_source.html#l00015">15</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>        {</div>
-<div class="line"><span class="lineno">   17</span>            <span class="keywordflow">if</span> (_j.is_number_unsigned() == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">   18</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>            _bitset.reset();</div>
-<div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> v = _j.get&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&gt;();</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>            <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &amp;&amp; (i &lt; 64); i++)</div>
-<div class="line"><span class="lineno">   25</span>            {</div>
-<div class="line"><span class="lineno">   26</span>                <span class="keywordflow">if</span> (v &amp; (1ull &lt;&lt; i))</div>
-<div class="line"><span class="lineno">   27</span>                {</div>
-<div class="line"><span class="lineno">   28</span>                    _bitset.set(i);</div>
-<div class="line"><span class="lineno">   29</span>                }</div>
-<div class="line"><span class="lineno">   30</span>            }</div>
-<div class="line"><span class="lineno">   31</span>        }</div>
+<p class="definition"> <a class="el" href="JsonADLSerializers_8h_source.html">JsonADLSerializers.h</a> の <a class="el" href="JsonADLSerializers_8h_source.html#l00018">18</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>        {</div>
+<div class="line"><span class="lineno">   20</span>            <span class="keywordflow">if</span> (_j.is_number_unsigned() == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   21</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>            _bitset.reset();</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> v = _j.get&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&gt;();</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &amp;&amp; (i &lt; 64); i++)</div>
+<div class="line"><span class="lineno">   28</span>            {</div>
+<div class="line"><span class="lineno">   29</span>                <span class="keywordflow">if</span> (v &amp; (1ull &lt;&lt; i))</div>
+<div class="line"><span class="lineno">   30</span>                {</div>
+<div class="line"><span class="lineno">   31</span>                    _bitset.set(i);</div>
+<div class="line"><span class="lineno">   32</span>                }</div>
+<div class="line"><span class="lineno">   33</span>            }</div>
+<div class="line"><span class="lineno">   34</span>        }</div>
 <div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">KeyCode::N</a></div><div class="ttdeci">@ N</div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a>.</p>
@@ -217,10 +217,10 @@ template&lt;std::size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="JsonADLSerializers_8h_source.html">JsonADLSerializers.h</a> の <a class="el" href="JsonADLSerializers_8h_source.html#l00010">10</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span>        {</div>
-<div class="line"><span class="lineno">   12</span>            _j = _bitset.to_ulong();</div>
-<div class="line"><span class="lineno">   13</span>        }</div>
+<p class="definition"> <a class="el" href="JsonADLSerializers_8h_source.html">JsonADLSerializers.h</a> の <a class="el" href="JsonADLSerializers_8h_source.html#l00013">13</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>        {</div>
+<div class="line"><span class="lineno">   15</span>            _j = _bitset.to_ulong();</div>
+<div class="line"><span class="lineno">   16</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

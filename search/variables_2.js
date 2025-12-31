@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['b_0',['B',['../structEffekseer_1_1Color.html#a0313689224c549471daa2bfe58839d84',1,'Effekseer::Color']]],
+  ['b_0',['B',['../structLLGI_1_1Color8.html#ad7c9deb7d62359c21c029a14ff63a972',1,'LLGI::Color8::B()'],['../structEffekseer_1_1Color.html#a0313689224c549471daa2bfe58839d84',1,'Effekseer::Color::B()']]],
   ['b_1',['b',['../structImGuiTextFilter_1_1ImGuiTextRange.html#a18a2df587336eecc6ba62c4275a4b7c8',1,'ImGuiTextFilter::ImGuiTextRange']]],
-  ['b_2',['B',['../structLLGI_1_1ColorF.html#abfe71706d836957a4b1bb348507abb15',1,'LLGI::ColorF::B()'],['../structLLGI_1_1Color8.html#ad7c9deb7d62359c21c029a14ff63a972',1,'LLGI::Color8::B()']]],
+  ['b_2',['B',['../structLLGI_1_1ColorF.html#abfe71706d836957a4b1bb348507abb15',1,'LLGI::ColorF']]],
   ['backend_5f_3',['backend_',['../classEffekseer_1_1Texture.html#a7c136e0d42f19d3716f38f1559e7a8b0',1,'Effekseer::Texture']]],
   ['backendflags_4',['BackendFlags',['../structImGuiIO.html#a92288d3e802788c8c408eac2c12e709c',1,'ImGuiIO']]],
   ['backendlanguageuserdata_5',['BackendLanguageUserData',['../structImGuiIO.html#ad5dc2e55e630b44208ef07bbbef161ea',1,'ImGuiIO']]],
