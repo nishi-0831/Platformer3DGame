@@ -27,6 +27,11 @@ Goal::Goal()
 
 Goal::~Goal()
 {
+    if (auto effect = pEffect_.lock())
+    {
+        effect->destroyMe = true;
+        effect->isLoop = true;
+    }
 }
 
 void Goal::Update()
@@ -45,11 +50,6 @@ void Goal::Start()
             {
                 Game::System<StageManger>().ClearCurrentStage();
                 Game::System<SceneSystem>().Move<ResultScene>();
-                if (auto effect = pEffect_.lock())
-                {
-                    effect->destroyMe = true;
-                    effect->isLoop = true;
-                }
             }
         });
 

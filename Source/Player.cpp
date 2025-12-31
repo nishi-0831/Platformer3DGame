@@ -3,13 +3,13 @@
 #include "Camera.h"
 #include "ActorManager.h"
 #include "ResultScene.h"
+#include "GameEvents.h"
 #include <algorithm>
 namespace 
 {
 	float speed = 5.0f;
 	float jumpHeight = 15.0f;
 	const unsigned int TAKE_DAMGE_AMOUNT = 1;
-	
 }
 
 Player::Player()
@@ -42,6 +42,13 @@ Player::Player()
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
+
+	// 落下イベントを購読
+	Game::System<EventManager>().GetEvent<PlayerFellOutEvent>().Subscribe([this](const PlayerFellOutEvent& _event)
+		{
+			// 強制的にHPをゼロにする
+			TakeDamage(hp_);
+		}, EventScope::Scene);
 }
 
 Player::~Player()
@@ -65,8 +72,9 @@ void Player::Update()
 
 
 	pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
-
+	
 	state_.Update();
+	
 }
 
 void Player::InitializeState()
@@ -157,10 +165,7 @@ void Player::InitializeState()
 			})
 		.OnUpdate(STATE::DYING, [this]
 			{
-				if (animController_->IsFinishedAnimation())
-				{
-					Game::System<SceneSystem>().Move<ResultScene>();
-				}
+				
 			});
 }
 
@@ -231,25 +236,16 @@ void Player::UpdatePosition()
 		
 		velocity.x = movement.x;
 		velocity.z = movement.z;
-
-		/*if (pRigidBody_->isGround_ && state_.Current() != STATE::RUN)
-		{
-			state_.Change(STATE::RUN);
-		}*/
 	}
 	else
 	{
 		// -------------------------------------------------------
-		// * 注意
+		// WARNING:
 		// 入力がない場合、XZの速度をゼロにしている!!!!
 		// 入力以外で速度を変える場合は修正!!!!
 		// -------------------------------------------------------
 		velocity.x = 0.0f;
 		velocity.z = 0.0f;
-		/*if (pRigidBody_->isGround_ && state_.Current() != STATE::IDLE)
-		{
-			state_.Change(STATE::IDLE);
-		}*/
 	}
 }
 
@@ -304,6 +300,10 @@ void Player::TakeDamage(int _damage)
 	if (hp_ <= 0)
 	{
 		state_.Change(STATE::DYING);
+		
+		// プレイヤーのHPが0になったことを通知
+		PlayerHpReachedZeroEvent event{ .playerEntityId = GetEntityId() };
+		Game::System<EventManager>().GetEvent<PlayerHpReachedZeroEvent>().Invoke(event);
 	}
 
 	pHPViewer_->TakeDamage(_damage);

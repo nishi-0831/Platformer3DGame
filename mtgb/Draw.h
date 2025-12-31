@@ -19,9 +19,6 @@ namespace mtgb
 	class FbxModel;
 	class Ground;
 	class PlaneUVScroll;
-	//enum struct ShaderType : int8_t;
-	
-	
 
 	/// <summary>
 	/// 描画する系
@@ -46,15 +43,6 @@ namespace mtgb
 		/// <param name="_default">セットされていない場合のデフォルトシェーダ</param>
 		static void CheckSetShader(const ShaderType _default);
 
-
-		/*static void Image(
-			const Vector2Int& _position,
-			const ImageHandle _hImage);
-
-		static void Image(
-			const RectInt& _draw,
-			const ImageHandle _hImage);*/
-
 		static void Box(
 			const Vector2Int& _begin,
 			const Vector2Int& _end,
@@ -66,26 +54,28 @@ namespace mtgb
 			const Color& _color,
 			const UIParams& _uiParams = defaultUIParams_);
 
-		static void Image(
-			const ImageHandle _hImage,
+		static void Image(const ImageHandle _hImage,
 			const RectF& _draw,
 			const RectF& _cut,
 			const float _rotationZ,
-			const UIParams& _uiParams = defaultUIParams_);
+			const UIParams& _uiParams = defaultUIParams_,
+			const Color& _color = Color::WHITE);
 
-		static void Image(
-			const ImageHandle _hImage,
+		static void Image(const ImageHandle _hImage,
 			const RectF& _draw,
-			const UIParams& _uiParams = defaultUIParams_);
+			const UIParams& _uiParams = defaultUIParams_,
+			const Color& _color = Color::WHITE);
 
 		static void Image(
 			const ImageHandle _hImage,
 			const Transform&  _transform,
+			const Color& _color = Color::WHITE,
 			const UIParams& _uiParams = defaultUIParams_);
 
 		static void Image(
 			const ImageHandle _hImage,
 			Transform&& _transform,
+			const Color& _color = Color::WHITE,
 			const UIParams& _uiParams = defaultUIParams_);
 
 		static void Model(

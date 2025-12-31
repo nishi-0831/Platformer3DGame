@@ -241,6 +241,15 @@ void mtgb::MTImGui::SetupShowFunc()
             ImGui::LabelText("DesktopCoordinates", "(%ld,%ld) - (%ld,%ld)", _target->DesktopCoordinates.left, _target->DesktopCoordinates.top,
                 _target->DesktopCoordinates.right, _target->DesktopCoordinates.bottom);
 		});
+    Set<Color>([](Color* _target, const char* _name)
+        {
+            Vector4 vec4 =_target->ToVector4Norm();
+            ImGui::ColorEdit4(_name, vec4.f, ImGuiColorEditFlags_Uint8);
+            /*ImGui::InputScalar("r", ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Red)]);
+            ImGui::InputScalar("g", ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Green)]);
+            ImGui::InputScalar("b", ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Blue)]);
+            ImGui::InputScalar("a", ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Alpha)]);*/
+        });
 }
 void mtgb::MTImGui::ShowListView(ShowType _show)
 {

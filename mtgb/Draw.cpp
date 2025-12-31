@@ -56,19 +56,17 @@ void mtgb::Draw::Box(const RectInt& _rect, const Color& _color, const UIParams& 
 
 			const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
 
-			//Game::System<Draw>().pFigure_->Draw(RectF{ Vector2F(_rect.point) / ratio, Vector2F(_rect.size) / ratio}, _color);
-			//Game::System<Draw>().pFigure_->Draw(RectF{ _rect.point * ratio ,_rect.size * ratio }, _color);
 			Game::System<Draw>().pFigure_->Draw(RectF{ _rect.point,_rect.size}, _color);
 		}
 		});	
 }
 
-void mtgb::Draw::Image(
-	const ImageHandle _hImage,
+void mtgb::Draw::Image(const ImageHandle _hImage,
 	const RectF& _draw,
 	const RectF& _cut,
 	const float _rotationZ,
-	const UIParams& _uiParams)
+	const UIParams& _uiParams,
+	const Color& _color)
 {
 	uiDrawCommands_.insert({
 		_uiParams,
@@ -79,21 +77,23 @@ void mtgb::Draw::Image(
 
 			const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
 
-			//pSprite->Draw(RectF{ _draw.point / ratio, _draw.size / ratio}, _rotationZ, RectF{ _cut.point, _cut.size }, Color::WHITE);
-			//pSprite->Draw(RectF{ _draw.point * ratio, _draw.size * ratio }, _rotationZ, RectF{ _cut.point * ratio, _cut.size * ratio }, Color::WHITE);
-			pSprite->Draw(RectF{ _draw.point, _draw.size}, _rotationZ, RectF{ _cut.point, _cut.size}, Color::WHITE);
+			pSprite->Draw(RectF{ _draw.point, _draw.size}, _rotationZ, RectF{ _cut.point, _cut.size}, _color);
 		}
 		});
 }
 
-void mtgb::Draw::Image(const ImageHandle _hImage, const RectF& _draw, const UIParams& _uiParams)
+void mtgb::Draw::Image(const ImageHandle _hImage,
+	const RectF& _draw,
+	const UIParams& _uiParams,
+	const Color& _color)
 {
-	Image(_hImage, _draw, { Vector2F::Zero(), Image::GetSizeF(_hImage) }, 0.0f, _uiParams);
+	Image(_hImage, _draw, { Vector2F::Zero(), Image::GetSizeF(_hImage) }, 0.0f,_uiParams, _color);
 }
 
 void mtgb::Draw::Image(
 	const ImageHandle _hImage,
 	const Transform& _transform,
+	const Color& _color,
 	const UIParams& _uiParams)
 {
 	uiDrawCommands_.insert({
@@ -104,14 +104,13 @@ void mtgb::Draw::Image(
 			Sprite* pSprite{ Game::System<mtgb::Image>().GetSprite(_hImage) };
 
 			const Transform* pCameraTransform = &(Game::System<CameraSystem>().GetTransform());
-			pSprite->Draw(&_transform, pCameraTransform, pSprite->GetSize(), Color::WHITE);
+			pSprite->Draw(&_transform, pCameraTransform, pSprite->GetSize(), _color);
 		} });
 	
 }
 
-void mtgb::Draw::Image(const ImageHandle _hImage, Transform&& _transform, const UIParams& _uiParams)
+void mtgb::Draw::Image(const ImageHandle _hImage, Transform&& _transform, const Color& _color, const UIParams& _uiParams)
 {
-
 	uiDrawCommands_.insert({
 	_uiParams,
 	[=,transform = std::move(_transform)]() mutable {
@@ -120,7 +119,7 @@ void mtgb::Draw::Image(const ImageHandle _hImage, Transform&& _transform, const 
 	Sprite* pSprite{ Game::System<mtgb::Image>().GetSprite(_hImage) };
 
 	const Transform* pCameraTransform = &(Game::System<CameraSystem>().GetTransform());
-	pSprite->Draw(&transform, pCameraTransform, pSprite->GetSize(), Color::WHITE);
+	pSprite->Draw(&transform, pCameraTransform, pSprite->GetSize(), _color);
 	} });
 
 }
@@ -143,8 +142,6 @@ void mtgb::Draw::Text(const TextHandle _hText, const Vector2F& _origin,TextAlign
 		FontFormatData* formatData = Game::System<mtgb::TextCache>().GetOrCreateTextFormat(layoutData->fontSize);
 
 		Game::System<mtgb::DirectWrite>().SetTextAlignment(_alignment, layoutData->layout);
-
-		//const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
 
 		Game::System<mtgb::DirectWrite>().Draw(layoutData->layout, _origin.x, (_origin.y + formatData->pixelFontMetrics.textTopOffset) );
 		} });
@@ -292,8 +289,9 @@ mtgb::Draw::~Draw()
 
 void mtgb::Draw::Initialize()
 {
-	/*pFigure_ = new Figure{};
+	pFigure_ = new Figure{};
 	pFigure_->Initialize();
+	/*
 
 	pFbxModel_ = new FbxModel{};
 	pFbxModel_->Load("Model/GroundPlane.fbx");

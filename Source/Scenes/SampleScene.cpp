@@ -8,6 +8,8 @@
 #include "../Source/ResultScene.h"
 #include "../Source/SkySphere.h"
 #include "../Source/MovingFloor.h"
+#include "../Source/GameOverManager.h"
+
 SampleScene::SampleScene()
 	: stageID_{StageID::STAGE_ONE}
 {
@@ -25,6 +27,7 @@ void SampleScene::Initialize()
 	TypeRegistry::Instance().Initialize();
 	MTImGui::Instance().Initialize();
 
+	Instantiate<GameOverManager>();
 	Instantiate<SkySphere>();
 	std::optional<nlohmann::json> json = Game::System<StageManger>().GetStageJson(stageID_);
 	if (json.has_value())

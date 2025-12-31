@@ -3,13 +3,12 @@
 #include "TitleScene.h"
 #include "Scenes/SampleScene.h"
 #include "../Source/Camera.h"
-
 namespace
 {
 	// 118,90 , 565,100
 	ImageHandle hImage;
 	RectF draw{ 118,90,565,100 };
-	UIParams params{ .depth = 0,.layerFlag = AllLayer() };
+	UIParams params{ .depth = 2,.layerFlag = AllLayer() };
 }
 TitleScene::TitleScene()
 {
@@ -28,9 +27,7 @@ void TitleScene::Initialize()
 		.SetName("SceneCamera")
 		.Build());
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
-
 	hImage = Image::Load("Image/TitleImage.png");
-
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
 }
@@ -45,8 +42,7 @@ void TitleScene::Update()
 
 void TitleScene::Draw() const
 {
-	Draw::Image(hImage, draw);
-
+	Draw::Image(hImage, draw,params);
 }
 
 void TitleScene::End()

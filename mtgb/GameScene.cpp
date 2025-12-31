@@ -12,6 +12,7 @@ mtgb::GameScene::~GameScene()
 {
 	for (auto& pGameObject : pGameObjects_)
 	{
+		Game::RemoveEntityAllComponent(pGameObject->GetEntityId());
 		pGameObject->DestroyMe();  // íœƒtƒ‰ƒO‚ð—§‚Ä‚Ä‚¨‚­
 	}
 	SAFE_CLEAR_CONTAINER_DELETE(pGameObjects_);

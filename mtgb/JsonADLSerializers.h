@@ -2,8 +2,11 @@
 #include "nlohmann/json.hpp"
 #include <bitset>
 #include "GameObjectLayer.h"
+#include "Color.h"
 namespace nlohmann
 {
+	// adl_serializerを特殊化してシリアライズ、デシリアライズ関数を定義する
+
 	template <std::size_t N>
 	struct adl_serializer<std::bitset<N>>
 	{
@@ -29,7 +32,6 @@ namespace nlohmann
 				}
 			}
 		}
-
 	};
 
 	template<typename EnumStructT>
@@ -51,4 +53,31 @@ namespace nlohmann
 			flag = ::mtbit::BitFlag<EnumStructT>(bs);
 		}
 	};
+
+	template<>
+	struct adl_serializer<::mtgb::Color>
+	{
+		static void to_json(nlohmann::json& _j, const ::mtgb::Color& _color)
+		{
+			_j = 
+			{
+				{"r", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Red)]},
+				{"g", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Green)]},
+				{"b", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Blue)]},
+				{"a", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Alpha)]}
+			};
+		}
+
+		static void from_json(const nlohmann::json& _j, ::mtgb::Color& _color)
+		{
+			uint8_t r = _j.value("r", uint8_t(0));
+			uint8_t g = _j.value("g", uint8_t(0));
+			uint8_t b = _j.value("b", uint8_t(0));
+			uint8_t a = _j.value("a", uint8_t(255));
+
+			_color = ::mtgb::Color(r, g, b, a);
+		}
+	};
+
+	
 }
