@@ -1,0 +1,40 @@
+name: Release Build and Publish
+
+on:
+ push:
+  tags:
+   - 'v*'
+
+permissions:
+ contents: write
+
+ # 実行中にまたプッシュされた場合、古い実行をキャンセルする
+concurrency:
+  group: release-${{ github.ref }}
+
+jobs:
+ build-and-release:
+  # windows環境で動かす
+  runs-on: windows-latest
+
+  steps:
+  - name: Checkout
+    uses: actions/checkout@v4
+
+  # MSBuildを使えるようにセットアップ
+  - name: Setup MSBuild
+    uses: microsoft/setup-msbuild@v2
+
+  - name: Build solution(Release x64)
+    run: msbuild "Game.sln" /p:Configuration=Release /p:Platform=x64
+
+  - name: Create GitHub Release and upload artifacts
+    uses: softprops/action-gh-release@v1
+    with:
+     files: |
+      ./x64/Release/Project1.exe
+      Assets/**/*
+
+    # リポジトリ内のリソースにアクセスできるように認証トークンを渡す
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
