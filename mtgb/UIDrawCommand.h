@@ -8,17 +8,17 @@ namespace mtgb
 	/// </summary>
 	struct UIParams
 	{
-		int depth = 0;// 小さいほど奥、大きいほど手前
-		GameObjectLayerFlag layerFlag = mtbit::operator|(GameObjectLayer::A, GameObjectLayer::B);// 描画するレイヤー
+		int depth					  = 0; // 小さいほど奥、大きいほど手前
+		GameObjectLayerFlag layerFlag = mtbit::operator|(GameObjectLayer::A, GameObjectLayer::B); // 描画するレイヤー
 	};
 	struct UIDrawCommand
 	{
 		UIParams params;
-		std::function<void()> drawFunction; //描画関数
+		std::function<void()> drawFunction; // 描画関数
 
-		bool operator<(const UIDrawCommand& other) const
+		bool operator<(const UIDrawCommand& _other) const
 		{
-			return params.depth < other.params.depth;
+			return params.depth < _other.params.depth;
 		}
 	};
-}
+} // namespace mtgb

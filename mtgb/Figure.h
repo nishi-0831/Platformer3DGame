@@ -16,7 +16,7 @@ namespace mtgb
 		/// </summary>
 		struct Vertex
 		{
-			Vector3 position;  // 座標
+			Vector3 position; // 座標
 		};
 
 		/// <summary>
@@ -24,21 +24,18 @@ namespace mtgb
 		/// </summary>
 		struct ConstantBuffer
 		{
-			Vector4 g_color;  // 色
-			Matrix4x4 g_worldMatrix;  // 頂点座標変換行列
+			Vector4 g_color;		 // 色
+			Matrix4x4 g_worldMatrix; // 頂点座標変換行列
 		};
 
-	public:
+	  public:
 		Figure();
 		~Figure();
 
-		void Draw(
-			const RectInt& _rect,
-			const Color& _color);
-		void Draw(
-			const RectF& _rect,
-			const Color& _color);
-	private:
+		void Draw(const RectInt& _rect, const Color& _color);
+		void Draw(const RectF& _rect, const Color& _color);
+
+	  private:
 		/// <summary>
 		/// 頂点バッファの初期化
 		/// </summary>
@@ -52,4 +49,4 @@ namespace mtgb
 		/// </summary>
 		void InitializeConstantBuffer(ID3D11Device* _pDevice) override;
 	};
-}
+} // namespace mtgb

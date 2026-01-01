@@ -15,9 +15,9 @@ namespace mtgb
 	class TextRendererCP;
 
 	MT_COMPONENT()
-	class TextRenderer :public IRenderable , public IComponent<TextRendererCP,TextRenderer>, public ISerializableObject
+	class TextRenderer : public IRenderable, public IComponent<TextRendererCP, TextRenderer>, public ISerializableObject
 	{
-	public:
+	  public:
 		MT_GENERATED_BODY()
 		friend TextRendererCP;
 
@@ -28,7 +28,10 @@ namespace mtgb
 
 		bool CanRender() const override;
 
-		GameObjectLayerFlag GetLayer() const override { return params.layerFlag; }
+		GameObjectLayerFlag GetLayer() const override
+		{
+			return params.layerFlag;
+		}
 
 		TextAlignment alignment;
 		std::string text;
@@ -36,4 +39,4 @@ namespace mtgb
 		int fontSize;
 		UIParams params;
 	};
-}
+} // namespace mtgb

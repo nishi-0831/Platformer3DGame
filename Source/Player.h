@@ -4,9 +4,9 @@
 #include "IActor.h"
 #include "HPViewer.h"
 
-class Player : public mtgb::GameObject , public mtgb::ImGuiShowable,public IActor
+class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActor
 {
-public:
+  public:
 	Player();
 	~Player();
 
@@ -19,7 +19,8 @@ public:
 	void OnStomped(IActor* pOther) override;
 	void OnHitSide(IActor* pOther) override;
 	void TakeDamage(int _damage) override;
-private:
+
+  private:
 	Vector3 GetMoveDir();
 	void UpdatePosition();
 	void UpdateRotate();

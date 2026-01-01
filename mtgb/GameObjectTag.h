@@ -9,4 +9,4 @@ namespace mtgb
 		Player,
 		Enemy,
 	};
-}
+} // namespace mtgb

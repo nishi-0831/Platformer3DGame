@@ -15,12 +15,12 @@ mtgb::Direct2DResource::Direct2DResource(WindowContext _windowContext)
 	, pD2DBrush_{nullptr}
 {
 	// DXGI,Direct3Dのリソースを取得
-	DXGIResource& dxgiResource = Game::System<WindowContextResourceManager>().Get<DXGIResource>(_windowContext);
+	DXGIResource& dxgiResource	  = Game::System<WindowContextResourceManager>().Get<DXGIResource>(_windowContext);
 	Direct3DResource& d3dResource = Game::System<WindowContextResourceManager>().Get<Direct3DResource>(_windowContext);
 
 	// Direct2DのComオブジェクト作成に使う
 	Direct2D& direct2D = Game::System<Direct2D>();
- 
+
 	// レンダーターゲット、ブラシを作成
 	direct2D.CreateD2DRenderTarget(dxgiResource.pDXGISurface_.Get(), pRenderTarget_.ReleaseAndGetAddressOf());
 
@@ -41,9 +41,9 @@ void mtgb::Direct2DResource::Reset()
 void mtgb::Direct2DResource::OnResize(UINT _width, UINT _height)
 {
 	Release();
-	
+
 	// DXGI,Direct3Dのリソースを取得
-	DXGIResource& dxgiResource = Game::System<WindowContextResourceManager>().Get<DXGIResource>(windowContext_);
+	DXGIResource& dxgiResource	  = Game::System<WindowContextResourceManager>().Get<DXGIResource>(windowContext_);
 	Direct3DResource& d3dResource = Game::System<WindowContextResourceManager>().Get<Direct3DResource>(windowContext_);
 
 	// Direct2DのComオブジェクト作成に使う
@@ -67,4 +67,3 @@ void mtgb::Direct2DResource::Release()
 	pD2DBrush_.Reset();
 	pRenderTarget_.Reset();
 }
-

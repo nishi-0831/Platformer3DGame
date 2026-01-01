@@ -3,38 +3,32 @@
 #include "Debug.h"
 namespace
 {
-	mtgb::Vector3 INIT_OFFSET{ 1.0f,0.0f,0.0f };
+	mtgb::Vector3 INIT_OFFSET{1.0f, 0.0f, 0.0f};
 }
 
 MovingFloor::MovingFloor()
 	: GameObject()
 	, groundedEntity_{INVALID_ENTITY}
-	, pTransform_{ &Transform::Get(entityId_) }
+	, pTransform_{&Transform::Get(entityId_)}
 	, pMeshRenderer_{&MeshRenderer::Get(entityId_)}
-	, pRigidBody_{ &RigidBody::Get(entityId_) }
-	, pCollider_{ &Collider::Get(entityId_) }
-	, pInterpolator_{ &Interpolator::Get(entityId_) }
+	, pRigidBody_{&RigidBody::Get(entityId_)}
+	, pCollider_{&Collider::Get(entityId_)}
+	, pInterpolator_{&Interpolator::Get(entityId_)}
 {
 	pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
-	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
-	pMeshRenderer_->layer = AllLayer();
-	pMeshRenderer_->shaderType = ShaderType::FbxParts;
+	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
+	pMeshRenderer_->layer		 = AllLayer();
+	pMeshRenderer_->shaderType	 = ShaderType::FbxParts;
 	// 型情報に登録された名前を取得
-	name_ = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(MovingFloor));
+	name_		 = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(MovingFloor));
 	displayName_ = name_;
 	// コライダーの設定
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->SetExtents(Vector3(1, 1, 1));
 
 	// RigidBodyの設定
-	pRigidBody_->OnCollisionEnter([this](EntityId _id)
-		{
-			OnCollisionEnter(_id);
-		});
-	pRigidBody_->OnCollisionExit([this](EntityId _id)
-		{
-			OnCollisionExit(_id);
-		});
+	pRigidBody_->OnCollisionEnter([this](EntityId _id) { OnCollisionEnter(_id); });
+	pRigidBody_->OnCollisionExit([this](EntityId _id) { OnCollisionExit(_id); });
 }
 
 void MovingFloor::Update()
@@ -52,8 +46,8 @@ void MovingFloor::ShowImGui()
 void MovingFloor::OnCollisionEnter(EntityId _entityId)
 {
 	GameObject* gameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-	GameObjectTag tag = gameObj->GetTag();
-	
+	GameObjectTag tag	= gameObj->GetTag();
+
 	// プレイヤーのみ対象にする
 	// TODO: プレイヤー以外のアクターも対象にする
 	if (tag != GameObjectTag::Player)
@@ -65,9 +59,9 @@ void MovingFloor::OnCollisionEnter(EntityId _entityId)
 	// 自身より上にいる場合、着地していると判定
 	if (pTransform_->position.y > otherTransform.position.y)
 		return;
-	
+
 	groundedEntity_ = _entityId;
-	
+
 	otherTransform.SetParent(GetEntityId());
 	LOGIMGUI("MovingFloorEnter");
 }
@@ -75,7 +69,7 @@ void MovingFloor::OnCollisionEnter(EntityId _entityId)
 void MovingFloor::OnCollisionExit(EntityId _entityId)
 {
 	GameObject* gameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-	GameObjectTag tag = gameObj->GetTag();
+	GameObjectTag tag	= gameObj->GetTag();
 
 	// プレイヤーのみ対象にする
 	// TODO: プレイヤー以外のアクターも対象にする
@@ -95,5 +89,3 @@ void MovingFloor::OnCollisionExit(EntityId _entityId)
 
 	LOGIMGUI("MovingFloorExit");
 }
-
-

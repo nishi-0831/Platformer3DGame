@@ -30,14 +30,10 @@ HWND WinCtxRes::GetHWND(WindowContext ctx)
 void mtgb::WinCtxRes::SwapWindow(WindowContext _ctx1, WindowContext _ctx2)
 {
 	Game::System<WinCtxResManager>().SwapResource<WindowResource>(_ctx1, _ctx2);
-	Game::System<WinCtxResManager>().SwapResource<DXGIResource>(_ctx1,_ctx2);
+	Game::System<WinCtxResManager>().SwapResource<DXGIResource>(_ctx1, _ctx2);
 	Game::System<WinCtxResManager>().SwapResource<Direct3DResource>(_ctx1, _ctx2);
 	Game::System<WinCtxResManager>().SwapResource<Direct2DResource>(_ctx1, _ctx2);
 }
-
-
-
-
 
 void WinCtxRes::ChangeResource(WindowContext ctx)
 {

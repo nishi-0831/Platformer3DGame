@@ -1,11 +1,11 @@
-//#pragma once
-//#include "nlohmann/json.hpp"
+// #pragma once
+// #include "nlohmann/json.hpp"
 //
-//#include "JsonConverterImpl.h"
+// #include "JsonConverterImpl.h"
 //
-//namespace mtgb
+// namespace mtgb
 //{
 //
-//	
-//}
+//
+// }
 //

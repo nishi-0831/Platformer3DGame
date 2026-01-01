@@ -13,4 +13,4 @@ namespace mtgb
 		void RenderAll() const override;
 		void RenderLayer(GameObjectLayerFlag _layerFlag) const override;
 	};
-}
+} // namespace mtgb

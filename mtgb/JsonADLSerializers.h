@@ -7,8 +7,7 @@ namespace nlohmann
 {
 	// adl_serializerを特殊化してシリアライズ、デシリアライズ関数を定義する
 
-	template <std::size_t N>
-	struct adl_serializer<std::bitset<N>>
+	template <std::size_t N> struct adl_serializer<std::bitset<N>>
 	{
 		static void to_json(json& _j, const std::bitset<N>& _bitset)
 		{
@@ -34,10 +33,9 @@ namespace nlohmann
 		}
 	};
 
-	template<typename EnumStructT>
-	struct adl_serializer< ::mtbit::BitFlag<EnumStructT> >
+	template <typename EnumStructT> struct adl_serializer<::mtbit::BitFlag<EnumStructT>>
 	{
-		using BitsetT = std::bitset< (sizeof(EnumStructT) * 8) >;
+		using BitsetT = std::bitset<(sizeof(EnumStructT) * 8)>;
 
 		static void to_json(nlohmann::json& j, const ::mtbit::BitFlag<EnumStructT>& flag)
 		{
@@ -48,24 +46,20 @@ namespace nlohmann
 		static void from_json(const nlohmann::json& j, ::mtbit::BitFlag<EnumStructT>& flag)
 		{
 			BitsetT bs;
-			
+
 			j.get_to(bs);
 			flag = ::mtbit::BitFlag<EnumStructT>(bs);
 		}
 	};
 
-	template<>
-	struct adl_serializer<::mtgb::Color>
+	template <> struct adl_serializer<::mtgb::Color>
 	{
 		static void to_json(nlohmann::json& _j, const ::mtgb::Color& _color)
 		{
-			_j = 
-			{
-				{"r", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Red)]},
-				{"g", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Green)]},
-				{"b", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Blue)]},
-				{"a", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Alpha)]}
-			};
+			_j = {{"r", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Red)]},
+				  {"g", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Green)]},
+				  {"b", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Blue)]},
+				  {"a", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Alpha)]}};
 		}
 
 		static void from_json(const nlohmann::json& _j, ::mtgb::Color& _color)
@@ -79,5 +73,4 @@ namespace nlohmann
 		}
 	};
 
-	
-}
+} // namespace nlohmann

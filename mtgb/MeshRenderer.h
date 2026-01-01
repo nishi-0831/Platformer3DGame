@@ -12,59 +12,76 @@
 #include "cmtgb.h"
 namespace mtgb
 {
-    
-    class MeshRendererCP;
-    MT_COMPONENT()
-    /// <summary>
-    /// メッシュとマテリアルを管理する描画コンポーネント
-    /// </summary>
-    class MeshRenderer :public IRenderable ,public IComponent<MeshRendererCP,MeshRenderer> , public ISerializableObject
-    {
-    public:
-        MT_GENERATED_BODY()
-        friend MeshRendererCP;
 
-        MeshRenderer();
-        MeshRenderer(EntityId _entityId);
-        MeshRenderer& operator=(const MeshRenderer& _other);
-        /// <summary>
-        /// メッシュハンドルを設定
-        /// </summary>
-        void SetMesh(FBXModelHandle _meshHandle) { meshHandle = _meshHandle; }
+	class MeshRendererCP;
+	MT_COMPONENT()
+	/// <summary>
+	/// メッシュとマテリアルを管理する描画コンポーネント
+	/// </summary>
+	class MeshRenderer : public IRenderable, public IComponent<MeshRendererCP, MeshRenderer>, public ISerializableObject
+	{
+	  public:
+		MT_GENERATED_BODY()
+		friend MeshRendererCP;
 
-        /// <summary>
-        /// メッシュハンドルを取得
-        /// </summary>
-        FBXModelHandle GetMesh() const { return meshHandle; }
+		MeshRenderer();
+		MeshRenderer(EntityId _entityId);
+		MeshRenderer& operator=(const MeshRenderer& _other);
+		/// <summary>
+		/// メッシュハンドルを設定
+		/// </summary>
+		void SetMesh(FBXModelHandle _meshHandle)
+		{
+			meshHandle = _meshHandle;
+		}
 
-        /// <summary>
-        /// 使用するシェーダーの種類を返す
-        /// </summary>
-        /// <returns></returns>
-        ShaderType GetShaderType() const { return shaderType; }
-        /// <summary>
-        /// 描画可能かチェック
-        /// </summary>
-        //bool CanRender() const { return meshHandle != INVALID_HANDLE; }
+		/// <summary>
+		/// メッシュハンドルを取得
+		/// </summary>
+		FBXModelHandle GetMesh() const
+		{
+			return meshHandle;
+		}
 
-        GameObjectLayerFlag GetLayer() const override { return layer; }
-        void OnChangeMeshFileName();
-        void Render() const override;
-        bool CanRender() const override { return meshHandle != INVALID_HANDLE; };
-        void SetFrame(int _frame);
-        MT_PROPERTY()
-        std::string meshFileName;
-        MT_PROPERTY()
-        FBXModelHandle meshHandle;
-        MT_PROPERTY()
-        GameObjectLayerFlag layer;
-        MT_PROPERTY()
-        ShaderType shaderType;
-    protected:
-        void OnPostRestore() override;
-    private:
-        int frame_;
-    };
+		/// <summary>
+		/// 使用するシェーダーの種類を返す
+		/// </summary>
+		/// <returns></returns>
+		ShaderType GetShaderType() const
+		{
+			return shaderType;
+		}
+		/// <summary>
+		/// 描画可能かチェック
+		/// </summary>
+		// bool CanRender() const { return meshHandle != INVALID_HANDLE; }
 
-    using MeshRendererMemento = ComponentMemento<MeshRenderer, MeshRendererState>;
-}
+		GameObjectLayerFlag GetLayer() const override
+		{
+			return layer;
+		}
+		void OnChangeMeshFileName();
+		void Render() const override;
+		bool CanRender() const override
+		{
+			return meshHandle != INVALID_HANDLE;
+		};
+		void SetFrame(int _frame);
+		MT_PROPERTY()
+		std::string meshFileName;
+		MT_PROPERTY()
+		FBXModelHandle meshHandle;
+		MT_PROPERTY()
+		GameObjectLayerFlag layer;
+		MT_PROPERTY()
+		ShaderType shaderType;
+
+	  protected:
+		void OnPostRestore() override;
+
+	  private:
+		int frame_;
+	};
+
+	using MeshRendererMemento = ComponentMemento<MeshRenderer, MeshRendererState>;
+} // namespace mtgb

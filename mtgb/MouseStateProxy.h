@@ -17,4 +17,4 @@ namespace mtgb
 
 		void UpdateInputData(const _DIMOUSESTATE& _ms);
 	};
-}
+} // namespace mtgb

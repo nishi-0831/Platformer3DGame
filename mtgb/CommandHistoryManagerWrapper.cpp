@@ -11,13 +11,14 @@ namespace mtgb
 	NamedCommandHistory::NamedCommandHistory(ICommandHistory* _inner)
 		: inner_{_inner}
 	{
-
 	}
 
 	void NamedCommandHistory::ExecuteCommand(Command* _command)
 	{
-		if (inner_ == nullptr) return;
-		if (_command == nullptr) return;
+		if (inner_ == nullptr)
+			return;
+		if (_command == nullptr)
+			return;
 		inner_->ExecuteCommand(_command);
 
 		commandHistoryNames_.push_back("Execute:" + _command->Name());
@@ -37,10 +38,12 @@ namespace mtgb
 
 	void NamedCommandHistory::UndoCommand()
 	{
-		if (inner_ == nullptr) return;
+		if (inner_ == nullptr)
+			return;
 		inner_->UndoCommand();
 
-		if (undoNames_.empty()) return;
+		if (undoNames_.empty())
+			return;
 		commandHistoryNames_.push_back("Undo:" + undoNames_.back());
 		// undo -> redo ‚Ö–¼‘O‚ðˆÚ“®
 		redoNames_.push_back(undoNames_.back());
@@ -59,10 +62,12 @@ namespace mtgb
 
 	void NamedCommandHistory::RedoCommand()
 	{
-		if (inner_ == nullptr) return;
+		if (inner_ == nullptr)
+			return;
 		inner_->RedoCommand();
 
-		if (redoNames_.empty()) return;
+		if (redoNames_.empty())
+			return;
 		commandHistoryNames_.push_back("Redo:" + redoNames_.back());
 		undoNames_.push_back(redoNames_.back());
 		redoNames_.pop_back();
@@ -80,7 +85,8 @@ namespace mtgb
 
 	void NamedCommandHistory::ClearAllStack()
 	{
-		if (inner_ == nullptr) return;
+		if (inner_ == nullptr)
+			return;
 		inner_->ClearAllStack();
 		commandHistoryNames_.clear();
 		undoNames_.clear();
@@ -95,7 +101,7 @@ namespace mtgb
 		ImGui::Separator();
 
 		ImGui::Text("Undo (%zu)", undoNames_.size());
-		for (int i = static_cast<int>( undoNames_.size() - 1); i >= 0; --i)
+		for (int i = static_cast<int>(undoNames_.size() - 1); i >= 0; --i)
 		{
 			ImGui::BulletText("%s", undoNames_[i].c_str());
 		}
@@ -117,7 +123,7 @@ namespace mtgb
 		ImGui::EndChild();
 	}
 	void NamedCommandHistory::ClearRedoStack()
-	{		
+	{
 		redoNames_.clear();
 	}
-}
+} // namespace mtgb

@@ -2,27 +2,30 @@
 #include "DeleteGameObjectCommand.h"
 #include "SceneSystem.h"
 #include "EntityManager.h"
-mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(GameObject* pGameObj, const GameObjectFactory& _gameObjectFactory, const ComponentFactory& _componentFactory)
-	: componentFactory_{ _componentFactory }
-	, gameObjectFactory_{ _gameObjectFactory }
-	, targetEntityId_{ INVALID_ENTITY }
-	, name_{ " Unknown" }
-	, layerFlag_{ AllLayer() }
-	, tag_{ GameObjectTag::Untagged }
-	, isNotCalledStart_{ false }
-	, typeName_{ "Unknown" }
+mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(GameObject* pGameObj,
+													   const GameObjectFactory& _gameObjectFactory,
+													   const ComponentFactory& _componentFactory)
+	: componentFactory_{_componentFactory}
+	, gameObjectFactory_{_gameObjectFactory}
+	, targetEntityId_{INVALID_ENTITY}
+	, name_{" Unknown"}
+	, layerFlag_{AllLayer()}
+	, tag_{GameObjectTag::Untagged}
+	, isNotCalledStart_{false}
+	, typeName_{"Unknown"}
 {
 	if (pGameObj == nullptr)
 		return;
 
-	name_ = pGameObj->GetName();
+	name_	   = pGameObj->GetName();
 	layerFlag_ = pGameObj->GetLayerFlag();
-	tag_ = pGameObj->GetTag();
-	typeName_ = pGameObj->GetClassTypeName();
+	tag_	   = pGameObj->GetTag();
+	typeName_  = pGameObj->GetClassTypeName();
 
 	targetEntityId_ = pGameObj->GetEntityId();
 	// IDに割り当てられているコンポーネントプールの型情報を取得
-	std::optional<std::vector<std::type_index>> cpTypes = Game::System<ComponentRegistry>().GetComponentPoolTypes(targetEntityId_);
+	std::optional<std::vector<std::type_index>> cpTypes =
+		Game::System<ComponentRegistry>().GetComponentPoolTypes(targetEntityId_);
 	if (cpTypes.has_value() == false)
 		return;
 

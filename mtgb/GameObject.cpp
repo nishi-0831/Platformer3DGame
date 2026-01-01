@@ -16,35 +16,28 @@ mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 	layerFlag_{ _desc.layerFlag },
 	tag_{ _desc.tag }
 {
-	entityId_ = Game::System<EntityManager>().CreateEntity();
+	entityId_		  = Game::System<EntityManager>().CreateEntity();
 	isNotCalledStart_ = true;
 
-	Transform* pTransform_{ Component<Transform>() };
+	Transform* pTransform_{Component<Transform>()};
 	pTransform_->position = _desc.position;
-	pTransform_->rotate = _desc.rotate;
-	pTransform_->scale = _desc.scale;
+	pTransform_->rotate	  = _desc.rotate;
+	pTransform_->scale	  = _desc.scale;
 }
 
 mtgb::GameObject::GameObject()
-	: status_
-	{
-		.isActive_ = true,
-		.callUpdate_ = true,
-		.callDraw_ = true,
-		.toDestroy_ = FALSE
-	}
+	: status_{.isActive_ = true, .callUpdate_ = true, .callDraw_ = true, .toDestroy_ = FALSE}
 	, layerFlag_{AllLayer()}
 	, tag_{GameObjectTag::Untagged}
 {
-	entityId_ = Game::System<EntityManager>().CreateEntity();
+	entityId_		  = Game::System<EntityManager>().CreateEntity();
 	isNotCalledStart_ = true;
-
 }
 
 mtgb::GameObject::GameObject(const GameObject& _other)
-	:Entity()
-	,status_{_other.status_}
-	,componentsFlag_{_other.componentsFlag_}
+	: Entity()
+	, status_{_other.status_}
+	, componentsFlag_{_other.componentsFlag_}
 	, tag_{GameObjectTag::Untagged}
 {
 	isNotCalledStart_ = true;
@@ -52,17 +45,16 @@ mtgb::GameObject::GameObject(const GameObject& _other)
 
 mtgb::GameObject::~GameObject()
 {
-	massert(status_.toDestroy_ &&
-		"ゲームオブジェクトを削除するときは直接deleteを呼び出さないでください！");
+	massert(status_.toDestroy_ && "ゲームオブジェクトを削除するときは直接deleteを呼び出さないでください！");
 }
 
 nlohmann::json mtgb::GameObject::Serialize() const
 {
 	nlohmann::json j{};
-	j["name"] = GetName();
-	j["classType"] = mtgb::ExtractClassName(GetName());
-	j["tag"] = GetTag();
-	j["EntityId"] = entityId_;
+	j["name"]			= GetName();
+	j["classType"]		= mtgb::ExtractClassName(GetName());
+	j["tag"]			= GetTag();
+	j["EntityId"]		= entityId_;
 	auto componentTypes = Game::System<ComponentRegistry>().GetComponentTypes(entityId_);
 	if (componentTypes.has_value() == false)
 	{
@@ -70,10 +62,11 @@ nlohmann::json mtgb::GameObject::Serialize() const
 	}
 	for (const auto& typeIdx : (*componentTypes).get())
 	{
-		std::optional<std::type_index> componentPoolType = Game::System<ComponentRegistry>().GetComponentPoolType(typeIdx);
+		std::optional<std::type_index> componentPoolType =
+			Game::System<ComponentRegistry>().GetComponentPoolType(typeIdx);
 		if (componentPoolType.has_value() == false)
 			continue;
-		
+
 		nlohmann::json componentJson = Game::SerializeComponent(componentPoolType.value(), entityId_);
 		j.merge_patch(componentJson);
 	}
@@ -83,7 +76,7 @@ nlohmann::json mtgb::GameObject::Serialize() const
 void mtgb::GameObject::Deserialize(const nlohmann::json& _json)
 {
 	name_ = _json.at("name").get<std::string>();
-	tag_ = _json.at("tag").get<GameObjectTag>();
+	tag_  = _json.at("tag").get<GameObjectTag>();
 }
 
 GameObject* mtgb::GameObject::FindGameObject(GameObjectTag _tag)

@@ -18,43 +18,43 @@ namespace mtgb
 	class GameObject;
 	class Transform;
 	struct Vector3;
-	
+
 	class ImGuiRenderer final : public ISystem
 	{
-	public:
+	  public:
 		enum class WindowFlag
 		{
 			None,
 			NoMoveWhenHovered // マウスカーソルがウィンドウ内にあるとき移動禁止
 		};
-	public:
-	
+
+	  public:
 		ImGuiRenderer();
 		~ImGuiRenderer();
 		void Initialize() override;
 		void Update() override;
 		void BeginFrame();
 		void BeginImGuizmoFrame();
-		
-		void Begin(const char* _str, bool* _isOpen = NULL ,WindowFlag _flag = WindowFlag::None);
-		
+
+		void Begin(const char* _str, bool* _isOpen = NULL, WindowFlag _flag = WindowFlag::None);
+
 		/// <summary>
 		/// ImGuizmoウィンドウを描画するためにRTVをセット
 		/// </summary>
 		void SetImGuizmoRenderTargetView();
 
 		void Draw();
-		
+
 		void EndFrame();
 		void SetDrawList();
-		
+
 		void RenderSceneView();
 		void UpdateGameViewRect();
 		void End();
 		void Release();
 
 		/// <summary>
-		/// 
+		///
 		/// </summary>
 		void ResetComPtrs();
 		/// <summary>
@@ -63,9 +63,13 @@ namespace mtgb
 		/// <param name="width">新しい幅</param>
 		/// <param name="height">新しい高さ</param>
 		void OnResize(UINT width, UINT height);
-		
-		D3D11_VIEWPORT GetViewport(){ return viewport_; }
-	private:
+
+		D3D11_VIEWPORT GetViewport()
+		{
+			return viewport_;
+		}
+
+	  private:
 		void CreateD3DResources();
 		UINT winWidth_, winHeight_;
 
@@ -74,7 +78,7 @@ namespace mtgb
 		ImVec2 gameViewSize_;
 		bool gameViewRectValid_;
 
-		//ImGuiIO io;
+		// ImGuiIO io;
 		ComPtr<ID3D11RenderTargetView> pRenderTargetView_;
 		ComPtr<ID3D11ShaderResourceView> pSRV_;
 		ComPtr<ID3D11Texture2D> pSRVTexture_;
@@ -83,4 +87,4 @@ namespace mtgb
 		ComPtr<ID3D11DepthStencilView> pDepthStencilView_;
 		D3D11_VIEWPORT viewport_;
 	};
-}
+} // namespace mtgb

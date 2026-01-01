@@ -5,7 +5,6 @@
 #include <map>
 #include <functional>
 
-
 struct IXAudio2;
 struct IXAudio2MasteringVoice;
 struct IXAudio2SourceVoice;
@@ -20,7 +19,7 @@ namespace mtgb
 
 	class Audio : public ISystem
 	{
-	public:
+	  public:
 		Audio();
 		~Audio();
 
@@ -41,11 +40,11 @@ namespace mtgb
 		/// <param name="_pWaveData">フォーマット用のWaveData</param>
 		void CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, const WaveData* _pWaveData);
 
-	private:
-		IXAudio2* pXAudio2_;                       // XAudio2のインタフェース
-		IXAudio2MasteringVoice* pMasteringVoice_;  // 主ボイス
+	  private:
+		IXAudio2* pXAudio2_;					  // XAudio2のインタフェース
+		IXAudio2MasteringVoice* pMasteringVoice_; // 主ボイス
 
-	public:
+	  public:
 		/// <summary>
 		/// 音声ファイルをロードする
 		/// </summary>
@@ -68,7 +67,7 @@ namespace mtgb
 		/// </summary>
 		static void Clear();
 
-	private:
+	  private:
 		/// <summary>
 		/// 指定ハンドルの音声をロードする
 		/// </summary>
@@ -83,9 +82,9 @@ namespace mtgb
 		/// <param name="_oneShot">追加する単発音声</param>
 		static void EnqueueOneShot(AudioOneShot* _pOneShot);
 
-	private:
-		static AudioHandle handleCounter_;                      // ハンドラ加算用
-		static std::map<AudioHandle, AudioClip*> pAudioClips_;  // ハンドルとAudioClipの対応付map
-		static std::list<AudioOneShot*> pOneShotQueue_;         // 単発音声のキュー
+	  private:
+		static AudioHandle handleCounter_;					   // ハンドラ加算用
+		static std::map<AudioHandle, AudioClip*> pAudioClips_; // ハンドルとAudioClipの対応付map
+		static std::list<AudioOneShot*> pOneShotQueue_;		   // 単発音声のキュー
 	};
-}
+} // namespace mtgb

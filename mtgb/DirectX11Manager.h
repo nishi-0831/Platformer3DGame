@@ -3,14 +3,14 @@
 #include <string>
 #include <wrl/client.h>
 #include "Vector2Int.h"
-#include <dxgi1_2.h> 
+#include <dxgi1_2.h>
 #include <vector>
 #include <optional>
 #include "MonitorInfo.h"
 
-#pragma comment(lib, "d3d11.lib")  // DirectX11のライブラリ
+#pragma comment(lib, "d3d11.lib") // DirectX11のライブラリ
 #pragma comment(lib, "dxgi.lib")
-#pragma comment(lib, "d3dcompiler.lib")  // シェーダコンパイラ用ライブラリ
+#pragma comment(lib, "d3dcompiler.lib") // シェーダコンパイラ用ライブラリ
 
 using Microsoft::WRL::ComPtr;
 struct D3D11_INPUT_ELEMENT_DESC;
@@ -30,7 +30,7 @@ namespace mtgb
 
 	class DirectX11Manager : public ISystem
 	{
-	public:
+	  public:
 		DirectX11Manager();
 		~DirectX11Manager();
 
@@ -39,24 +39,26 @@ namespace mtgb
 
 		void InitializeCommonResources();
 		void CreateDXGISurface(IDXGISwapChain1* pSwapChain1, IDXGISurface** ppDXGISurface);
-		
-		//void CreateOutput(int index, IDXGIOutput** ppOutput);
+
+		// void CreateOutput(int index, IDXGIOutput** ppOutput);
 		void CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, IDXGISwapChain1** ppSwapChain1);
 		void CreateRenderTargetView(IDXGISwapChain1* pSwapChain1, ID3D11RenderTargetView** ppRenderTargetView);
 		void CreateViewport(const Vector2Int& size, D3D11_VIEWPORT& viewport);
-		void CreateDepthStencilAndDepthStencilView(const Vector2Int bufSize, ID3D11Texture2D** ppDepthStencil, ID3D11DepthStencilView** ppDepthStencilView);
-
+		void CreateDepthStencilAndDepthStencilView(const Vector2Int bufSize,
+												   ID3D11Texture2D** ppDepthStencil,
+												   ID3D11DepthStencilView** ppDepthStencilView);
 
 		void ChangeViewport(const D3D11_VIEWPORT& viewport);
-		void ChangeRenderTargets(ComPtr<ID3D11RenderTargetView> pRenderTargetView, ComPtr<ID3D11DepthStencilView> pDepthStencilView);
+		void ChangeRenderTargets(ComPtr<ID3D11RenderTargetView> pRenderTargetView,
+								 ComPtr<ID3D11DepthStencilView> pDepthStencilView);
 		void ChangeSwapChain(ComPtr<IDXGISwapChain1> pSwapChain1);
-				
+
 		void ClearState();
 		/// <summary>
 		/// ClearState後に必要なデフォルト状態を再設定
 		/// </summary>
 		void SetDefaultStates();
-		
+
 		/// <summary>
 		/// 利用可能なモニターを自動で割り当てる
 		/// </summary>
@@ -67,7 +69,8 @@ namespace mtgb
 		int GetAvailableMonitorCount() const;
 
 		void Release() override;
-	private:
+
+	  private:
 		std::vector<DXGI_ADAPTER_DESC1> adaptersDesc_;
 		/// <summary>
 		/// 利用可能なモニターを列挙する
@@ -86,11 +89,10 @@ namespace mtgb
 		/// <param name="_pHLSLLayout">入力情報配列</param>
 		/// <param name="_layoutLength">入力情報配列の要素数</param>
 		/// <param name="_pRasterizerDesc">ラスタライザの設定</param>
-		void CompileShader(
-			const std::wstring& _fileName,
-			const ShaderType& _type,
-			const D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,
-			const unsigned int _layoutLength,
-			const CD3D11_RASTERIZER_DESC* _pRasterizerDesc);
+		void CompileShader(const std::wstring& _fileName,
+						   const ShaderType& _type,
+						   const D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,
+						   const unsigned int _layoutLength,
+						   const CD3D11_RASTERIZER_DESC* _pRasterizerDesc);
 	};
-}
+} // namespace mtgb

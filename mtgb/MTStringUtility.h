@@ -26,7 +26,7 @@ namespace mtgb
 	/// <returns></returns>
 	inline std::wstring ToWString(const std::string& _string)
 	{
-		return { _string.begin(), _string.end() };
+		return {_string.begin(), _string.end()};
 	}
 
 	/// <summary>
@@ -36,7 +36,7 @@ namespace mtgb
 	/// <returns></returns>
 	inline std::wstring ToWString(const std::string_view& _stringView)
 	{
-		return { _stringView.begin(), _stringView.end() };
+		return {_stringView.begin(), _stringView.end()};
 	}
 
 	/// <summary>
@@ -60,7 +60,7 @@ namespace mtgb
 	/// </summary>
 	/// <param name="_string">変換する文字列</param>
 	/// <returns></returns>
-	std::string MultiToUTF8(const std::string & _string);
+	std::string MultiToUTF8(const std::string& _string);
 	/// <summary>
 	/// マルチバイト文字列からワイド文字列へ変換
 	/// </summary>
@@ -75,8 +75,8 @@ namespace mtgb
 	std::string WideToUTF8(const std::wstring& _wstring);
 	std::string WideToUTF8(const wchar_t* _wstring);
 
-	std::string UTF8ToMulti(const std::string & _string);
-	std::string UTF8ToMulti(const char * _string);
+	std::string UTF8ToMulti(const std::string& _string);
+	std::string UTF8ToMulti(const char* _string);
 
 	/// <summary>
 	/// インスタンス名から生成番号を削除し、クラス名を返す
@@ -84,4 +84,4 @@ namespace mtgb
 	/// <param name="_fullName"> インスタンス名</param>
 	/// <returns></returns>
 	std::string ExtractClassName(const std::string& _fullName);
-}
+} // namespace mtgb

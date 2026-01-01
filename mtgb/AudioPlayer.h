@@ -19,16 +19,16 @@ namespace mtgb
 	/// <summary>
 	/// âπê∫Ççƒê∂Ç∑ÇÈÇ‚Ç¬
 	/// </summary>
-	class AudioPlayer : public IComponent< AudioPlayerCP,AudioPlayer> , public ISerializableObject
+	class AudioPlayer : public IComponent<AudioPlayerCP, AudioPlayer>, public ISerializableObject
 	{
 		friend AudioPlayerCP;
 
-	public:
+	  public:
 		MT_GENERATED_BODY()
 
 		using IComponent::IComponent;
 
-		//AudioPlayer();
+		// AudioPlayer();
 		~AudioPlayer();
 
 		inline AudioPlayer& operator=(const AudioPlayer& _other)
@@ -37,7 +37,7 @@ namespace mtgb
 			{
 				return *this;
 			}
-			this->hAudio = _other.hAudio;
+			this->hAudio		= _other.hAudio;
 			this->pSourceVoice_ = _other.pSourceVoice_;
 			OnPostRestore();
 			return *this;
@@ -59,9 +59,10 @@ namespace mtgb
 		void OnPostRestore() override;
 		MT_PROPERTY()
 		AudioHandle hAudio;
-	private:
-		IXAudio2SourceVoice* pSourceVoice_{ nullptr };
-		AudioClip* pAudioClip_{ nullptr };
+
+	  private:
+		IXAudio2SourceVoice* pSourceVoice_{nullptr};
+		AudioClip* pAudioClip_{nullptr};
 	};
 
-}
+} // namespace mtgb

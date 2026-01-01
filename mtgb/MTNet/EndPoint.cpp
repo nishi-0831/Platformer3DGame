@@ -2,10 +2,10 @@
 #include <WinSock2.h>
 #include <WS2tcpip.h>
 
-mtnet::IPEndPoint::IPEndPoint(const IPAddress& _ipAddress, PortNumber _portNumber) :
-	addressInfo_{},
-	ipAddress_{ _ipAddress },
-	portNumber_{ _portNumber }
+mtnet::IPEndPoint::IPEndPoint(const IPAddress& _ipAddress, PortNumber _portNumber)
+	: addressInfo_{}
+	, ipAddress_{_ipAddress}
+	, portNumber_{_portNumber}
 {
 }
 
@@ -20,11 +20,11 @@ mtnet::IPAddress mtnet::IPEndPoint::GetIPAddress()
 
 bool mtnet::IPEndPoint::TryGenerateSockAddrIn(SOCKADDR_IN* _addr) const
 {
-	std::istringstream addressString{ ipAddress_ };
+	std::istringstream addressString{ipAddress_};
 	std::string pickString{};
 
 	_addr->sin_family = AF_INET;
-	_addr->sin_port = htons(portNumber_);
+	_addr->sin_port	  = htons(portNumber_);
 
 	if (!std::getline(addressString, pickString, '.'))
 	{
@@ -52,7 +52,7 @@ bool mtnet::IPEndPoint::TryGenerateSockAddrIn(SOCKADDR_IN* _addr) const
 
 bool mtnet::IPEndPoint::TryGetOctets(byte* _octet1, byte* _octet2, byte* _octet3, byte* _octet4) const
 {
-	std::istringstream addressString{ ipAddress_ };
+	std::istringstream addressString{ipAddress_};
 	std::string pickString{};
 
 	if (!std::getline(addressString, pickString, '.'))

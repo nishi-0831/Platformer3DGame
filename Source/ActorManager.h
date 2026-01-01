@@ -5,7 +5,7 @@
 
 class ActorManager : public ISystem
 {
-public:
+  public:
 	// ISystem ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
 	void Initialize() override;
 	void Update() override;
@@ -17,6 +17,7 @@ public:
 	void RegisterActor(IActor* _pActor);
 	void UnregisterActor(EntityId _id);
 	IActor* GetActor(EntityId _id);
-private:
+
+  private:
 	std::list<IActor*> actors_;
 };

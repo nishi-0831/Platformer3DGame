@@ -5,11 +5,11 @@ namespace mtgb
 {
 	class AssetsManager : public ISystem
 	{
-	public:
+	  public:
 		AssetsManager();
 		~AssetsManager();
 
 		void Initialize() override;
 		void Update() override;
 	};
-}
+} // namespace mtgb

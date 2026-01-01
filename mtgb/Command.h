@@ -3,14 +3,14 @@
 #include "cmtgb.h"
 class Command
 {
-public:
+  public:
 	virtual ~Command() = default;
 
 	/// <summary>
 	/// 実行
 	/// </summary>
 	virtual void Execute() = 0;
-	
+
 	/// <summary>
 	/// 取り消し
 	/// </summary>
@@ -19,7 +19,10 @@ public:
 	/// <summary>
 	/// 再実行(デフォルトではExecuteと同じ)
 	/// </summary>
-	virtual void Redo() { Execute(); }
+	virtual void Redo()
+	{
+		Execute();
+	}
 
 	/// <summary>
 	/// <para> コマンドの名前 (表示用) </para>

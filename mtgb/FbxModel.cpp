@@ -4,39 +4,36 @@
 #include "Fbx.h"
 #include "MTAssert.h"
 
-
-mtgb::FbxModel::FbxModel() :
-	animationSpeed_{ 1.0f },
-	startFrame_{ 0 },
-	endFrame_{ 0 },
-	frameRate_{ FbxTime::EMode::eFrames60 },
-	pFbxScene_{ nullptr },
-	unitScaleFactor_{ 1.0 }
+mtgb::FbxModel::FbxModel()
+	: animationSpeed_{1.0f}
+	, startFrame_{0}
+	, endFrame_{0}
+	, frameRate_{FbxTime::EMode::eFrames60}
+	, pFbxScene_{nullptr}
+	, unitScaleFactor_{1.0}
 {
 }
 
 mtgb::FbxModel::~FbxModel()
 {
-	
 }
 
 void mtgb::FbxModel::Load(const std::string& _fileName)
 {
-	massert(pFbxScene_ == nullptr  // まだ読み込まれていない
-		&& "既にFbxModelは読み込まれているよ！ @FbxModel::Load");
+	massert(pFbxScene_ == nullptr // まだ読み込まれていない
+			&& "既にFbxModelは読み込まれているよ！ @FbxModel::Load");
 
-	FbxManager* pFbxManager{ Game::System<Fbx>().GetFbxManager() };
+	FbxManager* pFbxManager{Game::System<Fbx>().GetFbxManager()};
 
 	pFbxScene_ = FbxScene::Create(pFbxManager, "fbxscene");
-	
 
-	FbxString fileName{ _fileName.c_str() };
-	FbxImporter* fbxImporter{ FbxImporter::Create(pFbxManager, "imp") };
+	FbxString fileName{_fileName.c_str()};
+	FbxImporter* fbxImporter{FbxImporter::Create(pFbxManager, "imp")};
 
 	FbxIOSettings* ios = FbxIOSettings::Create(pFbxManager, IOSROOT);
 
 	pFbxManager->SetIOSettings(ios);
-	if (!fbxImporter->Initialize(fileName.Buffer(), -1, ios)) 
+	if (!fbxImporter->Initialize(fileName.Buffer(), -1, ios))
 	{
 		MessageBoxA(NULL, fbxImporter->GetStatus().GetErrorString(), "FBX Import Error", MB_OK);
 		// もしくはログ出力
@@ -44,18 +41,17 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 
 	fileName_ = _fileName;
 
-
 	char str[MAX_PATH]{};
 	GetCurrentDirectory(MAX_PATH, str);
 
-	bool succeed{ false };
+	bool succeed{false};
 	succeed = fbxImporter->Initialize(fileName.Buffer(), -1, pFbxManager->GetIOSettings());
 	massert(succeed && "fbxImporterの初期化に失敗した @Fbx::Load");
 
 	succeed = fbxImporter->Import(pFbxScene_);
 	massert(succeed && "読み込みに失敗した @Fbx::Load");
 
-	SAFE_DESTROY(fbxImporter);  // インポータは解放
+	SAFE_DESTROY(fbxImporter); // インポータは解放
 
 	// DirectXの座標系に変換
 	FbxAxisSystem directXLeftHanded(FbxAxisSystem::eYAxis, FbxAxisSystem::eParityOdd, FbxAxisSystem::eLeftHanded);
@@ -63,7 +59,7 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	directXLeftHanded.DeepConvertScene(pFbxScene_);
 
 	// 3角ポリゴン
-	FbxGeometryConverter geometryConverter{ pFbxManager };
+	FbxGeometryConverter geometryConverter{pFbxManager};
 
 	// アニメーションタイムモードの取得
 	frameRate_ = pFbxScene_->GetGlobalSettings().GetTimeMode();
@@ -80,26 +76,27 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	SetCurrentDirectory(directory);
 
 	int animStackCount_ = pFbxScene_->GetSrcObjectCount<FbxAnimStack>();
-	int meshCount{ pFbxScene_->GetSrcObjectCount<FbxMesh>() };
+	int meshCount{pFbxScene_->GetSrcObjectCount<FbxMesh>()};
 	for (int i = 0; i < meshCount; i++)
 	{
 		FbxMesh* pMesh = pFbxScene_->GetSrcObject<FbxMesh>(i);
-		if (pMesh == nullptr) continue;
+		if (pMesh == nullptr)
+			continue;
 
 		FbxNode* pNode = pMesh->GetNode();
-		if (pNode == nullptr) continue;
+		if (pNode == nullptr)
+			continue;
 
 		// 作成前にノードのメッシュ有無確認
-		if (pNode->GetMesh() == nullptr) continue;
+		if (pNode->GetMesh() == nullptr)
+			continue;
 
-		FbxParts* pParts = new FbxParts(pNode,unitScaleFactor_);
+		FbxParts* pParts = new FbxParts(pNode, unitScaleFactor_);
 		pParts->Initialize();
 		pParts_.push_back(pParts);
 	}
 
 	SetCurrentDirectory(defaultCurrentDirectory);
-
-
 }
 
 void mtgb::FbxModel::Draw(const Transform& _transform, int _frame)
@@ -115,7 +112,7 @@ void mtgb::FbxModel::Draw(const Transform& _transform, int _frame)
 		{
 			pParts_[i]->DrawSkinAnimation(_transform, time);
 		}
-		else  // メッシュアニメーション
+		else // メッシュアニメーション
 		{
 			pParts_[i]->DrawMeshAnimation(_transform, time);
 		}
@@ -156,23 +153,23 @@ mtgb::Vector3 mtgb::FbxModel::GetAnimBonePosition(std::string _boneName)
 void mtgb::FbxModel::CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _pPartsList)
 {
 	// ノードの属性情報
-	FbxNodeAttribute* pNodeAttribute{ _pNode->GetNodeAttribute() };
+	FbxNodeAttribute* pNodeAttribute{_pNode->GetNodeAttribute()};
 
 	if (pNodeAttribute == nullptr)
 	{
-		return;  // ノードが nullptr なら回帰
+		return; // ノードが nullptr なら回帰
 	}
 
 	// メッシュの情報が入っているなら
 	if (pNodeAttribute->GetAttributeType() == FbxNodeAttribute::eMesh)
 	{
-		FbxParts* pParts = new FbxParts(_pNode,unitScaleFactor_);
+		FbxParts* pParts = new FbxParts(_pNode, unitScaleFactor_);
 		pParts->Initialize();
 		_pPartsList.push_back(pParts);
 	}
 
 	// 子の数
-	int childCount{ _pNode->GetChildCount() };
+	int childCount{_pNode->GetChildCount()};
 
 	// 1つずつチェック
 	for (int i = 0; i < childCount; i++)
@@ -185,4 +182,3 @@ std::optional<FbxAnimationController> mtgb::FbxModel::GetAnimationController()
 {
 	return FbxAnimationController(pFbxScene_);
 }
-

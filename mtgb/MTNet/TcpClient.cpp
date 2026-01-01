@@ -2,8 +2,8 @@
 
 namespace mtnet
 {
-	mtnet::TcpClient::TcpClient(const IPEndPoint& _local) :
-		Socket{ _local }
+	mtnet::TcpClient::TcpClient(const IPEndPoint& _local)
+		: Socket{_local}
 	{
 		if (TryStartup() == false)
 		{
@@ -40,4 +40,4 @@ namespace mtnet
 			return -1;
 		}
 	}
-}
+} // namespace mtnet

@@ -10,10 +10,9 @@
 
 namespace mtgb
 {
-	template<typename T>
-	class AddComponentCommandGeneric : public Command
+	template <typename T> class AddComponentCommandGeneric : public Command
 	{
-	public:
+	  public:
 		AddComponentCommandGeneric(T& _component);
 		~AddComponentCommandGeneric();
 		// Command ‚ð‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
@@ -38,18 +37,17 @@ namespace mtgb
 		{
 			return memento_->GetEntityId();
 		}
-	private:
+
+	  private:
 		T::Memento* memento_;
 	};
-	template<typename T>
+	template <typename T>
 	inline AddComponentCommandGeneric<T>::AddComponentCommandGeneric(T& _component)
-		: memento_{ _component.SaveToMemento() }
+		: memento_{_component.SaveToMemento()}
 	{
-		
 	}
-	template<typename T>
-	inline AddComponentCommandGeneric<T>::~AddComponentCommandGeneric()
+	template <typename T> inline AddComponentCommandGeneric<T>::~AddComponentCommandGeneric()
 	{
 		SAFE_DELETE(memento_);
 	}
-}
+} // namespace mtgb

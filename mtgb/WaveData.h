@@ -11,8 +11,8 @@ namespace mtgb
 		WaveData();
 		~WaveData();
 
-		WAVEFORMATEX waveFormat;  // フォーマット情報
-		byte* pBuffer;            // データバッファポインタ配列
-		size_t bufferSize;        // データバッファサイズ
+		WAVEFORMATEX waveFormat; // フォーマット情報
+		byte* pBuffer;			 // データバッファポインタ配列
+		size_t bufferSize;		 // データバッファサイズ
 	};
-}
+} // namespace mtgb

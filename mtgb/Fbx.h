@@ -22,7 +22,7 @@ namespace mtgb
 	{
 		friend class FbxParts;
 
-	public:
+	  public:
 		Fbx();
 		~Fbx();
 
@@ -33,8 +33,10 @@ namespace mtgb
 		/// FbxManagerを取得する
 		/// </summary>
 		/// <returns>FbxManagerのポインタ</returns>
-		inline FbxManager* GetFbxManager() { return pFbxManager_; }
-		
+		inline FbxManager* GetFbxManager()
+		{
+			return pFbxManager_;
+		}
 
 		/// <summary>
 		/// Fbxファイルを読み込みする
@@ -52,12 +54,11 @@ namespace mtgb
 		/// </summary>
 		void Release();
 		static std::optional<FbxAnimationController> GetAnimationController(FBXModelHandle _hModel);
-		
 
-	private:
-		FbxManager* pFbxManager_;  // Fbxファイルを扱う本体
+	  private:
+		FbxManager* pFbxManager_; // Fbxファイルを扱う本体
 
-		FBXModelHandle handleCounter_;              // ハンドラの加算用
-		std::map<FBXModelHandle, FbxModel*> pFbxModels_;  // 読み込まれたスプライト
+		FBXModelHandle handleCounter_;					 // ハンドラの加算用
+		std::map<FBXModelHandle, FbxModel*> pFbxModels_; // 読み込まれたスプライト
 	};
-}
+} // namespace mtgb

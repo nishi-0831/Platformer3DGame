@@ -14,14 +14,14 @@ namespace mtgb
 	struct GAME_OBJECT_DESC
 	{
 		std::string name{};
-		Vector3 position{ Vector3::Zero() };
-		Vector3 scale{ Vector3::One() };
-		Quaternion rotate{ Quaternion::Identity() };
-		GameObjectLayerFlag layerFlag{ GameObjectLayerFlag::New().BeginEdit().OnAll().EndEdit() };
-		GameObjectTag tag{ GameObjectTag::Untagged };
-		bool isActive{ true };
-		bool callUpdate{ true };
-		bool callDraw{ true };
+		Vector3 position{Vector3::Zero()};
+		Vector3 scale{Vector3::One()};
+		Quaternion rotate{Quaternion::Identity()};
+		GameObjectLayerFlag layerFlag{GameObjectLayerFlag::New().BeginEdit().OnAll().EndEdit()};
+		GameObjectTag tag{GameObjectTag::Untagged};
+		bool isActive{true};
+		bool callUpdate{true};
+		bool callDraw{true};
 		// padding 10byte
 	};
 
@@ -34,32 +34,74 @@ namespace mtgb
 	/// </summary>
 	class GameObjectBuilder
 	{
-	public:
+	  public:
 		/// <summary>
 		/// <para>以下のように使う</para>
 		/// <para>GameObjectBuilder().SetName("Name").Set...().Build()</para>
 		/// </summary>
 		GameObjectBuilder()
-		{}
+		{
+		}
 		~GameObjectBuilder()
-		{}
+		{
+		}
 
-		GameObjectBuilder& SetName(const std::string& _name)              { desc_.name = _name;             return *this; }
-		GameObjectBuilder& SetPosition(const Vector3& _position)          { desc_.position = _position;     return *this; }
-		GameObjectBuilder& SetRotate(const Quaternion& _rotate)           { desc_.rotate = _rotate;         return *this; }
-		GameObjectBuilder& SetScale(const Vector3& _scale)                { desc_.scale = _scale;           return *this; }
-		GameObjectBuilder& SetIsActive(const bool _isActive)              { desc_.isActive = _isActive;     return *this; }
-		GameObjectBuilder& SetCallUpdate(const bool _callUpdate)          { desc_.callUpdate = _callUpdate; return *this; }
-		GameObjectBuilder& SetCallDraw(const bool _callDraw)              { desc_.callDraw = _callDraw;     return *this; }
-		GameObjectBuilder& SetLayerFlag(const GameObjectLayerFlag& _flag) { desc_.layerFlag = _flag;        return *this; }
-		GameObjectBuilder& SetTag(const GameObjectTag& _tag) { desc_.tag = _tag; return *this; }
+		GameObjectBuilder& SetName(const std::string& _name)
+		{
+			desc_.name = _name;
+			return *this;
+		}
+		GameObjectBuilder& SetPosition(const Vector3& _position)
+		{
+			desc_.position = _position;
+			return *this;
+		}
+		GameObjectBuilder& SetRotate(const Quaternion& _rotate)
+		{
+			desc_.rotate = _rotate;
+			return *this;
+		}
+		GameObjectBuilder& SetScale(const Vector3& _scale)
+		{
+			desc_.scale = _scale;
+			return *this;
+		}
+		GameObjectBuilder& SetIsActive(const bool _isActive)
+		{
+			desc_.isActive = _isActive;
+			return *this;
+		}
+		GameObjectBuilder& SetCallUpdate(const bool _callUpdate)
+		{
+			desc_.callUpdate = _callUpdate;
+			return *this;
+		}
+		GameObjectBuilder& SetCallDraw(const bool _callDraw)
+		{
+			desc_.callDraw = _callDraw;
+			return *this;
+		}
+		GameObjectBuilder& SetLayerFlag(const GameObjectLayerFlag& _flag)
+		{
+			desc_.layerFlag = _flag;
+			return *this;
+		}
+		GameObjectBuilder& SetTag(const GameObjectTag& _tag)
+		{
+			desc_.tag = _tag;
+			return *this;
+		}
 
 		/// <summary>
 		/// 設定をビルドする
 		/// </summary>
 		/// <returns>完成したGAME_OBJECT_DESCのコンスト参照ポインタ</returns>
-		const GAME_OBJECT_DESC& Build() const { return desc_; }
-	private:
+		const GAME_OBJECT_DESC& Build() const
+		{
+			return desc_;
+		}
+
+	  private:
 		GAME_OBJECT_DESC desc_;
 	};
-}
+} // namespace mtgb

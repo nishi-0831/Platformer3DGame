@@ -17,9 +17,9 @@ mtgb::FbxAnimationClip::FbxAnimationClip(FbxAnimStack* _pAnimStack)
 
 	// FbxAnimStackからアニメーション範囲を取得
 	FbxTimeSpan timeSpan = _pAnimStack->GetLocalTimeSpan();
-	FbxTime startTime = timeSpan.GetStart();
-	FbxTime endTime = timeSpan.GetStop();
+	FbxTime startTime	 = timeSpan.GetStart();
+	FbxTime endTime		 = timeSpan.GetStop();
 
 	startFrame = static_cast<int>(startTime.GetFrameCount(FbxTime::EMode::eFrames60));
-	endFrame = static_cast<int>(endTime.GetFrameCount(FbxTime::EMode::eFrames60));
+	endFrame   = static_cast<int>(endTime.GetFrameCount(FbxTime::EMode::eFrames60));
 }

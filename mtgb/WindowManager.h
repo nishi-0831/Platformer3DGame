@@ -23,35 +23,32 @@ namespace mtgb
 
 	class WindowManager : public ISystem
 	{
-	public:
+	  public:
 		WindowManager();
 		~WindowManager();
 
 		HWND CreateWindowContext(WindowResource* _windowResource);
 		Vector2Int GetWindowSize(WindowContext context);
-		
 
 		void Initialize() override;
 		void Update() override;
 		void Release();
-		
+
 		/// <summary>
 		/// WindowContextに対応するWindowConfigをセット
 		/// </summary>
 		/// <param name="windowContext">ウィンドウの識別子</param>
 		/// <param name="config">ウィンドウ設定</param>
 		void SetWindowConfig(WindowContext windowContext, const WindowConfig& config);
-		
-		
+
 		/// <summary>
 		/// WindowContextからWindowConfigを取得
 		/// </summary>
 		/// <param name="windowContext">ウィンドウの識別子</param>
 		/// <returns>ウィンドウ設定</returns>
 		static WindowConfig GetWindowConfig(WindowContext windowContext);
-		
-		
-		//void SwapWindowPos(WindowContext _ctx1 = WindowContext::First, WindowContext _ctx2 = WindowContext::Second);
+
+		// void SwapWindowPos(WindowContext _ctx1 = WindowContext::First, WindowContext _ctx2 = WindowContext::Second);
 
 		static WindowResource& GetWindowResource(WindowContext windowContext);
 
@@ -75,8 +72,9 @@ namespace mtgb
 		static void ChangeFullScreenState(WindowContext _ctx, const RECT& _rect);
 
 		static void ResizeWindow(WindowContext _windowContext, UINT _width, UINT _height);
-	private:
+
+	  private:
 		static MSG* pPeekedMessage_;
 		static std::map<WindowContext, WindowConfig> windowConfigMap_;
 	};
-}
+} // namespace mtgb

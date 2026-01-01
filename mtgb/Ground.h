@@ -6,26 +6,26 @@ namespace mtgb
 {
 	class Ground : public IShader
 	{
-	public:
+	  public:
 		struct Vertex
 		{
-			Vector3 position;  // 座標
-			Vector3 normal;  // 法線
-			Vector3 uv;  // uv座標
+			Vector3 position; // 座標
+			Vector3 normal;	  // 法線
+			Vector3 uv;		  // uv座標
 		};
 
 		struct ConstantBuffer
 		{
-			Matrix4x4 g_matrixWorldViewProj;  // ワールド・ビュー・プロジェクション行列
-			Matrix4x4 g_matrixNormalTrans;    // 回転行列と拡大行列の逆行列
-			Matrix4x4 g_matrixWorld;  // ワールド行列
-			Vector4 g_lightDirection;  // ライトの向き
-			Vector4 g_diffuse;  // 光があたったときへの拡散反射光(マテリアル色)
-			Vector4 g_ambient;  // 全体的な環境光 (光が当たらない場所にも明るく)
-			Vector4 g_speculer;  // 鏡面反射 (Lambertの場合は0)
-			Vector4 g_cameraPosition; // カメラの位置（ハイライトの計算に必要）
-			FLOAT g_shininess;     // スペキュラの強さ
-			BOOL g_isTexture;  // テクスチャの有無
+			Matrix4x4 g_matrixWorldViewProj; // ワールド・ビュー・プロジェクション行列
+			Matrix4x4 g_matrixNormalTrans;	 // 回転行列と拡大行列の逆行列
+			Matrix4x4 g_matrixWorld;		 // ワールド行列
+			Vector4 g_lightDirection;		 // ライトの向き
+			Vector4 g_diffuse;				 // 光があたったときへの拡散反射光(マテリアル色)
+			Vector4 g_ambient;				 // 全体的な環境光 (光が当たらない場所にも明るく)
+			Vector4 g_speculer;				 // 鏡面反射 (Lambertの場合は0)
+			Vector4 g_cameraPosition;		 // カメラの位置（ハイライトの計算に必要）
+			FLOAT g_shininess;				 // スペキュラの強さ
+			BOOL g_isTexture;				 // テクスチャの有無
 		};
 
 		Ground(FbxNode* _pParent);
@@ -36,7 +36,7 @@ namespace mtgb
 
 		void Draw();
 
-	private:
+	  private:
 		/// <summary>
 		/// 頂点バッファの初期化
 		/// </summary>
@@ -70,20 +70,19 @@ namespace mtgb
 			return _polygonCount * 3;
 		}
 
-	private:
-		uint32_t vertexCount_;  // 頂点数
-		uint32_t polygonCount_;  // ポリゴン数
-		uint32_t indexCount_;  // インデックス数
-		uint32_t materialCount_;  // マテリアル数
-		uint32_t polygonVertexCount_;  // ポリゴンの頂点数
+	  private:
+		uint32_t vertexCount_;		  // 頂点数
+		uint32_t polygonCount_;		  // ポリゴン数
+		uint32_t indexCount_;		  // インデックス数
+		uint32_t materialCount_;	  // マテリアル数
+		uint32_t polygonVertexCount_; // ポリゴンの頂点数
 
-		FbxNode* pNode_;  // Fbxノード情報
-		FbxMesh* pMesh_;  // メッシュ
+		FbxNode* pNode_; // Fbxノード情報
+		FbxMesh* pMesh_; // メッシュ
 
-		Vertex* pVertexes_;  // 頂点情報
-		DWORD* pIndexData_;  // インデックス情報
+		Vertex* pVertexes_; // 頂点情報
+		DWORD* pIndexData_; // インデックス情報
 
 		ID3D11Buffer** ppIndexBuffer_;
 	};
-}
-
+} // namespace mtgb

@@ -5,8 +5,8 @@ namespace mtgb
 {
 	class Camera : public GameObject
 	{
-	public:
-		//Camera();
+	  public:
+		// Camera();
 		Camera(GameObject* _pGameObj);
 		~Camera();
 
@@ -24,7 +24,8 @@ namespace mtgb
 		/// <param name="_isGrounded"> 被写体が接地しているか </param>
 		/// <param name="_targetVelocity"> 被写体の速度 </param>
 		void SetFollowMode(bool _isGrounded, const Vector3& _targetVelocity);
-	private:
+
+	  private:
 		bool IsTargetOffScreen() const;
 		/// <summary>
 		/// 球面座標系でカメラを動かす
@@ -34,11 +35,11 @@ namespace mtgb
 		void MoveCameraSpherical(float _distance);
 		enum class CameraState
 		{
-			GROUNDED,		// 着地状態：通常のカメラ追従
+			GROUNDED, // 着地状態：通常のカメラ追従
 			JUMPING,
-			JUMP_ASCENDING,	// ジャンプ上昇中：角度を浅くしていく
+			JUMP_ASCENDING, // ジャンプ上昇中：角度を浅くしていく
 			JUMP_APEX,		// ジャンプ頂点：最小角度を維持
-			JUMP_DESCENDING	// ジャンプ下降中：角度を回復していく
+			JUMP_DESCENDING // ジャンプ下降中：角度を回復していく
 		};
 		// カメラの状態
 		mtstat::MTStat<CameraState> cameraStat_;
@@ -77,5 +78,4 @@ namespace mtgb
 		float lerpSpeedJumping_;
 		float lerpSpeedScalar_;
 	};
-}
-
+} // namespace mtgb

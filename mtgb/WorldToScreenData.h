@@ -8,8 +8,8 @@ namespace mtgb
 {
 	struct WorldToScreenData
 	{
-		Matrix4x4 viewMat,projMat;
+		Matrix4x4 viewMat, projMat;
 		D3D11_VIEWPORT viewport;
 		uint64_t frameId;
 	};
-}
+} // namespace mtgb

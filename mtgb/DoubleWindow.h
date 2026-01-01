@@ -7,17 +7,17 @@ namespace mtgb
 {
 	class DoubleWindow : public ISystem
 	{
-	public:
+	  public:
 		DoubleWindow();
 		~DoubleWindow();
 
 		void Initialize() override;
 		void Update() override;
 
-		
 		void SetDoubleWindowPos();
-	private:
+
+	  private:
 		WindowContext context1_;
 		WindowContext context2_;
 	};
-}
+} // namespace mtgb

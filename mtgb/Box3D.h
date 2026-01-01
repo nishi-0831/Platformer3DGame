@@ -3,9 +3,9 @@
 
 namespace mtgb
 {
-	class Box3D : public GameObject , public ImGuiShowable
+	class Box3D : public GameObject, public ImGuiShowable
 	{
-	public:
+	  public:
 		Box3D();
 		~Box3D();
 
@@ -13,10 +13,11 @@ namespace mtgb
 		void Draw() const override;
 		void ShowImGui() override;
 		void Start() override;
-	private:
+
+	  private:
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
 		Collider* pCollider_;
 		static unsigned int generateCounter_;
 	};
-}
+} // namespace mtgb

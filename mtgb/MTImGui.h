@@ -16,25 +16,23 @@ namespace mtgb
 
 	struct Vector3;
 
-	using ShowItem = std::pair<std::string, std::function<void()>>;
+	using ShowItem	= std::pair<std::string, std::function<void()>>;
 	using ShowQueue = std::queue<ShowItem>;
 
 	struct ImGuiWindowState
 	{
 		std::string selectedName;
-		EntityId entityId{ INVALID_ENTITY };
-		bool isOpen{ true };
+		EntityId entityId{INVALID_ENTITY};
+		bool isOpen{true};
 	};
 
-	
-
 	/// <summary>
-		/// ImGuiに表示をする際に使う
-		/// </summary>
+	/// ImGuiに表示をする際に使う
+	/// </summary>
 	class MTImGui final
 	{
 
-	public:
+	  public:
 		static MTImGui& Instance()
 		{
 			static MTImGui instance;
@@ -63,8 +61,7 @@ namespace mtgb
 		/// <param name="target">表示対象のポインタ</param>
 		/// <param name="name">表示対象の名前</param>
 		/// <param name="show">表示するImGuiWindow</param>
-		template<typename T>
-		void TypedShow(T* target, const std::string& name, ShowType show = ShowType::Inspector);
+		template <typename T> void TypedShow(T* target, const std::string& name, ShowType show = ShowType::Inspector);
 		/// <summary>
 		/// ImGuiShowable*インスタンスを登録、毎回ShowImGuiを呼ぶ
 		/// ImGuiShowableは自動で登録される
@@ -92,7 +89,7 @@ namespace mtgb
 		/// <param name="_to">終点</param>
 		/// <param name="_thickness">線の太さ</param>
 		void DrawLine(const Vector3& _from, const Vector3& _to, float _thickness);
-		
+
 		/// <summary>
 		/// <para> ImGuiWindowにベクトルを描画 </para>
 		/// <para> 始点 + ベクトルで描画される </para>
@@ -100,7 +97,7 @@ namespace mtgb
 		/// <param name="_start">始点</param>
 		/// <param name="_vec">ベクトル</param>
 		/// <param name="_thickness"></param>
-		void DrawVec(const Vector3& _start, const Vector3 & _vec, float _thickness);
+		void DrawVec(const Vector3& _start, const Vector3& _vec, float _thickness);
 
 		/// <summary>
 		/// ImGuiWindowに円錐を描画
@@ -111,8 +108,12 @@ namespace mtgb
 		/// <param name="_distance"> 円錐の高さ </param>
 		/// <param name="_thickness"> 線の太さ </param>
 		/// <param name="_segments"> 円の分割数(多いほど滑らか) </param>
-		void DrawCone(const Vector3& _position, const Vector3& _direction, float _fovAngleDegree,
-			float _distance, float _thickness = 1.0f, int _segments = 16);
+		void DrawCone(const Vector3& _position,
+					  const Vector3& _direction,
+					  float _fovAngleDegree,
+					  float _distance,
+					  float _thickness = 1.0f,
+					  int _segments	   = 16);
 		EntityId GetSelectedEntityId();
 		static const char* GetName(ShowType _showType)
 		{
@@ -139,9 +140,9 @@ namespace mtgb
 		void ShowLog();
 		void ShowComponents(EntityId _entityId);
 		void SelectGameObject(EntityId _entityId);
-		template<typename T>
-		void RegisterComponentViewer();
-	private:
+		template <typename T> void RegisterComponentViewer();
+
+	  private:
 		MTImGui();
 		MTImGui(const MTImGui& other) = delete;
 		~MTImGui();
@@ -154,7 +155,7 @@ namespace mtgb
 		void ShowListView(ShowType _show);
 
 		std::vector<ImGuiShowable*> showableObjs_;
-		
+
 		std::map<ShowType, ShowQueue> showQueues_;
 		std::map<ShowType, ImGuiWindowState> imguiWindowStates_; // ShowTypeごとのウィンドウの状態
 
@@ -169,24 +170,22 @@ namespace mtgb
 		bool updatingImGuiShowable_;
 	};
 
-	template<typename T>
-	inline void MTImGui::TypedShow(T* target, const std::string& name, ShowType show)
+	template <typename T> inline void MTImGui::TypedShow(T* target, const std::string& name, ShowType show)
 	{
 		using Type = std::remove_pointer_t<std::remove_cvref_t<T>>;
-		//PushShowFunc( [=] {proxy->ShowImGui(std::any(target), name); }, show);
-		DirectShow([=]() {TypeRegistry::Instance().CallFunc<Type>(target, name.c_str()); }, name, show);
+		// PushShowFunc( [=] {proxy->ShowImGui(std::any(target), name); }, show);
+		DirectShow([=]() { TypeRegistry::Instance().CallFunc<Type>(target, name.c_str()); }, name, show);
 	}
-	template<typename T>
-	void mtgb::MTImGui::RegisterComponentViewer()
+	template <typename T> void mtgb::MTImGui::RegisterComponentViewer()
 	{
 		std::type_index typeIdx(typeid(T));
 
 		componentShowFuncs_[typeIdx] = [this](EntityId _entityId)
-			{
-				GameObject* obj = mtgb::GameObject::FindGameObject(_entityId);
-				std::string name = obj->GetName() + ":Components";
-				TypeRegistry::Instance().CallFunc<T>(&(T::template Get(_entityId)), name.c_str());
-			};
+		{
+			GameObject* obj	 = mtgb::GameObject::FindGameObject(_entityId);
+			std::string name = obj->GetName() + ":Components";
+			TypeRegistry::Instance().CallFunc<T>(&(T::template Get(_entityId)), name.c_str());
+		};
 	}
-	
-}
+
+} // namespace mtgb

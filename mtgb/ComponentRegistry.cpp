@@ -12,12 +12,15 @@ mtgb::ComponentRegistry::ComponentRegistry()
 {
 }
 
-void mtgb::ComponentRegistry::RegisterComponentIndex(EntityId _entityId, const std::type_index& _typeIndex, size_t _componentIndex)
+void mtgb::ComponentRegistry::RegisterComponentIndex(EntityId _entityId,
+													 const std::type_index& _typeIndex,
+													 size_t _componentIndex)
 {
 	componentIndices_[_entityId][_typeIndex] = _componentIndex;
 }
 
-std::optional<size_t> mtgb::ComponentRegistry::GetComponentIndex(EntityId _entityId, const std::type_index& _componentTypeIndex)
+std::optional<size_t> mtgb::ComponentRegistry::GetComponentIndex(EntityId _entityId,
+																 const std::type_index& _componentTypeIndex)
 {
 	// EntityIdに割り当てられているコンポーネント:インデックスのマップを取得
 	auto entityItr = componentIndices_.find(_entityId);
@@ -101,7 +104,7 @@ std::optional<std::vector<std::type_index>> mtgb::ComponentRegistry::GetComponen
 	auto componentTypes = entityComponents_.find(_entityId);
 	if (componentTypes == entityComponents_.end())
 		return std::nullopt;
-	
+
 	for (const std::type_index& componentType : componentTypes->second)
 	{
 		if (auto itr = componentTypeToPoolTypeMap_.find(componentType); itr != componentTypeToPoolTypeMap_.end())
@@ -109,17 +112,18 @@ std::optional<std::vector<std::type_index>> mtgb::ComponentRegistry::GetComponen
 			componentPoolTypes.push_back(itr->second);
 		}
 	}
-	
+
 	return componentPoolTypes;
 }
 
-std::optional<std::reference_wrapper<const std::set<std::type_index>>> mtgb::ComponentRegistry::GetComponentTypes(EntityId _entityId)
+std::optional<std::reference_wrapper<const std::set<std::type_index>>> mtgb::ComponentRegistry::GetComponentTypes(
+	EntityId _entityId)
 {
 	auto itr = entityComponents_.find(_entityId);
 
 	if (itr == entityComponents_.end())
 		return std::nullopt;
-	
+
 	return std::cref(itr->second);
 }
 

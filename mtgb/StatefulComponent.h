@@ -8,14 +8,14 @@
 #define UseConcept 0
 namespace mtgb
 {
-	template<typename TDerived,typename TComponentPool,typename TState>
-	
-	class StatefulComponent : public TState , public IComponent<TComponentPool, TDerived>
+	template <typename TDerived, typename TComponentPool, typename TState>
+
+	class StatefulComponent : public TState, public IComponent<TComponentPool, TDerived>
 	{
-	public:	
+	  public:
 		using IComponent<TComponentPool, TDerived>::IComponent;
 		using TState::TState;
-		using Memento = ComponentMemento<TDerived, TState>;
+		using Memento		= ComponentMemento<TDerived, TState>;
 		using ComponentPool = TComponentPool;
 		virtual ~StatefulComponent() {};
 		virtual void Initialize() override {};
@@ -32,7 +32,7 @@ namespace mtgb
 		}
 		void CopyData(const TState& _data)
 		{
-			static_cast<TState&>(*this) =_data;
+			static_cast<TState&>(*this) = _data;
 		}
 		void MoveData(TState&& _data)
 		{
@@ -87,11 +87,11 @@ namespace mtgb
 				if constexpr (refl::is_reflectable<TState>())
 				{
 					auto typeDescriptor = refl::reflect<TState>();
-					key = typeDescriptor.name.c_str();
+					key					= typeDescriptor.name.c_str();
 				}
 			}
 			nlohmann::json stateJson = _json.at(key);
-			
+
 			TState state;
 			JsonConverter::Deserialize(state, stateJson);
 			return new Memento(_entityId, state);
@@ -105,13 +105,13 @@ namespace mtgb
 				if constexpr (refl::is_reflectable<TState>())
 				{
 					auto typeDescriptor = refl::reflect<TState>();
-					componentName = typeDescriptor.name.c_str();
+					componentName		= typeDescriptor.name.c_str();
 				}
 			}
 			return componentName;
 		}
 
-	protected:
+	  protected:
 		/// <summary>
 		/// <para> Mementoから復元が行われた際に呼ばれるフック </para>
 		/// </summary>
@@ -127,20 +127,20 @@ namespace mtgb
 			// デフォルトでは何もしない
 		}
 
-	private:
+	  private:
 	};
-	template<typename TDerived, typename TComponentPool, typename TState>
+	template <typename TDerived, typename TComponentPool, typename TState>
 	inline StatefulComponent<TDerived, TComponentPool, TState>::StatefulComponent()
 		: TState()
 		, IComponent<TComponentPool, TDerived>()
 	{
 	}
-	template<typename TDerived, typename TComponentPool, typename TState>
+	template <typename TDerived, typename TComponentPool, typename TState>
 	inline StatefulComponent<TDerived, TComponentPool, TState>::StatefulComponent(TState&& _state, EntityId _entityId)
 		: TState{std::move(_state)}
 		, IComponent<TComponentPool, TDerived>{_entityId}
 
 	{
 	}
-	
-}
+
+} // namespace mtgb

@@ -22,20 +22,18 @@ namespace mtgb
 	class ColliderCP;
 	class Transform;
 	MT_COMPONENT()
-	class Collider :  public IComponent<ColliderCP,Collider> , public ISerializableObject
+	class Collider : public IComponent<ColliderCP, Collider>, public ISerializableObject
 	{
 
-	public:
+	  public:
 		MT_GENERATED_BODY()
 
 		friend ColliderCP;
 		using IComponent::IComponent;
 
-
 		// 衝突判定をするか否かのタグ
 
-	public:
-		
+	  public:
 		Collider(EntityId _entityId);
 		Collider(EntityId _entityId, ColliderTag _colliderTag);
 		~Collider();
@@ -52,7 +50,7 @@ namespace mtgb
 		/// <para> レイの原点が球の内側の場合は、球を出る点までの距離</para>
 		/// </param>
 		/// <returns></returns>
-		bool IsHit(const DirectX::BoundingSphere& _sphere,const Vector3& _origin, const Vector3& _dir, float* dist);
+		bool IsHit(const DirectX::BoundingSphere& _sphere, const Vector3& _origin, const Vector3& _dir, float* dist);
 		bool IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* dist);
 		bool IsHit(const DirectX::BoundingOrientedBox& _obb, const Vector3& _origin, const Vector3& _dir, float* dist);
 
@@ -63,24 +61,30 @@ namespace mtgb
 
 		// BoundingSphereを初期化
 		void UpdateBoundingData();
-		
+
 		void SetCenter(const Vector3& _center);
 		void SetExtents(const Vector3& _extents);
 		void SetRadius(float _radius);
 		Vector3 GetCenter();
 		Vector3 GetExtents();
 		float GetRadius();
-		ColliderTag GetColliderTag() const { return colliderTag_; }
-		
-		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
-		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingOrientedBox& _obb);
+		ColliderTag GetColliderTag() const
+		{
+			return colliderTag_;
+		}
+
+		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere,
+													  const DirectX::BoundingBox& _aabb);
+		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere,
+													  const DirectX::BoundingOrientedBox& _obb);
 		void Push(const Collider& _other);
-	public:
+
+	  public:
 		void OnPostRestore() override;
 
 		std::set<Collider*> onColliders_;
 		std::set<Collider*> onColldiersPrev_;
-		
+
 		MT_PROPERTY()
 		// 当たり判定の形
 		ColliderType colliderType_;
@@ -91,7 +95,8 @@ namespace mtgb
 		ColliderTag colliderTag_;
 		MT_PROPERTY()
 		bool isTrigger_;
-	private:
+
+	  private:
 		void UpdateBoundingSphere();
 		void UpdateBoundingBox();
 		union
@@ -101,8 +106,8 @@ namespace mtgb
 			DirectX::BoundingOrientedBox computeOBB_;
 		};
 
-		Transform* pTransform_;  // TODO: 危ないTransform
-		//ColliderTag colliderTag;
+		Transform* pTransform_; // TODO: 危ないTransform
+		// ColliderTag colliderTag;
 		static FBXModelHandle hSphereModel_;
 		static FBXModelHandle hBoxModel_;
 		MT_PROPERTY()
@@ -112,4 +117,4 @@ namespace mtgb
 		MT_PROPERTY()
 		Vector3 extents_;
 	};
-}
+} // namespace mtgb

@@ -13,8 +13,9 @@ void mtgb::InterpolatorCP::Update()
 {
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		if (poolId_[i] == INVALID_ENTITY) continue;
+		if (poolId_[i] == INVALID_ENTITY)
+			continue;
 
-		//pool_[i].UpdateTransform();
+		// pool_[i].UpdateTransform();
 	}
 }

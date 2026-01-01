@@ -5,20 +5,23 @@
 #include "ComponentRegistry.h"
 #include "EntityManager.h"
 #include <format>
-mtgb::DuplicateGameObjectCommand::DuplicateGameObjectCommand(CreateFunc _createFunc, const ComponentFactory& _componentFactory, EntityId _srcEntityId)
-    : createFunc_{_createFunc}
-    , componentFactory_{_componentFactory}
-    , srcEntityId_{_srcEntityId}
+mtgb::DuplicateGameObjectCommand::DuplicateGameObjectCommand(CreateFunc _createFunc,
+															 const ComponentFactory& _componentFactory,
+															 EntityId _srcEntityId)
+	: createFunc_{_createFunc}
+	, componentFactory_{_componentFactory}
+	, srcEntityId_{_srcEntityId}
 	, notSaveMementos_{true}
 {
 	GameObject* src = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(srcEntityId_);
 	if (src == nullptr)
 		return;
 
-	srcGameObjName_ = src->GetName();
+	srcGameObjName_			  = src->GetName();
 	std::string classTypeName = src->GetClassTypeName();
 
-	std::optional<std::vector<std::type_index>> componentPoolTypes = Game::System<ComponentRegistry>().GetComponentPoolTypes(srcEntityId_);
+	std::optional<std::vector<std::type_index>> componentPoolTypes =
+		Game::System<ComponentRegistry>().GetComponentPoolTypes(srcEntityId_);
 
 	if (componentPoolTypes.has_value() == false)
 		return;
@@ -38,7 +41,7 @@ void mtgb::DuplicateGameObjectCommand::Execute()
 {
 	GameObject* dest = createFunc_();
 	destGameObjName_ = dest->GetName();
-	destEntityId_ = dest->GetEntityId();
+	destEntityId_	 = dest->GetEntityId();
 	for (std::type_index componentPoolType : componentPoolTypes_)
 	{
 		IComponentPool* pComponentPool = Game::GetCP(componentPoolType);
@@ -82,7 +85,7 @@ std::string mtgb::DuplicateGameObjectCommand::Name() const
 
 mtgb::EntityId mtgb::DuplicateGameObjectCommand::GetCommandTargetEntityId() const
 {
-    return mtgb::EntityId();
+	return mtgb::EntityId();
 }
 
 void mtgb::DuplicateGameObjectCommand::SaveToMementos()

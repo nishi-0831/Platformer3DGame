@@ -4,9 +4,9 @@
 #include "Debug.h"
 #pragma comment(lib, "Winmm.lib")
 
-mtgb::Time::Time() :
-	current_{},
-	previous_{}
+mtgb::Time::Time()
+	: current_{}
+	, previous_{}
 {
 }
 
@@ -23,13 +23,12 @@ void mtgb::Time::Update()
 {
 	timeBeginPeriod(1);
 
-	massert(QueryPerformanceCounter(&current_) == TRUE
-		&& "QueryPerformanceCounter‚ÌŽæ“¾‚ÉŽ¸”s");
+	massert(QueryPerformanceCounter(&current_) == TRUE && "QueryPerformanceCounter‚ÌŽæ“¾‚ÉŽ¸”s");
 
 	if ((current_.QuadPart - previous_.QuadPart) * 60 >= SEC_TO_MICRO)
 	{
 		deltaTime_ = (current_.QuadPart - previous_.QuadPart) * MICRO_TO_SEC;
-		previous_ = current_;
+		previous_  = current_;
 		if (waitFrame_ != 0)
 		{
 			waitFrame_--;
@@ -44,6 +43,6 @@ void mtgb::Time::Update()
 }
 
 double mtgb::Time::deltaTime_{};
-const LONGLONG mtgb::Time::SEC_TO_MICRO{ 1000000 };
-const double mtgb::Time::MICRO_TO_SEC{ 0.0000001 };
-unsigned int mtgb::Time::waitFrame_{ 0 };
+const LONGLONG mtgb::Time::SEC_TO_MICRO{1000000};
+const double mtgb::Time::MICRO_TO_SEC{0.0000001};
+unsigned int mtgb::Time::waitFrame_{0};

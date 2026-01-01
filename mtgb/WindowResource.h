@@ -18,13 +18,13 @@ namespace mtgb
 	struct WindowModeInfo
 	{
 		WindowModeInfo();
-		RECT windowedRect_;		//位置とサイズ
-		LONG windowedStyle_;	// スタイル
-		LONG windowedExStyle_;	// 拡張スタイル
+		RECT windowedRect_;	   // 位置とサイズ
+		LONG windowedStyle_;   // スタイル
+		LONG windowedExStyle_; // 拡張スタイル
 	};
 	class WindowResource : public WindowContextResource
 	{
-	public:
+	  public:
 		static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 		LRESULT HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 		HWND GetHWND();
@@ -33,7 +33,7 @@ namespace mtgb
 		~WindowResource();
 
 		void SetResource() override;
-		
+
 		/// <summary>
 		/// リソースの初期化が完了したというフラグを trueにする
 		/// </summary>
@@ -52,25 +52,27 @@ namespace mtgb
 		/// </summary>
 		void GetWindowInfo();
 
-		bool IsFullScreen() const { return isFullscreen_; }
+		bool IsFullScreen() const
+		{
+			return isFullscreen_;
+		}
 		void SetPosition(const RECT& _monitorRect);
-	private:
+
+	  private:
 		void SetWindowModeImpl(WindowModeInfo _info);
 		HWND hWnd_;
 		bool isActive_;
 		bool isFullscreen_;
 
-		WindowModeInfo currInfo_; // 現在のウィンドウモード時の情報
+		WindowModeInfo currInfo_;	 // 現在のウィンドウモード時の情報
 		WindowModeInfo initialInfo_; // 初期のウィンドウモード時の情報
-
 
 		bool isInitialized_;
 
 		void Release() override;
 
 		// コピーコンストラクタとコピー代入演算子を削除
-		WindowResource(const WindowResource&) = delete;
+		WindowResource(const WindowResource&)			 = delete;
 		WindowResource& operator=(const WindowResource&) = delete;
-
 	};
-}
+} // namespace mtgb

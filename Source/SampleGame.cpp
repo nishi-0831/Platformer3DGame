@@ -7,7 +7,6 @@
 #include "ActorManager.h"
 #pragma region ゲーム側で追加
 
-
 #pragma endregion
 
 #define TO_TEST_SCENE 1
@@ -16,7 +15,6 @@ using namespace mtgb;
 
 SampleGame::SampleGame()
 {
-	
 }
 
 SampleGame::~SampleGame()
@@ -34,7 +32,6 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 
 	Game::Set<RenderSystem>(SystemUpdateType::DontCallMe);
 	Game::Set<AssetsManager>(SystemUpdateType::DontCallMe);
-	
 
 	Game::Set<Screen>(SystemUpdateType::DontCallMe);
 	Game::Set<WindowManager>(SystemUpdateType::Cycle);
@@ -44,26 +41,20 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<DirectWrite>(SystemUpdateType::Frame);
 	Game::Set<Input>(SystemUpdateType::DontCallMe);
 
-
 	Game::Set<WindowContextResourceManager>(SystemUpdateType::DontCallMe);
-	Game::System<WindowContextResourceManager>().RegisterResourceTypes<
-		WindowResource,
-		DXGIResource,
-		Direct3DResource,
-		Direct2DResource,
-		InputResource,
-		CameraResource
-	>();
+	Game::System<WindowContextResourceManager>()
+		.RegisterResourceTypes<WindowResource,
+							   DXGIResource,
+							   Direct3DResource,
+							   Direct2DResource,
+							   InputResource,
+							   CameraResource>();
 
 	Game::Set<SingleWindow>(SystemUpdateType::Frame);
 	Game::Set<CameraSystem>(SystemUpdateType::Frame);
 
-
 	Game::Set<ImGuiRenderer>(SystemUpdateType::Frame);
 	Game::Set<ScoreManager>(SystemUpdateType::Frame);
-
-
-	
 
 	Game::Set<Debug>(SystemUpdateType::Cycle);
 
@@ -93,8 +84,8 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<ActorManager>(SystemUpdateType::DontCallMe);
 	Game::Set<SceneSystem>(SystemUpdateType::Frame);
 	// 開始時のシーン
-	//Game::System<SceneSystem>().Move<PlayScene>();
-	//Game::System<SceneSystem>().Move<CheckTutorialScene>();
+	// Game::System<SceneSystem>().Move<PlayScene>();
+	// Game::System<SceneSystem>().Move<CheckTutorialScene>();
 #if TO_TEST_SCENE
 	Game::System<SceneSystem>().Move<TitleScene>();
 #else

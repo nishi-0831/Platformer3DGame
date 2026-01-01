@@ -9,8 +9,7 @@ namespace mtgb
 {
 	class ComponentRegistry : public ISystem
 	{
-	public:
-
+	  public:
 		void Initialize() override;
 		void Update() override;
 
@@ -72,16 +71,17 @@ namespace mtgb
 		/// <returns></returns>
 		std::optional<std::reference_wrapper<const std::set<std::type_index>>> GetComponentTypes(EntityId _entityId);
 		std::optional<std::set<std::type_index>> GetComponentTypes(const nlohmann::json& _json);
-	private:
+
+	  private:
 		// Componentの型情報 → ComponentPoolの型情報（component type_index → pool type_index）
 		std::unordered_map<std::type_index, std::type_index> componentTypeToPoolTypeMap_;
 		// EntityId が持つ Component 型情報の集合
 		std::unordered_map<EntityId, std::set<std::type_index>> entityComponents_;
 		// 文字列（名前／キー） → Componentの型情報（string → component type_index）
-		std::unordered_map<std::string,std::type_index> componentNameToTypeMap_;
+		std::unordered_map<std::string, std::type_index> componentNameToTypeMap_;
 		// キー : Componentの型情報, 値 : プール内のインデックス
 		using ComponentIndexMap = std::unordered_map<std::type_index, size_t>;
 		// キー : EntityId, 値 : ComponentIndexMap
 		std::unordered_map<EntityId, ComponentIndexMap> componentIndices_;
 	};
-}
+} // namespace mtgb

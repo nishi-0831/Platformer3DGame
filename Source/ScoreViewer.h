@@ -3,15 +3,15 @@
 
 class ScoreViewer : public mtgb::GameObject
 {
-public:
+  public:
 	ScoreViewer();
-	ScoreViewer(RectF _rect, int _fontSize,TextAlignment _textAlignment);
+	ScoreViewer(RectF _rect, int _fontSize, TextAlignment _textAlignment);
 	~ScoreViewer();
 
 	void Update() override;
 	void Draw() const override;
 
-private:
+  private:
 	Transform* pTransform_;
-	//TextRenderer* pTextRenderer_;
+	// TextRenderer* pTextRenderer_;
 };

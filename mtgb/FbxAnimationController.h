@@ -12,7 +12,7 @@ namespace mtgb
 {
 	class FbxAnimationController
 	{
-	public:
+	  public:
 		FbxAnimationController() = delete;
 		explicit FbxAnimationController(fbxsdk::FbxScene* _fbxScene);
 		~FbxAnimationController();
@@ -68,14 +68,15 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		bool IsFinishedAnimation();
-	private:
-		std::unordered_map<std::string, FbxAnimationClip,TransparentStringHash,TransparentStringEq> clipMap_;
+
+	  private:
+		std::unordered_map<std::string, FbxAnimationClip, TransparentStringHash, TransparentStringEq> clipMap_;
 		FbxAnimationClip* pCurrentClip_; // 現在再生中のクリップ
-		float currentFrame_; // 現在のフレーム
-		float animationSpeed_; // 再生速度(倍率)
-		bool isPlaying_; // 再生中か
-		bool isLooping_; // ループをするか
-		bool isFinished_; // 終了しているか
+		float currentFrame_;			 // 現在のフレーム
+		float animationSpeed_;			 // 再生速度(倍率)
+		bool isPlaying_;				 // 再生中か
+		bool isLooping_;				 // ループをするか
+		bool isFinished_;				 // 終了しているか
 		fbxsdk::FbxScene* pFbxScene_;
 	};
-}
+} // namespace mtgb

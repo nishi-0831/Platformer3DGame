@@ -11,27 +11,29 @@
 
 using namespace mtgb;
 
-ComPtr<ID3D11Device> DirectX11Draw::pDevice_{ nullptr };  // 描画を行うための環境、リソースの作成に使う
-ComPtr<ID3D11DeviceContext> DirectX11Draw::pContext_{ nullptr };
-ComPtr<IDXGIDevice1> DirectX11Draw::pDXGIDevice_{ nullptr };
+ComPtr<ID3D11Device> DirectX11Draw::pDevice_{nullptr}; // 描画を行うための環境、リソースの作成に使う
+ComPtr<ID3D11DeviceContext> DirectX11Draw::pContext_{nullptr};
+ComPtr<IDXGIDevice1> DirectX11Draw::pDXGIDevice_{nullptr};
 std::vector<ComPtr<IDXGIAdapter1>> DirectX11Draw::pDXGIAdapters_{};
 std::vector<MonitorInfo> DirectX11Draw::monitorInfos_{};
-ComPtr<IDXGIFactory2> DirectX11Draw::pDXGIFactory_{ nullptr };
+ComPtr<IDXGIFactory2> DirectX11Draw::pDXGIFactory_{nullptr};
 
-IDXGISwapChain* DirectX11Draw::pSwapChain_{ nullptr };  // ダブルバッファリングするやつ
-ComPtr<ID3D11RenderTargetView> DirectX11Draw::pRenderTargetView_{ nullptr };  // 描画先
-ComPtr<IDXGISwapChain1> DirectX11Draw::pSwapChain1_{ nullptr };
-ComPtr<ID3D11DepthStencilView> DirectX11Draw::pDepthStencilView_{ nullptr };  // 深度バッファ
-std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::Max)> DirectX11Draw::pDepthStencilState_{nullptr};  // ブレンドによる深度バッファへの書き込み情報
-ComPtr<ID3D11Texture2D> DirectX11Draw::pDepthStencil_{ nullptr };  // ブレンドの情報
-std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::Max)> DirectX11Draw::pBlendState_{ nullptr };  // ブレンドの情報
-ComPtr<ID3D11SamplerState> DirectX11Draw::pDefaultSamplerState_{ nullptr };
-ShaderBundle DirectX11Draw::shaderBundle_[static_cast<int8_t>(ShaderType::Max)]{};  // シェーダのバンドル
-Vector4 DirectX11Draw::backgroundColor_{ 0, 1, 0, 1 };
+IDXGISwapChain* DirectX11Draw::pSwapChain_{nullptr};					   // ダブルバッファリングするやつ
+ComPtr<ID3D11RenderTargetView> DirectX11Draw::pRenderTargetView_{nullptr}; // 描画先
+ComPtr<IDXGISwapChain1> DirectX11Draw::pSwapChain1_{nullptr};
+ComPtr<ID3D11DepthStencilView> DirectX11Draw::pDepthStencilView_{nullptr}; // 深度バッファ
+std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::Max)> DirectX11Draw::pDepthStencilState_{
+	nullptr};													// ブレンドによる深度バッファへの書き込み情報
+ComPtr<ID3D11Texture2D> DirectX11Draw::pDepthStencil_{nullptr}; // ブレンドの情報
+std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::Max)> DirectX11Draw::pBlendState_{
+	nullptr}; // ブレンドの情報
+ComPtr<ID3D11SamplerState> DirectX11Draw::pDefaultSamplerState_{nullptr};
+ShaderBundle DirectX11Draw::shaderBundle_[static_cast<int8_t>(ShaderType::Max)]{}; // シェーダのバンドル
+Vector4 DirectX11Draw::backgroundColor_{0, 1, 0, 1};
 
 void mtgb::DirectX11Draw::SetShader(const ShaderType _type)
 {
-	const int INDEX{ static_cast<int>(_type) };
+	const int INDEX{static_cast<int>(_type)};
 	pContext_->RSSetState(shaderBundle_[INDEX].pRasterizerState.Get());
 	pContext_->VSSetShader(shaderBundle_[INDEX].pVertexShader.Get(), nullptr, 0);
 	pContext_->PSSetShader(shaderBundle_[INDEX].pPixelShader.Get(), nullptr, 0);
@@ -40,10 +42,10 @@ void mtgb::DirectX11Draw::SetShader(const ShaderType _type)
 
 void mtgb::DirectX11Draw::SetBlendMode(const BlendMode _mode)
 {
-	const int INDEX{ static_cast<int>(_mode) };
+	const int INDEX{static_cast<int>(_mode)};
 
 	// 加算合成
-	float blendFactor[]{ D3D11_BLEND_ZERO, D3D11_BLEND_ZERO, D3D11_BLEND_ZERO, D3D11_BLEND_ZERO };
+	float blendFactor[]{D3D11_BLEND_ZERO, D3D11_BLEND_ZERO, D3D11_BLEND_ZERO, D3D11_BLEND_ZERO};
 	pContext_->OMSetBlendState(pBlendState_[INDEX].Get(), blendFactor, 0xffffffffU);
 
 	// 深度ステンシルへの書き込み
@@ -56,7 +58,6 @@ void mtgb::DirectX11Draw::SetIsWriteToDepthBuffer(const bool _enabled)
 	{
 		// 深度バッファを指定する
 		pContext_->OMSetRenderTargets(1, pRenderTargetView_.GetAddressOf(), pDepthStencilView_.Get());
-
 	}
 	else
 	{
@@ -77,13 +78,13 @@ void mtgb::DirectX11Draw::Begin()
 void mtgb::DirectX11Draw::End()
 {
 	// スワップして画面更新
-	//pSwapChain_->Present(0U, 0U);
+	// pSwapChain_->Present(0U, 0U);
 	HRESULT hr = pSwapChain1_->Present(0U, 0U);
 	if (FAILED(hr))
 	{
 		LOGIMGUI_CAT("Device", "failed SwapChain::Present:Error-%ld");
 	}
-	//pSwapChain_->Present(0U, 0U);
+	// pSwapChain_->Present(0U, 0U);
 }
 
 void mtgb::DirectX11Draw::Release()

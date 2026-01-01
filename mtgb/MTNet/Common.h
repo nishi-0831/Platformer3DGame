@@ -18,4 +18,4 @@ namespace mtnet
 	using ResultCode = int;
 	// ó‚¯æ‚Á‚½ƒoƒCƒg”
 	using ReceivedLength = int;
-}
+} // namespace mtnet

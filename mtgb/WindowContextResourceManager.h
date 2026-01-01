@@ -20,18 +20,18 @@ namespace mtgb
 	/// </summary>
 	class WindowContextResourceManager : public ISystem
 	{
-	private:
+	  private:
 		// 現在のウィンドウ
 		WindowContext currentContext_;
 		// ウィンドウごとのリソース群
 		std::map<WindowContext, ResourceCollection> collectionMap_;
 		// リソースごとの生成関数
-		std::map<std::type_index, std::function<WindowContextResource* (WindowContext)>> factoryMap_;
-		
+		std::map<std::type_index, std::function<WindowContextResource*(WindowContext)>> factoryMap_;
+
 		std::vector<std::type_index> insertionOrder_;
-		template<typename ResourceT>
-		void RegisterFactory();
-	public:
+		template <typename ResourceT> void RegisterFactory();
+
+	  public:
 		WindowContextResourceManager();
 		~WindowContextResourceManager();
 		void Initialize() override;
@@ -65,8 +65,9 @@ namespace mtgb
 		/// <typeparam name="ResourceT">指定するリソースの型</typeparam>
 		/// <param name="context1">デフォルトでFirst</param>
 		/// <param name="context2">デフォルトでSecond</param>
-		template<typename ResourceT>
-		void SwapResource(WindowContext context1 = WindowContext::First, WindowContext context2 = WindowContext::Second);
+		template <typename ResourceT>
+		void SwapResource(WindowContext context1 = WindowContext::First,
+						  WindowContext context2 = WindowContext::Second);
 
 		/// <summary>
 		/// リソースを取得する
@@ -74,14 +75,13 @@ namespace mtgb
 		/// <typeparam name="ResourceT">リソースの型</typeparam>
 		/// <param name="windowContext">取得するウィンドウの識別子</param>
 		/// <returns>リソースの参照</returns>
-		template<typename ResourceT>
-		ResourceT& Get(WindowContext windowContext)
+		template <typename ResourceT> ResourceT& Get(WindowContext windowContext)
 		{
 			auto itr = collectionMap_.find(windowContext);
 			assert(itr != collectionMap_.end() && "指定されたWindowContextのリソースが見つかりません");
 
 			static_assert(std::is_base_of_v<WindowContextResource, ResourceT>,
-				"WindowContextResourceを継承していないクラスのインスタンスは取得できません。");
+						  "WindowContextResourceを継承していないクラスのインスタンスは取得できません。");
 
 			return itr->second.Get<ResourceT>();
 		}
@@ -99,29 +99,26 @@ namespace mtgb
 		/// 型を指定して登録する関数
 		/// </summary>
 		/// <typeparam name="...Args">指定した順番に初期化される</typeparam>
-		template<class... Args>
-		void RegisterResourceTypes()
+		template <class... Args> void RegisterResourceTypes()
 		{
 			static constexpr bool allAreBaseOfWindowContextResource =
 				(std::is_base_of_v<WindowContextResource, Args> && ...);
 
-			static_assert(allAreBaseOfWindowContextResource, "Args...はWindowContextResourceの派生型である必要があります");
-		   
+			static_assert(allAreBaseOfWindowContextResource,
+						  "Args...はWindowContextResourceの派生型である必要があります");
+
 			(insertionOrder_.push_back(typeid(Args)), ...);
 			(RegisterFactory<Args>(), ...);
 		}
 	};
 
-	template<typename ResourceT>
-	inline void WindowContextResourceManager::RegisterFactory()
+	template <typename ResourceT> inline void WindowContextResourceManager::RegisterFactory()
 	{
 		factoryMap_[typeid(ResourceT)] = [](WindowContext _context) -> WindowContextResource*
-			{
-				return new ResourceT(_context);
-			};
+		{ return new ResourceT(_context); };
 	}
 
-	template<typename ResourceT>
+	template <typename ResourceT>
 	inline void WindowContextResourceManager::SwapResource(WindowContext context1, WindowContext context2)
 	{
 		// 同じウィンドウを指定していないか確認
@@ -142,4 +139,4 @@ namespace mtgb
 		// 入れ替える
 		std::swap(itr1->second[typeIdx], itr2->second[typeIdx]);
 	}
-}
+} // namespace mtgb

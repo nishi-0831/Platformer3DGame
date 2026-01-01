@@ -12,9 +12,9 @@ namespace mtgb
 {
 	class InterpolatorCP;
 	MT_COMPONENT()
-	class Interpolator : public IComponent<InterpolatorCP,Interpolator>, public ISerializableObject
+	class Interpolator : public IComponent<InterpolatorCP, Interpolator>, public ISerializableObject
 	{
-	public:
+	  public:
 		MT_GENERATED_BODY()
 
 		friend InterpolatorCP;
@@ -43,7 +43,8 @@ namespace mtgb
 
 		void OnPostRestore() override;
 		void OnPreSave() override;
-	private:
+
+	  private:
 		Transform* pTransform_;
 
 		MT_PROPERTY()
@@ -58,7 +59,6 @@ namespace mtgb
 		// 補間にかかる時間(秒)
 		float duration_;
 
-
 		MT_PROPERTY()
 		// 始点の座標(シリアライズ用)
 		Vector3 startPos_;
@@ -66,11 +66,11 @@ namespace mtgb
 		MT_PROPERTY()
 		// 終点の座標(シリアライズ用)
 		Vector3 endPos_;
-		
+
 		// TODO:ポインタをシリアライズ
 		// 直接、Transformなどのコンポーネントの状態を保存、復元できるようにすべき
 		// 現状はstartPos_,endPos_のように値型の変数を別に用意している
- 
+
 		// 始点、終点のTransform
 		Transform* pStartTransform_;
 		Transform* pEndTransform_;
@@ -78,4 +78,4 @@ namespace mtgb
 		Collider* pStartCollider_;
 		Collider* pEndCollider_;
 	};
-}
+} // namespace mtgb

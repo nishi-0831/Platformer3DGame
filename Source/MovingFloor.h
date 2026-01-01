@@ -1,13 +1,14 @@
 #pragma once
 #include <mtgb.h>
 
-class MovingFloor : public GameObject , public ImGuiShowable
+class MovingFloor : public GameObject, public ImGuiShowable
 {
-public:
+  public:
 	MovingFloor();
 	void Update() override;
 	void ShowImGui() override;
-private:
+
+  private:
 	void OnCollisionEnter(EntityId _entityId);
 	void OnCollisionExit(EntityId _entityId);
 	// このコンポーネントが割り当てられているEntityに着地しているEntityのId

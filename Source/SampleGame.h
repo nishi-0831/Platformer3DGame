@@ -3,11 +3,11 @@
 
 class SampleGame : public mtgb::Game
 {
-public:
+  public:
 	SampleGame();
 	~SampleGame();
 
-private:
+  private:
 	void SetupSystems(const RegisterSystemFuncHolder& _register) override;
 
 	inline std::string_view GetVersion() const override

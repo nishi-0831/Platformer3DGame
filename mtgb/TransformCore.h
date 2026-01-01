@@ -9,16 +9,17 @@ namespace mtgb
 
 	struct TransformCore
 	{
-		inline TransformCore():
-			parent{ INVALID_ENTITY },
-			position{},
-			scale{},
-			rotate{}
-		{}
+		inline TransformCore()
+			: parent{INVALID_ENTITY}
+			, position{}
+			, scale{}
+			, rotate{}
+		{
+		}
 
 		EntityId parent;
 		Vector3 position;
 		Vector3 scale;
 		Quaternion rotate;
 	};
-}
+} // namespace mtgb

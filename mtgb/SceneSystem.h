@@ -9,7 +9,7 @@ namespace mtgb
 {
 	class SceneSystem : public ISystem
 	{
-	public:
+	  public:
 		SceneSystem();
 		~SceneSystem();
 
@@ -21,14 +21,16 @@ namespace mtgb
 		/// <typeparam name="NextSceneT">遷移先のシーンクラスの型</typeparam>
 		/// <typeparam name="...Args">遷移先クラスのコンストラクタ可変長引数</typeparam>
 		/// <param name="..._args">遷移先クラスのコンストラクタ引数</param>
-		template<class NextSceneT, typename ...Args>
-		void Move(Args... _args);
+		template <class NextSceneT, typename... Args> void Move(Args... _args);
 
 		/// <summary>
 		/// 現在のシーンのポインタの取得
 		/// </summary>
 		/// <returns>シーンのポインタ</returns>
-		GameScene* GetActiveScene() const { return GameScene::pInstance_; }
+		GameScene* GetActiveScene() const
+		{
+			return GameScene::pInstance_;
+		}
 
 		void Initialize() override;
 		void Update() override;
@@ -37,8 +39,11 @@ namespace mtgb
 		/// シーン遷移時のイベントを受ける
 		/// </summary>
 		/// <param name="_onMove">void()</param>
-		void OnMove(const std::function<void()>& _onMove) { onMoveListener_.push_back(_onMove); }
-		
+		void OnMove(const std::function<void()>& _onMove)
+		{
+			onMoveListener_.push_back(_onMove);
+		}
+
 		/// <summary>
 		/// <para> 次のフレームのシーンの更新、描画前に実行するコールバックを登録 </para>
 		/// <para> コールバックは一回だけ実行され、その後破棄される </para>
@@ -51,26 +56,26 @@ namespace mtgb
 		/// <para> 一回だけ実行され、その後破棄される </para>
 		/// </summary>
 		void ExecutePendingCallbacks();
-	private:
+
+	  private:
 		void ChangeScene();
 
-	private:
+	  private:
 		GameScene* pNextScene_;
 
 		std::queue<std::function<void()>> pendingCallbacks_; // 次のフレームのシーンの更新、描画前に実行するコールバック
-		std::vector<std::function<void()>> onMoveListener_; // シーン遷移時に実行するコールバック
+		std::vector<std::function<void()>> onMoveListener_;	 // シーン遷移時に実行するコールバック
 	};
 
-	template<class NextSceneT, typename ...Args>
-	inline void SceneSystem::Move(Args... _args)
+	template <class NextSceneT, typename... Args> inline void SceneSystem::Move(Args... _args)
 	{
 		// 基底クラスがGameSceneであるか
-		static_assert(std::is_base_of<GameScene, NextSceneT>().value
-			&& "GameSceneクラスを継承していないクラスにシーン遷移できません。");
-		
+		static_assert(std::is_base_of<GameScene, NextSceneT>().value &&
+					  "GameSceneクラスを継承していないクラスにシーン遷移できません。");
+
 		// 既に次のシーンが割り当てられているなら解放する
 		SAFE_DELETE(pNextScene_);
 
-		pNextScene_ = new NextSceneT{ _args... };
+		pNextScene_ = new NextSceneT{_args...};
 	}
-}
+} // namespace mtgb

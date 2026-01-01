@@ -3,26 +3,26 @@
 #include "Fbx.h"
 #include "Entity.h"
 #include <format>
-unsigned int mtgb::Box3D::generateCounter_{ 0 };
+unsigned int mtgb::Box3D::generateCounter_{0};
 
-mtgb::Box3D::Box3D() 
+mtgb::Box3D::Box3D()
 	: GameObject()
-	, pTransform_{ Component<Transform>() }
-	, pMeshRenderer_{ Component<MeshRenderer>()}
-	, pCollider_{ Component<Collider>() }
+	, pTransform_{Component<Transform>()}
+	, pMeshRenderer_{Component<MeshRenderer>()}
+	, pCollider_{Component<Collider>()}
 	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
 {
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
-	pCollider_->isStatic_ = false;
+	pCollider_->isStatic_	  = false;
 	pCollider_->SetExtents(pTransform_->scale * 0.5f);
 	pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
-	pMeshRenderer_->meshHandle =  Fbx::Load( pMeshRenderer_->meshFileName);
-	pMeshRenderer_->layer = AllLayer();
-	pMeshRenderer_->shaderType = ShaderType::FbxParts;
+	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
+	pMeshRenderer_->layer		 = AllLayer();
+	pMeshRenderer_->shaderType	 = ShaderType::FbxParts;
 	// Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Box3D));
-	name_ = std::format("{} ({})", typeName,generateCounter_++);
-	displayName_ = name_;
+	name_				 = std::format("{} ({})", typeName, generateCounter_++);
+	displayName_		 = name_;
 }
 
 mtgb::Box3D::~Box3D()
@@ -46,4 +46,3 @@ void mtgb::Box3D::ShowImGui()
 void mtgb::Box3D::Start()
 {
 }
-

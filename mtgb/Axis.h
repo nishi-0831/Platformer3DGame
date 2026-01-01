@@ -21,4 +21,4 @@ namespace mtgb
 	{
 		Slider
 	};
-}
+} // namespace mtgb

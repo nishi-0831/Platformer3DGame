@@ -1,6 +1,5 @@
 #include "AudioPlayerCP.h"
 
-
 mtgb::AudioPlayerCP::AudioPlayerCP()
 {
 }

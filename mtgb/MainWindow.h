@@ -9,7 +9,7 @@ namespace mtgb
 {
 	class MainWindow : public ISystem
 	{
-	public:
+	  public:
 		MainWindow();
 		~MainWindow();
 
@@ -19,13 +19,16 @@ namespace mtgb
 		/// <summary>
 		/// メインウィンドウのハンドラを取得
 		/// </summary>
-		const HWND GetHWND() const { return hWnd_; }
+		const HWND GetHWND() const
+		{
+			return hWnd_;
+		}
 
-	private:
+	  private:
 		void GenerateWndClassEx(WNDCLASSEX* _pWndClassEx);
 
-	private:
+	  private:
 		HWND hWnd_;
 		MSG* pPeekedMessage_;
 	};
-}
+} // namespace mtgb

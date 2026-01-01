@@ -5,7 +5,7 @@ namespace mtgb
 {
 	class Saw : public GameObject, public IActor, public ImGuiShowable
 	{
-	public:
+	  public:
 		Saw();
 		~Saw();
 
@@ -13,7 +13,8 @@ namespace mtgb
 		void Draw() const override;
 		void Start() override;
 		void ShowImGui() override;
-	private:
+
+	  private:
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
 		Collider* pCollider_;
@@ -28,11 +29,10 @@ namespace mtgb
 		void OnHitSide(IActor* _pOther) override;
 
 		void TakeDamage(int _damage) override;
-
 	};
 	class CircularSaw : public GameObject, public ImGuiShowable
 	{
-	public:
+	  public:
 		CircularSaw();
 		~CircularSaw();
 
@@ -40,7 +40,8 @@ namespace mtgb
 		void Draw() const override;
 		void ShowImGui() override;
 		void Start() override;
-	private:
+
+	  private:
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
 		Collider* pCollider_;
@@ -55,5 +56,5 @@ namespace mtgb
 		float rotateAngleSecSaw_;
 		static unsigned int generateCounter_;
 	};
-	
-}
+
+} // namespace mtgb

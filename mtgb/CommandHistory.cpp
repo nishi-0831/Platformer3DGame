@@ -44,8 +44,6 @@ void CommandHistory::ClearAllStack()
 	ClearRedoStack();
 }
 
-
-
 void CommandHistory::ClearRedoStack()
 {
 	while (redoStack_.empty() == false)

@@ -10,13 +10,13 @@ namespace mtgb
 	};
 	class ICamera
 	{
-	public:
+	  public:
 		ICamera();
 		void DoOrbit();
 		virtual void MoveCameraSpherical(float _distance);
 		void FollowTarget();
 
-	protected:
+	  protected:
 		/// <summary>
 		/// <para> 天頂角(θ、polar) </para>
 		/// <para> 鉛直方向 </para>
@@ -24,7 +24,7 @@ namespace mtgb
 		/// <para> π/2 -> 原点と同じ高さ </para>
 		/// <para> π -> 原点の真上(+Y) </para>
 		/// </summary>
-		float polarAngleRad_; 
+		float polarAngleRad_;
 		/// <summary>
 		/// <para> 方位角(φ、azimuthal) </para>
 		/// <para> 水平方向 </para>
@@ -32,7 +32,7 @@ namespace mtgb
 		/// <para> π/2 -> 原点の後ろ(-Z) </para>
 		/// <para> π -> 原点の左(-X) </para>
 		/// </summary>
-		float azimuthalAngleRad_; 
+		float azimuthalAngleRad_;
 		float rotateSensitivity_;
 		float orbitSpeed_;
 		Transform* pCameraTransform_;
@@ -46,6 +46,5 @@ namespace mtgb
 		// +X側、右側が0度、-X側、左側が90度
 		float minAzimuthalAngleRad_, maxAzimuthalAngleRad_;
 		Vector3 lookAtPositionOffset_;
-
 	};
-}
+} // namespace mtgb

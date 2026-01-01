@@ -6,13 +6,12 @@ namespace mtgb
 {
 	class Interpolator;
 
-	class InterpolatorCP :
-		public ComponentPool<Interpolator, InterpolatorCP>
+	class InterpolatorCP : public ComponentPool<Interpolator, InterpolatorCP>
 	{
-	public:
+	  public:
 		InterpolatorCP();
 		~InterpolatorCP();
 
 		void Update() override;
 	};
-}
+} // namespace mtgb

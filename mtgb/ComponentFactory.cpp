@@ -1,6 +1,5 @@
 #include "ComponentFactory.h"
 
-
 mtgb::IComponentMemento* mtgb::ComponentFactory::AddComponent(const std::type_index& _info, EntityId _id) const
 {
 	std::type_index typeIdx{_info};
@@ -25,4 +24,3 @@ bool mtgb::ComponentFactory::AddComponentFromMemento(const IComponentMemento& _m
 	}
 	return false;
 }
-

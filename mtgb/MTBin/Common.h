@@ -18,8 +18,7 @@ namespace mtbin
 		/// <param name="_header">ƒ`ƒƒƒ“ƒNIdŠi”[”z—ñ</param>
 		/// <param name="_str">”äŠrId•¶š—ñ</param>
 		/// <returns>‡’v true / false</returns>
-		template<size_t SIZE>
-		inline bool CompareId(const Byte _header[SIZE], const char* _str)
+		template <size_t SIZE> inline bool CompareId(const Byte _header[SIZE], const char* _str)
 		{
 			for (size_t i = 0; i < SIZE; i++)
 			{
@@ -30,5 +29,5 @@ namespace mtbin
 			}
 			return true;
 		}
-	}
-}
+	} // namespace Utility
+} // namespace mtbin

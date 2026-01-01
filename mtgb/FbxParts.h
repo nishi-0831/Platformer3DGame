@@ -13,9 +13,9 @@
 using Microsoft::WRL::ComPtr;
 
 namespace fbxsdk
-{/*
-	class FbxMesh;
-	class FbxSkin;*/
+{ /*
+	 class FbxMesh;
+	 class FbxSkin;*/
 	class FbxCluster;
 }
 
@@ -30,32 +30,31 @@ namespace mtgb
 	class FbxParts : public IShader
 	{
 		friend DirectX11Draw;
-	public:
+
+	  public:
 		struct Vertex
 		{
-			Vector3 position;  // 座標
-			Vector3 normal;  // 法線
-			Vector3 uv;  // uv座標
-			std::array<uint32_t,4> boneIndex;
-			//uint32_t boneIndex[4];
+			Vector3 position; // 座標
+			Vector3 normal;	  // 法線
+			Vector3 uv;		  // uv座標
+			std::array<uint32_t, 4> boneIndex;
+			// uint32_t boneIndex[4];
 			std::array<float, 4> boneWeight;
-			//float boneWeight[4];
+			// float boneWeight[4];
 		};
-
-	
 
 		struct ConstantBuffer
 		{
-			Matrix4x4 g_matrixWorldViewProj;  // ワールド・ビュー・プロジェクション行列
-			Matrix4x4 g_matrixNormalTrans;    // 回転行列と拡大行列の逆行列
-			Matrix4x4 g_matrixWorld;  // ワールド行列
-			Vector4 g_lightDirection;  // ライトの向き
-			Vector4 g_diffuse;  // 光があたったときへの拡散反射光(マテリアル色)
-			Vector4 g_ambient;  // 全体的な環境光 (光が当たらない場所にも明るく)
-			Vector4 g_speculer;  // 鏡面反射 (Lambertの場合は0)
-			Vector4 g_cameraPosition; // カメラの位置（ハイライトの計算に必要）
-			FLOAT g_shininess;     // スペキュラの強さ
-			BOOL g_isTexture;  // テクスチャの有無
+			Matrix4x4 g_matrixWorldViewProj; // ワールド・ビュー・プロジェクション行列
+			Matrix4x4 g_matrixNormalTrans;	 // 回転行列と拡大行列の逆行列
+			Matrix4x4 g_matrixWorld;		 // ワールド行列
+			Vector4 g_lightDirection;		 // ライトの向き
+			Vector4 g_diffuse;				 // 光があたったときへの拡散反射光(マテリアル色)
+			Vector4 g_ambient;				 // 全体的な環境光 (光が当たらない場所にも明るく)
+			Vector4 g_speculer;				 // 鏡面反射 (Lambertの場合は0)
+			Vector4 g_cameraPosition;		 // カメラの位置（ハイライトの計算に必要）
+			FLOAT g_shininess;				 // スペキュラの強さ
+			BOOL g_isTexture;				 // テクスチャの有無
 			Vector2 g_padding;
 			Vector4 g_textureScale;
 		};
@@ -66,18 +65,17 @@ namespace mtgb
 		struct Material
 		{
 			~Material();
-			uint32_t polygonCount;  // ポリゴン数
-			Vector4 diffuse;  // 拡散反射光への反射強度
-			Vector4 ambient;  // 環境光への反射強度
-			Vector4 specular;  // 鏡面反射光
-			float shininess;  // ハイライトの強さ
+			uint32_t polygonCount; // ポリゴン数
+			Vector4 diffuse;	   // 拡散反射光への反射強度
+			Vector4 ambient;	   // 環境光への反射強度
+			Vector4 specular;	   // 鏡面反射光
+			float shininess;	   // ハイライトの強さ
 			Texture2D* pTexture;
 		};
 
-
 		struct BoneMatrices
 		{
-			Matrix4x4 boneMatrices[MAX_BONE_COUNT];  // 最大ボーン数
+			Matrix4x4 boneMatrices[MAX_BONE_COUNT]; // 最大ボーン数
 		};
 		/// <summary>
 		/// ボーン (関節そのもの)
@@ -85,13 +83,17 @@ namespace mtgb
 		struct Bone
 		{
 			// REF: https://help.autodesk.com/view/MAYACRE/JPN/?guid=GUID-36808BCC-ACF9-4A9E-B0D8-B8F509FEC0D5
-			Matrix4x4 bindPose;  // 初期ポーズ時のボーン変換行列
+			Matrix4x4 bindPose; // 初期ポーズ時のボーン変換行列
 		};
-	public:
-		FbxParts(FbxNode* _parent,double _unitScaleFactor);
+
+	  public:
+		FbxParts(FbxNode* _parent, double _unitScaleFactor);
 		~FbxParts();
 
-		FbxNode* GetNode() const { return pNode_; }
+		FbxNode* GetNode() const
+		{
+			return pNode_;
+		}
 
 		void Initialize() override;
 		void Release() override;
@@ -107,7 +109,7 @@ namespace mtgb
 		/// <param name="_transform">座標系</param>
 		/// <param name="_time">アニメーションフレーム</param>
 		void DrawSkinAnimation(const Transform& _transform, FbxTime _time);
-		
+
 		/// <summary>
 		/// ボーン無しでモデルを描画する
 		/// </summary>
@@ -134,9 +136,12 @@ namespace mtgb
 		/// Fbxのスキンを取得
 		/// </summary>
 		/// <returns>スキンのポインタ</returns>
-		FbxSkin* GetSkin() { return pSkin_; }
+		FbxSkin* GetSkin()
+		{
+			return pSkin_;
+		}
 
-	private:
+	  private:
 		/// <summary>
 		/// 頂点バッファの初期化
 		/// </summary>
@@ -164,39 +169,41 @@ namespace mtgb
 		void InitializeSkelton();
 
 		void SetBoneMatrix();
-		bool HasSkinnedMesh() const { return hasSkinnedMesh_; }
+		bool HasSkinnedMesh() const
+		{
+			return hasSkinnedMesh_;
+		}
 
-	private:
+	  private:
 		void SetAnimationTime(const FbxTime& _time);
 
-		bool hasSkinnedMesh_; // ボーンのあるメッシュか否か
-		uint32_t vertexCount_;  // 頂点数
-		uint32_t polygonCount_;  // ポリゴン数
-		uint32_t indexCount_;  // インデックス数
-		uint32_t materialCount_;  // マテリアル数
-		uint32_t polygonVertexCount_;  // ポリゴンの頂点数
+		bool hasSkinnedMesh_;		  // ボーンのあるメッシュか否か
+		uint32_t vertexCount_;		  // 頂点数
+		uint32_t polygonCount_;		  // ポリゴン数
+		uint32_t indexCount_;		  // インデックス数
+		uint32_t materialCount_;	  // マテリアル数
+		uint32_t polygonVertexCount_; // ポリゴンの頂点数
 
-		FbxNode* pNode_;  // Fbxノード情報
-		Material* pMaterial_;  // マテリアル
-		FbxMesh* pMesh_;  // メッシュ
-		FbxSkin* pSkin_;  // スキンメッシュ情報 (スキンメッシュアニメーションのデータ)
-		FbxCluster** ppCluster_;  // クラスタ情報 (関節ごとに関連つけられた頂点情報)
-		FbxTime currentTime_; // 現在設定されているアニメーションの時間
+		FbxNode* pNode_;		 // Fbxノード情報
+		Material* pMaterial_;	 // マテリアル
+		FbxMesh* pMesh_;		 // メッシュ
+		FbxSkin* pSkin_;		 // スキンメッシュ情報 (スキンメッシュアニメーションのデータ)
+		FbxCluster** ppCluster_; // クラスタ情報 (関節ごとに関連つけられた頂点情報)
+		FbxTime currentTime_;	 // 現在設定されているアニメーションの時間
 
-		int boneCount_;  // FBX に含まれている関節の数
-		std::vector<Bone> bones_;  // 各関節の情報配列
-		std::unordered_map<std::string, Bone*> boneNamePair_;  // 関節名とのペア
-		Vertex* pVertexes_;  // 頂点情報
-		
-		DWORD** ppIndexData_;  // インデックス情報
+		int boneCount_;										  // FBX に含まれている関節の数
+		std::vector<Bone> bones_;							  // 各関節の情報配列
+		std::unordered_map<std::string, Bone*> boneNamePair_; // 関節名とのペア
+		Vertex* pVertexes_;									  // 頂点情報
+
+		DWORD** ppIndexData_; // インデックス情報
 
 		std::vector<ComPtr<ID3D11Buffer>> ppIndexBuffer_;
 		ComPtr<ID3D11Buffer> pBoneConstantBuffer_;
 
-		//BoneMatrices boneMatrices_; //ボーン変換用行列
-		double unitScaleFactor_; // スケール単位係数 
+		// BoneMatrices boneMatrices_; //ボーン変換用行列
+		double unitScaleFactor_;	  // スケール単位係数
 		float fbxToWorldScaleFactor_; // FBXからワールドのスケールに変換する係数
 	};
 
-}
-
+} // namespace mtgb

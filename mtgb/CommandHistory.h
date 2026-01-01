@@ -4,7 +4,7 @@
 
 class ICommandHistory
 {
-public:
+  public:
 	~ICommandHistory() = default;
 	/// <summary>
 	/// コマンドを実行、スタックに積む
@@ -27,8 +27,8 @@ public:
 	/// <para> コマンドは全て解放される </para>
 	/// </summary>
 	virtual void ClearAllStack() = 0;
-protected:
 
+  protected:
 	/// <summary>
 	/// <para> 再実行の履歴を消去する </para>
 	/// <para> コマンドは全て解放される </para>
@@ -38,7 +38,7 @@ protected:
 
 class CommandHistory : public ICommandHistory
 {
-public:
+  public:
 	~CommandHistory();
 	/// <summary>
 	/// コマンドを実行、スタックに積む
@@ -61,7 +61,8 @@ public:
 	/// <para> コマンドは全て解放される </para>
 	/// </summary>
 	void ClearAllStack() override;
-private:
+
+  private:
 	/// <summary>
 	/// <para> 再実行の履歴を消去する </para>
 	/// <para> コマンドは全て解放される </para>

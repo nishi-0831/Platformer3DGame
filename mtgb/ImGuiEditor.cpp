@@ -15,13 +15,10 @@
 #include "CommandHistoryManager.h"
 #include "MeshRenderer.h"
 mtgb::ImGuiEditor::ImGuiEditor()
-	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
+	: ImGuiShowable("ImGuiEditor", ShowType::Editor)
 {
-	commandListener_ = [this](Command* _command)
-		{
-			Game::System<CommandHistoryManager>().ExecuteCommand(_command); 
-		};
-	pManipulator_ = new ImGuizmoManipulator(commandListener_);
+	commandListener_ = [this](Command* _command) { Game::System<CommandHistoryManager>().ExecuteCommand(_command); };
+	pManipulator_	 = new ImGuizmoManipulator(commandListener_);
 
 	GameObjectGenerator::RegisterCommandListener(commandListener_);
 	TypeRegistry::Instance().RegisterCommandListener(commandListener_);
@@ -75,7 +72,7 @@ void mtgb::ImGuiEditor::Update()
 
 void mtgb::ImGuiEditor::ShowImGui()
 {
-	//Game::System<CommandHistoryManager>().DrawImGuiStack();
+	// Game::System<CommandHistoryManager>().DrawImGuiStack();
 	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
 	ShowGenerateGameObjectButton();
 }
@@ -83,22 +80,22 @@ void mtgb::ImGuiEditor::ShowImGui()
 void mtgb::ImGuiEditor::SaveMapData()
 {
 	TCHAR fileName[255] = "";
-	OPENFILENAME ofn = {0};
+	OPENFILENAME ofn	= {0};
 
 	ofn.lStructSize = sizeof(ofn);
 
-	ofn.hwndOwner = WinCtxRes::GetHWND(WindowContext::First);
+	ofn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::First);
 	ofn.lpstrFilter = "JSONファイル(*.json)\0*.json";
-	ofn.lpstrFile = fileName;
-	ofn.nMaxFile = 255;
-	ofn.Flags = OFN_OVERWRITEPROMPT;
+	ofn.lpstrFile	= fileName;
+	ofn.nMaxFile	= 255;
+	ofn.Flags		= OFN_OVERWRITEPROMPT;
 
 	if (GetSaveFileName(&ofn))
 	{
 		std::ofstream openFile(fileName);
 
 		nlohmann::json j = Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects();
-		int width = 4;
+		int width		 = 4;
 		openFile << std::setw(width) << j;
 
 		openFile.close();
@@ -110,13 +107,13 @@ void mtgb::ImGuiEditor::SaveMapData()
 void mtgb::ImGuiEditor::LoadMapData()
 {
 	TCHAR fileName[255] = "";
-	OPENFILENAME ifn = { 0 };
+	OPENFILENAME ifn	= {0};
 
 	ifn.lStructSize = sizeof(ifn);
-	ifn.hwndOwner = WinCtxRes::GetHWND(WindowContext::First);
+	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::First);
 	ifn.lpstrFilter = "JSONファイル(*.json)\0*.json";
-	ifn.lpstrFile = fileName;
-	ifn.nMaxFile = 255;
+	ifn.lpstrFile	= fileName;
+	ifn.nMaxFile	= 255;
 
 	if (GetOpenFileName(&ifn) == false)
 		return;
@@ -137,7 +134,7 @@ void mtgb::ImGuiEditor::LoadMapData()
 		assert(false && errMsg);
 	}
 	GameObjectGenerator::GenerateFromJson(json);
-	
+
 	// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる
 	// TODO: マジックナンバーを修正
 	Time::WaitFrame(2);
@@ -183,5 +180,3 @@ void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 		}
 	}
 }
-
-

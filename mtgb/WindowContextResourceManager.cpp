@@ -31,7 +31,7 @@ void mtgb::WindowContextResourceManager::Release()
 
 void mtgb::WindowContextResourceManager::CreateResource(WindowContext windowContext)
 {
-	auto [it, inserted] = collectionMap_.try_emplace(windowContext);
+	auto [it, inserted]				  = collectionMap_.try_emplace(windowContext);
 	ResourceCollection& newCollection = it->second;
 
 	// リソースの登録順に作成される
@@ -39,7 +39,7 @@ void mtgb::WindowContextResourceManager::CreateResource(WindowContext windowCont
 	{
 		auto itr = factoryMap_.find(typeIdx);
 		assert(itr != factoryMap_.end() && "指定されたtype_indexのファクトリ関数が見つかりません");
-		
+
 		// ファクトリ関数でリソース作成
 		WindowContextResource* pResource = itr->second(windowContext);
 		newCollection.Insert(typeIdx, pResource);
@@ -62,7 +62,8 @@ void mtgb::WindowContextResourceManager::ChangeActiveResource(WindowContext wind
 void mtgb::WindowContextResourceManager::OnResizeAll(WindowContext windowContext, UINT width, UINT height)
 {
 	auto itr = collectionMap_.find(windowContext);
-	if (itr == collectionMap_.end()) return;
+	if (itr == collectionMap_.end())
+		return;
 
 	// サイズ変更対象のウィンドウのリソース群を取得
 	ResourceCollection& resourceCollection = collectionMap_[windowContext];
@@ -80,9 +81,3 @@ void mtgb::WindowContextResourceManager::OnResizeAll(WindowContext windowContext
 		resourceCollection[typeIdx]->OnResize(width, height);
 	}
 }
-
-
-
-
-
-

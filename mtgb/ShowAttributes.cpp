@@ -4,11 +4,11 @@ Command* Vector3Show::operator()(mtgb::Vector3* vec, const char* name) const
 {
 	mtgb::Vector3 old = *vec;
 
-	bool changed = ImGui::InputFloat3(name, &vec->x,"%.3f",ImGuiInputTextFlags_NoUndoRedo);
+	bool changed = ImGui::InputFloat3(name, &vec->x, "%.3f", ImGuiInputTextFlags_NoUndoRedo);
 
 	if (changed == false)
 		return nullptr;
-	
+
 	return new ImGuiInputCommand<mtgb::Vector3>(vec, old, *vec, name);
 }
 
@@ -22,7 +22,7 @@ Command* Vector3Show::operator()(mtgb::Vector3* vec, const char* name) const
 Command* QuaternionSHow::operator()(DirectX::XMVECTORF32* vec, const char* name) const
 {
 	mtgb::Vector3 vec3 = mtgb::QuatToEuler(*vec);
-	ImGui::InputFloat3(name, &vec3.x,"%.3f",ImGuiInputTextFlags_ReadOnly);
+	ImGui::InputFloat3(name, &vec3.x, "%.3f", ImGuiInputTextFlags_ReadOnly);
 
 	return nullptr;
 }
@@ -31,12 +31,13 @@ Command* Vector4Show::operator()(DirectX::XMVECTOR* _vec, const char* _name) con
 {
 	DirectX::XMVECTOR old = *_vec;
 
-	bool changed = ImGui::InputFloat4(_name, _vec->m128_f32);;
+	bool changed = ImGui::InputFloat4(_name, _vec->m128_f32);
+	;
 
 	if (changed == false)
 		return nullptr;
 
-	return new ImGuiInputCommand<DirectX::XMVECTOR>(_vec, old, *_vec,_name);
+	return new ImGuiInputCommand<DirectX::XMVECTOR>(_vec, old, *_vec, _name);
 }
 
 Command* MatrixShow::operator()(DirectX::XMMATRIX* _mat, const char* _name) const
@@ -51,6 +52,6 @@ Command* MatrixShow::operator()(DirectX::XMMATRIX* _mat, const char* _name) cons
 	zShow(&_mat->r[2], "z");
 	Vector4Show wShow;
 	wShow(&_mat->r[3], "w");
-	
+
 	return nullptr;
 }

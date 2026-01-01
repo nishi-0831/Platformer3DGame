@@ -8,7 +8,7 @@
 #include <nlohmann/json.hpp>
 class StageManger : public ISystem
 {
-public:
+  public:
 	void Initialize() override;
 	void Update() override;
 	std::optional<nlohmann::json> GetStageJson(StageID _stageID);
@@ -45,8 +45,9 @@ public:
 	/// </summary>
 	void ClearCurrentStage();
 	StageID GetCurrentStage();
-private:
+
+  private:
 	StageID currStage_;
 	std::unordered_map<StageID, nlohmann::json> stageJsons_;
-	std::unordered_map<StageID,bool> stageCleared_; // ステージをクリアしたか
+	std::unordered_map<StageID, bool> stageCleared_; // ステージをクリアしたか
 };

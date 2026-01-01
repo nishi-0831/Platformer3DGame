@@ -9,36 +9,38 @@ namespace mtgb
 {
 	class EventBase
 	{
-	public:
-		virtual ~EventBase() = default;
-		virtual void UnsubscribeAll() = 0;
+	  public:
+		virtual ~EventBase()			= default;
+		virtual void UnsubscribeAll()	= 0;
 		virtual void UnsubscribeScene() = 0;
 	};
 
 	using EventHandlerId = std::size_t;
-	enum class EventScope {Scene,Global};
+	enum class EventScope
+	{
+		Scene,
+		Global
+	};
 	/// <summary>
 	/// <para>イベント用のテンプレートクラス。</para>
 	/// <para>任意のイベントデータ型に対してハンドラの登録、解除、一括解除、呼び出しを行う。</para>
 	/// <para>ハンドラは ID で管理し、Invoke 実行時に保留中の解除要求を処理する。</para>
 	/// </summary>
-	template<typename EventDataType>
-	class Event : public EventBase
+	template <typename EventDataType> class Event : public EventBase
 	{
-	public:
-
+	  public:
 		using EventHandler = std::function<void(const EventDataType&)>;
 
 		/// <summary>
 		/// ハンドラを登録し、登録に割り当てられた ID を返す
 		/// </summary>
-		EventHandlerId Subscribe(EventHandler _handler,EventScope _scope = EventScope::Scene)
+		EventHandlerId Subscribe(EventHandler _handler, EventScope _scope = EventScope::Scene)
 		{
 			const EventHandlerId id = nextId++;
-			handlers_.emplace(id, HandlerEntry{ std::move(_handler) ,_scope});
+			handlers_.emplace(id, HandlerEntry{std::move(_handler), _scope});
 			return id;
 		}
-		
+
 		/// <summary>
 		/// 指定したハンドラ ID を保留解除キューに追加する
 		/// <para>実際の解除は次回の Invoke 呼び出し時に行う</para>
@@ -55,7 +57,8 @@ namespace mtgb
 		{
 			handlers_.clear();
 
-			while (!pendingUnsubscribeIds.empty()) pendingUnsubscribeIds.pop();
+			while (!pendingUnsubscribeIds.empty())
+				pendingUnsubscribeIds.pop();
 		}
 
 		void UnsubscribeScene() override
@@ -96,7 +99,8 @@ namespace mtgb
 				}
 			}
 		}
-	private:
+
+	  private:
 		struct HandlerEntry
 		{
 			EventHandler handler;
@@ -109,12 +113,14 @@ namespace mtgb
 
 	class EventManager : public ISystem
 	{
-	public:
+	  public:
 		~EventManager();
 		void Initialize() override;
-		void Update() override {}
+		void Update() override
+		{
+		}
 
-		template<typename EventDataType>
+		template <typename EventDataType>
 		/// <summary>
 		/// 指定されたイベントデータ型に対応するEvent オブジェクトを返す
 		/// </summary>
@@ -128,8 +134,8 @@ namespace mtgb
 			{
 				// 存在しない場合は新規作成してマップに登録
 				Event<EventDataType>* newEvent = new Event<EventDataType>();
-				events_[typeIdx] = newEvent;
-				return  static_cast<Event<EventDataType>&>(*events_[typeIdx]);
+				events_[typeIdx]			   = newEvent;
+				return static_cast<Event<EventDataType>&>(*events_[typeIdx]);
 			}
 
 			// 既存のイベントを返す
@@ -150,7 +156,8 @@ namespace mtgb
 				}
 			}
 		}
-	private:
+
+	  private:
 		std::unordered_map<std::type_index, EventBase*> events_;
 	};
-}
+} // namespace mtgb

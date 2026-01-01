@@ -6,7 +6,7 @@ namespace mtgb
 {
 	class HPViewer : public GameObject
 	{
-	public:
+	  public:
 		HPViewer(int _hpCount);
 		~HPViewer();
 
@@ -15,9 +15,10 @@ namespace mtgb
 		void Start() override;
 
 		void TakeDamage(int _damage);
-	private:
+
+	  private:
 		std::vector<ImageRenderer*> pHpImages_;
 		Vector2F pos_;
 		Vector2F size_;
 	};
-}
+} // namespace mtgb

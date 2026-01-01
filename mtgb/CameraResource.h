@@ -8,10 +8,10 @@ namespace mtgb
 	/// </summary>
 	class CameraResource : public WindowContextResource
 	{
-	public:
+	  public:
 		explicit CameraResource(WindowContext _windowContext);
 		~CameraResource();
-		
+
 		void Release() override;
 		/// <summary>
 		/// カメラを切り替える
@@ -33,12 +33,12 @@ namespace mtgb
 		/// </summary>
 		/// <returns>未登録の場合true、登録済みの場合false</returns>
 		bool NotRegisterCamera();
-	private:
+
+	  private:
 		CameraHandleInScene hCamera_;
 
 		// コピーコンストラクタとコピー代入演算子を削除
-		CameraResource(const CameraResource&) = delete;
+		CameraResource(const CameraResource&)			 = delete;
 		CameraResource& operator=(const CameraResource&) = delete;
-
 	};
-}
+} // namespace mtgb

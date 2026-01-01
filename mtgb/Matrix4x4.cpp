@@ -1,7 +1,6 @@
 #include "Matrix4x4.h"
 // TODO: #include <sstream> を書くとどこかでctimeがnamespaceグローバル化するエラーがある
 
-
 std::string mtgb::Matrix4x4::ToString()
 {
 	std::string str{};
@@ -23,5 +22,5 @@ std::string mtgb::Matrix4x4::ToString()
 
 	return str.c_str();
 
-	//return "";
+	// return "";
 }

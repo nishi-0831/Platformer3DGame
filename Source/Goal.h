@@ -3,7 +3,7 @@
 
 class Goal : public mtgb::GameObject, public ImGuiShowable
 {
-public:
+  public:
 	Goal();
 	~Goal();
 
@@ -12,7 +12,7 @@ public:
 	void Draw() const override;
 	void ShowImGui() override;
 
-private:
+  private:
 	void OnClear();
 	Transform* pTransform_;
 	Collider* pCollider_;

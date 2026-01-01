@@ -14,21 +14,18 @@
 namespace mtgb
 {
 	MT_COMPONENT()
-	class Transform : public IComponent<TransformCP,Transform> , public ISerializableObject
+	class Transform : public IComponent<TransformCP, Transform>, public ISerializableObject
 	{
-	public:
-	
+	  public:
 		MT_GENERATED_BODY()
 
 		friend TransformCP;
 		using IComponent::IComponent;
-		
+
 		Transform();
 		Transform(EntityId _entityId);
 		~Transform();
 		Transform& operator=(const Transform& _other);
-		
-
 
 		/// <summary>
 		/// 計算する
@@ -94,27 +91,42 @@ namespace mtgb
 		/// 上方向のワールドベクトル
 		/// </summary>
 		/// <returns>ワールド回転行列がかけられたベクトル</returns>
-		Vector3 Up() const { return Vector3::Up() * matrixWorldRot_; }
+		Vector3 Up() const
+		{
+			return Vector3::Up() * matrixWorldRot_;
+		}
 		/// <summary>
 		/// 下方向のワールドベクトル
 		/// </summary>
 		/// <returns>ワールド回転行列がかけられたベクトル</returns>
-		Vector3 Down() const { return Vector3::Down() * matrixWorldRot_; }
+		Vector3 Down() const
+		{
+			return Vector3::Down() * matrixWorldRot_;
+		}
 		/// <summary>
 		/// 左方向のワールドベクトル
 		/// </summary>
 		/// <returns>ワールド回転行列がかけられたベクトル</returns>
-		Vector3 Left() const { return Vector3::Left() * matrixWorldRot_; }
+		Vector3 Left() const
+		{
+			return Vector3::Left() * matrixWorldRot_;
+		}
 		/// <summary>
 		/// 右方向のワールドベクトル
 		/// </summary>
 		/// <returns>ワールド回転行列がかけられたベクトル</returns>
-		Vector3 Right() const { return Vector3::Right() * matrixWorldRot_; }
+		Vector3 Right() const
+		{
+			return Vector3::Right() * matrixWorldRot_;
+		}
 		/// <summary>
 		/// 後方向のワールドベクトル
 		/// </summary>
 		/// <returns>ワールド回転行列がかけられたベクトル</returns>
-		Vector3 Back() const { return Vector3::Back() * matrixWorldRot_; }
+		Vector3 Back() const
+		{
+			return Vector3::Back() * matrixWorldRot_;
+		}
 		/// <summary>
 		/// 前方向のワールドベクトル
 		/// </summary>
@@ -125,7 +137,10 @@ namespace mtgb
 		/// ワールド座標を取得
 		/// </summary>
 		/// <returns>ワールド座標のベクトル</returns>
-		Vector3 GetWorldPosition() const { return Vector3::Zero() * matrixWorld_; }
+		Vector3 GetWorldPosition() const
+		{
+			return Vector3::Zero() * matrixWorld_;
+		}
 		/// <summary>
 		/// ワールド回転を取得
 		/// </summary>
@@ -141,7 +156,8 @@ namespace mtgb
 		Vector3 scale;
 		MT_PROPERTY()
 		Quaternion rotate;
-	private:
+
+	  private:
 		bool DecomposeMatrixImpl(Vector3* _pPos, Quaternion* _pRot, Vector3* _pScale, const Matrix4x4& _matrix);
 
 		/// <summary>
@@ -155,21 +171,19 @@ namespace mtgb
 		/// <param name="_pMatrix">行列のポインタ渡し</param>
 		void GenerateWorldRotMatrixSelf(Matrix4x4* _pMatrix) const;
 
-
-	public://private:
-		Matrix4x4 matrixTranslate_{};         // 計算された移動行列
-		Matrix4x4 matrixRotate_{};            // 計算された回転行列
-		Matrix4x4 matrixScale_{};             // 計算された拡縮行列
-		Matrix4x4 matrixWorld_{};             // 計算されたワールド行列
-		Matrix4x4 matrixWorldRot_{};          // 計算されたワールド回転行列
+	  public:						  // private:
+		Matrix4x4 matrixTranslate_{}; // 計算された移動行列
+		Matrix4x4 matrixRotate_{};	  // 計算された回転行列
+		Matrix4x4 matrixScale_{};	  // 計算された拡縮行列
+		Matrix4x4 matrixWorld_{};	  // 計算されたワールド行列
+		Matrix4x4 matrixWorldRot_{};  // 計算されたワールド回転行列
 		Matrix4x4 matrixLocal_{};
 		Matrix4x4 prevParentMatrix_{};
 		Vector3 localPosition_;
 		Quaternion localRotate_;
 		Vector3 localScale_;
-	private:
 
+	  private:
 	};
 
-	
-}
+} // namespace mtgb

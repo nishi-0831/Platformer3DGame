@@ -10,7 +10,7 @@ namespace mtgb
 
 	class Model : public ISystem
 	{
-	private:
+	  private:
 		/// <summary>
 		/// モデルの情報
 		/// </summary>
@@ -22,7 +22,7 @@ namespace mtgb
 			int beginFrame, endFrame;
 		};
 
-	public:
+	  public:
 		Model();
 		~Model();
 
@@ -31,9 +31,8 @@ namespace mtgb
 
 		static ModelHandle Load(const std::string_view& _fileName);
 
-	private:
-		ModelHandle handleCounter_;  // ハンドラの加算用
+	  private:
+		ModelHandle handleCounter_; // ハンドラの加算用
 		std::map<ModelHandle, ModelData*> modelData_;
-
 	};
-}
+} // namespace mtgb

@@ -2,8 +2,8 @@
 #include "CommandHistoryManager.h"
 #include "assert.h"
 CommandHistoryManager::CommandHistoryManager()
-	: inner_{ new CommandHistory() }
-	, pGroupCommand_{ nullptr }
+	: inner_{new CommandHistory()}
+	, pGroupCommand_{nullptr}
 	, isGrouping_{false}
 {
 }
@@ -50,7 +50,8 @@ void CommandHistoryManager::UndoCommand()
 {
 	if (isGrouping_)
 	{
-		assert(false && " コマンドをまとめている最中のUndoは許可されていません。 CancellGroupCommand() を呼んでください ");
+		assert(false &&
+			   " コマンドをまとめている最中のUndoは許可されていません。 CancellGroupCommand() を呼んでください ");
 	}
 
 	inner_->UndoCommand();
@@ -60,7 +61,8 @@ void CommandHistoryManager::RedoCommand()
 {
 	if (isGrouping_)
 	{
-		assert(false && " コマンドをまとめている最中のRedoは許可されていません。 CancellGroupCommand() を呼んでください ");
+		assert(false &&
+			   " コマンドをまとめている最中のRedoは許可されていません。 CancellGroupCommand() を呼んでください ");
 		return;
 	}
 
@@ -75,5 +77,4 @@ void CommandHistoryManager::ClearAllStack()
 
 void CommandHistoryManager::ClearRedoStack()
 {
-	
 }

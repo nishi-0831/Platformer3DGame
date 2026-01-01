@@ -7,20 +7,24 @@
 
 namespace mtstat
 {
-	template<typename T>
+	template <typename T>
 	concept EnumT = std::is_enum_v<T>;
-	
+
 	/// <summary>
 	/// <para> ポリモルフィズムを抜きにしたステートクラス </para>
 	/// <para> メソッドチェーンで状態を記述することができる</para>
 	/// </summary>
 	/// <typeparam name="StatEnumT">ステートに使用する列挙型</typeparam>
-	template<EnumT StatEnumT>
-	class MTStat
+	template <EnumT StatEnumT> class MTStat
 	{
-	public:
-		MTStat() : stat_{} {}
-		~MTStat() {}
+	  public:
+		MTStat()
+			: stat_{}
+		{
+		}
+		~MTStat()
+		{
+		}
 
 		MTStat& OnStart(const StatEnumT _statEnum, const std::function<void()>& _callback);
 		MTStat& OnUpdate(const StatEnumT _statEnum, const std::function<void()>& _callback);
@@ -39,8 +43,8 @@ namespace mtstat
 		/// <param name="_to">遷移先となる状態。条件が満たされたときにこの状態に遷移する</param>
 		/// <param name="_callback">遷移条件を判定するコールバック。trueを返すと遷移する</param>
 		/// <returns></returns>
-		MTStat& RegisterTransition(StatEnumT _from, StatEnumT _to,const std::function<bool()>& _callback);
-		
+		MTStat& RegisterTransition(StatEnumT _from, StatEnumT _to, const std::function<bool()>& _callback);
+
 		/// <summary>
 		/// <para> あらゆる状態から別の状態への遷移条件を登録 </para>
 		/// <para> 登録順で評価され、優先度は付けられない </para>
@@ -49,7 +53,7 @@ namespace mtstat
 		/// <param name="_callback">条件が満たされたときにこの状態に遷移する</param>
 		/// <returns></returns>
 		MTStat& RegisterAnyTransition(StatEnumT _to, const std::function<bool()>& _callback);
-		
+
 		/// <summary>
 		/// <para> 遷移条件を満たした状態の取得を試みる </para>
 		/// <para> 条件を満たしている場合 trueが返ってきて、引数には遷移先の状態が格納される</para>
@@ -60,89 +64,97 @@ namespace mtstat
 		void Update() const;
 		void Change(const StatEnumT _nextStat);
 
-		const StatEnumT Current() const { return stat_; }
+		const StatEnumT Current() const
+		{
+			return stat_;
+		}
 
 		struct StateTransition
 		{
 			StatEnumT toState;
 			std::function<bool()> condition;
 		};
-	private:
-		StatEnumT stat_;  // 現在のステート
-		
-		std::map<StatEnumT, std::function<void()>> updateFuncs_;  // 登録されている更新関数
-		std::map<StatEnumT, std::function<void()>> startFuncs_;   // 登録されている開始関数
-		std::map<StatEnumT, std::function<void()>> endFuncs_;     // 登録されている終了関数
+
+	  private:
+		StatEnumT stat_; // 現在のステート
+
+		std::map<StatEnumT, std::function<void()>> updateFuncs_; // 登録されている更新関数
+		std::map<StatEnumT, std::function<void()>> startFuncs_;	 // 登録されている開始関数
+		std::map<StatEnumT, std::function<void()>> endFuncs_;	 // 登録されている終了関数
 
 		std::function<void()> anyUpdateFunc_;
 		std::function<void()> anyStartFunc_;
 		std::function<void()> anyEndFunc_;
-		
-		
+
 		std::map<StatEnumT, std::vector<StateTransition>> transitionsMap_;
 		std::vector<StateTransition> anyTransition_;
 	};
 
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnStart(const StatEnumT _statEnum, const std::function<void()>& _callback)
+	template <EnumT StatEnumT>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnStart(const StatEnumT _statEnum,
+														 const std::function<void()>& _callback)
 	{
-		startFuncs_.insert({ _statEnum, _callback });
+		startFuncs_.insert({_statEnum, _callback});
 		return *this;
 	}
 
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnUpdate(const StatEnumT _statEnum, const std::function<void()>& _callback)
+	template <EnumT StatEnumT>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnUpdate(const StatEnumT _statEnum,
+														  const std::function<void()>& _callback)
 	{
-		updateFuncs_.insert({ _statEnum, _callback });
+		updateFuncs_.insert({_statEnum, _callback});
 		return *this;
 	}
 
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnEnd(const StatEnumT _statEnum, const std::function<void()>& _callback)
+	template <EnumT StatEnumT>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnEnd(const StatEnumT _statEnum,
+													   const std::function<void()>& _callback)
 	{
-		endFuncs_.insert({ _statEnum, _callback });
+		endFuncs_.insert({_statEnum, _callback});
 		return *this;
 	}
 
-	template<EnumT StatEnumT>
+	template <EnumT StatEnumT>
 	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyStart(const std::function<void()>& _callback)
 	{
 		anyStartFunc_ = _callback;
 		return *this;
 	}
 
-	template<EnumT StatEnumT>
+	template <EnumT StatEnumT>
 	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyUpdate(const std::function<void()>& _callback)
 	{
 		anyUpdateFunc_ = _callback;
 		return *this;
 	}
 
-	template<EnumT StatEnumT>
+	template <EnumT StatEnumT>
 	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyEnd(const std::function<void()>& _callback)
 	{
 		anyEndFunc_ = _callback;
 		return *this;
 	}
 
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(StatEnumT _from, StatEnumT _to,const std::function<bool()>& _callback)
+	template <EnumT StatEnumT>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(StatEnumT _from,
+																	StatEnumT _to,
+																	const std::function<bool()>& _callback)
 	{
-		transitionsMap_[_from].emplace_back(_to,_callback);
+		transitionsMap_[_from].emplace_back(_to, _callback);
 		return *this;
 	}
 
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterAnyTransition(StatEnumT _to, const std::function<bool()>& _callback)
+	template <EnumT StatEnumT>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterAnyTransition(StatEnumT _to,
+																	   const std::function<bool()>& _callback)
 	{
 		anyTransition_.emplace_back(_to, _callback);
 	}
 
-	template<EnumT StatEnumT>
-	inline bool MTStat<StatEnumT>::TryGetNextState(StatEnumT& _nextState)
+	template <EnumT StatEnumT> inline bool MTStat<StatEnumT>::TryGetNextState(StatEnumT& _nextState)
 	{
-		if(transitionsMap_.count(stat_))
-		{ 
+		if (transitionsMap_.count(stat_))
+		{
 			for (auto transition : transitionsMap_.at(stat_))
 			{
 				if (transition.condition())
@@ -155,8 +167,7 @@ namespace mtstat
 		return false;
 	}
 
-	template<EnumT StatEnumT>
-	inline void MTStat<StatEnumT>::Update() const
+	template <EnumT StatEnumT> inline void MTStat<StatEnumT>::Update() const
 	{
 		if (anyUpdateFunc_)
 		{
@@ -167,9 +178,8 @@ namespace mtstat
 			updateFuncs_.at(stat_)();
 		}
 	}
-	
-	template<EnumT StatEnumT>
-	inline void MTStat<StatEnumT>::Change(const StatEnumT _nextStat)
+
+	template <EnumT StatEnumT> inline void MTStat<StatEnumT>::Change(const StatEnumT _nextStat)
 	{
 		if (anyEndFunc_)
 		{
@@ -191,4 +201,4 @@ namespace mtstat
 			startFuncs_[_nextStat]();
 		}
 	}
-}
+} // namespace mtstat

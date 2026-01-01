@@ -1,8 +1,8 @@
 #include "TcpListener.h"
 #include "TcpClient.h"
 
-mtnet::TcpListener::TcpListener(const IPEndPoint& _local) :
-	Socket{ _local }
+mtnet::TcpListener::TcpListener(const IPEndPoint& _local)
+	: Socket{_local}
 {
 	if (TryStartup() == false)
 	{

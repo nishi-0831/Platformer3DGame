@@ -10,7 +10,7 @@ namespace mtgb
 	///// <para>始点とサイズを持っている</para>
 	///// <para>終点は関数を介して取得可能</para>
 	///// </summary>
-	//struct RectInt
+	// struct RectInt
 	//{
 	//	RectInt() :
 	//		x{ 0 },
@@ -148,4 +148,4 @@ namespace mtgb
 	//			);
 	//	}
 	//};
-}
+} // namespace mtgb

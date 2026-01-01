@@ -2,7 +2,6 @@
 #include "ISystem.h"
 #include "ComponentPool.h"
 
-
 namespace mtgb
 {
 	class Transform;
@@ -10,14 +9,13 @@ namespace mtgb
 	/// <summary>
 	/// Transformコンポーネントのプール
 	/// </summary>
-	class TransformCP :
-		public ComponentPool<Transform,TransformCP>
+	class TransformCP : public ComponentPool<Transform, TransformCP>
 	{
-	public:
+	  public:
 		TransformCP();
-		//TransformCP(const TransformCP&) = default;
+		// TransformCP(const TransformCP&) = default;
 		~TransformCP();
 
 		void Update() override;
 	};
-}
+} // namespace mtgb

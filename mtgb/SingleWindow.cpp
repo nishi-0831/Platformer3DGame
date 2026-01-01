@@ -20,21 +20,17 @@ mtgb::SingleWindow::~SingleWindow()
 
 void mtgb::SingleWindow::Initialize()
 {
-	const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
+	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
-	WindowConfig config1 =
-	{
-		.title = "Player1",
-		.className = "Player1WindowClass",
-		.width = SCREEN_SIZE.x,
-		.height = SCREEN_SIZE.y,
-		.x = 0,
-		.y = 0
-	};
+	WindowConfig config1 = {.title	   = "Player1",
+							.className = "Player1WindowClass",
+							.width	   = SCREEN_SIZE.x,
+							.height	   = SCREEN_SIZE.y,
+							.x		   = 0,
+							.y		   = 0};
 
-	//リソースの初期化もここで行う
+	// リソースの初期化もここで行う
 	Game::System<WindowManager>().SetWindowConfig(WindowContext::First, config1);
-
 
 	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::First);
 

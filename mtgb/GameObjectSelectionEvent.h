@@ -14,10 +14,12 @@ namespace mtgb
 		EntityId entityId;
 	};
 
-	struct SelectionClearedEvent{};
+	struct SelectionClearedEvent
+	{
+	};
 
 	struct GameObjectCreatedEvent
 	{
 		EntityId entityId;
 	};
-}
+} // namespace mtgb

@@ -1,12 +1,11 @@
 ﻿#include "Socket.h"
 
-
-mtnet::Socket::Socket(const IPEndPoint& _local) :
-	wsaData_{},
-	connectingSocket_{ INVALID_SOCKET },
-	result_{ 0 },
-	LOCAL_IP_END_POINT{ _local },
-	addr_{}
+mtnet::Socket::Socket(const IPEndPoint& _local)
+	: wsaData_{}
+	, connectingSocket_{INVALID_SOCKET}
+	, result_{0}
+	, LOCAL_IP_END_POINT{_local}
+	, addr_{}
 {
 }
 
@@ -36,15 +35,12 @@ bool mtnet::Socket::TryStartup()
 		return false;
 	}
 
-	return true;  // 起動に成功した
+	return true; // 起動に成功した
 }
 
 bool mtnet::Socket::TryBind()
 {
-	result_ = bind(
-		connectingSocket_,
-		reinterpret_cast<sockaddr*>(&addr_),
-		sizeof(addr_));
+	result_ = bind(connectingSocket_, reinterpret_cast<sockaddr*>(&addr_), sizeof(addr_));
 	if (result_ == SOCKET_ERROR)
 	{
 		int errorCode = WSAGetLastError();
@@ -69,17 +65,15 @@ bool mtnet::Socket::TryStartListen()
 
 mtnet::Socket* mtnet::Socket::Accept()
 {
-	Socket* remoteSocket{ new Socket{ LOCAL_IP_END_POINT } };
-	
-	int addressLength{ sizeof(SOCKADDR_IN) };
-	remoteSocket->connectingSocket_ = accept(
-		connectingSocket_,
-		reinterpret_cast<sockaddr*>(&remoteSocket->addr_),
-		&addressLength);
+	Socket* remoteSocket{new Socket{LOCAL_IP_END_POINT}};
+
+	int addressLength{sizeof(SOCKADDR_IN)};
+	remoteSocket->connectingSocket_ =
+		accept(connectingSocket_, reinterpret_cast<sockaddr*>(&remoteSocket->addr_), &addressLength);
 
 	if (remoteSocket->connectingSocket_ == INVALID_SOCKET)
 	{
-		int errorCode{ WSAGetLastError() };
+		int errorCode{WSAGetLastError()};
 		Close(true);
 		return nullptr;
 	}
@@ -95,10 +89,7 @@ bool mtnet::Socket::TryConnect(const IPEndPoint& _remote)
 		return false;
 	}
 
-	result_ = connect(
-		connectingSocket_,
-		reinterpret_cast<sockaddr*>(&remoteAddr),
-		sizeof(remoteAddr));
+	result_ = connect(connectingSocket_, reinterpret_cast<sockaddr*>(&remoteAddr), sizeof(remoteAddr));
 	if (result_ == SOCKET_ERROR)
 	{
 		int errorCode = WSAGetLastError();
@@ -147,5 +138,5 @@ void mtnet::Socket::Close(const bool& _force)
 
 	closesocket(connectingSocket_);
 	connectingSocket_ = INVALID_SOCKET;
-	//WSACleanup();
+	// WSACleanup();
 }

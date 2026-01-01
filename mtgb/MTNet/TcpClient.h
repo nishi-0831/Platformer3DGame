@@ -8,7 +8,7 @@ namespace mtnet
 	/// </summary>
 	class TcpClient : public Socket
 	{
-	public:
+	  public:
 		/// <summary>
 		/// Tcpクライアントを作成する
 		/// </summary>
@@ -25,4 +25,4 @@ namespace mtnet
 		ReceivedLength Receive(Byte* _buffer, const int& _bufferLength);
 		ReceivedLength Send(Byte* _buffer, const int& _bufferLength);
 	};
-}
+} // namespace mtnet

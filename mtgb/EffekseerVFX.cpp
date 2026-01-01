@@ -19,7 +19,7 @@ namespace mtgb
 	}
 	using namespace Effekseer;
 	using namespace EffekseerRendererDX11;
-	constexpr int MAX_SQUARE{ 8192 };
+	constexpr int MAX_SQUARE{8192};
 	Effekseer::Matrix43 CnvMat43(DirectX::XMFLOAT4X4 _mat)
 	{
 		Effekseer::Matrix43 mat43{};
@@ -151,9 +151,9 @@ namespace mtgb
 				continue;
 			}
 
-			auto& instance = *instancePtr;
+			auto& instance	   = *instancePtr;
 			auto& effectParams = instance.pEffectParameters_;
-			Handle& handle = instance.handle_;
+			Handle& handle	   = instance.handle_;
 
 			if (!effectParams)
 			{
@@ -225,8 +225,8 @@ namespace mtgb
 		SetCamera();
 		rendererRef_->BeginRendering();
 		Effekseer::Manager::DrawParameter drawParameter;
-		drawParameter.ZNear = Game::System<CameraSystem>().GetNear();
-		drawParameter.ZFar = Game::System<CameraSystem>().GetFar();
+		drawParameter.ZNear				   = Game::System<CameraSystem>().GetNear();
+		drawParameter.ZFar				   = Game::System<CameraSystem>().GetFar();
 		drawParameter.ViewProjectionMatrix = rendererRef_->GetCameraProjectionMatrix();
 		managerRef_->Draw(drawParameter);
 		rendererRef_->EndRendering();
@@ -243,7 +243,8 @@ namespace mtgb
 		effectList_.emplace(_effectName, std::make_shared<EffectData>(managerRef_, _filePath));
 	}
 
-	std::weak_ptr<EffectParameters> EffectManager::Play(std::string_view _effectName, const EffectParameters& _effectParameters)
+	std::weak_ptr<EffectParameters> EffectManager::Play(std::string_view _effectName,
+														const EffectParameters& _effectParameters)
 	{
 		if (auto iter = effectList_.find(_effectName.data()); iter != effectList_.end())
 		{
@@ -252,7 +253,7 @@ namespace mtgb
 			{
 				if (!slot)
 				{
-					slot = std::make_unique<EffectInstance>(iter->second);
+					slot					 = std::make_unique<EffectInstance>(iter->second);
 					slot->pEffectParameters_ = std::make_shared<EffectParameters>(_effectParameters);
 					return std::weak_ptr<EffectParameters>(slot->pEffectParameters_);
 				}
@@ -262,19 +263,20 @@ namespace mtgb
 			if (effectInstances_.size() < kEffectPoolCapacity)
 			{
 				std::unique_ptr<EffectInstance> effectInstance = std::make_unique<EffectInstance>(iter->second);
-				effectInstance->pEffectParameters_ = std::make_shared<EffectParameters>(_effectParameters);
-				std::weak_ptr<EffectParameters> weakRef = std::weak_ptr<EffectParameters>(effectInstance->pEffectParameters_);
+				effectInstance->pEffectParameters_			   = std::make_shared<EffectParameters>(_effectParameters);
+				std::weak_ptr<EffectParameters> weakRef =
+					std::weak_ptr<EffectParameters>(effectInstance->pEffectParameters_);
 				effectInstances_.emplace_back(std::move(effectInstance));
 				return weakRef;
 			}
 
-			LOGIMGUI("Effect pool is full. Cannot play %s", std::string{ _effectName }.c_str());
+			LOGIMGUI("Effect pool is full. Cannot play %s", std::string{_effectName}.c_str());
 		}
 		// 名前に対応するエフェクトが存在しない
 		else
 		{
 			// ログに出力
-			std::string effectNameStr{ _effectName };
+			std::string effectNameStr{_effectName};
 			LOGIMGUI("EffectName %s is not found !", effectNameStr.c_str());
 		}
 
@@ -292,7 +294,6 @@ namespace mtgb
 	{
 		Load(_manager);
 	}
-
 
 	void EffectData::Load(const Effekseer::ManagerRef& _manager)
 	{
@@ -318,9 +319,9 @@ namespace mtgb
 	}
 
 	EffectInstance::EffectInstance(const std::shared_ptr<EffectData>& _effectData)
-		: pEffectData_{ _effectData }
-		, elapsedTime_{ 0 }
-		, handle_{ -1 }
+		: pEffectData_{_effectData}
+		, elapsedTime_{0}
+		, handle_{-1}
 	{
 	}
 
@@ -329,4 +330,4 @@ namespace mtgb
 		return pEffectData_;
 	}
 
-}
+} // namespace mtgb

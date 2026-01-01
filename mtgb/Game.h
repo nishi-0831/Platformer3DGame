@@ -1,5 +1,5 @@
 #pragma once
-//#include "GameScene.h"
+// #include "GameScene.h"
 #include "Entity.h"
 #include <string>
 #include <functional>
@@ -20,7 +20,7 @@
 #include "ComponentFactory.h"
 namespace mtgb
 {
-	//using EntityId = int64_t;
+	// using EntityId = int64_t;
 	class IComponentPool;
 
 	/// <summary>
@@ -28,59 +28,53 @@ namespace mtgb
 	/// </summary>
 	class Game
 	{
-	protected:
+	  protected:
 		/// <summary>
 		/// システムの更新タイミングタイプ
 		/// </summary>
 		enum struct SystemUpdateType : int8_t
 		{
-			DontCallMe,  // 呼び出さないで！
-			Cycle,  // 毎サイクル
-			Frame,  // 毎フレーム
-			Fixed,  // 一定の間隔
+			DontCallMe, // 呼び出さないで！
+			Cycle,		// 毎サイクル
+			Frame,		// 毎フレーム
+			Fixed,		// 一定の間隔
 		};
 
 		/// <summary>
 		/// システム登録のコールバック関数
 		/// </summary>
-		using RegisterSystem = std::function<void(
-			std::type_index _systemTypeName,
-			ISystem* _system,
-			const bool _isComponentPool,
-			const SystemUpdateType)>;
+		using RegisterSystem = std::function<void(std::type_index _systemTypeName,
+												  ISystem* _system,
+												  const bool _isComponentPool,
+												  const SystemUpdateType)>;
 
 		/// <summary>
 		/// システム登録の関数ホルダ
 		/// </summary>
 		class RegisterSystemFuncHolder
 		{
-		public:
-			RegisterSystemFuncHolder(RegisterSystem _function) :
-				function_{ _function }
-			{}
-
-			template<typename SystemT>
-			void Set(SystemUpdateType _type, const bool _isComponentCP = false) const
+		  public:
+			RegisterSystemFuncHolder(RegisterSystem _function)
+				: function_{_function}
 			{
-
-				function_(
-					typeid(SystemT),
-					dynamic_cast<ISystem*>(new SystemT{}),
-					_isComponentCP,
-					_type);
 			}
 
-		private:
+			template <typename SystemT> void Set(SystemUpdateType _type, const bool _isComponentCP = false) const
+			{
+
+				function_(typeid(SystemT), dynamic_cast<ISystem*>(new SystemT{}), _isComponentCP, _type);
+			}
+
+		  private:
 			RegisterSystem function_;
 		};
 
-	protected:
+	  protected:
 		Game();
 		virtual ~Game();
 
-	protected:
-		template<typename T>
-		void Set(SystemUpdateType _systemUpdateType);
+	  protected:
+		template <typename T> void Set(SystemUpdateType _systemUpdateType);
 		/// <summary>
 		/// <para>任意の更新順番でシステムを設定する</para>
 		/// <para>使うシステムを必要なだけこの関数内でnewしてください</para>
@@ -99,25 +93,25 @@ namespace mtgb
 
 		virtual Vector2Int GetScreenSize() const;
 
-	private:
-		std::map<std::type_index, ISystem*> pRegisterSystems_;  // 登録済みのシステム
-		std::list<ISystem*> pCycleUpdateSystems_;  // 毎サイクル更新されるシステム
-		std::list<ISystem*> pFrameUpdateSystems_;  // 毎フレーム更新されるシステム
-		std::list<ISystem*> pFixedUpdateSystems_;  // 一定期間で更新されるシステム
-		std::vector<IComponentPool*> pComponentPools_;    // コンポーネントプールのシステム
-		std::vector<IRenderableCP*> pRenderablePools_; // 描画可能なコンポーネントプールのシステム
-		std::vector<std::type_index> registerOrder_; // 登録順を保持する配列
+	  private:
+		std::map<std::type_index, ISystem*> pRegisterSystems_; // 登録済みのシステム
+		std::list<ISystem*> pCycleUpdateSystems_;			   // 毎サイクル更新されるシステム
+		std::list<ISystem*> pFrameUpdateSystems_;			   // 毎フレーム更新されるシステム
+		std::list<ISystem*> pFixedUpdateSystems_;			   // 一定期間で更新されるシステム
+		std::vector<IComponentPool*> pComponentPools_;		   // コンポーネントプールのシステム
+		std::vector<IRenderableCP*> pRenderablePools_;		   // 描画可能なコンポーネントプールのシステム
+		std::vector<std::type_index> registerOrder_;		   // 登録順を保持する配列
 
 		ComponentFactory componentFactory_;
-	public:
+
+	  public:
 		/// <summary>
 		/// ゲームを起動する
 		/// </summary>
 		/// <typeparam name="GameT"></typeparam>
 		/// <typeparam name="...Args"></typeparam>
 		/// <param name="..._args"></param>
-		template<typename GameT, typename ...Args>
-		static void Run(Args... _args);
+		template <typename GameT, typename... Args> static void Run(Args... _args);
 
 		/// <summary>
 		/// ゲームを終了する
@@ -129,20 +123,28 @@ namespace mtgb
 		/// </summary>
 		/// <typeparam name="SystemT">システムの型</typeparam>
 		/// <returns>システムの参照ポインタ</returns>
-		template<typename SystemT>
-		static inline SystemT& System();
+		template <typename SystemT> static inline SystemT& System();
 
-		static ComponentFactory& GetComponentFactory() { return pInstance_->componentFactory_; }
+		static ComponentFactory& GetComponentFactory()
+		{
+			return pInstance_->componentFactory_;
+		}
 		/// <summary>
 		/// ゲームのバージョンを取得
 		/// </summary>
 		/// <returns>バージョン情報の文字列</returns>
-		static inline std::string_view Version() { return pInstance_->GetVersion(); }
+		static inline std::string_view Version()
+		{
+			return pInstance_->GetVersion();
+		}
 		/// <summary>
 		/// ゲームタイトルを取得
 		/// </summary>
 		/// <returns>ゲームタイトルの文字列</returns>
-		static inline std::string_view Title() { return pInstance_->GetTitle(); }
+		static inline std::string_view Title()
+		{
+			return pInstance_->GetTitle();
+		}
 
 		/// <summary>
 		/// フレームの更新をする
@@ -171,7 +173,7 @@ namespace mtgb
 		/// <param name="_typeIndex"></param>
 		/// <param name="_entityId"></param>
 		static void RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId);
-		
+
 		/// <summary>
 		/// エンティティに対応するコンポーネントをJSONにシリアライズして返す
 		/// </summary>
@@ -186,7 +188,7 @@ namespace mtgb
 		/// <param name="_entityId"></param>
 		/// <param name="_json"></param>
 		/// <returns></returns>
-		static void DeserializeComponent(std::type_index _typeIndex, EntityId _entityId,const nlohmann::json& _json);
+		static void DeserializeComponent(std::type_index _typeIndex, EntityId _entityId, const nlohmann::json& _json);
 		static void DeserializeComponents(EntityId _entityId, const nlohmann::json& _json);
 
 		/// <summary>
@@ -194,7 +196,8 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		static std::span<IRenderableCP*> GetRenderableCPs();
-	private:
+
+	  private:
 		/// <summary>
 		/// システムの初期化をする
 		/// </summary>
@@ -210,12 +213,11 @@ namespace mtgb
 		/// </summary>
 		static void RunLoopGameCycle();
 
-		static Game* pInstance_;  // 唯一のゲームインスタンス
-		static bool toExit_;  // 終了フラグ
+		static Game* pInstance_; // 唯一のゲームインスタンス
+		static bool toExit_;	 // 終了フラグ
 	};
 
-	template<typename T>
-	inline void Game::Set(SystemUpdateType _systemUpdateType)
+	template <typename T> inline void Game::Set(SystemUpdateType _systemUpdateType)
 	{
 		static_assert(std::is_base_of_v<ISystem, T>);
 
@@ -232,67 +234,62 @@ namespace mtgb
 			pInstance_->pRenderablePools_.push_back(dynamic_cast<IRenderableCP*>(pSystem));
 		}
 
-		pInstance_->pRegisterSystems_.insert({ typeid(T),pSystem });
+		pInstance_->pRegisterSystems_.insert({typeid(T), pSystem});
 		switch (_systemUpdateType)
 		{
-		case SystemUpdateType::Cycle:
+		case SystemUpdateType::Cycle :
 			pInstance_->pCycleUpdateSystems_.push_back(pSystem);
 			break;
-		case SystemUpdateType::Frame:
+		case SystemUpdateType::Frame :
 			pInstance_->pFrameUpdateSystems_.push_back(pSystem);
 			break;
-		case SystemUpdateType::Fixed:
+		case SystemUpdateType::Fixed :
 			pInstance_->pFixedUpdateSystems_.push_back(pSystem);
 			break;
-		case SystemUpdateType::DontCallMe:
-		default:
+		case SystemUpdateType::DontCallMe :
+		default :
 			break;
 		}
 	}
 
-	template<typename GameT, typename ...Args>
-	inline void Game::Run(Args... _args)
+	template <typename GameT, typename... Args> inline void Game::Run(Args... _args)
 	{
 		// ゲームをインスタンスする
-		pInstance_ = new GameT{ _args... };
+		pInstance_ = new GameT{_args...};
 
 		std::list<ISystem*> systems{};
 
 		// 各システムの登録
 		pInstance_->SetupSystems(
-		{
-			[&](
-				std::type_index _systemType,
-				ISystem* _pSystem,
-				const bool _isComponentPool,
-				const SystemUpdateType _systemUpdateType)
-			{
-				assert(_pSystem != nullptr
-					&& "ISystemへのアップキャストに失敗、継承関係がpublicになっているか確認。");
+			{[&](std::type_index _systemType,
+				 ISystem* _pSystem,
+				 const bool _isComponentPool,
+				 const SystemUpdateType _systemUpdateType)
+			 {
+				 assert(_pSystem != nullptr && "ISystemへのアップキャストに失敗、継承関係がpublicになっているか確認。");
 
-				systems.push_back(_pSystem);
-				if (_isComponentPool)
-				{
-					pInstance_->pComponentPools_.push_back(dynamic_cast<IComponentPool*>(_pSystem));
-				}
-				pInstance_->pRegisterSystems_.insert({ _systemType , _pSystem });
-				switch (_systemUpdateType)
-				{
-				case SystemUpdateType::Cycle:
-					pInstance_->pCycleUpdateSystems_.push_back(_pSystem);
-					break;
-				case SystemUpdateType::Frame:
-					pInstance_->pFrameUpdateSystems_.push_back(_pSystem);
-					break;
-				case SystemUpdateType::Fixed:
-					pInstance_->pFixedUpdateSystems_.push_back(_pSystem);
-					break;
-				case SystemUpdateType::DontCallMe:
-				default:
-					break;
-				}
-			}
-		});
+				 systems.push_back(_pSystem);
+				 if (_isComponentPool)
+				 {
+					 pInstance_->pComponentPools_.push_back(dynamic_cast<IComponentPool*>(_pSystem));
+				 }
+				 pInstance_->pRegisterSystems_.insert({_systemType, _pSystem});
+				 switch (_systemUpdateType)
+				 {
+				 case SystemUpdateType::Cycle :
+					 pInstance_->pCycleUpdateSystems_.push_back(_pSystem);
+					 break;
+				 case SystemUpdateType::Frame :
+					 pInstance_->pFrameUpdateSystems_.push_back(_pSystem);
+					 break;
+				 case SystemUpdateType::Fixed :
+					 pInstance_->pFixedUpdateSystems_.push_back(_pSystem);
+					 break;
+				 case SystemUpdateType::DontCallMe :
+				 default :
+					 break;
+				 }
+			 }});
 		// 各システムの初期化
 		pInstance_->InitializeSystems(systems);
 
@@ -307,18 +304,17 @@ namespace mtgb
 		delete pInstance_;
 	}
 
-	template<typename SystemT>
-	inline SystemT& Game::System()
+	template <typename SystemT> inline SystemT& Game::System()
 	{
 		const char* t = typeid(SystemT).name();
 
-		ISystem* pSystem{ pInstance_->pRegisterSystems_[typeid(SystemT)] };
+		ISystem* pSystem{pInstance_->pRegisterSystems_[typeid(SystemT)]};
 
 		assert(pSystem != nullptr);
 
 		// 基底クラスがISystemであるか
-		static_assert(std::is_base_of<ISystem, SystemT>().value
-			&& "ISystemクラスを継承していないクラスのインスタンスは取得できません。");
+		static_assert(std::is_base_of<ISystem, SystemT>().value &&
+					  "ISystemクラスを継承していないクラスのインスタンスは取得できません。");
 		return *(dynamic_cast<SystemT*>(pSystem));
 	}
-}
+} // namespace mtgb

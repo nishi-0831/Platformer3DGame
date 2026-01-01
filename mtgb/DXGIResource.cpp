@@ -32,11 +32,12 @@ mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)
 	HWND hWnd = WinCtxRes::GetHWND(_windowContext);
 
 	// マルチモニター対応かどうか
-	
+
 	if (isMultiMonitor_)
-	{	
-		
-		std::optional<MonitorInfo> optMonitorInfo = dx11Manager.AssignAvailableMonitor(pOutput_.ReleaseAndGetAddressOf());
+	{
+
+		std::optional<MonitorInfo> optMonitorInfo =
+			dx11Manager.AssignAvailableMonitor(pOutput_.ReleaseAndGetAddressOf());
 		if (optMonitorInfo)
 		{
 			monitorInfo_ = *optMonitorInfo;
@@ -44,8 +45,7 @@ mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)
 
 		// ウィンドウサイズの変更時に利用するためにDescを取得
 		HRESULT hResult = pOutput_->GetDesc(&outputDesc_);
-		massert(SUCCEEDED(hResult)
-			&& "GetDesc に失敗 @DXGIResource::Initialize");
+		massert(SUCCEEDED(hResult) && "GetDesc に失敗 @DXGIResource::Initialize");
 
 		// ボーダレスウィンドウの場合、スワップチェーンのバッファサイズを変えるだけなので、Outputは不要。
 		// ID3D11Deviceの作成に使用したIDXGIAdapterと、IDXGIOutputの列挙に使用したIDXGIAdapterが異なると、スワップチェーンの作成に失敗する。
@@ -55,7 +55,7 @@ mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)
 			pOutput_.Reset();
 		}
 	}
-	else 
+	else
 	{
 		pOutput_ = nullptr;
 	}
@@ -79,7 +79,8 @@ void DXGIResource::SetResource()
 
 void mtgb::DXGIResource::Update()
 {
-	MTImGui::Instance().DirectShow([this]
+	MTImGui::Instance().DirectShow(
+		[this]
 		{
 			// モニター(DXGIOutput)の情報
 			ImGui::PushID(&monitorInfo_);
@@ -88,7 +89,9 @@ void mtgb::DXGIResource::Update()
 			TypeRegistry::Instance().CallFunc(&monitorInfo_.desc, "OutputDesc");
 			ImGui::PopID();
 			ImGui::Separator();
-		}, name_.c_str(), ShowType::Settings);
+		},
+		name_.c_str(),
+		ShowType::Settings);
 }
 
 void mtgb::DXGIResource::Reset()
@@ -98,8 +101,7 @@ void mtgb::DXGIResource::Reset()
 
 void mtgb::DXGIResource::OnResize(UINT _width, UINT _height)
 {
-	HRESULT hResult = pSwapChain1_->ResizeBuffers(
-		0, _width, _height, DXGI_FORMAT_UNKNOWN, 0);
+	HRESULT hResult = pSwapChain1_->ResizeBuffers(0, _width, _height, DXGI_FORMAT_UNKNOWN, 0);
 	massert(SUCCEEDED(hResult) && "ResizeBuffers に失敗 @DXGIResource::OnResize");
 
 	// 再取得
@@ -123,5 +125,3 @@ void mtgb::DXGIResource::SwapMonitorInfo(DXGIResource& _other)
 	std::swap(monitorInfo_, _other.monitorInfo_);
 	std::swap(outputDesc_, _other.outputDesc_);
 }
-
-

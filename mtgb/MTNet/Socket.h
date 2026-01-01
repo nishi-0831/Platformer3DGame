@@ -8,7 +8,7 @@ namespace mtnet
 
 	class Socket
 	{
-	public:
+	  public:
 		Socket(const IPEndPoint& _local);
 		~Socket();
 
@@ -18,7 +18,7 @@ namespace mtnet
 		/// <param name="force">強制的に閉じる true / false</param>
 		void Close(const bool& force = false);
 
-	protected:
+	  protected:
 		/// <summary>
 		/// 試しに起動する
 		/// </summary>
@@ -70,17 +70,20 @@ namespace mtnet
 		/// 現在の結果コードを取得する
 		/// </summary>
 		/// <returns>結果コード</returns>
-		inline ResultCode GetResultCode() const { return result_; }
+		inline ResultCode GetResultCode() const
+		{
+			return result_;
+		}
 
-	public:
+	  public:
 		const IPEndPoint LOCAL_IP_END_POINT;
 
-	protected:
+	  protected:
 		ResultCode result_;
 
-	private:
+	  private:
 		WSADATA wsaData_;
 		SOCKADDR_IN addr_;
 		SOCKET connectingSocket_;
 	};
-}
+} // namespace mtnet

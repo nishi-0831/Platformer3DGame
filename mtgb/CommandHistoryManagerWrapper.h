@@ -8,7 +8,7 @@ namespace mtgb
 {
 	class NamedCommandHistory : public ICommandHistory
 	{
-	public:
+	  public:
 		// ˆÃ–Ù“I‚È•ÏŠ·‚ð‹ÖŽ~
 		explicit NamedCommandHistory(ICommandHistory* _inner = nullptr);
 		~NamedCommandHistory() = default;
@@ -18,15 +18,22 @@ namespace mtgb
 		void RedoCommand() override;
 		void ClearAllStack() override;
 
-		const std::deque<std::string>& GetUndoNames() const { return undoNames_; };
-		const std::deque<std::string>& GetRedoNames() const { return redoNames_; };
+		const std::deque<std::string>& GetUndoNames() const
+		{
+			return undoNames_;
+		};
+		const std::deque<std::string>& GetRedoNames() const
+		{
+			return redoNames_;
+		};
 
 		void DrawImGuiStack() const;
-	private:
+
+	  private:
 		void ClearRedoStack() override;
 		ICommandHistory* inner_ = nullptr;
 		std::deque<std::string> undoNames_;
 		std::deque<std::string> redoNames_;
 		std::deque<std::string> commandHistoryNames_;
 	};
-}
+} // namespace mtgb

@@ -6,48 +6,52 @@
 #include <cstdint>
 #include "ISystem.h"
 
-
 using TimerHandle = void*;
 
 namespace mtgb
 {
 	class Timer : public ISystem
 	{
-	private:
+	  private:
 		struct QUEUE_ELEMENT
 		{
 			std::function<void()> on;
 			float timeLeft;
 		};
-	
-	public:
+
+	  public:
 		static TimerHandle AddAram(const float _time, const std::function<void()>& _callback);
-		static TimerHandle AddInterval(const float _time, const std::function<void()>& _callback, const bool _firstCall = false);
+		static TimerHandle AddInterval(const float _time,
+									   const std::function<void()>& _callback,
+									   const bool _firstCall = false);
 		static void Remove(TimerHandle _hTimer);
-	
+
 		/// <summary>
 		/// タイマーキューをすべてクリアする
 		/// </summary>
 		static void Clear();
-	
+
 		static void Release();
 
-	public:
+	  public:
 		Timer();
 		~Timer();
 
 		void Initialize() override;
 		void Update() override;
-	
+
 		void EnqueueTimer(QUEUE_ELEMENT* _pElement);
 
-	private:
-		static Timer& Instance() { return *pInstance_; }
+	  private:
+		static Timer& Instance()
+		{
+			return *pInstance_;
+		}
 
-	private:
+	  private:
 		static Timer* pInstance_;
-		std::list<QUEUE_ELEMENT*> pTimerQueue_;  // タイマーキュー
-		std::map<QUEUE_ELEMENT*, float> pReenqueueElements_;  // 使いまわしする要素のタイマー情報
-		std::set<QUEUE_ELEMENT*> toErase_;  // 消す予定のキュー
+		std::list<QUEUE_ELEMENT*> pTimerQueue_;				 // タイマーキュー
+		std::map<QUEUE_ELEMENT*, float> pReenqueueElements_; // 使いまわしする要素のタイマー情報
+		std::set<QUEUE_ELEMENT*> toErase_;					 // 消す予定のキュー
 	};
-}
+} // namespace mtgb

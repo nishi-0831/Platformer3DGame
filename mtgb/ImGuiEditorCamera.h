@@ -12,21 +12,22 @@ namespace mtgb
 	{
 		Track,
 		Dolly, // カメラを左右に移動
-		Pan,	// カメラ自身を軸として回転
-		Orbit	// ターゲットを軸として回転
+		Pan,   // カメラ自身を軸として回転
+		Orbit  // ターゲットを軸として回転
 	};
-	class ImGuiEditorCamera : public ImGuiShowable ,public ISystem , public ICamera
+	class ImGuiEditorCamera : public ImGuiShowable, public ISystem, public ICamera
 	{
-	public:
+	  public:
 		ImGuiEditorCamera();
 		~ImGuiEditorCamera();
 		void ShowImGui() override;
 		void Initialize() override;
 		void SetCamera();
-		
+
 		void Update() override;
 		void CreateCamera();
-	private:
+
+	  private:
 		void DoDolly();
 		void DoPan();
 		void DoTrack();
@@ -40,4 +41,4 @@ namespace mtgb
 
 		std::string windowName_;
 	};
-}
+} // namespace mtgb

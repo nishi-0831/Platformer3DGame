@@ -11,8 +11,6 @@
 #include "Screen.h"
 using namespace mtgb;
 
-
-
 /// <summary>
 /// ウィンドウからのメッセージを受信してImGuiの入力やイベントを有効にするためのコールバック関数
 /// </summary>
@@ -36,15 +34,15 @@ LRESULT WindowResource::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
 	WindowResource* pThis;
 	if (msg == WM_NCCREATE)
 	{
-		//作成時のパラメータからthisを取得、キャスト
+		// 作成時のパラメータからthisを取得、キャスト
 		pThis = static_cast<WindowResource*>(reinterpret_cast<LPCREATESTRUCT>(lParam)->lpCreateParams);
-		//thisのUSERDATAにthisを紐付ける
+		// thisのUSERDATAにthisを紐付ける
 		SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pThis));
 		pThis->hWnd_ = hWnd;
 	}
 	else
 	{
-		//hWndにthisを紐づけておいたので取得
+		// hWndにthisを紐づけておいたので取得
 		pThis = reinterpret_cast<WindowResource*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
 		if (pThis)
 		{
@@ -56,7 +54,6 @@ LRESULT WindowResource::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
 		return pThis->HandleWindowMessage(hWnd, msg, wParam, lParam);
 	}
 	return DefWindowProc(hWnd, msg, wParam, lParam);
-
 }
 
 LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -66,18 +63,17 @@ LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, 
 		return true;
 	}
 
-
 	switch (msg)
 	{
-	case WM_CLOSE:
+	case WM_CLOSE :
 		Game::Exit();
 		return 0;
-	case WM_DESTROY:  // ウィンドウを閉じた
+	case WM_DESTROY : // ウィンドウを閉じた
 		return S_OK;
-	case WM_MOUSEMOVE:  // マウスが動いた
+	case WM_MOUSEMOVE : // マウスが動いた
 		Game::System<Input>().UpdateMousePositionData(LOWORD(lParam), HIWORD(lParam));
 		return S_OK;
-	case WM_SIZE:  // ウィンドウサイズが変わった
+	case WM_SIZE : // ウィンドウサイズが変わった
 	{
 		if (this && wParam != SIZE_MINIMIZED)
 		{
@@ -87,16 +83,15 @@ LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, 
 				return S_OK;
 			}
 
-			UINT width = LOWORD(lParam);
+			UINT width	= LOWORD(lParam);
 			UINT height = HIWORD(lParam);
 		}
 		return S_OK;
 	}
-	
-	default:  // それ以外のメッセージは譲渡
+
+	default : // それ以外のメッセージは譲渡
 		break;
 	}
-
 
 	// NOTE: これが抜けているとウィンドウ表示されないし、エラーは出ないしで苦労する(した)
 	return DefWindowProc(hWnd, msg, wParam, lParam);
@@ -116,11 +111,11 @@ mtgb::WindowResource::WindowResource(WindowContext _windowContext)
 	, initialInfo_{}
 	, isInitialized_{false}
 {
-	hWnd_ = Game::System<WindowManager>().CreateWindowContext(this);
-	isActive_ = true;
+	hWnd_		   = Game::System<WindowManager>().CreateWindowContext(this);
+	isActive_	   = true;
 	isInitialized_ = false;
 
-	currInfo_.windowedStyle_ = GetWindowLong(hWnd_, GWL_STYLE);
+	currInfo_.windowedStyle_   = GetWindowLong(hWnd_, GWL_STYLE);
 	currInfo_.windowedExStyle_ = GetWindowLong(hWnd_, GWL_EXSTYLE);
 	GetWindowRect(hWnd_, &currInfo_.windowedRect_);
 
@@ -129,7 +124,6 @@ mtgb::WindowResource::WindowResource(WindowContext _windowContext)
 
 void WindowResource::SetResource()
 {
-
 }
 
 mtgb::WindowResource::~WindowResource()
@@ -144,16 +138,16 @@ void mtgb::WindowResource::MarkInitialized()
 
 void mtgb::WindowResource::OnResize(UINT _width, UINT _height)
 {
-	if (_width == 0 || _height == 0) return;
+	if (_width == 0 || _height == 0)
+		return;
 
 	Game::System<Screen>().SetSize(static_cast<int>(_width), static_cast<int>(_height));
 
-	//WindowConfigのサイズを更新
+	// WindowConfigのサイズを更新
 	WindowConfig config = Game::System<WindowManager>().GetWindowConfig(windowContext_);
-	config.width = _width;
-	config.height = _height;
+	config.width		= _width;
+	config.height		= _height;
 	Game::System<WindowManager>().SetWindowConfig(windowContext_, config);
-
 }
 
 void mtgb::WindowResource::SetWindowMode()
@@ -170,37 +164,40 @@ void mtgb::WindowResource::SetFullScreen(const RECT& _monitorRect)
 
 	// ウィンドウスタイルを枠なしポップアップに変更
 	SetWindowLong(hWnd_, GWL_STYLE, currInfo_.windowedStyle_ & ~(WS_CAPTION | WS_THICKFRAME));
-	SetWindowLong(hWnd_, GWL_EXSTYLE, currInfo_.windowedExStyle_ & ~(WS_EX_DLGMODALFRAME | WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE | WS_EX_STATICEDGE));
+	SetWindowLong(hWnd_,
+				  GWL_EXSTYLE,
+				  currInfo_.windowedExStyle_ &
+					  ~(WS_EX_DLGMODALFRAME | WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE | WS_EX_STATICEDGE));
 
 	// 指定されたモニター座標を直接使用
-	SetWindowPos(hWnd_, HWND_TOP,
-		_monitorRect.left, _monitorRect.top,// ウィンドウの位置
-		_monitorRect.right - _monitorRect.left,// ウィンドウのサイズ(幅)
-		_monitorRect.bottom - _monitorRect.top,// ウィンドウのサイズ(高さ)
-		// オーナー(?)ウィンドウのZ順序は変更しない、スタイルの変更を適用
-		SWP_NOOWNERZORDER | SWP_FRAMECHANGED);
-
+	SetWindowPos(hWnd_,
+				 HWND_TOP,
+				 _monitorRect.left,
+				 _monitorRect.top,						 // ウィンドウの位置
+				 _monitorRect.right - _monitorRect.left, // ウィンドウのサイズ(幅)
+				 _monitorRect.bottom - _monitorRect.top, // ウィンドウのサイズ(高さ)
+				 // オーナー(?)ウィンドウのZ順序は変更しない、スタイルの変更を適用
+				 SWP_NOOWNERZORDER | SWP_FRAMECHANGED);
 }
-
-
 
 void mtgb::WindowResource::GetWindowInfo()
 {
 	// 現在のウィンドウのスタイルと位置を保存
-	currInfo_.windowedStyle_ = GetWindowLong(hWnd_, GWL_STYLE);
+	currInfo_.windowedStyle_   = GetWindowLong(hWnd_, GWL_STYLE);
 	currInfo_.windowedExStyle_ = GetWindowLong(hWnd_, GWL_EXSTYLE);
 	GetWindowRect(hWnd_, &currInfo_.windowedRect_);
 }
 
 void mtgb::WindowResource::SetPosition(const RECT& _monitorRect)
 {
-	SetWindowPos(hWnd_, HWND_NOTOPMOST,
-		_monitorRect.left,
-		_monitorRect.top,
-		_monitorRect.right - _monitorRect.left,
-		_monitorRect.bottom - _monitorRect.top,
-		// オーナーウィンドウ(?)のZ順序は変更しない、スタイルの変更を適用
-		SWP_NOOWNERZORDER);
+	SetWindowPos(hWnd_,
+				 HWND_NOTOPMOST,
+				 _monitorRect.left,
+				 _monitorRect.top,
+				 _monitorRect.right - _monitorRect.left,
+				 _monitorRect.bottom - _monitorRect.top,
+				 // オーナーウィンドウ(?)のZ順序は変更しない、スタイルの変更を適用
+				 SWP_NOOWNERZORDER);
 
 	currInfo_.windowedRect_ = _monitorRect;
 }
@@ -216,13 +213,14 @@ void mtgb::WindowResource::SetWindowModeImpl(WindowModeInfo _info)
 
 	// 保存しておいたウィンドウの位置、サイズを戻す
 	RECT rect = _info.windowedRect_;
-	SetWindowPos(hWnd_, HWND_NOTOPMOST,
-		rect.left,
-		rect.top,
-		rect.right - rect.left,
-		rect.bottom - rect.top,
-		// オーナーウィンドウ(?)のZ順序は変更しない、スタイルの変更を適用
-		SWP_NOOWNERZORDER | SWP_FRAMECHANGED);
+	SetWindowPos(hWnd_,
+				 HWND_NOTOPMOST,
+				 rect.left,
+				 rect.top,
+				 rect.right - rect.left,
+				 rect.bottom - rect.top,
+				 // オーナーウィンドウ(?)のZ順序は変更しない、スタイルの変更を適用
+				 SWP_NOOWNERZORDER | SWP_FRAMECHANGED);
 }
 
 void mtgb::WindowResource::Release()
@@ -231,9 +229,8 @@ void mtgb::WindowResource::Release()
 }
 
 mtgb::WindowModeInfo::WindowModeInfo()
-	: windowedRect_{0,0,0,0}
+	: windowedRect_{0, 0, 0, 0}
 	, windowedStyle_{0}
 	, windowedExStyle_{0}
 {
-
 }

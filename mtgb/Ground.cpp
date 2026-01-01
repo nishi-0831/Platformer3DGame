@@ -7,14 +7,14 @@
 namespace
 {
 	// 簡易的ライトの向き
-	const mtgb::Vector4 LIGHT_DIRECTION{ 0.0f, 0.0f, 1.0f, 0.0f };
+	const mtgb::Vector4 LIGHT_DIRECTION{0.0f, 0.0f, 1.0f, 0.0f};
 	// 簡易的地形のワールド座標
-	const mtgb::Vector3 WORLD_POSITION{ 0, -10, 0 };
-}
+	const mtgb::Vector3 WORLD_POSITION{0, -10, 0};
+} // namespace
 
-mtgb::Ground::Ground(FbxNode* _pParent) :
-	vertexCount_{ 0 },
-	pVertexes_{ nullptr }
+mtgb::Ground::Ground(FbxNode* _pParent)
+	: vertexCount_{0}
+	, pVertexes_{nullptr}
 {
 	if (_pParent != nullptr)
 	{
@@ -29,8 +29,8 @@ mtgb::Ground::~Ground()
 
 void mtgb::Ground::Initialize()
 {
-	vertexCount_ = pMesh_->GetControlPointsCount();
-	polygonCount_ = pMesh_->GetPolygonCount();
+	vertexCount_		= pMesh_->GetControlPointsCount();
+	polygonCount_		= pMesh_->GetPolygonCount();
 	polygonVertexCount_ = pMesh_->GetPolygonVertexCount();
 	IShader::Initialize();
 }
@@ -46,22 +46,22 @@ void mtgb::Ground::Draw()
 	using namespace DirectX;
 
 	// カメラシステムへのアクセス用
-	const CameraSystem& CAMERA{ Game::System<CameraSystem>() };
+	const CameraSystem& CAMERA{Game::System<CameraSystem>()};
 
 	IShader::Draw<ConstantBuffer, Vertex>(
 		[&, this](ConstantBuffer* _pCB)
 		{
 			CAMERA.GetPosition(&_pCB->g_cameraPosition);
-			Vector3 cameraWorldPos{ CAMERA.GetTransform().GetWorldPosition() };
-			
+			Vector3 cameraWorldPos{CAMERA.GetTransform().GetWorldPosition()};
+
 			// TODO: 地形位置を別クラスから操作
-			Matrix4x4 mWorld{ XMMatrixTranslationFromVector(cameraWorldPos + WORLD_POSITION) };
+			Matrix4x4 mWorld{XMMatrixTranslationFromVector(cameraWorldPos + WORLD_POSITION)};
 			//_transform.GenerateWorldMatrix(&mWorld);
 
-			Matrix4x4 mView{};  // ビュー行列
+			Matrix4x4 mView{}; // ビュー行列
 			CAMERA.GetViewMatrix(&mView);
 
-			Matrix4x4 mProj{};  // プロジェクション行列
+			Matrix4x4 mProj{}; // プロジェクション行列
 			CAMERA.GetProjMatrix(&mProj);
 
 			_pCB->g_matrixWorldViewProj = XMMatrixTranspose(mView * mProj);
@@ -69,28 +69,29 @@ void mtgb::Ground::Draw()
 
 			// TODO: ライトの向きはLightSystemから操作
 			_pCB->g_lightDirection = LIGHT_DIRECTION; // ライトの向き
-			_pCB->g_isTexture = (false);
-
+			_pCB->g_isTexture	   = (false);
 		},
-		[this](ID3D11DeviceContext* _pDC)
-		{
-		},
+		[this](ID3D11DeviceContext* _pDC) {},
 		GetIndexCount());
 }
 
 void mtgb::Ground::InitializeVertexBuffer(ID3D11Device* _pDevice)
 {
 	// xyzアクセス用インデックス
-	enum { X, Y, Z };
+	enum
+	{
+		X,
+		Y,
+		Z
+	};
 
 	pVertexes_ = new Vertex[vertexCount_]{};
 
-	int vertexCount{ pMesh_->GetControlPointsCount() };
-	FbxVector4* pPoints{ pMesh_->GetControlPoints() };
+	int vertexCount{pMesh_->GetControlPointsCount()};
+	FbxVector4* pPoints{pMesh_->GetControlPoints()};
 	for (int i = 0; i < vertexCount; i++)
 	{
-		pVertexes_[i].position =
-		{
+		pVertexes_[i].position = {
 			static_cast<float>(pPoints[i][X]),
 			static_cast<float>(pPoints[i][Y]),
 			static_cast<float>(pPoints[i][Z]),
@@ -98,98 +99,84 @@ void mtgb::Ground::InitializeVertexBuffer(ID3D11Device* _pDevice)
 		pVertexes_[i].normal = Vector3::Up();
 	}
 
-	const D3D11_BUFFER_DESC BUFFER_DESC
-	{
-		.ByteWidth = sizeof(Vertex) * vertexCount_,
-		.Usage = D3D11_USAGE_DYNAMIC,                // 途中で書き換えるため dynamic
-		.BindFlags = D3D11_BIND_VERTEX_BUFFER,
-		.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE,    // 途中で書き換えるから
-		.MiscFlags = 0,
+	const D3D11_BUFFER_DESC BUFFER_DESC{
+		.ByteWidth			 = sizeof(Vertex) * vertexCount_,
+		.Usage				 = D3D11_USAGE_DYNAMIC, // 途中で書き換えるため dynamic
+		.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
+		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE, // 途中で書き換えるから
+		.MiscFlags			 = 0,
 		.StructureByteStride = 0,
 	};
 
-	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA
-	{
-		.pSysMem = pVertexes_,
-		.SysMemPitch = 0,
+	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+		.pSysMem		  = pVertexes_,
+		.SysMemPitch	  = 0,
 		.SysMemSlicePitch = 0,
 	};
 
 	HRESULT hResult{};
-	hResult = _pDevice->CreateBuffer(
-		&BUFFER_DESC,
-		&INITIALIZE_DATA,
-		&pVertexBuffer_);
+	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pVertexBuffer_);
 
-	massert(SUCCEEDED(hResult)
-		&& "頂点バッファの作成に失敗 @FbxParts::InitializeVertexBuffer");
+	massert(SUCCEEDED(hResult) && "頂点バッファの作成に失敗 @FbxParts::InitializeVertexBuffer");
 }
 
 void mtgb::Ground::InitializeIndexBuffer(ID3D11Device* _pDevice)
 {
 	pIndexData_ = new DWORD[GetIndexCount()]{};
-	//std::vector<DWORD> indexData{};
-	//indexData.reserve()
+	// std::vector<DWORD> indexData{};
+	// indexData.reserve()
 
 	// ポリゴンを見ていく
 	for (uint32_t poly = 0; poly < polygonCount_; poly++)
 	{
-		int polygonSize{ pMesh_->GetPolygonSize(poly) };
+		int polygonSize{pMesh_->GetPolygonSize(poly)};
 		massert(polygonSize == 3 && "Fbxモデルが三角化されていない @Ground::InitializeIndexBuffer");
 
 		// 頂点を見ていく
 		for (int v = 0; v < polygonSize; v++)
 		{
-			int index{ pMesh_->GetPolygonVertex(poly, v) };
+			int index{pMesh_->GetPolygonVertex(poly, v)};
 			pIndexData_[GetVertexCount(poly) + (polygonSize - 1 - v)] = static_cast<DWORD>(index);
 		}
 	}
 
-	const D3D11_BUFFER_DESC BUFFER_DESC
-	{
-		.ByteWidth = sizeof(DWORD) * GetIndexCount(),
-		.Usage = D3D11_USAGE_DEFAULT,          // 途中で書き換えない
-		.BindFlags = D3D11_BIND_INDEX_BUFFER,
-		.CPUAccessFlags = 0,
-		.MiscFlags = 0,
+	const D3D11_BUFFER_DESC BUFFER_DESC{
+		.ByteWidth			 = sizeof(DWORD) * GetIndexCount(),
+		.Usage				 = D3D11_USAGE_DEFAULT, // 途中で書き換えない
+		.BindFlags			 = D3D11_BIND_INDEX_BUFFER,
+		.CPUAccessFlags		 = 0,
+		.MiscFlags			 = 0,
 		.StructureByteStride = 0,
 	};
 
-	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA
-	{
-		.pSysMem = pIndexData_,
-		.SysMemPitch = 0,
+	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+		.pSysMem		  = pIndexData_,
+		.SysMemPitch	  = 0,
 		.SysMemSlicePitch = 0,
 	};
 
 	HRESULT hResult{};
-	hResult = _pDevice->CreateBuffer(
-		&BUFFER_DESC,
-		&INITIALIZE_DATA,
-		&pIndexBuffer_);
+	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pIndexBuffer_);
 
-	massert(SUCCEEDED(hResult)  // インデックスバッファの作成に成功
-		&& "インデックスバッファの作成に失敗 @Figure::InitializeIndexBuffer");
+	massert(SUCCEEDED(hResult) // インデックスバッファの作成に成功
+			&& "インデックスバッファの作成に失敗 @Figure::InitializeIndexBuffer");
 }
 
 void mtgb::Ground::InitializeConstantBuffer(ID3D11Device* _pDevice)
 {
-	const D3D11_BUFFER_DESC BUFFER_DESC
-	{
-		.ByteWidth = sizeof(ConstantBuffer),
-		.Usage = D3D11_USAGE_DYNAMIC,  // MEMO: 途中で書き換えるためdynamic
-		.BindFlags = D3D11_BIND_CONSTANT_BUFFER,
-		.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE,
-		.MiscFlags = 0,
+	const D3D11_BUFFER_DESC BUFFER_DESC{
+		.ByteWidth			 = sizeof(ConstantBuffer),
+		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: 途中で書き換えるためdynamic
+		.BindFlags			 = D3D11_BIND_CONSTANT_BUFFER,
+		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE,
+		.MiscFlags			 = 0,
 		.StructureByteStride = 0,
 	};
 
 	HRESULT hResult{};
-	hResult = _pDevice->CreateBuffer(
-		&BUFFER_DESC,
-		nullptr,  // 初期データなし
-		&pConstantBuffer_);
+	hResult = _pDevice->CreateBuffer(&BUFFER_DESC,
+									 nullptr, // 初期データなし
+									 &pConstantBuffer_);
 
-	massert(SUCCEEDED(hResult)
-		&& "コンスタントバッファの作成に失敗 @FbxParts::InitializeConstantBuffer");
+	massert(SUCCEEDED(hResult) && "コンスタントバッファの作成に失敗 @FbxParts::InitializeConstantBuffer");
 }

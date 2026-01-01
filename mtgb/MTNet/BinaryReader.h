@@ -10,16 +10,14 @@ namespace mtnet
 	/// </summary>
 	class BinaryReader : public MemoryStream
 	{
-	public:
-		BinaryReader(
-			mtbin::Byte* _pReadBuffer,
-			const size_t& _bufferSize);
+	  public:
+		BinaryReader(mtbin::Byte* _pReadBuffer, const size_t& _bufferSize);
 		~BinaryReader();
 
 		using MemoryStream::Read;
 
-	private:  // 読み取り以外はプライベートにする
-		using MemoryStream::Write;
+	  private: // 読み取り以外はプライベートにする
 		using MemoryStream::Seek;
+		using MemoryStream::Write;
 	};
-}
+} // namespace mtnet

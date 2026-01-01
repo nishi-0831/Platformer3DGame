@@ -9,13 +9,11 @@ namespace mtgb
 {
 	class DuplicateGameObjectCommand : public Command
 	{
-	public:
-		using CreateFunc = std::function<GameObject* ()>;
-		DuplicateGameObjectCommand(
-			CreateFunc _createFunc,
-			const ComponentFactory& _componentFactory,
-			EntityId _srcEntityId
-		);
+	  public:
+		using CreateFunc = std::function<GameObject*()>;
+		DuplicateGameObjectCommand(CreateFunc _createFunc,
+								   const ComponentFactory& _componentFactory,
+								   EntityId _srcEntityId);
 		~DuplicateGameObjectCommand();
 		// Command ÇâÓÇµÇƒåpè≥Ç≥ÇÍÇ‹ÇµÇΩ
 		void Execute() override;
@@ -26,7 +24,7 @@ namespace mtgb
 
 		mtgb::EntityId GetCommandTargetEntityId() const override;
 
-	private:
+	  private:
 		bool notSaveMementos_;
 		void SaveToMementos();
 		EntityId srcEntityId_;
@@ -38,4 +36,4 @@ namespace mtgb
 		std::vector<IComponentMemento*> mementos_;
 		std::vector<std::type_index> componentPoolTypes_;
 	};
-}
+} // namespace mtgb

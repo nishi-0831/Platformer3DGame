@@ -3,16 +3,15 @@
 #include "AudioClip.h"
 #include "ReleaseUtility.h"
 
-mtgb::AudioOneShot::AudioOneShot() :
-	timeLeft{ 0 },
-	pSourceVoice{ nullptr },
-	pAudioClip{ new AudioClip{} }
+mtgb::AudioOneShot::AudioOneShot()
+	: timeLeft{0}
+	, pSourceVoice{nullptr}
+	, pAudioClip{new AudioClip{}}
 {
 }
 
 mtgb::AudioOneShot::~AudioOneShot()
 {
-	
 }
 
 void mtgb::AudioOneShot::Release()

@@ -5,17 +5,17 @@
 #include <vector>
 #include "HttpHeaderBuilder.h"
 
-#pragma comment(lib,"ws2_32.lib")
+#pragma comment(lib, "ws2_32.lib")
 
 namespace mtnet
 {
 	class HttpClient
 	{
-	public:
-		using ResponceCallback = std::function<void(const std::string&)>;
+	  public:
+		using ResponceCallback		 = std::function<void(const std::string&)>;
 		using BinaryResponceCallback = std::function<void(std::vector<uint8_t>&)>;
 
-	public:
+	  public:
 		HttpClient();
 		~HttpClient();
 
@@ -32,29 +32,24 @@ namespace mtnet
 		/// <param name="_header">ヘッダ</param>
 		/// <param name="_pathAndQuery">http://*.*/{この部分}</param>
 		/// <param name="_body">本体(任意)</param>
-		void Post(
-			HttpHeaderBuilder& _header,
-			const std::string& _pathAndQuery,
-			const ResponceCallback& _onResponce,
-			const std::string& _body = "");
+		void Post(HttpHeaderBuilder& _header,
+				  const std::string& _pathAndQuery,
+				  const ResponceCallback& _onResponce,
+				  const std::string& _body = "");
 
-		std::string Post(
-			HttpHeaderBuilder& _header,
-			const std::string& _pathAndQuery,
-			const std::string& _body = "");
+		std::string Post(HttpHeaderBuilder& _header, const std::string& _pathAndQuery, const std::string& _body = "");
 
-		void PostAndBinaryResponce(
-			HttpHeaderBuilder& _header,
-			const std::string& _pathAndQuery,
-			const BinaryResponceCallback& _onRecponce,
-			const std::string& _body = "");
+		void PostAndBinaryResponce(HttpHeaderBuilder& _header,
+								   const std::string& _pathAndQuery,
+								   const BinaryResponceCallback& _onRecponce,
+								   const std::string& _body = "");
 
 		/// <summary>
 		/// WSAのクリーンアップ (アプリケーションを閉じるときに呼ぶ)
 		/// </summary>
 		void Cleanup();
 
-	public:
+	  public:
 		/// <summary>
 		/// <para>文字列をパーセントURIに変換する</para>
 		/// <para>URI内で日本語などは %文字コード になる</para>
@@ -63,7 +58,7 @@ namespace mtnet
 		/// <returns></returns>
 		static std::string ToPercentURI(const std::string& str);
 
-	private:
+	  private:
 		/// <summary>
 		/// 試しにURLをIPアドレスとポート番号に分解する
 		/// </summary>
@@ -74,18 +69,17 @@ namespace mtnet
 		/// <param name="_pOctet4">ポインタ渡し:IPアドレスの4オクテット目</param>
 		/// <param name="_pPortNumber">ポインタ渡し:ポート番号</param>
 		/// <returns>成功した true / false</returns>
-		static bool TryToIPAddresAndPort(
-			const std::string& _srcUrl,
-			BYTE* _pOctet1,
-			BYTE* _pOctet2,
-			BYTE* _pOctet3,
-			BYTE* _pOctet4,
-			USHORT* _pPortNumber);
+		static bool TryToIPAddresAndPort(const std::string& _srcUrl,
+										 BYTE* _pOctet1,
+										 BYTE* _pOctet2,
+										 BYTE* _pOctet3,
+										 BYTE* _pOctet4,
+										 USHORT* _pPortNumber);
 
-	private:
-		WSADATA wsaData_;  // WinSock2でネットワークを使うための
-		SOCKET socket_;  // 通信するソケット
-		SOCKADDR_IN sockAddr_;  // 通信先のエンドポイント情報
-		std::string remoteUri_;  // 接続先のURI
+	  private:
+		WSADATA wsaData_;		// WinSock2でネットワークを使うための
+		SOCKET socket_;			// 通信するソケット
+		SOCKADDR_IN sockAddr_;	// 通信先のエンドポイント情報
+		std::string remoteUri_; // 接続先のURI
 	};
-}
+} // namespace mtnet

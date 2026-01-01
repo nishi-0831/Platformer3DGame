@@ -47,11 +47,10 @@ namespace mtgb
 		DirectX::XMMATRIX matNormalTrans;
 		DirectX::XMFLOAT4 lightDir;
 	};
-	
-	template<typename StageDataBit>
-	class TerrainReader : IShader
+
+	template <typename StageDataBit> class TerrainReader : IShader
 	{
-	public:
+	  public:
 		TerrainReader();
 		void ReadTerrain(const char* fileName);
 		void Initialize() override;
@@ -72,9 +71,9 @@ namespace mtgb
 		/// <param name="_cellIndex"></param>
 		/// <returns></returns>
 		float CellIndexToWorld(int _cellIndex) const;
-		
+
 		void GenerateTerrainMesh();
-		
+
 		void InitializeVertexBuffer(ID3D11Device* _pDevice) override;
 		void InitializeIndexBuffer(ID3D11Device* _pDevice) override;
 		void InitializeConstantBuffer(ID3D11Device* _pDevice) override;
@@ -86,7 +85,8 @@ namespace mtgb
 		/// ステージの範囲外と範囲内の境界となるコライダーを作成する
 		/// </summary>
 		void GenerateStageBoundaryCollider();
-	private:
+
+	  private:
 		// メッシュのデータ
 		std::vector<TerrainVertex> vertices_;
 		std::vector<DWORD> indices_;
@@ -97,7 +97,7 @@ namespace mtgb
 		ComPtr<ID3D11Buffer> pIndexBuffer_;*/
 
 		// テクスチャ
-		//ComPtr<ID3D11Texture2D> pTexture_;
+		// ComPtr<ID3D11Texture2D> pTexture_;
 		Texture2D pTexture_;
 
 		// ミップマップレベル
@@ -110,10 +110,10 @@ namespace mtgb
 		float heightScale;
 		float widthScale;
 		std::vector<StageDataBit> stageBuffer;
-		
+
 		std::vector<Collider*> aabbs;
 		std::vector<std::vector<float>> quadtreeHeightMap;
-		int divisions; //分割回数
+		int divisions; // 分割回数
 		int cellNum;
 
 		// ステージの最高高度
@@ -123,14 +123,12 @@ namespace mtgb
 
 		Transform* pTransform;
 		FBXModelHandle hModelCollider_;
-
-
 	};
 
-	using TerrainReader8 = TerrainReader<uint8_t>;
+	using TerrainReader8  = TerrainReader<uint8_t>;
 	using TerrainReader16 = TerrainReader<uint16_t>;
 
-	template<typename StageDataBit>
+	template <typename StageDataBit>
 	inline TerrainReader<StageDataBit>::TerrainReader()
 		: width{513}
 		, height{513}
@@ -141,14 +139,13 @@ namespace mtgb
 		, ceilingOffset{100.0f}
 	{
 		stageBuffer.resize(width * height);
-		hModelCollider_ = Fbx::Load("Model/BoxCollider.fbx");
-		EntityId id = Game::System<EntityManager>().CreateEntity();
-		pTransform = &(Transform::Get(id));
-		pTransform->scale = { 1,1,1 };
+		hModelCollider_	  = Fbx::Load("Model/BoxCollider.fbx");
+		EntityId id		  = Game::System<EntityManager>().CreateEntity();
+		pTransform		  = &(Transform::Get(id));
+		pTransform->scale = {1, 1, 1};
 	}
 
-	template<typename StageDataBit>
-	inline void TerrainReader<StageDataBit>::ReadTerrain(const char* fileName)
+	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::ReadTerrain(const char* fileName)
 	{
 		// ファイルをバイナリファイルとして読み込む
 		std::ifstream file(fileName, std::ios::binary);
@@ -166,14 +163,11 @@ namespace mtgb
 				stageData[y][x] = normalized * heightScale;
 			}
 		}*/
-
-		
 	}
 
-	template<typename StageDataBit>
-	inline void TerrainReader<StageDataBit>::Initialize()
+	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::Initialize()
 	{
-		CreateTextureMipmap(ToWString(std::string{ "Image/Dirt.png" }));
+		CreateTextureMipmap(ToWString(std::string{"Image/Dirt.png"}));
 		ReadTerrain("terrain.raw");
 		GenerateQuadtreeHeightMap();
 		GenerateStageBoundaryCollider();
@@ -181,13 +175,9 @@ namespace mtgb
 		GenerateTerrainMesh();
 
 		IShader::Initialize();
-		
 	}
 
-	
-
-	template<typename StageDataBit>
-	inline float TerrainReader<StageDataBit>::GetHeightAt(float x, float z) const
+	template <typename StageDataBit> inline float TerrainReader<StageDataBit>::GetHeightAt(float x, float z) const
 	{
 		float mapX = WorldToCellIndex(x);
 		float mapZ = WorldToCellIndex(z);
@@ -198,7 +188,6 @@ namespace mtgb
 			return 0.0f;
 		}
 
-		
 		int x0 = static_cast<int>(mapX);
 		int z0 = static_cast<int>(mapZ);
 		int x1 = x0 + 1;
@@ -219,21 +208,20 @@ namespace mtgb
 
 		// x方向で線形補間
 		// (1-t) * A + t * B
-		float top = (1 - localX) * topLeft + topRight * localX;
+		float top	 = (1 - localX) * topLeft + topRight * localX;
 		float bottom = (1 - localX) * bottomLeft + bottomRight * localX;
 
 		// y方向で線形補間
 		return (1 - localY) * top + bottom * localY;
 	}
 
-	template<typename StageDataBit>
-	inline void TerrainReader<StageDataBit>::GenerateQuadtreeHeightMap()
+	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::GenerateQuadtreeHeightMap()
 	{
 		// 一辺のセル数
 		cellNum = static_cast<int>(std::pow(2, divisions));
-		//aabbs.resize(cellNum * cellNum);
-		// 元のデータから値を取得する間隔
-		// unityの terrain Dataにはセル数+1の頂点数が入っているので-1する
+		// aabbs.resize(cellNum * cellNum);
+		//  元のデータから値を取得する間隔
+		//  unityの terrain Dataにはセル数+1の頂点数が入っているので-1する
 		float samplingStep = static_cast<float>(width - 1) / (cellNum);
 
 		quadtreeHeightMap.resize(cellNum + 1, std::vector<float>(cellNum + 1));
@@ -250,9 +238,9 @@ namespace mtgb
 				sourceX = (std::min)(sourceX, width - 1);
 				sourceY = (std::min)(sourceY, height - 1);
 
-				StageDataBit value = stageBuffer[sourceY * width + sourceX];
-				float normalized = static_cast<float>(value) / (std::numeric_limits<StageDataBit>::max)();
-				float height = normalized * heightScale;
+				StageDataBit value		= stageBuffer[sourceY * width + sourceX];
+				float normalized		= static_cast<float>(value) / (std::numeric_limits<StageDataBit>::max)();
+				float height			= normalized * heightScale;
 				quadtreeHeightMap[y][x] = height;
 
 				if (highestHeight < height)
@@ -263,7 +251,7 @@ namespace mtgb
 		}
 	}
 
-	template<typename StageDataBit>
+	template <typename StageDataBit>
 	inline void TerrainReader<StageDataBit>::GenerateTerrainAABBs(std::vector<Collider*>* _aabbs)
 	{
 		for (int z = 0; z < cellNum; z++)
@@ -281,24 +269,24 @@ namespace mtgb
 
 				//// セルの最小、最高高度
 				//// セルの中から補間はせずに
-				//float minHeight = (std::min)({ topLeft,topRight,bottomLeft,bottomRight });
-				float maxHeight = (std::max)({ topLeft,topRight,bottomLeft,bottomRight });
+				// float minHeight = (std::min)({ topLeft,topRight,bottomLeft,bottomRight });
+				float maxHeight = (std::max)({topLeft, topRight, bottomLeft, bottomRight});
 
 				float height = maxHeight;
-				//float height = GetHeightAt(x, z);
-				// ワールド座標系に変換
-				
-				Vector3 cellWorldPos = { CellIndexToWorld(x), height, CellIndexToWorld(z) };
+				// float height = GetHeightAt(x, z);
+				//  ワールド座標系に変換
 
-				Vector3 extents = { widthScale / 2.0f, height / 2.0f,widthScale / 2.0f };
-				Vector3 center = cellWorldPos - extents;
+				Vector3 cellWorldPos = {CellIndexToWorld(x), height, CellIndexToWorld(z)};
+
+				Vector3 extents = {widthScale / 2.0f, height / 2.0f, widthScale / 2.0f};
+				Vector3 center	= cellWorldPos - extents;
 				//_aabbs->emplace_back(center, extents);
-				
+
 				EntityId terrainCellId = Game::System<EntityManager>().CreateEntity();
 				// 静的なコライダー
-				Collider* pCollider = &(Game::System<ColliderCP>().Get(terrainCellId,ColliderTag::STAGE));
+				Collider* pCollider = &(Game::System<ColliderCP>().Get(terrainCellId, ColliderTag::STAGE));
 
-				pCollider->isStatic_ = true;
+				pCollider->isStatic_	 = true;
 				pCollider->colliderType_ = ColliderType::ColliderType::TYPE_AABB;
 				pCollider->SetCenter(center);
 				pCollider->SetExtents(extents);
@@ -307,15 +295,14 @@ namespace mtgb
 		}
 	}
 
-	template<typename StageDataBit>
-	inline void TerrainReader<StageDataBit>::TestDraw()
+	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::TestDraw()
 	{
 		DirectX11Draw::SetIsWriteToDepthBuffer(true);
 		DirectX11Draw::SetBlendMode(BlendMode::Default);
 		Draw::CheckSetShader(ShaderType::Terrain);
-		
+
 		ID3D11ShaderResourceView* pSRV = pTexture_.GetShaderResourceView();
-		ID3D11SamplerState* pSampler = pTexture_.GetSamplerState();
+		ID3D11SamplerState* pSampler   = pTexture_.GetSamplerState();
 
 		IShader::Draw<TerrainConstantBuffer, TerrainVertex>(
 			// コンスタントバッファ書き込み
@@ -330,29 +317,29 @@ namespace mtgb
 				camera.GetViewMatrix(&view);
 				camera.GetProjMatrix(&proj);
 
-				_pConstantBuffer->matWVP = DirectX::XMMatrixTranspose(world * view * proj);
-				_pConstantBuffer->matNormalTrans = DirectX::XMMatrixTranspose(pTransform->matrixRotate_ * DirectX::XMMatrixInverse(nullptr, pTransform->matrixScale_));
+				_pConstantBuffer->matWVP		 = DirectX::XMMatrixTranspose(world * view * proj);
+				_pConstantBuffer->matNormalTrans = DirectX::XMMatrixTranspose(
+					pTransform->matrixRotate_ * DirectX::XMMatrixInverse(nullptr, pTransform->matrixScale_));
 				_pConstantBuffer->lightDir = DirectX::XMFLOAT4(0.0f, -1.0f, 0.0f, 0.0f);
 			},
 			[&](ID3D11DeviceContext* _pContext)
 			{
-
 				_pContext->PSSetShaderResources(0, 1, &pSRV);
 				_pContext->PSSetSamplers(0, 1, &pSampler);
-			}, static_cast<int>(indices_.size()));
+			},
+			static_cast<int>(indices_.size()));
 
 		/*for (int z = 0; z < cellNum; z++)
 		{
 			for (int x = 0; x < cellNum; x++)
 			{
-				
+
 				aabbs[z * cellNum + x]->Draw();
 			}
 		}*/
 	}
 
-	template<typename StageDataBit>
-	inline int TerrainReader<StageDataBit>::WorldToCellIndex(float _point) const
+	template <typename StageDataBit> inline int TerrainReader<StageDataBit>::WorldToCellIndex(float _point) const
 	{
 		// セル単位に変換
 		// 常に小さい方,左側へ丸めたいのでfloorf
@@ -377,8 +364,7 @@ namespace mtgb
 		}
 	}
 
-	template<typename StageDataBit>
-	inline float TerrainReader<StageDataBit>::CellIndexToWorld(int _cellIndex) const
+	template <typename StageDataBit> inline float TerrainReader<StageDataBit>::CellIndexToWorld(int _cellIndex) const
 	{
 		// 境界チェック（頂点数に合わせて0からcellNumまで）
 		if (_cellIndex < 0 || _cellIndex > cellNum)
@@ -392,8 +378,7 @@ namespace mtgb
 		return (_cellIndex - centerOffset) * widthScale;
 	}
 
-	template<typename StageDataBit>
-	inline void TerrainReader<StageDataBit>::GenerateTerrainMesh()
+	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::GenerateTerrainMesh()
 	{
 		vertices_.clear();
 		indices_.clear();
@@ -407,26 +392,26 @@ namespace mtgb
 
 				// 位置
 				vertex.position.x = CellIndexToWorld(x);
-				vertex.position.y = quadtreeHeightMap[z][x];  
+				vertex.position.y = quadtreeHeightMap[z][x];
 				vertex.position.z = CellIndexToWorld(z);
 
 				// UV座標 (0.0～1.0)
 				vertex.uv.x = static_cast<float>(x) / cellNum;
 				vertex.uv.y = static_cast<float>(z) / cellNum;
-				
+
 				vertices_.push_back(vertex);
 			}
 		}
 
 		// インデックス生成（ポリゴン単位）
-		for (int z = 0; z < cellNum; z++)  // cellNum-1まで（ポリゴン数）
+		for (int z = 0; z < cellNum; z++) // cellNum-1まで（ポリゴン数）
 		{
-			for (int x = 0; x < cellNum; x++)  // cellNum-1まで（ポリゴン数）
+			for (int x = 0; x < cellNum; x++) // cellNum-1まで（ポリゴン数）
 			{
 				// 四角形の4つの頂点インデックス
-				int topLeft = z * (cellNum + 1) + x;
-				int topRight = topLeft + 1;
-				int bottomLeft = (z + 1) * (cellNum + 1) + x;
+				int topLeft		= z * (cellNum + 1) + x;
+				int topRight	= topLeft + 1;
+				int bottomLeft	= (z + 1) * (cellNum + 1) + x;
 				int bottomRight = bottomLeft + 1;
 
 				// 一つ目の三角形 (時計回り)
@@ -443,120 +428,80 @@ namespace mtgb
 
 		// 法線計算
 		GenerateNormals();
-		
-		
-		
 	}
 
-	template<typename StageDataBit>
+	template <typename StageDataBit>
 	inline void TerrainReader<StageDataBit>::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	{
-		D3D11_BUFFER_DESC bufferDesc =
-		{
-			.ByteWidth = static_cast<UINT>(sizeof(TerrainVertex) * vertices_.size()),
-			.Usage = D3D11_USAGE_DEFAULT,
-			.BindFlags = D3D11_BIND_VERTEX_BUFFER,
+		D3D11_BUFFER_DESC bufferDesc = {
+			.ByteWidth		= static_cast<UINT>(sizeof(TerrainVertex) * vertices_.size()),
+			.Usage			= D3D11_USAGE_DEFAULT,
+			.BindFlags		= D3D11_BIND_VERTEX_BUFFER,
 			.CPUAccessFlags = 0,
 		};
 
-		D3D11_SUBRESOURCE_DATA initData =
-		{
-			.pSysMem = vertices_.data()
-		};
+		D3D11_SUBRESOURCE_DATA initData = {.pSysMem = vertices_.data()};
 
-		HRESULT hResult = _pDevice->CreateBuffer(
-			&bufferDesc, &initData, &pVertexBuffer_);
+		HRESULT hResult = _pDevice->CreateBuffer(&bufferDesc, &initData, &pVertexBuffer_);
 
 		massert(SUCCEEDED(hResult) && "頂点バッファの作成に失敗");
 	}
 
-	template<typename StageDataBit>
+	template <typename StageDataBit>
 	inline void TerrainReader<StageDataBit>::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	{
-		D3D11_BUFFER_DESC bufferDesc =
-		{
-			.ByteWidth = static_cast<UINT>(sizeof(DWORD) * indices_.size()),
-			.Usage = D3D11_USAGE_DEFAULT,
-			.BindFlags = D3D11_BIND_INDEX_BUFFER,
-			.CPUAccessFlags = 0
-		};
+		D3D11_BUFFER_DESC bufferDesc = {.ByteWidth		= static_cast<UINT>(sizeof(DWORD) * indices_.size()),
+										.Usage			= D3D11_USAGE_DEFAULT,
+										.BindFlags		= D3D11_BIND_INDEX_BUFFER,
+										.CPUAccessFlags = 0};
 
-		D3D11_SUBRESOURCE_DATA initData =
-		{
-			.pSysMem = indices_.data()
-		};
+		D3D11_SUBRESOURCE_DATA initData = {.pSysMem = indices_.data()};
 
-		HRESULT hResult = _pDevice->CreateBuffer(
-			&bufferDesc, &initData, &pIndexBuffer_
-		);
+		HRESULT hResult = _pDevice->CreateBuffer(&bufferDesc, &initData, &pIndexBuffer_);
 
 		massert(SUCCEEDED(hResult) && "インデックスバッファの作成に失敗");
 	}
 
-	template<typename StageDataBit>
+	template <typename StageDataBit>
 	inline void TerrainReader<StageDataBit>::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	{
-		D3D11_BUFFER_DESC bufferDesc =
-		{
-			.ByteWidth = sizeof(TerrainConstantBuffer),
-			.Usage = D3D11_USAGE_DYNAMIC,
-			.BindFlags = D3D11_BIND_CONSTANT_BUFFER,
-			.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE
-		};
+		D3D11_BUFFER_DESC bufferDesc = {.ByteWidth		= sizeof(TerrainConstantBuffer),
+										.Usage			= D3D11_USAGE_DYNAMIC,
+										.BindFlags		= D3D11_BIND_CONSTANT_BUFFER,
+										.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE};
 
-		HRESULT hResult = _pDevice->CreateBuffer(
-			&bufferDesc,
-			nullptr,
-			pConstantBuffer_.ReleaseAndGetAddressOf()
-		);
+		HRESULT hResult = _pDevice->CreateBuffer(&bufferDesc, nullptr, pConstantBuffer_.ReleaseAndGetAddressOf());
 
-		massert(SUCCEEDED(hResult)
-			&& "コンスタントバッファの作成に失敗 @FbxParts::InitializeConstantBuffer");
+		massert(SUCCEEDED(hResult) && "コンスタントバッファの作成に失敗 @FbxParts::InitializeConstantBuffer");
 	}
 
-	
-
-	template<typename StageDataBit>
+	template <typename StageDataBit>
 	inline void TerrainReader<StageDataBit>::CreateTextureMipmap(const std::wstring& _fileName)
 	{
 		pTexture_.Load(_fileName);
 	}
 
-	template<typename StageDataBit>
-	inline void TerrainReader<StageDataBit>::DrawTerran() const
+	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::DrawTerran() const
 	{
-		
 	}
 
-	template<typename StageDataBit>
-	inline void TerrainReader<StageDataBit>::GenerateStageBoundaryCollider()
+	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::GenerateStageBoundaryCollider()
 	{
 		float stageMin = CellIndexToWorld(0);
 		float stageMax = CellIndexToWorld(cellNum - 1);
 
-		
-		float wallHeight = highestHeight + ceilingOffset;
+		float wallHeight	= highestHeight + ceilingOffset;
 		float wallThickness = widthScale;
-		
+
 		// +Z方向に位置する壁
 		{
-			EntityId id = Game::System<EntityManager>().CreateEntity();
-			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
+			EntityId id				 = Game::System<EntityManager>().CreateEntity();
+			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center =
-			{
-				(stageMin + stageMax) / 2.0f,
-				wallHeight / 2.0f,
-				stageMax + (wallThickness / 2.0f)
-			};
+			Vector3 center = {(stageMin + stageMax) / 2.0f, wallHeight / 2.0f, stageMax + (wallThickness / 2.0f)};
 
-			Vector3 extents =
-			{
-				(stageMax - stageMin) / 2.0f,
-				wallHeight / 2.0f,
-				wallThickness / 2.0f
-			};
+			Vector3 extents = {(stageMax - stageMin) / 2.0f, wallHeight / 2.0f, wallThickness / 2.0f};
 
 			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
@@ -566,23 +511,13 @@ namespace mtgb
 
 		// -Z方向に位置する壁
 		{
-			EntityId id = Game::System<EntityManager>().CreateEntity();
-			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
+			EntityId id				 = Game::System<EntityManager>().CreateEntity();
+			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center =
-			{
-				(stageMin + stageMax) / 2.0f,
-				wallHeight / 2.0f,
-				stageMin - (wallThickness / 2.0f)
-			};
+			Vector3 center = {(stageMin + stageMax) / 2.0f, wallHeight / 2.0f, stageMin - (wallThickness / 2.0f)};
 
-			Vector3 extents =
-			{
-				(stageMax - stageMin) / 2.0f,
-				wallHeight / 2.0f,
-				wallThickness / 2.0f
-			};
+			Vector3 extents = {(stageMax - stageMin) / 2.0f, wallHeight / 2.0f, wallThickness / 2.0f};
 
 			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
@@ -592,23 +527,13 @@ namespace mtgb
 
 		// +X方向に位置する壁
 		{
-			EntityId id = Game::System<EntityManager>().CreateEntity();
-			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
+			EntityId id				 = Game::System<EntityManager>().CreateEntity();
+			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center =
-			{
-				stageMax + (wallThickness / 2.0f),
-				wallHeight / 2.0f,
-				(stageMin + stageMax) / 2.0f
-			};
+			Vector3 center = {stageMax + (wallThickness / 2.0f), wallHeight / 2.0f, (stageMin + stageMax) / 2.0f};
 
-			Vector3 extents =
-			{
-				wallThickness / 2.0f,
-				wallHeight / 2.0f,
-				(stageMax - stageMin) / 2.0f
-			};
+			Vector3 extents = {wallThickness / 2.0f, wallHeight / 2.0f, (stageMax - stageMin) / 2.0f};
 
 			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
@@ -618,23 +543,13 @@ namespace mtgb
 
 		// -X方向に位置する壁
 		{
-			EntityId id = Game::System<EntityManager>().CreateEntity();
-			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
+			EntityId id				 = Game::System<EntityManager>().CreateEntity();
+			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center =
-			{
-				stageMin - (wallThickness / 2.0f),
-				wallHeight / 2.0f,
-				(stageMin + stageMax) / 2.0f
-			};
+			Vector3 center = {stageMin - (wallThickness / 2.0f), wallHeight / 2.0f, (stageMin + stageMax) / 2.0f};
 
-			Vector3 extents =
-			{
-				wallThickness / 2.0f,
-				wallHeight / 2.0f,
-				(stageMax - stageMin) / 2.0f
-			};
+			Vector3 extents = {wallThickness / 2.0f, wallHeight / 2.0f, (stageMax - stageMin) / 2.0f};
 
 			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
@@ -644,23 +559,15 @@ namespace mtgb
 
 		// +Y方向に位置する壁(天井)
 		{
-			EntityId id = Game::System<EntityManager>().CreateEntity();
-			Collider* pCollider = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
+			EntityId id				 = Game::System<EntityManager>().CreateEntity();
+			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center =
-			{
-				(stageMin + stageMax) / 2.0f,
-				wallHeight + (wallThickness / 2.0f),
-				(stageMin + stageMax) / 2.0f
-			};
+			Vector3 center = {(stageMin + stageMax) / 2.0f,
+							  wallHeight + (wallThickness / 2.0f),
+							  (stageMin + stageMax) / 2.0f};
 
-			Vector3 extents =
-			{
-				(stageMax - stageMin) / 2.0f,
-				wallThickness / 2.0f,
-				(stageMax - stageMin) / 2.0f
-			};
+			Vector3 extents = {(stageMax - stageMin) / 2.0f, wallThickness / 2.0f, (stageMax - stageMin) / 2.0f};
 
 			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
@@ -669,34 +576,32 @@ namespace mtgb
 		}
 	}
 
-	template<typename StageDataBit>
-	inline void TerrainReader<StageDataBit>::GenerateNormals()
+	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::GenerateNormals()
 	{
 		for (int z = 0; z <= cellNum; z++)
 		{
 			for (int x = 0; x <= cellNum; x++)
 			{
-				int index = z * (cellNum + 1) + x;
+				int index				= z * (cellNum + 1) + x;
 				vertices_[index].normal = CalculateNormal(x, z);
 			}
 		}
 	}
 
-	template<typename StageDataBit>
-	inline Vector3 TerrainReader<StageDataBit>::CalculateNormal(int _x, int _z) const
+	template <typename StageDataBit> inline Vector3 TerrainReader<StageDataBit>::CalculateNormal(int _x, int _z) const
 	{
 		Vector3 normal = Vector3::Zero();
 
 		// 周囲の高さから法線を計算
 		// _x,_zが端の場合に配列外参照しないように境界チェックを行う
-		float heightLeft = (_x > 0) ? quadtreeHeightMap[_z][_x - 1] : quadtreeHeightMap[_z][_x];
+		float heightLeft  = (_x > 0) ? quadtreeHeightMap[_z][_x - 1] : quadtreeHeightMap[_z][_x];
 		float heightRight = (_x < cellNum) ? quadtreeHeightMap[_z][_x + 1] : quadtreeHeightMap[_z][_x];
-		float heightDown = (_z > 0) ? quadtreeHeightMap[_z - 1][_x] : quadtreeHeightMap[_z][_x];
-		float heightUp = (_z < cellNum) ? quadtreeHeightMap[_z + 1][_x] : quadtreeHeightMap[_z][_x];
+		float heightDown  = (_z > 0) ? quadtreeHeightMap[_z - 1][_x] : quadtreeHeightMap[_z][_x];
+		float heightUp	  = (_z < cellNum) ? quadtreeHeightMap[_z + 1][_x] : quadtreeHeightMap[_z][_x];
 
 		// 左右の高低差
 		normal.x = heightLeft - heightRight;
-		
+
 		// 法線にy方向を向かせる
 		normal.y = 2.0f * widthScale;
 
@@ -706,5 +611,4 @@ namespace mtgb
 		return Vector3::Normalize(normal);
 	}
 
-
-}
+} // namespace mtgb

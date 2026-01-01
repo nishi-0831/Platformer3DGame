@@ -3,7 +3,7 @@
 
 class GameOverZone : public mtgb::GameObject
 {
-public:
+  public:
 	GameOverZone();
 	~GameOverZone();
 
@@ -11,7 +11,7 @@ public:
 	void Start() override;
 	void Draw() const override;
 
-private:
+  private:
 	Transform* pTransform_;
 	Collider* pCollider_;
 	RigidBody* pRigidBody_;

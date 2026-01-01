@@ -3,14 +3,14 @@
 #include <functional>
 #include <queue>
 
-//・制限時間の表示
-//・制限時間に達したらノルマ確認
-//・オーバーシーンへ(クリアor失敗)
-//・クリア、ゲームオーバーの演出(仮のテキスト)
+// ・制限時間の表示
+// ・制限時間に達したらノルマ確認
+// ・オーバーシーンへ(クリアor失敗)
+// ・クリア、ゲームオーバーの演出(仮のテキスト)
 
 class TimeLimit : public mtgb::GameObject
 {
-public:
+  public:
 	TimeLimit();
 	TimeLimit(float _time);
 	~TimeLimit();
@@ -42,9 +42,9 @@ public:
 	/// </summary>
 	void Reset();
 	static constexpr float PLAY_SCENE_TIMER = 18.0f; // プレイシーンの制限時間(仮)
-private:
+  private:
 	std::queue<std::function<void()>> onEndTimerCallbacks_;
 	float remainingTime_; // 残り時間
-	bool isStartTimer_; // カウントダウンが始まったか
-	bool isResumeTimer_; // カウントダウンが一時停止しているか
+	bool isStartTimer_;	  // カウントダウンが始まったか
+	bool isResumeTimer_;  // カウントダウンが一時停止しているか
 };

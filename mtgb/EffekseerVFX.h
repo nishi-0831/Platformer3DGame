@@ -12,7 +12,7 @@
 
 namespace fs = std::filesystem;
 
-#pragma warning(disable:4100) // 'identifier' : unreferenced formal parameter
+#pragma warning(disable : 4100) // 'identifier' : unreferenced formal parameter
 #include <EffekseerRendererDX11.h>
 #include <Effekseer.h>
 
@@ -26,7 +26,7 @@ namespace fs = std::filesystem;
 
 namespace mtgb
 {
-	//全体で使うEffekseerのマネージャやレンダラなどのデータ
+	// 全体で使うEffekseerのマネージャやレンダラなどのデータ
 	using RendererRef = EffekseerRendererDX11::RendererRef;
 
 	/// <summary>
@@ -49,7 +49,7 @@ namespace mtgb
 	// 個別のデータ保持用
 	class EffectData
 	{
-	public:
+	  public:
 		EffectData(std::string_view _filePath);
 		EffectData(const Effekseer::ManagerRef& _manager, std::string_view _filePath);
 		/// <summary>
@@ -68,7 +68,8 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		const Effekseer::EffectRef& GetEffectRef() const;
-	private:
+
+	  private:
 		const fs::path filePath_;
 		Effekseer::EffectRef effectRef_;
 	};
@@ -76,7 +77,7 @@ namespace mtgb
 	// エフェクトのインスタンス
 	class EffectInstance
 	{
-	public:
+	  public:
 		EffectInstance(const std::shared_ptr<EffectData>& _effectData);
 
 		/// <summary>
@@ -91,16 +92,15 @@ namespace mtgb
 		std::shared_ptr<EffectParameters> pEffectParameters_;
 		// エフェクトのハンドル(エフェクシアが内部で管理してる)
 		Effekseer::Handle handle_;
-	private:
+
+	  private:
 		// インスタンス共有のデータ
 		const std::shared_ptr<EffectData> pEffectData_;
-
 	};
 
 	class EffectManager : public ISystem
 	{
-	public:
-
+	  public:
 		virtual ~EffectManager() noexcept
 		{
 			Release();
@@ -129,8 +129,8 @@ namespace mtgb
 		/// <param name="_effectParameters">エフェクトのパラメータ</param>
 		/// <returns> パラメータのポインタ </returns>
 		std::weak_ptr<EffectParameters> Play(std::string_view _effectName, const EffectParameters& _effectParameters);
-	private:
 
+	  private:
 		void SetCamera();
 		void Release() noexcept
 		{
@@ -148,8 +148,7 @@ namespace mtgb
 		std::unordered_map<std::string, std::shared_ptr<EffectData>> effectList_;
 		// エフェクトインスタンスのプール
 		std::vector<std::unique_ptr<EffectInstance>> effectInstances_;
-		inline static constexpr size_t kEffectPoolCapacity{ 256 };
-
+		inline static constexpr size_t kEffectPoolCapacity{256};
 	};
 
-}
+} // namespace mtgb

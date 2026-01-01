@@ -10,11 +10,10 @@ namespace mtgb
 	/// </summary>
 	/*struct TransformState
 	{
-        EntityId parent{ INVALID_ENTITY };
-        Vector3 position{ 0.0f, 0.0f, 0.0f };
-        Vector3 scale{ 1.0f, 1.0f, 1.0f };
-        Quaternion rotate{};
+		EntityId parent{ INVALID_ENTITY };
+		Vector3 position{ 0.0f, 0.0f, 0.0f };
+		Vector3 scale{ 1.0f, 1.0f, 1.0f };
+		Quaternion rotate{};
 	};*/
 
-
-}
+} // namespace mtgb

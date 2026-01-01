@@ -18,10 +18,10 @@ namespace mtgb
 
 	class DXGIResource : public WindowContextResource
 	{
-	public:
+	  public:
 		explicit DXGIResource(WindowContext _windowContext);
 		~DXGIResource();
-		
+
 		void SetResource() override;
 		void Update() override;
 		void Reset() override;
@@ -31,7 +31,10 @@ namespace mtgb
 		/// <summary>
 		/// 割り当てられたモニターの座標を返す
 		/// </summary>
-		RECT GetAssignedMonitorRect() const { return outputDesc_.DesktopCoordinates; }
+		RECT GetAssignedMonitorRect() const
+		{
+			return outputDesc_.DesktopCoordinates;
+		}
 
 		ComPtr<IDXGISwapChain1> pSwapChain1_;
 		ComPtr<IDXGIOutput> pOutput_;
@@ -42,8 +45,8 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_other"></param>
 		void SwapMonitorInfo(DXGIResource& _other);
-	private:
-		
+
+	  private:
 		MonitorInfo monitorInfo_;
 		bool isMultiMonitor_; // マルチ
 		bool isBorderlessWindow;
@@ -52,8 +55,7 @@ namespace mtgb
 		DXGI_OUTPUT_DESC outputDesc_;
 
 		// コピーコンストラクタとコピー代入演算子を削除
-		DXGIResource(const DXGIResource&) = delete;
+		DXGIResource(const DXGIResource&)			 = delete;
 		DXGIResource& operator=(const DXGIResource&) = delete;
-
 	};
-}
+} // namespace mtgb

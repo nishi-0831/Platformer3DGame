@@ -17,9 +17,9 @@
 #include "Direct3DResource.h"
 #include "WindowResource.h"
 
-mtgb::SceneSystem::SceneSystem() :
-	pNextScene_{ nullptr },
-	onMoveListener_{}
+mtgb::SceneSystem::SceneSystem()
+	: pNextScene_{nullptr}
+	, onMoveListener_{}
 {
 }
 
@@ -30,10 +30,7 @@ mtgb::SceneSystem::~SceneSystem()
 
 void mtgb::SceneSystem::Initialize()
 {
-	OnMove([]() 
-		{
-			Game::System<Timer>().Clear();
-		});
+	OnMove([]() { Game::System<Timer>().Clear(); });
 }
 
 void mtgb::SceneSystem::Update()
@@ -46,12 +43,12 @@ void mtgb::SceneSystem::Update()
 
 	if (GameScene::pInstance_ == nullptr)
 	{
-		return;  // シーンがないなら回帰
+		return; // シーンがないなら回帰
 	}
 
 	// 更新、描画前にコールバック実行
 	ExecutePendingCallbacks();
-	
+
 	if (InputUtil::GetKeyDown(KeyCode::F1))
 	{
 		MTImGui::Instance().ChangeAllWindowOpen();
@@ -60,14 +57,13 @@ void mtgb::SceneSystem::Update()
 	if (InputUtil::GetKeyDown(KeyCode::P))
 	{
 		Game::System<Input>().EnumJoystick();
-
 	}
 	WinCtxRes::ChangeResource(WindowContext::First);
 	Game::System<Input>().Update();
 	Game::System<WindowContextResourceManager>().Update();
 
 	// 現在のシーン
-	GameScene& currentScene{ *GameScene::pInstance_ };
+	GameScene& currentScene{*GameScene::pInstance_};
 
 	// 更新処理
 	currentScene.Update();
@@ -86,8 +82,7 @@ void mtgb::SceneSystem::Update()
 	Game::System<RenderSystem>().Render(currentScene);
 
 	// 削除処理
-	for (auto&& itr = currentScene.pGameObjects_.begin();
-		itr != currentScene.pGameObjects_.end();)
+	for (auto&& itr = currentScene.pGameObjects_.begin(); itr != currentScene.pGameObjects_.end();)
 	{
 		if ((*itr)->IsToDestroy())
 		{
@@ -133,7 +128,7 @@ void mtgb::SceneSystem::ChangeScene()
 	// 解放してポインタ変更
 	SAFE_DELETE(GameScene::pInstance_);
 	GameScene::pInstance_ = pNextScene_;
-	pNextScene_ = nullptr;
+	pNextScene_			  = nullptr;
 
 	// チェンジしたシーンの初期化処理
 	GameScene::pInstance_->Initialize();

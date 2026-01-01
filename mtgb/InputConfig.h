@@ -6,11 +6,11 @@ namespace mtgb
 	struct InputConfig
 	{
 
-		LONG xRange;//x軸の値の範囲
-		LONG yRange;//y軸の値の範囲
-		LONG zRange;//z軸の値の範囲
+		LONG xRange; // x軸の値の範囲
+		LONG yRange; // y軸の値の範囲
+		LONG zRange; // z軸の値の範囲
 
-		float deadZone;//入力を無視する閾値
+		float deadZone; // 入力を無視する閾値
 
 		/// <summary>
 		/// <para> x,y,z軸のアナログスティックから取得する値の範囲の設定 </para>
@@ -35,7 +35,6 @@ namespace mtgb
 		/// <param name="_deadZone">0～1の範囲で指定してください</param>
 		void SetDeadZone(float _deadZone);
 
-
 		/// <summary>
 		/// デッドゾーンを適用して0～1の範囲に正規化する
 		/// </summary>
@@ -43,4 +42,4 @@ namespace mtgb
 		/// <returns>適用された値</returns>
 		float ApplyDeadZone(const float value) const;
 	};
-}
+} // namespace mtgb

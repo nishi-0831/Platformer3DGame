@@ -6,7 +6,7 @@
 
 namespace mtnet
 {
-	constexpr size_t LOGS_COUNT_MAX{ 100 };  // 蓄積するログの最大数
+	constexpr size_t LOGS_COUNT_MAX{100}; // 蓄積するログの最大数
 	using OnLogFunc = std::function<void(const std::string&)>;
 
 	/// <summary>
@@ -14,7 +14,7 @@ namespace mtnet
 	/// </summary>
 	class Log
 	{
-	public:
+	  public:
 		/// <summary>
 		/// ログを書き込む
 		/// </summary>
@@ -39,13 +39,13 @@ namespace mtnet
 		/// <param name="_callback">コールバック関数(文字列)</param>
 		static void OnLog(const OnLogFunc& _callback);
 
-	private:
-		Log() = delete;
+	  private:
+		Log()  = delete;
 		~Log() = delete;
 
-	private:
-		static std::list<std::string> logs_;  // ログ貯めておく
-		static OnLogFunc onLogFunc_;  // ログが発行されたときのコールバック関数
-		static std::mutex logWriteMutex_;  // ログを書き出す排他制御用
+	  private:
+		static std::list<std::string> logs_; // ログ貯めておく
+		static OnLogFunc onLogFunc_;		 // ログが発行されたときのコールバック関数
+		static std::mutex logWriteMutex_;	 // ログを書き出す排他制御用
 	};
-}
+} // namespace mtnet

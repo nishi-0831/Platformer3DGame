@@ -16,26 +16,40 @@ namespace mtgb
 		/// <param name="_y">y¬•ª</param>
 		/// <param name="_z">z¬•ª</param>
 		/// <param name="_w">w¬•ª</param>
-		Vector4(
-			const float _x,
-			const float _y,
-			const float _z,
-			const float _w);
+		Vector4(const float _x, const float _y, const float _z, const float _w);
 		/// <summary>
 		/// Vector3‚©‚çˆÃ–Ù“I‚È•ÏŠ·
 		/// </summary>
 		/// <param name="_vec3">•ÏŠ·Œ³</param>
 		Vector4(const Vector3& _vec3);
 
-		Vector4() :
-			Vector4{ 0.0f, 0.0f, 0.0f, 0.0f }
+		Vector4()
+			: Vector4{0.0f, 0.0f, 0.0f, 0.0f}
 		{
 		}
 
-		static inline auto Zero() { return Vector4{ 0,  0,  0,  0 }; }
-		static inline auto One()  { return Vector4{ 1,  1,  1,  1 }; }
+		static inline auto Zero()
+		{
+			return Vector4{0, 0, 0, 0};
+		}
+		static inline auto One()
+		{
+			return Vector4{1, 1, 1, 1};
+		}
 
-		inline Vector4& operator+=(const Vector3& _other) { f[0] += _other.x; f[1] += _other.y; f[2] += _other.z; return *this; }
-		inline Vector4& operator-=(const Vector3& _other) { f[0] -= _other.x; f[1] -= _other.y; f[2] -= _other.z; return *this; }
+		inline Vector4& operator+=(const Vector3& _other)
+		{
+			f[0] += _other.x;
+			f[1] += _other.y;
+			f[2] += _other.z;
+			return *this;
+		}
+		inline Vector4& operator-=(const Vector3& _other)
+		{
+			f[0] -= _other.x;
+			f[1] -= _other.y;
+			f[2] -= _other.z;
+			return *this;
+		}
 	};
-}
+} // namespace mtgb

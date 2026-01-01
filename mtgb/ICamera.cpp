@@ -3,22 +3,21 @@
 #include "GameTime.h"
 #include "Transform.h"
 mtgb::ICamera::ICamera()
-	: pCameraTransform_{ nullptr }
-	, pTargetTransform_{ nullptr }
-	, polarAngleRad_{ 0.0f }
-	, azimuthalAngleRad_{ 0.0f }
+	: pCameraTransform_{nullptr}
+	, pTargetTransform_{nullptr}
+	, polarAngleRad_{0.0f}
+	, azimuthalAngleRad_{0.0f}
 	, followTarget_{false}
 	, adjustTargetDirection_{false}
 	, inputType_{InputType::MOUSE}
 	, orbitSpeed_{1.0f}
 	, rotateSensitivity_{1.0f}
-	, distance_{5.0f}
-	// デフォルトの角度制限（ラジアン）
-	, minPolarAngleRad_{ DirectX::XMConvertToRadians(0.1f)}
-	, maxPolarAngleRad_{ DirectX::XMConvertToRadians(179.0f)}
-	, minAzimuthalAngleRad_{ -(std::numeric_limits<float>::max)() }
-	, maxAzimuthalAngleRad_{ (std::numeric_limits<float>::max)() }
-	, lookAtPositionOffset_{0,0,0}
+	, distance_{5.0f} // デフォルトの角度制限（ラジアン）
+	, minPolarAngleRad_{DirectX::XMConvertToRadians(0.1f)}
+	, maxPolarAngleRad_{DirectX::XMConvertToRadians(179.0f)}
+	, minAzimuthalAngleRad_{-(std::numeric_limits<float>::max)()}
+	, maxAzimuthalAngleRad_{(std::numeric_limits<float>::max)()}
+	, lookAtPositionOffset_{0, 0, 0}
 {
 }
 void mtgb::ICamera::MoveCameraSpherical(float _distance)
@@ -68,13 +67,13 @@ void mtgb::ICamera::DoOrbit()
 	Vector3 movement;
 	switch (inputType_)
 	{
-	case InputType::MOUSE:
+	case InputType::MOUSE :
 		movement = InputUtil::GetMouseMove();
 		break;
-	case InputType::JOYPAD:
+	case InputType::JOYPAD :
 		Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
-		movement.x = -vec2.x;
-		movement.y = vec2.y;
+		movement.x	  = -vec2.x;
+		movement.y	  = vec2.y;
 		break;
 	}
 
@@ -84,7 +83,7 @@ void mtgb::ICamera::DoOrbit()
 		polarAngleRad_ += movement.y * orbitSpeed_ * Time::DeltaTimeF();
 
 		// 鉛直角度を制限
-		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
+		polarAngleRad_	   = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 		azimuthalAngleRad_ = std::clamp(azimuthalAngleRad_, minAzimuthalAngleRad_, maxAzimuthalAngleRad_);
 
 		MoveCameraSpherical(distance_);
@@ -95,11 +94,12 @@ void mtgb::ICamera::FollowTarget()
 {
 	if (pTargetTransform_)
 	{
-		if (!followTarget_) return;
+		if (!followTarget_)
+			return;
 
 		if (adjustTargetDirection_)
 		{
-			pCameraTransform_->rotate = pTargetTransform_->rotate;
+			pCameraTransform_->rotate	= pTargetTransform_->rotate;
 			pCameraTransform_->position = pTargetTransform_->position + (pTargetTransform_->Back() * distance_);
 		}
 		else

@@ -5,7 +5,7 @@ namespace mtgb
 {
 	class SkySphere : public GameObject, public ImGuiShowable
 	{
-	public:
+	  public:
 		SkySphere();
 		~SkySphere();
 
@@ -13,9 +13,11 @@ namespace mtgb
 		void Draw() const override;
 		void ShowImGui() override;
 		void Start() override;
-	private:
+
+	  private:
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
 		float rotateAngleSec_;
+		float sphereScale_;
 	};
-}
+} // namespace mtgb

@@ -1,9 +1,9 @@
 #pragma once
 #include <mtgb.h>
 #include "IActor.h"
-class PatrolChargerEnemy : public mtgb::GameObject,public mtgb::ImGuiShowable,public IActor
+class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActor
 {
-public:
+  public:
 	PatrolChargerEnemy();
 	~PatrolChargerEnemy();
 	void Update() override;
@@ -13,7 +13,8 @@ public:
 	void OnStomped(IActor* _pOther) override;
 	void OnHitSide(IActor* _pOther) override;
 	void TakeDamage(int _damage) override;
-private:
+
+  private:
 	/// <summary>
 	/// プレイヤーに体当たりした際の処理
 	/// </summary>
@@ -23,7 +24,7 @@ private:
 	RigidBody* pRigidBody_;
 	MeshRenderer* pMeshRenderer_;
 	Collider* pCollider_;
-	
+
 	// 捜索対象のTransform
 	Transform* pTargetTransform_;
 	// 発見と判定する角度
@@ -38,15 +39,16 @@ private:
 	// 巡回地点に戻る速度
 	float returnToPatrolSpeed_;
 	std::optional<FbxAnimationController> animController_;
-private:
+
+  private:
 	// 状態
 	enum class STATE
 	{
-		PATROL, // 巡回
-		CHARGE, // 突進
-		WAIT, // その場で待機
+		PATROL,			  // 巡回
+		CHARGE,			  // 突進
+		WAIT,			  // その場で待機
 		RETURN_TO_PATROL, // 巡回地点に戻る
-		DYING // 死亡状態
+		DYING			  // 死亡状態
 	};
 	void InitializeState();
 	void Patrol();
@@ -72,12 +74,12 @@ private:
 	// 与えるダメージ数
 	int takeDamageNum_;
 	// --------------------
-	
+
 	// ------歩き状態-----
 	// 歩くアニメーションの再生速度
 	float walkAnimSpeed_;
 	// -------------------
-	
+
 	// ------待機状態------
 	// 待ち時間
 	float waitTime_;

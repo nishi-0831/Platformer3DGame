@@ -31,16 +31,16 @@ namespace mtgb
 		/// </summary>
 		struct ConstantBuffer
 		{
-			Matrix4x4 g_matrixCameraTranslate;          // カメラ座標変換行列
-			Matrix4x4 g_matrixCameraRotation;          // カメラ座標変換行列
+			Matrix4x4 g_matrixCameraTranslate; // カメラ座標変換行列
+			Matrix4x4 g_matrixCameraRotation;  // カメラ座標変換行列
 			Matrix4x4 g_matrixWorldTranslate;  // 頂点座標変換行列
 			Matrix4x4 g_matrixWorldRotation;   // 頂点座標変換行列
-			Matrix4x4 g_matrixTexture;         // テクスチャ座標変換行列
-			Vector4 g_color;                   // 色
-			Vector2 g_angle;                   // 角度
+			Matrix4x4 g_matrixTexture;		   // テクスチャ座標変換行列
+			Vector4 g_color;				   // 色
+			Vector2 g_angle;				   // 角度
 		};
 
-	public:
+	  public:
 		Sprite();
 		~Sprite();
 
@@ -56,11 +56,7 @@ namespace mtgb
 		/// <param name="_cut">画像内のトリミング矩形</param>
 		/// <param name="_rotationZ">回転角度(Degree)</param>
 		/// <param name="_color">描画色</param>
-		void Draw(
-			const RectF& _draw,
-			const float _rotationZ,
-			const RectF& _cut,
-			const Color& _color);
+		void Draw(const RectF& _draw, const float _rotationZ, const RectF& _cut, const Color& _color);
 
 		/// <summary>
 		/// Transformをもとに描画する
@@ -72,27 +68,32 @@ namespace mtgb
 		/// </param>
 		/// <param name="_imageSize">画像サイズ</param>
 		/// <param name="_color">色</param>
-		void Draw(
-			const Transform* _pTransform,
-			const Transform* _pCameraTransform,
-			const Vector2Int& _imageSize,
-			const Color& _color);
+		void Draw(const Transform* _pTransform,
+				  const Transform* _pCameraTransform,
+				  const Vector2Int& _imageSize,
+				  const Color& _color);
 
 		/// <summary>
 		/// 読み込まれた画像のサイズを取得
 		/// </summary>
 		/// <returns></returns>
-		inline const Vector2Int GetSize() const { return texture2D_.GetSize(); }
+		inline const Vector2Int GetSize() const
+		{
+			return texture2D_.GetSize();
+		}
 
-		inline std::wstring GetFileName() { return fileName_; }
+		inline std::wstring GetFileName()
+		{
+			return fileName_;
+		}
 
-	private:
+	  private:
 		void InitializeVertexBuffer(ID3D11Device* _pDevice) override;
 		void InitializeIndexBuffer(ID3D11Device* _pDevice) override;
 		void InitializeConstantBuffer(ID3D11Device* _pDevice) override;
 
-	private:
-		Texture2D texture2D_;  // 2Dのテクスチャ
-		std::wstring fileName_;  // 読み込んだファイル
+	  private:
+		Texture2D texture2D_;	// 2Dのテクスチャ
+		std::wstring fileName_; // 読み込んだファイル
 	};
-}
+} // namespace mtgb

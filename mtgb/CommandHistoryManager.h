@@ -6,7 +6,7 @@ namespace mtgb
 {
 	class CommandHistoryManager : public ISystem, public ICommandHistory
 	{
-	public:
+	  public:
 		// ISystem ÇâÓÇµÇƒåpè≥Ç≥ÇÍÇ‹ÇµÇΩ
 		CommandHistoryManager();
 		void Initialize() override;
@@ -20,10 +20,10 @@ namespace mtgb
 		void RedoCommand() override;
 		void ClearAllStack() override;
 		void ClearRedoStack() override;
-	private:
+
+	  private:
 		ICommandHistory* inner_;
 		bool isGrouping_;
 		GroupCommand* pGroupCommand_;
-
 	};
-}
+} // namespace mtgb

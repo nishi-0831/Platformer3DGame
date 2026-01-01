@@ -13,6 +13,5 @@ namespace mtgb
 	using GameObjectLayerFlag = mtbit::BitFlag<GameObjectLayer>;
 
 	GameObjectLayerFlag AllLayer();
-	
-}
 
+} // namespace mtgb

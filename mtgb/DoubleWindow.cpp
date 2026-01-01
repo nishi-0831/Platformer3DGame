@@ -22,35 +22,28 @@ mtgb::DoubleWindow::~DoubleWindow()
 
 void mtgb::DoubleWindow::Initialize()
 {
-	const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
-	
-	WindowConfig config1 =
-	{
-		.title = "Player1",
-		.className = "Player1WindowClass",
-		.width = SCREEN_SIZE.x,
-		.height = SCREEN_SIZE.y,
-		.x = 0,
-		.y = 0
-	};
+	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
-	WindowConfig config2 =
-	{
-		.title = "Player2",
-		.className = "Player2WindowClass",
-		.width = SCREEN_SIZE.x,
-		.height = SCREEN_SIZE.y,
-		.x = config1.x + config1.width,
-		.y = 0
-	};
+	WindowConfig config1 = {.title	   = "Player1",
+							.className = "Player1WindowClass",
+							.width	   = SCREEN_SIZE.x,
+							.height	   = SCREEN_SIZE.y,
+							.x		   = 0,
+							.y		   = 0};
 
-	//mtgb::WindowManager::CreateWindowContext(config1, &context1_);
-	//mtgb::WindowManager::CreateWindowContext(config2, &context2_);
+	WindowConfig config2 = {.title	   = "Player2",
+							.className = "Player2WindowClass",
+							.width	   = SCREEN_SIZE.x,
+							.height	   = SCREEN_SIZE.y,
+							.x		   = config1.x + config1.width,
+							.y		   = 0};
 
-	//リソースの初期化もここで行う
-	Game::System<WindowManager>().SetWindowConfig(WindowContext::First,config1);
-	Game::System<WindowManager>().SetWindowConfig(WindowContext::Second,config2);
-	
+	// mtgb::WindowManager::CreateWindowContext(config1, &context1_);
+	// mtgb::WindowManager::CreateWindowContext(config2, &context2_);
+
+	// リソースの初期化もここで行う
+	Game::System<WindowManager>().SetWindowConfig(WindowContext::First, config1);
+	Game::System<WindowManager>().SetWindowConfig(WindowContext::Second, config2);
 
 	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::First);
 	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::Second);
@@ -74,12 +67,7 @@ void mtgb::DoubleWindow::Initialize()
 
 void mtgb::DoubleWindow::Update()
 {
-	
 }
-
-
-
-
 
 void mtgb::DoubleWindow::SetDoubleWindowPos()
 {
@@ -100,23 +88,18 @@ void mtgb::DoubleWindow::SetDoubleWindowPos()
 
 	int win1X = 0;
 	int win2X = 0;
-	//二つ目のウィンドウも収まるなら一つ目の横に並べて配置、見切れるならモニターの右端に合わせる
-	if (win1Width + win2Width <= monitorWidth) {
+	// 二つ目のウィンドウも収まるなら一つ目の横に並べて配置、見切れるならモニターの右端に合わせる
+	if (win1Width + win2Width <= monitorWidth)
+	{
 		win2X = win1X + win1Width; // 並べる
 	}
-	else {
+	else
+	{
 		WindowConfig config = Game::System<WindowManager>().GetWindowConfig(WindowContext::Second);
-		win2X = monitorRect.right - config.width; // 右端に合わせる
+		win2X				= monitorRect.right - config.width; // 右端に合わせる
 	}
 
 	// 位置調整
 	SetWindowPos(hWnd1, nullptr, win1X, 0, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 	SetWindowPos(hWnd2, nullptr, win2X, 0, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
-
-
 }
-
-
-
-
-

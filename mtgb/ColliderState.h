@@ -6,7 +6,7 @@ namespace mtgb
 	/// <summary>
 	/// Colliderの状態のみを保持する構造体
 	/// </summary>
-	//struct ColliderState
+	// struct ColliderState
 	//{
 	//	ColliderType colliderType{ ColliderType::TYPE_AABB };// 当たり判定の形
 	//	bool isStatic{ false };// 静的な、Transform不要なコライダー用のフラグ
@@ -14,5 +14,5 @@ namespace mtgb
 	//	Vector3 center{ Vector3::Zero() };
 	//	float radius{ 1.0f };
 	//	Vector3 extents{ 1.0f,1.0f,1.0f };
-	//};
+	// };
 }

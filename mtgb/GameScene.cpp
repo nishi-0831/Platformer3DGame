@@ -13,7 +13,7 @@ mtgb::GameScene::~GameScene()
 	for (auto& pGameObject : pGameObjects_)
 	{
 		Game::RemoveEntityAllComponent(pGameObject->GetEntityId());
-		pGameObject->DestroyMe();  // 削除フラグを立てておく
+		pGameObject->DestroyMe(); // 削除フラグを立てておく
 	}
 	SAFE_CLEAR_CONTAINER_DELETE(pGameObjects_);
 }
@@ -31,7 +31,7 @@ void mtgb::GameScene::RegisterGameObject(GameObject* _pGameObject)
 
 mtgb::CameraHandleInScene mtgb::GameScene::RegisterCameraGameObject(GameObject* _pGameObject) const
 {
-	Transform* pTransform{ &Transform::Get(_pGameObject->GetEntityId()) };
+	Transform* pTransform{&Transform::Get(_pGameObject->GetEntityId())};
 	return Game::System<CameraSystem>().RegisterDrawCamera(pTransform);
 }
 
@@ -116,7 +116,7 @@ mtgb::GameObject* mtgb::GameScene::GetGameObject(const EntityId _entityId) const
 	return nullptr;
 }
 
-void mtgb::GameScene::DestroyGameObject(EntityId _entityId) 
+void mtgb::GameScene::DestroyGameObject(EntityId _entityId)
 {
 	if (_entityId == INVALID_ENTITY)
 		return;
@@ -138,7 +138,8 @@ nlohmann::json mtgb::GameScene::SerializeGameObjects() const
 	j["GameObject"] = nlohmann::json::array();
 	for (auto& object : pGameObjects_)
 	{
-		if (!object) continue;
+		if (!object)
+			continue;
 
 		GameObjectTypeRegistry& gameObjTypeRegistry = Game::System<GameObjectTypeRegistry>();
 
@@ -151,6 +152,4 @@ nlohmann::json mtgb::GameScene::SerializeGameObjects() const
 	return j;
 }
 
-
-
-mtgb::GameScene* mtgb::GameScene::pInstance_{ nullptr };
+mtgb::GameScene* mtgb::GameScene::pInstance_{nullptr};

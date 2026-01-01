@@ -5,7 +5,7 @@
 namespace mtgb
 {
 	using WinCtxResManager = WindowContextResourceManager;
-	
+
 	/// <summary>
 	/// WindowContextResource
 	/// ラッパー、具象クラス依存の便利関数群
@@ -18,8 +18,7 @@ namespace mtgb
 		/// <typeparam name="ResourceT">リソースの型</typeparam>
 		/// <param name="ctx">取得するウィンドウの識別子</param>
 		/// <returns></returns>
-		template<typename ResourceT>
-		ResourceT& Get(WindowContext ctx)
+		template <typename ResourceT> ResourceT& Get(WindowContext ctx)
 		{
 			return Game::System<WinCtxResManager>().Get<ResourceT>(ctx);
 		}
@@ -50,5 +49,5 @@ namespace mtgb
 		/// <param name="_ctx1"></param>
 		/// <param name="_ctx2"></param>
 		void SwapWindow(WindowContext _ctx1 = WindowContext::First, WindowContext _ctx2 = WindowContext::Second);
-	}
-}
+	} // namespace WinCtxRes
+} // namespace mtgb

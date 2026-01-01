@@ -5,13 +5,17 @@ namespace mtgb
 {
 	class World
 	{
-	public:
-		World() {}
-		virtual ~World() {}
+	  public:
+		World()
+		{
+		}
+		virtual ~World()
+		{
+		}
 
 		void Instantiate();
 
-	private:
-		//std::list<>
+	  private:
+		// std::list<>
 	};
-}
+} // namespace mtgb

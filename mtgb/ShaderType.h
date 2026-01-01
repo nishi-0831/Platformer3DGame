@@ -21,4 +21,4 @@ namespace mtgb
 		Sea,
 		Max,
 	};
-}
+} // namespace mtgb

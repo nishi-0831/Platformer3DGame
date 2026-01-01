@@ -15,11 +15,11 @@ namespace mtgb
 		/// </summary>
 		enum : uint32_t
 		{
-			RED   = 0xff0000,   // 赤色
-			GREEN = 0x00ff00,   // 緑色
-			BLUE  = 0x0000ff,   // 青色
-			WHITE  = 0xffffff,  // 白色
-			BLACK  = 0x000000,  // 黒色
+			RED	  = 0xff0000, // 赤色
+			GREEN = 0x00ff00, // 緑色
+			BLUE  = 0x0000ff, // 青色
+			WHITE = 0xffffff, // 白色
+			BLACK = 0x000000, // 黒色
 		};
 
 		/// <summary>
@@ -27,11 +27,11 @@ namespace mtgb
 		/// </summary>
 		enum struct Component : int32_t
 		{
-			Blue,   // 青色成分
-			Green,  // 緑色成分
-			Red,    // 赤色成分
-			Alpha,  // 透過度成分
-			Max,    // 色成分の種類数
+			Blue,  // 青色成分
+			Green, // 緑色成分
+			Red,   // 赤色成分
+			Alpha, // 透過度成分
+			Max,   // 色成分の種類数
 		};
 
 		/// <summary>
@@ -41,11 +41,7 @@ namespace mtgb
 		/// <param name="_g">緑成分(0~255)</param>
 		/// <param name="_b">青成分(0~255)</param>
 		/// <param name="_alpha">透明度成分(0~255)</param>
-		Color(
-			const uint8_t _r,
-			const uint8_t _g,
-			const uint8_t _b,
-			const uint8_t _alpha = UINT8_MAX);
+		Color(const uint8_t _r, const uint8_t _g, const uint8_t _b, const uint8_t _alpha = UINT8_MAX);
 
 		/// <summary>
 		/// カラーコードから色を作る
@@ -56,7 +52,10 @@ namespace mtgb
 		/// <summary>
 		/// カラーコードをunsigned int にキャスト
 		/// </summary>
-		inline operator uint32_t() const noexcept { return code; }
+		inline operator uint32_t() const noexcept
+		{
+			return code;
+		}
 
 		/// <summary>
 		/// 透明度成分の正規化した値を取得
@@ -72,8 +71,7 @@ namespace mtgb
 		/// <returns>RGBを正規化した3次元ベクトル</returns>
 		inline Vector3 ToVector3Norm() const
 		{
-			return
-			{
+			return {
 				static_cast<float>(component[static_cast<int32_t>(Component::Red)]) / UINT8_MAX,
 				static_cast<float>(component[static_cast<int32_t>(Component::Green)]) / UINT8_MAX,
 				static_cast<float>(component[static_cast<int32_t>(Component::Blue)]) / UINT8_MAX,
@@ -85,8 +83,7 @@ namespace mtgb
 		/// <returns>RGBAを正規化した3次元ベクトル</returns>
 		inline Vector4 ToVector4Norm() const
 		{
-			return
-			{
+			return {
 				static_cast<float>(component[static_cast<int32_t>(Component::Red)]) / UINT8_MAX,
 				static_cast<float>(component[static_cast<int32_t>(Component::Green)]) / UINT8_MAX,
 				static_cast<float>(component[static_cast<int32_t>(Component::Blue)]) / UINT8_MAX,
@@ -96,8 +93,8 @@ namespace mtgb
 
 		union
 		{
-			uint32_t code;  // 16進数カラーコード用
-			uint8_t component[sizeof(uint32_t) / sizeof(uint8_t)];  // 1バイトずつのカラー要素用
+			uint32_t code;										   // 16進数カラーコード用
+			uint8_t component[sizeof(uint32_t) / sizeof(uint8_t)]; // 1バイトずつのカラー要素用
 		};
 	};
-}
+} // namespace mtgb

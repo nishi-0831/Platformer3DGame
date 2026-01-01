@@ -7,14 +7,13 @@ namespace mtgb
 {
 	class AudioPlayer;
 
-	class AudioPlayerCP :
-		public ComponentPool<AudioPlayer,AudioPlayerCP>
+	class AudioPlayerCP : public ComponentPool<AudioPlayer, AudioPlayerCP>
 	{
-	public:
+	  public:
 		AudioPlayerCP();
 		AudioPlayerCP(const AudioPlayerCP&) = default;
 		~AudioPlayerCP();
 
 		void Update() override;
 	};
-}
+} // namespace mtgb

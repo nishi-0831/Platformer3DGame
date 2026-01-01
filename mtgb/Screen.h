@@ -6,16 +6,22 @@ namespace mtgb
 {
 	class Screen : public ISystem
 	{
-	public:
+	  public:
 		Screen();
 		~Screen();
 
 		void Initialize() override;
 		void Update() override;
 
-		inline const Vector2Int GetSize() const { return size_; }
-		inline const Vector2F GetSizeF() const { return Vector2F{ static_cast<float>(size_.x),static_cast<float>(size_.y) }; }
-		//inline const Vector2Int GetInitialSize() const { return Vector2Int{ initialWidth_,initialHeight_ }; }
+		inline const Vector2Int GetSize() const
+		{
+			return size_;
+		}
+		inline const Vector2F GetSizeF() const
+		{
+			return Vector2F{static_cast<float>(size_.x), static_cast<float>(size_.y)};
+		}
+		// inline const Vector2Int GetInitialSize() const { return Vector2Int{ initialWidth_,initialHeight_ }; }
 		/// <summary>
 		/// 初期値を1としたときのスクリーンサイズの比率を返す
 		/// </summary>
@@ -29,10 +35,11 @@ namespace mtgb
 		/// <param name="_height"></param>
 		void SetSize(int _width, int _height);
 		int GetFPS() const;
-	private:
+
+	  private:
 		Vector2F sizeRatio_;
 		Vector2Int initialSize_;
 		Vector2Int size_;
-		int fpsLimit_;  // FPS制限(1フレームあたりの更新フレーム数)
+		int fpsLimit_; // FPS制限(1フレームあたりの更新フレーム数)
 	};
-}
+} // namespace mtgb

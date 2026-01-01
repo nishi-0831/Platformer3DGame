@@ -1,12 +1,8 @@
 #include "Color.h"
 
-mtgb::Color::Color(
-	const uint8_t _r,
-	const uint8_t _g,
-	const uint8_t _b,
-	const uint8_t _alpha)
+mtgb::Color::Color(const uint8_t _r, const uint8_t _g, const uint8_t _b, const uint8_t _alpha)
 {
-	component[static_cast<int32_t>(Component::Red)]   = _r;
+	component[static_cast<int32_t>(Component::Red)]	  = _r;
 	component[static_cast<int32_t>(Component::Green)] = _g;
 	component[static_cast<int32_t>(Component::Blue)]  = _b;
 	component[static_cast<int32_t>(Component::Alpha)] = _alpha;

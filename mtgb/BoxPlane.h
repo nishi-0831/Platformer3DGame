@@ -18,7 +18,6 @@ struct Plane
 	Vector3 normal;
 };
 
-
 /// <summary>
 /// AABBから指定された向きの平面を返す
 /// </summary>
@@ -26,7 +25,6 @@ struct Plane
 /// <param name="_plane"> 平面の向き </param>
 /// <returns> 平面方程式、法線を持つ平面の構造体 </returns>
 Plane GetPlane(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir);
-
 
 float GetPlaneAngleRad(const Plane& _plane, const Vector3& _vec);
 float GetPlaneAngleRad(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir, const Vector3& _vec);

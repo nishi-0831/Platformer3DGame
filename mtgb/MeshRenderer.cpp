@@ -4,25 +4,25 @@
 #include "Transform.h"
 namespace
 {
-	constexpr size_t BUFFER_SIZE{ 256 };
+	constexpr size_t BUFFER_SIZE{256};
 }
 mtgb::MeshRenderer::MeshRenderer()
-	: frame_{ 0 }
-	, meshFileName{ "" }
-	, meshHandle{ INVALID_HANDLE }
-	, layer{ AllLayer() }
-	, shaderType{ ShaderType::FbxParts }
+	: frame_{0}
+	, meshFileName{""}
+	, meshHandle{INVALID_HANDLE}
+	, layer{AllLayer()}
+	, shaderType{ShaderType::FbxParts}
 {
 	meshFileName.resize(BUFFER_SIZE);
 }
 
 mtgb::MeshRenderer::MeshRenderer(EntityId _entityId)
 	: IComponent(_entityId)
-	, meshFileName{ "" }
-	, meshHandle{ INVALID_HANDLE }
-	, layer{ AllLayer()}
-	, shaderType{ ShaderType::FbxParts }
-	, frame_{ 0 }
+	, meshFileName{""}
+	, meshHandle{INVALID_HANDLE}
+	, layer{AllLayer()}
+	, shaderType{ShaderType::FbxParts}
+	, frame_{0}
 {
 	meshFileName.resize(BUFFER_SIZE);
 }
@@ -30,10 +30,10 @@ mtgb::MeshRenderer::MeshRenderer(EntityId _entityId)
 MeshRenderer& mtgb::MeshRenderer::operator=(const MeshRenderer& _other)
 {
 	meshFileName = _other.meshFileName;
-	meshHandle = _other.meshHandle;
-	layer = _other.layer;
-	shaderType = _other.shaderType;
-	frame_ = _other.frame_;
+	meshHandle	 = _other.meshHandle;
+	layer		 = _other.layer;
+	shaderType	 = _other.shaderType;
+	frame_		 = _other.frame_;
 
 	return *this;
 }

@@ -10,7 +10,7 @@ namespace mtnet
 	/// </summary>
 	class TcpListener : public Socket
 	{
-	public:
+	  public:
 		TcpListener(const IPEndPoint& _local);
 		~TcpListener();
 
@@ -18,6 +18,6 @@ namespace mtnet
 
 		TcpClient* AcceptTcpClient();
 
-	private:
+	  private:
 	};
-}
+} // namespace mtnet

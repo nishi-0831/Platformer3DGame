@@ -30,7 +30,7 @@ void mtgb::RenderSystem::Render(GameScene& _scene)
 
 void mtgb::RenderSystem::RenderDirectXWindows(GameScene& _scene)
 {
-	//一つ目のウィンドウ
+	// 一つ目のウィンドウ
 	WinCtxRes::ChangeResource(WindowContext::First);
 	if (WinCtxRes::Get<CameraResource>(WindowContext::First).NotRegisterCamera())
 	{
@@ -78,11 +78,10 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	MTImGui::Instance().ShowWindow(ShowType::SceneView);
 
 	imGui.EndFrame();
-	//DirectX11Draw::End();
-
+	// DirectX11Draw::End();
 }
 
-void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene,GameObjectLayerFlag _layer)
+void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene, GameObjectLayerFlag _layer)
 {
 	_scene.Draw();
 
@@ -96,6 +95,5 @@ void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene,GameObjectLayerFlag _
 	if (_layer.Has(GameObjectLayer::SceneView))
 	{
 		Game::System<ColliderCP>().Draw();
-
 	}
 }

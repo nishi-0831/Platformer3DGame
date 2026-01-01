@@ -14,7 +14,6 @@ struct IDXGIDevice1;
 struct IDXGIAdapter1;
 struct IDXGIFactory2;
 
-
 struct IDXGISwapChain;
 struct IDXGISwapChain1;
 struct ID3D11RenderTargetView;
@@ -35,8 +34,6 @@ namespace mtgb
 	class Figure;
 	class IShader;
 	class ImGuiRenderer;
-
-	
 
 	/// <summary>
 	/// ブレンドモード
@@ -100,7 +97,8 @@ namespace mtgb
 		friend class RenderSystem;
 		friend class EffekseerTest;
 		friend class EffectManager;
-	public:
+
+	  public:
 		/// <summary>
 		/// 描画するシェーダをセットする
 		/// </summary>
@@ -117,8 +115,8 @@ namespace mtgb
 		/// <param name="_enabled">書き込みをする true / false</param>
 		static void SetIsWriteToDepthBuffer(const bool _enabled);
 
-	private:
-		DirectX11Draw() = delete;
+	  private:
+		DirectX11Draw()	 = delete;
 		~DirectX11Draw() = delete;
 
 		/// <summary>
@@ -136,23 +134,24 @@ namespace mtgb
 		/// </summary>
 		static void Release();
 
-	private:
-		static ComPtr<ID3D11Device> pDevice_;                                                             // 描画を行うための環境、リソースの作成に使う
-		static ComPtr<ID3D11DeviceContext> pContext_;                                                     // GPUに命令出すやつ
+	  private:
+		static ComPtr<ID3D11Device> pDevice_;		  // 描画を行うための環境、リソースの作成に使う
+		static ComPtr<ID3D11DeviceContext> pContext_; // GPUに命令出すやつ
 		static ComPtr<IDXGIDevice1> pDXGIDevice_;
 		static std::vector<ComPtr<IDXGIAdapter1>> pDXGIAdapters_;
 		static ComPtr<IDXGIFactory2> pDXGIFactory_;
 		static std::vector<MonitorInfo> monitorInfos_;
 
-		static IDXGISwapChain* pSwapChain_;                                                        // ダブルバッファリングするやつ
+		static IDXGISwapChain* pSwapChain_; // ダブルバッファリングするやつ
 		static ComPtr<IDXGISwapChain1> pSwapChain1_;
-		static ComPtr<ID3D11RenderTargetView> pRenderTargetView_;                                         // 描画先
-		static ComPtr<ID3D11DepthStencilView> pDepthStencilView_;                                         // 深度バッファ
-		static std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::Max)> pDepthStencilState_;  // ブレンドによる深度バッファへの書き込み情報
-		static ComPtr<ID3D11Texture2D> pDepthStencil_;                                                    // 深度ステンシル
-		static std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::Max)> pBlendState_;                // ブレンドの情報
-		static ShaderBundle shaderBundle_[static_cast<int8_t>(ShaderType::Max)];                   // シェーダのバンドル
+		static ComPtr<ID3D11RenderTargetView> pRenderTargetView_; // 描画先
+		static ComPtr<ID3D11DepthStencilView> pDepthStencilView_; // 深度バッファ
+		static std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::Max)>
+			pDepthStencilState_;					   // ブレンドによる深度バッファへの書き込み情報
+		static ComPtr<ID3D11Texture2D> pDepthStencil_; // 深度ステンシル
+		static std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::Max)> pBlendState_; // ブレンドの情報
+		static ShaderBundle shaderBundle_[static_cast<int8_t>(ShaderType::Max)]; // シェーダのバンドル
 		static Vector4 backgroundColor_;
 		static ComPtr<ID3D11SamplerState> pDefaultSamplerState_;
 	};
-}
+} // namespace mtgb

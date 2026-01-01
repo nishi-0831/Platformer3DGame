@@ -18,7 +18,7 @@ namespace mtgb
 	{
 		friend class FbxParts;
 
-	public:
+	  public:
 		FbxModel();
 		~FbxModel();
 
@@ -32,14 +32,20 @@ namespace mtgb
 		/// FbxSceneを取得する
 		/// </summary>
 		/// <returns>FbxSceneのポインタ</returns>
-		inline FbxScene* GetFbxScene() { return pFbxScene_; }
+		inline FbxScene* GetFbxScene()
+		{
+			return pFbxScene_;
+		}
 
 		/// <summary>
 		/// Fbxパーツを取得する
 		/// </summary>
 		/// <param name="_index">インデックス</param>
 		/// <returns>Fbxパーツのポインタ</returns>
-		inline FbxParts* GetFbxParts(const int _index) { return pParts_[_index]; }
+		inline FbxParts* GetFbxParts(const int _index)
+		{
+			return pParts_[_index];
+		}
 
 		/// <summary>
 		/// 任意のボーンの位置を取得
@@ -51,20 +57,23 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_boneName">ボーンの名前</param>
 		Vector3 GetAnimBonePosition(std::string _boneName);
-		
+
 		/// <summary>
 		/// ロードしたときのモデルファイルの名前を取得
 		/// </summary>
 		/// <returns>ファイル名</returns>
-		std::string GetFileName() const { return fileName_; }
-		
+		std::string GetFileName() const
+		{
+			return fileName_;
+		}
+
 		/// <summary>
 		/// アニメーションのコントローラを返す
 		/// </summary>
 		/// <returns></returns>
 		std::optional<FbxAnimationController> GetAnimationController();
-	private:
 
+	  private:
 		/// <summary>
 		/// ノードの中身を調べる
 		/// </summary>
@@ -72,17 +81,17 @@ namespace mtgb
 		/// <param name="_parts">パーツリスト</param>
 		void CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _parts);
 
-	private:
-		std::vector<FbxParts*> pParts_;  // 複数あるかもしれないパーツ
+	  private:
+		std::vector<FbxParts*> pParts_; // 複数あるかもしれないパーツ
 
-		FbxScene* pFbxScene_;  // Fbxファイル内のシーン
+		FbxScene* pFbxScene_; // Fbxファイル内のシーン
 
-		FbxTime::EMode frameRate_;  // アニメーションフレームレート
-		float animationSpeed_;  // アニメーションの再生速度
-		int startFrame_;  // アニメーション最初のフレーム
-		int endFrame_;  // アニメーション最後のフレーム
+		FbxTime::EMode frameRate_; // アニメーションフレームレート
+		float animationSpeed_;	   // アニメーションの再生速度
+		int startFrame_;		   // アニメーション最初のフレーム
+		int endFrame_;			   // アニメーション最後のフレーム
 
-		std::string fileName_;  // モデルファイルのパス
+		std::string fileName_;	 // モデルファイルのパス
 		double unitScaleFactor_; // FbxSceneから取得したスケール単位
 	};
-}
+} // namespace mtgb

@@ -2,9 +2,9 @@
 #include <mtgb.h>
 #include <PlaneUVScroll.h>
 
-class SeaPlane : public GameObject , public ImGuiShowable
+class SeaPlane : public GameObject, public ImGuiShowable
 {
-public:
+  public:
 	SeaPlane();
 	~SeaPlane();
 
@@ -12,7 +12,8 @@ public:
 	void Draw() const override;
 	void ShowImGui() override;
 	void Start() override;
-private:
+
+  private:
 	Transform* pTransform_;
 	MeshRenderer* pMeshRenderer_;
 	Collider* pCollider_;

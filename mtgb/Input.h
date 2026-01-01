@@ -61,7 +61,7 @@ namespace mtgb
 
 	class Input : public ISystem
 	{
-	public:
+	  public:
 		Input();
 		~Input();
 
@@ -125,7 +125,9 @@ namespace mtgb
 		/// 接続されているジョイスティックを割り当て予約してるデバイスに割り当てる
 		/// </summary>
 		/// <param name="_pJoystickDevice"></param>
-		void AssignJoystickToReservation(ComPtr<IDirectInputDevice8> _pJoystickDevice, size_t _reservationIndex, GUID _guid);
+		void AssignJoystickToReservation(ComPtr<IDirectInputDevice8> _pJoystickDevice,
+										 size_t _reservationIndex,
+										 GUID _guid);
 
 		/// <summary>
 		/// 登録されたジョイスティックを解除する
@@ -179,7 +181,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_pInputDevice">デバイス</param>
 		/// <returns>デバイスタイプ</returns>
-		/// 
+		///
 		static DeviceType GetDeviceType(ComPtr<IDirectInputDevice8> _pInputDevice);
 		static DeviceType GetDeviceType(const DIDEVICEINSTANCE& _inst);
 		HRESULT UpdateJoystickState(GUID guid);
@@ -195,14 +197,13 @@ namespace mtgb
 		bool IsJoystickConnected(GUID guid) const;
 		bool IsJoystickAssigned(GUID guid) const;
 
-	private:
-
+	  private:
 		void StartEnumTimer();
 		void StopEnumTimer();
 		void AutoEnum();
 		// 定期的にデバイス列挙をタイマー
-		TimerHandle enumTimerHandle_{ nullptr };
-		float enumInterval_{ 1.0f };
+		TimerHandle enumTimerHandle_{nullptr};
+		float enumInterval_{1.0f};
 
 		/// <summary>
 		/// アクティブなコントローラのIDを調べる
@@ -212,16 +213,16 @@ namespace mtgb
 		void AcquireJoystick(ComPtr<IDirectInputDevice8> _pJoystickDevice);
 		GUID GetDeviceGuid(ComPtr<IDirectInputDevice8> _pInputDevice);
 		void SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, InputConfig _inputConfig);
-		InputData* pInputData_;				 // 入力の状態
-		ComPtr<IDirectInput8> pDirectInput_;        // Direct Input 本体k
-		ComPtr<IDirectInputDevice8> pKeyDevice_;    // キーデバイス
-		ComPtr<IDirectInputDevice8> pMouseDevice_;  // マウスデバイス
-		ComPtr<IDirectInputDevice8> pJoystickDevice_;  // ジョイスティックデバイス
-		 
-		std::vector<JoystickReservation> requestedJoystickDevices_;//割り当て予約されたジョイスティックデバイス
-		std::set<GUID> assignedJoystickGuids_;//既に割り当て済みのジョイスティック
-		
+		InputData* pInputData_;						  // 入力の状態
+		ComPtr<IDirectInput8> pDirectInput_;		  // Direct Input 本体k
+		ComPtr<IDirectInputDevice8> pKeyDevice_;	  // キーデバイス
+		ComPtr<IDirectInputDevice8> pMouseDevice_;	  // マウスデバイス
+		ComPtr<IDirectInputDevice8> pJoystickDevice_; // ジョイスティックデバイス
+
+		std::vector<JoystickReservation> requestedJoystickDevices_; // 割り当て予約されたジョイスティックデバイス
+		std::set<GUID> assignedJoystickGuids_;						// 既に割り当て済みのジョイスティック
+
 		std::map<GUID, JoystickContext> joystickContext_;
 		GUID currJoystickGuid_;
 	};
-}
+} // namespace mtgb

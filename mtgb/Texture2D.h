@@ -18,7 +18,7 @@ namespace mtgb
 	/// </summary>
 	class Texture2D
 	{
-	public:
+	  public:
 		Texture2D();
 		~Texture2D();
 
@@ -32,22 +32,31 @@ namespace mtgb
 		/// サンプラーステートを取得
 		/// </summary>
 		/// <returns>サンプラーステートのポインタ</returns>
-		inline ID3D11SamplerState* GetSamplerState() { return pSamplerLinear_.Get(); }
+		inline ID3D11SamplerState* GetSamplerState()
+		{
+			return pSamplerLinear_.Get();
+		}
 		/// <summary>
 		/// シェーダリソースビュを取得
 		/// </summary>
 		/// <returns>シェーダリソースビュのポインタ</returns>
-		inline ID3D11ShaderResourceView* GetShaderResourceView() { return pShaderResourceView_.Get(); }
-	
+		inline ID3D11ShaderResourceView* GetShaderResourceView()
+		{
+			return pShaderResourceView_.Get();
+		}
+
 		/// <summary>
 		/// テクスチャの画像のサイズを取得
 		/// </summary>
 		/// <returns>ヨコ幅とタテ幅のピクセル</returns>
-		inline const Vector2Int GetSize() const { return size_; }
-	
-	private:
-		ComPtr<ID3D11SamplerState> pSamplerLinear_;  // 貼り方
-		ComPtr<ID3D11ShaderResourceView> pShaderResourceView_;  // シェーダに送るためのもの
-		Vector2Int size_;  // 画像のサイズ
+		inline const Vector2Int GetSize() const
+		{
+			return size_;
+		}
+
+	  private:
+		ComPtr<ID3D11SamplerState> pSamplerLinear_;			   // 貼り方
+		ComPtr<ID3D11ShaderResourceView> pShaderResourceView_; // シェーダに送るためのもの
+		Vector2Int size_;									   // 画像のサイズ
 	};
-}
+} // namespace mtgb

@@ -17,7 +17,7 @@ namespace mtgb
 	/// </summary>
 	class RectDetector : public IDetector
 	{
-	public:
+	  public:
 		RectDetector() = default;
 		RectDetector(const RectDetectorConfig& _config);
 		RectDetector(RectDetectorConfig&& _config);
@@ -61,7 +61,7 @@ namespace mtgb
 
 		void ForEach(std::function<void(ScreenCoordContainsInfo&)> _func) override;
 		void ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const override;
-		
+
 		/// <summary>
 		/// <para> カメラからターゲットに視線が通っているか</para>
 		/// <para> !!!detectedTargets内で総当たりをしているので非効率的。ゲームが重くなったら真っ先に改善!!!</para>
@@ -70,7 +70,7 @@ namespace mtgb
 		/// <param name="_targetInfo">ターゲット</param>
 		/// <returns></returns>
 		bool IsLineOfSight(const Vector3& _cameraPos, const ScreenCoordContainsInfo& _targetInfo);
-		
+
 		RectDetectorConfig config;
 	};
-}
+} // namespace mtgb

@@ -20,7 +20,7 @@ namespace mtgb
 		friend AudioPlayer;
 		friend Audio;
 
-	public:
+	  public:
 		AudioClip();
 		~AudioClip();
 
@@ -49,8 +49,8 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		float GetTotalTimeSec() const;
-	
-	private:
-		WaveData* pWaveData_;  // Waveファイルのデータ
+
+	  private:
+		WaveData* pWaveData_; // Waveファイルのデータ
 	};
-}
+} // namespace mtgb

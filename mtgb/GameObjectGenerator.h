@@ -11,8 +11,7 @@ namespace mtgb
 	};
 	class GameObjectGenerator
 	{
-	public:
-
+	  public:
 		static void Initialize();
 		static void Generate(GenerateType _primitive);
 		/// <summary>
@@ -31,12 +30,12 @@ namespace mtgb
 		static void RegisterCommandListener(std::function<void(Command*)> _commandListener);
 		static void Duplicate(EntityId _srcEntityId);
 		static void Delete(EntityId _entityId);
-	private:
+
+	  private:
 		GameObjectGenerator() = default;
 		static GameObjectGenerator* GetInstance();
 		static GameObjectGenerator* pInstance_;
 		GameObjectFactory gameObjFactory_;
 		std::function<void(Command*)> commandListener_;
-
 	};
-}
+} // namespace mtgb

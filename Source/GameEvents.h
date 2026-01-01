@@ -13,5 +13,4 @@ struct PlayerHpReachedZeroEvent
 
 struct PlayerReachedGoalEvent
 {
-
 };

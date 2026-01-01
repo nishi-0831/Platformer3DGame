@@ -8,8 +8,8 @@ namespace mtgb
 	/// </summary>
 	class Entity
 	{
-	public:
-		Entity() 
+	  public:
+		Entity()
 		{
 		}
 
@@ -21,12 +21,15 @@ namespace mtgb
 		/// エンティティIdを取得する
 		/// </summary>
 		/// <returns>エンティティ識別番号</returns>
-		inline const EntityId GetEntityId() const { return entityId_; }
+		inline const EntityId GetEntityId() const
+		{
+			return entityId_;
+		}
 
-	protected:
-		EntityId entityId_{INVALID_ENTITY};  // エンティティの識別子
+	  protected:
+		EntityId entityId_{INVALID_ENTITY}; // エンティティの識別子
 
-	private:
-		//static EntityId entityCounter_;  // エンティティ識別子のカウンタ
+	  private:
+		// static EntityId entityCounter_;  // エンティティ識別子のカウンタ
 	};
-}
+} // namespace mtgb

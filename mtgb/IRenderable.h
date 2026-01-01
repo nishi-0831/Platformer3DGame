@@ -7,7 +7,7 @@ namespace mtgb
 	/// </summary>
 	class IRenderableCP
 	{
-	public:
+	  public:
 		virtual ~IRenderableCP() = default;
 
 		/// <summary>
@@ -25,12 +25,12 @@ namespace mtgb
 	/// </summary>
 	class IRenderable
 	{
-	public:
+	  public:
 		virtual ~IRenderable() = default;
 		/// <summary>
 		/// •`‰æ‚ğs‚¤
 		/// </summary>
-		virtual void Render() const = 0 ;
+		virtual void Render() const = 0;
 		/// <summary>
 		/// •`‰æ‚ª‰Â”\‚©”Û‚©
 		/// </summary>
@@ -42,4 +42,4 @@ namespace mtgb
 		/// <returns></returns>
 		virtual GameObjectLayerFlag GetLayer() const = 0;
 	};
-}
+} // namespace mtgb

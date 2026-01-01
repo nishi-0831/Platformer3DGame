@@ -5,17 +5,17 @@
 #include <tuple>
 #include <algorithm>
 #include <cmath>
-//XMGLOBALCONST XMVECTORF32 g_BoxOffset[8] =
+// XMGLOBALCONST XMVECTORF32 g_BoxOffset[8] =
 //{
-//    { { { -1.0f, -1.0f,  1.0f, 0.0f } } },
-//    { { {  1.0f, -1.0f,  1.0f, 0.0f } } },
-//    { { {  1.0f,  1.0f,  1.0f, 0.0f } } },
-//    { { { -1.0f,  1.0f,  1.0f, 0.0f } } },
-//    { { { -1.0f, -1.0f, -1.0f, 0.0f } } },
-//    { { {  1.0f, -1.0f, -1.0f, 0.0f } } },
-//    { { {  1.0f,  1.0f, -1.0f, 0.0f } } },
-//    { { { -1.0f,  1.0f, -1.0f, 0.0f } } },
-//};
+//     { { { -1.0f, -1.0f,  1.0f, 0.0f } } },
+//     { { {  1.0f, -1.0f,  1.0f, 0.0f } } },
+//     { { {  1.0f,  1.0f,  1.0f, 0.0f } } },
+//     { { { -1.0f,  1.0f,  1.0f, 0.0f } } },
+//     { { { -1.0f, -1.0f, -1.0f, 0.0f } } },
+//     { { {  1.0f, -1.0f, -1.0f, 0.0f } } },
+//     { { {  1.0f,  1.0f, -1.0f, 0.0f } } },
+//     { { { -1.0f,  1.0f, -1.0f, 0.0f } } },
+// };
 
 Plane GetPlane(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir)
 {
@@ -33,41 +33,41 @@ Plane GetPlane(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir)
 
 	switch (_planeDir)
 	{
-	case BoxPlaneDir::FRONT:
+	case BoxPlaneDir::FRONT :
 		normal = Vector3::Forward();
 		point1 = corners[0];
 		point2 = corners[2];
 		point3 = corners[1];
 		break;
-	case BoxPlaneDir::BACK:
+	case BoxPlaneDir::BACK :
 		// 後面のインデックス : 4,5,6,7
 		normal = Vector3::Back();
 		point1 = corners[4];
 		point2 = corners[5];
 		point3 = corners[6];
 		break;
-	case BoxPlaneDir::RIGHT:
+	case BoxPlaneDir::RIGHT :
 		// 右側面のインデックス : 1,2,6,5
 		normal = Vector3::Right();
 		point1 = corners[6];
 		point2 = corners[5];
 		point3 = corners[1];
 		break;
-	case BoxPlaneDir::LEFT:
+	case BoxPlaneDir::LEFT :
 		// 左側面のインデックス : 0,3,7,4
 		normal = Vector3::Left();
 		point1 = corners[0];
 		point2 = corners[7];
 		point3 = corners[3];
 		break;
-	case BoxPlaneDir::TOP:
+	case BoxPlaneDir::TOP :
 		// 上面のインデックス : 3,2,6,7
 		normal = Vector3::Up();
 		point1 = corners[3];
 		point2 = corners[6];
 		point3 = corners[2];
 		break;
-	case BoxPlaneDir::BOTTOM:
+	case BoxPlaneDir::BOTTOM :
 		// 下面のインデックス : 0,1,5,4
 		normal = Vector3::Down();
 		point1 = corners[0];
@@ -78,13 +78,13 @@ Plane GetPlane(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir)
 
 	// 三つの点から平面の方程式を計算
 	DirectX::XMVECTOR planeEquation = DirectX::XMPlaneFromPoints(point1, point2, point3);
-	return Plane{ .equation = DirectX::XMVector3Normalize( planeEquation), .normal = normal };
+	return Plane{.equation = DirectX::XMVector3Normalize(planeEquation), .normal = normal};
 }
 
 float GetPlaneAngleRad(const Plane& _plane, const Vector3& _vec)
 {
 	float dot = DirectX::XMPlaneDotNormal(_plane.equation, Vector3::Normalize(_vec)).m128_f32[0];
-	dot = std::clamp(dot, -1.0f, 1.0f);
+	dot		  = std::clamp(dot, -1.0f, 1.0f);
 	return std::acosf(dot);
 }
 
@@ -104,12 +104,12 @@ std::optional<Plane> TryGetFacingPlane(const DirectX::BoundingBox& _aabb, const 
 	std::optional<Plane> bestPlane;
 	for (int i = 0; i < 6; i++)
 	{
-		Plane p = GetPlane(_aabb, static_cast<BoxPlaneDir>(i));
+		Plane p	  = GetPlane(_aabb, static_cast<BoxPlaneDir>(i));
 		float dot = DirectX::XMPlaneDotNormal(p.equation, vecNormal).m128_f32[0];
-		
+
 		if (dot > bestDot)
 		{
-			bestDot = dot;
+			bestDot	  = dot;
 			bestPlane = p;
 		}
 	}
@@ -118,7 +118,7 @@ std::optional<Plane> TryGetFacingPlane(const DirectX::BoundingBox& _aabb, const 
 
 Vector3 GetPlaneIntersectLine(const Plane& _plane, const Vector3& _start, const Vector3& _end)
 {
-	return DirectX::XMPlaneIntersectLine(_plane.equation,_start,_end);
+	return DirectX::XMPlaneIntersectLine(_plane.equation, _start, _end);
 }
 
 float GetSignedDistance(const Plane& _plane, const Vector3& _point)

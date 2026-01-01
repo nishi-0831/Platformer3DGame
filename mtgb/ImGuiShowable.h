@@ -19,20 +19,22 @@ namespace mtgb
 	class ImGuiShowable
 	{
 		friend class MTImGui;
-	public:
+
+	  public:
 		ImGuiShowable(EntityId _entityId = INVALID_ENTITY);
 		ImGuiShowable(ShowType _showType, EntityId _entityId = INVALID_ENTITY);
-		ImGuiShowable(const std::string& _name,ShowType _showType, EntityId _entityId = INVALID_ENTITY);
+		ImGuiShowable(const std::string& _name, ShowType _showType, EntityId _entityId = INVALID_ENTITY);
 		virtual ~ImGuiShowable();
 
 		/// <summary>
 		/// 指定した表示キューに積まれる
 		/// </summary>
 		virtual void ShowImGui();
-	protected:
+
+	  protected:
 		EntityId targetEntityId_; // Entityの場合はIdを渡すこと
 		std::string displayName_; // 表示される際の名前
-		ShowType show_; // 表示したいImGuiWindow
+		ShowType show_;			  // 表示したいImGuiWindow
 	};
-	
-}
+
+} // namespace mtgb

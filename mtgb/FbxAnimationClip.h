@@ -15,4 +15,4 @@ namespace mtgb
 		int endFrame;
 		FbxAnimStack* pAnimStack;
 	};
-}
+} // namespace mtgb

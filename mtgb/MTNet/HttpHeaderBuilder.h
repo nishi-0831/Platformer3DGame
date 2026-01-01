@@ -9,10 +9,9 @@ namespace mtnet
 	{
 		friend HttpClient;
 
-	public:
-		HttpHeaderBuilder() : 
-			oss_{}
-		{};
+	  public:
+		HttpHeaderBuilder()
+			: oss_{} {};
 
 		inline HttpHeaderBuilder& ContentType(const std::string& _content)
 		{
@@ -32,7 +31,7 @@ namespace mtnet
 			return *this;
 		}
 
-	private:
+	  private:
 		std::ostringstream oss_;
 	};
-}
+} // namespace mtnet

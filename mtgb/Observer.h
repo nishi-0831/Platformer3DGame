@@ -9,39 +9,36 @@ namespace mtgb
 	/// イベントを監視、まとめて実行するクラス
 	/// </summary>
 	/// <typeparam name="...CallArgs"></typeparam>
-	template<typename ...CallArgs>
-	class Observer
+	template <typename... CallArgs> class Observer
 	{
-	public:
+	  public:
 		using EventHandle = void*;
-	public:
+
+	  public:
 		Observer();
 		virtual ~Observer();
 
-	protected:
+	  protected:
 		void On(const std::function<void(CallArgs...)>& _callback);
 		void Invoke(CallArgs... args);
 		void Remove(const EventHandle hEvent);
 
-	private:
+	  private:
 		std::list<std::function<void(CallArgs...)>> functions_;
 	};
 
-	template<typename ...CallArgs>
-	inline Observer<CallArgs...>::Observer()
+	template <typename... CallArgs> inline Observer<CallArgs...>::Observer()
 	{
 	}
-	template<typename ...CallArgs>
-	inline Observer<CallArgs...>::~Observer()
+	template <typename... CallArgs> inline Observer<CallArgs...>::~Observer()
 	{
 	}
-	template<typename ...CallArgs>
+	template <typename... CallArgs>
 	inline void Observer<CallArgs...>::On(const std::function<void(CallArgs...)>& _callback)
 	{
 		functions_.push_back(_callback);
 	}
-	template<typename ...CallArgs>
-	inline void Observer<CallArgs...>::Invoke(CallArgs ...args)
+	template <typename... CallArgs> inline void Observer<CallArgs...>::Invoke(CallArgs... args)
 	{
 		// すべて呼び出し
 		for (auto& func : functions_)
@@ -50,8 +47,7 @@ namespace mtgb
 		}
 	}
 
-	template<typename ...CallArgs>
-	inline void Observer<CallArgs...>::Remove(const EventHandle _hEvent)
+	template <typename... CallArgs> inline void Observer<CallArgs...>::Remove(const EventHandle _hEvent)
 	{
 		for (auto itr = functions_.begin(); itr != functions_.end(); itr++)
 		{
@@ -62,4 +58,4 @@ namespace mtgb
 			}
 		}
 	}
-}
+} // namespace mtgb

@@ -1,5 +1,5 @@
 #pragma once
-//#include "World.h"
+// #include "World.h"
 #include <cmtgb.h>
 #include <list>
 #include "Handlers.h"
@@ -14,21 +14,21 @@ namespace mtgb
 	class GameObject;
 	class Transform;
 
-	//using GameScene = World;
+	// using GameScene = World;
 	class GameScene
 	{
 		friend class SceneSystem;
 		friend class RenderSystem;
 		friend class Game;
-	private:
+
+	  private:
 		static GameScene* pInstance_;
 
-	public:
+	  public:
 		GameScene();
 		virtual ~GameScene();
 
-		template<class GameObjectT, typename ...Args>
-		GameObjectT* Instantiate(Args... _args);
+		template <class GameObjectT, typename... Args> GameObjectT* Instantiate(Args... _args);
 		/// <summary>
 		/// ゲームオブジェクトをシーンに登録する。
 		/// 既に登録されている場合は再度の登録はしない
@@ -43,7 +43,7 @@ namespace mtgb
 		/// <param name="_pGameObject">登録するゲームオブジェクトのポインタ</param>
 		/// <returns>登録されたカメラハンドル</returns>
 		CameraHandleInScene RegisterCameraGameObject(GameObject* _pGameObject) const;
-		
+
 		/// <summary>
 		/// 引数と名前が最初に一致したゲームオブジェクトを返す
 		/// </summary>
@@ -65,12 +65,9 @@ namespace mtgb
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <returns>存在していない、GameObjectを継承していないならnullptr</returns>
-		template<typename T>
-		T* GetGameObject() const;
+		template <typename T> T* GetGameObject() const;
 
-		template<typename T>
-		void GetGameObjects(std::vector<T*>* _pFoundGameObjects) const;
-
+		template <typename T> void GetGameObjects(std::vector<T*>* _pFoundGameObjects) const;
 
 		/// <summary>
 		/// EntityIdでオブジェクトを取得
@@ -82,39 +79,38 @@ namespace mtgb
 		void DestroyGameObject(EntityId _entityId);
 
 		nlohmann::json SerializeGameObjects() const;
-	protected:
+
+	  protected:
 		virtual void Initialize();
 		virtual void Update();
 		virtual void Draw() const;
 		virtual void End();
 
-	private:
-		std::list<GameObject*> pGameObjects_;  // シーンに登場するゲームオブジェクト
+	  private:
+		std::list<GameObject*> pGameObjects_; // シーンに登場するゲームオブジェクト
 	};
 
-	template<class GameObjectT, typename ...Args>
-	inline GameObjectT* GameScene::Instantiate(Args... _args)
+	template <class GameObjectT, typename... Args> inline GameObjectT* GameScene::Instantiate(Args... _args)
 	{
 		// 基底クラスがGameObjectであるか
-		static_assert(std::is_base_of<GameObject, GameObjectT>().value
-			&& "GameObjectクラスを継承していないクラスはインスタンスできません。");
+		static_assert(std::is_base_of<GameObject, GameObjectT>().value &&
+					  "GameObjectクラスを継承していないクラスはインスタンスできません。");
 
-		GameObjectT* pInstance{ new GameObjectT{ _args... } };
+		GameObjectT* pInstance{new GameObjectT{_args...}};
 
 		// TODO: ここも連続した配列にする
 		pGameObjects_.push_back(pInstance);
 
 		return pInstance;
 	}
-	template<typename T>
-	inline T* GameScene::GetGameObject() const
+	template <typename T> inline T* GameScene::GetGameObject() const
 	{
 		// 基底クラスがGameObjectであるか
 		if (std::is_base_of<GameObject, std::remove_cvref_t<T>>().value == false)
 		{
 			return nullptr;
 		}
-	
+
 		for (GameObject* obj : pGameObjects_)
 		{
 			T* instance = dynamic_cast<T*>(obj);
@@ -126,8 +122,7 @@ namespace mtgb
 		}
 		return nullptr;
 	}
-	template<typename T>
-	inline void GameScene::GetGameObjects(std::vector<T*>* _pFoundGameObjects) const
+	template <typename T> inline void GameScene::GetGameObjects(std::vector<T*>* _pFoundGameObjects) const
 	{
 		_pFoundGameObjects->clear();
 
@@ -147,4 +142,4 @@ namespace mtgb
 			}
 		}
 	}
-}
+} // namespace mtgb

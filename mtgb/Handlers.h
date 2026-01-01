@@ -1,7 +1,6 @@
 #pragma once
 #include <cstdint>
 
-
 #pragma region Handlers
 
 namespace mtgb
@@ -42,7 +41,7 @@ namespace mtgb
 	/// <summary>
 	/// –³Œø‚Èƒnƒ“ƒhƒ‹’l
 	/// </summary>
-	static const int32_t INVALID_HANDLE{ -1 };
-}
+	static const int32_t INVALID_HANDLE{-1};
+} // namespace mtgb
 
 #pragma endregion

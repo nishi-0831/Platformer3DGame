@@ -4,12 +4,13 @@
 
 class RankingManager : public ISystem
 {
-public:
+  public:
 	RankingManager();
 	~RankingManager();
 	void Initialize() override;
 	void Release() override;
-private:
+
+  private:
 	Ranking* ranking_;
 	std::vector<int> rankingList_;
 	int32_t resultScore_;

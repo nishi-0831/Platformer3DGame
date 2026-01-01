@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 
-
 namespace mtgb
 {
 	class Transform;
@@ -11,9 +10,13 @@ namespace mtgb
 	/// </summary>
 	class IModelPack
 	{
-	public:
-		IModelPack() {}
-		virtual ~IModelPack() {}
+	  public:
+		IModelPack()
+		{
+		}
+		virtual ~IModelPack()
+		{
+		}
 
 		/// <summary>
 		/// 3DÉÇÉfÉãÇÃì«Ç›çûÇ›ÇÇ∑ÇÈ
@@ -31,4 +34,4 @@ namespace mtgb
 		/// </summary>
 		virtual void Release() = 0;
 	};
-}
+} // namespace mtgb

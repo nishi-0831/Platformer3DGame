@@ -12,5 +12,5 @@ namespace mtgb
 		None
 	};
 	WindowContext CurrContext();
-	
-}
+
+} // namespace mtgb

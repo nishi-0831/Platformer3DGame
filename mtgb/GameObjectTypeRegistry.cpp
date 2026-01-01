@@ -11,19 +11,19 @@ void mtgb::GameObjectTypeRegistry::Update()
 
 std::vector<std::string> mtgb::GameObjectTypeRegistry::GetRegisteredNames() const
 {
-    std::vector<std::string> names;
-    names.reserve(nameToType_.size());
-    for (const auto& keyValue : nameToType_)
-    {
-        names.emplace_back(keyValue.first);
-    }
+	std::vector<std::string> names;
+	names.reserve(nameToType_.size());
+	for (const auto& keyValue : nameToType_)
+	{
+		names.emplace_back(keyValue.first);
+	}
 
-    std::sort(names.begin(), names.end());
+	std::sort(names.begin(), names.end());
 
-    return names;
+	return names;
 }
 
 bool mtgb::GameObjectTypeRegistry::IsRegistered(std::string_view _typeName)
 {
-    return nameToType_.contains(_typeName);
+	return nameToType_.contains(_typeName);
 }

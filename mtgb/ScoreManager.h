@@ -6,10 +6,12 @@ namespace mtgb
 {
 	class ScoreManager : public ISystem
 	{
-	public:
+	  public:
 		ScoreManager();
 		~ScoreManager();
-		void Initialize() override {}
+		void Initialize() override
+		{
+		}
 		void Update() override;
 
 		/// <summary>
@@ -19,7 +21,10 @@ namespace mtgb
 		/// <summary>
 		/// ノルマの加点を行う
 		/// </summary>
-		static void AddQuota(uint32_t _quota) { ScoreManager::quotaScore_ += _quota; }
+		static void AddQuota(uint32_t _quota)
+		{
+			ScoreManager::quotaScore_ += _quota;
+		}
 
 		/// <summary>
 		/// 現在のスコアを取得する
@@ -51,9 +56,10 @@ namespace mtgb
 		/// </summary>
 		/// <returns>達成しているなら真を返す</returns>
 		static bool AchievedQuota();
-	private:
+
+	  private:
 		static int32_t score_;
 		// ノルマのスコア
 		static int32_t quotaScore_;
 	};
-}
+} // namespace mtgb

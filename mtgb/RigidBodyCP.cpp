@@ -53,11 +53,8 @@ void mtgb::RigidBodyCP::Update()
 					{
 						rigidBody.onExit_(onColliderPrev->GetEntityId());
 					}
-
 				}
 			}
 		}
 	}
 }
-
-

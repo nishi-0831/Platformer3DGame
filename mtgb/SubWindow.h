@@ -9,14 +9,14 @@ namespace mtgb
 {
 	class SubWindow : public ISystem
 	{
-	public:
+	  public:
 		SubWindow();
 		~SubWindow();
 
 		void Initialize() override;
 		void Update() override;
 
-	private:
+	  private:
 		MainWindow window_;
 		/*/// <summary>
 		/// メインウィンドウのハンドラを取得
@@ -30,4 +30,4 @@ namespace mtgb
 		HWND hWnd_;
 		MSG* pPeekedMessage_;*/
 	};
-}
+} // namespace mtgb
