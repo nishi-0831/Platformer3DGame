@@ -41,7 +41,6 @@ namespace mtgb
 		{
 			return std::sqrt(x * x + y * y);
 		}
-#pragma region 四則演算
 		inline Vector2T& operator*=(T _scalar)
 		{
 			x *= _scalar;
@@ -79,9 +78,7 @@ namespace mtgb
 			y -= _other.y;
 			return *this;
 		}
-#pragma endregion
 
-#pragma region 定数
 		static Vector2T Zero()
 		{
 			return Vector2T(T{}, T{});
@@ -90,9 +87,7 @@ namespace mtgb
 		{
 			return Vector2T(T{1}, T{1});
 		}
-#pragma endregion
 	};
-#pragma region グローバルオペレータ
 	template <typename T> inline Vector2T<T> operator*(const Vector2T<T>& _v, T _scalar)
 	{
 		return Vector2T<T>{_v} *= _scalar;
@@ -197,7 +192,6 @@ namespace mtgb
 	{
 		return !(_v1 == _v2);
 	}
-#pragma endregion
 
 	template <Arithmetic T>
 	inline Vector2T<T>::Vector2T(T _x, T _y)
