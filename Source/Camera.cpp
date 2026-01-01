@@ -35,16 +35,14 @@ float EaseOutCirc(float x)
 mtgb::Camera::Camera(GameObject* _pGameObj)
 	: GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName("Camera").Build())
 	, isGrounded_{true}
-	, inputType_{InputType::JOYPAD}
-	, polarAngleRad_{DirectX::XMConvertToRadians(45.0f + 90.0f)}
+	,	inputType_{InputType::JOYPAD}, polarAngleRad_{DirectX::XMConvertToRadians(45.0f + 90.0f)}
 	, azimuthalAngleRad_{DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f)}
-	, orbitSpeed_{1.0f}
-	, distance_{10.0f}
+	, orbitSpeed_{1.0f}, distance_{10.0f}
 	, minPolarAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
+
 	, maxPolarAngleRad_{DirectX::XMConvertToRadians(89.0f + 90.0f)}
 	, minAzimuthalAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
-	, maxAzimuthalAngleRad_{DirectX::XMConvertToRadians(359.0f + 90.0f)}
-	, lookAtPositionOffset_{0, 1, 0}
+	, maxAzimuthalAngleRad_{DirectX::XMConvertToRadians(359.0f + 90.0f)}, lookAtPositionOffset_{0, 1, 0}
 	, pCameraTransform_{Component<Transform>()}
 	, pTargetTransform_{&Transform::Get(_pGameObj->GetEntityId())}
 	, targetVelocityCache_{Vector3::Zero()}
@@ -60,7 +58,7 @@ mtgb::Camera::Camera(GameObject* _pGameObj)
 		.OnAnyUpdate(
 			[this]
 			{
-				lookAtPosLerpProgress_ = std::clamp(lookAtPosLerpProgress_, 0.0f, 1.0f);
+				lookAtPosLerpProgress_ =     std::clamp(lookAtPosLerpProgress_, 0.0f, 1.0f);
 				// Šp“x‚Ì§ŒÀ
 				polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 			})
@@ -72,9 +70,7 @@ mtgb::Camera::Camera(GameObject* _pGameObj)
 					 lookAtPosLerpProgress_ = 0.0f;
 				 })
 		.OnUpdate(CameraState::GROUNDED,
-				  [this]
-				  {
-					  distY_ = pTargetTransform_->position.y;
+				  [this]{distY_ = pTargetTransform_->position.y;
 
 					  orbitSpeed_ = 1.0f;
 
@@ -133,15 +129,14 @@ void mtgb::Camera::Update()
 
 			float degX = DirectX::XMConvertToDegrees(polarAngleRad_) - 90.0f;
 			float degY = DirectX::XMConvertToDegrees(azimuthalAngleRad_) - 90.0f;
-			ImGui::Text("Polar Angle: %.3f deg", degX);
+																	ImGui::Text("Polar Angle: %.3f deg", degX);
 			ImGui::Text("Azimuthal Angle: %.3f deg", degY);
 			ImGui::Text("Target Velocity Y: %.3f", targetVelocityCache_.y);
 			ImGui::Text("lookAtPosLerpProgress: %.3f", lookAtPosLerpProgress_);
-			ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
+	ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
 			ImGui::Text("Is Off Screen: %s", IsTargetOffScreen() ? "true" : "false");
 			TypeRegistry::Instance().CallFunc(&normalizedX, "normalizedX");
-			TypeRegistry::Instance().CallFunc(&normalizedY, "normalizedY");
-		},
+			TypeRegistry::Instance().CallFunc(&normalizedY, "normalizedY");},
 		"Camera",
 		ShowType::Inspector);
 
