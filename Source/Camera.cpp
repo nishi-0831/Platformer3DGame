@@ -35,14 +35,16 @@ float EaseOutCirc(float x)
 mtgb::Camera::Camera(GameObject* _pGameObj)
 	: GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName("Camera").Build())
 	, isGrounded_{true}
-	,	inputType_{InputType::JOYPAD}, polarAngleRad_{DirectX::XMConvertToRadians(45.0f + 90.0f)}
+	, inputType_{InputType::JOYPAD}
+	, polarAngleRad_{DirectX::XMConvertToRadians(45.0f + 90.0f)}
 	, azimuthalAngleRad_{DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f)}
-	, orbitSpeed_{1.0f}, distance_{10.0f}
+	, orbitSpeed_{1.0f}
+	, distance_{10.0f}
 	, minPolarAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
-
 	, maxPolarAngleRad_{DirectX::XMConvertToRadians(89.0f + 90.0f)}
 	, minAzimuthalAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
-	, maxAzimuthalAngleRad_{DirectX::XMConvertToRadians(359.0f + 90.0f)}, lookAtPositionOffset_{0, 1, 0}
+	, maxAzimuthalAngleRad_{DirectX::XMConvertToRadians(359.0f + 90.0f)}
+	, lookAtPositionOffset_{0, 1, 0}
 	, pCameraTransform_{Component<Transform>()}
 	, pTargetTransform_{&Transform::Get(_pGameObj->GetEntityId())}
 	, targetVelocityCache_{Vector3::Zero()}
@@ -58,57 +60,67 @@ mtgb::Camera::Camera(GameObject* _pGameObj)
 		.OnAnyUpdate(
 			[this]
 			{
-				lookAtPosLerpProgress_ =     std::clamp(lookAtPosLerpProgress_, 0.0f, 1.0f);
+				lookAtPosLerpProgress_ = std::clamp(lookAtPosLerpProgress_, 0.0f, 1.0f);
 				// 角度の制限
 				polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
-			})
-		.OnStart(CameraState::GROUNDED,
-				 [this]
-				 {
-					 baseY_ = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
+			}
+		)
+		.OnStart(
+			CameraState::GROUNDED,
+			[this]
+			{
+				baseY_ = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
 
-					 lookAtPosLerpProgress_ = 0.0f;
-				 })
-		.OnUpdate(CameraState::GROUNDED,
-				  [this]{distY_ = pTargetTransform_->position.y;
+				lookAtPosLerpProgress_ = 0.0f;
+			}
+		)
+		.OnUpdate(
+			CameraState::GROUNDED,
+			[this]
+			{
+				distY_ = pTargetTransform_->position.y;
 
-					  orbitSpeed_ = 1.0f;
+				orbitSpeed_ = 1.0f;
 
-					  // 被写体が画面外にある場合は追従速度を上げる
-					  float lerpSpeed =
-						  IsTargetOffScreen() ? lerpSpeedGrounded_ * lerpSpeedScalar_ : lerpSpeedGrounded_;
-					  lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
+				// 被写体が画面外にある場合は追従速度を上げる
+				float lerpSpeed = IsTargetOffScreen() ? lerpSpeedGrounded_ * lerpSpeedScalar_ : lerpSpeedGrounded_;
+				lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
 
-					  // ジャンプ中：速度に基づいて状態を判定
-					  if (targetVelocityCache_.y > 0.1f)
-					  {
-						  cameraStat_.Change(CameraState::JUMPING);
-					  }
-				  });
+				// ジャンプ中：速度に基づいて状態を判定
+				if (targetVelocityCache_.y > 0.1f)
+				{
+					cameraStat_.Change(CameraState::JUMPING);
+				}
+			}
+		);
 
 	cameraStat_
-		.OnStart(CameraState::JUMPING,
-				 [this]
-				 {
-					 distY_ = pTargetTransform_->position.y;
-					 baseY_ = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
+		.OnStart(
+			CameraState::JUMPING,
+			[this]
+			{
+				distY_ = pTargetTransform_->position.y;
+				baseY_ = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
 
-					 lookAtPosLerpProgress_ = 0.0f;
-				 })
-		.OnUpdate(CameraState::JUMPING,
-				  [this]
-				  {
-					  if (isGrounded_)
-					  {
-						  cameraStat_.Change(CameraState::GROUNDED);
-					  }
-					  distY_	  = pTargetTransform_->position.y;
-					  orbitSpeed_= 0.5f;
+				lookAtPosLerpProgress_ = 0.0f;
+			}
+		)
+		.OnUpdate(
+			CameraState::JUMPING,
+			[this]
+			{
+				if (isGrounded_)
+				{
+					cameraStat_.Change(CameraState::GROUNDED);
+				}
+				distY_		= pTargetTransform_->position.y;
+				orbitSpeed_ = 0.5f;
 
-					  // 被写体が画面外にある場合は追従速度を上げる
-					  float lerpSpeed = IsTargetOffScreen() ? lerpSpeedJumping_ * lerpSpeedScalar_ : lerpSpeedJumping_;
-					  lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
-				  });
+				// 被写体が画面外にある場合は追従速度を上げる
+				float lerpSpeed = IsTargetOffScreen() ? lerpSpeedJumping_ * lerpSpeedScalar_ : lerpSpeedJumping_;
+				lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
+			}
+		);
 }
 
 mtgb::Camera::~Camera()
@@ -129,16 +141,18 @@ void mtgb::Camera::Update()
 
 			float degX = DirectX::XMConvertToDegrees(polarAngleRad_) - 90.0f;
 			float degY = DirectX::XMConvertToDegrees(azimuthalAngleRad_) - 90.0f;
-																	ImGui::Text("Polar Angle: %.3f deg", degX);
+			ImGui::Text("Polar Angle: %.3f deg", degX);
 			ImGui::Text("Azimuthal Angle: %.3f deg", degY);
 			ImGui::Text("Target Velocity Y: %.3f", targetVelocityCache_.y);
 			ImGui::Text("lookAtPosLerpProgress: %.3f", lookAtPosLerpProgress_);
-	ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
+			ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
 			ImGui::Text("Is Off Screen: %s", IsTargetOffScreen() ? "true" : "false");
 			TypeRegistry::Instance().CallFunc(&normalizedX, "normalizedX");
-			TypeRegistry::Instance().CallFunc(&normalizedY, "normalizedY");},
+			TypeRegistry::Instance().CallFunc(&normalizedY, "normalizedY");
+		},
 		"Camera",
-		ShowType::Inspector);
+		ShowType::Inspector
+	);
 
 	DoOrbit();
 	cameraStat_.Update();

@@ -50,8 +50,9 @@ void CommandHistoryManager::UndoCommand()
 {
 	if (isGrouping_)
 	{
-		assert(false &&
-			   " コマンドをまとめている最中のUndoは許可されていません。 CancellGroupCommand() を呼んでください ");
+		assert(
+			false && " コマンドをまとめている最中のUndoは許可されていません。 CancellGroupCommand() を呼んでください "
+		);
 	}
 
 	inner_->UndoCommand();
@@ -61,8 +62,9 @@ void CommandHistoryManager::RedoCommand()
 {
 	if (isGrouping_)
 	{
-		assert(false &&
-			   " コマンドをまとめている最中のRedoは許可されていません。 CancellGroupCommand() を呼んでください ");
+		assert(
+			false && " コマンドをまとめている最中のRedoは許可されていません。 CancellGroupCommand() を呼んでください "
+		);
 		return;
 	}
 

@@ -42,58 +42,103 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 
 	// Dolly
 	sCameraOperation_
-		.OnUpdate(CameraOperation::Dolly,
-				  [this]
-				  {
-					  DoDolly();
-				  })
-		.RegisterTransition(CameraOperation::Dolly,
-							CameraOperation::Track,
-							[]() { return (InputUtil::GetMouse(MouseCode::Middle) == false); });
+		.OnUpdate(
+			CameraOperation::Dolly,
+			[this]
+			{
+				DoDolly();
+			}
+		)
+		.RegisterTransition(
+			CameraOperation::Dolly,
+			CameraOperation::Track,
+			[]()
+			{
+				return (InputUtil::GetMouse(MouseCode::Middle) == false);
+			}
+		);
 
 	// Orbit
-	sCameraOperation_.OnUpdate(CameraOperation::Orbit, [this] { DoOrbit(); })
-		.RegisterTransition(CameraOperation::Orbit,
-							CameraOperation::Track,
-							[]() { return (InputUtil::GetKey(KeyCode::LeftMenu) == false); });
+	sCameraOperation_
+		.OnUpdate(
+			CameraOperation::Orbit,
+			[this]
+			{
+				DoOrbit();
+			}
+		)
+		.RegisterTransition(
+			CameraOperation::Orbit,
+			CameraOperation::Track,
+			[]()
+			{
+				return (InputUtil::GetKey(KeyCode::LeftMenu) == false);
+			}
+		);
 
 	// Pan
-	sCameraOperation_.OnUpdate(CameraOperation::Pan, [this] { DoPan(); })
-		.RegisterTransition(CameraOperation::Pan,
-							CameraOperation::Track,
-							[]() { return (InputUtil::GetMouse(MouseCode::Right) == false); });
+	sCameraOperation_
+		.OnUpdate(
+			CameraOperation::Pan,
+			[this]
+			{
+				DoPan();
+			}
+		)
+		.RegisterTransition(
+			CameraOperation::Pan,
+			CameraOperation::Track,
+			[]()
+			{
+				return (InputUtil::GetMouse(MouseCode::Right) == false);
+			}
+		);
 
 	// Track
 	sCameraOperation_
-		.OnUpdate(CameraOperation::Track,
-				  [this]
-				  {
-					  if (IsMouseInWindow(windowName_.c_str()) == false)
-						  return;
+		.OnUpdate(
+			CameraOperation::Track,
+			[this]
+			{
+				if (IsMouseInWindow(windowName_.c_str()) == false)
+					return;
 
-					  DoTrack();
-					  if (InputUtil::GetMouseDown(MouseCode::Left))
-					  {
-						  if ((!ImGuizmo::IsViewManipulateHovered()))
+				DoTrack();
+				if (InputUtil::GetMouseDown(MouseCode::Left))
+				{
+					if ((!ImGuizmo::IsViewManipulateHovered()))
 
-							  if (!ImGuizmo::IsUsing())
-							  {
-								  SelectTransform();
-							  }
-					  }
-				  })
-		.RegisterTransition(CameraOperation::Track,
-							CameraOperation::Pan,
-							[this]()
-							{ return InputUtil::GetMouse(MouseCode::Right) && IsMouseInWindow(windowName_.c_str()); })
-		.RegisterTransition(CameraOperation::Track,
-							CameraOperation::Orbit,
-							[this]()
-							{ return InputUtil::GetKey(KeyCode::LeftMenu) && IsMouseInWindow(windowName_.c_str()); })
-		.RegisterTransition(CameraOperation::Track,
-							CameraOperation::Dolly,
-							[this]()
-							{ return InputUtil::GetMouse(MouseCode::Middle) && IsMouseInWindow(windowName_.c_str()); });
+						if (!ImGuizmo::IsUsing())
+						{
+							SelectTransform();
+						}
+				}
+			}
+		)
+		.RegisterTransition(
+			CameraOperation::Track,
+			CameraOperation::Pan,
+			[this]()
+			{
+				return InputUtil::GetMouse(MouseCode::Right) && IsMouseInWindow(windowName_.c_str());
+			}
+		)
+		.RegisterTransition(
+			CameraOperation::Track,
+			CameraOperation::Orbit,
+			[this]()
+			{
+				return InputUtil::GetKey(KeyCode::LeftMenu) && IsMouseInWindow(windowName_.c_str());
+			}
+		)
+		.RegisterTransition(
+			CameraOperation::Track,
+			CameraOperation::Dolly,
+			[this]()
+			{
+				return InputUtil::GetMouse(MouseCode::Middle) && IsMouseInWindow(windowName_.c_str());
+			}
+		);
 }
 
 mtgb::ImGuiEditorCamera::~ImGuiEditorCamera()
@@ -240,12 +285,14 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 
 	ImRect workRect = window->WorkRect;
 	ImVec2 workPos	= workRect.Min;
-	ImGuiUtil::GetMouseRay(origin,
-						   end,
-						   proj,
-						   view,
-						   Game::System<ImGuiRenderer>().GetViewport(),
-						   {workPos.x, workPos.y});
+	ImGuiUtil::GetMouseRay(
+		origin,
+		end,
+		proj,
+		view,
+		Game::System<ImGuiRenderer>().GetViewport(),
+		{workPos.x, workPos.y}
+	);
 
 	vec = end - origin;
 

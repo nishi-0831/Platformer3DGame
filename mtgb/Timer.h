@@ -21,9 +21,11 @@ namespace mtgb
 
 	  public:
 		static TimerHandle AddAram(const float _time, const std::function<void()>& _callback);
-		static TimerHandle AddInterval(const float _time,
-									   const std::function<void()>& _callback,
-									   const bool _firstCall = false);
+		static TimerHandle AddInterval(
+			const float _time,
+			const std::function<void()>& _callback,
+			const bool _firstCall = false
+		);
 		static void Remove(TimerHandle _hTimer);
 
 		/// <summary>

@@ -18,7 +18,8 @@ namespace mtgb
 					TypeRegistry::Instance().CallFunc(&_target->meshHandle, "meshHandle");
 					TypeRegistry::Instance().CallFunc(&_target->layer, "layer");
 					TypeRegistry::Instance().CallFunc(&_target->shaderType, "shaderType");
-				});
+				}
+			);
 			MTImGui::Instance().RegisterComponentViewer<MeshRenderer>();
 		}
 	};

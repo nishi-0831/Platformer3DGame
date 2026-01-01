@@ -72,7 +72,8 @@ void mtgb::Ground::Draw()
 			_pCB->g_isTexture	   = (false);
 		},
 		[this](ID3D11DeviceContext* _pDC) {},
-		GetIndexCount());
+		GetIndexCount()
+	);
 }
 
 void mtgb::Ground::InitializeVertexBuffer(ID3D11Device* _pDevice)
@@ -158,8 +159,10 @@ void mtgb::Ground::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	HRESULT hResult{};
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pIndexBuffer_);
 
-	massert(SUCCEEDED(hResult) // インデックスバッファの作成に成功
-			&& "インデックスバッファの作成に失敗 @Figure::InitializeIndexBuffer");
+	massert(
+		SUCCEEDED(hResult) // インデックスバッファの作成に成功
+		&& "インデックスバッファの作成に失敗 @Figure::InitializeIndexBuffer"
+	);
 }
 
 void mtgb::Ground::InitializeConstantBuffer(ID3D11Device* _pDevice)
@@ -174,9 +177,11 @@ void mtgb::Ground::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	};
 
 	HRESULT hResult{};
-	hResult = _pDevice->CreateBuffer(&BUFFER_DESC,
-									 nullptr, // 初期データなし
-									 &pConstantBuffer_);
+	hResult = _pDevice->CreateBuffer(
+		&BUFFER_DESC,
+		nullptr, // 初期データなし
+		&pConstantBuffer_
+	);
 
 	massert(SUCCEEDED(hResult) && "コンスタントバッファの作成に失敗 @FbxParts::InitializeConstantBuffer");
 }

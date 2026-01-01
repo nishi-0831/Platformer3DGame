@@ -30,7 +30,12 @@ mtgb::SceneSystem::~SceneSystem()
 
 void mtgb::SceneSystem::Initialize()
 {
-	OnMove([]() { Game::System<Timer>().Clear(); });
+	OnMove(
+		[]()
+		{
+			Game::System<Timer>().Clear();
+		}
+	);
 }
 
 void mtgb::SceneSystem::Update()

@@ -21,9 +21,14 @@ mtgb::ScoreManager::~ScoreManager()
 
 void mtgb::ScoreManager::Update()
 {
-	MTImGui::Instance().DirectShow([this]() { ImGui::LabelText("Score", "%d", score_); },
-								   "CurrentScore",
-								   ShowType::Inspector);
+	MTImGui::Instance().DirectShow(
+		[this]()
+		{
+			ImGui::LabelText("Score", "%d", score_);
+		},
+		"CurrentScore",
+		ShowType::Inspector
+	);
 }
 void mtgb::ScoreManager::AddScore(uint32_t _score)
 {

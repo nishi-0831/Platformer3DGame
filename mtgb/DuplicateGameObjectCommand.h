@@ -11,9 +11,11 @@ namespace mtgb
 	{
 	  public:
 		using CreateFunc = std::function<GameObject*()>;
-		DuplicateGameObjectCommand(CreateFunc _createFunc,
-								   const ComponentFactory& _componentFactory,
-								   EntityId _srcEntityId);
+		DuplicateGameObjectCommand(
+			CreateFunc _createFunc,
+			const ComponentFactory& _componentFactory,
+			EntityId _srcEntityId
+		);
 		~DuplicateGameObjectCommand();
 		// Command ÇâÓÇµÇƒåpè≥Ç≥ÇÍÇ‹ÇµÇΩ
 		void Execute() override;

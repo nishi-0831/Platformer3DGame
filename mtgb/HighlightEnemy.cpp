@@ -19,20 +19,21 @@ HighlightEnemy::HighlightEnemy()
 	highlightFrameSize	 = {60.0f, 60.0f};
 
 	// 一つ目のウィンドウ
-	RectDetectorConfig firstConfig = {.base =
-										  {
-											  .targetTag	 = GameObjectTag::Enemy,
-											  .windowContext = WindowContext::First,
-											  .maxDistance	 = distance,
-											  .minDistance	 = 0.0f,
-										  },
-									  .detectionRect = {
-										  0.0f,
-										  0.0f,
-										  static_cast<float>(firstWndRect.right),
-										  static_cast<float>(firstWndRect.bottom),
-									  }};
-	firstWndRectDetector_.config   = firstConfig;
+	RectDetectorConfig firstConfig =
+		{.base =
+			 {
+				 .targetTag		= GameObjectTag::Enemy,
+				 .windowContext = WindowContext::First,
+				 .maxDistance	= distance,
+				 .minDistance	= 0.0f,
+			 },
+		 .detectionRect = {
+			 0.0f,
+			 0.0f,
+			 static_cast<float>(firstWndRect.right),
+			 static_cast<float>(firstWndRect.bottom),
+		 }};
+	firstWndRectDetector_.config = firstConfig;
 	// 二つ目のウィンドウ
 	RectDetectorConfig secondConfig = firstConfig;
 
@@ -78,13 +79,16 @@ void HighlightEnemy::Draw() const
 		{
 			if (_info.screenPos.z > 0.0f && _info.screenPos.z < 1.0f)
 			{
-				RectF targetRect{(_info.screenPos.x - highlightFrameSize.x * ratio.x / 2.0f),
-								 (_info.screenPos.y - highlightFrameSize.y * ratio.y / 2.0f),
-								 highlightFrameSize.x * ratio.x,
-								 highlightFrameSize.y * ratio.y};
+				RectF targetRect{
+					(_info.screenPos.x - highlightFrameSize.x * ratio.x / 2.0f),
+					(_info.screenPos.y - highlightFrameSize.y * ratio.y / 2.0f),
+					highlightFrameSize.x * ratio.x,
+					highlightFrameSize.y * ratio.y
+				};
 				Draw::Image(highlightFrameImage_, targetRect, {.depth = 0, .layerFlag = GameObjectLayer::A});
 			}
-		});
+		}
+	);
 
 	// 二つ目のウィンドウ
 	const RectDetectorConfig& secondConfig = secondWndRectDetector_.config;
@@ -94,13 +98,16 @@ void HighlightEnemy::Draw() const
 		{
 			if (_info.screenPos.z > 0.0f && _info.screenPos.z < 1.0f)
 			{
-				RectF targetRect{(_info.screenPos.x - highlightFrameSize.x * ratio.x / 2.0f),
-								 (_info.screenPos.y - highlightFrameSize.y * ratio.y / 2.0f),
-								 highlightFrameSize.x * ratio.x,
-								 highlightFrameSize.y * ratio.y};
+				RectF targetRect{
+					(_info.screenPos.x - highlightFrameSize.x * ratio.x / 2.0f),
+					(_info.screenPos.y - highlightFrameSize.y * ratio.y / 2.0f),
+					highlightFrameSize.x * ratio.x,
+					highlightFrameSize.y * ratio.y
+				};
 				Draw::Image(highlightFrameImage_, targetRect, {.depth = 0, .layerFlag = GameObjectLayer::B});
 			}
-		});
+		}
+	);
 }
 
 void HighlightEnemy::Highlight()

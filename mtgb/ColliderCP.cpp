@@ -148,10 +148,12 @@ void mtgb::ColliderCP::IsHitAll(const Vector3& _center, float _radius, std::vect
 	}
 }
 
-void mtgb::ColliderCP::RectContains(const RectF& _rect,
-									const std::string& _name,
-									std::vector<ScreenCoordContainsInfo>* _info,
-									WindowContext _context)
+void mtgb::ColliderCP::RectContains(
+	const RectF& _rect,
+	const std::string& _name,
+	std::vector<ScreenCoordContainsInfo>* _info,
+	WindowContext _context
+)
 {
 	_info->clear();
 
@@ -162,10 +164,12 @@ void mtgb::ColliderCP::RectContains(const RectF& _rect,
 	RectContainsImpl(_rect, foundGameObjects, _info, _context);
 }
 
-void mtgb::ColliderCP::RectContains(const RectF& _rect,
-									GameObjectTag _tag,
-									std::vector<ScreenCoordContainsInfo>* _info,
-									WindowContext _context)
+void mtgb::ColliderCP::RectContains(
+	const RectF& _rect,
+	GameObjectTag _tag,
+	std::vector<ScreenCoordContainsInfo>* _info,
+	WindowContext _context
+)
 {
 	_info->clear();
 
@@ -176,10 +180,12 @@ void mtgb::ColliderCP::RectContains(const RectF& _rect,
 	RectContainsImpl(_rect, foundGameObjects, _info, _context);
 }
 
-void mtgb::ColliderCP::RectContainsImpl(const RectF& _rect,
-										const std::vector<GameObject*>& _objs,
-										std::vector<ScreenCoordContainsInfo>* _info,
-										WindowContext _context)
+void mtgb::ColliderCP::RectContainsImpl(
+	const RectF& _rect,
+	const std::vector<GameObject*>& _objs,
+	std::vector<ScreenCoordContainsInfo>* _info,
+	WindowContext _context
+)
 {
 	CameraSystem& camSys		  = Game::System<CameraSystem>();
 	const WorldToScreenData& data = camSys.GetWorldToScreenData(_context);
@@ -194,8 +200,10 @@ void mtgb::ColliderCP::RectContainsImpl(const RectF& _rect,
 		{
 			_info->emplace_back(worldPos,screenPos,object->GetEntityId());
 		}*/
-		if (RectF::Contains(Vector2F{screenPos.x, screenPos.y},
-							RectF(_rect.x * ratio.x, _rect.y * ratio.y, _rect.width * ratio.x, _rect.height * ratio.y)))
+		if (RectF::Contains(
+				Vector2F{screenPos.x, screenPos.y},
+				RectF(_rect.x * ratio.x, _rect.y * ratio.y, _rect.width * ratio.x, _rect.height * ratio.y)
+			))
 		{
 			_info->emplace_back(worldPos, screenPos, object->GetEntityId());
 		}

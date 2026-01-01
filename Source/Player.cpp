@@ -31,7 +31,12 @@ Player::Player()
 {
 	// pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
-	pRigidBody_->OnCollisionEnter([this](EntityId _entityId) { OnCollisionEnter(_entityId); });
+	pRigidBody_->OnCollisionEnter(
+		[this](EntityId _entityId)
+		{
+			OnCollisionEnter(_entityId);
+		}
+	);
 	pMeshRenderer_->meshFileName = "Model/MinerAnim.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 
@@ -51,7 +56,8 @@ Player::Player()
 			// 強制的にHPをゼロにする
 			TakeDamage(hp_);
 		},
-		EventScope::Scene);
+		EventScope::Scene
+	);
 
 	// ゴールイベントを購読
 	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Subscribe(
@@ -60,7 +66,8 @@ Player::Player()
 			pRigidBody_->velocity_ = Vector3::Zero();
 			state_.Change(STATE::VICTORY);
 		},
-		EventScope::Scene);
+		EventScope::Scene
+	);
 }
 
 Player::~Player()
@@ -101,69 +108,114 @@ void Player::InitializeState()
 					animController_->UpdateFrame();
 					pMeshRenderer_->SetFrame(animController_->GetCurrentFrame());
 				}
-			})
-		.OnStart(STATE::IDLE, [this] { animController_->PlayAnimation("Idle", true); })
-		.OnUpdate(STATE::IDLE,
-				  [this]
-				  {
-					  if (pRigidBody_->velocity_.y > 0.0f)
-					  {
-						  state_.Change(STATE::JUMP);
-						  return;
-					  }
-					  if (GetMoveDir().Size() != 0)
-					  {
-						  state_.Change(STATE::RUN);
-						  return;
-					  }
-				  })
-		.OnStart(STATE::RUN, [this] { animController_->PlayAnimation("Run", true); })
-		.OnUpdate(STATE::RUN,
-				  [this]
-				  {
-					  if (pRigidBody_->velocity_.Size() == 0.0f)
-					  {
-						  state_.Change(STATE::IDLE);
-						  return;
-					  }
-					  if (pRigidBody_->velocity_.y > 0.0f)
-					  {
-						  state_.Change(STATE::JUMP);
-						  return;
-					  }
-					  if (pRigidBody_->velocity_.y < 0.0f)
-					  {
-						  state_.Change(STATE::FALL);
-						  return;
-					  }
-				  })
-		.OnStart(STATE::JUMP, [this] { animController_->PlayAnimation("Jump", false); })
-		.OnUpdate(STATE::JUMP,
-				  [this]
-				  {
-					  if (animController_->IsFinishedAnimation() && pRigidBody_->isGround_ == false)
-					  {
-						  state_.Change(STATE::FALL);
-						  return;
-					  }
-					  if (pRigidBody_->isGround_)
-					  {
-						  state_.Change(STATE::IDLE);
-						  return;
-					  }
-				  })
-		.OnStart(STATE::FALL, [this] { animController_->PlayAnimation("Fall", true); })
-		.OnUpdate(STATE::FALL,
-				  [this]
-				  {
-					  if (pRigidBody_->isGround_)
-					  {
-						  state_.Change(STATE::IDLE);
-						  return;
-					  }
-				  })
-		.OnStart(STATE::DYING, [this] { animController_->PlayAnimation("Dying", false); })
-		.OnStart(STATE::VICTORY, [this] { animController_->PlayAnimation("Dancing", true); });
+			}
+		)
+		.OnStart(
+			STATE::IDLE,
+			[this]
+			{
+				animController_->PlayAnimation("Idle", true);
+			}
+		)
+		.OnUpdate(
+			STATE::IDLE,
+			[this]
+			{
+				if (pRigidBody_->velocity_.y > 0.0f)
+				{
+					state_.Change(STATE::JUMP);
+					return;
+				}
+				if (GetMoveDir().Size() != 0)
+				{
+					state_.Change(STATE::RUN);
+					return;
+				}
+			}
+		)
+		.OnStart(
+			STATE::RUN,
+			[this]
+			{
+				animController_->PlayAnimation("Run", true);
+			}
+		)
+		.OnUpdate(
+			STATE::RUN,
+			[this]
+			{
+				if (pRigidBody_->velocity_.Size() == 0.0f)
+				{
+					state_.Change(STATE::IDLE);
+					return;
+				}
+				if (pRigidBody_->velocity_.y > 0.0f)
+				{
+					state_.Change(STATE::JUMP);
+					return;
+				}
+				if (pRigidBody_->velocity_.y < 0.0f)
+				{
+					state_.Change(STATE::FALL);
+					return;
+				}
+			}
+		)
+		.OnStart(
+			STATE::JUMP,
+			[this]
+			{
+				animController_->PlayAnimation("Jump", false);
+			}
+		)
+		.OnUpdate(
+			STATE::JUMP,
+			[this]
+			{
+				if (animController_->IsFinishedAnimation() && pRigidBody_->isGround_ == false)
+				{
+					state_.Change(STATE::FALL);
+					return;
+				}
+				if (pRigidBody_->isGround_)
+				{
+					state_.Change(STATE::IDLE);
+					return;
+				}
+			}
+		)
+		.OnStart(
+			STATE::FALL,
+			[this]
+			{
+				animController_->PlayAnimation("Fall", true);
+			}
+		)
+		.OnUpdate(
+			STATE::FALL,
+			[this]
+			{
+				if (pRigidBody_->isGround_)
+				{
+					state_.Change(STATE::IDLE);
+					return;
+				}
+			}
+		)
+		.OnStart(
+			STATE::DYING,
+			[this]
+			{
+				animController_->PlayAnimation("Dying", false);
+			}
+		)
+		.OnStart(
+			STATE::VICTORY,
+			[this]
+			{
+				animController_->PlayAnimation("Dancing", true);
+			}
+		);
 }
 
 void Player::Draw() const

@@ -44,13 +44,17 @@ namespace mtgb
 		void CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, IDXGISwapChain1** ppSwapChain1);
 		void CreateRenderTargetView(IDXGISwapChain1* pSwapChain1, ID3D11RenderTargetView** ppRenderTargetView);
 		void CreateViewport(const Vector2Int& size, D3D11_VIEWPORT& viewport);
-		void CreateDepthStencilAndDepthStencilView(const Vector2Int bufSize,
-												   ID3D11Texture2D** ppDepthStencil,
-												   ID3D11DepthStencilView** ppDepthStencilView);
+		void CreateDepthStencilAndDepthStencilView(
+			const Vector2Int bufSize,
+			ID3D11Texture2D** ppDepthStencil,
+			ID3D11DepthStencilView** ppDepthStencilView
+		);
 
 		void ChangeViewport(const D3D11_VIEWPORT& viewport);
-		void ChangeRenderTargets(ComPtr<ID3D11RenderTargetView> pRenderTargetView,
-								 ComPtr<ID3D11DepthStencilView> pDepthStencilView);
+		void ChangeRenderTargets(
+			ComPtr<ID3D11RenderTargetView> pRenderTargetView,
+			ComPtr<ID3D11DepthStencilView> pDepthStencilView
+		);
 		void ChangeSwapChain(ComPtr<IDXGISwapChain1> pSwapChain1);
 
 		void ClearState();
@@ -89,10 +93,12 @@ namespace mtgb
 		/// <param name="_pHLSLLayout">入力情報配列</param>
 		/// <param name="_layoutLength">入力情報配列の要素数</param>
 		/// <param name="_pRasterizerDesc">ラスタライザの設定</param>
-		void CompileShader(const std::wstring& _fileName,
-						   const ShaderType& _type,
-						   const D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,
-						   const unsigned int _layoutLength,
-						   const CD3D11_RASTERIZER_DESC* _pRasterizerDesc);
+		void CompileShader(
+			const std::wstring& _fileName,
+			const ShaderType& _type,
+			const D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,
+			const unsigned int _layoutLength,
+			const CD3D11_RASTERIZER_DESC* _pRasterizerDesc
+		);
 	};
 } // namespace mtgb

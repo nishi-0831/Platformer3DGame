@@ -200,18 +200,22 @@ void mtgb::ImGuiRenderer::CreateD3DResources()
 	ComPtr<ID3D11Device> device			= mtgb::DirectX11Draw::pDevice_;
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
 
-	Game::System<DirectX11Manager>().CreateViewport({static_cast<int>(winWidth_), static_cast<int>(winHeight_)},
-													viewport_);
+	Game::System<DirectX11Manager>().CreateViewport(
+		{static_cast<int>(winWidth_), static_cast<int>(winHeight_)},
+		viewport_
+	);
 
 	// RTV用テクスチャ作成
-	D3D11_TEXTURE2D_DESC desc{.Width	  = winWidth_,
-							  .Height	  = winHeight_,
-							  .MipLevels  = 1,
-							  .ArraySize  = 1,
-							  .Format	  = DXGI_FORMAT_R8G8B8A8_UNORM,
-							  .SampleDesc = {.Count = 1},
-							  .Usage	  = D3D11_USAGE_DEFAULT,
-							  .BindFlags  = D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE};
+	D3D11_TEXTURE2D_DESC desc{
+		.Width		= winWidth_,
+		.Height		= winHeight_,
+		.MipLevels	= 1,
+		.ArraySize	= 1,
+		.Format		= DXGI_FORMAT_R8G8B8A8_UNORM,
+		.SampleDesc = {.Count = 1},
+		.Usage		= D3D11_USAGE_DEFAULT,
+		.BindFlags	= D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE
+	};
 
 	HRESULT hResult = device->CreateTexture2D(&desc, nullptr, pTexture_.ReleaseAndGetAddressOf());
 	massert(SUCCEEDED(hResult) && "CreateTexture2Dに失敗 @ImGuiRenderer::CreateD3DResources");
@@ -231,7 +235,8 @@ void mtgb::ImGuiRenderer::CreateD3DResources()
 	Game::System<DirectX11Manager>().CreateDepthStencilAndDepthStencilView(
 		Vector2Int(static_cast<int>(winWidth_), static_cast<int>(winHeight_)),
 		pTexture_.GetAddressOf(),
-		pDepthStencilView_.ReleaseAndGetAddressOf());
+		pDepthStencilView_.ReleaseAndGetAddressOf()
+	);
 
 	// ImGui_ImplDX11_CreateDeviceObjects();
 }

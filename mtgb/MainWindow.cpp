@@ -50,18 +50,23 @@ void mtgb::MainWindow::Initialize()
 	WNDCLASSEX windowClass{}; // ウィンドウの設定
 	GenerateWndClassEx(&windowClass);
 
-	massert(RegisterClassEx(&windowClass) != 0 // ウィンドウクラスの登録に成功
-			&& "ウィンドウクラスの登録に失敗");
+	massert(
+		RegisterClassEx(&windowClass) != 0 // ウィンドウクラスの登録に成功
+		&& "ウィンドウクラスの登録に失敗"
+	);
 
 	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
 	RECT windowRect{0, 0, SCREEN_SIZE.x, SCREEN_SIZE.y};
-	massert(AdjustWindowRectEx(&windowRect,
-							   WS_OVERLAPPEDWINDOW,
-							   FALSE,
-							   WS_EX_OVERLAPPEDWINDOW) !=
-				FALSE // スクリーンボーダを考慮したウィンドウサイズの取得に成功
-			&& "スクリーンボーダを考慮したウィンドウサイズの取得に失敗");
+	massert(
+		AdjustWindowRectEx(
+			&windowRect,
+			WS_OVERLAPPEDWINDOW,
+			FALSE,
+			WS_EX_OVERLAPPEDWINDOW
+		) != FALSE // スクリーンボーダを考慮したウィンドウサイズの取得に成功
+		&& "スクリーンボーダを考慮したウィンドウサイズの取得に失敗"
+	);
 
 	{ // windowの作成
 		DWORD exWindowStyle{WS_EX_OVERLAPPEDWINDOW};
@@ -75,29 +80,37 @@ void mtgb::MainWindow::Initialize()
 		HWND hWndParent{nullptr};
 		HMENU hMenu{nullptr};
 		HINSTANCE hInstance{GetModuleHandle(NULL)};
-		massert(hInstance != NULL // モジュールハンドルの取得に成功
-				&& "モジュールハンドルの取得に失敗");
+		massert(
+			hInstance != NULL // モジュールハンドルの取得に成功
+			&& "モジュールハンドルの取得に失敗"
+		);
 		LPVOID param{nullptr};
 
-		hWnd_ = CreateWindowEx(exWindowStyle,
-							   className,
-							   windowName,
-							   windowStyle,
-							   windowPositionX,
-							   windowPositionY,
-							   windowWidth,
-							   windowHeight,
-							   hWndParent,
-							   hMenu,
-							   hInstance,
-							   param);
+		hWnd_ = CreateWindowEx(
+			exWindowStyle,
+			className,
+			windowName,
+			windowStyle,
+			windowPositionX,
+			windowPositionY,
+			windowWidth,
+			windowHeight,
+			hWndParent,
+			hMenu,
+			hInstance,
+			param
+		);
 	}
 
-	massert(hWnd_ != NULL // ウィンドウの作成に成功している
-			&& "ウィンドウの作成に失敗");
+	massert(
+		hWnd_ != NULL // ウィンドウの作成に成功している
+		&& "ウィンドウの作成に失敗"
+	);
 
-	massert(IsWindow(hWnd_) // ウィンドウハンドルが正しく作成されている
-			&& "Windowではないハンドルが作られてしまった");
+	massert(
+		IsWindow(hWnd_) // ウィンドウハンドルが正しく作成されている
+		&& "Windowではないハンドルが作られてしまった"
+	);
 
 	// NOTE: ShowWindowの戻り値に注意
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/winuser/nf-winuser-showwindow
@@ -109,11 +122,13 @@ void mtgb::MainWindow::Update()
 	// MEMO: 第2引数で nullptr を指定しているため、
 	//     : メインウィンドウに限らず、スレッドに属する全てのMSG取得
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/winuser/nf-winuser-peekmessagea
-	if (PeekMessage(pPeekedMessage_,
-					nullptr,
-					0u,			// フィルタ無し (最初のメッセージ)
-					0u,			// フィルタ無し (最後のメッセージ)
-					PM_REMOVE)) // ピークしたあとの全てデキュー
+	if (PeekMessage(
+			pPeekedMessage_,
+			nullptr,
+			0u, // フィルタ無し (最初のメッセージ)
+			0u, // フィルタ無し (最後のメッセージ)
+			PM_REMOVE
+		)) // ピークしたあとの全てデキュー
 	{
 		TranslateMessage(pPeekedMessage_); // 仮想キー入力を文字入力イベントとしてenqueue
 		DispatchMessage(pPeekedMessage_);  // enqueueしたメッセージを実際に処理させる

@@ -2,9 +2,11 @@
 #include "DeleteGameObjectCommand.h"
 #include "SceneSystem.h"
 #include "EntityManager.h"
-mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(GameObject* pGameObj,
-													   const GameObjectFactory& _gameObjectFactory,
-													   const ComponentFactory& _componentFactory)
+mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
+	GameObject* pGameObj,
+	const GameObjectFactory& _gameObjectFactory,
+	const ComponentFactory& _componentFactory
+)
 	: componentFactory_{_componentFactory}
 	, gameObjectFactory_{_gameObjectFactory}
 	, targetEntityId_{INVALID_ENTITY}

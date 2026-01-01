@@ -17,11 +17,13 @@ namespace mtgb
 		/// <param name="_ppData">データのポインタのポインタ渡し</param>
 		/// <param name="_pBytes">バイト数のポインタ渡し</param>
 		/// <returns>結果ハンドル</returns>
-		HRESULT Open(D3D_INCLUDE_TYPE _includeType,
-					 LPCSTR _pFileName,
-					 LPCVOID _pParentData,
-					 LPCVOID* _ppData,
-					 UINT* _pBytes) override;
+		HRESULT Open(
+			D3D_INCLUDE_TYPE _includeType,
+			LPCSTR _pFileName,
+			LPCVOID _pParentData,
+			LPCVOID* _ppData,
+			UINT* _pBytes
+		) override;
 
 		/// <summary>
 		/// 閉じるときの処理

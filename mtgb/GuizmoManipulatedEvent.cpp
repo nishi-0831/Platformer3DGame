@@ -1,8 +1,10 @@
 #include "GuizmoManipulatedEvent.h"
 
-mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand(TransformMemento* _pPrevMemento,
-													   TransformMemento* _pMemento,
-													   const ComponentFactory& _componentFactory)
+mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand(
+	TransformMemento* _pPrevMemento,
+	TransformMemento* _pMemento,
+	const ComponentFactory& _componentFactory
+)
 	: pPrevMemento_{_pPrevMemento}
 	, pMemento_{_pMemento}
 	, componentFactory_(_componentFactory)

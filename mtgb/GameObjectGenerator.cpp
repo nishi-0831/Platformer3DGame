@@ -27,8 +27,13 @@ void mtgb::GameObjectGenerator::Generate(GenerateType _primitive)
 {
 	if (GenerateType::Box == _primitive)
 	{
-		GameObjectCreateCommand* cmd =
-			new GameObjectCreateCommand([]() { return GameObject::Instantiate<Box3D>(); }, Game::GetComponentFactory());
+		GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
+			[]()
+			{
+				return GameObject::Instantiate<Box3D>();
+			},
+			Game::GetComponentFactory()
+		);
 		GetInstance()->commandListener_(cmd);
 	}
 }
@@ -45,10 +50,14 @@ void mtgb::GameObjectGenerator::GenerateFromJson(const nlohmann::json& _json)
 		// Œ^–¼‚ðŽæ“¾
 		std::string classType = j["classType"].get<std::string>();
 
-		GameObjectCreateCommand* cmd =
-			new GameObjectCreateCommand([classType]() { return GetInstance()->gameObjFactory_.Create(classType); },
-										Game::GetComponentFactory(),
-										j);
+		GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
+			[classType]()
+			{
+				return GetInstance()->gameObjFactory_.Create(classType);
+			},
+			Game::GetComponentFactory(),
+			j
+		);
 
 		// ƒRƒ}ƒ“ƒh‚ð“n‚·
 		GetInstance()->commandListener_(cmd);
@@ -60,9 +69,13 @@ void mtgb::GameObjectGenerator::GenerateFromJson(const nlohmann::json& _json)
 
 void mtgb::GameObjectGenerator::Generate(std::string_view _gameObjName)
 {
-	GameObjectCreateCommand* cmd =
-		new GameObjectCreateCommand([_gameObjName]() { return GetInstance()->gameObjFactory_.Create(_gameObjName); },
-									Game::GetComponentFactory());
+	GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
+		[_gameObjName]()
+		{
+			return GetInstance()->gameObjFactory_.Create(_gameObjName);
+		},
+		Game::GetComponentFactory()
+	);
 	GetInstance()->commandListener_(cmd);
 }
 
@@ -78,9 +91,13 @@ void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
 	std::string classTypeName = src->GetClassTypeName();
 
 	DuplicateGameObjectCommand* cmd = new DuplicateGameObjectCommand(
-		[classTypeName]() { return GetInstance()->gameObjFactory_.Create(classTypeName); },
+		[classTypeName]()
+		{
+			return GetInstance()->gameObjFactory_.Create(classTypeName);
+		},
 		Game::GetComponentFactory(),
-		_srcEntityId);
+		_srcEntityId
+	);
 	GetInstance()->commandListener_(cmd);
 }
 

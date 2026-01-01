@@ -19,7 +19,8 @@ namespace mtgb
 					TypeRegistry::Instance().CallFunc(&_target->useGravity_, "useGravity_");
 					TypeRegistry::Instance().CallFunc(&_target->isGround_, "isGround_");
 					TypeRegistry::Instance().CallFunc(&_target->isKinematic_, "isKinematic_");
-				});
+				}
+			);
 			MTImGui::Instance().RegisterComponentViewer<RigidBody>();
 		}
 	};

@@ -45,43 +45,55 @@ namespace mtgb
 		/// <param name="_default">セットされていない場合のデフォルトシェーダ</param>
 		static void CheckSetShader(const ShaderType _default);
 
-		static void Box(const Vector2Int& _begin,
-						const Vector2Int& _end,
-						const Color& _color,
-						const UIParams& _uiParams = defaultUIParams_);
+		static void Box(
+			const Vector2Int& _begin,
+			const Vector2Int& _end,
+			const Color& _color,
+			const UIParams& _uiParams = defaultUIParams_
+		);
 
 		static void Box(const RectInt& _rect, const Color& _color, const UIParams& _uiParams = defaultUIParams_);
 
-		static void Image(const ImageHandle _hImage,
-						  const RectF& _draw,
-						  const RectF& _cut,
-						  const float _rotationZ,
-						  const UIParams& _uiParams = defaultUIParams_,
-						  const Color& _color		= Color::WHITE);
+		static void Image(
+			const ImageHandle _hImage,
+			const RectF& _draw,
+			const RectF& _cut,
+			const float _rotationZ,
+			const UIParams& _uiParams = defaultUIParams_,
+			const Color& _color		  = Color::WHITE
+		);
 
-		static void Image(const ImageHandle _hImage,
-						  const RectF& _draw,
-						  const UIParams& _uiParams = defaultUIParams_,
-						  const Color& _color		= Color::WHITE);
+		static void Image(
+			const ImageHandle _hImage,
+			const RectF& _draw,
+			const UIParams& _uiParams = defaultUIParams_,
+			const Color& _color		  = Color::WHITE
+		);
 
-		static void Image(const ImageHandle _hImage,
-						  const Transform& _transform,
-						  const Color& _color		= Color::WHITE,
-						  const UIParams& _uiParams = defaultUIParams_);
+		static void Image(
+			const ImageHandle _hImage,
+			const Transform& _transform,
+			const Color& _color		  = Color::WHITE,
+			const UIParams& _uiParams = defaultUIParams_
+		);
 
-		static void Image(const ImageHandle _hImage,
-						  Transform&& _transform,
-						  const Color& _color		= Color::WHITE,
-						  const UIParams& _uiParams = defaultUIParams_);
+		static void Image(
+			const ImageHandle _hImage,
+			Transform&& _transform,
+			const Color& _color		  = Color::WHITE,
+			const UIParams& _uiParams = defaultUIParams_
+		);
 
 		static void Model(const ModelHandle _hModel, const Transform* _pTransform);
 
 		static void OBJModel(const OBJModelHandle _hOBJModel, const Transform* _pTransform);
 
-		static void FBXModel(const FBXModelHandle _hFBXModel,
-							 const Transform& _pTransform,
-							 const int _frame,
-							 ShaderType _shaderType = ShaderType::FbxParts);
+		static void FBXModel(
+			const FBXModelHandle _hFBXModel,
+			const Transform& _pTransform,
+			const int _frame,
+			ShaderType _shaderType = ShaderType::FbxParts
+		);
 		static void SeaUVScroll(const Transform& _transform);
 		/// <summary>
 		/// <para> 事前にLoadをしたテキストを描画 </para>
@@ -92,10 +104,12 @@ namespace mtgb
 		/// <param name="_origin">矩形領域の左上</param>
 		/// <param name="_alignment">テキストの配置</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
-		static void Text(const TextHandle _hText,
-						 const Vector2F& _origin,
-						 TextAlignment _alignment  = currentDefaultTextAlignment_,
-						 const UIParams& _uiParams = defaultUIParams_);
+		static void Text(
+			const TextHandle _hText,
+			const Vector2F& _origin,
+			TextAlignment _alignment  = currentDefaultTextAlignment_,
+			const UIParams& _uiParams = defaultUIParams_
+		);
 
 		/// <summary>
 		/// <para> 文字列内容が頻繁に変化するテキスト(タイマーやスコアなど)を即時に描画</para>
@@ -106,11 +120,13 @@ namespace mtgb
 		/// <param name="_size">テキストのフォントサイズ（省略時は設定中のサイズ）</param>
 		/// <param name="_alignment">テキストの配置（省略時は設定中の配置）</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
-		static void ImmediateTextW(const std::wstring& _text,
-								   Vector2F _topLeft,
-								   int _size				 = currentDefaultFontSize_,
-								   TextAlignment _alignment	 = currentDefaultTextAlignment_,
-								   const UIParams& _uiParams = defaultUIParams_);
+		static void ImmediateTextW(
+			const std::wstring& _text,
+			Vector2F _topLeft,
+			int _size				  = currentDefaultFontSize_,
+			TextAlignment _alignment  = currentDefaultTextAlignment_,
+			const UIParams& _uiParams = defaultUIParams_
+		);
 
 		/// <summary>
 		/// <para> 文字列内容が頻繁に変化するテキスト(タイマーやスコアなど)を即時に描画</para>
@@ -121,11 +137,13 @@ namespace mtgb
 		/// <param name="_size">テキストのフォントサイズ（省略時は設定中のサイズ）</param>
 		/// <param name="_alignment">テキストの配置（省略時は設定中の配置）</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
-		static void ImmediateTextW(const std::wstring& _text,
-								   RectF _rect,
-								   int _size				 = currentDefaultFontSize_,
-								   TextAlignment _alignment	 = currentDefaultTextAlignment_,
-								   const UIParams& _uiParams = defaultUIParams_);
+		static void ImmediateTextW(
+			const std::wstring& _text,
+			RectF _rect,
+			int _size				  = currentDefaultFontSize_,
+			TextAlignment _alignment  = currentDefaultTextAlignment_,
+			const UIParams& _uiParams = defaultUIParams_
+		);
 
 		/// <summary>
 		/// <para> 文字列内容が頻繁に変化するテキスト(タイマーやスコアなど)を即時に描画</para>
@@ -136,11 +154,13 @@ namespace mtgb
 		/// <param name="_size">テキストのフォントサイズ（省略時は設定中のサイズ）</param>
 		/// <param name="_alignment">テキストの配置（省略時は設定中の配置）</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
-		static void ImmediateText(const std::string& _text,
-								  Vector2F _topLeft,
-								  int _size					= currentDefaultFontSize_,
-								  TextAlignment _alignment	= currentDefaultTextAlignment_,
-								  const UIParams& _uiParams = defaultUIParams_);
+		static void ImmediateText(
+			const std::string& _text,
+			Vector2F _topLeft,
+			int _size				  = currentDefaultFontSize_,
+			TextAlignment _alignment  = currentDefaultTextAlignment_,
+			const UIParams& _uiParams = defaultUIParams_
+		);
 
 		/// <summary>
 		/// <para> 文字列内容が頻繁に変化するテキスト(タイマーやスコアなど)を即時に描画</para>
@@ -151,11 +171,13 @@ namespace mtgb
 		/// <param name="_size"></param>
 		/// <param name="_alignment">テキストの配置（省略時は設定中の配置）</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
-		static void ImmediateText(std::string&& _text,
-								  Vector2F _topLeft,
-								  int _size					= currentDefaultFontSize_,
-								  TextAlignment _alignment	= currentDefaultTextAlignment_,
-								  const UIParams& _uiParams = defaultUIParams_);
+		static void ImmediateText(
+			std::string&& _text,
+			Vector2F _topLeft,
+			int _size				  = currentDefaultFontSize_,
+			TextAlignment _alignment  = currentDefaultTextAlignment_,
+			const UIParams& _uiParams = defaultUIParams_
+		);
 
 		/// <summary>
 		/// <para> 文字列内容が頻繁に変化するテキスト(タイマーやスコアなど)を即時に描画</para>
@@ -166,11 +188,13 @@ namespace mtgb
 		/// <param name="_size">テキストのフォントサイズ（省略時は設定中のサイズ）</param>
 		/// <param name="_alignment">テキストの配置（省略時は設定中の配置）</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
-		static void ImmediateText(const std::string& _text,
-								  RectF _rect,
-								  int _size					= currentDefaultFontSize_,
-								  TextAlignment _alignment	= currentDefaultTextAlignment_,
-								  const UIParams& _uiParams = defaultUIParams_);
+		static void ImmediateText(
+			const std::string& _text,
+			RectF _rect,
+			int _size				  = currentDefaultFontSize_,
+			TextAlignment _alignment  = currentDefaultTextAlignment_,
+			const UIParams& _uiParams = defaultUIParams_
+		);
 
 		/// <summary>
 		/// <para> 文字列内容が頻繁に変化するテキスト(タイマーやスコアなど)を即時に描画</para>
@@ -181,11 +205,13 @@ namespace mtgb
 		/// <param name="_size">テキストのフォントサイズ（省略時は設定中のサイズ）</param>
 		/// <param name="_alignment">テキストの配置（省略時は設定中の配置）</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
-		static void ImmediateText(std::string&& _text,
-								  RectF _rect,
-								  int _size					= currentDefaultFontSize_,
-								  TextAlignment _alignment	= currentDefaultTextAlignment_,
-								  const UIParams& _uiParams = defaultUIParams_);
+		static void ImmediateText(
+			std::string&& _text,
+			RectF _rect,
+			int _size				  = currentDefaultFontSize_,
+			TextAlignment _alignment  = currentDefaultTextAlignment_,
+			const UIParams& _uiParams = defaultUIParams_
+		);
 
 		/// <summary>
 		/// テキストの配置を設定

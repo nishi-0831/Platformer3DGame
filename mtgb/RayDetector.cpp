@@ -90,10 +90,12 @@ namespace mtgb
 		}
 	}
 
-	bool RayDetector::IsTargetInRayAngle(const Vector3& targetPos,
-										 const Vector3& rayOrigin,
-										 const Vector3& rayDirection,
-										 float maxAngleDegrees) const
+	bool RayDetector::IsTargetInRayAngle(
+		const Vector3& targetPos,
+		const Vector3& rayOrigin,
+		const Vector3& rayDirection,
+		float maxAngleDegrees
+	) const
 	{
 		// レイの起点からターゲットへのベクトル
 		Vector3 toTarget = Vector3::Normalize(targetPos - rayOrigin);

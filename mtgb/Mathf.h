@@ -56,8 +56,9 @@ namespace mtgb::Mathf
 	/// <returns>正規化された値</returns>
 	static inline float Normalize(const float _min, const float _max, const float _current)
 	{
-		massert(_max - _min > FLT_EPSILON &&
-				"最小値、最大値を同じ値にできません。ゼロ除算が発生します。 @Mathf::Normalize");
+		massert(
+			_max - _min > FLT_EPSILON && "最小値、最大値を同じ値にできません。ゼロ除算が発生します。 @Mathf::Normalize"
+		);
 
 		return (_current - _min) / (_max - _min);
 	}
@@ -96,10 +97,12 @@ namespace mtgb::Mathf
 	/// <param name="_targetMove">ターゲットの移動(/s)</param>
 	/// <param name="_bulletSpeed">弾の速度</param>
 	/// <returns>撃って当たる座標</returns>
-	static Vector3 TargetingPosition(Vector3 _shotPosition,
-									 Vector3 _targetPosition,
-									 Vector3 _targetMove,
-									 float _bulletSpeed)
+	static Vector3 TargetingPosition(
+		Vector3 _shotPosition,
+		Vector3 _targetPosition,
+		Vector3 _targetMove,
+		float _bulletSpeed
+	)
 	{
 		const float BULLET_SPEED{_bulletSpeed * Time::DeltaTimeF()};
 
@@ -109,8 +112,9 @@ namespace mtgb::Mathf
 
 		const float A{(MOVE.x * MOVE.x) + (MOVE.y * MOVE.y) + (MOVE.z * MOVE.z) - (BULLET_SPEED * BULLET_SPEED)};
 		const float B{2.0f * ((toTargetDiff.x * MOVE.x) + (toTargetDiff.y * MOVE.y) + (toTargetDiff.z * MOVE.z))};
-		const float C{toTargetDiff.x * toTargetDiff.x + toTargetDiff.y * toTargetDiff.y +
-					  toTargetDiff.z * toTargetDiff.z};
+		const float C{
+			toTargetDiff.x * toTargetDiff.x + toTargetDiff.y * toTargetDiff.y + toTargetDiff.z * toTargetDiff.z
+		};
 
 		// 0除算防止
 		if (std::fabsf(A) <= FLT_EPSILON)
@@ -158,8 +162,10 @@ namespace mtgb::Mathf
 		float y = _position.y;
 		float z = _position.z;
 
-		return SphericalCoord{.r	 = sqrtf(x * x + y * y + z * z),
-							  .theta = std::acosf(y / sqrtf(x * x + y * y + z * z)),
-							  .phi	 = std::signbit(z) * std::acosf(x / sqrtf(x * x + z * z))};
+		return SphericalCoord{
+			.r	   = sqrtf(x * x + y * y + z * z),
+			.theta = std::acosf(y / sqrtf(x * x + y * y + z * z)),
+			.phi   = std::signbit(z) * std::acosf(x / sqrtf(x * x + z * z))
+		};
 	}
 } // namespace mtgb::Mathf

@@ -300,9 +300,8 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 		for (int i = 0; i < writeCount; i++)
 		{
 			fbxsdk::FbxVector2 uv{pUV->GetDirectArray().GetAt(i)};
-			pVertexes_[i].uv = {static_cast<float>(uv.mData[0]),
-								static_cast<float>(1.0 - uv.mData[1]),
-								static_cast<float>(0.0)};
+			pVertexes_[i]
+				.uv = {static_cast<float>(uv.mData[0]), static_cast<float>(1.0 - uv.mData[1]), static_cast<float>(0.0)};
 		}
 	}
 
@@ -395,9 +394,11 @@ void mtgb::FbxParts::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	};
 
 	HRESULT hResult{};
-	hResult = _pDevice->CreateBuffer(&BUFFER_DESC,
-									 nullptr, // 初期データなし
-									 pConstantBuffer_.ReleaseAndGetAddressOf());
+	hResult = _pDevice->CreateBuffer(
+		&BUFFER_DESC,
+		nullptr, // 初期データなし
+		pConstantBuffer_.ReleaseAndGetAddressOf()
+	);
 
 	massert(SUCCEEDED(hResult) && "コンスタントバッファの作成に失敗 @FbxParts::InitializeConstantBuffer");
 
@@ -413,12 +414,15 @@ void mtgb::FbxParts::InitializeConstantBuffer(ID3D11Device* _pDevice)
 			.StructureByteStride = 0,
 		};
 
-		hResult = _pDevice->CreateBuffer(&BUFFER_DESC,
-										 nullptr, // 初期データなし
-										 pBoneConstantBuffer_.ReleaseAndGetAddressOf());
+		hResult = _pDevice->CreateBuffer(
+			&BUFFER_DESC,
+			nullptr, // 初期データなし
+			pBoneConstantBuffer_.ReleaseAndGetAddressOf()
+		);
 
-		massert(SUCCEEDED(hResult) &&
-				"ボーン行列用コンスタントバッファの作成に失敗 @FbxParts::InitializeConstantBuffer");
+		massert(
+			SUCCEEDED(hResult) && "ボーン行列用コンスタントバッファの作成に失敗 @FbxParts::InitializeConstantBuffer"
+		);
 
 		hasSkinnedMesh_ = true;
 	}

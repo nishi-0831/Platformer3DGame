@@ -35,10 +35,12 @@ void mtgb::OBJ::Initialize()
 
 	massert(SUCCEEDED(hResult) && "頂点シェーダのコンパイルに失敗 @OBJ::Initialize");
 
-	hResult = DirectX11Draw::pDevice_->CreateVertexShader(pCompiledShader->GetBufferPointer(),
-														  pCompiledShader->GetBufferSize(),
-														  NULL,
-														  pVertexShader_.ReleaseAndGetAddressOf());
+	hResult = DirectX11Draw::pDevice_->CreateVertexShader(
+		pCompiledShader->GetBufferPointer(),
+		pCompiledShader->GetBufferSize(),
+		NULL,
+		pVertexShader_.ReleaseAndGetAddressOf()
+	);
 	massert(SUCCEEDED(hResult) && "頂点シェーダの作成に失敗 @OBJ::Initialize");
 
 	// 頂点インプットレイアウトを定義
@@ -49,21 +51,25 @@ void mtgb::OBJ::Initialize()
 	int numElements = sizeof(layout) / sizeof(layout[0]);
 
 	// 頂点インプットレイアウトを作成
-	hResult = DirectX11Draw::pDevice_->CreateInputLayout(layout,
-														 numElements,
-														 pCompiledShader->GetBufferPointer(),
-														 pCompiledShader->GetBufferSize(),
-														 pInputLayout_.ReleaseAndGetAddressOf());
+	hResult = DirectX11Draw::pDevice_->CreateInputLayout(
+		layout,
+		numElements,
+		pCompiledShader->GetBufferPointer(),
+		pCompiledShader->GetBufferSize(),
+		pInputLayout_.ReleaseAndGetAddressOf()
+	);
 	massert(SUCCEEDED(hResult) && "頂点インプットレイアウトの作成に失敗 @OBJ::Initialize");
 
 	// ピクセルシェーダ作成
 	hResult = D3DCompileFromFile(L"Shader/Geometry.hlsl", NULL, NULL, "PS", "ps_5_0", 0, 0, &pCompiledShader, NULL);
 	massert(SUCCEEDED(hResult) && "ピクセルシェーダの作成に失敗 @OBJ::Initialize");
 
-	hResult = DirectX11Draw::pDevice_->CreatePixelShader(pCompiledShader->GetBufferPointer(),
-														 pCompiledShader->GetBufferSize(),
-														 NULL,
-														 pPixelShader_.ReleaseAndGetAddressOf());
+	hResult = DirectX11Draw::pDevice_->CreatePixelShader(
+		pCompiledShader->GetBufferPointer(),
+		pCompiledShader->GetBufferSize(),
+		NULL,
+		pPixelShader_.ReleaseAndGetAddressOf()
+	);
 	massert(SUCCEEDED(hResult) && "ピクセルシェーダの作成に失敗 @OBJ::Initialize");
 
 	SAFE_RELEASE(pCompiledShader);

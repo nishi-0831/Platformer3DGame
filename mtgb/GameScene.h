@@ -93,8 +93,10 @@ namespace mtgb
 	template <class GameObjectT, typename... Args> inline GameObjectT* GameScene::Instantiate(Args... _args)
 	{
 		// 基底クラスがGameObjectであるか
-		static_assert(std::is_base_of<GameObject, GameObjectT>().value &&
-					  "GameObjectクラスを継承していないクラスはインスタンスできません。");
+		static_assert(
+			std::is_base_of<GameObject, GameObjectT>().value &&
+			"GameObjectクラスを継承していないクラスはインスタンスできません。"
+		);
 
 		GameObjectT* pInstance{new GameObjectT{_args...}};
 

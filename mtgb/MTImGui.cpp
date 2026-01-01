@@ -31,15 +31,28 @@ void mtgb::MTImGui::Initialize()
 {
 	buf.resize(BUF_SIZE);
 	SetupShowFunc();
-	Game::System<SceneSystem>().OnMove([]() { MTImGui::Instance().showableObjs_.clear(); });
+	Game::System<SceneSystem>().OnMove(
+		[]()
+		{
+			MTImGui::Instance().showableObjs_.clear();
+		}
+	);
 
 	// ゲームオブジェクトが選択されたときに、それを表示対象とする
 	Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe(
-		[this](const GameObjectSelectedEvent& _handler) { SelectGameObject(_handler.entityId); },
-		EventScope::Global);
+		[this](const GameObjectSelectedEvent& _handler)
+		{
+			SelectGameObject(_handler.entityId);
+		},
+		EventScope::Global
+	);
 	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe(
-		[this](const GameObjectCreatedEvent& _event) { SelectGameObject(_event.entityId); },
-		EventScope::Global);
+		[this](const GameObjectCreatedEvent& _event)
+		{
+			SelectGameObject(_event.entityId);
+		},
+		EventScope::Global
+	);
 }
 
 void mtgb::MTImGui::Update()
@@ -59,7 +72,8 @@ void mtgb::MTImGui::Update()
 				ImGui::PopID();
 			},
 			obj->displayName_,
-			obj->show_);
+			obj->show_
+		);
 	}
 
 	updatingImGuiShowable_ = false;
@@ -73,11 +87,13 @@ void mtgb::MTImGui::Update()
 					[]()
 					{
 						Game::System<Input>().EnumJoystick();
-					});
+					}
+				);
 			}
 		},
 		"Input",
-		ShowType::Settings);
+		ShowType::Settings
+	);
 }
 void mtgb::MTImGui::SetWindowOpen(ShowType _showType, bool _flag)
 {
@@ -211,7 +227,8 @@ void mtgb::MTImGui::SetupShowFunc()
 			ImGui::Text("ScreenPos (%.3f,%.3f)", _target->screenPos.x, _target->screenPos.y);
 
 			ImGui::Text("EntityId : %lld", _target->entityId);
-		});
+		}
+	);
 
 	Set<RectDetector>(
 		[](RectDetector* _target, const char* _name)
@@ -220,23 +237,27 @@ void mtgb::MTImGui::SetupShowFunc()
 			{
 				TypeRegistry::Instance().CallFunc(&target, "RectContains:" + target.entityId);
 			}
-		});
+		}
+	);
 
 	Set<DXGI_ADAPTER_DESC1>(
 		[](DXGI_ADAPTER_DESC1* _target, const char* _name)
 		{
 			// WCHARの配列を文字列に変換して表示
 			char description[256];
-			WideCharToMultiByte(CP_UTF8,
-								0,
-								_target->Description,
-								-1,
-								description,
-								sizeof(description),
-								nullptr,
-								nullptr);
+			WideCharToMultiByte(
+				CP_UTF8,
+				0,
+				_target->Description,
+				-1,
+				description,
+				sizeof(description),
+				nullptr,
+				nullptr
+			);
 			ImGui::LabelText("Description", "%s", description);
-		});
+		}
+	);
 
 	Set<DXGI_OUTPUT_DESC>(
 		[](DXGI_OUTPUT_DESC* _target, const char* _name)
@@ -246,13 +267,16 @@ void mtgb::MTImGui::SetupShowFunc()
 			WideCharToMultiByte(CP_UTF8, 0, _target->DeviceName, -1, deviceName, sizeof(deviceName), nullptr, nullptr);
 			ImGui::LabelText("Device Name", "%s", deviceName);
 
-			ImGui::LabelText("DesktopCoordinates",
-							 "(%ld,%ld) - (%ld,%ld)",
-							 _target->DesktopCoordinates.left,
-							 _target->DesktopCoordinates.top,
-							 _target->DesktopCoordinates.right,
-							 _target->DesktopCoordinates.bottom);
-		});
+			ImGui::LabelText(
+				"DesktopCoordinates",
+				"(%ld,%ld) - (%ld,%ld)",
+				_target->DesktopCoordinates.left,
+				_target->DesktopCoordinates.top,
+				_target->DesktopCoordinates.right,
+				_target->DesktopCoordinates.bottom
+			);
+		}
+	);
 	Set<Color>(
 		[](Color* _target, const char* _name)
 		{
@@ -264,7 +288,8 @@ void mtgb::MTImGui::SetupShowFunc()
 			ImGui::InputScalar("b", ImGuiDataType_U8,
 			&_target->component[static_cast<int32_t>(::mtgb::Color::Component::Blue)]); ImGui::InputScalar("a",
 			ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Alpha)]);*/
-		});
+		}
+	);
 }
 void mtgb::MTImGui::ShowListView(ShowType _show)
 {
@@ -452,7 +477,12 @@ void mtgb::MTImGui::DrawLine(const Vector3& _from, const Vector3& _to, float _th
 	}
 	else
 	{
-		sceneViewShowList_.push([=]() { DrawLineImpl(_from, _to, _thickness); });
+		sceneViewShowList_.push(
+			[=]()
+			{
+				DrawLineImpl(_from, _to, _thickness);
+			}
+		);
 	}
 }
 
@@ -470,16 +500,23 @@ void mtgb::MTImGui::DrawVec(const Vector3& _start, const Vector3& _vec, float _t
 	}
 	else
 	{
-		sceneViewShowList_.push([=]() { DrawRayImpl(_start, _vec, _thickness); });
+		sceneViewShowList_.push(
+			[=]()
+			{
+				DrawRayImpl(_start, _vec, _thickness);
+			}
+		);
 	}
 }
 
-void mtgb::MTImGui::DrawCone(const Vector3& _position,
-							 const Vector3& _direction,
-							 float _fovAngleDegree,
-							 float _distance,
-							 float _thickness,
-							 int _segments)
+void mtgb::MTImGui::DrawCone(
+	const Vector3& _position,
+	const Vector3& _direction,
+	float _fovAngleDegree,
+	float _distance,
+	float _thickness,
+	int _segments
+)
 {
 	// 正規化された方向ベクトル
 	Vector3 forward = Vector3::Normalize(_direction);

@@ -128,24 +128,30 @@ namespace mtgb
 	inline auto operator+(const Vector2T<T>& _v1, const Vector2T<U>& _v2) -> Vector2T<std::common_type_t<T, U>>
 	{
 		using R = std::common_type_t<T, U>;
-		return Vector2T<R>(static_cast<R>(_v1.x) + static_cast<R>(_v2.x),
-						   static_cast<R>(_v1.y) + static_cast<R>(_v2.y));
+		return Vector2T<R>(
+			static_cast<R>(_v1.x) + static_cast<R>(_v2.x),
+			static_cast<R>(_v1.y) + static_cast<R>(_v2.y)
+		);
 	}
 
 	template <typename T, typename U>
 	inline auto operator-(const Vector2T<T>& _v1, const Vector2T<U>& _v2) -> Vector2T<std::common_type_t<T, U>>
 	{
 		using R = std::common_type_t<T, U>;
-		return Vector2T<R>(static_cast<R>(_v1.x) - static_cast<R>(_v2.x),
-						   static_cast<R>(_v1.y) - static_cast<R>(_v2.y));
+		return Vector2T<R>(
+			static_cast<R>(_v1.x) - static_cast<R>(_v2.x),
+			static_cast<R>(_v1.y) - static_cast<R>(_v2.y)
+		);
 	}
 
 	template <typename T, typename U>
 	inline auto operator*(const Vector2T<T>& _v, U _scalar) -> Vector2T<std::common_type_t<T, U>>
 	{
 		using R = std::common_type_t<T, U>;
-		return Vector2T<R>(static_cast<R>(_v.x) * static_cast<R>(_scalar),
-						   static_cast<R>(_v.y) * static_cast<R>(_scalar));
+		return Vector2T<R>(
+			static_cast<R>(_v.x) * static_cast<R>(_scalar),
+			static_cast<R>(_v.y) * static_cast<R>(_scalar)
+		);
 	}
 
 	// TODO: _scalarÇ™ïœä∑Ç≈Ç´Ç∏Ç…ÉGÉâÅ[
@@ -153,8 +159,10 @@ namespace mtgb
 	inline auto operator*(const Vector2T<T>& _v1, Vector2T<U> _v2) -> Vector2T<std::common_type_t<T, U>>
 	{
 		using R = std::common_type_t<T, U>;
-		return Vector2T<R>(static_cast<R>(_v1.x) * static_cast<R>(_v2.x),
-						   static_cast<R>(_v1.y) * static_cast<R>(_v2.y));
+		return Vector2T<R>(
+			static_cast<R>(_v1.x) * static_cast<R>(_v2.x),
+			static_cast<R>(_v1.y) * static_cast<R>(_v2.y)
+		);
 	}
 
 	template <typename T, typename U>
@@ -167,8 +175,10 @@ namespace mtgb
 	inline auto operator/(const Vector2T<T>& _v, U _scalar) -> Vector2T<std::common_type_t<T, U>>
 	{
 		using R = std::common_type_t<T, U>;
-		return Vector2T<R>(static_cast<R>(_v.x) / static_cast<R>(_scalar),
-						   static_cast<R>(_v.y) / static_cast<R>(_scalar));
+		return Vector2T<R>(
+			static_cast<R>(_v.x) / static_cast<R>(_scalar),
+			static_cast<R>(_v.y) / static_cast<R>(_scalar)
+		);
 	}
 
 	template <typename T> inline bool operator==(const Vector2T<T>& _v1, const Vector2T<T>& _v2)

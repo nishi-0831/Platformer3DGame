@@ -59,18 +59,14 @@ int mtgb::TextCache::Load(const std::string& str, int size)
 
 int mtgb::TextCache::Load(const std::string& str, int fontSize, float layoutBoxWidth, float layoutBoxHeight)
 {
-	return Game::System<TextCache>().GetOrCreateTextLayoutHandle(MultiToWide(str),
-																 fontSize,
-																 layoutBoxWidth,
-																 layoutBoxHeight);
+	return Game::System<TextCache>()
+		.GetOrCreateTextLayoutHandle(MultiToWide(str), fontSize, layoutBoxWidth, layoutBoxHeight);
 }
 
 int mtgb::TextCache::Load(const std::string& str, int fontSize, Vector2F layoutBoxSize)
 {
-	return Game::System<TextCache>().GetOrCreateTextLayoutHandle(MultiToWide(str),
-																 fontSize,
-																 layoutBoxSize.x,
-																 layoutBoxSize.y);
+	return Game::System<TextCache>()
+		.GetOrCreateTextLayoutHandle(MultiToWide(str), fontSize, layoutBoxSize.x, layoutBoxSize.y);
 }
 
 #if false

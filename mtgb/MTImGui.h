@@ -108,12 +108,14 @@ namespace mtgb
 		/// <param name="_distance"> â~êçÇÃçÇÇ≥ </param>
 		/// <param name="_thickness"> ê¸ÇÃëæÇ≥ </param>
 		/// <param name="_segments"> â~ÇÃï™äÑêî(ëΩÇ¢ÇŸÇ«ääÇÁÇ©) </param>
-		void DrawCone(const Vector3& _position,
-					  const Vector3& _direction,
-					  float _fovAngleDegree,
-					  float _distance,
-					  float _thickness = 1.0f,
-					  int _segments	   = 16);
+		void DrawCone(
+			const Vector3& _position,
+			const Vector3& _direction,
+			float _fovAngleDegree,
+			float _distance,
+			float _thickness = 1.0f,
+			int _segments	 = 16
+		);
 		EntityId GetSelectedEntityId();
 		static const char* GetName(ShowType _showType)
 		{
@@ -174,7 +176,14 @@ namespace mtgb
 	{
 		using Type = std::remove_pointer_t<std::remove_cvref_t<T>>;
 		// PushShowFunc( [=] {proxy->ShowImGui(std::any(target), name); }, show);
-		DirectShow([=]() { TypeRegistry::Instance().CallFunc<Type>(target, name.c_str()); }, name, show);
+		DirectShow(
+			[=]()
+			{
+				TypeRegistry::Instance().CallFunc<Type>(target, name.c_str());
+			},
+			name,
+			show
+		);
 	}
 	template <typename T> void mtgb::MTImGui::RegisterComponentViewer()
 	{

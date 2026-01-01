@@ -13,7 +13,10 @@ namespace mtgb
 		{
 			RegisterShowFuncHolder::Set<AudioPlayer>(
 				[](AudioPlayer* _target, const char* _name)
-				{ TypeRegistry::Instance().CallFunc(&_target->hAudio, "hAudio"); });
+				{
+					TypeRegistry::Instance().CallFunc(&_target->hAudio, "hAudio");
+				}
+			);
 			MTImGui::Instance().RegisterComponentViewer<AudioPlayer>();
 		}
 	};

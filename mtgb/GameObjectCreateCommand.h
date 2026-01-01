@@ -17,9 +17,11 @@ namespace mtgb
 		using CreateFunc = std::function<GameObject*()>;
 		GameObjectCreateCommand(CreateFunc _createFunc, const ComponentFactory& _componentFactory);
 
-		GameObjectCreateCommand(CreateFunc _createFunc,
-								const ComponentFactory& _componentFactory,
-								const nlohmann::json& _json);
+		GameObjectCreateCommand(
+			CreateFunc _createFunc,
+			const ComponentFactory& _componentFactory,
+			const nlohmann::json& _json
+		);
 		void Execute() override;
 		void Undo() override;
 		void Redo() override;

@@ -27,8 +27,18 @@ MovingFloor::MovingFloor()
 	pCollider_->SetExtents(Vector3(1, 1, 1));
 
 	// RigidBody‚ÌÝ’è
-	pRigidBody_->OnCollisionEnter([this](EntityId _id) { OnCollisionEnter(_id); });
-	pRigidBody_->OnCollisionExit([this](EntityId _id) { OnCollisionExit(_id); });
+	pRigidBody_->OnCollisionEnter(
+		[this](EntityId _id)
+		{
+			OnCollisionEnter(_id);
+		}
+	);
+	pRigidBody_->OnCollisionExit(
+		[this](EntityId _id)
+		{
+			OnCollisionExit(_id);
+		}
+	);
 }
 
 void MovingFloor::Update()

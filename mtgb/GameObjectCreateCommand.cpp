@@ -3,8 +3,10 @@
 #include "EntityManager.h"
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
-mtgb::GameObjectCreateCommand::GameObjectCreateCommand(CreateFunc _createFunc,
-													   const ComponentFactory& _componentFactory)
+mtgb::GameObjectCreateCommand::GameObjectCreateCommand(
+	CreateFunc _createFunc,
+	const ComponentFactory& _componentFactory
+)
 	: createFunc_{_createFunc}
 	, componentFactory_{_componentFactory}
 	, json_{nlohmann::json::object()}
@@ -12,9 +14,11 @@ mtgb::GameObjectCreateCommand::GameObjectCreateCommand(CreateFunc _createFunc,
 {
 }
 
-mtgb::GameObjectCreateCommand::GameObjectCreateCommand(CreateFunc _createFunc,
-													   const ComponentFactory& _componentFactory,
-													   const nlohmann::json& _json)
+mtgb::GameObjectCreateCommand::GameObjectCreateCommand(
+	CreateFunc _createFunc,
+	const ComponentFactory& _componentFactory,
+	const nlohmann::json& _json
+)
 	: GameObjectCreateCommand(_createFunc, _componentFactory)
 {
 	json_ = _json;

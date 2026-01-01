@@ -56,12 +56,14 @@ namespace mtgb
 		ComPtr<IDWriteTextLayout> layout;
 		int handle;
 
-		TextLayoutData(const std::wstring& _str,
-					   int _size,
-					   float _width,
-					   float _height,
-					   IDWriteTextLayout* _layout,
-					   int _handle);
+		TextLayoutData(
+			const std::wstring& _str,
+			int _size,
+			float _width,
+			float _height,
+			IDWriteTextLayout* _layout,
+			int _handle
+		);
 
 		~TextLayoutData();
 	};
@@ -107,19 +109,23 @@ namespace mtgb
 		void ImmediateDraw(const std::wstring& text, float x, float y);
 
 		// void ImmediateDraw(const std::string& text, float x, float y, int size);
-		void ImmediateDraw(const std::wstring& text,
-						   ComPtr<IDWriteTextFormat> format,
-						   const PixelFontMetrics& pixelFontMetrics,
-						   float x,
-						   float y,
-						   float width,
-						   float height);
+		void ImmediateDraw(
+			const std::wstring& text,
+			ComPtr<IDWriteTextFormat> format,
+			const PixelFontMetrics& pixelFontMetrics,
+			float x,
+			float y,
+			float width,
+			float height
+		);
 
-		void ImmediateDraw(const std::wstring& text,
-						   ComPtr<IDWriteTextFormat> format,
-						   const PixelFontMetrics& pixelFontMetrics,
-						   float x,
-						   float y);
+		void ImmediateDraw(
+			const std::wstring& text,
+			ComPtr<IDWriteTextFormat> format,
+			const PixelFontMetrics& pixelFontMetrics,
+			float x,
+			float y
+		);
 
 		/// <summary>
 		/// デフォルトフォントサイズを変更
@@ -138,16 +144,20 @@ namespace mtgb
 		/// <param name="size">大きさ</param>
 		/// <param name="format"></param>
 		/// <param name="ppTextLayout">作成されるIDWriteTextLayout</param>
-		void CreateTextLayout(const std::wstring& _str,
-							  int _size,
-							  ComPtr<IDWriteTextFormat> _format,
-							  IDWriteTextLayout** _ppTextLayout);
-		void CreateTextLayout(const std::wstring& _str,
-							  float _width,
-							  float _height,
-							  int _size,
-							  ComPtr<IDWriteTextFormat> _format,
-							  IDWriteTextLayout** _ppTextLayout);
+		void CreateTextLayout(
+			const std::wstring& _str,
+			int _size,
+			ComPtr<IDWriteTextFormat> _format,
+			IDWriteTextLayout** _ppTextLayout
+		);
+		void CreateTextLayout(
+			const std::wstring& _str,
+			float _width,
+			float _height,
+			int _size,
+			ComPtr<IDWriteTextFormat> _format,
+			IDWriteTextLayout** _ppTextLayout
+		);
 
 		/// <summary>
 		/// IDWriteTextFormatを作成

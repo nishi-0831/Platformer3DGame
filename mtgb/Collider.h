@@ -73,10 +73,14 @@ namespace mtgb
 			return colliderTag_;
 		}
 
-		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere,
-													  const DirectX::BoundingBox& _aabb);
-		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere,
-													  const DirectX::BoundingOrientedBox& _obb);
+		static std::optional<IntersectInfo> Intersect(
+			const DirectX::BoundingSphere& _sphere,
+			const DirectX::BoundingBox& _aabb
+		);
+		static std::optional<IntersectInfo> Intersect(
+			const DirectX::BoundingSphere& _sphere,
+			const DirectX::BoundingOrientedBox& _obb
+		);
 		void Push(const Collider& _other);
 
 	  public:

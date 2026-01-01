@@ -42,8 +42,10 @@ void mtgb::AudioPlayer::SetAudio(const AudioHandle _hAudio)
 	HRESULT hResult{};
 	hResult = pSourceVoice_->SubmitSourceBuffer(&BUFFER);
 
-	massert(SUCCEEDED(hResult) // SourceBufferのセットに成功
-			&& "SourceBufferのセットに失敗 @AudioPlayer::SetAudio");
+	massert(
+		SUCCEEDED(hResult) // SourceBufferのセットに成功
+		&& "SourceBufferのセットに失敗 @AudioPlayer::SetAudio"
+	);
 }
 
 void mtgb::AudioPlayer::SetVolume(float volume)

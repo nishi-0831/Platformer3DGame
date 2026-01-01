@@ -40,7 +40,8 @@ void GameOverZone::Start()
 				PlayerFellOutEvent event{.playerEntityId = _entityId};
 				Game::System<EventManager>().GetEvent<PlayerFellOutEvent>().Invoke(event);
 			}
-		});
+		}
+	);
 }
 
 void GameOverZone::Draw() const

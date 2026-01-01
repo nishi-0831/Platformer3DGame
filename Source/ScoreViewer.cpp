@@ -11,11 +11,13 @@ ScoreViewer::ScoreViewer()
 	: pTransform_{Component<Transform>()}
 	, pTextRenderer_{Component<TextRenderer>()}
 {
-	TextRendererData data{.rect		 = RectF{608, 13, 800, 43},
-						  .fontSize	 = 36,
-						  .params	 = {.depth = 0, .layerFlag = AllLayer()},
-						  .alignment = TextAlignment::topLeft,
-						  .layer	 = AllLayer()};
+	TextRendererData data{
+		.rect	   = RectF{608, 13, 800, 43},
+		.fontSize  = 36,
+		.params	   = {.depth = 0, .layerFlag = AllLayer()},
+		.alignment = TextAlignment::topLeft,
+		.layer	   = AllLayer()
+	};
 	pTextRenderer_->text	  = "Score";
 	pTextRenderer_->rect	  = data.rect;
 	pTextRenderer_->fontSize  = data.fontSize;

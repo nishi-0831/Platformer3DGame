@@ -49,22 +49,24 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 	if (ImGuizmo::Manipulate(viewMat_, projMat_, operation_, mode_, worldMat_))
 	{
 		// 編集されたworldMatからposition,rotation,scaleに分解
-		DirectX::XMMATRIX mat = DirectX::XMMATRIX(worldMat_[0],
-												  worldMat_[1],
-												  worldMat_[2],
-												  worldMat_[3],
-												  worldMat_[4],
-												  worldMat_[5],
-												  worldMat_[6],
-												  worldMat_[7],
-												  worldMat_[8],
-												  worldMat_[9],
-												  worldMat_[10],
-												  worldMat_[11],
-												  worldMat_[12],
-												  worldMat_[13],
-												  worldMat_[14],
-												  worldMat_[15]);
+		DirectX::XMMATRIX mat = DirectX::XMMATRIX(
+			worldMat_[0],
+			worldMat_[1],
+			worldMat_[2],
+			worldMat_[3],
+			worldMat_[4],
+			worldMat_[5],
+			worldMat_[6],
+			worldMat_[7],
+			worldMat_[8],
+			worldMat_[9],
+			worldMat_[10],
+			worldMat_[11],
+			worldMat_[12],
+			worldMat_[13],
+			worldMat_[14],
+			worldMat_[15]
+		);
 
 		DirectX::XMVECTOR scale, trans;
 		bool result = DirectX::XMMatrixDecompose(&scale, &pTargetTransform_->rotate.v, &trans, mat);
@@ -80,9 +82,13 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 {
 	EventManager& eventManager{Game::System<EventManager>()};
 	// ゲームオブジェクト選択イベント
-	eventManager.GetEvent<GameObjectSelectedEvent>().Subscribe([this](const GameObjectSelectedEvent& _event)
-															   { GenerateCommand(_event); },
-															   EventScope::Global);
+	eventManager.GetEvent<GameObjectSelectedEvent>().Subscribe(
+		[this](const GameObjectSelectedEvent& _event)
+		{
+			GenerateCommand(_event);
+		},
+		EventScope::Global
+	);
 
 	eventManager.GetEvent<SelectionClearedEvent>().Subscribe(
 		[this](const SelectionClearedEvent& _event)
@@ -91,14 +97,22 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 		}, EventScope::Global);
 
 	// 今後、同時に複数のオブジェクトを選択可能な場合になった際には修正
-	eventManager.GetEvent<GameObjectDeselectedEvent>().Subscribe([this](const GameObjectDeselectedEvent& _event)
-																 { GenerateCommand(_event); },
-																 EventScope::Global);
+	eventManager.GetEvent<GameObjectDeselectedEvent>().Subscribe(
+		[this](const GameObjectDeselectedEvent& _event)
+		{
+			GenerateCommand(_event);
+		},
+		EventScope::Global
+	);
 
 	// ゲームオブジェクト作成イベント
-	eventManager.GetEvent<GameObjectCreatedEvent>().Subscribe([this](const GameObjectCreatedEvent& _event)
-															  { GenerateCommand(_event); },
-															  EventScope::Global);
+	eventManager.GetEvent<GameObjectCreatedEvent>().Subscribe(
+		[this](const GameObjectCreatedEvent& _event)
+		{
+			GenerateCommand(_event);
+		},
+		EventScope::Global
+	);
 }
 
 void mtgb::ImGuizmoManipulator::Calculate()
@@ -255,21 +269,45 @@ void mtgb::ImGuizmoManipulator::UpdateOperationMode()
 
 void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectSelectedEvent& _event)
 {
-	commandListener_(new SelectionCommand((_event.entityId),
-										  [this](EntityId _entityId) { Select(_entityId); },
-										  [this](EntityId _entityId) { Deselect(); }));
+	commandListener_(new SelectionCommand(
+		(_event.entityId),
+		[this](EntityId _entityId)
+		{
+			Select(_entityId);
+		},
+		[this](EntityId _entityId)
+		{
+			Deselect();
+		}
+	));
 }
 
 void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectDeselectedEvent& _event)
 {
-	commandListener_(new DeselectionCommand((_event.entityId),
-											[this](EntityId _entityId) { Deselect(); },
-											[this](EntityId _entityId) { Select(_entityId); }));
+	commandListener_(new DeselectionCommand(
+		(_event.entityId),
+		[this](EntityId _entityId)
+		{
+			Deselect();
+		},
+		[this](EntityId _entityId)
+		{
+			Select(_entityId);
+		}
+	));
 }
 
 void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectCreatedEvent& _event)
 {
-	commandListener_(new SelectionCommand((_event.entityId),
-										  [this](EntityId _entityId) { Select(_entityId); },
-										  [this](EntityId _entityId) { Deselect(); }));
+	commandListener_(new SelectionCommand(
+		(_event.entityId),
+		[this](EntityId _entityId)
+		{
+			Select(_entityId);
+		},
+		[this](EntityId _entityId)
+		{
+			Deselect();
+		}
+	));
 }

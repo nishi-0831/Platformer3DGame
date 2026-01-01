@@ -2,11 +2,13 @@
 #include <string>
 #include <fstream>
 
-HRESULT mtgb::HLSLInclude::Open(D3D_INCLUDE_TYPE _includeType,
-								LPCSTR _pFileName,
-								LPCVOID _pParentData,
-								LPCVOID* _ppData,
-								UINT* _pBytes)
+HRESULT mtgb::HLSLInclude::Open(
+	D3D_INCLUDE_TYPE _includeType,
+	LPCSTR _pFileName,
+	LPCVOID _pParentData,
+	LPCVOID* _ppData,
+	UINT* _pBytes
+)
 {
 	std::string fileName{_pFileName};
 	std::string headersDirectory{"../Assets/Shader/"};

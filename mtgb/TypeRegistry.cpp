@@ -21,7 +21,7 @@ void TypeRegistry::Initialize()
 	}
 }
 
-void TypeRegistry::CallFunc(std::type_index _typeIdx, std::any _instance, const char * _name)
+void TypeRegistry::CallFunc(std::type_index _typeIdx, std::any _instance, const char* _name)
 {
 	const auto& itr = showFunctions_.find(_typeIdx);
 	if (itr != showFunctions_.end())

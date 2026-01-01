@@ -96,34 +96,36 @@ template <typename T> nlohmann::json JsonConverter::Serialize(const T& _value)
 	{
 		constexpr auto type	   = refl::reflect<Type>();
 		constexpr auto members = type.members;
-		refl::util::for_each(members,
-							 [&](auto _member)
-							 {
-								 if constexpr (refl::is_reflectable<decltype(_member(_value))>())
-								 {
-									 auto memberValue = _member(_value);
-									 std::string key  = _member.name.c_str();
-									 if constexpr (is_builtin_type_v<decltype(memberValue)>)
-									 {
-										 data[key] = memberValue;
-									 }
-									 else
-									 {
-										 json memberJson = Serialize(memberValue);
-										 data[key]		 = memberJson;
-									 }
-								 }
-								 else if constexpr (refl::trait::is_field_v<decltype(_member)>)
-								 {
-									 std::string key = _member.name.c_str();
-									 data[key]		 = _member(_value);
-								 }
-								 else if constexpr (refl::trait::is_property_v<decltype(_member)>)
-								 {
-									 std::string key = refl::descriptor::get_display_name(_member);
-									 data[key]		 = _member.invoke(_value);
-								 }
-							 });
+		refl::util::for_each(
+			members,
+			[&](auto _member)
+			{
+				if constexpr (refl::is_reflectable<decltype(_member(_value))>())
+				{
+					auto memberValue = _member(_value);
+					std::string key	 = _member.name.c_str();
+					if constexpr (is_builtin_type_v<decltype(memberValue)>)
+					{
+						data[key] = memberValue;
+					}
+					else
+					{
+						json memberJson = Serialize(memberValue);
+						data[key]		= memberJson;
+					}
+				}
+				else if constexpr (refl::trait::is_field_v<decltype(_member)>)
+				{
+					std::string key = _member.name.c_str();
+					data[key]		= _member(_value);
+				}
+				else if constexpr (refl::trait::is_property_v<decltype(_member)>)
+				{
+					std::string key = refl::descriptor::get_display_name(_member);
+					data[key]		= _member.invoke(_value);
+				}
+			}
+		);
 	}
 
 	return data;
@@ -147,31 +149,33 @@ template <typename T> void JsonConverter::Deserialize(T& _value, const nlohmann:
 	{
 		constexpr auto type	   = refl::reflect<Type>();
 		constexpr auto members = type.members;
-		refl::util::for_each(members,
-							 [&](auto _member)
-							 {
-								 std::string key = _member.name.c_str();
-								 if (_json.contains(key) == false)
-									 return;
+		refl::util::for_each(
+			members,
+			[&](auto _member)
+			{
+				std::string key = _member.name.c_str();
+				if (_json.contains(key) == false)
+					return;
 
-								 if constexpr (refl::is_reflectable<decltype(_member(_value))>())
-								 {
-									 auto& memberValue = _member(_value);
-									 if constexpr (is_builtin_type_v<decltype(memberValue)>)
-									 {
-										 _json.at(key).get_to(memberValue);
-									 }
-									 else
-									 {
+				if constexpr (refl::is_reflectable<decltype(_member(_value))>())
+				{
+					auto& memberValue = _member(_value);
+					if constexpr (is_builtin_type_v<decltype(memberValue)>)
+					{
+						_json.at(key).get_to(memberValue);
+					}
+					else
+					{
 
-										 Deserialize(memberValue, _json.at(key));
-									 }
-								 }
-								 else if constexpr (refl::trait::is_field_v<decltype(_member)>)
-								 {
-									 _json.at(key).get_to(_member(_value));
-								 }
-							 });
+						Deserialize(memberValue, _json.at(key));
+					}
+				}
+				else if constexpr (refl::trait::is_field_v<decltype(_member)>)
+				{
+					_json.at(key).get_to(_member(_value));
+				}
+			}
+		);
 	}
 }
 

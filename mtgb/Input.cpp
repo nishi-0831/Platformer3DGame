@@ -82,14 +82,18 @@ void mtgb::Input::Initialize()
 	HRESULT hResult{};
 
 	// DirectInput8のデバイス作成
-	hResult = DirectInput8Create(GetModuleHandle(nullptr),
-								 DIRECTINPUT_VERSION,
-								 IID_IDirectInput8,
-								 reinterpret_cast<void**>(pDirectInput_.GetAddressOf()),
-								 nullptr);
+	hResult = DirectInput8Create(
+		GetModuleHandle(nullptr),
+		DIRECTINPUT_VERSION,
+		IID_IDirectInput8,
+		reinterpret_cast<void**>(pDirectInput_.GetAddressOf()),
+		nullptr
+	);
 
-	massert(SUCCEEDED(hResult) // DirectInput8のデバイス作成に成功
-			&& "DirectInput8のデバイス作成に失敗 @Input::Initialize");
+	massert(
+		SUCCEEDED(hResult) // DirectInput8のデバイス作成に成功
+		&& "DirectInput8のデバイス作成に失敗 @Input::Initialize"
+	);
 }
 
 void mtgb::Input::Update()
@@ -161,15 +165,19 @@ void mtgb::Input::UpdateMouseDevice()
 		return; // マウス操作の許可取得に失敗したなら回帰
 	}
 
-	massert(SUCCEEDED(hResult) // マウス操作の許可取得に成功
-			&& "マウス操作の許可取得に失敗 @Input::Update");
+	massert(
+		SUCCEEDED(hResult) // マウス操作の許可取得に成功
+		&& "マウス操作の許可取得に失敗 @Input::Update"
+	);
 
 	memcpy(&pInputData_->mouseStatePrevious_, &pInputData_->mouseStateCurrent_, sizeof(DIMOUSESTATE));
 
 	hResult = pMouseDevice_->GetDeviceState(sizeof(DIMOUSESTATE), &pInputData_->mouseStateCurrent_);
 
-	massert(SUCCEEDED(hResult) // マウス操作の取得に成功
-			&& "マウス操作の取得に失敗 @Input::Update");
+	massert(
+		SUCCEEDED(hResult) // マウス操作の取得に成功
+		&& "マウス操作の取得に失敗 @Input::Update"
+	);
 
 #pragma endregion
 }
@@ -216,9 +224,14 @@ void mtgb::Input::UpdateGamePadDevice()
 
 	// アクティブなコントローラがなければ、リターン。
 	{
-		bool IS_GAMEPAD_DETECTED = std::any_of(pInputData_->activeGamePadID.begin(),
-											   pInputData_->activeGamePadID.end(),
-											   [](std::pair<const PadIDState, int> _id) { return _id.second != -1; });
+		bool IS_GAMEPAD_DETECTED = std::any_of(
+			pInputData_->activeGamePadID.begin(),
+			pInputData_->activeGamePadID.end(),
+			[](std::pair<const PadIDState, int> _id)
+			{
+				return _id.second != -1;
+			}
+		);
 		if (not(IS_GAMEPAD_DETECTED))
 		{
 			CheckValidPadID();
@@ -261,14 +274,18 @@ void mtgb::Input::CreateKeyDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppKeyDevice
 	HRESULT hResult{};
 
 	hResult = pDirectInput_->CreateDevice(GUID_SysKeyboard, _ppKeyDevice, nullptr);
-	massert(SUCCEEDED(hResult) // キーボードデバイスの作成に成功
-			&& "キーボードデバイスの作成に失敗 @Input::CreateKeyDevice");
+	massert(
+		SUCCEEDED(hResult) // キーボードデバイスの作成に成功
+		&& "キーボードデバイスの作成に失敗 @Input::CreateKeyDevice"
+	);
 
 	// キーボード用にフォーマット
 	hResult = (*_ppKeyDevice)->SetDataFormat(&c_dfDIKeyboard);
 
-	massert(SUCCEEDED(hResult) // キーボードフォーマットに成功
-			&& "キーボードフォーマットに失敗 @Input::CreateDevice");
+	massert(
+		SUCCEEDED(hResult) // キーボードフォーマットに成功
+		&& "キーボードフォーマットに失敗 @Input::CreateDevice"
+	);
 
 	// キーボードのアプリ間共有レベルを設定
 	//  REF: https://learn.microsoft.com/ja-jp/previous-versions/windows/desktop/ee417921(v=vs.85)
@@ -276,8 +293,10 @@ void mtgb::Input::CreateKeyDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppKeyDevice
 	// 非アクティブなアプリも入力を受け付ける
 	hResult = (*_ppKeyDevice)->SetCooperativeLevel(_hWnd, DISCL_NONEXCLUSIVE | DISCL_BACKGROUND);
 
-	massert(SUCCEEDED(hResult) // キーボードアプリ間共有レベル設定に成功
-			&& "キーボードアプリ間共有レベル設定に失敗 @Input::CreateDevice");
+	massert(
+		SUCCEEDED(hResult) // キーボードアプリ間共有レベル設定に成功
+		&& "キーボードアプリ間共有レベル設定に失敗 @Input::CreateDevice"
+	);
 }
 
 void mtgb::Input::CreateMouseDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppMouseDevice)
@@ -285,22 +304,28 @@ void mtgb::Input::CreateMouseDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppMouseDe
 	HRESULT hResult{};
 
 	hResult = pDirectInput_->CreateDevice(GUID_SysMouse, _ppMouseDevice, nullptr);
-	massert(SUCCEEDED(hResult) // キーボードデバイスの作成に成功
-			&& "マウスデバイスの作成に失敗 @Input::CreateMouseDevice");
+	massert(
+		SUCCEEDED(hResult) // キーボードデバイスの作成に成功
+		&& "マウスデバイスの作成に失敗 @Input::CreateMouseDevice"
+	);
 
 	// マウス用にフォーマット
 	hResult = (*_ppMouseDevice)->SetDataFormat(&c_dfDIMouse);
 
-	massert(SUCCEEDED(hResult) // マウスフォーマットに成功
-			&& "マウスフォーマットに失敗 @Input::CreateMouseDevice");
+	massert(
+		SUCCEEDED(hResult) // マウスフォーマットに成功
+		&& "マウスフォーマットに失敗 @Input::CreateMouseDevice"
+	);
 
 	// マウスのアプリ間共有レベルの設定
 	// hResult = (*_ppMouseDevice)->SetCooperativeLevel(_hWnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
 	// 非アクティブなアプリも入力を受け付ける
 	hResult = (*_ppMouseDevice)->SetCooperativeLevel(_hWnd, DISCL_NONEXCLUSIVE | DISCL_BACKGROUND);
 
-	massert(SUCCEEDED(hResult) // マウスアプリ間共有レベル設定に成功
-			&& "マウスアプリ間共有レベル設定に失敗 @Input::CreateMouseDevice");
+	massert(
+		SUCCEEDED(hResult) // マウスアプリ間共有レベル設定に成功
+		&& "マウスアプリ間共有レベル設定に失敗 @Input::CreateMouseDevice"
+	);
 }
 
 void mtgb::Input::ChangeKeyDevice(ComPtr<IDirectInputDevice8> _pKeyDevice)
@@ -414,9 +439,11 @@ void mtgb::Input::RequestJoystickDevice(JoystickReservation&& _reservation)
 	StartEnumTimer();
 }
 
-void mtgb::Input::AssignJoystickToReservation(ComPtr<IDirectInputDevice8> _pJoystickDevice,
-											  size_t _reservationIndex,
-											  GUID _guid)
+void mtgb::Input::AssignJoystickToReservation(
+	ComPtr<IDirectInputDevice8> _pJoystickDevice,
+	size_t _reservationIndex,
+	GUID _guid
+)
 {
 	if (_reservationIndex >= requestedJoystickDevices_.size())
 		return;
@@ -454,7 +481,13 @@ bool mtgb::Input::RegisterJoystickGuid(GUID _guid)
 
 void mtgb::Input::SetAcquireInterval(GUID _guid, ComPtr<IDirectInputDevice8> _device)
 {
-	TimerHandle hTimer					= Timer::AddInterval(acquireInterval, [&]() { AcquireJoystick(_device); });
+	TimerHandle hTimer = Timer::AddInterval(
+		acquireInterval,
+		[&]()
+		{
+			AcquireJoystick(_device);
+		}
+	);
 	joystickContext_[_guid].timerHandle = hTimer;
 }
 
@@ -642,7 +675,13 @@ void mtgb::Input::StartEnumTimer()
 	if (!enumTimerHandle_ || IsNotSubscribed())
 		return;
 
-	enumTimerHandle_ = Timer::AddInterval(enumInterval_, [this]() { AutoEnum(); });
+	enumTimerHandle_ = Timer::AddInterval(
+		enumInterval_,
+		[this]()
+		{
+			AutoEnum();
+		}
+	);
 }
 
 void mtgb::Input::StopEnumTimer()

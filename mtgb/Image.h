@@ -26,8 +26,9 @@ namespace mtgb
 		/// <returns></returns>
 		inline Sprite* GetSprite(const ImageHandle _imageHandle)
 		{
-			massert((0 < _imageHandle) && (_imageHandle <= Image::handleCounter_) &&
-					"無効なハンドラ @Image::GetSprite");
+			massert(
+				(0 < _imageHandle) && (_imageHandle <= Image::handleCounter_) && "無効なハンドラ @Image::GetSprite"
+			);
 
 			massert(Image::sprites_.count(_imageHandle) != 0 && "スプライトが存在しない @Image::GetSprite");
 

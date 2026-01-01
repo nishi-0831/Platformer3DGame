@@ -60,10 +60,12 @@ namespace mtgb
 		template <typename... Args> static void LogF(const char* _format, const Args... _args);
 
 		template <typename... Args>
-		void LogImGui(const std::string& category,
-					  const std::source_location& _location,
-					  const char* _format,
-					  const Args... _args);
+		void LogImGui(
+			const std::string& category,
+			const std::source_location& _location,
+			const char* _format,
+			const Args... _args
+		);
 
 		std::list<LogEntry> GetLog();
 
@@ -80,11 +82,13 @@ namespace mtgb
 
 		std::list<LogEntry> logs_;
 		std::unordered_map<std::string, LogItr> logMap_; // ログがキー、logs_へのイテレータが値
-		static std::string MakeKey(const std::string& object,
-								   const char* file,
-								   int line,
-								   const char* func,
-								   const std::string msg);
+		static std::string MakeKey(
+			const std::string& object,
+			const char* file,
+			int line,
+			const char* func,
+			const std::string msg
+		);
 	};
 
 	template <typename... Args> inline void Debug::LogF(const char* _format, const Args... _args)
@@ -98,10 +102,12 @@ namespace mtgb
 	}
 
 	template <typename... Args>
-	void Debug::LogImGui(const std::string& category,
-						 const std::source_location& _location,
-						 const char* _format,
-						 const Args... _args)
+	void Debug::LogImGui(
+		const std::string& category,
+		const std::source_location& _location,
+		const char* _format,
+		const Args... _args
+	)
 	{
 		char buffer[BUFFER_SIZE]{};
 		ZeroMemory(buffer, BUFFER_SIZE); // ヌル文字埋め
@@ -119,14 +125,16 @@ namespace mtgb
 		}
 		else
 		{
-			logs_.push_back(LogEntry{.msg		 = msg,
-									 .msgDetail	 = key,
-									 .file		 = _location.file_name(),
-									 .line		 = static_cast<int>(_location.line()),
-									 .func		 = _location.function_name(),
-									 .objectName = "",
-									 .category	 = category, // カテゴリを設定
-									 .count		 = 1});
+			logs_.push_back(LogEntry{
+				.msg		= msg,
+				.msgDetail	= key,
+				.file		= _location.file_name(),
+				.line		= static_cast<int>(_location.line()),
+				.func		= _location.function_name(),
+				.objectName = "",
+				.category	= category, // カテゴリを設定
+				.count		= 1
+			});
 			logMap_[key] = std::prev(logs_.end());
 		}
 	}

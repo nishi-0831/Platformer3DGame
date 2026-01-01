@@ -62,9 +62,11 @@ void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* pIDXGISurface, ID2D1Ren
 	massert(SUCCEEDED(hResult) && "CreateDxgiSurfaceRenderTarget‚ÉŽ¸”s @Direct2D::CreateDXGISurfaceRenderTarget");
 }
 
-void mtgb::Direct2D::CreateSolidColorBrush(const D2D1::ColorF& color,
-										   ID2D1RenderTarget* pRenderTarget,
-										   ID2D1SolidColorBrush** ppD2DBrush)
+void mtgb::Direct2D::CreateSolidColorBrush(
+	const D2D1::ColorF& color,
+	ID2D1RenderTarget* pRenderTarget,
+	ID2D1SolidColorBrush** ppD2DBrush
+)
 {
 	// ƒuƒ‰ƒVì¬
 	HRESULT hResult = pRenderTarget->CreateSolidColorBrush(color, ppD2DBrush);

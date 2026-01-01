@@ -91,24 +91,30 @@ namespace mtstat
 	};
 
 	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnStart(const StatEnumT _statEnum,
-														 const std::function<void()>& _callback)
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnStart(
+		const StatEnumT _statEnum,
+		const std::function<void()>& _callback
+	)
 	{
 		startFuncs_.insert({_statEnum, _callback});
 		return *this;
 	}
 
 	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnUpdate(const StatEnumT _statEnum,
-														  const std::function<void()>& _callback)
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnUpdate(
+		const StatEnumT _statEnum,
+		const std::function<void()>& _callback
+	)
 	{
 		updateFuncs_.insert({_statEnum, _callback});
 		return *this;
 	}
 
 	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnEnd(const StatEnumT _statEnum,
-													   const std::function<void()>& _callback)
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnEnd(
+		const StatEnumT _statEnum,
+		const std::function<void()>& _callback
+	)
 	{
 		endFuncs_.insert({_statEnum, _callback});
 		return *this;
@@ -136,17 +142,21 @@ namespace mtstat
 	}
 
 	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(StatEnumT _from,
-																	StatEnumT _to,
-																	const std::function<bool()>& _callback)
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(
+		StatEnumT _from,
+		StatEnumT _to,
+		const std::function<bool()>& _callback
+	)
 	{
 		transitionsMap_[_from].emplace_back(_to, _callback);
 		return *this;
 	}
 
 	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterAnyTransition(StatEnumT _to,
-																	   const std::function<bool()>& _callback)
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterAnyTransition(
+		StatEnumT _to,
+		const std::function<bool()>& _callback
+	)
 	{
 		anyTransition_.emplace_back(_to, _callback);
 	}

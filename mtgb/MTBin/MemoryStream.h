@@ -94,8 +94,10 @@ namespace mtbin
 
 	template <typename T> inline void MemoryStream::Write(T _value)
 	{
-		assert((currentIndex + sizeof(T)) < BUFFER_SIZE // 書き込んでもオーバーランしない
-			   && "buffer over run @mtbin::MemoryStream::Write");
+		assert(
+			(currentIndex + sizeof(T)) < BUFFER_SIZE // 書き込んでもオーバーランしない
+			&& "buffer over run @mtbin::MemoryStream::Write"
+		);
 
 		void* dist	= &(pBuffer_[currentIndex]);
 		void* src	= reinterpret_cast<void*>(&_value);
@@ -107,9 +109,11 @@ namespace mtbin
 
 	template <typename T> inline void MemoryStream::Write(T* _pArray, const int& _arrayLength)
 	{
-		size_t size{sizeof(T) * _arrayLength};		// 書き込むサイズ
-		assert((currentIndex + size) <= BUFFER_SIZE // 書き込んでもオーバーランしない
-			   && "buffer over run @mtbin::MemoryStream::Write");
+		size_t size{sizeof(T) * _arrayLength}; // 書き込むサイズ
+		assert(
+			(currentIndex + size) <= BUFFER_SIZE // 書き込んでもオーバーランしない
+			&& "buffer over run @mtbin::MemoryStream::Write"
+		);
 
 		// 書き込む
 		::memcpy(&(pBuffer_[currentIndex]), reinterpret_cast<mtbin::Byte*>(_pArray), size);
@@ -118,8 +122,10 @@ namespace mtbin
 
 	template <typename T> inline T MemoryStream::Read()
 	{
-		assert((currentIndex + sizeof(T)) <= BUFFER_SIZE // 読み込んでもアンダーランしない
-			   && "buffer under run @mtbin::MemoryStream::Read");
+		assert(
+			(currentIndex + sizeof(T)) <= BUFFER_SIZE // 読み込んでもアンダーランしない
+			&& "buffer under run @mtbin::MemoryStream::Read"
+		);
 
 		T pickBuffer{};												 // 取り出し用バッファ用意
 		::memcpy(&pickBuffer, &(pBuffer_[currentIndex]), sizeof(T)); // 取り出す
@@ -131,15 +137,21 @@ namespace mtbin
 	template <typename T>
 	inline void MemoryStream::Read(T* _pWriteBuffer, const int& _writeBufferLength, const int& _arrayLength)
 	{
-		assert(_pWriteBuffer != nullptr // 書き込み先はnullptrではない
-			   && "write buffer is nullptr @mtbin::MemoryStream::Read");
+		assert(
+			_pWriteBuffer != nullptr // 書き込み先はnullptrではない
+			&& "write buffer is nullptr @mtbin::MemoryStream::Read"
+		);
 
-		assert(_writeBufferLength >= _arrayLength // 書き込み先に十分な容量あり
-			   && "write buffer under run @mtbin::MemoryStream::Read");
+		assert(
+			_writeBufferLength >= _arrayLength // 書き込み先に十分な容量あり
+			&& "write buffer under run @mtbin::MemoryStream::Read"
+		);
 
-		size_t size{sizeof(T) * _arrayLength};		// 読み込むサイズ
-		assert((currentIndex + size) <= BUFFER_SIZE // 読み込んでもアンダーランしない
-			   && "buffer under run @mtbin::MemoryStream::Read");
+		size_t size{sizeof(T) * _arrayLength}; // 読み込むサイズ
+		assert(
+			(currentIndex + size) <= BUFFER_SIZE // 読み込んでもアンダーランしない
+			&& "buffer under run @mtbin::MemoryStream::Read"
+		);
 
 		::memcpy(_pWriteBuffer, &(pBuffer_[currentIndex]), size); // 取り出す
 		currentIndex += size;									  // サイズ分進める

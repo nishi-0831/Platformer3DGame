@@ -11,9 +11,11 @@ namespace mtgb
 	class GuizmoManipulateCommand : public Command
 	{
 	  public:
-		GuizmoManipulateCommand(TransformMemento* _pPrevMemento,
-								TransformMemento* _pMemento,
-								const ComponentFactory& _componentFactory);
+		GuizmoManipulateCommand(
+			TransformMemento* _pPrevMemento,
+			TransformMemento* _pMemento,
+			const ComponentFactory& _componentFactory
+		);
 
 		void Execute() override;
 		void Undo() override;

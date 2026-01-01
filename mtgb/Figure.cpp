@@ -49,15 +49,18 @@ void mtgb::Figure::Draw(const RectF& _rect, const Color& _color)
 			const Vector2F VIEW_END{cartesianBox.GetEnd()};
 
 			// 表示するサイズに合わせる
-			Matrix4x4 scalingBox = XMMatrixScaling(std::abs(VIEW_END.x - VIEW_BEGIN.x) * 2.0f,
-												   std::abs(VIEW_END.y - VIEW_BEGIN.y) * 2.0f,
-												   1.0f);
+			Matrix4x4 scalingBox = XMMatrixScaling(
+				std::abs(VIEW_END.x - VIEW_BEGIN.x) * 2.0f,
+				std::abs(VIEW_END.y - VIEW_BEGIN.y) * 2.0f,
+				1.0f
+			);
 
 			// 表示するボックスの位置を移動する
-			Matrix4x4 moveBox =
-				XMMatrixTranslation(((VIEW_END.x - VIEW_BEGIN.x) / 2.0f + VIEW_BEGIN.x) / (SCREEN_SIZE.x / 2.0f),
-									((VIEW_BEGIN.y - VIEW_END.y) / 2.0f + VIEW_END.y) / (SCREEN_SIZE.y / 2.0f),
-									0.0f);
+			Matrix4x4 moveBox = XMMatrixTranslation(
+				((VIEW_END.x - VIEW_BEGIN.x) / 2.0f + VIEW_BEGIN.x) / (SCREEN_SIZE.x / 2.0f),
+				((VIEW_BEGIN.y - VIEW_END.y) / 2.0f + VIEW_END.y) / (SCREEN_SIZE.y / 2.0f),
+				0.0f
+			);
 
 			// 画面に合わせる
 			Matrix4x4 scalingView = XMMatrixScaling(1.0f / (SCREEN_SIZE.x * 2), 1.0f / (SCREEN_SIZE.y * 2), 1.0f);
@@ -73,7 +76,8 @@ void mtgb::Figure::Draw(const RectF& _rect, const Color& _color)
 			//  REF: https://qiita.com/niusounds/items/65099654673f5df3be9b
 			_pCB->g_worldMatrix = XMMatrixTranspose(world);
 		},
-		[&, this](ID3D11DeviceContext* _pDC) {});
+		[&, this](ID3D11DeviceContext* _pDC) {}
+	);
 }
 
 void mtgb::Figure::InitializeVertexBuffer(ID3D11Device* _pDevice)
@@ -103,8 +107,10 @@ void mtgb::Figure::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	HRESULT hResult{};
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pVertexBuffer_);
 
-	massert(SUCCEEDED(hResult) // 頂点バッファの作成に成功
-			&& "頂点バッファの作成に失敗 @Figure::InitializeVertexBuffer");
+	massert(
+		SUCCEEDED(hResult) // 頂点バッファの作成に成功
+		&& "頂点バッファの作成に失敗 @Figure::InitializeVertexBuffer"
+	);
 }
 
 void mtgb::Figure::InitializeIndexBuffer(ID3D11Device* _pDevice)
@@ -129,8 +135,10 @@ void mtgb::Figure::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	HRESULT hResult{};
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pIndexBuffer_);
 
-	massert(SUCCEEDED(hResult) // インデックスバッファの作成に成功
-			&& "インデックスバッファの作成に失敗 @Figure::InitializeIndexBuffer");
+	massert(
+		SUCCEEDED(hResult) // インデックスバッファの作成に成功
+		&& "インデックスバッファの作成に失敗 @Figure::InitializeIndexBuffer"
+	);
 }
 
 void mtgb::Figure::InitializeConstantBuffer(ID3D11Device* _pDevice)
@@ -158,6 +166,8 @@ void mtgb::Figure::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	HRESULT hResult{};
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pConstantBuffer_);
 
-	massert(SUCCEEDED(hResult) // コンスタントバッファの作成に成功
-			&& "コンスタントバッファの作成に失敗 @Figure::InitializeConstantBuffer");
+	massert(
+		SUCCEEDED(hResult) // コンスタントバッファの作成に成功
+		&& "コンスタントバッファの作成に失敗 @Figure::InitializeConstantBuffer"
+	);
 }

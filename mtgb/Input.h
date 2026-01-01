@@ -125,9 +125,11 @@ namespace mtgb
 		/// 接続されているジョイスティックを割り当て予約してるデバイスに割り当てる
 		/// </summary>
 		/// <param name="_pJoystickDevice"></param>
-		void AssignJoystickToReservation(ComPtr<IDirectInputDevice8> _pJoystickDevice,
-										 size_t _reservationIndex,
-										 GUID _guid);
+		void AssignJoystickToReservation(
+			ComPtr<IDirectInputDevice8> _pJoystickDevice,
+			size_t _reservationIndex,
+			GUID _guid
+		);
 
 		/// <summary>
 		/// 登録されたジョイスティックを解除する

@@ -12,15 +12,19 @@ mtgb::ComponentRegistry::ComponentRegistry()
 {
 }
 
-void mtgb::ComponentRegistry::RegisterComponentIndex(EntityId _entityId,
-													 const std::type_index& _typeIndex,
-													 size_t _componentIndex)
+void mtgb::ComponentRegistry::RegisterComponentIndex(
+	EntityId _entityId,
+	const std::type_index& _typeIndex,
+	size_t _componentIndex
+)
 {
 	componentIndices_[_entityId][_typeIndex] = _componentIndex;
 }
 
-std::optional<size_t> mtgb::ComponentRegistry::GetComponentIndex(EntityId _entityId,
-																 const std::type_index& _componentTypeIndex)
+std::optional<size_t> mtgb::ComponentRegistry::GetComponentIndex(
+	EntityId _entityId,
+	const std::type_index& _componentTypeIndex
+)
 {
 	// EntityIdに割り当てられているコンポーネント:インデックスのマップを取得
 	auto entityItr = componentIndices_.find(_entityId);
@@ -117,7 +121,8 @@ std::optional<std::vector<std::type_index>> mtgb::ComponentRegistry::GetComponen
 }
 
 std::optional<std::reference_wrapper<const std::set<std::type_index>>> mtgb::ComponentRegistry::GetComponentTypes(
-	EntityId _entityId)
+	EntityId _entityId
+)
 {
 	auto itr = entityComponents_.find(_entityId);
 

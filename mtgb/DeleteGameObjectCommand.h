@@ -15,9 +15,11 @@ namespace mtgb
 	class DeleteGameObjectCommand : public Command
 	{
 	  public:
-		DeleteGameObjectCommand(GameObject* pGameObj,
-								const GameObjectFactory& _gameObjectFactory,
-								const ComponentFactory& _componentFactory);
+		DeleteGameObjectCommand(
+			GameObject* pGameObj,
+			const GameObjectFactory& _gameObjectFactory,
+			const ComponentFactory& _componentFactory
+		);
 		// Command ÇâÓÇµÇƒåpè≥Ç≥ÇÍÇ‹ÇµÇΩ
 		void Execute() override;
 		void Undo() override;

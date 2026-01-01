@@ -70,8 +70,10 @@ namespace mtgb
 	template <class NextSceneT, typename... Args> inline void SceneSystem::Move(Args... _args)
 	{
 		// 基底クラスがGameSceneであるか
-		static_assert(std::is_base_of<GameScene, NextSceneT>().value &&
-					  "GameSceneクラスを継承していないクラスにシーン遷移できません。");
+		static_assert(
+			std::is_base_of<GameScene, NextSceneT>().value &&
+			"GameSceneクラスを継承していないクラスにシーン遷移できません。"
+		);
 
 		// 既に次のシーンが割り当てられているなら解放する
 		SAFE_DELETE(pNextScene_);

@@ -68,8 +68,10 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 	massert(SUCCEEDED(hResult) && "QueryInterfaceに失敗 @DirectX11Manager::InitializeCommonResources");
 
-	hResult = CreateDXGIFactory1(_uuidof(IDXGIFactory2),
-								 reinterpret_cast<void**>(DirectX11Draw::pDXGIFactory_.ReleaseAndGetAddressOf()));
+	hResult = CreateDXGIFactory1(
+		_uuidof(IDXGIFactory2),
+		reinterpret_cast<void**>(DirectX11Draw::pDXGIFactory_.ReleaseAndGetAddressOf())
+	);
 	massert(SUCCEEDED(hResult) && "CreateDXGIFactory1に失敗 @DirectX11Manager::InitializeCommonResources");
 
 	UINT i						   = 0;
@@ -86,20 +88,24 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 	EnumAvailableMonitors(); // モニターの列挙
 
-	hResult = D3D11CreateDevice(nullptr,
-								D3D_DRIVER_TYPE_HARDWARE,
-								nullptr,
-								D3D11_CREATE_DEVICE_DEBUG | D3D11_CREATE_DEVICE_BGRA_SUPPORT,
-								nullptr,
-								0,
-								D3D11_SDK_VERSION,
-								DirectX11Draw::pDevice_.ReleaseAndGetAddressOf(),
-								&level,
-								DirectX11Draw::pContext_.ReleaseAndGetAddressOf());
+	hResult = D3D11CreateDevice(
+		nullptr,
+		D3D_DRIVER_TYPE_HARDWARE,
+		nullptr,
+		D3D11_CREATE_DEVICE_DEBUG | D3D11_CREATE_DEVICE_BGRA_SUPPORT,
+		nullptr,
+		0,
+		D3D11_SDK_VERSION,
+		DirectX11Draw::pDevice_.ReleaseAndGetAddressOf(),
+		&level,
+		DirectX11Draw::pContext_.ReleaseAndGetAddressOf()
+	);
 	massert(SUCCEEDED(hResult) && "D3D11CreateDeviceに失敗 @DirectX11Manager::InitializeCommonResources");
 
-	hResult = DirectX11Draw::pDevice_->QueryInterface(_uuidof(IDXGIDevice1),
-													  (void**)DirectX11Draw::pDXGIDevice_.ReleaseAndGetAddressOf());
+	hResult = DirectX11Draw::pDevice_->QueryInterface(
+		_uuidof(IDXGIDevice1),
+		(void**)DirectX11Draw::pDXGIDevice_.ReleaseAndGetAddressOf()
+	);
 
 	InitializeShaderBundle(); // シェーダバンドルの初期化
 
@@ -110,9 +116,10 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 		.AddressW = D3D11_TEXTURE_ADDRESS_WRAP,
 	};
 
-	hResult =
-		DirectX11Draw::pDevice_->CreateSamplerState(&SAMPLER_DESC,
-													DirectX11Draw::pDefaultSamplerState_.ReleaseAndGetAddressOf());
+	hResult = DirectX11Draw::pDevice_->CreateSamplerState(
+		&SAMPLER_DESC,
+		DirectX11Draw::pDefaultSamplerState_.ReleaseAndGetAddressOf()
+	);
 	massert(SUCCEEDED(hResult) && "デフォルトのサンプラ作成に失敗 @DirectX11Manager::InitializeCommonResources");
 #pragma region 深度ステンシルステート作成
 
@@ -138,41 +145,50 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
 			.StencilPassOp		= D3D11_STENCIL_OP_KEEP,
 			.StencilFunc		= D3D11_COMPARISON_ALWAYS,
-		}};
+		}
+	};
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
-		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::Default)].ReleaseAndGetAddressOf());
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::Default)].ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult) // 深度ステンシルステートの作成に成功
-			&& "BlendMode::Defaultの深度ステンシルステートの作成に失敗 @DirectX11Manager::InitializeCommonResources");
+	massert(
+		SUCCEEDED(hResult) // 深度ステンシルステートの作成に成功
+		&& "BlendMode::Defaultの深度ステンシルステートの作成に失敗 @DirectX11Manager::InitializeCommonResources"
+	);
 
 	// BlendMode::Spriteの作成
-	DEPTH_STENCIL_DESC = {.DepthEnable		= FALSE, // 深度テストを行うかどうか
-						  .DepthWriteMask	= D3D11_DEPTH_WRITE_MASK_ZERO,
-						  .DepthFunc		= D3D11_COMPARISON_LESS_EQUAL,
-						  .StencilEnable	= FALSE, // ステンシルテストを行うかどうか
-						  .StencilReadMask	= {},
-						  .StencilWriteMask = {},
-						  .FrontFace{
-							  .StencilFailOp	  = D3D11_STENCIL_OP_KEEP,
-							  .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-							  .StencilPassOp	  = D3D11_STENCIL_OP_KEEP,
-							  .StencilFunc		  = D3D11_COMPARISON_ALWAYS,
-						  },
-						  .BackFace{
-							  .StencilFailOp	  = D3D11_STENCIL_OP_KEEP,
-							  .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-							  .StencilPassOp	  = D3D11_STENCIL_OP_KEEP,
-							  .StencilFunc		  = D3D11_COMPARISON_ALWAYS,
-						  }};
+	DEPTH_STENCIL_DESC = {
+		.DepthEnable	  = FALSE, // 深度テストを行うかどうか
+		.DepthWriteMask	  = D3D11_DEPTH_WRITE_MASK_ZERO,
+		.DepthFunc		  = D3D11_COMPARISON_LESS_EQUAL,
+		.StencilEnable	  = FALSE, // ステンシルテストを行うかどうか
+		.StencilReadMask  = {},
+		.StencilWriteMask = {},
+		.FrontFace{
+			.StencilFailOp		= D3D11_STENCIL_OP_KEEP,
+			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
+			.StencilPassOp		= D3D11_STENCIL_OP_KEEP,
+			.StencilFunc		= D3D11_COMPARISON_ALWAYS,
+		},
+		.BackFace{
+			.StencilFailOp		= D3D11_STENCIL_OP_KEEP,
+			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
+			.StencilPassOp		= D3D11_STENCIL_OP_KEEP,
+			.StencilFunc		= D3D11_COMPARISON_ALWAYS,
+		}
+	};
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
-		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::Sprite)].ReleaseAndGetAddressOf());
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::Sprite)].ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult) // 深度ステンシルステートの作成に成功
-			&& "BlendMode::Spriteの深度ステンシルステートの作成に失敗 @DirectX11Manager::InitializeCommonResources");
+	massert(
+		SUCCEEDED(hResult) // 深度ステンシルステートの作成に成功
+		&& "BlendMode::Spriteの深度ステンシルステートの作成に失敗 @DirectX11Manager::InitializeCommonResources"
+	);
 #pragma endregion
 #pragma region ブレンドステート作成
 
@@ -196,19 +212,25 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 	hResult = DirectX11Draw::pDevice_->CreateBlendState(
 		&BLEND_DESC,
-		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::Default)].ReleaseAndGetAddressOf());
+		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::Default)].ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult) // ブレンドステート作成に成功
-			&& "BlendMode::Defaultのブレンドステート作成に失敗 @DirectX11Manager::InitializeCommonResources");
+	massert(
+		SUCCEEDED(hResult) // ブレンドステート作成に成功
+		&& "BlendMode::Defaultのブレンドステート作成に失敗 @DirectX11Manager::InitializeCommonResources"
+	);
 
 	// BlendMode::Spriteの作成
 	// 設定はBlendMode::Defaultと同じ
 	hResult = DirectX11Draw::pDevice_->CreateBlendState(
 		&BLEND_DESC,
-		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::Sprite)].ReleaseAndGetAddressOf());
+		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::Sprite)].ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult) // ブレンドステート作成に成功
-			&& "ブレンドステート作成に失敗 @DirectX11Manager::InitializeCommonResources");
+	massert(
+		SUCCEEDED(hResult) // ブレンドステート作成に成功
+		&& "ブレンドステート作成に失敗 @DirectX11Manager::InitializeCommonResources"
+	);
 
 #pragma endregion
 	DirectX11Draw::pContext_->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -251,7 +273,8 @@ void mtgb::DirectX11Manager::CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, ID
 		.Scaling	 = DXGI_SCALING_STRETCH,
 		.SwapEffect	 = DXGI_SWAP_EFFECT_FLIP_DISCARD,
 		.AlphaMode	 = DXGI_ALPHA_MODE_UNSPECIFIED,
-		.Flags		 = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH};
+		.Flags		 = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH
+	};
 
 	// 仮のフラグ、
 	bool fullscreen								   = false;
@@ -264,12 +287,14 @@ void mtgb::DirectX11Manager::CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, ID
 
 	if (fullscreen)
 	{
-		hResult = DirectX11Draw::pDXGIFactory_->CreateSwapChainForHwnd(DirectX11Draw::pDevice_.Get(),
-																	   hWnd,
-																	   &desc,
-																	   &fullscreenDesc, // フルスクリーンの設定
-																	   pOutput,			// 出力
-																	   ppSwapChain1);
+		hResult = DirectX11Draw::pDXGIFactory_->CreateSwapChainForHwnd(
+			DirectX11Draw::pDevice_.Get(),
+			hWnd,
+			&desc,
+			&fullscreenDesc, // フルスクリーンの設定
+			pOutput,		 // 出力
+			ppSwapChain1
+		);
 	}
 	else
 	{
@@ -279,13 +304,16 @@ void mtgb::DirectX11Manager::CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, ID
 			&desc,
 			nullptr, // 初期状態をフルスクリーンにしたい場合のみDESCを渡して、そうでないならnullptrにしておいて必要に応じてSetFullscreenStateで切り替える
 			pOutput, // 出力
-			ppSwapChain1);
+			ppSwapChain1
+		);
 	}
 	massert(SUCCEEDED(hResult) && "CreateSwapChainForHwndに失敗 @DirectX11Manager::CreateSwapChain");
 }
 
-void mtgb::DirectX11Manager::CreateRenderTargetView(IDXGISwapChain1* pSwapChain1,
-													ID3D11RenderTargetView** ppRenderTargetView)
+void mtgb::DirectX11Manager::CreateRenderTargetView(
+	IDXGISwapChain1* pSwapChain1,
+	ID3D11RenderTargetView** ppRenderTargetView
+)
 {
 	HRESULT hResult{};
 
@@ -312,9 +340,11 @@ void mtgb::DirectX11Manager::CreateViewport(const Vector2Int& size, D3D11_VIEWPO
 	};
 }
 
-void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(const Vector2Int bufSize,
-																   ID3D11Texture2D** ppDepthStencil,
-																   ID3D11DepthStencilView** ppDepthStencilView)
+void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(
+	const Vector2Int bufSize,
+	ID3D11Texture2D** ppDepthStencil,
+	ID3D11DepthStencilView** ppDepthStencilView
+)
 {
 	HRESULT hResult{};
 
@@ -336,13 +366,17 @@ void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(const Vector2
 
 	hResult = DirectX11Draw::pDevice_->CreateTexture2D(&DEPTH_TEXTURE2D_DESC, nullptr, ppDepthStencil);
 
-	massert(SUCCEEDED(hResult) // 深度ステンシルバッファの作成に失敗
-			&& "深度ステンシルバッファの作成に失敗");
+	massert(
+		SUCCEEDED(hResult) // 深度ステンシルバッファの作成に失敗
+		&& "深度ステンシルバッファの作成に失敗"
+	);
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilView(*ppDepthStencil, nullptr, ppDepthStencilView);
 
-	massert(SUCCEEDED(hResult) // 深度ステンシルビュの作成に成功
-			&& "深度ステンシルビューの作成に失敗");
+	massert(
+		SUCCEEDED(hResult) // 深度ステンシルビュの作成に成功
+		&& "深度ステンシルビューの作成に失敗"
+	);
 }
 
 void mtgb::DirectX11Manager::ChangeViewport(const D3D11_VIEWPORT& viewport)
@@ -350,8 +384,10 @@ void mtgb::DirectX11Manager::ChangeViewport(const D3D11_VIEWPORT& viewport)
 	DirectX11Draw::pContext_->RSSetViewports(1, &viewport);
 }
 
-void mtgb::DirectX11Manager::ChangeRenderTargets(ComPtr<ID3D11RenderTargetView> pRenderTargetView,
-												 ComPtr<ID3D11DepthStencilView> pDepthStencilView)
+void mtgb::DirectX11Manager::ChangeRenderTargets(
+	ComPtr<ID3D11RenderTargetView> pRenderTargetView,
+	ComPtr<ID3D11DepthStencilView> pDepthStencilView
+)
 {
 	DirectX11Draw::pRenderTargetView_ = pRenderTargetView;
 	DirectX11Draw::pDepthStencilView_ = pDepthStencilView;
@@ -587,11 +623,13 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
-		CompileShader(L"Shader/Figure.hlsl",
-					  ShaderType::Figure,
-					  INPUT_ELEMENT_DESC_2D,
-					  sizeof(INPUT_ELEMENT_DESC_2D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/Figure.hlsl",
+			ShaderType::Figure,
+			INPUT_ELEMENT_DESC_2D,
+			sizeof(INPUT_ELEMENT_DESC_2D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 	}
 
 	// 2Dスプライトシェーダの読み込み
@@ -609,11 +647,13 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
-		CompileShader(L"Shader/Sprite.hlsl",
-					  ShaderType::Sprite2D,
-					  INPUT_ELEMENT_DESC_2D,
-					  sizeof(INPUT_ELEMENT_DESC_2D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/Sprite.hlsl",
+			ShaderType::Sprite2D,
+			INPUT_ELEMENT_DESC_2D,
+			sizeof(INPUT_ELEMENT_DESC_2D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 	}
 
 	// FbxPartsシェーダの読み込み
@@ -631,19 +671,23 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
-		CompileShader(L"Shader/FbxParts.hlsl",
-					  ShaderType::FbxParts,
-					  INPUT_ELEMENT_DESC_3D,
-					  sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/FbxParts.hlsl",
+			ShaderType::FbxParts,
+			INPUT_ELEMENT_DESC_3D,
+			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 	}
 
 	{
-		CompileShader(L"Shader/SeaUVScroll.hlsl",
-					  ShaderType::Sea,
-					  INPUT_ELEMENT_DESC_3D,
-					  sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/SeaUVScroll.hlsl",
+			ShaderType::Sea,
+			INPUT_ELEMENT_DESC_3D,
+			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 	}
 
 	// Unlit3Dシェーダの読み込み
@@ -661,11 +705,13 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
-		CompileShader(L"Shader/Unlit3D.hlsl",
-					  ShaderType::Unlit3D,
-					  INPUT_ELEMENT_DESC_3D,
-					  sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/Unlit3D.hlsl",
+			ShaderType::Unlit3D,
+			INPUT_ELEMENT_DESC_3D,
+			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 	}
 
 	// Debug3Dシェーダの読み込み
@@ -683,11 +729,13 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
-		CompileShader(L"Shader/Debug3D.hlsl",
-					  ShaderType::Debug3D,
-					  INPUT_ELEMENT_DESC_3D,
-					  sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/Debug3D.hlsl",
+			ShaderType::Debug3D,
+			INPUT_ELEMENT_DESC_3D,
+			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 	}
 
 	// 地形シェーダの読み込み
@@ -705,11 +753,13 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
-		CompileShader(L"Shader/Ground.hlsl",
-					  ShaderType::Ground,
-					  INPUT_ELEMENT_DESC_3D,
-					  sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/Ground.hlsl",
+			ShaderType::Ground,
+			INPUT_ELEMENT_DESC_3D,
+			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 	}
 
 	// Terrain
@@ -727,11 +777,13 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
-		CompileShader(L"Shader/Terrain.hlsl",
-					  ShaderType::Terrain,
-					  INPUT_ELEMENT_DESC_3D,
-					  sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/Terrain.hlsl",
+			ShaderType::Terrain,
+			INPUT_ELEMENT_DESC_3D,
+			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 	}
 
 	// トレイルシェーダの読み込み
@@ -769,11 +821,13 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
-		CompileShader(L"Shader/Trail.hlsl",
-					  ShaderType::Trail,
-					  INPUT_ELEMENT_DESC_TRAIL,
-					  sizeof(INPUT_ELEMENT_DESC_TRAIL) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/Trail.hlsl",
+			ShaderType::Trail,
+			INPUT_ELEMENT_DESC_TRAIL,
+			sizeof(INPUT_ELEMENT_DESC_TRAIL) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 
 		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
@@ -788,11 +842,13 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
-		CompileShader(L"Shader/FbxPartsSkin.hlsl",
-					  ShaderType::FbxPartsSkin,
-					  INPUT_ELEMENT_DESC_SKINNED,
-					  sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/FbxPartsSkin.hlsl",
+			ShaderType::FbxPartsSkin,
+			INPUT_ELEMENT_DESC_SKINNED,
+			sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 
 		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
@@ -807,19 +863,23 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
-		CompileShader(L"Shader/Box3D.hlsl",
-					  ShaderType::Box3D,
-					  INPUT_ELEMENT_DESC_SKINNED,
-					  sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-					  &cRasterizerDesc);
+		CompileShader(
+			L"Shader/Box3D.hlsl",
+			ShaderType::Box3D,
+			INPUT_ELEMENT_DESC_SKINNED,
+			sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
+			&cRasterizerDesc
+		);
 	}
 }
 
-void mtgb::DirectX11Manager::CompileShader(const std::wstring& _fileName,
-										   const ShaderType& _type,
-										   const D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,
-										   const unsigned int _layoutLength,
-										   const CD3D11_RASTERIZER_DESC* _pRasterizerDesc)
+void mtgb::DirectX11Manager::CompileShader(
+	const std::wstring& _fileName,
+	const ShaderType& _type,
+	const D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,
+	const unsigned int _layoutLength,
+	const CD3D11_RASTERIZER_DESC* _pRasterizerDesc
+)
 {
 	HLSLInclude hlslInclude{};
 	HRESULT hResult{};
@@ -829,28 +889,35 @@ void mtgb::DirectX11Manager::CompileShader(const std::wstring& _fileName,
 	ID3DBlob* pCompileVS{nullptr};
 
 	// 頂点シェーダのコンパイル
-	hResult = D3DCompileFromFile(_fileName.c_str(), // ファイルパス
-								 nullptr,			// シェーダマクロの配列
-								 &hlslInclude,		// インクルードするやつ
-								 "VS",				// エントリポイントの関数名
-								 "vs_5_0",			// シェーダのバージョン (オプションで付けるやつ)
-								 0,					// オプションフラグ1
-								 0,					// オプションフラグ2
-								 &pCompileVS,		// コンパイル済みコードへのアクセスインタフェース
-								 nullptr);			// エラーメッセージ受信用 無し
+	hResult = D3DCompileFromFile(
+		_fileName.c_str(), // ファイルパス
+		nullptr,		   // シェーダマクロの配列
+		&hlslInclude,	   // インクルードするやつ
+		"VS",			   // エントリポイントの関数名
+		"vs_5_0",		   // シェーダのバージョン (オプションで付けるやつ)
+		0,				   // オプションフラグ1
+		0,				   // オプションフラグ2
+		&pCompileVS,	   // コンパイル済みコードへのアクセスインタフェース
+		nullptr
+	); // エラーメッセージ受信用 無し
 
-	massert(SUCCEEDED(hResult) // 頂点シェーダのコンパイルに成功
-			&& "頂点シェーダのコンパイルに失敗 @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // 頂点シェーダのコンパイルに成功
+		&& "頂点シェーダのコンパイルに失敗 @DirectX11Manager::CompileShader"
+	);
 
 	// 頂点シェーダを作成し、指定タイプのバンドルに格納する
 	hResult = DirectX11Draw::pDevice_->CreateVertexShader(
 		pCompileVS->GetBufferPointer(), // コンパイルされたバッファのポインタ
 		pCompileVS->GetBufferSize(),	// バッファのサイズ
 		nullptr,						// リンケージクラス: 無し
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexShader.ReleaseAndGetAddressOf());
+		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexShader.ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult) // 頂点シェーダの作成に成功
-			&& "頂点シェーダの作成に失敗 @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // 頂点シェーダの作成に成功
+		&& "頂点シェーダの作成に失敗 @DirectX11Manager::CompileShader"
+	);
 #pragma endregion
 
 #pragma region ピクセルシェーダ
@@ -858,28 +925,35 @@ void mtgb::DirectX11Manager::CompileShader(const std::wstring& _fileName,
 	ID3DBlob* pCompilePS{nullptr};
 
 	// ピクセルシェーダのコンパイル
-	hResult = D3DCompileFromFile(_fileName.c_str(), // ファイルパス
-								 nullptr,			// シェーダマクロの配列
-								 &hlslInclude,		// インクルードするやつ
-								 "PS",				// エントリポイントの関数名
-								 "ps_5_0",			// シェーダのバージョン (オプションで付けるやつ)
-								 0,					// オプションフラグ1
-								 0,					// オプションフラグ2
-								 &pCompilePS,		// コンパイル済みコードへのアクセスインタフェース
-								 nullptr);			// エラーメッセージ受信用 無し
+	hResult = D3DCompileFromFile(
+		_fileName.c_str(), // ファイルパス
+		nullptr,		   // シェーダマクロの配列
+		&hlslInclude,	   // インクルードするやつ
+		"PS",			   // エントリポイントの関数名
+		"ps_5_0",		   // シェーダのバージョン (オプションで付けるやつ)
+		0,				   // オプションフラグ1
+		0,				   // オプションフラグ2
+		&pCompilePS,	   // コンパイル済みコードへのアクセスインタフェース
+		nullptr
+	); // エラーメッセージ受信用 無し
 
-	massert(SUCCEEDED(hResult) // ピクセルシェーダのコンパイルに成功
-			&& "ピクセルシェーダのコンパイルに失敗 @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // ピクセルシェーダのコンパイルに成功
+		&& "ピクセルシェーダのコンパイルに失敗 @DirectX11Manager::CompileShader"
+	);
 
 	// ピクセルシェーダを作成し、指定タイプのバンドルに格納する
 	hResult = DirectX11Draw::pDevice_->CreatePixelShader(
 		pCompilePS->GetBufferPointer(), // コンパイルされたバッファのポインタ
 		pCompilePS->GetBufferSize(),	// バッファのサイズ
 		nullptr,						// リンケージクラス: 無し
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pPixelShader.ReleaseAndGetAddressOf());
+		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pPixelShader.ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult) // ピクセルシェーダの作成に成功
-			&& "ピクセルシェーダの作成に失敗 @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // ピクセルシェーダの作成に成功
+		&& "ピクセルシェーダの作成に失敗 @DirectX11Manager::CompileShader"
+	);
 #pragma endregion
 
 #pragma region 頂点レイアウト
@@ -889,20 +963,26 @@ void mtgb::DirectX11Manager::CompileShader(const std::wstring& _fileName,
 		_layoutLength,					// 入力データ型配列の要素数
 		pCompileVS->GetBufferPointer(), // コンパイルされたバッファのポインタ
 		pCompileVS->GetBufferSize(),	// バッファのサイズ
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexLayout.ReleaseAndGetAddressOf());
+		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexLayout.ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult) // 頂点レイアウトの作成に成功
-			&& "頂点レイアウトの作成に失敗 @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // 頂点レイアウトの作成に成功
+		&& "頂点レイアウトの作成に失敗 @DirectX11Manager::CompileShader"
+	);
 #pragma endregion
 
 #pragma region ラスタライザ
 	// ラスタライザを作成し、指定タイプのバンドルに格納する
 	DirectX11Draw::pDevice_->CreateRasterizerState(
 		_pRasterizerDesc, // ラスタライザの設定
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pRasterizerState.ReleaseAndGetAddressOf());
+		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pRasterizerState.ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult) // ラスタライザの作成に成功
-			&& "ラスタライザの作成に失敗 @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // ラスタライザの作成に成功
+		&& "ラスタライザの作成に失敗 @DirectX11Manager::CompileShader"
+	);
 #pragma endregion
 
 	// 解放していく

@@ -44,12 +44,14 @@ mtgb::FontFormatData::~FontFormatData()
 	format.Reset();
 }
 
-mtgb::TextLayoutData::TextLayoutData(const std::wstring& _str,
-									 int _size,
-									 float _width,
-									 float _height,
-									 IDWriteTextLayout* _layout,
-									 int _handle)
+mtgb::TextLayoutData::TextLayoutData(
+	const std::wstring& _str,
+	int _size,
+	float _width,
+	float _height,
+	IDWriteTextLayout* _layout,
+	int _handle
+)
 	: str(_str)
 	, fontSize(_size)
 	, width(_width)
@@ -74,15 +76,19 @@ mtgb::DirectWrite::~DirectWrite()
 
 void mtgb::DirectWrite::Initialize()
 {
-	HRESULT hResult = DWriteCreateFactory(DWRITE_FACTORY_TYPE_SHARED,
-										  _uuidof(IDWriteFactory),
-										  reinterpret_cast<IUnknown**>(pDWriteFactory_.GetAddressOf()));
+	HRESULT hResult = DWriteCreateFactory(
+		DWRITE_FACTORY_TYPE_SHARED,
+		_uuidof(IDWriteFactory),
+		reinterpret_cast<IUnknown**>(pDWriteFactory_.GetAddressOf())
+	);
 	massert(SUCCEEDED(hResult) && "DWriteCreateFactoryに失敗 @DirectWrite::Initialize");
 }
 
-void mtgb::DirectWrite::CreateFontFormatData(const std::wstring& fileName,
-											 int fontSize,
-											 FontFormatData** ppFontFormatData)
+void mtgb::DirectWrite::CreateFontFormatData(
+	const std::wstring& fileName,
+	int fontSize,
+	FontFormatData** ppFontFormatData
+)
 {
 	IDWriteFontCollection* fontCollection = nullptr;
 	// フォントコレクション取得
@@ -104,10 +110,12 @@ void mtgb::DirectWrite::CreateFontFormatData(const std::wstring& fileName,
 
 	// IDWriteFontを取得
 	IDWriteFont* font = nullptr;
-	hResult			  = pFontFamily_->GetFirstMatchingFont(DWRITE_FONT_WEIGHT_REGULAR,
-												   DWRITE_FONT_STRETCH_NORMAL, // フォントのストレッチ。拡大縮小の度合い
-												   DWRITE_FONT_STYLE_NORMAL, // フォントスタイル
-												   &font);
+	hResult			  = pFontFamily_->GetFirstMatchingFont(
+		  DWRITE_FONT_WEIGHT_REGULAR,
+		  DWRITE_FONT_STRETCH_NORMAL, // フォントのストレッチ。拡大縮小の度合い
+		  DWRITE_FONT_STYLE_NORMAL,	  // フォントスタイル
+		  &font
+	  );
 	pDWriteFont_.Attach(font);
 	massert(SUCCEEDED(hResult) && "GetFirstMatchingFontに失敗 @DirectWrite::Initialize");
 
@@ -190,22 +198,26 @@ void mtgb::DirectWrite::SetTextAlignment(TextAlignment alignment, ComPtr<IDWrite
 	}
 }
 
-void mtgb::DirectWrite::CreateTextLayout(const std::wstring& _str,
-										 int _size,
-										 ComPtr<IDWriteTextFormat> _format,
-										 IDWriteTextLayout** _ppTextLayout)
+void mtgb::DirectWrite::CreateTextLayout(
+	const std::wstring& _str,
+	int _size,
+	ComPtr<IDWriteTextFormat> _format,
+	IDWriteTextLayout** _ppTextLayout
+)
 {
 	// テキストレイアウト作成
 	D2D1_SIZE_F rtSize = Game::System<Direct2D>().pDefRenderTarget_->GetSize();
 	CreateTextLayout(_str, rtSize.width, rtSize.height, _size, _format, _ppTextLayout);
 }
 
-void mtgb::DirectWrite::CreateTextLayout(const std::wstring& _str,
-										 float _width,
-										 float _height,
-										 int _size,
-										 ComPtr<IDWriteTextFormat> _format,
-										 IDWriteTextLayout** _ppTextLayout)
+void mtgb::DirectWrite::CreateTextLayout(
+	const std::wstring& _str,
+	float _width,
+	float _height,
+	int _size,
+	ComPtr<IDWriteTextFormat> _format,
+	IDWriteTextLayout** _ppTextLayout
+)
 {
 	static const float dip = 96.0f;
 	FLOAT dpiX, dpiY;
@@ -214,12 +226,14 @@ void mtgb::DirectWrite::CreateTextLayout(const std::wstring& _str,
 	_width	= _width / dpiX * dip;
 	_height = _height / dpiY * dip;
 
-	HRESULT hResult = pDWriteFactory_->CreateTextLayout(_str.data(),
-														static_cast<uint32_t>(_str.size()),
-														_format.Get(),
-														_width,
-														_height,
-														_ppTextLayout);
+	HRESULT hResult = pDWriteFactory_->CreateTextLayout(
+		_str.data(),
+		static_cast<uint32_t>(_str.size()),
+		_format.Get(),
+		_width,
+		_height,
+		_ppTextLayout
+	);
 
 	massert(SUCCEEDED(hResult) && "CreateTextLayoutに失敗 @DirectWrite::RegisterText");
 }
@@ -235,9 +249,8 @@ void mtgb::DirectWrite::Draw(ComPtr<IDWriteTextLayout> textLayout, float x, floa
 	D2D1_POINT_2F origin = {x, y};
 
 	Game::System<Direct2D>().pDefRenderTarget_->BeginDraw();
-	Game::System<Direct2D>().pDefRenderTarget_->DrawTextLayout(origin,
-															   textLayout.Get(),
-															   Game::System<Direct2D>().pDefD2DBrush_.Get());
+	Game::System<Direct2D>()
+		.pDefRenderTarget_->DrawTextLayout(origin, textLayout.Get(), Game::System<Direct2D>().pDefD2DBrush_.Get());
 	Game::System<Direct2D>().pDefRenderTarget_->EndDraw();
 }
 
@@ -246,13 +259,15 @@ void mtgb::DirectWrite::ImmediateDraw(const std::wstring& text, float x, float y
 	ImmediateDraw(text, pTextFormat_, pixelFontMetrics_, x, y);
 }
 
-void mtgb::DirectWrite::ImmediateDraw(const std::wstring& text,
-									  ComPtr<IDWriteTextFormat> format,
-									  const PixelFontMetrics& pixelFontMetrics,
-									  float x,
-									  float y,
-									  float width,
-									  float height)
+void mtgb::DirectWrite::ImmediateDraw(
+	const std::wstring& text,
+	ComPtr<IDWriteTextFormat> format,
+	const PixelFontMetrics& pixelFontMetrics,
+	float x,
+	float y,
+	float width,
+	float height
+)
 {
 	Game::System<Direct2D>().pDefRenderTarget_->BeginDraw();
 
@@ -261,16 +276,19 @@ void mtgb::DirectWrite::ImmediateDraw(const std::wstring& text,
 		static_cast<uint32_t>(text.length()),
 		format.Get(),
 		D2D1::RectF(x, y + pixelFontMetrics.textTopOffset, x + width, y + pixelFontMetrics.textTopOffset + height),
-		Game::System<Direct2D>().pDefD2DBrush_.Get());
+		Game::System<Direct2D>().pDefD2DBrush_.Get()
+	);
 
 	Game::System<Direct2D>().pDefRenderTarget_->EndDraw();
 }
 
-void mtgb::DirectWrite::ImmediateDraw(const std::wstring& text,
-									  ComPtr<IDWriteTextFormat> format,
-									  const PixelFontMetrics& pixelFontMetrics,
-									  float x,
-									  float y)
+void mtgb::DirectWrite::ImmediateDraw(
+	const std::wstring& text,
+	ComPtr<IDWriteTextFormat> format,
+	const PixelFontMetrics& pixelFontMetrics,
+	float x,
+	float y
+)
 {
 	D2D1_SIZE_F rtSize = Game::System<Direct2D>().pDefRenderTarget_->GetSize();
 

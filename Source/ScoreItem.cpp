@@ -32,7 +32,8 @@ ScoreItem::ScoreItem()
 				Audio::PlayOneShotFile("Sound/ItemGetSound.mp3");
 				DestroyMe();
 			}
-		});
+		}
+	);
 
 	pMeshRenderer_->meshFileName = "Model/Ruby.fbx";
 	pMeshRenderer_->SetMesh(Fbx::Load(pMeshRenderer_->meshFileName));

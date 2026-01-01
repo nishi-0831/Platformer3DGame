@@ -102,7 +102,8 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 			_pContext->PSSetSamplers(0, 1, &pSampler);
 			_pContext->PSSetShaderResources(0, 1, &pSrv);
 		},
-		6);
+		6
+	);
 }
 
 void mtgb::PlaneUVScroll::InitializeVertexBuffer(ID3D11Device* _pDevice)

@@ -30,16 +30,22 @@ void mtgb::Audio::Initialize()
 	HRESULT hResult{};
 
 	hResult = CoInitializeEx(NULL, COINIT_MULTITHREADED);
-	massert(SUCCEEDED(hResult) // COMの初期化に成功
-			&& "COMの初期化に失敗 @Audio::Initialize");
+	massert(
+		SUCCEEDED(hResult) // COMの初期化に成功
+		&& "COMの初期化に失敗 @Audio::Initialize"
+	);
 
 	hResult = XAudio2Create(&pXAudio2_);
-	massert(SUCCEEDED(hResult) // XAudio2の作成に成功
-			&& "XAudio2の作成に失敗 @Audio::Initialize");
+	massert(
+		SUCCEEDED(hResult) // XAudio2の作成に成功
+		&& "XAudio2の作成に失敗 @Audio::Initialize"
+	);
 
 	hResult = pXAudio2_->CreateMasteringVoice(&pMasteringVoice_);
-	massert(SUCCEEDED(hResult) // MasteringVoiceの作成に成功
-			&& "MasteringVoiceの作成に失敗 @Audio::Initialize");
+	massert(
+		SUCCEEDED(hResult) // MasteringVoiceの作成に成功
+		&& "MasteringVoiceの作成に失敗 @Audio::Initialize"
+	);
 }
 
 void mtgb::Audio::Update()
@@ -89,8 +95,10 @@ void mtgb::Audio::CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, const W
 	HRESULT hResult{};
 
 	hResult = pXAudio2_->CreateSourceVoice(ppSourceVoice, &_pWaveData->waveFormat);
-	massert(SUCCEEDED(hResult) // SourceVoice作成に成功
-			&& "SourceVoice作成に失敗 @Audio::SetSourceVoice");
+	massert(
+		SUCCEEDED(hResult) // SourceVoice作成に成功
+		&& "SourceVoice作成に失敗 @Audio::SetSourceVoice"
+	);
 }
 
 mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
@@ -99,13 +107,15 @@ mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
 	pAudioClips_.insert({handleCounter_, new AudioClip{}});
 
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-createfilea
-	HANDLE hFile = CreateFile(_fileName.c_str(),	 // ファイル名
-							  GENERIC_READ,			 // 読み取りますよー
-							  FILE_SHARE_READ,		 // Closeされるまで、他のアプリはファイルの読み取りだけしていいよー
-							  nullptr,				 // セキュリティ属性用の構造体ポインタを指定
-							  OPEN_EXISTING,		 // 開く - ファイルが無かったら失敗
-							  FILE_ATTRIBUTE_NORMAL, // 普通のファイル属性
-							  NULL);				 // 既存のファイルを開く場合は関係ないやつ
+	HANDLE hFile = CreateFile(
+		_fileName.c_str(),	   // ファイル名
+		GENERIC_READ,		   // 読み取りますよー
+		FILE_SHARE_READ,	   // Closeされるまで、他のアプリはファイルの読み取りだけしていいよー
+		nullptr,			   // セキュリティ属性用の構造体ポインタを指定
+		OPEN_EXISTING,		   // 開く - ファイルが無かったら失敗
+		FILE_ATTRIBUTE_NORMAL, // 普通のファイル属性
+		NULL
+	); // 既存のファイルを開く場合は関係ないやつ
 
 	if (hFile == INVALID_HANDLE_VALUE)
 	{
@@ -169,8 +179,10 @@ void mtgb::Audio::PlayOneShotBuffer(byte* pBuffer, const size_t _bufferSize)
 	HRESULT hResult{};
 	hResult = oneShot->pSourceVoice->SubmitSourceBuffer(&BUFFER);
 
-	massert(SUCCEEDED(hResult) // SourceBufferのセットに成功
-			&& "SourceBufferのセットに失敗 @Audio::PlayOneShotBuffer");
+	massert(
+		SUCCEEDED(hResult) // SourceBufferのセットに成功
+		&& "SourceBufferのセットに失敗 @Audio::PlayOneShotBuffer"
+	);
 
 	oneShot->pSourceVoice->Start(); // 再生
 }
@@ -178,13 +190,15 @@ void mtgb::Audio::PlayOneShotBuffer(byte* pBuffer, const size_t _bufferSize)
 void mtgb::Audio::PlayOneShotFile(const std::string& _fileName)
 {
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-createfilea
-	HANDLE hFile = CreateFile(_fileName.c_str(),	 // ファイル名
-							  GENERIC_READ,			 // 読み取りますよー
-							  FILE_SHARE_READ,		 // Closeされるまで、他のアプリはファイルの読み取りだけしていいよー
-							  nullptr,				 // セキュリティ属性用の構造体ポインタを指定
-							  OPEN_EXISTING,		 // 開く - ファイルが無かったら失敗
-							  FILE_ATTRIBUTE_NORMAL, // 普通のファイル属性
-							  NULL);				 // 既存のファイルを開く場合は関係ないやつ
+	HANDLE hFile = CreateFile(
+		_fileName.c_str(),	   // ファイル名
+		GENERIC_READ,		   // 読み取りますよー
+		FILE_SHARE_READ,	   // Closeされるまで、他のアプリはファイルの読み取りだけしていいよー
+		nullptr,			   // セキュリティ属性用の構造体ポインタを指定
+		OPEN_EXISTING,		   // 開く - ファイルが無かったら失敗
+		FILE_ATTRIBUTE_NORMAL, // 普通のファイル属性
+		NULL
+	); // 既存のファイルを開く場合は関係ないやつ
 
 	if (hFile == INVALID_HANDLE_VALUE)
 	{

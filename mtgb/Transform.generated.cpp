@@ -18,7 +18,8 @@ namespace mtgb
 					TypeRegistry::Instance().CallFunc(&_target->position, "position");
 					TypeRegistry::Instance().CallFunc(&_target->scale, "scale");
 					TypeRegistry::Instance().CallFunc(&_target->rotate, "rotate");
-				});
+				}
+			);
 			MTImGui::Instance().RegisterComponentViewer<Transform>();
 		}
 	};

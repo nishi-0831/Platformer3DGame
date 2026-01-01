@@ -107,7 +107,12 @@ namespace mtgb
 	template <typename ComponentT, typename DerivedT, bool IsSingleton>
 	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::Initialize()
 	{
-		RegisterCurrentScene([&, this] { Release(); });
+		RegisterCurrentScene(
+			[&, this]
+			{
+				Release();
+			}
+		);
 		Start();
 	}
 
@@ -153,8 +158,10 @@ namespace mtgb
 	}
 
 	template <typename ComponentT, typename DerivedT, bool IsSingleton>
-	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::Deserialize(EntityId _entityId,
-																			  const nlohmann::json& _json)
+	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::Deserialize(
+		EntityId _entityId,
+		const nlohmann::json& _json
+	)
 	{
 		ComponentT& component = Get(_entityId);
 		JsonConverter::template Deserialize<ComponentT>(component, _json.at(ComponentT::TypeName()));
@@ -215,9 +222,8 @@ namespace mtgb
 
 		// ƒCƒ“ƒfƒbƒNƒX‚ğ‹L˜^
 		size_t poolIndex = pool_.size() - 1;
-		Game::System<ComponentRegistry>().RegisterComponentIndex(_entityId,
-																 std::type_index(typeid(ComponentT)),
-																 poolIndex);
+		Game::System<ComponentRegistry>()
+			.RegisterComponentIndex(_entityId, std::type_index(typeid(ComponentT)), poolIndex);
 
 		// EntityId‚ÉŠ„‚è“–‚Ä‚ç‚ê‚½Component‚Æ‚µ‚Ä“o˜^
 		Game::System<ComponentRegistry>().RegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
@@ -241,8 +247,10 @@ namespace mtgb
 		// ‰½‚às‚í‚È‚¢
 	}
 	template <typename ComponentT, typename DerivedT, bool IsSingleton>
-	inline bool ComponentPool<ComponentT, DerivedT, IsSingleton>::TryGet(ComponentT*& _pComponent,
-																		 const EntityId _entityId)
+	inline bool ComponentPool<ComponentT, DerivedT, IsSingleton>::TryGet(
+		ComponentT*& _pComponent,
+		const EntityId _entityId
+	)
 	{
 		for (int i = 0; i < poolId_.size(); i++)
 		{
@@ -257,8 +265,10 @@ namespace mtgb
 	}
 
 	template <typename ComponentT, typename DerivedT, bool IsSingleton>
-	inline bool ComponentPool<ComponentT, DerivedT, IsSingleton>::TryGet(std::vector<ComponentT*>* _pComponents,
-																		 const EntityId _entityId)
+	inline bool ComponentPool<ComponentT, DerivedT, IsSingleton>::TryGet(
+		std::vector<ComponentT*>* _pComponents,
+		const EntityId _entityId
+	)
 	{
 		_pComponents->clear();
 		for (int i = 0; i < poolId_.size(); i++)
@@ -285,8 +295,10 @@ namespace mtgb
 					poolId_[i] = INVALID_ENTITY;
 
 					// “o˜^‰ğœ
-					Game::System<ComponentRegistry>().UnRegisterComponent(_entityId,
-																		  std::type_index(typeid(ComponentT)));
+					Game::System<ComponentRegistry>().UnRegisterComponent(
+						_entityId,
+						std::type_index(typeid(ComponentT))
+					);
 					return; // Œ©‚Â‚©‚Á‚½‚È‚ç–³ŒøId‚É‚µ‚Ä‰ñ‹A
 				}
 			}

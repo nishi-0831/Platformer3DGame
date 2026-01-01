@@ -26,22 +26,28 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 	// MEMO: MTAに属するようにする
 	hResult = CoInitializeEx(NULL, COINIT_MULTITHREADED);
 
-	massert(SUCCEEDED(hResult) // CoInitializeExに成功している
-			&& "CoInitializeExできなかった @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // CoInitializeExに成功している
+		&& "CoInitializeExできなかった @Texture2D::Load"
+	);
 
 	IWICImagingFactory* pFactory{nullptr};
 	IWICBitmapDecoder* pDecoder{nullptr};
 	IWICBitmapFrameDecode* pFrame{nullptr};
 	IWICFormatConverter* pFormatConverter{nullptr};
 
-	hResult = CoCreateInstance(CLSID_WICImagingFactory,
-							   NULL,
-							   CLSCTX_INPROC_SERVER,
-							   IID_IWICImagingFactory,
-							   reinterpret_cast<void**>(&pFactory));
+	hResult = CoCreateInstance(
+		CLSID_WICImagingFactory,
+		NULL,
+		CLSCTX_INPROC_SERVER,
+		IID_IWICImagingFactory,
+		reinterpret_cast<void**>(&pFactory)
+	);
 
-	massert(SUCCEEDED(hResult) // IWICImagingFactoryの作成に成功
-			&& "CoCreateInstanceに失敗 @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // IWICImagingFactoryの作成に成功
+		&& "CoCreateInstanceに失敗 @Texture2D::Load"
+	);
 
 	// CreateDecoderFromFilenameで対応している wchar へ変換
 	// std::wstring fileNameWStr{ _fileName.begin(), _fileName.end() };
@@ -49,45 +55,58 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 	//  REF:
 	//  https://learn.microsoft.com/ja-jp/windows/win32/api/wincodec/nf-wincodec-iwicimagingfactory-createdecoderfromfilename
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/wincodec/ne-wincodec-wicdecodeoptions
-	hResult =
-		pFactory->CreateDecoderFromFilename(_fileName.c_str(),				// オブジェクトのファイル名
-											nullptr,						// 優先したいベンダ: 指定無し
-											GENERIC_READ,					// オブジェクトへ読み取りアクセス
-											WICDecodeMetadataCacheOnDemand, // 必要に応じてメタデータをキャッシュする
-											&pDecoder);						// デコーダを渡す
+	hResult = pFactory->CreateDecoderFromFilename(
+		_fileName.c_str(),				// オブジェクトのファイル名
+		nullptr,						// 優先したいベンダ: 指定無し
+		GENERIC_READ,					// オブジェクトへ読み取りアクセス
+		WICDecodeMetadataCacheOnDemand, // 必要に応じてメタデータをキャッシュする
+		&pDecoder
+	); // デコーダを渡す
 
-	massert(SUCCEEDED(hResult) // ファイルのデコードに成功
-			&& "pFactory->CreateDecoderFromFilenameに失敗 @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // ファイルのデコードに成功
+		&& "pFactory->CreateDecoderFromFilenameに失敗 @Texture2D::Load"
+	);
 
 	// 0番フレームを取得
 	// MEMO: GIFのような複数フレームある場合にindexたくさん指定できる
 	hResult = pDecoder->GetFrame(0, &pFrame);
 
-	massert(SUCCEEDED(hResult) // 0番フレームを取得できている
-			&& "0番フレームの取得に失敗 @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // 0番フレームを取得できている
+		&& "0番フレームの取得に失敗 @Texture2D::Load"
+	);
 
 	hResult = pFactory->CreateFormatConverter(&pFormatConverter);
 
-	massert(SUCCEEDED(hResult) // フォーマットコンバータの作成に成功
-			&& "pFactory->CreateFormatConverterに失敗 @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // フォーマットコンバータの作成に成功
+		&& "pFactory->CreateFormatConverterに失敗 @Texture2D::Load"
+	);
 
 	// TODO: 変換のディザを理解する
-	hResult = pFormatConverter->Initialize(pFrame,						   // 変換したいやつ
-										   GUID_WICPixelFormat32bppRGBA,   // 変換先のピクセル形式
-										   WICBitmapDitherTypeNone,		   // 使用ディザ(?)アルゴリズム
-										   nullptr,						   // 使用パレット
-										   1.0,							   // 使用アファ閾値
-										   WICBitmapPaletteTypeMedianCut); // 中央値カットアルゴリズム(?)
+	hResult = pFormatConverter->Initialize(
+		pFrame,						  // 変換したいやつ
+		GUID_WICPixelFormat32bppRGBA, // 変換先のピクセル形式
+		WICBitmapDitherTypeNone,	  // 使用ディザ(?)アルゴリズム
+		nullptr,					  // 使用パレット
+		1.0,						  // 使用アファ閾値
+		WICBitmapPaletteTypeMedianCut
+	); // 中央値カットアルゴリズム(?)
 
-	massert(SUCCEEDED(hResult) // フォーマットコンバータの初期化に成功している
-			&& "フォーマットコンバータの初期化に失敗 @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // フォーマットコンバータの初期化に成功している
+		&& "フォーマットコンバータの初期化に失敗 @Texture2D::Load"
+	);
 
 	UINT imageWidth{};	// 画像の横幅
 	UINT imageHeight{}; // 画像の縦幅
 	hResult = pFormatConverter->GetSize(&imageWidth, &imageHeight);
 
-	massert(SUCCEEDED(hResult) // 画像サイズの取得に成功している
-			&& "フォーマットコンバータから画像サイズの取得に失敗 @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // 画像サイズの取得に成功している
+		&& "フォーマットコンバータから画像サイズの取得に失敗 @Texture2D::Load"
+	);
 
 	// 画像のサイズをVector2Intに変換してメンバ変数に入れておく
 	size_ = Vector2Int{static_cast<int>(imageWidth), static_cast<int>(imageHeight)};
@@ -130,12 +149,16 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 		};
 
 	// 2Dテクスチャを作成する
-	hResult = DirectX11Draw::pDevice_->CreateTexture2D(&TEXTURE2D_DESC, // テクスチャの設定
-													   nullptr,			// サブリソースのポインタ
-													   &pTexture);		// 作成したテクスチャのポインタ渡し
+	hResult = DirectX11Draw::pDevice_->CreateTexture2D(
+		&TEXTURE2D_DESC, // テクスチャの設定
+		nullptr,		 // サブリソースのポインタ
+		&pTexture
+	); // 作成したテクスチャのポインタ渡し
 
-	massert(SUCCEEDED(hResult) // 2Dテクスチャの作成に成功
-			&& "2Dテクスチャの作成に失敗 @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // 2Dテクスチャの作成に成功
+		&& "2Dテクスチャの作成に失敗 @Texture2D::Load"
+	);
 
 	D3D11_MAPPED_SUBRESOURCE hMappedSubresource{};
 
@@ -152,27 +175,35 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 
 	/*DirectX11Draw::pContext_->Unmap(pTexture, 0U);*/
 
-	const D3D11_SHADER_RESOURCE_VIEW_DESC SHADER_RESOURCE_VIEW_DESC{.Format		   = DXGI_FORMAT_R8G8B8A8_UNORM,
-																	.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D,
-																	.Texture2D{
-																		.MostDetailedMip = 0U,
-																		.MipLevels		 = static_cast<UINT>(mipLevels),
-																	}};
+	const D3D11_SHADER_RESOURCE_VIEW_DESC SHADER_RESOURCE_VIEW_DESC{
+		.Format		   = DXGI_FORMAT_R8G8B8A8_UNORM,
+		.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D,
+		.Texture2D{
+			.MostDetailedMip = 0U,
+			.MipLevels		 = static_cast<UINT>(mipLevels),
+		}
+	};
 
-	hResult = DirectX11Draw::pDevice_->CreateShaderResourceView(pTexture,
-																&SHADER_RESOURCE_VIEW_DESC,
-																pShaderResourceView_.ReleaseAndGetAddressOf());
+	hResult = DirectX11Draw::pDevice_->CreateShaderResourceView(
+		pTexture,
+		&SHADER_RESOURCE_VIEW_DESC,
+		pShaderResourceView_.ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult) // テクスチャ用シェーダリソースビューの作成に成功
-			&& "テクスチャ用シェーダリソースビューの作成に失敗  @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // テクスチャ用シェーダリソースビューの作成に成功
+		&& "テクスチャ用シェーダリソースビューの作成に失敗  @Texture2D::Load"
+	);
 
 	// CPU側のデータをGPUへ書き込む
-	DirectX11Draw::pContext_->UpdateSubresource(pTexture,		  // リソース
-												0,				  // サブリソースインデックス（最高解像度ミップ）
-												nullptr,		  // 更新範囲（全体）
-												pixelData.data(), // ピクセルデータ
-												stride,			  // 行ピッチ
-												0);
+	DirectX11Draw::pContext_->UpdateSubresource(
+		pTexture,		  // リソース
+		0,				  // サブリソースインデックス（最高解像度ミップ）
+		nullptr,		  // 更新範囲（全体）
+		pixelData.data(), // ピクセルデータ
+		stride,			  // 行ピッチ
+		0
+	);
 
 	// ミップマップを生成
 	DirectX11Draw::pContext_->GenerateMips(pShaderResourceView_.Get());

@@ -32,24 +32,38 @@ namespace mtgb
 		static const bool GetMouseDown(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
 		static const bool GetMouseUp(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
 		static const bool GetGamePad(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetGamePadDown(const PadCode _padButtonCode,
-										 WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetGamePadUp(const PadCode _padButtonCode,
-									   WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetGamePad(const FlightStickCode _flightStickCode,
-									 WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetGamePadDown(const FlightStickCode _flightStickCode,
-										 WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetGamePadUp(const FlightStickCode _flightStickCode,
-									   WindowContext _context = mtgb::WindowContext::First);
+		static const bool GetGamePadDown(
+			const PadCode _padButtonCode,
+			WindowContext _context = mtgb::WindowContext::First
+		);
+		static const bool GetGamePadUp(
+			const PadCode _padButtonCode,
+			WindowContext _context = mtgb::WindowContext::First
+		);
+		static const bool GetGamePad(
+			const FlightStickCode _flightStickCode,
+			WindowContext _context = mtgb::WindowContext::First
+		);
+		static const bool GetGamePadDown(
+			const FlightStickCode _flightStickCode,
+			WindowContext _context = mtgb::WindowContext::First
+		);
+		static const bool GetGamePadUp(
+			const FlightStickCode _flightStickCode,
+			WindowContext _context = mtgb::WindowContext::First
+		);
 		// static inline const size_t* GetActiveGamePadID() { return activeGamepadID.data(); }
 
-		static const float GetTrigger(FlightStickAxisCode _flightStickCode,
-									  WindowContext _context = mtgb::WindowContext::First);
+		static const float GetTrigger(
+			FlightStickAxisCode _flightStickCode,
+			WindowContext _context = mtgb::WindowContext::First
+		);
 		static const float GetTrigger(PadAxisCode _padCode, WindowContext _context = mtgb::WindowContext::First);
-		static const float GetAxis(Axis _axis,
-								   StickType _stickType,
-								   WindowContext _context = mtgb::WindowContext::First);
+		static const float GetAxis(
+			Axis _axis,
+			StickType _stickType,
+			WindowContext _context = mtgb::WindowContext::First
+		);
 		static const Vector2F GetAxis(StickType _stickType, WindowContext _context = mtgb::WindowContext::First);
 
 		static const Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::First);
@@ -62,16 +76,20 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_keyCode">キーコード</param>
 		/// <returns>0: 差無し, 1: 差有り</returns>
-		static inline const int KeyXOR(const KeyCode _keyCode,
-									   const std::bitset<KEY_COUNT>& _keyStateCurrent,
-									   const std::bitset<KEY_COUNT>& _keyStatePrevious)
+		static inline const int KeyXOR(
+			const KeyCode _keyCode,
+			const std::bitset<KEY_COUNT>& _keyStateCurrent,
+			const std::bitset<KEY_COUNT>& _keyStatePrevious
+		)
 		{
 			return _keyStateCurrent[Index(_keyCode)] ^ _keyStatePrevious[Index(_keyCode)];
 		}
 
-		static inline const int MouseXOR(const MouseCode _mouseCode,
-										 const _DIMOUSESTATE& _mouseStateCurrent,
-										 const _DIMOUSESTATE& _mouseStatePrevious)
+		static inline const int MouseXOR(
+			const MouseCode _mouseCode,
+			const _DIMOUSESTATE& _mouseStateCurrent,
+			const _DIMOUSESTATE& _mouseStatePrevious
+		)
 		{
 			return _mouseStateCurrent.rgbButtons[Index(_mouseCode)] ^ _mouseStatePrevious.rgbButtons[Index(_mouseCode)];
 		}
@@ -108,9 +126,11 @@ namespace mtgb
 		/// <returns></returns>
 		static const InputData& GetInput(WindowContext _context);
 
-		static inline const int PadXOR(const PadCode _padCode,
-									   const DIJOYSTATE& _padStateCurrent,
-									   const DIJOYSTATE& _padStatePrevious)
+		static inline const int PadXOR(
+			const PadCode _padCode,
+			const DIJOYSTATE& _padStateCurrent,
+			const DIJOYSTATE& _padStatePrevious
+		)
 		{
 			return _padStateCurrent.rgbButtons[Index(_padCode)] ^ _padStatePrevious.rgbButtons[Index(_padCode)];
 		}

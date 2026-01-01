@@ -13,7 +13,10 @@ class CommandHandlerRegistry
 	void Register(std::function<void(CommandT&)> _execute)
 	{
 		const std::type_index key = typeid(CommandT);
-		entries_[key] = Entry{[func = std::move(_execute)](Command& _cmd) { func(static_cast<CommandT&>(_cmd)); }};
+		entries_[key]			  = Entry{[func = std::move(_execute)](Command& _cmd)
+							  {
+								  func(static_cast<CommandT&>(_cmd));
+							  }};
 	}
 
 	bool Execute(Command& _cmd) const

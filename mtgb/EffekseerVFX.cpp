@@ -243,8 +243,10 @@ namespace mtgb
 		effectList_.emplace(_effectName, std::make_shared<EffectData>(managerRef_, _filePath));
 	}
 
-	std::weak_ptr<EffectParameters> EffectManager::Play(std::string_view _effectName,
-														const EffectParameters& _effectParameters)
+	std::weak_ptr<EffectParameters> EffectManager::Play(
+		std::string_view _effectName,
+		const EffectParameters& _effectParameters
+	)
 	{
 		if (auto iter = effectList_.find(_effectName.data()); iter != effectList_.end())
 		{

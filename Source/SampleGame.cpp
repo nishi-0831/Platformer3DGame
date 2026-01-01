@@ -43,12 +43,13 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 
 	Game::Set<WindowContextResourceManager>(SystemUpdateType::DontCallMe);
 	Game::System<WindowContextResourceManager>()
-		.RegisterResourceTypes<WindowResource,
-							   DXGIResource,
-							   Direct3DResource,
-							   Direct2DResource,
-							   InputResource,
-							   CameraResource>();
+		.RegisterResourceTypes<
+			WindowResource,
+			DXGIResource,
+			Direct3DResource,
+			Direct2DResource,
+			InputResource,
+			CameraResource>();
 
 	Game::Set<SingleWindow>(SystemUpdateType::Frame);
 	Game::Set<CameraSystem>(SystemUpdateType::Frame);

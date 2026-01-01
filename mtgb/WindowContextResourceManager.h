@@ -66,8 +66,10 @@ namespace mtgb
 		/// <param name="context1">デフォルトでFirst</param>
 		/// <param name="context2">デフォルトでSecond</param>
 		template <typename ResourceT>
-		void SwapResource(WindowContext context1 = WindowContext::First,
-						  WindowContext context2 = WindowContext::Second);
+		void SwapResource(
+			WindowContext context1 = WindowContext::First,
+			WindowContext context2 = WindowContext::Second
+		);
 
 		/// <summary>
 		/// リソースを取得する
@@ -80,8 +82,10 @@ namespace mtgb
 			auto itr = collectionMap_.find(windowContext);
 			assert(itr != collectionMap_.end() && "指定されたWindowContextのリソースが見つかりません");
 
-			static_assert(std::is_base_of_v<WindowContextResource, ResourceT>,
-						  "WindowContextResourceを継承していないクラスのインスタンスは取得できません。");
+			static_assert(
+				std::is_base_of_v<WindowContextResource, ResourceT>,
+				"WindowContextResourceを継承していないクラスのインスタンスは取得できません。"
+			);
 
 			return itr->second.Get<ResourceT>();
 		}
@@ -104,8 +108,10 @@ namespace mtgb
 			static constexpr bool allAreBaseOfWindowContextResource =
 				(std::is_base_of_v<WindowContextResource, Args> && ...);
 
-			static_assert(allAreBaseOfWindowContextResource,
-						  "Args...はWindowContextResourceの派生型である必要があります");
+			static_assert(
+				allAreBaseOfWindowContextResource,
+				"Args...はWindowContextResourceの派生型である必要があります"
+			);
 
 			(insertionOrder_.push_back(typeid(Args)), ...);
 			(RegisterFactory<Args>(), ...);
@@ -115,7 +121,9 @@ namespace mtgb
 	template <typename ResourceT> inline void WindowContextResourceManager::RegisterFactory()
 	{
 		factoryMap_[typeid(ResourceT)] = [](WindowContext _context) -> WindowContextResource*
-		{ return new ResourceT(_context); };
+		{
+			return new ResourceT(_context);
+		};
 	}
 
 	template <typename ResourceT>

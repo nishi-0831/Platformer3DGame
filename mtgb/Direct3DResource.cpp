@@ -23,9 +23,11 @@ mtgb::Direct3DResource::Direct3DResource(WindowContext _windowContext)
 	dx11Manager.CreateViewport(SCREEN_SIZE, viewPort_);
 
 	// 深度ステンシルと深度ステンシルビューを作成
-	dx11Manager.CreateDepthStencilAndDepthStencilView(SCREEN_SIZE,
-													  pDepthStencil_.ReleaseAndGetAddressOf(),
-													  pDepthStencilView_.ReleaseAndGetAddressOf());
+	dx11Manager.CreateDepthStencilAndDepthStencilView(
+		SCREEN_SIZE,
+		pDepthStencil_.ReleaseAndGetAddressOf(),
+		pDepthStencilView_.ReleaseAndGetAddressOf()
+	);
 }
 
 mtgb::Direct3DResource::~Direct3DResource()
@@ -61,9 +63,11 @@ void mtgb::Direct3DResource::OnResize(UINT _width, UINT _height)
 	dx11Manager.CreateViewport(SCREEN_SIZE, viewPort_);
 
 	// 深度ステンシルと深度ステンシルビューを作成
-	dx11Manager.CreateDepthStencilAndDepthStencilView(SCREEN_SIZE,
-													  pDepthStencil_.ReleaseAndGetAddressOf(),
-													  pDepthStencilView_.ReleaseAndGetAddressOf());
+	dx11Manager.CreateDepthStencilAndDepthStencilView(
+		SCREEN_SIZE,
+		pDepthStencil_.ReleaseAndGetAddressOf(),
+		pDepthStencilView_.ReleaseAndGetAddressOf()
+	);
 }
 
 void mtgb::Direct3DResource::Release()

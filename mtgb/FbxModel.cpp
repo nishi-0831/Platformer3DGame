@@ -20,8 +20,10 @@ mtgb::FbxModel::~FbxModel()
 
 void mtgb::FbxModel::Load(const std::string& _fileName)
 {
-	massert(pFbxScene_ == nullptr // ‚Ü‚¾“Ç‚İ‚Ü‚ê‚Ä‚¢‚È‚¢
-			&& "Šù‚ÉFbxModel‚Í“Ç‚İ‚Ü‚ê‚Ä‚¢‚é‚æI @FbxModel::Load");
+	massert(
+		pFbxScene_ == nullptr // ‚Ü‚¾“Ç‚İ‚Ü‚ê‚Ä‚¢‚È‚¢
+		&& "Šù‚ÉFbxModel‚Í“Ç‚İ‚Ü‚ê‚Ä‚¢‚é‚æI @FbxModel::Load"
+	);
 
 	FbxManager* pFbxManager{Game::System<Fbx>().GetFbxManager()};
 

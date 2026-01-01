@@ -26,8 +26,9 @@ template <typename T> void TypeRegistry::RegisterType()
 			{
 				registerInstance = const_cast<T*>(std::any_cast<const T*>(ptr));
 			}
-			massert(registerInstance != nullptr &&
-					"instance‚Ìany_cast‚ÉŽ¸”s:ptr‚ªnullptr‚Å‚· @TypeRegistry::RegisterType");
+			massert(
+				registerInstance != nullptr && "instance‚Ìany_cast‚ÉŽ¸”s:ptr‚ªnullptr‚Å‚· @TypeRegistry::RegisterType"
+			);
 			constexpr auto type = refl::reflect<Type>();
 
 			bool showFuncExecuted = false;
@@ -49,10 +50,12 @@ template <typename T> void TypeRegistry::RegisterType()
 								 result			  = attrs(registerInstance, name);
 								 showFuncExecuted = true;
 							 }
-						 }()),
+						 }()
+					 ),
 					 ...);
 				},
-				type.attributes);
+				type.attributes
+			);
 
 			if (!showFuncExecuted)
 			{
@@ -109,7 +112,8 @@ template <typename T> void TypeRegistry::RegisterType()
 							}
 						}
 						return result;
-					});
+					}
+				);
 				ImGui::PopID();
 				return result;
 			}
@@ -155,10 +159,12 @@ template <typename T> bool TypeRegistry::ShowMemberWithReflection(T _memberValue
 							 }
 							 showFuncExecuted = true;
 						 }
-					 }()),
+					 }()
+				 ),
 				 ...);
 			},
-			memberType.attributes);
+			memberType.attributes
+		);
 
 		if (showFuncExecuted)
 		{
@@ -201,7 +207,8 @@ Command* TypeRegistry::CheckCustomAttrs(std::tuple<Args...>& _attrs, T _valPtr, 
 					 {
 						 command = attr(_valPtr, _name);
 					 }
-				 }()),
+				 }()
+			 ),
 			 ...);
 		},
 		_attrs
@@ -233,9 +240,11 @@ template <typename T> void TypeRegistry::CheckProxyAttrs()
 								 showFunctions_[typeid(Proxy)](std::any(&proxy), name);
 								 });*/
 						 }
-					 }()),
+					 }()
+				 ),
 				 ...);
 			},
-			typeDesc.attributes);
+			typeDesc.attributes
+		);
 	}
 }

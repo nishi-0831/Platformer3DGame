@@ -58,7 +58,8 @@ void TimeLimit::Draw() const
 			Vector2F{0.0f, 0.0f},
 			72,
 			TextAlignment::topLeft,
-			UIParams{.depth = 0, .layerFlag = mtbit::operator|(GameObjectLayer::A, GameObjectLayer::B)});
+			UIParams{.depth = 0, .layerFlag = mtbit::operator|(GameObjectLayer::A, GameObjectLayer::B)}
+		);
 	}
 }
 

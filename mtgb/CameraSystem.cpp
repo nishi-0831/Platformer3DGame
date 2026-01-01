@@ -91,16 +91,18 @@ void mtgb::CameraSystem::UnregisterDrawCamera(const Transform* pCameraTransform_
 mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, const WorldToScreenData& _data) const
 {
 	// Vector3 screenPos = DirectX::XMVector3Project(
-	return DirectX::XMVector3Project(_pos,
-									 _data.viewport.TopLeftX,
-									 _data.viewport.TopLeftY,
-									 _data.viewport.Width,
-									 _data.viewport.Height,
-									 _data.viewport.MinDepth,
-									 _data.viewport.MaxDepth,
-									 _data.projMat,
-									 _data.viewMat,
-									 DirectX::XMMatrixIdentity());
+	return DirectX::XMVector3Project(
+		_pos,
+		_data.viewport.TopLeftX,
+		_data.viewport.TopLeftY,
+		_data.viewport.Width,
+		_data.viewport.Height,
+		_data.viewport.MinDepth,
+		_data.viewport.MaxDepth,
+		_data.projMat,
+		_data.viewMat,
+		DirectX::XMMatrixIdentity()
+	);
 
 	/*if (screenPos.z < 0.0f || screenPos.z > 1.0f)
 		return Vector2F(-1, -1);
@@ -116,16 +118,18 @@ mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, WindowContex
 	GetProjMatrix(&projMat);
 	GetViewMatrix(&viewMat, hCamera);
 
-	return DirectX::XMVector3Project(_pos,
-									 viewport.TopLeftX,
-									 viewport.TopLeftY,
-									 viewport.Width,
-									 viewport.Height,
-									 viewport.MinDepth,
-									 viewport.MaxDepth,
-									 projMat,
-									 viewMat,
-									 DirectX::XMMatrixIdentity());
+	return DirectX::XMVector3Project(
+		_pos,
+		viewport.TopLeftX,
+		viewport.TopLeftY,
+		viewport.Width,
+		viewport.Height,
+		viewport.MinDepth,
+		viewport.MaxDepth,
+		projMat,
+		viewMat,
+		DirectX::XMMatrixIdentity()
+	);
 
 	// return Vector2F(screenPos.x, screenPos.y) * Game::System<Screen>().GetSizeRatio();
 }
@@ -183,10 +187,12 @@ void mtgb::CameraSystem::GetProjMatrix(Matrix4x4* _pProj) const
 
 	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
-	*_pProj = XMMatrixPerspectiveFovLH(XMConvertToRadians(fov_),
-									   static_cast<float>(SCREEN_SIZE.x) / static_cast<float>(SCREEN_SIZE.y),
-									   near_,
-									   far_);
+	*_pProj = XMMatrixPerspectiveFovLH(
+		XMConvertToRadians(fov_),
+		static_cast<float>(SCREEN_SIZE.x) / static_cast<float>(SCREEN_SIZE.y),
+		near_,
+		far_
+	);
 }
 
 void mtgb::CameraSystem::GetPosition(Vector4* _pPosition) const

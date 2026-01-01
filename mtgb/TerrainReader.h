@@ -319,7 +319,8 @@ namespace mtgb
 
 				_pConstantBuffer->matWVP		 = DirectX::XMMatrixTranspose(world * view * proj);
 				_pConstantBuffer->matNormalTrans = DirectX::XMMatrixTranspose(
-					pTransform->matrixRotate_ * DirectX::XMMatrixInverse(nullptr, pTransform->matrixScale_));
+					pTransform->matrixRotate_ * DirectX::XMMatrixInverse(nullptr, pTransform->matrixScale_)
+				);
 				_pConstantBuffer->lightDir = DirectX::XMFLOAT4(0.0f, -1.0f, 0.0f, 0.0f);
 			},
 			[&](ID3D11DeviceContext* _pContext)
@@ -327,7 +328,8 @@ namespace mtgb
 				_pContext->PSSetShaderResources(0, 1, &pSRV);
 				_pContext->PSSetSamplers(0, 1, &pSampler);
 			},
-			static_cast<int>(indices_.size()));
+			static_cast<int>(indices_.size())
+		);
 
 		/*for (int z = 0; z < cellNum; z++)
 		{
@@ -450,10 +452,12 @@ namespace mtgb
 	template <typename StageDataBit>
 	inline void TerrainReader<StageDataBit>::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	{
-		D3D11_BUFFER_DESC bufferDesc = {.ByteWidth		= static_cast<UINT>(sizeof(DWORD) * indices_.size()),
-										.Usage			= D3D11_USAGE_DEFAULT,
-										.BindFlags		= D3D11_BIND_INDEX_BUFFER,
-										.CPUAccessFlags = 0};
+		D3D11_BUFFER_DESC bufferDesc = {
+			.ByteWidth		= static_cast<UINT>(sizeof(DWORD) * indices_.size()),
+			.Usage			= D3D11_USAGE_DEFAULT,
+			.BindFlags		= D3D11_BIND_INDEX_BUFFER,
+			.CPUAccessFlags = 0
+		};
 
 		D3D11_SUBRESOURCE_DATA initData = {.pSysMem = indices_.data()};
 
@@ -465,10 +469,12 @@ namespace mtgb
 	template <typename StageDataBit>
 	inline void TerrainReader<StageDataBit>::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	{
-		D3D11_BUFFER_DESC bufferDesc = {.ByteWidth		= sizeof(TerrainConstantBuffer),
-										.Usage			= D3D11_USAGE_DYNAMIC,
-										.BindFlags		= D3D11_BIND_CONSTANT_BUFFER,
-										.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE};
+		D3D11_BUFFER_DESC bufferDesc = {
+			.ByteWidth		= sizeof(TerrainConstantBuffer),
+			.Usage			= D3D11_USAGE_DYNAMIC,
+			.BindFlags		= D3D11_BIND_CONSTANT_BUFFER,
+			.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE
+		};
 
 		HRESULT hResult = _pDevice->CreateBuffer(&bufferDesc, nullptr, pConstantBuffer_.ReleaseAndGetAddressOf());
 
@@ -563,9 +569,8 @@ namespace mtgb
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center = {(stageMin + stageMax) / 2.0f,
-							  wallHeight + (wallThickness / 2.0f),
-							  (stageMin + stageMax) / 2.0f};
+			Vector3 center =
+				{(stageMin + stageMax) / 2.0f, wallHeight + (wallThickness / 2.0f), (stageMin + stageMax) / 2.0f};
 
 			Vector3 extents = {(stageMax - stageMin) / 2.0f, wallThickness / 2.0f, (stageMax - stageMin) / 2.0f};
 

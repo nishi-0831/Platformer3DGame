@@ -21,10 +21,12 @@ namespace mtgb
 		/// <param name="_memento">
 		/// nullの場合は_entityIdから既存のコンポーネントを取得、なければ新規作成しMementoに保存する</param> <param
 		/// name="_pComponentFactory"> 参照として保持するので、コマンドより長く生存する必要あり </param>
-		AddComponentCommand(EntityId _entityId,
-							const std::type_index& _typeIdx,
-							IComponentMemento* _memento,
-							const ComponentFactory& _pComponentFactory);
+		AddComponentCommand(
+			EntityId _entityId,
+			const std::type_index& _typeIdx,
+			IComponentMemento* _memento,
+			const ComponentFactory& _pComponentFactory
+		);
 		~AddComponentCommand() = default;
 		void Execute() override;
 		void Undo() override;

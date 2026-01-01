@@ -52,7 +52,8 @@ void Goal::Start()
 			{
 				OnClear();
 			}
-		});
+		}
+	);
 
 	Matrix4x4 mat;
 	pTransform_->GenerateWorldMatrix(&mat);
@@ -76,12 +77,14 @@ void Goal::OnClear()
 {
 	Audio::PlayOneShotFile("Sound/ClearScene.mp3");
 
-	Timer::AddAram(transitionSceneDelay_,
-				   []
-				   {
-					   Game::System<StageManger>().ClearCurrentStage();
-					   Game::System<SceneSystem>().Move<ResultScene>();
-				   });
+	Timer::AddAram(
+		transitionSceneDelay_,
+		[]
+		{
+			Game::System<StageManger>().ClearCurrentStage();
+			Game::System<SceneSystem>().Move<ResultScene>();
+		}
+	);
 
 	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Invoke(PlayerReachedGoalEvent{});
 }

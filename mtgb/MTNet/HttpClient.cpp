@@ -22,8 +22,10 @@ mtnet::HttpClient::~HttpClient()
 void mtnet::HttpClient::Initialize(const std::string& _remoteUrl)
 {
 	int result = WSAStartup(MAKEWORD(2, 2), &wsaData_);
-	assert(result == 0 && // WSAの起動は成功している
-		   "WSAStartup failed.");
+	assert(
+		result == 0 && // WSAの起動は成功している
+		"WSAStartup failed."
+	);
 
 	if (socket_ != INVALID_SOCKET)
 	{
@@ -40,12 +42,14 @@ void mtnet::HttpClient::Initialize(const std::string& _remoteUrl)
 	sockAddr_.sin_family = AF_INET;
 
 	USHORT portNumber;
-	bool succeed = TryToIPAddresAndPort(_remoteUrl,
-										&sockAddr_.sin_addr.S_un.S_un_b.s_b1,
-										&sockAddr_.sin_addr.S_un.S_un_b.s_b2,
-										&sockAddr_.sin_addr.S_un.S_un_b.s_b3,
-										&sockAddr_.sin_addr.S_un.S_un_b.s_b4,
-										&portNumber);
+	bool succeed = TryToIPAddresAndPort(
+		_remoteUrl,
+		&sockAddr_.sin_addr.S_un.S_un_b.s_b1,
+		&sockAddr_.sin_addr.S_un.S_un_b.s_b2,
+		&sockAddr_.sin_addr.S_un.S_un_b.s_b3,
+		&sockAddr_.sin_addr.S_un.S_un_b.s_b4,
+		&portNumber
+	);
 
 	// NOTE: ポート番号はビッグエンディアンであるため、htons関数を通す必要がある
 	sockAddr_.sin_port = htons(portNumber); // ポート番号をビッグエンディアンに変換する
@@ -53,17 +57,21 @@ void mtnet::HttpClient::Initialize(const std::string& _remoteUrl)
 	remoteUri_ = _remoteUrl;
 }
 
-void mtnet::HttpClient::Post(HttpHeaderBuilder& _header,
-							 const std::string& _pathAndQuery,
-							 const ResponceCallback& _onResponce,
-							 const std::string& _body)
+void mtnet::HttpClient::Post(
+	HttpHeaderBuilder& _header,
+	const std::string& _pathAndQuery,
+	const ResponceCallback& _onResponce,
+	const std::string& _body
+)
 {
 	_onResponce(Post(_header, _pathAndQuery, _body));
 }
 
-std::string mtnet::HttpClient::Post(HttpHeaderBuilder& _header,
-									const std::string& _pathAndQuery,
-									const std::string& _body)
+std::string mtnet::HttpClient::Post(
+	HttpHeaderBuilder& _header,
+	const std::string& _pathAndQuery,
+	const std::string& _body
+)
 {
 	std::ostringstream getHttp{};
 
@@ -80,8 +88,10 @@ std::string mtnet::HttpClient::Post(HttpHeaderBuilder& _header,
 
 	socket_ = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
-	assert(socket_ != INVALID_SOCKET // ソケットは正常に生成された
-		   && "無効なソケットが生成された");
+	assert(
+		socket_ != INVALID_SOCKET // ソケットは正常に生成された
+		&& "無効なソケットが生成された"
+	);
 
 	result = connect(socket_, reinterpret_cast<SOCKADDR*>(&sockAddr_), sizeof(SOCKADDR_IN));
 
@@ -91,13 +101,17 @@ std::string mtnet::HttpClient::Post(HttpHeaderBuilder& _header,
 		printf("");
 	}
 
-	assert(result == 0 // 接続できている
-		   && "Could not connect");
+	assert(
+		result == 0 // 接続できている
+		&& "Could not connect"
+	);
 
 	result = send(socket_, getHttp.str().c_str(), strlen(getHttp.str().c_str()), NULL);
 
-	assert(result > 0 // 送信できている
-		   && "Failed send");
+	assert(
+		result > 0 // 送信できている
+		&& "Failed send"
+	);
 
 	char buffer[BUFFER_SIZE]{}; // 受信バッファ
 
@@ -118,17 +132,21 @@ std::string mtnet::HttpClient::Post(HttpHeaderBuilder& _header,
 	}
 
 	result = closesocket(socket_);
-	assert(result == 0 // 閉じられている
-		   && "close error");
+	assert(
+		result == 0 // 閉じられている
+		&& "close error"
+	);
 	socket_ = INVALID_SOCKET;
 
 	return receiveString;
 }
 
-void mtnet::HttpClient::PostAndBinaryResponce(HttpHeaderBuilder& _header,
-											  const std::string& _pathAndQuery,
-											  const BinaryResponceCallback& _onRecponce,
-											  const std::string& _body)
+void mtnet::HttpClient::PostAndBinaryResponce(
+	HttpHeaderBuilder& _header,
+	const std::string& _pathAndQuery,
+	const BinaryResponceCallback& _onRecponce,
+	const std::string& _body
+)
 {
 	std::ostringstream getHttp{};
 
@@ -145,8 +163,10 @@ void mtnet::HttpClient::PostAndBinaryResponce(HttpHeaderBuilder& _header,
 
 	socket_ = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
-	assert(socket_ != INVALID_SOCKET // ソケットは正常に生成された
-		   && "無効なソケットが生成された");
+	assert(
+		socket_ != INVALID_SOCKET // ソケットは正常に生成された
+		&& "無効なソケットが生成された"
+	);
 
 	result = connect(socket_, reinterpret_cast<SOCKADDR*>(&sockAddr_), sizeof(SOCKADDR_IN));
 
@@ -156,13 +176,17 @@ void mtnet::HttpClient::PostAndBinaryResponce(HttpHeaderBuilder& _header,
 		printf("");
 	}
 
-	assert(result == 0 // 接続できている
-		   && "Could not connect");
+	assert(
+		result == 0 // 接続できている
+		&& "Could not connect"
+	);
 
 	result = send(socket_, getHttp.str().c_str(), strlen(getHttp.str().c_str()), NULL);
 
-	assert(result > 0 // 送信できている
-		   && "Failed send");
+	assert(
+		result > 0 // 送信できている
+		&& "Failed send"
+	);
 
 	char buffer[BUFFER_SIZE]{}; // 受信バッファ
 
@@ -202,12 +226,14 @@ void mtnet::HttpClient::Cleanup()
 	WSACleanup(); // WSAのクリーンアップ
 }
 
-bool mtnet::HttpClient::TryToIPAddresAndPort(const std::string& _srcUrl,
-											 BYTE* _pOctet1,
-											 BYTE* _pOctet2,
-											 BYTE* _pOctet3,
-											 BYTE* _pOctet4,
-											 USHORT* _pPortNumber)
+bool mtnet::HttpClient::TryToIPAddresAndPort(
+	const std::string& _srcUrl,
+	BYTE* _pOctet1,
+	BYTE* _pOctet2,
+	BYTE* _pOctet3,
+	BYTE* _pOctet4,
+	USHORT* _pPortNumber
+)
 {
 	std::istringstream iss{_srcUrl};
 	std::string splitString{};

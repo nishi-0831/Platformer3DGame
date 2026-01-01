@@ -23,10 +23,11 @@ ComPtr<ID3D11RenderTargetView> DirectX11Draw::pRenderTargetView_{nullptr}; // 描
 ComPtr<IDXGISwapChain1> DirectX11Draw::pSwapChain1_{nullptr};
 ComPtr<ID3D11DepthStencilView> DirectX11Draw::pDepthStencilView_{nullptr}; // 深度バッファ
 std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::Max)> DirectX11Draw::pDepthStencilState_{
-	nullptr};													// ブレンドによる深度バッファへの書き込み情報
+	nullptr
+}; // ブレンドによる深度バッファへの書き込み情報
 ComPtr<ID3D11Texture2D> DirectX11Draw::pDepthStencil_{nullptr}; // ブレンドの情報
-std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::Max)> DirectX11Draw::pBlendState_{
-	nullptr}; // ブレンドの情報
+std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::Max)> DirectX11Draw::pBlendState_{nullptr
+}; // ブレンドの情報
 ComPtr<ID3D11SamplerState> DirectX11Draw::pDefaultSamplerState_{nullptr};
 ShaderBundle DirectX11Draw::shaderBundle_[static_cast<int8_t>(ShaderType::Max)]{}; // シェーダのバンドル
 Vector4 DirectX11Draw::backgroundColor_{0, 1, 0, 1};

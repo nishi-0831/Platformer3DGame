@@ -24,19 +24,23 @@ void mtgb::DoubleWindow::Initialize()
 {
 	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
-	WindowConfig config1 = {.title	   = "Player1",
-							.className = "Player1WindowClass",
-							.width	   = SCREEN_SIZE.x,
-							.height	   = SCREEN_SIZE.y,
-							.x		   = 0,
-							.y		   = 0};
+	WindowConfig config1 = {
+		.title	   = "Player1",
+		.className = "Player1WindowClass",
+		.width	   = SCREEN_SIZE.x,
+		.height	   = SCREEN_SIZE.y,
+		.x		   = 0,
+		.y		   = 0
+	};
 
-	WindowConfig config2 = {.title	   = "Player2",
-							.className = "Player2WindowClass",
-							.width	   = SCREEN_SIZE.x,
-							.height	   = SCREEN_SIZE.y,
-							.x		   = config1.x + config1.width,
-							.y		   = 0};
+	WindowConfig config2 = {
+		.title	   = "Player2",
+		.className = "Player2WindowClass",
+		.width	   = SCREEN_SIZE.x,
+		.height	   = SCREEN_SIZE.y,
+		.x		   = config1.x + config1.width,
+		.y		   = 0
+	};
 
 	// mtgb::WindowManager::CreateWindowContext(config1, &context1_);
 	// mtgb::WindowManager::CreateWindowContext(config2, &context2_);

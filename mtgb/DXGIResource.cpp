@@ -91,7 +91,8 @@ void mtgb::DXGIResource::Update()
 			ImGui::Separator();
 		},
 		name_.c_str(),
-		ShowType::Settings);
+		ShowType::Settings
+	);
 }
 
 void mtgb::DXGIResource::Reset()

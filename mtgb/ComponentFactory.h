@@ -60,9 +60,10 @@ namespace mtgb
 			}
 
 			// Entityに割り当てられているインデックスの取得を試みる
-			auto componentIndex =
-				Game::template System<ComponentRegistry>().GetComponentIndex(_memento.GetEntityId(),
-																			 _memento.GetComponentType());
+			auto componentIndex = Game::template System<ComponentRegistry>().GetComponentIndex(
+				_memento.GetEntityId(),
+				_memento.GetComponentType()
+			);
 
 			// エンティティのIdからコンポーネントを取得
 			T* pComponent = nullptr;

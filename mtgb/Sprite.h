@@ -68,10 +68,12 @@ namespace mtgb
 		/// </param>
 		/// <param name="_imageSize">画像サイズ</param>
 		/// <param name="_color">色</param>
-		void Draw(const Transform* _pTransform,
-				  const Transform* _pCameraTransform,
-				  const Vector2Int& _imageSize,
-				  const Color& _color);
+		void Draw(
+			const Transform* _pTransform,
+			const Transform* _pCameraTransform,
+			const Vector2Int& _imageSize,
+			const Color& _color
+		);
 
 		/// <summary>
 		/// 読み込まれた画像のサイズを取得

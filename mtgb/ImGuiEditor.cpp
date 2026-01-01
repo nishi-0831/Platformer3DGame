@@ -17,8 +17,11 @@
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor", ShowType::Editor)
 {
-	commandListener_ = [this](Command* _command) { Game::System<CommandHistoryManager>().ExecuteCommand(_command); };
-	pManipulator_	 = new ImGuizmoManipulator(commandListener_);
+	commandListener_ = [this](Command* _command)
+	{
+		Game::System<CommandHistoryManager>().ExecuteCommand(_command);
+	};
+	pManipulator_ = new ImGuizmoManipulator(commandListener_);
 
 	GameObjectGenerator::RegisterCommandListener(commandListener_);
 	TypeRegistry::Instance().RegisterCommandListener(commandListener_);

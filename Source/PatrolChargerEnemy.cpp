@@ -39,7 +39,12 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 	displayName_		 = name_;
 
-	pRigidBody_->OnCollisionEnter([this](EntityId _entityId) { OnCollisionEnter(_entityId); });
+	pRigidBody_->OnCollisionEnter(
+		[this](EntityId _entityId)
+		{
+			OnCollisionEnter(_entityId);
+		}
+	);
 	pRigidBody_->isKinematic_ = false;
 
 	InitializeState();
@@ -105,11 +110,13 @@ void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 		// 踏まれたエフェクト再生
 		EffectParameters params;
 		params.isLoop	  = false;
-		Vector3 effectPos = Vector3{pTransform_->position.x,
-									pTransform_->position.y + pCollider_->GetExtents().y,
-									pTransform_->position.z};
-		Matrix4x4 mat	  = DirectX::XMMatrixTranslation(effectPos.x, effectPos.y, effectPos.z);
-		params.worldMat	  = mat;
+		Vector3 effectPos = Vector3{
+			pTransform_->position.x,
+			pTransform_->position.y + pCollider_->GetExtents().y,
+			pTransform_->position.z
+		};
+		Matrix4x4 mat	= DirectX::XMMatrixTranslation(effectPos.x, effectPos.y, effectPos.z);
+		params.worldMat = mat;
 		Game::System<EffectManager>().Play("Stomp", params);
 
 		// 踏まれたSE再生
@@ -143,26 +150,92 @@ void PatrolChargerEnemy::InitializeState()
 	animController_ = Fbx::GetAnimationController(pMeshRenderer_->meshHandle);
 
 	state_
-		.OnStart(STATE::PATROL,
-				 [this]
-				 {
-					 animController_->PlayAnimation("Walk", true);
-					 animController_->SetAnimationSpeed(walkAnimSpeed_);
-				 })
-		.OnUpdate(STATE::PATROL, [this] { Patrol(); })
-		.OnEnd(STATE::PATROL, [this] { animController_->SetAnimationSpeed(1.0f); });
+		.OnStart(
+			STATE::PATROL,
+			[this]
+			{
+				animController_->PlayAnimation("Walk", true);
+				animController_->SetAnimationSpeed(walkAnimSpeed_);
+			}
+		)
+		.OnUpdate(
+			STATE::PATROL,
+			[this]
+			{
+				Patrol();
+			}
+		)
+		.OnEnd(
+			STATE::PATROL,
+			[this]
+			{
+				animController_->SetAnimationSpeed(1.0f);
+			}
+		);
 
-	state_.OnStart(STATE::CHARGE, [this] { animController_->PlayAnimation("Run", true); })
-		.OnUpdate(STATE::CHARGE, [this] { Charge(); });
+	state_
+		.OnStart(
+			STATE::CHARGE,
+			[this]
+			{
+				animController_->PlayAnimation("Run", true);
+			}
+		)
+		.OnUpdate(
+			STATE::CHARGE,
+			[this]
+			{
+				Charge();
+			}
+		);
 
-	state_.OnStart(STATE::WAIT, [this] { animController_->PlayAnimation("Idle", true); })
-		.OnUpdate(STATE::WAIT, [this] { Wait(); });
+	state_
+		.OnStart(
+			STATE::WAIT,
+			[this]
+			{
+				animController_->PlayAnimation("Idle", true);
+			}
+		)
+		.OnUpdate(
+			STATE::WAIT,
+			[this]
+			{
+				Wait();
+			}
+		);
 
-	state_.OnStart(STATE::RETURN_TO_PATROL, [this] { animController_->PlayAnimation("Walk", true); })
-		.OnUpdate(STATE::RETURN_TO_PATROL, [this] { ReturnToPatrol(); });
+	state_
+		.OnStart(
+			STATE::RETURN_TO_PATROL,
+			[this]
+			{
+				animController_->PlayAnimation("Walk", true);
+			}
+		)
+		.OnUpdate(
+			STATE::RETURN_TO_PATROL,
+			[this]
+			{
+				ReturnToPatrol();
+			}
+		);
 
-	state_.OnStart(STATE::DYING, [this] { animController_->PlayAnimation("Dying", false); })
-		.OnUpdate(STATE::DYING, [this] { Dying(); });
+	state_
+		.OnStart(
+			STATE::DYING,
+			[this]
+			{
+				animController_->PlayAnimation("Dying", false);
+			}
+		)
+		.OnUpdate(
+			STATE::DYING,
+			[this]
+			{
+				Dying();
+			}
+		);
 
 	state_.Change(STATE::PATROL);
 }

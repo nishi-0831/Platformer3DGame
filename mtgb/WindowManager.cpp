@@ -48,21 +48,25 @@ HWND mtgb::WindowManager::CreateWindowContext(WindowResource* _windowResource)
 	massert(RegisterClassEx(&windowClass) != 0 && "RegisterClassExÇ…é∏îs @WindowManager::CreateWindowContext");
 
 	RECT windowRect{0, 0, config.width, config.height};
-	massert(AdjustWindowRectEx(&windowRect, WS_OVERLAPPEDWINDOW, FALSE, WS_EX_OVERLAPPEDWINDOW) != FALSE &&
-			"AdjustWindowRectExÇ…é∏îs @WindowManager::CreateWindowContext");
+	massert(
+		AdjustWindowRectEx(&windowRect, WS_OVERLAPPEDWINDOW, FALSE, WS_EX_OVERLAPPEDWINDOW) != FALSE &&
+		"AdjustWindowRectExÇ…é∏îs @WindowManager::CreateWindowContext"
+	);
 
-	HWND hWnd = CreateWindowEx(0,
-							   config.className.c_str(),
-							   config.title.c_str(),
-							   WS_OVERLAPPEDWINDOW,
-							   config.x,
-							   config.y,
-							   windowRect.right - windowRect.left,
-							   windowRect.bottom - windowRect.top,
-							   nullptr,
-							   nullptr,
-							   GetModuleHandle(NULL),
-							   reinterpret_cast<LPVOID>(_windowResource));
+	HWND hWnd = CreateWindowEx(
+		0,
+		config.className.c_str(),
+		config.title.c_str(),
+		WS_OVERLAPPEDWINDOW,
+		config.x,
+		config.y,
+		windowRect.right - windowRect.left,
+		windowRect.bottom - windowRect.top,
+		nullptr,
+		nullptr,
+		GetModuleHandle(NULL),
+		reinterpret_cast<LPVOID>(_windowResource)
+	);
 
 	massert(hWnd != NULL && "ÉEÉBÉìÉhÉEÇÃçÏê¨Ç…é∏îs");
 	massert(SetWindowText(hWnd, config.title.c_str()) && "SetWindowTextÇ…é∏îs");
@@ -74,8 +78,10 @@ mtgb::Vector2Int mtgb::WindowManager::GetWindowSize(WindowContext context)
 {
 	if (context == WindowContext::Both)
 	{
-		return mtgb::Vector2Int{windowConfigMap_[WindowContext::First].width,
-								windowConfigMap_[WindowContext::First].height};
+		return mtgb::Vector2Int{
+			windowConfigMap_[WindowContext::First].width,
+			windowConfigMap_[WindowContext::First].height
+		};
 	}
 	return mtgb::Vector2Int{windowConfigMap_[context].width, windowConfigMap_[context].height};
 }

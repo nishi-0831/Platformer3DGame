@@ -20,7 +20,8 @@ namespace mtgb
 					TypeRegistry::Instance().CallFunc(&_target->center_, "center_");
 					TypeRegistry::Instance().CallFunc(&_target->radius_, "radius_");
 					TypeRegistry::Instance().CallFunc(&_target->extents_, "extents_");
-				});
+				}
+			);
 			MTImGui::Instance().RegisterComponentViewer<Collider>();
 		}
 	};

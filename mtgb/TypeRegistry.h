@@ -17,9 +17,9 @@ class TypeRegistry
 	// ÉvÉçÉOÉâÉÄäJénéûÇ…ìoò^ÇµÇΩÇ¢ä÷êîÇìoò^
 	void ProvisionalRegister(std::type_index _typeIdx, std::function<void(void)> _registerFunc);
 	void Initialize();
-	template <typename T> void CallFunc(T * _instance, const char * _name);
+	template <typename T> void CallFunc(T* _instance, const char* _name);
 
-	void CallFunc(std::type_index _typeIdx, std::any _instance, const char * _name);
+	void CallFunc(std::type_index _typeIdx, std::any _instance, const char* _name);
 	bool IsRegisteredType(std::type_index _typeIdx);
 
 	void RegisterCommandListener(std::function<void(Command*)> _commandListener);
@@ -44,7 +44,7 @@ class TypeRegistry
 	TypeRegistry(const TypeRegistry&)			 = delete;
 	TypeRegistry& operator=(const TypeRegistry&) = delete;
 };
-template <typename T> void TypeRegistry::CallFunc(T * _instance, const char * _name)
+template <typename T> void TypeRegistry::CallFunc(T* _instance, const char* _name)
 {
 	Command* command = nullptr;
 	const auto& itr	 = showFunctions_.find(typeid(T));
@@ -88,21 +88,27 @@ namespace RegisterShowFuncHolder
 			{
 				_func(std::any_cast<Type*>(target), name);
 				return nullptr;
-			});
+			}
+		);
 	}
 }; // namespace RegisterShowFuncHolder
 
 // É}ÉNÉçíËã`
-#define REGISTER_TYPE(Type, ...)                                                                                   \
-	struct Type##_TypeRegister                                                                                     \
-	{                                                                                                              \
-		Type##_TypeRegister()                                                                                      \
-		{                                                                                                          \
-			TypeRegistry::Instance().ProvisionalRegister(typeid(Type),                                             \
-														 []() { TypeRegistry::Instance().RegisterType<Type>(); }); \
-		}                                                                                                          \
-	};                                                                                                             \
-	static Type##_TypeRegister Type##_instance;                                                                    \
+#define REGISTER_TYPE(Type, ...)                                   \
+	struct Type##_TypeRegister                                     \
+	{                                                              \
+		Type##_TypeRegister()                                      \
+		{                                                          \
+			TypeRegistry::Instance().ProvisionalRegister(          \
+				typeid(Type),                                      \
+				[]()                                               \
+				{                                                  \
+					TypeRegistry::Instance().RegisterType<Type>(); \
+				}                                                  \
+			);                                                     \
+		}                                                          \
+	};                                                             \
+	static Type##_TypeRegister Type##_instance;                    \
 	REFL_TYPE(Type, __VA_ARGS__)
 
 #define REGISTER_FIELD(MemberName, ...) REFL_FIELD(MemberName, __VA_ARGS__)

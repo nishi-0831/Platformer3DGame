@@ -40,16 +40,20 @@ using TextLayoutContainer = multi_index_container<
 	TextLayoutData*,
 	indexed_by<
 		// 文字列+サイズの複合キー(複数のレイアウトボックスで同じ場合があるので non_unique)
-		ordered_non_unique<tag<text_layout_order>,
-						   composite_key<TextLayoutData,
-										 member<TextLayoutData, std::wstring, &TextLayoutData::str>,
-										 member<TextLayoutData, int, &TextLayoutData::fontSize>>>,
+		ordered_non_unique<
+			tag<text_layout_order>,
+			composite_key<
+				TextLayoutData,
+				member<TextLayoutData, std::wstring, &TextLayoutData::str>,
+				member<TextLayoutData, int, &TextLayoutData::fontSize>>>,
 
 		// レイアウトボックスの幅+高さの複合キー(複数テキストで同じ場合があるので non_unique)
-		ordered_non_unique<tag<layout_box_size_order>,
-						   composite_key<TextLayoutData,
-										 member<TextLayoutData, float, &TextLayoutData::width>,
-										 member<TextLayoutData, float, &TextLayoutData::height>>>,
+		ordered_non_unique<
+			tag<layout_box_size_order>,
+			composite_key<
+				TextLayoutData,
+				member<TextLayoutData, float, &TextLayoutData::width>,
+				member<TextLayoutData, float, &TextLayoutData::height>>>,
 
 		// ハンドルをキーとする
 		ordered_unique<tag<handle_order>, member<TextLayoutData, int, &TextLayoutData::handle>>,

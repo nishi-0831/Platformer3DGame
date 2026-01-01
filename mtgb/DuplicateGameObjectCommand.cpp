@@ -5,9 +5,11 @@
 #include "ComponentRegistry.h"
 #include "EntityManager.h"
 #include <format>
-mtgb::DuplicateGameObjectCommand::DuplicateGameObjectCommand(CreateFunc _createFunc,
-															 const ComponentFactory& _componentFactory,
-															 EntityId _srcEntityId)
+mtgb::DuplicateGameObjectCommand::DuplicateGameObjectCommand(
+	CreateFunc _createFunc,
+	const ComponentFactory& _componentFactory,
+	EntityId _srcEntityId
+)
 	: createFunc_{_createFunc}
 	, componentFactory_{_componentFactory}
 	, srcEntityId_{_srcEntityId}

@@ -1,10 +1,12 @@
 #include "AddComponentCommand.h"
 #include "IComponentPool.h"
 #include "ComponentRegistry.h"
-mtgb::AddComponentCommand::AddComponentCommand(mtgb::EntityId _entityId,
-											   const std::type_index& _typeIdx,
-											   mtgb::IComponentMemento* _memento,
-											   const mtgb::ComponentFactory& _componentFactory)
+mtgb::AddComponentCommand::AddComponentCommand(
+	mtgb::EntityId _entityId,
+	const std::type_index& _typeIdx,
+	mtgb::IComponentMemento* _memento,
+	const mtgb::ComponentFactory& _componentFactory
+)
 	: entityId_(_entityId)
 	, componentType_(_typeIdx)
 	, memento_(_memento)

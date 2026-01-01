@@ -20,7 +20,8 @@ GameOverManager::GameOverManager()
 		{
 			OnGameOver();
 		},
-		EventScope::Scene);
+		EventScope::Scene
+	);
 }
 
 GameOverManager::~GameOverManager()
@@ -41,10 +42,12 @@ void GameOverManager::Start()
 
 void GameOverManager::OnGameOver()
 {
-	Timer::AddAram(startFadeOutDelay_,
-				   [this]()
-				   {
-					   pFadeOutScreen_->StartFadeOut();
-				   });
+	Timer::AddAram(
+		startFadeOutDelay_,
+		[this]()
+		{
+			pFadeOutScreen_->StartFadeOut();
+		}
+	);
 	Audio::PlayOneShotFile("Sound/GameOverSound.mp3");
 }

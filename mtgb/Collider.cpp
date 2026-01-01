@@ -179,10 +179,12 @@ bool mtgb::Collider::IsHit(const Collider& _other) const
 	return false;
 }
 
-bool mtgb::Collider::IsHit(const DirectX::BoundingSphere& _sphere,
-						   const Vector3& _origin,
-						   const Vector3& _dir,
-						   float* dist)
+bool mtgb::Collider::IsHit(
+	const DirectX::BoundingSphere& _sphere,
+	const Vector3& _origin,
+	const Vector3& _dir,
+	float* dist
+)
 {
 	/////
 	// DirectXCollision.hのBoundingSphere::Intersectsをコピペした。
@@ -231,7 +233,8 @@ bool mtgb::Collider::IsHit(const DirectX::BoundingSphere& _sphere,
 		XMVectorLess(s, XMVectorZero())
 		// l2の方が大きいなら球の外側にある
 		,
-		XMVectorGreater(l2, r2));
+		XMVectorGreater(l2, r2)
+	);
 
 	// 球の中心からレイへの垂線が球の半径よりも大きいか
 	// レイの最も近い地点が球の外側にあるか
@@ -278,10 +281,12 @@ bool mtgb::Collider::IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _or
 	return _aabb.Intersects(_origin, _dir, *dist);
 }
 
-bool mtgb::Collider::IsHit(const DirectX::BoundingOrientedBox& _obb,
-						   const Vector3& _origin,
-						   const Vector3& _dir,
-						   float* dist)
+bool mtgb::Collider::IsHit(
+	const DirectX::BoundingOrientedBox& _obb,
+	const Vector3& _origin,
+	const Vector3& _dir,
+	float* dist
+)
 {
 	return _obb.Intersects(_origin, _dir, *dist);
 }
@@ -399,8 +404,10 @@ float mtgb::Collider::GetRadius()
 	return 0.0f;
 }
 
-std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSphere& _sphere,
-													   const DirectX::BoundingBox& _aabb)
+std::optional<IntersectInfo> mtgb::Collider::Intersect(
+	const DirectX::BoundingSphere& _sphere,
+	const DirectX::BoundingBox& _aabb
+)
 {
 	IntersectInfo info;
 
@@ -444,8 +451,10 @@ std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSp
 	return info;
 }
 
-std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSphere& _sphere,
-													   const DirectX::BoundingOrientedBox& _obb)
+std::optional<IntersectInfo> mtgb::Collider::Intersect(
+	const DirectX::BoundingSphere& _sphere,
+	const DirectX::BoundingOrientedBox& _obb
+)
 {
 	IntersectInfo info;
 

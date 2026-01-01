@@ -21,7 +21,13 @@ namespace mtgb
 			// -
 			// 今後、GameObject型を必要とするクラスが増えた場合直接呼び出すのでなく購読する仕組みを検討する(マクロやコールバックで)
 			Game::System<GameObjectTypeRegistry>().Register<T>(_typeName);
-			RegisterFactory(_typeName, []() -> GameObject* { return GameObject::Instantiate<T>(); });
+			RegisterFactory(
+				_typeName,
+				[]() -> GameObject*
+				{
+					return GameObject::Instantiate<T>();
+				}
+			);
 		}
 
 	  private:

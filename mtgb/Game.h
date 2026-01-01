@@ -43,10 +43,12 @@ namespace mtgb
 		/// <summary>
 		/// システム登録のコールバック関数
 		/// </summary>
-		using RegisterSystem = std::function<void(std::type_index _systemTypeName,
-												  ISystem* _system,
-												  const bool _isComponentPool,
-												  const SystemUpdateType)>;
+		using RegisterSystem = std::function<void(
+			std::type_index _systemTypeName,
+			ISystem* _system,
+			const bool _isComponentPool,
+			const SystemUpdateType
+		)>;
 
 		/// <summary>
 		/// システム登録の関数ホルダ
@@ -289,7 +291,8 @@ namespace mtgb
 				 default :
 					 break;
 				 }
-			 }});
+			 }}
+		);
 		// 各システムの初期化
 		pInstance_->InitializeSystems(systems);
 
@@ -313,8 +316,10 @@ namespace mtgb
 		assert(pSystem != nullptr);
 
 		// 基底クラスがISystemであるか
-		static_assert(std::is_base_of<ISystem, SystemT>().value &&
-					  "ISystemクラスを継承していないクラスのインスタンスは取得できません。");
+		static_assert(
+			std::is_base_of<ISystem, SystemT>().value &&
+			"ISystemクラスを継承していないクラスのインスタンスは取得できません。"
+		);
 		return *(dynamic_cast<SystemT*>(pSystem));
 	}
 } // namespace mtgb

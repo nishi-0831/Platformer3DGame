@@ -31,32 +31,38 @@ void mtgb::RectDetector::UpdateDetection(RectDetectorConfig& _config)
 	// 基底クラスの detectedTargets_を更新
 	detectedTargets_.clear();
 
-	Game::System<ColliderCP>().RectContains(_config.detectionRect,
-											_config.base.targetTag,
-											&detectedTargets_, // 基底クラスのメンバを使用
-											_config.base.windowContext);
+	Game::System<ColliderCP>().RectContains(
+		_config.detectionRect,
+		_config.base.targetTag,
+		&detectedTargets_, // 基底クラスのメンバを使用
+		_config.base.windowContext
+	);
 
 	CameraHandleInScene hCamera		 = WinCtxRes::Get<CameraResource>(_config.base.windowContext).GetHCamera();
 	const Transform& cameraTransform = Game::System<CameraSystem>().GetTransform(hCamera);
 
 	// 設定に合致しない要素を取り除く
-	detectedTargets_.erase(std::remove_if(detectedTargets_.begin(),
-										  detectedTargets_.end(),
-										  [&](const ScreenCoordContainsInfo& info)
-										  {
-											  Vector3 toTarget = info.worldPos - cameraTransform.GetWorldPosition();
-											  Vector3 normal   = cameraTransform.Forward();
-											  float distance   = DirectX::XMVector3Dot(toTarget, normal).m128_f32[0];
+	detectedTargets_.erase(
+		std::remove_if(
+			detectedTargets_.begin(),
+			detectedTargets_.end(),
+			[&](const ScreenCoordContainsInfo& info)
+			{
+				Vector3 toTarget = info.worldPos - cameraTransform.GetWorldPosition();
+				Vector3 normal	 = cameraTransform.Forward();
+				float distance	 = DirectX::XMVector3Dot(toTarget, normal).m128_f32[0];
 
-											  // 設定した距離より遠いなら除く
-											  if (std::abs(distance) > _config.base.maxDistance)
-											  {
-												  return true;
-											  }
+				// 設定した距離より遠いなら除く
+				if (std::abs(distance) > _config.base.maxDistance)
+				{
+					return true;
+				}
 
-											  return false;
-										  }),
-						   detectedTargets_.end());
+				return false;
+			}
+		),
+		detectedTargets_.end()
+	);
 }
 
 void mtgb::RectDetector::UpdateAndSetDetection(RectDetectorConfig& _config)
