@@ -5,12 +5,12 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ƒXƒNƒŠ[ƒ“À•WŒn‚ÌŠÜ‚Ü‚ê‚Ä‚¢‚é‘ÎÛ‚Ìî•ñ
+	/// ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ç³»ã®å«ã¾ã‚Œã¦ã„ã‚‹å¯¾è±¡ã®æƒ…å ±
 	/// </summary>
 	struct ScreenCoordContainsInfo
 	{
-		Vector3 worldPos{};	 // ƒ[ƒ‹ƒhÀ•W‚Å‚ÌÀ•W
-		Vector3 screenPos{}; // ƒXƒNƒŠ[ƒ“À•WŒn‚Å‚ÌÀ•W
+		Vector3 worldPos{};	 // ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã§ã®åº§æ¨™
+		Vector3 screenPos{}; // ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ç³»ã§ã®åº§æ¨™
 		EntityId entityId;
 		ScreenCoordContainsInfo() = default;
 		ScreenCoordContainsInfo(Vector3 _worldPos, Vector3 _screenPos, EntityId _entityId)

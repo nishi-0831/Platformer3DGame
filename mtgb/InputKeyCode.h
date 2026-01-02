@@ -4,7 +4,7 @@
 //  REF: dinput.h
 
 /// <summary>
-/// ƒL[ƒ{[ƒh‚ÌƒL[ƒR[ƒh
+/// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã®ã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰
 /// </summary>
 enum struct KeyCode : uint8_t
 {

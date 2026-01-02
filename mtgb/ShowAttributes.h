@@ -24,7 +24,7 @@ struct Vector4Show : refl::attr::usage::type
 };
 
 /// <summary>
-/// �s��̕ύX��Undo/Redo�@�\�ɑΉ��ł��Ă��Ȃ��B
+/// 行列の変更をUndo/Redo機能に対応できていない。
 /// </summary>
 struct MatrixShow : refl::attr::usage::type
 {

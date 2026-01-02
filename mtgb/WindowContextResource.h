@@ -13,41 +13,41 @@ struct ID2D1RenderTarget;
 namespace mtgb
 {
 	/// <summary>
-	/// �E�B���h�E���ƂɌŗL�̃��\�[�X�̃C���^�[�t�F�[�X
+	/// ウィンドウごとに固有のリソースのインターフェース
 	/// </summary>
 	class WindowContextResource
 	{
 	  public:
 		virtual ~WindowContextResource() = default;
 		/// <summary>
-		/// �E�B���h�E��ύX����ۂɌŗL�̃��\�[�X���Z�b�g����
+		/// ウィンドウを変更する際に固有のリソースをセットする
 		/// </summary>
 		virtual void SetResource() = 0;
 
 		/// <summary>
-		/// �E�B���h�E�̃T�C�Y���ύX�����O�̉������
+		/// ウィンドウのサイズが変更される前の解放処理
 		/// </summary>
 		virtual void Reset()
 		{
 		}
 		/// <summary>
-		/// �E�B���h�E�̃T�C�Y���ύX���ꂽ��̏���
+		/// ウィンドウのサイズが変更された後の処理
 		/// </summary>
-		/// <param name="_width">��</param>
-		/// <param name="_height">����</param>
+		/// <param name="_width">幅</param>
+		/// <param name="_height">高さ</param>
 		virtual void OnResize(UINT _width, UINT _height)
 		{
 		}
 		virtual void Release() = 0;
 
 		/// <summary>
-		/// �X�V����
+		/// 更新処理
 		/// </summary>
 		virtual void Update()
 		{
 		}
 		/// <summary>
-		/// �E�B���h�E�̎��ʎq��Ԃ�
+		/// ウィンドウの識別子を返す
 		/// </summary>
 		/// <returns></returns>
 		WindowContext GetWindowContext() const
@@ -63,7 +63,7 @@ namespace mtgb
 
 		WindowContext windowContext_;
 
-		// �R�s�[�R���X�g���N�^�ƃR�s�[������Z�q���폜
+		// コピーコンストラクタとコピー代入演算子を削除
 		WindowContextResource(const WindowContextResource&)			   = delete;
 		WindowContextResource& operator=(const WindowContextResource&) = delete;
 	};

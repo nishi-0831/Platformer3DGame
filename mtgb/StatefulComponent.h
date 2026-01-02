@@ -22,9 +22,9 @@ namespace mtgb
 		StatefulComponent();
 		StatefulComponent(TState&& _data, EntityId _entityId);
 		/// <summary>
-		/// ó‘ÔAEntityId‚ğƒƒƒ“ƒg‚É•Û‘¶A•Ô‚·
+		/// çŠ¶æ…‹ã€EntityIdã‚’ãƒ¡ãƒ¡ãƒ³ãƒˆã«ä¿å­˜ã€è¿”ã™
 		/// </summary>
-		/// <returns>•Ô‚³‚ê‚éƒƒƒ“ƒg</returns>
+		/// <returns>è¿”ã•ã‚Œã‚‹ãƒ¡ãƒ¡ãƒ³ãƒˆ</returns>
 		Memento* SaveToMemento()
 		{
 			OnPreSave();
@@ -39,9 +39,9 @@ namespace mtgb
 			static_cast<TState&>(*this) = std::move(_data);
 		}
 		/// <summary>
-		/// ƒƒƒ“ƒg‚©‚ç•œŒ³‚ğs‚¤
+		/// ãƒ¡ãƒ¡ãƒ³ãƒˆã‹ã‚‰å¾©å…ƒã‚’è¡Œã†
 		/// </summary>
-		/// <param name="_memento">•œŒ³‚Ég‚í‚ê‚éƒƒƒ“ƒg</param>
+		/// <param name="_memento">å¾©å…ƒã«ä½¿ã‚ã‚Œã‚‹ãƒ¡ãƒ¡ãƒ³ãƒˆ</param>
 		void RestoreFromMemento(const Memento& _memento)
 		{
 			const TState& data = _memento.GetState();
@@ -51,31 +51,31 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// ƒVƒŠƒAƒ‰ƒCƒY‚ğs‚¢AJSON‚ğ•Ô‚·
+		/// ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã‚’è¡Œã„ã€JSONã‚’è¿”ã™
 		/// </summary>
 		/// <returns></returns>
 		nlohmann::json Serialize()
 		{
 
 			OnPreSave();
-			// ó‘Ô‚Ì‚İ‚ğ‚½‚¹‚½TData‚É•ÏŠ·
+			// çŠ¶æ…‹ã®ã¿ã‚’æŒãŸã›ãŸTDataã«å¤‰æ›
 			TState& data = static_cast<TState&>(*this);
 
-			// ƒVƒŠƒAƒ‰ƒCƒY
+			// ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚º
 			nlohmann::json dataJson = JsonConverter::Serialize<TState>(data);
 
-			// ƒL[‚Æ‚È‚éTData‚Ì–¼‘O‚ğæ“¾
+			// ã‚­ãƒ¼ã¨ãªã‚‹TDataã®åå‰ã‚’å–å¾—
 			std::string key = JsonConverter::GetDisplayName<TState>();
 
 			if (key.empty() == false)
 			{
-				// ƒL[ : ó‘Ô ‚Æ‚µ‚ÄJSON‚É‘‚«‚Ş
+				// ã‚­ãƒ¼ : çŠ¶æ…‹ ã¨ã—ã¦JSONã«æ›¸ãè¾¼ã‚€
 				nlohmann::json ret;
 				ret[key] = dataJson;
 				return ret;
 			}
 
-			// ƒL[‚Æ‚È‚éTData‚Ì–¼‘O‚ªæ“¾‚Å‚«‚È‚©‚Á‚½ê‡Aó‘Ô‚ğ‚»‚Ì‚Ü‚Ü•Ô‚·
+			// ã‚­ãƒ¼ã¨ãªã‚‹TDataã®åå‰ãŒå–å¾—ã§ããªã‹ã£ãŸå ´åˆã€çŠ¶æ…‹ã‚’ãã®ã¾ã¾è¿”ã™
 			return dataJson;
 		}
 
@@ -113,18 +113,18 @@ namespace mtgb
 
 	  protected:
 		/// <summary>
-		/// <para> Memento‚©‚ç•œŒ³‚ªs‚í‚ê‚½Û‚ÉŒÄ‚Î‚ê‚éƒtƒbƒN </para>
+		/// <para> Mementoã‹ã‚‰å¾©å…ƒãŒè¡Œã‚ã‚ŒãŸéš›ã«å‘¼ã°ã‚Œã‚‹ãƒ•ãƒƒã‚¯ </para>
 		/// </summary>
 		virtual void OnPostRestore()
 		{
-			// ƒfƒtƒHƒ‹ƒg‚Å‚Í‰½‚à‚µ‚È‚¢
+			// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯ä½•ã‚‚ã—ãªã„
 		}
 		/// <summary>
-		/// ƒƒƒ“ƒg•Û‘¶AƒVƒŠƒAƒ‰ƒCƒY‚Ì’¼‘O‚ÉŒÄ‚Î‚ê‚éƒtƒbƒN
+		/// ãƒ¡ãƒ¡ãƒ³ãƒˆä¿å­˜ã€ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã®ç›´å‰ã«å‘¼ã°ã‚Œã‚‹ãƒ•ãƒƒã‚¯
 		/// </summary>
 		virtual void OnPreSave()
 		{
-			// ƒfƒtƒHƒ‹ƒg‚Å‚Í‰½‚à‚µ‚È‚¢
+			// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯ä½•ã‚‚ã—ãªã„
 		}
 
 	  private:

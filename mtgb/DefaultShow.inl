@@ -1,6 +1,6 @@
 #include "Command.h"
 #include "ImGuiInputCommand.h"
-// DefaultShow.inl - ƒeƒ“ƒvƒŒ[ƒgÀ‘•ƒtƒ@ƒCƒ‹
+// DefaultShow.inl - ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆå®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 namespace mtgb
 {
 
@@ -15,12 +15,12 @@ namespace mtgb
 			{
 				ImGui::Indent();
 
-				// —v‘fŒ^æ“¾
+				// è¦ç´ å‹å–å¾—
 				using ElemType = std::remove_extent_t<Type>;
-				// 0ŸŒ³–Ú‚Ì—v‘f”æ“¾
+				// 0æ¬¡å…ƒç›®ã®è¦ç´ æ•°å–å¾—
 				constexpr size_t N = std::extent_v<Type>;
 
-				// ”z—ñ—v‘f‚²‚Æ‚ÉÄ‹A‚µAÅ‰‚É“¾‚ç‚ê‚½ƒRƒ}ƒ“ƒh‚ğ•Ô‚·
+				// é…åˆ—è¦ç´ ã”ã¨ã«å†å¸°ã—ã€æœ€åˆã«å¾—ã‚‰ã‚ŒãŸã‚³ãƒãƒ³ãƒ‰ã‚’è¿”ã™
 				for (size_t i = 0; i < N; ++i)
 				{
 					std::string elemName = std::string(name) + "[" + std::to_string(i) + "]";
@@ -104,18 +104,18 @@ namespace mtgb
 				ImGui::Text("%s:Unknown,%s", name, typeid(Type).name());
 			}
 
-			// ”z—ñ‚Å‚È‚¢Aconst‚Å‚È‚¢ê‡‚¾‚¯À‘Ì‰»‚³‚¹‚é
+			// é…åˆ—ã§ãªã„ã€constã§ãªã„å ´åˆã ã‘å®Ÿä½“åŒ–ã•ã›ã‚‹
 			if constexpr (std::is_array_v<T> == false && std::is_const_v<T> == false)
 			{
 
 				if (changed != false)
 				{
-					// •ÏX‚ª‚³‚ê‚Ä‚¢‚½‚çƒRƒ}ƒ“ƒh‚ğ•Ô‚·
+					// å¤‰æ›´ãŒã•ã‚Œã¦ã„ãŸã‚‰ã‚³ãƒãƒ³ãƒ‰ã‚’è¿”ã™
 					return new ImGuiInputCommand<T>(value, oldValue, *value, name);
 				}
 			}
 
-			// •ÏX‚ª‚³‚ê‚Ä‚¢‚È‚¢ê‡‚Ínullptr
+			// å¤‰æ›´ãŒã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullptr
 		}
 		return nullptr;
 	}

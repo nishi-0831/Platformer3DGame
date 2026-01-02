@@ -86,7 +86,7 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 			_pContext->VSSetConstantBuffers(1, 1, pTimeConstantBuffer_.GetAddressOf());
 			_pContext->PSSetConstantBuffers(1, 1, pTimeConstantBuffer_.GetAddressOf());
 
-			// UVƒXƒNƒ[ƒ‹‚ÉŽg‚¤ƒfƒ‹ƒ^ƒ^ƒCƒ€‚ðƒZƒbƒg
+			// UVã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã«ä½¿ã†ãƒ‡ãƒ«ã‚¿ã‚¿ã‚¤ãƒ ã‚’ã‚»ãƒƒãƒˆ
 			D3D11_MAPPED_SUBRESOURCE mapped{};
 			if (SUCCEEDED(_pContext->Map(pTimeConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &mapped)))
 			{
@@ -96,7 +96,7 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 				_pContext->Unmap(pTimeConstantBuffer_.Get(), 0);
 			}
 
-			// ƒeƒNƒXƒ`ƒƒƒZƒbƒg
+			// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚»ãƒƒãƒˆ
 			ID3D11SamplerState* pSampler   = texture_.GetSamplerState();
 			ID3D11ShaderResourceView* pSrv = texture_.GetShaderResourceView();
 			_pContext->PSSetSamplers(0, 1, &pSampler);
@@ -108,7 +108,7 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 
 void mtgb::PlaneUVScroll::InitializeVertexBuffer(ID3D11Device* _pDevice)
 {
-	// XY•½–Ê‚Ì”Âƒ|ƒŠ(’†SŒ´“_)E•\Œü‚«+Z
+	// XYå¹³é¢ã®æ¿ãƒãƒª(ä¸­å¿ƒåŽŸç‚¹)ãƒ»è¡¨å‘ã+Z
 	Vertex v[4]{};
 	v[0].position = {-0.5f, 0.0f, -0.5f};
 	v[0].normal	  = {0, 1, 0};

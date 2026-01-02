@@ -12,13 +12,13 @@
 		std::string text{#expression};                                                                              \
 		text += "\r\n\"";                                                                                           \
 		text += __FILE__;                                                                                           \
-		text += "\"‚æ‚èA";                                                                                         \
+		text += "\"ã‚ˆã‚Šã€";                                                                                         \
 		text += std::to_string(__LINE__);                                                                           \
-		text += "s–Ú‚Ìmassert‚ª‹N“®‚µ‚Ü‚µ‚½B\r\n";                                                                \
-		text += "ƒLƒƒƒ“ƒZƒ‹‚µ‚È‚¢ê‡AƒXƒ[‚µ‚Ü‚·B\r\n";                                                         \
-		text += "Windows‚ÌÅIƒGƒ‰[‚ğæ“¾‚µ‚Ü‚·‚©H(‚Í‚¢/‚¢‚¢‚¦)";                                                 \
+		text += "è¡Œç›®ã®massertãŒèµ·å‹•ã—ã¾ã—ãŸã€‚\r\n";                                                                \
+		text += "ã‚­ãƒ£ãƒ³ã‚»ãƒ«ã—ãªã„å ´åˆã€ã‚¹ãƒ­ãƒ¼ã—ã¾ã™ã€‚\r\n";                                                         \
+		text += "Windowsã®æœ€çµ‚ã‚¨ãƒ©ãƒ¼ã‚’å–å¾—ã—ã¾ã™ã‹ï¼Ÿ(ã¯ã„/ã„ã„ãˆ)";                                                 \
 		std::string title{mtgb::Game::Title()};                                                                     \
-		title += "‚ÌƒAƒT[ƒVƒ‡ƒ“ƒGƒ‰[";                                                                            \
+		title += "ã®ã‚¢ã‚µãƒ¼ã‚·ãƒ§ãƒ³ã‚¨ãƒ©ãƒ¼";                                                                            \
 		int result{/*MessageBox(NULL, text.c_str(), title.c_str(), MB_RETRYCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL)*/ \
 				   MessageBox(NULL, text.c_str(), title.c_str(), MB_YESNOCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL)     \
 		};                                                                                                          \

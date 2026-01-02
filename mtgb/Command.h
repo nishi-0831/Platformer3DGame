@@ -7,17 +7,17 @@ class Command
 	virtual ~Command() = default;
 
 	/// <summary>
-	/// Às
+	/// å®Ÿè¡Œ
 	/// </summary>
 	virtual void Execute() = 0;
 
 	/// <summary>
-	/// æ‚èÁ‚µ
+	/// å–ã‚Šæ¶ˆã—
 	/// </summary>
 	virtual void Undo() = 0;
 
 	/// <summary>
-	/// ÄÀs(ƒfƒtƒHƒ‹ƒg‚Å‚ÍExecute‚Æ“¯‚¶)
+	/// å†å®Ÿè¡Œ(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯Executeã¨åŒã˜)
 	/// </summary>
 	virtual void Redo()
 	{
@@ -25,8 +25,8 @@ class Command
 	}
 
 	/// <summary>
-	/// <para> ƒRƒ}ƒ“ƒh‚Ì–¼‘O (•\¦—p) </para>
-	/// <para> ƒRƒs[‚É‚æ‚é•‰‰×‚ª‘å‚«‚¢ê‡‚Í string_view‚È‚Ç‚ÖØ‚è‘Ö‚¦‚é‚±‚Æ‚ğ‹–ì‚É“ü‚ê‚é </para>
+	/// <para> ã‚³ãƒãƒ³ãƒ‰ã®åå‰ (è¡¨ç¤ºç”¨) </para>
+	/// <para> ã‚³ãƒ”ãƒ¼ã«ã‚ˆã‚‹è² è·ãŒå¤§ãã„å ´åˆã¯ string_viewãªã©ã¸åˆ‡ã‚Šæ›¿ãˆã‚‹ã“ã¨ã‚’è¦–é‡ã«å…¥ã‚Œã‚‹ </para>
 	/// </summary>
 	/// <returns></returns>
 	virtual std::string Name() const = 0;

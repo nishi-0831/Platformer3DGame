@@ -24,7 +24,7 @@ mtgb::ModelHandle mtgb::Model::Load(const std::string_view& _fileName)
 {
 	Model& instance{Game::System<Model>()};
 
-	// ƒtƒ@ƒCƒ‹‚ÌŠg’£q
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã®æ‹¡å¼µå­
 	std::string_view fileExt{FilePath::GetExtension(_fileName)};
 
 	/*
@@ -45,12 +45,12 @@ mtgb::ModelHandle mtgb::Model::Load(const std::string_view& _fileName)
 	}
 	else if (fileExt == "obj")
 	{
-		massert(false && "objƒtƒ@ƒCƒ‹‚Í–¢À‘•‚Å‚·B");
+		massert(false && "objãƒ•ã‚¡ã‚¤ãƒ«ã¯æœªå®Ÿè£…ã§ã™ã€‚");
 	}
 	else
 	{
-		// fbx, obj ‚Å‚à‚È‚¢‚È‚ç
-		massert(false && "”ñ‘Î‰‚Ìƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹‚Å‚·B");
+		// fbx, obj ã§ã‚‚ãªã„ãªã‚‰
+		massert(false && "éå¯¾å¿œã®ãƒ¢ãƒ‡ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã§ã™ã€‚");
 	}
 	return INVALID_HANDLE;
 }

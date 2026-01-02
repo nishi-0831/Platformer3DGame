@@ -3,7 +3,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// Vector3‚ÌQÆ
+	/// Vector3ã®å‚ç…§
 	/// </summary>
 	struct Vector3Ref
 	{

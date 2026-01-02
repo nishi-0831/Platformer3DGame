@@ -7,7 +7,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ƒŒƒC•ûŒüEŠp“x‚É‚æ‚é‘ÎÛŒŸoƒVƒXƒeƒ€
+	/// ãƒ¬ã‚¤æ–¹å‘ãƒ»è§’åº¦ã«ã‚ˆã‚‹å¯¾è±¡æ¤œå‡ºã‚·ã‚¹ãƒ†ãƒ 
 	/// </summary>
 	class RayDetector : public IDetector
 	{
@@ -18,27 +18,27 @@ namespace mtgb
 		~RayDetector() = default;
 
 		/// <summary>
-		/// ŒŸo‚ğÀs
+		/// æ¤œå‡ºã‚’å®Ÿè¡Œ
 		/// </summary>
 		void UpdateDetection() override;
 
 		/// <summary>
-		/// ŒŸo‚ğÀsiİ’èw’èj
+		/// æ¤œå‡ºã‚’å®Ÿè¡Œï¼ˆè¨­å®šæŒ‡å®šï¼‰
 		/// </summary>
 		void UpdateDetection(const RayDetectorConfig& _config);
 
 		/// <summary>
-		/// İ’è‚ğXV‚µ‚ÄŒŸo‚ğÀs
+		/// è¨­å®šã‚’æ›´æ–°ã—ã¦æ¤œå‡ºã‚’å®Ÿè¡Œ
 		/// </summary>
 		void UpdateAndSetDetection(RayDetectorConfig&& _config);
 
 		/// <summary>
-		/// ŒŸo‚³‚ê‚½‘ÎÛ‚ª‚ ‚é‚©‚Ç‚¤‚©
+		/// æ¤œå‡ºã•ã‚ŒãŸå¯¾è±¡ãŒã‚ã‚‹ã‹ã©ã†ã‹
 		/// </summary>
 		bool HasDetectedTargets() const override;
 
 		/// <summary>
-		/// ŒŸoŒ‹‰Ê‚ğæ“¾
+		/// æ¤œå‡ºçµæœã‚’å–å¾—
 		/// </summary>
 		const std::vector<ScreenCoordContainsInfo>& GetDetectedTargets() const override;
 
@@ -46,7 +46,7 @@ namespace mtgb
 		void ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const override;
 
 		/// <summary>
-		/// ƒ^[ƒQƒbƒg‚ªƒŒƒC‚ÌŠp“x”ÍˆÍ“à‚É‚ ‚é‚©ƒ`ƒFƒbƒN
+		/// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆãŒãƒ¬ã‚¤ã®è§’åº¦ç¯„å›²å†…ã«ã‚ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 		/// </summary>
 		bool IsTargetInRayAngle(
 			const Vector3& targetPos,

@@ -11,6 +11,6 @@ mtgb::Color::Color(const uint8_t _r, const uint8_t _g, const uint8_t _b, const u
 mtgb::Color::Color(uint32_t _code)
 {
 	code = _code;
-	// アルファ値は強制的に100%にする
+	// 繧｢繝ｫ繝輔ぃ蛟､縺ｯ蠑ｷ蛻ｶ逧�縺ｫ100%縺ｫ縺吶ｋ
 	component[static_cast<int32_t>(Component::Alpha)] = UINT8_MAX;
 }

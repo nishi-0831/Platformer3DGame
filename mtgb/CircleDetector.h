@@ -7,7 +7,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ‰~Œ`”ÍˆÍ“à‚Ì‘ÎÛŒŸoƒVƒXƒeƒ€
+	/// å††å½¢ç¯„å›²å†…ã®å¯¾è±¡æ¤œå‡ºã‚·ã‚¹ãƒ†ãƒ 
 	/// </summary>
 	class CircleDetector : public IDetector
 	{
@@ -18,28 +18,28 @@ namespace mtgb
 		~CircleDetector() = default;
 
 		/// <summary>
-		/// ŒŸo‚ğÀs
+		/// æ¤œå‡ºã‚’å®Ÿè¡Œ
 		/// </summary>
 		void UpdateDetection() override;
 
 		/// <summary>
-		/// ŒŸo‚ğÀsiİ’èw’èj
+		/// æ¤œå‡ºã‚’å®Ÿè¡Œï¼ˆè¨­å®šæŒ‡å®šï¼‰
 		/// </summary>
 		void UpdateDetection(const CircleDetectorConfig& _config);
 
 		/// <summary>
-		/// İ’è‚ğXV‚µ‚ÄŒŸo‚ğÀs
+		/// è¨­å®šã‚’æ›´æ–°ã—ã¦æ¤œå‡ºã‚’å®Ÿè¡Œ
 		/// </summary>
 		void UpdateAndSetDetection(CircleDetectorConfig&& _config);
 
 		/// <summary>
-		/// ŒŸo‚³‚ê‚½‘ÎÛ‚ª‚ ‚é‚©‚Ç‚¤‚©
+		/// æ¤œå‡ºã•ã‚ŒãŸå¯¾è±¡ãŒã‚ã‚‹ã‹ã©ã†ã‹
 		/// </summary>
 		bool HasDetectedTargets() const override;
 
 		RectF GetDetectionArea() const override;
 		/// <summary>
-		/// ŒŸoŒ‹‰Ê‚ğæ“¾
+		/// æ¤œå‡ºçµæœã‚’å–å¾—
 		/// </summary>
 		const std::vector<ScreenCoordContainsInfo>& GetDetectedTargets() const override;
 
@@ -47,7 +47,7 @@ namespace mtgb
 		void ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const override;
 
 		/// <summary>
-		/// “_‚ª‰~“à‚É‚ ‚é‚©ƒ`ƒFƒbƒN
+		/// ç‚¹ãŒå††å†…ã«ã‚ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 		/// </summary>
 		bool IsPointInCircle(const Vector2F& point, const Vector2F& center, float radius) const;
 

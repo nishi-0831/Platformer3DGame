@@ -5,22 +5,22 @@
 namespace mtgb
 {
 	/// <summary>
-	/// 4ŸŒ³ƒxƒNƒgƒ‹
+	/// 4æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«
 	/// </summary>
 	struct Vector4 : DirectX::XMVECTORF32
 	{
 		/// <summary>
-		/// 4ŸŒ³ƒxƒNƒgƒ‹
+		/// 4æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«
 		/// </summary>
-		/// <param name="_x">x¬•ª</param>
-		/// <param name="_y">y¬•ª</param>
-		/// <param name="_z">z¬•ª</param>
-		/// <param name="_w">w¬•ª</param>
+		/// <param name="_x">xæˆåˆ†</param>
+		/// <param name="_y">yæˆåˆ†</param>
+		/// <param name="_z">zæˆåˆ†</param>
+		/// <param name="_w">wæˆåˆ†</param>
 		Vector4(const float _x, const float _y, const float _z, const float _w);
 		/// <summary>
-		/// Vector3‚©‚çˆÃ–Ù“I‚È•ÏŠ·
+		/// Vector3ã‹ã‚‰æš—é»™çš„ãªå¤‰æ›
 		/// </summary>
-		/// <param name="_vec3">•ÏŠ·Œ³</param>
+		/// <param name="_vec3">å¤‰æ›å…ƒ</param>
 		Vector4(const Vector3& _vec3);
 
 		Vector4()

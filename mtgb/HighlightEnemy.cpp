@@ -18,7 +18,7 @@ HighlightEnemy::HighlightEnemy()
 	highlightFrameImage_ = Image::Load("Image/highlightEnemyFrame.png");
 	highlightFrameSize	 = {60.0f, 60.0f};
 
-	// 一つ目のウィンドウ
+	// 荳縺､逶ｮ縺ｮ繧ｦ繧｣繝ｳ繝峨え
 	RectDetectorConfig firstConfig =
 		{.base =
 			 {
@@ -34,7 +34,7 @@ HighlightEnemy::HighlightEnemy()
 			 static_cast<float>(firstWndRect.bottom),
 		 }};
 	firstWndRectDetector_.config = firstConfig;
-	// 二つ目のウィンドウ
+	// 莠後▽逶ｮ縺ｮ繧ｦ繧｣繝ｳ繝峨え
 	RectDetectorConfig secondConfig = firstConfig;
 
 	secondConfig.detectionRect.width  = static_cast<float>(secondWndRect.right);
@@ -69,7 +69,7 @@ void HighlightEnemy::Update()
 
 void HighlightEnemy::Draw() const
 {
-	// 一つ目のウィンドウ
+	// 荳縺､逶ｮ縺ｮ繧ｦ繧｣繝ｳ繝峨え
 	const RectDetectorConfig& firstConfig = firstWndRectDetector_.config;
 
 	Vector2F ratio = Game::System<Screen>().GetSizeRatio();
@@ -90,7 +90,7 @@ void HighlightEnemy::Draw() const
 		}
 	);
 
-	// 二つ目のウィンドウ
+	// 莠後▽逶ｮ縺ｮ繧ｦ繧｣繝ｳ繝峨え
 	const RectDetectorConfig& secondConfig = secondWndRectDetector_.config;
 
 	secondWndRectDetector_.ForEach(

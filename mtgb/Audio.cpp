@@ -31,20 +31,20 @@ void mtgb::Audio::Initialize()
 
 	hResult = CoInitializeEx(NULL, COINIT_MULTITHREADED);
 	massert(
-		SUCCEEDED(hResult) // COM‚Ì‰Šú‰»‚É¬Œ÷
-		&& "COM‚Ì‰Šú‰»‚É¸”s @Audio::Initialize"
+		SUCCEEDED(hResult) // COMã®åˆæœŸåŒ–ã«æˆåŠŸ
+		&& "COMã®åˆæœŸåŒ–ã«å¤±æ•— @Audio::Initialize"
 	);
 
 	hResult = XAudio2Create(&pXAudio2_);
 	massert(
-		SUCCEEDED(hResult) // XAudio2‚Ìì¬‚É¬Œ÷
-		&& "XAudio2‚Ìì¬‚É¸”s @Audio::Initialize"
+		SUCCEEDED(hResult) // XAudio2ã®ä½œæˆã«æˆåŠŸ
+		&& "XAudio2ã®ä½œæˆã«å¤±æ•— @Audio::Initialize"
 	);
 
 	hResult = pXAudio2_->CreateMasteringVoice(&pMasteringVoice_);
 	massert(
-		SUCCEEDED(hResult) // MasteringVoice‚Ìì¬‚É¬Œ÷
-		&& "MasteringVoice‚Ìì¬‚É¸”s @Audio::Initialize"
+		SUCCEEDED(hResult) // MasteringVoiceã®ä½œæˆã«æˆåŠŸ
+		&& "MasteringVoiceã®ä½œæˆã«å¤±æ•— @Audio::Initialize"
 	);
 }
 
@@ -52,40 +52,40 @@ void mtgb::Audio::Update()
 {
 	if (pOneShotQueue_.size() <= 0)
 	{
-		return; // ƒLƒ…[‚ª‹ó‚È‚ç‰ñ‹A
+		return; // ã‚­ãƒ¥ãƒ¼ãŒç©ºãªã‚‰å›å¸°
 	}
 
-	//  REF: CPU‚ÌSleepƒvƒƒZƒX
+	//  REF: CPUã®Sleepãƒ—ãƒ­ã‚»ã‚¹
 
-	// Ä¶I—¹‚ğƒfƒLƒ…[‚·‚é
+	// å†ç”Ÿçµ‚äº†ã‚’ãƒ‡ã‚­ãƒ¥ãƒ¼ã™ã‚‹
 	auto itr = pOneShotQueue_.begin();
 	while (true)
 	{
 		(*itr)->timeLeft -= Time::DeltaTimeF();
 
-		float diff{(*itr)->timeLeft}; // ·•ª
-		if (diff > 0)				  // ·•ª‚ª0‚æ‚è‘å‚«‚¢ = Ä¶’†
+		float diff{(*itr)->timeLeft}; // å·®åˆ†
+		if (diff > 0)				  // å·®åˆ†ãŒ0ã‚ˆã‚Šå¤§ãã„ = å†ç”Ÿä¸­
 		{
-			break; // Ä¶I—¹‚µ‚Ä‚¢‚È‚¢‚½‚ß—£’E
+			break; // å†ç”Ÿçµ‚äº†ã—ã¦ã„ãªã„ãŸã‚é›¢è„±
 		}
-		else // ·•ª‚ª0ˆÈ‰º = Ä¶I—¹
+		else // å·®åˆ†ãŒ0ä»¥ä¸‹ = å†ç”Ÿçµ‚äº†
 		{
 			(*itr)->Release();
-			// delete (*itr);  // ‰ğ•ú‚·‚é
-			itr = pOneShotQueue_.erase(pOneShotQueue_.begin()); // Á‚·
+			// delete (*itr);  // è§£æ”¾ã™ã‚‹
+			itr = pOneShotQueue_.erase(pOneShotQueue_.begin()); // æ¶ˆã™
 			if (itr == pOneShotQueue_.end())
 			{
-				break; // Œã‘±‚ª‚È‚¢ = ƒLƒ…[‚ª‹ó‚È‚ç—£’E
+				break; // å¾Œç¶šãŒãªã„ = ã‚­ãƒ¥ãƒ¼ãŒç©ºãªã‚‰é›¢è„±
 			}
-			(*itr)->timeLeft += diff; // ·•ª‚ğŒã‘±‚É”½‰f
-			continue;				  // Œã‘±‚àI—¹‚µ‚Ä‚¢‚é‰Â”\«‚ª‚ ‚é‚½‚ßŒp‘±
+			(*itr)->timeLeft += diff; // å·®åˆ†ã‚’å¾Œç¶šã«åæ˜ 
+			continue;				  // å¾Œç¶šã‚‚çµ‚äº†ã—ã¦ã„ã‚‹å¯èƒ½æ€§ãŒã‚ã‚‹ãŸã‚ç¶™ç¶š
 		}
 	}
 }
 
 mtgb::AudioClip* mtgb::Audio::GetAudioClip(const AudioHandle _hAudio)
 {
-	massert((pAudioClips_.count(_hAudio) > 0) && "w’è‚³‚ê‚½ƒnƒ“ƒhƒ‹‚Í–³Œø/‚Ü‚¾ƒ[ƒh‚³‚ê‚Ä‚¢‚È‚¢");
+	massert((pAudioClips_.count(_hAudio) > 0) && "æŒ‡å®šã•ã‚ŒãŸãƒãƒ³ãƒ‰ãƒ«ã¯ç„¡åŠ¹/ã¾ã ãƒ­ãƒ¼ãƒ‰ã•ã‚Œã¦ã„ãªã„");
 
 	return pAudioClips_[_hAudio];
 }
@@ -96,8 +96,8 @@ void mtgb::Audio::CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, const W
 
 	hResult = pXAudio2_->CreateSourceVoice(ppSourceVoice, &_pWaveData->waveFormat);
 	massert(
-		SUCCEEDED(hResult) // SourceVoiceì¬‚É¬Œ÷
-		&& "SourceVoiceì¬‚É¸”s @Audio::SetSourceVoice"
+		SUCCEEDED(hResult) // SourceVoiceä½œæˆã«æˆåŠŸ
+		&& "SourceVoiceä½œæˆã«å¤±æ•— @Audio::SetSourceVoice"
 	);
 }
 
@@ -108,50 +108,50 @@ mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
 
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-createfilea
 	HANDLE hFile = CreateFile(
-		_fileName.c_str(),	   // ƒtƒ@ƒCƒ‹–¼
-		GENERIC_READ,		   // “Ç‚İæ‚è‚Ü‚·‚æ[
-		FILE_SHARE_READ,	   // Close‚³‚ê‚é‚Ü‚ÅA‘¼‚ÌƒAƒvƒŠ‚Íƒtƒ@ƒCƒ‹‚Ì“Ç‚İæ‚è‚¾‚¯‚µ‚Ä‚¢‚¢‚æ[
-		nullptr,			   // ƒZƒLƒ…ƒŠƒeƒB‘®«—p‚Ì\‘¢‘Ìƒ|ƒCƒ“ƒ^‚ğw’è
-		OPEN_EXISTING,		   // ŠJ‚­ - ƒtƒ@ƒCƒ‹‚ª–³‚©‚Á‚½‚ç¸”s
-		FILE_ATTRIBUTE_NORMAL, // •’Ê‚Ìƒtƒ@ƒCƒ‹‘®«
+		_fileName.c_str(),	   // ãƒ•ã‚¡ã‚¤ãƒ«å
+		GENERIC_READ,		   // èª­ã¿å–ã‚Šã¾ã™ã‚ˆãƒ¼
+		FILE_SHARE_READ,	   // Closeã•ã‚Œã‚‹ã¾ã§ã€ä»–ã®ã‚¢ãƒ—ãƒªã¯ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿å–ã‚Šã ã‘ã—ã¦ã„ã„ã‚ˆãƒ¼
+		nullptr,			   // ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£å±æ€§ç”¨ã®æ§‹é€ ä½“ãƒã‚¤ãƒ³ã‚¿ã‚’æŒ‡å®š
+		OPEN_EXISTING,		   // é–‹ã - ãƒ•ã‚¡ã‚¤ãƒ«ãŒç„¡ã‹ã£ãŸã‚‰å¤±æ•—
+		FILE_ATTRIBUTE_NORMAL, // æ™®é€šã®ãƒ•ã‚¡ã‚¤ãƒ«å±æ€§
 		NULL
-	); // Šù‘¶‚Ìƒtƒ@ƒCƒ‹‚ğŠJ‚­ê‡‚ÍŠÖŒW‚È‚¢‚â‚Â
+	); // æ—¢å­˜ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãå ´åˆã¯é–¢ä¿‚ãªã„ã‚„ã¤
 
 	if (hFile == INVALID_HANDLE_VALUE)
 	{
-		massert(false && "ƒtƒ@ƒCƒ‹Open‚É¸”s @Audio::Load");
+		massert(false && "ãƒ•ã‚¡ã‚¤ãƒ«Openã«å¤±æ•— @Audio::Load");
 		return INVALID_HANDLE;
 	}
 
 	BOOL succeed{FALSE};
 
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-getfilesizeex
-	LARGE_INTEGER fileSize{}; // ƒtƒ@ƒCƒ‹ƒTƒCƒYŠi”[—p
+	LARGE_INTEGER fileSize{}; // ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºæ ¼ç´ç”¨
 	succeed = GetFileSizeEx(hFile, &fileSize);
 	if (succeed == FALSE)
 	{
-		massert(false && "ƒtƒ@ƒCƒ‹ƒTƒCƒYæ“¾‚É¸”s @Audio::Load");
+		massert(false && "ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºå–å¾—ã«å¤±æ•— @Audio::Load");
 		return INVALID_HANDLE;
 	}
 
-	DWORD readedSize{0}; // ÀÛ‚É“Ç‚İæ‚ê‚½ƒoƒCƒg”
+	DWORD readedSize{0}; // å®Ÿéš›ã«èª­ã¿å–ã‚ŒãŸãƒã‚¤ãƒˆæ•°
 
-	byte* pBuffer{new byte[fileSize.QuadPart]}; // ƒoƒbƒtƒ@“®“IŠm•Û
+	byte* pBuffer{new byte[fileSize.QuadPart]}; // ãƒãƒƒãƒ•ã‚¡å‹•çš„ç¢ºä¿
 
 	succeed = ReadFile(hFile, pBuffer, static_cast<DWORD>(fileSize.QuadPart), &readedSize, NULL);
 	if (succeed == FALSE || readedSize != fileSize.QuadPart)
 	{
-		massert(false && "ƒtƒ@ƒCƒ‹‚Ì“Ç‚İæ‚è‚É¸”s @Audio::Load");
-		delete[] pBuffer; // ƒoƒbƒtƒ@‰ğ•ú
+		massert(false && "ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿å–ã‚Šã«å¤±æ•— @Audio::Load");
+		delete[] pBuffer; // ãƒãƒƒãƒ•ã‚¡è§£æ”¾
 		return INVALID_HANDLE;
 	}
 
-	CloseHandle(hFile); // ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	CloseHandle(hFile); // ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 
-	// ‚¢‚´“Ç‚İ‚İ
+	// ã„ã–èª­ã¿è¾¼ã¿
 	LoadAudioSource(handleCounter_, pBuffer, fileSize.QuadPart);
 
-	delete[] pBuffer; // ƒoƒbƒtƒ@‰ğ•ú
+	delete[] pBuffer; // ãƒãƒƒãƒ•ã‚¡è§£æ”¾
 
 	return handleCounter_;
 }
@@ -167,7 +167,7 @@ void mtgb::Audio::PlayOneShotBuffer(byte* pBuffer, const size_t _bufferSize)
 
 	oneShot->timeLeft = static_cast<float>(oneShot->pAudioClip->GetTotalTimeSec());
 
-	EnqueueOneShot(oneShot); // ©“®‰ğ•úƒLƒ…[‚É’Ç‰Á
+	EnqueueOneShot(oneShot); // è‡ªå‹•è§£æ”¾ã‚­ãƒ¥ãƒ¼ã«è¿½åŠ 
 
 	const XAUDIO2_BUFFER BUFFER{
 		.Flags		= XAUDIO2_END_OF_STREAM,
@@ -180,61 +180,61 @@ void mtgb::Audio::PlayOneShotBuffer(byte* pBuffer, const size_t _bufferSize)
 	hResult = oneShot->pSourceVoice->SubmitSourceBuffer(&BUFFER);
 
 	massert(
-		SUCCEEDED(hResult) // SourceBuffer‚ÌƒZƒbƒg‚É¬Œ÷
-		&& "SourceBuffer‚ÌƒZƒbƒg‚É¸”s @Audio::PlayOneShotBuffer"
+		SUCCEEDED(hResult) // SourceBufferã®ã‚»ãƒƒãƒˆã«æˆåŠŸ
+		&& "SourceBufferã®ã‚»ãƒƒãƒˆã«å¤±æ•— @Audio::PlayOneShotBuffer"
 	);
 
-	oneShot->pSourceVoice->Start(); // Ä¶
+	oneShot->pSourceVoice->Start(); // å†ç”Ÿ
 }
 
 void mtgb::Audio::PlayOneShotFile(const std::string& _fileName)
 {
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-createfilea
 	HANDLE hFile = CreateFile(
-		_fileName.c_str(),	   // ƒtƒ@ƒCƒ‹–¼
-		GENERIC_READ,		   // “Ç‚İæ‚è‚Ü‚·‚æ[
-		FILE_SHARE_READ,	   // Close‚³‚ê‚é‚Ü‚ÅA‘¼‚ÌƒAƒvƒŠ‚Íƒtƒ@ƒCƒ‹‚Ì“Ç‚İæ‚è‚¾‚¯‚µ‚Ä‚¢‚¢‚æ[
-		nullptr,			   // ƒZƒLƒ…ƒŠƒeƒB‘®«—p‚Ì\‘¢‘Ìƒ|ƒCƒ“ƒ^‚ğw’è
-		OPEN_EXISTING,		   // ŠJ‚­ - ƒtƒ@ƒCƒ‹‚ª–³‚©‚Á‚½‚ç¸”s
-		FILE_ATTRIBUTE_NORMAL, // •’Ê‚Ìƒtƒ@ƒCƒ‹‘®«
+		_fileName.c_str(),	   // ãƒ•ã‚¡ã‚¤ãƒ«å
+		GENERIC_READ,		   // èª­ã¿å–ã‚Šã¾ã™ã‚ˆãƒ¼
+		FILE_SHARE_READ,	   // Closeã•ã‚Œã‚‹ã¾ã§ã€ä»–ã®ã‚¢ãƒ—ãƒªã¯ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿å–ã‚Šã ã‘ã—ã¦ã„ã„ã‚ˆãƒ¼
+		nullptr,			   // ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£å±æ€§ç”¨ã®æ§‹é€ ä½“ãƒã‚¤ãƒ³ã‚¿ã‚’æŒ‡å®š
+		OPEN_EXISTING,		   // é–‹ã - ãƒ•ã‚¡ã‚¤ãƒ«ãŒç„¡ã‹ã£ãŸã‚‰å¤±æ•—
+		FILE_ATTRIBUTE_NORMAL, // æ™®é€šã®ãƒ•ã‚¡ã‚¤ãƒ«å±æ€§
 		NULL
-	); // Šù‘¶‚Ìƒtƒ@ƒCƒ‹‚ğŠJ‚­ê‡‚ÍŠÖŒW‚È‚¢‚â‚Â
+	); // æ—¢å­˜ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãå ´åˆã¯é–¢ä¿‚ãªã„ã‚„ã¤
 
 	if (hFile == INVALID_HANDLE_VALUE)
 	{
-		massert(false && "ƒtƒ@ƒCƒ‹Open‚É¸”s @Audio::Load");
+		massert(false && "ãƒ•ã‚¡ã‚¤ãƒ«Openã«å¤±æ•— @Audio::Load");
 		return;
 	}
 
 	BOOL succeed{FALSE};
 
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-getfilesizeex
-	LARGE_INTEGER fileSize{}; // ƒtƒ@ƒCƒ‹ƒTƒCƒYŠi”[—p
+	LARGE_INTEGER fileSize{}; // ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºæ ¼ç´ç”¨
 	succeed = GetFileSizeEx(hFile, &fileSize);
 	if (succeed == FALSE)
 	{
-		massert(false && "ƒtƒ@ƒCƒ‹ƒTƒCƒYæ“¾‚É¸”s @Audio::Load");
+		massert(false && "ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºå–å¾—ã«å¤±æ•— @Audio::Load");
 		return;
 	}
 
-	DWORD readedSize{0}; // ÀÛ‚É“Ç‚İæ‚ê‚½ƒoƒCƒg”
+	DWORD readedSize{0}; // å®Ÿéš›ã«èª­ã¿å–ã‚ŒãŸãƒã‚¤ãƒˆæ•°
 
-	byte* pBuffer{new byte[fileSize.QuadPart]}; // ƒoƒbƒtƒ@“®“IŠm•Û
+	byte* pBuffer{new byte[fileSize.QuadPart]}; // ãƒãƒƒãƒ•ã‚¡å‹•çš„ç¢ºä¿
 
 	succeed = ReadFile(hFile, pBuffer, static_cast<DWORD>(fileSize.QuadPart), &readedSize, NULL);
 	if (succeed == FALSE || readedSize != fileSize.QuadPart)
 	{
-		massert(false && "ƒtƒ@ƒCƒ‹‚Ì“Ç‚İæ‚è‚É¸”s @Audio::Load");
-		delete[] pBuffer; // ƒoƒbƒtƒ@‰ğ•ú
+		massert(false && "ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿å–ã‚Šã«å¤±æ•— @Audio::Load");
+		delete[] pBuffer; // ãƒãƒƒãƒ•ã‚¡è§£æ”¾
 		return;
 	}
 
-	CloseHandle(hFile); // ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	CloseHandle(hFile); // ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 
-	// ‚¢‚´Ä¶
+	// ã„ã–å†ç”Ÿ
 	PlayOneShotBuffer(pBuffer, fileSize.QuadPart);
 
-	delete[] pBuffer; // ƒoƒbƒtƒ@‰ğ•ú
+	delete[] pBuffer; // ãƒãƒƒãƒ•ã‚¡è§£æ”¾
 }
 
 void mtgb::Audio::Clear()
@@ -262,9 +262,9 @@ void mtgb::Audio::LoadAudioSource(const AudioHandle _hAudio, byte* pBuffer, cons
 
 void mtgb::Audio::EnqueueOneShot(AudioOneShot* _pOneShot)
 {
-	float lefter{_pOneShot->timeLeft}; // Œ¸Z—p
-	float righter{0};				   // ‰ÁZ—p
-	// “KØ‚È‘}“üƒ|ƒCƒ“ƒg‚ğŒ©‚Â‚¯‚é
+	float lefter{_pOneShot->timeLeft}; // æ¸›ç®—ç”¨
+	float righter{0};				   // åŠ ç®—ç”¨
+	// é©åˆ‡ãªæŒ¿å…¥ãƒã‚¤ãƒ³ãƒˆã‚’è¦‹ã¤ã‘ã‚‹
 	for (auto itr = pOneShotQueue_.begin(); itr != pOneShotQueue_.end(); itr++)
 	{
 		if (lefter <= righter + (*itr)->timeLeft)
@@ -277,7 +277,7 @@ void mtgb::Audio::EnqueueOneShot(AudioOneShot* _pOneShot)
 		}
 		righter += (*itr)->timeLeft;
 	}
-	// Œ©‚Â‚©‚ç‚È‚©‚Á‚½‚ç––’[‚É’Ç‰Á
+	// è¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸã‚‰æœ«ç«¯ã«è¿½åŠ 
 	pOneShotQueue_.push_back(_pOneShot);
 }
 

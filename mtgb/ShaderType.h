@@ -4,7 +4,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ÉVÉFÅ[É_É^ÉCÉv
+	/// „Ç∑„Çß„Éº„ÉÄ„Çø„Ç§„Éó
 	/// </summary>
 	enum struct ShaderType : int8_t
 	{

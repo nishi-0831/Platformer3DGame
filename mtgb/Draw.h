@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "Vector2Int.h"
 #include "RectInt.h"
 #include "RectF.h"

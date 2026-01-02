@@ -1,4 +1,4 @@
-﻿#include "Socket.h"
+#include "Socket.h"
 
 mtnet::Socket::Socket(const IPEndPoint& _local)
 	: wsaData_{}

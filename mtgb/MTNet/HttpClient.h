@@ -20,18 +20,18 @@ namespace mtnet
 		~HttpClient();
 
 		/// <summary>
-		/// <para>Ú‘±æ‚ÌURL‚ðŽw’è‚µ‚Ä‰Šú‰»</para>
-		/// <para>Ú‘±æ‚ð•ÏX‚·‚é‚½‚Ñ‚ÉŒÄ‚Ño‚·</para>
+		/// <para>æŽ¥ç¶šå…ˆã®URLã‚’æŒ‡å®šã—ã¦åˆæœŸåŒ–</para>
+		/// <para>æŽ¥ç¶šå…ˆã‚’å¤‰æ›´ã™ã‚‹ãŸã³ã«å‘¼ã³å‡ºã™</para>
 		/// </summary>
-		/// <param name="_remoteUrl">Ú‘±æ‚ÌURL (X.X.X.X:Port)</param>
+		/// <param name="_remoteUrl">æŽ¥ç¶šå…ˆã®URL (X.X.X.X:Port)</param>
 		void Initialize(const std::string& _remoteUrl);
 
 		/// <summary>
-		/// ƒ|ƒXƒgƒŠƒNƒGƒXƒg‚ð‘—M‚·‚é
+		/// ãƒã‚¹ãƒˆãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’é€ä¿¡ã™ã‚‹
 		/// </summary>
-		/// <param name="_header">ƒwƒbƒ_</param>
-		/// <param name="_pathAndQuery">http://*.*/{‚±‚Ì•”•ª}</param>
-		/// <param name="_body">–{‘Ì(”CˆÓ)</param>
+		/// <param name="_header">ãƒ˜ãƒƒãƒ€</param>
+		/// <param name="_pathAndQuery">http://*.*/{ã“ã®éƒ¨åˆ†}</param>
+		/// <param name="_body">æœ¬ä½“(ä»»æ„)</param>
 		void Post(
 			HttpHeaderBuilder& _header,
 			const std::string& _pathAndQuery,
@@ -49,14 +49,14 @@ namespace mtnet
 		);
 
 		/// <summary>
-		/// WSA‚ÌƒNƒŠ[ƒ“ƒAƒbƒv (ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ð•Â‚¶‚é‚Æ‚«‚ÉŒÄ‚Ô)
+		/// WSAã®ã‚¯ãƒªãƒ¼ãƒ³ã‚¢ãƒƒãƒ— (ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’é–‰ã˜ã‚‹ã¨ãã«å‘¼ã¶)
 		/// </summary>
 		void Cleanup();
 
 	  public:
 		/// <summary>
-		/// <para>•¶Žš—ñ‚ðƒp[ƒZƒ“ƒgURI‚É•ÏŠ·‚·‚é</para>
-		/// <para>URI“à‚Å“ú–{Œê‚È‚Ç‚Í %•¶ŽšƒR[ƒh ‚É‚È‚é</para>
+		/// <para>æ–‡å­—åˆ—ã‚’ãƒ‘ãƒ¼ã‚»ãƒ³ãƒˆURIã«å¤‰æ›ã™ã‚‹</para>
+		/// <para>URIå†…ã§æ—¥æœ¬èªžãªã©ã¯ %æ–‡å­—ã‚³ãƒ¼ãƒ‰ ã«ãªã‚‹</para>
 		/// </summary>
 		/// <param name="str"></param>
 		/// <returns></returns>
@@ -64,15 +64,15 @@ namespace mtnet
 
 	  private:
 		/// <summary>
-		/// ŽŽ‚µ‚ÉURL‚ðIPƒAƒhƒŒƒX‚Æƒ|[ƒg”Ô†‚É•ª‰ð‚·‚é
+		/// è©¦ã—ã«URLã‚’IPã‚¢ãƒ‰ãƒ¬ã‚¹ã¨ãƒãƒ¼ãƒˆç•ªå·ã«åˆ†è§£ã™ã‚‹
 		/// </summary>
-		/// <param name="_srcUrl">Œ³‚ÌURL</param>
-		/// <param name="_pOctet1">ƒ|ƒCƒ“ƒ^“n‚µ:IPƒAƒhƒŒƒX‚Ì1ƒIƒNƒeƒbƒg–Ú</param>
-		/// <param name="_pOctet2">ƒ|ƒCƒ“ƒ^“n‚µ:IPƒAƒhƒŒƒX‚Ì2ƒIƒNƒeƒbƒg–Ú</param>
-		/// <param name="_pOctet3">ƒ|ƒCƒ“ƒ^“n‚µ:IPƒAƒhƒŒƒX‚Ì3ƒIƒNƒeƒbƒg–Ú</param>
-		/// <param name="_pOctet4">ƒ|ƒCƒ“ƒ^“n‚µ:IPƒAƒhƒŒƒX‚Ì4ƒIƒNƒeƒbƒg–Ú</param>
-		/// <param name="_pPortNumber">ƒ|ƒCƒ“ƒ^“n‚µ:ƒ|[ƒg”Ô†</param>
-		/// <returns>¬Œ÷‚µ‚½ true / false</returns>
+		/// <param name="_srcUrl">å…ƒã®URL</param>
+		/// <param name="_pOctet1">ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—:IPã‚¢ãƒ‰ãƒ¬ã‚¹ã®1ã‚ªã‚¯ãƒ†ãƒƒãƒˆç›®</param>
+		/// <param name="_pOctet2">ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—:IPã‚¢ãƒ‰ãƒ¬ã‚¹ã®2ã‚ªã‚¯ãƒ†ãƒƒãƒˆç›®</param>
+		/// <param name="_pOctet3">ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—:IPã‚¢ãƒ‰ãƒ¬ã‚¹ã®3ã‚ªã‚¯ãƒ†ãƒƒãƒˆç›®</param>
+		/// <param name="_pOctet4">ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—:IPã‚¢ãƒ‰ãƒ¬ã‚¹ã®4ã‚ªã‚¯ãƒ†ãƒƒãƒˆç›®</param>
+		/// <param name="_pPortNumber">ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—:ãƒãƒ¼ãƒˆç•ªå·</param>
+		/// <returns>æˆåŠŸã—ãŸ true / false</returns>
 		static bool TryToIPAddresAndPort(
 			const std::string& _srcUrl,
 			BYTE* _pOctet1,
@@ -83,9 +83,9 @@ namespace mtnet
 		);
 
 	  private:
-		WSADATA wsaData_;		// WinSock2‚Åƒlƒbƒgƒ[ƒN‚ðŽg‚¤‚½‚ß‚Ì
-		SOCKET socket_;			// ’ÊM‚·‚éƒ\ƒPƒbƒg
-		SOCKADDR_IN sockAddr_;	// ’ÊMæ‚ÌƒGƒ“ƒhƒ|ƒCƒ“ƒgî•ñ
-		std::string remoteUri_; // Ú‘±æ‚ÌURI
+		WSADATA wsaData_;		// WinSock2ã§ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ã‚’ä½¿ã†ãŸã‚ã®
+		SOCKET socket_;			// é€šä¿¡ã™ã‚‹ã‚½ã‚±ãƒƒãƒˆ
+		SOCKADDR_IN sockAddr_;	// é€šä¿¡å…ˆã®ã‚¨ãƒ³ãƒ‰ãƒã‚¤ãƒ³ãƒˆæƒ…å ±
+		std::string remoteUri_; // æŽ¥ç¶šå…ˆã®URI
 	};
 } // namespace mtnet

@@ -4,7 +4,7 @@
 namespace
 {
 	const int32_t QUATA_SCORE_MAX{35};
-	int GAUGE_COUNT{30}; // ÉQÅ[ÉWêî
+	int GAUGE_COUNT{30}; // „Ç≤„Éº„Ç∏Êï∞
 } // namespace
 
 int32_t mtgb::ScoreManager::score_{0};

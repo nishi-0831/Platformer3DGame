@@ -67,7 +67,7 @@ void mtgb::ImGuiEditor::Update()
 		}
 		if (InputUtil::GetKeyDown(KeyCode::Delete))
 		{
-			// ƒ}ƒjƒsƒ…ƒŒ[ƒ^‚ª‘I‘ğ‚µ‚Ä‚¢‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğæ“¾
+			// ãƒãƒ‹ãƒ”ãƒ¥ãƒ¬ãƒ¼ã‚¿ãŒé¸æŠã—ã¦ã„ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
 			GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
 		}
 	}
@@ -88,7 +88,7 @@ void mtgb::ImGuiEditor::SaveMapData()
 	ofn.lStructSize = sizeof(ofn);
 
 	ofn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::First);
-	ofn.lpstrFilter = "JSONƒtƒ@ƒCƒ‹(*.json)\0*.json";
+	ofn.lpstrFilter = "JSONãƒ•ã‚¡ã‚¤ãƒ«(*.json)\0*.json";
 	ofn.lpstrFile	= fileName;
 	ofn.nMaxFile	= 255;
 	ofn.Flags		= OFN_OVERWRITEPROMPT;
@@ -114,7 +114,7 @@ void mtgb::ImGuiEditor::LoadMapData()
 
 	ifn.lStructSize = sizeof(ifn);
 	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::First);
-	ifn.lpstrFilter = "JSONƒtƒ@ƒCƒ‹(*.json)\0*.json";
+	ifn.lpstrFilter = "JSONãƒ•ã‚¡ã‚¤ãƒ«(*.json)\0*.json";
 	ifn.lpstrFile	= fileName;
 	ifn.nMaxFile	= 255;
 
@@ -138,8 +138,8 @@ void mtgb::ImGuiEditor::LoadMapData()
 	}
 	GameObjectGenerator::GenerateFromJson(json);
 
-	// “Ç‚İ‚İŠÔ‚Å’l‚ª‘å‚«‚­‚È‚Á‚½ƒfƒ‹ƒ^ƒ^ƒCƒ€‚ğˆÀ’è‚³‚¹‚é‚½‚ß‚É2ƒtƒŒ[ƒ€‘Ò‹@‚³‚¹‚é
-	// TODO: ƒ}ƒWƒbƒNƒiƒ“ƒo[‚ğC³
+	// èª­ã¿è¾¼ã¿æ™‚é–“ã§å€¤ãŒå¤§ãããªã£ãŸãƒ‡ãƒ«ã‚¿ã‚¿ã‚¤ãƒ ã‚’å®‰å®šã•ã›ã‚‹ãŸã‚ã«2ãƒ•ãƒ¬ãƒ¼ãƒ å¾…æ©Ÿã•ã›ã‚‹
+	// TODO: ãƒã‚¸ãƒƒã‚¯ãƒŠãƒ³ãƒãƒ¼ã‚’ä¿®æ­£
 	Time::WaitFrame(2);
 }
 
@@ -154,7 +154,7 @@ void mtgb::ImGuiEditor::DuplicateGameObject()
 
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
 {
-	// ƒRƒ“ƒ|[ƒlƒ“ƒgì¬¬Œ÷
+	// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆæˆåŠŸ
 	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, Game::GetComponentFactory());
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }

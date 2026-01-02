@@ -6,11 +6,11 @@ mtnet::TcpListener::TcpListener(const IPEndPoint& _local)
 {
 	if (TryStartup() == false)
 	{
-		throw "TcpListener‚Ì‹N“®‚É¸”s";
+		throw "TcpListenerã®èµ·å‹•ã«å¤±æ•—";
 	}
 	if (TryBind() == false)
 	{
-		throw "TcpListener‚ÌIPƒoƒCƒ“ƒh‚É¸”s";
+		throw "TcpListenerã®IPãƒã‚¤ãƒ³ãƒ‰ã«å¤±æ•—";
 	}
 }
 

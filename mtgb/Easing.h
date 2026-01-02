@@ -4,7 +4,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// <para>イージング関数</para>
+	/// <para>繧､繝ｼ繧ｸ繝ｳ繧ｰ髢｢謨ｰ</para>
 	/// <para>https://easings.net/ja</para>
 	/// </summary>
 	struct Ease

@@ -19,7 +19,7 @@ mtgb::Box3D::Box3D()
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer		 = AllLayer();
 	pMeshRenderer_->shaderType	 = ShaderType::FbxParts;
-	// Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
+	// å‹æƒ…å ±ã«ç™»éŒ²ã•ã‚ŒãŸåå‰ã‚’å–å¾—
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Box3D));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 	displayName_		 = name_;

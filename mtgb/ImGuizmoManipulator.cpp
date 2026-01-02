@@ -42,13 +42,13 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 	float windowWidth  = (float)ImGui::GetWindowWidth();
 	float windowHeight = (float)ImGui::GetWindowHeight();
 
-	// ƒMƒYƒ‚•\¦
+	// ã‚®ã‚ºãƒ¢è¡¨ç¤º
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
 
 	if (ImGuizmo::Manipulate(viewMat_, projMat_, operation_, mode_, worldMat_))
 	{
-		// •ÒW‚³‚ê‚½worldMat‚©‚çposition,rotation,scale‚É•ª‰ğ
+		// ç·¨é›†ã•ã‚ŒãŸworldMatã‹ã‚‰position,rotation,scaleã«åˆ†è§£
 		DirectX::XMMATRIX mat = DirectX::XMMATRIX(
 			worldMat_[0],
 			worldMat_[1],
@@ -70,7 +70,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 
 		DirectX::XMVECTOR scale, trans;
 		bool result = DirectX::XMMatrixDecompose(&scale, &pTargetTransform_->rotate.v, &trans, mat);
-		massert(result && "XMMatrixDecompose‚É¸”s @MTImGui::DrawTransformGuizmo");
+		massert(result && "XMMatrixDecomposeã«å¤±æ•— @MTImGui::DrawTransformGuizmo");
 
 		DirectX::XMStoreFloat3(&pTargetTransform_->position, trans);
 		DirectX::XMStoreFloat3(&pTargetTransform_->scale, scale);
@@ -81,7 +81,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 void mtgb::ImGuizmoManipulator::SubscribeEvents()
 {
 	EventManager& eventManager{Game::System<EventManager>()};
-	// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‘I‘ğƒCƒxƒ“ƒg
+	// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆé¸æŠã‚¤ãƒ™ãƒ³ãƒˆ
 	eventManager.GetEvent<GameObjectSelectedEvent>().Subscribe(
 		[this](const GameObjectSelectedEvent& _event)
 		{
@@ -96,7 +96,7 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 			
 		}, EventScope::Global);
 
-	// ¡ŒãA“¯‚É•¡”‚ÌƒIƒuƒWƒFƒNƒg‚ğ‘I‘ğ‰Â”\‚Èê‡‚É‚È‚Á‚½Û‚É‚ÍC³
+	// ä»Šå¾Œã€åŒæ™‚ã«è¤‡æ•°ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’é¸æŠå¯èƒ½ãªå ´åˆã«ãªã£ãŸéš›ã«ã¯ä¿®æ­£
 	eventManager.GetEvent<GameObjectDeselectedEvent>().Subscribe(
 		[this](const GameObjectDeselectedEvent& _event)
 		{
@@ -105,7 +105,7 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 		EventScope::Global
 	);
 
-	// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgì¬ƒCƒxƒ“ƒg
+	// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆä½œæˆã‚¤ãƒ™ãƒ³ãƒˆ
 	eventManager.GetEvent<GameObjectCreatedEvent>().Subscribe(
 		[this](const GameObjectCreatedEvent& _event)
 		{
@@ -117,20 +117,20 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 
 void mtgb::ImGuizmoManipulator::Calculate()
 {
-	// float[16]‚Ì”z—ñ‚ğì¬
+	// float[16]ã®é…åˆ—ã‚’ä½œæˆ
 	pTargetTransform_->GenerateWorldMatrix(&worldMatrix4x4);
 	Game::System<mtgb::CameraSystem>().GetViewMatrix(&viewMatrix4x4_);
 	Game::System<mtgb::CameraSystem>().GetProjMatrix(&projMatrix4x4_);
 
-	// ƒ[ƒ‹ƒhs—ñ
+	// ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—
 	DirectX::XMStoreFloat4x4(&float4x4_, worldMatrix4x4);
 	memcpy(worldMat_, &float4x4_, sizeof(worldMat_));
 
-	// ƒrƒ…[s—ñ
+	// ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—
 	DirectX::XMStoreFloat4x4(&float4x4_, viewMatrix4x4_);
 	memcpy(viewMat_, &float4x4_, sizeof(viewMat_));
 
-	// ƒvƒƒWƒFƒNƒVƒ‡ƒ“s—ñ
+	// ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³è¡Œåˆ—
 	DirectX::XMStoreFloat4x4(&float4x4_, projMatrix4x4_);
 	memcpy(projMat_, &float4x4_, sizeof(projMat_));
 }
@@ -162,7 +162,7 @@ void mtgb::ImGuizmoManipulator::Update()
 
 void mtgb::ImGuizmoManipulator::ShowImGui()
 {
-	// ImGuizmo‚Ì‘€ìƒ‚[ƒh‚ğw’è
+	// ImGuizmoã®æ“ä½œãƒ¢ãƒ¼ãƒ‰ã‚’æŒ‡å®š
 
 	DrawTransformGuizmo();
 
@@ -228,7 +228,7 @@ void mtgb::ImGuizmoManipulator::UpdateManpulator()
 {
 	isUsing_ = ImGuizmo::IsUsing();
 
-	// ƒMƒYƒ‚‚ğg—p (“®‚©‚µ‚Ä‚¢‚È‚­‚Ä‚à’·‰Ÿ‚µ‚ğg—pó‘Ô‚Æ‚İ‚È‚·)
+	// ã‚®ã‚ºãƒ¢ã‚’ä½¿ç”¨ (å‹•ã‹ã—ã¦ã„ãªãã¦ã‚‚é•·æŠ¼ã—ã‚’ä½¿ç”¨çŠ¶æ…‹ã¨ã¿ãªã™)
 	if (wasUsing_ == false && isUsing_ == true)
 	{
 		if (pTargetTransform_ == nullptr)
@@ -236,7 +236,7 @@ void mtgb::ImGuizmoManipulator::UpdateManpulator()
 		pTargetPrevTransformMemento_ = pTargetTransform_->SaveToMemento();
 	}
 
-	// ƒMƒYƒ‚‚Ìg—p‚ğI—¹
+	// ã‚®ã‚ºãƒ¢ã®ä½¿ç”¨ã‚’çµ‚äº†
 	if (wasUsing_ == true && isUsing_ == false)
 	{
 		if (pTargetPrevTransformMemento_ == nullptr || pTargetTransform_ == nullptr)

@@ -9,7 +9,7 @@
 #include "Image.h"
 namespace mtgb
 {
-	// ƒ^[ƒQƒbƒg‚Æ‚µ‚Ä–³‹‚·‚é“G‚Ì–¼‘O
+	// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¨ã—ã¦ç„¡è¦–ã™ã‚‹æ•µã®åå‰
 	const std::string ignoreName{"EnemyBroken"};
 
 	CircleDetector::CircleDetector()
@@ -36,7 +36,7 @@ namespace mtgb
 	{
 		detectedTargets_.clear();
 
-		// ƒ^ƒO‚Åæ“¾
+		// ã‚¿ã‚°ã§å–å¾—
 		std::vector<GameObject*> findObjs;
 		GameObject::FindGameObjects(_config.base.targetTag, &findObjs);
 
@@ -44,15 +44,15 @@ namespace mtgb
 		{
 			if (obj->GetName() == ignoreName)
 			{
-				continue; // –¼‘O‚ª–³‹‘ÎÛ‚È‚ç‰ñ‹A
+				continue; // åå‰ãŒç„¡è¦–å¯¾è±¡ãªã‚‰å›å¸°
 			}
 
-			// Transformæ“¾
+			// Transformå–å¾—
 			Transform* pTransform = &Transform::Get(obj->GetEntityId());
 			Vector3 worldPos	  = pTransform->GetWorldPosition();
 
-			// ‹——£ƒ`ƒFƒbƒN
-			// ƒJƒƒ‰ˆÊ’u‚ğæ“¾
+			// è·é›¢ãƒã‚§ãƒƒã‚¯
+			// ã‚«ãƒ¡ãƒ©ä½ç½®ã‚’å–å¾—
 			Vector3 cameraPos =
 				Game::System<CameraSystem>().GetTransform(_config.base.windowContext).GetWorldPosition();
 			float distance = (worldPos - cameraPos).Size();
@@ -62,16 +62,16 @@ namespace mtgb
 				continue;
 			}
 
-			// ƒ[ƒ‹ƒhÀ•W‚ğƒXƒNƒŠ[ƒ“À•W‚É•ÏŠ·
+			// ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã«å¤‰æ›
 			Vector3 screenPos = Game::System<CameraSystem>().GetWorldToScreenPos(worldPos, _config.base.windowContext);
 
-			// ƒXƒNƒŠ[ƒ“À•W‚ª—LŒø”ÍˆÍ“à‚©ƒ`ƒFƒbƒN
+			// ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ãŒæœ‰åŠ¹ç¯„å›²å†…ã‹ãƒã‚§ãƒƒã‚¯
 			if (screenPos.z < 0.0f || screenPos.z > 1.0f)
 			{
 				continue;
 			}
 
-			// ‰~Œ`”ÍˆÍ“à‚©ƒ`ƒFƒbƒN
+			// å††å½¢ç¯„å›²å†…ã‹ãƒã‚§ãƒƒã‚¯
 			Vector2F screenPos2D = {screenPos.x, screenPos.y};
 			if (IsPointInCircle(screenPos2D, _config.center, _config.radius))
 			{

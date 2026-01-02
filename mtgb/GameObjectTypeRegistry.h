@@ -14,7 +14,7 @@ namespace mtgb
 		void Update() override;
 
 		/// <summary>
-		/// �^��o�^���A���O�ƕR�t����
+		/// 型を登録し、名前と紐付ける
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="_typeName"></param>
@@ -25,7 +25,7 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// �^��񂩂�^�����擾
+		/// 型情報から型名を取得
 		/// </summary>
 		/// <param name="_typeIndex"></param>
 		/// <returns></returns>
@@ -38,13 +38,13 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// �o�^����Ă���S�Ă̌^�̖��O��Ԃ�
+		/// 登録されている全ての型の名前を返す
 		/// </summary>
 		/// <returns></returns>
 		std::vector<std::string> GetRegisteredNames() const;
 
 		/// <summary>
-		/// �^������^�����擾
+		/// 型名から型情報を取得
 		/// </summary>
 		/// <param name="_typeName"></param>
 		/// <returns></returns>
@@ -57,7 +57,7 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// �^���o�^����Ă��邩�m�F
+		/// 型が登録されているか確認
 		/// </summary>
 		/// <param name="_typeIndex"></param>
 		/// <returns></returns>

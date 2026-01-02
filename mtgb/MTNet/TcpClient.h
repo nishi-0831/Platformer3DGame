@@ -4,22 +4,22 @@
 namespace mtnet
 {
 	/// <summary>
-	/// TCP’ÊM‚ğ‚·‚é‚½‚ß‚ÌƒNƒ‰ƒCƒAƒ“ƒg
+	/// TCPé€šä¿¡ã‚’ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆ
 	/// </summary>
 	class TcpClient : public Socket
 	{
 	  public:
 		/// <summary>
-		/// TcpƒNƒ‰ƒCƒAƒ“ƒg‚ğì¬‚·‚é
+		/// Tcpã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚’ä½œæˆã™ã‚‹
 		/// </summary>
-		/// <param name="_local">Ú‘±Œ³‚ÌƒGƒ“ƒhƒ|ƒCƒ“ƒg</param>
+		/// <param name="_local">æ¥ç¶šå…ƒã®ã‚¨ãƒ³ãƒ‰ãƒã‚¤ãƒ³ãƒˆ</param>
 		TcpClient(const IPEndPoint& _local);
 		~TcpClient();
 
 		/// <summary>
-		/// Ú‘±‚·‚é
+		/// æ¥ç¶šã™ã‚‹
 		/// </summary>
-		/// <param name="_remote">Ú‘±æ‚ÌƒGƒ“ƒhƒ|ƒCƒ“ƒg</param>
+		/// <param name="_remote">æ¥ç¶šå…ˆã®ã‚¨ãƒ³ãƒ‰ãƒã‚¤ãƒ³ãƒˆ</param>
 		void Connect(const IPEndPoint& _remote);
 
 		ReceivedLength Receive(Byte* _buffer, const int& _bufferLength);

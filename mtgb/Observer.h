@@ -6,7 +6,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ƒCƒxƒ“ƒg‚ğŠÄ‹A‚Ü‚Æ‚ß‚ÄÀs‚·‚éƒNƒ‰ƒX
+	/// ã‚¤ãƒ™ãƒ³ãƒˆã‚’ç›£è¦–ã€ã¾ã¨ã‚ã¦å®Ÿè¡Œã™ã‚‹ã‚¯ãƒ©ã‚¹
 	/// </summary>
 	/// <typeparam name="...CallArgs"></typeparam>
 	template <typename... CallArgs> class Observer
@@ -40,7 +40,7 @@ namespace mtgb
 	}
 	template <typename... CallArgs> inline void Observer<CallArgs...>::Invoke(CallArgs... args)
 	{
-		// ‚·‚×‚ÄŒÄ‚Ño‚µ
+		// ã™ã¹ã¦å‘¼ã³å‡ºã—
 		for (auto& func : functions_)
 		{
 			func();

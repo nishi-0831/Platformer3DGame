@@ -13,9 +13,9 @@
 #include "MTImGui.h"
 namespace
 {
-	static const float DEFAULT_FOV{60.0f};	   // ƒfƒtƒHƒ‹ƒg‚Ì‹–ìŠp (Field Of View)
-	static const float DEFAULT_NEAR{0.1f};	   // ƒfƒtƒHƒ‹ƒg‚Ìƒjƒ„[‹——£
-	static const float DEFAULT_FAR{100000.0f}; // ƒfƒtƒHƒ‹ƒg‚Ìƒtƒ@[‹——£
+	static const float DEFAULT_FOV{60.0f};	   // ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®è¦–é‡è§’ (Field Of View)
+	static const float DEFAULT_NEAR{0.1f};	   // ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ‹ãƒ¤ãƒ¼è·é›¢
+	static const float DEFAULT_FAR{100000.0f}; // ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ•ã‚¡ãƒ¼è·é›¢
 } // namespace
 
 mtgb::CameraSystem::CameraSystem()
@@ -45,7 +45,7 @@ mtgb::CameraHandleInScene mtgb::CameraSystem::RegisterDrawCamera(Transform* pCam
 {
 	CameraHandleInScene handle{INVALID_HANDLE};
 
-	// ‚à‚µƒJƒƒ‰‚ª–¢“o˜^‚È‚ç
+	// ã‚‚ã—ã‚«ãƒ¡ãƒ©ãŒæœªç™»éŒ²ãªã‚‰
 	if (pTransforms_.size() == 0)
 	{
 		handle = 0;
@@ -56,15 +56,15 @@ mtgb::CameraHandleInScene mtgb::CameraSystem::RegisterDrawCamera(Transform* pCam
 
 	auto itr{std::find(pTransforms_.begin(), pTransforms_.end(), pCameraTransform_)};
 
-	// Œ©‚Â‚©‚ç‚È‚©‚Á‚½
+	// è¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸ
 	if (itr == pTransforms_.end())
 	{
 		handle = static_cast<CameraHandleInScene>(pTransforms_.size());
 		pTransforms_.push_back(pCameraTransform_);
 	}
-	else // Šù‚É‚ ‚é
+	else // æ—¢ã«ã‚ã‚‹
 	{
-		// ƒCƒ“ƒfƒbƒNƒX‚ğ•Ô‚·
+		// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’è¿”ã™
 		handle = static_cast<CameraHandleInScene>(itr - pTransforms_.begin());
 	}
 
@@ -83,7 +83,7 @@ void mtgb::CameraSystem::UnregisterDrawCamera(const Transform* pCameraTransform_
 		if ((*itr) == pCameraTransform_)
 		{
 			(*itr) = nullptr;
-			return; // ˆê’v‚µ‚½‚çnullptr‚É‚µ‚Ä‰ñ‹A
+			return; // ä¸€è‡´ã—ãŸã‚‰nullptrã«ã—ã¦å›å¸°
 		}
 	}
 }
@@ -137,12 +137,12 @@ mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, WindowContex
 const mtgb::Transform& mtgb::CameraSystem::GetTransform() const
 {
 	/*massert(0 <= hCurrentCamera_ && hCurrentCamera_ < pTransforms_.size()
-		&& "ƒJƒƒ‰ƒnƒ“ƒhƒ‹‚ª–³Œø‚Å‚·B");
+		&& "ã‚«ãƒ¡ãƒ©ãƒãƒ³ãƒ‰ãƒ«ãŒç„¡åŠ¹ã§ã™ã€‚");
 
 	Transform* pTransform{ pTransforms_[hCurrentCamera_] };
 
 	massert(pTransform != nullptr
-		&& "Šù‚É–³Œø‰»‚³‚ê‚½ƒJƒƒ‰‚ªQÆ‚³‚ê‚Ü‚µ‚½B");
+		&& "æ—¢ã«ç„¡åŠ¹åŒ–ã•ã‚ŒãŸã‚«ãƒ¡ãƒ©ãŒå‚ç…§ã•ã‚Œã¾ã—ãŸã€‚");
 
 	return *pTransform;*/
 	return GetTransform(hCurrentCamera_);
@@ -150,11 +150,11 @@ const mtgb::Transform& mtgb::CameraSystem::GetTransform() const
 
 const mtgb::Transform& mtgb::CameraSystem::GetTransform(CameraHandleInScene _hCamera) const
 {
-	massert(0 <= _hCamera && _hCamera < pTransforms_.size() && "ƒJƒƒ‰ƒnƒ“ƒhƒ‹‚ª–³Œø‚Å‚·B");
+	massert(0 <= _hCamera && _hCamera < pTransforms_.size() && "ã‚«ãƒ¡ãƒ©ãƒãƒ³ãƒ‰ãƒ«ãŒç„¡åŠ¹ã§ã™ã€‚");
 
 	Transform* pTransform{pTransforms_[_hCamera]};
 
-	massert(pTransform != nullptr && "Šù‚É–³Œø‰»‚³‚ê‚½ƒJƒƒ‰‚ªQÆ‚³‚ê‚Ü‚µ‚½B");
+	massert(pTransform != nullptr && "æ—¢ã«ç„¡åŠ¹åŒ–ã•ã‚ŒãŸã‚«ãƒ¡ãƒ©ãŒå‚ç…§ã•ã‚Œã¾ã—ãŸã€‚");
 
 	return *pTransform;
 }
@@ -173,9 +173,9 @@ void mtgb::CameraSystem::GetViewMatrix(Matrix4x4* _pView, CameraHandleInScene _h
 {
 	const Transform& cameraTransform{GetTransform(_hCamera)};
 
-	Vector4 vEyePt{cameraTransform.GetWorldPosition()};	   // ƒJƒƒ‰i‹“_jˆÊ’u
-	Vector4 vLookatPt{cameraTransform.Forward() + vEyePt}; // ’‹ˆÊ’u
-	Vector4 vUpVec{cameraTransform.Up()};				   // ã•ûˆÊ’u
+	Vector4 vEyePt{cameraTransform.GetWorldPosition()};	   // ã‚«ãƒ¡ãƒ©ï¼ˆè¦–ç‚¹ï¼‰ä½ç½®
+	Vector4 vLookatPt{cameraTransform.Forward() + vEyePt}; // æ³¨è¦–ä½ç½®
+	Vector4 vUpVec{cameraTransform.Up()};				   // ä¸Šæ–¹ä½ç½®
 
 	*_pView = XMMatrixLookAtLH(vEyePt, vLookatPt, vUpVec);
 }
@@ -219,12 +219,12 @@ const mtgb::WorldToScreenData& mtgb::CameraSystem::GetWorldToScreenData(WindowCo
 {
 	auto itr = worldToScreenDatas_.find(_context);
 
-	// V‚µ‚­ì¬
+	// æ–°ã—ãä½œæˆ
 	if (itr == worldToScreenDatas_.end())
 	{
 		WorldToScreenData data;
 		CalculateWorldToScreenData(&data, _context);
-		// ì¬‚µ‚½‚à‚Ì‚ğ•Ô‚·
+		// ä½œæˆã—ãŸã‚‚ã®ã‚’è¿”ã™
 		return worldToScreenDatas_.insert(std::make_pair(_context, data)).first->second;
 	}
 	if (currentFrameId_ != itr->second.frameId)

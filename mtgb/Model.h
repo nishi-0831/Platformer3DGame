@@ -12,7 +12,7 @@ namespace mtgb
 	{
 	  private:
 		/// <summary>
-		/// モデルの情報
+		/// 繝｢繝�繝ｫ縺ｮ諠�蝣ｱ
 		/// </summary>
 		struct ModelData
 		{
@@ -32,7 +32,7 @@ namespace mtgb
 		static ModelHandle Load(const std::string_view& _fileName);
 
 	  private:
-		ModelHandle handleCounter_; // ハンドラの加算用
+		ModelHandle handleCounter_; // 繝上Φ繝峨Λ縺ｮ蜉邂礼畑
 		std::map<ModelHandle, ModelData*> modelData_;
 	};
 } // namespace mtgb

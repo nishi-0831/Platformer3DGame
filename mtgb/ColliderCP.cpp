@@ -21,10 +21,10 @@ mtgb::ColliderCP::~ColliderCP()
 void mtgb::ColliderCP::Start()
 {
 	Collider::hSphereModel_ = Fbx::Load("Model/SphereCollider.fbx");
-	massert(Collider::hSphereModel_ >= 0 && "SphereColliderƒ‚ƒfƒ‹‚Ì“Ç‚İ‚İ‚É¸”s @ColliderCP::Start");
+	massert(Collider::hSphereModel_ >= 0 && "SphereColliderãƒ¢ãƒ‡ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¤±æ•— @ColliderCP::Start");
 
 	Collider::hBoxModel_ = Fbx::Load("Model/BoxCollider.fbx");
-	massert(Collider::hBoxModel_ >= 0 && "BoxColliderƒ‚ƒfƒ‹‚Ì“Ç‚İ‚İ‚É¸”s @ColliderCP::Start");
+	massert(Collider::hBoxModel_ >= 0 && "BoxColliderãƒ¢ãƒ‡ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¤±æ•— @ColliderCP::Start");
 }
 
 void mtgb::ColliderCP::Update()

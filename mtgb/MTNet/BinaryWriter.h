@@ -6,7 +6,7 @@ namespace mtnet
 	using mtbin::MemoryStream;
 
 	/// <summary>
-	/// MemoryStream‚Ì‘‚«‚İê—p”Å
+	/// MemoryStreamã®æ›¸ãè¾¼ã¿å°‚ç”¨ç‰ˆ
 	/// </summary>
 	class BinaryWriter : public MemoryStream
 	{
@@ -16,7 +16,7 @@ namespace mtnet
 
 		using MemoryStream::Write;
 
-	  private: // ‘‚«‚İˆÈŠO‚Íƒvƒ‰ƒCƒx[ƒg‚É‚·‚é
+	  private: // æ›¸ãè¾¼ã¿ä»¥å¤–ã¯ãƒ—ãƒ©ã‚¤ãƒ™ãƒ¼ãƒˆã«ã™ã‚‹
 		using MemoryStream::Read;
 		using MemoryStream::Seek;
 	};

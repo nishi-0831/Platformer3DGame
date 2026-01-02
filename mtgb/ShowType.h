@@ -1,12 +1,12 @@
 #pragma once
 /// <summary>
-/// 表示するImGuiWindow
+/// 陦ｨ遉ｺ縺吶ｋImGuiWindow
 /// </summary>
 enum class ShowType
 {
-	Inspector, // プロパティを表示
-	SceneView, // デバッグ用のゲーム画面
-	Settings,  // ゲームの設定をいじる画面
+	Inspector, // 繝励Ο繝代ユ繧｣繧定｡ｨ遉ｺ
+	SceneView, // 繝�繝舌ャ繧ｰ逕ｨ縺ｮ繧ｲ繝ｼ繝逕ｻ髱｢
+	Settings,  // 繧ｲ繝ｼ繝縺ｮ險ｭ螳壹ｒ縺�縺倥ｋ逕ｻ髱｢
 	Editor,
 	None
 };

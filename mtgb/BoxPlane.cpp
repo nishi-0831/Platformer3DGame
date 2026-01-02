@@ -19,16 +19,16 @@
 
 Plane GetPlane(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir)
 {
-	// •½–Ê‚Ì–@ü
+	// å¹³é¢ã®æ³•ç·š
 	Vector3 normal;
-	// •½–Ê“à‚Ì3‚Ì“_
+	// å¹³é¢å†…ã®3ã®ç‚¹
 	Vector3 point1;
 	Vector3 point2;
 	Vector3 point3;
 
-	// AABB‚ÌŠe’¸“_
+	// AABBã®å„é ‚ç‚¹
 	Vector3 corners[8];
-	// DirectXCollision.ini‚É‚ ‚ég_BoxOffset‚Ì‡”Ô‚Å’¸“_‚ğæ“¾
+	// DirectXCollision.iniã«ã‚ã‚‹g_BoxOffsetã®é †ç•ªã§é ‚ç‚¹ã‚’å–å¾—
 	_aabb.GetCorners(corners);
 
 	switch (_planeDir)
@@ -40,35 +40,35 @@ Plane GetPlane(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir)
 		point3 = corners[1];
 		break;
 	case BoxPlaneDir::BACK :
-		// Œã–Ê‚ÌƒCƒ“ƒfƒbƒNƒX : 4,5,6,7
+		// å¾Œé¢ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ : 4,5,6,7
 		normal = Vector3::Back();
 		point1 = corners[4];
 		point2 = corners[5];
 		point3 = corners[6];
 		break;
 	case BoxPlaneDir::RIGHT :
-		// ‰E‘¤–Ê‚ÌƒCƒ“ƒfƒbƒNƒX : 1,2,6,5
+		// å³å´é¢ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ : 1,2,6,5
 		normal = Vector3::Right();
 		point1 = corners[6];
 		point2 = corners[5];
 		point3 = corners[1];
 		break;
 	case BoxPlaneDir::LEFT :
-		// ¶‘¤–Ê‚ÌƒCƒ“ƒfƒbƒNƒX : 0,3,7,4
+		// å·¦å´é¢ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ : 0,3,7,4
 		normal = Vector3::Left();
 		point1 = corners[0];
 		point2 = corners[7];
 		point3 = corners[3];
 		break;
 	case BoxPlaneDir::TOP :
-		// ã–Ê‚ÌƒCƒ“ƒfƒbƒNƒX : 3,2,6,7
+		// ä¸Šé¢ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ : 3,2,6,7
 		normal = Vector3::Up();
 		point1 = corners[3];
 		point2 = corners[6];
 		point3 = corners[2];
 		break;
 	case BoxPlaneDir::BOTTOM :
-		// ‰º–Ê‚ÌƒCƒ“ƒfƒbƒNƒX : 0,1,5,4
+		// ä¸‹é¢ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ : 0,1,5,4
 		normal = Vector3::Down();
 		point1 = corners[0];
 		point2 = corners[1];
@@ -76,7 +76,7 @@ Plane GetPlane(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir)
 		break;
 	}
 
-	// O‚Â‚Ì“_‚©‚ç•½–Ê‚Ì•û’ö®‚ğŒvZ
+	// ä¸‰ã¤ã®ç‚¹ã‹ã‚‰å¹³é¢ã®æ–¹ç¨‹å¼ã‚’è¨ˆç®—
 	DirectX::XMVECTOR planeEquation = DirectX::XMPlaneFromPoints(point1, point2, point3);
 	return Plane{.equation = DirectX::XMVector3Normalize(planeEquation), .normal = normal};
 }

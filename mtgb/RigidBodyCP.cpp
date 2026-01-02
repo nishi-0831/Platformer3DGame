@@ -27,7 +27,7 @@ void mtgb::RigidBodyCP::Update()
 		{
 			for (Collider* onCollider : collider->onColliders_)
 			{
-				// ˆÈ‘O‚ÍÕ“Ë‚µ‚Ä‚¢‚È‚¢‚©”Û‚©
+				// ä»¥å‰ã¯è¡çªã—ã¦ã„ãªã„ã‹å¦ã‹
 				if (collider->onColldiersPrev_.find(onCollider) == collider->onColldiersPrev_.end())
 				{
 					if (rigidBody.onHit_)
@@ -46,7 +46,7 @@ void mtgb::RigidBodyCP::Update()
 
 			for (Collider* onColliderPrev : collider->onColldiersPrev_)
 			{
-				// Œ»Ý‚ÍÕ“Ë‚µ‚Ä‚¢‚È‚¢‚©”Û‚©
+				// ç¾åœ¨ã¯è¡çªã—ã¦ã„ãªã„ã‹å¦ã‹
 				if (collider->onColliders_.find(onColliderPrev) == collider->onColliders_.end())
 				{
 					if (rigidBody.onExit_)

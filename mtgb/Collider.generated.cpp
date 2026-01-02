@@ -6,7 +6,7 @@
 
 namespace mtgb
 {
-	// ImGui•\¦ˆ—‚ğ“o˜^
+	// ImGuiè¡¨ç¤ºå‡¦ç†ã‚’ç™»éŒ²
 	struct Collider_Register
 	{
 		Collider_Register()

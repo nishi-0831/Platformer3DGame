@@ -1,5 +1,5 @@
 #include "Log.h"
-// ƒXƒgƒŠ[ƒ€•Ö—˜Œn
+// ã‚¹ãƒˆãƒªãƒ¼ãƒ ä¾¿åˆ©ç³»
 #include <bitset>
 #include <iomanip>
 #include <sstream>
@@ -13,7 +13,7 @@ void mtnet::Log::Write(const std::string& content)
 		logs_.erase(logs_.begin());
 	}
 
-	{ // ”r‘¼§Œä
+	{ // æ’ä»–åˆ¶å¾¡
 		std::lock_guard<std::mutex> lock(logWriteMutex_);
 		onLogFunc_("log:" + content);
 	}

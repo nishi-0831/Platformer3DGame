@@ -9,18 +9,18 @@
 using namespace mtgb;
 
 /// <summary>
-/// ���ݗL���ȃE�B���h�E�̎��ʎq��Ԃ�
+/// 現在有効なウィンドウの識別子を返す
 /// </summary>
-/// <returns>���݂�WindowContext</returns>
+/// <returns>現在のWindowContext</returns>
 WindowContext WinCtxRes::CurrContext()
 {
 	return Game::System<WinCtxResManager>().CurrCtx();
 }
 
 /// <summary>
-/// ���̃E�B���h�E��HWND���擾����
+/// そのウィンドウのHWNDを取得する
 /// </summary>
-/// <param name="ctx">�E�B���h�E�̎��ʎq</param>
+/// <param name="ctx">ウィンドウの識別子</param>
 /// <returns></returns>
 HWND WinCtxRes::GetHWND(WindowContext ctx)
 {

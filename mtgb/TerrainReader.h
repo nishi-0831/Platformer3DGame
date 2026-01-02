@@ -59,14 +59,14 @@ namespace mtgb
 		void GenerateTerrainAABBs(std::vector<Collider*>* _aabbs);
 		void TestDraw();
 		/// <summary>
-		/// <para> ƒ[ƒ‹ƒhÀ•W‚©‚ç‚»‚ê‚É‘Î‰‚·‚é terrain‚ÌƒZƒ‹‚Ì”Ô†‚ğ•Ô‚· </para>
-		/// <para> terrain‚Ì^‚ñ’†‚ğ(0,0)AŒ´“_‚Æ‚·‚é </para>
+		/// <para> ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‹ã‚‰ãã‚Œã«å¯¾å¿œã™ã‚‹ terrainã®ã‚»ãƒ«ã®ç•ªå·ã‚’è¿”ã™ </para>
+		/// <para> terrainã®çœŸã‚“ä¸­ã‚’(0,0)ã€åŸç‚¹ã¨ã™ã‚‹ </para>
 		/// </summary>
-		/// <param name="_point">ƒZƒ‹‚Ì”Ô†</param>
+		/// <param name="_point">ã‚»ãƒ«ã®ç•ªå·</param>
 		/// <returns></returns>
 		int WorldToCellIndex(float _point) const;
 		/// <summary>
-		/// <para> terrain‚ÌƒZƒ‹‚Ì”Ô†‚©‚çƒ[ƒ‹ƒhÀ•W‚ğ•Ô‚· </para>
+		/// <para> terrainã®ã‚»ãƒ«ã®ç•ªå·ã‹ã‚‰ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’è¿”ã™ </para>
 		/// </summary>
 		/// <param name="_cellIndex"></param>
 		/// <returns></returns>
@@ -82,25 +82,25 @@ namespace mtgb
 		void DrawTerran() const;
 
 		/// <summary>
-		/// ƒXƒe[ƒW‚Ì”ÍˆÍŠO‚Æ”ÍˆÍ“à‚Ì‹«ŠE‚Æ‚È‚éƒRƒ‰ƒCƒ_[‚ğì¬‚·‚é
+		/// ã‚¹ãƒ†ãƒ¼ã‚¸ã®ç¯„å›²å¤–ã¨ç¯„å›²å†…ã®å¢ƒç•Œã¨ãªã‚‹ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ã‚’ä½œæˆã™ã‚‹
 		/// </summary>
 		void GenerateStageBoundaryCollider();
 
 	  private:
-		// ƒƒbƒVƒ…‚Ìƒf[ƒ^
+		// ãƒ¡ãƒƒã‚·ãƒ¥ã®ãƒ‡ãƒ¼ã‚¿
 		std::vector<TerrainVertex> vertices_;
 		std::vector<DWORD> indices_;
 
-		// ComƒIƒuƒWƒFƒNƒg
-		// ƒoƒbƒtƒ@
+		// Comã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+		// ãƒãƒƒãƒ•ã‚¡
 		/*ComPtr<ID3D11Buffer> pVertexBuffer_;
 		ComPtr<ID3D11Buffer> pIndexBuffer_;*/
 
-		// ƒeƒNƒXƒ`ƒƒ
+		// ãƒ†ã‚¯ã‚¹ãƒãƒ£
 		// ComPtr<ID3D11Texture2D> pTexture_;
 		Texture2D pTexture_;
 
-		// ƒ~ƒbƒvƒ}ƒbƒvƒŒƒxƒ‹
+		// ãƒŸãƒƒãƒ—ãƒãƒƒãƒ—ãƒ¬ãƒ™ãƒ«
 		int mipLevels_;
 
 		void GenerateNormals();
@@ -113,12 +113,12 @@ namespace mtgb
 
 		std::vector<Collider*> aabbs;
 		std::vector<std::vector<float>> quadtreeHeightMap;
-		int divisions; // •ªŠ„‰ñ”
+		int divisions; // åˆ†å‰²å›æ•°
 		int cellNum;
 
-		// ƒXƒe[ƒW‚ÌÅ‚‚“x
+		// ã‚¹ãƒ†ãƒ¼ã‚¸ã®æœ€é«˜é«˜åº¦
 		float highestHeight;
-		// “Vˆä‚ğƒXƒe[ƒW‚ÌÅ‚‚“x‚©‚ç‚Ç‚ê‚¾‚¯ã‚É”z’u‚·‚é‚©‚ÌƒIƒtƒZƒbƒg
+		// å¤©äº•ã‚’ã‚¹ãƒ†ãƒ¼ã‚¸ã®æœ€é«˜é«˜åº¦ã‹ã‚‰ã©ã‚Œã ã‘ä¸Šã«é…ç½®ã™ã‚‹ã‹ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 		float ceilingOffset;
 
 		Transform* pTransform;
@@ -147,12 +147,12 @@ namespace mtgb
 
 	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::ReadTerrain(const char* fileName)
 	{
-		// ƒtƒ@ƒCƒ‹‚ğƒoƒCƒiƒŠƒtƒ@ƒCƒ‹‚Æ‚µ‚Ä“Ç‚İ‚Ş
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒã‚¤ãƒŠãƒªãƒ•ã‚¡ã‚¤ãƒ«ã¨ã—ã¦èª­ã¿è¾¼ã‚€
 		std::ifstream file(fileName, std::ios::binary);
-		massert(file && "ƒoƒCƒiƒŠƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ‚É¸”s");
+		massert(file && "ãƒã‚¤ãƒŠãƒªãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—");
 
 		file.read(reinterpret_cast<char*>(stageBuffer.data()), stageBuffer.size() * sizeof(StageDataBit));
-		massert(file && "16bitƒoƒCƒiƒŠƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ‚É¸”s");
+		massert(file && "16bitãƒã‚¤ãƒŠãƒªãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—");
 
 		/*for (int y = 0; y < height; y++)
 		{
@@ -182,7 +182,7 @@ namespace mtgb
 		float mapX = WorldToCellIndex(x);
 		float mapZ = WorldToCellIndex(z);
 
-		// ‹«ŠEƒ`ƒFƒbƒN
+		// å¢ƒç•Œãƒã‚§ãƒƒã‚¯
 		if (mapX < 0 || mapZ < 0)
 		{
 			return 0.0f;
@@ -193,35 +193,35 @@ namespace mtgb
 		int x1 = x0 + 1;
 		int z1 = z0 + 1;
 
-		// ƒZƒ‹“à‚Ìƒ[ƒJƒ‹À•W
+		// ã‚»ãƒ«å†…ã®ãƒ­ãƒ¼ã‚«ãƒ«åº§æ¨™
 		float localX = mapX - x0;
 		float localY = mapZ - z0;
 
-		// ¶ã
+		// å·¦ä¸Š
 		float topLeft = quadtreeHeightMap[z0][x0];
-		// ‰Eã
+		// å³ä¸Š
 		float topRight = quadtreeHeightMap[z0][x1];
-		// ¶‰º
+		// å·¦ä¸‹
 		float bottomLeft = quadtreeHeightMap[z1][x0];
-		// ‰E‰º
+		// å³ä¸‹
 		float bottomRight = quadtreeHeightMap[z1][x1];
 
-		// x•ûŒü‚ÅüŒ`•âŠÔ
+		// xæ–¹å‘ã§ç·šå½¢è£œé–“
 		// (1-t) * A + t * B
 		float top	 = (1 - localX) * topLeft + topRight * localX;
 		float bottom = (1 - localX) * bottomLeft + bottomRight * localX;
 
-		// y•ûŒü‚ÅüŒ`•âŠÔ
+		// yæ–¹å‘ã§ç·šå½¢è£œé–“
 		return (1 - localY) * top + bottom * localY;
 	}
 
 	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::GenerateQuadtreeHeightMap()
 	{
-		// ˆê•Ó‚ÌƒZƒ‹”
+		// ä¸€è¾ºã®ã‚»ãƒ«æ•°
 		cellNum = static_cast<int>(std::pow(2, divisions));
 		// aabbs.resize(cellNum * cellNum);
-		//  Œ³‚Ìƒf[ƒ^‚©‚ç’l‚ğæ“¾‚·‚éŠÔŠu
-		//  unity‚Ì terrain Data‚É‚ÍƒZƒ‹”+1‚Ì’¸“_”‚ª“ü‚Á‚Ä‚¢‚é‚Ì‚Å-1‚·‚é
+		//  å…ƒã®ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰å€¤ã‚’å–å¾—ã™ã‚‹é–“éš”
+		//  unityã® terrain Dataã«ã¯ã‚»ãƒ«æ•°+1ã®é ‚ç‚¹æ•°ãŒå…¥ã£ã¦ã„ã‚‹ã®ã§-1ã™ã‚‹
 		float samplingStep = static_cast<float>(width - 1) / (cellNum);
 
 		quadtreeHeightMap.resize(cellNum + 1, std::vector<float>(cellNum + 1));
@@ -230,11 +230,11 @@ namespace mtgb
 		{
 			for (int x = 0; x < cellNum + 1; x++)
 			{
-				// Œ³‚Ìƒf[ƒ^‚©‚çƒTƒ“ƒvƒŠƒ“ƒO
+				// å…ƒã®ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 				int sourceX = static_cast<int>(x * samplingStep);
 				int sourceY = static_cast<int>(y * samplingStep);
 
-				// ‹«ŠE‚Ìƒ`ƒFƒbƒN
+				// å¢ƒç•Œã®ãƒã‚§ãƒƒã‚¯
 				sourceX = (std::min)(sourceX, width - 1);
 				sourceY = (std::min)(sourceY, height - 1);
 
@@ -258,23 +258,23 @@ namespace mtgb
 		{
 			for (int x = 0; x < cellNum; x++)
 			{
-				// ¶ã
+				// å·¦ä¸Š
 				float topLeft = quadtreeHeightMap[z][x];
-				// ‰Eã
+				// å³ä¸Š
 				float topRight = quadtreeHeightMap[z][x + 1];
-				// ¶‰º
+				// å·¦ä¸‹
 				float bottomLeft = quadtreeHeightMap[z + 1][x];
-				// ‰E‰º
+				// å³ä¸‹
 				float bottomRight = quadtreeHeightMap[z + 1][x + 1];
 
-				//// ƒZƒ‹‚ÌÅ¬AÅ‚‚“x
-				//// ƒZƒ‹‚Ì’†‚©‚ç•âŠÔ‚Í‚¹‚¸‚É
+				//// ã‚»ãƒ«ã®æœ€å°ã€æœ€é«˜é«˜åº¦
+				//// ã‚»ãƒ«ã®ä¸­ã‹ã‚‰è£œé–“ã¯ã›ãšã«
 				// float minHeight = (std::min)({ topLeft,topRight,bottomLeft,bottomRight });
 				float maxHeight = (std::max)({topLeft, topRight, bottomLeft, bottomRight});
 
 				float height = maxHeight;
 				// float height = GetHeightAt(x, z);
-				//  ƒ[ƒ‹ƒhÀ•WŒn‚É•ÏŠ·
+				//  ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ç³»ã«å¤‰æ›
 
 				Vector3 cellWorldPos = {CellIndexToWorld(x), height, CellIndexToWorld(z)};
 
@@ -283,7 +283,7 @@ namespace mtgb
 				//_aabbs->emplace_back(center, extents);
 
 				EntityId terrainCellId = Game::System<EntityManager>().CreateEntity();
-				// Ã“I‚ÈƒRƒ‰ƒCƒ_[
+				// é™çš„ãªã‚³ãƒ©ã‚¤ãƒ€ãƒ¼
 				Collider* pCollider = &(Game::System<ColliderCP>().Get(terrainCellId, ColliderTag::STAGE));
 
 				pCollider->isStatic_	 = true;
@@ -305,7 +305,7 @@ namespace mtgb
 		ID3D11SamplerState* pSampler   = pTexture_.GetSamplerState();
 
 		IShader::Draw<TerrainConstantBuffer, TerrainVertex>(
-			// ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‘‚«‚İ
+			// ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡æ›¸ãè¾¼ã¿
 			[&](TerrainConstantBuffer* _pConstantBuffer)
 			{
 				const CameraSystem& camera = Game::System<CameraSystem>();
@@ -343,19 +343,19 @@ namespace mtgb
 
 	template <typename StageDataBit> inline int TerrainReader<StageDataBit>::WorldToCellIndex(float _point) const
 	{
-		// ƒZƒ‹’PˆÊ‚É•ÏŠ·
-		// í‚É¬‚³‚¢•û,¶‘¤‚ÖŠÛ‚ß‚½‚¢‚Ì‚Åfloorf
+		// ã‚»ãƒ«å˜ä½ã«å¤‰æ›
+		// å¸¸ã«å°ã•ã„æ–¹,å·¦å´ã¸ä¸¸ã‚ãŸã„ã®ã§floorf
 		int cell = static_cast<int>(std::floorf(_point / widthScale));
 
-		// ƒZƒ‹•ÏŠ·‚µ‚½’l‚ÌŒ´“_‚ğƒOƒŠƒbƒh‚Ì’†‰›‚Æ‚·‚éƒIƒtƒZƒbƒg
-		// cellNum‚ª8‚È‚ç’¸“_”‚Í [0 1 2 3 4 5 6 7 8] ‚Å4‚ª’†‰›‚É‚È‚é
-		// [-4 -3 -2 -1 0 1 2 3 4]‚ğƒIƒtƒZƒbƒg•ª‚¸‚ç‚·
+		// ã‚»ãƒ«å¤‰æ›ã—ãŸå€¤ã®åŸç‚¹ã‚’ã‚°ãƒªãƒƒãƒ‰ã®ä¸­å¤®ã¨ã™ã‚‹ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+		// cellNumãŒ8ãªã‚‰é ‚ç‚¹æ•°ã¯ [0 1 2 3 4 5 6 7 8] ã§4ãŒä¸­å¤®ã«ãªã‚‹
+		// [-4 -3 -2 -1 0 1 2 3 4]ã‚’ã‚ªãƒ•ã‚»ãƒƒãƒˆåˆ†ãšã‚‰ã™
 		int centerOffset = cellNum / 2;
 
-		// ƒZƒ‹’PˆÊ‚É•ÏŠ·‚µ‚½’l‚ğƒIƒtƒZƒbƒg•ª‚¸‚ç‚·
+		// ã‚»ãƒ«å˜ä½ã«å¤‰æ›ã—ãŸå€¤ã‚’ã‚ªãƒ•ã‚»ãƒƒãƒˆåˆ†ãšã‚‰ã™
 		int cellIndex = cell + centerOffset;
 
-		// ‹«ŠEƒ`ƒFƒbƒNi’¸“_”‚É‡‚í‚¹‚Ä0‚©‚çcellNum‚Ü‚Åj
+		// å¢ƒç•Œãƒã‚§ãƒƒã‚¯ï¼ˆé ‚ç‚¹æ•°ã«åˆã‚ã›ã¦0ã‹ã‚‰cellNumã¾ã§ï¼‰
 		if (cellIndex < 0 || cellIndex > cellNum)
 		{
 			return -1;
@@ -368,15 +368,15 @@ namespace mtgb
 
 	template <typename StageDataBit> inline float TerrainReader<StageDataBit>::CellIndexToWorld(int _cellIndex) const
 	{
-		// ‹«ŠEƒ`ƒFƒbƒNi’¸“_”‚É‡‚í‚¹‚Ä0‚©‚çcellNum‚Ü‚Åj
+		// å¢ƒç•Œãƒã‚§ãƒƒã‚¯ï¼ˆé ‚ç‚¹æ•°ã«åˆã‚ã›ã¦0ã‹ã‚‰cellNumã¾ã§ï¼‰
 		if (_cellIndex < 0 || _cellIndex > cellNum)
 		{
 			return 0.0f;
 		}
-		// Œ´“_‚ğƒOƒŠƒbƒh‚Ì’†‰›‚Æ‚·‚éƒIƒtƒZƒbƒg
+		// åŸç‚¹ã‚’ã‚°ãƒªãƒƒãƒ‰ã®ä¸­å¤®ã¨ã™ã‚‹ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 		int centerOffset = cellNum / 2;
 
-		// ’†SŠî€‚ÌÀ•WŒn‚É‚µ‚Ä‚©‚çƒ[ƒ‹ƒhÀ•WŒn‚É•ÏŠ·
+		// ä¸­å¿ƒåŸºæº–ã®åº§æ¨™ç³»ã«ã—ã¦ã‹ã‚‰ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ç³»ã«å¤‰æ›
 		return (_cellIndex - centerOffset) * widthScale;
 	}
 
@@ -385,19 +385,19 @@ namespace mtgb
 		vertices_.clear();
 		indices_.clear();
 
-		// ’¸“_¶¬‚Ì‚İ
+		// é ‚ç‚¹ç”Ÿæˆã®ã¿
 		for (int z = 0; z <= cellNum; z++)
 		{
 			for (int x = 0; x <= cellNum; x++)
 			{
 				TerrainVertex vertex;
 
-				// ˆÊ’u
+				// ä½ç½®
 				vertex.position.x = CellIndexToWorld(x);
 				vertex.position.y = quadtreeHeightMap[z][x];
 				vertex.position.z = CellIndexToWorld(z);
 
-				// UVÀ•W (0.0`1.0)
+				// UVåº§æ¨™ (0.0ï½1.0)
 				vertex.uv.x = static_cast<float>(x) / cellNum;
 				vertex.uv.y = static_cast<float>(z) / cellNum;
 
@@ -405,30 +405,30 @@ namespace mtgb
 			}
 		}
 
-		// ƒCƒ“ƒfƒbƒNƒX¶¬iƒ|ƒŠƒSƒ“’PˆÊj
-		for (int z = 0; z < cellNum; z++) // cellNum-1‚Ü‚Åiƒ|ƒŠƒSƒ“”j
+		// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ç”Ÿæˆï¼ˆãƒãƒªã‚´ãƒ³å˜ä½ï¼‰
+		for (int z = 0; z < cellNum; z++) // cellNum-1ã¾ã§ï¼ˆãƒãƒªã‚´ãƒ³æ•°ï¼‰
 		{
-			for (int x = 0; x < cellNum; x++) // cellNum-1‚Ü‚Åiƒ|ƒŠƒSƒ“”j
+			for (int x = 0; x < cellNum; x++) // cellNum-1ã¾ã§ï¼ˆãƒãƒªã‚´ãƒ³æ•°ï¼‰
 			{
-				// lŠpŒ`‚Ì4‚Â‚Ì’¸“_ƒCƒ“ƒfƒbƒNƒX
+				// å››è§’å½¢ã®4ã¤ã®é ‚ç‚¹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 				int topLeft		= z * (cellNum + 1) + x;
 				int topRight	= topLeft + 1;
 				int bottomLeft	= (z + 1) * (cellNum + 1) + x;
 				int bottomRight = bottomLeft + 1;
 
-				// ˆê‚Â–Ú‚ÌOŠpŒ` (Œv‰ñ‚è)
+				// ä¸€ã¤ç›®ã®ä¸‰è§’å½¢ (æ™‚è¨ˆå›ã‚Š)
 				indices_.push_back(topLeft);
 				indices_.push_back(topRight);
 				indices_.push_back(bottomLeft);
 
-				// “ñ‚Â–Ú‚ÌOŠpŒ` (Œv‰ñ‚è)
+				// äºŒã¤ç›®ã®ä¸‰è§’å½¢ (æ™‚è¨ˆå›ã‚Š)
 				indices_.push_back(topRight);
 				indices_.push_back(bottomRight);
 				indices_.push_back(bottomLeft);
 			}
 		}
 
-		// –@üŒvZ
+		// æ³•ç·šè¨ˆç®—
 		GenerateNormals();
 	}
 
@@ -446,7 +446,7 @@ namespace mtgb
 
 		HRESULT hResult = _pDevice->CreateBuffer(&bufferDesc, &initData, &pVertexBuffer_);
 
-		massert(SUCCEEDED(hResult) && "’¸“_ƒoƒbƒtƒ@‚Ìì¬‚É¸”s");
+		massert(SUCCEEDED(hResult) && "é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•—");
 	}
 
 	template <typename StageDataBit>
@@ -463,7 +463,7 @@ namespace mtgb
 
 		HRESULT hResult = _pDevice->CreateBuffer(&bufferDesc, &initData, &pIndexBuffer_);
 
-		massert(SUCCEEDED(hResult) && "ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬‚É¸”s");
+		massert(SUCCEEDED(hResult) && "ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•—");
 	}
 
 	template <typename StageDataBit>
@@ -478,7 +478,7 @@ namespace mtgb
 
 		HRESULT hResult = _pDevice->CreateBuffer(&bufferDesc, nullptr, pConstantBuffer_.ReleaseAndGetAddressOf());
 
-		massert(SUCCEEDED(hResult) && "ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìì¬‚É¸”s @FbxParts::InitializeConstantBuffer");
+		massert(SUCCEEDED(hResult) && "ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•— @FbxParts::InitializeConstantBuffer");
 	}
 
 	template <typename StageDataBit>
@@ -499,7 +499,7 @@ namespace mtgb
 		float wallHeight	= highestHeight + ceilingOffset;
 		float wallThickness = widthScale;
 
-		// +Z•ûŒü‚ÉˆÊ’u‚·‚é•Ç
+		// +Zæ–¹å‘ã«ä½ç½®ã™ã‚‹å£
 		{
 			EntityId id				 = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
@@ -515,7 +515,7 @@ namespace mtgb
 			aabbs.push_back(pCollider);
 		}
 
-		// -Z•ûŒü‚ÉˆÊ’u‚·‚é•Ç
+		// -Zæ–¹å‘ã«ä½ç½®ã™ã‚‹å£
 		{
 			EntityId id				 = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
@@ -531,7 +531,7 @@ namespace mtgb
 			aabbs.push_back(pCollider);
 		}
 
-		// +X•ûŒü‚ÉˆÊ’u‚·‚é•Ç
+		// +Xæ–¹å‘ã«ä½ç½®ã™ã‚‹å£
 		{
 			EntityId id				 = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
@@ -547,7 +547,7 @@ namespace mtgb
 			aabbs.push_back(pCollider);
 		}
 
-		// -X•ûŒü‚ÉˆÊ’u‚·‚é•Ç
+		// -Xæ–¹å‘ã«ä½ç½®ã™ã‚‹å£
 		{
 			EntityId id				 = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
@@ -563,7 +563,7 @@ namespace mtgb
 			aabbs.push_back(pCollider);
 		}
 
-		// +Y•ûŒü‚ÉˆÊ’u‚·‚é•Ç(“Vˆä)
+		// +Yæ–¹å‘ã«ä½ç½®ã™ã‚‹å£(å¤©äº•)
 		{
 			EntityId id				 = Game::System<EntityManager>().CreateEntity();
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
@@ -597,20 +597,20 @@ namespace mtgb
 	{
 		Vector3 normal = Vector3::Zero();
 
-		// üˆÍ‚Ì‚‚³‚©‚ç–@ü‚ğŒvZ
-		// _x,_z‚ª’[‚Ìê‡‚É”z—ñŠOQÆ‚µ‚È‚¢‚æ‚¤‚É‹«ŠEƒ`ƒFƒbƒN‚ğs‚¤
+		// å‘¨å›²ã®é«˜ã•ã‹ã‚‰æ³•ç·šã‚’è¨ˆç®—
+		// _x,_zãŒç«¯ã®å ´åˆã«é…åˆ—å¤–å‚ç…§ã—ãªã„ã‚ˆã†ã«å¢ƒç•Œãƒã‚§ãƒƒã‚¯ã‚’è¡Œã†
 		float heightLeft  = (_x > 0) ? quadtreeHeightMap[_z][_x - 1] : quadtreeHeightMap[_z][_x];
 		float heightRight = (_x < cellNum) ? quadtreeHeightMap[_z][_x + 1] : quadtreeHeightMap[_z][_x];
 		float heightDown  = (_z > 0) ? quadtreeHeightMap[_z - 1][_x] : quadtreeHeightMap[_z][_x];
 		float heightUp	  = (_z < cellNum) ? quadtreeHeightMap[_z + 1][_x] : quadtreeHeightMap[_z][_x];
 
-		// ¶‰E‚Ì‚’á·
+		// å·¦å³ã®é«˜ä½å·®
 		normal.x = heightLeft - heightRight;
 
-		// –@ü‚Éy•ûŒü‚ğŒü‚©‚¹‚é
+		// æ³•ç·šã«yæ–¹å‘ã‚’å‘ã‹ã›ã‚‹
 		normal.y = 2.0f * widthScale;
 
-		// ã‰º‚Ì‚’á·
+		// ä¸Šä¸‹ã®é«˜ä½å·®
 		normal.z = heightDown - heightUp;
 
 		return Vector3::Normalize(normal);

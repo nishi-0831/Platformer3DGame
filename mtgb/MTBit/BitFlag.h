@@ -5,24 +5,24 @@
 
 namespace mtbit
 {
-	// —ñ‹“Œ^ ‚©‚Â size_tŒ^‚ÌˆÃ–Ù“IŒ^•ÏŠ·‚ª‚Å‚«‚È‚¢I = enum struct
+	// åˆ—æŒ™å‹ ã‹ã¤ size_tå‹ã®æš—é»™çš„å‹å¤‰æ›ãŒã§ããªã„ï¼ = enum struct
 	template <typename EnumStructT>
 	concept IsEnumStruct =
 		std::is_enum_v<EnumStructT> && !std::is_convertible_v<EnumStructT, std::underlying_type_t<EnumStructT>>;
 
 	/// <summary>
-	/// ƒXƒR[ƒv•t‚«—ñ‹“Œ^‚ğg‚Á‚½ƒrƒbƒgƒtƒ‰ƒO
+	/// ã‚¹ã‚³ãƒ¼ãƒ—ä»˜ãåˆ—æŒ™å‹ã‚’ä½¿ã£ãŸãƒ“ãƒƒãƒˆãƒ•ãƒ©ã‚°
 	/// </summary>
-	/// <typeparam name="EnumStructT">ƒXƒR[ƒv•t‚«—ñ‹“Œ^</typeparam>
+	/// <typeparam name="EnumStructT">ã‚¹ã‚³ãƒ¼ãƒ—ä»˜ãåˆ—æŒ™å‹</typeparam>
 	template <typename EnumStructT> class BitFlag
 	{
-		static_assert(IsEnumStruct<EnumStructT>, "enum struct‚Ì‚İw’è‚Å‚«‚Ü‚·B");
-		// w’è‚³‚ê‚½ enum struct ‚ÌƒTƒCƒY•ª‚Ìƒrƒbƒg”
+		static_assert(IsEnumStruct<EnumStructT>, "enum structã®ã¿æŒ‡å®šã§ãã¾ã™ã€‚");
+		// æŒ‡å®šã•ã‚ŒãŸ enum struct ã®ã‚µã‚¤ã‚ºåˆ†ã®ãƒ“ãƒƒãƒˆæ•°
 		static constexpr size_t BIT_COUNT{sizeof(EnumStructT) * 8};
 
 	  public:
 		/// <summary>
-		/// ‘€ì‰Â”\‚Èƒrƒbƒgƒtƒ‰ƒO
+		/// æ“ä½œå¯èƒ½ãªãƒ“ãƒƒãƒˆãƒ•ãƒ©ã‚°
 		/// </summary>
 		class BitFlagEditor
 		{
@@ -32,44 +32,44 @@ namespace mtbit
 			~BitFlagEditor() = default;
 
 			/// <summary>
-			/// w’è‚Ìƒtƒ‰ƒO‚ğ—§‚Ä‚é
+			/// æŒ‡å®šã®ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 			/// </summary>
-			/// <param name="_e">ƒXƒR[ƒv•t‚«—ñ‹“Œ^</param>
-			/// <returns>‘±‚¯‚ÄŠÖ”‚ğŒÄ‚Ño‚¹‚é</returns>
+			/// <param name="_e">ã‚¹ã‚³ãƒ¼ãƒ—ä»˜ãåˆ—æŒ™å‹</param>
+			/// <returns>ç¶šã‘ã¦é–¢æ•°ã‚’å‘¼ã³å‡ºã›ã‚‹</returns>
 			BitFlagEditor& On(const EnumStructT _e);
 			/// <summary>
-			/// w’è‚Ìƒtƒ‰ƒO‚ğ~‚ë‚·
+			/// æŒ‡å®šã®ãƒ•ãƒ©ã‚°ã‚’é™ã‚ã™
 			/// </summary>
-			/// <param name="_e">ƒXƒR[ƒv•t‚«—ñ‹“Œ^</param>
-			/// <returns>‘±‚¯‚ÄŠÖ”‚ğŒÄ‚Ño‚¹‚é</returns>
+			/// <param name="_e">ã‚¹ã‚³ãƒ¼ãƒ—ä»˜ãåˆ—æŒ™å‹</param>
+			/// <returns>ç¶šã‘ã¦é–¢æ•°ã‚’å‘¼ã³å‡ºã›ã‚‹</returns>
 			BitFlagEditor& Off(const EnumStructT _e);
 			/// <summary>
-			/// w’è‚Ìƒtƒ‰ƒO‚ğ’Ç‰Á‚·‚é
+			/// æŒ‡å®šã®ãƒ•ãƒ©ã‚°ã‚’è¿½åŠ ã™ã‚‹
 			/// </summary>
-			/// <param name="_other">ƒXƒR[ƒv•t‚«—ñ‹“Œ^</param>
-			/// <returns>‘±‚¯‚ÄŠÖ”‚ğŒÄ‚Ño‚¹‚é</returns>
+			/// <param name="_other">ã‚¹ã‚³ãƒ¼ãƒ—ä»˜ãåˆ—æŒ™å‹</param>
+			/// <returns>ç¶šã‘ã¦é–¢æ•°ã‚’å‘¼ã³å‡ºã›ã‚‹</returns>
 			BitFlagEditor& Add(const BitFlag _other);
 			/// <summary>
-			/// w’è‚Ìƒtƒ‰ƒO‚ğˆø‚­
+			/// æŒ‡å®šã®ãƒ•ãƒ©ã‚°ã‚’å¼•ã
 			/// </summary>
-			/// <param name="_other">ƒXƒR[ƒv•t‚«—ñ‹“Œ^</param>
-			/// <returns>‘±‚¯‚ÄŠÖ”‚ğŒÄ‚Ño‚¹‚é</returns>
+			/// <param name="_other">ã‚¹ã‚³ãƒ¼ãƒ—ä»˜ãåˆ—æŒ™å‹</param>
+			/// <returns>ç¶šã‘ã¦é–¢æ•°ã‚’å‘¼ã³å‡ºã›ã‚‹</returns>
 			BitFlagEditor& Sub(const BitFlag _other);
 			/// <summary>
-			/// ‚·‚×‚Ä‚Ìƒtƒ‰ƒO‚ğ—§‚Ä‚é
+			/// ã™ã¹ã¦ã®ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 			/// </summary>
-			/// <returns>‘±‚¯‚ÄŠÖ”‚ğŒÄ‚Ño‚¹‚é</returns>
+			/// <returns>ç¶šã‘ã¦é–¢æ•°ã‚’å‘¼ã³å‡ºã›ã‚‹</returns>
 			BitFlagEditor& OnAll();
 			/// <summary>
-			/// ‚·‚×‚Ä‚Ìƒtƒ‰ƒO‚ğ~‚ë‚·
+			/// ã™ã¹ã¦ã®ãƒ•ãƒ©ã‚°ã‚’é™ã‚ã™
 			/// </summary>
-			/// <returns>‘±‚¯‚ÄŠÖ”‚ğŒÄ‚Ño‚¹‚é</returns>
+			/// <returns>ç¶šã‘ã¦é–¢æ•°ã‚’å‘¼ã³å‡ºã›ã‚‹</returns>
 			BitFlagEditor& OffAll();
 
 			/// <summary>
-			/// ƒtƒ‰ƒO‚Ì‘€ì‚ğI—¹‚·‚é
+			/// ãƒ•ãƒ©ã‚°ã®æ“ä½œã‚’çµ‚äº†ã™ã‚‹
 			/// </summary>
-			/// <returns>ƒrƒbƒgƒtƒ‰ƒO</returns>
+			/// <returns>ãƒ“ãƒƒãƒˆãƒ•ãƒ©ã‚°</returns>
 			BitFlag& EndEdit()
 			{
 				return bitFlag_;
@@ -82,7 +82,7 @@ namespace mtbit
 			}
 
 		  private:
-			BitFlag& bitFlag_; // •ÒW‚·‚éƒrƒbƒgƒtƒ‰ƒO
+			BitFlag& bitFlag_; // ç·¨é›†ã™ã‚‹ãƒ“ãƒƒãƒˆãƒ•ãƒ©ã‚°
 		};
 
 	  public:
@@ -93,7 +93,7 @@ namespace mtbit
 		~BitFlag() = default;
 
 		/// <summary>
-		/// ƒtƒ‰ƒO‚Ì‘€ì‚ğŠJn‚·‚é
+		/// ãƒ•ãƒ©ã‚°ã®æ“ä½œã‚’é–‹å§‹ã™ã‚‹
 		/// </summary>
 		/// <returns></returns>
 		BitFlagEditor BeginEdit()
@@ -102,45 +102,45 @@ namespace mtbit
 		}
 
 		/// <summary>
-		/// w’èƒtƒ‰ƒO‚ª—§‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©
+		/// æŒ‡å®šãƒ•ãƒ©ã‚°ãŒç«‹ã£ã¦ã„ã‚‹ã‹ã©ã†ã‹
 		/// </summary>
-		/// <param name="_e">w’èƒtƒ‰ƒO</param>
-		/// <returns>—§‚Á‚Ä‚¢‚é true / false</returns>
+		/// <param name="_e">æŒ‡å®šãƒ•ãƒ©ã‚°</param>
+		/// <returns>ç«‹ã£ã¦ã„ã‚‹ true / false</returns>
 		bool Has(const EnumStructT _e) const;
 		/// <summary>
-		/// w’è‚µ‚½ƒtƒ‰ƒO‚Ì‚¢‚¸‚ê‚©‚ª—§‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©
+		/// æŒ‡å®šã—ãŸãƒ•ãƒ©ã‚°ã®ã„ãšã‚Œã‹ãŒç«‹ã£ã¦ã„ã‚‹ã‹ã©ã†ã‹
 		/// </summary>
-		/// <param name="_other">w’èƒtƒ‰ƒO</param>
-		/// <returns>—§‚Á‚Ä‚¢‚é true / false</returns>
+		/// <param name="_other">æŒ‡å®šãƒ•ãƒ©ã‚°</param>
+		/// <returns>ç«‹ã£ã¦ã„ã‚‹ true / false</returns>
 		bool Has(const BitFlag _other) const;
 
 		/// <summary>
-		/// ƒtƒ‰ƒO‚ªˆê’v‚µ‚Ä‚¢‚é‚©
+		/// ãƒ•ãƒ©ã‚°ãŒä¸€è‡´ã—ã¦ã„ã‚‹ã‹
 		/// </summary>
-		/// <param name="_other">ƒtƒ‰ƒO</param>
-		/// <returns>ˆê’v‚µ‚Ä‚¢‚é true / false</returns>
+		/// <param name="_other">ãƒ•ãƒ©ã‚°</param>
+		/// <returns>ä¸€è‡´ã—ã¦ã„ã‚‹ true / false</returns>
 		bool Is(const BitFlag _other) const;
 
 		/// <summary>
-		/// ƒCƒ“ƒXƒ^ƒ“ƒX‚ğì‚é
+		/// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œã‚‹
 		/// </summary>
-		/// <returns>ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+		/// <returns>ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
 		static BitFlag New()
 		{
 			return BitFlag{};
 		}
 
 		/// <summary>
-		/// ƒrƒbƒgƒtƒ‰ƒO‚ğ•Ô‚·
+		/// ãƒ“ãƒƒãƒˆãƒ•ãƒ©ã‚°ã‚’è¿”ã™
 		/// </summary>
-		/// <returns> ƒrƒbƒgƒtƒ‰ƒO </returns>
+		/// <returns> ãƒ“ãƒƒãƒˆãƒ•ãƒ©ã‚° </returns>
 		std::bitset<BIT_COUNT> Value() const
 		{
 			return value_;
 		}
 
 	  private:
-		std::bitset<BIT_COUNT> value_; // ƒrƒbƒgƒtƒ‰ƒO
+		std::bitset<BIT_COUNT> value_; // ãƒ“ãƒƒãƒˆãƒ•ãƒ©ã‚°
 	};
 
 	template <typename T>

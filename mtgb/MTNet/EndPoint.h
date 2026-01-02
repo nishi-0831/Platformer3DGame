@@ -2,21 +2,21 @@
 #include "Common.h"
 
 // typedef struct SOCKADDR_IN* PSOCKADDR_IN;
-//  ƒGƒ“ƒhƒ|ƒCƒ“ƒg: ƒNƒ‰ƒCƒAƒ“ƒg‚ÆƒT[ƒrƒX‚Ğ‚Á‚­‚é‚ß‚Ä
+//  ã‚¨ãƒ³ãƒ‰ãƒã‚¤ãƒ³ãƒˆ: ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã¨ã‚µãƒ¼ãƒ“ã‚¹ã²ã£ãã‚‹ã‚ã¦
 
 namespace mtnet
 {
 	/// <summary>
-	/// ƒGƒ“ƒhƒ|ƒCƒ“ƒg‚Ìî•ñ
+	/// ã‚¨ãƒ³ãƒ‰ãƒã‚¤ãƒ³ãƒˆã®æƒ…å ±
 	/// </summary>
 	class IPEndPoint
 	{
 	  public:
 		/// <summary>
-		/// ƒGƒ“ƒhƒ|ƒCƒ“ƒg‚Ìî•ñ
+		/// ã‚¨ãƒ³ãƒ‰ãƒã‚¤ãƒ³ãƒˆã®æƒ…å ±
 		/// </summary>
-		/// <param name="_ipAddress">IPƒAƒhƒŒƒX</param>
-		/// <param name="_portNumber">ƒ|[ƒg”Ô†</param>
+		/// <param name="_ipAddress">IPã‚¢ãƒ‰ãƒ¬ã‚¹</param>
+		/// <param name="_portNumber">ãƒãƒ¼ãƒˆç•ªå·</param>
 		IPEndPoint(const IPAddress& _ipAddress, PortNumber _portNumber);
 		~IPEndPoint();
 

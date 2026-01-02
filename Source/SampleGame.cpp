@@ -5,7 +5,7 @@
 #include "StageEditScene.h"
 #include "CommandHistoryManager.h"
 #include "ActorManager.h"
-#pragma region ゲーム側で追加
+#pragma region 繧ｲ繝ｼ繝蛛ｴ縺ｧ霑ｽ蜉
 
 #pragma endregion
 
@@ -84,7 +84,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<EffectManager>(SystemUpdateType::Frame);
 	Game::Set<ActorManager>(SystemUpdateType::DontCallMe);
 	Game::Set<SceneSystem>(SystemUpdateType::Frame);
-	// 開始時のシーン
+	// 髢句ｧ区凾縺ｮ繧ｷ繝ｼ繝ｳ
 	// Game::System<SceneSystem>().Move<PlayScene>();
 	// Game::System<SceneSystem>().Move<CheckTutorialScene>();
 #if TO_TEST_SCENE

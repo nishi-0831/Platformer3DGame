@@ -6,9 +6,9 @@
 
 namespace
 {
-	// ŠÈˆÕ“Iƒ‰ƒCƒg‚ÌŒü‚«
+	// ç°¡æ˜“çš„ãƒ©ã‚¤ãƒˆã®å‘ã
 	const mtgb::Vector4 LIGHT_DIRECTION{0.0f, 0.0f, 1.0f, 0.0f};
-	// ŠÈˆÕ“I’nŒ`‚Ìƒ[ƒ‹ƒhÀ•W
+	// ç°¡æ˜“çš„åœ°å½¢ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™
 	const mtgb::Vector3 WORLD_POSITION{0, -10, 0};
 } // namespace
 
@@ -45,7 +45,7 @@ void mtgb::Ground::Draw()
 {
 	using namespace DirectX;
 
-	// ƒJƒƒ‰ƒVƒXƒeƒ€‚Ö‚ÌƒAƒNƒZƒX—p
+	// ã‚«ãƒ¡ãƒ©ã‚·ã‚¹ãƒ†ãƒ ã¸ã®ã‚¢ã‚¯ã‚»ã‚¹ç”¨
 	const CameraSystem& CAMERA{Game::System<CameraSystem>()};
 
 	IShader::Draw<ConstantBuffer, Vertex>(
@@ -54,21 +54,21 @@ void mtgb::Ground::Draw()
 			CAMERA.GetPosition(&_pCB->g_cameraPosition);
 			Vector3 cameraWorldPos{CAMERA.GetTransform().GetWorldPosition()};
 
-			// TODO: ’nŒ`ˆÊ’u‚ğ•ÊƒNƒ‰ƒX‚©‚ç‘€ì
+			// TODO: åœ°å½¢ä½ç½®ã‚’åˆ¥ã‚¯ãƒ©ã‚¹ã‹ã‚‰æ“ä½œ
 			Matrix4x4 mWorld{XMMatrixTranslationFromVector(cameraWorldPos + WORLD_POSITION)};
 			//_transform.GenerateWorldMatrix(&mWorld);
 
-			Matrix4x4 mView{}; // ƒrƒ…[s—ñ
+			Matrix4x4 mView{}; // ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—
 			CAMERA.GetViewMatrix(&mView);
 
-			Matrix4x4 mProj{}; // ƒvƒƒWƒFƒNƒVƒ‡ƒ“s—ñ
+			Matrix4x4 mProj{}; // ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³è¡Œåˆ—
 			CAMERA.GetProjMatrix(&mProj);
 
 			_pCB->g_matrixWorldViewProj = XMMatrixTranspose(mView * mProj);
 			//_pCB->g_matrixWorld = XMMatrixTranspose(mWorld);
 
-			// TODO: ƒ‰ƒCƒg‚ÌŒü‚«‚ÍLightSystem‚©‚ç‘€ì
-			_pCB->g_lightDirection = LIGHT_DIRECTION; // ƒ‰ƒCƒg‚ÌŒü‚«
+			// TODO: ãƒ©ã‚¤ãƒˆã®å‘ãã¯LightSystemã‹ã‚‰æ“ä½œ
+			_pCB->g_lightDirection = LIGHT_DIRECTION; // ãƒ©ã‚¤ãƒˆã®å‘ã
 			_pCB->g_isTexture	   = (false);
 		},
 		[this](ID3D11DeviceContext* _pDC) {},
@@ -78,7 +78,7 @@ void mtgb::Ground::Draw()
 
 void mtgb::Ground::InitializeVertexBuffer(ID3D11Device* _pDevice)
 {
-	// xyzƒAƒNƒZƒX—pƒCƒ“ƒfƒbƒNƒX
+	// xyzã‚¢ã‚¯ã‚»ã‚¹ç”¨ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 	enum
 	{
 		X,
@@ -102,9 +102,9 @@ void mtgb::Ground::InitializeVertexBuffer(ID3D11Device* _pDevice)
 
 	const D3D11_BUFFER_DESC BUFFER_DESC{
 		.ByteWidth			 = sizeof(Vertex) * vertexCount_,
-		.Usage				 = D3D11_USAGE_DYNAMIC, // “r’†‚Å‘‚«Š·‚¦‚é‚½‚ß dynamic
+		.Usage				 = D3D11_USAGE_DYNAMIC, // é€”ä¸­ã§æ›¸ãæ›ãˆã‚‹ãŸã‚ dynamic
 		.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
-		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE, // “r’†‚Å‘‚«Š·‚¦‚é‚©‚ç
+		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE, // é€”ä¸­ã§æ›¸ãæ›ãˆã‚‹ã‹ã‚‰
 		.MiscFlags			 = 0,
 		.StructureByteStride = 0,
 	};
@@ -118,7 +118,7 @@ void mtgb::Ground::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	HRESULT hResult{};
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pVertexBuffer_);
 
-	massert(SUCCEEDED(hResult) && "’¸“_ƒoƒbƒtƒ@‚Ìì¬‚É¸”s @FbxParts::InitializeVertexBuffer");
+	massert(SUCCEEDED(hResult) && "é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•— @FbxParts::InitializeVertexBuffer");
 }
 
 void mtgb::Ground::InitializeIndexBuffer(ID3D11Device* _pDevice)
@@ -127,13 +127,13 @@ void mtgb::Ground::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	// std::vector<DWORD> indexData{};
 	// indexData.reserve()
 
-	// ƒ|ƒŠƒSƒ“‚ğŒ©‚Ä‚¢‚­
+	// ãƒãƒªã‚´ãƒ³ã‚’è¦‹ã¦ã„ã
 	for (uint32_t poly = 0; poly < polygonCount_; poly++)
 	{
 		int polygonSize{pMesh_->GetPolygonSize(poly)};
-		massert(polygonSize == 3 && "Fbxƒ‚ƒfƒ‹‚ªOŠp‰»‚³‚ê‚Ä‚¢‚È‚¢ @Ground::InitializeIndexBuffer");
+		massert(polygonSize == 3 && "Fbxãƒ¢ãƒ‡ãƒ«ãŒä¸‰è§’åŒ–ã•ã‚Œã¦ã„ãªã„ @Ground::InitializeIndexBuffer");
 
-		// ’¸“_‚ğŒ©‚Ä‚¢‚­
+		// é ‚ç‚¹ã‚’è¦‹ã¦ã„ã
 		for (int v = 0; v < polygonSize; v++)
 		{
 			int index{pMesh_->GetPolygonVertex(poly, v)};
@@ -143,7 +143,7 @@ void mtgb::Ground::InitializeIndexBuffer(ID3D11Device* _pDevice)
 
 	const D3D11_BUFFER_DESC BUFFER_DESC{
 		.ByteWidth			 = sizeof(DWORD) * GetIndexCount(),
-		.Usage				 = D3D11_USAGE_DEFAULT, // “r’†‚Å‘‚«Š·‚¦‚È‚¢
+		.Usage				 = D3D11_USAGE_DEFAULT, // é€”ä¸­ã§æ›¸ãæ›ãˆãªã„
 		.BindFlags			 = D3D11_BIND_INDEX_BUFFER,
 		.CPUAccessFlags		 = 0,
 		.MiscFlags			 = 0,
@@ -160,8 +160,8 @@ void mtgb::Ground::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pIndexBuffer_);
 
 	massert(
-		SUCCEEDED(hResult) // ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬‚É¬Œ÷
-		&& "ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬‚É¸”s @Figure::InitializeIndexBuffer"
+		SUCCEEDED(hResult) // ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«æˆåŠŸ
+		&& "ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•— @Figure::InitializeIndexBuffer"
 	);
 }
 
@@ -169,7 +169,7 @@ void mtgb::Ground::InitializeConstantBuffer(ID3D11Device* _pDevice)
 {
 	const D3D11_BUFFER_DESC BUFFER_DESC{
 		.ByteWidth			 = sizeof(ConstantBuffer),
-		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: “r’†‚Å‘‚«Š·‚¦‚é‚½‚ßdynamic
+		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: é€”ä¸­ã§æ›¸ãæ›ãˆã‚‹ãŸã‚dynamic
 		.BindFlags			 = D3D11_BIND_CONSTANT_BUFFER,
 		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE,
 		.MiscFlags			 = 0,
@@ -179,9 +179,9 @@ void mtgb::Ground::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	HRESULT hResult{};
 	hResult = _pDevice->CreateBuffer(
 		&BUFFER_DESC,
-		nullptr, // ‰Šúƒf[ƒ^‚È‚µ
+		nullptr, // åˆæœŸãƒ‡ãƒ¼ã‚¿ãªã—
 		&pConstantBuffer_
 	);
 
-	massert(SUCCEEDED(hResult) && "ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìì¬‚É¸”s @FbxParts::InitializeConstantBuffer");
+	massert(SUCCEEDED(hResult) && "ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•— @FbxParts::InitializeConstantBuffer");
 }

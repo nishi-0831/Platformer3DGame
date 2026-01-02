@@ -1,6 +1,6 @@
 #include "Vector2Int.h"
 
-#pragma region ƒLƒƒƒXƒg
+#pragma region ã‚­ãƒ£ã‚¹ãƒˆ
 // Vector2Int::operator Vector2() const noexcept
 //{
 //	return Vector2

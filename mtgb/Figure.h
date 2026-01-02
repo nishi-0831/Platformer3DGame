@@ -12,20 +12,20 @@ namespace mtgb
 	class Figure : public IShader
 	{
 		/// <summary>
-		/// ’¸“_î•ñ
+		/// é ‚ç‚¹æƒ…å ±
 		/// </summary>
 		struct Vertex
 		{
-			Vector3 position; // À•W
+			Vector3 position; // åº§æ¨™
 		};
 
 		/// <summary>
-		/// GPU‚É‘—‚é‚â‚Â
+		/// GPUã«é€ã‚‹ã‚„ã¤
 		/// </summary>
 		struct ConstantBuffer
 		{
-			Vector4 g_color;		 // F
-			Matrix4x4 g_worldMatrix; // ’¸“_À•W•ÏŠ·s—ñ
+			Vector4 g_color;		 // è‰²
+			Matrix4x4 g_worldMatrix; // é ‚ç‚¹åº§æ¨™å¤‰æ›è¡Œåˆ—
 		};
 
 	  public:
@@ -37,15 +37,15 @@ namespace mtgb
 
 	  private:
 		/// <summary>
-		/// ’¸“_ƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		void InitializeVertexBuffer(ID3D11Device* _pDevice) override;
 		/// <summary>
-		/// ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		void InitializeIndexBuffer(ID3D11Device* _pDevice) override;
 		/// <summary>
-		/// ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@
+		/// ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡
 		/// </summary>
 		void InitializeConstantBuffer(ID3D11Device* _pDevice) override;
 	};

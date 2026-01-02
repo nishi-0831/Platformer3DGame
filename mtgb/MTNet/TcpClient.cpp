@@ -7,7 +7,7 @@ namespace mtnet
 	{
 		if (TryStartup() == false)
 		{
-			throw "TcpClient‚Ìì¬‚É¸”s";
+			throw "TcpClientã®ä½œæˆã«å¤±æ•—";
 		}
 	}
 
@@ -20,7 +20,7 @@ namespace mtnet
 	{
 		if (TryConnect(_remote) == false)
 		{
-			throw "Ú‘±‚É¸”s";
+			throw "æ¥ç¶šã«å¤±æ•—";
 		}
 	}
 

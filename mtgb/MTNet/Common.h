@@ -10,12 +10,12 @@
 
 namespace mtnet
 {
-	// IPƒAƒhƒŒƒX
+	// IPã‚¢ãƒ‰ãƒ¬ã‚¹
 	using IPAddress = std::string;
-	// ƒ|[ƒg”Ô†
+	// ãƒãƒ¼ãƒˆç•ªå·
 	using PortNumber = unsigned short;
-	// Œ‹‰ÊƒR[ƒh
+	// çµæœã‚³ãƒ¼ãƒ‰
 	using ResultCode = int;
-	// ó‚¯æ‚Á‚½ƒoƒCƒg”
+	// å—ã‘å–ã£ãŸãƒã‚¤ãƒˆæ•°
 	using ReceivedLength = int;
 } // namespace mtnet

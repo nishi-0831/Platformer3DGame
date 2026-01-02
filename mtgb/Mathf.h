@@ -7,12 +7,12 @@
 namespace mtgb::Mathf
 {
 	/// <summary>
-	/// a‚©‚çb‚ğüŒ`•âŠÔ‚·‚é
+	/// aã‹ã‚‰bã‚’ç·šå½¢è£œé–“ã™ã‚‹
 	/// </summary>
-	/// <param name="_a">a’l</param>
-	/// <param name="_b">b’l</param>
+	/// <param name="_a">aå€¤</param>
+	/// <param name="_b">bå€¤</param>
 	/// <param name="_value">0.0f ~ 1.0f</param>
-	/// <returns>Å¬’l‚©‚çÅ‘å’l‚ğüŒ`•âŠÔ‚µ‚½_value‚Ì’l</returns>
+	/// <returns>æœ€å°å€¤ã‹ã‚‰æœ€å¤§å€¤ã‚’ç·šå½¢è£œé–“ã—ãŸ_valueã®å€¤</returns>
 	static inline float LerpForward(const float _a, const float _b, const float _value)
 	{
 		float min{std::fminf(_a, _b)};
@@ -23,12 +23,12 @@ namespace mtgb::Mathf
 	}
 
 	/// <summary>
-	/// a‚©‚çb‚ğüŒ`•âŠÔ‚·‚é
+	/// aã‹ã‚‰bã‚’ç·šå½¢è£œé–“ã™ã‚‹
 	/// </summary>
-	/// <param name="_a">a’l</param>
-	/// <param name="_b">b’l</param>
+	/// <param name="_a">aå€¤</param>
+	/// <param name="_b">bå€¤</param>
 	/// <param name="_normal">0.0f ~ 1.0f</param>
-	/// <returns>Å¬’l‚©‚çÅ‘å’l‚ğüŒ`•âŠÔ‚µ‚½_value‚Ì’l</returns>
+	/// <returns>æœ€å°å€¤ã‹ã‚‰æœ€å¤§å€¤ã‚’ç·šå½¢è£œé–“ã—ãŸ_valueã®å€¤</returns>
 	static inline float Lerp(const float _a, const float _b, const float _value)
 	{
 		float rate{std::fmaxf(0.0f, std::fminf(_value, 1.0f))};
@@ -48,27 +48,27 @@ namespace mtgb::Mathf
 	}*/
 
 	/// <summary>
-	/// Å¬’l‚ÆÅ‘å’l‚Ì”ÍˆÍ‚Å³‹K‰»‚·‚é
+	/// æœ€å°å€¤ã¨æœ€å¤§å€¤ã®ç¯„å›²ã§æ­£è¦åŒ–ã™ã‚‹
 	/// </summary>
-	/// <param name="_min">Å¬’l</param>
-	/// <param name="_max">Å‘å’l</param>
-	/// <param name="_current">Œ»İ’l</param>
-	/// <returns>³‹K‰»‚³‚ê‚½’l</returns>
+	/// <param name="_min">æœ€å°å€¤</param>
+	/// <param name="_max">æœ€å¤§å€¤</param>
+	/// <param name="_current">ç¾åœ¨å€¤</param>
+	/// <returns>æ­£è¦åŒ–ã•ã‚ŒãŸå€¤</returns>
 	static inline float Normalize(const float _min, const float _max, const float _current)
 	{
 		massert(
-			_max - _min > FLT_EPSILON && "Å¬’lAÅ‘å’l‚ğ“¯‚¶’l‚É‚Å‚«‚Ü‚¹‚ñBƒ[ƒœZ‚ª”­¶‚µ‚Ü‚·B @Mathf::Normalize"
+			_max - _min > FLT_EPSILON && "æœ€å°å€¤ã€æœ€å¤§å€¤ã‚’åŒã˜å€¤ã«ã§ãã¾ã›ã‚“ã€‚ã‚¼ãƒ­é™¤ç®—ãŒç™ºç”Ÿã—ã¾ã™ã€‚ @Mathf::Normalize"
 		);
 
 		return (_current - _min) / (_max - _min);
 	}
 
 	/// <summary>
-	/// ³”‚Ì’†‚ÅÅ¬’l‚ğ‹‚ß‚é
+	/// æ­£æ•°ã®ä¸­ã§æœ€å°å€¤ã‚’æ±‚ã‚ã‚‹
 	/// </summary>
-	/// <param name="_a">’la</param>
-	/// <param name="_b">’lb</param>
-	/// <returns>³”‚Ì’†‚Å‚ÌÅ¬’l / 0</returns>
+	/// <param name="_a">å€¤a</param>
+	/// <param name="_b">å€¤b</param>
+	/// <returns>æ­£æ•°ã®ä¸­ã§ã®æœ€å°å€¤ / 0</returns>
 	static float PlusMin(float _a, float _b)
 	{
 		if (_a < 0 && _b < 0)
@@ -90,13 +90,13 @@ namespace mtgb::Mathf
 	}
 
 	/// <summary>
-	/// ËŒ‚—\‘ª
+	/// å°„æ’ƒäºˆæ¸¬
 	/// </summary>
-	/// <param name="_shotPosition">Œ‚‚ÂÀ•W</param>
-	/// <param name="_targetPosition">ƒ^[ƒQƒbƒg‚ÌÀ•W</param>
-	/// <param name="_targetMove">ƒ^[ƒQƒbƒg‚ÌˆÚ“®(/s)</param>
-	/// <param name="_bulletSpeed">’e‚Ì‘¬“x</param>
-	/// <returns>Œ‚‚Á‚Ä“–‚½‚éÀ•W</returns>
+	/// <param name="_shotPosition">æ’ƒã¤åº§æ¨™</param>
+	/// <param name="_targetPosition">ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®åº§æ¨™</param>
+	/// <param name="_targetMove">ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®ç§»å‹•(/s)</param>
+	/// <param name="_bulletSpeed">å¼¾ã®é€Ÿåº¦</param>
+	/// <returns>æ’ƒã£ã¦å½“ãŸã‚‹åº§æ¨™</returns>
 	static Vector3 TargetingPosition(
 		Vector3 _shotPosition,
 		Vector3 _targetPosition,
@@ -116,7 +116,7 @@ namespace mtgb::Mathf
 			toTargetDiff.x * toTargetDiff.x + toTargetDiff.y * toTargetDiff.y + toTargetDiff.z * toTargetDiff.z
 		};
 
-		// 0œZ–h~
+		// 0é™¤ç®—é˜²æ­¢
 		if (std::fabsf(A) <= FLT_EPSILON)
 		{
 			if (std::fabsf(B) <= FLT_EPSILON)
@@ -129,12 +129,12 @@ namespace mtgb::Mathf
 			}
 		}
 
-		// “–‚½‚é•b”
+		// å½“ãŸã‚‹ç§’æ•°
 		float sec{};
-		// ‰ğ
+		// è§£
 		float s1{}, s2{};
 
-		// 2Ÿ•û’ö®‚Ì‰ğ‚ÌŒö® ”»•Ê®D
+		// 2æ¬¡æ–¹ç¨‹å¼ã®è§£ã®å…¬å¼ åˆ¤åˆ¥å¼D
 		const float D{B * B - 4.0f * A * C};
 		if (D > FLT_EPSILON)
 		{
@@ -143,7 +143,7 @@ namespace mtgb::Mathf
 			s2			  = (-B + E) / (2.0f * A);
 			sec			  = PlusMin(s1, s2);
 		}
-		else // ‹•”‰ğ == “–‚½‚ç‚È‚¢
+		else // è™šæ•°è§£ == å½“ãŸã‚‰ãªã„
 		{
 			sec = 0;
 		}

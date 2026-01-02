@@ -18,7 +18,7 @@ void mtgb::GameObjectGenerator::Initialize()
 		pInstance_ = new GameObjectGenerator();
 	}
 
-	// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìì¬ŠÖ”A–¼‘O‚ğ“o˜^
+	// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä½œæˆé–¢æ•°ã€åå‰ã‚’ç™»éŒ²
 	mtgb::RegisterCommonGameObjectType(&pInstance_->gameObjFactory_);
 	mtgb::RegisterGameObjectType(&pInstance_->gameObjFactory_);
 }
@@ -47,7 +47,7 @@ void mtgb::GameObjectGenerator::GenerateFromJson(const nlohmann::json& _json)
 	for (nlohmann::json::iterator itr = gameObjs.begin(); itr != gameObjs.end(); itr++)
 	{
 		nlohmann::json j = (*itr);
-		// Œ^–¼‚ğæ“¾
+		// å‹åã‚’å–å¾—
 		std::string classType = j["classType"].get<std::string>();
 
 		GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
@@ -59,9 +59,9 @@ void mtgb::GameObjectGenerator::GenerateFromJson(const nlohmann::json& _json)
 			j
 		);
 
-		// ƒRƒ}ƒ“ƒh‚ğ“n‚·
+		// ã‚³ãƒãƒ³ãƒ‰ã‚’æ¸¡ã™
 		GetInstance()->commandListener_(cmd);
-		// ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌƒfƒVƒŠƒAƒ‰ƒCƒY
+		// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ãƒ‡ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚º
 		Game::DeserializeComponents(cmd->GetCommandTargetEntityId(), j);
 	}
 	cmdHitoryManager.EndGroupCommand();
@@ -86,7 +86,7 @@ void mtgb::GameObjectGenerator::RegisterCommandListener(std::function<void(Comma
 
 void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
 {
-	// TODO:ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgì¬AƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì•t—^‚ÌƒRƒ}ƒ“ƒh‚ğ‚Ü‚Æ‚ß‚é
+	// TODO:ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆä½œæˆã€ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ä»˜ä¸ã®ã‚³ãƒãƒ³ãƒ‰ã‚’ã¾ã¨ã‚ã‚‹
 	GameObject* src			  = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_srcEntityId);
 	std::string classTypeName = src->GetClassTypeName();
 

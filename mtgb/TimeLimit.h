@@ -3,10 +3,10 @@
 #include <functional>
 #include <queue>
 
-// E§ŒÀŠÔ‚Ì•\¦
-// E§ŒÀŠÔ‚É’B‚µ‚½‚çƒmƒ‹ƒ}Šm”F
-// EƒI[ƒo[ƒV[ƒ“‚Ö(ƒNƒŠƒAor¸”s)
-// EƒNƒŠƒAAƒQ[ƒ€ƒI[ƒo[‚Ì‰‰o(‰¼‚ÌƒeƒLƒXƒg)
+// ãƒ»åˆ¶é™æ™‚é–“ã®è¡¨ç¤º
+// ãƒ»åˆ¶é™æ™‚é–“ã«é”ã—ãŸã‚‰ãƒãƒ«ãƒç¢ºèª
+// ãƒ»ã‚ªãƒ¼ãƒãƒ¼ã‚·ãƒ¼ãƒ³ã¸(ã‚¯ãƒªã‚¢orå¤±æ•—)
+// ãƒ»ã‚¯ãƒªã‚¢ã€ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ã®æ¼”å‡º(ä»®ã®ãƒ†ã‚­ã‚¹ãƒˆ)
 
 class TimeLimit : public mtgb::GameObject
 {
@@ -18,33 +18,33 @@ class TimeLimit : public mtgb::GameObject
 	void Update() override;
 	void Draw() const override;
 	/// <summary>
-	/// ƒ^ƒCƒ}[‚ÌƒJƒEƒ“ƒgƒ_ƒEƒ“‚ğn‚ß‚é
+	/// ã‚¿ã‚¤ãƒãƒ¼ã®ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ã‚’å§‹ã‚ã‚‹
 	/// </summary>
 	void StartTimer();
 
 	/// <summary>
-	/// §ŒÀŠÔ‚É’B‚µ‚½‚ÉŒÄ‚Î‚ê‚éƒR[ƒ‹ƒoƒbƒN‚ğƒZƒbƒg
+	/// åˆ¶é™æ™‚é–“ã«é”ã—ãŸæ™‚ã«å‘¼ã°ã‚Œã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã‚’ã‚»ãƒƒãƒˆ
 	/// </summary>
 	void RegisterOnEndTimerCallback(std::function<void()> _callback);
 
 	/// <summary>
-	/// ƒ^ƒCƒ}[‚ÌƒJƒEƒ“ƒgƒ_ƒEƒ“‚ğˆê’â~
+	/// ã‚¿ã‚¤ãƒãƒ¼ã®ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ã‚’ä¸€æ™‚åœæ­¢
 	/// </summary>
 	void PauseTimer();
 
 	/// <summary>
-	/// ƒ^ƒCƒ}[‚ÌƒJƒEƒ“ƒgƒ_ƒEƒ“‚ğÄŠJ
+	/// ã‚¿ã‚¤ãƒãƒ¼ã®ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ã‚’å†é–‹
 	/// </summary>
 	void ResumeTimer();
 
 	/// <summary>
-	/// c‚èŠÔAƒtƒ‰ƒOAƒR[ƒ‹ƒoƒbƒN“™‚·‚×‚ÄƒŠƒZƒbƒg
+	/// æ®‹ã‚Šæ™‚é–“ã€ãƒ•ãƒ©ã‚°ã€ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ç­‰ã™ã¹ã¦ãƒªã‚»ãƒƒãƒˆ
 	/// </summary>
 	void Reset();
-	static constexpr float PLAY_SCENE_TIMER = 18.0f; // ƒvƒŒƒCƒV[ƒ“‚Ì§ŒÀŠÔ(‰¼)
+	static constexpr float PLAY_SCENE_TIMER = 18.0f; // ãƒ—ãƒ¬ã‚¤ã‚·ãƒ¼ãƒ³ã®åˆ¶é™æ™‚é–“(ä»®)
   private:
 	std::queue<std::function<void()>> onEndTimerCallbacks_;
-	float remainingTime_; // c‚èŠÔ
-	bool isStartTimer_;	  // ƒJƒEƒ“ƒgƒ_ƒEƒ“‚ªn‚Ü‚Á‚½‚©
-	bool isResumeTimer_;  // ƒJƒEƒ“ƒgƒ_ƒEƒ“‚ªˆê’â~‚µ‚Ä‚¢‚é‚©
+	float remainingTime_; // æ®‹ã‚Šæ™‚é–“
+	bool isStartTimer_;	  // ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ãŒå§‹ã¾ã£ãŸã‹
+	bool isResumeTimer_;  // ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ãŒä¸€æ™‚åœæ­¢ã—ã¦ã„ã‚‹ã‹
 };

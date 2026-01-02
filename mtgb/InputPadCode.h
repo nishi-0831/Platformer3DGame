@@ -3,7 +3,7 @@
 #include "IncludingInput.h"
 
 /// <summary>
-/// ƒQ[ƒ€ƒpƒbƒh‚Ìƒ{ƒ^ƒ“ƒR[ƒh
+/// ã‚²ãƒ¼ãƒ ãƒ‘ãƒƒãƒ‰ã®ãƒœã‚¿ãƒ³ã‚³ãƒ¼ãƒ‰
 /// </summary>
 enum struct XInputPadCode : WORD
 {
@@ -12,7 +12,7 @@ enum struct XInputPadCode : WORD
 	Left	= XINPUT_GAMEPAD_DPAD_LEFT,
 	Right	= XINPUT_GAMEPAD_DPAD_RIGHT,
 	Start	= XINPUT_GAMEPAD_START,
-	Back	= XINPUT_GAMEPAD_BACK, // ‚¢‚í‚ä‚éselectƒ{ƒ^ƒ“‚Ì‚±‚ÆB
+	Back	= XINPUT_GAMEPAD_BACK, // ã„ã‚ã‚†ã‚‹selectãƒœã‚¿ãƒ³ã®ã“ã¨ã€‚
 	LStick	= XINPUT_GAMEPAD_LEFT_THUMB,
 	RStick	= XINPUT_GAMEPAD_RIGHT_THUMB,
 	Lbutton = XINPUT_GAMEPAD_LEFT_SHOULDER,
@@ -24,7 +24,7 @@ enum struct XInputPadCode : WORD
 };
 
 /// <summary>
-/// ƒQ[ƒ€ƒpƒbƒh‚ÌDirectInput‚Å‚Ìƒ{ƒ^ƒ“ƒR[ƒh
+/// ã‚²ãƒ¼ãƒ ãƒ‘ãƒƒãƒ‰ã®DirectInputã§ã®ãƒœã‚¿ãƒ³ã‚³ãƒ¼ãƒ‰
 /// </summary>
 enum struct PadCode : uint8_t
 {
@@ -48,7 +48,7 @@ enum struct PadCode : uint8_t
 	R2		 = 7
 };
 
-// ~ƒ{ƒ^ƒ“Adual shock 1
+// Ã—ãƒœã‚¿ãƒ³ã€dual shock 1
 
 enum struct StickType : uint8_t
 {
@@ -57,12 +57,12 @@ enum struct StickType : uint8_t
 };
 
 /// <summary>
-/// <para> ƒtƒ‰ƒCƒgƒXƒeƒBƒbƒN‚Ìƒ{ƒ^ƒ“ƒR[ƒh </para>
-/// <para> ‚Ç‚ÌƒCƒ“ƒfƒbƒNƒX‚ª‚Ç‚Ìƒ{ƒ^ƒ“‚©ƒfƒoƒCƒX‚É‚æ‚Á‚ÄˆÙ‚È‚é‰Â”\«‚ª‚ ‚é‚Ì‚Å’ˆÓ </para>
+/// <para> ãƒ•ãƒ©ã‚¤ãƒˆã‚¹ãƒ†ã‚£ãƒƒã‚¯ã®ãƒœã‚¿ãƒ³ã‚³ãƒ¼ãƒ‰ </para>
+/// <para> ã©ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒã©ã®ãƒœã‚¿ãƒ³ã‹ãƒ‡ãƒã‚¤ã‚¹ã«ã‚ˆã£ã¦ç•°ãªã‚‹å¯èƒ½æ€§ãŒã‚ã‚‹ã®ã§æ³¨æ„ </para>
 /// </summary>
 enum struct FlightStickCode : uint8_t
 {
-	Thumb	= 0, // ew
+	Thumb	= 0, // è¦ªæŒ‡
 	Trigger = 1,
 	Button3 = 2,
 	Button4 = 3,
@@ -70,7 +70,7 @@ enum struct FlightStickCode : uint8_t
 
 enum struct PadIDState
 {
-	INVALID,	// –³Œø
-	ASSIGNED,	// Š„‚è“–‚ÄÏ‚İ
-	UNASSIGNED, // ‹ó‚«
+	INVALID,	// ç„¡åŠ¹
+	ASSIGNED,	// å‰²ã‚Šå½“ã¦æ¸ˆã¿
+	UNASSIGNED, // ç©ºã
 };

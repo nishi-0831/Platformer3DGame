@@ -24,14 +24,14 @@ void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms)
 	pWaveData_ = new WaveData{};
 	_ms.Seek(0);
 
-	// æ“ª4ƒoƒCƒg‚ğ“Ç‚İæ‚é
+	// å…ˆé ­4ãƒã‚¤ãƒˆã‚’èª­ã¿å–ã‚‹
 	byte header[4];
 	_ms.Read(header, sizeof(header), 4);
 
-	// ƒtƒH[ƒ}ƒbƒg”»’è
+	// ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆåˆ¤å®š
 	if (CompareId<4>(header, "RIFF"))
 	{
-		// WAV‚æ‚İ‚±‚İ
+		// WAVã‚ˆã¿ã“ã¿
 
 		_ms.Seek(0);
 		LoadWave(_ms, header);
@@ -43,16 +43,16 @@ void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms)
 	}
 	else
 	{
-		massert(false && "‘Î‰‚µ‚Ä‚¢‚È‚¢‰¹ºƒtƒH[ƒ}ƒbƒg‚Å‚· @AudioClip::Load");
+		massert(false && "å¯¾å¿œã—ã¦ã„ãªã„éŸ³å£°ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã§ã™ @AudioClip::Load");
 	}
 }
 
 void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 {
-	// ƒ`ƒƒƒ“ƒN¯•Êq‚Í 4 byte
+	// ãƒãƒ£ãƒ³ã‚¯è­˜åˆ¥å­ã¯ 4 byte
 	static const size_t ID_SIZE{4};
 
-	// ƒ`ƒƒƒ“ƒNƒwƒbƒ_î•ñ
+	// ãƒãƒ£ãƒ³ã‚¯ãƒ˜ãƒƒãƒ€æƒ…å ±
 	struct ChunkHeader
 	{
 		ChunkHeader()
@@ -61,36 +61,36 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 		{
 		}
 
-		byte id[ID_SIZE]; // ƒ`ƒƒƒ“ƒN¯•Êq
-		uint32_t size;	  // ƒ`ƒƒƒ“ƒNƒ{ƒfƒB‚ÌƒTƒCƒY
+		byte id[ID_SIZE]; // ãƒãƒ£ãƒ³ã‚¯è­˜åˆ¥å­
+		uint32_t size;	  // ãƒãƒ£ãƒ³ã‚¯ãƒœãƒ‡ã‚£ã®ã‚µã‚¤ã‚º
 	};
 
-	// RIFF ƒ`ƒƒƒ“ƒN
+	// RIFF ãƒãƒ£ãƒ³ã‚¯
 	ChunkHeader riff{};
 	_ms.Read(riff.id, sizeof(riff.id), ID_SIZE);
-	massert(CompareId<ID_SIZE>(riff.id, "RIFF") && "RIFF ƒ`ƒƒƒ“ƒNId‚Ì•sˆê’v @AudioClip::Load");
+	massert(CompareId<ID_SIZE>(riff.id, "RIFF") && "RIFF ãƒãƒ£ãƒ³ã‚¯Idã®ä¸ä¸€è‡´ @AudioClip::Load");
 	riff.size = _ms.Read<uint32_t>();
 
-	// WAVE ƒ`ƒƒƒ“ƒN
+	// WAVE ãƒãƒ£ãƒ³ã‚¯
 	byte wave[ID_SIZE]{};
 	_ms.Read(wave, sizeof(wave), ID_SIZE);
-	massert(CompareId<ID_SIZE>(wave, "WAVE") && "WAVE ƒ`ƒƒƒ“ƒNId‚Ì•sˆê’v @AudioClip::Load");
+	massert(CompareId<ID_SIZE>(wave, "WAVE") && "WAVE ãƒãƒ£ãƒ³ã‚¯Idã®ä¸ä¸€è‡´ @AudioClip::Load");
 
-	// ƒtƒH[ƒ}ƒbƒgƒ`ƒƒƒ“ƒN
+	// ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãƒãƒ£ãƒ³ã‚¯
 	ChunkHeader format{};
 	_ms.Read(format.id, sizeof(format.id), ID_SIZE);
-	massert(CompareId<ID_SIZE>(format.id, "fmt ") && "ƒtƒH[ƒ}ƒbƒg ƒ`ƒƒƒ“ƒNId‚Ì•sˆê’v @AudioClip::Load");
+	massert(CompareId<ID_SIZE>(format.id, "fmt ") && "ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ ãƒãƒ£ãƒ³ã‚¯Idã®ä¸ä¸€è‡´ @AudioClip::Load");
 	format.size = _ms.Read<uint32_t>();
-	massert((format.size == 0x10) && "‘Î‰‚µ‚Ä‚¢‚È‚¢ƒtƒH[ƒ}ƒbƒgƒTƒCƒY @AudioClip::Load");
+	massert((format.size == 0x10) && "å¯¾å¿œã—ã¦ã„ãªã„ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚µã‚¤ã‚º @AudioClip::Load");
 	_ms.Read(reinterpret_cast<byte*>(&pWaveData_->waveFormat), sizeof(WAVEFORMATEX), format.size);
 
-	// wBitsPerSample‚ğİ’è
+	// wBitsPerSampleã‚’è¨­å®š
 	/*pWaveData_->waveFormat.wBitsPerSample =
 		pWaveData_->waveFormat.nBlockAlign * 8 / pWaveData_->waveFormat.nChannels;*/
 	pWaveData_->waveFormat.nBlockAlign = pWaveData_->waveFormat.nChannels * pWaveData_->waveFormat.wBitsPerSample / 8;
 	pWaveData_->waveFormat.nAvgBytesPerSec = pWaveData_->waveFormat.nSamplesPerSec * pWaveData_->waveFormat.nBlockAlign;
 
-	// dataƒ`ƒƒƒ“ƒN‚ğ’T‚·
+	// dataãƒãƒ£ãƒ³ã‚¯ã‚’æ¢ã™
 	ChunkHeader header{};
 	while (true)
 	{
@@ -99,11 +99,11 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 
 		if (CompareId<ID_SIZE>(header.id, "data"))
 		{
-			break; // dataƒ`ƒƒƒ“ƒN‚É“’B‚µ‚½‚ç—£’E
+			break; // dataãƒãƒ£ãƒ³ã‚¯ã«åˆ°é”ã—ãŸã‚‰é›¢è„±
 		}
 		else
 		{
-			_ms.Seek(_ms.Current() + header.size); // dataƒ`ƒƒƒ“ƒN‚Å‚È‚¢‚È‚ç“Ç‚İ”ò‚Î‚µ
+			_ms.Seek(_ms.Current() + header.size); // dataãƒãƒ£ãƒ³ã‚¯ã§ãªã„ãªã‚‰èª­ã¿é£›ã°ã—
 		}
 	}
 
@@ -114,33 +114,33 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 
 void mtgb::AudioClip::LoadMp3(mtbin::MemoryStream& _ms, const byte* _first4)
 {
-	// MemoryStream‚©‚çmp3ƒf[ƒ^‚ğ“Ç‚İ‚Ş
+	// MemoryStreamã‹ã‚‰mp3ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 	size_t size	   = _ms.GetLength();
 	byte* mp3_data = new byte[size];
 	_ms.Read(mp3_data, static_cast<int>(size), static_cast<int>(size));
 
-	// drmp3‚ÌƒfƒR[ƒh‰Šú‰»
+	// drmp3ã®ãƒ‡ã‚³ãƒ¼ãƒ‰åˆæœŸåŒ–
 	drmp3 config;
 	if (!drmp3_init_memory(&config, mp3_data, size, NULL))
 	{
-		massert(false && "MP3‚Ì‰Šú‰»‚É¸”s @AudioClip::LoadMp3");
+		massert(false && "MP3ã®åˆæœŸåŒ–ã«å¤±æ•— @AudioClip::LoadMp3");
 		delete[] mp3_data;
 	}
 
-	// ‘PCMƒTƒ“ƒvƒ‹”‚ğæ“¾
+	// ç·PCMã‚µãƒ³ãƒ—ãƒ«æ•°ã‚’å–å¾—
 	drmp3_uint64 total_samples = drmp3_get_pcm_frame_count(&config);
-	// ƒoƒbƒtƒ@ƒTƒCƒY‚ğŒvZ
+	// ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚ºã‚’è¨ˆç®—
 	size_t pcm_sample_count = (size_t)(total_samples * config.channels);
 	size_t pcm_bytes		= pcm_sample_count * sizeof(short);
 
-	// PCMo—Íƒoƒbƒtƒ@Šm•Û
+	// PCMå‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 	pWaveData_->bufferSize = pcm_bytes;
 	pWaveData_->pBuffer	   = new byte[pcm_bytes];
 
-	// PCMƒf[ƒ^‚ğ“Ç‚İ‚Ş
+	// PCMãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 	drmp3_read_pcm_frames_s16(&config, total_samples, reinterpret_cast<short*>(pWaveData_->pBuffer));
 
-	// WAVEƒtƒH[ƒ}ƒbƒgî•ñİ’è
+	// WAVEãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆæƒ…å ±è¨­å®š
 	WAVEFORMATEX& wf   = pWaveData_->waveFormat;
 	wf.wFormatTag	   = 1;
 	wf.nChannels	   = static_cast<WORD>(config.channels);
@@ -149,9 +149,9 @@ void mtgb::AudioClip::LoadMp3(mtbin::MemoryStream& _ms, const byte* _first4)
 	wf.nBlockAlign	   = wf.nChannels * wf.wBitsPerSample / 8;
 	wf.nAvgBytesPerSec = wf.nSamplesPerSec * wf.nBlockAlign;
 
-	// Œãn––
+	// å¾Œå§‹æœ«
 	drmp3_uninit(&config);
-	delete[] mp3_data; // ƒƒ‚ƒŠƒŠ[ƒN–h~‚Ì‚½‚ß‚ÉŠJ•ú
+	delete[] mp3_data; // ãƒ¡ãƒ¢ãƒªãƒªãƒ¼ã‚¯é˜²æ­¢ã®ãŸã‚ã«é–‹æ”¾
 }
 
 float mtgb::AudioClip::GetTotalTimeSec() const
@@ -160,7 +160,7 @@ float mtgb::AudioClip::GetTotalTimeSec() const
 	{
 		return 0;
 	}
-	massert(pWaveData_->waveFormat.nAvgBytesPerSec != 0 && "0œZ‚µ‚Ä‚µ‚Ü‚¢‚Ü‚·B");
-	// ƒf[ƒ^ƒTƒCƒY / 1•bŠÔ‚ ‚½‚è‚Ì“Ç‚İƒoƒCƒg” = ‘Ä¶ŠÔ
+	massert(pWaveData_->waveFormat.nAvgBytesPerSec != 0 && "0é™¤ç®—ã—ã¦ã—ã¾ã„ã¾ã™ã€‚");
+	// ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚º / 1ç§’é–“ã‚ãŸã‚Šã®èª­ã¿ãƒã‚¤ãƒˆæ•° = ç·å†ç”Ÿæ™‚é–“
 	return pWaveData_->bufferSize / static_cast<float>(pWaveData_->waveFormat.nAvgBytesPerSec);
 }

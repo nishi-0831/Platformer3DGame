@@ -36,7 +36,7 @@ void GameOverZone::Start()
 			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
 			if (tag == GameObjectTag::Player)
 			{
-				// 落下イベント通知
+				// 關ｽ荳九う繝吶Φ繝磯夂衍
 				PlayerFellOutEvent event{.playerEntityId = _entityId};
 				Game::System<EventManager>().GetEvent<PlayerFellOutEvent>().Invoke(event);
 			}

@@ -10,7 +10,7 @@ namespace
 mtnet::HttpClient::HttpClient()
 	: wsaData_{}
 	, socket_{INVALID_SOCKET}
-	, // –³Œøƒ\ƒPƒbƒg‚ğ‚Â‚¯‚Ä‚¨‚­
+	, // ç„¡åŠ¹ã‚½ã‚±ãƒƒãƒˆã‚’ã¤ã‘ã¦ãŠã
 	sockAddr_{}
 {
 }
@@ -23,19 +23,19 @@ void mtnet::HttpClient::Initialize(const std::string& _remoteUrl)
 {
 	int result = WSAStartup(MAKEWORD(2, 2), &wsaData_);
 	assert(
-		result == 0 && // WSA‚Ì‹N“®‚Í¬Œ÷‚µ‚Ä‚¢‚é
+		result == 0 && // WSAã®èµ·å‹•ã¯æˆåŠŸã—ã¦ã„ã‚‹
 		"WSAStartup failed."
 	);
 
 	if (socket_ != INVALID_SOCKET)
 	{
-		closesocket(socket_); // ‚à‚µ–³Œøƒ\ƒPƒbƒg‚Å‚Í‚È‚¢‚È‚ç•Â‚¶‚Ä‚ ‚°‚é
+		closesocket(socket_); // ã‚‚ã—ç„¡åŠ¹ã‚½ã‚±ãƒƒãƒˆã§ã¯ãªã„ãªã‚‰é–‰ã˜ã¦ã‚ã’ã‚‹
 		socket_ = INVALID_SOCKET;
 	}
 
-	// MEMO: ‚à‚µDNS‰ğŒˆ‚·‚é‚È‚ç
+	// MEMO: ã‚‚ã—DNSè§£æ±ºã™ã‚‹ãªã‚‰
 	//     : locate host = gethostbyname(_remoteUrl.c_str());
-	// NOTE: ‚½‚¾‚µAˆÈ‰º‚Ìdefine‚ª•K—v‚©‚à
+	// NOTE: ãŸã ã—ã€ä»¥ä¸‹ã®defineãŒå¿…è¦ã‹ã‚‚
 	//     : _WINSOCK_DEPRECATED_NO_WARNINGS
 
 	sockAddr_			 = {};
@@ -51,8 +51,8 @@ void mtnet::HttpClient::Initialize(const std::string& _remoteUrl)
 		&portNumber
 	);
 
-	// NOTE: ƒ|[ƒg”Ô†‚ÍƒrƒbƒOƒGƒ“ƒfƒBƒAƒ“‚Å‚ ‚é‚½‚ßAhtonsŠÖ”‚ğ’Ê‚·•K—v‚ª‚ ‚é
-	sockAddr_.sin_port = htons(portNumber); // ƒ|[ƒg”Ô†‚ğƒrƒbƒOƒGƒ“ƒfƒBƒAƒ“‚É•ÏŠ·‚·‚é
+	// NOTE: ãƒãƒ¼ãƒˆç•ªå·ã¯ãƒ“ãƒƒã‚°ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§ã‚ã‚‹ãŸã‚ã€htonsé–¢æ•°ã‚’é€šã™å¿…è¦ãŒã‚ã‚‹
+	sockAddr_.sin_port = htons(portNumber); // ãƒãƒ¼ãƒˆç•ªå·ã‚’ãƒ“ãƒƒã‚°ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã«å¤‰æ›ã™ã‚‹
 
 	remoteUri_ = _remoteUrl;
 }
@@ -89,8 +89,8 @@ std::string mtnet::HttpClient::Post(
 	socket_ = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
 	assert(
-		socket_ != INVALID_SOCKET // ƒ\ƒPƒbƒg‚Í³í‚É¶¬‚³‚ê‚½
-		&& "–³Œø‚Èƒ\ƒPƒbƒg‚ª¶¬‚³‚ê‚½"
+		socket_ != INVALID_SOCKET // ã‚½ã‚±ãƒƒãƒˆã¯æ­£å¸¸ã«ç”Ÿæˆã•ã‚ŒãŸ
+		&& "ç„¡åŠ¹ãªã‚½ã‚±ãƒƒãƒˆãŒç”Ÿæˆã•ã‚ŒãŸ"
 	);
 
 	result = connect(socket_, reinterpret_cast<SOCKADDR*>(&sockAddr_), sizeof(SOCKADDR_IN));
@@ -102,18 +102,18 @@ std::string mtnet::HttpClient::Post(
 	}
 
 	assert(
-		result == 0 // Ú‘±‚Å‚«‚Ä‚¢‚é
+		result == 0 // æ¥ç¶šã§ãã¦ã„ã‚‹
 		&& "Could not connect"
 	);
 
 	result = send(socket_, getHttp.str().c_str(), strlen(getHttp.str().c_str()), NULL);
 
 	assert(
-		result > 0 // ‘—M‚Å‚«‚Ä‚¢‚é
+		result > 0 // é€ä¿¡ã§ãã¦ã„ã‚‹
 		&& "Failed send"
 	);
 
-	char buffer[BUFFER_SIZE]{}; // óMƒoƒbƒtƒ@
+	char buffer[BUFFER_SIZE]{}; // å—ä¿¡ãƒãƒƒãƒ•ã‚¡
 
 	int receiveLength{};
 	std::string receiveString{};
@@ -121,7 +121,7 @@ std::string mtnet::HttpClient::Post(
 	while (true)
 	{
 		receiveLength = recv(socket_, buffer, BUFFER_SIZE, NULL);
-		if (receiveLength == 0) // 0 ‚È‚ç~‚ß‚é
+		if (receiveLength == 0) // 0 ãªã‚‰æ­¢ã‚ã‚‹
 		{
 			break;
 		}
@@ -133,7 +133,7 @@ std::string mtnet::HttpClient::Post(
 
 	result = closesocket(socket_);
 	assert(
-		result == 0 // •Â‚¶‚ç‚ê‚Ä‚¢‚é
+		result == 0 // é–‰ã˜ã‚‰ã‚Œã¦ã„ã‚‹
 		&& "close error"
 	);
 	socket_ = INVALID_SOCKET;
@@ -164,8 +164,8 @@ void mtnet::HttpClient::PostAndBinaryResponce(
 	socket_ = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
 	assert(
-		socket_ != INVALID_SOCKET // ƒ\ƒPƒbƒg‚Í³í‚É¶¬‚³‚ê‚½
-		&& "–³Œø‚Èƒ\ƒPƒbƒg‚ª¶¬‚³‚ê‚½"
+		socket_ != INVALID_SOCKET // ã‚½ã‚±ãƒƒãƒˆã¯æ­£å¸¸ã«ç”Ÿæˆã•ã‚ŒãŸ
+		&& "ç„¡åŠ¹ãªã‚½ã‚±ãƒƒãƒˆãŒç”Ÿæˆã•ã‚ŒãŸ"
 	);
 
 	result = connect(socket_, reinterpret_cast<SOCKADDR*>(&sockAddr_), sizeof(SOCKADDR_IN));
@@ -177,18 +177,18 @@ void mtnet::HttpClient::PostAndBinaryResponce(
 	}
 
 	assert(
-		result == 0 // Ú‘±‚Å‚«‚Ä‚¢‚é
+		result == 0 // æ¥ç¶šã§ãã¦ã„ã‚‹
 		&& "Could not connect"
 	);
 
 	result = send(socket_, getHttp.str().c_str(), strlen(getHttp.str().c_str()), NULL);
 
 	assert(
-		result > 0 // ‘—M‚Å‚«‚Ä‚¢‚é
+		result > 0 // é€ä¿¡ã§ãã¦ã„ã‚‹
 		&& "Failed send"
 	);
 
-	char buffer[BUFFER_SIZE]{}; // óMƒoƒbƒtƒ@
+	char buffer[BUFFER_SIZE]{}; // å—ä¿¡ãƒãƒƒãƒ•ã‚¡
 
 	int receiveLength{};
 	std::vector<unsigned char> buildBuffer{};
@@ -196,7 +196,7 @@ void mtnet::HttpClient::PostAndBinaryResponce(
 	while (true)
 	{
 		receiveLength = recv(socket_, buffer, BUFFER_SIZE, NULL);
-		if (receiveLength <= 0) // 0 ˆÈ‰º‚È‚ç~‚ß‚é
+		if (receiveLength <= 0) // 0 ä»¥ä¸‹ãªã‚‰æ­¢ã‚ã‚‹
 		{
 			break;
 		}
@@ -205,11 +205,11 @@ void mtnet::HttpClient::PostAndBinaryResponce(
 	}
 
 	result = closesocket(socket_);
-	if (result != 0) // •Â‚¶‚ç‚ê‚Ä‚¢‚é
+	if (result != 0) // é–‰ã˜ã‚‰ã‚Œã¦ã„ã‚‹
 	{
 		return;
 	}
-	// assert(result == 0  // •Â‚¶‚ç‚ê‚Ä‚¢‚é
+	// assert(result == 0  // é–‰ã˜ã‚‰ã‚Œã¦ã„ã‚‹
 	//	&& "close error");
 	socket_ = INVALID_SOCKET;
 
@@ -220,10 +220,10 @@ void mtnet::HttpClient::Cleanup()
 {
 	if (socket_ != INVALID_SOCKET)
 	{
-		closesocket(socket_); // ‚à‚µ–³Œøƒ\ƒPƒbƒg‚Å‚Í‚È‚¢‚È‚ç•Â‚¶‚Ä‚ ‚°‚é
+		closesocket(socket_); // ã‚‚ã—ç„¡åŠ¹ã‚½ã‚±ãƒƒãƒˆã§ã¯ãªã„ãªã‚‰é–‰ã˜ã¦ã‚ã’ã‚‹
 		socket_ = INVALID_SOCKET;
 	}
-	WSACleanup(); // WSA‚ÌƒNƒŠ[ƒ“ƒAƒbƒv
+	WSACleanup(); // WSAã®ã‚¯ãƒªãƒ¼ãƒ³ã‚¢ãƒƒãƒ—
 }
 
 bool mtnet::HttpClient::TryToIPAddresAndPort(

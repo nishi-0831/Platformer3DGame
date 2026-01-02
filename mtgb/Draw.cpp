@@ -23,14 +23,14 @@ void mtgb::Draw::CheckSetShader(const ShaderType _default)
 {
 	if (onceShaderType_ == ShaderType::Max)
 	{
-		// ƒVƒF[ƒ_‚ªƒZƒbƒg‚³‚ê‚Ä‚¢‚È‚¢‚È‚çŠù’èƒVƒF[ƒ_
+		// ã‚·ã‚§ãƒ¼ãƒ€ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ãªã„ãªã‚‰æ—¢å®šã‚·ã‚§ãƒ¼ãƒ€
 		DirectX11Draw::SetShader(_default);
 	}
 	else
 	{
-		// ƒVƒF[ƒ_‚ªƒZƒbƒg‚³‚ê‚Ä‚¢‚é‚È‚ç—Dæ
+		// ã‚·ã‚§ãƒ¼ãƒ€ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ã‚‹ãªã‚‰å„ªå…ˆ
 		DirectX11Draw::SetShader(onceShaderType_);
-		onceShaderType_ = ShaderType::Max; // ˆê“xg‚Á‚½‚çŠO‚·
+		onceShaderType_ = ShaderType::Max; // ä¸€åº¦ä½¿ã£ãŸã‚‰å¤–ã™
 	}
 }
 
@@ -129,8 +129,8 @@ void mtgb::Draw::Image(
 
 void mtgb::Draw::Model(const ModelHandle _hModel, const Transform* _pTransform)
 {
-	// TODO: Fbx‚ÆObj‚ğƒ‚ƒfƒ‹‚Æ‚µ‚Äƒnƒ“ƒhƒ‹ŠÜ‚ß“‡A©“®•ªŠò‚·‚é
-	massert(false && "Draw::Model‚ªŒÄ‚Î‚ê‚Ä‚¢‚Ü‚·‚ª–¢À‘•‚Å‚·BFbx‚ÆObj‚Å•ÊŠÖ”‚ğŒÄ‚ñ‚Å‚­‚¾‚³‚¢B @Draw::Model");
+	// TODO: Fbxã¨Objã‚’ãƒ¢ãƒ‡ãƒ«ã¨ã—ã¦ãƒãƒ³ãƒ‰ãƒ«å«ã‚çµ±åˆã€è‡ªå‹•åˆ†å²ã™ã‚‹
+	massert(false && "Draw::ModelãŒå‘¼ã°ã‚Œã¦ã„ã¾ã™ãŒæœªå®Ÿè£…ã§ã™ã€‚Fbxã¨Objã§åˆ¥é–¢æ•°ã‚’å‘¼ã‚“ã§ãã ã•ã„ã€‚ @Draw::Model");
 }
 
 void mtgb::Draw::Text(

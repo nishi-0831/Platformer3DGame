@@ -9,23 +9,23 @@ namespace mtgb
 	  public:
 		struct Vertex
 		{
-			Vector3 position; // À•W
-			Vector3 normal;	  // –@ü
-			Vector3 uv;		  // uvÀ•W
+			Vector3 position; // åº§æ¨™
+			Vector3 normal;	  // æ³•ç·š
+			Vector3 uv;		  // uvåº§æ¨™
 		};
 
 		struct ConstantBuffer
 		{
-			Matrix4x4 g_matrixWorldViewProj; // ƒ[ƒ‹ƒhEƒrƒ…[EƒvƒƒWƒFƒNƒVƒ‡ƒ“s—ñ
-			Matrix4x4 g_matrixNormalTrans;	 // ‰ñ“]s—ñ‚ÆŠg‘ås—ñ‚Ì‹ts—ñ
-			Matrix4x4 g_matrixWorld;		 // ƒ[ƒ‹ƒhs—ñ
-			Vector4 g_lightDirection;		 // ƒ‰ƒCƒg‚ÌŒü‚«
-			Vector4 g_diffuse;				 // Œõ‚ª‚ ‚½‚Á‚½‚Æ‚«‚Ö‚ÌŠgU”½ËŒõ(ƒ}ƒeƒŠƒAƒ‹F)
-			Vector4 g_ambient;				 // ‘S‘Ì“I‚ÈŠÂ‹«Œõ (Œõ‚ª“–‚½‚ç‚È‚¢êŠ‚É‚à–¾‚é‚­)
-			Vector4 g_speculer;				 // ‹¾–Ê”½Ë (Lambert‚Ìê‡‚Í0)
-			Vector4 g_cameraPosition;		 // ƒJƒƒ‰‚ÌˆÊ’uiƒnƒCƒ‰ƒCƒg‚ÌŒvZ‚É•K—vj
-			FLOAT g_shininess;				 // ƒXƒyƒLƒ…ƒ‰‚Ì‹­‚³
-			BOOL g_isTexture;				 // ƒeƒNƒXƒ`ƒƒ‚Ì—L–³
+			Matrix4x4 g_matrixWorldViewProj; // ãƒ¯ãƒ¼ãƒ«ãƒ‰ãƒ»ãƒ“ãƒ¥ãƒ¼ãƒ»ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³è¡Œåˆ—
+			Matrix4x4 g_matrixNormalTrans;	 // å›è»¢è¡Œåˆ—ã¨æ‹¡å¤§è¡Œåˆ—ã®é€†è¡Œåˆ—
+			Matrix4x4 g_matrixWorld;		 // ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—
+			Vector4 g_lightDirection;		 // ãƒ©ã‚¤ãƒˆã®å‘ã
+			Vector4 g_diffuse;				 // å…‰ãŒã‚ãŸã£ãŸã¨ãã¸ã®æ‹¡æ•£åå°„å…‰(ãƒãƒ†ãƒªã‚¢ãƒ«è‰²)
+			Vector4 g_ambient;				 // å…¨ä½“çš„ãªç’°å¢ƒå…‰ (å…‰ãŒå½“ãŸã‚‰ãªã„å ´æ‰€ã«ã‚‚æ˜ã‚‹ã)
+			Vector4 g_speculer;				 // é¡é¢åå°„ (Lambertã®å ´åˆã¯0)
+			Vector4 g_cameraPosition;		 // ã‚«ãƒ¡ãƒ©ã®ä½ç½®ï¼ˆãƒã‚¤ãƒ©ã‚¤ãƒˆã®è¨ˆç®—ã«å¿…è¦ï¼‰
+			FLOAT g_shininess;				 // ã‚¹ãƒšã‚­ãƒ¥ãƒ©ã®å¼·ã•
+			BOOL g_isTexture;				 // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®æœ‰ç„¡
 		};
 
 		Ground(FbxNode* _pParent);
@@ -38,50 +38,50 @@ namespace mtgb
 
 	  private:
 		/// <summary>
-		/// ’¸“_ƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		void InitializeVertexBuffer(ID3D11Device* _pDevice) override;
 		/// <summary>
-		/// ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		void InitializeIndexBuffer(ID3D11Device* _pDevice) override;
 		/// <summary>
-		/// ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@
+		/// ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡
 		/// </summary>
 		void InitializeConstantBuffer(ID3D11Device* _pDevice) override;
 
 		/// <summary>
-		/// ƒCƒ“ƒfƒbƒNƒX‚Ì”
+		/// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®æ•°
 		/// </summary>
-		/// <returns>ƒCƒ“ƒfƒbƒNƒX‚Ì”</returns>
+		/// <returns>ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®æ•°</returns>
 		inline uint32_t GetIndexCount() const
 		{
-			// ƒCƒ“ƒfƒbƒNƒX” = 1ƒ|ƒŠƒSƒ“ ‚É‚Â‚« 3’¸“_ (3Šp‰»‚³‚ê‚Ä‚¢‚é‚½‚ß)
+			// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹æ•° = 1ãƒãƒªã‚´ãƒ³ ã«ã¤ã 3é ‚ç‚¹ (3è§’åŒ–ã•ã‚Œã¦ã„ã‚‹ãŸã‚)
 			return polygonCount_ * 3;
 		}
 		/// <summary>
-		/// ƒ|ƒŠƒSƒ“”‚©‚ç’¸“_”‚ğ‹‚ß‚é
+		/// ãƒãƒªã‚´ãƒ³æ•°ã‹ã‚‰é ‚ç‚¹æ•°ã‚’æ±‚ã‚ã‚‹
 		/// </summary>
-		/// <param name="_polygonCount">ƒ|ƒŠƒSƒ“”</param>
-		/// <returns>’¸“_”</returns>
+		/// <param name="_polygonCount">ãƒãƒªã‚´ãƒ³æ•°</param>
+		/// <returns>é ‚ç‚¹æ•°</returns>
 		inline uint32_t GetVertexCount(const int _polygonCount = 1) const
 		{
-			// ’¸“_” = 1ƒ|ƒŠƒSƒ“ ‚É‚Â‚« 3’¸“_
+			// é ‚ç‚¹æ•° = 1ãƒãƒªã‚´ãƒ³ ã«ã¤ã 3é ‚ç‚¹
 			return _polygonCount * 3;
 		}
 
 	  private:
-		uint32_t vertexCount_;		  // ’¸“_”
-		uint32_t polygonCount_;		  // ƒ|ƒŠƒSƒ“”
-		uint32_t indexCount_;		  // ƒCƒ“ƒfƒbƒNƒX”
-		uint32_t materialCount_;	  // ƒ}ƒeƒŠƒAƒ‹”
-		uint32_t polygonVertexCount_; // ƒ|ƒŠƒSƒ“‚Ì’¸“_”
+		uint32_t vertexCount_;		  // é ‚ç‚¹æ•°
+		uint32_t polygonCount_;		  // ãƒãƒªã‚´ãƒ³æ•°
+		uint32_t indexCount_;		  // ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹æ•°
+		uint32_t materialCount_;	  // ãƒãƒ†ãƒªã‚¢ãƒ«æ•°
+		uint32_t polygonVertexCount_; // ãƒãƒªã‚´ãƒ³ã®é ‚ç‚¹æ•°
 
-		FbxNode* pNode_; // Fbxƒm[ƒhî•ñ
-		FbxMesh* pMesh_; // ƒƒbƒVƒ…
+		FbxNode* pNode_; // Fbxãƒãƒ¼ãƒ‰æƒ…å ±
+		FbxMesh* pMesh_; // ãƒ¡ãƒƒã‚·ãƒ¥
 
-		Vertex* pVertexes_; // ’¸“_î•ñ
-		DWORD* pIndexData_; // ƒCƒ“ƒfƒbƒNƒXî•ñ
+		Vertex* pVertexes_; // é ‚ç‚¹æƒ…å ±
+		DWORD* pIndexData_; // ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹æƒ…å ±
 
 		ID3D11Buffer** ppIndexBuffer_;
 	};

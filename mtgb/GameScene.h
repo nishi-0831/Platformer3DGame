@@ -30,50 +30,50 @@ namespace mtgb
 
 		template <class GameObjectT, typename... Args> GameObjectT* Instantiate(Args... _args);
 		/// <summary>
-		/// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğƒV[ƒ“‚É“o˜^‚·‚éB
-		/// Šù‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚ÍÄ“x‚Ì“o˜^‚Í‚µ‚È‚¢
-		/// TODO: è“®‚Ìê‡A“o˜^‚µ–Y‚ê‚ª”­¶‚·‚é‹°‚ê‚ª‚ ‚éB©“®‚É‚·‚×‚«
+		/// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã‚·ãƒ¼ãƒ³ã«ç™»éŒ²ã™ã‚‹ã€‚
+		/// æ—¢ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹å ´åˆã¯å†åº¦ã®ç™»éŒ²ã¯ã—ãªã„
+		/// TODO: æ‰‹å‹•ã®å ´åˆã€ç™»éŒ²ã—å¿˜ã‚ŒãŒç™ºç”Ÿã™ã‚‹æã‚ŒãŒã‚ã‚‹ã€‚è‡ªå‹•ã«ã™ã¹ã
 		/// </summary>
-		/// <param name="_pGameObject">“o˜^‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg</param>
+		/// <param name="_pGameObject">ç™»éŒ²ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</param>
 		void RegisterGameObject(GameObject* _pGameObject);
 
 		/// <summary>
-		/// ƒJƒƒ‰ƒIƒuƒWƒFƒNƒg‚Æ‚µ‚Ä“o˜^‚·‚é
+		/// ã‚«ãƒ¡ãƒ©ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¨ã—ã¦ç™»éŒ²ã™ã‚‹
 		/// </summary>
-		/// <param name="_pGameObject">“o˜^‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ|ƒCƒ“ƒ^</param>
-		/// <returns>“o˜^‚³‚ê‚½ƒJƒƒ‰ƒnƒ“ƒhƒ‹</returns>
+		/// <param name="_pGameObject">ç™»éŒ²ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒã‚¤ãƒ³ã‚¿</param>
+		/// <returns>ç™»éŒ²ã•ã‚ŒãŸã‚«ãƒ¡ãƒ©ãƒãƒ³ãƒ‰ãƒ«</returns>
 		CameraHandleInScene RegisterCameraGameObject(GameObject* _pGameObject) const;
 
 		/// <summary>
-		/// ˆø”‚Æ–¼‘O‚ªÅ‰‚Éˆê’v‚µ‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ•Ô‚·
+		/// å¼•æ•°ã¨åå‰ãŒæœ€åˆã«ä¸€è‡´ã—ãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã™
 		/// </summary>
-		/// <param name="_name">’T‚·ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì–¼‘O</param>
-		/// <returns>ˆê’v‚·‚é–¼‘O‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ|ƒCƒ“ƒ^Aˆê’v‚µ‚½‚Ì‚ª‘¶İ‚µ‚È‚¢ê‡‚Ínullptr</returns>
+		/// <param name="_name">æ¢ã™ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åå‰</param>
+		/// <returns>ä¸€è‡´ã™ã‚‹åå‰ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒã‚¤ãƒ³ã‚¿ã€ä¸€è‡´ã—ãŸã®ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯nullptr</returns>
 		GameObject* GetGameObject(std::string _name) const;
 
 		/// <summary>
-		/// ˆø”‚Æƒ^ƒO‚ªÅ‰‚Éˆê’v‚µ‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ•Ô‚·
+		/// å¼•æ•°ã¨ã‚¿ã‚°ãŒæœ€åˆã«ä¸€è‡´ã—ãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã™
 		/// </summary>
-		/// <param name="_name">’T‚·ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ^ƒO</param>
-		/// <returns>ˆê’v‚·‚éƒ^ƒO‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ|ƒCƒ“ƒ^Aˆê’v‚µ‚½‚Ì‚ª‘¶İ‚µ‚È‚¢ê‡‚Ínullptr</returns>
+		/// <param name="_name">æ¢ã™ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¿ã‚°</param>
+		/// <returns>ä¸€è‡´ã™ã‚‹ã‚¿ã‚°ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒã‚¤ãƒ³ã‚¿ã€ä¸€è‡´ã—ãŸã®ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯nullptr</returns>
 		GameObject* GetGameObject(GameObjectTag _tag) const;
 		void GetGameObjects(const std::string& _name, std::vector<GameObject*>* _pFoundGameObjects) const;
 		void GetGameObjects(GameObjectTag _tag, std::vector<GameObject*>* _pFoundGameObjects) const;
 
 		/// <summary>
-		/// ƒeƒ“ƒvƒŒ[ƒgƒpƒ‰ƒ[ƒ^‚ÅƒIƒuƒWƒFƒNƒg‚ğæ“¾
+		/// ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã§ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <returns>‘¶İ‚µ‚Ä‚¢‚È‚¢AGameObject‚ğŒp³‚µ‚Ä‚¢‚È‚¢‚È‚çnullptr</returns>
+		/// <returns>å­˜åœ¨ã—ã¦ã„ãªã„ã€GameObjectã‚’ç¶™æ‰¿ã—ã¦ã„ãªã„ãªã‚‰nullptr</returns>
 		template <typename T> T* GetGameObject() const;
 
 		template <typename T> void GetGameObjects(std::vector<T*>* _pFoundGameObjects) const;
 
 		/// <summary>
-		/// EntityId‚ÅƒIƒuƒWƒFƒNƒg‚ğæ“¾
+		/// EntityIdã§ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
 		/// </summary>
 		/// <param name="_entityId"></param>
-		/// <returns>‘¶İ‚µ‚È‚¢‚È‚çnullptr</returns>
+		/// <returns>å­˜åœ¨ã—ãªã„ãªã‚‰nullptr</returns>
 		GameObject* GetGameObject(const EntityId _entityId) const;
 
 		void DestroyGameObject(EntityId _entityId);
@@ -87,27 +87,27 @@ namespace mtgb
 		virtual void End();
 
 	  private:
-		std::list<GameObject*> pGameObjects_; // ƒV[ƒ“‚É“oê‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg
+		std::list<GameObject*> pGameObjects_; // ã‚·ãƒ¼ãƒ³ã«ç™»å ´ã™ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	};
 
 	template <class GameObjectT, typename... Args> inline GameObjectT* GameScene::Instantiate(Args... _args)
 	{
-		// Šî’êƒNƒ‰ƒX‚ªGameObject‚Å‚ ‚é‚©
+		// åŸºåº•ã‚¯ãƒ©ã‚¹ãŒGameObjectã§ã‚ã‚‹ã‹
 		static_assert(
 			std::is_base_of<GameObject, GameObjectT>().value &&
-			"GameObjectƒNƒ‰ƒX‚ğŒp³‚µ‚Ä‚¢‚È‚¢ƒNƒ‰ƒX‚ÍƒCƒ“ƒXƒ^ƒ“ƒX‚Å‚«‚Ü‚¹‚ñB"
+			"GameObjectã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã¦ã„ãªã„ã‚¯ãƒ©ã‚¹ã¯ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã§ãã¾ã›ã‚“ã€‚"
 		);
 
 		GameObjectT* pInstance{new GameObjectT{_args...}};
 
-		// TODO: ‚±‚±‚à˜A‘±‚µ‚½”z—ñ‚É‚·‚é
+		// TODO: ã“ã“ã‚‚é€£ç¶šã—ãŸé…åˆ—ã«ã™ã‚‹
 		pGameObjects_.push_back(pInstance);
 
 		return pInstance;
 	}
 	template <typename T> inline T* GameScene::GetGameObject() const
 	{
-		// Šî’êƒNƒ‰ƒX‚ªGameObject‚Å‚ ‚é‚©
+		// åŸºåº•ã‚¯ãƒ©ã‚¹ãŒGameObjectã§ã‚ã‚‹ã‹
 		if (std::is_base_of<GameObject, std::remove_cvref_t<T>>().value == false)
 		{
 			return nullptr;
@@ -128,7 +128,7 @@ namespace mtgb
 	{
 		_pFoundGameObjects->clear();
 
-		// Šî’êƒNƒ‰ƒX‚ªGameObject‚Å‚ ‚é‚©
+		// åŸºåº•ã‚¯ãƒ©ã‚¹ãŒGameObjectã§ã‚ã‚‹ã‹
 		if (std::is_base_of<GameObject, std::remove_cvref_t<T>>().value == false)
 		{
 			return;

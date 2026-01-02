@@ -6,7 +6,7 @@ namespace
 	float normalizedY;
 	const mtgb::Vector3 INIT_ANGLE{0, 0, 0};
 	/// <summary>
-	/// ƒ‰ƒWƒAƒ“’PˆÊ‚Ì’l‚ğA0`2ƒÎ‚Ì”ÍˆÍ‚É³‹K‰»‚·‚é
+	/// ãƒ©ã‚¸ã‚¢ãƒ³å˜ä½ã®å€¤ã‚’ã€0ï½2Ï€ã®ç¯„å›²ã«æ­£è¦åŒ–ã™ã‚‹
 	/// </summary>
 	/// <param name="_angleRad"></param>
 	/// <returns></returns>
@@ -14,13 +14,13 @@ namespace
 	{
 		const float TWO_PI = DirectX::XM_2PI;
 
-		// —]‚è‚ğŒvZ
+		// ä½™ã‚Šã‚’è¨ˆç®—
 		_angleRad = std::fmod(_angleRad, TWO_PI);
 
-		// •‰‚Ìê‡
+		// è² ã®å ´åˆ
 		if (_angleRad < 0.0f)
 		{
-			// ³‚Ì’l‚ÉC³
+			// æ­£ã®å€¤ã«ä¿®æ­£
 			_angleRad += TWO_PI;
 		}
 		return _angleRad;
@@ -55,13 +55,13 @@ mtgb::Camera::Camera(GameObject* _pGameObj)
 	, lerpSpeedJumping_{0.3f}
 	, lerpSpeedScalar_{2.0f}
 {
-	// ƒJƒƒ‰•âŠÔ‘¬“x‚Ì‰Šú‰»
+	// ã‚«ãƒ¡ãƒ©è£œé–“é€Ÿåº¦ã®åˆæœŸåŒ–
 	cameraStat_
 		.OnAnyUpdate(
 			[this]
 			{
 				lookAtPosLerpProgress_ = std::clamp(lookAtPosLerpProgress_, 0.0f, 1.0f);
-				// Šp“x‚Ì§ŒÀ
+				// è§’åº¦ã®åˆ¶é™
 				polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 			}
 		)
@@ -82,11 +82,11 @@ mtgb::Camera::Camera(GameObject* _pGameObj)
 
 				orbitSpeed_ = 1.0f;
 
-				// ”íÊ‘Ì‚ª‰æ–ÊŠO‚É‚ ‚éê‡‚Í’Ç]‘¬“x‚ğã‚°‚é
+				// è¢«å†™ä½“ãŒç”»é¢å¤–ã«ã‚ã‚‹å ´åˆã¯è¿½å¾“é€Ÿåº¦ã‚’ä¸Šã’ã‚‹
 				float lerpSpeed = IsTargetOffScreen() ? lerpSpeedGrounded_ * lerpSpeedScalar_ : lerpSpeedGrounded_;
 				lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
 
-				// ƒWƒƒƒ“ƒv’†F‘¬“x‚ÉŠî‚Ã‚¢‚Äó‘Ô‚ğ”»’è
+				// ã‚¸ãƒ£ãƒ³ãƒ—ä¸­ï¼šé€Ÿåº¦ã«åŸºã¥ã„ã¦çŠ¶æ…‹ã‚’åˆ¤å®š
 				if (targetVelocityCache_.y > 0.1f)
 				{
 					cameraStat_.Change(CameraState::JUMPING);
@@ -116,7 +116,7 @@ mtgb::Camera::Camera(GameObject* _pGameObj)
 				distY_		= pTargetTransform_->position.y;
 				orbitSpeed_ = 0.5f;
 
-				// ”íÊ‘Ì‚ª‰æ–ÊŠO‚É‚ ‚éê‡‚Í’Ç]‘¬“x‚ğã‚°‚é
+				// è¢«å†™ä½“ãŒç”»é¢å¤–ã«ã‚ã‚‹å ´åˆã¯è¿½å¾“é€Ÿåº¦ã‚’ä¸Šã’ã‚‹
 				float lerpSpeed = IsTargetOffScreen() ? lerpSpeedJumping_ * lerpSpeedScalar_ : lerpSpeedJumping_;
 				lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
 			}
@@ -132,7 +132,7 @@ void mtgb::Camera::Update()
 	if (pTargetTransform_ == nullptr)
 		return;
 
-	// ImGui•\¦(ƒfƒoƒbƒO—p)
+	// ImGuiè¡¨ç¤º(ãƒ‡ãƒãƒƒã‚°ç”¨)
 	MTImGui::Instance().DirectShow(
 		[&]()
 		{
@@ -167,15 +167,15 @@ void mtgb::Camera::DoOrbit()
 {
 	Vector3 movement;
 
-	// ƒfƒoƒCƒX‚©‚ç“ü—Í‚ğæ“¾‚·‚é
+	// ãƒ‡ãƒã‚¤ã‚¹ã‹ã‚‰å…¥åŠ›ã‚’å–å¾—ã™ã‚‹
 	switch (inputType_)
 	{
-		// ƒ}ƒEƒX
+		// ãƒã‚¦ã‚¹
 	case InputType::MOUSE :
 		movement = InputUtil::GetMouseMove();
 		break;
 
-		// ƒQ[ƒ€ƒpƒbƒh
+		// ã‚²ãƒ¼ãƒ ãƒ‘ãƒƒãƒ‰
 	case InputType::JOYPAD :
 		Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
 		movement.x	  = -vec2.x;
@@ -185,18 +185,18 @@ void mtgb::Camera::DoOrbit()
 
 	if (movement.Size() != 0)
 	{
-		// Šp“x‚ğ•Ï‚¦‚é
+		// è§’åº¦ã‚’å¤‰ãˆã‚‹
 
 		azimuthalAngleRad_ -= movement.x * orbitSpeed_ * Time::DeltaTimeF();
 		polarAngleRad_ += movement.y * orbitSpeed_ * Time::DeltaTimeF();
 
-		// ‰”’¼Šp“x‚ğ§ŒÀ
+		// é‰›ç›´è§’åº¦ã‚’åˆ¶é™
 		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 
-		// …•½Šp“x‚ğ0`2ƒÎ‚É³‹K‰»
+		// æ°´å¹³è§’åº¦ã‚’0ï½2Ï€ã«æ­£è¦åŒ–
 		azimuthalAngleRad_ = NormalizeAngleRad(azimuthalAngleRad_);
 
-		// ƒJƒƒ‰‚ğ“®‚©‚·
+		// ã‚«ãƒ¡ãƒ©ã‚’å‹•ã‹ã™
 		MoveCameraSpherical(distance_);
 	}
 }
@@ -227,12 +227,12 @@ void mtgb::Camera::MoveCameraSpherical(float _distance)
 	if (pTargetTransform_ == nullptr)
 		return;
 
-	// ’‹“_‚ğŒvZ
+	// æ³¨è¦–ç‚¹ã‚’è¨ˆç®—
 	float lerpedY = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
 	Vector3 lookAtTarget =
 		Vector3(pTargetTransform_->position.x, lerpedY, pTargetTransform_->position.z) + lookAtPositionOffset_;
 
-	// ‹…–ÊÀ•W‚ÅV‚µ‚¢ƒJƒƒ‰ˆÊ’u‚ğŒvZ
+	// çƒé¢åº§æ¨™ã§æ–°ã—ã„ã‚«ãƒ¡ãƒ©ä½ç½®ã‚’è¨ˆç®—
 	float theta = polarAngleRad_;
 	float phi	= azimuthalAngleRad_;
 
@@ -245,7 +245,7 @@ void mtgb::Camera::MoveCameraSpherical(float _distance)
 
 	pCameraTransform_->position = newCameraPos;
 
-	// ƒJƒƒ‰‚Ì‰ñ“]‚ğİ’è
+	// ã‚«ãƒ¡ãƒ©ã®å›è»¢ã‚’è¨­å®š
 	Vector3 lookDir			  = lookAtTarget - pCameraTransform_->position;
 	pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), Vector3::Up());
 }

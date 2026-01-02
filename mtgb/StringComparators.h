@@ -6,12 +6,12 @@
 namespace mtgb
 {
 	// MEMO:
-	// std::string‚ğƒL[‚Æ‚·‚éunorderer_map‚È‚Ç‚ÉAstd::string_view‚ÅŒŸõ‚ª‚Å‚«‚é‚æ‚¤‚É‚È‚é
+	// std::stringã‚’ã‚­ãƒ¼ã¨ã™ã‚‹unorderer_mapãªã©ã«ã€std::string_viewã§æ¤œç´¢ãŒã§ãã‚‹ã‚ˆã†ã«ãªã‚‹
 	// std::unordered_map<std::string, std::type_index,TransparentStringHash,TransparentStringEq> nameToTypeIndex_;
-	// ª‚Ì‚æ‚¤‚É‘‚­
+	// â†‘ã®ã‚ˆã†ã«æ›¸ã
 
 	/// <summary>
-	/// <para> “§‰ß“I‚ÈŒŸõ‚ğ—LŒø‚É‚·‚éƒnƒbƒVƒ…ŠÖ”ƒIƒuƒWƒFƒNƒgŒ^ </para>
+	/// <para> é€éçš„ãªæ¤œç´¢ã‚’æœ‰åŠ¹ã«ã™ã‚‹ãƒãƒƒã‚·ãƒ¥é–¢æ•°ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå‹ </para>
 	/// REF: https://cpprefjp.github.io/reference/functional/hash.html
 	/// </summary>
 	struct TransparentStringHash
@@ -32,7 +32,7 @@ namespace mtgb
 	};
 
 	/// <summary>
-	/// “§‰ß“I‚ÈŒŸõ‚ğ—LŒø‚É‚·‚é”äŠrŠÖ”ƒIƒuƒWƒFƒNƒgŒ^
+	/// é€éçš„ãªæ¤œç´¢ã‚’æœ‰åŠ¹ã«ã™ã‚‹æ¯”è¼ƒé–¢æ•°ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå‹
 	/// </summary>
 	struct TransparentStringEq
 	{

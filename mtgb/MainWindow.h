@@ -17,7 +17,7 @@ namespace mtgb
 		void Update() override;
 
 		/// <summary>
-		/// ƒƒCƒ“ƒEƒBƒ“ƒhƒE‚Ìƒnƒ“ƒhƒ‰‚ğæ“¾
+		/// ãƒ¡ã‚¤ãƒ³ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ãƒãƒ³ãƒ‰ãƒ©ã‚’å–å¾—
 		/// </summary>
 		const HWND GetHWND() const
 		{

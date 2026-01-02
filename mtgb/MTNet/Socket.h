@@ -13,63 +13,63 @@ namespace mtnet
 		~Socket();
 
 		/// <summary>
-		/// ƒ\ƒPƒbƒg‚ğ•Â‚¶‚é
+		/// ã‚½ã‚±ãƒƒãƒˆã‚’é–‰ã˜ã‚‹
 		/// </summary>
-		/// <param name="force">‹­§“I‚É•Â‚¶‚é true / false</param>
+		/// <param name="force">å¼·åˆ¶çš„ã«é–‰ã˜ã‚‹ true / false</param>
 		void Close(const bool& force = false);
 
 	  protected:
 		/// <summary>
-		/// ‚µ‚É‹N“®‚·‚é
+		/// è©¦ã—ã«èµ·å‹•ã™ã‚‹
 		/// </summary>
-		/// <returns>‹N“®‚Å‚«‚½ true / false</returns>
+		/// <returns>èµ·å‹•ã§ããŸ true / false</returns>
 		bool TryStartup();
 
 		/// <summary>
-		/// ‚µ‚ÉƒoƒCƒ“ƒh‚·‚é
+		/// è©¦ã—ã«ãƒã‚¤ãƒ³ãƒ‰ã™ã‚‹
 		/// </summary>
-		/// <returns>¬Œ÷‚µ‚½ true / false</returns>
+		/// <returns>æˆåŠŸã—ãŸ true / false</returns>
 		bool TryBind();
 
 		/// <summary>
-		/// ‚µ‚ÉTCPó‚¯“ü‚ê‚ğŠJn‚·‚é
+		/// è©¦ã—ã«TCPå—ã‘å…¥ã‚Œã‚’é–‹å§‹ã™ã‚‹
 		/// </summary>
-		/// <returns>¬Œ÷‚µ‚½ true / false</returns>
+		/// <returns>æˆåŠŸã—ãŸ true / false</returns>
 		bool TryStartListen();
 
 		/// <summary>
-		/// ƒŠƒ‚[ƒgƒ\ƒPƒbƒg‚ğó‚¯“ü‚ê‚é
+		/// ãƒªãƒ¢ãƒ¼ãƒˆã‚½ã‚±ãƒƒãƒˆã‚’å—ã‘å…¥ã‚Œã‚‹
 		/// </summary>
-		/// <returns>ó‚¯“ü‚ê‚½ƒ\ƒPƒbƒg</returns>
+		/// <returns>å—ã‘å…¥ã‚ŒãŸã‚½ã‚±ãƒƒãƒˆ</returns>
 		Socket* Accept();
 
 		/// <summary>
-		/// ‚µ‚ÉÚ‘±‚·‚é
+		/// è©¦ã—ã«æ¥ç¶šã™ã‚‹
 		/// </summary>
-		/// <param name="_remote">ŠO•”‚ÌƒGƒ“ƒhƒ|ƒCƒ“ƒg</param>
-		/// <returns>Ú‘±‚Å‚«‚½ true / false</returns>
+		/// <param name="_remote">å¤–éƒ¨ã®ã‚¨ãƒ³ãƒ‰ãƒã‚¤ãƒ³ãƒˆ</param>
+		/// <returns>æ¥ç¶šã§ããŸ true / false</returns>
 		bool TryConnect(const IPEndPoint& _remote);
 
 		/// <summary>
-		/// ó‚¯æ‚é
+		/// å—ã‘å–ã‚‹
 		/// </summary>
-		/// <param name="buffer">óMƒoƒbƒtƒ@</param>
-		/// <param name="bufferLength">ƒoƒbƒtƒ@‚Ì’·‚³</param>
-		/// <returns>ÀÛ‚Ég‚Á‚½ƒoƒbƒtƒ@‚Ì’·‚³</returns>
+		/// <param name="buffer">å—ä¿¡ãƒãƒƒãƒ•ã‚¡</param>
+		/// <param name="bufferLength">ãƒãƒƒãƒ•ã‚¡ã®é•·ã•</param>
+		/// <returns>å®Ÿéš›ã«ä½¿ã£ãŸãƒãƒƒãƒ•ã‚¡ã®é•·ã•</returns>
 		mtnet::ReceivedLength Receive(Byte* buffer, const int& bufferLength);
 
 		/// <summary>
-		/// ‚µ‚É‘—M‚·‚é
+		/// è©¦ã—ã«é€ä¿¡ã™ã‚‹
 		/// </summary>
-		/// <param name="buffer">‘—Mƒoƒbƒtƒ@</param>
-		/// <param name="bufferLength">ƒoƒbƒtƒ@‚Ì’·‚³</param>
-		/// <returns>‘—M‚Å‚«‚½ true / false</returns>
+		/// <param name="buffer">é€ä¿¡ãƒãƒƒãƒ•ã‚¡</param>
+		/// <param name="bufferLength">ãƒãƒƒãƒ•ã‚¡ã®é•·ã•</param>
+		/// <returns>é€ä¿¡ã§ããŸ true / false</returns>
 		bool TrySend(Byte* buffer, const int& bufferLength);
 
 		/// <summary>
-		/// Œ»İ‚ÌŒ‹‰ÊƒR[ƒh‚ğæ“¾‚·‚é
+		/// ç¾åœ¨ã®çµæœã‚³ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <returns>Œ‹‰ÊƒR[ƒh</returns>
+		/// <returns>çµæœã‚³ãƒ¼ãƒ‰</returns>
 		inline ResultCode GetResultCode() const
 		{
 			return result_;

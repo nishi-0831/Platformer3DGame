@@ -16,7 +16,7 @@ template <typename Func> struct ShowFunc : refl::attr::usage::type
 	}
 };
 
-// ShowFunc‚ğì¬‚·‚éƒwƒ‹ƒp[ŠÖ”
+// ShowFuncã‚’ä½œæˆã™ã‚‹ãƒ˜ãƒ«ãƒ‘ãƒ¼é–¢æ•°
 template <typename F> constexpr auto make_show_func(F&& f)
 {
 	return ShowFunc<F>(std::forward<F>(f));

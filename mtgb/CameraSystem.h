@@ -19,41 +19,41 @@ namespace mtgb
 		void Update() override;
 
 		/// <summary>
-		/// ƒJƒƒ‰‚Æ‚È‚éÀ•WŒn‚ğ“o˜^‚·‚é
+		/// ã‚«ãƒ¡ãƒ©ã¨ãªã‚‹åº§æ¨™ç³»ã‚’ç™»éŒ²ã™ã‚‹
 		/// </summary>
-		/// <param name="pCameraTransform_">À•WŒn‚Ìƒ|ƒCƒ“ƒ^</param>
-		/// <returns>ƒJƒƒ‰ƒnƒ“ƒhƒ‹</returns>
+		/// <param name="pCameraTransform_">åº§æ¨™ç³»ã®ãƒã‚¤ãƒ³ã‚¿</param>
+		/// <returns>ã‚«ãƒ¡ãƒ©ãƒãƒ³ãƒ‰ãƒ«</returns>
 		CameraHandleInScene RegisterDrawCamera(Transform* pCameraTransform_);
 		/// <summary>
-		/// “o˜^‰ğœ‚·‚é
+		/// ç™»éŒ²è§£é™¤ã™ã‚‹
 		/// </summary>
-		/// <param name="pCameraTransform_">‰ğœ‚·‚éÀ•WŒn‚Ìƒ|ƒCƒ“ƒ^</param>
+		/// <param name="pCameraTransform_">è§£é™¤ã™ã‚‹åº§æ¨™ç³»ã®ãƒã‚¤ãƒ³ã‚¿</param>
 		void UnregisterDrawCamera(const Transform* pCameraTransform_);
 		/// <summary>
-		/// ‚·‚×‚Ä‚Ì•`‰æƒJƒƒ‰‚ğƒNƒŠƒA‚·‚é
+		/// ã™ã¹ã¦ã®æç”»ã‚«ãƒ¡ãƒ©ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 		/// </summary>
 		void ClearDrawCameraAll();
 
 		/// <summary>
-		/// FOV‚ğƒZƒbƒg‚·‚é
+		/// FOVã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		/// </summary>
-		/// <param name="_angle">‹–ìŠp“x(Degree)</param>
+		/// <param name="_angle">è¦–é‡è§’åº¦(Degree)</param>
 		void SetFOV(const float _angle)
 		{
 			fov_ = _angle;
 		}
 		/// <summary>
-		/// •`‰æ‘ÎÛ‚Æ‚È‚éƒJƒƒ‰‚ğw’è‚·‚é
+		/// æç”»å¯¾è±¡ã¨ãªã‚‹ã‚«ãƒ¡ãƒ©ã‚’æŒ‡å®šã™ã‚‹
 		/// </summary>
-		/// <param name="_hCamera">w’è‚·‚éƒJƒƒ‰‚Ìƒnƒ“ƒhƒ‹</param>
+		/// <param name="_hCamera">æŒ‡å®šã™ã‚‹ã‚«ãƒ¡ãƒ©ã®ãƒãƒ³ãƒ‰ãƒ«</param>
 		void SetDrawCamera(const CameraHandleInScene _hCamera)
 		{
 			hCurrentCamera_ = _hCamera;
 		}
 		/// <summary>
-		/// Œ»İ•`‰æ‘ÎÛ‚Æ‚È‚Á‚Ä‚¢‚éƒJƒƒ‰‚Ìƒnƒ“ƒhƒ‹‚ğæ“¾
+		/// ç¾åœ¨æç”»å¯¾è±¡ã¨ãªã£ã¦ã„ã‚‹ã‚«ãƒ¡ãƒ©ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒJƒƒ‰‚Ìƒnƒ“ƒhƒ‹</returns>
+		/// <returns>ã‚«ãƒ¡ãƒ©ã®ãƒãƒ³ãƒ‰ãƒ«</returns>
 		const CameraHandleInScene GetDrawCamera() const
 		{
 			return hCurrentCamera_;

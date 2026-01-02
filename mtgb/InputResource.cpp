@@ -20,20 +20,20 @@ mtgb::InputResource::InputResource(WindowContext _windowContext)
 {
 	HWND hWnd = WinCtxRes::GetHWND(_windowContext);
 
-	// ƒL[ƒ{[ƒh‚Ìæ“¾
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã®å–å¾—
 	Game::System<Input>().CreateKeyDevice(hWnd, pKeyDevice_.ReleaseAndGetAddressOf());
 
-	// ƒ}ƒEƒX‚Ìæ“¾
+	// ãƒã‚¦ã‚¹ã®å–å¾—
 	Game::System<Input>().CreateMouseDevice(hWnd, pMouseDevice_.ReleaseAndGetAddressOf());
 
-	// “ü—Íó‘Ô‚ğ•Û‚·‚éƒf[ƒ^
+	// å…¥åŠ›çŠ¶æ…‹ã‚’ä¿æŒã™ã‚‹ãƒ‡ãƒ¼ã‚¿
 	pInputData_ = new InputData();
 
-	// ImGui•\¦—p‚ÌƒvƒƒLƒV
+	// ImGuiè¡¨ç¤ºç”¨ã®ãƒ—ãƒ­ã‚­ã‚·
 	pMouseStateProxy_ = new MouseStateProxy(pInputData_->mouseStateCurrent_);
 	pJoystickProxy_	  = new JoystickProxy(pInputData_->joyStateCurrent_);
 
-	// “ü—Í‚ÌŠÔ”ÍˆÍ‚ğİ’è
+	// å…¥åŠ›ã®æ™‚é–“ç¯„å›²ã‚’è¨­å®š
 	pInputData_->config_.SetRange(1000);
 	pInputData_->config_.SetDeadZone(0.1f);
 

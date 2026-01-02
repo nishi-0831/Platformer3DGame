@@ -17,7 +17,7 @@ namespace mtgb
 
 	MT_COMPONENT()
 	/// <summary>
-	/// ‰¹º‚ğÄ¶‚·‚é‚â‚Â
+	/// éŸ³å£°ã‚’å†ç”Ÿã™ã‚‹ã‚„ã¤
 	/// </summary>
 	class AudioPlayer : public IComponent<AudioPlayerCP, AudioPlayer>, public ISerializableObject
 	{
@@ -44,14 +44,14 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// AudioPlayerCP‚©‚çŒÄ‚Î‚ê‚é‰Šú‰»ˆ—
+		/// AudioPlayerCPã‹ã‚‰å‘¼ã°ã‚Œã‚‹åˆæœŸåŒ–å‡¦ç†
 		/// </summary>
 		void Initialize() override;
 
 		void SetAudio(const AudioHandle _hAudio);
 
 		/// <summary>
-		/// ‰¹—Ê’²®
+		/// éŸ³é‡èª¿æ•´
 		/// </summary>
 		void SetVolume(float volume);
 

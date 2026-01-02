@@ -166,7 +166,7 @@ void mtgb::Game::RunLoopGameCycle()
 			updateSystem->Update();
 		}
 
-		if (toExit_) // 終了フラグが立っていたらサイクル離脱
+		if (toExit_) // 邨ゆｺ�繝輔Λ繧ｰ縺檎ｫ九▲縺ｦ縺�縺溘ｉ繧ｵ繧､繧ｯ繝ｫ髮｢閼ｱ
 		{
 			break;
 		}

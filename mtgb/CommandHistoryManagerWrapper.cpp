@@ -25,7 +25,7 @@ namespace mtgb
 		undoNames_.push_back(_command->Name());
 		redoNames_.clear();
 
-		// ƒTƒCƒY‚Ì§ŒÀ
+		// ã‚µã‚¤ã‚ºã®åˆ¶é™
 		if (commandHistoryNames_.size() > HISTORY_CAPACITY)
 		{
 			commandHistoryNames_.pop_front();
@@ -45,11 +45,11 @@ namespace mtgb
 		if (undoNames_.empty())
 			return;
 		commandHistoryNames_.push_back("Undo:" + undoNames_.back());
-		// undo -> redo ‚Ö–¼‘O‚ðˆÚ“®
+		// undo -> redo ã¸åå‰ã‚’ç§»å‹•
 		redoNames_.push_back(undoNames_.back());
 		undoNames_.pop_back();
 
-		// ƒTƒCƒY‚Ì§ŒÀ
+		// ã‚µã‚¤ã‚ºã®åˆ¶é™
 		if (commandHistoryNames_.size() > HISTORY_CAPACITY)
 		{
 			commandHistoryNames_.pop_front();
@@ -72,7 +72,7 @@ namespace mtgb
 		undoNames_.push_back(redoNames_.back());
 		redoNames_.pop_back();
 
-		// ƒTƒCƒY‚Ì§ŒÀ
+		// ã‚µã‚¤ã‚ºã®åˆ¶é™
 		if (commandHistoryNames_.size() > HISTORY_CAPACITY)
 		{
 			commandHistoryNames_.pop_front();

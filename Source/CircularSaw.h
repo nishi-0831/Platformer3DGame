@@ -23,7 +23,7 @@ namespace mtgb
 		float radius_;
 		int takeDamageAmount_;
 
-		// IActor ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
+		// IActor ã‚’ä»‹ã—ã¦ç¶™æ‰¿ã•ã‚Œã¾ã—ãŸ
 		void OnStomped(IActor* _pOther) override;
 
 		void OnHitSide(IActor* _pOther) override;

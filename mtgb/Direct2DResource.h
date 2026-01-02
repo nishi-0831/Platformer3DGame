@@ -28,7 +28,7 @@ namespace mtgb
 		ComPtr<ID2D1RenderTarget> pRenderTarget_;
 		ComPtr<ID2D1SolidColorBrush> pD2DBrush_;
 
-		// コピーコンストラクタとコピー代入演算子を削除
+		// 繧ｳ繝斐�ｼ繧ｳ繝ｳ繧ｹ繝医Λ繧ｯ繧ｿ縺ｨ繧ｳ繝斐�ｼ莉｣蜈･貍皮ｮ怜ｭ舌ｒ蜑企勁
 		Direct2DResource(const Direct2DResource&)			 = delete;
 		Direct2DResource& operator=(const Direct2DResource&) = delete;
 	};

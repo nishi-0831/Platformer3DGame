@@ -7,10 +7,10 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚É‚Â‚¯‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+	/// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã¤ã‘ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 	/// </summary>
-	/// <typeparam name="ComponentPoolT">ƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹</typeparam>
-	/// <typeparam name="ComponentT">ƒRƒ“ƒ|[ƒlƒ“ƒg</typeparam>
+	/// <typeparam name="ComponentPoolT">ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«</typeparam>
+	/// <typeparam name="ComponentT">ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ</typeparam>
 	template <class ComponentPoolT, typename ComponentT> class IComponent
 	{
 	  public:
@@ -25,7 +25,7 @@ namespace mtgb
 		virtual ~IComponent();
 		IComponent& operator=(const IComponent& _other)
 		{
-			// entityId_ ‚ÍƒRƒs[‚µ‚È‚¢
+			// entityId_ ã¯ã‚³ãƒ”ãƒ¼ã—ãªã„
 			return *this;
 		}
 		static ComponentT& Get(const EntityId _entityId);

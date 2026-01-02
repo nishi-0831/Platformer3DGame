@@ -8,8 +8,8 @@
 namespace mtgb
 {
 	/// <summary>
-	/// <para>�Q�[���I�u�W�F�N�g�𐶐�����Ƃ��̐ݒ�</para>
-	/// <para>���̂܂܍\���̂��g�p�\�����AGameObjectBuilder��ʂ����Ƃ𐄏�</para>
+	/// <para>ゲームオブジェクトを生成するときの設定</para>
+	/// <para>そのまま構造体を使用可能だが、GameObjectBuilderを通すことを推奨</para>
 	/// </summary>
 	struct GAME_OBJECT_DESC
 	{
@@ -25,18 +25,18 @@ namespace mtgb
 		// padding 10byte
 	};
 
-	// MEMO: �\���̂̂��̂܂܏������ł́A���Ԃ��Œ肳��Ă��邪�A
-	//     : Builder���g�����ƂōD���ȃ^�C�~���O�ŔC�ӂ̒l���Z�b�g�ł���
+	// MEMO: 構造体のそのまま初期化では、順番が固定されているが、
+	//     : Builderを使うことで好きなタイミングで任意の値をセットできる
 
 	/// <summary>
-	/// <para>GAME_OBJECT_DESC�̃r���_�[�N���X</para>
-	/// <para>�����o�̃Z�b�^�֐��𗧂đ����ɌĂяo���A�ŏI�I��Build�֐���GAME_OBJECT_DESC���\�z</para>
+	/// <para>GAME_OBJECT_DESCのビルダークラス</para>
+	/// <para>メンバのセッタ関数を立て続けに呼び出し、最終的にBuild関数でGAME_OBJECT_DESCを構築</para>
 	/// </summary>
 	class GameObjectBuilder
 	{
 	  public:
 		/// <summary>
-		/// <para>�ȉ��̂悤�Ɏg��</para>
+		/// <para>以下のように使う</para>
 		/// <para>GameObjectBuilder().SetName("Name").Set...().Build()</para>
 		/// </summary>
 		GameObjectBuilder()
@@ -93,9 +93,9 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// �ݒ���r���h����
+		/// 設定をビルドする
 		/// </summary>
-		/// <returns>��������GAME_OBJECT_DESC�̃R���X�g�Q�ƃ|�C���^</returns>
+		/// <returns>完成したGAME_OBJECT_DESCのコンスト参照ポインタ</returns>
 		const GAME_OBJECT_DESC& Build() const
 		{
 			return desc_;

@@ -11,13 +11,13 @@ mtgb::Quaternion mtgb::Quaternion::LookRotation(const Vector3& _dir, const Vecto
 	Vector3 forward{XMVector3Normalize(_dir)};
 	Vector3 up{XMVector3Normalize(_upVec)};
 
-	// ŠOÏ‚Å‰EƒxƒNƒgƒ‹‚ğ‹‚ß‚é
+	// å¤–ç©ã§å³ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã‚‹
 	Vector3 right{XMVector3Normalize(XMVector3Cross(up, forward))};
 
-	// ‚’¼‚ÈãƒxƒNƒgƒ‹‚ğÄŒvZ
+	// å‚ç›´ãªä¸Šãƒ™ã‚¯ãƒˆãƒ«ã‚’å†è¨ˆç®—
 	Vector3 verticalUp{XMVector3Cross(forward, right)};
 
-	// ‰ñ“]s—ñ‚É‚·‚é
+	// å›è»¢è¡Œåˆ—ã«ã™ã‚‹
 	Matrix4x4 mRot{DirectX::XMMATRIX{right, verticalUp, forward, Vector4{0, 0, 0, 1}}};
 
 	return XMQuaternionRotationMatrix(mRot);

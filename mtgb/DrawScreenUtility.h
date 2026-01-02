@@ -7,17 +7,17 @@
 
 namespace
 {
-	// UI�݌v���̉𑜓x
+	// UI設計中の解像度
 	const mtgb::Vector2 CANVAS_SIZE{1920.0f, 1080.0f};
 } // namespace
 
 namespace mtgb
 {
 	/// <summary>
-	/// �݌v�X�N���[����̃t�H���g�T�C�Y����`��p�t�H���g�T�C�Y�𐶐�����
+	/// 設計スクリーン上のフォントサイズから描画用フォントサイズを生成する
 	/// </summary>
-	/// <param name="_to">�݌v��̃t�H���g�T�C�Y</param>
-	/// <returns>�`��p�t�H���g�T�C�Y</returns>
+	/// <param name="_to">設計上のフォントサイズ</param>
+	/// <returns>描画用フォントサイズ</returns>
 	inline const int GenDrawScreenFontSize(const int _to)
 	{
 		const float RATE_Y{_to / CANVAS_SIZE.y};
@@ -27,10 +27,10 @@ namespace mtgb
 	}
 
 	/// <summary>
-	/// �݌v��̃X�N���[����`����`�掞�̃X�N���[����`�𐶐�����
+	/// 設計上のスクリーン矩形から描画時のスクリーン矩形を生成する
 	/// </summary>
-	/// <param name="_rect">�݌v���̃X�N���[����`</param>
-	/// <returns>�`�掞�̃X�N���[����`</returns>
+	/// <param name="_rect">設計時のスクリーン矩形</param>
+	/// <returns>描画時のスクリーン矩形</returns>
 	template <typename T> inline const mtgb::RectT<T> GenDrawScreenFrom(const mtgb::RectT<T>& _to)
 	{
 		return _to;

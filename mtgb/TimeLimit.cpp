@@ -24,7 +24,7 @@ TimeLimit::~TimeLimit()
 
 void TimeLimit::Update()
 {
-	// ƒ^ƒCƒ}[‚ÌƒJƒEƒ“ƒgƒ_ƒEƒ“‚ªn‚Ü‚Á‚Ä‚¢‚È‚¢Aˆê’â~’†‚È‚ç‰ñ‹A
+	// ã‚¿ã‚¤ãƒãƒ¼ã®ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³ãŒå§‹ã¾ã£ã¦ã„ãªã„ã€ä¸€æ™‚åœæ­¢ä¸­ãªã‚‰å›å¸°
 	if (!isStartTimer_ || isResumeTimer_)
 		return;
 
@@ -36,7 +36,7 @@ void TimeLimit::Update()
 
 		remainingTime_ = 0.0f;
 
-		// ƒR[ƒ‹ƒoƒbƒN‚ğˆêÄŒÄ‚Ño‚µ
+		// ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã‚’ä¸€æ–‰å‘¼ã³å‡ºã—
 		while (!onEndTimerCallbacks_.empty())
 		{
 			onEndTimerCallbacks_.front()();
@@ -47,12 +47,12 @@ void TimeLimit::Update()
 
 void TimeLimit::Draw() const
 {
-	// ˆê’â~’†‚Å‚à•`‰æ‚ğs‚¤
+	// ä¸€æ™‚åœæ­¢ä¸­ã§ã‚‚æç”»ã‚’è¡Œã†
 	if (isStartTimer_)
 	{
 		chrono::seconds sec{static_cast<int>(remainingTime_)};
 		chrono::hh_mm_ss<chrono::seconds> time(sec);
-		// 2Œ…‚ğƒ[ƒ–„‚ß
+		// 2æ¡ã‚’ã‚¼ãƒ­åŸ‹ã‚
 		Draw::ImmediateText(
 			std::format("{:02}:{:02}", time.minutes().count(), time.seconds().count()),
 			Vector2F{0.0f, 0.0f},

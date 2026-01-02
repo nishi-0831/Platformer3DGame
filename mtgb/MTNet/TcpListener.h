@@ -6,7 +6,7 @@ namespace mtnet
 	class TcpClient;
 
 	/// <summary>
-	/// TCP’ÊM‚ğ‚·‚éƒŠƒXƒi[ (TCPClient“¯m‚ğ’ÊM‚³‚¹‚é)
+	/// TCPé€šä¿¡ã‚’ã™ã‚‹ãƒªã‚¹ãƒŠãƒ¼ (TCPClientåŒå£«ã‚’é€šä¿¡ã•ã›ã‚‹)
 	/// </summary>
 	class TcpListener : public Socket
 	{

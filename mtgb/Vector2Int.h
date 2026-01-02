@@ -18,12 +18,12 @@ namespace mtgb
 	//	//struct Vector2;
 	//
 	//	/// <summary>
-	//	/// 2ŸŒ³‚Ì®”Œ^ƒxƒNƒgƒ‹
+	//	/// 2æ¬¡å…ƒã®æ•´æ•°å‹ãƒ™ã‚¯ãƒˆãƒ«
 	//	/// </summary>
 	//	struct Vector2Int :  Vector2T<int32_t>
 	//	{
-	//		//int x;  // x¬•ª
-	//		//int y;  // y¬•ª
+	//		//int x;  // xæˆåˆ†
+	//		//int y;  // yæˆåˆ†
 	//
 	//		Vector2Int() :
 	//			Vector2Int{ 0, 0 }
@@ -33,24 +33,24 @@ namespace mtgb
 	//			Vector2T<int32_t>{ x, y }
 	//		{}
 	//
-	// #pragma region l‘¥‰‰Z
+	// #pragma region å››å‰‡æ¼”ç®—
 	//		inline Vector2Int& operator*=(const int& _scalar) { x *= _scalar; y *= _scalar; return *this; }
 	//		inline Vector2Int& operator/=(const int& _scalar) { x /= _scalar; y /= _scalar; return *this; }
 	//		inline Vector2Int& operator+=(const Vector2Int& _other) { x += _other.x; y += _other.y; return *this; }
 	//		inline Vector2Int& operator-=(const Vector2Int& _other) { x -= _other.x; y -= _other.y; return *this; }
 	// #pragma endregion
 	//
-	// #pragma region ƒLƒƒƒXƒg
+	// #pragma region ã‚­ãƒ£ã‚¹ãƒˆ
 	//		//explicit operator Vector2() const noexcept;
 	// #pragma endregion
 	//
-	// #pragma region ’è”
+	// #pragma region å®šæ•°
 	//		inline static Vector2Int Zero() { return { 0, 0 }; }
 	//		inline static Vector2Int One() { return { 1, 1 }; }
 	// #pragma endregion
 	//	};
 	//
-	// #pragma region ƒOƒ[ƒoƒ‹ƒIƒyƒŒ[ƒ^
+	// #pragma region ã‚°ãƒ­ãƒ¼ãƒãƒ«ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
 	//	inline Vector2Int operator*(const Vector2Int& _v, const int& _scalar) { return Vector2Int{ _v } *= _scalar; }
 	//	inline Vector2Int operator*(const int& _scalar, const Vector2Int& _v) { return Vector2Int{ _v } *= _scalar; }
 	//	inline Vector2Int operator/(const Vector2Int& _v, const int& _scalar) { return Vector2Int{ _v } /= _scalar; }

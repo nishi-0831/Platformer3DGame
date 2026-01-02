@@ -3,7 +3,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// •`‰æˆ—ŠÖ˜A‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX‚ÌƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹
+	/// æç”»å‡¦ç†é–¢é€£ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«
 	/// </summary>
 	class IRenderableCP
 	{
@@ -11,33 +11,33 @@ namespace mtgb
 		virtual ~IRenderableCP() = default;
 
 		/// <summary>
-		/// ‘S‚Ä•`‰æ
+		/// å…¨ã¦æç”»
 		/// </summary>
 		virtual void RenderAll() const = 0;
 		/// <summary>
-		/// “Á’è‚ÌƒŒƒCƒ„[‚ğ•`‰æ
+		/// ç‰¹å®šã®ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’æç”»
 		/// </summary>
 		virtual void RenderLayer(GameObjectLayerFlag _layerFlag) const = 0;
 	};
 
 	/// <summary>
-	/// •`‰æˆ—ŠÖ˜A‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX
+	/// æç”»å‡¦ç†é–¢é€£ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
 	/// </summary>
 	class IRenderable
 	{
 	  public:
 		virtual ~IRenderable() = default;
 		/// <summary>
-		/// •`‰æ‚ğs‚¤
+		/// æç”»ã‚’è¡Œã†
 		/// </summary>
 		virtual void Render() const = 0;
 		/// <summary>
-		/// •`‰æ‚ª‰Â”\‚©”Û‚©
+		/// æç”»ãŒå¯èƒ½ã‹å¦ã‹
 		/// </summary>
-		/// <returns> ‰Â”\‚È‚çtrue</returns>
+		/// <returns> å¯èƒ½ãªã‚‰true</returns>
 		virtual bool CanRender() const = 0;
 		/// <summary>
-		/// ƒŒƒCƒ„[‚ğ•Ô‚·
+		/// ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’è¿”ã™
 		/// </summary>
 		/// <returns></returns>
 		virtual GameObjectLayerFlag GetLayer() const = 0;

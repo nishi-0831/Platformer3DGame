@@ -81,7 +81,7 @@ void mtgb::DirectWrite::Initialize()
 		_uuidof(IDWriteFactory),
 		reinterpret_cast<IUnknown**>(pDWriteFactory_.GetAddressOf())
 	);
-	massert(SUCCEEDED(hResult) && "DWriteCreateFactory‚É¸”s @DirectWrite::Initialize");
+	massert(SUCCEEDED(hResult) && "DWriteCreateFactoryã«å¤±æ•— @DirectWrite::Initialize");
 }
 
 void mtgb::DirectWrite::CreateFontFormatData(
@@ -91,7 +91,7 @@ void mtgb::DirectWrite::CreateFontFormatData(
 )
 {
 	IDWriteFontCollection* fontCollection = nullptr;
-	// ƒtƒHƒ“ƒgƒRƒŒƒNƒVƒ‡ƒ“æ“¾
+	// ãƒ•ã‚©ãƒ³ãƒˆã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³å–å¾—
 	HRESULT hResult = pDWriteFactory_->GetSystemFontCollection(&fontCollection);
 	pFontCollection_.Attach(fontCollection);
 
@@ -99,30 +99,30 @@ void mtgb::DirectWrite::CreateFontFormatData(
 	BOOL exists;
 	hResult = pFontCollection_->FindFamilyName(fileName.c_str(), &index, &exists);
 
-	massert(SUCCEEDED(hResult) && "FindFamilyName‚É¸”s @DirectWrite::FindFamilyName");
+	massert(SUCCEEDED(hResult) && "FindFamilyNameã«å¤±æ•— @DirectWrite::FindFamilyName");
 
-	// ƒtƒ@ƒ~ƒŠ[‚©‚çIDWriteFontFamily‚ğæ“¾
+	// ãƒ•ã‚¡ãƒŸãƒªãƒ¼ã‹ã‚‰IDWriteFontFamilyã‚’å–å¾—
 	IDWriteFontFamily* fontFamily = nullptr;
 	hResult						  = pFontCollection_->GetFontFamily(index, &fontFamily);
 	pFontFamily_.Attach(fontFamily);
 
-	massert(SUCCEEDED(hResult) && "GetFontFamily‚É¸”s @DirectWrite::GetFontFamily");
+	massert(SUCCEEDED(hResult) && "GetFontFamilyã«å¤±æ•— @DirectWrite::GetFontFamily");
 
-	// IDWriteFont‚ğæ“¾
+	// IDWriteFontã‚’å–å¾—
 	IDWriteFont* font = nullptr;
 	hResult			  = pFontFamily_->GetFirstMatchingFont(
 		  DWRITE_FONT_WEIGHT_REGULAR,
-		  DWRITE_FONT_STRETCH_NORMAL, // ƒtƒHƒ“ƒg‚ÌƒXƒgƒŒƒbƒ`BŠg‘åk¬‚Ì“x‡‚¢
-		  DWRITE_FONT_STYLE_NORMAL,	  // ƒtƒHƒ“ƒgƒXƒ^ƒCƒ‹
+		  DWRITE_FONT_STRETCH_NORMAL, // ãƒ•ã‚©ãƒ³ãƒˆã®ã‚¹ãƒˆãƒ¬ãƒƒãƒã€‚æ‹¡å¤§ç¸®å°ã®åº¦åˆã„
+		  DWRITE_FONT_STYLE_NORMAL,	  // ãƒ•ã‚©ãƒ³ãƒˆã‚¹ã‚¿ã‚¤ãƒ«
 		  &font
 	  );
 	pDWriteFont_.Attach(font);
-	massert(SUCCEEDED(hResult) && "GetFirstMatchingFont‚É¸”s @DirectWrite::Initialize");
+	massert(SUCCEEDED(hResult) && "GetFirstMatchingFontã«å¤±æ•— @DirectWrite::Initialize");
 
-	// ƒtƒHƒ“ƒg‚ÌƒƒgƒŠƒNƒXæ“¾
+	// ãƒ•ã‚©ãƒ³ãƒˆã®ãƒ¡ãƒˆãƒªã‚¯ã‚¹å–å¾—
 	pDWriteFont_->GetMetrics(&fontMetrics_);
 
-	// V‚µ‚¢ƒtƒH[ƒ}ƒbƒg‚ğì¬
+	// æ–°ã—ã„ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’ä½œæˆ
 	IDWriteTextFormat* format = nullptr;
 	PixelFontMetrics metrics;
 
@@ -139,38 +139,38 @@ void mtgb::DirectWrite::Update()
 
 void mtgb::DirectWrite::CreateTextFormat(int size, IDWriteTextFormat** ppTextFormat, PixelFontMetrics& outMetrics)
 {
-	// ƒeƒLƒXƒgƒtƒH[ƒ}ƒbƒgì¬
+	// ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆä½œæˆ
 	HRESULT hResult = pDWriteFactory_->CreateTextFormat(
-		fontFamilyName, // ƒtƒHƒ“ƒgƒtƒ@ƒ~ƒŠ[‚Ì–¼‘O
-		NULL, // ƒIƒŠƒWƒiƒ‹‚ÌƒtƒHƒ“ƒg‚ğg‚¤ê‡‚Í‚»‚ê—p‚ÌƒIƒuƒWƒFƒNƒg‚ğ“n‚·BNULL‚È‚ç•W€“‹Ú‚ÌƒtƒHƒ“ƒgƒtƒ@ƒ~ƒŠ[
-		DWRITE_FONT_WEIGHT_REGULAR, // ƒtƒHƒ“ƒg‚Ì‘¾‚³
-		DWRITE_FONT_STYLE_NORMAL,	// ƒtƒHƒ“ƒgƒXƒ^ƒCƒ‹
-		DWRITE_FONT_STRETCH_NORMAL, // ƒtƒHƒ“ƒg‚ÌƒXƒgƒŒƒbƒ`BŠg‘åk¬‚Ì“x‡‚¢
-		static_cast<FLOAT>(size),	// ƒtƒHƒ“ƒg‚ÌƒTƒCƒY
-		L"en-us",					// ƒƒP[ƒ‹Ben-us‚ÍƒAƒƒŠƒJ‰pŒê
-		ppTextFormat				// ì¬‚³‚ê‚éIDWriteTextFormat
+		fontFamilyName, // ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ãƒŸãƒªãƒ¼ã®åå‰
+		NULL, // ã‚ªãƒªã‚¸ãƒŠãƒ«ã®ãƒ•ã‚©ãƒ³ãƒˆã‚’ä½¿ã†å ´åˆã¯ãã‚Œç”¨ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¸¡ã™ã€‚NULLãªã‚‰æ¨™æº–æ­è¼‰ã®ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ãƒŸãƒªãƒ¼
+		DWRITE_FONT_WEIGHT_REGULAR, // ãƒ•ã‚©ãƒ³ãƒˆã®å¤ªã•
+		DWRITE_FONT_STYLE_NORMAL,	// ãƒ•ã‚©ãƒ³ãƒˆã‚¹ã‚¿ã‚¤ãƒ«
+		DWRITE_FONT_STRETCH_NORMAL, // ãƒ•ã‚©ãƒ³ãƒˆã®ã‚¹ãƒˆãƒ¬ãƒƒãƒã€‚æ‹¡å¤§ç¸®å°ã®åº¦åˆã„
+		static_cast<FLOAT>(size),	// ãƒ•ã‚©ãƒ³ãƒˆã®ã‚µã‚¤ã‚º
+		L"en-us",					// ãƒ­ã‚±ãƒ¼ãƒ«ã€‚en-usã¯ã‚¢ãƒ¡ãƒªã‚«è‹±èª
+		ppTextFormat				// ä½œæˆã•ã‚Œã‚‹IDWriteTextFormat
 	);
 
-	massert(SUCCEEDED(hResult) && "CreateTextFormat‚É¸”s @DirectWrite::CreateTextFormat");
+	massert(SUCCEEDED(hResult) && "CreateTextFormatã«å¤±æ•— @DirectWrite::CreateTextFormat");
 
-	// …•½•ûŒü
+	// æ°´å¹³æ–¹å‘
 	hResult = (*ppTextFormat)->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
 
-	massert(SUCCEEDED(hResult) && "SetTextAlignment‚É¸”s @DirectWrite::CreateTextFormat");
+	massert(SUCCEEDED(hResult) && "SetTextAlignmentã«å¤±æ•— @DirectWrite::CreateTextFormat");
 
-	// ‚’¼•ûŒü
+	// å‚ç›´æ–¹å‘
 	hResult = (*ppTextFormat)->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_NEAR);
 
-	massert(SUCCEEDED(hResult) && "SetParagraphAlignment‚É¸”s @DirectWrite::CreateTextFormat");
+	massert(SUCCEEDED(hResult) && "SetParagraphAlignmentã«å¤±æ•— @DirectWrite::CreateTextFormat");
 
-	// ƒfƒUƒCƒ“’PˆÊ‚©‚çƒsƒNƒZƒ‹’PˆÊ‚É•ÏŠ·
+	// ãƒ‡ã‚¶ã‚¤ãƒ³å˜ä½ã‹ã‚‰ãƒ”ã‚¯ã‚»ãƒ«å˜ä½ã«å¤‰æ›
 	outMetrics.ascentPx = static_cast<float>(fontMetrics_.ascent) * static_cast<float>(size) /
 						  static_cast<float>(fontMetrics_.designUnitsPerEm);
 	outMetrics.descentPx = static_cast<float>(fontMetrics_.descent) * static_cast<float>(size) /
 						   static_cast<float>(fontMetrics_.designUnitsPerEm);
 	outMetrics.lineGapPx = static_cast<float>(fontMetrics_.lineGap) * static_cast<float>(size) /
 						   static_cast<float>(fontMetrics_.designUnitsPerEm);
-	// ƒeƒLƒXƒg‚Ìã’[‚ğw’èÀ•W‚É‚Ù‚Ú‚Ò‚Á‚½‚è‘µ‚¦‚é‚½‚ß‚ÌƒIƒtƒZƒbƒg
+	// ãƒ†ã‚­ã‚¹ãƒˆã®ä¸Šç«¯ã‚’æŒ‡å®šåº§æ¨™ã«ã»ã¼ã´ã£ãŸã‚Šæƒãˆã‚‹ãŸã‚ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 	outMetrics.textTopOffset =
 		-outMetrics.ascentPx + (outMetrics.ascentPx - outMetrics.descentPx) - outMetrics.lineGapPx;
 }
@@ -205,7 +205,7 @@ void mtgb::DirectWrite::CreateTextLayout(
 	IDWriteTextLayout** _ppTextLayout
 )
 {
-	// ƒeƒLƒXƒgƒŒƒCƒAƒEƒgì¬
+	// ãƒ†ã‚­ã‚¹ãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆä½œæˆ
 	D2D1_SIZE_F rtSize = Game::System<Direct2D>().pDefRenderTarget_->GetSize();
 	CreateTextLayout(_str, rtSize.width, rtSize.height, _size, _format, _ppTextLayout);
 }
@@ -235,7 +235,7 @@ void mtgb::DirectWrite::CreateTextLayout(
 		_ppTextLayout
 	);
 
-	massert(SUCCEEDED(hResult) && "CreateTextLayout‚É¸”s @DirectWrite::RegisterText");
+	massert(SUCCEEDED(hResult) && "CreateTextLayoutã«å¤±æ•— @DirectWrite::RegisterText");
 }
 
 void mtgb::DirectWrite::ChangeFormat(ComPtr<IDWriteTextFormat> format, mtgb::PixelFontMetrics& metrics)
@@ -306,20 +306,20 @@ void mtgb::DirectWrite::Release()
 
 // static std::wstring StrToWStr(const std::string& str)
 //{
-//	//nullptr‚ğw’è‚·‚é‚ÆŒ»İ‚ÌƒƒP[ƒ‹–¼‚ªæ“¾‚Å‚«‚é
+//	//nullptrã‚’æŒ‡å®šã™ã‚‹ã¨ç¾åœ¨ã®ãƒ­ã‚±ãƒ¼ãƒ«åãŒå–å¾—ã§ãã‚‹
 //	std::string oldLocale = setlocale(LC_CTYPE, nullptr);
 //
 //	setlocale(LC_CTYPE, "Japanese_Japan.932");
 //
 //	size_t len;
-//	//‚Ü‚¸ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ(str)‚ğƒƒCƒh•¶š—ñ‚É•ÏŠ·‚µ‚½‚Æ‚«‚Ì’·‚³‚ğæ“¾
+//	//ã¾ãšãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—(str)ã‚’ãƒ¯ã‚¤ãƒ‰æ–‡å­—åˆ—ã«å¤‰æ›ã—ãŸã¨ãã®é•·ã•ã‚’å–å¾—
 //	mbstowcs_s(&len, nullptr, 0, str.c_str(), _TRUNCATE);
-//	//ƒƒCƒh•¶š—ñ‚Ìƒoƒbƒtƒ@—pˆÓ
+//	//ãƒ¯ã‚¤ãƒ‰æ–‡å­—åˆ—ã®ãƒãƒƒãƒ•ã‚¡ç”¨æ„
 //	std::wstring wText;
 //	wText.resize(len);
 //
-//	//ÀÛ‚ÉƒƒCƒh•¶š—ñ‚É•ÏŠ·
-//	//_TRUNCATE’è”‚ÅAƒoƒbƒtƒ@‚Éû‚Ü‚ç‚È‚¢•¶š‚ÍØ‚èÌ‚Ä‚é‚æ‚¤w’è‚·‚é
+//	//å®Ÿéš›ã«ãƒ¯ã‚¤ãƒ‰æ–‡å­—åˆ—ã«å¤‰æ›
+//	//_TRUNCATEå®šæ•°ã§ã€ãƒãƒƒãƒ•ã‚¡ã«åã¾ã‚‰ãªã„æ–‡å­—ã¯åˆ‡ã‚Šæ¨ã¦ã‚‹ã‚ˆã†æŒ‡å®šã™ã‚‹
 //	mbstowcs_s(&len, wText.data(), len, str.c_str(), _TRUNCATE);
 //
 //	setlocale(LC_CTYPE, oldLocale.c_str());

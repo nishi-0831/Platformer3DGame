@@ -34,13 +34,13 @@ void mtgb::WindowContextResourceManager::CreateResource(WindowContext windowCont
 	auto [it, inserted]				  = collectionMap_.try_emplace(windowContext);
 	ResourceCollection& newCollection = it->second;
 
-	// ƒŠƒ\[ƒX‚Ì“o˜^‡‚Éì¬‚³‚ê‚é
+	// ãƒªã‚½ãƒ¼ã‚¹ã®ç™»éŒ²é †ã«ä½œæˆã•ã‚Œã‚‹
 	for (const std::type_index& typeIdx : insertionOrder_)
 	{
 		auto itr = factoryMap_.find(typeIdx);
-		assert(itr != factoryMap_.end() && "Žw’è‚³‚ê‚½type_index‚Ìƒtƒ@ƒNƒgƒŠŠÖ”‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ");
+		assert(itr != factoryMap_.end() && "æŒ‡å®šã•ã‚ŒãŸtype_indexã®ãƒ•ã‚¡ã‚¯ãƒˆãƒªé–¢æ•°ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
 
-		// ƒtƒ@ƒNƒgƒŠŠÖ”‚ÅƒŠƒ\[ƒXì¬
+		// ãƒ•ã‚¡ã‚¯ãƒˆãƒªé–¢æ•°ã§ãƒªã‚½ãƒ¼ã‚¹ä½œæˆ
 		WindowContextResource* pResource = itr->second(windowContext);
 		newCollection.Insert(typeIdx, pResource);
 	}
@@ -49,7 +49,7 @@ void mtgb::WindowContextResourceManager::CreateResource(WindowContext windowCont
 void mtgb::WindowContextResourceManager::ChangeActiveResource(WindowContext windowContext)
 {
 	auto itr = collectionMap_.find(windowContext);
-	assert(itr != collectionMap_.end() && "Žw’è‚³‚ê‚½WindowContext‚ÌƒŠƒ\[ƒX‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ");
+	assert(itr != collectionMap_.end() && "æŒ‡å®šã•ã‚ŒãŸWindowContextã®ãƒªã‚½ãƒ¼ã‚¹ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
 
 	for (auto& collection : itr->second)
 	{
@@ -65,17 +65,17 @@ void mtgb::WindowContextResourceManager::OnResizeAll(WindowContext windowContext
 	if (itr == collectionMap_.end())
 		return;
 
-	// ƒTƒCƒY•ÏX‘ÎÛ‚ÌƒEƒBƒ“ƒhƒE‚ÌƒŠƒ\[ƒXŒQ‚ðŽæ“¾
+	// ã‚µã‚¤ã‚ºå¤‰æ›´å¯¾è±¡ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ãƒªã‚½ãƒ¼ã‚¹ç¾¤ã‚’å–å¾—
 	ResourceCollection& resourceCollection = collectionMap_[windowContext];
 
-	// ƒŠƒ\[ƒX“o˜^Žž‚Æ‚Í‹t‡‚ÅAƒTƒCƒY•ÏX‚Ì‚½‚ß‚É‰ð•úˆ—‚ðs‚¤
+	// ãƒªã‚½ãƒ¼ã‚¹ç™»éŒ²æ™‚ã¨ã¯é€†é †ã§ã€ã‚µã‚¤ã‚ºå¤‰æ›´ã®ãŸã‚ã«è§£æ”¾å‡¦ç†ã‚’è¡Œã†
 	for (auto itr = insertionOrder_.rbegin(); itr != insertionOrder_.rend(); itr++)
 	{
 		std::type_index typeIdx = *itr;
 		resourceCollection[typeIdx]->Reset();
 	}
 
-	// ƒŠƒ\[ƒX“o˜^Žž‚Æ“¯‚¶‡”Ô‚ÅAƒTƒCƒY•ÏXŒã‚Ìˆ—‚ðs‚¤
+	// ãƒªã‚½ãƒ¼ã‚¹ç™»éŒ²æ™‚ã¨åŒã˜é †ç•ªã§ã€ã‚µã‚¤ã‚ºå¤‰æ›´å¾Œã®å‡¦ç†ã‚’è¡Œã†
 	for (const std::type_index& typeIdx : insertionOrder_)
 	{
 		resourceCollection[typeIdx]->OnResize(width, height);

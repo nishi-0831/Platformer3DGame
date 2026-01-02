@@ -13,7 +13,7 @@ mtbin::MemoryStream::~MemoryStream()
 
 void mtbin::MemoryStream::Seek(SeekPoint _point)
 {
-	// ”ÍˆÍ§Œä
+	// ç¯„å›²åˆ¶å¾¡
 	if (_point < 0)
 	{
 		_point = 0;

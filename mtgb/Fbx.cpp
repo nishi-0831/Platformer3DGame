@@ -32,7 +32,7 @@ mtgb::FBXModelHandle mtgb::Fbx::Load(const std::string& _fileName)
 	{
 		if (pFbxModel.second->GetFileName() == _fileName)
 		{
-			// ‚·‚Å‚É“Ç‚İ‚Ü‚ê‚Ä‚¢‚é‚È‚ç‚»‚Ìƒnƒ“ƒhƒ‹‚ğ•Ô‚·
+			// ã™ã§ã«èª­ã¿è¾¼ã¾ã‚Œã¦ã„ã‚‹ãªã‚‰ãã®ãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™
 			return pFbxModel.first;
 		}
 	}
@@ -50,9 +50,9 @@ void mtgb::Fbx::Draw(const FBXModelHandle _hModel, const Transform& _transfrom, 
 {
 	DirectX11Draw::SetBlendMode(BlendMode::Default);
 
-	massert((0 < _hModel) && (_hModel <= handleCounter_) && "–³Œø‚Èƒnƒ“ƒhƒ‰ @Fbx::Draw");
+	massert((0 < _hModel) && (_hModel <= handleCounter_) && "ç„¡åŠ¹ãªãƒãƒ³ãƒ‰ãƒ© @Fbx::Draw");
 
-	massert(pFbxModels_.count(_hModel) != 0 && "ƒ‚ƒfƒ‹‚ª‘¶İ‚µ‚È‚¢ @Fbx::Draw");
+	massert(pFbxModels_.count(_hModel) != 0 && "ãƒ¢ãƒ‡ãƒ«ãŒå­˜åœ¨ã—ãªã„ @Fbx::Draw");
 
 	pFbxModels_[_hModel]->Draw(_transfrom, _frame);
 }
@@ -71,8 +71,8 @@ std::optional<FbxAnimationController> mtgb::Fbx::GetAnimationController(FBXModel
 {
 	Fbx& instance{Game::System<Fbx>()};
 
-	massert((0 < _hModel) && (_hModel <= instance.handleCounter_) && "–³Œø‚Èƒnƒ“ƒhƒ‰ @Fbx::Draw");
+	massert((0 < _hModel) && (_hModel <= instance.handleCounter_) && "ç„¡åŠ¹ãªãƒãƒ³ãƒ‰ãƒ© @Fbx::Draw");
 
-	massert(instance.pFbxModels_.count(_hModel) != 0 && "ƒ‚ƒfƒ‹‚ª‘¶İ‚µ‚È‚¢ @Fbx::Draw");
+	massert(instance.pFbxModels_.count(_hModel) != 0 && "ãƒ¢ãƒ‡ãƒ«ãŒå­˜åœ¨ã—ãªã„ @Fbx::Draw");
 	return instance.pFbxModels_[_hModel]->GetAnimationController();
 }

@@ -26,12 +26,12 @@ mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)
 		name_ = "SecondWindowDXGI";
 	}
 
-	// DirectX11Manager ‚ÉƒAƒNƒZƒX‚µ‚ÄƒŠƒ\[ƒX‚ğì¬
+	// DirectX11Manager ã«ã‚¢ã‚¯ã‚»ã‚¹ã—ã¦ãƒªã‚½ãƒ¼ã‚¹ã‚’ä½œæˆ
 	auto& dx11Manager = Game::System<DirectX11Manager>();
 
 	HWND hWnd = WinCtxRes::GetHWND(_windowContext);
 
-	// ƒ}ƒ‹ƒ`ƒ‚ƒjƒ^[‘Î‰‚©‚Ç‚¤‚©
+	// ãƒãƒ«ãƒãƒ¢ãƒ‹ã‚¿ãƒ¼å¯¾å¿œã‹ã©ã†ã‹
 
 	if (isMultiMonitor_)
 	{
@@ -43,13 +43,13 @@ mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)
 			monitorInfo_ = *optMonitorInfo;
 		}
 
-		// ƒEƒBƒ“ƒhƒEƒTƒCƒY‚Ì•ÏX‚É—˜—p‚·‚é‚½‚ß‚ÉDesc‚ğæ“¾
+		// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºã®å¤‰æ›´æ™‚ã«åˆ©ç”¨ã™ã‚‹ãŸã‚ã«Descã‚’å–å¾—
 		HRESULT hResult = pOutput_->GetDesc(&outputDesc_);
-		massert(SUCCEEDED(hResult) && "GetDesc ‚É¸”s @DXGIResource::Initialize");
+		massert(SUCCEEDED(hResult) && "GetDesc ã«å¤±æ•— @DXGIResource::Initialize");
 
-		// ƒ{[ƒ_ƒŒƒXƒEƒBƒ“ƒhƒE‚Ìê‡AƒXƒƒbƒvƒ`ƒF[ƒ“‚Ìƒoƒbƒtƒ@ƒTƒCƒY‚ğ•Ï‚¦‚é‚¾‚¯‚È‚Ì‚ÅAOutput‚Í•s—vB
-		// ID3D11Device‚Ìì¬‚Ég—p‚µ‚½IDXGIAdapter‚ÆAIDXGIOutput‚Ì—ñ‹“‚Ég—p‚µ‚½IDXGIAdapter‚ªˆÙ‚È‚é‚ÆAƒXƒƒbƒvƒ`ƒF[ƒ“‚Ìì¬‚É¸”s‚·‚éB
-		// Œ»ó‚ÍID3D11Device‚Íˆê‚Â‚¾‚¯ì¬‚µ‚Ä‚¢‚é‚Ì‚ÅAIDXGIAdapter‚ªˆÙ‚È‚é‰Â”\«‚ğl—¶‚µ‚ÄOutput‚Í‰ğ•ú‚·‚é
+		// ãƒœãƒ¼ãƒ€ãƒ¬ã‚¹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å ´åˆã€ã‚¹ãƒ¯ãƒƒãƒ—ãƒã‚§ãƒ¼ãƒ³ã®ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚ºã‚’å¤‰ãˆã‚‹ã ã‘ãªã®ã§ã€Outputã¯ä¸è¦ã€‚
+		// ID3D11Deviceã®ä½œæˆã«ä½¿ç”¨ã—ãŸIDXGIAdapterã¨ã€IDXGIOutputã®åˆ—æŒ™ã«ä½¿ç”¨ã—ãŸIDXGIAdapterãŒç•°ãªã‚‹ã¨ã€ã‚¹ãƒ¯ãƒƒãƒ—ãƒã‚§ãƒ¼ãƒ³ã®ä½œæˆã«å¤±æ•—ã™ã‚‹ã€‚
+		// ç¾çŠ¶ã¯ID3D11Deviceã¯ä¸€ã¤ã ã‘ä½œæˆã—ã¦ã„ã‚‹ã®ã§ã€IDXGIAdapterãŒç•°ãªã‚‹å¯èƒ½æ€§ã‚’è€ƒæ…®ã—ã¦Outputã¯è§£æ”¾ã™ã‚‹
 		if (isBorderlessWindow)
 		{
 			pOutput_.Reset();
@@ -60,10 +60,10 @@ mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)
 		pOutput_ = nullptr;
 	}
 
-	// ƒXƒƒbƒvƒ`ƒF[ƒ“‚ğì¬(pOutput_‚ªnullptr‚Å‚àƒfƒtƒHƒ‹ƒg‚ÌIDXGIAdapter‚©‚çì¬‚³‚ê‚é)
+	// ã‚¹ãƒ¯ãƒƒãƒ—ãƒã‚§ãƒ¼ãƒ³ã‚’ä½œæˆ(pOutput_ãŒnullptrã§ã‚‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®IDXGIAdapterã‹ã‚‰ä½œæˆã•ã‚Œã‚‹)
 	dx11Manager.CreateSwapChain(hWnd, pOutput_.Get(), pSwapChain1_.ReleaseAndGetAddressOf());
 
-	// ƒT[ƒtƒFƒX‚Æ‚µ‚Äì¬
+	// ã‚µãƒ¼ãƒ•ã‚§ã‚¹ã¨ã—ã¦ä½œæˆ
 	dx11Manager.CreateDXGISurface(pSwapChain1_.Get(), pDXGISurface_.ReleaseAndGetAddressOf());
 }
 
@@ -82,7 +82,7 @@ void mtgb::DXGIResource::Update()
 	MTImGui::Instance().DirectShow(
 		[this]
 		{
-			// ƒ‚ƒjƒ^[(DXGIOutput)‚Ìî•ñ
+			// ãƒ¢ãƒ‹ã‚¿ãƒ¼(DXGIOutput)ã®æƒ…å ±
 			ImGui::PushID(&monitorInfo_);
 			ImGui::LabelText("adapterIndex", "%d", monitorInfo_.adapterIndex);
 			ImGui::LabelText("outputIndex", "%d", monitorInfo_.outputIndex);
@@ -103,15 +103,15 @@ void mtgb::DXGIResource::Reset()
 void mtgb::DXGIResource::OnResize(UINT _width, UINT _height)
 {
 	HRESULT hResult = pSwapChain1_->ResizeBuffers(0, _width, _height, DXGI_FORMAT_UNKNOWN, 0);
-	massert(SUCCEEDED(hResult) && "ResizeBuffers ‚É¸”s @DXGIResource::OnResize");
+	massert(SUCCEEDED(hResult) && "ResizeBuffers ã«å¤±æ•— @DXGIResource::OnResize");
 
-	// Äæ“¾
+	// å†å–å¾—
 	Game::System<DirectX11Manager>().CreateDXGISurface(pSwapChain1_.Get(), pDXGISurface_.ReleaseAndGetAddressOf());
 }
 
 void mtgb::DXGIResource::Release()
 {
-	// SwapChain ‚Íƒtƒ‹ƒXƒNƒŠ[ƒ“ƒ‚[ƒh‚Å‚Ííœ‚Å‚«‚È‚¢‚ç‚µ‚¢
+	// SwapChain ã¯ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ãƒ¢ãƒ¼ãƒ‰ã§ã¯å‰Šé™¤ã§ããªã„ã‚‰ã—ã„
 	if (pSwapChain1_)
 	{
 		pSwapChain1_->SetFullscreenState(false, nullptr);

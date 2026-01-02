@@ -9,7 +9,7 @@
 #include "DefaultShow.h"
 #include "ShowAttributes.h"
 
-// TypeRegistry‚Ìƒeƒ“ƒvƒŒ[ƒgÀ‘•
+// TypeRegistryã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆå®Ÿè£…
 template <typename T> void TypeRegistry::RegisterType()
 {
 	using Type					 = std::remove_pointer_t<std::remove_cvref_t<T>>;
@@ -27,24 +27,24 @@ template <typename T> void TypeRegistry::RegisterType()
 				registerInstance = const_cast<T*>(std::any_cast<const T*>(ptr));
 			}
 			massert(
-				registerInstance != nullptr && "instance‚Ìany_cast‚É¸”s:ptr‚ªnullptr‚Å‚· @TypeRegistry::RegisterType"
+				registerInstance != nullptr && "instanceã®any_castã«å¤±æ•—:ptrãŒnullptrã§ã™ @TypeRegistry::RegisterType"
 			);
 			constexpr auto type = refl::reflect<Type>();
 
 			bool showFuncExecuted = false;
 			Command* result		  = nullptr;
 
-			// type.attributes‚ÌŠe‘®«‚ğƒ‰ƒ€ƒ_®‚Ìˆø”‚É“n‚µ‚Äˆê‚Â‚¸‚Âˆ—
+			// type.attributesã®å„å±æ€§ã‚’ãƒ©ãƒ ãƒ€å¼ã®å¼•æ•°ã«æ¸¡ã—ã¦ä¸€ã¤ãšã¤å‡¦ç†
 			std::apply(
 				[&](auto&&... attrs)
 				{
 					((
 						 [&]
 						 {
-							 // ‘®«‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ÌŒ^‚ğæ“¾
-							 // –{—ˆ‚ÌŒ^“Á«‚ğ’m‚è‚½‚¢‚Ì‚Ådecay_t‚Åƒˆ‚È’lŒ^‚É•ÏŠ·
+							 // å±æ€§ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®å‹ã‚’å–å¾—
+							 // æœ¬æ¥ã®å‹ç‰¹æ€§ã‚’çŸ¥ã‚ŠãŸã„ã®ã§decay_tã§ç´”ç²‹ãªå€¤å‹ã«å¤‰æ›
 							 using AttrType = std::decay_t<decltype(attrs)>;
-							 // ShowFuncŒ^‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚©”Û‚©
+							 // ShowFuncå‹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‹å¦ã‹
 							 if constexpr (refl::trait::is_instance_of_v<ShowFunc, AttrType>)
 							 {
 								 result			  = attrs(registerInstance, name);
@@ -60,30 +60,30 @@ template <typename T> void TypeRegistry::RegisterType()
 			if (!showFuncExecuted)
 			{
 				ImGui::PushID(registerInstance);
-				// ƒƒ“ƒo‚²‚Æ‚É‘–¸
+				// ãƒ¡ãƒ³ãƒã”ã¨ã«èµ°æŸ»
 				refl::util::for_each(
 					type.members,
 					[&](auto&& member) -> Command*
 					{
-						// ƒƒ“ƒo‚ÌÀÛ‚ÌŒ^‚ğæ“¾iƒ|ƒCƒ“ƒ^‚©‚Ç‚¤‚©‚ğŠÜ‚Şj
+						// ãƒ¡ãƒ³ãƒã®å®Ÿéš›ã®å‹ã‚’å–å¾—ï¼ˆãƒã‚¤ãƒ³ã‚¿ã‹ã©ã†ã‹ã‚’å«ã‚€ï¼‰
 						using MemberValueType = std::remove_cvref_t<decltype(member(*registerInstance))>;
 
 						if constexpr (std::is_pointer_v<MemberValueType>)
 						{
-							// ƒ|ƒCƒ“ƒ^Œ^‚Ìê‡F‚»‚Ì‚Ü‚Ü“n‚·
+							// ãƒã‚¤ãƒ³ã‚¿å‹ã®å ´åˆï¼šãã®ã¾ã¾æ¸¡ã™
 							auto memberValue = member(*registerInstance);
 
-							// ƒƒ“ƒo‚ÌŒ^‚ªƒŠƒtƒŒƒNƒVƒ‡ƒ“‚³‚ê‚Ä‚¢‚é‚©ƒ`ƒFƒbƒN
+							// ãƒ¡ãƒ³ãƒã®å‹ãŒãƒªãƒ•ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã•ã‚Œã¦ã„ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 							if (!this->ShowMemberWithReflection(memberValue, member.name.c_str()))
 							{
-								// ‘®«‚ğƒ`ƒFƒbƒN‚µ‚Ä“KØ‚È•\¦•û–@‚ğ‘I‘ğ
+								// å±æ€§ã‚’ãƒã‚§ãƒƒã‚¯ã—ã¦é©åˆ‡ãªè¡¨ç¤ºæ–¹æ³•ã‚’é¸æŠ
 								bool hasCustomAttribute = false;
-								// ƒƒ“ƒo[‚Ì‘®«‚ğæ“¾
+								// ãƒ¡ãƒ³ãƒãƒ¼ã®å±æ€§ã‚’å–å¾—
 								auto memberAttributes = refl::descriptor::get_attributes(member);
 								hasCustomAttribute =
 									this->CheckCustomAttrs(memberAttributes, memberValue, member.name.c_str());
 
-								// ƒJƒXƒ^ƒ€‘®«‚ª‚È‚¢ê‡‚ÍƒfƒtƒHƒ‹ƒg•\¦
+								// ã‚«ã‚¹ã‚¿ãƒ å±æ€§ãŒãªã„å ´åˆã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆè¡¨ç¤º
 								if (!hasCustomAttribute)
 								{
 									result = mtgb::DefaultShow(memberValue, member.name.c_str());
@@ -92,19 +92,19 @@ template <typename T> void TypeRegistry::RegisterType()
 						}
 						else
 						{
-							// ’lŒ^‚Ìê‡FƒAƒhƒŒƒX‚ğæ“¾‚µ‚Ä“n‚·
+							// å€¤å‹ã®å ´åˆï¼šã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å–å¾—ã—ã¦æ¸¡ã™
 							auto memberPtr = &(member(*registerInstance));
 
-							// ƒƒ“ƒo‚ÌŒ^‚ªƒŠƒtƒŒƒNƒVƒ‡ƒ“‚³‚ê‚Ä‚¢‚é‚©ƒ`ƒFƒbƒN
+							// ãƒ¡ãƒ³ãƒã®å‹ãŒãƒªãƒ•ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã•ã‚Œã¦ã„ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 							if (this->ShowMemberWithReflection(memberPtr, member.name.c_str(), result) == false)
 							{
-								// ‘®«‚ğƒ`ƒFƒbƒN‚µ‚Ä“KØ‚È•\¦•û–@‚ğ‘I‘ğ
+								// å±æ€§ã‚’ãƒã‚§ãƒƒã‚¯ã—ã¦é©åˆ‡ãªè¡¨ç¤ºæ–¹æ³•ã‚’é¸æŠ
 								bool hasCustomAttribute = false;
-								// ƒƒ“ƒo[‚Ì‘®«‚ğæ“¾
+								// ãƒ¡ãƒ³ãƒãƒ¼ã®å±æ€§ã‚’å–å¾—
 								auto memberAttributes = refl::descriptor::get_attributes(member);
 
 								result = this->CheckCustomAttrs(memberAttributes, memberPtr, member.name.c_str());
-								// ƒJƒXƒ^ƒ€‘®«‚ª‚È‚¢ê‡‚ÍƒfƒtƒHƒ‹ƒg•\¦
+								// ã‚«ã‚¹ã‚¿ãƒ å±æ€§ãŒãªã„å ´åˆã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆè¡¨ç¤º
 								if (result == nullptr)
 								{
 									result = mtgb::DefaultShow(memberPtr, member.name.c_str());
@@ -121,14 +121,14 @@ template <typename T> void TypeRegistry::RegisterType()
 		}
 		else
 		{
-			// ƒŠƒtƒŒƒNƒVƒ‡ƒ“‚³‚ê‚Ä‚¢‚È‚¢
+			// ãƒªãƒ•ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã•ã‚Œã¦ã„ãªã„
 			ImGui::Text("%s,NotReflectable", name);
 		}
 		return nullptr;
 	};
 }
 
-// ƒƒ“ƒo‚ÌŒ^‚ªƒŠƒtƒŒƒNƒVƒ‡ƒ“‚³‚ê‚Ä‚¢‚é‚©ƒ`ƒFƒbƒN‚µAShowFunc‘®«‚ª‚ ‚ê‚Î‚»‚ê‚ğg—p
+// ãƒ¡ãƒ³ãƒã®å‹ãŒãƒªãƒ•ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã•ã‚Œã¦ã„ã‚‹ã‹ãƒã‚§ãƒƒã‚¯ã—ã€ShowFuncå±æ€§ãŒã‚ã‚Œã°ãã‚Œã‚’ä½¿ç”¨
 template <typename T> bool TypeRegistry::ShowMemberWithReflection(T _memberValue, const char* _name, Command* _command)
 {
 	using MemberType = std::remove_pointer_t<std::remove_cvref_t<T>>;
@@ -136,7 +136,7 @@ template <typename T> bool TypeRegistry::ShowMemberWithReflection(T _memberValue
 	{
 		constexpr auto memberType = refl::reflect<MemberType>();
 
-		// ƒƒ“ƒo‚ÌŒ^‚ÉShowFunc‘®«‚ª‚ ‚é‚©ƒ`ƒFƒbƒN
+		// ãƒ¡ãƒ³ãƒã®å‹ã«ShowFuncå±æ€§ãŒã‚ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 		bool showFuncExecuted = false;
 
 		std::apply(
@@ -148,7 +148,7 @@ template <typename T> bool TypeRegistry::ShowMemberWithReflection(T _memberValue
 						 using AttrType = std::decay_t<decltype(attrs)>;
 						 if constexpr (refl::trait::is_instance_of_v<ShowFunc, AttrType>)
 						 {
-							 // ƒ|ƒCƒ“ƒ^‚Ìê‡‚Í’l‚ğ“n‚µA’lŒ^‚Ìê‡‚Í‚»‚Ì‚Ü‚Ü“n‚·
+							 // ãƒã‚¤ãƒ³ã‚¿ã®å ´åˆã¯å€¤ã‚’æ¸¡ã—ã€å€¤å‹ã®å ´åˆã¯ãã®ã¾ã¾æ¸¡ã™
 							 if constexpr (std::is_pointer_v<T>)
 							 {
 								 _command = attrs(_memberValue, _name);
@@ -171,10 +171,10 @@ template <typename T> bool TypeRegistry::ShowMemberWithReflection(T _memberValue
 			return true;
 		}
 
-		// ShowFunc‘®«‚ª‚È‚¢ê‡‚ÍATypeRegistry‚É“o˜^‚³‚ê‚½•\¦ŠÖ”‚ğg—p
+		// ShowFuncå±æ€§ãŒãªã„å ´åˆã¯ã€TypeRegistryã«ç™»éŒ²ã•ã‚ŒãŸè¡¨ç¤ºé–¢æ•°ã‚’ä½¿ç”¨
 		std::type_index memberTypeIdx(typeid(MemberType));
 
-		// TypeRegistry‚É“o˜^‚³‚ê‚Ä‚¢‚é‚©ƒ`ƒFƒbƒN
+		// TypeRegistryã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 		if (this->IsRegisteredType(memberTypeIdx))
 		{
 			if constexpr (std::is_pointer_v<T>)
@@ -189,7 +189,7 @@ template <typename T> bool TypeRegistry::ShowMemberWithReflection(T _memberValue
 		}
 	}
 
-	return false; // ƒŠƒtƒŒƒNƒVƒ‡ƒ“‚³‚ê‚Ä‚¢‚È‚¢A‚Ü‚½‚Í•\¦ŠÖ”‚ªŒ©‚Â‚©‚ç‚È‚¢
+	return false; // ãƒªãƒ•ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã•ã‚Œã¦ã„ãªã„ã€ã¾ãŸã¯è¡¨ç¤ºé–¢æ•°ãŒè¦‹ã¤ã‹ã‚‰ãªã„
 }
 
 template <typename... Args, typename T>

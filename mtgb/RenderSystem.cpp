@@ -30,7 +30,7 @@ void mtgb::RenderSystem::Render(GameScene& _scene)
 
 void mtgb::RenderSystem::RenderDirectXWindows(GameScene& _scene)
 {
-	// ˆê‚Â–Ú‚ÌƒEƒBƒ“ƒhƒE
+	// ä¸€ã¤ç›®ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
 	WinCtxRes::ChangeResource(WindowContext::First);
 	if (WinCtxRes::Get<CameraResource>(WindowContext::First).NotRegisterCamera())
 	{
@@ -49,7 +49,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 {
 	using mtbit::operator|;
 
-	// ImGui‚Íˆê‚Â–Ú‚ÌƒEƒBƒ“ƒhƒE‚ÉˆË‘¶‚µ‚Ä‚¢‚é
+	// ImGuiã¯ä¸€ã¤ç›®ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«ä¾å­˜ã—ã¦ã„ã‚‹
 	WinCtxRes::ChangeResource(WindowContext::First);
 
 	ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();
@@ -57,18 +57,18 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	imGui.BeginFrame();
 	imGui.BeginImGuizmoFrame();
 
-	// Inspector•\¦
+	// Inspectorè¡¨ç¤º
 	MTImGui::Instance().ShowWindow(ShowType::Inspector);
 
-	// Settings•\¦
+	// Settingsè¡¨ç¤º
 	MTImGui::Instance().ShowWindow(ShowType::Settings);
 	MTImGui::Instance().ShowWindow(ShowType::Editor);
-	// ƒƒO•\¦
+	// ãƒ­ã‚°è¡¨ç¤º
 	MTImGui::Instance().ShowLog();
 
-	// SceneView•\¦
+	// SceneViewè¡¨ç¤º
 
-	// RenderTargetView‚ğImGui—p‚ÉØ‚è‘Ö‚¦
+	// RenderTargetViewã‚’ImGuiç”¨ã«åˆ‡ã‚Šæ›¿ãˆ
 	imGui.SetImGuizmoRenderTargetView();
 
 	DirectX11Draw::Begin();
@@ -90,7 +90,7 @@ void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene, GameObjectLayerFlag 
 	{
 		cp->RenderLayer(_layer);
 	}
-	// TODO:EffectManager,ColliderCP‚àIRenderableCPƒCƒ“ƒ^[ƒtƒF[ƒX‚ğŒp³‚³‚¹‚é
+	// TODO:EffectManager,ColliderCPã‚‚IRenderableCPã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ç¶™æ‰¿ã•ã›ã‚‹
 	Game::System<EffectManager>().Draw();
 	if (_layer.Has(GameObjectLayer::SceneView))
 	{

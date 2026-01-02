@@ -45,7 +45,7 @@ namespace mtgb
 
 	struct ModelData
 	{
-		// ƒtƒ@ƒCƒ‹–¼
+		// ãƒ•ã‚¡ã‚¤ãƒ«å
 		std::string fileName;
 
 		SimpleMesh* mesh;
@@ -65,12 +65,12 @@ namespace mtgb
 		std::vector<ModelData*> datas_;
 		void InitMesh(const std::string& fileName, SimpleMesh* mesh);
 
-		// «ƒ‚ƒfƒ‹‚Ìí—Ş‚²‚Æ(ƒ‚ƒfƒ‹‚Ì\‘¢‚ª‘S‚Ä“¯ˆê‚È‚çƒAƒvƒŠ‚É‚Ğ‚Æ‚Âj
+		// â†“ãƒ¢ãƒ‡ãƒ«ã®ç¨®é¡ã”ã¨(ãƒ¢ãƒ‡ãƒ«ã®æ§‹é€ ãŒå…¨ã¦åŒä¸€ãªã‚‰ã‚¢ãƒ—ãƒªã«ã²ã¨ã¤ï¼‰
 		static ComPtr<ID3D11InputLayout> pInputLayout_;
 		static ComPtr<ID3D11VertexShader> pVertexShader_;
 		static ComPtr<ID3D11PixelShader> pPixelShader_;
 		static ComPtr<ID3D11Buffer> pConstantBuffer_;
-		// «ƒ‚ƒfƒ‹‚²‚Æ
+		// â†“ãƒ¢ãƒ‡ãƒ«ã”ã¨
 		// ID3D11Buffer* pVertexBuffer_;
 		// SimpleMesh mesh_;
 	};

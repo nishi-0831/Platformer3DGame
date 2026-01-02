@@ -34,7 +34,7 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->SetExtents({1.0f, 1.0f, 1.0f});
-	// Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
+	// å‹æƒ…å ±ã«ç™»éŒ²ã•ã‚ŒãŸåå‰ã‚’å–å¾—
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(PatrolChargerEnemy));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 	displayName_		 = name_;
@@ -70,7 +70,7 @@ void PatrolChargerEnemy::Draw() const
 
 void PatrolChargerEnemy::Start()
 {
-	// Tag‚ªPlayer‚ÌGameObject‚ğ’T‚·
+	// TagãŒPlayerã®GameObjectã‚’æ¢ã™
 	GameObject* targetGameObj = FindGameObject(GameObjectTag::Player);
 	if (targetGameObj == nullptr)
 	{
@@ -107,7 +107,7 @@ void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 {
 	if (state_.Current() != STATE::DYING)
 	{
-		// “¥‚Ü‚ê‚½ƒGƒtƒFƒNƒgÄ¶
+		// è¸ã¾ã‚ŒãŸã‚¨ãƒ•ã‚§ã‚¯ãƒˆå†ç”Ÿ
 		EffectParameters params;
 		params.isLoop	  = false;
 		Vector3 effectPos = Vector3{
@@ -119,10 +119,10 @@ void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 		params.worldMat = mat;
 		Game::System<EffectManager>().Play("Stomp", params);
 
-		// “¥‚Ü‚ê‚½SEÄ¶
+		// è¸ã¾ã‚ŒãŸSEå†ç”Ÿ
 		Audio::PlayOneShotFile("Sound/Stomp.mp3");
 
-		// “¥‚ñ‚¾ƒAƒNƒ^[‚ğã‚É”ò‚Î‚·
+		// è¸ã‚“ã ã‚¢ã‚¯ã‚¿ãƒ¼ã‚’ä¸Šã«é£›ã°ã™
 		EntityId id				  = _pOther->GetId();
 		RigidBody& otherRigidBody = RigidBody::Get(id);
 		otherRigidBody.velocity_.y += onStompedBounce_;
@@ -146,7 +146,7 @@ void PatrolChargerEnemy::TakeDamage(int _damage)
 
 void PatrolChargerEnemy::InitializeState()
 {
-	// ƒAƒjƒ[ƒVƒ‡ƒ“‚ÌƒRƒ“ƒgƒ[ƒ‰‚ğæ“¾
+	// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã‚’å–å¾—
 	animController_ = Fbx::GetAnimationController(pMeshRenderer_->meshHandle);
 
 	state_
@@ -249,37 +249,37 @@ void PatrolChargerEnemy::Patrol()
 	Vector3 toTarget = pTargetTransform_->GetWorldPosition() - pTransform_->GetWorldPosition();
 	if (toTarget.Size() <= foundDistance_)
 	{
-		// ˆê’èŠÔ‘Ò‹@‚µ‚Ä‚©‚ç“Ëió‘Ô‚É‘JˆÚ
+		// ä¸€å®šæ™‚é–“å¾…æ©Ÿã—ã¦ã‹ã‚‰çªé€²çŠ¶æ…‹ã«é·ç§»
 		state_.Change(STATE::WAIT);
 		waitTime_  = waitTimeTransitionCharge_;
 		nextState_ = STATE::CHARGE;
 
-		// ƒ^[ƒQƒbƒg‚Ì•ûŒü‚ğŒü‚­
+		// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®æ–¹å‘ã‚’å‘ã
 		pTransform_->rotate = Quaternion::LookRotation(Vector3::Normalize(toTarget), Vector3::Up());
 	}
 }
 
 void PatrolChargerEnemy::Charge()
 {
-	// –Ú•W’n“_
+	// ç›®æ¨™åœ°ç‚¹
 	// -------------------------------------------------------
-	// ’ˆÓ
-	// x,z²‚Ì‚İƒ^[ƒQƒbƒg‚ÌÀ•W‚ğg‚Á‚Ä‚¢‚éBy²‚Í©g‚ÌÀ•W‚Ì‚Ü‚ÜB
-	// ƒ^[ƒQƒbƒg‚Æ‚ÌyÀ•W‚ªˆÙ‚È‚é‚Æ‹ó’†•às‚µ‚Ä‚µ‚Ü‚¤‚©‚çB
-	// Î–Ê‚ğˆÚ“®‚³‚¹‚éê‡‚ÍC³‚ª•K—v
+	// æ³¨æ„
+	// x,zè»¸ã®ã¿ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®åº§æ¨™ã‚’ä½¿ã£ã¦ã„ã‚‹ã€‚yè»¸ã¯è‡ªèº«ã®åº§æ¨™ã®ã¾ã¾ã€‚
+	// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¨ã®yåº§æ¨™ãŒç•°ãªã‚‹ã¨ç©ºä¸­æ­©è¡Œã—ã¦ã—ã¾ã†ã‹ã‚‰ã€‚
+	// æ–œé¢ã‚’ç§»å‹•ã•ã›ã‚‹å ´åˆã¯ä¿®æ­£ãŒå¿…è¦
 	// ------------------------------------------------------
 	Vector3 distPos		= {pTargetTransform_->position.x, pTransform_->position.y, pTargetTransform_->position.z};
 	Vector3 toTarget	= distPos - pTransform_->GetWorldPosition();
 	Vector3 toTargetDir = Vector3::Normalize(toTarget);
 
-	// ƒ^[ƒQƒbƒg‚Ì•û‚ğŒü‚¢‚ÄA“Ëi!!!
+	// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®æ–¹ã‚’å‘ã„ã¦ã€çªé€²!!!
 	pTransform_->position += toTargetDir * chargeSpeed_ * Time::DeltaTimeF();
 	pTransform_->rotate = Quaternion::LookRotation(toTarget, Vector3::Up());
 
 	float detectionDistance = 0.1f;
 	if (toTarget.Size() <= detectionDistance)
 	{
-		// ˆê’èŠÔ‘Ò‹@‚µ‚Ä‚©‚ç„‰ñ’n“_‚É–ß‚é
+		// ä¸€å®šæ™‚é–“å¾…æ©Ÿã—ã¦ã‹ã‚‰å·¡å›åœ°ç‚¹ã«æˆ»ã‚‹
 		state_.Change(STATE::WAIT);
 		waitTime_  = waitTimeAfterCharge_;
 		nextState_ = STATE::RETURN_TO_PATROL;
@@ -297,7 +297,7 @@ void PatrolChargerEnemy::Wait()
 
 void PatrolChargerEnemy::ReturnToPatrol()
 {
-	// ˆÈ‘O‘{õ‚µ‚Ä‚¢‚½Û‚ÌÀ•W
+	// ä»¥å‰æœç´¢ã—ã¦ã„ãŸéš›ã®åº§æ¨™
 	Vector3 returnPos	 = pInterpolator_->EvaluatePos();
 	Vector3 vToReturnPos = returnPos - pTransform_->GetWorldPosition();
 	pTransform_->position += Vector3::Normalize(vToReturnPos) * returnToPatrolSpeed_ * Time::DeltaTimeF();
@@ -322,18 +322,18 @@ bool PatrolChargerEnemy::Search()
 {
 	Vector3 toTarget = pTargetTransform_->GetWorldPosition() - pTransform_->GetWorldPosition();
 
-	// ³–Ê•ûŒü‚Æƒ^[ƒQƒbƒg‚Ì“àÏ‚ğŒvZ
+	// æ­£é¢æ–¹å‘ã¨ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®å†…ç©ã‚’è¨ˆç®—
 	float dotProduct =
 		DirectX::XMVectorGetX(DirectX::XMVector3Dot(pTransform_->Forward(), Vector3::Normalize(toTarget)));
-	// Šp“x‚ğZo(ƒ‰ƒWƒAƒ“)
+	// è§’åº¦ã‚’ç®—å‡º(ãƒ©ã‚¸ã‚¢ãƒ³)
 	float angleRadian = std::acosf(std::clamp(dotProduct, -1.0f, 1.0f));
-	// degree‚É’¼‚·
+	// degreeã«ç›´ã™
 	float angleDegree = DirectX::XMConvertToDegrees(angleRadian);
 
-	// ”­Œ©‚µ‚½‚Æ”»’è‚·‚éŠp“xA‹——£‚©‚Ç‚¤‚©
+	// ç™ºè¦‹ã—ãŸã¨åˆ¤å®šã™ã‚‹è§’åº¦ã€è·é›¢ã‹ã©ã†ã‹
 	if (angleDegree <= foundFOV_ && toTarget.Size() <= foundDistance_)
 	{
-		// ”­Œ©
+		// ç™ºè¦‹
 		// Quaternion targetRotation{ Quaternion::LookRotation(Vector3::Normalize(toTarget),pTransform_->Up()) };
 		// state_.Change(STATE::CHARGE);
 		return true;

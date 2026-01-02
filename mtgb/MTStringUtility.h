@@ -5,22 +5,22 @@
 namespace mtgb
 {
 	/// <summary>
-	/// UTF8 •¶š”(ƒoƒCƒg”‚Å‚Í‚È‚¢)‚ğæ“¾‚·‚é
+	/// UTF8 æ–‡å­—æ•°(ãƒã‚¤ãƒˆæ•°ã§ã¯ãªã„)ã‚’å–å¾—ã™ã‚‹
 	/// </summary>
-	/// <param name="_string">utf8‚Ì•¶š—ñ</param>
-	/// <returns>•¶š”</returns>
+	/// <param name="_string">utf8ã®æ–‡å­—åˆ—</param>
+	/// <returns>æ–‡å­—æ•°</returns>
 	size_t GetSizeUTF8Characters(const std::u8string& _string);
 
 	/// <summary>
-	/// utf8•¶š—ñ‚ğØ‚èæ‚é
+	/// utf8æ–‡å­—åˆ—ã‚’åˆ‡ã‚Šå–ã‚‹
 	/// </summary>
-	/// <param name="_string">utf8•¶š—ñ</param>
-	/// <param name="_count">•¶š”(ƒoƒCƒg”‚Å‚Í‚È‚¢)</param>
-	/// <returns>Ø‚èæ‚ç‚ê‚½utf8•¶š—ñ</returns>
+	/// <param name="_string">utf8æ–‡å­—åˆ—</param>
+	/// <param name="_count">æ–‡å­—æ•°(ãƒã‚¤ãƒˆæ•°ã§ã¯ãªã„)</param>
+	/// <returns>åˆ‡ã‚Šå–ã‚‰ã‚ŒãŸutf8æ–‡å­—åˆ—</returns>
 	std::u8string SubStrBegin(const std::u8string& _string, const int _count);
 
 	/// <summary>
-	/// ƒƒCƒh•¶š—ñ‚É•ÏŠ·‚·‚é
+	/// ãƒ¯ã‚¤ãƒ‰æ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹
 	/// </summary>
 	/// <param name="_string"></param>
 	/// <returns></returns>
@@ -30,7 +30,7 @@ namespace mtgb
 	}
 
 	/// <summary>
-	/// ƒƒCƒh•¶š—ñ‚É•ÏŠ·‚·‚é
+	/// ãƒ¯ã‚¤ãƒ‰æ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹
 	/// </summary>
 	/// <param name="_stringView"></param>
 	/// <returns></returns>
@@ -40,15 +40,15 @@ namespace mtgb
 	}
 
 	/// <summary>
-	/// ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ‚©‚çƒƒCƒh•¶š—ñ‚Ö•ÏŠ·
+	/// ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ã‹ã‚‰ãƒ¯ã‚¤ãƒ‰æ–‡å­—åˆ—ã¸å¤‰æ›
 	/// </summary>
-	/// <param name="_string">•ÏŠ·‚·‚é•¶š—ñ</param>
+	/// <param name="_string">å¤‰æ›ã™ã‚‹æ–‡å­—åˆ—</param>
 	/// <returns></returns>
 	std::wstring MultiToWide(const std::string& _string);
 	/// <summary>
-	/// ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ‚©‚çƒƒCƒh•¶š—ñ‚Ö•ÏŠ·
+	/// ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ã‹ã‚‰ãƒ¯ã‚¤ãƒ‰æ–‡å­—åˆ—ã¸å¤‰æ›
 	/// </summary>
-	/// <param name="_string">•¶š—ñ</param>
+	/// <param name="_string">æ–‡å­—åˆ—</param>
 	/// <returns></returns>
 	std::wstring MultiToWide(const char* _string);
 
@@ -56,15 +56,15 @@ namespace mtgb
 	std::string WideToMulti(const wchar_t* _wstring);
 
 	/// <summary>
-	/// ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ‚©‚çƒƒCƒh•¶š—ñ‚Ö•ÏŠ·
+	/// ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ã‹ã‚‰ãƒ¯ã‚¤ãƒ‰æ–‡å­—åˆ—ã¸å¤‰æ›
 	/// </summary>
-	/// <param name="_string">•ÏŠ·‚·‚é•¶š—ñ</param>
+	/// <param name="_string">å¤‰æ›ã™ã‚‹æ–‡å­—åˆ—</param>
 	/// <returns></returns>
 	std::string MultiToUTF8(const std::string& _string);
 	/// <summary>
-	/// ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š—ñ‚©‚çƒƒCƒh•¶š—ñ‚Ö•ÏŠ·
+	/// ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ã‹ã‚‰ãƒ¯ã‚¤ãƒ‰æ–‡å­—åˆ—ã¸å¤‰æ›
 	/// </summary>
-	/// <param name="_string">•ÏŠ·‚·‚é•¶š—ñ</param>
+	/// <param name="_string">å¤‰æ›ã™ã‚‹æ–‡å­—åˆ—</param>
 	/// <returns></returns>
 	std::string MultiToUTF8(const char* _string);
 
@@ -79,9 +79,9 @@ namespace mtgb
 	std::string UTF8ToMulti(const char* _string);
 
 	/// <summary>
-	/// ƒCƒ“ƒXƒ^ƒ“ƒX–¼‚©‚ç¶¬”Ô†‚ğíœ‚µAƒNƒ‰ƒX–¼‚ğ•Ô‚·
+	/// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åã‹ã‚‰ç”Ÿæˆç•ªå·ã‚’å‰Šé™¤ã—ã€ã‚¯ãƒ©ã‚¹åã‚’è¿”ã™
 	/// </summary>
-	/// <param name="_fullName"> ƒCƒ“ƒXƒ^ƒ“ƒX–¼</param>
+	/// <param name="_fullName"> ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹å</param>
 	/// <returns></returns>
 	std::string ExtractClassName(const std::string& _fullName);
 } // namespace mtgb

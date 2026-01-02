@@ -6,37 +6,37 @@
 
 namespace mtnet
 {
-	constexpr size_t LOGS_COUNT_MAX{100}; // ’~Ï‚·‚éƒƒO‚ÌÅ‘å”
+	constexpr size_t LOGS_COUNT_MAX{100}; // è“„ç©ã™ã‚‹ãƒ­ã‚°ã®æœ€å¤§æ•°
 	using OnLogFunc = std::function<void(const std::string&)>;
 
 	/// <summary>
-	/// ƒf[ƒ^ƒLƒƒƒŠƒAƒNƒ‰ƒX
+	/// ãƒ‡ãƒ¼ã‚¿ã‚­ãƒ£ãƒªã‚¢ã‚¯ãƒ©ã‚¹
 	/// </summary>
 	class Log
 	{
 	  public:
 		/// <summary>
-		/// ƒƒO‚ğ‘‚«‚Ş
+		/// ãƒ­ã‚°ã‚’æ›¸ãè¾¼ã‚€
 		/// </summary>
-		/// <param name="_content">“à—e</param>
+		/// <param name="_content">å†…å®¹</param>
 		static void Write(const std::string& _content);
 
 		/// <summary>
-		/// ƒoƒCƒiƒŠ”z—ñ‚ğƒƒO‚É‘‚«‚Ş
+		/// ãƒã‚¤ãƒŠãƒªé…åˆ—ã‚’ãƒ­ã‚°ã«æ›¸ãè¾¼ã‚€
 		/// </summary>
-		/// <param name="_binArray">ƒoƒCƒiƒŠ”z—ñ‚Ìƒ|ƒCƒ“ƒ^</param>
-		/// <param name="_binArraySize">ƒoƒCƒiƒŠ”z—ñ‚ÌƒTƒCƒY</param>
+		/// <param name="_binArray">ãƒã‚¤ãƒŠãƒªé…åˆ—ã®ãƒã‚¤ãƒ³ã‚¿</param>
+		/// <param name="_binArraySize">ãƒã‚¤ãƒŠãƒªé…åˆ—ã®ã‚µã‚¤ã‚º</param>
 		static void Write(const char* _binArray, const size_t& _binArraySize);
 
 		/// <summary>
-		/// ƒƒOˆê——‚ğ¶¬‚·‚é
+		/// ãƒ­ã‚°ä¸€è¦§ã‚’ç”Ÿæˆã™ã‚‹
 		/// </summary>
 		/// <returns></returns>
 		static std::string GenerateLogs();
 		/// <summary>
-		/// ƒƒO‚ª”­s‚³‚ê‚½‚Æ‚«‚Ìˆ—
+		/// ãƒ­ã‚°ãŒç™ºè¡Œã•ã‚ŒãŸã¨ãã®å‡¦ç†
 		/// </summary>
-		/// <param name="_callback">ƒR[ƒ‹ƒoƒbƒNŠÖ”(•¶š—ñ)</param>
+		/// <param name="_callback">ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°(æ–‡å­—åˆ—)</param>
 		static void OnLog(const OnLogFunc& _callback);
 
 	  private:
@@ -44,8 +44,8 @@ namespace mtnet
 		~Log() = delete;
 
 	  private:
-		static std::list<std::string> logs_; // ƒƒO’™‚ß‚Ä‚¨‚­
-		static OnLogFunc onLogFunc_;		 // ƒƒO‚ª”­s‚³‚ê‚½‚Æ‚«‚ÌƒR[ƒ‹ƒoƒbƒNŠÖ”
-		static std::mutex logWriteMutex_;	 // ƒƒO‚ğ‘‚«o‚·”r‘¼§Œä—p
+		static std::list<std::string> logs_; // ãƒ­ã‚°è²¯ã‚ã¦ãŠã
+		static OnLogFunc onLogFunc_;		 // ãƒ­ã‚°ãŒç™ºè¡Œã•ã‚ŒãŸã¨ãã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
+		static std::mutex logWriteMutex_;	 // ãƒ­ã‚°ã‚’æ›¸ãå‡ºã™æ’ä»–åˆ¶å¾¡ç”¨
 	};
 } // namespace mtnet

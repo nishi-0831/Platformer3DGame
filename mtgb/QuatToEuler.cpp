@@ -4,14 +4,14 @@
 mtgb::Vector3 mtgb::QuatToEuler(DirectX::XMVECTORF32 _q)
 {
 	using namespace DirectX;
-	// •ª•êA•ªq
+	// åˆ†æ¯ã€åˆ†å­
 	float denom, num;
 	float roll, pitch, yaw;
 	float x = _q[0], y = _q[1], z = _q[2], w = _q[3];
 
-	// ƒsƒbƒ`(x²)
+	// ãƒ”ãƒƒãƒ(xè»¸)
 
-	// 90`^90‚Ì”ÍˆÍ
+	// 90ï½^90ã®ç¯„å›²
 	float e			= 0.9999f;
 	float sinX		= -2.0f * (z * x - w * y);
 	bool gimbalLock = false;
@@ -22,7 +22,7 @@ mtgb::Vector3 mtgb::QuatToEuler(DirectX::XMVECTORF32 _q)
 
 	pitch = std::asinf(std::clamp(sinX, -e, e));
 
-	// ƒˆ[(y²)
+	// ãƒ¨ãƒ¼(yè»¸)
 	if (gimbalLock)
 	{
 		num	  = 2.0f * (w * z + x * y);
@@ -35,7 +35,7 @@ mtgb::Vector3 mtgb::QuatToEuler(DirectX::XMVECTORF32 _q)
 	}
 	yaw = std::atan2f(num, denom);
 
-	// ƒ[ƒ‹(z²)
+	// ãƒ­ãƒ¼ãƒ«(zè»¸)
 
 	if (gimbalLock)
 	{

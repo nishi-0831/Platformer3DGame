@@ -8,34 +8,34 @@ namespace mtgb
 {
 	/*
 	* TODO:
-		EƒVƒF[ƒ_ƒpƒX
-		E¯•Ê—ñ‹“q
-		ED3D11_RASTERIZER_DESC
-		E‰Šú’lFVertexBuffer
-		E‰Šú’lFIndexBuffer
-		E‰Šú’lFConstantBuffer
-		EGPU‚¹‚«~‚ßFVertexBuffer
-		EGPU‚¹‚«~‚ßFIndexBuffer
-		EGPU‚¹‚«~‚ßFConstantBuffer
-		EƒTƒ“ƒvƒ‰—p(ID3D11DeviceContext*)
+		ãƒ»ã‚·ã‚§ãƒ¼ãƒ€ãƒ‘ã‚¹
+		ãƒ»è­˜åˆ¥åˆ—æŒ™å­
+		ãƒ»D3D11_RASTERIZER_DESC
+		ãƒ»åˆæœŸå€¤ï¼šVertexBuffer
+		ãƒ»åˆæœŸå€¤ï¼šIndexBuffer
+		ãƒ»åˆæœŸå€¤ï¼šConstantBuffer
+		ãƒ»GPUã›ãæ­¢ã‚ï¼šVertexBuffer
+		ãƒ»GPUã›ãæ­¢ã‚ï¼šIndexBuffer
+		ãƒ»GPUã›ãæ­¢ã‚ï¼šConstantBuffer
+		ãƒ»ã‚µãƒ³ãƒ—ãƒ©ç”¨(ID3D11DeviceContext*)
 
 		private:
-		bool isRequired;  // •K—v‚©‚Ìƒtƒ‰ƒO
+		bool isRequired;  // å¿…è¦ã‹ã®ãƒ•ãƒ©ã‚°
 	*/
 
 	template <typename T>
 	concept IsEnumStruct = std::is_enum_v<T> && !std::is_convertible_v<T, int>;
 
 	/// <summary>
-	/// <para>mtgb‚Å’ñ‹Ÿ‚µ‚È‚¢ƒQ[ƒ€‘¤‚ÌƒVƒF[ƒ_</para>
-	/// <para>‚±‚ê‚ğŒp³‚µ‚Ä“o˜^‚µ‚Ä‚­‚¾‚³‚¢B</para>
+	/// <para>mtgbã§æä¾›ã—ãªã„ã‚²ãƒ¼ãƒ å´ã®ã‚·ã‚§ãƒ¼ãƒ€</para>
+	/// <para>ã“ã‚Œã‚’ç¶™æ‰¿ã—ã¦ç™»éŒ²ã—ã¦ãã ã•ã„ã€‚</para>
 	/// </summary>
 	template <IsEnumStruct EnumStructT, typename OriginalShaderT> class IOriginalShader
 	{
-		// static_assert(IsEnumStruct, "ƒXƒR[ƒv•t‚«—ñ‹“Œ^‚ğw’è‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B @IOriginalShader");
+		// static_assert(IsEnumStruct, "ã‚¹ã‚³ãƒ¼ãƒ—ä»˜ãåˆ—æŒ™å‹ã‚’æŒ‡å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚ @IOriginalShader");
 	  public: /*
 		   /// <summary>
-		   /// ’¸“_ƒoƒbƒtƒ@‚ğ“®“I•ÏX‚·‚éê‡Œp³‚·‚é
+		   /// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã‚’å‹•çš„å¤‰æ›´ã™ã‚‹å ´åˆç¶™æ‰¿ã™ã‚‹
 		   /// </summary>
 		   class IWriteVertex
 		   {
@@ -73,22 +73,22 @@ namespace mtgb
 		virtual std::string_view GetFileName() = 0;
 
 		/// <summary>
-		/// ’¸“_ƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		virtual void InitializeVertexBuffer(ID3D11Device* _pDevice);
 		/// <summary>
-		/// ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		virtual void InitializeIndexBuffer(ID3D11Device* _pDevice);
 		/// <summary>
-		/// ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		virtual void InitializeConstantBuffer(ID3D11Device* _pDevice);
 
 		/// <summary>
 		///
 		/// </summary>
-		/// <typeparam name="VertexT">’¸“_‚ÌŒ^</typeparam>
+		/// <typeparam name="VertexT">é ‚ç‚¹ã®å‹</typeparam>
 		/// <typeparam name="VertexesSize"></typeparam>
 		/// <param name="vertexes"></param>
 		template <typename VertexT, size_t VertexesSize>
@@ -102,22 +102,22 @@ namespace mtgb
 		template <size_t IndexSize> void OnWriteIndexBuffer(std::function<std::array<int, IndexSize>&> pIndexes);
 
 		/// <summary>
-		/// ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚É‘‚«‚İ
+		/// ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã«æ›¸ãè¾¼ã¿
 		/// </summary>
-		/// <typeparam name="ConstantBufferT">ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ÌŒ^</typeparam>
-		/// <param name="_pConstantBuffer">ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìƒ|ƒCƒ“ƒ^“n‚µ</param>
+		/// <typeparam name="ConstantBufferT">ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®å‹</typeparam>
+		/// <param name="_pConstantBuffer">ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—</param>
 		template <typename ConstantBufferT>
 		void OnWriteConstantBuffer(std::function<ConstantBufferT*> _pConstantBuffer);
 
 		void OnWriteOther(std::function<void(ID3D11DeviceContext*)> _pDC);
 
 	  protected:
-		ID3D11Buffer* pVertexBuffer_;	// ’¸“_‚ÌˆÊ’uAF
-		ID3D11Buffer* pIndexBuffer_;	// ƒ|ƒŠƒSƒ“‚ğŒ‹‚Ô‡”Ô
-		ID3D11Buffer* pConstantBuffer_; // @ƒVƒF[ƒ_‚ÌƒOƒ[ƒoƒ‹•Ï”
+		ID3D11Buffer* pVertexBuffer_;	// é ‚ç‚¹ã®ä½ç½®ã€è‰²
+		ID3D11Buffer* pIndexBuffer_;	// ãƒãƒªã‚´ãƒ³ã‚’çµã¶é †ç•ª
+		ID3D11Buffer* pConstantBuffer_; // ã€€ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°
 
-		int indexCount_; // •`‰æ‚·‚éƒCƒ“ƒfƒbƒNƒX”
+		int indexCount_; // æç”»ã™ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹æ•°
 	  private:
-		bool isRequired_; // override ŒŸ’m—p
+		bool isRequired_; // override æ¤œçŸ¥ç”¨
 	};
 } // namespace mtgb

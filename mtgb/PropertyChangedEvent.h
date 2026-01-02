@@ -22,7 +22,7 @@ namespace mtgb
 		EntityId GetCommandTargetEntityId() const override;
 
 	  private:
-		// ComponentFactory‚ªnull‚Å‚ ‚é‚±‚Æ‚ğ‹–—e‚µ‚È‚¢
+		// ComponentFactoryãŒnullã§ã‚ã‚‹ã“ã¨ã‚’è¨±å®¹ã—ãªã„
 		const ComponentFactory& componentFactory_;
 		IComponentMemento* pPrevMemento_;
 		IComponentMemento* pMemento_;

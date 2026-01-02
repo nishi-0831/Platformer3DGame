@@ -7,7 +7,7 @@ namespace mtgb
 	{
 		A,
 		B,
-		SceneView, // ImGui�̃Q�[����ʂ݂̂ɕ\��
+		SceneView, // ImGuiのゲーム画面のみに表示
 	};
 
 	using GameObjectLayerFlag = mtbit::BitFlag<GameObjectLayer>;

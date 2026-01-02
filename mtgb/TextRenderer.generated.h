@@ -6,7 +6,7 @@
 #include "MTImGui.h"
 #include <string>
 // ============================================================================
-// TextRenderer‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
+// TextRendererã®çŠ¶æ…‹ã‚’ä¿å­˜ã™ã‚‹Stateæ§‹é€ ä½“ã®å®šç¾©ã€Undo/Redoã«ä½¿ã†Mementoã®usingå®£è¨€
 // ============================================================================
 #define MT_COMPONENT_TextRenderer()                                                \
 	struct TextRendererState                                                       \
@@ -16,7 +16,7 @@
 	using TextRendererMemento = ComponentMemento<TextRenderer, TextRendererState>;
 
 // ============================================================================
-// TextRenderer‚ÆTextRendererMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
+// TextRendererã¨TextRendererMementoã®ç›¸äº’å¤‰æ›å‡¦ç†ã‚’å®Ÿè£…
 // ============================================================================
 #define MT_GENERATED_BODY_TextRenderer()                                                            \
   public:                                                                                           \
@@ -46,7 +46,7 @@
 	{                                                                                               \
 		return "TextRenderer";                                                                      \
 	}                                                                                               \
-	/* ImGui•\¦ˆ—‚Ì“o˜^ */                                                                       \
+	/* ImGuiè¡¨ç¤ºå‡¦ç†ã®ç™»éŒ² */                                                                       \
 	static void RegisterImGui()                                                                     \
 	{                                                                                               \
 		static bool registered = false;                                                             \
@@ -60,7 +60,7 @@
 
 #pragma warning(push)
 #pragma warning(disable : 4005)
-// ƒ}ƒNƒã‘‚«
+// ãƒã‚¯ãƒ­ä¸Šæ›¸ã
 #define MT_COMPONENT() MT_COMPONENT_TextRenderer()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_TextRenderer()
 #pragma warning(pop)

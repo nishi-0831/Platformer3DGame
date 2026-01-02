@@ -18,28 +18,28 @@
 using namespace boost::multi_index;
 using namespace mtgb;
 
-// �^�O��`
+// タグ定義
 struct text_layout_order
 {
-}; // ������+�T�C�Y���L�[�Ƃ���^�O
+}; // 文字列+サイズをキーとするタグ
 struct handle_order
 {
-}; // �n���h�����L�[�Ƃ���^�O
+}; // ハンドルをキーとするタグ
 struct random
 {
-}; // �Y�����ŃA�N�Z�X����^�O
+}; // 添え字でアクセスするタグ
 struct font_size_order
 {
-}; // �t�H���g�T�C�Y���L�[�Ƃ���^�O
+}; // フォントサイズをキーとするタグ
 struct layout_box_size_order
 {
-}; // ���C�A�E�g�{�b�N�X�̃T�C�Y���L�[�Ƃ���^�O
+}; // レイアウトボックスのサイズをキーとするタグ
 
-// �e�L�X�g���C�A�E�g�̑��d�C���f�b�N�X�R���e�i
+// テキストレイアウトの多重インデックスコンテナ
 using TextLayoutContainer = multi_index_container<
 	TextLayoutData*,
 	indexed_by<
-		// ������+�T�C�Y�̕����L�[(�����̃��C�A�E�g�{�b�N�X�œ����ꍇ������̂� non_unique)
+		// 文字列+サイズの複合キー(複数のレイアウトボックスで同じ場合があるので non_unique)
 		ordered_non_unique<
 			tag<text_layout_order>,
 			composite_key<
@@ -47,7 +47,7 @@ using TextLayoutContainer = multi_index_container<
 				member<TextLayoutData, std::wstring, &TextLayoutData::str>,
 				member<TextLayoutData, int, &TextLayoutData::fontSize>>>,
 
-		// ���C�A�E�g�{�b�N�X�̕�+�����̕����L�[(�����e�L�X�g�œ����ꍇ������̂� non_unique)
+		// レイアウトボックスの幅+高さの複合キー(複数テキストで同じ場合があるので non_unique)
 		ordered_non_unique<
 			tag<layout_box_size_order>,
 			composite_key<
@@ -55,16 +55,16 @@ using TextLayoutContainer = multi_index_container<
 				member<TextLayoutData, float, &TextLayoutData::width>,
 				member<TextLayoutData, float, &TextLayoutData::height>>>,
 
-		// �n���h�����L�[�Ƃ���
+		// ハンドルをキーとする
 		ordered_unique<tag<handle_order>, member<TextLayoutData, int, &TextLayoutData::handle>>,
-		// �Y�����ŃA�N�Z�X
+		// 添え字でアクセス
 		random_access<tag<random>>>>;
 
-// �t�H���g�t�H�[�}�b�g�̑��d�C���f�b�N�X�R���e�i
+// フォントフォーマットの多重インデックスコンテナ
 using FontFormatContainer = multi_index_container<
 	FontFormatData*,
 	indexed_by<
-		// �t�H���g�T�C�Y���L�[
+		// フォントサイズをキー
 		ordered_unique<tag<font_size_order>, member<FontFormatData, int, &FontFormatData::fontSize>>>>;
 
 namespace mtgb
@@ -83,40 +83,40 @@ namespace mtgb
 		void Release();
 
 		/// <summary>
-		/// <para> �e�L�X�g��ǂݍ���ł��̃n���h����Ԃ� </para>
-		/// <para> ��������e�A�T�C�Y���ω����Ȃ��ꍇ�ɓK���Ă��� </para>
+		/// <para> テキストを読み込んでそのハンドルを返す </para>
+		/// <para> 文字列内容、サイズが変化しない場合に適している </para>
 		/// </summary>
-		/// <param name="str">�ǂݍ��ޕ�����</param>
-		/// <param name="size">�e�L�X�g�̃t�H���g�T�C�Y</param>
+		/// <param name="str">読み込む文字列</param>
+		/// <param name="size">テキストのフォントサイズ</param>
 		/// <returns></returns>
 		static int Load(const std::string& str, int size);
 
 		/// <summary>
-		/// <para> �e�L�X�g��ǂݍ���ł��̃n���h����Ԃ� </para>
-		/// <para> ��������e�A�T�C�Y���ω����Ȃ��ꍇ�ɓK���Ă��� </para>
-		/// <para> �`�悳����`�̈�̕��ƍ�����\�ߎw�肷��</para>
+		/// <para> テキストを読み込んでそのハンドルを返す </para>
+		/// <para> 文字列内容、サイズが変化しない場合に適している </para>
+		/// <para> 描画される矩形領域の幅と高さを予め指定する</para>
 		/// </summary>
-		/// <param name="str">�ǂݍ��ޕ�����</param>
-		/// <param name="fontSize">�e�L�X�g�̃t�H���g�T�C�Y</param>
-		/// <param name="layoutBoxWidth">��`�̈�̕�</param>
-		/// <param name="layoutBoxHeight">��`�̈�̍���</param>
+		/// <param name="str">読み込む文字列</param>
+		/// <param name="fontSize">テキストのフォントサイズ</param>
+		/// <param name="layoutBoxWidth">矩形領域の幅</param>
+		/// <param name="layoutBoxHeight">矩形領域の高さ</param>
 		/// <returns></returns>
 		static int Load(const std::string& str, int fontSize, float layoutBoxWidth, float layoutBoxHeight);
 
 		/// <summary>
-		/// <para> �e�L�X�g��ǂݍ���ł��̃n���h����Ԃ� </para>
-		/// <para> ��������e�A�T�C�Y���ω����Ȃ��ꍇ�ɓK���Ă��� </para>
-		/// <para> �`�悳����`�̈�̕��ƍ�����\�ߎw�肷��</para>
+		/// <para> テキストを読み込んでそのハンドルを返す </para>
+		/// <para> 文字列内容、サイズが変化しない場合に適している </para>
+		/// <para> 描画される矩形領域の幅と高さを予め指定する</para>
 		/// </summary>
-		/// <param name="str">�ǂݍ��ޕ�����</param>
-		/// <param name="fontSize">�e�L�X�g�̃t�H���g�T�C�Y</param>
-		/// <param name="layoutBoxSize">��`�̈�̕��A����</param>
+		/// <param name="str">読み込む文字列</param>
+		/// <param name="fontSize">テキストのフォントサイズ</param>
+		/// <param name="layoutBoxSize">矩形領域の幅、高さ</param>
 		/// <returns></returns>
 		static int Load(const std::string& str, int fontSize, Vector2F layoutBoxSize);
 
 	  private:
 		/// <summary>
-		/// �V�K�܂��͊����̃e�L�X�g�̃n���h����Ԃ�
+		/// 新規または既存のテキストのハンドルを返す
 		/// </summary>
 		/// <param name="text"></param>
 		/// <param name="size"></param>
@@ -127,23 +127,23 @@ namespace mtgb
 		TextLayoutData* GetTextLayoutData(int handle);
 
 		/// <summary>
-		/// �w��T�C�Y��IDWriteTextFormat���擾�܂��͍쐬
+		/// 指定サイズのIDWriteTextFormatを取得または作成
 		/// </summary>
-		/// <param name="size">�t�H���g�T�C�Y</param>
-		/// <returns>IDWriteTextFormat��PixelFontMetrics�̃y�A</returns>
+		/// <param name="size">フォントサイズ</param>
+		/// <returns>IDWriteTextFormatとPixelFontMetricsのペア</returns>
 		FontFormatData* GetOrCreateTextFormat(int size);
 
-		// ���݂̃f�t�H���g�̃t�H���g�T�C�Y
+		// 現在のデフォルトのフォントサイズ
 		int currentDefaultFontSize_;
 
 		TextAlignment currentTextAlignment_;
 
-		// �f�t�H���g�̃t�H���g�t�@�~���[
+		// デフォルトのフォントファミリー
 		const static wchar_t* DEFAULT_FONT_FAMILY_NAME;
 
-		TextLayoutContainer* textLayoutData_; // �e�L�X�g���C�A�E�g�̃L���b�V��
-		FontFormatContainer* fontFormatData_; // �t�H���g�t�H�[�}�b�g�̃L���b�V��
+		TextLayoutContainer* textLayoutData_; // テキストレイアウトのキャッシュ
+		FontFormatContainer* fontFormatData_; // フォントフォーマットのキャッシュ
 
-		int nextHandle_; // ���Ɋ��蓖�Ă�n���h���ԍ�
+		int nextHandle_; // 次に割り当てるハンドル番号
 	};
 } // namespace mtgb

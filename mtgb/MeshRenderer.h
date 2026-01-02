@@ -16,7 +16,7 @@ namespace mtgb
 	class MeshRendererCP;
 	MT_COMPONENT()
 	/// <summary>
-	/// ƒƒbƒVƒ…‚Æƒ}ƒeƒŠƒAƒ‹‚ğŠÇ—‚·‚é•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
+	/// ãƒ¡ãƒƒã‚·ãƒ¥ã¨ãƒãƒ†ãƒªã‚¢ãƒ«ã‚’ç®¡ç†ã™ã‚‹æç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 	/// </summary>
 	class MeshRenderer : public IRenderable, public IComponent<MeshRendererCP, MeshRenderer>, public ISerializableObject
 	{
@@ -28,7 +28,7 @@ namespace mtgb
 		MeshRenderer(EntityId _entityId);
 		MeshRenderer& operator=(const MeshRenderer& _other);
 		/// <summary>
-		/// ƒƒbƒVƒ…ƒnƒ“ƒhƒ‹‚ğİ’è
+		/// ãƒ¡ãƒƒã‚·ãƒ¥ãƒãƒ³ãƒ‰ãƒ«ã‚’è¨­å®š
 		/// </summary>
 		void SetMesh(FBXModelHandle _meshHandle)
 		{
@@ -36,7 +36,7 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// ƒƒbƒVƒ…ƒnƒ“ƒhƒ‹‚ğæ“¾
+		/// ãƒ¡ãƒƒã‚·ãƒ¥ãƒãƒ³ãƒ‰ãƒ«ã‚’å–å¾—
 		/// </summary>
 		FBXModelHandle GetMesh() const
 		{
@@ -44,7 +44,7 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// g—p‚·‚éƒVƒF[ƒ_[‚Ìí—Ş‚ğ•Ô‚·
+		/// ä½¿ç”¨ã™ã‚‹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®ç¨®é¡ã‚’è¿”ã™
 		/// </summary>
 		/// <returns></returns>
 		ShaderType GetShaderType() const
@@ -52,7 +52,7 @@ namespace mtgb
 			return shaderType;
 		}
 		/// <summary>
-		/// •`‰æ‰Â”\‚©ƒ`ƒFƒbƒN
+		/// æç”»å¯èƒ½ã‹ãƒã‚§ãƒƒã‚¯
 		/// </summary>
 		// bool CanRender() const { return meshHandle != INVALID_HANDLE; }
 

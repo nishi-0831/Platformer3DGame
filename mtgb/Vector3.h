@@ -111,14 +111,14 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// 零ベクトル
+		/// 髮ｶ繝吶け繝医Ν
 		/// </summary>
 		static inline auto Zero()
 		{
 			return Vector3{0, 0, 0};
 		}
 		/// <summary>
-		/// 単位ベクトル
+		/// 蜊倅ｽ阪�吶け繝医Ν
 		/// </summary>
 		static inline auto One()
 		{

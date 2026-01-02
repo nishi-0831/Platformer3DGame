@@ -5,7 +5,7 @@
 #include "Color.h"
 namespace nlohmann
 {
-	// adl_serializerを特殊化してシリアライズ、デシリアライズ関数を定義する
+	// adl_serializer繧堤音谿雁喧縺励※繧ｷ繝ｪ繧｢繝ｩ繧､繧ｺ縲√ョ繧ｷ繝ｪ繧｢繝ｩ繧､繧ｺ髢｢謨ｰ繧貞ｮ夂ｾｩ縺吶ｋ
 
 	template <std::size_t N> struct adl_serializer<std::bitset<N>>
 	{
@@ -39,7 +39,7 @@ namespace nlohmann
 
 		static void to_json(nlohmann::json& j, const ::mtbit::BitFlag<EnumStructT>& flag)
 		{
-			// std::bitsetのadl_serializerを使用
+			// std::bitset縺ｮadl_serializer繧剃ｽｿ逕ｨ
 			j = flag.Value();
 		}
 

@@ -6,7 +6,7 @@
 
 namespace mtgb
 {
-	// ImGui•\¦ˆ—‚ğ“o˜^
+	// ImGuiè¡¨ç¤ºå‡¦ç†ã‚’ç™»éŒ²
 	struct AudioPlayer_Register
 	{
 		AudioPlayer_Register()

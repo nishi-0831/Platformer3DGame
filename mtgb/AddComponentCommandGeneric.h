@@ -15,7 +15,7 @@ namespace mtgb
 	  public:
 		AddComponentCommandGeneric(T& _component);
 		~AddComponentCommandGeneric();
-		// Command ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
+		// Command ã‚’ä»‹ã—ã¦ç¶™æ‰¿ã•ã‚Œã¾ã—ãŸ
 		void Execute() override
 		{
 		}

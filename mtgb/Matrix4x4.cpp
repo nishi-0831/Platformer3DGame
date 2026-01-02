@@ -1,5 +1,5 @@
 #include "Matrix4x4.h"
-// TODO: #include <sstream> ‚ğ‘‚­‚Æ‚Ç‚±‚©‚Åctime‚ªnamespaceƒOƒ[ƒoƒ‹‰»‚·‚éƒGƒ‰[‚ª‚ ‚é
+// TODO: #include <sstream> ã‚’æ›¸ãã¨ã©ã“ã‹ã§ctimeãŒnamespaceã‚°ãƒ­ãƒ¼ãƒãƒ«åŒ–ã™ã‚‹ã‚¨ãƒ©ãƒ¼ãŒã‚ã‚‹
 
 std::string mtgb::Matrix4x4::ToString()
 {

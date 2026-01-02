@@ -38,7 +38,7 @@ void mtgb::MTImGui::Initialize()
 		}
 	);
 
-	// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ª‘I‘ğ‚³‚ê‚½‚Æ‚«‚ÉA‚»‚ê‚ğ•\¦‘ÎÛ‚Æ‚·‚é
+	// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒé¸æŠã•ã‚ŒãŸã¨ãã«ã€ãã‚Œã‚’è¡¨ç¤ºå¯¾è±¡ã¨ã™ã‚‹
 	Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe(
 		[this](const GameObjectSelectedEvent& _handler)
 		{
@@ -122,11 +122,11 @@ void mtgb::MTImGui::ShowLog()
 	using mtgb::Debug;
 	const std::list<mtgb::LogEntry>& logs = Game::System<Debug>().GetLog();
 
-	// ƒtƒBƒ‹ƒ^[—p‚ÌƒJƒeƒSƒŠˆê——‚ğì¬
+	// ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ç”¨ã®ã‚«ãƒ†ã‚´ãƒªä¸€è¦§ã‚’ä½œæˆ
 	static std::set<std::string> availableCategories;
 	static std::string selectedCategory = "All";
 
-	// ƒJƒeƒSƒŠ‚ğûW
+	// ã‚«ãƒ†ã‚´ãƒªã‚’åé›†
 	availableCategories.clear();
 	availableCategories.insert("All");
 	for (const auto& log : logs)
@@ -141,7 +141,7 @@ void mtgb::MTImGui::ShowLog()
 
 	imGui.Begin(Debug::GetName().data());
 
-	// ƒJƒeƒSƒŠƒtƒBƒ‹ƒ^[—p‚ÌƒRƒ“ƒ{ƒ{ƒbƒNƒX
+	// ã‚«ãƒ†ã‚´ãƒªãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ç”¨ã®ã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹
 	if (ImGui::BeginCombo("Category Filter", selectedCategory.c_str()))
 	{
 		for (const auto& category : availableCategories)
@@ -165,7 +165,7 @@ void mtgb::MTImGui::ShowLog()
 
 	for (const mtgb::LogEntry& log : logs)
 	{
-		// ƒtƒBƒ‹ƒ^[“K—p
+		// ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼é©ç”¨
 		if (selectedCategory != "All" && log.category != selectedCategory)
 		{
 			++idx;
@@ -182,7 +182,7 @@ void mtgb::MTImGui::ShowLog()
 		++displayIdx;
 	}
 
-	// ƒƒO‚ÌÚ×•\¦
+	// ãƒ­ã‚°ã®è©³ç´°è¡¨ç¤º
 	if (selectedLog >= 0)
 	{
 		auto it = logs.begin();
@@ -218,8 +218,8 @@ void mtgb::MTImGui::SetupShowFunc()
 {
 	using RegisterShowFuncHolder::Set;
 
-	// ƒeƒ“ƒvƒŒ[ƒgƒpƒ‰ƒ[ƒ^‚ÉŒ^‚ğw’è
-	// ‘æˆêˆø”‚ÉŒ^‚Ìƒ|ƒCƒ“ƒ^A‘æ“ñˆø”‚É“o˜^‚·‚éŒ^‚Ì–¼‘O
+	// ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã«å‹ã‚’æŒ‡å®š
+	// ç¬¬ä¸€å¼•æ•°ã«å‹ã®ãƒã‚¤ãƒ³ã‚¿ã€ç¬¬äºŒå¼•æ•°ã«ç™»éŒ²ã™ã‚‹å‹ã®åå‰
 	Set<ScreenCoordContainsInfo>(
 		[](ScreenCoordContainsInfo* _target, const char* _name)
 		{
@@ -243,7 +243,7 @@ void mtgb::MTImGui::SetupShowFunc()
 	Set<DXGI_ADAPTER_DESC1>(
 		[](DXGI_ADAPTER_DESC1* _target, const char* _name)
 		{
-			// WCHAR‚Ì”z—ñ‚ğ•¶š—ñ‚É•ÏŠ·‚µ‚Ä•\¦
+			// WCHARã®é…åˆ—ã‚’æ–‡å­—åˆ—ã«å¤‰æ›ã—ã¦è¡¨ç¤º
 			char description[256];
 			WideCharToMultiByte(
 				CP_UTF8,
@@ -262,7 +262,7 @@ void mtgb::MTImGui::SetupShowFunc()
 	Set<DXGI_OUTPUT_DESC>(
 		[](DXGI_OUTPUT_DESC* _target, const char* _name)
 		{
-			// WCHAR‚Ì”z—ñ‚ğ•¶š—ñ‚É•ÏŠ·‚µ‚Ä•\¦
+			// WCHARã®é…åˆ—ã‚’æ–‡å­—åˆ—ã«å¤‰æ›ã—ã¦è¡¨ç¤º
 			char deviceName[64];
 			WideCharToMultiByte(CP_UTF8, 0, _target->DeviceName, -1, deviceName, sizeof(deviceName), nullptr, nullptr);
 			ImGui::LabelText("Device Name", "%s", deviceName);
@@ -310,12 +310,12 @@ void mtgb::MTImGui::ShowListView(ShowType _show)
 		{
 			isSelected = selectedName == name;
 
-			// ƒRƒs[ƒLƒƒƒvƒ`ƒƒ‚Ìê‡‚Í’l‚ªXV‚³‚ê‚È‚¢‚Ì‚ÅA
-			// ‘I‘ğÏ‚İ‚Ì–¼‘O‚Æˆê’v‚µ‚Ä‚¢‚½‚çŠÖ”‚ğXV
+			// ã‚³ãƒ”ãƒ¼ã‚­ãƒ£ãƒ—ãƒãƒ£ã®å ´åˆã¯å€¤ãŒæ›´æ–°ã•ã‚Œãªã„ã®ã§ã€
+			// é¸æŠæ¸ˆã¿ã®åå‰ã¨ä¸€è‡´ã—ã¦ã„ãŸã‚‰é–¢æ•°ã‚’æ›´æ–°
 			selectedFunc = func;
 		}
 
-		// ‘I‘ğ‚³‚ê‚½€–Ú‚Ì–¼‘OA•\¦ŠÖ”‚ğ‹L˜^
+		// é¸æŠã•ã‚ŒãŸé …ç›®ã®åå‰ã€è¡¨ç¤ºé–¢æ•°ã‚’è¨˜éŒ²
 		if (ImGui::Selectable(name.c_str(), selectedName == name))
 		{
 			isSelected							   = true;
@@ -327,7 +327,7 @@ void mtgb::MTImGui::ShowListView(ShowType _show)
 	}
 	ImGui::EndChild();
 
-	// List‚Ì‰¡‚É property•\¦
+	// Listã®æ¨ªã« propertyè¡¨ç¤º
 	ImGui::SameLine();
 
 	ImGui::BeginChild("property", ImVec2(0, 0), true);
@@ -460,7 +460,7 @@ void mtgb::MTImGui::DirectShow(std::function<void()> func, const std::string& na
 {
 	if (show == ShowType::SceneView)
 	{
-		// SceneView‚Í–¼‘O•s—v
+		// SceneViewã¯åå‰ä¸è¦
 		sceneViewShowList_.push(func);
 	}
 	else
@@ -487,11 +487,11 @@ void mtgb::MTImGui::DrawLine(const Vector3& _from, const Vector3& _to, float _th
 }
 
 /// <summary>
-/// ƒŒƒC‚ğ•\¦
+/// ãƒ¬ã‚¤ã‚’è¡¨ç¤º
 /// </summary>
-/// <param name="_start">ƒŒƒCn“_</param>
-/// <param name="_dir">ƒŒƒC‚ÌŒü‚«‚Æ’·‚³</param>
-/// <param name="_thickness">ƒŒƒC‚Ì‘¾‚³</param>
+/// <param name="_start">ãƒ¬ã‚¤å§‹ç‚¹</param>
+/// <param name="_dir">ãƒ¬ã‚¤ã®å‘ãã¨é•·ã•</param>
+/// <param name="_thickness">ãƒ¬ã‚¤ã®å¤ªã•</param>
 void mtgb::MTImGui::DrawVec(const Vector3& _start, const Vector3& _vec, float _thickness)
 {
 	if (updatingImGuiShowable_)
@@ -518,27 +518,27 @@ void mtgb::MTImGui::DrawCone(
 	int _segments
 )
 {
-	// ³‹K‰»‚³‚ê‚½•ûŒüƒxƒNƒgƒ‹
+	// æ­£è¦åŒ–ã•ã‚ŒãŸæ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«
 	Vector3 forward = Vector3::Normalize(_direction);
 
-	// ‰~‚Ì’ê–Ê‚Ì’†S
+	// å††éŒã®åº•é¢ã®ä¸­å¿ƒ
 	Vector3 baseCenter = _position + forward * _distance;
 
-	// ‰~‚Ì’ê–Ê‚Ì”¼Œa
-	// MEMO: tanƒÆ = ‘Î•Ó / ’ê•Ó : ‘Î•Ó = ’ê•Ó * tanƒÆ
+	// å††éŒã®åº•é¢ã®åŠå¾„
+	// MEMO: tanÎ¸ = å¯¾è¾º / åº•è¾º : å¯¾è¾º = åº•è¾º * tanÎ¸
 	float baseRadius = _distance * std::tanf(DirectX::XMConvertToRadians(_fovAngleDegree / 2.0f));
 
-	// ã‰º•ûŒü‚ğŒˆ’è
+	// ä¸Šä¸‹æ–¹å‘ã‚’æ±ºå®š
 	Vector3 up =
 		std::fabsf(DirectX::XMVectorGetY(forward)) < 0.9f ? Vector3{0.0f, 1.0f, 0.0f} : Vector3{1.0f, 0.0f, 0.0f};
 
-	// ‰E•ûŒü‚ğŒvZ
+	// å³æ–¹å‘ã‚’è¨ˆç®—
 	Vector3 right = Vector3::Normalize(Vector3::Cross(forward, up));
 
-	// ã•ûŒü‚ğÄŒvZ
+	// ä¸Šæ–¹å‘ã‚’å†è¨ˆç®—
 	up = Vector3::Cross(right, forward);
 
-	// ’ê–Ê‚Ì‰~üã‚Ì“_‚ğŒvZ
+	// åº•é¢ã®å††å‘¨ä¸Šã®ç‚¹ã‚’è¨ˆç®—
 	std::vector<Vector3> baseCirclePoints(_segments);
 	for (int i = 0; i < _segments; i++)
 	{
@@ -548,13 +548,13 @@ void mtgb::MTImGui::DrawCone(
 		baseCirclePoints[i] = baseCenter + right * x + up * y;
 	}
 
-	// ‰~‚Ì‘¤–Ê‚ğ•`‰æ
+	// å††éŒã®å´é¢ã‚’æç”»
 	for (int i = 0; i < _segments; i++)
 	{
 		DrawLine(_position, baseCirclePoints[i], _thickness);
 	}
 
-	// ’ê–Ê‚Ì‰~‚ğ•`‰æ
+	// åº•é¢ã®å††ã‚’æç”»
 	for (int i = 0; i < _segments; i++)
 	{
 		int nextIdx = (i + 1) % _segments;

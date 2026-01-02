@@ -13,11 +13,11 @@ Command* Vector3Show::operator()(mtgb::Vector3* vec, const char* name) const
 }
 
 /// <summary>
-/// <para> �l�������I�C���[�p�ŕ\������ </para>
-/// <para> ���I�C���[�p�ւ̕ϊ��͈�ӂł͂Ȃ��̂œǂݎ���p�Ƃ��Ă���</para>
+/// <para> 四元数をオイラー角で表示する </para>
+/// <para> ※オイラー角への変換は一意ではないので読み取り専用としている</para>
 /// </summary>
-/// <param name="vec">�\������l����</param>
-/// <param name="name">���x����</param>
+/// <param name="vec">表示する四元数</param>
+/// <param name="name">ラベル名</param>
 /// <returns></returns>
 Command* QuaternionSHow::operator()(DirectX::XMVECTORF32* vec, const char* name) const
 {

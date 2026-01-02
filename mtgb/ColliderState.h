@@ -4,12 +4,12 @@
 namespace mtgb
 {
 	/// <summary>
-	/// Collider‚Ìó‘Ô‚Ì‚İ‚ğ•Û‚·‚é\‘¢‘Ì
+	/// Colliderã®çŠ¶æ…‹ã®ã¿ã‚’ä¿æŒã™ã‚‹æ§‹é€ ä½“
 	/// </summary>
 	// struct ColliderState
 	//{
-	//	ColliderType colliderType{ ColliderType::TYPE_AABB };// “–‚½‚è”»’è‚ÌŒ`
-	//	bool isStatic{ false };// Ã“I‚ÈATransform•s—v‚ÈƒRƒ‰ƒCƒ_[—p‚Ìƒtƒ‰ƒO
+	//	ColliderType colliderType{ ColliderType::TYPE_AABB };// å½“ãŸã‚Šåˆ¤å®šã®å½¢
+	//	bool isStatic{ false };// é™çš„ãªã€Transformä¸è¦ãªã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ç”¨ã®ãƒ•ãƒ©ã‚°
 	//	ColliderTag colliderTag{ ColliderTag::GAME_OBJECT };
 	//	Vector3 center{ Vector3::Zero() };
 	//	float radius{ 1.0f };

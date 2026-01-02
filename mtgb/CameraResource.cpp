@@ -18,7 +18,7 @@ mtgb::CameraResource::~CameraResource()
 
 void mtgb::CameraResource::SetResource()
 {
-	// ƒJƒƒ‰ŠÇ—ƒNƒ‰ƒX‚ÉAƒJƒƒ‰‚Ìƒnƒ“ƒhƒ‹‚ğ“o˜^
+	// ã‚«ãƒ¡ãƒ©ç®¡ç†ã‚¯ãƒ©ã‚¹ã«ã€ã‚«ãƒ¡ãƒ©ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’ç™»éŒ²
 	Game::System<CameraSystem>().SetDrawCamera(hCamera_);
 }
 
@@ -28,7 +28,7 @@ void mtgb::CameraResource::Release()
 
 void mtgb::CameraResource::SetHCamera(CameraHandleInScene _hCamera)
 {
-	// ƒJƒƒ‰‚Ìƒnƒ“ƒhƒ‹‚ğó‚¯æ‚é
+	// ã‚«ãƒ¡ãƒ©ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’å—ã‘å–ã‚‹
 	hCamera_ = _hCamera;
 }
 

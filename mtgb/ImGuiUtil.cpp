@@ -48,7 +48,7 @@ void mtgb::ImGuiUtil::GetMouseRay(
 
 bool mtgb::ImGuiUtil::IsMouseInWindow(const char* _name)
 {
-	//	ウィンドウを検索
+	//	繧ｦ繧｣繝ｳ繝峨え繧呈､懃ｴ｢
 	ImGuiWindow* window = ImGui::FindWindowByName(_name);
 	if (window && window->WasActive)
 	{

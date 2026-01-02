@@ -5,12 +5,12 @@
 namespace mtgb
 {
 	// ============================================================
-	// ƒRƒ“ƒ|[ƒlƒ“ƒgŠÖ˜A‚ÌƒRƒ“ƒZƒvƒg
+	// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆé–¢é€£ã®ã‚³ãƒ³ã‚»ãƒ—ãƒˆ
 	// ============================================================
 
 	/// <summary>
-	/// T ‚Í Component ƒCƒ“ƒ^[ƒtƒF[ƒX‚ğÀ‘•‚µ‚Ä‚¢‚é
-	/// iGet(EntityId) Ã“Iƒƒ\ƒbƒh‚ğ‚Âj
+	/// T ã¯ Component ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’å®Ÿè£…ã—ã¦ã„ã‚‹
+	/// ï¼ˆGet(EntityId) é™çš„ãƒ¡ã‚½ãƒƒãƒ‰ã‚’æŒã¤ï¼‰
 	/// </summary>
 	/*template <typename T>
 	concept ComponentT = requires(T _com, EntityId _id)
@@ -19,35 +19,35 @@ namespace mtgb
 	};*/
 
 	/// <summary>
-	/// T ‚Í’Pƒ‚Èƒƒ‚ƒŠƒŒƒCƒAƒEƒg‚ÌƒRƒ“ƒ|[ƒlƒ“ƒgó‘Ô\‘¢‘Ì
+	/// T ã¯å˜ç´”ãªãƒ¡ãƒ¢ãƒªãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆçŠ¶æ…‹æ§‹é€ ä½“
 	/// </summary>
 	template <typename T>
 	concept ComponentDataT = std::is_standard_layout_v<T>;
 
 	// ============================================================
-	// Œp³ŠÖŒW‚ÌƒRƒ“ƒZƒvƒg
+	// ç¶™æ‰¿é–¢ä¿‚ã®ã‚³ãƒ³ã‚»ãƒ—ãƒˆ
 	// ============================================================
 
 	/// <summary>
-	/// TDerived ‚Í TData ‚ğŒöŠJŒp³‚µ‚Ä‚¢‚é
-	/// ¨ static_cast<TData&>(derived) ‚ªˆÀ‘S
+	/// TDerived ã¯ TData ã‚’å…¬é–‹ç¶™æ‰¿ã—ã¦ã„ã‚‹
+	/// â†’ static_cast<TData&>(derived) ãŒå®‰å…¨
 	///
-	/// CRTP‚È‚Ç‚Å TDerived‚ª•sŠ®‘SŒ^‚Ìó‘Ô‚Å•]‰¿‚³‚ê‚éê‡‚ª‚ ‚é‚½‚ßA
-	/// ƒ|ƒCƒ“ƒ^‚ğstatic_cast‰Â”\‚©‚Å”»’è‚·‚é
+	/// CRTPãªã©ã§ TDerivedãŒä¸å®Œå…¨å‹ã®çŠ¶æ…‹ã§è©•ä¾¡ã•ã‚Œã‚‹å ´åˆãŒã‚ã‚‹ãŸã‚ã€
+	/// ãƒã‚¤ãƒ³ã‚¿ã‚’static_castå¯èƒ½ã‹ã§åˆ¤å®šã™ã‚‹
 	/// </summary>
 	template <typename TDerived, typename TData>
 	concept DerivedFromDataT =
 		std::derived_from<TDerived, TData> || requires(TDerived* _p) { static_cast<TData*>(_p); };
 
 	/// <summary>
-	/// TComponent ‚Í TData ‚ğŒöŠJŒp³‚µ‚Ä‚¢‚é
-	/// ¨ ComponentMemento<TComponent, TData> ‚Ìg—p‚ªˆÀ‘S
+	/// TComponent ã¯ TData ã‚’å…¬é–‹ç¶™æ‰¿ã—ã¦ã„ã‚‹
+	/// â†’ ComponentMemento<TComponent, TData> ã®ä½¿ç”¨ãŒå®‰å…¨
 	/// </summary>
 	template <typename TComponent, typename TData>
 	concept ComponentFromDataT = std::derived_from<TComponent, TData> && ComponentDataT<TData>;
 
 	// ============================================================
-	// Memento ŠÖ˜A‚ÌƒRƒ“ƒZƒvƒg
+	// Memento é–¢é€£ã®ã‚³ãƒ³ã‚»ãƒ—ãƒˆ
 	// ============================================================
 
 	class IComponentMemento;
@@ -56,11 +56,11 @@ namespace mtgb
 	concept MementoT = std::derived_from<T, IComponentMemento>;
 
 	/// <summary>
-	/// T ‚Æ M ‚ª³‚µ‚­‘Î‰‚µ‚Ä‚¢‚é
+	/// T ã¨ M ãŒæ­£ã—ãå¯¾å¿œã—ã¦ã„ã‚‹
 	/// </summary>
 	template <typename T, typename M>
 	concept ComponentWithMementoT =
-		// M ‚Í IComponentMemento ‚ğŒp³‚µ‚Ä‚¢‚éimemento‘¤‚Ì—vŒj
+		// M ã¯ IComponentMemento ã‚’ç¶™æ‰¿ã—ã¦ã„ã‚‹ï¼ˆmementoå´ã®è¦ä»¶ï¼‰
 		std::derived_from<M, IComponentMemento>;
 
 	template <typename T>

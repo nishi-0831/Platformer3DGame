@@ -7,31 +7,31 @@ class ICommandHistory
   public:
 	~ICommandHistory() = default;
 	/// <summary>
-	/// ƒRƒ}ƒ“ƒh‚ðŽÀsAƒXƒ^ƒbƒN‚ÉÏ‚Þ
+	/// ã‚³ãƒžãƒ³ãƒ‰ã‚’å®Ÿè¡Œã€ã‚¹ã‚¿ãƒƒã‚¯ã«ç©ã‚€
 	/// </summary>
-	/// <param name="_command">ŽÀsAÏ‚Ü‚ê‚é‘ÎÛ‚ÌƒRƒ}ƒ“ƒh</param>
+	/// <param name="_command">å®Ÿè¡Œã€ç©ã¾ã‚Œã‚‹å¯¾è±¡ã®ã‚³ãƒžãƒ³ãƒ‰</param>
 	virtual void ExecuteCommand(Command* _command) = 0;
 
 	/// <summary>
-	/// ’¼‘O‚ÉŽÀs‚µ‚½ƒRƒ}ƒ“ƒh‚ÌŽæ‚èÁ‚µ‚ðs‚¤
+	/// ç›´å‰ã«å®Ÿè¡Œã—ãŸã‚³ãƒžãƒ³ãƒ‰ã®å–ã‚Šæ¶ˆã—ã‚’è¡Œã†
 	/// </summary>
 	virtual void UndoCommand() = 0;
 
 	/// <summary>
-	/// ’¼‘O‚ÉŽæ‚èÁ‚µ‚½ƒRƒ}ƒ“ƒh‚ÌÄŽÀs‚ðs‚¤
+	/// ç›´å‰ã«å–ã‚Šæ¶ˆã—ãŸã‚³ãƒžãƒ³ãƒ‰ã®å†å®Ÿè¡Œã‚’è¡Œã†
 	/// </summary>
 	virtual void RedoCommand() = 0;
 
 	/// <summary>
-	/// <para> ‘S‚Ä‚ÌƒXƒ^ƒbƒN‚Ì—š—ð‚ðÁ‹Ž‚·‚é </para>
-	/// <para> ƒRƒ}ƒ“ƒh‚Í‘S‚Ä‰ð•ú‚³‚ê‚é </para>
+	/// <para> å…¨ã¦ã®ã‚¹ã‚¿ãƒƒã‚¯ã®å±¥æ­´ã‚’æ¶ˆåŽ»ã™ã‚‹ </para>
+	/// <para> ã‚³ãƒžãƒ³ãƒ‰ã¯å…¨ã¦è§£æ”¾ã•ã‚Œã‚‹ </para>
 	/// </summary>
 	virtual void ClearAllStack() = 0;
 
   protected:
 	/// <summary>
-	/// <para> ÄŽÀs‚Ì—š—ð‚ðÁ‹Ž‚·‚é </para>
-	/// <para> ƒRƒ}ƒ“ƒh‚Í‘S‚Ä‰ð•ú‚³‚ê‚é </para>
+	/// <para> å†å®Ÿè¡Œã®å±¥æ­´ã‚’æ¶ˆåŽ»ã™ã‚‹ </para>
+	/// <para> ã‚³ãƒžãƒ³ãƒ‰ã¯å…¨ã¦è§£æ”¾ã•ã‚Œã‚‹ </para>
 	/// </summary>
 	virtual void ClearRedoStack() = 0;
 };
@@ -41,31 +41,31 @@ class CommandHistory : public ICommandHistory
   public:
 	~CommandHistory();
 	/// <summary>
-	/// ƒRƒ}ƒ“ƒh‚ðŽÀsAƒXƒ^ƒbƒN‚ÉÏ‚Þ
+	/// ã‚³ãƒžãƒ³ãƒ‰ã‚’å®Ÿè¡Œã€ã‚¹ã‚¿ãƒƒã‚¯ã«ç©ã‚€
 	/// </summary>
-	/// <param name="_command">ŽÀsAÏ‚Ü‚ê‚é‘ÎÛ‚ÌƒRƒ}ƒ“ƒh</param>
+	/// <param name="_command">å®Ÿè¡Œã€ç©ã¾ã‚Œã‚‹å¯¾è±¡ã®ã‚³ãƒžãƒ³ãƒ‰</param>
 	void ExecuteCommand(Command* _command) override;
 
 	/// <summary>
-	/// ’¼‘O‚ÉŽÀs‚µ‚½ƒRƒ}ƒ“ƒh‚ÌŽæ‚èÁ‚µ‚ðs‚¤
+	/// ç›´å‰ã«å®Ÿè¡Œã—ãŸã‚³ãƒžãƒ³ãƒ‰ã®å–ã‚Šæ¶ˆã—ã‚’è¡Œã†
 	/// </summary>
 	void UndoCommand() override;
 
 	/// <summary>
-	/// ’¼‘O‚ÉŽæ‚èÁ‚µ‚½ƒRƒ}ƒ“ƒh‚ÌÄŽÀs‚ðs‚¤
+	/// ç›´å‰ã«å–ã‚Šæ¶ˆã—ãŸã‚³ãƒžãƒ³ãƒ‰ã®å†å®Ÿè¡Œã‚’è¡Œã†
 	/// </summary>
 	void RedoCommand() override;
 
 	/// <summary>
-	/// <para> ‘S‚Ä‚ÌƒXƒ^ƒbƒN‚Ì—š—ð‚ðÁ‹Ž‚·‚é </para>
-	/// <para> ƒRƒ}ƒ“ƒh‚Í‘S‚Ä‰ð•ú‚³‚ê‚é </para>
+	/// <para> å…¨ã¦ã®ã‚¹ã‚¿ãƒƒã‚¯ã®å±¥æ­´ã‚’æ¶ˆåŽ»ã™ã‚‹ </para>
+	/// <para> ã‚³ãƒžãƒ³ãƒ‰ã¯å…¨ã¦è§£æ”¾ã•ã‚Œã‚‹ </para>
 	/// </summary>
 	void ClearAllStack() override;
 
   private:
 	/// <summary>
-	/// <para> ÄŽÀs‚Ì—š—ð‚ðÁ‹Ž‚·‚é </para>
-	/// <para> ƒRƒ}ƒ“ƒh‚Í‘S‚Ä‰ð•ú‚³‚ê‚é </para>
+	/// <para> å†å®Ÿè¡Œã®å±¥æ­´ã‚’æ¶ˆåŽ»ã™ã‚‹ </para>
+	/// <para> ã‚³ãƒžãƒ³ãƒ‰ã¯å…¨ã¦è§£æ”¾ã•ã‚Œã‚‹ </para>
 	/// </summary>
 	void ClearRedoStack();
 	std::stack<Command*> undoStack_;

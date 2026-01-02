@@ -29,12 +29,12 @@ void mtgb::AddComponentCommand::ApplyMemento()
 
 	if (memento_ == nullptr)
 	{
-		// entityId‚©‚çŠù‘¶‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾A‚È‚¯‚ê‚ÎV‹Kì¬‚µMemento‚É•Û‘¶‚·‚é
+		// entityIdã‹ã‚‰æ—¢å­˜ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—ã€ãªã‘ã‚Œã°æ–°è¦ä½œæˆã—Mementoã«ä¿å­˜ã™ã‚‹
 		memento_ = componentFactory_.AddComponent(componentType_, entityId_);
 	}
 	else
 	{
-		// Memento‚©‚çƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ•œŒ³
+		// Mementoã‹ã‚‰ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å¾©å…ƒ
 		componentFactory_.AddComponentFromMemento(*memento_);
 	}
 }

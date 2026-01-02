@@ -6,7 +6,7 @@
 #include "MTImGui.h"
 #include <string>
 // ============================================================================
-// ImageRenderer‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
+// ImageRendererã®çŠ¶æ…‹ã‚’ä¿å­˜ã™ã‚‹Stateæ§‹é€ ä½“ã®å®šç¾©ã€Undo/Redoã«ä½¿ã†Mementoã®usingå®£è¨€
 // ============================================================================
 #define MT_COMPONENT_ImageRenderer()                                                  \
 	struct ImageRendererState                                                         \
@@ -16,7 +16,7 @@
 	using ImageRendererMemento = ComponentMemento<ImageRenderer, ImageRendererState>;
 
 // ============================================================================
-// ImageRenderer‚ÆImageRendererMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
+// ImageRendererã¨ImageRendererMementoã®ç›¸äº’å¤‰æ›å‡¦ç†ã‚’å®Ÿè£…
 // ============================================================================
 #define MT_GENERATED_BODY_ImageRenderer()                                                             \
   public:                                                                                             \
@@ -46,7 +46,7 @@
 	{                                                                                                 \
 		return "ImageRenderer";                                                                       \
 	}                                                                                                 \
-	/* ImGui•\¦ˆ—‚Ì“o˜^ */                                                                         \
+	/* ImGuiè¡¨ç¤ºå‡¦ç†ã®ç™»éŒ² */                                                                         \
 	static void RegisterImGui()                                                                       \
 	{                                                                                                 \
 		static bool registered = false;                                                               \
@@ -60,7 +60,7 @@
 
 #pragma warning(push)
 #pragma warning(disable : 4005)
-// ƒ}ƒNƒã‘‚«
+// ãƒã‚¯ãƒ­ä¸Šæ›¸ã
 #define MT_COMPONENT() MT_COMPONENT_ImageRenderer()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_ImageRenderer()
 #pragma warning(pop)

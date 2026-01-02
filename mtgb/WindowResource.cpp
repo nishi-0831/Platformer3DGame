@@ -12,37 +12,37 @@
 using namespace mtgb;
 
 /// <summary>
-/// �E�B���h�E����̃��b�Z�[�W����M����ImGui�̓��͂�C�x���g��L���ɂ��邽�߂̃R�[���o�b�N�֐�
+/// ウィンドウからのメッセージを受信してImGuiの入力やイベントを有効にするためのコールバック関数
 /// </summary>
-/// <param name="hwnd">�E�B���h�E�n���h��</param>
-/// <param name="msg">���b�Z�[�W</param>
-/// <param name="wParam">�p�����[�^</param>
-/// <param name="lParam">�p�����[�^</param>
+/// <param name="hwnd">ウィンドウハンドル</param>
+/// <param name="msg">メッセージ</param>
+/// <param name="wParam">パラメータ</param>
+/// <param name="lParam">パラメータ</param>
 /// <returns></returns>
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 /// <summary>
-/// �e�E�B���h�E�ɋ��ʂ̏������L�q�B�����WNDCLASS�ɓn��
+/// 各ウィンドウに共通の処理を記述。これをWNDCLASSに渡す
 /// </summary>
 /// <param name="hWnd"></param>
 /// <param name="msg"></param>
 /// <param name="wParam"></param>
-/// <param name="lParam">�C���X�^���X���擾���邽�߂ɁACreateWindow��lpParam��this��n���K�v������</param>
+/// <param name="lParam">インスタンスを取得するために、CreateWindowのlpParamにthisを渡す必要がある</param>
 /// <returns></returns>
 LRESULT WindowResource::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	WindowResource* pThis;
 	if (msg == WM_NCCREATE)
 	{
-		// �쐬���̃p�����[�^����this���擾�A�L���X�g
+		// 作成時のパラメータからthisを取得、キャスト
 		pThis = static_cast<WindowResource*>(reinterpret_cast<LPCREATESTRUCT>(lParam)->lpCreateParams);
-		// this��USERDATA��this��R�t����
+		// thisのUSERDATAにthisを紐付ける
 		SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pThis));
 		pThis->hWnd_ = hWnd;
 	}
 	else
 	{
-		// hWnd��this��R�Â��Ă������̂Ŏ擾
+		// hWndにthisを紐づけておいたので取得
 		pThis = reinterpret_cast<WindowResource*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
 		if (pThis)
 		{
@@ -68,18 +68,18 @@ LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, 
 	case WM_CLOSE :
 		Game::Exit();
 		return 0;
-	case WM_DESTROY : // �E�B���h�E�����
+	case WM_DESTROY : // ウィンドウを閉じた
 		return S_OK;
-	case WM_MOUSEMOVE : // �}�E�X��������
+	case WM_MOUSEMOVE : // マウスが動いた
 		Game::System<Input>().UpdateMousePositionData(LOWORD(lParam), HIWORD(lParam));
 		return S_OK;
-	case WM_SIZE : // �E�B���h�E�T�C�Y���ς����
+	case WM_SIZE : // ウィンドウサイズが変わった
 	{
 		if (this && wParam != SIZE_MINIMIZED)
 		{
 			if (!isInitialized_)
 			{
-				// �܂�����������Ă��Ȃ��Ȃ�X�L�b�v����
+				// まだ初期化されていないならスキップする
 				return S_OK;
 			}
 
@@ -89,11 +89,11 @@ LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, 
 		return S_OK;
 	}
 
-	default : // ����ȊO�̃��b�Z�[�W�͏��n
+	default : // それ以外のメッセージは譲渡
 		break;
 	}
 
-	// NOTE: ���ꂪ�����Ă���ƃE�B���h�E�\������Ȃ����A�G���[�͏o�Ȃ����ŋ�J����(����)
+	// NOTE: これが抜けているとウィンドウ表示されないし、エラーは出ないしで苦労する(した)
 	return DefWindowProc(hWnd, msg, wParam, lParam);
 }
 
@@ -143,7 +143,7 @@ void mtgb::WindowResource::OnResize(UINT _width, UINT _height)
 
 	Game::System<Screen>().SetSize(static_cast<int>(_width), static_cast<int>(_height));
 
-	// WindowConfig�̃T�C�Y���X�V
+	// WindowConfigのサイズを更新
 	WindowConfig config = Game::System<WindowManager>().GetWindowConfig(windowContext_);
 	config.width		= _width;
 	config.height		= _height;
@@ -157,12 +157,12 @@ void mtgb::WindowResource::SetWindowMode()
 
 void mtgb::WindowResource::SetFullScreen(const RECT& _monitorRect)
 {
-	// �t���X�N���[���ɂȂ�
+	// フルスクリーンになる
 	isFullscreen_ = true;
 
 	GetWindowInfo();
 
-	// �E�B���h�E�X�^�C����g�Ȃ��|�b�v�A�b�v�ɕύX
+	// ウィンドウスタイルを枠なしポップアップに変更
 	SetWindowLong(hWnd_, GWL_STYLE, currInfo_.windowedStyle_ & ~(WS_CAPTION | WS_THICKFRAME));
 	SetWindowLong(
 		hWnd_,
@@ -170,22 +170,22 @@ void mtgb::WindowResource::SetFullScreen(const RECT& _monitorRect)
 		currInfo_.windowedExStyle_ & ~(WS_EX_DLGMODALFRAME | WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE | WS_EX_STATICEDGE)
 	);
 
-	// �w�肳�ꂽ���j�^�[���W�𒼐ڎg�p
+	// 指定されたモニター座標を直接使用
 	SetWindowPos(
 		hWnd_,
 		HWND_TOP,
 		_monitorRect.left,
-		_monitorRect.top,						// �E�B���h�E�̈ʒu
-		_monitorRect.right - _monitorRect.left, // �E�B���h�E�̃T�C�Y(��)
-		_monitorRect.bottom - _monitorRect.top, // �E�B���h�E�̃T�C�Y(����)
-		// �I�[�i�[(?)�E�B���h�E��Z�����͕ύX���Ȃ��A�X�^�C���̕ύX��K�p
+		_monitorRect.top,						// ウィンドウの位置
+		_monitorRect.right - _monitorRect.left, // ウィンドウのサイズ(幅)
+		_monitorRect.bottom - _monitorRect.top, // ウィンドウのサイズ(高さ)
+		// オーナー(?)ウィンドウのZ順序は変更しない、スタイルの変更を適用
 		SWP_NOOWNERZORDER | SWP_FRAMECHANGED
 	);
 }
 
 void mtgb::WindowResource::GetWindowInfo()
 {
-	// ���݂̃E�B���h�E�̃X�^�C���ƈʒu��ۑ�
+	// 現在のウィンドウのスタイルと位置を保存
 	currInfo_.windowedStyle_   = GetWindowLong(hWnd_, GWL_STYLE);
 	currInfo_.windowedExStyle_ = GetWindowLong(hWnd_, GWL_EXSTYLE);
 	GetWindowRect(hWnd_, &currInfo_.windowedRect_);
@@ -200,7 +200,7 @@ void mtgb::WindowResource::SetPosition(const RECT& _monitorRect)
 		_monitorRect.top,
 		_monitorRect.right - _monitorRect.left,
 		_monitorRect.bottom - _monitorRect.top,
-		// �I�[�i�[�E�B���h�E(?)��Z�����͕ύX���Ȃ��A�X�^�C���̕ύX��K�p
+		// オーナーウィンドウ(?)のZ順序は変更しない、スタイルの変更を適用
 		SWP_NOOWNERZORDER
 	);
 
@@ -209,14 +209,14 @@ void mtgb::WindowResource::SetPosition(const RECT& _monitorRect)
 
 void mtgb::WindowResource::SetWindowModeImpl(WindowModeInfo _info)
 {
-	// �E�B���h�E���[�h�ɖ߂�
+	// ウィンドウモードに戻る
 	isFullscreen_ = false;
 
-	// �E�B���h�E�X�^�C�������ɖ߂�
+	// ウィンドウスタイルを元に戻す
 	SetWindowLong(hWnd_, GWL_STYLE, _info.windowedStyle_);
 	SetWindowLong(hWnd_, GWL_EXSTYLE, _info.windowedExStyle_);
 
-	// �ۑ����Ă������E�B���h�E�̈ʒu�A�T�C�Y��߂�
+	// 保存しておいたウィンドウの位置、サイズを戻す
 	RECT rect = _info.windowedRect_;
 	SetWindowPos(
 		hWnd_,
@@ -225,7 +225,7 @@ void mtgb::WindowResource::SetWindowModeImpl(WindowModeInfo _info)
 		rect.top,
 		rect.right - rect.left,
 		rect.bottom - rect.top,
-		// �I�[�i�[�E�B���h�E(?)��Z�����͕ύX���Ȃ��A�X�^�C���̕ύX��K�p
+		// オーナーウィンドウ(?)のZ順序は変更しない、スタイルの変更を適用
 		SWP_NOOWNERZORDER | SWP_FRAMECHANGED
 	);
 }

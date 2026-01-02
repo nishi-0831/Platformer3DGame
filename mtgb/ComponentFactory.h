@@ -15,7 +15,7 @@ namespace mtgb
 	class ComponentFactory
 	{
 	  public:
-		// ƒRƒ“ƒ|[ƒlƒ“ƒgì¬ŠÖ”‚ÌŒ^
+		// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆé–¢æ•°ã®å‹
 		using CreateFunction			= std::function<IComponentMemento*(EntityId _id)>;
 		using CreateFromMementoFunction = std::function<void(const IComponentMemento& _memento)>;
 
@@ -51,38 +51,38 @@ namespace mtgb
 		};
 		creatorsFromMemento_[typeIdx] = [](const IComponentMemento& _memento)
 		{
-			// memento ‚ğMŒ^‚Öƒ_ƒEƒ“ƒLƒƒƒXƒg
+			// memento ã‚’Må‹ã¸ãƒ€ã‚¦ãƒ³ã‚­ãƒ£ã‚¹ãƒˆ
 			const Memento* pMemento = dynamic_cast<const Memento*>(&_memento);
 			if (pMemento == nullptr)
 			{
-				// •K—v‚È‚çƒGƒ‰[ˆ—
+				// å¿…è¦ãªã‚‰ã‚¨ãƒ©ãƒ¼å‡¦ç†
 				return;
 			}
 
-			// Entity‚ÉŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚éƒCƒ“ƒfƒbƒNƒX‚Ìæ“¾‚ğ‚İ‚é
+			// Entityã«å‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®å–å¾—ã‚’è©¦ã¿ã‚‹
 			auto componentIndex = Game::template System<ComponentRegistry>().GetComponentIndex(
 				_memento.GetEntityId(),
 				_memento.GetComponentType()
 			);
 
-			// ƒGƒ“ƒeƒBƒeƒB‚ÌId‚©‚çƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾
+			// ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã®Idã‹ã‚‰ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—
 			T* pComponent = nullptr;
 
-			// ƒCƒ“ƒfƒbƒNƒX‚ª—LŒø‚©ƒ`ƒFƒbƒN
+			// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒæœ‰åŠ¹ã‹ãƒã‚§ãƒƒã‚¯
 			if (componentIndex.has_value())
 			{
-				// ƒCƒ“ƒfƒbƒNƒX‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌÄ—˜—p‚ğ‚İ‚é
-				// ƒRƒ“ƒ|[ƒlƒ“ƒg‚ª©‘¼ŠÜ‚ŞEntity‚É—˜—p‚³‚ê‚Ä‚¢‚È‚¢‚È‚çæ“¾‚Å‚«‚é
+				// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å†åˆ©ç”¨ã‚’è©¦ã¿ã‚‹
+				// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè‡ªä»–å«ã‚€Entityã«åˆ©ç”¨ã•ã‚Œã¦ã„ãªã„ãªã‚‰å–å¾—ã§ãã‚‹
 				pComponent = T::template Reuse(componentIndex.value(), pMemento->GetEntityId());
 			}
-			// ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌÄ—˜—p‚É¸”s
+			// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å†åˆ©ç”¨ã«å¤±æ•—
 			if (pComponent == nullptr)
 			{
-				// ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìæ“¾A‚à‚µ‚­‚Íì¬‚ğ‚İ‚é
+				// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å–å¾—ã€ã‚‚ã—ãã¯ä½œæˆã‚’è©¦ã¿ã‚‹
 				pComponent = &(T::template Get(pMemento->GetEntityId()));
 			}
 
-			// ƒƒƒ“ƒg‚©‚çƒf[ƒ^‚ğ•œŒ³
+			// ãƒ¡ãƒ¡ãƒ³ãƒˆã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
 			if (pComponent != nullptr)
 			{
 				pComponent->RestoreFromMemento(*pMemento);

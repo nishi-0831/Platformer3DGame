@@ -7,7 +7,7 @@ typedef union _LARGE_INTEGER LARGE_INTEGER;
 namespace mtgb
 {
 	/// <summary>
-	/// ƒQ[ƒ€“àŠÔ‚ÌƒVƒXƒeƒ€ƒNƒ‰ƒX
+	/// ã‚²ãƒ¼ãƒ å†…æ™‚é–“ã®ã‚·ã‚¹ãƒ†ãƒ ã‚¯ãƒ©ã‚¹
 	/// </summary>
 	class Time : public ISystem
 	{
@@ -32,13 +32,13 @@ namespace mtgb
 		};
 
 	  private:
-		static const LONGLONG SEC_TO_MICRO; // ƒ}ƒCƒNƒ•b‚ğ‚P•b‚É•ÏŠ·‚·‚é
-		static const double MICRO_TO_SEC;	// 1•b‚ğƒ}ƒCƒNƒ•b‚É•ÏŠ·‚·‚é
-		static double deltaTime_;			// ƒtƒŒ[ƒ€ŠÔŠÔ (•b)
+		static const LONGLONG SEC_TO_MICRO; // ãƒã‚¤ã‚¯ãƒ­ç§’ã‚’ï¼‘ç§’ã«å¤‰æ›ã™ã‚‹
+		static const double MICRO_TO_SEC;	// 1ç§’ã‚’ãƒã‚¤ã‚¯ãƒ­ç§’ã«å¤‰æ›ã™ã‚‹
+		static double deltaTime_;			// ãƒ•ãƒ¬ãƒ¼ãƒ é–“æ™‚é–“ (ç§’)
 
 	  private:
-		LARGE_INTEGER current_;	 // Œ»İ‚ÌCPUŠÔ (ƒ}ƒCƒNƒ•b)
-		LARGE_INTEGER previous_; // ‘O‰ñ‚ÌCPUŠÔ (ƒ}ƒCƒNƒ•b)
+		LARGE_INTEGER current_;	 // ç¾åœ¨ã®CPUæ™‚é–“ (ãƒã‚¤ã‚¯ãƒ­ç§’)
+		LARGE_INTEGER previous_; // å‰å›ã®CPUæ™‚é–“ (ãƒã‚¤ã‚¯ãƒ­ç§’)
 		static unsigned int waitFrame_;
 	};
 } // namespace mtgb

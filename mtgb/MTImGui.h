@@ -27,7 +27,7 @@ namespace mtgb
 	};
 
 	/// <summary>
-	/// ImGui‚É•\¦‚ğ‚·‚éÛ‚Ég‚¤
+	/// ImGuiã«è¡¨ç¤ºã‚’ã™ã‚‹éš›ã«ä½¿ã†
 	/// </summary>
 	class MTImGui final
 	{
@@ -43,71 +43,71 @@ namespace mtgb
 		void Update();
 
 		/// <summary>
-		/// ImGuiƒEƒBƒ“ƒhƒE‚Ì•\¦AƒLƒ…[“à‚Ì•\¦ŠÖ”‚ÌˆêŠ‡ÀsAImGuiƒEƒBƒ“ƒhƒE‚ÌEnd()‚Ü‚Å‚ğs‚¤
+		/// ImGuiã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è¡¨ç¤ºã€ã‚­ãƒ¥ãƒ¼å†…ã®è¡¨ç¤ºé–¢æ•°ã®ä¸€æ‹¬å®Ÿè¡Œã€ImGuiã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®End()ã¾ã§ã‚’è¡Œã†
 		/// </summary>
 		/// <param name="_showType"></param>
 		void ShowWindow(ShowType _showType);
 		/// <summary>
-		/// •\¦ƒLƒ…[‚ğˆêŠ‡Às‚µAƒNƒŠƒA
+		/// è¡¨ç¤ºã‚­ãƒ¥ãƒ¼ã‚’ä¸€æ‹¬å®Ÿè¡Œã—ã€ã‚¯ãƒªã‚¢
 		/// </summary>
 		/// <param name="show"></param>
 		void ExecuteShowQueue(ShowType show);
 
 		/// <summary>
-		/// Œ^‚ğw’è‚µ‚Ä•\¦ƒLƒ…[‚ÉÏ‚Ş
-		/// –‘O‚ÉSetupShowFunc‚Å•\¦•û–@‚ğ“o˜^‚·‚é•K—v‚ ‚è
+		/// å‹ã‚’æŒ‡å®šã—ã¦è¡¨ç¤ºã‚­ãƒ¥ãƒ¼ã«ç©ã‚€
+		/// äº‹å‰ã«SetupShowFuncã§è¡¨ç¤ºæ–¹æ³•ã‚’ç™»éŒ²ã™ã‚‹å¿…è¦ã‚ã‚Š
 		/// </summary>
-		/// <typeparam name="T">•\¦‘ÎÛ‚ÌŒ^</typeparam>
-		/// <param name="target">•\¦‘ÎÛ‚Ìƒ|ƒCƒ“ƒ^</param>
-		/// <param name="name">•\¦‘ÎÛ‚Ì–¼‘O</param>
-		/// <param name="show">•\¦‚·‚éImGuiWindow</param>
+		/// <typeparam name="T">è¡¨ç¤ºå¯¾è±¡ã®å‹</typeparam>
+		/// <param name="target">è¡¨ç¤ºå¯¾è±¡ã®ãƒã‚¤ãƒ³ã‚¿</param>
+		/// <param name="name">è¡¨ç¤ºå¯¾è±¡ã®åå‰</param>
+		/// <param name="show">è¡¨ç¤ºã™ã‚‹ImGuiWindow</param>
 		template <typename T> void TypedShow(T* target, const std::string& name, ShowType show = ShowType::Inspector);
 		/// <summary>
-		/// ImGuiShowable*ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ“o˜^A–ˆ‰ñShowImGui‚ğŒÄ‚Ô
-		/// ImGuiShowable‚Í©“®‚Å“o˜^‚³‚ê‚é
+		/// ImGuiShowable*ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç™»éŒ²ã€æ¯å›ShowImGuiã‚’å‘¼ã¶
+		/// ImGuiShowableã¯è‡ªå‹•ã§ç™»éŒ²ã•ã‚Œã‚‹
 		/// </summary>
 		/// <param name="obj"></param>
 		void Register(ImGuiShowable* obj);
 		/// <summary>
-		/// “o˜^‰ğœ
-		/// ƒfƒXƒgƒ‰ƒNƒ^‚ÅŒÄ‚Î‚ê‚é
+		/// ç™»éŒ²è§£é™¤
+		/// ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã§å‘¼ã°ã‚Œã‚‹
 		/// </summary>
 		/// <param name="obj"></param>
 		void Unregister(ImGuiShowable* obj);
 
 		/// <summary>
-		/// ƒR[ƒ‹ƒoƒbƒN‚ğ•\¦ƒLƒ…[‚É’¼ÚÏ‚Ş
+		/// ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã‚’è¡¨ç¤ºã‚­ãƒ¥ãƒ¼ã«ç›´æ¥ç©ã‚€
 		/// </summary>
-		/// <param name="func">ƒR[ƒ‹ƒoƒbƒN</param>
-		/// <param name="show">•\¦êŠ</param>
+		/// <param name="func">ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯</param>
+		/// <param name="show">è¡¨ç¤ºå ´æ‰€</param>
 		void DirectShow(std::function<void()> func, const std::string& name, ShowType show);
 
 		/// <summary>
-		/// <para> ImGuiWindow‚Éü•ª‚ğ•`‰æ </para>
+		/// <para> ImGuiWindowã«ç·šåˆ†ã‚’æç”» </para>
 		/// </summary>
-		/// <param name="_from">n“_</param>
-		/// <param name="_to">I“_</param>
-		/// <param name="_thickness">ü‚Ì‘¾‚³</param>
+		/// <param name="_from">å§‹ç‚¹</param>
+		/// <param name="_to">çµ‚ç‚¹</param>
+		/// <param name="_thickness">ç·šã®å¤ªã•</param>
 		void DrawLine(const Vector3& _from, const Vector3& _to, float _thickness);
 
 		/// <summary>
-		/// <para> ImGuiWindow‚ÉƒxƒNƒgƒ‹‚ğ•`‰æ </para>
-		/// <para> n“_ + ƒxƒNƒgƒ‹‚Å•`‰æ‚³‚ê‚é </para>
+		/// <para> ImGuiWindowã«ãƒ™ã‚¯ãƒˆãƒ«ã‚’æç”» </para>
+		/// <para> å§‹ç‚¹ + ãƒ™ã‚¯ãƒˆãƒ«ã§æç”»ã•ã‚Œã‚‹ </para>
 		/// </summary>
-		/// <param name="_start">n“_</param>
-		/// <param name="_vec">ƒxƒNƒgƒ‹</param>
+		/// <param name="_start">å§‹ç‚¹</param>
+		/// <param name="_vec">ãƒ™ã‚¯ãƒˆãƒ«</param>
 		/// <param name="_thickness"></param>
 		void DrawVec(const Vector3& _start, const Vector3& _vec, float _thickness);
 
 		/// <summary>
-		/// ImGuiWindow‚É‰~‚ğ•`‰æ
+		/// ImGuiWindowã«å††éŒã‚’æç”»
 		/// </summary>
-		/// <param name="_position"> ‰~‚Ì’¸“_ </param>
-		/// <param name="_direction"> ‰~‚ÌŒü‚« </param>
-		/// <param name="_fovAngleDegree"> ‹–ìŠp(“x) </param>
-		/// <param name="_distance"> ‰~‚Ì‚‚³ </param>
-		/// <param name="_thickness"> ü‚Ì‘¾‚³ </param>
-		/// <param name="_segments"> ‰~‚Ì•ªŠ„”(‘½‚¢‚Ù‚ÇŠŠ‚ç‚©) </param>
+		/// <param name="_position"> å††éŒã®é ‚ç‚¹ </param>
+		/// <param name="_direction"> å††éŒã®å‘ã </param>
+		/// <param name="_fovAngleDegree"> è¦–é‡è§’(åº¦) </param>
+		/// <param name="_distance"> å††éŒã®é«˜ã• </param>
+		/// <param name="_thickness"> ç·šã®å¤ªã• </param>
+		/// <param name="_segments"> å††ã®åˆ†å‰²æ•°(å¤šã„ã»ã©æ»‘ã‚‰ã‹) </param>
 		void DrawCone(
 			const Vector3& _position,
 			const Vector3& _direction,
@@ -150,7 +150,7 @@ namespace mtgb
 		~MTImGui();
 
 		/// <summary>
-		/// TypedShow‚Ì_target‚ÌŒ^‚É‘Î‰‚·‚éŠÖ”‚ğ“o˜^‚·‚é
+		/// TypedShowã®_targetã®å‹ã«å¯¾å¿œã™ã‚‹é–¢æ•°ã‚’ç™»éŒ²ã™ã‚‹
 		/// </summary>
 		void SetupShowFunc();
 
@@ -159,7 +159,7 @@ namespace mtgb
 		std::vector<ImGuiShowable*> showableObjs_;
 
 		std::map<ShowType, ShowQueue> showQueues_;
-		std::map<ShowType, ImGuiWindowState> imguiWindowStates_; // ShowType‚²‚Æ‚ÌƒEƒBƒ“ƒhƒE‚Ìó‘Ô
+		std::map<ShowType, ImGuiWindowState> imguiWindowStates_; // ShowTypeã”ã¨ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®çŠ¶æ…‹
 
 		void RegisterAllComponentViewers();
 

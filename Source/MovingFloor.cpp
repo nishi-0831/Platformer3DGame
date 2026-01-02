@@ -19,14 +19,14 @@ MovingFloor::MovingFloor()
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer		 = AllLayer();
 	pMeshRenderer_->shaderType	 = ShaderType::FbxParts;
-	// Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
+	// å‹æƒ…å ±ã«ç™»éŒ²ã•ã‚ŒãŸåå‰ã‚’å–å¾—
 	name_		 = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(MovingFloor));
 	displayName_ = name_;
-	// ƒRƒ‰ƒCƒ_[‚Ìİ’è
+	// ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ã®è¨­å®š
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->SetExtents(Vector3(1, 1, 1));
 
-	// RigidBody‚Ìİ’è
+	// RigidBodyã®è¨­å®š
 	pRigidBody_->OnCollisionEnter(
 		[this](EntityId _id)
 		{
@@ -58,15 +58,15 @@ void MovingFloor::OnCollisionEnter(EntityId _entityId)
 	GameObject* gameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
 	GameObjectTag tag	= gameObj->GetTag();
 
-	// ƒvƒŒƒCƒ„[‚Ì‚İ‘ÎÛ‚É‚·‚é
-	// TODO: ƒvƒŒƒCƒ„[ˆÈŠO‚ÌƒAƒNƒ^[‚à‘ÎÛ‚É‚·‚é
+	// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã¿å¯¾è±¡ã«ã™ã‚‹
+	// TODO: ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ä»¥å¤–ã®ã‚¢ã‚¯ã‚¿ãƒ¼ã‚‚å¯¾è±¡ã«ã™ã‚‹
 	if (tag != GameObjectTag::Player)
 		return;
 
-	// ©g‚ÉG‚ê‚½Transform
+	// è‡ªèº«ã«è§¦ã‚ŒãŸTransform
 	Transform& otherTransform = Transform::Get(_entityId);
 
-	// ©g‚æ‚èã‚É‚¢‚éê‡A’…’n‚µ‚Ä‚¢‚é‚Æ”»’è
+	// è‡ªèº«ã‚ˆã‚Šä¸Šã«ã„ã‚‹å ´åˆã€ç€åœ°ã—ã¦ã„ã‚‹ã¨åˆ¤å®š
 	if (pTransform_->position.y > otherTransform.position.y)
 		return;
 
@@ -81,19 +81,19 @@ void MovingFloor::OnCollisionExit(EntityId _entityId)
 	GameObject* gameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
 	GameObjectTag tag	= gameObj->GetTag();
 
-	// ƒvƒŒƒCƒ„[‚Ì‚İ‘ÎÛ‚É‚·‚é
-	// TODO: ƒvƒŒƒCƒ„[ˆÈŠO‚ÌƒAƒNƒ^[‚à‘ÎÛ‚É‚·‚é
+	// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã¿å¯¾è±¡ã«ã™ã‚‹
+	// TODO: ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ä»¥å¤–ã®ã‚¢ã‚¯ã‚¿ãƒ¼ã‚‚å¯¾è±¡ã«ã™ã‚‹
 	if (tag != GameObjectTag::Player)
 		return;
 
-	// Œ»İ’…’n‚µ‚Ä‚¢‚éEntity‚ÆˆÙ‚È‚é‚È‚çƒXƒLƒbƒv
+	// ç¾åœ¨ç€åœ°ã—ã¦ã„ã‚‹Entityã¨ç•°ãªã‚‹ãªã‚‰ã‚¹ã‚­ãƒƒãƒ—
 	if (groundedEntity_ != _entityId)
 		return;
 
-	// ©g‚ÉG‚ê‚½Transform
+	// è‡ªèº«ã«è§¦ã‚ŒãŸTransform
 	Transform& otherTransform = Transform::Get(_entityId);
 
-	// INVALID_ENTITY‚ğ“n‚µ‚ÄeqŠÖŒW‰ğÁ
+	// INVALID_ENTITYã‚’æ¸¡ã—ã¦è¦ªå­é–¢ä¿‚è§£æ¶ˆ
 	otherTransform.SetParent(INVALID_ENTITY);
 	groundedEntity_ = INVALID_ENTITY;
 

@@ -6,12 +6,12 @@
 class ActorManager : public ISystem
 {
   public:
-	// ISystem ����Čp������܂���
+	// ISystem を介して継承されました
 	void Initialize() override;
 	void Update() override;
 	/// <summary>
-	/// �A�N�^�[��o�^
-	/// ActorManager�̓|�C���^�̉���͍s��Ȃ��̂ŁA�Ăяo�����Ŏ����̊Ǘ������Ă�������
+	/// アクターを登録
+	/// ActorManagerはポインタの解放は行わないので、呼び出し側で寿命の管理をしてください
 	/// </summary>
 	/// <param name="_pActor"></param>
 	void RegisterActor(IActor* _pActor);

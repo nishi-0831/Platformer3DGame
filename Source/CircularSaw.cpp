@@ -21,7 +21,7 @@ mtgb::CircularSaw::CircularSaw()
 
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->isStatic_	  = false;
-	// Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
+	// å‹æƒ…å ±ã«ç™»éŒ²ã•ã‚ŒãŸåå‰ã‚’å–å¾—
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(CircularSaw));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 	displayName_		 = name_;
@@ -50,15 +50,15 @@ void mtgb::CircularSaw::Start()
 {
 	pTransform_->Compute();
 
-	// ƒmƒRƒMƒŠ‚ğì¬
+	// ãƒã‚³ã‚®ãƒªã‚’ä½œæˆ
 	pSaw_					= Instantiate<Saw>();
 	Transform& sawTransform = Transform::Get(pSaw_->GetEntityId());
-	// ƒmƒRƒMƒŠ‚ğƒIƒtƒZƒbƒg•ª‚¸‚ç‚µ‚Ä”z’u
+	// ãƒã‚³ã‚®ãƒªã‚’ã‚ªãƒ•ã‚»ãƒƒãƒˆåˆ†ãšã‚‰ã—ã¦é…ç½®
 	sawTransform.position = pTransform_->position + pTransform_->Forward() * sawOffset_;
-	// q‚É‚·‚é
+	// å­ã«ã™ã‚‹
 	sawTransform.SetParent(GetEntityId());
 
-	// x’Œ‚ğì¬
+	// æ”¯æŸ±ã‚’ä½œæˆ
 	GameObject* pPillerObject = new GameObject();
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pPillerObject);
 	EntityId pillerId				   = pPillerObject->GetEntityId();
@@ -68,10 +68,10 @@ void mtgb::CircularSaw::Start()
 	pPillarTransform_				   = &(Transform::Get(pillerId));
 	pPillarTransform_->SetParent(GetEntityId());
 	pPillarTransform_->position = pTransform_->position;
-	// ‰ñ“]‚ÌŒ´“_‚©‚çƒmƒRƒMƒŠ‚Ü‚Åx’Œ‚ğL‚Î‚·
+	// å›è»¢ã®åŸç‚¹ã‹ã‚‰ãƒã‚³ã‚®ãƒªã¾ã§æ”¯æŸ±ã‚’ä¼¸ã°ã™
 	pPillarTransform_->scale.z = sawOffset_;
 
-	// ‰ñ“]‚ÌŒ´“_‚©‚çƒmƒRƒMƒŠ‚Ì•ûŒü‚ğŒü‚©‚¹‚é
+	// å›è»¢ã®åŸç‚¹ã‹ã‚‰ãƒã‚³ã‚®ãƒªã®æ–¹å‘ã‚’å‘ã‹ã›ã‚‹
 	Vector3 toSawDir		  = Vector3::Normalize(sawTransform.position - pTransform_->position);
 	pPillarTransform_->rotate = Quaternion::LookRotation(toSawDir, pTransform_->Up());
 }

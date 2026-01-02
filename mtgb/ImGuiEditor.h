@@ -26,7 +26,7 @@ namespace mtgb
 		void SaveMapData();
 		void LoadMapData();
 		/// <summary>
-		/// Œ»Ý‘I‘ð‚³‚ê‚Ä‚¢‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì•¡»‚ðs‚¤
+		/// ç¾åœ¨é¸æŠžã•ã‚Œã¦ã„ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è¤‡è£½ã‚’è¡Œã†
 		/// </summary>
 		void DuplicateGameObject();
 		void AddComponent(const std::type_index& _componentType, EntityId _entityId);

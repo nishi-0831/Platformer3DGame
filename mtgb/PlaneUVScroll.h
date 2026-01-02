@@ -15,30 +15,30 @@ namespace mtgb
 	class PlaneUVScroll : public IShader
 	{
 		/// <summary>
-		/// ’¸“_î•ñ
+		/// é ‚ç‚¹æƒ…å ±
 		/// </summary>
 		struct Vertex
 		{
-			Vector3 position; // À•W
-			Vector3 normal;	  // –@ü
-			Vector2 uv;		  // uvÀ•W
+			Vector3 position; // åº§æ¨™
+			Vector3 normal;	  // æ³•ç·š
+			Vector2 uv;		  // uvåº§æ¨™
 		};
 
 		/// <summary>
-		/// GPU‚É‘—‚é‚â‚Â
+		/// GPUã«é€ã‚‹ã‚„ã¤
 		/// </summary>
 		struct ConstantBuffer
 		{
-			Matrix4x4 g_matrixWorldViewProj; // ƒ[ƒ‹ƒhEƒrƒ…[EƒvƒƒWƒFƒNƒVƒ‡ƒ“s—ñ
-			Matrix4x4 g_matrixNormalTrans;	 // ‰ñ“]s—ñ‚ÆŠg‘ås—ñ‚Ì‹ts—ñ
-			Matrix4x4 g_matrixWorld;		 // ƒ[ƒ‹ƒhs—ñ
-			Vector4 g_lightDirection;		 // ƒ‰ƒCƒg‚ÌŒü‚«
-			Vector4 g_diffuse;				 // ŠgU”½Ë
-			Vector4 g_ambient;				 // ŠÂ‹«Œõ
-			Vector4 g_speculer;				 // ‹¾–Ê”½Ë
-			Vector4 g_cameraPosition;		 // ƒJƒƒ‰ˆÊ’u
-			FLOAT g_shininess;				 // ƒXƒyƒLƒ…ƒ‰‹­‚³
-			BOOL g_isTexture;				 // ƒeƒNƒXƒ`ƒƒ—L–³
+			Matrix4x4 g_matrixWorldViewProj; // ãƒ¯ãƒ¼ãƒ«ãƒ‰ãƒ»ãƒ“ãƒ¥ãƒ¼ãƒ»ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³è¡Œåˆ—
+			Matrix4x4 g_matrixNormalTrans;	 // å›è»¢è¡Œåˆ—ã¨æ‹¡å¤§è¡Œåˆ—ã®é€†è¡Œåˆ—
+			Matrix4x4 g_matrixWorld;		 // ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—
+			Vector4 g_lightDirection;		 // ãƒ©ã‚¤ãƒˆã®å‘ã
+			Vector4 g_diffuse;				 // æ‹¡æ•£åå°„
+			Vector4 g_ambient;				 // ç’°å¢ƒå…‰
+			Vector4 g_speculer;				 // é¡é¢åå°„
+			Vector4 g_cameraPosition;		 // ã‚«ãƒ¡ãƒ©ä½ç½®
+			FLOAT g_shininess;				 // ã‚¹ãƒšã‚­ãƒ¥ãƒ©å¼·ã•
+			BOOL g_isTexture;				 // ãƒ†ã‚¯ã‚¹ãƒãƒ£æœ‰ç„¡
 			Vector2 g_padding;
 			Vector4 g_textureScale;
 		};

@@ -16,6 +16,6 @@ class SampleGame : public mtgb::Game
 	};
 	inline std::string_view GetTitle() const override
 	{
-		return "‚½‚¾‚ÌƒTƒ“ƒvƒ‹ƒQ[ƒ€";
+		return "ãŸã ã®ã‚µãƒ³ãƒ—ãƒ«ã‚²ãƒ¼ãƒ ";
 	};
 };

@@ -4,15 +4,15 @@
 namespace mtgb
 {
 	/// <summary>
-	/// Waveƒtƒ@ƒCƒ‹‚Ìƒf[ƒ^Ši”[\‘¢‘Ì
+	/// Waveãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ãƒ¼ã‚¿æ ¼ç´æ§‹é€ ä½“
 	/// </summary>
 	struct WaveData
 	{
 		WaveData();
 		~WaveData();
 
-		WAVEFORMATEX waveFormat; // ƒtƒH[ƒ}ƒbƒgî•ñ
-		byte* pBuffer;			 // ƒf[ƒ^ƒoƒbƒtƒ@ƒ|ƒCƒ“ƒ^”z—ñ
-		size_t bufferSize;		 // ƒf[ƒ^ƒoƒbƒtƒ@ƒTƒCƒY
+		WAVEFORMATEX waveFormat; // ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆæƒ…å ±
+		byte* pBuffer;			 // ãƒ‡ãƒ¼ã‚¿ãƒãƒƒãƒ•ã‚¡ãƒã‚¤ãƒ³ã‚¿é…åˆ—
+		size_t bufferSize;		 // ãƒ‡ãƒ¼ã‚¿ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚º
 	};
 } // namespace mtgb

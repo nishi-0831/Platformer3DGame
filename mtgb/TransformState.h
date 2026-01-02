@@ -6,7 +6,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// Transform‚Ìó‘Ô‚Ì‚İ‚ğ•Û‚·‚é\‘¢‘Ì
+	/// Transformã®çŠ¶æ…‹ã®ã¿ã‚’ä¿æŒã™ã‚‹æ§‹é€ ä½“
 	/// </summary>
 	/*struct TransformState
 	{

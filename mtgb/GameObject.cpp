@@ -11,7 +11,7 @@ mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 		.isActive_ = _desc.isActive,
 		.callUpdate_ = _desc.callUpdate,
 		.callDraw_ = _desc.callDraw,
-		.toDestroy_ = FALSE,  // Å‰‚Ííœ‚µ‚È‚¢
+		.toDestroy_ = FALSE,  // æœ€åˆã¯å‰Šé™¤ã—ãªã„
 	},
 	layerFlag_{ _desc.layerFlag },
 	tag_{ _desc.tag }
@@ -45,7 +45,7 @@ mtgb::GameObject::GameObject(const GameObject& _other)
 
 mtgb::GameObject::~GameObject()
 {
-	massert(status_.toDestroy_ && "ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğíœ‚·‚é‚Æ‚«‚Í’¼Údelete‚ğŒÄ‚Ño‚³‚È‚¢‚Å‚­‚¾‚³‚¢I");
+	massert(status_.toDestroy_ && "ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å‰Šé™¤ã™ã‚‹ã¨ãã¯ç›´æ¥deleteã‚’å‘¼ã³å‡ºã•ãªã„ã§ãã ã•ã„ï¼");
 }
 
 nlohmann::json mtgb::GameObject::Serialize() const

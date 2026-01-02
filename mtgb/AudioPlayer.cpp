@@ -43,8 +43,8 @@ void mtgb::AudioPlayer::SetAudio(const AudioHandle _hAudio)
 	hResult = pSourceVoice_->SubmitSourceBuffer(&BUFFER);
 
 	massert(
-		SUCCEEDED(hResult) // SourceBuffer‚ÌƒZƒbƒg‚É¬Œ÷
-		&& "SourceBuffer‚ÌƒZƒbƒg‚É¸”s @AudioPlayer::SetAudio"
+		SUCCEEDED(hResult) // SourceBufferã®ã‚»ãƒƒãƒˆã«æˆåŠŸ
+		&& "SourceBufferã®ã‚»ãƒƒãƒˆã«å¤±æ•— @AudioPlayer::SetAudio"
 	);
 }
 
