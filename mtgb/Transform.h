@@ -57,7 +57,6 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_pMatrix">行列のポインタ渡し</param>
 		void GenerateParentRotationMatrix(Matrix4x4* _pMatrix) const;
-
 		/// <summary>
 		/// 行列をスケール、回転、移動成分に分割、適用する
 		/// </summary>
@@ -74,7 +73,6 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_entityId">親にするエンティティ識別子</param>
 		void SetParent(const EntityId _entityId);
-
 		/// <summary>
 		/// 回転する
 		/// </summary>

@@ -16,7 +16,7 @@ namespace mtbit
 	/// <typeparam name="EnumStructT">スコープ付き列挙型</typeparam>
 	template <typename EnumStructT> class BitFlag
 	{
-		static_assert(IsEnumStruct<EnumStructT>, "enum structのみ指定できます。");
+		static_assert(IsEnumStruct<EnumStructT> && "enum structのみ指定できます。");
 		// 指定された enum struct のサイズ分のビット数
 		static constexpr size_t BIT_COUNT{sizeof(EnumStructT) * 8};
 

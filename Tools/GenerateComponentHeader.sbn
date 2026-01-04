@@ -6,7 +6,7 @@
 #include "MTImGui.h"
 #include <string>
 // ============================================================================
-// {{ class_name }}‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
+// {{ class_name }}ã®çŠ¶æ…‹ã‚’ä¿å­˜ã™ã‚‹Stateæ§‹é€ ä½“ã®å®šç¾©ã€Undo/Redoã«ä½¿ã†Mementoã®usingå®£è¨€
 // ============================================================================
 #define MT_COMPONENT_{{ class_name }}() \
 	struct {{ class_name }}State \
@@ -19,7 +19,7 @@
 	using {{ class_name }}Memento = ComponentMemento<{{ class_name }}, {{ class_name }}State>;
 
 // ============================================================================
-// {{ class_name }}‚Æ{{ class_name }}Memento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
+// {{ class_name }}ã¨{{ class_name }}Mementoã®ç›¸äº’å¤‰æ›å‡¦ç†ã‚’å®Ÿè£…
 // ============================================================================
 #define MT_GENERATED_BODY_{{ class_name }}() \
 	public: \
@@ -58,7 +58,7 @@
 		_target.OnPostRestore(); \
 	} \
 	static std::string TypeName(){ return "{{ class_name }}" ;} \
-	/* ImGui•\¦ˆ—‚Ì“o˜^ */ \
+	/* ImGuiè¡¨ç¤ºå‡¦ç†ã®ç™»éŒ² */ \
 	static void RegisterImGui() \
 	{ \
 		static bool registered = false; \
@@ -76,7 +76,7 @@
 
 #pragma warning(push)
 #pragma warning(disable:4005)
-// ƒ}ƒNƒã‘‚«
+// ãƒã‚¯ãƒ­ä¸Šæ›¸ã
 #define MT_COMPONENT() MT_COMPONENT_{{ class_name }}()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_{{ class_name }}()
 #pragma warning(pop)
