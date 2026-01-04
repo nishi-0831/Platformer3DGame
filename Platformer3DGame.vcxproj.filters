@@ -314,6 +314,9 @@
     <Filter Include="mtgb\System\ImGui">
       <UniqueIdentifier>{867fb158-f2d8-4419-8c6c-57ce9b6e131b}</UniqueIdentifier>
     </Filter>-->
+    <Filter Include="Workflow">
+      <UniqueIdentifier>{7a4e7e37-f84d-4fca-855f-0cbeade020c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mtgb\AssetsManager.cpp">
@@ -1633,9 +1636,13 @@
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </None>
     <None Include="Tools\GenerateComponentCpp.sbn" />
-    <None Include=".github\workflows\DeployDoxygen.yml" />
     <None Include=".pre-commit-config.yaml" />
-    <None Include=".github\workflows\ReleaseBuildAndPublish.yml" />
+    <None Include=".github\workflows\DeployDoxygen.yml">
+      <Filter>Workflow</Filter>
+    </None>
+    <None Include=".github\workflows\ReleaseBuildAndPublish.yml">
+      <Filter>Workflow</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\FbxParts.hlsl">
