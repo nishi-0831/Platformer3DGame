@@ -46,7 +46,7 @@ namespace mtgb
 		std::type_index typeIdx(typeid(T));
 		creators_[typeIdx] = [](EntityId _id)
 		{
-			T& component = T::template Get(_id);
+			T& component = T::Get(_id);
 			return component.SaveToMemento();
 		};
 		creatorsFromMemento_[typeIdx] = [](const IComponentMemento& _memento)
@@ -73,13 +73,13 @@ namespace mtgb
 			{
 				// インデックスのコンポーネントの再利用を試みる
 				// コンポーネントが自他含むEntityに利用されていないなら取得できる
-				pComponent = T::template Reuse(componentIndex.value(), pMemento->GetEntityId());
+				pComponent = T::Reuse(componentIndex.value(), pMemento->GetEntityId());
 			}
 			// コンポーネントの再利用に失敗
 			if (pComponent == nullptr)
 			{
 				// コンポーネントの取得、もしくは作成を試みる
-				pComponent = &(T::template Get(pMemento->GetEntityId()));
+				pComponent = &(T::Get(pMemento->GetEntityId()));
 			}
 
 			// メメントからデータを復元

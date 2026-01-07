@@ -149,12 +149,6 @@ void mtgb::Game::ReleaseSystems(const std::list<ISystem*>& _runnings)
 		pSystem->Release();
 		delete pSystem;
 	}
-
-	/*for (auto itr = _runnings.rbegin(); itr != _runnings.rend(); itr++)
-	{
-		(*itr)->Release();
-		delete (*itr);
-	}*/
 }
 
 void mtgb::Game::RunLoopGameCycle()

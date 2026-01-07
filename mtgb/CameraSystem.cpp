@@ -173,10 +173,9 @@ void mtgb::CameraSystem::GetViewMatrix(Matrix4x4* _pView, CameraHandleInScene _h
 {
 	const Transform& cameraTransform{GetTransform(_hCamera)};
 
-	Vector4 vEyePt{cameraTransform.GetWorldPosition()};	   // カメラ（視点）位置
-	Vector4 vLookatPt{cameraTransform.Forward() + vEyePt}; // 注視位置
-	Vector4 vUpVec{cameraTransform.Up()};				   // 上方位置
-
+	Vector4 vEyePt{cameraTransform.GetWorldPosition()};				// カメラ（視点）位置
+	Vector4 vLookatPt{Vector4(cameraTransform.Forward()) + vEyePt}; // 注視位置
+	Vector4 vUpVec{cameraTransform.Up()};							// 上方位置
 	*_pView = XMMatrixLookAtLH(vEyePt, vLookatPt, vUpVec);
 }
 
@@ -197,7 +196,7 @@ void mtgb::CameraSystem::GetProjMatrix(Matrix4x4* _pProj) const
 
 void mtgb::CameraSystem::GetPosition(Vector4* _pPosition) const
 {
-	*_pPosition = GetTransform().GetWorldPosition();
+	*_pPosition = Vector4{GetTransform().GetWorldPosition()};
 }
 
 float mtgb::CameraSystem::GetNear() const

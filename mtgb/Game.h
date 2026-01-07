@@ -1,6 +1,6 @@
 #pragma once
 // #include "GameScene.h"
-#include "Entity.h"
+#include <nlohmann/json.hpp>
 #include <string>
 #include <functional>
 #include <cstdint>
@@ -10,12 +10,12 @@
 #include <typeinfo>
 #include <string_view>
 #include <type_traits>
+#include "Entity.h"
 #include "ISystem.h"
 #include "Vector2Int.h"
 #include <typeindex>
 #include "ReleaseUtility.h"
 #include "IComponentMemento.h"
-#include <nlohmann/json.hpp>
 #include "IRenderable.h"
 #include "ComponentFactory.h"
 namespace mtgb

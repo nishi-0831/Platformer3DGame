@@ -20,7 +20,7 @@ namespace mtgb
 		{
 		}
 		Vector3(const DirectX::XMVECTOR& _v)
-			: Vector3{_v.m128_f32[0], _v.m128_f32[1], _v.m128_f32[2]}
+			: Vector3{DirectX::XMVectorGetX(_v), DirectX::XMVectorGetY(_v), DirectX::XMVectorGetZ(_v)}
 		{
 		}
 

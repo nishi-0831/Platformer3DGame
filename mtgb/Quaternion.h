@@ -154,7 +154,7 @@ namespace mtgb
 			Vector3 v2{Vector3::Normalize(_toDir)};
 
 			Vector3 axis{DirectX::XMVector3Cross(v1, v2)};
-			float th{acosf(DirectX::XMVector3Dot(v1, v2).m128_f32[0])};
+			float th{acosf(DirectX::XMVectorGetX(DirectX::XMVector3Dot(v1, v2)))};
 			float s{sinf(th * 0.5f)};
 			float w{cosf(th * 0.5f)};
 

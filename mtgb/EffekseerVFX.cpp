@@ -62,7 +62,7 @@ namespace mtgb
 		{
 			for (int j = 0; j < 4; j++)
 			{
-				out.Values[i][j] = _mat.r[i].m128_f32[j];
+				out.Values[i][j] = DirectX::XMVectorGetByIndex(_mat.r[i], j);
 			}
 		}
 		return out;
@@ -74,7 +74,7 @@ namespace mtgb
 		{
 			for (int j = 0; j < 3; j++)
 			{
-				out.Value[i][j] = _mat.r[i].m128_f32[j];
+				out.Value[i][j] = DirectX::XMVectorGetByIndex(_mat.r[i], j);
 			}
 		}
 		return out;

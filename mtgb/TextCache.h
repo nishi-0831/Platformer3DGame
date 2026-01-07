@@ -16,59 +16,58 @@
 #include <boost/multi_index/composite_key.hpp>
 
 using namespace boost::multi_index;
-using namespace mtgb;
-
-// タグ定義
-struct text_layout_order
-{
-}; // 文字列+サイズをキーとするタグ
-struct handle_order
-{
-}; // ハンドルをキーとするタグ
-struct random
-{
-}; // 添え字でアクセスするタグ
-struct font_size_order
-{
-}; // フォントサイズをキーとするタグ
-struct layout_box_size_order
-{
-}; // レイアウトボックスのサイズをキーとするタグ
-
-// テキストレイアウトの多重インデックスコンテナ
-using TextLayoutContainer = multi_index_container<
-	TextLayoutData*,
-	indexed_by<
-		// 文字列+サイズの複合キー(複数のレイアウトボックスで同じ場合があるので non_unique)
-		ordered_non_unique<
-			tag<text_layout_order>,
-			composite_key<
-				TextLayoutData,
-				member<TextLayoutData, std::wstring, &TextLayoutData::str>,
-				member<TextLayoutData, int, &TextLayoutData::fontSize>>>,
-
-		// レイアウトボックスの幅+高さの複合キー(複数テキストで同じ場合があるので non_unique)
-		ordered_non_unique<
-			tag<layout_box_size_order>,
-			composite_key<
-				TextLayoutData,
-				member<TextLayoutData, float, &TextLayoutData::width>,
-				member<TextLayoutData, float, &TextLayoutData::height>>>,
-
-		// ハンドルをキーとする
-		ordered_unique<tag<handle_order>, member<TextLayoutData, int, &TextLayoutData::handle>>,
-		// 添え字でアクセス
-		random_access<tag<random>>>>;
-
-// フォントフォーマットの多重インデックスコンテナ
-using FontFormatContainer = multi_index_container<
-	FontFormatData*,
-	indexed_by<
-		// フォントサイズをキー
-		ordered_unique<tag<font_size_order>, member<FontFormatData, int, &FontFormatData::fontSize>>>>;
 
 namespace mtgb
 {
+	// タグ定義
+	struct text_layout_order
+	{
+	}; // 文字列+サイズをキーとするタグ
+	struct handle_order
+	{
+	}; // ハンドルをキーとするタグ
+	struct random
+	{
+	}; // 添え字でアクセスするタグ
+	struct font_size_order
+	{
+	}; // フォントサイズをキーとするタグ
+	struct layout_box_size_order
+	{
+	}; // レイアウトボックスのサイズをキーとするタグ
+
+	// テキストレイアウトの多重インデックスコンテナ
+	using TextLayoutContainer = multi_index_container<
+		TextLayoutData*,
+		indexed_by<
+			// 文字列+サイズの複合キー(複数のレイアウトボックスで同じ場合があるので non_unique)
+			ordered_non_unique<
+				tag<text_layout_order>,
+				composite_key<
+					TextLayoutData,
+					member<TextLayoutData, std::wstring, &TextLayoutData::str>,
+					member<TextLayoutData, int, &TextLayoutData::fontSize>>>,
+
+			// レイアウトボックスの幅+高さの複合キー(複数テキストで同じ場合があるので non_unique)
+			ordered_non_unique<
+				tag<layout_box_size_order>,
+				composite_key<
+					TextLayoutData,
+					member<TextLayoutData, float, &TextLayoutData::width>,
+					member<TextLayoutData, float, &TextLayoutData::height>>>,
+
+			// ハンドルをキーとする
+			ordered_unique<tag<handle_order>, member<TextLayoutData, int, &TextLayoutData::handle>>,
+			// 添え字でアクセス
+			random_access<tag<random>>>>;
+
+	// フォントフォーマットの多重インデックスコンテナ
+	using FontFormatContainer = multi_index_container<
+		FontFormatData*,
+		indexed_by<
+			// フォントサイズをキー
+			ordered_unique<tag<font_size_order>, member<FontFormatData, int, &FontFormatData::fontSize>>>>;
+
 	class TextCache : public ISystem
 	{
 		friend class Draw;

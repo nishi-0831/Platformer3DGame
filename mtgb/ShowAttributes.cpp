@@ -31,13 +31,18 @@ Command* Vector4Show::operator()(DirectX::XMVECTOR* _vec, const char* _name) con
 {
 	DirectX::XMVECTOR old = *_vec;
 
-	bool changed = ImGui::InputFloat4(_name, _vec->m128_f32);
-	;
+	DirectX::XMFLOAT4 tmp;
+	DirectX::XMStoreFloat4(&tmp, *_vec);
+	bool changed = ImGui::InputFloat4(_name, &tmp.x, "%.3f", 0);
 
-	if (changed == false)
-		return nullptr;
+	if (changed)
+	{
+		// 変化があれば再度 XMVECTOR に読み込んで格納
+		*_vec = DirectX::XMLoadFloat4(&tmp);
+		return new ImGuiInputCommand<DirectX::XMVECTOR>(_vec, old, *_vec, _name);
+	}
 
-	return new ImGuiInputCommand<DirectX::XMVECTOR>(_vec, old, *_vec, _name);
+	return nullptr;
 }
 
 Command* MatrixShow::operator()(DirectX::XMMATRIX* _mat, const char* _name) const

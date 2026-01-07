@@ -8,7 +8,7 @@ std::string mtgb::Matrix4x4::ToString()
 	{
 		for (int x = 0; x < COLUMN_SIZE; x++)
 		{
-			str += std::to_string(r[y].m128_f32[x]);
+			str += std::to_string(DirectX::XMVectorGetByIndex(r[y], x));
 			if (x < COLUMN_SIZE - 1)
 			{
 				str += ", ";

@@ -101,7 +101,7 @@ void mtgb::Ground::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	}
 
 	const D3D11_BUFFER_DESC BUFFER_DESC{
-		.ByteWidth			 = sizeof(Vertex) * vertexCount_,
+		.ByteWidth			 = static_cast<UINT>(sizeof(Vertex) * vertexCount_),
 		.Usage				 = D3D11_USAGE_DYNAMIC, // 途中で書き換えるため dynamic
 		.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
 		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE, // 途中で書き換えるから
@@ -142,7 +142,7 @@ void mtgb::Ground::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	}
 
 	const D3D11_BUFFER_DESC BUFFER_DESC{
-		.ByteWidth			 = sizeof(DWORD) * GetIndexCount(),
+		.ByteWidth			 = static_cast<UINT>(sizeof(DWORD) * GetIndexCount()),
 		.Usage				 = D3D11_USAGE_DEFAULT, // 途中で書き換えない
 		.BindFlags			 = D3D11_BIND_INDEX_BUFFER,
 		.CPUAccessFlags		 = 0,

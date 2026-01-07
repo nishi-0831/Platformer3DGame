@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup>
+    <!-- clang-cl が存在するかだけ判定 -->
+    <UseClangCL Condition=" '$(LLVM_INSTALL_DIR)' != '' and Exists('$(LLVM_INSTALL_DIR)\bin\clang-cl.exe')">true</UseClangCL>
+  </PropertyGroup>
+
+  <!-- clang-cl を使うときだけプロパティを設定 -->
+  <PropertyGroup Condition="'$(UseClangCL)' == 'true'">
+    <CLToolPath>$(LLVM_INSTALL_DIR)\bin</CLToolPath>
+    <CLToolExe>$(LLVM_INSTALL_DIR)\bin\clang-cl.exe</CLToolExe>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(UseClangCL)' == 'true'">
+    <ClCompile>
+      <AdditionalOptions>-fms-extensions -fms-compatibility -fms-compatibility-version=19.0 -D_MSC_VER=1928 -target x86_64-pc-windows-msvc -fdelayed-template-parsing -fno-complete-member-pointers %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

@@ -594,14 +594,23 @@
     <ClInclude Include="Source\TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".clang-format" />
+    <None Include=".clang-tidy" />
     <None Include=".github\workflows\DeployDoxygen.yml" />
+    <None Include=".github\workflows\ClangTidyAnalysis.yml" />
     <None Include=".github\workflows\ReleaseBuildAndPublish.yml" />
+    <None Include=".github\workflows\SetupEnv.yml" />
     <None Include=".pre-commit-config.yaml" />
     <None Include="Assets\Shader\2DCommon.hlsli" />
     <None Include="Assets\Shader\3DCommon.hlsli" />
+    <None Include="Directory.Build.props" />
     <None Include="mtgb\DefaultShow.inl" />
     <None Include="mtgb\StatefulComponent.inl" />
     <None Include="packages.config" />
+    <None Include="scripts\clang-tidy-wrapper.py" />
+    <None Include="scripts\fix_compile_commands.py" />
+    <None Include="scripts\run-clang-tidy-filtered.ps1" />
+    <None Include="scripts\run-clang-tidy-filtered.sh" />
     <None Include="Tools\GenerateComponentCpp.sbn" />
     <None Include="通信体系.txt" />
   </ItemGroup>
@@ -782,17 +791,21 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;$(ProjectDir)mtgb;$(ProjectDir)refl-cpp;$(ProjectDir)packages\boost.1.87.0\lib\native\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)mtgb;$(ProjectDir)refl-cpp;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\lib\x64\debug;$(LibraryPath)</LibraryPath>
     <EnableClangTidyCodeAnalysis>false</EnableClangTidyCodeAnalysis>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+    <ClangTidyToolPath>
+    </ClangTidyToolPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;$(ProjectDir)mtgb;$(ProjectDir)refl-cpp;$(ProjectDir)packages\boost.1.87.0\lib\native\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;$(ProjectDir)mtgb;$(ProjectDir)refl-cpp;$(ProjectDir)packages\boost.1.87.0\lib\native\include;$(ProjectDir)packages\nlohmann.json.3.12.0\build\native\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\lib\x64\release;$(LibraryPath)</LibraryPath>
     <EnableClangTidyCodeAnalysis>false</EnableClangTidyCodeAnalysis>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <ClangTidyToolPath>
+    </ClangTidyToolPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -831,7 +844,7 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_AMD64_</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(FBX)\include;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;%(AdditionalIncludeDirectories);$(REFL_CPP);$(ProjectDir)\EffekseeLib\install_msvc2022_x64\include\Effekseer</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(FBX)\include;%(AdditionalIncludeDirectories);$(ProjectDir)refl-cpp;$(ProjectDir)EffekseeLib\install_msvc2022_x64\include\Effekseer</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
@@ -857,7 +870,7 @@
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions);_AMD64_</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(FBX)\include;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;%(AdditionalIncludeDirectories);$(REFL_CPP);$(ProjectDir)\EffekseeLib\install_msvc2022_x64\include\Effekseer</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(FBX)\include;C:\Program Files\Autodesk\FBX\FBX SDK\2020.3.7\include;%(AdditionalIncludeDirectories);$(REFL_CPP);$(ProjectDir)\EffekseeLib\install_msvc2022_x64\include\Effekseer;$(ProjectDir)\refl-cpp</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>

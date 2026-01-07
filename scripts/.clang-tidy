@@ -1,26 +1,28 @@
 ---
 Checks: '-*,
-	clang-diagnostic-*,
-	clang-analyzer-*,
-	clang-bugprone-*,
-	readability-identifier-naming'
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  clang-bugprone-*,
+  readability-identifier-naming,
+  -Wnullability-declspec'
+# 命名規則
 CheckOptions:
   - key: readability-identifier-naming.ConstantParameterPrefix
-	value: _
+    value:
   - key: readability-identifier-naming.ConstantParameterCase
-	value: camelBack
+    value: camelBack
   - key: readability-identifier-naming.ParameterPrefix
-	value: _
+    value: _
   - key: readability-identifier-naming.ParameterCase
-	value: camelBack
+    value: camelBack
   - key: readability-identifier-naming.PointerParameterPrefix
-	value: _
+    value: _
   - key: readability-identifier-naming.PointerParameterCase
-	value: camelBack
+    value: camelBack
   - key: readability-identifier-naming.ConstantPointerParameterPrefix
-	value: _
+    value: _
   - key: readability-identifier-naming.ConstantPointerParameterCase
-	value: camelBack
+    value: camelBack
   - key: readability-identifier-naming.EnumCase
     value: CamelCase
   - key: readability-identifier-naming.EnumConstantCase
@@ -38,7 +40,7 @@ ImplementationFileExtensions:
   - cc
   - cpp
   - cxx
-HeaderFilterRegex: '^(?:mtgb|Source)/'
+HeaderFilterRegex: '.*(mtgb|Source)[\\/].*'
 ExcludeHeaderFilterRegex: ''
 FormatStyle:     none
 User:            nishi

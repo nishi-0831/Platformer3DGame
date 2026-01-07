@@ -149,9 +149,6 @@
     <Filter Include="03mtgb\X-Ignore">
       <UniqueIdentifier>{C0D5D73B-86BF-4381-843E-8AFC06913AAB}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03mtgb\Utility">
-      <UniqueIdentifier>{B6B18D8D-5661-4C29-9C99-E6D36B7444B8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03mtgb\Includer">
       <UniqueIdentifier>{B4F1A1C8-2B86-470B-978D-55DE2F6FDD03}</UniqueIdentifier>
     </Filter>
@@ -316,6 +313,9 @@
     </Filter>-->
     <Filter Include="Workflow">
       <UniqueIdentifier>{7a4e7e37-f84d-4fca-855f-0cbeade020c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Workflow\Utility">
+      <UniqueIdentifier>{B6B18D8D-5661-4C29-9C99-E6D36B7444B8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -587,7 +587,7 @@
       <Filter>03mtgb\Library\MTNet</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\WindowContextUtil.cpp">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\WaveData.cpp">
       <Filter>03mtgb\System\Audio</Filter>
@@ -761,7 +761,7 @@
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\MTStringUtility.cpp">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\Box3D.cpp">
       <Filter>01Game</Filter>
@@ -1030,7 +1030,7 @@
       <Filter>03mtgb\CoreType</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\ReleaseUtility.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\SceneSystem.h">
       <Filter>03mtgb\System\SceneSystem</Filter>
@@ -1153,22 +1153,22 @@
       <Filter>03mtgb\System\Model</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\MTAssert.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\mtgb.h">
       <Filter>03mtgb\Core</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\MTStringUtility.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\ImGuiRenderer.h">
       <Filter>03mtgb\System\Library</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\PathUtility.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\ProfileUtlity.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Sprite.h">
       <Filter>03mtgb\Shader</Filter>
@@ -1183,7 +1183,7 @@
       <Filter>01Game</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\WindowContextUtil.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\WaveData.h">
       <Filter>03mtgb\System\Audio</Filter>
@@ -1207,13 +1207,13 @@
       <Filter>03mtgb\Shader</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Observer.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Easing.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Mathf.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\QuatToEuler.h">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
@@ -1387,7 +1387,7 @@
       <Filter>03mtgb\Component\Data</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Property.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\StatefulComponent.h">
       <Filter>03mtgb\Component\StatefulComponent</Filter>
@@ -1456,7 +1456,7 @@
       <Filter>03mtgb\System\Debug\Command</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\JsonConverter.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\stdafx.h">
       <Filter>03mtgb</Filter>
@@ -1534,7 +1534,7 @@
       <Filter>01Game</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Interpolator.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Source\PatrolChargerEnemy.h">
       <Filter>01Game</Filter>
@@ -1570,7 +1570,7 @@
       <Filter>03mtgb\System\Draw\FBX</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\StringComparators.h">
-      <Filter>03mtgb\Utility</Filter>
+      <Filter>Workflow\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Source\IActor.h">
       <Filter>01Game</Filter>
@@ -1643,6 +1643,19 @@
     <None Include=".github\workflows\ReleaseBuildAndPublish.yml">
       <Filter>Workflow</Filter>
     </None>
+    <None Include=".github\workflows\ClangTidyAnalysis.yml">
+      <Filter>Workflow</Filter>
+    </None>
+    <None Include=".github\workflows\SetupEnv.yml">
+      <Filter>Workflow</Filter>
+    </None>
+    <None Include=".clang-format" />
+    <None Include=".clang-tidy" />
+    <None Include="scripts\run-clang-tidy-filtered.sh" />
+    <None Include="Directory.Build.props" />
+    <None Include="scripts\clang-tidy-wrapper.py" />
+    <None Include="scripts\run-clang-tidy-filtered.ps1" />
+    <None Include="scripts\fix_compile_commands.py" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\FbxParts.hlsl">

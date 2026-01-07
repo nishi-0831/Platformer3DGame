@@ -35,19 +35,15 @@ jobs:
   - name: Restore NuGet packages
     run: nuget restore Game.sln
 
-  # FBX SDKインストーラをダウンロード
-  - name: Download FBX SDK installer
-    shell: powershell
-    run: |
-      $url = 'https://damassets.autodesk.net/content/dam/autodesk/www/files/fbx202037_fbxsdk_vs2022_win.exe'
-      Invoke-WebRequest -Uri $url -OutFile '.\FBXInstaller.exe'
-
-  # FBX SDKをインストール
-  - name: install FBX SDK
-    shell: cmd
-    run: |
-      FBXInstaller.exe /S /D=C:\fbxsdk
-
+  # キャッシュから FBX SDK を復元
+  - name: Restore FBX SDK cache
+    uses: actions/cache@v4
+    with:
+      path: C:\fbxsdk
+      key: fbx-sdk-202037-${{ hashFiles('**/FBXVersion.txt') }}
+      restore-keys: |
+        fbx-sdk-202037-
+      fail-on-cache-miss: false
 
   # Release ビルド
   - name: Build solution(Release x64)

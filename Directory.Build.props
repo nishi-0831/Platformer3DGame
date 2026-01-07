@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <!-- 環境変数 LLVM_INSTALL_DIR を参照 -->
+    <ClangTidyToolPath>$(LLVM_INSTALL_DIR)\bin</ClangTidyToolPath>
+    <ClangTidyToolExe>$(SolutionDir)scripts\dist\clang-tidy-wrapper.exe</ClangTidyToolExe>
+    <ClangTidyLLVMInstallDir>$(LLVM_INSTALL_DIR)</ClangTidyLLVMInstallDir>
+	
+	<UseClangCL Condition=" '$(LLVM_INSTALL_DIR)' != '' and Exists('$(LLVM_INSTALL_DIR)\bin\clang-cl.exe')">true</UseClangCL>
+	<!-- llvmにパスが通っている場合のみ、clang-clを使用する -->
+	<CLToolPath Condition="'$(UseClangCL)' == 'true'">$(LLVM_INSTALL_DIR)\bin</CLToolPath>
+  </PropertyGroup>
+</Project>

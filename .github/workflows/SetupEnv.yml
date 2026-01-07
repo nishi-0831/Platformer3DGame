@@ -1,0 +1,69 @@
+name: Setup Env
+
+on:
+ push:
+  branches:
+      - feature/generateHeader    # ← テスト用ブランチ
+ schedule:
+   # 週一回キャッシュを更新
+   - cron: '0 0 * * 0'
+
+jobs:
+ build-and-release:
+  # windows環境で動かす
+  runs-on: windows-latest
+  env:
+   FBX: 'C:\fbxsdk'
+  steps:
+  - name: Checkout
+    uses: actions/checkout@v4
+
+  # MSBuildを使えるようにセットアップ
+  - name: Setup MSBuild
+    uses: microsoft/setup-msbuild@v2
+
+  # NuGetを使えるようにセットアップ
+  - name: Setup NuGet
+    uses: nuget/setup-nuget@v2
+    with:
+     nuget-version: '6.x'
+  # NuGetパッケージを復元
+  - name: Restore NuGet packages
+    run: nuget restore Game.sln
+
+  - name: Cache FBX SDK
+    id: cache-fbx
+    uses: actions/cache@v4
+    with:
+      path: C:\fbxsdk
+      key: fbx-sdk-202037-{{ hashFiles('**/FBXVersion.txt') }}
+      restore-keys: |
+        fbx-sdk-202037-
+
+  # キャッシュミス時のみダウンロード、インストール
+  # FBX SDKインストーラをダウンロード
+  - name: Download FBX SDK installer(if not cached)
+    if: steps.cache-fbx.outputs.cache.hit != 'true'
+    shell: powershell
+    run: |
+      $url = 'https://damassets.autodesk.net/content/dam/autodesk/www/files/fbx202037_fbxsdk_vs2022_win.exe'
+      Invoke-WebRequest -Uri $url -OutFile '.\FBXInstaller.exe' -ErrorAction Stop
+      Write-Host "FBX SDK installer downloaded"
+
+  # FBX SDKをインストール
+  - name: install FBX SDK(if not cached)
+    if: steps.cache-fbx.outputs.cache.hit != 'true'
+    shell: cmd
+    run: |
+      FBXInstaller.exe /S /D=C:\fbxsdk
+      echo FBX SDK installed to C:\fbxsdk
+      dir C:\fbxsdk
+
+  - name: Verify FBX SDK
+    shell: powershell
+    run: |
+      if (-not (Test-Path 'C:\fbxsdk'))
+      {
+        throw 'FBX SDK not found at C:\fxsdk'
+      }
+      Write-Host "FBX SDK verified at C:\fbxsdk"

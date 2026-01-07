@@ -83,7 +83,7 @@ Plane GetPlane(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir)
 
 float GetPlaneAngleRad(const Plane& _plane, const Vector3& _vec)
 {
-	float dot = DirectX::XMPlaneDotNormal(_plane.equation, Vector3::Normalize(_vec)).m128_f32[0];
+	float dot = DirectX::XMVectorGetX(DirectX::XMPlaneDotNormal(_plane.equation, Vector3::Normalize(_vec)));
 	dot		  = std::clamp(dot, -1.0f, 1.0f);
 	return std::acosf(dot);
 }
@@ -105,7 +105,7 @@ std::optional<Plane> TryGetFacingPlane(const DirectX::BoundingBox& _aabb, const 
 	for (int i = 0; i < 6; i++)
 	{
 		Plane p	  = GetPlane(_aabb, static_cast<BoxPlaneDir>(i));
-		float dot = DirectX::XMPlaneDotNormal(p.equation, vecNormal).m128_f32[0];
+		float dot = DirectX::XMVectorGetX(DirectX::XMPlaneDotNormal(p.equation, vecNormal));
 
 		if (dot > bestDot)
 		{

@@ -193,7 +193,7 @@ namespace mtgb
 		{
 			GameObject* obj	 = mtgb::GameObject::FindGameObject(_entityId);
 			std::string name = obj->GetName() + ":Components";
-			TypeRegistry::Instance().CallFunc<T>(&(T::template Get(_entityId)), name.c_str());
+			TypeRegistry::Instance().CallFunc<T>(&(T::Get(_entityId)), name.c_str());
 		};
 	}
 

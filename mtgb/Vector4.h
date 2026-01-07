@@ -18,10 +18,10 @@ namespace mtgb
 		/// <param name="_w">w成分</param>
 		Vector4(const float _x, const float _y, const float _z, const float _w);
 		/// <summary>
-		/// Vector3から暗黙的な変換
+		/// Vector3から明示的な変換
 		/// </summary>
 		/// <param name="_vec3">変換元</param>
-		Vector4(const Vector3& _vec3);
+		explicit Vector4(const Vector3& _vec3);
 
 		Vector4()
 			: Vector4{0.0f, 0.0f, 0.0f, 0.0f}
@@ -52,4 +52,8 @@ namespace mtgb
 			return *this;
 		}
 	};
+	inline Vector4 operator+(const Vector4& lhs, const Vector4& rhs)
+	{
+		return Vector4{lhs.f[0] + rhs.f[0], lhs.f[1] + rhs.f[1], lhs.f[2] + rhs.f[2], lhs.f[3] + rhs.f[3]};
+	}
 } // namespace mtgb

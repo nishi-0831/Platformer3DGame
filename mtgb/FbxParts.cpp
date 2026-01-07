@@ -219,10 +219,9 @@ bool mtgb::FbxParts::TryGetBonePositionAtNow(const std::string& _boneName, Vecto
 	if (itr != boneNamePair_.end()) // end じゃないなら見つかった
 	{
 		Matrix4x4 m{};
-		// DirectX::XMStoreFloat4x4(&m, itr->second->newPose);
-		_pPosition->x = m.r[3].m128_f32[0];
-		_pPosition->y = m.r[3].m128_f32[1];
-		_pPosition->z = m.r[3].m128_f32[2];
+		_pPosition->x = DirectX::XMVectorGetX(m.r[3]);
+		_pPosition->y = DirectX::XMVectorGetY(m.r[3]);
+		_pPosition->z = DirectX::XMVectorGetZ(m.r[3]);
 
 		return true;
 	}
@@ -312,7 +311,7 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	}
 
 	const D3D11_BUFFER_DESC BUFFER_DESC{
-		.ByteWidth			 = sizeof(Vertex) * vertexCount_,
+		.ByteWidth			 = static_cast<UINT>(sizeof(Vertex) * vertexCount_),
 		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: 途中で書き換えるため dynamic
 		.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
 		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE, // 途中で書き換えるから
@@ -355,7 +354,7 @@ void mtgb::FbxParts::InitializeIndexBuffer(ID3D11Device* _pDevice)
 
 		// バッファの設定
 		const D3D11_BUFFER_DESC BUFFER_DESC{
-			.ByteWidth			 = sizeof(DWORD) * count,
+			.ByteWidth			 = static_cast<UINT>(sizeof(DWORD)) * count,
 			.Usage				 = D3D11_USAGE_DEFAULT, // MEMO: 途中で書き換えないため DEFAULT
 			.BindFlags			 = D3D11_BIND_INDEX_BUFFER,
 			.CPUAccessFlags		 = 0,

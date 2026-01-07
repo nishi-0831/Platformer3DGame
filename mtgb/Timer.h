@@ -33,14 +33,13 @@ namespace mtgb
 		/// </summary>
 		static void Clear();
 
-		static void Release();
-
 	  public:
 		Timer();
 		~Timer();
 
 		void Initialize() override;
 		void Update() override;
+		void Release() override;
 
 		void EnqueueTimer(QUEUE_ELEMENT* _pElement);
 

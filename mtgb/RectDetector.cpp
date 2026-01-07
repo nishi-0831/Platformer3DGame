@@ -50,7 +50,7 @@ void mtgb::RectDetector::UpdateDetection(RectDetectorConfig& _config)
 			{
 				Vector3 toTarget = info.worldPos - cameraTransform.GetWorldPosition();
 				Vector3 normal	 = cameraTransform.Forward();
-				float distance	 = DirectX::XMVector3Dot(toTarget, normal).m128_f32[0];
+				float distance	 = DirectX::XMVectorGetX(DirectX::XMVector3Dot(toTarget, normal));
 
 				// 設定した距離より遠いなら除く
 				if (std::abs(distance) > _config.base.maxDistance)

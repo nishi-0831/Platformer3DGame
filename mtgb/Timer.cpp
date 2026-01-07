@@ -51,12 +51,7 @@ void mtgb::Timer::Clear()
 
 void mtgb::Timer::Release()
 {
-	Instance().Clear();
-	if (pInstance_ != nullptr)
-	{
-		delete pInstance_;
-		pInstance_ = nullptr;
-	}
+	Clear();
 }
 
 void mtgb::Timer::Initialize()
@@ -139,10 +134,6 @@ mtgb::Timer::Timer()
 
 mtgb::Timer::~Timer()
 {
-	for (auto& pTimer : Instance().pTimerQueue_)
-	{
-		delete pTimer;
-	}
 }
 
 void mtgb::Timer::EnqueueTimer(QUEUE_ELEMENT* _pElement)

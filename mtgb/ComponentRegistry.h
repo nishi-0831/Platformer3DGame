@@ -1,10 +1,10 @@
 #pragma once
-#include "ISystem.h"
 #include <unordered_map>
 #include <typeindex>
 #include <optional>
 #include <set>
-#include "nlohmann/json.hpp"
+#include <nlohmann/json.hpp>
+#include "ISystem.h"
 namespace mtgb
 {
 	class ComponentRegistry : public ISystem
