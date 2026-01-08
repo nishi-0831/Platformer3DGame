@@ -40,5 +40,6 @@ var classGameOverZone =
     [ "pRigidBody_", "classGameOverZone.html#a0f37a267c53e5918f9bdee26cd2ad6d9", null ],
     [ "pTransform_", "classGameOverZone.html#a808517e790f65110d93d2ce61dca7473", null ],
     [ "status_", "classGameOverZone.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
-    [ "tag_", "classGameOverZone.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
+    [ "tag_", "classGameOverZone.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
+    [ "takeDamageAmoundOnPlayerFellout_", "classGameOverZone.html#aae523d56821df23a8258e3a58c4f8688", null ]
 ];

@@ -19,6 +19,7 @@ var classmtgb_1_1ImageRenderer =
     [ "ComponentPoolT", "classmtgb_1_1ImageRenderer.html#aed716499a289d6dd69c0d40b683142aa", null ],
     [ "cutRect_", "classmtgb_1_1ImageRenderer.html#a6c9578e487c32d0162f6c052fd0aa47f", null ],
     [ "drawRect_", "classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331", null ],
+    [ "enabled_", "classmtgb_1_1ImageRenderer.html#a635a1917f3a135b9933041bde5077610", null ],
     [ "entityId_", "classmtgb_1_1ImageRenderer.html#a8aa4f5300c39f9f4705a587fd0a72639", null ],
     [ "handle_", "classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05", null ],
     [ "imageFileName_", "classmtgb_1_1ImageRenderer.html#ac2026c29ea8da9fb2a1ce77666701cb5", null ],

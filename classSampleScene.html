@@ -297,9 +297,9 @@ SampleScene 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#a62c3eb59801fdd460e8b316a0a879bb4">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00054">54</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>{</div>
-<div class="line"><span class="lineno">   56</span>}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -328,9 +328,9 @@ SampleScene 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#ae9f7881aa324e201222b276fdacec76b">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00058">58</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
-<div class="line"><span class="lineno">   60</span>}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
+<div class="line"><span class="lineno">   61</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -718,19 +718,20 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="line"><span class="lineno">   29</span> </div>
 <div class="line"><span class="lineno">   30</span>    Instantiate&lt;GameOverManager&gt;();</div>
 <div class="line"><span class="lineno">   31</span>    Instantiate&lt;SkySphere&gt;();</div>
-<div class="line"><span class="lineno">   32</span>    std::optional&lt;nlohmann::json&gt; json = Game::System&lt;StageManger&gt;().GetStageJson(<a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a>);</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (json.has_value())</div>
-<div class="line"><span class="lineno">   34</span>    {</div>
-<div class="line"><span class="lineno">   35</span>        <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">GameObjectGenerator::GenerateFromJson</a>(json);</div>
-<div class="line"><span class="lineno">   36</span>        <span class="comment">// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる</span></div>
-<div class="line"><span class="lineno">   37</span>        <span class="comment">// TODO: マジックナンバーを修正</span></div>
-<div class="line"><span class="lineno">   38</span>        <a class="code hl_function" href="classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53">Time::WaitFrame</a>(2);</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   41</span>    {</div>
-<div class="line"><span class="lineno">   42</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;JSONファイルが見つかりません&quot;</span>);</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
-<div class="line"><span class="lineno">   44</span>}</div>
+<div class="line"><span class="lineno">   32</span>    Instantiate&lt;RespawnManager&gt;();</div>
+<div class="line"><span class="lineno">   33</span>    std::optional&lt;nlohmann::json&gt; json = Game::System&lt;StageManger&gt;().GetStageJson(<a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a>);</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (json.has_value())</div>
+<div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>        <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">GameObjectGenerator::GenerateFromJson</a>(json);</div>
+<div class="line"><span class="lineno">   37</span>        <span class="comment">// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる</span></div>
+<div class="line"><span class="lineno">   38</span>        <span class="comment">// TODO: マジックナンバーを修正</span></div>
+<div class="line"><span class="lineno">   39</span>        <a class="code hl_function" href="classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53">Time::WaitFrame</a>(2);</div>
+<div class="line"><span class="lineno">   40</span>    }</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;JSONファイルが見つかりません&quot;</span>);</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="line"><span class="lineno">   45</span>}</div>
 <div class="ttc" id="aclassTypeRegistry_html_a45f221653ae5cef14b554cb67ead4274"><div class="ttname"><a href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a></div><div class="ttdeci">static TypeRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry.cpp:10</a></div></div>
 <div class="ttc" id="aclassTypeRegistry_html_a861b038af6a153d3b3383befb04873d2"><div class="ttname"><a href="classTypeRegistry.html#a861b038af6a153d3b3383befb04873d2">TypeRegistry::Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00016">TypeRegistry.cpp:16</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a75cbc1b1bde2c45d36a91cacc6fbdd3f"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">mtgb::GameObjectGenerator::GenerateFromJson</a></div><div class="ttdeci">static void GenerateFromJson(const nlohmann::json &amp;_json)</div><div class="ttdoc">JSONからゲームオブジェクトを生成する</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00035">GameObjectGenerator.cpp:35</a></div></div>
@@ -982,13 +983,13 @@ template&lt;class GameObjectT , typename ... Args&gt; </div>
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#aee3999ef14c77f7a41365d751867d4ab">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00046">46</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>{</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::Escape))</div>
-<div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>        <a class="code hl_function" href="classmtgb_1_1Game.html#a89610789c1e997fbf101d1137f9407a9">Game::Exit</a>();</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
-<div class="line"><span class="lineno">   52</span>}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00047">47</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::Escape))</div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_function" href="classmtgb_1_1Game.html#a89610789c1e997fbf101d1137f9407a9">Game::Exit</a>();</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1Game_html_a89610789c1e997fbf101d1137f9407a9"><div class="ttname"><a href="classmtgb_1_1Game.html#a89610789c1e997fbf101d1137f9407a9">mtgb::Game::Exit</a></div><div class="ttdeci">static void Exit()</div><div class="ttdoc">ゲームを終了する</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00029">Game.cpp:29</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1InputUtil_html_a4dade03e3bbb665d967f7411d82b8d94"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
 </div><!-- fragment -->

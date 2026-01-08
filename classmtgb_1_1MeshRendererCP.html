@@ -718,16 +718,18 @@ mtgb::MeshRendererCP 連携図</div>
 <div class="line"><span class="lineno">   21</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a1a037eb9620331b340d705b109d7a3d5">poolId_</a>[i] == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>) <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">   22</span> </div>
 <div class="line"><span class="lineno">   23</span>        <span class="keyword">const</span> MeshRenderer&amp; renderer = <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a7e94ec8a5981bee7000d7ab292a767d4">pool_</a>[i];</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (renderer.CanRender() == <span class="keyword">false</span> || _layerFlag.Has(renderer.GetLayer()) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (renderer.enabled_ == <span class="keyword">false</span>)</div>
 <div class="line"><span class="lineno">   25</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   26</span>        </div>
-<div class="line"><span class="lineno">   27</span>        renderer.Render();</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
-<div class="line"><span class="lineno">   29</span>}</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (renderer.CanRender() == <span class="keyword">false</span> || _layerFlag.Has(renderer.GetLayer()) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   28</span>        </div>
+<div class="line"><span class="lineno">   29</span>        renderer.Render();</div>
+<div class="line"><span class="lineno">   30</span>    }</div>
+<div class="line"><span class="lineno">   31</span>}</div>
 <div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MeshRenderer_8h_source.html#l00053">mtgb::MeshRenderer::CanRender()</a>, <a class="el" href="MeshRenderer_8h_source.html#l00050">mtgb::MeshRenderer::GetLayer()</a>, <a class="el" href="BitFlag_8h_source.html#l00174">mtbit::BitFlag&lt; EnumStructT &gt;::Has()</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00046">mtgb::MeshRenderer::Render()</a>.</p>
+<p class="reference">参照先 <a class="el" href="MeshRenderer_8h_source.html#l00053">mtgb::MeshRenderer::CanRender()</a>, <a class="el" href="IRenderable_8h_source.html#l00045">mtgb::IRenderable::enabled_</a>, <a class="el" href="MeshRenderer_8h_source.html#l00050">mtgb::MeshRenderer::GetLayer()</a>, <a class="el" href="BitFlag_8h_source.html#l00174">mtbit::BitFlag&lt; EnumStructT &gt;::Has()</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00046">mtgb::MeshRenderer::Render()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">

@@ -21,6 +21,7 @@ var classmtgb_1_1MeshRenderer =
     [ "SetMesh", "classmtgb_1_1MeshRenderer.html#a831e5280c0988b74a0d8f9c88a3b6b28", null ],
     [ "ComponentPool< ComponentT, ComponentPoolT >", "classmtgb_1_1MeshRenderer.html#a37d6b5582bd4cc3eea5feb793ae19aa4", null ],
     [ "ComponentPoolT", "classmtgb_1_1MeshRenderer.html#aed716499a289d6dd69c0d40b683142aa", null ],
+    [ "enabled_", "classmtgb_1_1MeshRenderer.html#a635a1917f3a135b9933041bde5077610", null ],
     [ "entityId_", "classmtgb_1_1MeshRenderer.html#a8aa4f5300c39f9f4705a587fd0a72639", null ],
     [ "frame_", "classmtgb_1_1MeshRenderer.html#ae46a6a02503be46fbec1c8a4c88d6a3f", null ],
     [ "layer", "classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200", null ],
