@@ -41,5 +41,7 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		virtual GameObjectLayerFlag GetLayer() const = 0;
+		// •`‰æ‚ğs‚¤‚©”Û‚©
+		bool enabled_;
 	};
 }

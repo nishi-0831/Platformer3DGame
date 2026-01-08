@@ -25,8 +25,12 @@ Player::Player()
 	, pRigidBody_ { Component<RigidBody>() }
 	, pCamera_{ Instantiate<Camera>(this) }
 	, pCameraTransform_{ &Transform::Get(pCamera_->GetEntityId())}
-	, hp_{3}
+	, hp_{ 3 }
 	, pHPViewer_{ nullptr }
+	, isInvincible_{ false }
+	, invincibilityTimeSec_{ 2.0f }
+	, changeVisibilitySpan_{ 0.3f }
+	, elapsedInvincibilityTime_{ 0.0f }
 {
 	//pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
@@ -80,6 +84,19 @@ void Player::Update()
 	pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
 	
 	state_.Update();
+
+	// ダメージを受けた後の無敵時間
+	if (isInvincible_)
+	{
+		elapsedInvincibilityTime_ += Time::DeltaTimeF();
+		if (elapsedInvincibilityTime_ >= invincibilityTimeSec_)
+		{
+			isInvincible_ = false;
+			pMeshRenderer_->enabled_ = true;
+			elapsedInvincibilityTime_ = 0.0f;
+			Timer::Remove(hTimerChangeVisibility_);
+		}
+	}
 }
 
 void Player::InitializeState()
@@ -296,6 +313,9 @@ void Player::OnHitSide(IActor* pOther)
 
 void Player::TakeDamage(int _damage)
 {
+	// 無敵ならダメージ処理は行わない
+	if (isInvincible_)
+		return;
 	// 負の値は無視
 	if (_damage <= 0)
 		return;
@@ -312,6 +332,14 @@ void Player::TakeDamage(int _damage)
 	}
 
 	pHPViewer_->TakeDamage(_damage);
+
+	isInvincible_ = true;
+	hTimerChangeVisibility_ = Timer::AddInterval(changeVisibilitySpan_, [this]
+		{
+			pMeshRenderer_->enabled_ = !pMeshRenderer_->enabled_;
+		}
+	, true // firstCall: 即座に処理を呼ぶ
+	);
 }
 
 

@@ -14,7 +14,7 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	, pTargetTransform_{ nullptr }
 	, pInterpolator_{ Component<Interpolator>() }
 	, foundFOV_{ 45.0f }
-	, foundDistance_{ 5.0f }
+	, foundDistance_{ 6.0f }
 	, waitTimeTransitionCharge_{1.0f}
 	, waitTime_{ 3.0f }
 	, chargeSpeed_{ 4.0f }
@@ -117,7 +117,6 @@ void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 		// 踏まれたSE再生
 		Audio::PlayOneShotFile("Sound/Stomp.mp3");
 
-
 		// 踏んだアクターを上に飛ばす
 		EntityId id = _pOther->GetId();
 		RigidBody& otherRigidBody = RigidBody::Get(id);
@@ -131,7 +130,11 @@ void PatrolChargerEnemy::OnHitSide(IActor* _pOther)
 {
 	if (state_.Current() == STATE::CHARGE)
 	{
+		LOGIMGUI("collision enter player : ChargeEnemy");
 		_pOther->TakeDamage(takeDamageNum_);
+		state_.Change(STATE::WAIT);
+		waitTime_ = waitTimeAfterCharge_;
+		nextState_ = STATE::RETURN_TO_PATROL;
 	}
 }
 
@@ -231,6 +234,7 @@ void PatrolChargerEnemy::Charge()
 	// ターゲットとのy座標が異なると空中歩行してしまうから。
 	// 斜面を移動させる場合は修正が必要
 	// ------------------------------------------------------
+	//Vector3 distPos = { pTargetTransform_->position };
 	Vector3 distPos = { pTargetTransform_->position.x ,pTransform_->position.y,pTargetTransform_->position.z };
 	Vector3 toTarget = distPos - pTransform_->GetWorldPosition();
 	Vector3 toTargetDir = Vector3::Normalize(toTarget);
@@ -301,14 +305,6 @@ bool PatrolChargerEnemy::Search()
 		return true;
 	}
 	return false;
-}
-
-void PatrolChargerEnemy::OnChargePlayer()
-{
-	LOGIMGUI("collision enter player : ChargeEnemy");
-	state_.Change(STATE::WAIT);
-	waitTime_ = waitTimeAfterCharge_;
-	nextState_ = STATE::RETURN_TO_PATROL;
 }
 
 void PatrolChargerEnemy::OnCollisionEnter(EntityId _entityId)

@@ -44,4 +44,16 @@ private:
 	std::optional<FbxAnimationController> animController_;
 	int hp_;
 	HPViewer* pHPViewer_;
+	// Invincible 
+	// Invincibility frames
+	// –³“G‚©‚Ç‚¤‚©
+	bool isInvincible_;
+	// ”í’eA–³“G‚É‚È‚éŠÔ(•b)
+	float invincibilityTimeSec_;
+	// –³“GŠÔ’†‚ÌA•`‰æ—L–³‚ğØ‚è‘Ö‚¦‚éŠÔŠu
+	float changeVisibilitySpan_;
+	// –³“G‚É‚È‚Á‚Ä‚©‚ç‚ÌŒo‰ßŠÔ
+	float elapsedInvincibilityTime_;
+	// •`‰æ—L–³‚ğØ‚è‘Ö‚¦‚éˆ—‚Ìƒnƒ“ƒhƒ‹
+	TimerHandle hTimerChangeVisibility_;
 };

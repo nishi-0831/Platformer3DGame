@@ -14,10 +14,6 @@ public:
 	void OnHitSide(IActor* _pOther) override;
 	void TakeDamage(int _damage) override;
 private:
-	/// <summary>
-	/// ƒvƒŒƒCƒ„[‚É‘Ì“–‚½‚è‚µ‚½Û‚Ìˆ—
-	/// </summary>
-	void OnChargePlayer();
 	void OnCollisionEnter(EntityId _entityId);
 	Transform* pTransform_;
 	RigidBody* pRigidBody_;
