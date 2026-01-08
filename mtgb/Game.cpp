@@ -125,16 +125,12 @@ void mtgb::Game::DeserializeComponents(EntityId _entityId, const nlohmann::json&
 
 		Game::DeserializeComponent(componentPoolType.value(), _entityId, _json);
 	}
-
-	
 }
 
 std::span<IRenderableCP*> mtgb::Game::GetRenderableCPs()
 {
 	return { pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size()};
 }
-
-
 
 void mtgb::Game::InitializeSystems(const std::list<ISystem*>& _uninitialized)
 {

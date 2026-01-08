@@ -19,7 +19,7 @@ namespace
 
 mtgb::Collider::Collider(EntityId _entityId)
 	: IComponent(_entityId)
-	, colliderType_{ ColliderType::TYPE_CAPSULE }
+	, colliderType_{ ColliderType::TYPE_SPHERE }
 	, isStatic_{ false }
 	, colliderTag_{ ColliderTag::GAME_OBJECT }
 	, isTrigger_{ false }

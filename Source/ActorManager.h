@@ -11,11 +11,16 @@ public:
 	void Update() override;
 	/// <summary>
 	/// アクターを登録
-	/// ActorManagerはポインタの解放は行わないので、呼び出し側で寿命の管理をしてください
+	/// ActorManagerはポインタの解放を行わないので、呼び出し側で寿命の管理をしてください
 	/// </summary>
 	/// <param name="_pActor"></param>
 	void RegisterActor(IActor* _pActor);
 	void UnregisterActor(EntityId _id);
+	/// <summary>
+	/// アクターのポインタを返す
+	/// </summary>
+	/// <param name="_id"></param>
+	/// <returns>引数のIdに合致するアクターのポインタ。いない場合はnullptr</returns>
 	IActor* GetActor(EntityId _id);
 private:
 	std::list<IActor*> actors_;

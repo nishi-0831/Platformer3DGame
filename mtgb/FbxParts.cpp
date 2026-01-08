@@ -224,7 +224,6 @@ bool mtgb::FbxParts::TryGetBonePositionAtNow(const std::string& _boneName, Vecto
 	if (itr != boneNamePair_.end())  // end ‚¶‚á‚È‚¢‚È‚çŒ©‚Â‚©‚Á‚½
 	{
 		Matrix4x4 m{};
-		//DirectX::XMStoreFloat4x4(&m, itr->second->newPose);
 		_pPosition->x = m.r[3].m128_f32[0];
 		_pPosition->y = m.r[3].m128_f32[1];
 		_pPosition->z = m.r[3].m128_f32[2];

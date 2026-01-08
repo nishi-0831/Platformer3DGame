@@ -9,7 +9,7 @@
 #include "../Source/SkySphere.h"
 #include "../Source/MovingFloor.h"
 #include "../Source/GameOverManager.h"
-
+#include "../Source/RespawnManager.h"
 SampleScene::SampleScene()
 	: stageID_{StageID::STAGE_ONE}
 {
@@ -29,6 +29,7 @@ void SampleScene::Initialize()
 
 	Instantiate<GameOverManager>();
 	Instantiate<SkySphere>();
+	Instantiate<RespawnManager>();
 	std::optional<nlohmann::json> json = Game::System<StageManger>().GetStageJson(stageID_);
 	if (json.has_value())
 	{

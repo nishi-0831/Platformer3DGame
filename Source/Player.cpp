@@ -46,14 +46,7 @@ Player::Player()
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
-
-	// 落下イベントを購読
-	Game::System<EventManager>().GetEvent<PlayerFellOutEvent>().Subscribe([this](const PlayerFellOutEvent& _event)
-		{
-			// 強制的にHPをゼロにする
-			TakeDamage(hp_);
-		}, EventScope::Scene);
-
+	
 	// ゴールイベントを購読
 	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Subscribe([this](const PlayerReachedGoalEvent& _event)
 		{
