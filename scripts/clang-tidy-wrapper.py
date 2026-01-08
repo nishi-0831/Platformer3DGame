@@ -9,6 +9,7 @@ run-clang-tidy.py にフィルタリング付きで委譲する
 import sys
 import os
 import subprocess
+import yaml
 
 def extract_compile_commands_dir(args):
     """ extract the compile_commands.json directory specified with -p from the arguments"""
@@ -22,7 +23,6 @@ def extract_compile_commands_dir(args):
 def find_repo_root():
     # カレントディレクトリを取得
     current = os.getcwd()
-
      # 現在のディレクトリからルートまで遡る
     while current != os.path.dirname(current):  # ドライブルート到達まで
         # .git フォルダまたは Game.sln があればそこがルート
@@ -94,6 +94,10 @@ def main():
     #     print(f"[ERROR] compile_commands.json not found: {compile_commands_json}", file=sys.stderr)
     #     sys.exit(1)
 
+    config_path = os.path.join(script_dir,'clangcl-config.yaml') 
+    with open(config_path,'r',encoding='utf-8') as f:
+        config = yaml.safe_load(f)
+    
     # run-clang-tidy.pyの存在確認
     if not os.path.exists(run_tidy_script):
         print(f"[ERROR] run-clang-tidy.py not found: {run_tidy_script}", file=sys.stderr)
@@ -110,17 +114,9 @@ def main():
     # run-clang-tidy.py コマンドを構築
     # -source-filter に正規表現を渡して、mtgb または Source フォルダ配下の .cpp ファイルのみを対象にする
     # Windows のパス区切り(\\))と POSIX の(/)の両方にマッチするように [\\/]
-    source_filter_regex = r'.*(mtgb|Source)[\\/].*'
-    header_filter_regex = r'.*(mtgb|Source)[\\/].*'
-    extra_args = [
-        '-extra-arg-before=-fms-extensions',
-        '-extra-arg-before=-fms-compatibility',
-        '-extra-arg-before=-fms-compatibility-version=19.0',
-        '-extra-arg-before=-D_MSC_VER=1928',
-        '-extra-arg-before=-fdelayed-template-parsing',
-        '-extra-arg-before=-target',
-        '-extra-arg-before=x86_64-pc-windows-msvc',
-    ]
+    source_filter_regex = config.get('source_filter')
+    header_filter_regex = config.get('header_filter')
+    extra_args = config.get('extra_args',[])
 
     cmd = [
         'python',
@@ -129,7 +125,6 @@ def main():
         '-j', str(jobs),
         '-source-filter', source_filter_regex,
         '-header-filter', header_filter_regex,
-        '-export-fixes', './scripts/fixes',
     ] + extra_args
     
     print(f"[clang-tidy-wrapper] execute: {' '.join(cmd)}", file=sys.stderr)
@@ -139,6 +134,7 @@ def main():
         exit_code = result.returncode
         print(f"[clang-tidy-wrapper] finish code: {exit_code}", file=sys.stderr)
         sys.exit(exit_code)
+        sys.exit(0)
     except Exception as e:
         print(f"[ERROR] run-clang-tidy.py error during execuition: {e}", file=sys.stderr)
         sys.exit(1)

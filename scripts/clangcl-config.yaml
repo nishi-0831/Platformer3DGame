@@ -1,0 +1,10 @@
+source_filter: '.*(mtgb|Source)[\\/].*'
+header_filter: '.*(mtgb|Source)[\\/].*'
+extra_args:
+  - "-extra-arg-before=-fms-extensions"
+  - "-extra-arg-before=-fms-compatibility"
+  - "-extra-arg-before=-fms-compatibility-version=19.0"
+  - "-extra-arg-before=-D_MSC_VER=1928"
+  - "-extra-arg-before=-fdelayed-template-parsing"
+  - "-extra-arg-before=-target"
+  - "-extra-arg-before=x86_64-pc-windows-msvc"

@@ -53,7 +53,7 @@ mtgb::FbxParts::~FbxParts()
 void mtgb::FbxParts::Initialize()
 {
 	// MEMO: テクスチャUVが異なる頂点を分割&複製 → UV情報と頂点情報の一致調整
-	pMesh_->SplitPoints(FbxLayerElement::eTextureDiffuse);
+	// pMesh_->SplitPoints(FbxLayerElement::eTextureDiffuse);
 	// 各情報の個数を取得
 	vertexCount_		= pMesh_->GetControlPointsCount(); // 頂点の数
 	polygonCount_		= pMesh_->GetPolygonCount();	   // ポリゴンの数
@@ -293,39 +293,127 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 
 	int uvCount{pMesh_->GetTextureUVCount()};
 	FbxLayerElementUV* pUV{pMesh_->GetLayer(0)->GetUVs()};
-	if (uvCount > 0 && pUV->GetMappingMode() == FbxLayerElement::eByControlPoint)
+	if (pUV == nullptr || uvCount == 0)
 	{
-		int writeCount = (std::min)(uvCount, static_cast<int>(vertexCount_));
-		for (int i = 0; i < writeCount; i++)
+		// UVが存在しない場合、デフォルト値を設定
+		for (uint32_t i = 0; i < vertexCount_; i++)
 		{
-			fbxsdk::FbxVector2 uv{pUV->GetDirectArray().GetAt(i)};
-			pVertexes_[i]
-				.uv = {static_cast<float>(uv.mData[0]), static_cast<float>(1.0 - uv.mData[1]), static_cast<float>(0.0)};
+			pVertexes_[i].uv = {0.0f, 0.0f, 0.0f};
 		}
 	}
-
-	// 骨の処理
-	if (hasSkinnedMesh_)
+	else
 	{
-		InitializeSkelton();
+		FbxLayerElement::EMappingMode mappingMode	  = pUV->GetMappingMode();
+		FbxLayerElement::EReferenceMode referenceMode = pUV->GetReferenceMode();
+
+		if (mappingMode == FbxLayerElement::eByControlPoint)
+		{
+			if (referenceMode == FbxLayerElement::eDirect)
+			{
+				// 直接アクセス: コントロールポイントごとに1つのUV
+				int writeCount = (std::min)(uvCount, static_cast<int>(vertexCount_));
+				for (int i = 0; i < writeCount; i++)
+				{
+					FbxVector2 uv	 = pUV->GetDirectArray().GetAt(i);
+					pVertexes_[i].uv = {
+						static_cast<float>(uv[0]),
+						static_cast<float>(1.0 - uv[1]), // Y座標を反転
+						0.0f
+					};
+				}
+			}
+			else if (referenceMode == FbxLayerElement::eIndexToDirect)
+			{
+				// インデックス参照: コントロールポイントごとにインデックス
+				for (uint32_t i = 0; i < vertexCount_; i++)
+				{
+					if (i < static_cast<uint32_t>(pUV->GetIndexArray().GetCount()))
+					{
+						int uvIndex = pUV->GetIndexArray().GetAt(i);
+						if (uvIndex >= 0 && uvIndex < pUV->GetDirectArray().GetCount())
+						{
+							FbxVector2 uv	 = pUV->GetDirectArray().GetAt(uvIndex);
+							pVertexes_[i].uv = {static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f};
+						}
+					}
+				}
+			}
+		}
+		else if (mappingMode == FbxLayerElement::eByPolygonVertex)
+		{
+			if (referenceMode == FbxLayerElement::eDirect)
+			{
+				// 直接アクセス: ポリゴン頂点ごとに1つのUV
+				int polygonVertexIndex = 0;
+				for (uint32_t poly = 0; poly < polygonCount_; poly++)
+				{
+					for (uint32_t vertex = 0; vertex < 3; vertex++)
+					{
+						int controlPointIndex = pMesh_->GetPolygonVertex(poly, vertex);
+
+						if (polygonVertexIndex < pUV->GetDirectArray().GetCount() && controlPointIndex >= 0 &&
+							controlPointIndex < static_cast<int>(vertexCount_))
+						{
+
+							FbxVector2 uv = pUV->GetDirectArray().GetAt(polygonVertexIndex);
+							pVertexes_[controlPointIndex]
+								.uv = {static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f};
+						}
+						polygonVertexIndex++;
+					}
+				}
+			}
+			else if (referenceMode == FbxLayerElement::eIndexToDirect)
+			{
+				// インデックス参照: ポリゴン頂点ごとにインデックス
+				int polygonVertexIndex = 0;
+				for (uint32_t poly = 0; poly < polygonCount_; poly++)
+				{
+					for (uint32_t vertex = 0; vertex < 3; vertex++)
+					{
+						int controlPointIndex = pMesh_->GetPolygonVertex(poly, vertex);
+
+						if (polygonVertexIndex < pUV->GetIndexArray().GetCount() && controlPointIndex >= 0 &&
+							controlPointIndex < static_cast<int>(vertexCount_))
+						{
+
+							int uvIndex = pUV->GetIndexArray().GetAt(polygonVertexIndex);
+							if (uvIndex >= 0 && uvIndex < pUV->GetDirectArray().GetCount())
+							{
+								FbxVector2 uv = pUV->GetDirectArray().GetAt(uvIndex);
+								pVertexes_[controlPointIndex]
+									.uv = {static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f};
+							}
+						}
+						polygonVertexIndex++;
+					}
+				}
+			}
+		}
+
+		// 骨の処理
+		if (hasSkinnedMesh_)
+		{
+			InitializeSkelton();
+		}
+
+		const D3D11_BUFFER_DESC BUFFER_DESC{
+			.ByteWidth			 = static_cast<UINT>(sizeof(Vertex) * vertexCount_),
+			.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: 途中で書き換えるため dynamic
+			.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
+			.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE, // 途中で書き換えるから
+			.MiscFlags			 = 0,
+			.StructureByteStride = 0,
+		};
+
+		const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+			.pSysMem		  = pVertexes_,
+			.SysMemPitch	  = 0,
+			.SysMemSlicePitch = 0,
+		};
+
+		_pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, pVertexBuffer_.ReleaseAndGetAddressOf());
 	}
-
-	const D3D11_BUFFER_DESC BUFFER_DESC{
-		.ByteWidth			 = static_cast<UINT>(sizeof(Vertex) * vertexCount_),
-		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: 途中で書き換えるため dynamic
-		.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
-		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE, // 途中で書き換えるから
-		.MiscFlags			 = 0,
-		.StructureByteStride = 0,
-	};
-
-	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
-		.pSysMem		  = pVertexes_,
-		.SysMemPitch	  = 0,
-		.SysMemSlicePitch = 0,
-	};
-
-	_pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, pVertexBuffer_.ReleaseAndGetAddressOf());
 }
 
 void mtgb::FbxParts::InitializeIndexBuffer(ID3D11Device* _pDevice)
@@ -354,7 +442,7 @@ void mtgb::FbxParts::InitializeIndexBuffer(ID3D11Device* _pDevice)
 
 		// バッファの設定
 		const D3D11_BUFFER_DESC BUFFER_DESC{
-			.ByteWidth			 = static_cast<UINT>(sizeof(DWORD)) * count,
+			.ByteWidth			 = static_cast<UINT>(sizeof(DWORD) * count),
 			.Usage				 = D3D11_USAGE_DEFAULT, // MEMO: 途中で書き換えないため DEFAULT
 			.BindFlags			 = D3D11_BIND_INDEX_BUFFER,
 			.CPUAccessFlags		 = 0,
