@@ -12,7 +12,7 @@
 
   <ItemDefinitionGroup Condition="'$(UseClangCL)' == 'true'">
     <ClCompile>
-      <AdditionalOptions>-fms-extensions -fms-compatibility -fms-compatibility-version=19.0 -D_MSC_VER=1928 -target x86_64-pc-windows-msvc -fdelayed-template-parsing -fno-complete-member-pointers %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/Zi -fms-extensions -fms-compatibility -fms-compatibility-version=19.0 -D_MSC_VER=1928 -target x86_64-pc-windows-msvc -fdelayed-template-parsing -fno-complete-member-pointers %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
   </ItemDefinitionGroup>
 </Project>

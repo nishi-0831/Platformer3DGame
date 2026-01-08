@@ -595,7 +595,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
-    <None Include=".clang-tidy" />
     <None Include=".github\workflows\DeployDoxygen.yml" />
     <None Include=".github\workflows\ClangTidyAnalysis.yml" />
     <None Include=".github\workflows\ReleaseBuildAndPublish.yml" />
@@ -607,6 +606,7 @@
     <None Include="mtgb\DefaultShow.inl" />
     <None Include="mtgb\StatefulComponent.inl" />
     <None Include="packages.config" />
+    <None Include="scripts\.clang-tidy" />
     <None Include="scripts\clang-tidy-wrapper.py" />
     <None Include="scripts\fix_compile_commands.py" />
     <None Include="scripts\run-clang-tidy-filtered.ps1" />
@@ -844,7 +844,7 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_AMD64_</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(FBX)\include;%(AdditionalIncludeDirectories);$(ProjectDir)refl-cpp;$(ProjectDir)EffekseeLib\install_msvc2022_x64\include\Effekseer</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(FBX)\include;$(ProjectDir)refl-cpp;$(ProjectDir)EffekseeLib\install_msvc2022_x64\include\Effekseer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>

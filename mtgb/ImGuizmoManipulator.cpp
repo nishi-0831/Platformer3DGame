@@ -142,6 +142,7 @@ mtgb::ImGuizmoManipulator::ImGuizmoManipulator(std::function<void(Command*)> _co
 	, commandListener_{_commandListener}
 	, isUsing_{false}
 	, wasUsing_{false}
+	, pTargetTransform_{nullptr}
 {
 	SubscribeEvents();
 }

@@ -7,6 +7,7 @@
 
 mtgb::Fbx::Fbx()
 	: pFbxManager_{nullptr}
+	, handleCounter_{0}
 {
 }
 
