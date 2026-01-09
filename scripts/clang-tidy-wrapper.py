@@ -116,6 +116,7 @@ def main():
     # Windows のパス区切り(\\))と POSIX の(/)の両方にマッチするように [\\/]
     source_filter_regex = config.get('source_filter')
     header_filter_regex = config.get('header_filter')
+    export_fixes_path = config.get('export-fixes')
     extra_args = config.get('extra_args',[])
 
     cmd = [
@@ -125,6 +126,7 @@ def main():
         '-j', str(jobs),
         '-source-filter', source_filter_regex,
         '-header-filter', header_filter_regex,
+        '-export-fixes' , export_fixes_path
     ] + extra_args
     
     print(f"[clang-tidy-wrapper] execute: {' '.join(cmd)}", file=sys.stderr)
