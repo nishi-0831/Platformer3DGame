@@ -1,0 +1,1090 @@
+cmake_minimum_required(VERSION 3.16.0)
+
+# 使用するOSのバージョン
+set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
+# プロジェクト名 使用言語
+project(Game LANGUAGES C CXX)
+
+################################################################################
+# Set target arch type if empty. Visual studio solution generator provides it.
+################################################################################
+if(NOT CMAKE_VS_PLATFORM_NAME)
+    set(CMAKE_VS_PLATFORM_NAME "x64")
+endif()
+message("${CMAKE_VS_PLATFORM_NAME} architecture in use")
+
+if(NOT ("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64"
+     OR "${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86"))
+    message(FATAL_ERROR "${CMAKE_VS_PLATFORM_NAME} arch is not supported!")
+endif()
+
+################################################################################
+# Global configuration types
+################################################################################
+set(CMAKE_CONFIGURATION_TYPES
+    "Debug"
+    "Release"
+    CACHE STRING "" FORCE
+)
+
+################################################################################
+# Global compiler options
+################################################################################
+if(MSVC)
+    # remove default flags provided with CMake for MSVC
+    set(CMAKE_CXX_FLAGS "")
+    set(CMAKE_CXX_FLAGS_DEBUG "")
+    set(CMAKE_CXX_FLAGS_RELEASE "")
+endif()
+
+################################################################################
+# Global linker options
+################################################################################
+if(MSVC)
+    # remove default flags provided with CMake for MSVC
+    set(CMAKE_EXE_LINKER_FLAGS "")
+    set(CMAKE_MODULE_LINKER_FLAGS "")
+    set(CMAKE_SHARED_LINKER_FLAGS "")
+    set(CMAKE_STATIC_LINKER_FLAGS "")
+    set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS}")
+    set(CMAKE_MODULE_LINKER_FLAGS_DEBUG "${CMAKE_MODULE_LINKER_FLAGS}")
+    set(CMAKE_SHARED_LINKER_FLAGS_DEBUG "${CMAKE_SHARED_LINKER_FLAGS}")
+    set(CMAKE_STATIC_LINKER_FLAGS_DEBUG "${CMAKE_STATIC_LINKER_FLAGS}")
+    set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS}")
+    set(CMAKE_MODULE_LINKER_FLAGS_RELEASE "${CMAKE_MODULE_LINKER_FLAGS}")
+    set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS}")
+    set(CMAKE_STATIC_LINKER_FLAGS_RELEASE "${CMAKE_STATIC_LINKER_FLAGS}")
+endif()
+
+################################################################################
+# Nuget packages function stub.
+################################################################################
+function(use_package TARGET PACKAGE VERSION)
+    message(WARNING "No implementation of use_package. Create yours. "
+                    "Package \"${PACKAGE}\" with version \"${VERSION}\" "
+                    "for target \"${TARGET}\" is ignored!")
+endfunction()
+
+################################################################################
+# Common utils
+################################################################################
+include(CMake/Utils.cmake)
+
+################################################################################
+# Additional Global Settings(add specific info there)
+################################################################################
+include(CMake/GlobalSettingsInclude.cmake OPTIONAL)
+
+################################################################################
+# Use solution folders feature
+################################################################################
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+################################################################################
+# Sub-projects
+################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set(PROJECT_NAME Project1)
+
+################################################################################
+# Source groups
+################################################################################
+set(no_group_source_files
+    ".clang-format"
+    ".pre-commit-config.yaml"
+    "Directory.Build.props"
+    "scripts/.clang-tidy"
+    "scripts/clang-tidy-wrapper.py"
+    "scripts/clangcl-config.yaml"
+    "scripts/fix_compile_commands.py"
+    "scripts/run-clang-tidy-filtered.ps1"
+    "scripts/run-clang-tidy-filtered.sh"
+    "Tools/GenerateComponentCpp.sbn"
+    "通信体系.txt"
+)
+source_group("" FILES ${no_group_source_files})
+
+set(01Game
+    "mtgb/Box3D.cpp"
+    "mtgb/Box3D.h"
+    "Source/ActorManager.h"
+    "Source/Camera.cpp"
+    "Source/Camera.h"
+    "Source/CircularSaw.h"
+    "Source/FadeOutScreen.h"
+    "Source/GameEvents.h"
+    "Source/GameOverZone.h"
+    "Source/Goal.cpp"
+    "Source/Goal.h"
+    "Source/HPViewer.h"
+    "Source/IActor.h"
+    "Source/MovingFloor.h"
+    "Source/PatrolChargerEnemy.h"
+    "Source/Player.h"
+    "Source/RegisterGameObjectType.h"
+    "Source/SampleGame.cpp"
+    "Source/SampleGame.h"
+    "Source/Scenes/SampleScene.cpp"
+    "Source/Scenes/SampleScene.h"
+    "Source/ScoreItem.h"
+    "Source/SeaPlane.h"
+    "Source/SkySphere.h"
+    "Source/StageEditScene.h"
+    "Source/StageID.h"
+    "Source/StageManager.h"
+    "Source/TheMain.cpp"
+    "Source/TitleScene.cpp"
+    "Source/TitleScene.h"
+)
+source_group("01Game" FILES ${01Game})
+
+set(02Assets__Shader
+    "Assets/Shader/2DCommon.hlsli"
+    "Assets/Shader/3DCommon.hlsli"
+)
+source_group("02Assets\\Shader" FILES ${02Assets__Shader})
+
+set(03mtgb
+    "mtgb/ReflectionMacro.h"
+    "mtgb/stdafx.cpp"
+    "mtgb/stdafx.h"
+    "mtgb/Transform.generated.h"
+)
+source_group("03mtgb" FILES ${03mtgb})
+
+set(03mtgb__Component
+    "mtgb/AudioPlayer.cpp"
+    "mtgb/AudioPlayer.h"
+    "mtgb/Collider.cpp"
+    "mtgb/Collider.h"
+    "mtgb/ComponentConcept.h"
+    "mtgb/IComponent.cpp"
+    "mtgb/IComponent.h"
+    "mtgb/IGameObjectCreator.h"
+    "mtgb/ImageRenderer.cpp"
+    "mtgb/ImageRenderer.h"
+    "mtgb/Interpolator.cpp"
+    "mtgb/IRenderable.h"
+    "mtgb/ISerializableObject.h"
+    "mtgb/MeshRenderer.cpp"
+    "mtgb/RigidBody.cpp"
+    "mtgb/RigidBody.h"
+    "mtgb/TextRenderer.cpp"
+    "mtgb/TextRenderer.h"
+    "mtgb/Transform.cpp"
+    "mtgb/Transform.h"
+)
+source_group("03mtgb\\Component" FILES ${03mtgb__Component})
+
+set(03mtgb__Component__Data
+    "mtgb/AudioPlayerState.h"
+    "mtgb/ColliderState.h"
+    "mtgb/RigidBodyState.h"
+    "mtgb/TransformState.h"
+)
+source_group("03mtgb\\Component\\Data" FILES ${03mtgb__Component__Data})
+
+set(03mtgb__Component__Mement
+    "mtgb/IComponentMemento.h"
+)
+source_group("03mtgb\\Component\\Mement" FILES ${03mtgb__Component__Mement})
+
+set(03mtgb__Component__StatefulComponent
+    "mtgb/StatefulComponent.h"
+)
+source_group("03mtgb\\Component\\StatefulComponent" FILES ${03mtgb__Component__StatefulComponent})
+
+set(03mtgb__Core
+    "mtgb/cmtgb.h"
+    "mtgb/EntityManager.cpp"
+    "mtgb/EntityManager.h"
+    "mtgb/Game.cpp"
+    "mtgb/Game.h"
+    "mtgb/GameObject.cpp"
+    "mtgb/GameObject.h"
+    "mtgb/GameObjectBuilder.h"
+    "mtgb/GameObjectLayer.h"
+    "mtgb/GameObjectTag.h"
+    "mtgb/GameScene.cpp"
+    "mtgb/GameScene.h"
+    "mtgb/Handlers.h"
+    "mtgb/mtgb.cpp"
+    "mtgb/mtgb.h"
+)
+source_group("03mtgb\\Core" FILES ${03mtgb__Core})
+
+set(03mtgb__CoreType
+    "mtgb/ColliderType.h"
+    "mtgb/Color.cpp"
+    "mtgb/Color.h"
+    "mtgb/Command.h"
+    "mtgb/Matrix4x4.cpp"
+    "mtgb/Matrix4x4.h"
+    "mtgb/Quaternion.cpp"
+    "mtgb/Quaternion.h"
+    "mtgb/RectF.h"
+    "mtgb/RectInt.h"
+    "mtgb/RectT.h"
+    "mtgb/TransformCore.h"
+    "mtgb/Vector2.cpp"
+    "mtgb/Vector2.h"
+    "mtgb/Vector2F.h"
+    "mtgb/Vector2Int.cpp"
+    "mtgb/Vector2Int.h"
+    "mtgb/Vector2T.h"
+    "mtgb/Vector3.cpp"
+    "mtgb/Vector3.h"
+    "mtgb/Vector3Ref.h"
+    "mtgb/Vector4.cpp"
+    "mtgb/Vector4.h"
+)
+source_group("03mtgb\\CoreType" FILES ${03mtgb__CoreType})
+
+set(03mtgb__Includer
+    "mtgb/IncludingInput.h"
+    "mtgb/IncludingWindows.h"
+)
+source_group("03mtgb\\Includer" FILES ${03mtgb__Includer})
+
+set(03mtgb__Library__MTBin
+    "mtgb/MTBin/Common.h"
+    "mtgb/MTBin/MemoryStream.cpp"
+    "mtgb/MTBin/MemoryStream.h"
+)
+source_group("03mtgb\\Library\\MTBin" FILES ${03mtgb__Library__MTBin})
+
+set(03mtgb__Library__MTNet
+#    "mtgb/MTNet/BinaryReader.cpp"
+#    "mtgb/MTNet/BinaryReader.h"
+#    "mtgb/MTNet/BinaryWriter.cpp"
+#    "mtgb/MTNet/BinaryWriter.h"
+#    "mtgb/MTNet/Common.h"
+#    "mtgb/MTNet/EndPoint.cpp"
+#    "mtgb/MTNet/EndPoint.h"
+#    "mtgb/MTNet/HttpClient.cpp"
+#    "mtgb/MTNet/HttpClient.h"
+#    "mtgb/MTNet/HttpHeaderBuilder.cpp"
+#    "mtgb/MTNet/HttpHeaderBuilder.h"
+#    "mtgb/MTNet/Log.cpp"
+#    "mtgb/MTNet/Log.h"
+#    "mtgb/MTNet/Socket.cpp"
+#    "mtgb/MTNet/Socket.h"
+#    "mtgb/MTNet/TcpClient.cpp"
+#    "mtgb/MTNet/TcpClient.h"
+#    "mtgb/MTNet/TcpListener.cpp"
+#    "mtgb/MTNet/TcpListener.h"
+)
+source_group("03mtgb\\Library\\MTNet" FILES ${03mtgb__Library__MTNet})
+
+set(03mtgb__Library__MTStat
+    "mtgb/MTStat/MTStat.h"
+)
+source_group("03mtgb\\Library\\MTStat" FILES ${03mtgb__Library__MTStat})
+
+set(03mtgb__Library__Nlohmann-json
+    "mtgb/JsonADLSerializers.h"
+)
+source_group("03mtgb\\Library\\Nlohmann-json" FILES ${03mtgb__Library__Nlohmann-json})
+
+set(03mtgb__Shader
+#    "mtgb/FbxParts.cpp"
+#    "mtgb/FbxParts.h"
+    "mtgb/Figure.cpp"
+    "mtgb/Figure.h"
+    "mtgb/Ground.cpp"
+    "mtgb/Ground.h"
+    "mtgb/IShader.cpp"
+    "mtgb/IShader.h"
+    "mtgb/PlaneUVScroll.h"
+    "mtgb/Sprite.cpp"
+    "mtgb/Sprite.h"
+)
+source_group("03mtgb\\Shader" FILES ${03mtgb__Shader})
+
+set(03mtgb__System
+    "mtgb/ComponentFactory.h"
+    "mtgb/EventManager.cpp"
+    "mtgb/EventManager.h"
+    "mtgb/GameObjectFactory.h"
+    "mtgb/GameObjectTypeRegistry.h"
+    "mtgb/IGameObjectRegistrar.h"
+    "mtgb/ISystem.cpp"
+    "mtgb/ISystem.h"
+    "mtgb/RegisterCommonGameObjectType.cpp"
+    "mtgb/RegisterCommonGameObjectType.h"
+)
+source_group("03mtgb\\System" FILES ${03mtgb__System})
+
+set(03mtgb__System__AssetsManager
+    "mtgb/AssetsManager.cpp"
+    "mtgb/AssetsManager.h"
+)
+source_group("03mtgb\\System\\AssetsManager" FILES ${03mtgb__System__AssetsManager})
+
+set(03mtgb__System__Audio
+    "mtgb/Audio.cpp"
+    "mtgb/Audio.h"
+    "mtgb/AudioClip.cpp"
+    "mtgb/AudioClip.h"
+    "mtgb/AudioOneShot.cpp"
+    "mtgb/AudioOneShot.h"
+    "mtgb/WaveData.cpp"
+    "mtgb/WaveData.h"
+)
+source_group("03mtgb\\System\\Audio" FILES ${03mtgb__System__Audio})
+
+set(03mtgb__System__Camera
+    "mtgb/CameraSystem.cpp"
+    "mtgb/WorldToScreenData.h"
+)
+source_group("03mtgb\\System\\Camera" FILES ${03mtgb__System__Camera})
+
+set(03mtgb__System__Collider
+    "mtgb/BoxPlane.h"
+    "mtgb/RectDetector.h"
+)
+source_group("03mtgb\\System\\Collider" FILES ${03mtgb__System__Collider})
+
+set(03mtgb__System__Collider__ColliderInfo
+    "mtgb/RectContainsInfo.h"
+)
+source_group("03mtgb\\System\\Collider\\ColliderInfo" FILES ${03mtgb__System__Collider__ColliderInfo})
+
+set(03mtgb__System__ComponentPool
+    "mtgb/AudioPlayerCP.cpp"
+    "mtgb/AudioPlayerCP.h"
+    "mtgb/ColliderCP.cpp"
+    "mtgb/ComponentPool.cpp"
+    "mtgb/ComponentPool.h"
+    "mtgb/ComponentRegistry.h"
+    "mtgb/IComponentPool.cpp"
+    "mtgb/IComponentPool.h"
+    "mtgb/ImageRendererCP.h"
+    "mtgb/MeshRendererCP.h"
+    "mtgb/RigidBodyCP.cpp"
+    "mtgb/RigidBodyCP.h"
+    "mtgb/TextRendererCP.cpp"
+    "mtgb/TextRendererCP.h"
+    "mtgb/TransformCP.cpp"
+    "mtgb/TransformCP.h"
+)
+source_group("03mtgb\\System\\ComponentPool" FILES ${03mtgb__System__ComponentPool})
+
+set(03mtgb__System__Debug
+    "mtgb/Debug.cpp"
+    "mtgb/Debug.h"
+)
+source_group("03mtgb\\System\\Debug" FILES ${03mtgb__System__Debug})
+
+set(03mtgb__System__Debug__Command
+    "mtgb/AddComponentCommand.cpp"
+    "mtgb/AddComponentCommand.h"
+    "mtgb/AddComponentCommandGeneric.h"
+    "mtgb/CommandHistory.cpp"
+    "mtgb/CommandHistoryManager.h"
+    "mtgb/CommandHistoryManagerWrapper.cpp"
+    "mtgb/DeleteGameObjectCommand.cpp"
+    "mtgb/DeleteGameObjectCommand.h"
+    "mtgb/DuplicateGameObjectCommand.h"
+    "mtgb/GameObjectCreateCommand.cpp"
+    "mtgb/GameObjectCreateCommand.h"
+    "mtgb/GroupCommand.h"
+    "mtgb/GuizmoManipulatedEvent.cpp"
+    "mtgb/GuizmoManipulatedEvent.h"
+    "mtgb/ImGuiInputCommand.h"
+    "mtgb/PropertyChangedEvent.cpp"
+    "mtgb/PropertyChangedEvent.h"
+    "mtgb/SelectionCommand.cpp"
+    "mtgb/SelectionCommand.h"
+)
+source_group("03mtgb\\System\\Debug\\Command" FILES ${03mtgb__System__Debug__Command})
+
+set(03mtgb__System__Debug__MTImGui
+    "mtgb/GameObjectSelectionEvent.h"
+    "mtgb/ImGuiUtil.h"
+    "mtgb/JoystickProxy.cpp"
+    "mtgb/JoystickProxy.h"
+    "mtgb/MouseStateProxy.h"
+    "mtgb/MTImGui.cpp"
+    "mtgb/MTImGui.h"
+    "mtgb/TransformGuizmo.cpp"
+    "mtgb/TransformGuizmo.h"
+)
+source_group("03mtgb\\System\\Debug\\MTImGui" FILES ${03mtgb__System__Debug__MTImGui})
+
+set(03mtgb__System__Debug__MTImGui__Editor
+    "mtgb/CommandHandlerRegistry.h"
+    "mtgb/CommandHistory.h"
+    "mtgb/CommandHistoryManagerWrapper.h"
+    "mtgb/GameObjectGenerator.h"
+    "mtgb/ImGuiEditor.cpp"
+    "mtgb/ImGuiEditor.h"
+    "mtgb/ImGuiEditorCamera.cpp"
+    "mtgb/ImGuiEditorCamera.h"
+    "mtgb/ImGuizmoManipulator.cpp"
+    "mtgb/ImGuizmoManipulator.h"
+)
+source_group("03mtgb\\System\\Debug\\MTImGui\\Editor" FILES ${03mtgb__System__Debug__MTImGui__Editor})
+
+set(03mtgb__System__Debug__MTImGui__PropertyInspector
+    "mtgb/DefaultShow.h"
+    "mtgb/DefaultShow.inl"
+    "mtgb/ImGuiShowable.cpp"
+    "mtgb/ImGuiShowable.h"
+    "mtgb/ReflectionInfo.h"
+    "mtgb/ShowAttributes.h"
+    "mtgb/ShowFunc.h"
+    "mtgb/ShowType.h"
+    "mtgb/TypeRegistry.cpp"
+    "mtgb/TypeRegistry.h"
+    "mtgb/TypeRegistryImpl.h"
+)
+source_group("03mtgb\\System\\Debug\\MTImGui\\PropertyInspector" FILES ${03mtgb__System__Debug__MTImGui__PropertyInspector})
+
+set(03mtgb__System__Direct2D
+    "mtgb/Direct2D/Direct2D.cpp"
+    "mtgb/Direct2D/Direct2D.h"
+    "mtgb/TextAlignment.h"
+)
+source_group("03mtgb\\System\\Direct2D" FILES ${03mtgb__System__Direct2D})
+
+set(03mtgb__System__Direct2D__DirectWrite
+    "mtgb/DirectWrite.cpp"
+    "mtgb/DirectWrite.h"
+)
+source_group("03mtgb\\System\\Direct2D\\DirectWrite" FILES ${03mtgb__System__Direct2D__DirectWrite})
+
+set(03mtgb__System__DirectX11
+    "mtgb/DirectX11Draw.cpp"
+    "mtgb/DirectX11Draw.h"
+    "mtgb/DirectX11Manager.cpp"
+    "mtgb/DirectX11Manager.h"
+    "mtgb/Draw.cpp"
+    "mtgb/Draw.h"
+    "mtgb/HLSLInclude.cpp"
+    "mtgb/HLSLInclude.h"
+    "mtgb/ShaderType.h"
+    "mtgb/Texture2D.cpp"
+    "mtgb/Texture2D.h"
+)
+source_group("03mtgb\\System\\DirectX11" FILES ${03mtgb__System__DirectX11})
+
+set(03mtgb__System__Draw
+    "mtgb/IModelPack.h"
+    "mtgb/MeshRenderer.h"
+    "mtgb/RenderSystem.cpp"
+    "mtgb/RenderSystem.h"
+    "mtgb/UIDrawCommand.h"
+)
+source_group("03mtgb\\System\\Draw" FILES ${03mtgb__System__Draw})
+
+set(03mtgb__System__Draw__FBX
+#    "mtgb/Fbx.cpp"
+#    "mtgb/Fbx.h"
+    "mtgb/FbxAnimationClip.h"
+    "mtgb/FbxAnimationController.h"
+    "mtgb/FbxModel.cpp"
+    "mtgb/FbxModel.h"
+)
+source_group("03mtgb\\System\\Draw\\FBX" FILES ${03mtgb__System__Draw__FBX})
+
+set(03mtgb__System__Draw__OBJ
+    "mtgb/OBJ.cpp"
+    "mtgb/OBJ.h"
+)
+source_group("03mtgb\\System\\Draw\\OBJ" FILES ${03mtgb__System__Draw__OBJ})
+
+set(03mtgb__System__Image
+    "mtgb/Image.cpp"
+    "mtgb/Image.h"
+)
+source_group("03mtgb\\System\\Image" FILES ${03mtgb__System__Image})
+
+set(03mtgb__System__Input
+    "mtgb/Axis.h"
+    "mtgb/Input.cpp"
+    "mtgb/Input.h"
+    "mtgb/InputConfig.cpp"
+    "mtgb/InputConfig.h"
+    "mtgb/InputData.cpp"
+    "mtgb/InputData.h"
+    "mtgb/InputKeyCode.h"
+    "mtgb/InputMouseCode.h"
+)
+source_group("03mtgb\\System\\Input" FILES ${03mtgb__System__Input})
+
+set(03mtgb__System__Library
+    "mtgb/ImGuiRenderer.cpp"
+    "mtgb/ImGuiRenderer.h"
+    "mtgb/Inspector.cpp"
+    "mtgb/Inspector.h"
+)
+source_group("03mtgb\\System\\Library" FILES ${03mtgb__System__Library})
+
+set(03mtgb__System__Model
+    "mtgb/Model.cpp"
+    "mtgb/Model.h"
+)
+source_group("03mtgb\\System\\Model" FILES ${03mtgb__System__Model})
+
+set(03mtgb__System__SceneSystem
+    "mtgb/SceneSystem.cpp"
+    "mtgb/SceneSystem.h"
+)
+source_group("03mtgb\\System\\SceneSystem" FILES ${03mtgb__System__SceneSystem})
+
+set(03mtgb__System__Screen
+    "mtgb/Screen.cpp"
+    "mtgb/Screen.h"
+)
+source_group("03mtgb\\System\\Screen" FILES ${03mtgb__System__Screen})
+
+set(03mtgb__System__Text
+    "mtgb/TextCache.cpp"
+    "mtgb/TextCache.h"
+)
+source_group("03mtgb\\System\\Text" FILES ${03mtgb__System__Text})
+
+set(03mtgb__System__Time__GameTime
+    "mtgb/GameTime.cpp"
+    "mtgb/GameTime.h"
+)
+source_group("03mtgb\\System\\Time\\GameTime" FILES ${03mtgb__System__Time__GameTime})
+
+set(03mtgb__System__Time__Timer
+    "mtgb/Timer.cpp"
+    "mtgb/Timer.h"
+)
+source_group("03mtgb\\System\\Time\\Timer" FILES ${03mtgb__System__Time__Timer})
+
+set(03mtgb__System__Window
+    "mtgb/SingleWindow.cpp"
+    "mtgb/SingleWindow.h"
+)
+source_group("03mtgb\\System\\Window" FILES ${03mtgb__System__Window})
+
+set(03mtgb__System__Window__DoubleWindow
+    "mtgb/DoubleWindow.cpp"
+    "mtgb/DoubleWindow.h"
+)
+source_group("03mtgb\\System\\Window\\DoubleWindow" FILES ${03mtgb__System__Window__DoubleWindow})
+
+set(03mtgb__System__Window__MainWindow
+    "mtgb/MainWindow.cpp"
+    "mtgb/MainWindow.h"
+)
+source_group("03mtgb\\System\\Window\\MainWindow" FILES ${03mtgb__System__Window__MainWindow})
+
+set(03mtgb__System__Window__SubWindow
+    "mtgb/SubWindow.h"
+)
+source_group("03mtgb\\System\\Window\\SubWindow" FILES ${03mtgb__System__Window__SubWindow})
+
+set(03mtgb__System__Window__WindowContextResourceManager
+    "mtgb/CameraResource.cpp"
+    "mtgb/CameraResource.h"
+    "mtgb/Direct2DResource.cpp"
+    "mtgb/Direct2DResource.h"
+    "mtgb/Direct3DResource.cpp"
+    "mtgb/Direct3DResource.h"
+    "mtgb/DXGIResource.cpp"
+    "mtgb/DXGIResource.h"
+    "mtgb/InputResource.cpp"
+    "mtgb/InputResource.h"
+    "mtgb/ResourceCollection.cpp"
+    "mtgb/ResourceCollection.h"
+    "mtgb/WindowContextResource.cpp"
+    "mtgb/WindowContextResource.h"
+    "mtgb/WindowContextResourceManager.cpp"
+    "mtgb/WindowContextResourceManager.h"
+    "mtgb/WindowResource.cpp"
+    "mtgb/WindowResource.h"
+)
+source_group("03mtgb\\System\\Window\\WindowContextResourceManager" FILES ${03mtgb__System__Window__WindowContextResourceManager})
+
+set(03mtgb__System__Window__WindowManager
+    "mtgb/WindowContext.cpp"
+    "mtgb/WindowContext.h"
+    "mtgb/WindowManager.cpp"
+    "mtgb/WindowManager.h"
+)
+source_group("03mtgb\\System\\Window\\WindowManager" FILES ${03mtgb__System__Window__WindowManager})
+
+set(03mtgb__X-Ignore
+    "mtgb/Entity.cpp"
+    "mtgb/Entity.h"
+    "mtgb/World.cpp"
+    "mtgb/World.h"
+)
+source_group("03mtgb\\X-Ignore" FILES ${03mtgb__X-Ignore})
+
+set(04Library__ImGui
+    "ImGui/imconfig.h"
+    "ImGui/imgui.cpp"
+    "ImGui/imgui.h"
+    "ImGui/imgui_demo.cpp"
+    "ImGui/imgui_draw.cpp"
+    "ImGui/imgui_impl_dx11.cpp"
+    "ImGui/imgui_impl_dx11.h"
+    "ImGui/imgui_impl_win32.cpp"
+    "ImGui/imgui_impl_win32.h"
+    "ImGui/imgui_internal.h"
+    "ImGui/imgui_ja_gryph_ranges.cpp"
+    "ImGui/imgui_tables.cpp"
+    "ImGui/imgui_widgets.cpp"
+    "ImGui/imstb_rectpack.h"
+    "ImGui/imstb_textedit.h"
+    "ImGui/imstb_truetype.h"
+)
+source_group("04Library\\ImGui" FILES ${04Library__ImGui})
+
+set(04Library__ImGui__ImGuizmo
+    "ImGui/GraphEditor.cpp"
+    "ImGui/GraphEditor.h"
+    "ImGui/ImCurveEdit.cpp"
+    "ImGui/ImCurveEdit.h"
+    "ImGui/ImGradient.cpp"
+    "ImGui/ImGradient.h"
+    "ImGui/ImGuizmo.cpp"
+    "ImGui/ImGuizmo.h"
+    "ImGui/ImSequencer.cpp"
+    "ImGui/ImSequencer.h"
+    "ImGui/ImZoomSlider.h"
+)
+source_group("04Library\\ImGui\\ImGuizmo" FILES ${04Library__ImGui__ImGuizmo})
+
+set(Workflow
+    ".github/workflows/ClangTidyAnalysis.yml"
+    ".github/workflows/DeployDoxygen.yml"
+    ".github/workflows/ReleaseBuildAndPublish.yml"
+    ".github/workflows/SetupEnv.yml"
+)
+source_group("Workflow" FILES ${Workflow})
+
+set(Workflow__Utility
+    "mtgb/Easing.h"
+    "mtgb/Interpolator.h"
+    "mtgb/JsonConverter.h"
+    "mtgb/Mathf.h"
+    "mtgb/MTAssert.h"
+    "mtgb/MTStringUtility.cpp"
+    "mtgb/MTStringUtility.h"
+    "mtgb/Observer.h"
+    "mtgb/PathUtility.h"
+    "mtgb/ProfileUtlity.h"
+    "mtgb/Property.h"
+    "mtgb/ReleaseUtility.h"
+    "mtgb/StringComparators.h"
+    "mtgb/WindowContextUtil.cpp"
+    "mtgb/WindowContextUtil.h"
+)
+source_group("Workflow\\Utility" FILES ${Workflow__Utility})
+
+set(
+    "mtgb/BoxPlane.cpp"
+    "mtgb/CameraSystem.h"
+    "mtgb/CircleDetector.cpp"
+    "mtgb/CircleDetector.h"
+    "mtgb/CommandHistoryManager.cpp"
+    "mtgb/ComponentFactory.cpp"
+    "mtgb/ComponentRegistry.cpp"
+    "mtgb/DetectorConfigs.h"
+    "mtgb/DuplicateGameObjectCommand.cpp"
+    "mtgb/EffekseerVFX.cpp"
+    "mtgb/EffekseerVFX.h"
+    "mtgb/FbxAnimationClip.cpp"
+    "mtgb/FbxAnimationController.cpp"
+    "mtgb/FlightStickCode.h"
+    "mtgb/GameObjectFactory.cpp"
+    "mtgb/GameObjectGenerator.cpp"
+    "mtgb/GameObjectLayer.cpp"
+    "mtgb/GameObjectTypeRegistry.cpp"
+    "mtgb/GroupCommand.cpp"
+    "mtgb/HighlightEnemy.cpp"
+    "mtgb/ICamera.cpp"
+    "mtgb/ICamera.h"
+    "mtgb/IDetector.h"
+    "mtgb/ImageRendererCP.cpp"
+    "mtgb/ImGuiUtil.cpp"
+    "mtgb/InputPadCode.h"
+    "mtgb/InterpolatorCP.cpp"
+    "mtgb/InterpolatorCP.h"
+    "mtgb/IOriginalShader.h"
+    "mtgb/JsonConverter.cpp"
+    "mtgb/MeshRendererCP.cpp"
+    "mtgb/MonitorInfo.cpp"
+    "mtgb/MonitorInfo.h"
+    "mtgb/MouseStateProxy.cpp"
+    "mtgb/MTBit/BitFlag.h"
+    "mtgb/PlaneUVScroll.cpp"
+    "mtgb/QuatToEuler.cpp"
+    "mtgb/QuatToEuler.h"
+    "mtgb/RayDetector.cpp"
+    "mtgb/RayDetector.h"
+    "mtgb/RectDetector.cpp"
+    "mtgb/ScoreManager.cpp"
+    "mtgb/ScoreManager.h"
+    "mtgb/ShowAttributes.cpp"
+    "mtgb/StatefulComponent.inl"
+    "mtgb/TerrainReader.cpp"
+#    "mtgb/TerrainReader.h"
+    "mtgb/TimeLimit.cpp"
+    "mtgb/TimeLimit.h"
+    "mtgb/UIDrawCommand.cpp"
+    "Source/ActorManager.cpp"
+    "Source/CircularSaw.cpp"
+    "Source/FadeOutScreen.cpp"
+    "Source/GameOverManager.cpp"
+    "Source/GameOverManager.h"
+    "Source/GameOverZone.cpp"
+    "Source/HPViewer.cpp"
+    "Source/IActor.cpp"
+    "Source/MovingFloor.cpp"
+    "Source/PatrolChargerEnemy.cpp"
+    "Source/Player.cpp"
+    "Source/RegisterGameObjectType.cpp"
+    "Source/ResultScene.cpp"
+    "Source/ResultScene.h"
+    "Source/ScoreItem.cpp"
+    "Source/SeaPlane.cpp"
+    "Source/SkySphere.cpp"
+    "Source/StageEditScene.cpp"
+    "Source/StageManager.cpp"
+)
+source_group("未フィルターのなんとかしなきゃいけないファイル" FILES ${})
+
+set(ALL_FILES
+    ${no_group_source_files}
+    ${01Game}
+    ${02Assets__Shader}
+    ${03mtgb}
+    ${03mtgb__Component}
+    ${03mtgb__Component__Data}
+    ${03mtgb__Component__Mement}
+    ${03mtgb__Component__StatefulComponent}
+    ${03mtgb__Core}
+    ${03mtgb__CoreType}
+    ${03mtgb__Includer}
+    ${03mtgb__Library__MTBin}
+    ${03mtgb__Library__MTNet}
+    ${03mtgb__Library__MTStat}
+    ${03mtgb__Library__Nlohmann-json}
+    ${03mtgb__Shader}
+    ${03mtgb__System}
+    ${03mtgb__System__AssetsManager}
+    ${03mtgb__System__Audio}
+    ${03mtgb__System__Camera}
+    ${03mtgb__System__Collider}
+    ${03mtgb__System__Collider__ColliderInfo}
+    ${03mtgb__System__ComponentPool}
+    ${03mtgb__System__Debug}
+    ${03mtgb__System__Debug__Command}
+    ${03mtgb__System__Debug__MTImGui}
+    ${03mtgb__System__Debug__MTImGui__Editor}
+    ${03mtgb__System__Debug__MTImGui__PropertyInspector}
+    ${03mtgb__System__Direct2D}
+    ${03mtgb__System__Direct2D__DirectWrite}
+    ${03mtgb__System__DirectX11}
+    ${03mtgb__System__Draw}
+    ${03mtgb__System__Draw__FBX}
+    ${03mtgb__System__Draw__OBJ}
+    ${03mtgb__System__Image}
+    ${03mtgb__System__Input}
+    ${03mtgb__System__Library}
+    ${03mtgb__System__Model}
+    ${03mtgb__System__SceneSystem}
+    ${03mtgb__System__Screen}
+    ${03mtgb__System__Text}
+    ${03mtgb__System__Time__GameTime}
+    ${03mtgb__System__Time__Timer}
+    ${03mtgb__System__Window}
+    ${03mtgb__System__Window__DoubleWindow}
+    ${03mtgb__System__Window__MainWindow}
+    ${03mtgb__System__Window__SubWindow}
+    ${03mtgb__System__Window__WindowContextResourceManager}
+    ${03mtgb__System__Window__WindowManager}
+    ${03mtgb__X-Ignore}
+    ${04Library__ImGui}
+    ${04Library__ImGui__ImGuizmo}
+    ${Workflow}
+    ${Workflow__Utility}
+    ${}
+)
+
+################################################################################
+# Target
+################################################################################
+add_executable(${PROJECT_NAME} ${ALL_FILES})
+
+# プリコンパイルヘッダ
+target_precompile_headers(${PROJECT_NAME} PRIVATE
+    "$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/mtgb/stdafx.h>"
+)
+
+use_props(${PROJECT_NAME} "${CMAKE_CONFIGURATION_TYPES}" "${DEFAULT_CXX_PROPS}")
+set(ROOT_NAMESPACE AirPlaneGame)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    VS_GLOBAL_KEYWORD "Win32Proj"
+)
+if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+        INTERPROCEDURAL_OPTIMIZATION_RELEASE "TRUE"
+    )
+elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+        INTERPROCEDURAL_OPTIMIZATION_RELEASE "TRUE"
+    )
+endif()
+################################################################################
+# MSVC runtime library
+################################################################################
+get_property(MSVC_RUNTIME_LIBRARY_DEFAULT TARGET ${PROJECT_NAME} PROPERTY MSVC_RUNTIME_LIBRARY)
+if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+    string(CONCAT "MSVC_RUNTIME_LIBRARY_STR"
+        $<$<CONFIG:Debug>:
+            MultiThreadedDebug
+        >
+        $<$<CONFIG:Release>:
+            MultiThreaded
+        >
+        $<$<NOT:$<OR:$<CONFIG:Debug>,$<CONFIG:Release>>>:${MSVC_RUNTIME_LIBRARY_DEFAULT}>
+    )
+endif()
+set_target_properties(${PROJECT_NAME} PROPERTIES MSVC_RUNTIME_LIBRARY ${MSVC_RUNTIME_LIBRARY_STR})
+
+################################################################################
+# Include directories
+################################################################################
+if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+    target_include_directories(${PROJECT_NAME} PUBLIC
+        "$<$<CONFIG:Release>:"
+            "${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;"
+            "$ENV{REFL_CPP}"
+        ">"
+        "$ENV{FBX}/include;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/refl-cpp;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/EffekseeLib/install_msvc2022_x64/include/Effekseer"
+    )
+endif()
+
+################################################################################
+# Compile definitions
+################################################################################
+if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+        "$<$<CONFIG:Debug>:"
+            "_DEBUG"
+        ">"
+        "$<$<CONFIG:Release>:"
+            "NDEBUG"
+        ">"
+        "_WINDOWS;"
+        "_AMD64_;"
+        "_MBCS"
+    )
+elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+        "$<$<CONFIG:Debug>:"
+            "_DEBUG"
+        ">"
+        "$<$<CONFIG:Release>:"
+            "NDEBUG"
+        ">"
+        "WIN32;"
+        "_WINDOWS;"
+        "UNICODE;"
+        "_UNICODE"
+    )
+endif()
+
+################################################################################
+# Compile and link options
+################################################################################
+if(MSVC)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        target_compile_options(${PROJECT_NAME} PRIVATE
+            $<$<CONFIG:Debug>:
+                /wd4005
+            >
+            $<$<CONFIG:Release>:
+                /Oi;
+                /Gy
+            >
+            /permissive-;
+            /sdl;
+            /W3;
+            ${DEFAULT_CXX_DEBUG_INFORMATION_FORMAT};
+            /utf-8;
+            ${DEFAULT_CXX_EXCEPTION_HANDLING}
+        )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        target_compile_options(${PROJECT_NAME} PRIVATE
+            $<$<CONFIG:Release>:
+                /Oi;
+                /Gy
+            >
+            /permissive-;
+            /sdl;
+            /W3;
+            ${DEFAULT_CXX_DEBUG_INFORMATION_FORMAT};
+            ${DEFAULT_CXX_EXCEPTION_HANDLING}
+        )
+    endif()
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/GraphEditor.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/ImCurveEdit.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/ImGradient.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/ImGuizmo.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/imgui_ja_gryph_ranges.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/ImSequencer.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/imgui.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/imgui_demo.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/imgui_draw.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/imgui_impl_dx11.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/imgui_impl_win32.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/imgui_tables.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        string(CONCAT FILE_CL_OPTIONS
+            "/Y-"
+        )
+    endif()
+    source_file_compile_options(ImGui/imgui_widgets.cpp ${FILE_CL_OPTIONS})
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        target_link_options(${PROJECT_NAME} PRIVATE
+            $<$<CONFIG:Release>:
+                /OPT:NOREF;
+                /OPT:NOICF
+            >
+            /DEBUG;
+            /SUBSYSTEM:WINDOWS
+        )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        target_link_options(${PROJECT_NAME} PRIVATE
+            $<$<CONFIG:Release>:
+                /OPT:REF;
+                /OPT:ICF
+            >
+            /DEBUG;
+            /SUBSYSTEM:WINDOWS
+        )
+    endif()
+endif()
+
+################################################################################
+# Pre build events
+################################################################################
+if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+    add_custom_command_if(
+        TARGET ${PROJECT_NAME}
+        PRE_BUILD
+        COMMANDS
+        COMMAND $<CONFIG:Release> ECHO $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/> > $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>ProjectDirPath.txt
+        COMMAND $<CONFIG:Release> "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>Tools\\ClangTest.exe" "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>"
+    )
+endif()
+
+################################################################################
+# Dependencies
+################################################################################
+if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+    target_link_directories(${PROJECT_NAME} PRIVATE
+        "$<$<CONFIG:Debug>:"
+            "$ENV{FBX}/lib/x64/debug;"
+            "C:/Program Files/Autodesk/FBX/FBX SDK/2020.3.7/lib/x64/debug"
+        ">"
+        "$<$<CONFIG:Release>:"
+            "$ENV{FBX}/lib/x64/release;"
+            "E:/EffekseerForCpp/install_msvc2022_x64/lib"
+        ">"
+        "${CMAKE_CURRENT_SOURCE_DIR}//EffekseeLib/install_msvc2022_x64/lib"
+    )
+endif()
+
+use_package(${PROJECT_NAME} boost 1.87.0)
+use_package(${PROJECT_NAME} nlohmann.json 3.12.0)
