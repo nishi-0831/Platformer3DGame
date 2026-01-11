@@ -4,12 +4,10 @@
 #include "Fbx.h"
 #include "Figure.h"
 #include "Game.h"
-#include "Ground.h"
 #include "ImGuiRenderer.h"
 #include "Image.h"
 #include "MTAssert.h"
 #include "MTStringUtility.h"
-#include "Model.h"
 #include "OBJ.h"
 #include "PlaneUVScroll.h"
 #include "ReleaseUtility.h"
@@ -323,14 +321,6 @@ void mtgb::Draw::ChangeFontSize(int _size)
 void mtgb::Draw::ChangeTextAlignment(TextAlignment _alignment)
 {
 	currentDefaultTextAlignment_ = _alignment;
-}
-
-void mtgb::Draw::GroundPlane()
-{
-	DirectX11Draw::SetIsWriteToDepthBuffer(true);
-	CheckSetShader(ShaderType::Ground);
-
-	Game::System<Draw>().pGround_->Draw();
 }
 
 void mtgb::Draw::OBJModel(const OBJModelHandle _hOBJModel, const Transform* _pTransform)

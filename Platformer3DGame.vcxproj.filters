@@ -98,12 +98,6 @@
     <Filter Include="03mtgb\System\Window">
       <UniqueIdentifier>{E5FC8D49-0C74-4B8F-8435-23344E9C125A}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03mtgb\System\Window\MainWindow">
-      <UniqueIdentifier>{FA2D1C29-D64B-4945-AEA4-14B519A4BE32}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03mtgb\System\Window\SubWindow">
-      <UniqueIdentifier>{8EEDDAFC-B7DE-4D1F-B978-67FCD6544F03}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03mtgb\System\Window\WindowManager">
       <UniqueIdentifier>{6AA188CE-1911-4C62-9888-F9B68CD595EF}</UniqueIdentifier>
     </Filter>
@@ -113,9 +107,6 @@
     <Filter Include="03mtgb\System\Window\DoubleWindow">
       <UniqueIdentifier>{FE5E13F2-7D79-4F22-94BC-23F9F7DBD4C0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03mtgb\System\Model">
-      <UniqueIdentifier>{623301D1-B395-4FAA-BF93-122533AA9F22}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03mtgb\Shader">
       <UniqueIdentifier>{0407D78A-8EF7-43E6-AD42-A3FB1AF6F47A}</UniqueIdentifier>
     </Filter>
@@ -124,12 +115,6 @@
     </Filter>
     <Filter Include="03mtgb\Library">
       <UniqueIdentifier>{1B73F4E5-89EC-4BA6-B18E-F2042DC06499}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03mtgb\Library\MTBin">
-      <UniqueIdentifier>{F084DEEB-6807-4DD9-AF25-91E850B3D3C8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03mtgb\Library\MTNet">
-      <UniqueIdentifier>{73DA8D07-9F90-465E-891B-1A677AFB2760}</UniqueIdentifier>
     </Filter>
     <Filter Include="03mtgb\Library\MTBit">
       <UniqueIdentifier>{5E0E2846-6D8F-450A-B3FF-F768E6F41879}</UniqueIdentifier>
@@ -161,9 +146,6 @@
     <Filter Include="03mtgb\System\Audio">
       <UniqueIdentifier>{F90B930B-0998-4579-8DAF-FAB97AFAEFD7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03mtgb\System\Ground">
-      <UniqueIdentifier>{de5c7e48-ac63-4fe9-9610-1e5cdb555812}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03mtgb\System\Debug\MTImGui">
       <UniqueIdentifier>{c9172372-b361-434b-90f2-207230460f77}</UniqueIdentifier>
     </Filter>
@@ -178,12 +160,6 @@
     </Filter>
     <Filter Include="03mtgb\Component\Mement">
       <UniqueIdentifier>{6c9f475f-a3ed-4839-88d5-ef85123c59cb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03mtgb\Component\Data">
-      <UniqueIdentifier>{082b4c00-c8b6-4208-9017-08291c22145a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03mtgb\Component\StatefulComponent">
-      <UniqueIdentifier>{f2b7c0bd-8e81-4793-bb54-5c6704533862}</UniqueIdentifier>
     </Filter>
     <Filter Include="03mtgb\System\Debug\MTImGui\Editor">
       <UniqueIdentifier>{e419886a-babd-4ec9-9885-572fae0dd387}</UniqueIdentifier>
@@ -314,8 +290,14 @@
     <Filter Include="Workflow">
       <UniqueIdentifier>{7a4e7e37-f84d-4fca-855f-0cbeade020c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Workflow\Utility">
+    <Filter Include="03mtgb\Utility">
       <UniqueIdentifier>{B6B18D8D-5661-4C29-9C99-E6D36B7444B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03mtgb\System\Effect">
+      <UniqueIdentifier>{b99674b8-9316-43ab-b76f-0993241a1f32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03mtgb\Library\MTBin">
+      <UniqueIdentifier>{97e7c74d-f2d2-4b04-b3c2-89710b87bdde}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -331,9 +313,6 @@
     <ClCompile Include="mtgb\AudioOneShot.cpp">
       <Filter>03mtgb\System\Audio</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\AudioPlayerCP.cpp">
-      <Filter>03mtgb\System\ComponentPool</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\CameraSystem.cpp">
       <Filter>03mtgb\System\Camera</Filter>
     </ClCompile>
@@ -342,9 +321,6 @@
     </ClCompile>
     <ClCompile Include="mtgb\ComponentPool.cpp">
       <Filter>03mtgb\System\ComponentPool</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\AudioPlayer.cpp">
-      <Filter>03mtgb\Component</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\Color.cpp">
       <Filter>03mtgb\CoreType</Filter>
@@ -430,14 +406,8 @@
     <ClCompile Include="mtgb\ISystem.cpp">
       <Filter>03mtgb\System</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\MainWindow.cpp">
-      <Filter>03mtgb\System\Window\MainWindow</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\Matrix4x4.cpp">
       <Filter>03mtgb\CoreType</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTBin\MemoryStream.cpp">
-      <Filter>03mtgb\Library\MTBin</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\ImGuiRenderer.cpp">
       <Filter>03mtgb\System\Library</Filter>
@@ -499,20 +469,11 @@
     <ClCompile Include="mtgb\WindowContextResourceManager.cpp">
       <Filter>03mtgb\System\Window\WindowContextResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\MTNet\BinaryWriter.cpp">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\BinaryReader.cpp">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\CameraResource.cpp">
       <Filter>03mtgb\System\Window\WindowContextResourceManager</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\DXGIResource.cpp">
       <Filter>03mtgb\System\Window\WindowContextResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\EndPoint.cpp">
-      <Filter>03mtgb\Library\MTNet</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\Game.cpp">
       <Filter>03mtgb\Core</Filter>
@@ -523,47 +484,17 @@
     <ClCompile Include="mtgb\GameScene.cpp">
       <Filter>03mtgb\Core</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\MTNet\TcpListener.cpp">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\TcpClient.cpp">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\RigidBody.cpp">
       <Filter>03mtgb\Component</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\InputResource.cpp">
       <Filter>03mtgb\System\Window\WindowContextResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\MTNet\BinaryReader.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\BinaryWriter.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\EndPoint.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\TcpClient.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\TcpListener.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\FbxModel.cpp">
       <Filter>03mtgb\System\Draw\FBX</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\MTNet\Log.cpp">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\Log.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\Inspector.cpp">
       <Filter>03mtgb\System\Library</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\Model.cpp">
-      <Filter>03mtgb\System\Model</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\mtgb.cpp">
       <Filter>03mtgb\Core</Filter>
@@ -583,32 +514,17 @@
     <ClCompile Include="Source\TheMain.cpp">
       <Filter>01Game</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\MTNet\Socket.cpp">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\WindowContextUtil.cpp">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\WaveData.cpp">
       <Filter>03mtgb\System\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\World.cpp">
-      <Filter>03mtgb\X-Ignore</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\Socket.cpp">
-      <Filter>03mtgb\Library\MTNet</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\Collider.cpp">
       <Filter>03mtgb\Component</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\ColliderCP.cpp">
       <Filter>03mtgb\System\ComponentPool</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\Ground.cpp">
-      <Filter>03mtgb\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\QuatToEuler.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\TransformGuizmo.cpp">
       <Filter>03mtgb\System\Debug\MTImGui</Filter>
@@ -643,62 +559,14 @@
     <ClCompile Include="mtgb\InputConfig.cpp">
       <Filter>03mtgb\System\Input</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\HighlightEnemy.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\RectDetector.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\TimeLimit.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\HttpClient.cpp">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\HttpHeaderBuilder.cpp">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\UIDrawCommand.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\TerrainReader.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\ScoreManager.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\CircleDetector.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\RayDetector.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\SingleWindow.cpp">
       <Filter>03mtgb\System\Window</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scenes\SampleScene.cpp">
       <Filter>01Game</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\MeshRendererCP.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\GameObjectLayer.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Camera.cpp">
       <Filter>01Game</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MouseStateProxy.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\ImGuiUtil.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\ComponentFactory.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\GameObjectGenerator.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\SelectionCommand.cpp">
       <Filter>03mtgb\System\Debug\Command</Filter>
@@ -721,47 +589,14 @@
     <ClCompile Include="mtgb\TypeRegistry.cpp">
       <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\ShowAttributes.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\JsonConverter.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\stdafx.cpp">
       <Filter>03mtgb</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\ComponentRegistry.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\GameObjectFactory.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\GameObjectTypeRegistry.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\RegisterCommonGameObjectType.cpp">
       <Filter>03mtgb\System</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Player.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\RegisterGameObjectType.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\BoxPlane.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\ICamera.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ScoreItem.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ResultScene.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\MTStringUtility.cpp">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\Box3D.cpp">
       <Filter>01Game</Filter>
@@ -769,14 +604,11 @@
     <ClCompile Include="Source\TitleScene.cpp">
       <Filter>01Game</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\CommandHistoryManagerWrapper.cpp">
+    <ClCompile Include="mtgb\NamedCommandHistory.cpp">
       <Filter>03mtgb\System\Debug\Command</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\CommandHistory.cpp">
       <Filter>03mtgb\System\Debug\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\EventManager.cpp">
-      <Filter>03mtgb\System</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\ImGuiEditor.cpp">
       <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
@@ -787,9 +619,6 @@
     <ClCompile Include="Source\Goal.cpp">
       <Filter>01Game</Filter>
     </ClCompile>
-    <ClCompile Include="Source\StageManager.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\GuizmoManipulatedEvent.cpp">
       <Filter>03mtgb\System\Debug\Command</Filter>
     </ClCompile>
@@ -799,71 +628,11 @@
     <ClCompile Include="mtgb\PropertyChangedEvent.cpp">
       <Filter>03mtgb\System\Debug\Command</Filter>
     </ClCompile>
-    <ClCompile Include="mtgb\DuplicateGameObjectCommand.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\GameOverZone.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\StageEditScene.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\MovingFloor.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PatrolChargerEnemy.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\MonitorInfo.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\GroupCommand.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\CommandHistoryManager.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\InterpolatorCP.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\EffekseerVFX.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\FbxAnimationClip.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\FbxAnimationController.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ActorManager.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\IActor.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\PlaneUVScroll.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\SeaPlane.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
     <ClCompile Include="mtgb\TextRenderer.cpp">
       <Filter>03mtgb\Component</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\TextRendererCP.cpp">
       <Filter>03mtgb\System\ComponentPool</Filter>
-    </ClCompile>
-    <ClCompile Include="mtgb\ImageRendererCP.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\HPViewer.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\SkySphere.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CircularSaw.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClCompile>
     <ClCompile Include="mtgb\ImageRenderer.cpp">
       <Filter>03mtgb\Component</Filter>
@@ -874,11 +643,149 @@
     <ClCompile Include="mtgb\DeleteGameObjectCommand.cpp">
       <Filter>03mtgb\System\Debug\Command</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ActorManager.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CircularSaw.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
     <ClCompile Include="Source\FadeOutScreen.cpp">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
+      <Filter>01Game</Filter>
     </ClCompile>
     <ClCompile Include="Source\GameOverManager.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameOverZone.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\HPViewer.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IActor.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ScoreItem.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ResultScene.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SkySphere.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\RectDetector.cpp">
+      <Filter>03mtgb\System\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\RayDetector.cpp">
+      <Filter>03mtgb\System\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\ComponentRegistry.cpp">
+      <Filter>03mtgb\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\ComponentFactory.cpp">
+      <Filter>03mtgb\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\CircleDetector.cpp">
+      <Filter>03mtgb\System\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\EffekseerVFX.cpp">
+      <Filter>03mtgb\System\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\FbxAnimationClip.cpp">
+      <Filter>03mtgb\System\Draw\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\FbxAnimationController.cpp">
+      <Filter>03mtgb\System\Draw\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\StageManager.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\StageEditScene.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\ImageRendererCP.cpp">
+      <Filter>03mtgb\System\ComponentPool</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\InterpolatorCP.cpp">
+      <Filter>03mtgb\System\ComponentPool</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\MeshRendererCP.cpp">
+      <Filter>03mtgb\System\ComponentPool</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\QuatToEuler.cpp">
+      <Filter>03mtgb\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Player.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\ShowAttributes.cpp">
+      <Filter>03mtgb\System\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\MouseStateProxy.cpp">
+      <Filter>03mtgb\System\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\DuplicateGameObjectCommand.cpp">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\GroupCommand.cpp">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\UIDrawCommand.cpp">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\CommandHistoryManager.cpp">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\GameObjectLayer.cpp">
+      <Filter>03mtgb\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RegisterGameObjectType.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\GameObjectFactory.cpp">
+      <Filter>03mtgb\System</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\GameObjectGenerator.cpp">
+      <Filter>03mtgb\System</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\GameObjectTypeRegistry.cpp">
+      <Filter>03mtgb\System</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\ImGuiUtil.cpp">
+      <Filter>03mtgb\System\Debug\MTImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\JsonConverter.cpp">
+      <Filter>03mtgb\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PatrolChargerEnemy.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\TerrainReader.cpp">
+      <Filter>03mtgb\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SeaPlane.cpp">
+      <Filter>03mtgb\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\PlaneUVScroll.cpp">
+      <Filter>03mtgb\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\EventManager.cpp">
+      <Filter>03mtgb\System</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\ScoreManager.cpp">
+      <Filter>03mtgb\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\ICamera.cpp">
+      <Filter>03mtgb\System\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\MonitorInfo.cpp">
       <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MovingFloor.cpp">
+      <Filter>01Game</Filter>
+    </ClCompile>
+    <ClCompile Include="mtgb\MTBin\MemoryStream.cpp">
+      <Filter>03mtgb\Library\MTBin</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -894,32 +801,14 @@
     <ClInclude Include="mtgb\AudioOneShot.h">
       <Filter>03mtgb\System\Audio</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\AudioPlayerCP.h">
-      <Filter>03mtgb\System\ComponentPool</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\Debug.h">
       <Filter>03mtgb\System\Debug</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\ComponentPool.h">
       <Filter>03mtgb\System\ComponentPool</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\AudioPlayer.h">
-      <Filter>03mtgb\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\BinaryReader.h">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\BinaryWriter.h">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\Color.h">
       <Filter>03mtgb\CoreType</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\Common.h">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTBin\Common.h">
-      <Filter>03mtgb\Library\MTBin</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Direct2D\Direct2D.h">
       <Filter>03mtgb\System\Direct2D</Filter>
@@ -935,9 +824,6 @@
     </ClInclude>
     <ClInclude Include="mtgb\Draw.h">
       <Filter>03mtgb\System\DirectX11</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\EndPoint.h">
-      <Filter>03mtgb\Library\MTNet</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Entity.h">
       <Filter>03mtgb\X-Ignore</Filter>
@@ -1008,17 +894,8 @@
     <ClInclude Include="mtgb\ISystem.h">
       <Filter>03mtgb\System</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\MTNet\Log.h">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MainWindow.h">
-      <Filter>03mtgb\System\Window\MainWindow</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\Matrix4x4.h">
       <Filter>03mtgb\CoreType</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTBin\MemoryStream.h">
-      <Filter>03mtgb\Library\MTBin</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\OBJ.h">
       <Filter>03mtgb\System\Draw\OBJ</Filter>
@@ -1030,25 +907,13 @@
       <Filter>03mtgb\CoreType</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\ReleaseUtility.h">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\SceneSystem.h">
       <Filter>03mtgb\System\SceneSystem</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Screen.h">
       <Filter>03mtgb\System\Screen</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\Socket.h">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\TcpClient.h">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\TcpListener.h">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\SubWindow.h">
-      <Filter>03mtgb\System\Window\SubWindow</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\TextCache.h">
       <Filter>03mtgb\System\Text</Filter>
@@ -1072,9 +937,6 @@
       <Filter>03mtgb\CoreType</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Vector3.h">
-      <Filter>03mtgb\CoreType</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\Vector3Ref.h">
       <Filter>03mtgb\CoreType</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Vector4.h">
@@ -1149,26 +1011,23 @@
     <ClInclude Include="mtgb\Inspector.h">
       <Filter>03mtgb\System\Library</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\Model.h">
-      <Filter>03mtgb\System\Model</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\MTAssert.h">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\mtgb.h">
       <Filter>03mtgb\Core</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\MTStringUtility.h">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\ImGuiRenderer.h">
       <Filter>03mtgb\System\Library</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\PathUtility.h">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\ProfileUtlity.h">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Sprite.h">
       <Filter>03mtgb\Shader</Filter>
@@ -1183,13 +1042,10 @@
       <Filter>01Game</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\WindowContextUtil.h">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\WaveData.h">
       <Filter>03mtgb\System\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\World.h">
-      <Filter>03mtgb\X-Ignore</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\GameObjectLayer.h">
       <Filter>03mtgb\Core</Filter>
@@ -1203,20 +1059,11 @@
     <ClInclude Include="mtgb\TransformCore.h">
       <Filter>03mtgb\CoreType</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\Ground.h">
-      <Filter>03mtgb\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\Observer.h">
-      <Filter>Workflow\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\Easing.h">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Mathf.h">
-      <Filter>Workflow\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\QuatToEuler.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\TextAlignment.h">
       <Filter>03mtgb\System\Direct2D</Filter>
@@ -1257,12 +1104,6 @@
     <ClInclude Include="mtgb\Axis.h">
       <Filter>03mtgb\System\Input</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\InputPadCode.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\CameraSystem.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\WorldToScreenData.h">
       <Filter>03mtgb\System\Camera</Filter>
     </ClInclude>
@@ -1287,50 +1128,11 @@
     <ClInclude Include="mtgb\RectDetector.h">
       <Filter>03mtgb\System\Collider</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\IOriginalShader.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\TimeLimit.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\HttpClient.h">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\HttpHeaderBuilder.h">
-      <Filter>03mtgb\Library\MTNet</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\FlightStickCode.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\MTStat\MTStat.h">
       <Filter>03mtgb\Library\MTStat</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\MonitorInfo.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTBit\BitFlag.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\TerrainReader.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\ScoreManager.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\GameObjectTag.h">
       <Filter>03mtgb\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\CircleDetector.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\DetectorConfigs.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\IDetector.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\RayDetector.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\SingleWindow.h">
       <Filter>03mtgb\System\Window</Filter>
@@ -1356,9 +1158,6 @@
     <ClInclude Include="mtgb\GameObjectSelectionEvent.h">
       <Filter>03mtgb\System\Debug\MTImGui</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\Command.h">
-      <Filter>03mtgb\CoreType</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\ComponentFactory.h">
       <Filter>03mtgb\System</Filter>
     </ClInclude>
@@ -1373,24 +1172,6 @@
     </ClInclude>
     <ClInclude Include="mtgb\AddComponentCommand.h">
       <Filter>03mtgb\System\Debug\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\TransformState.h">
-      <Filter>03mtgb\Component\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\ColliderState.h">
-      <Filter>03mtgb\Component\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\RigidBodyState.h">
-      <Filter>03mtgb\Component\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\AudioPlayerState.h">
-      <Filter>03mtgb\Component\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\Property.h">
-      <Filter>Workflow\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\StatefulComponent.h">
-      <Filter>03mtgb\Component\StatefulComponent</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\ColliderType.h">
       <Filter>03mtgb\CoreType</Filter>
@@ -1440,15 +1221,6 @@
     <ClInclude Include="mtgb\GameObjectGenerator.h">
       <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\CommandHandlerRegistry.h">
-      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\CommandHistoryManagerWrapper.h">
-      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\CommandHistory.h">
-      <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\ImGuizmoManipulator.h">
       <Filter>03mtgb\System\Debug\MTImGui\Editor</Filter>
     </ClInclude>
@@ -1456,7 +1228,7 @@
       <Filter>03mtgb\System\Debug\Command</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\JsonConverter.h">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\stdafx.h">
       <Filter>03mtgb</Filter>
@@ -1485,14 +1257,8 @@
     <ClInclude Include="mtgb\IGameObjectRegistrar.h">
       <Filter>03mtgb\System</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\IGameObjectCreator.h">
-      <Filter>03mtgb\Component</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\BoxPlane.h">
       <Filter>03mtgb\System\Collider</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\ICamera.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
     </ClInclude>
     <ClInclude Include="Source\ScoreItem.h">
       <Filter>01Game</Filter>
@@ -1500,17 +1266,11 @@
     <ClInclude Include="mtgb\IRenderable.h">
       <Filter>03mtgb\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ResultScene.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\Box3D.h">
       <Filter>01Game</Filter>
     </ClInclude>
     <ClInclude Include="Source\TitleScene.h">
       <Filter>01Game</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\EventManager.h">
-      <Filter>03mtgb\System</Filter>
     </ClInclude>
     <ClInclude Include="Source\Goal.h">
       <Filter>01Game</Filter>
@@ -1534,7 +1294,7 @@
       <Filter>01Game</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\Interpolator.h">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Source\PatrolChargerEnemy.h">
       <Filter>01Game</Filter>
@@ -1557,12 +1317,6 @@
     <ClInclude Include="mtgb\CommandHistoryManager.h">
       <Filter>03mtgb\System\Debug\Command</Filter>
     </ClInclude>
-    <ClInclude Include="mtgb\InterpolatorCP.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mtgb\EffekseerVFX.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
     <ClInclude Include="mtgb\FbxAnimationClip.h">
       <Filter>03mtgb\System\Draw\FBX</Filter>
     </ClInclude>
@@ -1570,7 +1324,7 @@
       <Filter>03mtgb\System\Draw\FBX</Filter>
     </ClInclude>
     <ClInclude Include="mtgb\StringComparators.h">
-      <Filter>Workflow\Utility</Filter>
+      <Filter>03mtgb\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Source\IActor.h">
       <Filter>01Game</Filter>
@@ -1611,16 +1365,86 @@
     <ClInclude Include="Source\FadeOutScreen.h">
       <Filter>01Game</Filter>
     </ClInclude>
-    <ClInclude Include="Source\GameOverManager.h">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Source\GameEvents.h">
       <Filter>01Game</Filter>
     </ClInclude>
+    <ClInclude Include="Source\GameOverManager.h">
+      <Filter>01Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ResultScene.h">
+      <Filter>01Game</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\MTBit\BitFlag.h">
+      <Filter>03mtgb\Library\MTBit</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\RayDetector.h">
+      <Filter>03mtgb\System\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\CameraSystem.h">
+      <Filter>03mtgb\System\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\FlightStickCode.h">
+      <Filter>03mtgb\System\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\CircleDetector.h">
+      <Filter>03mtgb\System\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\IDetector.h">
+      <Filter>03mtgb\System\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\EffekseerVFX.h">
+      <Filter>03mtgb\System\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\DetectorConfigs.h">
+      <Filter>03mtgb\System\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\InterpolatorCP.h">
+      <Filter>03mtgb\System\ComponentPool</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\QuatToEuler.h">
+      <Filter>03mtgb\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\Command.h">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\IGameObjectCreator.h">
+      <Filter>03mtgb\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\IOriginalShader.h">
+      <Filter>03mtgb\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\TerrainReader.h">
+      <Filter>03mtgb\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\EventManager.h">
+      <Filter>03mtgb\System</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ScoreManager.h">
+      <Filter>03mtgb\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\InputPadCode.h">
+      <Filter>03mtgb\System\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\ICamera.h">
+      <Filter>03mtgb\System\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\MonitorInfo.h">
+      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\CommandHistory.h">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\NamedCommandHistory.h">
+      <Filter>03mtgb\System\Debug\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\MTBin\Common.h">
+      <Filter>03mtgb\Library\MTBin</Filter>
+    </ClInclude>
+    <ClInclude Include="mtgb\MTBin\MemoryStream.h">
+      <Filter>03mtgb\Library\MTBin</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Shader\2DCommon.hlsli" />
-    <None Include="Assets\Shader\3DCommon.hlsli" />
     <None Include="packages.config" />
     <None Include="通信体系.txt" />
     <None Include="Assets\Shader\3DCommon.hlsli">
@@ -1632,30 +1456,27 @@
     <None Include="mtgb\DefaultShow.inl">
       <Filter>03mtgb\System\Debug\MTImGui\PropertyInspector</Filter>
     </None>
-    <None Include="mtgb\StatefulComponent.inl">
-      <Filter>未フィルターのなんとかしなきゃいけないファイル</Filter>
-    </None>
-    <None Include="Tools\GenerateComponentCpp.sbn" />
-    <None Include=".pre-commit-config.yaml" />
     <None Include=".github\workflows\DeployDoxygen.yml">
       <Filter>Workflow</Filter>
     </None>
     <None Include=".github\workflows\ReleaseBuildAndPublish.yml">
       <Filter>Workflow</Filter>
     </None>
-    <None Include=".github\workflows\ClangTidyAnalysis.yml">
-      <Filter>Workflow</Filter>
-    </None>
-    <None Include=".github\workflows\SetupEnv.yml">
-      <Filter>Workflow</Filter>
-    </None>
     <None Include=".clang-format" />
-    <None Include="scripts\run-clang-tidy-filtered.sh" />
     <None Include="Directory.Build.props" />
     <None Include="scripts\clang-tidy-wrapper.py" />
-    <None Include="scripts\run-clang-tidy-filtered.ps1" />
-    <None Include="scripts\fix_compile_commands.py" />
     <None Include="scripts\.clang-tidy" />
+    <None Include="scripts\clangcl-config.yaml" />
+    <None Include="Assets\Shader\2DCommon.hlsli">
+      <Filter>02Assets\Shader</Filter>
+    </None>
+    <None Include="Assets\Shader\3DCommon.hlsli">
+      <Filter>02Assets\Shader</Filter>
+    </None>
+    <None Include=".pre-commit-config.yaml">
+      <Filter>Workflow</Filter>
+    </None>
+    <None Include="Directory.Build.targets" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\FbxParts.hlsl">

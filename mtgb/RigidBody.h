@@ -6,7 +6,6 @@
 #include "IComponentMemento.h"
 
 #include "Vector3.h"
-#include "RigidBodyState.h"
 #include "RigidBodyCP.h"
 #include <functional>
 #include <DirectXCollision.h>

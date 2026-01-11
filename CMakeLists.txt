@@ -32,8 +32,11 @@ set(CMAKE_CONFIGURATION_TYPES
 ################################################################################
 if(MSVC)
     # remove default flags provided with CMake for MSVC
+    # ビルドモード共通のコンパイルオプション
     set(CMAKE_CXX_FLAGS "")
+    # デバッグビルド時に追加されるコンパイルオプション
     set(CMAKE_CXX_FLAGS_DEBUG "")
+    # リリースビルド時に追加されるコンパイルオプション
     set(CMAKE_CXX_FLAGS_RELEASE "")
 endif()
 

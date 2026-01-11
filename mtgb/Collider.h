@@ -2,8 +2,6 @@
 #include "ReflectionMacro.h"
 #include "Collider.generated.h"
 #include "ISerializableObject.h"
-#include "StatefulComponent.h"
-#include "ColliderState.h"
 #include "IComponentMemento.h"
 #include <set>
 #include <DirectXCollision.h>

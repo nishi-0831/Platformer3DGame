@@ -7,7 +7,6 @@
 #include <dxgi.h>
 #include <DirectXMath.h>
 #include "ImGuiRenderer.h"
-#include "MainWindow.h"
 #include "Screen.h"
 #include "Vector3.h"
 #include <d3dcompiler.h>

@@ -225,7 +225,6 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_size"></param>
 		static void ChangeFontSize(int _size);
-		static void GroundPlane();
 
 	  public:
 		Draw();

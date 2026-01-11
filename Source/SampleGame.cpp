@@ -69,7 +69,6 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<MeshRendererCP>(SystemUpdateType::DontCallMe);
 	Game::Set<RigidBodyCP>(SystemUpdateType::Frame);
 	Game::Set<ColliderCP>(SystemUpdateType::Frame);
-	Game::Set<AudioPlayerCP>(SystemUpdateType::Frame);
 	Game::Set<InterpolatorCP>(SystemUpdateType::Frame);
 	Game::Set<ImageRendererCP>(SystemUpdateType::Frame);
 	Game::Set<TextRendererCP>(SystemUpdateType::Frame);
