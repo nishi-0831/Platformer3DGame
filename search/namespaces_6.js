@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['detail_0',['detail',['../namespaceJsonConverter_1_1detail.html',1,'JsonConverter']]],
-  ['jsonconverter_1',['JsonConverter',['../namespaceJsonConverter.html',1,'']]]
+  ['pyexample_0',['pyexample',['../namespacepyexample.html',1,'']]]
 ];

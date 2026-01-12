@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::ComponentRegistry クラス</title>
+<title>Game: mtgb::ComponentRegistry クラス</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -174,8 +174,8 @@ mtgb::ComponentRegistry 連携図</div>
 <tr class="separator:aa6e639f8c20093056931d67b8728c831"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacad316c927d097d5d0e98ee1576ed95"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>, std::set&lt; std::type_index &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a></td></tr>
 <tr class="separator:aacad316c927d097d5d0e98ee1576ed95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7147714fa2ff17dfec532cfd620fa4d7"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::type_index &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ComponentRegistry.html#a7147714fa2ff17dfec532cfd620fa4d7">componentNameToTypeMap_</a></td></tr>
-<tr class="separator:a7147714fa2ff17dfec532cfd620fa4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d11143b3a4fff3e5298e8a11ac8a7ca"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::type_index &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ComponentRegistry.html#a9d11143b3a4fff3e5298e8a11ac8a7ca">componentNameToTypeMap_</a></td></tr>
+<tr class="separator:a9d11143b3a4fff3e5298e8a11ac8a7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd873a694443e0a51c732a6d0dab421b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>, <a class="el" href="classmtgb_1_1ComponentRegistry.html#ab1805792b026d785e4dfbdf3cf70510d">ComponentIndexMap</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b">componentIndices_</a></td></tr>
 <tr class="separator:acd873a694443e0a51c732a6d0dab421b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -246,10 +246,10 @@ mtgb::ComponentRegistry 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00072">72</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
-<div class="line"><span class="lineno">   74</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b">componentIndices_</a>.erase(_entityId);</div>
-<div class="line"><span class="lineno">   75</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00079">79</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>{</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b">componentIndices_</a>.erase(_entityId);</div>
+<div class="line"><span class="lineno">   82</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1ComponentRegistry_html_acd873a694443e0a51c732a6d0dab421b"><div class="ttname"><a href="classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b">mtgb::ComponentRegistry::componentIndices_</a></div><div class="ttdeci">std::unordered_map&lt; EntityId, ComponentIndexMap &gt; componentIndices_</div><div class="ttdef"><b>Definition:</b> <a href="ComponentRegistry_8h_source.html#l00085">ComponentRegistry.h:85</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -270,11 +270,11 @@ mtgb::ComponentRegistry 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00066">66</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>{</div>
-<div class="line"><span class="lineno">   68</span>    <span class="comment">// 全てのコンポーネントが割り当てられていないという判定にする</span></div>
-<div class="line"><span class="lineno">   69</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>[_entityId].clear();</div>
-<div class="line"><span class="lineno">   70</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
+<div class="line"><span class="lineno">   75</span>    <span class="comment">// 全てのコンポーネントが割り当てられていないという判定にする</span></div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>[_entityId].clear();</div>
+<div class="line"><span class="lineno">   77</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1ComponentRegistry_html_aacad316c927d097d5d0e98ee1576ed95"><div class="ttname"><a href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">mtgb::ComponentRegistry::entityComponents_</a></div><div class="ttdeci">std::unordered_map&lt; EntityId, std::set&lt; std::type_index &gt; &gt; entityComponents_</div><div class="ttdef"><b>Definition:</b> <a href="ComponentRegistry_8h_source.html#l00079">ComponentRegistry.h:79</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -315,20 +315,20 @@ mtgb::ComponentRegistry 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>{</div>
-<div class="line"><span class="lineno">   22</span>    <span class="comment">// EntityIdに割り当てられているコンポーネント:インデックスのマップを取得</span></div>
-<div class="line"><span class="lineno">   23</span>    <span class="keyword">auto</span> entityItr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b">componentIndices_</a>.find(_entityId);</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (entityItr == <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b">componentIndices_</a>.end())</div>
-<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    <span class="comment">// コンポーネントのインデックスを取得</span></div>
-<div class="line"><span class="lineno">   28</span>    <span class="keyword">auto</span> indexItr = entityItr-&gt;second.find(_componentTypeIndex);</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (indexItr == entityItr-&gt;second.end())</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> indexItr-&gt;second;</div>
-<div class="line"><span class="lineno">   33</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>{</div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">// EntityIdに割り当てられているコンポーネント:インデックスのマップを取得</span></div>
+<div class="line"><span class="lineno">   30</span>    <span class="keyword">auto</span> entityItr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b">componentIndices_</a>.find(_entityId);</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (entityItr == <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b">componentIndices_</a>.end())</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="comment">// コンポーネントのインデックスを取得</span></div>
+<div class="line"><span class="lineno">   35</span>    <span class="keyword">auto</span> indexItr = entityItr-&gt;second.find(_componentTypeIndex);</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (indexItr == entityItr-&gt;second.end())</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> indexItr-&gt;second;</div>
+<div class="line"><span class="lineno">   40</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -348,17 +348,17 @@ mtgb::ComponentRegistry 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00087">87</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   88</span>{</div>
-<div class="line"><span class="lineno">   89</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#a7147714fa2ff17dfec532cfd620fa4d7">componentNameToTypeMap_</a>.find(_componentName);</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#a7147714fa2ff17dfec532cfd620fa4d7">componentNameToTypeMap_</a>.end())</div>
-<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1ComponentRegistry.html#a11900e7e82c74618348160555312f206">GetComponentPoolType</a>(itr-&gt;second);</div>
-<div class="line"><span class="lineno">   95</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1ComponentRegistry_html_a11900e7e82c74618348160555312f206"><div class="ttname"><a href="classmtgb_1_1ComponentRegistry.html#a11900e7e82c74618348160555312f206">mtgb::ComponentRegistry::GetComponentPoolType</a></div><div class="ttdeci">std::optional&lt; std::type_index &gt; GetComponentPoolType(const std::type_index &amp;_componentTypeIndex)</div><div class="ttdoc">Componentに対応するComponentPoolの型情報を返す</div><div class="ttdef"><b>Definition:</b> <a href="ComponentRegistry_8cpp_source.html#l00077">ComponentRegistry.cpp:77</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1ComponentRegistry_html_a7147714fa2ff17dfec532cfd620fa4d7"><div class="ttname"><a href="classmtgb_1_1ComponentRegistry.html#a7147714fa2ff17dfec532cfd620fa4d7">mtgb::ComponentRegistry::componentNameToTypeMap_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::type_index &gt; componentNameToTypeMap_</div><div class="ttdef"><b>Definition:</b> <a href="ComponentRegistry_8h_source.html#l00081">ComponentRegistry.h:81</a></div></div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00094">94</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>{</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#a9d11143b3a4fff3e5298e8a11ac8a7ca">componentNameToTypeMap_</a>.find(_componentName);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#a9d11143b3a4fff3e5298e8a11ac8a7ca">componentNameToTypeMap_</a>.end())</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1ComponentRegistry.html#a11900e7e82c74618348160555312f206">GetComponentPoolType</a>(itr-&gt;second);</div>
+<div class="line"><span class="lineno">  102</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1ComponentRegistry_html_a11900e7e82c74618348160555312f206"><div class="ttname"><a href="classmtgb_1_1ComponentRegistry.html#a11900e7e82c74618348160555312f206">mtgb::ComponentRegistry::GetComponentPoolType</a></div><div class="ttdeci">std::optional&lt; std::type_index &gt; GetComponentPoolType(const std::type_index &amp;_componentTypeIndex)</div><div class="ttdoc">Componentに対応するComponentPoolの型情報を返す</div><div class="ttdef"><b>Definition:</b> <a href="ComponentRegistry_8cpp_source.html#l00084">ComponentRegistry.cpp:84</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ComponentRegistry_html_a9d11143b3a4fff3e5298e8a11ac8a7ca"><div class="ttname"><a href="classmtgb_1_1ComponentRegistry.html#a9d11143b3a4fff3e5298e8a11ac8a7ca">mtgb::ComponentRegistry::componentNameToTypeMap_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::type_index &gt; componentNameToTypeMap_</div><div class="ttdef"><b>Definition:</b> <a href="ComponentRegistry_8h_source.html#l00081">ComponentRegistry.h:81</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -387,15 +387,15 @@ mtgb::ComponentRegistry 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00077">77</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>{</div>
-<div class="line"><span class="lineno">   79</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">componentTypeToPoolTypeMap_</a>.find(_componentTypeIndex);</div>
-<div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">componentTypeToPoolTypeMap_</a>.end())</div>
-<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> itr-&gt;second;</div>
-<div class="line"><span class="lineno">   85</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00084">84</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">componentTypeToPoolTypeMap_</a>.find(_componentTypeIndex);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">componentTypeToPoolTypeMap_</a>.end())</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> itr-&gt;second;</div>
+<div class="line"><span class="lineno">   92</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1ComponentRegistry_html_aa6e639f8c20093056931d67b8728c831"><div class="ttname"><a href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">mtgb::ComponentRegistry::componentTypeToPoolTypeMap_</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, std::type_index &gt; componentTypeToPoolTypeMap_</div><div class="ttdef"><b>Definition:</b> <a href="ComponentRegistry_8h_source.html#l00077">ComponentRegistry.h:77</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -425,24 +425,24 @@ mtgb::ComponentRegistry 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00097">97</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>{</div>
-<div class="line"><span class="lineno">   99</span>    std::vector&lt;std::type_index&gt; componentPoolTypes;</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    <span class="keyword">auto</span> componentTypes = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.find(_entityId);</div>
-<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">if</span> (componentTypes == <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.end())</div>
-<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">  104</span>    </div>
-<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> std::type_index&amp; componentType : componentTypes-&gt;second)</div>
-<div class="line"><span class="lineno">  106</span>    {</div>
-<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">componentTypeToPoolTypeMap_</a>.find(componentType); itr != <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">componentTypeToPoolTypeMap_</a>.end())</div>
-<div class="line"><span class="lineno">  108</span>        {</div>
-<div class="line"><span class="lineno">  109</span>            componentPoolTypes.push_back(itr-&gt;second);</div>
-<div class="line"><span class="lineno">  110</span>        }</div>
-<div class="line"><span class="lineno">  111</span>    }</div>
-<div class="line"><span class="lineno">  112</span>    </div>
-<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">return</span> componentPoolTypes;</div>
-<div class="line"><span class="lineno">  114</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00104">104</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
+<div class="line"><span class="lineno">  106</span>    std::vector&lt;std::type_index&gt; componentPoolTypes;</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    <span class="keyword">auto</span> componentTypes = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.find(_entityId);</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> (componentTypes == <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.end())</div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> std::type_index&amp; componentType : componentTypes-&gt;second)</div>
+<div class="line"><span class="lineno">  113</span>    {</div>
+<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">componentTypeToPoolTypeMap_</a>.find(componentType); itr != <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">componentTypeToPoolTypeMap_</a>.end())</div>
+<div class="line"><span class="lineno">  115</span>        {</div>
+<div class="line"><span class="lineno">  116</span>            componentPoolTypes.push_back(itr-&gt;second);</div>
+<div class="line"><span class="lineno">  117</span>        }</div>
+<div class="line"><span class="lineno">  118</span>    }</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> componentPoolTypes;</div>
+<div class="line"><span class="lineno">  121</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -462,24 +462,24 @@ mtgb::ComponentRegistry 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00126">126</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  127</span>{</div>
-<div class="line"><span class="lineno">  128</span>    std::set&lt;std::type_index&gt; components;</div>
-<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; itr : <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#a7147714fa2ff17dfec532cfd620fa4d7">componentNameToTypeMap_</a>)</div>
-<div class="line"><span class="lineno">  130</span>    {</div>
-<div class="line"><span class="lineno">  131</span>        <span class="keyword">auto</span> [name, typeIndex] = itr;</div>
-<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">if</span> (_json.contains(name))</div>
-<div class="line"><span class="lineno">  133</span>        {</div>
-<div class="line"><span class="lineno">  134</span>            components.insert(typeIndex);</div>
-<div class="line"><span class="lineno">  135</span>        }</div>
-<div class="line"><span class="lineno">  136</span>    }</div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> (components.empty())</div>
-<div class="line"><span class="lineno">  139</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>    <span class="comment">// 明示的にムーブする</span></div>
-<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">return</span> std::optional&lt;std::set&lt;std::type_index&gt;&gt;(std::move(components));</div>
-<div class="line"><span class="lineno">  143</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00135">135</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>{</div>
+<div class="line"><span class="lineno">  137</span>    std::set&lt;std::type_index&gt; components;</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; itr : <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#a9d11143b3a4fff3e5298e8a11ac8a7ca">componentNameToTypeMap_</a>)</div>
+<div class="line"><span class="lineno">  139</span>    {</div>
+<div class="line"><span class="lineno">  140</span>        <span class="keyword">auto</span> [name, typeIndex] = itr;</div>
+<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">if</span> (_json.contains(name))</div>
+<div class="line"><span class="lineno">  142</span>        {</div>
+<div class="line"><span class="lineno">  143</span>            components.insert(typeIndex);</div>
+<div class="line"><span class="lineno">  144</span>        }</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">if</span> (components.empty())</div>
+<div class="line"><span class="lineno">  148</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>    <span class="comment">// 明示的にムーブする</span></div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">return</span> std::optional&lt;std::set&lt;std::type_index&gt;&gt;(std::move(components));</div>
+<div class="line"><span class="lineno">  152</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -508,15 +508,15 @@ mtgb::ComponentRegistry 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00116">116</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>{</div>
-<div class="line"><span class="lineno">  118</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.find(_entityId);</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.end())</div>
-<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">  122</span>    </div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">return</span> std::cref(itr-&gt;second);</div>
-<div class="line"><span class="lineno">  124</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00123">123</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>{</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.find(_entityId);</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.end())</div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">return</span> std::cref(itr-&gt;second);</div>
+<div class="line"><span class="lineno">  133</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -586,10 +586,10 @@ mtgb::ComponentRegistry 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00035">35</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>[_entityId].insert(_componentTypeIndex);</div>
-<div class="line"><span class="lineno">   38</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00042">42</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>[_entityId].insert(_componentTypeIndex);</div>
+<div class="line"><span class="lineno">   45</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -626,9 +626,9 @@ mtgb::ComponentRegistry 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00015">15</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b">componentIndices_</a>[_entityId][_typeIndex] = _componentIndex;</div>
-<div class="line"><span class="lineno">   18</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b">componentIndices_</a>[_entityId][_typeIndex] = _componentIndex;</div>
+<div class="line"><span class="lineno">   22</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -667,10 +667,10 @@ mtgb::ComponentRegistry 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00040">40</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>{</div>
-<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#a7147714fa2ff17dfec532cfd620fa4d7">componentNameToTypeMap_</a>.emplace(_key, _typeIndex);</div>
-<div class="line"><span class="lineno">   43</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00047">47</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#a9d11143b3a4fff3e5298e8a11ac8a7ca">componentNameToTypeMap_</a>.emplace(_key, _typeIndex);</div>
+<div class="line"><span class="lineno">   50</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -709,10 +709,10 @@ mtgb::ComponentRegistry 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00045">45</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">componentTypeToPoolTypeMap_</a>.emplace(_comp, _pool);</div>
-<div class="line"><span class="lineno">   48</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00052">52</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831">componentTypeToPoolTypeMap_</a>.emplace(_comp, _pool);</div>
+<div class="line"><span class="lineno">   55</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -741,12 +741,13 @@ mtgb::ComponentRegistry 連携図</div>
 
 <p>開放処理 </p>
 
-<p><a class="el" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1Fbx.html#ada19e401d03b5d2056fba392808ec546">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1Input.html#aaeb9eca1ca02568bf898253c804baea7">mtgb::Input</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1Timer.html#ac8fce5b2c97551427a50a288e3fd76fd">mtgb::Timer</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b">mtgb::WindowManager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; AudioPlayer, AudioPlayerCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ImageRenderer, ImageRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a> (計22項目)で再実装されています。</p>
+<p><a class="el" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1Fbx.html#ada19e401d03b5d2056fba392808ec546">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1Input.html#aaeb9eca1ca02568bf898253c804baea7">mtgb::Input</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b">mtgb::WindowManager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ImageRenderer, ImageRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a>, <a class="el" href="classmtgb_1_1Timer.html#aff73a31a4227b61a53f4d7478652eca0">mtgb::Timer</a> (計21項目)で再実装されています。</p>
 
 <p class="definition"> <a class="el" href="ISystem_8h_source.html">ISystem.h</a> の <a class="el" href="ISystem_8h_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>{}</div>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00143">mtgb::Game::ReleaseSystems()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00144">mtgb::Game::ReleaseSystems()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -782,21 +783,21 @@ mtgb::ComponentRegistry 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.find(_entityId);</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.end())</div>
-<div class="line"><span class="lineno">   54</span>    {</div>
-<div class="line"><span class="lineno">   55</span>        <span class="comment">// コンポーネントが割り当てられていないという判定にする</span></div>
-<div class="line"><span class="lineno">   56</span>        itr-&gt;second.erase(_typeIndex);</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>        <span class="comment">// Entity にコンポーネントが一つも割り当てられてないなら削除</span></div>
-<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span> (itr-&gt;second.empty())</div>
-<div class="line"><span class="lineno">   60</span>        {</div>
-<div class="line"><span class="lineno">   61</span>            <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.erase(itr);</div>
-<div class="line"><span class="lineno">   62</span>        }</div>
-<div class="line"><span class="lineno">   63</span>    }</div>
-<div class="line"><span class="lineno">   64</span>}</div>
+<p class="definition"> <a class="el" href="ComponentRegistry_8cpp_source.html">ComponentRegistry.cpp</a> の <a class="el" href="ComponentRegistry_8cpp_source.html#l00057">57</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>{</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.find(_entityId);</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.end())</div>
+<div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        <span class="comment">// コンポーネントが割り当てられていないという判定にする</span></div>
+<div class="line"><span class="lineno">   63</span>        itr-&gt;second.erase(_typeIndex);</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>        <span class="comment">// Entity にコンポーネントが一つも割り当てられてないなら削除</span></div>
+<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span> (itr-&gt;second.empty())</div>
+<div class="line"><span class="lineno">   67</span>        {</div>
+<div class="line"><span class="lineno">   68</span>            <a class="code hl_variable" href="classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95">entityComponents_</a>.erase(itr);</div>
+<div class="line"><span class="lineno">   69</span>        }</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+<div class="line"><span class="lineno">   71</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -856,8 +857,8 @@ mtgb::ComponentRegistry 連携図</div>
 
 </div>
 </div>
-<a id="a7147714fa2ff17dfec532cfd620fa4d7" name="a7147714fa2ff17dfec532cfd620fa4d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7147714fa2ff17dfec532cfd620fa4d7">&#9670;&#160;</a></span>componentNameToTypeMap_</h2>
+<a id="a9d11143b3a4fff3e5298e8a11ac8a7ca" name="a9d11143b3a4fff3e5298e8a11ac8a7ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d11143b3a4fff3e5298e8a11ac8a7ca">&#9670;&#160;</a></span>componentNameToTypeMap_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -866,7 +867,7 @@ mtgb::ComponentRegistry 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;std::string,std::type_index&gt; mtgb::ComponentRegistry::componentNameToTypeMap_</td>
+          <td class="memname">std::unordered_map&lt;std::string, std::type_index&gt; mtgb::ComponentRegistry::componentNameToTypeMap_</td>
         </tr>
       </table>
   </td>

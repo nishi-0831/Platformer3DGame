@@ -11,7 +11,7 @@ var classmtgb_1_1CommandHistoryManager =
     [ "Release", "classmtgb_1_1CommandHistoryManager.html#aa2823e5390468dfc47213b845c55d3ac", null ],
     [ "UndoCommand", "classmtgb_1_1CommandHistoryManager.html#aa772cfb5dd0f117656e6fdc0be8543bc", null ],
     [ "Update", "classmtgb_1_1CommandHistoryManager.html#a0a168c668b3aa0b41465c35eef00a885", null ],
-    [ "inner_", "classmtgb_1_1CommandHistoryManager.html#a39c40b005146bee06937856a4b3f4e9e", null ],
+    [ "inner_", "classmtgb_1_1CommandHistoryManager.html#a46ea6557225433f93979045211c5af97", null ],
     [ "isGrouping_", "classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3", null ],
     [ "pGroupCommand_", "classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b", null ]
 ];

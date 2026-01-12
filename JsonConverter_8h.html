@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: JsonConverter.h ファイル</title>
+<title>Game: JsonConverter.h ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -116,7 +116,7 @@ JsonConverter.h の依存先関係図:</div>
 </div><div class="textblock"><div class="dynheader">
 被依存関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="JsonConverter_8h__dep__incl.svg" width="2860" height="476"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="JsonConverter_8h__dep__incl.svg" width="3264" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -164,7 +164,7 @@ JsonConverter.h の依存先関係図:</div>
 <tr class="memitem:a04575c976738e1d678529e43d18fb4b6"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="JsonConverter_8h.html#a04575c976738e1d678529e43d18fb4b6">is_builtin_type_v</a></td></tr>
 <tr class="separator:a04575c976738e1d678529e43d18fb4b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84f91f174f7a7197e0c38c6cbe51d121"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:a84f91f174f7a7197e0c38c6cbe51d121"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceJsonConverter_1_1detail.html#a84f91f174f7a7197e0c38c6cbe51d121">JsonConverter::detail::has_adl_serializer_v</a></td></tr>
+<tr class="memitem:a84f91f174f7a7197e0c38c6cbe51d121"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceJsonConverter_1_1detail.html#a84f91f174f7a7197e0c38c6cbe51d121">JsonConverter::detail::has_adl_serializer_v</a> = has_to_json&lt;<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;::value || has_from_json&lt;<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;::value</td></tr>
 <tr class="separator:a84f91f174f7a7197e0c38c6cbe51d121"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">変数詳解</h2>
@@ -189,15 +189,12 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
   </tr>
 </table>
 </div><div class="memdoc">
-<b>初期値:</b><div class="fragment"><div class="line">=</div>
-<div class="line">std::is_arithmetic_v&lt;T&gt; ||</div>
-<div class="line">std::is_same_v&lt;T, std::string&gt; ||</div>
-<div class="line">std::is_same_v&lt;T, std::string_view&gt; ||</div>
-<div class="line">std::is_enum_v&lt;T&gt;</div>
+<b>初期値:</b><div class="fragment"><div class="line">= std::is_arithmetic_v&lt;T&gt; || std::is_same_v&lt;T, std::string&gt; ||</div>
+<div class="line">                                   std::is_same_v&lt;T, std::string_view&gt; || std::is_enum_v&lt;T&gt;</div>
 </div><!-- fragment -->
 <p class="definition"> <a class="el" href="JsonConverter_8h_source.html">JsonConverter.h</a> の <a class="el" href="JsonConverter_8h_source.html#l00009">9</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="JsonConverter_8h_source.html#l00142">JsonConverter::Deserialize()</a>, <a class="el" href="JsonConverter_8h_source.html#l00091">JsonConverter::Serialize()</a>.</p>
+<p class="reference">参照元 <a class="el" href="JsonConverter_8h_source.html#l00134">JsonConverter::Deserialize()</a>, <a class="el" href="JsonConverter_8h_source.html#l00081">JsonConverter::Serialize()</a>.</p>
 
 </div>
 </div>

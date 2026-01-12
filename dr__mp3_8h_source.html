@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: dr_mp3.h ソースファイル</title>
+<title>Game: dr_mp3.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -881,8 +881,8 @@ $(document).ready(function(){initNavTree('dr__mp3_8h_source.html',''); initResiz
 <div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span> </div>
 <div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>{</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="dr__mp3_8h.html#a022600a580c00ea389b02f35175d3117">drmp3_uint8</a> *<a class="code hl_variable" href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">buf</a>;</div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a8f98d5606f3aa8fdbd2fba270c4ec781">pos</a>, limit;</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="dr__mp3_8h.html#a022600a580c00ea389b02f35175d3117">drmp3_uint8</a> *buf;</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>    <span class="keywordtype">int</span> pos, limit;</div>
 <div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>} drmp3_bs;</div>
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span> </div>
 <div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
@@ -1041,13 +1041,13 @@ $(document).ready(function(){initNavTree('dr__mp3_8h_source.html',''); initResiz
 <div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span><span class="preprocessor">#define DRMP3_DQ(x) 9.53674316e-07f/x, 7.56931807e-07f/x, 6.00777173e-07f/x</span></div>
 <div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>        DRMP3_DQ(3),DRMP3_DQ(7),DRMP3_DQ(15),DRMP3_DQ(31),DRMP3_DQ(63),DRMP3_DQ(127),DRMP3_DQ(255),DRMP3_DQ(511),DRMP3_DQ(1023),DRMP3_DQ(2047),DRMP3_DQ(4095),DRMP3_DQ(8191),DRMP3_DQ(16383),DRMP3_DQ(32767),DRMP3_DQ(65535),DRMP3_DQ(3),DRMP3_DQ(5),DRMP3_DQ(9)</div>
 <div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>    };</div>
-<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>    <span class="keywordtype">int</span> i, <a class="code hl_variable" href="namespaceanonymous__namespace_02Transform_8cpp_03.html#a7a244191fc18de0d71146133a1539531">m</a>;</div>
+<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>    <span class="keywordtype">int</span> i, m;</div>
 <div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span>    <span class="keywordflow">for</span> (i = 0; i &lt; bands; i++)</div>
 <div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>    {</div>
 <div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>        <span class="keywordtype">float</span> s = 0;</div>
 <div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>        <span class="keywordtype">int</span> ba = *pba++;</div>
 <div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>        <span class="keywordtype">int</span> mask = ba ? 4 + ((19 &gt;&gt; scfcod[i]) &amp; 3) : 0;</div>
-<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>        <span class="keywordflow">for</span> (m = 4; <a class="code hl_variable" href="namespaceanonymous__namespace_02Transform_8cpp_03.html#a7a244191fc18de0d71146133a1539531">m</a>; <a class="code hl_variable" href="namespaceanonymous__namespace_02Transform_8cpp_03.html#a7a244191fc18de0d71146133a1539531">m</a> &gt;&gt;= 1)</div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>        <span class="keywordflow">for</span> (m = 4; m; m &gt;&gt;= 1)</div>
 <div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>        {</div>
 <div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>            <span class="keywordflow">if</span> (mask &amp; m)</div>
 <div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>            {</div>
@@ -1898,11 +1898,11 @@ $(document).ready(function(){initNavTree('dr__mp3_8h_source.html',''); initResiz
 <div class="line"><a id="l01798" name="l01798"></a><span class="lineno"> 1798</span> </div>
 <div class="line"><a id="l01799" name="l01799"></a><span class="lineno"> 1799</span><span class="keyword">static</span> <span class="keywordtype">void</span> drmp3_L3_save_reservoir(<a class="code hl_struct" href="structdrmp3dec.html">drmp3dec</a> *h, drmp3dec_scratch *s)</div>
 <div class="line"><a id="l01800" name="l01800"></a><span class="lineno"> 1800</span>{</div>
-<div class="line"><a id="l01801" name="l01801"></a><span class="lineno"> 1801</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a8f98d5606f3aa8fdbd2fba270c4ec781">pos</a> = (s-&gt;bs.pos + 7)/8u;</div>
-<div class="line"><a id="l01802" name="l01802"></a><span class="lineno"> 1802</span>    <span class="keywordtype">int</span> remains = s-&gt;bs.limit/8u - <a class="code hl_variable" href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a8f98d5606f3aa8fdbd2fba270c4ec781">pos</a>;</div>
+<div class="line"><a id="l01801" name="l01801"></a><span class="lineno"> 1801</span>    <span class="keywordtype">int</span> pos = (s-&gt;bs.pos + 7)/8u;</div>
+<div class="line"><a id="l01802" name="l01802"></a><span class="lineno"> 1802</span>    <span class="keywordtype">int</span> remains = s-&gt;bs.limit/8u - pos;</div>
 <div class="line"><a id="l01803" name="l01803"></a><span class="lineno"> 1803</span>    <span class="keywordflow">if</span> (remains &gt; DRMP3_MAX_BITRESERVOIR_BYTES)</div>
 <div class="line"><a id="l01804" name="l01804"></a><span class="lineno"> 1804</span>    {</div>
-<div class="line"><a id="l01805" name="l01805"></a><span class="lineno"> 1805</span>        <a class="code hl_variable" href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a8f98d5606f3aa8fdbd2fba270c4ec781">pos</a> += remains - DRMP3_MAX_BITRESERVOIR_BYTES;</div>
+<div class="line"><a id="l01805" name="l01805"></a><span class="lineno"> 1805</span>        pos += remains - DRMP3_MAX_BITRESERVOIR_BYTES;</div>
 <div class="line"><a id="l01806" name="l01806"></a><span class="lineno"> 1806</span>        remains = DRMP3_MAX_BITRESERVOIR_BYTES;</div>
 <div class="line"><a id="l01807" name="l01807"></a><span class="lineno"> 1807</span>    }</div>
 <div class="line"><a id="l01808" name="l01808"></a><span class="lineno"> 1808</span>    <span class="keywordflow">if</span> (remains &gt; 0)</div>
@@ -5568,9 +5568,6 @@ $(document).ready(function(){initNavTree('dr__mp3_8h_source.html',''); initResiz
 <div class="ttc" id="adr__mp3_8h_html_af83487abc315b9bf3f15bdd348d9dfe3"><div class="ttname"><a href="dr__mp3_8h.html#af83487abc315b9bf3f15bdd348d9dfe3">drmp3_bool32</a></div><div class="ttdeci">drmp3_uint32 drmp3_bool32</div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00110">dr_mp3.h:110</a></div></div>
 <div class="ttc" id="adr__mp3_8h_html_af9894c179abb7767219a0a51a2d8a346"><div class="ttname"><a href="dr__mp3_8h.html#af9894c179abb7767219a0a51a2d8a346">DRMP3_NOT_IMPLEMENTED</a></div><div class="ttdeci">#define DRMP3_NOT_IMPLEMENTED</div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00181">dr_mp3.h:181</a></div></div>
 <div class="ttc" id="adr__mp3_8h_html_afe83739ea72e957aa63026c842b61e4d"><div class="ttname"><a href="dr__mp3_8h.html#afe83739ea72e957aa63026c842b61e4d">drmp3_seek_to_pcm_frame</a></div><div class="ttdeci">DRMP3_API drmp3_bool32 drmp3_seek_to_pcm_frame(drmp3 *pMP3, drmp3_uint64 frameIndex)</div></div>
-<div class="ttc" id="anamespaceanonymous__namespace_02MTImGui_8cpp_03_html_ac42254ac88728a2dc2542212c2756efe"><div class="ttname"><a href="namespaceanonymous__namespace_02MTImGui_8cpp_03.html#ac42254ac88728a2dc2542212c2756efe">anonymous_namespace{MTImGui.cpp}::buf</a></div><div class="ttdeci">std::string buf</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00028">MTImGui.cpp:28</a></div></div>
-<div class="ttc" id="anamespaceanonymous__namespace_02ScoreViewer_8cpp_03_html_a8f98d5606f3aa8fdbd2fba270c4ec781"><div class="ttname"><a href="namespaceanonymous__namespace_02ScoreViewer_8cpp_03.html#a8f98d5606f3aa8fdbd2fba270c4ec781">anonymous_namespace{ScoreViewer.cpp}::pos</a></div><div class="ttdeci">Vector2F pos</div><div class="ttdef"><b>Definition:</b> <a href="ScoreViewer_8cpp_source.html#l00007">ScoreViewer.cpp:7</a></div></div>
-<div class="ttc" id="anamespaceanonymous__namespace_02Transform_8cpp_03_html_a7a244191fc18de0d71146133a1539531"><div class="ttname"><a href="namespaceanonymous__namespace_02Transform_8cpp_03.html#a7a244191fc18de0d71146133a1539531">anonymous_namespace{Transform.cpp}::m</a></div><div class="ttdeci">Matrix4x4 m</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00006">Transform.cpp:6</a></div></div>
 <div class="ttc" id="astructcmd_8h_html_ad65a8842cc674e3ddf69355898c0ecbf"><div class="ttname"><a href="structcmd_8h.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a></div><div class="ttdeci">int errno</div><div class="ttdoc">Contains the last error code.</div><div class="ttdef"><b>Definition:</b> <a href="structcmd_8h_source.html#l00053">structcmd.h:53</a></div></div>
 <div class="ttc" id="astructdrmp3__allocation__callbacks_html"><div class="ttname"><a href="structdrmp3__allocation__callbacks.html">drmp3_allocation_callbacks</a></div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00246">dr_mp3.h:247</a></div></div>
 <div class="ttc" id="astructdrmp3__allocation__callbacks_html_a02fd70d856ae1a74f2f40f2fa45530f4"><div class="ttname"><a href="structdrmp3__allocation__callbacks.html#a02fd70d856ae1a74f2f40f2fa45530f4">drmp3_allocation_callbacks::onFree</a></div><div class="ttdeci">void(* onFree)(void *p, void *pUserData)</div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00251">dr_mp3.h:251</a></div></div>

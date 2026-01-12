@@ -16,7 +16,6 @@ var classmtgb_1_1Draw =
     [ "ClearUICommands", "classmtgb_1_1Draw.html#a329b7551cf069a060c2dfc19c6cd79cc", null ],
     [ "FBXModel", "classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf", null ],
     [ "FlushUIDrawCommands", "classmtgb_1_1Draw.html#ab49701b73420c858c1eec301402ec530", null ],
-    [ "GroundPlane", "classmtgb_1_1Draw.html#aac17b22c6296bca518da934e0efd7b42", null ],
     [ "Image", "classmtgb_1_1Draw.html#ab8a5e461f30dbedb33254572aa22efc1", null ],
     [ "Image", "classmtgb_1_1Draw.html#a154c60bcdc6f24027425656a4c6af4ff", null ],
     [ "Image", "classmtgb_1_1Draw.html#adbba2fe2c008e31ee62957cb174bcf53", null ],

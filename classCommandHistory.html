@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: CommandHistory クラス</title>
+<title>Game: CommandHistory クラス</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -104,6 +104,9 @@ $(document).ready(function(){initNavTree('classCommandHistory.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
+<p>コマンドのスタックを保持し、管理を行う  
+ <a href="classCommandHistory.html#details">[詳解]</a></p>
+
 <p><code>#include &quot;<a class="el" href="CommandHistory_8h_source.html">CommandHistory.h</a>&quot;</code></p>
 <div class="dynheader">
 CommandHistory の継承関係図</div>
@@ -147,8 +150,9 @@ CommandHistory 連携図</div>
 <tr class="separator:a2c3a0ee148616a9a1d6cf79535674a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock">
-<p class="definition"> <a class="el" href="CommandHistory_8h_source.html">CommandHistory.h</a> の <a class="el" href="CommandHistory_8h_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="textblock"><p>コマンドのスタックを保持し、管理を行う </p>
+
+<p class="definition"> <a class="el" href="CommandHistory_8h_source.html">CommandHistory.h</a> の <a class="el" href="CommandHistory_8h_source.html#l00045">45</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a882652aaaef5fdfa8a8d5bee008f1232" name="a882652aaaef5fdfa8a8d5bee008f1232"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a882652aaaef5fdfa8a8d5bee008f1232">&#9670;&#160;</a></span>~CommandHistory()</h2>
@@ -219,10 +223,10 @@ CommandHistory 連携図</div>
 <div class="line"><span class="lineno">   44</span>    <a class="code hl_function" href="classCommandHistory.html#a72afa0176fe9771dd16b199e42183bef">ClearRedoStack</a>();</div>
 <div class="line"><span class="lineno">   45</span>}</div>
 <div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
-<div class="ttc" id="aclassCommandHistory_html_a40203e1b3919eab4e9797673a1394318"><div class="ttname"><a href="classCommandHistory.html#a40203e1b3919eab4e9797673a1394318">CommandHistory::undoStack_</a></div><div class="ttdeci">std::stack&lt; Command * &gt; undoStack_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8h_source.html#l00070">CommandHistory.h:70</a></div></div>
-<div class="ttc" id="aclassCommandHistory_html_a72afa0176fe9771dd16b199e42183bef"><div class="ttname"><a href="classCommandHistory.html#a72afa0176fe9771dd16b199e42183bef">CommandHistory::ClearRedoStack</a></div><div class="ttdeci">void ClearRedoStack()</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00049">CommandHistory.cpp:49</a></div></div>
+<div class="ttc" id="aclassCommandHistory_html_a40203e1b3919eab4e9797673a1394318"><div class="ttname"><a href="classCommandHistory.html#a40203e1b3919eab4e9797673a1394318">CommandHistory::undoStack_</a></div><div class="ttdeci">std::stack&lt; Command * &gt; undoStack_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8h_source.html#l00077">CommandHistory.h:77</a></div></div>
+<div class="ttc" id="aclassCommandHistory_html_a72afa0176fe9771dd16b199e42183bef"><div class="ttname"><a href="classCommandHistory.html#a72afa0176fe9771dd16b199e42183bef">CommandHistory::ClearRedoStack</a></div><div class="ttdeci">void ClearRedoStack()</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00047">CommandHistory.cpp:47</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="CommandHistory_8cpp_source.html#l00049">ClearRedoStack()</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>, <a class="el" href="CommandHistory_8h_source.html#l00070">undoStack_</a>.</p>
+<p class="reference">参照先 <a class="el" href="CommandHistory_8cpp_source.html#l00047">ClearRedoStack()</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>, <a class="el" href="CommandHistory_8h_source.html#l00077">undoStack_</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="CommandHistory_8cpp_source.html#l00005">~CommandHistory()</a>.</p>
 <div class="dynheader">
@@ -267,17 +271,17 @@ CommandHistory 連携図</div>
 
 <p><a class="el" href="classICommandHistory.html#a7b4259be93dc4eefcb4d70684be83a3f">ICommandHistory</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="CommandHistory_8cpp_source.html">CommandHistory.cpp</a> の <a class="el" href="CommandHistory_8cpp_source.html#l00049">49</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
-<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.empty() == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">   52</span>    {</div>
-<div class="line"><span class="lineno">   53</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.top());</div>
-<div class="line"><span class="lineno">   54</span>        <a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.pop();</div>
-<div class="line"><span class="lineno">   55</span>    }</div>
-<div class="line"><span class="lineno">   56</span>}</div>
-<div class="ttc" id="aclassCommandHistory_html_a2c3a0ee148616a9a1d6cf79535674a8c"><div class="ttname"><a href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">CommandHistory::redoStack_</a></div><div class="ttdeci">std::stack&lt; Command * &gt; redoStack_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8h_source.html#l00071">CommandHistory.h:71</a></div></div>
+<p class="definition"> <a class="el" href="CommandHistory_8cpp_source.html">CommandHistory.cpp</a> の <a class="el" href="CommandHistory_8cpp_source.html#l00047">47</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.empty() == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.top());</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.pop();</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span>}</div>
+<div class="ttc" id="aclassCommandHistory_html_a2c3a0ee148616a9a1d6cf79535674a8c"><div class="ttname"><a href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">CommandHistory::redoStack_</a></div><div class="ttdeci">std::stack&lt; Command * &gt; redoStack_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8h_source.html#l00078">CommandHistory.h:78</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="CommandHistory_8h_source.html#l00071">redoStack_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
+<p class="reference">参照先 <a class="el" href="CommandHistory_8h_source.html#l00078">redoStack_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="CommandHistory_8cpp_source.html#l00037">ClearAllStack()</a>, <a class="el" href="CommandHistory_8cpp_source.html#l00010">ExecuteCommand()</a>.</p>
 <div class="dynheader">
@@ -331,7 +335,7 @@ CommandHistory 連携図</div>
 <div class="line"><span class="lineno">   15</span>}</div>
 <div class="ttc" id="aclassCommand_html_a484c34647660fcfc8ee46b04ad5b32b6"><div class="ttname"><a href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Command::Execute</a></div><div class="ttdeci">virtual void Execute()=0</div><div class="ttdoc">実行</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="CommandHistory_8cpp_source.html#l00049">ClearRedoStack()</a>, <a class="el" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Command::Execute()</a>, <a class="el" href="CommandHistory_8h_source.html#l00070">undoStack_</a>.</p>
+<p class="reference">参照先 <a class="el" href="CommandHistory_8cpp_source.html#l00047">ClearRedoStack()</a>, <a class="el" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Command::Execute()</a>, <a class="el" href="CommandHistory_8h_source.html#l00077">undoStack_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -380,7 +384,7 @@ CommandHistory 連携図</div>
 <div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00004">Command.h:5</a></div></div>
 <div class="ttc" id="aclassCommand_html_a75ca9ed49533a4e30fb3e2fcfc549a22"><div class="ttname"><a href="classCommand.html#a75ca9ed49533a4e30fb3e2fcfc549a22">Command::Redo</a></div><div class="ttdeci">virtual void Redo()</div><div class="ttdoc">再実行(デフォルトではExecuteと同じ)</div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00022">Command.h:22</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Command_8h_source.html#l00022">Command::Redo()</a>, <a class="el" href="CommandHistory_8h_source.html#l00071">redoStack_</a>, <a class="el" href="CommandHistory_8h_source.html#l00070">undoStack_</a>.</p>
+<p class="reference">参照先 <a class="el" href="Command_8h_source.html#l00022">Command::Redo()</a>, <a class="el" href="CommandHistory_8h_source.html#l00078">redoStack_</a>, <a class="el" href="CommandHistory_8h_source.html#l00077">undoStack_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -428,7 +432,7 @@ CommandHistory 連携図</div>
 <div class="line"><span class="lineno">   25</span>}</div>
 <div class="ttc" id="aclassCommand_html_acee7d28a866913f07e880a675acc4720"><div class="ttname"><a href="classCommand.html#acee7d28a866913f07e880a675acc4720">Command::Undo</a></div><div class="ttdeci">virtual void Undo()=0</div><div class="ttdoc">取り消し</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="CommandHistory_8h_source.html#l00071">redoStack_</a>, <a class="el" href="classCommand.html#acee7d28a866913f07e880a675acc4720">Command::Undo()</a>, <a class="el" href="CommandHistory_8h_source.html#l00070">undoStack_</a>.</p>
+<p class="reference">参照先 <a class="el" href="CommandHistory_8h_source.html#l00078">redoStack_</a>, <a class="el" href="classCommand.html#acee7d28a866913f07e880a675acc4720">Command::Undo()</a>, <a class="el" href="CommandHistory_8h_source.html#l00077">undoStack_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -459,9 +463,9 @@ CommandHistory 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="CommandHistory_8h_source.html">CommandHistory.h</a> の <a class="el" href="CommandHistory_8h_source.html#l00071">71</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="CommandHistory_8h_source.html">CommandHistory.h</a> の <a class="el" href="CommandHistory_8h_source.html#l00078">78</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="CommandHistory_8cpp_source.html#l00049">ClearRedoStack()</a>, <a class="el" href="CommandHistory_8cpp_source.html#l00027">RedoCommand()</a>, <a class="el" href="CommandHistory_8cpp_source.html#l00017">UndoCommand()</a>.</p>
+<p class="reference">参照元 <a class="el" href="CommandHistory_8cpp_source.html#l00047">ClearRedoStack()</a>, <a class="el" href="CommandHistory_8cpp_source.html#l00027">RedoCommand()</a>, <a class="el" href="CommandHistory_8cpp_source.html#l00017">UndoCommand()</a>.</p>
 
 </div>
 </div>
@@ -485,7 +489,7 @@ CommandHistory 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="CommandHistory_8h_source.html">CommandHistory.h</a> の <a class="el" href="CommandHistory_8h_source.html#l00070">70</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="CommandHistory_8h_source.html">CommandHistory.h</a> の <a class="el" href="CommandHistory_8h_source.html#l00077">77</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="CommandHistory_8cpp_source.html#l00037">ClearAllStack()</a>, <a class="el" href="CommandHistory_8cpp_source.html#l00010">ExecuteCommand()</a>, <a class="el" href="CommandHistory_8cpp_source.html#l00027">RedoCommand()</a>, <a class="el" href="CommandHistory_8cpp_source.html#l00017">UndoCommand()</a>.</p>
 

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['opengldevicetype_0',['OpenGLDeviceType',['../namespaceEffekseerRendererGL.html#a0c190d61d90f1b9a4ebdee83f58430f3',1,'EffekseerRendererGL::OpenGLDeviceType()'],['../namespaceEffekseerRendererGL.html#a0c190d61d90f1b9a4ebdee83f58430f3',1,'EffekseerRendererGL::OpenGLDeviceType()']]],
-  ['operation_1',['OPERATION',['../namespaceIMGUIZMO__NAMESPACE.html#aab78029f01082975bcf8a421d6dff565',1,'IMGUIZMO_NAMESPACE']]]
+  ['tenum_0',['TEnum',['../classEnum__Test.html#a8d096bc026dbb395991f02e3ca86eb1c',1,'Enum_Test::TEnum()'],['../classJavadoc__Test.html#ae37fd1cbf1af522674cbd33873b786a6',1,'Javadoc_Test::TEnum()'],['../classQTstyle__Test.html#a0525f798cda415a94fedeceb806d2c49',1,'QTstyle_Test::TEnum()']]],
+  ['textalignment_1',['TextAlignment',['../namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dba',1,'mtgb']]]
 ];

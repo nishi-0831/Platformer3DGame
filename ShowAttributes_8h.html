@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: ShowAttributes.h ファイル</title>
+<title>Game: ShowAttributes.h ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -101,21 +101,21 @@ $(document).ready(function(){initNavTree('ShowAttributes_8h.html',''); initResiz
   <div class="headertitle"><div class="title">ShowAttributes.h ファイル</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="refl_8hpp_source.html">refl.hpp</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="imgui_8h_source.html">../ImGui/imgui.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;refl.hpp&gt;</code><br />
+<code>#include &quot;../ImGui/imgui.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="Vector3_8h_source.html">Vector3.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ShowFunc_8h_source.html">ShowFunc.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QuatToEuler_8h_source.html">QuatToEuler.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 ShowAttributes.h の依存先関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ShowAttributes_8h__incl.svg" width="1990" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ShowAttributes_8h__incl.svg" width="656" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 被依存関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ShowAttributes_8h__dep__incl.svg" width="6812" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ShowAttributes_8h__dep__incl.svg" width="6676" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -125,7 +125,7 @@ ShowAttributes.h の依存先関係図:</div>
 クラス</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVector3Show.html">Vector3Show</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQuaternionSHow.html">QuaternionSHow</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQuaternionShow.html">QuaternionShow</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVector4Show.html">Vector4Show</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,30 +192,19 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
 <div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, int&gt;)</div>
 <div class="line"><span class="lineno">   59</span>    {</div>
-<div class="line"><span class="lineno">   60</span>        <a class="code hl_function" href="namespaceImGui.html#a580128c9b35d1a9fc5b7a057f6f5464a">ImGui::SliderInt</a>(name, instance, min, max);</div>
+<div class="line"><span class="lineno">   60</span>        ImGui::SliderInt(name, instance, min, max);</div>
 <div class="line"><span class="lineno">   61</span>    }</div>
 <div class="line"><span class="lineno">   62</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, float&gt;)</div>
 <div class="line"><span class="lineno">   63</span>    {</div>
-<div class="line"><span class="lineno">   64</span>        <a class="code hl_function" href="namespaceImGui.html#a864f761801792a0cc5ce3408f3392cfc">ImGui::SliderFloat</a>(name, instance, min, max);</div>
+<div class="line"><span class="lineno">   64</span>        ImGui::SliderFloat(name, instance, min, max);</div>
 <div class="line"><span class="lineno">   65</span>    }</div>
 <div class="line"><span class="lineno">   66</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">   67</span>    {</div>
-<div class="line"><span class="lineno">   68</span>        <a class="code hl_function" href="namespaceImGui.html#a9e7b83611fe441d54fad2effb4bf4965">ImGui::Text</a>(<span class="stringliteral">&quot;Unknown : %s&quot;</span>, name);</div>
+<div class="line"><span class="lineno">   68</span>        ImGui::Text(<span class="stringliteral">&quot;Unknown : %s&quot;</span>, name);</div>
 <div class="line"><span class="lineno">   69</span>    }</div>
 <div class="line"><span class="lineno">   70</span>}</div>
-<div class="ttc" id="anamespaceImGui_html_a580128c9b35d1a9fc5b7a057f6f5464a"><div class="ttname"><a href="namespaceImGui.html#a580128c9b35d1a9fc5b7a057f6f5464a">ImGui::SliderInt</a></div><div class="ttdeci">IMGUI_API bool SliderInt(const char *label, int *v, int v_min, int v_max, const char *format=&quot;%d&quot;, ImGuiSliderFlags flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l03427">imgui_widgets.cpp:3427</a></div></div>
-<div class="ttc" id="anamespaceImGui_html_a864f761801792a0cc5ce3408f3392cfc"><div class="ttname"><a href="namespaceImGui.html#a864f761801792a0cc5ce3408f3392cfc">ImGui::SliderFloat</a></div><div class="ttdeci">IMGUI_API bool SliderFloat(const char *label, float *v, float v_min, float v_max, const char *format=&quot;%.3f&quot;, ImGuiSliderFlags flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l03396">imgui_widgets.cpp:3396</a></div></div>
-<div class="ttc" id="anamespaceImGui_html_a9e7b83611fe441d54fad2effb4bf4965"><div class="ttname"><a href="namespaceImGui.html#a9e7b83611fe441d54fad2effb4bf4965">ImGui::Text</a></div><div class="ttdeci">IMGUI_API void Text(const char *fmt,...) IM_FMTARGS(1)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l00273">imgui_widgets.cpp:273</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="imgui__widgets_8cpp_source.html#l03396">ImGui::SliderFloat()</a>, <a class="el" href="imgui__widgets_8cpp_source.html#l03427">ImGui::SliderInt()</a>, <a class="el" href="imgui__widgets_8cpp_source.html#l00273">ImGui::Text()</a>.</p>
-
-<p class="reference">参照元 <a class="el" href="ShowAttributes_8h_source.html#l00044">Range&lt; T &gt;::operator()()</a>.</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ShowAttributes_8h_ae99e316148b6b0aedce862e573f26c2c_cgraph.svg" width="1539" height="1294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<p class="reference">参照元 <a class="el" href="ShowAttributes_8h_source.html#l00045">Range&lt; T &gt;::operator()()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">

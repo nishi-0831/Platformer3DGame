@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::Event&lt; EventDataType &gt; クラステンプレート</title>
+<title>Game: mtgb::Event&lt; EventDataType &gt; クラステンプレート</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -161,7 +161,7 @@ class mtgb::Event&lt; EventDataType &gt;</div><p>イベント用のテンプレ�
 <p>任意のイベントデータ型に対してハンドラの登録、解除、一括解除、呼び出しを行う。</p>
 <p>ハンドラは ID で管理し、Invoke 実行時に保留中の解除要求を処理する。</p>
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00026">26</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00029">29</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">型定義メンバ詳解</h2>
 <a id="a950f5e33529a4d411e782b036a0dafca" name="a950f5e33529a4d411e782b036a0dafca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a950f5e33529a4d411e782b036a0dafca">&#9670;&#160;</a></span>EventHandler</h2>
@@ -177,7 +177,7 @@ template&lt;typename EventDataType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00032">32</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -210,25 +210,25 @@ template&lt;typename EventDataType &gt; </div>
 
 <p>保留中の解除要求を処理し、その後すべてのハンドラに対してイベントデータを渡して呼び出す </p>
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00084">84</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>        {</div>
-<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.empty())</div>
-<div class="line"><span class="lineno">   87</span>            {</div>
-<div class="line"><span class="lineno">   88</span>                <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.erase(<a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.front());</div>
-<div class="line"><span class="lineno">   89</span>                <a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.pop();</div>
-<div class="line"><span class="lineno">   90</span>            }</div>
-<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; handler : <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>)</div>
-<div class="line"><span class="lineno">   92</span>            {</div>
-<div class="line"><span class="lineno">   93</span>                <span class="keywordflow">if</span> (handler.second.handler)</div>
-<div class="line"><span class="lineno">   94</span>                {</div>
-<div class="line"><span class="lineno">   95</span>                    handler.second.handler(_data);</div>
-<div class="line"><span class="lineno">   96</span>                }</div>
-<div class="line"><span class="lineno">   97</span>            }</div>
-<div class="line"><span class="lineno">   98</span>        }</div>
-<div class="ttc" id="aclassmtgb_1_1Event_html_a00c0cf17d314c5f48effcaec71434ee7"><div class="ttname"><a href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">mtgb::Event::pendingUnsubscribeIds</a></div><div class="ttdeci">std::queue&lt; EventHandlerId &gt; pendingUnsubscribeIds</div><div class="ttdef"><b>Definition:</b> <a href="EventManager_8h_source.html#l00106">EventManager.h:106</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Event_html_af9ccc0fa06db2eedf7472568e522680e"><div class="ttname"><a href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">mtgb::Event::handlers_</a></div><div class="ttdeci">std::unordered_map&lt; EventHandlerId, HandlerEntry &gt; handlers_</div><div class="ttdef"><b>Definition:</b> <a href="EventManager_8h_source.html#l00105">EventManager.h:105</a></div></div>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00087">87</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>        {</div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.empty())</div>
+<div class="line"><span class="lineno">   90</span>            {</div>
+<div class="line"><span class="lineno">   91</span>                <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.erase(<a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.front());</div>
+<div class="line"><span class="lineno">   92</span>                <a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.pop();</div>
+<div class="line"><span class="lineno">   93</span>            }</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; handler : <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>)</div>
+<div class="line"><span class="lineno">   95</span>            {</div>
+<div class="line"><span class="lineno">   96</span>                <span class="keywordflow">if</span> (handler.second.handler)</div>
+<div class="line"><span class="lineno">   97</span>                {</div>
+<div class="line"><span class="lineno">   98</span>                    handler.second.handler(_data);</div>
+<div class="line"><span class="lineno">   99</span>                }</div>
+<div class="line"><span class="lineno">  100</span>            }</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
+<div class="ttc" id="aclassmtgb_1_1Event_html_a00c0cf17d314c5f48effcaec71434ee7"><div class="ttname"><a href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">mtgb::Event::pendingUnsubscribeIds</a></div><div class="ttdeci">std::queue&lt; EventHandlerId &gt; pendingUnsubscribeIds</div><div class="ttdef"><b>Definition:</b> <a href="EventManager_8h_source.html#l00110">EventManager.h:110</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Event_html_af9ccc0fa06db2eedf7472568e522680e"><div class="ttname"><a href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">mtgb::Event::handlers_</a></div><div class="ttdeci">std::unordered_map&lt; EventHandlerId, HandlerEntry &gt; handlers_</div><div class="ttdef"><b>Definition:</b> <a href="EventManager_8h_source.html#l00109">EventManager.h:109</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00105">mtgb::Event&lt; EventDataType &gt;::handlers_</a>, <a class="el" href="EventManager_8h_source.html#l00106">mtgb::Event&lt; EventDataType &gt;::pendingUnsubscribeIds</a>.</p>
+<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00109">mtgb::Event&lt; EventDataType &gt;::handlers_</a>, <a class="el" href="EventManager_8h_source.html#l00110">mtgb::Event&lt; EventDataType &gt;::pendingUnsubscribeIds</a>.</p>
 
 </div>
 </div>
@@ -270,16 +270,16 @@ template&lt;typename EventDataType &gt; </div>
 
 <p>ハンドラを登録し、登録に割り当てられた ID を返す </p>
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00035">35</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>        {</div>
-<div class="line"><span class="lineno">   37</span>            <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#ad738259c78f720b2b17dfaa0fd8b2346">EventHandlerId</a> <span class="keywordtype">id</span> = <a class="code hl_variable" href="classmtgb_1_1Event.html#adba10145603f54a9aff01123c252b330">nextId</a>++;</div>
-<div class="line"><span class="lineno">   38</span>            <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.emplace(<span class="keywordtype">id</span>, HandlerEntry{ std::move(_handler) ,_scope});</div>
-<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">return</span> id;</div>
-<div class="line"><span class="lineno">   40</span>        }</div>
-<div class="ttc" id="aclassmtgb_1_1Event_html_adba10145603f54a9aff01123c252b330"><div class="ttname"><a href="classmtgb_1_1Event.html#adba10145603f54a9aff01123c252b330">mtgb::Event::nextId</a></div><div class="ttdeci">EventHandlerId nextId</div><div class="ttdef"><b>Definition:</b> <a href="EventManager_8h_source.html#l00107">EventManager.h:107</a></div></div>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>        {</div>
+<div class="line"><span class="lineno">   39</span>            <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#ad738259c78f720b2b17dfaa0fd8b2346">EventHandlerId</a> <span class="keywordtype">id</span> = <a class="code hl_variable" href="classmtgb_1_1Event.html#adba10145603f54a9aff01123c252b330">nextId</a>++;</div>
+<div class="line"><span class="lineno">   40</span>            <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.emplace(<span class="keywordtype">id</span>, HandlerEntry{std::move(_handler), _scope});</div>
+<div class="line"><span class="lineno">   41</span>            <span class="keywordflow">return</span> id;</div>
+<div class="line"><span class="lineno">   42</span>        }</div>
+<div class="ttc" id="aclassmtgb_1_1Event_html_adba10145603f54a9aff01123c252b330"><div class="ttname"><a href="classmtgb_1_1Event.html#adba10145603f54a9aff01123c252b330">mtgb::Event::nextId</a></div><div class="ttdeci">EventHandlerId nextId</div><div class="ttdef"><b>Definition:</b> <a href="EventManager_8h_source.html#l00111">EventManager.h:111</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_ad738259c78f720b2b17dfaa0fd8b2346"><div class="ttname"><a href="namespacemtgb.html#ad738259c78f720b2b17dfaa0fd8b2346">mtgb::EventHandlerId</a></div><div class="ttdeci">std::size_t EventHandlerId</div><div class="ttdef"><b>Definition:</b> <a href="EventManager_8h_source.html#l00018">EventManager.h:18</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00105">mtgb::Event&lt; EventDataType &gt;::handlers_</a>, <a class="el" href="EventManager_8h_source.html#l00107">mtgb::Event&lt; EventDataType &gt;::nextId</a>.</p>
+<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00109">mtgb::Event&lt; EventDataType &gt;::handlers_</a>, <a class="el" href="EventManager_8h_source.html#l00111">mtgb::Event&lt; EventDataType &gt;::nextId</a>.</p>
 
 </div>
 </div>
@@ -312,12 +312,12 @@ template&lt;typename EventDataType &gt; </div>
 <p>指定したハンドラ ID を保留解除キューに追加する </p>
 <p>実際の解除は次回の Invoke 呼び出し時に行う</p>
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00046">46</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>        {</div>
-<div class="line"><span class="lineno">   48</span>            <a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.push(_id);</div>
-<div class="line"><span class="lineno">   49</span>        }</div>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00048">48</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>        {</div>
+<div class="line"><span class="lineno">   50</span>            <a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.push(_id);</div>
+<div class="line"><span class="lineno">   51</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00106">mtgb::Event&lt; EventDataType &gt;::pendingUnsubscribeIds</a>.</p>
+<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00110">mtgb::Event&lt; EventDataType &gt;::pendingUnsubscribeIds</a>.</p>
 
 </div>
 </div>
@@ -350,14 +350,15 @@ template&lt;typename EventDataType &gt; </div>
 
 <p><a class="el" href="classmtgb_1_1EventBase.html#ac0537e996b5e83b69bc98ea40663a746">mtgb::EventBase</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00054">54</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>        {</div>
-<div class="line"><span class="lineno">   56</span>            <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.clear();</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.empty()) <a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.pop();</div>
-<div class="line"><span class="lineno">   59</span>        }</div>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00056">56</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>        {</div>
+<div class="line"><span class="lineno">   58</span>            <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.clear();</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.empty())</div>
+<div class="line"><span class="lineno">   61</span>                <a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.pop();</div>
+<div class="line"><span class="lineno">   62</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00105">mtgb::Event&lt; EventDataType &gt;::handlers_</a>, <a class="el" href="EventManager_8h_source.html#l00106">mtgb::Event&lt; EventDataType &gt;::pendingUnsubscribeIds</a>.</p>
+<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00109">mtgb::Event&lt; EventDataType &gt;::handlers_</a>, <a class="el" href="EventManager_8h_source.html#l00110">mtgb::Event&lt; EventDataType &gt;::pendingUnsubscribeIds</a>.</p>
 
 </div>
 </div>
@@ -388,29 +389,29 @@ template&lt;typename EventDataType &gt; </div>
 
 <p><a class="el" href="classmtgb_1_1EventBase.html#abe4564d1b4590afa5609b3b8791d4e8b">mtgb::EventBase</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00061">61</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>        {</div>
-<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.empty())</div>
-<div class="line"><span class="lineno">   64</span>            {</div>
-<div class="line"><span class="lineno">   65</span>                <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.erase(<a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.front());</div>
-<div class="line"><span class="lineno">   66</span>                <a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.pop();</div>
-<div class="line"><span class="lineno">   67</span>            }</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.begin(); itr != <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.end();)</div>
-<div class="line"><span class="lineno">   70</span>            {</div>
-<div class="line"><span class="lineno">   71</span>                <span class="keywordflow">if</span> (itr-&gt;second.scope == <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b">EventScope::Scene</a>)</div>
-<div class="line"><span class="lineno">   72</span>                {</div>
-<div class="line"><span class="lineno">   73</span>                    itr = <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.erase(itr);</div>
-<div class="line"><span class="lineno">   74</span>                }</div>
-<div class="line"><span class="lineno">   75</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   76</span>                {</div>
-<div class="line"><span class="lineno">   77</span>                    ++itr;</div>
-<div class="line"><span class="lineno">   78</span>                }</div>
-<div class="line"><span class="lineno">   79</span>            }</div>
-<div class="line"><span class="lineno">   80</span>        }</div>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00064">64</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>        {</div>
+<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.empty())</div>
+<div class="line"><span class="lineno">   67</span>            {</div>
+<div class="line"><span class="lineno">   68</span>                <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.erase(<a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.front());</div>
+<div class="line"><span class="lineno">   69</span>                <a class="code hl_variable" href="classmtgb_1_1Event.html#a00c0cf17d314c5f48effcaec71434ee7">pendingUnsubscribeIds</a>.pop();</div>
+<div class="line"><span class="lineno">   70</span>            }</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.begin(); itr != <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.end();)</div>
+<div class="line"><span class="lineno">   73</span>            {</div>
+<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">if</span> (itr-&gt;second.scope == <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b">EventScope::Scene</a>)</div>
+<div class="line"><span class="lineno">   75</span>                {</div>
+<div class="line"><span class="lineno">   76</span>                    itr = <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.erase(itr);</div>
+<div class="line"><span class="lineno">   77</span>                }</div>
+<div class="line"><span class="lineno">   78</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   79</span>                {</div>
+<div class="line"><span class="lineno">   80</span>                    ++itr;</div>
+<div class="line"><span class="lineno">   81</span>                }</div>
+<div class="line"><span class="lineno">   82</span>            }</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
 <div class="ttc" id="anamespacemtgb_html_acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b"><div class="ttname"><a href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b">mtgb::EventScope::Scene</a></div><div class="ttdeci">@ Scene</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00105">mtgb::Event&lt; EventDataType &gt;::handlers_</a>, <a class="el" href="EventManager_8h_source.html#l00106">mtgb::Event&lt; EventDataType &gt;::pendingUnsubscribeIds</a>, <a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b">mtgb::Scene</a>.</p>
+<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00109">mtgb::Event&lt; EventDataType &gt;::handlers_</a>, <a class="el" href="EventManager_8h_source.html#l00110">mtgb::Event&lt; EventDataType &gt;::pendingUnsubscribeIds</a>, <a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b">mtgb::Scene</a>.</p>
 
 </div>
 </div>
@@ -437,9 +438,9 @@ template&lt;typename EventDataType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00105">105</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00109">109</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="EventManager_8h_source.html#l00084">mtgb::Event&lt; EventDataType &gt;::Invoke()</a>, <a class="el" href="EventManager_8h_source.html#l00035">mtgb::Event&lt; EventDataType &gt;::Subscribe()</a>, <a class="el" href="EventManager_8h_source.html#l00054">mtgb::Event&lt; EventDataType &gt;::UnsubscribeAll()</a>, <a class="el" href="EventManager_8h_source.html#l00061">mtgb::Event&lt; EventDataType &gt;::UnsubscribeScene()</a>.</p>
+<p class="reference">参照元 <a class="el" href="EventManager_8h_source.html#l00087">mtgb::Event&lt; EventDataType &gt;::Invoke()</a>, <a class="el" href="EventManager_8h_source.html#l00037">mtgb::Event&lt; EventDataType &gt;::Subscribe()</a>, <a class="el" href="EventManager_8h_source.html#l00056">mtgb::Event&lt; EventDataType &gt;::UnsubscribeAll()</a>, <a class="el" href="EventManager_8h_source.html#l00064">mtgb::Event&lt; EventDataType &gt;::UnsubscribeScene()</a>.</p>
 
 </div>
 </div>
@@ -465,9 +466,9 @@ template&lt;typename EventDataType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00107">107</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00111">111</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="EventManager_8h_source.html#l00035">mtgb::Event&lt; EventDataType &gt;::Subscribe()</a>.</p>
+<p class="reference">参照元 <a class="el" href="EventManager_8h_source.html#l00037">mtgb::Event&lt; EventDataType &gt;::Subscribe()</a>.</p>
 
 </div>
 </div>
@@ -493,9 +494,9 @@ template&lt;typename EventDataType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00106">106</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00110">110</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="EventManager_8h_source.html#l00084">mtgb::Event&lt; EventDataType &gt;::Invoke()</a>, <a class="el" href="EventManager_8h_source.html#l00046">mtgb::Event&lt; EventDataType &gt;::Unsubscribe()</a>, <a class="el" href="EventManager_8h_source.html#l00054">mtgb::Event&lt; EventDataType &gt;::UnsubscribeAll()</a>, <a class="el" href="EventManager_8h_source.html#l00061">mtgb::Event&lt; EventDataType &gt;::UnsubscribeScene()</a>.</p>
+<p class="reference">参照元 <a class="el" href="EventManager_8h_source.html#l00087">mtgb::Event&lt; EventDataType &gt;::Invoke()</a>, <a class="el" href="EventManager_8h_source.html#l00048">mtgb::Event&lt; EventDataType &gt;::Unsubscribe()</a>, <a class="el" href="EventManager_8h_source.html#l00056">mtgb::Event&lt; EventDataType &gt;::UnsubscribeAll()</a>, <a class="el" href="EventManager_8h_source.html#l00064">mtgb::Event&lt; EventDataType &gt;::UnsubscribeScene()</a>.</p>
 
 </div>
 </div>

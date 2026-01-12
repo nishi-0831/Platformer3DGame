@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="コマンドの履歴管理を行うインターフェース">
 <polygon fill="#999999" stroke="#666666" points="168.5,-413.5 168.5,-547.5 353.5,-547.5 353.5,-413.5 168.5,-413.5"/>
 <text text-anchor="middle" x="261" y="-535.5" font-family="Helvetica,sans-Serif" font-size="10.00">ICommandHistory</text>
 <polyline fill="none" stroke="#666666" points="168.5,-528.5 353.5,-528.5 "/>
@@ -31,7 +31,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classCommandHistory.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classCommandHistory.html" target="_top" xlink:title="コマンドのスタックを保持し、管理を行う">
 <polygon fill="white" stroke="#666666" points="0,-88.5 0,-288.5 140,-288.5 140,-88.5 0,-88.5"/>
 <text text-anchor="middle" x="70" y="-276.5" font-family="Helvetica,sans-Serif" font-size="10.00">CommandHistory</text>
 <polyline fill="none" stroke="#666666" points="0,-269.5 140,-269.5 "/>
@@ -64,36 +64,37 @@
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="classmtgb_1_1CommandHistoryManager.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="158.5,-66.5 158.5,-310.5 363.5,-310.5 363.5,-66.5 158.5,-66.5"/>
-<text text-anchor="middle" x="261" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::CommandHistoryManager</text>
-<polyline fill="none" stroke="#666666" points="158.5,-291.5 363.5,-291.5 "/>
-<text text-anchor="start" x="166.5" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ICommandHistory * inner_</text>
-<text text-anchor="start" x="166.5" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool isGrouping_</text>
-<text text-anchor="start" x="166.5" y="-257.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GroupCommand * pGroupCommand_</text>
-<polyline fill="none" stroke="#666666" points="158.5,-250.5 363.5,-250.5 "/>
-<text text-anchor="start" x="166.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CommandHistoryManager()</text>
-<text text-anchor="start" x="166.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Initialize() override</text>
-<text text-anchor="start" x="166.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Update() override</text>
-<text text-anchor="start" x="166.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void BeginGroupCommand()</text>
-<text text-anchor="start" x="166.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void EndGroupCommand()</text>
-<text text-anchor="start" x="166.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ExecuteCommand</text>
-<text text-anchor="start" x="166.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Command *_command)</text>
-<text text-anchor="start" x="166.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00"> override</text>
-<text text-anchor="start" x="166.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void UndoCommand()</text>
-<text text-anchor="start" x="166.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00"> override</text>
-<text text-anchor="start" x="166.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void RedoCommand()</text>
-<text text-anchor="start" x="166.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"> override</text>
-<text text-anchor="start" x="166.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ClearAllStack</text>
-<text text-anchor="start" x="166.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">() override</text>
-<text text-anchor="start" x="166.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ClearRedoStack</text>
-<text text-anchor="start" x="166.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">() override</text>
+<polygon fill="white" stroke="#666666" points="158.5,-61 158.5,-316 363.5,-316 363.5,-61 158.5,-61"/>
+<text text-anchor="middle" x="261" y="-304" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::CommandHistoryManager</text>
+<polyline fill="none" stroke="#666666" points="158.5,-297 363.5,-297 "/>
+<text text-anchor="start" x="166.5" y="-285" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; NamedCommandHistory</text>
+<text text-anchor="start" x="166.5" y="-274" font-family="Helvetica,sans-Serif" font-size="10.00"> * inner_</text>
+<text text-anchor="start" x="166.5" y="-263" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool isGrouping_</text>
+<text text-anchor="start" x="166.5" y="-252" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GroupCommand * pGroupCommand_</text>
+<polyline fill="none" stroke="#666666" points="158.5,-245 363.5,-245 "/>
+<text text-anchor="start" x="166.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ CommandHistoryManager()</text>
+<text text-anchor="start" x="166.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Initialize() override</text>
+<text text-anchor="start" x="166.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Update() override</text>
+<text text-anchor="start" x="166.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ void BeginGroupCommand()</text>
+<text text-anchor="start" x="166.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ void EndGroupCommand()</text>
+<text text-anchor="start" x="166.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ExecuteCommand</text>
+<text text-anchor="start" x="166.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">(Command *_command)</text>
+<text text-anchor="start" x="166.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> override</text>
+<text text-anchor="start" x="166.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ void UndoCommand()</text>
+<text text-anchor="start" x="166.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00"> override</text>
+<text text-anchor="start" x="166.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ void RedoCommand()</text>
+<text text-anchor="start" x="166.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"> override</text>
+<text text-anchor="start" x="166.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ClearAllStack</text>
+<text text-anchor="start" x="166.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00">() override</text>
+<text text-anchor="start" x="166.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ClearRedoStack</text>
+<text text-anchor="start" x="166.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">() override</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="#63b8ff" d="M261,-403.12C261,-374.82 261,-341.98 261,-310.67"/>
+<path fill="none" stroke="#63b8ff" d="M261,-403.31C261,-376.62 261,-345.89 261,-316.19"/>
 <polygon fill="none" stroke="#63b8ff" points="257.5,-403.33 261,-413.33 264.5,-403.33 257.5,-403.33"/>
 </g>
 <!-- Node4 -->

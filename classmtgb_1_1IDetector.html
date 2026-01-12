@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::IDetector クラス</title>
+<title>Game: mtgb::IDetector クラス</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -133,7 +133,7 @@ mtgb::IDetector 連携図</div>
 <tr class="memitem:a23bb8f1e34d7af0ec289118430a8a624"><td class="memItemLeft" align="right" valign="top">virtual const std::vector&lt; <a class="el" href="structmtgb_1_1ScreenCoordContainsInfo.html">ScreenCoordContainsInfo</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IDetector.html#a23bb8f1e34d7af0ec289118430a8a624">GetDetectedTargets</a> () const =0</td></tr>
 <tr class="memdesc:a23bb8f1e34d7af0ec289118430a8a624"><td class="mdescLeft">&#160;</td><td class="mdescRight">検出結果を取得  <br /></td></tr>
 <tr class="separator:a23bb8f1e34d7af0ec289118430a8a624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4711d21858256f57427e791e284fa349"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structEffekseer_1_1RectF.html">RectF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IDetector.html#a4711d21858256f57427e791e284fa349">GetDetectionArea</a> () const</td></tr>
+<tr class="memitem:a4711d21858256f57427e791e284fa349"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacemtgb.html#a5c832fe81e838c69e5c62380af9a01de">RectF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IDetector.html#a4711d21858256f57427e791e284fa349">GetDetectionArea</a> () const</td></tr>
 <tr class="memdesc:a4711d21858256f57427e791e284fa349"><td class="mdescLeft">&#160;</td><td class="mdescRight">検出範囲を返す  <br /></td></tr>
 <tr class="separator:a4711d21858256f57427e791e284fa349"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1137be8815c17fc17838fe45e4cbd20c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IDetector.html#a1137be8815c17fc17838fe45e4cbd20c">ForEach</a> (std::function&lt; void(<a class="el" href="structmtgb_1_1ScreenCoordContainsInfo.html">ScreenCoordContainsInfo</a> &amp;)&gt; _func)=0</td></tr>
@@ -276,7 +276,7 @@ mtgb::IDetector 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="structEffekseer_1_1RectF.html">RectF</a> mtgb::IDetector::GetDetectionArea </td>
+          <td class="memname">virtual <a class="el" href="namespacemtgb.html#a5c832fe81e838c69e5c62380af9a01de">RectF</a> mtgb::IDetector::GetDetectionArea </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -294,8 +294,10 @@ mtgb::IDetector 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1CircleDetector.html#a57e8356168ce7dc2d14cdeae1996448e">mtgb::CircleDetector</a>, <a class="el" href="classmtgb_1_1RectDetector.html#a36c76383862755703872b38668826ea5">mtgb::RectDetector</a>で再実装されています。</p>
 
-<p class="definition"> <a class="el" href="IDetector_8h_source.html">IDetector.h</a> の <a class="el" href="IDetector_8h_source.html#l00042">42</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>{ <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespacemtgb.html#a5c832fe81e838c69e5c62380af9a01de">RectF</a>{}; };</div>
+<p class="definition"> <a class="el" href="IDetector_8h_source.html">IDetector.h</a> の <a class="el" href="IDetector_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>        {</div>
+<div class="line"><span class="lineno">   42</span>            <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespacemtgb.html#a5c832fe81e838c69e5c62380af9a01de">RectF</a>{};</div>
+<div class="line"><span class="lineno">   43</span>        };</div>
 <div class="ttc" id="anamespacemtgb_html_a5c832fe81e838c69e5c62380af9a01de"><div class="ttname"><a href="namespacemtgb.html#a5c832fe81e838c69e5c62380af9a01de">mtgb::RectF</a></div><div class="ttdeci">RectT&lt; float &gt; RectF</div><div class="ttdef"><b>Definition:</b> <a href="RectF_8h_source.html#l00006">RectF.h:6</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -380,9 +382,9 @@ mtgb::IDetector 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IDetector_8h_source.html">IDetector.h</a> の <a class="el" href="IDetector_8h_source.html#l00050">50</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="IDetector_8h_source.html">IDetector.h</a> の <a class="el" href="IDetector_8h_source.html#l00051">51</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="CircleDetector_8cpp_source.html#l00111">mtgb::CircleDetector::ForEach()</a>, <a class="el" href="RayDetector_8cpp_source.html#l00077">mtgb::RayDetector::ForEach()</a>, <a class="el" href="CircleDetector_8cpp_source.html#l00104">mtgb::CircleDetector::GetDetectedTargets()</a>, <a class="el" href="RayDetector_8cpp_source.html#l00072">mtgb::RayDetector::GetDetectedTargets()</a>, <a class="el" href="CircleDetector_8cpp_source.html#l00088">mtgb::CircleDetector::HasDetectedTargets()</a>, <a class="el" href="RayDetector_8cpp_source.html#l00067">mtgb::RayDetector::HasDetectedTargets()</a>, <a class="el" href="CircleDetector_8cpp_source.html#l00035">mtgb::CircleDetector::UpdateDetection()</a>, <a class="el" href="RayDetector_8cpp_source.html#l00026">mtgb::RayDetector::UpdateDetection()</a>.</p>
+<p class="reference">参照元 <a class="el" href="CircleDetector_8cpp_source.html#l00110">mtgb::CircleDetector::ForEach()</a>, <a class="el" href="RayDetector_8cpp_source.html#l00077">mtgb::RayDetector::ForEach()</a>, <a class="el" href="CircleDetector_8cpp_source.html#l00105">mtgb::CircleDetector::GetDetectedTargets()</a>, <a class="el" href="RayDetector_8cpp_source.html#l00072">mtgb::RayDetector::GetDetectedTargets()</a>, <a class="el" href="CircleDetector_8cpp_source.html#l00089">mtgb::CircleDetector::HasDetectedTargets()</a>, <a class="el" href="RayDetector_8cpp_source.html#l00067">mtgb::RayDetector::HasDetectedTargets()</a>, <a class="el" href="CircleDetector_8cpp_source.html#l00035">mtgb::CircleDetector::UpdateDetection()</a>, <a class="el" href="RayDetector_8cpp_source.html#l00026">mtgb::RayDetector::UpdateDetection()</a>.</p>
 
 </div>
 </div>

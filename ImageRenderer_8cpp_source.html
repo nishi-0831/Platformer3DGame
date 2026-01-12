@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: ImageRenderer.cpp ソースファイル</title>
+<title>Game: ImageRenderer.cpp ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -102,20 +102,20 @@ $(document).ready(function(){initNavTree('ImageRenderer_8cpp_source.html',''); i
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ImageRenderer_8h.html">ImageRenderer.h</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="Draw_8h.html">Draw.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImageRenderer.html#a57ec5f03612fd96a584202f42eadc7fd">    4</a></span><a class="code hl_function" href="classmtgb_1_1ImageRenderer.html#a57ec5f03612fd96a584202f42eadc7fd">mtgb::ImageRenderer::ImageRenderer</a>()</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    : color_{<a class="code hl_struct" href="structEffekseer_1_1Color.html">Color</a>::WHITE}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    : color_{<a class="code hl_struct" href="structmtgb_1_1Color.html">Color</a>::WHITE}</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>}</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImageRenderer.html#ad00bb1e9ae443623de53bd624cc95a86">    8</a></span><a class="code hl_function" href="classmtgb_1_1ImageRenderer.html#a57ec5f03612fd96a584202f42eadc7fd">mtgb::ImageRenderer::ImageRenderer</a>(<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    : <a class="code hl_class" href="classmtgb_1_1IComponent.html">IComponent</a>{_entityId}</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    , handle_{<a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">INVALID_HANDLE</a>}</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    , layer_{<a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>()}</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    , color_{ <a class="code hl_struct" href="structEffekseer_1_1Color.html">Color</a>::WHITE }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    , color_{<a class="code hl_struct" href="structmtgb_1_1Color.html">Color</a>::WHITE}</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImageRenderer.html#af1bba7d2f37d19350f437c22442c5c20">   16</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ImageRenderer.html#af1bba7d2f37d19350f437c22442c5c20">mtgb::ImageRenderer::Render</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#ab8a5e461f30dbedb33254572aa22efc1">Draw::Image</a>(handle_, drawRect_, uiParams_,color_);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#ab8a5e461f30dbedb33254572aa22efc1">Draw::Image</a>(handle_, drawRect_, uiParams_, color_);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classmtgb_1_1ImageRenderer.html#a5ab04ba17a8b253e38ee751c2a3e37d9">   21</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classmtgb_1_1ImageRenderer.html#a5ab04ba17a8b253e38ee751c2a3e37d9">mtgb::ImageRenderer::CanRender</a>()<span class="keyword"> const</span></div>
@@ -130,18 +130,18 @@ $(document).ready(function(){initNavTree('ImageRenderer_8cpp_source.html',''); i
 <div class="ttc" id="aDraw_8h_html"><div class="ttname"><a href="Draw_8h.html">Draw.h</a></div></div>
 <div class="ttc" id="aImageRenderer_8h_html"><div class="ttname"><a href="ImageRenderer_8h.html">ImageRenderer.h</a></div></div>
 <div class="ttc" id="aclassmtbit_1_1BitFlag_html"><div class="ttname"><a href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt; GameObjectLayer &gt;</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Draw_html_ab8a5e461f30dbedb33254572aa22efc1"><div class="ttname"><a href="classmtgb_1_1Draw.html#ab8a5e461f30dbedb33254572aa22efc1">mtgb::Draw::Image</a></div><div class="ttdeci">static void Image(const ImageHandle _hImage, const RectF &amp;_draw, const RectF &amp;_cut, const float _rotationZ, const UIParams &amp;_uiParams=defaultUIParams_, const Color &amp;_color=Color::WHITE)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00064">Draw.cpp:64</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1IComponent_html"><div class="ttname"><a href="classmtgb_1_1IComponent.html">mtgb::IComponent</a></div><div class="ttdoc">ゲームオブジェクトにつけるコンポーネントのインタフェース</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00015">IComponent.h:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_ab8a5e461f30dbedb33254572aa22efc1"><div class="ttname"><a href="classmtgb_1_1Draw.html#ab8a5e461f30dbedb33254572aa22efc1">mtgb::Draw::Image</a></div><div class="ttdeci">static void Image(const ImageHandle _hImage, const RectF &amp;_draw, const RectF &amp;_cut, const float _rotationZ, const UIParams &amp;_uiParams=defaultUIParams_, const Color &amp;_color=Color::WHITE)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00058">Draw.cpp:58</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html"><div class="ttname"><a href="classmtgb_1_1IComponent.html">mtgb::IComponent</a></div><div class="ttdoc">ゲームオブジェクトにつけるコンポーネントのインタフェース</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00014">IComponent.h:15</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_a57ec5f03612fd96a584202f42eadc7fd"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#a57ec5f03612fd96a584202f42eadc7fd">mtgb::ImageRenderer::ImageRenderer</a></div><div class="ttdeci">ImageRenderer()</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8cpp_source.html#l00004">ImageRenderer.cpp:4</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_a5ab04ba17a8b253e38ee751c2a3e37d9"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#a5ab04ba17a8b253e38ee751c2a3e37d9">mtgb::ImageRenderer::CanRender</a></div><div class="ttdeci">bool CanRender() const override</div><div class="ttdoc">描画が可能か否か</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8cpp_source.html#l00021">ImageRenderer.cpp:21</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_aac287a500f1e162b7e6f75984b4c0b7d"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#aac287a500f1e162b7e6f75984b4c0b7d">mtgb::ImageRenderer::GetLayer</a></div><div class="ttdeci">GameObjectLayerFlag GetLayer() const override</div><div class="ttdoc">レイヤーを返す</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8cpp_source.html#l00026">ImageRenderer.cpp:26</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_af1bba7d2f37d19350f437c22442c5c20"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#af1bba7d2f37d19350f437c22442c5c20">mtgb::ImageRenderer::Render</a></div><div class="ttdeci">void Render() const override</div><div class="ttdoc">描画を行う</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8cpp_source.html#l00016">ImageRenderer.cpp:16</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a100fdeed4f1f4e5f27e7ffb97ee743ca"><div class="ttname"><a href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">mtgb::AllLayer</a></div><div class="ttdeci">GameObjectLayerFlag AllLayer()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectLayer_8cpp_source.html#l00007">GameObjectLayer.cpp:7</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_a461c37884dafe5e26f7d9b0e2f97148b"><div class="ttname"><a href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a></div><div class="ttdeci">static const int32_t INVALID_HANDLE</div><div class="ttdoc">無効なハンドル値</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00045">Handlers.h:45</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a461c37884dafe5e26f7d9b0e2f97148b"><div class="ttname"><a href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a></div><div class="ttdeci">static const int32_t INVALID_HANDLE</div><div class="ttdoc">無効なハンドル値</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00044">Handlers.h:44</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
 <div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
-<div class="ttc" id="astructEffekseer_1_1Color_html"><div class="ttname"><a href="structEffekseer_1_1Color.html">Effekseer::Color</a></div><div class="ttdoc">色</div><div class="ttdef"><b>Definition:</b> <a href="install__msvc2022__x64_2include_2Effekseer_2Effekseer_8h_source.html#l01620">install_msvc2022_x64/include/Effekseer/Effekseer.h:1621</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Color_html"><div class="ttname"><a href="structmtgb_1_1Color.html">mtgb::Color</a></div><div class="ttdoc">色を0~255の範囲で表現する構造体</div><div class="ttdef"><b>Definition:</b> <a href="Color_8h_source.html#l00011">Color.h:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

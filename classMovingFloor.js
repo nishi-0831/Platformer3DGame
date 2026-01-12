@@ -20,8 +20,7 @@ var classMovingFloor =
     [ "GetScene", "classMovingFloor.html#a4e37b2e6bcf79e69bc4bc43325b5d26e", null ],
     [ "GetTag", "classMovingFloor.html#a217f3a513fca3e997b7b38c186a8b1cb", null ],
     [ "Initialize", "classMovingFloor.html#aed2d88f25ff20bd9f0068b119d867a8e", null ],
-    [ "Instantiate", "classMovingFloor.html#a33cadf2b68e6f47b76276951aba05208", null ],
-    [ "Instantiate", "classMovingFloor.html#a814f3174381b09c1def65bb0bb9a506c", null ],
+    [ "Instantiate", "classMovingFloor.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classMovingFloor.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
     [ "IsToDestroy", "classMovingFloor.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
     [ "MarkAsCalledStart", "classMovingFloor.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
@@ -33,7 +32,6 @@ var classMovingFloor =
     [ "Start", "classMovingFloor.html#ab789e97f62042a1008064735ca7c90a3", null ],
     [ "Update", "classMovingFloor.html#a14ccd16b5bbd6804940fb69650bcc42f", null ],
     [ "componentsFlag_", "classMovingFloor.html#a35133fe4a732ae022cb58038be9daf25", null ],
-    [ "displayName_", "classMovingFloor.html#a53eca55c2c3901c5713e857417100496", null ],
     [ "entityId_", "classMovingFloor.html#a6cc5a321c4352e0a78ba6350d80f1cc6", null ],
     [ "generateCounter_", "classMovingFloor.html#ad0b47563b108b90aa2f04b0af091a7f8", null ],
     [ "groundedEntity_", "classMovingFloor.html#a99705264dd69b39fcaed5fec3d032385", null ],
@@ -45,8 +43,6 @@ var classMovingFloor =
     [ "pMeshRenderer_", "classMovingFloor.html#aed2ee55f99c7124659d1d5fd04a95d04", null ],
     [ "pRigidBody_", "classMovingFloor.html#aa8efd52fd2556dbb26e58f3d13a3f9a5", null ],
     [ "pTransform_", "classMovingFloor.html#af0e7ad63409aac2bf62f7ce724ff7d78", null ],
-    [ "show_", "classMovingFloor.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "status_", "classMovingFloor.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
-    [ "tag_", "classMovingFloor.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
-    [ "targetEntityId_", "classMovingFloor.html#a04e42ed23c57183524dc34a01aa2a138", null ]
+    [ "tag_", "classMovingFloor.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
 ];

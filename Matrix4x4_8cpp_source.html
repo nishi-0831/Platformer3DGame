@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: Matrix4x4.cpp ソースファイル</title>
+<title>Game: Matrix4x4.cpp ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -101,32 +101,31 @@ $(document).ready(function(){initNavTree('Matrix4x4_8cpp_source.html',''); initR
 <a href="Matrix4x4_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Matrix4x4_8h.html">Matrix4x4.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// TODO: #include &lt;sstream&gt; を書くとどこかでctimeがnamespaceグローバル化するエラーがある</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="structmtgb_1_1Matrix4x4.html#a92e658708639c0f34d8e6e4eeccd3fa2">    5</a></span>std::string <a class="code hl_function" href="structmtgb_1_1Matrix4x4.html#a92e658708639c0f34d8e6e4eeccd3fa2">mtgb::Matrix4x4::ToString</a>()</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    std::string str{};</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; <a class="code hl_variable" href="structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f">ROW_SIZE</a>; y++)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; <a class="code hl_variable" href="structmtgb_1_1Matrix4x4.html#ab91760ae89336601c4f38c1cc045e856">COLUMN_SIZE</a>; x++)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            str += std::to_string(r[y].m128_f32[x]);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordflow">if</span> (x &lt; <a class="code hl_variable" href="structmtgb_1_1Matrix4x4.html#ab91760ae89336601c4f38c1cc045e856">COLUMN_SIZE</a> - 1)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                str += <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span> (y &lt; <a class="code hl_variable" href="structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f">ROW_SIZE</a> - 1)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            str += <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> str.c_str();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">//return &quot;&quot;;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="structmtgb_1_1Matrix4x4.html#a92e658708639c0f34d8e6e4eeccd3fa2">    4</a></span>std::string <a class="code hl_function" href="structmtgb_1_1Matrix4x4.html#a92e658708639c0f34d8e6e4eeccd3fa2">mtgb::Matrix4x4::ToString</a>()</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    std::string str{};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; <a class="code hl_variable" href="structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f">ROW_SIZE</a>; y++)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; <a class="code hl_variable" href="structmtgb_1_1Matrix4x4.html#ab91760ae89336601c4f38c1cc045e856">COLUMN_SIZE</a>; x++)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            str += std::to_string(DirectX::XMVectorGetByIndex(r[y], x));</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            <span class="keywordflow">if</span> (x &lt; <a class="code hl_variable" href="structmtgb_1_1Matrix4x4.html#ab91760ae89336601c4f38c1cc045e856">COLUMN_SIZE</a> - 1)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                str += <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span> (y &lt; <a class="code hl_variable" href="structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f">ROW_SIZE</a> - 1)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            str += <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> str.c_str();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// return &quot;&quot;;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="ttc" id="aMatrix4x4_8h_html"><div class="ttname"><a href="Matrix4x4_8h.html">Matrix4x4.h</a></div></div>
-<div class="ttc" id="astructmtgb_1_1Matrix4x4_html_a92e658708639c0f34d8e6e4eeccd3fa2"><div class="ttname"><a href="structmtgb_1_1Matrix4x4.html#a92e658708639c0f34d8e6e4eeccd3fa2">mtgb::Matrix4x4::ToString</a></div><div class="ttdeci">std::string ToString()</div><div class="ttdef"><b>Definition:</b> <a href="Matrix4x4_8cpp_source.html#l00005">Matrix4x4.cpp:5</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Matrix4x4_html_a92e658708639c0f34d8e6e4eeccd3fa2"><div class="ttname"><a href="structmtgb_1_1Matrix4x4.html#a92e658708639c0f34d8e6e4eeccd3fa2">mtgb::Matrix4x4::ToString</a></div><div class="ttdeci">std::string ToString()</div><div class="ttdef"><b>Definition:</b> <a href="Matrix4x4_8cpp_source.html#l00004">Matrix4x4.cpp:4</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Matrix4x4_html_aa6c7530ae3982a4c4005f9200423cb0f"><div class="ttname"><a href="structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f">mtgb::Matrix4x4::ROW_SIZE</a></div><div class="ttdeci">static const size_t ROW_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="Matrix4x4_8h_source.html#l00010">Matrix4x4.h:10</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Matrix4x4_html_ab91760ae89336601c4f38c1cc045e856"><div class="ttname"><a href="structmtgb_1_1Matrix4x4.html#ab91760ae89336601c4f38c1cc045e856">mtgb::Matrix4x4::COLUMN_SIZE</a></div><div class="ttdeci">static const size_t COLUMN_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="Matrix4x4_8h_source.html#l00011">Matrix4x4.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::HLSLInclude 構造体</title>
+<title>Game: mtgb::HLSLInclude 構造体</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -166,13 +166,13 @@ mtgb::HLSLInclude 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>結果ハンドル</dd></dl>
 
-<p class="definition"> <a class="el" href="HLSLInclude_8cpp_source.html">HLSLInclude.cpp</a> の <a class="el" href="HLSLInclude_8cpp_source.html#l00030">30</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
-<div class="line"><span class="lineno">   32</span>    <span class="comment">// 解放</span></div>
-<div class="line"><span class="lineno">   33</span>    <span class="keyword">delete</span>[] <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(_pData);</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">return</span> S_OK;</div>
-<div class="line"><span class="lineno">   36</span>}</div>
+<p class="definition"> <a class="el" href="HLSLInclude_8cpp_source.html">HLSLInclude.cpp</a> の <a class="el" href="HLSLInclude_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <span class="comment">// 解放</span></div>
+<div class="line"><span class="lineno">   34</span>    <span class="keyword">delete</span>[] <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(_pData);</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><span class="lineno">   37</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -242,24 +242,24 @@ mtgb::HLSLInclude 連携図</div>
 <dl class="section return"><dt>戻り値</dt><dd>結果ハンドル</dd></dl>
 
 <p class="definition"> <a class="el" href="HLSLInclude_8cpp_source.html">HLSLInclude.cpp</a> の <a class="el" href="HLSLInclude_8cpp_source.html#l00005">5</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span>{</div>
-<div class="line"><span class="lineno">   12</span>    std::string fileName{ _pFileName };</div>
-<div class="line"><span class="lineno">   13</span>    std::string headersDirectory{ <span class="stringliteral">&quot;../Assets/Shader/&quot;</span> };</div>
-<div class="line"><span class="lineno">   14</span> </div>
-<div class="line"><span class="lineno">   15</span>    std::ifstream ifs{ headersDirectory + fileName, std::ios::binary };</div>
-<div class="line"><span class="lineno">   16</span>    ifs.seekg(0, std::ios::end);</div>
-<div class="line"><span class="lineno">   17</span>    *_pBytes = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(ifs.tellg());</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    *_ppData = <span class="keyword">new</span> <span class="keywordtype">char</span>[*_pBytes];</div>
-<div class="line"><span class="lineno">   20</span> </div>
-<div class="line"><span class="lineno">   21</span>    ifs.seekg(0, std::ios::beg);</div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>    <span class="comment">// バッファを動的確保して読み取る</span></div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordtype">char</span>* buffer{ <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(*_ppData)) };</div>
-<div class="line"><span class="lineno">   25</span>    ifs.read(buffer, *_pBytes);</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> S_OK;</div>
-<div class="line"><span class="lineno">   28</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span>    std::string fileName{_pFileName};</div>
+<div class="line"><span class="lineno">   14</span>    std::string headersDirectory{<span class="stringliteral">&quot;../Assets/Shader/&quot;</span>};</div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span>    std::ifstream ifs{headersDirectory + fileName, std::ios::binary};</div>
+<div class="line"><span class="lineno">   17</span>    ifs.seekg(0, std::ios::end);</div>
+<div class="line"><span class="lineno">   18</span>    *_pBytes = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(ifs.tellg());</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>    *_ppData = <span class="keyword">new</span> <span class="keywordtype">char</span>[*_pBytes];</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    ifs.seekg(0, std::ios::beg);</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    <span class="comment">// バッファを動的確保して読み取る</span></div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">char</span>* buffer{<span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(*_ppData))};</div>
+<div class="line"><span class="lineno">   26</span>    ifs.read(buffer, *_pBytes);</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><span class="lineno">   29</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::DerivedFromDataT Concept Reference</title>
+<title>Game: mtgb::DerivedFromDataT Concept Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,15 +105,14 @@ $(document).ready(function(){initNavTree('conceptmtgb_1_1DerivedFromDataT.html',
 <p><code>#include &quot;<a class="el" href="ComponentConcept_8h_source.html">ComponentConcept.h</a>&quot;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> TDerived, <span class="keyword">typename</span> TData&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptmtgb_1_1DerivedFromDataT.html">mtgb::DerivedFromDataT</a> =  </div>
-<div class="line">        std::derived_from&lt;TDerived, TData&gt; || </div>
-<div class="line">        <span class="keyword">requires</span>(TDerived * _p) { <span class="keyword">static_cast&lt;</span>TData*<span class="keyword">&gt;</span>(_p); }</div>
-<div class="ttc" id="aconceptmtgb_1_1DerivedFromDataT_html"><div class="ttname"><a href="conceptmtgb_1_1DerivedFromDataT.html">mtgb::DerivedFromDataT</a></div><div class="ttdoc">TDerived は TData を公開継承している → static_cast&lt;TData&amp;&gt;(derived) が安全</div><div class="ttdef"><b>Definition:</b> <a href="ComponentConcept_8h_source.html#l00040">ComponentConcept.h:40</a></div></div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptmtgb_1_1DerivedFromDataT.html">mtgb::DerivedFromDataT</a> = </div>
+<div class="line">        std::derived_from&lt;TDerived, TData&gt; || <span class="keyword">requires</span>(TDerived* _p) { <span class="keyword">static_cast&lt;</span>TData*<span class="keyword">&gt;</span>(_p); }</div>
+<div class="ttc" id="aconceptmtgb_1_1DerivedFromDataT_html"><div class="ttname"><a href="conceptmtgb_1_1DerivedFromDataT.html">mtgb::DerivedFromDataT</a></div><div class="ttdoc">TDerived は TData を公開継承している → static_cast&lt;TData&amp;&gt;(derived) が安全</div><div class="ttdef"><b>Definition:</b> <a href="ComponentConcept_8h_source.html#l00039">ComponentConcept.h:39</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>TDerived は TData を公開継承している → static_cast&lt;TData&amp;&gt;(derived) が安全 </p>
 <p>CRTPなどで TDerivedが不完全型の状態で評価される場合があるため、 ポインタをstatic_cast可能かで判定する </p>
 
-<p class="definition"> <a class="el" href="ComponentConcept_8h_source.html">ComponentConcept.h</a> の <a class="el" href="ComponentConcept_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ComponentConcept_8h_source.html">ComponentConcept.h</a> の <a class="el" href="ComponentConcept_8h_source.html#l00039">39</a> 行目に定義があります。</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

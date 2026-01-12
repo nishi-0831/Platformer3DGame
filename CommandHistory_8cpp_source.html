@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: CommandHistory.cpp ソースファイル</title>
+<title>Game: CommandHistory.cpp ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('CommandHistory_8cpp_source.html',''); 
 <div class="contents">
 <a href="CommandHistory_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="CommandHistory_8h.html">CommandHistory.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ReleaseUtility_8h.html">ReleaseUtility.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="CommandHistoryManagerWrapper_8h.html">CommandHistoryManagerWrapper.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="NamedCommandHistory_8h.html">NamedCommandHistory.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="classCommandHistory.html#a882652aaaef5fdfa8a8d5bee008f1232">    5</a></span><a class="code hl_function" href="classCommandHistory.html#a882652aaaef5fdfa8a8d5bee008f1232">CommandHistory::~CommandHistory</a>()</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
@@ -144,26 +144,24 @@ $(document).ready(function(){initNavTree('CommandHistory_8cpp_source.html',''); 
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="classCommandHistory.html#a72afa0176fe9771dd16b199e42183bef">ClearRedoStack</a>();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classCommandHistory.html#a72afa0176fe9771dd16b199e42183bef">   49</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCommandHistory.html#a72afa0176fe9771dd16b199e42183bef">CommandHistory::ClearRedoStack</a>()</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.empty() == <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.top());</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.pop();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
-<div class="ttc" id="aCommandHistoryManagerWrapper_8h_html"><div class="ttname"><a href="CommandHistoryManagerWrapper_8h.html">CommandHistoryManagerWrapper.h</a></div></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classCommandHistory.html#a72afa0176fe9771dd16b199e42183bef">   47</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCommandHistory.html#a72afa0176fe9771dd16b199e42183bef">CommandHistory::ClearRedoStack</a>()</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.empty() == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.top());</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_variable" href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">redoStack_</a>.pop();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 <div class="ttc" id="aCommandHistory_8h_html"><div class="ttname"><a href="CommandHistory_8h.html">CommandHistory.h</a></div></div>
+<div class="ttc" id="aNamedCommandHistory_8h_html"><div class="ttname"><a href="NamedCommandHistory_8h.html">NamedCommandHistory.h</a></div></div>
 <div class="ttc" id="aReleaseUtility_8h_html"><div class="ttname"><a href="ReleaseUtility_8h.html">ReleaseUtility.h</a></div></div>
 <div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
 <div class="ttc" id="aclassCommandHistory_html_a0511dd5d5db26c9361cba947f4ab2276"><div class="ttname"><a href="classCommandHistory.html#a0511dd5d5db26c9361cba947f4ab2276">CommandHistory::ExecuteCommand</a></div><div class="ttdeci">void ExecuteCommand(Command *_command) override</div><div class="ttdoc">コマンドを実行、スタックに積む</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00010">CommandHistory.cpp:10</a></div></div>
 <div class="ttc" id="aclassCommandHistory_html_a24668740f671db7155dc5aa9897daf05"><div class="ttname"><a href="classCommandHistory.html#a24668740f671db7155dc5aa9897daf05">CommandHistory::ClearAllStack</a></div><div class="ttdeci">void ClearAllStack() override</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00037">CommandHistory.cpp:37</a></div></div>
-<div class="ttc" id="aclassCommandHistory_html_a2c3a0ee148616a9a1d6cf79535674a8c"><div class="ttname"><a href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">CommandHistory::redoStack_</a></div><div class="ttdeci">std::stack&lt; Command * &gt; redoStack_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8h_source.html#l00071">CommandHistory.h:71</a></div></div>
-<div class="ttc" id="aclassCommandHistory_html_a40203e1b3919eab4e9797673a1394318"><div class="ttname"><a href="classCommandHistory.html#a40203e1b3919eab4e9797673a1394318">CommandHistory::undoStack_</a></div><div class="ttdeci">std::stack&lt; Command * &gt; undoStack_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8h_source.html#l00070">CommandHistory.h:70</a></div></div>
+<div class="ttc" id="aclassCommandHistory_html_a2c3a0ee148616a9a1d6cf79535674a8c"><div class="ttname"><a href="classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c">CommandHistory::redoStack_</a></div><div class="ttdeci">std::stack&lt; Command * &gt; redoStack_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8h_source.html#l00078">CommandHistory.h:78</a></div></div>
+<div class="ttc" id="aclassCommandHistory_html_a40203e1b3919eab4e9797673a1394318"><div class="ttname"><a href="classCommandHistory.html#a40203e1b3919eab4e9797673a1394318">CommandHistory::undoStack_</a></div><div class="ttdeci">std::stack&lt; Command * &gt; undoStack_</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8h_source.html#l00077">CommandHistory.h:77</a></div></div>
 <div class="ttc" id="aclassCommandHistory_html_a54e4d572813b1f5e90a26f5cd68fd213"><div class="ttname"><a href="classCommandHistory.html#a54e4d572813b1f5e90a26f5cd68fd213">CommandHistory::UndoCommand</a></div><div class="ttdeci">void UndoCommand() override</div><div class="ttdoc">直前に実行したコマンドの取り消しを行う</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00017">CommandHistory.cpp:17</a></div></div>
-<div class="ttc" id="aclassCommandHistory_html_a72afa0176fe9771dd16b199e42183bef"><div class="ttname"><a href="classCommandHistory.html#a72afa0176fe9771dd16b199e42183bef">CommandHistory::ClearRedoStack</a></div><div class="ttdeci">void ClearRedoStack()</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00049">CommandHistory.cpp:49</a></div></div>
+<div class="ttc" id="aclassCommandHistory_html_a72afa0176fe9771dd16b199e42183bef"><div class="ttname"><a href="classCommandHistory.html#a72afa0176fe9771dd16b199e42183bef">CommandHistory::ClearRedoStack</a></div><div class="ttdeci">void ClearRedoStack()</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00047">CommandHistory.cpp:47</a></div></div>
 <div class="ttc" id="aclassCommandHistory_html_a81f1fe5bb1bc1d9eb38c901670094d24"><div class="ttname"><a href="classCommandHistory.html#a81f1fe5bb1bc1d9eb38c901670094d24">CommandHistory::RedoCommand</a></div><div class="ttdeci">void RedoCommand() override</div><div class="ttdoc">直前に取り消したコマンドの再実行を行う</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00027">CommandHistory.cpp:27</a></div></div>
 <div class="ttc" id="aclassCommandHistory_html_a882652aaaef5fdfa8a8d5bee008f1232"><div class="ttname"><a href="classCommandHistory.html#a882652aaaef5fdfa8a8d5bee008f1232">CommandHistory::~CommandHistory</a></div><div class="ttdeci">~CommandHistory()</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00005">CommandHistory.cpp:5</a></div></div>
 <div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00004">Command.h:5</a></div></div>

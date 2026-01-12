@@ -1,7 +1,7 @@
 var classmtgb_1_1InputData =
 [
     [ "InputResource", "classmtgb_1_1InputData.html#a39cef4e666edb05e0f48062842917189", null ],
-    [ "activeGamePadID", "classmtgb_1_1InputData.html#a51d2ade8e07765d5ed6bc29a370d887b", null ],
+    [ "activeGamePadID", "classmtgb_1_1InputData.html#a070288123cc125f39c40f98c84b2ba93", null ],
     [ "config_", "classmtgb_1_1InputData.html#aef0b5448a4b9c96c1364d973d12a77e6", null ],
     [ "controllerType_", "classmtgb_1_1InputData.html#af3c96e2c25d30b5ee05f9afa661829e2", null ],
     [ "GAME_PAD_COUNT", "classmtgb_1_1InputData.html#ad08863b61f96d2f7b41d408c97e83617", null ],

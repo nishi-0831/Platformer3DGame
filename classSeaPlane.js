@@ -21,8 +21,7 @@ var classSeaPlane =
     [ "GetScene", "classSeaPlane.html#a4e37b2e6bcf79e69bc4bc43325b5d26e", null ],
     [ "GetTag", "classSeaPlane.html#a217f3a513fca3e997b7b38c186a8b1cb", null ],
     [ "Initialize", "classSeaPlane.html#aed2d88f25ff20bd9f0068b119d867a8e", null ],
-    [ "Instantiate", "classSeaPlane.html#a33cadf2b68e6f47b76276951aba05208", null ],
-    [ "Instantiate", "classSeaPlane.html#a814f3174381b09c1def65bb0bb9a506c", null ],
+    [ "Instantiate", "classSeaPlane.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classSeaPlane.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
     [ "IsToDestroy", "classSeaPlane.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
     [ "MarkAsCalledStart", "classSeaPlane.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
@@ -32,7 +31,6 @@ var classSeaPlane =
     [ "Start", "classSeaPlane.html#a5555a7c8a66e5e47f8f845f63789a25f", null ],
     [ "Update", "classSeaPlane.html#a3e8fd98903937cc826eefda4b984f4e2", null ],
     [ "componentsFlag_", "classSeaPlane.html#a35133fe4a732ae022cb58038be9daf25", null ],
-    [ "displayName_", "classSeaPlane.html#a53eca55c2c3901c5713e857417100496", null ],
     [ "entityId_", "classSeaPlane.html#a6cc5a321c4352e0a78ba6350d80f1cc6", null ],
     [ "generateCounter_", "classSeaPlane.html#a9d3de49e361a5ec9b2ce567cc232d4ad", null ],
     [ "isNotCalledStart_", "classSeaPlane.html#aee8629c2c936df1173a2f9efe7747ab9", null ],
@@ -41,8 +39,6 @@ var classSeaPlane =
     [ "pCollider_", "classSeaPlane.html#a72425838f8cb70c70f2c3d714b1bd966", null ],
     [ "pMeshRenderer_", "classSeaPlane.html#a8862fe4726dbc61df467d6f48ae4db00", null ],
     [ "pTransform_", "classSeaPlane.html#ac6f17512d7f3e10620ac018012bdf866", null ],
-    [ "show_", "classSeaPlane.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "status_", "classSeaPlane.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
-    [ "tag_", "classSeaPlane.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
-    [ "targetEntityId_", "classSeaPlane.html#a04e42ed23c57183524dc34a01aa2a138", null ]
+    [ "tag_", "classSeaPlane.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
 ];

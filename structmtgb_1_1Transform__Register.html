@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::Transform_Register 構造体</title>
+<title>Game: mtgb::Transform_Register 構造体</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -142,25 +142,27 @@ mtgb::Transform_Register 連携図</div>
 
 <p class="definition"> <a class="el" href="Transform_8generated_8cpp_source.html">Transform.generated.cpp</a> の <a class="el" href="Transform_8generated_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   13</span>        {</div>
-<div class="line"><span class="lineno">   14</span>            RegisterShowFuncHolder::Set&lt;Transform&gt;([]( Transform* _target, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name)</div>
-<div class="line"><span class="lineno">   15</span>                {</div>
-<div class="line"><span class="lineno">   16</span>                                <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">CallFunc</a>(&amp;_target-&gt;parent, <span class="stringliteral">&quot;parent&quot;</span>);</div>
-<div class="line"><span class="lineno">   17</span>                                <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">CallFunc</a>(&amp;_target-&gt;position, <span class="stringliteral">&quot;position&quot;</span>);</div>
-<div class="line"><span class="lineno">   18</span>                                <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">CallFunc</a>(&amp;_target-&gt;scale, <span class="stringliteral">&quot;scale&quot;</span>);</div>
-<div class="line"><span class="lineno">   19</span>                                <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">CallFunc</a>(&amp;_target-&gt;rotate, <span class="stringliteral">&quot;rotate&quot;</span>);</div>
-<div class="line"><span class="lineno">   20</span>                });</div>
-<div class="line"><span class="lineno">   21</span>            <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#af5b5a6853c9d8c4fcf0b7c6c3d2233f2">RegisterComponentViewer</a>&lt;Transform&gt;();</div>
-<div class="line"><span class="lineno">   22</span>        }</div>
-<div class="ttc" id="aclassTypeRegistry_html_a0318948c24384561a2467165e2b43e8d"><div class="ttname"><a href="classTypeRegistry.html#a0318948c24384561a2467165e2b43e8d">TypeRegistry::CallFunc</a></div><div class="ttdeci">void CallFunc(T *instance, const char *name)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00055">TypeRegistry.h:55</a></div></div>
+<div class="line"><span class="lineno">   14</span>            RegisterShowFuncHolder::Set&lt;Transform&gt;(</div>
+<div class="line"><span class="lineno">   15</span>                [](Transform* _target, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name)</div>
+<div class="line"><span class="lineno">   16</span>                {</div>
+<div class="line"><span class="lineno">   17</span>                    <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#afb3dc512e17838e88692c90f7257bff1">CallFunc</a>(&amp;_target-&gt;parent, <span class="stringliteral">&quot;parent&quot;</span>);</div>
+<div class="line"><span class="lineno">   18</span>                    <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#afb3dc512e17838e88692c90f7257bff1">CallFunc</a>(&amp;_target-&gt;position, <span class="stringliteral">&quot;position&quot;</span>);</div>
+<div class="line"><span class="lineno">   19</span>                    <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#afb3dc512e17838e88692c90f7257bff1">CallFunc</a>(&amp;_target-&gt;scale, <span class="stringliteral">&quot;scale&quot;</span>);</div>
+<div class="line"><span class="lineno">   20</span>                    <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#afb3dc512e17838e88692c90f7257bff1">CallFunc</a>(&amp;_target-&gt;rotate, <span class="stringliteral">&quot;rotate&quot;</span>);</div>
+<div class="line"><span class="lineno">   21</span>                }</div>
+<div class="line"><span class="lineno">   22</span>            );</div>
+<div class="line"><span class="lineno">   23</span>            <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#af5b5a6853c9d8c4fcf0b7c6c3d2233f2">RegisterComponentViewer</a>&lt;Transform&gt;();</div>
+<div class="line"><span class="lineno">   24</span>        }</div>
 <div class="ttc" id="aclassTypeRegistry_html_a45f221653ae5cef14b554cb67ead4274"><div class="ttname"><a href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a></div><div class="ttdeci">static TypeRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry.cpp:10</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00038">MTImGui.h:38</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_af5b5a6853c9d8c4fcf0b7c6c3d2233f2"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#af5b5a6853c9d8c4fcf0b7c6c3d2233f2">mtgb::MTImGui::RegisterComponentViewer</a></div><div class="ttdeci">void RegisterComponentViewer()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00180">MTImGui.h:180</a></div></div>
+<div class="ttc" id="aclassTypeRegistry_html_afb3dc512e17838e88692c90f7257bff1"><div class="ttname"><a href="classTypeRegistry.html#afb3dc512e17838e88692c90f7257bff1">TypeRegistry::CallFunc</a></div><div class="ttdeci">void CallFunc(T *_instance, const char *_name)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00047">TypeRegistry.h:47</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00036">MTImGui.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_af5b5a6853c9d8c4fcf0b7c6c3d2233f2"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#af5b5a6853c9d8c4fcf0b7c6c3d2233f2">mtgb::MTImGui::RegisterComponentViewer</a></div><div class="ttdeci">void RegisterComponentViewer()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00191">MTImGui.h:191</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00055">TypeRegistry::CallFunc()</a>, <a class="el" href="MTImGui_8h_source.html#l00038">mtgb::MTImGui::Instance()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry::Instance()</a>, <a class="el" href="Transform_8h_source.html#l00137">mtgb::Transform::parent</a>, <a class="el" href="Transform_8h_source.html#l00139">mtgb::Transform::position</a>, <a class="el" href="MTImGui_8h_source.html#l00180">mtgb::MTImGui::RegisterComponentViewer()</a>, <a class="el" href="Transform_8h_source.html#l00143">mtgb::Transform::rotate</a>, <a class="el" href="Transform_8h_source.html#l00141">mtgb::Transform::scale</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00047">TypeRegistry::CallFunc()</a>, <a class="el" href="MTImGui_8h_source.html#l00036">mtgb::MTImGui::Instance()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry::Instance()</a>, <a class="el" href="Transform_8h_source.html#l00149">mtgb::Transform::parent</a>, <a class="el" href="Transform_8h_source.html#l00151">mtgb::Transform::position</a>, <a class="el" href="MTImGui_8h_source.html#l00191">mtgb::MTImGui::RegisterComponentViewer()</a>, <a class="el" href="Transform_8h_source.html#l00155">mtgb::Transform::rotate</a>, <a class="el" href="Transform_8h_source.html#l00153">mtgb::Transform::scale</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structmtgb_1_1Transform__Register_abaa562e1d61cbfc47915e978dd46d25c_cgraph.svg" width="2436" height="1911"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmtgb_1_1Transform__Register_abaa562e1d61cbfc47915e978dd46d25c_cgraph.svg" width="1358" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

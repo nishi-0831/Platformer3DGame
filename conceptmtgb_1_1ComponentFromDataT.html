@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::ComponentFromDataT Concept Reference</title>
+<title>Game: mtgb::ComponentFromDataT Concept Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,15 +105,13 @@ $(document).ready(function(){initNavTree('conceptmtgb_1_1ComponentFromDataT.html
 <p><code>#include &quot;<a class="el" href="ComponentConcept_8h_source.html">ComponentConcept.h</a>&quot;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> TComponent, <span class="keyword">typename</span> TData&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptmtgb_1_1ComponentFromDataT.html">mtgb::ComponentFromDataT</a> = </div>
-<div class="line">        std::derived_from&lt;TComponent, TData&gt;&amp;&amp;</div>
-<div class="line">        <a class="code hl_concept" href="conceptmtgb_1_1ComponentDataT.html">ComponentDataT&lt;TData&gt;</a></div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptmtgb_1_1ComponentFromDataT.html">mtgb::ComponentFromDataT</a> =  std::derived_from&lt;TComponent, TData&gt; &amp;&amp; <a class="code hl_concept" href="conceptmtgb_1_1ComponentDataT.html">ComponentDataT&lt;TData&gt;</a></div>
 <div class="ttc" id="aconceptmtgb_1_1ComponentDataT_html"><div class="ttname"><a href="conceptmtgb_1_1ComponentDataT.html">mtgb::ComponentDataT</a></div><div class="ttdoc">T は Component インターフェースを実装している （Get(EntityId) 静的メソッドを持つ）</div><div class="ttdef"><b>Definition:</b> <a href="ComponentConcept_8h_source.html#l00025">ComponentConcept.h:25</a></div></div>
-<div class="ttc" id="aconceptmtgb_1_1ComponentFromDataT_html"><div class="ttname"><a href="conceptmtgb_1_1ComponentFromDataT.html">mtgb::ComponentFromDataT</a></div><div class="ttdoc">TComponent は TData を公開継承している → ComponentMemento&lt;TComponent, TData&gt; の使用が安全</div><div class="ttdef"><b>Definition:</b> <a href="ComponentConcept_8h_source.html#l00049">ComponentConcept.h:49</a></div></div>
+<div class="ttc" id="aconceptmtgb_1_1ComponentFromDataT_html"><div class="ttname"><a href="conceptmtgb_1_1ComponentFromDataT.html">mtgb::ComponentFromDataT</a></div><div class="ttdoc">TComponent は TData を公開継承している → ComponentMemento&lt;TComponent, TData&gt; の使用が安全</div><div class="ttdef"><b>Definition:</b> <a href="ComponentConcept_8h_source.html#l00047">ComponentConcept.h:47</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>TComponent は TData を公開継承している → ComponentMemento&lt;TComponent, TData&gt; の使用が安全 </p>
 
-<p class="definition"> <a class="el" href="ComponentConcept_8h_source.html">ComponentConcept.h</a> の <a class="el" href="ComponentConcept_8h_source.html#l00049">49</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ComponentConcept_8h_source.html">ComponentConcept.h</a> の <a class="el" href="ComponentConcept_8h_source.html#l00047">47</a> 行目に定義があります。</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

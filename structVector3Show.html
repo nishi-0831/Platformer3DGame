@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: Vector3Show 構造体</title>
+<title>Game: Vector3Show 構造体</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -155,25 +155,15 @@ Vector3Show 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">    4</span>{</div>
 <div class="line"><span class="lineno">    5</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> old = *vec;</div>
 <div class="line"><span class="lineno">    6</span> </div>
-<div class="line"><span class="lineno">    7</span>    <span class="keywordtype">bool</span> changed = <a class="code hl_function" href="namespaceImGui.html#a970a00fd1a4226c697ea5fb807fb62d8">ImGui::InputFloat3</a>(name, &amp;vec-&gt;x,<span class="stringliteral">&quot;%.3f&quot;</span>,<a class="code hl_enumvalue" href="imgui_8h.html#a6b66455f4927d6c455800e5a2c4c5392a291bc2b81c417e82dd8f212fb3541b9c">ImGuiInputTextFlags_NoUndoRedo</a>);</div>
+<div class="line"><span class="lineno">    7</span>    <span class="keywordtype">bool</span> changed = ImGui::InputFloat3(name, &amp;vec-&gt;x, <span class="stringliteral">&quot;%.3f&quot;</span>, ImGuiInputTextFlags_NoUndoRedo);</div>
 <div class="line"><span class="lineno">    8</span> </div>
 <div class="line"><span class="lineno">    9</span>    <span class="keywordflow">if</span> (changed == <span class="keyword">false</span>)</div>
 <div class="line"><span class="lineno">   10</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   11</span>    </div>
+<div class="line"><span class="lineno">   11</span> </div>
 <div class="line"><span class="lineno">   12</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> ImGuiInputCommand&lt;mtgb::Vector3&gt;(vec, old, *vec, name);</div>
 <div class="line"><span class="lineno">   13</span>}</div>
-<div class="ttc" id="aimgui_8h_html_a6b66455f4927d6c455800e5a2c4c5392a291bc2b81c417e82dd8f212fb3541b9c"><div class="ttname"><a href="imgui_8h.html#a6b66455f4927d6c455800e5a2c4c5392a291bc2b81c417e82dd8f212fb3541b9c">ImGuiInputTextFlags_NoUndoRedo</a></div><div class="ttdeci">@ ImGuiInputTextFlags_NoUndoRedo</div><div class="ttdef"><b>Definition:</b> <a href="imgui_8h_source.html#l01288">imgui.h:1288</a></div></div>
-<div class="ttc" id="anamespaceImGui_html_a970a00fd1a4226c697ea5fb807fb62d8"><div class="ttname"><a href="namespaceImGui.html#a970a00fd1a4226c697ea5fb807fb62d8">ImGui::InputFloat3</a></div><div class="ttdeci">IMGUI_API bool InputFloat3(const char *label, float v[3], const char *format=&quot;%.3f&quot;, ImGuiInputTextFlags flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l03871">imgui_widgets.cpp:3871</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="imgui_8h_source.html#l01288">ImGuiInputTextFlags_NoUndoRedo</a>, <a class="el" href="imgui__widgets_8cpp_source.html#l03871">ImGui::InputFloat3()</a>.</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structVector3Show_a66a9fb28b582681eadda961c904c0f9a_cgraph.svg" width="1820" height="1640"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
 </div>
 </div>
 <hr/>この構造体詳解は次のファイルから抽出されました:<ul>

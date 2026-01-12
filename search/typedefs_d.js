@@ -1,13 +1,7 @@
 var searchData=
 [
-  ['pfn_5fgetdpiformonitor_0',['PFN_GetDpiForMonitor',['../imgui__impl__win32_8cpp.html#a411247e61a6621babce2d06bb8a434db',1,'imgui_impl_win32.cpp']]],
-  ['pfn_5fsetprocessdpiawareness_1',['PFN_SetProcessDpiAwareness',['../imgui__impl__win32_8cpp.html#a36d30a5f5f7942a50b272fa13058cf96',1,'imgui_impl_win32.cpp']]],
-  ['pfn_5fsetthreaddpiawarenesscontext_2',['PFN_SetThreadDpiAwarenessContext',['../imgui__impl__win32_8cpp.html#ac4fd09e8ec8568aa443549a1286800b1',1,'imgui_impl_win32.cpp']]],
-  ['pfn_5fxinputgetcapabilities_3',['PFN_XInputGetCapabilities',['../imgui__impl__win32_8cpp.html#ab894020cfaceec8e0a7e24a2b8cf003a',1,'imgui_impl_win32.cpp']]],
-  ['pfn_5fxinputgetstate_4',['PFN_XInputGetState',['../imgui__impl__win32_8cpp.html#a0554b333dae0845c369b9d7234c695e9',1,'imgui_impl_win32.cpp']]],
-  ['pipelinestateref_5',['PipelineStateRef',['../namespaceEffekseer_1_1Backend.html#ae222a2038e9e88a6860c01defc3d08de',1,'Effekseer::Backend']]],
-  ['pool_6',['Pool',['../classmtgb_1_1IComponent.html#a4d48cdbe3ab7d92a0a73b29228f255d5',1,'mtgb::IComponent']]],
-  ['portnumber_7',['PortNumber',['../namespacemtnet.html#ac0490bea78c7f28c83cf81b62f06e666',1,'mtnet']]],
-  ['prepend_5ft_8',['prepend_t',['../namespacerefl_1_1trait.html#ab8b29546446a5c8334ee733b161e6f3e',1,'refl::trait']]],
-  ['proceduralmodelgeneratorref_9',['ProceduralModelGeneratorRef',['../namespaceEffekseer.html#a1a8d70a6810aefeebd68adcaf95e2052',1,'Effekseer']]]
+  ['rectf_0',['RectF',['../namespacemtgb.html#a5c832fe81e838c69e5c62380af9a01de',1,'mtgb']]],
+  ['rectint_1',['RectInt',['../namespacemtgb.html#af1d6958895762ab467321bb2735242f5',1,'mtgb']]],
+  ['registersystem_2',['RegisterSystem',['../classmtgb_1_1Game.html#a7eea92b18fc37c8fc4aaca16bb3323af',1,'mtgb::Game']]],
+  ['rendererref_3',['RendererRef',['../namespacemtgb.html#af0f2a1cbfc67b4a7e4d991121881af33',1,'mtgb']]]
 ];

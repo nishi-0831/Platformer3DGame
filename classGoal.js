@@ -21,8 +21,7 @@ var classGoal =
     [ "GetScene", "classGoal.html#a4e37b2e6bcf79e69bc4bc43325b5d26e", null ],
     [ "GetTag", "classGoal.html#a217f3a513fca3e997b7b38c186a8b1cb", null ],
     [ "Initialize", "classGoal.html#aed2d88f25ff20bd9f0068b119d867a8e", null ],
-    [ "Instantiate", "classGoal.html#a33cadf2b68e6f47b76276951aba05208", null ],
-    [ "Instantiate", "classGoal.html#a814f3174381b09c1def65bb0bb9a506c", null ],
+    [ "Instantiate", "classGoal.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classGoal.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
     [ "IsToDestroy", "classGoal.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
     [ "MarkAsCalledStart", "classGoal.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
@@ -33,7 +32,6 @@ var classGoal =
     [ "Start", "classGoal.html#ae5995d123a2116abfffc4f1d31329235", null ],
     [ "Update", "classGoal.html#ae380e089b10da7de87ecf8a732ef82dc", null ],
     [ "componentsFlag_", "classGoal.html#a35133fe4a732ae022cb58038be9daf25", null ],
-    [ "displayName_", "classGoal.html#a53eca55c2c3901c5713e857417100496", null ],
     [ "entityId_", "classGoal.html#a6cc5a321c4352e0a78ba6350d80f1cc6", null ],
     [ "generateCounter_", "classGoal.html#ad52e348dde437e53b9d706f5d23ca226", null ],
     [ "isNotCalledStart_", "classGoal.html#aee8629c2c936df1173a2f9efe7747ab9", null ],
@@ -44,9 +42,7 @@ var classGoal =
     [ "pMeshRenderer_", "classGoal.html#aff809895e2b0ac3d310b252d97397d91", null ],
     [ "pRigidBody_", "classGoal.html#a6d0f5cbe4a8d8669097aec54879e0783", null ],
     [ "pTransform_", "classGoal.html#a43f12f4da882e9ac79dc04a46a93f672", null ],
-    [ "show_", "classGoal.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "status_", "classGoal.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classGoal.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
-    [ "targetEntityId_", "classGoal.html#a04e42ed23c57183524dc34a01aa2a138", null ],
     [ "transitionSceneDelay_", "classGoal.html#adf26b5077697781e2e8e31296740a36f", null ]
 ];

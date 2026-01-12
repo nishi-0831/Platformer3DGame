@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: Direct2DResource.cpp ソースファイル</title>
+<title>Game: Direct2DResource.cpp ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('Direct2DResource_8cpp_source.html','')
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    , pD2DBrush_{nullptr}</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// DXGI,Direct3Dのリソースを取得</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&amp; dxgiResource = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&gt;(_windowContext);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&amp; dxgiResource    = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&gt;(_windowContext);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="classmtgb_1_1Direct3DResource.html">Direct3DResource</a>&amp; d3dResource = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1Direct3DResource.html">Direct3DResource</a>&gt;(_windowContext);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// Direct2DのComオブジェクト作成に使う</span></div>
@@ -141,9 +141,9 @@ $(document).ready(function(){initNavTree('Direct2DResource_8cpp_source.html','')
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2DResource.html#abce19c903752c9cabeeaec008c5426f8">   41</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2DResource.html#abce19c903752c9cabeeaec008c5426f8">mtgb::Direct2DResource::OnResize</a>(UINT _width, UINT _height)</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Release();</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// DXGI,Direct3Dのリソースを取得</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&amp; dxgiResource = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&gt;(windowContext_);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&amp; dxgiResource    = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&gt;(windowContext_);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_class" href="classmtgb_1_1Direct3DResource.html">Direct3DResource</a>&amp; d3dResource = Game::System&lt;WindowContextResourceManager&gt;().Get&lt;<a class="code hl_class" href="classmtgb_1_1Direct3DResource.html">Direct3DResource</a>&gt;(windowContext_);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// Direct2DのComオブジェクト作成に使う</span></div>
@@ -167,7 +167,6 @@ $(document).ready(function(){initNavTree('Direct2DResource_8cpp_source.html','')
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    pD2DBrush_.Reset();</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    pRenderTarget_.Reset();</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="ttc" id="aDXGIResource_8h_html"><div class="ttname"><a href="DXGIResource_8h.html">DXGIResource.h</a></div></div>
 <div class="ttc" id="aDirect2DResource_8h_html"><div class="ttname"><a href="Direct2DResource_8h.html">Direct2DResource.h</a></div></div>
 <div class="ttc" id="aDirect2D_8h_html"><div class="ttname"><a href="Direct2D_8h.html">Direct2D.h</a></div></div>
@@ -177,16 +176,16 @@ $(document).ready(function(){initNavTree('Direct2DResource_8cpp_source.html','')
 <div class="ttc" id="aWindowContextResource_8h_html"><div class="ttname"><a href="WindowContextResource_8h.html">WindowContextResource.h</a></div></div>
 <div class="ttc" id="aWindowContext_8h_html"><div class="ttname"><a href="WindowContext_8h.html">WindowContext.h</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1DXGIResource_html"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html">mtgb::DXGIResource</a></div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00019">DXGIResource.h:20</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a7f2694f639b46324e71a778d8ce5618a"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a7f2694f639b46324e71a778d8ce5618a">mtgb::DXGIResource::pDXGISurface_</a></div><div class="ttdeci">ComPtr&lt; IDXGISurface &gt; pDXGISurface_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00038">DXGIResource.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DXGIResource_html_a7f2694f639b46324e71a778d8ce5618a"><div class="ttname"><a href="classmtgb_1_1DXGIResource.html#a7f2694f639b46324e71a778d8ce5618a">mtgb::DXGIResource::pDXGISurface_</a></div><div class="ttdeci">ComPtr&lt; IDXGISurface &gt; pDXGISurface_</div><div class="ttdef"><b>Definition:</b> <a href="DXGIResource_8h_source.html#l00041">DXGIResource.h:41</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a1935c788cf0e1fa355806c81f9dcf6dd"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a1935c788cf0e1fa355806c81f9dcf6dd">mtgb::Direct2DResource::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00065">Direct2DResource.cpp:65</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a2a180504724fffa1bc47f7c08c7493be"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a2a180504724fffa1bc47f7c08c7493be">mtgb::Direct2DResource::Direct2DResource</a></div><div class="ttdeci">Direct2DResource(WindowContext _windowContext)</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00012">Direct2DResource.cpp:12</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a407f2703f904fd5d79b005ae40be7be2"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a407f2703f904fd5d79b005ae40be7be2">mtgb::Direct2DResource::SetResource</a></div><div class="ttdeci">void SetResource() override</div><div class="ttdoc">ウィンドウを変更する際に固有のリソースをセットする</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00059">Direct2DResource.cpp:59</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a55b6cdeaa01bdaab438340f2b00a7cf4"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a55b6cdeaa01bdaab438340f2b00a7cf4">mtgb::Direct2DResource::Reset</a></div><div class="ttdeci">void Reset() override</div><div class="ttdoc">ウィンドウのサイズが変更される前の解放処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00036">Direct2DResource.cpp:36</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a9a33a1be9736a9bad442104d0656ba3d"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">mtgb::Direct2DResource::pD2DBrush_</a></div><div class="ttdeci">ComPtr&lt; ID2D1SolidColorBrush &gt; pD2DBrush_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00027">Direct2DResource.h:27</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_a9a33a1be9736a9bad442104d0656ba3d"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#a9a33a1be9736a9bad442104d0656ba3d">mtgb::Direct2DResource::pD2DBrush_</a></div><div class="ttdeci">ComPtr&lt; ID2D1SolidColorBrush &gt; pD2DBrush_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00029">Direct2DResource.h:29</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_abce19c903752c9cabeeaec008c5426f8"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#abce19c903752c9cabeeaec008c5426f8">mtgb::Direct2DResource::OnResize</a></div><div class="ttdeci">void OnResize(UINT _width, UINT _height) override</div><div class="ttdoc">ウィンドウのサイズが変更された後の処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00041">Direct2DResource.cpp:41</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_ae73760ddd83a0394c3c1c8b195de9b43"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#ae73760ddd83a0394c3c1c8b195de9b43">mtgb::Direct2DResource::~Direct2DResource</a></div><div class="ttdeci">~Direct2DResource()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8cpp_source.html#l00031">Direct2DResource.cpp:31</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_aec67ceedb2aabf04ef6bd6e1b726c8f1"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">mtgb::Direct2DResource::pRenderTarget_</a></div><div class="ttdeci">ComPtr&lt; ID2D1RenderTarget &gt; pRenderTarget_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00026">Direct2DResource.h:26</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html"><div class="ttname"><a href="classmtgb_1_1Direct2D.html">mtgb::Direct2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00018">Direct2D.h:19</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2DResource_html_aec67ceedb2aabf04ef6bd6e1b726c8f1"><div class="ttname"><a href="classmtgb_1_1Direct2DResource.html#aec67ceedb2aabf04ef6bd6e1b726c8f1">mtgb::Direct2DResource::pRenderTarget_</a></div><div class="ttdeci">ComPtr&lt; ID2D1RenderTarget &gt; pRenderTarget_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00028">Direct2DResource.h:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html"><div class="ttname"><a href="classmtgb_1_1Direct2D.html">mtgb::Direct2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00016">Direct2D.h:17</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct3DResource_html"><div class="ttname"><a href="classmtgb_1_1Direct3DResource.html">mtgb::Direct3DResource</a></div><div class="ttdef"><b>Definition:</b> <a href="Direct3DResource_8h_source.html#l00013">Direct3DResource.h:14</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1WindowContextResource_html"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html">mtgb::WindowContextResource</a></div><div class="ttdoc">ウィンドウごとに固有のリソースのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00018">WindowContextResource.h:19</a></div></div>
 <div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>

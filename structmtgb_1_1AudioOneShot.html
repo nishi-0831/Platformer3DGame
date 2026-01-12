@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::AudioOneShot 構造体</title>
+<title>Game: mtgb::AudioOneShot 構造体</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -149,10 +149,9 @@ mtgb::AudioOneShot 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="AudioOneShot_8cpp_source.html">AudioOneShot.cpp</a> の <a class="el" href="AudioOneShot_8cpp_source.html#l00006">6</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    6</span>                               :</div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#a42e82aae0c2668ad145b39767398c1bc">timeLeft</a>{ 0 },</div>
-<div class="line"><span class="lineno">    8</span>    <a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#a4f059c65feaef78a817e4b7c52a8dbbb">pSourceVoice</a>{ <span class="keyword">nullptr</span> },</div>
-<div class="line"><span class="lineno">    9</span>    <a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#ac49e0028f04f5089a9b605d4feba9fd3">pAudioClip</a>{ <span class="keyword">new</span> AudioClip{} }</div>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>    : <a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#a42e82aae0c2668ad145b39767398c1bc">timeLeft</a>{0}</div>
+<div class="line"><span class="lineno">    8</span>    , <a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#a4f059c65feaef78a817e4b7c52a8dbbb">pSourceVoice</a>{<span class="keyword">nullptr</span>}</div>
+<div class="line"><span class="lineno">    9</span>    , <a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#ac49e0028f04f5089a9b605d4feba9fd3">pAudioClip</a>{<span class="keyword">new</span> AudioClip{}}</div>
 <div class="line"><span class="lineno">   10</span>{</div>
 <div class="line"><span class="lineno">   11</span>}</div>
 <div class="ttc" id="astructmtgb_1_1AudioOneShot_html_a42e82aae0c2668ad145b39767398c1bc"><div class="ttname"><a href="structmtgb_1_1AudioOneShot.html#a42e82aae0c2668ad145b39767398c1bc">mtgb::AudioOneShot::timeLeft</a></div><div class="ttdeci">float timeLeft</div><div class="ttdef"><b>Definition:</b> <a href="AudioOneShot_8h_source.html#l00016">AudioOneShot.h:16</a></div></div>
@@ -178,8 +177,7 @@ mtgb::AudioOneShot 連携図</div>
 
 <p class="definition"> <a class="el" href="AudioOneShot_8cpp_source.html">AudioOneShot.cpp</a> の <a class="el" href="AudioOneShot_8cpp_source.html#l00013">13</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   14</span>{</div>
-<div class="line"><span class="lineno">   15</span>    </div>
-<div class="line"><span class="lineno">   16</span>}</div>
+<div class="line"><span class="lineno">   15</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -199,16 +197,16 @@ mtgb::AudioOneShot 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="AudioOneShot_8cpp_source.html">AudioOneShot.cpp</a> の <a class="el" href="AudioOneShot_8cpp_source.html#l00018">18</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>{</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#a4f059c65feaef78a817e4b7c52a8dbbb">pSourceVoice</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   21</span>    {</div>
-<div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#a4f059c65feaef78a817e4b7c52a8dbbb">pSourceVoice</a>-&gt;DestroyVoice();</div>
-<div class="line"><span class="lineno">   23</span>        <a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#a4f059c65feaef78a817e4b7c52a8dbbb">pSourceVoice</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   24</span>    }</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#ac49e0028f04f5089a9b605d4feba9fd3">pAudioClip</a>);</div>
-<div class="line"><span class="lineno">   27</span>}</div>
+<p class="definition"> <a class="el" href="AudioOneShot_8cpp_source.html">AudioOneShot.cpp</a> の <a class="el" href="AudioOneShot_8cpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#a4f059c65feaef78a817e4b7c52a8dbbb">pSourceVoice</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   20</span>    {</div>
+<div class="line"><span class="lineno">   21</span>        <a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#a4f059c65feaef78a817e4b7c52a8dbbb">pSourceVoice</a>-&gt;DestroyVoice();</div>
+<div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#a4f059c65feaef78a817e4b7c52a8dbbb">pSourceVoice</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   23</span>    }</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="structmtgb_1_1AudioOneShot.html#ac49e0028f04f5089a9b605d4feba9fd3">pAudioClip</a>);</div>
+<div class="line"><span class="lineno">   26</span>}</div>
 <div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
@@ -262,7 +260,7 @@ mtgb::AudioOneShot 連携図</div>
 
 <p class="definition"> <a class="el" href="AudioOneShot_8h_source.html">AudioOneShot.h</a> の <a class="el" href="AudioOneShot_8h_source.html#l00016">16</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Audio_8cpp_source.html#l00257">mtgb::Audio::EnqueueOneShot()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Audio_8cpp_source.html#l00263">mtgb::Audio::EnqueueOneShot()</a>.</p>
 
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::WinCtxRes 名前空間</title>
+<title>Game: mtgb::WinCtxRes 名前空間</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -149,12 +149,12 @@ $(document).ready(function(){initNavTree('namespacemtgb_1_1WinCtxRes.html',''); 
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="WindowContextUtil_8cpp_source.html">WindowContextUtil.cpp</a> の <a class="el" href="WindowContextUtil_8cpp_source.html#l00042">42</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
-<div class="line"><span class="lineno">   44</span>    Game::System&lt;WinCtxResManager&gt;().ChangeActiveResource(ctx);</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<p class="definition"> <a class="el" href="WindowContextUtil_8cpp_source.html">WindowContextUtil.cpp</a> の <a class="el" href="WindowContextUtil_8cpp_source.html#l00038">38</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>    Game::System&lt;WinCtxResManager&gt;().ChangeActiveResource(ctx);</div>
+<div class="line"><span class="lineno">   41</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="RenderSystem_8cpp_source.html#l00031">mtgb::RenderSystem::RenderDirectXWindows()</a>, <a class="el" href="RenderSystem_8cpp_source.html#l00048">mtgb::RenderSystem::RenderImGuiWindows()</a>, <a class="el" href="SceneSystem_8cpp_source.html#l00039">mtgb::SceneSystem::Update()</a>.</p>
+<p class="reference">参照元 <a class="el" href="RenderSystem_8cpp_source.html#l00031">mtgb::RenderSystem::RenderDirectXWindows()</a>, <a class="el" href="RenderSystem_8cpp_source.html#l00048">mtgb::RenderSystem::RenderImGuiWindows()</a>, <a class="el" href="SceneSystem_8cpp_source.html#l00041">mtgb::SceneSystem::Update()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -182,7 +182,7 @@ $(document).ready(function(){initNavTree('namespacemtgb_1_1WinCtxRes.html',''); 
 <p>現在有効なウィンドウの識別子を返す </p>
 <dl class="section return"><dt>戻り値</dt><dd>現在のWindowContext</dd></dl>
 
-<p class="reference">参照元 <a class="el" href="WindowContext_8cpp_source.html#l00004">mtgb::CurrContext()</a>, <a class="el" href="Inspector_8cpp_source.html#l00012">Inspector::Show()</a>.</p>
+<p class="reference">参照元 <a class="el" href="WindowContext_8cpp_source.html#l00004">mtgb::CurrContext()</a>, <a class="el" href="Inspector_8cpp_source.html#l00011">Inspector::Show()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -225,10 +225,10 @@ template&lt;typename ResourceT &gt; </div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="WindowContextUtil_8h_source.html">WindowContextUtil.h</a> の <a class="el" href="WindowContextUtil_8h_source.html#l00022">22</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>        {</div>
-<div class="line"><span class="lineno">   24</span>            <span class="keywordflow">return</span> Game::System&lt;WinCtxResManager&gt;().Get&lt;ResourceT&gt;(ctx);</div>
-<div class="line"><span class="lineno">   25</span>        }</div>
+<p class="definition"> <a class="el" href="WindowContextUtil_8h_source.html">WindowContextUtil.h</a> の <a class="el" href="WindowContextUtil_8h_source.html#l00021">21</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>        {</div>
+<div class="line"><span class="lineno">   23</span>            <span class="keywordflow">return</span> Game::System&lt;WinCtxResManager&gt;().Get&lt;ResourceT&gt;(ctx);</div>
+<div class="line"><span class="lineno">   24</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -262,11 +262,11 @@ template&lt;typename ResourceT &gt; </div>
 <div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> WinCtxRes::Get&lt;WindowResource&gt;(ctx).GetHWND();</div>
 <div class="line"><span class="lineno">   28</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="DXGIResource_8cpp_source.html#l00009">mtgb::DXGIResource::DXGIResource()</a>, <a class="el" href="HighlightEnemy_8cpp_source.html#l00009">HighlightEnemy::HighlightEnemy()</a>, <a class="el" href="DoubleWindow_8cpp_source.html#l00023">mtgb::DoubleWindow::Initialize()</a>, <a class="el" href="ImGuiRenderer_8cpp_source.html#l00037">mtgb::ImGuiRenderer::Initialize()</a>, <a class="el" href="SingleWindow_8cpp_source.html#l00021">mtgb::SingleWindow::Initialize()</a>, <a class="el" href="InputResource_8cpp_source.html#l00011">mtgb::InputResource::InputResource()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00110">mtgb::ImGuiEditor::LoadMapData()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00083">mtgb::ImGuiEditor::SaveMapData()</a>, <a class="el" href="DoubleWindow_8cpp_source.html#l00084">mtgb::DoubleWindow::SetDoubleWindowPos()</a>.</p>
+<p class="reference">参照元 <a class="el" href="DXGIResource_8cpp_source.html#l00009">mtgb::DXGIResource::DXGIResource()</a>, <a class="el" href="DoubleWindow_8cpp_source.html#l00023">mtgb::DoubleWindow::Initialize()</a>, <a class="el" href="ImGuiRenderer_8cpp_source.html#l00032">mtgb::ImGuiRenderer::Initialize()</a>, <a class="el" href="SingleWindow_8cpp_source.html#l00021">mtgb::SingleWindow::Initialize()</a>, <a class="el" href="InputResource_8cpp_source.html#l00011">mtgb::InputResource::InputResource()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00110">mtgb::ImGuiEditor::LoadMapData()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00083">mtgb::ImGuiEditor::SaveMapData()</a>, <a class="el" href="DoubleWindow_8cpp_source.html#l00076">mtgb::DoubleWindow::SetDoubleWindowPos()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacemtgb_1_1WinCtxRes_ac3067c8903d57f25d01d82b155657099_icgraph.svg" width="460" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacemtgb_1_1WinCtxRes_ac3067c8903d57f25d01d82b155657099_icgraph.svg" width="440" height="499"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -310,7 +310,7 @@ template&lt;typename ResourceT &gt; </div>
 <p class="definition"> <a class="el" href="WindowContextUtil_8cpp_source.html">WindowContextUtil.cpp</a> の <a class="el" href="WindowContextUtil_8cpp_source.html#l00030">30</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
 <div class="line"><span class="lineno">   32</span>    Game::System&lt;WinCtxResManager&gt;().SwapResource&lt;<a class="code hl_class" href="classmtgb_1_1WindowResource.html">WindowResource</a>&gt;(_ctx1, _ctx2);</div>
-<div class="line"><span class="lineno">   33</span>    Game::System&lt;WinCtxResManager&gt;().SwapResource&lt;<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&gt;(_ctx1,_ctx2);</div>
+<div class="line"><span class="lineno">   33</span>    Game::System&lt;WinCtxResManager&gt;().SwapResource&lt;<a class="code hl_class" href="classmtgb_1_1DXGIResource.html">DXGIResource</a>&gt;(_ctx1, _ctx2);</div>
 <div class="line"><span class="lineno">   34</span>    Game::System&lt;WinCtxResManager&gt;().SwapResource&lt;<a class="code hl_class" href="classmtgb_1_1Direct3DResource.html">Direct3DResource</a>&gt;(_ctx1, _ctx2);</div>
 <div class="line"><span class="lineno">   35</span>    Game::System&lt;WinCtxResManager&gt;().SwapResource&lt;<a class="code hl_class" href="classmtgb_1_1Direct2DResource.html">Direct2DResource</a>&gt;(_ctx1, _ctx2);</div>
 <div class="line"><span class="lineno">   36</span>}</div>

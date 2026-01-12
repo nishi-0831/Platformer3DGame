@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::DeleteGameObjectCommand クラス</title>
+<title>Game: mtgb::DeleteGameObjectCommand クラス</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -193,58 +193,59 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="DeleteGameObjectCommand_8cpp_source.html">DeleteGameObjectCommand.cpp</a> の <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">5</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    6</span>    : <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a5b959624730e2b87e76580c67a59b291">componentFactory_</a>{ _componentFactory }</div>
-<div class="line"><span class="lineno">    7</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#add0e0c36929a6cbaa4ed226b937e5eac">gameObjectFactory_</a>{ _gameObjectFactory }</div>
-<div class="line"><span class="lineno">    8</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>{ <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a> }</div>
-<div class="line"><span class="lineno">    9</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1">name_</a>{ <span class="stringliteral">&quot; Unknown&quot;</span> }</div>
-<div class="line"><span class="lineno">   10</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#afb968615ec9eaedeb2fc71e49e7886a3">layerFlag_</a>{ <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>() }</div>
-<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a2a084bc26961acf726da5272f916db94">tag_</a>{ <a class="code hl_enumvalue" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b">GameObjectTag::Untagged</a> }</div>
-<div class="line"><span class="lineno">   12</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a7ac4e112b769fce2c6c1b4d63fac887e">isNotCalledStart_</a>{ <span class="keyword">false</span> }</div>
-<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a9a769022272cc3b0c062fd74f6448aaa">typeName_</a>{ <span class="stringliteral">&quot;Unknown&quot;</span> }</div>
-<div class="line"><span class="lineno">   14</span>{</div>
-<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (pGameObj == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   17</span> </div>
-<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1">name_</a> = pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#adca80cc33581de34dd622983ac232707">GetName</a>();</div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#afb968615ec9eaedeb2fc71e49e7886a3">layerFlag_</a> = pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#a280a1f04d01a4044b50fa7fc3b040873">GetLayerFlag</a>();</div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a2a084bc26961acf726da5272f916db94">tag_</a> = pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#a217f3a513fca3e997b7b38c186a8b1cb">GetTag</a>();</div>
-<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a9a769022272cc3b0c062fd74f6448aaa">typeName_</a> = pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">GetClassTypeName</a>();</div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a> = pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">GetEntityId</a>();</div>
-<div class="line"><span class="lineno">   24</span>    <span class="comment">// IDに割り当てられているコンポーネントプールの型情報を取得</span></div>
-<div class="line"><span class="lineno">   25</span>    std::optional&lt;std::vector&lt;std::type_index&gt;&gt; cpTypes = Game::System&lt;ComponentRegistry&gt;().GetComponentPoolTypes(<a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>);</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (cpTypes.has_value() == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">for</span> (std::type_index cpType : cpTypes.value())</div>
-<div class="line"><span class="lineno">   30</span>    {</div>
-<div class="line"><span class="lineno">   31</span>        <span class="comment">// コンポーネントプールのインターフェース取得</span></div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_class" href="classmtgb_1_1IComponentPool.html">IComponentPool</a>* pComponentPool = <a class="code hl_function" href="classmtgb_1_1Game.html#a6ccdf8fa3e7bea6e9f5b651f2db9669a">Game::GetCP</a>(cpType);</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">if</span> (pComponentPool == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   34</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>        <span class="comment">// メメントを作成</span></div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">IComponentMemento</a>* pMemento = pComponentPool-&gt;<a class="code hl_function" href="classmtgb_1_1IComponentPool.html#a2cd82c9285b921e15f437039704dd6aa">SaveToMemento</a>(<a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>);</div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (pMemento == <span class="keyword">nullptr</span>)</div>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>    : <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a5b959624730e2b87e76580c67a59b291">componentFactory_</a>{_componentFactory}</div>
+<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#add0e0c36929a6cbaa4ed226b937e5eac">gameObjectFactory_</a>{_gameObjectFactory}</div>
+<div class="line"><span class="lineno">   12</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>{<a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>}</div>
+<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1">name_</a>{<span class="stringliteral">&quot; Unknown&quot;</span>}</div>
+<div class="line"><span class="lineno">   14</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#afb968615ec9eaedeb2fc71e49e7886a3">layerFlag_</a>{<a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>()}</div>
+<div class="line"><span class="lineno">   15</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a2a084bc26961acf726da5272f916db94">tag_</a>{<a class="code hl_enumvalue" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b">GameObjectTag::Untagged</a>}</div>
+<div class="line"><span class="lineno">   16</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a7ac4e112b769fce2c6c1b4d63fac887e">isNotCalledStart_</a>{<span class="keyword">false</span>}</div>
+<div class="line"><span class="lineno">   17</span>    , <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a9a769022272cc3b0c062fd74f6448aaa">typeName_</a>{<span class="stringliteral">&quot;Unknown&quot;</span>}</div>
+<div class="line"><span class="lineno">   18</span>{</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (pGameObj == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1">name_</a>      = pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#adca80cc33581de34dd622983ac232707">GetName</a>();</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#afb968615ec9eaedeb2fc71e49e7886a3">layerFlag_</a> = pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#a280a1f04d01a4044b50fa7fc3b040873">GetLayerFlag</a>();</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a2a084bc26961acf726da5272f916db94">tag_</a>       = pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#a217f3a513fca3e997b7b38c186a8b1cb">GetTag</a>();</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a9a769022272cc3b0c062fd74f6448aaa">typeName_</a>  = pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">GetClassTypeName</a>();</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a> = pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">GetEntityId</a>();</div>
+<div class="line"><span class="lineno">   28</span>    <span class="comment">// IDに割り当てられているコンポーネントプールの型情報を取得</span></div>
+<div class="line"><span class="lineno">   29</span>    std::optional&lt;std::vector&lt;std::type_index&gt;&gt; cpTypes =</div>
+<div class="line"><span class="lineno">   30</span>        Game::System&lt;ComponentRegistry&gt;().GetComponentPoolTypes(<a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>);</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (cpTypes.has_value() == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">for</span> (std::type_index cpType : cpTypes.value())</div>
+<div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>        <span class="comment">// コンポーネントプールのインターフェース取得</span></div>
+<div class="line"><span class="lineno">   37</span>        <a class="code hl_class" href="classmtgb_1_1IComponentPool.html">IComponentPool</a>* pComponentPool = <a class="code hl_function" href="classmtgb_1_1Game.html#a6ccdf8fa3e7bea6e9f5b651f2db9669a">Game::GetCP</a>(cpType);</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (pComponentPool == <span class="keyword">nullptr</span>)</div>
 <div class="line"><span class="lineno">   39</span>            <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>        <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a41239b791a1e462f3ddf2c53753f2b63">mementos_</a>.push_back(pMemento);</div>
-<div class="line"><span class="lineno">   42</span>    }</div>
-<div class="line"><span class="lineno">   43</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a2a084bc26961acf726da5272f916db94"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a2a084bc26961acf726da5272f916db94">mtgb::DeleteGameObjectCommand::tag_</a></div><div class="ttdeci">GameObjectTag tag_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00030">DeleteGameObjectCommand.h:30</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a41239b791a1e462f3ddf2c53753f2b63"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a41239b791a1e462f3ddf2c53753f2b63">mtgb::DeleteGameObjectCommand::mementos_</a></div><div class="ttdeci">std::vector&lt; IComponentMemento * &gt; mementos_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00034">DeleteGameObjectCommand.h:34</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a56a88c1d4739693ea8ff735b8d3781f1"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1">mtgb::DeleteGameObjectCommand::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00028">DeleteGameObjectCommand.h:28</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a5b959624730e2b87e76580c67a59b291"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a5b959624730e2b87e76580c67a59b291">mtgb::DeleteGameObjectCommand::componentFactory_</a></div><div class="ttdeci">const ComponentFactory &amp; componentFactory_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00025">DeleteGameObjectCommand.h:25</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a7ac4e112b769fce2c6c1b4d63fac887e"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a7ac4e112b769fce2c6c1b4d63fac887e">mtgb::DeleteGameObjectCommand::isNotCalledStart_</a></div><div class="ttdeci">bool isNotCalledStart_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00031">DeleteGameObjectCommand.h:31</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a8d6f21b4d6a93def667fb1b19739b50b"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">mtgb::DeleteGameObjectCommand::targetEntityId_</a></div><div class="ttdeci">EntityId targetEntityId_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00027">DeleteGameObjectCommand.h:27</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a9a769022272cc3b0c062fd74f6448aaa"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a9a769022272cc3b0c062fd74f6448aaa">mtgb::DeleteGameObjectCommand::typeName_</a></div><div class="ttdeci">std::string typeName_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00033">DeleteGameObjectCommand.h:33</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_add0e0c36929a6cbaa4ed226b937e5eac"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#add0e0c36929a6cbaa4ed226b937e5eac">mtgb::DeleteGameObjectCommand::gameObjectFactory_</a></div><div class="ttdeci">const GameObjectFactory &amp; gameObjectFactory_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00026">DeleteGameObjectCommand.h:26</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_afb968615ec9eaedeb2fc71e49e7886a3"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#afb968615ec9eaedeb2fc71e49e7886a3">mtgb::DeleteGameObjectCommand::layerFlag_</a></div><div class="ttdeci">GameObjectLayerFlag layerFlag_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00029">DeleteGameObjectCommand.h:29</a></div></div>
+<div class="line"><span class="lineno">   41</span>        <span class="comment">// メメントを作成</span></div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">IComponentMemento</a>* pMemento = pComponentPool-&gt;<a class="code hl_function" href="classmtgb_1_1IComponentPool.html#a2cd82c9285b921e15f437039704dd6aa">SaveToMemento</a>(<a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>);</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span> (pMemento == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>        <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a41239b791a1e462f3ddf2c53753f2b63">mementos_</a>.push_back(pMemento);</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a2a084bc26961acf726da5272f916db94"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a2a084bc26961acf726da5272f916db94">mtgb::DeleteGameObjectCommand::tag_</a></div><div class="ttdeci">GameObjectTag tag_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00035">DeleteGameObjectCommand.h:35</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a41239b791a1e462f3ddf2c53753f2b63"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a41239b791a1e462f3ddf2c53753f2b63">mtgb::DeleteGameObjectCommand::mementos_</a></div><div class="ttdeci">std::vector&lt; IComponentMemento * &gt; mementos_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00039">DeleteGameObjectCommand.h:39</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a56a88c1d4739693ea8ff735b8d3781f1"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1">mtgb::DeleteGameObjectCommand::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00033">DeleteGameObjectCommand.h:33</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a5b959624730e2b87e76580c67a59b291"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a5b959624730e2b87e76580c67a59b291">mtgb::DeleteGameObjectCommand::componentFactory_</a></div><div class="ttdeci">const ComponentFactory &amp; componentFactory_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00030">DeleteGameObjectCommand.h:30</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a7ac4e112b769fce2c6c1b4d63fac887e"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a7ac4e112b769fce2c6c1b4d63fac887e">mtgb::DeleteGameObjectCommand::isNotCalledStart_</a></div><div class="ttdeci">bool isNotCalledStart_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00036">DeleteGameObjectCommand.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a8d6f21b4d6a93def667fb1b19739b50b"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">mtgb::DeleteGameObjectCommand::targetEntityId_</a></div><div class="ttdeci">EntityId targetEntityId_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00032">DeleteGameObjectCommand.h:32</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_a9a769022272cc3b0c062fd74f6448aaa"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#a9a769022272cc3b0c062fd74f6448aaa">mtgb::DeleteGameObjectCommand::typeName_</a></div><div class="ttdeci">std::string typeName_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00038">DeleteGameObjectCommand.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_add0e0c36929a6cbaa4ed226b937e5eac"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#add0e0c36929a6cbaa4ed226b937e5eac">mtgb::DeleteGameObjectCommand::gameObjectFactory_</a></div><div class="ttdeci">const GameObjectFactory &amp; gameObjectFactory_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00031">DeleteGameObjectCommand.h:31</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DeleteGameObjectCommand_html_afb968615ec9eaedeb2fc71e49e7886a3"><div class="ttname"><a href="classmtgb_1_1DeleteGameObjectCommand.html#afb968615ec9eaedeb2fc71e49e7886a3">mtgb::DeleteGameObjectCommand::layerFlag_</a></div><div class="ttdeci">GameObjectLayerFlag layerFlag_</div><div class="ttdef"><b>Definition:</b> <a href="DeleteGameObjectCommand_8h_source.html#l00034">DeleteGameObjectCommand.h:34</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Entity_html_a7f534d8f54f1d8bd4e6e0a6902ba7736"><div class="ttname"><a href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">mtgb::Entity::GetEntityId</a></div><div class="ttdeci">const EntityId GetEntityId() const</div><div class="ttdoc">エンティティIdを取得する</div><div class="ttdef"><b>Definition:</b> <a href="Entity_8h_source.html#l00024">Entity.h:24</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_a217f3a513fca3e997b7b38c186a8b1cb"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a217f3a513fca3e997b7b38c186a8b1cb">mtgb::GameObject::GetTag</a></div><div class="ttdeci">GameObjectTag GetTag() const</div><div class="ttdoc">タグを取得</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00092">GameObject.h:92</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_a280a1f04d01a4044b50fa7fc3b040873"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a280a1f04d01a4044b50fa7fc3b040873">mtgb::GameObject::GetLayerFlag</a></div><div class="ttdeci">GameObjectLayerFlag GetLayerFlag() const</div><div class="ttdoc">レイヤーフラグを取得</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00086">GameObject.h:86</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_adca80cc33581de34dd622983ac232707"><div class="ttname"><a href="classmtgb_1_1GameObject.html#adca80cc33581de34dd622983ac232707">mtgb::GameObject::GetName</a></div><div class="ttdeci">std::string GetName() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00080">GameObject.h:80</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_ae98ecf286d6e93064a967ef02c41a438"><div class="ttname"><a href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">mtgb::GameObject::GetClassTypeName</a></div><div class="ttdeci">std::string GetClassTypeName() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00114">GameObject.cpp:114</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_a217f3a513fca3e997b7b38c186a8b1cb"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a217f3a513fca3e997b7b38c186a8b1cb">mtgb::GameObject::GetTag</a></div><div class="ttdeci">GameObjectTag GetTag() const</div><div class="ttdoc">タグを取得</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00102">GameObject.h:102</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_a280a1f04d01a4044b50fa7fc3b040873"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a280a1f04d01a4044b50fa7fc3b040873">mtgb::GameObject::GetLayerFlag</a></div><div class="ttdeci">GameObjectLayerFlag GetLayerFlag() const</div><div class="ttdoc">レイヤーフラグを取得</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00093">GameObject.h:93</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_adca80cc33581de34dd622983ac232707"><div class="ttname"><a href="classmtgb_1_1GameObject.html#adca80cc33581de34dd622983ac232707">mtgb::GameObject::GetName</a></div><div class="ttdeci">std::string GetName() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00084">GameObject.h:84</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_ae98ecf286d6e93064a967ef02c41a438"><div class="ttname"><a href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">mtgb::GameObject::GetClassTypeName</a></div><div class="ttdeci">std::string GetClassTypeName() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00107">GameObject.cpp:107</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Game_html_a6ccdf8fa3e7bea6e9f5b651f2db9669a"><div class="ttname"><a href="classmtgb_1_1Game.html#a6ccdf8fa3e7bea6e9f5b651f2db9669a">mtgb::Game::GetCP</a></div><div class="ttdeci">static IComponentPool * GetCP(std::type_index _typeIndex)</div><div class="ttdoc">コンポーネントプールのインターフェースを返す</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00050">Game.cpp:50</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponentMemento_html"><div class="ttname"><a href="classmtgb_1_1IComponentMemento.html">mtgb::IComponentMemento</a></div><div class="ttdef"><b>Definition:</b> <a href="IComponentMemento_8h_source.html#l00007">IComponentMemento.h:8</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponentPool_html"><div class="ttname"><a href="classmtgb_1_1IComponentPool.html">mtgb::IComponentPool</a></div><div class="ttdoc">コンポーネントプールのインタフェース</div><div class="ttdef"><b>Definition:</b> <a href="IComponentPool_8h_source.html#l00017">IComponentPool.h:18</a></div></div>
@@ -253,7 +254,7 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 <div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b"><div class="ttname"><a href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b">mtgb::GameObjectTag::Untagged</a></div><div class="ttdeci">@ Untagged</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="GameObject_8cpp_source.html#l00114">mtgb::GameObject::GetClassTypeName()</a>, <a class="el" href="Game_8cpp_source.html#l00050">mtgb::Game::GetCP()</a>, <a class="el" href="Entity_8h_source.html#l00024">mtgb::Entity::GetEntityId()</a>, <a class="el" href="GameObject_8h_source.html#l00086">mtgb::GameObject::GetLayerFlag()</a>, <a class="el" href="GameObject_8h_source.html#l00080">mtgb::GameObject::GetName()</a>, <a class="el" href="GameObject_8h_source.html#l00092">mtgb::GameObject::GetTag()</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00029">layerFlag_</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00034">mementos_</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00028">name_</a>, <a class="el" href="classmtgb_1_1IComponentPool.html#a2cd82c9285b921e15f437039704dd6aa">mtgb::IComponentPool::SaveToMemento()</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00030">tag_</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00027">targetEntityId_</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00033">typeName_</a>.</p>
+<p class="reference">参照先 <a class="el" href="GameObject_8cpp_source.html#l00107">mtgb::GameObject::GetClassTypeName()</a>, <a class="el" href="Game_8cpp_source.html#l00050">mtgb::Game::GetCP()</a>, <a class="el" href="Entity_8h_source.html#l00024">mtgb::Entity::GetEntityId()</a>, <a class="el" href="GameObject_8h_source.html#l00093">mtgb::GameObject::GetLayerFlag()</a>, <a class="el" href="GameObject_8h_source.html#l00084">mtgb::GameObject::GetName()</a>, <a class="el" href="GameObject_8h_source.html#l00102">mtgb::GameObject::GetTag()</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00034">layerFlag_</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00039">mementos_</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00033">name_</a>, <a class="el" href="classmtgb_1_1IComponentPool.html#a2cd82c9285b921e15f437039704dd6aa">mtgb::IComponentPool::SaveToMemento()</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00035">tag_</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00032">targetEntityId_</a>, <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00038">typeName_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -291,10 +292,10 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 
 <p><a class="el" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Command</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8cpp_source.html">DeleteGameObjectCommand.cpp</a> の <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00045">45</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
-<div class="line"><span class="lineno">   47</span>    Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;DestroyGameObject(<a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>);</div>
-<div class="line"><span class="lineno">   48</span>}</div>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8cpp_source.html">DeleteGameObjectCommand.cpp</a> の <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;DestroyGameObject(<a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>);</div>
+<div class="line"><span class="lineno">   53</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -323,10 +324,10 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 
 <p><a class="el" href="classCommand.html#a23e1ca01a9937ac120ba579a69d83aac">Command</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8cpp_source.html">DeleteGameObjectCommand.cpp</a> の <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00071">71</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>{</div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>;</div>
-<div class="line"><span class="lineno">   74</span>}</div>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8cpp_source.html">DeleteGameObjectCommand.cpp</a> の <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00076">76</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>;</div>
+<div class="line"><span class="lineno">   79</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -358,10 +359,10 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 
 <p><a class="el" href="classCommand.html#aba62319b363ca36a4112803637ee5491">Command</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8cpp_source.html">DeleteGameObjectCommand.cpp</a> の <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00066">66</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>{</div>
-<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> std::format(<span class="stringliteral">&quot;delete {},EntityId {}&quot;</span>, <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1">name_</a>, <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>);</div>
-<div class="line"><span class="lineno">   69</span>}</div>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8cpp_source.html">DeleteGameObjectCommand.cpp</a> の <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00071">71</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>{</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">return</span> std::format(<span class="stringliteral">&quot;delete {},EntityId {}&quot;</span>, <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1">name_</a>, <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b">targetEntityId_</a>);</div>
+<div class="line"><span class="lineno">   74</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -393,7 +394,9 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 <p><a class="el" href="classmtgb_1_1AddComponentCommandGeneric.html#a616e4423b31cd42908666a8eb6844ab6">mtgb::AddComponentCommandGeneric&lt; T &gt;</a>, <a class="el" href="classmtgb_1_1DuplicateGameObjectCommand.html#a92b8a4fc7b3350dd72693097946aebbb">mtgb::DuplicateGameObjectCommand</a>, <a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#a1a9c6151861a1884249eff76435efb14">mtgb::GameObjectCreateCommand</a>, <a class="el" href="classmtgb_1_1GroupCommand.html#aad9ddb87145b3d63d04bbe3071e7c598">mtgb::GroupCommand</a>, <a class="el" href="classmtgb_1_1GuizmoManipulateCommand.html#a2be5bb3a3edb5cd5648f6dc78c48301c">mtgb::GuizmoManipulateCommand</a>で再実装されています。</p>
 
 <p class="definition"> <a class="el" href="Command_8h_source.html">Command.h</a> の <a class="el" href="Command_8h_source.html#l00022">22</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <a class="code hl_function" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Execute</a>(); }</div>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>    {</div>
+<div class="line"><span class="lineno">   24</span>        <a class="code hl_function" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Execute</a>();</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
 <div class="ttc" id="aclassCommand_html_a484c34647660fcfc8ee46b04ad5b32b6"><div class="ttname"><a href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Command::Execute</a></div><div class="ttdeci">virtual void Execute()=0</div><div class="ttdoc">実行</div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Command::Execute()</a>.</p>
@@ -441,23 +444,23 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 
 <p><a class="el" href="classCommand.html#acee7d28a866913f07e880a675acc4720">Command</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8cpp_source.html">DeleteGameObjectCommand.cpp</a> の <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
-<div class="line"><span class="lineno">   52</span>    Game::System&lt;EntityManager&gt;().DecrementCounter();</div>
-<div class="line"><span class="lineno">   53</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* pGameObj = <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#add0e0c36929a6cbaa4ed226b937e5eac">gameObjectFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">Create</a>(<a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a9a769022272cc3b0c062fd74f6448aaa">typeName_</a>);</div>
-<div class="line"><span class="lineno">   54</span>    pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#a8186af4bb8e2b39bf5cfd978a114f49a">SetName</a>(<a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1">name_</a>);</div>
-<div class="line"><span class="lineno">   55</span>    <span class="comment">// FIXME: アクセス制限により書き換えできないため、完全なUndoではない</span></div>
-<div class="line"><span class="lineno">   56</span>    <span class="comment">// pGameObj-&gt;layerFlag_ = layerFlag_;</span></div>
-<div class="line"><span class="lineno">   57</span>    <span class="comment">// pGameObj-&gt;tag_ = tag_;</span></div>
-<div class="line"><span class="lineno">   58</span>    <span class="comment">// pGameObj-&gt;isNotCalledStart_ = isNotCalledStart_;</span></div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">IComponentMemento</a>* pMemento : <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a41239b791a1e462f3ddf2c53753f2b63">mementos_</a>)</div>
-<div class="line"><span class="lineno">   61</span>    {</div>
-<div class="line"><span class="lineno">   62</span>        <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a5b959624730e2b87e76580c67a59b291">componentFactory_</a>.<a class="code hl_function" href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">AddComponentFromMemento</a>(*pMemento);</div>
-<div class="line"><span class="lineno">   63</span>    }</div>
-<div class="line"><span class="lineno">   64</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_a54182336964c12ecaf6908938e780ef6"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">mtgb::ComponentFactory::AddComponentFromMemento</a></div><div class="ttdeci">bool AddComponentFromMemento(const IComponentMemento &amp;_memento) const</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8cpp_source.html#l00017">ComponentFactory.cpp:17</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectFactory_html_abeb1cfedb12a9e72059d992bdc9aaf67"><div class="ttname"><a href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">mtgb::GameObjectFactory::Create</a></div><div class="ttdeci">GameObject * Create(std::string_view _typeName) const</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectFactory_8cpp_source.html#l00007">GameObjectFactory.cpp:7</a></div></div>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8cpp_source.html">DeleteGameObjectCommand.cpp</a> の <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>    Game::System&lt;EntityManager&gt;().DecrementCounter();</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* pGameObj = <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#add0e0c36929a6cbaa4ed226b937e5eac">gameObjectFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">Create</a>(<a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a9a769022272cc3b0c062fd74f6448aaa">typeName_</a>);</div>
+<div class="line"><span class="lineno">   59</span>    pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#a8186af4bb8e2b39bf5cfd978a114f49a">SetName</a>(<a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1">name_</a>);</div>
+<div class="line"><span class="lineno">   60</span>    <span class="comment">// FIXME: アクセス制限により書き換えできないため、完全なUndoではない</span></div>
+<div class="line"><span class="lineno">   61</span>    <span class="comment">// pGameObj-&gt;layerFlag_ = layerFlag_;</span></div>
+<div class="line"><span class="lineno">   62</span>    <span class="comment">// pGameObj-&gt;tag_ = tag_;</span></div>
+<div class="line"><span class="lineno">   63</span>    <span class="comment">// pGameObj-&gt;isNotCalledStart_ = isNotCalledStart_;</span></div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">IComponentMemento</a>* pMemento : <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a41239b791a1e462f3ddf2c53753f2b63">mementos_</a>)</div>
+<div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_variable" href="classmtgb_1_1DeleteGameObjectCommand.html#a5b959624730e2b87e76580c67a59b291">componentFactory_</a>.<a class="code hl_function" href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">AddComponentFromMemento</a>(*pMemento);</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_a54182336964c12ecaf6908938e780ef6"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">mtgb::ComponentFactory::AddComponentFromMemento</a></div><div class="ttdeci">bool AddComponentFromMemento(const IComponentMemento &amp;_memento) const</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8cpp_source.html#l00016">ComponentFactory.cpp:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectFactory_html_abeb1cfedb12a9e72059d992bdc9aaf67"><div class="ttname"><a href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">mtgb::GameObjectFactory::Create</a></div><div class="ttdeci">GameObject * Create(std::string_view _typeName) const</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectFactory_8cpp_source.html#l00006">GameObjectFactory.cpp:6</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00016">GameObject.h:17</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html_a8186af4bb8e2b39bf5cfd978a114f49a"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a8186af4bb8e2b39bf5cfd978a114f49a">mtgb::GameObject::SetName</a></div><div class="ttdeci">void SetName(const std::string _name)</div><div class="ttdoc">名前を設定する</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00036">GameObject.h:36</a></div></div>
 </div><!-- fragment -->
@@ -492,7 +495,7 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00025">25</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00030">30</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -516,7 +519,7 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00026">26</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00031">31</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -540,7 +543,7 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00036">36</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -564,7 +567,7 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00034">34</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">DeleteGameObjectCommand()</a>.</p>
 
@@ -590,7 +593,7 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00039">39</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">DeleteGameObjectCommand()</a>.</p>
 
@@ -616,7 +619,7 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00028">28</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00033">33</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">DeleteGameObjectCommand()</a>.</p>
 
@@ -642,7 +645,7 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00035">35</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">DeleteGameObjectCommand()</a>.</p>
 
@@ -668,7 +671,7 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00032">32</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">DeleteGameObjectCommand()</a>.</p>
 
@@ -694,7 +697,7 @@ mtgb::DeleteGameObjectCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00033">33</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DeleteGameObjectCommand_8h_source.html">DeleteGameObjectCommand.h</a> の <a class="el" href="DeleteGameObjectCommand_8h_source.html#l00038">38</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">DeleteGameObjectCommand()</a>.</p>
 

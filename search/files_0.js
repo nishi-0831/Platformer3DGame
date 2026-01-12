@@ -14,14 +14,7 @@ var searchData=
   ['audioclip_2eh_11',['AudioClip.h',['../AudioClip_8h.html',1,'']]],
   ['audiooneshot_2ecpp_12',['AudioOneShot.cpp',['../AudioOneShot_8cpp.html',1,'']]],
   ['audiooneshot_2eh_13',['AudioOneShot.h',['../AudioOneShot_8h.html',1,'']]],
-  ['audioplayer_2ecpp_14',['AudioPlayer.cpp',['../AudioPlayer_8cpp.html',1,'']]],
-  ['audioplayer_2egenerated_2ecpp_15',['AudioPlayer.generated.cpp',['../AudioPlayer_8generated_8cpp.html',1,'']]],
-  ['audioplayer_2egenerated_2eh_16',['AudioPlayer.generated.h',['../AudioPlayer_8generated_8h.html',1,'']]],
-  ['audioplayer_2eh_17',['AudioPlayer.h',['../AudioPlayer_8h.html',1,'']]],
-  ['audioplayercp_2ecpp_18',['AudioPlayerCP.cpp',['../AudioPlayerCP_8cpp.html',1,'']]],
-  ['audioplayercp_2eh_19',['AudioPlayerCP.h',['../AudioPlayerCP_8h.html',1,'']]],
-  ['audioplayerstate_2eh_20',['AudioPlayerState.h',['../AudioPlayerState_8h.html',1,'']]],
-  ['author_2ecpp_21',['author.cpp',['../author_8cpp.html',1,'']]],
-  ['autolink_2ecpp_22',['autolink.cpp',['../autolink_8cpp.html',1,'']]],
-  ['axis_2eh_23',['Axis.h',['../Axis_8h.html',1,'']]]
+  ['author_2ecpp_14',['author.cpp',['../author_8cpp.html',1,'']]],
+  ['autolink_2ecpp_15',['autolink.cpp',['../autolink_8cpp.html',1,'']]],
+  ['axis_2eh_16',['Axis.h',['../Axis_8h.html',1,'']]]
 ];

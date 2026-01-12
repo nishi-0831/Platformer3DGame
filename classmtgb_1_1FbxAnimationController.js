@@ -13,7 +13,7 @@ var classmtgb_1_1FbxAnimationController =
     [ "SetAnimationSpeed", "classmtgb_1_1FbxAnimationController.html#a1a0e848c00aa087cfef1f901636d7474", null ],
     [ "UpdateFrame", "classmtgb_1_1FbxAnimationController.html#af201c3faf2966a1fda4256b5a40d845c", null ],
     [ "animationSpeed_", "classmtgb_1_1FbxAnimationController.html#a270fd9cdfd0e076e5ed4683bd1b4175c", null ],
-    [ "clipMap_", "classmtgb_1_1FbxAnimationController.html#a5ab9a781ed3a49cbf34bbd39b82464a9", null ],
+    [ "clipMap_", "classmtgb_1_1FbxAnimationController.html#a7587a75ef9143d7f6d418b860fece7df", null ],
     [ "currentFrame_", "classmtgb_1_1FbxAnimationController.html#aa86a1c311b26886b2c8f35006ea48979", null ],
     [ "isFinished_", "classmtgb_1_1FbxAnimationController.html#a8ef4e6c383eee4d508a442262c68957f", null ],
     [ "isLooping_", "classmtgb_1_1FbxAnimationController.html#a7b2769085b472941319dcf9b4b6d3d8f", null ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: GameObject.cpp ソースファイル</title>
+<title>Game: GameObject.cpp ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -116,126 +116,120 @@ $(document).ready(function(){initNavTree('GameObject_8cpp_source.html',''); init
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    layerFlag_{ _desc.layerFlag },</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    tag_{ _desc.tag }</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    entityId_ = Game::System&lt;EntityManager&gt;().CreateEntity();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    entityId_         = Game::System&lt;EntityManager&gt;().CreateEntity();</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    isNotCalledStart_ = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Transform* pTransform_{ Component&lt;Transform&gt;() };</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Transform* pTransform_{Component&lt;Transform&gt;()};</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    pTransform_-&gt;position = _desc.position;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    pTransform_-&gt;rotate = _desc.rotate;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    pTransform_-&gt;scale = _desc.scale;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    pTransform_-&gt;rotate   = _desc.rotate;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    pTransform_-&gt;scale    = _desc.scale;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#a81d29105f581c405cbc7b7dd1cc48652">   28</a></span><a class="code hl_function" href="classmtgb_1_1GameObject.html#a81d29105f581c405cbc7b7dd1cc48652">mtgb::GameObject::GameObject</a>()</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    : status_</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        .isActive_ = <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        .callUpdate_ = <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        .callDraw_ = <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        .toDestroy_ = FALSE</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    , layerFlag_{<a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>()}</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    , tag_{<a class="code hl_enumvalue" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b">GameObjectTag::Untagged</a>}</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    entityId_ = Game::System&lt;EntityManager&gt;().CreateEntity();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    isNotCalledStart_ = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#aa7e04b6b6148103da8034f5f385aeb4d">   44</a></span><a class="code hl_function" href="classmtgb_1_1GameObject.html#a81d29105f581c405cbc7b7dd1cc48652">mtgb::GameObject::GameObject</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>&amp; _other)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    :<a class="code hl_class" href="classmtgb_1_1Entity.html">Entity</a>()</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    ,status_{_other.status_}</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    ,componentsFlag_{_other.componentsFlag_}</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    , tag_{<a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a>::<a class="code hl_enumvalue" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b">Untagged</a>}</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_variable" href="classmtgb_1_1GameObject.html#aee8629c2c936df1173a2f9efe7747ab9">isNotCalledStart_</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#a727a77401c2f02d4dfb1222d20d94ffc">   53</a></span><a class="code hl_function" href="classmtgb_1_1GameObject.html#a727a77401c2f02d4dfb1222d20d94ffc">mtgb::GameObject::~GameObject</a>()</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(status_.toDestroy_ &amp;&amp;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="stringliteral">&quot;ゲームオブジェクトを削除するときは直接deleteを呼び出さないでください！&quot;</span>);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#a13ff8ad56cd9b118123bb5a30e32c970">   59</a></span>nlohmann::json <a class="code hl_function" href="classmtgb_1_1GameObject.html#a13ff8ad56cd9b118123bb5a30e32c970">mtgb::GameObject::Serialize</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    nlohmann::json j{};</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    j[<span class="stringliteral">&quot;name&quot;</span>] = GetName();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    j[<span class="stringliteral">&quot;classType&quot;</span>] = <a class="code hl_function" href="namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52">mtgb::ExtractClassName</a>(GetName());</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    j[<span class="stringliteral">&quot;tag&quot;</span>] = GetTag();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    j[<span class="stringliteral">&quot;EntityId&quot;</span>] = entityId_;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">auto</span> componentTypes = Game::System&lt;ComponentRegistry&gt;().GetComponentTypes(entityId_);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (componentTypes.has_value() == <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> j;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; typeIdx : (*componentTypes).get())</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        std::optional&lt;std::type_index&gt; componentPoolType = Game::System&lt;ComponentRegistry&gt;().GetComponentPoolType(typeIdx);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">if</span> (componentPoolType.has_value() == <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        nlohmann::json componentJson = <a class="code hl_function" href="classmtgb_1_1Game.html#a8b552e60ee7d044929c35b08c3b46030">Game::SerializeComponent</a>(componentPoolType.value(), entityId_);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        j.merge_patch(componentJson);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> j;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#ac149c70cc2d54f8e5d13280a99c7a793">   83</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObject.html#ac149c70cc2d54f8e5d13280a99c7a793">mtgb::GameObject::Deserialize</a>(<span class="keyword">const</span> nlohmann::json&amp; _json)</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    name_ = _json.at(<span class="stringliteral">&quot;name&quot;</span>).get&lt;std::string&gt;();</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    tag_ = _json.at(<span class="stringliteral">&quot;tag&quot;</span>).get&lt;<a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a>&gt;();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#a495729fcb74b5bad4bd8cbf7d47a9d33">   89</a></span><a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* <a class="code hl_function" href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a>(<a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a> _tag)</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(_tag);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#aaf0c1a524d14908aa63e00834b6d040a">   94</a></span><a class="code hl_class" href="classmtgb_1_1GameObject.html">mtgb::GameObject</a>* <a class="code hl_function" href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a>(<span class="keyword">const</span> std::string&amp; _name)</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">return</span> mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(_name);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#ae183ec7dea108c1dee3af98bbb4a1e03">   99</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObject.html#a3fc1888ffcabb393d47b094980aad73f">mtgb::GameObject::FindGameObjects</a>(<span class="keyword">const</span> std::string&amp; _name, std::vector&lt;GameObject*&gt;* _pFoundGameObjects)</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>{</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObjects(_name, _pFoundGameObjects);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#a417e0421c843b42c3d6e12c93f0f30db">  104</a></span><a class="code hl_class" href="classmtgb_1_1GameObject.html">mtgb::GameObject</a>* <a class="code hl_function" href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">return</span> mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(_entityId);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#afaeb72363aa2518190ac01dee5d40c0c">  109</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObject.html#a3fc1888ffcabb393d47b094980aad73f">mtgb::GameObject::FindGameObjects</a>(<a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a> _tag, std::vector&lt;GameObject*&gt;* _pFoundGameObjects)</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObjects(_tag, _pFoundGameObjects);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">  114</a></span>std::string <a class="code hl_function" href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">mtgb::GameObject::GetClassTypeName</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52">mtgb::ExtractClassName</a>(name_);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    : status_{.isActive_ = true, .callUpdate_ = true, .callDraw_ = true, .toDestroy_ = FALSE}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    , layerFlag_{<a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>()}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    , tag_{<a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a>::<a class="code hl_enumvalue" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b">Untagged</a>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_variable" href="classmtgb_1_1Entity.html#a6cc5a321c4352e0a78ba6350d80f1cc6">entityId_</a>         = Game::System&lt;EntityManager&gt;().CreateEntity();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_variable" href="classmtgb_1_1GameObject.html#aee8629c2c936df1173a2f9efe7747ab9">isNotCalledStart_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#aa7e04b6b6148103da8034f5f385aeb4d">   37</a></span><a class="code hl_function" href="classmtgb_1_1GameObject.html#a81d29105f581c405cbc7b7dd1cc48652">mtgb::GameObject::GameObject</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>&amp; _other)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    : <a class="code hl_class" href="classmtgb_1_1Entity.html">Entity</a>()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    , status_{_other.status_}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    , componentsFlag_{_other.componentsFlag_}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    , tag_{<a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a>::<a class="code hl_enumvalue" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b">Untagged</a>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_variable" href="classmtgb_1_1GameObject.html#aee8629c2c936df1173a2f9efe7747ab9">isNotCalledStart_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#a727a77401c2f02d4dfb1222d20d94ffc">   46</a></span><a class="code hl_function" href="classmtgb_1_1GameObject.html#a727a77401c2f02d4dfb1222d20d94ffc">mtgb::GameObject::~GameObject</a>()</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(status_.toDestroy_ &amp;&amp; <span class="stringliteral">&quot;ゲームオブジェクトを削除するときは直接deleteを呼び出さないでください！&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#a13ff8ad56cd9b118123bb5a30e32c970">   51</a></span>nlohmann::json <a class="code hl_function" href="classmtgb_1_1GameObject.html#a13ff8ad56cd9b118123bb5a30e32c970">mtgb::GameObject::Serialize</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    nlohmann::json j{};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    j[<span class="stringliteral">&quot;name&quot;</span>]           = GetName();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    j[<span class="stringliteral">&quot;classType&quot;</span>]      = <a class="code hl_function" href="namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52">mtgb::ExtractClassName</a>(GetName());</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    j[<span class="stringliteral">&quot;tag&quot;</span>]            = GetTag();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    j[<span class="stringliteral">&quot;EntityId&quot;</span>]       = entityId_;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">auto</span> componentTypes = Game::System&lt;ComponentRegistry&gt;().GetComponentTypes(entityId_);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (componentTypes.has_value() == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">return</span> j;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; typeIdx : (*componentTypes).get())</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        std::optional&lt;std::type_index&gt; componentPoolType =</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            Game::System&lt;ComponentRegistry&gt;().GetComponentPoolType(typeIdx);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">if</span> (componentPoolType.has_value() == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        nlohmann::json componentJson = <a class="code hl_function" href="classmtgb_1_1Game.html#a8b552e60ee7d044929c35b08c3b46030">Game::SerializeComponent</a>(componentPoolType.value(), entityId_);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        j.merge_patch(componentJson);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> j;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#ac149c70cc2d54f8e5d13280a99c7a793">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObject.html#ac149c70cc2d54f8e5d13280a99c7a793">mtgb::GameObject::Deserialize</a>(<span class="keyword">const</span> nlohmann::json&amp; _json)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    name_ = _json.at(<span class="stringliteral">&quot;name&quot;</span>).get&lt;std::string&gt;();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    tag_  = _json.at(<span class="stringliteral">&quot;tag&quot;</span>).get&lt;<a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a>&gt;();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#a495729fcb74b5bad4bd8cbf7d47a9d33">   82</a></span><a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* <a class="code hl_function" href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a>(<a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a> _tag)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">return</span> mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(_tag);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#aaf0c1a524d14908aa63e00834b6d040a">   87</a></span><a class="code hl_class" href="classmtgb_1_1GameObject.html">mtgb::GameObject</a>* <a class="code hl_function" href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a>(<span class="keyword">const</span> std::string&amp; _name)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>{</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(_name);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#ae183ec7dea108c1dee3af98bbb4a1e03">   92</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObject.html#a3fc1888ffcabb393d47b094980aad73f">mtgb::GameObject::FindGameObjects</a>(<span class="keyword">const</span> std::string&amp; _name, std::vector&lt;GameObject*&gt;* _pFoundGameObjects)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>{</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObjects(_name, _pFoundGameObjects);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#a417e0421c843b42c3d6e12c93f0f30db">   97</a></span><a class="code hl_class" href="classmtgb_1_1GameObject.html">mtgb::GameObject</a>* <a class="code hl_function" href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span> mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(_entityId);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#afaeb72363aa2518190ac01dee5d40c0c">  102</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObject.html#a3fc1888ffcabb393d47b094980aad73f">mtgb::GameObject::FindGameObjects</a>(<a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a> _tag, std::vector&lt;GameObject*&gt;* _pFoundGameObjects)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>{</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObjects(_tag, _pFoundGameObjects);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">  107</a></span>std::string <a class="code hl_function" href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">mtgb::GameObject::GetClassTypeName</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52">mtgb::ExtractClassName</a>(name_);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
 <div class="ttc" id="aEntityManager_8h_html"><div class="ttname"><a href="EntityManager_8h.html">EntityManager.h</a></div></div>
 <div class="ttc" id="aGameObject_8h_html"><div class="ttname"><a href="GameObject_8h.html">GameObject.h</a></div></div>
 <div class="ttc" id="aMTAssert_8h_html"><div class="ttname"><a href="MTAssert_8h.html">MTAssert.h</a></div></div>
-<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00054">MTAssert.h:54</a></div></div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00053">MTAssert.h:53</a></div></div>
 <div class="ttc" id="aMTStringUtility_8h_html"><div class="ttname"><a href="MTStringUtility_8h.html">MTStringUtility.h</a></div></div>
 <div class="ttc" id="aSceneSystem_8h_html"><div class="ttname"><a href="SceneSystem_8h.html">SceneSystem.h</a></div></div>
 <div class="ttc" id="aTransform_8h_html"><div class="ttname"><a href="Transform_8h.html">Transform.h</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Entity_html"><div class="ttname"><a href="classmtgb_1_1Entity.html">mtgb::Entity</a></div><div class="ttdoc">ECSのEntity</div><div class="ttdef"><b>Definition:</b> <a href="Entity_8h_source.html#l00009">Entity.h:10</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Entity_html_a6cc5a321c4352e0a78ba6350d80f1cc6"><div class="ttname"><a href="classmtgb_1_1Entity.html#a6cc5a321c4352e0a78ba6350d80f1cc6">mtgb::Entity::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="Entity_8h_source.html#l00030">Entity.h:30</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00016">GameObject.h:17</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_a12efb7dd41cfcb6edffe8609eddd323e"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a></div><div class="ttdeci">static T * FindGameObject()</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00136">GameObject.h:136</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_a13ff8ad56cd9b118123bb5a30e32c970"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a13ff8ad56cd9b118123bb5a30e32c970">mtgb::GameObject::Serialize</a></div><div class="ttdeci">nlohmann::json Serialize() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00059">GameObject.cpp:59</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_a3fc1888ffcabb393d47b094980aad73f"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a3fc1888ffcabb393d47b094980aad73f">mtgb::GameObject::FindGameObjects</a></div><div class="ttdeci">static void FindGameObjects(std::vector&lt; T * &gt; *_pFoundGameObjects)</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00142">GameObject.h:142</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_a727a77401c2f02d4dfb1222d20d94ffc"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a727a77401c2f02d4dfb1222d20d94ffc">mtgb::GameObject::~GameObject</a></div><div class="ttdeci">virtual ~GameObject()</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00053">GameObject.cpp:53</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_a12efb7dd41cfcb6edffe8609eddd323e"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a12efb7dd41cfcb6edffe8609eddd323e">mtgb::GameObject::FindGameObject</a></div><div class="ttdeci">static T * FindGameObject()</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00149">GameObject.h:149</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_a13ff8ad56cd9b118123bb5a30e32c970"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a13ff8ad56cd9b118123bb5a30e32c970">mtgb::GameObject::Serialize</a></div><div class="ttdeci">nlohmann::json Serialize() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00051">GameObject.cpp:51</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_a3fc1888ffcabb393d47b094980aad73f"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a3fc1888ffcabb393d47b094980aad73f">mtgb::GameObject::FindGameObjects</a></div><div class="ttdeci">static void FindGameObjects(std::vector&lt; T * &gt; *_pFoundGameObjects)</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00154">GameObject.h:154</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_a727a77401c2f02d4dfb1222d20d94ffc"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a727a77401c2f02d4dfb1222d20d94ffc">mtgb::GameObject::~GameObject</a></div><div class="ttdeci">virtual ~GameObject()</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00046">GameObject.cpp:46</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html_a81d29105f581c405cbc7b7dd1cc48652"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a81d29105f581c405cbc7b7dd1cc48652">mtgb::GameObject::GameObject</a></div><div class="ttdeci">GameObject()</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00028">GameObject.cpp:28</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_ac149c70cc2d54f8e5d13280a99c7a793"><div class="ttname"><a href="classmtgb_1_1GameObject.html#ac149c70cc2d54f8e5d13280a99c7a793">mtgb::GameObject::Deserialize</a></div><div class="ttdeci">void Deserialize(const nlohmann::json &amp;_json)</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00083">GameObject.cpp:83</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_ae98ecf286d6e93064a967ef02c41a438"><div class="ttname"><a href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">mtgb::GameObject::GetClassTypeName</a></div><div class="ttdeci">std::string GetClassTypeName() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00114">GameObject.cpp:114</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_aee8629c2c936df1173a2f9efe7747ab9"><div class="ttname"><a href="classmtgb_1_1GameObject.html#aee8629c2c936df1173a2f9efe7747ab9">mtgb::GameObject::isNotCalledStart_</a></div><div class="ttdeci">bool isNotCalledStart_</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00110">GameObject.h:110</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_ac149c70cc2d54f8e5d13280a99c7a793"><div class="ttname"><a href="classmtgb_1_1GameObject.html#ac149c70cc2d54f8e5d13280a99c7a793">mtgb::GameObject::Deserialize</a></div><div class="ttdeci">void Deserialize(const nlohmann::json &amp;_json)</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00076">GameObject.cpp:76</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_ae98ecf286d6e93064a967ef02c41a438"><div class="ttname"><a href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">mtgb::GameObject::GetClassTypeName</a></div><div class="ttdeci">std::string GetClassTypeName() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00107">GameObject.cpp:107</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObject_html_aee8629c2c936df1173a2f9efe7747ab9"><div class="ttname"><a href="classmtgb_1_1GameObject.html#aee8629c2c936df1173a2f9efe7747ab9">mtgb::GameObject::isNotCalledStart_</a></div><div class="ttdeci">bool isNotCalledStart_</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00129">GameObject.h:129</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Game_html_a8b552e60ee7d044929c35b08c3b46030"><div class="ttname"><a href="classmtgb_1_1Game.html#a8b552e60ee7d044929c35b08c3b46030">mtgb::Game::SerializeComponent</a></div><div class="ttdeci">static nlohmann::json SerializeComponent(std::type_index _typeIndex, EntityId _entityId)</div><div class="ttdoc">エンティティに対応するコンポーネントをJSONにシリアライズして返す</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00082">Game.cpp:82</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a100fdeed4f1f4e5f27e7ffb97ee743ca"><div class="ttname"><a href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">mtgb::AllLayer</a></div><div class="ttdeci">GameObjectLayerFlag AllLayer()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectLayer_8cpp_source.html#l00007">GameObjectLayer.cpp:7</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_a6c1ea0e60021df7bdf67c9c25f26eb52"><div class="ttname"><a href="namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52">mtgb::ExtractClassName</a></div><div class="ttdeci">std::string ExtractClassName(const std::string &amp;_fullName)</div><div class="ttdoc">インスタンス名から生成番号を削除し、クラス名を返す</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00291">MTStringUtility.cpp:291</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a6c1ea0e60021df7bdf67c9c25f26eb52"><div class="ttname"><a href="namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52">mtgb::ExtractClassName</a></div><div class="ttdeci">std::string ExtractClassName(const std::string &amp;_fullName)</div><div class="ttdoc">インスタンス名から生成番号を削除し、クラス名を返す</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00250">MTStringUtility.cpp:250</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_ade7a99556f0dbf2962a72d966b7d5ce6"><div class="ttname"><a href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">mtgb::GameObjectTag</a></div><div class="ttdeci">GameObjectTag</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectTag_8h_source.html#l00005">GameObjectTag.h:6</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b"><div class="ttname"><a href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b">mtgb::GameObjectTag::Untagged</a></div><div class="ttdeci">@ Untagged</div></div>
 <div class="ttc" id="astructmtgb_1_1GAME__OBJECT__DESC_html"><div class="ttname"><a href="structmtgb_1_1GAME__OBJECT__DESC.html">mtgb::GAME_OBJECT_DESC</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObjectBuilder_8h_source.html#l00014">GameObjectBuilder.h:15</a></div></div>

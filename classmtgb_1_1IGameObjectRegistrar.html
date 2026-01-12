@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::IGameObjectRegistrar クラス</title>
+<title>Game: mtgb::IGameObjectRegistrar クラス</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -127,7 +127,7 @@ mtgb::IGameObjectRegistrar 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
-<tr class="memitem:a3c2cbf9555869207fa36992ca0a4aa35"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#a3c2cbf9555869207fa36992ca0a4aa35">RegisterFactory</a> (std::string_view _typeName, <a class="el" href="namespacemtgb.html#a7197e0be9ea5f400f5087d78da0e4123">CreateFunc</a> _creator)=0</td></tr>
+<tr class="memitem:a3c2cbf9555869207fa36992ca0a4aa35"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#a3c2cbf9555869207fa36992ca0a4aa35">RegisterFactory</a> (std::string_view _typeName, <a class="el" href="namespacemtgb.html#aa490daec225fde1f46d5e75aa15fe98a">CreateFunc</a> _creator)=0</td></tr>
 <tr class="separator:a3c2cbf9555869207fa36992ca0a4aa35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -186,14 +186,21 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IGameObjectRegistrar_8h_source.html">IGameObjectRegistrar.h</a> の <a class="el" href="IGameObjectRegistrar_8h_source.html#l00018">18</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>        {</div>
-<div class="line"><span class="lineno">   20</span>            <span class="comment">// TODO: </span></div>
-<div class="line"><span class="lineno">   21</span>            <span class="comment">// - GameObjectTypeRegistryの直接呼出しを排除</span></div>
-<div class="line"><span class="lineno">   22</span>            <span class="comment">// - 今後、GameObject型を必要とするクラスが増えた場合直接呼び出すのでなく購読する仕組みを検討する(マクロやコールバックで)</span></div>
+<p class="definition"> <a class="el" href="IGameObjectRegistrar_8h_source.html">IGameObjectRegistrar.h</a> の <a class="el" href="IGameObjectRegistrar_8h_source.html#l00017">17</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>        {</div>
+<div class="line"><span class="lineno">   19</span>            <span class="comment">// TODO:</span></div>
+<div class="line"><span class="lineno">   20</span>            <span class="comment">// - GameObjectTypeRegistryの直接呼出しを排除</span></div>
+<div class="line"><span class="lineno">   21</span>            <span class="comment">// -</span></div>
+<div class="line"><span class="lineno">   22</span>            <span class="comment">// 今後、GameObject型を必要とするクラスが増えた場合直接呼び出すのでなく購読する仕組みを検討する(マクロやコールバックで)</span></div>
 <div class="line"><span class="lineno">   23</span>            Game::System&lt;GameObjectTypeRegistry&gt;().Register&lt;<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;(_typeName);</div>
-<div class="line"><span class="lineno">   24</span>            <a class="code hl_function" href="classmtgb_1_1IGameObjectRegistrar.html#a3c2cbf9555869207fa36992ca0a4aa35">RegisterFactory</a>(_typeName, []() -&gt; GameObject* { <span class="keywordflow">return</span> GameObject::Instantiate&lt;T&gt;(); });</div>
-<div class="line"><span class="lineno">   25</span>        }</div>
+<div class="line"><span class="lineno">   24</span>            <a class="code hl_function" href="classmtgb_1_1IGameObjectRegistrar.html#a3c2cbf9555869207fa36992ca0a4aa35">RegisterFactory</a>(</div>
+<div class="line"><span class="lineno">   25</span>                _typeName,</div>
+<div class="line"><span class="lineno">   26</span>                []() -&gt; GameObject*</div>
+<div class="line"><span class="lineno">   27</span>                {</div>
+<div class="line"><span class="lineno">   28</span>                    <span class="keywordflow">return</span> GameObject::Instantiate&lt;T&gt;();</div>
+<div class="line"><span class="lineno">   29</span>                }</div>
+<div class="line"><span class="lineno">   30</span>            );</div>
+<div class="line"><span class="lineno">   31</span>        }</div>
 <div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
 <div class="ttc" id="aclassmtgb_1_1IGameObjectRegistrar_html_a3c2cbf9555869207fa36992ca0a4aa35"><div class="ttname"><a href="classmtgb_1_1IGameObjectRegistrar.html#a3c2cbf9555869207fa36992ca0a4aa35">mtgb::IGameObjectRegistrar::RegisterFactory</a></div><div class="ttdeci">virtual void RegisterFactory(std::string_view _typeName, CreateFunc _creator)=0</div></div>
 </div><!-- fragment -->
@@ -233,7 +240,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacemtgb.html#a7197e0be9ea5f400f5087d78da0e4123">CreateFunc</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#aa490daec225fde1f46d5e75aa15fe98a">CreateFunc</a>&#160;</td>
           <td class="paramname"><em>_creator</em>&#160;</td>
         </tr>
         <tr>
@@ -251,7 +258,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 
 <p><a class="el" href="classmtgb_1_1GameObjectFactory.html#a77ef45b65ed6c3872e27757978adf017">mtgb::GameObjectFactory</a>で実装されています。</p>
 
-<p class="reference">参照元 <a class="el" href="IGameObjectRegistrar_8h_source.html#l00018">Register()</a>.</p>
+<p class="reference">参照元 <a class="el" href="IGameObjectRegistrar_8h_source.html#l00017">Register()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">

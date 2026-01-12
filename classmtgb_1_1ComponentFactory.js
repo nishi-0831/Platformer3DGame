@@ -1,7 +1,7 @@
 var classmtgb_1_1ComponentFactory =
 [
     [ "CreateFromMementoFunction", "classmtgb_1_1ComponentFactory.html#a5a7767e96577cb353d1b6dae6b0b5757", null ],
-    [ "CreateFunction", "classmtgb_1_1ComponentFactory.html#a6ec9b4af59eded3b0756a941fd5f24c9", null ],
+    [ "CreateFunction", "classmtgb_1_1ComponentFactory.html#a935e1147e10d802ed834d66c8859ade9", null ],
     [ "AddComponent", "classmtgb_1_1ComponentFactory.html#a628e994f3a8d4f3ffc82b0a9463babf0", null ],
     [ "AddComponentFromMemento", "classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6", null ],
     [ "GetRegisteredTypes", "classmtgb_1_1ComponentFactory.html#a12de11ad10faa7f3e6a606f0ad2c88f6", null ],

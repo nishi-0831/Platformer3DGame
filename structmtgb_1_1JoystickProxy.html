@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::JoystickProxy 構造体</title>
+<title>Game: mtgb::JoystickProxy 構造体</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -185,7 +185,7 @@ mtgb::JoystickProxy 連携図</div>
 <div class="line"><span class="lineno">   10</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a90f11347b4cab373dd4f5b7291eac853">lZ</a>(js.lZ)</div>
 <div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a72af841ebdb7d7d17b99d93a84b458a5">lRx</a>(js.lRx)</div>
 <div class="line"><span class="lineno">   12</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a604da7eeff5fa37b7df65af1bbbdf873">lRy</a>(js.lRy)</div>
-<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a953853d9e5a36de23d34868f373907b2">lRz</a>(js.lRz) </div>
+<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a953853d9e5a36de23d34868f373907b2">lRz</a>(js.lRz)</div>
 <div class="line"><span class="lineno">   14</span>{</div>
 <div class="line"><span class="lineno">   15</span>    std::copy(std::begin(js.rglSlider), std::end(js.rglSlider), <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a672a2f51dccebe8e50f2bd62a9fb04ea">rglSlider</a>);</div>
 <div class="line"><span class="lineno">   16</span>    std::copy(std::begin(js.rgdwPOV), std::end(js.rgdwPOV), <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#ae1db7c68b95a6d37163b81524dc9a6d6">rgdwPOV</a>);</div>
@@ -228,10 +228,10 @@ mtgb::JoystickProxy 連携図</div>
 <div class="line"><span class="lineno">   23</span> </div>
 <div class="line"><span class="lineno">   24</span>    <span class="comment">/*isConnected = input.IsJoystickConnected(guid);</span></div>
 <div class="line"><span class="lineno">   25</span><span class="comment">    isAssigned = input.IsJoystickAssigned(guid);*/</span></div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#af47c3b947ab41f4b0b5ccd5df2ca46ff">connectionStatus</a> = input.IsJoystickConnected(guid) ? <span class="stringliteral">&quot;接続中&quot;</span> : <span class="stringliteral">&quot;切断&quot;</span>;</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a70ba01360111421638c1d3782d527cd6">assignmentStatus</a> = input.IsJoystickAssigned(guid) ? <span class="stringliteral">&quot;割り当て済み&quot;</span> : <span class="stringliteral">&quot;未割当&quot;</span>;</div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#aadac1f558532922ff9e07b3be2851044">lastErrorMessage</a> = input.GetJoystickStatusMessage(guid);</div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a4f6268c4f7efd633924aabc8ca4cd1bf">deviceName</a> = input.GetDeviceName(guid);</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#af47c3b947ab41f4b0b5ccd5df2ca46ff">connectionStatus</a>  = input.IsJoystickConnected(guid) ? <span class="stringliteral">&quot;接続中&quot;</span> : <span class="stringliteral">&quot;切断&quot;</span>;</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a70ba01360111421638c1d3782d527cd6">assignmentStatus</a>  = input.IsJoystickAssigned(guid) ? <span class="stringliteral">&quot;割り当て済み&quot;</span> : <span class="stringliteral">&quot;未割当&quot;</span>;</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#aadac1f558532922ff9e07b3be2851044">lastErrorMessage</a>  = input.GetJoystickStatusMessage(guid);</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a4f6268c4f7efd633924aabc8ca4cd1bf">deviceName</a>        = input.GetDeviceName(guid);</div>
 <div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a41e0b48a89b00f0e45118cdc2c0dd99c">deviceProductName</a> = input.GetDeviceProductName(guid);</div>
 <div class="line"><span class="lineno">   31</span>}</div>
 <div class="ttc" id="astructmtgb_1_1JoystickProxy_html_a41e0b48a89b00f0e45118cdc2c0dd99c"><div class="ttname"><a href="structmtgb_1_1JoystickProxy.html#a41e0b48a89b00f0e45118cdc2c0dd99c">mtgb::JoystickProxy::deviceProductName</a></div><div class="ttdeci">std::string deviceProductName</div><div class="ttdef"><b>Definition:</b> <a href="JoystickProxy_8h_source.html#l00027">JoystickProxy.h:27</a></div></div>
@@ -240,7 +240,7 @@ mtgb::JoystickProxy 連携図</div>
 <div class="ttc" id="astructmtgb_1_1JoystickProxy_html_aadac1f558532922ff9e07b3be2851044"><div class="ttname"><a href="structmtgb_1_1JoystickProxy.html#aadac1f558532922ff9e07b3be2851044">mtgb::JoystickProxy::lastErrorMessage</a></div><div class="ttdeci">std::string lastErrorMessage</div><div class="ttdef"><b>Definition:</b> <a href="JoystickProxy_8h_source.html#l00025">JoystickProxy.h:25</a></div></div>
 <div class="ttc" id="astructmtgb_1_1JoystickProxy_html_af47c3b947ab41f4b0b5ccd5df2ca46ff"><div class="ttname"><a href="structmtgb_1_1JoystickProxy.html#af47c3b947ab41f4b0b5ccd5df2ca46ff">mtgb::JoystickProxy::connectionStatus</a></div><div class="ttdeci">std::string connectionStatus</div><div class="ttdef"><b>Definition:</b> <a href="JoystickProxy_8h_source.html#l00023">JoystickProxy.h:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Input_8cpp_source.html#l00510">mtgb::Input::GetDeviceName()</a>, <a class="el" href="Input_8cpp_source.html#l00530">mtgb::Input::GetDeviceProductName()</a>, <a class="el" href="Input_8cpp_source.html#l00626">mtgb::Input::GetJoystickStatusMessage()</a>, <a class="el" href="Input_8cpp_source.html#l00653">mtgb::Input::IsJoystickAssigned()</a>, <a class="el" href="Input_8cpp_source.html#l00636">mtgb::Input::IsJoystickConnected()</a>.</p>
+<p class="reference">参照先 <a class="el" href="Input_8cpp_source.html#l00523">mtgb::Input::GetDeviceName()</a>, <a class="el" href="Input_8cpp_source.html#l00542">mtgb::Input::GetDeviceProductName()</a>, <a class="el" href="Input_8cpp_source.html#l00640">mtgb::Input::GetJoystickStatusMessage()</a>, <a class="el" href="Input_8cpp_source.html#l00667">mtgb::Input::IsJoystickAssigned()</a>, <a class="el" href="Input_8cpp_source.html#l00650">mtgb::Input::IsJoystickConnected()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -268,9 +268,9 @@ mtgb::JoystickProxy 連携図</div>
 
 <p class="definition"> <a class="el" href="JoystickProxy_8cpp_source.html">JoystickProxy.cpp</a> の <a class="el" href="JoystickProxy_8cpp_source.html#l00033">33</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#ac08df9dfc6d227ecc6a24bcb41c26afb">lX</a> = js.lX;</div>
-<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a5a6605d4e18e4284042727f68e416f0a">lY</a> = js.lY;</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a90f11347b4cab373dd4f5b7291eac853">lZ</a> = js.lZ;</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#ac08df9dfc6d227ecc6a24bcb41c26afb">lX</a>  = js.lX;</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a5a6605d4e18e4284042727f68e416f0a">lY</a>  = js.lY;</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a90f11347b4cab373dd4f5b7291eac853">lZ</a>  = js.lZ;</div>
 <div class="line"><span class="lineno">   38</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a72af841ebdb7d7d17b99d93a84b458a5">lRx</a> = js.lRx;</div>
 <div class="line"><span class="lineno">   39</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a604da7eeff5fa37b7df65af1bbbdf873">lRy</a> = js.lRy;</div>
 <div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a953853d9e5a36de23d34868f373907b2">lRz</a> = js.lRz;</div>
@@ -279,7 +279,7 @@ mtgb::JoystickProxy 連携図</div>
 <div class="line"><span class="lineno">   43</span>    std::copy(std::begin(js.rgbButtons), std::end(js.rgbButtons), <a class="code hl_variable" href="structmtgb_1_1JoystickProxy.html#a805bdf1009ee04915ec9972f205cc6c8">rgbButtons</a>);</div>
 <div class="line"><span class="lineno">   44</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="InputResource_8cpp_source.html#l00075">mtgb::InputResource::Update()</a>.</p>
+<p class="reference">参照元 <a class="el" href="InputResource_8cpp_source.html#l00074">mtgb::InputResource::Update()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">

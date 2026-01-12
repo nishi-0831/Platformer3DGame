@@ -1,11 +1,11 @@
 var TextCache_8h =
 [
-    [ "text_layout_order", "structtext__layout__order.html", null ],
-    [ "handle_order", "structhandle__order.html", null ],
-    [ "random", "structrandom.html", null ],
-    [ "font_size_order", "structfont__size__order.html", null ],
-    [ "layout_box_size_order", "structlayout__box__size__order.html", null ],
+    [ "mtgb::text_layout_order", "structmtgb_1_1text__layout__order.html", null ],
+    [ "mtgb::handle_order", "structmtgb_1_1handle__order.html", null ],
+    [ "mtgb::random", "structmtgb_1_1random.html", null ],
+    [ "mtgb::font_size_order", "structmtgb_1_1font__size__order.html", null ],
+    [ "mtgb::layout_box_size_order", "structmtgb_1_1layout__box__size__order.html", null ],
     [ "mtgb::TextCache", "classmtgb_1_1TextCache.html", "classmtgb_1_1TextCache" ],
-    [ "FontFormatContainer", "TextCache_8h.html#a838358f6962b41846a2cc52b7bb1fdd7", null ],
-    [ "TextLayoutContainer", "TextCache_8h.html#a9fe9480ea78493c2614f641771321233", null ]
+    [ "FontFormatContainer", "TextCache_8h.html#ac9742457ae6d050bc36259ec732e6445", null ],
+    [ "TextLayoutContainer", "TextCache_8h.html#a5a7e24bab9f019b2c04e470598857c15", null ]
 ];

@@ -1,7 +1,7 @@
 var classmtgb_1_1Game =
 [
     [ "RegisterSystemFuncHolder", "classmtgb_1_1Game_1_1RegisterSystemFuncHolder.html", "classmtgb_1_1Game_1_1RegisterSystemFuncHolder" ],
-    [ "RegisterSystem", "classmtgb_1_1Game.html#accc4e58fb45a5ba0503505d723f71370", null ],
+    [ "RegisterSystem", "classmtgb_1_1Game.html#a7eea92b18fc37c8fc4aaca16bb3323af", null ],
     [ "SystemUpdateType", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b", [
       [ "DontCallMe", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840", null ],
       [ "Cycle", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938", null ],

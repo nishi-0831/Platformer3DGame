@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::SingleWindow クラス</title>
+<title>Game: mtgb::SingleWindow クラス</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -217,39 +217,37 @@ mtgb::SingleWindow 連携図</div>
 
 <p class="definition"> <a class="el" href="SingleWindow_8cpp_source.html">SingleWindow.cpp</a> の <a class="el" href="SingleWindow_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a> SCREEN_SIZE{ Game::System&lt;Screen&gt;().GetSize() };</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">Vector2Int</a> SCREEN_SIZE{Game::System&lt;Screen&gt;().GetSize()};</div>
 <div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    WindowConfig config1 =</div>
-<div class="line"><span class="lineno">   26</span>    {</div>
-<div class="line"><span class="lineno">   27</span>        .title = <span class="stringliteral">&quot;Player1&quot;</span>,</div>
-<div class="line"><span class="lineno">   28</span>        .className = <span class="stringliteral">&quot;Player1WindowClass&quot;</span>,</div>
-<div class="line"><span class="lineno">   29</span>        .width = SCREEN_SIZE.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>,</div>
-<div class="line"><span class="lineno">   30</span>        .height = SCREEN_SIZE.y,</div>
-<div class="line"><span class="lineno">   31</span>        .x = 0,</div>
-<div class="line"><span class="lineno">   32</span>        .y = 0</div>
-<div class="line"><span class="lineno">   33</span>    };</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>    <span class="comment">//リソースの初期化もここで行う</span></div>
-<div class="line"><span class="lineno">   36</span>    Game::System&lt;WindowManager&gt;().SetWindowConfig(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>, config1);</div>
-<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   25</span>    WindowConfig config1 = {</div>
+<div class="line"><span class="lineno">   26</span>        .title     = <span class="stringliteral">&quot;Player1&quot;</span>,</div>
+<div class="line"><span class="lineno">   27</span>        .className = <span class="stringliteral">&quot;Player1WindowClass&quot;</span>,</div>
+<div class="line"><span class="lineno">   28</span>        .width     = SCREEN_SIZE.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>,</div>
+<div class="line"><span class="lineno">   29</span>        .height    = SCREEN_SIZE.y,</div>
+<div class="line"><span class="lineno">   30</span>        .x         = 0,</div>
+<div class="line"><span class="lineno">   31</span>        .y         = 0</div>
+<div class="line"><span class="lineno">   32</span>    };</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="comment">// リソースの初期化もここで行う</span></div>
+<div class="line"><span class="lineno">   35</span>    Game::System&lt;WindowManager&gt;().SetWindowConfig(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>, config1);</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    Game::System&lt;WindowContextResourceManager&gt;().CreateResource(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
 <div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    Game::System&lt;WindowContextResourceManager&gt;().CreateResource(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> hWnd1 = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">WinCtxRes::GetHWND</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
 <div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    <a class="code hl_typedef" href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a> hWnd1 = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">WinCtxRes::GetHWND</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><span class="lineno">   41</span>    ShowWindow(hWnd1, SW_SHOW);</div>
 <div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    ShowWindow(hWnd1, SW_SHOW);</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>    <span class="comment">// ウィンドウの表示、初期化完了をマーク</span></div>
-<div class="line"><span class="lineno">   46</span>    Game::System&lt;WindowContextResourceManager&gt;().Get&lt;WindowResource&gt;(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>).MarkInitialized();</div>
+<div class="line"><span class="lineno">   43</span>    <span class="comment">// ウィンドウの表示、初期化完了をマーク</span></div>
+<div class="line"><span class="lineno">   44</span>    Game::System&lt;WindowContextResourceManager&gt;().Get&lt;WindowResource&gt;(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>).MarkInitialized();</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    Game::System&lt;WindowContextResourceManager&gt;().ChangeActiveResource(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
 <div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    Game::System&lt;WindowContextResourceManager&gt;().ChangeActiveResource(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>    SetForegroundWindow(hWnd1);</div>
-<div class="line"><span class="lineno">   51</span>}</div>
+<div class="line"><span class="lineno">   48</span>    SetForegroundWindow(hWnd1);</div>
+<div class="line"><span class="lineno">   49</span>}</div>
 <div class="ttc" id="aDirect2DResource_8h_html_ac17599842f3c193b028cc578098f8b93"><div class="ttname"><a href="Direct2DResource_8h.html#ac17599842f3c193b028cc578098f8b93">HWND</a></div><div class="ttdeci">struct HWND__ * HWND</div><div class="ttdef"><b>Definition:</b> <a href="Direct2DResource_8h_source.html#l00009">Direct2DResource.h:9</a></div></div>
 <div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_ac3067c8903d57f25d01d82b155657099"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">mtgb::WinCtxRes::GetHWND</a></div><div class="ttdeci">HWND GetHWND(WindowContext ctx)</div><div class="ttdoc">そのウィンドウのHWNDを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00025">WindowContextUtil.cpp:25</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_a00d8f33cd3151768d71476946783af58"><div class="ttname"><a href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">mtgb::Vector2Int</a></div><div class="ttdeci">Vector2T&lt; int &gt; Vector2Int</div><div class="ttdef"><b>Definition:</b> <a href="Vector2Int_8h_source.html#l00007">Vector2Int.h:7</a></div></div>
-<div class="ttc" id="astructmtgb_1_1Vector2T_html_ac78650fee4feebc437d7a6893be2b1c7"><div class="ttname"><a href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">mtgb::Vector2T::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="Vector2T_8h_source.html#l00014">Vector2T.h:14</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a00d8f33cd3151768d71476946783af58"><div class="ttname"><a href="namespacemtgb.html#a00d8f33cd3151768d71476946783af58">mtgb::Vector2Int</a></div><div class="ttdeci">Vector2T&lt; int &gt; Vector2Int</div><div class="ttdef"><b>Definition:</b> <a href="Vector2Int_8h_source.html#l00006">Vector2Int.h:6</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector2T_html_ac78650fee4feebc437d7a6893be2b1c7"><div class="ttname"><a href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">mtgb::Vector2T::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="Vector2T_8h_source.html#l00013">Vector2T.h:13</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="WindowContextUtil_8cpp_source.html#l00025">mtgb::WinCtxRes::GetHWND()</a>, <a class="el" href="WindowManager_8h_source.html#l00016">mtgb::WindowConfig::title</a>.</p>
 <div class="dynheader">
@@ -286,12 +284,13 @@ mtgb::SingleWindow 連携図</div>
 
 <p>開放処理 </p>
 
-<p><a class="el" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1Fbx.html#ada19e401d03b5d2056fba392808ec546">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1Input.html#aaeb9eca1ca02568bf898253c804baea7">mtgb::Input</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1Timer.html#ac8fce5b2c97551427a50a288e3fd76fd">mtgb::Timer</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b">mtgb::WindowManager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; AudioPlayer, AudioPlayerCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ImageRenderer, ImageRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a> (計22項目)で再実装されています。</p>
+<p><a class="el" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1Fbx.html#ada19e401d03b5d2056fba392808ec546">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1Input.html#aaeb9eca1ca02568bf898253c804baea7">mtgb::Input</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b">mtgb::WindowManager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#ada82a449c50f127b983ca5635588dcfd">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ImageRenderer, ImageRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a>, <a class="el" href="classmtgb_1_1Timer.html#aff73a31a4227b61a53f4d7478652eca0">mtgb::Timer</a> (計21項目)で再実装されています。</p>
 
 <p class="definition"> <a class="el" href="ISystem_8h_source.html">ISystem.h</a> の <a class="el" href="ISystem_8h_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>{}</div>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00143">mtgb::Game::ReleaseSystems()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00144">mtgb::Game::ReleaseSystems()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -343,9 +342,9 @@ mtgb::SingleWindow 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="SingleWindow_8cpp_source.html">SingleWindow.cpp</a> の <a class="el" href="SingleWindow_8cpp_source.html#l00053">53</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>{</div>
-<div class="line"><span class="lineno">   55</span>}</div>
+<p class="definition"> <a class="el" href="SingleWindow_8cpp_source.html">SingleWindow.cpp</a> の <a class="el" href="SingleWindow_8cpp_source.html#l00051">51</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>{</div>
+<div class="line"><span class="lineno">   53</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

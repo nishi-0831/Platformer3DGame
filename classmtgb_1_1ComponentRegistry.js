@@ -19,7 +19,7 @@ var classmtgb_1_1ComponentRegistry =
     [ "UnRegisterComponent", "classmtgb_1_1ComponentRegistry.html#a89bc33650527b32d371866b07950801d", null ],
     [ "Update", "classmtgb_1_1ComponentRegistry.html#a7a2bbfb0d7acae57df65640da2727d17", null ],
     [ "componentIndices_", "classmtgb_1_1ComponentRegistry.html#acd873a694443e0a51c732a6d0dab421b", null ],
-    [ "componentNameToTypeMap_", "classmtgb_1_1ComponentRegistry.html#a7147714fa2ff17dfec532cfd620fa4d7", null ],
+    [ "componentNameToTypeMap_", "classmtgb_1_1ComponentRegistry.html#a9d11143b3a4fff3e5298e8a11ac8a7ca", null ],
     [ "componentTypeToPoolTypeMap_", "classmtgb_1_1ComponentRegistry.html#aa6e639f8c20093056931d67b8728c831", null ],
     [ "entityComponents_", "classmtgb_1_1ComponentRegistry.html#aacad316c927d097d5d0e98ee1576ed95", null ]
 ];

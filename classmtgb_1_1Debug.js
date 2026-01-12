@@ -7,7 +7,7 @@ var classmtgb_1_1Debug =
     [ "GetName", "classmtgb_1_1Debug.html#a17536cf5010b8ec45ab88daa1deaa5db", null ],
     [ "Initialize", "classmtgb_1_1Debug.html#a782371ed5a6873941a083bad5926544c", null ],
     [ "LogF", "classmtgb_1_1Debug.html#ac2dffde5cceb921e9f0b9db9b73e701c", null ],
-    [ "LogImGui", "classmtgb_1_1Debug.html#a4b64e335782574a376cbb4c5d64cd3d1", null ],
+    [ "LogImGui", "classmtgb_1_1Debug.html#a6f95e8f6593da4f5b2713ecac61227f1", null ],
     [ "MakeKey", "classmtgb_1_1Debug.html#aa59fda3f614d13c72420102b1f1aa539", null ],
     [ "Release", "classmtgb_1_1Debug.html#aa2823e5390468dfc47213b845c55d3ac", null ],
     [ "RemoveLog", "classmtgb_1_1Debug.html#aa50f15032bc1a1949ed84671909aa2f8", null ],

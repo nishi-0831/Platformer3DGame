@@ -1,6 +1,6 @@
 var classSampleGame =
 [
-    [ "RegisterSystem", "classSampleGame.html#accc4e58fb45a5ba0503505d723f71370", null ],
+    [ "RegisterSystem", "classSampleGame.html#a7eea92b18fc37c8fc4aaca16bb3323af", null ],
     [ "SystemUpdateType", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686b", [
       [ "DontCallMe", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840", null ],
       [ "Cycle", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938", null ],

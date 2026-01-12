@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: ComponentFactory.cpp ソースファイル</title>
+<title>Game: ComponentFactory.cpp ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -100,36 +100,34 @@ $(document).ready(function(){initNavTree('ComponentFactory_8cpp_source.html','')
 <div class="contents">
 <a href="ComponentFactory_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="ComponentFactory_8h.html">ComponentFactory.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classmtgb_1_1ComponentFactory.html#a628e994f3a8d4f3ffc82b0a9463babf0">    4</a></span><a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">mtgb::IComponentMemento</a>* <a class="code hl_function" href="classmtgb_1_1ComponentFactory.html#a628e994f3a8d4f3ffc82b0a9463babf0">mtgb::ComponentFactory::AddComponent</a>(<span class="keyword">const</span> std::type_index&amp; _info, <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _id)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    std::type_index typeIdx{_info};</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#af68695b039d21635b82a903b395057e0">creators_</a>.find(typeIdx);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#af68695b039d21635b82a903b395057e0">creators_</a>.end())</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">IComponentMemento</a>* memento = itr-&gt;second(_id);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">if</span> (memento)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            <span class="keywordflow">return</span> memento;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">   17</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">mtgb::ComponentFactory::AddComponentFromMemento</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">IComponentMemento</a>&amp; _memento)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    std::type_index typeIdx{_memento.<a class="code hl_function" href="classmtgb_1_1IComponentMemento.html#a183c2855d2d86230d6625434f385b41c">GetComponentType</a>()};</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">auto</span> itr = creatorsFromMemento_.find(typeIdx);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (itr != creatorsFromMemento_.end())</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        itr-&gt;second(_memento);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="classmtgb_1_1ComponentFactory.html#a628e994f3a8d4f3ffc82b0a9463babf0">    3</a></span><a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">mtgb::IComponentMemento</a>* <a class="code hl_function" href="classmtgb_1_1ComponentFactory.html#a628e994f3a8d4f3ffc82b0a9463babf0">mtgb::ComponentFactory::AddComponent</a>(<span class="keyword">const</span> std::type_index&amp; _info, <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _id)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    std::type_index typeIdx{_info};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#af68695b039d21635b82a903b395057e0">creators_</a>.find(typeIdx);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#af68695b039d21635b82a903b395057e0">creators_</a>.end())</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">IComponentMemento</a>* memento = itr-&gt;second(_id);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">if</span> (memento)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            <span class="keywordflow">return</span> memento;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">   16</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">mtgb::ComponentFactory::AddComponentFromMemento</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">IComponentMemento</a>&amp; _memento)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    std::type_index typeIdx{_memento.<a class="code hl_function" href="classmtgb_1_1IComponentMemento.html#a183c2855d2d86230d6625434f385b41c">GetComponentType</a>()};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">auto</span> itr = creatorsFromMemento_.find(typeIdx);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (itr != creatorsFromMemento_.end())</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        itr-&gt;second(_memento);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="ttc" id="aComponentFactory_8h_html"><div class="ttname"><a href="ComponentFactory_8h.html">ComponentFactory.h</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_a54182336964c12ecaf6908938e780ef6"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">mtgb::ComponentFactory::AddComponentFromMemento</a></div><div class="ttdeci">bool AddComponentFromMemento(const IComponentMemento &amp;_memento) const</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8cpp_source.html#l00017">ComponentFactory.cpp:17</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_a628e994f3a8d4f3ffc82b0a9463babf0"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#a628e994f3a8d4f3ffc82b0a9463babf0">mtgb::ComponentFactory::AddComponent</a></div><div class="ttdeci">IComponentMemento * AddComponent(const std::type_index &amp;_info, EntityId _id) const</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8cpp_source.html#l00004">ComponentFactory.cpp:4</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_af68695b039d21635b82a903b395057e0"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#af68695b039d21635b82a903b395057e0">mtgb::ComponentFactory::creators_</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, CreateFunction &gt; creators_</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8h_source.html#l00039">ComponentFactory.h:39</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_a54182336964c12ecaf6908938e780ef6"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#a54182336964c12ecaf6908938e780ef6">mtgb::ComponentFactory::AddComponentFromMemento</a></div><div class="ttdeci">bool AddComponentFromMemento(const IComponentMemento &amp;_memento) const</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8cpp_source.html#l00016">ComponentFactory.cpp:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_a628e994f3a8d4f3ffc82b0a9463babf0"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#a628e994f3a8d4f3ffc82b0a9463babf0">mtgb::ComponentFactory::AddComponent</a></div><div class="ttdeci">IComponentMemento * AddComponent(const std::type_index &amp;_info, EntityId _id) const</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8cpp_source.html#l00003">ComponentFactory.cpp:3</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_af68695b039d21635b82a903b395057e0"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#af68695b039d21635b82a903b395057e0">mtgb::ComponentFactory::creators_</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, CreateFunction &gt; creators_</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8h_source.html#l00037">ComponentFactory.h:37</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponentMemento_html"><div class="ttname"><a href="classmtgb_1_1IComponentMemento.html">mtgb::IComponentMemento</a></div><div class="ttdef"><b>Definition:</b> <a href="IComponentMemento_8h_source.html#l00007">IComponentMemento.h:8</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponentMemento_html_a183c2855d2d86230d6625434f385b41c"><div class="ttname"><a href="classmtgb_1_1IComponentMemento.html#a183c2855d2d86230d6625434f385b41c">mtgb::IComponentMemento::GetComponentType</a></div><div class="ttdeci">virtual std::type_index GetComponentType() const =0</div></div>
 <div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>

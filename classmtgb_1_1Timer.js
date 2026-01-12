@@ -9,7 +9,7 @@ var classmtgb_1_1Timer =
     [ "EnqueueTimer", "classmtgb_1_1Timer.html#ac36daf50c72f07f2bc0f0bda95eb2bc8", null ],
     [ "Initialize", "classmtgb_1_1Timer.html#a16eeb167c1381a3588e59f98a07738d7", null ],
     [ "Instance", "classmtgb_1_1Timer.html#a460bf244338d768fc56e13f4213c2310", null ],
-    [ "Release", "classmtgb_1_1Timer.html#ac8fce5b2c97551427a50a288e3fd76fd", null ],
+    [ "Release", "classmtgb_1_1Timer.html#aff73a31a4227b61a53f4d7478652eca0", null ],
     [ "Remove", "classmtgb_1_1Timer.html#a7a08cb86268c3b009ae8c9b68afa55b9", null ],
     [ "Update", "classmtgb_1_1Timer.html#af7202a0d9281160408b01a963af5edc3", null ],
     [ "pInstance_", "classmtgb_1_1Timer.html#a36f74de191b4210a27b625e9166474c8", null ],

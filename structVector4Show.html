@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: Vector4Show 構造体</title>
+<title>Game: Vector4Show 構造体</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -123,7 +123,7 @@ Vector4Show 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="ShowAttributes_8h_source.html">ShowAttributes.h</a> の <a class="el" href="ShowAttributes_8h_source.html#l00022">22</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ShowAttributes_8h_source.html">ShowAttributes.h</a> の <a class="el" href="ShowAttributes_8h_source.html#l00021">21</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="a2239a9d0fac86052952c281989298647" name="a2239a9d0fac86052952c281989298647"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2239a9d0fac86052952c281989298647">&#9670;&#160;</a></span>operator()()</h2>
@@ -155,23 +155,20 @@ Vector4Show 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
 <div class="line"><span class="lineno">   32</span>    DirectX::XMVECTOR old = *_vec;</div>
 <div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordtype">bool</span> changed = <a class="code hl_function" href="namespaceImGui.html#a69675d2e9780a0e5a7a372f936b64d49">ImGui::InputFloat4</a>(_name, _vec-&gt;m128_f32);;</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (changed == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> ImGuiInputCommand&lt;DirectX::XMVECTOR&gt;(_vec, old, *_vec,_name);</div>
-<div class="line"><span class="lineno">   40</span>}</div>
-<div class="ttc" id="anamespaceImGui_html_a69675d2e9780a0e5a7a372f936b64d49"><div class="ttname"><a href="namespaceImGui.html#a69675d2e9780a0e5a7a372f936b64d49">ImGui::InputFloat4</a></div><div class="ttdeci">IMGUI_API bool InputFloat4(const char *label, float v[4], const char *format=&quot;%.3f&quot;, ImGuiInputTextFlags flags=0)</div><div class="ttdef"><b>Definition:</b> <a href="imgui__widgets_8cpp_source.html#l03876">imgui_widgets.cpp:3876</a></div></div>
+<div class="line"><span class="lineno">   34</span>    DirectX::XMFLOAT4 tmp;</div>
+<div class="line"><span class="lineno">   35</span>    DirectX::XMStoreFloat4(&amp;tmp, *_vec);</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordtype">bool</span> changed = ImGui::InputFloat4(_name, &amp;tmp.x, <span class="stringliteral">&quot;%.3f&quot;</span>, 0);</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (changed)</div>
+<div class="line"><span class="lineno">   39</span>    {</div>
+<div class="line"><span class="lineno">   40</span>        <span class="comment">// 変化があれば再度 XMVECTOR に読み込んで格納</span></div>
+<div class="line"><span class="lineno">   41</span>        *_vec = DirectX::XMLoadFloat4(&amp;tmp);</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> ImGuiInputCommand&lt;DirectX::XMVECTOR&gt;(_vec, old, *_vec, _name);</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   46</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="imgui__widgets_8cpp_source.html#l03876">ImGui::InputFloat4()</a>.</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structVector4Show_a2239a9d0fac86052952c281989298647_cgraph.svg" width="1820" height="1640"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
 </div>
 </div>
 <hr/>この構造体詳解は次のファイルから抽出されました:<ul>

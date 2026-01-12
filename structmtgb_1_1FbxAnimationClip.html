@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Game: mtgb::FbxAnimationClip 構造体</title>
+<title>Game: mtgb::FbxAnimationClip 構造体</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Game
+   <div id="projectname">Game
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -161,11 +161,11 @@ mtgb::FbxAnimationClip 連携図</div>
 <div class="line"><span class="lineno">   17</span> </div>
 <div class="line"><span class="lineno">   18</span>    <span class="comment">// FbxAnimStackからアニメーション範囲を取得</span></div>
 <div class="line"><span class="lineno">   19</span>    FbxTimeSpan timeSpan = _pAnimStack-&gt;GetLocalTimeSpan();</div>
-<div class="line"><span class="lineno">   20</span>    FbxTime startTime = timeSpan.GetStart();</div>
-<div class="line"><span class="lineno">   21</span>    FbxTime endTime = timeSpan.GetStop();</div>
+<div class="line"><span class="lineno">   20</span>    FbxTime startTime    = timeSpan.GetStart();</div>
+<div class="line"><span class="lineno">   21</span>    FbxTime endTime      = timeSpan.GetStop();</div>
 <div class="line"><span class="lineno">   22</span> </div>
 <div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="structmtgb_1_1FbxAnimationClip.html#a871007c701272cbdb5aa482043198ac7">startFrame</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(startTime.GetFrameCount(FbxTime::EMode::eFrames60));</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="structmtgb_1_1FbxAnimationClip.html#aa7d71f9120780aaf90df6b7f255eb70f">endFrame</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(endTime.GetFrameCount(FbxTime::EMode::eFrames60));</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="structmtgb_1_1FbxAnimationClip.html#aa7d71f9120780aaf90df6b7f255eb70f">endFrame</a>   = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(endTime.GetFrameCount(FbxTime::EMode::eFrames60));</div>
 <div class="line"><span class="lineno">   25</span>}</div>
 <div class="ttc" id="astructmtgb_1_1FbxAnimationClip_html_a283e0ed5646485b481bb6955d7cf1806"><div class="ttname"><a href="structmtgb_1_1FbxAnimationClip.html#a283e0ed5646485b481bb6955d7cf1806">mtgb::FbxAnimationClip::pAnimStack</a></div><div class="ttdeci">FbxAnimStack * pAnimStack</div><div class="ttdef"><b>Definition:</b> <a href="FbxAnimationClip_8h_source.html#l00016">FbxAnimationClip.h:16</a></div></div>
 <div class="ttc" id="astructmtgb_1_1FbxAnimationClip_html_a808f993b0c5fe9a2b3eb45970f18d9bc"><div class="ttname"><a href="structmtgb_1_1FbxAnimationClip.html#a808f993b0c5fe9a2b3eb45970f18d9bc">mtgb::FbxAnimationClip::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> <a href="FbxAnimationClip_8h_source.html#l00013">FbxAnimationClip.h:13</a></div></div>
@@ -209,7 +209,7 @@ mtgb::FbxAnimationClip 連携図</div>
 
 <p class="definition"> <a class="el" href="FbxAnimationClip_8h_source.html">FbxAnimationClip.h</a> の <a class="el" href="FbxAnimationClip_8h_source.html#l00013">13</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="FbxAnimationClip_8cpp_source.html#l00006">FbxAnimationClip()</a>, <a class="el" href="FbxAnimationController_8cpp_source.html#l00037">mtgb::FbxAnimationController::RegisterAnimationClip()</a>.</p>
+<p class="reference">参照元 <a class="el" href="FbxAnimationClip_8cpp_source.html#l00006">FbxAnimationClip()</a>, <a class="el" href="FbxAnimationController_8cpp_source.html#l00035">mtgb::FbxAnimationController::RegisterAnimationClip()</a>.</p>
 
 </div>
 </div>
