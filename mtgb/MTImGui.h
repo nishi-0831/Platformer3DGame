@@ -131,7 +131,10 @@ namespace mtgb
 			{
 				return "Settings";
 			}
-
+			if (_showType == ShowType::Editor)
+			{
+				return "Editor";
+			}
 			return "None";
 		}
 

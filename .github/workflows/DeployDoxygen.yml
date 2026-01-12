@@ -3,7 +3,7 @@ name: Doxygen GitHub Pages Deploy Action(test)
 on:
   push:
     branches:
-      - feature/generateHeader    # ← テスト用ブランチ
+      - feature/generateHeader
   workflow_dispatch:
 
 jobs:
@@ -20,5 +20,5 @@ jobs:
       - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages    # ← テスト用の公開ブランチ
+          branch: gh-pages    # ← 公開ブランチ
           config_file: Doxyfile

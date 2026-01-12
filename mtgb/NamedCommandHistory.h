@@ -9,7 +9,6 @@ namespace mtgb
 	class NamedCommandHistory : public ICommandHistory
 	{
 	  public:
-		// 暗黙的な変換を禁止
 		explicit NamedCommandHistory(ICommandHistory* _inner = nullptr);
 		~NamedCommandHistory() = default;
 

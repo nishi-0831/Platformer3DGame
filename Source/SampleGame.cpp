@@ -73,7 +73,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<ImageRendererCP>(SystemUpdateType::Frame);
 	Game::Set<TextRendererCP>(SystemUpdateType::Frame);
 
-	Game::Set<CommandHistoryManager>(SystemUpdateType::DontCallMe);
+	Game::Set<CommandHistoryManager>(SystemUpdateType::Frame);
 	Game::Set<Draw>(SystemUpdateType::DontCallMe);
 	Game::Set<EventManager>(SystemUpdateType::DontCallMe);
 	Game::Set<StageManger>(SystemUpdateType::DontCallMe);

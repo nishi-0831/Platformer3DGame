@@ -1,6 +1,7 @@
 #pragma once
 #include "ISystem.h"
 #include "CommandHistory.h"
+#include "NamedCommandHistory.h"
 #include "GroupCommand.h"
 namespace mtgb
 {
@@ -22,7 +23,7 @@ namespace mtgb
 		void ClearRedoStack() override;
 
 	  private:
-		ICommandHistory* inner_;
+		NamedCommandHistory* inner_;
 		bool isGrouping_;
 		GroupCommand* pGroupCommand_;
 	};

@@ -11,7 +11,7 @@
 // #include "TypeRegistryImpl.h"
 #include <string>
 using namespace mtgb;
-REGISTER_TYPE(Quaternion, ShowFunc(QuaternionSHow{}))
+REGISTER_TYPE(Quaternion, ShowFunc(QuaternionShow{}))
 REGISTER_MEMBER_FUNC(X, property("x"))
 REGISTER_MEMBER_FUNC(Y, property("y"))
 REGISTER_MEMBER_FUNC(Z, property("z"))

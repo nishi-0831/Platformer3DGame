@@ -2,6 +2,9 @@
 #include "Command.h"
 #include <stack>
 
+/// <summary>
+/// コマンドの履歴管理を行うインターフェース
+/// </summary>
 class ICommandHistory
 {
   public:
@@ -36,6 +39,9 @@ class ICommandHistory
 	virtual void ClearRedoStack() = 0;
 };
 
+/// <summary>
+/// コマンドのスタックを保持し、管理を行う
+/// </summary>
 class CommandHistory : public ICommandHistory
 {
   public:

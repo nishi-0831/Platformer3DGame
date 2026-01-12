@@ -29,8 +29,9 @@ void mtgb::ICamera::MoveCameraSpherical(float _distance)
 	// ターゲットを中心に回転
 	if (pTargetTransform_)
 	{
-		Vector3 toTarget = pTargetTransform_->position - pCameraTransform_->position;
-		center = pTargetTransform_->position + (Vector3::Normalize(-toTarget) * _distance) + lookAtPositionOffset_;
+		// Vector3 toTarget = pTargetTransform_->position - pCameraTransform_->position;
+		center = pTargetTransform_->position + lookAtPositionOffset_;
+		// center = pTargetTransform_->position + (Vector3::Normalize(-toTarget) * _distance) + lookAtPositionOffset_;
 	}
 	// ターゲットがいない場合は正面を向いて回転
 	else
@@ -83,10 +84,14 @@ void mtgb::ICamera::DoOrbit()
 		polarAngleRad_ += movement.y * orbitSpeed_ * Time::DeltaTimeF();
 
 		// 鉛直角度を制限
-		polarAngleRad_	   = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
-		azimuthalAngleRad_ = std::clamp(azimuthalAngleRad_, minAzimuthalAngleRad_, maxAzimuthalAngleRad_);
+		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 
-		MoveCameraSpherical(distance_);
+		float distance = distance_;
+		if (pTargetTransform_ != nullptr)
+		{
+			distance = (pTargetTransform_->position - pCameraTransform_->position).Size();
+		}
+		MoveCameraSpherical(distance);
 	}
 }
 
