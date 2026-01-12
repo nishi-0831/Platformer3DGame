@@ -4,16 +4,17 @@
 
 class RankingManager : public ISystem
 {
-public:
+  public:
 	RankingManager();
 	~RankingManager();
 	void Initialize() override;
 	void Release() override;
-private:
+
+  private:
 	Ranking* ranking_;
 	std::vector<int> rankingList_;
 	int32_t resultScore_;
 
-	// 前のペアのスコア
+	// 蜑阪�ｮ繝壹い縺ｮ繧ｹ繧ｳ繧｢
 	int32_t prevPairScore_;
 };

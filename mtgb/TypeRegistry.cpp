@@ -2,9 +2,9 @@
 #include "TypeRegistryImpl.h"
 #include "ReflectionInfo.h"
 #include "Command.h"
-void TypeRegistry::ProvisionalRegister(std::type_index typeIdx, std::function<void(void)> registerFunc)
+void TypeRegistry::ProvisionalRegister(std::type_index _typeIdx, std::function<void(void)> _registerFunc)
 {
-	provisionalRegisterFunc_.emplace(typeIdx, registerFunc);
+	provisionalRegisterFunc_.emplace(_typeIdx, _registerFunc);
 }
 
 TypeRegistry& TypeRegistry::Instance()
@@ -21,27 +21,27 @@ void TypeRegistry::Initialize()
 	}
 }
 
-void TypeRegistry::CallFunc(std::type_index typeIdx, std::any instance, const char* name)
+void TypeRegistry::CallFunc(std::type_index _typeIdx, std::any _instance, const char* _name)
 {
-	const auto& itr = showFunctions_.find(typeIdx);
+	const auto& itr = showFunctions_.find(_typeIdx);
 	if (itr != showFunctions_.end())
 	{
-		Command* command = itr->second(std::any(instance), name);
+		Command* command = itr->second(std::any(_instance), _name);
 		if (command == nullptr)
 			return;
-		// ‘€ìƒRƒ}ƒ“ƒh‚ğ“n‚·
+		// æ“ä½œã‚³ãƒãƒ³ãƒ‰ã‚’æ¸¡ã™
 		commandListener_(command);
 	}
 }
-bool TypeRegistry::IsRegisteredType(std::type_index typeIdx)
+bool TypeRegistry::IsRegisteredType(std::type_index _typeIdx)
 {
-	return showFunctions_.contains(typeIdx);
+	return showFunctions_.contains(_typeIdx);
 }
 void TypeRegistry::RegisterCommandListener(std::function<void(Command*)> _commandListenner)
 {
 	commandListener_ = _commandListenner;
 }
 TypeRegistry::TypeRegistry()
-	:commandListener_{nullptr}
+	: commandListener_{nullptr}
 {
 }

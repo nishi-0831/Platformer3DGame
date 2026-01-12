@@ -11,13 +11,13 @@ void mtgb::InputConfig::SetRange(LONG _range, Axis _axis)
 {
 	switch (_axis)
 	{
-	case Axis::X:
+	case Axis::X :
 		xRange = _range;
 		break;
-	case Axis::Y:
+	case Axis::Y :
 		yRange = _range;
 		break;
-	case Axis::Z:
+	case Axis::Z :
 		zRange = _range;
 		break;
 	}
@@ -30,12 +30,12 @@ void mtgb::InputConfig::SetDeadZone(float _deadZone)
 
 float mtgb::InputConfig::ApplyDeadZone(const float value) const
 {
-	// â‘Î’l‚ªƒfƒbƒhƒ][ƒ“‚É–‚½‚È‚¢‚È‚ç0
+	// çµ¶å¯¾å€¤ãŒãƒ‡ãƒƒãƒ‰ã‚¾ãƒ¼ãƒ³ã«æº€ãŸãªã„ãªã‚‰0
 	if (std::abs(value) < deadZone)
 	{
 		return 0.0f;
 	}
-	// 0`1‚Ì”ÍˆÍ‚É³‹K‰»‚·‚é
+	// 0ï½1ã®ç¯„å›²ã«æ­£è¦åŒ–ã™ã‚‹
 	float sign = (value > 0) ? 1.0f : -1.0f;
 	return sign * (std::abs(value) - deadZone) / (1.0f - deadZone);
 }

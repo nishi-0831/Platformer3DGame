@@ -5,16 +5,16 @@
 #include "IRenderable.h"
 namespace mtgb
 {
-    class MeshRenderer;
-    /// <summary>
-    /// MeshRendererコンポーネントシステム
-    /// </summary>
-    class MeshRendererCP : public IRenderableCP,public ComponentPool<MeshRenderer,MeshRendererCP>
-    {
-    public:
-        void Initialize();
-        void Update() override;
-        void RenderAll() const override;
-        void RenderLayer(GameObjectLayerFlag _layerFlag)const override;
-    };
-}
+	class MeshRenderer;
+	/// <summary>
+	/// MeshRenderer繧ｳ繝ｳ繝昴�ｼ繝阪Φ繝医す繧ｹ繝�繝
+	/// </summary>
+	class MeshRendererCP : public IRenderableCP, public ComponentPool<MeshRenderer, MeshRendererCP>
+	{
+	  public:
+		void Initialize();
+		void Update() override;
+		void RenderAll() const override;
+		void RenderLayer(GameObjectLayerFlag _layerFlag) const override;
+	};
+} // namespace mtgb

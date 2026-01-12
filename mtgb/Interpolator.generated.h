@@ -6,7 +6,7 @@
 #include "MTImGui.h"
 #include <string>
 // ============================================================================
-// Interpolator‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
+// Interpolatorã®çŠ¶æ…‹ã‚’ä¿å­˜ã™ã‚‹Stateæ§‹é€ ä½“ã®å®šç¾©ã€Undo/Redoã«ä½¿ã†Mementoã®usingå®£è¨€
 // ============================================================================
 #define MT_COMPONENT_Interpolator() \
 	struct InterpolatorState \
@@ -21,7 +21,7 @@
 	using InterpolatorMemento = ComponentMemento<Interpolator, InterpolatorState>;
 
 // ============================================================================
-// Interpolator‚ÆInterpolatorMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
+// Interpolatorã¨InterpolatorMementoã®ç›¸äº’å¤‰æ›å‡¦ç†ã‚’å®Ÿè£…
 // ============================================================================
 #define MT_GENERATED_BODY_Interpolator() \
 	public: \
@@ -68,7 +68,7 @@
 		_target.OnPostRestore(); \
 	} \
 	static std::string TypeName(){ return "Interpolator" ;} \
-	/* ImGui•\¦ˆ—‚Ì“o˜^ */ \
+	/* ImGuiè¡¨ç¤ºå‡¦ç†ã®ç™»éŒ² */ \
 	static void RegisterImGui() \
 	{ \
 		static bool registered = false; \
@@ -88,7 +88,7 @@
 
 #pragma warning(push)
 #pragma warning(disable:4005)
-// ƒ}ƒNƒã‘‚«
+// ãƒã‚¯ãƒ­ä¸Šæ›¸ã
 #define MT_COMPONENT() MT_COMPONENT_Interpolator()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_Interpolator()
 #pragma warning(pop)

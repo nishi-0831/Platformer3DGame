@@ -2,11 +2,11 @@
 #include "IncludingInput.h"
 
 /// <summary>
-/// ƒ}ƒEƒX‚Ìƒ}ƒEƒXƒ{ƒ^ƒ“ƒR[ƒh
+/// ãƒã‚¦ã‚¹ã®ãƒã‚¦ã‚¹ãƒœã‚¿ãƒ³ã‚³ãƒ¼ãƒ‰
 /// </summary>
 enum struct MouseCode : uint8_t
 {
-	Left = 0x00,
-	Right = 0x01,
+	Left   = 0x00,
+	Right  = 0x01,
 	Middle = 0x02
 };

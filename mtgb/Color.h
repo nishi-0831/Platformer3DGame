@@ -6,87 +6,84 @@
 namespace mtgb
 {
 	/// <summary>
-	/// F‚ğ0~255‚Ì”ÍˆÍ‚Å•\Œ»‚·‚é\‘¢‘Ì
+	/// è‰²ã‚’0~255ã®ç¯„å›²ã§è¡¨ç¾ã™ã‚‹æ§‹é€ ä½“
 	/// </summary>
 	struct Color
 	{
 		/// <summary>
-		/// ‘ã•\“I‚ÈFƒR[ƒh
+		/// ä»£è¡¨çš„ãªè‰²ã‚³ãƒ¼ãƒ‰
 		/// </summary>
 		enum : uint32_t
 		{
-			RED   = 0xff0000,   // ÔF
-			GREEN = 0x00ff00,   // —ÎF
-			BLUE  = 0x0000ff,   // ÂF
-			WHITE  = 0xffffff,  // ”’F
-			BLACK  = 0x000000,  // •F
+			RED	  = 0xff0000, // èµ¤è‰²
+			GREEN = 0x00ff00, // ç·‘è‰²
+			BLUE  = 0x0000ff, // é’è‰²
+			WHITE = 0xffffff, // ç™½è‰²
+			BLACK = 0x000000, // é»’è‰²
 		};
 
 		/// <summary>
-		/// F‚ÌŠe¬•ª‚ÉƒAƒNƒZƒX—p
+		/// è‰²ã®å„æˆåˆ†ã«ã‚¢ã‚¯ã‚»ã‚¹ç”¨
 		/// </summary>
 		enum struct Component : int32_t
 		{
-			Blue,   // ÂF¬•ª
-			Green,  // —ÎF¬•ª
-			Red,    // ÔF¬•ª
-			Alpha,  // “§‰ß“x¬•ª
-			Max,    // F¬•ª‚Ìí—Ş”
+			Blue,  // é’è‰²æˆåˆ†
+			Green, // ç·‘è‰²æˆåˆ†
+			Red,   // èµ¤è‰²æˆåˆ†
+			Alpha, // é€éåº¦æˆåˆ†
+			Max,   // è‰²æˆåˆ†ã®ç¨®é¡æ•°
 		};
 
 		/// <summary>
-		/// F‚ÌŠe¬•ª‚©‚çF‚ğì‚é
+		/// è‰²ã®å„æˆåˆ†ã‹ã‚‰è‰²ã‚’ä½œã‚‹
 		/// </summary>
-		/// <param name="_r">Ô¬•ª(0~255)</param>
-		/// <param name="_g">—Î¬•ª(0~255)</param>
-		/// <param name="_b">Â¬•ª(0~255)</param>
-		/// <param name="_alpha">“§–¾“x¬•ª(0~255)</param>
-		Color(
-			const uint8_t _r,
-			const uint8_t _g,
-			const uint8_t _b,
-			const uint8_t _alpha = UINT8_MAX);
+		/// <param name="_r">èµ¤æˆåˆ†(0~255)</param>
+		/// <param name="_g">ç·‘æˆåˆ†(0~255)</param>
+		/// <param name="_b">é’æˆåˆ†(0~255)</param>
+		/// <param name="_alpha">é€æ˜åº¦æˆåˆ†(0~255)</param>
+		Color(const uint8_t _r, const uint8_t _g, const uint8_t _b, const uint8_t _alpha = UINT8_MAX);
 
 		/// <summary>
-		/// ƒJƒ‰[ƒR[ƒh‚©‚çF‚ğì‚é
+		/// ã‚«ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰ã‹ã‚‰è‰²ã‚’ä½œã‚‹
 		/// </summary>
-		/// <param name="_code">16i”ƒJƒ‰[ƒR[ƒh</param>
+		/// <param name="_code">16é€²æ•°ã‚«ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰</param>
 		Color(uint32_t _code);
 
 		/// <summary>
-		/// ƒJƒ‰[ƒR[ƒh‚ğunsigned int ‚ÉƒLƒƒƒXƒg
+		/// ã‚«ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰ã‚’unsigned int ã«ã‚­ãƒ£ã‚¹ãƒˆ
 		/// </summary>
-		inline operator uint32_t() const noexcept { return code; }
+		inline operator uint32_t() const noexcept
+		{
+			return code;
+		}
 
 		/// <summary>
-		/// “§–¾“x¬•ª‚Ì³‹K‰»‚µ‚½’l‚ğæ“¾
+		/// é€æ˜åº¦æˆåˆ†ã®æ­£è¦åŒ–ã—ãŸå€¤ã‚’å–å¾—
 		/// </summary>
-		/// <returns>“§–¾“x¬•ª‚Ì³‹K‰»‚³‚ê‚½’l</returns>
+		/// <returns>é€æ˜åº¦æˆåˆ†ã®æ­£è¦åŒ–ã•ã‚ŒãŸå€¤</returns>
 		inline float GetAlphaNorm() const
 		{
 			return static_cast<float>(component[static_cast<int32_t>(Component::Alpha)]) / UINT8_MAX;
 		}
 		/// <summary>
-		/// ŠeF¬•ª‚ğ³‹K‰»‚µ‚½3ŸŒ³ƒxƒNƒgƒ‹‚ğæ“¾
+		/// å„è‰²æˆåˆ†ã‚’æ­£è¦åŒ–ã—ãŸ3æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«ã‚’å–å¾—
 		/// </summary>
-		/// <returns>RGB‚ğ³‹K‰»‚µ‚½3ŸŒ³ƒxƒNƒgƒ‹</returns>
+		/// <returns>RGBã‚’æ­£è¦åŒ–ã—ãŸ3æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«</returns>
 		inline Vector3 ToVector3Norm() const
 		{
-			return
-			{
+			return {
 				static_cast<float>(component[static_cast<int32_t>(Component::Red)]) / UINT8_MAX,
 				static_cast<float>(component[static_cast<int32_t>(Component::Green)]) / UINT8_MAX,
 				static_cast<float>(component[static_cast<int32_t>(Component::Blue)]) / UINT8_MAX,
 			};
 		}
 		/// <summary>
-		/// ŠeF¬•ª+“§–¾“x¬•ª‚ğ³‹K‰»‚µ‚½4ŸŒ³ƒxƒNƒgƒ‹‚ğæ“¾
+		/// å„è‰²æˆåˆ†+é€æ˜åº¦æˆåˆ†ã‚’æ­£è¦åŒ–ã—ãŸ4æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«ã‚’å–å¾—
 		/// </summary>
-		/// <returns>RGBA‚ğ³‹K‰»‚µ‚½3ŸŒ³ƒxƒNƒgƒ‹</returns>
+		/// <returns>RGBAã‚’æ­£è¦åŒ–ã—ãŸ3æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«</returns>
 		inline Vector4 ToVector4Norm() const
 		{
-			return
-			{
+			return {
 				static_cast<float>(component[static_cast<int32_t>(Component::Red)]) / UINT8_MAX,
 				static_cast<float>(component[static_cast<int32_t>(Component::Green)]) / UINT8_MAX,
 				static_cast<float>(component[static_cast<int32_t>(Component::Blue)]) / UINT8_MAX,
@@ -96,8 +93,8 @@ namespace mtgb
 
 		union
 		{
-			uint32_t code;  // 16i”ƒJƒ‰[ƒR[ƒh—p
-			uint8_t component[sizeof(uint32_t) / sizeof(uint8_t)];  // 1ƒoƒCƒg‚¸‚Â‚ÌƒJƒ‰[—v‘f—p
+			uint32_t code;										   // 16é€²æ•°ã‚«ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰ç”¨
+			uint8_t component[sizeof(uint32_t) / sizeof(uint8_t)]; // 1ãƒã‚¤ãƒˆãšã¤ã®ã‚«ãƒ©ãƒ¼è¦ç´ ç”¨
 		};
 	};
-}
+} // namespace mtgb

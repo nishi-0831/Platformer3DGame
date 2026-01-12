@@ -8,58 +8,100 @@
 namespace mtgb
 {
 	/// <summary>
-	/// <para>ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ¶¬‚·‚é‚Æ‚«‚Ìİ’è</para>
-	/// <para>‚»‚Ì‚Ü‚Ü\‘¢‘Ì‚ğg—p‰Â”\‚¾‚ªAGameObjectBuilder‚ğ’Ê‚·‚±‚Æ‚ğ„§</para>
+	/// <para>ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã™ã‚‹ã¨ãã®è¨­å®š</para>
+	/// <para>ãã®ã¾ã¾æ§‹é€ ä½“ã‚’ä½¿ç”¨å¯èƒ½ã ãŒã€GameObjectBuilderã‚’é€šã™ã“ã¨ã‚’æ¨å¥¨</para>
 	/// </summary>
 	struct GAME_OBJECT_DESC
 	{
 		std::string name{};
-		Vector3 position{ Vector3::Zero() };
-		Vector3 scale{ Vector3::One() };
-		Quaternion rotate{ Quaternion::Identity() };
-		GameObjectLayerFlag layerFlag{ GameObjectLayerFlag::New().BeginEdit().OnAll().EndEdit() };
-		GameObjectTag tag{ GameObjectTag::Untagged };
-		bool isActive{ true };
-		bool callUpdate{ true };
-		bool callDraw{ true };
+		Vector3 position{Vector3::Zero()};
+		Vector3 scale{Vector3::One()};
+		Quaternion rotate{Quaternion::Identity()};
+		GameObjectLayerFlag layerFlag{GameObjectLayerFlag::New().BeginEdit().OnAll().EndEdit()};
+		GameObjectTag tag{GameObjectTag::Untagged};
+		bool isActive{true};
+		bool callUpdate{true};
+		bool callDraw{true};
 		// padding 10byte
 	};
 
-	// MEMO: \‘¢‘Ì‚Ì‚»‚Ì‚Ü‚Ü‰Šú‰»‚Å‚ÍA‡”Ô‚ªŒÅ’è‚³‚ê‚Ä‚¢‚é‚ªA
-	//     : Builder‚ğg‚¤‚±‚Æ‚ÅD‚«‚Èƒ^ƒCƒ~ƒ“ƒO‚Å”CˆÓ‚Ì’l‚ğƒZƒbƒg‚Å‚«‚é
+	// MEMO: æ§‹é€ ä½“ã®ãã®ã¾ã¾åˆæœŸåŒ–ã§ã¯ã€é †ç•ªãŒå›ºå®šã•ã‚Œã¦ã„ã‚‹ãŒã€
+	//     : Builderã‚’ä½¿ã†ã“ã¨ã§å¥½ããªã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§ä»»æ„ã®å€¤ã‚’ã‚»ãƒƒãƒˆã§ãã‚‹
 
 	/// <summary>
-	/// <para>GAME_OBJECT_DESC‚Ìƒrƒ‹ƒ_[ƒNƒ‰ƒX</para>
-	/// <para>ƒƒ“ƒo‚ÌƒZƒbƒ^ŠÖ”‚ğ—§‚Ä‘±‚¯‚ÉŒÄ‚Ño‚µAÅI“I‚ÉBuildŠÖ”‚ÅGAME_OBJECT_DESC‚ğ\’z</para>
+	/// <para>GAME_OBJECT_DESCã®ãƒ“ãƒ«ãƒ€ãƒ¼ã‚¯ãƒ©ã‚¹</para>
+	/// <para>ãƒ¡ãƒ³ãƒã®ã‚»ãƒƒã‚¿é–¢æ•°ã‚’ç«‹ã¦ç¶šã‘ã«å‘¼ã³å‡ºã—ã€æœ€çµ‚çš„ã«Buildé–¢æ•°ã§GAME_OBJECT_DESCã‚’æ§‹ç¯‰</para>
 	/// </summary>
 	class GameObjectBuilder
 	{
-	public:
+	  public:
 		/// <summary>
-		/// <para>ˆÈ‰º‚Ì‚æ‚¤‚Ég‚¤</para>
+		/// <para>ä»¥ä¸‹ã®ã‚ˆã†ã«ä½¿ã†</para>
 		/// <para>GameObjectBuilder().SetName("Name").Set...().Build()</para>
 		/// </summary>
 		GameObjectBuilder()
-		{}
+		{
+		}
 		~GameObjectBuilder()
-		{}
+		{
+		}
 
-		GameObjectBuilder& SetName(const std::string& _name)              { desc_.name = _name;             return *this; }
-		GameObjectBuilder& SetPosition(const Vector3& _position)          { desc_.position = _position;     return *this; }
-		GameObjectBuilder& SetRotate(const Quaternion& _rotate)           { desc_.rotate = _rotate;         return *this; }
-		GameObjectBuilder& SetScale(const Vector3& _scale)                { desc_.scale = _scale;           return *this; }
-		GameObjectBuilder& SetIsActive(const bool _isActive)              { desc_.isActive = _isActive;     return *this; }
-		GameObjectBuilder& SetCallUpdate(const bool _callUpdate)          { desc_.callUpdate = _callUpdate; return *this; }
-		GameObjectBuilder& SetCallDraw(const bool _callDraw)              { desc_.callDraw = _callDraw;     return *this; }
-		GameObjectBuilder& SetLayerFlag(const GameObjectLayerFlag& _flag) { desc_.layerFlag = _flag;        return *this; }
-		GameObjectBuilder& SetTag(const GameObjectTag& _tag) { desc_.tag = _tag; return *this; }
+		GameObjectBuilder& SetName(const std::string& _name)
+		{
+			desc_.name = _name;
+			return *this;
+		}
+		GameObjectBuilder& SetPosition(const Vector3& _position)
+		{
+			desc_.position = _position;
+			return *this;
+		}
+		GameObjectBuilder& SetRotate(const Quaternion& _rotate)
+		{
+			desc_.rotate = _rotate;
+			return *this;
+		}
+		GameObjectBuilder& SetScale(const Vector3& _scale)
+		{
+			desc_.scale = _scale;
+			return *this;
+		}
+		GameObjectBuilder& SetIsActive(const bool _isActive)
+		{
+			desc_.isActive = _isActive;
+			return *this;
+		}
+		GameObjectBuilder& SetCallUpdate(const bool _callUpdate)
+		{
+			desc_.callUpdate = _callUpdate;
+			return *this;
+		}
+		GameObjectBuilder& SetCallDraw(const bool _callDraw)
+		{
+			desc_.callDraw = _callDraw;
+			return *this;
+		}
+		GameObjectBuilder& SetLayerFlag(const GameObjectLayerFlag& _flag)
+		{
+			desc_.layerFlag = _flag;
+			return *this;
+		}
+		GameObjectBuilder& SetTag(const GameObjectTag& _tag)
+		{
+			desc_.tag = _tag;
+			return *this;
+		}
 
 		/// <summary>
-		/// İ’è‚ğƒrƒ‹ƒh‚·‚é
+		/// è¨­å®šã‚’ãƒ“ãƒ«ãƒ‰ã™ã‚‹
 		/// </summary>
-		/// <returns>Š®¬‚µ‚½GAME_OBJECT_DESC‚ÌƒRƒ“ƒXƒgQÆƒ|ƒCƒ“ƒ^</returns>
-		const GAME_OBJECT_DESC& Build() const { return desc_; }
-	private:
+		/// <returns>å®Œæˆã—ãŸGAME_OBJECT_DESCã®ã‚³ãƒ³ã‚¹ãƒˆå‚ç…§ãƒã‚¤ãƒ³ã‚¿</returns>
+		const GAME_OBJECT_DESC& Build() const
+		{
+			return desc_;
+		}
+
+	  private:
 		GAME_OBJECT_DESC desc_;
 	};
-}
+} // namespace mtgb

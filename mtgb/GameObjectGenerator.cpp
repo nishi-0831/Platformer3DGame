@@ -9,97 +9,112 @@
 #include "CommandHistoryManager.h"
 #include "DeleteGameObjectCommand.h"
 
-GameObjectGenerator* mtgb::GameObjectGenerator::pInstance_{ nullptr };
+GameObjectGenerator* mtgb::GameObjectGenerator::pInstance_{nullptr};
 
 void mtgb::GameObjectGenerator::Initialize()
 {
-    if (pInstance_ == nullptr)
-    {
-        pInstance_ = new GameObjectGenerator();
-    }
-    
-    // ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìì¬ŠÖ”A–¼‘O‚ğ“o˜^
-    mtgb::RegisterCommonGameObjectType(&pInstance_->gameObjFactory_);
-    mtgb::RegisterGameObjectType(&pInstance_->gameObjFactory_);
+	if (pInstance_ == nullptr)
+	{
+		pInstance_ = new GameObjectGenerator();
+	}
+
+	// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä½œæˆé–¢æ•°ã€åå‰ã‚’ç™»éŒ²
+	mtgb::RegisterCommonGameObjectType(&pInstance_->gameObjFactory_);
+	mtgb::RegisterGameObjectType(&pInstance_->gameObjFactory_);
 }
 
 void mtgb::GameObjectGenerator::Generate(GenerateType _primitive)
 {
-    if (GenerateType::Box == _primitive)
-    {
-        GameObjectCreateCommand* cmd = new GameObjectCreateCommand([]() {return GameObject::Instantiate<Box3D>(); }, Game::GetComponentFactory());
-        GetInstance()->commandListener_(cmd);
-    }
+	if (GenerateType::Box == _primitive)
+	{
+		GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
+			[]()
+			{
+				return GameObject::Instantiate<Box3D>();
+			},
+			Game::GetComponentFactory()
+		);
+		GetInstance()->commandListener_(cmd);
+	}
 }
 
 void mtgb::GameObjectGenerator::GenerateFromJson(const nlohmann::json& _json)
 {
-    CommandHistoryManager& cmdHitoryManager = Game::System<CommandHistoryManager>();
-    cmdHitoryManager.BeginGroupCommand();
+	CommandHistoryManager& cmdHitoryManager = Game::System<CommandHistoryManager>();
+	cmdHitoryManager.BeginGroupCommand();
 
-    nlohmann::json gameObjs = _json.at("GameObject");
-    for (nlohmann::json::iterator itr = gameObjs.begin(); itr != gameObjs.end(); itr++)
-    {
-        nlohmann::json j = (*itr);
-        // Œ^–¼‚ğæ“¾
-        std::string classType = j["classType"].get<std::string>();
-        
-        GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
-            [classType]()
-            {
-                return GetInstance()->gameObjFactory_.Create(classType);
-            },
-            Game::GetComponentFactory(),
-            j);
-        
-        // ƒRƒ}ƒ“ƒh‚ğ“n‚·
-        GetInstance()->commandListener_(cmd);
-        // ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌƒfƒVƒŠƒAƒ‰ƒCƒY
-        Game::DeserializeComponents(cmd->GetCommandTargetEntityId(), j);
-    }
-    cmdHitoryManager.EndGroupCommand();
+	nlohmann::json gameObjs = _json.at("GameObject");
+	for (nlohmann::json::iterator itr = gameObjs.begin(); itr != gameObjs.end(); itr++)
+	{
+		nlohmann::json j = (*itr);
+		// å‹åã‚’å–å¾—
+		std::string classType = j["classType"].get<std::string>();
+
+		GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
+			[classType]()
+			{
+				return GetInstance()->gameObjFactory_.Create(classType);
+			},
+			Game::GetComponentFactory(),
+			j
+		);
+
+		// ã‚³ãƒãƒ³ãƒ‰ã‚’æ¸¡ã™
+		GetInstance()->commandListener_(cmd);
+		// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ãƒ‡ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚º
+		Game::DeserializeComponents(cmd->GetCommandTargetEntityId(), j);
+	}
+	cmdHitoryManager.EndGroupCommand();
 }
 
 void mtgb::GameObjectGenerator::Generate(std::string_view _gameObjName)
 {
-    GameObjectCreateCommand* cmd = new GameObjectCreateCommand([_gameObjName]()
-        {
-            return GetInstance()->gameObjFactory_.Create(_gameObjName);
-        }, Game::GetComponentFactory());
-    GetInstance()->commandListener_(cmd);
+	GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
+		[_gameObjName]()
+		{
+			return GetInstance()->gameObjFactory_.Create(_gameObjName);
+		},
+		Game::GetComponentFactory()
+	);
+	GetInstance()->commandListener_(cmd);
 }
 
 void mtgb::GameObjectGenerator::RegisterCommandListener(std::function<void(Command*)> _commandListener)
 {
-    GetInstance()->commandListener_ = _commandListener;
+	GetInstance()->commandListener_ = _commandListener;
 }
 
 void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
 {
-    // TODO:ƒQ[ƒ€ƒIƒuƒWƒFƒNƒgì¬AƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì•t—^‚ÌƒRƒ}ƒ“ƒh‚ğ‚Ü‚Æ‚ß‚é
-    GameObject* src = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_srcEntityId);
-    std::string classTypeName = src->GetClassTypeName();
+	// TODO:ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆä½œæˆã€ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ä»˜ä¸ã®ã‚³ãƒãƒ³ãƒ‰ã‚’ã¾ã¨ã‚ã‚‹
+	GameObject* src			  = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_srcEntityId);
+	std::string classTypeName = src->GetClassTypeName();
 
-    DuplicateGameObjectCommand* cmd = new DuplicateGameObjectCommand([classTypeName]()
-        {
-            return GetInstance()->gameObjFactory_.Create(classTypeName);
-        }, Game::GetComponentFactory(), _srcEntityId);
-    GetInstance()->commandListener_(cmd);
+	DuplicateGameObjectCommand* cmd = new DuplicateGameObjectCommand(
+		[classTypeName]()
+		{
+			return GetInstance()->gameObjFactory_.Create(classTypeName);
+		},
+		Game::GetComponentFactory(),
+		_srcEntityId
+	);
+	GetInstance()->commandListener_(cmd);
 }
 
 void mtgb::GameObjectGenerator::Delete(EntityId _entityId)
 {
-    GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-    
-    DeleteGameObjectCommand* cmd = new DeleteGameObjectCommand(pGameObj, GetInstance()->gameObjFactory_, Game::GetComponentFactory());
-    GetInstance()->commandListener_(cmd);
+	GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
+
+	DeleteGameObjectCommand* cmd =
+		new DeleteGameObjectCommand(pGameObj, GetInstance()->gameObjFactory_, Game::GetComponentFactory());
+	GetInstance()->commandListener_(cmd);
 }
 
 GameObjectGenerator* mtgb::GameObjectGenerator::GetInstance()
 {
-    if (pInstance_ == nullptr)
-    {
-        Initialize();
-    }
-    return pInstance_;
+	if (pInstance_ == nullptr)
+	{
+		Initialize();
+	}
+	return pInstance_;
 }

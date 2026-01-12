@@ -4,7 +4,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// <para>イージング関数</para>
+	/// <para>繧､繝ｼ繧ｸ繝ｳ繧ｰ髢｢謨ｰ</para>
 	/// <para>https://easings.net/ja</para>
 	/// </summary>
 	struct Ease
@@ -26,7 +26,7 @@ namespace mtgb
 			// https://easings.net/ja#easeOutBounce
 			static const float n1 = 7.5625f;
 			static const float d1 = 2.75f;
-			
+
 			if (x < 1.0f / d1)
 			{
 				return n1 * x * x;
@@ -45,4 +45,4 @@ namespace mtgb
 			}
 		}
 	};
-}
+} // namespace mtgb

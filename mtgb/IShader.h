@@ -14,84 +14,106 @@ namespace mtgb
 {
 	class IShader
 	{
-	public:
+	  public:
 		IShader();
 		virtual ~IShader()
-		{}
+		{
+		}
 
 		/// <summary>
-		/// ƒVƒF[ƒ_‚Ì‰Šú‰»ˆ—
+		/// ã‚·ã‚§ãƒ¼ãƒ€ã®åˆæœŸåŒ–å‡¦ç†
 		/// </summary>
 		virtual void Initialize();
-		//virtual void Draw() = 0;
+		// virtual void Draw() = 0;
 		virtual void Release();
 
-	protected:
+	  protected:
 		/// <summary>
-		/// ’¸“_ƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		virtual void InitializeVertexBuffer(ID3D11Device* _pDevice) = 0;
 		/// <summary>
-		/// ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		virtual void InitializeIndexBuffer(ID3D11Device* _pDevice) = 0;
 		/// <summary>
-		/// ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		virtual void InitializeConstantBuffer(ID3D11Device* _pDevice) = 0;
 
 		/// <summary>
-		/// ƒVƒF[ƒ_‚Ì•`‰æˆ—(‹¤’Ê)
+		/// ã‚·ã‚§ãƒ¼ãƒ€ã®æç”»å‡¦ç†(å…±é€š)
 		/// </summary>
-		/// <typeparam name="ConstantBufferT">ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ÌŒ^</typeparam>
-		/// <typeparam name="VertexT">’¸“_‚ÌŒ^</typeparam>
+		/// <typeparam name="ConstantBufferT">ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®å‹</typeparam>
+		/// <typeparam name="VertexT">é ‚ç‚¹ã®å‹</typeparam>
 		/// <param name="_makeConstantBufferCallback">
-		/// <para>ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚É“ü‚ê‚é—p‚ÌƒR[ƒ‹ƒoƒbƒNŠÖ”</para>
-		/// <para>ƒR[ƒ‹ƒoƒbƒNŠÖ”:(ConstantBufferT* _pCB)->void</para>
+		/// <para>ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã«å…¥ã‚Œã‚‹ç”¨ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°</para>
+		/// <para>ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°:(ConstantBufferT* _pCB)->void</para>
 		/// </param>
 		/// <param name="_contextSetterCallback">
-		/// <para>ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‘—MŒã‚ÌƒRƒ“ƒeƒLƒXƒgˆ—‚ÌƒR[ƒ‹ƒoƒbƒNŠÖ”</para>
-		/// <para>ƒR[ƒ‹ƒoƒbƒNŠÖ”:(ID3D11DeviceContext*)->void</para>
+		/// <para>ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡é€ä¿¡å¾Œã®ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆå‡¦ç†ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°</para>
+		/// <para>ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°:(ID3D11DeviceContext*)->void</para>
 		/// </param>
-		template<typename ConstantBufferT, typename VertexT>
+		template <typename ConstantBufferT, typename VertexT>
 		void Draw(
 			const std::function<void(ConstantBufferT* _pConstantBuffer)>& _makeConstantBufferCallback,
 			const std::function<void(ID3D11DeviceContext* _pContext)>& _contextSetterCallback,
-			const int _drawIndexCount = 6);
-		template<typename ConstantBufferT, typename VertexT>
+			const int _drawIndexCount = 6
+		);
+		template <typename ConstantBufferT, typename VertexT>
 		void Draw(
 			const std::function<void(VertexT* _pVertex)>& _makeVertexBufferCallback,
 			const std::function<void(ConstantBufferT* _pConstantBuffer)>& _makeConstantBufferCallback,
 			const std::function<void(ID3D11DeviceContext* _pContext)>& _contextSetterCallback,
-			const int _drawIndexCount = 6);
+			const int _drawIndexCount = 6
+		);
 
 		/// <summary>
-		/// ƒJƒƒ‰‚ÌÀ•WŒn‚ğæ“¾
+		/// ã‚«ãƒ¡ãƒ©ã®åº§æ¨™ç³»ã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒJƒƒ‰Transfrom‚ÌQÆƒ|ƒCƒ“ƒ^</returns>
-		//const mtgb::Transform& GetCameraTransfrom();
+		/// <returns>ã‚«ãƒ¡ãƒ©Transfromã®å‚ç…§ãƒã‚¤ãƒ³ã‚¿</returns>
+		// const mtgb::Transform& GetCameraTransfrom();
 
-	protected:
-		ComPtr<ID3D11Buffer> pVertexBuffer_;    // ’¸“_‚ÌˆÊ’uAF
-		ComPtr<ID3D11Buffer> pIndexBuffer_;     // ƒ|ƒŠƒSƒ“‚ğŒ‹‚Ô‡”Ô
-		ComPtr<ID3D11Buffer> pConstantBuffer_;  //@ƒVƒF[ƒ_‚ÌƒOƒ[ƒoƒ‹•Ï”
+	  protected:
+		ComPtr<ID3D11Buffer> pVertexBuffer_;   // é ‚ç‚¹ã®ä½ç½®ã€è‰²
+		ComPtr<ID3D11Buffer> pIndexBuffer_;	   // ãƒãƒªã‚´ãƒ³ã‚’çµã¶é †ç•ª
+		ComPtr<ID3D11Buffer> pConstantBuffer_; // ã€€ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°
 	};
 
-	template<typename ConstantBufferT, typename VertexT>
+	template <typename ConstantBufferT, typename VertexT>
 	inline void IShader::Draw(
 		const std::function<void(ConstantBufferT*)>& _makeConstantBufferCallback,
 		const std::function<void(ID3D11DeviceContext*)>& _contextSetterCallback,
-		const int _drawIndexCount)
+		const int _drawIndexCount
+	)
 	{
-		UINT stride{ 0U };
-		UINT offset{ 0U };
+		UINT stride{0U};
+		UINT offset{0U};
 
 		stride = sizeof(VertexT);
 		offset = 0;
-		DirectX11Draw::pContext_->IASetVertexBuffers(0U, 1U, pVertexBuffer_.GetAddressOf(), &stride, &offset);  // ’¸“_ƒoƒbƒtƒ@‚ğƒZƒbƒg
-		DirectX11Draw::pContext_->IASetIndexBuffer(pIndexBuffer_.Get(), DXGI_FORMAT_R32_UINT, 0);  // ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ğƒZƒbƒg
-		DirectX11Draw::pContext_->VSSetConstantBuffers(0, 1, pConstantBuffer_.GetAddressOf());  // ’¸“_ƒVƒF[ƒ_‚ÌƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ğƒZƒbƒg
-		DirectX11Draw::pContext_->PSSetConstantBuffers(0, 1, pConstantBuffer_.GetAddressOf());  // ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚ÌƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ğƒZƒbƒg
+		DirectX11Draw::pContext_->IASetVertexBuffers(
+			0U,
+			1U,
+			pVertexBuffer_.GetAddressOf(),
+			&stride,
+			&offset
+		); // é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã‚’ã‚»ãƒƒãƒˆ
+		DirectX11Draw::pContext_->IASetIndexBuffer(
+			pIndexBuffer_.Get(),
+			DXGI_FORMAT_R32_UINT,
+			0
+		); // ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã‚’ã‚»ãƒƒãƒˆ
+		DirectX11Draw::pContext_->VSSetConstantBuffers(
+			0,
+			1,
+			pConstantBuffer_.GetAddressOf()
+		); // é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã‚’ã‚»ãƒƒãƒˆ
+		DirectX11Draw::pContext_->PSSetConstantBuffers(
+			0,
+			1,
+			pConstantBuffer_.GetAddressOf()
+		); // ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã‚’ã‚»ãƒƒãƒˆ
 
 		ConstantBufferT constantBuffer{};
 
@@ -99,28 +121,27 @@ namespace mtgb
 
 		HRESULT hResult{};
 
-		// ƒVƒF[ƒ_‚É“n‚·‚½‚ß‚Ìƒf[ƒ^
+		// ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™ãŸã‚ã®ãƒ‡ãƒ¼ã‚¿
 		D3D11_MAPPED_SUBRESOURCE mappedSubresource{};
 
-		// GPU‚©‚ç‚Ìƒf[ƒ^ƒAƒNƒZƒX‚ğ‚¹‚«~‚ß‚é
-		hResult = DirectX11Draw::pContext_->Map(
-			pConstantBuffer_.Get(),
-			NULL,
-			D3D11_MAP_WRITE_DISCARD,
-			NULL,
-			&mappedSubresource);
+		// GPUã‹ã‚‰ã®ãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã‚’ã›ãæ­¢ã‚ã‚‹
+		hResult = DirectX11Draw::pContext_
+					  ->Map(pConstantBuffer_.Get(), NULL, D3D11_MAP_WRITE_DISCARD, NULL, &mappedSubresource);
 
-		massert(SUCCEEDED(hResult)  // GPUƒf[ƒ^ƒAƒNƒZƒX‚¹‚«~‚ß‚É¬Œ÷
-			&& "GPUƒf[ƒ^ƒAƒNƒZƒX‚¹‚«~‚ß‚É¸”s");
+		massert(
+			SUCCEEDED(hResult) // GPUãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã›ãæ­¢ã‚ã«æˆåŠŸ
+			&& "GPUãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã›ãæ­¢ã‚ã«å¤±æ•—"
+		);
 
-		// ƒf[ƒ^‘‚«‚İ
+		// ãƒ‡ãƒ¼ã‚¿æ›¸ãè¾¼ã¿
 		memcpy_s(
 			mappedSubresource.pData,
 			mappedSubresource.RowPitch,
 			static_cast<void*>(&constantBuffer),
-			sizeof(ConstantBufferT));
+			sizeof(ConstantBufferT)
+		);
 
-		// GPUƒf[ƒ^ƒAƒNƒZƒX‚¹‚«~‚ß‰ğœ
+		// GPUãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã›ãæ­¢ã‚è§£é™¤
 		DirectX11Draw::pContext_->Unmap(pConstantBuffer_.Get(), 0);
 
 		_contextSetterCallback(DirectX11Draw::pContext_.Get());
@@ -128,22 +149,41 @@ namespace mtgb
 		DirectX11Draw::pContext_->DrawIndexed(_drawIndexCount, 0, 0);
 	}
 
-	template<typename ConstantBufferT, typename VertexT>
+	template <typename ConstantBufferT, typename VertexT>
 	inline void IShader::Draw(
 		const std::function<void(VertexT* _pVertex)>& _makeVertexBufferCallback,
 		const std::function<void(ConstantBufferT* _pConstantBuffer)>& _makeConstantBufferCallback,
 		const std::function<void(ID3D11DeviceContext* _pContext)>& _contextSetterCallback,
-		const int _drawIndexCount)
+		const int _drawIndexCount
+	)
 	{
-		UINT stride{ 0U };
-		UINT offset{ 0U };
+		UINT stride{0U};
+		UINT offset{0U};
 
 		stride = sizeof(VertexT);
 		offset = 0;
-		DirectX11Draw::pContext_->IASetVertexBuffers(0U, 1U, pVertexBuffer_.Get(), &stride, &offset);  // ’¸“_ƒoƒbƒtƒ@‚ğƒZƒbƒg
-		DirectX11Draw::pContext_->IASetIndexBuffer(pIndexBuffer_, DXGI_FORMAT_R32_UINT, 0);  // ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ğƒZƒbƒg
-		DirectX11Draw::pContext_->VSSetConstantBuffers(0, 1, pConstantBuffer_.Get());  // ’¸“_ƒVƒF[ƒ_‚ÌƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ğƒZƒbƒg
-		DirectX11Draw::pContext_->PSSetConstantBuffers(0, 1, pConstantBuffer_.Get());  // ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚ÌƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ğƒZƒbƒg
+		DirectX11Draw::pContext_->IASetVertexBuffers(
+			0U,
+			1U,
+			pVertexBuffer_.Get(),
+			&stride,
+			&offset
+		); // é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã‚’ã‚»ãƒƒãƒˆ
+		DirectX11Draw::pContext_->IASetIndexBuffer(
+			pIndexBuffer_,
+			DXGI_FORMAT_R32_UINT,
+			0
+		); // ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã‚’ã‚»ãƒƒãƒˆ
+		DirectX11Draw::pContext_->VSSetConstantBuffers(
+			0,
+			1,
+			pConstantBuffer_.Get()
+		); // é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã‚’ã‚»ãƒƒãƒˆ
+		DirectX11Draw::pContext_->PSSetConstantBuffers(
+			0,
+			1,
+			pConstantBuffer_.Get()
+		); // ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã‚’ã‚»ãƒƒãƒˆ
 
 		ConstantBufferT constantBuffer{};
 
@@ -151,56 +191,54 @@ namespace mtgb
 
 		HRESULT hResult{};
 
-		// ƒVƒF[ƒ_‚É“n‚·‚½‚ß‚Ìƒf[ƒ^
+		// ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™ãŸã‚ã®ãƒ‡ãƒ¼ã‚¿
 		D3D11_MAPPED_SUBRESOURCE mappedSubresource{};
 
-		// GPU‚©‚ç‚Ìƒf[ƒ^ƒAƒNƒZƒX‚ğ‚¹‚«~‚ß‚é
-		hResult = DirectX11Draw::pContext_->Map(
-			pConstantBuffer_.Get(),
-			NULL,
-			D3D11_MAP_WRITE_DISCARD,
-			NULL,
-			&mappedSubresource);
+		// GPUã‹ã‚‰ã®ãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã‚’ã›ãæ­¢ã‚ã‚‹
+		hResult = DirectX11Draw::pContext_
+					  ->Map(pConstantBuffer_.Get(), NULL, D3D11_MAP_WRITE_DISCARD, NULL, &mappedSubresource);
 
-		massert(SUCCEEDED(hResult)  // GPUƒf[ƒ^ƒAƒNƒZƒX‚¹‚«~‚ß‚É¬Œ÷
-			&& "GPUƒf[ƒ^ƒAƒNƒZƒX‚¹‚«~‚ß‚É¸”s");
+		massert(
+			SUCCEEDED(hResult) // GPUãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã›ãæ­¢ã‚ã«æˆåŠŸ
+			&& "GPUãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã›ãæ­¢ã‚ã«å¤±æ•—"
+		);
 
-		// ƒf[ƒ^‘‚«‚İ
+		// ãƒ‡ãƒ¼ã‚¿æ›¸ãè¾¼ã¿
 		memcpy_s(
 			mappedSubresource.pData,
 			mappedSubresource.RowPitch,
 			static_cast<void*>(&constantBuffer),
-			sizeof(ConstantBufferT));
+			sizeof(ConstantBufferT)
+		);
 
-		// GPUƒf[ƒ^ƒAƒNƒZƒX‚¹‚«~‚ß‰ğœ
+		// GPUãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã›ãæ­¢ã‚è§£é™¤
 		DirectX11Draw::pContext_->Unmap(pConstantBuffer_.Get(), 0);
 
-		// ƒVƒF[ƒ_‚É“n‚·‚½‚ß‚Ìƒf[ƒ^
+		// ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™ãŸã‚ã®ãƒ‡ãƒ¼ã‚¿
 		D3D11_MAPPED_SUBRESOURCE mappedSubresource{};
 
-		// GPU‚©‚ç‚Ìƒf[ƒ^ƒAƒNƒZƒX‚ğ‚¹‚«~‚ß‚é
-		hResult = DirectX11Draw::pContext_->Map(
-			pConstantBuffer_.Get(),
-			NULL,
-			D3D11_MAP_WRITE_DISCARD,
-			NULL,
-			&mappedSubresource);
+		// GPUã‹ã‚‰ã®ãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã‚’ã›ãæ­¢ã‚ã‚‹
+		hResult = DirectX11Draw::pContext_
+					  ->Map(pConstantBuffer_.Get(), NULL, D3D11_MAP_WRITE_DISCARD, NULL, &mappedSubresource);
 
-		massert(SUCCEEDED(hResult)  // GPUƒf[ƒ^ƒAƒNƒZƒX‚¹‚«~‚ß‚É¬Œ÷
-			&& "GPUƒf[ƒ^ƒAƒNƒZƒX‚¹‚«~‚ß‚É¸”s");
+		massert(
+			SUCCEEDED(hResult) // GPUãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã›ãæ­¢ã‚ã«æˆåŠŸ
+			&& "GPUãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã›ãæ­¢ã‚ã«å¤±æ•—"
+		);
 
-		// ƒf[ƒ^‘‚«‚İ
+		// ãƒ‡ãƒ¼ã‚¿æ›¸ãè¾¼ã¿
 		memcpy_s(
 			mappedSubresource.pData,
 			mappedSubresource.RowPitch,
 			static_cast<void*>(&constantBuffer),
-			sizeof(ConstantBufferT));
+			sizeof(ConstantBufferT)
+		);
 
-		// GPUƒf[ƒ^ƒAƒNƒZƒX‚¹‚«~‚ß‰ğœ
+		// GPUãƒ‡ãƒ¼ã‚¿ã‚¢ã‚¯ã‚»ã‚¹ã›ãæ­¢ã‚è§£é™¤
 		DirectX11Draw::pContext_->Unmap(pConstantBuffer_.Get(), 0);
 
 		_contextSetterCallback(DirectX11Draw::pContext_.Get());
 
 		DirectX11Draw::pContext_->DrawIndexed(_drawIndexCount, 0, 0);
 	}
-}
+} // namespace mtgb

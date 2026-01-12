@@ -4,31 +4,29 @@
 #include "GameTime.h"
 #include "Debug.h"
 mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene)
-    : pCurrentClip_{ nullptr }
-    , currentFrame_{ 0.0f }
-    , animationSpeed_{ 1.0f }
-    , isPlaying_{ false }
-    , isLooping_{ false }
-    , isFinished_{ false }
-    , pFbxScene_{_fbxScene}
+	: pCurrentClip_{nullptr}
+	, currentFrame_{0.0f}
+	, animationSpeed_{1.0f}
+	, isPlaying_{false}
+	, isLooping_{false}
+	, isFinished_{false}
+	, pFbxScene_{_fbxScene}
 {
-    int animStackCount = _fbxScene->GetSrcObjectCount<FbxAnimStack>();
+	int animStackCount = _fbxScene->GetSrcObjectCount<FbxAnimStack>();
 
-    for (int i = 0; i < animStackCount; i++)
-    {
-        FbxAnimStack* pAnimStack = _fbxScene->GetSrcObject<FbxAnimStack>(i);
-        if (pAnimStack == nullptr)
-            continue;
+	for (int i = 0; i < animStackCount; i++)
+	{
+		FbxAnimStack* pAnimStack = _fbxScene->GetSrcObject<FbxAnimStack>(i);
+		if (pAnimStack == nullptr)
+			continue;
 
-        // ƒAƒjƒ[ƒVƒ‡ƒ“ƒNƒŠƒbƒv‚ðì¬
-        FbxAnimationClip animClip(pAnimStack);
+		// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¯ãƒªãƒƒãƒ—ã‚’ä½œæˆ
+		FbxAnimationClip animClip(pAnimStack);
 
-        // ƒRƒ“ƒgƒ[ƒ‰‚É“o˜^
-        RegisterAnimationClip(animClip);
-    }
+		// ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã«ç™»éŒ²
+		RegisterAnimationClip(animClip);
+	}
 }
-
-
 
 mtgb::FbxAnimationController::~FbxAnimationController()
 {
@@ -36,92 +34,92 @@ mtgb::FbxAnimationController::~FbxAnimationController()
 
 void mtgb::FbxAnimationController::RegisterAnimationClip(const FbxAnimationClip& _animClip)
 {
-    clipMap_.emplace(_animClip.name, _animClip);
+	clipMap_.emplace(_animClip.name, _animClip);
 }
 
 void mtgb::FbxAnimationController::RegisterAnimationClip(FbxAnimationClip&& _animClip)
 {
-    clipMap_.emplace(_animClip.name, std::move(_animClip));
+	clipMap_.emplace(_animClip.name, std::move(_animClip));
 }
 
 int mtgb::FbxAnimationController::GetCurrentFrame() const
 {
-    return static_cast<int>(currentFrame_);
+	return static_cast<int>(currentFrame_);
 }
 
 void mtgb::FbxAnimationController::PlayAnimation(std::string_view _clipName, bool _isLooping)
 {
-    auto itr = clipMap_.find(_clipName);
-    if(itr == clipMap_.end())
-    {
-        LOGIMGUI("Animation clip not found: %s", _clipName.data());
-        return;
-    }
-    pCurrentClip_ = &(itr->second);
-    currentFrame_ = pCurrentClip_->startFrame;
-    isLooping_ = _isLooping;
-    isPlaying_ = true;
-    isFinished_ = false;
-    pFbxScene_->SetCurrentAnimationStack(pCurrentClip_->pAnimStack);
+	auto itr = clipMap_.find(_clipName);
+	if (itr == clipMap_.end())
+	{
+		LOGIMGUI("Animation clip not found: %s", _clipName.data());
+		return;
+	}
+	pCurrentClip_ = &(itr->second);
+	currentFrame_ = pCurrentClip_->startFrame;
+	isLooping_	  = _isLooping;
+	isPlaying_	  = true;
+	isFinished_	  = false;
+	pFbxScene_->SetCurrentAnimationStack(pCurrentClip_->pAnimStack);
 }
 
 void mtgb::FbxAnimationController::UpdateFrame()
 {
-    if (pCurrentClip_ == nullptr)
-        return;
+	if (pCurrentClip_ == nullptr)
+		return;
 
-    if (isPlaying_ == false)
-        return;
+	if (isPlaying_ == false)
+		return;
 
-    currentFrame_ += animationSpeed_;
+	currentFrame_ += animationSpeed_;
 
-    int startFrame = pCurrentClip_->startFrame;
-    int endFrame = pCurrentClip_->endFrame;
+	int startFrame = pCurrentClip_->startFrame;
+	int endFrame   = pCurrentClip_->endFrame;
 
-    if (currentFrame_ < startFrame)
-    {
-        if (isLooping_)
-        {
-            currentFrame_ = static_cast<float>(endFrame);
-        }
-        else
-        {
-            currentFrame_ = static_cast<float>(startFrame);
-            isPlaying_ = false;
-            isFinished_ = true;
-        }
-    }
-    else if (currentFrame_ > endFrame)
-    {
-        if (isLooping_)
-        {
-            currentFrame_ = static_cast<float>(startFrame);
-        }
-        else
-        {
-            currentFrame_ = static_cast<float>(endFrame);
-            isPlaying_ = false;
-            isFinished_ = true;
-        }
-    }
+	if (currentFrame_ < startFrame)
+	{
+		if (isLooping_)
+		{
+			currentFrame_ = static_cast<float>(endFrame);
+		}
+		else
+		{
+			currentFrame_ = static_cast<float>(startFrame);
+			isPlaying_	  = false;
+			isFinished_	  = true;
+		}
+	}
+	else if (currentFrame_ > endFrame)
+	{
+		if (isLooping_)
+		{
+			currentFrame_ = static_cast<float>(startFrame);
+		}
+		else
+		{
+			currentFrame_ = static_cast<float>(endFrame);
+			isPlaying_	  = false;
+			isFinished_	  = true;
+		}
+	}
 }
 
 void mtgb::FbxAnimationController::PauseAnimation()
 {
-    isPlaying_ = false;
+	isPlaying_ = false;
 }
 
 void mtgb::FbxAnimationController::ResumeAnimation()
 {
-    isPlaying_ = true;
+	isPlaying_ = true;
 }
 
 void mtgb::FbxAnimationController::SetAnimationSpeed(float _animSpeed)
 {
-    animationSpeed_ = _animSpeed;
+	animationSpeed_ = _animSpeed;
 }
 
 bool mtgb::FbxAnimationController::IsFinishedAnimation()
 {
-    return isFinished_;
+	return isFinished_;
 }

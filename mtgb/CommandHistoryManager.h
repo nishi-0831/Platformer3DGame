@@ -1,29 +1,30 @@
 #pragma once
 #include "ISystem.h"
 #include "CommandHistory.h"
+#include "NamedCommandHistory.h"
 #include "GroupCommand.h"
 namespace mtgb
 {
 	class CommandHistoryManager : public ISystem, public ICommandHistory
 	{
-	public:
-		// ISystem ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
+	  public:
+		// ISystem ã‚’ä»‹ã—ã¦ç¶™æ‰¿ã•ã‚Œã¾ã—ãŸ
 		CommandHistoryManager();
 		void Initialize() override;
 		void Update() override;
 
 		void BeginGroupCommand();
 		void EndGroupCommand();
-		// ICommandHistory ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
+		// ICommandHistory ã‚’ä»‹ã—ã¦ç¶™æ‰¿ã•ã‚Œã¾ã—ãŸ
 		void ExecuteCommand(Command* _command) override;
 		void UndoCommand() override;
 		void RedoCommand() override;
 		void ClearAllStack() override;
 		void ClearRedoStack() override;
-	private:
-		ICommandHistory* inner_;
+
+	  private:
+		NamedCommandHistory* inner_;
 		bool isGrouping_;
 		GroupCommand* pGroupCommand_;
-
 	};
-}
+} // namespace mtgb

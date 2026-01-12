@@ -6,54 +6,50 @@
 
 #if _DEBUG
 
-#define massert(expression)                                                                                                                    \
-	if (!(expression))                                                                                                                          \
-	{                                                                                                                                          \
-		std::string text{ #expression };                                                                                                       \
-		text += "\r\n\"";                                                                                                                      \
-		text += __FILE__;                                                                                                                      \
-		text += "\"ÇÊÇËÅA";                                                                                                                     \
-		text += std::to_string(__LINE__);                                                                                                      \
-		text += "çsñ⁄ÇÃmassertÇ™ãNìÆÇµÇ‹ÇµÇΩÅB\r\n";                                                                                                  \
-		text += "ÉLÉÉÉìÉZÉãÇµÇ»Ç¢èÍçáÅAÉXÉçÅ[ÇµÇ‹Ç∑ÅB\r\n";                                                                                                  \
-		text += "WindowsÇÃç≈èIÉGÉâÅ[ÇéÊìæÇµÇ‹Ç∑Ç©ÅH(ÇÕÇ¢/Ç¢Ç¢Ç¶)";                                                                                                  \
-		std::string title{ mtgb::Game::Title() };                                                                                              \
-		title += "ÇÃÉAÉTÅ[ÉVÉáÉìÉGÉâÅ[";                                                                                                          \
-		int result                                                                                                                             \
-		{                                                                                                                                      \
-			/*MessageBox(NULL, text.c_str(), title.c_str(), MB_RETRYCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL)*/                                   \
-			MessageBox(NULL, text.c_str(), title.c_str(), MB_YESNOCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL)                                       \
-		};                                                                                                                                     \
-		if (result == IDYES)\
-		{\
-			DWORD errorCode{ GetLastError() };\
-			LPVOID lpMsgBuf;\
-			FormatMessage(\
-				FORMAT_MESSAGE_ALLOCATE_BUFFER  \
-				| FORMAT_MESSAGE_FROM_SYSTEM    \
-				| FORMAT_MESSAGE_IGNORE_INSERTS,\
-				NULL, errorCode, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),\
-				(LPTSTR)&lpMsgBuf,                          \
-				0,\
-				NULL);\
-			MessageBox(NULL, (LPCTSTR(lpMsgBuf)), title.c_str(), MB_OK | MB_ICONSTOP | MB_SYSTEMMODAL);\
-			throw "this massertion error";                                                                                                     \
-		}\
-		else if (result == IDNO)\
-		{\
-			throw "this massertion error";                                                                                                     \
-		}\
-		else\
-		{\
-			mtgb::Game::Exit();\
-		}\
+#define massert(expression)                                                                                         \
+	if (!(expression))                                                                                              \
+	{                                                                                                               \
+		std::string text{#expression};                                                                              \
+		text += "\r\n\"";                                                                                           \
+		text += __FILE__;                                                                                           \
+		text += "\"„Çà„Çä„ÄÅ";                                                                                         \
+		text += std::to_string(__LINE__);                                                                           \
+		text += "Ë°åÁõÆ„ÅÆmassert„ÅåËµ∑Âãï„Åó„Åæ„Åó„Åü„ÄÇ\r\n";                                                                \
+		text += "„Ç≠„É£„É≥„Çª„É´„Åó„Å™„ÅÑÂ†¥Âêà„ÄÅ„Çπ„É≠„Éº„Åó„Åæ„Åô„ÄÇ\r\n";                                                         \
+		text += "Windows„ÅÆÊúÄÁµÇ„Ç®„É©„Éº„ÇíÂèñÂæó„Åó„Åæ„Åô„ÅãÔºü(„ÅØ„ÅÑ/„ÅÑ„ÅÑ„Åà)";                                                 \
+		std::string title{mtgb::Game::Title()};                                                                     \
+		title += "„ÅÆ„Ç¢„Çµ„Éº„Ç∑„Éß„É≥„Ç®„É©„Éº";                                                                            \
+		int result{/*MessageBox(NULL, text.c_str(), title.c_str(), MB_RETRYCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL)*/ \
+				   MessageBox(NULL, text.c_str(), title.c_str(), MB_YESNOCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL)     \
+		};                                                                                                          \
+		if (result == IDYES)                                                                                        \
+		{                                                                                                           \
+			DWORD errorCode{GetLastError()};                                                                        \
+			LPVOID lpMsgBuf;                                                                                        \
+			FormatMessage(                                                                                          \
+				FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,        \
+				NULL,                                                                                               \
+				errorCode,                                                                                          \
+				MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),                                                          \
+				(LPTSTR) & lpMsgBuf,                                                                                \
+				0,                                                                                                  \
+				NULL                                                                                                \
+			);                                                                                                      \
+			MessageBox(NULL, (LPCTSTR(lpMsgBuf)), title.c_str(), MB_OK | MB_ICONSTOP | MB_SYSTEMMODAL);             \
+			throw "this massertion error";                                                                          \
+		}                                                                                                           \
+		else if (result == IDNO)                                                                                    \
+		{                                                                                                           \
+			throw "this massertion error";                                                                          \
+		}                                                                                                           \
+		else                                                                                                        \
+		{                                                                                                           \
+			mtgb::Game::Exit();                                                                                     \
+		}                                                                                                           \
 	}
 
 #else
 
 #define massert(expression) (expression)
 
-
 #endif
-
-

@@ -11,32 +11,31 @@ namespace mtgb
 	};
 	class GameObjectGenerator
 	{
-	public:
-
+	  public:
 		static void Initialize();
 		static void Generate(GenerateType _primitive);
 		/// <summary>
-		/// JSON‚©‚çƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ð¶¬‚·‚é
+		/// JSONã‹ã‚‰ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã™ã‚‹
 		/// </summary>
 		/// <param name="_gameObjName"></param>
 		static void GenerateFromJson(const nlohmann::json& _json);
 		/// <summary>
-		/// –¼‘O‚É‘Î‰ž‚µ‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ð¶¬‚·‚é
+		/// åå‰ã«å¯¾å¿œã—ãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã™ã‚‹
 		/// </summary>
 		/// <returns></returns>
 		static void Generate(std::string_view _gameObjName);
 		/// <summary>
-		/// ƒRƒ}ƒ“ƒh‚ð“n‚·‚±‚Æ‚ª‚Å‚«‚éƒŠƒXƒi[‚ð“o˜^
+		/// ã‚³ãƒžãƒ³ãƒ‰ã‚’æ¸¡ã™ã“ã¨ãŒã§ãã‚‹ãƒªã‚¹ãƒŠãƒ¼ã‚’ç™»éŒ²
 		/// </summary>
 		static void RegisterCommandListener(std::function<void(Command*)> _commandListener);
 		static void Duplicate(EntityId _srcEntityId);
 		static void Delete(EntityId _entityId);
-	private:
+
+	  private:
 		GameObjectGenerator() = default;
 		static GameObjectGenerator* GetInstance();
 		static GameObjectGenerator* pInstance_;
 		GameObjectFactory gameObjFactory_;
 		std::function<void(Command*)> commandListener_;
-
 	};
-}
+} // namespace mtgb

@@ -8,107 +8,111 @@
 #include <algorithm>
 namespace mtgb
 {
-    RayDetector::RayDetector(const RayDetectorConfig& _config)
-        : config(_config)
-    {
-    }
+	RayDetector::RayDetector(const RayDetectorConfig& _config)
+		: config(_config)
+	{
+	}
 
-    RayDetector::RayDetector(RayDetectorConfig&& _config)
-        : config(std::move(_config))
-    {
-    }
+	RayDetector::RayDetector(RayDetectorConfig&& _config)
+		: config(std::move(_config))
+	{
+	}
 
-    void RayDetector::UpdateDetection()
-    {
-        UpdateDetection(config);
-    }
+	void RayDetector::UpdateDetection()
+	{
+		UpdateDetection(config);
+	}
 
-    void RayDetector::UpdateDetection(const RayDetectorConfig& _config)
-    {
-        detectedTargets_.clear();
+	void RayDetector::UpdateDetection(const RayDetectorConfig& _config)
+	{
+		detectedTargets_.clear();
 
-        
-        // ƒ^ƒO‚Åæ“¾
-        std::vector<GameObject*> findObjs;
-        GameObject::FindGameObjects(_config.base.targetTag,&findObjs);
+		// ã‚¿ã‚°ã§å–å¾—
+		std::vector<GameObject*> findObjs;
+		GameObject::FindGameObjects(_config.base.targetTag, &findObjs);
 
-        for (const auto& obj : findObjs)
-        {
-            // Transformæ“¾
-            Transform* pTransform = &Transform::Get(obj->GetEntityId());
-            Vector3 worldPos = pTransform->GetWorldPosition();
-            Vector3 rayOrigin = _config.rayTransform->GetWorldPosition();
-            Vector3 rayDirection = _config.rayTransform->Forward();
+		for (const auto& obj : findObjs)
+		{
+			// Transformå–å¾—
+			Transform* pTransform = &Transform::Get(obj->GetEntityId());
+			Vector3 worldPos	  = pTransform->GetWorldPosition();
+			Vector3 rayOrigin	  = _config.rayTransform->GetWorldPosition();
+			Vector3 rayDirection  = _config.rayTransform->Forward();
 
-            // ‹——£ƒ`ƒFƒbƒN
-            float distance = (worldPos - rayOrigin).Size();
-            
-            if (distance < _config.base.minDistance || distance > _config.base.maxDistance)
-            {
-                continue;
-            }
+			// è·é›¢ãƒã‚§ãƒƒã‚¯
+			float distance = (worldPos - rayOrigin).Size();
 
-            // ƒŒƒC‚ÌŠp“x”ÍˆÍ“à‚©ƒ`ƒFƒbƒN
-            if (IsTargetInRayAngle(worldPos, rayOrigin, rayDirection, _config.maxAngleDegrees))
-            {
-                // ƒ[ƒ‹ƒhÀ•W‚ğƒXƒNƒŠ[ƒ“À•W‚É•ÏŠ·
-                Vector3 screenPos = Game::System<CameraSystem>().GetWorldToScreenPos(worldPos, _config.base.windowContext);
-                detectedTargets_.emplace_back(worldPos, screenPos, obj->GetEntityId());
-            }
-        }
-    }
+			if (distance < _config.base.minDistance || distance > _config.base.maxDistance)
+			{
+				continue;
+			}
 
-    void RayDetector::UpdateAndSetDetection(RayDetectorConfig&& _config)
-    {
-        config = std::move(_config);
-        UpdateDetection();
-    }
+			// ãƒ¬ã‚¤ã®è§’åº¦ç¯„å›²å†…ã‹ãƒã‚§ãƒƒã‚¯
+			if (IsTargetInRayAngle(worldPos, rayOrigin, rayDirection, _config.maxAngleDegrees))
+			{
+				// ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã«å¤‰æ›
+				Vector3 screenPos =
+					Game::System<CameraSystem>().GetWorldToScreenPos(worldPos, _config.base.windowContext);
+				detectedTargets_.emplace_back(worldPos, screenPos, obj->GetEntityId());
+			}
+		}
+	}
 
-    bool RayDetector::HasDetectedTargets() const
-    {
-        return !detectedTargets_.empty();
-    }
+	void RayDetector::UpdateAndSetDetection(RayDetectorConfig&& _config)
+	{
+		config = std::move(_config);
+		UpdateDetection();
+	}
 
-    const std::vector<ScreenCoordContainsInfo>& RayDetector::GetDetectedTargets() const
-    {
-        return detectedTargets_;
-    }
+	bool RayDetector::HasDetectedTargets() const
+	{
+		return !detectedTargets_.empty();
+	}
 
-    void RayDetector::ForEach(std::function<void(ScreenCoordContainsInfo&)> _func)
-    {
-        for (auto& target : detectedTargets_)
-        {
-            _func(target);
-        }
-    }
+	const std::vector<ScreenCoordContainsInfo>& RayDetector::GetDetectedTargets() const
+	{
+		return detectedTargets_;
+	}
 
-    void RayDetector::ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const
-    {
-        for (const auto& target : detectedTargets_)
-        {
-            _func(target);
-        }
-    }
+	void RayDetector::ForEach(std::function<void(ScreenCoordContainsInfo&)> _func)
+	{
+		for (auto& target : detectedTargets_)
+		{
+			_func(target);
+		}
+	}
 
-    bool RayDetector::IsTargetInRayAngle(const Vector3& targetPos, const Vector3& rayOrigin, 
-                                        const Vector3& rayDirection, float maxAngleDegrees) const
-    {
-        // ƒŒƒC‚Ì‹N“_‚©‚çƒ^[ƒQƒbƒg‚Ö‚ÌƒxƒNƒgƒ‹
-        Vector3 toTarget = Vector3::Normalize(targetPos - rayOrigin);
-        
-        // ƒŒƒC‚Ì•ûŒüƒxƒNƒgƒ‹‚ğ³‹K‰»
-        Vector3 normalizedRayDir = Vector3::Normalize(rayDirection);
-        
-        // “àÏ‚ğg‚Á‚ÄŠp“x‚ğŒvZ
-        float dotProduct = DirectX::XMVectorGetX(DirectX::XMVector3Dot(normalizedRayDir, toTarget));
-        
-        // “àÏ‚©‚çŠp“x‚ğŒvZiƒ‰ƒWƒAƒ“j
-        float angleRadians = std::acosf(std::clamp(dotProduct, -1.0f, 1.0f));
-        
-        // “x‚É•ÏŠ·
-        float angleDegrees = DirectX::XMConvertToDegrees(angleRadians);
-        
-        // w’èŠp“xˆÈ“à‚©ƒ`ƒFƒbƒN
-        return angleDegrees <= maxAngleDegrees;
-    }
-}
+	void RayDetector::ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const
+	{
+		for (const auto& target : detectedTargets_)
+		{
+			_func(target);
+		}
+	}
+
+	bool RayDetector::IsTargetInRayAngle(
+		const Vector3& targetPos,
+		const Vector3& rayOrigin,
+		const Vector3& rayDirection,
+		float maxAngleDegrees
+	) const
+	{
+		// ãƒ¬ã‚¤ã®èµ·ç‚¹ã‹ã‚‰ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¸ã®ãƒ™ã‚¯ãƒˆãƒ«
+		Vector3 toTarget = Vector3::Normalize(targetPos - rayOrigin);
+
+		// ãƒ¬ã‚¤ã®æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ­£è¦åŒ–
+		Vector3 normalizedRayDir = Vector3::Normalize(rayDirection);
+
+		// å†…ç©ã‚’ä½¿ã£ã¦è§’åº¦ã‚’è¨ˆç®—
+		float dotProduct = DirectX::XMVectorGetX(DirectX::XMVector3Dot(normalizedRayDir, toTarget));
+
+		// å†…ç©ã‹ã‚‰è§’åº¦ã‚’è¨ˆç®—ï¼ˆãƒ©ã‚¸ã‚¢ãƒ³ï¼‰
+		float angleRadians = std::acosf(std::clamp(dotProduct, -1.0f, 1.0f));
+
+		// åº¦ã«å¤‰æ›
+		float angleDegrees = DirectX::XMConvertToDegrees(angleRadians);
+
+		// æŒ‡å®šè§’åº¦ä»¥å†…ã‹ãƒã‚§ãƒƒã‚¯
+		return angleDegrees <= maxAngleDegrees;
+	}
+} // namespace mtgb

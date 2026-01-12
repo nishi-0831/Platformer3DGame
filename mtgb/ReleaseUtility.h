@@ -1,57 +1,55 @@
 #pragma once
 
-// ƒ|ƒCƒ“ƒ^‚ğˆÀ‘S‚É‰ğ•ú‚·‚é‚½‚ß‚Ìƒ}ƒNƒ
-#define SAFE_DELETE(p)\
-if (p != nullptr)      \
-{                       \
-	delete p;            \
-	p = nullptr;          \
-}
+// ãƒã‚¤ãƒ³ã‚¿ã‚’å®‰å…¨ã«è§£æ”¾ã™ã‚‹ãŸã‚ã®ãƒã‚¯ãƒ­
+#define SAFE_DELETE(p) \
+	if (p != nullptr)  \
+	{                  \
+		delete p;      \
+		p = nullptr;   \
+	}
 
-// ƒ|ƒCƒ“ƒ^”z—ñ‚ğˆÀ‘S‚É‰ğ•ú‚·‚é‚½‚ß‚Ìƒ}ƒNƒ
-#define SAFE_DELETE_ARRAY(p)\
-if (p != nullptr)            \
-{                             \
-	delete[] p;                \
-	p = nullptr;                \
-}
+// ãƒã‚¤ãƒ³ã‚¿é…åˆ—ã‚’å®‰å…¨ã«è§£æ”¾ã™ã‚‹ãŸã‚ã®ãƒã‚¯ãƒ­
+#define SAFE_DELETE_ARRAY(p) \
+	if (p != nullptr)        \
+	{                        \
+		delete[] p;          \
+		p = nullptr;         \
+	}
 
-// ƒ|ƒCƒ“ƒ^‚ğˆÀ‘S‚ÉRelease‚·‚é‚½‚ß‚Ìƒ}ƒNƒ
-#define SAFE_RELEASE(p)\
-if (p != nullptr)       \
-{                        \
-	p->Release();         \
-	p = nullptr;           \
-}
+// ãƒã‚¤ãƒ³ã‚¿ã‚’å®‰å…¨ã«Releaseã™ã‚‹ãŸã‚ã®ãƒã‚¯ãƒ­
+#define SAFE_RELEASE(p) \
+	if (p != nullptr)   \
+	{                   \
+		p->Release();   \
+		p = nullptr;    \
+	}
 
-// ƒ|ƒCƒ“ƒ^‚ğˆÀ‘S‚ÉDestroy‚·‚é‚½‚ß‚Ìƒ}ƒNƒ
-#define SAFE_DESTROY(p)\
-if (p != nullptr)       \
-{                        \
-	p->Destroy();         \
-	p = nullptr;           \
-}
+// ãƒã‚¤ãƒ³ã‚¿ã‚’å®‰å…¨ã«Destroyã™ã‚‹ãŸã‚ã®ãƒã‚¯ãƒ­
+#define SAFE_DESTROY(p) \
+	if (p != nullptr)   \
+	{                   \
+		p->Destroy();   \
+		p = nullptr;    \
+	}
 
-// ƒRƒ“ƒeƒi‚Ì—v‘f‚ğˆÀ‘S‚ÉRelease‚·‚é‚½‚ß‚Ìƒ}ƒNƒ
-// ƒRƒ“ƒeƒi‚Í std::vector ‚â std::list ‚È‚Ç‚Ì‚±‚Æ
-#define SAFE_CLEAR_CONTAINER_RELEASE(container)\
-{                                                \
-	for (auto& p : container)                     \
-	{                                              \
-		SAFE_RELEASE(p);                            \
-	}                                                \
-	container.clear();                                \
-}
+// ã‚³ãƒ³ãƒ†ãƒŠã®è¦ç´ ã‚’å®‰å…¨ã«Releaseã™ã‚‹ãŸã‚ã®ãƒã‚¯ãƒ­
+// ã‚³ãƒ³ãƒ†ãƒŠã¯ std::vector ã‚„ std::list ãªã©ã®ã“ã¨
+#define SAFE_CLEAR_CONTAINER_RELEASE(container) \
+	{                                           \
+		for (auto& p : container)               \
+		{                                       \
+			SAFE_RELEASE(p);                    \
+		}                                       \
+		container.clear();                      \
+	}
 
-// ƒRƒ“ƒeƒi‚Ì—v‘f‚ğˆÀ‘S‚É‰ğ•ú‚·‚é‚½‚ß‚Ìƒ}ƒNƒ
-// ƒRƒ“ƒeƒi‚Í std::vector ‚â std::list ‚È‚Ç‚Ì‚±‚Æ
-#define SAFE_CLEAR_CONTAINER_DELETE(container)\
-{                                               \
-	for (auto& p : container)                    \
-	{                                             \
-		SAFE_DELETE(p);                            \
-	}                                               \
-	container.clear();                               \
-}
-
-
+// ã‚³ãƒ³ãƒ†ãƒŠã®è¦ç´ ã‚’å®‰å…¨ã«è§£æ”¾ã™ã‚‹ãŸã‚ã®ãƒã‚¯ãƒ­
+// ã‚³ãƒ³ãƒ†ãƒŠã¯ std::vector ã‚„ std::list ãªã©ã®ã“ã¨
+#define SAFE_CLEAR_CONTAINER_DELETE(container) \
+	{                                          \
+		for (auto& p : container)              \
+		{                                      \
+			SAFE_DELETE(p);                    \
+		}                                      \
+		container.clear();                     \
+	}

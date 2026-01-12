@@ -1,22 +1,20 @@
 // MovingFloor.generated.cpp
-# include "MovingFloor.generated.h"
-# include "MovingFloor.h"
-# include "TypeRegistry.h"
-# include "MTImGui.h"
+#include "MovingFloor.generated.h"
+#include "MovingFloor.h"
+#include "TypeRegistry.h"
+#include "MTImGui.h"
 
 namespace mtgb
 {
-	// ImGui•\¦ˆ—‚ğ“o˜^
+	// ImGuiè¡¨ç¤ºå‡¦ç†ã‚’ç™»éŒ²
 	struct MovingFloor_Register
 	{
 		MovingFloor_Register()
 		{
-			RegisterShowFuncHolder::Set<MovingFloor>([]( MovingFloor* _target, const char* _name)
-				{
-				});
+			RegisterShowFuncHolder::Set<MovingFloor>([](MovingFloor* _target, const char* _name) {});
 			MTImGui::Instance().RegisterComponentViewer<MovingFloor>();
 		}
 	};
 
 	static MovingFloor_Register movingfloor_register;
-}
+} // namespace mtgb

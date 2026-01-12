@@ -8,42 +8,44 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ƒRƒ“ƒ|[ƒlƒ“ƒg’Ç‰ÁƒRƒ}ƒ“ƒh
+	/// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆè¿½åŠ ã‚³ãƒãƒ³ãƒ‰
 	/// </summary>
 	class AddComponentCommand : public Command
 	{
-	public:
+	  public:
 		/// <summary>
-		/// ƒRƒ“ƒ|[ƒlƒ“ƒg’Ç‰ÁƒRƒ}ƒ“ƒh
+		/// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆè¿½åŠ ã‚³ãƒãƒ³ãƒ‰
 		/// </summary>
-		/// <param name="_entityId">ƒGƒ“ƒeƒBƒeƒB‚ÌID</param>
-		/// <param name="_typeIdx">ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌŒ^î•ñ</param>
-		/// <param name="_memento"> null‚Ìê‡‚Í_entityId‚©‚çŠù‘¶‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾A‚È‚¯‚ê‚ÎV‹Kì¬‚µMemento‚É•Û‘¶‚·‚é</param>
-		/// <param name="_pComponentFactory"> QÆ‚Æ‚µ‚Ä•Û‚·‚é‚Ì‚ÅAƒRƒ}ƒ“ƒh‚æ‚è’·‚­¶‘¶‚·‚é•K—v‚ ‚è </param>
+		/// <param name="_entityId">ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã®ID</param>
+		/// <param name="_typeIdx">ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å‹æƒ…å ±</param>
+		/// <param name="_memento">
+		/// nullã®å ´åˆã¯_entityIdã‹ã‚‰æ—¢å­˜ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—ã€ãªã‘ã‚Œã°æ–°è¦ä½œæˆã—Mementoã«ä¿å­˜ã™ã‚‹</param> <param
+		/// name="_pComponentFactory"> å‚ç…§ã¨ã—ã¦ä¿æŒã™ã‚‹ã®ã§ã€ã‚³ãƒãƒ³ãƒ‰ã‚ˆã‚Šé•·ãç”Ÿå­˜ã™ã‚‹å¿…è¦ã‚ã‚Š </param>
 		AddComponentCommand(
 			EntityId _entityId,
 			const std::type_index& _typeIdx,
 			IComponentMemento* _memento,
-			const ComponentFactory& _pComponentFactory);
+			const ComponentFactory& _pComponentFactory
+		);
 		~AddComponentCommand() = default;
 		void Execute() override;
 		void Undo() override;
-		
+
 		std::string Name() const override;
 		EntityId GetCommandTargetEntityId() const override;
-	private:
+
+	  private:
 		EntityId entityId_;
 		size_t componentPoolIndex_;
 		std::type_index componentType_;
 		IComponentMemento* memento_;
 
-		// ComponentFactory‚ªnull‚Å‚ ‚é‚±‚Æ‚ğ‹–—e‚µ‚È‚¢
+		// ComponentFactoryãŒnullã§ã‚ã‚‹ã“ã¨ã‚’è¨±å®¹ã—ãªã„
 		const ComponentFactory& componentFactory_;
 
-		
 		void ApplyMemento();
 		void RemoveComponent() const;
 
-		// Command ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
+		// Command ã‚’ä»‹ã—ã¦ç¶™æ‰¿ã•ã‚Œã¾ã—ãŸ
 	};
-}
+} // namespace mtgb

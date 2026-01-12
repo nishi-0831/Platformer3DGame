@@ -13,26 +13,28 @@
 namespace mtgb
 {
 	/// <summary>
-	/// Œp³‚µ‚ÄShowImGui‚ğƒI[ƒoƒ‰ƒCƒh‚µ‚Äg‚¤
-	/// ‚±‚ê‚ğg‚í‚È‚­‚Ä‚àImGui•\¦‚Í‚Å‚«‚é‚Ì‚ÅA•Ê‚Ì‰ÓŠ‚É•ª—£‚µ‚½‚¢‚Æ‚«‚È‚Ç‚É‚Ç‚¤‚¼
+	/// ç¶™æ‰¿ã—ã¦ShowImGuiã‚’ã‚ªãƒ¼ãƒãƒ©ã‚¤ãƒ‰ã—ã¦ä½¿ã†
+	/// ã“ã‚Œã‚’ä½¿ã‚ãªãã¦ã‚‚ImGuiè¡¨ç¤ºã¯ã§ãã‚‹ã®ã§ã€åˆ¥ã®ç®‡æ‰€ã«åˆ†é›¢ã—ãŸã„ã¨ããªã©ã«ã©ã†ã
 	/// </summary>
 	class ImGuiShowable
 	{
 		friend class MTImGui;
-	public:
+
+	  public:
 		ImGuiShowable(EntityId _entityId = INVALID_ENTITY);
 		ImGuiShowable(ShowType _showType, EntityId _entityId = INVALID_ENTITY);
-		ImGuiShowable(const std::string& _name,ShowType _showType, EntityId _entityId = INVALID_ENTITY);
+		ImGuiShowable(const std::string& _name, ShowType _showType, EntityId _entityId = INVALID_ENTITY);
 		virtual ~ImGuiShowable();
 
 		/// <summary>
-		/// w’è‚µ‚½•\¦ƒLƒ…[‚ÉÏ‚Ü‚ê‚é
+		/// æŒ‡å®šã—ãŸè¡¨ç¤ºã‚­ãƒ¥ãƒ¼ã«ç©ã¾ã‚Œã‚‹
 		/// </summary>
 		virtual void ShowImGui();
-	protected:
-		EntityId targetEntityId_; // Entity‚Ìê‡‚ÍId‚ğ“n‚·‚±‚Æ
-		std::string displayName_; // •\¦‚³‚ê‚éÛ‚Ì–¼‘O
-		ShowType show_; // •\¦‚µ‚½‚¢ImGuiWindow
+
+	  protected:
+		EntityId targetEntityId_; // Entityã®å ´åˆã¯Idã‚’æ¸¡ã™ã“ã¨
+		std::string displayName_; // è¡¨ç¤ºã•ã‚Œã‚‹éš›ã®åå‰
+		ShowType show_;			  // è¡¨ç¤ºã—ãŸã„ImGuiWindow
 	};
-	
-}
+
+} // namespace mtgb

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "ResultScene.h"
-//#include "../Source/ScoreViewer.h"
+// #include "../Source/ScoreViewer.h"
 #include "../Source/Camera.h"
 #include "../Source/TitleScene.h"
 #include "../Source/StageManager.h"
@@ -8,9 +8,9 @@ namespace
 {
 	// 118,90 , 565,100
 	ImageHandle hImage;
-	RectF draw{118,90,565,100};
-	UIParams params{ .depth = 0,.layerFlag = AllLayer() };
-}
+	RectF draw{118, 90, 565, 100};
+	UIParams params{.depth = 0, .layerFlag = AllLayer()};
+} // namespace
 ResultScene::ResultScene()
 {
 }
@@ -21,32 +21,28 @@ ResultScene::~ResultScene()
 
 void ResultScene::Initialize()
 {
-	// ƒGƒfƒBƒ^[‚ÌƒJƒƒ‰‚ğì¬
+	// ã‚¨ãƒ‡ã‚£ã‚¿ãƒ¼ã®ã‚«ãƒ¡ãƒ©ã‚’ä½œæˆ
 	Game::System<ImGuiEditorCamera>().CreateCamera();
 
-	// ƒV[ƒ“‚ÌƒJƒƒ‰‚ğ¶¬
-	GameObject* pCamera = new GameObject(
-		GameObjectBuilder()
-		.SetPosition({ 0,0,0 })
-		.SetName("SceneCamera")
-		.Build());
+	// ã‚·ãƒ¼ãƒ³ã®ã‚«ãƒ¡ãƒ©ã‚’ç”Ÿæˆ
+	GameObject* pCamera = new GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName("SceneCamera").Build());
 
-	// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğŠÇ—ƒNƒ‰ƒX‚É“o˜^
+	// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç®¡ç†ã‚¯ãƒ©ã‚¹ã«ç™»éŒ²
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 
-	// ƒXƒRƒA‚ğ•\¦
-	RectF rect{ 0,0,800,600 };
-	int fontSize{ 36 };
-	//Instantiate<ScoreViewer>(rect, fontSize,TextAlignment::center);
+	// ã‚¹ã‚³ã‚¢ã‚’è¡¨ç¤º
+	RectF rect{0, 0, 800, 600};
+	int fontSize{36};
+	// Instantiate<ScoreViewer>(rect, fontSize,TextAlignment::center);
 
-	// ƒJƒƒ‰‚ğŠÇ—ƒNƒ‰ƒX‚É“o˜^
+	// ã‚«ãƒ¡ãƒ©ã‚’ç®¡ç†ã‚¯ãƒ©ã‚¹ã«ç™»éŒ²
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
 
-	// ƒXƒe[ƒW‚ğƒNƒŠƒA‚µ‚Ä‚¢‚é‚©”»’è
+	// ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’ã‚¯ãƒªã‚¢ã—ã¦ã„ã‚‹ã‹åˆ¤å®š
 	bool clearedStage = Game::System<StageManger>().IsClearedCurrentStage();
-	
-	// ƒNƒŠƒA‚µ‚Ä‚¢‚é‚©‚É‚æ‚Á‚Ä•\¦‚·‚é‰æ‘œ‚ğ•Ï‚¦‚é
+
+	// ã‚¯ãƒªã‚¢ã—ã¦ã„ã‚‹ã‹ã«ã‚ˆã£ã¦è¡¨ç¤ºã™ã‚‹ç”»åƒã‚’å¤‰ãˆã‚‹
 	if (clearedStage)
 	{
 		hImage = Image::Load("Image/ClearImage.png");

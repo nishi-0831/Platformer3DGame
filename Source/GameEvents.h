@@ -13,7 +13,6 @@ struct PlayerHpReachedZeroEvent
 
 struct PlayerReachedGoalEvent
 {
-
 };
 
 struct PlayerCollideRespawnPointEvent

@@ -14,14 +14,19 @@ namespace mtgb
 {
 	class DeleteGameObjectCommand : public Command
 	{
-	public:
-		DeleteGameObjectCommand(GameObject* pGameObj,const GameObjectFactory& _gameObjectFactory, const ComponentFactory& _componentFactory);
-		// Command ÇâÓÇµÇƒåpè≥Ç≥ÇÍÇ‹ÇµÇΩ
+	  public:
+		DeleteGameObjectCommand(
+			GameObject* pGameObj,
+			const GameObjectFactory& _gameObjectFactory,
+			const ComponentFactory& _componentFactory
+		);
+		// Command „Çí‰ªã„Åó„Å¶Á∂ôÊâø„Åï„Çå„Åæ„Åó„Åü
 		void Execute() override;
 		void Undo() override;
 		std::string Name() const override;
 		mtgb::EntityId GetCommandTargetEntityId() const override;
-	private:
+
+	  private:
 		const ComponentFactory& componentFactory_;
 		const GameObjectFactory& gameObjectFactory_;
 		EntityId targetEntityId_;
@@ -32,6 +37,5 @@ namespace mtgb
 
 		std::string typeName_;
 		std::vector<IComponentMemento*> mementos_;
-
 	};
-}
+} // namespace mtgb

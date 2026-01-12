@@ -8,7 +8,6 @@
 #include "JoystickProxy.h"
 #include <limits>
 
-
 namespace
 {
 
@@ -19,7 +18,8 @@ const bool mtgb::InputUtil::GetKey(const KeyCode _keyCode, WindowContext _contex
 {
 	if (_context == WindowContext::Both)
 	{
-		return GetInput(WindowContext::First).keyStateCurrent_[Index(_keyCode)] || GetInput(WindowContext::Second).keyStateCurrent_[Index(_keyCode)];
+		return GetInput(WindowContext::First).keyStateCurrent_[Index(_keyCode)] ||
+			   GetInput(WindowContext::Second).keyStateCurrent_[Index(_keyCode)];
 	}
 
 	return GetInput(_context).keyStateCurrent_[Index(_keyCode)];
@@ -29,30 +29,48 @@ const bool mtgb::InputUtil::GetKeyDown(const KeyCode _keyCode, WindowContext _co
 {
 	if (_context == WindowContext::Both)
 	{
-		const InputData& inputFirstWnd = GetInput(WindowContext::First);
+		const InputData& inputFirstWnd	= GetInput(WindowContext::First);
 		const InputData& inputSecondWnd = GetInput(WindowContext::Second);
 
-		return static_cast<bool>(KeyXOR(_keyCode, inputFirstWnd.keyStateCurrent_, inputFirstWnd.keyStatePrevious_) & static_cast<int>(inputFirstWnd.keyStateCurrent_[Index(_keyCode)]))
-			|| static_cast<bool>(KeyXOR(_keyCode, inputSecondWnd.keyStateCurrent_, inputSecondWnd.keyStatePrevious_) & static_cast<int>(inputSecondWnd.keyStateCurrent_[Index(_keyCode)]));
+		return static_cast<bool>(
+				   KeyXOR(_keyCode, inputFirstWnd.keyStateCurrent_, inputFirstWnd.keyStatePrevious_) &
+				   static_cast<int>(inputFirstWnd.keyStateCurrent_[Index(_keyCode)])
+			   ) ||
+			   static_cast<bool>(
+				   KeyXOR(_keyCode, inputSecondWnd.keyStateCurrent_, inputSecondWnd.keyStatePrevious_) &
+				   static_cast<int>(inputSecondWnd.keyStateCurrent_[Index(_keyCode)])
+			   );
 	}
 
 	const InputData& input = GetInput(_context);
-	return static_cast<bool>(KeyXOR(_keyCode, input.keyStateCurrent_, input.keyStatePrevious_) & static_cast<int>(input.keyStateCurrent_[Index(_keyCode)]));
+	return static_cast<bool>(
+		KeyXOR(_keyCode, input.keyStateCurrent_, input.keyStatePrevious_) &
+		static_cast<int>(input.keyStateCurrent_[Index(_keyCode)])
+	);
 }
 
 const bool mtgb::InputUtil::GetKeyUp(const KeyCode _keyCode, WindowContext _context)
 {
 	if (_context == WindowContext::Both)
 	{
-		const InputData& inputFirstWnd = GetInput(WindowContext::First);
+		const InputData& inputFirstWnd	= GetInput(WindowContext::First);
 		const InputData& inputSecondWnd = GetInput(WindowContext::Second);
 
-		return static_cast<bool>(KeyXOR(_keyCode, inputFirstWnd.keyStateCurrent_, inputFirstWnd.keyStatePrevious_) & static_cast<int>(inputFirstWnd.keyStatePrevious_[Index(_keyCode)]))
-			|| static_cast<bool>(KeyXOR(_keyCode, inputSecondWnd.keyStateCurrent_, inputSecondWnd.keyStatePrevious_) & static_cast<int>(inputSecondWnd.keyStatePrevious_[Index(_keyCode)]));
+		return static_cast<bool>(
+				   KeyXOR(_keyCode, inputFirstWnd.keyStateCurrent_, inputFirstWnd.keyStatePrevious_) &
+				   static_cast<int>(inputFirstWnd.keyStatePrevious_[Index(_keyCode)])
+			   ) ||
+			   static_cast<bool>(
+				   KeyXOR(_keyCode, inputSecondWnd.keyStateCurrent_, inputSecondWnd.keyStatePrevious_) &
+				   static_cast<int>(inputSecondWnd.keyStatePrevious_[Index(_keyCode)])
+			   );
 	}
 
 	const InputData& input = GetInput(_context);
-	int result{ KeyXOR(_keyCode, input.keyStateCurrent_, input.keyStatePrevious_) & static_cast<int>(input.keyStatePrevious_[Index(_keyCode)]) };
+	int result{
+		KeyXOR(_keyCode, input.keyStateCurrent_, input.keyStatePrevious_) &
+		static_cast<int>(input.keyStatePrevious_[Index(_keyCode)])
+	};
 	return static_cast<bool>(result);
 }
 
@@ -72,7 +90,10 @@ const bool mtgb::InputUtil::GetMouseDown(const MouseCode _mouseCode, WindowConte
 		return GetMouseDown(_mouseCode, WindowContext::First) || GetMouseDown(_mouseCode, WindowContext::Second);
 	}
 	const InputData& input = GetInput(_context);
-	return static_cast<bool>(MouseXOR(_mouseCode, input.mouseStateCurrent_, input.mouseStatePrevious_) & static_cast<int>(input.mouseStateCurrent_.rgbButtons[Index(_mouseCode)]));
+	return static_cast<bool>(
+		MouseXOR(_mouseCode, input.mouseStateCurrent_, input.mouseStatePrevious_) &
+		static_cast<int>(input.mouseStateCurrent_.rgbButtons[Index(_mouseCode)])
+	);
 }
 
 const bool mtgb::InputUtil::GetMouseUp(const MouseCode _mouseCode, WindowContext _context)
@@ -83,7 +104,10 @@ const bool mtgb::InputUtil::GetMouseUp(const MouseCode _mouseCode, WindowContext
 	}
 
 	const InputData& input = GetInput(_context);
-	return static_cast<bool>(MouseXOR(_mouseCode, input.mouseStateCurrent_, input.mouseStatePrevious_) & static_cast<int>(input.mouseStatePrevious_.rgbButtons[Index(_mouseCode)]));
+	return static_cast<bool>(
+		MouseXOR(_mouseCode, input.mouseStateCurrent_, input.mouseStatePrevious_) &
+		static_cast<int>(input.mouseStatePrevious_.rgbButtons[Index(_mouseCode)])
+	);
 }
 
 const bool mtgb::InputUtil::GetGamePad(const PadCode _padButtonCode, WindowContext _context)
@@ -113,7 +137,7 @@ const bool mtgb::InputUtil::GetGamePadDown(const FlightStickCode _flightStickCod
 
 const bool mtgb::InputUtil::GetGamePadUp(const FlightStickCode _flightStickCode, WindowContext _context)
 {
-	return  GetGamePadUpImpl(Index(_flightStickCode), _context);
+	return GetGamePadUpImpl(Index(_flightStickCode), _context);
 }
 
 const mtgb::InputData& mtgb::InputUtil::GetInput(WindowContext _context)
@@ -142,8 +166,8 @@ bool mtgb::InputUtil::GetGamePadUpImpl(size_t _index, WindowContext _context)
 	}
 
 	const InputData& input = GetInput(_context);
-	int XOR = input.joyStateCurrent_.rgbButtons[_index] ^ input.joyStatePrevious_.rgbButtons[_index];
-	int prev = input.joyStatePrevious_.rgbButtons[_index];
+	int XOR				   = input.joyStateCurrent_.rgbButtons[_index] ^ input.joyStatePrevious_.rgbButtons[_index];
+	int prev			   = input.joyStatePrevious_.rgbButtons[_index];
 	return static_cast<bool>(XOR & prev);
 }
 
@@ -155,22 +179,20 @@ bool mtgb::InputUtil::GetGamePadDownImpl(size_t _index, WindowContext _context)
 	}
 
 	const InputData& input = GetInput(_context);
-	int XOR = input.joyStateCurrent_.rgbButtons[_index] ^ input.joyStatePrevious_.rgbButtons[_index];
-	int curr = input.joyStateCurrent_.rgbButtons[_index];
+	int XOR				   = input.joyStateCurrent_.rgbButtons[_index] ^ input.joyStatePrevious_.rgbButtons[_index];
+	int curr			   = input.joyStateCurrent_.rgbButtons[_index];
 	return static_cast<bool>(XOR & curr);
 }
-
-
-
-
 
 const float mtgb::InputUtil::GetTrigger(FlightStickAxisCode _flightStickCode, WindowContext _context)
 {
 	const InputData& input = GetInput(_context);
 	switch (_flightStickCode)
 	{
-	case FlightStickAxisCode::Slider: return static_cast<float>(input.joyStateCurrent_.rglSlider[0]) / JOY_AXIS_MAX;
-	default: return 0.0f;
+	case FlightStickAxisCode::Slider :
+		return static_cast<float>(input.joyStateCurrent_.rglSlider[0]) / JOY_AXIS_MAX;
+	default :
+		return 0.0f;
 	}
 }
 
@@ -180,20 +202,22 @@ const float mtgb::InputUtil::GetTrigger(PadAxisCode _padCode, WindowContext _con
 
 	switch (_padCode)
 	{
-	case PadAxisCode::LeftTrigger: return static_cast<float>(input.joyStateCurrent_.lRy) / JOY_AXIS_MAX;
-	case PadAxisCode::RightTrigger: return static_cast<float>(input.joyStateCurrent_.lRx) / JOY_AXIS_MAX;
-	default: return 0.0f;
+	case PadAxisCode::LeftTrigger :
+		return static_cast<float>(input.joyStateCurrent_.lRy) / JOY_AXIS_MAX;
+	case PadAxisCode::RightTrigger :
+		return static_cast<float>(input.joyStateCurrent_.lRx) / JOY_AXIS_MAX;
+	default :
+		return 0.0f;
 	}
-	
 }
 
-const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType,WindowContext _context)
+const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType, WindowContext _context)
 {
 	const InputData& input = GetInput(_context);
-	float value = 0.0f;
+	float value			   = 0.0f;
 	switch (_axis)
 	{
-	case Axis::X:
+	case Axis::X :
 		if (_stickType == StickType::LEFT)
 		{
 			value = static_cast<float>(input.joyStateCurrent_.lX);
@@ -213,10 +237,10 @@ const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType,WindowCont
 				value = static_cast<float>(input.joyStateCurrent_.lZ);
 			}
 		}
-		value /= input.config_.xRange; 
+		value /= input.config_.xRange;
 		break;
 
-	case Axis::Y:
+	case Axis::Y :
 		if (_stickType == StickType::LEFT)
 		{
 			value = static_cast<float>(input.joyStateCurrent_.lY);
@@ -238,16 +262,16 @@ const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType,WindowCont
 		}
 		value /= input.config_.yRange;
 		break;
-	default: return 0.0f;
+	default :
+		return 0.0f;
 	}
 	return input.config_.ApplyDeadZone(value);
 }
 
-const mtgb::Vector2F mtgb::InputUtil::GetAxis(StickType _stickType,WindowContext _context)
+const mtgb::Vector2F mtgb::InputUtil::GetAxis(StickType _stickType, WindowContext _context)
 {
 	const InputData& input = GetInput(_context);
-	return Vector2F{ 
-		GetAxis(Axis::X,_stickType,_context),GetAxis(Axis::Y,_stickType,_context)};
+	return Vector2F{GetAxis(Axis::X, _stickType, _context), GetAxis(Axis::Y, _stickType, _context)};
 }
 
 const mtgb::Vector2Int mtgb::InputUtil::GetMousePosition(WindowContext _context)
@@ -257,8 +281,7 @@ const mtgb::Vector2Int mtgb::InputUtil::GetMousePosition(WindowContext _context)
 
 const mtgb::Vector3 mtgb::InputUtil::GetMouseMove(WindowContext _context)
 {
-	return mtgb::Vector3
-	{
+	return mtgb::Vector3{
 		static_cast<float>(InputUtil::GetInput(_context).mouseStateCurrent_.lX),
 		static_cast<float>(InputUtil::GetInput(_context).mouseStateCurrent_.lY),
 		static_cast<float>(InputUtil::GetInput(_context).mouseStateCurrent_.lZ),

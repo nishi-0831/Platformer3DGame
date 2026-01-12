@@ -15,12 +15,12 @@
 #include "CommandHistoryManager.h"
 #include "MeshRenderer.h"
 mtgb::ImGuiEditor::ImGuiEditor()
-	: ImGuiShowable("ImGuiEditor",ShowType::Editor)
+	: ImGuiShowable("ImGuiEditor", ShowType::Editor)
 {
 	commandListener_ = [this](Command* _command)
-		{
-			Game::System<CommandHistoryManager>().ExecuteCommand(_command); 
-		};
+	{
+		Game::System<CommandHistoryManager>().ExecuteCommand(_command);
+	};
 	pManipulator_ = new ImGuizmoManipulator(commandListener_);
 
 	GameObjectGenerator::RegisterCommandListener(commandListener_);
@@ -65,17 +65,17 @@ void mtgb::ImGuiEditor::Update()
 		{
 			DuplicateGameObject();
 		}
-		if (InputUtil::GetKeyDown(KeyCode::Delete))
-		{
-			// ƒ}ƒjƒsƒ…ƒŒ[ƒ^‚ª‘I‘ð‚µ‚Ä‚¢‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ðŽæ“¾
-			GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
-		}
+	}
+	if (InputUtil::GetKeyDown(KeyCode::Delete))
+	{
+		// ãƒžãƒ‹ãƒ”ãƒ¥ãƒ¬ãƒ¼ã‚¿ãŒé¸æŠžã—ã¦ã„ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
+		GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
 	}
 }
 
 void mtgb::ImGuiEditor::ShowImGui()
 {
-	//Game::System<CommandHistoryManager>().DrawImGuiStack();
+	// Game::System<CommandHistoryManager>().DrawImGuiStack();
 	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
 	ShowGenerateGameObjectButton();
 }
@@ -83,22 +83,22 @@ void mtgb::ImGuiEditor::ShowImGui()
 void mtgb::ImGuiEditor::SaveMapData()
 {
 	TCHAR fileName[255] = "";
-	OPENFILENAME ofn = {0};
+	OPENFILENAME ofn	= {0};
 
 	ofn.lStructSize = sizeof(ofn);
 
-	ofn.hwndOwner = WinCtxRes::GetHWND(WindowContext::First);
-	ofn.lpstrFilter = "JSONƒtƒ@ƒCƒ‹(*.json)\0*.json";
-	ofn.lpstrFile = fileName;
-	ofn.nMaxFile = 255;
-	ofn.Flags = OFN_OVERWRITEPROMPT;
+	ofn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::First);
+	ofn.lpstrFilter = "JSONãƒ•ã‚¡ã‚¤ãƒ«(*.json)\0*.json";
+	ofn.lpstrFile	= fileName;
+	ofn.nMaxFile	= 255;
+	ofn.Flags		= OFN_OVERWRITEPROMPT;
 
 	if (GetSaveFileName(&ofn))
 	{
 		std::ofstream openFile(fileName);
 
 		nlohmann::json j = Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects();
-		int width = 4;
+		int width		 = 4;
 		openFile << std::setw(width) << j;
 
 		openFile.close();
@@ -110,13 +110,13 @@ void mtgb::ImGuiEditor::SaveMapData()
 void mtgb::ImGuiEditor::LoadMapData()
 {
 	TCHAR fileName[255] = "";
-	OPENFILENAME ifn = { 0 };
+	OPENFILENAME ifn	= {0};
 
 	ifn.lStructSize = sizeof(ifn);
-	ifn.hwndOwner = WinCtxRes::GetHWND(WindowContext::First);
-	ifn.lpstrFilter = "JSONƒtƒ@ƒCƒ‹(*.json)\0*.json";
-	ifn.lpstrFile = fileName;
-	ifn.nMaxFile = 255;
+	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::First);
+	ifn.lpstrFilter = "JSONãƒ•ã‚¡ã‚¤ãƒ«(*.json)\0*.json";
+	ifn.lpstrFile	= fileName;
+	ifn.nMaxFile	= 255;
 
 	if (GetOpenFileName(&ifn) == false)
 		return;
@@ -137,9 +137,9 @@ void mtgb::ImGuiEditor::LoadMapData()
 		assert(false && errMsg);
 	}
 	GameObjectGenerator::GenerateFromJson(json);
-	
-	// “Ç‚Ýž‚ÝŽžŠÔ‚Å’l‚ª‘å‚«‚­‚È‚Á‚½ƒfƒ‹ƒ^ƒ^ƒCƒ€‚ðˆÀ’è‚³‚¹‚é‚½‚ß‚É2ƒtƒŒ[ƒ€‘Ò‹@‚³‚¹‚é
-	// TODO: ƒ}ƒWƒbƒNƒiƒ“ƒo[‚ðC³
+
+	// èª­ã¿è¾¼ã¿æ™‚é–“ã§å€¤ãŒå¤§ãããªã£ãŸãƒ‡ãƒ«ã‚¿ã‚¿ã‚¤ãƒ ã‚’å®‰å®šã•ã›ã‚‹ãŸã‚ã«2ãƒ•ãƒ¬ãƒ¼ãƒ å¾…æ©Ÿã•ã›ã‚‹
+	// TODO: ãƒžã‚¸ãƒƒã‚¯ãƒŠãƒ³ãƒãƒ¼ã‚’ä¿®æ­£
 	Time::WaitFrame(2);
 }
 
@@ -154,13 +154,16 @@ void mtgb::ImGuiEditor::DuplicateGameObject()
 
 void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
 {
-	// ƒRƒ“ƒ|[ƒlƒ“ƒgì¬¬Œ÷
+	// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆæˆåŠŸ
 	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, Game::GetComponentFactory());
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 
 void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)
 {
+	ImGui::Text("%s", "AddComponent");
+	ImGui::Separator();
+
 	std::span<const std::type_index> registeredTypes = Game::GetComponentFactory().GetRegisteredTypes();
 
 	for (const auto& typeInfo : registeredTypes)
@@ -170,10 +173,13 @@ void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)
 			AddComponent(typeInfo, _entityId);
 		}
 	}
+	ImGui::Separator();
 }
 
 void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 {
+	ImGui::Text("%s", "GenerateGameObject");
+	ImGui::Separator();
 	std::vector<std::string> names = Game::System<GameObjectTypeRegistry>().GetRegisteredNames();
 	for (const std::string& name : names)
 	{
@@ -182,6 +188,5 @@ void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 			GameObjectGenerator::Generate(name);
 		}
 	}
+	ImGui::Separator();
 }
-
-

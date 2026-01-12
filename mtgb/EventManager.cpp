@@ -12,8 +12,10 @@ mtgb::EventManager::~EventManager()
 }
 void mtgb::EventManager::Initialize()
 {
-	Game::System<SceneSystem>().OnMove([this]()
+	Game::System<SceneSystem>().OnMove(
+		[this]()
 		{
 			ClearSceneSubscriptions();
-		});
+		}
+	);
 }

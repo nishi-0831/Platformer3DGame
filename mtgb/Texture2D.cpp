@@ -5,10 +5,10 @@
 #include "ReleaseUtility.h"
 #include "DirectX11Draw.h"
 
-mtgb::Texture2D::Texture2D() :
-	pSamplerLinear_{ nullptr },
-	pShaderResourceView_{ nullptr },
-	size_{ Vector2Int::Zero() }
+mtgb::Texture2D::Texture2D()
+	: pSamplerLinear_{nullptr}
+	, pShaderResourceView_{nullptr}
+	, size_{Vector2Int::Zero()}
 {
 }
 
@@ -22,86 +22,100 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 {
 	HRESULT hResult{};
 
-	// TODO: COM‚ğ³‚µ‚­—‰ğ‚·‚é
-	// MEMO: MTA‚É‘®‚·‚é‚æ‚¤‚É‚·‚é
+	// TODO: COMã‚’æ­£ã—ãç†è§£ã™ã‚‹
+	// MEMO: MTAã«å±ã™ã‚‹ã‚ˆã†ã«ã™ã‚‹
 	hResult = CoInitializeEx(NULL, COINIT_MULTITHREADED);
 
-	massert(SUCCEEDED(hResult)  // CoInitializeEx‚É¬Œ÷‚µ‚Ä‚¢‚é
-		&& "CoInitializeEx‚Å‚«‚È‚©‚Á‚½ @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // CoInitializeExã«æˆåŠŸã—ã¦ã„ã‚‹
+		&& "CoInitializeExã§ããªã‹ã£ãŸ @Texture2D::Load"
+	);
 
-	IWICImagingFactory* pFactory{ nullptr };
-	IWICBitmapDecoder* pDecoder{ nullptr };
-	IWICBitmapFrameDecode* pFrame{ nullptr };
-	IWICFormatConverter* pFormatConverter{ nullptr };
+	IWICImagingFactory* pFactory{nullptr};
+	IWICBitmapDecoder* pDecoder{nullptr};
+	IWICBitmapFrameDecode* pFrame{nullptr};
+	IWICFormatConverter* pFormatConverter{nullptr};
 
 	hResult = CoCreateInstance(
 		CLSID_WICImagingFactory,
 		NULL,
 		CLSCTX_INPROC_SERVER,
 		IID_IWICImagingFactory,
-		reinterpret_cast<void**>(&pFactory));
+		reinterpret_cast<void**>(&pFactory)
+	);
 
-	massert(SUCCEEDED(hResult)  // IWICImagingFactory‚Ìì¬‚É¬Œ÷
-		&& "CoCreateInstance‚É¸”s @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // IWICImagingFactoryã®ä½œæˆã«æˆåŠŸ
+		&& "CoCreateInstanceã«å¤±æ•— @Texture2D::Load"
+	);
 
-	// CreateDecoderFromFilename‚Å‘Î‰‚µ‚Ä‚¢‚é wchar ‚Ö•ÏŠ·
-	//std::wstring fileNameWStr{ _fileName.begin(), _fileName.end() };
+	// CreateDecoderFromFilenameã§å¯¾å¿œã—ã¦ã„ã‚‹ wchar ã¸å¤‰æ›
+	// std::wstring fileNameWStr{ _fileName.begin(), _fileName.end() };
 
-	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/wincodec/nf-wincodec-iwicimagingfactory-createdecoderfromfilename
+	//  REF:
+	//  https://learn.microsoft.com/ja-jp/windows/win32/api/wincodec/nf-wincodec-iwicimagingfactory-createdecoderfromfilename
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/wincodec/ne-wincodec-wicdecodeoptions
 	hResult = pFactory->CreateDecoderFromFilename(
-		_fileName.c_str(),  // ƒIƒuƒWƒFƒNƒg‚Ìƒtƒ@ƒCƒ‹–¼
-		nullptr,  // —Dæ‚µ‚½‚¢ƒxƒ“ƒ_: w’è–³‚µ
-		GENERIC_READ,  // ƒIƒuƒWƒFƒNƒg‚Ö“Ç‚İæ‚èƒAƒNƒZƒX
-		WICDecodeMetadataCacheOnDemand,  // •K—v‚É‰‚¶‚Äƒƒ^ƒf[ƒ^‚ğƒLƒƒƒbƒVƒ…‚·‚é
-		&pDecoder);  // ƒfƒR[ƒ_‚ğ“n‚·
+		_fileName.c_str(),				// ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ•ã‚¡ã‚¤ãƒ«å
+		nullptr,						// å„ªå…ˆã—ãŸã„ãƒ™ãƒ³ãƒ€: æŒ‡å®šç„¡ã—
+		GENERIC_READ,					// ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¸èª­ã¿å–ã‚Šã‚¢ã‚¯ã‚»ã‚¹
+		WICDecodeMetadataCacheOnDemand, // å¿…è¦ã«å¿œã˜ã¦ãƒ¡ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã™ã‚‹
+		&pDecoder
+	); // ãƒ‡ã‚³ãƒ¼ãƒ€ã‚’æ¸¡ã™
 
-	massert(SUCCEEDED(hResult)  // ƒtƒ@ƒCƒ‹‚ÌƒfƒR[ƒh‚É¬Œ÷
-		&& "pFactory->CreateDecoderFromFilename‚É¸”s @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ã‚³ãƒ¼ãƒ‰ã«æˆåŠŸ
+		&& "pFactory->CreateDecoderFromFilenameã«å¤±æ•— @Texture2D::Load"
+	);
 
-	// 0”ÔƒtƒŒ[ƒ€‚ğæ“¾
-	// MEMO: GIF‚Ì‚æ‚¤‚È•¡”ƒtƒŒ[ƒ€‚ ‚éê‡‚Éindex‚½‚­‚³‚ñw’è‚Å‚«‚é
+	// 0ç•ªãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å–å¾—
+	// MEMO: GIFã®ã‚ˆã†ãªè¤‡æ•°ãƒ•ãƒ¬ãƒ¼ãƒ ã‚ã‚‹å ´åˆã«indexãŸãã•ã‚“æŒ‡å®šã§ãã‚‹
 	hResult = pDecoder->GetFrame(0, &pFrame);
 
-	massert(SUCCEEDED(hResult)  // 0”ÔƒtƒŒ[ƒ€‚ğæ“¾‚Å‚«‚Ä‚¢‚é
-		&& "0”ÔƒtƒŒ[ƒ€‚Ìæ“¾‚É¸”s @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // 0ç•ªãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å–å¾—ã§ãã¦ã„ã‚‹
+		&& "0ç•ªãƒ•ãƒ¬ãƒ¼ãƒ ã®å–å¾—ã«å¤±æ•— @Texture2D::Load"
+	);
 
 	hResult = pFactory->CreateFormatConverter(&pFormatConverter);
 
-	massert(SUCCEEDED(hResult)  // ƒtƒH[ƒ}ƒbƒgƒRƒ“ƒo[ƒ^‚Ìì¬‚É¬Œ÷
-		&& "pFactory->CreateFormatConverter‚É¸”s @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚³ãƒ³ãƒãƒ¼ã‚¿ã®ä½œæˆã«æˆåŠŸ
+		&& "pFactory->CreateFormatConverterã«å¤±æ•— @Texture2D::Load"
+	);
 
-	// TODO: •ÏŠ·‚ÌƒfƒBƒU‚ğ—‰ğ‚·‚é
+	// TODO: å¤‰æ›ã®ãƒ‡ã‚£ã‚¶ã‚’ç†è§£ã™ã‚‹
 	hResult = pFormatConverter->Initialize(
-		pFrame,  // •ÏŠ·‚µ‚½‚¢‚â‚Â
-		GUID_WICPixelFormat32bppRGBA,  // •ÏŠ·æ‚ÌƒsƒNƒZƒ‹Œ`®
-		WICBitmapDitherTypeNone,  // g—pƒfƒBƒU(?)ƒAƒ‹ƒSƒŠƒYƒ€
-		nullptr,  // g—pƒpƒŒƒbƒg
-		1.0,  // g—pƒAƒtƒ@è‡’l
-		WICBitmapPaletteTypeMedianCut);  // ’†‰›’lƒJƒbƒgƒAƒ‹ƒSƒŠƒYƒ€(?)
+		pFrame,						  // å¤‰æ›ã—ãŸã„ã‚„ã¤
+		GUID_WICPixelFormat32bppRGBA, // å¤‰æ›å…ˆã®ãƒ”ã‚¯ã‚»ãƒ«å½¢å¼
+		WICBitmapDitherTypeNone,	  // ä½¿ç”¨ãƒ‡ã‚£ã‚¶(?)ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ 
+		nullptr,					  // ä½¿ç”¨ãƒ‘ãƒ¬ãƒƒãƒˆ
+		1.0,						  // ä½¿ç”¨ã‚¢ãƒ•ã‚¡é–¾å€¤
+		WICBitmapPaletteTypeMedianCut
+	); // ä¸­å¤®å€¤ã‚«ãƒƒãƒˆã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ (?)
 
-	massert(SUCCEEDED(hResult)  // ƒtƒH[ƒ}ƒbƒgƒRƒ“ƒo[ƒ^‚Ì‰Šú‰»‚É¬Œ÷‚µ‚Ä‚¢‚é
-		&& "ƒtƒH[ƒ}ƒbƒgƒRƒ“ƒo[ƒ^‚Ì‰Šú‰»‚É¸”s @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚³ãƒ³ãƒãƒ¼ã‚¿ã®åˆæœŸåŒ–ã«æˆåŠŸã—ã¦ã„ã‚‹
+		&& "ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚³ãƒ³ãƒãƒ¼ã‚¿ã®åˆæœŸåŒ–ã«å¤±æ•— @Texture2D::Load"
+	);
 
-	UINT imageWidth{};   // ‰æ‘œ‚Ì‰¡•
-	UINT imageHeight{};  // ‰æ‘œ‚Ìc•
+	UINT imageWidth{};	// ç”»åƒã®æ¨ªå¹…
+	UINT imageHeight{}; // ç”»åƒã®ç¸¦å¹…
 	hResult = pFormatConverter->GetSize(&imageWidth, &imageHeight);
 
-	massert(SUCCEEDED(hResult)  // ‰æ‘œƒTƒCƒY‚Ìæ“¾‚É¬Œ÷‚µ‚Ä‚¢‚é
-		&& "ƒtƒH[ƒ}ƒbƒgƒRƒ“ƒo[ƒ^‚©‚ç‰æ‘œƒTƒCƒY‚Ìæ“¾‚É¸”s @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // ç”»åƒã‚µã‚¤ã‚ºã®å–å¾—ã«æˆåŠŸã—ã¦ã„ã‚‹
+		&& "ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚³ãƒ³ãƒãƒ¼ã‚¿ã‹ã‚‰ç”»åƒã‚µã‚¤ã‚ºã®å–å¾—ã«å¤±æ•— @Texture2D::Load"
+	);
 
-	// ‰æ‘œ‚ÌƒTƒCƒY‚ğVector2Int‚É•ÏŠ·‚µ‚Äƒƒ“ƒo•Ï”‚É“ü‚ê‚Ä‚¨‚­
-	size_ = Vector2Int{ static_cast<int>(imageWidth), static_cast<int>(imageHeight) };
+	// ç”»åƒã®ã‚µã‚¤ã‚ºã‚’Vector2Intã«å¤‰æ›ã—ã¦ãƒ¡ãƒ³ãƒå¤‰æ•°ã«å…¥ã‚Œã¦ãŠã
+	size_ = Vector2Int{static_cast<int>(imageWidth), static_cast<int>(imageHeight)};
 
-	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ğˆê“I‚É•Û‘¶‚·‚éƒoƒbƒtƒ@‚ğ—pˆÓ
+	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚’ä¸€æ™‚çš„ã«ä¿å­˜ã™ã‚‹ãƒãƒƒãƒ•ã‚¡ã‚’ç”¨æ„
 	std::vector<BYTE> pixelData(imageWidth * imageHeight * 4);
 	UINT stride = imageWidth * 4;
 
-	hResult = pFormatConverter->CopyPixels(
-		nullptr,
-		stride,
-		static_cast<UINT>(pixelData.size()),
-		pixelData.data());
+	hResult = pFormatConverter->CopyPixels(nullptr, stride, static_cast<UINT>(pixelData.size()), pixelData.data());
 
 	/*hResult = pFormatConverter->CopyPixels(
 		nullptr,
@@ -109,117 +123,113 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 		imageHeight * hMappedSubresource.RowPitch,
 		static_cast<BYTE*>(hMappedSubresource.pData));*/
 
-	massert(SUCCEEDED(hResult)
-		&& "ƒeƒNƒXƒ`ƒƒ‚ÌƒsƒNƒZƒ‹ƒRƒs[‚É¸”s @Texture2D::Load");
+	massert(SUCCEEDED(hResult) && "ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒ”ã‚¯ã‚»ãƒ«ã‚³ãƒ”ãƒ¼ã«å¤±æ•— @Texture2D::Load");
 
-	// ƒ~ƒbƒvƒ}ƒbƒvƒŒƒxƒ‹‚ğŒvZ
+	// ãƒŸãƒƒãƒ—ãƒãƒƒãƒ—ãƒ¬ãƒ™ãƒ«ã‚’è¨ˆç®—
 	int mipLevels = static_cast<int>(std::floor(std::log2((std::max)(imageWidth, imageHeight)))) + 1;
 
-	ID3D11Texture2D* pTexture{ nullptr };
+	ID3D11Texture2D* pTexture{nullptr};
 
-	const D3D11_TEXTURE2D_DESC TEXTURE2D_DESC  // ƒeƒNƒXƒ`ƒƒ‚Ìİ’è
-	{
-		.Width = static_cast<UINT>(size_.x),
-		.Height = static_cast<UINT>(size_.y),
-		.MipLevels = static_cast<UINT>(mipLevels),
-		.ArraySize = 1,
-		.Format = DXGI_FORMAT_R8G8B8A8_UNORM,
-		.SampleDesc
+	const D3D11_TEXTURE2D_DESC TEXTURE2D_DESC // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®è¨­å®š
 		{
-			.Count = 1,
-			.Quality = 0
-		},
-		.Usage = D3D11_USAGE_DEFAULT,
-		//.Usage = D3D11_USAGE_DYNAMIC,
-		.BindFlags = D3D11_BIND_SHADER_RESOURCE | D3D11_BIND_RENDER_TARGET,
-		//.BindFlags = D3D11_BIND_SHADER_RESOURCE,
-		.CPUAccessFlags = 0,
-		//.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE,
-		.MiscFlags = D3D11_RESOURCE_MISC_GENERATE_MIPS,
-		//.MiscFlags = 0,
-	};
+			.Width	   = static_cast<UINT>(size_.x),
+			.Height	   = static_cast<UINT>(size_.y),
+			.MipLevels = static_cast<UINT>(mipLevels),
+			.ArraySize = 1,
+			.Format	   = DXGI_FORMAT_R8G8B8A8_UNORM,
+			.SampleDesc{.Count = 1, .Quality = 0},
+			.Usage = D3D11_USAGE_DEFAULT,
+			//.Usage = D3D11_USAGE_DYNAMIC,
+			.BindFlags = D3D11_BIND_SHADER_RESOURCE | D3D11_BIND_RENDER_TARGET,
+			//.BindFlags = D3D11_BIND_SHADER_RESOURCE,
+			.CPUAccessFlags = 0,
+			//.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE,
+			.MiscFlags = D3D11_RESOURCE_MISC_GENERATE_MIPS,
+			//.MiscFlags = 0,
+		};
 
-	// 2DƒeƒNƒXƒ`ƒƒ‚ğì¬‚·‚é
+	// 2Dãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’ä½œæˆã™ã‚‹
 	hResult = DirectX11Draw::pDevice_->CreateTexture2D(
-		&TEXTURE2D_DESC,  // ƒeƒNƒXƒ`ƒƒ‚Ìİ’è
-		nullptr,         // ƒTƒuƒŠƒ\[ƒX‚Ìƒ|ƒCƒ“ƒ^
-		&pTexture);      // ì¬‚µ‚½ƒeƒNƒXƒ`ƒƒ‚Ìƒ|ƒCƒ“ƒ^“n‚µ
+		&TEXTURE2D_DESC, // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®è¨­å®š
+		nullptr,		 // ã‚µãƒ–ãƒªã‚½ãƒ¼ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿
+		&pTexture
+	); // ä½œæˆã—ãŸãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—
 
-	massert(SUCCEEDED(hResult)  //2DƒeƒNƒXƒ`ƒƒ‚Ìì¬‚É¬Œ÷
-		&& "2DƒeƒNƒXƒ`ƒƒ‚Ìì¬‚É¸”s @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // 2Dãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ä½œæˆã«æˆåŠŸ
+		&& "2Dãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ä½œæˆã«å¤±æ•— @Texture2D::Load"
+	);
 
 	D3D11_MAPPED_SUBRESOURCE hMappedSubresource{};
 
-	//// ƒeƒNƒXƒ`ƒƒ‚ğƒ}ƒbƒv(“o˜^)‚·‚é
-	//hResult = DirectX11Draw::pContext_->Map(
+	//// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’ãƒãƒƒãƒ—(ç™»éŒ²)ã™ã‚‹
+	// hResult = DirectX11Draw::pContext_->Map(
 	//	pTexture,
 	//	0U,
 	//	D3D11_MAP_WRITE_DISCARD,
 	//	0U,
 	//	&hMappedSubresource);
 
-	//massert(SUCCEEDED(hResult)  // ƒeƒNƒXƒ`ƒƒ‚Ìƒ}ƒbƒv‚É¬Œ÷
-	//	&& "ƒeƒNƒXƒ`ƒƒ‚Ìƒ}ƒbƒv‚É¸”s @Texture2D::Load");
-
-	
+	// massert(SUCCEEDED(hResult)  // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒãƒƒãƒ—ã«æˆåŠŸ
+	//	&& "ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒãƒƒãƒ—ã«å¤±æ•— @Texture2D::Load");
 
 	/*DirectX11Draw::pContext_->Unmap(pTexture, 0U);*/
 
-	const D3D11_SHADER_RESOURCE_VIEW_DESC SHADER_RESOURCE_VIEW_DESC
-	{
-		.Format = DXGI_FORMAT_R8G8B8A8_UNORM,
+	const D3D11_SHADER_RESOURCE_VIEW_DESC SHADER_RESOURCE_VIEW_DESC{
+		.Format		   = DXGI_FORMAT_R8G8B8A8_UNORM,
 		.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D,
-		.Texture2D
-		{
+		.Texture2D{
 			.MostDetailedMip = 0U,
-			.MipLevels = static_cast<UINT>(mipLevels),
+			.MipLevels		 = static_cast<UINT>(mipLevels),
 		}
 	};
 
 	hResult = DirectX11Draw::pDevice_->CreateShaderResourceView(
 		pTexture,
 		&SHADER_RESOURCE_VIEW_DESC,
-		pShaderResourceView_.ReleaseAndGetAddressOf());
+		pShaderResourceView_.ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult)  // ƒeƒNƒXƒ`ƒƒ—pƒVƒF[ƒ_ƒŠƒ\[ƒXƒrƒ…[‚Ìì¬‚É¬Œ÷
-		&& "ƒeƒNƒXƒ`ƒƒ—pƒVƒF[ƒ_ƒŠƒ\[ƒXƒrƒ…[‚Ìì¬‚É¸”s  @Texture2D::Load");
+	massert(
+		SUCCEEDED(hResult) // ãƒ†ã‚¯ã‚¹ãƒãƒ£ç”¨ã‚·ã‚§ãƒ¼ãƒ€ãƒªã‚½ãƒ¼ã‚¹ãƒ“ãƒ¥ãƒ¼ã®ä½œæˆã«æˆåŠŸ
+		&& "ãƒ†ã‚¯ã‚¹ãƒãƒ£ç”¨ã‚·ã‚§ãƒ¼ãƒ€ãƒªã‚½ãƒ¼ã‚¹ãƒ“ãƒ¥ãƒ¼ã®ä½œæˆã«å¤±æ•—  @Texture2D::Load"
+	);
 
-	// CPU‘¤‚Ìƒf[ƒ^‚ğGPU‚Ö‘‚«‚Ş
+	// CPUå´ã®ãƒ‡ãƒ¼ã‚¿ã‚’GPUã¸æ›¸ãè¾¼ã‚€
 	DirectX11Draw::pContext_->UpdateSubresource(
-		pTexture,           // ƒŠƒ\[ƒX
-		0,                  // ƒTƒuƒŠƒ\[ƒXƒCƒ“ƒfƒbƒNƒXiÅ‚‰ğ‘œ“xƒ~ƒbƒvj
-		nullptr,            // XV”ÍˆÍi‘S‘Ìj
-		pixelData.data(),   // ƒsƒNƒZƒ‹ƒf[ƒ^
-		stride,             // sƒsƒbƒ`
-		0);
-	
-	// ƒ~ƒbƒvƒ}ƒbƒv‚ğ¶¬
+		pTexture,		  // ãƒªã‚½ãƒ¼ã‚¹
+		0,				  // ã‚µãƒ–ãƒªã‚½ãƒ¼ã‚¹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ï¼ˆæœ€é«˜è§£åƒåº¦ãƒŸãƒƒãƒ—ï¼‰
+		nullptr,		  // æ›´æ–°ç¯„å›²ï¼ˆå…¨ä½“ï¼‰
+		pixelData.data(), // ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿
+		stride,			  // è¡Œãƒ”ãƒƒãƒ
+		0
+	);
+
+	// ãƒŸãƒƒãƒ—ãƒãƒƒãƒ—ã‚’ç”Ÿæˆ
 	DirectX11Draw::pContext_->GenerateMips(pShaderResourceView_.Get());
 
-	// ƒTƒ“ƒvƒ‰[ƒXƒe[ƒg‚Ìİ’è(ƒ~ƒbƒvƒ}ƒbƒv‘Î‰‚É)
-	const D3D11_SAMPLER_DESC SAMPLER_DESC  
-	{
-		// MEMO: ƒTƒ“ƒvƒŠƒ“ƒO‚·‚é‚Æ‚«‚ÌƒtƒBƒ‹ƒ^ (‚©‚È‚èí—Ş‘½‚¢)
-		//     : Unity‚ÌƒeƒNƒXƒ`ƒƒİ’è‚İ‚½‚¢‚ÈŠ´‚¶
+	// ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‚¹ãƒ†ãƒ¼ãƒˆã®è¨­å®š(ãƒŸãƒƒãƒ—ãƒãƒƒãƒ—å¯¾å¿œã«)
+	const D3D11_SAMPLER_DESC SAMPLER_DESC{
+		// MEMO: ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ã™ã‚‹ã¨ãã®ãƒ•ã‚£ãƒ«ã‚¿ (ã‹ãªã‚Šç¨®é¡å¤šã„)
+		//     : Unityã®ãƒ†ã‚¯ã‚¹ãƒãƒ£è¨­å®šã¿ãŸã„ãªæ„Ÿã˜
 		//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/d3d11/ne-d3d11-d3d11_filter
 		//.Filter = D3D11_FILTER_MIN_MAG_MIP_POINT,
-		.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR,
-		.AddressU = D3D11_TEXTURE_ADDRESS_WRAP,
-		.AddressV = D3D11_TEXTURE_ADDRESS_WRAP,
-		.AddressW = D3D11_TEXTURE_ADDRESS_WRAP,
-		.MipLODBias = 0.0f,  // ƒ~ƒbƒvƒ}ƒbƒv‚ÌLODƒIƒtƒZƒbƒg
-		.MaxAnisotropy = 0U,  // ˆÙ•û«ƒtƒBƒ‹ƒ^‚ğg‚Á‚½ê‡‚ÌƒNƒ‰ƒ“ƒv’l
-		.ComparisonFunc = D3D11_COMPARISON_ALWAYS,  // TOOD: D3D11_COMPARISON_FUNC‚É‚Â‚¢‚Ä—‰ğ‚·‚é
-		.BorderColor = {},  // ƒ{[ƒ_‚ÌF
-		.MinLOD = {},  // LODƒ~ƒbƒvƒ}ƒbƒv‚ÌÅ¬ƒŒƒxƒ‹
-		.MaxLOD = D3D11_FLOAT32_MAX,  // LODƒ~ƒbƒvƒ}ƒbƒv‚ÌÅ‘åƒŒƒxƒ‹
+		.Filter			= D3D11_FILTER_MIN_MAG_MIP_LINEAR,
+		.AddressU		= D3D11_TEXTURE_ADDRESS_WRAP,
+		.AddressV		= D3D11_TEXTURE_ADDRESS_WRAP,
+		.AddressW		= D3D11_TEXTURE_ADDRESS_WRAP,
+		.MipLODBias		= 0.0f,					   // ãƒŸãƒƒãƒ—ãƒãƒƒãƒ—ã®LODã‚ªãƒ•ã‚»ãƒƒãƒˆ
+		.MaxAnisotropy	= 0U,					   // ç•°æ–¹æ€§ãƒ•ã‚£ãƒ«ã‚¿ã‚’ä½¿ã£ãŸå ´åˆã®ã‚¯ãƒ©ãƒ³ãƒ—å€¤
+		.ComparisonFunc = D3D11_COMPARISON_ALWAYS, // TOOD: D3D11_COMPARISON_FUNCã«ã¤ã„ã¦ç†è§£ã™ã‚‹
+		.BorderColor	= {},					   // ãƒœãƒ¼ãƒ€ã®è‰²
+		.MinLOD			= {},					   // LODãƒŸãƒƒãƒ—ãƒãƒƒãƒ—ã®æœ€å°ãƒ¬ãƒ™ãƒ«
+		.MaxLOD			= D3D11_FLOAT32_MAX,	   // LODãƒŸãƒƒãƒ—ãƒãƒƒãƒ—ã®æœ€å¤§ãƒ¬ãƒ™ãƒ«
 	};
 
-	// ƒTƒ“ƒvƒ‰[ƒXƒe[ƒg‚ğì¬
+	// ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‚¹ãƒ†ãƒ¼ãƒˆã‚’ä½œæˆ
 	hResult = DirectX11Draw::pDevice_->CreateSamplerState(&SAMPLER_DESC, pSamplerLinear_.ReleaseAndGetAddressOf());
 
-	massert(SUCCEEDED(hResult)
-		&& "ƒTƒ“ƒvƒ‰[ƒXƒe[ƒg‚Ìì¬‚É¸”s @Texture2D::Load");
+	massert(SUCCEEDED(hResult) && "ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‚¹ãƒ†ãƒ¼ãƒˆã®ä½œæˆã«å¤±æ•— @Texture2D::Load");
 
 	SAFE_RELEASE(pTexture);
 	SAFE_RELEASE(pFormatConverter);

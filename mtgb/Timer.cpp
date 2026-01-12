@@ -1,18 +1,17 @@
 #include "Timer.h"
 #include "GameTime.h"
 
-
 TimerHandle mtgb::Timer::AddAram(const float _time, const std::function<void()>& _callback)
 {
-	QUEUE_ELEMENT* pElement{ new QUEUE_ELEMENT{ _callback, _time } };
+	QUEUE_ELEMENT* pElement{new QUEUE_ELEMENT{_callback, _time}};
 	Instance().EnqueueTimer(pElement);
 	return reinterpret_cast<TimerHandle>(pElement);
 }
 
 TimerHandle mtgb::Timer::AddInterval(const float _time, const std::function<void()>& _callback, const bool _firstCall)
 {
-	QUEUE_ELEMENT* pElement{ new QUEUE_ELEMENT{ _callback, _firstCall ? 0 : _time } };
-	Instance().pReenqueueElements_.insert({ pElement, _time });
+	QUEUE_ELEMENT* pElement{new QUEUE_ELEMENT{_callback, _firstCall ? 0 : _time}};
+	Instance().pReenqueueElements_.insert({pElement, _time});
 	Instance().EnqueueTimer(pElement);
 	return reinterpret_cast<TimerHandle>(pElement);
 }
@@ -20,14 +19,14 @@ TimerHandle mtgb::Timer::AddInterval(const float _time, const std::function<void
 void mtgb::Timer::Remove(TimerHandle _hTimer)
 {
 
-	QUEUE_ELEMENT* pElement{ reinterpret_cast<QUEUE_ELEMENT*>(_hTimer) };
-	Instance().toErase_.insert(pElement);  // íœ—\’è‚É’Ç‰Á‚·‚é
+	QUEUE_ELEMENT* pElement{reinterpret_cast<QUEUE_ELEMENT*>(_hTimer)};
+	Instance().toErase_.insert(pElement); // å‰Šé™¤äºˆå®šã«è¿½åŠ ã™ã‚‹
 
-	//if (Instance().pReenqueueElements_.count(pElement) > 0)
+	// if (Instance().pReenqueueElements_.count(pElement) > 0)
 	//{
 	//	Instance().pReenqueueElements_.erase(pElement);
-	//}
-	//for (auto itr = Instance().pTimerQueue_.begin(); itr != Instance().pTimerQueue_.end();)
+	// }
+	// for (auto itr = Instance().pTimerQueue_.begin(); itr != Instance().pTimerQueue_.end();)
 	//{
 	//	if ((*itr) == pElement)
 	//	{
@@ -37,7 +36,7 @@ void mtgb::Timer::Remove(TimerHandle _hTimer)
 	//	{
 	//		itr++;
 	//	}
-	//}
+	// }
 }
 
 void mtgb::Timer::Clear()
@@ -47,17 +46,12 @@ void mtgb::Timer::Clear()
 		delete pTimer;
 	}
 
-	 Instance().pTimerQueue_.clear();
+	Instance().pTimerQueue_.clear();
 }
 
 void mtgb::Timer::Release()
 {
-	Instance().Clear();
-	if (pInstance_ != nullptr)
-	{
-		delete pInstance_;
-		pInstance_ = nullptr;
-	}
+	Clear();
 }
 
 void mtgb::Timer::Initialize()
@@ -68,7 +62,7 @@ void mtgb::Timer::Update()
 {
 	if (pTimerQueue_.size() <= 0)
 	{
-		return;  // ƒ^ƒCƒ}[ƒLƒ…[‚ª‹ó‚È‚ç‰ñ‹A
+		return; // ã‚¿ã‚¤ãƒãƒ¼ã‚­ãƒ¥ãƒ¼ãŒç©ºãªã‚‰å›å¸°
 	}
 
 	auto itr = pTimerQueue_.begin();
@@ -76,38 +70,38 @@ void mtgb::Timer::Update()
 	{
 		(*itr)->timeLeft -= Time::DeltaTimeF();
 
-		float diff{ (*itr)->timeLeft };  // ·•ª
-		if (diff > 0)  // ·•ª‚ª0‚æ‚è‘å‚«‚¢ = ‘Ò‹@’†
+		float diff{(*itr)->timeLeft}; // å·®åˆ†
+		if (diff > 0)				  // å·®åˆ†ãŒ0ã‚ˆã‚Šå¤§ãã„ = å¾…æ©Ÿä¸­
 		{
-			break;  // ƒ^ƒCƒ}[I—¹‚µ‚Ä‚¢‚È‚¢‚½‚ß—£’E
+			break; // ã‚¿ã‚¤ãƒãƒ¼çµ‚äº†ã—ã¦ã„ãªã„ãŸã‚é›¢è„±
 		}
-		else  // ·•ª‚ª0ˆÈ‰º = ƒ^ƒCƒ}[I—¹
+		else // å·®åˆ†ãŒ0ä»¥ä¸‹ = ã‚¿ã‚¤ãƒãƒ¼çµ‚äº†
 		{
-			(*itr)->on();  // Às
+			(*itr)->on(); // å®Ÿè¡Œ
 
-			// ‚à‚µg‚¢‚Ü‚í‚µ‚·‚é—v‘f‚È‚ç
+			// ã‚‚ã—ä½¿ã„ã¾ã‚ã—ã™ã‚‹è¦ç´ ãªã‚‰
 			if (pReenqueueElements_.count(*itr) > 0)
 			{
 				QUEUE_ELEMENT* pElement = *itr;
-				(*itr)->timeLeft = pReenqueueElements_[*itr];
-				itr = pTimerQueue_.erase(pTimerQueue_.begin());  // Á‚·
-				EnqueueTimer(pElement);  // ŠÔƒZƒbƒg‚µ‚ÄƒGƒ“ƒLƒ…[
+				(*itr)->timeLeft		= pReenqueueElements_[*itr];
+				itr						= pTimerQueue_.erase(pTimerQueue_.begin()); // æ¶ˆã™
+				EnqueueTimer(pElement);												// æ™‚é–“ã‚»ãƒƒãƒˆã—ã¦ã‚¨ãƒ³ã‚­ãƒ¥ãƒ¼
 				break;
 			}
-			// g‚¢‚Ü‚í‚³‚È‚¢‚È‚ç
+			// ä½¿ã„ã¾ã‚ã•ãªã„ãªã‚‰
 			{
-				delete (*itr);  // ‰ğ•ú‚·‚é
-				itr = pTimerQueue_.erase(pTimerQueue_.begin());  // Á‚·
+				delete (*itr);									// è§£æ”¾ã™ã‚‹
+				itr = pTimerQueue_.erase(pTimerQueue_.begin()); // æ¶ˆã™
 			}
 			if (itr == pTimerQueue_.end())
 			{
-				break;  // Œã‘±‚ª‚È‚¢ = ƒLƒ…[‚ª‹ó‚È‚ç—£’E
+				break; // å¾Œç¶šãŒãªã„ = ã‚­ãƒ¥ãƒ¼ãŒç©ºãªã‚‰é›¢è„±
 			}
-			(*itr)->timeLeft += diff;  // ·•ª‚ğŒã‘±‚É”½‰f
-			continue;  // Œã‘±‚àI—¹‚µ‚Ä‚¢‚é‰Â”\«‚ª‚ ‚é‚½‚ßŒp‘±
+			(*itr)->timeLeft += diff; // å·®åˆ†ã‚’å¾Œç¶šã«åæ˜ 
+			continue;				  // å¾Œç¶šã‚‚çµ‚äº†ã—ã¦ã„ã‚‹å¯èƒ½æ€§ãŒã‚ã‚‹ãŸã‚ç¶™ç¶š
 		}
 	}
-	// íœ—\’è‚Ì‚â‚Â‚ğÁ‚·
+	// å‰Šé™¤äºˆå®šã®ã‚„ã¤ã‚’æ¶ˆã™
 	for (auto itr = pReenqueueElements_.begin(); itr != pReenqueueElements_.end();)
 	{
 		if (toErase_.count(itr->first))
@@ -140,33 +134,27 @@ mtgb::Timer::Timer()
 
 mtgb::Timer::~Timer()
 {
-	for (auto& pTimer : Instance().pTimerQueue_)
-	{
-		delete pTimer;
-	}
 }
 
 void mtgb::Timer::EnqueueTimer(QUEUE_ELEMENT* _pElement)
 {
-	float lefter{ _pElement->timeLeft };  // Œ¸Z—p
-	float righter{ 0 };     // ‰ÁZ—p
-	// “KØ‚È‘}“üƒ|ƒCƒ“ƒg‚ğŒ©‚Â‚¯‚é
-	for (auto itr = Instance().pTimerQueue_.begin();
-		itr != Instance().pTimerQueue_.end();
-		itr++)
+	float lefter{_pElement->timeLeft}; // æ¸›ç®—ç”¨
+	float righter{0};				   // åŠ ç®—ç”¨
+	// é©åˆ‡ãªæŒ¿å…¥ãƒã‚¤ãƒ³ãƒˆã‚’è¦‹ã¤ã‘ã‚‹
+	for (auto itr = Instance().pTimerQueue_.begin(); itr != Instance().pTimerQueue_.end(); itr++)
 	{
 		if (lefter <= righter + (*itr)->timeLeft)
 		{
 			_pElement->timeLeft = lefter - righter;
-			itr = Instance().pTimerQueue_.insert(itr, _pElement);
+			itr					= Instance().pTimerQueue_.insert(itr, _pElement);
 			itr++;
 			(*itr)->timeLeft -= _pElement->timeLeft;
 			return;
 		}
 		righter += (*itr)->timeLeft;
 	}
-	// Œ©‚Â‚©‚ç‚È‚©‚Á‚½‚ç––’[‚É’Ç‰Á
+	// è¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸã‚‰æœ«ç«¯ã«è¿½åŠ 
 	Instance().pTimerQueue_.push_back(_pElement);
 }
 
-mtgb::Timer* mtgb::Timer::pInstance_{ nullptr };
+mtgb::Timer* mtgb::Timer::pInstance_{nullptr};

@@ -5,23 +5,24 @@
 
 class ActorManager : public ISystem
 {
-public:
-	// ISystem ����Čp������܂���
+  public:
+	// ISystem を介して継承されました
 	void Initialize() override;
 	void Update() override;
 	/// <summary>
-	/// �A�N�^�[��o�^
-	/// ActorManager�̓|�C���^�̉�����s��Ȃ��̂ŁA�Ăяo�����Ŏ����̊Ǘ������Ă�������
+	/// アクターを登録
+	/// ActorManagerはポインタの解放を行わないので、呼び出し側で寿命の管理をしてください
 	/// </summary>
 	/// <param name="_pActor"></param>
 	void RegisterActor(IActor* _pActor);
 	void UnregisterActor(EntityId _id);
 	/// <summary>
-	/// �A�N�^�[�̃|�C���^��Ԃ�
+	/// アクターのポインタを返す
 	/// </summary>
 	/// <param name="_id"></param>
-	/// <returns>������Id�ɍ��v����A�N�^�[�̃|�C���^�B���Ȃ��ꍇ��nullptr</returns>
+	/// <returns>引数のIdに合致するアクターのポインタ。いない場合はnullptr</returns>
 	IActor* GetActor(EntityId _id);
-private:
+
+  private:
 	std::list<IActor*> actors_;
 };

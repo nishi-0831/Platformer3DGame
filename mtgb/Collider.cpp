@@ -9,28 +9,27 @@
 namespace
 {
 	mtgb::Matrix4x4 matrix{};
-	DirectX::XMVECTORF32 unitVectorEpsilon{ FLT_EPSILON ,FLT_EPSILON ,FLT_EPSILON ,FLT_EPSILON };
+	DirectX::XMVECTORF32 unitVectorEpsilon{FLT_EPSILON, FLT_EPSILON, FLT_EPSILON, FLT_EPSILON};
 	bool XMVECTORIsUnit(DirectX::FXMVECTOR _v)
 	{
-		DirectX::XMVECTOR difference = DirectX::XMVectorSubtract(DirectX::XMVector3Length(_v), DirectX::XMVectorSplatOne());
-		return DirectX::XMVector4Less(DirectX::XMVectorAbs(difference), unitVectorEpsilon);	
+		DirectX::XMVECTOR difference =
+			DirectX::XMVectorSubtract(DirectX::XMVector3Length(_v), DirectX::XMVectorSplatOne());
+		return DirectX::XMVector4Less(DirectX::XMVectorAbs(difference), unitVectorEpsilon);
 	}
-}
+} // namespace
 
 mtgb::Collider::Collider(EntityId _entityId)
 	: IComponent(_entityId)
-	, colliderType_{ ColliderType::TYPE_SPHERE }
-	, isStatic_{ false }
-	, colliderTag_{ ColliderTag::GAME_OBJECT }
-	, isTrigger_{ false }
-	, pTransform_{ &Transform::Get(_entityId) }
-	, center_{ 0.0f,0.0f,0.0f }
-	, radius_{ 1.0f }
-	, extents_{ 0.5f,0.5f ,0.5 }
+	, colliderType_{ColliderType::TYPE_SPHERE}
+	, isStatic_{false}
+	, colliderTag_{ColliderTag::GAME_OBJECT}
+	, isTrigger_{false}
+	, pTransform_{&Transform::Get(_entityId)}
+	, center_{0.0f, 0.0f, 0.0f}
+	, radius_{1.0f}
+	, extents_{0.5f, 0.5f, 0.5}
 {
-	
 }
-
 
 mtgb::Collider::Collider(EntityId _entityId, ColliderTag _colliderTag)
 	: Collider(_entityId)
@@ -39,18 +38,17 @@ mtgb::Collider::Collider(EntityId _entityId, ColliderTag _colliderTag)
 
 	switch (_colliderTag)
 	{
-		// Œ»İ‚ÍƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Í“®“IAƒXƒe[ƒW‚ÍÃ“I‚Æ’f’è‚µ‚Ä‚¢‚é‚ª
-		// “®“I‚ÈƒXƒe[ƒW‚È‚Ç‚à’Ç‰Á‚³‚ê‚é‚©‚à‚µ‚ê‚È‚¢‚Ì‚Å’ˆÓ
-	case ColliderTag::GAME_OBJECT:
-		isStatic_ = false;
+		// ç¾åœ¨ã¯ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¯å‹•çš„ã€ã‚¹ãƒ†ãƒ¼ã‚¸ã¯é™çš„ã¨æ–­å®šã—ã¦ã„ã‚‹ãŒ
+		// å‹•çš„ãªã‚¹ãƒ†ãƒ¼ã‚¸ãªã©ã‚‚è¿½åŠ ã•ã‚Œã‚‹ã‹ã‚‚ã—ã‚Œãªã„ã®ã§æ³¨æ„
+	case ColliderTag::GAME_OBJECT :
+		isStatic_	= false;
 		pTransform_ = &Transform::Get(_entityId);
 		break;
-	case ColliderTag::STAGE:
-		isStatic_ = true;
+	case ColliderTag::STAGE :
+		isStatic_	= true;
 		pTransform_ = nullptr;
 		break;
 	}
-	
 }
 
 mtgb::Collider::~Collider()
@@ -64,14 +62,14 @@ Collider& mtgb::Collider::operator=(const Collider& _other)
 		return *this;
 	}
 	this->colliderType_ = _other.colliderType_;
-	this->isStatic_ = _other.isStatic_;
-	this->colliderTag_ = _other.colliderTag_;
-	this->isTrigger_ = _other.isTrigger_;
+	this->isStatic_		= _other.isStatic_;
+	this->colliderTag_	= _other.colliderTag_;
+	this->isTrigger_	= _other.isTrigger_;
 
 	*(this->pTransform_) = *(_other.pTransform_);
-	this->center_ = _other.center_;
-	this->radius_ = _other.radius_;
-	this->extents_ = _other.extents_;
+	this->center_		 = _other.center_;
+	this->radius_		 = _other.radius_;
+	this->extents_		 = _other.extents_;
 
 	return *this;
 }
@@ -80,16 +78,16 @@ void mtgb::Collider::UpdateBoundingData()
 {
 	switch (colliderType_)
 	{
-	case ColliderType::TYPE_SPHERE:
+	case ColliderType::TYPE_SPHERE :
 		UpdateBoundingSphere();
 		break;
-	case ColliderType::TYPE_AABB:
+	case ColliderType::TYPE_AABB :
 		UpdateBoundingBox();
 		break;
-	case ColliderType::TYPE_CAPSULE:
-		// TODO: ƒJƒvƒZƒ‹‰Šú‰»
-	case ColliderType::TYPE_OBB:
-		computeOBB_.Center = pTransform_->position + center_;
+	case ColliderType::TYPE_CAPSULE :
+		// TODO: ã‚«ãƒ—ã‚»ãƒ«åˆæœŸåŒ–
+	case ColliderType::TYPE_OBB :
+		computeOBB_.Center	  = pTransform_->position + center_;
 		computeOBB_.Extents.x = extents_.x * pTransform_->scale.x;
 		computeOBB_.Extents.y = extents_.y * pTransform_->scale.y;
 		computeOBB_.Extents.z = extents_.z * pTransform_->scale.z;
@@ -101,8 +99,8 @@ void mtgb::Collider::UpdateBoundingData()
 void mtgb::Collider::UpdateBoundingSphere()
 {
 	computeSphere_.Center = pTransform_->position + center_;
-	float maxScale = (std::max)(pTransform_->scale.x, pTransform_->scale.y);
-	maxScale = (std::max)(pTransform_->scale.z, maxScale);
+	float maxScale		  = (std::max)(pTransform_->scale.x, pTransform_->scale.y);
+	maxScale			  = (std::max)(pTransform_->scale.z, maxScale);
 	computeSphere_.Radius = maxScale * radius_;
 }
 
@@ -110,7 +108,7 @@ void mtgb::Collider::UpdateBoundingBox()
 {
 	if (!isStatic_)
 	{
-		computeBox_.Center = pTransform_->position + center_;
+		computeBox_.Center	  = pTransform_->position + center_;
 		computeBox_.Extents.x = extents_.x * pTransform_->scale.x;
 		computeBox_.Extents.y = extents_.y * pTransform_->scale.y;
 		computeBox_.Extents.z = extents_.z * pTransform_->scale.z;
@@ -120,7 +118,7 @@ void mtgb::Collider::UpdateBoundingBox()
 bool mtgb::Collider::IsHit(const Collider& _other) const
 {
 	DirectX::ContainmentType containmentType = DirectX::DISJOINT;
-	// ƒXƒe[ƒW“¯m‚ÍÚG‚µ‚È‚¢‚à‚Ì‚Æ‚·‚é
+	// ã‚¹ãƒ†ãƒ¼ã‚¸åŒå£«ã¯æ¥è§¦ã—ãªã„ã‚‚ã®ã¨ã™ã‚‹
 	if (colliderTag_ == ColliderTag::STAGE && _other.colliderTag_ == ColliderTag::STAGE)
 	{
 		return false;
@@ -128,51 +126,51 @@ bool mtgb::Collider::IsHit(const Collider& _other) const
 
 	switch (colliderType_)
 	{
-	case ColliderType::TYPE_SPHERE:
+	case ColliderType::TYPE_SPHERE :
 		switch (_other.colliderType_)
 		{
-		case ColliderType::TYPE_SPHERE:
+		case ColliderType::TYPE_SPHERE :
 			containmentType = computeSphere_.Contains(_other.computeSphere_);
 			break;
-		case ColliderType::TYPE_AABB:
+		case ColliderType::TYPE_AABB :
 			containmentType = computeSphere_.Contains(_other.computeBox_);
 			break;
-		case ColliderType::TYPE_OBB:
+		case ColliderType::TYPE_OBB :
 			containmentType = computeSphere_.Contains(_other.computeOBB_);
 			break;
 		}
 		break;
-	case ColliderType::TYPE_AABB:
+	case ColliderType::TYPE_AABB :
 		switch (_other.colliderType_)
 		{
-		case ColliderType::TYPE_SPHERE:
+		case ColliderType::TYPE_SPHERE :
 			containmentType = computeBox_.Contains(_other.computeSphere_);
 			break;
-		case ColliderType::TYPE_AABB:
+		case ColliderType::TYPE_AABB :
 			containmentType = computeBox_.Contains(_other.computeBox_);
 			break;
-		case ColliderType::TYPE_OBB:
+		case ColliderType::TYPE_OBB :
 			containmentType = computeBox_.Contains(_other.computeOBB_);
 			break;
 		}
 		break;
-	case ColliderType::TYPE_OBB:
-		
+	case ColliderType::TYPE_OBB :
+
 		switch (_other.colliderType_)
 		{
-		case ColliderType::TYPE_SPHERE:
+		case ColliderType::TYPE_SPHERE :
 			containmentType = computeOBB_.Contains(_other.computeSphere_);
 			break;
-		case ColliderType::TYPE_AABB:
+		case ColliderType::TYPE_AABB :
 			containmentType = computeOBB_.Contains(_other.computeBox_);
 			break;
-		case ColliderType::TYPE_OBB:
+		case ColliderType::TYPE_OBB :
 			containmentType = computeOBB_.Contains(_other.computeOBB_);
 			break;
 		}
 		break;
 	}
-	
+
 	if (containmentType == DirectX::INTERSECTS || containmentType == DirectX::CONTAINS)
 	{
 		return true;
@@ -181,87 +179,92 @@ bool mtgb::Collider::IsHit(const Collider& _other) const
 	return false;
 }
 
-bool mtgb::Collider::IsHit(const DirectX::BoundingSphere& _sphere, const Vector3& _origin, const Vector3& _dir, float* dist)
+bool mtgb::Collider::IsHit(
+	const DirectX::BoundingSphere& _sphere,
+	const Vector3& _origin,
+	const Vector3& _dir,
+	float* dist
+)
 {
 	/////
-	// DirectXCollision.h‚ÌBoundingSphere::Intersects‚ğƒRƒsƒy‚µ‚½B
-	// ‰½ŒÌ‚©Intersects‚ÉÀˆø”‚ª³í‚É“n‚³‚ê‚È‚¢‚©‚çB
+	// DirectXCollision.hã®BoundingSphere::Intersectsã‚’ã‚³ãƒ”ãƒšã—ãŸã€‚
+	// ä½•æ•…ã‹Intersectsã«å®Ÿå¼•æ•°ãŒæ­£å¸¸ã«æ¸¡ã•ã‚Œãªã„ã‹ã‚‰ã€‚
 	/////
 	using namespace DirectX;
-	// ‚Ü‚¸BoundingSphere‚ğÅVó‘Ô‚ÉXV
-	//const_cast<Collider*>(this)->UpdateBoundingData();
-	
-	// •ûŒüƒxƒNƒgƒ‹‚ğ³‹K‰»iŒ³‚ÌƒxƒNƒgƒ‹‚Í•Ûj
+	// ã¾ãšBoundingSphereã‚’æœ€æ–°çŠ¶æ…‹ã«æ›´æ–°
+	// const_cast<Collider*>(this)->UpdateBoundingData();
+
+	// æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ­£è¦åŒ–ï¼ˆå…ƒã®ãƒ™ã‚¯ãƒˆãƒ«ã¯ä¿æŒï¼‰
 	Vector3 normalizedDir = Vector3::Normalize(_dir);
-	
+
 	XMVECTOR vNormalizeDir = XMLoadFloat3(&normalizedDir);
 	if (!XMVECTORIsUnit(vNormalizeDir))
 	{
 		return false;
 	}
-	
-	XMVECTOR vCenter =  XMLoadFloat3(&_sphere.Center);
-	XMVECTOR vRadius =  XMVectorReplicatePtr(&_sphere.Radius);
 
-	//‹…‚Ì’†S‚©‚çƒŒƒC‚ÌŒ´“_‚Ö‚ÌƒxƒNƒgƒ‹
+	XMVECTOR vCenter = XMLoadFloat3(&_sphere.Center);
+	XMVECTOR vRadius = XMVectorReplicatePtr(&_sphere.Radius);
+
+	// çƒã®ä¸­å¿ƒã‹ã‚‰ãƒ¬ã‚¤ã®åŸç‚¹ã¸ã®ãƒ™ã‚¯ãƒˆãƒ«
 	XMVECTOR l = XMVectorSubtract(vCenter, _origin);
 
-	//l‚ğƒŒƒC‚Ì•ûŒü‚ÉË‰e‚µ‚½ƒXƒJƒ‰[
-	//‹…‚Ì’†S‚ÆƒŒƒC‚ÌÅ‚à‹ß‚¢“_‚Ì‹——£
+	// lã‚’ãƒ¬ã‚¤ã®æ–¹å‘ã«å°„å½±ã—ãŸã‚¹ã‚«ãƒ©ãƒ¼
+	// çƒã®ä¸­å¿ƒã¨ãƒ¬ã‚¤ã®æœ€ã‚‚è¿‘ã„ç‚¹ã®è·é›¢
 	XMVECTOR s = XMVector3Dot(l, normalizedDir);
 
-	//‹…‚Ì’†S‚©‚çƒŒƒC‚ÌŒ´“_‚Ö‚Ì‹——£‚Ì“ñæ
+	// çƒã®ä¸­å¿ƒã‹ã‚‰ãƒ¬ã‚¤ã®åŸç‚¹ã¸ã®è·é›¢ã®äºŒä¹—
 	XMVECTOR l2 = XMVector3Dot(l, l);
 
-	//”¼Œa‚Ì“ñæ
+	// åŠå¾„ã®äºŒä¹—
 	XMVECTOR r2 = XMVectorMultiply(vRadius, vRadius);
 
-	//‹…‚Ì’†S‚©‚çƒŒƒC‚Ö‚Ì‚ü‚Ì“ñæ
-	//O•½•û‚Ì’è—‚Å‚¢‚¤‚Æl‚ªÎ•Ó‚É‚ ‚½‚é
-	
+	// çƒã®ä¸­å¿ƒã‹ã‚‰ãƒ¬ã‚¤ã¸ã®å‚ç·šã®äºŒä¹—
+	// ä¸‰å¹³æ–¹ã®å®šç†ã§ã„ã†ã¨lãŒæ–œè¾ºã«ã‚ãŸã‚‹
+
 	XMVECTOR m2 = XMVectorNegativeMultiplySubtract(s, s, l2);
-	
-	
+
 	XMVECTOR NoIntersection;
 
-	//‚à‚µƒŒƒC‚ÌŒ´“_‚ª‹…‚ÌŠO‘¤A‚©‚Â
-	//‹…‚Ì’†S‚ªƒŒƒC‚ÌŒ´“_‚ÌŒã‚ë‚É‚ ‚é‚È‚ç‚ÎÚG‚µ‚Ä‚¢‚È‚¢
+	// ã‚‚ã—ãƒ¬ã‚¤ã®åŸç‚¹ãŒçƒã®å¤–å´ã€ã‹ã¤
+	// çƒã®ä¸­å¿ƒãŒãƒ¬ã‚¤ã®åŸç‚¹ã®å¾Œã‚ã«ã‚ã‚‹ãªã‚‰ã°æ¥è§¦ã—ã¦ã„ãªã„
 	NoIntersection = XMVectorAndInt(
-		//Ë‰eƒxƒNƒgƒ‹‚ª•‰‚È‚çƒŒƒC‚Ì•ûŒü‚Æ”½‘ÎAƒŒƒC‚ÌŒ´“_‚æ‚èŒã‚ë‚É‚ ‚é
+		// å°„å½±ãƒ™ã‚¯ãƒˆãƒ«ãŒè² ãªã‚‰ãƒ¬ã‚¤ã®æ–¹å‘ã¨åå¯¾ã€ãƒ¬ã‚¤ã®åŸç‚¹ã‚ˆã‚Šå¾Œã‚ã«ã‚ã‚‹
 		XMVectorLess(s, XMVectorZero())
-		//l2‚Ì•û‚ª‘å‚«‚¢‚È‚ç‹…‚ÌŠO‘¤‚É‚ ‚é
-		, XMVectorGreater(l2, r2));
+		// l2ã®æ–¹ãŒå¤§ãã„ãªã‚‰çƒã®å¤–å´ã«ã‚ã‚‹
+		,
+		XMVectorGreater(l2, r2)
+	);
 
-	//‹…‚Ì’†S‚©‚çƒŒƒC‚Ö‚Ì‚ü‚ª‹…‚Ì”¼Œa‚æ‚è‚à‘å‚«‚¢‚©
-	//ƒŒƒC‚ÌÅ‚à‹ß‚¢’n“_‚ª‹…‚ÌŠO‘¤‚É‚ ‚é‚©
-
+	// çƒã®ä¸­å¿ƒã‹ã‚‰ãƒ¬ã‚¤ã¸ã®å‚ç·šãŒçƒã®åŠå¾„ã‚ˆã‚Šã‚‚å¤§ãã„ã‹
+	// ãƒ¬ã‚¤ã®æœ€ã‚‚è¿‘ã„åœ°ç‚¹ãŒçƒã®å¤–å´ã«ã‚ã‚‹ã‹
 
 	if (XMVector4Greater(m2, r2))
 	{
 		return false;
 	}
 
-	//Õ“Ë‚µ‚Ä‚¢‚é‚Æ‚µ‚ÄAÅ‚à‹ß‚¢’n“_‚ğŒvZ
+	// è¡çªã—ã¦ã„ã‚‹ã¨ã—ã¦ã€æœ€ã‚‚è¿‘ã„åœ°ç‚¹ã‚’è¨ˆç®—
 
-	//‹…‚Ì’†S‚ÆƒŒƒC‚ÌÅ‚à‹ß‚¢“_‚©‚ç‹…‚Ì•\–Ê‚Ü‚Å‚Ì‹——£
+	// çƒã®ä¸­å¿ƒã¨ãƒ¬ã‚¤ã®æœ€ã‚‚è¿‘ã„ç‚¹ã‹ã‚‰çƒã®è¡¨é¢ã¾ã§ã®è·é›¢
 	XMVECTOR q = XMVectorSqrt(XMVectorSubtract(r2, m2));
 
-	//r2-m2‚ª•‰‚Ì’l‚Ìê‡‚Íq‚É0‚ğ“ü‚ê‚é
+	// r2-m2ãŒè² ã®å€¤ã®å ´åˆã¯qã«0ã‚’å…¥ã‚Œã‚‹
 	XMVECTOR mask = XMVectorGreater(m2, r2);
 	XMVECTOR zero = XMVectorZero();
-	//mask‚ªtrue‚Ìê‡‚ÍzeroAfalse‚Ìê‡‚Íq
+	// maskãŒtrueã®å ´åˆã¯zeroã€falseã®å ´åˆã¯q
 	q = XMVectorSelect(q, zero, mask);
 
-	//ƒŒƒC‚ÌŒ´“_‚©‚ç‹…‚Æ‚ÌŒğ“_‚Ü‚Å‚Ì‹——£
-	//è‘O
+	// ãƒ¬ã‚¤ã®åŸç‚¹ã‹ã‚‰çƒã¨ã®äº¤ç‚¹ã¾ã§ã®è·é›¢
+	// æ‰‹å‰
 	XMVECTOR t1 = XMVectorSubtract(s, q);
-	//‰œ
+	// å¥¥
 	XMVECTOR t2 = XMVectorAdd(s, q);
 
-	//ƒŒƒC‚ÌŒ´“_‚ª‹…‚Ì“à‘¤‚©
+	// ãƒ¬ã‚¤ã®åŸç‚¹ãŒçƒã®å†…å´ã‹
 	XMVECTOR originInside = XMVectorLessOrEqual(l2, r2);
-	
-	//‘æOˆø”‚ªtrue‚È‚ç‘æ“ñˆø”Afalse‚È‚ç‘æˆêˆø”
+
+	// ç¬¬ä¸‰å¼•æ•°ãŒtrueãªã‚‰ç¬¬äºŒå¼•æ•°ã€falseãªã‚‰ç¬¬ä¸€å¼•æ•°
 	XMVECTOR t = XMVectorSelect(t1, t2, originInside);
 
 	if (XMVector4NotEqualInt(NoIntersection, XMVectorTrueInt()))
@@ -278,7 +281,12 @@ bool mtgb::Collider::IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _or
 	return _aabb.Intersects(_origin, _dir, *dist);
 }
 
-bool mtgb::Collider::IsHit(const DirectX::BoundingOrientedBox& _obb, const Vector3& _origin, const Vector3& _dir, float* dist)
+bool mtgb::Collider::IsHit(
+	const DirectX::BoundingOrientedBox& _obb,
+	const Vector3& _origin,
+	const Vector3& _dir,
+	float* dist
+)
 {
 	return _obb.Intersects(_origin, _dir, *dist);
 }
@@ -287,15 +295,15 @@ bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* _
 {
 	switch (colliderType_)
 	{
-	case ColliderType::TYPE_SPHERE:
+	case ColliderType::TYPE_SPHERE :
 		return IsHit(computeSphere_, _origin, _dir, _dist);
 		break;
-	case ColliderType::TYPE_AABB:
-		 return IsHit(computeBox_,_origin,_dir,_dist);
+	case ColliderType::TYPE_AABB :
+		return IsHit(computeBox_, _origin, _dir, _dist);
 		break;
-	case ColliderType::TYPE_OBB:
+	case ColliderType::TYPE_OBB :
 		return IsHit(computeOBB_, _origin, _dir, _dist);
-	default:
+	default :
 		return false;
 	}
 
@@ -309,20 +317,19 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 	if (colliderType_ == ColliderType::TYPE_SPHERE)
 	{
 		pTransform_->GenerateWorldMatrix(&matrix);
-		Vector3 worldPosition{ Vector3(computeSphere_.Center) * matrix };
+		Vector3 worldPosition{Vector3(computeSphere_.Center) * matrix};
 
-		// ˆø”‚Å‹…‚ğì‚é
+		// å¼•æ•°ã§çƒã‚’ä½œã‚‹
 
-		float distance{ (_center - worldPosition).Size() };
-		float hitDistance{ computeSphere_.Radius + _radius };
+		float distance{(_center - worldPosition).Size()};
+		float hitDistance{computeSphere_.Radius + _radius};
 
-		// ‹——£‚ª‘o•û‚Ì‹…‚Ì”¼Œa‚æ‚è‚à¬‚³‚¯‚ê‚Î“–‚½‚Á‚Ä‚¢‚é
+		// è·é›¢ãŒåŒæ–¹ã®çƒã®åŠå¾„ã‚ˆã‚Šã‚‚å°ã•ã‘ã‚Œã°å½“ãŸã£ã¦ã„ã‚‹
 		return (distance <= hitDistance);
 	}
 	else if (colliderType_ == ColliderType::TYPE_CAPSULE)
 	{
-		// TODO: ƒJƒvƒZƒ‹‚Æ‹…‚Ì“–‚½‚è”»’è
-
+		// TODO: ã‚«ãƒ—ã‚»ãƒ«ã¨çƒã®å½“ãŸã‚Šåˆ¤å®š
 	}
 
 	return false;
@@ -334,11 +341,11 @@ void mtgb::Collider::SetCenter(const Vector3& _center)
 	{
 		computeBox_.Center = _center;
 	}
-	else if(colliderType_ == ColliderType::TYPE_AABB)
+	else if (colliderType_ == ColliderType::TYPE_AABB)
 	{
 		computeSphere_.Center = _center;
 	}
-	else if(colliderType_ == ColliderType::TYPE_OBB)
+	else if (colliderType_ == ColliderType::TYPE_OBB)
 	{
 		computeOBB_.Center = _center;
 	}
@@ -365,7 +372,7 @@ void mtgb::Collider::SetExtents(const Vector3& _extents)
 void mtgb::Collider::SetRadius(float _radius)
 {
 	computeSphere_.Radius = _radius * pTransform_->scale.x;
-	radius_ = _radius;
+	radius_				  = _radius;
 }
 
 Vector3 mtgb::Collider::GetCenter()
@@ -397,30 +404,33 @@ float mtgb::Collider::GetRadius()
 	return 0.0f;
 }
 
-std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb)
+std::optional<IntersectInfo> mtgb::Collider::Intersect(
+	const DirectX::BoundingSphere& _sphere,
+	const DirectX::BoundingBox& _aabb
+)
 {
 	IntersectInfo info;
 
 	Vector3 aabbMin = _aabb.Center - _aabb.Extents;
 	Vector3 aabbMax = _aabb.Center + _aabb.Extents;
 
-	// Å’Z’n“_
+	// æœ€çŸ­åœ°ç‚¹
 	Vector3 closest;
 
-	// ŠeÀ•W²‚ÉƒNƒ‰ƒ“ƒv‚·‚é
+	// å„åº§æ¨™è»¸ã«ã‚¯ãƒ©ãƒ³ãƒ—ã™ã‚‹
 	closest.x = std::clamp(_sphere.Center.x, aabbMin.x, aabbMax.x);
 	closest.y = std::clamp(_sphere.Center.y, aabbMin.y, aabbMax.y);
 	closest.z = std::clamp(_sphere.Center.z, aabbMin.z, aabbMax.z);
 
-	Vector3 v = _sphere.Center - closest;
+	Vector3 v  = _sphere.Center - closest;
 	float dist = v.Size();
 
-	// ‹——£‚ª‚Ù‚Úƒ[ƒ‚Ìê‡
+	// è·é›¢ãŒã»ã¼ã‚¼ãƒ­ã®å ´åˆ
 	if (dist <= FLT_EPSILON)
 	{
-		// AABB‚Ì’†S‚©‚ç‹…‚Ì’†S‚Ö‚Ì•ûŒü
+		// AABBã®ä¸­å¿ƒã‹ã‚‰çƒã®ä¸­å¿ƒã¸ã®æ–¹å‘
 		v = Vector3::Normalize(_sphere.Center - _aabb.Center);
-		// •ûŒü‚ªŒˆ‚Ü‚ç‚È‚¯‚ê‚Î‰Ÿ‚µo‚µ‚Í‚µ‚È‚¢
+		// æ–¹å‘ãŒæ±ºã¾ã‚‰ãªã‘ã‚Œã°æŠ¼ã—å‡ºã—ã¯ã—ãªã„
 		if (v.Size() <= FLT_EPSILON)
 			return std::nullopt;
 		dist = 0.0f;
@@ -430,42 +440,45 @@ std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSp
 		v = Vector3::Normalize(v);
 	}
 
-	// ‰Ÿ‚µo‚µ—Ê
+	// æŠ¼ã—å‡ºã—é‡
 	float penetration = _sphere.Radius - dist;
 	if (penetration <= 0.0f)
 		return std::nullopt;
 
 	info.closest = closest;
-	// Å’Z’n“_‚©‚ç‹…‚Ì’†S‚Ö‰Ÿ‚µo‚·
+	// æœ€çŸ­åœ°ç‚¹ã‹ã‚‰çƒã®ä¸­å¿ƒã¸æŠ¼ã—å‡ºã™
 	info.push = v * penetration;
 	return info;
 }
 
-std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingOrientedBox& _obb)
+std::optional<IntersectInfo> mtgb::Collider::Intersect(
+	const DirectX::BoundingSphere& _sphere,
+	const DirectX::BoundingOrientedBox& _obb
+)
 {
 	IntersectInfo info;
 
-	Vector3 localCenter = _sphere.Center - _obb.Center;
-	Vector3 extents = _obb.Extents;
-	Quaternion rotate = _obb.Orientation;
-	Matrix4x4 rotMat = DirectX::XMMatrixRotationQuaternion(rotate);
-	Vector3 rotatedExtents = DirectX::XMVector3TransformCoord(extents,rotMat);
-	rotatedExtents.x = std::abs(rotatedExtents.x);
-	rotatedExtents.y = std::abs(rotatedExtents.y);
-	rotatedExtents.z = std::abs(rotatedExtents.z);
+	Vector3 localCenter	   = _sphere.Center - _obb.Center;
+	Vector3 extents		   = _obb.Extents;
+	Quaternion rotate	   = _obb.Orientation;
+	Matrix4x4 rotMat	   = DirectX::XMMatrixRotationQuaternion(rotate);
+	Vector3 rotatedExtents = DirectX::XMVector3TransformCoord(extents, rotMat);
+	rotatedExtents.x	   = std::abs(rotatedExtents.x);
+	rotatedExtents.y	   = std::abs(rotatedExtents.y);
+	rotatedExtents.z	   = std::abs(rotatedExtents.z);
 
 	Vector3 closest;
 	closest.x = std::clamp(localCenter.x, -rotatedExtents.x, rotatedExtents.x);
 	closest.y = std::clamp(localCenter.y, -rotatedExtents.y, rotatedExtents.y);
 	closest.z = std::clamp(localCenter.z, -rotatedExtents.z, rotatedExtents.z);
 
-	Vector3 v = localCenter - closest;
+	Vector3 v	   = localCenter - closest;
 	float distance = v.Size();
 
 	if (distance <= FLT_EPSILON)
 	{
 		v = Vector3::Normalize(_sphere.Center - _obb.Center);
-		// •ûŒü‚ªŒˆ‚Ü‚ç‚È‚¯‚ê‚Î‰Ÿ‚µo‚µ‚Í‚µ‚È‚¢
+		// æ–¹å‘ãŒæ±ºã¾ã‚‰ãªã‘ã‚Œã°æŠ¼ã—å‡ºã—ã¯ã—ãªã„
 		if (v.Size() <= FLT_EPSILON)
 			return std::nullopt;
 		distance = 0.0f;
@@ -476,7 +489,7 @@ std::optional<IntersectInfo> mtgb::Collider::Intersect(const DirectX::BoundingSp
 		return std::nullopt;
 
 	info.closest = closest;
-	info.push = Vector3::Normalize(v) * penetration;
+	info.push	 = Vector3::Normalize(v) * penetration;
 	return info;
 }
 
@@ -490,31 +503,31 @@ void mtgb::Collider::Push(const Collider& _other)
 
 	switch (colliderType_)
 	{
-	case ColliderType::TYPE_SPHERE:
+	case ColliderType::TYPE_SPHERE :
 		switch (_other.colliderType_)
 		{
-		case ColliderType::TYPE_AABB:
+		case ColliderType::TYPE_AABB :
 			info = Intersect(computeSphere_, _other.computeBox_);
 			break;
-		case ColliderType::TYPE_OBB:
+		case ColliderType::TYPE_OBB :
 			info = Intersect(computeSphere_, _other.computeOBB_);
 			break;
 		}
 		sphereTypeEntityId = GetEntityId();
 		break;
-	case ColliderType::TYPE_AABB:
+	case ColliderType::TYPE_AABB :
 		switch (_other.colliderType_)
 		{
-		case ColliderType::TYPE_SPHERE:
-			info = Intersect(_other.computeSphere_,computeBox_);
+		case ColliderType::TYPE_SPHERE :
+			info = Intersect(_other.computeSphere_, computeBox_);
 			break;
 		}
 		sphereTypeEntityId = _other.GetEntityId();
 		break;
-	case ColliderType::TYPE_OBB:
+	case ColliderType::TYPE_OBB :
 		switch (_other.colliderType_)
 		{
-		case ColliderType::TYPE_SPHERE:
+		case ColliderType::TYPE_SPHERE :
 			info = Intersect(_other.computeSphere_, computeOBB_);
 			break;
 		}
@@ -537,18 +550,18 @@ void mtgb::Collider::Push(const Collider& _other)
 
 void mtgb::Collider::OnPostRestore()
 {
-	// TODO: ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì•œŒ³‚ÉˆË‘¶ŠÖŒW‚ğİ’è‚·‚é
-	// Œ»İTransform‚æ‚è‚àæ‚É•œŒ³‚³‚ê‚Ä‚µ‚Ü‚¤‚½‚ßscale‚Ì”½‰f‚ª‚Å‚«‚¸A
-	// Ÿ‚ÌXV‚É‚È‚Á‚Ä‚µ‚Ü‚¤
+	// TODO: ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å¾©å…ƒã«ä¾å­˜é–¢ä¿‚ã‚’è¨­å®šã™ã‚‹
+	// ç¾åœ¨Transformã‚ˆã‚Šã‚‚å…ˆã«å¾©å…ƒã•ã‚Œã¦ã—ã¾ã†ãŸã‚scaleã®åæ˜ ãŒã§ããšã€
+	// æ¬¡ã®æ›´æ–°æ™‚ã«ãªã£ã¦ã—ã¾ã†
 	SetCenter(center_);
 	switch (colliderType_)
 	{
-	case ColliderType::TYPE_SPHERE:
-	case ColliderType::TYPE_CAPSULE:
+	case ColliderType::TYPE_SPHERE :
+	case ColliderType::TYPE_CAPSULE :
 		SetRadius(radius_);
 		break;
-	case ColliderType::TYPE_AABB:
-	case ColliderType::TYPE_OBB:
+	case ColliderType::TYPE_AABB :
+	case ColliderType::TYPE_OBB :
 		SetExtents(extents_);
 		break;
 	}
@@ -558,19 +571,18 @@ void mtgb::Collider::Draw() const
 {
 	static Transform copyTransform{};
 
-
 	switch (colliderType_)
 	{
-	case ColliderType::TYPE_SPHERE:
+	case ColliderType::TYPE_SPHERE :
 		copyTransform = *pTransform_;
 		copyTransform.position += center_;
 		copyTransform.scale *= Vector3::One() * computeSphere_.Radius;
 		copyTransform.Compute();
-		Draw::FBXModel(hSphereModel_, copyTransform, 0,ShaderType::Debug3D);
+		Draw::FBXModel(hSphereModel_, copyTransform, 0, ShaderType::Debug3D);
 		break;
-	case ColliderType::TYPE_CAPSULE:
+	case ColliderType::TYPE_CAPSULE :
 		break;
-	case ColliderType::TYPE_AABB:
+	case ColliderType::TYPE_AABB :
 
 		if (isStatic_)
 		{
@@ -580,26 +592,26 @@ void mtgb::Collider::Draw() const
 		{
 			copyTransform = *pTransform_;
 		}
-		
-		// ²•Às‚È‚Ì‚Å‰ñ“]‚Í‚È‚µ
+
+		// è»¸ä¸¦è¡Œãªã®ã§å›è»¢ã¯ãªã—
 		copyTransform.rotate = Quaternion{};
 
 		if (isStatic_)
 		{
-			// Ã“IATransform•s—v‚È‚Ì‚Å‚»‚Ì‚Ü‚Ü‘ã“ü
+			// é™çš„ã€Transformä¸è¦ãªã®ã§ãã®ã¾ã¾ä»£å…¥
 			copyTransform.position = computeBox_.Center;
-			copyTransform.scale = computeBox_.Extents * 2.0f;
+			copyTransform.scale	   = computeBox_.Extents * 2.0f;
 		}
 		else
 		{
-			// Transform‚É‡‚í‚¹‚ÄˆÊ’uAƒTƒCƒY‚ğ’²®
+			// Transformã«åˆã‚ã›ã¦ä½ç½®ã€ã‚µã‚¤ã‚ºã‚’èª¿æ•´
 			copyTransform.position += center_;
 			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
 		copyTransform.Compute();
 		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::Debug3D);
 		break;
-	case ColliderType::TYPE_OBB:
+	case ColliderType::TYPE_OBB :
 		if (isStatic_)
 		{
 			copyTransform.parent = INVALID_ENTITY;
@@ -608,28 +620,26 @@ void mtgb::Collider::Draw() const
 		{
 			copyTransform = *pTransform_;
 		}
-		
+
 		if (isStatic_)
 		{
-			// Ã“IATransform•s—v‚È‚Ì‚Å‚»‚Ì‚Ü‚Ü‘ã“ü
+			// é™çš„ã€Transformä¸è¦ãªã®ã§ãã®ã¾ã¾ä»£å…¥
 			copyTransform.position = computeBox_.Center;
-			copyTransform.scale = computeBox_.Extents * 2.0f;
+			copyTransform.scale	   = computeBox_.Extents * 2.0f;
 		}
 		else
 		{
-			// Transform‚É‡‚í‚¹‚ÄˆÊ’uAƒTƒCƒY‚ğ’²®
+			// Transformã«åˆã‚ã›ã¦ä½ç½®ã€ã‚µã‚¤ã‚ºã‚’èª¿æ•´
 			copyTransform.position += center_;
 			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
 		copyTransform.Compute();
 		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::Debug3D);
 		break;
-	default:
+	default :
 		break;
 	}
 }
 
-mtgb::FBXModelHandle mtgb::Collider::hSphereModel_{ mtgb::INVALID_HANDLE };
-mtgb::FBXModelHandle mtgb::Collider::hBoxModel_{ mtgb::INVALID_HANDLE };
-
-
+mtgb::FBXModelHandle mtgb::Collider::hSphereModel_{mtgb::INVALID_HANDLE};
+mtgb::FBXModelHandle mtgb::Collider::hBoxModel_{mtgb::INVALID_HANDLE};

@@ -3,11 +3,10 @@
 #include "SceneSystem.h"
 #include "ReleaseUtility.h"
 
-
-mtgb::IShader::IShader() :
-	pVertexBuffer_ { nullptr },
-	pIndexBuffer_{ nullptr },
-	pConstantBuffer_{ nullptr }
+mtgb::IShader::IShader()
+	: pVertexBuffer_{nullptr}
+	, pIndexBuffer_{nullptr}
+	, pConstantBuffer_{nullptr}
 {
 }
 

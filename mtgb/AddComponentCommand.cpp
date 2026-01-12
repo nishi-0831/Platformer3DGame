@@ -2,59 +2,59 @@
 #include "IComponentPool.h"
 #include "ComponentRegistry.h"
 mtgb::AddComponentCommand::AddComponentCommand(
-    mtgb::EntityId _entityId,
-    const std::type_index& _typeIdx,
-    mtgb::IComponentMemento* _memento,
-    const mtgb::ComponentFactory& _componentFactory)
-    : entityId_(_entityId)
-    , componentType_(_typeIdx)
-    , memento_(_memento)
-    , componentFactory_(_componentFactory)
+	mtgb::EntityId _entityId,
+	const std::type_index& _typeIdx,
+	mtgb::IComponentMemento* _memento,
+	const mtgb::ComponentFactory& _componentFactory
+)
+	: entityId_(_entityId)
+	, componentType_(_typeIdx)
+	, memento_(_memento)
+	, componentFactory_(_componentFactory)
 {
 }
 
 void mtgb::AddComponentCommand::Execute()
 {
-    ApplyMemento();
+	ApplyMemento();
 }
 
 void mtgb::AddComponentCommand::Undo()
 {
-    RemoveComponent();
+	RemoveComponent();
 }
 
-
-
-void mtgb::AddComponentCommand::ApplyMemento() 
+void mtgb::AddComponentCommand::ApplyMemento()
 {
-   
-    if (memento_ == nullptr)
-    {
-        // entityId‚©‚çŠù‘¶‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾A‚È‚¯‚ê‚ÎV‹Kì¬‚µMemento‚É•Û‘¶‚·‚é
-        memento_ = componentFactory_.AddComponent(componentType_, entityId_);
-    }
-    else
-    {
-        // Memento‚©‚çƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ•œŒ³
-        componentFactory_.AddComponentFromMemento(*memento_);
-    }
+
+	if (memento_ == nullptr)
+	{
+		// entityIdã‹ã‚‰æ—¢å­˜ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—ã€ãªã‘ã‚Œã°æ–°è¦ä½œæˆã—Mementoã«ä¿å­˜ã™ã‚‹
+		memento_ = componentFactory_.AddComponent(componentType_, entityId_);
+	}
+	else
+	{
+		// Mementoã‹ã‚‰ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å¾©å…ƒ
+		componentFactory_.AddComponentFromMemento(*memento_);
+	}
 }
 
 void mtgb::AddComponentCommand::RemoveComponent() const
 {
-    std::optional<std::type_index> componentPoolType = Game::System<ComponentRegistry>().GetComponentPoolType(componentType_);
-    if (componentPoolType.has_value())
-    {
-        Game::RemoveEntityComponent(componentPoolType.value(), entityId_);
-    }
+	std::optional<std::type_index> componentPoolType =
+		Game::System<ComponentRegistry>().GetComponentPoolType(componentType_);
+	if (componentPoolType.has_value())
+	{
+		Game::RemoveEntityComponent(componentPoolType.value(), entityId_);
+	}
 }
 
 std::string mtgb::AddComponentCommand::Name() const
 {
-    return std::string("AddComponent:" ) +componentType_.name();
+	return std::string("AddComponent:") + componentType_.name();
 }
 
 EntityId mtgb::AddComponentCommand::GetCommandTargetEntityId() const
 {
-    return entityId_;
+	return entityId_;
 }

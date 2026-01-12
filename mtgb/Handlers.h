@@ -1,48 +1,47 @@
 #pragma once
 #include <cstdint>
 
-
 #pragma region Handlers
 
 namespace mtgb
 {
 	/// <summary>
-	/// ‰æ‘œ‚Ìƒnƒ“ƒhƒ‹
+	/// ç”»åƒã®ãƒãƒ³ãƒ‰ãƒ«
 	/// </summary>
 	using ImageHandle = int32_t;
 	/// <summary>
-	/// ‰¹º‚Ìƒnƒ“ƒhƒ‹
+	/// éŸ³å£°ã®ãƒãƒ³ãƒ‰ãƒ«
 	/// </summary>
 	using AudioHandle = int32_t;
 	/// <summary>
-	/// ƒ‚ƒfƒ‹‚Ìƒnƒ“ƒhƒ‹
+	/// ãƒ¢ãƒ‡ãƒ«ã®ãƒãƒ³ãƒ‰ãƒ«
 	/// </summary>
 	using ModelHandle = int32_t;
 	/// <summary>
-	/// OBJƒ‚ƒfƒ‹‚Ìƒnƒ“ƒhƒ‹
+	/// OBJãƒ¢ãƒ‡ãƒ«ã®ãƒãƒ³ãƒ‰ãƒ«
 	/// </summary>
 	using OBJModelHandle = int32_t;
 	/// <summary>
-	/// FBXƒ‚ƒfƒ‹‚Ìƒnƒ“ƒhƒ‹
+	/// FBXãƒ¢ãƒ‡ãƒ«ã®ãƒãƒ³ãƒ‰ãƒ«
 	/// </summary>
 	using FBXModelHandle = int32_t;
 
 	/// <summary>
-	/// ƒeƒLƒXƒg‚Ìƒnƒ“ƒhƒ‹
+	/// ãƒ†ã‚­ã‚¹ãƒˆã®ãƒãƒ³ãƒ‰ãƒ«
 	/// </summary>
 	using TextHandle = int32_t;
 
 	using CameraHandleInScene = int32_t;
 
 	/// <summary>
-	/// ƒV[ƒ““à‚Å’Ê—p‚·‚éƒJƒƒ‰ƒnƒ“ƒhƒ‹
+	/// ã‚·ãƒ¼ãƒ³å†…ã§é€šç”¨ã™ã‚‹ã‚«ãƒ¡ãƒ©ãƒãƒ³ãƒ‰ãƒ«
 	/// </summary>
 	using CameraHandleInScene = int32_t;
 
 	/// <summary>
-	/// –³Œø‚Èƒnƒ“ƒhƒ‹’l
+	/// ç„¡åŠ¹ãªãƒãƒ³ãƒ‰ãƒ«å€¤
 	/// </summary>
-	static const int32_t INVALID_HANDLE{ -1 };
-}
+	static const int32_t INVALID_HANDLE{-1};
+} // namespace mtgb
 
 #pragma endregion

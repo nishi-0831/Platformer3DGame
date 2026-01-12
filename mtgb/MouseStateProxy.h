@@ -5,7 +5,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// マウスの入力をImGuiで表示する用
+	/// 繝槭え繧ｹ縺ｮ蜈･蜉帙ｒImGui縺ｧ陦ｨ遉ｺ縺吶ｋ逕ｨ
 	/// </summary>
 	struct MouseStateProxy
 	{
@@ -17,4 +17,4 @@ namespace mtgb
 
 		void UpdateInputData(const _DIMOUSESTATE& _ms);
 	};
-}
+} // namespace mtgb

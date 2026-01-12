@@ -7,71 +7,73 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚É‚Â‚¯‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+	/// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ã¤ã‘ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 	/// </summary>
-	/// <typeparam name="ComponentPoolT">ƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹</typeparam>
-	/// <typeparam name="ComponentT">ƒRƒ“ƒ|[ƒlƒ“ƒg</typeparam>
-	template<class ComponentPoolT, typename ComponentT>
-	class IComponent
+	/// <typeparam name="ComponentPoolT">ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«</typeparam>
+	/// <typeparam name="ComponentT">ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ</typeparam>
+	template <class ComponentPoolT, typename ComponentT> class IComponent
 	{
-	public:
+	  public:
 		using Pool = ComponentPoolT;
 		friend ComponentPoolT;
-		friend ComponentPool<ComponentT,ComponentPoolT>;
-		IComponent() :
-			entityId_{ INVALID_ENTITY }
-		{}
+		friend ComponentPool<ComponentT, ComponentPoolT>;
+		IComponent()
+			: entityId_{INVALID_ENTITY}
+		{
+		}
 		IComponent(const EntityId _entityId);
 		virtual ~IComponent();
 		IComponent& operator=(const IComponent& _other)
 		{
-			// entityId_ ‚ÍƒRƒs[‚µ‚È‚¢
-			return *this;	
+			// entityId_ ã¯ã‚³ãƒ”ãƒ¼ã—ãªã„
+			return *this;
 		}
 		static ComponentT& Get(const EntityId _entityId);
-		template<typename... Args>
-		static ComponentT& Get(const EntityId _entityId, Args&&... _args);
-		
+		template <typename... Args> static ComponentT& Get(const EntityId _entityId, Args&&... _args);
+
 		static ComponentT* Reuse(size_t _index, EntityId _entityId);
-		virtual void Initialize() {}
+		virtual void Initialize()
+		{
+		}
 
-		const EntityId GetEntityId() const { return entityId_; }
+		const EntityId GetEntityId() const
+		{
+			return entityId_;
+		}
 
-
-	private:
+	  private:
 		EntityId entityId_;
 	};
 
-	template<class ComponentPoolT, typename ComponentT>
-	inline IComponent<ComponentPoolT, ComponentT>::IComponent(const EntityId _entityId) :
-		entityId_{ _entityId }
+	template <class ComponentPoolT, typename ComponentT>
+	inline IComponent<ComponentPoolT, ComponentT>::IComponent(const EntityId _entityId)
+		: entityId_{_entityId}
 	{
-		//Game::System<ComponentPoolT>().Register(_entityId);
+		// Game::System<ComponentPoolT>().Register(_entityId);
 	}
 
-	template<class ComponentPoolT, typename ComponentT>
-	inline IComponent<ComponentPoolT, ComponentT>::~IComponent()
+	template <class ComponentPoolT, typename ComponentT> inline IComponent<ComponentPoolT, ComponentT>::~IComponent()
 	{
-		//Game::System<ComponentPoolT>().UnRegister(entityId_);
+		// Game::System<ComponentPoolT>().UnRegister(entityId_);
 	}
 
-	template<class ComponentPoolT, typename ComponentT>
-	template<typename... Args>
+	template <class ComponentPoolT, typename ComponentT>
+	template <typename... Args>
 	inline ComponentT& IComponent<ComponentPoolT, ComponentT>::Get(const EntityId _entityId, Args&&... _args)
 	{
 		return Game::System<ComponentPoolT>().Get(_entityId, std::forward<Args>(_args)...);
 	}
 
-	template<class ComponentPoolT, typename ComponentT>
+	template <class ComponentPoolT, typename ComponentT>
 	inline ComponentT& IComponent<ComponentPoolT, ComponentT>::Get(const EntityId _entityId)
 	{
 		return Game::System<ComponentPoolT>().Get(_entityId);
 	}
 
-	template<class ComponentPoolT, typename ComponentT>
+	template <class ComponentPoolT, typename ComponentT>
 	inline ComponentT* IComponent<ComponentPoolT, ComponentT>::Reuse(size_t _index, EntityId _entityId)
 	{
 		return Game::System<ComponentPoolT>().Reuse(_index, _entityId);
 	}
 
-}
+} // namespace mtgb

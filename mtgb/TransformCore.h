@@ -1,5 +1,5 @@
 #pragma once
-#include <cmtgb.h>
+#include "cmtgb.h"
 #include "Vector3.h"
 #include "Quaternion.h"
 
@@ -9,16 +9,17 @@ namespace mtgb
 
 	struct TransformCore
 	{
-		inline TransformCore():
-			parent{ INVALID_ENTITY },
-			position{},
-			scale{},
-			rotate{}
-		{}
+		inline TransformCore()
+			: parent{INVALID_ENTITY}
+			, position{}
+			, scale{}
+			, rotate{}
+		{
+		}
 
 		EntityId parent;
 		Vector3 position;
 		Vector3 scale;
 		Quaternion rotate;
 	};
-}
+} // namespace mtgb

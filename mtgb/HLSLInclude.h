@@ -4,31 +4,32 @@
 namespace mtgb
 {
 	/// <summary>
-	/// �V�F�[�_�w�b�_�ǂݍ��ݗp - �p�����Ă���
+	/// シェーダヘッダ読み込み用 - 継承している
 	/// </summary>
 	struct HLSLInclude : public ID3DInclude
 	{
 		/// <summary>
-		/// �J���Ƃ��̏���
+		/// 開くときの処理
 		/// </summary>
-		/// <param name="_includeType">�C���N���[�h�̃^�C�v</param>
-		/// <param name="_pFileNamm">�ǂݍ��ރt�@�C���p�X</param>
-		/// <param name="_pParentData">�e�f�[�^�̃|�C���^�n��</param>
-		/// <param name="_ppData">�f�[�^�̃|�C���^�̃|�C���^�n��</param>
-		/// <param name="_pBytes">�o�C�g���̃|�C���^�n��</param>
-		/// <returns>���ʃn���h��</returns>
+		/// <param name="_includeType">インクルードのタイプ</param>
+		/// <param name="_pFileNamm">読み込むファイルパス</param>
+		/// <param name="_pParentData">親データのポインタ渡し</param>
+		/// <param name="_ppData">データのポインタのポインタ渡し</param>
+		/// <param name="_pBytes">バイト数のポインタ渡し</param>
+		/// <returns>結果ハンドル</returns>
 		HRESULT Open(
 			D3D_INCLUDE_TYPE _includeType,
 			LPCSTR _pFileName,
 			LPCVOID _pParentData,
 			LPCVOID* _ppData,
-			UINT* _pBytes) override;
+			UINT* _pBytes
+		) override;
 
 		/// <summary>
-		/// ����Ƃ��̏���
+		/// 閉じるときの処理
 		/// </summary>
-		/// <param name="_pData">�f�[�^�̃|�C���^�n��</param>
-		/// <returns>���ʃn���h��</returns>
+		/// <param name="_pData">データのポインタ渡し</param>
+		/// <returns>結果ハンドル</returns>
 		HRESULT Close(LPCVOID _pData) override;
 	};
-}
+} // namespace mtgb

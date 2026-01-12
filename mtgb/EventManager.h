@@ -9,39 +9,41 @@ namespace mtgb
 {
 	class EventBase
 	{
-	public:
-		virtual ~EventBase() = default;
-		virtual void UnsubscribeAll() = 0;
+	  public:
+		virtual ~EventBase()			= default;
+		virtual void UnsubscribeAll()	= 0;
 		virtual void UnsubscribeScene() = 0;
 	};
 
 	using EventHandlerId = std::size_t;
-	enum class EventScope {Scene,Global};
-	/// <summary>
-	/// <para>ƒCƒxƒ“ƒg—p‚Ìƒeƒ“ƒvƒŒ[ƒgƒNƒ‰ƒXB</para>
-	/// <para>”CˆÓ‚ÌƒCƒxƒ“ƒgƒf[ƒ^Œ^‚É‘Î‚µ‚Äƒnƒ“ƒhƒ‰‚Ì“o˜^A‰ğœAˆêŠ‡‰ğœAŒÄ‚Ño‚µ‚ğs‚¤B</para>
-	/// <para>ƒnƒ“ƒhƒ‰‚Í ID ‚ÅŠÇ—‚µAInvoke Às‚É•Û—¯’†‚Ì‰ğœ—v‹‚ğˆ—‚·‚éB</para>
-	/// </summary>
-	template<typename EventDataType>
-	class Event : public EventBase
+	enum class EventScope
 	{
-	public:
-
+		Scene,
+		Global
+	};
+	/// <summary>
+	/// <para>ã‚¤ãƒ™ãƒ³ãƒˆç”¨ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚¯ãƒ©ã‚¹ã€‚</para>
+	/// <para>ä»»æ„ã®ã‚¤ãƒ™ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å‹ã«å¯¾ã—ã¦ãƒãƒ³ãƒ‰ãƒ©ã®ç™»éŒ²ã€è§£é™¤ã€ä¸€æ‹¬è§£é™¤ã€å‘¼ã³å‡ºã—ã‚’è¡Œã†ã€‚</para>
+	/// <para>ãƒãƒ³ãƒ‰ãƒ©ã¯ ID ã§ç®¡ç†ã—ã€Invoke å®Ÿè¡Œæ™‚ã«ä¿ç•™ä¸­ã®è§£é™¤è¦æ±‚ã‚’å‡¦ç†ã™ã‚‹ã€‚</para>
+	/// </summary>
+	template <typename EventDataType> class Event : public EventBase
+	{
+	  public:
 		using EventHandler = std::function<void(const EventDataType&)>;
 
 		/// <summary>
-		/// ƒnƒ“ƒhƒ‰‚ğ“o˜^‚µA“o˜^‚ÉŠ„‚è“–‚Ä‚ç‚ê‚½ ID ‚ğ•Ô‚·
+		/// ãƒãƒ³ãƒ‰ãƒ©ã‚’ç™»éŒ²ã—ã€ç™»éŒ²ã«å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸ ID ã‚’è¿”ã™
 		/// </summary>
-		EventHandlerId Subscribe(EventHandler _handler,EventScope _scope = EventScope::Scene)
+		EventHandlerId Subscribe(EventHandler _handler, EventScope _scope = EventScope::Scene)
 		{
 			const EventHandlerId id = nextId++;
-			handlers_.emplace(id, HandlerEntry{ std::move(_handler) ,_scope});
+			handlers_.emplace(id, HandlerEntry{std::move(_handler), _scope});
 			return id;
 		}
-		
+
 		/// <summary>
-		/// w’è‚µ‚½ƒnƒ“ƒhƒ‰ ID ‚ğ•Û—¯‰ğœƒLƒ…[‚É’Ç‰Á‚·‚é
-		/// <para>ÀÛ‚Ì‰ğœ‚ÍŸ‰ñ‚Ì Invoke ŒÄ‚Ño‚µ‚És‚¤</para>
+		/// æŒ‡å®šã—ãŸãƒãƒ³ãƒ‰ãƒ© ID ã‚’ä¿ç•™è§£é™¤ã‚­ãƒ¥ãƒ¼ã«è¿½åŠ ã™ã‚‹
+		/// <para>å®Ÿéš›ã®è§£é™¤ã¯æ¬¡å›ã® Invoke å‘¼ã³å‡ºã—æ™‚ã«è¡Œã†</para>
 		/// </summary>
 		void Unsubscribe(EventHandlerId _id)
 		{
@@ -49,13 +51,14 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// “o˜^‚³‚ê‚Ä‚¢‚é‚·‚×‚Ä‚Ìƒnƒ“ƒhƒ‰‚ğ‘¦À‚É‰ğœ‚·‚é
+		/// ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ã™ã¹ã¦ã®ãƒãƒ³ãƒ‰ãƒ©ã‚’å³åº§ã«è§£é™¤ã™ã‚‹
 		/// </summary>
 		void UnsubscribeAll() override
 		{
 			handlers_.clear();
 
-			while (!pendingUnsubscribeIds.empty()) pendingUnsubscribeIds.pop();
+			while (!pendingUnsubscribeIds.empty())
+				pendingUnsubscribeIds.pop();
 		}
 
 		void UnsubscribeScene() override
@@ -79,7 +82,7 @@ namespace mtgb
 			}
 		}
 		/// <summary>
-		/// •Û—¯’†‚Ì‰ğœ—v‹‚ğˆ—‚µA‚»‚ÌŒã‚·‚×‚Ä‚Ìƒnƒ“ƒhƒ‰‚É‘Î‚µ‚ÄƒCƒxƒ“ƒgƒf[ƒ^‚ğ“n‚µ‚ÄŒÄ‚Ño‚·
+		/// ä¿ç•™ä¸­ã®è§£é™¤è¦æ±‚ã‚’å‡¦ç†ã—ã€ãã®å¾Œã™ã¹ã¦ã®ãƒãƒ³ãƒ‰ãƒ©ã«å¯¾ã—ã¦ã‚¤ãƒ™ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿ã‚’æ¸¡ã—ã¦å‘¼ã³å‡ºã™
 		/// </summary>
 		void Invoke(const EventDataType& _data)
 		{
@@ -96,7 +99,8 @@ namespace mtgb
 				}
 			}
 		}
-	private:
+
+	  private:
 		struct HandlerEntry
 		{
 			EventHandler handler;
@@ -109,36 +113,38 @@ namespace mtgb
 
 	class EventManager : public ISystem
 	{
-	public:
+	  public:
 		~EventManager();
 		void Initialize() override;
-		void Update() override {}
+		void Update() override
+		{
+		}
 
-		template<typename EventDataType>
+		template <typename EventDataType>
 		/// <summary>
-		/// w’è‚³‚ê‚½ƒCƒxƒ“ƒgƒf[ƒ^Œ^‚É‘Î‰‚·‚éEvent ƒIƒuƒWƒFƒNƒg‚ğ•Ô‚·
+		/// æŒ‡å®šã•ã‚ŒãŸã‚¤ãƒ™ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å‹ã«å¯¾å¿œã™ã‚‹Event ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã™
 		/// </summary>
 		Event<EventDataType>& GetEvent()
 		{
-			// ƒeƒ“ƒvƒŒ[ƒgŒ^ `EventDataType` ‚ğ¯•Ê‚·‚é‚½‚ß‚Ì type_index ‚ğì¬
+			// ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆå‹ `EventDataType` ã‚’è­˜åˆ¥ã™ã‚‹ãŸã‚ã® type_index ã‚’ä½œæˆ
 			std::type_index typeIdx = std::type_index(typeid(EventDataType));
 
 			auto itr = events_.find(typeIdx);
 			if (itr == events_.end())
 			{
-				// ‘¶İ‚µ‚È‚¢ê‡‚ÍV‹Kì¬‚µ‚Äƒ}ƒbƒv‚É“o˜^
+				// å­˜åœ¨ã—ãªã„å ´åˆã¯æ–°è¦ä½œæˆã—ã¦ãƒãƒƒãƒ—ã«ç™»éŒ²
 				Event<EventDataType>* newEvent = new Event<EventDataType>();
-				events_[typeIdx] = newEvent;
-				return  static_cast<Event<EventDataType>&>(*events_[typeIdx]);
+				events_[typeIdx]			   = newEvent;
+				return static_cast<Event<EventDataType>&>(*events_[typeIdx]);
 			}
 
-			// Šù‘¶‚ÌƒCƒxƒ“ƒg‚ğ•Ô‚·
+			// æ—¢å­˜ã®ã‚¤ãƒ™ãƒ³ãƒˆã‚’è¿”ã™
 			return static_cast<Event<EventDataType>&>(*itr->second);
 		}
 
 		/// <summary>
-		/// <para> ƒV[ƒ“‘JˆÚ‚ÉŒÄ‚Ô‚×‚«ŠÖ” </para>
-		/// <para> —LŒø”ÍˆÍ‚ªƒQ[ƒ€ƒV[ƒ“‚Å‚ ‚éƒCƒxƒ“ƒg‚ğ“o˜^‰ğœ‚·‚é </para>
+		/// <para> ã‚·ãƒ¼ãƒ³é·ç§»æ™‚ã«å‘¼ã¶ã¹ãé–¢æ•° </para>
+		/// <para> æœ‰åŠ¹ç¯„å›²ãŒã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã§ã‚ã‚‹ã‚¤ãƒ™ãƒ³ãƒˆã‚’ç™»éŒ²è§£é™¤ã™ã‚‹ </para>
 		/// </summary>
 		void ClearSceneSubscriptions()
 		{
@@ -150,7 +156,8 @@ namespace mtgb
 				}
 			}
 		}
-	private:
+
+	  private:
 		std::unordered_map<std::type_index, EventBase*> events_;
 	};
-}
+} // namespace mtgb

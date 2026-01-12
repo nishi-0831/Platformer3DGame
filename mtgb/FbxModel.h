@@ -12,13 +12,13 @@ namespace mtgb
 	class FbxParts;
 
 	/// <summary>
-	/// 1‚Â‚ÌFbxƒtƒ@ƒCƒ‹‚ğˆµ‚¤ƒNƒ‰ƒX
+	/// 1ã¤ã®Fbxãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ‰±ã†ã‚¯ãƒ©ã‚¹
 	/// </summary>
 	class FbxModel : public IModelPack
 	{
 		friend class FbxParts;
 
-	public:
+	  public:
 		FbxModel();
 		~FbxModel();
 
@@ -29,60 +29,69 @@ namespace mtgb
 		void Release() override;
 
 		/// <summary>
-		/// FbxScene‚ğæ“¾‚·‚é
+		/// FbxSceneã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <returns>FbxScene‚Ìƒ|ƒCƒ“ƒ^</returns>
-		inline FbxScene* GetFbxScene() { return pFbxScene_; }
+		/// <returns>FbxSceneã®ãƒã‚¤ãƒ³ã‚¿</returns>
+		inline FbxScene* GetFbxScene()
+		{
+			return pFbxScene_;
+		}
 
 		/// <summary>
-		/// Fbxƒp[ƒc‚ğæ“¾‚·‚é
+		/// Fbxãƒ‘ãƒ¼ãƒ„ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <param name="_index">ƒCƒ“ƒfƒbƒNƒX</param>
-		/// <returns>Fbxƒp[ƒc‚Ìƒ|ƒCƒ“ƒ^</returns>
-		inline FbxParts* GetFbxParts(const int _index) { return pParts_[_index]; }
+		/// <param name="_index">ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹</param>
+		/// <returns>Fbxãƒ‘ãƒ¼ãƒ„ã®ãƒã‚¤ãƒ³ã‚¿</returns>
+		inline FbxParts* GetFbxParts(const int _index)
+		{
+			return pParts_[_index];
+		}
 
 		/// <summary>
-		/// ”CˆÓ‚Ìƒ{[ƒ“‚ÌˆÊ’u‚ğæ“¾
+		/// ä»»æ„ã®ãƒœãƒ¼ãƒ³ã®ä½ç½®ã‚’å–å¾—
 		/// </summary>
-		/// <param name="_boneName">ƒ{[ƒ“‚Ì–¼‘O</param>
+		/// <param name="_boneName">ãƒœãƒ¼ãƒ³ã®åå‰</param>
 		Vector3 GetBonePosition(std::string _boneName);
 		/// <summary>
-		/// ƒXƒLƒ“ƒƒbƒVƒ…ƒAƒjƒ’†‚ÌŒ»İ‚Ì”CˆÓ‚Ìƒ{[ƒ“‚ÌˆÊ’u‚ğæ“¾
+		/// ã‚¹ã‚­ãƒ³ãƒ¡ãƒƒã‚·ãƒ¥ã‚¢ãƒ‹ãƒ¡ä¸­ã®ç¾åœ¨ã®ä»»æ„ã®ãƒœãƒ¼ãƒ³ã®ä½ç½®ã‚’å–å¾—
 		/// </summary>
-		/// <param name="_boneName">ƒ{[ƒ“‚Ì–¼‘O</param>
+		/// <param name="_boneName">ãƒœãƒ¼ãƒ³ã®åå‰</param>
 		Vector3 GetAnimBonePosition(std::string _boneName);
-		
+
 		/// <summary>
-		/// ƒ[ƒh‚µ‚½‚Æ‚«‚Ìƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹‚Ì–¼‘O‚ğæ“¾
+		/// ãƒ­ãƒ¼ãƒ‰ã—ãŸã¨ãã®ãƒ¢ãƒ‡ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã®åå‰ã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒtƒ@ƒCƒ‹–¼</returns>
-		std::string GetFileName() const { return fileName_; }
-		
+		/// <returns>ãƒ•ã‚¡ã‚¤ãƒ«å</returns>
+		std::string GetFileName() const
+		{
+			return fileName_;
+		}
+
 		/// <summary>
-		/// ƒAƒjƒ[ƒVƒ‡ƒ“‚ÌƒRƒ“ƒgƒ[ƒ‰‚ğ•Ô‚·
+		/// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã‚’è¿”ã™
 		/// </summary>
 		/// <returns></returns>
 		std::optional<FbxAnimationController> GetAnimationController();
-	private:
 
+	  private:
 		/// <summary>
-		/// ƒm[ƒh‚Ì’†g‚ğ’²‚×‚é
+		/// ãƒãƒ¼ãƒ‰ã®ä¸­èº«ã‚’èª¿ã¹ã‚‹
 		/// </summary>
-		/// <param name="_pNode">’²‚×‚½‚¢ƒm[ƒh</param>
-		/// <param name="_parts">ƒp[ƒcƒŠƒXƒg</param>
+		/// <param name="_pNode">èª¿ã¹ãŸã„ãƒãƒ¼ãƒ‰</param>
+		/// <param name="_parts">ãƒ‘ãƒ¼ãƒ„ãƒªã‚¹ãƒˆ</param>
 		void CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _parts);
 
-	private:
-		std::vector<FbxParts*> pParts_;  // •¡”‚ ‚é‚©‚à‚µ‚ê‚È‚¢ƒp[ƒc
+	  private:
+		std::vector<FbxParts*> pParts_; // è¤‡æ•°ã‚ã‚‹ã‹ã‚‚ã—ã‚Œãªã„ãƒ‘ãƒ¼ãƒ„
 
-		FbxScene* pFbxScene_;  // Fbxƒtƒ@ƒCƒ‹“à‚ÌƒV[ƒ“
+		FbxScene* pFbxScene_; // Fbxãƒ•ã‚¡ã‚¤ãƒ«å†…ã®ã‚·ãƒ¼ãƒ³
 
-		FbxTime::EMode frameRate_;  // ƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒŒ[ƒ€ƒŒ[ƒg
-		float animationSpeed_;  // ƒAƒjƒ[ƒVƒ‡ƒ“‚ÌÄ¶‘¬“x
-		int startFrame_;  // ƒAƒjƒ[ƒVƒ‡ƒ“Å‰‚ÌƒtƒŒ[ƒ€
-		int endFrame_;  // ƒAƒjƒ[ƒVƒ‡ƒ“ÅŒã‚ÌƒtƒŒ[ƒ€
+		FbxTime::EMode frameRate_; // ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¬ãƒ¼ãƒˆ
+		float animationSpeed_;	   // ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®å†ç”Ÿé€Ÿåº¦
+		int startFrame_;		   // ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æœ€åˆã®ãƒ•ãƒ¬ãƒ¼ãƒ 
+		int endFrame_;			   // ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æœ€å¾Œã®ãƒ•ãƒ¬ãƒ¼ãƒ 
 
-		std::string fileName_;  // ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹‚ÌƒpƒX
-		double unitScaleFactor_; // FbxScene‚©‚çæ“¾‚µ‚½ƒXƒP[ƒ‹’PˆÊ
+		std::string fileName_;	 // ãƒ¢ãƒ‡ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹
+		double unitScaleFactor_; // FbxSceneã‹ã‚‰å–å¾—ã—ãŸã‚¹ã‚±ãƒ¼ãƒ«å˜ä½
 	};
-}
+} // namespace mtgb

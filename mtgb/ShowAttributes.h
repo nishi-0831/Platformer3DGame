@@ -8,52 +8,52 @@
 #include "QuatToEuler.h"
 
 class Command;
-struct Vector3Show : refl::attr::usage::type 
+struct Vector3Show : refl::attr::usage::type
 {
 	Command* operator()(mtgb::Vector3* vec, const char* name) const;
 };
 
-
-struct QuaternionSHow : refl::attr::usage::type
+struct QuaternionShow : refl::attr::usage::type
 {
 	Command* operator()(DirectX::XMVECTORF32* vec, const char* name) const;
 };
 
-struct Vector4Show : refl::attr::usage::type 
+struct Vector4Show : refl::attr::usage::type
 {
-	Command* operator()(DirectX::XMVECTOR* _vec, const char* _name)const;
+	Command* operator()(DirectX::XMVECTOR* _vec, const char* _name) const;
 };
 
 /// <summary>
-/// �s��̕ύX��Undo/Redo�@�\�ɑΉ��ł��Ă��Ȃ��B
+/// 行列の変更をUndo/Redo機能に対応できていない。
 /// </summary>
 struct MatrixShow : refl::attr::usage::type
 {
-	Command* operator()(DirectX::XMMATRIX* _mat, const char* _name)const;
+	Command* operator()(DirectX::XMMATRIX* _mat, const char* _name) const;
 };
 
-template <typename T>
-struct Range : refl::attr::usage::member
+template <typename T> struct Range : refl::attr::usage::member
 {
 	T Min;
 	T Max;
 
-	Range(T min, T max) : Min(min), Max(max) {}
+	Range(T min, T max)
+		: Min(min)
+		, Max(max)
+	{
+	}
 
-	template<typename FieldType>
-	void operator()(FieldType* instance, const char* name) const {
+	template <typename FieldType> void operator()(FieldType* instance, const char* name) const
+	{
 		ShowRange(instance, name, Min, Max);
 	}
 };
 
-template <typename T>
-struct ProxyFor : refl::attr::usage::type
-{ using TargetType = T; };
+template <typename T> struct ProxyFor : refl::attr::usage::type
+{
+	using TargetType = T;
+};
 
-
-
-template <typename T>
-void ShowRange(T* instance, const char* name, T min, T max)
+template <typename T> void ShowRange(T* instance, const char* name, T min, T max)
 {
 	if constexpr (std::is_same_v<T, int>)
 	{
@@ -71,22 +71,24 @@ void ShowRange(T* instance, const char* name, T min, T max)
 
 struct DisplayName : refl::attr::usage::type
 {
-public:
+  public:
 	constexpr DisplayName(const char* _displayName) noexcept
-		: displayName{ _displayName } {
+		: displayName{_displayName}
+	{
 	}
 
-	constexpr std::string_view operator()() const noexcept { return std::string_view(displayName); }
+	constexpr std::string_view operator()() const noexcept
+	{
+		return std::string_view(displayName);
+	}
 
-private:
+  private:
 	const char* displayName;
 };
 
-template <typename T>
-struct ReadOnly : refl::attr::usage::member
+template <typename T> struct ReadOnly : refl::attr::usage::member
 {
-	template<typename FieldType>
-	void operator()(FieldType* instance, const char* name) const {
-
+	template <typename FieldType> void operator()(FieldType* instance, const char* name) const
+	{
 	}
 };

@@ -3,7 +3,7 @@
 
 class FadeOutScreen : public mtgb::GameObject
 {
-public:
+  public:
 	FadeOutScreen();
 	FadeOutScreen(float _duration);
 	~FadeOutScreen();
@@ -13,7 +13,8 @@ public:
 	void Start() override;
 	void StartFadeOut();
 	bool IsFinished();
-private:
+
+  private:
 	ImageRenderer* pImageRenderer_;
 	float duration_;
 	float elapsed_;

@@ -8,24 +8,30 @@
 
 namespace mtgb
 {
-	using CreateFunc = std::function<GameObject* ()>;
+	using CreateFunc = std::function<GameObject*()>;
 	class IGameObjectRegistrar
 	{
-	public:
+	  public:
 		virtual ~IGameObjectRegistrar() = default;
 
-		template<typename T>
-		void Register(std::string_view _typeName)
+		template <typename T> void Register(std::string_view _typeName)
 		{
-			// TODO: 
-			// - GameObjectTypeRegistry‚Ì’¼ÚŒÄo‚µ‚ğ”rœ
-			// - ¡ŒãAGameObjectŒ^‚ğ•K—v‚Æ‚·‚éƒNƒ‰ƒX‚ª‘‚¦‚½ê‡’¼ÚŒÄ‚Ño‚·‚Ì‚Å‚È‚­w“Ç‚·‚éd‘g‚İ‚ğŒŸ“¢‚·‚é(ƒ}ƒNƒ‚âƒR[ƒ‹ƒoƒbƒN‚Å)
+			// TODO:
+			// - GameObjectTypeRegistryã®ç›´æ¥å‘¼å‡ºã—ã‚’æ’é™¤
+			// -
+			// ä»Šå¾Œã€GameObjectå‹ã‚’å¿…è¦ã¨ã™ã‚‹ã‚¯ãƒ©ã‚¹ãŒå¢—ãˆãŸå ´åˆç›´æ¥å‘¼ã³å‡ºã™ã®ã§ãªãè³¼èª­ã™ã‚‹ä»•çµ„ã¿ã‚’æ¤œè¨ã™ã‚‹(ãƒã‚¯ãƒ­ã‚„ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã§)
 			Game::System<GameObjectTypeRegistry>().Register<T>(_typeName);
-			RegisterFactory(_typeName, []() -> GameObject* { return GameObject::Instantiate<T>(); });
+			RegisterFactory(
+				_typeName,
+				[]() -> GameObject*
+				{
+					return GameObject::Instantiate<T>();
+				}
+			);
 		}
 
-	private:
+	  private:
 		virtual void RegisterFactory(std::string_view _typeName, CreateFunc _creator) = 0;
 	};
 
-}
+} // namespace mtgb

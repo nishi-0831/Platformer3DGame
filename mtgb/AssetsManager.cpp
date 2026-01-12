@@ -3,7 +3,7 @@
 
 namespace
 {
-	static const char* ASSETS_DIRECTORY_PATH{ "Assets" };
+	static const char* ASSETS_DIRECTORY_PATH{"Assets"};
 }
 
 mtgb::AssetsManager::AssetsManager()

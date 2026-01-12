@@ -5,11 +5,12 @@ namespace mtgb
 {
 	class TextBox : public GameObject
 	{
-	public:
+	  public:
 		TextBox();
 		TextBox(const TextRendererData& _data);
 		TextBox(TextRendererData&& _data);
 		TextRenderer* pTextRenderer_;
-	private:
+
+	  private:
 	};
-}
+} // namespace mtgb

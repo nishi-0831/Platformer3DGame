@@ -18,7 +18,7 @@ namespace mtgb
 	class Sprite : public IShader
 	{
 		/// <summary>
-		/// ’¸“_î•ñ
+		/// é ‚ç‚¹æƒ…å ±
 		/// </summary>
 		struct Vertex
 		{
@@ -27,72 +27,75 @@ namespace mtgb
 		};
 
 		/// <summary>
-		/// GPU‚É‘—‚é‚â‚Â
+		/// GPUã«é€ã‚‹ã‚„ã¤
 		/// </summary>
 		struct ConstantBuffer
 		{
-			Matrix4x4 g_matrixCameraTranslate;          // ƒJƒƒ‰À•W•ÏŠ·s—ñ
-			Matrix4x4 g_matrixCameraRotation;          // ƒJƒƒ‰À•W•ÏŠ·s—ñ
-			Matrix4x4 g_matrixWorldTranslate;  // ’¸“_À•W•ÏŠ·s—ñ
-			Matrix4x4 g_matrixWorldRotation;   // ’¸“_À•W•ÏŠ·s—ñ
-			Matrix4x4 g_matrixTexture;         // ƒeƒNƒXƒ`ƒƒÀ•W•ÏŠ·s—ñ
-			Vector4 g_color;                   // F
-			Vector2 g_angle;                   // Šp“x
+			Matrix4x4 g_matrixCameraTranslate; // ã‚«ãƒ¡ãƒ©åº§æ¨™å¤‰æ›è¡Œåˆ—
+			Matrix4x4 g_matrixCameraRotation;  // ã‚«ãƒ¡ãƒ©åº§æ¨™å¤‰æ›è¡Œåˆ—
+			Matrix4x4 g_matrixWorldTranslate;  // é ‚ç‚¹åº§æ¨™å¤‰æ›è¡Œåˆ—
+			Matrix4x4 g_matrixWorldRotation;   // é ‚ç‚¹åº§æ¨™å¤‰æ›è¡Œåˆ—
+			Matrix4x4 g_matrixTexture;		   // ãƒ†ã‚¯ã‚¹ãƒãƒ£åº§æ¨™å¤‰æ›è¡Œåˆ—
+			Vector4 g_color;				   // è‰²
+			Vector2 g_angle;				   // è§’åº¦
 		};
 
-	public:
+	  public:
 		Sprite();
 		~Sprite();
 
 		/// <summary>
-		/// ‰æ‘œ‚ğ“Ç‚İ‚Ş
+		/// ç”»åƒã‚’èª­ã¿è¾¼ã‚€
 		/// </summary>
-		/// <param name="_fileName">‰æ‘œ‚Ìƒtƒ@ƒCƒ‹–¼</param>
+		/// <param name="_fileName">ç”»åƒã®ãƒ•ã‚¡ã‚¤ãƒ«å</param>
 		void Load(const std::wstring& _fileName);
 		/// <summary>
-		/// Sprite‚ğ•`‰æ‚·‚é
+		/// Spriteã‚’æç”»ã™ã‚‹
 		/// </summary>
-		/// <param name="_draw">•`‰æ‚·‚é‹éŒ`</param>
-		/// <param name="_cut">‰æ‘œ“à‚ÌƒgƒŠƒ~ƒ“ƒO‹éŒ`</param>
-		/// <param name="_rotationZ">‰ñ“]Šp“x(Degree)</param>
-		/// <param name="_color">•`‰æF</param>
-		void Draw(
-			const RectF& _draw,
-			const float _rotationZ,
-			const RectF& _cut,
-			const Color& _color);
+		/// <param name="_draw">æç”»ã™ã‚‹çŸ©å½¢</param>
+		/// <param name="_cut">ç”»åƒå†…ã®ãƒˆãƒªãƒŸãƒ³ã‚°çŸ©å½¢</param>
+		/// <param name="_rotationZ">å›è»¢è§’åº¦(Degree)</param>
+		/// <param name="_color">æç”»è‰²</param>
+		void Draw(const RectF& _draw, const float _rotationZ, const RectF& _cut, const Color& _color);
 
 		/// <summary>
-		/// Transform‚ğ‚à‚Æ‚É•`‰æ‚·‚é
+		/// Transformã‚’ã‚‚ã¨ã«æç”»ã™ã‚‹
 		/// </summary>
-		/// <param name="_pTransform">‰æ‘œ‚ÌTransform</param>
+		/// <param name="_pTransform">ç”»åƒã®Transform</param>
 		/// <param name="_pCameraTransform">
-		/// <para>ƒJƒƒ‰‚ÌTransform</para>
-		/// <para>nullptrw’è‰Â”\</para>
+		/// <para>ã‚«ãƒ¡ãƒ©ã®Transform</para>
+		/// <para>nullptræŒ‡å®šå¯èƒ½</para>
 		/// </param>
-		/// <param name="_imageSize">‰æ‘œƒTƒCƒY</param>
-		/// <param name="_color">F</param>
+		/// <param name="_imageSize">ç”»åƒã‚µã‚¤ã‚º</param>
+		/// <param name="_color">è‰²</param>
 		void Draw(
 			const Transform* _pTransform,
 			const Transform* _pCameraTransform,
 			const Vector2Int& _imageSize,
-			const Color& _color);
+			const Color& _color
+		);
 
 		/// <summary>
-		/// “Ç‚İ‚Ü‚ê‚½‰æ‘œ‚ÌƒTƒCƒY‚ğæ“¾
+		/// èª­ã¿è¾¼ã¾ã‚ŒãŸç”»åƒã®ã‚µã‚¤ã‚ºã‚’å–å¾—
 		/// </summary>
 		/// <returns></returns>
-		inline const Vector2Int GetSize() const { return texture2D_.GetSize(); }
+		inline const Vector2Int GetSize() const
+		{
+			return texture2D_.GetSize();
+		}
 
-		inline std::wstring GetFileName() { return fileName_; }
+		inline std::wstring GetFileName()
+		{
+			return fileName_;
+		}
 
-	private:
+	  private:
 		void InitializeVertexBuffer(ID3D11Device* _pDevice) override;
 		void InitializeIndexBuffer(ID3D11Device* _pDevice) override;
 		void InitializeConstantBuffer(ID3D11Device* _pDevice) override;
 
-	private:
-		Texture2D texture2D_;  // 2D‚ÌƒeƒNƒXƒ`ƒƒ
-		std::wstring fileName_;  // “Ç‚İ‚ñ‚¾ƒtƒ@ƒCƒ‹
+	  private:
+		Texture2D texture2D_;	// 2Dã®ãƒ†ã‚¯ã‚¹ãƒãƒ£
+		std::wstring fileName_; // èª­ã¿è¾¼ã‚“ã ãƒ•ã‚¡ã‚¤ãƒ«
 	};
-}
+} // namespace mtgb

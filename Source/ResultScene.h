@@ -3,7 +3,7 @@
 
 class ResultScene : public mtgb::GameScene
 {
-public:
+  public:
 	ResultScene();
 	~ResultScene();
 

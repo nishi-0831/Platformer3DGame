@@ -5,16 +5,16 @@
 namespace mtgb
 {
 	/// <summary>
-	/// �W���C�X�e�B�b�N�̓��͂�ImGui�ŕ\������p
+	/// ジョイスティックの入力をImGuiで表示する用
 	/// </summary>
-	struct JoystickProxy 
+	struct JoystickProxy
 	{
 		JoystickProxy(const DIJOYSTATE& js);
 		LONG lX;
 		LONG lY;
 		LONG lZ;
-		LONG lRx;// ���̃g���K�[�{�^��
-		LONG lRy;// �E�̃g���K�[�{�^��
+		LONG lRx; // 左のトリガーボタン
+		LONG lRy; // 右のトリガーボタン
 		LONG lRz;
 		LONG rglSlider[2];
 		DWORD rgdwPOV[4];
@@ -30,10 +30,10 @@ namespace mtgb
 
 		void UpdateFromInput(GUID guid);
 		void UpdateInputData(const DIJOYSTATE& js);
-		//JoystickProxy operator=(const DIJOYSTATE& js);
+		// JoystickProxy operator=(const DIJOYSTATE& js);
 	};
 
-	// Dual Shock�̏ꍇ
-	// lRx,lRy�����A�E�̃g���K�[�{�^��
-	// lY�͏�ɓ|���ƕ��A���Ő��AlX�͍������A�E����
-}
+	// Dual Shockの場合
+	// lRx,lRyが左、右のトリガーボタン
+	// lYは上に倒すと負、下で正、lXは左が負、右が正
+} // namespace mtgb

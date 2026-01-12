@@ -7,12 +7,13 @@ HRESULT mtgb::HLSLInclude::Open(
 	LPCSTR _pFileName,
 	LPCVOID _pParentData,
 	LPCVOID* _ppData,
-	UINT* _pBytes)
+	UINT* _pBytes
+)
 {
-	std::string fileName{ _pFileName };
-	std::string headersDirectory{ "../Assets/Shader/" };
+	std::string fileName{_pFileName};
+	std::string headersDirectory{"../Assets/Shader/"};
 
-	std::ifstream ifs{ headersDirectory + fileName, std::ios::binary };
+	std::ifstream ifs{headersDirectory + fileName, std::ios::binary};
 	ifs.seekg(0, std::ios::end);
 	*_pBytes = static_cast<UINT>(ifs.tellg());
 
@@ -20,8 +21,8 @@ HRESULT mtgb::HLSLInclude::Open(
 
 	ifs.seekg(0, std::ios::beg);
 
-	// バッファを動的確保して読み取る
-	char* buffer{ const_cast<char*>(static_cast<const char*>(*_ppData)) };
+	// 繝舌ャ繝輔ぃ繧貞虚逧�遒ｺ菫昴＠縺ｦ隱ｭ縺ｿ蜿悶ｋ
+	char* buffer{const_cast<char*>(static_cast<const char*>(*_ppData))};
 	ifs.read(buffer, *_pBytes);
 
 	return S_OK;
@@ -29,7 +30,7 @@ HRESULT mtgb::HLSLInclude::Open(
 
 HRESULT mtgb::HLSLInclude::Close(LPCVOID _pData)
 {
-	// 解放
+	// 隗｣謾ｾ
 	delete[] static_cast<const char*>(_pData);
 
 	return S_OK;

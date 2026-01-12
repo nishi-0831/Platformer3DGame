@@ -8,45 +8,46 @@
 #include "RectF.h"
 namespace mtgb
 {
-    /// <summary>
-    /// ŒŸoƒVƒXƒeƒ€‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX
-    /// </summary>
-    class IDetector
-    {
-    public:
-        virtual ~IDetector() = default;
+	/// <summary>
+	/// æ¤œå‡ºã‚·ã‚¹ãƒ†ãƒ ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
+	/// </summary>
+	class IDetector
+	{
+	  public:
+		virtual ~IDetector() = default;
 
-        /// <summary>
-        /// ŒŸo‚ğÀs
-        /// </summary>
-        virtual void UpdateDetection() = 0;
+		/// <summary>
+		/// æ¤œå‡ºã‚’å®Ÿè¡Œ
+		/// </summary>
+		virtual void UpdateDetection() = 0;
 
-        /// <summary>
-        /// ŒŸo‚³‚ê‚½‘ÎÛ‚ª‚ ‚é‚©‚Ç‚¤‚©
-        /// </summary>
-        /// <returns>‘ÎÛ‚ªˆê‚Â‚Å‚à‚ ‚é‚È‚ç true</returns>
-        virtual bool HasDetectedTargets() const = 0;
+		/// <summary>
+		/// æ¤œå‡ºã•ã‚ŒãŸå¯¾è±¡ãŒã‚ã‚‹ã‹ã©ã†ã‹
+		/// </summary>
+		/// <returns>å¯¾è±¡ãŒä¸€ã¤ã§ã‚‚ã‚ã‚‹ãªã‚‰ true</returns>
+		virtual bool HasDetectedTargets() const = 0;
 
-        /// <summary>
-        /// ŒŸoŒ‹‰Ê‚ğæ“¾
-        /// </summary>
-        /// <returns>ŒŸo‚³‚ê‚½‘ÎÛ‚ÌƒŠƒXƒg</returns>
-        virtual const std::vector<ScreenCoordContainsInfo>& GetDetectedTargets() const = 0;
+		/// <summary>
+		/// æ¤œå‡ºçµæœã‚’å–å¾—
+		/// </summary>
+		/// <returns>æ¤œå‡ºã•ã‚ŒãŸå¯¾è±¡ã®ãƒªã‚¹ãƒˆ</returns>
+		virtual const std::vector<ScreenCoordContainsInfo>& GetDetectedTargets() const = 0;
 
-        
+		/// <summary>
+		/// æ¤œå‡ºç¯„å›²ã‚’è¿”ã™
+		/// </summary>
+		/// <returns></returns>
+		virtual RectF GetDetectionArea() const
+		{
+			return RectF{};
+		};
+		/// <summary>
+		/// æ¤œå‡ºçµæœã‚’æ“ä½œ
+		/// </summary>
+		virtual void ForEach(std::function<void(ScreenCoordContainsInfo&)> _func)			  = 0;
+		virtual void ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const = 0;
 
-        /// <summary>
-        /// ŒŸo”ÍˆÍ‚ğ•Ô‚·
-        /// </summary>
-        /// <returns></returns>
-        virtual RectF GetDetectionArea() const { return RectF{}; };
-        /// <summary>
-        /// ŒŸoŒ‹‰Ê‚ğ‘€ì
-        /// </summary>
-        virtual void ForEach(std::function<void(ScreenCoordContainsInfo&)> _func) = 0;
-        virtual void ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const = 0;
-
-    protected:
-        std::vector<ScreenCoordContainsInfo> detectedTargets_;
-    };
-}
+	  protected:
+		std::vector<ScreenCoordContainsInfo> detectedTargets_;
+	};
+} // namespace mtgb

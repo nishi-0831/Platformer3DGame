@@ -12,12 +12,12 @@
 using namespace mtgb;
 
 mtgb::RectDetector::RectDetector(const RectDetectorConfig& _config)
-	: config{ _config }
+	: config{_config}
 {
 }
 
 mtgb::RectDetector::RectDetector(RectDetectorConfig&& _config)
-	: config{ std::move(_config) }
+	: config{std::move(_config)}
 {
 }
 
@@ -28,37 +28,39 @@ void mtgb::RectDetector::UpdateDetection()
 
 void mtgb::RectDetector::UpdateDetection(RectDetectorConfig& _config)
 {
-	// Šî’êƒNƒ‰ƒX‚Ì detectedTargets_‚ğXV
+	// åŸºåº•ã‚¯ãƒ©ã‚¹ã® detectedTargets_ã‚’æ›´æ–°
 	detectedTargets_.clear();
-	
+
 	Game::System<ColliderCP>().RectContains(
 		_config.detectionRect,
 		_config.base.targetTag,
-		&detectedTargets_, // Šî’êƒNƒ‰ƒX‚Ìƒƒ“ƒo‚ğg—p
+		&detectedTargets_, // åŸºåº•ã‚¯ãƒ©ã‚¹ã®ãƒ¡ãƒ³ãƒã‚’ä½¿ç”¨
 		_config.base.windowContext
 	);
 
-
-	CameraHandleInScene hCamera = WinCtxRes::Get<CameraResource>(_config.base.windowContext).GetHCamera();
+	CameraHandleInScene hCamera		 = WinCtxRes::Get<CameraResource>(_config.base.windowContext).GetHCamera();
 	const Transform& cameraTransform = Game::System<CameraSystem>().GetTransform(hCamera);
-	
-	// İ’è‚É‡’v‚µ‚È‚¢—v‘f‚ğæ‚èœ‚­
+
+	// è¨­å®šã«åˆè‡´ã—ãªã„è¦ç´ ã‚’å–ã‚Šé™¤ã
 	detectedTargets_.erase(
-		std::remove_if(detectedTargets_.begin(), detectedTargets_.end(),
+		std::remove_if(
+			detectedTargets_.begin(),
+			detectedTargets_.end(),
 			[&](const ScreenCoordContainsInfo& info)
 			{
 				Vector3 toTarget = info.worldPos - cameraTransform.GetWorldPosition();
-				Vector3 normal = cameraTransform.Forward();
-				float distance = DirectX::XMVector3Dot(toTarget, normal).m128_f32[0];
+				Vector3 normal	 = cameraTransform.Forward();
+				float distance	 = DirectX::XMVectorGetX(DirectX::XMVector3Dot(toTarget, normal));
 
-				// İ’è‚µ‚½‹——£‚æ‚è‰“‚¢‚È‚çœ‚­
+				// è¨­å®šã—ãŸè·é›¢ã‚ˆã‚Šé ã„ãªã‚‰é™¤ã
 				if (std::abs(distance) > _config.base.maxDistance)
 				{
 					return true;
 				}
 
 				return false;
-			}),
+			}
+		),
 		detectedTargets_.end()
 	);
 }
@@ -83,12 +85,12 @@ bool mtgb::RectDetector::HasDetectedTargets() const
 RectF mtgb::RectDetector::GetDetectionArea() const
 {
 	Vector2F ratio = Game::System<Screen>().GetSizeRatio();
-	float scale = (std::min)(ratio.x, ratio.y);
+	float scale	   = (std::min)(ratio.x, ratio.y);
 
-	float scaledSize = config.detectionRect.size.x * scale;
-	Vector2F center = Game::System<Screen>().GetSizeF() * 0.5f;
-	Vector2F newPoint = center - Vector2F{ scaledSize, scaledSize } *0.5f;
-	return { newPoint,{scaledSize,scaledSize} };
+	float scaledSize  = config.detectionRect.size.x * scale;
+	Vector2F center	  = Game::System<Screen>().GetSizeF() * 0.5f;
+	Vector2F newPoint = center - Vector2F{scaledSize, scaledSize} * 0.5f;
+	return {newPoint, {scaledSize, scaledSize}};
 }
 
 const std::vector<ScreenCoordContainsInfo>& mtgb::RectDetector::GetDetectedTargets() const
@@ -98,7 +100,8 @@ const std::vector<ScreenCoordContainsInfo>& mtgb::RectDetector::GetDetectedTarge
 
 void mtgb::RectDetector::ForEach(std::function<void(ScreenCoordContainsInfo&)> _func)
 {
-	if (!HasDetectedTargets()) return;
+	if (!HasDetectedTargets())
+		return;
 
 	for (auto& target : detectedTargets_)
 	{
@@ -108,7 +111,8 @@ void mtgb::RectDetector::ForEach(std::function<void(ScreenCoordContainsInfo&)> _
 
 void mtgb::RectDetector::ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const
 {
-	if (!HasDetectedTargets()) return;
+	if (!HasDetectedTargets())
+		return;
 
 	for (const auto& target : detectedTargets_)
 	{
@@ -118,15 +122,16 @@ void mtgb::RectDetector::ForEach(std::function<void(const ScreenCoordContainsInf
 
 bool mtgb::RectDetector::IsLineOfSight(const Vector3& _cameraPos, const ScreenCoordContainsInfo& _targetInfo)
 {
-	Vector3 toTarget = Vector3::Normalize(_targetInfo.worldPos - _cameraPos);
+	Vector3 toTarget	   = Vector3::Normalize(_targetInfo.worldPos - _cameraPos);
 	ColliderCP& colliderCP = Game::System<ColliderCP>();
-	float dist = 0.0f;
+	float dist			   = 0.0f;
 	for (const auto& other : detectedTargets_)
 	{
-		// ©•ª©g‚Æ‚Í”»’è‚ğ‚µ‚È‚¢
-		if (_targetInfo.entityId == other.entityId) continue;
+		// è‡ªåˆ†è‡ªèº«ã¨ã¯åˆ¤å®šã‚’ã—ãªã„
+		if (_targetInfo.entityId == other.entityId)
+			continue;
 
-		// Õ‚ç‚ê‚Ä‚¢‚½‚ç false
+		// é®ã‚‰ã‚Œã¦ã„ãŸã‚‰ false
 		if (colliderCP.RayCastHit(_targetInfo.worldPos, toTarget, &dist, other.entityId))
 		{
 			return false;

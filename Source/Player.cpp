@@ -5,40 +5,47 @@
 #include "ResultScene.h"
 #include "GameEvents.h"
 #include <algorithm>
-namespace 
+namespace
 {
-	float speed = 5.0f;
-	float jumpHeight = 15.0f;
+	float speed							 = 5.0f;
+	float jumpHeight					 = 15.0f;
 	const unsigned int TAKE_DAMGE_AMOUNT = 1;
-}
+} // namespace
 
 Player::Player()
 	: GameObject(GameObjectBuilder()
-		.SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
-		.SetPosition({0,5,10})
-		.SetTag(GameObjectTag::Player).Build())
-	, ImGuiShowable(ShowType::Inspector,Entity::entityId_)
+					 .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
+					 .SetPosition({0, 5, 10})
+					 .SetTag(GameObjectTag::Player)
+					 .Build())
+	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
 	, IActor(GetEntityId())
-	, pTransform_{ Component<Transform>() }
-	, pCollider_ { Component<Collider>() }
-	, pMeshRenderer_{ Component<MeshRenderer>() }
-	, pRigidBody_ { Component<RigidBody>() }
-	, pCamera_{ Instantiate<Camera>(this) }
-	, pCameraTransform_{ &Transform::Get(pCamera_->GetEntityId())}
-	, hp_{ 3 }
-	, pHPViewer_{ nullptr }
-	, isInvincible_{ false }
-	, invincibilityTimeSec_{ 2.0f }
-	, changeVisibilitySpan_{ 0.3f }
-	, elapsedInvincibilityTime_{ 0.0f }
-{
-	//pRigidBody_->useGravity_ = true;
-	pRigidBody_->isKinematic_ = false;
-	pRigidBody_->OnCollisionEnter([this](EntityId _entityId) {OnCollisionEnter(_entityId); });
-	pMeshRenderer_->meshFileName = "Model/MinerAnim.fbx";
-	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
+	, pTransform_{Component<Transform>()}
+	, pCollider_{Component<Collider>()}
+	, pMeshRenderer_{Component<MeshRenderer>()}
+	, pRigidBody_{Component<RigidBody>()}
+	, pCamera_{Instantiate<Camera>(this)}
+	, pCameraTransform_{&Transform::Get(pCamera_->GetEntityId())}
+	, hp_{3}
+	, pHPViewer_{nullptr}
+	, isInvincible_{false}
+	, invincibilityTimeSec_{2.0f}
+	, changeVisibilitySpan_{0.3f}
+	, elapsedInvincibilityTime_{0.0f}
 
-	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE ;
+{
+	// pRigidBody_->useGravity_ = true;
+	pRigidBody_->isKinematic_ = false;
+	pRigidBody_->OnCollisionEnter(
+		[this](EntityId _entityId)
+		{
+			OnCollisionEnter(_entityId);
+		}
+	);
+	pMeshRenderer_->meshFileName = "Model/MinerAnim.fbx";
+	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
+
+	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
 	pCollider_->SetRadius(pTransform_->scale.x);
 
 	displayName_ = name_;
@@ -46,13 +53,16 @@ Player::Player()
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
-	
-	// ƒS[ƒ‹ƒCƒxƒ“ƒg‚ğw“Ç
-	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Subscribe([this](const PlayerReachedGoalEvent& _event)
+
+	// ã‚´ãƒ¼ãƒ«ã‚¤ãƒ™ãƒ³ãƒˆã‚’è³¼èª­
+	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Subscribe(
+		[this](const PlayerReachedGoalEvent& _event)
 		{
 			pRigidBody_->velocity_ = Vector3::Zero();
 			state_.Change(STATE::VICTORY);
-		}, EventScope::Scene);
+		},
+		EventScope::Scene
+	);
 }
 
 Player::~Player()
@@ -75,17 +85,17 @@ void Player::Update()
 		UpdateRotate();
 	}
 	pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
-	
+
 	state_.Update();
 
-	// ƒ_ƒ[ƒW‚ğó‚¯‚½Œã‚Ì–³“GŠÔ
+	// ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸå¾Œã®ç„¡æ•µæ™‚é–“
 	if (isInvincible_)
 	{
 		elapsedInvincibilityTime_ += Time::DeltaTimeF();
 		if (elapsedInvincibilityTime_ >= invincibilityTimeSec_)
 		{
-			isInvincible_ = false;
-			pMeshRenderer_->enabled_ = true;
+			isInvincible_			  = false;
+			pMeshRenderer_->enabled_  = true;
 			elapsedInvincibilityTime_ = 0.0f;
 			Timer::Remove(hTimerChangeVisibility_);
 		}
@@ -95,22 +105,29 @@ void Player::Update()
 void Player::InitializeState()
 {
 	animController_ = Fbx::GetAnimationController(pMeshRenderer_->meshHandle);
-	massert(animController_.has_value() && "Player‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ƒRƒ“ƒgƒ[ƒ‰æ“¾‚É¸”s");
+	massert(animController_.has_value() && "Playerã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©å–å¾—ã«å¤±æ•—");
 
 	state_
-		.OnAnyUpdate([this]
+		.OnAnyUpdate(
+			[this]
 			{
 				if (animController_.has_value())
 				{
 					animController_->UpdateFrame();
 					pMeshRenderer_->SetFrame(animController_->GetCurrentFrame());
 				}
-			})
-		.OnStart(STATE::IDLE, [this]
+			}
+		)
+		.OnStart(
+			STATE::IDLE,
+			[this]
 			{
 				animController_->PlayAnimation("Idle", true);
-			})
-		.OnUpdate(STATE::IDLE, [this]
+			}
+		)
+		.OnUpdate(
+			STATE::IDLE,
+			[this]
 			{
 				if (pRigidBody_->velocity_.y > 0.0f)
 				{
@@ -122,12 +139,18 @@ void Player::InitializeState()
 					state_.Change(STATE::RUN);
 					return;
 				}
-			})
-		.OnStart(STATE::RUN, [this]
+			}
+		)
+		.OnStart(
+			STATE::RUN,
+			[this]
 			{
 				animController_->PlayAnimation("Run", true);
-			})
-		.OnUpdate(STATE::RUN, [this]
+			}
+		)
+		.OnUpdate(
+			STATE::RUN,
+			[this]
 			{
 				if (pRigidBody_->velocity_.Size() == 0.0f)
 				{
@@ -144,12 +167,18 @@ void Player::InitializeState()
 					state_.Change(STATE::FALL);
 					return;
 				}
-			})
-		.OnStart(STATE::JUMP, [this]
+			}
+		)
+		.OnStart(
+			STATE::JUMP,
+			[this]
 			{
 				animController_->PlayAnimation("Jump", false);
-			})
-		.OnUpdate(STATE::JUMP, [this]
+			}
+		)
+		.OnUpdate(
+			STATE::JUMP,
+			[this]
 			{
 				if (animController_->IsFinishedAnimation() && pRigidBody_->isGround_ == false)
 				{
@@ -161,27 +190,40 @@ void Player::InitializeState()
 					state_.Change(STATE::IDLE);
 					return;
 				}
-			})
-		.OnStart(STATE::FALL, [this]
+			}
+		)
+		.OnStart(
+			STATE::FALL,
+			[this]
 			{
 				animController_->PlayAnimation("Fall", true);
-			})
-		.OnUpdate(STATE::FALL, [this]
+			}
+		)
+		.OnUpdate(
+			STATE::FALL,
+			[this]
 			{
 				if (pRigidBody_->isGround_)
 				{
 					state_.Change(STATE::IDLE);
 					return;
 				}
-			})
-		.OnStart(STATE::DYING, [this]
+			}
+		)
+		.OnStart(
+			STATE::DYING,
+			[this]
 			{
 				animController_->PlayAnimation("Dying", false);
-			})
-		.OnStart(STATE::VICTORY, [this]
+			}
+		)
+		.OnStart(
+			STATE::VICTORY,
+			[this]
 			{
 				animController_->PlayAnimation("Dancing", true);
-			});
+			}
+		);
 }
 
 void Player::Draw() const
@@ -203,41 +245,40 @@ void Player::ShowImGui()
 
 void Player::SetCamera(Camera* _pCamera)
 {
-	
 }
 
 Vector3 Player::GetMoveDir()
 {
 	Vector2F axis = InputUtil::GetAxis(StickType::LEFT);
-	if (InputUtil::GetKey(KeyCode::Left))
+	if (InputUtil::GetKey(KeyCode::Left) || InputUtil::GetKey(KeyCode::A))
 	{
 		axis.x = -1;
 	}
-	if (InputUtil::GetKey(KeyCode::Right))
+	if (InputUtil::GetKey(KeyCode::Right) || InputUtil::GetKey(KeyCode::D))
 	{
 		axis.x = 1;
 	}
-	if (InputUtil::GetKey(KeyCode::Up))
+	if (InputUtil::GetKey(KeyCode::Up) || InputUtil::GetKey(KeyCode::W))
 	{
 		axis.y = -1;
 	}
-	if (InputUtil::GetKey(KeyCode::Down))
+	if (InputUtil::GetKey(KeyCode::Down) || InputUtil::GetKey(KeyCode::S))
 	{
 		axis.y = 1;
 	}
 	if (axis.Size() == 0)
 		return Vector3::Zero();
 
-	// “ü—Í•ûŒü
-	Vector3 inputDir{ axis.x,0.0f,-axis.y };
+	// èœˆï½¥èœ‰å¸¶å©¿èœ·ãƒ»
+	Vector3 inputDir{axis.x, 0.0f, -axis.y};
 
-	// ƒJƒƒ‰‚Ì‰ñ“]s—ñ‚ğæ“¾
+	// ç¹§ï½«ç¹ï½¡ç¹ï½©ç¸ºï½®è—æ«ï½»ï½¢é™¦æ‚Ÿãƒ»ç¹§è²å™è •ãƒ»
 	Matrix4x4 cameraRotMat;
 	pCameraTransform_->GenerateWorldRotationMatrix(&cameraRotMat);
-	// “ü—Í•ûŒü‚ğƒJƒƒ‰‚ÌŒü‚«‚¾‚¯‰ñ“]
+	// èœˆï½¥èœ‰å¸¶å©¿èœ·ä»£ï½’ç¹§ï½«ç¹ï½¡ç¹ï½©ç¸ºï½®èœ·ä»£â€³ç¸ºï£°ç¸ºå¤§å±“éœ†ï½¢
 	Vector3 dir = inputDir * cameraRotMat;
-	// Y¬•ª‚ğÌ‚Ä‚½XZ¬•ª‚Ì‚İæ“¾
-	Vector3 horizontalDir = Vector3{ dir.x,0.0f,dir.z };
+	// Yè¬Œä»™ãƒ»ç¹§å‘ˆæ˜ç¸ºï½¦ç¸ºç›œZè¬Œä»™ãƒ»ç¸ºï½®ç¸ºï½¿èœ¿é–€ï½¾ãƒ»
+	Vector3 horizontalDir = Vector3{dir.x, 0.0f, dir.z};
 	return Vector3::Normalize(horizontalDir);
 }
 
@@ -248,7 +289,7 @@ void Player::UpdatePosition()
 	if (Vector3 moveDir = GetMoveDir(); moveDir.Size() != 0)
 	{
 		Vector3 movement = moveDir * speed;
-		
+
 		velocity.x = movement.x;
 		velocity.z = movement.z;
 	}
@@ -256,8 +297,8 @@ void Player::UpdatePosition()
 	{
 		// -------------------------------------------------------
 		// WARNING:
-		// “ü—Í‚ª‚È‚¢ê‡AXZ‚Ì‘¬“x‚ğƒ[ƒ‚É‚µ‚Ä‚¢‚é!!!!
-		// “ü—ÍˆÈŠO‚Å‘¬“x‚ğ•Ï‚¦‚éê‡‚ÍC³!!!!
+		// å…¥åŠ›ãŒãªã„å ´åˆã€XZã®é€Ÿåº¦ã‚’ã‚¼ãƒ­ã«ã—ã¦ã„ã‚‹!!!!
+		// å…¥åŠ›ä»¥å¤–ã§é€Ÿåº¦ã‚’å¤‰ãˆã‚‹å ´åˆã¯ä¿®æ­£!!!!
 		// -------------------------------------------------------
 		velocity.x = 0.0f;
 		velocity.z = 0.0f;
@@ -275,14 +316,15 @@ void Player::UpdateRotate()
 void Player::OnCollisionEnter(EntityId _entityId)
 {
 	GameObject* otherObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-	if (!otherObj) return;
+	if (!otherObj)
+		return;
 
 	IActor* pOtherActor = Game::System<ActorManager>().GetActor(_entityId);
 	if (pOtherActor == nullptr)
 		return;
 
 	Transform& otherTransform = Transform::Get(_entityId);
-	bool isStomping = (pTransform_->position.y > otherTransform.position.y);
+	bool isStomping			  = (pTransform_->position.y > otherTransform.position.y);
 
 	if (isStomping)
 	{
@@ -294,8 +336,6 @@ void Player::OnCollisionEnter(EntityId _entityId)
 	}
 }
 
-
-
 void Player::OnStomped(IActor* pOther)
 {
 }
@@ -306,10 +346,10 @@ void Player::OnHitSide(IActor* pOther)
 
 void Player::TakeDamage(int _damage)
 {
-	// –³“G‚È‚çƒ_ƒ[ƒWˆ—‚Ís‚í‚È‚¢
+	// ç„¡æ•µãªã‚‰ãƒ€ãƒ¡ãƒ¼ã‚¸å‡¦ç†ã¯è¡Œã‚ãªã„
 	if (isInvincible_)
 		return;
-	// •‰‚Ì’l‚Í–³‹
+	// è² ã®å€¤ã¯ç„¡è¦–
 	if (_damage <= 0)
 		return;
 
@@ -318,21 +358,21 @@ void Player::TakeDamage(int _damage)
 	if (hp_ <= 0)
 	{
 		state_.Change(STATE::DYING);
-		
-		// ƒvƒŒƒCƒ„[‚ÌHP‚ª0‚É‚È‚Á‚½‚±‚Æ‚ğ’Ê’m
-		PlayerHpReachedZeroEvent event{ .playerEntityId = GetEntityId() };
+
+		// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®HPãŒ0ã«ãªã£ãŸã“ã¨ã‚’é€šçŸ¥
+		PlayerHpReachedZeroEvent event{.playerEntityId = GetEntityId()};
 		Game::System<EventManager>().GetEvent<PlayerHpReachedZeroEvent>().Invoke(event);
 	}
 
 	pHPViewer_->TakeDamage(_damage);
 
-	isInvincible_ = true;
-	hTimerChangeVisibility_ = Timer::AddInterval(changeVisibilitySpan_, [this]
+	isInvincible_			= true;
+	hTimerChangeVisibility_ = Timer::AddInterval(
+		changeVisibilitySpan_,
+		[this]
 		{
 			pMeshRenderer_->enabled_ = !pMeshRenderer_->enabled_;
-		}
-	, true // firstCall: ‘¦À‚Éˆ—‚ğŒÄ‚Ô
+		},
+		true // firstCall: å³åº§ã«å‡¦ç†ã‚’å‘¼ã¶
 	);
 }
-
-

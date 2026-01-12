@@ -2,69 +2,76 @@
 #include "Command.h"
 #include <stack>
 
+/// <summary>
+/// コマンドの履歴管理を行うインターフェース
+/// </summary>
 class ICommandHistory
 {
-public:
+  public:
 	~ICommandHistory() = default;
 	/// <summary>
-	/// �R�}���h�����s�A�X�^�b�N�ɐς�
+	/// コマンドを実行、スタックに積む
 	/// </summary>
-	/// <param name="_command">���s�A�ς܂��Ώۂ̃R�}���h</param>
+	/// <param name="_command">実行、積まれる対象のコマンド</param>
 	virtual void ExecuteCommand(Command* _command) = 0;
 
 	/// <summary>
-	/// ���O�Ɏ��s�����R�}���h�̎��������s��
+	/// 直前に実行したコマンドの取り消しを行う
 	/// </summary>
 	virtual void UndoCommand() = 0;
 
 	/// <summary>
-	/// ���O�Ɏ��������R�}���h�̍Ď��s���s��
+	/// 直前に取り消したコマンドの再実行を行う
 	/// </summary>
 	virtual void RedoCommand() = 0;
 
 	/// <summary>
-	/// <para> �S�ẴX�^�b�N�̗������������� </para>
-	/// <para> �R�}���h�͑S�ĉ������� </para>
+	/// <para> 全てのスタックの履歴を消去する </para>
+	/// <para> コマンドは全て解放される </para>
 	/// </summary>
 	virtual void ClearAllStack() = 0;
-protected:
 
+  protected:
 	/// <summary>
-	/// <para> �Ď��s�̗������������� </para>
-	/// <para> �R�}���h�͑S�ĉ������� </para>
+	/// <para> 再実行の履歴を消去する </para>
+	/// <para> コマンドは全て解放される </para>
 	/// </summary>
 	virtual void ClearRedoStack() = 0;
 };
 
+/// <summary>
+/// コマンドのスタックを保持し、管理を行う
+/// </summary>
 class CommandHistory : public ICommandHistory
 {
-public:
+  public:
 	~CommandHistory();
 	/// <summary>
-	/// �R�}���h�����s�A�X�^�b�N�ɐς�
+	/// コマンドを実行、スタックに積む
 	/// </summary>
-	/// <param name="_command">���s�A�ς܂��Ώۂ̃R�}���h</param>
+	/// <param name="_command">実行、積まれる対象のコマンド</param>
 	void ExecuteCommand(Command* _command) override;
 
 	/// <summary>
-	/// ���O�Ɏ��s�����R�}���h�̎��������s��
+	/// 直前に実行したコマンドの取り消しを行う
 	/// </summary>
 	void UndoCommand() override;
 
 	/// <summary>
-	/// ���O�Ɏ��������R�}���h�̍Ď��s���s��
+	/// 直前に取り消したコマンドの再実行を行う
 	/// </summary>
 	void RedoCommand() override;
 
 	/// <summary>
-	/// <para> �S�ẴX�^�b�N�̗������������� </para>
-	/// <para> �R�}���h�͑S�ĉ������� </para>
+	/// <para> 全てのスタックの履歴を消去する </para>
+	/// <para> コマンドは全て解放される </para>
 	/// </summary>
 	void ClearAllStack() override;
-private:
+
+  private:
 	/// <summary>
-	/// <para> �Ď��s�̗������������� </para>
-	/// <para> �R�}���h�͑S�ĉ������� </para>
+	/// <para> 再実行の履歴を消去する </para>
+	/// <para> コマンドは全て解放される </para>
 	/// </summary>
 	void ClearRedoStack();
 	std::stack<Command*> undoStack_;

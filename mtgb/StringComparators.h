@@ -5,41 +5,53 @@
 
 namespace mtgb
 {
-    // MEMO:
-    // std::string‚ğƒL[‚Æ‚·‚éunorderer_map‚È‚Ç‚ÉAstd::string_view‚ÅŒŸõ‚ª‚Å‚«‚é‚æ‚¤‚É‚È‚é
-    // std::unordered_map<std::string, std::type_index,TransparentStringHash,TransparentStringEq> nameToTypeIndex_;
-    // ª‚Ì‚æ‚¤‚É‘‚­
+	// MEMO:
+	// std::stringã‚’ã‚­ãƒ¼ã¨ã™ã‚‹unorderer_mapãªã©ã«ã€std::string_viewã§æ¤œç´¢ãŒã§ãã‚‹ã‚ˆã†ã«ãªã‚‹
+	// std::unordered_map<std::string, std::type_index,TransparentStringHash,TransparentStringEq> nameToTypeIndex_;
+	// â†‘ã®ã‚ˆã†ã«æ›¸ã
 
-    /// <summary>
-    /// <para> “§‰ß“I‚ÈŒŸõ‚ğ—LŒø‚É‚·‚éƒnƒbƒVƒ…ŠÖ”ƒIƒuƒWƒFƒNƒgŒ^ </para>
-    /// REF: https://cpprefjp.github.io/reference/functional/hash.html
-    /// </summary>
-    struct TransparentStringHash
-    {
-        using is_transparent = void;
-        size_t operator()(std::string_view _s) const noexcept
-        {
-            return std::hash<std::string_view>{}(_s);
-        }
-        size_t operator()(const std::string& _s) const noexcept
-        {
-            return std::hash<std::string_view>{}(_s);
-        }
-        size_t operator()(const char* _s) const noexcept
-        {
-            return std::hash<std::string_view>{}(_s);
-        }
-    };
+	/// <summary>
+	/// <para> é€éçš„ãªæ¤œç´¢ã‚’æœ‰åŠ¹ã«ã™ã‚‹ãƒãƒƒã‚·ãƒ¥é–¢æ•°ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå‹ </para>
+	/// REF: https://cpprefjp.github.io/reference/functional/hash.html
+	/// </summary>
+	struct TransparentStringHash
+	{
+		using is_transparent = void;
+		size_t operator()(std::string_view _s) const noexcept
+		{
+			return std::hash<std::string_view>{}(_s);
+		}
+		size_t operator()(const std::string& _s) const noexcept
+		{
+			return std::hash<std::string_view>{}(_s);
+		}
+		size_t operator()(const char* _s) const noexcept
+		{
+			return std::hash<std::string_view>{}(_s);
+		}
+	};
 
-    /// <summary>
-    /// “§‰ß“I‚ÈŒŸõ‚ğ—LŒø‚É‚·‚é”äŠrŠÖ”ƒIƒuƒWƒFƒNƒgŒ^
-    /// </summary>
-    struct TransparentStringEq
-    {
-        using is_transparent = void;
-        bool operator()(std::string_view _a, std::string_view _b) const noexcept { return _a == _b; }
-        bool operator()(const std::string& _a, std::string_view _b) const noexcept { return _a == _b; }
-        bool operator()(std::string_view _a, const std::string& _b) const noexcept { return _a == _b; }
-        bool operator()(const std::string& _a, const std::string& _b) const noexcept { return _a == _b; }
-    };
-}
+	/// <summary>
+	/// é€éçš„ãªæ¤œç´¢ã‚’æœ‰åŠ¹ã«ã™ã‚‹æ¯”è¼ƒé–¢æ•°ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå‹
+	/// </summary>
+	struct TransparentStringEq
+	{
+		using is_transparent = void;
+		bool operator()(std::string_view _a, std::string_view _b) const noexcept
+		{
+			return _a == _b;
+		}
+		bool operator()(const std::string& _a, std::string_view _b) const noexcept
+		{
+			return _a == _b;
+		}
+		bool operator()(std::string_view _a, const std::string& _b) const noexcept
+		{
+			return _a == _b;
+		}
+		bool operator()(const std::string& _a, const std::string& _b) const noexcept
+		{
+			return _a == _b;
+		}
+	};
+} // namespace mtgb

@@ -13,64 +13,64 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ‹éŒ`“à‚Ì‘ÎÛŒŸoƒVƒXƒeƒ€
+	/// çŸ©å½¢å†…ã®å¯¾è±¡æ¤œå‡ºã‚·ã‚¹ãƒ†ãƒ 
 	/// </summary>
 	class RectDetector : public IDetector
 	{
-	public:
+	  public:
 		RectDetector() = default;
 		RectDetector(const RectDetectorConfig& _config);
 		RectDetector(RectDetectorConfig&& _config);
 		~RectDetector() = default;
 
 		/// <summary>
-		/// <para> ŒŸo‚ğÀsAŒ‹‰Ê‚ğæ“¾</para>
-		/// <para> –‘O‚ÉŠ„‚è“–‚Ä‚ç‚ê‚½İ’è‚ğg—p</para>
+		/// <para> æ¤œå‡ºã‚’å®Ÿè¡Œã€çµæœã‚’å–å¾—</para>
+		/// <para> äº‹å‰ã«å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸè¨­å®šã‚’ä½¿ç”¨</para>
 		/// </summary>
 		void UpdateDetection() override;
 
 		/// <summary>
-		/// <para> ŒŸo‚ğÀsAŒ‹‰Ê‚ğæ“¾</para>
-		/// <para> ˆø”‚Ìİ’è‚ğg‚Á‚ÄŒŸo</para>
-		/// <param name="_config"> ŒŸo‚Ég—p‚·‚éİ’è</param>
+		/// <para> æ¤œå‡ºã‚’å®Ÿè¡Œã€çµæœã‚’å–å¾—</para>
+		/// <para> å¼•æ•°ã®è¨­å®šã‚’ä½¿ã£ã¦æ¤œå‡º</para>
+		/// <param name="_config"> æ¤œå‡ºã«ä½¿ç”¨ã™ã‚‹è¨­å®š</param>
 		void UpdateDetection(RectDetectorConfig& _config);
 
 		/// <summary>
-		/// <para> ˆø”‚Ìİ’è‚ğŠ„‚è“–‚ÄAŒŸo‚ğÀs</para>
+		/// <para> å¼•æ•°ã®è¨­å®šã‚’å‰²ã‚Šå½“ã¦ã€æ¤œå‡ºã‚’å®Ÿè¡Œ</para>
 		/// </summary>
-		/// <param name="_config"> Š„‚è“–‚ÄAŒŸo‚Ég—p‚·‚éİ’è</param>
+		/// <param name="_config"> å‰²ã‚Šå½“ã¦ã€æ¤œå‡ºã«ä½¿ç”¨ã™ã‚‹è¨­å®š</param>
 		void UpdateAndSetDetection(RectDetectorConfig& _config);
 
 		/// <summary>
-		/// <para> ˆø”‚Ìİ’è‚ğŠ„‚è“–‚ÄAŒŸo‚ğÀs</para>
+		/// <para> å¼•æ•°ã®è¨­å®šã‚’å‰²ã‚Šå½“ã¦ã€æ¤œå‡ºã‚’å®Ÿè¡Œ</para>
 		/// </summary>
-		/// <param name="_config"> Š„‚è“–‚ÄAŒŸo‚Ég—p‚·‚éİ’è</param>
+		/// <param name="_config"> å‰²ã‚Šå½“ã¦ã€æ¤œå‡ºã«ä½¿ç”¨ã™ã‚‹è¨­å®š</param>
 		void UpdateAndSetDetection(RectDetectorConfig&& _config);
 
 		/// <summary>
-		/// ŒŸo‚³‚ê‚½‘ÎÛ‚ª‚ ‚é‚©‚Ç‚¤‚©
+		/// æ¤œå‡ºã•ã‚ŒãŸå¯¾è±¡ãŒã‚ã‚‹ã‹ã©ã†ã‹
 		/// </summary>
-		/// <returns>‘ÎÛ‚ªˆê‚Â‚Å‚à‚ ‚é‚È‚ç true</returns>
+		/// <returns>å¯¾è±¡ãŒä¸€ã¤ã§ã‚‚ã‚ã‚‹ãªã‚‰ true</returns>
 		bool HasDetectedTargets() const override;
 
 		RectF GetDetectionArea() const override;
 		/// <summary>
-		/// ŒŸoŒ‹‰Ê‚ğæ“¾
+		/// æ¤œå‡ºçµæœã‚’å–å¾—
 		/// </summary>
 		const std::vector<ScreenCoordContainsInfo>& GetDetectedTargets() const override;
 
 		void ForEach(std::function<void(ScreenCoordContainsInfo&)> _func) override;
 		void ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const override;
-		
+
 		/// <summary>
-		/// <para> ƒJƒƒ‰‚©‚çƒ^[ƒQƒbƒg‚É‹ü‚ª’Ê‚Á‚Ä‚¢‚é‚©</para>
-		/// <para> !!!detectedTargets“à‚Å‘“–‚½‚è‚ğ‚µ‚Ä‚¢‚é‚Ì‚Å”ñŒø—¦“IBƒQ[ƒ€‚ªd‚­‚È‚Á‚½‚ç^‚Áæ‚É‰ü‘P!!!</para>
+		/// <para> ã‚«ãƒ¡ãƒ©ã‹ã‚‰ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã«è¦–ç·šãŒé€šã£ã¦ã„ã‚‹ã‹</para>
+		/// <para> !!!detectedTargetså†…ã§ç·å½“ãŸã‚Šã‚’ã—ã¦ã„ã‚‹ã®ã§éåŠ¹ç‡çš„ã€‚ã‚²ãƒ¼ãƒ ãŒé‡ããªã£ãŸã‚‰çœŸã£å…ˆã«æ”¹å–„!!!</para>
 		/// </summary>
-		/// <param name="_cameraPos">ƒJƒƒ‰</param>
-		/// <param name="_targetInfo">ƒ^[ƒQƒbƒg</param>
+		/// <param name="_cameraPos">ã‚«ãƒ¡ãƒ©</param>
+		/// <param name="_targetInfo">ã‚¿ãƒ¼ã‚²ãƒƒãƒˆ</param>
 		/// <returns></returns>
 		bool IsLineOfSight(const Vector3& _cameraPos, const ScreenCoordContainsInfo& _targetInfo);
-		
+
 		RectDetectorConfig config;
 	};
-}
+} // namespace mtgb

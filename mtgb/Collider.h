@@ -2,8 +2,6 @@
 #include "ReflectionMacro.h"
 #include "Collider.generated.h"
 #include "ISerializableObject.h"
-#include "StatefulComponent.h"
-#include "ColliderState.h"
 #include "IComponentMemento.h"
 #include <set>
 #include <DirectXCollision.h>
@@ -22,20 +20,18 @@ namespace mtgb
 	class ColliderCP;
 	class Transform;
 	MT_COMPONENT()
-	class Collider :  public IComponent<ColliderCP,Collider> , public ISerializableObject
+	class Collider : public IComponent<ColliderCP, Collider>, public ISerializableObject
 	{
 
-	public:
+	  public:
 		MT_GENERATED_BODY()
 
 		friend ColliderCP;
 		using IComponent::IComponent;
 
+		// è¡çªåˆ¤å®šã‚’ã™ã‚‹ã‹å¦ã‹ã®ã‚¿ã‚°
 
-		// Õ“Ë”»’è‚ğ‚·‚é‚©”Û‚©‚Ìƒ^ƒO
-
-	public:
-		
+	  public:
 		Collider(EntityId _entityId);
 		Collider(EntityId _entityId, ColliderTag _colliderTag);
 		~Collider();
@@ -43,16 +39,16 @@ namespace mtgb
 
 		bool IsHit(const Collider& _other) const;
 		/// <summary>
-		/// ƒŒƒC‚Æ‚ÌŒğ·”»’è
+		/// ãƒ¬ã‚¤ã¨ã®äº¤å·®åˆ¤å®š
 		/// </summary>
-		/// <param name="_origin">Œ´“_</param>
-		/// <param name="_dir">•ûŒü(“à•”‚Å³‹K‰»‚³‚ê‚é)</param>
+		/// <param name="_origin">åŸç‚¹</param>
+		/// <param name="_dir">æ–¹å‘(å†…éƒ¨ã§æ­£è¦åŒ–ã•ã‚Œã‚‹)</param>
 		/// <param name="dist">
-		/// <para> ƒŒƒC‚ÌŒ´“_‚©‚çƒRƒ‰ƒCƒ_[‚Æ‚ÌÅ‰‚ÌŒğ“_‚Ü‚Å‚Ì‹——£‚ğŠi”[B</para>
-		/// <para> ƒŒƒC‚ÌŒ´“_‚ª‹…‚Ì“à‘¤‚Ìê‡‚ÍA‹…‚ğo‚é“_‚Ü‚Å‚Ì‹——£</para>
+		/// <para> ãƒ¬ã‚¤ã®åŸç‚¹ã‹ã‚‰ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ã¨ã®æœ€åˆã®äº¤ç‚¹ã¾ã§ã®è·é›¢ã‚’æ ¼ç´ã€‚</para>
+		/// <para> ãƒ¬ã‚¤ã®åŸç‚¹ãŒçƒã®å†…å´ã®å ´åˆã¯ã€çƒã‚’å‡ºã‚‹ç‚¹ã¾ã§ã®è·é›¢</para>
 		/// </param>
 		/// <returns></returns>
-		bool IsHit(const DirectX::BoundingSphere& _sphere,const Vector3& _origin, const Vector3& _dir, float* dist);
+		bool IsHit(const DirectX::BoundingSphere& _sphere, const Vector3& _origin, const Vector3& _dir, float* dist);
 		bool IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* dist);
 		bool IsHit(const DirectX::BoundingOrientedBox& _obb, const Vector3& _origin, const Vector3& _dir, float* dist);
 
@@ -61,37 +57,48 @@ namespace mtgb
 
 		void Draw() const;
 
-		// BoundingSphere‚ğ‰Šú‰»
+		// BoundingSphereã‚’åˆæœŸåŒ–
 		void UpdateBoundingData();
-		
+
 		void SetCenter(const Vector3& _center);
 		void SetExtents(const Vector3& _extents);
 		void SetRadius(float _radius);
 		Vector3 GetCenter();
 		Vector3 GetExtents();
 		float GetRadius();
-		ColliderTag GetColliderTag() const { return colliderTag_; }
-		
-		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
-		static std::optional<IntersectInfo> Intersect(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingOrientedBox& _obb);
+		ColliderTag GetColliderTag() const
+		{
+			return colliderTag_;
+		}
+
+		static std::optional<IntersectInfo> Intersect(
+			const DirectX::BoundingSphere& _sphere,
+			const DirectX::BoundingBox& _aabb
+		);
+		static std::optional<IntersectInfo> Intersect(
+			const DirectX::BoundingSphere& _sphere,
+			const DirectX::BoundingOrientedBox& _obb
+		);
 		void Push(const Collider& _other);
-	public:
+
+	  public:
 		void OnPostRestore() override;
 
 		std::set<Collider*> onColliders_;
 		std::set<Collider*> onColldiersPrev_;
-		
+
 		MT_PROPERTY()
-		// “–‚½‚è”»’è‚ÌŒ`
+		// å½“ãŸã‚Šåˆ¤å®šã®å½¢
 		ColliderType colliderType_;
 		MT_PROPERTY()
-		// Ã“I‚ÈATransform•s—v‚ÈƒRƒ‰ƒCƒ_[—p‚Ìƒtƒ‰ƒO
+		// é™çš„ãªã€Transformä¸è¦ãªã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ç”¨ã®ãƒ•ãƒ©ã‚°
 		bool isStatic_;
 		MT_PROPERTY()
 		ColliderTag colliderTag_;
 		MT_PROPERTY()
 		bool isTrigger_;
-	private:
+
+	  private:
 		void UpdateBoundingSphere();
 		void UpdateBoundingBox();
 		union
@@ -101,8 +108,8 @@ namespace mtgb
 			DirectX::BoundingOrientedBox computeOBB_;
 		};
 
-		Transform* pTransform_;  // TODO: Šë‚È‚¢Transform
-		//ColliderTag colliderTag;
+		Transform* pTransform_; // TODO: å±ãªã„Transform
+		// ColliderTag colliderTag;
 		static FBXModelHandle hSphereModel_;
 		static FBXModelHandle hBoxModel_;
 		MT_PROPERTY()
@@ -112,4 +119,4 @@ namespace mtgb
 		MT_PROPERTY()
 		Vector3 extents_;
 	};
-}
+} // namespace mtgb

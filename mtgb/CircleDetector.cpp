@@ -9,126 +9,125 @@
 #include "Image.h"
 namespace mtgb
 {
-    // ƒ^[ƒQƒbƒg‚Æ‚µ‚Ä–³‹‚·‚é“G‚Ì–¼‘O
-    const std::string ignoreName{ "EnemyBroken" };
+	// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¨ã—ã¦ç„¡è¦–ã™ã‚‹æ•µã®åå‰
+	const std::string ignoreName{"EnemyBroken"};
 
-    CircleDetector::CircleDetector()
-    {
-    }
-    CircleDetector::CircleDetector(const CircleDetectorConfig& _config)
-        : CircleDetector{}
-    {
-        config = _config;
-    }
+	CircleDetector::CircleDetector()
+	{
+	}
+	CircleDetector::CircleDetector(const CircleDetectorConfig& _config)
+		: CircleDetector{}
+	{
+		config = _config;
+	}
 
-    CircleDetector::CircleDetector(CircleDetectorConfig&& _config)
-        : CircleDetector{}
-    {
-        config = std::move(_config);
-    }
+	CircleDetector::CircleDetector(CircleDetectorConfig&& _config)
+		: CircleDetector{}
+	{
+		config = std::move(_config);
+	}
 
-    void CircleDetector::UpdateDetection()
-    {
-        UpdateDetection(config);
-    }
+	void CircleDetector::UpdateDetection()
+	{
+		UpdateDetection(config);
+	}
 
-    void CircleDetector::UpdateDetection(const CircleDetectorConfig& _config)
-    {
-        detectedTargets_.clear();
+	void CircleDetector::UpdateDetection(const CircleDetectorConfig& _config)
+	{
+		detectedTargets_.clear();
 
-        // ƒ^ƒO‚Åæ“¾
-        std::vector<GameObject*> findObjs;
-        GameObject::FindGameObjects(_config.base.targetTag, &findObjs);
+		// ã‚¿ã‚°ã§å–å¾—
+		std::vector<GameObject*> findObjs;
+		GameObject::FindGameObjects(_config.base.targetTag, &findObjs);
 
-        for (const auto& obj : findObjs)
-        {
-            if (obj->GetName() == ignoreName)
-            {
-                continue;  // –¼‘O‚ª–³‹‘ÎÛ‚È‚ç‰ñ‹A
-            }
-            
-            // Transformæ“¾
-            Transform* pTransform = &Transform::Get(obj->GetEntityId());
-            Vector3 worldPos = pTransform->GetWorldPosition();
+		for (const auto& obj : findObjs)
+		{
+			if (obj->GetName() == ignoreName)
+			{
+				continue; // åå‰ãŒç„¡è¦–å¯¾è±¡ãªã‚‰å›å¸°
+			}
 
-            // ‹——£ƒ`ƒFƒbƒN
-            // ƒJƒƒ‰ˆÊ’u‚ğæ“¾
-            Vector3 cameraPos = Game::System<CameraSystem>().GetTransform(_config.base.windowContext).GetWorldPosition();
-            float distance = (worldPos - cameraPos).Size();
-            
-            if (distance < _config.base.minDistance || distance > _config.base.maxDistance)
-            {
-                continue;
-            }
+			// Transformå–å¾—
+			Transform* pTransform = &Transform::Get(obj->GetEntityId());
+			Vector3 worldPos	  = pTransform->GetWorldPosition();
 
-            // ƒ[ƒ‹ƒhÀ•W‚ğƒXƒNƒŠ[ƒ“À•W‚É•ÏŠ·
-            Vector3 screenPos = Game::System<CameraSystem>().GetWorldToScreenPos(worldPos, _config.base.windowContext);
-            
-            // ƒXƒNƒŠ[ƒ“À•W‚ª—LŒø”ÍˆÍ“à‚©ƒ`ƒFƒbƒN
-            if (screenPos.z < 0.0f || screenPos.z > 1.0f)
-            {
-                continue;
-            }
+			// è·é›¢ãƒã‚§ãƒƒã‚¯
+			// ã‚«ãƒ¡ãƒ©ä½ç½®ã‚’å–å¾—
+			Vector3 cameraPos =
+				Game::System<CameraSystem>().GetTransform(_config.base.windowContext).GetWorldPosition();
+			float distance = (worldPos - cameraPos).Size();
 
-            // ‰~Œ`”ÍˆÍ“à‚©ƒ`ƒFƒbƒN
-            Vector2F screenPos2D = { screenPos.x, screenPos.y };
-            if (IsPointInCircle(screenPos2D, _config.center, _config.radius))
-            {
-                detectedTargets_.emplace_back(worldPos, screenPos, obj->GetEntityId());
-            }
-        }
-    }
+			if (distance < _config.base.minDistance || distance > _config.base.maxDistance)
+			{
+				continue;
+			}
 
-    void CircleDetector::UpdateAndSetDetection(CircleDetectorConfig&& _config)
-    {
-        config = std::move(_config);
-        UpdateDetection();
-    }
+			// ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã«å¤‰æ›
+			Vector3 screenPos = Game::System<CameraSystem>().GetWorldToScreenPos(worldPos, _config.base.windowContext);
 
-    bool CircleDetector::HasDetectedTargets() const
-    {
-        return !detectedTargets_.empty();
-    }
+			// ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ãŒæœ‰åŠ¹ç¯„å›²å†…ã‹ãƒã‚§ãƒƒã‚¯
+			if (screenPos.z < 0.0f || screenPos.z > 1.0f)
+			{
+				continue;
+			}
 
-    RectF CircleDetector::GetDetectionArea() const
-    {
-        Vector2F ratio = Game::System<Screen>().GetSizeRatio();
-        float scale = (std::min)(ratio.x, ratio.y);
+			// å††å½¢ç¯„å›²å†…ã‹ãƒã‚§ãƒƒã‚¯
+			Vector2F screenPos2D = {screenPos.x, screenPos.y};
+			if (IsPointInCircle(screenPos2D, _config.center, _config.radius))
+			{
+				detectedTargets_.emplace_back(worldPos, screenPos, obj->GetEntityId());
+			}
+		}
+	}
 
-        float scaledSize = config.radius * 2.0f * scale;
-        Vector2F center = Game::System<Screen>().GetSizeF() * 0.5f;
-        Vector2F newPoint = center - Vector2F{ scaledSize, scaledSize } *0.5f;
-        return { newPoint,{scaledSize,scaledSize} };
-    }
+	void CircleDetector::UpdateAndSetDetection(CircleDetectorConfig&& _config)
+	{
+		config = std::move(_config);
+		UpdateDetection();
+	}
 
-    const std::vector<ScreenCoordContainsInfo>& CircleDetector::GetDetectedTargets() const
-    {
-        return detectedTargets_;
-    }
+	bool CircleDetector::HasDetectedTargets() const
+	{
+		return !detectedTargets_.empty();
+	}
 
-  
+	RectF CircleDetector::GetDetectionArea() const
+	{
+		Vector2F ratio = Game::System<Screen>().GetSizeRatio();
+		float scale	   = (std::min)(ratio.x, ratio.y);
 
-    void CircleDetector::ForEach(std::function<void(ScreenCoordContainsInfo&)> _func)
-    {
-        for (auto& target : detectedTargets_)
-        {
-            _func(target);
-        }
-    }
+		float scaledSize  = config.radius * 2.0f * scale;
+		Vector2F center	  = Game::System<Screen>().GetSizeF() * 0.5f;
+		Vector2F newPoint = center - Vector2F{scaledSize, scaledSize} * 0.5f;
+		return {newPoint, {scaledSize, scaledSize}};
+	}
 
-    void CircleDetector::ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const
-    {
-        for (const auto& target : detectedTargets_)
-        {
-            _func(target);
-        }
-    }
+	const std::vector<ScreenCoordContainsInfo>& CircleDetector::GetDetectedTargets() const
+	{
+		return detectedTargets_;
+	}
 
-    bool CircleDetector::IsPointInCircle(const Vector2F& point, const Vector2F& center, float radius) const
-    {
-        float dx = point.x - center.x;
-        float dy = point.y - center.y;
-        float distanceSquared = dx * dx + dy * dy;
-        return distanceSquared <= (radius * radius);
-    }
-}
+	void CircleDetector::ForEach(std::function<void(ScreenCoordContainsInfo&)> _func)
+	{
+		for (auto& target : detectedTargets_)
+		{
+			_func(target);
+		}
+	}
+
+	void CircleDetector::ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const
+	{
+		for (const auto& target : detectedTargets_)
+		{
+			_func(target);
+		}
+	}
+
+	bool CircleDetector::IsPointInCircle(const Vector2F& point, const Vector2F& center, float radius) const
+	{
+		float dx			  = point.x - center.x;
+		float dy			  = point.y - center.y;
+		float distanceSquared = dx * dx + dy * dy;
+		return distanceSquared <= (radius * radius);
+	}
+} // namespace mtgb

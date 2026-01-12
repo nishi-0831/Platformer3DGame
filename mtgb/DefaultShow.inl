@@ -1,124 +1,123 @@
 #include "Command.h"
 #include "ImGuiInputCommand.h"
-// DefaultShow.inl - ƒeƒ“ƒvƒŒ[ƒgÀ‘•ƒtƒ@ƒCƒ‹
-namespace mtgb {
-
-template<typename T>
-Command* DefaultShow(T* value, const char* name)
+// DefaultShow.inl - ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆå®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
+namespace mtgb
 {
-    bool changed = false;
 
-    using Type = std::remove_cvref_t<T>;
-    if constexpr (std::is_array_v<Type>)
-    {
-        if (ImGui::CollapsingHeader(name))
-        {
-            ImGui::Indent();
+	template <typename T> Command* DefaultShow(T* value, const char* name)
+	{
+		bool changed = false;
 
-            //—v‘fŒ^æ“¾
-            using ElemType = std::remove_extent_t<Type>;
-            //0ŸŒ³–Ú‚Ì—v‘f”æ“¾
-            constexpr size_t N = std::extent_v<Type>;
+		using Type = std::remove_cvref_t<T>;
+		if constexpr (std::is_array_v<Type>)
+		{
+			if (ImGui::CollapsingHeader(name))
+			{
+				ImGui::Indent();
 
-            //”z—ñ—v‘f‚²‚Æ‚ÉÄ‹A‚µAÅ‰‚É“¾‚ç‚ê‚½ƒRƒ}ƒ“ƒh‚ğ•Ô‚·
-            for (size_t i = 0; i < N; ++i)
-            {
-                std::string elemName = std::string(name) + "[" + std::to_string(i) + "]";
-                Command* cmd = DefaultShow(static_cast<ElemType*>(&(*value)[i]), elemName.c_str());
-                if (cmd)
-                {
-                    ImGui::Unindent();
-                    return cmd;
-                }
-            }
+				// è¦ç´ å‹å–å¾—
+				using ElemType = std::remove_extent_t<Type>;
+				// 0æ¬¡å…ƒç›®ã®è¦ç´ æ•°å–å¾—
+				constexpr size_t N = std::extent_v<Type>;
 
-            ImGui::Unindent();
-        }
-    }
-    else
-    {
-        T oldValue{ *value };
-        if constexpr (std::is_same_v<Type, bool>)
-        {
-            changed = ImGui::Checkbox(name, reinterpret_cast<bool*>(value));
-        }
-        else if constexpr (std::is_same_v<Type, float>)
-        {
-            changed = ImGui::InputFloat(name, reinterpret_cast<float*>(value));
-        }
-        else if constexpr (std::is_same_v<Type, float*>)
-        {
-            changed = ImGui::InputFloat(name, *reinterpret_cast<float**>(value));
-        }
-        else if constexpr (std::is_same_v<Type, int>)
-        {
-            changed = ImGui::InputInt(name, reinterpret_cast<int*>(value));
-        }
-        else if constexpr (std::is_same_v<Type, int*>)
-        {
-            changed = ImGui::InputInt(name, *reinterpret_cast<int**>(value));
-        }
-        else if constexpr (std::is_same_v<Type, long long>)
-        {
-            ImGui::InputScalar(name, ImGuiDataType_S64, value);
-        }
-        else if constexpr (std::is_same_v<Type, long long*>)
-        {
-            ImGui::InputScalar(name, ImGuiDataType_S64, &value);
-        }
-        else if constexpr (std::is_same_v<Type, unsigned long>)
-        {
-            ImGui::Text("%s : %4.2lo", name, *value);
-        }
-        else if constexpr (std::is_same_v<Type, unsigned long*>)
-        {
-            ImGui::Text("%s : %4.2lo", name, **reinterpret_cast<unsigned long**>(value));
-        }
-        else if constexpr (std::is_same_v<Type, unsigned char>)
-        {
-            ImGui::Text("%s : %4.2hhu", name, *value);
-        }
-        else if constexpr (std::is_enum_v<Type>)
-        {
-            // TODO: enum handling
-        }
-        else if constexpr (std::is_same_v<Type, std::string>)
-        {
-            std::string str = mtgb::MultiToUTF8(*value);
-            ImGui::Text("%s : %s", name, str.c_str());
-            /*std::vector<char> buffer(str.begin(), str.end());
-            buffer.resize(256);
-            if (ImGui::InputText(name,buffer.data(), buffer.size()))
-            {
-                *value = UTF8ToMulti(std::string(buffer.data()));
-            }*/
-        }
-        else if constexpr (std::is_same_v<Type, std::string_view>)
-        {
-            std::string str(value->data(), value->size());
-            str = MultiToUTF8(str);
-            ImGui::Text("%s : %s", name, str.c_str());
-        }
-        else
-        {
-            ImGui::Text("%s:Unknown,%s", name, typeid(Type).name());
-        }
+				// é…åˆ—è¦ç´ ã”ã¨ã«å†å¸°ã—ã€æœ€åˆã«å¾—ã‚‰ã‚ŒãŸã‚³ãƒãƒ³ãƒ‰ã‚’è¿”ã™
+				for (size_t i = 0; i < N; ++i)
+				{
+					std::string elemName = std::string(name) + "[" + std::to_string(i) + "]";
+					Command* cmd		 = DefaultShow(static_cast<ElemType*>(&(*value)[i]), elemName.c_str());
+					if (cmd)
+					{
+						ImGui::Unindent();
+						return cmd;
+					}
+				}
 
+				ImGui::Unindent();
+			}
+		}
+		else
+		{
+			T oldValue{*value};
+			if constexpr (std::is_same_v<Type, bool>)
+			{
+				changed = ImGui::Checkbox(name, reinterpret_cast<bool*>(value));
+			}
+			else if constexpr (std::is_same_v<Type, float>)
+			{
+				changed = ImGui::InputFloat(name, reinterpret_cast<float*>(value));
+			}
+			else if constexpr (std::is_same_v<Type, float*>)
+			{
+				changed = ImGui::InputFloat(name, *reinterpret_cast<float**>(value));
+			}
+			else if constexpr (std::is_same_v<Type, int>)
+			{
+				changed = ImGui::InputInt(name, reinterpret_cast<int*>(value));
+			}
+			else if constexpr (std::is_same_v<Type, int*>)
+			{
+				changed = ImGui::InputInt(name, *reinterpret_cast<int**>(value));
+			}
+			else if constexpr (std::is_same_v<Type, long long>)
+			{
+				ImGui::InputScalar(name, ImGuiDataType_S64, value);
+			}
+			else if constexpr (std::is_same_v<Type, long long*>)
+			{
+				ImGui::InputScalar(name, ImGuiDataType_S64, &value);
+			}
+			else if constexpr (std::is_same_v<Type, unsigned long>)
+			{
+				ImGui::Text("%s : %4.2lo", name, *value);
+			}
+			else if constexpr (std::is_same_v<Type, unsigned long*>)
+			{
+				ImGui::Text("%s : %4.2lo", name, **reinterpret_cast<unsigned long**>(value));
+			}
+			else if constexpr (std::is_same_v<Type, unsigned char>)
+			{
+				ImGui::Text("%s : %4.2hhu", name, *value);
+			}
+			else if constexpr (std::is_enum_v<Type>)
+			{
+				// TODO: enum handling
+			}
+			else if constexpr (std::is_same_v<Type, std::string>)
+			{
+				std::string str = mtgb::MultiToUTF8(*value);
+				ImGui::Text("%s : %s", name, str.c_str());
+				/*std::vector<char> buffer(str.begin(), str.end());
+				buffer.resize(256);
+				if (ImGui::InputText(name,buffer.data(), buffer.size()))
+				{
+					*value = UTF8ToMulti(std::string(buffer.data()));
+				}*/
+			}
+			else if constexpr (std::is_same_v<Type, std::string_view>)
+			{
+				std::string str(value->data(), value->size());
+				str = MultiToUTF8(str);
+				ImGui::Text("%s : %s", name, str.c_str());
+			}
+			else
+			{
+				ImGui::Text("%s:Unknown,%s", name, typeid(Type).name());
+			}
 
-        // ”z—ñ‚Å‚È‚¢Aconst‚Å‚È‚¢ê‡‚¾‚¯À‘Ì‰»‚³‚¹‚é
-        if constexpr (std::is_array_v<T> == false && std::is_const_v<T> == false)
-        {
+			// é…åˆ—ã§ãªã„ã€constã§ãªã„å ´åˆã ã‘å®Ÿä½“åŒ–ã•ã›ã‚‹
+			if constexpr (std::is_array_v<T> == false && std::is_const_v<T> == false)
+			{
 
-            if (changed != false)
-            {
-                // •ÏX‚ª‚³‚ê‚Ä‚¢‚½‚çƒRƒ}ƒ“ƒh‚ğ•Ô‚·
-                return new ImGuiInputCommand<T>(value, oldValue, *value, name);
-            }
-        }
+				if (changed != false)
+				{
+					// å¤‰æ›´ãŒã•ã‚Œã¦ã„ãŸã‚‰ã‚³ãƒãƒ³ãƒ‰ã‚’è¿”ã™
+					return new ImGuiInputCommand<T>(value, oldValue, *value, name);
+				}
+			}
 
-    // •ÏX‚ª‚³‚ê‚Ä‚¢‚È‚¢ê‡‚Ínullptr
-    }
-    return nullptr;
-}
+			// å¤‰æ›´ãŒã•ã‚Œã¦ã„ãªã„å ´åˆã¯nullptr
+		}
+		return nullptr;
+	}
 
 } // namespace mtgb

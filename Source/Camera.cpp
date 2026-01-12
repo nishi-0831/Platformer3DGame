@@ -4,9 +4,9 @@ namespace
 {
 	float normalizedX;
 	float normalizedY;
-	const mtgb::Vector3 INIT_ANGLE{ 0, 0, 0 };
+	const mtgb::Vector3 INIT_ANGLE{0, 0, 0};
 	/// <summary>
-	/// ƒ‰ƒWƒAƒ“’PˆÊ‚Ì’l‚ğA0`2ƒÎ‚Ì”ÍˆÍ‚É³‹K‰»‚·‚é
+	/// ãƒ©ã‚¸ã‚¢ãƒ³å˜ä½ã®å€¤ã‚’ã€0ï½2Ï€ã®ç¯„å›²ã«æ­£è¦åŒ–ã™ã‚‹
 	/// </summary>
 	/// <param name="_angleRad"></param>
 	/// <returns></returns>
@@ -14,99 +14,113 @@ namespace
 	{
 		const float TWO_PI = DirectX::XM_2PI;
 
-		// —]‚è‚ğŒvZ
+		// ä½™ã‚Šã‚’è¨ˆç®—
 		_angleRad = std::fmod(_angleRad, TWO_PI);
 
-		// •‰‚Ìê‡
+		// è² ã®å ´åˆ
 		if (_angleRad < 0.0f)
 		{
-			// ³‚Ì’l‚ÉC³
+			// æ­£ã®å€¤ã«ä¿®æ­£
 			_angleRad += TWO_PI;
 		}
 		return _angleRad;
 	}
-}
+} // namespace
 
 float EaseOutCirc(float x)
 {
 	return std::sqrtf(1.0f - std::powf(x - 1.0f, 2.0f));
 }
 
-mtgb::Camera::Camera(GameObject* _pGameObj) : GameObject(GameObjectBuilder()
-	.SetPosition({ 0, 0, 0 })
-	.SetName("Camera")
-	.Build())
+mtgb::Camera::Camera(GameObject* _pGameObj)
+	: GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName("Camera").Build())
 	, isGrounded_{true}
-	, inputType_{ InputType::JOYPAD }
-	, polarAngleRad_{ DirectX::XMConvertToRadians(45.0f + 90.0f) }
-	, azimuthalAngleRad_{ DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f) }
+	, inputType_{InputType::JOYPAD}
+	, polarAngleRad_{DirectX::XMConvertToRadians(45.0f + 90.0f)}
+	, azimuthalAngleRad_{DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f)}
 	, orbitSpeed_{1.0f}
 	, distance_{10.0f}
-	, minPolarAngleRad_{ DirectX::XMConvertToRadians(1.0f + 90.0f) }
-	, maxPolarAngleRad_{ DirectX::XMConvertToRadians(89.0f + 90.0f) }
+	, minPolarAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
+	, maxPolarAngleRad_{DirectX::XMConvertToRadians(89.0f + 90.0f)}
 	, minAzimuthalAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
 	, maxAzimuthalAngleRad_{DirectX::XMConvertToRadians(359.0f + 90.0f)}
-	, lookAtPositionOffset_{ 0, 1, 0 }
+	, lookAtPositionOffset_{0, 1, 0}
 	, pCameraTransform_{Component<Transform>()}
 	, pTargetTransform_{&Transform::Get(_pGameObj->GetEntityId())}
-	, targetVelocityCache_{ Vector3::Zero()}
+	, targetVelocityCache_{Vector3::Zero()}
 	, baseY_{0.0f}
 	, distY_{0.0f}
 	, lookAtPosLerpProgress_{0.0f}
-	, lerpSpeedGrounded_{ 1.0f }
-	, lerpSpeedJumping_{ 0.3f }
+	, lerpSpeedGrounded_{1.0f}
+	, lerpSpeedJumping_{0.3f}
 	, lerpSpeedScalar_{2.0f}
 {
-	// ƒJƒƒ‰•âŠÔ‘¬“x‚Ì‰Šú‰»
+	// ã‚«ãƒ¡ãƒ©è£œé–“é€Ÿåº¦ã®åˆæœŸåŒ–
 	cameraStat_
-		.OnAnyUpdate([this]
+		.OnAnyUpdate(
+			[this]
 			{
 				lookAtPosLerpProgress_ = std::clamp(lookAtPosLerpProgress_, 0.0f, 1.0f);
-				// Šp“x‚Ì§ŒÀ
+				// è§’åº¦ã®åˆ¶é™
 				polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
-			})
-		.OnStart(CameraState::GROUNDED, [this]
+			}
+		)
+		.OnStart(
+			CameraState::GROUNDED,
+			[this]
 			{
 				baseY_ = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
 
 				lookAtPosLerpProgress_ = 0.0f;
-			})
-		.OnUpdate(CameraState::GROUNDED, [this]
+			}
+		)
+		.OnUpdate(
+			CameraState::GROUNDED,
+			[this]
 			{
 				distY_ = pTargetTransform_->position.y;
 
 				orbitSpeed_ = 1.0f;
-				
-				// ”íÊ‘Ì‚ª‰æ–ÊŠO‚É‚ ‚éê‡‚Í’Ç]‘¬“x‚ğã‚°‚é
+
+				// è¢«å†™ä½“ãŒç”»é¢å¤–ã«ã‚ã‚‹å ´åˆã¯è¿½å¾“é€Ÿåº¦ã‚’ä¸Šã’ã‚‹
 				float lerpSpeed = IsTargetOffScreen() ? lerpSpeedGrounded_ * lerpSpeedScalar_ : lerpSpeedGrounded_;
 				lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
 
-				// ƒWƒƒƒ“ƒv’†F‘¬“x‚ÉŠî‚Ã‚¢‚Äó‘Ô‚ğ”»’è
+				// ã‚¸ãƒ£ãƒ³ãƒ—ä¸­ï¼šé€Ÿåº¦ã«åŸºã¥ã„ã¦çŠ¶æ…‹ã‚’åˆ¤å®š
 				if (targetVelocityCache_.y > 0.1f)
 				{
 					cameraStat_.Change(CameraState::JUMPING);
 				}
-			});
+			}
+		);
 
-	cameraStat_.OnStart(CameraState::JUMPING, [this]
-		{
-			distY_ = pTargetTransform_->position.y;
-			baseY_ = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
+	cameraStat_
+		.OnStart(
+			CameraState::JUMPING,
+			[this]
+			{
+				distY_ = pTargetTransform_->position.y;
+				baseY_ = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
 
-			lookAtPosLerpProgress_ = 0.0f;
-		}).OnUpdate(CameraState::JUMPING, [this]
+				lookAtPosLerpProgress_ = 0.0f;
+			}
+		)
+		.OnUpdate(
+			CameraState::JUMPING,
+			[this]
 			{
 				if (isGrounded_)
 				{
 					cameraStat_.Change(CameraState::GROUNDED);
 				}
-				distY_ = pTargetTransform_->position.y;
+				distY_		= pTargetTransform_->position.y;
 				orbitSpeed_ = 0.5f;
-				
-				// ”íÊ‘Ì‚ª‰æ–ÊŠO‚É‚ ‚éê‡‚Í’Ç]‘¬“x‚ğã‚°‚é
+
+				// è¢«å†™ä½“ãŒç”»é¢å¤–ã«ã‚ã‚‹å ´åˆã¯è¿½å¾“é€Ÿåº¦ã‚’ä¸Šã’ã‚‹
 				float lerpSpeed = IsTargetOffScreen() ? lerpSpeedJumping_ * lerpSpeedScalar_ : lerpSpeedJumping_;
 				lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
-			});
+			}
+		);
 }
 
 mtgb::Camera::~Camera()
@@ -118,26 +132,27 @@ void mtgb::Camera::Update()
 	if (pTargetTransform_ == nullptr)
 		return;
 
+	// ImGuiè¡¨ç¤º(ãƒ‡ãƒãƒƒã‚°ç”¨)
+	MTImGui::Instance().DirectShow(
+		[&]()
+		{
+			TypeRegistry::Instance().CallFunc(pCameraTransform_, "Transform");
+			TypeRegistry::Instance().CallFunc(&lookAtPositionOffset_, "lookAtPositionOffset_");
 
-	// ImGui•\¦(ƒfƒoƒbƒO—p)
-	MTImGui::Instance().DirectShow([&]()
-	{
-		TypeRegistry::Instance().CallFunc<Transform>(pCameraTransform_, "Transform");
-		TypeRegistry::Instance().CallFunc<Vector3>(&lookAtPositionOffset_, "lookAtPositionOffset_");
-
-		float degX = DirectX::XMConvertToDegrees(polarAngleRad_) - 90.0f;
-		float degY = DirectX::XMConvertToDegrees(azimuthalAngleRad_) - 90.0f;
-		ImGui::Text("Polar Angle: %.3f deg", degX);
-		ImGui::Text("Azimuthal Angle: %.3f deg", degY);
-		ImGui::Text("Target Velocity Y: %.3f", targetVelocityCache_.y);
-		ImGui::Text("lookAtPosLerpProgress: %.3f", lookAtPosLerpProgress_);
-		ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
-		ImGui::Text("Is Off Screen: %s", IsTargetOffScreen() ? "true" : "false");
-		TypeRegistry::Instance().CallFunc<float>(&normalizedX, "normalizedX");
-		TypeRegistry::Instance().CallFunc<float>(&normalizedY, "normalizedY");
-
-		
-	}, "Camera", ShowType::Inspector);
+			float degX = DirectX::XMConvertToDegrees(polarAngleRad_) - 90.0f;
+			float degY = DirectX::XMConvertToDegrees(azimuthalAngleRad_) - 90.0f;
+			ImGui::Text("Polar Angle: %.3f deg", degX);
+			ImGui::Text("Azimuthal Angle: %.3f deg", degY);
+			ImGui::Text("Target Velocity Y: %.3f", targetVelocityCache_.y);
+			ImGui::Text("lookAtPosLerpProgress: %.3f", lookAtPosLerpProgress_);
+			ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
+			ImGui::Text("Is Off Screen: %s", IsTargetOffScreen() ? "true" : "false");
+			TypeRegistry::Instance().CallFunc(&normalizedX, "normalizedX");
+			TypeRegistry::Instance().CallFunc(&normalizedY, "normalizedY");
+		},
+		"Camera",
+		ShowType::Inspector
+	);
 
 	DoOrbit();
 	cameraStat_.Update();
@@ -152,43 +167,43 @@ void mtgb::Camera::DoOrbit()
 {
 	Vector3 movement;
 
-	// ƒfƒoƒCƒX‚©‚ç“ü—Í‚ğæ“¾‚·‚é
+	// ãƒ‡ãƒã‚¤ã‚¹ã‹ã‚‰å…¥åŠ›ã‚’å–å¾—ã™ã‚‹
 	switch (inputType_)
 	{
-		// ƒ}ƒEƒX
-	case InputType::MOUSE:
+		// ãƒã‚¦ã‚¹
+	case InputType::MOUSE :
 		movement = InputUtil::GetMouseMove();
 		break;
 
-		// ƒQ[ƒ€ƒpƒbƒh
-	case InputType::JOYPAD:
+		// ã‚²ãƒ¼ãƒ ãƒ‘ãƒƒãƒ‰
+	case InputType::JOYPAD :
 		Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
-		movement.x = -vec2.x;
-		movement.y = vec2.y;
+		movement.x	  = -vec2.x;
+		movement.y	  = vec2.y;
 		break;
 	}
 
 	if (movement.Size() != 0)
 	{
-		//Šp“x‚ğ•Ï‚¦‚é
+		// è§’åº¦ã‚’å¤‰ãˆã‚‹
 
 		azimuthalAngleRad_ -= movement.x * orbitSpeed_ * Time::DeltaTimeF();
 		polarAngleRad_ += movement.y * orbitSpeed_ * Time::DeltaTimeF();
 
-		// ‰”’¼Šp“x‚ğ§ŒÀ
+		// é‰›ç›´è§’åº¦ã‚’åˆ¶é™
 		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 
-		// …•½Šp“x‚ğ0`2ƒÎ‚É³‹K‰»
+		// æ°´å¹³è§’åº¦ã‚’0ï½2Ï€ã«æ­£è¦åŒ–
 		azimuthalAngleRad_ = NormalizeAngleRad(azimuthalAngleRad_);
 
-		// ƒJƒƒ‰‚ğ“®‚©‚·
+		// ã‚«ãƒ¡ãƒ©ã‚’å‹•ã‹ã™
 		MoveCameraSpherical(distance_);
 	}
 }
 
 void mtgb::Camera::SetFollowMode(bool _isGrounded, const Vector3& _targetVelocity)
 {
-	isGrounded_ = _isGrounded;
+	isGrounded_			 = _isGrounded;
 	targetVelocityCache_ = _targetVelocity;
 }
 
@@ -197,15 +212,12 @@ bool mtgb::Camera::IsTargetOffScreen() const
 	if (pTargetTransform_ == nullptr || pCameraTransform_ == nullptr)
 		return false;
 
-	Vector3 targetScreenPos = Game::System<CameraSystem>().GetWorldToScreenPos(
-		pTargetTransform_->position,
-		WindowContext::First
-	);
+	Vector3 targetScreenPos =
+		Game::System<CameraSystem>().GetWorldToScreenPos(pTargetTransform_->position, WindowContext::First);
 	Vector2F screenSize = Game::System<Screen>().GetSizeF();
 
 	normalizedX = targetScreenPos.x / screenSize.x;
 	normalizedY = targetScreenPos.y / screenSize.y;
-
 
 	return (normalizedY >= 1.0f) || (normalizedY <= 0.0f) || (normalizedX >= 1.0f) || (normalizedX <= 0.0f);
 }
@@ -215,13 +227,14 @@ void mtgb::Camera::MoveCameraSpherical(float _distance)
 	if (pTargetTransform_ == nullptr)
 		return;
 
-	// ’‹“_‚ğŒvZ
-	float lerpedY = std::lerp(baseY_, distY_,lookAtPosLerpProgress_);
-	Vector3 lookAtTarget = Vector3(pTargetTransform_->position.x, lerpedY,pTargetTransform_->position.z) + lookAtPositionOffset_;
+	// æ³¨è¦–ç‚¹ã‚’è¨ˆç®—
+	float lerpedY = std::lerp(baseY_, distY_, lookAtPosLerpProgress_);
+	Vector3 lookAtTarget =
+		Vector3(pTargetTransform_->position.x, lerpedY, pTargetTransform_->position.z) + lookAtPositionOffset_;
 
-	// ‹…–ÊÀ•W‚ÅV‚µ‚¢ƒJƒƒ‰ˆÊ’u‚ğŒvZ
+	// çƒé¢åº§æ¨™ã§æ–°ã—ã„ã‚«ãƒ¡ãƒ©ä½ç½®ã‚’è¨ˆç®—
 	float theta = polarAngleRad_;
-	float phi = azimuthalAngleRad_;
+	float phi	= azimuthalAngleRad_;
 
 	Vector3 offset;
 	offset.x = _distance * sinf(theta) * cosf(phi);
@@ -231,8 +244,8 @@ void mtgb::Camera::MoveCameraSpherical(float _distance)
 	Vector3 newCameraPos = lookAtTarget + offset;
 
 	pCameraTransform_->position = newCameraPos;
-	
-	// ƒJƒƒ‰‚Ì‰ñ“]‚ğİ’è
-	Vector3 lookDir = lookAtTarget - pCameraTransform_->position;
+
+	// ã‚«ãƒ¡ãƒ©ã®å›è»¢ã‚’è¨­å®š
+	Vector3 lookDir			  = lookAtTarget - pCameraTransform_->position;
 	pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), Vector3::Up());
 }

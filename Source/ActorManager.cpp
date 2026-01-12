@@ -29,9 +29,9 @@ void ActorManager::UnregisterActor(EntityId _id)
 	if (_id == INVALID_ENTITY)
 		return;
 
-	for (auto itr = actors_.begin();itr != actors_.end();itr++)
+	for (auto itr = actors_.begin(); itr != actors_.end(); itr++)
 	{
-		if ( (*itr)->GetId() == _id)
+		if ((*itr)->GetId() == _id)
 		{
 			actors_.erase(itr);
 			return;
@@ -44,7 +44,7 @@ IActor* ActorManager::GetActor(EntityId _id)
 	if (_id == INVALID_ENTITY)
 		return nullptr;
 
-	for (IActor* pActor: actors_)
+	for (IActor* pActor : actors_)
 	{
 		if (pActor == nullptr)
 			continue;

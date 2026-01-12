@@ -20,21 +20,19 @@ mtgb::SingleWindow::~SingleWindow()
 
 void mtgb::SingleWindow::Initialize()
 {
-	const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
+	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
-	WindowConfig config1 =
-	{
-		.title = "Player1",
+	WindowConfig config1 = {
+		.title	   = "Player1",
 		.className = "Player1WindowClass",
-		.width = SCREEN_SIZE.x,
-		.height = SCREEN_SIZE.y,
-		.x = 0,
-		.y = 0
+		.width	   = SCREEN_SIZE.x,
+		.height	   = SCREEN_SIZE.y,
+		.x		   = 0,
+		.y		   = 0
 	};
 
-	//ƒŠƒ\[ƒX‚Ì‰Šú‰»‚à‚±‚±‚Ås‚¤
+	// ãƒªã‚½ãƒ¼ã‚¹ã®åˆæœŸåŒ–ã‚‚ã“ã“ã§è¡Œã†
 	Game::System<WindowManager>().SetWindowConfig(WindowContext::First, config1);
-
 
 	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::First);
 
@@ -42,7 +40,7 @@ void mtgb::SingleWindow::Initialize()
 
 	ShowWindow(hWnd1, SW_SHOW);
 
-	// ƒEƒBƒ“ƒhƒE‚Ì•\Ž¦A‰Šú‰»Š®—¹‚ðƒ}[ƒN
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è¡¨ç¤ºã€åˆæœŸåŒ–å®Œäº†ã‚’ãƒžãƒ¼ã‚¯
 	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::First).MarkInitialized();
 
 	Game::System<WindowContextResourceManager>().ChangeActiveResource(WindowContext::First);

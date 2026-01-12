@@ -7,16 +7,16 @@ namespace mtgb
 {
 	class SingleWindow : public ISystem
 	{
-	public:
+	  public:
 		SingleWindow();
 		~SingleWindow();
 
 		void Initialize() override;
 		void Update() override;
 
-
 		void SetDoubleWindowPos();
-	private:
+
+	  private:
 		WindowContext context_;
 	};
-}
+} // namespace mtgb

@@ -4,7 +4,6 @@
 #include "InputData.h"
 #include "ReleaseUtility.h"
 #include "MTAssert.h"
-#include "MainWindow.h"
 #include "DoubleWindow.h"
 #include "InputResource.h"
 #include <algorithm>
@@ -16,40 +15,36 @@
 
 namespace
 {
-	static const size_t KEY_BUFFER_SIZE{ 256 };
+	static const size_t KEY_BUFFER_SIZE{256};
 	LONG min = -1000;
 	LONG max = 1000;
-	LONG xMin{ min },
-		 xMax{ max },
-		 yMin{ min },
-		 yMax{ max };
+	LONG xMin{min}, xMax{max}, yMin{min}, yMax{max};
 	float acquireInterval = 10.0f;
 
-	const DWORD VENDOR_ID_DUAL_SHOCK{ 0x54c };
-	const DWORD VENDOR_ID_XBOX{ 0x45E };
+	const DWORD VENDOR_ID_DUAL_SHOCK{0x54c};
+	const DWORD VENDOR_ID_XBOX{0x45E};
 
-}
+} // namespace
 
 using namespace mtgb;
 
 void mtgb::Input::AcquireJoystick(ComPtr<IDirectInputDevice8> _pJoystickDevice)
 {
 	HRESULT hResult{};
-	hResult = _pJoystickDevice->Acquire();
+	hResult										   = _pJoystickDevice->Acquire();
 	joystickContext_[currJoystickGuid_].lastResult = hResult;
 	switch (hResult)
 	{
-	case DI_OK:  //æ“¾‚Å‚«‚½
-	case S_FALSE://‘¼‚ÌƒAƒvƒŠ‚à‹–‰Â‚ğæ“¾‚µ‚Ä‚¢‚é
+	case DI_OK :   // å–å¾—ã§ããŸ
+	case S_FALSE : // ä»–ã®ã‚¢ãƒ—ãƒªã‚‚è¨±å¯ã‚’å–å¾—ã—ã¦ã„ã‚‹
 		break;
-	case DIERR_OTHERAPPHASPRIO://‘¼‚ÌƒAƒvƒŠ‚ª—DæŒ ‚ğ‚Á‚Ä‚¢‚é
+	case DIERR_OTHERAPPHASPRIO : // ä»–ã®ã‚¢ãƒ—ãƒªãŒå„ªå…ˆæ¨©ã‚’æŒã£ã¦ã„ã‚‹
 		return;
-	case DIERR_INVALIDPARAM:
-	case DIERR_NOTINITIALIZED:
-		massert(SUCCEEDED(hResult)
-			&& "ƒWƒ‡ƒCƒXƒeƒBƒbƒN‘€ì‚Ì‹–‰Âæ“¾‚ÌÛ‚ÉƒGƒ‰[‚ª‹N‚±‚è‚Ü‚µ‚½ @Input::Update");
+	case DIERR_INVALIDPARAM :
+	case DIERR_NOTINITIALIZED :
+		massert(SUCCEEDED(hResult) && "ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯æ“ä½œã®è¨±å¯å–å¾—ã®éš›ã«ã‚¨ãƒ©ãƒ¼ãŒèµ·ã“ã‚Šã¾ã—ãŸ @Input::Update");
 		return;
-	default:
+	default :
 		break;
 	}
 }
@@ -57,10 +52,9 @@ void mtgb::Input::AcquireJoystick(ComPtr<IDirectInputDevice8> _pJoystickDevice)
 GUID mtgb::Input::GetDeviceGuid(ComPtr<IDirectInputDevice8> _pInputDevice)
 {
 	DIDEVICEINSTANCE deviceInstance = {};
-	deviceInstance.dwSize = sizeof(DIDEVICEINSTANCE);
-	HRESULT hResult = _pInputDevice->GetDeviceInfo(&deviceInstance);
-	massert(SUCCEEDED(hResult)
-		&& "ƒfƒoƒCƒX‚Ìî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½ @Input::Update");
+	deviceInstance.dwSize			= sizeof(DIDEVICEINSTANCE);
+	HRESULT hResult					= _pInputDevice->GetDeviceInfo(&deviceInstance);
+	massert(SUCCEEDED(hResult) && "ãƒ‡ãƒã‚¤ã‚¹ã®æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ @Input::Update");
 	return deviceInstance.guidInstance;
 }
 
@@ -69,11 +63,11 @@ bool operator<(const GUID& lhs, const GUID& rhs)
 	return std::memcmp(&lhs, &rhs, sizeof(GUID)) < 0;
 }
 
-mtgb::Input::Input() :
-	pInputData_  { nullptr },
-	pDirectInput_{ nullptr },
-	pKeyDevice_  { nullptr },
-	pMouseDevice_{ nullptr }
+mtgb::Input::Input()
+	: pInputData_{nullptr}
+	, pDirectInput_{nullptr}
+	, pKeyDevice_{nullptr}
+	, pMouseDevice_{nullptr}
 {
 }
 
@@ -86,70 +80,72 @@ void mtgb::Input::Initialize()
 {
 	HRESULT hResult{};
 
-	// DirectInput8‚ÌƒfƒoƒCƒXì¬
+	// DirectInput8ã®ãƒ‡ãƒã‚¤ã‚¹ä½œæˆ
 	hResult = DirectInput8Create(
 		GetModuleHandle(nullptr),
 		DIRECTINPUT_VERSION,
 		IID_IDirectInput8,
 		reinterpret_cast<void**>(pDirectInput_.GetAddressOf()),
-		nullptr);
+		nullptr
+	);
 
-	massert(SUCCEEDED(hResult)  // DirectInput8‚ÌƒfƒoƒCƒXì¬‚É¬Œ÷
-		&& "DirectInput8‚ÌƒfƒoƒCƒXì¬‚É¸”s @Input::Initialize");
-
+	massert(
+		SUCCEEDED(hResult) // DirectInput8ã®ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«æˆåŠŸ
+		&& "DirectInput8ã®ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«å¤±æ•— @Input::Initialize"
+	);
 }
 
 void mtgb::Input::Update()
 {
 	static HRESULT hResult{};
 
-#pragma region ƒL[ƒ{[ƒh
+#pragma region ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰
 	UpdateKeyDevice();
 #pragma endregion
 
-#pragma region ƒ}ƒEƒX
+#pragma region ãƒã‚¦ã‚¹
 	UpdateMouseDevice();
 #pragma endregion
 
-#pragma region ƒWƒ‡ƒCƒXƒeƒBƒbƒN
-	
+#pragma region ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯
+
 	/*if (pJoystickDevice_ == nullptr)
 	{
 		return;
 	}*/
 	UpdateJoystickDevice();
-	
+
 #pragma endregion
 	if (InputUtil::GetKeyDown(KeyCode::P))
 	{
 		EnumJoystick();
 	}
 
-#pragma region ƒQ[ƒ€ƒpƒbƒh
-	//UpdateGamePadDevice();
+#pragma region ã‚²ãƒ¼ãƒ ãƒ‘ãƒƒãƒ‰
+	// UpdateGamePadDevice();
 #pragma endregion
 }
 
 void mtgb::Input::UpdateKeyDevice()
 {
 	static HRESULT hResult{};
-	// ƒL[ƒ{[ƒh‘€ì‚Ì‹–‰ÂƒQƒbƒg
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰æ“ä½œã®è¨±å¯ã‚²ãƒƒãƒˆ
 	hResult = pKeyDevice_->Acquire();
 
-	//massert(SUCCEEDED(hResult)  // ƒL[ƒ{[ƒh‘€ì‚Ì‹–‰Âæ“¾‚É¬Œ÷
-	//	&& "ƒL[ƒ{[ƒh‘€ì‚Ì‹–‰Âæ“¾‚É¸”s @Input::Update");
+	// massert(SUCCEEDED(hResult)  // ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰æ“ä½œã®è¨±å¯å–å¾—ã«æˆåŠŸ
+	//	&& "ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰æ“ä½œã®è¨±å¯å–å¾—ã«å¤±æ•— @Input::Update");
 
 	if (FAILED(hResult))
 	{
-		return;  // ƒL[ƒ{[ƒh‘€ì‚Ì‹–‰Âæ“¾‚É¸”s‚µ‚½‚È‚ç‰ñ‹A
+		return; // ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰æ“ä½œã®è¨±å¯å–å¾—ã«å¤±æ•—ã—ãŸãªã‚‰å›å¸°
 	}
 
-	static BYTE keyBuffer[KEY_BUFFER_SIZE]{};  // ƒL[ó‘Ôæ“¾—pƒoƒbƒtƒ@
+	static BYTE keyBuffer[KEY_BUFFER_SIZE]{}; // ã‚­ãƒ¼çŠ¶æ…‹å–å¾—ç”¨ãƒãƒƒãƒ•ã‚¡
 
 	pInputData_->keyStatePrevious_ = pInputData_->keyStateCurrent_;
 	pKeyDevice_->GetDeviceState(KEY_BUFFER_SIZE, keyBuffer);
 
-	// TODO: for‚Å‰ñ‚·‚Ì‚ÍƒRƒXƒp‚æ‚­‚È‚¢
+	// TODO: forã§å›ã™ã®ã¯ã‚³ã‚¹ãƒ‘ã‚ˆããªã„
 	for (int i = 0; i < KEY_BUFFER_SIZE; i++)
 	{
 		pInputData_->keyStateCurrent_[i] = keyBuffer[i];
@@ -160,29 +156,27 @@ void mtgb::Input::UpdateMouseDevice()
 {
 	static HRESULT hResult{};
 
-	// ƒ}ƒEƒX‘€ì‚Ì‹–‰Â‚ğƒQƒbƒg
+	// ãƒã‚¦ã‚¹æ“ä½œã®è¨±å¯ã‚’ã‚²ãƒƒãƒˆ
 	hResult = pMouseDevice_->Acquire();
 
 	if (FAILED(hResult))
 	{
-		return;  // ƒ}ƒEƒX‘€ì‚Ì‹–‰Âæ“¾‚É¸”s‚µ‚½‚È‚ç‰ñ‹A
+		return; // ãƒã‚¦ã‚¹æ“ä½œã®è¨±å¯å–å¾—ã«å¤±æ•—ã—ãŸãªã‚‰å›å¸°
 	}
 
-	massert(SUCCEEDED(hResult)  // ƒ}ƒEƒX‘€ì‚Ì‹–‰Âæ“¾‚É¬Œ÷
-		&& "ƒ}ƒEƒX‘€ì‚Ì‹–‰Âæ“¾‚É¸”s @Input::Update");
+	massert(
+		SUCCEEDED(hResult) // ãƒã‚¦ã‚¹æ“ä½œã®è¨±å¯å–å¾—ã«æˆåŠŸ
+		&& "ãƒã‚¦ã‚¹æ“ä½œã®è¨±å¯å–å¾—ã«å¤±æ•— @Input::Update"
+	);
 
-	memcpy(
-		&pInputData_->mouseStatePrevious_,
-		&pInputData_->mouseStateCurrent_,
-		sizeof(DIMOUSESTATE));
+	memcpy(&pInputData_->mouseStatePrevious_, &pInputData_->mouseStateCurrent_, sizeof(DIMOUSESTATE));
 
+	hResult = pMouseDevice_->GetDeviceState(sizeof(DIMOUSESTATE), &pInputData_->mouseStateCurrent_);
 
-	hResult = pMouseDevice_->GetDeviceState(
-		sizeof(DIMOUSESTATE),
-		&pInputData_->mouseStateCurrent_);
-
-	massert(SUCCEEDED(hResult)  // ƒ}ƒEƒX‘€ì‚Ìæ“¾‚É¬Œ÷
-		&& "ƒ}ƒEƒX‘€ì‚Ìæ“¾‚É¸”s @Input::Update");
+	massert(
+		SUCCEEDED(hResult) // ãƒã‚¦ã‚¹æ“ä½œã®å–å¾—ã«æˆåŠŸ
+		&& "ãƒã‚¦ã‚¹æ“ä½œã®å–å¾—ã«å¤±æ•— @Input::Update"
+	);
 
 #pragma endregion
 }
@@ -190,69 +184,71 @@ void mtgb::Input::UpdateMouseDevice()
 void mtgb::Input::UpdateJoystickDevice()
 {
 	static HRESULT hResult{};
-	
-	if (joystickContext_.empty()) return;
-	if (currJoystickGuid_ == GUID_NULL) return;
 
-	memcpy(
-		&pInputData_->joyStatePrevious_,
-		&pInputData_->joyStateCurrent_,
-		sizeof(DIJOYSTATE));
+	if (joystickContext_.empty())
+		return;
+	if (currJoystickGuid_ == GUID_NULL)
+		return;
 
-	hResult = joystickContext_[currJoystickGuid_].device->GetDeviceState(sizeof(DIJOYSTATE), &pInputData_->joyStateCurrent_);
+	memcpy(&pInputData_->joyStatePrevious_, &pInputData_->joyStateCurrent_, sizeof(DIJOYSTATE));
+
+	hResult =
+		joystickContext_[currJoystickGuid_].device->GetDeviceState(sizeof(DIJOYSTATE), &pInputData_->joyStateCurrent_);
 	joystickContext_[currJoystickGuid_].lastResult = hResult;
 	switch (hResult)
 	{
-	case DI_OK:
+	case DI_OK :
 		// LOGF("OK\n");
 		break;
-	case DIERR_INPUTLOST:// “ü—ÍƒƒXƒgAˆê“I‚ÈƒAƒNƒZƒX•s‰Â
+	case DIERR_INPUTLOST : // å…¥åŠ›ãƒ­ã‚¹ãƒˆã€ä¸€æ™‚çš„ãªã‚¢ã‚¯ã‚»ã‚¹ä¸å¯
 		AcquireJoystick(joystickContext_[currJoystickGuid_].device);
 		return;
-	case DIERR_NOTACQUIRED:// –¢æ“¾
+	case DIERR_NOTACQUIRED : // æœªå–å¾—
 		AcquireJoystick(joystickContext_[currJoystickGuid_].device);
 		return;
-	default: // ‰½‚ç‚©‚Ì¸”s
+	default : // ä½•ã‚‰ã‹ã®å¤±æ•—
 	{
-		// ƒfƒoƒCƒX‚ğŠ„‚è“–‚ÄÏ‚İƒŠƒXƒg‚©‚çœŠO
+		// ãƒ‡ãƒã‚¤ã‚¹ã‚’å‰²ã‚Šå½“ã¦æ¸ˆã¿ãƒªã‚¹ãƒˆã‹ã‚‰é™¤å¤–
 		UnregisterJoystickGuid(GetDeviceGuid(joystickContext_[currJoystickGuid_].device));
 		return;
 	}
-	/* massert(false
-		&& "ƒfƒoƒCƒX‚Ìó‘Ô‚Ìæ“¾‚ÌÛ‚ÉƒGƒ‰[‚ª‹N‚±‚è‚Ü‚µ‚½ @Input::Update");*/
+		/* massert(false
+			&& "ãƒ‡ãƒã‚¤ã‚¹ã®çŠ¶æ…‹ã®å–å¾—ã®éš›ã«ã‚¨ãƒ©ãƒ¼ãŒèµ·ã“ã‚Šã¾ã—ãŸ @Input::Update");*/
 	}
 }
 
 void mtgb::Input::UpdateGamePadDevice()
 {
-	// TODO: ŠÖ”‰»‚¹‚æI
+	// TODO: é–¢æ•°åŒ–ã›ã‚ˆï¼
 
-	// ƒAƒNƒeƒBƒu‚ÈƒRƒ“ƒgƒ[ƒ‰‚ª‚È‚¯‚ê‚ÎAƒŠƒ^[ƒ“B
+	// ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãŒãªã‘ã‚Œã°ã€ãƒªã‚¿ãƒ¼ãƒ³ã€‚
 	{
-		bool IS_GAMEPAD_DETECTED = std::any_of(pInputData_->activeGamePadID.begin(),
-											   pInputData_->activeGamePadID.end(),
-											   [](std::pair<const PadIDState, int> _id) { return _id.second != -1; });
+		bool IS_GAMEPAD_DETECTED = std::any_of(
+			pInputData_->activeGamePadID.begin(),
+			pInputData_->activeGamePadID.end(),
+			[](std::pair<const PadIDState, int> _id)
+			{
+				return _id.second != -1;
+			}
+		);
 		if (not(IS_GAMEPAD_DETECTED))
 		{
 			CheckValidPadID();
 		}
 	}
 
-	// ƒRƒ“ƒgƒ[ƒ‰‚ÌŠ„‚è“–‚Ä
-	// –³Œø‚ÈID‚Å‚ ‚ê‚Î‘‚«Š·‚¦
-	// Š„‚è“–‚Ä‚½ID‚ÌƒL[‚ğASSIGNED‚É‚·‚é
-	// 
+	// ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã®å‰²ã‚Šå½“ã¦
+	// ç„¡åŠ¹ãªIDã§ã‚ã‚Œã°æ›¸ãæ›ãˆ
+	// å‰²ã‚Šå½“ã¦ãŸIDã®ã‚­ãƒ¼ã‚’ASSIGNEDã«ã™ã‚‹
+	//
 
 	for (int i = 0; i < XUSER_MAX_COUNT; i++)
 	{
-		// Previous‚ÉCurrent‚Ìó‘Ô‚ğƒRƒs[
-		memcpy(
-			&pInputData_->gamePadStatePrevious_[i],
-			&pInputData_->gamePadStateCurrent_[i],
-			sizeof(_XINPUT_STATE));
+		// Previousã«Currentã®çŠ¶æ…‹ã‚’ã‚³ãƒ”ãƒ¼
+		memcpy(&pInputData_->gamePadStatePrevious_[i], &pInputData_->gamePadStateCurrent_[i], sizeof(_XINPUT_STATE));
 
-		// Œ»İ‚ÌƒRƒ“ƒgƒ[ƒ‰[‚Ìó‘Ô‚ğæ“¾
-		XInputGetState(i, &pInputData_->gamePadStateCurrent_[i]); // ‚±‚±‚ÅƒGƒ‰[ˆ—!
+		// ç¾åœ¨ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼ã®çŠ¶æ…‹ã‚’å–å¾—
+		XInputGetState(i, &pInputData_->gamePadStateCurrent_[i]); // ã“ã“ã§ã‚¨ãƒ©ãƒ¼å‡¦ç†!
 	}
 }
 
@@ -263,9 +259,7 @@ void mtgb::Input::Release()
 	pDirectInput_.Reset();
 }
 
-void mtgb::Input::UpdateMousePositionData(
-	const int32_t _x,
-	const int32_t _y)
+void mtgb::Input::UpdateMousePositionData(const int32_t _x, const int32_t _y)
 {
 	if (pInputData_)
 	{
@@ -279,23 +273,29 @@ void mtgb::Input::CreateKeyDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppKeyDevice
 	HRESULT hResult{};
 
 	hResult = pDirectInput_->CreateDevice(GUID_SysKeyboard, _ppKeyDevice, nullptr);
-	massert(SUCCEEDED(hResult)  // ƒL[ƒ{[ƒhƒfƒoƒCƒX‚Ìì¬‚É¬Œ÷
-		&& "ƒL[ƒ{[ƒhƒfƒoƒCƒX‚Ìì¬‚É¸”s @Input::CreateKeyDevice");
+	massert(
+		SUCCEEDED(hResult) // ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ãƒ‡ãƒã‚¤ã‚¹ã®ä½œæˆã«æˆåŠŸ
+		&& "ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ãƒ‡ãƒã‚¤ã‚¹ã®ä½œæˆã«å¤±æ•— @Input::CreateKeyDevice"
+	);
 
-	// ƒL[ƒ{[ƒh—p‚ÉƒtƒH[ƒ}ƒbƒg
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ç”¨ã«ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
 	hResult = (*_ppKeyDevice)->SetDataFormat(&c_dfDIKeyboard);
 
-	massert(SUCCEEDED(hResult)  // ƒL[ƒ{[ƒhƒtƒH[ƒ}ƒbƒg‚É¬Œ÷
-		&& "ƒL[ƒ{[ƒhƒtƒH[ƒ}ƒbƒg‚É¸”s @Input::CreateDevice");
+	massert(
+		SUCCEEDED(hResult) // ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã«æˆåŠŸ
+		&& "ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã«å¤±æ•— @Input::CreateDevice"
+	);
 
-	// ƒL[ƒ{[ƒh‚ÌƒAƒvƒŠŠÔ‹¤—LƒŒƒxƒ‹‚ğİ’è
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã®ã‚¢ãƒ—ãƒªé–“å…±æœ‰ãƒ¬ãƒ™ãƒ«ã‚’è¨­å®š
 	//  REF: https://learn.microsoft.com/ja-jp/previous-versions/windows/desktop/ee417921(v=vs.85)
-	//hResult = (*_ppKeyDevice)->SetCooperativeLevel(_hWnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
-	//”ñƒAƒNƒeƒBƒu‚ÈƒAƒvƒŠ‚à“ü—Í‚ğó‚¯•t‚¯‚é
+	// hResult = (*_ppKeyDevice)->SetCooperativeLevel(_hWnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
+	// éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªã‚¢ãƒ—ãƒªã‚‚å…¥åŠ›ã‚’å—ã‘ä»˜ã‘ã‚‹
 	hResult = (*_ppKeyDevice)->SetCooperativeLevel(_hWnd, DISCL_NONEXCLUSIVE | DISCL_BACKGROUND);
 
-	massert(SUCCEEDED(hResult)  // ƒL[ƒ{[ƒhƒAƒvƒŠŠÔ‹¤—LƒŒƒxƒ‹İ’è‚É¬Œ÷
-		&& "ƒL[ƒ{[ƒhƒAƒvƒŠŠÔ‹¤—LƒŒƒxƒ‹İ’è‚É¸”s @Input::CreateDevice");
+	massert(
+		SUCCEEDED(hResult) // ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‚¢ãƒ—ãƒªé–“å…±æœ‰ãƒ¬ãƒ™ãƒ«è¨­å®šã«æˆåŠŸ
+		&& "ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‚¢ãƒ—ãƒªé–“å…±æœ‰ãƒ¬ãƒ™ãƒ«è¨­å®šã«å¤±æ•— @Input::CreateDevice"
+	);
 }
 
 void mtgb::Input::CreateMouseDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppMouseDevice)
@@ -303,22 +303,28 @@ void mtgb::Input::CreateMouseDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppMouseDe
 	HRESULT hResult{};
 
 	hResult = pDirectInput_->CreateDevice(GUID_SysMouse, _ppMouseDevice, nullptr);
-	massert(SUCCEEDED(hResult)  // ƒL[ƒ{[ƒhƒfƒoƒCƒX‚Ìì¬‚É¬Œ÷
-		&& "ƒ}ƒEƒXƒfƒoƒCƒX‚Ìì¬‚É¸”s @Input::CreateMouseDevice");
+	massert(
+		SUCCEEDED(hResult) // ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ãƒ‡ãƒã‚¤ã‚¹ã®ä½œæˆã«æˆåŠŸ
+		&& "ãƒã‚¦ã‚¹ãƒ‡ãƒã‚¤ã‚¹ã®ä½œæˆã«å¤±æ•— @Input::CreateMouseDevice"
+	);
 
-	// ƒ}ƒEƒX—p‚ÉƒtƒH[ƒ}ƒbƒg
+	// ãƒã‚¦ã‚¹ç”¨ã«ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
 	hResult = (*_ppMouseDevice)->SetDataFormat(&c_dfDIMouse);
 
-	massert(SUCCEEDED(hResult)  // ƒ}ƒEƒXƒtƒH[ƒ}ƒbƒg‚É¬Œ÷
-		&& "ƒ}ƒEƒXƒtƒH[ƒ}ƒbƒg‚É¸”s @Input::CreateMouseDevice");
+	massert(
+		SUCCEEDED(hResult) // ãƒã‚¦ã‚¹ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã«æˆåŠŸ
+		&& "ãƒã‚¦ã‚¹ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã«å¤±æ•— @Input::CreateMouseDevice"
+	);
 
-	// ƒ}ƒEƒX‚ÌƒAƒvƒŠŠÔ‹¤—LƒŒƒxƒ‹‚Ìİ’è
-	//hResult = (*_ppMouseDevice)->SetCooperativeLevel(_hWnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
-	//”ñƒAƒNƒeƒBƒu‚ÈƒAƒvƒŠ‚à“ü—Í‚ğó‚¯•t‚¯‚é
+	// ãƒã‚¦ã‚¹ã®ã‚¢ãƒ—ãƒªé–“å…±æœ‰ãƒ¬ãƒ™ãƒ«ã®è¨­å®š
+	// hResult = (*_ppMouseDevice)->SetCooperativeLevel(_hWnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
+	// éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªã‚¢ãƒ—ãƒªã‚‚å…¥åŠ›ã‚’å—ã‘ä»˜ã‘ã‚‹
 	hResult = (*_ppMouseDevice)->SetCooperativeLevel(_hWnd, DISCL_NONEXCLUSIVE | DISCL_BACKGROUND);
 
-	massert(SUCCEEDED(hResult)  // ƒ}ƒEƒXƒAƒvƒŠŠÔ‹¤—LƒŒƒxƒ‹İ’è‚É¬Œ÷
-		&& "ƒ}ƒEƒXƒAƒvƒŠŠÔ‹¤—LƒŒƒxƒ‹İ’è‚É¸”s @Input::CreateMouseDevice");
+	massert(
+		SUCCEEDED(hResult) // ãƒã‚¦ã‚¹ã‚¢ãƒ—ãƒªé–“å…±æœ‰ãƒ¬ãƒ™ãƒ«è¨­å®šã«æˆåŠŸ
+		&& "ãƒã‚¦ã‚¹ã‚¢ãƒ—ãƒªé–“å…±æœ‰ãƒ¬ãƒ™ãƒ«è¨­å®šã«å¤±æ•— @Input::CreateMouseDevice"
+	);
 }
 
 void mtgb::Input::ChangeKeyDevice(ComPtr<IDirectInputDevice8> _pKeyDevice)
@@ -329,7 +335,7 @@ void mtgb::Input::ChangeKeyDevice(ComPtr<IDirectInputDevice8> _pKeyDevice)
 void mtgb::Input::SetJoystickGuid(GUID _guid)
 {
 	/*massert(assignedJoystickGuids_.contains(_guid)
-		&& "–³Œø‚ÈGUID‚ª“n‚³‚ê‚Ü‚µ‚½ @Input::SetJoystickGuid");*/
+		&& "ç„¡åŠ¹ãªGUIDãŒæ¸¡ã•ã‚Œã¾ã—ãŸ @Input::SetJoystickGuid");*/
 	currJoystickGuid_ = _guid;
 }
 
@@ -342,7 +348,6 @@ void mtgb::Input::ChangeInputData(InputData* _pInputData)
 {
 	pInputData_ = _pInputData;
 }
-
 
 void mtgb::Input::CheckValidPadID()
 {
@@ -367,16 +372,16 @@ void mtgb::Input::ChangeJoystickDevice(ComPtr<IDirectInputDevice8> _pJoystickDev
 }
 
 /// <summary>
-/// ƒWƒ‡ƒCƒXƒeƒBƒbƒN‚ªÚ‘±‚³‚ê‚Ä‚¢‚éê‡AƒfƒoƒCƒX‚ÉŠ„‚è“–‚Ä‚é
+/// ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ãŒæ¥ç¶šã•ã‚Œã¦ã„ã‚‹å ´åˆã€ãƒ‡ãƒã‚¤ã‚¹ã«å‰²ã‚Šå½“ã¦ã‚‹
 /// </summary>
-/// <param name="lpddi">ƒfƒoƒCƒX‚Ìî•ñ‚ğ‚ÂƒCƒ“ƒXƒ^ƒ“ƒX</param>
-/// <param name="pvRef">EnumDevices‚Å“n‚µ‚½’l</param>
+/// <param name="lpddi">ãƒ‡ãƒã‚¤ã‚¹ã®æƒ…å ±ã‚’æŒã¤ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</param>
+/// <param name="pvRef">EnumDevicesã§æ¸¡ã—ãŸå€¤</param>
 /// <returns></returns>
 BOOL CALLBACK EnumJoysticksCallback(const LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)
 {
 	auto& input = Game::System<Input>();
 
-	// Š„‚è“–‚Ä—\–ñ‚ª‚È‚©‚Á‚½‚çƒfƒoƒCƒX‚ğì¬‚µ‚È‚¢
+	// å‰²ã‚Šå½“ã¦äºˆç´„ãŒãªã‹ã£ãŸã‚‰ãƒ‡ãƒã‚¤ã‚¹ã‚’ä½œæˆã—ãªã„
 	if (input.IsNotSubscribed())
 	{
 		return DIENUM_STOP;
@@ -385,22 +390,21 @@ BOOL CALLBACK EnumJoysticksCallback(const LPCDIDEVICEINSTANCE lpddi, LPVOID pvRe
 
 	int reservationIndex = input.FindReservationIndexForDevice(devType);
 
-	if(reservationIndex < 0)
+	if (reservationIndex < 0)
 	{
-		// ƒfƒoƒCƒX‚ğ—v‹‚µ‚Ä‚¢‚é—\–ñ‚Í‚È‚¢
+		// ãƒ‡ãƒã‚¤ã‚¹ã‚’è¦æ±‚ã—ã¦ã„ã‚‹äºˆç´„ã¯ãªã„
 		return DIENUM_CONTINUE;
 	}
-	LPDIRECTINPUT8 pDirectInput = reinterpret_cast<LPDIRECTINPUT8>(pvRef);
+	LPDIRECTINPUT8 pDirectInput			= reinterpret_cast<LPDIRECTINPUT8>(pvRef);
 	ComPtr<IDirectInputDevice8> pDevice = nullptr;
 
-	// Š„‚è“–‚Ä—\–ñ‚ª‚ ‚èA–¢Š„“–‚È‚Ì‚ÅƒfƒoƒCƒXì¬
+	// å‰²ã‚Šå½“ã¦äºˆç´„ãŒã‚ã‚Šã€æœªå‰²å½“ãªã®ã§ãƒ‡ãƒã‚¤ã‚¹ä½œæˆ
 	HRESULT hResult = pDirectInput->CreateDevice(lpddi->guidInstance, pDevice.GetAddressOf(), nullptr);
-	massert(SUCCEEDED(hResult)
-		&& "ƒWƒ‡ƒCƒXƒeƒBƒbƒN‚ÌƒfƒoƒCƒX‚Ìì¬‚É¸”s @EnumJoysticksCallback");
-	
+	massert(SUCCEEDED(hResult) && "ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã®ãƒ‡ãƒã‚¤ã‚¹ã®ä½œæˆã«å¤±æ•— @EnumJoysticksCallback");
+
 	if (Game::System<Input>().RegisterJoystickGuid(lpddi->guidInstance) == false)
 	{
-		//Šù‚ÉŠ„‚è“–‚ÄÏ‚İ‚Ìˆ×A‘¼‚ÌƒfƒoƒCƒX‚Ì—ñ‹“‚ÉˆÚ‚·
+		// æ—¢ã«å‰²ã‚Šå½“ã¦æ¸ˆã¿ã®ç‚ºã€ä»–ã®ãƒ‡ãƒã‚¤ã‚¹ã®åˆ—æŒ™ã«ç§»ã™
 		pDevice.Reset();
 		return DIENUM_CONTINUE;
 	}
@@ -408,13 +412,13 @@ BOOL CALLBACK EnumJoysticksCallback(const LPCDIDEVICEINSTANCE lpddi, LPVOID pvRe
 	input.AssignJoystickToReservation(pDevice, static_cast<size_t>(reservationIndex), lpddi->guidInstance);
 	LOGIMGUI_CAT("Input", "Assigned reservationIndex=%d", reservationIndex);
 
-	// —\–ñ‚ª‚Ü‚¾c‚Á‚Ä‚¢‚é‚È‚ç‘±s
+	// äºˆç´„ãŒã¾ã æ®‹ã£ã¦ã„ã‚‹ãªã‚‰ç¶šè¡Œ
 	return input.IsNotSubscribed() ? DIENUM_STOP : DIENUM_CONTINUE;
 }
 
 void mtgb::Input::EnumJoystick()
 {
-	// Š„‚è“–‚Ä—\–ñ‚ª‚È‚©‚Á‚½‚çƒfƒoƒCƒX‚ğì¬‚µ‚È‚¢
+	// å‰²ã‚Šå½“ã¦äºˆç´„ãŒãªã‹ã£ãŸã‚‰ãƒ‡ãƒã‚¤ã‚¹ã‚’ä½œæˆã—ãªã„
 	if (Game::System<Input>().IsNotSubscribed())
 	{
 		return;
@@ -434,30 +438,33 @@ void mtgb::Input::RequestJoystickDevice(JoystickReservation&& _reservation)
 	StartEnumTimer();
 }
 
-void mtgb::Input::AssignJoystickToReservation(ComPtr<IDirectInputDevice8> _pJoystickDevice, size_t _reservationIndex, GUID _guid)
+void mtgb::Input::AssignJoystickToReservation(
+	ComPtr<IDirectInputDevice8> _pJoystickDevice,
+	size_t _reservationIndex,
+	GUID _guid
+)
 {
 	if (_reservationIndex >= requestedJoystickDevices_.size())
 		return;
 
-	// —\–ñ‚ğƒ€[ƒu
+	// äºˆç´„ã‚’ãƒ ãƒ¼ãƒ–
 	JoystickReservation reservation = std::move(requestedJoystickDevices_[_reservationIndex]);
 	requestedJoystickDevices_.erase(requestedJoystickDevices_.begin() + _reservationIndex);
 
-	// ‹¦’²ƒŒƒxƒ‹“™İ’è
+	// å”èª¿ãƒ¬ãƒ™ãƒ«ç­‰è¨­å®š
 	_pJoystickDevice->SetCooperativeLevel(reservation.hWnd, DISCL_NONEXCLUSIVE | DISCL_BACKGROUND);
 	//_pJoystickDevice->SetCooperativeLevel(reservation.hWnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND);
 	_pJoystickDevice->SetDataFormat(&c_dfDIJoystick);
 	SetProperty(_pJoystickDevice, reservation.config);
 
-	//ƒfƒoƒCƒX‚©‚çJoystickContext\’z
-	GUID guid = GetDeviceGuid(_pJoystickDevice);
-	auto [itr, inserted] = joystickContext_.emplace(guid,_pJoystickDevice);
+	// ãƒ‡ãƒã‚¤ã‚¹ã‹ã‚‰JoystickContextæ§‹ç¯‰
+	GUID guid			 = GetDeviceGuid(_pJoystickDevice);
+	auto [itr, inserted] = joystickContext_.emplace(guid, _pJoystickDevice);
 
 	if (reservation.onAssign)
 		reservation.onAssign(itr->second.device, guid);
 
-	//SetAcquireInterval(guid, itr->second.device);
-
+	// SetAcquireInterval(guid, itr->second.device);
 }
 
 void mtgb::Input::UnregisterJoystickGuid(GUID _guid)
@@ -473,7 +480,13 @@ bool mtgb::Input::RegisterJoystickGuid(GUID _guid)
 
 void mtgb::Input::SetAcquireInterval(GUID _guid, ComPtr<IDirectInputDevice8> _device)
 {
-	TimerHandle hTimer = Timer::AddInterval(acquireInterval, [&]() {AcquireJoystick(_device); });
+	TimerHandle hTimer = Timer::AddInterval(
+		acquireInterval,
+		[&]()
+		{
+			AcquireJoystick(_device);
+		}
+	);
 	joystickContext_[_guid].timerHandle = hTimer;
 }
 
@@ -485,13 +498,13 @@ bool mtgb::Input::IsNotSubscribed()
 ControllerType mtgb::Input::GetControllerTypeByVendor(ComPtr<IDirectInputDevice8> _pInputDevice)
 {
 	DIDEVICEINSTANCE deviceInstance = {};
-	deviceInstance.dwSize = sizeof(DIDEVICEINSTANCE);
-	HRESULT hResult = _pInputDevice->GetDeviceInfo(&deviceInstance);
+	deviceInstance.dwSize			= sizeof(DIDEVICEINSTANCE);
+	HRESULT hResult					= _pInputDevice->GetDeviceInfo(&deviceInstance);
 	if (FAILED(hResult))
 		return ControllerType::Unknown;
 
-	// ƒxƒ“ƒ_[ID
-	DWORD vendorId = HIWORD(deviceInstance.guidProduct.Data1);
+	// ãƒ™ãƒ³ãƒ€ãƒ¼ID
+	DWORD vendorId	= HIWORD(deviceInstance.guidProduct.Data1);
 	DWORD productId = LOWORD(deviceInstance.guidProduct.Data1);
 
 	if (vendorId == VENDOR_ID_DUAL_SHOCK)
@@ -510,10 +523,9 @@ ControllerType mtgb::Input::GetControllerTypeByVendor(ComPtr<IDirectInputDevice8
 std::string mtgb::Input::GetDeviceName(ComPtr<IDirectInputDevice8> _pInputDevice)
 {
 	DIDEVICEINSTANCE deviceInstance = {};
-	deviceInstance.dwSize = sizeof(DIDEVICEINSTANCE);
-	HRESULT hResult = _pInputDevice->GetDeviceInfo(&deviceInstance);
-	massert(SUCCEEDED(hResult)
-		&& "ƒfƒoƒCƒX‚Ìî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½@@Input::GetDeviceName");
+	deviceInstance.dwSize			= sizeof(DIDEVICEINSTANCE);
+	HRESULT hResult					= _pInputDevice->GetDeviceInfo(&deviceInstance);
+	massert(SUCCEEDED(hResult) && "ãƒ‡ãƒã‚¤ã‚¹ã®æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€€@Input::GetDeviceName");
 
 	return std::string(deviceInstance.tszInstanceName);
 }
@@ -530,10 +542,9 @@ std::string mtgb::Input::GetDeviceName(GUID _guid)
 std::string mtgb::Input::GetDeviceProductName(ComPtr<IDirectInputDevice8> _pInputDevice)
 {
 	DIDEVICEINSTANCE deviceInstance = {};
-	deviceInstance.dwSize = sizeof(DIDEVICEINSTANCE);
-	HRESULT hResult = _pInputDevice->GetDeviceInfo(&deviceInstance);
-	massert(SUCCEEDED(hResult)
-		&& "ƒfƒoƒCƒX‚Ìî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½@@Input::GetDeviceName");
+	deviceInstance.dwSize			= sizeof(DIDEVICEINSTANCE);
+	HRESULT hResult					= _pInputDevice->GetDeviceInfo(&deviceInstance);
+	massert(SUCCEEDED(hResult) && "ãƒ‡ãƒã‚¤ã‚¹ã®æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€€@Input::GetDeviceName");
 
 	return std::string(deviceInstance.tszProductName);
 }
@@ -551,47 +562,51 @@ std::string mtgb::Input::ConvertHResultToMessage(HRESULT hr) const
 {
 	switch (hr)
 	{
-	case DI_OK: return "æ“¾";
-	case S_FALSE:return "‘¼ƒAƒvƒŠ‚Æ‹¤—L";
-	case DIERR_INPUTLOST:return "Ø’f";
-	case DIERR_NOTACQUIRED:return "ƒfƒoƒCƒX–¢æ“¾";
-	case DIERR_OTHERAPPHASPRIO: return "‘¼‚ª—DæŒ ‚ğŠ";
-	default:return"•s–¾‚ÈƒGƒ‰[";
+	case DI_OK :
+		return "å–å¾—";
+	case S_FALSE :
+		return "ä»–ã‚¢ãƒ—ãƒªã¨å…±æœ‰";
+	case DIERR_INPUTLOST :
+		return "åˆ‡æ–­";
+	case DIERR_NOTACQUIRED :
+		return "ãƒ‡ãƒã‚¤ã‚¹æœªå–å¾—";
+	case DIERR_OTHERAPPHASPRIO :
+		return "ä»–ãŒå„ªå…ˆæ¨©ã‚’æ‰€æŒ";
+	default :
+		return "ä¸æ˜ãªã‚¨ãƒ©ãƒ¼";
 	}
 }
 
 DeviceType mtgb::Input::GetDeviceType(ComPtr<IDirectInputDevice8> _pInputDevice)
 {
 	DIDEVICEINSTANCE deviceInstance = {};
-	deviceInstance.dwSize = sizeof(DIDEVICEINSTANCE);
-	HRESULT hResult = _pInputDevice->GetDeviceInfo(&deviceInstance);
+	deviceInstance.dwSize			= sizeof(DIDEVICEINSTANCE);
+	HRESULT hResult					= _pInputDevice->GetDeviceInfo(&deviceInstance);
 
-	massert(SUCCEEDED(hResult)
-		&& "ƒfƒoƒCƒX‚Ìî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½@@Input::GetDeviceName");
+	massert(SUCCEEDED(hResult) && "ãƒ‡ãƒã‚¤ã‚¹ã®æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€€@Input::GetDeviceName");
 
 	return Input::GetDeviceType(deviceInstance);
-
 }
 
 DeviceType mtgb::Input::GetDeviceType(const DIDEVICEINSTANCE& _inst)
 {
 	DeviceType deviceType = DeviceType::Unknown;
 
-	//REF:https://learn.microsoft.com/ja-jp/previous-versions/windows/desktop/ee416610(v=vs.85)?devlangs=cpp&f1url=%3FappId%3DDev17IDEF1%26l%3DJA-JP%26k%3Dk(DINPUT%2FDIDEVICEINSTANCE)%3Bk(DIDEVICEINSTANCE)%3Bk(DevLang-C%2B%2B)%3Bk(TargetOS-Windows)%26rd%3Dtrue
-	// ‰ºˆÊƒrƒbƒg‚ÅƒfƒoƒCƒX‚Ì‘å‚Ü‚©‚Èƒ^ƒCƒv‚ğ”»•Ê
-	// ãˆÊƒrƒbƒg‚ÅƒfƒoƒCƒX‚ÌƒTƒuƒ^ƒCƒv‚à”»•Ê‚Å‚«‚é‚æ
+	// REF:https://learn.microsoft.com/ja-jp/previous-versions/windows/desktop/ee416610(v=vs.85)?devlangs=cpp&f1url=%3FappId%3DDev17IDEF1%26l%3DJA-JP%26k%3Dk(DINPUT%2FDIDEVICEINSTANCE)%3Bk(DIDEVICEINSTANCE)%3Bk(DevLang-C%2B%2B)%3Bk(TargetOS-Windows)%26rd%3Dtrue
+	//  ä¸‹ä½ãƒ“ãƒƒãƒˆã§ãƒ‡ãƒã‚¤ã‚¹ã®å¤§ã¾ã‹ãªã‚¿ã‚¤ãƒ—ã‚’åˆ¤åˆ¥
+	//  ä¸Šä½ãƒ“ãƒƒãƒˆã§ãƒ‡ãƒã‚¤ã‚¹ã®ã‚µãƒ–ã‚¿ã‚¤ãƒ—ã‚‚åˆ¤åˆ¥ã§ãã‚‹ã‚ˆ
 	DWORD major = _inst.dwDevType & 0xFF;
 	switch (major)
 	{
-	case DI8DEVTYPE_FLIGHT:
+	case DI8DEVTYPE_FLIGHT :
 		deviceType = DeviceType::FlightStick;
 		break;
-	case DI8DEVTYPE_GAMEPAD:
-	case DI8DEVTYPE_JOYSTICK:
-	case DI8DEVTYPE_1STPERSON:
+	case DI8DEVTYPE_GAMEPAD :
+	case DI8DEVTYPE_JOYSTICK :
+	case DI8DEVTYPE_1STPERSON :
 		deviceType = DeviceType::GamePad;
 		break;
-	default:
+	default :
 		deviceType = DeviceType::Unknown;
 		break;
 	}
@@ -603,7 +618,6 @@ HRESULT mtgb::Input::UpdateJoystickState(GUID guid)
 {
 	return E_NOTIMPL;
 }
-
 
 int mtgb::Input::FindReservationIndexForDevice(DeviceType _devType) const
 {
@@ -620,7 +634,7 @@ int mtgb::Input::FindReservationIndexForDevice(DeviceType _devType) const
 			firstUnknown = static_cast<int>(i);
 		}
 	}
-		return firstUnknown;
+	return firstUnknown;
 }
 
 const std::string mtgb::Input::GetJoystickStatusMessage(GUID guid) const
@@ -628,7 +642,7 @@ const std::string mtgb::Input::GetJoystickStatusMessage(GUID guid) const
 	const auto& itr = joystickContext_.find(guid);
 	if (itr == joystickContext_.end())
 	{
-		return "–¢Š„“–";
+		return "æœªå‰²å½“";
 	}
 	return ConvertHResultToMessage(itr->second.lastResult);
 }
@@ -642,10 +656,10 @@ bool mtgb::Input::IsJoystickConnected(GUID guid) const
 	}
 	switch (itr->second.lastResult)
 	{
-	case DI_OK:
-	case S_FALSE:
+	case DI_OK :
+	case S_FALSE :
 		return true;
-	default:
+	default :
 		return false;
 	}
 }
@@ -660,12 +674,19 @@ void mtgb::Input::StartEnumTimer()
 	if (!enumTimerHandle_ || IsNotSubscribed())
 		return;
 
-	enumTimerHandle_ = Timer::AddInterval(enumInterval_, [this]() {AutoEnum(); });
+	enumTimerHandle_ = Timer::AddInterval(
+		enumInterval_,
+		[this]()
+		{
+			AutoEnum();
+		}
+	);
 }
 
 void mtgb::Input::StopEnumTimer()
 {
-	if (!enumTimerHandle_) return;
+	if (!enumTimerHandle_)
+		return;
 	Timer::Remove(enumTimerHandle_);
 	enumTimerHandle_ = nullptr;
 }
@@ -684,104 +705,97 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 {
 	HRESULT hResult{};
 
-#pragma region ²ƒ‚[ƒhİ’è
+#pragma region è»¸ãƒ¢ãƒ¼ãƒ‰è¨­å®š
 
 	DIPROPDWORD diprop;
-	diprop.diph.dwSize = sizeof(diprop);
+	diprop.diph.dwSize		 = sizeof(diprop);
 	diprop.diph.dwHeaderSize = sizeof(diprop.diph);
-	diprop.diph.dwHow = DIPH_DEVICE;
+	diprop.diph.dwHow		 = DIPH_DEVICE;
 
-	//https://learn.microsoft.com/ja-jp/previous-versions/windows/desktop/ee416636(v=vs.85)
-	//dwHow‚ªDIPH_DEVICE‚Ìê‡‚Í0‚É‚µ‚È‚¢‚Æ‚¢‚¯‚È‚¢
+	// https://learn.microsoft.com/ja-jp/previous-versions/windows/desktop/ee416636(v=vs.85)
+	// dwHowãŒDIPH_DEVICEã®å ´åˆã¯0ã«ã—ãªã„ã¨ã„ã‘ãªã„
 	diprop.diph.dwObj = 0;
 
-	//REL:‘O‰ñ‚ÌƒfƒoƒCƒX‚Æ‚Ì‘Š‘Î’l‚ğg—p‚·‚é
-	//ABS:ƒfƒoƒCƒXã‚Ìâ‘Î’l‚ğg—p‚·‚é
+	// REL:å‰å›ã®ãƒ‡ãƒã‚¤ã‚¹ã¨ã®ç›¸å¯¾å€¤ã‚’ä½¿ç”¨ã™ã‚‹
+	// ABS:ãƒ‡ãƒã‚¤ã‚¹ä¸Šã®çµ¶å¯¾å€¤ã‚’ä½¿ç”¨ã™ã‚‹
 	diprop.dwData = DIPROPAXISMODE_ABS;
 
 	hResult = _pJoystickDevice->SetProperty(DIPROP_AXISMODE, &diprop.diph);
-	massert(SUCCEEDED(hResult)
-		&& "²ƒ‚[ƒh‚Ìİ’è‚É¸”s");
+	massert(SUCCEEDED(hResult) && "è»¸ãƒ¢ãƒ¼ãƒ‰ã®è¨­å®šã«å¤±æ•—");
 
 #pragma endregion
 
-#pragma region ’l‚Ì”ÍˆÍİ’è
+#pragma region å€¤ã®ç¯„å›²è¨­å®š
 
 	DIPROPRANGE diprg;
 	diprg;
-	diprg.diph.dwSize = sizeof(diprg);
+	diprg.diph.dwSize		= sizeof(diprg);
 	diprg.diph.dwHeaderSize = sizeof(diprg.diph);
-	diprg.diph.dwHow = DIPH_BYOFFSET;
+	diprg.diph.dwHow		= DIPH_BYOFFSET;
 
-	// ¶ƒXƒeƒBƒbƒNAX²
+	// å·¦ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã€Xè»¸
 	diprg.diph.dwObj = DIJOFS_X;
-	diprg.lMin = -_inputConfig.xRange;
-	diprg.lMax = _inputConfig.xRange;
+	diprg.lMin		 = -_inputConfig.xRange;
+	diprg.lMax		 = _inputConfig.xRange;
 
 	hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-	massert(SUCCEEDED(hResult)
-		&& "’l‚Ì”ÍˆÍİ’è‚É¸”s @");
+	massert(SUCCEEDED(hResult) && "å€¤ã®ç¯„å›²è¨­å®šã«å¤±æ•— @");
 
-	// ¶ƒXƒeƒBƒbƒNAY²
+	// å·¦ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã€Yè»¸
 	diprg.diph.dwObj = DIJOFS_Y;
-	diprg.lMin = -_inputConfig.yRange;
-	diprg.lMax = _inputConfig.yRange;
+	diprg.lMin		 = -_inputConfig.yRange;
+	diprg.lMax		 = _inputConfig.yRange;
 
 	hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-	massert(SUCCEEDED(hResult)
-		&& "’l‚Ì”ÍˆÍİ’è‚É¸”s @");
+	massert(SUCCEEDED(hResult) && "å€¤ã®ç¯„å›²è¨­å®šã«å¤±æ•— @");
 
 	ControllerType controllerType = GetControllerTypeByVendor(_pJoystickDevice);
 	switch (controllerType)
 	{
-	case ControllerType::DualShock:
-		// ‰EƒXƒeƒBƒbƒNAX²
+	case ControllerType::DualShock :
+		// å³ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã€Xè»¸
 		diprg.diph.dwObj = DIJOFS_Z;
-		diprg.lMin = -_inputConfig.xRange;
-		diprg.lMax = _inputConfig.xRange;
+		diprg.lMin		 = -_inputConfig.xRange;
+		diprg.lMax		 = _inputConfig.xRange;
 
 		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		massert(SUCCEEDED(hResult)
-			&& "’l‚Ì”ÍˆÍİ’è‚É¸”s @");
+		massert(SUCCEEDED(hResult) && "å€¤ã®ç¯„å›²è¨­å®šã«å¤±æ•— @");
 
-		// ‰EƒXƒeƒBƒbƒNAY²
+		// å³ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã€Yè»¸
 		diprg.diph.dwObj = DIJOFS_RZ;
-		diprg.lMin = -_inputConfig.yRange;
-		diprg.lMax = _inputConfig.yRange;
+		diprg.lMin		 = -_inputConfig.yRange;
+		diprg.lMax		 = _inputConfig.yRange;
 
 		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		massert(SUCCEEDED(hResult)
-			&& "’l‚Ì”ÍˆÍİ’è‚É¸”s");
+		massert(SUCCEEDED(hResult) && "å€¤ã®ç¯„å›²è¨­å®šã«å¤±æ•—");
 		break;
-	case ControllerType::Xbox:
-		// ‰EƒXƒeƒBƒbƒNAX²
+	case ControllerType::Xbox :
+		// å³ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã€Xè»¸
 		diprg.diph.dwObj = DIJOFS_RX;
-		diprg.lMin = -_inputConfig.xRange;
-		diprg.lMax = _inputConfig.xRange;
+		diprg.lMin		 = -_inputConfig.xRange;
+		diprg.lMax		 = _inputConfig.xRange;
 
 		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		massert(SUCCEEDED(hResult)
-			&& "’l‚Ì”ÍˆÍİ’è‚É¸”s");
+		massert(SUCCEEDED(hResult) && "å€¤ã®ç¯„å›²è¨­å®šã«å¤±æ•—");
 
-		// ¶ƒXƒeƒBƒbƒNAy²
+		// å·¦ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã€yè»¸
 		diprg.diph.dwObj = DIJOFS_RY;
-		diprg.lMin = -_inputConfig.yRange;
-		diprg.lMax = _inputConfig.yRange;
+		diprg.lMin		 = -_inputConfig.yRange;
+		diprg.lMax		 = _inputConfig.yRange;
 
 		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		massert(SUCCEEDED(hResult)
-			&& "’l‚Ì”ÍˆÍİ’è‚É¸”s");
+		massert(SUCCEEDED(hResult) && "å€¤ã®ç¯„å›²è¨­å®šã«å¤±æ•—");
 		break;
 
-	default:
-		// •s–¾‚Èê‡‚Í—¼•ûİ’è‚µ‚Ä‚µ‚Ü‚¤
-		// DualShockİ’è
+	default :
+		// ä¸æ˜ãªå ´åˆã¯ä¸¡æ–¹è¨­å®šã—ã¦ã—ã¾ã†
+		// DualShockè¨­å®š
 		diprg.diph.dwObj = DIJOFS_Z;
 		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
 		diprg.diph.dwObj = DIJOFS_RZ;
 		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
 
-		// Xboxİ’è
+		// Xboxè¨­å®š
 		diprg.diph.dwObj = DIJOFS_RX;
 		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
 		diprg.diph.dwObj = DIJOFS_RY;
@@ -793,8 +807,9 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 }
 
 mtgb::JoystickContext::JoystickContext()
-	:timerHandle{nullptr}
-{}
+	: timerHandle{nullptr}
+{
+}
 
 mtgb::JoystickContext::~JoystickContext()
 {
@@ -806,9 +821,9 @@ mtgb::JoystickContext::~JoystickContext()
 }
 
 mtgb::JoystickContext::JoystickContext(ComPtr<IDirectInputDevice8> _device)
-	:JoystickContext()
+	: JoystickContext()
 {
-	device = _device;
+	device	   = _device;
 	deviceType = Input::GetDeviceType(device);
 }
 

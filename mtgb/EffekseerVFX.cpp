@@ -8,7 +8,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ƒQ[ƒ€‚Åg—p‚·‚éƒGƒtƒFƒNƒg‚ğ“o˜^
+	/// ã‚²ãƒ¼ãƒ ã§ä½¿ç”¨ã™ã‚‹ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’ç™»éŒ²
 	/// </summary>
 	void RegisterEffects()
 	{
@@ -19,7 +19,7 @@ namespace mtgb
 	}
 	using namespace Effekseer;
 	using namespace EffekseerRendererDX11;
-	constexpr int MAX_SQUARE{ 8192 };
+	constexpr int MAX_SQUARE{8192};
 	Effekseer::Matrix43 CnvMat43(DirectX::XMFLOAT4X4 _mat)
 	{
 		Effekseer::Matrix43 mat43{};
@@ -62,7 +62,7 @@ namespace mtgb
 		{
 			for (int j = 0; j < 4; j++)
 			{
-				out.Values[i][j] = _mat.r[i].m128_f32[j];
+				out.Values[i][j] = DirectX::XMVectorGetByIndex(_mat.r[i], j);
 			}
 		}
 		return out;
@@ -74,7 +74,7 @@ namespace mtgb
 		{
 			for (int j = 0; j < 3; j++)
 			{
-				out.Value[i][j] = _mat.r[i].m128_f32[j];
+				out.Value[i][j] = DirectX::XMVectorGetByIndex(_mat.r[i], j);
 			}
 		}
 		return out;
@@ -114,17 +114,17 @@ namespace mtgb
 	{
 		fps_ = Game::System<Screen>().GetFPS();
 
-		// •`‰æ‚Ég—p‚·‚éƒŒƒ“ƒ_ƒ‰[
+		// æç”»ã«ä½¿ç”¨ã™ã‚‹ãƒ¬ãƒ³ãƒ€ãƒ©ãƒ¼
 		rendererRef_ = Renderer::Create(DirectX11Draw::pDevice_.Get(), DirectX11Draw::pContext_.Get(), MAX_SQUARE);
 
-		// ƒGƒtƒFƒNƒg‚ğŠÇ—‚·‚éƒ}ƒl[ƒWƒƒ[
+		// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’ç®¡ç†ã™ã‚‹ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼
 		managerRef_ = Effekseer::Manager::Create(MAX_SQUARE);
 		managerRef_->SetCoordinateSystem(Effekseer::CoordinateSystem::LH);
 
-		// ƒCƒ“ƒXƒ^ƒ“ƒXƒv[ƒ‹‚ğŠm•Û
+		// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ—ãƒ¼ãƒ«ã‚’ç¢ºä¿
 		effectInstances_.reserve(kEffectPoolCapacity);
 
-		// ƒ}ƒl[ƒWƒƒ[‚ÉŠeíƒŒƒ“ƒ_ƒ‰[Aƒ[ƒ_[‚ğƒZƒbƒg
+		// ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã«å„ç¨®ãƒ¬ãƒ³ãƒ€ãƒ©ãƒ¼ã€ãƒ­ãƒ¼ãƒ€ãƒ¼ã‚’ã‚»ãƒƒãƒˆ
 		managerRef_->SetSpriteRenderer(rendererRef_->CreateSpriteRenderer());
 		managerRef_->SetRibbonRenderer(rendererRef_->CreateRibbonRenderer());
 		managerRef_->SetRingRenderer(rendererRef_->CreateRingRenderer());
@@ -136,7 +136,7 @@ namespace mtgb
 		managerRef_->SetMaterialLoader(rendererRef_->CreateMaterialLoader());
 		managerRef_->SetCurveLoader(Effekseer::MakeRefPtr<Effekseer::CurveLoader>());
 
-		// ƒQ[ƒ€‚Åg—p‚·‚éƒGƒtƒFƒNƒg‚ğ“o˜^
+		// ã‚²ãƒ¼ãƒ ã§ä½¿ç”¨ã™ã‚‹ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’ç™»éŒ²
 		RegisterEffects();
 	}
 
@@ -145,15 +145,15 @@ namespace mtgb
 		double _deltaTime = Time::DeltaTime();
 		for (auto& instancePtr : effectInstances_)
 		{
-			// –¢g—p‚Ìƒf[ƒ^‚ÍXV‚µ‚È‚¢
+			// æœªä½¿ç”¨ã®ãƒ‡ãƒ¼ã‚¿ã¯æ›´æ–°ã—ãªã„
 			if (!instancePtr)
 			{
 				continue;
 			}
 
-			auto& instance = *instancePtr;
+			auto& instance	   = *instancePtr;
 			auto& effectParams = instance.pEffectParameters_;
-			Handle& handle = instance.handle_;
+			Handle& handle	   = instance.handle_;
 
 			if (!effectParams)
 			{
@@ -161,58 +161,58 @@ namespace mtgb
 				continue;
 			}
 
-			// ”jŠüƒtƒ‰ƒO‚ª—§‚Á‚Ä‚¢‚é‚©
+			// ç ´æ£„ãƒ•ãƒ©ã‚°ãŒç«‹ã£ã¦ã„ã‚‹ã‹
 			if (effectParams->destroyMe)
 			{
-				// ƒGƒtƒFƒNƒg‚ÌÄ¶‚ğ’â~
+				// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®å†ç”Ÿã‚’åœæ­¢
 				if (handle >= 0)
 				{
 					managerRef_->StopEffect(handle);
 				}
-				// ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ‰ğ•ú
+				// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è§£æ”¾
 				instancePtr.reset();
 				continue;
 			}
 
-			// Ä¶ŠÔ‚ª0‚Ìê‡AÄ¶‚ğn‚ß‚é
+			// å†ç”Ÿæ™‚é–“ãŒ0ã®å ´åˆã€å†ç”Ÿã‚’å§‹ã‚ã‚‹
 			if (instance.elapsedTime_ == 0)
 			{
 				handle = managerRef_->Play(instance.GetEffectData()->GetEffectRef(), 0, 0, 0);
 			}
 
-			// ƒGƒtƒFƒNƒg‚ÌÅ‘åƒtƒŒ[ƒ€‚ğæ“¾
+			// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®æœ€å¤§ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å–å¾—
 			int32_t maxFrame = GetMaxFrame(instance.GetEffectData()->GetEffectRef());
-			// Ä¶I—¹
+			// å†ç”Ÿçµ‚äº†
 			double duration = maxFrame / fps_;
 			if (instance.elapsedTime_ > duration)
 			{
 				if (handle >= 0)
 				{
-					// ƒGƒtƒFƒNƒg‚ÌÄ¶‚ğ’â~
+					// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®å†ç”Ÿã‚’åœæ­¢
 					managerRef_->StopEffect(handle);
 				}
 
-				// ƒ‹[ƒvÄ¶‚·‚é‚©‚Ç‚¤‚©
+				// ãƒ«ãƒ¼ãƒ—å†ç”Ÿã™ã‚‹ã‹ã©ã†ã‹
 				if (effectParams->isLoop)
 				{
-					// Ä¶ŠÔ‚ğ0‚É‚µ‚ÄAÄ‚ÑÄ¶‚Å‚«‚é‚æ‚¤‚Éİ’è
+					// å†ç”Ÿæ™‚é–“ã‚’0ã«ã—ã¦ã€å†ã³å†ç”Ÿã§ãã‚‹ã‚ˆã†ã«è¨­å®š
 					instance.elapsedTime_ = 0;
 				}
 				else
 				{
-					// ƒ‹[ƒvÄ¶‚µ‚È‚¢ê‡A–¢g—pó‘Ô‚É–ß‚·
+					// ãƒ«ãƒ¼ãƒ—å†ç”Ÿã—ãªã„å ´åˆã€æœªä½¿ç”¨çŠ¶æ…‹ã«æˆ»ã™
 					instancePtr.reset();
 				}
 			}
-			// ƒGƒtƒFƒNƒg‚ÌXV‚ğs‚¤
+			// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®æ›´æ–°ã‚’è¡Œã†
 			else
 			{
-				// ƒtƒŒ[ƒ€”‚ğİ’è
+				// ãƒ•ãƒ¬ãƒ¼ãƒ æ•°ã‚’è¨­å®š
 				rendererRef_->SetTime(static_cast<float>(instance.elapsedTime_));
-				// ƒGƒtƒFƒNƒg‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚É‘Î‚µ‚Äˆ—‚ğ‚µAXV‘¬“x‚ğİ’è
+				// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã«å¯¾ã—ã¦å‡¦ç†ã‚’ã—ã€æ›´æ–°é€Ÿåº¦ã‚’è¨­å®š
 				managerRef_->SetMatrix(handle, CnvMat43(effectParams->worldMat));
 				managerRef_->SetSpeed(handle, effectParams->speed);
-				// Ä¶ŠÔ‚ğ‘‚â‚·
+				// å†ç”Ÿæ™‚é–“ã‚’å¢—ã‚„ã™
 				instance.elapsedTime_ += _deltaTime;
 			}
 		}
@@ -225,8 +225,8 @@ namespace mtgb
 		SetCamera();
 		rendererRef_->BeginRendering();
 		Effekseer::Manager::DrawParameter drawParameter;
-		drawParameter.ZNear = Game::System<CameraSystem>().GetNear();
-		drawParameter.ZFar = Game::System<CameraSystem>().GetFar();
+		drawParameter.ZNear				   = Game::System<CameraSystem>().GetNear();
+		drawParameter.ZFar				   = Game::System<CameraSystem>().GetFar();
 		drawParameter.ViewProjectionMatrix = rendererRef_->GetCameraProjectionMatrix();
 		managerRef_->Draw(drawParameter);
 		rendererRef_->EndRendering();
@@ -243,42 +243,46 @@ namespace mtgb
 		effectList_.emplace(_effectName, std::make_shared<EffectData>(managerRef_, _filePath));
 	}
 
-	std::weak_ptr<EffectParameters> EffectManager::Play(std::string_view _effectName, const EffectParameters& _effectParameters)
+	std::weak_ptr<EffectParameters> EffectManager::Play(
+		std::string_view _effectName,
+		const EffectParameters& _effectParameters
+	)
 	{
 		if (auto iter = effectList_.find(_effectName.data()); iter != effectList_.end())
 		{
-			// ‹ó‚«ƒXƒƒbƒg‚ğÄ—˜—p
+			// ç©ºãã‚¹ãƒ­ãƒƒãƒˆã‚’å†åˆ©ç”¨
 			for (auto& slot : effectInstances_)
 			{
 				if (!slot)
 				{
-					slot = std::make_unique<EffectInstance>(iter->second);
+					slot					 = std::make_unique<EffectInstance>(iter->second);
 					slot->pEffectParameters_ = std::make_shared<EffectParameters>(_effectParameters);
 					return std::weak_ptr<EffectParameters>(slot->pEffectParameters_);
 				}
 			}
 
-			// ‚Ü‚¾—e—Ê‚É—]—T‚ª‚ ‚éê‡‚Ì‚İV‹K‚É’Ç‰Á
+			// ã¾ã å®¹é‡ã«ä½™è£•ãŒã‚ã‚‹å ´åˆã®ã¿æ–°è¦ã«è¿½åŠ 
 			if (effectInstances_.size() < kEffectPoolCapacity)
 			{
 				std::unique_ptr<EffectInstance> effectInstance = std::make_unique<EffectInstance>(iter->second);
-				effectInstance->pEffectParameters_ = std::make_shared<EffectParameters>(_effectParameters);
-				std::weak_ptr<EffectParameters> weakRef = std::weak_ptr<EffectParameters>(effectInstance->pEffectParameters_);
+				effectInstance->pEffectParameters_			   = std::make_shared<EffectParameters>(_effectParameters);
+				std::weak_ptr<EffectParameters> weakRef =
+					std::weak_ptr<EffectParameters>(effectInstance->pEffectParameters_);
 				effectInstances_.emplace_back(std::move(effectInstance));
 				return weakRef;
 			}
 
-			LOGIMGUI("Effect pool is full. Cannot play %s", std::string{ _effectName }.c_str());
+			LOGIMGUI("Effect pool is full. Cannot play %s", std::string{_effectName}.c_str());
 		}
-		// –¼‘O‚É‘Î‰‚·‚éƒGƒtƒFƒNƒg‚ª‘¶İ‚µ‚È‚¢
+		// åå‰ã«å¯¾å¿œã™ã‚‹ã‚¨ãƒ•ã‚§ã‚¯ãƒˆãŒå­˜åœ¨ã—ãªã„
 		else
 		{
-			// ƒƒO‚Éo—Í
-			std::string effectNameStr{ _effectName };
+			// ãƒ­ã‚°ã«å‡ºåŠ›
+			std::string effectNameStr{_effectName};
 			LOGIMGUI("EffectName %s is not found !", effectNameStr.c_str());
 		}
 
-		// ƒGƒtƒFƒNƒg‚Ìæ“¾Aì¬‚É¸”s
+		// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®å–å¾—ã€ä½œæˆã«å¤±æ•—
 		return std::weak_ptr<EffectParameters>();
 	}
 
@@ -292,7 +296,6 @@ namespace mtgb
 	{
 		Load(_manager);
 	}
-
 
 	void EffectData::Load(const Effekseer::ManagerRef& _manager)
 	{
@@ -318,9 +321,9 @@ namespace mtgb
 	}
 
 	EffectInstance::EffectInstance(const std::shared_ptr<EffectData>& _effectData)
-		: pEffectData_{ _effectData }
-		, elapsedTime_{ 0 }
-		, handle_{ -1 }
+		: pEffectData_{_effectData}
+		, elapsedTime_{0}
+		, handle_{-1}
 	{
 	}
 
@@ -329,4 +332,4 @@ namespace mtgb
 		return pEffectData_;
 	}
 
-}
+} // namespace mtgb

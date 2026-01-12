@@ -14,14 +14,12 @@ namespace mtgb
 
 	class ComponentFactory
 	{
-	public:
-
-		// ƒRƒ“ƒ|[ƒlƒ“ƒgì¬ŠÖ”‚ÌŒ^
-		using CreateFunction = std::function<IComponentMemento* (EntityId _id)>;
+	  public:
+		// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆé–¢æ•°ã®å‹
+		using CreateFunction			= std::function<IComponentMemento*(EntityId _id)>;
 		using CreateFromMementoFunction = std::function<void(const IComponentMemento& _memento)>;
 
-		template<typename T>
-		void RegisterComponent();
+		template <typename T> void RegisterComponent();
 
 		IComponentMemento* AddComponent(const std::type_index& _info, EntityId _id) const;
 		bool AddComponentFromMemento(const IComponentMemento& _memento) const;
@@ -35,59 +33,61 @@ namespace mtgb
 			return types_;
 		}
 
-	private:
+	  private:
 		std::unordered_map<std::type_index, CreateFunction> creators_;
 		std::unordered_map<std::type_index, CreateFromMementoFunction> creatorsFromMemento_;
 		std::vector<std::type_index> types_;
 	};
 
-	template<typename T>
-	void ComponentFactory::RegisterComponent()
+	template <typename T> void ComponentFactory::RegisterComponent()
 	{
 		using Memento = T::Memento;
 
 		std::type_index typeIdx(typeid(T));
 		creators_[typeIdx] = [](EntityId _id)
-			{
-				T& component = T::template Get(_id);
-				return component.SaveToMemento();
-			};
+		{
+			T& component = T::Get(_id);
+			return component.SaveToMemento();
+		};
 		creatorsFromMemento_[typeIdx] = [](const IComponentMemento& _memento)
+		{
+			// memento ã‚’Må‹ã¸ãƒ€ã‚¦ãƒ³ã‚­ãƒ£ã‚¹ãƒˆ
+			const Memento* pMemento = dynamic_cast<const Memento*>(&_memento);
+			if (pMemento == nullptr)
 			{
-				// memento ‚ğMŒ^‚Öƒ_ƒEƒ“ƒLƒƒƒXƒg
-				const Memento* pMemento = dynamic_cast<const Memento*>(&_memento);
-				if (pMemento == nullptr)
-				{
-					// •K—v‚È‚çƒGƒ‰[ˆ—
-					return;
-				}
+				// å¿…è¦ãªã‚‰ã‚¨ãƒ©ãƒ¼å‡¦ç†
+				return;
+			}
 
-				// Entity‚ÉŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚éƒCƒ“ƒfƒbƒNƒX‚Ìæ“¾‚ğ‚İ‚é
-				auto componentIndex = Game::template System<ComponentRegistry>().GetComponentIndex(_memento.GetEntityId(), _memento.GetComponentType());
+			// Entityã«å‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®å–å¾—ã‚’è©¦ã¿ã‚‹
+			auto componentIndex = Game::template System<ComponentRegistry>().GetComponentIndex(
+				_memento.GetEntityId(),
+				_memento.GetComponentType()
+			);
 
-				// ƒGƒ“ƒeƒBƒeƒB‚ÌId‚©‚çƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾
-				T* pComponent = nullptr;
+			// ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã®Idã‹ã‚‰ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—
+			T* pComponent = nullptr;
 
-				// ƒCƒ“ƒfƒbƒNƒX‚ª—LŒø‚©ƒ`ƒFƒbƒN
-				if (componentIndex.has_value())
-				{
-					// ƒCƒ“ƒfƒbƒNƒX‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌÄ—˜—p‚ğ‚İ‚é
-					// ƒRƒ“ƒ|[ƒlƒ“ƒg‚ª©‘¼ŠÜ‚ŞEntity‚É—˜—p‚³‚ê‚Ä‚¢‚È‚¢‚È‚çæ“¾‚Å‚«‚é
-					pComponent = T::template Reuse(componentIndex.value(), pMemento->GetEntityId());
-				}
-				// ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌÄ—˜—p‚É¸”s
-				if (pComponent == nullptr)
-				{
-					// ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìæ“¾A‚à‚µ‚­‚Íì¬‚ğ‚İ‚é
-					pComponent = &(T::template Get(pMemento->GetEntityId()));
-				}
+			// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒæœ‰åŠ¹ã‹ãƒã‚§ãƒƒã‚¯
+			if (componentIndex.has_value())
+			{
+				// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å†åˆ©ç”¨ã‚’è©¦ã¿ã‚‹
+				// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒè‡ªä»–å«ã‚€Entityã«åˆ©ç”¨ã•ã‚Œã¦ã„ãªã„ãªã‚‰å–å¾—ã§ãã‚‹
+				pComponent = T::Reuse(componentIndex.value(), pMemento->GetEntityId());
+			}
+			// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å†åˆ©ç”¨ã«å¤±æ•—
+			if (pComponent == nullptr)
+			{
+				// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å–å¾—ã€ã‚‚ã—ãã¯ä½œæˆã‚’è©¦ã¿ã‚‹
+				pComponent = &(T::Get(pMemento->GetEntityId()));
+			}
 
-				// ƒƒƒ“ƒg‚©‚çƒf[ƒ^‚ğ•œŒ³
-				if (pComponent != nullptr)
-				{
-					pComponent->RestoreFromMemento(*pMemento);
-				}
-			};
+			// ãƒ¡ãƒ¡ãƒ³ãƒˆã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’å¾©å…ƒ
+			if (pComponent != nullptr)
+			{
+				pComponent->RestoreFromMemento(*pMemento);
+			}
+		};
 		types_.push_back(typeid(T));
 	}
-};
+}; // namespace mtgb

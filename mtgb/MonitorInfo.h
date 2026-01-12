@@ -6,11 +6,11 @@ namespace mtgb
 	struct MonitorInfo
 	{
 		MonitorInfo();
-		int adapterIndex; // ���蓖�Ă��Ă���A�_�v�^�[(GPU)�̃C���f�b�N�X
-		int outputIndex; // ���蓖�Ă��Ă��郂�j�^�[�̃C���f�b�N�X
-		bool isRequested; // �g�p�ς݂��ǂ����̃t���O
+		int adapterIndex; // 割り当てられているアダプター(GPU)のインデックス
+		int outputIndex;  // 割り当てられているモニターのインデックス
+		bool isRequested; // 使用済みかどうかのフラグ
 		DXGI_OUTPUT_DESC desc;
 
 		static constexpr int INVALID_INDEX = -1;
 	};
-}
+} // namespace mtgb

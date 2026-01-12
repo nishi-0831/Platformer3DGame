@@ -5,20 +5,23 @@
 
 GameOverManager::GameOverManager()
 	: GameObject{}
-	, pFadeOutScreen_{ nullptr }
-	, fadeOutDuration_{ 3.0f }
-	, startFadeOutDelay_{ 1.5f }
+	, pFadeOutScreen_{nullptr}
+	, fadeOutDuration_{3.0f}
+	, startFadeOutDelay_{1.5f}
 {
 	pFadeOutScreen_ = Instantiate<FadeOutScreen>(fadeOutDuration_);
 
-	// TODO: GameOverEvent‚Ì‚æ‚¤‚ÈÅIŒˆ’èƒCƒxƒ“ƒg‚ğ—pˆÓ‚µ‚ÄA‚»‚ê‚¾‚¯w“Ç‚³‚¹‚éB
-	// ‰½‚ªƒQ[ƒ€ƒI[ƒo[‚È‚Ì‚©”»’è‚·‚é‘w‚ğ—pˆÓ‚·‚é
+	// TODO: GameOverEventã®ã‚ˆã†ãªæœ€çµ‚æ±ºå®šã‚¤ãƒ™ãƒ³ãƒˆã‚’ç”¨æ„ã—ã¦ã€ãã‚Œã ã‘è³¼èª­ã•ã›ã‚‹ã€‚
+	// ä½•ãŒã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ãªã®ã‹åˆ¤å®šã™ã‚‹å±¤ã‚’ç”¨æ„ã™ã‚‹
 
-	// ƒvƒŒƒCƒ„[‚ÌHP‚ª0‚É‚È‚Á‚½ƒCƒxƒ“ƒg‚ğw“ÇAƒQ[ƒ€ƒI[ƒo[‚É‚·‚é
-	Game::System<EventManager>().GetEvent<PlayerHpReachedZeroEvent>().Subscribe([this](const PlayerHpReachedZeroEvent& _event)
+	// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®HPãŒ0ã«ãªã£ãŸã‚¤ãƒ™ãƒ³ãƒˆã‚’è³¼èª­ã€ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ã«ã™ã‚‹
+	Game::System<EventManager>().GetEvent<PlayerHpReachedZeroEvent>().Subscribe(
+		[this](const PlayerHpReachedZeroEvent& _event)
 		{
 			OnGameOver();
-		}, EventScope::Scene);
+		},
+		EventScope::Scene
+	);
 }
 
 GameOverManager::~GameOverManager()
@@ -39,10 +42,12 @@ void GameOverManager::Start()
 
 void GameOverManager::OnGameOver()
 {
-	Timer::AddAram(startFadeOutDelay_,
+	Timer::AddAram(
+		startFadeOutDelay_,
 		[this]()
 		{
 			pFadeOutScreen_->StartFadeOut();
-		});
+		}
+	);
 	Audio::PlayOneShotFile("Sound/GameOverSound.mp3");
 }

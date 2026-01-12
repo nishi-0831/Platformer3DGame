@@ -12,25 +12,24 @@ namespace mtgb
 	using EntityId = int64_t;
 
 	/// <summary>
-	/// ƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+	/// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 	/// </summary>
 	class IComponentPool
 	{
-	public:
+	  public:
 		IComponentPool();
 		virtual ~IComponentPool();
 
-		virtual void Remove(const EntityId _entityId) = 0;
-		virtual nlohmann::json Serialize(EntityId _entityId) = 0;
-		virtual IComponentMemento* SaveToMemento(EntityId _entityId) = 0;
+		virtual void Remove(const EntityId _entityId)							  = 0;
+		virtual nlohmann::json Serialize(EntityId _entityId)					  = 0;
+		virtual IComponentMemento* SaveToMemento(EntityId _entityId)			  = 0;
 		virtual void Deserialize(EntityId _entityId, const nlohmann::json& _json) = 0;
-		virtual void Copy(EntityId _dest, EntityId _src) = 0;
+		virtual void Copy(EntityId _dest, EntityId _src)						  = 0;
 
-	protected:
-
-		// ƒL[ : Component‚ÌŒ^î•ñ, ’l : ƒv[ƒ‹“à‚ÌƒCƒ“ƒfƒbƒNƒX
+	  protected:
+		// ã‚­ãƒ¼ : Componentã®åž‹æƒ…å ±, å€¤ : ãƒ—ãƒ¼ãƒ«å†…ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 		using ComponentIndexMap = std::unordered_map<std::type_index, size_t>;
-		// ƒL[ : EntityId, ’l : ComponentIndexMap
+		// ã‚­ãƒ¼ : EntityId, å€¤ : ComponentIndexMap
 		void RegisterCurrentScene(const std::function<void()>& _onMove);
 	};
-}
+} // namespace mtgb

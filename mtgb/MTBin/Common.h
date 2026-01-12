@@ -5,21 +5,20 @@
 namespace mtbin
 {
 	/// <summary>
-	/// mtbin‚ÌƒoƒCƒgŒ^
+	/// mtbinã®ãƒã‚¤ãƒˆå‹
 	/// </summary>
 	using Byte = unsigned char;
 
 	namespace Utility
 	{
 		/// <summary>
-		/// ƒ`ƒƒƒ“ƒNId‚ğ”äŠr‚·‚é
+		/// ãƒãƒ£ãƒ³ã‚¯Idã‚’æ¯”è¼ƒã™ã‚‹
 		/// </summary>
-		/// <typeparam name="SIZE">Id‚ÌƒoƒCƒg”</typeparam>
-		/// <param name="_header">ƒ`ƒƒƒ“ƒNIdŠi”[”z—ñ</param>
-		/// <param name="_str">”äŠrId•¶š—ñ</param>
-		/// <returns>‡’v true / false</returns>
-		template<size_t SIZE>
-		inline bool CompareId(const Byte _header[SIZE], const char* _str)
+		/// <typeparam name="SIZE">Idã®ãƒã‚¤ãƒˆæ•°</typeparam>
+		/// <param name="_header">ãƒãƒ£ãƒ³ã‚¯Idæ ¼ç´é…åˆ—</param>
+		/// <param name="_str">æ¯”è¼ƒIdæ–‡å­—åˆ—</param>
+		/// <returns>åˆè‡´ true / false</returns>
+		template <size_t SIZE> inline bool CompareId(const Byte _header[SIZE], const char* _str)
 		{
 			for (size_t i = 0; i < SIZE; i++)
 			{
@@ -30,5 +29,5 @@ namespace mtbin
 			}
 			return true;
 		}
-	}
-}
+	} // namespace Utility
+} // namespace mtbin

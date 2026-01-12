@@ -10,15 +10,15 @@
 
 namespace mtgb
 {
-	class GameObjectFactory :  public IGameObjectCreator , public IGameObjectRegistrar
+	class GameObjectFactory : public IGameObjectCreator, public IGameObjectRegistrar
 	{
-	public:
+	  public:
 		GameObjectFactory() = default;
-		
 
 		GameObject* Create(std::string_view _typeName) const;
 		void RegisterFactory(std::string_view _typeName, CreateFunc _creator) override;
-	private:
+
+	  private:
 		std::unordered_map<std::string, CreateFunc> creators_;
 	};
-}
+} // namespace mtgb

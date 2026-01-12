@@ -14,17 +14,17 @@
 
 namespace mtgb
 {
-	// ƒEƒBƒ“ƒhƒEƒ‚[ƒh‚Ìî•ñ
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰æ™‚ã®æƒ…å ±
 	struct WindowModeInfo
 	{
 		WindowModeInfo();
-		RECT windowedRect_;		//ˆÊ’u‚ÆƒTƒCƒY
-		LONG windowedStyle_;	// ƒXƒ^ƒCƒ‹
-		LONG windowedExStyle_;	// Šg’£ƒXƒ^ƒCƒ‹
+		RECT windowedRect_;	   // ä½ç½®ã¨ã‚µã‚¤ã‚º
+		LONG windowedStyle_;   // ã‚¹ã‚¿ã‚¤ãƒ«
+		LONG windowedExStyle_; // æ‹¡å¼µã‚¹ã‚¿ã‚¤ãƒ«
 	};
 	class WindowResource : public WindowContextResource
 	{
-	public:
+	  public:
 		static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 		LRESULT HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 		HWND GetHWND();
@@ -33,44 +33,46 @@ namespace mtgb
 		~WindowResource();
 
 		void SetResource() override;
-		
+
 		/// <summary>
-		/// ƒŠƒ\[ƒX‚Ì‰Šú‰»‚ªŠ®—¹‚µ‚½‚Æ‚¢‚¤ƒtƒ‰ƒO‚ğ true‚É‚·‚é
+		/// ãƒªã‚½ãƒ¼ã‚¹ã®åˆæœŸåŒ–ãŒå®Œäº†ã—ãŸã¨ã„ã†ãƒ•ãƒ©ã‚°ã‚’ trueã«ã™ã‚‹
 		/// </summary>
 		void MarkInitialized();
 		void OnResize(UINT _width, UINT _height) override;
 
 		/// <summary>
-		/// ’¼‘O‚ÌƒEƒBƒ“ƒhƒEƒ‚[ƒh‚É–ß‚é
+		/// ç›´å‰ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰ã«æˆ»ã‚‹
 		/// </summary>
 		void SetWindowMode();
 
 		void SetFullScreen(const RECT& _monitorRect);
 
 		/// <summary>
-		/// ƒtƒ‹ƒXƒNƒŠ[ƒ“‚É‚·‚é‘O‚Éî•ñ‚ğ•Û‚µ‚Ä‚¨‚­
+		/// ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã«ã™ã‚‹å‰ã«æƒ…å ±ã‚’ä¿æŒã—ã¦ãŠã
 		/// </summary>
 		void GetWindowInfo();
 
-		bool IsFullScreen() const { return isFullscreen_; }
+		bool IsFullScreen() const
+		{
+			return isFullscreen_;
+		}
 		void SetPosition(const RECT& _monitorRect);
-	private:
+
+	  private:
 		void SetWindowModeImpl(WindowModeInfo _info);
 		HWND hWnd_;
 		bool isActive_;
 		bool isFullscreen_;
 
-		WindowModeInfo currInfo_; // Œ»İ‚ÌƒEƒBƒ“ƒhƒEƒ‚[ƒh‚Ìî•ñ
-		WindowModeInfo initialInfo_; // ‰Šú‚ÌƒEƒBƒ“ƒhƒEƒ‚[ƒh‚Ìî•ñ
-
+		WindowModeInfo currInfo_;	 // ç¾åœ¨ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰æ™‚ã®æƒ…å ±
+		WindowModeInfo initialInfo_; // åˆæœŸã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰æ™‚ã®æƒ…å ±
 
 		bool isInitialized_;
 
 		void Release() override;
 
-		// ƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÆƒRƒs[‘ã“ü‰‰Zq‚ğíœ
-		WindowResource(const WindowResource&) = delete;
+		// ã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã¨ã‚³ãƒ”ãƒ¼ä»£å…¥æ¼”ç®—å­ã‚’å‰Šé™¤
+		WindowResource(const WindowResource&)			 = delete;
 		WindowResource& operator=(const WindowResource&) = delete;
-
 	};
-}
+} // namespace mtgb

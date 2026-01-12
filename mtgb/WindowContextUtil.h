@@ -5,50 +5,49 @@
 namespace mtgb
 {
 	using WinCtxResManager = WindowContextResourceManager;
-	
+
 	/// <summary>
 	/// WindowContextResource
-	/// ���b�p�[�A��ۃN���X�ˑ��֗̕��֐��Q
+	/// ラッパー、具象クラス依存の便利関数群
 	/// </summary>
 	namespace WinCtxRes
 	{
 		/// <summary>
-		/// ���\�[�X���擾����
+		/// リソースを取得する
 		/// </summary>
-		/// <typeparam name="ResourceT">���\�[�X�̌^</typeparam>
-		/// <param name="ctx">�擾����E�B���h�E�̎��ʎq</param>
+		/// <typeparam name="ResourceT">リソースの型</typeparam>
+		/// <param name="ctx">取得するウィンドウの識別子</param>
 		/// <returns></returns>
-		template<typename ResourceT>
-		ResourceT& Get(WindowContext ctx)
+		template <typename ResourceT> ResourceT& Get(WindowContext ctx)
 		{
 			return Game::System<WinCtxResManager>().Get<ResourceT>(ctx);
 		}
 
 		/// <summary>
-		/// ���\�[�X��؂�ւ���
+		/// リソースを切り替える
 		/// </summary>
-		/// <param name="ctx">�؂�ւ���E�B���h�E�̎��ʎq</param>
+		/// <param name="ctx">切り替えるウィンドウの識別子</param>
 		void ChangeResource(WindowContext ctx);
 
 		/// <summary>
-		/// ���ݗL���ȃE�B���h�E�̎��ʎq��Ԃ�
+		/// 現在有効なウィンドウの識別子を返す
 		/// </summary>
-		/// <returns>���݂�WindowContext</returns>
+		/// <returns>現在のWindowContext</returns>
 		WindowContext CurrContext();
 
 		/// <summary>
-		/// ���̃E�B���h�E��HWND���擾����
+		/// そのウィンドウのHWNDを取得する
 		/// </summary>
-		/// <param name="ctx">�E�B���h�E�̎��ʎq</param>
+		/// <param name="ctx">ウィンドウの識別子</param>
 		/// <returns></returns>
 		HWND GetHWND(WindowContext ctx);
 
 		/// <summary>
-		/// <para> ��̃E�B���h�E�̕`�惊�\�[�X��؂�ւ��� </para>
-		/// <para> ���͂�J�����Ȃǂ͐؂芷���Ȃ� </para>
+		/// <para> 二つのウィンドウの描画リソースを切り替える </para>
+		/// <para> 入力やカメラなどは切り換えない </para>
 		/// </summary>
 		/// <param name="_ctx1"></param>
 		/// <param name="_ctx2"></param>
 		void SwapWindow(WindowContext _ctx1 = WindowContext::First, WindowContext _ctx2 = WindowContext::Second);
-	}
-}
+	} // namespace WinCtxRes
+} // namespace mtgb

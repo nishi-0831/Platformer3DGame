@@ -1,34 +1,37 @@
 #pragma once
 #include <string>
 
-
 namespace mtgb
 {
 	class Transform;
 
 	/// <summary>
-	/// 3Dƒ‚ƒfƒ‹“Ç‚İ‚İ—p’ŠÛƒCƒ“ƒ^ƒtƒF[ƒX
+	/// 3Dãƒ¢ãƒ‡ãƒ«èª­ã¿è¾¼ã¿ç”¨æŠ½è±¡ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 	/// </summary>
 	class IModelPack
 	{
-	public:
-		IModelPack() {}
-		virtual ~IModelPack() {}
+	  public:
+		IModelPack()
+		{
+		}
+		virtual ~IModelPack()
+		{
+		}
 
 		/// <summary>
-		/// 3Dƒ‚ƒfƒ‹‚Ì“Ç‚İ‚İ‚ğ‚·‚é
+		/// 3Dãƒ¢ãƒ‡ãƒ«ã®èª­ã¿è¾¼ã¿ã‚’ã™ã‚‹
 		/// </summary>
-		/// <param name="_fileName">3Dƒ‚ƒfƒ‹‚Ìƒtƒ@ƒCƒ‹–¼</param>
+		/// <param name="_fileName">3Dãƒ¢ãƒ‡ãƒ«ã®ãƒ•ã‚¡ã‚¤ãƒ«å</param>
 		virtual void Load(const std::string& _fileName) = 0;
 		/// <summary>
-		/// 3Dƒ‚ƒfƒ‹‚ğ•`‰æ‚·‚é
+		/// 3Dãƒ¢ãƒ‡ãƒ«ã‚’æç”»ã™ã‚‹
 		/// </summary>
-		/// <param name="_transfrom">À•WŒn</param>
-		/// <param name="_frame">ƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒŒ[ƒ€</param>
+		/// <param name="_transfrom">åº§æ¨™ç³»</param>
+		/// <param name="_frame">ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ãƒ¬ãƒ¼ãƒ </param>
 		virtual void Draw(const Transform& _transfrom, int _frame) = 0;
 		/// <summary>
-		/// ‰ğ•úˆ—
+		/// è§£æ”¾å‡¦ç†
 		/// </summary>
 		virtual void Release() = 0;
 	};
-}
+} // namespace mtgb

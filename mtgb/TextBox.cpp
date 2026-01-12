@@ -13,7 +13,7 @@ mtgb::TextBox::TextBox(const TextRendererData& _data)
 }
 
 mtgb::TextBox::TextBox(TextRendererData&& _data)
-	: pTextRenderer_{ Component<TextRenderer>() }
+	: pTextRenderer_{Component<TextRenderer>()}
 {
 	pTextRenderer_->MoveData(std::move(_data));
 }

@@ -2,7 +2,7 @@
 #include "GameScene.h"
 class StageEditScene : public mtgb::GameScene
 {
-public:
+  public:
 	StageEditScene();
 	~StageEditScene();
 
@@ -10,5 +10,6 @@ public:
 	void Update() override;
 	void Draw() const override;
 	void End() override;
-private:
+
+  private:
 };

@@ -10,21 +10,23 @@ namespace mtgb
 {
 	class GuizmoManipulateCommand : public Command
 	{
-	public:
+	  public:
 		GuizmoManipulateCommand(
-			TransformMemento* _pPrevMemento, 
+			TransformMemento* _pPrevMemento,
 			TransformMemento* _pMemento,
-			const ComponentFactory& _componentFactory);
+			const ComponentFactory& _componentFactory
+		);
 
 		void Execute() override;
 		void Undo() override;
 		void Redo() override;
 		std::string Name() const override;
 		EntityId GetCommandTargetEntityId() const override;
-	private:
-		// ComponentFactory‚ªnull‚Å‚ ‚é‚±‚Æ‚ğ‹–—e‚µ‚È‚¢
+
+	  private:
+		// ComponentFactoryãŒnullã§ã‚ã‚‹ã“ã¨ã‚’è¨±å®¹ã—ãªã„
 		const ComponentFactory& componentFactory_;
 		TransformMemento* pPrevMemento_;
 		TransformMemento* pMemento_;
 	};
-}
+} // namespace mtgb

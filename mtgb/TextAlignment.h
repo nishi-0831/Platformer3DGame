@@ -3,13 +3,13 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ƒeƒLƒXƒg‚ğ‹éŒ`—Ìˆæ“à‚Ì‚Ç‚±‚É•\¦‚·‚é‚©
+	/// ãƒ†ã‚­ã‚¹ãƒˆã‚’çŸ©å½¢é ˜åŸŸå†…ã®ã©ã“ã«è¡¨ç¤ºã™ã‚‹ã‹
 	/// </summary>
 	enum class TextAlignment
 	{
-		topLeft,         // ¶ã‚É”z’u
-		center,          // ’†‰›‚É”z’u
-		bottomLeft,      // ¶‰º‚Ì”z’u
-		middleLeft,  // ¶’†‰›‚Ì”z’u
+		topLeft,	// å·¦ä¸Šã«é…ç½®
+		center,		// ä¸­å¤®ã«é…ç½®
+		bottomLeft, // å·¦ä¸‹ã®é…ç½®
+		middleLeft, // å·¦ä¸­å¤®ã®é…ç½®
 	};
-}
+} // namespace mtgb

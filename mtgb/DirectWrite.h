@@ -1,5 +1,5 @@
 #pragma once
-#include <cmtgb.h>
+#include "cmtgb.h"
 #include <string>
 #include <functional>
 #include <unordered_map>
@@ -24,8 +24,8 @@ struct ID2D1Brush;
 
 namespace mtgb
 {
-	//using TextLayoutKey = std::tuple<std::wstring, int>; // •¶š—ñ‚ÆƒTƒCƒY‚ÌƒyƒA
-	
+	// using TextLayoutKey = std::tuple<std::wstring, int>; // æ–‡å­—åˆ—ã¨ã‚µã‚¤ã‚ºã®ãƒšã‚¢
+
 	struct PixelFontMetrics
 	{
 		float ascentPx;
@@ -34,19 +34,19 @@ namespace mtgb
 		float textTopOffset;
 	};
 
-	// ƒtƒHƒ“ƒgƒtƒH[ƒ}ƒbƒg‚ÌƒLƒƒƒbƒVƒ…ƒGƒ“ƒgƒŠ
+	// ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚¨ãƒ³ãƒˆãƒª
 	struct FontFormatData
 	{
 		int fontSize;
 		ComPtr<IDWriteTextFormat> format;
 		PixelFontMetrics pixelFontMetrics;
-		
+
 		FontFormatData(int size, IDWriteTextFormat* fmt, const PixelFontMetrics& metrics);
-		
+
 		~FontFormatData();
 	};
 
-	// ƒeƒLƒXƒgƒŒƒCƒAƒEƒg‚ÌƒLƒƒƒbƒVƒ…ƒGƒ“ƒgƒŠ
+	// ãƒ†ã‚­ã‚¹ãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚¨ãƒ³ãƒˆãƒª
 	struct TextLayoutData
 	{
 		std::wstring str;
@@ -55,97 +55,127 @@ namespace mtgb
 
 		ComPtr<IDWriteTextLayout> layout;
 		int handle;
-		
-		TextLayoutData(const std::wstring& _str, int _size, float _width, float _height, IDWriteTextLayout* _layout, int _handle);
-		
+
+		TextLayoutData(
+			const std::wstring& _str,
+			int _size,
+			float _width,
+			float _height,
+			IDWriteTextLayout* _layout,
+			int _handle
+		);
+
 		~TextLayoutData();
 	};
 
 	/// <summary>
-	/// DirectWrite—p‚ÌƒVƒXƒeƒ€
+	/// DirectWriteç”¨ã®ã‚·ã‚¹ãƒ†ãƒ 
 	/// </summary>
 	class DirectWrite : public ISystem
 	{
-	public:
+	  public:
 		DirectWrite();
 		~DirectWrite();
 
 		/// <summary>
-		/// ‰Šú‰»ˆ—
+		/// åˆæœŸåŒ–å‡¦ç†
 		/// </summary>
 		void Initialize() override;
 
-		void CreateFontFormatData(const std::wstring& fileName,int fontSize, FontFormatData** ppFontFormatData);
+		void CreateFontFormatData(const std::wstring& fileName, int fontSize, FontFormatData** ppFontFormatData);
 		/// <summary>
-		/// XVˆ—
+		/// æ›´æ–°å‡¦ç†
 		/// </summary>
 		void Update() override;
 
 		/// <summary>
-		/// ƒnƒ“ƒhƒ‹‚É‰‚¶‚½ƒeƒLƒXƒg‚ğ•`‰æ
-		/// Š®‘S‚É“¯‚¶•¶š—ñ‚ğ•`‰æ‚µ‘±‚¯‚éê‡‚É“K‚µ‚Ä‚¢‚é
+		/// ãƒãƒ³ãƒ‰ãƒ«ã«å¿œã˜ãŸãƒ†ã‚­ã‚¹ãƒˆã‚’æç”»
+		/// å®Œå…¨ã«åŒã˜æ–‡å­—åˆ—ã‚’æç”»ã—ç¶šã‘ã‚‹å ´åˆã«é©ã—ã¦ã„ã‚‹
 		/// </summary>
 		/// <param name="handle"></param>
-		/// <param name="x">ƒeƒLƒXƒg‚Ì¶’[</param>
-		/// <param name="y">ƒeƒLƒXƒg‚Ìã’[</param>
-		//void Draw(int handle, float x, float y);
+		/// <param name="x">ãƒ†ã‚­ã‚¹ãƒˆã®å·¦ç«¯</param>
+		/// <param name="y">ãƒ†ã‚­ã‚¹ãƒˆã®ä¸Šç«¯</param>
+		// void Draw(int handle, float x, float y);
 
 		void Draw(ComPtr<IDWriteTextLayout> textLayout, float x, float y);
 
-
 		/// <summary>
-		/// ‘¦•`‰æ
-		/// •¶š—ñ‚¾‚¯‚ª•p”É‚É•Ï‰»‚·‚éê‡‚É“K‚µ‚Ä‚¢‚é
+		/// å³æ™‚æç”»
+		/// æ–‡å­—åˆ—ã ã‘ãŒé »ç¹ã«å¤‰åŒ–ã™ã‚‹å ´åˆã«é©ã—ã¦ã„ã‚‹
 		/// </summary>
-		/// <param name="text">•`‰æ‚·‚éƒeƒLƒXƒg</param>
-		/// <param name="x">ƒeƒLƒXƒg‚Ì¶’[</param>
-		/// <param name="y">ƒeƒLƒXƒg‚Ìã’[</param>
+		/// <param name="text">æç”»ã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆ</param>
+		/// <param name="x">ãƒ†ã‚­ã‚¹ãƒˆã®å·¦ç«¯</param>
+		/// <param name="y">ãƒ†ã‚­ã‚¹ãƒˆã®ä¸Šç«¯</param>
 		void ImmediateDraw(const std::wstring& text, float x, float y);
-		
 
-		
-		//void ImmediateDraw(const std::string& text, float x, float y, int size);
-		void ImmediateDraw(const std::wstring& text, ComPtr<IDWriteTextFormat> format, const PixelFontMetrics& pixelFontMetrics, float x,float y,float width,float height);
+		// void ImmediateDraw(const std::string& text, float x, float y, int size);
+		void ImmediateDraw(
+			const std::wstring& text,
+			ComPtr<IDWriteTextFormat> format,
+			const PixelFontMetrics& pixelFontMetrics,
+			float x,
+			float y,
+			float width,
+			float height
+		);
 
-		void ImmediateDraw(const std::wstring& text, ComPtr<IDWriteTextFormat> format, const PixelFontMetrics& pixelFontMetrics, float x, float y);
-		
+		void ImmediateDraw(
+			const std::wstring& text,
+			ComPtr<IDWriteTextFormat> format,
+			const PixelFontMetrics& pixelFontMetrics,
+			float x,
+			float y
+		);
+
 		/// <summary>
-		/// ƒfƒtƒHƒ‹ƒgƒtƒHƒ“ƒgƒTƒCƒY‚ğ•ÏX
+		/// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’å¤‰æ›´
 		/// </summary>
-		/// <param name="size">V‚µ‚¢ƒfƒtƒHƒ‹ƒgƒTƒCƒY</param>
-		//void ChangeFontSize(int size);
+		/// <param name="size">æ–°ã—ã„ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚µã‚¤ã‚º</param>
+		// void ChangeFontSize(int size);
 
 		void ChangeFormat(ComPtr<IDWriteTextFormat> format, mtgb::PixelFontMetrics& metrics);
 
 		void Release() override;
-		
-		/// <summary>
-		/// IDWriteTextLayout‚ğì¬
-		/// </summary>
-		/// <param name="str">•¶š—ñ</param>
-		/// <param name="size">‘å‚«‚³</param>
-		/// <param name="format"></param>
-		/// <param name="ppTextLayout">ì¬‚³‚ê‚éIDWriteTextLayout</param>
-		void CreateTextLayout(const std::wstring & _str, int  _size, ComPtr<IDWriteTextFormat> _format, IDWriteTextLayout ** _ppTextLayout);
-		void CreateTextLayout(const std::wstring & _str, float  _width, float _height, int  _size, ComPtr<IDWriteTextFormat> _format, IDWriteTextLayout ** _ppTextLayout);
 
 		/// <summary>
-		/// IDWriteTextFormat‚ğì¬
+		/// IDWriteTextLayoutã‚’ä½œæˆ
 		/// </summary>
-		/// <param name="size">ƒtƒHƒ“ƒgƒTƒCƒY</param>
-		/// <param name="ppTextFormat">ì¬‚³‚ê‚éIDWriteTextFormat</param>
-		/// <param name="outMetrics">ŒvZ‚³‚ê‚éPixelFontMetrics</param>
+		/// <param name="str">æ–‡å­—åˆ—</param>
+		/// <param name="size">å¤§ãã•</param>
+		/// <param name="format"></param>
+		/// <param name="ppTextLayout">ä½œæˆã•ã‚Œã‚‹IDWriteTextLayout</param>
+		void CreateTextLayout(
+			const std::wstring& _str,
+			int _size,
+			ComPtr<IDWriteTextFormat> _format,
+			IDWriteTextLayout** _ppTextLayout
+		);
+		void CreateTextLayout(
+			const std::wstring& _str,
+			float _width,
+			float _height,
+			int _size,
+			ComPtr<IDWriteTextFormat> _format,
+			IDWriteTextLayout** _ppTextLayout
+		);
+
+		/// <summary>
+		/// IDWriteTextFormatã‚’ä½œæˆ
+		/// </summary>
+		/// <param name="size">ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</param>
+		/// <param name="ppTextFormat">ä½œæˆã•ã‚Œã‚‹IDWriteTextFormat</param>
+		/// <param name="outMetrics">è¨ˆç®—ã•ã‚Œã‚‹PixelFontMetrics</param>
 		void CreateTextFormat(int size, IDWriteTextFormat** ppTextFormat, PixelFontMetrics& outMetrics);
 
 		void SetTextAlignment(TextAlignment alignment, ComPtr<IDWriteTextFormat> format);
-	private:
-	
+
+	  private:
 		static DWRITE_FONT_METRICS fontMetrics_;
 		static PixelFontMetrics pixelFontMetrics_;
 		static ComPtr<IDWriteFactory> pDWriteFactory_;
-		static ComPtr<IDWriteTextFormat> pTextFormat_; // ƒfƒtƒHƒ‹ƒgƒtƒH[ƒ}ƒbƒg
+		static ComPtr<IDWriteTextFormat> pTextFormat_; // ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
 		static ComPtr<IDWriteFontCollection> pFontCollection_;
 		static ComPtr<IDWriteFontFamily> pFontFamily_;
 		static ComPtr<IDWriteFont> pDWriteFont_;
 	};
-}
+} // namespace mtgb

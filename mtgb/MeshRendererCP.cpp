@@ -18,14 +18,15 @@ void mtgb::MeshRendererCP::RenderLayer(GameObjectLayerFlag _layerFlag) const
 	{
 		EntityId id = poolId_[i];
 
-		if (poolId_[i] == INVALID_ENTITY) continue;
+		if (poolId_[i] == INVALID_ENTITY)
+			continue;
 
 		const MeshRenderer& renderer = pool_[i];
 		if (renderer.enabled_ == false)
 			continue;
 		if (renderer.CanRender() == false || _layerFlag.Has(renderer.GetLayer()) == false)
 			continue;
-		
+
 		renderer.Render();
 	}
 }

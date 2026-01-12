@@ -14,17 +14,17 @@ mtgb::Direct2DResource::Direct2DResource(WindowContext _windowContext)
 	, pRenderTarget_{nullptr}
 	, pD2DBrush_{nullptr}
 {
-	// DXGI,Direct3D‚ÌƒŠƒ\[ƒX‚ğæ“¾
-	DXGIResource& dxgiResource = Game::System<WindowContextResourceManager>().Get<DXGIResource>(_windowContext);
+	// DXGI,Direct3Dã®ãƒªã‚½ãƒ¼ã‚¹ã‚’å–å¾—
+	DXGIResource& dxgiResource	  = Game::System<WindowContextResourceManager>().Get<DXGIResource>(_windowContext);
 	Direct3DResource& d3dResource = Game::System<WindowContextResourceManager>().Get<Direct3DResource>(_windowContext);
 
-	// Direct2D‚ÌComƒIƒuƒWƒFƒNƒgì¬‚Ég‚¤
+	// Direct2Dã®Comã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆä½œæˆã«ä½¿ã†
 	Direct2D& direct2D = Game::System<Direct2D>();
- 
-	// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒgAƒuƒ‰ƒV‚ğì¬
+
+	// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã€ãƒ–ãƒ©ã‚·ã‚’ä½œæˆ
 	direct2D.CreateD2DRenderTarget(dxgiResource.pDXGISurface_.Get(), pRenderTarget_.ReleaseAndGetAddressOf());
 
-	// TODO: ƒuƒ‰ƒV‚ÌFw’è‚ğƒn[ƒhƒR[ƒfƒBƒ“ƒO‚¹‚¸‚ÉAŠO•”ƒtƒ@ƒCƒ‹AƒvƒƒOƒ‰ƒ€‚©‚çw’è‚Å‚«‚é‚æ‚¤‚É‚·‚é
+	// TODO: ãƒ–ãƒ©ã‚·ã®è‰²æŒ‡å®šã‚’ãƒãƒ¼ãƒ‰ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã›ãšã«ã€å¤–éƒ¨ãƒ•ã‚¡ã‚¤ãƒ«ã€ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‹ã‚‰æŒ‡å®šã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
 	direct2D.CreateSolidColorBrush(D2D1::ColorF::White, pRenderTarget_.Get(), pD2DBrush_.ReleaseAndGetAddressOf());
 }
 
@@ -41,24 +41,24 @@ void mtgb::Direct2DResource::Reset()
 void mtgb::Direct2DResource::OnResize(UINT _width, UINT _height)
 {
 	Release();
-	
-	// DXGI,Direct3D‚ÌƒŠƒ\[ƒX‚ğæ“¾
-	DXGIResource& dxgiResource = Game::System<WindowContextResourceManager>().Get<DXGIResource>(windowContext_);
+
+	// DXGI,Direct3Dã®ãƒªã‚½ãƒ¼ã‚¹ã‚’å–å¾—
+	DXGIResource& dxgiResource	  = Game::System<WindowContextResourceManager>().Get<DXGIResource>(windowContext_);
 	Direct3DResource& d3dResource = Game::System<WindowContextResourceManager>().Get<Direct3DResource>(windowContext_);
 
-	// Direct2D‚ÌComƒIƒuƒWƒFƒNƒgì¬‚Ég‚¤
+	// Direct2Dã®Comã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆä½œæˆã«ä½¿ã†
 	Direct2D& direct2D = Game::System<Direct2D>();
 
-	// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒgAƒuƒ‰ƒV‚ğì¬
+	// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã€ãƒ–ãƒ©ã‚·ã‚’ä½œæˆ
 	direct2D.CreateD2DRenderTarget(dxgiResource.pDXGISurface_.Get(), pRenderTarget_.ReleaseAndGetAddressOf());
 
-	// TODO: ƒuƒ‰ƒV‚ÌFw’è‚ğƒn[ƒhƒR[ƒfƒBƒ“ƒO‚¹‚¸‚ÉAŠO•”ƒtƒ@ƒCƒ‹AƒvƒƒOƒ‰ƒ€‚©‚çw’è‚Å‚«‚é‚æ‚¤‚É‚·‚é
+	// TODO: ãƒ–ãƒ©ã‚·ã®è‰²æŒ‡å®šã‚’ãƒãƒ¼ãƒ‰ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã›ãšã«ã€å¤–éƒ¨ãƒ•ã‚¡ã‚¤ãƒ«ã€ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‹ã‚‰æŒ‡å®šã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
 	direct2D.CreateSolidColorBrush(D2D1::ColorF::White, pRenderTarget_.Get(), pD2DBrush_.ReleaseAndGetAddressOf());
 }
 
 void mtgb::Direct2DResource::SetResource()
 {
-	// ƒuƒ‰ƒVAƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚ğƒZƒbƒg
+	// ãƒ–ãƒ©ã‚·ã€ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ã‚»ãƒƒãƒˆ
 	Game::System<Direct2D>().ChangeRenderTarget(pD2DBrush_, pRenderTarget_);
 }
 
@@ -67,4 +67,3 @@ void mtgb::Direct2DResource::Release()
 	pD2DBrush_.Reset();
 	pRenderTarget_.Reset();
 }
-

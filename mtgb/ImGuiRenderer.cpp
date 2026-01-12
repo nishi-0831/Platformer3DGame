@@ -10,25 +10,20 @@
 namespace
 {
 	float titleBarHeight;
-	const unsigned long long NULLID = 0;
+	const unsigned long long NULLID	 = 0;
 	const char* WINDOWNAME_GAME_VIEW = "Game View";
-}
-
-
-
-
+} // namespace
 
 mtgb::ImGuiRenderer::ImGuiRenderer()
-	:pRenderTargetView_{nullptr}
-	,pSRV_{nullptr}
-	,pSRVTexture_{nullptr}
-	,pTexture_{nullptr}
-	,pDepthStencil_{nullptr}
-	,pDepthStencilView_{nullptr}
-	,gameViewRectValid_{false}
-	
+	: pRenderTargetView_{nullptr}
+	, pSRV_{nullptr}
+	, pSRVTexture_{nullptr}
+	, pTexture_{nullptr}
+	, pDepthStencil_{nullptr}
+	, pDepthStencilView_{nullptr}
+	, gameViewRectValid_{false}
+
 {
-	
 }
 mtgb::ImGuiRenderer::~ImGuiRenderer()
 {
@@ -37,49 +32,51 @@ mtgb::ImGuiRenderer::~ImGuiRenderer()
 void mtgb::ImGuiRenderer::Initialize()
 {
 	Vector2Int size = Game::System<Screen>().GetSize();
-	winWidth_ = static_cast<UINT>(size.x);
-	winHeight_ = static_cast<UINT>(size.y);
+	winWidth_		= static_cast<UINT>(size.x);
+	winHeight_		= static_cast<UINT>(size.y);
 
 	IMGUI_CHECKVERSION();
 
 	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO();(void)io;
+	ImGuiIO& io = ImGui::GetIO();
+	(void)io;
 
 	io.BackendFlags |= ImGuiBackendFlags_PlatformHasViewports;
 	io.BackendFlags |= ImGuiBackendFlags_RendererHasViewports;
 
 	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 	io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-	
-	
-	ImFont* font = io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\meiryo.ttc", 18.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enable Keyboard Controls
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;  // Enable Gamepad Controls
+
+	ImFont* font =
+		io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\meiryo.ttc", 18.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
 	IM_ASSERT(font != nullptr);
 
-	//ImGui_ImplWin32_EnableDpiAwareness();
-	//float main_scale = ImGui_ImplWin32_GetDpiScaleForMonitor(::MonitorFromPoint(POINT{ 0, 0 }, MONITOR_DEFAULTTOPRIMARY));
+	// ImGui_ImplWin32_EnableDpiAwareness();
+	// float main_scale = ImGui_ImplWin32_GetDpiScaleForMonitor(::MonitorFromPoint(POINT{ 0, 0 },
+	// MONITOR_DEFAULTTOPRIMARY));
 	//// Setup scaling
-	//ImGuiStyle& style = ImGui::GetStyle();
-	//style.ScaleAllSizes(main_scale);        // Bake a fixed style scale. (until we have a solution for dynamic style scaling, changing this requires resetting Style + calling this again)
-	//style.FontScaleDpi = main_scale;        // Set initial font scale. (using 
+	// ImGuiStyle& style = ImGui::GetStyle();
+	// style.ScaleAllSizes(main_scale);        // Bake a fixed style scale. (until we have a solution for dynamic style
+	// scaling, changing this requires resetting Style + calling this again) style.FontScaleDpi = main_scale;        //
+	// Set initial font scale. (using
 
-	//io.ConfigDpiScaleFonts = true;
-	//io.ConfigDpiScaleViewports = true;
-	
+	// io.ConfigDpiScaleFonts = true;
+	// io.ConfigDpiScaleViewports = true;
+
 	// Setup Dear ImGui style
 	ImGui::StyleColorsDark();
 
 	ImGui::SetCurrentContext(ImGui::GetCurrentContext());
 
 	ImGui_ImplWin32_Init(WinCtxRes::GetHWND(WindowContext::First));
-	const auto& ctx = ImGui::GetCurrentContext();
-	ComPtr<ID3D11Device> device = mtgb::DirectX11Draw::pDevice_;
+	const auto& ctx						= ImGui::GetCurrentContext();
+	ComPtr<ID3D11Device> device			= mtgb::DirectX11Draw::pDevice_;
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
 	ImGui_ImplDX11_Init(device.Get(), context.Get());
 
 	CreateD3DResources();
-
 }
 
 void mtgb::ImGuiRenderer::Update()
@@ -92,14 +89,11 @@ void mtgb::ImGuiRenderer::BeginFrame()
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
-	
 }
 void mtgb::ImGuiRenderer::BeginImGuizmoFrame()
 {
 	ImGuizmo::BeginFrame();
 }
-
-
 
 void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlag _flag)
 {
@@ -114,21 +108,19 @@ void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlag _fla
 	ImGui::Begin(_str, _isOpen, flags);
 }
 
-
 void mtgb::ImGuiRenderer::SetImGuizmoRenderTargetView()
 {
-	//ID3D11ShaderResourceView* nullSRV[16]{};
-	//// ‘SƒXƒƒbƒg‚ÌSRV‚ğƒNƒŠƒA
-	//DirectX11Draw::pContext_->PSSetShaderResources(0, 16, nullSRV);
+	// ID3D11ShaderResourceView* nullSRV[16]{};
+	//// å…¨ã‚¹ãƒ­ãƒƒãƒˆã®SRVã‚’ã‚¯ãƒªã‚¢
+	// DirectX11Draw::pContext_->PSSetShaderResources(0, 16, nullSRV);
 
-	//DirectX11Draw::pContext_->PSSetShaderResources(0, 0, pSRV_.GetAddressOf());
-	//Game::System<DirectX11Manager>().ChangeViewport(viewport_);
-	Game::System<DirectX11Manager>().ChangeRenderTargets(pRenderTargetView_,pDepthStencilView_);
+	// DirectX11Draw::pContext_->PSSetShaderResources(0, 0, pSRV_.GetAddressOf());
+	// Game::System<DirectX11Manager>().ChangeViewport(viewport_);
+	Game::System<DirectX11Manager>().ChangeRenderTargets(pRenderTargetView_, pDepthStencilView_);
 }
 
 void mtgb::ImGuiRenderer::Draw()
 {
-
 }
 
 void mtgb::ImGuiRenderer::EndFrame()
@@ -150,14 +142,14 @@ void mtgb::ImGuiRenderer::SetDrawList()
 
 void mtgb::ImGuiRenderer::RenderSceneView()
 {
-	
+
 	ImGui::Image((void*)pSRV_.Get(), ImVec2(static_cast<float>(winWidth_), static_cast<float>(winHeight_)));
 }
 
 void mtgb::ImGuiRenderer::UpdateGameViewRect()
 {
-	gameViewPos_ = ImGui::GetWindowPos();
-	gameViewSize_ = ImGui::GetWindowSize();
+	gameViewPos_	   = ImGui::GetWindowPos();
+	gameViewSize_	   = ImGui::GetWindowSize();
 	gameViewRectValid_ = true;
 }
 
@@ -174,7 +166,7 @@ void mtgb::ImGuiRenderer::Release()
 
 void mtgb::ImGuiRenderer::ResetComPtrs()
 {
-	// ImGui‚ª•Û‚µ‚Ä‚¢‚éƒŠƒ\[ƒX‰ğ•ú
+	// ImGuiãŒä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹è§£æ”¾
 	ImGui_ImplDX11_InvalidateDeviceObjects();
 
 	pSRV_.Reset();
@@ -182,70 +174,69 @@ void mtgb::ImGuiRenderer::ResetComPtrs()
 	pDepthStencilView_.Reset();
 	pDepthStencil_.Reset();
 	pTexture_.Reset();
-
 }
 
 void mtgb::ImGuiRenderer::OnResize(UINT width, UINT height)
 {
 	CreateD3DResources();
-    // ƒEƒBƒ“ƒhƒEƒTƒCƒY‚ğXV
-    /*winWidth_ = width;
-    winHeight_ = height;*/
-    
-    // GameView ‚Ì‹éŒ`î•ñ‚ğƒŠƒZƒbƒg
-    gameViewRectValid_ = false;
-    
-    // ImGui‚ÌƒfƒBƒXƒvƒŒƒCƒTƒCƒY‚ğXV
-    /*ImGuiIO& io = ImGui::GetIO();
-    io.DisplaySize = ImVec2(static_cast<float>(width), static_cast<float>(height));*/
-    
-    // ImGui‚ÌƒŠƒ\[ƒX‚ğÄì¬‚·‚é•K—v‚ª‚ ‚éê‡
-    // ImGui_ImplDX11_InvalidateDeviceObjects();
-    // ImGui_ImplDX11_CreateDeviceObjects();
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºã‚’æ›´æ–°
+	/*winWidth_ = width;
+	winHeight_ = height;*/
+
+	// GameView ã®çŸ©å½¢æƒ…å ±ã‚’ãƒªã‚»ãƒƒãƒˆ
+	gameViewRectValid_ = false;
+
+	// ImGuiã®ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤ã‚µã‚¤ã‚ºã‚’æ›´æ–°
+	/*ImGuiIO& io = ImGui::GetIO();
+	io.DisplaySize = ImVec2(static_cast<float>(width), static_cast<float>(height));*/
+
+	// ImGuiã®ãƒªã‚½ãƒ¼ã‚¹ã‚’å†ä½œæˆã™ã‚‹å¿…è¦ãŒã‚ã‚‹å ´åˆ
+	// ImGui_ImplDX11_InvalidateDeviceObjects();
+	// ImGui_ImplDX11_CreateDeviceObjects();
 }
-
-
 
 void mtgb::ImGuiRenderer::CreateD3DResources()
 {
-	ComPtr<ID3D11Device> device = mtgb::DirectX11Draw::pDevice_;
+	ComPtr<ID3D11Device> device			= mtgb::DirectX11Draw::pDevice_;
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
 
-	Game::System<DirectX11Manager>().CreateViewport({ static_cast<int>(winWidth_) ,static_cast<int>(winHeight_) }, viewport_);
+	Game::System<DirectX11Manager>().CreateViewport(
+		{static_cast<int>(winWidth_), static_cast<int>(winHeight_)},
+		viewport_
+	);
 
-	// RTV—pƒeƒNƒXƒ`ƒƒì¬
-	D3D11_TEXTURE2D_DESC desc
-	{
-		.Width = winWidth_,
-		.Height = winHeight_,
-		.MipLevels = 1,
-		.ArraySize = 1,
-		.Format = DXGI_FORMAT_R8G8B8A8_UNORM,
-		.SampleDesc = { .Count = 1 },
-		.Usage = D3D11_USAGE_DEFAULT,
-		.BindFlags = D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE
+	// RTVç”¨ãƒ†ã‚¯ã‚¹ãƒãƒ£ä½œæˆ
+	D3D11_TEXTURE2D_DESC desc{
+		.Width		= winWidth_,
+		.Height		= winHeight_,
+		.MipLevels	= 1,
+		.ArraySize	= 1,
+		.Format		= DXGI_FORMAT_R8G8B8A8_UNORM,
+		.SampleDesc = {.Count = 1},
+		.Usage		= D3D11_USAGE_DEFAULT,
+		.BindFlags	= D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE
 	};
-	
+
 	HRESULT hResult = device->CreateTexture2D(&desc, nullptr, pTexture_.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult) && "CreateTexture2D‚É¸”s @ImGuiRenderer::CreateD3DResources");
+	massert(SUCCEEDED(hResult) && "CreateTexture2Dã«å¤±æ•— @ImGuiRenderer::CreateD3DResources");
 
 	hResult = device->CreateRenderTargetView(pTexture_.Get(), nullptr, pRenderTargetView_.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult) && "CreateRenderTargetView‚É¸”s @ImGuiRenderer::CreateD3DResources");
+	massert(SUCCEEDED(hResult) && "CreateRenderTargetViewã«å¤±æ•— @ImGuiRenderer::CreateD3DResources");
 
-	// SRV—pƒeƒNƒXƒ`ƒƒì¬
-	//desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
-	//hResult = device->CreateTexture2D(&desc, nullptr, pTexture_.GetAddressOf());
-	//massert(SUCCEEDED(hResult) && "CreateTexture2D‚É¸”s @ImGuiRenderer::CreateD3DResources");
+	// SRVç”¨ãƒ†ã‚¯ã‚¹ãƒãƒ£ä½œæˆ
+	// desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
+	// hResult = device->CreateTexture2D(&desc, nullptr, pTexture_.GetAddressOf());
+	// massert(SUCCEEDED(hResult) && "CreateTexture2Dã«å¤±æ•— @ImGuiRenderer::CreateD3DResources");
 
 	hResult = device->CreateShaderResourceView(pTexture_.Get(), nullptr, pSRV_.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult) && "CreateShaderResourceView‚É¸”s @ImGuiRenderer::CreateD3DResources");
+	massert(SUCCEEDED(hResult) && "CreateShaderResourceViewã«å¤±æ•— @ImGuiRenderer::CreateD3DResources");
 
-	// [“xƒXƒeƒ“ƒVƒ‹‚Æ[“xƒXƒeƒ“ƒVƒ‹ƒrƒ…[‚ğì¬
+	// æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã¨æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ“ãƒ¥ãƒ¼ã‚’ä½œæˆ
 	Game::System<DirectX11Manager>().CreateDepthStencilAndDepthStencilView(
 		Vector2Int(static_cast<int>(winWidth_), static_cast<int>(winHeight_)),
-		pTexture_.GetAddressOf(), pDepthStencilView_.ReleaseAndGetAddressOf());
+		pTexture_.GetAddressOf(),
+		pDepthStencilView_.ReleaseAndGetAddressOf()
+	);
 
-	//ImGui_ImplDX11_CreateDeviceObjects();
+	// ImGui_ImplDX11_CreateDeviceObjects();
 }
-
-

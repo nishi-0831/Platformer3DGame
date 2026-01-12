@@ -13,18 +13,18 @@
 #include "MTImGui.h"
 namespace
 {
-	static const float DEFAULT_FOV{ 60.0f };  // ƒfƒtƒHƒ‹ƒg‚Ì‹–ìŠp (Field Of View)
-	static const float DEFAULT_NEAR{ 0.1f };  // ƒfƒtƒHƒ‹ƒg‚Ìƒjƒ„[‹——£
-	static const float DEFAULT_FAR{ 100000.0f };  // ƒfƒtƒHƒ‹ƒg‚Ìƒtƒ@[‹——£
-}
+	static const float DEFAULT_FOV{60.0f};	   // ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®è¦–é‡è§’ (Field Of View)
+	static const float DEFAULT_NEAR{0.1f};	   // ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ‹ãƒ¤ãƒ¼è·é›¢
+	static const float DEFAULT_FAR{100000.0f}; // ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ•ã‚¡ãƒ¼è·é›¢
+} // namespace
 
-mtgb::CameraSystem::CameraSystem() :
-	pTransforms_{},
-	fov_{ DEFAULT_FOV },
-	near_{ DEFAULT_NEAR },
-	far_{ DEFAULT_FAR },
-	hCurrentCamera_{ INVALID_HANDLE },
-	currentFrameId_{0}
+mtgb::CameraSystem::CameraSystem()
+	: pTransforms_{}
+	, fov_{DEFAULT_FOV}
+	, near_{DEFAULT_NEAR}
+	, far_{DEFAULT_FAR}
+	, hCurrentCamera_{INVALID_HANDLE}
+	, currentFrameId_{0}
 {
 }
 
@@ -43,9 +43,9 @@ void mtgb::CameraSystem::Update()
 
 mtgb::CameraHandleInScene mtgb::CameraSystem::RegisterDrawCamera(Transform* pCameraTransform_)
 {
-	CameraHandleInScene handle{ INVALID_HANDLE };
+	CameraHandleInScene handle{INVALID_HANDLE};
 
-	// ‚à‚µƒJƒƒ‰‚ª–¢“o˜^‚È‚ç
+	// ã‚‚ã—ã‚«ãƒ¡ãƒ©ãŒæœªç™»éŒ²ãªã‚‰
 	if (pTransforms_.size() == 0)
 	{
 		handle = 0;
@@ -54,17 +54,17 @@ mtgb::CameraHandleInScene mtgb::CameraSystem::RegisterDrawCamera(Transform* pCam
 		return handle;
 	}
 
-	auto itr{ std::find(pTransforms_.begin(), pTransforms_.end(), pCameraTransform_) };
+	auto itr{std::find(pTransforms_.begin(), pTransforms_.end(), pCameraTransform_)};
 
-	// Œ©‚Â‚©‚ç‚È‚©‚Á‚½
+	// è¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸ
 	if (itr == pTransforms_.end())
 	{
 		handle = static_cast<CameraHandleInScene>(pTransforms_.size());
 		pTransforms_.push_back(pCameraTransform_);
 	}
-	else  // Šù‚É‚ ‚é
+	else // æ—¢ã«ã‚ã‚‹
 	{
-		// ƒCƒ“ƒfƒbƒNƒX‚ğ•Ô‚·
+		// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’è¿”ã™
 		handle = static_cast<CameraHandleInScene>(itr - pTransforms_.begin());
 	}
 
@@ -83,15 +83,14 @@ void mtgb::CameraSystem::UnregisterDrawCamera(const Transform* pCameraTransform_
 		if ((*itr) == pCameraTransform_)
 		{
 			(*itr) = nullptr;
-			return;  // ˆê’v‚µ‚½‚çnullptr‚É‚µ‚Ä‰ñ‹A
+			return; // ä¸€è‡´ã—ãŸã‚‰nullptrã«ã—ã¦å›å¸°
 		}
 	}
 }
 
-
 mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, const WorldToScreenData& _data) const
 {
-	//Vector3 screenPos = DirectX::XMVector3Project(
+	// Vector3 screenPos = DirectX::XMVector3Project(
 	return DirectX::XMVector3Project(
 		_pos,
 		_data.viewport.TopLeftX,
@@ -102,22 +101,22 @@ mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, const WorldT
 		_data.viewport.MaxDepth,
 		_data.projMat,
 		_data.viewMat,
-		DirectX::XMMatrixIdentity());
-	
+		DirectX::XMMatrixIdentity()
+	);
+
 	/*if (screenPos.z < 0.0f || screenPos.z > 1.0f)
 		return Vector2F(-1, -1);
 	return Vector2F(screenPos.x, screenPos.y);*/
-
 }
 
 mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, WindowContext _context)
 {
 	const D3D11_VIEWPORT& viewport = WinCtxRes::Get<Direct3DResource>(_context).GetViewport();
-	CameraHandleInScene hCamera = WinCtxRes::Get<CameraResource>(_context).GetHCamera();
+	CameraHandleInScene hCamera	   = WinCtxRes::Get<CameraResource>(_context).GetHCamera();
 
-	Matrix4x4 projMat,viewMat;
+	Matrix4x4 projMat, viewMat;
 	GetProjMatrix(&projMat);
-	GetViewMatrix(&viewMat,hCamera);
+	GetViewMatrix(&viewMat, hCamera);
 
 	return DirectX::XMVector3Project(
 		_pos,
@@ -129,22 +128,21 @@ mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, WindowContex
 		viewport.MaxDepth,
 		projMat,
 		viewMat,
-		DirectX::XMMatrixIdentity());
-	
-	
-	//return Vector2F(screenPos.x, screenPos.y) * Game::System<Screen>().GetSizeRatio();
+		DirectX::XMMatrixIdentity()
+	);
 
+	// return Vector2F(screenPos.x, screenPos.y) * Game::System<Screen>().GetSizeRatio();
 }
 
 const mtgb::Transform& mtgb::CameraSystem::GetTransform() const
 {
 	/*massert(0 <= hCurrentCamera_ && hCurrentCamera_ < pTransforms_.size()
-		&& "ƒJƒƒ‰ƒnƒ“ƒhƒ‹‚ª–³Œø‚Å‚·B");
+		&& "ã‚«ãƒ¡ãƒ©ãƒãƒ³ãƒ‰ãƒ«ãŒç„¡åŠ¹ã§ã™ã€‚");
 
 	Transform* pTransform{ pTransforms_[hCurrentCamera_] };
 
 	massert(pTransform != nullptr
-		&& "Šù‚É–³Œø‰»‚³‚ê‚½ƒJƒƒ‰‚ªQÆ‚³‚ê‚Ü‚µ‚½B");
+		&& "æ—¢ã«ç„¡åŠ¹åŒ–ã•ã‚ŒãŸã‚«ãƒ¡ãƒ©ãŒå‚ç…§ã•ã‚Œã¾ã—ãŸã€‚");
 
 	return *pTransform;*/
 	return GetTransform(hCurrentCamera_);
@@ -152,13 +150,11 @@ const mtgb::Transform& mtgb::CameraSystem::GetTransform() const
 
 const mtgb::Transform& mtgb::CameraSystem::GetTransform(CameraHandleInScene _hCamera) const
 {
-	massert(0 <= _hCamera && _hCamera < pTransforms_.size()
-		&& "ƒJƒƒ‰ƒnƒ“ƒhƒ‹‚ª–³Œø‚Å‚·B");
+	massert(0 <= _hCamera && _hCamera < pTransforms_.size() && "ã‚«ãƒ¡ãƒ©ãƒãƒ³ãƒ‰ãƒ«ãŒç„¡åŠ¹ã§ã™ã€‚");
 
-	Transform* pTransform{ pTransforms_[_hCamera] };
+	Transform* pTransform{pTransforms_[_hCamera]};
 
-	massert(pTransform != nullptr
-	&& "Šù‚É–³Œø‰»‚³‚ê‚½ƒJƒƒ‰‚ªQÆ‚³‚ê‚Ü‚µ‚½B");
+	massert(pTransform != nullptr && "æ—¢ã«ç„¡åŠ¹åŒ–ã•ã‚ŒãŸã‚«ãƒ¡ãƒ©ãŒå‚ç…§ã•ã‚Œã¾ã—ãŸã€‚");
 
 	return *pTransform;
 }
@@ -170,39 +166,37 @@ const mtgb::Transform& mtgb::CameraSystem::GetTransform(WindowContext _context) 
 
 void mtgb::CameraSystem::GetViewMatrix(Matrix4x4* _pView) const
 {
-	GetViewMatrix(_pView,hCurrentCamera_);
+	GetViewMatrix(_pView, hCurrentCamera_);
 }
 
 void mtgb::CameraSystem::GetViewMatrix(Matrix4x4* _pView, CameraHandleInScene _hCamera) const
 {
-	const Transform& cameraTransform{ GetTransform(_hCamera) };
+	const Transform& cameraTransform{GetTransform(_hCamera)};
 
-	Vector4 vEyePt{ cameraTransform.GetWorldPosition() };  // ƒJƒƒ‰i‹“_jˆÊ’u
-	Vector4 vLookatPt{ cameraTransform.Forward() + vEyePt };  // ’‹ˆÊ’u
-	Vector4 vUpVec{ cameraTransform.Up() };  // ã•ûˆÊ’u
-
+	Vector4 vEyePt{cameraTransform.GetWorldPosition()};				// ã‚«ãƒ¡ãƒ©ï¼ˆè¦–ç‚¹ï¼‰ä½ç½®
+	Vector4 vLookatPt{Vector4(cameraTransform.Forward()) + vEyePt}; // æ³¨è¦–ä½ç½®
+	Vector4 vUpVec{cameraTransform.Up()};							// ä¸Šæ–¹ä½ç½®
 	*_pView = XMMatrixLookAtLH(vEyePt, vLookatPt, vUpVec);
 }
 
 void mtgb::CameraSystem::GetProjMatrix(Matrix4x4* _pProj) const
 {
-	using DirectX::XMMatrixPerspectiveFovLH;
 	using DirectX::XMConvertToRadians;
+	using DirectX::XMMatrixPerspectiveFovLH;
 
-	const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
+	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
 	*_pProj = XMMatrixPerspectiveFovLH(
 		XMConvertToRadians(fov_),
 		static_cast<float>(SCREEN_SIZE.x) / static_cast<float>(SCREEN_SIZE.y),
 		near_,
-		far_);
+		far_
+	);
 }
-
-
 
 void mtgb::CameraSystem::GetPosition(Vector4* _pPosition) const
 {
-	*_pPosition = GetTransform().GetWorldPosition();
+	*_pPosition = Vector4{GetTransform().GetWorldPosition()};
 }
 
 float mtgb::CameraSystem::GetNear() const
@@ -224,27 +218,27 @@ const mtgb::WorldToScreenData& mtgb::CameraSystem::GetWorldToScreenData(WindowCo
 {
 	auto itr = worldToScreenDatas_.find(_context);
 
-	//V‚µ‚­ì¬
+	// æ–°ã—ãä½œæˆ
 	if (itr == worldToScreenDatas_.end())
 	{
 		WorldToScreenData data;
 		CalculateWorldToScreenData(&data, _context);
-		//ì¬‚µ‚½‚à‚Ì‚ğ•Ô‚·
+		// ä½œæˆã—ãŸã‚‚ã®ã‚’è¿”ã™
 		return worldToScreenDatas_.insert(std::make_pair(_context, data)).first->second;
 	}
 	if (currentFrameId_ != itr->second.frameId)
 	{
 		CalculateWorldToScreenData(&itr->second, itr->first);
 	}
-	
+
 	return itr->second;
 }
 
 void mtgb::CameraSystem::CalculateWorldToScreenData(WorldToScreenData* _data, WindowContext _context)
 {
-	_data->frameId = currentFrameId_;
+	_data->frameId	= currentFrameId_;
 	_data->viewport = WinCtxRes::Get<Direct3DResource>(_context).GetViewport();
 
 	GetProjMatrix(&_data->projMat);
-	GetViewMatrix(&_data->viewMat,WinCtxRes::Get<CameraResource>(_context).GetHCamera());
+	GetViewMatrix(&_data->viewMat, WinCtxRes::Get<CameraResource>(_context).GetHCamera());
 }

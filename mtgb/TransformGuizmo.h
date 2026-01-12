@@ -2,11 +2,10 @@
 #include "ImGuiShowable.h"
 #include "Transform.h"
 
-class TransformGuizmo 
+class TransformGuizmo
 {
-public:
-//	TransformGuizmo(Transform* transform);
-	//void ShowImGui() override;
-private:
-	
+  public:
+	//	TransformGuizmo(Transform* transform);
+	// void ShowImGui() override;
+  private:
 };

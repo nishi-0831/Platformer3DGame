@@ -3,16 +3,16 @@
 
 class HighlightEnemy : public mtgb::GameObject
 {
-public:
+  public:
 	HighlightEnemy();
 	~HighlightEnemy();
 
 	void Update() override;
 	void Draw() const override;
 	void Highlight();
-private:
+
+  private:
 	RectDetector firstWndRectDetector_;
 	RectDetector secondWndRectDetector_;
 	ImageHandle highlightFrameImage_;
 };
-

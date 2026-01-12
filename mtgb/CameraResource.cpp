@@ -7,8 +7,8 @@
 #include "CameraSystem.h"
 
 mtgb::CameraResource::CameraResource(WindowContext _windowContext)
-    : WindowContextResource(_windowContext)
-    , hCamera_{INVALID_HANDLE}
+	: WindowContextResource(_windowContext)
+	, hCamera_{INVALID_HANDLE}
 {
 }
 
@@ -18,27 +18,26 @@ mtgb::CameraResource::~CameraResource()
 
 void mtgb::CameraResource::SetResource()
 {
-    // ƒJƒƒ‰ŠÇ—ƒNƒ‰ƒX‚ÉAƒJƒƒ‰‚Ìƒnƒ“ƒhƒ‹‚ğ“o˜^
-    Game::System<CameraSystem>().SetDrawCamera(hCamera_);
+	// ã‚«ãƒ¡ãƒ©ç®¡ç†ã‚¯ãƒ©ã‚¹ã«ã€ã‚«ãƒ¡ãƒ©ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’ç™»éŒ²
+	Game::System<CameraSystem>().SetDrawCamera(hCamera_);
 }
 
 void mtgb::CameraResource::Release()
 {
-
 }
 
 void mtgb::CameraResource::SetHCamera(CameraHandleInScene _hCamera)
 {
-    // ƒJƒƒ‰‚Ìƒnƒ“ƒhƒ‹‚ğó‚¯æ‚é
-    hCamera_ = _hCamera;
+	// ã‚«ãƒ¡ãƒ©ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’å—ã‘å–ã‚‹
+	hCamera_ = _hCamera;
 }
 
 mtgb::CameraHandleInScene mtgb::CameraResource::GetHCamera()
 {
-    return hCamera_;
+	return hCamera_;
 }
 
 bool mtgb::CameraResource::NotRegisterCamera()
 {
-    return hCamera_ == INVALID_HANDLE;
+	return hCamera_ == INVALID_HANDLE;
 }

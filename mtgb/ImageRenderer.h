@@ -14,17 +14,19 @@ namespace mtgb
 	class ImageRendererCP;
 
 	MT_COMPONENT()
-		class ImageRenderer : public IRenderable, public IComponent<ImageRendererCP, ImageRenderer>, public ISerializableObject
+	class ImageRenderer : public IRenderable,
+						  public IComponent<ImageRendererCP, ImageRenderer>,
+						  public ISerializableObject
 	{
-	public:
+	  public:
 		MT_GENERATED_BODY()
-			friend ImageRendererCP;
+		friend ImageRendererCP;
 
 		ImageRenderer();
 		ImageRenderer(EntityId _entityId);
 		ImageRenderer& operator=(const ImageRenderer& _other) = default;
 
-		// IRenderable ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
+		// IRenderable ã‚’ä»‹ã—ã¦ç¶™æ‰¿ã•ã‚Œã¾ã—ãŸ
 		void Render() const override;
 
 		bool CanRender() const override;
@@ -40,4 +42,4 @@ namespace mtgb
 		GameObjectLayerFlag layer_;
 		Color color_;
 	};
-}
+} // namespace mtgb

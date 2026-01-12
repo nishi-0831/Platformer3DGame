@@ -12,19 +12,26 @@ mtgb::ComponentRegistry::ComponentRegistry()
 {
 }
 
-void mtgb::ComponentRegistry::RegisterComponentIndex(EntityId _entityId, const std::type_index& _typeIndex, size_t _componentIndex)
+void mtgb::ComponentRegistry::RegisterComponentIndex(
+	EntityId _entityId,
+	const std::type_index& _typeIndex,
+	size_t _componentIndex
+)
 {
 	componentIndices_[_entityId][_typeIndex] = _componentIndex;
 }
 
-std::optional<size_t> mtgb::ComponentRegistry::GetComponentIndex(EntityId _entityId, const std::type_index& _componentTypeIndex)
+std::optional<size_t> mtgb::ComponentRegistry::GetComponentIndex(
+	EntityId _entityId,
+	const std::type_index& _componentTypeIndex
+)
 {
-	// EntityId‚ÉŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚éƒRƒ“ƒ|[ƒlƒ“ƒg:ƒCƒ“ƒfƒbƒNƒX‚Ìƒ}ƒbƒv‚ğæ“¾
+	// EntityIdã«å‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ:ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ãƒãƒƒãƒ—ã‚’å–å¾—
 	auto entityItr = componentIndices_.find(_entityId);
 	if (entityItr == componentIndices_.end())
 		return std::nullopt;
 
-	// ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌƒCƒ“ƒfƒbƒNƒX‚ğæ“¾
+	// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’å–å¾—
 	auto indexItr = entityItr->second.find(_componentTypeIndex);
 	if (indexItr == entityItr->second.end())
 		return std::nullopt;
@@ -52,10 +59,10 @@ void mtgb::ComponentRegistry::UnRegisterComponent(mtgb::EntityId _entityId, cons
 	auto itr = entityComponents_.find(_entityId);
 	if (itr != entityComponents_.end())
 	{
-		// ƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚È‚¢‚Æ‚¢‚¤”»’è‚É‚·‚é
+		// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒå‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ãªã„ã¨ã„ã†åˆ¤å®šã«ã™ã‚‹
 		itr->second.erase(_typeIndex);
 
-		// Entity ‚ÉƒRƒ“ƒ|[ƒlƒ“ƒg‚ªˆê‚Â‚àŠ„‚è“–‚Ä‚ç‚ê‚Ä‚È‚¢‚È‚çíœ
+		// Entity ã«ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒä¸€ã¤ã‚‚å‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ãªã„ãªã‚‰å‰Šé™¤
 		if (itr->second.empty())
 		{
 			entityComponents_.erase(itr);
@@ -65,7 +72,7 @@ void mtgb::ComponentRegistry::UnRegisterComponent(mtgb::EntityId _entityId, cons
 
 void mtgb::ComponentRegistry::ClearEntity(mtgb::EntityId _entityId)
 {
-	// ‘S‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚È‚¢‚Æ‚¢‚¤”»’è‚É‚·‚é
+	// å…¨ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒå‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ãªã„ã¨ã„ã†åˆ¤å®šã«ã™ã‚‹
 	entityComponents_[_entityId].clear();
 }
 
@@ -101,7 +108,7 @@ std::optional<std::vector<std::type_index>> mtgb::ComponentRegistry::GetComponen
 	auto componentTypes = entityComponents_.find(_entityId);
 	if (componentTypes == entityComponents_.end())
 		return std::nullopt;
-	
+
 	for (const std::type_index& componentType : componentTypes->second)
 	{
 		if (auto itr = componentTypeToPoolTypeMap_.find(componentType); itr != componentTypeToPoolTypeMap_.end())
@@ -109,17 +116,19 @@ std::optional<std::vector<std::type_index>> mtgb::ComponentRegistry::GetComponen
 			componentPoolTypes.push_back(itr->second);
 		}
 	}
-	
+
 	return componentPoolTypes;
 }
 
-std::optional<std::reference_wrapper<const std::set<std::type_index>>> mtgb::ComponentRegistry::GetComponentTypes(EntityId _entityId)
+std::optional<std::reference_wrapper<const std::set<std::type_index>>> mtgb::ComponentRegistry::GetComponentTypes(
+	EntityId _entityId
+)
 {
 	auto itr = entityComponents_.find(_entityId);
 
 	if (itr == entityComponents_.end())
 		return std::nullopt;
-	
+
 	return std::cref(itr->second);
 }
 
@@ -138,6 +147,6 @@ std::optional<std::set<std::type_index>> mtgb::ComponentRegistry::GetComponentTy
 	if (components.empty())
 		return std::nullopt;
 
-	// –¾¦“I‚Éƒ€[ƒu‚·‚é
+	// æ˜ç¤ºçš„ã«ãƒ ãƒ¼ãƒ–ã™ã‚‹
 	return std::optional<std::set<std::type_index>>(std::move(components));
 }

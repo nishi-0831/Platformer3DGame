@@ -9,11 +9,11 @@ namespace mtgb
 
 	class RigidBodyCP : public ComponentPool<RigidBody, RigidBodyCP>
 	{
-	public:
+	  public:
 		RigidBodyCP();
 		RigidBodyCP(const RigidBodyCP&) = default;
 		~RigidBodyCP();
 
 		void Update() override;
 	};
-}
+} // namespace mtgb

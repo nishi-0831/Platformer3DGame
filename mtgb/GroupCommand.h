@@ -3,10 +3,10 @@
 #include <string>
 namespace mtgb
 {
-	
-	class GroupCommand : public Command 
+
+	class GroupCommand : public Command
 	{
-	public:
+	  public:
 		GroupCommand();
 		~GroupCommand();
 		void Execute() override;
@@ -16,11 +16,12 @@ namespace mtgb
 		EntityId GetCommandTargetEntityId() const override;
 		void ExecuteCommand(Command* _pCommand);
 		void SetGroupName(std::string _name);
-	private:
+
+	  private:
 		std::string commandName_;
 		unsigned int undoCounter_;
 		unsigned int redoCounter_;
 		CommandHistory commandHistoryManager_;
 	};
 
-}
+} // namespace mtgb

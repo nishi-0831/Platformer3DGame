@@ -11,22 +11,23 @@ namespace mtgb
 	enum class CameraOperation
 	{
 		Track,
-		Dolly, // ƒJƒƒ‰‚ğ¶‰E‚ÉˆÚ“®
-		Pan,	// ƒJƒƒ‰©g‚ğ²‚Æ‚µ‚Ä‰ñ“]
-		Orbit	// ƒ^[ƒQƒbƒg‚ğ²‚Æ‚µ‚Ä‰ñ“]
+		Dolly, // ã‚«ãƒ¡ãƒ©ã‚’å·¦å³ã«ç§»å‹•
+		Pan,   // ã‚«ãƒ¡ãƒ©è‡ªèº«ã‚’è»¸ã¨ã—ã¦å›è»¢
+		Orbit  // ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’è»¸ã¨ã—ã¦å›è»¢
 	};
-	class ImGuiEditorCamera : public ImGuiShowable ,public ISystem , public ICamera
+	class ImGuiEditorCamera : public ImGuiShowable, public ISystem, public ICamera
 	{
-	public:
+	  public:
 		ImGuiEditorCamera();
 		~ImGuiEditorCamera();
 		void ShowImGui() override;
 		void Initialize() override;
 		void SetCamera();
-		
+
 		void Update() override;
 		void CreateCamera();
-	private:
+
+	  private:
 		void DoDolly();
 		void DoPan();
 		void DoTrack();
@@ -40,4 +41,4 @@ namespace mtgb
 
 		std::string windowName_;
 	};
-}
+} // namespace mtgb

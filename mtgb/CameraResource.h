@@ -4,41 +4,41 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ƒEƒBƒ“ƒhƒE‚²‚Æ‚ÉŠ„‚è“–‚Ä‚ç‚ê‚½ƒJƒƒ‰
+	/// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã”ã¨ã«å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸã‚«ãƒ¡ãƒ©
 	/// </summary>
 	class CameraResource : public WindowContextResource
 	{
-	public:
+	  public:
 		explicit CameraResource(WindowContext _windowContext);
 		~CameraResource();
-		
+
 		void Release() override;
 		/// <summary>
-		/// ƒJƒƒ‰‚ğØ‚è‘Ö‚¦‚é
+		/// ã‚«ãƒ¡ãƒ©ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
 		/// </summary>
 		void SetResource() override;
 
 		/// <summary>
-		/// ƒJƒƒ‰‚Ìƒnƒ“ƒhƒ‹‚ğƒZƒbƒg‚·‚é
+		/// ã‚«ãƒ¡ãƒ©ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		/// </summary>
 		/// <param name="_hCamera"></param>
 		void SetHCamera(CameraHandleInScene _hCamera);
 		/// <summary>
-		///  Š„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚éƒJƒƒ‰‚Ìƒnƒ“ƒhƒ‹‚ğ•Ô‚·
+		///  å‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚‹ã‚«ãƒ¡ãƒ©ã®ãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™
 		/// </summary>
 		/// <returns></returns>
 		CameraHandleInScene GetHCamera();
 		/// <summary>
-		/// <para> ƒJƒƒ‰‚Ìƒnƒ“ƒhƒ‹‚ª–¢“o˜^‚©”Û‚© </para>
+		/// <para> ã‚«ãƒ¡ãƒ©ã®ãƒãƒ³ãƒ‰ãƒ«ãŒæœªç™»éŒ²ã‹å¦ã‹ </para>
 		/// </summary>
-		/// <returns>–¢“o˜^‚Ìê‡trueA“o˜^Ï‚İ‚Ìê‡false</returns>
+		/// <returns>æœªç™»éŒ²ã®å ´åˆtrueã€ç™»éŒ²æ¸ˆã¿ã®å ´åˆfalse</returns>
 		bool NotRegisterCamera();
-	private:
+
+	  private:
 		CameraHandleInScene hCamera_;
 
-		// ƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÆƒRƒs[‘ã“ü‰‰Zq‚ğíœ
-		CameraResource(const CameraResource&) = delete;
+		// ã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã¨ã‚³ãƒ”ãƒ¼ä»£å…¥æ¼”ç®—å­ã‚’å‰Šé™¤
+		CameraResource(const CameraResource&)			 = delete;
 		CameraResource& operator=(const CameraResource&) = delete;
-
 	};
-}
+} // namespace mtgb

@@ -10,20 +10,24 @@ mtgb::Direct3DResource::Direct3DResource(WindowContext _windowContext)
 	, pDepthStencil_{nullptr}
 	, pDepthStencilView_{nullptr}
 {
-	// DirectX11Manager ‚ÉƒAƒNƒZƒX
+	// DirectX11Manager ã«ã‚¢ã‚¯ã‚»ã‚¹
 	auto& dx11Manager = Game::System<DirectX11Manager>();
 
 	DXGIResource& dxgi = Game::System<WindowContextResourceManager>().Get<DXGIResource>(_windowContext);
 
-	// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒgƒrƒ…[‚ðì¬
+	// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆãƒ“ãƒ¥ãƒ¼ã‚’ä½œæˆ
 	dx11Manager.CreateRenderTargetView(dxgi.pSwapChain1_.Get(), pRenderTargetView_.ReleaseAndGetAddressOf());
 
-	// ƒrƒ…[ƒ|[ƒg‚ðì¬
-	const Vector2Int SCREEN_SIZE{ Game::System<WindowManager>().GetWindowSize(_windowContext)};
+	// ãƒ“ãƒ¥ãƒ¼ãƒãƒ¼ãƒˆã‚’ä½œæˆ
+	const Vector2Int SCREEN_SIZE{Game::System<WindowManager>().GetWindowSize(_windowContext)};
 	dx11Manager.CreateViewport(SCREEN_SIZE, viewPort_);
 
-	// [“xƒXƒeƒ“ƒVƒ‹‚Æ[“xƒXƒeƒ“ƒVƒ‹ƒrƒ…[‚ðì¬
-	dx11Manager.CreateDepthStencilAndDepthStencilView(SCREEN_SIZE, pDepthStencil_.ReleaseAndGetAddressOf(), pDepthStencilView_.ReleaseAndGetAddressOf());	
+	// æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã¨æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ“ãƒ¥ãƒ¼ã‚’ä½œæˆ
+	dx11Manager.CreateDepthStencilAndDepthStencilView(
+		SCREEN_SIZE,
+		pDepthStencil_.ReleaseAndGetAddressOf(),
+		pDepthStencilView_.ReleaseAndGetAddressOf()
+	);
 }
 
 mtgb::Direct3DResource::~Direct3DResource()
@@ -33,33 +37,37 @@ mtgb::Direct3DResource::~Direct3DResource()
 
 void mtgb::Direct3DResource::SetResource()
 {
-	DirectX11Manager& dx11Manager{ Game::System<DirectX11Manager>() };
+	DirectX11Manager& dx11Manager{Game::System<DirectX11Manager>()};
 	dx11Manager.ChangeViewport(viewPort_);
 	dx11Manager.ChangeRenderTargets(pRenderTargetView_, pDepthStencilView_);
 }
 
 void mtgb::Direct3DResource::Reset()
 {
-	// ƒŠƒ\[ƒX‚ð‰ð•ú‚·‚é
+	// ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾ã™ã‚‹
 	Release();
 }
 
 void mtgb::Direct3DResource::OnResize(UINT _width, UINT _height)
 {
-	// DirectX11Manager ‚ÉƒAƒNƒZƒX
+	// DirectX11Manager ã«ã‚¢ã‚¯ã‚»ã‚¹
 	auto& dx11Manager = Game::System<DirectX11Manager>();
 
 	DXGIResource& dxgi = Game::System<WindowContextResourceManager>().Get<DXGIResource>(windowContext_);
 
-	// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒgƒrƒ…[‚ðì¬
+	// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆãƒ“ãƒ¥ãƒ¼ã‚’ä½œæˆ
 	dx11Manager.CreateRenderTargetView(dxgi.pSwapChain1_.Get(), pRenderTargetView_.ReleaseAndGetAddressOf());
 
-	// ƒrƒ…[ƒ|[ƒg‚ðì¬
-	const Vector2Int SCREEN_SIZE{ static_cast<int>(_width),static_cast<int>(_height) };
+	// ãƒ“ãƒ¥ãƒ¼ãƒãƒ¼ãƒˆã‚’ä½œæˆ
+	const Vector2Int SCREEN_SIZE{static_cast<int>(_width), static_cast<int>(_height)};
 	dx11Manager.CreateViewport(SCREEN_SIZE, viewPort_);
 
-	// [“xƒXƒeƒ“ƒVƒ‹‚Æ[“xƒXƒeƒ“ƒVƒ‹ƒrƒ…[‚ðì¬
-	dx11Manager.CreateDepthStencilAndDepthStencilView(SCREEN_SIZE, pDepthStencil_.ReleaseAndGetAddressOf(), pDepthStencilView_.ReleaseAndGetAddressOf());
+	// æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã¨æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ“ãƒ¥ãƒ¼ã‚’ä½œæˆ
+	dx11Manager.CreateDepthStencilAndDepthStencilView(
+		SCREEN_SIZE,
+		pDepthStencil_.ReleaseAndGetAddressOf(),
+		pDepthStencilView_.ReleaseAndGetAddressOf()
+	);
 }
 
 void mtgb::Direct3DResource::Release()
@@ -73,5 +81,3 @@ const D3D11_VIEWPORT& mtgb::Direct3DResource::GetViewport()
 {
 	return viewPort_;
 }
-
-

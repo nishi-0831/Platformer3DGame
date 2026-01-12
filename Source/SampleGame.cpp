@@ -5,8 +5,7 @@
 #include "StageEditScene.h"
 #include "CommandHistoryManager.h"
 #include "ActorManager.h"
-#pragma region ゲーム側で追加
-
+#pragma region 繧ｲ繝ｼ繝蛛ｴ縺ｧ霑ｽ蜉
 
 #pragma endregion
 
@@ -16,7 +15,6 @@ using namespace mtgb;
 
 SampleGame::SampleGame()
 {
-	
 }
 
 SampleGame::~SampleGame()
@@ -34,7 +32,6 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 
 	Game::Set<RenderSystem>(SystemUpdateType::DontCallMe);
 	Game::Set<AssetsManager>(SystemUpdateType::DontCallMe);
-	
 
 	Game::Set<Screen>(SystemUpdateType::DontCallMe);
 	Game::Set<WindowManager>(SystemUpdateType::Cycle);
@@ -44,26 +41,21 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<DirectWrite>(SystemUpdateType::Frame);
 	Game::Set<Input>(SystemUpdateType::DontCallMe);
 
-
 	Game::Set<WindowContextResourceManager>(SystemUpdateType::DontCallMe);
-	Game::System<WindowContextResourceManager>().RegisterResourceTypes<
-		WindowResource,
-		DXGIResource,
-		Direct3DResource,
-		Direct2DResource,
-		InputResource,
-		CameraResource
-	>();
+	Game::System<WindowContextResourceManager>()
+		.RegisterResourceTypes<
+			WindowResource,
+			DXGIResource,
+			Direct3DResource,
+			Direct2DResource,
+			InputResource,
+			CameraResource>();
 
 	Game::Set<SingleWindow>(SystemUpdateType::Frame);
 	Game::Set<CameraSystem>(SystemUpdateType::Frame);
 
-
 	Game::Set<ImGuiRenderer>(SystemUpdateType::Frame);
 	Game::Set<ScoreManager>(SystemUpdateType::Frame);
-
-
-	
 
 	Game::Set<Debug>(SystemUpdateType::Cycle);
 
@@ -77,12 +69,11 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<MeshRendererCP>(SystemUpdateType::DontCallMe);
 	Game::Set<RigidBodyCP>(SystemUpdateType::Frame);
 	Game::Set<ColliderCP>(SystemUpdateType::Frame);
-	Game::Set<AudioPlayerCP>(SystemUpdateType::Frame);
 	Game::Set<InterpolatorCP>(SystemUpdateType::Frame);
 	Game::Set<ImageRendererCP>(SystemUpdateType::Frame);
 	Game::Set<TextRendererCP>(SystemUpdateType::Frame);
 
-	Game::Set<CommandHistoryManager>(SystemUpdateType::DontCallMe);
+	Game::Set<CommandHistoryManager>(SystemUpdateType::Frame);
 	Game::Set<Draw>(SystemUpdateType::DontCallMe);
 	Game::Set<EventManager>(SystemUpdateType::DontCallMe);
 	Game::Set<StageManger>(SystemUpdateType::DontCallMe);
@@ -92,11 +83,11 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<EffectManager>(SystemUpdateType::Frame);
 	Game::Set<ActorManager>(SystemUpdateType::DontCallMe);
 	Game::Set<SceneSystem>(SystemUpdateType::Frame);
-	// 開始時のシーン
-	//Game::System<SceneSystem>().Move<PlayScene>();
-	//Game::System<SceneSystem>().Move<CheckTutorialScene>();
+	// 髢句ｧ区凾縺ｮ繧ｷ繝ｼ繝ｳ
+	// Game::System<SceneSystem>().Move<PlayScene>();
+	// Game::System<SceneSystem>().Move<CheckTutorialScene>();
 #if TO_TEST_SCENE
-	Game::System<SceneSystem>().Move<TitleScene>();
+	Game::System<SceneSystem>().Move<StageEditScene>();
 #else
 #endif
 

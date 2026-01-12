@@ -7,7 +7,6 @@
 #include <dxgi.h>
 #include <DirectXMath.h>
 #include "ImGuiRenderer.h"
-#include "MainWindow.h"
 #include "Screen.h"
 #include "Vector3.h"
 #include <d3dcompiler.h>
@@ -34,26 +33,31 @@ void mtgb::DirectX11Manager::Initialize()
 
 void mtgb::DirectX11Manager::Update()
 {
-	//MTImGui::Instance().DirectShow([this]() {
-	//		for (auto& desc : adaptersDesc_)
-	//		{
-	//			ImGui::PushID(&desc);
-	//			TypeRegistry::Instance().CallFunc(&desc, "AdapterDesc");
-	//			ImGui::PopID();
-	//			ImGui::Separator();
-	//		}
+	MTImGui::Instance().DirectShow(
+		[this]()
+		{
+			for (auto& desc : adaptersDesc_)
+			{
+				ImGui::PushID(&desc);
+				TypeRegistry::Instance().CallFunc(&desc, "AdapterDesc");
+				ImGui::PopID();
+				ImGui::Separator();
+			}
 
-	//		// ƒ‚ƒjƒ^[(DXGIOutput)‚Ìî•ñ
-	//		for (auto& monitorInfo : DirectX11Draw::monitorInfos_)
-	//		{
-	//			ImGui::PushID(&monitorInfo);
-	//			ImGui::LabelText("adapterIndex", "%d", monitorInfo.adapterIndex);
-	//			ImGui::LabelText("outputIndex","%d", monitorInfo.outputIndex);
-	//			TypeRegistry::Instance().CallFunc(&monitorInfo.desc, "OutputDesc");
-	//			ImGui::PopID();
-	//			ImGui::Separator();
-	//		}
-	//	}, "Adapter,OutputDesc", ShowType::Settings);
+			// ãƒ¢ãƒ‹ã‚¿ãƒ¼(DXGIOutput)ã®æƒ…å ±
+			for (auto& monitorInfo : DirectX11Draw::monitorInfos_)
+			{
+				ImGui::PushID(&monitorInfo);
+				ImGui::LabelText("adapterIndex", "%d", monitorInfo.adapterIndex);
+				ImGui::LabelText("outputIndex", "%d", monitorInfo.outputIndex);
+				TypeRegistry::Instance().CallFunc(&monitorInfo.desc, "OutputDesc");
+				ImGui::PopID();
+				ImGui::Separator();
+			}
+		},
+		"Adapter,OutputDesc",
+		ShowType::Settings
+	);
 }
 
 void mtgb::DirectX11Manager::InitializeCommonResources()
@@ -63,17 +67,18 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 	STARTUPINFO startupInfo{};
 	GetStartupInfo(&startupInfo);
 	int nCmdShow = startupInfo.wShowWindow;
-	
+
 	D3D_FEATURE_LEVEL level{};
 
-	massert(SUCCEEDED(hResult)
-		&& "QueryInterface‚É¸”s @DirectX11Manager::InitializeCommonResources");
+	massert(SUCCEEDED(hResult) && "QueryInterfaceã«å¤±æ•— @DirectX11Manager::InitializeCommonResources");
 
-	hResult = CreateDXGIFactory1(_uuidof(IDXGIFactory2), reinterpret_cast<void**>(DirectX11Draw::pDXGIFactory_.ReleaseAndGetAddressOf()));
-	massert(SUCCEEDED(hResult)
-		&& "CreateDXGIFactory1‚É¸”s @DirectX11Manager::InitializeCommonResources");
+	hResult = CreateDXGIFactory1(
+		_uuidof(IDXGIFactory2),
+		reinterpret_cast<void**>(DirectX11Draw::pDXGIFactory_.ReleaseAndGetAddressOf())
+	);
+	massert(SUCCEEDED(hResult) && "CreateDXGIFactory1ã«å¤±æ•— @DirectX11Manager::InitializeCommonResources");
 
-	UINT i = 0;
+	UINT i						   = 0;
 	ComPtr<IDXGIAdapter1> pAdapter = nullptr;
 	while (DirectX11Draw::pDXGIFactory_->EnumAdapters1(i, pAdapter.GetAddressOf()) != DXGI_ERROR_NOT_FOUND)
 	{
@@ -84,8 +89,8 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 		pAdapter->GetDesc1(&desc);
 		adaptersDesc_.push_back(desc);
 	}
-	
-	EnumAvailableMonitors(); // ƒ‚ƒjƒ^[‚Ì—ñ‹“
+
+	EnumAvailableMonitors(); // ãƒ¢ãƒ‹ã‚¿ãƒ¼ã®åˆ—æŒ™
 
 	hResult = D3D11CreateDevice(
 		nullptr,
@@ -99,108 +104,111 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 		&level,
 		DirectX11Draw::pContext_.ReleaseAndGetAddressOf()
 	);
-	massert(SUCCEEDED(hResult)
-	 && "D3D11CreateDevice‚É¸”s @DirectX11Manager::InitializeCommonResources");
+	massert(SUCCEEDED(hResult) && "D3D11CreateDeviceã«å¤±æ•— @DirectX11Manager::InitializeCommonResources");
 
-	hResult = DirectX11Draw::pDevice_->QueryInterface(_uuidof(IDXGIDevice1), (void**)DirectX11Draw::pDXGIDevice_.ReleaseAndGetAddressOf());
+	hResult = DirectX11Draw::pDevice_->QueryInterface(
+		_uuidof(IDXGIDevice1),
+		(void**)DirectX11Draw::pDXGIDevice_.ReleaseAndGetAddressOf()
+	);
 
-	InitializeShaderBundle();  // ƒVƒF[ƒ_ƒoƒ“ƒhƒ‹‚Ì‰Šú‰»
+	InitializeShaderBundle(); // ã‚·ã‚§ãƒ¼ãƒ€ãƒãƒ³ãƒ‰ãƒ«ã®åˆæœŸåŒ–
 
-	const D3D11_SAMPLER_DESC SAMPLER_DESC
-	{
-		.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR,
+	const D3D11_SAMPLER_DESC SAMPLER_DESC{
+		.Filter	  = D3D11_FILTER_MIN_MAG_MIP_LINEAR,
 		.AddressU = D3D11_TEXTURE_ADDRESS_WRAP,
 		.AddressV = D3D11_TEXTURE_ADDRESS_WRAP,
 		.AddressW = D3D11_TEXTURE_ADDRESS_WRAP,
 	};
 
-	hResult = DirectX11Draw::pDevice_->CreateSamplerState(&SAMPLER_DESC, DirectX11Draw::pDefaultSamplerState_.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult)
-		&& "ƒfƒtƒHƒ‹ƒg‚ÌƒTƒ“ƒvƒ‰ì¬‚É¸”s @DirectX11Manager::InitializeCommonResources");
-#pragma region [“xƒXƒeƒ“ƒVƒ‹ƒXƒe[ƒgì¬
+	hResult = DirectX11Draw::pDevice_->CreateSamplerState(
+		&SAMPLER_DESC,
+		DirectX11Draw::pDefaultSamplerState_.ReleaseAndGetAddressOf()
+	);
+	massert(SUCCEEDED(hResult) && "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚µãƒ³ãƒ—ãƒ©ä½œæˆã«å¤±æ•— @DirectX11Manager::InitializeCommonResources");
+#pragma region æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã‚¹ãƒ†ãƒ¼ãƒˆä½œæˆ
 
-	// BlendMode::Default‚Ìì¬
-	D3D11_DEPTH_STENCIL_DESC DEPTH_STENCIL_DESC
-	{
-		.DepthEnable = TRUE,	//[“xƒeƒXƒg‚ğs‚¤‚©‚Ç‚¤‚©
-		.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ALL,
-		.DepthFunc = D3D11_COMPARISON_LESS_EQUAL, // [“x‚Ì”äŠr•û–@ : LESS_EQUAL‚Í[“x‚ªŒ³ƒf[ƒ^ˆÈ‰º‚Ìê‡‚É¬Œ÷
-		.StencilEnable = TRUE,  //ƒXƒeƒ“ƒVƒ‹ƒeƒXƒg‚ğs‚¤‚©‚Ç‚¤‚©
-		.StencilReadMask = {},
+	// BlendMode::Defaultã®ä½œæˆ
+	D3D11_DEPTH_STENCIL_DESC DEPTH_STENCIL_DESC{
+		.DepthEnable	  = TRUE, // æ·±åº¦ãƒ†ã‚¹ãƒˆã‚’è¡Œã†ã‹ã©ã†ã‹
+		.DepthWriteMask	  = D3D11_DEPTH_WRITE_MASK_ALL,
+		.DepthFunc		  = D3D11_COMPARISON_LESS_EQUAL, // æ·±åº¦ã®æ¯”è¼ƒæ–¹æ³• : LESS_EQUALã¯æ·±åº¦ãŒå…ƒãƒ‡ãƒ¼ã‚¿ä»¥ä¸‹ã®å ´åˆã«æˆåŠŸ
+		.StencilEnable	  = TRUE,						 // ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ†ã‚¹ãƒˆã‚’è¡Œã†ã‹ã©ã†ã‹
+		.StencilReadMask  = {},
 		.StencilWriteMask = {},
-		.FrontFace // ƒJƒƒ‰‚ğŒü‚¢‚Ä‚¢‚éƒsƒNƒZƒ‹‚Ì[“xAƒXƒeƒ“ƒVƒ‹ƒeƒXƒg‚ÌŒ‹‰Ê‚É‘Î‚·‚é‘€ì‚ğw’è
+		.FrontFace // ã‚«ãƒ¡ãƒ©ã‚’å‘ã„ã¦ã„ã‚‹ãƒ”ã‚¯ã‚»ãƒ«ã®æ·±åº¦ã€ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ†ã‚¹ãƒˆã®çµæœã«å¯¾ã™ã‚‹æ“ä½œã‚’æŒ‡å®š
 		{
-			.StencilFailOp = D3D11_STENCIL_OP_KEEP, // ƒXƒeƒ“ƒVƒ‹ƒeƒXƒg¸”s
-			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP, // ƒXƒeƒ“ƒVƒ‹ƒeƒXƒg¬Œ÷A[“xƒeƒXƒg¸”s
-			.StencilPassOp = D3D11_STENCIL_OP_KEEP, // [“xAƒXƒeƒ“ƒVƒ‹‚Ì—¼•û‚ÌƒeƒXƒg‚É¬Œ÷
-			.StencilFunc = D3D11_COMPARISON_ALWAYS, // ƒXƒeƒ“ƒVƒ‹ƒf[ƒ^‚ÆŠù‘¶‚ÌƒXƒeƒ“ƒVƒ‹ƒf[ƒ^‚ğ”äŠr‚·‚éŠÖ”(Œö®‚Ì‚ğƒRƒsƒy)
+			.StencilFailOp		= D3D11_STENCIL_OP_KEEP, // ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ†ã‚¹ãƒˆå¤±æ•—æ™‚
+			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP, // ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ†ã‚¹ãƒˆæˆåŠŸã€æ·±åº¦ãƒ†ã‚¹ãƒˆå¤±æ•—æ™‚
+			.StencilPassOp		= D3D11_STENCIL_OP_KEEP, // æ·±åº¦ã€ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã®ä¸¡æ–¹ã®ãƒ†ã‚¹ãƒˆã«æˆåŠŸæ™‚
+			.StencilFunc =
+				D3D11_COMPARISON_ALWAYS, // ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ‡ãƒ¼ã‚¿ã¨æ—¢å­˜ã®ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚’æ¯”è¼ƒã™ã‚‹é–¢æ•°(å…¬å¼ã®ã‚’ã‚³ãƒ”ãƒš)
 		},
-		.BackFace // ƒJƒƒ‰‚ğŒü‚¢‚Ä‚¢‚È‚¢ƒsƒNƒZƒ‹‚Ì[“xAƒXƒeƒ“ƒVƒ‹ƒeƒXƒg‚ÌŒ‹‰Ê‚É‘Î‚·‚é‘€ì‚ğw’è
+		.BackFace // ã‚«ãƒ¡ãƒ©ã‚’å‘ã„ã¦ã„ãªã„ãƒ”ã‚¯ã‚»ãƒ«ã®æ·±åº¦ã€ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ†ã‚¹ãƒˆã®çµæœã«å¯¾ã™ã‚‹æ“ä½œã‚’æŒ‡å®š
 		{
-			.StencilFailOp = D3D11_STENCIL_OP_KEEP,
+			.StencilFailOp		= D3D11_STENCIL_OP_KEEP,
 			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-			.StencilPassOp = D3D11_STENCIL_OP_KEEP,
-			.StencilFunc = D3D11_COMPARISON_ALWAYS,
+			.StencilPassOp		= D3D11_STENCIL_OP_KEEP,
+			.StencilFunc		= D3D11_COMPARISON_ALWAYS,
 		}
 	};
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
-		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::Default)].ReleaseAndGetAddressOf());
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::Default)].ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult)  // [“xƒXƒeƒ“ƒVƒ‹ƒXƒe[ƒg‚Ìì¬‚É¬Œ÷
-		&& "BlendMode::Default‚Ì[“xƒXƒeƒ“ƒVƒ‹ƒXƒe[ƒg‚Ìì¬‚É¸”s @DirectX11Manager::InitializeCommonResources");
+	massert(
+		SUCCEEDED(hResult) // æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã‚¹ãƒ†ãƒ¼ãƒˆã®ä½œæˆã«æˆåŠŸ
+		&& "BlendMode::Defaultã®æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã‚¹ãƒ†ãƒ¼ãƒˆã®ä½œæˆã«å¤±æ•— @DirectX11Manager::InitializeCommonResources"
+	);
 
-	// BlendMode::Sprite‚Ìì¬
-	DEPTH_STENCIL_DESC =
-	{
-		.DepthEnable = FALSE,	//[“xƒeƒXƒg‚ğs‚¤‚©‚Ç‚¤‚©
-		.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ZERO,
-		.DepthFunc = D3D11_COMPARISON_LESS_EQUAL,
-		.StencilEnable = FALSE,  //ƒXƒeƒ“ƒVƒ‹ƒeƒXƒg‚ğs‚¤‚©‚Ç‚¤‚©
-		.StencilReadMask = {},
+	// BlendMode::Spriteã®ä½œæˆ
+	DEPTH_STENCIL_DESC = {
+		.DepthEnable	  = FALSE, // æ·±åº¦ãƒ†ã‚¹ãƒˆã‚’è¡Œã†ã‹ã©ã†ã‹
+		.DepthWriteMask	  = D3D11_DEPTH_WRITE_MASK_ZERO,
+		.DepthFunc		  = D3D11_COMPARISON_LESS_EQUAL,
+		.StencilEnable	  = FALSE, // ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ†ã‚¹ãƒˆã‚’è¡Œã†ã‹ã©ã†ã‹
+		.StencilReadMask  = {},
 		.StencilWriteMask = {},
-		.FrontFace
-		{
-			.StencilFailOp = D3D11_STENCIL_OP_KEEP,
+		.FrontFace{
+			.StencilFailOp		= D3D11_STENCIL_OP_KEEP,
 			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-			.StencilPassOp = D3D11_STENCIL_OP_KEEP,
-			.StencilFunc = D3D11_COMPARISON_ALWAYS,
+			.StencilPassOp		= D3D11_STENCIL_OP_KEEP,
+			.StencilFunc		= D3D11_COMPARISON_ALWAYS,
 		},
-		.BackFace
-		{
-			.StencilFailOp = D3D11_STENCIL_OP_KEEP,
+		.BackFace{
+			.StencilFailOp		= D3D11_STENCIL_OP_KEEP,
 			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-			.StencilPassOp = D3D11_STENCIL_OP_KEEP,
-			.StencilFunc = D3D11_COMPARISON_ALWAYS,
+			.StencilPassOp		= D3D11_STENCIL_OP_KEEP,
+			.StencilFunc		= D3D11_COMPARISON_ALWAYS,
 		}
 	};
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
-		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::Sprite)].ReleaseAndGetAddressOf());
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::Sprite)].ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult)  // [“xƒXƒeƒ“ƒVƒ‹ƒXƒe[ƒg‚Ìì¬‚É¬Œ÷
-		&& "BlendMode::Sprite‚Ì[“xƒXƒeƒ“ƒVƒ‹ƒXƒe[ƒg‚Ìì¬‚É¸”s @DirectX11Manager::InitializeCommonResources");
+	massert(
+		SUCCEEDED(hResult) // æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã‚¹ãƒ†ãƒ¼ãƒˆã®ä½œæˆã«æˆåŠŸ
+		&& "BlendMode::Spriteã®æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã‚¹ãƒ†ãƒ¼ãƒˆã®ä½œæˆã«å¤±æ•— @DirectX11Manager::InitializeCommonResources"
+	);
 #pragma endregion
-#pragma region ƒuƒŒƒ“ƒhƒXƒe[ƒgì¬
+#pragma region ãƒ–ãƒ¬ãƒ³ãƒ‰ã‚¹ãƒ†ãƒ¼ãƒˆä½œæˆ
 
-	// BlendMode::Default‚Ìì¬
-	const D3D11_BLEND_DESC BLEND_DESC
-	{
-		.AlphaToCoverageEnable = FALSE,
+	// BlendMode::Defaultã®ä½œæˆ
+	const D3D11_BLEND_DESC BLEND_DESC{
+		.AlphaToCoverageEnable	= FALSE,
 		.IndependentBlendEnable = FALSE,
-		.RenderTarget
-		{
-			D3D11_RENDER_TARGET_BLEND_DESC
-			{
-				.BlendEnable = TRUE,
-				.SrcBlend = D3D11_BLEND_SRC_ALPHA,
-				.DestBlend = D3D11_BLEND_INV_SRC_ALPHA,
-				.BlendOp = D3D11_BLEND_OP_ADD,
-				.SrcBlendAlpha = D3D11_BLEND_ONE,
-				.DestBlendAlpha = D3D11_BLEND_ZERO,
-				.BlendOpAlpha = D3D11_BLEND_OP_ADD,
+		.RenderTarget{
+			D3D11_RENDER_TARGET_BLEND_DESC{
+				.BlendEnable		   = TRUE,
+				.SrcBlend			   = D3D11_BLEND_SRC_ALPHA,
+				.DestBlend			   = D3D11_BLEND_INV_SRC_ALPHA,
+				.BlendOp			   = D3D11_BLEND_OP_ADD,
+				.SrcBlendAlpha		   = D3D11_BLEND_ONE,
+				.DestBlendAlpha		   = D3D11_BLEND_ZERO,
+				.BlendOpAlpha		   = D3D11_BLEND_OP_ADD,
 				.RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL,
 			},
 		},
@@ -208,83 +216,77 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 	hResult = DirectX11Draw::pDevice_->CreateBlendState(
 		&BLEND_DESC,
-		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::Default)].ReleaseAndGetAddressOf());
+		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::Default)].ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult)  // ƒuƒŒƒ“ƒhƒXƒe[ƒgì¬‚É¬Œ÷
-		&& "BlendMode::Default‚ÌƒuƒŒƒ“ƒhƒXƒe[ƒgì¬‚É¸”s @DirectX11Manager::InitializeCommonResources");
+	massert(
+		SUCCEEDED(hResult) // ãƒ–ãƒ¬ãƒ³ãƒ‰ã‚¹ãƒ†ãƒ¼ãƒˆä½œæˆã«æˆåŠŸ
+		&& "BlendMode::Defaultã®ãƒ–ãƒ¬ãƒ³ãƒ‰ã‚¹ãƒ†ãƒ¼ãƒˆä½œæˆã«å¤±æ•— @DirectX11Manager::InitializeCommonResources"
+	);
 
-	// BlendMode::Sprite‚Ìì¬
-	// İ’è‚ÍBlendMode::Default‚Æ“¯‚¶
+	// BlendMode::Spriteã®ä½œæˆ
+	// è¨­å®šã¯BlendMode::Defaultã¨åŒã˜
 	hResult = DirectX11Draw::pDevice_->CreateBlendState(
 		&BLEND_DESC,
-		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::Sprite)].ReleaseAndGetAddressOf());
+		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::Sprite)].ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult)  // ƒuƒŒƒ“ƒhƒXƒe[ƒgì¬‚É¬Œ÷
-		&& "ƒuƒŒƒ“ƒhƒXƒe[ƒgì¬‚É¸”s @DirectX11Manager::InitializeCommonResources");
-	
+	massert(
+		SUCCEEDED(hResult) // ãƒ–ãƒ¬ãƒ³ãƒ‰ã‚¹ãƒ†ãƒ¼ãƒˆä½œæˆã«æˆåŠŸ
+		&& "ãƒ–ãƒ¬ãƒ³ãƒ‰ã‚¹ãƒ†ãƒ¼ãƒˆä½œæˆã«å¤±æ•— @DirectX11Manager::InitializeCommonResources"
+	);
+
 #pragma endregion
 	DirectX11Draw::pContext_->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-
 }
 
 void mtgb::DirectX11Manager::CreateDXGISurface(IDXGISwapChain1* pSwapChain1, IDXGISurface** ppDXGISurface)
 {
 	HRESULT hResult{};
-	
-	//ƒoƒbƒNƒoƒbƒtƒ@ó‚¯æ‚é
+
+	// ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡å—ã‘å–ã‚‹
 	ComPtr<ID3D11Texture2D> pBackBuffer = nullptr;
 	hResult = pSwapChain1->GetBuffer(0, _uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));
-	massert(SUCCEEDED(hResult)
-		&& "GetBuffer‚É¸”s @DirectX11Manager::CreateDXGISurface");
+	massert(SUCCEEDED(hResult) && "GetBufferã«å¤±æ•— @DirectX11Manager::CreateDXGISurface");
 
-	//ƒoƒbƒNƒoƒbƒtƒ@‚©‚çIDXGISurfaceƒCƒ“ƒ^[ƒtƒF[ƒX‚ğæ‚èo‚·
+	// ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã‹ã‚‰IDXGISurfaceã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’å–ã‚Šå‡ºã™
 	hResult = pBackBuffer->QueryInterface(IID_PPV_ARGS(ppDXGISurface));
 
 	pBackBuffer.Reset();
 
-	massert(SUCCEEDED(hResult)
-		&& "QueryInterface‚É¸”s @DirectX11Manager::CreateDXGISurface");
+	massert(SUCCEEDED(hResult) && "QueryInterfaceã«å¤±æ•— @DirectX11Manager::CreateDXGISurface");
 }
-
-
 
 void mtgb::DirectX11Manager::CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, IDXGISwapChain1** ppSwapChain1)
 {
 	HRESULT hResult{};
-	
-	const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
-	
-	DXGI_SWAP_CHAIN_DESC1 desc
-	{
-		.Width = static_cast<UINT>(SCREEN_SIZE.x),//‰ğ‘œ“x(ƒsƒNƒZƒ‹”)B0‚È‚çƒEƒBƒ“ƒhƒE‚ÌƒTƒCƒY‚É‡‚í‚¹‚é
-		.Height = static_cast<UINT>(SCREEN_SIZE.y),//‰ğ‘œ“x(ƒsƒNƒZƒ‹”)B0‚È‚çƒEƒBƒ“ƒhƒE‚ÌƒTƒCƒY‚É‡‚í‚¹‚é
-		.Format = DXGI_FORMAT_R8G8B8A8_UNORM,  // g‚¦‚éF”
-		.Stereo = FALSE,//ƒXƒeƒŒƒI(3D—§‘Ì‹)•\¦‚ğ—LŒø‚É‚·‚é‚©
-		.SampleDesc
-		{
-			.Count = 1,
+
+	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
+
+	DXGI_SWAP_CHAIN_DESC1 desc{
+		.Width	= static_cast<UINT>(SCREEN_SIZE.x), // è§£åƒåº¦(ãƒ”ã‚¯ã‚»ãƒ«æ•°)ã€‚0ãªã‚‰ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚µã‚¤ã‚ºã«åˆã‚ã›ã‚‹
+		.Height = static_cast<UINT>(SCREEN_SIZE.y), // è§£åƒåº¦(ãƒ”ã‚¯ã‚»ãƒ«æ•°)ã€‚0ãªã‚‰ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚µã‚¤ã‚ºã«åˆã‚ã›ã‚‹
+		.Format = DXGI_FORMAT_R8G8B8A8_UNORM,		// ä½¿ãˆã‚‹è‰²æ•°
+		.Stereo = FALSE,							// ã‚¹ãƒ†ãƒ¬ã‚ª(3Dç«‹ä½“è¦–)è¡¨ç¤ºã‚’æœ‰åŠ¹ã«ã™ã‚‹ã‹
+		.SampleDesc{
+			.Count	 = 1,
 			.Quality = 0,
 		},
 		.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT,
-		.BufferCount = 2,  // — ‰æ–Ê‚Ì–‡”
-		.Scaling = DXGI_SCALING_STRETCH,
-		.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD,
-		.AlphaMode = DXGI_ALPHA_MODE_UNSPECIFIED,
-		.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH
+		.BufferCount = 2, // è£ç”»é¢ã®æšæ•°
+		.Scaling	 = DXGI_SCALING_STRETCH,
+		.SwapEffect	 = DXGI_SWAP_EFFECT_FLIP_DISCARD,
+		.AlphaMode	 = DXGI_ALPHA_MODE_UNSPECIFIED,
+		.Flags		 = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH
 	};
 
-	// ‰¼‚Ìƒtƒ‰ƒOA
-	bool fullscreen = false;
-	DXGI_SWAP_CHAIN_FULLSCREEN_DESC fullscreenDesc = 
-	{
-		.RefreshRate
-			{
-				.Numerator = 60,
-				.Denominator = 1
-			},
+	// ä»®ã®ãƒ•ãƒ©ã‚°ã€
+	bool fullscreen								   = false;
+	DXGI_SWAP_CHAIN_FULLSCREEN_DESC fullscreenDesc = {
+		.RefreshRate{.Numerator = 60, .Denominator = 1},
 		.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED,
-		.Scaling = DXGI_MODE_SCALING_UNSPECIFIED,
-		.Windowed = FALSE, // ƒtƒ‹ƒXƒNƒŠ[ƒ“
+		.Scaling		  = DXGI_MODE_SCALING_UNSPECIFIED,
+		.Windowed		  = FALSE, // ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³
 	};
 
 	if (fullscreen)
@@ -293,8 +295,8 @@ void mtgb::DirectX11Manager::CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, ID
 			DirectX11Draw::pDevice_.Get(),
 			hWnd,
 			&desc,
-			&fullscreenDesc,//ƒtƒ‹ƒXƒNƒŠ[ƒ“‚Ìİ’è
-			pOutput,//o—Í
+			&fullscreenDesc, // ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã®è¨­å®š
+			pOutput,		 // å‡ºåŠ›
 			ppSwapChain1
 		);
 	}
@@ -304,94 +306,92 @@ void mtgb::DirectX11Manager::CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, ID
 			DirectX11Draw::pDevice_.Get(),
 			hWnd,
 			&desc,
-			nullptr,//‰Šúó‘Ô‚ğƒtƒ‹ƒXƒNƒŠ[ƒ“‚É‚µ‚½‚¢ê‡‚Ì‚İDESC‚ğ“n‚µ‚ÄA‚»‚¤‚Å‚È‚¢‚È‚çnullptr‚É‚µ‚Ä‚¨‚¢‚Ä•K—v‚É‰‚¶‚ÄSetFullscreenState‚ÅØ‚è‘Ö‚¦‚é
-			pOutput,//o—Í
+			nullptr, // åˆæœŸçŠ¶æ…‹ã‚’ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã«ã—ãŸã„å ´åˆã®ã¿DESCã‚’æ¸¡ã—ã¦ã€ãã†ã§ãªã„ãªã‚‰nullptrã«ã—ã¦ãŠã„ã¦å¿…è¦ã«å¿œã˜ã¦SetFullscreenStateã§åˆ‡ã‚Šæ›¿ãˆã‚‹
+			pOutput, // å‡ºåŠ›
 			ppSwapChain1
 		);
 	}
-	massert(SUCCEEDED(hResult)
-		&& "CreateSwapChainForHwnd‚É¸”s @DirectX11Manager::CreateSwapChain");
+	massert(SUCCEEDED(hResult) && "CreateSwapChainForHwndã«å¤±æ•— @DirectX11Manager::CreateSwapChain");
 }
 
-void mtgb::DirectX11Manager::CreateRenderTargetView(IDXGISwapChain1* pSwapChain1, ID3D11RenderTargetView** ppRenderTargetView)
+void mtgb::DirectX11Manager::CreateRenderTargetView(
+	IDXGISwapChain1* pSwapChain1,
+	ID3D11RenderTargetView** ppRenderTargetView
+)
 {
 	HRESULT hResult{};
-	
-	ComPtr<ID3D11Texture2D> pBackBuffer{ nullptr };
-	hResult = pSwapChain1->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));
-	massert(SUCCEEDED(hResult) 
-		&& "GetBuffer‚É¸”s @DirectX11Manager::CreateRenderTargetView");
+
+	ComPtr<ID3D11Texture2D> pBackBuffer{nullptr};
+	hResult =
+		pSwapChain1->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));
+	massert(SUCCEEDED(hResult) && "GetBufferã«å¤±æ•— @DirectX11Manager::CreateRenderTargetView");
 
 	hResult = DirectX11Draw::pDevice_->CreateRenderTargetView(pBackBuffer.Get(), nullptr, ppRenderTargetView);
-	massert(SUCCEEDED(hResult)
-		&& "CreateRenderTargetView‚É¸”s @DirectX11Manager::CreateRenderTargetView");
+	massert(SUCCEEDED(hResult) && "CreateRenderTargetViewã«å¤±æ•— @DirectX11Manager::CreateRenderTargetView");
 
 	pBackBuffer.Reset();
 }
 
 void mtgb::DirectX11Manager::CreateViewport(const Vector2Int& size, D3D11_VIEWPORT& viewport)
 {
-	viewport =
-	{
+	viewport = {
 		.TopLeftX = 0,
 		.TopLeftY = 0,
-		.Width = static_cast<float>(size.x),
-		.Height = static_cast<float>(size.y),
+		.Width	  = static_cast<float>(size.x),
+		.Height	  = static_cast<float>(size.y),
 		.MinDepth = 0,
 		.MaxDepth = 1,
 	};
 }
 
-void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(const Vector2Int bufSize, ID3D11Texture2D** ppDepthStencil, ID3D11DepthStencilView** ppDepthStencilView)
+void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(
+	const Vector2Int bufSize,
+	ID3D11Texture2D** ppDepthStencil,
+	ID3D11DepthStencilView** ppDepthStencilView
+)
 {
 	HRESULT hResult{};
-	
-	//const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
-	
-	// [“xƒoƒbƒtƒ@‚Ìİ’è
-	const D3D11_TEXTURE2D_DESC DEPTH_TEXTURE2D_DESC
-	{
-		.Width = static_cast<UINT>(bufSize.x),
-		.Height = static_cast<UINT>(bufSize.y),
+
+	// const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
+
+	// æ·±åº¦ãƒãƒƒãƒ•ã‚¡ã®è¨­å®š
+	const D3D11_TEXTURE2D_DESC DEPTH_TEXTURE2D_DESC{
+		.Width	   = static_cast<UINT>(bufSize.x),
+		.Height	   = static_cast<UINT>(bufSize.y),
 		.MipLevels = 1,
 		.ArraySize = 1,
-		.Format = DXGI_FORMAT_D32_FLOAT,
-		.SampleDesc
-		{
-			.Count = 1,
-			.Quality = 0
-		},
-		.Usage = D3D11_USAGE_DEFAULT,
-		.BindFlags = D3D11_BIND_DEPTH_STENCIL,
+		.Format	   = DXGI_FORMAT_D32_FLOAT,
+		.SampleDesc{.Count = 1, .Quality = 0},
+		.Usage			= D3D11_USAGE_DEFAULT,
+		.BindFlags		= D3D11_BIND_DEPTH_STENCIL,
 		.CPUAccessFlags = 0,
-		.MiscFlags = 0,
+		.MiscFlags		= 0,
 	};
 
-	hResult = DirectX11Draw::pDevice_->CreateTexture2D(
-		&DEPTH_TEXTURE2D_DESC,
-		nullptr,
-		ppDepthStencil);
+	hResult = DirectX11Draw::pDevice_->CreateTexture2D(&DEPTH_TEXTURE2D_DESC, nullptr, ppDepthStencil);
 
-	massert(SUCCEEDED(hResult)  // [“xƒXƒeƒ“ƒVƒ‹ƒoƒbƒtƒ@‚Ìì¬‚É¸”s
-		&& "[“xƒXƒeƒ“ƒVƒ‹ƒoƒbƒtƒ@‚Ìì¬‚É¸”s");
+	massert(
+		SUCCEEDED(hResult) // æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•—
+		&& "æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•—"
+	);
 
-	hResult = DirectX11Draw::pDevice_->CreateDepthStencilView(
-		*ppDepthStencil,
-		nullptr,
-		ppDepthStencilView);
+	hResult = DirectX11Draw::pDevice_->CreateDepthStencilView(*ppDepthStencil, nullptr, ppDepthStencilView);
 
-	massert(SUCCEEDED(hResult)  // [“xƒXƒeƒ“ƒVƒ‹ƒrƒ…‚Ìì¬‚É¬Œ÷
-		&& "[“xƒXƒeƒ“ƒVƒ‹ƒrƒ…[‚Ìì¬‚É¸”s");
+	massert(
+		SUCCEEDED(hResult) // æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ“ãƒ¥ã®ä½œæˆã«æˆåŠŸ
+		&& "æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ“ãƒ¥ãƒ¼ã®ä½œæˆã«å¤±æ•—"
+	);
 }
-
-
 
 void mtgb::DirectX11Manager::ChangeViewport(const D3D11_VIEWPORT& viewport)
 {
 	DirectX11Draw::pContext_->RSSetViewports(1, &viewport);
 }
 
-void mtgb::DirectX11Manager::ChangeRenderTargets(ComPtr<ID3D11RenderTargetView> pRenderTargetView, ComPtr<ID3D11DepthStencilView> pDepthStencilView)
+void mtgb::DirectX11Manager::ChangeRenderTargets(
+	ComPtr<ID3D11RenderTargetView> pRenderTargetView,
+	ComPtr<ID3D11DepthStencilView> pDepthStencilView
+)
 {
 	DirectX11Draw::pRenderTargetView_ = pRenderTargetView;
 	DirectX11Draw::pDepthStencilView_ = pDepthStencilView;
@@ -406,30 +406,31 @@ void mtgb::DirectX11Manager::ChangeSwapChain(ComPtr<IDXGISwapChain1> pSwapChain1
 
 std::optional<mtgb::MonitorInfo> mtgb::DirectX11Manager::AssignAvailableMonitor(IDXGIOutput** ppOutput)
 {
-	// ‰‰ñ‚Ì—ñ‹“
+	// åˆå›ã®åˆ—æŒ™
 	/*if (DirectX11Draw::monitorInfos_.empty())
 	{
 		EnumAvailableMonitors();
 	}*/
 
-	// –¢g—p‚Ìƒ‚ƒjƒ^[‚ğ’T‚·
+	// æœªä½¿ç”¨ã®ãƒ¢ãƒ‹ã‚¿ãƒ¼ã‚’æ¢ã™
 	for (auto& info : DirectX11Draw::monitorInfos_)
 	{
-		// ‚·‚Å‚Ég—pÏ‚İA‚à‚µ‚­‚ÍƒAƒ_ƒvƒ^[Aƒ‚ƒjƒ^[‚ÌƒCƒ“ƒfƒbƒNƒX‚ª–¢İ’è‚Ìê‡‚ÍƒXƒLƒbƒv
-		if (info.isRequested || info.adapterIndex == MonitorInfo::INVALID_INDEX || info.outputIndex == MonitorInfo::INVALID_INDEX)
+		// ã™ã§ã«ä½¿ç”¨æ¸ˆã¿ã€ã‚‚ã—ãã¯ã‚¢ãƒ€ãƒ—ã‚¿ãƒ¼ã€ãƒ¢ãƒ‹ã‚¿ãƒ¼ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒæœªè¨­å®šã®å ´åˆã¯ã‚¹ã‚­ãƒƒãƒ—
+		if (info.isRequested || info.adapterIndex == MonitorInfo::INVALID_INDEX ||
+			info.outputIndex == MonitorInfo::INVALID_INDEX)
 			continue;
-		
-			// ƒ‚ƒjƒ^[‚ğ—ñ‹“‚µ‚ÄAIDXGIOutput‚Ìì¬‚ğ‚İ‚é
-			HRESULT hResult = DirectX11Draw::pDXGIAdapters_[info.adapterIndex]->EnumOutputs(info.outputIndex, ppOutput);
-			if (SUCCEEDED(hResult))
-			{
-				// ì¬¬Œ÷
-				info.isRequested = true;
-				return info;
-			}
+
+		// ãƒ¢ãƒ‹ã‚¿ãƒ¼ã‚’åˆ—æŒ™ã—ã¦ã€IDXGIOutputã®ä½œæˆã‚’è©¦ã¿ã‚‹
+		HRESULT hResult = DirectX11Draw::pDXGIAdapters_[info.adapterIndex]->EnumOutputs(info.outputIndex, ppOutput);
+		if (SUCCEEDED(hResult))
+		{
+			// ä½œæˆæˆåŠŸ
+			info.isRequested = true;
+			return info;
+		}
 	}
 
-	// ‘S‚Äg—pÏ‚İ‚Ìê‡‚ÍA0”Ô–Ú‚Ìƒ‚ƒjƒ^[‚ğ•Ô‚·
+	// å…¨ã¦ä½¿ç”¨æ¸ˆã¿ã®å ´åˆã¯ã€0ç•ªç›®ã®ãƒ¢ãƒ‹ã‚¿ãƒ¼ã‚’è¿”ã™
 	if (!DirectX11Draw::monitorInfos_.empty())
 	{
 		HRESULT hResult = DirectX11Draw::pDXGIAdapters_[0]->EnumOutputs(0, ppOutput);
@@ -439,7 +440,7 @@ std::optional<mtgb::MonitorInfo> mtgb::DirectX11Manager::AssignAvailableMonitor(
 		}
 	}
 
-	// ƒ‚ƒjƒ^[‚ÌŠ„‚è“–‚Ä¸”s
+	// ãƒ¢ãƒ‹ã‚¿ãƒ¼ã®å‰²ã‚Šå½“ã¦å¤±æ•—
 	return std::nullopt;
 }
 
@@ -455,25 +456,25 @@ void mtgb::DirectX11Manager::Release()
 
 void mtgb::DirectX11Manager::ClearState()
 {
-	// ƒpƒCƒvƒ‰ƒCƒ“‚ÉƒoƒCƒ“ƒh‚³‚ê‚½‘S‚Ä‚ğƒŠƒZƒbƒg
+	// ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã«ãƒã‚¤ãƒ³ãƒ‰ã•ã‚ŒãŸå…¨ã¦ã‚’ãƒªã‚»ãƒƒãƒˆ
 	DirectX11Draw::pContext_->ClearState();
-	// •`‰æƒRƒ}ƒ“ƒh‚ğ‹­§“I‚ÉGPU‚É‘—‚èo‚·
+	// æç”»ã‚³ãƒãƒ³ãƒ‰ã‚’å¼·åˆ¶çš„ã«GPUã«é€ã‚Šå‡ºã™
 	DirectX11Draw::pContext_->Flush();
 
 	Game::System<Direct2D>().Reset();
 	DirectX11Draw::pDepthStencil_.Reset();
 	DirectX11Draw::pDepthStencilView_.Reset();
 	DirectX11Draw::pRenderTargetView_.Reset();
-	//DirectX11Draw::pSwapChain1_.Reset();
+	// DirectX11Draw::pSwapChain1_.Reset();
 }
 
 void mtgb::DirectX11Manager::SetDefaultStates()
 {
-	// PrimitiveTopology ‚ğÄİ’è
+	// PrimitiveTopology ã‚’å†è¨­å®š
 	DirectX11Draw::pContext_->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-	
-	// •K—v‚É‰‚¶‚Ä‘¼‚ÌƒfƒtƒHƒ‹ƒgó‘Ô‚àÄİ’è
-	// —áFƒfƒtƒHƒ‹ƒgƒTƒ“ƒvƒ‰[ƒXƒe[ƒgAƒuƒŒƒ“ƒhƒXƒe[ƒg‚È‚Ç
+
+	// å¿…è¦ã«å¿œã˜ã¦ä»–ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆçŠ¶æ…‹ã‚‚å†è¨­å®š
+	// ä¾‹ï¼šãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‚¹ãƒ†ãƒ¼ãƒˆã€ãƒ–ãƒ¬ãƒ³ãƒ‰ã‚¹ãƒ†ãƒ¼ãƒˆãªã©
 }
 
 void mtgb::DirectX11Manager::EnumAvailableMonitors()
@@ -481,18 +482,19 @@ void mtgb::DirectX11Manager::EnumAvailableMonitors()
 	DirectX11Draw::monitorInfos_.clear();
 
 	ComPtr<IDXGIAdapter1> pAdapter;
-	for (UINT adapterIndex = 0; adapterIndex < DirectX11Draw::pDXGIAdapters_.size();adapterIndex++)
+	for (UINT adapterIndex = 0; adapterIndex < DirectX11Draw::pDXGIAdapters_.size(); adapterIndex++)
 	{
 		ComPtr<IDXGIOutput> pOutput;
 		UINT outputIndex = 0;
-		while(DirectX11Draw::pDXGIAdapters_[adapterIndex]->EnumOutputs(outputIndex, pOutput.GetAddressOf()) != DXGI_ERROR_NOT_FOUND)
+		while (DirectX11Draw::pDXGIAdapters_[adapterIndex]->EnumOutputs(outputIndex, pOutput.GetAddressOf()) !=
+			   DXGI_ERROR_NOT_FOUND)
 		{
-		
+
 			MonitorInfo info{};
 			info.adapterIndex = static_cast<int>(adapterIndex);
-			info.outputIndex = outputIndex;
-			info.isRequested = false;
-			HRESULT hResult = pOutput->GetDesc(&info.desc);
+			info.outputIndex  = outputIndex;
+			info.isRequested  = false;
+			HRESULT hResult	  = pOutput->GetDesc(&info.desc);
 			if (SUCCEEDED(hResult))
 			{
 				DirectX11Draw::monitorInfos_.push_back(info);
@@ -505,127 +507,123 @@ void mtgb::DirectX11Manager::EnumAvailableMonitors()
 
 void mtgb::DirectX11Manager::InitializeShaderBundle()
 {
-	DWORD vectorSize{ sizeof(Vector3) };
+	DWORD vectorSize{sizeof(Vector3)};
 
 	CD3D11_RASTERIZER_DESC cRasterizerDesc{};
 
-	// 2D‹¤’Ê‚ÌƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg
-	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_2D[]
-	{
+	// 2Då…±é€šã®ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ
+	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_2D[]{
 		{
-			.SemanticName = "POSITION",
-			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot = 0,
-			.AlignedByteOffset = vectorSize * 0,
-			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
+			.SemanticName		  = "POSITION",
+			.SemanticIndex		  = 0,
+			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
+			.InputSlot			  = 0,
+			.AlignedByteOffset	  = vectorSize * 0,
+			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
 			.InstanceDataStepRate = 0,
 		},
 		{
-			.SemanticName = "TEXCOORD",
-			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32_FLOAT,
-			.InputSlot = 0,
-			.AlignedByteOffset = vectorSize * 1,
-			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-	};
-
-	// 3D‹¤’Ê‚ÌƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg
-	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_3D[]
-	{
-		{
-			.SemanticName = "POSITION",
-			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot = 0,
-			.AlignedByteOffset = vectorSize * 0,
-			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName = "NORMAL",
-			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot = 0,
-			.AlignedByteOffset = vectorSize * 1,
-			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName = "TEXCOORD",
-			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32_FLOAT,
-			.InputSlot = 0,
-			.AlignedByteOffset = vectorSize * 2,
-			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
+			.SemanticName		  = "TEXCOORD",
+			.SemanticIndex		  = 0,
+			.Format				  = DXGI_FORMAT_R32G32_FLOAT,
+			.InputSlot			  = 0,
+			.AlignedByteOffset	  = vectorSize * 1,
+			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
 			.InstanceDataStepRate = 0,
 		},
 	};
 
-	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_SKINNED[]
-	{
+	// 3Då…±é€šã®ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ
+	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_3D[]{
 		{
-			.SemanticName = "POSITION",
-			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot = 0,
-			.AlignedByteOffset = 0,
-			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
+			.SemanticName		  = "POSITION",
+			.SemanticIndex		  = 0,
+			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
+			.InputSlot			  = 0,
+			.AlignedByteOffset	  = vectorSize * 0,
+			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
 			.InstanceDataStepRate = 0,
 		},
 		{
-			.SemanticName = "NORMAL",
-			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot = 0,
-			.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT,
-			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
+			.SemanticName		  = "NORMAL",
+			.SemanticIndex		  = 0,
+			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
+			.InputSlot			  = 0,
+			.AlignedByteOffset	  = vectorSize * 1,
+			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
 			.InstanceDataStepRate = 0,
 		},
 		{
-			.SemanticName = "TEXCOORD",
-			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot = 0,
-			.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT,
-			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName = "BONE_INDEX",
-			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32B32A32_UINT,
-			.InputSlot = 0,
-			.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT,
-			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName = "BONE_WEIGHT",
-			.SemanticIndex = 0,
-			.Format = DXGI_FORMAT_R32G32B32A32_FLOAT,
-			.InputSlot = 0,
-			.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT,
-			.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
+			.SemanticName		  = "TEXCOORD",
+			.SemanticIndex		  = 0,
+			.Format				  = DXGI_FORMAT_R32G32_FLOAT,
+			.InputSlot			  = 0,
+			.AlignedByteOffset	  = vectorSize * 2,
+			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
 			.InstanceDataStepRate = 0,
 		},
 	};
 
-	// 2D}Œ`—pƒVƒF[ƒ_‚Ì“Ç‚İ‚İ
-	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
+	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_SKINNED[]{
 		{
-			.FillMode = D3D11_FILL_SOLID,   // “h‚è‚Â‚Ô‚µ: solid
-			.CullMode = D3D11_CULL_BACK,    // ƒJƒŠƒ“ƒO: ‰A–ÊÁ‹
-			.FrontCounterClockwise = FALSE,  // OŠpŒ`‚Ì³–ÊŒü‚« = Œv‰ñ‚è
-			.DepthBias = {},
-			.DepthBiasClamp = {},
-			.SlopeScaledDepthBias = {},
-			.DepthClipEnable = true,        // ƒNƒŠƒbƒsƒ“ƒO‚ğ—LŒø‚É‚·‚é
-			.ScissorEnable = {},
-			.MultisampleEnable = {},
+			.SemanticName		  = "POSITION",
+			.SemanticIndex		  = 0,
+			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
+			.InputSlot			  = 0,
+			.AlignedByteOffset	  = 0,
+			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
+			.InstanceDataStepRate = 0,
+		},
+		{
+			.SemanticName		  = "NORMAL",
+			.SemanticIndex		  = 0,
+			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
+			.InputSlot			  = 0,
+			.AlignedByteOffset	  = D3D11_APPEND_ALIGNED_ELEMENT,
+			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
+			.InstanceDataStepRate = 0,
+		},
+		{
+			.SemanticName		  = "TEXCOORD",
+			.SemanticIndex		  = 0,
+			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
+			.InputSlot			  = 0,
+			.AlignedByteOffset	  = D3D11_APPEND_ALIGNED_ELEMENT,
+			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
+			.InstanceDataStepRate = 0,
+		},
+		{
+			.SemanticName		  = "BONE_INDEX",
+			.SemanticIndex		  = 0,
+			.Format				  = DXGI_FORMAT_R32G32B32A32_UINT,
+			.InputSlot			  = 0,
+			.AlignedByteOffset	  = D3D11_APPEND_ALIGNED_ELEMENT,
+			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
+			.InstanceDataStepRate = 0,
+		},
+		{
+			.SemanticName		  = "BONE_WEIGHT",
+			.SemanticIndex		  = 0,
+			.Format				  = DXGI_FORMAT_R32G32B32A32_FLOAT,
+			.InputSlot			  = 0,
+			.AlignedByteOffset	  = D3D11_APPEND_ALIGNED_ELEMENT,
+			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
+			.InstanceDataStepRate = 0,
+		},
+	};
+
+	// 2Då›³å½¢ç”¨ã‚·ã‚§ãƒ¼ãƒ€ã®èª­ã¿è¾¼ã¿
+	{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+			.FillMode			   = D3D11_FILL_SOLID, // å¡—ã‚Šã¤ã¶ã—: solid
+			.CullMode			   = D3D11_CULL_BACK,  // ã‚«ãƒªãƒ³ã‚°: é™°é¢æ¶ˆå»
+			.FrontCounterClockwise = FALSE,			   // ä¸‰è§’å½¢ã®æ­£é¢å‘ã = æ™‚è¨ˆå›ã‚Š
+			.DepthBias			   = {},
+			.DepthBiasClamp		   = {},
+			.SlopeScaledDepthBias  = {},
+			.DepthClipEnable	   = true, // ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+			.ScissorEnable		   = {},
+			.MultisampleEnable	   = {},
 			.AntialiasedLineEnable = {},
 		});
 
@@ -634,56 +632,56 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			ShaderType::Figure,
 			INPUT_ELEMENT_DESC_2D,
 			sizeof(INPUT_ELEMENT_DESC_2D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
+			&cRasterizerDesc
+		);
 	}
 
-	// 2DƒXƒvƒ‰ƒCƒgƒVƒF[ƒ_‚Ì“Ç‚İ‚İ
+	// 2Dã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã‚·ã‚§ãƒ¼ãƒ€ã®èª­ã¿è¾¼ã¿
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
-			{
-				.FillMode = D3D11_FILL_SOLID,   // “h‚è‚Â‚Ô‚µ: solid
-				.CullMode = D3D11_CULL_NONE,    // ƒJƒŠƒ“ƒO: ‰A–ÊÁ‹
-				.FrontCounterClockwise = FALSE,  // OŠpŒ`‚Ì³–ÊŒü‚« = Œv‰ñ‚è
-				.DepthBias = {},
-				.DepthBiasClamp = {},
-				.SlopeScaledDepthBias = {},
-				.DepthClipEnable = true,        // ƒNƒŠƒbƒsƒ“ƒO‚ğ—LŒø‚É‚·‚é
-				.ScissorEnable = {},
-				.MultisampleEnable = {},
-				.AntialiasedLineEnable = {},
-			});
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+			.FillMode			   = D3D11_FILL_SOLID, // å¡—ã‚Šã¤ã¶ã—: solid
+			.CullMode			   = D3D11_CULL_NONE,  // ã‚«ãƒªãƒ³ã‚°: é™°é¢æ¶ˆå»
+			.FrontCounterClockwise = FALSE,			   // ä¸‰è§’å½¢ã®æ­£é¢å‘ã = æ™‚è¨ˆå›ã‚Š
+			.DepthBias			   = {},
+			.DepthBiasClamp		   = {},
+			.SlopeScaledDepthBias  = {},
+			.DepthClipEnable	   = true, // ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+			.ScissorEnable		   = {},
+			.MultisampleEnable	   = {},
+			.AntialiasedLineEnable = {},
+		});
 
 		CompileShader(
 			L"Shader/Sprite.hlsl",
 			ShaderType::Sprite2D,
 			INPUT_ELEMENT_DESC_2D,
 			sizeof(INPUT_ELEMENT_DESC_2D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
+			&cRasterizerDesc
+		);
 	}
 
-	
-	// FbxPartsƒVƒF[ƒ_‚Ì“Ç‚İ‚İ
+	// FbxPartsã‚·ã‚§ãƒ¼ãƒ€ã®èª­ã¿è¾¼ã¿
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
-			{
-				.FillMode = D3D11_FILL_SOLID,   // “h‚è‚Â‚Ô‚µ: solid
-				.CullMode = D3D11_CULL_BACK,    // ƒJƒŠƒ“ƒO: ‰A–ÊÁ‹
-				.FrontCounterClockwise = FALSE,  // OŠpŒ`‚Ì³–ÊŒü‚« = Œv‰ñ‚è
-				.DepthBias = {},
-				.DepthBiasClamp = {},
-				.SlopeScaledDepthBias = {},
-				.DepthClipEnable = true,        // ƒNƒŠƒbƒsƒ“ƒO‚ğ—LŒø‚É‚·‚é
-				.ScissorEnable = {},
-				.MultisampleEnable = {},
-				.AntialiasedLineEnable = {},
-			});
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+			.FillMode			   = D3D11_FILL_SOLID, // å¡—ã‚Šã¤ã¶ã—: solid
+			.CullMode			   = D3D11_CULL_BACK,  // ã‚«ãƒªãƒ³ã‚°: é™°é¢æ¶ˆå»
+			.FrontCounterClockwise = FALSE,			   // ä¸‰è§’å½¢ã®æ­£é¢å‘ã = æ™‚è¨ˆå›ã‚Š
+			.DepthBias			   = {},
+			.DepthBiasClamp		   = {},
+			.SlopeScaledDepthBias  = {},
+			.DepthClipEnable	   = true, // ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+			.ScissorEnable		   = {},
+			.MultisampleEnable	   = {},
+			.AntialiasedLineEnable = {},
+		});
 
 		CompileShader(
 			L"Shader/FbxParts.hlsl",
 			ShaderType::FbxParts,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
+			&cRasterizerDesc
+		);
 	}
 
 	{
@@ -692,192 +690,190 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			ShaderType::Sea,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
+			&cRasterizerDesc
+		);
 	}
 
-	// Unlit3DƒVƒF[ƒ_‚Ì“Ç‚İ‚İ
+	// Unlit3Dã‚·ã‚§ãƒ¼ãƒ€ã®èª­ã¿è¾¼ã¿
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
-			{
-				.FillMode = D3D11_FILL_SOLID,   // “h‚è‚Â‚Ô‚µ: solid
-				.CullMode = D3D11_CULL_BACK,    // ƒJƒŠƒ“ƒO: ‰A–ÊÁ‹
-				.FrontCounterClockwise = FALSE,  // OŠpŒ`‚Ì³–ÊŒü‚« = Œv‰ñ‚è
-				.DepthBias = {},
-				.DepthBiasClamp = {},
-				.SlopeScaledDepthBias = {},
-				.DepthClipEnable = true,        // ƒNƒŠƒbƒsƒ“ƒO‚ğ—LŒø‚É‚·‚é
-				.ScissorEnable = {},
-				.MultisampleEnable = {},
-				.AntialiasedLineEnable = {},
-			});
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+			.FillMode			   = D3D11_FILL_SOLID, // å¡—ã‚Šã¤ã¶ã—: solid
+			.CullMode			   = D3D11_CULL_BACK,  // ã‚«ãƒªãƒ³ã‚°: é™°é¢æ¶ˆå»
+			.FrontCounterClockwise = FALSE,			   // ä¸‰è§’å½¢ã®æ­£é¢å‘ã = æ™‚è¨ˆå›ã‚Š
+			.DepthBias			   = {},
+			.DepthBiasClamp		   = {},
+			.SlopeScaledDepthBias  = {},
+			.DepthClipEnable	   = true, // ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+			.ScissorEnable		   = {},
+			.MultisampleEnable	   = {},
+			.AntialiasedLineEnable = {},
+		});
 
 		CompileShader(
 			L"Shader/Unlit3D.hlsl",
 			ShaderType::Unlit3D,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
+			&cRasterizerDesc
+		);
 	}
 
-	// Debug3DƒVƒF[ƒ_‚Ì“Ç‚İ‚İ
+	// Debug3Dã‚·ã‚§ãƒ¼ãƒ€ã®èª­ã¿è¾¼ã¿
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
-			{
-				.FillMode = D3D11_FILL_WIREFRAME,  // ˜g‚¾‚¯: wireframe
-				.CullMode = D3D11_CULL_NONE,       // ƒJƒŠƒ“ƒO: ‰B–ÊÁ‹‚µ‚È‚¢
-				.FrontCounterClockwise = FALSE,     // OŠpŒ`‚Ì³–ÊŒü‚« = Œv‰ñ‚è
-				.DepthBias = {},
-				.DepthBiasClamp = {},
-				.SlopeScaledDepthBias = {},
-				.DepthClipEnable = true,           // ƒNƒŠƒbƒsƒ“ƒO‚ğ—LŒø‚É‚·‚é
-				.ScissorEnable = {},
-				.MultisampleEnable = {},
-				.AntialiasedLineEnable = {},
-			});
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+			.FillMode			   = D3D11_FILL_WIREFRAME, // æ ã ã‘: wireframe
+			.CullMode			   = D3D11_CULL_NONE,	   // ã‚«ãƒªãƒ³ã‚°: éš é¢æ¶ˆå»ã—ãªã„
+			.FrontCounterClockwise = FALSE,				   // ä¸‰è§’å½¢ã®æ­£é¢å‘ã = æ™‚è¨ˆå›ã‚Š
+			.DepthBias			   = {},
+			.DepthBiasClamp		   = {},
+			.SlopeScaledDepthBias  = {},
+			.DepthClipEnable	   = true, // ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+			.ScissorEnable		   = {},
+			.MultisampleEnable	   = {},
+			.AntialiasedLineEnable = {},
+		});
 
 		CompileShader(
 			L"Shader/Debug3D.hlsl",
 			ShaderType::Debug3D,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
+			&cRasterizerDesc
+		);
 	}
 
-	// ’nŒ`ƒVƒF[ƒ_‚Ì“Ç‚İ‚İ
+	// åœ°å½¢ã‚·ã‚§ãƒ¼ãƒ€ã®èª­ã¿è¾¼ã¿
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
-			{
-				.FillMode = D3D11_FILL_SOLID,   // “h‚è‚Â‚Ô‚µ
-				.CullMode = D3D11_CULL_BACK,    // ƒJƒŠƒ“ƒO: ‰B–ÊÁ‹
-				.FrontCounterClockwise = FALSE,  // OŠpŒ`‚Ì³–ÊŒü‚« = Œv‰ñ‚è
-				.DepthBias = {},
-				.DepthBiasClamp = {},
-				.SlopeScaledDepthBias = {},
-				.DepthClipEnable = true,        // ƒNƒŠƒbƒsƒ“ƒO‚ğ—LŒø‚É‚·‚é
-				.ScissorEnable = {},
-				.MultisampleEnable = {},
-				.AntialiasedLineEnable = {},
-			});
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+			.FillMode			   = D3D11_FILL_SOLID, // å¡—ã‚Šã¤ã¶ã—
+			.CullMode			   = D3D11_CULL_BACK,  // ã‚«ãƒªãƒ³ã‚°: éš é¢æ¶ˆå»
+			.FrontCounterClockwise = FALSE,			   // ä¸‰è§’å½¢ã®æ­£é¢å‘ã = æ™‚è¨ˆå›ã‚Š
+			.DepthBias			   = {},
+			.DepthBiasClamp		   = {},
+			.SlopeScaledDepthBias  = {},
+			.DepthClipEnable	   = true, // ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+			.ScissorEnable		   = {},
+			.MultisampleEnable	   = {},
+			.AntialiasedLineEnable = {},
+		});
 
 		CompileShader(
 			L"Shader/Ground.hlsl",
 			ShaderType::Ground,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
+			&cRasterizerDesc
+		);
 	}
 
 	// Terrain
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
-			{
-				.FillMode = D3D11_FILL_SOLID,   // “h‚è‚Â‚Ô‚µ
-				.CullMode = D3D11_CULL_BACK,    // ƒJƒŠƒ“ƒO: ‰B–ÊÁ‹
-				.FrontCounterClockwise = FALSE,  // OŠpŒ`‚Ì³–ÊŒü‚« = Œv‰ñ‚è
-				.DepthBias = {},
-				.DepthBiasClamp = {},
-				.SlopeScaledDepthBias = {},
-				.DepthClipEnable = true,        // ƒNƒŠƒbƒsƒ“ƒO‚ğ—LŒø‚É‚·‚é
-				.ScissorEnable = {},
-				.MultisampleEnable = {},
-				.AntialiasedLineEnable = {},
-			});
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+			.FillMode			   = D3D11_FILL_SOLID, // å¡—ã‚Šã¤ã¶ã—
+			.CullMode			   = D3D11_CULL_BACK,  // ã‚«ãƒªãƒ³ã‚°: éš é¢æ¶ˆå»
+			.FrontCounterClockwise = FALSE,			   // ä¸‰è§’å½¢ã®æ­£é¢å‘ã = æ™‚è¨ˆå›ã‚Š
+			.DepthBias			   = {},
+			.DepthBiasClamp		   = {},
+			.SlopeScaledDepthBias  = {},
+			.DepthClipEnable	   = true, // ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+			.ScissorEnable		   = {},
+			.MultisampleEnable	   = {},
+			.AntialiasedLineEnable = {},
+		});
 
 		CompileShader(
 			L"Shader/Terrain.hlsl",
 			ShaderType::Terrain,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
+			&cRasterizerDesc
+		);
 	}
 
-	// ƒgƒŒƒCƒ‹ƒVƒF[ƒ_‚Ì“Ç‚İ‚İ
+	// ãƒˆãƒ¬ã‚¤ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®èª­ã¿è¾¼ã¿
 	{
-		const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_TRAIL[]
-		{
+		const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_TRAIL[]{
 			{
-				.SemanticName = "POSITION",
-				.SemanticIndex = 0,
-				.Format = DXGI_FORMAT_R32G32B32_FLOAT,
-				.InputSlot = 0,
-				.AlignedByteOffset = vectorSize * 0,
-				.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
+				.SemanticName		  = "POSITION",
+				.SemanticIndex		  = 0,
+				.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
+				.InputSlot			  = 0,
+				.AlignedByteOffset	  = vectorSize * 0,
+				.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
 				.InstanceDataStepRate = 0,
 			},
 			{
-				.SemanticName = "COLOR",
-				.SemanticIndex = 0,
-				.Format = DXGI_FORMAT_R32G32B32A32_FLOAT,
-				.InputSlot = 0,
-				.AlignedByteOffset = vectorSize * 1,
-				.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA,
+				.SemanticName		  = "COLOR",
+				.SemanticIndex		  = 0,
+				.Format				  = DXGI_FORMAT_R32G32B32A32_FLOAT,
+				.InputSlot			  = 0,
+				.AlignedByteOffset	  = vectorSize * 1,
+				.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
 				.InstanceDataStepRate = 0,
 			},
-		}; 
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
-			{
-				.FillMode = D3D11_FILL_SOLID,   // “h‚è‚Â‚Ô‚µ
-				.CullMode = D3D11_CULL_NONE,    // ƒJƒŠƒ“ƒO: ‰B–ÊÁ‹
-				.FrontCounterClockwise = FALSE,  // OŠpŒ`‚Ì³–ÊŒü‚« = Œv‰ñ‚è
-				.DepthBias = {},
-				.DepthBiasClamp = {},
-				.SlopeScaledDepthBias = {},
-				.DepthClipEnable = true,        // ƒNƒŠƒbƒsƒ“ƒO‚ğ—LŒø‚É‚·‚é
-				.ScissorEnable = {},
-				.MultisampleEnable = {},
-				.AntialiasedLineEnable = {},
-			});
+		};
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+			.FillMode			   = D3D11_FILL_SOLID, // å¡—ã‚Šã¤ã¶ã—
+			.CullMode			   = D3D11_CULL_NONE,  // ã‚«ãƒªãƒ³ã‚°: éš é¢æ¶ˆå»
+			.FrontCounterClockwise = FALSE,			   // ä¸‰è§’å½¢ã®æ­£é¢å‘ã = æ™‚è¨ˆå›ã‚Š
+			.DepthBias			   = {},
+			.DepthBiasClamp		   = {},
+			.SlopeScaledDepthBias  = {},
+			.DepthClipEnable	   = true, // ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+			.ScissorEnable		   = {},
+			.MultisampleEnable	   = {},
+			.AntialiasedLineEnable = {},
+		});
 
 		CompileShader(
 			L"Shader/Trail.hlsl",
 			ShaderType::Trail,
 			INPUT_ELEMENT_DESC_TRAIL,
 			sizeof(INPUT_ELEMENT_DESC_TRAIL) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
+			&cRasterizerDesc
+		);
 
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
-			{
-				.FillMode = D3D11_FILL_SOLID,   // “h‚è‚Â‚Ô‚µ: solid
-				.CullMode = D3D11_CULL_BACK,    // ƒJƒŠƒ“ƒO: ‰A–ÊÁ‹
-				.FrontCounterClockwise = FALSE,  // OŠpŒ`‚Ì³–ÊŒü‚« = Œv‰ñ‚è
-				.DepthBias = {},
-				.DepthBiasClamp = {},
-				.SlopeScaledDepthBias = {},
-				.DepthClipEnable = true,        // ƒNƒŠƒbƒsƒ“ƒO‚ğ—LŒø‚É‚·‚é
-				.ScissorEnable = {},
-				.MultisampleEnable = {},
-				.AntialiasedLineEnable = {},
-			});
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+			.FillMode			   = D3D11_FILL_SOLID, // å¡—ã‚Šã¤ã¶ã—: solid
+			.CullMode			   = D3D11_CULL_BACK,  // ã‚«ãƒªãƒ³ã‚°: é™°é¢æ¶ˆå»
+			.FrontCounterClockwise = FALSE,			   // ä¸‰è§’å½¢ã®æ­£é¢å‘ã = æ™‚è¨ˆå›ã‚Š
+			.DepthBias			   = {},
+			.DepthBiasClamp		   = {},
+			.SlopeScaledDepthBias  = {},
+			.DepthClipEnable	   = true, // ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+			.ScissorEnable		   = {},
+			.MultisampleEnable	   = {},
+			.AntialiasedLineEnable = {},
+		});
 
 		CompileShader(
 			L"Shader/FbxPartsSkin.hlsl",
 			ShaderType::FbxPartsSkin,
 			INPUT_ELEMENT_DESC_SKINNED,
 			sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
-		
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC
-			{
-				.FillMode = D3D11_FILL_SOLID,   // “h‚è‚Â‚Ô‚µ: solid
-				.CullMode = D3D11_CULL_BACK,    // ƒJƒŠƒ“ƒO: ‰A–ÊÁ‹
-				.FrontCounterClockwise = FALSE,  // OŠpŒ`‚Ì³–ÊŒü‚« = Œv‰ñ‚è
-				.DepthBias = {},
-				.DepthBiasClamp = {},
-				.SlopeScaledDepthBias = {},
-				.DepthClipEnable = true,        // ƒNƒŠƒbƒsƒ“ƒO‚ğ—LŒø‚É‚·‚é
-				.ScissorEnable = {},
-				.MultisampleEnable = {},
-				.AntialiasedLineEnable = {},
-			});
+			&cRasterizerDesc
+		);
+
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+			.FillMode			   = D3D11_FILL_SOLID, // å¡—ã‚Šã¤ã¶ã—: solid
+			.CullMode			   = D3D11_CULL_BACK,  // ã‚«ãƒªãƒ³ã‚°: é™°é¢æ¶ˆå»
+			.FrontCounterClockwise = FALSE,			   // ä¸‰è§’å½¢ã®æ­£é¢å‘ã = æ™‚è¨ˆå›ã‚Š
+			.DepthBias			   = {},
+			.DepthBiasClamp		   = {},
+			.SlopeScaledDepthBias  = {},
+			.DepthClipEnable	   = true, // ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+			.ScissorEnable		   = {},
+			.MultisampleEnable	   = {},
+			.AntialiasedLineEnable = {},
+		});
 
 		CompileShader(
 			L"Shader/Box3D.hlsl",
 			ShaderType::Box3D,
 			INPUT_ELEMENT_DESC_SKINNED,
 			sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc);
-		
-
+			&cRasterizerDesc
+		);
 	}
 }
 
@@ -886,96 +882,114 @@ void mtgb::DirectX11Manager::CompileShader(
 	const ShaderType& _type,
 	const D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,
 	const unsigned int _layoutLength,
-	const CD3D11_RASTERIZER_DESC* _pRasterizerDesc)
+	const CD3D11_RASTERIZER_DESC* _pRasterizerDesc
+)
 {
 	HLSLInclude hlslInclude{};
 	HRESULT hResult{};
 
-#pragma region ’¸“_ƒVƒF[ƒ_
-	// €“_ƒVƒF[ƒ_‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
-	ID3DBlob* pCompileVS{ nullptr };
+#pragma region é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€
+	// é …ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
+	ID3DBlob* pCompileVS{nullptr};
 
-	// ’¸“_ƒVƒF[ƒ_‚ÌƒRƒ“ƒpƒCƒ‹
+	// é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«
 	hResult = D3DCompileFromFile(
-		_fileName.c_str(),  // ƒtƒ@ƒCƒ‹ƒpƒX
-		nullptr,            // ƒVƒF[ƒ_ƒ}ƒNƒ‚Ì”z—ñ
-		&hlslInclude,       // ƒCƒ“ƒNƒ‹[ƒh‚·‚é‚â‚Â
-		"VS",               // ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg‚ÌŠÖ”–¼
-		"vs_5_0",           // ƒVƒF[ƒ_‚Ìƒo[ƒWƒ‡ƒ“ (ƒIƒvƒVƒ‡ƒ“‚Å•t‚¯‚é‚â‚Â)
-		0,                  // ƒIƒvƒVƒ‡ƒ“ƒtƒ‰ƒO1
-		0,                  // ƒIƒvƒVƒ‡ƒ“ƒtƒ‰ƒO2
-		&pCompileVS,        // ƒRƒ“ƒpƒCƒ‹Ï‚İƒR[ƒh‚Ö‚ÌƒAƒNƒZƒXƒCƒ“ƒ^ƒtƒF[ƒX
-		nullptr);           // ƒGƒ‰[ƒƒbƒZ[ƒWóM—p –³‚µ
+		_fileName.c_str(), // ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
+		nullptr,		   // ã‚·ã‚§ãƒ¼ãƒ€ãƒã‚¯ãƒ­ã®é…åˆ—
+		&hlslInclude,	   // ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã™ã‚‹ã‚„ã¤
+		"VS",			   // ã‚¨ãƒ³ãƒˆãƒªãƒã‚¤ãƒ³ãƒˆã®é–¢æ•°å
+		"vs_5_0",		   // ã‚·ã‚§ãƒ¼ãƒ€ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ (ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã§ä»˜ã‘ã‚‹ã‚„ã¤)
+		0,				   // ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ•ãƒ©ã‚°1
+		0,				   // ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ•ãƒ©ã‚°2
+		&pCompileVS,	   // ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ¸ˆã¿ã‚³ãƒ¼ãƒ‰ã¸ã®ã‚¢ã‚¯ã‚»ã‚¹ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
+		nullptr
+	); // ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡ç”¨ ç„¡ã—
 
-	massert(SUCCEEDED(hResult)  // ’¸“_ƒVƒF[ƒ_‚ÌƒRƒ“ƒpƒCƒ‹‚É¬Œ÷
-		&& "’¸“_ƒVƒF[ƒ_‚ÌƒRƒ“ƒpƒCƒ‹‚É¸”s @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã«æˆåŠŸ
+		&& "é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã«å¤±æ•— @DirectX11Manager::CompileShader"
+	);
 
-	// ’¸“_ƒVƒF[ƒ_‚ğì¬‚µAw’èƒ^ƒCƒv‚Ìƒoƒ“ƒhƒ‹‚ÉŠi”[‚·‚é
+	// é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã‚’ä½œæˆã—ã€æŒ‡å®šã‚¿ã‚¤ãƒ—ã®ãƒãƒ³ãƒ‰ãƒ«ã«æ ¼ç´ã™ã‚‹
 	hResult = DirectX11Draw::pDevice_->CreateVertexShader(
-		pCompileVS->GetBufferPointer(),  // ƒRƒ“ƒpƒCƒ‹‚³‚ê‚½ƒoƒbƒtƒ@‚Ìƒ|ƒCƒ“ƒ^
-		pCompileVS->GetBufferSize(),     // ƒoƒbƒtƒ@‚ÌƒTƒCƒY
-		nullptr,                         // ƒŠƒ“ƒP[ƒWƒNƒ‰ƒX: –³‚µ
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexShader.ReleaseAndGetAddressOf());
+		pCompileVS->GetBufferPointer(), // ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã•ã‚ŒãŸãƒãƒƒãƒ•ã‚¡ã®ãƒã‚¤ãƒ³ã‚¿
+		pCompileVS->GetBufferSize(),	// ãƒãƒƒãƒ•ã‚¡ã®ã‚µã‚¤ã‚º
+		nullptr,						// ãƒªãƒ³ã‚±ãƒ¼ã‚¸ã‚¯ãƒ©ã‚¹: ç„¡ã—
+		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexShader.ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult)  // ’¸“_ƒVƒF[ƒ_‚Ìì¬‚É¬Œ÷
-		&& "’¸“_ƒVƒF[ƒ_‚Ìì¬‚É¸”s @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã®ä½œæˆã«æˆåŠŸ
+		&& "é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã®ä½œæˆã«å¤±æ•— @DirectX11Manager::CompileShader"
+	);
 #pragma endregion
 
-#pragma region ƒsƒNƒZƒ‹ƒVƒF[ƒ_
-	// ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
-	ID3DBlob* pCompilePS{ nullptr };
+#pragma region ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€
+	// ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
+	ID3DBlob* pCompilePS{nullptr};
 
-	// ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚ÌƒRƒ“ƒpƒCƒ‹
+	// ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«
 	hResult = D3DCompileFromFile(
-		_fileName.c_str(),  // ƒtƒ@ƒCƒ‹ƒpƒX
-		nullptr,            // ƒVƒF[ƒ_ƒ}ƒNƒ‚Ì”z—ñ
-		&hlslInclude,       // ƒCƒ“ƒNƒ‹[ƒh‚·‚é‚â‚Â
-		"PS",               // ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg‚ÌŠÖ”–¼
-		"ps_5_0",           // ƒVƒF[ƒ_‚Ìƒo[ƒWƒ‡ƒ“ (ƒIƒvƒVƒ‡ƒ“‚Å•t‚¯‚é‚â‚Â)
-		0,                  // ƒIƒvƒVƒ‡ƒ“ƒtƒ‰ƒO1
-		0,                  // ƒIƒvƒVƒ‡ƒ“ƒtƒ‰ƒO2
-		&pCompilePS,        // ƒRƒ“ƒpƒCƒ‹Ï‚İƒR[ƒh‚Ö‚ÌƒAƒNƒZƒXƒCƒ“ƒ^ƒtƒF[ƒX
-		nullptr);           // ƒGƒ‰[ƒƒbƒZ[ƒWóM—p –³‚µ
+		_fileName.c_str(), // ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
+		nullptr,		   // ã‚·ã‚§ãƒ¼ãƒ€ãƒã‚¯ãƒ­ã®é…åˆ—
+		&hlslInclude,	   // ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã™ã‚‹ã‚„ã¤
+		"PS",			   // ã‚¨ãƒ³ãƒˆãƒªãƒã‚¤ãƒ³ãƒˆã®é–¢æ•°å
+		"ps_5_0",		   // ã‚·ã‚§ãƒ¼ãƒ€ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ (ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã§ä»˜ã‘ã‚‹ã‚„ã¤)
+		0,				   // ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ•ãƒ©ã‚°1
+		0,				   // ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ•ãƒ©ã‚°2
+		&pCompilePS,	   // ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ¸ˆã¿ã‚³ãƒ¼ãƒ‰ã¸ã®ã‚¢ã‚¯ã‚»ã‚¹ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
+		nullptr
+	); // ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡ç”¨ ç„¡ã—
 
-	massert(SUCCEEDED(hResult)  // ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚ÌƒRƒ“ƒpƒCƒ‹‚É¬Œ÷
-		&& "ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚ÌƒRƒ“ƒpƒCƒ‹‚É¸”s @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã«æˆåŠŸ
+		&& "ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã«å¤±æ•— @DirectX11Manager::CompileShader"
+	);
 
-	// ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚ğì¬‚µAw’èƒ^ƒCƒv‚Ìƒoƒ“ƒhƒ‹‚ÉŠi”[‚·‚é
+	// ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã‚’ä½œæˆã—ã€æŒ‡å®šã‚¿ã‚¤ãƒ—ã®ãƒãƒ³ãƒ‰ãƒ«ã«æ ¼ç´ã™ã‚‹
 	hResult = DirectX11Draw::pDevice_->CreatePixelShader(
-		pCompilePS->GetBufferPointer(),  // ƒRƒ“ƒpƒCƒ‹‚³‚ê‚½ƒoƒbƒtƒ@‚Ìƒ|ƒCƒ“ƒ^
-		pCompilePS->GetBufferSize(),     // ƒoƒbƒtƒ@‚ÌƒTƒCƒY
-		nullptr,                         // ƒŠƒ“ƒP[ƒWƒNƒ‰ƒX: –³‚µ
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pPixelShader.ReleaseAndGetAddressOf());
+		pCompilePS->GetBufferPointer(), // ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã•ã‚ŒãŸãƒãƒƒãƒ•ã‚¡ã®ãƒã‚¤ãƒ³ã‚¿
+		pCompilePS->GetBufferSize(),	// ãƒãƒƒãƒ•ã‚¡ã®ã‚µã‚¤ã‚º
+		nullptr,						// ãƒªãƒ³ã‚±ãƒ¼ã‚¸ã‚¯ãƒ©ã‚¹: ç„¡ã—
+		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pPixelShader.ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult)  // ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚Ìì¬‚É¬Œ÷
-		&& "ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚Ìì¬‚É¸”s @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®ä½œæˆã«æˆåŠŸ
+		&& "ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®ä½œæˆã«å¤±æ•— @DirectX11Manager::CompileShader"
+	);
 #pragma endregion
 
-#pragma region ’¸“_ƒŒƒCƒAƒEƒg
-	// ’¸“_ƒŒƒCƒAƒEƒg‚ğì¬‚µAw’èƒ^ƒCƒv‚Ìƒoƒ“ƒhƒ‹‚ÉŠi”[‚·‚é
+#pragma region é ‚ç‚¹ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ
+	// é ‚ç‚¹ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã‚’ä½œæˆã—ã€æŒ‡å®šã‚¿ã‚¤ãƒ—ã®ãƒãƒ³ãƒ‰ãƒ«ã«æ ¼ç´ã™ã‚‹
 	hResult = DirectX11Draw::pDevice_->CreateInputLayout(
-		_pHLSLLayout,                    // “ü—Íƒf[ƒ^Œ^”z—ñ
-		_layoutLength,                   // “ü—Íƒf[ƒ^Œ^”z—ñ‚Ì—v‘f”
-		pCompileVS->GetBufferPointer(),  // ƒRƒ“ƒpƒCƒ‹‚³‚ê‚½ƒoƒbƒtƒ@‚Ìƒ|ƒCƒ“ƒ^
-		pCompileVS->GetBufferSize(),     // ƒoƒbƒtƒ@‚ÌƒTƒCƒY
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexLayout.ReleaseAndGetAddressOf());
+		_pHLSLLayout,					// å…¥åŠ›ãƒ‡ãƒ¼ã‚¿å‹é…åˆ—
+		_layoutLength,					// å…¥åŠ›ãƒ‡ãƒ¼ã‚¿å‹é…åˆ—ã®è¦ç´ æ•°
+		pCompileVS->GetBufferPointer(), // ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã•ã‚ŒãŸãƒãƒƒãƒ•ã‚¡ã®ãƒã‚¤ãƒ³ã‚¿
+		pCompileVS->GetBufferSize(),	// ãƒãƒƒãƒ•ã‚¡ã®ã‚µã‚¤ã‚º
+		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexLayout.ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult)  // ’¸“_ƒŒƒCƒAƒEƒg‚Ìì¬‚É¬Œ÷
-		&& "’¸“_ƒŒƒCƒAƒEƒg‚Ìì¬‚É¸”s @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // é ‚ç‚¹ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ä½œæˆã«æˆåŠŸ
+		&& "é ‚ç‚¹ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ä½œæˆã«å¤±æ•— @DirectX11Manager::CompileShader"
+	);
 #pragma endregion
 
-#pragma region ƒ‰ƒXƒ^ƒ‰ƒCƒU
-	// ƒ‰ƒXƒ^ƒ‰ƒCƒU‚ğì¬‚µAw’èƒ^ƒCƒv‚Ìƒoƒ“ƒhƒ‹‚ÉŠi”[‚·‚é
+#pragma region ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶
+	// ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶ã‚’ä½œæˆã—ã€æŒ‡å®šã‚¿ã‚¤ãƒ—ã®ãƒãƒ³ãƒ‰ãƒ«ã«æ ¼ç´ã™ã‚‹
 	DirectX11Draw::pDevice_->CreateRasterizerState(
-		_pRasterizerDesc,  // ƒ‰ƒXƒ^ƒ‰ƒCƒU‚Ìİ’è
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pRasterizerState.ReleaseAndGetAddressOf());
+		_pRasterizerDesc, // ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶ã®è¨­å®š
+		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pRasterizerState.ReleaseAndGetAddressOf()
+	);
 
-	massert(SUCCEEDED(hResult)  // ƒ‰ƒXƒ^ƒ‰ƒCƒU‚Ìì¬‚É¬Œ÷
-		&& "ƒ‰ƒXƒ^ƒ‰ƒCƒU‚Ìì¬‚É¸”s @DirectX11Manager::CompileShader");
+	massert(
+		SUCCEEDED(hResult) // ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶ã®ä½œæˆã«æˆåŠŸ
+		&& "ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶ã®ä½œæˆã«å¤±æ•— @DirectX11Manager::CompileShader"
+	);
 #pragma endregion
 
-
-	// ‰ğ•ú‚µ‚Ä‚¢‚­
+	// è§£æ”¾ã—ã¦ã„ã
 	SAFE_RELEASE(pCompileVS);
 	SAFE_RELEASE(pCompilePS);
 }

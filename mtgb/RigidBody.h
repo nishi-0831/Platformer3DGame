@@ -6,7 +6,6 @@
 #include "IComponentMemento.h"
 
 #include "Vector3.h"
-#include "RigidBodyState.h"
 #include "RigidBodyCP.h"
 #include <functional>
 #include <DirectXCollision.h>
@@ -17,9 +16,9 @@ namespace mtgb
 	class Transform;
 	class RigidBodyCP;
 	MT_COMPONENT()
-	class RigidBody : public IComponent<RigidBodyCP,RigidBody> , public ISerializableObject
+	class RigidBody : public IComponent<RigidBodyCP, RigidBody>, public ISerializableObject
 	{
-	public:
+	  public:
 		MT_GENERATED_BODY()
 		friend RigidBodyCP;
 		using IComponent::IComponent;
@@ -32,7 +31,7 @@ namespace mtgb
 		void OnGround();
 		void OnPostRestore() {};
 		/// <summary>
-		/// 当たったときのイベントコールバック
+		/// 蠖薙◆縺｣縺溘→縺阪�ｮ繧､繝吶Φ繝医さ繝ｼ繝ｫ繝舌ャ繧ｯ
 		/// </summary>
 		/// <param name="onHit_">void(const EntityId)</param>
 		void OnCollisionEnter(const std::function<void(const EntityId)>& _onHit);
@@ -40,7 +39,8 @@ namespace mtgb
 		void OnCollisionExit(const std::function<void(const EntityId)>& _onExit);
 		bool IsJumping();
 		static Vector3 GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
-	public:
+
+	  public:
 		bool isNeedUpdate_;
 		Vector3 velocity_;
 		MT_PROPERTY()
@@ -48,12 +48,12 @@ namespace mtgb
 		bool isGround_;
 		MT_PROPERTY()
 		bool isKinematic_;
-	private:
 
+	  private:
 		std::function<void(const EntityId)> onHit_;
 		std::function<void(const EntityId)> onStay_;
 		std::function<void(const EntityId)> onExit_;
-		Transform* pTransform_;  // TODO: 危ないTransform
+		Transform* pTransform_; // TODO: 蜊ｱ縺ｪ縺Уransform
 	};
 
-}
+} // namespace mtgb

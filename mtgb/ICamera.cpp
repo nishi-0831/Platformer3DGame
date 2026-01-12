@@ -3,59 +3,59 @@
 #include "GameTime.h"
 #include "Transform.h"
 mtgb::ICamera::ICamera()
-	: pCameraTransform_{ nullptr }
-	, pTargetTransform_{ nullptr }
-	, polarAngleRad_{ 0.0f }
-	, azimuthalAngleRad_{ 0.0f }
+	: pCameraTransform_{nullptr}
+	, pTargetTransform_{nullptr}
+	, polarAngleRad_{0.0f}
+	, azimuthalAngleRad_{0.0f}
 	, followTarget_{false}
 	, adjustTargetDirection_{false}
 	, inputType_{InputType::MOUSE}
 	, orbitSpeed_{1.0f}
 	, rotateSensitivity_{1.0f}
-	, distance_{5.0f}
-	// ƒfƒtƒHƒ‹ƒg‚ÌŠp“x§ŒÀiƒ‰ƒWƒAƒ“j
-	, minPolarAngleRad_{ DirectX::XMConvertToRadians(0.1f)}
-	, maxPolarAngleRad_{ DirectX::XMConvertToRadians(179.0f)}
-	, minAzimuthalAngleRad_{ -(std::numeric_limits<float>::max)() }
-	, maxAzimuthalAngleRad_{ (std::numeric_limits<float>::max)() }
-	, lookAtPositionOffset_{0,0,0}
+	, distance_{5.0f} // ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®è§’åº¦åˆ¶é™ï¼ˆãƒ©ã‚¸ã‚¢ãƒ³ï¼‰
+	, minPolarAngleRad_{DirectX::XMConvertToRadians(0.1f)}
+	, maxPolarAngleRad_{DirectX::XMConvertToRadians(179.0f)}
+	, minAzimuthalAngleRad_{-(std::numeric_limits<float>::max)()}
+	, maxAzimuthalAngleRad_{(std::numeric_limits<float>::max)()}
+	, lookAtPositionOffset_{0, 0, 0}
 {
 }
 void mtgb::ICamera::MoveCameraSpherical(float _distance)
 {
 	// ref:https://ja.wikipedia.org/wiki/%E7%90%83%E9%9D%A2%E5%BA%A7%E6%A8%99%E7%B3%BB
 
-	// Œ»İ‚ÌƒJƒƒ‰ˆÊ’u‚©‚ç‰ñ“]’†S‚ğŒvZ
+	// ç¾åœ¨ã®ã‚«ãƒ¡ãƒ©ä½ç½®ã‹ã‚‰å›è»¢ä¸­å¿ƒã‚’è¨ˆç®—
 	Vector3 center = Vector3::Zero();
-	// ƒ^[ƒQƒbƒg‚ğ’†S‚É‰ñ“]
+	// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ä¸­å¿ƒã«å›è»¢
 	if (pTargetTransform_)
 	{
-		Vector3 toTarget = pTargetTransform_->position - pCameraTransform_->position;
-		center = pTargetTransform_->position + (Vector3::Normalize(-toTarget) * _distance) + lookAtPositionOffset_;
+		// Vector3 toTarget = pTargetTransform_->position - pCameraTransform_->position;
+		center = pTargetTransform_->position + lookAtPositionOffset_;
+		// center = pTargetTransform_->position + (Vector3::Normalize(-toTarget) * _distance) + lookAtPositionOffset_;
 	}
-	// ƒ^[ƒQƒbƒg‚ª‚¢‚È‚¢ê‡‚Í³–Ê‚ğŒü‚¢‚Ä‰ñ“]
+	// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆãŒã„ãªã„å ´åˆã¯æ­£é¢ã‚’å‘ã„ã¦å›è»¢
 	else
 	{
 		center = pCameraTransform_->position + (pCameraTransform_->Forward() * _distance) + lookAtPositionOffset_;
 	}
 
-	// ƒÆ (polar angle) : ‰”’¼•ûŒü
+	// Î¸ (polar angle) : é‰›ç›´æ–¹å‘
 	float theta = polarAngleRad_;
 
-	// ƒÓ (azimuthal angle): …•½•ûŒü
+	// Ï† (azimuthal angle): æ°´å¹³æ–¹å‘
 	float phi = azimuthalAngleRad_;
 
-	// ‰ñ“]’†S‚©‚ç‚ÌƒIƒtƒZƒbƒg
+	// å›è»¢ä¸­å¿ƒã‹ã‚‰ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 	Vector3 offset;
 
-	// ‰ñ“]’†S‚Ì•ûŒü‚ğŒü‚­
+	// å›è»¢ä¸­å¿ƒã®æ–¹å‘ã‚’å‘ã
 
-	// •ÏŠ·
+	// å¤‰æ›
 	offset.x = _distance * sinf(theta) * cos(phi);
 	offset.y = -_distance * cos(theta);
 	offset.z = -_distance * sin(theta) * sin(phi);
 
-	// ˆÊ’u‚ğ”½‰f
+	// ä½ç½®ã‚’åæ˜ 
 	pCameraTransform_->position = center + offset;
 
 	Vector3 lookDir = center - pCameraTransform_->position;
@@ -68,13 +68,13 @@ void mtgb::ICamera::DoOrbit()
 	Vector3 movement;
 	switch (inputType_)
 	{
-	case InputType::MOUSE:
+	case InputType::MOUSE :
 		movement = InputUtil::GetMouseMove();
 		break;
-	case InputType::JOYPAD:
+	case InputType::JOYPAD :
 		Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
-		movement.x = -vec2.x;
-		movement.y = vec2.y;
+		movement.x	  = -vec2.x;
+		movement.y	  = vec2.y;
 		break;
 	}
 
@@ -83,11 +83,15 @@ void mtgb::ICamera::DoOrbit()
 		azimuthalAngleRad_ -= movement.x * orbitSpeed_ * Time::DeltaTimeF();
 		polarAngleRad_ += movement.y * orbitSpeed_ * Time::DeltaTimeF();
 
-		// ‰”’¼Šp“x‚ğ§ŒÀ
+		// é‰›ç›´è§’åº¦ã‚’åˆ¶é™
 		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
-		azimuthalAngleRad_ = std::clamp(azimuthalAngleRad_, minAzimuthalAngleRad_, maxAzimuthalAngleRad_);
 
-		MoveCameraSpherical(distance_);
+		float distance = distance_;
+		if (pTargetTransform_ != nullptr)
+		{
+			distance = (pTargetTransform_->position - pCameraTransform_->position).Size();
+		}
+		MoveCameraSpherical(distance);
 	}
 }
 
@@ -95,11 +99,12 @@ void mtgb::ICamera::FollowTarget()
 {
 	if (pTargetTransform_)
 	{
-		if (!followTarget_) return;
+		if (!followTarget_)
+			return;
 
 		if (adjustTargetDirection_)
 		{
-			pCameraTransform_->rotate = pTargetTransform_->rotate;
+			pCameraTransform_->rotate	= pTargetTransform_->rotate;
 			pCameraTransform_->position = pTargetTransform_->position + (pTargetTransform_->Back() * distance_);
 		}
 		else

@@ -5,37 +5,55 @@
 namespace mtgb
 {
 	/// <summary>
-	/// 4ŸŒ³ƒxƒNƒgƒ‹
+	/// 4æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«
 	/// </summary>
 	struct Vector4 : DirectX::XMVECTORF32
 	{
 		/// <summary>
-		/// 4ŸŒ³ƒxƒNƒgƒ‹
+		/// 4æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«
 		/// </summary>
-		/// <param name="_x">x¬•ª</param>
-		/// <param name="_y">y¬•ª</param>
-		/// <param name="_z">z¬•ª</param>
-		/// <param name="_w">w¬•ª</param>
-		Vector4(
-			const float _x,
-			const float _y,
-			const float _z,
-			const float _w);
+		/// <param name="_x">xæˆåˆ†</param>
+		/// <param name="_y">yæˆåˆ†</param>
+		/// <param name="_z">zæˆåˆ†</param>
+		/// <param name="_w">wæˆåˆ†</param>
+		Vector4(const float _x, const float _y, const float _z, const float _w);
 		/// <summary>
-		/// Vector3‚©‚çˆÃ–Ù“I‚È•ÏŠ·
+		/// Vector3ã‹ã‚‰æ˜ç¤ºçš„ãªå¤‰æ›
 		/// </summary>
-		/// <param name="_vec3">•ÏŠ·Œ³</param>
-		Vector4(const Vector3& _vec3);
+		/// <param name="_vec3">å¤‰æ›å…ƒ</param>
+		explicit Vector4(const Vector3& _vec3);
 
-		Vector4() :
-			Vector4{ 0.0f, 0.0f, 0.0f, 0.0f }
+		Vector4()
+			: Vector4{0.0f, 0.0f, 0.0f, 0.0f}
 		{
 		}
 
-		static inline auto Zero() { return Vector4{ 0,  0,  0,  0 }; }
-		static inline auto One()  { return Vector4{ 1,  1,  1,  1 }; }
+		static inline auto Zero()
+		{
+			return Vector4{0, 0, 0, 0};
+		}
+		static inline auto One()
+		{
+			return Vector4{1, 1, 1, 1};
+		}
 
-		inline Vector4& operator+=(const Vector3& _other) { f[0] += _other.x; f[1] += _other.y; f[2] += _other.z; return *this; }
-		inline Vector4& operator-=(const Vector3& _other) { f[0] -= _other.x; f[1] -= _other.y; f[2] -= _other.z; return *this; }
+		inline Vector4& operator+=(const Vector3& _other)
+		{
+			f[0] += _other.x;
+			f[1] += _other.y;
+			f[2] += _other.z;
+			return *this;
+		}
+		inline Vector4& operator-=(const Vector3& _other)
+		{
+			f[0] -= _other.x;
+			f[1] -= _other.y;
+			f[2] -= _other.z;
+			return *this;
+		}
 	};
-}
+	inline Vector4 operator+(const Vector4& lhs, const Vector4& rhs)
+	{
+		return Vector4{lhs.f[0] + rhs.f[0], lhs.f[1] + rhs.f[1], lhs.f[2] + rhs.f[2], lhs.f[3] + rhs.f[3]};
+	}
+} // namespace mtgb

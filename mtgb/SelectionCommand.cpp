@@ -14,7 +14,7 @@ EntityId mtgb::SelectionCommand::GetCommandTargetEntityId() const
 
 mtgb::DeselectionCommand::DeselectionCommand(EntityId _entityId, ExecuteFn _deselectFunc, UndoFn _selectFunc)
 	: entityId_{_entityId}
-	, deselectFunc_ {_deselectFunc}
+	, deselectFunc_{_deselectFunc}
 	, selectFunc_{_selectFunc}
 {
 }

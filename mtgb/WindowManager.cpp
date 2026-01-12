@@ -1,8 +1,8 @@
 #include "WindowManager.h"
 #include "WindowContextResourceManager.h"
 #include "WindowContext.h"
-//#include <Windows.h>
-//#include "WindowRenderContext.h"
+// #include <Windows.h>
+// #include "WindowRenderContext.h"
 #include "IncludingWindows.h"
 #include "MTAssert.h"
 #include "WindowResource.h"
@@ -14,10 +14,10 @@
 #include "DXGIResource.h"
 #include "Screen.h"
 
-MSG* mtgb::WindowManager::pPeekedMessage_{ nullptr };
+MSG* mtgb::WindowManager::pPeekedMessage_{nullptr};
 std::map<mtgb::WindowContext, mtgb::WindowConfig> mtgb::WindowManager::windowConfigMap_;
 
-mtgb::WindowManager::WindowManager() 
+mtgb::WindowManager::WindowManager()
 {
 	pPeekedMessage_ = new MSG{};
 }
@@ -30,34 +30,28 @@ mtgb::WindowManager::~WindowManager()
 HWND mtgb::WindowManager::CreateWindowContext(WindowResource* _windowResource)
 {
 	WindowConfig config = WindowManager::GetWindowConfig(_windowResource->GetWindowContext());
-	// ƒEƒBƒ“ƒhƒEì¬ˆ—
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½œæˆå‡¦ç†
 	WNDCLASSEX windowClass{};
-	windowClass.cbSize = sizeof(WNDCLASSEX);
-	windowClass.hInstance = GetModuleHandle(NULL);
+	windowClass.cbSize		  = sizeof(WNDCLASSEX);
+	windowClass.hInstance	  = GetModuleHandle(NULL);
 	windowClass.lpszClassName = config.className.c_str();
-	windowClass.lpfnWndProc = mtgb::WindowResource::WndProc; // ‰¼‚ÌƒvƒƒV[ƒWƒƒ
-	windowClass.style = CS_VREDRAW | CS_HREDRAW;
-	windowClass.hIcon = LoadIcon(nullptr, IDI_APPLICATION);
-	windowClass.hIconSm = LoadIcon(nullptr, IDI_WINLOGO);
-	windowClass.hCursor = LoadCursor(nullptr, IDC_ARROW);
-	windowClass.lpszMenuName = nullptr;
-	windowClass.cbClsExtra = 0;
-	windowClass.cbWndExtra = 0;
+	windowClass.lpfnWndProc	  = mtgb::WindowResource::WndProc; // ä»®ã®ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£
+	windowClass.style		  = CS_VREDRAW | CS_HREDRAW;
+	windowClass.hIcon		  = LoadIcon(nullptr, IDI_APPLICATION);
+	windowClass.hIconSm		  = LoadIcon(nullptr, IDI_WINLOGO);
+	windowClass.hCursor		  = LoadCursor(nullptr, IDC_ARROW);
+	windowClass.lpszMenuName  = nullptr;
+	windowClass.cbClsExtra	  = 0;
+	windowClass.cbWndExtra	  = 0;
 	windowClass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
 
-	massert(RegisterClassEx(&windowClass) != 0
-		&& "RegisterClassEx‚É¸”s @WindowManager::CreateWindowContext");
+	massert(RegisterClassEx(&windowClass) != 0 && "RegisterClassExã«å¤±æ•— @WindowManager::CreateWindowContext");
 
-	RECT windowRect{ 0, 0, config.width, config.height };
+	RECT windowRect{0, 0, config.width, config.height};
 	massert(
-		AdjustWindowRectEx(
-			&windowRect,
-			WS_OVERLAPPEDWINDOW,
-			FALSE,
-			WS_EX_OVERLAPPEDWINDOW) != FALSE
-		&& "AdjustWindowRectEx‚É¸”s @WindowManager::CreateWindowContext");
-
-	
+		AdjustWindowRectEx(&windowRect, WS_OVERLAPPEDWINDOW, FALSE, WS_EX_OVERLAPPEDWINDOW) != FALSE &&
+		"AdjustWindowRectExã«å¤±æ•— @WindowManager::CreateWindowContext"
+	);
 
 	HWND hWnd = CreateWindowEx(
 		0,
@@ -74,12 +68,9 @@ HWND mtgb::WindowManager::CreateWindowContext(WindowResource* _windowResource)
 		reinterpret_cast<LPVOID>(_windowResource)
 	);
 
-	massert(hWnd != NULL
-		&& "ƒEƒBƒ“ƒhƒE‚Ìì¬‚É¸”s");
-	massert(SetWindowText(hWnd, config.title.c_str())
-		&& "SetWindowText‚É¸”s");
+	massert(hWnd != NULL && "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ä½œæˆã«å¤±æ•—");
+	massert(SetWindowText(hWnd, config.title.c_str()) && "SetWindowTextã«å¤±æ•—");
 
-	
 	return hWnd;
 }
 
@@ -87,9 +78,12 @@ mtgb::Vector2Int mtgb::WindowManager::GetWindowSize(WindowContext context)
 {
 	if (context == WindowContext::Both)
 	{
-		return mtgb::Vector2Int{ windowConfigMap_[WindowContext::First].width,windowConfigMap_[WindowContext::First].height };
+		return mtgb::Vector2Int{
+			windowConfigMap_[WindowContext::First].width,
+			windowConfigMap_[WindowContext::First].height
+		};
 	}
-	return mtgb::Vector2Int{ windowConfigMap_[context].width,windowConfigMap_[context].height };
+	return mtgb::Vector2Int{windowConfigMap_[context].width, windowConfigMap_[context].height};
 }
 
 void mtgb::WindowManager::Initialize()
@@ -98,12 +92,7 @@ void mtgb::WindowManager::Initialize()
 
 void mtgb::WindowManager::Update()
 {
-	if (PeekMessage(
-		pPeekedMessage_,
-		nullptr,
-		0u,
-		0u,
-		PM_REMOVE))
+	if (PeekMessage(pPeekedMessage_, nullptr, 0u, 0u, PM_REMOVE))
 	{
 		TranslateMessage(pPeekedMessage_);
 		DispatchMessage(pPeekedMessage_);
@@ -123,12 +112,10 @@ void mtgb::WindowManager::SetWindowConfig(WindowContext windowContext, const Win
 mtgb::WindowConfig mtgb::WindowManager::GetWindowConfig(WindowContext windowContext)
 {
 	auto itr = windowConfigMap_.find(windowContext);
-	
-	massert(itr != windowConfigMap_.end() && "w’è‚³‚ê‚½WindowContext‚ÌConfig‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ");
+
+	massert(itr != windowConfigMap_.end() && "æŒ‡å®šã•ã‚ŒãŸWindowContextã®ConfigãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
 	return itr->second;
 }
-
-
 
 mtgb::WindowResource& mtgb::WindowManager::GetWindowResource(WindowContext windowContext)
 {
@@ -146,12 +133,12 @@ void mtgb::WindowManager::ChangeFullScreenStateNearestMonitor(WindowContext _ctx
 
 	HMONITOR hMonitor = MonitorFromWindow(winRes.GetHWND(), MONITOR_DEFAULTTONEAREST);
 	MONITORINFO mInfo = {};
-	mInfo.cbSize = sizeof(MONITORINFO);
+	mInfo.cbSize	  = sizeof(MONITORINFO);
 
 	if (GetMonitorInfo(hMonitor, &mInfo))
 	{
 		RECT monitorRect = mInfo.rcMonitor;
-		ChangeFullScreenState(_ctx,monitorRect);
+		ChangeFullScreenState(_ctx, monitorRect);
 	}
 }
 
@@ -164,7 +151,7 @@ void mtgb::WindowManager::ChangeFullScreenState(WindowContext _ctx, const RECT& 
 	{
 		winRes.SetFullScreen(_rect);
 
-		winWidth = _rect.right - _rect.left;
+		winWidth  = _rect.right - _rect.left;
 		winHeight = _rect.bottom - _rect.top;
 	}
 	else
@@ -172,8 +159,8 @@ void mtgb::WindowManager::ChangeFullScreenState(WindowContext _ctx, const RECT& 
 		winRes.SetWindowMode();
 
 		Vector2Int initialSize = Game::System<Screen>().GetInitialSize();
-		winWidth = static_cast<UINT>(initialSize.x);
-		winHeight = static_cast<UINT>(initialSize.y);
+		winWidth			   = static_cast<UINT>(initialSize.x);
+		winHeight			   = static_cast<UINT>(initialSize.y);
 	}
 
 	ResizeWindow(_ctx, winWidth, winHeight);
@@ -181,27 +168,27 @@ void mtgb::WindowManager::ChangeFullScreenState(WindowContext _ctx, const RECT& 
 
 void mtgb::WindowManager::ResizeWindow(WindowContext _windowContext, UINT _width, UINT _height)
 {
-	// ƒpƒCƒvƒ‰ƒCƒ“‚ÉƒoƒCƒ“ƒh‚µ‚½İ’èAƒXƒƒbƒvƒ`ƒF[ƒ“‚ÌƒoƒbƒNƒoƒbƒtƒ@‚ğQÆ‚·‚éƒŠƒ\[ƒX‚ÌƒŠƒZƒbƒg
+	// ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã«ãƒã‚¤ãƒ³ãƒ‰ã—ãŸè¨­å®šã€ã‚¹ãƒ¯ãƒƒãƒ—ãƒã‚§ãƒ¼ãƒ³ã®ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã‚’å‚ç…§ã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®ãƒªã‚»ãƒƒãƒˆ
 	Game::System<DirectX11Manager>().ClearState();
 	if (_windowContext == WindowContext::First)
 	{
 		Game::System<ImGuiRenderer>().ResetComPtrs();
 	}
-	// ƒŠƒ\[ƒX‚ğXV
+	// ãƒªã‚½ãƒ¼ã‚¹ã‚’æ›´æ–°
 	Game::System<WindowContextResourceManager>().OnResizeAll(_windowContext, _width, _height);
 
-	// ƒfƒtƒHƒ‹ƒg‚Ìİ’è‚ğƒZƒbƒg
+	// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®è¨­å®šã‚’ã‚»ãƒƒãƒˆ
 	Game::System<DirectX11Manager>().SetDefaultStates();
 
-	// ImGui‚àXV
+	// ImGuiã‚‚æ›´æ–°
 	if (_windowContext == WindowContext::First)
 	{
-		Game::System<ImGuiRenderer>().OnResize(_width,_height);
+		Game::System<ImGuiRenderer>().OnResize(_width, _height);
 	}
 }
 
 #pragma region SwapWindowPos()
-//void mtgb::WindowManager::SwapWindowPos(WindowContext _ctx1, WindowContext _ctx2)
+// void mtgb::WindowManager::SwapWindowPos(WindowContext _ctx1, WindowContext _ctx2)
 //{
 //	DXGIResource& dxgiRes1 = WinCtxRes::Get<DXGIResource>(_ctx1);
 //	DXGIResource& dxgiRes2 = WinCtxRes::Get<DXGIResource>(_ctx2);
@@ -214,10 +201,10 @@ void mtgb::WindowManager::ResizeWindow(WindowContext _windowContext, UINT _width
 //
 //	bool win1IsFullScreen = winRes1.IsFullScreen();
 //	bool win2IsFullScreen = winRes2.IsFullScreen();
-//	
-//	
-//	 
-//	// ‚Ç‚¿‚ç‚àƒtƒ‹ƒXƒNƒŠ[ƒ“
+//
+//
+//
+//	// ã©ã¡ã‚‰ã‚‚ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³
 //	if (win1IsFullScreen == true && win2IsFullScreen == true)
 //	{
 //		UINT win1Width = monitorRect1.right - monitorRect1.left;
@@ -226,32 +213,32 @@ void mtgb::WindowManager::ResizeWindow(WindowContext _windowContext, UINT _width
 //		UINT win1Height = monitorRect1.bottom - monitorRect1.top;
 //		UINT win2Height = monitorRect2.bottom - monitorRect2.top;
 //
-//		// ƒXƒNƒŠ[ƒ“‚ÌƒTƒCƒY‚ªˆá‚¤‚©
+//		// ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã®ã‚µã‚¤ã‚ºãŒé•ã†ã‹
 //		if (win1Width != win2Width || win1Height != win2Height)
 //		{
-//			// ƒTƒCƒY‚à•ÏX
+//			// ã‚µã‚¤ã‚ºã‚‚å¤‰æ›´
 //			winRes1.SetFullScreen(monitorRect2);
 //			winRes2.SetFullScreen(monitorRect1);
 //		}
 //		else
 //		{
-//			// ˆÊ’u‚¾‚¯•ÏX
+//			// ä½ç½®ã ã‘å¤‰æ›´
 //			winRes1.SetPosition(monitorRect2);
 //			winRes2.SetPosition(monitorRect1);
 //		}
 //	}
-//	// ‚Ç‚¿‚ç‚àƒEƒBƒ“ƒhƒEƒ‚[ƒh
+//	// ã©ã¡ã‚‰ã‚‚ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰
 //	else if (win1IsFullScreen == false && win2IsFullScreen == false)
 //	{
-//		// ˆÊ’u‚¾‚¯•ÏX
+//		// ä½ç½®ã ã‘å¤‰æ›´
 //		winRes1.SetPosition(monitorRect2);
 //		winRes2.SetPosition(monitorRect1);
 //	}
-//	// ‚Ç‚¿‚ç‚©‚ªƒtƒ‹ƒXƒNƒŠ[ƒ“A‚Ç‚¿‚ç‚©‚ªƒEƒBƒ“ƒhƒEƒ‚[ƒh
+//	// ã©ã¡ã‚‰ã‹ãŒãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã€ã©ã¡ã‚‰ã‹ãŒã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰
 //	else
 //	{
 //		ChangeFullScreenState(_ctx1, monitorRect2);
 //		ChangeFullScreenState(_ctx2, monitorRect1);
 //	}
-//}
+// }
 #pragma endregion

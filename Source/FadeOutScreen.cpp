@@ -3,20 +3,20 @@
 
 FadeOutScreen::FadeOutScreen()
 	: GameObject{}
-	, pImageRenderer_{ Component<ImageRenderer>() }
+	, pImageRenderer_{Component<ImageRenderer>()}
 	, duration_{3.0f}
 	, elapsed_{0.0f}
 	, isStarted_{false}
 	, isFinished_{false}
 {
-	pImageRenderer_->imageFileName_ = "Image/Black.png";
-	pImageRenderer_->handle_ = Image::Load(pImageRenderer_->imageFileName_);
-	pImageRenderer_->layer_ = AllLayer();
-	pImageRenderer_->uiParams_.depth = 1;
+	pImageRenderer_->imageFileName_		 = "Image/Black.png";
+	pImageRenderer_->handle_			 = Image::Load(pImageRenderer_->imageFileName_);
+	pImageRenderer_->layer_				 = AllLayer();
+	pImageRenderer_->uiParams_.depth	 = 1;
 	pImageRenderer_->uiParams_.layerFlag = AllLayer();
-	Vector2F screenSize = Game::System<Screen>().GetSizeF();
+	Vector2F screenSize					 = Game::System<Screen>().GetSizeF();
 
-	pImageRenderer_->drawRect_ = RectF{ Vector2F::Zero(),screenSize };
+	pImageRenderer_->drawRect_ = RectF{Vector2F::Zero(), screenSize};
 
 	pImageRenderer_->color_.component[static_cast<int32_t>(Color::Component::Alpha)] = 0;
 }
@@ -38,7 +38,7 @@ void FadeOutScreen::Update()
 
 	elapsed_ += Time::DeltaTimeF();
 	float progress = elapsed_ / duration_;
-	float alpha = ( progress * static_cast<float>(UINT8_MAX) );
+	float alpha	   = (progress * static_cast<float>(UINT8_MAX));
 	pImageRenderer_->color_.component[static_cast<int32_t>(Color::Component::Alpha)] = static_cast<int32_t>(alpha);
 
 	if (progress >= 1.0f)

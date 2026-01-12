@@ -4,21 +4,21 @@
 namespace mtgb
 {
 	/// <summary>
-	/// UI•`‰æ‚Éw’è‚·‚éİ’è
+	/// UIæç”»æ™‚ã«æŒ‡å®šã™ã‚‹è¨­å®š
 	/// </summary>
 	struct UIParams
 	{
-		int depth = 0;// ¬‚³‚¢‚Ù‚Ç‰œA‘å‚«‚¢‚Ù‚Çè‘O
-		GameObjectLayerFlag layerFlag = mtbit::operator|(GameObjectLayer::A, GameObjectLayer::B);// •`‰æ‚·‚éƒŒƒCƒ„[
+		int depth					  = 0; // å°ã•ã„ã»ã©å¥¥ã€å¤§ãã„ã»ã©æ‰‹å‰
+		GameObjectLayerFlag layerFlag = mtbit::operator|(GameObjectLayer::A, GameObjectLayer::B); // æç”»ã™ã‚‹ãƒ¬ã‚¤ãƒ¤ãƒ¼
 	};
 	struct UIDrawCommand
 	{
 		UIParams params;
-		std::function<void()> drawFunction; //•`‰æŠÖ”
+		std::function<void()> drawFunction; // æç”»é–¢æ•°
 
-		bool operator<(const UIDrawCommand& other) const
+		bool operator<(const UIDrawCommand& _other) const
 		{
-			return params.depth < other.params.depth;
+			return params.depth < _other.params.depth;
 		}
 	};
-}
+} // namespace mtgb

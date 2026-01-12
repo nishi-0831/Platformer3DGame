@@ -6,7 +6,7 @@
 #include "MTImGui.h"
 #include <string>
 // ============================================================================
-// MeshRenderer‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
+// MeshRendererã®çŠ¶æ…‹ã‚’ä¿å­˜ã™ã‚‹Stateæ§‹é€ ä½“ã®å®šç¾©ã€Undo/Redoã«ä½¿ã†Mementoã®usingå®£è¨€
 // ============================================================================
 #define MT_COMPONENT_MeshRenderer() \
 	struct MeshRendererState \
@@ -20,7 +20,7 @@
 	using MeshRendererMemento = ComponentMemento<MeshRenderer, MeshRendererState>;
 
 // ============================================================================
-// MeshRenderer‚ÆMeshRendererMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
+// MeshRendererã¨MeshRendererMementoã®ç›¸äº’å¤‰æ›å‡¦ç†ã‚’å®Ÿè£…
 // ============================================================================
 #define MT_GENERATED_BODY_MeshRenderer() \
 	public: \
@@ -63,7 +63,7 @@
 		_target.OnPostRestore(); \
 	} \
 	static std::string TypeName(){ return "MeshRenderer" ;} \
-	/* ImGui•\¦ˆ—‚Ì“o˜^ */ \
+	/* ImGuiè¡¨ç¤ºå‡¦ç†ã®ç™»éŒ² */ \
 	static void RegisterImGui() \
 	{ \
 		static bool registered = false; \
@@ -82,7 +82,7 @@
 
 #pragma warning(push)
 #pragma warning(disable:4005)
-// ƒ}ƒNƒã‘‚«
+// ãƒã‚¯ãƒ­ä¸Šæ›¸ã
 #define MT_COMPONENT() MT_COMPONENT_MeshRenderer()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_MeshRenderer()
 #pragma warning(pop)

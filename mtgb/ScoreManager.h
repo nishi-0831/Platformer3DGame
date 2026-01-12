@@ -6,54 +6,60 @@ namespace mtgb
 {
 	class ScoreManager : public ISystem
 	{
-	public:
+	  public:
 		ScoreManager();
 		~ScoreManager();
-		void Initialize() override {}
+		void Initialize() override
+		{
+		}
 		void Update() override;
 
 		/// <summary>
-		/// ƒXƒRƒA‚Ì‰Á“_‚ğs‚¤
+		/// ã‚¹ã‚³ã‚¢ã®åŠ ç‚¹ã‚’è¡Œã†
 		/// </summary>
 		static void AddScore(uint32_t _score);
 		/// <summary>
-		/// ƒmƒ‹ƒ}‚Ì‰Á“_‚ğs‚¤
+		/// ãƒãƒ«ãƒã®åŠ ç‚¹ã‚’è¡Œã†
 		/// </summary>
-		static void AddQuota(uint32_t _quota) { ScoreManager::quotaScore_ += _quota; }
+		static void AddQuota(uint32_t _quota)
+		{
+			ScoreManager::quotaScore_ += _quota;
+		}
 
 		/// <summary>
-		/// Œ»İ‚ÌƒXƒRƒA‚ğæ“¾‚·‚é
+		/// ç¾åœ¨ã®ã‚¹ã‚³ã‚¢ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
 		static int32_t GetScore();
 
 		/// <summary>
-		/// ƒXƒRƒA‚ÌŒ¸“_‚ğs‚¤
+		/// ã‚¹ã‚³ã‚¢ã®æ¸›ç‚¹ã‚’è¡Œã†
 		/// </summary>
 		/// <param name="_score"></param>
 		static void SubtractScore(uint32_t _score);
 		/// <summary>
-		/// ƒmƒ‹ƒ}‚ÌƒXƒRƒA‚ğæ“¾‚·‚é
+		/// ãƒãƒ«ãƒã®ã‚¹ã‚³ã‚¢ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
 		/// <returns></returns>
 		static int32_t GetQuotaScore();
 		/// <summary>
-		/// ƒXƒRƒA‚ÌÅ‘å’l‚ğæ“¾‚·‚é
+		/// ã‚¹ã‚³ã‚¢ã®æœ€å¤§å€¤ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <returns>ƒXƒRƒA’l</returns>
+		/// <returns>ã‚¹ã‚³ã‚¢å€¤</returns>
 		static int32_t GetQuotaScoreMax();
 		/// <summary>
-		/// ƒXƒRƒA‚ğƒŠƒZƒbƒg‚·‚é
+		/// ã‚¹ã‚³ã‚¢ã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹
 		/// </summary>
 		static void ResetScore();
 
 		/// <summary>
-		/// ƒmƒ‹ƒ}‚ğ’B¬‚µ‚½‚©
+		/// ãƒãƒ«ãƒã‚’é”æˆã—ãŸã‹
 		/// </summary>
-		/// <returns>’B¬‚µ‚Ä‚¢‚é‚È‚ç^‚ğ•Ô‚·</returns>
+		/// <returns>é”æˆã—ã¦ã„ã‚‹ãªã‚‰çœŸã‚’è¿”ã™</returns>
 		static bool AchievedQuota();
-	private:
+
+	  private:
 		static int32_t score_;
-		// ƒmƒ‹ƒ}‚ÌƒXƒRƒA
+		// ãƒãƒ«ãƒã®ã‚¹ã‚³ã‚¢
 		static int32_t quotaScore_;
 	};
-}
+} // namespace mtgb

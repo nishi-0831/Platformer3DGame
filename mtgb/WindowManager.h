@@ -23,60 +23,58 @@ namespace mtgb
 
 	class WindowManager : public ISystem
 	{
-	public:
+	  public:
 		WindowManager();
 		~WindowManager();
 
 		HWND CreateWindowContext(WindowResource* _windowResource);
 		Vector2Int GetWindowSize(WindowContext context);
-		
 
 		void Initialize() override;
 		void Update() override;
 		void Release();
-		
+
 		/// <summary>
-		/// WindowContext‚É‘Î‰‚·‚éWindowConfig‚ğƒZƒbƒg
+		/// WindowContextã«å¯¾å¿œã™ã‚‹WindowConfigã‚’ã‚»ãƒƒãƒˆ
 		/// </summary>
-		/// <param name="windowContext">ƒEƒBƒ“ƒhƒE‚Ì¯•Êq</param>
-		/// <param name="config">ƒEƒBƒ“ƒhƒEİ’è</param>
+		/// <param name="windowContext">ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­</param>
+		/// <param name="config">ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦è¨­å®š</param>
 		void SetWindowConfig(WindowContext windowContext, const WindowConfig& config);
-		
-		
+
 		/// <summary>
-		/// WindowContext‚©‚çWindowConfig‚ğæ“¾
+		/// WindowContextã‹ã‚‰WindowConfigã‚’å–å¾—
 		/// </summary>
-		/// <param name="windowContext">ƒEƒBƒ“ƒhƒE‚Ì¯•Êq</param>
-		/// <returns>ƒEƒBƒ“ƒhƒEİ’è</returns>
+		/// <param name="windowContext">ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­</param>
+		/// <returns>ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦è¨­å®š</returns>
 		static WindowConfig GetWindowConfig(WindowContext windowContext);
-		
-		
-		//void SwapWindowPos(WindowContext _ctx1 = WindowContext::First, WindowContext _ctx2 = WindowContext::Second);
+
+		// void SwapWindowPos(WindowContext _ctx1 = WindowContext::First, WindowContext _ctx2 = WindowContext::Second);
 
 		static WindowResource& GetWindowResource(WindowContext windowContext);
 
 		/// <summary>
-		/// <para> ƒtƒ‹ƒXƒNƒŠ[ƒ“ó‘Ô‚ğØ‚è‘Ö‚¦‚é </para>
-		/// <para> w’è‚µ‚½WindowContext‚ÉŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚éƒ‚ƒjƒ^[‚ÌƒTƒCƒY‚É‡‚í‚¹‚é </para>
+		/// <para> ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŠ¶æ…‹ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹ </para>
+		/// <para> æŒ‡å®šã—ãŸWindowContextã«å‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚‹ãƒ¢ãƒ‹ã‚¿ãƒ¼ã®ã‚µã‚¤ã‚ºã«åˆã‚ã›ã‚‹ </para>
 		/// </summary>
-		/// <param name="_ctx">Ø‚è‘Ö‚¦‚éƒEƒBƒ“ƒhƒE</param>
+		/// <param name="_ctx">åˆ‡ã‚Šæ›¿ãˆã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦</param>
 		static void ChangeFullScreenState(WindowContext _ctx);
 
 		/// <summary>
-		/// ƒEƒBƒ“ƒhƒE‚ªˆê”Ô‹ß‚¢êŠ‚É‚ ‚éƒ‚ƒjƒ^[‚Åƒtƒ‹ƒXƒNƒŠ[ƒ“ó‘Ô‚ğØ‚è‘Ö‚¦‚é
+		/// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒä¸€ç•ªè¿‘ã„å ´æ‰€ã«ã‚ã‚‹ãƒ¢ãƒ‹ã‚¿ãƒ¼ã§ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŠ¶æ…‹ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
 		/// </summary>
 		static void ChangeFullScreenStateNearestMonitor(WindowContext _ctx);
 
 		/// <summary>
-		/// <para> ƒtƒ‹ƒXƒNƒŠ[ƒ“ó‘Ô‚ğØ‚è‘Ö‚¦‚é </para>
+		/// <para> ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŠ¶æ…‹ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹ </para>
 		/// </summary>
-		/// <param name="_ctx">Ø‚è‘Ö‚¦‚éƒEƒBƒ“ƒhƒE</param>
+		/// <param name="_ctx">åˆ‡ã‚Šæ›¿ãˆã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦</param>
 		/// <param name="_rect"></param>
 		static void ChangeFullScreenState(WindowContext _ctx, const RECT& _rect);
 
 		static void ResizeWindow(WindowContext _windowContext, UINT _width, UINT _height);
-	private:
+
+	  private:
 		static MSG* pPeekedMessage_;
 		static std::map<WindowContext, WindowConfig> windowConfigMap_;
 	};
-}
+} // namespace mtgb

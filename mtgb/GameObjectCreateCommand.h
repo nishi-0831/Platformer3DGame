@@ -10,15 +10,12 @@
 #include <nlohmann/json.hpp>
 namespace mtgb
 {
-	
+
 	class GameObjectCreateCommand : public Command
 	{
-	public:
-		using CreateFunc = std::function<GameObject* ()>;
-		GameObjectCreateCommand(
-			CreateFunc _createFunc,
-			const ComponentFactory& _componentFactory
-		);
+	  public:
+		using CreateFunc = std::function<GameObject*()>;
+		GameObjectCreateCommand(CreateFunc _createFunc, const ComponentFactory& _componentFactory);
 
 		GameObjectCreateCommand(
 			CreateFunc _createFunc,
@@ -31,7 +28,8 @@ namespace mtgb
 
 		std::string Name() const override;
 		EntityId GetCommandTargetEntityId() const override;
-	private:
+
+	  private:
 		void Deserialize(GameObject* _obj);
 		EntityId entityId_;
 		std::string gameObjectName_;
@@ -39,4 +37,4 @@ namespace mtgb
 		CreateFunc createFunc_;
 		nlohmann::json json_;
 	};
-}
+} // namespace mtgb

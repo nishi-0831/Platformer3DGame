@@ -4,9 +4,9 @@
 #include "IActor.h"
 #include "HPViewer.h"
 
-class Player : public mtgb::GameObject , public mtgb::ImGuiShowable,public IActor
+class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActor
 {
-public:
+  public:
 	Player();
 	~Player();
 
@@ -15,11 +15,12 @@ public:
 	void Start() override;
 	void ShowImGui() override;
 	void SetCamera(Camera* _pCamera);
-	// IActor ÇâÓÇµÇƒåpè≥Ç≥ÇÍÇ‹ÇµÇΩ
+	// IActor „Çí‰ªã„Åó„Å¶Á∂ôÊâø„Åï„Çå„Åæ„Åó„Åü
 	void OnStomped(IActor* pOther) override;
 	void OnHitSide(IActor* pOther) override;
 	void TakeDamage(int _damage) override;
-private:
+
+  private:
 	Vector3 GetMoveDir();
 	void UpdatePosition();
 	void UpdateRotate();
@@ -44,7 +45,7 @@ private:
 	std::optional<FbxAnimationController> animController_;
 	int hp_;
 	HPViewer* pHPViewer_;
-	// Invincible 
+	// Invincible
 	// Invincibility frames
 	// ñ≥ìGÇ©Ç«Ç§Ç©
 	bool isInvincible_;

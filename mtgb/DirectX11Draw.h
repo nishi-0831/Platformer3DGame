@@ -14,7 +14,6 @@ struct IDXGIDevice1;
 struct IDXGIAdapter1;
 struct IDXGIFactory2;
 
-
 struct IDXGISwapChain;
 struct IDXGISwapChain1;
 struct ID3D11RenderTargetView;
@@ -36,10 +35,8 @@ namespace mtgb
 	class IShader;
 	class ImGuiRenderer;
 
-	
-
 	/// <summary>
-	/// ƒuƒŒƒ“ƒhƒ‚[ƒh
+	/// ãƒ–ãƒ¬ãƒ³ãƒ‰ãƒ¢ãƒ¼ãƒ‰
 	/// </summary>
 	enum struct BlendMode : int8_t
 	{
@@ -49,43 +46,43 @@ namespace mtgb
 	};
 
 	/// <summary>
-	/// GPU‚Ås‚¤ˆ—‚Ìƒoƒ“ƒhƒ‹
+	/// GPUã§è¡Œã†å‡¦ç†ã®ãƒãƒ³ãƒ‰ãƒ«
 	/// </summary>
 	struct ShaderBundle
 	{
 		~ShaderBundle();
 
 		/// <summary>
-		/// <para>’¸“_ƒŒƒCƒAƒEƒg</para>
+		/// <para>é ‚ç‚¹ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ</para>
 		/// <para></para>
 		/// </summary>
 		ComPtr<ID3D11InputLayout> pVertexLayout;
 
 		/// <summary>
-		/// <para>’¸“_ƒVƒF[ƒ_</para>
-		/// <para>’¸“_‚Ìî•ñ</para>
+		/// <para>é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€</para>
+		/// <para>é ‚ç‚¹ã®æƒ…å ±</para>
 		/// </summary>
 		ComPtr<ID3D11VertexShader> pVertexShader;
 
 		/// <summary>
-		/// <para>ƒsƒNƒZƒ‹ƒVƒF[ƒ_</para>
+		/// <para>ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€</para>
 		/// <para></para>
 		/// </summary>
 		ComPtr<ID3D11PixelShader> pPixelShader;
 
 		/// <summary>
-		/// <para>ƒ‰ƒXƒ^ƒ‰ƒCƒU</para>
-		/// <para>‚Ç‚ÌƒsƒNƒZƒ‹‚ğŒõ‚ç‚¹‚é‚©‚Ìî•ñ</para>
+		/// <para>ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶</para>
+		/// <para>ã©ã®ãƒ”ã‚¯ã‚»ãƒ«ã‚’å…‰ã‚‰ã›ã‚‹ã‹ã®æƒ…å ±</para>
 		/// </summary>
 		ComPtr<ID3D11RasterizerState> pRasterizerState;
 	};
 
 	/// <summary>
-	/// DirectX11‚Å•`‰æ‚·‚é‚â‚Â
+	/// DirectX11ã§æç”»ã™ã‚‹ã‚„ã¤
 	/// </summary>
 	class DirectX11Draw final
 	{
-		// TODO: ‹É—Ífriend‚ÍŒ¸‚ç‚·
+		// TODO: æ¥µåŠ›friendã¯æ¸›ã‚‰ã™
 		friend class DirectX11Manager;
 		friend class Texture2D;
 		friend class IShader;
@@ -100,59 +97,61 @@ namespace mtgb
 		friend class RenderSystem;
 		friend class EffekseerTest;
 		friend class EffectManager;
-	public:
+
+	  public:
 		/// <summary>
-		/// •`‰æ‚·‚éƒVƒF[ƒ_‚ğƒZƒbƒg‚·‚é
+		/// æç”»ã™ã‚‹ã‚·ã‚§ãƒ¼ãƒ€ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		/// </summary>
-		/// <param name="_type">ƒVƒF[ƒ_‚Ìí—Ş</param>
+		/// <param name="_type">ã‚·ã‚§ãƒ¼ãƒ€ã®ç¨®é¡</param>
 		static void SetShader(const ShaderType _type);
 		/// <summary>
-		/// •`‰æ‚·‚éƒuƒŒƒ“ƒhƒ‚[ƒh‚ğƒZƒbƒg‚·‚é
+		/// æç”»ã™ã‚‹ãƒ–ãƒ¬ãƒ³ãƒ‰ãƒ¢ãƒ¼ãƒ‰ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 		/// </summary>
-		/// <param name="_mode">ƒuƒŒƒ“ƒhƒ‚[ƒh</param>
+		/// <param name="_mode">ãƒ–ãƒ¬ãƒ³ãƒ‰ãƒ¢ãƒ¼ãƒ‰</param>
 		static void SetBlendMode(const BlendMode _mode);
 		/// <summary>
-		/// [“xƒoƒbƒtƒ@‚Ö‚Ì‘‚«‚İ‚ğ‚·‚é‚©
+		/// æ·±åº¦ãƒãƒƒãƒ•ã‚¡ã¸ã®æ›¸ãè¾¼ã¿ã‚’ã™ã‚‹ã‹
 		/// </summary>
-		/// <param name="_enabled">‘‚«‚İ‚ğ‚·‚é true / false</param>
+		/// <param name="_enabled">æ›¸ãè¾¼ã¿ã‚’ã™ã‚‹ true / false</param>
 		static void SetIsWriteToDepthBuffer(const bool _enabled);
 
-	private:
-		DirectX11Draw() = delete;
+	  private:
+		DirectX11Draw()	 = delete;
 		~DirectX11Draw() = delete;
 
 		/// <summary>
-		/// •`‰æŠJn (ƒLƒƒƒ“ƒoƒX‚ğ‚«‚ê‚¢‚É‚·‚é)
+		/// æç”»é–‹å§‹ (ã‚­ãƒ£ãƒ³ãƒã‚¹ã‚’ãã‚Œã„ã«ã™ã‚‹)
 		/// </summary>
 		static void Begin();
 
 		/// <summary>
-		/// •`‰æI—¹ (ƒoƒbƒNƒoƒbƒtƒ@‚ÆƒXƒƒbƒv‚·‚é)
+		/// æç”»çµ‚äº† (ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã¨ã‚¹ãƒ¯ãƒƒãƒ—ã™ã‚‹)
 		/// </summary>
 		static void End();
 
 		/// <summary>
-		/// ‰ğ•úˆ—
+		/// è§£æ”¾å‡¦ç†
 		/// </summary>
 		static void Release();
 
-	private:
-		static ComPtr<ID3D11Device> pDevice_;                                                             // •`‰æ‚ğs‚¤‚½‚ß‚ÌŠÂ‹«AƒŠƒ\[ƒX‚Ìì¬‚Ég‚¤
-		static ComPtr<ID3D11DeviceContext> pContext_;                                                     // GPU‚É–½—ßo‚·‚â‚Â
+	  private:
+		static ComPtr<ID3D11Device> pDevice_;		  // æç”»ã‚’è¡Œã†ãŸã‚ã®ç’°å¢ƒã€ãƒªã‚½ãƒ¼ã‚¹ã®ä½œæˆã«ä½¿ã†
+		static ComPtr<ID3D11DeviceContext> pContext_; // GPUã«å‘½ä»¤å‡ºã™ã‚„ã¤
 		static ComPtr<IDXGIDevice1> pDXGIDevice_;
 		static std::vector<ComPtr<IDXGIAdapter1>> pDXGIAdapters_;
 		static ComPtr<IDXGIFactory2> pDXGIFactory_;
 		static std::vector<MonitorInfo> monitorInfos_;
 
-		static IDXGISwapChain* pSwapChain_;                                                        // ƒ_ƒuƒ‹ƒoƒbƒtƒ@ƒŠƒ“ƒO‚·‚é‚â‚Â
+		static IDXGISwapChain* pSwapChain_; // ãƒ€ãƒ–ãƒ«ãƒãƒƒãƒ•ã‚¡ãƒªãƒ³ã‚°ã™ã‚‹ã‚„ã¤
 		static ComPtr<IDXGISwapChain1> pSwapChain1_;
-		static ComPtr<ID3D11RenderTargetView> pRenderTargetView_;                                         // •`‰ææ
-		static ComPtr<ID3D11DepthStencilView> pDepthStencilView_;                                         // [“xƒoƒbƒtƒ@
-		static std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::Max)> pDepthStencilState_;  // ƒuƒŒƒ“ƒh‚É‚æ‚é[“xƒoƒbƒtƒ@‚Ö‚Ì‘‚«‚İî•ñ
-		static ComPtr<ID3D11Texture2D> pDepthStencil_;                                                    // [“xƒXƒeƒ“ƒVƒ‹
-		static std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::Max)> pBlendState_;                // ƒuƒŒƒ“ƒh‚Ìî•ñ
-		static ShaderBundle shaderBundle_[static_cast<int8_t>(ShaderType::Max)];                   // ƒVƒF[ƒ_‚Ìƒoƒ“ƒhƒ‹
+		static ComPtr<ID3D11RenderTargetView> pRenderTargetView_; // æç”»å…ˆ
+		static ComPtr<ID3D11DepthStencilView> pDepthStencilView_; // æ·±åº¦ãƒãƒƒãƒ•ã‚¡
+		static std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::Max)>
+			pDepthStencilState_;					   // ãƒ–ãƒ¬ãƒ³ãƒ‰ã«ã‚ˆã‚‹æ·±åº¦ãƒãƒƒãƒ•ã‚¡ã¸ã®æ›¸ãè¾¼ã¿æƒ…å ±
+		static ComPtr<ID3D11Texture2D> pDepthStencil_; // æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«
+		static std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::Max)> pBlendState_; // ãƒ–ãƒ¬ãƒ³ãƒ‰ã®æƒ…å ±
+		static ShaderBundle shaderBundle_[static_cast<int8_t>(ShaderType::Max)]; // ã‚·ã‚§ãƒ¼ãƒ€ã®ãƒãƒ³ãƒ‰ãƒ«
 		static Vector4 backgroundColor_;
 		static ComPtr<ID3D11SamplerState> pDefaultSamplerState_;
 	};
-}
+} // namespace mtgb

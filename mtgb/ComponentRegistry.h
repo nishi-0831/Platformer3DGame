@@ -1,16 +1,15 @@
 #pragma once
-#include "ISystem.h"
 #include <unordered_map>
 #include <typeindex>
 #include <optional>
 #include <set>
-#include "nlohmann/json.hpp"
+#include <nlohmann/json.hpp>
+#include "ISystem.h"
 namespace mtgb
 {
 	class ComponentRegistry : public ISystem
 	{
-	public:
-
+	  public:
 		void Initialize() override;
 		void Update() override;
 
@@ -19,7 +18,7 @@ namespace mtgb
 		void RegisterComponentIndex(EntityId _entityId, const std::type_index& _typeIndex, size_t _componentIndex);
 
 		/// <summary>
-		/// ƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹“à‚ÌƒCƒ“ƒfƒbƒNƒX‚ğæ“¾
+		/// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«å†…ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’å–å¾—
 		/// </summary>
 		/// <param name="_entityId"></param>
 		/// <param name="_componentTypeIndex"></param>
@@ -27,20 +26,20 @@ namespace mtgb
 		std::optional<size_t> GetComponentIndex(EntityId _entityId, const std::type_index& _componentTypeIndex);
 
 		/// <summary>
-		/// EntityId‚ª“o˜^‚³‚ê‚Ä‚¢‚éComponent‚ÌŒ^î•ñ‚ğ‹L˜^‚·‚é
+		/// EntityIdãŒç™»éŒ²ã•ã‚Œã¦ã„ã‚‹Componentã®å‹æƒ…å ±ã‚’è¨˜éŒ²ã™ã‚‹
 		/// </summary>
 		/// <param name="_entityId"></param>
 		/// <param name="_componentTypeIndex"></param>
 		void RegisterComponent(EntityId _entityId, const std::type_index& _componentTypeIndex);
 
 		/// <summary>
-		/// Component‚ÌŒ^î•ñ‚É‘Î‰‚·‚é•¶š—ñ‚ğ‹L˜^‚·‚é
+		/// Componentã®å‹æƒ…å ±ã«å¯¾å¿œã™ã‚‹æ–‡å­—åˆ—ã‚’è¨˜éŒ²ã™ã‚‹
 		/// </summary>
 		/// <param name="_key"></param>
 		/// <param name="_typeIndex"></param>
 		void RegisterComponentKey(const std::string& _key, const std::type_index& _typeIndex);
 		/// <summary>
-		/// Component‚É‘Î‰‚·‚éComponentPool‚ÌŒ^î•ñ‚ğ“o˜^‚·‚é
+		/// Componentã«å¯¾å¿œã™ã‚‹ComponentPoolã®å‹æƒ…å ±ã‚’ç™»éŒ²ã™ã‚‹
 		/// </summary>
 		/// <param name="_comp"></param>
 		/// <param name="_pool"></param>
@@ -51,37 +50,38 @@ namespace mtgb
 
 		void ClearComponentIndices(EntityId _entityId);
 		/// <summary>
-		/// Component‚É‘Î‰‚·‚éComponentPool‚ÌŒ^î•ñ‚ğ•Ô‚·
+		/// Componentã«å¯¾å¿œã™ã‚‹ComponentPoolã®å‹æƒ…å ±ã‚’è¿”ã™
 		/// </summary>
-		/// <param name="_typeIndex">Component‚ÌŒ^î•ñ</param>
+		/// <param name="_typeIndex">Componentã®å‹æƒ…å ±</param>
 		/// <returns></returns>
 		std::optional<std::type_index> GetComponentPoolType(const std::type_index& _componentTypeIndex);
 
 		std::optional<std::type_index> GetComponentPoolType(const std::string& _componentName);
 
 		/// <summary>
-		/// EntityId‚ª“o˜^‚³‚ê‚Ä‚¢‚éComponentPool‚ÌŒ^î•ñ‚Ì”z—ñ‚ğ•Ô‚·
+		/// EntityIdãŒç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ComponentPoolã®å‹æƒ…å ±ã®é…åˆ—ã‚’è¿”ã™
 		/// </summary>
 		/// <param name="_entityId"></param>
 		/// <returns></returns>
 		std::optional<std::vector<std::type_index>> GetComponentPoolTypes(EntityId _entityId);
 		/// <summary>
-		/// EntityId‚ª“o˜^‚³‚ê‚Ä‚¢‚éComponent‚ÌŒ^î•ñ‚ğ•Ô‚·
+		/// EntityIdãŒç™»éŒ²ã•ã‚Œã¦ã„ã‚‹Componentã®å‹æƒ…å ±ã‚’è¿”ã™
 		/// </summary>
 		/// <param name="_entityId"></param>
 		/// <returns></returns>
 		std::optional<std::reference_wrapper<const std::set<std::type_index>>> GetComponentTypes(EntityId _entityId);
 		std::optional<std::set<std::type_index>> GetComponentTypes(const nlohmann::json& _json);
-	private:
-		// Component‚ÌŒ^î•ñ ¨ ComponentPool‚ÌŒ^î•ñicomponent type_index ¨ pool type_indexj
+
+	  private:
+		// Componentã®å‹æƒ…å ± â†’ ComponentPoolã®å‹æƒ…å ±ï¼ˆcomponent type_index â†’ pool type_indexï¼‰
 		std::unordered_map<std::type_index, std::type_index> componentTypeToPoolTypeMap_;
-		// EntityId ‚ª‚Â Component Œ^î•ñ‚ÌW‡
+		// EntityId ãŒæŒã¤ Component å‹æƒ…å ±ã®é›†åˆ
 		std::unordered_map<EntityId, std::set<std::type_index>> entityComponents_;
-		// •¶š—ñi–¼‘O^ƒL[j ¨ Component‚ÌŒ^î•ñistring ¨ component type_indexj
-		std::unordered_map<std::string,std::type_index> componentNameToTypeMap_;
-		// ƒL[ : Component‚ÌŒ^î•ñ, ’l : ƒv[ƒ‹“à‚ÌƒCƒ“ƒfƒbƒNƒX
+		// æ–‡å­—åˆ—ï¼ˆåå‰ï¼ã‚­ãƒ¼ï¼‰ â†’ Componentã®å‹æƒ…å ±ï¼ˆstring â†’ component type_indexï¼‰
+		std::unordered_map<std::string, std::type_index> componentNameToTypeMap_;
+		// ã‚­ãƒ¼ : Componentã®å‹æƒ…å ±, å€¤ : ãƒ—ãƒ¼ãƒ«å†…ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 		using ComponentIndexMap = std::unordered_map<std::type_index, size_t>;
-		// ƒL[ : EntityId, ’l : ComponentIndexMap
+		// ã‚­ãƒ¼ : EntityId, å€¤ : ComponentIndexMap
 		std::unordered_map<EntityId, ComponentIndexMap> componentIndices_;
 	};
-}
+} // namespace mtgb

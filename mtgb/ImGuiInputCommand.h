@@ -5,19 +5,14 @@
 
 namespace mtgb
 {
-	template<typename T>
-	class ImGuiInputCommand : public Command
+	template <typename T> class ImGuiInputCommand : public Command
 	{
-	public:
-		ImGuiInputCommand(
-			T* _pTarget,
-			const T& _oldValue,
-			const T& _newValue,
-			const std::string& _name)
-			: pTarget_{ _pTarget }
-			, oldValue_{ _oldValue }
-			, newValue_{ _newValue }
-			, name_{ _name }
+	  public:
+		ImGuiInputCommand(T* _pTarget, const T& _oldValue, const T& _newValue, const std::string& _name)
+			: pTarget_{_pTarget}
+			, oldValue_{_oldValue}
+			, newValue_{_newValue}
+			, name_{_name}
 		{
 		}
 
@@ -46,10 +41,11 @@ namespace mtgb
 				return INVALID_ENTITY;
 			}
 		}
-	private:
+
+	  private:
 		T* pTarget_;
 		T oldValue_;
 		T newValue_;
 		std::string name_;
 	};
-}
+} // namespace mtgb

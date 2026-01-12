@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <!-- clang-cl が存在するかだけ判定 -->
+    <UseClangCL Condition="'$(UseClangCL)' == ''">false</UseClangCL>
+    <ExistsClangCL Condition=" '$(LLVM_INSTALL_DIR)' != '' and Exists('$(LLVM_INSTALL_DIR)\bin\clang-cl.exe')">true</ExistsClangCL>
+  </PropertyGroup>
+
+  
+  <!-- clang-cl を使うときだけプロパティを設定 -->
+  <PropertyGroup Condition="'$(UseClangCL)' == 'true' and '$(ExistsClangCL)' == 'true'">
+    <CLToolPath>$(LLVM_INSTALL_DIR)\bin</CLToolPath>
+    <CLToolExe>$(LLVM_INSTALL_DIR)\bin\clang-cl.exe</CLToolExe>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup  Condition="'$(UseClangCL)' == 'true' and '$(ExistsClangCL)' == 'true'">
+    <ClCompile>
+      <AdditionalOptions>
+		  /Zi -fms-extensions -fms-compatibility -fms-compatibility-version=19.0 -D_MSC_VER=1928 -target x86_64-pc-windows-msvc -fdelayed-template-parsing -fno-complete-member-pointers -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-reserved-id-macro
+		  -Wno-pragma-pack -Wno-unknown-pragmas
+		  -Wno-unused-command-line-argument %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

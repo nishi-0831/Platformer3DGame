@@ -5,9 +5,9 @@
 #include "MTAssert.h"
 #include "MTAssert.h"
 
-
-mtgb::Fbx::Fbx() :
-	pFbxManager_{ nullptr }
+mtgb::Fbx::Fbx()
+	: pFbxManager_{nullptr}
+	, handleCounter_{0}
 {
 }
 
@@ -27,24 +27,23 @@ void mtgb::Fbx::Update()
 
 mtgb::FBXModelHandle mtgb::Fbx::Load(const std::string& _fileName)
 {
-	Fbx& instance{ Game::System<Fbx>() };
+	Fbx& instance{Game::System<Fbx>()};
 
 	for (auto&& pFbxModel : instance.pFbxModels_)
 	{
 		if (pFbxModel.second->GetFileName() == _fileName)
 		{
-			// ‚·‚Å‚É“Ç‚Ýž‚Ü‚ê‚Ä‚¢‚é‚È‚ç‚»‚Ìƒnƒ“ƒhƒ‹‚ð•Ô‚·
+			// ã™ã§ã«èª­ã¿è¾¼ã¾ã‚Œã¦ã„ã‚‹ãªã‚‰ãã®ãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™
 			return pFbxModel.first;
 		}
 	}
 
-	FbxModel* pFbxModel{ new FbxModel{} };
+	FbxModel* pFbxModel{new FbxModel{}};
 
 	pFbxModel->Load(_fileName);
-	FBXModelHandle handle{ ++instance.handleCounter_ };
-	instance.pFbxModels_.insert({ handle, pFbxModel });
+	FBXModelHandle handle{++instance.handleCounter_};
+	instance.pFbxModels_.insert({handle, pFbxModel});
 
-	
 	return handle;
 }
 
@@ -52,11 +51,9 @@ void mtgb::Fbx::Draw(const FBXModelHandle _hModel, const Transform& _transfrom, 
 {
 	DirectX11Draw::SetBlendMode(BlendMode::Default);
 
-	massert((0 < _hModel) && (_hModel <= handleCounter_)
-		&& "–³Œø‚Èƒnƒ“ƒhƒ‰ @Fbx::Draw");
+	massert((0 < _hModel) && (_hModel <= handleCounter_) && "ç„¡åŠ¹ãªãƒãƒ³ãƒ‰ãƒ© @Fbx::Draw");
 
-	massert(pFbxModels_.count(_hModel) != 0
-		&& "ƒ‚ƒfƒ‹‚ª‘¶Ý‚µ‚È‚¢ @Fbx::Draw");
+	massert(pFbxModels_.count(_hModel) != 0 && "ãƒ¢ãƒ‡ãƒ«ãŒå­˜åœ¨ã—ãªã„ @Fbx::Draw");
 
 	pFbxModels_[_hModel]->Draw(_transfrom, _frame);
 }
@@ -73,12 +70,10 @@ void mtgb::Fbx::Release()
 
 std::optional<FbxAnimationController> mtgb::Fbx::GetAnimationController(FBXModelHandle _hModel)
 {
-	Fbx& instance{ Game::System<Fbx>() };
+	Fbx& instance{Game::System<Fbx>()};
 
-	massert((0 < _hModel) && (_hModel <= instance.handleCounter_)
-		&& "–³Œø‚Èƒnƒ“ƒhƒ‰ @Fbx::Draw");
+	massert((0 < _hModel) && (_hModel <= instance.handleCounter_) && "ç„¡åŠ¹ãªãƒãƒ³ãƒ‰ãƒ© @Fbx::Draw");
 
-	massert(instance.pFbxModels_.count(_hModel) != 0
-		&& "ƒ‚ƒfƒ‹‚ª‘¶Ý‚µ‚È‚¢ @Fbx::Draw");
+	massert(instance.pFbxModels_.count(_hModel) != 0 && "ãƒ¢ãƒ‡ãƒ«ãŒå­˜åœ¨ã—ãªã„ @Fbx::Draw");
 	return instance.pFbxModels_[_hModel]->GetAnimationController();
 }

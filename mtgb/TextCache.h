@@ -16,57 +16,63 @@
 #include <boost/multi_index/composite_key.hpp>
 
 using namespace boost::multi_index;
-using namespace mtgb;
-
-// ƒ^ƒO’è‹`
-struct text_layout_order {}; // •¶š—ñ+ƒTƒCƒY‚ğƒL[‚Æ‚·‚éƒ^ƒO
-struct handle_order {}; // ƒnƒ“ƒhƒ‹‚ğƒL[‚Æ‚·‚éƒ^ƒO
-struct random {}; // “Y‚¦š‚ÅƒAƒNƒZƒX‚·‚éƒ^ƒO
-struct font_size_order {}; // ƒtƒHƒ“ƒgƒTƒCƒY‚ğƒL[‚Æ‚·‚éƒ^ƒO
-struct layout_box_size_order {};// ƒŒƒCƒAƒEƒgƒ{ƒbƒNƒX‚ÌƒTƒCƒY‚ğƒL[‚Æ‚·‚éƒ^ƒO
-
-// ƒeƒLƒXƒgƒŒƒCƒAƒEƒg‚Ì‘½dƒCƒ“ƒfƒbƒNƒXƒRƒ“ƒeƒi
-using TextLayoutContainer = multi_index_container<
-	TextLayoutData*,
-	indexed_by<
-	// •¶š—ñ+ƒTƒCƒY‚Ì•¡‡ƒL[(•¡”‚ÌƒŒƒCƒAƒEƒgƒ{ƒbƒNƒX‚Å“¯‚¶ê‡‚ª‚ ‚é‚Ì‚Å non_unique)
-	ordered_non_unique<tag<text_layout_order>,
-	composite_key<TextLayoutData,
-	member<TextLayoutData, std::wstring, &TextLayoutData::str>,
-	member<TextLayoutData, int, &TextLayoutData::fontSize>>>,
-
-	// ƒŒƒCƒAƒEƒgƒ{ƒbƒNƒX‚Ì•+‚‚³‚Ì•¡‡ƒL[(•¡”ƒeƒLƒXƒg‚Å“¯‚¶ê‡‚ª‚ ‚é‚Ì‚Å non_unique)
-	ordered_non_unique<tag<layout_box_size_order>,
-	composite_key<TextLayoutData,
-	member<TextLayoutData,float,&TextLayoutData::width>,
-	member<TextLayoutData, float, &TextLayoutData::height>>>,
-
-	// ƒnƒ“ƒhƒ‹‚ğƒL[‚Æ‚·‚é
-	ordered_unique<tag<handle_order>,
-	member<TextLayoutData, int, &TextLayoutData::handle>
-	>,
-	// “Y‚¦š‚ÅƒAƒNƒZƒX
-	random_access<tag<random>>
-	>
->;
-
-// ƒtƒHƒ“ƒgƒtƒH[ƒ}ƒbƒg‚Ì‘½dƒCƒ“ƒfƒbƒNƒXƒRƒ“ƒeƒi
-using FontFormatContainer = multi_index_container<
-	FontFormatData*,
-	indexed_by<
-	// ƒtƒHƒ“ƒgƒTƒCƒY‚ğƒL[
-	ordered_unique<tag<font_size_order>,
-	member<FontFormatData, int, &FontFormatData::fontSize>
-	>
-	>
->;
 
 namespace mtgb
 {
+	// ã‚¿ã‚°å®šç¾©
+	struct text_layout_order
+	{
+	}; // æ–‡å­—åˆ—+ã‚µã‚¤ã‚ºã‚’ã‚­ãƒ¼ã¨ã™ã‚‹ã‚¿ã‚°
+	struct handle_order
+	{
+	}; // ãƒãƒ³ãƒ‰ãƒ«ã‚’ã‚­ãƒ¼ã¨ã™ã‚‹ã‚¿ã‚°
+	struct random
+	{
+	}; // æ·»ãˆå­—ã§ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã‚¿ã‚°
+	struct font_size_order
+	{
+	}; // ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’ã‚­ãƒ¼ã¨ã™ã‚‹ã‚¿ã‚°
+	struct layout_box_size_order
+	{
+	}; // ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒœãƒƒã‚¯ã‚¹ã®ã‚µã‚¤ã‚ºã‚’ã‚­ãƒ¼ã¨ã™ã‚‹ã‚¿ã‚°
+
+	// ãƒ†ã‚­ã‚¹ãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®å¤šé‡ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ãƒŠ
+	using TextLayoutContainer = multi_index_container<
+		TextLayoutData*,
+		indexed_by<
+			// æ–‡å­—åˆ—+ã‚µã‚¤ã‚ºã®è¤‡åˆã‚­ãƒ¼(è¤‡æ•°ã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒœãƒƒã‚¯ã‚¹ã§åŒã˜å ´åˆãŒã‚ã‚‹ã®ã§ non_unique)
+			ordered_non_unique<
+				tag<text_layout_order>,
+				composite_key<
+					TextLayoutData,
+					member<TextLayoutData, std::wstring, &TextLayoutData::str>,
+					member<TextLayoutData, int, &TextLayoutData::fontSize>>>,
+
+			// ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒœãƒƒã‚¯ã‚¹ã®å¹…+é«˜ã•ã®è¤‡åˆã‚­ãƒ¼(è¤‡æ•°ãƒ†ã‚­ã‚¹ãƒˆã§åŒã˜å ´åˆãŒã‚ã‚‹ã®ã§ non_unique)
+			ordered_non_unique<
+				tag<layout_box_size_order>,
+				composite_key<
+					TextLayoutData,
+					member<TextLayoutData, float, &TextLayoutData::width>,
+					member<TextLayoutData, float, &TextLayoutData::height>>>,
+
+			// ãƒãƒ³ãƒ‰ãƒ«ã‚’ã‚­ãƒ¼ã¨ã™ã‚‹
+			ordered_unique<tag<handle_order>, member<TextLayoutData, int, &TextLayoutData::handle>>,
+			// æ·»ãˆå­—ã§ã‚¢ã‚¯ã‚»ã‚¹
+			random_access<tag<random>>>>;
+
+	// ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®å¤šé‡ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ãƒŠ
+	using FontFormatContainer = multi_index_container<
+		FontFormatData*,
+		indexed_by<
+			// ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’ã‚­ãƒ¼
+			ordered_unique<tag<font_size_order>, member<FontFormatData, int, &FontFormatData::fontSize>>>>;
+
 	class TextCache : public ISystem
 	{
 		friend class Draw;
-	public:
+
+	  public:
 		TextCache();
 		~TextCache();
 
@@ -74,70 +80,69 @@ namespace mtgb
 		void Update() override;
 
 		void Release();
-		
+
 		/// <summary>
-		/// <para> ƒeƒLƒXƒg‚ğ“Ç‚İ‚ñ‚Å‚»‚Ìƒnƒ“ƒhƒ‹‚ğ•Ô‚· </para>
-		/// <para> •¶š—ñ“à—eAƒTƒCƒY‚ª•Ï‰»‚µ‚È‚¢ê‡‚É“K‚µ‚Ä‚¢‚é </para>
+		/// <para> ãƒ†ã‚­ã‚¹ãƒˆã‚’èª­ã¿è¾¼ã‚“ã§ãã®ãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™ </para>
+		/// <para> æ–‡å­—åˆ—å†…å®¹ã€ã‚µã‚¤ã‚ºãŒå¤‰åŒ–ã—ãªã„å ´åˆã«é©ã—ã¦ã„ã‚‹ </para>
 		/// </summary>
-		/// <param name="str">“Ç‚İ‚Ş•¶š—ñ</param>
-		/// <param name="size">ƒeƒLƒXƒg‚ÌƒtƒHƒ“ƒgƒTƒCƒY</param>
+		/// <param name="str">èª­ã¿è¾¼ã‚€æ–‡å­—åˆ—</param>
+		/// <param name="size">ãƒ†ã‚­ã‚¹ãƒˆã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</param>
 		/// <returns></returns>
 		static int Load(const std::string& str, int size);
 
 		/// <summary>
-		/// <para> ƒeƒLƒXƒg‚ğ“Ç‚İ‚ñ‚Å‚»‚Ìƒnƒ“ƒhƒ‹‚ğ•Ô‚· </para>
-		/// <para> •¶š—ñ“à—eAƒTƒCƒY‚ª•Ï‰»‚µ‚È‚¢ê‡‚É“K‚µ‚Ä‚¢‚é </para>
-		/// <para> •`‰æ‚³‚ê‚é‹éŒ`—Ìˆæ‚Ì•‚Æ‚‚³‚ğ—\‚ßw’è‚·‚é</para>
+		/// <para> ãƒ†ã‚­ã‚¹ãƒˆã‚’èª­ã¿è¾¼ã‚“ã§ãã®ãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™ </para>
+		/// <para> æ–‡å­—åˆ—å†…å®¹ã€ã‚µã‚¤ã‚ºãŒå¤‰åŒ–ã—ãªã„å ´åˆã«é©ã—ã¦ã„ã‚‹ </para>
+		/// <para> æç”»ã•ã‚Œã‚‹çŸ©å½¢é ˜åŸŸã®å¹…ã¨é«˜ã•ã‚’äºˆã‚æŒ‡å®šã™ã‚‹</para>
 		/// </summary>
-		/// <param name="str">“Ç‚İ‚Ş•¶š—ñ</param>
-		/// <param name="fontSize">ƒeƒLƒXƒg‚ÌƒtƒHƒ“ƒgƒTƒCƒY</param>
-		/// <param name="layoutBoxWidth">‹éŒ`—Ìˆæ‚Ì•</param>
-		/// <param name="layoutBoxHeight">‹éŒ`—Ìˆæ‚Ì‚‚³</param>
+		/// <param name="str">èª­ã¿è¾¼ã‚€æ–‡å­—åˆ—</param>
+		/// <param name="fontSize">ãƒ†ã‚­ã‚¹ãƒˆã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</param>
+		/// <param name="layoutBoxWidth">çŸ©å½¢é ˜åŸŸã®å¹…</param>
+		/// <param name="layoutBoxHeight">çŸ©å½¢é ˜åŸŸã®é«˜ã•</param>
 		/// <returns></returns>
 		static int Load(const std::string& str, int fontSize, float layoutBoxWidth, float layoutBoxHeight);
 
 		/// <summary>
-		/// <para> ƒeƒLƒXƒg‚ğ“Ç‚İ‚ñ‚Å‚»‚Ìƒnƒ“ƒhƒ‹‚ğ•Ô‚· </para>
-		/// <para> •¶š—ñ“à—eAƒTƒCƒY‚ª•Ï‰»‚µ‚È‚¢ê‡‚É“K‚µ‚Ä‚¢‚é </para>
-		/// <para> •`‰æ‚³‚ê‚é‹éŒ`—Ìˆæ‚Ì•‚Æ‚‚³‚ğ—\‚ßw’è‚·‚é</para>
+		/// <para> ãƒ†ã‚­ã‚¹ãƒˆã‚’èª­ã¿è¾¼ã‚“ã§ãã®ãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™ </para>
+		/// <para> æ–‡å­—åˆ—å†…å®¹ã€ã‚µã‚¤ã‚ºãŒå¤‰åŒ–ã—ãªã„å ´åˆã«é©ã—ã¦ã„ã‚‹ </para>
+		/// <para> æç”»ã•ã‚Œã‚‹çŸ©å½¢é ˜åŸŸã®å¹…ã¨é«˜ã•ã‚’äºˆã‚æŒ‡å®šã™ã‚‹</para>
 		/// </summary>
-		/// <param name="str">“Ç‚İ‚Ş•¶š—ñ</param>
-		/// <param name="fontSize">ƒeƒLƒXƒg‚ÌƒtƒHƒ“ƒgƒTƒCƒY</param>
-		/// <param name="layoutBoxSize">‹éŒ`—Ìˆæ‚Ì•A‚‚³</param>
+		/// <param name="str">èª­ã¿è¾¼ã‚€æ–‡å­—åˆ—</param>
+		/// <param name="fontSize">ãƒ†ã‚­ã‚¹ãƒˆã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</param>
+		/// <param name="layoutBoxSize">çŸ©å½¢é ˜åŸŸã®å¹…ã€é«˜ã•</param>
 		/// <returns></returns>
-		static int Load(const std::string& str, int fontSize,Vector2F layoutBoxSize);
-	private:
+		static int Load(const std::string& str, int fontSize, Vector2F layoutBoxSize);
 
+	  private:
 		/// <summary>
-		/// V‹K‚Ü‚½‚ÍŠù‘¶‚ÌƒeƒLƒXƒg‚Ìƒnƒ“ƒhƒ‹‚ğ•Ô‚·
+		/// æ–°è¦ã¾ãŸã¯æ—¢å­˜ã®ãƒ†ã‚­ã‚¹ãƒˆã®ãƒãƒ³ãƒ‰ãƒ«ã‚’è¿”ã™
 		/// </summary>
 		/// <param name="text"></param>
 		/// <param name="size"></param>
 		/// <returns></returns>
 		int GetOrCreateTextLayoutHandle(const std::wstring& text, int size);
-		int GetOrCreateTextLayoutHandle(const std::wstring& text, int size,float width,float height);
+		int GetOrCreateTextLayoutHandle(const std::wstring& text, int size, float width, float height);
 
 		TextLayoutData* GetTextLayoutData(int handle);
 
 		/// <summary>
-		/// w’èƒTƒCƒY‚ÌIDWriteTextFormat‚ğæ“¾‚Ü‚½‚Íì¬
+		/// æŒ‡å®šã‚µã‚¤ã‚ºã®IDWriteTextFormatã‚’å–å¾—ã¾ãŸã¯ä½œæˆ
 		/// </summary>
-		/// <param name="size">ƒtƒHƒ“ƒgƒTƒCƒY</param>
-		/// <returns>IDWriteTextFormat‚ÆPixelFontMetrics‚ÌƒyƒA</returns>
+		/// <param name="size">ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</param>
+		/// <returns>IDWriteTextFormatã¨PixelFontMetricsã®ãƒšã‚¢</returns>
 		FontFormatData* GetOrCreateTextFormat(int size);
 
-		//Œ»İ‚ÌƒfƒtƒHƒ‹ƒg‚ÌƒtƒHƒ“ƒgƒTƒCƒY
+		// ç¾åœ¨ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º
 		int currentDefaultFontSize_;
 
 		TextAlignment currentTextAlignment_;
 
-		//ƒfƒtƒHƒ‹ƒg‚ÌƒtƒHƒ“ƒgƒtƒ@ƒ~ƒŠ[
+		// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ãƒŸãƒªãƒ¼
 		const static wchar_t* DEFAULT_FONT_FAMILY_NAME;
 
-		TextLayoutContainer* textLayoutData_; // ƒeƒLƒXƒgƒŒƒCƒAƒEƒg‚ÌƒLƒƒƒbƒVƒ…
-		FontFormatContainer* fontFormatData_; // ƒtƒHƒ“ƒgƒtƒH[ƒ}ƒbƒg‚ÌƒLƒƒƒbƒVƒ…
+		TextLayoutContainer* textLayoutData_; // ãƒ†ã‚­ã‚¹ãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥
+		FontFormatContainer* fontFormatData_; // ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥
 
-		int nextHandle_; // Ÿ‚ÉŠ„‚è“–‚Ä‚éƒnƒ“ƒhƒ‹”Ô†
+		int nextHandle_; // æ¬¡ã«å‰²ã‚Šå½“ã¦ã‚‹ãƒãƒ³ãƒ‰ãƒ«ç•ªå·
 	};
-}
-
+} // namespace mtgb

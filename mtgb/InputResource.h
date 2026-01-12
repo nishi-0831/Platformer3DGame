@@ -24,16 +24,20 @@ namespace mtgb
 	class InputData;
 	class InputResource : public WindowContextResource
 	{
-	public:
+	  public:
 		explicit InputResource(WindowContext _windowContext);
 		~InputResource();
-		
+
 		void Update() override;
 		void SetResource() override;
 		void Release() override;
-		const InputData* GetInput(){ return pInputData_; }
+		const InputData* GetInput()
+		{
+			return pInputData_;
+		}
 		InputData* pInputData_;
-	private:
+
+	  private:
 		std::string name_;
 		ComPtr<IDirectInputDevice8> pKeyDevice_;
 		ComPtr<IDirectInputDevice8> pMouseDevice_;
@@ -43,9 +47,8 @@ namespace mtgb
 		GUID assignedJoystickGuid_;
 		bool isInitialized;
 
-		// コピーコンストラクタとコピー代入演算子を削除
-		InputResource(const InputResource&) = delete;
+		// 繧ｳ繝斐�ｼ繧ｳ繝ｳ繧ｹ繝医Λ繧ｯ繧ｿ縺ｨ繧ｳ繝斐�ｼ莉｣蜈･貍皮ｮ怜ｭ舌ｒ蜑企勁
+		InputResource(const InputResource&)			   = delete;
 		InputResource& operator=(const InputResource&) = delete;
-
 	};
-}
+} // namespace mtgb

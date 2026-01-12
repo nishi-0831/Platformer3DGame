@@ -12,9 +12,9 @@ namespace mtgb
 {
 	class InterpolatorCP;
 	MT_COMPONENT()
-	class Interpolator : public IComponent<InterpolatorCP,Interpolator>, public ISerializableObject
+	class Interpolator : public IComponent<InterpolatorCP, Interpolator>, public ISerializableObject
 	{
-	public:
+	  public:
 		MT_GENERATED_BODY()
 
 		friend InterpolatorCP;
@@ -24,58 +24,58 @@ namespace mtgb
 		Interpolator& operator=(const Interpolator& _other);
 		void UpdateTransform();
 		/// <summary>
-		/// •âŠÔ‚Ìisó‹µ‚ğXV‚·‚é
-		/// Œo‰ßŠÔ‚ği‚ßA’[‚Ü‚Å“’B‚µ‚½ê‡‚ÍˆÚ“®•ûŒü‚ğ”½“]‚·‚é
+		/// è£œé–“ã®é€²è¡ŒçŠ¶æ³ã‚’æ›´æ–°ã™ã‚‹
+		/// çµŒéæ™‚é–“ã‚’é€²ã‚ã€ç«¯ã¾ã§åˆ°é”ã—ãŸå ´åˆã¯ç§»å‹•æ–¹å‘ã‚’åè»¢ã™ã‚‹
 		/// </summary>
 		void UpdateProgress();
 		/// <summary>
-		/// Œ»İ‚Ìisó‹µ‚Å•âŠÔ‚³‚ê‚½À•W‚ğ•Ô‚·
+		/// ç¾åœ¨ã®é€²è¡ŒçŠ¶æ³ã§è£œé–“ã•ã‚ŒãŸåº§æ¨™ã‚’è¿”ã™
 		/// </summary>
 		/// <returns></returns>
 		Vector3 EvaluatePos();
 		Quaternion CalculateRot();
 		/// <summary>
-		/// ’[“_‚ğİ’è‚·‚é
+		/// ç«¯ç‚¹ã‚’è¨­å®šã™ã‚‹
 		/// </summary>
-		/// <param name="_start">n“_</param>
-		/// <param name="_end">I“_</param>
+		/// <param name="_start">å§‹ç‚¹</param>
+		/// <param name="_end">çµ‚ç‚¹</param>
 		void SetEndpoints(const Vector3& _start, const Vector3& _end);
 
 		void OnPostRestore() override;
 		void OnPreSave() override;
-	private:
+
+	  private:
 		Transform* pTransform_;
 
 		MT_PROPERTY()
-		// is•ûŒü
+		// é€²è¡Œæ–¹å‘
 		float dir_;
 
 		MT_PROPERTY()
-		// Œo‰ßŠÔ
+		// çµŒéæ™‚é–“
 		float elapsed_;
 
 		MT_PROPERTY()
-		// •âŠÔ‚É‚©‚©‚éŠÔ(•b)
+		// è£œé–“ã«ã‹ã‹ã‚‹æ™‚é–“(ç§’)
 		float duration_;
 
-
 		MT_PROPERTY()
-		// n“_‚ÌÀ•W(ƒVƒŠƒAƒ‰ƒCƒY—p)
+		// å§‹ç‚¹ã®åº§æ¨™(ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºç”¨)
 		Vector3 startPos_;
 
 		MT_PROPERTY()
-		// I“_‚ÌÀ•W(ƒVƒŠƒAƒ‰ƒCƒY—p)
+		// çµ‚ç‚¹ã®åº§æ¨™(ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºç”¨)
 		Vector3 endPos_;
-		
-		// TODO:ƒ|ƒCƒ“ƒ^‚ğƒVƒŠƒAƒ‰ƒCƒY
-		// ’¼ÚATransform‚È‚Ç‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìó‘Ô‚ğ•Û‘¶A•œŒ³‚Å‚«‚é‚æ‚¤‚É‚·‚×‚«
-		// Œ»ó‚ÍstartPos_,endPos_‚Ì‚æ‚¤‚É’lŒ^‚Ì•Ï”‚ğ•Ê‚É—pˆÓ‚µ‚Ä‚¢‚é
- 
-		// n“_AI“_‚ÌTransform
+
+		// TODO:ãƒã‚¤ãƒ³ã‚¿ã‚’ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚º
+		// ç›´æ¥ã€Transformãªã©ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®çŠ¶æ…‹ã‚’ä¿å­˜ã€å¾©å…ƒã§ãã‚‹ã‚ˆã†ã«ã™ã¹ã
+		// ç¾çŠ¶ã¯startPos_,endPos_ã®ã‚ˆã†ã«å€¤å‹ã®å¤‰æ•°ã‚’åˆ¥ã«ç”¨æ„ã—ã¦ã„ã‚‹
+
+		// å§‹ç‚¹ã€çµ‚ç‚¹ã®Transform
 		Transform* pStartTransform_;
 		Transform* pEndTransform_;
-		// n“_AI“_‚ÌƒRƒ‰ƒCƒ_[
+		// å§‹ç‚¹ã€çµ‚ç‚¹ã®ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼
 		Collider* pStartCollider_;
 		Collider* pEndCollider_;
 	};
-}
+} // namespace mtgb

@@ -7,7 +7,7 @@ namespace mtgb
 {
 	class EntityManager : public ISystem
 	{
-	public:
+	  public:
 		void Initialize() override;
 		void Update() override;
 		EntityId CreateEntity();
@@ -15,7 +15,8 @@ namespace mtgb
 		void ChangeCounter(EntityId _counter);
 		EntityId RegenerateEntity();
 		void DecrementCounter();
-	private:
+
+	  private:
 		EntityId entityCounter_;
 	};
-}
+} // namespace mtgb

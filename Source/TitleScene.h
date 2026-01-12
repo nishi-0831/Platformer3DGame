@@ -3,7 +3,7 @@
 
 class TitleScene : public mtgb::GameScene
 {
-public:
+  public:
 	TitleScene();
 	~TitleScene();
 

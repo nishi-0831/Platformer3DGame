@@ -12,7 +12,7 @@
 
 namespace fs = std::filesystem;
 
-#pragma warning(disable:4100) // 'identifier' : unreferenced formal parameter
+#pragma warning(disable : 4100) // 'identifier' : unreferenced formal parameter
 #include <EffekseerRendererDX11.h>
 #include <Effekseer.h>
 
@@ -26,81 +26,81 @@ namespace fs = std::filesystem;
 
 namespace mtgb
 {
-	//‘S‘Ì‚Åg‚¤Effekseer‚Ìƒ}ƒl[ƒWƒƒ‚âƒŒƒ“ƒ_ƒ‰‚È‚Ç‚Ìƒf[ƒ^
+	// å…¨ä½“ã§ä½¿ã†Effekseerã®ãƒãƒãƒ¼ã‚¸ãƒ£ã‚„ãƒ¬ãƒ³ãƒ€ãƒ©ãªã©ã®ãƒ‡ãƒ¼ã‚¿
 	using RendererRef = EffekseerRendererDX11::RendererRef;
 
 	/// <summary>
-	/// <para> Ä¶’†‚ÌƒGƒtƒFƒNƒg‚Ì§Œä‚Ég‚¤ƒpƒ‰ƒ[ƒ^‚ğ‚Ü‚Æ‚ß‚½\‘¢‘Ì</para>
-	/// <para> ƒ[ƒ‹ƒhs—ñ‚ğ‘ã“ü‚·‚é‚±‚Æ‚Åƒgƒ‰ƒ“ƒXƒtƒH[ƒ€‚ğ•Ï‚¦‚ç‚ê‚éB</para>
-	/// <para> destroyMe‚ğtrue‚É‚·‚é‚ÆXV‚É”jŠü‚³‚ê‚é</para>
+	/// <para> å†ç”Ÿä¸­ã®ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®åˆ¶å¾¡ã«ä½¿ã†ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ã¾ã¨ã‚ãŸæ§‹é€ ä½“</para>
+	/// <para> ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã‚’ä»£å…¥ã™ã‚‹ã“ã¨ã§ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒ ã‚’å¤‰ãˆã‚‰ã‚Œã‚‹ã€‚</para>
+	/// <para> destroyMeã‚’trueã«ã™ã‚‹ã¨æ›´æ–°æ™‚ã«ç ´æ£„ã•ã‚Œã‚‹</para>
 	/// </summary>
 	struct EffectParameters
 	{
-		// ƒ[ƒ‹ƒhs—ñ
+		// ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—
 		Matrix4x4 worldMat;
-		// ƒ‹[ƒv‚ğ‚·‚é‚©
+		// ãƒ«ãƒ¼ãƒ—ã‚’ã™ã‚‹ã‹
 		bool isLoop = false;
-		// ”jŠü‚·‚é‚©
+		// ç ´æ£„ã™ã‚‹ã‹
 		bool destroyMe = false;
-		// Ä¶‘¬“x
+		// å†ç”Ÿé€Ÿåº¦
 		float speed = 1.0f;
 	};
 
-	// ŒÂ•Ê‚Ìƒf[ƒ^•Û—p
+	// å€‹åˆ¥ã®ãƒ‡ãƒ¼ã‚¿ä¿æŒç”¨
 	class EffectData
 	{
-	public:
+	  public:
 		EffectData(std::string_view _filePath);
 		EffectData(const Effekseer::ManagerRef& _manager, std::string_view _filePath);
 		/// <summary>
-		/// ƒGƒtƒFƒNƒg‚ğ“Ç‚İ‚Ş
+		/// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’èª­ã¿è¾¼ã‚€
 		/// </summary>
 		/// <param name="_manager"></param>
 		void Load(const Effekseer::ManagerRef& _manager);
 
 		/// <summary>
-		/// ƒGƒtƒFƒNƒg‚ÌƒpƒX‚ğ•Ô‚·
+		/// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ãƒ‘ã‚¹ã‚’è¿”ã™
 		/// </summary>
 		/// <returns></returns>
 		std::string GetFilePath() const;
 		/// <summary>
-		/// ƒGƒtƒFƒNƒg‚ÌQÆ‚ğ•Ô‚·
+		/// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®å‚ç…§ã‚’è¿”ã™
 		/// </summary>
 		/// <returns></returns>
 		const Effekseer::EffectRef& GetEffectRef() const;
-	private:
+
+	  private:
 		const fs::path filePath_;
 		Effekseer::EffectRef effectRef_;
 	};
 
-	// ƒGƒtƒFƒNƒg‚ÌƒCƒ“ƒXƒ^ƒ“ƒX
+	// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 	class EffectInstance
 	{
-	public:
+	  public:
 		EffectInstance(const std::shared_ptr<EffectData>& _effectData);
 
 		/// <summary>
-		/// ƒCƒ“ƒXƒ^ƒ“ƒX‹¤—L‚Ìƒf[ƒ^‚ğ•Ô‚·
+		/// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹å…±æœ‰ã®ãƒ‡ãƒ¼ã‚¿ã‚’è¿”ã™
 		/// </summary>
-		/// <returns>ƒf[ƒ^‚Ìƒ|ƒCƒ“ƒ^</returns>
+		/// <returns>ãƒ‡ãƒ¼ã‚¿ã®ãƒã‚¤ãƒ³ã‚¿</returns>
 		std::shared_ptr<const EffectData> GetEffectData() const;
 
-		// ƒGƒtƒFƒNƒg‚ÌÄ¶ŠÔ
+		// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®å†ç”Ÿæ™‚é–“
 		double elapsedTime_;
-		// ƒGƒtƒFƒNƒg§Œä—p‚Ìƒpƒ‰ƒ[ƒ^
+		// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆåˆ¶å¾¡ç”¨ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 		std::shared_ptr<EffectParameters> pEffectParameters_;
-		// ƒGƒtƒFƒNƒg‚Ìƒnƒ“ƒhƒ‹(ƒGƒtƒFƒNƒVƒA‚ª“à•”‚ÅŠÇ—‚µ‚Ä‚é)
+		// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ãƒãƒ³ãƒ‰ãƒ«(ã‚¨ãƒ•ã‚§ã‚¯ã‚·ã‚¢ãŒå†…éƒ¨ã§ç®¡ç†ã—ã¦ã‚‹)
 		Effekseer::Handle handle_;
-	private:
-		// ƒCƒ“ƒXƒ^ƒ“ƒX‹¤—L‚Ìƒf[ƒ^
-		const std::shared_ptr<EffectData> pEffectData_;
 
+	  private:
+		// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹å…±æœ‰ã®ãƒ‡ãƒ¼ã‚¿
+		const std::shared_ptr<EffectData> pEffectData_;
 	};
 
 	class EffectManager : public ISystem
 	{
-	public:
-
+	  public:
 		virtual ~EffectManager() noexcept
 		{
 			Release();
@@ -113,24 +113,24 @@ namespace mtgb
 		void Draw();
 
 		/// <summary>
-		/// <para> ƒGƒtƒFƒNƒg‚Ìƒtƒ@ƒCƒ‹‚ğ“o˜^‚·‚é </para>
-		/// <para> ˆø”‚Å“n‚µ‚½–¼‘O‚ªƒGƒtƒFƒNƒg‚Ìƒf[ƒ^¯•Êq‚É‚È‚é </para>
+		/// <para> ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç™»éŒ²ã™ã‚‹ </para>
+		/// <para> å¼•æ•°ã§æ¸¡ã—ãŸåå‰ãŒã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ãƒ‡ãƒ¼ã‚¿è­˜åˆ¥å­ã«ãªã‚‹ </para>
 		/// </summary>
-		/// <param name="_effectName">ƒGƒtƒFƒNƒg‚Ì–¼‘O</param>
-		/// <param name="_filePath">ƒGƒtƒFƒNƒg‚Ìƒtƒ@ƒCƒ‹(Effekseer‚ª‘Î‰‚·‚éŒ`®)</param>
+		/// <param name="_effectName">ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®åå‰</param>
+		/// <param name="_filePath">ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ãƒ•ã‚¡ã‚¤ãƒ«(EffekseerãŒå¯¾å¿œã™ã‚‹å½¢å¼)</param>
 		void RegisterEffect(std::string_view _effectName, std::string_view _filePath);
 
 		/// <summary>
-		/// <para> ƒGƒtƒFƒNƒg‚ğÄ¶‚·‚é </para>
-		/// <para> –ß‚è’l‚Ìƒpƒ‰ƒ[ƒ^‚ğg‚Á‚ÄAƒGƒtƒFƒNƒg‚ğ§Œä‚µ‚Ä‚­‚¾‚³‚¢B</para>
+		/// <para> ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’å†ç”Ÿã™ã‚‹ </para>
+		/// <para> æˆ»ã‚Šå€¤ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ä½¿ã£ã¦ã€ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’åˆ¶å¾¡ã—ã¦ãã ã•ã„ã€‚</para>
 		/// <para> </para>
 		/// </summary>
-		/// <param name="_effectName">ƒGƒtƒFƒNƒg‚Ì–¼‘O</param>
-		/// <param name="_effectParameters">ƒGƒtƒFƒNƒg‚Ìƒpƒ‰ƒ[ƒ^</param>
-		/// <returns> ƒpƒ‰ƒ[ƒ^‚Ìƒ|ƒCƒ“ƒ^ </returns>
+		/// <param name="_effectName">ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®åå‰</param>
+		/// <param name="_effectParameters">ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿</param>
+		/// <returns> ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒã‚¤ãƒ³ã‚¿ </returns>
 		std::weak_ptr<EffectParameters> Play(std::string_view _effectName, const EffectParameters& _effectParameters);
-	private:
 
+	  private:
 		void SetCamera();
 		void Release() noexcept
 		{
@@ -140,16 +140,15 @@ namespace mtgb
 
 		// fps
 		float fps_;
-		// •`‰æƒIƒuƒWƒFƒNƒg‚ÌQÆ
+		// æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å‚ç…§
 		RendererRef rendererRef_;
-		// ƒGƒtƒFƒNƒg‚Ìƒ}ƒl[ƒWƒƒ[‚ÌQÆ
+		// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã®å‚ç…§
 		Effekseer::ManagerRef managerRef_;
-		// ŒÂX‚ÌƒGƒtƒFƒNƒg‚Ìƒf[ƒ^
+		// å€‹ã€…ã®ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ãƒ‡ãƒ¼ã‚¿
 		std::unordered_map<std::string, std::shared_ptr<EffectData>> effectList_;
-		// ƒGƒtƒFƒNƒgƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒv[ƒ‹
+		// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒ—ãƒ¼ãƒ«
 		std::vector<std::unique_ptr<EffectInstance>> effectInstances_;
-		inline static constexpr size_t kEffectPoolCapacity{ 256 };
-
+		inline static constexpr size_t kEffectPoolCapacity{256};
 	};
 
-}
+} // namespace mtgb

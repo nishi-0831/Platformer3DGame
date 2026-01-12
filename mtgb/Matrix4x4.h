@@ -7,20 +7,22 @@ namespace mtgb
 {
 	struct Matrix4x4 : DirectX::XMMATRIX
 	{
-		static const size_t ROW_SIZE{ 4 };
-		static const size_t COLUMN_SIZE{ 4 };
+		static const size_t ROW_SIZE{4};
+		static const size_t COLUMN_SIZE{4};
 
-		//using DirectX::XMMATRIX::XMMATRIX;
+		// using DirectX::XMMATRIX::XMMATRIX;
 
-		inline Matrix4x4() :
-			XMMATRIX{ DirectX::XMMatrixIdentity() }
-		{}
+		inline Matrix4x4()
+			: XMMATRIX{DirectX::XMMatrixIdentity()}
+		{
+		}
 
 		inline Matrix4x4(const Matrix4x4& _other) = default;
 
-		inline Matrix4x4(const DirectX::XMMATRIX& _xmMatrix) :
-			XMMATRIX{ _xmMatrix }
-		{}
+		inline Matrix4x4(const DirectX::XMMATRIX& _xmMatrix)
+			: XMMATRIX{_xmMatrix}
+		{
+		}
 
 		inline Matrix4x4& operator=(const Matrix4x4& _other)
 		{
@@ -30,10 +32,10 @@ namespace mtgb
 			}
 			return *this;
 		}
-		
+
 		inline bool Equals(const Matrix4x4& _other) const
 		{
-			//FLT_EPSILON
+			// FLT_EPSILON
 			DirectX::XMFLOAT4X4 a{};
 			DirectX::XMFLOAT4X4 b{};
 			DirectX::XMStoreFloat4x4(&a, *this);
@@ -63,4 +65,4 @@ namespace mtgb
 		}
 		std::string ToString();
 	};
-}
+} // namespace mtgb

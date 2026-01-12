@@ -3,7 +3,6 @@
 #include "Collider.h"
 #include "MeshRenderer.h"
 #include "RigidBody.h"
-#include "AudioPlayer.h"
 #include "Vector3.h"
 #include "ImGuiRenderer.h"
 #include "../ImGui/imgui.h"
@@ -24,491 +23,546 @@
 #include "../Source/MovingFloor.h"
 namespace
 {
-    constexpr size_t BUF_SIZE = 256;
-    std::string buf;
-}
+	constexpr size_t BUF_SIZE = 256;
+	std::string buf;
+} // namespace
 void mtgb::MTImGui::Initialize()
 {
-    buf.resize(BUF_SIZE);
-    SetupShowFunc();
-    Game::System<SceneSystem>().OnMove([]() 
-        {
-            MTImGui::Instance().showableObjs_.clear();
-        });
+	buf.resize(BUF_SIZE);
+	SetupShowFunc();
+	Game::System<SceneSystem>().OnMove(
+		[]()
+		{
+			MTImGui::Instance().showableObjs_.clear();
+		}
+	);
 
-    // ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ª‘I‘ğ‚³‚ê‚½‚Æ‚«‚ÉA‚»‚ê‚ğ•\¦‘ÎÛ‚Æ‚·‚é
-    Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe([this](const GameObjectSelectedEvent& _handler)
-        {
-            SelectGameObject(_handler.entityId);
-        }, EventScope::Global);
-    Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe([this](const GameObjectCreatedEvent& _event)
-        {
-            SelectGameObject(_event.entityId);
-        }, EventScope::Global);
+	// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒé¸æŠã•ã‚ŒãŸã¨ãã«ã€ãã‚Œã‚’è¡¨ç¤ºå¯¾è±¡ã¨ã™ã‚‹
+	Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe(
+		[this](const GameObjectSelectedEvent& _handler)
+		{
+			SelectGameObject(_handler.entityId);
+		},
+		EventScope::Global
+	);
+	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe(
+		[this](const GameObjectCreatedEvent& _event)
+		{
+			SelectGameObject(_event.entityId);
+		},
+		EventScope::Global
+	);
 }
 
 void mtgb::MTImGui::Update()
 {
-    
-    updatingImGuiShowable_ = true;
 
-    for (ImGuiShowable* obj : showableObjs_)
-    {
-        DirectShow([=]()
-            {
-                ImGui::PushID(obj);
+	updatingImGuiShowable_ = true;
 
-                obj->ShowImGui();
+	for (ImGuiShowable* obj : showableObjs_)
+	{
+		DirectShow(
+			[=]()
+			{
+				ImGui::PushID(obj);
 
-                ImGui::PopID();
+				obj->ShowImGui();
 
-            }, obj->displayName_, obj->show_);
-    }
+				ImGui::PopID();
+			},
+			obj->displayName_,
+			obj->show_
+		);
+	}
 
-    updatingImGuiShowable_ = false;
+	updatingImGuiShowable_ = false;
 
-	DirectShow([]()
+	DirectShow(
+		[]()
 		{
-            if (ImGui::Button("EnumJoystick"))
-            {
-                Game::System<SceneSystem>().RegisterPendingCallback([]()
-                    {
-                        Game::System<Input>().EnumJoystick();
-
-                    });
-            }
-		}, "Input", ShowType::Settings);
+			if (ImGui::Button("EnumJoystick"))
+			{
+				Game::System<SceneSystem>().RegisterPendingCallback(
+					[]()
+					{
+						Game::System<Input>().EnumJoystick();
+					}
+				);
+			}
+		},
+		"Input",
+		ShowType::Settings
+	);
 }
 void mtgb::MTImGui::SetWindowOpen(ShowType _showType, bool _flag)
 {
-    imguiWindowStates_[_showType].isOpen = _flag;
+	imguiWindowStates_[_showType].isOpen = _flag;
 }
 void mtgb::MTImGui::SetAllWindowOpen(bool _flag)
 {
-    for (auto& windowState : imguiWindowStates_)
-    {
-        windowState.second.isOpen = _flag;
-    }
+	for (auto& windowState : imguiWindowStates_)
+	{
+		windowState.second.isOpen = _flag;
+	}
 }
 void mtgb::MTImGui::ChangeWindowOpen(ShowType _showType)
 {
-    imguiWindowStates_[_showType].isOpen = !(imguiWindowStates_[_showType].isOpen);
+	imguiWindowStates_[_showType].isOpen = !(imguiWindowStates_[_showType].isOpen);
 }
 void mtgb::MTImGui::ChangeAllWindowOpen()
 {
-    for (auto& windowState : imguiWindowStates_)
-    {
-        windowState.second.isOpen = !(windowState.second.isOpen);
-    }
+	for (auto& windowState : imguiWindowStates_)
+	{
+		windowState.second.isOpen = !(windowState.second.isOpen);
+	}
 }
 void mtgb::MTImGui::ShowLog()
 {
-    using mtgb::Debug;
-    const std::list<mtgb::LogEntry>& logs = Game::System<Debug>().GetLog();
+	using mtgb::Debug;
+	const std::list<mtgb::LogEntry>& logs = Game::System<Debug>().GetLog();
 
-    // ƒtƒBƒ‹ƒ^[—p‚ÌƒJƒeƒSƒŠˆê——‚ğì¬
-    static std::set<std::string> availableCategories;
-    static std::string selectedCategory = "All";
+	// ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ç”¨ã®ã‚«ãƒ†ã‚´ãƒªä¸€è¦§ã‚’ä½œæˆ
+	static std::set<std::string> availableCategories;
+	static std::string selectedCategory = "All";
 
-    // ƒJƒeƒSƒŠ‚ğûW
-    availableCategories.clear();
-    availableCategories.insert("All");
-    for (const auto& log : logs)
-    {
-        if (!log.category.empty())
-        {
-            availableCategories.insert(log.category);
-        }
-    }
+	// ã‚«ãƒ†ã‚´ãƒªã‚’åé›†
+	availableCategories.clear();
+	availableCategories.insert("All");
+	for (const auto& log : logs)
+	{
+		if (!log.category.empty())
+		{
+			availableCategories.insert(log.category);
+		}
+	}
 
-    ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();
+	ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();
 
-    imGui.Begin(Debug::GetName().data());
+	imGui.Begin(Debug::GetName().data());
 
-    // ƒJƒeƒSƒŠƒtƒBƒ‹ƒ^[—p‚ÌƒRƒ“ƒ{ƒ{ƒbƒNƒX
-    if (ImGui::BeginCombo("Category Filter", selectedCategory.c_str()))
-    {
-        for (const auto& category : availableCategories)
-        {
-            bool isSelected = (selectedCategory == category);
-            if (ImGui::Selectable(category.c_str(), isSelected))
-            {
-                selectedCategory = category;
-            }
-            if (isSelected)
-            {
-                ImGui::SetItemDefaultFocus();
-            }
-        }
-        ImGui::EndCombo();
-    }
+	// ã‚«ãƒ†ã‚´ãƒªãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ç”¨ã®ã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹
+	if (ImGui::BeginCombo("Category Filter", selectedCategory.c_str()))
+	{
+		for (const auto& category : availableCategories)
+		{
+			bool isSelected = (selectedCategory == category);
+			if (ImGui::Selectable(category.c_str(), isSelected))
+			{
+				selectedCategory = category;
+			}
+			if (isSelected)
+			{
+				ImGui::SetItemDefaultFocus();
+			}
+		}
+		ImGui::EndCombo();
+	}
 
-    static int selectedLog = -1;
-    int idx = 0;
-    int displayIdx = 0;
+	static int selectedLog = -1;
+	int idx				   = 0;
+	int displayIdx		   = 0;
 
-    for (const mtgb::LogEntry& log : logs)
-    {
-        // ƒtƒBƒ‹ƒ^[“K—p
-        if (selectedCategory != "All" && log.category != selectedCategory)
-        {
-            ++idx;
-            continue;
-        }
+	for (const mtgb::LogEntry& log : logs)
+	{
+		// ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼é©ç”¨
+		if (selectedCategory != "All" && log.category != selectedCategory)
+		{
+			++idx;
+			continue;
+		}
 
-        std::string text = "[" + log.category + "] " + log.msg + " (" + std::to_string(log.count) + ")";
+		std::string text = "[" + log.category + "] " + log.msg + " (" + std::to_string(log.count) + ")";
 
-        if (ImGui::Selectable(text.c_str(), selectedLog == idx))
-        {
-            selectedLog = idx;
-        }
-        ++idx;
-        ++displayIdx;
-    }
+		if (ImGui::Selectable(text.c_str(), selectedLog == idx))
+		{
+			selectedLog = idx;
+		}
+		++idx;
+		++displayIdx;
+	}
 
-    // ƒƒO‚ÌÚ×•\¦
-    if (selectedLog >= 0)
-    {
-        auto it = logs.begin();
-        std::advance(it, selectedLog);
+	// ãƒ­ã‚°ã®è©³ç´°è¡¨ç¤º
+	if (selectedLog >= 0)
+	{
+		auto it = logs.begin();
+		std::advance(it, selectedLog);
 
-        ImGui::Begin("Log Details");
-        ImGui::Text("Category: %s", it->category.c_str());
-        ImGui::Text("File: %s", it->file.c_str());
-        ImGui::Text("Line: %d", it->line);
-        ImGui::Text("Function: %s", it->func.c_str());
-        ImGui::End();
-    }
+		ImGui::Begin("Log Details");
+		ImGui::Text("Category: %s", it->category.c_str());
+		ImGui::Text("File: %s", it->file.c_str());
+		ImGui::Text("Line: %d", it->line);
+		ImGui::Text("Function: %s", it->func.c_str());
+		ImGui::End();
+	}
 
-    imGui.End();
-
+	imGui.End();
 }
 mtgb::MTImGui::MTImGui()
 {
-    RegisterAllComponentViewers();
-
-    
+	RegisterAllComponentViewers();
 }
 mtgb::MTImGui::~MTImGui()
 {
-    for (auto queue : showQueues_)
-    {
-        while (!queue.second.empty())
-        {
-            queue.second.pop();
-        }
-    }
-    
-    showQueues_.clear();
+	for (auto queue : showQueues_)
+	{
+		while (!queue.second.empty())
+		{
+			queue.second.pop();
+		}
+	}
+
+	showQueues_.clear();
 }
 void mtgb::MTImGui::SetupShowFunc()
 {
-    using RegisterShowFuncHolder::Set;
+	using RegisterShowFuncHolder::Set;
 
-    // ƒeƒ“ƒvƒŒ[ƒgƒpƒ‰ƒ[ƒ^‚ÉŒ^‚ğw’è
-    // ‘æˆêˆø”‚ÉŒ^‚Ìƒ|ƒCƒ“ƒ^A‘æ“ñˆø”‚É“o˜^‚·‚éŒ^‚Ì–¼‘O
-    Set<ScreenCoordContainsInfo>([](ScreenCoordContainsInfo* _target, const char* _name)
-        {
-            TypeRegistry::Instance().CallFunc(&_target->worldPos, "WorldPos");
-            ImGui::Text("ScreenPos (%.3f,%.3f)", _target->screenPos.x, _target->screenPos.y);
-        
-            ImGui::Text("EntityId : %lld", _target->entityId);
-        });
-
-    Set<RectDetector>([](RectDetector* _target, const char* _name)
-        {
-            for (auto& target : _target->GetDetectedTargets())
-            {
-                TypeRegistry::Instance().CallFunc(&target, "RectContains:" + target.entityId);
-            }
-        });
-
-    Set<DXGI_ADAPTER_DESC1>([](DXGI_ADAPTER_DESC1* _target, const char* _name)
-        {   
-            // WCHAR‚Ì”z—ñ‚ğ•¶š—ñ‚É•ÏŠ·‚µ‚Ä•\¦
-            char description[256];
-            WideCharToMultiByte(CP_UTF8, 0, _target->Description, -1, description, sizeof(description), nullptr, nullptr);
-            ImGui::LabelText("Description", "%s", description);
-        });
-
-    Set<DXGI_OUTPUT_DESC>([](DXGI_OUTPUT_DESC* _target, const char* _name)
+	// ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã«å‹ã‚’æŒ‡å®š
+	// ç¬¬ä¸€å¼•æ•°ã«å‹ã®ãƒã‚¤ãƒ³ã‚¿ã€ç¬¬äºŒå¼•æ•°ã«ç™»éŒ²ã™ã‚‹å‹ã®åå‰
+	Set<ScreenCoordContainsInfo>(
+		[](ScreenCoordContainsInfo* _target, const char* _name)
 		{
-			// WCHAR‚Ì”z—ñ‚ğ•¶š—ñ‚É•ÏŠ·‚µ‚Ä•\¦
+			TypeRegistry::Instance().CallFunc(&_target->worldPos, "WorldPos");
+			ImGui::Text("ScreenPos (%.3f,%.3f)", _target->screenPos.x, _target->screenPos.y);
+
+			ImGui::Text("EntityId : %lld", _target->entityId);
+		}
+	);
+
+	Set<RectDetector>(
+		[](RectDetector* _target, const char* _name)
+		{
+			for (auto& target : _target->GetDetectedTargets())
+			{
+				TypeRegistry::Instance().CallFunc(&target, "RectContains:" + target.entityId);
+			}
+		}
+	);
+
+	Set<DXGI_ADAPTER_DESC1>(
+		[](DXGI_ADAPTER_DESC1* _target, const char* _name)
+		{
+			// WCHARã®é…åˆ—ã‚’æ–‡å­—åˆ—ã«å¤‰æ›ã—ã¦è¡¨ç¤º
+			char description[256];
+			WideCharToMultiByte(
+				CP_UTF8,
+				0,
+				_target->Description,
+				-1,
+				description,
+				sizeof(description),
+				nullptr,
+				nullptr
+			);
+			ImGui::LabelText("Description", "%s", description);
+		}
+	);
+
+	Set<DXGI_OUTPUT_DESC>(
+		[](DXGI_OUTPUT_DESC* _target, const char* _name)
+		{
+			// WCHARã®é…åˆ—ã‚’æ–‡å­—åˆ—ã«å¤‰æ›ã—ã¦è¡¨ç¤º
 			char deviceName[64];
 			WideCharToMultiByte(CP_UTF8, 0, _target->DeviceName, -1, deviceName, sizeof(deviceName), nullptr, nullptr);
-			ImGui::LabelText("Device Name","%s" ,deviceName);
+			ImGui::LabelText("Device Name", "%s", deviceName);
 
-            ImGui::LabelText("DesktopCoordinates", "(%ld,%ld) - (%ld,%ld)", _target->DesktopCoordinates.left, _target->DesktopCoordinates.top,
-                _target->DesktopCoordinates.right, _target->DesktopCoordinates.bottom);
-		});
-    Set<Color>([](Color* _target, const char* _name)
-        {
-            Vector4 vec4 =_target->ToVector4Norm();
-            ImGui::ColorEdit4(_name, vec4.f, ImGuiColorEditFlags_Uint8);
-            /*ImGui::InputScalar("r", ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Red)]);
-            ImGui::InputScalar("g", ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Green)]);
-            ImGui::InputScalar("b", ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Blue)]);
-            ImGui::InputScalar("a", ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Alpha)]);*/
-        });
+			ImGui::LabelText(
+				"DesktopCoordinates",
+				"(%ld,%ld) - (%ld,%ld)",
+				_target->DesktopCoordinates.left,
+				_target->DesktopCoordinates.top,
+				_target->DesktopCoordinates.right,
+				_target->DesktopCoordinates.bottom
+			);
+		}
+	);
+	Set<Color>(
+		[](Color* _target, const char* _name)
+		{
+			Vector4 vec4 = _target->ToVector4Norm();
+			ImGui::ColorEdit4(_name, vec4.f, ImGuiColorEditFlags_Uint8);
+			/*ImGui::InputScalar("r", ImGuiDataType_U8,
+			&_target->component[static_cast<int32_t>(::mtgb::Color::Component::Red)]); ImGui::InputScalar("g",
+			ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Green)]);
+			ImGui::InputScalar("b", ImGuiDataType_U8,
+			&_target->component[static_cast<int32_t>(::mtgb::Color::Component::Blue)]); ImGui::InputScalar("a",
+			ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Alpha)]);*/
+		}
+	);
 }
 void mtgb::MTImGui::ShowListView(ShowType _show)
 {
-    auto& selectedName = imguiWindowStates_[_show].selectedName;
-    auto& queue = showQueues_[_show];
+	auto& selectedName = imguiWindowStates_[_show].selectedName;
+	auto& queue		   = showQueues_[_show];
 
-    bool isSelected = false;
-    std::function<void()> selectedFunc = nullptr;
+	bool isSelected					   = false;
+	std::function<void()> selectedFunc = nullptr;
 
-    ImGui::BeginChild("List", ImVec2(200, 0), true);
+	ImGui::BeginChild("List", ImVec2(200, 0), true);
 
-    while (!queue.empty())
-    {
-        const std::string& name = queue.front().first;
-        auto& func = queue.front().second;
+	while (!queue.empty())
+	{
+		const std::string& name = queue.front().first;
+		auto& func				= queue.front().second;
 
-        if (!isSelected)
-        {
-            isSelected = selectedName == name;
+		if (!isSelected)
+		{
+			isSelected = selectedName == name;
 
-            // ƒRƒs[ƒLƒƒƒvƒ`ƒƒ‚Ìê‡‚Í’l‚ªXV‚³‚ê‚È‚¢‚Ì‚ÅA
-            // ‘I‘ğÏ‚İ‚Ì–¼‘O‚Æˆê’v‚µ‚Ä‚¢‚½‚çŠÖ”‚ğXV
-            selectedFunc = func;
-        }
+			// ã‚³ãƒ”ãƒ¼ã‚­ãƒ£ãƒ—ãƒãƒ£ã®å ´åˆã¯å€¤ãŒæ›´æ–°ã•ã‚Œãªã„ã®ã§ã€
+			// é¸æŠæ¸ˆã¿ã®åå‰ã¨ä¸€è‡´ã—ã¦ã„ãŸã‚‰é–¢æ•°ã‚’æ›´æ–°
+			selectedFunc = func;
+		}
 
-        // ‘I‘ğ‚³‚ê‚½€–Ú‚Ì–¼‘OA•\¦ŠÖ”‚ğ‹L˜^
-        if (ImGui::Selectable(name.c_str(), selectedName == name))
-        {
-            isSelected = true;
-            imguiWindowStates_[_show].selectedName = name;
-            selectedFunc = func;
-        }
+		// é¸æŠã•ã‚ŒãŸé …ç›®ã®åå‰ã€è¡¨ç¤ºé–¢æ•°ã‚’è¨˜éŒ²
+		if (ImGui::Selectable(name.c_str(), selectedName == name))
+		{
+			isSelected							   = true;
+			imguiWindowStates_[_show].selectedName = name;
+			selectedFunc						   = func;
+		}
 
-        queue.pop();
-    }
-    ImGui::EndChild();
+		queue.pop();
+	}
+	ImGui::EndChild();
 
-    // List‚Ì‰¡‚É property•\¦
-    ImGui::SameLine();
+	// Listã®æ¨ªã« propertyè¡¨ç¤º
+	ImGui::SameLine();
 
-    ImGui::BeginChild("property", ImVec2(0, 0), true);
-    if (selectedFunc && isSelected)
-    {
-        selectedFunc();
-    }
-    ImGui::EndChild();
+	ImGui::BeginChild("property", ImVec2(0, 0), true);
+	if (selectedFunc && isSelected)
+	{
+		selectedFunc();
+	}
+	ImGui::EndChild();
 }
 void mtgb::MTImGui::ShowComponents(EntityId _entityId)
 {
-    if (_entityId == INVALID_ENTITY) return;
+	if (_entityId == INVALID_ENTITY)
+		return;
 
-    const auto& types = Game::System<ComponentRegistry>().GetComponentTypes(_entityId);
-    if (types.has_value() == false) return;
+	const auto& types = Game::System<ComponentRegistry>().GetComponentTypes(_entityId);
+	if (types.has_value() == false)
+		return;
 
-    for (const auto& typeIdx : (*types).get())
-    {
-        componentShowFuncs_[typeIdx](_entityId);
-    }
+	for (const auto& typeIdx : (*types).get())
+	{
+		componentShowFuncs_[typeIdx](_entityId);
+	}
 }
 void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
 {
-    EntityId selectedEntityId = _entityId;
-    if (selectedEntityId == INVALID_ENTITY) return;
+	EntityId selectedEntityId = _entityId;
+	if (selectedEntityId == INVALID_ENTITY)
+		return;
 
-    for (ImGuiShowable* obj : showableObjs_)
-    {
-        if (selectedEntityId == obj->targetEntityId_)
-        {
-            imguiWindowStates_[ShowType::Inspector].selectedName = obj->displayName_;
-            imguiWindowStates_[ShowType::Inspector].entityId = obj->targetEntityId_;
-        }
-    }
+	for (ImGuiShowable* obj : showableObjs_)
+	{
+		if (selectedEntityId == obj->targetEntityId_)
+		{
+			imguiWindowStates_[ShowType::Inspector].selectedName = obj->displayName_;
+			imguiWindowStates_[ShowType::Inspector].entityId	 = obj->targetEntityId_;
+		}
+	}
 }
 void mtgb::MTImGui::RegisterAllComponentViewers()
 {
 }
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {
-    Matrix4x4 proj, view;
-    Game::System<CameraSystem>().GetProjMatrix(&proj);
-    Game::System<CameraSystem>().GetViewMatrix(&view);
-    D3D11_VIEWPORT viewport{ Game::System<mtgb::ImGuiRenderer>().GetViewport() };
-    std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_start,proj,view,viewport);
-    std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_start + _dir,proj,view,viewport);
+	Matrix4x4 proj, view;
+	Game::System<CameraSystem>().GetProjMatrix(&proj);
+	Game::System<CameraSystem>().GetViewMatrix(&view);
+	D3D11_VIEWPORT viewport{Game::System<mtgb::ImGuiRenderer>().GetViewport()};
+	std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_start, proj, view, viewport);
+	std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_start + _dir, proj, view, viewport);
 
-    if (p1 && p2)
-    {
-        ImGui::GetWindowDrawList()->AddLine(p1.value(), p2.value(), IM_COL32_WHITE, _thickness);
-    }
+	if (p1 && p2)
+	{
+		ImGui::GetWindowDrawList()->AddLine(p1.value(), p2.value(), IM_COL32_WHITE, _thickness);
+	}
 }
 void mtgb::MTImGui::DrawLineImpl(const Vector3& _from, const Vector3& _to, float _thickness)
 {
-    Matrix4x4 proj, view;
-    Game::System<CameraSystem>().GetProjMatrix(&proj);
-    Game::System<CameraSystem>().GetViewMatrix(&view);
-    D3D11_VIEWPORT viewport{ Game::System<mtgb::ImGuiRenderer>().GetViewport() };
-    std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_from,proj,view,viewport);
-    std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_to, proj, view, viewport);
+	Matrix4x4 proj, view;
+	Game::System<CameraSystem>().GetProjMatrix(&proj);
+	Game::System<CameraSystem>().GetViewMatrix(&view);
+	D3D11_VIEWPORT viewport{Game::System<mtgb::ImGuiRenderer>().GetViewport()};
+	std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_from, proj, view, viewport);
+	std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_to, proj, view, viewport);
 
-    if (p1 && p2)
-    {
-        ImGui::GetWindowDrawList()->AddLine(p1.value(), p2.value(), IM_COL32_WHITE, _thickness);
-    }
+	if (p1 && p2)
+	{
+		ImGui::GetWindowDrawList()->AddLine(p1.value(), p2.value(), IM_COL32_WHITE, _thickness);
+	}
 }
 void mtgb::MTImGui::ShowWindow(ShowType _showType)
 {
-    ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();
-    auto& state = imguiWindowStates_[_showType];
-    if (!state.isOpen)
-    {
-        auto& queue = showQueues_[_showType];
-        while (!queue.empty())
-        {
-            queue.pop();
-        }
-    }
+	ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();
+	auto& state			 = imguiWindowStates_[_showType];
+	if (!state.isOpen)
+	{
+		auto& queue = showQueues_[_showType];
+		while (!queue.empty())
+		{
+			queue.pop();
+		}
+	}
 
-    if (_showType == ShowType::SceneView)
-    {
-        imGui.Begin(GetName(ShowType::SceneView),&state.isOpen, ImGuiRenderer::WindowFlag::NoMoveWhenHovered);
-        
-        imGui.RenderSceneView();
-        imGui.SetDrawList();
-    }
-    else
-    {
-        imGui.Begin(GetName(_showType), &state.isOpen);
-    }
+	if (_showType == ShowType::SceneView)
+	{
+		imGui.Begin(GetName(ShowType::SceneView), &state.isOpen, ImGuiRenderer::WindowFlag::NoMoveWhenHovered);
 
-    ExecuteShowQueue(_showType);
+		imGui.RenderSceneView();
+		imGui.SetDrawList();
+	}
+	else
+	{
+		imGui.Begin(GetName(_showType), &state.isOpen);
+	}
 
-    imGui.End();
+	ExecuteShowQueue(_showType);
+
+	imGui.End();
 }
 void mtgb::MTImGui::ExecuteShowQueue(ShowType show)
 {
-    if (show == ShowType::SceneView)
-    {
-        while (!sceneViewShowList_.empty())
-        {
-            sceneViewShowList_.front()();
-            sceneViewShowList_.pop();
-        }
-    }
-    else
-    {
-        ShowListView(show);
-    }
+	if (show == ShowType::SceneView)
+	{
+		while (!sceneViewShowList_.empty())
+		{
+			sceneViewShowList_.front()();
+			sceneViewShowList_.pop();
+		}
+	}
+	else
+	{
+		ShowListView(show);
+	}
 }
 
 void mtgb::MTImGui::Register(ImGuiShowable* obj)
 {
-    showableObjs_.push_back(obj);
+	showableObjs_.push_back(obj);
 }
 
 void mtgb::MTImGui::Unregister(ImGuiShowable* obj)
 {
-    auto it = std::find(showableObjs_.begin(), showableObjs_.end(), obj);
-    if (it != showableObjs_.end()) 
-    {
-        showableObjs_.erase(it);
-    }
+	auto it = std::find(showableObjs_.begin(), showableObjs_.end(), obj);
+	if (it != showableObjs_.end())
+	{
+		showableObjs_.erase(it);
+	}
 }
-
-
 
 void mtgb::MTImGui::DirectShow(std::function<void()> func, const std::string& name, ShowType show)
 {
-    if (show == ShowType::SceneView)
-    {
-        // SceneView‚Í–¼‘O•s—v
-        sceneViewShowList_.push(func);
-    }
-    else
-    {
-        showQueues_[show].emplace(name, func);
-    }
-    
+	if (show == ShowType::SceneView)
+	{
+		// SceneViewã¯åå‰ä¸è¦
+		sceneViewShowList_.push(func);
+	}
+	else
+	{
+		showQueues_[show].emplace(name, func);
+	}
 }
 
 void mtgb::MTImGui::DrawLine(const Vector3& _from, const Vector3& _to, float _thickness)
 {
-    if (updatingImGuiShowable_)
-    {
-        DrawLineImpl(_from, _to, _thickness);
-    }
-    else
-    {
-        sceneViewShowList_.push([=]() {DrawLineImpl(_from, _to, _thickness); });
-    }
+	if (updatingImGuiShowable_)
+	{
+		DrawLineImpl(_from, _to, _thickness);
+	}
+	else
+	{
+		sceneViewShowList_.push(
+			[=]()
+			{
+				DrawLineImpl(_from, _to, _thickness);
+			}
+		);
+	}
 }
 
 /// <summary>
-/// ƒŒƒC‚ğ•\¦
+/// ãƒ¬ã‚¤ã‚’è¡¨ç¤º
 /// </summary>
-/// <param name="_start">ƒŒƒCn“_</param>
-/// <param name="_dir">ƒŒƒC‚ÌŒü‚«‚Æ’·‚³</param>
-/// <param name="_thickness">ƒŒƒC‚Ì‘¾‚³</param>
+/// <param name="_start">ãƒ¬ã‚¤å§‹ç‚¹</param>
+/// <param name="_dir">ãƒ¬ã‚¤ã®å‘ãã¨é•·ã•</param>
+/// <param name="_thickness">ãƒ¬ã‚¤ã®å¤ªã•</param>
 void mtgb::MTImGui::DrawVec(const Vector3& _start, const Vector3& _vec, float _thickness)
 {
-    if (updatingImGuiShowable_)
-    {
-        DrawRayImpl(_start, _vec, _thickness);
-    }
-    else
-    {
-        sceneViewShowList_.push([=]() {DrawRayImpl(_start, _vec, _thickness); });
-    }
+	if (updatingImGuiShowable_)
+	{
+		DrawRayImpl(_start, _vec, _thickness);
+	}
+	else
+	{
+		sceneViewShowList_.push(
+			[=]()
+			{
+				DrawRayImpl(_start, _vec, _thickness);
+			}
+		);
+	}
 }
 
-void mtgb::MTImGui::DrawCone(const Vector3& _position, const Vector3& _direction, float _fovAngleDegree, float _distance, float _thickness, int _segments)
+void mtgb::MTImGui::DrawCone(
+	const Vector3& _position,
+	const Vector3& _direction,
+	float _fovAngleDegree,
+	float _distance,
+	float _thickness,
+	int _segments
+)
 {
-    // ³‹K‰»‚³‚ê‚½•ûŒüƒxƒNƒgƒ‹
-    Vector3 forward = Vector3::Normalize(_direction);
+	// æ­£è¦åŒ–ã•ã‚ŒãŸæ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«
+	Vector3 forward = Vector3::Normalize(_direction);
 
-    // ‰~‚Ì’ê–Ê‚Ì’†S
-    Vector3 baseCenter = _position + forward * _distance;
+	// å††éŒã®åº•é¢ã®ä¸­å¿ƒ
+	Vector3 baseCenter = _position + forward * _distance;
 
-    // ‰~‚Ì’ê–Ê‚Ì”¼Œa
-    // MEMO: tanƒÆ = ‘Î•Ó / ’ê•Ó : ‘Î•Ó = ’ê•Ó * tanƒÆ
-    float baseRadius = _distance * std::tanf(DirectX::XMConvertToRadians(_fovAngleDegree / 2.0f));
+	// å††éŒã®åº•é¢ã®åŠå¾„
+	// MEMO: tanÎ¸ = å¯¾è¾º / åº•è¾º : å¯¾è¾º = åº•è¾º * tanÎ¸
+	float baseRadius = _distance * std::tanf(DirectX::XMConvertToRadians(_fovAngleDegree / 2.0f));
 
-	// ã‰º•ûŒü‚ğŒˆ’è
-	Vector3 up = std::fabsf(DirectX::XMVectorGetY(forward)) < 0.9f
-		? Vector3{ 0.0f,1.0f,0.0f }
-	    : Vector3{ 1.0f,0.0f,0.0f };
+	// ä¸Šä¸‹æ–¹å‘ã‚’æ±ºå®š
+	Vector3 up =
+		std::fabsf(DirectX::XMVectorGetY(forward)) < 0.9f ? Vector3{0.0f, 1.0f, 0.0f} : Vector3{1.0f, 0.0f, 0.0f};
 
-    // ‰E•ûŒü‚ğŒvZ
-    Vector3 right = Vector3::Normalize(Vector3::Cross(forward, up));
-    
-    // ã•ûŒü‚ğÄŒvZ
-    up = Vector3::Cross(right, forward);
+	// å³æ–¹å‘ã‚’è¨ˆç®—
+	Vector3 right = Vector3::Normalize(Vector3::Cross(forward, up));
 
-    // ’ê–Ê‚Ì‰~üã‚Ì“_‚ğŒvZ
-    std::vector<Vector3> baseCirclePoints(_segments);
-    for (int i = 0; i < _segments; i++)
-    {
-        float angle = DirectX::XM_2PI * i / _segments;
-        float x = baseRadius * std::cosf(angle);
-        float y = baseRadius * std::sinf(angle);
-        baseCirclePoints[i] = baseCenter + right * x + up * y;
-    }
+	// ä¸Šæ–¹å‘ã‚’å†è¨ˆç®—
+	up = Vector3::Cross(right, forward);
 
-    // ‰~‚Ì‘¤–Ê‚ğ•`‰æ
-    for (int i = 0; i < _segments; i++)
-    {
-        DrawLine(_position, baseCirclePoints[i], _thickness);
-    }
+	// åº•é¢ã®å††å‘¨ä¸Šã®ç‚¹ã‚’è¨ˆç®—
+	std::vector<Vector3> baseCirclePoints(_segments);
+	for (int i = 0; i < _segments; i++)
+	{
+		float angle			= DirectX::XM_2PI * i / _segments;
+		float x				= baseRadius * std::cosf(angle);
+		float y				= baseRadius * std::sinf(angle);
+		baseCirclePoints[i] = baseCenter + right * x + up * y;
+	}
 
-    // ’ê–Ê‚Ì‰~‚ğ•`‰æ
-    for (int i = 0; i < _segments; i++)
-    {
-        int nextIdx = (i + 1) % _segments;
-        DrawLine(baseCirclePoints[i], baseCirclePoints[nextIdx], _thickness);
-    }
+	// å††éŒã®å´é¢ã‚’æç”»
+	for (int i = 0; i < _segments; i++)
+	{
+		DrawLine(_position, baseCirclePoints[i], _thickness);
+	}
+
+	// åº•é¢ã®å††ã‚’æç”»
+	for (int i = 0; i < _segments; i++)
+	{
+		int nextIdx = (i + 1) % _segments;
+		DrawLine(baseCirclePoints[i], baseCirclePoints[nextIdx], _thickness);
+	}
 }
 
 EntityId mtgb::MTImGui::GetSelectedEntityId()
 {
-    EntityId id = imguiWindowStates_[ShowType::Inspector].entityId;
-    return id;
+	EntityId id = imguiWindowStates_[ShowType::Inspector].entityId;
+	return id;
 }
-

@@ -3,28 +3,52 @@
 #include <string>
 #include "Vector3.h"
 
-
 namespace mtgb
 {
 	/// <summary>
-	/// lŒ³”‚Ì\‘¢‘Ì
+	/// å››å…ƒæ•°ã®æ§‹é€ ä½“
 	/// </summary>
 	struct Quaternion : DirectX::XMVECTORF32
 	{
-		static const size_t COUNT{ 4 };
+		static const size_t COUNT{4};
 
-		inline const float& X() const { return f[0]; }
-		inline const float& Y() const { return f[1]; }
-		inline const float& Z() const { return f[2]; }
-		inline const float& W() const { return f[3]; }
-		inline float& X() { return f[0]; }
-		inline float& Y() { return f[1]; }
-		inline float& Z() { return f[2]; }
-		inline float& W() { return f[3]; }
+		inline const float& X() const
+		{
+			return f[0];
+		}
+		inline const float& Y() const
+		{
+			return f[1];
+		}
+		inline const float& Z() const
+		{
+			return f[2];
+		}
+		inline const float& W() const
+		{
+			return f[3];
+		}
+		inline float& X()
+		{
+			return f[0];
+		}
+		inline float& Y()
+		{
+			return f[1];
+		}
+		inline float& Z()
+		{
+			return f[2];
+		}
+		inline float& W()
+		{
+			return f[3];
+		}
 
-		Quaternion() :
-			Quaternion{ 0, 0, 0, 0 }
-		{}
+		Quaternion()
+			: Quaternion{0, 0, 0, 0}
+		{
+		}
 		Quaternion(float _x, float _y, float _z, float _w)
 		{
 			X() = _x;
@@ -45,41 +69,59 @@ namespace mtgb
 			v = DirectX::XMLoadFloat4(&_v);
 		}
 		/// <summary>
-		/// ’PˆÊlŒ³”‚ğæ“¾
+		/// å˜ä½å››å…ƒæ•°ã‚’å–å¾—
 		/// </summary>
-		/// <returns>’PˆÊ</returns>
-		static Quaternion Identity() { return DirectX::XMQuaternionIdentity(); }
+		/// <returns>å˜ä½</returns>
+		static Quaternion Identity()
+		{
+			return DirectX::XMQuaternionIdentity();
+		}
 
-		//static 
+		// static
 
 		/// <summary>
-		/// ƒIƒCƒ‰[Šp‚ğlŒ³”‚É•ÏŠ·
+		/// ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‚’å››å…ƒæ•°ã«å¤‰æ›
 		/// </summary>
-		/// <param name="_vec">ƒIƒCƒ‰[Šp‚ÌƒxƒNƒgƒ‹</param>
-		/// <returns>lŒ³”</returns>
-		static Quaternion Euler(const Vector3& _vec) { return DirectX::XMQuaternionRotationRollPitchYaw(_vec.x, _vec.y, _vec.z); }
+		/// <param name="_vec">ã‚ªã‚¤ãƒ©ãƒ¼è§’ã®ãƒ™ã‚¯ãƒˆãƒ«</param>
+		/// <returns>å››å…ƒæ•°</returns>
+		static Quaternion Euler(const Vector3& _vec)
+		{
+			return DirectX::XMQuaternionRotationRollPitchYaw(_vec.x, _vec.y, _vec.z);
+		}
 		/// <summary>
-		/// ‹tlŒ³”/‹¤–ğ‚ğæ“¾
+		/// é€†å››å…ƒæ•°/å…±å½¹ã‚’å–å¾—
 		/// </summary>
-		/// <returns>‹tlŒ³”</returns>
-		Quaternion GetInverse() const { return { -X(), -Y(), -Z(), W() }; }
+		/// <returns>é€†å››å…ƒæ•°</returns>
+		Quaternion GetInverse() const
+		{
+			return {-X(), -Y(), -Z(), W()};
+		}
 		/// <summary>
-		/// ‹tlŒ³”/‹¤–ğ‚ğæ“¾
+		/// é€†å››å…ƒæ•°/å…±å½¹ã‚’å–å¾—
 		/// </summary>
-		/// <param name="_q">æ“¾‚·‚élŒ³”</param>
-		/// <returns>‹tlŒ³”</returns>
-		static Quaternion GetInverse(const Quaternion& _q) { return _q.GetInverse(); }
+		/// <param name="_q">å–å¾—ã™ã‚‹å››å…ƒæ•°</param>
+		/// <returns>é€†å››å…ƒæ•°</returns>
+		static Quaternion GetInverse(const Quaternion& _q)
+		{
+			return _q.GetInverse();
+		}
 		/// <summary>
-		/// lŒ³”‚ÌƒTƒCƒY‚ğæ“¾‚·‚é
+		/// å››å…ƒæ•°ã®ã‚µã‚¤ã‚ºã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <returns>lŒ³”‚ÌƒTƒCƒY</returns>
-		float GetSize() const { return X() * X() + Y() * Y() + Z() * Z() + W() * W(); }
+		/// <returns>å››å…ƒæ•°ã®ã‚µã‚¤ã‚º</returns>
+		float GetSize() const
+		{
+			return X() * X() + Y() * Y() + Z() * Z() + W() * W();
+		}
 		/// <summary>
-		/// lŒ³”‚ÌƒTƒCƒY‚ğæ“¾‚·‚é
+		/// å››å…ƒæ•°ã®ã‚µã‚¤ã‚ºã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <param name="_q">æ“¾‚·‚élŒ³”</param>
-		/// <returns>lŒ³”‚ÌƒTƒCƒY</returns>
-		static float GetSize(const Quaternion& _q) { return _q.GetSize(); }
+		/// <param name="_q">å–å¾—ã™ã‚‹å››å…ƒæ•°</param>
+		/// <returns>å››å…ƒæ•°ã®ã‚µã‚¤ã‚º</returns>
+		static float GetSize(const Quaternion& _q)
+		{
+			return _q.GetSize();
+		}
 
 		static Quaternion SLerp(const Quaternion& _self, const Quaternion& _to, float _lerp)
 		{
@@ -87,48 +129,56 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// ‚ ‚é•ûŒü‚Ö‚Ì‰ñ“]‚ğæ“¾‚·‚é
+		/// ã‚ã‚‹æ–¹å‘ã¸ã®å›è»¢ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <param name="_dir">•ûŒüƒxƒNƒgƒ‹</param>
-		/// <param name="_upVec">ã•ûŒü‚ÌƒxƒNƒgƒ‹</param>
-		/// <returns>‰ñ“]‚ÌlŒ³”</returns>
+		/// <param name="_dir">æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«</param>
+		/// <param name="_upVec">ä¸Šæ–¹å‘ã®ãƒ™ã‚¯ãƒˆãƒ«</param>
+		/// <returns>å›è»¢ã®å››å…ƒæ•°</returns>
 		static Quaternion LookRotation(const Vector3& _dir, const Vector3& _upVec);
 
 		/// <summary>
-		/// ¡Œü‚¢‚Ä‚¢‚é•ûŒü‚ÆA‚±‚ê‚©‚çŒü‚«‚½‚¢•ûŒü‚©‚çlŒ³”‚ğì¬
+		/// ä»Šå‘ã„ã¦ã„ã‚‹æ–¹å‘ã¨ã€ã“ã‚Œã‹ã‚‰å‘ããŸã„æ–¹å‘ã‹ã‚‰å››å…ƒæ•°ã‚’ä½œæˆ
 		/// </summary>
-		/// <param name="_fromDir">¡Œü‚¢‚Ä‚¢‚é•ûŒüƒxƒNƒgƒ‹</param>
-		/// <param name="_toDir">Œü‚«‚½‚¢•ûŒüƒxƒNƒgƒ‹</param>
-		/// <returns>lŒ³”</returns>
+		/// <param name="_fromDir">ä»Šå‘ã„ã¦ã„ã‚‹æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«</param>
+		/// <param name="_toDir">å‘ããŸã„æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«</param>
+		/// <returns>å››å…ƒæ•°</returns>
 		static Quaternion FromToRotation(const Vector3& _fromDir, const Vector3& _toDir)
 		{
-			// MEMO: 1. ³‹K‰»(v1, v2)
-			// MEMO: 2. ŠOÏ‚Å‰ñ“]²‚Ì³‹K‰»(v = (x, y, z))ƒQƒbƒg norm(Vf x Vt)
-			// MEMO: 3. “àÏ‚Å‰ñ“]Šp“x(th)ƒQƒbƒg acos(Vf E Vt)
-			// MEMO: 4. lŒ³”¶¬ 
+			// MEMO: 1. æ­£è¦åŒ–(v1, v2)
+			// MEMO: 2. å¤–ç©ã§å›è»¢è»¸ã®æ­£è¦åŒ–(v = (x, y, z))ã‚²ãƒƒãƒˆ norm(Vf x Vt)
+			// MEMO: 3. å†…ç©ã§å›è»¢è§’åº¦(th)ã‚²ãƒƒãƒˆ acos(Vf ãƒ» Vt)
+			// MEMO: 4. å››å…ƒæ•°ç”Ÿæˆ
 			// MEMO: -. q = (x sin(th / 2), y sin(th / 2), z sin(th / 2), cos(th / 2))
 
-			Vector3 v1{ Vector3::Normalize(_fromDir) };
-			Vector3 v2{ Vector3::Normalize(_toDir) };
+			Vector3 v1{Vector3::Normalize(_fromDir)};
+			Vector3 v2{Vector3::Normalize(_toDir)};
 
-			Vector3 axis{ DirectX::XMVector3Cross(v1, v2) };
-			float th{ acosf(DirectX::XMVector3Dot(v1, v2).m128_f32[0]) };
-			float s{ sinf(th * 0.5f) };
-			float w{ cosf(th * 0.5f) };
+			Vector3 axis{DirectX::XMVector3Cross(v1, v2)};
+			float th{acosf(DirectX::XMVectorGetX(DirectX::XMVector3Dot(v1, v2)))};
+			float s{sinf(th * 0.5f)};
+			float w{cosf(th * 0.5f)};
 
-			return { axis.x * s, axis.y * s, axis.z * s, w };
+			return {axis.x * s, axis.y * s, axis.z * s, w};
 		}
 
 		/// <summary>
-		/// •¶š—ñ‚É•ÏŠ·‚·‚é
+		/// æ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹
 		/// </summary>
-		/// <returns>•¶š—ñ</returns>
+		/// <returns>æ–‡å­—åˆ—</returns>
 		std::string ToString() const;
 
-		inline Quaternion& operator*= (const Quaternion& _other) { *this = DirectX::XMQuaternionMultiply(*this, _other); return *this; };
-		//inline Quaternion& operator+=(const Quaternion& _other) { f[0] += f[0]; f[1] += f[1]; f[2] += f[2]; f[3] += f[3]; return *this; }
-		//inline Quaternion& operator-=(const Quaternion& _other) { f[0] -= f[0]; f[1] -= f[1]; f[2] -= f[2]; f[3] -= f[3]; return *this; }
+		inline Quaternion& operator*=(const Quaternion& _other)
+		{
+			*this = DirectX::XMQuaternionMultiply(*this, _other);
+			return *this;
+		};
+		// inline Quaternion& operator+=(const Quaternion& _other) { f[0] += f[0]; f[1] += f[1]; f[2] += f[2]; f[3] +=
+		// f[3]; return *this; } inline Quaternion& operator-=(const Quaternion& _other) { f[0] -= f[0]; f[1] -= f[1];
+		// f[2] -= f[2]; f[3] -= f[3]; return *this; }
 	};
 
-	inline Quaternion operator* (const Quaternion& _q1, const Quaternion& _q2) { return Quaternion{ _q1 } *= _q2; };
-}
+	inline Quaternion operator*(const Quaternion& _q1, const Quaternion& _q2)
+	{
+		return Quaternion{_q1} *= _q2;
+	};
+} // namespace mtgb

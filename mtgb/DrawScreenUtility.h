@@ -1,5 +1,5 @@
 #pragma once
-//#include "RectF.h"
+// #include "RectF.h"
 #include "RectT.h"
 #include "Game.h"
 #include "Vector2.h"
@@ -7,56 +7,55 @@
 
 namespace
 {
-	// UIİŒv’†‚Ì‰ğ‘œ“x
-	const mtgb::Vector2 CANVAS_SIZE{ 1920.0f, 1080.0f };
-}
+	// UIè¨­è¨ˆä¸­ã®è§£åƒåº¦
+	const mtgb::Vector2 CANVAS_SIZE{1920.0f, 1080.0f};
+} // namespace
 
 namespace mtgb
 {
 	/// <summary>
-	/// İŒvƒXƒNƒŠ[ƒ“ã‚ÌƒtƒHƒ“ƒgƒTƒCƒY‚©‚ç•`‰æ—pƒtƒHƒ“ƒgƒTƒCƒY‚ğ¶¬‚·‚é
+	/// è¨­è¨ˆã‚¹ã‚¯ãƒªãƒ¼ãƒ³ä¸Šã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‹ã‚‰æç”»ç”¨ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’ç”Ÿæˆã™ã‚‹
 	/// </summary>
-	/// <param name="_to">İŒvã‚ÌƒtƒHƒ“ƒgƒTƒCƒY</param>
-	/// <returns>•`‰æ—pƒtƒHƒ“ƒgƒTƒCƒY</returns>
+	/// <param name="_to">è¨­è¨ˆä¸Šã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</param>
+	/// <returns>æç”»ç”¨ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</returns>
 	inline const int GenDrawScreenFontSize(const int _to)
 	{
-		const float RATE_Y{ _to / CANVAS_SIZE.y };
-		const int SCREEN_SIZE_Y{ Game::System<Screen>().GetSize().y };
+		const float RATE_Y{_to / CANVAS_SIZE.y};
+		const int SCREEN_SIZE_Y{Game::System<Screen>().GetSize().y};
 
 		return static_cast<int>(SCREEN_SIZE_Y * RATE_Y);
 	}
 
 	/// <summary>
-	/// İŒvã‚ÌƒXƒNƒŠ[ƒ“‹éŒ`‚©‚ç•`‰æ‚ÌƒXƒNƒŠ[ƒ“‹éŒ`‚ğ¶¬‚·‚é
+	/// è¨­è¨ˆä¸Šã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŸ©å½¢ã‹ã‚‰æç”»æ™‚ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŸ©å½¢ã‚’ç”Ÿæˆã™ã‚‹
 	/// </summary>
-	/// <param name="_rect">İŒv‚ÌƒXƒNƒŠ[ƒ“‹éŒ`</param>
-	/// <returns>•`‰æ‚ÌƒXƒNƒŠ[ƒ“‹éŒ`</returns>
-	template<typename T>
-	inline const mtgb::RectT<T> GenDrawScreenFrom(const mtgb::RectT<T>& _to)
+	/// <param name="_rect">è¨­è¨ˆæ™‚ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŸ©å½¢</param>
+	/// <returns>æç”»æ™‚ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŸ©å½¢</returns>
+	template <typename T> inline const mtgb::RectT<T> GenDrawScreenFrom(const mtgb::RectT<T>& _to)
 	{
 		return _to;
-		const RectF RATE
-		{
-			_to.point.x / CANVAS_SIZE.x, _to.point.y / CANVAS_SIZE.y,
-			_to.size.x / CANVAS_SIZE.x, _to.size.y / CANVAS_SIZE.y,
+		const RectF RATE{
+			_to.point.x / CANVAS_SIZE.x,
+			_to.point.y / CANVAS_SIZE.y,
+			_to.size.x / CANVAS_SIZE.x,
+			_to.size.y / CANVAS_SIZE.y,
 		};
-		const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
+		const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
-		return
-		{
-			RATE.point.x * SCREEN_SIZE.x, RATE.point.y * SCREEN_SIZE.y,
-			RATE.size.x * SCREEN_SIZE.x, RATE.size.y * SCREEN_SIZE.y,
+		return {
+			RATE.point.x * SCREEN_SIZE.x,
+			RATE.point.y * SCREEN_SIZE.y,
+			RATE.size.x * SCREEN_SIZE.x,
+			RATE.size.y * SCREEN_SIZE.y,
 		};
-
 	}
 
-	template<typename T>
-	inline const mtgb::Vector2T<T> GenDrawScreenFrom(const mtgb::Vector2T<T>& _to)
+	template <typename T> inline const mtgb::Vector2T<T> GenDrawScreenFrom(const mtgb::Vector2T<T>& _to)
 	{
 		return _to;
-		const Vector2 RATE{ _to.x / CANVAS_SIZE.x, _to.y / CANVAS_SIZE.y };
-		const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
+		const Vector2 RATE{_to.x / CANVAS_SIZE.x, _to.y / CANVAS_SIZE.y};
+		const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
-		return { SCREEN_SIZE.x * RATE.x, SCREEN_SIZE.y * RATE.y };
+		return {SCREEN_SIZE.x * RATE.x, SCREEN_SIZE.y * RATE.y};
 	}
-}
+} // namespace mtgb

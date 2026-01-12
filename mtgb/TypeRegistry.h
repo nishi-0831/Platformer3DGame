@@ -8,61 +8,53 @@
 class Command;
 class TypeRegistry
 {
-public:
-	template<typename T>
-	void RegisterType();
-	
-	template<typename T>
-	void RegisterFunc(std::function<Command*(std::any, const char*)> func);
+  public:
+	template <typename T> void RegisterType();
+
+	template <typename T> void RegisterFunc(std::function<Command*(std::any, const char*)> _func);
 
 	static TypeRegistry& Instance();
-	// ƒvƒƒOƒ‰ƒ€ŠJn‚É“o˜^‚µ‚½‚¢ŠÖ”‚ğ“o˜^
-	void ProvisionalRegister(std::type_index typeIdx, std::function<void(void)> registerFunc);
+	// ãƒ—ãƒ­ã‚°ãƒ©ãƒ é–‹å§‹æ™‚ã«ç™»éŒ²ã—ãŸã„é–¢æ•°ã‚’ç™»éŒ²
+	void ProvisionalRegister(std::type_index _typeIdx, std::function<void(void)> _registerFunc);
 	void Initialize();
-	template<typename T>
-	void CallFunc(T* instance, const char* name);
+	template <typename T> void CallFunc(T* _instance, const char* _name);
 
-	void CallFunc(std::type_index typeIdx, std::any instance, const char* name);
-	bool IsRegisteredType(std::type_index typeIdx);
+	void CallFunc(std::type_index _typeIdx, std::any _instance, const char* _name);
+	bool IsRegisteredType(std::type_index _typeIdx);
 
 	void RegisterCommandListener(std::function<void(Command*)> _commandListener);
 
-private:
-	// Œ^î•ñ‚ğƒL[Astd::function‚ğ’l‚Æ‚·‚é
-	// •ÏX‚ª‚ ‚Á‚½ê‡‚É‚Í‚»‚Ì‘€ì‚ğCommand‚Æ‚µ‚Ä•Ô‚·
+  private:
+	// å‹æƒ…å ±ã‚’ã‚­ãƒ¼ã€std::functionã‚’å€¤ã¨ã™ã‚‹
+	// å¤‰æ›´ãŒã‚ã£ãŸå ´åˆã«ã¯ãã®æ“ä½œã‚’Commandã¨ã—ã¦è¿”ã™
 	std::unordered_map<std::type_index, std::function<Command*(std::any, const char*)>> showFunctions_;
 	std::unordered_map<std::type_index, std::function<void(void)>> provisionalRegisterFunc_;
 
-	// ó‚¯æ‚èŒû‚ÖƒRƒ}ƒ“ƒh‚ğ“o˜^‚·‚éŠÖ”‚ğ‚Âstd::function
+	// å—ã‘å–ã‚Šå£ã¸ã‚³ãƒãƒ³ãƒ‰ã‚’ç™»éŒ²ã™ã‚‹é–¢æ•°ã‚’æŒã¤std::function
 	std::function<void(Command*)> commandListener_;
 
-	template<typename... Args, typename T>
-	Command* CheckCustomAttrs(std::tuple<Args...>& attrs, T valPtr, const char* name);
-	
-	template<typename T>
-	void CheckProxyAttrs();
+	template <typename... Args, typename T>
+	Command* CheckCustomAttrs(std::tuple<Args...>& _attrs, T _valPtr, const char* _name);
 
-	
+	template <typename T> void CheckProxyAttrs();
 
-	template<typename T>
-	bool ShowMemberWithReflection(T memberValue, const char* name, Command* command);
+	template <typename T> bool ShowMemberWithReflection(T _memberValue, const char* _name, Command* _command);
 
 	TypeRegistry();
-	TypeRegistry(const TypeRegistry&) = delete;
+	TypeRegistry(const TypeRegistry&)			 = delete;
 	TypeRegistry& operator=(const TypeRegistry&) = delete;
 };
-template<typename T>
-void TypeRegistry::CallFunc(T* instance, const char* name)
+template <typename T> void TypeRegistry::CallFunc(T* _instance, const char* _name)
 {
 	Command* command = nullptr;
-	const auto& itr = showFunctions_.find(typeid(T));
+	const auto& itr	 = showFunctions_.find(typeid(T));
 	if (itr != showFunctions_.end())
 	{
-		command = itr->second(std::any(instance),name);
+		command = itr->second(std::any(_instance), _name);
 	}
 	else
 	{
-		command = mtgb::DefaultShow(instance, name);
+		command = mtgb::DefaultShow(_instance, _name);
 	}
 
 	if (command == nullptr)
@@ -70,51 +62,57 @@ void TypeRegistry::CallFunc(T* instance, const char* name)
 	if (commandListener_ == nullptr)
 		return;
 
-	// ‘€ìƒRƒ}ƒ“ƒh‚ğ“n‚·
+	// æ“ä½œã‚³ãƒãƒ³ãƒ‰ã‚’æ¸¡ã™
 	commandListener_(command);
 }
 
-template<typename T>
-void TypeRegistry::RegisterFunc(std::function<Command* (std::any, const char*)> func)
+template <typename T> void TypeRegistry::RegisterFunc(std::function<Command*(std::any, const char*)> _func)
 {
 	using Type = std::remove_cvref_t<T>;
 	std::type_index typeIdx(typeid(Type));
-	showFunctions_[typeIdx] = func;
+	showFunctions_[typeIdx] = _func;
 }
 namespace RegisterShowFuncHolder
 {
 	/// <summary>
-	/// Œ^‚É‘Î‰‚µ‚½ImGui‚Ì•\¦ˆ—‚ğƒZƒbƒg‚·‚é
+	/// å‹ã«å¯¾å¿œã—ãŸImGuiã®è¡¨ç¤ºå‡¦ç†ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 	/// </summary>
-	/// <typeparam name="Type">•\¦‚µ‚½‚¢Œ^</typeparam>
-	/// <param name="_func">•\¦‚µ‚½‚¢Œ^‚ğg‚Á‚½•\¦ŠÖ”</param>
-	template<typename Type>
-	void Set(std::function<void(Type* _target, const char* _name)> _func)
+	/// <typeparam name="Type">è¡¨ç¤ºã—ãŸã„å‹</typeparam>
+	/// <param name="_func">è¡¨ç¤ºã—ãŸã„å‹ã‚’ä½¿ã£ãŸè¡¨ç¤ºé–¢æ•°</param>
+	template <typename Type> void Set(std::function<void(Type* _target, const char* _name)> _func)
 	{
-		//TODO : Set‚É“n‚µ‚½ŠÖ”©‘Ì‚ÍCommand‚Æ‚µ‚Äì‚ç‚ê‚È‚¢‚Æ‚¢‚¤à–¾‚ğ‚·‚é‚æ‚¤ƒRƒƒ“ƒg‚ğXV
+		// TODO : Setã«æ¸¡ã—ãŸé–¢æ•°è‡ªä½“ã¯Commandã¨ã—ã¦ä½œã‚‰ã‚Œãªã„ã¨ã„ã†èª¬æ˜ã‚’ã™ã‚‹ã‚ˆã†ã‚³ãƒ¡ãƒ³ãƒˆã‚’æ›´æ–°
 
-		TypeRegistry::Instance().RegisterFunc<Type>([=](std::any target, const char* name) -> Command*
+		TypeRegistry::Instance().RegisterFunc<Type>(
+			[=](std::any target, const char* name) -> Command*
 			{
 				_func(std::any_cast<Type*>(target), name);
 				return nullptr;
-			});
+			}
+		);
 	}
-};
+}; // namespace RegisterShowFuncHolder
 
-// ƒ}ƒNƒ’è‹`
-#define REGISTER_TYPE(Type, ...) \
-struct Type##_TypeRegister{ \
-	Type##_TypeRegister(){\
-		TypeRegistry::Instance().ProvisionalRegister(typeid(Type),[](){TypeRegistry::Instance().RegisterType<Type>();});\
-	}\
-};\
-static Type##_TypeRegister Type##_instance;\
-REFL_TYPE(Type, __VA_ARGS__)
+// ãƒã‚¯ãƒ­å®šç¾©
+#define REGISTER_TYPE(Type, ...)                                   \
+	struct Type##_TypeRegister                                     \
+	{                                                              \
+		Type##_TypeRegister()                                      \
+		{                                                          \
+			TypeRegistry::Instance().ProvisionalRegister(          \
+				typeid(Type),                                      \
+				[]()                                               \
+				{                                                  \
+					TypeRegistry::Instance().RegisterType<Type>(); \
+				}                                                  \
+			);                                                     \
+		}                                                          \
+	};                                                             \
+	static Type##_TypeRegister Type##_instance;                    \
+	REFL_TYPE(Type, __VA_ARGS__)
 
-#define REGISTER_FIELD(MemberName,...)\
-REFL_FIELD(MemberName,__VA_ARGS__)
+#define REGISTER_FIELD(MemberName, ...) REFL_FIELD(MemberName, __VA_ARGS__)
 
-#define REGISTER_MEMBER_FUNC(MemberName,...)\
-REFL_FUNC(MemberName,__VA_ARGS__)
+#define REGISTER_MEMBER_FUNC(MemberName, ...) REFL_FUNC(MemberName, __VA_ARGS__)
 
 #define REGISTER_END REFL_END

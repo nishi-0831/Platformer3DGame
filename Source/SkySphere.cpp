@@ -3,18 +3,19 @@
 
 mtgb::SkySphere::SkySphere()
 	: GameObject()
-	, pTransform_{ Component<Transform>() }
-	, pMeshRenderer_{ Component<MeshRenderer>() }
+	, pTransform_{Component<Transform>()}
+	, pMeshRenderer_{Component<MeshRenderer>()}
 	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
-	, rotateAngleSec_{ 1.0f }
+	, rotateAngleSec_{1.0f}
+	, sphereScale_{1000.0f}
 {
-	name_ = "SkySphere";
-	displayName_ = name_;
-	pTransform_->scale = { 1000,1000,1000 };
+	name_						 = "SkySphere";
+	displayName_				 = name_;
+	pTransform_->scale			 = {sphereScale_, sphereScale_, sphereScale_};
 	pMeshRenderer_->meshFileName = "Model/SkySphere.fbx";
-	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
-	pMeshRenderer_->layer = AllLayer();
-	pMeshRenderer_->shaderType = ShaderType::FbxParts;
+	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
+	pMeshRenderer_->layer		 = AllLayer();
+	pMeshRenderer_->shaderType	 = ShaderType::FbxParts;
 }
 
 mtgb::SkySphere::~SkySphere()
@@ -23,8 +24,8 @@ mtgb::SkySphere::~SkySphere()
 
 void mtgb::SkySphere::Update()
 {
-	float angleRad = DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
-	Quaternion rot = DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
+	float angleRad		= DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
+	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
 	pTransform_->rotate = rot * pTransform_->rotate;
 }
 

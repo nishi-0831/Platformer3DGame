@@ -9,68 +9,75 @@ namespace mtgb
 {
 	class SceneSystem : public ISystem
 	{
-	public:
+	  public:
 		SceneSystem();
 		~SceneSystem();
 
 		/// <summary>
-		/// <para>ƒV[ƒ“‘JˆÚ‚ğ‚·‚é</para>
-		/// <para>NOTE: ŒÄ‚ñ‚¾uŠÔA‘JˆÚæƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÍŒÄ‚Î‚ê‚é‚ªA</para>
-		/// <para>----: Initialize‚ÍŸ‚ÌƒtƒŒ[ƒ€‚ÅŒÄ‚Î‚ê‚éB</para>
+		/// <para>ã‚·ãƒ¼ãƒ³é·ç§»ã‚’ã™ã‚‹</para>
+		/// <para>NOTE: å‘¼ã‚“ã ç¬é–“ã€é·ç§»å…ˆã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã¯å‘¼ã°ã‚Œã‚‹ãŒã€</para>
+		/// <para>----: Initializeã¯æ¬¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã§å‘¼ã°ã‚Œã‚‹ã€‚</para>
 		/// </summary>
-		/// <typeparam name="NextSceneT">‘JˆÚæ‚ÌƒV[ƒ“ƒNƒ‰ƒX‚ÌŒ^</typeparam>
-		/// <typeparam name="...Args">‘JˆÚæƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^‰Â•Ï’·ˆø”</typeparam>
-		/// <param name="..._args">‘JˆÚæƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^ˆø”</param>
-		template<class NextSceneT, typename ...Args>
-		void Move(Args... _args);
+		/// <typeparam name="NextSceneT">é·ç§»å…ˆã®ã‚·ãƒ¼ãƒ³ã‚¯ãƒ©ã‚¹ã®å‹</typeparam>
+		/// <typeparam name="...Args">é·ç§»å…ˆã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿å¯å¤‰é•·å¼•æ•°</typeparam>
+		/// <param name="..._args">é·ç§»å…ˆã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿å¼•æ•°</param>
+		template <class NextSceneT, typename... Args> void Move(Args... _args);
 
 		/// <summary>
-		/// Œ»İ‚ÌƒV[ƒ“‚Ìƒ|ƒCƒ“ƒ^‚Ìæ“¾
+		/// ç¾åœ¨ã®ã‚·ãƒ¼ãƒ³ã®ãƒã‚¤ãƒ³ã‚¿ã®å–å¾—
 		/// </summary>
-		/// <returns>ƒV[ƒ“‚Ìƒ|ƒCƒ“ƒ^</returns>
-		GameScene* GetActiveScene() const { return GameScene::pInstance_; }
+		/// <returns>ã‚·ãƒ¼ãƒ³ã®ãƒã‚¤ãƒ³ã‚¿</returns>
+		GameScene* GetActiveScene() const
+		{
+			return GameScene::pInstance_;
+		}
 
 		void Initialize() override;
 		void Update() override;
 
 		/// <summary>
-		/// ƒV[ƒ“‘JˆÚ‚ÌƒCƒxƒ“ƒg‚ğó‚¯‚é
+		/// ã‚·ãƒ¼ãƒ³é·ç§»æ™‚ã®ã‚¤ãƒ™ãƒ³ãƒˆã‚’å—ã‘ã‚‹
 		/// </summary>
 		/// <param name="_onMove">void()</param>
-		void OnMove(const std::function<void()>& _onMove) { onMoveListener_.push_back(_onMove); }
-		
+		void OnMove(const std::function<void()>& _onMove)
+		{
+			onMoveListener_.push_back(_onMove);
+		}
+
 		/// <summary>
-		/// <para> Ÿ‚ÌƒtƒŒ[ƒ€‚ÌƒV[ƒ“‚ÌXVA•`‰æ‘O‚ÉÀs‚·‚éƒR[ƒ‹ƒoƒbƒN‚ğ“o˜^ </para>
-		/// <para> ƒR[ƒ‹ƒoƒbƒN‚Íˆê‰ñ‚¾‚¯Às‚³‚êA‚»‚ÌŒã”jŠü‚³‚ê‚é </para>
+		/// <para> æ¬¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã®ã‚·ãƒ¼ãƒ³ã®æ›´æ–°ã€æç”»å‰ã«å®Ÿè¡Œã™ã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã‚’ç™»éŒ² </para>
+		/// <para> ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã¯ä¸€å›ã ã‘å®Ÿè¡Œã•ã‚Œã€ãã®å¾Œç ´æ£„ã•ã‚Œã‚‹ </para>
 		/// </summary>
-		/// <param name="_callback">“o˜^‚·‚éƒR[ƒ‹ƒoƒbƒN</param>
+		/// <param name="_callback">ç™»éŒ²ã™ã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯</param>
 		void RegisterPendingCallback(std::function<void()> _callback);
 
 		/// <summary>
-		/// <para> Ÿ‚ÌƒtƒŒ[ƒ€‚ÌƒV[ƒ“‚ÌXVA•`‰æ‘O‚ÉÀs‚·‚éƒR[ƒ‹ƒoƒbƒN‚ğÀs</para>
-		/// <para> ˆê‰ñ‚¾‚¯Às‚³‚êA‚»‚ÌŒã”jŠü‚³‚ê‚é </para>
+		/// <para> æ¬¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã®ã‚·ãƒ¼ãƒ³ã®æ›´æ–°ã€æç”»å‰ã«å®Ÿè¡Œã™ã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã‚’å®Ÿè¡Œ</para>
+		/// <para> ä¸€å›ã ã‘å®Ÿè¡Œã•ã‚Œã€ãã®å¾Œç ´æ£„ã•ã‚Œã‚‹ </para>
 		/// </summary>
 		void ExecutePendingCallbacks();
-	private:
+
+	  private:
 		void ChangeScene();
 
-	private:
+	  private:
 		GameScene* pNextScene_;
 
-		std::queue<std::function<void()>> pendingCallbacks_; // Ÿ‚ÌƒtƒŒ[ƒ€‚ÌƒV[ƒ“‚ÌXVA•`‰æ‘O‚ÉÀs‚·‚éƒR[ƒ‹ƒoƒbƒN
-		std::vector<std::function<void()>> onMoveListener_; // ƒV[ƒ“‘JˆÚ‚ÉÀs‚·‚éƒR[ƒ‹ƒoƒbƒN
+		std::queue<std::function<void()>> pendingCallbacks_; // æ¬¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã®ã‚·ãƒ¼ãƒ³ã®æ›´æ–°ã€æç”»å‰ã«å®Ÿè¡Œã™ã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
+		std::vector<std::function<void()>> onMoveListener_;	 // ã‚·ãƒ¼ãƒ³é·ç§»æ™‚ã«å®Ÿè¡Œã™ã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
 	};
 
-	template<class NextSceneT, typename ...Args>
-	inline void SceneSystem::Move(Args... _args)
+	template <class NextSceneT, typename... Args> inline void SceneSystem::Move(Args... _args)
 	{
-		// Šî’êƒNƒ‰ƒX‚ªGameScene‚Å‚ ‚é‚©
-		static_assert(std::is_base_of<GameScene, NextSceneT>().value
-			&& "GameSceneƒNƒ‰ƒX‚ğŒp³‚µ‚Ä‚¢‚È‚¢ƒNƒ‰ƒX‚ÉƒV[ƒ“‘JˆÚ‚Å‚«‚Ü‚¹‚ñB");
-		
-		// Šù‚ÉŸ‚ÌƒV[ƒ“‚ªŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚é‚È‚ç‰ğ•ú‚·‚é
+		// åŸºåº•ã‚¯ãƒ©ã‚¹ãŒGameSceneã§ã‚ã‚‹ã‹
+		static_assert(
+			std::is_base_of<GameScene, NextSceneT>().value &&
+			"GameSceneã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã¦ã„ãªã„ã‚¯ãƒ©ã‚¹ã«ã‚·ãƒ¼ãƒ³é·ç§»ã§ãã¾ã›ã‚“ã€‚"
+		);
+
+		// æ—¢ã«æ¬¡ã®ã‚·ãƒ¼ãƒ³ãŒå‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚‹ãªã‚‰è§£æ”¾ã™ã‚‹
 		SAFE_DELETE(pNextScene_);
 
-		pNextScene_ = new NextSceneT{ _args... };
+		pNextScene_ = new NextSceneT{_args...};
 	}
-}
+} // namespace mtgb

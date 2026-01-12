@@ -13,9 +13,9 @@
 using Microsoft::WRL::ComPtr;
 
 namespace fbxsdk
-{/*
-	class FbxMesh;
-	class FbxSkin;*/
+{ /*
+	 class FbxMesh;
+	 class FbxSkin;*/
 	class FbxCluster;
 }
 
@@ -30,173 +30,180 @@ namespace mtgb
 	class FbxParts : public IShader
 	{
 		friend DirectX11Draw;
-	public:
+
+	  public:
 		struct Vertex
 		{
-			Vector3 position;  // À•W
-			Vector3 normal;  // –@ü
-			Vector3 uv;  // uvÀ•W
-			std::array<uint32_t,4> boneIndex;
-			//uint32_t boneIndex[4];
+			Vector3 position; // åº§æ¨™
+			Vector3 normal;	  // æ³•ç·š
+			Vector3 uv;		  // uvåº§æ¨™
+			std::array<uint32_t, 4> boneIndex;
+			// uint32_t boneIndex[4];
 			std::array<float, 4> boneWeight;
-			//float boneWeight[4];
+			// float boneWeight[4];
 		};
-
-	
 
 		struct ConstantBuffer
 		{
-			Matrix4x4 g_matrixWorldViewProj;  // ƒ[ƒ‹ƒhEƒrƒ…[EƒvƒƒWƒFƒNƒVƒ‡ƒ“s—ñ
-			Matrix4x4 g_matrixNormalTrans;    // ‰ñ“]s—ñ‚ÆŠg‘ås—ñ‚Ì‹ts—ñ
-			Matrix4x4 g_matrixWorld;  // ƒ[ƒ‹ƒhs—ñ
-			Vector4 g_lightDirection;  // ƒ‰ƒCƒg‚ÌŒü‚«
-			Vector4 g_diffuse;  // Œõ‚ª‚ ‚½‚Á‚½‚Æ‚«‚Ö‚ÌŠgU”½ËŒõ(ƒ}ƒeƒŠƒAƒ‹F)
-			Vector4 g_ambient;  // ‘S‘Ì“I‚ÈŠÂ‹«Œõ (Œõ‚ª“–‚½‚ç‚È‚¢êŠ‚É‚à–¾‚é‚­)
-			Vector4 g_speculer;  // ‹¾–Ê”½Ë (Lambert‚Ìê‡‚Í0)
-			Vector4 g_cameraPosition; // ƒJƒƒ‰‚ÌˆÊ’uiƒnƒCƒ‰ƒCƒg‚ÌŒvZ‚É•K—vj
-			FLOAT g_shininess;     // ƒXƒyƒLƒ…ƒ‰‚Ì‹­‚³
-			BOOL g_isTexture;  // ƒeƒNƒXƒ`ƒƒ‚Ì—L–³
+			Matrix4x4 g_matrixWorldViewProj; // ãƒ¯ãƒ¼ãƒ«ãƒ‰ãƒ»ãƒ“ãƒ¥ãƒ¼ãƒ»ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³è¡Œåˆ—
+			Matrix4x4 g_matrixNormalTrans;	 // å›è»¢è¡Œåˆ—ã¨æ‹¡å¤§è¡Œåˆ—ã®é€†è¡Œåˆ—
+			Matrix4x4 g_matrixWorld;		 // ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—
+			Vector4 g_lightDirection;		 // ãƒ©ã‚¤ãƒˆã®å‘ã
+			Vector4 g_diffuse;				 // å…‰ãŒã‚ãŸã£ãŸã¨ãã¸ã®æ‹¡æ•£åå°„å…‰(ãƒãƒ†ãƒªã‚¢ãƒ«è‰²)
+			Vector4 g_ambient;				 // å…¨ä½“çš„ãªç’°å¢ƒå…‰ (å…‰ãŒå½“ãŸã‚‰ãªã„å ´æ‰€ã«ã‚‚æ˜ã‚‹ã)
+			Vector4 g_speculer;				 // é¡é¢åå°„ (Lambertã®å ´åˆã¯0)
+			Vector4 g_cameraPosition;		 // ã‚«ãƒ¡ãƒ©ã®ä½ç½®ï¼ˆãƒã‚¤ãƒ©ã‚¤ãƒˆã®è¨ˆç®—ã«å¿…è¦ï¼‰
+			FLOAT g_shininess;				 // ã‚¹ãƒšã‚­ãƒ¥ãƒ©ã®å¼·ã•
+			BOOL g_isTexture;				 // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®æœ‰ç„¡
 			Vector2 g_padding;
 			Vector4 g_textureScale;
 		};
 
 		/// <summary>
-		/// ƒ}ƒeƒŠƒAƒ‹
+		/// ãƒãƒ†ãƒªã‚¢ãƒ«
 		/// </summary>
 		struct Material
 		{
 			~Material();
-			uint32_t polygonCount;  // ƒ|ƒŠƒSƒ“”
-			Vector4 diffuse;  // ŠgU”½ËŒõ‚Ö‚Ì”½Ë‹­“x
-			Vector4 ambient;  // ŠÂ‹«Œõ‚Ö‚Ì”½Ë‹­“x
-			Vector4 specular;  // ‹¾–Ê”½ËŒõ
-			float shininess;  // ƒnƒCƒ‰ƒCƒg‚Ì‹­‚³
+			uint32_t polygonCount; // ãƒãƒªã‚´ãƒ³æ•°
+			Vector4 diffuse;	   // æ‹¡æ•£åå°„å…‰ã¸ã®åå°„å¼·åº¦
+			Vector4 ambient;	   // ç’°å¢ƒå…‰ã¸ã®åå°„å¼·åº¦
+			Vector4 specular;	   // é¡é¢åå°„å…‰
+			float shininess;	   // ãƒã‚¤ãƒ©ã‚¤ãƒˆã®å¼·ã•
 			Texture2D* pTexture;
 		};
 
-
 		struct BoneMatrices
 		{
-			Matrix4x4 boneMatrices[MAX_BONE_COUNT];  // Å‘åƒ{[ƒ“”
+			Matrix4x4 boneMatrices[MAX_BONE_COUNT]; // æœ€å¤§ãƒœãƒ¼ãƒ³æ•°
 		};
 		/// <summary>
-		/// ƒ{[ƒ“ (ŠÖß‚»‚Ì‚à‚Ì)
+		/// ãƒœãƒ¼ãƒ³ (é–¢ç¯€ãã®ã‚‚ã®)
 		/// </summary>
 		struct Bone
 		{
 			// REF: https://help.autodesk.com/view/MAYACRE/JPN/?guid=GUID-36808BCC-ACF9-4A9E-B0D8-B8F509FEC0D5
-			Matrix4x4 bindPose;  // ‰Šúƒ|[ƒY‚Ìƒ{[ƒ“•ÏŠ·s—ñ
+			Matrix4x4 bindPose; // åˆæœŸãƒãƒ¼ã‚ºæ™‚ã®ãƒœãƒ¼ãƒ³å¤‰æ›è¡Œåˆ—
 		};
-	public:
-		FbxParts(FbxNode* _parent,double _unitScaleFactor);
+
+	  public:
+		FbxParts(FbxNode* _parent, double _unitScaleFactor);
 		~FbxParts();
 
-		FbxNode* GetNode() const { return pNode_; }
+		FbxNode* GetNode() const
+		{
+			return pNode_;
+		}
 
 		void Initialize() override;
 		void Release() override;
 
 		/// <summary>
-		/// ƒ‚ƒfƒ‹‚ğ•`‰æ‚·‚é
+		/// ãƒ¢ãƒ‡ãƒ«ã‚’æç”»ã™ã‚‹
 		/// </summary>
-		/// <param name="_transform">À•WŒn</param>
+		/// <param name="_transform">åº§æ¨™ç³»</param>
 		void Draw(const Transform& _transform);
 		/// <summary>
-		/// ƒ{[ƒ“‚ ‚è‚Åƒ‚ƒfƒ‹‚ğ•`‰æ‚·‚é
+		/// ãƒœãƒ¼ãƒ³ã‚ã‚Šã§ãƒ¢ãƒ‡ãƒ«ã‚’æç”»ã™ã‚‹
 		/// </summary>
-		/// <param name="_transform">À•WŒn</param>
-		/// <param name="_time">ƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒŒ[ƒ€</param>
+		/// <param name="_transform">åº§æ¨™ç³»</param>
+		/// <param name="_time">ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ãƒ¬ãƒ¼ãƒ </param>
 		void DrawSkinAnimation(const Transform& _transform, FbxTime _time);
-		
+
 		/// <summary>
-		/// ƒ{[ƒ“–³‚µ‚Åƒ‚ƒfƒ‹‚ğ•`‰æ‚·‚é
+		/// ãƒœãƒ¼ãƒ³ç„¡ã—ã§ãƒ¢ãƒ‡ãƒ«ã‚’æç”»ã™ã‚‹
 		/// </summary>
-		/// <param name="_transform">À•WŒn</param>
-		/// <param name="_time">ƒtƒŒ[ƒ€</param>
+		/// <param name="_transform">åº§æ¨™ç³»</param>
+		/// <param name="_time">ãƒ•ãƒ¬ãƒ¼ãƒ </param>
 		void DrawMeshAnimation(const Transform& _transform, FbxTime _time);
 
 		/// <summary>
-		/// ‚µ‚Éƒ{[ƒ“‚ÌƒAƒjƒ[ƒVƒ‡ƒ“–³‚µ‚Ì‚Æ‚«‚ÌÀ•W‚ğæ“¾‚·‚é
+		/// è©¦ã—ã«ãƒœãƒ¼ãƒ³ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ç„¡ã—ã®ã¨ãã®åº§æ¨™ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <param name="_boneName">–¼‘O</param>
-		/// <param name="_pPosition">À•W‚ÌQÆ“n‚µ</param>
-		/// <returns>ƒ{[ƒ“‚Ìæ“¾‚É¬Œ÷‚µ‚½ true / false</returns>
+		/// <param name="_boneName">åå‰</param>
+		/// <param name="_pPosition">åº§æ¨™ã®å‚ç…§æ¸¡ã—</param>
+		/// <returns>ãƒœãƒ¼ãƒ³ã®å–å¾—ã«æˆåŠŸã—ãŸ true / false</returns>
 		bool TryGetBonePosition(const std::string& _boneName, Vector3* _pPosition);
 		/// <summary>
-		/// ‚µ‚Éƒ{[ƒ“‚ÌƒAƒjƒ[ƒVƒ‡ƒ“’†‚ÌÀ•W‚ğæ“¾‚·‚é
+		/// è©¦ã—ã«ãƒœãƒ¼ãƒ³ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ä¸­ã®åº§æ¨™ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <param name="_boneName">–¼‘O</param>
-		/// <param name="_pPosition">À•W‚ÌQÆ“n‚µ</param>
-		/// <returns>ƒ{[ƒ“‚Ìæ“¾‚É¬Œ÷‚µ‚½ true / false</returns>
+		/// <param name="_boneName">åå‰</param>
+		/// <param name="_pPosition">åº§æ¨™ã®å‚ç…§æ¸¡ã—</param>
+		/// <returns>ãƒœãƒ¼ãƒ³ã®å–å¾—ã«æˆåŠŸã—ãŸ true / false</returns>
 		bool TryGetBonePositionAtNow(const std::string& _boneName, Vector3* _pPosition);
 
 		/// <summary>
-		/// Fbx‚ÌƒXƒLƒ“‚ğæ“¾
+		/// Fbxã®ã‚¹ã‚­ãƒ³ã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒXƒLƒ“‚Ìƒ|ƒCƒ“ƒ^</returns>
-		FbxSkin* GetSkin() { return pSkin_; }
+		/// <returns>ã‚¹ã‚­ãƒ³ã®ãƒã‚¤ãƒ³ã‚¿</returns>
+		FbxSkin* GetSkin()
+		{
+			return pSkin_;
+		}
 
-	private:
+	  private:
 		/// <summary>
-		/// ’¸“_ƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		void InitializeVertexBuffer(ID3D11Device* _pDevice) override;
 		/// <summary>
-		/// ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		void InitializeIndexBuffer(ID3D11Device* _pDevice) override;
 		/// <summary>
-		/// ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ì‰Šú‰»
+		/// ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 		/// </summary>
 		void InitializeConstantBuffer(ID3D11Device* _pDevice) override;
 
 		/// <summary>
-		/// ƒ}ƒeƒŠƒAƒ‹‚Ì‰Šú‰»
+		/// ãƒãƒ†ãƒªã‚¢ãƒ«ã®åˆæœŸåŒ–
 		/// </summary>
 		void InitializeMaterial();
 		/// <summary>
-		/// ƒeƒNƒXƒ`ƒƒ‚Ì‰Šú‰»
+		/// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®åˆæœŸåŒ–
 		/// </summary>
 		void InitializeTexture(FbxSurfaceMaterial* _pMaterial, const DWORD _i);
 		/// <summary>
-		/// œî•ñ‚Ì‰Šú‰»
+		/// éª¨æƒ…å ±ã®åˆæœŸåŒ–
 		/// </summary>
 		void InitializeSkelton();
 
 		void SetBoneMatrix();
-		bool HasSkinnedMesh() const { return hasSkinnedMesh_; }
+		bool HasSkinnedMesh() const
+		{
+			return hasSkinnedMesh_;
+		}
 
-	private:
+	  private:
 		void SetAnimationTime(const FbxTime& _time);
 
-		bool hasSkinnedMesh_; // ƒ{[ƒ“‚Ì‚ ‚éƒƒbƒVƒ…‚©”Û‚©
-		uint32_t vertexCount_;  // ’¸“_”
-		uint32_t polygonCount_;  // ƒ|ƒŠƒSƒ“”
-		uint32_t indexCount_;  // ƒCƒ“ƒfƒbƒNƒX”
-		uint32_t materialCount_;  // ƒ}ƒeƒŠƒAƒ‹”
-		uint32_t polygonVertexCount_;  // ƒ|ƒŠƒSƒ“‚Ì’¸“_”
+		bool hasSkinnedMesh_;		  // ãƒœãƒ¼ãƒ³ã®ã‚ã‚‹ãƒ¡ãƒƒã‚·ãƒ¥ã‹å¦ã‹
+		uint32_t vertexCount_;		  // é ‚ç‚¹æ•°
+		uint32_t polygonCount_;		  // ãƒãƒªã‚´ãƒ³æ•°
+		uint32_t indexCount_;		  // ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹æ•°
+		uint32_t materialCount_;	  // ãƒãƒ†ãƒªã‚¢ãƒ«æ•°
+		uint32_t polygonVertexCount_; // ãƒãƒªã‚´ãƒ³ã®é ‚ç‚¹æ•°
 
-		FbxNode* pNode_;  // Fbxƒm[ƒhî•ñ
-		Material* pMaterial_;  // ƒ}ƒeƒŠƒAƒ‹
-		FbxMesh* pMesh_;  // ƒƒbƒVƒ…
-		FbxSkin* pSkin_;  // ƒXƒLƒ“ƒƒbƒVƒ…î•ñ (ƒXƒLƒ“ƒƒbƒVƒ…ƒAƒjƒ[ƒVƒ‡ƒ“‚Ìƒf[ƒ^)
-		FbxCluster** ppCluster_;  // ƒNƒ‰ƒXƒ^î•ñ (ŠÖß‚²‚Æ‚ÉŠÖ˜A‚Â‚¯‚ç‚ê‚½’¸“_î•ñ)
-		FbxTime currentTime_; // Œ»İİ’è‚³‚ê‚Ä‚¢‚éƒAƒjƒ[ƒVƒ‡ƒ“‚ÌŠÔ
+		FbxNode* pNode_;		 // Fbxãƒãƒ¼ãƒ‰æƒ…å ±
+		Material* pMaterial_;	 // ãƒãƒ†ãƒªã‚¢ãƒ«
+		FbxMesh* pMesh_;		 // ãƒ¡ãƒƒã‚·ãƒ¥
+		FbxSkin* pSkin_;		 // ã‚¹ã‚­ãƒ³ãƒ¡ãƒƒã‚·ãƒ¥æƒ…å ± (ã‚¹ã‚­ãƒ³ãƒ¡ãƒƒã‚·ãƒ¥ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒ‡ãƒ¼ã‚¿)
+		FbxCluster** ppCluster_; // ã‚¯ãƒ©ã‚¹ã‚¿æƒ…å ± (é–¢ç¯€ã”ã¨ã«é–¢é€£ã¤ã‘ã‚‰ã‚ŒãŸé ‚ç‚¹æƒ…å ±)
+		FbxTime currentTime_;	 // ç¾åœ¨è¨­å®šã•ã‚Œã¦ã„ã‚‹ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®æ™‚é–“
 
-		int boneCount_;  // FBX ‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚éŠÖß‚Ì”
-		std::vector<Bone> bones_;  // ŠeŠÖß‚Ìî•ñ”z—ñ
-		std::unordered_map<std::string, Bone*> boneNamePair_;  // ŠÖß–¼‚Æ‚ÌƒyƒA
-		Vertex* pVertexes_;  // ’¸“_î•ñ
-		
-		DWORD** ppIndexData_;  // ƒCƒ“ƒfƒbƒNƒXî•ñ
+		int boneCount_;										  // FBX ã«å«ã¾ã‚Œã¦ã„ã‚‹é–¢ç¯€ã®æ•°
+		std::vector<Bone> bones_;							  // å„é–¢ç¯€ã®æƒ…å ±é…åˆ—
+		std::unordered_map<std::string, Bone*> boneNamePair_; // é–¢ç¯€åã¨ã®ãƒšã‚¢
+		Vertex* pVertexes_;									  // é ‚ç‚¹æƒ…å ±
+
+		DWORD** ppIndexData_; // ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹æƒ…å ±
 
 		std::vector<ComPtr<ID3D11Buffer>> ppIndexBuffer_;
 		ComPtr<ID3D11Buffer> pBoneConstantBuffer_;
 
-		//BoneMatrices boneMatrices_; //ƒ{[ƒ“•ÏŠ·—ps—ñ
-		double unitScaleFactor_; // ƒXƒP[ƒ‹’PˆÊŒW” 
-		float fbxToWorldScaleFactor_; // FBX‚©‚çƒ[ƒ‹ƒh‚ÌƒXƒP[ƒ‹‚É•ÏŠ·‚·‚éŒW”
+		// BoneMatrices boneMatrices_; //ãƒœãƒ¼ãƒ³å¤‰æ›ç”¨è¡Œåˆ—
+		double unitScaleFactor_;	  // ã‚¹ã‚±ãƒ¼ãƒ«å˜ä½ä¿‚æ•°
+		float fbxToWorldScaleFactor_; // FBXã‹ã‚‰ãƒ¯ãƒ¼ãƒ«ãƒ‰ã®ã‚¹ã‚±ãƒ¼ãƒ«ã«å¤‰æ›ã™ã‚‹ä¿‚æ•°
 	};
 
-}
-
+} // namespace mtgb

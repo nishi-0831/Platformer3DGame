@@ -15,95 +15,104 @@
 #include <d3d11.h>
 #include <d3dCompiler.h>
 
-#pragma comment(lib,"d3d11.lib")
-#pragma comment(lib,"d3dCompiler.lib")
-#pragma comment(lib,"winmm.lib")
+#pragma comment(lib, "d3d11.lib")
+#pragma comment(lib, "d3dCompiler.lib")
+#pragma comment(lib, "winmm.lib")
 
-ComPtr<ID3D11InputLayout> mtgb::OBJ::pInputLayout_{ nullptr };
-ComPtr<ID3D11VertexShader> mtgb::OBJ::pVertexShader_{ nullptr };
-ComPtr<ID3D11PixelShader> mtgb::OBJ::pPixelShader_{ nullptr };
-ComPtr<ID3D11Buffer> mtgb::OBJ::pConstantBuffer_{ nullptr };
-
+ComPtr<ID3D11InputLayout> mtgb::OBJ::pInputLayout_{nullptr};
+ComPtr<ID3D11VertexShader> mtgb::OBJ::pVertexShader_{nullptr};
+ComPtr<ID3D11PixelShader> mtgb::OBJ::pPixelShader_{nullptr};
+ComPtr<ID3D11Buffer> mtgb::OBJ::pConstantBuffer_{nullptr};
 
 void mtgb::OBJ::Initialize()
 {
 	HRESULT hResult;
 
-	//hlslƒtƒ@ƒCƒ‹“Ç‚İ‚İ ƒuƒƒuì¬@ƒuƒƒu‚Æ‚ÍƒVƒF[ƒ_[‚Ì‰ò‚İ‚½‚¢‚È‚à‚ÌBXXƒVƒF[ƒ_[‚Æ‚µ‚Ä“Á’¥‚ğ‚½‚È‚¢BŒã‚ÅŠeíƒVƒF[ƒ_[‚É¬‚è“¾‚éB
+	// hlslãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
+	// ãƒ–ãƒ­ãƒ–ä½œæˆã€€ãƒ–ãƒ­ãƒ–ã¨ã¯ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®å¡Šã¿ãŸã„ãªã‚‚ã®ã€‚XXã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã¨ã—ã¦ç‰¹å¾´ã‚’æŒãŸãªã„ã€‚å¾Œã§å„ç¨®ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã«æˆã‚Šå¾—ã‚‹ã€‚
 	ID3DBlob* pCompiledShader = NULL;
 	hResult = D3DCompileFromFile(L"Shader/Geometry.hlsl", NULL, NULL, "VS", "vs_5_0", 0, 0, &pCompiledShader, NULL);
 
-	massert(SUCCEEDED(hResult)
-		&& "’¸“_ƒVƒF[ƒ_‚ÌƒRƒ“ƒpƒCƒ‹‚É¸”s @OBJ::Initialize");
+	massert(SUCCEEDED(hResult) && "é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã«å¤±æ•— @OBJ::Initialize");
 
-	hResult = DirectX11Draw::pDevice_->CreateVertexShader(pCompiledShader->GetBufferPointer(), pCompiledShader->GetBufferSize(), NULL, pVertexShader_.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult)
-		&& "’¸“_ƒVƒF[ƒ_‚Ìì¬‚É¸”s @OBJ::Initialize");
+	hResult = DirectX11Draw::pDevice_->CreateVertexShader(
+		pCompiledShader->GetBufferPointer(),
+		pCompiledShader->GetBufferSize(),
+		NULL,
+		pVertexShader_.ReleaseAndGetAddressOf()
+	);
+	massert(SUCCEEDED(hResult) && "é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ã®ä½œæˆã«å¤±æ•— @OBJ::Initialize");
 
-	//’¸“_ƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg‚ğ’è‹`
-	D3D11_INPUT_ELEMENT_DESC layout[] =
-	{
-		{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
+	// é ‚ç‚¹ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã‚’å®šç¾©
+	D3D11_INPUT_ELEMENT_DESC layout[] = {
+		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0},
 	};
 
 	int numElements = sizeof(layout) / sizeof(layout[0]);
 
-	//’¸“_ƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg‚ğì¬
-	hResult = DirectX11Draw::pDevice_->CreateInputLayout(layout, numElements, pCompiledShader->GetBufferPointer(), pCompiledShader->GetBufferSize(), pInputLayout_.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult)
-		&& "’¸“_ƒCƒ“ƒvƒbƒgƒŒƒCƒAƒEƒg‚Ìì¬‚É¸”s @OBJ::Initialize");
+	// é ‚ç‚¹ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã‚’ä½œæˆ
+	hResult = DirectX11Draw::pDevice_->CreateInputLayout(
+		layout,
+		numElements,
+		pCompiledShader->GetBufferPointer(),
+		pCompiledShader->GetBufferSize(),
+		pInputLayout_.ReleaseAndGetAddressOf()
+	);
+	massert(SUCCEEDED(hResult) && "é ‚ç‚¹ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ä½œæˆã«å¤±æ•— @OBJ::Initialize");
 
-	//ƒsƒNƒZƒ‹ƒVƒF[ƒ_ì¬
+	// ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ä½œæˆ
 	hResult = D3DCompileFromFile(L"Shader/Geometry.hlsl", NULL, NULL, "PS", "ps_5_0", 0, 0, &pCompiledShader, NULL);
-	massert(SUCCEEDED(hResult)
-		&& "ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚Ìì¬‚É¸”s @OBJ::Initialize");
+	massert(SUCCEEDED(hResult) && "ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®ä½œæˆã«å¤±æ•— @OBJ::Initialize");
 
-	hResult = DirectX11Draw::pDevice_->CreatePixelShader(pCompiledShader->GetBufferPointer(), pCompiledShader->GetBufferSize(), NULL, pPixelShader_.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult)
-		&& "ƒsƒNƒZƒ‹ƒVƒF[ƒ_‚Ìì¬‚É¸”s @OBJ::Initialize");
+	hResult = DirectX11Draw::pDevice_->CreatePixelShader(
+		pCompiledShader->GetBufferPointer(),
+		pCompiledShader->GetBufferSize(),
+		NULL,
+		pPixelShader_.ReleaseAndGetAddressOf()
+	);
+	massert(SUCCEEDED(hResult) && "ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ã®ä½œæˆã«å¤±æ•— @OBJ::Initialize");
 
 	SAFE_RELEASE(pCompiledShader);
 
-	//ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@[ì¬
+	// ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ãƒ¼ä½œæˆ
 	D3D11_BUFFER_DESC cb;
-	cb.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-	cb.ByteWidth = sizeof(SimpleConstantBuffer);
+	cb.BindFlags	  = D3D11_BIND_CONSTANT_BUFFER;
+	cb.ByteWidth	  = sizeof(SimpleConstantBuffer);
 	cb.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
-	cb.MiscFlags = 0;
-	cb.Usage = D3D11_USAGE_DYNAMIC;
+	cb.MiscFlags	  = 0;
+	cb.Usage		  = D3D11_USAGE_DYNAMIC;
 
 	hResult = DirectX11Draw::pDevice_->CreateBuffer(&cb, NULL, pConstantBuffer_.ReleaseAndGetAddressOf());
-		massert(SUCCEEDED(hResult)
-			&& "ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìì¬‚É¸”s @OBJ::Initialize");
+	massert(SUCCEEDED(hResult) && "ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•— @OBJ::Initialize");
 }
 
 int mtgb::OBJ::Load(const std::string& fileName)
 {
 	ModelData* pData = new ModelData;
 
-	OBJ& pInstance{ Game::System<OBJ>() };
+	OBJ& pInstance{Game::System<OBJ>()};
 
-	//ŠJ‚¢‚½ƒtƒ@ƒCƒ‹ˆê——‚©‚ç“¯‚¶ƒtƒ@ƒCƒ‹–¼‚Ì‚à‚Ì‚ª–³‚¢‚©’T‚·
+	// é–‹ã„ãŸãƒ•ã‚¡ã‚¤ãƒ«ä¸€è¦§ã‹ã‚‰åŒã˜ãƒ•ã‚¡ã‚¤ãƒ«åã®ã‚‚ã®ãŒç„¡ã„ã‹æ¢ã™
 	bool isExist = false;
 	for (int i = 0; i < pInstance.datas_.size(); i++)
 	{
-		//Šù‚ÉŠJ‚¢‚Ä‚¢‚éê‡
+		// æ—¢ã«é–‹ã„ã¦ã„ã‚‹å ´åˆ
 		if (pInstance.datas_[i] != nullptr && pInstance.datas_[i]->fileName == fileName)
 		{
 			pData->mesh = pInstance.datas_[i]->mesh;
-			isExist = true;
+			isExist		= true;
 			break;
 		}
 	}
 
-	//V‚½‚Éƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// æ–°ãŸã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	if (isExist == false)
 	{
 		pData->mesh = new SimpleMesh;
 		pInstance.InitMesh(fileName, pData->mesh);
 	}
 
-	//g‚Á‚Ä‚È‚¢”Ô†‚ª–³‚¢‚©’T‚·
+	// ä½¿ã£ã¦ãªã„ç•ªå·ãŒç„¡ã„ã‹æ¢ã™
 	for (int i = 0; i < pInstance.datas_.size(); i++)
 	{
 		if (pInstance.datas_[i] == nullptr)
@@ -113,7 +122,7 @@ int mtgb::OBJ::Load(const std::string& fileName)
 		}
 	}
 
-	//V‚½‚É’Ç‰Á
+	// æ–°ãŸã«è¿½åŠ 
 	pInstance.datas_.push_back(pData);
 	return (int)pInstance.datas_.size() - 1;
 }
@@ -131,41 +140,39 @@ void mtgb::OBJ::Release()
 	pVertexShader_.Reset();
 	pPixelShader_.Reset();
 	pConstantBuffer_.Reset();
-
 }
 
 void mtgb::OBJ::Draw(int hModel, const Transform* transform)
 {
 	DirectX11Draw::SetIsWriteToDepthBuffer(true);
-	//DirectX::XMMATRIX mWorld;
+	// DirectX::XMMATRIX mWorld;
 	Matrix4x4 mWorld;
 	transform->GenerateWorldMatrix(&mWorld);
 
 	Matrix4x4 mView;
-	// ƒrƒ…[ƒgƒ‰ƒ“ƒXƒtƒH[ƒ€i‹“_À•W•ÏŠ·j
-	
+	// ãƒ“ãƒ¥ãƒ¼ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒ ï¼ˆè¦–ç‚¹åº§æ¨™å¤‰æ›ï¼‰
+
 	const Transform& cameraTransform = Game::System<CameraSystem>().GetTransform();
 	Game::System<CameraSystem>().GetViewMatrix(&mView);
 
 	Matrix4x4 mProj;
 	Game::System<CameraSystem>().GetProjMatrix(&mProj);
-	static const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
+	static const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
 	ID3D11DeviceContext* tmpContext = DirectX11Draw::pContext_.Get();
 	tmpContext->VSSetShader(pVertexShader_.Get(), NULL, 0);
 	tmpContext->PSSetShader(pPixelShader_.Get(), NULL, 0);
 
-	//ƒVƒF[ƒ_[‚ÌƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@[‚ÉŠeíƒf[ƒ^‚ğ“n‚·	
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ãƒ¼ã«å„ç¨®ãƒ‡ãƒ¼ã‚¿ã‚’æ¸¡ã™
 	D3D11_MAPPED_SUBRESOURCE pData;
 	SimpleConstantBuffer cb;
 
 	HRESULT hResult = DirectX11Draw::pContext_->Map(pConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &pData);
-	massert(SUCCEEDED(hResult)
-		&& "Map‚É¸”s @OBJ::Draw");
+	massert(SUCCEEDED(hResult) && "Mapã«å¤±æ•— @OBJ::Draw");
 	if (SUCCEEDED(hResult))
 	{
-		DirectX::XMMATRIX mWVP = (mWorld) * mView * mProj;
-		//cb.mWVP = DirectX::XMMatrixTranspose(*mWorld);
+		DirectX::XMMATRIX mWVP = (mWorld)*mView * mProj;
+		// cb.mWVP = DirectX::XMMatrixTranspose(*mWorld);
 		cb.mWVP = DirectX::XMMatrixTranspose(mWVP);
 
 		memcpy_s(pData.pData, pData.RowPitch, (void*)&cb, sizeof(cb));
@@ -180,87 +187,84 @@ void mtgb::OBJ::Draw(int hModel, const Transform* transform)
 
 		tmpContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-		//’¸“_ƒoƒbƒtƒ@ƒZƒbƒg
+		// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã‚»ãƒƒãƒˆ
 		UINT stride = sizeof(SimpleVertex);
 		UINT offset = 0;
 		tmpContext->IASetVertexBuffers(slot, 1, datas_[hModel]->mesh->pVertexBuffer.GetAddressOf(), &stride, &offset);
 
-		//ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@ƒZƒbƒg
+		// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã‚»ãƒƒãƒˆ
 		tmpContext->IASetIndexBuffer(datas_[hModel]->mesh->pIndexBuffer.Get(), DXGI_FORMAT_R32_UINT, 0);
-		//ƒvƒŠƒ~ƒeƒBƒu‚ğƒŒƒ“ƒ_ƒŠƒ“ƒO
+		// ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ã‚’ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°
 		tmpContext->DrawIndexed(datas_[hModel]->mesh->numFace * 3, 0, 0);
 
-		
-		//DirectX11Draw::End();
+		// DirectX11Draw::End();
 	}
 }
-
-
 
 void mtgb::OBJ::InitMesh(const std::string& fileName, SimpleMesh* mesh)
 {
 	float x, y, z;
 	int v1 = 0, v2 = 0, v3 = 0;
-	char key[190] = { 0 };
-	
-	//ƒtƒ@ƒCƒ‹‚ğŠJ‚¢‚Ä“à—e‚ğ“Ç‚İ‚Ş
+	char key[190] = {0};
+
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã„ã¦å†…å®¹ã‚’èª­ã¿è¾¼ã‚€
 	FILE* fp = NULL;
 	fopen_s(&fp, fileName.c_str(), "rt");
-	
-	// ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“‚ÌŠm”F
+
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³ã®ç¢ºèª
 	/*if (fp == NULL) {
-		massert(false && "OBJƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“‚É¸”s @OBJ::InitMesh");
+		massert(false && "OBJãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚ªãƒ¼ãƒ—ãƒ³ã«å¤±æ•— @OBJ::InitMesh");
 		return;
 	}*/
 
-	// ‰Šú‰»
+	// åˆæœŸåŒ–
 	mesh->numVert = 0;
 	mesh->numFace = 0;
 
-	//‚Ü‚¸‚Í’¸“_”Aƒ|ƒŠƒSƒ“”‚ğ’²‚×‚é
+	// ã¾ãšã¯é ‚ç‚¹æ•°ã€ãƒãƒªã‚´ãƒ³æ•°ã‚’èª¿ã¹ã‚‹
 	while (!feof(fp))
 	{
-		//ƒL[ƒ[ƒh“Ç‚İ‚İ
+		// ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰èª­ã¿è¾¼ã¿
 		fscanf_s(fp, "%s ", key, (unsigned int)sizeof(key));
-		//’¸“_
+		// é ‚ç‚¹
 		if (strcmp(key, "v") == 0)
 		{
 			mesh->numVert++;
 		}
-		//ƒtƒFƒCƒXiƒ|ƒŠƒSƒ“j
+		// ãƒ•ã‚§ã‚¤ã‚¹ï¼ˆãƒãƒªã‚´ãƒ³ï¼‰
 		if (strcmp(key, "f") == 0)
 		{
 			mesh->numFace++;
 		}
 	}
 
-	//ˆê“I‚Èƒƒ‚ƒŠŠm•Ûi’¸“_ƒoƒbƒtƒ@‚ÆƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@j
+	// ä¸€æ™‚çš„ãªãƒ¡ãƒ¢ãƒªç¢ºä¿ï¼ˆé ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã¨ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ï¼‰
 	SimpleVertex* pVertexBuffer = new SimpleVertex[mesh->numVert];
-	int* pIndexBuffer = new int[mesh->numFace * 3];
+	int* pIndexBuffer			= new int[mesh->numFace * 3];
 
-	//–{“Ç‚İ‚İ	
+	// æœ¬èª­ã¿è¾¼ã¿
 	fseek(fp, SEEK_SET, 0);
-	int vertCount = 0;//“Ç‚İ‚İƒJƒEƒ“ƒ^[
-	int faceCount = 0;//“Ç‚İ‚İƒJƒEƒ“ƒ^[
+	int vertCount = 0; // èª­ã¿è¾¼ã¿ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼
+	int faceCount = 0; // èª­ã¿è¾¼ã¿ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼
 
 	while (!feof(fp))
 	{
-		//ƒL[ƒ[ƒh“Ç‚İ‚İ
+		// ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰èª­ã¿è¾¼ã¿
 		ZeroMemory(key, sizeof(key));
 		fscanf_s(fp, "%s ", key, (unsigned int)sizeof(key));
-		//’¸“_ “Ç‚İ‚İ
+		// é ‚ç‚¹ èª­ã¿è¾¼ã¿
 		if (strcmp(key, "v") == 0)
 		{
 			fscanf_s(fp, "%f %f %f", &x, &y, &z);
-			//OBJ‚Í‰EèÀ•WŒn‚È‚Ì‚Åx‚ ‚é‚¢‚Í‚š‚ğ”½“]
+			// OBJã¯å³æ‰‹åº§æ¨™ç³»ãªã®ã§xã‚ã‚‹ã„ã¯ï½šã‚’åè»¢
 			pVertexBuffer[vertCount].pos = DirectX::XMVectorSet(-x, y, z, 1);
 			vertCount++;
 		}
-		//ƒtƒFƒCƒXiƒ|ƒŠƒSƒ“j “Ç‚İ‚İ
+		// ãƒ•ã‚§ã‚¤ã‚¹ï¼ˆãƒãƒªã‚´ãƒ³ï¼‰ èª­ã¿è¾¼ã¿
 		if (strcmp(key, "f") == 0)
 		{
 			fscanf_s(fp, "%d %d %d", &v1, &v2, &v3);
-			pIndexBuffer[faceCount * 3] = v1 - 1;
+			pIndexBuffer[faceCount * 3]		= v1 - 1;
 			pIndexBuffer[faceCount * 3 + 1] = v2 - 1;
 			pIndexBuffer[faceCount * 3 + 2] = v3 - 1;
 			faceCount++;
@@ -269,34 +273,33 @@ void mtgb::OBJ::InitMesh(const std::string& fileName, SimpleMesh* mesh)
 
 	fclose(fp);
 
-	//’¸“_ƒoƒbƒtƒ@ì¬
+	// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ä½œæˆ
 	D3D11_BUFFER_DESC bd;
-	bd.Usage = D3D11_USAGE_DEFAULT;
-	bd.ByteWidth = sizeof(SimpleVertex) * mesh->numVert;
-	bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+	bd.Usage		  = D3D11_USAGE_DEFAULT;
+	bd.ByteWidth	  = sizeof(SimpleVertex) * mesh->numVert;
+	bd.BindFlags	  = D3D11_BIND_VERTEX_BUFFER;
 	bd.CPUAccessFlags = 0;
-	bd.MiscFlags = 0;
+	bd.MiscFlags	  = 0;
 	D3D11_SUBRESOURCE_DATA initData;
-	initData.pSysMem = pVertexBuffer;
-	initData.SysMemPitch = 0;
+	initData.pSysMem		  = pVertexBuffer;
+	initData.SysMemPitch	  = 0;
 	initData.SysMemSlicePitch = 0;
 
-	HRESULT hResult = DirectX11Draw::pDevice_->CreateBuffer(&bd, &initData, mesh->pVertexBuffer.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult)
-		&& "’¸“_ƒoƒbƒtƒ@‚Ìì¬‚É¸”s‚µ‚Ü‚µ‚½ @OBJ::InitStaticMesh");
+	HRESULT hResult =
+		DirectX11Draw::pDevice_->CreateBuffer(&bd, &initData, mesh->pVertexBuffer.ReleaseAndGetAddressOf());
+	massert(SUCCEEDED(hResult) && "é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•—ã—ã¾ã—ãŸ @OBJ::InitStaticMesh");
 
-	//ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@ì¬
-	bd.Usage = D3D11_USAGE_DEFAULT;
-	bd.ByteWidth = sizeof(int) * mesh->numFace * 3;
-	bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-	bd.CPUAccessFlags = 0;
-	bd.MiscFlags = 0;
-	initData.pSysMem = pIndexBuffer;
-	initData.SysMemPitch = 0;
+	// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ä½œæˆ
+	bd.Usage				  = D3D11_USAGE_DEFAULT;
+	bd.ByteWidth			  = sizeof(int) * mesh->numFace * 3;
+	bd.BindFlags			  = D3D11_BIND_INDEX_BUFFER;
+	bd.CPUAccessFlags		  = 0;
+	bd.MiscFlags			  = 0;
+	initData.pSysMem		  = pIndexBuffer;
+	initData.SysMemPitch	  = 0;
 	initData.SysMemSlicePitch = 0;
 	hResult = DirectX11Draw::pDevice_->CreateBuffer(&bd, &initData, mesh->pIndexBuffer.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult)
-	&& "ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬‚É¸”s‚µ‚Ü‚µ‚½ @OBJ::InitStaticMesh");
+	massert(SUCCEEDED(hResult) && "ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•—ã—ã¾ã—ãŸ @OBJ::InitStaticMesh");
 
 	delete[] pVertexBuffer;
 	delete[] pIndexBuffer;

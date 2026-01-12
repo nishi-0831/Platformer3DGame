@@ -1,40 +1,48 @@
 #include "stdafx.h"
 #include "MovingFloor.h"
 #include "Debug.h"
+#include <format>
 namespace
 {
-	mtgb::Vector3 INIT_OFFSET{ 1.0f,0.0f,0.0f };
+	mtgb::Vector3 INIT_OFFSET{1.0f, 0.0f, 0.0f};
 }
+
+unsigned int MovingFloor::generateCounter_{0};
 
 MovingFloor::MovingFloor()
 	: GameObject()
 	, groundedEntity_{INVALID_ENTITY}
-	, pTransform_{ &Transform::Get(entityId_) }
+	, pTransform_{&Transform::Get(entityId_)}
 	, pMeshRenderer_{&MeshRenderer::Get(entityId_)}
-	, pRigidBody_{ &RigidBody::Get(entityId_) }
-	, pCollider_{ &Collider::Get(entityId_) }
-	, pInterpolator_{ &Interpolator::Get(entityId_) }
+	, pRigidBody_{&RigidBody::Get(entityId_)}
+	, pCollider_{&Collider::Get(entityId_)}
+	, pInterpolator_{&Interpolator::Get(entityId_)}
 {
 	pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
-	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
-	pMeshRenderer_->layer = AllLayer();
-	pMeshRenderer_->shaderType = ShaderType::FbxParts;
-	// Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
-	name_ = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(MovingFloor));
-	displayName_ = name_;
-	// ƒRƒ‰ƒCƒ_[‚Ìİ’è
+	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
+	pMeshRenderer_->layer		 = AllLayer();
+	pMeshRenderer_->shaderType	 = ShaderType::FbxParts;
+	// å‹æƒ…å ±ã«ç™»éŒ²ã•ã‚ŒãŸåå‰ã‚’å–å¾—
+	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(MovingFloor));
+	name_				 = std::format("{} ({})", typeName, generateCounter_++);
+	displayName_		 = name_;
+	// ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ã®è¨­å®š
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
-	pCollider_->SetExtents(Vector3(1, 1, 1));
+	pCollider_->SetExtents(Vector3(0.5, 0.5, 0.5));
 
-	// RigidBody‚Ìİ’è
-	pRigidBody_->OnCollisionEnter([this](EntityId _id)
+	// RigidBodyã®è¨­å®š
+	pRigidBody_->OnCollisionEnter(
+		[this](EntityId _id)
 		{
 			OnCollisionEnter(_id);
-		});
-	pRigidBody_->OnCollisionExit([this](EntityId _id)
+		}
+	);
+	pRigidBody_->OnCollisionExit(
+		[this](EntityId _id)
 		{
 			OnCollisionExit(_id);
-		});
+		}
+	);
 }
 
 void MovingFloor::Update()
@@ -52,22 +60,22 @@ void MovingFloor::ShowImGui()
 void MovingFloor::OnCollisionEnter(EntityId _entityId)
 {
 	GameObject* gameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-	GameObjectTag tag = gameObj->GetTag();
-	
-	// ƒvƒŒƒCƒ„[‚Ì‚İ‘ÎÛ‚É‚·‚é
-	// TODO: ƒvƒŒƒCƒ„[ˆÈŠO‚ÌƒAƒNƒ^[‚à‘ÎÛ‚É‚·‚é
+	GameObjectTag tag	= gameObj->GetTag();
+
+	// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã¿å¯¾è±¡ã«ã™ã‚‹
+	// TODO: ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ä»¥å¤–ã®ã‚¢ã‚¯ã‚¿ãƒ¼ã‚‚å¯¾è±¡ã«ã™ã‚‹
 	if (tag != GameObjectTag::Player)
 		return;
 
-	// ©g‚ÉG‚ê‚½Transform
+	// è‡ªèº«ã«è§¦ã‚ŒãŸTransform
 	Transform& otherTransform = Transform::Get(_entityId);
 
-	// ©g‚æ‚èã‚É‚¢‚éê‡A’…’n‚µ‚Ä‚¢‚é‚Æ”»’è
+	// è‡ªèº«ã‚ˆã‚Šä¸Šã«ã„ã‚‹å ´åˆã€ç€åœ°ã—ã¦ã„ã‚‹ã¨åˆ¤å®š
 	if (pTransform_->position.y > otherTransform.position.y)
 		return;
-	
+
 	groundedEntity_ = _entityId;
-	
+
 	otherTransform.SetParent(GetEntityId());
 	LOGIMGUI("MovingFloorEnter");
 }
@@ -75,25 +83,23 @@ void MovingFloor::OnCollisionEnter(EntityId _entityId)
 void MovingFloor::OnCollisionExit(EntityId _entityId)
 {
 	GameObject* gameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-	GameObjectTag tag = gameObj->GetTag();
+	GameObjectTag tag	= gameObj->GetTag();
 
-	// ƒvƒŒƒCƒ„[‚Ì‚İ‘ÎÛ‚É‚·‚é
-	// TODO: ƒvƒŒƒCƒ„[ˆÈŠO‚ÌƒAƒNƒ^[‚à‘ÎÛ‚É‚·‚é
+	// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã¿å¯¾è±¡ã«ã™ã‚‹
+	// TODO: ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ä»¥å¤–ã®ã‚¢ã‚¯ã‚¿ãƒ¼ã‚‚å¯¾è±¡ã«ã™ã‚‹
 	if (tag != GameObjectTag::Player)
 		return;
 
-	// Œ»İ’…’n‚µ‚Ä‚¢‚éEntity‚ÆˆÙ‚È‚é‚È‚çƒXƒLƒbƒv
+	// ç¾åœ¨ç€åœ°ã—ã¦ã„ã‚‹Entityã¨ç•°ãªã‚‹ãªã‚‰ã‚¹ã‚­ãƒƒãƒ—
 	if (groundedEntity_ != _entityId)
 		return;
 
-	// ©g‚ÉG‚ê‚½Transform
+	// è‡ªèº«ã«è§¦ã‚ŒãŸTransform
 	Transform& otherTransform = Transform::Get(_entityId);
 
-	// INVALID_ENTITY‚ğ“n‚µ‚ÄeqŠÖŒW‰ğÁ
+	// INVALID_ENTITYã‚’æ¸¡ã—ã¦è¦ªå­é–¢ä¿‚è§£æ¶ˆ
 	otherTransform.SetParent(INVALID_ENTITY);
 	groundedEntity_ = INVALID_ENTITY;
 
 	LOGIMGUI("MovingFloorExit");
 }
-
-

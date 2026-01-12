@@ -1,6 +1,5 @@
 #include "Matrix4x4.h"
-// TODO: #include <sstream> ‚ğ‘‚­‚Æ‚Ç‚±‚©‚Åctime‚ªnamespaceƒOƒ[ƒoƒ‹‰»‚·‚éƒGƒ‰[‚ª‚ ‚é
-
+// TODO: #include <sstream> ã‚’æ›¸ãã¨ã©ã“ã‹ã§ctimeãŒnamespaceã‚°ãƒ­ãƒ¼ãƒãƒ«åŒ–ã™ã‚‹ã‚¨ãƒ©ãƒ¼ãŒã‚ã‚‹
 
 std::string mtgb::Matrix4x4::ToString()
 {
@@ -9,7 +8,7 @@ std::string mtgb::Matrix4x4::ToString()
 	{
 		for (int x = 0; x < COLUMN_SIZE; x++)
 		{
-			str += std::to_string(r[y].m128_f32[x]);
+			str += std::to_string(DirectX::XMVectorGetByIndex(r[y], x));
 			if (x < COLUMN_SIZE - 1)
 			{
 				str += ", ";
@@ -23,5 +22,5 @@ std::string mtgb::Matrix4x4::ToString()
 
 	return str.c_str();
 
-	//return "";
+	// return "";
 }

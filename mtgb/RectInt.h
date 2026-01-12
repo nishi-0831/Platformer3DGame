@@ -6,11 +6,11 @@ namespace mtgb
 {
 	using RectInt = RectT<int>;
 	///// <summary>
-	///// <para>‹éŒ`\‘¢‘Ì</para>
-	///// <para>n“_‚ÆƒTƒCƒY‚ğ‚Á‚Ä‚¢‚é</para>
-	///// <para>I“_‚ÍŠÖ”‚ğ‰î‚µ‚Äæ“¾‰Â”\</para>
+	///// <para>çŸ©å½¢æ§‹é€ ä½“</para>
+	///// <para>å§‹ç‚¹ã¨ã‚µã‚¤ã‚ºã‚’æŒã£ã¦ã„ã‚‹</para>
+	///// <para>çµ‚ç‚¹ã¯é–¢æ•°ã‚’ä»‹ã—ã¦å–å¾—å¯èƒ½</para>
 	///// </summary>
-	//struct RectInt
+	// struct RectInt
 	//{
 	//	RectInt() :
 	//		x{ 0 },
@@ -37,25 +37,25 @@ namespace mtgb
 	//	{
 	//		struct
 	//		{
-	//			int32_t x;  // “_ x
-	//			int32_t y;  // “_ y
+	//			int32_t x;  // ç‚¹ x
+	//			int32_t y;  // ç‚¹ y
 	//		};
-	//		Vector2Int point;  // ²“_
+	//		Vector2Int point;  // è»¸ç‚¹
 	//	};
 	//	union
 	//	{
 	//		struct
 	//		{
-	//			int32_t width;   // ƒˆƒR•
-	//			int32_t height;  // ƒ^ƒe•
+	//			int32_t width;   // ãƒ¨ã‚³å¹…
+	//			int32_t height;  // ã‚¿ãƒ†å¹…
 	//		};
-	//		Vector2Int size;  // ƒTƒCƒY
+	//		Vector2Int size;  // ã‚µã‚¤ã‚º
 	//	};
 
 	//	/// <summary>
-	//	/// n“_‚ğæ“¾ (Å¬“_)
+	//	/// å§‹ç‚¹ã‚’å–å¾— (æœ€å°ç‚¹)
 	//	/// </summary>
-	//	/// <returns>n“_‚ÌÀ•W</returns>
+	//	/// <returns>å§‹ç‚¹ã®åº§æ¨™</returns>
 	//	inline Vector2Int GetBegin() const
 	//	{
 	//		return
@@ -65,9 +65,9 @@ namespace mtgb
 	//		};
 	//	}
 	//	/// <summary>
-	//	/// I“_‚ğæ“¾ (Å‘å“_)
+	//	/// çµ‚ç‚¹ã‚’å–å¾— (æœ€å¤§ç‚¹)
 	//	/// </summary>
-	//	/// <returns>I“_‚ÌÀ•W</returns>
+	//	/// <returns>çµ‚ç‚¹ã®åº§æ¨™</returns>
 	//	inline Vector2Int GetEnd() const
 	//	{
 	//		return
@@ -78,10 +78,10 @@ namespace mtgb
 	//	}
 
 	//	/// <summary>
-	//	/// ‹éŒ`‚ğ”½“]‚³‚¹‚é
+	//	/// çŸ©å½¢ã‚’åè»¢ã•ã›ã‚‹
 	//	/// </summary>
-	//	/// <param name="_rect">”½“]‚³‚¹‚½‚¢‹éŒ`</param>
-	//	/// <returns>”½“]‚³‚ê‚½‹éŒ`</returns>
+	//	/// <param name="_rect">åè»¢ã•ã›ãŸã„çŸ©å½¢</param>
+	//	/// <returns>åè»¢ã•ã‚ŒãŸçŸ©å½¢</returns>
 	//	static inline RectInt Reverse(const RectInt& _rect)
 	//	{
 	//		Vector2Int reversePoint{ _rect.point + _rect.size };
@@ -90,10 +90,10 @@ namespace mtgb
 	//		return { reversePoint, reverseSize };
 	//	}
 	//	/// <summary>
-	//	/// ‹éŒ`‚ğx²‚Å”½“]‚³‚¹‚é
+	//	/// çŸ©å½¢ã‚’xè»¸ã§åè»¢ã•ã›ã‚‹
 	//	/// </summary>
-	//	/// <param name="_rect">x²‚Å”½“]‚³‚¹‚½‚¢‹éŒ`</param>
-	//	/// <returns>”½“]‚³‚ê‚½‹éŒ`</returns>
+	//	/// <param name="_rect">xè»¸ã§åè»¢ã•ã›ãŸã„çŸ©å½¢</param>
+	//	/// <returns>åè»¢ã•ã‚ŒãŸçŸ©å½¢</returns>
 	//	static inline RectInt ReverseAxisX(const RectInt& _rect)
 	//	{
 	//		Vector2Int reversePoint
@@ -111,11 +111,11 @@ namespace mtgb
 	//	}
 
 	//	/// <summary>
-	//	/// ü•ª‚©‚ç‹éŒ`‚ğƒCƒ“ƒXƒ^ƒ“ƒX
+	//	/// ç·šåˆ†ã‹ã‚‰çŸ©å½¢ã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 	//	/// </summary>
-	//	/// <param name="_begin">n“_À•W</param>
-	//	/// <param name="_end">I“_À•W</param>
-	//	/// <returns>‹éŒ`\‘¢‘Ì</returns>
+	//	/// <param name="_begin">å§‹ç‚¹åº§æ¨™</param>
+	//	/// <param name="_end">çµ‚ç‚¹åº§æ¨™</param>
+	//	/// <returns>çŸ©å½¢æ§‹é€ ä½“</returns>
 	//	static inline RectInt FromLine(
 	//		const Vector2Int& _begin,
 	//		const Vector2Int& _end)
@@ -128,12 +128,12 @@ namespace mtgb
 	//	}
 
 	//	/// <summary>
-	//	/// <para> “_‚ª‹éŒ`‚Ì”ÍˆÍ‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚é‚© </para>
-	//	/// <para> ‰E’[A‰º’[‚ÍŠÜ‚Ü‚ê‚È‚¢ </para>
+	//	/// <para> ç‚¹ãŒçŸ©å½¢ã®ç¯„å›²ã«å«ã¾ã‚Œã¦ã„ã‚‹ã‹ </para>
+	//	/// <para> å³ç«¯ã€ä¸‹ç«¯ã¯å«ã¾ã‚Œãªã„ </para>
 	//	/// </summary>
 	//	/// <param name="_pos"></param>
 	//	/// <param name="_rect"></param>
-	//	/// <returns>‹éŒ`‚Ì”ÍˆÍ‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚é‚È‚ç true</returns>
+	//	/// <returns>çŸ©å½¢ã®ç¯„å›²ã«å«ã¾ã‚Œã¦ã„ã‚‹ãªã‚‰ true</returns>
 	//	static inline bool Contains(
 	//		const Vector2Int& _pos,
 	//		const RectInt& _rect)
@@ -148,4 +148,4 @@ namespace mtgb
 	//			);
 	//	}
 	//};
-}
+} // namespace mtgb

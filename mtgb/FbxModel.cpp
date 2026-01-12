@@ -4,118 +4,117 @@
 #include "Fbx.h"
 #include "MTAssert.h"
 
-
-mtgb::FbxModel::FbxModel() :
-	animationSpeed_{ 1.0f },
-	startFrame_{ 0 },
-	endFrame_{ 0 },
-	frameRate_{ FbxTime::EMode::eFrames60 },
-	pFbxScene_{ nullptr },
-	unitScaleFactor_{ 1.0 }
+mtgb::FbxModel::FbxModel()
+	: animationSpeed_{1.0f}
+	, startFrame_{0}
+	, endFrame_{0}
+	, frameRate_{FbxTime::EMode::eFrames60}
+	, pFbxScene_{nullptr}
+	, unitScaleFactor_{1.0}
 {
 }
 
 mtgb::FbxModel::~FbxModel()
 {
-	
 }
 
 void mtgb::FbxModel::Load(const std::string& _fileName)
 {
-	massert(pFbxScene_ == nullptr  // ‚Ü‚¾“Ç‚İ‚Ü‚ê‚Ä‚¢‚È‚¢
-		&& "Šù‚ÉFbxModel‚Í“Ç‚İ‚Ü‚ê‚Ä‚¢‚é‚æI @FbxModel::Load");
+	massert(
+		pFbxScene_ == nullptr // ã¾ã èª­ã¿è¾¼ã¾ã‚Œã¦ã„ãªã„
+		&& "æ—¢ã«FbxModelã¯èª­ã¿è¾¼ã¾ã‚Œã¦ã„ã‚‹ã‚ˆï¼ @FbxModel::Load"
+	);
 
-	FbxManager* pFbxManager{ Game::System<Fbx>().GetFbxManager() };
+	FbxManager* pFbxManager{Game::System<Fbx>().GetFbxManager()};
 
 	pFbxScene_ = FbxScene::Create(pFbxManager, "fbxscene");
-	
 
-	FbxString fileName{ _fileName.c_str() };
-	FbxImporter* fbxImporter{ FbxImporter::Create(pFbxManager, "imp") };
+	FbxString fileName{_fileName.c_str()};
+	FbxImporter* fbxImporter{FbxImporter::Create(pFbxManager, "imp")};
 
 	FbxIOSettings* ios = FbxIOSettings::Create(pFbxManager, IOSROOT);
 
 	pFbxManager->SetIOSettings(ios);
-	if (!fbxImporter->Initialize(fileName.Buffer(), -1, ios)) 
+	if (!fbxImporter->Initialize(fileName.Buffer(), -1, ios))
 	{
 		MessageBoxA(NULL, fbxImporter->GetStatus().GetErrorString(), "FBX Import Error", MB_OK);
-		// ‚à‚µ‚­‚ÍƒƒOo—Í
+		// ã‚‚ã—ãã¯ãƒ­ã‚°å‡ºåŠ›
 	}
 
 	fileName_ = _fileName;
 
-
 	char str[MAX_PATH]{};
 	GetCurrentDirectory(MAX_PATH, str);
 
-	bool succeed{ false };
+	bool succeed{false};
 	succeed = fbxImporter->Initialize(fileName.Buffer(), -1, pFbxManager->GetIOSettings());
-	massert(succeed && "fbxImporter‚Ì‰Šú‰»‚É¸”s‚µ‚½ @Fbx::Load");
+	massert(succeed && "fbxImporterã®åˆæœŸåŒ–ã«å¤±æ•—ã—ãŸ @Fbx::Load");
 
 	succeed = fbxImporter->Import(pFbxScene_);
-	massert(succeed && "“Ç‚İ‚İ‚É¸”s‚µ‚½ @Fbx::Load");
+	massert(succeed && "èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ãŸ @Fbx::Load");
 
-	SAFE_DESTROY(fbxImporter);  // ƒCƒ“ƒ|[ƒ^‚Í‰ğ•ú
+	SAFE_DESTROY(fbxImporter); // ã‚¤ãƒ³ãƒãƒ¼ã‚¿ã¯è§£æ”¾
 
-	// DirectX‚ÌÀ•WŒn‚É•ÏŠ·
+	// DirectXã®åº§æ¨™ç³»ã«å¤‰æ›
 	FbxAxisSystem directXLeftHanded(FbxAxisSystem::eYAxis, FbxAxisSystem::eParityOdd, FbxAxisSystem::eLeftHanded);
-	// MEMO: DeepConvert‚É‚·‚é‚±‚Æ‚ÅƒV[ƒ“‘S‘Ì‚ğ•ÏŠ·‚Å‚«‚éBConvert‚¾‚Æƒ‹[ƒg‚Ìƒm[ƒh‚¾‚¯
+	// MEMO: DeepConvertã«ã™ã‚‹ã“ã¨ã§ã‚·ãƒ¼ãƒ³å…¨ä½“ã‚’å¤‰æ›ã§ãã‚‹ã€‚Convertã ã¨ãƒ«ãƒ¼ãƒˆã®ãƒãƒ¼ãƒ‰ã ã‘
 	directXLeftHanded.DeepConvertScene(pFbxScene_);
 
-	// 3Špƒ|ƒŠƒSƒ“
-	FbxGeometryConverter geometryConverter{ pFbxManager };
+	// 3è§’ãƒãƒªã‚´ãƒ³
+	FbxGeometryConverter geometryConverter{pFbxManager};
 
-	// ƒAƒjƒ[ƒVƒ‡ƒ“ƒ^ƒCƒ€ƒ‚[ƒh‚Ìæ“¾
+	// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ã‚¤ãƒ ãƒ¢ãƒ¼ãƒ‰ã®å–å¾—
 	frameRate_ = pFbxScene_->GetGlobalSettings().GetTimeMode();
 
-	// ƒXƒP[ƒ‹’PˆÊ‚ğæ“¾
+	// ã‚¹ã‚±ãƒ¼ãƒ«å˜ä½ã‚’å–å¾—
 	unitScaleFactor_ = pFbxScene_->GetGlobalSettings().GetSystemUnit().GetScaleFactor();
-	// Œ»İ‚ÌƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚ğæ“¾
+	// ç¾åœ¨ã®ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’å–å¾—
 	char defaultCurrentDirectory[MAX_PATH]{};
 	GetCurrentDirectory(MAX_PATH, defaultCurrentDirectory);
 
-	// ƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚ğˆÚ“®
+	// ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ç§»å‹•
 	char directory[MAX_PATH]{};
 	_splitpath_s(_fileName.c_str(), nullptr, 0, directory, MAX_PATH, nullptr, 0, nullptr, 0);
 	SetCurrentDirectory(directory);
 
 	int animStackCount_ = pFbxScene_->GetSrcObjectCount<FbxAnimStack>();
-	int meshCount{ pFbxScene_->GetSrcObjectCount<FbxMesh>() };
+	int meshCount{pFbxScene_->GetSrcObjectCount<FbxMesh>()};
 	for (int i = 0; i < meshCount; i++)
 	{
 		FbxMesh* pMesh = pFbxScene_->GetSrcObject<FbxMesh>(i);
-		if (pMesh == nullptr) continue;
+		if (pMesh == nullptr)
+			continue;
 
 		FbxNode* pNode = pMesh->GetNode();
-		if (pNode == nullptr) continue;
+		if (pNode == nullptr)
+			continue;
 
-		// ì¬‘O‚Éƒm[ƒh‚ÌƒƒbƒVƒ…—L–³Šm”F
-		if (pNode->GetMesh() == nullptr) continue;
+		// ä½œæˆå‰ã«ãƒãƒ¼ãƒ‰ã®ãƒ¡ãƒƒã‚·ãƒ¥æœ‰ç„¡ç¢ºèª
+		if (pNode->GetMesh() == nullptr)
+			continue;
 
-		FbxParts* pParts = new FbxParts(pNode,unitScaleFactor_);
+		FbxParts* pParts = new FbxParts(pNode, unitScaleFactor_);
 		pParts->Initialize();
 		pParts_.push_back(pParts);
 	}
 
 	SetCurrentDirectory(defaultCurrentDirectory);
-
-
 }
 
 void mtgb::FbxModel::Draw(const Transform& _transform, int _frame)
 {
 	for (int i = 0; i < pParts_.size(); i++)
 	{
-		// ƒAƒjƒ[ƒVƒ‡ƒ“ƒ^ƒCƒ€‚Ìp¨s—ñ‚ğæ“¾‚·‚é
+		// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ã‚¤ãƒ ã®å§¿å‹¢è¡Œåˆ—ã‚’å–å¾—ã™ã‚‹
 		FbxTime time;
 		time.SetTime(0, 0, 0, _frame, 0, 0, frameRate_);
 
-		// ƒ{[ƒ“‚ª‚ ‚éƒXƒLƒ“ƒAƒjƒ[ƒVƒ‡ƒ“
+		// ãƒœãƒ¼ãƒ³ãŒã‚ã‚‹ã‚¹ã‚­ãƒ³ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³
 		if (pParts_[i]->GetSkin() != nullptr)
 		{
 			pParts_[i]->DrawSkinAnimation(_transform, time);
 		}
-		else  // ƒƒbƒVƒ…ƒAƒjƒ[ƒVƒ‡ƒ“
+		else // ãƒ¡ãƒƒã‚·ãƒ¥ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³
 		{
 			pParts_[i]->DrawMeshAnimation(_transform, time);
 		}
@@ -155,26 +154,26 @@ mtgb::Vector3 mtgb::FbxModel::GetAnimBonePosition(std::string _boneName)
 
 void mtgb::FbxModel::CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _pPartsList)
 {
-	// ƒm[ƒh‚Ì‘®«î•ñ
-	FbxNodeAttribute* pNodeAttribute{ _pNode->GetNodeAttribute() };
+	// ãƒãƒ¼ãƒ‰ã®å±æ€§æƒ…å ±
+	FbxNodeAttribute* pNodeAttribute{_pNode->GetNodeAttribute()};
 
 	if (pNodeAttribute == nullptr)
 	{
-		return;  // ƒm[ƒh‚ª nullptr ‚È‚ç‰ñ‹A
+		return; // ãƒãƒ¼ãƒ‰ãŒ nullptr ãªã‚‰å›å¸°
 	}
 
-	// ƒƒbƒVƒ…‚Ìî•ñ‚ª“ü‚Á‚Ä‚¢‚é‚È‚ç
+	// ãƒ¡ãƒƒã‚·ãƒ¥ã®æƒ…å ±ãŒå…¥ã£ã¦ã„ã‚‹ãªã‚‰
 	if (pNodeAttribute->GetAttributeType() == FbxNodeAttribute::eMesh)
 	{
-		FbxParts* pParts = new FbxParts(_pNode,unitScaleFactor_);
+		FbxParts* pParts = new FbxParts(_pNode, unitScaleFactor_);
 		pParts->Initialize();
 		_pPartsList.push_back(pParts);
 	}
 
-	// q‚Ì”
-	int childCount{ _pNode->GetChildCount() };
+	// å­ã®æ•°
+	int childCount{_pNode->GetChildCount()};
 
-	// 1‚Â‚¸‚Âƒ`ƒFƒbƒN
+	// 1ã¤ãšã¤ãƒã‚§ãƒƒã‚¯
 	for (int i = 0; i < childCount; i++)
 	{
 		CheckNode(_pNode->GetChild(i), _pPartsList);
@@ -185,4 +184,3 @@ std::optional<FbxAnimationController> mtgb::FbxModel::GetAnimationController()
 {
 	return FbxAnimationController(pFbxScene_);
 }
-

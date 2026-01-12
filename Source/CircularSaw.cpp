@@ -1,30 +1,30 @@
 #include "stdafx.h"
 #include "CircularSaw.h"
 
-unsigned int mtgb::CircularSaw::generateCounter_{ 0 };
+unsigned int mtgb::CircularSaw::generateCounter_{0};
 
 mtgb::CircularSaw::CircularSaw()
 	: GameObject()
-	, pTransform_{ Component<Transform>() }
-	, pMeshRenderer_{ Component<MeshRenderer>() }
-	, pCollider_{ Component<Collider>() }
+	, pTransform_{Component<Transform>()}
+	, pMeshRenderer_{Component<MeshRenderer>()}
+	, pCollider_{Component<Collider>()}
 	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
-	, sawRadius_{ 2.5f }
-	, rotateAngleSec_{ 45.0f }
-	, sawOffset_{ 5.0f }
-	, rotateAngleSecSaw_{ 360.0f }
+	, sawRadius_{2.5f}
+	, rotateAngleSec_{45.0f}
+	, sawOffset_{5.0f}
+	, rotateAngleSecSaw_{360.0f}
 {
 	pTransform_->position.z = -5.0f;
 
 	pMeshRenderer_->meshFileName = "Model/SawColumn.fbx";
-	pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
+	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
-	pCollider_->isStatic_ = false;
-	// Œ^î•ñ‚É“o˜^‚³‚ê‚½–¼‘O‚ğæ“¾
+	pCollider_->isStatic_	  = false;
+	// å‹æƒ…å ±ã«ç™»éŒ²ã•ã‚ŒãŸåå‰ã‚’å–å¾—
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(CircularSaw));
-	name_ = std::format("{} ({})", typeName, generateCounter_++);
-	displayName_ = name_;
+	name_				 = std::format("{} ({})", typeName, generateCounter_++);
+	displayName_		 = name_;
 }
 
 mtgb::CircularSaw::~CircularSaw()
@@ -33,8 +33,8 @@ mtgb::CircularSaw::~CircularSaw()
 
 void mtgb::CircularSaw::Update()
 {
-	float angleRad = DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
-	Quaternion rot = DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
+	float angleRad		= DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
+	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
 	pTransform_->rotate = rot * pTransform_->rotate;
 }
 
@@ -50,47 +50,47 @@ void mtgb::CircularSaw::Start()
 {
 	pTransform_->Compute();
 
-	// ƒmƒRƒMƒŠ‚ğì¬
-	pSaw_ = Instantiate<Saw>();
+	// ãƒã‚³ã‚®ãƒªã‚’ä½œæˆ
+	pSaw_					= Instantiate<Saw>();
 	Transform& sawTransform = Transform::Get(pSaw_->GetEntityId());
-	// ƒmƒRƒMƒŠ‚ğƒIƒtƒZƒbƒg•ª‚¸‚ç‚µ‚Ä”z’u
+	// ãƒã‚³ã‚®ãƒªã‚’ã‚ªãƒ•ã‚»ãƒƒãƒˆåˆ†ãšã‚‰ã—ã¦é…ç½®
 	sawTransform.position = pTransform_->position + pTransform_->Forward() * sawOffset_;
-	// q‚É‚·‚é
+	// å­ã«ã™ã‚‹
 	sawTransform.SetParent(GetEntityId());
 
-	// x’Œ‚ğì¬
+	// æ”¯æŸ±ã‚’ä½œæˆ
 	GameObject* pPillerObject = new GameObject();
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pPillerObject);
-	EntityId pillerId = pPillerObject->GetEntityId();
-	pPillarMeshRenderer_ = &(MeshRenderer::Get(pillerId));
+	EntityId pillerId				   = pPillerObject->GetEntityId();
+	pPillarMeshRenderer_			   = &(MeshRenderer::Get(pillerId));
 	pPillarMeshRenderer_->meshFileName = "Model/SawPillar.fbx";
-	pPillarMeshRenderer_->meshHandle = Fbx::Load(pPillarMeshRenderer_->meshFileName);
-	pPillarTransform_ = &(Transform::Get(pillerId));
+	pPillarMeshRenderer_->meshHandle   = Fbx::Load(pPillarMeshRenderer_->meshFileName);
+	pPillarTransform_				   = &(Transform::Get(pillerId));
 	pPillarTransform_->SetParent(GetEntityId());
 	pPillarTransform_->position = pTransform_->position;
-	// ‰ñ“]‚ÌŒ´“_‚©‚çƒmƒRƒMƒŠ‚Ü‚Åx’Œ‚ğL‚Î‚·
+	// å›è»¢ã®åŸç‚¹ã‹ã‚‰ãƒã‚³ã‚®ãƒªã¾ã§æ”¯æŸ±ã‚’ä¼¸ã°ã™
 	pPillarTransform_->scale.z = sawOffset_;
-	
-	// ‰ñ“]‚ÌŒ´“_‚©‚çƒmƒRƒMƒŠ‚Ì•ûŒü‚ğŒü‚©‚¹‚é
-	Vector3 toSawDir = Vector3::Normalize(sawTransform.position - pTransform_->position);
+
+	// å›è»¢ã®åŸç‚¹ã‹ã‚‰ãƒã‚³ã‚®ãƒªã®æ–¹å‘ã‚’å‘ã‹ã›ã‚‹
+	Vector3 toSawDir		  = Vector3::Normalize(sawTransform.position - pTransform_->position);
 	pPillarTransform_->rotate = Quaternion::LookRotation(toSawDir, pTransform_->Up());
 }
 
 mtgb::Saw::Saw()
 	: GameObject()
 	, IActor(GetEntityId())
-	, pTransform_{ Component<Transform>() }
-	, pMeshRenderer_{ Component<MeshRenderer>() }
-	, pCollider_{ Component<Collider>() }
-	, pRigidBody_{ Component<RigidBody>() }
-	, rotateAngleSec_{ 360.0f }
-	, radius_{ 3.0f }
-	, takeDamageAmount_{ 1 }
+	, pTransform_{Component<Transform>()}
+	, pMeshRenderer_{Component<MeshRenderer>()}
+	, pCollider_{Component<Collider>()}
+	, pRigidBody_{Component<RigidBody>()}
+	, rotateAngleSec_{360.0f}
+	, radius_{3.0f}
+	, takeDamageAmount_{1}
 {
-	pTransform_->scale = Vector3{ radius_,1.0f,radius_ };
-	pCollider_->colliderType_ = ColliderType::TYPE_OBB;
+	pTransform_->scale			 = Vector3{radius_, 1.0f, radius_};
+	pCollider_->colliderType_	 = ColliderType::TYPE_OBB;
 	pMeshRenderer_->meshFileName = "Model/Saw.fbx";
-	pMeshRenderer_->meshHandle = Fbx::Load("Model/Saw.fbx");
+	pMeshRenderer_->meshHandle	 = Fbx::Load("Model/Saw.fbx");
 }
 
 mtgb::Saw::~Saw()
@@ -99,8 +99,8 @@ mtgb::Saw::~Saw()
 
 void mtgb::Saw::Update()
 {
-	float angleRad = DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
-	Quaternion rot = DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
+	float angleRad		= DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
+	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
 	pTransform_->rotate = rot * pTransform_->rotate;
 }
 

@@ -8,23 +8,23 @@
 #include "ShowAttributes.h"
 #include "Interpolator.h"
 #include "Matrix4x4.h"
-//#include "TypeRegistryImpl.h"
+// #include "TypeRegistryImpl.h"
 #include <string>
 using namespace mtgb;
-REGISTER_TYPE(Quaternion, ShowFunc(QuaternionSHow{}))
-REGISTER_MEMBER_FUNC(X,property("x"))
-REGISTER_MEMBER_FUNC(Y,property("y"))
-REGISTER_MEMBER_FUNC(Z,property("z"))
+REGISTER_TYPE(Quaternion, ShowFunc(QuaternionShow{}))
+REGISTER_MEMBER_FUNC(X, property("x"))
+REGISTER_MEMBER_FUNC(Y, property("y"))
+REGISTER_MEMBER_FUNC(Z, property("z"))
 REGISTER_MEMBER_FUNC(W, property("w"))
 REGISTER_END
 
-REGISTER_TYPE(Vector3,ShowFunc(Vector3Show{}))
+REGISTER_TYPE(Vector3, ShowFunc(Vector3Show{}))
 REGISTER_FIELD(x)
 REGISTER_FIELD(y)
 REGISTER_FIELD(z)
 REGISTER_END
 
-REGISTER_TYPE(Matrix4x4,ShowFunc(MatrixShow{}))
+REGISTER_TYPE(Matrix4x4, ShowFunc(MatrixShow{}))
 REGISTER_END
 
 REGISTER_TYPE(JoystickProxy)
@@ -51,38 +51,36 @@ REGISTER_FIELD(lZ)
 REGISTER_FIELD(rgbButtons)
 REGISTER_END
 
-
-
-//REGISTER_TYPE(TransformState, DisplayName{ "Transform" })
-//REGISTER_FIELD(parent)
-//REGISTER_FIELD(position)
-//REGISTER_FIELD(scale)
-//REGISTER_FIELD(rotate)
-//REGISTER_END
+// REGISTER_TYPE(TransformState, DisplayName{ "Transform" })
+// REGISTER_FIELD(parent)
+// REGISTER_FIELD(position)
+// REGISTER_FIELD(scale)
+// REGISTER_FIELD(rotate)
+// REGISTER_END
 //
-//REGISTER_TYPE(MeshRendererState, DisplayName{ "MeshRenderer" })
-//REGISTER_FIELD(meshFileName)
-//REGISTER_FIELD(meshHandle)
-//REGISTER_FIELD(layer)
-//REGISTER_FIELD(shaderType)
-//REGISTER_END
+// REGISTER_TYPE(MeshRendererState, DisplayName{ "MeshRenderer" })
+// REGISTER_FIELD(meshFileName)
+// REGISTER_FIELD(meshHandle)
+// REGISTER_FIELD(layer)
+// REGISTER_FIELD(shaderType)
+// REGISTER_END
 //
-//REGISTER_TYPE(ColliderState, DisplayName{ "Collider" })
-//REGISTER_FIELD(colliderType)
-//REGISTER_FIELD(isStatic)
-//REGISTER_FIELD(colliderTag)
-//REGISTER_FIELD(center)
-//REGISTER_FIELD(radius)
-//REGISTER_FIELD(extents)
-//REGISTER_END
+// REGISTER_TYPE(ColliderState, DisplayName{ "Collider" })
+// REGISTER_FIELD(colliderType)
+// REGISTER_FIELD(isStatic)
+// REGISTER_FIELD(colliderTag)
+// REGISTER_FIELD(center)
+// REGISTER_FIELD(radius)
+// REGISTER_FIELD(extents)
+// REGISTER_END
 //
-//REGISTER_TYPE(RigidBodyState,DisplayName{"RigidBody"})
-//REGISTER_FIELD(useGravity)
-//REGISTER_FIELD(isKinematic)
-//REGISTER_END
+// REGISTER_TYPE(RigidBodyState,DisplayName{"RigidBody"})
+// REGISTER_FIELD(useGravity)
+// REGISTER_FIELD(isKinematic)
+// REGISTER_END
 
-//REGISTER_TYPE(MovingFloorState,DisplayName{"MovingFloor"})
-//REGISTER_FIELD(duration)
-//REGISTER_FIELD(to)
-//REGISTER_FIELD(from)
-//REGISTER_END
+// REGISTER_TYPE(MovingFloorState,DisplayName{"MovingFloor"})
+// REGISTER_FIELD(duration)
+// REGISTER_FIELD(to)
+// REGISTER_FIELD(from)
+// REGISTER_END

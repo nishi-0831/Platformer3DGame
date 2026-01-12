@@ -17,9 +17,9 @@
 #include "Direct3DResource.h"
 #include "WindowResource.h"
 
-mtgb::SceneSystem::SceneSystem() :
-	pNextScene_{ nullptr },
-	onMoveListener_{}
+mtgb::SceneSystem::SceneSystem()
+	: pNextScene_{nullptr}
+	, onMoveListener_{}
 {
 }
 
@@ -30,15 +30,17 @@ mtgb::SceneSystem::~SceneSystem()
 
 void mtgb::SceneSystem::Initialize()
 {
-	OnMove([]() 
+	OnMove(
+		[]()
 		{
 			Game::System<Timer>().Clear();
-		});
+		}
+	);
 }
 
 void mtgb::SceneSystem::Update()
 {
-	// Ÿ‚ÌƒV[ƒ“‚ª—pˆÓ‚³‚ê‚Ä‚¢‚é‚È‚çƒV[ƒ“ƒ`ƒFƒ“ƒW‚·‚é
+	// æ¬¡ã®ã‚·ãƒ¼ãƒ³ãŒç”¨æ„ã•ã‚Œã¦ã„ã‚‹ãªã‚‰ã‚·ãƒ¼ãƒ³ãƒã‚§ãƒ³ã‚¸ã™ã‚‹
 	if (pNextScene_)
 	{
 		ChangeScene();
@@ -46,12 +48,12 @@ void mtgb::SceneSystem::Update()
 
 	if (GameScene::pInstance_ == nullptr)
 	{
-		return;  // ƒV[ƒ“‚ª‚È‚¢‚È‚ç‰ñ‹A
+		return; // ã‚·ãƒ¼ãƒ³ãŒãªã„ãªã‚‰å›å¸°
 	}
 
-	// XVA•`‰æ‘O‚ÉƒR[ƒ‹ƒoƒbƒNÀs
+	// æ›´æ–°ã€æç”»å‰ã«ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯å®Ÿè¡Œ
 	ExecutePendingCallbacks();
-	
+
 	if (InputUtil::GetKeyDown(KeyCode::F1))
 	{
 		MTImGui::Instance().ChangeAllWindowOpen();
@@ -60,16 +62,15 @@ void mtgb::SceneSystem::Update()
 	if (InputUtil::GetKeyDown(KeyCode::P))
 	{
 		Game::System<Input>().EnumJoystick();
-
 	}
 	WinCtxRes::ChangeResource(WindowContext::First);
 	Game::System<Input>().Update();
 	Game::System<WindowContextResourceManager>().Update();
 
-	// Œ»İ‚ÌƒV[ƒ“
-	GameScene& currentScene{ *GameScene::pInstance_ };
+	// ç¾åœ¨ã®ã‚·ãƒ¼ãƒ³
+	GameScene& currentScene{*GameScene::pInstance_};
 
-	// XVˆ—
+	// æ›´æ–°å‡¦ç†
 	currentScene.Update();
 	for (auto&& gameObject : currentScene.pGameObjects_)
 	{
@@ -82,12 +83,11 @@ void mtgb::SceneSystem::Update()
 	}
 	MTImGui::Instance().Update();
 
-	// •`‰æˆ—
+	// æç”»å‡¦ç†
 	Game::System<RenderSystem>().Render(currentScene);
 
-	// íœˆ—
-	for (auto&& itr = currentScene.pGameObjects_.begin();
-		itr != currentScene.pGameObjects_.end();)
+	// å‰Šé™¤å‡¦ç†
+	for (auto&& itr = currentScene.pGameObjects_.begin(); itr != currentScene.pGameObjects_.end();)
 	{
 		if ((*itr)->IsToDestroy())
 		{
@@ -118,23 +118,23 @@ void mtgb::SceneSystem::ExecutePendingCallbacks()
 
 void mtgb::SceneSystem::ChangeScene()
 {
-	// ƒV[ƒ“‘JˆÚƒCƒxƒ“ƒg‚ğ”­“®‚µ‚Ä‚¢‚­
+	// ã‚·ãƒ¼ãƒ³é·ç§»ã‚¤ãƒ™ãƒ³ãƒˆã‚’ç™ºå‹•ã—ã¦ã„ã
 	for (auto& onMove : onMoveListener_)
 	{
 		onMove();
 	}
 
-	// ‚à‚µŒ»İ‚ÌƒV[ƒ“‚ª‚ ‚é‚È‚çI—¹ˆ—
+	// ã‚‚ã—ç¾åœ¨ã®ã‚·ãƒ¼ãƒ³ãŒã‚ã‚‹ãªã‚‰çµ‚äº†å‡¦ç†
 	if (GameScene::pInstance_)
 	{
 		GameScene::pInstance_->End();
 	}
 
-	// ‰ğ•ú‚µ‚Äƒ|ƒCƒ“ƒ^•ÏX
+	// è§£æ”¾ã—ã¦ãƒã‚¤ãƒ³ã‚¿å¤‰æ›´
 	SAFE_DELETE(GameScene::pInstance_);
 	GameScene::pInstance_ = pNextScene_;
-	pNextScene_ = nullptr;
+	pNextScene_			  = nullptr;
 
-	// ƒ`ƒFƒ“ƒW‚µ‚½ƒV[ƒ“‚Ì‰Šú‰»ˆ—
+	// ãƒã‚§ãƒ³ã‚¸ã—ãŸã‚·ãƒ¼ãƒ³ã®åˆæœŸåŒ–å‡¦ç†
 	GameScene::pInstance_->Initialize();
 }

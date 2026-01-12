@@ -8,28 +8,25 @@
 #include "IncludingWindows.h"
 #include "WindowContext.h"
 #include "DefaultShow.h"
-#include "TypeRegistry.h"  
+#include "TypeRegistry.h"
 
 using namespace mtgb;
 
 class Inspector
 {
-public:
-
+  public:
 	static Inspector& Instance();
 
-	template<typename T>
-	void ShowInspector(T* instance, const char* name);
-	template<typename T>
-	void ShowInspector(const T* instance, const char* name);
-private:
+	template <typename T> void ShowInspector(T* _instance, const char* _name);
+	template <typename T> void ShowInspector(const T* _instance, const char* _name);
+
+  private:
 	Inspector() {};
-	void Show(std::type_index typeIdx,std::any instance,const char* name);
-	const static  mtgb::WindowContext mainWindow_ = mtgb::WindowContext::First;
+	void Show(std::type_index _typeIdx, std::any _instance, const char* _name);
+	const static mtgb::WindowContext mainWindow_ = mtgb::WindowContext::First;
 };
 
-template<typename T>
-void Inspector::ShowInspector(T* instance, const char* name)
+template <typename T> void Inspector::ShowInspector(T* _instance, const char* _name)
 {
 	using Type = std::remove_cvref_t<T>;
 	std::type_index typeIdx(typeid(Type));
@@ -40,22 +37,15 @@ void Inspector::ShowInspector(T* instance, const char* name)
 
 	if (TypeRegistry::Instance().IsRegisteredType(typeIdx))
 	{
-		TypeRegistry::Instance().CallFunc(typeIdx, std::any(instance), name);
+		TypeRegistry::Instance().CallFunc(typeIdx, std::any(_instance), _name);
 	}
 	else
 	{
-		mtgb::DefaultShow(instance, name);
+		mtgb::DefaultShow(_instance, _name);
 	}
 }
 
-
-
-template<typename T>
-void Inspector::ShowInspector(const T* instance, const char* name)
+template <typename T> void Inspector::ShowInspector(const T* _instance, const char* _name)
 {
-	ShowInspector(const_cast<T*>(instance), name);
+	ShowInspector(const_cast<T*>(_instance), _name);
 }
-
-
-
-

@@ -12,59 +12,76 @@
 #include "cmtgb.h"
 namespace mtgb
 {
-    
-    class MeshRendererCP;
-    MT_COMPONENT()
-    /// <summary>
-    /// ƒƒbƒVƒ…‚Æƒ}ƒeƒŠƒAƒ‹‚ğŠÇ—‚·‚é•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
-    /// </summary>
-    class MeshRenderer :public IRenderable ,public IComponent<MeshRendererCP,MeshRenderer> , public ISerializableObject
-    {
-    public:
-        MT_GENERATED_BODY()
-        friend MeshRendererCP;
 
-        MeshRenderer();
-        MeshRenderer(EntityId _entityId);
-        MeshRenderer& operator=(const MeshRenderer& _other);
-        /// <summary>
-        /// ƒƒbƒVƒ…ƒnƒ“ƒhƒ‹‚ğİ’è
-        /// </summary>
-        void SetMesh(FBXModelHandle _meshHandle) { meshHandle = _meshHandle; }
+	class MeshRendererCP;
+	MT_COMPONENT()
+	/// <summary>
+	/// ãƒ¡ãƒƒã‚·ãƒ¥ã¨ãƒãƒ†ãƒªã‚¢ãƒ«ã‚’ç®¡ç†ã™ã‚‹æç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+	/// </summary>
+	class MeshRenderer : public IRenderable, public IComponent<MeshRendererCP, MeshRenderer>, public ISerializableObject
+	{
+	  public:
+		MT_GENERATED_BODY()
+		friend MeshRendererCP;
 
-        /// <summary>
-        /// ƒƒbƒVƒ…ƒnƒ“ƒhƒ‹‚ğæ“¾
-        /// </summary>
-        FBXModelHandle GetMesh() const { return meshHandle; }
+		MeshRenderer();
+		MeshRenderer(EntityId _entityId);
+		MeshRenderer& operator=(const MeshRenderer& _other);
+		/// <summary>
+		/// ãƒ¡ãƒƒã‚·ãƒ¥ãƒãƒ³ãƒ‰ãƒ«ã‚’è¨­å®š
+		/// </summary>
+		void SetMesh(FBXModelHandle _meshHandle)
+		{
+			meshHandle = _meshHandle;
+		}
 
-        /// <summary>
-        /// g—p‚·‚éƒVƒF[ƒ_[‚Ìí—Ş‚ğ•Ô‚·
-        /// </summary>
-        /// <returns></returns>
-        ShaderType GetShaderType() const { return shaderType; }
-        /// <summary>
-        /// •`‰æ‰Â”\‚©ƒ`ƒFƒbƒN
-        /// </summary>
-        //bool CanRender() const { return meshHandle != INVALID_HANDLE; }
+		/// <summary>
+		/// ãƒ¡ãƒƒã‚·ãƒ¥ãƒãƒ³ãƒ‰ãƒ«ã‚’å–å¾—
+		/// </summary>
+		FBXModelHandle GetMesh() const
+		{
+			return meshHandle;
+		}
 
-        GameObjectLayerFlag GetLayer() const override { return layer; }
-        void OnChangeMeshFileName();
-        void Render() const override;
-        bool CanRender() const override { return meshHandle != INVALID_HANDLE; };
-        void SetFrame(int _frame);
-        MT_PROPERTY()
-        std::string meshFileName;
-        MT_PROPERTY()
-        FBXModelHandle meshHandle;
-        MT_PROPERTY()
-        GameObjectLayerFlag layer;
-        MT_PROPERTY()
-        ShaderType shaderType;
-    protected:
-        void OnPostRestore() override;
-    private:
-        int frame_;
-    };
+		/// <summary>
+		/// ä½¿ç”¨ã™ã‚‹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®ç¨®é¡ã‚’è¿”ã™
+		/// </summary>
+		/// <returns></returns>
+		ShaderType GetShaderType() const
+		{
+			return shaderType;
+		}
+		/// <summary>
+		/// æç”»å¯èƒ½ã‹ãƒã‚§ãƒƒã‚¯
+		/// </summary>
+		// bool CanRender() const { return meshHandle != INVALID_HANDLE; }
 
-    using MeshRendererMemento = ComponentMemento<MeshRenderer, MeshRendererState>;
-}
+		GameObjectLayerFlag GetLayer() const override
+		{
+			return layer;
+		}
+		void OnChangeMeshFileName();
+		void Render() const override;
+		bool CanRender() const override
+		{
+			return meshHandle != INVALID_HANDLE;
+		};
+		void SetFrame(int _frame);
+		MT_PROPERTY()
+		std::string meshFileName;
+		MT_PROPERTY()
+		FBXModelHandle meshHandle;
+		MT_PROPERTY()
+		GameObjectLayerFlag layer;
+		MT_PROPERTY()
+		ShaderType shaderType;
+
+	  protected:
+		void OnPostRestore() override;
+
+	  private:
+		int frame_;
+	};
+
+	using MeshRendererMemento = ComponentMemento<MeshRenderer, MeshRendererState>;
+} // namespace mtgb

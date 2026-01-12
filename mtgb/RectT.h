@@ -3,38 +3,30 @@
 namespace mtgb
 {
 	/// <summary>
-	/// <para>‹éŒ`\‘¢‘Ì</para>
-	/// <para>n“_‚ÆƒTƒCƒY‚ğ‚Á‚Ä‚¢‚é</para>
+	/// <para>çŸ©å½¢æ§‹é€ ä½“</para>
+	/// <para>å§‹ç‚¹ã¨ã‚µã‚¤ã‚ºã‚’æŒã£ã¦ã„ã‚‹</para>
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	template<typename T>
-	struct RectT
+	template <typename T> struct RectT
 	{
 
 		RectT() = default;
-		RectT(
-			T _x,
-			T _y,
-			T _width,
-			T _height) :
-			x{ _x },
-			y{ _y },
-			width{ _width },
-			height{ _height }
+		RectT(T _x, T _y, T _width, T _height)
+			: x{_x}
+			, y{_y}
+			, width{_width}
+			, height{_height}
 		{
 		}
-		template<typename U>
-		RectT(
-			U _x,
-			U _y,
-			U _width,
-			U _height) :
-			x{ static_cast<T>(_x) },
-			y{ static_cast<T>(_y) },
-			width{ static_cast<T>(_width)},
-			height{static_cast<T>(_height)}
-		{ }
-		template<typename U>
+		template <typename U>
+		RectT(U _x, U _y, U _width, U _height)
+			: x{static_cast<T>(_x)}
+			, y{static_cast<T>(_y)}
+			, width{static_cast<T>(_width)}
+			, height{static_cast<T>(_height)}
+		{
+		}
+		template <typename U>
 		RectT(const RectT<U>& _other)
 			: x{static_cast<T>(_other.x)}
 			, y{static_cast<T>(_other.y)}
@@ -42,28 +34,32 @@ namespace mtgb
 			, height{static_cast<T>(_other.height)}
 		{
 		}
-		RectT(const Vector2T<T>& _point,const Vector2T<T>& _size):
-			point{ _point },
-			size{ _size }
-		{}
-		RectT(const RectT& _other):
-			point{_other.point},
-			size{_other.size}
-		{}
-		RectT(Vector2T<T>&& _point, Vector2T<T>&& _size):
-			point{std::move(_point)},
-			size{std::move(_size)}
-		{ }
-		RectT(RectT&& _other) noexcept :
-			point{ std::move(_other.point) },
-			size{ std::move(_other.size) }
-		{}
-		
+		RectT(const Vector2T<T>& _point, const Vector2T<T>& _size)
+			: point{_point}
+			, size{_size}
+		{
+		}
+		RectT(const RectT& _other)
+			: point{_other.point}
+			, size{_other.size}
+		{
+		}
+		RectT(Vector2T<T>&& _point, Vector2T<T>&& _size)
+			: point{std::move(_point)}
+			, size{std::move(_size)}
+		{
+		}
+		RectT(RectT&& _other) noexcept
+			: point{std::move(_other.point)}
+			, size{std::move(_other.size)}
+		{
+		}
+
 		RectT& operator=(const RectT& _other)
 		{
-			x = _other.x;
-			y = _other.y;
-			width = _other.width;
+			x	   = _other.x;
+			y	   = _other.y;
+			width  = _other.width;
 			height = _other.height;
 			return *this;
 		}
@@ -71,14 +67,13 @@ namespace mtgb
 		{
 			if (this != &_other)
 			{
-				x = std::move(_other.x);
-				y = std::move(_other.y);
-				width = std::move(_other.width);
+				x	   = std::move(_other.x);
+				y	   = std::move(_other.y);
+				width  = std::move(_other.width);
 				height = std::move(_other.height);
 			}
 			return *this;
 		}
-		
 
 		union
 		{
@@ -100,100 +95,74 @@ namespace mtgb
 		};
 
 		/// <summary>
-		/// n“_‚ğæ“¾ (Å¬“_)
+		/// å§‹ç‚¹ã‚’å–å¾— (æœ€å°ç‚¹)
 		/// </summary>
-		/// <returns>n“_‚ÌÀ•W</returns>
+		/// <returns>å§‹ç‚¹ã®åº§æ¨™</returns>
 		inline Vector2T<T> GetBegin() const
 		{
-			return
-			{
-				(size.x < 0) ? (point.x + size.x) : (point.x),
-				(size.y < 0) ? (point.y + size.y) : (point.y)
-			};
+			return {(size.x < 0) ? (point.x + size.x) : (point.x), (size.y < 0) ? (point.y + size.y) : (point.y)};
 		}
 		/// <summary>
-		/// I“_‚ğæ“¾ (Å‘å“_)
+		/// çµ‚ç‚¹ã‚’å–å¾— (æœ€å¤§ç‚¹)
 		/// </summary>
-		/// <returns>I“_‚ÌÀ•W</returns>
+		/// <returns>çµ‚ç‚¹ã®åº§æ¨™</returns>
 		inline Vector2T<T> GetEnd() const
 		{
-			return
-			{
-				(size.x > 0) ? (point.x + size.x) : (point.x),
-				(size.y > 0) ? (point.y + size.y) : (point.y)
-			};
+			return {(size.x > 0) ? (point.x + size.x) : (point.x), (size.y > 0) ? (point.y + size.y) : (point.y)};
 		}
 
 		/// <summary>
-		/// ‹éŒ`‚ğ”½“]‚³‚¹‚é
+		/// çŸ©å½¢ã‚’åè»¢ã•ã›ã‚‹
 		/// </summary>
-		/// <param name="_rect">”½“]‚³‚¹‚½‚¢‹éŒ`</param>
-		/// <returns>”½“]‚³‚ê‚½‹éŒ`</returns>
+		/// <param name="_rect">åè»¢ã•ã›ãŸã„çŸ©å½¢</param>
+		/// <returns>åè»¢ã•ã‚ŒãŸçŸ©å½¢</returns>
 		static inline RectT Reverse(const RectT& _rect)
 		{
-			Vector2T<T> reversePoint{ _rect.point + _rect.size };
-			Vector2T<T> reverseSize{ _rect.size * -1 };
+			Vector2T<T> reversePoint{_rect.point + _rect.size};
+			Vector2T<T> reverseSize{_rect.size * -1};
 
-			return { reversePoint, reverseSize };
+			return {reversePoint, reverseSize};
 		}
 		/// <summary>
-		/// ‹éŒ`‚ğx²‚Å”½“]‚³‚¹‚é
+		/// çŸ©å½¢ã‚’xè»¸ã§åè»¢ã•ã›ã‚‹
 		/// </summary>
-		/// <param name="_rect">x²‚Å”½“]‚³‚¹‚½‚¢‹éŒ`</param>
-		/// <returns>”½“]‚³‚ê‚½‹éŒ`</returns>
+		/// <param name="_rect">xè»¸ã§åè»¢ã•ã›ãŸã„çŸ©å½¢</param>
+		/// <returns>åè»¢ã•ã‚ŒãŸçŸ©å½¢</returns>
 		static inline RectT ReverseAxisX(const RectT& _rect)
 		{
-			Vector2T<T> reversePoint
-			{
-				_rect.point.x,
-				_rect.point.y + _rect.size.y
-			};
-			Vector2T<T> reverseSize
-			{
+			Vector2T<T> reversePoint{_rect.point.x, _rect.point.y + _rect.size.y};
+			Vector2T<T> reverseSize{
 				_rect.size.x,
 				_rect.size.y * -1,
 			};
 
-			return { reversePoint, reverseSize };
+			return {reversePoint, reverseSize};
 		}
 
 		/// <summary>
-		/// ü•ª‚©‚ç‹éŒ`‚ğƒCƒ“ƒXƒ^ƒ“ƒX
+		/// ç·šåˆ†ã‹ã‚‰çŸ©å½¢ã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 		/// </summary>
-		/// <param name="_begin">n“_À•W</param>
-		/// <param name="_end">I“_À•W</param>
-		/// <returns>‹éŒ`\‘¢‘Ì</returns>
-		static inline RectT FromLine(
-			const Vector2T<T>& _begin,
-			const Vector2T<T>& _end)
+		/// <param name="_begin">å§‹ç‚¹åº§æ¨™</param>
+		/// <param name="_end">çµ‚ç‚¹åº§æ¨™</param>
+		/// <returns>çŸ©å½¢æ§‹é€ ä½“</returns>
+		static inline RectT FromLine(const Vector2T<T>& _begin, const Vector2T<T>& _end)
 		{
-			return
-			{
-				_begin,
-				_end - _begin
-			};
+			return {_begin, _end - _begin};
 		}
 
 		/// <summary>
-		/// <para> “_‚ª‹éŒ`‚Ì”ÍˆÍ‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚é‚© </para>
-		/// <para> ‰E’[A‰º’[‚ÍŠÜ‚Ü‚ê‚È‚¢ </para>
+		/// <para> ç‚¹ãŒçŸ©å½¢ã®ç¯„å›²ã«å«ã¾ã‚Œã¦ã„ã‚‹ã‹ </para>
+		/// <para> å³ç«¯ã€ä¸‹ç«¯ã¯å«ã¾ã‚Œãªã„ </para>
 		/// </summary>
 		/// <param name="_pos"></param>
 		/// <param name="_rect"></param>
-		/// <returns>‹éŒ`‚Ì”ÍˆÍ‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚é‚È‚ç true</returns>
-		static inline bool Contains(
-			const Vector2T<T>& _pos,
-			const RectT& _rect)
+		/// <returns>çŸ©å½¢ã®ç¯„å›²ã«å«ã¾ã‚Œã¦ã„ã‚‹ãªã‚‰ true</returns>
+		static inline bool Contains(const Vector2T<T>& _pos, const RectT& _rect)
 		{
 			Vector2T<T> begin = _rect.GetBegin();
-			Vector2T<T> end = _rect.GetEnd();
-			return (
-				_pos.x >= begin.x &&
-				_pos.y >= begin.y &&
-				_pos.x < end.x &&
-				_pos.y < end.y
-				);
+			Vector2T<T> end	  = _rect.GetEnd();
+			return (_pos.x >= begin.x && _pos.y >= begin.y && _pos.x < end.x && _pos.y < end.y);
 		}
 	};
-	
-}
+
+} // namespace mtgb

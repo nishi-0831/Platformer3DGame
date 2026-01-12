@@ -2,22 +2,20 @@
 #include "ISystem.h"
 #include "ComponentPool.h"
 
-
 namespace mtgb
 {
 	class Transform;
 
 	/// <summary>
-	/// TransformƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìƒv[ƒ‹
+	/// Transformã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ãƒ—ãƒ¼ãƒ«
 	/// </summary>
-	class TransformCP :
-		public ComponentPool<Transform,TransformCP>
+	class TransformCP : public ComponentPool<Transform, TransformCP>
 	{
-	public:
+	  public:
 		TransformCP();
-		//TransformCP(const TransformCP&) = default;
+		// TransformCP(const TransformCP&) = default;
 		~TransformCP();
 
 		void Update() override;
 	};
-}
+} // namespace mtgb

@@ -9,21 +9,22 @@ namespace mtgb
 {
 	class PropertyChangeCommand : public Command
 	{
-	public:
+	  public:
 		PropertyChangeCommand(
 			IComponentMemento* _pPrevMemento,
 			IComponentMemento* _pMemento,
-			const ComponentFactory& _componentfactory);
+			const ComponentFactory& _componentfactory
+		);
 
 		void Execute() override;
 		void Undo() override;
 		std::string Name() const override;
 		EntityId GetCommandTargetEntityId() const override;
 
-	private:
-		// ComponentFactory‚ªnull‚Å‚ ‚é‚±‚Æ‚ğ‹–—e‚µ‚È‚¢
+	  private:
+		// ComponentFactoryãŒnullã§ã‚ã‚‹ã“ã¨ã‚’è¨±å®¹ã—ãªã„
 		const ComponentFactory& componentFactory_;
 		IComponentMemento* pPrevMemento_;
 		IComponentMemento* pMemento_;
 	};
-}
+} // namespace mtgb

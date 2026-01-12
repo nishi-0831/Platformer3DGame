@@ -1,19 +1,19 @@
 #include "Game.h"
 #include "ComponentPool.h"
-//#include "Windows.h"
+// #include "Windows.h"
 #include "IComponentPool.h"
 #include "Entity.h"
 
 namespace
 {
-	static const mtgb::Vector2Int DEFAULT_SCREEN_SIZE{ 800, 600 };
+	static const mtgb::Vector2Int DEFAULT_SCREEN_SIZE{800, 600};
 }
 
-mtgb::Game::Game() :
-	pRegisterSystems_{},
-	pFrameUpdateSystems_{},
-	pFixedUpdateSystems_{},
-	pComponentPools_{}
+mtgb::Game::Game()
+	: pRegisterSystems_{}
+	, pFrameUpdateSystems_{}
+	, pFixedUpdateSystems_{}
+	, pComponentPools_{}
 {
 }
 
@@ -73,10 +73,10 @@ void mtgb::Game::RemoveEntityComponent(const std::type_index _typeIndex, EntityI
 
 	IComponentPool* pComponentPool = dynamic_cast<IComponentPool*>(itr->second);
 
-	if (pComponentPool == nullptr) return;
+	if (pComponentPool == nullptr)
+		return;
 
 	pComponentPool->Remove(_entityId);
-
 }
 
 nlohmann::json mtgb::Game::SerializeComponent(std::type_index _typeIndex, EntityId _entityId)
@@ -101,24 +101,25 @@ void mtgb::Game::DeserializeComponent(std::type_index _typeIndex, EntityId _enti
 {
 	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
 	if (itr == pInstance_->pRegisterSystems_.end())
-		return ;
+		return;
 
 	IComponentPool* pComponentPool = dynamic_cast<IComponentPool*>(itr->second);
 	if (pComponentPool == nullptr)
-		return ;
+		return;
 
-	pComponentPool->Deserialize(_entityId,_json);
+	pComponentPool->Deserialize(_entityId, _json);
 }
 
 void mtgb::Game::DeserializeComponents(EntityId _entityId, const nlohmann::json& _json)
 {
 	std::optional<std::set<std::type_index>> components = Game::System<ComponentRegistry>().GetComponentTypes(_json);
 	if (components.has_value() == false)
-		return ;
+		return;
 
 	for (const std::type_index& typeIndex : components.value())
 	{
-		std::optional<std::type_index> componentPoolType = Game::System<ComponentRegistry>().GetComponentPoolType(typeIndex);
+		std::optional<std::type_index> componentPoolType =
+			Game::System<ComponentRegistry>().GetComponentPoolType(typeIndex);
 
 		if (componentPoolType.has_value() == false)
 			continue;
@@ -129,7 +130,7 @@ void mtgb::Game::DeserializeComponents(EntityId _entityId, const nlohmann::json&
 
 std::span<IRenderableCP*> mtgb::Game::GetRenderableCPs()
 {
-	return { pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size()};
+	return {pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size()};
 }
 
 void mtgb::Game::InitializeSystems(const std::list<ISystem*>& _uninitialized)
@@ -148,12 +149,6 @@ void mtgb::Game::ReleaseSystems(const std::list<ISystem*>& _runnings)
 		pSystem->Release();
 		delete pSystem;
 	}
-
-	/*for (auto itr = _runnings.rbegin(); itr != _runnings.rend(); itr++)
-	{
-		(*itr)->Release();
-		delete (*itr);
-	}*/
 }
 
 void mtgb::Game::RunLoopGameCycle()
@@ -165,12 +160,12 @@ void mtgb::Game::RunLoopGameCycle()
 			updateSystem->Update();
 		}
 
-		if (toExit_)  // 終了フラグが立っていたらサイクル離脱
+		if (toExit_) // 邨ゆｺ�繝輔Λ繧ｰ縺檎ｫ九▲縺ｦ縺�縺溘ｉ繧ｵ繧､繧ｯ繝ｫ髮｢閼ｱ
 		{
 			break;
 		}
 	}
 }
 
-mtgb::Game* mtgb::Game::pInstance_{ nullptr };
-bool mtgb::Game::toExit_{ false };
+mtgb::Game* mtgb::Game::pInstance_{nullptr};
+bool mtgb::Game::toExit_{false};

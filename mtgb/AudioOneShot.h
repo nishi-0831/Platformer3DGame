@@ -17,4 +17,4 @@ namespace mtgb
 		IXAudio2SourceVoice* pSourceVoice;
 		AudioClip* pAudioClip;
 	};
-}
+} // namespace mtgb
