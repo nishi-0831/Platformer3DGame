@@ -76,7 +76,7 @@ void Player::Update()
 		UpdatePosition();
 		if (InputUtil::GetGamePadDown(PadCode::Cross) || InputUtil::GetKeyDown(KeyCode::Space))
 		{
-			if (pRigidBody_->IsJumping() == false)
+			if (pRigidBody_->isGround_ == true)
 			{
 				pRigidBody_->velocity_.y += jumpHeight;
 				Audio::PlayOneShotFile("Sound/Jump.mp3");
@@ -358,6 +358,7 @@ void Player::TakeDamage(int _damage)
 	if (hp_ <= 0)
 	{
 		state_.Change(STATE::DYING);
+		pRigidBody_->velocity_ = Vector3::Zero();
 
 		// プレイヤーのHPが0になったことを通知
 		PlayerHpReachedZeroEvent event{.playerEntityId = GetEntityId()};

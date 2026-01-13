@@ -25,6 +25,22 @@ namespace
 		}
 		return _angleRad;
 	}
+
+	mtgb::Mathf::SphericalCoord CameraCartesianToSpherical(const Vector3& _offset)
+	{
+		float x = _offset.x;
+		float y = _offset.y;
+		float z = _offset.z;
+
+		float r = sqrtf(x * x + y * y + z * z);
+
+		// カメラの座標系に合わせた変換
+		// Y軸が上を向いており、-Y方向にcosθが向いているため
+		float theta = std::acosf(-y / r); // カメラ用の極角
+		float phi	= std::atan2f(-z, x); // カメラ用の方位角
+
+		return Mathf::SphericalCoord{.r = r, .theta = theta, .phi = phi};
+	}
 } // namespace
 
 float EaseOutCirc(float x)
@@ -54,6 +70,8 @@ mtgb::Camera::Camera(GameObject* _pGameObj)
 	, lerpSpeedGrounded_{1.0f}
 	, lerpSpeedJumping_{0.3f}
 	, lerpSpeedScalar_{2.0f}
+	, yDeadZoneMax_{0.7f}
+	, yDeadZoneMin_{0.2f}
 {
 	// カメラ補間速度の初期化
 	cameraStat_
@@ -83,7 +101,7 @@ mtgb::Camera::Camera(GameObject* _pGameObj)
 				orbitSpeed_ = 1.0f;
 
 				// 被写体が画面外にある場合は追従速度を上げる
-				float lerpSpeed = IsTargetOffScreen() ? lerpSpeedGrounded_ * lerpSpeedScalar_ : lerpSpeedGrounded_;
+				float lerpSpeed = IsTargetOffDeadZone() ? lerpSpeedGrounded_ * lerpSpeedScalar_ : lerpSpeedGrounded_;
 				lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
 
 				// ジャンプ中：速度に基づいて状態を判定
@@ -117,7 +135,7 @@ mtgb::Camera::Camera(GameObject* _pGameObj)
 				orbitSpeed_ = 0.5f;
 
 				// 被写体が画面外にある場合は追従速度を上げる
-				float lerpSpeed = IsTargetOffScreen() ? lerpSpeedJumping_ * lerpSpeedScalar_ : lerpSpeedJumping_;
+				float lerpSpeed = IsTargetOffDeadZone() ? lerpSpeedJumping_ * lerpSpeedScalar_ : lerpSpeedJumping_;
 				lookAtPosLerpProgress_ += lerpSpeed * Time::DeltaTimeF();
 			}
 		);
@@ -132,9 +150,10 @@ void mtgb::Camera::Update()
 	if (pTargetTransform_ == nullptr)
 		return;
 
+	Mathf::SphericalCoord sphericalCoord = CameraCartesianToSpherical(pCameraTransform_->position);
 	// ImGui表示(デバッグ用)
 	MTImGui::Instance().DirectShow(
-		[&]()
+		[&, sphericalCoord]()
 		{
 			TypeRegistry::Instance().CallFunc(pCameraTransform_, "Transform");
 			TypeRegistry::Instance().CallFunc(&lookAtPositionOffset_, "lookAtPositionOffset_");
@@ -146,9 +165,12 @@ void mtgb::Camera::Update()
 			ImGui::Text("Target Velocity Y: %.3f", targetVelocityCache_.y);
 			ImGui::Text("lookAtPosLerpProgress: %.3f", lookAtPosLerpProgress_);
 			ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
-			ImGui::Text("Is Off Screen: %s", IsTargetOffScreen() ? "true" : "false");
+			ImGui::Text("Is Off Screen: %s", IsTargetOffDeadZone() ? "true" : "false");
 			TypeRegistry::Instance().CallFunc(&normalizedX, "normalizedX");
 			TypeRegistry::Instance().CallFunc(&normalizedY, "normalizedY");
+			//TypeRegistry::Instance().CallFunc(&sphericalCoord.phi, "phi");
+			//TypeRegistry::Instance().CallFunc(&sphericalCoord.r, "r");
+			//TypeRegistry::Instance().CallFunc(&sphericalCoord.theta, "theta");
 		},
 		"Camera",
 		ShowType::Inspector
@@ -207,7 +229,7 @@ void mtgb::Camera::SetFollowMode(bool _isGrounded, const Vector3& _targetVelocit
 	targetVelocityCache_ = _targetVelocity;
 }
 
-bool mtgb::Camera::IsTargetOffScreen() const
+bool mtgb::Camera::IsTargetOffDeadZone() const
 {
 	if (pTargetTransform_ == nullptr || pCameraTransform_ == nullptr)
 		return false;
@@ -219,7 +241,10 @@ bool mtgb::Camera::IsTargetOffScreen() const
 	normalizedX = targetScreenPos.x / screenSize.x;
 	normalizedY = targetScreenPos.y / screenSize.y;
 
-	return (normalizedY >= 1.0f) || (normalizedY <= 0.0f) || (normalizedX >= 1.0f) || (normalizedX <= 0.0f);
+	bool yOutOfRange = (normalizedY < yDeadZoneMin_) || (normalizedY > yDeadZoneMax_);
+
+	return yOutOfRange;
+	//return (normalizedY >= 1.0f) || (normalizedY <= 0.0f) || (normalizedX >= 1.0f) || (normalizedX <= 0.0f);
 }
 
 void mtgb::Camera::MoveCameraSpherical(float _distance)
@@ -245,7 +270,34 @@ void mtgb::Camera::MoveCameraSpherical(float _distance)
 
 	pCameraTransform_->position = newCameraPos;
 
+
 	// カメラの回転を設定
 	Vector3 lookDir			  = lookAtTarget - pCameraTransform_->position;
 	pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), Vector3::Up());
+}
+
+Vector3 mtgb::Camera::ApplyDeadZoneConstraints(const Vector3& proposedCameraPos, const Vector3 _lookAtTarget) const
+{
+	Vector3 adjustedPos = proposedCameraPos;
+
+	// 提案されたカメラ位置での被写体のスクリーン座標を計算
+	Vector3 testScreenPos =
+		Game::System<CameraSystem>().GetWorldToScreenPos(pTargetTransform_->position, WindowContext::First);
+	Vector2F screenSize = Game::System<Screen>().GetSizeF();
+
+	float testNormalizedY = testScreenPos.y / screenSize.y;
+
+	// Y座標がデッドゾーンを超えている場合、カメラの高さを調整
+	if (testNormalizedY > yDeadZoneMax_)
+	{
+		// カメラを下げる
+		adjustedPos.y -= (testNormalizedY - yDeadZoneMax_) * screenSize.y * 0.1f; // 調整係数
+	}
+	else if (testNormalizedY < yDeadZoneMin_)
+	{
+		// カメラを上げる
+		adjustedPos.y += (yDeadZoneMin_ - testNormalizedY) * screenSize.y * 0.1f; // 調整係数
+	}
+
+	return adjustedPos;
 }
