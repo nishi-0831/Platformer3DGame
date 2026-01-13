@@ -602,6 +602,10 @@
     <None Include=".pre-commit-config.yaml" />
     <None Include="Assets\Shader\2DCommon.hlsli" />
     <None Include="Assets\Shader\3DCommon.hlsli" />
+    <None Include="CMake\Default.cmake" />
+    <None Include="CMake\DefaultCXX.cmake" />
+    <None Include="CMake\DefaultFortran.cmake" />
+    <None Include="CMake\Utils.cmake" />
     <None Include="Directory.Build.props" />
     <None Include="mtgb\DefaultShow.inl" />
     <None Include="mtgb\StatefulComponent.inl" />
@@ -737,6 +741,9 @@
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
