@@ -1,4 +1,4 @@
-#include "CommandHistoryManagerWrapper.h"
+#include "NamedCommandHistory.h"
 #include "../ImGui/imgui.h"
 
 namespace
@@ -97,7 +97,7 @@ namespace mtgb
 	{
 		ImGui::BeginChild("CommandHistory", ImVec2(0, 0));
 
-		ImGui::Text("&s", "CommandHisotory");
+		ImGui::Text("%s", "CommandHisotory");
 		ImGui::Separator();
 
 		ImGui::Text("Undo (%zu)", undoNames_.size());

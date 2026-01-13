@@ -242,19 +242,19 @@ void Player::SetCamera(Camera* _pCamera)
 Vector3 Player::GetMoveDir()
 {
 	Vector2F axis = InputUtil::GetAxis(StickType::LEFT);
-	if (InputUtil::GetKey(KeyCode::Left))
+	if (InputUtil::GetKey(KeyCode::Left) || InputUtil::GetKey(KeyCode::A))
 	{
 		axis.x = -1;
 	}
-	if (InputUtil::GetKey(KeyCode::Right))
+	if (InputUtil::GetKey(KeyCode::Right) || InputUtil::GetKey(KeyCode::D))
 	{
 		axis.x = 1;
 	}
-	if (InputUtil::GetKey(KeyCode::Up))
+	if (InputUtil::GetKey(KeyCode::Up) || InputUtil::GetKey(KeyCode::W))
 	{
 		axis.y = -1;
 	}
-	if (InputUtil::GetKey(KeyCode::Down))
+	if (InputUtil::GetKey(KeyCode::Down) || InputUtil::GetKey(KeyCode::S))
 	{
 		axis.y = 1;
 	}

@@ -57,14 +57,14 @@
     </ClCompile>
     <ClCompile Include="mtgb\AddComponentCommand.cpp" />
     <ClCompile Include="mtgb\Box3D.cpp" />
-    <ClCompile Include="mtgb\BoxPlane.cpp" />
     <ClCompile Include="mtgb\CameraSystem.cpp" />
     <ClCompile Include="mtgb\CircleDetector.cpp" />
     <ClCompile Include="mtgb\Collider.cpp" />
     <ClCompile Include="mtgb\ColliderCP.cpp" />
     <ClCompile Include="mtgb\CommandHistory.cpp" />
     <ClCompile Include="mtgb\CommandHistoryManager.cpp" />
-    <ClCompile Include="mtgb\CommandHistoryManagerWrapper.cpp" />
+    <ClCompile Include="mtgb\MTBin\MemoryStream.cpp" />
+    <ClCompile Include="mtgb\NamedCommandHistory.cpp" />
     <ClCompile Include="mtgb\ComponentFactory.cpp" />
     <ClCompile Include="mtgb\ComponentRegistry.cpp" />
     <ClCompile Include="mtgb\DeleteGameObjectCommand.cpp" />
@@ -80,10 +80,8 @@
     <ClCompile Include="mtgb\GameObjectGenerator.cpp" />
     <ClCompile Include="mtgb\GameObjectLayer.cpp" />
     <ClCompile Include="mtgb\GameObjectTypeRegistry.cpp" />
-    <ClCompile Include="mtgb\Ground.cpp" />
     <ClCompile Include="mtgb\GroupCommand.cpp" />
     <ClCompile Include="mtgb\GuizmoManipulatedEvent.cpp" />
-    <ClCompile Include="mtgb\HighlightEnemy.cpp" />
     <ClCompile Include="mtgb\ICamera.cpp" />
     <ClCompile Include="mtgb\ImageRenderer.cpp" />
     <ClCompile Include="mtgb\ImageRendererCP.cpp" />
@@ -102,14 +100,6 @@
     <ClCompile Include="mtgb\MonitorInfo.cpp" />
     <ClCompile Include="mtgb\MouseStateProxy.cpp" />
     <ClCompile Include="mtgb\MTImGui.cpp" />
-    <ClCompile Include="mtgb\MTNet\HttpClient.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\HttpHeaderBuilder.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="mtgb\MTStringUtility.cpp" />
     <ClCompile Include="mtgb\PlaneUVScroll.cpp" />
     <ClCompile Include="mtgb\PropertyChangedEvent.cpp" />
@@ -129,7 +119,6 @@
     <ClCompile Include="mtgb\TerrainReader.cpp" />
     <ClCompile Include="mtgb\TextRenderer.cpp" />
     <ClCompile Include="mtgb\TextRendererCP.cpp" />
-    <ClCompile Include="mtgb\TimeLimit.cpp" />
     <ClCompile Include="mtgb\TransformGuizmo.cpp" />
     <ClCompile Include="mtgb\TypeRegistry.cpp" />
     <ClCompile Include="mtgb\UIDrawCommand.cpp" />
@@ -179,8 +168,6 @@
     <ClCompile Include="mtgb\Audio.cpp" />
     <ClCompile Include="mtgb\AudioClip.cpp" />
     <ClCompile Include="mtgb\AudioOneShot.cpp" />
-    <ClCompile Include="mtgb\AudioPlayer.cpp" />
-    <ClCompile Include="mtgb\AudioPlayerCP.cpp" />
     <ClCompile Include="mtgb\CameraResource.cpp" />
     <ClCompile Include="mtgb\Color.cpp" />
     <ClCompile Include="mtgb\ComponentPool.cpp" />
@@ -217,40 +204,9 @@
     <ClCompile Include="mtgb\InputResource.cpp" />
     <ClCompile Include="mtgb\IShader.cpp" />
     <ClCompile Include="mtgb\ISystem.cpp" />
-    <ClCompile Include="mtgb\MainWindow.cpp" />
     <ClCompile Include="mtgb\Matrix4x4.cpp" />
-    <ClCompile Include="mtgb\Model.cpp" />
-    <ClCompile Include="mtgb\MTBin\MemoryStream.cpp" />
     <ClCompile Include="mtgb\mtgb.cpp" />
     <ClCompile Include="mtgb\ImGuiRenderer.cpp" />
-    <ClCompile Include="mtgb\MTNet\BinaryReader.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\BinaryWriter.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\EndPoint.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\Log.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\Socket.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\TcpClient.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="mtgb\MTNet\TcpListener.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="mtgb\OBJ.cpp" />
     <ClCompile Include="mtgb\Quaternion.cpp" />
     <ClCompile Include="mtgb\ResourceCollection.cpp" />
@@ -276,7 +232,6 @@
     <ClCompile Include="mtgb\WindowManager.cpp" />
     <ClCompile Include="mtgb\WindowContext.cpp" />
     <ClCompile Include="mtgb\WindowResource.cpp" />
-    <ClCompile Include="mtgb\World.cpp" />
     <ClCompile Include="Source\ActorManager.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\CircularSaw.cpp" />
@@ -304,17 +259,16 @@
   <ItemGroup>
     <ClInclude Include="mtgb\AddComponentCommand.h" />
     <ClInclude Include="mtgb\AddComponentCommandGeneric.h" />
-    <ClInclude Include="mtgb\AudioPlayerState.h" />
     <ClInclude Include="mtgb\Box3D.h" />
     <ClInclude Include="mtgb\BoxPlane.h" />
     <ClInclude Include="mtgb\CircleDetector.h" />
-    <ClInclude Include="mtgb\ColliderState.h" />
     <ClInclude Include="mtgb\ColliderType.h" />
     <ClInclude Include="mtgb\Command.h" />
-    <ClInclude Include="mtgb\CommandHandlerRegistry.h" />
     <ClInclude Include="mtgb\CommandHistory.h" />
     <ClInclude Include="mtgb\CommandHistoryManager.h" />
-    <ClInclude Include="mtgb\CommandHistoryManagerWrapper.h" />
+    <ClInclude Include="mtgb\MTBin\Common.h" />
+    <ClInclude Include="mtgb\MTBin\MemoryStream.h" />
+    <ClInclude Include="mtgb\NamedCommandHistory.h" />
     <ClInclude Include="mtgb\ComponentConcept.h" />
     <ClInclude Include="mtgb\ComponentFactory.h" />
     <ClInclude Include="mtgb\ComponentRegistry.h" />
@@ -366,7 +320,6 @@
     <ClInclude Include="mtgb\Easing.h" />
     <ClInclude Include="mtgb\FbxModel.h" />
     <ClInclude Include="mtgb\GameObjectLayer.h" />
-    <ClInclude Include="mtgb\Ground.h" />
     <ClInclude Include="mtgb\ImGuiShowable.h" />
     <ClInclude Include="mtgb\ImGuizmoManipulator.h" />
     <ClInclude Include="mtgb\IncludingInput.h" />
@@ -381,18 +334,8 @@
     <ClInclude Include="mtgb\MonitorInfo.h" />
     <ClInclude Include="mtgb\MouseStateProxy.h" />
     <ClInclude Include="mtgb\MTBit\BitFlag.h" />
-    <ClInclude Include="mtgb\MTNet\HttpClient.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\HttpHeaderBuilder.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="mtgb\MTStat\MTStat.h" />
-    <ClInclude Include="mtgb\Observer.h" />
     <ClInclude Include="mtgb\MTImGui.h" />
-    <ClInclude Include="mtgb\Property.h" />
     <ClInclude Include="mtgb\PropertyChangedEvent.h" />
     <ClInclude Include="mtgb\QuatToEuler.h" />
     <ClInclude Include="mtgb\RayDetector.h" />
@@ -403,14 +346,12 @@
     <ClInclude Include="mtgb\ReflectionInfo.h" />
     <ClInclude Include="mtgb\RegisterCommonGameObjectType.h" />
     <ClInclude Include="mtgb\RenderSystem.h" />
-    <ClInclude Include="mtgb\RigidBodyState.h" />
     <ClInclude Include="mtgb\ScoreManager.h" />
     <ClInclude Include="mtgb\SelectionCommand.h" />
     <ClInclude Include="mtgb\ShowAttributes.h" />
     <ClInclude Include="mtgb\ShowFunc.h" />
     <ClInclude Include="mtgb\ShowType.h" />
     <ClInclude Include="mtgb\SingleWindow.h" />
-    <ClInclude Include="mtgb\StatefulComponent.h" />
     <ClInclude Include="mtgb\stdafx.h" />
     <ClInclude Include="mtgb\StringComparators.h" />
     <ClInclude Include="mtgb\TerrainReader.h">
@@ -420,10 +361,8 @@
     <ClInclude Include="mtgb\TextAlignment.h" />
     <ClInclude Include="mtgb\TextRenderer.h" />
     <ClInclude Include="mtgb\TextRendererCP.h" />
-    <ClInclude Include="mtgb\TimeLimit.h" />
     <ClInclude Include="mtgb\Transform.generated.h" />
     <ClInclude Include="mtgb\TransformCore.h" />
-    <ClInclude Include="mtgb\TransformState.h" />
     <ClInclude Include="mtgb\TransformGuizmo.h" />
     <ClInclude Include="mtgb\TypeRegistry.h" />
     <ClInclude Include="mtgb\TypeRegistryImpl.h" />
@@ -443,8 +382,6 @@
     <ClInclude Include="mtgb\Audio.h" />
     <ClInclude Include="mtgb\AudioClip.h" />
     <ClInclude Include="mtgb\AudioOneShot.h" />
-    <ClInclude Include="mtgb\AudioPlayer.h" />
-    <ClInclude Include="mtgb\AudioPlayerCP.h" />
     <ClInclude Include="mtgb\CameraResource.h" />
     <ClInclude Include="mtgb\cmtgb.h" />
     <ClInclude Include="mtgb\Color.h" />
@@ -488,46 +425,10 @@
     <ClInclude Include="mtgb\InputResource.h" />
     <ClInclude Include="mtgb\IShader.h" />
     <ClInclude Include="mtgb\ISystem.h" />
-    <ClInclude Include="mtgb\MainWindow.h" />
     <ClInclude Include="mtgb\Matrix4x4.h" />
-    <ClInclude Include="mtgb\Model.h" />
     <ClInclude Include="mtgb\MTAssert.h" />
-    <ClInclude Include="mtgb\MTBin\Common.h" />
-    <ClInclude Include="mtgb\MTBin\MemoryStream.h" />
     <ClInclude Include="mtgb\mtgb.h" />
     <ClInclude Include="mtgb\ImGuiRenderer.h" />
-    <ClInclude Include="mtgb\MTNet\BinaryReader.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\BinaryWriter.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\Common.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\EndPoint.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\Log.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\Socket.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\TcpClient.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="mtgb\MTNet\TcpListener.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="mtgb\MTStringUtility.h" />
     <ClInclude Include="mtgb\OBJ.h" />
     <ClInclude Include="mtgb\PathUtility.h" />
@@ -542,7 +443,6 @@
     <ClInclude Include="mtgb\SceneSystem.h" />
     <ClInclude Include="mtgb\Screen.h" />
     <ClInclude Include="mtgb\Sprite.h" />
-    <ClInclude Include="mtgb\SubWindow.h" />
     <ClInclude Include="mtgb\TextCache.h" />
     <ClInclude Include="mtgb\Texture2D.h" />
     <ClInclude Include="mtgb\Timer.h" />
@@ -552,14 +452,12 @@
     <ClInclude Include="mtgb\Vector2.h" />
     <ClInclude Include="mtgb\Vector2Int.h" />
     <ClInclude Include="mtgb\Vector3.h" />
-    <ClInclude Include="mtgb\Vector3Ref.h" />
     <ClInclude Include="mtgb\Vector4.h" />
     <ClInclude Include="mtgb\WaveData.h" />
     <ClInclude Include="mtgb\WindowContextUtil.h" />
     <ClInclude Include="mtgb\WindowManager.h" />
     <ClInclude Include="mtgb\WindowContext.h" />
     <ClInclude Include="mtgb\WindowResource.h" />
-    <ClInclude Include="mtgb\World.h" />
     <ClInclude Include="mtgb\ProfileUtlity.h" />
     <ClInclude Include="Source\ActorManager.h" />
     <ClInclude Include="Source\Camera.h" />
@@ -596,9 +494,7 @@
   <ItemGroup>
     <None Include=".clang-format" />
     <None Include=".github\workflows\DeployDoxygen.yml" />
-    <None Include=".github\workflows\ClangTidyAnalysis.yml" />
     <None Include=".github\workflows\ReleaseBuildAndPublish.yml" />
-    <None Include=".github\workflows\SetupEnv.yml" />
     <None Include=".pre-commit-config.yaml" />
     <None Include="Assets\Shader\2DCommon.hlsli" />
     <None Include="Assets\Shader\3DCommon.hlsli" />
@@ -607,16 +503,12 @@
     <None Include="CMake\DefaultFortran.cmake" />
     <None Include="CMake\Utils.cmake" />
     <None Include="Directory.Build.props" />
+    <None Include="Directory.Build.targets" />
     <None Include="mtgb\DefaultShow.inl" />
-    <None Include="mtgb\StatefulComponent.inl" />
     <None Include="packages.config" />
     <None Include="scripts\.clang-tidy" />
     <None Include="scripts\clang-tidy-wrapper.py" />
     <None Include="scripts\clangcl-config.yaml" />
-    <None Include="scripts\fix_compile_commands.py" />
-    <None Include="scripts\run-clang-tidy-filtered.ps1" />
-    <None Include="scripts\run-clang-tidy-filtered.sh" />
-    <None Include="Tools\GenerateComponentCpp.sbn" />
     <None Include="通信体系.txt" />
   </ItemGroup>
   <ItemGroup>

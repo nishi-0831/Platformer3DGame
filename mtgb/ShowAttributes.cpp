@@ -19,7 +19,7 @@ Command* Vector3Show::operator()(mtgb::Vector3* vec, const char* name) const
 /// <param name="vec">表示する四元数</param>
 /// <param name="name">ラベル名</param>
 /// <returns></returns>
-Command* QuaternionSHow::operator()(DirectX::XMVECTORF32* vec, const char* name) const
+Command* QuaternionShow::operator()(DirectX::XMVECTORF32* vec, const char* name) const
 {
 	mtgb::Vector3 vec3 = mtgb::QuatToEuler(*vec);
 	ImGui::InputFloat3(name, &vec3.x, "%.3f", ImGuiInputTextFlags_ReadOnly);

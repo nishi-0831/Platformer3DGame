@@ -31,7 +31,8 @@ namespace
 	constexpr float SPHERICAL_COORDINATE_FRONT_OFFSET_DEG = 90.0f;
 } // namespace
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
-	: moveSpeed_{10.0f}
+	: ImGuiShowable{"EditorCamera", ShowType::Editor}
+	, moveSpeed_{10.0f}
 	, rotateSensitivity_{1.0f}
 	, hCamera_{INVALID_ENTITY}
 {
@@ -229,8 +230,7 @@ void mtgb::ImGuiEditorCamera::DoPan()
 		polarAngleRad_ += mouseMove.y * rotateSensitivity_ * Time::DeltaTimeF(); // 鉛直角度
 
 		// 鉛直角度を制限
-		polarAngleRad_ =
-			std::clamp(polarAngleRad_, DirectX::XMConvertToRadians(0.1f), DirectX::XMConvertToRadians(179.0f));
+		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 
 		MoveCameraSphericalOnTheSpot();
 	}

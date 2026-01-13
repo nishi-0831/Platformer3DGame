@@ -4,7 +4,6 @@
 #include "InputData.h"
 #include "ReleaseUtility.h"
 #include "MTAssert.h"
-#include "MainWindow.h"
 #include "DoubleWindow.h"
 #include "InputResource.h"
 #include <algorithm>

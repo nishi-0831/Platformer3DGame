@@ -13,7 +13,7 @@ struct Vector3Show : refl::attr::usage::type
 	Command* operator()(mtgb::Vector3* vec, const char* name) const;
 };
 
-struct QuaternionSHow : refl::attr::usage::type
+struct QuaternionShow : refl::attr::usage::type
 {
 	Command* operator()(DirectX::XMVECTORF32* vec, const char* name) const;
 };

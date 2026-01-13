@@ -7,7 +7,6 @@
 #include <dxgi.h>
 #include <DirectXMath.h>
 #include "ImGuiRenderer.h"
-#include "MainWindow.h"
 #include "Screen.h"
 #include "Vector3.h"
 #include <d3dcompiler.h>
@@ -34,26 +33,31 @@ void mtgb::DirectX11Manager::Initialize()
 
 void mtgb::DirectX11Manager::Update()
 {
-	// MTImGui::Instance().DirectShow([this]() {
-	//		for (auto& desc : adaptersDesc_)
-	//		{
-	//			ImGui::PushID(&desc);
-	//			TypeRegistry::Instance().CallFunc(&desc, "AdapterDesc");
-	//			ImGui::PopID();
-	//			ImGui::Separator();
-	//		}
+	MTImGui::Instance().DirectShow(
+		[this]()
+		{
+			for (auto& desc : adaptersDesc_)
+			{
+				ImGui::PushID(&desc);
+				TypeRegistry::Instance().CallFunc(&desc, "AdapterDesc");
+				ImGui::PopID();
+				ImGui::Separator();
+			}
 
-	//		// モニター(DXGIOutput)の情報
-	//		for (auto& monitorInfo : DirectX11Draw::monitorInfos_)
-	//		{
-	//			ImGui::PushID(&monitorInfo);
-	//			ImGui::LabelText("adapterIndex", "%d", monitorInfo.adapterIndex);
-	//			ImGui::LabelText("outputIndex","%d", monitorInfo.outputIndex);
-	//			TypeRegistry::Instance().CallFunc(&monitorInfo.desc, "OutputDesc");
-	//			ImGui::PopID();
-	//			ImGui::Separator();
-	//		}
-	//	}, "Adapter,OutputDesc", ShowType::Settings);
+			// モニター(DXGIOutput)の情報
+			for (auto& monitorInfo : DirectX11Draw::monitorInfos_)
+			{
+				ImGui::PushID(&monitorInfo);
+				ImGui::LabelText("adapterIndex", "%d", monitorInfo.adapterIndex);
+				ImGui::LabelText("outputIndex", "%d", monitorInfo.outputIndex);
+				TypeRegistry::Instance().CallFunc(&monitorInfo.desc, "OutputDesc");
+				ImGui::PopID();
+				ImGui::Separator();
+			}
+		},
+		"Adapter,OutputDesc",
+		ShowType::Settings
+	);
 }
 
 void mtgb::DirectX11Manager::InitializeCommonResources()

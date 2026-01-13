@@ -25,7 +25,7 @@ def find_repo_root():
     current = os.getcwd()
      # 現在のディレクトリからルートまで遡る
     while current != os.path.dirname(current):  # ドライブルート到達まで
-        # .git フォルダまたは Game.sln があればそこがルート
+        # .gitフォルダまたはGame.slnがあればそこがルート
         if os.path.exists(os.path.join(current, '.git')):
             return current
         if os.path.exists(os.path.join(current, 'Game.sln')):
@@ -34,7 +34,7 @@ def find_repo_root():
 def generate_compile_commands_with_header_files(compile_commands_path, compile_commands_json):
     # pythonのデフォルトのエンコーディングを変更する
     env = os.environ.copy()
-    env['PYTHONUTF8'] = '1'  # デフォルトの UTF-8 を有効にする
+    env['PYTHONUTF8'] = '1'  # UTF-8を有効にする
 
     cmds = [
             ['compdb','-p',compile_commands_path,'list']
@@ -51,7 +51,7 @@ def generate_compile_commands_with_header_files(compile_commands_path, compile_c
                 print(f"[clang-tidy-wrapper] compdb produced compile_commands.json ({len(out)} bytes)", file=sys.stderr)
                 return True
         except FileNotFoundError:
-            # compdb コマンドが見つからない
+            # compdbコマンドが見つからない
             continue
         except subprocess.CalledProcessError as e:
             continue
@@ -109,11 +109,11 @@ def main():
     
     # pythonのデフォルトのエンコーディングを変更する
     env = os.environ.copy()
-    env['PYTHONUTF8'] = '1'  # デフォルトの UTF-8 を有効にする
+    env['PYTHONUTF8'] = '1'  #UTF-8を有効にする
 
-    # run-clang-tidy.py コマンドを構築
-    # -source-filter に正規表現を渡して、mtgb または Source フォルダ配下の .cpp ファイルのみを対象にする
-    # Windows のパス区切り(\\))と POSIX の(/)の両方にマッチするように [\\/]
+    # run-clang-tidy.pyコマンドを構築
+    # -source-filterに正規表現を渡して、mtgbまたはSourceフォルダ配下の.cppファイルのみを対象にする
+    # Windowsのパス区切り(\\))とPOSIXの(/)の両方にマッチするように[\\/]
     source_filter_regex = config.get('source_filter')
     header_filter_regex = config.get('header_filter')
     export_fixes_path = config.get('export-fixes')

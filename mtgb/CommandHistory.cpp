@@ -1,6 +1,6 @@
 #include "CommandHistory.h"
 #include "ReleaseUtility.h"
-#include "CommandHistoryManagerWrapper.h"
+#include "NamedCommandHistory.h"
 
 CommandHistory::~CommandHistory()
 {

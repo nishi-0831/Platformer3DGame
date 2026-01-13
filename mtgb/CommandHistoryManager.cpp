@@ -2,7 +2,7 @@
 #include "CommandHistoryManager.h"
 #include "assert.h"
 CommandHistoryManager::CommandHistoryManager()
-	: inner_{new CommandHistory()}
+	: inner_{new NamedCommandHistory(new CommandHistory())}
 	, pGroupCommand_{nullptr}
 	, isGrouping_{false}
 {
@@ -14,6 +14,14 @@ void CommandHistoryManager::Initialize()
 
 void CommandHistoryManager::Update()
 {
+	MTImGui::Instance().DirectShow(
+		[this]()
+		{
+			inner_->DrawImGuiStack();
+		},
+		"CommandStack",
+		ShowType::Editor
+	);
 }
 
 void CommandHistoryManager::BeginGroupCommand()

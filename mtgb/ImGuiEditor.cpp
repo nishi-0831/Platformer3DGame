@@ -65,11 +65,11 @@ void mtgb::ImGuiEditor::Update()
 		{
 			DuplicateGameObject();
 		}
-		if (InputUtil::GetKeyDown(KeyCode::Delete))
-		{
-			// マニピュレータが選択しているゲームオブジェクトを取得
-			GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
-		}
+	}
+	if (InputUtil::GetKeyDown(KeyCode::Delete))
+	{
+		// マニピュレータが選択しているゲームオブジェクトを取得
+		GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
 	}
 }
 
@@ -161,6 +161,9 @@ void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, Enti
 
 void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)
 {
+	ImGui::Text("%s", "AddComponent");
+	ImGui::Separator();
+
 	std::span<const std::type_index> registeredTypes = Game::GetComponentFactory().GetRegisteredTypes();
 
 	for (const auto& typeInfo : registeredTypes)
@@ -170,10 +173,13 @@ void mtgb::ImGuiEditor::ShowAddComponentDialog(EntityId _entityId)
 			AddComponent(typeInfo, _entityId);
 		}
 	}
+	ImGui::Separator();
 }
 
 void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 {
+	ImGui::Text("%s", "GenerateGameObject");
+	ImGui::Separator();
 	std::vector<std::string> names = Game::System<GameObjectTypeRegistry>().GetRegisteredNames();
 	for (const std::string& name : names)
 	{
@@ -182,4 +188,5 @@ void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 			GameObjectGenerator::Generate(name);
 		}
 	}
+	ImGui::Separator();
 }
