@@ -9,6 +9,7 @@ var classmtgb_1_1Camera =
     ] ],
     [ "Camera", "classmtgb_1_1Camera.html#acae4516c1d27d0d62c3361ab9ae6aa67", null ],
     [ "~Camera", "classmtgb_1_1Camera.html#a3dcbf401d4f246f91fd13253c6d8b1ec", null ],
+    [ "ApplyDeadZoneConstraints", "classmtgb_1_1Camera.html#a9a78afe937fc43932ddb0a850e3ac02c", null ],
     [ "Component", "classmtgb_1_1Camera.html#aec1d6bd2a9c2953d360201599fc31d4a", null ],
     [ "Deserialize", "classmtgb_1_1Camera.html#ac149c70cc2d54f8e5d13280a99c7a793", null ],
     [ "DestroyMe", "classmtgb_1_1Camera.html#a78fb345c550e9f448e08654127792564", null ],
@@ -31,7 +32,7 @@ var classmtgb_1_1Camera =
     [ "Initialize", "classmtgb_1_1Camera.html#aed2d88f25ff20bd9f0068b119d867a8e", null ],
     [ "Instantiate", "classmtgb_1_1Camera.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classmtgb_1_1Camera.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
-    [ "IsTargetOffScreen", "classmtgb_1_1Camera.html#a0198a24494f0edb6933dc8f45166745c", null ],
+    [ "IsTargetOffDeadZone", "classmtgb_1_1Camera.html#ae65fcd8d7612c6ea3126784a24895b46", null ],
     [ "IsToDestroy", "classmtgb_1_1Camera.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
     [ "MarkAsCalledStart", "classmtgb_1_1Camera.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
     [ "MoveCameraSpherical", "classmtgb_1_1Camera.html#aca293b287fbed1881b143b490189550c", null ],
@@ -67,5 +68,7 @@ var classmtgb_1_1Camera =
     [ "pTargetTransform_", "classmtgb_1_1Camera.html#a2ec4c41a25821ea84bbc08ea5e258e31", null ],
     [ "status_", "classmtgb_1_1Camera.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classmtgb_1_1Camera.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
-    [ "targetVelocityCache_", "classmtgb_1_1Camera.html#a34fbf3c2b9e948971751cbdffc3fe76d", null ]
+    [ "targetVelocityCache_", "classmtgb_1_1Camera.html#a34fbf3c2b9e948971751cbdffc3fe76d", null ],
+    [ "yDeadZoneMax_", "classmtgb_1_1Camera.html#a94d01e03636056a296fad6790d1c487c", null ],
+    [ "yDeadZoneMin_", "classmtgb_1_1Camera.html#a1b3391c78b1f06eb0278c361eb698630", null ]
 ];

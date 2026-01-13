@@ -200,7 +200,7 @@ var searchData=
   ['isstarted_5f_197',['isStarted_',['../classFadeOutScreen.html#aa2e3f1a6a322a75353041d8aae2db9a7',1,'FadeOutScreen']]],
   ['isstatic_5f_198',['isStatic_',['../classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479',1,'mtgb::Collider']]],
   ['istargetinrayangle_199',['IsTargetInRayAngle',['../classmtgb_1_1RayDetector.html#ac89055dcb37a18ddea33ee1b182a981a',1,'mtgb::RayDetector']]],
-  ['istargetoffscreen_200',['IsTargetOffScreen',['../classmtgb_1_1Camera.html#a0198a24494f0edb6933dc8f45166745c',1,'mtgb::Camera']]],
+  ['istargetoffdeadzone_200',['IsTargetOffDeadZone',['../classmtgb_1_1Camera.html#ae65fcd8d7612c6ea3126784a24895b46',1,'mtgb::Camera']]],
   ['istodestroy_201',['IsToDestroy',['../classmtgb_1_1GameObject.html#ab2b2a8a84b4380a17f62a71f0208825b',1,'mtgb::GameObject']]],
   ['istrigger_5f_202',['isTrigger_',['../classmtgb_1_1Collider.html#ae3cdd36ffab49d607691ce819c169b10',1,'mtgb::Collider']]],
   ['isusing_5f_203',['isUsing_',['../classmtgb_1_1ImGuizmoManipulator.html#a2eb143a4ae2236e79d1cfd0767702c2b',1,'mtgb::ImGuizmoManipulator']]],

@@ -15,13 +15,14 @@ var searchData=
   ['alllayer_12',['AllLayer',['../namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca',1,'mtgb']]],
   ['apply_5ffixes_13',['apply_fixes',['../namespacerun-clang-tidy.html#aa9ed9849cfbd20d5d95d17cf2f8dfc75',1,'run-clang-tidy']]],
   ['applydeadzone_14',['ApplyDeadZone',['../structmtgb_1_1InputConfig.html#afd92c594e07fda5437b692f44e165241',1,'mtgb::InputConfig']]],
-  ['applymemento_15',['ApplyMemento',['../classmtgb_1_1AddComponentCommand.html#a4e06c7f7bbca2aada238f3530002b91e',1,'mtgb::AddComponentCommand']]],
-  ['assetsmanager_16',['AssetsManager',['../classmtgb_1_1AssetsManager.html#a11dd24ec58acc4e5a0e47aece26e790e',1,'mtgb::AssetsManager']]],
-  ['assignavailablemonitor_17',['AssignAvailableMonitor',['../classmtgb_1_1DirectX11Manager.html#a3ab1956176b49ae8a50a80a1e9137b83',1,'mtgb::DirectX11Manager']]],
-  ['assignjoysticktoreservation_18',['AssignJoystickToReservation',['../classmtgb_1_1Input.html#aea4966166203bc6bef532b73203e6336',1,'mtgb::Input']]],
-  ['audio_19',['Audio',['../classmtgb_1_1Audio.html#aae184b0088069fde1d7ea6b0545e212c',1,'mtgb::Audio']]],
-  ['audioclip_20',['AudioClip',['../classmtgb_1_1AudioClip.html#a14b561c5c9ebdb5e0772ee6dd6608b49',1,'mtgb::AudioClip']]],
-  ['audiooneshot_21',['AudioOneShot',['../structmtgb_1_1AudioOneShot.html#a8ed7c984ca30c09bf28d198fc5565d6c',1,'mtgb::AudioOneShot']]],
-  ['autoenum_22',['AutoEnum',['../classmtgb_1_1Input.html#aaef84d631cd65557abe8d2d36f03c4f1',1,'mtgb::Input']]],
-  ['autolink_5ftest_23',['Autolink_Test',['../classAutolink__Test.html#a278d631f9943428c05b17d78f14488e2',1,'Autolink_Test']]]
+  ['applydeadzoneconstraints_15',['ApplyDeadZoneConstraints',['../classmtgb_1_1Camera.html#a9a78afe937fc43932ddb0a850e3ac02c',1,'mtgb::Camera']]],
+  ['applymemento_16',['ApplyMemento',['../classmtgb_1_1AddComponentCommand.html#a4e06c7f7bbca2aada238f3530002b91e',1,'mtgb::AddComponentCommand']]],
+  ['assetsmanager_17',['AssetsManager',['../classmtgb_1_1AssetsManager.html#a11dd24ec58acc4e5a0e47aece26e790e',1,'mtgb::AssetsManager']]],
+  ['assignavailablemonitor_18',['AssignAvailableMonitor',['../classmtgb_1_1DirectX11Manager.html#a3ab1956176b49ae8a50a80a1e9137b83',1,'mtgb::DirectX11Manager']]],
+  ['assignjoysticktoreservation_19',['AssignJoystickToReservation',['../classmtgb_1_1Input.html#aea4966166203bc6bef532b73203e6336',1,'mtgb::Input']]],
+  ['audio_20',['Audio',['../classmtgb_1_1Audio.html#aae184b0088069fde1d7ea6b0545e212c',1,'mtgb::Audio']]],
+  ['audioclip_21',['AudioClip',['../classmtgb_1_1AudioClip.html#a14b561c5c9ebdb5e0772ee6dd6608b49',1,'mtgb::AudioClip']]],
+  ['audiooneshot_22',['AudioOneShot',['../structmtgb_1_1AudioOneShot.html#a8ed7c984ca30c09bf28d198fc5565d6c',1,'mtgb::AudioOneShot']]],
+  ['autoenum_23',['AutoEnum',['../classmtgb_1_1Input.html#aaef84d631cd65557abe8d2d36f03c4f1',1,'mtgb::Input']]],
+  ['autolink_5ftest_24',['Autolink_Test',['../classAutolink__Test.html#a278d631f9943428c05b17d78f14488e2',1,'Autolink_Test']]]
 ];

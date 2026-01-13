@@ -1,5 +1,11 @@
 var NAVTREEINDEX36 =
 {
+"structmtgb_1_1Vector3.html#a7adc1bedbba5b7600a3145ce891ece4e":[3,0,7,177,13],
+"structmtgb_1_1Vector3.html#a7b24f3b31f9d20c63bd0adbe050431b1":[5,0,4,174,9],
+"structmtgb_1_1Vector3.html#a7b24f3b31f9d20c63bd0adbe050431b1":[3,0,7,177,9],
+"structmtgb_1_1Vector3.html#a7da613a1086e5e1a58950d3d93746d2b":[5,0,4,174,23],
+"structmtgb_1_1Vector3.html#a7da613a1086e5e1a58950d3d93746d2b":[3,0,7,177,23],
+"structmtgb_1_1Vector3.html#a8689eda0b6c999c880f8ebb7fe43a989":[5,0,4,174,0],
 "structmtgb_1_1Vector3.html#a8689eda0b6c999c880f8ebb7fe43a989":[3,0,7,177,0],
 "structmtgb_1_1Vector3.html#a87b712e434aacafc3a659f072b150d16":[3,0,7,177,15],
 "structmtgb_1_1Vector3.html#a87b712e434aacafc3a659f072b150d16":[5,0,4,174,15],

@@ -1,5 +1,11 @@
 var NAVTREEINDEX31 =
 {
+"namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9":[3,0,7,203],
+"namespacemtgb.html#a3d8fa5cb7e5b9d781436fca12c7ed373":[3,0,7,291],
+"namespacemtgb.html#a423927b037e9e8a0a3f441d2a4b012f4":[3,0,7,272],
+"namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b":[3,0,7,301],
+"namespacemtgb.html#a4db793b5c9051485f276693c97e7e757":[3,0,7,302],
+"namespacemtgb.html#a50105f4ff6011ac155e433de5666c823":[3,0,7,281],
 "namespacemtgb.html#a53f72979020830164fcc77403794378f":[3,0,7,305],
 "namespacemtgb.html#a55735a172a253178e6e8d0a5c3035ec2":[3,0,7,299],
 "namespacemtgb.html#a58847d90912832d24301e28d34b2702c":[3,0,7,215],
@@ -243,11 +249,5 @@ var NAVTREEINDEX31 =
 "structObject.html#a924ee0cecc906d148022b3f0d6325cfb":[5,0,53,1],
 "structPlane.html":[5,0,57],
 "structPlane.html#a338da57ef85d4d8d32d80a8674e90ab7":[5,0,57,1],
-"structPlane.html#ad4112fb458e07ef3b0a22cf5a2b8d4ae":[5,0,57,0],
-"structPlayerCollideRespawnPointEvent.html":[5,0,59],
-"structPlayerCollideRespawnPointEvent.html#a316c16f76fe5970d0ac22d87ecf0c513":[5,0,59,1],
-"structPlayerCollideRespawnPointEvent.html#abb06a4206265c3c496477f544e32eb7f":[5,0,59,0],
-"structPlayerCollideRespawnPointEvent.html#adf069a0a7f665e3b104d48aadaba8900":[5,0,59,2],
-"structPlayerFellOutEvent.html":[5,0,60],
-"structPlayerFellOutEvent.html#a54f532b66231e1e244b8373366c60cf7":[5,0,60,0]
+"structPlane.html#ad4112fb458e07ef3b0a22cf5a2b8d4ae":[5,0,57,0]
 };
