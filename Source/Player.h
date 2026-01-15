@@ -3,7 +3,7 @@
 #include "Camera.h"
 #include "IActor.h"
 #include "HPViewer.h"
-
+#include "JumpController.h"
 class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActor
 {
   public:
@@ -15,7 +15,7 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	void Start() override;
 	void ShowImGui() override;
 	void SetCamera(Camera* _pCamera);
-	// IActor ã‚’ä»‹ã—ã¦ç¶™æ‰¿ã•ã‚Œã¾ã—ãŸ
+	// IActor ç¹§å‰ƒï½»ä¹ï¼ ç¸ºï½¦é‚¯å‘ä¾¡ç¸ºè¼”ï½Œç¸ºï½¾ç¸ºåŠ±â—†
 	void OnStomped(IActor* pOther) override;
 	void OnHitSide(IActor* pOther) override;
 	void TakeDamage(int _damage) override;
@@ -47,14 +47,15 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	HPViewer* pHPViewer_;
 	// Invincible
 	// Invincibility frames
-	// –³“G‚©‚Ç‚¤‚©
+	// ç„¡æ•µã‹ã©ã†ã‹
 	bool isInvincible_;
-	// ”í’eA–³“G‚É‚È‚éŠÔ(•b)
+	// è¢«å¼¾æ™‚ã€ç„¡æ•µã«ãªã‚‹æ™‚é–“(ç§’)
 	float invincibilityTimeSec_;
-	// –³“GŠÔ’†‚ÌA•`‰æ—L–³‚ğØ‚è‘Ö‚¦‚éŠÔŠu
+	// ç„¡æ•µæ™‚é–“ä¸­ã®ã€æç”»æœ‰ç„¡ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹é–“éš”
 	float changeVisibilitySpan_;
-	// –³“G‚É‚È‚Á‚Ä‚©‚ç‚ÌŒo‰ßŠÔ
+	// ç„¡æ•µã«ãªã£ã¦ã‹ã‚‰ã®çµŒéæ™‚é–“
 	float elapsedInvincibilityTime_;
-	// •`‰æ—L–³‚ğØ‚è‘Ö‚¦‚éˆ—‚Ìƒnƒ“ƒhƒ‹
+	// æç”»æœ‰ç„¡ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹å‡¦ç†ã®ãƒãƒ³ãƒ‰ãƒ«
 	TimerHandle hTimerChangeVisibility_;
+	JumpController jumpController_;
 };

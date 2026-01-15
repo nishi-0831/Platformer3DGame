@@ -8,7 +8,7 @@
 namespace
 {
 	float speed							 = 5.0f;
-	float jumpHeight					 = 15.0f;
+	float jumpHeight					 = 5.0f;
 	const unsigned int TAKE_DAMGE_AMOUNT = 1;
 } // namespace
 
@@ -32,7 +32,7 @@ Player::Player()
 	, invincibilityTimeSec_{2.0f}
 	, changeVisibilitySpan_{0.3f}
 	, elapsedInvincibilityTime_{0.0f}
-
+	, jumpController_{GetEntityId()}
 {
 	// pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
@@ -78,7 +78,8 @@ void Player::Update()
 		{
 			if (pRigidBody_->isGround_ == true)
 			{
-				pRigidBody_->velocity_.y += jumpHeight;
+				//pRigidBody_->velocity_.y += jumpHeight;
+				jumpController_.StartJump(jumpHeight);
 				Audio::PlayOneShotFile("Sound/Jump.mp3");
 			}
 		}
