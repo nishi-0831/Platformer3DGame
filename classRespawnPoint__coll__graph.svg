@@ -378,56 +378,57 @@
 <g id="node20" class="node">
 <title>Node20</title>
 <g id="a_node20"><a xlink:href="classmtgb_1_1RigidBody.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="588,-309 588,-762 839,-762 839,-309 588,-309"/>
-<text text-anchor="middle" x="713.5" y="-750" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::RigidBody</text>
-<polyline fill="none" stroke="#666666" points="588,-743 839,-743 "/>
-<text text-anchor="start" x="596" y="-731" font-family="Helvetica,sans-Serif" font-size="10.00">+ friend RigidBodyCP</text>
-<text text-anchor="start" x="596" y="-720" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool isNeedUpdate_</text>
-<text text-anchor="start" x="596" y="-709" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool useGravity_</text>
-<text text-anchor="start" x="596" y="-698" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool isGround_</text>
-<text text-anchor="start" x="596" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool isKinematic_</text>
-<text text-anchor="start" x="596" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::function&lt; void</text>
-<text text-anchor="start" x="596" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">(const EntityId)&gt; onHit_</text>
-<text text-anchor="start" x="596" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::function&lt; void</text>
-<text text-anchor="start" x="596" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00">(const EntityId)&gt; onStay_</text>
-<text text-anchor="start" x="596" y="-632" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::function&lt; void</text>
-<text text-anchor="start" x="596" y="-621" font-family="Helvetica,sans-Serif" font-size="10.00">(const EntityId)&gt; onExit_</text>
-<polyline fill="none" stroke="#666666" points="588,-614 839,-614 "/>
-<text text-anchor="start" x="596" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ RigidBody(const EntityId</text>
-<text text-anchor="start" x="596" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
-<text text-anchor="start" x="596" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~RigidBody()</text>
-<text text-anchor="start" x="596" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ RigidBody &amp; operator</text>
-<text text-anchor="start" x="596" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">=(const RigidBody &amp;_other)</text>
-<text text-anchor="start" x="596" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ void UpdateVelocity()</text>
-<text text-anchor="start" x="596" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnGround()</text>
-<text text-anchor="start" x="596" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnPostRestore()</text>
-<text text-anchor="start" x="596" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnCollisionEnter</text>
-<text text-anchor="start" x="596" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">(const std::function</text>
-<text text-anchor="start" x="596" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void(const EntityId)</text>
-<text text-anchor="start" x="596" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">&gt; &amp;_onHit)</text>
-<text text-anchor="start" x="596" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnCollisionStay</text>
-<text text-anchor="start" x="596" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">(const std::function</text>
-<text text-anchor="start" x="596" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void(const EntityId)</text>
-<text text-anchor="start" x="596" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00">&gt; &amp;_onHit)</text>
-<text text-anchor="start" x="596" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnCollisionExit</text>
-<text text-anchor="start" x="596" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00">(const std::function</text>
-<text text-anchor="start" x="596" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void(const EntityId)</text>
-<text text-anchor="start" x="596" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00">&gt; &amp;_onExit)</text>
-<text text-anchor="start" x="596" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool IsJumping()</text>
-<text text-anchor="start" x="596" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ IComponent()</text>
-<text text-anchor="start" x="596" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ IComponent(const Entity</text>
-<text text-anchor="start" x="596" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">Id _entityId)</text>
-<text text-anchor="start" x="596" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ static Vector3 GetPushAmount</text>
-<text text-anchor="start" x="596" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">(const DirectX::BoundingSphere</text>
-<text text-anchor="start" x="596" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00"> &amp;_sphere, const DirectX::BoundingBox &amp;_aabb)</text>
+<polygon fill="white" stroke="#666666" points="588,-303.5 588,-767.5 839,-767.5 839,-303.5 588,-303.5"/>
+<text text-anchor="middle" x="713.5" y="-755.5" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::RigidBody</text>
+<polyline fill="none" stroke="#666666" points="588,-748.5 839,-748.5 "/>
+<text text-anchor="start" x="596" y="-736.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ friend RigidBodyCP</text>
+<text text-anchor="start" x="596" y="-725.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool isNeedUpdate_</text>
+<text text-anchor="start" x="596" y="-714.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool useGravity_</text>
+<text text-anchor="start" x="596" y="-703.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool isGround_</text>
+<text text-anchor="start" x="596" y="-692.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool isKinematic_</text>
+<text text-anchor="start" x="596" y="-681.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::function&lt; void</text>
+<text text-anchor="start" x="596" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const EntityId)&gt; onHit_</text>
+<text text-anchor="start" x="596" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::function&lt; void</text>
+<text text-anchor="start" x="596" y="-648.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const EntityId)&gt; onStay_</text>
+<text text-anchor="start" x="596" y="-637.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::function&lt; void</text>
+<text text-anchor="start" x="596" y="-626.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const EntityId)&gt; onExit_</text>
+<polyline fill="none" stroke="#666666" points="588,-619.5 839,-619.5 "/>
+<text text-anchor="start" x="596" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RigidBody(const EntityId</text>
+<text text-anchor="start" x="596" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
+<text text-anchor="start" x="596" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~RigidBody()</text>
+<text text-anchor="start" x="596" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RigidBody &amp; operator</text>
+<text text-anchor="start" x="596" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">=(const RigidBody &amp;_other)</text>
+<text text-anchor="start" x="596" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void UpdateVelocity()</text>
+<text text-anchor="start" x="596" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnGround()</text>
+<text text-anchor="start" x="596" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnPostRestore()</text>
+<text text-anchor="start" x="596" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnCollisionEnter</text>
+<text text-anchor="start" x="596" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const std::function</text>
+<text text-anchor="start" x="596" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void(const EntityId)</text>
+<text text-anchor="start" x="596" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">&gt; &amp;_onHit)</text>
+<text text-anchor="start" x="596" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnCollisionStay</text>
+<text text-anchor="start" x="596" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const std::function</text>
+<text text-anchor="start" x="596" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void(const EntityId)</text>
+<text text-anchor="start" x="596" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00">&gt; &amp;_onHit)</text>
+<text text-anchor="start" x="596" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnCollisionExit</text>
+<text text-anchor="start" x="596" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const std::function</text>
+<text text-anchor="start" x="596" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void(const EntityId)</text>
+<text text-anchor="start" x="596" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">&gt; &amp;_onExit)</text>
+<text text-anchor="start" x="596" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool IsJumping()</text>
+<text text-anchor="start" x="596" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ IComponent()</text>
+<text text-anchor="start" x="596" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ IComponent(const Entity</text>
+<text text-anchor="start" x="596" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">Id _entityId)</text>
+<text text-anchor="start" x="596" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ static Vector3 GetPushAmount</text>
+<text text-anchor="start" x="596" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const DirectX::BoundingSphere</text>
+<text text-anchor="start" x="596" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &amp;_sphere, const DirectX::BoundingBox &amp;_aabb)</text>
+<text text-anchor="start" x="596" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ static float GetGravity()</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node20 -->
 <g id="edge28" class="edge">
 <title>Node8&#45;&gt;Node20</title>
-<path fill="none" stroke="#404040" d="M1009.76,-1051.22C955.44,-1010.97 889.48,-953.87 847.5,-889 824.5,-853.45 804.57,-813.37 787.62,-773.31"/>
-<polygon fill="none" stroke="#404040" points="787.53,-773.1 781.53,-769.1 782.92,-762.02 788.92,-766.02 787.53,-773.1"/>
+<path fill="none" stroke="#404040" d="M1009.76,-1051.22C955.44,-1010.97 889.48,-953.87 847.5,-889 825.57,-855.11 806.43,-817.09 790,-778.9"/>
+<polygon fill="none" stroke="#404040" points="789.89,-778.64 783.87,-774.67 785.22,-767.59 791.24,-771.56 789.89,-778.64"/>
 <text text-anchor="middle" x="897" y="-910" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;pTransform_</text>
 </g>
 <!-- Node9 -->
@@ -628,7 +629,7 @@
 <!-- Node11&#45;&gt;Node20 -->
 <g id="edge26" class="edge">
 <title>Node11&#45;&gt;Node20</title>
-<path fill="none" stroke="#63b8ff" d="M713.5,-1809.37C713.5,-1648.69 713.5,-1082.62 713.5,-762.13"/>
+<path fill="none" stroke="#63b8ff" d="M713.5,-1809.43C713.5,-1649.74 713.5,-1089.03 713.5,-767.57"/>
 <polygon fill="none" stroke="#63b8ff" points="710,-1809.8 713.5,-1819.8 717,-1809.8 710,-1809.8"/>
 </g>
 <!-- Node12 -->
@@ -699,8 +700,8 @@
 <!-- Node12&#45;&gt;Node20 -->
 <g id="edge27" class="edge">
 <title>Node12&#45;&gt;Node20</title>
-<path fill="none" stroke="#404040" d="M1481.58,-1638.22C1453.44,-1530.25 1406.23,-1402.79 1328.5,-1309 1318.33,-1296.73 1307.16,-1303.67 1297.5,-1291 1198.49,-1161.24 1326.54,-1043.24 1203.5,-936 1178.69,-914.38 1089.13,-922.26 1056.5,-918 1033.25,-914.96 865.84,-903.61 847.5,-889 810.09,-859.2 783.12,-817.69 763.67,-773.6"/>
-<polygon fill="none" stroke="#404040" points="763.58,-773.38 757.55,-769.42 758.89,-762.34 764.92,-766.3 763.58,-773.38"/>
+<path fill="none" stroke="#404040" d="M1481.58,-1638.22C1453.44,-1530.25 1406.23,-1402.79 1328.5,-1309 1318.33,-1296.73 1307.16,-1303.67 1297.5,-1291 1198.49,-1161.24 1326.54,-1043.24 1203.5,-936 1178.69,-914.38 1089.13,-922.26 1056.5,-918 1033.25,-914.96 865.84,-903.61 847.5,-889 811.58,-860.38 785.29,-820.99 766.04,-778.86"/>
+<polygon fill="none" stroke="#404040" points="766,-778.79 759.93,-774.91 761.17,-767.81 767.25,-771.68 766,-778.79"/>
 <text text-anchor="middle" x="1325.5" y="-1111" font-family="Helvetica,sans-Serif" font-size="10.00"> +velocity_</text>
 </g>
 <!-- Node13 -->
@@ -873,14 +874,14 @@
 <!-- Node20&#45;&gt;Node1 -->
 <g id="edge23" class="edge">
 <title>Node20&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M713.5,-308.67C713.5,-250.53 713.5,-191.81 713.5,-146.98"/>
-<polygon fill="none" stroke="#404040" points="713.5,-146.71 709.5,-140.71 713.5,-134.71 717.5,-140.71 713.5,-146.71"/>
+<path fill="none" stroke="#404040" d="M713.5,-303.21C713.5,-246.9 713.5,-190.46 713.5,-147.04"/>
+<polygon fill="none" stroke="#404040" points="713.5,-146.86 709.5,-140.86 713.5,-134.86 717.5,-140.86 713.5,-146.86"/>
 <text text-anchor="middle" x="747.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;pRigidBody_</text>
 </g>
 <!-- Node21&#45;&gt;Node20 -->
 <g id="edge24" class="edge">
 <title>Node21&#45;&gt;Node20</title>
-<path fill="none" stroke="#63b8ff" d="M622.17,-1299.21C640.06,-1149.86 666.6,-928.14 686.47,-762.2"/>
+<path fill="none" stroke="#63b8ff" d="M622.16,-1299.32C639.84,-1151.69 665.99,-933.26 685.79,-767.93"/>
 <polygon fill="none" stroke="#63b8ff" points="618.67,-1299.04 620.95,-1309.38 625.62,-1299.87 618.67,-1299.04"/>
 </g>
 </g>

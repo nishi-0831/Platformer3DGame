@@ -24,5 +24,9 @@ var searchData=
   ['jump_5fapex_21',['JUMP_APEX',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0250ccda82757fa2f3a692226cf90b08',1,'mtgb::Camera']]],
   ['jump_5fascending_22',['JUMP_ASCENDING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0244540a9bd3943416d31b86dde18a12',1,'mtgb::Camera']]],
   ['jump_5fdescending_23',['JUMP_DESCENDING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea809e410f051d731545f04fa35e88d28c',1,'mtgb::Camera']]],
-  ['jumping_24',['JUMPING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea6de49bfda8068b7bc3b0c0e3d2e43134',1,'mtgb::Camera']]]
+  ['jumpcontroller_24',['JumpController',['../classJumpController.html#a09ce671744bf82fc3b9a21460cd41bbb',1,'JumpController::JumpController()'],['../classJumpController.html',1,'JumpController']]],
+  ['jumpcontroller_2ecpp_25',['JumpController.cpp',['../JumpController_8cpp.html',1,'']]],
+  ['jumpcontroller_2eh_26',['JumpController.h',['../JumpController_8h.html',1,'']]],
+  ['jumpcontroller_5f_27',['jumpController_',['../classPlayer.html#a32d60257133d7b82c68be6555e3a79ce',1,'Player']]],
+  ['jumping_28',['JUMPING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea6de49bfda8068b7bc3b0c0e3d2e43134',1,'mtgb::Camera']]]
 ];

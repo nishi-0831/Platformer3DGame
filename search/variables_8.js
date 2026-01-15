@@ -18,9 +18,10 @@ var searchData=
   ['highestheight_15',['highestHeight',['../classmtgb_1_1TerrainReader.html#a93212e6448fa235a4265567773a84e35',1,'mtgb::TerrainReader']]],
   ['highlightframeimage_5f_16',['highlightFrameImage_',['../classHighlightEnemy.html#a7d169f3a70bbd0c6ff3f3f9bc6a69e27',1,'HighlightEnemy']]],
   ['hmodelcollider_5f_17',['hModelCollider_',['../classmtgb_1_1TerrainReader.html#a2a4e2d45ea45eef13d543e1cf3396125',1,'mtgb::TerrainReader']]],
-  ['hp_5f_18',['hp_',['../classPlayer.html#a164d7c42c13f07b9944221a69e9f037a',1,'Player']]],
-  ['hspheremodel_5f_19',['hSphereModel_',['../classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096',1,'mtgb::Collider']]],
-  ['htimerchangevisibility_5f_20',['hTimerChangeVisibility_',['../classPlayer.html#a5e792dceee5717dedbe79746e863ac71',1,'Player']]],
-  ['hwnd_21',['hWnd',['../structmtgb_1_1JoystickReservation.html#a2baa42362f565d337b1271c092b6c939',1,'mtgb::JoystickReservation']]],
-  ['hwnd_5f_22',['hWnd_',['../classmtgb_1_1WindowResource.html#a32e0adb645c93c23d4edec8c2c90daa0',1,'mtgb::WindowResource']]]
+  ['holdtime_5f_18',['holdTime_',['../classJumpController.html#a43c85bb14531107775a41b5a3766cd93',1,'JumpController']]],
+  ['hp_5f_19',['hp_',['../classPlayer.html#a164d7c42c13f07b9944221a69e9f037a',1,'Player']]],
+  ['hspheremodel_5f_20',['hSphereModel_',['../classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096',1,'mtgb::Collider']]],
+  ['htimerchangevisibility_5f_21',['hTimerChangeVisibility_',['../classPlayer.html#a5e792dceee5717dedbe79746e863ac71',1,'Player']]],
+  ['hwnd_22',['hWnd',['../structmtgb_1_1JoystickReservation.html#a2baa42362f565d337b1271c092b6c939',1,'mtgb::JoystickReservation']]],
+  ['hwnd_5f_23',['hWnd_',['../classmtgb_1_1WindowResource.html#a32e0adb645c93c23d4edec8c2c90daa0',1,'mtgb::WindowResource']]]
 ];

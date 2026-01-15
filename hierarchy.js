@@ -308,6 +308,7 @@ var hierarchy =
     [ "mtgb::JoystickContext", "structmtgb_1_1JoystickContext.html", null ],
     [ "mtgb::JoystickProxy", "structmtgb_1_1JoystickProxy.html", null ],
     [ "mtgb::JoystickReservation", "structmtgb_1_1JoystickReservation.html", null ],
+    [ "JumpController", "classJumpController.html", null ],
     [ "mtgb::layout_box_size_order", "structmtgb_1_1layout__box__size__order.html", null ],
     [ "mtgb::LogEntry", "structmtgb_1_1LogEntry.html", null ],
     [ "mtgb::FbxParts::Material", "structmtgb_1_1FbxParts_1_1Material.html", null ],

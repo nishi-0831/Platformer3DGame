@@ -6,6 +6,7 @@ var classmtgb_1_1RigidBody =
     [ "Get", "classmtgb_1_1RigidBody.html#a931ae7565817c83a4e3c5f9004c074d5", null ],
     [ "Get", "classmtgb_1_1RigidBody.html#a4e0db1b0f0dbd3823a06ae854eacef41", null ],
     [ "GetEntityId", "classmtgb_1_1RigidBody.html#a735636df79e7cfd6336e9a97345e2b29", null ],
+    [ "GetGravity", "classmtgb_1_1RigidBody.html#a9d5dc69e7963f6ccd431e8354704ba9b", null ],
     [ "GetPushAmount", "classmtgb_1_1RigidBody.html#a7dddad9b22b35edda956a0275ed3fd7d", null ],
     [ "IComponent", "classmtgb_1_1RigidBody.html#a65f42a089e725be9599afab34ab245bb", null ],
     [ "IComponent", "classmtgb_1_1RigidBody.html#a406a6445fabe38285a6d0ecc18ea6369", null ],

@@ -60,6 +60,7 @@ var classPlayer =
     [ "invincibilityTimeSec_", "classPlayer.html#acbb3abfb79e295f7c77ac16e57d0c71b", null ],
     [ "isInvincible_", "classPlayer.html#a13a83c17ebc41b16783507ba89c67f73", null ],
     [ "isNotCalledStart_", "classPlayer.html#aee8629c2c936df1173a2f9efe7747ab9", null ],
+    [ "jumpController_", "classPlayer.html#a32d60257133d7b82c68be6555e3a79ce", null ],
     [ "layerFlag_", "classPlayer.html#af889133148e81bfcd2341b8573e5abc6", null ],
     [ "name_", "classPlayer.html#ac4f79d210ae0d1388e203d1d1b93ae6c", null ],
     [ "pCamera_", "classPlayer.html#a59ecfb3f75410d8532692550810103fc", null ],

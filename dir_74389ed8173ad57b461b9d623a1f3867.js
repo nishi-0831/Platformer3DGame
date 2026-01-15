@@ -20,6 +20,8 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "HPViewer.h", "HPViewer_8h.html", "HPViewer_8h" ],
     [ "IActor.cpp", "IActor_8cpp.html", null ],
     [ "IActor.h", "IActor_8h.html", "IActor_8h" ],
+    [ "JumpController.cpp", "JumpController_8cpp.html", null ],
+    [ "JumpController.h", "JumpController_8h.html", "JumpController_8h" ],
     [ "MovingFloor.cpp", "MovingFloor_8cpp.html", null ],
     [ "MovingFloor.generated.cpp", "MovingFloor_8generated_8cpp.html", "MovingFloor_8generated_8cpp" ],
     [ "MovingFloor.h", "MovingFloor_8h.html", "MovingFloor_8h" ],

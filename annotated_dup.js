@@ -262,6 +262,7 @@ var annotated_dup =
     [ "Inspector", "classInspector.html", "classInspector" ],
     [ "ISerializableObject", "classISerializableObject.html", "classISerializableObject" ],
     [ "Javadoc_Test", "classJavadoc__Test.html", "classJavadoc__Test" ],
+    [ "JumpController", "classJumpController.html", "classJumpController" ],
     [ "MatrixShow", "structMatrixShow.html", "structMatrixShow" ],
     [ "Memgrp_Test", "classMemgrp__Test.html", "classMemgrp__Test" ],
     [ "MovingFloor", "classMovingFloor.html", "classMovingFloor" ],
