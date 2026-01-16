@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Player.h"
-#include "Camera.h"
+#include "QuaternionCamera.h"
 #include "ActorManager.h"
 #include "ResultScene.h"
 #include "GameEvents.h"
@@ -23,9 +23,9 @@ Player::Player()
 	, pTransform_{Component<Transform>()}
 	, pCollider_{Component<Collider>()}
 	, pMeshRenderer_{Component<MeshRenderer>()}
-	, pRigidBody_{Component<RigidBody>()}
-	, pCamera_{Instantiate<Camera>(this)}
-	, pCameraTransform_{&Transform::Get(pCamera_->GetEntityId())}
+	, pRigidBody_{Component<RigidBody>()} //, pCamera_{Instantiate<Camera>(this)}
+	, pNewCamera_{Instantiate<QuaternionCamera>(GetEntityId())}
+	, pCameraTransform_{&Transform::Get(pNewCamera_->GetEntityId())}
 	, hp_{3}
 	, pHPViewer_{nullptr}
 	, isInvincible_{false}
@@ -50,7 +50,7 @@ Player::Player()
 
 	displayName_ = name_;
 
-	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
+	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pNewCamera_);
 
 	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
 
@@ -84,7 +84,7 @@ void Player::Update()
 		}
 		UpdateRotate();
 	}
-	pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
+	// pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
 
 	state_.Update();
 
@@ -243,7 +243,7 @@ void Player::ShowImGui()
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
 }
 
-void Player::SetCamera(Camera* _pCamera)
+void Player::SetCamera(SphericalCamera* _pCamera)
 {
 }
 

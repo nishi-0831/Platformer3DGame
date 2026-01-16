@@ -89,6 +89,16 @@ namespace mtgb
 			return DirectX::XMQuaternionRotationRollPitchYaw(_vec.x, _vec.y, _vec.z);
 		}
 		/// <summary>
+		/// 軸に対する回転を取得
+		/// </summary>
+		/// <param name="_angleRad">回転角度(ラジアン)</param>
+		/// <param name="_vec">回転軸</param>
+		/// <returns></returns>
+		static Quaternion AngleAxis(float _angleRad, const Vector3& _vec)
+		{
+			return DirectX::XMQuaternionRotationNormal(Vector3::Normalize(_vec), _angleRad);
+		}
+		/// <summary>
 		/// 逆四元数/共役を取得
 		/// </summary>
 		/// <returns>逆四元数</returns>

@@ -3,12 +3,12 @@
 
 namespace mtgb
 {
-	class Camera : public GameObject
+	class SphericalCamera : public GameObject
 	{
 	  public:
 		// Camera();
-		Camera(GameObject* _pGameObj);
-		~Camera();
+		SphericalCamera(GameObject* _pGameObj);
+		~SphericalCamera();
 
 		void Update() override;
 		void Draw() const override;

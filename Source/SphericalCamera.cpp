@@ -1,4 +1,4 @@
-#include "Camera.h"
+#include "SphericalCamera.h"
 
 namespace
 {
@@ -32,7 +32,7 @@ float EaseOutCirc(float x)
 	return std::sqrtf(1.0f - std::powf(x - 1.0f, 2.0f));
 }
 
-mtgb::Camera::Camera(GameObject* _pGameObj)
+mtgb::SphericalCamera::SphericalCamera(GameObject* _pGameObj)
 	: GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName("Camera").Build())
 	, isGrounded_{true}
 	, inputType_{InputType::JOYPAD}
@@ -123,11 +123,11 @@ mtgb::Camera::Camera(GameObject* _pGameObj)
 		);
 }
 
-mtgb::Camera::~Camera()
+mtgb::SphericalCamera::~SphericalCamera()
 {
 }
 
-void mtgb::Camera::Update()
+void mtgb::SphericalCamera::Update()
 {
 	if (pTargetTransform_ == nullptr)
 		return;
@@ -159,11 +159,11 @@ void mtgb::Camera::Update()
 	MoveCameraSpherical(distance_);
 }
 
-void mtgb::Camera::Draw() const
+void mtgb::SphericalCamera::Draw() const
 {
 }
 
-void mtgb::Camera::DoOrbit()
+void mtgb::SphericalCamera::DoOrbit()
 {
 	Vector3 movement;
 
@@ -201,13 +201,13 @@ void mtgb::Camera::DoOrbit()
 	}
 }
 
-void mtgb::Camera::SetFollowMode(bool _isGrounded, const Vector3& _targetVelocity)
+void mtgb::SphericalCamera::SetFollowMode(bool _isGrounded, const Vector3& _targetVelocity)
 {
 	isGrounded_			 = _isGrounded;
 	targetVelocityCache_ = _targetVelocity;
 }
 
-bool mtgb::Camera::IsTargetOffScreen() const
+bool mtgb::SphericalCamera::IsTargetOffScreen() const
 {
 	if (pTargetTransform_ == nullptr || pCameraTransform_ == nullptr)
 		return false;
@@ -222,7 +222,7 @@ bool mtgb::Camera::IsTargetOffScreen() const
 	return (normalizedY >= 1.0f) || (normalizedY <= 0.0f) || (normalizedX >= 1.0f) || (normalizedX <= 0.0f);
 }
 
-void mtgb::Camera::MoveCameraSpherical(float _distance)
+void mtgb::SphericalCamera::MoveCameraSpherical(float _distance)
 {
 	if (pTargetTransform_ == nullptr)
 		return;

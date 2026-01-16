@@ -2,7 +2,6 @@
 #include "SampleScene.h"
 #include "../mtgb/Box3D.h"
 #include "../Source/StageManager.h"
-#include "../Source/Camera.h"
 #include "../Source/Player.h"
 #include "../Source/ScoreViewer.h"
 #include "../Source/ResultScene.h"
