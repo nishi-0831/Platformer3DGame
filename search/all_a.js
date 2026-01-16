@@ -9,7 +9,7 @@ var searchData=
   ['joypad_6',['JOYPAD',['../namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234',1,'mtgb']]],
   ['joystatecurrent_5f_7',['joyStateCurrent_',['../classmtgb_1_1InputData.html#adaffd86f7528c4d04bb6eb5ec020fbdf',1,'mtgb::InputData']]],
   ['joystateprevious_5f_8',['joyStatePrevious_',['../classmtgb_1_1InputData.html#aa26af3c4e14d74a9e05d4adc74654776',1,'mtgb::InputData']]],
-  ['joystickcontext_9',['JoystickContext',['../structmtgb_1_1JoystickContext.html#acf470ac9d7f7cf6695f9283d0ca30bcf',1,'mtgb::JoystickContext::JoystickContext(ComPtr&lt; IDirectInputDevice8 &gt; _device)'],['../structmtgb_1_1JoystickContext.html#a50a95b41b84ddc66c1b1f3e746c2e33e',1,'mtgb::JoystickContext::JoystickContext()'],['../structmtgb_1_1JoystickContext.html',1,'mtgb::JoystickContext']]],
+  ['joystickcontext_9',['JoystickContext',['../structmtgb_1_1JoystickContext.html#a50a95b41b84ddc66c1b1f3e746c2e33e',1,'mtgb::JoystickContext::JoystickContext()'],['../structmtgb_1_1JoystickContext.html#acf470ac9d7f7cf6695f9283d0ca30bcf',1,'mtgb::JoystickContext::JoystickContext(ComPtr&lt; IDirectInputDevice8 &gt; _device)'],['../structmtgb_1_1JoystickContext.html',1,'mtgb::JoystickContext']]],
   ['joystickcontext_5f_10',['joystickContext_',['../classmtgb_1_1Input.html#a7e019521a9bddfdd0784d7da6a68ce86',1,'mtgb::Input']]],
   ['joystickproxy_11',['JoystickProxy',['../structmtgb_1_1JoystickProxy.html#aab3b03829abb55b2fbbbb098c555afdc',1,'mtgb::JoystickProxy::JoystickProxy()'],['../structmtgb_1_1JoystickProxy.html',1,'mtgb::JoystickProxy']]],
   ['joystickproxy_2ecpp_12',['JoystickProxy.cpp',['../JoystickProxy_8cpp.html',1,'']]],
@@ -21,12 +21,12 @@ var searchData=
   ['jsonconverter_2ecpp_18',['JsonConverter.cpp',['../JsonConverter_8cpp.html',1,'']]],
   ['jsonconverter_2eh_19',['JsonConverter.h',['../JsonConverter_8h.html',1,'']]],
   ['jump_20',['JUMP',['../classPlayer.html#ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b',1,'Player']]],
-  ['jump_5fapex_21',['JUMP_APEX',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0250ccda82757fa2f3a692226cf90b08',1,'mtgb::Camera']]],
-  ['jump_5fascending_22',['JUMP_ASCENDING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea0244540a9bd3943416d31b86dde18a12',1,'mtgb::Camera']]],
-  ['jump_5fdescending_23',['JUMP_DESCENDING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea809e410f051d731545f04fa35e88d28c',1,'mtgb::Camera']]],
+  ['jump_5fapex_21',['JUMP_APEX',['../classmtgb_1_1QuaternionCamera.html#add8f973334dff97ff7664c78db0a96bda0250ccda82757fa2f3a692226cf90b08',1,'mtgb::QuaternionCamera::JUMP_APEX()'],['../classmtgb_1_1SphericalCamera.html#acdd96adeadf5902ca6e9ddab5a90b26ca0250ccda82757fa2f3a692226cf90b08',1,'mtgb::SphericalCamera::JUMP_APEX()']]],
+  ['jump_5fascending_22',['JUMP_ASCENDING',['../classmtgb_1_1QuaternionCamera.html#add8f973334dff97ff7664c78db0a96bda0244540a9bd3943416d31b86dde18a12',1,'mtgb::QuaternionCamera::JUMP_ASCENDING()'],['../classmtgb_1_1SphericalCamera.html#acdd96adeadf5902ca6e9ddab5a90b26ca0244540a9bd3943416d31b86dde18a12',1,'mtgb::SphericalCamera::JUMP_ASCENDING()']]],
+  ['jump_5fdescending_23',['JUMP_DESCENDING',['../classmtgb_1_1QuaternionCamera.html#add8f973334dff97ff7664c78db0a96bda809e410f051d731545f04fa35e88d28c',1,'mtgb::QuaternionCamera::JUMP_DESCENDING()'],['../classmtgb_1_1SphericalCamera.html#acdd96adeadf5902ca6e9ddab5a90b26ca809e410f051d731545f04fa35e88d28c',1,'mtgb::SphericalCamera::JUMP_DESCENDING()']]],
   ['jumpcontroller_24',['JumpController',['../classJumpController.html#a09ce671744bf82fc3b9a21460cd41bbb',1,'JumpController::JumpController()'],['../classJumpController.html',1,'JumpController']]],
   ['jumpcontroller_2ecpp_25',['JumpController.cpp',['../JumpController_8cpp.html',1,'']]],
   ['jumpcontroller_2eh_26',['JumpController.h',['../JumpController_8h.html',1,'']]],
   ['jumpcontroller_5f_27',['jumpController_',['../classPlayer.html#a32d60257133d7b82c68be6555e3a79ce',1,'Player']]],
-  ['jumping_28',['JUMPING',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bea6de49bfda8068b7bc3b0c0e3d2e43134',1,'mtgb::Camera']]]
+  ['jumping_28',['JUMPING',['../classmtgb_1_1QuaternionCamera.html#add8f973334dff97ff7664c78db0a96bda6de49bfda8068b7bc3b0c0e3d2e43134',1,'mtgb::QuaternionCamera::JUMPING()'],['../classmtgb_1_1SphericalCamera.html#acdd96adeadf5902ca6e9ddab5a90b26ca6de49bfda8068b7bc3b0c0e3d2e43134',1,'mtgb::SphericalCamera::JUMPING()']]]
 ];

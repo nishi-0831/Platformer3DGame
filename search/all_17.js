@@ -1,8 +1,8 @@
 var searchData=
 [
   ['w_0',['W',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a61e9c06ea9a85a5088a499df6458d276',1,'W():&#160;InputKeyCode.h'],['../structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992',1,'mtgb::Quaternion::W() const'],['../structmtgb_1_1Quaternion.html#a7afbdbc739d85ee451a37cd345427ac2',1,'mtgb::Quaternion::W()']]],
-  ['wait_1',['WAIT',['../classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498ad5cc6a0064b5c25ba37826aa3fda910c',1,'PatrolChargerEnemy']]],
-  ['wait_2',['Wait',['../classPatrolChargerEnemy.html#a7af8a1d24439f3fc5a4e90c21ec9f51e',1,'PatrolChargerEnemy']]],
+  ['wait_1',['Wait',['../classPatrolChargerEnemy.html#a7af8a1d24439f3fc5a4e90c21ec9f51e',1,'PatrolChargerEnemy']]],
+  ['wait_2',['WAIT',['../classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498ad5cc6a0064b5c25ba37826aa3fda910c',1,'PatrolChargerEnemy']]],
   ['waitframe_3',['WaitFrame',['../classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53',1,'mtgb::Time']]],
   ['waitframe_5f_4',['waitFrame_',['../classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad',1,'mtgb::Time']]],
   ['waittime_5f_5',['waitTime_',['../classPatrolChargerEnemy.html#ad7a69752dcdc509d547b1f3d9836a1ea',1,'PatrolChargerEnemy']]],

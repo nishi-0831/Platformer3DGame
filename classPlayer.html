@@ -111,13 +111,13 @@ $(document).ready(function(){initNavTree('classPlayer.html',''); initResizable()
 <div class="dynheader">
 Player の継承関係図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPlayer__inherit__graph.svg" width="730" height="1512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPlayer__inherit__graph.svg" width="730" height="1527"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Player 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPlayer__coll__graph.svg" width="2462" height="4562"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPlayer__coll__graph.svg" width="2462" height="4591"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -136,8 +136,8 @@ Player 連携図</div>
 <tr class="memitem:a67f1604a70559c6862e9fb498a8e623d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a67f1604a70559c6862e9fb498a8e623d">ShowImGui</a> () override</td></tr>
 <tr class="memdesc:a67f1604a70559c6862e9fb498a8e623d"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定した表示キューに積まれる  <br /></td></tr>
 <tr class="separator:a67f1604a70559c6862e9fb498a8e623d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab384bfb90ee74ff60da0e9c9970a26dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ab384bfb90ee74ff60da0e9c9970a26dd">SetCamera</a> (<a class="el" href="classmtgb_1_1Camera.html">Camera</a> *_pCamera)</td></tr>
-<tr class="separator:ab384bfb90ee74ff60da0e9c9970a26dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50bd634742064475c3311122c883c67f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a50bd634742064475c3311122c883c67f">SetCamera</a> (<a class="el" href="classmtgb_1_1SphericalCamera.html">SphericalCamera</a> *_pCamera)</td></tr>
+<tr class="separator:a50bd634742064475c3311122c883c67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39bc5a53a1d99b73c9c355adbadfadf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a39bc5a53a1d99b73c9c355adbadfadf0">OnStomped</a> (<a class="el" href="classIActor.html">IActor</a> *pOther) override</td></tr>
 <tr class="separator:a39bc5a53a1d99b73c9c355adbadfadf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9f248179a5afe16f94c802d24920338"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ae9f248179a5afe16f94c802d24920338">OnHitSide</a> (<a class="el" href="classIActor.html">IActor</a> *pOther) override</td></tr>
@@ -273,8 +273,10 @@ Player 連携図</div>
 <tr class="separator:a8a4065c77f06591f9f515ac416f9b1d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8d3fd73cec8a39a14b118f21c0a2a7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1RigidBody.html">RigidBody</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ae8d3fd73cec8a39a14b118f21c0a2a7d">pRigidBody_</a></td></tr>
 <tr class="separator:ae8d3fd73cec8a39a14b118f21c0a2a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59ecfb3f75410d8532692550810103fc"><td class="memItemLeft" align="right" valign="top">Camera *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a59ecfb3f75410d8532692550810103fc">pCamera_</a></td></tr>
-<tr class="separator:a59ecfb3f75410d8532692550810103fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb831c230114ecb8e52bcae5a9378fb4"><td class="memItemLeft" align="right" valign="top">QuaternionCamera *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#afb831c230114ecb8e52bcae5a9378fb4">pNewCamera_</a></td></tr>
+<tr class="separator:afb831c230114ecb8e52bcae5a9378fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec8d227199bb8cd8a90605f651cde733"><td class="memItemLeft" align="right" valign="top">SphericalCamera *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#aec8d227199bb8cd8a90605f651cde733">pCamera_</a></td></tr>
+<tr class="separator:aec8d227199bb8cd8a90605f651cde733"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7948c8bd24a5cddbe0bf1448a11c0171"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmtgb_1_1Transform.html">Transform</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a7948c8bd24a5cddbe0bf1448a11c0171">pCameraTransform_</a></td></tr>
 <tr class="separator:a7948c8bd24a5cddbe0bf1448a11c0171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e0a55b14c7055e7f91f958035100c86"><td class="memItemLeft" align="right" valign="top">std::optional&lt; FbxAnimationController &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a6e0a55b14c7055e7f91f958035100c86">animController_</a></td></tr>
@@ -300,7 +302,7 @@ Player 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00007">7</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00008">8</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">列挙型メンバ詳解</h2>
 <a id="ad93c54e92318d7c7abb43d424154f019" name="ad93c54e92318d7c7abb43d424154f019"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad93c54e92318d7c7abb43d424154f019">&#9670;&#160;</a></span>STATE</h2>
@@ -330,15 +332,15 @@ Player 連携図</div>
 <tr><td class="fieldname"><a id="ad93c54e92318d7c7abb43d424154f019ae0651864a549515538cb104b7b32e75d" name="ad93c54e92318d7c7abb43d424154f019ae0651864a549515538cb104b7b32e75d"></a>VICTORY&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00029">29</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>    {</div>
-<div class="line"><span class="lineno">   31</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019aa5daf7f2ebbba4975d61dab1c40188c7">IDLE</a>,</div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a855520d2a5b0b1a64b939e7e30889e2a">RUN</a>,</div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b">JUMP</a>,</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a479ab1b75080105c17b10096543dc8c5">FALL</a>,</div>
-<div class="line"><span class="lineno">   35</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52">DYING</a>,</div>
-<div class="line"><span class="lineno">   36</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019ae0651864a549515538cb104b7b32e75d">VICTORY</a></div>
-<div class="line"><span class="lineno">   37</span>    };</div>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019aa5daf7f2ebbba4975d61dab1c40188c7">IDLE</a>,</div>
+<div class="line"><span class="lineno">   33</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a855520d2a5b0b1a64b939e7e30889e2a">RUN</a>,</div>
+<div class="line"><span class="lineno">   34</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b">JUMP</a>,</div>
+<div class="line"><span class="lineno">   35</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a479ab1b75080105c17b10096543dc8c5">FALL</a>,</div>
+<div class="line"><span class="lineno">   36</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52">DYING</a>,</div>
+<div class="line"><span class="lineno">   37</span>        <a class="code hl_enumvalue" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019ae0651864a549515538cb104b7b32e75d">VICTORY</a></div>
+<div class="line"><span class="lineno">   38</span>    };</div>
 <div class="ttc" id="aclassPlayer_html_ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b"><div class="ttname"><a href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b">Player::STATE::JUMP</a></div><div class="ttdeci">@ JUMP</div></div>
 <div class="ttc" id="aclassPlayer_html_ad93c54e92318d7c7abb43d424154f019a479ab1b75080105c17b10096543dc8c5"><div class="ttname"><a href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a479ab1b75080105c17b10096543dc8c5">Player::STATE::FALL</a></div><div class="ttdeci">@ FALL</div></div>
 <div class="ttc" id="aclassPlayer_html_ad93c54e92318d7c7abb43d424154f019a855520d2a5b0b1a64b939e7e30889e2a"><div class="ttname"><a href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a855520d2a5b0b1a64b939e7e30889e2a">Player::STATE::RUN</a></div><div class="ttdeci">@ RUN</div></div>
@@ -375,9 +377,9 @@ Player 連携図</div>
 <div class="line"><span class="lineno">   23</span>    , <a class="code hl_variable" href="classPlayer.html#a8af32a474c38d7640cf4e419a3c20de5">pTransform_</a>{Component&lt;Transform&gt;()}</div>
 <div class="line"><span class="lineno">   24</span>    , <a class="code hl_variable" href="classPlayer.html#a09bab9e09b5868c95e1f5011d4e9adf6">pCollider_</a>{Component&lt;Collider&gt;()}</div>
 <div class="line"><span class="lineno">   25</span>    , <a class="code hl_variable" href="classPlayer.html#a8a4065c77f06591f9f515ac416f9b1d0">pMeshRenderer_</a>{Component&lt;MeshRenderer&gt;()}</div>
-<div class="line"><span class="lineno">   26</span>    , <a class="code hl_variable" href="classPlayer.html#ae8d3fd73cec8a39a14b118f21c0a2a7d">pRigidBody_</a>{Component&lt;RigidBody&gt;()}</div>
-<div class="line"><span class="lineno">   27</span>    , <a class="code hl_variable" href="classPlayer.html#a59ecfb3f75410d8532692550810103fc">pCamera_</a>{Instantiate&lt;Camera&gt;(<span class="keyword">this</span>)}</div>
-<div class="line"><span class="lineno">   28</span>    , <a class="code hl_variable" href="classPlayer.html#a7948c8bd24a5cddbe0bf1448a11c0171">pCameraTransform_</a>{&amp;Transform::Get(<a class="code hl_variable" href="classPlayer.html#a59ecfb3f75410d8532692550810103fc">pCamera_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">GetEntityId</a>())}</div>
+<div class="line"><span class="lineno">   26</span>    , <a class="code hl_variable" href="classPlayer.html#ae8d3fd73cec8a39a14b118f21c0a2a7d">pRigidBody_</a>{Component&lt;RigidBody&gt;()} <span class="comment">//, pCamera_{Instantiate&lt;Camera&gt;(this)}</span></div>
+<div class="line"><span class="lineno">   27</span>    , <a class="code hl_variable" href="classPlayer.html#afb831c230114ecb8e52bcae5a9378fb4">pNewCamera_</a>{Instantiate&lt;QuaternionCamera&gt;(<a class="code hl_function" href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">GetEntityId</a>())}</div>
+<div class="line"><span class="lineno">   28</span>    , <a class="code hl_variable" href="classPlayer.html#a7948c8bd24a5cddbe0bf1448a11c0171">pCameraTransform_</a>{&amp;Transform::Get(<a class="code hl_variable" href="classPlayer.html#afb831c230114ecb8e52bcae5a9378fb4">pNewCamera_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">GetEntityId</a>())}</div>
 <div class="line"><span class="lineno">   29</span>    , <a class="code hl_variable" href="classPlayer.html#a164d7c42c13f07b9944221a69e9f037a">hp_</a>{3}</div>
 <div class="line"><span class="lineno">   30</span>    , <a class="code hl_variable" href="classPlayer.html#a8850a98a5257b33644844ddfc4c5d555">pHPViewer_</a>{<span class="keyword">nullptr</span>}</div>
 <div class="line"><span class="lineno">   31</span>    , <a class="code hl_variable" href="classPlayer.html#a13a83c17ebc41b16783507ba89c67f73">isInvincible_</a>{<span class="keyword">false</span>}</div>
@@ -402,7 +404,7 @@ Player 連携図</div>
 <div class="line"><span class="lineno">   50</span> </div>
 <div class="line"><span class="lineno">   51</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiShowable.html#a53eca55c2c3901c5713e857417100496">displayName_</a> = <a class="code hl_variable" href="classmtgb_1_1GameObject.html#ac4f79d210ae0d1388e203d1d1b93ae6c">name_</a>;</div>
 <div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    <a class="code hl_typedef" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> hCamera = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;RegisterCameraGameObject(<a class="code hl_variable" href="classPlayer.html#a59ecfb3f75410d8532692550810103fc">pCamera_</a>);</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_typedef" href="namespacemtgb.html#a6b7e58c2cf357b2a33701393679b1d09">CameraHandleInScene</a> hCamera = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;RegisterCameraGameObject(<a class="code hl_variable" href="classPlayer.html#afb831c230114ecb8e52bcae5a9378fb4">pNewCamera_</a>);</div>
 <div class="line"><span class="lineno">   54</span> </div>
 <div class="line"><span class="lineno">   55</span>    WinCtxRes::Get&lt;CameraResource&gt;(WindowContext::First).SetHCamera(hCamera);</div>
 <div class="line"><span class="lineno">   56</span> </div>
@@ -417,22 +419,22 @@ Player 連携図</div>
 <div class="line"><span class="lineno">   65</span>    );</div>
 <div class="line"><span class="lineno">   66</span>}</div>
 <div class="ttc" id="aclassIActor_html_a7571abb01b0c367ed0b321bdf4c392d6"><div class="ttname"><a href="classIActor.html#a7571abb01b0c367ed0b321bdf4c392d6">IActor::IActor</a></div><div class="ttdeci">IActor()=delete</div></div>
-<div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00007">Player.h:8</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a09bab9e09b5868c95e1f5011d4e9adf6"><div class="ttname"><a href="classPlayer.html#a09bab9e09b5868c95e1f5011d4e9adf6">Player::pCollider_</a></div><div class="ttdeci">Collider * pCollider_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00040">Player.h:40</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a13a83c17ebc41b16783507ba89c67f73"><div class="ttname"><a href="classPlayer.html#a13a83c17ebc41b16783507ba89c67f73">Player::isInvincible_</a></div><div class="ttdeci">bool isInvincible_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00051">Player.h:51</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a164d7c42c13f07b9944221a69e9f037a"><div class="ttname"><a href="classPlayer.html#a164d7c42c13f07b9944221a69e9f037a">Player::hp_</a></div><div class="ttdeci">int hp_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00046">Player.h:46</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a32d60257133d7b82c68be6555e3a79ce"><div class="ttname"><a href="classPlayer.html#a32d60257133d7b82c68be6555e3a79ce">Player::jumpController_</a></div><div class="ttdeci">JumpController jumpController_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00060">Player.h:60</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a59ecfb3f75410d8532692550810103fc"><div class="ttname"><a href="classPlayer.html#a59ecfb3f75410d8532692550810103fc">Player::pCamera_</a></div><div class="ttdeci">Camera * pCamera_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00043">Player.h:43</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a7948c8bd24a5cddbe0bf1448a11c0171"><div class="ttname"><a href="classPlayer.html#a7948c8bd24a5cddbe0bf1448a11c0171">Player::pCameraTransform_</a></div><div class="ttdeci">const Transform * pCameraTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00044">Player.h:44</a></div></div>
+<div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00008">Player.h:9</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a09bab9e09b5868c95e1f5011d4e9adf6"><div class="ttname"><a href="classPlayer.html#a09bab9e09b5868c95e1f5011d4e9adf6">Player::pCollider_</a></div><div class="ttdeci">Collider * pCollider_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00041">Player.h:41</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a13a83c17ebc41b16783507ba89c67f73"><div class="ttname"><a href="classPlayer.html#a13a83c17ebc41b16783507ba89c67f73">Player::isInvincible_</a></div><div class="ttdeci">bool isInvincible_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00053">Player.h:53</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a164d7c42c13f07b9944221a69e9f037a"><div class="ttname"><a href="classPlayer.html#a164d7c42c13f07b9944221a69e9f037a">Player::hp_</a></div><div class="ttdeci">int hp_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00048">Player.h:48</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a32d60257133d7b82c68be6555e3a79ce"><div class="ttname"><a href="classPlayer.html#a32d60257133d7b82c68be6555e3a79ce">Player::jumpController_</a></div><div class="ttdeci">JumpController jumpController_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00062">Player.h:62</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a7948c8bd24a5cddbe0bf1448a11c0171"><div class="ttname"><a href="classPlayer.html#a7948c8bd24a5cddbe0bf1448a11c0171">Player::pCameraTransform_</a></div><div class="ttdeci">const Transform * pCameraTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00046">Player.h:46</a></div></div>
 <div class="ttc" id="aclassPlayer_html_a80fcab0539c8df52bfc931b0762e2307"><div class="ttname"><a href="classPlayer.html#a80fcab0539c8df52bfc931b0762e2307">Player::OnCollisionEnter</a></div><div class="ttdeci">void OnCollisionEnter(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00317">Player.cpp:317</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a8850a98a5257b33644844ddfc4c5d555"><div class="ttname"><a href="classPlayer.html#a8850a98a5257b33644844ddfc4c5d555">Player::pHPViewer_</a></div><div class="ttdeci">HPViewer * pHPViewer_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00047">Player.h:47</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a8a4065c77f06591f9f515ac416f9b1d0"><div class="ttname"><a href="classPlayer.html#a8a4065c77f06591f9f515ac416f9b1d0">Player::pMeshRenderer_</a></div><div class="ttdeci">MeshRenderer * pMeshRenderer_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00041">Player.h:41</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a8af32a474c38d7640cf4e419a3c20de5"><div class="ttname"><a href="classPlayer.html#a8af32a474c38d7640cf4e419a3c20de5">Player::pTransform_</a></div><div class="ttdeci">Transform * pTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00039">Player.h:39</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a8d086ab892906df0ca3f36dbbb22901e"><div class="ttname"><a href="classPlayer.html#a8d086ab892906df0ca3f36dbbb22901e">Player::state_</a></div><div class="ttdeci">mtstat::MTStat&lt; STATE &gt; state_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00038">Player.h:38</a></div></div>
-<div class="ttc" id="aclassPlayer_html_aa9f4de43c134443bff5ddad0fd795cdc"><div class="ttname"><a href="classPlayer.html#aa9f4de43c134443bff5ddad0fd795cdc">Player::changeVisibilitySpan_</a></div><div class="ttdeci">float changeVisibilitySpan_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00055">Player.h:55</a></div></div>
-<div class="ttc" id="aclassPlayer_html_ab592336bdd67e26e002e22e702b7d198"><div class="ttname"><a href="classPlayer.html#ab592336bdd67e26e002e22e702b7d198">Player::elapsedInvincibilityTime_</a></div><div class="ttdeci">float elapsedInvincibilityTime_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00057">Player.h:57</a></div></div>
-<div class="ttc" id="aclassPlayer_html_acbb3abfb79e295f7c77ac16e57d0c71b"><div class="ttname"><a href="classPlayer.html#acbb3abfb79e295f7c77ac16e57d0c71b">Player::invincibilityTimeSec_</a></div><div class="ttdeci">float invincibilityTimeSec_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00053">Player.h:53</a></div></div>
-<div class="ttc" id="aclassPlayer_html_ae8d3fd73cec8a39a14b118f21c0a2a7d"><div class="ttname"><a href="classPlayer.html#ae8d3fd73cec8a39a14b118f21c0a2a7d">Player::pRigidBody_</a></div><div class="ttdeci">RigidBody * pRigidBody_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00042">Player.h:42</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a8850a98a5257b33644844ddfc4c5d555"><div class="ttname"><a href="classPlayer.html#a8850a98a5257b33644844ddfc4c5d555">Player::pHPViewer_</a></div><div class="ttdeci">HPViewer * pHPViewer_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00049">Player.h:49</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a8a4065c77f06591f9f515ac416f9b1d0"><div class="ttname"><a href="classPlayer.html#a8a4065c77f06591f9f515ac416f9b1d0">Player::pMeshRenderer_</a></div><div class="ttdeci">MeshRenderer * pMeshRenderer_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00042">Player.h:42</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a8af32a474c38d7640cf4e419a3c20de5"><div class="ttname"><a href="classPlayer.html#a8af32a474c38d7640cf4e419a3c20de5">Player::pTransform_</a></div><div class="ttdeci">Transform * pTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00040">Player.h:40</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a8d086ab892906df0ca3f36dbbb22901e"><div class="ttname"><a href="classPlayer.html#a8d086ab892906df0ca3f36dbbb22901e">Player::state_</a></div><div class="ttdeci">mtstat::MTStat&lt; STATE &gt; state_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00039">Player.h:39</a></div></div>
+<div class="ttc" id="aclassPlayer_html_aa9f4de43c134443bff5ddad0fd795cdc"><div class="ttname"><a href="classPlayer.html#aa9f4de43c134443bff5ddad0fd795cdc">Player::changeVisibilitySpan_</a></div><div class="ttdeci">float changeVisibilitySpan_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00057">Player.h:57</a></div></div>
+<div class="ttc" id="aclassPlayer_html_ab592336bdd67e26e002e22e702b7d198"><div class="ttname"><a href="classPlayer.html#ab592336bdd67e26e002e22e702b7d198">Player::elapsedInvincibilityTime_</a></div><div class="ttdeci">float elapsedInvincibilityTime_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00059">Player.h:59</a></div></div>
+<div class="ttc" id="aclassPlayer_html_acbb3abfb79e295f7c77ac16e57d0c71b"><div class="ttname"><a href="classPlayer.html#acbb3abfb79e295f7c77ac16e57d0c71b">Player::invincibilityTimeSec_</a></div><div class="ttdeci">float invincibilityTimeSec_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00055">Player.h:55</a></div></div>
+<div class="ttc" id="aclassPlayer_html_ae8d3fd73cec8a39a14b118f21c0a2a7d"><div class="ttname"><a href="classPlayer.html#ae8d3fd73cec8a39a14b118f21c0a2a7d">Player::pRigidBody_</a></div><div class="ttdeci">RigidBody * pRigidBody_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00043">Player.h:43</a></div></div>
+<div class="ttc" id="aclassPlayer_html_afb831c230114ecb8e52bcae5a9378fb4"><div class="ttname"><a href="classPlayer.html#afb831c230114ecb8e52bcae5a9378fb4">Player::pNewCamera_</a></div><div class="ttdeci">QuaternionCamera * pNewCamera_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00044">Player.h:44</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html_a31cbcdf00d33fe152a900e95867075ad"><div class="ttname"><a href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">mtgb::Collider::colliderType_</a></div><div class="ttdeci">ColliderType colliderType_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00092">Collider.h:92</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html_a5e61e476c9d384d64ccaac909a02a360"><div class="ttname"><a href="classmtgb_1_1Collider.html#a5e61e476c9d384d64ccaac909a02a360">mtgb::Collider::SetRadius</a></div><div class="ttdeci">void SetRadius(float _radius)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00372">Collider.cpp:372</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Entity_html_a6cc5a321c4352e0a78ba6350d80f1cc6"><div class="ttname"><a href="classmtgb_1_1Entity.html#a6cc5a321c4352e0a78ba6350d80f1cc6">mtgb::Entity::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="Entity_8h_source.html#l00030">Entity.h:30</a></div></div>
@@ -1175,7 +1177,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html_ae4cb4e8c99cfae50150e86f1f1450acc"><div class="ttname"><a href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">mtgb::Vector3::Normalize</a></div><div class="ttdeci">Vector3 &amp; Normalize()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00103">Vector3.h:103</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Transform_8cpp_source.html#l00110">mtgb::Transform::GenerateWorldRotationMatrix()</a>, <a class="el" href="InputData_8cpp_source.html#l00214">mtgb::InputUtil::GetAxis()</a>, <a class="el" href="InputData_8cpp_source.html#l00017">mtgb::InputUtil::GetKey()</a>, <a class="el" href="Vector3_8h_source.html#l00103">mtgb::Vector3::Normalize()</a>, <a class="el" href="Player_8h_source.html#l00044">pCameraTransform_</a>, <a class="el" href="Vector2T_8h_source.html#l00040">mtgb::Vector2T&lt; T &gt;::Size()</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>, <a class="el" href="Vector3_8h_source.html#l00116">mtgb::Vector3::Zero()</a>.</p>
+<p class="reference">参照先 <a class="el" href="Transform_8cpp_source.html#l00110">mtgb::Transform::GenerateWorldRotationMatrix()</a>, <a class="el" href="InputData_8cpp_source.html#l00214">mtgb::InputUtil::GetAxis()</a>, <a class="el" href="InputData_8cpp_source.html#l00017">mtgb::InputUtil::GetKey()</a>, <a class="el" href="Vector3_8h_source.html#l00103">mtgb::Vector3::Normalize()</a>, <a class="el" href="Player_8h_source.html#l00046">pCameraTransform_</a>, <a class="el" href="Vector2T_8h_source.html#l00040">mtgb::Vector2T&lt; T &gt;::Size()</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>, <a class="el" href="Vector3_8h_source.html#l00116">mtgb::Vector3::Zero()</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00106">InitializeState()</a>, <a class="el" href="Player_8cpp_source.html#l00286">UpdatePosition()</a>, <a class="el" href="Player_8cpp_source.html#l00309">UpdateRotate()</a>.</p>
 <div class="dynheader">
@@ -1485,14 +1487,14 @@ template&lt;typename GameSceneT &gt; </div>
 <div class="line"><span class="lineno">  226</span>            }</div>
 <div class="line"><span class="lineno">  227</span>        );</div>
 <div class="line"><span class="lineno">  228</span>}</div>
-<div class="ttc" id="aclassPlayer_html_a6e0a55b14c7055e7f91f958035100c86"><div class="ttname"><a href="classPlayer.html#a6e0a55b14c7055e7f91f958035100c86">Player::animController_</a></div><div class="ttdeci">std::optional&lt; FbxAnimationController &gt; animController_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00045">Player.h:45</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a6e0a55b14c7055e7f91f958035100c86"><div class="ttname"><a href="classPlayer.html#a6e0a55b14c7055e7f91f958035100c86">Player::animController_</a></div><div class="ttdeci">std::optional&lt; FbxAnimationController &gt; animController_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00047">Player.h:47</a></div></div>
 <div class="ttc" id="aclassPlayer_html_afb382e07f77c9ccf410a19220a5c9fc7"><div class="ttname"><a href="classPlayer.html#afb382e07f77c9ccf410a19220a5c9fc7">Player::GetMoveDir</a></div><div class="ttdeci">Vector3 GetMoveDir()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00251">Player.cpp:251</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Fbx_html_a6b02a66b44f2e9171da72e4c2632032e"><div class="ttname"><a href="classmtgb_1_1Fbx.html#a6b02a66b44f2e9171da72e4c2632032e">mtgb::Fbx::GetAnimationController</a></div><div class="ttdeci">static std::optional&lt; FbxAnimationController &gt; GetAnimationController(FBXModelHandle _hModel)</div><div class="ttdef"><b>Definition:</b> <a href="Fbx_8cpp_source.html#l00071">Fbx.cpp:71</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1RigidBody_html_a557e03afdd4b7f4cb0b46d810b8dd348"><div class="ttname"><a href="classmtgb_1_1RigidBody.html#a557e03afdd4b7f4cb0b46d810b8dd348">mtgb::RigidBody::isGround_</a></div><div class="ttdeci">bool isGround_</div><div class="ttdef"><b>Definition:</b> <a href="RigidBody_8h_source.html#l00048">RigidBody.h:48</a></div></div>
 <div class="ttc" id="aclassmtstat_1_1MTStat_html_ab0f1a7a6931657e1198033629ec33013"><div class="ttname"><a href="classmtstat_1_1MTStat.html#ab0f1a7a6931657e1198033629ec33013">mtstat::MTStat::OnAnyUpdate</a></div><div class="ttdeci">MTStat &amp; OnAnyUpdate(const std::function&lt; void()&gt; &amp;_callback)</div><div class="ttdef"><b>Definition:</b> <a href="MTStat_8h_source.html#l00131">MTStat.h:131</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html_a7da613a1086e5e1a58950d3d93746d2b"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a7da613a1086e5e1a58950d3d93746d2b">mtgb::Vector3::Size</a></div><div class="ttdeci">float Size() const</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00098">Vector3.h:98</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Player_8h_source.html#l00045">animController_</a>, <a class="el" href="MTStat_8h_source.html#l00192">mtstat::MTStat&lt; StatEnumT &gt;::Change()</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52">DYING</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a479ab1b75080105c17b10096543dc8c5">FALL</a>, <a class="el" href="Fbx_8cpp_source.html#l00071">mtgb::Fbx::GetAnimationController()</a>, <a class="el" href="Player_8cpp_source.html#l00251">GetMoveDir()</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019aa5daf7f2ebbba4975d61dab1c40188c7">IDLE</a>, <a class="el" href="RigidBody_8h_source.html#l00048">mtgb::RigidBody::isGround_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b">JUMP</a>, <a class="el" href="MTAssert_8h_source.html#l00053">massert</a>, <a class="el" href="MeshRenderer_8h_source.html#l00073">mtgb::MeshRenderer::meshHandle</a>, <a class="el" href="MTStat_8h_source.html#l00131">mtstat::MTStat&lt; StatEnumT &gt;::OnAnyUpdate()</a>, <a class="el" href="Player_8h_source.html#l00041">pMeshRenderer_</a>, <a class="el" href="Player_8h_source.html#l00042">pRigidBody_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a855520d2a5b0b1a64b939e7e30889e2a">RUN</a>, <a class="el" href="Vector3_8h_source.html#l00098">mtgb::Vector3::Size()</a>, <a class="el" href="Player_8h_source.html#l00038">state_</a>, <a class="el" href="RigidBody_8h_source.html#l00045">mtgb::RigidBody::velocity_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019ae0651864a549515538cb104b7b32e75d">VICTORY</a> (計19項目).</p>
+<p class="reference">参照先 <a class="el" href="Player_8h_source.html#l00047">animController_</a>, <a class="el" href="MTStat_8h_source.html#l00192">mtstat::MTStat&lt; StatEnumT &gt;::Change()</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52">DYING</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a479ab1b75080105c17b10096543dc8c5">FALL</a>, <a class="el" href="Fbx_8cpp_source.html#l00071">mtgb::Fbx::GetAnimationController()</a>, <a class="el" href="Player_8cpp_source.html#l00251">GetMoveDir()</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019aa5daf7f2ebbba4975d61dab1c40188c7">IDLE</a>, <a class="el" href="RigidBody_8h_source.html#l00048">mtgb::RigidBody::isGround_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b">JUMP</a>, <a class="el" href="MTAssert_8h_source.html#l00053">massert</a>, <a class="el" href="MeshRenderer_8h_source.html#l00073">mtgb::MeshRenderer::meshHandle</a>, <a class="el" href="MTStat_8h_source.html#l00131">mtstat::MTStat&lt; StatEnumT &gt;::OnAnyUpdate()</a>, <a class="el" href="Player_8h_source.html#l00042">pMeshRenderer_</a>, <a class="el" href="Player_8h_source.html#l00043">pRigidBody_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019a855520d2a5b0b1a64b939e7e30889e2a">RUN</a>, <a class="el" href="Vector3_8h_source.html#l00098">mtgb::Vector3::Size()</a>, <a class="el" href="Player_8h_source.html#l00039">state_</a>, <a class="el" href="RigidBody_8h_source.html#l00045">mtgb::RigidBody::velocity_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019ae0651864a549515538cb104b7b32e75d">VICTORY</a> (計19項目).</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00234">Start()</a>.</p>
 <div class="dynheader">
@@ -1712,7 +1714,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html"><div class="ttname"><a href="classmtgb_1_1Transform.html">mtgb::Transform</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00016">Transform.h:17</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html_a71231187095137f6dd753ef9450bc18b"><div class="ttname"><a href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">mtgb::Transform::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00151">Transform.h:151</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="classIActor.html#a845bfb24adda93e04b0b7da351bd857c">IActor::OnHitSide()</a>, <a class="el" href="classIActor.html#ae067c10617dd748d7e53c27ddf5d1f94">IActor::OnStomped()</a>, <a class="el" href="Transform_8h_source.html#l00151">mtgb::Transform::position</a>, <a class="el" href="Player_8h_source.html#l00039">pTransform_</a>.</p>
+<p class="reference">参照先 <a class="el" href="classIActor.html#a845bfb24adda93e04b0b7da351bd857c">IActor::OnHitSide()</a>, <a class="el" href="classIActor.html#ae067c10617dd748d7e53c27ddf5d1f94">IActor::OnStomped()</a>, <a class="el" href="Transform_8h_source.html#l00151">mtgb::Transform::position</a>, <a class="el" href="Player_8h_source.html#l00040">pTransform_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1847,8 +1849,8 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="ab384bfb90ee74ff60da0e9c9970a26dd" name="ab384bfb90ee74ff60da0e9c9970a26dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab384bfb90ee74ff60da0e9c9970a26dd">&#9670;&#160;</a></span>SetCamera()</h2>
+<a id="a50bd634742064475c3311122c883c67f" name="a50bd634742064475c3311122c883c67f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50bd634742064475c3311122c883c67f">&#9670;&#160;</a></span>SetCamera()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1856,7 +1858,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
         <tr>
           <td class="memname">void Player::SetCamera </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classmtgb_1_1Camera.html">Camera</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classmtgb_1_1SphericalCamera.html">SphericalCamera</a> *&#160;</td>
           <td class="paramname"><em>_pCamera</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1953,7 +1955,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00036">MTImGui.h:36</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_a7c0d4dec0a129e459a5dd5ff6c7c6d0c"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a7c0d4dec0a129e459a5dd5ff6c7c6d0c">mtgb::MTImGui::ShowComponents</a></div><div class="ttdeci">void ShowComponents(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00339">MTImGui.cpp:339</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Entity_8h_source.html#l00030">mtgb::Entity::entityId_</a>, <a class="el" href="MTImGui_8h_source.html#l00036">mtgb::MTImGui::Instance()</a>, <a class="el" href="RigidBody_8h_source.html#l00048">mtgb::RigidBody::isGround_</a>, <a class="el" href="Player_8h_source.html#l00042">pRigidBody_</a>, <a class="el" href="MTImGui_8cpp_source.html#l00339">mtgb::MTImGui::ShowComponents()</a>.</p>
+<p class="reference">参照先 <a class="el" href="Entity_8h_source.html#l00030">mtgb::Entity::entityId_</a>, <a class="el" href="MTImGui_8h_source.html#l00036">mtgb::MTImGui::Instance()</a>, <a class="el" href="RigidBody_8h_source.html#l00048">mtgb::RigidBody::isGround_</a>, <a class="el" href="Player_8h_source.html#l00043">pRigidBody_</a>, <a class="el" href="MTImGui_8cpp_source.html#l00339">mtgb::MTImGui::ShowComponents()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1996,7 +1998,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="line"><span class="lineno">  239</span>}</div>
 <div class="ttc" id="aclassPlayer_html_ae193410ca1549f1245a9064f0c2fe473"><div class="ttname"><a href="classPlayer.html#ae193410ca1549f1245a9064f0c2fe473">Player::InitializeState</a></div><div class="ttdeci">void InitializeState()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00106">Player.cpp:106</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTStat_8h_source.html#l00192">mtstat::MTStat&lt; StatEnumT &gt;::Change()</a>, <a class="el" href="Player_8h_source.html#l00046">hp_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019aa5daf7f2ebbba4975d61dab1c40188c7">IDLE</a>, <a class="el" href="Player_8cpp_source.html#l00106">InitializeState()</a>, <a class="el" href="Player_8h_source.html#l00047">pHPViewer_</a>, <a class="el" href="Player_8h_source.html#l00038">state_</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTStat_8h_source.html#l00192">mtstat::MTStat&lt; StatEnumT &gt;::Change()</a>, <a class="el" href="Player_8h_source.html#l00048">hp_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019aa5daf7f2ebbba4975d61dab1c40188c7">IDLE</a>, <a class="el" href="Player_8cpp_source.html#l00106">InitializeState()</a>, <a class="el" href="Player_8h_source.html#l00049">pHPViewer_</a>, <a class="el" href="Player_8h_source.html#l00039">state_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2065,14 +2067,14 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="line"><span class="lineno">  378</span>        <span class="keyword">true</span> <span class="comment">// firstCall: 即座に処理を呼ぶ</span></div>
 <div class="line"><span class="lineno">  379</span>    );</div>
 <div class="line"><span class="lineno">  380</span>}</div>
-<div class="ttc" id="aclassPlayer_html_a5e792dceee5717dedbe79746e863ac71"><div class="ttname"><a href="classPlayer.html#a5e792dceee5717dedbe79746e863ac71">Player::hTimerChangeVisibility_</a></div><div class="ttdeci">TimerHandle hTimerChangeVisibility_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00059">Player.h:59</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a5e792dceee5717dedbe79746e863ac71"><div class="ttname"><a href="classPlayer.html#a5e792dceee5717dedbe79746e863ac71">Player::hTimerChangeVisibility_</a></div><div class="ttdeci">TimerHandle hTimerChangeVisibility_</div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00061">Player.h:61</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1HPViewer_html_aa7c92f4630fa34da04a29731767bf348"><div class="ttname"><a href="classmtgb_1_1HPViewer.html#aa7c92f4630fa34da04a29731767bf348">mtgb::HPViewer::TakeDamage</a></div><div class="ttdeci">void TakeDamage(int _damage)</div><div class="ttdef"><b>Definition:</b> <a href="HPViewer_8cpp_source.html#l00042">HPViewer.cpp:42</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IRenderable_html_a635a1917f3a135b9933041bde5077610"><div class="ttname"><a href="classmtgb_1_1IRenderable.html#a635a1917f3a135b9933041bde5077610">mtgb::IRenderable::enabled_</a></div><div class="ttdeci">bool enabled_</div><div class="ttdef"><b>Definition:</b> <a href="IRenderable_8h_source.html#l00045">IRenderable.h:45</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Timer_html_a627588bc1e9abd685afa4bc49e223617"><div class="ttname"><a href="classmtgb_1_1Timer.html#a627588bc1e9abd685afa4bc49e223617">mtgb::Timer::AddInterval</a></div><div class="ttdeci">static TimerHandle AddInterval(const float _time, const std::function&lt; void()&gt; &amp;_callback, const bool _firstCall=false)</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8cpp_source.html#l00011">Timer.cpp:11</a></div></div>
 <div class="ttc" id="astructPlayerHpReachedZeroEvent_html"><div class="ttname"><a href="structPlayerHpReachedZeroEvent.html">PlayerHpReachedZeroEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="GameEvents_8h_source.html#l00009">GameEvents.h:10</a></div></div>
 <div class="ttc" id="astructPlayerHpReachedZeroEvent_html_a21157d4ad99cc4fa02cbe0e866e5d868"><div class="ttname"><a href="structPlayerHpReachedZeroEvent.html#a21157d4ad99cc4fa02cbe0e866e5d868">PlayerHpReachedZeroEvent::playerEntityId</a></div><div class="ttdeci">mtgb::EntityId playerEntityId</div><div class="ttdef"><b>Definition:</b> <a href="GameEvents_8h_source.html#l00011">GameEvents.h:11</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Timer_8cpp_source.html#l00011">mtgb::Timer::AddInterval()</a>, <a class="el" href="MTStat_8h_source.html#l00192">mtstat::MTStat&lt; StatEnumT &gt;::Change()</a>, <a class="el" href="Player_8h_source.html#l00055">changeVisibilitySpan_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52">DYING</a>, <a class="el" href="IRenderable_8h_source.html#l00045">mtgb::IRenderable::enabled_</a>, <a class="el" href="Entity_8h_source.html#l00024">mtgb::Entity::GetEntityId()</a>, <a class="el" href="Player_8h_source.html#l00046">hp_</a>, <a class="el" href="Player_8h_source.html#l00059">hTimerChangeVisibility_</a>, <a class="el" href="Player_8h_source.html#l00051">isInvincible_</a>, <a class="el" href="Player_8h_source.html#l00047">pHPViewer_</a>, <a class="el" href="GameEvents_8h_source.html#l00011">PlayerHpReachedZeroEvent::playerEntityId</a>, <a class="el" href="Player_8h_source.html#l00041">pMeshRenderer_</a>, <a class="el" href="Player_8h_source.html#l00042">pRigidBody_</a>, <a class="el" href="Player_8h_source.html#l00038">state_</a>, <a class="el" href="HPViewer_8cpp_source.html#l00042">mtgb::HPViewer::TakeDamage()</a>, <a class="el" href="RigidBody_8h_source.html#l00045">mtgb::RigidBody::velocity_</a>, <a class="el" href="Vector3_8h_source.html#l00116">mtgb::Vector3::Zero()</a> (計17項目).</p>
+<p class="reference">参照先 <a class="el" href="Timer_8cpp_source.html#l00011">mtgb::Timer::AddInterval()</a>, <a class="el" href="MTStat_8h_source.html#l00192">mtstat::MTStat&lt; StatEnumT &gt;::Change()</a>, <a class="el" href="Player_8h_source.html#l00057">changeVisibilitySpan_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52">DYING</a>, <a class="el" href="IRenderable_8h_source.html#l00045">mtgb::IRenderable::enabled_</a>, <a class="el" href="Entity_8h_source.html#l00024">mtgb::Entity::GetEntityId()</a>, <a class="el" href="Player_8h_source.html#l00048">hp_</a>, <a class="el" href="Player_8h_source.html#l00061">hTimerChangeVisibility_</a>, <a class="el" href="Player_8h_source.html#l00053">isInvincible_</a>, <a class="el" href="Player_8h_source.html#l00049">pHPViewer_</a>, <a class="el" href="GameEvents_8h_source.html#l00011">PlayerHpReachedZeroEvent::playerEntityId</a>, <a class="el" href="Player_8h_source.html#l00042">pMeshRenderer_</a>, <a class="el" href="Player_8h_source.html#l00043">pRigidBody_</a>, <a class="el" href="Player_8h_source.html#l00039">state_</a>, <a class="el" href="HPViewer_8cpp_source.html#l00042">mtgb::HPViewer::TakeDamage()</a>, <a class="el" href="RigidBody_8h_source.html#l00045">mtgb::RigidBody::velocity_</a>, <a class="el" href="Vector3_8h_source.html#l00116">mtgb::Vector3::Zero()</a> (計17項目).</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -2116,14 +2118,14 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="line"><span class="lineno">   78</span>        {</div>
 <div class="line"><span class="lineno">   79</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classPlayer.html#ae8d3fd73cec8a39a14b118f21c0a2a7d">pRigidBody_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1RigidBody.html#a557e03afdd4b7f4cb0b46d810b8dd348">isGround_</a> == <span class="keyword">true</span>)</div>
 <div class="line"><span class="lineno">   80</span>            {</div>
-<div class="line"><span class="lineno">   81</span>                <span class="comment">//pRigidBody_-&gt;velocity_.y += jumpHeight;</span></div>
+<div class="line"><span class="lineno">   81</span>                <span class="comment">// pRigidBody_-&gt;velocity_.y += jumpHeight;</span></div>
 <div class="line"><span class="lineno">   82</span>                <a class="code hl_variable" href="classPlayer.html#a32d60257133d7b82c68be6555e3a79ce">jumpController_</a>.<a class="code hl_function" href="classJumpController.html#a8844a598b1b9e791569ba84a04222dac">StartJump</a>(jumpHeight);</div>
 <div class="line"><span class="lineno">   83</span>                <a class="code hl_function" href="classmtgb_1_1Audio.html#a0035ef6351544d6bd6627a29876c6203">Audio::PlayOneShotFile</a>(<span class="stringliteral">&quot;Sound/Jump.mp3&quot;</span>);</div>
 <div class="line"><span class="lineno">   84</span>            }</div>
 <div class="line"><span class="lineno">   85</span>        }</div>
 <div class="line"><span class="lineno">   86</span>        <a class="code hl_function" href="classPlayer.html#a0629cc55debe2d9f9a1f5615e04063f4">UpdateRotate</a>();</div>
 <div class="line"><span class="lineno">   87</span>    }</div>
-<div class="line"><span class="lineno">   88</span>    <a class="code hl_variable" href="classPlayer.html#a59ecfb3f75410d8532692550810103fc">pCamera_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Camera.html#a4b88760a7bdb3cecd530bb3a4f6703e0">SetFollowMode</a>(<a class="code hl_variable" href="classPlayer.html#ae8d3fd73cec8a39a14b118f21c0a2a7d">pRigidBody_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1RigidBody.html#a557e03afdd4b7f4cb0b46d810b8dd348">isGround_</a>, <a class="code hl_variable" href="classPlayer.html#ae8d3fd73cec8a39a14b118f21c0a2a7d">pRigidBody_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1RigidBody.html#a99215f31052ddd330d3e25908e5d4ed3">velocity_</a>);</div>
+<div class="line"><span class="lineno">   88</span>    <span class="comment">// pCamera_-&gt;SetFollowMode(pRigidBody_-&gt;isGround_, pRigidBody_-&gt;velocity_);</span></div>
 <div class="line"><span class="lineno">   89</span> </div>
 <div class="line"><span class="lineno">   90</span>    <a class="code hl_variable" href="classPlayer.html#a8d086ab892906df0ca3f36dbbb22901e">state_</a>.<a class="code hl_function" href="classmtstat_1_1MTStat.html#aedb4cd2b6d039d904f2d4b55c178e031">Update</a>();</div>
 <div class="line"><span class="lineno">   91</span> </div>
@@ -2144,7 +2146,6 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="ttc" id="aclassPlayer_html_a0629cc55debe2d9f9a1f5615e04063f4"><div class="ttname"><a href="classPlayer.html#a0629cc55debe2d9f9a1f5615e04063f4">Player::UpdateRotate</a></div><div class="ttdeci">void UpdateRotate()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00309">Player.cpp:309</a></div></div>
 <div class="ttc" id="aclassPlayer_html_aa055a70690c66e3fd9949358fccadd5c"><div class="ttname"><a href="classPlayer.html#aa055a70690c66e3fd9949358fccadd5c">Player::UpdatePosition</a></div><div class="ttdeci">void UpdatePosition()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00286">Player.cpp:286</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Audio_html_a0035ef6351544d6bd6627a29876c6203"><div class="ttname"><a href="classmtgb_1_1Audio.html#a0035ef6351544d6bd6627a29876c6203">mtgb::Audio::PlayOneShotFile</a></div><div class="ttdeci">static void PlayOneShotFile(const std::string &amp;_fileName)</div><div class="ttdoc">音声ファイルのバッファを直再生する</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00190">Audio.cpp:190</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Camera_html_a4b88760a7bdb3cecd530bb3a4f6703e0"><div class="ttname"><a href="classmtgb_1_1Camera.html#a4b88760a7bdb3cecd530bb3a4f6703e0">mtgb::Camera::SetFollowMode</a></div><div class="ttdeci">void SetFollowMode(bool _isGrounded, const Vector3 &amp;_targetVelocity)</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8cpp_source.html#l00226">Camera.cpp:226</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1InputUtil_html_a4dade03e3bbb665d967f7411d82b8d94"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1InputUtil_html_abcc52de1fac55087716b6e03816d4e13"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#abcc52de1fac55087716b6e03816d4e13">mtgb::InputUtil::GetGamePadDown</a></div><div class="ttdeci">static const bool GetGamePadDown(const PadCode _padButtonCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00118">InputData.cpp:118</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Time_html_a65abdc2a0dc82415c4d4ff372815973d"><div class="ttname"><a href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">mtgb::Time::DeltaTimeF</a></div><div class="ttdeci">static const float DeltaTimeF()</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00025">GameTime.h:25</a></div></div>
@@ -2152,11 +2153,11 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="ttc" id="aclassmtstat_1_1MTStat_html_a1213990a8cf5f5d32236862b53e5b8f7"><div class="ttname"><a href="classmtstat_1_1MTStat.html#a1213990a8cf5f5d32236862b53e5b8f7">mtstat::MTStat::Current</a></div><div class="ttdeci">const StatEnumT Current() const</div><div class="ttdef"><b>Definition:</b> <a href="MTStat_8h_source.html#l00067">MTStat.h:67</a></div></div>
 <div class="ttc" id="aclassmtstat_1_1MTStat_html_aedb4cd2b6d039d904f2d4b55c178e031"><div class="ttname"><a href="classmtstat_1_1MTStat.html#aedb4cd2b6d039d904f2d4b55c178e031">mtstat::MTStat::Update</a></div><div class="ttdeci">void Update() const</div><div class="ttdef"><b>Definition:</b> <a href="MTStat_8h_source.html#l00180">MTStat.h:180</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTStat_8h_source.html#l00067">mtstat::MTStat&lt; StatEnumT &gt;::Current()</a>, <a class="el" href="GameTime_8h_source.html#l00025">mtgb::Time::DeltaTimeF()</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52">DYING</a>, <a class="el" href="Player_8h_source.html#l00057">elapsedInvincibilityTime_</a>, <a class="el" href="IRenderable_8h_source.html#l00045">mtgb::IRenderable::enabled_</a>, <a class="el" href="InputData_8cpp_source.html#l00118">mtgb::InputUtil::GetGamePadDown()</a>, <a class="el" href="InputData_8cpp_source.html#l00028">mtgb::InputUtil::GetKeyDown()</a>, <a class="el" href="Player_8h_source.html#l00059">hTimerChangeVisibility_</a>, <a class="el" href="Player_8h_source.html#l00053">invincibilityTimeSec_</a>, <a class="el" href="RigidBody_8h_source.html#l00048">mtgb::RigidBody::isGround_</a>, <a class="el" href="Player_8h_source.html#l00051">isInvincible_</a>, <a class="el" href="Player_8h_source.html#l00060">jumpController_</a>, <a class="el" href="Player_8h_source.html#l00043">pCamera_</a>, <a class="el" href="Audio_8cpp_source.html#l00190">mtgb::Audio::PlayOneShotFile()</a>, <a class="el" href="Player_8h_source.html#l00041">pMeshRenderer_</a>, <a class="el" href="Player_8h_source.html#l00042">pRigidBody_</a>, <a class="el" href="Timer_8cpp_source.html#l00019">mtgb::Timer::Remove()</a>, <a class="el" href="Camera_8cpp_source.html#l00226">mtgb::Camera::SetFollowMode()</a>, <a class="el" href="JumpController_8cpp_source.html#l00032">JumpController::StartJump()</a>, <a class="el" href="Player_8h_source.html#l00038">state_</a>, <a class="el" href="MTStat_8h_source.html#l00180">mtstat::MTStat&lt; StatEnumT &gt;::Update()</a>, <a class="el" href="Player_8cpp_source.html#l00286">UpdatePosition()</a>, <a class="el" href="Player_8cpp_source.html#l00309">UpdateRotate()</a>, <a class="el" href="RigidBody_8h_source.html#l00045">mtgb::RigidBody::velocity_</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019ae0651864a549515538cb104b7b32e75d">VICTORY</a> (計25項目).</p>
+<p class="reference">参照先 <a class="el" href="MTStat_8h_source.html#l00067">mtstat::MTStat&lt; StatEnumT &gt;::Current()</a>, <a class="el" href="GameTime_8h_source.html#l00025">mtgb::Time::DeltaTimeF()</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52">DYING</a>, <a class="el" href="Player_8h_source.html#l00059">elapsedInvincibilityTime_</a>, <a class="el" href="IRenderable_8h_source.html#l00045">mtgb::IRenderable::enabled_</a>, <a class="el" href="InputData_8cpp_source.html#l00118">mtgb::InputUtil::GetGamePadDown()</a>, <a class="el" href="InputData_8cpp_source.html#l00028">mtgb::InputUtil::GetKeyDown()</a>, <a class="el" href="Player_8h_source.html#l00061">hTimerChangeVisibility_</a>, <a class="el" href="Player_8h_source.html#l00055">invincibilityTimeSec_</a>, <a class="el" href="RigidBody_8h_source.html#l00048">mtgb::RigidBody::isGround_</a>, <a class="el" href="Player_8h_source.html#l00053">isInvincible_</a>, <a class="el" href="Player_8h_source.html#l00062">jumpController_</a>, <a class="el" href="Audio_8cpp_source.html#l00190">mtgb::Audio::PlayOneShotFile()</a>, <a class="el" href="Player_8h_source.html#l00042">pMeshRenderer_</a>, <a class="el" href="Player_8h_source.html#l00043">pRigidBody_</a>, <a class="el" href="Timer_8cpp_source.html#l00019">mtgb::Timer::Remove()</a>, <a class="el" href="JumpController_8cpp_source.html#l00032">JumpController::StartJump()</a>, <a class="el" href="Player_8h_source.html#l00039">state_</a>, <a class="el" href="MTStat_8h_source.html#l00180">mtstat::MTStat&lt; StatEnumT &gt;::Update()</a>, <a class="el" href="Player_8cpp_source.html#l00286">UpdatePosition()</a>, <a class="el" href="Player_8cpp_source.html#l00309">UpdateRotate()</a>, <a class="el" href="classPlayer.html#ad93c54e92318d7c7abb43d424154f019ae0651864a549515538cb104b7b32e75d">VICTORY</a> (計22項目).</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPlayer_a5e17be3418fa0ac0192c05efaf3dc8bd_cgraph.svg" width="1156" height="839"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPlayer_a5e17be3418fa0ac0192c05efaf3dc8bd_cgraph.svg" width="1148" height="790"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -2208,7 +2209,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="line"><span class="lineno">  306</span>    }</div>
 <div class="line"><span class="lineno">  307</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Player_8cpp_source.html#l00251">GetMoveDir()</a>, <a class="el" href="Player_8h_source.html#l00042">pRigidBody_</a>, <a class="el" href="Vector3_8h_source.html#l00098">mtgb::Vector3::Size()</a>, <a class="el" href="RigidBody_8h_source.html#l00045">mtgb::RigidBody::velocity_</a>.</p>
+<p class="reference">参照先 <a class="el" href="Player_8cpp_source.html#l00251">GetMoveDir()</a>, <a class="el" href="Player_8h_source.html#l00043">pRigidBody_</a>, <a class="el" href="Vector3_8h_source.html#l00098">mtgb::Vector3::Size()</a>, <a class="el" href="RigidBody_8h_source.html#l00045">mtgb::RigidBody::velocity_</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>.</p>
 <div class="dynheader">
@@ -2260,7 +2261,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="ttc" id="astructmtgb_1_1Quaternion_html_a8ad5c00bfbfe1bd05b3d3ae721ba57a4"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a8ad5c00bfbfe1bd05b3d3ae721ba57a4">mtgb::Quaternion::LookRotation</a></div><div class="ttdeci">static Quaternion LookRotation(const Vector3 &amp;_dir, const Vector3 &amp;_upVec)</div><div class="ttdoc">ある方向への回転を取得する</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8cpp_source.html#l00005">Quaternion.cpp:5</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html_ac8decf652b52e10bac464e25319bbe31"><div class="ttname"><a href="structmtgb_1_1Vector3.html#ac8decf652b52e10bac464e25319bbe31">mtgb::Vector3::Up</a></div><div class="ttdeci">static auto Up()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00127">Vector3.h:127</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Player_8cpp_source.html#l00251">GetMoveDir()</a>, <a class="el" href="Quaternion_8cpp_source.html#l00005">mtgb::Quaternion::LookRotation()</a>, <a class="el" href="Player_8h_source.html#l00039">pTransform_</a>, <a class="el" href="Transform_8h_source.html#l00155">mtgb::Transform::rotate</a>, <a class="el" href="Vector3_8h_source.html#l00098">mtgb::Vector3::Size()</a>, <a class="el" href="Vector3_8h_source.html#l00127">mtgb::Vector3::Up()</a>.</p>
+<p class="reference">参照先 <a class="el" href="Player_8cpp_source.html#l00251">GetMoveDir()</a>, <a class="el" href="Quaternion_8cpp_source.html#l00005">mtgb::Quaternion::LookRotation()</a>, <a class="el" href="Player_8h_source.html#l00040">pTransform_</a>, <a class="el" href="Transform_8h_source.html#l00155">mtgb::Transform::rotate</a>, <a class="el" href="Vector3_8h_source.html#l00098">mtgb::Vector3::Size()</a>, <a class="el" href="Vector3_8h_source.html#l00127">mtgb::Vector3::Up()</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>.</p>
 <div class="dynheader">
@@ -2299,7 +2300,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00045">45</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00047">47</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00106">InitializeState()</a>.</p>
 
@@ -2325,7 +2326,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00055">55</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00057">57</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00348">TakeDamage()</a>.</p>
 
@@ -2401,7 +2402,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00057">57</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00059">59</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>.</p>
 
@@ -2453,7 +2454,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00046">46</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00048">48</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00234">Start()</a>, <a class="el" href="Player_8cpp_source.html#l00348">TakeDamage()</a>.</p>
 
@@ -2479,7 +2480,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00059">59</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00061">61</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00348">TakeDamage()</a>, <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>.</p>
 
@@ -2531,7 +2532,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00053">53</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00055">55</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>.</p>
 
@@ -2557,7 +2558,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00051">51</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00053">53</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00348">TakeDamage()</a>, <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>.</p>
 
@@ -2609,7 +2610,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00060">60</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00062">62</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>.</p>
 
@@ -2667,8 +2668,8 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="a59ecfb3f75410d8532692550810103fc" name="a59ecfb3f75410d8532692550810103fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59ecfb3f75410d8532692550810103fc">&#9670;&#160;</a></span>pCamera_</h2>
+<a id="aec8d227199bb8cd8a90605f651cde733" name="aec8d227199bb8cd8a90605f651cde733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec8d227199bb8cd8a90605f651cde733">&#9670;&#160;</a></span>pCamera_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2677,7 +2678,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Camera* Player::pCamera_</td>
+          <td class="memname">SphericalCamera* Player::pCamera_</td>
         </tr>
       </table>
   </td>
@@ -2687,9 +2688,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00043">43</a> 行目に定義があります。</p>
-
-<p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>.</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00045">45</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2713,7 +2712,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00044">44</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00046">46</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00251">GetMoveDir()</a>.</p>
 
@@ -2739,7 +2738,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00041">41</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2763,7 +2762,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00047">47</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00049">49</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00234">Start()</a>, <a class="el" href="Player_8cpp_source.html#l00348">TakeDamage()</a>.</p>
 
@@ -2789,9 +2788,33 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00041">41</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00042">42</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00106">InitializeState()</a>, <a class="el" href="Player_8cpp_source.html#l00348">TakeDamage()</a>, <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>.</p>
+
+</div>
+</div>
+<a id="afb831c230114ecb8e52bcae5a9378fb4" name="afb831c230114ecb8e52bcae5a9378fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb831c230114ecb8e52bcae5a9378fb4">&#9670;&#160;</a></span>pNewCamera_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QuaternionCamera* Player::pNewCamera_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00044">44</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2815,7 +2838,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00042">42</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00043">43</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00106">InitializeState()</a>, <a class="el" href="Player_8cpp_source.html#l00241">ShowImGui()</a>, <a class="el" href="Player_8cpp_source.html#l00348">TakeDamage()</a>, <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>, <a class="el" href="Player_8cpp_source.html#l00286">UpdatePosition()</a>.</p>
 
@@ -2841,7 +2864,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00039">39</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00040">40</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00317">OnCollisionEnter()</a>, <a class="el" href="Player_8cpp_source.html#l00309">UpdateRotate()</a>.</p>
 
@@ -2891,7 +2914,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Player_8h_source.html">Player.h</a> の <a class="el" href="Player_8h_source.html#l00039">39</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="Player_8cpp_source.html#l00106">InitializeState()</a>, <a class="el" href="Player_8cpp_source.html#l00234">Start()</a>, <a class="el" href="Player_8cpp_source.html#l00348">TakeDamage()</a>, <a class="el" href="Player_8cpp_source.html#l00072">Update()</a>.</p>
 

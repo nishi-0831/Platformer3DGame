@@ -1,0 +1,23 @@
+var NAVTREEINDEX37 =
+{
+"structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html#a4d83b5c39fb21c28be6271dda6ceff73":[3,0,10,0,0],
+"structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html#a4d83b5c39fb21c28be6271dda6ceff73":[5,0,6,0,0],
+"structnlohmann_1_1adl__serializer_3_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html":[5,0,6,1],
+"structnlohmann_1_1adl__serializer_3_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html":[3,0,10,1],
+"structnlohmann_1_1adl__serializer_3_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html#a4022e89fa622aa31535e0f7d65337a59":[5,0,6,1,0],
+"structnlohmann_1_1adl__serializer_3_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html#a4022e89fa622aa31535e0f7d65337a59":[3,0,10,1,0],
+"structnlohmann_1_1adl__serializer_3_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html#a5a1e47be1cb54d5ded5b07a53ccface1":[5,0,6,1,1],
+"structnlohmann_1_1adl__serializer_3_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html#a5a1e47be1cb54d5ded5b07a53ccface1":[3,0,10,1,1],
+"structnlohmann_1_1adl__serializer_3_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html#adaf177466807f70b5a298142ea2d1b62":[5,0,6,1,2],
+"structnlohmann_1_1adl__serializer_3_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html#adaf177466807f70b5a298142ea2d1b62":[3,0,10,1,2],
+"structnlohmann_1_1adl__serializer_3_1_1mtgb_1_1Color_01_4.html":[5,0,6,2],
+"structnlohmann_1_1adl__serializer_3_1_1mtgb_1_1Color_01_4.html":[3,0,10,2],
+"structnlohmann_1_1adl__serializer_3_1_1mtgb_1_1Color_01_4.html#a3909066a1da13a9f72c4ab9539de1e3f":[3,0,10,2,0],
+"structnlohmann_1_1adl__serializer_3_1_1mtgb_1_1Color_01_4.html#a3909066a1da13a9f72c4ab9539de1e3f":[5,0,6,2,0],
+"structnlohmann_1_1adl__serializer_3_1_1mtgb_1_1Color_01_4.html#a70dc6063c4c58ae0ef6674c9d70b6f77":[3,0,10,2,1],
+"structnlohmann_1_1adl__serializer_3_1_1mtgb_1_1Color_01_4.html#a70dc6063c4c58ae0ef6674c9d70b6f77":[5,0,6,2,1],
+"tag_8cpp.html":[6,0,0,0,32],
+"tag_8cpp_source.html":[6,0,0,0,32],
+"templ_8cpp.html":[6,0,0,0,33],
+"templ_8cpp_source.html":[6,0,0,0,33]
+};

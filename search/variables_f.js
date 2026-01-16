@@ -20,7 +20,7 @@ var searchData=
   ['onstay_5f_17',['onStay_',['../classmtgb_1_1RigidBody.html#abf93703ac1ea467664e8b803e98d8b65',1,'mtgb::RigidBody']]],
   ['onstompedbounce_5f_18',['onStompedBounce_',['../classPatrolChargerEnemy.html#a9bb1b31871bb781dba38c9c3248cd916',1,'PatrolChargerEnemy']]],
   ['operation_5f_19',['operation_',['../classmtgb_1_1ImGuizmoManipulator.html#a6d2b68f045d526a71165d8779be33b77',1,'mtgb::ImGuizmoManipulator']]],
-  ['orbitspeed_5f_20',['orbitSpeed_',['../classmtgb_1_1ICamera.html#af8b82b9c4c18bf63ddb9c098dca90d66',1,'mtgb::ICamera::orbitSpeed_()'],['../classmtgb_1_1Camera.html#a4b2ecb4041d9d9babb056f4b580146ed',1,'mtgb::Camera::orbitSpeed_()']]],
+  ['orbitspeed_5f_20',['orbitSpeed_',['../classmtgb_1_1ICamera.html#af8b82b9c4c18bf63ddb9c098dca90d66',1,'mtgb::ICamera::orbitSpeed_()'],['../classmtgb_1_1SphericalCamera.html#aad46a1cd1672d9de976fd266a53568f3',1,'mtgb::SphericalCamera::orbitSpeed_()']]],
   ['outputdesc_5f_21',['outputDesc_',['../classmtgb_1_1DXGIResource.html#ac93dd45468f775ff05c8e70a7b675fbe',1,'mtgb::DXGIResource']]],
   ['outputindex_22',['outputIndex',['../structmtgb_1_1MonitorInfo.html#af1e62e054beea5bcca55d50c932b219a',1,'mtgb::MonitorInfo']]]
 ];

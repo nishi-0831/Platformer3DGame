@@ -28,9 +28,10 @@ var searchData=
   ['rigidbody_5fregister_25',['rigidbody_register',['../namespacemtgb.html#a37e3168d82eed8b139922b6007e67a97',1,'mtgb']]],
   ['rigidbodycp_26',['RigidBodyCP',['../classmtgb_1_1RigidBody.html#af822efbc7db40b265e2f723298b12194',1,'mtgb::RigidBody']]],
   ['rotate_27',['rotate',['../structmtgb_1_1GAME__OBJECT__DESC.html#a7420ea8fa7e5113ad00022dd5c186674',1,'mtgb::GAME_OBJECT_DESC::rotate()'],['../classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966',1,'mtgb::Transform::rotate()'],['../structmtgb_1_1TransformCore.html#a3d56d12a91a4ae5ffccf9093a5ba170f',1,'mtgb::TransformCore::rotate()']]],
-  ['rotateanglesec_5f_28',['rotateAngleSec_',['../classmtgb_1_1Saw.html#a693791e517abc5e395b73e0f9ac8174a',1,'mtgb::Saw::rotateAngleSec_()'],['../classmtgb_1_1CircularSaw.html#a951d19f95a32e849f318a0b555351502',1,'mtgb::CircularSaw::rotateAngleSec_()'],['../classmtgb_1_1SkySphere.html#a42a8209bbf948d2f1ea1f7769f75ab97',1,'mtgb::SkySphere::rotateAngleSec_()']]],
-  ['rotateanglesecsaw_5f_29',['rotateAngleSecSaw_',['../classmtgb_1_1CircularSaw.html#a2c05f2dce6b859df66e5a5eaf370827a',1,'mtgb::CircularSaw']]],
-  ['rotatesensitivity_5f_30',['rotateSensitivity_',['../classmtgb_1_1ICamera.html#a07616e4b52954ddec5d480709b45752e',1,'mtgb::ICamera::rotateSensitivity_()'],['../classmtgb_1_1ImGuiEditorCamera.html#a4cc558e81c1cc2334baf16f529a78b8e',1,'mtgb::ImGuiEditorCamera::rotateSensitivity_()']]],
-  ['rotationz_5f_31',['rotationZ_',['../classmtgb_1_1ImageRenderer.html#ad419747dc057c34e50631b2c0f7fae60',1,'mtgb::ImageRenderer']]],
-  ['row_5fsize_32',['ROW_SIZE',['../structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f',1,'mtgb::Matrix4x4']]]
+  ['rotateangledeg_5f_28',['rotateAngleDeg_',['../classmtgb_1_1QuaternionCamera.html#aeb10bec733d29d58abc49dbf3c0b8688',1,'mtgb::QuaternionCamera']]],
+  ['rotateanglesec_5f_29',['rotateAngleSec_',['../classmtgb_1_1Saw.html#a693791e517abc5e395b73e0f9ac8174a',1,'mtgb::Saw::rotateAngleSec_()'],['../classmtgb_1_1CircularSaw.html#a951d19f95a32e849f318a0b555351502',1,'mtgb::CircularSaw::rotateAngleSec_()'],['../classmtgb_1_1SkySphere.html#a42a8209bbf948d2f1ea1f7769f75ab97',1,'mtgb::SkySphere::rotateAngleSec_()']]],
+  ['rotateanglesecsaw_5f_30',['rotateAngleSecSaw_',['../classmtgb_1_1CircularSaw.html#a2c05f2dce6b859df66e5a5eaf370827a',1,'mtgb::CircularSaw']]],
+  ['rotatesensitivity_5f_31',['rotateSensitivity_',['../classmtgb_1_1ICamera.html#a07616e4b52954ddec5d480709b45752e',1,'mtgb::ICamera::rotateSensitivity_()'],['../classmtgb_1_1ImGuiEditorCamera.html#a4cc558e81c1cc2334baf16f529a78b8e',1,'mtgb::ImGuiEditorCamera::rotateSensitivity_()']]],
+  ['rotationz_5f_32',['rotationZ_',['../classmtgb_1_1ImageRenderer.html#ad419747dc057c34e50631b2c0f7fae60',1,'mtgb::ImageRenderer']]],
+  ['row_5fsize_33',['ROW_SIZE',['../structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f',1,'mtgb::Matrix4x4']]]
 ];

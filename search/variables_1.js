@@ -23,5 +23,5 @@ var searchData=
   ['atend_20',['atEnd',['../structdrmp3.html#aec144001a290a012c3976112deeaa025',1,'drmp3']]],
   ['audio_21',['Audio',['../classmtgb_1_1AudioClip.html#ad9c20c80936ce91cb5e4fa0652f78d52',1,'mtgb::AudioClip']]],
   ['audioplayer_22',['AudioPlayer',['../classmtgb_1_1AudioClip.html#a6ab7e847e45c5b0602bbd9cbe40294b5',1,'mtgb::AudioClip']]],
-  ['azimuthalanglerad_5f_23',['azimuthalAngleRad_',['../classmtgb_1_1ICamera.html#a36f85e873dd70c51e0e521e872bcf3c4',1,'mtgb::ICamera::azimuthalAngleRad_()'],['../classmtgb_1_1Camera.html#acd23aeda59661578da9a3f39c0711ff6',1,'mtgb::Camera::azimuthalAngleRad_()']]]
+  ['azimuthalanglerad_5f_23',['azimuthalAngleRad_',['../classmtgb_1_1ICamera.html#a36f85e873dd70c51e0e521e872bcf3c4',1,'mtgb::ICamera::azimuthalAngleRad_()'],['../classmtgb_1_1SphericalCamera.html#a401a1717bb01b1bf805d2c1d19f176d1',1,'mtgb::SphericalCamera::azimuthalAngleRad_()']]]
 ];

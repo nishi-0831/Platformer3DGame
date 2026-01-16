@@ -8,7 +8,7 @@ var searchData=
   ['green_5',['GREEN',['../structmtgb_1_1Color.html#aebd103a390fa9fa8a8cd4ba98446655fafbeee2cec2bf49f4d870a1b5103eb250',1,'mtgb::Color']]],
   ['green_6',['Green',['../structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ead382816a3cbeed082c9e216e7392eed1',1,'mtgb::Color']]],
   ['ground_7',['Ground',['../namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda3519d51443d41746a097cd54cd5c11cf',1,'mtgb']]],
-  ['grounded_8',['GROUNDED',['../classmtgb_1_1Camera.html#a82a91e5d4dbd4d4126af0c2a3e7cd8bead2cecc546e3a75787d037760f75b3399',1,'mtgb::Camera']]],
+  ['grounded_8',['GROUNDED',['../classmtgb_1_1QuaternionCamera.html#add8f973334dff97ff7664c78db0a96bdad2cecc546e3a75787d037760f75b3399',1,'mtgb::QuaternionCamera::GROUNDED()'],['../classmtgb_1_1SphericalCamera.html#acdd96adeadf5902ca6e9ddab5a90b26cad2cecc546e3a75787d037760f75b3399',1,'mtgb::SphericalCamera::GROUNDED()']]],
   ['gval1_9',['GVal1',['../autolink_8cpp.html#a656d63cf384d2a6f23c2c18523a7bc5ea0f016f49e4f3bcd072319b9d68bc927d',1,'autolink.cpp']]],
   ['gval2_10',['GVal2',['../autolink_8cpp.html#a656d63cf384d2a6f23c2c18523a7bc5ea811876e2eea5c16ae0594a95d98fbd55',1,'autolink.cpp']]]
 ];

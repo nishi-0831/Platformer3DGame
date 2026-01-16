@@ -20,11 +20,12 @@ var searchData=
   ['singlewindow_17',['SingleWindow',['../classmtgb_1_1SingleWindow.html',1,'mtgb']]],
   ['skysphere_18',['SkySphere',['../classmtgb_1_1SkySphere.html',1,'mtgb']]],
   ['someniceclass_19',['SomeNiceClass',['../classSomeNiceClass.html',1,'']]],
-  ['sphericalcoord_20',['SphericalCoord',['../structmtgb_1_1Mathf_1_1SphericalCoord.html',1,'mtgb::Mathf']]],
-  ['sprite_21',['Sprite',['../classmtgb_1_1Sprite.html',1,'mtgb']]],
-  ['stageeditscene_22',['StageEditScene',['../classStageEditScene.html',1,'']]],
-  ['stagemanger_23',['StageManger',['../classStageManger.html',1,'']]],
-  ['statetransition_24',['StateTransition',['../structmtstat_1_1MTStat_1_1StateTransition.html',1,'mtstat::MTStat']]],
-  ['status_25',['Status',['../structmtgb_1_1GameObject_1_1Status.html',1,'mtgb::GameObject']]],
-  ['string_26',['String',['../classString.html',1,'']]]
+  ['sphericalcamera_20',['SphericalCamera',['../classmtgb_1_1SphericalCamera.html',1,'mtgb']]],
+  ['sphericalcoord_21',['SphericalCoord',['../structmtgb_1_1Mathf_1_1SphericalCoord.html',1,'mtgb::Mathf']]],
+  ['sprite_22',['Sprite',['../classmtgb_1_1Sprite.html',1,'mtgb']]],
+  ['stageeditscene_23',['StageEditScene',['../classStageEditScene.html',1,'']]],
+  ['stagemanger_24',['StageManger',['../classStageManger.html',1,'']]],
+  ['statetransition_25',['StateTransition',['../structmtstat_1_1MTStat_1_1StateTransition.html',1,'mtstat::MTStat']]],
+  ['status_26',['Status',['../structmtgb_1_1GameObject_1_1Status.html',1,'mtgb::GameObject']]],
+  ['string_27',['String',['../classString.html',1,'']]]
 ];

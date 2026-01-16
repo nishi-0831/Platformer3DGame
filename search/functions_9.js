@@ -66,7 +66,7 @@ var searchData=
   ['isregistered_63',['IsRegistered',['../classmtgb_1_1GameObjectTypeRegistry.html#a8201021f22262070cc39c843c44820a4',1,'mtgb::GameObjectTypeRegistry::IsRegistered(const std::type_index &amp;_typeIndex) const'],['../classmtgb_1_1GameObjectTypeRegistry.html#a7f2115dfeb7dfb3f27e62ec25f9d1736',1,'mtgb::GameObjectTypeRegistry::IsRegistered(std::string_view _typeName)']]],
   ['isregisteredtype_64',['IsRegisteredType',['../classTypeRegistry.html#a952c73ffa56ff1d7ace13b438023a566',1,'TypeRegistry']]],
   ['istargetinrayangle_65',['IsTargetInRayAngle',['../classmtgb_1_1RayDetector.html#ac89055dcb37a18ddea33ee1b182a981a',1,'mtgb::RayDetector']]],
-  ['istargetoffdeadzone_66',['IsTargetOffDeadZone',['../classmtgb_1_1Camera.html#ae65fcd8d7612c6ea3126784a24895b46',1,'mtgb::Camera']]],
+  ['istargetoffdeadzone_66',['IsTargetOffDeadZone',['../classmtgb_1_1SphericalCamera.html#ab5009f5f63f04abe5e0af1e533a39774',1,'mtgb::SphericalCamera']]],
   ['istodestroy_67',['IsToDestroy',['../classmtgb_1_1GameObject.html#ab2b2a8a84b4380a17f62a71f0208825b',1,'mtgb::GameObject']]],
   ['isystem_68',['ISystem',['../classmtgb_1_1ISystem.html#a5221f2e86d64e39bc8e38b3f238a639b',1,'mtgb::ISystem']]]
 ];

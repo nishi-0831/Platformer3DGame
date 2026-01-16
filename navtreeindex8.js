@@ -1,5 +1,10 @@
 var NAVTREEINDEX8 =
 {
+"classSampleGame.html#ae241b7677e1c59407d3f80fdc2040547":[5,0,73,17],
+"classSampleGame.html#aeaa55851e01df60f0661fc0b24e65d7a":[5,0,73,5],
+"classSampleGame.html#af24d7c1f739c63b6e99bd90374ef6235":[5,0,73,30],
+"classSampleGame.html#af3e67eb32ff2dca48fa29ab66123e71c":[5,0,73,25],
+"classSampleGame.html#afa75130a000b0a2cafdd38c92c3fa36c":[5,0,73,22],
 "classSampleGame.html#afa7f596ea64797f4dff66edd5582f1bf":[5,0,73,15],
 "classSampleGame.html#afbd71b4a6969cdc1274cfa4fbcc617c6":[5,0,73,26],
 "classSampleScene.html":[5,0,74],
@@ -239,15 +244,10 @@ var NAVTREEINDEX8 =
 "classTypeRegistry.html#afb3dc512e17838e88692c90f7257bff1":[5,0,90,3],
 "class_8h.html":[6,0,0,0,3],
 "class_8h_source.html":[6,0,0,0,3],
-"classdocstring_1_1PyClass.html":[5,0,0,0],
 "classdocstring_1_1PyClass.html":[3,0,2,0],
-"classdocstring_1_1PyClass.html#a00dd800dc15e2b727e2a37c6f6c40e8b":[3,0,2,0,0],
+"classdocstring_1_1PyClass.html":[5,0,0,0],
 "classdocstring_1_1PyClass.html#a00dd800dc15e2b727e2a37c6f6c40e8b":[5,0,0,0,0],
-"classdocstring_1_1PyClass.html#a45ced0d4bfe82f1f5df00bdb7a19aa0f":[5,0,0,0,2],
+"classdocstring_1_1PyClass.html#a00dd800dc15e2b727e2a37c6f6c40e8b":[3,0,2,0,0],
 "classdocstring_1_1PyClass.html#a45ced0d4bfe82f1f5df00bdb7a19aa0f":[3,0,2,0,2],
-"classdocstring_1_1PyClass.html#af092e1eacc10334e0e8630531a3473b4":[5,0,0,0,1],
-"classdocstring_1_1PyClass.html#af092e1eacc10334e0e8630531a3473b4":[3,0,2,0,1],
-"classes.html":[5,1],
-"classmtbin_1_1MemoryStream.html":[3,0,5,1],
-"classmtbin_1_1MemoryStream.html":[5,0,2,0]
+"classdocstring_1_1PyClass.html#a45ced0d4bfe82f1f5df00bdb7a19aa0f":[5,0,0,0,2]
 };

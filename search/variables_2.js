@@ -2,7 +2,7 @@ var searchData=
 [
   ['backgroundcolor_5f_0',['backgroundColor_',['../classmtgb_1_1DirectX11Draw.html#a90df2f6048549a9a00bafe410830917d',1,'mtgb::DirectX11Draw']]],
   ['base_1',['base',['../structVehicle.html#ad7970f528d429f6fc1725173e93a77c2',1,'Vehicle::base()'],['../structCar.html#ab8ff28306286da5a8b14fa9bdccaafaa',1,'Car::base()'],['../structTruck.html#ad0ac321609dda1a6c552488b05ec7ac8',1,'Truck::base()'],['../structmtgb_1_1RectDetectorConfig.html#ababcb1065ed52b573ec337414a110799',1,'mtgb::RectDetectorConfig::base()'],['../structmtgb_1_1CircleDetectorConfig.html#a8e010a32dd6bb01753908d93c8d65013',1,'mtgb::CircleDetectorConfig::base()'],['../structmtgb_1_1RayDetectorConfig.html#ae015aaf5d2b0debf680b90f128c27f7f',1,'mtgb::RayDetectorConfig::base()']]],
-  ['basey_5f_2',['baseY_',['../classmtgb_1_1Camera.html#a18565294a4d3d3e29474a0695259da84',1,'mtgb::Camera']]],
+  ['basey_5f_2',['baseY_',['../classmtgb_1_1SphericalCamera.html#a51695850e1772b2bb52182761e44277b',1,'mtgb::SphericalCamera']]],
   ['bindpose_3',['bindPose',['../structmtgb_1_1FbxParts_1_1Bone.html#a60e5971ad050b2190b2481a27f931cba',1,'mtgb::FbxParts::Bone']]],
   ['bit_5fcount_4',['BIT_COUNT',['../classmtbit_1_1BitFlag.html#a0ae5f880c73778f542cde8e1307a3a8a',1,'mtbit::BitFlag']]],
   ['bitflag_5',['BitFlag',['../classmtbit_1_1BitFlag_1_1BitFlagEditor.html#af40d953c182ced003e1a4b5fdd9b9104',1,'mtbit::BitFlag::BitFlagEditor']]],

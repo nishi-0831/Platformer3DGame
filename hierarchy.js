@@ -80,11 +80,12 @@ var hierarchy =
         [ "ScoreViewer", "classScoreViewer.html", null ],
         [ "SeaPlane", "classSeaPlane.html", null ],
         [ "mtgb::Box3D", "classmtgb_1_1Box3D.html", null ],
-        [ "mtgb::Camera", "classmtgb_1_1Camera.html", null ],
         [ "mtgb::CircularSaw", "classmtgb_1_1CircularSaw.html", null ],
         [ "mtgb::HPViewer", "classmtgb_1_1HPViewer.html", null ],
+        [ "mtgb::QuaternionCamera", "classmtgb_1_1QuaternionCamera.html", null ],
         [ "mtgb::Saw", "classmtgb_1_1Saw.html", null ],
         [ "mtgb::SkySphere", "classmtgb_1_1SkySphere.html", null ],
+        [ "mtgb::SphericalCamera", "classmtgb_1_1SphericalCamera.html", null ],
         [ "mtgb::TextBox", "classmtgb_1_1TextBox.html", null ]
       ] ]
     ] ],
