@@ -39,7 +39,7 @@ namespace mtgb
 		void OnCollisionExit(const std::function<void(const EntityId)>& _onExit);
 		bool IsJumping();
 		static Vector3 GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
-
+		static float GetGravity();
 	  public:
 		bool isNeedUpdate_;
 		Vector3 velocity_;

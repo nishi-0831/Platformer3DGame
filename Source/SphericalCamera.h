@@ -26,13 +26,15 @@ namespace mtgb
 		void SetFollowMode(bool _isGrounded, const Vector3& _targetVelocity);
 
 	  private:
-		bool IsTargetOffScreen() const;
+		bool IsTargetOffDeadZone() const;
 		/// <summary>
 		/// 球面座標系でカメラを動かす
 		/// 視点を中心に回転させる
 		/// </summary>
 		/// <param name="_distance">視点との距離</param>
 		void MoveCameraSpherical(float _distance);
+
+		Vector3 ApplyDeadZoneConstraints(const Vector3& _proposedCameraPos, const Vector3 _lookAtTarget) const;
 		enum class CameraState
 		{
 			GROUNDED, // 着地状態：通常のカメラ追従
@@ -77,5 +79,8 @@ namespace mtgb
 		float lerpSpeedGrounded_;
 		float lerpSpeedJumping_;
 		float lerpSpeedScalar_;
+		// デッドゾーン設定
+		float yDeadZoneMax_;
+		float yDeadZoneMin_;
 	};
 } // namespace mtgb

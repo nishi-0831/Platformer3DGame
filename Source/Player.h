@@ -4,7 +4,7 @@
 #include "QuaternionCamera.h"
 #include "IActor.h"
 #include "HPViewer.h"
-
+#include "JumpController.h"
 class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActor
 {
   public:
@@ -59,4 +59,5 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	float elapsedInvincibilityTime_;
 	// 描画有無を切り替える処理のハンドル
 	TimerHandle hTimerChangeVisibility_;
+	JumpController jumpController_;
 };
