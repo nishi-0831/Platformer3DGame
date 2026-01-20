@@ -13,6 +13,7 @@ namespace mtgb
 	  private:
 		Transform* pTransform_;
 		Transform* pTargetTransform_;
+		RigidBody* pTargetRigidBody_;
 		Vector3 lookAtPos_;
 		Vector3 lookAtPositionOffset_;
 		float rotateAngleDeg_;
@@ -21,17 +22,11 @@ namespace mtgb
 		float minPitchAngleDeg_;
 		float maxPitchAngleDeg_;
 
-		enum class CameraState
-		{
-			GROUNDED, // 着地状態：通常のカメラ追従
-			JUMPING,
-			JUMP_ASCENDING, // ジャンプ上昇中：角度を浅くしていく
-			JUMP_APEX,		// ジャンプ頂点：最小角度を維持
-			JUMP_DESCENDING // ジャンプ下降中：角度を回復していく
-		};
-		// カメラの状態
-		mtstat::MTStat<CameraState> cameraStat_;
+		float currentLerpSpeed_;
+		float lerpSpeedOnJumping_;
 
-		float lerpSpeed_;
+		float lerpSpeedOnDescending_;
+		float lerpSpeedOnGrounded_;
+		void UpdateLerpSpeed();
 	};
 } // namespace mtgb
