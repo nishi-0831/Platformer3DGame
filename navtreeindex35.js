@@ -1,5 +1,7 @@
 var NAVTREEINDEX35 =
 {
+"structmtgb_1_1Quaternion.html":[3,0,7,128],
+"structmtgb_1_1Quaternion.html":[5,0,4,125],
 "structmtgb_1_1Quaternion.html#a0d97eb7a0b9d31da9c2a97e4a13cdab0":[3,0,7,128,16],
 "structmtgb_1_1Quaternion.html#a0d97eb7a0b9d31da9c2a97e4a13cdab0":[5,0,4,125,16],
 "structmtgb_1_1Quaternion.html#a2b165e632c74de3a6b73a7da3e59c311":[3,0,7,128,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX35 =
 "structmtgb_1_1TextLayoutData.html#ade1ed99145a195dad28c146af27f5f0f":[5,0,4,159,2],
 "structmtgb_1_1TextLayoutData.html#ade1ed99145a195dad28c146af27f5f0f":[3,0,7,162,2],
 "structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html":[3,0,7,167,0],
-"structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html":[5,0,4,164,0],
-"structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html#a6f745711236d52f72e8f84e6a97a3b1c":[3,0,7,167,0,0],
-"structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html#a6f745711236d52f72e8f84e6a97a3b1c":[5,0,4,164,0,0]
+"structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html":[5,0,4,164,0]
 };

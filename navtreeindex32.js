@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"namespacemtgb.html#af06513c2a65b3e93fd8c430fcbd36109":[3,0,7,250],
+"namespacemtgb.html#af0f2a1cbfc67b4a7e4d991121881af33":[3,0,7,211],
 "namespacemtgb.html#af1d6958895762ab467321bb2735242f5":[3,0,7,210],
 "namespacemtgb.html#af5a2231deca373aede77a1f71b759e81":[3,0,7,284],
 "namespacemtgb.html#af7654d5b4fab5cc7974127aa1177f80e":[3,0,7,289],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "structmtgb_1_1AABB.html#a3ceedbef01bfc9b658966e1f7c638501":[3,0,7,5,0],
 "structmtgb_1_1AABB.html#a3ceedbef01bfc9b658966e1f7c638501":[5,0,4,2,0],
 "structmtgb_1_1AABB.html#aa9c3ff8a1fbe8c86267e279bbf970a52":[3,0,7,5,1],
-"structmtgb_1_1AABB.html#aa9c3ff8a1fbe8c86267e279bbf970a52":[5,0,4,2,1],
-"structmtgb_1_1AudioOneShot.html":[5,0,4,8],
-"structmtgb_1_1AudioOneShot.html":[3,0,7,11]
+"structmtgb_1_1AABB.html#aa9c3ff8a1fbe8c86267e279bbf970a52":[5,0,4,2,1]
 };

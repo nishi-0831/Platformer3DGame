@@ -468,7 +468,7 @@ mtgb::SphericalCamera 連携図</div>
 <div class="ttc" id="aclassmtgb_1_1SphericalCamera_html_aad46a1cd1672d9de976fd266a53568f3"><div class="ttname"><a href="classmtgb_1_1SphericalCamera.html#aad46a1cd1672d9de976fd266a53568f3">mtgb::SphericalCamera::orbitSpeed_</a></div><div class="ttdeci">float orbitSpeed_</div><div class="ttdef"><b>Definition:</b> <a href="SphericalCamera_8h_source.html#l00066">SphericalCamera.h:66</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1SphericalCamera_html_ab3c965987e3f398cbf3de874dd98fdd0"><div class="ttname"><a href="classmtgb_1_1SphericalCamera.html#ab3c965987e3f398cbf3de874dd98fdd0">mtgb::SphericalCamera::isGrounded_</a></div><div class="ttdeci">bool isGrounded_</div><div class="ttdef"><b>Definition:</b> <a href="SphericalCamera_8h_source.html#l00070">SphericalCamera.h:70</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1SphericalCamera_html_ab4e02b0faf7559c3ebf0ea53b2595f50"><div class="ttname"><a href="classmtgb_1_1SphericalCamera.html#ab4e02b0faf7559c3ebf0ea53b2595f50">mtgb::SphericalCamera::pCameraTransform_</a></div><div class="ttdeci">Transform * pCameraTransform_</div><div class="ttdef"><b>Definition:</b> <a href="SphericalCamera_8h_source.html#l00050">SphericalCamera.h:50</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1SphericalCamera_html_ab5009f5f63f04abe5e0af1e533a39774"><div class="ttname"><a href="classmtgb_1_1SphericalCamera.html#ab5009f5f63f04abe5e0af1e533a39774">mtgb::SphericalCamera::IsTargetOffDeadZone</a></div><div class="ttdeci">bool IsTargetOffDeadZone() const</div></div>
+<div class="ttc" id="aclassmtgb_1_1SphericalCamera_html_ab5009f5f63f04abe5e0af1e533a39774"><div class="ttname"><a href="classmtgb_1_1SphericalCamera.html#ab5009f5f63f04abe5e0af1e533a39774">mtgb::SphericalCamera::IsTargetOffDeadZone</a></div><div class="ttdeci">bool IsTargetOffDeadZone() const</div><div class="ttdef"><b>Definition:</b> <a href="SphericalCamera_8cpp_source.html#l00232">SphericalCamera.cpp:232</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1SphericalCamera_html_abeac9a0ad9c9cce7716c034114be207d"><div class="ttname"><a href="classmtgb_1_1SphericalCamera.html#abeac9a0ad9c9cce7716c034114be207d">mtgb::SphericalCamera::yDeadZoneMax_</a></div><div class="ttdeci">float yDeadZoneMax_</div><div class="ttdef"><b>Definition:</b> <a href="SphericalCamera_8h_source.html#l00083">SphericalCamera.h:83</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1SphericalCamera_html_ad1890694d7fc13a52af25b70eccee8fd"><div class="ttname"><a href="classmtgb_1_1SphericalCamera.html#ad1890694d7fc13a52af25b70eccee8fd">mtgb::SphericalCamera::yDeadZoneMin_</a></div><div class="ttdeci">float yDeadZoneMin_</div><div class="ttdef"><b>Definition:</b> <a href="SphericalCamera_8h_source.html#l00084">SphericalCamera.h:84</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1SphericalCamera_html_ad573043779a1fc08348d1007fce8dc77"><div class="ttname"><a href="classmtgb_1_1SphericalCamera.html#ad573043779a1fc08348d1007fce8dc77">mtgb::SphericalCamera::lerpSpeedJumping_</a></div><div class="ttdeci">float lerpSpeedJumping_</div><div class="ttdef"><b>Definition:</b> <a href="SphericalCamera_8h_source.html#l00080">SphericalCamera.h:80</a></div></div>
@@ -541,6 +541,37 @@ mtgb::SphericalCamera 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SphericalCamera_8cpp_source.html">SphericalCamera.cpp</a> の <a class="el" href="SphericalCamera_8cpp_source.html#l00278">278</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  280</span>{</div>
+<div class="line"><span class="lineno">  281</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> adjustedPos = proposedCameraPos;</div>
+<div class="line"><span class="lineno">  282</span> </div>
+<div class="line"><span class="lineno">  283</span>    <span class="comment">// 提案されたカメラ位置での被写体のスクリーン座標を計算</span></div>
+<div class="line"><span class="lineno">  284</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> testScreenPos =</div>
+<div class="line"><span class="lineno">  285</span>        Game::System&lt;CameraSystem&gt;().GetWorldToScreenPos(<a class="code hl_variable" href="classmtgb_1_1SphericalCamera.html#a705fcb9a93b92b1d77f2b319070e808d">pTargetTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><span class="lineno">  286</span>    <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> screenSize = Game::System&lt;Screen&gt;().GetSizeF();</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordtype">float</span> testNormalizedY = testScreenPos.y / screenSize.y;</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span>    <span class="comment">// Y座標がデッドゾーンを超えている場合、カメラの高さを調整</span></div>
+<div class="line"><span class="lineno">  291</span>    <span class="keywordflow">if</span> (testNormalizedY &gt; <a class="code hl_variable" href="classmtgb_1_1SphericalCamera.html#abeac9a0ad9c9cce7716c034114be207d">yDeadZoneMax_</a>)</div>
+<div class="line"><span class="lineno">  292</span>    {</div>
+<div class="line"><span class="lineno">  293</span>        <span class="comment">// カメラを下げる</span></div>
+<div class="line"><span class="lineno">  294</span>        adjustedPos.y -= (testNormalizedY - <a class="code hl_variable" href="classmtgb_1_1SphericalCamera.html#abeac9a0ad9c9cce7716c034114be207d">yDeadZoneMax_</a>) * screenSize.y * 0.1f; <span class="comment">// 調整係数</span></div>
+<div class="line"><span class="lineno">  295</span>    }</div>
+<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (testNormalizedY &lt; <a class="code hl_variable" href="classmtgb_1_1SphericalCamera.html#ad1890694d7fc13a52af25b70eccee8fd">yDeadZoneMin_</a>)</div>
+<div class="line"><span class="lineno">  297</span>    {</div>
+<div class="line"><span class="lineno">  298</span>        <span class="comment">// カメラを上げる</span></div>
+<div class="line"><span class="lineno">  299</span>        adjustedPos.y += (<a class="code hl_variable" href="classmtgb_1_1SphericalCamera.html#ad1890694d7fc13a52af25b70eccee8fd">yDeadZoneMin_</a> - testNormalizedY) * screenSize.y * 0.1f; <span class="comment">// 調整係数</span></div>
+<div class="line"><span class="lineno">  300</span>    }</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordflow">return</span> adjustedPos;</div>
+<div class="line"><span class="lineno">  303</span>}</div>
+<div class="ttc" id="anamespacemtgb_html_a0a8a0914ad55f984fdc2defcfff41f9d"><div class="ttname"><a href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">mtgb::Vector2F</a></div><div class="ttdeci">Vector2T&lt; float &gt; Vector2F</div><div class="ttdef"><b>Definition:</b> <a href="Vector2F_8h_source.html#l00005">Vector2F.h:5</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
 
 </div>
 </div>
@@ -741,9 +772,7 @@ template&lt;class ComponentT , typename... Args&gt; </div>
 <div class="ttc" id="aclassmtgb_1_1InputUtil_html_a4e0e27db46e915d4841584a7d914eb51"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a4e0e27db46e915d4841584a7d914eb51">mtgb::InputUtil::GetAxis</a></div><div class="ttdeci">static const float GetAxis(Axis _axis, StickType _stickType, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00214">InputData.cpp:214</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1InputUtil_html_ae1b184545e3cdf92bf935006ba045647"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#ae1b184545e3cdf92bf935006ba045647">mtgb::InputUtil::GetMouseMove</a></div><div class="ttdeci">static const Vector3 GetMouseMove(WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00282">InputData.cpp:282</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1SphericalCamera_html_a4391ded3741615f7a0464cdd1720fd9c"><div class="ttname"><a href="classmtgb_1_1SphericalCamera.html#a4391ded3741615f7a0464cdd1720fd9c">mtgb::SphericalCamera::MoveCameraSpherical</a></div><div class="ttdeci">void MoveCameraSpherical(float _distance)</div><div class="ttdoc">球面座標系でカメラを動かす 視点を中心に回転させる</div><div class="ttdef"><b>Definition:</b> <a href="SphericalCamera_8cpp_source.html#l00250">SphericalCamera.cpp:250</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_a0a8a0914ad55f984fdc2defcfff41f9d"><div class="ttname"><a href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">mtgb::Vector2F</a></div><div class="ttdeci">Vector2T&lt; float &gt; Vector2F</div><div class="ttdef"><b>Definition:</b> <a href="Vector2F_8h_source.html#l00005">Vector2F.h:5</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4"><div class="ttname"><a href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4">mtgb::InputType::MOUSE</a></div><div class="ttdeci">@ MOUSE</div></div>
-<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html_a7da613a1086e5e1a58950d3d93746d2b"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a7da613a1086e5e1a58950d3d93746d2b">mtgb::Vector3::Size</a></div><div class="ttdeci">float Size() const</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00098">Vector3.h:98</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="GameTime_8h_source.html#l00025">mtgb::Time::DeltaTimeF()</a>, <a class="el" href="InputData_8cpp_source.html#l00214">mtgb::InputUtil::GetAxis()</a>, <a class="el" href="InputData_8cpp_source.html#l00282">mtgb::InputUtil::GetMouseMove()</a>, <a class="el" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234">mtgb::JOYPAD</a>, <a class="el" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4">mtgb::MOUSE</a>, <a class="el" href="Vector3_8h_source.html#l00098">mtgb::Vector3::Size()</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
@@ -1454,6 +1483,26 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="SphericalCamera_8cpp_source.html">SphericalCamera.cpp</a> の <a class="el" href="SphericalCamera_8cpp_source.html#l00232">232</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  233</span>{</div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1SphericalCamera.html#a705fcb9a93b92b1d77f2b319070e808d">pTargetTransform_</a> == <span class="keyword">nullptr</span> || <a class="code hl_variable" href="classmtgb_1_1SphericalCamera.html#ab4e02b0faf7559c3ebf0ea53b2595f50">pCameraTransform_</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  235</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> targetScreenPos =</div>
+<div class="line"><span class="lineno">  238</span>        Game::System&lt;CameraSystem&gt;().GetWorldToScreenPos(<a class="code hl_variable" href="classmtgb_1_1SphericalCamera.html#a705fcb9a93b92b1d77f2b319070e808d">pTargetTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>, <a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><span class="lineno">  239</span>    <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> screenSize = Game::System&lt;Screen&gt;().GetSizeF();</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>    normalizedX = targetScreenPos.x / screenSize.x;</div>
+<div class="line"><span class="lineno">  242</span>    normalizedY = targetScreenPos.y / screenSize.y;</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordtype">bool</span> yOutOfRange = (normalizedY &lt; <a class="code hl_variable" href="classmtgb_1_1SphericalCamera.html#ad1890694d7fc13a52af25b70eccee8fd">yDeadZoneMin_</a>) || (normalizedY &gt; <a class="code hl_variable" href="classmtgb_1_1SphericalCamera.html#abeac9a0ad9c9cce7716c034114be207d">yDeadZoneMax_</a>);</div>
+<div class="line"><span class="lineno">  245</span> </div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">return</span> yOutOfRange;</div>
+<div class="line"><span class="lineno">  247</span>    <span class="comment">// return (normalizedY &gt;= 1.0f) || (normalizedY &lt;= 0.0f) || (normalizedX &gt;= 1.0f) || (normalizedX &lt;= 0.0f);</span></div>
+<div class="line"><span class="lineno">  248</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
 
 </div>
 </div>
