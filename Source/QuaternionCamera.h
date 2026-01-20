@@ -18,6 +18,8 @@ namespace mtgb
 		float rotateAngleDeg_;
 		float distance_;
 		InputType inputType_;
+		float minPitchAngleDeg_;
+		float maxPitchAngleDeg_;
 
 		enum class CameraState
 		{
@@ -29,5 +31,7 @@ namespace mtgb
 		};
 		// カメラの状態
 		mtstat::MTStat<CameraState> cameraStat_;
+
+		float lerpSpeed_;
 	};
 } // namespace mtgb

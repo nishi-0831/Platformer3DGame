@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "QuaternionCamera.h"
-namespace
-{
-	Vector3 euler;
-}
+
 mtgb::QuaternionCamera::QuaternionCamera(EntityId _entityId)
 	: GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName("Camera").Build())
 	, pTransform_{Component<Transform>()}
@@ -12,6 +9,9 @@ mtgb::QuaternionCamera::QuaternionCamera(EntityId _entityId)
 	, rotateAngleDeg_{30.0f}
 	, distance_{8.0f}
 	, inputType_{InputType::JOYPAD}
+	, minPitchAngleDeg_{-5.0f}
+	, maxPitchAngleDeg_{80.0f}
+	, lerpSpeed_{0.01f}
 {
 }
 
@@ -52,11 +52,23 @@ void mtgb::QuaternionCamera::Update()
 		localRight
 	);
 
-	rotate *= worldRotateY;
-	rotate *= localRotateX;
+	Quaternion testRotate = rotate * worldRotateY * localRotateX;
+	Vector3 testForward	  = DirectX::XMVector3Rotate(Vector3::Forward(), testRotate);
+	float testPitch		  = asinf(-testForward.y);
+	float maxPitchRad	  = DirectX::XMConvertToRadians(maxPitchAngleDeg_);
+	float minPitchRad	  = DirectX::XMConvertToRadians(minPitchAngleDeg_);
 
-	lookAtPos_ = pTargetTransform_->position + lookAtPositionOffset_;
+	if (testPitch <= maxPitchRad && testPitch >= minPitchRad)
+	{
+		rotate = testRotate;
+	}
+	else
+	{
+		rotate *= worldRotateY;
+	}
+
+	lookAtPos_ = Mathf::Lerp(lookAtPos_, pTargetTransform_->position, lerpSpeed_);
 
 	Vector3 toTargetDir	  = DirectX::XMVector3Rotate(Vector3::Forward(), rotate);
-	pTransform_->position = pTargetTransform_->position - (toTargetDir * distance_);
+	pTransform_->position = lookAtPos_ - (toTargetDir * distance_) + lookAtPositionOffset_;
 }
