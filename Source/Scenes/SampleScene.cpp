@@ -9,6 +9,7 @@
 #include "../Source/MovingFloor.h"
 #include "../Source/GameOverManager.h"
 #include "../Source/RespawnManager.h"
+
 SampleScene::SampleScene()
 	: stageID_{StageID::STAGE_ONE}
 {
@@ -21,7 +22,6 @@ SampleScene::~SampleScene()
 void SampleScene::Initialize()
 {
 	Game::System<ImGuiEditorCamera>().CreateCamera();
-
 	TypeRegistry::Instance();
 	TypeRegistry::Instance().Initialize();
 	MTImGui::Instance().Initialize();

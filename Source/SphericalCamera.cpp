@@ -229,7 +229,7 @@ void mtgb::SphericalCamera::SetFollowMode(bool _isGrounded, const Vector3& _targ
 	targetVelocityCache_ = _targetVelocity;
 }
 
-bool mtgb::Camera::IsTargetOffDeadZone() const
+bool mtgb::SphericalCamera::IsTargetOffDeadZone() const
 {
 	if (pTargetTransform_ == nullptr || pCameraTransform_ == nullptr)
 		return false;
@@ -275,7 +275,8 @@ void mtgb::SphericalCamera::MoveCameraSpherical(float _distance)
 	pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), Vector3::Up());
 }
 
-Vector3 mtgb::Camera::ApplyDeadZoneConstraints(const Vector3& proposedCameraPos, const Vector3 _lookAtTarget) const
+Vector3 mtgb::SphericalCamera::ApplyDeadZoneConstraints(const Vector3& proposedCameraPos, const Vector3 _lookAtTarget)
+	const
 {
 	Vector3 adjustedPos = proposedCameraPos;
 

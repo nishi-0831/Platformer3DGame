@@ -38,21 +38,22 @@ void mtgb::QuaternionCamera::Update()
 		movement.y	  = -vec2.x;
 		break;
 	}
-	if (movement.Size() == 0)
-	{
-		return;
-	}
 	Quaternion& rotate		= pTransform_->rotate;
-	Quaternion inputRotateX = Quaternion::AngleAxis(
-		DirectX::XMConvertToRadians(rotateAngleDeg_ * Time::DeltaTimeF() * movement.x),
-		Vector3::Right()
-	);
-	Quaternion inputRotateY = Quaternion::AngleAxis(
+	Quaternion worldRotateY = Quaternion::AngleAxis(
 		DirectX::XMConvertToRadians(rotateAngleDeg_ * Time::DeltaTimeF() * movement.y),
 		Vector3::Up()
 	);
-	rotate *= inputRotateY;
-	rotate *= inputRotateX;
+	// カメラのローカル座標系でのRight軸
+	Vector3 localRight = DirectX::XMVector3Rotate(Vector3::Right(), rotate);
+
+	// カメラの右方向を軸に回転
+	Quaternion localRotateX = Quaternion::AngleAxis(
+		DirectX::XMConvertToRadians(rotateAngleDeg_ * Time::DeltaTimeF() * movement.x),
+		localRight
+	);
+
+	rotate *= worldRotateY;
+	rotate *= localRotateX;
 
 	lookAtPos_ = pTargetTransform_->position + lookAtPositionOffset_;
 
