@@ -1026,15 +1026,19 @@ endif()
 ################################################################################
 # Pre build events (ビルド前イベント)
 ################################################################################
-# if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-#     add_custom_command_if(
-#         TARGET ${PROJECT_NAME}
-#         PRE_BUILD
-#         COMMANDS
-#         COMMAND $<CONFIG:Release> ECHO $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/> > $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>ProjectDirPath.txt
-#         COMMAND $<CONFIG:Release> "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>Tools\\ClangTest.exe" "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>"
-#     )
-# endif()
+ # if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+ #     add_custom_command_if(
+ #         TARGET ${PROJECT_NAME}
+ #         PRE_BUILD
+ #         COMMANDS
+ #         COMMAND $<CONFIG:Release> ECHO $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/> > $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>ProjectDirPath.txt
+ #         COMMAND $<CONFIG:Release> "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>Tools\\ClangTest.exe" "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>"
+ #     )
+ # endif()
+ # add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
+ #    COMMAND ECHO $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/> $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>ProjectDirPath.txt
+ #    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>Tools/ClangTest.exe" "$<SHELL_PATH:>"
+ # )
 
 ################################################################################
 # Dependencies (リンク先)
