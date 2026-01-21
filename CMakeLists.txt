@@ -63,7 +63,7 @@ endif()
 # Nuget packages function stub.
 ################################################################################
 function(use_package TARGET PACKAGE VERSION)
-    message(WARNING "No implementation of use_package. Create yours. "
+message(WARNING "No implementation of use_package. Create yours. "
                     "Package \"${PACKAGE}\" with version \"${VERSION}\" "
                     "for target \"${TARGET}\" is ignored!")
 endfunction()
@@ -80,6 +80,7 @@ include(CMake/GlobalSettingsInclude.cmake OPTIONAL)
 
 ################################################################################
 # Use solution folders feature
+# ファイルのフィルタリング機能を有効にする
 ################################################################################
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -117,6 +118,7 @@ set(PROJECT_NAME Project1)
 
 ################################################################################
 # Source groups
+# source_group("任意のフィルタ名" FILES <ソースコードのパス>)
 ################################################################################
 set(no_group_source_files
     ".clang-format"
@@ -125,10 +127,6 @@ set(no_group_source_files
     "scripts/.clang-tidy"
     "scripts/clang-tidy-wrapper.py"
     "scripts/clangcl-config.yaml"
-    "scripts/fix_compile_commands.py"
-    "scripts/run-clang-tidy-filtered.ps1"
-    "scripts/run-clang-tidy-filtered.sh"
-    "Tools/GenerateComponentCpp.sbn"
     "通信体系.txt"
 )
 source_group("" FILES ${no_group_source_files})
@@ -182,8 +180,6 @@ set(03mtgb
 source_group("03mtgb" FILES ${03mtgb})
 
 set(03mtgb__Component
-    "mtgb/AudioPlayer.cpp"
-    "mtgb/AudioPlayer.h"
     "mtgb/Collider.cpp"
     "mtgb/Collider.h"
     "mtgb/ComponentConcept.h"
@@ -206,10 +202,6 @@ set(03mtgb__Component
 source_group("03mtgb\\Component" FILES ${03mtgb__Component})
 
 set(03mtgb__Component__Data
-    "mtgb/AudioPlayerState.h"
-    "mtgb/ColliderState.h"
-    "mtgb/RigidBodyState.h"
-    "mtgb/TransformState.h"
 )
 source_group("03mtgb\\Component\\Data" FILES ${03mtgb__Component__Data})
 
@@ -218,9 +210,7 @@ set(03mtgb__Component__Mement
 )
 source_group("03mtgb\\Component\\Mement" FILES ${03mtgb__Component__Mement})
 
-set(03mtgb__Component__StatefulComponent
-    "mtgb/StatefulComponent.h"
-)
+
 source_group("03mtgb\\Component\\StatefulComponent" FILES ${03mtgb__Component__StatefulComponent})
 
 set(03mtgb__Core
@@ -263,7 +253,6 @@ set(03mtgb__CoreType
     "mtgb/Vector2T.h"
     "mtgb/Vector3.cpp"
     "mtgb/Vector3.h"
-    "mtgb/Vector3Ref.h"
     "mtgb/Vector4.cpp"
     "mtgb/Vector4.h"
 )
@@ -316,12 +305,10 @@ set(03mtgb__Library__Nlohmann-json
 source_group("03mtgb\\Library\\Nlohmann-json" FILES ${03mtgb__Library__Nlohmann-json})
 
 set(03mtgb__Shader
-#    "mtgb/FbxParts.cpp"
-#    "mtgb/FbxParts.h"
+    "mtgb/FbxParts.cpp"
+    "mtgb/FbxParts.h"
     "mtgb/Figure.cpp"
     "mtgb/Figure.h"
-    "mtgb/Ground.cpp"
-    "mtgb/Ground.h"
     "mtgb/IShader.cpp"
     "mtgb/IShader.h"
     "mtgb/PlaneUVScroll.h"
@@ -380,8 +367,6 @@ set(03mtgb__System__Collider__ColliderInfo
 source_group("03mtgb\\System\\Collider\\ColliderInfo" FILES ${03mtgb__System__Collider__ColliderInfo})
 
 set(03mtgb__System__ComponentPool
-    "mtgb/AudioPlayerCP.cpp"
-    "mtgb/AudioPlayerCP.h"
     "mtgb/ColliderCP.cpp"
     "mtgb/ComponentPool.cpp"
     "mtgb/ComponentPool.h"
@@ -411,7 +396,7 @@ set(03mtgb__System__Debug__Command
     "mtgb/AddComponentCommandGeneric.h"
     "mtgb/CommandHistory.cpp"
     "mtgb/CommandHistoryManager.h"
-    "mtgb/CommandHistoryManagerWrapper.cpp"
+    "mtgb/NamedCommandHistory.cpp"
     "mtgb/DeleteGameObjectCommand.cpp"
     "mtgb/DeleteGameObjectCommand.h"
     "mtgb/DuplicateGameObjectCommand.h"
@@ -442,9 +427,8 @@ set(03mtgb__System__Debug__MTImGui
 source_group("03mtgb\\System\\Debug\\MTImGui" FILES ${03mtgb__System__Debug__MTImGui})
 
 set(03mtgb__System__Debug__MTImGui__Editor
-    "mtgb/CommandHandlerRegistry.h"
     "mtgb/CommandHistory.h"
-    "mtgb/CommandHistoryManagerWrapper.h"
+    "mtgb/NamedCommandHistory.h"
     "mtgb/GameObjectGenerator.h"
     "mtgb/ImGuiEditor.cpp"
     "mtgb/ImGuiEditor.h"
@@ -508,8 +492,8 @@ set(03mtgb__System__Draw
 source_group("03mtgb\\System\\Draw" FILES ${03mtgb__System__Draw})
 
 set(03mtgb__System__Draw__FBX
-#    "mtgb/Fbx.cpp"
-#    "mtgb/Fbx.h"
+    "mtgb/Fbx.cpp"
+    "mtgb/Fbx.h"
     "mtgb/FbxAnimationClip.h"
     "mtgb/FbxAnimationController.h"
     "mtgb/FbxModel.cpp"
@@ -550,10 +534,6 @@ set(03mtgb__System__Library
 )
 source_group("03mtgb\\System\\Library" FILES ${03mtgb__System__Library})
 
-set(03mtgb__System__Model
-    "mtgb/Model.cpp"
-    "mtgb/Model.h"
-)
 source_group("03mtgb\\System\\Model" FILES ${03mtgb__System__Model})
 
 set(03mtgb__System__SceneSystem
@@ -598,15 +578,8 @@ set(03mtgb__System__Window__DoubleWindow
 )
 source_group("03mtgb\\System\\Window\\DoubleWindow" FILES ${03mtgb__System__Window__DoubleWindow})
 
-set(03mtgb__System__Window__MainWindow
-    "mtgb/MainWindow.cpp"
-    "mtgb/MainWindow.h"
-)
 source_group("03mtgb\\System\\Window\\MainWindow" FILES ${03mtgb__System__Window__MainWindow})
 
-set(03mtgb__System__Window__SubWindow
-    "mtgb/SubWindow.h"
-)
 source_group("03mtgb\\System\\Window\\SubWindow" FILES ${03mtgb__System__Window__SubWindow})
 
 set(03mtgb__System__Window__WindowContextResourceManager
@@ -642,8 +615,6 @@ source_group("03mtgb\\System\\Window\\WindowManager" FILES ${03mtgb__System__Win
 set(03mtgb__X-Ignore
     "mtgb/Entity.cpp"
     "mtgb/Entity.h"
-    "mtgb/World.cpp"
-    "mtgb/World.h"
 )
 source_group("03mtgb\\X-Ignore" FILES ${03mtgb__X-Ignore})
 
@@ -683,10 +654,8 @@ set(04Library__ImGui__ImGuizmo
 source_group("04Library\\ImGui\\ImGuizmo" FILES ${04Library__ImGui__ImGuizmo})
 
 set(Workflow
-    ".github/workflows/ClangTidyAnalysis.yml"
     ".github/workflows/DeployDoxygen.yml"
     ".github/workflows/ReleaseBuildAndPublish.yml"
-    ".github/workflows/SetupEnv.yml"
 )
 source_group("Workflow" FILES ${Workflow})
 
@@ -698,10 +667,8 @@ set(Workflow__Utility
     "mtgb/MTAssert.h"
     "mtgb/MTStringUtility.cpp"
     "mtgb/MTStringUtility.h"
-    "mtgb/Observer.h"
     "mtgb/PathUtility.h"
     "mtgb/ProfileUtlity.h"
-    "mtgb/Property.h"
     "mtgb/ReleaseUtility.h"
     "mtgb/StringComparators.h"
     "mtgb/WindowContextUtil.cpp"
@@ -709,8 +676,7 @@ set(Workflow__Utility
 )
 source_group("Workflow\\Utility" FILES ${Workflow__Utility})
 
-set(
-    "mtgb/BoxPlane.cpp"
+set(Unfiltered
     "mtgb/CameraSystem.h"
     "mtgb/CircleDetector.cpp"
     "mtgb/CircleDetector.h"
@@ -729,7 +695,6 @@ set(
     "mtgb/GameObjectLayer.cpp"
     "mtgb/GameObjectTypeRegistry.cpp"
     "mtgb/GroupCommand.cpp"
-    "mtgb/HighlightEnemy.cpp"
     "mtgb/ICamera.cpp"
     "mtgb/ICamera.h"
     "mtgb/IDetector.h"
@@ -754,11 +719,6 @@ set(
     "mtgb/ScoreManager.cpp"
     "mtgb/ScoreManager.h"
     "mtgb/ShowAttributes.cpp"
-    "mtgb/StatefulComponent.inl"
-    "mtgb/TerrainReader.cpp"
-#    "mtgb/TerrainReader.h"
-    "mtgb/TimeLimit.cpp"
-    "mtgb/TimeLimit.h"
     "mtgb/UIDrawCommand.cpp"
     "Source/ActorManager.cpp"
     "Source/CircularSaw.cpp"
@@ -780,7 +740,7 @@ set(
     "Source/StageEditScene.cpp"
     "Source/StageManager.cpp"
 )
-source_group("未フィルターのなんとかしなきゃいけないファイル" FILES ${})
+source_group("Unfiltered" FILES ${Unfiltered})
 
 set(ALL_FILES
     ${no_group_source_files}
@@ -837,7 +797,7 @@ set(ALL_FILES
     ${04Library__ImGui__ImGuizmo}
     ${Workflow}
     ${Workflow__Utility}
-    ${}
+    ${Unfiltered}
 )
 
 ################################################################################
@@ -845,7 +805,7 @@ set(ALL_FILES
 ################################################################################
 add_executable(${PROJECT_NAME} ${ALL_FILES})
 
-# プリコンパイルヘッダ
+# プリコンパイル済みヘッダを設定する
 target_precompile_headers(${PROJECT_NAME} PRIVATE
     "$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/mtgb/stdafx.h>"
 )
@@ -887,13 +847,13 @@ set_target_properties(${PROJECT_NAME} PROPERTIES MSVC_RUNTIME_LIBRARY ${MSVC_RUN
 ################################################################################
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     target_include_directories(${PROJECT_NAME} PUBLIC
-        "$<$<CONFIG:Release>:"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;"
-            "$ENV{REFL_CPP}"
-        ">"
+        # リリースビルド時のインクルードディレクトリ
+        "$<$<CONFIG:Release>:${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;$ENV{REFL_CPP}>"
+        # どのビルド・モードでも共通
         "$ENV{FBX}/include;"
         "${CMAKE_CURRENT_SOURCE_DIR}/refl-cpp;"
-        "${CMAKE_CURRENT_SOURCE_DIR}/EffekseeLib/install_msvc2022_x64/include/Effekseer"
+        "${CMAKE_CURRENT_SOURCE_DIR}/EffekseeLib/install_msvc2022_x64/include/Effekseer;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/mtgb"
     )
 endif()
 
@@ -902,24 +862,18 @@ endif()
 ################################################################################
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     target_compile_definitions(${PROJECT_NAME} PRIVATE
-        "$<$<CONFIG:Debug>:"
-            "_DEBUG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "NDEBUG"
-        ">"
+        # デバッグビルド
+        "$<$<CONFIG:Debug>:_DEBUG>"
+        # リリースビルド
+        "$<$<CONFIG:Release>:NDEBUG>"
         "_WINDOWS;"
         "_AMD64_;"
         "_MBCS"
     )
 elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     target_compile_definitions(${PROJECT_NAME} PRIVATE
-        "$<$<CONFIG:Debug>:"
-            "_DEBUG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "NDEBUG"
-        ">"
+        "$<$<CONFIG:Debug>:_DEBUG>"
+        "$<$<CONFIG:Release>:NDEBUG>"
         "WIN32;"
         "_WINDOWS;"
         "UNICODE;"
@@ -931,40 +885,50 @@ endif()
 # Compile and link options
 ################################################################################
 if(MSVC)
+    target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+        # 指定したC++標準バージョンを必須とする。コンパイラがサポートしていないならばビルド失敗
+        CXX_STANDARD_REQUIRED ON
+        # コンパイラ固有の拡張機能を無効にする
+        CXX_EXTENSIONS OFF
+    )
+    # target_compile_features(
     if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         target_compile_options(${PROJECT_NAME} PRIVATE
-            $<$<CONFIG:Debug>:
-                /wd4005
-            >
-            $<$<CONFIG:Release>:
-                /Oi;
-                /Gy
-            >
+            # デバッグビルド時のオプション
+            $<$<CONFIG:Debug>:/wd4005>
+            # リリースビルド時のオプション
+            $<$<CONFIG:Release>:/Oi;/Gy>
+            # C++の標準規格に準拠したコンパイルを強制する
             /permissive-;
+            # __cplusplusの値でC++のバージョンを判定している箇所が正しく機能するように
+            /Zc:__cplusplus;
             /sdl;
-            /W3;
+            /W4;
+            # 警告をエラーとして扱う
+            # /WX;
+            /FI stdafx.h
             ${DEFAULT_CXX_DEBUG_INFORMATION_FORMAT};
             /utf-8;
             ${DEFAULT_CXX_EXCEPTION_HANDLING}
         )
     elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
         target_compile_options(${PROJECT_NAME} PRIVATE
-            $<$<CONFIG:Release>:
-                /Oi;
-                /Gy
-            >
+            $<$<CONFIG:Release>:/Oi;/Gy>
             /permissive-;
             /sdl;
-            /W3;
+            /W4;
             ${DEFAULT_CXX_DEBUG_INFORMATION_FORMAT};
             ${DEFAULT_CXX_EXCEPTION_HANDLING}
         )
     endif()
+    # "/Y-" はプリコンパイル済みヘッダを無視するオプション
     if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         string(CONCAT FILE_CL_OPTIONS
             "/Y-"
         )
     endif()
+    # プリコンパイル済みヘッダを無視するソース
     source_file_compile_options(ImGui/GraphEditor.cpp ${FILE_CL_OPTIONS})
     if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         string(CONCAT FILE_CL_OPTIONS
@@ -1060,34 +1024,39 @@ if(MSVC)
 endif()
 
 ################################################################################
-# Pre build events
+# Pre build events (ビルド前イベント)
 ################################################################################
-if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-    add_custom_command_if(
-        TARGET ${PROJECT_NAME}
-        PRE_BUILD
-        COMMANDS
-        COMMAND $<CONFIG:Release> ECHO $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/> > $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>ProjectDirPath.txt
-        COMMAND $<CONFIG:Release> "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>Tools\\ClangTest.exe" "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>"
-    )
-endif()
+# if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+#     add_custom_command_if(
+#         TARGET ${PROJECT_NAME}
+#         PRE_BUILD
+#         COMMANDS
+#         COMMAND $<CONFIG:Release> ECHO $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/> > $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>ProjectDirPath.txt
+#         COMMAND $<CONFIG:Release> "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>Tools\\ClangTest.exe" "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>"
+#     )
+# endif()
 
 ################################################################################
-# Dependencies
+# Dependencies (リンク先)
 ################################################################################
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     target_link_directories(${PROJECT_NAME} PRIVATE
+        # デバッグビルド
         "$<$<CONFIG:Debug>:"
             "$ENV{FBX}/lib/x64/debug;"
-            "C:/Program Files/Autodesk/FBX/FBX SDK/2020.3.7/lib/x64/debug"
         ">"
+        # リリースビルド
         "$<$<CONFIG:Release>:"
             "$ENV{FBX}/lib/x64/release;"
-            "E:/EffekseerForCpp/install_msvc2022_x64/lib"
         ">"
+        # どのビルドモードでも共通
         "${CMAKE_CURRENT_SOURCE_DIR}//EffekseeLib/install_msvc2022_x64/lib"
     )
 endif()
 
 use_package(${PROJECT_NAME} boost 1.87.0)
 use_package(${PROJECT_NAME} nlohmann.json 3.12.0)
+find_package(nlohmann_json CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
+find_package(boost_multi_index CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE Boost::multi_index)
