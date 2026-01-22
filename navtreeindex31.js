@@ -1,5 +1,9 @@
 var NAVTREEINDEX31 =
 {
+"globals.html":[6,1,0,0],
+"globals_a.html":[6,1,0,1],
+"globals_b.html":[6,1,0,2],
+"globals_c.html":[6,1,0,3],
 "globals_d.html":[6,1,0,4],
 "globals_defs.html":[6,1,6],
 "globals_e.html":[6,1,0,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX31 =
 "namespacemtgb.html#ae6d43ecf9d09f4ab807f5d1b3c74c0e6":[3,0,7,261],
 "namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748":[3,0,7,222],
 "namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd":[3,0,7,222,1],
-"namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a6a061313d22e51e0f25b7cd4dc065233":[3,0,7,222,2],
-"namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a7a1920d61156abc05a60135aefe8bc67":[3,0,7,222,0],
-"namespacemtgb.html#aeccdf685def035238bcaed9d4ba1b04c":[3,0,7,285],
-"namespacemtgb.html#aedc3f191ebf23589770f544d20f22e68":[3,0,7,242],
-"namespacemtgb.html#aee5a38752e79c786c5e0dfb719963168":[3,0,7,271]
+"namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a6a061313d22e51e0f25b7cd4dc065233":[3,0,7,222,2]
 };

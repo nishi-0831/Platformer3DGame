@@ -1,5 +1,9 @@
 var NAVTREEINDEX37 =
 {
+"structmtstat_1_1MTStat_1_1StateTransition.html#a7303acf99b61722c1ec570198dd86f93":[5,0,5,0,0,1],
+"structmtstat_1_1MTStat_1_1StateTransition.html#a7303acf99b61722c1ec570198dd86f93":[3,0,8,0,0,1],
+"structmtstat_1_1MTStat_1_1StateTransition.html#af4c1ce22b71037d6fc297c76b5fda738":[5,0,5,0,0,0],
+"structmtstat_1_1MTStat_1_1StateTransition.html#af4c1ce22b71037d6fc297c76b5fda738":[3,0,8,0,0,0],
 "structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html":[3,0,10,0],
 "structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html":[5,0,6,0],
 "structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html#a12c2f75bad2d4874122d9f95ad3494e4":[5,0,6,0,1],

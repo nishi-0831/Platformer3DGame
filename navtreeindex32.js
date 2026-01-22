@@ -1,5 +1,9 @@
 var NAVTREEINDEX32 =
 {
+"namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a7a1920d61156abc05a60135aefe8bc67":[3,0,7,222,0],
+"namespacemtgb.html#aeccdf685def035238bcaed9d4ba1b04c":[3,0,7,285],
+"namespacemtgb.html#aedc3f191ebf23589770f544d20f22e68":[3,0,7,242],
+"namespacemtgb.html#aee5a38752e79c786c5e0dfb719963168":[3,0,7,271],
 "namespacemtgb.html#aef476b5efa10f9db87b5e54c07d1b1a4":[3,0,7,237],
 "namespacemtgb.html#aefc552cea3258dcfe7c6e9faf02d1d71":[3,0,7,257],
 "namespacemtgb.html#af06513c2a65b3e93fd8c430fcbd36109":[3,0,7,250],
@@ -245,9 +249,5 @@ var NAVTREEINDEX32 =
 "structdrmp3dec__frame__info.html#a723116fb9098d6299bb6b39082d5d46f":[5,0,33,2],
 "structdrmp3dec__frame__info.html#a91703350261bae1eb34df2e6a6e7661e":[5,0,33,3],
 "structdrmp3dec__frame__info.html#aba1469550a66e372cdad46b66bdab7f1":[5,0,33,4],
-"structdrmp3dec__frame__info.html#ac8b0b572f5d049f8520abdd0ca0f9c49":[5,0,33,0],
-"structmtgb_1_1AABB.html":[3,0,7,5],
-"structmtgb_1_1AABB.html":[5,0,4,2],
-"structmtgb_1_1AABB.html#a3ceedbef01bfc9b658966e1f7c638501":[3,0,7,5,0],
-"structmtgb_1_1AABB.html#a3ceedbef01bfc9b658966e1f7c638501":[5,0,4,2,0]
+"structdrmp3dec__frame__info.html#ac8b0b572f5d049f8520abdd0ca0f9c49":[5,0,33,0]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX36 =
 {
+"structmtgb_1_1TextLayoutData.html#ad7b12d445312c50d1270a01925ccc832":[5,0,4,159,0],
+"structmtgb_1_1TextLayoutData.html#ad7b12d445312c50d1270a01925ccc832":[3,0,7,162,0],
+"structmtgb_1_1TextLayoutData.html#ade1ed99145a195dad28c146af27f5f0f":[5,0,4,159,2],
+"structmtgb_1_1TextLayoutData.html#ade1ed99145a195dad28c146af27f5f0f":[3,0,7,162,2],
 "structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html":[3,0,7,167,0],
 "structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html":[5,0,4,164,0],
 "structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html#a6f745711236d52f72e8f84e6a97a3b1c":[3,0,7,167,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX36 =
 "structmtgb_1_1text__layout__order.html":[5,0,4,156],
 "structmtgb_1_1text__layout__order.html":[3,0,7,159],
 "structmtstat_1_1MTStat_1_1StateTransition.html":[3,0,8,0,0],
-"structmtstat_1_1MTStat_1_1StateTransition.html":[5,0,5,0,0],
-"structmtstat_1_1MTStat_1_1StateTransition.html#a7303acf99b61722c1ec570198dd86f93":[5,0,5,0,0,1],
-"structmtstat_1_1MTStat_1_1StateTransition.html#a7303acf99b61722c1ec570198dd86f93":[3,0,8,0,0,1],
-"structmtstat_1_1MTStat_1_1StateTransition.html#af4c1ce22b71037d6fc297c76b5fda738":[5,0,5,0,0,0],
-"structmtstat_1_1MTStat_1_1StateTransition.html#af4c1ce22b71037d6fc297c76b5fda738":[3,0,8,0,0,0]
+"structmtstat_1_1MTStat_1_1StateTransition.html":[5,0,5,0,0]
 };

@@ -18,6 +18,7 @@ var classmtgb_1_1DirectX11Draw =
     [ "ImGuiRenderer", "classmtgb_1_1DirectX11Draw.html#a3e15d39a79133bf392f7d3c9e3324fe0", null ],
     [ "IShader", "classmtgb_1_1DirectX11Draw.html#a7220a08f0b14598dc3787185f30cb243", null ],
     [ "OBJ", "classmtgb_1_1DirectX11Draw.html#abb96d9f662dde5b8cc57b97453b67a80", null ],
+    [ "PlaneUVScroll", "classmtgb_1_1DirectX11Draw.html#a8908916c7b88e3927f7f92f2abf314f4", null ],
     [ "RenderSystem", "classmtgb_1_1DirectX11Draw.html#a06b786d8e0847dfe9cc15e1dea308fcd", null ],
     [ "SceneSystem", "classmtgb_1_1DirectX11Draw.html#a4c955dfb7d7835cd518d5401e437d270", null ],
     [ "Texture2D", "classmtgb_1_1DirectX11Draw.html#aa70951a0328ba29f64176f16b3ea47d8", null ],
