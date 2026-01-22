@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"globals_d.html":[6,1,0,4],
+"globals_defs.html":[6,1,6],
 "globals_e.html":[6,1,0,5],
 "globals_enum.html":[6,1,4],
 "globals_eval.html":[6,1,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX31 =
 "namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a7a1920d61156abc05a60135aefe8bc67":[3,0,7,222,0],
 "namespacemtgb.html#aeccdf685def035238bcaed9d4ba1b04c":[3,0,7,285],
 "namespacemtgb.html#aedc3f191ebf23589770f544d20f22e68":[3,0,7,242],
-"namespacemtgb.html#aee5a38752e79c786c5e0dfb719963168":[3,0,7,271],
-"namespacemtgb.html#aef476b5efa10f9db87b5e54c07d1b1a4":[3,0,7,237],
-"namespacemtgb.html#aefc552cea3258dcfe7c6e9faf02d1d71":[3,0,7,257]
+"namespacemtgb.html#aee5a38752e79c786c5e0dfb719963168":[3,0,7,271]
 };

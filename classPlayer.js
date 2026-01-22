@@ -75,5 +75,7 @@ var classPlayer =
     [ "state_", "classPlayer.html#a8d086ab892906df0ca3f36dbbb22901e", null ],
     [ "status_", "classPlayer.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classPlayer.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],
-    [ "targetEntityId_", "classPlayer.html#a04e42ed23c57183524dc34a01aa2a138", null ]
+    [ "targetEntityId_", "classPlayer.html#a04e42ed23c57183524dc34a01aa2a138", null ],
+    [ "walkSmokeElapsedTime_", "classPlayer.html#a7ff085b9c5aa3e78a13ad0cea5d6ae14", null ],
+    [ "walkSmokeInterval_", "classPlayer.html#aa658104be2b32a433b2067f2827f8900", null ]
 ];

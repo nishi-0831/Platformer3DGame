@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938":[5,0,73,1,1],
+"classSampleGame.html#ad8e951e959e15a61ba47b16a9867d013":[5,0,73,14],
 "classSampleGame.html#ae241b7677e1c59407d3f80fdc2040547":[5,0,73,17],
 "classSampleGame.html#aeaa55851e01df60f0661fc0b24e65d7a":[5,0,73,5],
 "classSampleGame.html#af24d7c1f739c63b6e99bd90374ef6235":[5,0,73,30],
@@ -244,10 +246,8 @@ var NAVTREEINDEX8 =
 "classTypeRegistry.html#afb3dc512e17838e88692c90f7257bff1":[5,0,90,3],
 "class_8h.html":[6,0,0,0,3],
 "class_8h_source.html":[6,0,0,0,3],
-"classdocstring_1_1PyClass.html":[3,0,2,0],
 "classdocstring_1_1PyClass.html":[5,0,0,0],
+"classdocstring_1_1PyClass.html":[3,0,2,0],
 "classdocstring_1_1PyClass.html#a00dd800dc15e2b727e2a37c6f6c40e8b":[5,0,0,0,0],
-"classdocstring_1_1PyClass.html#a00dd800dc15e2b727e2a37c6f6c40e8b":[3,0,2,0,0],
-"classdocstring_1_1PyClass.html#a45ced0d4bfe82f1f5df00bdb7a19aa0f":[3,0,2,0,2],
-"classdocstring_1_1PyClass.html#a45ced0d4bfe82f1f5df00bdb7a19aa0f":[5,0,0,0,2]
+"classdocstring_1_1PyClass.html#a00dd800dc15e2b727e2a37c6f6c40e8b":[3,0,2,0,0]
 };
