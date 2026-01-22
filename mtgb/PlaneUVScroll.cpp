@@ -8,7 +8,8 @@
 #include "GameTime.h"
 #include <d3d11.h>
 #include <DirectXMath.h>
-
+#include <d3dcompiler.h>
+#include "HLSLInclude.h"
 using namespace DirectX;
 
 namespace
@@ -28,11 +29,51 @@ mtgb::PlaneUVScroll::~PlaneUVScroll()
 void mtgb::PlaneUVScroll::Initialize()
 {
 	IShader::Initialize();
+
+	HRESULT hResult;
+	HLSLInclude hlslInclude;	
+	ID3DBlob* pCompileGS{nullptr};
+	ID3DBlob* pErrorBlob{nullptr}; // エラーメッセージ用
+
+	hResult = D3DCompileFromFile(
+		L"Shader/SeaUVScroll.hlsl",
+		nullptr,
+		&hlslInclude,
+		"GS",
+		"gs_5_0",
+		0,
+		0,
+		&pCompileGS,
+		&pErrorBlob
+	);
+	if (FAILED(hResult))
+	{
+		if (pErrorBlob)
+		{
+			// エラーメッセージを出力
+			const char* errorMessage = static_cast<const char*>(pErrorBlob->GetBufferPointer());
+			OutputDebugStringA("Geometry Shader Compile Error:\n");
+			OutputDebugStringA(errorMessage);
+			OutputDebugStringA("\n");
+		}
+		SAFE_RELEASE(pErrorBlob);
+		massert(false && "ジオメトリシェーダのコンパイルに失敗");
+	}
+	DirectX11Draw::pDevice_->CreateGeometryShader(
+		pCompileGS->GetBufferPointer(),
+		pCompileGS->GetBufferSize(),
+		nullptr,
+		pGeometryShader_.ReleaseAndGetAddressOf()
+	);
+
+	SAFE_RELEASE(pCompileGS);
+	massert(SUCCEEDED(hResult) && "ジオメトリシェーダの作成に失敗")
 }
 
 void mtgb::PlaneUVScroll::Release()
 {
 	pTimeConstantBuffer_.Reset();
+	pGeometryShader_.Reset();
 	IShader::Release();
 }
 
@@ -45,6 +86,7 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 {
 	DirectX11Draw::SetIsWriteToDepthBuffer(true);
 	DirectX11Draw::SetShader(ShaderType::Sea);
+	DirectX11Draw::pContext_->GSSetShader(pGeometryShader_.Get(), nullptr, 0);
 
 	time_ += Time::DeltaTimeF() * 0.5f;
 
@@ -62,8 +104,9 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 	IShader::Draw<ConstantBuffer, Vertex>(
 		[&](ConstantBuffer* _pCB)
 		{
-			_pCB->g_matrixWorldViewProj = XMMatrixTranspose(mWorld * mView * mProj);
+			// _pCB->g_matrixWorldViewProj = XMMatrixTranspose(mWorld * mView * mProj);
 			_pCB->g_matrixWorld			= XMMatrixTranspose(mWorld);
+			_pCB->g_matrixViewProj = XMMatrixTranspose(mView * mProj);
 
 			XMMATRIX rotateX		  = XMMatrixRotationX(XMConvertToRadians(_transform.rotate.f[0]));
 			XMMATRIX rotateY		  = XMMatrixRotationY(XMConvertToRadians(_transform.rotate.f[1]));
@@ -101,9 +144,11 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 			ID3D11ShaderResourceView* pSrv = texture_.GetShaderResourceView();
 			_pContext->PSSetSamplers(0, 1, &pSampler);
 			_pContext->PSSetShaderResources(0, 1, &pSrv);
+			//_pContext->GSSet
 		},
 		6
 	);
+	DirectX11Draw::pContext_->GSSetShader(nullptr, nullptr, 0);
 }
 
 void mtgb::PlaneUVScroll::InitializeVertexBuffer(ID3D11Device* _pDevice)

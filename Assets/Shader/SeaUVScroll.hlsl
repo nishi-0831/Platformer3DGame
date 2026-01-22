@@ -1,4 +1,24 @@
-#include "3DCommon.hlsli"
+// #include "3DCommon.hlsli"
+
+Texture2D g_texture : register(t0); // テクスチャ
+SamplerState g_sampler : register(s0); // テクスチャのサンプラ
+
+cbuffer global : register(b0)
+{
+    // matrix g_matrixWVP; // ワールド・ビュー・プロジェクションの合成行列
+    matrix g_matrixNormalTrans; // 法線の変換行列 (回転行列)
+    matrix g_matrixW; // ワールド変換行列
+    matrix g_matrixVP;
+    float4 g_lightDir; // 環境光線
+    float4 g_diffuseColor; // マテリアルの色
+    float4 g_ambientColor; // 影の色
+    float4 g_speculerColor; // スペキュラーからの色
+    float4 g_cameraPosition; // 視点 (カメラの座標)
+    float g_shuniness; // ハイライトの強さ
+    bool g_hasTexture; // テクスチャを持っているか
+    float2 padding;
+    float4 g_textureScale;
+};
 
 cbuffer Time : register(b1)
 {
@@ -6,42 +26,104 @@ cbuffer Time : register(b1)
     float g_padding[3];
 }
 
-/*
-* ���_�V�F�[�_
-*/
-VS_OUT VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOORD)
+struct VS_OUT
 {
-    VS_OUT outData;
+    float4 position : SV_POSITION; // 位置
+    float4 normal : NORMAL0; // 法線
+    float2 uv : TEXCOORD; // uv座標
+    float4 eye : NORMAL1;
+};
 
-    outData.position = mul(position, g_matrixWVP);
+struct GS_IN
+{
+    float4 position : SV_POSITION; // 位置
+    float4 normal : NORMAL0; // 法線
+    float2 uv : TEXCOORD; // uv座標
+    float4 eye : NORMAL1;
+    float4 worldPosition : POSITION1;
+};
 
-    // �@���̕ό`
+VS_OUT GsInToVsOut(GS_IN gs)
+{
+    VS_OUT gsIn;
+    
+    gsIn.position = gs.position;
+    gsIn.normal = gs.normal;
+    gsIn.uv = gs.uv;
+    gsIn.eye = gs.eye;
+    return gsIn;
+}
+
+/*
+* 頂点シェーダ
+*/
+GS_IN VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOORD)
+{
+    GS_IN outData;
+
+    float4 pos = position;
+    pos.y = sin(pos.x * 0.1f + g_time * 2.0f) * 0.5f;
+    outData.position = mul(pos, g_matrixW * g_matrixVP);
+
+    // 法線の変形
     normal.w = 0;
     outData.normal = mul(normal, g_matrixNormalTrans);
 
-    float4 worldPosition = mul(position, g_matrixW);
-    // �����x�N�g��
+    float4 worldPosition = mul(pos, g_matrixW);
+    outData.worldPosition = pos;
+    // 視線ベクトル
     outData.eye = normalize(g_cameraPosition - worldPosition);
     
-    // �@���̐�Βl���擾
+    // 法線の絶対値を取得
     float3 absNormal = abs(outData.normal.xyz);
     
     float2 selectedScale;
     
-    // XZ���̃X�P�[�����g�p
-    // UV���W
+    // XZ軸のスケールを使用
+    // UV座標
     outData.uv = uv;
-    //outData.uv = uv * g_textureScale.xz;
     
     return outData;
 }
 
+// MEMO:
+// triangle : 三角形のリスト、またはストリップ
+// TriangleStream
+// - ストリーム出力オブジェクト。ジオメトリシェーダは計算結果をこれに渡す
+// - 三角形の頂点を受け取る型
+[maxvertexcount(72)]
+void GS(triangle GS_IN input[3], inout TriangleStream<VS_OUT> output)
+{
+    const int subdivisions = 8;
+    int appendCount = 0;
+    
+    // コンスタントバッファにVP行列も追加して、頂点シェーダでワールド変換、ジオメトリシェーダでVPで変換
+    
+    VS_OUT vert0 = GsInToVsOut(input[0]);
+    output.Append(vert0);
+    VS_OUT vert1 = GsInToVsOut(input[1]);
+    output.Append(vert1);
+    output.Append(GsInToVsOut(input[2]));
+        
+    GS_IN vert = input[2];
+    // vert.position.x = lerp(input[0].worldPosition.x, input[2].worldPosition.x, 0.5);
+    // vert.position.y = input[2].worldPosition.y;
+    // vert.uv.x = lerp(input[0].uv.x, input[2].uv.x, 0.5);
+    // vert.eye.x = lerp(input[0].eye.x, input[2].eye.x, 0.5);
+    // vert.eye.x = lerp(input[0].eye.x, input[2].eye.x, 0.5);
+    VS_OUT newVert = GsInToVsOut(vert);
+    //output.Append(GsInToVsOut(input[2]));
+    //output.Append(newVert);
+    //output.Append(vert0);
+    output.RestartStrip();
+}
+
 float4 PS(VS_OUT input) : SV_Target
 {
-    // ��������
+    // 光源方向
     float4 lightDir = normalize(g_lightDir);
     
-    // �@��
+    // 法線
     input.normal = normalize(input.normal);
     
     // 
@@ -69,10 +151,10 @@ float4 PS(VS_OUT input) : SV_Target
         diffuse = g_diffuseColor;
     }
     
-    // ����
+    // 環境光
     float4 ambient = float4(1, 1, 1, 1);
     
-    // ���ʔ��ː���
+    // 鏡面反射成分
     float4 specuer = float4(0, 0, 0, 0);
     if (g_speculerColor.a != 0)
     {
@@ -80,7 +162,7 @@ float4 PS(VS_OUT input) : SV_Target
         specuer = pow(saturate(dot(r, input.eye)), g_shuniness) * g_speculerColor;
     }
     
-    // �ŏI�I�ȐF
+    // 最終的な色
     float4 color = diffuse * shade + diffuse * ambient + specuer;
     
     return color;

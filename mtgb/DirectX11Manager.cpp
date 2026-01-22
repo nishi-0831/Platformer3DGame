@@ -917,7 +917,6 @@ void mtgb::DirectX11Manager::CompileShader(
 		nullptr,						// リンケージクラス: 無し
 		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexShader.ReleaseAndGetAddressOf()
 	);
-
 	massert(
 		SUCCEEDED(hResult) // 頂点シェーダの作成に成功
 		&& "頂点シェーダの作成に失敗 @DirectX11Manager::CompileShader"

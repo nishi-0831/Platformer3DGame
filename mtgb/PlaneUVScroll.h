@@ -29,9 +29,10 @@ namespace mtgb
 		/// </summary>
 		struct ConstantBuffer
 		{
-			Matrix4x4 g_matrixWorldViewProj; // ワールド・ビュー・プロジェクション行列
+			// Matrix4x4 g_matrixWorldViewProj; // ワールド・ビュー・プロジェクション行列
 			Matrix4x4 g_matrixNormalTrans;	 // 回転行列と拡大行列の逆行列
 			Matrix4x4 g_matrixWorld;		 // ワールド行列
+			Matrix4x4 g_matrixViewProj;		 // ビュー・プロジェクション行列
 			Vector4 g_lightDirection;		 // ライトの向き
 			Vector4 g_diffuse;				 // 拡散反射
 			Vector4 g_ambient;				 // 環境光
@@ -67,6 +68,7 @@ namespace mtgb
 
 	  private:
 		Microsoft::WRL::ComPtr<ID3D11Buffer> pTimeConstantBuffer_;
+		Microsoft::WRL::ComPtr<ID3D11GeometryShader> pGeometryShader_;
 		Texture2D texture_;
 		float time_;
 	};

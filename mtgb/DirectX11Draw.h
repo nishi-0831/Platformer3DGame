@@ -97,6 +97,7 @@ namespace mtgb
 		friend class RenderSystem;
 		friend class EffekseerTest;
 		friend class EffectManager;
+		friend class PlaneUVScroll;
 
 	  public:
 		/// <summary>
