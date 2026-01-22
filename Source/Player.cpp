@@ -33,6 +33,8 @@ Player::Player()
 	, changeVisibilitySpan_{0.3f}
 	, elapsedInvincibilityTime_{0.0f}
 	, jumpController_{GetEntityId()}
+	, walkSmokeInterval_{0.3f}
+	, walkSmokeElapsedTime_{0.0f}
 {
 	// pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
@@ -81,11 +83,24 @@ void Player::Update()
 				// pRigidBody_->velocity_.y += jumpHeight;
 				jumpController_.StartJump(jumpHeight);
 				Audio::PlayOneShotFile("Sound/Jump.mp3");
+
+				Matrix4x4 worldMat;
+				pTransform_->GenerateWorldMatrix(&worldMat);
+				EffectParameters params;
+				params.isLoop = false;
+				params.worldMat = worldMat;
+				Game::System<EffectManager>().Play("JumpSmoke", params);
+			}
+		}
+		if (InputUtil::GetGamePadUp(PadCode::Cross) || InputUtil::GetKeyUp(KeyCode::Space))
+		{
+			if (pRigidBody_->IsJumping())
+			{
+				jumpController_.ReleaseButton();
 			}
 		}
 		UpdateRotate();
 	}
-	// pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
 
 	state_.Update();
 
@@ -147,6 +162,7 @@ void Player::InitializeState()
 			[this]
 			{
 				animController_->PlayAnimation("Run", true);
+				walkSmokeElapsedTime_ = 0.0f;
 			}
 		)
 		.OnUpdate(
@@ -167,6 +183,19 @@ void Player::InitializeState()
 				{
 					state_.Change(STATE::FALL);
 					return;
+				}
+
+				walkSmokeElapsedTime_ += Time::DeltaTimeF();
+				if (walkSmokeElapsedTime_ >= walkSmokeInterval_)
+				{
+					EffectParameters params;
+					params.isLoop = false;
+					Matrix4x4 worldMat;
+					pTransform_->GenerateWorldMatrix(&worldMat);
+					params.worldMat = worldMat;
+					Game::System<EffectManager>().Play("WalkSmoke",params);
+
+					walkSmokeElapsedTime_ = 0.0f;
 				}
 			}
 		)

@@ -47,8 +47,6 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	std::optional<FbxAnimationController> animController_;
 	int hp_;
 	HPViewer* pHPViewer_;
-	// Invincible
-	// Invincibility frames
 	// 無敵かどうか
 	bool isInvincible_;
 	// 被弾時、無敵になる時間(秒)
@@ -60,4 +58,9 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	// 描画有無を切り替える処理のハンドル
 	TimerHandle hTimerChangeVisibility_;
 	JumpController jumpController_;
+
+	// 歩いている際に煙のエフェクトを再生する間隔
+	float walkSmokeInterval_;
+	// 煙のエフェクトを出す間隔を計る経過時間
+	float walkSmokeElapsedTime_;
 };

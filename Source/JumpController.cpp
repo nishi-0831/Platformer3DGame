@@ -31,6 +31,7 @@ void JumpController::Update()
 
 void JumpController::StartJump(float _maxHeight)
 {
+	// ジャンプが可能なら、ジャンプさせる。フラグもオンにする
 	isJumping_ = true;
 	isHolding_ = true;
 
@@ -42,13 +43,7 @@ void JumpController::StartJump(float _maxHeight)
 
 void JumpController::ReleaseButton()
 {
+	// StartJumpによってジャンプしていたら、速度を0にする
+	pTargetRigidBody_->velocity_.y = 0.0f;
 	isHolding_ = false;
-	// ボタンを押していた時間によって、高度を減衰させる
-
-	float holdFraction = std::clamp(holdTime_ / maxHoldTime_,0.0f,1.0f);
-	float gravity	   = RigidBody::GetGravity();
-	float maxHeight	   = (onStartJumpVelocity_ * onStartJumpVelocity_) / (2.0f * gravity);
-
-	float currHeight = maxHeight * holdFraction;
-	//float 
 }
