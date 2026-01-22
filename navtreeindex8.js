@@ -246,8 +246,8 @@ var NAVTREEINDEX8 =
 "classTypeRegistry.html#afb3dc512e17838e88692c90f7257bff1":[5,0,90,3],
 "class_8h.html":[6,0,0,0,3],
 "class_8h_source.html":[6,0,0,0,3],
-"classdocstring_1_1PyClass.html":[5,0,0,0],
 "classdocstring_1_1PyClass.html":[3,0,2,0],
+"classdocstring_1_1PyClass.html":[5,0,0,0],
 "classdocstring_1_1PyClass.html#a00dd800dc15e2b727e2a37c6f6c40e8b":[5,0,0,0,0],
 "classdocstring_1_1PyClass.html#a00dd800dc15e2b727e2a37c6f6c40e8b":[3,0,2,0,0]
 };

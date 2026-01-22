@@ -8,6 +8,7 @@ var structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer =
     [ "g_matrixNormalTrans", "structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ac9b82eed9f950dba45f9bb0fdad74421", null ],
     [ "g_matrixViewProj", "structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a8967b5a6af262325c2fa8f5c1436d9f0", null ],
     [ "g_matrixWorld", "structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a86778dd59ccffef5fc6ad9682b479550", null ],
+    [ "g_matrixWorldViewProj", "structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ab314b42d87a4ecebf174bd396f76cd1f", null ],
     [ "g_padding", "structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a4192d4a63e8ad53f2ab323f04ce67ecd", null ],
     [ "g_shininess", "structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a8239fe8fbb72cd68471a5e3462c46642", null ],
     [ "g_speculer", "structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#acc9cf934edac78e928a3f5b7e26977c6", null ],
