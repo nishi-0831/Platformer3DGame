@@ -29,7 +29,7 @@ namespace mtgb
 		/// </summary>
 		struct ConstantBuffer
 		{
-			// Matrix4x4 g_matrixWorldViewProj; // ワールド・ビュー・プロジェクション行列
+			Matrix4x4 g_matrixWorldViewProj; // ワールド・ビュー・プロジェクション行列
 			Matrix4x4 g_matrixNormalTrans;	 // 回転行列と拡大行列の逆行列
 			Matrix4x4 g_matrixWorld;		 // ワールド行列
 			Matrix4x4 g_matrixViewProj;		 // ビュー・プロジェクション行列

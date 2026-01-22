@@ -5,7 +5,7 @@ SamplerState g_sampler : register(s0); // テクスチャのサンプラ
 
 cbuffer global : register(b0)
 {
-    // matrix g_matrixWVP; // ワールド・ビュー・プロジェクションの合成行列
+    matrix g_matrixWVP; // ワールド・ビュー・プロジェクションの合成行列
     matrix g_matrixNormalTrans; // 法線の変換行列 (回転行列)
     matrix g_matrixW; // ワールド変換行列
     matrix g_matrixVP;
@@ -29,29 +29,29 @@ cbuffer Time : register(b1)
 struct VS_OUT
 {
     float4 position : SV_POSITION; // 位置
-    float4 normal : NORMAL0; // 法線
-    float2 uv : TEXCOORD; // uv座標
-    float4 eye : NORMAL1;
+    float4 normal : TEXCOORD0; // 法線
+    float2 uv : TEXCOORD1; // uv座標
+    float4 eye : TEXCOORD2;
 };
 
 struct GS_IN
 {
-    float4 position : SV_POSITION; // 位置
-    float4 normal : NORMAL0; // 法線
-    float2 uv : TEXCOORD; // uv座標
-    float4 eye : NORMAL1;
-    float4 worldPosition : POSITION1;
+    float4 position : POSITION0; // 位置
+    float4 normal : TEXCOORD0; // 法線
+    float2 uv : TEXCOORD1; // uv座標
+    float4 eye : TEXCOORD2;
 };
 
 VS_OUT GsInToVsOut(GS_IN gs)
 {
-    VS_OUT gsIn;
+    VS_OUT output;
     
-    gsIn.position = gs.position;
-    gsIn.normal = gs.normal;
-    gsIn.uv = gs.uv;
-    gsIn.eye = gs.eye;
-    return gsIn;
+    output.position = gs.position;
+    // output.position = mul(gs.position, g_matrixVP);
+    output.normal = gs.normal;
+    output.uv = gs.uv;
+    output.eye = gs.eye;
+    return output;
 }
 
 /*
@@ -62,15 +62,15 @@ GS_IN VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOOR
     GS_IN outData;
 
     float4 pos = position;
-    pos.y = sin(pos.x * 0.1f + g_time * 2.0f) * 0.5f;
-    outData.position = mul(pos, g_matrixW * g_matrixVP);
+    // これは問題なし
+    outData.position = mul(pos, g_matrixW);
+    outData.position = mul(outData.position, g_matrixVP);
 
     // 法線の変形
     normal.w = 0;
     outData.normal = mul(normal, g_matrixNormalTrans);
 
     float4 worldPosition = mul(pos, g_matrixW);
-    outData.worldPosition = pos;
     // 視線ベクトル
     outData.eye = normalize(g_cameraPosition - worldPosition);
     
@@ -94,28 +94,29 @@ GS_IN VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOOR
 [maxvertexcount(72)]
 void GS(triangle GS_IN input[3], inout TriangleStream<VS_OUT> output)
 {
-    const int subdivisions = 8;
     int appendCount = 0;
     
     // コンスタントバッファにVP行列も追加して、頂点シェーダでワールド変換、ジオメトリシェーダでVPで変換
     
     VS_OUT vert0 = GsInToVsOut(input[0]);
+
     output.Append(vert0);
     VS_OUT vert1 = GsInToVsOut(input[1]);
     output.Append(vert1);
     output.Append(GsInToVsOut(input[2]));
         
-    GS_IN vert = input[2];
-    // vert.position.x = lerp(input[0].worldPosition.x, input[2].worldPosition.x, 0.5);
-    // vert.position.y = input[2].worldPosition.y;
-    // vert.uv.x = lerp(input[0].uv.x, input[2].uv.x, 0.5);
-    // vert.eye.x = lerp(input[0].eye.x, input[2].eye.x, 0.5);
-    // vert.eye.x = lerp(input[0].eye.x, input[2].eye.x, 0.5);
-    VS_OUT newVert = GsInToVsOut(vert);
-    //output.Append(GsInToVsOut(input[2]));
-    //output.Append(newVert);
-    //output.Append(vert0);
-    output.RestartStrip();
+     //GS_IN vert = input[2];
+     //vert.position.x = lerp(input[0].position.x, input[2].position.x, 0.5);
+     //vert.position.y = input[2].position.y;
+     //vert.uv.x = lerp(input[0].uv.x, input[2].uv.x, 0.5);
+     //vert.eye.x = lerp(input[0].eye.x, input[2].eye.x, 0.5);
+     //vert.eye.x = lerp(input[0].eye.x, input[2].eye.x, 0.5);
+     //
+     //VS_OUT newVert = GsInToVsOut(vert);
+     //output.Append(GsInToVsOut(input[2]));
+     //output.Append(newVert);
+     //output.Append(vert0);
+     output.RestartStrip();
 }
 
 float4 PS(VS_OUT input) : SV_Target
@@ -163,6 +164,7 @@ float4 PS(VS_OUT input) : SV_Target
     }
     
     // 最終的な色
+    
     float4 color = diffuse * shade + diffuse * ambient + specuer;
     
     return color;

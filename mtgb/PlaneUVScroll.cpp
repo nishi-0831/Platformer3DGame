@@ -31,7 +31,7 @@ void mtgb::PlaneUVScroll::Initialize()
 	IShader::Initialize();
 
 	HRESULT hResult;
-	HLSLInclude hlslInclude;	
+	HLSLInclude hlslInclude;
 	ID3DBlob* pCompileGS{nullptr};
 	ID3DBlob* pErrorBlob{nullptr}; // エラーメッセージ用
 
@@ -104,9 +104,9 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 	IShader::Draw<ConstantBuffer, Vertex>(
 		[&](ConstantBuffer* _pCB)
 		{
-			// _pCB->g_matrixWorldViewProj = XMMatrixTranspose(mWorld * mView * mProj);
+			_pCB->g_matrixWorldViewProj = XMMatrixTranspose(mWorld * mView * mProj);
 			_pCB->g_matrixWorld			= XMMatrixTranspose(mWorld);
-			_pCB->g_matrixViewProj = XMMatrixTranspose(mView * mProj);
+			_pCB->g_matrixViewProj		= XMMatrixTranspose(mView * mProj);
 
 			XMMATRIX rotateX		  = XMMatrixRotationX(XMConvertToRadians(_transform.rotate.f[0]));
 			XMMATRIX rotateY		  = XMMatrixRotationY(XMConvertToRadians(_transform.rotate.f[1]));
