@@ -27,6 +27,9 @@ set(CMAKE_CONFIGURATION_TYPES
     CACHE STRING "" FORCE
 )
 
+# compile_commands.jsonの生成を有効にする
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 ################################################################################
 # Global compiler options
 ################################################################################
