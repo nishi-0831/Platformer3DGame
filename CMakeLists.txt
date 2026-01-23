@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.16.0)
 set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
 # プロジェクト名 使用言語
 project(Game LANGUAGES C CXX)
+set(PROJECT_NAME Project1)
 
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.
@@ -117,7 +118,6 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 
 
-set(PROJECT_NAME Project1)
 
 ################################################################################
 # Source groups
@@ -848,17 +848,17 @@ set_target_properties(${PROJECT_NAME} PROPERTIES MSVC_RUNTIME_LIBRARY ${MSVC_RUN
 ################################################################################
 # Include directories
 ################################################################################
-#if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-#    target_include_directories(${PROJECT_NAME} PUBLIC
-#        # リリースビルド時のインクルードディレクトリ
-#        "$<$<CONFIG:Release>:${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;$ENV{REFL_CPP}>"
-#        # どのビルド・モードでも共通
-#        "$ENV{FBX}/include;"
-#        "${CMAKE_CURRENT_SOURCE_DIR}/refl-cpp;"
-#        "${CMAKE_CURRENT_SOURCE_DIR}/EffekseeLib/install_msvc2022_x64/include/Effekseer;"
-#        "${CMAKE_CURRENT_SOURCE_DIR}/mtgb"
-#    )
-#endif()
+if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+    target_include_directories(${PROJECT_NAME} PUBLIC
+        # リリースビルド時のインクルードディレクトリ
+        "$<$<CONFIG:Release>:${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;$ENV{REFL_CPP}>"
+        # どのビルド・モードでも共通
+        "$ENV{FBX}/include;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/refl-cpp;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/EffekseeLib/install_msvc2022_x64/include/Effekseer;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/mtgb"
+    )
+endif()
 
 ################################################################################
 # Compile definitions
@@ -910,7 +910,7 @@ if(MSVC)
             /W4;
             # 警告をエラーとして扱う
             # /WX;
-            /FI stdafx.h
+            /FI ${CMAKE_CURRENT_SOURCE_DIR}/mtgb/stdafx.h
             ${DEFAULT_CXX_DEBUG_INFORMATION_FORMAT};
             /utf-8;
             ${DEFAULT_CXX_EXCEPTION_HANDLING}
@@ -1029,15 +1029,17 @@ endif()
 ################################################################################
 # Pre build events (ビルド前イベント)
 ################################################################################
-add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
-    COMMAND ${CMAKE_COMMAND}
-            -DOUT="$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/ProjectDirPath.txt>"
-            -DTEXT="$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>"
-            -P "${CMAKE_CURRENT_SOURCE_DIR}/CMake/WriteProjectDir.cmake"
-)
- add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
-    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangTest.exe>"
- )
+# add_custom_target(write_project_dir
+#    COMMAND ${CMAKE_COMMAND}
+#             -DOUT="$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/ProjectDirPath.txt>"
+#             -DTEXT="$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>"
+#             -P "${CMAKE_CURRENT_SOURCE_DIR}/CMake/WriteProjectDir.cmake"
+# )
+# コンパイル前に実行されるように依存させる
+ # add_dependencies(${PROJECT_NAME} write_project_dir)
+ add_custom_target(generate_source_code
+    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>")
+ add_dependencies(${PROJECT_NAME} generate_source_code)
 
 ################################################################################
 # Dependencies (リンク先)
