@@ -848,17 +848,17 @@ set_target_properties(${PROJECT_NAME} PROPERTIES MSVC_RUNTIME_LIBRARY ${MSVC_RUN
 ################################################################################
 # Include directories
 ################################################################################
-if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-    target_include_directories(${PROJECT_NAME} PUBLIC
-        # リリースビルド時のインクルードディレクトリ
-        "$<$<CONFIG:Release>:${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;$ENV{REFL_CPP}>"
-        # どのビルド・モードでも共通
-        "$ENV{FBX}/include;"
-        "${CMAKE_CURRENT_SOURCE_DIR}/refl-cpp;"
-        "${CMAKE_CURRENT_SOURCE_DIR}/EffekseeLib/install_msvc2022_x64/include/Effekseer;"
-        "${CMAKE_CURRENT_SOURCE_DIR}/mtgb"
-    )
-endif()
+#if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+#    target_include_directories(${PROJECT_NAME} PUBLIC
+#        # リリースビルド時のインクルードディレクトリ
+#        "$<$<CONFIG:Release>:${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;$ENV{REFL_CPP}>"
+#        # どのビルド・モードでも共通
+#        "$ENV{FBX}/include;"
+#        "${CMAKE_CURRENT_SOURCE_DIR}/refl-cpp;"
+#        "${CMAKE_CURRENT_SOURCE_DIR}/EffekseeLib/install_msvc2022_x64/include/Effekseer;"
+#        "${CMAKE_CURRENT_SOURCE_DIR}/mtgb"
+#    )
+#endif()
 
 ################################################################################
 # Compile definitions
@@ -1029,19 +1029,15 @@ endif()
 ################################################################################
 # Pre build events (ビルド前イベント)
 ################################################################################
- # if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
- #     add_custom_command_if(
- #         TARGET ${PROJECT_NAME}
- #         PRE_BUILD
- #         COMMANDS
- #         COMMAND $<CONFIG:Release> ECHO $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/> > $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>ProjectDirPath.txt
- #         COMMAND $<CONFIG:Release> "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>Tools\\ClangTest.exe" "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>"
- #     )
- # endif()
- # add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
- #    COMMAND ECHO $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/> $<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>ProjectDirPath.txt
- #    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/>Tools/ClangTest.exe" "$<SHELL_PATH:>"
- # )
+add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
+    COMMAND ${CMAKE_COMMAND}
+            -DOUT="$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/ProjectDirPath.txt>"
+            -DTEXT="$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>"
+            -P "${CMAKE_CURRENT_SOURCE_DIR}/CMake/WriteProjectDir.cmake"
+)
+ add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
+    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangTest.exe>"
+ )
 
 ################################################################################
 # Dependencies (リンク先)
@@ -1061,8 +1057,6 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     )
 endif()
 
-use_package(${PROJECT_NAME} boost 1.87.0)
-use_package(${PROJECT_NAME} nlohmann.json 3.12.0)
 find_package(nlohmann_json CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
 find_package(boost_multi_index CONFIG REQUIRED)
