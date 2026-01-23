@@ -1038,7 +1038,8 @@ endif()
 # コンパイル前に実行されるように依存させる
  # add_dependencies(${PROJECT_NAME} write_project_dir)
  add_custom_target(generate_source_code
-    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>")
+    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>"
+    USES_TERMINAL)
  add_dependencies(${PROJECT_NAME} generate_source_code)
 
 ################################################################################
