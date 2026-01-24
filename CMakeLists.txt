@@ -1042,6 +1042,13 @@ endif()
     USES_TERMINAL)
  add_dependencies(${PROJECT_NAME} generate_source_code)
 
+ # キャッシュを削除し、再生成を行う
+ add_custom_target(force_generate_source_code
+    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>" --force
+    USES_TERMINAL
+ )
+    
+
 ################################################################################
 # Dependencies (リンク先)
 ################################################################################
