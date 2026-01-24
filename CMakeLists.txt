@@ -92,33 +92,6 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 # Sub-projects
 ################################################################################
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ################################################################################
 # Source groups
 # source_group("任意のフィルタ名" FILES <ソースコードのパス>)
@@ -884,6 +857,41 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     )
 endif()
 
+set(MSVC_COMMON_OPTIONS
+    # デバッグビルド時のオプション
+    $<$<CONFIG:Debug>:/wd4005>
+    # リリースビルド時のオプション
+    $<$<CONFIG:Release>:/Oi;/Gy>
+    # C++の標準規格に準拠したコンパイルを強制する
+    /permissive-;
+    # __cplusplusの値でC++のバージョンを判定している箇所が正しく機能するように
+    /Zc:__cplusplus;
+    /sdl;
+    /W4;
+    # 警告をエラーとして扱う
+    # /WX;
+    /FI ${CMAKE_CURRENT_SOURCE_DIR}/mtgb/stdafx.h
+    ${DEFAULT_CXX_DEBUG_INFORMATION_FORMAT};
+    /utf-8;
+    ${DEFAULT_CXX_EXCEPTION_HANDLING}
+)
+
+set(CLANGCL_ADDITIONAL_OPTIONS
+    $<$<CONFIG:Debug>:/Zi>
+    -fms-extensions 
+    -fms-compatibility 
+    -fms-compatibility-version=19.0
+    -D_MSC_VER=1928 
+    -target x86_64-pc-windows-msvc 
+    -fdelayed-template-parsing 
+    -fno-complete-member-pointers 
+    -Wno-c++98-compat 
+    -Wno-c++98-compat-pedantic 
+    -Wno-reserved-id-macro
+    -Wno-pragma-pack 
+    -Wno-unknown-pragmas
+    -Wno-unused-command-line-argument
+)
 ################################################################################
 # Compile and link options
 ################################################################################
@@ -895,36 +903,12 @@ if(MSVC)
         # コンパイラ固有の拡張機能を無効にする
         CXX_EXTENSIONS OFF
     )
-    # target_compile_features(
-    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-        target_compile_options(${PROJECT_NAME} PRIVATE
-            # デバッグビルド時のオプション
-            $<$<CONFIG:Debug>:/wd4005>
-            # リリースビルド時のオプション
-            $<$<CONFIG:Release>:/Oi;/Gy>
-            # C++の標準規格に準拠したコンパイルを強制する
-            /permissive-;
-            # __cplusplusの値でC++のバージョンを判定している箇所が正しく機能するように
-            /Zc:__cplusplus;
-            /sdl;
-            /W4;
-            # 警告をエラーとして扱う
-            # /WX;
-            /FI ${CMAKE_CURRENT_SOURCE_DIR}/mtgb/stdafx.h
-            ${DEFAULT_CXX_DEBUG_INFORMATION_FORMAT};
-            /utf-8;
-            ${DEFAULT_CXX_EXCEPTION_HANDLING}
-        )
-    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
-        target_compile_options(${PROJECT_NAME} PRIVATE
-            $<$<CONFIG:Release>:/Oi;/Gy>
-            /permissive-;
-            /sdl;
-            /W4;
-            ${DEFAULT_CXX_DEBUG_INFORMATION_FORMAT};
-            ${DEFAULT_CXX_EXCEPTION_HANDLING}
-        )
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+        target_compile_options(${PROJECT_NAME} PRIVATE ${MSVC_COMMON_OPTIONS})
+    elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND CMAKE_CXX_COMPILER MATCHES ".*clang-cl.*")
+        target_compile_options(${PROJECT_NAME} PRIVATE ${MSVC_COMMON_OPTIONS} ${CLANGCL_ADDITIONAL_OPTIONS})
     endif()
+
     # "/Y-" はプリコンパイル済みヘッダを無視するオプション
     if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         string(CONCAT FILE_CL_OPTIONS
@@ -1029,14 +1013,7 @@ endif()
 ################################################################################
 # Pre build events (ビルド前イベント)
 ################################################################################
-# add_custom_target(write_project_dir
-#    COMMAND ${CMAKE_COMMAND}
-#             -DOUT="$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/ProjectDirPath.txt>"
-#             -DTEXT="$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>"
-#             -P "${CMAKE_CURRENT_SOURCE_DIR}/CMake/WriteProjectDir.cmake"
-# )
 # コンパイル前に実行されるように依存させる
- # add_dependencies(${PROJECT_NAME} write_project_dir)
  add_custom_target(generate_source_code
     COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>"
     USES_TERMINAL)
