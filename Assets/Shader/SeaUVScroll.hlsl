@@ -47,7 +47,6 @@ VS_OUT GsInToVsOut(GS_IN gs)
     VS_OUT output;
     
     output.position = gs.position;
-    // output.position = mul(gs.position, g_matrixVP);
     output.normal = gs.normal;
     output.uv = gs.uv;
     output.eye = gs.eye;
@@ -62,9 +61,7 @@ GS_IN VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOOR
     GS_IN outData;
 
     float4 pos = position;
-    // これは問題なし
-    outData.position = mul(pos, g_matrixW);
-    outData.position = mul(outData.position, g_matrixVP);
+    outData.position = mul(pos, g_matrixWVP);
 
     // 法線の変形
     normal.w = 0;
@@ -104,19 +101,20 @@ void GS(triangle GS_IN input[3], inout TriangleStream<VS_OUT> output)
     VS_OUT vert1 = GsInToVsOut(input[1]);
     output.Append(vert1);
     output.Append(GsInToVsOut(input[2]));
-        
-     //GS_IN vert = input[2];
-     //vert.position.x = lerp(input[0].position.x, input[2].position.x, 0.5);
-     //vert.position.y = input[2].position.y;
-     //vert.uv.x = lerp(input[0].uv.x, input[2].uv.x, 0.5);
-     //vert.eye.x = lerp(input[0].eye.x, input[2].eye.x, 0.5);
-     //vert.eye.x = lerp(input[0].eye.x, input[2].eye.x, 0.5);
-     //
-     //VS_OUT newVert = GsInToVsOut(vert);
-     //output.Append(GsInToVsOut(input[2]));
-     //output.Append(newVert);
-     //output.Append(vert0);
-     output.RestartStrip();
+    
+    GS_IN vert = input[2];
+    vert.position = lerp(input[0].position, input[2].position, 0.5);
+    vert.normal = input[0].normal;
+    vert.uv.x = lerp(input[0].uv.x, input[2].uv.x, 0.5);
+    vert.eye.x = lerp(input[0].eye.x, input[2].eye.x, 0.5);
+    vert.eye.y = lerp(input[0].eye.y, input[2].eye.y, 0.5);
+     
+    VS_OUT newVert = GsInToVsOut(vert);
+    output.Append(GsInToVsOut(input[2]));
+    output.Append(newVert);
+    output.Append(vert0);
+    
+    output.RestartStrip();
 }
 
 float4 PS(VS_OUT input) : SV_Target
