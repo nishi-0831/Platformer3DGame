@@ -42,6 +42,14 @@ struct GS_IN
     float4 eye : TEXCOORD2;
 };
 
+float Rand(float seed)
+{
+    float a = frac(dot(float2(seed, seed), float2(2.067390879775102, 12.451168662908249))) - 0.5;
+    float s = a * (6.182785114200511 + a * a * (-38.026512460676566 + a * a * 53.392573080032137));
+    float t = frac(s * 43758.5453);
+    return t;
+}
+
 VS_OUT GsInToVsOut(GS_IN gs)
 {
     VS_OUT output;
@@ -100,19 +108,23 @@ void GS(triangle GS_IN input[3], inout TriangleStream<VS_OUT> output)
     output.Append(vert0);
     VS_OUT vert1 = GsInToVsOut(input[1]);
     output.Append(vert1);
-    output.Append(GsInToVsOut(input[2]));
     
     GS_IN vert = input[2];
     vert.position = lerp(input[0].position, input[2].position, 0.5);
     vert.normal = input[0].normal;
-    vert.uv.x = lerp(input[0].uv.x, input[2].uv.x, 0.5);
-    vert.eye.x = lerp(input[0].eye.x, input[2].eye.x, 0.5);
-    vert.eye.y = lerp(input[0].eye.y, input[2].eye.y, 0.5);
-     
+    vert.uv = lerp(input[0].uv, input[2].uv, 0.5);
+    vert.eye = lerp(input[0].eye, input[2].eye, 0.5);
+    float waveX = sin(vert.position.x * 100.0 + g_time) * 100;
+    float waveZ = sin(vert.position.z * 100.0 + g_time) * 100;
+    
+    // vert.position.y += waveX + waveZ;
     VS_OUT newVert = GsInToVsOut(vert);
-    output.Append(GsInToVsOut(input[2]));
+    
     output.Append(newVert);
-    output.Append(vert0);
+    
+    output.Append(newVert);
+    output.Append(GsInToVsOut(input[2]));
+    output.Append(vert1);
     
     output.RestartStrip();
 }
@@ -135,7 +147,8 @@ float4 PS(VS_OUT input) : SV_Target
     {
         float scrollSpeedX = 0.05f;
         float scrollSpeedY = 0.0f;
-    
+        
+       
         float offsetX = g_time * scrollSpeedX;
         float offsetY = g_time * scrollSpeedY;
     
