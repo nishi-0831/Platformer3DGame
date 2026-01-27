@@ -99,8 +99,6 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(no_group_source_files
     ".clang-format"
     ".pre-commit-config.yaml"
-    "Directory.Build.props"
-    "scripts/.clang-tidy"
     "scripts/clang-tidy-wrapper.py"
     "scripts/clangcl-config.yaml"
     "通信体系.txt"
@@ -896,13 +894,22 @@ set(CLANGCL_ADDITIONAL_OPTIONS
 # Compile and link options
 ################################################################################
 if(MSVC)
-    target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
-    set_target_properties(${PROJECT_NAME} PROPERTIES
-        # 指定したC++標準バージョンを必須とする。コンパイラがサポートしていないならばビルド失敗
-        CXX_STANDARD_REQUIRED ON
-        # コンパイラ固有の拡張機能を無効にする
-        CXX_EXTENSIONS OFF
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND CMAKE_CXX_COMPILER MATCHES ".*clang-cl.*")
+        set_target_properties(${PROJECT_NAME} PROPERTIES
+            CXX_STANDARD 20
+            CXX_STANDARD_REQUIRED ON
+            CXX_EXTENSIONS OFF
+        )
+    else()
+        target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
+        set_target_properties(${PROJECT_NAME} PROPERTIES
+            # 指定したC++標準バージョンを必須とする。コンパイラがサポートしていないならばビルド失敗
+            CXX_STANDARD_REQUIRED ON
+            # コンパイラ固有の拡張機能を無効にする
+            CXX_EXTENSIONS OFF
     )
+    endif()
+
     if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
         target_compile_options(${PROJECT_NAME} PRIVATE ${MSVC_COMMON_OPTIONS})
     elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND CMAKE_CXX_COMPILER MATCHES ".*clang-cl.*")

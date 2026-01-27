@@ -1,16 +1,74 @@
 {
   "version": 3,
+  
   "configurePresets": [
     {
       "name": "default",
       "displayName": "default",
-      
       "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_C_COMPILER": "clang-cl.exe",
+        "CMAKE_CXX_COMPILER": "clang-cl.exe"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "intelliSenseMode": "windows-clang-x64",
+          "enableClangTidyCodeAnalysis": true
+        }
+      }
+    },
+    {
+      "name": "vs2026-clang-cl",
+      "generator": "Visual Studio 18 2026",
+      "binaryDir": "${sourceDir}/out/vs2026",
       "cacheVariables": {
         "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
         "CMAKE_C_COMPILER": "clang-cl",
         "CMAKE_CXX_COMPILER": "clang-cl"
       }
+    },
+    {
+      "name": "vs2022-clang-cl",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/out/vs2022",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_C_COMPILER": "clang-cl",
+        "CMAKE_CXX_COMPILER": "clang-cl"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default-debug",
+      "configurePreset": "default",
+      "configuration": "Debug"
+    },
+    {
+      "name": "default-release",
+      "configurePreset": "default",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2026-debug",
+      "configurePreset": "vs2026-clang-cl",
+      "configuration": "Debug"
+    },
+    {
+      "name": "vs2026-release",
+      "configurePreset": "vs2026-clang-cl",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2022-debug",
+      "configurePreset": "vs2022-clang-cl",
+      "configuration": "Debug"
+    },
+    {
+      "name": "vs2022-release",
+      "configurePreset": "vs2022-clang-cl",
+      "configuration": "Release"
     }
   ]
 }

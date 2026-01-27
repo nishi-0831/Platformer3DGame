@@ -1,4 +1,5 @@
 #include "TextCache.h"
+#include "Game.h"
 #include "DirectX11Draw.h"
 #include "DirectWrite.h"
 #include "MTStringUtility.h"
