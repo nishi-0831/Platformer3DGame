@@ -100,7 +100,6 @@ set(no_group_source_files
     ".clang-format"
     ".pre-commit-config.yaml"
     "scripts/clang-tidy-wrapper.py"
-    "scripts/clangcl-config.yaml"
     "通信体系.txt"
 )
 source_group("" FILES ${no_group_source_files})
@@ -1022,16 +1021,19 @@ endif()
 ################################################################################
 # コンパイル前に実行されるように依存させる
  add_custom_target(generate_source_code
-    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>"
+    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangReflection/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>"
     USES_TERMINAL)
  add_dependencies(${PROJECT_NAME} generate_source_code)
 
  # キャッシュを削除し、再生成を行う
  add_custom_target(force_generate_source_code
-    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>" --force
+    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangReflection/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>" --force
     USES_TERMINAL
  )
-    
+
+ add_custom_target(run_clang_tidy_wrapper
+    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/RunClangTidyWrapper/RunClangTidyWrapper.exe>" "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>" -p "$<SHELL_PATH:${CMAKE_CURRENT_BINARY_DIR}>" -- | "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/clang-tidy-sarif>"
+    USES_TERMINAL)
 
 ################################################################################
 # Dependencies (リンク先)
