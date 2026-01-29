@@ -1031,9 +1031,7 @@ endif()
     USES_TERMINAL
  )
 
- add_custom_target(run_clang_tidy_wrapper
-    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/RunClangTidyWrapper/RunClangTidyWrapper.exe>" "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>" -p "$<SHELL_PATH:${CMAKE_CURRENT_BINARY_DIR}>" -- | "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/clang-tidy-sarif>"
-    USES_TERMINAL)
+ # include("${CMAKE_CURRENT_SOURCE_DIR}/RunClangTidy.cmake")
 
 ################################################################################
 # Dependencies (リンク先)
