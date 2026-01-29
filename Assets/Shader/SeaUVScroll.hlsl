@@ -44,33 +44,27 @@ struct GS_IN
 
 float Rand(float seed)
 {
-    float a = frac(dot(float2(seed, seed), float2(2.067390879775102, 12.451168662908249))) - 0.5;
-    float s = a * (6.182785114200511 + a * a * (-38.026512460676566 + a * a * 53.392573080032137));
-    float t = frac(s * 43758.5453);
-    return t;
-}
-
-VS_OUT GsInToVsOut(GS_IN gs)
-{
-    VS_OUT output;
-    
-    output.position = gs.position;
-    output.normal = gs.normal;
-    output.uv = gs.uv;
-    output.eye = gs.eye;
-    return output;
+    float a = frac(sin(seed) * 43758.5453); // 疑似乱数生成
+    return a;
 }
 
 /*
 * 頂点シェーダ
 */
-GS_IN VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOORD)
+VS_OUT VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOORD)
 {
-    GS_IN outData;
+    VS_OUT outData;
 
     float4 pos = position;
     outData.position = mul(pos, g_matrixWVP);
-
+    float frequency = 10;
+    float speed = 1;
+    float amplitude = 100;
+    float seed = pos.x + pos.z;
+    float randomOffset = Rand(seed);
+    float wave = sin(randomOffset * frequency + g_time * speed) * amplitude;
+    outData.position.y += wave;
+   
     // 法線の変形
     normal.w = 0;
     outData.normal = mul(normal, g_matrixNormalTrans);
@@ -91,44 +85,6 @@ GS_IN VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOOR
     return outData;
 }
 
-// MEMO:
-// triangle : 三角形のリスト、またはストリップ
-// TriangleStream
-// - ストリーム出力オブジェクト。ジオメトリシェーダは計算結果をこれに渡す
-// - 三角形の頂点を受け取る型
-[maxvertexcount(72)]
-void GS(triangle GS_IN input[3], inout TriangleStream<VS_OUT> output)
-{
-    int appendCount = 0;
-    
-    // コンスタントバッファにVP行列も追加して、頂点シェーダでワールド変換、ジオメトリシェーダでVPで変換
-    
-    VS_OUT vert0 = GsInToVsOut(input[0]);
-
-    output.Append(vert0);
-    VS_OUT vert1 = GsInToVsOut(input[1]);
-    output.Append(vert1);
-    
-    GS_IN vert = input[2];
-    vert.position = lerp(input[0].position, input[2].position, 0.5);
-    vert.normal = input[0].normal;
-    vert.uv = lerp(input[0].uv, input[2].uv, 0.5);
-    vert.eye = lerp(input[0].eye, input[2].eye, 0.5);
-    float waveX = sin(vert.position.x * 100.0 + g_time) * 100;
-    float waveZ = sin(vert.position.z * 100.0 + g_time) * 100;
-    
-    // vert.position.y += waveX + waveZ;
-    VS_OUT newVert = GsInToVsOut(vert);
-    
-    output.Append(newVert);
-    
-    output.Append(newVert);
-    output.Append(GsInToVsOut(input[2]));
-    output.Append(vert1);
-    
-    output.RestartStrip();
-}
-
 float4 PS(VS_OUT input) : SV_Target
 {
     // 光源方向
@@ -147,7 +103,6 @@ float4 PS(VS_OUT input) : SV_Target
     {
         float scrollSpeedX = 0.05f;
         float scrollSpeedY = 0.0f;
-        
        
         float offsetX = g_time * scrollSpeedX;
         float offsetY = g_time * scrollSpeedY;

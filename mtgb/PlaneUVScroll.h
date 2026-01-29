@@ -14,6 +14,7 @@ namespace mtgb
 
 	class PlaneUVScroll : public IShader
 	{
+	  public:
 		/// <summary>
 		/// 頂点情報
 		/// </summary>
@@ -68,7 +69,6 @@ namespace mtgb
 
 	  private:
 		Microsoft::WRL::ComPtr<ID3D11Buffer> pTimeConstantBuffer_;
-		Microsoft::WRL::ComPtr<ID3D11GeometryShader> pGeometryShader_;
 		Texture2D texture_;
 		float time_;
 	};

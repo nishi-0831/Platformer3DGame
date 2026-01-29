@@ -13,6 +13,7 @@ mtgb::MeshRenderer::MeshRenderer()
 	, layer{AllLayer()}
 	, shaderType{ShaderType::FbxParts}
 {
+	enabled_ = true;
 	meshFileName.resize(BUFFER_SIZE);
 }
 
@@ -24,6 +25,7 @@ mtgb::MeshRenderer::MeshRenderer(EntityId _entityId)
 	, shaderType{ShaderType::FbxParts}
 	, frame_{0}
 {
+	enabled_ = true;
 	meshFileName.resize(BUFFER_SIZE);
 }
 
