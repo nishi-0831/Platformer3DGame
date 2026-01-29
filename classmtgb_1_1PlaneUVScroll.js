@@ -16,7 +16,6 @@ var classmtgb_1_1PlaneUVScroll =
     [ "LoadTexture", "classmtgb_1_1PlaneUVScroll.html#a02bd3aaf2695101b14fa89d9db3ecff0", null ],
     [ "Release", "classmtgb_1_1PlaneUVScroll.html#a06253eda7a41d5b9e240a0dcf6e7addd", null ],
     [ "pConstantBuffer_", "classmtgb_1_1PlaneUVScroll.html#acfa72729f876f52ada9160eafa3716ac", null ],
-    [ "pGeometryShader_", "classmtgb_1_1PlaneUVScroll.html#afa882660ff0ab3d9b8f444204cdaa982", null ],
     [ "pIndexBuffer_", "classmtgb_1_1PlaneUVScroll.html#aa684283886d8b16b40a26c0f7f9d2c69", null ],
     [ "pTimeConstantBuffer_", "classmtgb_1_1PlaneUVScroll.html#ab9d4b8174c3e2b7816cb0d04059f6e89", null ],
     [ "pVertexBuffer_", "classmtgb_1_1PlaneUVScroll.html#a1ca0458701c1f244741b2eec2035e529", null ],

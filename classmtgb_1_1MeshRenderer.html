@@ -152,10 +152,10 @@ mtgb::MeshRenderer 連携図</div>
 <tr class="memitem:a49a812c6d7db18eb7e087274554f6204"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a49a812c6d7db18eb7e087274554f6204">OnChangeMeshFileName</a> ()</td></tr>
 <tr class="separator:a49a812c6d7db18eb7e087274554f6204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4da90b8ef96622cec49f0729b7f4f2cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a4da90b8ef96622cec49f0729b7f4f2cc">Render</a> () const override</td></tr>
-<tr class="memdesc:a4da90b8ef96622cec49f0729b7f4f2cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画を行う  <br /></td></tr>
+<tr class="memdesc:a4da90b8ef96622cec49f0729b7f4f2cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">謠冗判繧定｡後≧  <br /></td></tr>
 <tr class="separator:a4da90b8ef96622cec49f0729b7f4f2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acaa50e74ecffe2de8797aaee29b27960"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#acaa50e74ecffe2de8797aaee29b27960">CanRender</a> () const override</td></tr>
-<tr class="memdesc:acaa50e74ecffe2de8797aaee29b27960"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画が可能か否か  <br /></td></tr>
+<tr class="memdesc:acaa50e74ecffe2de8797aaee29b27960"><td class="mdescLeft">&#160;</td><td class="mdescRight">謠冗判縺悟庄閭ｽ縺句凄縺・  <br /></td></tr>
 <tr class="separator:acaa50e74ecffe2de8797aaee29b27960"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87aa31911dd5d33c871aa1db85902996"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1MeshRenderer.html#a87aa31911dd5d33c871aa1db85902996">SetFrame</a> (int _frame)</td></tr>
 <tr class="separator:a87aa31911dd5d33c871aa1db85902996"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -258,8 +258,10 @@ mtgb::MeshRenderer 連携図</div>
 <div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200">layer</a>{<a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>()}</div>
 <div class="line"><span class="lineno">   14</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a>{<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64">ShaderType::FbxParts</a>}</div>
 <div class="line"><span class="lineno">   15</span>{</div>
-<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>.resize(BUFFER_SIZE);</div>
-<div class="line"><span class="lineno">   17</span>}</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="classmtgb_1_1IRenderable.html#a635a1917f3a135b9933041bde5077610">enabled_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>.resize(BUFFER_SIZE);</div>
+<div class="line"><span class="lineno">   18</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1IRenderable_html_a635a1917f3a135b9933041bde5077610"><div class="ttname"><a href="classmtgb_1_1IRenderable.html#a635a1917f3a135b9933041bde5077610">mtgb::IRenderable::enabled_</a></div><div class="ttdeci">bool enabled_</div><div class="ttdef"><b>Definition:</b> <a href="IRenderable_8h_source.html#l00045">IRenderable.h:45</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MeshRenderer_html_a10c0ed09f31ca703c03bffe8f66b1846"><div class="ttname"><a href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">mtgb::MeshRenderer::meshHandle</a></div><div class="ttdeci">FBXModelHandle meshHandle</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8h_source.html#l00073">MeshRenderer.h:73</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MeshRenderer_html_a4b08be900fee64333fce3e4352cf0a77"><div class="ttname"><a href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">mtgb::MeshRenderer::shaderType</a></div><div class="ttdeci">ShaderType shaderType</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8h_source.html#l00077">MeshRenderer.h:77</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MeshRenderer_html_a8f0118f84a374505712675047e040200"><div class="ttname"><a href="classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200">mtgb::MeshRenderer::layer</a></div><div class="ttdeci">GameObjectLayerFlag layer</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8h_source.html#l00075">MeshRenderer.h:75</a></div></div>
@@ -269,7 +271,7 @@ mtgb::MeshRenderer 連携図</div>
 <div class="ttc" id="anamespacemtgb_html_a461c37884dafe5e26f7d9b0e2f97148b"><div class="ttname"><a href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">mtgb::INVALID_HANDLE</a></div><div class="ttdeci">static const int32_t INVALID_HANDLE</div><div class="ttdoc">無効なハンドル値</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00044">Handlers.h:44</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64">mtgb::ShaderType::FbxParts</a></div><div class="ttdeci">@ FbxParts</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="GameObjectLayer_8cpp_source.html#l00007">mtgb::AllLayer()</a>, <a class="el" href="MeshRenderer_8h_source.html#l00071">meshFileName</a>.</p>
+<p class="reference">参照先 <a class="el" href="GameObjectLayer_8cpp_source.html#l00007">mtgb::AllLayer()</a>, <a class="el" href="IRenderable_8h_source.html#l00045">mtgb::IRenderable::enabled_</a>, <a class="el" href="MeshRenderer_8h_source.html#l00071">meshFileName</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -295,19 +297,20 @@ mtgb::MeshRenderer 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>    : <a class="code hl_function" href="classmtgb_1_1IComponent.html#a65f42a089e725be9599afab34ab245bb">IComponent</a>(_entityId)</div>
-<div class="line"><span class="lineno">   21</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>{<span class="stringliteral">&quot;&quot;</span>}</div>
-<div class="line"><span class="lineno">   22</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a>{<a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">INVALID_HANDLE</a>}</div>
-<div class="line"><span class="lineno">   23</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200">layer</a>{<a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>()}</div>
-<div class="line"><span class="lineno">   24</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a>{<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64">ShaderType::FbxParts</a>}</div>
-<div class="line"><span class="lineno">   25</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#ae46a6a02503be46fbec1c8a4c88d6a3f">frame_</a>{0}</div>
-<div class="line"><span class="lineno">   26</span>{</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>.resize(BUFFER_SIZE);</div>
-<div class="line"><span class="lineno">   28</span>}</div>
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>    : <a class="code hl_function" href="classmtgb_1_1IComponent.html#a65f42a089e725be9599afab34ab245bb">IComponent</a>(_entityId)</div>
+<div class="line"><span class="lineno">   22</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>{<span class="stringliteral">&quot;&quot;</span>}</div>
+<div class="line"><span class="lineno">   23</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a>{<a class="code hl_variable" href="namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b">INVALID_HANDLE</a>}</div>
+<div class="line"><span class="lineno">   24</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200">layer</a>{<a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>()}</div>
+<div class="line"><span class="lineno">   25</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a>{<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64">ShaderType::FbxParts</a>}</div>
+<div class="line"><span class="lineno">   26</span>    , <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#ae46a6a02503be46fbec1c8a4c88d6a3f">frame_</a>{0}</div>
+<div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="classmtgb_1_1IRenderable.html#a635a1917f3a135b9933041bde5077610">enabled_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>.resize(BUFFER_SIZE);</div>
+<div class="line"><span class="lineno">   30</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1IComponent_html_a65f42a089e725be9599afab34ab245bb"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a65f42a089e725be9599afab34ab245bb">mtgb::IComponent&lt; MeshRendererCP, MeshRenderer &gt;::IComponent</a></div><div class="ttdeci">IComponent()</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00020">IComponent.h:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MeshRenderer_8h_source.html#l00071">meshFileName</a>.</p>
+<p class="reference">参照先 <a class="el" href="IRenderable_8h_source.html#l00045">mtgb::IRenderable::enabled_</a>, <a class="el" href="MeshRenderer_8h_source.html#l00071">meshFileName</a>.</p>
 
 </div>
 </div>
@@ -335,8 +338,8 @@ mtgb::MeshRenderer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p>描画が可能か否か </p>
-<dl class="section return"><dt>戻り値</dt><dd>可能ならtrue</dd></dl>
+<p>謠冗判縺悟庄閭ｽ縺句凄縺・ </p>
+<dl class="section return"><dt>戻り値</dt><dd>蜿ｯ閭ｽ縺ｪ繧液rue</dd></dl>
 
 <p><a class="el" href="classmtgb_1_1IRenderable.html#a4e8551bc91bebf3b092b65d817f76068">mtgb::IRenderable</a>を実装しています。</p>
 
@@ -611,10 +614,10 @@ mtgb::MeshRenderer 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00041">41</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
-<div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a> = <a class="code hl_function" href="classmtgb_1_1Fbx.html#a973291cbc71c68589200aa4c0c88270e">Fbx::Load</a>(<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>);</div>
-<div class="line"><span class="lineno">   44</span>}</div>
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a> = <a class="code hl_function" href="classmtgb_1_1Fbx.html#a973291cbc71c68589200aa4c0c88270e">Fbx::Load</a>(<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>);</div>
+<div class="line"><span class="lineno">   46</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1Fbx_html_a973291cbc71c68589200aa4c0c88270e"><div class="ttname"><a href="classmtgb_1_1Fbx.html#a973291cbc71c68589200aa4c0c88270e">mtgb::Fbx::Load</a></div><div class="ttdeci">static FBXModelHandle Load(const std::string &amp;_fileName)</div><div class="ttdoc">Fbxファイルを読み込みする</div><div class="ttdef"><b>Definition:</b> <a href="Fbx_8cpp_source.html#l00028">Fbx.cpp:28</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Fbx_8cpp_source.html#l00028">mtgb::Fbx::Load()</a>.</p>
@@ -652,13 +655,13 @@ mtgb::MeshRenderer 連携図</div>
 
 <p><a class="el" href="classISerializableObject.html#a657030a231a22470b5b09bd6e55a2c0e">ISerializableObject</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00063">63</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>.empty() == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">   66</span>    {</div>
-<div class="line"><span class="lineno">   67</span>        <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a> = <a class="code hl_function" href="classmtgb_1_1Fbx.html#a973291cbc71c68589200aa4c0c88270e">Fbx::Load</a>(<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>);</div>
-<div class="line"><span class="lineno">   68</span>    }</div>
-<div class="line"><span class="lineno">   69</span>}</div>
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00065">65</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>.empty() == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   68</span>    {</div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a> = <a class="code hl_function" href="classmtgb_1_1Fbx.html#a973291cbc71c68589200aa4c0c88270e">Fbx::Load</a>(<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a>);</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+<div class="line"><span class="lineno">   71</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Fbx_8cpp_source.html#l00028">mtgb::Fbx::Load()</a>.</p>
 <div class="dynheader">
@@ -717,16 +720,16 @@ mtgb::MeshRenderer 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00030">30</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a> = _other.meshFileName;</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a>   = _other.meshHandle;</div>
-<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200">layer</a>        = _other.layer;</div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a>   = _other.shaderType;</div>
-<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#ae46a6a02503be46fbec1c8a4c88d6a3f">frame_</a>       = _other.frame_;</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   39</span>}</div>
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#aa4d3711bd5648afe69f1cce8f4c69878">meshFileName</a> = _other.meshFileName;</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a>   = _other.meshHandle;</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200">layer</a>        = _other.layer;</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a>   = _other.shaderType;</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#ae46a6a02503be46fbec1c8a4c88d6a3f">frame_</a>       = _other.frame_;</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   41</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="MeshRenderer_8h_source.html#l00083">frame_</a>, <a class="el" href="MeshRenderer_8h_source.html#l00075">layer</a>, <a class="el" href="MeshRenderer_8h_source.html#l00071">meshFileName</a>, <a class="el" href="MeshRenderer_8h_source.html#l00073">meshHandle</a>, <a class="el" href="MeshRenderer_8h_source.html#l00077">shaderType</a>.</p>
 
@@ -755,21 +758,21 @@ mtgb::MeshRenderer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p>描画を行う </p>
+<p>謠冗判繧定｡後≧ </p>
 
 <p><a class="el" href="classmtgb_1_1IRenderable.html#aed145aa67c27f506fd9346c091ead156">mtgb::IRenderable</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00046">46</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>{</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a> == <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdad2379e01a93b56ed8fdc81907f7bf8c0">ShaderType::Sea</a>)</div>
-<div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a3cb5ac08e794862c40f48e78bc028886">Draw::SeaUVScroll</a>(<a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(<a class="code hl_function" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a>()));</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a>, <a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(<a class="code hl_function" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a>()), <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#ae46a6a02503be46fbec1c8a4c88d6a3f">frame_</a>, <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a>);</div>
-<div class="line"><span class="lineno">   55</span>    }</div>
-<div class="line"><span class="lineno">   56</span>}</div>
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00048">48</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a> == <a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdad2379e01a93b56ed8fdc81907f7bf8c0">ShaderType::Sea</a>)</div>
+<div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a3cb5ac08e794862c40f48e78bc028886">Draw::SeaUVScroll</a>(<a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(<a class="code hl_function" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a>()));</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   55</span>    {</div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_function" href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">Draw::FBXModel</a>(<a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a10c0ed09f31ca703c03bffe8f66b1846">meshHandle</a>, <a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(<a class="code hl_function" href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">GetEntityId</a>()), <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#ae46a6a02503be46fbec1c8a4c88d6a3f">frame_</a>, <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#a4b08be900fee64333fce3e4352cf0a77">shaderType</a>);</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="line"><span class="lineno">   58</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1Draw_html_a3cb5ac08e794862c40f48e78bc028886"><div class="ttname"><a href="classmtgb_1_1Draw.html#a3cb5ac08e794862c40f48e78bc028886">mtgb::Draw::SeaUVScroll</a></div><div class="ttdeci">static void SeaUVScroll(const Transform &amp;_transform)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00345">Draw.cpp:345</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Draw_html_a623126b2353e4747da1340c91af6e4bf"><div class="ttname"><a href="classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf">mtgb::Draw::FBXModel</a></div><div class="ttdeci">static void FBXModel(const FBXModelHandle _hFBXModel, const Transform &amp;_pTransform, const int _frame, ShaderType _shaderType=ShaderType::FbxParts)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00333">Draw.cpp:333</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponent_html_a735636df79e7cfd6336e9a97345e2b29"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a735636df79e7cfd6336e9a97345e2b29">mtgb::IComponent&lt; MeshRendererCP, MeshRenderer &gt;::GetEntityId</a></div><div class="ttdeci">const EntityId GetEntityId() const</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00039">IComponent.h:39</a></div></div>
@@ -851,10 +854,10 @@ mtgb::MeshRenderer 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00058">58</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
-<div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#ae46a6a02503be46fbec1c8a4c88d6a3f">frame_</a> = _frame;</div>
-<div class="line"><span class="lineno">   61</span>}</div>
+<p class="definition"> <a class="el" href="MeshRenderer_8cpp_source.html">MeshRenderer.cpp</a> の <a class="el" href="MeshRenderer_8cpp_source.html#l00060">60</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_variable" href="classmtgb_1_1MeshRenderer.html#ae46a6a02503be46fbec1c8a4c88d6a3f">frame_</a> = _frame;</div>
+<div class="line"><span class="lineno">   63</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00057">PatrolChargerEnemy::Update()</a>.</p>
 <div class="dynheader">
@@ -978,7 +981,7 @@ mtgb::MeshRenderer 連携図</div>
 
 <p class="definition"> <a class="el" href="IRenderable_8h_source.html">IRenderable.h</a> の <a class="el" href="IRenderable_8h_source.html#l00045">45</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="MeshRendererCP_8cpp_source.html#l00015">mtgb::MeshRendererCP::RenderLayer()</a>, <a class="el" href="Player_8cpp_source.html#l00377">Player::TakeDamage()</a>, <a class="el" href="Player_8cpp_source.html#l00074">Player::Update()</a>.</p>
+<p class="reference">参照元 <a class="el" href="MeshRenderer_8cpp_source.html#l00009">MeshRenderer()</a>, <a class="el" href="MeshRendererCP_8cpp_source.html#l00015">mtgb::MeshRendererCP::RenderLayer()</a>, <a class="el" href="Player_8cpp_source.html#l00377">Player::TakeDamage()</a>, <a class="el" href="Player_8cpp_source.html#l00074">Player::Update()</a>.</p>
 
 </div>
 </div>
@@ -1028,7 +1031,7 @@ mtgb::MeshRenderer 連携図</div>
 
 <p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00083">83</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="MeshRenderer_8cpp_source.html#l00030">operator=()</a>.</p>
+<p class="reference">参照元 <a class="el" href="MeshRenderer_8cpp_source.html#l00032">operator=()</a>.</p>
 
 </div>
 </div>
@@ -1046,7 +1049,7 @@ mtgb::MeshRenderer 連携図</div>
 
 <p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00075">75</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Goal_8cpp_source.html#l00008">Goal::Goal()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00012">MovingFloor::MovingFloor()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00030">operator=()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00004">mtgb::SkySphere::SkySphere()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Goal_8cpp_source.html#l00008">Goal::Goal()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00012">MovingFloor::MovingFloor()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00032">operator=()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00004">mtgb::SkySphere::SkySphere()</a>.</p>
 
 </div>
 </div>
@@ -1064,7 +1067,7 @@ mtgb::MeshRenderer 連携図</div>
 
 <p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00071">71</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00006">mtgb::CircularSaw::CircularSaw()</a>, <a class="el" href="Goal_8cpp_source.html#l00008">Goal::Goal()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00009">MeshRenderer()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00012">MovingFloor::MovingFloor()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00030">operator=()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00079">mtgb::Saw::Saw()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00004">mtgb::SkySphere::SkySphere()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00006">mtgb::CircularSaw::CircularSaw()</a>, <a class="el" href="Goal_8cpp_source.html#l00008">Goal::Goal()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00009">MeshRenderer()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00012">MovingFloor::MovingFloor()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00032">operator=()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00079">mtgb::Saw::Saw()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00004">mtgb::SkySphere::SkySphere()</a>.</p>
 
 </div>
 </div>
@@ -1082,7 +1085,7 @@ mtgb::MeshRenderer 連携図</div>
 
 <p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00073">73</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00006">mtgb::CircularSaw::CircularSaw()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00151">PatrolChargerEnemy::InitializeState()</a>, <a class="el" href="Player_8cpp_source.html#l00121">Player::InitializeState()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00012">MovingFloor::MovingFloor()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00030">operator=()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00079">mtgb::Saw::Saw()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00004">mtgb::SkySphere::SkySphere()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00006">mtgb::CircularSaw::CircularSaw()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00151">PatrolChargerEnemy::InitializeState()</a>, <a class="el" href="Player_8cpp_source.html#l00121">Player::InitializeState()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00012">MovingFloor::MovingFloor()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00032">operator=()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00079">mtgb::Saw::Saw()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00004">mtgb::SkySphere::SkySphere()</a>.</p>
 
 </div>
 </div>
@@ -1116,7 +1119,7 @@ mtgb::MeshRenderer 連携図</div>
 
 <p class="definition"> <a class="el" href="MeshRenderer_8h_source.html">MeshRenderer.h</a> の <a class="el" href="MeshRenderer_8h_source.html#l00077">77</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Goal_8cpp_source.html#l00008">Goal::Goal()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00012">MovingFloor::MovingFloor()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00030">operator=()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00004">mtgb::SkySphere::SkySphere()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Box3D_8cpp_source.html#l00008">mtgb::Box3D::Box3D()</a>, <a class="el" href="Goal_8cpp_source.html#l00008">Goal::Goal()</a>, <a class="el" href="MeshRenderer_8generated_8cpp_source.html#l00012">mtgb::MeshRenderer_Register::MeshRenderer_Register()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00012">MovingFloor::MovingFloor()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00032">operator=()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00008">PatrolChargerEnemy::PatrolChargerEnemy()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00006">SeaPlane::SeaPlane()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00004">mtgb::SkySphere::SkySphere()</a>.</p>
 
 </div>
 </div>

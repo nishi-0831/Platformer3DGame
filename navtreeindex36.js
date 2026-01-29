@@ -1,7 +1,5 @@
 var NAVTREEINDEX36 =
 {
-"structmtgb_1_1TextLayoutData.html#a9a7bb4b6b6b794f46fb3fb20b8b62291":[5,0,4,159,7],
-"structmtgb_1_1TextLayoutData.html#a9a7bb4b6b6b794f46fb3fb20b8b62291":[3,0,7,162,7],
 "structmtgb_1_1TextLayoutData.html#ad7b12d445312c50d1270a01925ccc832":[5,0,4,159,0],
 "structmtgb_1_1TextLayoutData.html#ad7b12d445312c50d1270a01925ccc832":[3,0,7,162,0],
 "structmtgb_1_1TextLayoutData.html#ade1ed99145a195dad28c146af27f5f0f":[5,0,4,159,2],
@@ -249,5 +247,7 @@ var NAVTREEINDEX36 =
 "structmtgb_1_1random.html":[5,0,4,127],
 "structmtgb_1_1random.html":[3,0,7,130],
 "structmtgb_1_1text__layout__order.html":[5,0,4,156],
-"structmtgb_1_1text__layout__order.html":[3,0,7,159]
+"structmtgb_1_1text__layout__order.html":[3,0,7,159],
+"structmtstat_1_1MTStat_1_1StateTransition.html":[3,0,8,0,0],
+"structmtstat_1_1MTStat_1_1StateTransition.html":[5,0,5,0,0]
 };

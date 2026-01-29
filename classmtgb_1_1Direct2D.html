@@ -181,9 +181,9 @@ mtgb::Direct2D 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
 <div class="line"><span class="lineno">   24</span>    <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">Release</a>();</div>
 <div class="line"><span class="lineno">   25</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a2cde9ffdc0a71dccc4cb52ad67368910"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D::Release</a></div><div class="ttdeci">void Release()</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00091">Direct2D.cpp:91</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a2cde9ffdc0a71dccc4cb52ad67368910"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D::Release</a></div><div class="ttdeci">void Release()</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00099">Direct2D.cpp:99</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Direct2D_8cpp_source.html#l00091">Release()</a>.</p>
+<p class="reference">参照先 <a class="el" href="Direct2D_8cpp_source.html#l00099">Release()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -220,11 +220,11 @@ mtgb::Direct2D 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00077">77</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>{</div>
-<div class="line"><span class="lineno">   79</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">pDefD2DBrush_</a>     = pD2DBrush;</div>
-<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">pDefRenderTarget_</a> = pRenderTarget;</div>
-<div class="line"><span class="lineno">   81</span>}</div>
+<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00085">85</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>{</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">pDefD2DBrush_</a>     = pD2DBrush;</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">pDefRenderTarget_</a> = pRenderTarget;</div>
+<div class="line"><span class="lineno">   89</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1Direct2D_html_a517fd556b9f8bce9796427fea48af420"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">mtgb::Direct2D::pDefD2DBrush_</a></div><div class="ttdeci">static ComPtr&lt; ID2D1SolidColorBrush &gt; pDefD2DBrush_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00042">Direct2D.h:42</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2D_html_afaa4832cd7c29a441dcf8a771916261d"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">mtgb::Direct2D::pDefRenderTarget_</a></div><div class="ttdeci">static ComPtr&lt; ID2D1RenderTarget &gt; pDefRenderTarget_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00043">Direct2D.h:43</a></div></div>
 </div><!-- fragment -->
@@ -263,7 +263,7 @@ mtgb::Direct2D 連携図</div>
 <div class="line"><span class="lineno">   44</span> </div>
 <div class="line"><span class="lineno">   45</span>        D2D1_RENDER_TARGET_TYPE_DEFAULT, <span class="comment">// レンダリングモード。DEFAULTだと使用可能ならGPU、それ以外はCPUでレンダリング</span></div>
 <div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>        D2D1::PixelFormat(DXGI_FORMAT_R8G8B8A8_UNORM, D2D1_ALPHA_MODE_PREMULTIPLIED), <span class="comment">// ピクセルの形式、アルファ値</span></div>
+<div class="line"><span class="lineno">   47</span>        D2D1::PixelFormat(DXGI_FORMAT_R8G8B8A8_UNORM, D2D1_ALPHA_MODE_IGNORE), <span class="comment">// ピクセルの形式、アルファ値</span></div>
 <div class="line"><span class="lineno">   48</span> </div>
 <div class="line"><span class="lineno">   49</span>        0, <span class="comment">// x方向のdpi</span></div>
 <div class="line"><span class="lineno">   50</span>        0, <span class="comment">// y方向のdpi</span></div>
@@ -278,12 +278,28 @@ mtgb::Direct2D 連携図</div>
 <div class="line"><span class="lineno">   59</span>    HRESULT hResult =</div>
 <div class="line"><span class="lineno">   60</span>        <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">pD2DFactory_</a>-&gt;CreateDxgiSurfaceRenderTarget(pIDXGISurface, renderTargetProperties, ppRenderTarget_);</div>
 <div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;CreateDxgiSurfaceRenderTargetに失敗 @Direct2D::CreateDXGISurfaceRenderTarget&quot;</span>);</div>
-<div class="line"><span class="lineno">   63</span>}</div>
-<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00053">MTAssert.h:53</a></div></div>
+<div class="line"><span class="lineno">   62</span>    <span class="comment">// massert(SUCCEEDED(hResult) &amp;&amp; &quot;CreateDxgiSurfaceRenderTargetに失敗 @Direct2D::CreateDXGISurfaceRenderTarget&quot;);</span></div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> (FAILED(hResult))</div>
+<div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>        _com_error error(hResult);</div>
+<div class="line"><span class="lineno">   66</span>        LPCTSTR message = error.ErrorMessage();</div>
+<div class="line"><span class="lineno">   67</span>        std::string str = <a class="code hl_function" href="namespacemtgb.html#acfe6481cc8fb042261c35c383a942246">mtgb::MultiToUTF8</a>( message);</div>
+<div class="line"><span class="lineno">   68</span>        MessageBoxW(NULL, <a class="code hl_function" href="namespacemtgb.html#a91dcf894b121fab17af7182528469d05">mtgb::UTF8ToWide</a>(str.c_str()).c_str(), <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;f&quot;</span>, MB_YESNOCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL);</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+<div class="line"><span class="lineno">   71</span>}</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">KeyCode::L</a></div><div class="ttdeci">@ L</div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2D_html_aba829b8ee709828b87b57771d7a2b983"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">mtgb::Direct2D::pD2DFactory_</a></div><div class="ttdeci">static ComPtr&lt; ID2D1Factory &gt; pD2DFactory_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00040">Direct2D.h:40</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a91dcf894b121fab17af7182528469d05"><div class="ttname"><a href="namespacemtgb.html#a91dcf894b121fab17af7182528469d05">mtgb::UTF8ToWide</a></div><div class="ttdeci">std::wstring UTF8ToWide(const std::string &amp;_string)</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00149">MTStringUtility.cpp:149</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_acfe6481cc8fb042261c35c383a942246"><div class="ttname"><a href="namespacemtgb.html#acfe6481cc8fb042261c35c383a942246">mtgb::MultiToUTF8</a></div><div class="ttdeci">std::string MultiToUTF8(const std::string &amp;_string)</div><div class="ttdoc">マルチバイト文字列からワイド文字列へ変換</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00229">MTStringUtility.cpp:229</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00053">massert</a>.</p>
+<p class="reference">参照先 <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a>, <a class="el" href="MTStringUtility_8cpp_source.html#l00229">mtgb::MultiToUTF8()</a>, <a class="el" href="MTStringUtility_8cpp_source.html#l00149">mtgb::UTF8ToWide()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Direct2D_a1049944e949e09a76253068ecbbd3484_cgraph.svg" width="588" height="170"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -319,15 +335,16 @@ mtgb::Direct2D 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00065">65</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>{</div>
-<div class="line"><span class="lineno">   71</span>    <span class="comment">// ブラシ作成</span></div>
-<div class="line"><span class="lineno">   72</span>    HRESULT hResult = pRenderTarget-&gt;CreateSolidColorBrush(color, ppD2DBrush);</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;CreateSolidColorBrushに失敗 @Direct2D::CreateSolidColorBrush&quot;</span>);</div>
-<div class="line"><span class="lineno">   75</span>}</div>
+<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>{</div>
+<div class="line"><span class="lineno">   79</span>    <span class="comment">// ブラシ作成</span></div>
+<div class="line"><span class="lineno">   80</span>    HRESULT hResult = pRenderTarget-&gt;CreateSolidColorBrush(color, ppD2DBrush);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;CreateSolidColorBrushに失敗 @Direct2D::CreateSolidColorBrush&quot;</span>);</div>
+<div class="line"><span class="lineno">   83</span>}</div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00057">MTAssert.h:57</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00053">massert</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00057">massert</a>.</p>
 
 </div>
 </div>
@@ -346,9 +363,9 @@ mtgb::Direct2D 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00087">87</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   88</span>{</div>
-<div class="line"><span class="lineno">   89</span>}</div>
+<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00095">95</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>{</div>
+<div class="line"><span class="lineno">   97</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -367,10 +384,10 @@ mtgb::Direct2D 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00105">105</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>{</div>
-<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">pDefRenderTarget_</a>-&gt;GetSize();</div>
-<div class="line"><span class="lineno">  108</span>}</div>
+<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00113">113</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>{</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">pDefRenderTarget_</a>-&gt;GetSize();</div>
+<div class="line"><span class="lineno">  116</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -425,12 +442,12 @@ mtgb::Direct2D 連携図</div>
 <p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00032">32</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   33</span>{</div>
 <div class="line"><span class="lineno">   34</span>    <span class="comment">// ファクトリー作成</span></div>
-<div class="line"><span class="lineno">   35</span>    HRESULT hResult = D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">pD2DFactory_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">   35</span>    HRESULT hResult = D2D1CreateFactory(D2D1_FACTORY_TYPE_MULTI_THREADED, <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">pD2DFactory_</a>.ReleaseAndGetAddressOf());</div>
 <div class="line"><span class="lineno">   36</span> </div>
 <div class="line"><span class="lineno">   37</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;D2D1CreateFactoryに失敗 @Direct2D::Initialize&quot;</span>);</div>
 <div class="line"><span class="lineno">   38</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00053">massert</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00057">massert</a>.</p>
 
 </div>
 </div>
@@ -461,13 +478,13 @@ mtgb::Direct2D 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">mtgb::ISystem</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00091">91</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
-<div class="line"><span class="lineno">   93</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">pD2DFactory_</a>.Reset();</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">pDefD2DBrush_</a>.Reset();</div>
-<div class="line"><span class="lineno">   96</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">pDefRenderTarget_</a>.Reset();</div>
-<div class="line"><span class="lineno">   97</span>}</div>
+<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00099">99</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">pD2DFactory_</a>.Reset();</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">pDefD2DBrush_</a>.Reset();</div>
+<div class="line"><span class="lineno">  104</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">pDefRenderTarget_</a>.Reset();</div>
+<div class="line"><span class="lineno">  105</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="Direct2D_8cpp_source.html#l00022">~Direct2D()</a>.</p>
 <div class="dynheader">
@@ -494,11 +511,11 @@ mtgb::Direct2D 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00099">99</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>{</div>
-<div class="line"><span class="lineno">  101</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">pDefD2DBrush_</a>.Reset();</div>
-<div class="line"><span class="lineno">  102</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">pDefRenderTarget_</a>.Reset();</div>
-<div class="line"><span class="lineno">  103</span>}</div>
+<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00107">107</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">pDefD2DBrush_</a>.Reset();</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">pDefRenderTarget_</a>.Reset();</div>
+<div class="line"><span class="lineno">  111</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -527,9 +544,9 @@ mtgb::Direct2D 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00083">83</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>{</div>
-<div class="line"><span class="lineno">   85</span>}</div>
+<p class="definition"> <a class="el" href="Direct2D_8cpp_source.html">Direct2D.cpp</a> の <a class="el" href="Direct2D_8cpp_source.html#l00091">91</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
+<div class="line"><span class="lineno">   93</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

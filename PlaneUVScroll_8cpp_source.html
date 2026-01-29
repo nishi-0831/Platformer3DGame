@@ -110,262 +110,252 @@ $(document).ready(function(){initNavTree('PlaneUVScroll_8cpp_source.html',''); i
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;DirectXMath.h&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;d3dcompiler.h&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="HLSLInclude_8h.html">HLSLInclude.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span>DirectX;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a> kLightDir{0, 1, 1, 0};</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#ad15deba64b8a017d15d3a741b530b377">   20</a></span><a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#ad15deba64b8a017d15d3a741b530b377">mtgb::PlaneUVScroll::PlaneUVScroll</a>()</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    : time_{0.0f}</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#ab0ff35f78b3d95c7b71833d12c3aefeb">   25</a></span><a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#ab0ff35f78b3d95c7b71833d12c3aefeb">mtgb::PlaneUVScroll::~PlaneUVScroll</a>()</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#a0e6e9039fb155de75cd4417a56119532">   29</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#a0e6e9039fb155de75cd4417a56119532">mtgb::PlaneUVScroll::Initialize</a>()</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="classmtgb_1_1IShader.html#add59a2eace0eecf37919bb05a769dc7b">IShader::Initialize</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    HRESULT hResult;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_struct" href="structmtgb_1_1HLSLInclude.html">HLSLInclude</a> hlslInclude;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    ID3DBlob* pCompileGS{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    ID3DBlob* pErrorBlob{<span class="keyword">nullptr</span>}; <span class="comment">// エラーメッセージ用</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    hResult = D3DCompileFromFile(</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;Shader/SeaUVScroll.hlsl&quot;</span>,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        &amp;hlslInclude,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="stringliteral">&quot;GS&quot;</span>,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="stringliteral">&quot;gs_5_0&quot;</span>,</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        0,</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        0,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        &amp;pCompileGS,</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        &amp;pErrorBlob</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    );</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (FAILED(hResult))</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">if</span> (pErrorBlob)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="comment">// エラーメッセージを出力</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keyword">const</span> <span class="keywordtype">char</span>* errorMessage = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(pErrorBlob-&gt;GetBufferPointer());</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            OutputDebugStringA(<span class="stringliteral">&quot;Geometry Shader Compile Error:\n&quot;</span>);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            OutputDebugStringA(errorMessage);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            OutputDebugStringA(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pErrorBlob);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;ジオメトリシェーダのコンパイルに失敗&quot;</span>);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateGeometryShader(</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        pCompileGS-&gt;GetBufferPointer(),</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        pCompileGS-&gt;GetBufferSize(),</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        pGeometryShader_.ReleaseAndGetAddressOf()</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    );</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pCompileGS);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;ジオメトリシェーダの作成に失敗&quot;</span>)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">using namespace </span>DirectX;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">int</span> indexCount = 0;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> subCount = 5;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a> kLightDir{0, 1, 1, 0};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#ad15deba64b8a017d15d3a741b530b377">   23</a></span><a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#ad15deba64b8a017d15d3a741b530b377">mtgb::PlaneUVScroll::PlaneUVScroll</a>()</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    : time_{0.0f}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#ab0ff35f78b3d95c7b71833d12c3aefeb">   28</a></span><a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#ab0ff35f78b3d95c7b71833d12c3aefeb">mtgb::PlaneUVScroll::~PlaneUVScroll</a>()</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#a0e6e9039fb155de75cd4417a56119532">   32</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#a0e6e9039fb155de75cd4417a56119532">mtgb::PlaneUVScroll::Initialize</a>()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="classmtgb_1_1IShader.html#add59a2eace0eecf37919bb05a769dc7b">IShader::Initialize</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#a06253eda7a41d5b9e240a0dcf6e7addd">   37</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#a06253eda7a41d5b9e240a0dcf6e7addd">mtgb::PlaneUVScroll::Release</a>()</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    pTimeConstantBuffer_.Reset();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="classmtgb_1_1IShader.html#a36db64430ae252fe0278b5be3849c506">IShader::Release</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#a02bd3aaf2695101b14fa89d9db3ecff0">   43</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#a02bd3aaf2695101b14fa89d9db3ecff0">mtgb::PlaneUVScroll::LoadTexture</a>(<span class="keyword">const</span> std::wstring&amp; _fileName)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    texture_.Load(_fileName);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#a2289c282c6d1d1d3af65ce0dc61c7146">   48</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#a2289c282c6d1d1d3af65ce0dc61c7146">mtgb::PlaneUVScroll::Draw</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&amp; _transform)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a80c3f65ad5458eebc5095d6520d85510">DirectX11Draw::SetIsWriteToDepthBuffer</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#af785597070f75b637902ae9adb60f735">DirectX11Draw::SetShader</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdad2379e01a93b56ed8fdc81907f7bf8c0">ShaderType::Sea</a>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    time_ += <a class="code hl_function" href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">Time::DeltaTimeF</a>() * 0.5f;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1CameraSystem.html">CameraSystem</a>&amp; camera = Game::System&lt;CameraSystem&gt;();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mWorld{};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    _transform.<a class="code hl_function" href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">GenerateWorldMatrix</a>(&amp;mWorld);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mView{};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    camera.<a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a461e94d106ba457a07bf159b41ba89d5">GetViewMatrix</a>(&amp;mView);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mProj{};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    camera.<a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a5a6d385f2c639ca807ce0fa2f1d5c95b">GetProjMatrix</a>(&amp;mProj);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    IShader::Draw&lt;ConstantBuffer, Vertex&gt;(</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        [&amp;](<a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html">ConstantBuffer</a>* _pCB)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ab314b42d87a4ecebf174bd396f76cd1f">g_matrixWorldViewProj</a> = XMMatrixTranspose(mWorld * mView * mProj);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a86778dd59ccffef5fc6ad9682b479550">g_matrixWorld</a>         = XMMatrixTranspose(mWorld);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a8967b5a6af262325c2fa8f5c1436d9f0">g_matrixViewProj</a>      = XMMatrixTranspose(mView * mProj);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#a06253eda7a41d5b9e240a0dcf6e7addd">   73</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#a06253eda7a41d5b9e240a0dcf6e7addd">mtgb::PlaneUVScroll::Release</a>()</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>{</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    pTimeConstantBuffer_.Reset();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    pGeometryShader_.Reset();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_function" href="classmtgb_1_1IShader.html#a36db64430ae252fe0278b5be3849c506">IShader::Release</a>();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            XMMATRIX rotateX          = XMMatrixRotationX(XMConvertToRadians(_transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>.f[0]));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            XMMATRIX rotateY          = XMMatrixRotationY(XMConvertToRadians(_transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>.f[1]));</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            XMMATRIX rotateZ          = XMMatrixRotationZ(XMConvertToRadians(_transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>.f[2]));</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            XMMATRIX matRotate        = rotateZ * rotateY * rotateX;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            XMMATRIX matScale         = XMMatrixScaling(_transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x, _transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.y, _transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.z);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ac9b82eed9f950dba45f9bb0fdad74421">g_matrixNormalTrans</a> = XMMatrixTranspose(matRotate * XMMatrixInverse(<span class="keyword">nullptr</span>, matScale));</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#a02bd3aaf2695101b14fa89d9db3ecff0">   80</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#a02bd3aaf2695101b14fa89d9db3ecff0">mtgb::PlaneUVScroll::LoadTexture</a>(<span class="keyword">const</span> std::wstring&amp; _fileName)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    texture_.Load(_fileName);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#a2289c282c6d1d1d3af65ce0dc61c7146">   85</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#a2289c282c6d1d1d3af65ce0dc61c7146">mtgb::PlaneUVScroll::Draw</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&amp; _transform)</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>{</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a80c3f65ad5458eebc5095d6520d85510">DirectX11Draw::SetIsWriteToDepthBuffer</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#af785597070f75b637902ae9adb60f735">DirectX11Draw::SetShader</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdad2379e01a93b56ed8fdc81907f7bf8c0">ShaderType::Sea</a>);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;GSSetShader(pGeometryShader_.Get(), <span class="keyword">nullptr</span>, 0);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    time_ += <a class="code hl_function" href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">Time::DeltaTimeF</a>() * 0.5f;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1CameraSystem.html">CameraSystem</a>&amp; camera = Game::System&lt;CameraSystem&gt;();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mWorld{};</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    _transform.<a class="code hl_function" href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">GenerateWorldMatrix</a>(&amp;mWorld);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mView{};</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    camera.<a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a461e94d106ba457a07bf159b41ba89d5">GetViewMatrix</a>(&amp;mView);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mProj{};</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    camera.<a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a5a6d385f2c639ca807ce0fa2f1d5c95b">GetProjMatrix</a>(&amp;mProj);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a47588257b997c5041c76dfbe8427a52b">g_lightDirection</a> = kLightDir;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#aadaa940a480c73a10886861abe0f3f2a">g_diffuse</a>        = <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a>{1, 1, 1, 1};</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a52d24a2cdbd3a74f961d1e0335147b9e">g_ambient</a>        = <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a>{1, 1, 1, 1};</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#acc9cf934edac78e928a3f5b7e26977c6">g_speculer</a>       = <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a>{0, 0, 0, 0};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a8239fe8fbb72cd68471a5e3462c46642">g_shininess</a>      = 0.0f;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            camera.<a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a373ce46cac7f1700014b85f073766491">GetPosition</a>(&amp;_pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a482ecebdea0df003c2d542c5fa1be176">g_cameraPosition</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ac3bdce45c231f4f883b9322add4560bc">g_isTexture</a>    = TRUE;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ad550e8056f8e0262d458b85b347ac10c">g_textureScale</a> = <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a>(_transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x, _transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.y, _transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.z, 0.0f);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        },</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        [&amp;](ID3D11DeviceContext* _pContext)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            _pContext-&gt;VSSetConstantBuffers(1, 1, pTimeConstantBuffer_.GetAddressOf());</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            _pContext-&gt;PSSetConstantBuffers(1, 1, pTimeConstantBuffer_.GetAddressOf());</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="comment">// UVスクロールに使うデルタタイムをセット</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            D3D11_MAPPED_SUBRESOURCE mapped{};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">if</span> (SUCCEEDED(_pContext-&gt;Map(pTimeConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &amp;mapped)))</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html">TimeBuffer</a> tb{};</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                tb.<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html#a24cd9ccdbf583223a71936887efa95f5">g_time</a> = time_;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                memcpy_s(mapped.pData, mapped.RowPitch, &amp;tb, <span class="keyword">sizeof</span>(tb));</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                _pContext-&gt;Unmap(pTimeConstantBuffer_.Get(), 0);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            }</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    IShader::Draw&lt;ConstantBuffer, Vertex&gt;(</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        [&amp;](<a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html">ConstantBuffer</a>* _pCB)</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ab314b42d87a4ecebf174bd396f76cd1f">g_matrixWorldViewProj</a> = XMMatrixTranspose(mWorld * mView * mProj);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a86778dd59ccffef5fc6ad9682b479550">g_matrixWorld</a>         = XMMatrixTranspose(mWorld);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a8967b5a6af262325c2fa8f5c1436d9f0">g_matrixViewProj</a>      = XMMatrixTranspose(mView * mProj);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            XMMATRIX rotateX          = XMMatrixRotationX(XMConvertToRadians(_transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>.f[0]));</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            XMMATRIX rotateY          = XMMatrixRotationY(XMConvertToRadians(_transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>.f[1]));</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            XMMATRIX rotateZ          = XMMatrixRotationZ(XMConvertToRadians(_transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>.f[2]));</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            XMMATRIX matRotate        = rotateZ * rotateY * rotateX;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            XMMATRIX matScale         = XMMatrixScaling(_transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x, _transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.y, _transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.z);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ac9b82eed9f950dba45f9bb0fdad74421">g_matrixNormalTrans</a> = XMMatrixTranspose(matRotate * XMMatrixInverse(<span class="keyword">nullptr</span>, matScale));</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a47588257b997c5041c76dfbe8427a52b">g_lightDirection</a> = kLightDir;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#aadaa940a480c73a10886861abe0f3f2a">g_diffuse</a>        = <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a>{1, 1, 1, 1};</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a52d24a2cdbd3a74f961d1e0335147b9e">g_ambient</a>        = <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a>{1, 1, 1, 1};</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#acc9cf934edac78e928a3f5b7e26977c6">g_speculer</a>       = <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a>{0, 0, 0, 0};</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a8239fe8fbb72cd68471a5e3462c46642">g_shininess</a>      = 0.0f;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            camera.<a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a373ce46cac7f1700014b85f073766491">GetPosition</a>(&amp;_pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a482ecebdea0df003c2d542c5fa1be176">g_cameraPosition</a>);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ac3bdce45c231f4f883b9322add4560bc">g_isTexture</a>    = TRUE;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            _pCB-&gt;<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ad550e8056f8e0262d458b85b347ac10c">g_textureScale</a> = <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a>(_transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.x, _transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.y, _transform.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>.z, 0.0f);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        },</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        [&amp;](ID3D11DeviceContext* _pContext)</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            _pContext-&gt;VSSetConstantBuffers(1, 1, pTimeConstantBuffer_.GetAddressOf());</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            _pContext-&gt;PSSetConstantBuffers(1, 1, pTimeConstantBuffer_.GetAddressOf());</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="comment">// UVスクロールに使うデルタタイムをセット</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            D3D11_MAPPED_SUBRESOURCE mapped{};</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            <span class="keywordflow">if</span> (SUCCEEDED(_pContext-&gt;Map(pTimeConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &amp;mapped)))</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                <a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html">TimeBuffer</a> tb{};</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                tb.<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html#a24cd9ccdbf583223a71936887efa95f5">g_time</a> = time_;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                memcpy_s(mapped.pData, mapped.RowPitch, &amp;tb, <span class="keyword">sizeof</span>(tb));</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                _pContext-&gt;Unmap(pTimeConstantBuffer_.Get(), 0);</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            }</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <span class="comment">// テクスチャセット</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            ID3D11SamplerState* pSampler   = texture_.GetSamplerState();</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            ID3D11ShaderResourceView* pSrv = texture_.GetShaderResourceView();</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            _pContext-&gt;PSSetSamplers(0, 1, &amp;pSampler);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            _pContext-&gt;PSSetShaderResources(0, 1, &amp;pSrv);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <span class="comment">//_pContext-&gt;GSSet</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        },</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        6</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    );</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;GSSetShader(<span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, 0);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#acd524ce1327f66cf0927f2772e44ada0">  154</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#acd524ce1327f66cf0927f2772e44ada0">mtgb::PlaneUVScroll::InitializeVertexBuffer</a>(ID3D11Device* _pDevice)</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>{</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="comment">// XY平面の板ポリ(中心原点)・表向き+Z</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html">Vertex</a> v[4]{};</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    v[0].<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#af339162fdb9b8c939553f7bfc76d5dac">position</a> = {-0.5f, 0.0f, -0.5f};</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    v[0].normal   = {0, 1, 0};</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    v[0].uv       = {0.0f, 1.0f};</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    v[1].position = {-0.5f, 0.0f, 0.5f};</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    v[1].normal   = {0, 1, 0};</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    v[1].uv       = {0.0f, 0.0f};</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    v[2].position = {0.5f, 0.0f, 0.5f};</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    v[2].normal   = {0, 1, 0};</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    v[2].uv       = {1.0f, 0.0f};</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    v[3].position = {0.5f, 0.0f, -0.5f};</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    v[3].normal   = {0, 1, 0};</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    v[3].uv       = {1.0f, 1.0f};</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keyword">const</span> D3D11_BUFFER_DESC desc{</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        .ByteWidth           = <span class="keyword">sizeof</span>(v),</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        .Usage               = D3D11_USAGE_DEFAULT,</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        .BindFlags           = D3D11_BIND_VERTEX_BUFFER,</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        .CPUAccessFlags      = 0,</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        .MiscFlags           = 0,</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        .StructureByteStride = 0,</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    };</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keyword">const</span> D3D11_SUBRESOURCE_DATA init{</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        .pSysMem          = v,</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        .SysMemPitch      = 0,</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        .SysMemSlicePitch = 0,</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    };</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    _pDevice-&gt;CreateBuffer(&amp;desc, &amp;init, pVertexBuffer_.ReleaseAndGetAddressOf());</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>}</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#abb775969ea951d5cc411ddcbbc204ef5">  189</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#abb775969ea951d5cc411ddcbbc204ef5">mtgb::PlaneUVScroll::InitializeIndexBuffer</a>(ID3D11Device* _pDevice)</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>{</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keyword">const</span> uint32_t indices[6] = {0, 1, 2, 0, 2, 3};</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="comment">// テクスチャセット</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            ID3D11SamplerState* pSampler   = texture_.GetSamplerState();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            ID3D11ShaderResourceView* pSrv = texture_.GetShaderResourceView();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            _pContext-&gt;PSSetSamplers(0, 1, &amp;pSampler);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            _pContext-&gt;PSSetShaderResources(0, 1, &amp;pSrv);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        },</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        indexCount</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    );</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;GSSetShader(<span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, 0);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#acd524ce1327f66cf0927f2772e44ada0">  115</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#acd524ce1327f66cf0927f2772e44ada0">mtgb::PlaneUVScroll::InitializeVertexBuffer</a>(ID3D11Device* _pDevice)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="comment">// XY平面の板ポリ(中心原点)・表向き+Z</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    std::vector&lt;PlaneUVScroll::Vertex&gt; vertices;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = 0; z &lt; subCount + 1; z++)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; subCount + 1; x++)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html">PlaneUVScroll::Vertex</a> vert;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            vert.<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#af339162fdb9b8c939553f7bfc76d5dac">position</a>.x = (1.0f / subCount) * x;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            vert.<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#af339162fdb9b8c939553f7bfc76d5dac">position</a>.y = 0.0f;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            vert.<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#af339162fdb9b8c939553f7bfc76d5dac">position</a>.z = (1.0f / subCount) * z;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            vert.<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#af339162fdb9b8c939553f7bfc76d5dac">position</a>.x -= 0.5f;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            vert.<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#af339162fdb9b8c939553f7bfc76d5dac">position</a>.z -= 0.5f;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            vert.<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#a7d187ad15c2bcddb217d00d282d3538a">uv</a>.x = ( (1.0f / subCount) * x);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            vert.<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#a7d187ad15c2bcddb217d00d282d3538a">uv</a>.y = 1.0f - ((1.0f / subCount) * z);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            vert.<a class="code hl_variable" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#a3e02c9f4b634f443205b275cf60765b8">normal</a> = <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>(0.0f, 1.0f, 0.0f);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            vertices.push_back(vert);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    UINT width = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(vertices.size() * <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html">Vertex</a>));</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    D3D11_BUFFER_DESC desc</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        .ByteWidth           = width,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        .Usage               = D3D11_USAGE_DEFAULT,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        .BindFlags           = D3D11_BIND_VERTEX_BUFFER,</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        .CPUAccessFlags      = 0,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        .MiscFlags           = 0,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        .StructureByteStride = 0,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    };</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    D3D11_SUBRESOURCE_DATA init</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        .pSysMem          = vertices.data(),</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        .SysMemPitch      = 0,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        .SysMemSlicePitch = 0,</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    };</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    _pDevice-&gt;CreateBuffer(&amp;desc, &amp;init, pVertexBuffer_.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#abb775969ea951d5cc411ddcbbc204ef5">  160</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#abb775969ea951d5cc411ddcbbc204ef5">mtgb::PlaneUVScroll::InitializeIndexBuffer</a>(ID3D11Device* _pDevice)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>{</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    std::vector&lt;UINT&gt; indices;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = 0; z &lt; subCount; z++)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; subCount; x++)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <span class="keywordtype">int</span> idx0 = x + (subCount + 1) * z;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordtype">int</span> idx1 = idx0 + 1;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keywordtype">int</span> idx2 = idx0 + subCount + 1;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordtype">int</span> idx3 = idx2 + 1;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            indices.push_back(idx0);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            indices.push_back(idx3);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            indices.push_back(idx1);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            indices.push_back(idx0);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            indices.push_back(idx2);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            indices.push_back(idx3);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    indexCount = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(indices.size());</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    D3D11_BUFFER_DESC desc</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        .ByteWidth           = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(indices.size() * <span class="keyword">sizeof</span>(UINT)),</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        .Usage               = D3D11_USAGE_DEFAULT,</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        .BindFlags           = D3D11_BIND_INDEX_BUFFER,</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        .CPUAccessFlags      = 0,</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        .MiscFlags           = 0,</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        .StructureByteStride = 0,</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    };</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keyword">const</span> D3D11_BUFFER_DESC desc{</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        .ByteWidth           = <span class="keyword">sizeof</span>(indices),</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        .Usage               = D3D11_USAGE_DEFAULT,</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        .BindFlags           = D3D11_BIND_INDEX_BUFFER,</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        .CPUAccessFlags      = 0,</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        .MiscFlags           = 0,</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        .StructureByteStride = 0,</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    };</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keyword">const</span> D3D11_SUBRESOURCE_DATA init{</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        .pSysMem          = indices,</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        .SysMemPitch      = 0,</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        .SysMemSlicePitch = 0,</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    };</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    _pDevice-&gt;CreateBuffer(&amp;desc, &amp;init, pIndexBuffer_.ReleaseAndGetAddressOf());</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>}</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#adee6763f275b9583a117f9e947f7057c">  211</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#adee6763f275b9583a117f9e947f7057c">mtgb::PlaneUVScroll::InitializeConstantBuffer</a>(ID3D11Device* _pDevice)</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>{</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    {</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="keyword">const</span> D3D11_BUFFER_DESC desc{</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            .ByteWidth           = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html">ConstantBuffer</a>),</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            .Usage               = D3D11_USAGE_DYNAMIC,</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            .BindFlags           = D3D11_BIND_CONSTANT_BUFFER,</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            .CPUAccessFlags      = D3D11_CPU_ACCESS_WRITE,</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            .MiscFlags           = 0,</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            .StructureByteStride = 0,</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        };</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        _pDevice-&gt;CreateBuffer(&amp;desc, <span class="keyword">nullptr</span>, pConstantBuffer_.ReleaseAndGetAddressOf());</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    }</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keyword">const</span> D3D11_BUFFER_DESC desc{</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            .ByteWidth           = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html">TimeBuffer</a>),</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            .Usage               = D3D11_USAGE_DYNAMIC,</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            .BindFlags           = D3D11_BIND_CONSTANT_BUFFER,</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            .CPUAccessFlags      = D3D11_CPU_ACCESS_WRITE,</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            .MiscFlags           = 0,</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            .StructureByteStride = 0,</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        };</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        _pDevice-&gt;CreateBuffer(&amp;desc, <span class="keyword">nullptr</span>, pTimeConstantBuffer_.ReleaseAndGetAddressOf());</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>}</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    D3D11_SUBRESOURCE_DATA init</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        .pSysMem          = indices.data(),</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        .SysMemPitch      = 0,</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        .SysMemSlicePitch = 0,</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    };</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    _pDevice-&gt;CreateBuffer(&amp;desc, &amp;init, pIndexBuffer_.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>}</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classmtgb_1_1PlaneUVScroll.html#adee6763f275b9583a117f9e947f7057c">  203</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1PlaneUVScroll.html#adee6763f275b9583a117f9e947f7057c">mtgb::PlaneUVScroll::InitializeConstantBuffer</a>(ID3D11Device* _pDevice)</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>{</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keyword">const</span> D3D11_BUFFER_DESC desc</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            .ByteWidth           = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html">ConstantBuffer</a>),</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            .Usage               = D3D11_USAGE_DYNAMIC,</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            .BindFlags           = D3D11_BIND_CONSTANT_BUFFER,</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            .CPUAccessFlags      = D3D11_CPU_ACCESS_WRITE,</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            .MiscFlags           = 0,</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            .StructureByteStride = 0,</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        };</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        _pDevice-&gt;CreateBuffer(&amp;desc, <span class="keyword">nullptr</span>, pConstantBuffer_.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    }</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keyword">const</span> D3D11_BUFFER_DESC desc</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            .ByteWidth           = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html">TimeBuffer</a>),</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            .Usage               = D3D11_USAGE_DYNAMIC,</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            .BindFlags           = D3D11_BIND_CONSTANT_BUFFER,</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            .CPUAccessFlags      = D3D11_CPU_ACCESS_WRITE,</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            .MiscFlags           = 0,</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            .StructureByteStride = 0,</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        };</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        _pDevice-&gt;CreateBuffer(&amp;desc, <span class="keyword">nullptr</span>, pTimeConstantBuffer_.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
 <div class="ttc" id="aCameraSystem_8h_html"><div class="ttname"><a href="CameraSystem_8h.html">CameraSystem.h</a></div></div>
 <div class="ttc" id="aDirectX11Draw_8h_html"><div class="ttname"><a href="DirectX11Draw_8h.html">DirectX11Draw.h</a></div></div>
 <div class="ttc" id="aGameTime_8h_html"><div class="ttname"><a href="GameTime_8h.html">GameTime.h</a></div></div>
 <div class="ttc" id="aGame_8h_html"><div class="ttname"><a href="Game_8h.html">Game.h</a></div></div>
 <div class="ttc" id="aHLSLInclude_8h_html"><div class="ttname"><a href="HLSLInclude_8h.html">HLSLInclude.h</a></div></div>
-<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">KeyCode::L</a></div><div class="ttdeci">@ L</div></div>
-<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00053">MTAssert.h:53</a></div></div>
 <div class="ttc" id="aPlaneUVScroll_8h_html"><div class="ttname"><a href="PlaneUVScroll_8h.html">PlaneUVScroll.h</a></div></div>
-<div class="ttc" id="aReleaseUtility_8h_html_a6038f7bdb274c2e159988a57dedbf93d"><div class="ttname"><a href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a></div><div class="ttdeci">#define SAFE_RELEASE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00020">ReleaseUtility.h:20</a></div></div>
 <div class="ttc" id="aShaderType_8h_html"><div class="ttname"><a href="ShaderType_8h.html">ShaderType.h</a></div></div>
 <div class="ttc" id="aTransform_8h_html"><div class="ttname"><a href="Transform_8h.html">Transform.h</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1CameraSystem_html"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html">mtgb::CameraSystem</a></div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8h_source.html#l00012">CameraSystem.h:13</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a373ce46cac7f1700014b85f073766491"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a373ce46cac7f1700014b85f073766491">mtgb::CameraSystem::GetPosition</a></div><div class="ttdeci">void GetPosition(Vector4 *_pPosition) const</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00197">CameraSystem.cpp:197</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a461e94d106ba457a07bf159b41ba89d5"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a461e94d106ba457a07bf159b41ba89d5">mtgb::CameraSystem::GetViewMatrix</a></div><div class="ttdeci">void GetViewMatrix(Matrix4x4 *_pView) const</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00167">CameraSystem.cpp:167</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a5a6d385f2c639ca807ce0fa2f1d5c95b"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a5a6d385f2c639ca807ce0fa2f1d5c95b">mtgb::CameraSystem::GetProjMatrix</a></div><div class="ttdeci">void GetProjMatrix(Matrix4x4 *_pProj) const</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00182">CameraSystem.cpp:182</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a5339b5f02833ad0ae154686c4a0ae037"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">mtgb::DirectX11Draw::pDevice_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11Device &gt; pDevice_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00139">DirectX11Draw.h:139</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a80c3f65ad5458eebc5095d6520d85510"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a80c3f65ad5458eebc5095d6520d85510">mtgb::DirectX11Draw::SetIsWriteToDepthBuffer</a></div><div class="ttdeci">static void SetIsWriteToDepthBuffer(const bool _enabled)</div><div class="ttdoc">深度バッファへの書き込みをするか</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8cpp_source.html#l00056">DirectX11Draw.cpp:56</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_acad8126bc4c4a3ab9b2c871cf5dc94d1"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">mtgb::DirectX11Draw::pContext_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11DeviceContext &gt; pContext_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00140">DirectX11Draw.h:140</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_af785597070f75b637902ae9adb60f735"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#af785597070f75b637902ae9adb60f735">mtgb::DirectX11Draw::SetShader</a></div><div class="ttdeci">static void SetShader(const ShaderType _type)</div><div class="ttdoc">描画するシェーダをセットする</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8cpp_source.html#l00035">DirectX11Draw.cpp:35</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IShader_html_a36db64430ae252fe0278b5be3849c506"><div class="ttname"><a href="classmtgb_1_1IShader.html#a36db64430ae252fe0278b5be3849c506">mtgb::IShader::Release</a></div><div class="ttdeci">virtual void Release()</div><div class="ttdef"><b>Definition:</b> <a href="IShader_8cpp_source.html#l00020">IShader.cpp:20</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IShader_html_add59a2eace0eecf37919bb05a769dc7b"><div class="ttname"><a href="classmtgb_1_1IShader.html#add59a2eace0eecf37919bb05a769dc7b">mtgb::IShader::Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdoc">シェーダの初期化処理</div><div class="ttdef"><b>Definition:</b> <a href="IShader_8cpp_source.html#l00013">IShader.cpp:13</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_a02bd3aaf2695101b14fa89d9db3ecff0"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#a02bd3aaf2695101b14fa89d9db3ecff0">mtgb::PlaneUVScroll::LoadTexture</a></div><div class="ttdeci">void LoadTexture(const std::wstring &amp;_fileName)</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00080">PlaneUVScroll.cpp:80</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_a06253eda7a41d5b9e240a0dcf6e7addd"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#a06253eda7a41d5b9e240a0dcf6e7addd">mtgb::PlaneUVScroll::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00073">PlaneUVScroll.cpp:73</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_a0e6e9039fb155de75cd4417a56119532"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#a0e6e9039fb155de75cd4417a56119532">mtgb::PlaneUVScroll::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdoc">シェーダの初期化処理</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00029">PlaneUVScroll.cpp:29</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_a2289c282c6d1d1d3af65ce0dc61c7146"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#a2289c282c6d1d1d3af65ce0dc61c7146">mtgb::PlaneUVScroll::Draw</a></div><div class="ttdeci">void Draw(const Transform &amp;_transform)</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00085">PlaneUVScroll.cpp:85</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_ab0ff35f78b3d95c7b71833d12c3aefeb"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#ab0ff35f78b3d95c7b71833d12c3aefeb">mtgb::PlaneUVScroll::~PlaneUVScroll</a></div><div class="ttdeci">~PlaneUVScroll()</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00025">PlaneUVScroll.cpp:25</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_abb775969ea951d5cc411ddcbbc204ef5"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#abb775969ea951d5cc411ddcbbc204ef5">mtgb::PlaneUVScroll::InitializeIndexBuffer</a></div><div class="ttdeci">void InitializeIndexBuffer(ID3D11Device *_pDevice) override</div><div class="ttdoc">インデックスバッファの初期化</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00189">PlaneUVScroll.cpp:189</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_acd524ce1327f66cf0927f2772e44ada0"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#acd524ce1327f66cf0927f2772e44ada0">mtgb::PlaneUVScroll::InitializeVertexBuffer</a></div><div class="ttdeci">void InitializeVertexBuffer(ID3D11Device *_pDevice) override</div><div class="ttdoc">頂点バッファの初期化</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00154">PlaneUVScroll.cpp:154</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_ad15deba64b8a017d15d3a741b530b377"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#ad15deba64b8a017d15d3a741b530b377">mtgb::PlaneUVScroll::PlaneUVScroll</a></div><div class="ttdeci">PlaneUVScroll()</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00020">PlaneUVScroll.cpp:20</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_adee6763f275b9583a117f9e947f7057c"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#adee6763f275b9583a117f9e947f7057c">mtgb::PlaneUVScroll::InitializeConstantBuffer</a></div><div class="ttdeci">void InitializeConstantBuffer(ID3D11Device *_pDevice) override</div><div class="ttdoc">コンスタントバッファの初期化</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00211">PlaneUVScroll.cpp:211</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_a02bd3aaf2695101b14fa89d9db3ecff0"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#a02bd3aaf2695101b14fa89d9db3ecff0">mtgb::PlaneUVScroll::LoadTexture</a></div><div class="ttdeci">void LoadTexture(const std::wstring &amp;_fileName)</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00043">PlaneUVScroll.cpp:43</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_a06253eda7a41d5b9e240a0dcf6e7addd"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#a06253eda7a41d5b9e240a0dcf6e7addd">mtgb::PlaneUVScroll::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00037">PlaneUVScroll.cpp:37</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_a0e6e9039fb155de75cd4417a56119532"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#a0e6e9039fb155de75cd4417a56119532">mtgb::PlaneUVScroll::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdoc">シェーダの初期化処理</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00032">PlaneUVScroll.cpp:32</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_a2289c282c6d1d1d3af65ce0dc61c7146"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#a2289c282c6d1d1d3af65ce0dc61c7146">mtgb::PlaneUVScroll::Draw</a></div><div class="ttdeci">void Draw(const Transform &amp;_transform)</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00048">PlaneUVScroll.cpp:48</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_ab0ff35f78b3d95c7b71833d12c3aefeb"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#ab0ff35f78b3d95c7b71833d12c3aefeb">mtgb::PlaneUVScroll::~PlaneUVScroll</a></div><div class="ttdeci">~PlaneUVScroll()</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00028">PlaneUVScroll.cpp:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_abb775969ea951d5cc411ddcbbc204ef5"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#abb775969ea951d5cc411ddcbbc204ef5">mtgb::PlaneUVScroll::InitializeIndexBuffer</a></div><div class="ttdeci">void InitializeIndexBuffer(ID3D11Device *_pDevice) override</div><div class="ttdoc">インデックスバッファの初期化</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00160">PlaneUVScroll.cpp:160</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_acd524ce1327f66cf0927f2772e44ada0"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#acd524ce1327f66cf0927f2772e44ada0">mtgb::PlaneUVScroll::InitializeVertexBuffer</a></div><div class="ttdeci">void InitializeVertexBuffer(ID3D11Device *_pDevice) override</div><div class="ttdoc">頂点バッファの初期化</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00115">PlaneUVScroll.cpp:115</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_ad15deba64b8a017d15d3a741b530b377"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#ad15deba64b8a017d15d3a741b530b377">mtgb::PlaneUVScroll::PlaneUVScroll</a></div><div class="ttdeci">PlaneUVScroll()</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00023">PlaneUVScroll.cpp:23</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1PlaneUVScroll_html_adee6763f275b9583a117f9e947f7057c"><div class="ttname"><a href="classmtgb_1_1PlaneUVScroll.html#adee6763f275b9583a117f9e947f7057c">mtgb::PlaneUVScroll::InitializeConstantBuffer</a></div><div class="ttdeci">void InitializeConstantBuffer(ID3D11Device *_pDevice) override</div><div class="ttdoc">コンスタントバッファの初期化</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8cpp_source.html#l00203">PlaneUVScroll.cpp:203</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Time_html_a65abdc2a0dc82415c4d4ff372815973d"><div class="ttname"><a href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">mtgb::Time::DeltaTimeF</a></div><div class="ttdeci">static const float DeltaTimeF()</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00025">GameTime.h:25</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html"><div class="ttname"><a href="classmtgb_1_1Transform.html">mtgb::Transform</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00016">Transform.h:17</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html_a0e4b47a931e7ef521e3265c8d9413966"><div class="ttname"><a href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">mtgb::Transform::rotate</a></div><div class="ttdeci">Quaternion rotate</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00155">Transform.h:155</a></div></div>
@@ -373,25 +363,27 @@ $(document).ready(function(){initNavTree('PlaneUVScroll_8cpp_source.html',''); i
 <div class="ttc" id="aclassmtgb_1_1Transform_html_aa8373f7a6e81f61498f8ca020a5a5c31"><div class="ttname"><a href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">mtgb::Transform::scale</a></div><div class="ttdeci">Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00153">Transform.h:153</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fdad2379e01a93b56ed8fdc81907f7bf8c0"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdad2379e01a93b56ed8fdc81907f7bf8c0">mtgb::ShaderType::Sea</a></div><div class="ttdeci">@ Sea</div></div>
 <div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
-<div class="ttc" id="astructmtgb_1_1HLSLInclude_html"><div class="ttname"><a href="structmtgb_1_1HLSLInclude.html">mtgb::HLSLInclude</a></div><div class="ttdoc">シェーダヘッダ読み込み用 - 継承している</div><div class="ttdef"><b>Definition:</b> <a href="HLSLInclude_8h_source.html#l00009">HLSLInclude.h:10</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Matrix4x4_html"><div class="ttname"><a href="structmtgb_1_1Matrix4x4.html">mtgb::Matrix4x4</a></div><div class="ttdef"><b>Definition:</b> <a href="Matrix4x4_8h_source.html#l00008">Matrix4x4.h:9</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html">mtgb::PlaneUVScroll::ConstantBuffer</a></div><div class="ttdoc">GPUに送るやつ</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00030">PlaneUVScroll.h:31</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a47588257b997c5041c76dfbe8427a52b"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a47588257b997c5041c76dfbe8427a52b">mtgb::PlaneUVScroll::ConstantBuffer::g_lightDirection</a></div><div class="ttdeci">Vector4 g_lightDirection</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00036">PlaneUVScroll.h:36</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a482ecebdea0df003c2d542c5fa1be176"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a482ecebdea0df003c2d542c5fa1be176">mtgb::PlaneUVScroll::ConstantBuffer::g_cameraPosition</a></div><div class="ttdeci">Vector4 g_cameraPosition</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00040">PlaneUVScroll.h:40</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a52d24a2cdbd3a74f961d1e0335147b9e"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a52d24a2cdbd3a74f961d1e0335147b9e">mtgb::PlaneUVScroll::ConstantBuffer::g_ambient</a></div><div class="ttdeci">Vector4 g_ambient</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00038">PlaneUVScroll.h:38</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a8239fe8fbb72cd68471a5e3462c46642"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a8239fe8fbb72cd68471a5e3462c46642">mtgb::PlaneUVScroll::ConstantBuffer::g_shininess</a></div><div class="ttdeci">FLOAT g_shininess</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00041">PlaneUVScroll.h:41</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a86778dd59ccffef5fc6ad9682b479550"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a86778dd59ccffef5fc6ad9682b479550">mtgb::PlaneUVScroll::ConstantBuffer::g_matrixWorld</a></div><div class="ttdeci">Matrix4x4 g_matrixWorld</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00034">PlaneUVScroll.h:34</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a8967b5a6af262325c2fa8f5c1436d9f0"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a8967b5a6af262325c2fa8f5c1436d9f0">mtgb::PlaneUVScroll::ConstantBuffer::g_matrixViewProj</a></div><div class="ttdeci">Matrix4x4 g_matrixViewProj</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00035">PlaneUVScroll.h:35</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_aadaa940a480c73a10886861abe0f3f2a"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#aadaa940a480c73a10886861abe0f3f2a">mtgb::PlaneUVScroll::ConstantBuffer::g_diffuse</a></div><div class="ttdeci">Vector4 g_diffuse</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00037">PlaneUVScroll.h:37</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_ab314b42d87a4ecebf174bd396f76cd1f"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ab314b42d87a4ecebf174bd396f76cd1f">mtgb::PlaneUVScroll::ConstantBuffer::g_matrixWorldViewProj</a></div><div class="ttdeci">Matrix4x4 g_matrixWorldViewProj</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00032">PlaneUVScroll.h:32</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_ac3bdce45c231f4f883b9322add4560bc"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ac3bdce45c231f4f883b9322add4560bc">mtgb::PlaneUVScroll::ConstantBuffer::g_isTexture</a></div><div class="ttdeci">BOOL g_isTexture</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00042">PlaneUVScroll.h:42</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_ac9b82eed9f950dba45f9bb0fdad74421"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ac9b82eed9f950dba45f9bb0fdad74421">mtgb::PlaneUVScroll::ConstantBuffer::g_matrixNormalTrans</a></div><div class="ttdeci">Matrix4x4 g_matrixNormalTrans</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00033">PlaneUVScroll.h:33</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_acc9cf934edac78e928a3f5b7e26977c6"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#acc9cf934edac78e928a3f5b7e26977c6">mtgb::PlaneUVScroll::ConstantBuffer::g_speculer</a></div><div class="ttdeci">Vector4 g_speculer</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00039">PlaneUVScroll.h:39</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_ad550e8056f8e0262d458b85b347ac10c"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ad550e8056f8e0262d458b85b347ac10c">mtgb::PlaneUVScroll::ConstantBuffer::g_textureScale</a></div><div class="ttdeci">Vector4 g_textureScale</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00044">PlaneUVScroll.h:44</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1TimeBuffer_html"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html">mtgb::PlaneUVScroll::TimeBuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00047">PlaneUVScroll.h:48</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1TimeBuffer_html_a24cd9ccdbf583223a71936887efa95f5"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html#a24cd9ccdbf583223a71936887efa95f5">mtgb::PlaneUVScroll::TimeBuffer::g_time</a></div><div class="ttdeci">float g_time</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00049">PlaneUVScroll.h:49</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1Vertex_html"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html">mtgb::PlaneUVScroll::Vertex</a></div><div class="ttdoc">頂点情報</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00020">PlaneUVScroll.h:21</a></div></div>
-<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1Vertex_html_af339162fdb9b8c939553f7bfc76d5dac"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#af339162fdb9b8c939553f7bfc76d5dac">mtgb::PlaneUVScroll::Vertex::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00022">PlaneUVScroll.h:22</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html">mtgb::PlaneUVScroll::ConstantBuffer</a></div><div class="ttdoc">GPUに送るやつ</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00031">PlaneUVScroll.h:32</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a47588257b997c5041c76dfbe8427a52b"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a47588257b997c5041c76dfbe8427a52b">mtgb::PlaneUVScroll::ConstantBuffer::g_lightDirection</a></div><div class="ttdeci">Vector4 g_lightDirection</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00037">PlaneUVScroll.h:37</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a482ecebdea0df003c2d542c5fa1be176"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a482ecebdea0df003c2d542c5fa1be176">mtgb::PlaneUVScroll::ConstantBuffer::g_cameraPosition</a></div><div class="ttdeci">Vector4 g_cameraPosition</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00041">PlaneUVScroll.h:41</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a52d24a2cdbd3a74f961d1e0335147b9e"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a52d24a2cdbd3a74f961d1e0335147b9e">mtgb::PlaneUVScroll::ConstantBuffer::g_ambient</a></div><div class="ttdeci">Vector4 g_ambient</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00039">PlaneUVScroll.h:39</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a8239fe8fbb72cd68471a5e3462c46642"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a8239fe8fbb72cd68471a5e3462c46642">mtgb::PlaneUVScroll::ConstantBuffer::g_shininess</a></div><div class="ttdeci">FLOAT g_shininess</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00042">PlaneUVScroll.h:42</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a86778dd59ccffef5fc6ad9682b479550"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a86778dd59ccffef5fc6ad9682b479550">mtgb::PlaneUVScroll::ConstantBuffer::g_matrixWorld</a></div><div class="ttdeci">Matrix4x4 g_matrixWorld</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00035">PlaneUVScroll.h:35</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_a8967b5a6af262325c2fa8f5c1436d9f0"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#a8967b5a6af262325c2fa8f5c1436d9f0">mtgb::PlaneUVScroll::ConstantBuffer::g_matrixViewProj</a></div><div class="ttdeci">Matrix4x4 g_matrixViewProj</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00036">PlaneUVScroll.h:36</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_aadaa940a480c73a10886861abe0f3f2a"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#aadaa940a480c73a10886861abe0f3f2a">mtgb::PlaneUVScroll::ConstantBuffer::g_diffuse</a></div><div class="ttdeci">Vector4 g_diffuse</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00038">PlaneUVScroll.h:38</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_ab314b42d87a4ecebf174bd396f76cd1f"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ab314b42d87a4ecebf174bd396f76cd1f">mtgb::PlaneUVScroll::ConstantBuffer::g_matrixWorldViewProj</a></div><div class="ttdeci">Matrix4x4 g_matrixWorldViewProj</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00033">PlaneUVScroll.h:33</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_ac3bdce45c231f4f883b9322add4560bc"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ac3bdce45c231f4f883b9322add4560bc">mtgb::PlaneUVScroll::ConstantBuffer::g_isTexture</a></div><div class="ttdeci">BOOL g_isTexture</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00043">PlaneUVScroll.h:43</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_ac9b82eed9f950dba45f9bb0fdad74421"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ac9b82eed9f950dba45f9bb0fdad74421">mtgb::PlaneUVScroll::ConstantBuffer::g_matrixNormalTrans</a></div><div class="ttdeci">Matrix4x4 g_matrixNormalTrans</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00034">PlaneUVScroll.h:34</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_acc9cf934edac78e928a3f5b7e26977c6"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#acc9cf934edac78e928a3f5b7e26977c6">mtgb::PlaneUVScroll::ConstantBuffer::g_speculer</a></div><div class="ttdeci">Vector4 g_speculer</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00040">PlaneUVScroll.h:40</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1ConstantBuffer_html_ad550e8056f8e0262d458b85b347ac10c"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1ConstantBuffer.html#ad550e8056f8e0262d458b85b347ac10c">mtgb::PlaneUVScroll::ConstantBuffer::g_textureScale</a></div><div class="ttdeci">Vector4 g_textureScale</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00045">PlaneUVScroll.h:45</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1TimeBuffer_html"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html">mtgb::PlaneUVScroll::TimeBuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00048">PlaneUVScroll.h:49</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1TimeBuffer_html_a24cd9ccdbf583223a71936887efa95f5"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html#a24cd9ccdbf583223a71936887efa95f5">mtgb::PlaneUVScroll::TimeBuffer::g_time</a></div><div class="ttdeci">float g_time</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00050">PlaneUVScroll.h:50</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1Vertex_html"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html">mtgb::PlaneUVScroll::Vertex</a></div><div class="ttdoc">頂点情報</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00021">PlaneUVScroll.h:22</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1Vertex_html_a3e02c9f4b634f443205b275cf60765b8"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#a3e02c9f4b634f443205b275cf60765b8">mtgb::PlaneUVScroll::Vertex::normal</a></div><div class="ttdeci">Vector3 normal</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00024">PlaneUVScroll.h:24</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1Vertex_html_a7d187ad15c2bcddb217d00d282d3538a"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#a7d187ad15c2bcddb217d00d282d3538a">mtgb::PlaneUVScroll::Vertex::uv</a></div><div class="ttdeci">Vector2 uv</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00025">PlaneUVScroll.h:25</a></div></div>
+<div class="ttc" id="astructmtgb_1_1PlaneUVScroll_1_1Vertex_html_af339162fdb9b8c939553f7bfc76d5dac"><div class="ttname"><a href="structmtgb_1_1PlaneUVScroll_1_1Vertex.html#af339162fdb9b8c939553f7bfc76d5dac">mtgb::PlaneUVScroll::Vertex::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="PlaneUVScroll_8h_source.html#l00023">PlaneUVScroll.h:23</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector4_html"><div class="ttname"><a href="structmtgb_1_1Vector4.html">mtgb::Vector4</a></div><div class="ttdoc">4次元ベクトル</div><div class="ttdef"><b>Definition:</b> <a href="Vector4_8h_source.html#l00010">Vector4.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

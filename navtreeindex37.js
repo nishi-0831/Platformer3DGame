@@ -1,7 +1,5 @@
 var NAVTREEINDEX37 =
 {
-"structmtstat_1_1MTStat_1_1StateTransition.html":[3,0,8,0,0],
-"structmtstat_1_1MTStat_1_1StateTransition.html":[5,0,5,0,0],
 "structmtstat_1_1MTStat_1_1StateTransition.html#a7303acf99b61722c1ec570198dd86f93":[5,0,5,0,0,1],
 "structmtstat_1_1MTStat_1_1StateTransition.html#a7303acf99b61722c1ec570198dd86f93":[3,0,8,0,0,1],
 "structmtstat_1_1MTStat_1_1StateTransition.html#af4c1ce22b71037d6fc297c76b5fda738":[5,0,5,0,0,0],
