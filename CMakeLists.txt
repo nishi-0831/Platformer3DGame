@@ -1031,7 +1031,7 @@ endif()
     USES_TERMINAL
  )
 
- # include("${CMAKE_CURRENT_SOURCE_DIR}/RunClangTidy.cmake")
+ include("${CMAKE_CURRENT_SOURCE_DIR}/RunClangTidy.cmake")
 
 ################################################################################
 # Dependencies (リンク先)

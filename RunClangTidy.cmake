@@ -11,11 +11,8 @@ function(register_clang_tidy_target FUNC_NAME)
     add_custom_target(${FUNC_NAME}
     # powershellでPowerShellが使えるようになる
     # -NoProfileでプロファイルを読み込まない
-    # PowerShellコマンドを実行するには-Command "..."
-      COMMAND powershell -NoProfile -Command
-        " ${EXE_PATH} ${CMAKE_CURRENT_SOURCE_DIR} -p ${CMAKE_CURRENT_BINARY_DIR} -- |
-          ${SARIF_CONVERTER} |
-          Out-File -FilePath ${OUTPUT_SARIF} -Encoding UTF8"
+      COMMAND powershell "-NoProfile" "${EXE_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}" "-p" "${CMAKE_CURRENT_BINARY_DIR}" "--" ">" "${OUTPUT_JSON}"
+      COMMAND powershell "-NoProfile" "Get-Content" "${OUTPUT_JSON}" "|" "${SARIF_CONVERTER}" "|" "Out-File" "${OUTPUT_SARIF}"
       WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
       COMMENT "Run clang-tidy and convert to SARIF"
       USES_TERMINAL
