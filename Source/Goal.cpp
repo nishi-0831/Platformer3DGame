@@ -19,7 +19,7 @@ Goal::Goal()
 	pMeshRenderer_->meshFileName = "Model/Goal.fbx";
 	pMeshRenderer_->SetMesh(Fbx::Load(pMeshRenderer_->meshFileName));
 	pMeshRenderer_->layer	   = AllLayer();
-	pMeshRenderer_->shaderType = ShaderType::FbxParts;
+	pMeshRenderer_->shaderType = ShaderType::FBX_PARTS;
 
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Goal));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
@@ -48,7 +48,7 @@ void Goal::Start()
 		[this](EntityId _entityId)
 		{
 			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
-			if (tag == GameObjectTag::Player)
+			if (tag == GameObjectTag::PLAYER)
 			{
 				OnClear();
 			}
@@ -70,7 +70,7 @@ void Goal::Draw() const
 void Goal::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
-	ImGui::Text("EntityId:%d", Entity::entityId_);
+	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 
 void Goal::OnClear()

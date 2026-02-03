@@ -11,7 +11,7 @@
 #include "WindowResource.h"
 mtgb::SingleWindow::SingleWindow()
 {
-	context_ = WindowContext::First;
+	context_ = WindowContext::FIRST;
 }
 
 mtgb::SingleWindow::~SingleWindow()
@@ -32,18 +32,18 @@ void mtgb::SingleWindow::Initialize()
 	};
 
 	// リソースの初期化もここで行う
-	Game::System<WindowManager>().SetWindowConfig(WindowContext::First, config1);
+	Game::System<WindowManager>().SetWindowConfig(WindowContext::FIRST, config1);
 
-	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::First);
+	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::FIRST);
 
-	HWND hWnd1 = WinCtxRes::GetHWND(WindowContext::First);
+	HWND hWnd1 = WinCtxRes::GetHWND(WindowContext::FIRST);
 
 	ShowWindow(hWnd1, SW_SHOW);
 
 	// ウィンドウの表示、初期化完了をマーク
-	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::First).MarkInitialized();
+	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::FIRST).MarkInitialized();
 
-	Game::System<WindowContextResourceManager>().ChangeActiveResource(WindowContext::First);
+	Game::System<WindowContextResourceManager>().ChangeActiveResource(WindowContext::FIRST);
 
 	SetForegroundWindow(hWnd1);
 }

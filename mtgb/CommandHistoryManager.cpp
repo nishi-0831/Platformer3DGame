@@ -3,8 +3,8 @@
 #include "assert.h"
 CommandHistoryManager::CommandHistoryManager()
 	: inner_{new NamedCommandHistory(new CommandHistory())}
-	, pGroupCommand_{nullptr}
 	, isGrouping_{false}
+	, pGroupCommand_{nullptr}
 {
 }
 
@@ -20,7 +20,7 @@ void CommandHistoryManager::Update()
 			inner_->DrawImGuiStack();
 		},
 		"CommandStack",
-		ShowType::Editor
+		ShowType::EDITOR
 	);
 }
 

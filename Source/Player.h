@@ -16,8 +16,8 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	void ShowImGui() override;
 	void SetCamera(Camera* _pCamera);
 	// IActor を介して継承されました
-	void OnStomped(IActor* pOther) override;
-	void OnHitSide(IActor* pOther) override;
+	void OnStomped(IActor* _pOther) override;
+	void OnHitSide(IActor* _pOther) override;
 	void TakeDamage(int _damage) override;
 
   private:

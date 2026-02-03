@@ -25,7 +25,7 @@ void mtgb::Sprite::Draw(const RectF& _draw, const float _rotationZ, const RectF&
 	using DirectX::XMMatrixTranslation; // 平行移動
 	using DirectX::XMMatrixTranspose;	// 行と列を入れ替える
 
-	DirectX11Draw::SetBlendMode(BlendMode::Sprite); // ブレンドモードデフォルト
+	DirectX11Draw::SetBlendMode(BlendMode::SPRITE); // ブレンドモードデフォルト
 	DirectX11Draw::SetIsWriteToDepthBuffer(false);	// 深度バッファへの書き込みなし
 
 	IShader::Draw<ConstantBuffer, Vertex>(
@@ -187,12 +187,12 @@ void mtgb::Sprite::Draw(
 	using DirectX::XMMatrixTranslation;		   // 平行移動
 	using DirectX::XMMatrixTranspose;		   // 行と列を入れ替える
 
-	DirectX11Draw::SetBlendMode(BlendMode::Default); // ブレンドモードデフォルト
+	DirectX11Draw::SetBlendMode(BlendMode::DEFAULT); // ブレンドモードデフォルト
 	DirectX11Draw::SetIsWriteToDepthBuffer(false);	 // 深度バッファへの書き込みなし
 
 	IShader::Draw<ConstantBuffer, Vertex>(
 		// シェーダに渡すやつ
-		[&, this](ConstantBuffer* _pCB)
+		[&](ConstantBuffer* _pCB)
 		{
 			_pCB->g_color = _color.ToVector4Norm();
 			_pCB->g_angle = {};

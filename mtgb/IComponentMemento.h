@@ -19,8 +19,8 @@ namespace mtgb
 		using State		= TState;
 
 		ComponentMemento(EntityId _entityId, const State& _state)
-			: entityId_{_entityId}
-			, state_{_state}
+			: state_{_state}
+			, entityId_{_entityId}
 		{
 		}
 

@@ -10,10 +10,10 @@ namespace mtgb
 	class Transform;
 	enum class CameraOperation
 	{
-		Track,
-		Dolly, // カメラを左右に移動
-		Pan,   // カメラ自身を軸として回転
-		Orbit  // ターゲットを軸として回転
+		TRACK,
+		DOLLY, // カメラを左右に移動
+		PAN,   // カメラ自身を軸として回転
+		ORBIT  // ターゲットを軸として回転
 	};
 	class ImGuiEditorCamera : public ImGuiShowable, public ISystem, public ICamera
 	{

@@ -12,8 +12,8 @@
 
 mtgb::DoubleWindow::DoubleWindow()
 {
-	context1_ = WindowContext::First;
-	context2_ = WindowContext::Second;
+	context1_ = WindowContext::FIRST;
+	context2_ = WindowContext::SECOND;
 }
 
 mtgb::DoubleWindow::~DoubleWindow()
@@ -46,23 +46,23 @@ void mtgb::DoubleWindow::Initialize()
 	// mtgb::WindowManager::CreateWindowContext(config2, &context2_);
 
 	// リソースの初期化もここで行う
-	Game::System<WindowManager>().SetWindowConfig(WindowContext::First, config1);
-	Game::System<WindowManager>().SetWindowConfig(WindowContext::Second, config2);
+	Game::System<WindowManager>().SetWindowConfig(WindowContext::FIRST, config1);
+	Game::System<WindowManager>().SetWindowConfig(WindowContext::SECOND, config2);
 
-	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::First);
-	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::Second);
+	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::FIRST);
+	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::SECOND);
 
-	HWND hWnd1 = WinCtxRes::GetHWND(WindowContext::First);
-	HWND hWnd2 = WinCtxRes::GetHWND(WindowContext::Second);
+	HWND hWnd1 = WinCtxRes::GetHWND(WindowContext::FIRST);
+	HWND hWnd2 = WinCtxRes::GetHWND(WindowContext::SECOND);
 
 	ShowWindow(hWnd1, SW_SHOW);
 	ShowWindow(hWnd2, SW_SHOW);
 
 	// ウィンドウの表示、初期化完了をマーク
-	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::First).MarkInitialized();
-	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::Second).MarkInitialized();
+	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::FIRST).MarkInitialized();
+	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::SECOND).MarkInitialized();
 
-	Game::System<WindowContextResourceManager>().ChangeActiveResource(WindowContext::First);
+	Game::System<WindowContextResourceManager>().ChangeActiveResource(WindowContext::FIRST);
 
 	SetDoubleWindowPos();
 
@@ -80,8 +80,8 @@ void mtgb::DoubleWindow::SetDoubleWindowPos()
 	GetWindowRect(GetDesktopWindow(), &monitorRect);
 	int monitorWidth = monitorRect.right - monitorRect.left;
 
-	HWND hWnd1 = WinCtxRes::GetHWND(WindowContext::First);
-	HWND hWnd2 = WinCtxRes::GetHWND(WindowContext::Second);
+	HWND hWnd1 = WinCtxRes::GetHWND(WindowContext::FIRST);
+	HWND hWnd2 = WinCtxRes::GetHWND(WindowContext::SECOND);
 
 	// ウィンドウサイズ取得
 	RECT win1Rect, win2Rect;
@@ -99,7 +99,7 @@ void mtgb::DoubleWindow::SetDoubleWindowPos()
 	}
 	else
 	{
-		WindowConfig config = Game::System<WindowManager>().GetWindowConfig(WindowContext::Second);
+		WindowConfig config = Game::System<WindowManager>().GetWindowConfig(WindowContext::SECOND);
 		win2X				= monitorRect.right - config.width; // 右端に合わせる
 	}
 

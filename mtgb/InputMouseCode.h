@@ -6,7 +6,7 @@
 /// </summary>
 enum struct MouseCode : uint8_t
 {
-	Left   = 0x00,
-	Right  = 0x01,
-	Middle = 0x02
+	LEFT   = 0x00,
+	RIGHT  = 0x01,
+	MIDDLE = 0x02
 };

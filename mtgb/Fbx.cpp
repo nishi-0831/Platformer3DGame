@@ -49,7 +49,7 @@ mtgb::FBXModelHandle mtgb::Fbx::Load(const std::string& _fileName)
 
 void mtgb::Fbx::Draw(const FBXModelHandle _hModel, const Transform& _transfrom, int _frame)
 {
-	DirectX11Draw::SetBlendMode(BlendMode::Default);
+	DirectX11Draw::SetBlendMode(BlendMode::DEFAULT);
 
 	massert((0 < _hModel) && (_hModel <= handleCounter_) && "無効なハンドラ @Fbx::Draw");
 

@@ -22,9 +22,9 @@ WindowContext WinCtxRes::CurrContext()
 /// </summary>
 /// <param name="ctx">ウィンドウの識別子</param>
 /// <returns></returns>
-HWND WinCtxRes::GetHWND(WindowContext ctx)
+HWND WinCtxRes::GetHWND(WindowContext _ctx)
 {
-	return WinCtxRes::Get<WindowResource>(ctx).GetHWND();
+	return WinCtxRes::Get<WindowResource>(_ctx).GetHWND();
 }
 
 void mtgb::WinCtxRes::SwapWindow(WindowContext _ctx1, WindowContext _ctx2)
@@ -35,7 +35,7 @@ void mtgb::WinCtxRes::SwapWindow(WindowContext _ctx1, WindowContext _ctx2)
 	Game::System<WinCtxResManager>().SwapResource<Direct2DResource>(_ctx1, _ctx2);
 }
 
-void WinCtxRes::ChangeResource(WindowContext ctx)
+void WinCtxRes::ChangeResource(WindowContext _ctx)
 {
-	Game::System<WinCtxResManager>().ChangeActiveResource(ctx);
+	Game::System<WinCtxResManager>().ChangeActiveResource(_ctx);
 }

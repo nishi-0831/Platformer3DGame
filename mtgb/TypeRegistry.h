@@ -84,9 +84,9 @@ namespace RegisterShowFuncHolder
 		// TODO : Setに渡した関数自体はCommandとして作られないという説明をするようコメントを更新
 
 		TypeRegistry::Instance().RegisterFunc<Type>(
-			[=](std::any target, const char* name) -> Command*
+			[=](std::any _target, const char* _name) -> Command*
 			{
-				_func(std::any_cast<Type*>(target), name);
+				_func(std::any_cast<Type*>(_target), _name);
 				return nullptr;
 			}
 		);

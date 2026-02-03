@@ -37,7 +37,7 @@ void ResultScene::Initialize()
 
 	// カメラを管理クラスに登録
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
-	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
+	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
 
 	// ステージをクリアしているか判定
 	bool clearedStage = Game::System<StageManger>().IsClearedCurrentStage();

@@ -20,7 +20,7 @@ GameOverManager::GameOverManager()
 		{
 			OnGameOver();
 		},
-		EventScope::Scene
+		EventScope::SCENE
 	);
 }
 

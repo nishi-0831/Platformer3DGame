@@ -7,7 +7,7 @@
 #include "WindowContext.h"
 #include "WindowManager.h"
 
-#include "includingWindows.h"
+#include "IncludingWindows.h"
 
 #include <map>
 #include <typeindex>
@@ -25,8 +25,8 @@ namespace mtgb
 	class WindowResource : public WindowContextResource
 	{
 	  public:
-		static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-		LRESULT HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+		static LRESULT CALLBACK WndProc(HWND _hWnd, UINT _msg, WPARAM _wParam, LPARAM _lParam);
+		LRESULT HandleWindowMessage(HWND _hWnd, UINT _msg, WPARAM _wParam, LPARAM _lParam);
 		HWND GetHWND();
 
 		explicit WindowResource(WindowContext _windowContext);

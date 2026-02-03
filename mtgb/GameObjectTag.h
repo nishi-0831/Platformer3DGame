@@ -4,9 +4,9 @@ namespace mtgb
 {
 	enum struct GameObjectTag : unsigned char
 	{
-		Untagged,
-		PlayerPlane,
-		Player,
-		Enemy,
+		UNTAGGED,
+		PLAYER_PLANE,
+		PLAYER,
+		ENEMY,
 	};
 } // namespace mtgb

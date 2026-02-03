@@ -61,7 +61,7 @@ namespace mtgb
 
 		template <typename... Args>
 		void LogImGui(
-			const std::string& category,
+			const std::string& _category,
 			const std::source_location& _location,
 			const char* _format,
 			const Args... _args
@@ -78,16 +78,16 @@ namespace mtgb
 		static constexpr size_t BUFFER_SIZE{1024}; // ログ出力時の文字列バッファサイズ
 		static constexpr UINT MAX_LOG_COUNT{30};
 
-		LogItr RemoveLog(LogItr itr);
+		LogItr RemoveLog(LogItr _itr);
 
 		std::list<LogEntry> logs_;
 		std::unordered_map<std::string, LogItr> logMap_; // ログがキー、logs_へのイテレータが値
 		static std::string MakeKey(
-			const std::string& object,
-			const char* file,
-			int line,
-			const char* func,
-			const std::string msg
+			const std::string& _object,
+			const char* _file,
+			int _line,
+			const char* _func,
+			const std::string _msg
 		);
 	};
 
@@ -103,7 +103,7 @@ namespace mtgb
 
 	template <typename... Args>
 	void Debug::LogImGui(
-		const std::string& category,
+		const std::string& _category,
 		const std::source_location& _location,
 		const char* _format,
 		const Args... _args
@@ -116,7 +116,7 @@ namespace mtgb
 
 		std::string msg = mtgb::MultiToUTF8(buffer);
 		std::string key =
-			Debug::MakeKey(category, _location.file_name(), _location.line(), _location.function_name(), msg);
+			Debug::MakeKey(_category, _location.file_name(), _location.line(), _location.function_name(), msg);
 		key		 = mtgb::MultiToUTF8(key);
 		auto itr = logMap_.find(key);
 		if (itr != logMap_.end())
@@ -132,7 +132,7 @@ namespace mtgb
 				.line		= static_cast<int>(_location.line()),
 				.func		= _location.function_name(),
 				.objectName = "",
-				.category	= category, // カテゴリを設定
+				.category	= _category, // カテゴリを設定
 				.count		= 1
 			});
 			logMap_[key] = std::prev(logs_.end());

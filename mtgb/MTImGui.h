@@ -51,7 +51,7 @@ namespace mtgb
 		/// 表示キューを一括実行し、クリア
 		/// </summary>
 		/// <param name="show"></param>
-		void ExecuteShowQueue(ShowType show);
+		void ExecuteShowQueue(ShowType _show);
 
 		/// <summary>
 		/// 型を指定して表示キューに積む
@@ -61,26 +61,26 @@ namespace mtgb
 		/// <param name="target">表示対象のポインタ</param>
 		/// <param name="name">表示対象の名前</param>
 		/// <param name="show">表示するImGuiWindow</param>
-		template <typename T> void TypedShow(T* target, const std::string& name, ShowType show = ShowType::Inspector);
+		template <typename T> void TypedShow(T* _target, const std::string& _name, ShowType _show = ShowType::INSPECTOR);
 		/// <summary>
 		/// ImGuiShowable*インスタンスを登録、毎回ShowImGuiを呼ぶ
 		/// ImGuiShowableは自動で登録される
 		/// </summary>
 		/// <param name="obj"></param>
-		void Register(ImGuiShowable* obj);
+		void Register(ImGuiShowable* _obj);
 		/// <summary>
 		/// 登録解除
 		/// デストラクタで呼ばれる
 		/// </summary>
 		/// <param name="obj"></param>
-		void Unregister(ImGuiShowable* obj);
+		void Unregister(ImGuiShowable* _obj);
 
 		/// <summary>
 		/// コールバックを表示キューに直接積む
 		/// </summary>
 		/// <param name="func">コールバック</param>
 		/// <param name="show">表示場所</param>
-		void DirectShow(std::function<void()> func, const std::string& name, ShowType show);
+		void DirectShow(std::function<void()> _func, const std::string& _name, ShowType _show);
 
 		/// <summary>
 		/// <para> ImGuiWindowに線分を描画 </para>
@@ -119,19 +119,19 @@ namespace mtgb
 		EntityId GetSelectedEntityId();
 		static const char* GetName(ShowType _showType)
 		{
-			if (_showType == ShowType::Inspector)
+			if (_showType == ShowType::INSPECTOR)
 			{
 				return "Inspector";
 			}
-			if (_showType == ShowType::SceneView)
+			if (_showType == ShowType::SCENE_VIEW)
 			{
 				return "Game View";
 			}
-			if (_showType == ShowType::Settings)
+			if (_showType == ShowType::SETTINGS)
 			{
 				return "Settings";
 			}
-			if (_showType == ShowType::Editor)
+			if (_showType == ShowType::EDITOR)
 			{
 				return "Editor";
 			}
@@ -149,7 +149,7 @@ namespace mtgb
 
 	  private:
 		MTImGui();
-		MTImGui(const MTImGui& other) = delete;
+		MTImGui(const MTImGui& _other) = delete;
 		~MTImGui();
 
 		/// <summary>
@@ -175,17 +175,17 @@ namespace mtgb
 		bool updatingImGuiShowable_;
 	};
 
-	template <typename T> inline void MTImGui::TypedShow(T* target, const std::string& name, ShowType show)
+	template <typename T> inline void MTImGui::TypedShow(T* _target, const std::string& _name, ShowType _show)
 	{
 		using Type = std::remove_pointer_t<std::remove_cvref_t<T>>;
 		// PushShowFunc( [=] {proxy->ShowImGui(std::any(target), name); }, show);
 		DirectShow(
 			[=]()
 			{
-				TypeRegistry::Instance().CallFunc<Type>(target, name.c_str());
+				TypeRegistry::Instance().CallFunc<Type>(_target, _name.c_str());
 			},
-			name,
-			show
+			_name,
+			_show
 		);
 	}
 	template <typename T> void mtgb::MTImGui::RegisterComponentViewer()

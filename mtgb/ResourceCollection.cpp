@@ -11,9 +11,9 @@ void mtgb::ResourceCollection::Insert(const std::type_index& _key, WindowContext
 	resourceCollection_.insert(std::make_pair(_key, _pResource));
 }
 
-void mtgb::ResourceCollection::Swap(ResourceCollection& other)
+void mtgb::ResourceCollection::Swap(ResourceCollection& _other)
 {
-	std::swap(resourceCollection_, other.resourceCollection_);
+	std::swap(resourceCollection_, _other.resourceCollection_);
 }
 
 void mtgb::ResourceCollection::Release()
@@ -25,13 +25,13 @@ void mtgb::ResourceCollection::Release()
 	resourceCollection_.clear();
 }
 
-mtgb::WindowContextResource*& mtgb::ResourceCollection::operator[](const std::type_index& key)
+mtgb::WindowContextResource*& mtgb::ResourceCollection::operator[](const std::type_index& _key)
 {
-	return resourceCollection_[key];
+	return resourceCollection_[_key];
 }
 
-const mtgb::WindowContextResource* mtgb::ResourceCollection::operator[](const std::type_index& key) const
+const mtgb::WindowContextResource* mtgb::ResourceCollection::operator[](const std::type_index& _key) const
 {
-	auto it = resourceCollection_.find(key);
+	auto it = resourceCollection_.find(_key);
 	return it != resourceCollection_.end() ? it->second : nullptr;
 }

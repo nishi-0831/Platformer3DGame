@@ -7,9 +7,9 @@ namespace mtgb
 	/// </summary>
 	enum class TextAlignment
 	{
-		topLeft,	// 左上に配置
-		center,		// 中央に配置
-		bottomLeft, // 左下の配置
-		middleLeft, // 左中央の配置
+		TOP_LEFT,	// 左上に配置
+		CENTER,		// 中央に配置
+		BOTTOM_LEFT, // 左下の配置
+		MIDDLE_LEFT, // 左中央の配置
 	};
 } // namespace mtgb

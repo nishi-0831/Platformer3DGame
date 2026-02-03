@@ -4,7 +4,7 @@
 
 size_t mtgb::GetSizeUTF8Characters(const std::u8string& _string)
 {
-	enum BYTE_SIZE : int
+	enum ByteSize : int
 	{
 		BYTE_SIZE_IDK,
 		BYTE_SIZE1,
@@ -24,7 +24,7 @@ size_t mtgb::GetSizeUTF8Characters(const std::u8string& _string)
 	size_t charasCount{};
 	for (int byteIndex = 0; byteIndex < _string.size();)
 	{
-		BYTE_SIZE charaByteSize{};
+		ByteSize charaByteSize{};
 		if (isMatchByteSize(_string[byteIndex], 0b0000'0000, 0b1000'0000))
 		{
 			charaByteSize = BYTE_SIZE1;
@@ -53,7 +53,7 @@ size_t mtgb::GetSizeUTF8Characters(const std::u8string& _string)
 
 std::u8string mtgb::SubStrBegin(const std::u8string& _string, const int _count)
 {
-	enum BYTE_SIZE : int
+	enum ByteSize : int
 	{
 		BYTE_SIZE_IDK,
 		BYTE_SIZE1,
@@ -76,7 +76,7 @@ std::u8string mtgb::SubStrBegin(const std::u8string& _string, const int _count)
 	// REF: https://ja.wikipedia.org/wiki/UTF-8
 	for (byteIndex = 0; charaCount < _count && byteIndex < _string.size();)
 	{
-		BYTE_SIZE charaByteSize{};
+		ByteSize charaByteSize{};
 		if (isMatchByteSize(_string[byteIndex], 0b0000'0000, 0b1000'0000))
 		{
 			charaByteSize = BYTE_SIZE1;

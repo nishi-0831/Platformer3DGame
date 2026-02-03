@@ -5,11 +5,11 @@
 #include "MTAssert.h"
 
 mtgb::FbxModel::FbxModel()
-	: animationSpeed_{1.0f}
+	: pFbxScene_{nullptr}
+	, frameRate_{FbxTime::EMode::eFrames60}
+	, animationSpeed_{1.0f}
 	, startFrame_{0}
 	, endFrame_{0}
-	, frameRate_{FbxTime::EMode::eFrames60}
-	, pFbxScene_{nullptr}
 	, unitScaleFactor_{1.0}
 {
 }

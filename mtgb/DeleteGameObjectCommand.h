@@ -16,7 +16,7 @@ namespace mtgb
 	{
 	  public:
 		DeleteGameObjectCommand(
-			GameObject* pGameObj,
+			GameObject* _pGameObj,
 			const GameObjectFactory& _gameObjectFactory,
 			const ComponentFactory& _componentFactory
 		);

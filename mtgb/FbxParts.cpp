@@ -19,7 +19,8 @@ namespace
 
 // FbxParts コンストラクタの初期化リストを拡張して、全メンバー変数を初期化
 mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
-	: vertexCount_{0}
+	: hasSkinnedMesh_{false}
+	, vertexCount_{0}
 	, polygonCount_{0}
 	, indexCount_{0}
 	, materialCount_{0}
@@ -35,7 +36,6 @@ mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
 	, ppIndexBuffer_{nullptr}
 	, unitScaleFactor_{_unitScaleFactor}
 	, fbxToWorldScaleFactor_{static_cast<float>(1.0f / _unitScaleFactor)}
-	, hasSkinnedMesh_{false}
 {
 	if (_parent != nullptr)
 	{
@@ -90,7 +90,7 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 
 	if (hasSkinnedMesh_)
 	{
-		DirectX11Draw::SetShader(ShaderType::FbxPartsSkin);
+		DirectX11Draw::SetShader(ShaderType::FBX_PARTS_SKIN);
 	}
 	DirectX11Draw::SetIsWriteToDepthBuffer(true);
 	// 描画情報をシェーダに渡す

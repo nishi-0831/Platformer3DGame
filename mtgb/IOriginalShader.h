@@ -92,14 +92,14 @@ namespace mtgb
 		/// <typeparam name="VertexesSize"></typeparam>
 		/// <param name="vertexes"></param>
 		template <typename VertexT, size_t VertexesSize>
-		void OnWriteVertexBuffer(std::function<void(std::array<VertexT, VertexesSize>&)> vertexes);
+		void OnWriteVertexBuffer(std::function<void(std::array<VertexT, VertexesSize>&)> _vertexes);
 
 		/// <summary>
 		///
 		/// </summary>
 		/// <typeparam name="IndexSize"></typeparam>
 		/// <param name="pIndexes"></param>
-		template <size_t IndexSize> void OnWriteIndexBuffer(std::function<std::array<int, IndexSize>&> pIndexes);
+		template <size_t IndexSize> void OnWriteIndexBuffer(std::function<std::array<int, IndexSize>&> _pIndexes);
 
 		/// <summary>
 		/// コンスタントバッファに書き込み

@@ -43,14 +43,14 @@ void mtgb::MTImGui::Initialize()
 		{
 			SelectGameObject(_handler.entityId);
 		},
-		EventScope::Global
+		EventScope::GLOBAL
 	);
 	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe(
 		[this](const GameObjectCreatedEvent& _event)
 		{
 			SelectGameObject(_event.entityId);
 		},
-		EventScope::Global
+		EventScope::GLOBAL
 	);
 }
 
@@ -91,7 +91,7 @@ void mtgb::MTImGui::Update()
 			}
 		},
 		"Input",
-		ShowType::Settings
+		ShowType::SETTINGS
 	);
 }
 void mtgb::MTImGui::SetWindowOpen(ShowType _showType, bool _flag)
@@ -360,8 +360,8 @@ void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
 	{
 		if (selectedEntityId == obj->targetEntityId_)
 		{
-			imguiWindowStates_[ShowType::Inspector].selectedName = obj->displayName_;
-			imguiWindowStates_[ShowType::Inspector].entityId	 = obj->targetEntityId_;
+			imguiWindowStates_[ShowType::INSPECTOR].selectedName = obj->displayName_;
+			imguiWindowStates_[ShowType::INSPECTOR].entityId	 = obj->targetEntityId_;
 		}
 	}
 }
@@ -409,9 +409,9 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
 		}
 	}
 
-	if (_showType == ShowType::SceneView)
+	if (_showType == ShowType::SCENE_VIEW)
 	{
-		imGui.Begin(GetName(ShowType::SceneView), &state.isOpen, ImGuiRenderer::WindowFlag::NoMoveWhenHovered);
+		imGui.Begin(GetName(ShowType::SCENE_VIEW), &state.isOpen, ImGuiRenderer::WindowFlag::NO_MOVE_WHEN_HOVERED);
 
 		imGui.RenderSceneView();
 		imGui.SetDrawList();
@@ -427,7 +427,7 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
 }
 void mtgb::MTImGui::ExecuteShowQueue(ShowType show)
 {
-	if (show == ShowType::SceneView)
+	if (show == ShowType::SCENE_VIEW)
 	{
 		while (!sceneViewShowList_.empty())
 		{
@@ -457,7 +457,7 @@ void mtgb::MTImGui::Unregister(ImGuiShowable* obj)
 
 void mtgb::MTImGui::DirectShow(std::function<void()> func, const std::string& name, ShowType show)
 {
-	if (show == ShowType::SceneView)
+	if (show == ShowType::SCENE_VIEW)
 	{
 		// SceneViewは名前不要
 		sceneViewShowList_.push(func);
@@ -561,8 +561,8 @@ void mtgb::MTImGui::DrawCone(
 	}
 }
 
-EntityId mtgb::MTImGui::GetSelectedEntityId()
+mtgb::EntityId mtgb::MTImGui::GetSelectedEntityId()
 {
-	EntityId id = imguiWindowStates_[ShowType::Inspector].entityId;
+	EntityId id = imguiWindowStates_[ShowType::INSPECTOR].entityId;
 	return id;
 }

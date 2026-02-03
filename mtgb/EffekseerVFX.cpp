@@ -1,4 +1,4 @@
-#include "Assert.h"
+#include "assert.h"
 #include "EffekseerVFX.h"
 #include "CameraSystem.h"
 #include "GameTime.h"
@@ -321,9 +321,9 @@ namespace mtgb
 	}
 
 	EffectInstance::EffectInstance(const std::shared_ptr<EffectData>& _effectData)
-		: pEffectData_{_effectData}
-		, elapsedTime_{0}
+		: elapsedTime_{0}
 		, handle_{-1}
+		, pEffectData_{_effectData}
 	{
 	}
 

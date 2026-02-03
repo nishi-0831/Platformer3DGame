@@ -11,14 +11,14 @@ namespace mtgb
 
 	enum struct PadAxisCode : uint8_t
 	{
-		LeftTrigger,
-		RightTrigger,
+		LEFT_TRIGGER,
+		RIGHT_TRIGGER,
 		/*LeftStick,
 		RightStick*/
 	};
 
 	enum struct FlightStickAxisCode : uint8_t
 	{
-		Slider
+		SLIDER
 	};
 } // namespace mtgb

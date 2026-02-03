@@ -40,6 +40,6 @@ namespace mtgb
 		/// </summary>
 		/// <param name="value">適用する値</param>
 		/// <returns>適用された値</returns>
-		float ApplyDeadZone(const float value) const;
+		float ApplyDeadZone(const float _value) const;
 	};
 } // namespace mtgb

@@ -17,11 +17,11 @@ mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)
 	, name_{"UnknownWindow"}
 	, outputDesc_{}
 {
-	if (_windowContext == WindowContext::First)
+	if (_windowContext == WindowContext::FIRST)
 	{
 		name_ = "FirstWindowDXGI";
 	}
-	else if (_windowContext == WindowContext::Second)
+	else if (_windowContext == WindowContext::SECOND)
 	{
 		name_ = "SecondWindowDXGI";
 	}
@@ -91,7 +91,7 @@ void mtgb::DXGIResource::Update()
 			ImGui::Separator();
 		},
 		name_.c_str(),
-		ShowType::Settings
+		ShowType::SETTINGS
 	);
 }
 

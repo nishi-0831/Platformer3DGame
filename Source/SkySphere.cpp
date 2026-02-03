@@ -3,9 +3,9 @@
 
 mtgb::SkySphere::SkySphere()
 	: GameObject()
+	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
 	, pTransform_{Component<Transform>()}
 	, pMeshRenderer_{Component<MeshRenderer>()}
-	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
 	, rotateAngleSec_{1.0f}
 	, sphereScale_{1000.0f}
 {
@@ -15,7 +15,7 @@ mtgb::SkySphere::SkySphere()
 	pMeshRenderer_->meshFileName = "Model/SkySphere.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer		 = AllLayer();
-	pMeshRenderer_->shaderType	 = ShaderType::FbxParts;
+	pMeshRenderer_->shaderType	 = ShaderType::FBX_PARTS;
 }
 
 mtgb::SkySphere::~SkySphere()

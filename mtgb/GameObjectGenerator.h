@@ -7,7 +7,7 @@ namespace mtgb
 {
 	enum class GenerateType
 	{
-		Box
+		BOX
 	};
 	class GameObjectGenerator
 	{

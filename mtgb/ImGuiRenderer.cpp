@@ -70,7 +70,7 @@ void mtgb::ImGuiRenderer::Initialize()
 
 	ImGui::SetCurrentContext(ImGui::GetCurrentContext());
 
-	ImGui_ImplWin32_Init(WinCtxRes::GetHWND(WindowContext::First));
+	ImGui_ImplWin32_Init(WinCtxRes::GetHWND(WindowContext::FIRST));
 	const auto& ctx						= ImGui::GetCurrentContext();
 	ComPtr<ID3D11Device> device			= mtgb::DirectX11Draw::pDevice_;
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
@@ -98,7 +98,7 @@ void mtgb::ImGuiRenderer::BeginImGuizmoFrame()
 void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlag _flag)
 {
 	ImGuiWindowFlags flags = 0;
-	if (_flag == WindowFlag::NoMoveWhenHovered)
+	if (_flag == WindowFlag::NO_MOVE_WHEN_HOVERED)
 	{
 		if (mtgb::ImGuiUtil::IsMouseInWindow(_str))
 		{

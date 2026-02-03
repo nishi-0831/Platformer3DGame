@@ -56,7 +56,7 @@ void mtgb::DirectX11Manager::Update()
 			}
 		},
 		"Adapter,OutputDesc",
-		ShowType::Settings
+		ShowType::SETTINGS
 	);
 }
 
@@ -154,7 +154,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
-		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::Default)].ReleaseAndGetAddressOf()
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::DEFAULT)].ReleaseAndGetAddressOf()
 	);
 
 	massert(
@@ -186,7 +186,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
-		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::Sprite)].ReleaseAndGetAddressOf()
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::SPRITE)].ReleaseAndGetAddressOf()
 	);
 
 	massert(
@@ -216,7 +216,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 	hResult = DirectX11Draw::pDevice_->CreateBlendState(
 		&BLEND_DESC,
-		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::Default)].ReleaseAndGetAddressOf()
+		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::DEFAULT)].ReleaseAndGetAddressOf()
 	);
 
 	massert(
@@ -228,7 +228,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 	// 設定はBlendMode::Defaultと同じ
 	hResult = DirectX11Draw::pDevice_->CreateBlendState(
 		&BLEND_DESC,
-		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::Sprite)].ReleaseAndGetAddressOf()
+		DirectX11Draw::pBlendState_[static_cast<size_t>(BlendMode::SPRITE)].ReleaseAndGetAddressOf()
 	);
 
 	massert(
@@ -240,24 +240,24 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 	DirectX11Draw::pContext_->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 }
 
-void mtgb::DirectX11Manager::CreateDXGISurface(IDXGISwapChain1* pSwapChain1, IDXGISurface** ppDXGISurface)
+void mtgb::DirectX11Manager::CreateDXGISurface(IDXGISwapChain1* _pSwapChain1, IDXGISurface** _ppDxgiSurface)
 {
 	HRESULT hResult{};
 
 	// バックバッファ受け取る
 	ComPtr<ID3D11Texture2D> pBackBuffer = nullptr;
-	hResult = pSwapChain1->GetBuffer(0, _uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));
+	hResult = _pSwapChain1->GetBuffer(0, _uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));
 	massert(SUCCEEDED(hResult) && "GetBufferに失敗 @DirectX11Manager::CreateDXGISurface");
 
 	// バックバッファからIDXGISurfaceインターフェースを取り出す
-	hResult = pBackBuffer->QueryInterface(IID_PPV_ARGS(ppDXGISurface));
+	hResult = pBackBuffer->QueryInterface(IID_PPV_ARGS(_ppDxgiSurface));
 
 	pBackBuffer.Reset();
 
 	massert(SUCCEEDED(hResult) && "QueryInterfaceに失敗 @DirectX11Manager::CreateDXGISurface");
 }
 
-void mtgb::DirectX11Manager::CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, IDXGISwapChain1** ppSwapChain1)
+void mtgb::DirectX11Manager::CreateSwapChain(HWND _hWnd, IDXGIOutput* _pOutput, IDXGISwapChain1** _ppSwapChain1)
 {
 	HRESULT hResult{};
 
@@ -293,61 +293,61 @@ void mtgb::DirectX11Manager::CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, ID
 	{
 		hResult = DirectX11Draw::pDXGIFactory_->CreateSwapChainForHwnd(
 			DirectX11Draw::pDevice_.Get(),
-			hWnd,
+			_hWnd,
 			&desc,
 			&fullscreenDesc, // フルスクリーンの設定
-			pOutput,		 // 出力
-			ppSwapChain1
+			_pOutput,		 // 出力
+			_ppSwapChain1
 		);
 	}
 	else
 	{
 		hResult = DirectX11Draw::pDXGIFactory_->CreateSwapChainForHwnd(
 			DirectX11Draw::pDevice_.Get(),
-			hWnd,
+			_hWnd,
 			&desc,
 			nullptr, // 初期状態をフルスクリーンにしたい場合のみDESCを渡して、そうでないならnullptrにしておいて必要に応じてSetFullscreenStateで切り替える
-			pOutput, // 出力
-			ppSwapChain1
+			_pOutput, // 出力
+			_ppSwapChain1
 		);
 	}
 	massert(SUCCEEDED(hResult) && "CreateSwapChainForHwndに失敗 @DirectX11Manager::CreateSwapChain");
 }
 
 void mtgb::DirectX11Manager::CreateRenderTargetView(
-	IDXGISwapChain1* pSwapChain1,
-	ID3D11RenderTargetView** ppRenderTargetView
+	IDXGISwapChain1* _pSwapChain1,
+	ID3D11RenderTargetView** _ppRenderTargetView
 )
 {
 	HRESULT hResult{};
 
 	ComPtr<ID3D11Texture2D> pBackBuffer{nullptr};
 	hResult =
-		pSwapChain1->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));
+		_pSwapChain1->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));
 	massert(SUCCEEDED(hResult) && "GetBufferに失敗 @DirectX11Manager::CreateRenderTargetView");
 
-	hResult = DirectX11Draw::pDevice_->CreateRenderTargetView(pBackBuffer.Get(), nullptr, ppRenderTargetView);
+	hResult = DirectX11Draw::pDevice_->CreateRenderTargetView(pBackBuffer.Get(), nullptr, _ppRenderTargetView);
 	massert(SUCCEEDED(hResult) && "CreateRenderTargetViewに失敗 @DirectX11Manager::CreateRenderTargetView");
 
 	pBackBuffer.Reset();
 }
 
-void mtgb::DirectX11Manager::CreateViewport(const Vector2Int& size, D3D11_VIEWPORT& viewport)
+void mtgb::DirectX11Manager::CreateViewport(const Vector2Int& _size, D3D11_VIEWPORT& _viewport)
 {
-	viewport = {
+	_viewport = {
 		.TopLeftX = 0,
 		.TopLeftY = 0,
-		.Width	  = static_cast<float>(size.x),
-		.Height	  = static_cast<float>(size.y),
+		.Width	  = static_cast<float>(_size.x),
+		.Height	  = static_cast<float>(_size.y),
 		.MinDepth = 0,
 		.MaxDepth = 1,
 	};
 }
 
 void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(
-	const Vector2Int bufSize,
-	ID3D11Texture2D** ppDepthStencil,
-	ID3D11DepthStencilView** ppDepthStencilView
+	const Vector2Int _bufSize,
+	ID3D11Texture2D** _ppDepthStencil,
+	ID3D11DepthStencilView** _ppDepthStencilView
 )
 {
 	HRESULT hResult{};
@@ -356,8 +356,8 @@ void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(
 
 	// 深度バッファの設定
 	const D3D11_TEXTURE2D_DESC DEPTH_TEXTURE2D_DESC{
-		.Width	   = static_cast<UINT>(bufSize.x),
-		.Height	   = static_cast<UINT>(bufSize.y),
+		.Width	   = static_cast<UINT>(_bufSize.x),
+		.Height	   = static_cast<UINT>(_bufSize.y),
 		.MipLevels = 1,
 		.ArraySize = 1,
 		.Format	   = DXGI_FORMAT_D32_FLOAT,
@@ -368,14 +368,14 @@ void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(
 		.MiscFlags		= 0,
 	};
 
-	hResult = DirectX11Draw::pDevice_->CreateTexture2D(&DEPTH_TEXTURE2D_DESC, nullptr, ppDepthStencil);
+	hResult = DirectX11Draw::pDevice_->CreateTexture2D(&DEPTH_TEXTURE2D_DESC, nullptr, _ppDepthStencil);
 
 	massert(
 		SUCCEEDED(hResult) // 深度ステンシルバッファの作成に失敗
 		&& "深度ステンシルバッファの作成に失敗"
 	);
 
-	hResult = DirectX11Draw::pDevice_->CreateDepthStencilView(*ppDepthStencil, nullptr, ppDepthStencilView);
+	hResult = DirectX11Draw::pDevice_->CreateDepthStencilView(*_ppDepthStencil, nullptr, _ppDepthStencilView);
 
 	massert(
 		SUCCEEDED(hResult) // 深度ステンシルビュの作成に成功
@@ -383,28 +383,28 @@ void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(
 	);
 }
 
-void mtgb::DirectX11Manager::ChangeViewport(const D3D11_VIEWPORT& viewport)
+void mtgb::DirectX11Manager::ChangeViewport(const D3D11_VIEWPORT& _viewport)
 {
-	DirectX11Draw::pContext_->RSSetViewports(1, &viewport);
+	DirectX11Draw::pContext_->RSSetViewports(1, &_viewport);
 }
 
 void mtgb::DirectX11Manager::ChangeRenderTargets(
-	ComPtr<ID3D11RenderTargetView> pRenderTargetView,
-	ComPtr<ID3D11DepthStencilView> pDepthStencilView
+	ComPtr<ID3D11RenderTargetView> _pRenderTargetView,
+	ComPtr<ID3D11DepthStencilView> _pDepthStencilView
 )
 {
-	DirectX11Draw::pRenderTargetView_ = pRenderTargetView;
-	DirectX11Draw::pDepthStencilView_ = pDepthStencilView;
+	DirectX11Draw::pRenderTargetView_ = _pRenderTargetView;
+	DirectX11Draw::pDepthStencilView_ = _pDepthStencilView;
 
-	DirectX11Draw::pContext_->OMSetRenderTargets(1, pRenderTargetView.GetAddressOf(), pDepthStencilView.Get());
+	DirectX11Draw::pContext_->OMSetRenderTargets(1, _pRenderTargetView.GetAddressOf(), _pDepthStencilView.Get());
 }
 
-void mtgb::DirectX11Manager::ChangeSwapChain(ComPtr<IDXGISwapChain1> pSwapChain1)
+void mtgb::DirectX11Manager::ChangeSwapChain(ComPtr<IDXGISwapChain1> _pSwapChain1)
 {
-	DirectX11Draw::pSwapChain1_ = pSwapChain1;
+	DirectX11Draw::pSwapChain1_ = _pSwapChain1;
 }
 
-std::optional<mtgb::MonitorInfo> mtgb::DirectX11Manager::AssignAvailableMonitor(IDXGIOutput** ppOutput)
+std::optional<mtgb::MonitorInfo> mtgb::DirectX11Manager::AssignAvailableMonitor(IDXGIOutput** _ppOutput)
 {
 	// 初回の列挙
 	/*if (DirectX11Draw::monitorInfos_.empty())
@@ -421,7 +421,7 @@ std::optional<mtgb::MonitorInfo> mtgb::DirectX11Manager::AssignAvailableMonitor(
 			continue;
 
 		// モニターを列挙して、IDXGIOutputの作成を試みる
-		HRESULT hResult = DirectX11Draw::pDXGIAdapters_[info.adapterIndex]->EnumOutputs(info.outputIndex, ppOutput);
+		HRESULT hResult = DirectX11Draw::pDXGIAdapters_[info.adapterIndex]->EnumOutputs(info.outputIndex, _ppOutput);
 		if (SUCCEEDED(hResult))
 		{
 			// 作成成功
@@ -433,7 +433,7 @@ std::optional<mtgb::MonitorInfo> mtgb::DirectX11Manager::AssignAvailableMonitor(
 	// 全て使用済みの場合は、0番目のモニターを返す
 	if (!DirectX11Draw::monitorInfos_.empty())
 	{
-		HRESULT hResult = DirectX11Draw::pDXGIAdapters_[0]->EnumOutputs(0, ppOutput);
+		HRESULT hResult = DirectX11Draw::pDXGIAdapters_[0]->EnumOutputs(0, _ppOutput);
 		if (SUCCEEDED(hResult))
 		{
 			return DirectX11Draw::monitorInfos_[0];
@@ -629,7 +629,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 		CompileShader(
 			L"Shader/Figure.hlsl",
-			ShaderType::Figure,
+			ShaderType::FIGURE,
 			INPUT_ELEMENT_DESC_2D,
 			sizeof(INPUT_ELEMENT_DESC_2D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc
@@ -653,7 +653,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 		CompileShader(
 			L"Shader/Sprite.hlsl",
-			ShaderType::Sprite2D,
+			ShaderType::SPRITE2_D,
 			INPUT_ELEMENT_DESC_2D,
 			sizeof(INPUT_ELEMENT_DESC_2D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc
@@ -677,7 +677,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 		CompileShader(
 			L"Shader/FbxParts.hlsl",
-			ShaderType::FbxParts,
+			ShaderType::FBX_PARTS,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc
@@ -687,7 +687,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 	{
 		CompileShader(
 			L"Shader/SeaUVScroll.hlsl",
-			ShaderType::Sea,
+			ShaderType::SEA,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc
@@ -711,7 +711,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 		CompileShader(
 			L"Shader/Unlit3D.hlsl",
-			ShaderType::Unlit3D,
+			ShaderType::UNLIT3_D,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc
@@ -735,7 +735,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 		CompileShader(
 			L"Shader/Debug3D.hlsl",
-			ShaderType::Debug3D,
+			ShaderType::DEBUG3_D,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc
@@ -759,7 +759,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 		CompileShader(
 			L"Shader/Ground.hlsl",
-			ShaderType::Ground,
+			ShaderType::GROUND,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc
@@ -783,7 +783,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 		CompileShader(
 			L"Shader/Terrain.hlsl",
-			ShaderType::Terrain,
+			ShaderType::TERRAIN,
 			INPUT_ELEMENT_DESC_3D,
 			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc
@@ -827,7 +827,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 		CompileShader(
 			L"Shader/Trail.hlsl",
-			ShaderType::Trail,
+			ShaderType::TRAIL,
 			INPUT_ELEMENT_DESC_TRAIL,
 			sizeof(INPUT_ELEMENT_DESC_TRAIL) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc
@@ -848,7 +848,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 		CompileShader(
 			L"Shader/FbxPartsSkin.hlsl",
-			ShaderType::FbxPartsSkin,
+			ShaderType::FBX_PARTS_SKIN,
 			INPUT_ELEMENT_DESC_SKINNED,
 			sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc
@@ -869,7 +869,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 		CompileShader(
 			L"Shader/Box3D.hlsl",
-			ShaderType::Box3D,
+			ShaderType::BOX3_D,
 			INPUT_ELEMENT_DESC_SKINNED,
 			sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
 			&cRasterizerDesc

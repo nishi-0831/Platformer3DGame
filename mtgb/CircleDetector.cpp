@@ -123,11 +123,11 @@ namespace mtgb
 		}
 	}
 
-	bool CircleDetector::IsPointInCircle(const Vector2F& point, const Vector2F& center, float radius) const
+	bool CircleDetector::IsPointInCircle(const Vector2F& _point, const Vector2F& _center, float _radius) const
 	{
-		float dx			  = point.x - center.x;
-		float dy			  = point.y - center.y;
+		float dx			  = _point.x - _center.x;
+		float dy			  = _point.y - _center.y;
 		float distanceSquared = dx * dx + dy * dy;
-		return distanceSquared <= (radius * radius);
+		return distanceSquared <= (_radius * _radius);
 	}
 } // namespace mtgb

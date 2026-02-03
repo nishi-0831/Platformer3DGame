@@ -44,7 +44,7 @@ void mtgb::PlaneUVScroll::LoadTexture(const std::wstring& _fileName)
 void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 {
 	DirectX11Draw::SetIsWriteToDepthBuffer(true);
-	DirectX11Draw::SetShader(ShaderType::Sea);
+	DirectX11Draw::SetShader(ShaderType::SEA);
 
 	time_ += Time::DeltaTimeF() * 0.5f;
 

@@ -38,7 +38,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="ppSourceVoice">格納用SourceVoiceのポインタ渡し</param>
 		/// <param name="_pWaveData">フォーマット用のWaveData</param>
-		void CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, const WaveData* _pWaveData);
+		void CreateSourceVoice(IXAudio2SourceVoice** _ppSourceVoice, const WaveData* _pWaveData);
 
 	  private:
 		IXAudio2* pXAudio2_;					  // XAudio2のインタフェース
@@ -56,7 +56,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="pBuffer">Waveファイルのバッファポインタ</param>
 		/// <param name="_bufferSize">バッファサイズ</param>
-		static void PlayOneShotBuffer(byte* pBuffer, const size_t _bufferSize);
+		static void PlayOneShotBuffer(byte* _pBuffer, const size_t _bufferSize);
 		/// <summary>
 		/// 音声ファイルのバッファを直再生する
 		/// </summary>
@@ -74,7 +74,7 @@ namespace mtgb
 		/// <param name="_hAudio">音声ハンドル</param>
 		/// <param name="pBuffer">ロードするバッファ</param>
 		/// <param name="_bufferSize">ロードするバッファサイズ</param>
-		static void LoadAudioSource(const AudioHandle _hAudio, byte* pBuffer, const size_t _bufferSize);
+		static void LoadAudioSource(const AudioHandle _hAudio, byte* _pBuffer, const size_t _bufferSize);
 		/// <summary>
 		/// <para>単発音声キューに追加</para>
 		/// <para>CPUのSleepプロセスを参考</para>

@@ -18,8 +18,8 @@ namespace mtgb
 	using EventHandlerId = std::size_t;
 	enum class EventScope
 	{
-		Scene,
-		Global
+		SCENE,
+		GLOBAL
 	};
 	/// <summary>
 	/// <para>イベント用のテンプレートクラス。</para>
@@ -34,7 +34,7 @@ namespace mtgb
 		/// <summary>
 		/// ハンドラを登録し、登録に割り当てられた ID を返す
 		/// </summary>
-		EventHandlerId Subscribe(EventHandler _handler, EventScope _scope = EventScope::Scene)
+		EventHandlerId Subscribe(EventHandler _handler, EventScope _scope = EventScope::SCENE)
 		{
 			const EventHandlerId id = nextId++;
 			handlers_.emplace(id, HandlerEntry{std::move(_handler), _scope});
@@ -71,7 +71,7 @@ namespace mtgb
 
 			for (auto itr = handlers_.begin(); itr != handlers_.end();)
 			{
-				if (itr->second.scope == EventScope::Scene)
+				if (itr->second.scope == EventScope::SCENE)
 				{
 					itr = handlers_.erase(itr);
 				}

@@ -31,7 +31,7 @@ namespace
 	constexpr float SPHERICAL_COORDINATE_FRONT_OFFSET_DEG = 90.0f;
 } // namespace
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
-	: ImGuiShowable{"EditorCamera", ShowType::Editor}
+	: ImGuiShowable{"EditorCamera", ShowType::EDITOR}
 	, moveSpeed_{10.0f}
 	, rotateSensitivity_{1.0f}
 	, hCamera_{INVALID_ENTITY}
@@ -39,73 +39,73 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	distance_	= 10.0f;
 	orbitSpeed_ = 1.0f;
 
-	windowName_ = MTImGui::Instance().GetName(ShowType::SceneView);
+	windowName_ = MTImGui::Instance().GetName(ShowType::SCENE_VIEW);
 
 	// Dolly
 	sCameraOperation_
 		.OnUpdate(
-			CameraOperation::Dolly,
+			CameraOperation::DOLLY,
 			[this]
 			{
 				DoDolly();
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Dolly,
-			CameraOperation::Track,
+			CameraOperation::DOLLY,
+			CameraOperation::TRACK,
 			[]()
 			{
-				return (InputUtil::GetMouse(MouseCode::Middle) == false);
+				return (InputUtil::GetMouse(MouseCode::MIDDLE) == false);
 			}
 		);
 
 	// Orbit
 	sCameraOperation_
 		.OnUpdate(
-			CameraOperation::Orbit,
+			CameraOperation::ORBIT,
 			[this]
 			{
 				DoOrbit();
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Orbit,
-			CameraOperation::Track,
+			CameraOperation::ORBIT,
+			CameraOperation::TRACK,
 			[]()
 			{
-				return (InputUtil::GetKey(KeyCode::LeftMenu) == false);
+				return (InputUtil::GetKey(KeyCode::LEFT_MENU) == false);
 			}
 		);
 
 	// Pan
 	sCameraOperation_
 		.OnUpdate(
-			CameraOperation::Pan,
+			CameraOperation::PAN,
 			[this]
 			{
 				DoPan();
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Pan,
-			CameraOperation::Track,
+			CameraOperation::PAN,
+			CameraOperation::TRACK,
 			[]()
 			{
-				return (InputUtil::GetMouse(MouseCode::Right) == false);
+				return (InputUtil::GetMouse(MouseCode::RIGHT) == false);
 			}
 		);
 
 	// Track
 	sCameraOperation_
 		.OnUpdate(
-			CameraOperation::Track,
+			CameraOperation::TRACK,
 			[this]
 			{
 				if (IsMouseInWindow(windowName_.c_str()) == false)
 					return;
 
 				DoTrack();
-				if (InputUtil::GetMouseDown(MouseCode::Left))
+				if (InputUtil::GetMouseDown(MouseCode::LEFT))
 				{
 					if ((!ImGuizmo::IsViewManipulateHovered()))
 
@@ -117,27 +117,27 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Track,
-			CameraOperation::Pan,
+			CameraOperation::TRACK,
+			CameraOperation::PAN,
 			[this]()
 			{
-				return InputUtil::GetMouse(MouseCode::Right) && IsMouseInWindow(windowName_.c_str());
+				return InputUtil::GetMouse(MouseCode::RIGHT) && IsMouseInWindow(windowName_.c_str());
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Track,
-			CameraOperation::Orbit,
+			CameraOperation::TRACK,
+			CameraOperation::ORBIT,
 			[this]()
 			{
-				return InputUtil::GetKey(KeyCode::LeftMenu) && IsMouseInWindow(windowName_.c_str());
+				return InputUtil::GetKey(KeyCode::LEFT_MENU) && IsMouseInWindow(windowName_.c_str());
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Track,
-			CameraOperation::Dolly,
+			CameraOperation::TRACK,
+			CameraOperation::DOLLY,
 			[this]()
 			{
-				return InputUtil::GetMouse(MouseCode::Middle) && IsMouseInWindow(windowName_.c_str());
+				return InputUtil::GetMouse(MouseCode::MIDDLE) && IsMouseInWindow(windowName_.c_str());
 			}
 		);
 }
@@ -336,13 +336,13 @@ const char* ShowState(mtgb::CameraOperation _cameraOperation)
 
 	switch (_cameraOperation)
 	{
-	case CameraOperation::Track :
+	case CameraOperation::TRACK :
 		return "Track";
-	case CameraOperation::Dolly :
+	case CameraOperation::DOLLY :
 		return "Dolly";
-	case CameraOperation::Pan :
+	case CameraOperation::PAN :
 		return "Pan";
-	case CameraOperation::Orbit :
+	case CameraOperation::ORBIT :
 		return "Orbit";
 	default :
 		return "Unknown";

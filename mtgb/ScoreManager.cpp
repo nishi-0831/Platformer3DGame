@@ -22,12 +22,12 @@ mtgb::ScoreManager::~ScoreManager()
 void mtgb::ScoreManager::Update()
 {
 	MTImGui::Instance().DirectShow(
-		[this]()
+		[]()
 		{
 			ImGui::LabelText("Score", "%d", score_);
 		},
 		"CurrentScore",
-		ShowType::Inspector
+		ShowType::INSPECTOR
 	);
 }
 void mtgb::ScoreManager::AddScore(uint32_t _score)

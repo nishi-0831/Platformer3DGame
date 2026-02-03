@@ -24,8 +24,8 @@ namespace mtgb
 	  public:
 		enum class WindowFlag
 		{
-			None,
-			NoMoveWhenHovered // マウスカーソルがウィンドウ内にあるとき移動禁止
+			NONE,
+			NO_MOVE_WHEN_HOVERED // マウスカーソルがウィンドウ内にあるとき移動禁止
 		};
 
 	  public:
@@ -36,7 +36,7 @@ namespace mtgb
 		void BeginFrame();
 		void BeginImGuizmoFrame();
 
-		void Begin(const char* _str, bool* _isOpen = NULL, WindowFlag _flag = WindowFlag::None);
+		void Begin(const char* _str, bool* _isOpen = NULL, WindowFlag _flag = WindowFlag::NONE);
 
 		/// <summary>
 		/// ImGuizmoウィンドウを描画するためにRTVをセット
@@ -62,7 +62,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="width">新しい幅</param>
 		/// <param name="height">新しい高さ</param>
-		void OnResize(UINT width, UINT height);
+		void OnResize(UINT _width, UINT _height);
 
 		D3D11_VIEWPORT GetViewport()
 		{

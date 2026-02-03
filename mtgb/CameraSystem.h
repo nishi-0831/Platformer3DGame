@@ -23,12 +23,12 @@ namespace mtgb
 		/// </summary>
 		/// <param name="pCameraTransform_">座標系のポインタ</param>
 		/// <returns>カメラハンドル</returns>
-		CameraHandleInScene RegisterDrawCamera(Transform* pCameraTransform_);
+		CameraHandleInScene RegisterDrawCamera(Transform* _pCameraTransform);
 		/// <summary>
 		/// 登録解除する
 		/// </summary>
 		/// <param name="pCameraTransform_">解除する座標系のポインタ</param>
-		void UnregisterDrawCamera(const Transform* pCameraTransform_);
+		void UnregisterDrawCamera(const Transform* _pCameraTransform);
 		/// <summary>
 		/// すべての描画カメラをクリアする
 		/// </summary>
@@ -54,7 +54,7 @@ namespace mtgb
 		/// 現在描画対象となっているカメラのハンドルを取得
 		/// </summary>
 		/// <returns>カメラのハンドル</returns>
-		const CameraHandleInScene GetDrawCamera() const
+		CameraHandleInScene GetDrawCamera() const
 		{
 			return hCurrentCamera_;
 		}

@@ -99,10 +99,10 @@ void mtgb::ColliderCP::Draw()
 		}
 	}
 }
-mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vector3& _dir, float dist)
+mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vector3& _dir, float _dist)
 {
 	EntityId nearestEntity = INVALID_ENTITY;
-	float nearest		   = dist;
+	float nearest		   = _dist;
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
 		if (poolId_[i] != INVALID_ENTITY)
@@ -122,7 +122,7 @@ mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vec
 	return nearestEntity;
 }
 
-bool mtgb::ColliderCP::RayCastHit(const Vector3& _origin, const Vector3& _dir, float* dist, EntityId _entityId)
+bool mtgb::ColliderCP::RayCastHit(const Vector3& _origin, const Vector3& _dir, float* _dist, EntityId _entityId)
 {
 	std::vector<Collider*> colliders{};
 	if (!TryGet(&colliders, _entityId))
@@ -130,7 +130,7 @@ bool mtgb::ColliderCP::RayCastHit(const Vector3& _origin, const Vector3& _dir, f
 
 	for (auto& collider : colliders)
 	{
-		return collider->IsHit(_origin, _dir, dist);
+		return collider->IsHit(_origin, _dir, _dist);
 	}
 	return false;
 }

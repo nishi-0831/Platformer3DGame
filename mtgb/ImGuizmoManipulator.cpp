@@ -87,14 +87,14 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 		{
 			GenerateCommand(_event);
 		},
-		EventScope::Global
+		EventScope::GLOBAL
 	);
 
 	eventManager.GetEvent<SelectionClearedEvent>().Subscribe(
 		[this](const SelectionClearedEvent& _event)
 		{
 			
-		}, EventScope::Global);
+		}, EventScope::GLOBAL);
 
 	// 今後、同時に複数のオブジェクトを選択可能な場合になった際には修正
 	eventManager.GetEvent<GameObjectDeselectedEvent>().Subscribe(
@@ -102,7 +102,7 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 		{
 			GenerateCommand(_event);
 		},
-		EventScope::Global
+		EventScope::GLOBAL
 	);
 
 	// ゲームオブジェクト作成イベント
@@ -111,7 +111,7 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 		{
 			GenerateCommand(_event);
 		},
-		EventScope::Global
+		EventScope::GLOBAL
 	);
 }
 
@@ -136,7 +136,7 @@ void mtgb::ImGuizmoManipulator::Calculate()
 }
 
 mtgb::ImGuizmoManipulator::ImGuizmoManipulator(std::function<void(Command*)> _commandListener)
-	: ImGuiShowable("Manipulater", ShowType::SceneView)
+	: ImGuiShowable("Manipulater", ShowType::SCENE_VIEW)
 	, operation_{ImGuizmo::TRANSLATE}
 	, mode_{ImGuizmo::LOCAL}
 	, commandListener_{_commandListener}
