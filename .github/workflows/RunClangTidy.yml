@@ -19,6 +19,8 @@ jobs:
   # 環境設定が完了してからジョブを実行する
   needs: setup
   runs-on: windows-latest
+  env:
+   VCPKG_ROOT: ${{vars.VCPKG_ROOT}}
   steps:
   # キャッシュ削除
   - name: Remove CMake cache

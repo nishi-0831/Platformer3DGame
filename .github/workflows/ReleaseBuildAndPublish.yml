@@ -20,6 +20,8 @@ jobs:
   needs: setup
   # windows環境で動かす
   runs-on: windows-latest
+  env:
+   VCPKG_ROOT: ${{vars.VCPKG_ROOT}}
   steps:
 
   # Release ビルド

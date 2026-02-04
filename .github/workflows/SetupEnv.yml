@@ -5,12 +5,14 @@ on:
   outputs:
    fbx-cached:
     description: "FBX SDKがキャッシュから復元されたかどうか"
-    value: ${{jobs.setup.outputs.fbx-cached}}
+    value: ${{jobs.set-up-environment.outputs.fbx-cached}}
 
 jobs:
- build-and-release:
+ set-up-environment:
   # windows環境で動かす
   runs-on: windows-latest
+  outputs:
+   fbx-cached: ${{ steps.cache-fbx.outputs.cache-hit }}
   env:
    FBX: 'C:\fbxsdk'
   steps:
@@ -24,7 +26,7 @@ jobs:
     uses: lukka/run-vcpkg@v11
     with:
      # vcpkgを配置するディレクトリ
-     vcpkgDirectory: '${{github.workspace}}/vcpkg'
+     vcpkgDirectory: '${{ vars.VCPKG_ROOT }}'
      # コミットIDをセット
      vcpkgGitCommitId: '${{ vars.VCPKG_COMMIT_ID }}'
   
