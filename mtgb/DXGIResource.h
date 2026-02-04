@@ -29,7 +29,7 @@ namespace mtgb
 		void Release() override;
 
 		/// <summary>
-		/// Š„‚è“–‚Ä‚ç‚ê‚½ƒ‚ƒjƒ^[‚ÌÀ•W‚ğ•Ô‚·
+		/// å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸãƒ¢ãƒ‹ã‚¿ãƒ¼ã®åº§æ¨™ã‚’è¿”ã™
 		/// </summary>
 		RECT GetAssignedMonitorRect() const
 		{
@@ -41,20 +41,20 @@ namespace mtgb
 		ComPtr<IDXGISurface> pDXGISurface_;
 
 		/// <summary>
-		/// ƒ‚ƒjƒ^[î•ñ‚ğŒğŠ·‚·‚é
+		/// ãƒ¢ãƒ‹ã‚¿ãƒ¼æƒ…å ±ã‚’äº¤æ›ã™ã‚‹
 		/// </summary>
 		/// <param name="_other"></param>
 		void SwapMonitorInfo(DXGIResource& _other);
 
 	  private:
 		MonitorInfo monitorInfo_;
-		bool isMultiMonitor_; // ƒ}ƒ‹ƒ`
+		bool isMultiMonitor_; // ãƒãƒ«ãƒ
 		bool isBorderlessWindow;
 		std::vector<DXGI_MODE_DESC> modeList_;
 		std::string name_;
 		DXGI_OUTPUT_DESC outputDesc_;
 
-		// ƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÆƒRƒs[‘ã“ü‰‰Zq‚ğíœ
+		// ã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã¨ã‚³ãƒ”ãƒ¼ä»£å…¥æ¼”ç®—å­ã‚’å‰Šé™¤
 		DXGIResource(const DXGIResource&)			 = delete;
 		DXGIResource& operator=(const DXGIResource&) = delete;
 	};

@@ -1,4 +1,5 @@
 #include "TextCache.h"
+#include "Game.h"
 #include "DirectX11Draw.h"
 #include "DirectWrite.h"
 #include "MTStringUtility.h"
@@ -10,8 +11,8 @@ namespace
 {
 }
 mtgb::TextCache::TextCache()
-	: nextHandle_{0}
-	, currentDefaultFontSize_{72}
+	: currentDefaultFontSize_{72}
+	, nextHandle_{0}
 {
 	textLayoutData_ = new TextLayoutContainer();
 	fontFormatData_ = new FontFormatContainer();
@@ -52,21 +53,21 @@ void mtgb::TextCache::Update()
 {
 }
 
-int mtgb::TextCache::Load(const std::string& str, int size)
+int mtgb::TextCache::Load(const std::string& _str, int _size)
 {
-	return Game::System<TextCache>().GetOrCreateTextLayoutHandle(MultiToWide(str), size);
+	return Game::System<TextCache>().GetOrCreateTextLayoutHandle(MultiToWide(_str), _size);
 }
 
-int mtgb::TextCache::Load(const std::string& str, int fontSize, float layoutBoxWidth, float layoutBoxHeight)
+int mtgb::TextCache::Load(const std::string& _str, int _fontSize, float _layoutBoxWidth, float _layoutBoxHeight)
 {
 	return Game::System<TextCache>()
-		.GetOrCreateTextLayoutHandle(MultiToWide(str), fontSize, layoutBoxWidth, layoutBoxHeight);
+		.GetOrCreateTextLayoutHandle(MultiToWide(_str), _fontSize, _layoutBoxWidth, _layoutBoxHeight);
 }
 
-int mtgb::TextCache::Load(const std::string& str, int fontSize, Vector2F layoutBoxSize)
+int mtgb::TextCache::Load(const std::string& _str, int _fontSize, Vector2F _layoutBoxSize)
 {
 	return Game::System<TextCache>()
-		.GetOrCreateTextLayoutHandle(MultiToWide(str), fontSize, layoutBoxSize.x, layoutBoxSize.y);
+		.GetOrCreateTextLayoutHandle(MultiToWide(_str), _fontSize, _layoutBoxSize.x, _layoutBoxSize.y);
 }
 
 #if false
@@ -80,7 +81,7 @@ void mtgb::Text::Draw(int handle, float x, float y)
 
 	const auto& entry = *it;
 
-	// ‚»‚ÌƒeƒLƒXƒgƒŒƒCƒAƒEƒg‚É‘Î‰‚·‚éƒtƒHƒ“ƒgƒTƒCƒY‚ÌƒƒgƒŠƒNƒX‚ğæ“¾
+	// ãã®ãƒ†ã‚­ã‚¹ãƒˆãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã«å¯¾å¿œã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã®ãƒ¡ãƒˆãƒªã‚¯ã‚¹ã‚’å–å¾—
 	auto formatData = GetOrCreateTextFormat(entry->fontSize);
 	PixelFontMetrics metrics = formatData.second;
 	
@@ -117,7 +118,7 @@ void mtgb::Text::ImmediateDraw(const std::wstring& text, float x, float y)
 
 void mtgb::Text::ImmediateDraw(const std::wstring& text, float x, float y, float width, float height, int size)
 {
-	// w’èƒTƒCƒY‚ÌƒtƒH[ƒ}ƒbƒg‚ğæ“¾‚Ü‚½‚Íì¬
+	// æŒ‡å®šã‚µã‚¤ã‚ºã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’å–å¾—ã¾ãŸã¯ä½œæˆ
 	auto formatData = GetOrCreateTextFormat(size);
 
 	Game::System<DirectWrite>().SetTextAlignment(currentTextAlignment_, formatData.first);
@@ -138,43 +139,43 @@ void mtgb::Text::ChangeTextAlignment(TextAlignment alignment)
 
 #endif
 
-int mtgb::TextCache::GetOrCreateTextLayoutHandle(const std::wstring& text, int size)
+int mtgb::TextCache::GetOrCreateTextLayoutHandle(const std::wstring& _text, int _size)
 {
 	D2D1_SIZE_F layoutBoxSize = Game::System<Direct2D>().GetRenderTargetSize();
-	return GetOrCreateTextLayoutHandle(text, size, layoutBoxSize.width, layoutBoxSize.height);
+	return GetOrCreateTextLayoutHandle(_text, _size, layoutBoxSize.width, layoutBoxSize.height);
 }
 
-int mtgb::TextCache::GetOrCreateTextLayoutHandle(const std::wstring& text, int size, float width, float height)
+int mtgb::TextCache::GetOrCreateTextLayoutHandle(const std::wstring& _text, int _size, float _width, float _height)
 {
-	// text + size ‚Ì”ÍˆÍ‚ğæ“¾
+	// text + size ã®ç¯„å›²ã‚’å–å¾—
 	auto& text_index = textLayoutData_->get<text_layout_order>();
-	auto range		 = text_index.equal_range(std::make_tuple(text, size));
+	auto range		 = text_index.equal_range(std::make_tuple(_text, _size));
 	for (auto it = range.first; it != range.second; ++it)
 	{
-		// width / height ‚àˆê’v‚·‚é‚à‚Ì‚ğ’T‚·
+		// width / height ã‚‚ä¸€è‡´ã™ã‚‹ã‚‚ã®ã‚’æ¢ã™
 		TextLayoutData* data = *it;
-		if (data->width == width && data->height == height)
+		if (data->width == _width && data->height == _height)
 		{
-			return data->handle; // Š®‘Sˆê’v‚ª‚ ‚ê‚ÎÄ—˜—p
+			return data->handle; // å®Œå…¨ä¸€è‡´ãŒã‚ã‚Œã°å†åˆ©ç”¨
 		}
 	}
 
-	// V‹Kì¬‚·‚é
-	FontFormatData* formatData = GetOrCreateTextFormat(size);
+	// æ–°è¦ä½œæˆã™ã‚‹
+	FontFormatData* formatData = GetOrCreateTextFormat(_size);
 
 	IDWriteTextLayout* pTextLayout = nullptr;
-	Game::System<DirectWrite>().CreateTextLayout(text, width, height, size, formatData->format, &pTextLayout);
+	Game::System<DirectWrite>().CreateTextLayout(_text, _width, _height, _size, formatData->format, &pTextLayout);
 
 	int handle				   = ++nextHandle_;
-	TextLayoutData* layoutData = new TextLayoutData{text, size, width, height, pTextLayout, handle};
+	TextLayoutData* layoutData = new TextLayoutData{_text, _size, _width, _height, pTextLayout, handle};
 	textLayoutData_->insert(layoutData);
 	return handle;
 }
 
-TextLayoutData* mtgb::TextCache::GetTextLayoutData(int handle)
+TextLayoutData* mtgb::TextCache::GetTextLayoutData(int _handle)
 {
 	auto& handle_index = textLayoutData_->get<handle_order>();
-	auto it			   = handle_index.find(handle);
+	auto it			   = handle_index.find(_handle);
 
 	if (it == handle_index.end())
 		return nullptr;
@@ -182,19 +183,19 @@ TextLayoutData* mtgb::TextCache::GetTextLayoutData(int handle)
 	return *it;
 }
 
-FontFormatData* mtgb::TextCache::GetOrCreateTextFormat(int size)
+FontFormatData* mtgb::TextCache::GetOrCreateTextFormat(int _size)
 {
 	auto& size_index = fontFormatData_->get<font_size_order>();
-	auto it			 = size_index.find(size);
+	auto it			 = size_index.find(_size);
 
 	if (it != size_index.end())
 	{
-		// Šù‘¶‚ÌƒtƒH[ƒ}ƒbƒg‚ğ•Ô‚·
+		// æ—¢å­˜ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’è¿”ã™
 		return *it;
 	}
 
 	FontFormatData* fontFormatData = nullptr;
-	Game::System<DirectWrite>().CreateFontFormatData(DEFAULT_FONT_FAMILY_NAME, size, &fontFormatData);
+	Game::System<DirectWrite>().CreateFontFormatData(DEFAULT_FONT_FAMILY_NAME, _size, &fontFormatData);
 
 	Game::System<DirectWrite>().ChangeFormat(fontFormatData->format, fontFormatData->pixelFontMetrics);
 	fontFormatData_->insert(fontFormatData);

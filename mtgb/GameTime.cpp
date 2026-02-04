@@ -23,7 +23,7 @@ void mtgb::Time::Update()
 {
 	timeBeginPeriod(1);
 
-	massert(QueryPerformanceCounter(&current_) == TRUE && "QueryPerformanceCounter�̎擾�Ɏ��s");
+	massert(QueryPerformanceCounter(&current_) == TRUE && "QueryPerformanceCounterの取得に失敗");
 
 	if ((current_.QuadPart - previous_.QuadPart) * 60 >= SEC_TO_MICRO)
 	{

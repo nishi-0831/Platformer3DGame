@@ -6,10 +6,10 @@ namespace mtgb
 	namespace FilePath
 	{
 		/// <summary>
-		/// ƒtƒ@ƒCƒ‹–¼Šg’£q‚ğæ“¾‚·‚é
+		/// ãƒ•ã‚¡ã‚¤ãƒ«åæ‹¡å¼µå­ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <param name="_fileName">ƒtƒ@ƒCƒ‹–¼</param>
-		/// <returns>Šg’£q‚Ì•¶š—ñ</returns>
+		/// <param name="_fileName">ãƒ•ã‚¡ã‚¤ãƒ«å</param>
+		/// <returns>æ‹¡å¼µå­ã®æ–‡å­—åˆ—</returns>
 		inline std::string_view GetExtension(const std::string_view& _fileName)
 		{
 			size_t extPos{_fileName.find_last_of('.')};

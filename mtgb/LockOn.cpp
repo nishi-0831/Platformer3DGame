@@ -6,7 +6,7 @@ void mtgb::LockOn::Search()
 {
 	rectDetector.UpdateDetection();
 
-	// ƒ[ƒ‹ƒhÀ•WŒn‚Åˆê”Ô‹ß‚¢“G‚ð‘_‚¤
+	// ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ç³»ã§ä¸€ç•ªè¿‘ã„æ•µã‚’ç‹™ã†
 
 	auto it = std::min_element(
 		rectDetector.detectedTargets.begin(),
@@ -21,13 +21,13 @@ void mtgb::LockOn::Search()
 
 	if (it != rectDetector.detectedTargets.end())
 	{
-		pTargetInfo	  = &(*it); // ƒAƒhƒŒƒX‚ð‘ã“ü
+		pTargetInfo	  = &(*it); // ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’ä»£å…¥
 		reticleRect.x = pTargetInfo->screenPos.x - reticleSideExtents;
 		reticleRect.y = pTargetInfo->screenPos.y - reticleSideExtents;
 	}
 	else
 	{
-		pTargetInfo = nullptr; // Œ©‚Â‚©‚ç‚È‚©‚Á‚½ê‡‚Í nullptr
+		pTargetInfo = nullptr; // è¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸå ´åˆã¯ nullptr
 	}
 }
 
@@ -48,11 +48,11 @@ mtgb::Vector3 mtgb::LockOn::GetTargetPos()
 
 void mtgb::LockOn::Draw() const
 {
-	// Ž©“®‚Å‘_‚¢‚ð’è‚ß‚é”ÍˆÍ‚ð•`‰æ
+	// è‡ªå‹•ã§ç‹™ã„ã‚’å®šã‚ã‚‹ç¯„å›²ã‚’æç”»
 	const Vector2Int DRAW_SIZE{lockOnSide, lockOnSide};
 	Draw::Image(frameImage, rectDetector.config.detectionRect, uiParams);
 
-	// ‘_‚¢‚ª’è‚Ü‚Á‚Ä‚¢‚é“G‚ð‹­’²•\Ž¦
+	// ç‹™ã„ãŒå®šã¾ã£ã¦ã„ã‚‹æ•µã‚’å¼·èª¿è¡¨ç¤º
 	if (rectDetector.HasDetectedTargets())
 	{
 		// Draw::Image(lockOnReticle_, lockOn_->reticleRect, lockOn_->uiParams);

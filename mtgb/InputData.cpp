@@ -14,23 +14,23 @@ namespace
 	constexpr LONG JOY_AXIS_MAX = 65535;
 }
 
-const bool mtgb::InputUtil::GetKey(const KeyCode _keyCode, WindowContext _context)
+bool mtgb::InputUtil::GetKey(const KeyCode _keyCode, WindowContext _context)
 {
-	if (_context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
-		return GetInput(WindowContext::First).keyStateCurrent_[Index(_keyCode)] ||
-			   GetInput(WindowContext::Second).keyStateCurrent_[Index(_keyCode)];
+		return GetInput(WindowContext::FIRST).keyStateCurrent_[Index(_keyCode)] ||
+			   GetInput(WindowContext::SECOND).keyStateCurrent_[Index(_keyCode)];
 	}
 
 	return GetInput(_context).keyStateCurrent_[Index(_keyCode)];
 }
 
-const bool mtgb::InputUtil::GetKeyDown(const KeyCode _keyCode, WindowContext _context)
+bool mtgb::InputUtil::GetKeyDown(const KeyCode _keyCode, WindowContext _context)
 {
-	if (_context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
-		const InputData& inputFirstWnd	= GetInput(WindowContext::First);
-		const InputData& inputSecondWnd = GetInput(WindowContext::Second);
+		const InputData& inputFirstWnd	= GetInput(WindowContext::FIRST);
+		const InputData& inputSecondWnd = GetInput(WindowContext::SECOND);
 
 		return static_cast<bool>(
 				   KeyXOR(_keyCode, inputFirstWnd.keyStateCurrent_, inputFirstWnd.keyStatePrevious_) &
@@ -49,12 +49,12 @@ const bool mtgb::InputUtil::GetKeyDown(const KeyCode _keyCode, WindowContext _co
 	);
 }
 
-const bool mtgb::InputUtil::GetKeyUp(const KeyCode _keyCode, WindowContext _context)
+bool mtgb::InputUtil::GetKeyUp(const KeyCode _keyCode, WindowContext _context)
 {
-	if (_context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
-		const InputData& inputFirstWnd	= GetInput(WindowContext::First);
-		const InputData& inputSecondWnd = GetInput(WindowContext::Second);
+		const InputData& inputFirstWnd	= GetInput(WindowContext::FIRST);
+		const InputData& inputSecondWnd = GetInput(WindowContext::SECOND);
 
 		return static_cast<bool>(
 				   KeyXOR(_keyCode, inputFirstWnd.keyStateCurrent_, inputFirstWnd.keyStatePrevious_) &
@@ -74,20 +74,20 @@ const bool mtgb::InputUtil::GetKeyUp(const KeyCode _keyCode, WindowContext _cont
 	return static_cast<bool>(result);
 }
 
-const bool mtgb::InputUtil::GetMouse(const MouseCode _mouseCode, WindowContext _context)
+bool mtgb::InputUtil::GetMouse(const MouseCode _mouseCode, WindowContext _context)
 {
-	if (_context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
-		return GetMouse(_mouseCode, WindowContext::First) || GetMouse(_mouseCode, WindowContext::Second);
+		return GetMouse(_mouseCode, WindowContext::FIRST) || GetMouse(_mouseCode, WindowContext::SECOND);
 	}
 	return GetInput(_context).mouseStateCurrent_.rgbButtons[Index(_mouseCode)] & 0x80;
 }
 
-const bool mtgb::InputUtil::GetMouseDown(const MouseCode _mouseCode, WindowContext _context)
+bool mtgb::InputUtil::GetMouseDown(const MouseCode _mouseCode, WindowContext _context)
 {
-	if (_context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
-		return GetMouseDown(_mouseCode, WindowContext::First) || GetMouseDown(_mouseCode, WindowContext::Second);
+		return GetMouseDown(_mouseCode, WindowContext::FIRST) || GetMouseDown(_mouseCode, WindowContext::SECOND);
 	}
 	const InputData& input = GetInput(_context);
 	return static_cast<bool>(
@@ -96,11 +96,11 @@ const bool mtgb::InputUtil::GetMouseDown(const MouseCode _mouseCode, WindowConte
 	);
 }
 
-const bool mtgb::InputUtil::GetMouseUp(const MouseCode _mouseCode, WindowContext _context)
+bool mtgb::InputUtil::GetMouseUp(const MouseCode _mouseCode, WindowContext _context)
 {
-	if (_context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
-		return GetMouseUp(_mouseCode, WindowContext::First) || GetMouseUp(_mouseCode, WindowContext::Second);
+		return GetMouseUp(_mouseCode, WindowContext::FIRST) || GetMouseUp(_mouseCode, WindowContext::SECOND);
 	}
 
 	const InputData& input = GetInput(_context);
@@ -110,59 +110,59 @@ const bool mtgb::InputUtil::GetMouseUp(const MouseCode _mouseCode, WindowContext
 	);
 }
 
-const bool mtgb::InputUtil::GetGamePad(const PadCode _padButtonCode, WindowContext _context)
+bool mtgb::InputUtil::GetGamePad(const PadCode _padButtonCode, WindowContext _context)
 {
 	return GetGamePadImpl(Index(_padButtonCode), _context);
 }
 
-const bool mtgb::InputUtil::GetGamePadDown(const PadCode _padButtonCode, WindowContext _context)
+bool mtgb::InputUtil::GetGamePadDown(const PadCode _padButtonCode, WindowContext _context)
 {
 	return GetGamePadDownImpl(Index(_padButtonCode), _context);
 }
 
-const bool mtgb::InputUtil::GetGamePadUp(const PadCode _padButtonCode, WindowContext _context)
+bool mtgb::InputUtil::GetGamePadUp(const PadCode _padButtonCode, WindowContext _context)
 {
 	return GetGamePadUpImpl(Index(_padButtonCode), _context);
 }
 
-const bool mtgb::InputUtil::GetGamePad(const FlightStickCode _flightStickCode, WindowContext _context)
+bool mtgb::InputUtil::GetGamePad(const FlightStickCode _flightStickCode, WindowContext _context)
 {
 	return GetGamePadImpl(Index(_flightStickCode), _context);
 }
 
-const bool mtgb::InputUtil::GetGamePadDown(const FlightStickCode _flightStickCode, WindowContext _context)
+bool mtgb::InputUtil::GetGamePadDown(const FlightStickCode _flightStickCode, WindowContext _context)
 {
 	return GetGamePadDownImpl(Index(_flightStickCode), _context);
 }
 
-const bool mtgb::InputUtil::GetGamePadUp(const FlightStickCode _flightStickCode, WindowContext _context)
+bool mtgb::InputUtil::GetGamePadUp(const FlightStickCode _flightStickCode, WindowContext _context)
 {
 	return GetGamePadUpImpl(Index(_flightStickCode), _context);
 }
 
 const mtgb::InputData& mtgb::InputUtil::GetInput(WindowContext _context)
 {
-	if (_context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
-		return *(Game::System<WindowContextResourceManager>().Get<InputResource>(WindowContext::First).GetInput());
+		return *(Game::System<WindowContextResourceManager>().Get<InputResource>(WindowContext::FIRST).GetInput());
 	}
 	return *(Game::System<WindowContextResourceManager>().Get<InputResource>(_context).GetInput());
 }
 
 bool mtgb::InputUtil::GetGamePadImpl(size_t _index, WindowContext _context)
 {
-	if (_context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
-		return GetGamePadImpl(_index, WindowContext::First) || GetGamePadImpl(_index, WindowContext::Second);
+		return GetGamePadImpl(_index, WindowContext::FIRST) || GetGamePadImpl(_index, WindowContext::SECOND);
 	}
 	return GetInput(_context).joyStateCurrent_.rgbButtons[_index];
 }
 
 bool mtgb::InputUtil::GetGamePadUpImpl(size_t _index, WindowContext _context)
 {
-	if (_context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
-		return GetGamePadUpImpl(_index, WindowContext::First) || GetGamePadUpImpl(_index, WindowContext::Second);
+		return GetGamePadUpImpl(_index, WindowContext::FIRST) || GetGamePadUpImpl(_index, WindowContext::SECOND);
 	}
 
 	const InputData& input = GetInput(_context);
@@ -173,9 +173,9 @@ bool mtgb::InputUtil::GetGamePadUpImpl(size_t _index, WindowContext _context)
 
 bool mtgb::InputUtil::GetGamePadDownImpl(size_t _index, WindowContext _context)
 {
-	if (_context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
-		return GetGamePadDownImpl(_index, WindowContext::First) || GetGamePadDownImpl(_index, WindowContext::Second);
+		return GetGamePadDownImpl(_index, WindowContext::FIRST) || GetGamePadDownImpl(_index, WindowContext::SECOND);
 	}
 
 	const InputData& input = GetInput(_context);
@@ -184,34 +184,34 @@ bool mtgb::InputUtil::GetGamePadDownImpl(size_t _index, WindowContext _context)
 	return static_cast<bool>(XOR & curr);
 }
 
-const float mtgb::InputUtil::GetTrigger(FlightStickAxisCode _flightStickCode, WindowContext _context)
+float mtgb::InputUtil::GetTrigger(FlightStickAxisCode _flightStickCode, WindowContext _context)
 {
 	const InputData& input = GetInput(_context);
 	switch (_flightStickCode)
 	{
-	case FlightStickAxisCode::Slider :
+	case FlightStickAxisCode::SLIDER :
 		return static_cast<float>(input.joyStateCurrent_.rglSlider[0]) / JOY_AXIS_MAX;
 	default :
 		return 0.0f;
 	}
 }
 
-const float mtgb::InputUtil::GetTrigger(PadAxisCode _padCode, WindowContext _context)
+float mtgb::InputUtil::GetTrigger(PadAxisCode _padCode, WindowContext _context)
 {
 	const InputData& input = GetInput(_context);
 
 	switch (_padCode)
 	{
-	case PadAxisCode::LeftTrigger :
+	case PadAxisCode::LEFT_TRIGGER :
 		return static_cast<float>(input.joyStateCurrent_.lRy) / JOY_AXIS_MAX;
-	case PadAxisCode::RightTrigger :
+	case PadAxisCode::RIGHT_TRIGGER :
 		return static_cast<float>(input.joyStateCurrent_.lRx) / JOY_AXIS_MAX;
 	default :
 		return 0.0f;
 	}
 }
 
-const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType, WindowContext _context)
+float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType, WindowContext _context)
 {
 	const InputData& input = GetInput(_context);
 	float value			   = 0.0f;
@@ -224,11 +224,11 @@ const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType, WindowCon
 		}
 		else
 		{
-			if (input.controllerType_ == ControllerType::DualShock)
+			if (input.controllerType_ == ControllerType::DUAL_SHOCK)
 			{
 				value = static_cast<float>(input.joyStateCurrent_.lZ);
 			}
-			else if (input.controllerType_ == ControllerType::Xbox)
+			else if (input.controllerType_ == ControllerType::XBOX)
 			{
 				value = static_cast<float>(input.joyStateCurrent_.lRx);
 			}
@@ -247,11 +247,11 @@ const float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType, WindowCon
 		}
 		else
 		{
-			if (input.controllerType_ == ControllerType::DualShock)
+			if (input.controllerType_ == ControllerType::DUAL_SHOCK)
 			{
 				value = static_cast<float>(input.joyStateCurrent_.lRz);
 			}
-			else if (input.controllerType_ == ControllerType::Xbox)
+			else if (input.controllerType_ == ControllerType::XBOX)
 			{
 				value = -static_cast<float>(input.joyStateCurrent_.lRy);
 			}

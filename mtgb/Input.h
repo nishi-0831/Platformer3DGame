@@ -2,7 +2,7 @@
 #include "ISystem.h"
 #include "cmtgb.h"
 #include "IncludingInput.h"
-#include <wrl/client.h> // ’Ç‰Á
+#include <wrl/client.h> // è¿½åŠ 
 #include <functional>
 #include <vector>
 #include <tuple>
@@ -15,7 +15,7 @@
 #pragma comment(lib, "dInput8.lib")
 
 typedef struct HWND__* HWND;
-using Microsoft::WRL::ComPtr; // ’Ç‰Á
+using Microsoft::WRL::ComPtr; // è¿½åŠ 
 
 namespace mtgb
 {
@@ -24,16 +24,16 @@ namespace mtgb
 
 	enum class DeviceType
 	{
-		Unknown,
-		GamePad,
-		FlightStick
+		UNKNOWN,
+		GAME_PAD,
+		FLIGHT_STICK
 	};
 
 	enum class ControllerType
 	{
-		Unknown,
-		DualShock,
-		Xbox
+		UNKNOWN,
+		DUAL_SHOCK,
+		XBOX
 	};
 
 	struct JoystickContext
@@ -48,13 +48,13 @@ namespace mtgb
 	};
 
 	/// <summary>
-	/// ƒWƒ‡ƒCƒXƒeƒBƒbƒN‚ÌŠ„‚è“–‚Ä—\–ñ
+	/// ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã®å‰²ã‚Šå½“ã¦äºˆç´„
 	/// </summary>
 	struct JoystickReservation
 	{
 		HWND hWnd;
 		InputConfig config;
-		DeviceType deviceType; // Š„‚è“–‚Ä‚Ä—~‚µ‚¢ƒfƒoƒCƒX‚Ìí—Ş
+		DeviceType deviceType; // å‰²ã‚Šå½“ã¦ã¦æ¬²ã—ã„ãƒ‡ãƒã‚¤ã‚¹ã®ç¨®é¡
 		std::function<void(ComPtr<IDirectInputDevice8>, GUID)> onAssign;
 		~JoystickReservation();
 	};
@@ -75,54 +75,54 @@ namespace mtgb
 		void Release();
 
 		/// <summary>
-		/// ƒ}ƒEƒX‚ÌÀ•Wƒf[ƒ^‚ğXV‚·‚é
+		/// ãƒã‚¦ã‚¹ã®åº§æ¨™ãƒ‡ãƒ¼ã‚¿ã‚’æ›´æ–°ã™ã‚‹
 		/// </summary>
-		/// <param name="_x">À•W x</param>
-		/// <param name="_y">À•W y</param>
+		/// <param name="_x">åº§æ¨™ x</param>
+		/// <param name="_y">åº§æ¨™ y</param>
 		void UpdateMousePositionData(const int32_t _x, const int32_t _y);
 
 		void CreateKeyDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppKeyDevice);
 		void CreateMouseDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppMouseDevice);
 		/// <summary>
-		/// “ü—Íó‘Ô‚ğæ“¾‚·‚é‘ÎÛ‚ÌƒfƒoƒCƒX‚ğØ‚è‘Ö‚¦‚é
+		/// å…¥åŠ›çŠ¶æ…‹ã‚’å–å¾—ã™ã‚‹å¯¾è±¡ã®ãƒ‡ãƒã‚¤ã‚¹ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
 		/// </summary>
-		/// <param name="_pJoystickDevice">Ø‚è‘Ö‚¦‘ÎÛ‚ÌƒL[ƒ{[ƒhƒfƒoƒCƒX</param>
+		/// <param name="_pJoystickDevice">åˆ‡ã‚Šæ›¿ãˆå¯¾è±¡ã®ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ãƒ‡ãƒã‚¤ã‚¹</param>
 		void ChangeKeyDevice(ComPtr<IDirectInputDevice8> _pKeyDevice);
 
 		void SetJoystickGuid(GUID _guid);
 
 		/// <summary>
-		/// “ü—Íó‘Ô‚ğæ“¾‚·‚é‘ÎÛ‚ÌƒfƒoƒCƒX‚ğØ‚è‘Ö‚¦‚é
+		/// å…¥åŠ›çŠ¶æ…‹ã‚’å–å¾—ã™ã‚‹å¯¾è±¡ã®ãƒ‡ãƒã‚¤ã‚¹ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
 		/// </summary>
-		/// <param name="_pJoystickDevice">Ø‚è‘Ö‚¦‘ÎÛ‚Ìƒ}ƒEƒXƒfƒoƒCƒX</param>
+		/// <param name="_pJoystickDevice">åˆ‡ã‚Šæ›¿ãˆå¯¾è±¡ã®ãƒã‚¦ã‚¹ãƒ‡ãƒã‚¤ã‚¹</param>
 		void ChangeMouseDevice(ComPtr<IDirectInputDevice8> _pMouseDevice);
 		/// <summary>
-		/// “ü—Íó‘Ô‚ğŠi”[‚·‚é‘ÎÛ‚ğØ‚è•Ô‚é
+		/// å…¥åŠ›çŠ¶æ…‹ã‚’æ ¼ç´ã™ã‚‹å¯¾è±¡ã‚’åˆ‡ã‚Šè¿”ã‚‹
 		/// </summary>
-		/// <param name="_pJoystickDevice">Ø‚è‘Ö‚¦‘ÎÛ‚Ì“ü—Íó‘Ô‚ğŠi”[‚·‚é•¨</param>
+		/// <param name="_pJoystickDevice">åˆ‡ã‚Šæ›¿ãˆå¯¾è±¡ã®å…¥åŠ›çŠ¶æ…‹ã‚’æ ¼ç´ã™ã‚‹ç‰©</param>
 		void ChangeInputData(InputData* _pInputData);
 		/// <summary>
-		/// “ü—Íó‘Ô‚ğæ“¾‚·‚é‘ÎÛ‚ÌƒfƒoƒCƒX‚ğØ‚è‘Ö‚¦‚é
+		/// å…¥åŠ›çŠ¶æ…‹ã‚’å–å¾—ã™ã‚‹å¯¾è±¡ã®ãƒ‡ãƒã‚¤ã‚¹ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
 		/// </summary>
-		/// <param name="_pJoystickDevice">Ø‚è‘Ö‚¦‘ÎÛ‚ÌƒWƒ‡ƒCƒXƒeƒBƒbƒNƒfƒoƒCƒX</param>
+		/// <param name="_pJoystickDevice">åˆ‡ã‚Šæ›¿ãˆå¯¾è±¡ã®ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ãƒ‡ãƒã‚¤ã‚¹</param>
 		void ChangeJoystickDevice(ComPtr<IDirectInputDevice8> _pJoystickDevice);
 
 		/// <summary>
-		/// Ú‘±‚³‚ê‚Ä‚¢‚éƒWƒ‡ƒCƒXƒeƒBƒbƒN‚Ì—ñ‹“A—\–ñƒfƒoƒCƒX‚Ö‚ÌŠ„‚è“–‚Ä‚ğs‚¤
+		/// æ¥ç¶šã•ã‚Œã¦ã„ã‚‹ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã®åˆ—æŒ™ã€äºˆç´„ãƒ‡ãƒã‚¤ã‚¹ã¸ã®å‰²ã‚Šå½“ã¦ã‚’è¡Œã†
 		/// </summary>
 		void EnumJoystick();
 
 		/// <summary>
-		/// ƒWƒ‡ƒCƒXƒeƒBƒbƒN‚ªÚ‘±‚³‚ê‚½ê‡‚ÉŠ„‚è“–‚Ä‚ç‚ê‚é‚æ‚¤—\–ñ‚·‚é
-		/// æ’…‡‚ÅŠ„‚è“–‚Ä‚ç‚ê‚Ü‚·
+		/// ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ãŒæ¥ç¶šã•ã‚ŒãŸå ´åˆã«å‰²ã‚Šå½“ã¦ã‚‰ã‚Œã‚‹ã‚ˆã†äºˆç´„ã™ã‚‹
+		/// å…ˆç€é †ã§å‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¾ã™
 		/// </summary>
-		/// <param name="_pJoystickDevice">Š„‚è“–‚ÄŠó–]‚ÌƒfƒoƒCƒX</param>
+		/// <param name="_pJoystickDevice">å‰²ã‚Šå½“ã¦å¸Œæœ›ã®ãƒ‡ãƒã‚¤ã‚¹</param>
 		void RequestJoystickDevice(const JoystickReservation& _reservation);
 
 		void RequestJoystickDevice(JoystickReservation&& _reservation);
 
 		/// <summary>
-		/// Ú‘±‚³‚ê‚Ä‚¢‚éƒWƒ‡ƒCƒXƒeƒBƒbƒN‚ğŠ„‚è“–‚Ä—\–ñ‚µ‚Ä‚éƒfƒoƒCƒX‚ÉŠ„‚è“–‚Ä‚é
+		/// æ¥ç¶šã•ã‚Œã¦ã„ã‚‹ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã‚’å‰²ã‚Šå½“ã¦äºˆç´„ã—ã¦ã‚‹ãƒ‡ãƒã‚¤ã‚¹ã«å‰²ã‚Šå½“ã¦ã‚‹
 		/// </summary>
 		/// <param name="_pJoystickDevice"></param>
 		void AssignJoystickToReservation(
@@ -132,97 +132,97 @@ namespace mtgb
 		);
 
 		/// <summary>
-		/// “o˜^‚³‚ê‚½ƒWƒ‡ƒCƒXƒeƒBƒbƒN‚ğ‰ğœ‚·‚é
+		/// ç™»éŒ²ã•ã‚ŒãŸã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã‚’è§£é™¤ã™ã‚‹
 		/// </summary>
-		/// <param name="_guid">“o˜^‰ğœ‚·‚éGUID</param>
+		/// <param name="_guid">ç™»éŒ²è§£é™¤ã™ã‚‹GUID</param>
 		/// <returns></returns>
 		void UnregisterJoystickGuid(GUID _guid);
 
 		/// <summary>
-		/// Š„‚è“–‚Ä‚ç‚ê‚½ƒWƒ‡ƒCƒXƒeƒBƒbƒN‚ÌGUID‚ğ“o˜^‚·‚é
+		/// å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã®GUIDã‚’ç™»éŒ²ã™ã‚‹
 		/// </summary>
-		/// <param name="_guid">“o˜^‚·‚éƒWƒ‡ƒCƒXƒeƒBƒbƒN‚ÌGUID</param>
-		/// <returns>“o˜^Ï‚İ‚Ìê‡‚Ífalse‚ğ•Ô‚·</returns>
+		/// <param name="_guid">ç™»éŒ²ã™ã‚‹ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã®GUID</param>
+		/// <returns>ç™»éŒ²æ¸ˆã¿ã®å ´åˆã¯falseã‚’è¿”ã™</returns>
 		bool RegisterJoystickGuid(GUID _guid);
 
 		/// <summary>
-		/// æ“¾Š´Šo‚ğİ’è‚·‚é
+		/// å–å¾—æ„Ÿè¦šã‚’è¨­å®šã™ã‚‹
 		/// </summary>
 		void SetAcquireInterval(GUID _guid, ComPtr<IDirectInputDevice8> _device);
 		/// <summary>
-		/// Š„‚è“–‚Ä—\–ñ‚ª‚³‚ê‚Ä‚¢‚È‚¢‚©”Û‚©
+		/// å‰²ã‚Šå½“ã¦äºˆç´„ãŒã•ã‚Œã¦ã„ãªã„ã‹å¦ã‹
 		/// </summary>
 		/// <returns>/returns>
 		bool IsNotSubscribed();
 
 		/// <summary>
-		/// ƒxƒ“ƒ_[ID‚©‚çƒRƒ“ƒgƒ[ƒ‰[‚Ìí—Ş‚ğ”»•Ê
+		/// ãƒ™ãƒ³ãƒ€ãƒ¼IDã‹ã‚‰ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼ã®ç¨®é¡ã‚’åˆ¤åˆ¥
 		/// </summary>
 		/// <param name="_pInputDevice"></param>
 		/// <returns></returns>
 		static ControllerType GetControllerTypeByVendor(ComPtr<IDirectInputDevice8> _pInputDevice);
 		/// <summary>
-		/// ƒfƒoƒCƒX‚Ì–¼‘O‚ğæ“¾
+		/// ãƒ‡ãƒã‚¤ã‚¹ã®åå‰ã‚’å–å¾—
 		/// </summary>
-		/// <param name="_pInputDevice">ƒfƒoƒCƒX</param>
-		/// <returns>ƒfƒoƒCƒX–¼</returns>
+		/// <param name="_pInputDevice">ãƒ‡ãƒã‚¤ã‚¹</param>
+		/// <returns>ãƒ‡ãƒã‚¤ã‚¹å</returns>
 		std::string GetDeviceName(ComPtr<IDirectInputDevice8> _pInputDevice);
 		std::string GetDeviceName(GUID _guid);
 
 		/// <summary>
-		/// ƒfƒoƒCƒX‚Ì»•i–¼‚ğæ“¾
+		/// ãƒ‡ãƒã‚¤ã‚¹ã®è£½å“åã‚’å–å¾—
 		/// </summary>
-		/// <param name="_pInputDevice">ƒfƒoƒCƒX</param>
-		/// <returns>ƒfƒoƒCƒX–¼</returns>
+		/// <param name="_pInputDevice">ãƒ‡ãƒã‚¤ã‚¹</param>
+		/// <returns>ãƒ‡ãƒã‚¤ã‚¹å</returns>
 		std::string GetDeviceProductName(ComPtr<IDirectInputDevice8> _pInputDevice);
 		std::string GetDeviceProductName(GUID _guid);
-		std::string ConvertHResultToMessage(HRESULT hr) const;
+		std::string ConvertHResultToMessage(HRESULT _hr) const;
 
 		/// <summary>
-		/// ƒfƒoƒCƒX‚Ìƒ^ƒCƒv‚ğ”»•Ê
+		/// ãƒ‡ãƒã‚¤ã‚¹ã®ã‚¿ã‚¤ãƒ—ã‚’åˆ¤åˆ¥
 		/// </summary>
-		/// <param name="_pInputDevice">ƒfƒoƒCƒX</param>
-		/// <returns>ƒfƒoƒCƒXƒ^ƒCƒv</returns>
+		/// <param name="_pInputDevice">ãƒ‡ãƒã‚¤ã‚¹</param>
+		/// <returns>ãƒ‡ãƒã‚¤ã‚¹ã‚¿ã‚¤ãƒ—</returns>
 		///
 		static DeviceType GetDeviceType(ComPtr<IDirectInputDevice8> _pInputDevice);
 		static DeviceType GetDeviceType(const DIDEVICEINSTANCE& _inst);
-		HRESULT UpdateJoystickState(GUID guid);
+		HRESULT UpdateJoystickState(GUID _guid);
 
 		/// <summary>
-		/// <para> —\–ñ‚Ì’†‚©‚çw’è‚³‚ê‚½í—Ş‚ÌƒfƒoƒCƒX‚ğ—v‹‚µ‚Ä‚¢‚é‚à‚Ì‚ğ’T‚µAæ’…‡‚ÅŠ„‚è“–‚Ä‚ğs‚¤ </para>
-		/// <para> Œ©‚Â‚©‚ç‚È‚¢ê‡‚Í‚Ç‚Ìí—Ş‚Å‚à\‚í‚È‚¢‚Æ‚¢‚¤—\–ñ‚ÉŠ„‚è“–‚Ä‚é@</para>
+		/// <para> äºˆç´„ã®ä¸­ã‹ã‚‰æŒ‡å®šã•ã‚ŒãŸç¨®é¡ã®ãƒ‡ãƒã‚¤ã‚¹ã‚’è¦æ±‚ã—ã¦ã„ã‚‹ã‚‚ã®ã‚’æ¢ã—ã€å…ˆç€é †ã§å‰²ã‚Šå½“ã¦ã‚’è¡Œã† </para>
+		/// <para> è¦‹ã¤ã‹ã‚‰ãªã„å ´åˆã¯ã©ã®ç¨®é¡ã§ã‚‚æ§‹ã‚ãªã„ã¨ã„ã†äºˆç´„ã«å‰²ã‚Šå½“ã¦ã‚‹ã€€</para>
 		/// </summary>
-		/// <param name="_devType">—v‹‚·‚éƒfƒoƒCƒX‚Ìí—Ş</param>
+		/// <param name="_devType">è¦æ±‚ã™ã‚‹ãƒ‡ãƒã‚¤ã‚¹ã®ç¨®é¡</param>
 		/// <returns></returns>
 		int FindReservationIndexForDevice(DeviceType _devType) const;
-		const std::string GetJoystickStatusMessage(GUID guid) const;
-		bool IsJoystickConnected(GUID guid) const;
-		bool IsJoystickAssigned(GUID guid) const;
+		const std::string GetJoystickStatusMessage(GUID _guid) const;
+		bool IsJoystickConnected(GUID _guid) const;
+		bool IsJoystickAssigned(GUID _guid) const;
 
 	  private:
 		void StartEnumTimer();
 		void StopEnumTimer();
 		void AutoEnum();
-		// ’èŠú“I‚ÉƒfƒoƒCƒX—ñ‹“‚ğƒ^ƒCƒ}[
+		// å®šæœŸçš„ã«ãƒ‡ãƒã‚¤ã‚¹åˆ—æŒ™ã‚’ã‚¿ã‚¤ãƒãƒ¼
 		TimerHandle enumTimerHandle_{nullptr};
 		float enumInterval_{1.0f};
 
 		/// <summary>
-		/// ƒAƒNƒeƒBƒu‚ÈƒRƒ“ƒgƒ[ƒ‰‚ÌID‚ğ’²‚×‚é
+		/// ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã®IDã‚’èª¿ã¹ã‚‹
 		/// </summary>
 		void CheckValidPadID();
 
 		void AcquireJoystick(ComPtr<IDirectInputDevice8> _pJoystickDevice);
 		GUID GetDeviceGuid(ComPtr<IDirectInputDevice8> _pInputDevice);
 		void SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, InputConfig _inputConfig);
-		InputData* pInputData_;						  // “ü—Í‚Ìó‘Ô
-		ComPtr<IDirectInput8> pDirectInput_;		  // Direct Input –{‘Ìk
-		ComPtr<IDirectInputDevice8> pKeyDevice_;	  // ƒL[ƒfƒoƒCƒX
-		ComPtr<IDirectInputDevice8> pMouseDevice_;	  // ƒ}ƒEƒXƒfƒoƒCƒX
-		ComPtr<IDirectInputDevice8> pJoystickDevice_; // ƒWƒ‡ƒCƒXƒeƒBƒbƒNƒfƒoƒCƒX
+		InputData* pInputData_;						  // å…¥åŠ›ã®çŠ¶æ…‹
+		ComPtr<IDirectInput8> pDirectInput_;		  // Direct Input æœ¬ä½“k
+		ComPtr<IDirectInputDevice8> pKeyDevice_;	  // ã‚­ãƒ¼ãƒ‡ãƒã‚¤ã‚¹
+		ComPtr<IDirectInputDevice8> pMouseDevice_;	  // ãƒã‚¦ã‚¹ãƒ‡ãƒã‚¤ã‚¹
+		ComPtr<IDirectInputDevice8> pJoystickDevice_; // ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ãƒ‡ãƒã‚¤ã‚¹
 
-		std::vector<JoystickReservation> requestedJoystickDevices_; // Š„‚è“–‚Ä—\–ñ‚³‚ê‚½ƒWƒ‡ƒCƒXƒeƒBƒbƒNƒfƒoƒCƒX
-		std::set<GUID> assignedJoystickGuids_;						// Šù‚ÉŠ„‚è“–‚ÄÏ‚İ‚ÌƒWƒ‡ƒCƒXƒeƒBƒbƒN
+		std::vector<JoystickReservation> requestedJoystickDevices_; // å‰²ã‚Šå½“ã¦äºˆç´„ã•ã‚ŒãŸã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ãƒ‡ãƒã‚¤ã‚¹
+		std::set<GUID> assignedJoystickGuids_;						// æ—¢ã«å‰²ã‚Šå½“ã¦æ¸ˆã¿ã®ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯
 
 		std::map<GUID, JoystickContext> joystickContext_;
 		GUID currJoystickGuid_;

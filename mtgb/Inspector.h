@@ -23,7 +23,7 @@ class Inspector
   private:
 	Inspector() {};
 	void Show(std::type_index _typeIdx, std::any _instance, const char* _name);
-	const static mtgb::WindowContext mainWindow_ = mtgb::WindowContext::First;
+	const static mtgb::WindowContext mainWindow_ = mtgb::WindowContext::FIRST;
 };
 
 template <typename T> void Inspector::ShowInspector(T* _instance, const char* _name)

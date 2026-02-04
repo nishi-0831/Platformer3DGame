@@ -5,9 +5,9 @@ mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand(
 	TransformMemento* _pMemento,
 	const ComponentFactory& _componentFactory
 )
-	: pPrevMemento_{_pPrevMemento}
+	: componentFactory_(_componentFactory)
+	, pPrevMemento_{_pPrevMemento}
 	, pMemento_{_pMemento}
-	, componentFactory_(_componentFactory)
 {
 }
 

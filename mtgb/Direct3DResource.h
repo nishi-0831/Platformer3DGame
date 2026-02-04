@@ -30,7 +30,7 @@ namespace mtgb
 		ComPtr<ID3D11Texture2D> pDepthStencil_;
 		ComPtr<ID3D11DepthStencilView> pDepthStencilView_;
 
-		// コピーコンストラクタとコピー代入演算子を削除
+		// 繧ｳ繝斐�ｼ繧ｳ繝ｳ繧ｹ繝医Λ繧ｯ繧ｿ縺ｨ繧ｳ繝斐�ｼ莉｣蜈･貍皮ｮ怜ｭ舌ｒ蜑企勁
 		Direct3DResource(const Direct3DResource&)			 = delete;
 		Direct3DResource& operator=(const Direct3DResource&) = delete;
 	};

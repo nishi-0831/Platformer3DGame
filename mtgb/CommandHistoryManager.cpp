@@ -2,9 +2,9 @@
 #include "CommandHistoryManager.h"
 #include "assert.h"
 CommandHistoryManager::CommandHistoryManager()
-	: inner_{new CommandHistory()}
-	, pGroupCommand_{nullptr}
+	: inner_{new NamedCommandHistory(new CommandHistory())}
 	, isGrouping_{false}
+	, pGroupCommand_{nullptr}
 {
 }
 
@@ -14,6 +14,14 @@ void CommandHistoryManager::Initialize()
 
 void CommandHistoryManager::Update()
 {
+	MTImGui::Instance().DirectShow(
+		[this]()
+		{
+			inner_->DrawImGuiStack();
+		},
+		"CommandStack",
+		ShowType::EDITOR
+	);
 }
 
 void CommandHistoryManager::BeginGroupCommand()
@@ -51,7 +59,7 @@ void CommandHistoryManager::UndoCommand()
 	if (isGrouping_)
 	{
 		assert(
-			false && " ƒRƒ}ƒ“ƒh‚ğ‚Ü‚Æ‚ß‚Ä‚¢‚éÅ’†‚ÌUndo‚Í‹–‰Â‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB CancellGroupCommand() ‚ğŒÄ‚ñ‚Å‚­‚¾‚³‚¢ "
+			false && " ã‚³ãƒãƒ³ãƒ‰ã‚’ã¾ã¨ã‚ã¦ã„ã‚‹æœ€ä¸­ã®Undoã¯è¨±å¯ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚ CancellGroupCommand() ã‚’å‘¼ã‚“ã§ãã ã•ã„ "
 		);
 	}
 
@@ -63,7 +71,7 @@ void CommandHistoryManager::RedoCommand()
 	if (isGrouping_)
 	{
 		assert(
-			false && " ƒRƒ}ƒ“ƒh‚ğ‚Ü‚Æ‚ß‚Ä‚¢‚éÅ’†‚ÌRedo‚Í‹–‰Â‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB CancellGroupCommand() ‚ğŒÄ‚ñ‚Å‚­‚¾‚³‚¢ "
+			false && " ã‚³ãƒãƒ³ãƒ‰ã‚’ã¾ã¨ã‚ã¦ã„ã‚‹æœ€ä¸­ã®Redoã¯è¨±å¯ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚ CancellGroupCommand() ã‚’å‘¼ã‚“ã§ãã ã•ã„ "
 		);
 		return;
 	}

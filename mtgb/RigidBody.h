@@ -6,7 +6,6 @@
 #include "IComponentMemento.h"
 
 #include "Vector3.h"
-#include "RigidBodyState.h"
 #include "RigidBodyCP.h"
 #include <functional>
 #include <DirectXCollision.h>
@@ -32,7 +31,7 @@ namespace mtgb
 		void OnGround();
 		void OnPostRestore() {};
 		/// <summary>
-		/// 当たったときのイベントコールバック
+		/// 蠖薙◆縺｣縺溘→縺阪�ｮ繧､繝吶Φ繝医さ繝ｼ繝ｫ繝舌ャ繧ｯ
 		/// </summary>
 		/// <param name="onHit_">void(const EntityId)</param>
 		void OnCollisionEnter(const std::function<void(const EntityId)>& _onHit);
@@ -54,7 +53,7 @@ namespace mtgb
 		std::function<void(const EntityId)> onHit_;
 		std::function<void(const EntityId)> onStay_;
 		std::function<void(const EntityId)> onExit_;
-		Transform* pTransform_; // TODO: 危ないTransform
+		Transform* pTransform_; // TODO: 蜊ｱ縺ｪ縺Уransform
 	};
 
 } // namespace mtgb

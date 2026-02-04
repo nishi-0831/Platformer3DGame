@@ -20,10 +20,10 @@ mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene
 		if (pAnimStack == nullptr)
 			continue;
 
-		// ƒAƒjƒ[ƒVƒ‡ƒ“ƒNƒŠƒbƒv‚ðì¬
+		// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¯ãƒªãƒƒãƒ—ã‚’ä½œæˆ
 		FbxAnimationClip animClip(pAnimStack);
 
-		// ƒRƒ“ƒgƒ[ƒ‰‚É“o˜^
+		// ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã«ç™»éŒ²
 		RegisterAnimationClip(animClip);
 	}
 }

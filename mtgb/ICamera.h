@@ -18,19 +18,19 @@ namespace mtgb
 
 	  protected:
 		/// <summary>
-		/// <para> “V’¸Šp(ƒÆApolar) </para>
-		/// <para> ‰”’¼•ûŒü </para>
-		/// <para> 0 -> Œ´“_‚Ì^‰º(-Y) </para>
-		/// <para> ƒÎ/2 -> Œ´“_‚Æ“¯‚¶‚‚³ </para>
-		/// <para> ƒÎ -> Œ´“_‚Ì^ã(+Y) </para>
+		/// <para> å¤©é ‚è§’(Î¸ã€polar) </para>
+		/// <para> é‰›ç›´æ–¹å‘ </para>
+		/// <para> 0 -> åŸç‚¹ã®çœŸä¸‹(-Y) </para>
+		/// <para> Ï€/2 -> åŸç‚¹ã¨åŒã˜é«˜ã• </para>
+		/// <para> Ï€ -> åŸç‚¹ã®çœŸä¸Š(+Y) </para>
 		/// </summary>
 		float polarAngleRad_;
 		/// <summary>
-		/// <para> •ûˆÊŠp(ƒÓAazimuthal) </para>
-		/// <para> …•½•ûŒü </para>
-		/// <para> 0 -> Œ´“_‚Ì‰E(+X) </para>
-		/// <para> ƒÎ/2 -> Œ´“_‚ÌŒã‚ë(-Z) </para>
-		/// <para> ƒÎ -> Œ´“_‚Ì¶(-X) </para>
+		/// <para> æ–¹ä½è§’(Ï†ã€azimuthal) </para>
+		/// <para> æ°´å¹³æ–¹å‘ </para>
+		/// <para> 0 -> åŸç‚¹ã®å³(+X) </para>
+		/// <para> Ï€/2 -> åŸç‚¹ã®å¾Œã‚(-Z) </para>
+		/// <para> Ï€ -> åŸç‚¹ã®å·¦(-X) </para>
 		/// </summary>
 		float azimuthalAngleRad_;
 		float rotateSensitivity_;
@@ -41,9 +41,9 @@ namespace mtgb
 		float distance_;
 		bool followTarget_;
 		bool adjustTargetDirection_;
-		// -Y‘¤A‰º‘¤‚ª0“xA+Y‘¤Aã‘¤‚ª90“x
+		// -Yå´ã€ä¸‹å´ãŒ0åº¦ã€+Yå´ã€ä¸Šå´ãŒ90åº¦
 		float minPolarAngleRad_, maxPolarAngleRad_;
-		// +X‘¤A‰E‘¤‚ª0“xA-X‘¤A¶‘¤‚ª90“x
+		// +Xå´ã€å³å´ãŒ0åº¦ã€-Xå´ã€å·¦å´ãŒ90åº¦
 		float minAzimuthalAngleRad_, maxAzimuthalAngleRad_;
 		Vector3 lookAtPositionOffset_;
 	};

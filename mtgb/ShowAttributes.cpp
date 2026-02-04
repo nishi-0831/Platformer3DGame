@@ -1,28 +1,28 @@
 #include "ShowAttributes.h"
 #include "ImGuiInputCommand.h"
-Command* Vector3Show::operator()(mtgb::Vector3* vec, const char* name) const
+Command* Vector3Show::operator()(mtgb::Vector3* _vec, const char* _name) const
 {
-	mtgb::Vector3 old = *vec;
+	mtgb::Vector3 old = *_vec;
 
-	bool changed = ImGui::InputFloat3(name, &vec->x, "%.3f", ImGuiInputTextFlags_NoUndoRedo);
+	bool changed = ImGui::InputFloat3(_name, &_vec->x, "%.3f", ImGuiInputTextFlags_NoUndoRedo);
 
 	if (changed == false)
 		return nullptr;
 
-	return new ImGuiInputCommand<mtgb::Vector3>(vec, old, *vec, name);
+	return new ImGuiInputCommand<mtgb::Vector3>(_vec, old, *_vec, _name);
 }
 
 /// <summary>
-/// <para> lŒ³”‚ğƒIƒCƒ‰[Šp‚Å•\¦‚·‚é </para>
-/// <para> ¦ƒIƒCƒ‰[Šp‚Ö‚Ì•ÏŠ·‚ÍˆêˆÓ‚Å‚Í‚È‚¢‚Ì‚Å“Ç‚İæ‚èê—p‚Æ‚µ‚Ä‚¢‚é</para>
+/// <para> å››å…ƒæ•°ã‚’ã‚ªã‚¤ãƒ©ãƒ¼è§’ã§è¡¨ç¤ºã™ã‚‹ </para>
+/// <para> â€»ã‚ªã‚¤ãƒ©ãƒ¼è§’ã¸ã®å¤‰æ›ã¯ä¸€æ„ã§ã¯ãªã„ã®ã§èª­ã¿å–ã‚Šå°‚ç”¨ã¨ã—ã¦ã„ã‚‹</para>
 /// </summary>
-/// <param name="vec">•\¦‚·‚élŒ³”</param>
-/// <param name="name">ƒ‰ƒxƒ‹–¼</param>
+/// <param name="vec">è¡¨ç¤ºã™ã‚‹å››å…ƒæ•°</param>
+/// <param name="name">ãƒ©ãƒ™ãƒ«å</param>
 /// <returns></returns>
-Command* QuaternionSHow::operator()(DirectX::XMVECTORF32* vec, const char* name) const
+Command* QuaternionShow::operator()(DirectX::XMVECTORF32* _vec, const char* _name) const
 {
-	mtgb::Vector3 vec3 = mtgb::QuatToEuler(*vec);
-	ImGui::InputFloat3(name, &vec3.x, "%.3f", ImGuiInputTextFlags_ReadOnly);
+	mtgb::Vector3 vec3 = mtgb::QuatToEuler(*_vec);
+	ImGui::InputFloat3(_name, &vec3.x, "%.3f", ImGuiInputTextFlags_ReadOnly);
 
 	return nullptr;
 }
@@ -31,13 +31,18 @@ Command* Vector4Show::operator()(DirectX::XMVECTOR* _vec, const char* _name) con
 {
 	DirectX::XMVECTOR old = *_vec;
 
-	bool changed = ImGui::InputFloat4(_name, _vec->m128_f32);
-	;
+	DirectX::XMFLOAT4 tmp;
+	DirectX::XMStoreFloat4(&tmp, *_vec);
+	bool changed = ImGui::InputFloat4(_name, &tmp.x, "%.3f", 0);
 
-	if (changed == false)
-		return nullptr;
+	if (changed)
+	{
+		// å¤‰åŒ–ãŒã‚ã‚Œã°å†åº¦ XMVECTOR ã«èª­ã¿è¾¼ã‚“ã§æ ¼ç´
+		*_vec = DirectX::XMLoadFloat4(&tmp);
+		return new ImGuiInputCommand<DirectX::XMVECTOR>(_vec, old, *_vec, _name);
+	}
 
-	return new ImGuiInputCommand<DirectX::XMVECTOR>(_vec, old, *_vec, _name);
+	return nullptr;
 }
 
 Command* MatrixShow::operator()(DirectX::XMMATRIX* _mat, const char* _name) const

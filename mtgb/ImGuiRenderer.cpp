@@ -70,7 +70,7 @@ void mtgb::ImGuiRenderer::Initialize()
 
 	ImGui::SetCurrentContext(ImGui::GetCurrentContext());
 
-	ImGui_ImplWin32_Init(WinCtxRes::GetHWND(WindowContext::First));
+	ImGui_ImplWin32_Init(WinCtxRes::GetHWND(WindowContext::FIRST));
 	const auto& ctx						= ImGui::GetCurrentContext();
 	ComPtr<ID3D11Device> device			= mtgb::DirectX11Draw::pDevice_;
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
@@ -98,7 +98,7 @@ void mtgb::ImGuiRenderer::BeginImGuizmoFrame()
 void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlag _flag)
 {
 	ImGuiWindowFlags flags = 0;
-	if (_flag == WindowFlag::NoMoveWhenHovered)
+	if (_flag == WindowFlag::NO_MOVE_WHEN_HOVERED)
 	{
 		if (mtgb::ImGuiUtil::IsMouseInWindow(_str))
 		{
@@ -111,7 +111,7 @@ void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlag _fla
 void mtgb::ImGuiRenderer::SetImGuizmoRenderTargetView()
 {
 	// ID3D11ShaderResourceView* nullSRV[16]{};
-	//// ‘SƒXƒƒbƒg‚ÌSRV‚ğƒNƒŠƒA
+	//// å…¨ã‚¹ãƒ­ãƒƒãƒˆã®SRVã‚’ã‚¯ãƒªã‚¢
 	// DirectX11Draw::pContext_->PSSetShaderResources(0, 16, nullSRV);
 
 	// DirectX11Draw::pContext_->PSSetShaderResources(0, 0, pSRV_.GetAddressOf());
@@ -166,7 +166,7 @@ void mtgb::ImGuiRenderer::Release()
 
 void mtgb::ImGuiRenderer::ResetComPtrs()
 {
-	// ImGui‚ª•Û‚µ‚Ä‚¢‚éƒŠƒ\[ƒX‰ğ•ú
+	// ImGuiãŒä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹è§£æ”¾
 	ImGui_ImplDX11_InvalidateDeviceObjects();
 
 	pSRV_.Reset();
@@ -179,18 +179,18 @@ void mtgb::ImGuiRenderer::ResetComPtrs()
 void mtgb::ImGuiRenderer::OnResize(UINT width, UINT height)
 {
 	CreateD3DResources();
-	// ƒEƒBƒ“ƒhƒEƒTƒCƒY‚ğXV
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºã‚’æ›´æ–°
 	/*winWidth_ = width;
 	winHeight_ = height;*/
 
-	// GameView ‚Ì‹éŒ`î•ñ‚ğƒŠƒZƒbƒg
+	// GameView ã®çŸ©å½¢æƒ…å ±ã‚’ãƒªã‚»ãƒƒãƒˆ
 	gameViewRectValid_ = false;
 
-	// ImGui‚ÌƒfƒBƒXƒvƒŒƒCƒTƒCƒY‚ğXV
+	// ImGuiã®ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤ã‚µã‚¤ã‚ºã‚’æ›´æ–°
 	/*ImGuiIO& io = ImGui::GetIO();
 	io.DisplaySize = ImVec2(static_cast<float>(width), static_cast<float>(height));*/
 
-	// ImGui‚ÌƒŠƒ\[ƒX‚ğÄì¬‚·‚é•K—v‚ª‚ ‚éê‡
+	// ImGuiã®ãƒªã‚½ãƒ¼ã‚¹ã‚’å†ä½œæˆã™ã‚‹å¿…è¦ãŒã‚ã‚‹å ´åˆ
 	// ImGui_ImplDX11_InvalidateDeviceObjects();
 	// ImGui_ImplDX11_CreateDeviceObjects();
 }
@@ -205,7 +205,7 @@ void mtgb::ImGuiRenderer::CreateD3DResources()
 		viewport_
 	);
 
-	// RTV—pƒeƒNƒXƒ`ƒƒì¬
+	// RTVç”¨ãƒ†ã‚¯ã‚¹ãƒãƒ£ä½œæˆ
 	D3D11_TEXTURE2D_DESC desc{
 		.Width		= winWidth_,
 		.Height		= winHeight_,
@@ -218,20 +218,20 @@ void mtgb::ImGuiRenderer::CreateD3DResources()
 	};
 
 	HRESULT hResult = device->CreateTexture2D(&desc, nullptr, pTexture_.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult) && "CreateTexture2D‚É¸”s @ImGuiRenderer::CreateD3DResources");
+	massert(SUCCEEDED(hResult) && "CreateTexture2Dã«å¤±æ•— @ImGuiRenderer::CreateD3DResources");
 
 	hResult = device->CreateRenderTargetView(pTexture_.Get(), nullptr, pRenderTargetView_.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult) && "CreateRenderTargetView‚É¸”s @ImGuiRenderer::CreateD3DResources");
+	massert(SUCCEEDED(hResult) && "CreateRenderTargetViewã«å¤±æ•— @ImGuiRenderer::CreateD3DResources");
 
-	// SRV—pƒeƒNƒXƒ`ƒƒì¬
+	// SRVç”¨ãƒ†ã‚¯ã‚¹ãƒãƒ£ä½œæˆ
 	// desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
 	// hResult = device->CreateTexture2D(&desc, nullptr, pTexture_.GetAddressOf());
-	// massert(SUCCEEDED(hResult) && "CreateTexture2D‚É¸”s @ImGuiRenderer::CreateD3DResources");
+	// massert(SUCCEEDED(hResult) && "CreateTexture2Dã«å¤±æ•— @ImGuiRenderer::CreateD3DResources");
 
 	hResult = device->CreateShaderResourceView(pTexture_.Get(), nullptr, pSRV_.ReleaseAndGetAddressOf());
-	massert(SUCCEEDED(hResult) && "CreateShaderResourceView‚É¸”s @ImGuiRenderer::CreateD3DResources");
+	massert(SUCCEEDED(hResult) && "CreateShaderResourceViewã«å¤±æ•— @ImGuiRenderer::CreateD3DResources");
 
-	// [“xƒXƒeƒ“ƒVƒ‹‚Æ[“xƒXƒeƒ“ƒVƒ‹ƒrƒ…[‚ğì¬
+	// æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã¨æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ“ãƒ¥ãƒ¼ã‚’ä½œæˆ
 	Game::System<DirectX11Manager>().CreateDepthStencilAndDepthStencilView(
 		Vector2Int(static_cast<int>(winWidth_), static_cast<int>(winHeight_)),
 		pTexture_.GetAddressOf(),

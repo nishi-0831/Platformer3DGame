@@ -27,84 +27,85 @@ const char* ShowState(mtgb::CameraOperation _cameraOperation);
 namespace
 {
 	const mtgb::Vector3 INIT_ANGLE{0, 0, 0};
-	// ‹…–ÊÀ•WŒn‚ÌŠî€•ûŒü‚ğ³–Ê(+z•ûŒü)‚Æ‚·‚é‚½‚ß‚ÌƒIƒtƒZƒbƒg
+	// çƒé¢åº§æ¨™ç³»ã®åŸºæº–æ–¹å‘ã‚’æ­£é¢(+zæ–¹å‘)ã¨ã™ã‚‹ãŸã‚ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 	constexpr float SPHERICAL_COORDINATE_FRONT_OFFSET_DEG = 90.0f;
 } // namespace
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
-	: moveSpeed_{10.0f}
+	: ImGuiShowable{"EditorCamera", ShowType::EDITOR}
+	, moveSpeed_{10.0f}
 	, rotateSensitivity_{1.0f}
 	, hCamera_{INVALID_ENTITY}
 {
 	distance_	= 10.0f;
 	orbitSpeed_ = 1.0f;
 
-	windowName_ = MTImGui::Instance().GetName(ShowType::SceneView);
+	windowName_ = MTImGui::Instance().GetName(ShowType::SCENE_VIEW);
 
 	// Dolly
 	sCameraOperation_
 		.OnUpdate(
-			CameraOperation::Dolly,
+			CameraOperation::DOLLY,
 			[this]
 			{
 				DoDolly();
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Dolly,
-			CameraOperation::Track,
+			CameraOperation::DOLLY,
+			CameraOperation::TRACK,
 			[]()
 			{
-				return (InputUtil::GetMouse(MouseCode::Middle) == false);
+				return (InputUtil::GetMouse(MouseCode::MIDDLE) == false);
 			}
 		);
 
 	// Orbit
 	sCameraOperation_
 		.OnUpdate(
-			CameraOperation::Orbit,
+			CameraOperation::ORBIT,
 			[this]
 			{
 				DoOrbit();
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Orbit,
-			CameraOperation::Track,
+			CameraOperation::ORBIT,
+			CameraOperation::TRACK,
 			[]()
 			{
-				return (InputUtil::GetKey(KeyCode::LeftMenu) == false);
+				return (InputUtil::GetKey(KeyCode::LEFT_MENU) == false);
 			}
 		);
 
 	// Pan
 	sCameraOperation_
 		.OnUpdate(
-			CameraOperation::Pan,
+			CameraOperation::PAN,
 			[this]
 			{
 				DoPan();
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Pan,
-			CameraOperation::Track,
+			CameraOperation::PAN,
+			CameraOperation::TRACK,
 			[]()
 			{
-				return (InputUtil::GetMouse(MouseCode::Right) == false);
+				return (InputUtil::GetMouse(MouseCode::RIGHT) == false);
 			}
 		);
 
 	// Track
 	sCameraOperation_
 		.OnUpdate(
-			CameraOperation::Track,
+			CameraOperation::TRACK,
 			[this]
 			{
 				if (IsMouseInWindow(windowName_.c_str()) == false)
 					return;
 
 				DoTrack();
-				if (InputUtil::GetMouseDown(MouseCode::Left))
+				if (InputUtil::GetMouseDown(MouseCode::LEFT))
 				{
 					if ((!ImGuizmo::IsViewManipulateHovered()))
 
@@ -116,27 +117,27 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Track,
-			CameraOperation::Pan,
+			CameraOperation::TRACK,
+			CameraOperation::PAN,
 			[this]()
 			{
-				return InputUtil::GetMouse(MouseCode::Right) && IsMouseInWindow(windowName_.c_str());
+				return InputUtil::GetMouse(MouseCode::RIGHT) && IsMouseInWindow(windowName_.c_str());
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Track,
-			CameraOperation::Orbit,
+			CameraOperation::TRACK,
+			CameraOperation::ORBIT,
 			[this]()
 			{
-				return InputUtil::GetKey(KeyCode::LeftMenu) && IsMouseInWindow(windowName_.c_str());
+				return InputUtil::GetKey(KeyCode::LEFT_MENU) && IsMouseInWindow(windowName_.c_str());
 			}
 		)
 		.RegisterTransition(
-			CameraOperation::Track,
-			CameraOperation::Dolly,
+			CameraOperation::TRACK,
+			CameraOperation::DOLLY,
 			[this]()
 			{
-				return InputUtil::GetMouse(MouseCode::Middle) && IsMouseInWindow(windowName_.c_str());
+				return InputUtil::GetMouse(MouseCode::MIDDLE) && IsMouseInWindow(windowName_.c_str());
 			}
 		);
 }
@@ -183,21 +184,21 @@ void mtgb::ImGuiEditorCamera::Update()
 
 void mtgb::ImGuiEditorCamera::CreateCamera()
 {
-	// ƒJƒƒ‰‚Ég‚¤GameObjectì¬
+	// ã‚«ãƒ¡ãƒ©ã«ä½¿ã†GameObjectä½œæˆ
 	GameObject* pCamera = new GameObject(GameObjectBuilder()
 											 .SetPosition({0, 0, 0})
 											 .SetRotate(Quaternion::Euler(INIT_ANGLE))
 											 .SetName("EditorCamera")
 											 .Build());
-	// ƒV[ƒ“‚É“o˜^
+	// ã‚·ãƒ¼ãƒ³ã«ç™»éŒ²
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 
-	// Transform‚ğƒAƒ^ƒbƒ`
+	// Transformã‚’ã‚¢ã‚¿ãƒƒãƒ
 	pCameraTransform_ = &Game::System<TransformCP>().Get(pCamera->GetEntityId());
-	// Transform‚ğƒJƒƒ‰‚Æ‚µ‚Ä“o˜^
+	// Transformã‚’ã‚«ãƒ¡ãƒ©ã¨ã—ã¦ç™»éŒ²
 	hCamera_ = Game::System<CameraSystem>().RegisterDrawCamera(pCameraTransform_);
 
-	// ‰ŠúŠp“x‚ğİ’è
+	// åˆæœŸè§’åº¦ã‚’è¨­å®š
 	polarAngleRad_	   = DirectX::XMConvertToRadians(INIT_ANGLE.x + 90.0f);
 	azimuthalAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
 }
@@ -207,11 +208,11 @@ void mtgb::ImGuiEditorCamera::DoDolly()
 	Vector3 mouseMove = InputUtil::GetMouseMove();
 	if (mouseMove.Size() != 0)
 	{
-		// ƒJƒƒ‰‚Ì‰EAãƒxƒNƒgƒ‹
+		// ã‚«ãƒ¡ãƒ©ã®å³ã€ä¸Šãƒ™ã‚¯ãƒˆãƒ«
 		Vector3 right = pCameraTransform_->Right();
 		Vector3 up	  = pCameraTransform_->Up();
 
-		// ˆÚ“®—Ê‚ğ‡¬
+		// ç§»å‹•é‡ã‚’åˆæˆ
 		Vector3 move = right * -mouseMove.x + up * mouseMove.y;
 
 		pCameraTransform_->position += move * moveSpeed_ * Time::DeltaTimeF();
@@ -223,14 +224,13 @@ void mtgb::ImGuiEditorCamera::DoPan()
 	Vector3 mouseMove = InputUtil::GetMouseMove();
 	if (mouseMove.Size() != 0)
 	{
-		// ƒ}ƒEƒXˆÚ“®—Ê‚ğŠp“x‚É•ÏŠ·
-		azimuthalAngleRad_ -= mouseMove.x * rotateSensitivity_ * Time::DeltaTimeF(); // …•½Šp“x
+		// ãƒã‚¦ã‚¹ç§»å‹•é‡ã‚’è§’åº¦ã«å¤‰æ›
+		azimuthalAngleRad_ -= mouseMove.x * rotateSensitivity_ * Time::DeltaTimeF(); // æ°´å¹³è§’åº¦
 
-		polarAngleRad_ += mouseMove.y * rotateSensitivity_ * Time::DeltaTimeF(); // ‰”’¼Šp“x
+		polarAngleRad_ += mouseMove.y * rotateSensitivity_ * Time::DeltaTimeF(); // é‰›ç›´è§’åº¦
 
-		// ‰”’¼Šp“x‚ğ§ŒÀ
-		polarAngleRad_ =
-			std::clamp(polarAngleRad_, DirectX::XMConvertToRadians(0.1f), DirectX::XMConvertToRadians(179.0f));
+		// é‰›ç›´è§’åº¦ã‚’åˆ¶é™
+		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 
 		MoveCameraSphericalOnTheSpot();
 	}
@@ -253,21 +253,21 @@ void mtgb::ImGuiEditorCamera::MoveCameraSphericalOnTheSpot()
 {
 	// ref:https://ja.wikipedia.org/wiki/%E7%90%83%E9%9D%A2%E5%BA%A7%E6%A8%99%E7%B3%BB
 
-	// ƒÆ (polar angle) : ‰”’¼•ûŒü
+	// Î¸ (polar angle) : é‰›ç›´æ–¹å‘
 	float theta = polarAngleRad_;
 
-	// ƒÓ (azimuthal angle): …•½•ûŒü
+	// Ï† (azimuthal angle): æ°´å¹³æ–¹å‘
 	float phi = azimuthalAngleRad_;
 
-	// ‰ñ“]’†S‚©‚ç‚ÌƒIƒtƒZƒbƒg
+	// å›è»¢ä¸­å¿ƒã‹ã‚‰ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 	Vector3 offset;
 
-	// •ÏŠ·
+	// å¤‰æ›
 	offset.x = sinf(theta) * cos(phi);
 	offset.y = cos(theta);
 	offset.z = sin(theta) * sin(phi);
 
-	// ‚»‚Ìê‰ñ“]‚Ì‚Íoffset‚Ì•ûŒü‚ğŒü‚­
+	// ãã®å ´å›è»¢ã®æ™‚ã¯offsetã®æ–¹å‘ã‚’å‘ã
 	pCameraTransform_->rotate = Quaternion::LookRotation(offset, Vector3::Up());
 }
 
@@ -296,16 +296,16 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 
 	vec = end - origin;
 
-	// vec.Normalize()‚ÌŒ‹‰Ê‚ğ•Ê•Ï”‚É•Û‘¶‚µ‚ÄAŒ³‚Ì’·‚³‚ğ•Û
-	Vector3 direction = vec.Normalize(); // ‚±‚ê‚Å³‹K‰»‚³‚ê‚½ƒxƒNƒgƒ‹‚ª•Ô‚³‚ê‚é
+	// vec.Normalize()ã®çµæœã‚’åˆ¥å¤‰æ•°ã«ä¿å­˜ã—ã¦ã€å…ƒã®é•·ã•ã‚’ä¿æŒ
+	Vector3 direction = vec.Normalize(); // ã“ã‚Œã§æ­£è¦åŒ–ã•ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«ãŒè¿”ã•ã‚Œã‚‹
 
 	const CameraSystem& camera = Game::System<CameraSystem>();
-	float distance			   = camera.GetFar() - camera.GetNear(); // Œ³‚Ì’·‚³‚ğŒvZ
+	float distance			   = camera.GetFar() - camera.GetNear(); // å…ƒã®é•·ã•ã‚’è¨ˆç®—
 
 	EntityId entityId = Game::System<ColliderCP>().RayCastHitAll(origin, direction, distance);
 	if (entityId != INVALID_ENTITY)
 	{
-		// Entity‚ªTransformƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ‚Á‚Ä‚¢‚È‚¢‰Â”\«‚ª‚ ‚é‚Ì‚ÅTryGet
+		// EntityãŒTransformã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’æŒã£ã¦ã„ãªã„å¯èƒ½æ€§ãŒã‚ã‚‹ã®ã§TryGet
 		Game::System<TransformCP>().TryGet(pTargetTransform_, entityId);
 
 		mtgb::GameObjectSelectedEvent event{.entityId = entityId};
@@ -336,13 +336,13 @@ const char* ShowState(mtgb::CameraOperation _cameraOperation)
 
 	switch (_cameraOperation)
 	{
-	case CameraOperation::Track :
+	case CameraOperation::TRACK :
 		return "Track";
-	case CameraOperation::Dolly :
+	case CameraOperation::DOLLY :
 		return "Dolly";
-	case CameraOperation::Pan :
+	case CameraOperation::PAN :
 		return "Pan";
-	case CameraOperation::Orbit :
+	case CameraOperation::ORBIT :
 		return "Orbit";
 	default :
 		return "Unknown";

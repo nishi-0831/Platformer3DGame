@@ -6,77 +6,71 @@
 #include "MTImGui.h"
 #include <string>
 // ============================================================================
-// RigidBodyÇÃèÛë‘Çï€ë∂Ç∑ÇÈStateç\ë¢ëÃÇÃíËã`ÅAUndo/RedoÇ…égÇ§MementoÇÃusingêÈåæ
+// RigidBody„ÅÆÁä∂ÊÖã„Çí‰øùÂ≠ò„Åô„ÇãStateÊßãÈÄ†‰Ωì„ÅÆÂÆöÁæ©„ÄÅUndo/Redo„Å´‰Ωø„ÅÜMemento„ÅÆusingÂÆ£Ë®Ä
 // ============================================================================
-#define MT_COMPONENT_RigidBody()                                          \
-	struct RigidBodyState                                                 \
-	{                                                                     \
-		bool useGravity_;                                                 \
-		bool isKinematic_;                                                \
-	};                                                                    \
-	class RigidBody;                                                      \
+#define MT_COMPONENT_RigidBody() \
+	struct RigidBodyState \
+	{ \
+			bool useGravity_; \
+			bool isKinematic_; \
+	}; \
+	class RigidBody;\
 	using RigidBodyMemento = ComponentMemento<RigidBody, RigidBodyState>;
 
 // ============================================================================
-// RigidBodyÇ∆RigidBodyMementoÇÃëäå›ïœä∑èàóùÇé¿ëï
+// RigidBody„Å®RigidBodyMemento„ÅÆÁõ∏‰∫íÂ§âÊèõÂá¶ÁêÜ„ÇíÂÆüË£Ö
 // ============================================================================
-#define MT_GENERATED_BODY_RigidBody()                                                      \
-  public:                                                                                  \
-	using Memento = RigidBodyMemento;                                                      \
-	RigidBodyMemento* SaveToMemento()                                                      \
-	{                                                                                      \
-		OnPreSave();                                                                       \
-		RigidBodyState state;                                                              \
-		state.useGravity_  = this->useGravity_;                                            \
-		state.isKinematic_ = this->isKinematic_;                                           \
-		return new ComponentMemento<RigidBody, RigidBodyState>(GetEntityId(), state);      \
-	}                                                                                      \
-                                                                                           \
-	void RestoreFromMemento(const ComponentMemento<RigidBody, RigidBodyState>& _memento)   \
-	{                                                                                      \
-		const RigidBodyState& state = _memento.GetState();                                 \
-		this->useGravity_			= state.useGravity_;                                   \
-		this->isKinematic_			= state.isKinematic_;                                  \
-		OnPostRestore();                                                                   \
-	}                                                                                      \
-                                                                                           \
-	friend struct RigidBody_Register;                                                      \
-	friend void to_json(nlohmann::json& _j, const RigidBody& _target)                      \
-	{                                                                                      \
-		_j["useGravity_"]  = JsonConverter::Serialize<bool>(_target.useGravity_);          \
-		_j["isKinematic_"] = JsonConverter::Serialize<bool>(_target.isKinematic_);         \
-	}                                                                                      \
-	friend void from_json(const nlohmann::json& _j, RigidBody& _target)                    \
-	{                                                                                      \
-		JsonConverter::Deserialize<bool>(_target.useGravity_, _j, "useGravity_");          \
-		JsonConverter::Deserialize<bool>(_target.isKinematic_, _j, "isKinematic_");        \
-		_target.OnPostRestore();                                                           \
-	}                                                                                      \
-	static std::string TypeName()                                                          \
-	{                                                                                      \
-		return "RigidBody";                                                                \
-	}                                                                                      \
-	/* ImGuiï\é¶èàóùÇÃìoò^ */                                                              \
-	static void RegisterImGui()                                                            \
-	{                                                                                      \
-		static bool registered = false;                                                    \
-		if (registered)                                                                    \
-			return;                                                                        \
-		registered = true;                                                                 \
-                                                                                           \
-		RegisterShowFuncHolder::Set<RigidBody>(                                            \
-			[](RigidBody* _target, const char* _name)                                      \
-			{                                                                              \
-				TypeRegistry::Instance().CallFunc(&_target->useGravity_, "useGravity_");   \
+#define MT_GENERATED_BODY_RigidBody() \
+	public: \
+	using Memento = RigidBodyMemento; \
+	RigidBodyMemento* SaveToMemento() \
+	{ \
+	OnPreSave(); \
+		RigidBodyState state; \
+		state.useGravity_ = this->useGravity_; \
+		state.isKinematic_ = this->isKinematic_; \
+		return new ComponentMemento<RigidBody, RigidBodyState>(GetEntityId(), state); \
+	} \
+	\
+	void RestoreFromMemento(const ComponentMemento<RigidBody, RigidBodyState>& _memento) \
+	{ \
+		const RigidBodyState& state = _memento.GetState(); \
+		this->useGravity_ = state.useGravity_; \
+		this->isKinematic_ = state.isKinematic_; \
+		OnPostRestore(); \
+	} \
+	\
+	friend struct RigidBody_Register; \
+	friend void to_json(nlohmann::json& _j,const RigidBody& _target) \
+	{ \
+		_j["useGravity_"] = JsonConverter::Serialize<bool>(_target.useGravity_); \
+		_j["isKinematic_"] = JsonConverter::Serialize<bool>(_target.isKinematic_); \
+	} \
+	friend void from_json(const nlohmann::json& _j, RigidBody& _target) \
+	{ \
+		JsonConverter::Deserialize<bool>(_target.useGravity_, _j,"useGravity_"); \
+		JsonConverter::Deserialize<bool>(_target.isKinematic_, _j,"isKinematic_"); \
+		_target.OnPostRestore(); \
+	} \
+	static std::string TypeName(){ return "RigidBody" ;} \
+	/* ImGuiË°®Á§∫Âá¶ÁêÜ„ÅÆÁôªÈå≤ */ \
+	static void RegisterImGui() \
+	{ \
+		static bool registered = false; \
+		if (registered) return; \
+		registered = true; \
+		\
+		RegisterShowFuncHolder::Set<RigidBody>([]( RigidBody* _target, const char* _name) \
+			{ \
+				TypeRegistry::Instance().CallFunc(&_target->useGravity_, "useGravity_"); \
 				TypeRegistry::Instance().CallFunc(&_target->isKinematic_, "isKinematic_"); \
-			}                                                                              \
-		);                                                                                 \
-		MTImGui::Instance().RegisterComponentViewer<RigidBody>();                          \
+			}); \
+		MTImGui::Instance().RegisterComponentViewer<RigidBody>(); \
 	}
 
 #pragma warning(push)
-#pragma warning(disable : 4005)
-// É}ÉNÉçè„èëÇ´
+#pragma warning(disable:4005)
+// „Éû„ÇØ„É≠‰∏äÊõ∏„Åç
 #define MT_COMPONENT() MT_COMPONENT_RigidBody()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_RigidBody()
 #pragma warning(pop)

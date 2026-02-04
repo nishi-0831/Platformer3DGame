@@ -8,8 +8,8 @@
 class Command;
 namespace mtgb
 {
-	template <typename T> Command* DefaultShow(T* value, const char* name);
+	template <typename T> Command* DefaultShow(T* _value, const char* _name);
 }
 
-// テンプレート実装をインラインで含める
+// 繝�繝ｳ繝励Ξ繝ｼ繝亥ｮ溯｣�繧偵う繝ｳ繝ｩ繧､繝ｳ縺ｧ蜷ｫ繧√ｋ
 #include "DefaultShow.inl"

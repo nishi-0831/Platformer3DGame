@@ -28,31 +28,31 @@ void mtgb::RectDetector::UpdateDetection()
 
 void mtgb::RectDetector::UpdateDetection(RectDetectorConfig& _config)
 {
-	// Šî’êƒNƒ‰ƒX‚Ì detectedTargets_‚ğXV
+	// åŸºåº•ã‚¯ãƒ©ã‚¹ã® detectedTargets_ã‚’æ›´æ–°
 	detectedTargets_.clear();
 
 	Game::System<ColliderCP>().RectContains(
 		_config.detectionRect,
 		_config.base.targetTag,
-		&detectedTargets_, // Šî’êƒNƒ‰ƒX‚Ìƒƒ“ƒo‚ğg—p
+		&detectedTargets_, // åŸºåº•ã‚¯ãƒ©ã‚¹ã®ãƒ¡ãƒ³ãƒã‚’ä½¿ç”¨
 		_config.base.windowContext
 	);
 
 	CameraHandleInScene hCamera		 = WinCtxRes::Get<CameraResource>(_config.base.windowContext).GetHCamera();
 	const Transform& cameraTransform = Game::System<CameraSystem>().GetTransform(hCamera);
 
-	// İ’è‚É‡’v‚µ‚È‚¢—v‘f‚ğæ‚èœ‚­
+	// è¨­å®šã«åˆè‡´ã—ãªã„è¦ç´ ã‚’å–ã‚Šé™¤ã
 	detectedTargets_.erase(
 		std::remove_if(
 			detectedTargets_.begin(),
 			detectedTargets_.end(),
-			[&](const ScreenCoordContainsInfo& info)
+			[&](const ScreenCoordContainsInfo& _info)
 			{
-				Vector3 toTarget = info.worldPos - cameraTransform.GetWorldPosition();
+				Vector3 toTarget = _info.worldPos - cameraTransform.GetWorldPosition();
 				Vector3 normal	 = cameraTransform.Forward();
-				float distance	 = DirectX::XMVector3Dot(toTarget, normal).m128_f32[0];
+				float distance	 = DirectX::XMVectorGetX(DirectX::XMVector3Dot(toTarget, normal));
 
-				// İ’è‚µ‚½‹——£‚æ‚è‰“‚¢‚È‚çœ‚­
+				// è¨­å®šã—ãŸè·é›¢ã‚ˆã‚Šé ã„ãªã‚‰é™¤ã
 				if (std::abs(distance) > _config.base.maxDistance)
 				{
 					return true;
@@ -127,11 +127,11 @@ bool mtgb::RectDetector::IsLineOfSight(const Vector3& _cameraPos, const ScreenCo
 	float dist			   = 0.0f;
 	for (const auto& other : detectedTargets_)
 	{
-		// ©•ª©g‚Æ‚Í”»’è‚ğ‚µ‚È‚¢
+		// è‡ªåˆ†è‡ªèº«ã¨ã¯åˆ¤å®šã‚’ã—ãªã„
 		if (_targetInfo.entityId == other.entityId)
 			continue;
 
-		// Õ‚ç‚ê‚Ä‚¢‚½‚ç false
+		// é®ã‚‰ã‚Œã¦ã„ãŸã‚‰ false
 		if (colliderCP.RayCastHit(_targetInfo.worldPos, toTarget, &dist, other.entityId))
 		{
 			return false;

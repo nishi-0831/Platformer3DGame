@@ -1,0 +1,22 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "user-preset",
+      "inherits": "default",
+      "description": "local environment(VS 2026)"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "local-debug",
+      "configurePreset": "user-preset",
+      "configuration": "Debug"
+    },
+    {
+      "name": "local-release",
+      "configurePreset": "user-preset",
+      "configuration": "Release"
+    }
+  ]
+}

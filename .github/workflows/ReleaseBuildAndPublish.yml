@@ -1,0 +1,91 @@
+name: Release Build and Publish
+
+on:
+ push:
+  tags:
+   - 'v*'
+
+permissions:
+ contents: write
+
+ # 実行中にまたプッシュされた場合、古い実行をキャンセルする
+concurrency:
+  group: release-${{ github.ref }}
+
+jobs:
+ build-and-release:
+  # windows環境で動かす
+  runs-on: windows-latest
+  env:
+   FBX: 'C:\fbxsdk'
+  steps:
+  - name: Checkout
+    uses: actions/checkout@v4
+
+  # MSBuildを使えるようにセットアップ
+  - name: Setup MSBuild
+    uses: microsoft/setup-msbuild@v2
+
+  # NuGetを使えるようにセットアップ
+  - name: Setup NuGet
+    uses: nuget/setup-nuget@v2
+    with:
+     nuget-version: '6.x'
+  # NuGetパッケージを復元
+  - name: Restore NuGet packages
+    run: nuget restore Game.sln
+
+  # FBX SDKインストーラをダウンロード
+  - name: Download FBX SDK installer
+    shell: powershell
+    run: |
+      $url = 'https://damassets.autodesk.net/content/dam/autodesk/www/files/fbx202037_fbxsdk_vs2022_win.exe'
+      Invoke-WebRequest -Uri $url -OutFile '.\FBXInstaller.exe'
+
+  # FBX SDKをインストール
+  - name: install FBX SDK
+    shell: cmd
+    run: |
+      FBXInstaller.exe /S /D=C:\fbxsdk
+
+
+  # Release ビルド
+  - name: Build solution(Release x64)
+    run: msbuild "Game.sln" /p:Configuration=Release /p:Platform=x64
+
+  - name: Prepare release artifacts
+    shell: pwsh
+    run: |
+      $src = Join-Path $PWD 'x64\Release'
+      if (-not (Test-Path $src)) { throw "Build ouput not found: $src" }
+
+      # ZIPファイルを置くフォルダ
+      $releaseDir = Join-Path $PWD 'release'
+      Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $releaseDir
+      New-Item -ItemType Directory -Path $releaseDir | Out-Null
+      
+      # 一時フォルダを作成
+      $staging = Join-Path $releaseDir 'staging'
+      New-Item -ItemType Directory -Path $staging | Out-Null
+      # 一時フォルダにアーティファクトをコピーする
+      Copy-Item -Path (Join-Path $src '*') -Destination $staging -Recurse -Force -Exclude '*.pdb'
+
+      # ZIPファイルの作成先
+      $zipPath = Join-Path $releaseDir 'ReleaseArtifacts.zip'
+      # 作成先に存在している場合はそれを削除
+      if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
+      # ZIPファイルを作成
+      Compress-Archive -Path (Join-Path $staging '*') -DestinationPath $zipPath -Force
+
+      # 一時フォルダを削除
+      Remove-Item -Recurse -Force $staging
+
+  - name: Create GitHub Release and upload artifacts
+    uses: softprops/action-gh-release@v1
+    with:
+     files: |
+      release/ReleaseArtifacts.zip
+
+    # リポジトリ内のリソースにアクセスできるように認証トークンを渡す
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -20,38 +20,38 @@ namespace mtgb
 		void Update() override;
 
 		/// <summary>
-		/// ‰æ‘œƒnƒ“ƒhƒ‹‚©‚çƒXƒvƒ‰ƒCƒg‚Ìƒ|ƒCƒ“ƒ^‚ğæ“¾
+		/// ç”»åƒãƒãƒ³ãƒ‰ãƒ«ã‹ã‚‰ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã®ãƒã‚¤ãƒ³ã‚¿ã‚’å–å¾—
 		/// </summary>
 		/// <param name="_imageHandle"></param>
 		/// <returns></returns>
 		inline Sprite* GetSprite(const ImageHandle _imageHandle)
 		{
 			massert(
-				(0 < _imageHandle) && (_imageHandle <= Image::handleCounter_) && "–³Œø‚Èƒnƒ“ƒhƒ‰ @Image::GetSprite"
+				(0 < _imageHandle) && (_imageHandle <= Image::handleCounter_) && "ç„¡åŠ¹ãªãƒãƒ³ãƒ‰ãƒ© @Image::GetSprite"
 			);
 
-			massert(Image::sprites_.count(_imageHandle) != 0 && "ƒXƒvƒ‰ƒCƒg‚ª‘¶İ‚µ‚È‚¢ @Image::GetSprite");
+			massert(Image::sprites_.count(_imageHandle) != 0 && "ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãŒå­˜åœ¨ã—ãªã„ @Image::GetSprite");
 
 			return Image::sprites_[_imageHandle];
 		}
 		// private:
 
 		/// <summary>
-		/// ‰æ‘œ‚ğ“Ç‚İ‚İAƒnƒ“ƒhƒ‰‚ğæ“¾
+		/// ç”»åƒã‚’èª­ã¿è¾¼ã¿ã€ãƒãƒ³ãƒ‰ãƒ©ã‚’å–å¾—
 		/// </summary>
-		/// <param name="_fileName">ƒtƒ@ƒCƒ‹ƒpƒX</param>
-		/// <returns>‰æ‘œ‚Ìƒnƒ“ƒhƒ‹</returns>
+		/// <param name="_fileName">ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹</param>
+		/// <returns>ç”»åƒã®ãƒãƒ³ãƒ‰ãƒ«</returns>
 		static ImageHandle Load(const std::string_view& _fileName);
 		/// <summary>
-		/// “Ç‚İ‚ñ‚¾‰æ‘œ‚ÌƒTƒCƒY‚ğæ“¾
+		/// èª­ã¿è¾¼ã‚“ã ç”»åƒã®ã‚µã‚¤ã‚ºã‚’å–å¾—
 		/// </summary>
-		/// <param name="_imageHandle">‰æ‘œ‚Ìƒnƒ“ƒhƒ‹</param>
-		/// <returns>‰æ‘œ‚Ìc‰¡ƒTƒCƒY</returns>
+		/// <param name="_imageHandle">ç”»åƒã®ãƒãƒ³ãƒ‰ãƒ«</param>
+		/// <returns>ç”»åƒã®ç¸¦æ¨ªã‚µã‚¤ã‚º</returns>
 		static const Vector2Int GetSize(const ImageHandle _imageHandle);
 		static const Vector2F GetSizeF(const ImageHandle _imageHandle);
 
 	  private:
-		ImageHandle handleCounter_;				 // ƒnƒ“ƒhƒ‰‚Ì‰ÁZ—p
-		std::map<ImageHandle, Sprite*> sprites_; // “Ç‚İ‚Ü‚ê‚½ƒXƒvƒ‰ƒCƒg
+		ImageHandle handleCounter_;				 // ãƒãƒ³ãƒ‰ãƒ©ã®åŠ ç®—ç”¨
+		std::map<ImageHandle, Sprite*> sprites_; // èª­ã¿è¾¼ã¾ã‚ŒãŸã‚¹ãƒ—ãƒ©ã‚¤ãƒˆ
 	};
 } // namespace mtgb

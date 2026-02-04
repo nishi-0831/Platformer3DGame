@@ -7,7 +7,7 @@ namespace mtgb
 {
 	class ImageRenderer;
 	/// <summary>
-	/// ImageRendererコンポーネントシステム
+	/// ImageRenderer繧ｳ繝ｳ繝昴�ｼ繝阪Φ繝医す繧ｹ繝�繝
 	/// </summary>
 	class ImageRendererCP : public IRenderableCP, public ComponentPool<ImageRenderer, ImageRendererCP>
 	{

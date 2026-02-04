@@ -4,7 +4,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ECS‚ÌEntity
+	/// ECSã®Entity
 	/// </summary>
 	class Entity
 	{
@@ -18,18 +18,18 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// ƒGƒ“ƒeƒBƒeƒBId‚ğæ“¾‚·‚é
+		/// ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£Idã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <returns>ƒGƒ“ƒeƒBƒeƒB¯•Ê”Ô†</returns>
+		/// <returns>ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£è­˜åˆ¥ç•ªå·</returns>
 		inline const EntityId GetEntityId() const
 		{
 			return entityId_;
 		}
 
 	  protected:
-		EntityId entityId_{INVALID_ENTITY}; // ƒGƒ“ƒeƒBƒeƒB‚Ì¯•Êq
+		EntityId entityId_{INVALID_ENTITY}; // ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã®è­˜åˆ¥å­
 
 	  private:
-		// static EntityId entityCounter_;  // ƒGƒ“ƒeƒBƒeƒB¯•Êq‚ÌƒJƒEƒ“ƒ^
+		// static EntityId entityCounter_;  // ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£è­˜åˆ¥å­ã®ã‚«ã‚¦ãƒ³ã‚¿
 	};
 } // namespace mtgb

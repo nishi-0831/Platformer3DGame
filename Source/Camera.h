@@ -14,65 +14,65 @@ namespace mtgb
 		void Draw() const override;
 
 		/// <summary>
-		/// ��ʑ̂̎�����~��`���悤�ɉ�]������
+		/// 被写体の周りを円を描くように回転させる
 		/// </summary>
 		void DoOrbit();
 		/// <summary>
-		/// <para> �Ǐ]�̃��[�h��ݒ肷�� </para>
-		/// <para> ��ʑ̂��J�����Ɏ��g�̏���n�� </para>
+		/// <para> 追従のモードを設定する </para>
+		/// <para> 被写体がカメラに自身の情報を渡す </para>
 		/// </summary>
-		/// <param name="_isGrounded"> ��ʑ̂��ڒn���Ă��邩 </param>
-		/// <param name="_targetVelocity"> ��ʑ̂̑��x </param>
+		/// <param name="_isGrounded"> 被写体が接地しているか </param>
+		/// <param name="_targetVelocity"> 被写体の速度 </param>
 		void SetFollowMode(bool _isGrounded, const Vector3& _targetVelocity);
 
 	  private:
 		bool IsTargetOffScreen() const;
 		/// <summary>
-		/// ���ʍ��W�n�ŃJ�����𓮂���
-		/// ���_�𒆐S�ɉ�]������
+		/// 球面座標系でカメラを動かす
+		/// 視点を中心に回転させる
 		/// </summary>
-		/// <param name="_distance">���_�Ƃ̋���</param>
+		/// <param name="_distance">視点との距離</param>
 		void MoveCameraSpherical(float _distance);
 		enum class CameraState
 		{
-			GROUNDED, // ���n��ԁF�ʏ�̃J�����Ǐ]
+			GROUNDED, // 着地状態：通常のカメラ追従
 			JUMPING,
-			JUMP_ASCENDING, // �W�����v�㏸���F�p�x��󂭂��Ă���
-			JUMP_APEX,		// �W�����v���_�F�ŏ��p�x���ێ�
-			JUMP_DESCENDING // �W�����v���~���F�p�x���񕜂��Ă���
+			JUMP_ASCENDING, // ジャンプ上昇中：角度を浅くしていく
+			JUMP_APEX,		// ジャンプ頂点：最小角度を維持
+			JUMP_DESCENDING // ジャンプ下降中：角度を回復していく
 		};
-		// �J�����̏��
+		// カメラの状態
 		mtstat::MTStat<CameraState> cameraStat_;
 
-		// �J�����̃g�����X�t�H�[��
+		// カメラのトランスフォーム
 		Transform* pCameraTransform_;
-		// ��ʑ̂̃g�����X�t�H�[��
+		// 被写体のトランスフォーム
 		Transform* pTargetTransform_;
-		// ���̓f�o�C�X�̎��
+		// 入力デバイスの種類
 		InputType inputType_;
-		// �����p�x
+		// 垂直角度
 		float polarAngleRad_;
-		// �����p�x
+		// 水平角度
 		float azimuthalAngleRad_;
-		// -Y���A������0�x�A+Y���A�㑤��90�x
+		// -Y側、下側が0度、+Y側、上側が90度
 		float minPolarAngleRad_, maxPolarAngleRad_;
-		// +X���A�E����0�x�A-X���A������90�x
+		// +X側、右側が0度、-X側、左側が90度
 		float minAzimuthalAngleRad_, maxAzimuthalAngleRad_;
-		// ���_�̃I�t�Z�b�g
+		// 視点のオフセット
 		Vector3 lookAtPositionOffset_;
-		// �J��������]�����鑬�x
+		// カメラを回転させる速度
 		float orbitSpeed_;
-		// ���_�Ƃ̋���
+		// 視点との距離
 		float distance_;
-		// ��ʑ̂��ڒn���Ă��邩
+		// 被写体が接地しているか
 		bool isGrounded_;
-		// ��ʑ̂̑��x�̃L���b�V��
+		// 被写体の速度のキャッシュ
 		Vector3 targetVelocityCache_;
-		// ���_���Ԃ��邽�߂̐i�s�x
+		// 視点を補間するための進行度
 		float lookAtPosLerpProgress_;
-		// ��Ԃ̎n�_
+		// 補間の始点
 		float baseY_;
-		// ��Ԃ̏I�_
+		// 補間の終点
 		float distY_;
 		float lerpSpeedGrounded_;
 		float lerpSpeedJumping_;

@@ -12,8 +12,8 @@ namespace mtgb
 	class Audio;
 
 	/// <summary>
-	/// <para>‰¹ºƒNƒŠƒbƒv (=‰¹ºƒf[ƒ^)</para>
-	/// <para>TODO: WaveˆÈŠO‚à“Ç‚İ‚Şê‡A‚±‚ê‚ğŠg’£</para>
+	/// <para>éŸ³å£°ã‚¯ãƒªãƒƒãƒ— (=éŸ³å£°ãƒ‡ãƒ¼ã‚¿)</para>
+	/// <para>TODO: Waveä»¥å¤–ã‚‚èª­ã¿è¾¼ã‚€å ´åˆã€ã“ã‚Œã‚’æ‹¡å¼µ</para>
 	/// </summary>
 	class AudioClip
 	{
@@ -25,32 +25,32 @@ namespace mtgb
 		~AudioClip();
 
 		/// <summary>
-		/// ‰¹ºƒf[ƒ^‚ğƒNƒŠƒbƒv‚Éƒ[ƒh‚·‚é
+		/// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã‚’ã‚¯ãƒªãƒƒãƒ—ã«ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
 		/// </summary>
-		/// <param name="_ms">‰¹ºƒf[ƒ^‚Ìms</param>
+		/// <param name="_ms">éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®ms</param>
 		void Load(mtbin::MemoryStream& _ms);
 
 		/// <summary>
-		/// WAV“Ç‚İ‚İ
+		/// WAVèª­ã¿è¾¼ã¿
 		/// </summary>
-		/// <param name="_ms">WAV‚Ìƒƒ‚ƒŠƒXƒgƒŠ[ƒ€</param>
-		/// <param name="_first4"> Å‰‚Ì4ƒoƒCƒg‚Ì¯•Êq</param>
+		/// <param name="_ms">WAVã®ãƒ¡ãƒ¢ãƒªã‚¹ãƒˆãƒªãƒ¼ãƒ </param>
+		/// <param name="_first4"> æœ€åˆã®4ãƒã‚¤ãƒˆã®è­˜åˆ¥å­</param>
 		void LoadWave(mtbin::MemoryStream& _ms, const byte* _first4);
 
 		/// <summary>
-		/// mp3“Ç‚İ‚İ
+		/// mp3èª­ã¿è¾¼ã¿
 		/// </summary>
-		/// <param name="_ms">mp3‚Ìƒƒ‚ƒŠƒXƒgƒŠ[ƒ€</param>
-		/// <param name="_first4">Å‰‚Ì4ƒoƒCƒg‚Ì¯•Êq</param>
+		/// <param name="_ms">mp3ã®ãƒ¡ãƒ¢ãƒªã‚¹ãƒˆãƒªãƒ¼ãƒ </param>
+		/// <param name="_first4">æœ€åˆã®4ãƒã‚¤ãƒˆã®è­˜åˆ¥å­</param>
 		void LoadMp3(mtbin::MemoryStream& _ms, const byte* _first4);
 
 		/// <summary>
-		/// ‰¹ºƒf[ƒ^‚Ì‘Ä¶ŠÔ(•b)‚ğæ“¾
+		/// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã®ç·å†ç”Ÿæ™‚é–“(ç§’)ã‚’å–å¾—
 		/// </summary>
 		/// <returns></returns>
 		float GetTotalTimeSec() const;
 
 	  private:
-		WaveData* pWaveData_; // Waveƒtƒ@ƒCƒ‹‚Ìƒf[ƒ^
+		WaveData* pWaveData_; // Waveãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ãƒ¼ã‚¿
 	};
 } // namespace mtgb

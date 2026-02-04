@@ -11,7 +11,7 @@ class MovingFloor : public GameObject, public ImGuiShowable
   private:
 	void OnCollisionEnter(EntityId _entityId);
 	void OnCollisionExit(EntityId _entityId);
-	// ‚±‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ªŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚éEntity‚É’…’n‚µ‚Ä‚¢‚éEntity‚ÌId
+	// ã“ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒå‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚‹Entityã«ç€åœ°ã—ã¦ã„ã‚‹Entityã®Id
 	EntityId groundedEntity_;
 	Transform* pTransform_;
 	MeshRenderer* pMeshRenderer_;

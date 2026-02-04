@@ -1,6 +1,6 @@
 #pragma once
 
-// DIRECTINPUT_VERSION ‚ªÄ’è‹`‚³‚ê‚Ä‚¢‚Ü‚·Œx‚ðÁ‚·‚½‚ß‚Ì
+// DIRECTINPUT_VERSION ãŒå†å®šç¾©ã•ã‚Œã¦ã„ã¾ã™è­¦å‘Šã‚’æ¶ˆã™ãŸã‚ã®
 
 #ifndef DIRECTINPUT_VERSION
 #define DIRECTINPUT_VERSION 0x0800

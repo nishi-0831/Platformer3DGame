@@ -1,6 +1,6 @@
 #pragma once
 // #include "GameScene.h"
-#include "Entity.h"
+#include <nlohmann/json.hpp>
 #include <string>
 #include <functional>
 #include <cstdint>
@@ -10,12 +10,12 @@
 #include <typeinfo>
 #include <string_view>
 #include <type_traits>
+#include "Entity.h"
 #include "ISystem.h"
 #include "Vector2Int.h"
 #include <typeindex>
 #include "ReleaseUtility.h"
 #include "IComponentMemento.h"
-#include <nlohmann/json.hpp>
 #include "IRenderable.h"
 #include "ComponentFactory.h"
 namespace mtgb
@@ -24,24 +24,24 @@ namespace mtgb
 	class IComponentPool;
 
 	/// <summary>
-	/// ‚±‚ÌƒNƒ‰ƒX‚ğŒp³‚µAì‚éƒQ[ƒ€‚ÌƒNƒ‰ƒX‚ğì‚Á‚Ä‚­‚¾‚³‚¢
+	/// ã“ã®ã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã€ä½œã‚‹ã‚²ãƒ¼ãƒ ã®ã‚¯ãƒ©ã‚¹ã‚’ä½œã£ã¦ãã ã•ã„
 	/// </summary>
 	class Game
 	{
 	  protected:
 		/// <summary>
-		/// ƒVƒXƒeƒ€‚ÌXVƒ^ƒCƒ~ƒ“ƒOƒ^ƒCƒv
+		/// ã‚·ã‚¹ãƒ†ãƒ ã®æ›´æ–°ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã‚¿ã‚¤ãƒ—
 		/// </summary>
 		enum struct SystemUpdateType : int8_t
 		{
-			DontCallMe, // ŒÄ‚Ño‚³‚È‚¢‚ÅI
-			Cycle,		// –ˆƒTƒCƒNƒ‹
-			Frame,		// –ˆƒtƒŒ[ƒ€
-			Fixed,		// ˆê’è‚ÌŠÔŠu
+			DONT_CALL_ME, // å‘¼ã³å‡ºã•ãªã„ã§ï¼
+			CYCLE,		// æ¯ã‚µã‚¤ã‚¯ãƒ«
+			FRAME,		// æ¯ãƒ•ãƒ¬ãƒ¼ãƒ 
+			FIXED,		// ä¸€å®šã®é–“éš”
 		};
 
 		/// <summary>
-		/// ƒVƒXƒeƒ€“o˜^‚ÌƒR[ƒ‹ƒoƒbƒNŠÖ”
+		/// ã‚·ã‚¹ãƒ†ãƒ ç™»éŒ²ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 		/// </summary>
 		using RegisterSystem = std::function<void(
 			std::type_index _systemTypeName,
@@ -51,7 +51,7 @@ namespace mtgb
 		)>;
 
 		/// <summary>
-		/// ƒVƒXƒeƒ€“o˜^‚ÌŠÖ”ƒzƒ‹ƒ_
+		/// ã‚·ã‚¹ãƒ†ãƒ ç™»éŒ²ã®é–¢æ•°ãƒ›ãƒ«ãƒ€
 		/// </summary>
 		class RegisterSystemFuncHolder
 		{
@@ -78,17 +78,17 @@ namespace mtgb
 	  protected:
 		template <typename T> void Set(SystemUpdateType _systemUpdateType);
 		/// <summary>
-		/// <para>”CˆÓ‚ÌXV‡”Ô‚ÅƒVƒXƒeƒ€‚ğİ’è‚·‚é</para>
-		/// <para>g‚¤ƒVƒXƒeƒ€‚ğ•K—v‚È‚¾‚¯‚±‚ÌŠÖ”“à‚Ånew‚µ‚Ä‚­‚¾‚³‚¢</para>
+		/// <para>ä»»æ„ã®æ›´æ–°é †ç•ªã§ã‚·ã‚¹ãƒ†ãƒ ã‚’è¨­å®šã™ã‚‹</para>
+		/// <para>ä½¿ã†ã‚·ã‚¹ãƒ†ãƒ ã‚’å¿…è¦ãªã ã‘ã“ã®é–¢æ•°å†…ã§newã—ã¦ãã ã•ã„</para>
 		/// </summary>
 		virtual void SetupSystems(const RegisterSystemFuncHolder& _registerSystem) = 0;
 		/// <summary>
-		/// ƒQ[ƒ€‚Ìƒo[ƒWƒ‡ƒ“‚ğ•K‚¸•Ô‚µ‚Ä‚­‚¾‚³‚¢
+		/// ã‚²ãƒ¼ãƒ ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’å¿…ãšè¿”ã—ã¦ãã ã•ã„
 		/// </summary>
 		/// <returns></returns>
 		virtual std::string_view GetVersion() const = 0;
 		/// <summary>
-		/// ƒQ[ƒ€‚Ìƒ^ƒCƒgƒ‹‚ğ•K‚¸•Ô‚µ‚Ä‚­‚¾‚³‚¢
+		/// ã‚²ãƒ¼ãƒ ã®ã‚¿ã‚¤ãƒˆãƒ«ã‚’å¿…ãšè¿”ã—ã¦ãã ã•ã„
 		/// </summary>
 		/// <returns></returns>
 		virtual std::string_view GetTitle() const = 0;
@@ -96,19 +96,19 @@ namespace mtgb
 		virtual Vector2Int GetScreenSize() const;
 
 	  private:
-		std::map<std::type_index, ISystem*> pRegisterSystems_; // “o˜^Ï‚İ‚ÌƒVƒXƒeƒ€
-		std::list<ISystem*> pCycleUpdateSystems_;			   // –ˆƒTƒCƒNƒ‹XV‚³‚ê‚éƒVƒXƒeƒ€
-		std::list<ISystem*> pFrameUpdateSystems_;			   // –ˆƒtƒŒ[ƒ€XV‚³‚ê‚éƒVƒXƒeƒ€
-		std::list<ISystem*> pFixedUpdateSystems_;			   // ˆê’èŠúŠÔ‚ÅXV‚³‚ê‚éƒVƒXƒeƒ€
-		std::vector<IComponentPool*> pComponentPools_;		   // ƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹‚ÌƒVƒXƒeƒ€
-		std::vector<IRenderableCP*> pRenderablePools_;		   // •`‰æ‰Â”\‚ÈƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹‚ÌƒVƒXƒeƒ€
-		std::vector<std::type_index> registerOrder_;		   // “o˜^‡‚ğ•Û‚·‚é”z—ñ
+		std::map<std::type_index, ISystem*> pRegisterSystems_; // ç™»éŒ²æ¸ˆã¿ã®ã‚·ã‚¹ãƒ†ãƒ 
+		std::list<ISystem*> pCycleUpdateSystems_;			   // æ¯ã‚µã‚¤ã‚¯ãƒ«æ›´æ–°ã•ã‚Œã‚‹ã‚·ã‚¹ãƒ†ãƒ 
+		std::list<ISystem*> pFrameUpdateSystems_;			   // æ¯ãƒ•ãƒ¬ãƒ¼ãƒ æ›´æ–°ã•ã‚Œã‚‹ã‚·ã‚¹ãƒ†ãƒ 
+		std::list<ISystem*> pFixedUpdateSystems_;			   // ä¸€å®šæœŸé–“ã§æ›´æ–°ã•ã‚Œã‚‹ã‚·ã‚¹ãƒ†ãƒ 
+		std::vector<IComponentPool*> pComponentPools_;		   // ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«ã®ã‚·ã‚¹ãƒ†ãƒ 
+		std::vector<IRenderableCP*> pRenderablePools_;		   // æç”»å¯èƒ½ãªã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«ã®ã‚·ã‚¹ãƒ†ãƒ 
+		std::vector<std::type_index> registerOrder_;		   // ç™»éŒ²é †ã‚’ä¿æŒã™ã‚‹é…åˆ—
 
 		ComponentFactory componentFactory_;
 
 	  public:
 		/// <summary>
-		/// ƒQ[ƒ€‚ğ‹N“®‚·‚é
+		/// ã‚²ãƒ¼ãƒ ã‚’èµ·å‹•ã™ã‚‹
 		/// </summary>
 		/// <typeparam name="GameT"></typeparam>
 		/// <typeparam name="...Args"></typeparam>
@@ -116,15 +116,15 @@ namespace mtgb
 		template <typename GameT, typename... Args> static void Run(Args... _args);
 
 		/// <summary>
-		/// ƒQ[ƒ€‚ğI—¹‚·‚é
+		/// ã‚²ãƒ¼ãƒ ã‚’çµ‚äº†ã™ã‚‹
 		/// </summary>
 		static void Exit();
 
 		/// <summary>
-		/// ƒVƒXƒeƒ€‚ğæ“¾‚·‚é
+		/// ã‚·ã‚¹ãƒ†ãƒ ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <typeparam name="SystemT">ƒVƒXƒeƒ€‚ÌŒ^</typeparam>
-		/// <returns>ƒVƒXƒeƒ€‚ÌQÆƒ|ƒCƒ“ƒ^</returns>
+		/// <typeparam name="SystemT">ã‚·ã‚¹ãƒ†ãƒ ã®å‹</typeparam>
+		/// <returns>ã‚·ã‚¹ãƒ†ãƒ ã®å‚ç…§ãƒã‚¤ãƒ³ã‚¿</returns>
 		template <typename SystemT> static inline SystemT& System();
 
 		static ComponentFactory& GetComponentFactory()
@@ -132,61 +132,61 @@ namespace mtgb
 			return pInstance_->componentFactory_;
 		}
 		/// <summary>
-		/// ƒQ[ƒ€‚Ìƒo[ƒWƒ‡ƒ“‚ğæ“¾
+		/// ã‚²ãƒ¼ãƒ ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒo[ƒWƒ‡ƒ“î•ñ‚Ì•¶š—ñ</returns>
+		/// <returns>ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±ã®æ–‡å­—åˆ—</returns>
 		static inline std::string_view Version()
 		{
 			return pInstance_->GetVersion();
 		}
 		/// <summary>
-		/// ƒQ[ƒ€ƒ^ƒCƒgƒ‹‚ğæ“¾
+		/// ã‚²ãƒ¼ãƒ ã‚¿ã‚¤ãƒˆãƒ«ã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒQ[ƒ€ƒ^ƒCƒgƒ‹‚Ì•¶š—ñ</returns>
+		/// <returns>ã‚²ãƒ¼ãƒ ã‚¿ã‚¤ãƒˆãƒ«ã®æ–‡å­—åˆ—</returns>
 		static inline std::string_view Title()
 		{
 			return pInstance_->GetTitle();
 		}
 
 		/// <summary>
-		/// ƒtƒŒ[ƒ€‚ÌXV‚ğ‚·‚é
+		/// ãƒ•ãƒ¬ãƒ¼ãƒ ã®æ›´æ–°ã‚’ã™ã‚‹
 		/// </summary>
 		static void UpdateFrame();
 		/// <summary>
-		/// ’èŠúXV‚ğ‚·‚é
+		/// å®šæœŸæ›´æ–°ã‚’ã™ã‚‹
 		/// </summary>
 		static void UpdateFixed();
 
 		/// <summary>
-		/// ƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX‚ğ•Ô‚·
+		/// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’è¿”ã™
 		/// </summary>
 		/// <param name="_typeIndex"></param>
 		/// <returns></returns>
 		static IComponentPool* GetCP(std::type_index _typeIndex);
 		/// <summary>
-		/// ƒGƒ“ƒeƒBƒeƒB‚É‘Î‰‚·‚é‘S‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğíœ‚·‚é
+		/// ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã«å¯¾å¿œã™ã‚‹å…¨ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å‰Šé™¤ã™ã‚‹
 		/// </summary>
 		/// <param name="_entityId"></param>
 		static void RemoveEntityAllComponent(const EntityId _entityId);
 
 		/// <summary>
-		/// ƒGƒ“ƒeƒBƒeƒB‚É‘Î‰‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚ğíœ‚·‚é
+		/// ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã«å¯¾å¿œã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å‰Šé™¤ã™ã‚‹
 		/// </summary>
 		/// <param name="_typeIndex"></param>
 		/// <param name="_entityId"></param>
 		static void RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId);
 
 		/// <summary>
-		/// ƒGƒ“ƒeƒBƒeƒB‚É‘Î‰‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚ğJSON‚ÉƒVƒŠƒAƒ‰ƒCƒY‚µ‚Ä•Ô‚·
+		/// ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã«å¯¾å¿œã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’JSONã«ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã—ã¦è¿”ã™
 		/// </summary>
-		/// <param name="_typeIndex"> ƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹‚Ìtype_index </param>
+		/// <param name="_typeIndex"> ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«ã®type_index </param>
 		/// <param name="_entityId"></param>
 		/// <returns></returns>
 		static nlohmann::json SerializeComponent(std::type_index _typeIndex, EntityId _entityId);
 		/// <summary>
-		/// JSON‚©‚çƒGƒ“ƒeƒBƒeƒB‚É‘Î‰‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚ÉƒfƒVƒŠƒAƒ‰ƒCƒY‚µ‚ÄAƒƒƒ“ƒg‚ğ•Ô‚·
+		/// JSONã‹ã‚‰ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã«å¯¾å¿œã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã«ãƒ‡ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã—ã¦ã€ãƒ¡ãƒ¡ãƒ³ãƒˆã‚’è¿”ã™
 		/// </summary>
-		/// <param name="_typeIndex">ƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹‚Ìtype_index</param>
+		/// <param name="_typeIndex">ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«ã®type_index</param>
 		/// <param name="_entityId"></param>
 		/// <param name="_json"></param>
 		/// <returns></returns>
@@ -194,29 +194,29 @@ namespace mtgb
 		static void DeserializeComponents(EntityId _entityId, const nlohmann::json& _json);
 
 		/// <summary>
-		/// •`‰æ‰Â”\‚ÈƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹‚ğ•Ô‚·
+		/// æç”»å¯èƒ½ãªã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«ã‚’è¿”ã™
 		/// </summary>
 		/// <returns></returns>
 		static std::span<IRenderableCP*> GetRenderableCPs();
 
 	  private:
 		/// <summary>
-		/// ƒVƒXƒeƒ€‚Ì‰Šú‰»‚ğ‚·‚é
+		/// ã‚·ã‚¹ãƒ†ãƒ ã®åˆæœŸåŒ–ã‚’ã™ã‚‹
 		/// </summary>
 		static void InitializeSystems(const std::list<ISystem*>& _uninitialized);
 
 		/// <summary>
-		/// ƒVƒXƒeƒ€‚Ì‰ğ•úˆ—‚ğ‚·‚é
+		/// ã‚·ã‚¹ãƒ†ãƒ ã®è§£æ”¾å‡¦ç†ã‚’ã™ã‚‹
 		/// </summary>
 		static void ReleaseSystems(const std::list<ISystem*>& _runnings);
 
 		/// <summary>
-		/// ƒQ[ƒ€ƒTƒCƒNƒ‹‚Ìƒ‹[ƒv‚ğŠJn
+		/// ã‚²ãƒ¼ãƒ ã‚µã‚¤ã‚¯ãƒ«ã®ãƒ«ãƒ¼ãƒ—ã‚’é–‹å§‹
 		/// </summary>
 		static void RunLoopGameCycle();
 
-		static Game* pInstance_; // —Bˆê‚ÌƒQ[ƒ€ƒCƒ“ƒXƒ^ƒ“ƒX
-		static bool toExit_;	 // I—¹ƒtƒ‰ƒO
+		static Game* pInstance_; // å”¯ä¸€ã®ã‚²ãƒ¼ãƒ ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+		static bool toExit_;	 // çµ‚äº†ãƒ•ãƒ©ã‚°
 	};
 
 	template <typename T> inline void Game::Set(SystemUpdateType _systemUpdateType)
@@ -239,16 +239,16 @@ namespace mtgb
 		pInstance_->pRegisterSystems_.insert({typeid(T), pSystem});
 		switch (_systemUpdateType)
 		{
-		case SystemUpdateType::Cycle :
+		case SystemUpdateType::CYCLE :
 			pInstance_->pCycleUpdateSystems_.push_back(pSystem);
 			break;
-		case SystemUpdateType::Frame :
+		case SystemUpdateType::FRAME :
 			pInstance_->pFrameUpdateSystems_.push_back(pSystem);
 			break;
-		case SystemUpdateType::Fixed :
+		case SystemUpdateType::FIXED :
 			pInstance_->pFixedUpdateSystems_.push_back(pSystem);
 			break;
-		case SystemUpdateType::DontCallMe :
+		case SystemUpdateType::DONT_CALL_ME :
 		default :
 			break;
 		}
@@ -256,19 +256,19 @@ namespace mtgb
 
 	template <typename GameT, typename... Args> inline void Game::Run(Args... _args)
 	{
-		// ƒQ[ƒ€‚ğƒCƒ“ƒXƒ^ƒ“ƒX‚·‚é
+		// ã‚²ãƒ¼ãƒ ã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã™ã‚‹
 		pInstance_ = new GameT{_args...};
 
 		std::list<ISystem*> systems{};
 
-		// ŠeƒVƒXƒeƒ€‚Ì“o˜^
+		// å„ã‚·ã‚¹ãƒ†ãƒ ã®ç™»éŒ²
 		pInstance_->SetupSystems(
 			{[&](std::type_index _systemType,
 				 ISystem* _pSystem,
 				 const bool _isComponentPool,
 				 const SystemUpdateType _systemUpdateType)
 			 {
-				 assert(_pSystem != nullptr && "ISystem‚Ö‚ÌƒAƒbƒvƒLƒƒƒXƒg‚É¸”sAŒp³ŠÖŒW‚ªpublic‚É‚È‚Á‚Ä‚¢‚é‚©Šm”FB");
+				 assert(_pSystem != nullptr && "ISystemã¸ã®ã‚¢ãƒƒãƒ—ã‚­ãƒ£ã‚¹ãƒˆã«å¤±æ•—ã€ç¶™æ‰¿é–¢ä¿‚ãŒpublicã«ãªã£ã¦ã„ã‚‹ã‹ç¢ºèªã€‚");
 
 				 systems.push_back(_pSystem);
 				 if (_isComponentPool)
@@ -278,32 +278,32 @@ namespace mtgb
 				 pInstance_->pRegisterSystems_.insert({_systemType, _pSystem});
 				 switch (_systemUpdateType)
 				 {
-				 case SystemUpdateType::Cycle :
+				 case SystemUpdateType::CYCLE :
 					 pInstance_->pCycleUpdateSystems_.push_back(_pSystem);
 					 break;
-				 case SystemUpdateType::Frame :
+				 case SystemUpdateType::FRAME :
 					 pInstance_->pFrameUpdateSystems_.push_back(_pSystem);
 					 break;
-				 case SystemUpdateType::Fixed :
+				 case SystemUpdateType::FIXED :
 					 pInstance_->pFixedUpdateSystems_.push_back(_pSystem);
 					 break;
-				 case SystemUpdateType::DontCallMe :
+				 case SystemUpdateType::DONT_CALL_ME :
 				 default :
 					 break;
 				 }
 			 }}
 		);
-		// ŠeƒVƒXƒeƒ€‚Ì‰Šú‰»
+		// å„ã‚·ã‚¹ãƒ†ãƒ ã®åˆæœŸåŒ–
 		pInstance_->InitializeSystems(systems);
 
-		// ƒQ[ƒ€ƒTƒCƒNƒ‹ŠJn
+		// ã‚²ãƒ¼ãƒ ã‚µã‚¤ã‚¯ãƒ«é–‹å§‹
 		pInstance_->RunLoopGameCycle();
 
-		// ‰ğ•úˆ—
+		// è§£æ”¾å‡¦ç†
 		pInstance_->ReleaseSystems(systems);
 		systems.clear();
 
-		// ƒCƒ“ƒXƒ^ƒ“ƒX‚Ì‰ğ•ú
+		// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®è§£æ”¾
 		delete pInstance_;
 	}
 
@@ -315,10 +315,10 @@ namespace mtgb
 
 		assert(pSystem != nullptr);
 
-		// Šî’êƒNƒ‰ƒX‚ªISystem‚Å‚ ‚é‚©
+		// åŸºåº•ã‚¯ãƒ©ã‚¹ãŒISystemã§ã‚ã‚‹ã‹
 		static_assert(
 			std::is_base_of<ISystem, SystemT>().value &&
-			"ISystemƒNƒ‰ƒX‚ğŒp³‚µ‚Ä‚¢‚È‚¢ƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚Íæ“¾‚Å‚«‚Ü‚¹‚ñB"
+			"ISystemã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã¦ã„ãªã„ã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã¯å–å¾—ã§ãã¾ã›ã‚“ã€‚"
 		);
 		return *(dynamic_cast<SystemT*>(pSystem));
 	}

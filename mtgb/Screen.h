@@ -23,13 +23,13 @@ namespace mtgb
 		}
 		// inline const Vector2Int GetInitialSize() const { return Vector2Int{ initialWidth_,initialHeight_ }; }
 		/// <summary>
-		/// ‰Šú’l‚ğ1‚Æ‚µ‚½‚Æ‚«‚ÌƒXƒNƒŠ[ƒ“ƒTƒCƒY‚Ì”ä—¦‚ğ•Ô‚·
+		/// åˆæœŸå€¤ã‚’1ã¨ã—ãŸã¨ãã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚µã‚¤ã‚ºã®æ¯”ç‡ã‚’è¿”ã™
 		/// </summary>
 		/// <returns></returns>
 		const Vector2F GetSizeRatio() const;
 		const mtgb::Vector2Int GetInitialSize() const;
 		/// <summary>
-		/// <para> ƒXƒNƒŠ[ƒ“‚ÌƒTƒCƒY‚ğ•Û‚·‚é</para>
+		/// <para> ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã®ã‚µã‚¤ã‚ºã‚’ä¿æŒã™ã‚‹</para>
 		/// </summary>
 		/// <param name="_width"></param>
 		/// <param name="_height"></param>
@@ -40,6 +40,6 @@ namespace mtgb
 		Vector2F sizeRatio_;
 		Vector2Int initialSize_;
 		Vector2Int size_;
-		int fpsLimit_; // FPS§ŒÀ(1ƒtƒŒ[ƒ€‚ ‚½‚è‚ÌXVƒtƒŒ[ƒ€”)
+		int fpsLimit_; // FPSåˆ¶é™(1ãƒ•ãƒ¬ãƒ¼ãƒ ã‚ãŸã‚Šã®æ›´æ–°ãƒ•ãƒ¬ãƒ¼ãƒ æ•°)
 	};
 } // namespace mtgb

@@ -6,61 +6,59 @@
 #include "MTImGui.h"
 #include <string>
 // ============================================================================
-// ImageRenderer‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
+// ImageRendererã®çŠ¶æ…‹ã‚’ä¿å­˜ã™ã‚‹Stateæ§‹é€ ä½“ã®å®šç¾©ã€Undo/Redoã«ä½¿ã†Mementoã®usingå®£è¨€
 // ============================================================================
-#define MT_COMPONENT_ImageRenderer()                                                  \
-	struct ImageRendererState                                                         \
-	{                                                                                 \
-	};                                                                                \
-	class ImageRenderer;                                                              \
+#define MT_COMPONENT_ImageRenderer() \
+	struct ImageRendererState \
+	{ \
+	}; \
+	class ImageRenderer;\
 	using ImageRendererMemento = ComponentMemento<ImageRenderer, ImageRendererState>;
 
 // ============================================================================
-// ImageRenderer‚ÆImageRendererMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
+// ImageRendererã¨ImageRendererMementoã®ç›¸äº’å¤‰æ›å‡¦ç†ã‚’å®Ÿè£…
 // ============================================================================
-#define MT_GENERATED_BODY_ImageRenderer()                                                             \
-  public:                                                                                             \
-	using Memento = ImageRendererMemento;                                                             \
-	ImageRendererMemento* SaveToMemento()                                                             \
-	{                                                                                                 \
-		OnPreSave();                                                                                  \
-		ImageRendererState state;                                                                     \
-		return new ComponentMemento<ImageRenderer, ImageRendererState>(GetEntityId(), state);         \
-	}                                                                                                 \
-                                                                                                      \
-	void RestoreFromMemento(const ComponentMemento<ImageRenderer, ImageRendererState>& _memento)      \
-	{                                                                                                 \
-		const ImageRendererState& state = _memento.GetState();                                        \
-		OnPostRestore();                                                                              \
-	}                                                                                                 \
-                                                                                                      \
-	friend struct ImageRenderer_Register;                                                             \
-	friend void to_json(nlohmann::json& _j, const ImageRenderer& _target)                             \
-	{                                                                                                 \
-	}                                                                                                 \
-	friend void from_json(const nlohmann::json& _j, ImageRenderer& _target)                           \
-	{                                                                                                 \
-		_target.OnPostRestore();                                                                      \
-	}                                                                                                 \
-	static std::string TypeName()                                                                     \
-	{                                                                                                 \
-		return "ImageRenderer";                                                                       \
-	}                                                                                                 \
-	/* ImGui•\¦ˆ—‚Ì“o˜^ */                                                                         \
-	static void RegisterImGui()                                                                       \
-	{                                                                                                 \
-		static bool registered = false;                                                               \
-		if (registered)                                                                               \
-			return;                                                                                   \
-		registered = true;                                                                            \
-                                                                                                      \
-		RegisterShowFuncHolder::Set<ImageRenderer>([](ImageRenderer* _target, const char* _name) {}); \
-		MTImGui::Instance().RegisterComponentViewer<ImageRenderer>();                                 \
+#define MT_GENERATED_BODY_ImageRenderer() \
+	public: \
+	using Memento = ImageRendererMemento; \
+	ImageRendererMemento* SaveToMemento() \
+	{ \
+	OnPreSave(); \
+		ImageRendererState state; \
+		return new ComponentMemento<ImageRenderer, ImageRendererState>(GetEntityId(), state); \
+	} \
+	\
+	void RestoreFromMemento(const ComponentMemento<ImageRenderer, ImageRendererState>& _memento) \
+	{ \
+		const ImageRendererState& state = _memento.GetState(); \
+		OnPostRestore(); \
+	} \
+	\
+	friend struct ImageRenderer_Register; \
+	friend void to_json(nlohmann::json& _j,const ImageRenderer& _target) \
+	{ \
+	} \
+	friend void from_json(const nlohmann::json& _j, ImageRenderer& _target) \
+	{ \
+		_target.OnPostRestore(); \
+	} \
+	static std::string TypeName(){ return "ImageRenderer" ;} \
+	/* ImGuiè¡¨ç¤ºå‡¦ç†ã®ç™»éŒ² */ \
+	static void RegisterImGui() \
+	{ \
+		static bool registered = false; \
+		if (registered) return; \
+		registered = true; \
+		\
+		RegisterShowFuncHolder::Set<ImageRenderer>([]( ImageRenderer* _target, const char* _name) \
+			{ \
+			}); \
+		MTImGui::Instance().RegisterComponentViewer<ImageRenderer>(); \
 	}
 
 #pragma warning(push)
-#pragma warning(disable : 4005)
-// ƒ}ƒNƒã‘‚«
+#pragma warning(disable:4005)
+// ãƒã‚¯ãƒ­ä¸Šæ›¸ã
 #define MT_COMPONENT() MT_COMPONENT_ImageRenderer()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_ImageRenderer()
 #pragma warning(pop)

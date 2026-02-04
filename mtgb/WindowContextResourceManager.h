@@ -16,16 +16,16 @@ typedef struct HWND__* HWND;
 namespace mtgb
 {
 	/// <summary>
-	/// ƒEƒBƒ“ƒhƒE‚²‚Æ‚ÌƒŠƒ\[ƒX‚ğŠÇ—‚·‚éƒNƒ‰ƒX
+	/// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã”ã¨ã®ãƒªã‚½ãƒ¼ã‚¹ã‚’ç®¡ç†ã™ã‚‹ã‚¯ãƒ©ã‚¹
 	/// </summary>
 	class WindowContextResourceManager : public ISystem
 	{
 	  private:
-		// Œ»İ‚ÌƒEƒBƒ“ƒhƒE
+		// ç¾åœ¨ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
 		WindowContext currentContext_;
-		// ƒEƒBƒ“ƒhƒE‚²‚Æ‚ÌƒŠƒ\[ƒXŒQ
+		// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã”ã¨ã®ãƒªã‚½ãƒ¼ã‚¹ç¾¤
 		std::map<WindowContext, ResourceCollection> collectionMap_;
-		// ƒŠƒ\[ƒX‚²‚Æ‚Ì¶¬ŠÖ”
+		// ãƒªã‚½ãƒ¼ã‚¹ã”ã¨ã®ç”Ÿæˆé–¢æ•°
 		std::map<std::type_index, std::function<WindowContextResource*(WindowContext)>> factoryMap_;
 
 		std::vector<std::type_index> insertionOrder_;
@@ -39,70 +39,70 @@ namespace mtgb
 		void Release();
 
 		/// <summary>
-		/// ƒEƒBƒ“ƒhƒE‚²‚Æ‚É•K—v‚ÈƒŠƒ\[ƒX‚ğì¬
+		/// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã”ã¨ã«å¿…è¦ãªãƒªã‚½ãƒ¼ã‚¹ã‚’ä½œæˆ
 		/// </summary>
-		/// <param name="windowContext">ì¬‚·‚éƒEƒBƒ“ƒhƒE‚Ì¯•Êq</param>
-		void CreateResource(WindowContext windowContext);
+		/// <param name="windowContext">ä½œæˆã™ã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­</param>
+		void CreateResource(WindowContext _windowContext);
 
 		/// <summary>
-		/// ƒŠƒ\[ƒX‚ğØ‚è‘Ö‚¦‚é
+		/// ãƒªã‚½ãƒ¼ã‚¹ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
 		/// </summary>
-		/// <param name="windowContext">Ø‚è‘Ö‚¦‚éƒEƒBƒ“ƒhƒE‚Ì¯•Êq</param>
-		void ChangeActiveResource(WindowContext windowContext);
+		/// <param name="windowContext">åˆ‡ã‚Šæ›¿ãˆã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­</param>
+		void ChangeActiveResource(WindowContext _windowContext);
 
 		/// <summary>
-		/// ‘SƒŠƒ\[ƒX‚ÌOnResize‚ğŒÄ‚Ñ‚¾‚·
+		/// å…¨ãƒªã‚½ãƒ¼ã‚¹ã®OnResizeã‚’å‘¼ã³ã ã™
 		/// </summary>
 		/// <param name="windowContext"></param>
 		/// <param name="width"></param>
 		/// <param name="height"></param>
-		void OnResizeAll(WindowContext windowContext, UINT width, UINT height);
+		void OnResizeAll(WindowContext _windowContext, UINT _width, UINT _height);
 
 		/// <summary>
-		/// w’è‚µ‚½“ñ‚Â‚ÌƒEƒBƒ“ƒhƒE‚Ìw’è‚µ‚½ƒŠƒ\[ƒX‚ğŒğŠ·‚·‚é
-		/// ‘Î‰‚·‚é“ü—Í‹@Ší‚ğæ‚è‘Ö‚¦‚éÛ‚È‚Ç‚Ég‚¤
+		/// æŒ‡å®šã—ãŸäºŒã¤ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®æŒ‡å®šã—ãŸãƒªã‚½ãƒ¼ã‚¹ã‚’äº¤æ›ã™ã‚‹
+		/// å¯¾å¿œã™ã‚‹å…¥åŠ›æ©Ÿå™¨ã‚’å–ã‚Šæ›¿ãˆã‚‹éš›ãªã©ã«ä½¿ã†
 		/// </summary>
-		/// <typeparam name="ResourceT">w’è‚·‚éƒŠƒ\[ƒX‚ÌŒ^</typeparam>
-		/// <param name="context1">ƒfƒtƒHƒ‹ƒg‚ÅFirst</param>
-		/// <param name="context2">ƒfƒtƒHƒ‹ƒg‚ÅSecond</param>
+		/// <typeparam name="ResourceT">æŒ‡å®šã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹ã®å‹</typeparam>
+		/// <param name="context1">ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§First</param>
+		/// <param name="context2">ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§Second</param>
 		template <typename ResourceT>
 		void SwapResource(
-			WindowContext context1 = WindowContext::First,
-			WindowContext context2 = WindowContext::Second
+			WindowContext _context1 = WindowContext::FIRST,
+			WindowContext _context2 = WindowContext::SECOND
 		);
 
 		/// <summary>
-		/// ƒŠƒ\[ƒX‚ğæ“¾‚·‚é
+		/// ãƒªã‚½ãƒ¼ã‚¹ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <typeparam name="ResourceT">ƒŠƒ\[ƒX‚ÌŒ^</typeparam>
-		/// <param name="windowContext">æ“¾‚·‚éƒEƒBƒ“ƒhƒE‚Ì¯•Êq</param>
-		/// <returns>ƒŠƒ\[ƒX‚ÌQÆ</returns>
-		template <typename ResourceT> ResourceT& Get(WindowContext windowContext)
+		/// <typeparam name="ResourceT">ãƒªã‚½ãƒ¼ã‚¹ã®å‹</typeparam>
+		/// <param name="windowContext">å–å¾—ã™ã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­</param>
+		/// <returns>ãƒªã‚½ãƒ¼ã‚¹ã®å‚ç…§</returns>
+		template <typename ResourceT> ResourceT& Get(WindowContext _windowContext)
 		{
-			auto itr = collectionMap_.find(windowContext);
-			assert(itr != collectionMap_.end() && "w’è‚³‚ê‚½WindowContext‚ÌƒŠƒ\[ƒX‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ");
+			auto itr = collectionMap_.find(_windowContext);
+			assert(itr != collectionMap_.end() && "æŒ‡å®šã•ã‚ŒãŸWindowContextã®ãƒªã‚½ãƒ¼ã‚¹ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
 
 			static_assert(
 				std::is_base_of_v<WindowContextResource, ResourceT>,
-				"WindowContextResource‚ğŒp³‚µ‚Ä‚¢‚È‚¢ƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚Íæ“¾‚Å‚«‚Ü‚¹‚ñB"
+				"WindowContextResourceã‚’ç¶™æ‰¿ã—ã¦ã„ãªã„ã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã¯å–å¾—ã§ãã¾ã›ã‚“ã€‚"
 			);
 
 			return itr->second.Get<ResourceT>();
 		}
 
 		/// <summary>
-		/// Œ»İ—LŒø‚ÈƒEƒBƒ“ƒhƒE‚Ì¯•Êq‚ğ•Ô‚·
+		/// ç¾åœ¨æœ‰åŠ¹ãªã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­ã‚’è¿”ã™
 		/// </summary>
-		/// <returns>Œ»İ‚ÌWindowContext</returns>
+		/// <returns>ç¾åœ¨ã®WindowContext</returns>
 		WindowContext CurrCtx()
 		{
 			return currentContext_;
 		}
 
 		/// <summary>
-		/// Œ^‚ğw’è‚µ‚Ä“o˜^‚·‚éŠÖ”
+		/// å‹ã‚’æŒ‡å®šã—ã¦ç™»éŒ²ã™ã‚‹é–¢æ•°
 		/// </summary>
-		/// <typeparam name="...Args">w’è‚µ‚½‡”Ô‚É‰Šú‰»‚³‚ê‚é</typeparam>
+		/// <typeparam name="...Args">æŒ‡å®šã—ãŸé †ç•ªã«åˆæœŸåŒ–ã•ã‚Œã‚‹</typeparam>
 		template <class... Args> void RegisterResourceTypes()
 		{
 			static constexpr bool allAreBaseOfWindowContextResource =
@@ -110,7 +110,7 @@ namespace mtgb
 
 			static_assert(
 				allAreBaseOfWindowContextResource,
-				"Args...‚ÍWindowContextResource‚Ì”h¶Œ^‚Å‚ ‚é•K—v‚ª‚ ‚è‚Ü‚·"
+				"Args...ã¯WindowContextResourceã®æ´¾ç”Ÿå‹ã§ã‚ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™"
 			);
 
 			(insertionOrder_.push_back(typeid(Args)), ...);
@@ -127,24 +127,24 @@ namespace mtgb
 	}
 
 	template <typename ResourceT>
-	inline void WindowContextResourceManager::SwapResource(WindowContext context1, WindowContext context2)
+	inline void WindowContextResourceManager::SwapResource(WindowContext _context1, WindowContext _context2)
 	{
-		// “¯‚¶ƒEƒBƒ“ƒhƒE‚ğw’è‚µ‚Ä‚¢‚È‚¢‚©Šm”F
-		if (context1 == context2)
+		// åŒã˜ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’æŒ‡å®šã—ã¦ã„ãªã„ã‹ç¢ºèª
+		if (_context1 == _context2)
 		{
 			return;
 		}
 
-		// context1,2‚ÌResourceCollection‚ª“o˜^‚³‚ê‚Ä‚¢‚éŠm”F
-		auto itr1 = collectionMap_.find(context1);
-		auto itr2 = collectionMap_.find(context2);
+		// context1,2ã®ResourceCollectionãŒç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ç¢ºèª
+		auto itr1 = collectionMap_.find(_context1);
+		auto itr2 = collectionMap_.find(_context2);
 
-		assert(itr1 != collectionMap_.end() && "w’è‚³‚ê‚½WindowContext‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ");
-		assert(itr2 != collectionMap_.end() && "w’è‚³‚ê‚½WindowContext‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ");
+		assert(itr1 != collectionMap_.end() && "æŒ‡å®šã•ã‚ŒãŸWindowContextãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
+		assert(itr2 != collectionMap_.end() && "æŒ‡å®šã•ã‚ŒãŸWindowContextãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
 
 		std::type_index typeIdx = typeid(ResourceT);
 
-		// “ü‚ê‘Ö‚¦‚é
+		// å…¥ã‚Œæ›¿ãˆã‚‹
 		std::swap(itr1->second[typeIdx], itr2->second[typeIdx]);
 	}
 } // namespace mtgb

@@ -5,7 +5,7 @@
 #include "StageEditScene.h"
 #include "CommandHistoryManager.h"
 #include "ActorManager.h"
-#pragma region ゲーム側で追加
+#pragma region 繧ｲ繝ｼ繝蛛ｴ縺ｧ霑ｽ蜉
 
 #pragma endregion
 
@@ -23,25 +23,25 @@ SampleGame::~SampleGame()
 
 void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 {
-	Game::Set<ComponentRegistry>(SystemUpdateType::DontCallMe);
-	Game::Set<GameObjectTypeRegistry>(SystemUpdateType::DontCallMe);
+	Game::Set<ComponentRegistry>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<GameObjectTypeRegistry>(SystemUpdateType::DONT_CALL_ME);
 
-	Game::Set<EntityManager>(SystemUpdateType::DontCallMe);
-	Game::Set<Time>(SystemUpdateType::Cycle);
-	Game::Set<Timer>(SystemUpdateType::Frame);
+	Game::Set<EntityManager>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<Time>(SystemUpdateType::CYCLE);
+	Game::Set<Timer>(SystemUpdateType::FRAME);
 
-	Game::Set<RenderSystem>(SystemUpdateType::DontCallMe);
-	Game::Set<AssetsManager>(SystemUpdateType::DontCallMe);
+	Game::Set<RenderSystem>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<AssetsManager>(SystemUpdateType::DONT_CALL_ME);
 
-	Game::Set<Screen>(SystemUpdateType::DontCallMe);
-	Game::Set<WindowManager>(SystemUpdateType::Cycle);
+	Game::Set<Screen>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<WindowManager>(SystemUpdateType::CYCLE);
 
-	Game::Set<DirectX11Manager>(SystemUpdateType::Frame);
-	Game::Set<Direct2D>(SystemUpdateType::Frame);
-	Game::Set<DirectWrite>(SystemUpdateType::Frame);
-	Game::Set<Input>(SystemUpdateType::DontCallMe);
+	Game::Set<DirectX11Manager>(SystemUpdateType::FRAME);
+	Game::Set<Direct2D>(SystemUpdateType::FRAME);
+	Game::Set<DirectWrite>(SystemUpdateType::FRAME);
+	Game::Set<Input>(SystemUpdateType::DONT_CALL_ME);
 
-	Game::Set<WindowContextResourceManager>(SystemUpdateType::DontCallMe);
+	Game::Set<WindowContextResourceManager>(SystemUpdateType::DONT_CALL_ME);
 	Game::System<WindowContextResourceManager>()
 		.RegisterResourceTypes<
 			WindowResource,
@@ -51,40 +51,39 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 			InputResource,
 			CameraResource>();
 
-	Game::Set<SingleWindow>(SystemUpdateType::Frame);
-	Game::Set<CameraSystem>(SystemUpdateType::Frame);
+	Game::Set<SingleWindow>(SystemUpdateType::FRAME);
+	Game::Set<CameraSystem>(SystemUpdateType::FRAME);
 
-	Game::Set<ImGuiRenderer>(SystemUpdateType::Frame);
-	Game::Set<ScoreManager>(SystemUpdateType::Frame);
+	Game::Set<ImGuiRenderer>(SystemUpdateType::FRAME);
+	Game::Set<ScoreManager>(SystemUpdateType::FRAME);
 
-	Game::Set<Debug>(SystemUpdateType::Cycle);
+	Game::Set<Debug>(SystemUpdateType::CYCLE);
 
-	Game::Set<Image>(SystemUpdateType::DontCallMe);
-	Game::Set<Audio>(SystemUpdateType::Frame);
-	Game::Set<OBJ>(SystemUpdateType::Frame);
-	Game::Set<Fbx>(SystemUpdateType::Frame);
-	Game::Set<TextCache>(SystemUpdateType::Frame);
+	Game::Set<Image>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<Audio>(SystemUpdateType::FRAME);
+	Game::Set<OBJ>(SystemUpdateType::FRAME);
+	Game::Set<Fbx>(SystemUpdateType::FRAME);
+	Game::Set<TextCache>(SystemUpdateType::FRAME);
 
-	Game::Set<TransformCP>(SystemUpdateType::Frame);
-	Game::Set<MeshRendererCP>(SystemUpdateType::DontCallMe);
-	Game::Set<RigidBodyCP>(SystemUpdateType::Frame);
-	Game::Set<ColliderCP>(SystemUpdateType::Frame);
-	Game::Set<AudioPlayerCP>(SystemUpdateType::Frame);
-	Game::Set<InterpolatorCP>(SystemUpdateType::Frame);
-	Game::Set<ImageRendererCP>(SystemUpdateType::Frame);
-	Game::Set<TextRendererCP>(SystemUpdateType::Frame);
+	Game::Set<TransformCP>(SystemUpdateType::FRAME);
+	Game::Set<MeshRendererCP>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<RigidBodyCP>(SystemUpdateType::FRAME);
+	Game::Set<ColliderCP>(SystemUpdateType::FRAME);
+	Game::Set<InterpolatorCP>(SystemUpdateType::FRAME);
+	Game::Set<ImageRendererCP>(SystemUpdateType::FRAME);
+	Game::Set<TextRendererCP>(SystemUpdateType::FRAME);
 
-	Game::Set<CommandHistoryManager>(SystemUpdateType::DontCallMe);
-	Game::Set<Draw>(SystemUpdateType::DontCallMe);
-	Game::Set<EventManager>(SystemUpdateType::DontCallMe);
-	Game::Set<StageManger>(SystemUpdateType::DontCallMe);
-	Game::Set<ImGuiEditorCamera>(SystemUpdateType::Frame);
-	Game::Set<ImGuiEditor>(SystemUpdateType::Frame);
+	Game::Set<CommandHistoryManager>(SystemUpdateType::FRAME);
+	Game::Set<Draw>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<EventManager>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<StageManger>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<ImGuiEditorCamera>(SystemUpdateType::FRAME);
+	Game::Set<ImGuiEditor>(SystemUpdateType::FRAME);
 
-	Game::Set<EffectManager>(SystemUpdateType::Frame);
-	Game::Set<ActorManager>(SystemUpdateType::DontCallMe);
-	Game::Set<SceneSystem>(SystemUpdateType::Frame);
-	// 開始時のシーン
+	Game::Set<EffectManager>(SystemUpdateType::FRAME);
+	Game::Set<ActorManager>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<SceneSystem>(SystemUpdateType::FRAME);
+	// 髢句ｧ区凾縺ｮ繧ｷ繝ｼ繝ｳ
 	// Game::System<SceneSystem>().Move<PlayScene>();
 	// Game::System<SceneSystem>().Move<CheckTutorialScene>();
 #if TO_TEST_SCENE

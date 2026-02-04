@@ -11,24 +11,24 @@ constexpr bool is_builtin_type_v = std::is_arithmetic_v<T> || std::is_same_v<T, 
 
 namespace JsonConverter::detail
 {
-	// to_json ‚ª‘¶İ‚·‚é‚©ƒ`ƒFƒbƒN
+	// to_json ãŒå­˜åœ¨ã™ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 	template <typename T, typename = void> struct has_to_json : std::false_type
 	{
 	};
 
-	// nlohmann::json json = T value ‚ª‰Â”\‚©
+	// nlohmann::json json = T value ãŒå¯èƒ½ã‹
 	template <typename T>
 	struct has_to_json<T, std::void_t<decltype(std::declval<nlohmann::json&>() = std::declval<const T&>())>>
 		: std::true_type
 	{
 	};
 
-	// from_json ‚ª‘¶İ‚·‚é‚©ƒ`ƒFƒbƒN
+	// from_json ãŒå­˜åœ¨ã™ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 	template <typename T, typename = void> struct has_from_json : std::false_type
 	{
 	};
 
-	// nlohmann::json::get<T>() ‚ª‰Â”\‚©
+	// nlohmann::json::get<T>() ãŒå¯èƒ½ã‹
 	template <typename T>
 	struct has_from_json<T, std::void_t<decltype(std::declval<const nlohmann::json&>().get<T>())>> : std::true_type
 	{
@@ -49,7 +49,7 @@ namespace JsonConverter
 template <typename... Attrs> std::string JsonConverter::GetDisplayName(const std::tuple<Attrs...>& _attrs) noexcept
 {
 
-	// ƒpƒ‰ƒ[ƒ^‚Ì’†‚©‚çDisplayName‚ÌŒ^‚ğ’T‚·
+	// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ä¸­ã‹ã‚‰DisplayNameã®å‹ã‚’æ¢ã™
 	if constexpr (std::disjunction_v<std::is_same<Attrs, typename ::DisplayName>...>)
 	{
 		return std::string(std::get<typename ::DisplayName>(_attrs)());
@@ -85,7 +85,7 @@ template <typename T> nlohmann::json JsonConverter::Serialize(const T& _value)
 	json data;
 	if constexpr (is_builtin_type_v<Type>)
 	{
-		// ‘g‚İ‚İŒ^
+		// çµ„ã¿è¾¼ã¿å‹
 		data = _value;
 	}
 	else if constexpr (detail::has_to_json<Type>::value)
@@ -138,7 +138,7 @@ template <typename T> void JsonConverter::Deserialize(T& _value, const nlohmann:
 
 	if constexpr (is_builtin_type_v<Type>)
 	{
-		// ‘g‚İ‚İŒ^
+		// çµ„ã¿è¾¼ã¿å‹
 		_json.get_to(_value);
 	}
 	else if constexpr (detail::has_from_json<Type>::value)

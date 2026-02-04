@@ -4,7 +4,7 @@
 
 size_t mtgb::GetSizeUTF8Characters(const std::u8string& _string)
 {
-	enum BYTE_SIZE : int
+	enum ByteSize : int
 	{
 		BYTE_SIZE_IDK,
 		BYTE_SIZE1,
@@ -24,7 +24,7 @@ size_t mtgb::GetSizeUTF8Characters(const std::u8string& _string)
 	size_t charasCount{};
 	for (int byteIndex = 0; byteIndex < _string.size();)
 	{
-		BYTE_SIZE charaByteSize{};
+		ByteSize charaByteSize{};
 		if (isMatchByteSize(_string[byteIndex], 0b0000'0000, 0b1000'0000))
 		{
 			charaByteSize = BYTE_SIZE1;
@@ -42,7 +42,7 @@ size_t mtgb::GetSizeUTF8Characters(const std::u8string& _string)
 			charaByteSize = BYTE_SIZE4;
 		}
 
-		massert(charaByteSize != BYTE_SIZE_IDK && "ƒoƒCƒgƒJƒEƒ“ƒg‚ª•sˆê’v @SubStrBegin");
+		massert(charaByteSize != BYTE_SIZE_IDK && "ãƒã‚¤ãƒˆã‚«ã‚¦ãƒ³ãƒˆãŒä¸ä¸€è‡´ @SubStrBegin");
 
 		byteIndex += charaByteSize;
 		charasCount++;
@@ -53,7 +53,7 @@ size_t mtgb::GetSizeUTF8Characters(const std::u8string& _string)
 
 std::u8string mtgb::SubStrBegin(const std::u8string& _string, const int _count)
 {
-	enum BYTE_SIZE : int
+	enum ByteSize : int
 	{
 		BYTE_SIZE_IDK,
 		BYTE_SIZE1,
@@ -62,8 +62,8 @@ std::u8string mtgb::SubStrBegin(const std::u8string& _string, const int _count)
 		BYTE_SIZE4,
 	};
 
-	int charaCount{}; // utf8‚Ì•¶š”ƒJƒEƒ“ƒg
-	int byteCount{};  // 1•¶š‚ğ\¬‚·‚éƒoƒCƒg”ƒJƒEƒ“ƒg
+	int charaCount{}; // utf8ã®æ–‡å­—æ•°ã‚«ã‚¦ãƒ³ãƒˆ
+	int byteCount{};  // 1æ–‡å­—ã‚’æ§‹æˆã™ã‚‹ãƒã‚¤ãƒˆæ•°ã‚«ã‚¦ãƒ³ãƒˆ
 	int byteIndex{};
 
 	static auto isMatchByteSize{
@@ -76,7 +76,7 @@ std::u8string mtgb::SubStrBegin(const std::u8string& _string, const int _count)
 	// REF: https://ja.wikipedia.org/wiki/UTF-8
 	for (byteIndex = 0; charaCount < _count && byteIndex < _string.size();)
 	{
-		BYTE_SIZE charaByteSize{};
+		ByteSize charaByteSize{};
 		if (isMatchByteSize(_string[byteIndex], 0b0000'0000, 0b1000'0000))
 		{
 			charaByteSize = BYTE_SIZE1;
@@ -94,7 +94,7 @@ std::u8string mtgb::SubStrBegin(const std::u8string& _string, const int _count)
 			charaByteSize = BYTE_SIZE4;
 		}
 
-		massert(charaByteSize != BYTE_SIZE_IDK && "ƒoƒCƒgƒJƒEƒ“ƒg‚ª•sˆê’v @SubStrBegin");
+		massert(charaByteSize != BYTE_SIZE_IDK && "ãƒã‚¤ãƒˆã‚«ã‚¦ãƒ³ãƒˆãŒä¸ä¸€è‡´ @SubStrBegin");
 
 		byteIndex += charaByteSize;
 		charaCount++;
@@ -111,13 +111,13 @@ std::wstring mtgb::MultiToWide(const std::string& _string)
 std::wstring mtgb::MultiToWide(const char* _string)
 {
 	int wlen = MultiByteToWideChar(
-		CP_ACP,	 // •ÏŠ·‚Ég—p‚·‚éƒR[ƒhƒy[ƒW‚ğw’è(ƒVƒXƒeƒ€‚ÌŠù’èƒR[ƒhƒy[ƒW‚ğg—p)
-		0,		 // •ÏŠ·‚Ìí—Ş
-		_string, // •ÏŠ·‚·‚é•¶š—ñ
-		-1,		 // •¶š—ñ‚ÌƒTƒCƒYB-1‚Ìê‡I’[‚Ìnull•¶š‚ğŠÜ‚Ş•¶š—ñ‘S‘Ì
-		NULL,	 // •ÏŠ·‚³‚ê‚½•¶š—ñ‚ğó‚¯æ‚é
+		CP_ACP,	 // å¤‰æ›ã«ä½¿ç”¨ã™ã‚‹ã‚³ãƒ¼ãƒ‰ãƒšãƒ¼ã‚¸ã‚’æŒ‡å®š(ã‚·ã‚¹ãƒ†ãƒ ã®æ—¢å®šã‚³ãƒ¼ãƒ‰ãƒšãƒ¼ã‚¸ã‚’ä½¿ç”¨)
+		0,		 // å¤‰æ›ã®ç¨®é¡
+		_string, // å¤‰æ›ã™ã‚‹æ–‡å­—åˆ—
+		-1,		 // æ–‡å­—åˆ—ã®ã‚µã‚¤ã‚ºã€‚-1ã®å ´åˆçµ‚ç«¯ã®nullæ–‡å­—ã‚’å«ã‚€æ–‡å­—åˆ—å…¨ä½“
+		NULL,	 // å¤‰æ›ã•ã‚ŒãŸæ–‡å­—åˆ—ã‚’å—ã‘å–ã‚‹
 		0
-	); // •¶š—ñ‚ğó‚¯æ‚éƒoƒbƒtƒ@‚ÌƒTƒCƒY,-1‚Ìê‡•¶š—ñ‘S‘Ì
+	); // æ–‡å­—åˆ—ã‚’å—ã‘å–ã‚‹ãƒãƒƒãƒ•ã‚¡ã®ã‚µã‚¤ã‚º,-1ã®å ´åˆæ–‡å­—åˆ—å…¨ä½“
 
 	std::wstring wstr(wlen, L'\0');
 	MultiByteToWideChar(CP_ACP, 0, _string, -1, &wstr[0], wlen);
@@ -156,19 +156,19 @@ std::wstring mtgb::UTF8ToWide(const std::u8string& _string)
 	if (_string.empty())
 		return std::wstring();
 
-	// •K—v‚Èƒoƒbƒtƒ@ƒTƒCƒY‚ğæ“¾
+	// å¿…è¦ãªãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚ºã‚’å–å¾—
 	int size = MultiByteToWideChar(
-		CP_UTF8, // ƒ\[ƒX‚ÌƒR[ƒhƒy[ƒW (UTF-8)
+		CP_UTF8, // ã‚½ãƒ¼ã‚¹ã®ã‚³ãƒ¼ãƒ‰ãƒšãƒ¼ã‚¸ (UTF-8)
 		MB_ERR_INVALID_CHARS,
 		reinterpret_cast<const char*>(_string.c_str()),
 		static_cast<int>(_string.size()),
-		nullptr, // o—Íæƒoƒbƒtƒ@‚È‚µ
-		0		 // ƒoƒbƒtƒ@ƒTƒCƒYæ“¾
+		nullptr, // å‡ºåŠ›å…ˆãƒãƒƒãƒ•ã‚¡ãªã—
+		0		 // ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚ºå–å¾—
 	);
 
 	massert(size != 0 && "Invalid UTF-8 sequence");
 
-	// •ÏŠ·—pƒoƒbƒtƒ@Šm•Û
+	// å¤‰æ›ç”¨ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 	std::wstring wstr(size, L'\0');
 	int ret = MultiByteToWideChar(
 		CP_UTF8,
@@ -201,7 +201,7 @@ std::string mtgb::WideToUTF8(const std::wstring& _wstring)
 
 std::string mtgb::WideToUTF8(const wchar_t* _wstring)
 {
-	// utf16¨utf8
+	// utf16â†’utf8
 	int u8len = WideCharToMultiByte(CP_UTF8, 0, _wstring, -1, NULL, 0, NULL, NULL);
 
 	std::string utf8str(u8len, '\0');
@@ -209,15 +209,15 @@ std::string mtgb::WideToUTF8(const wchar_t* _wstring)
 	WideCharToMultiByte(
 		CP_UTF8,
 		0,
-		_wstring,	 // •ÏŠ·‚·‚é•¶š—ñ
-		-1,			 // •¶š—ñ‚ÌƒTƒCƒYBI’[‚ªnull•¶š‚Ìê‡-1
-		&utf8str[0], // •ÏŠ·‚³‚ê‚½•¶š—ñ‚ğó‚¯æ‚é
-		u8len,		 // •¶š—ñ‚ğó‚¯æ‚éƒoƒbƒtƒ@‚ÌƒTƒCƒY
-		NULL,		 // w’è‚µ‚½ƒR[ƒhƒy[ƒW‚Å•\‚·‚±‚Æ‚ª‚Å‚«‚È‚¢ê‡‚Ég—p‚·‚é•¶š‚Ö‚Ìƒ|ƒCƒ“ƒ^
+		_wstring,	 // å¤‰æ›ã™ã‚‹æ–‡å­—åˆ—
+		-1,			 // æ–‡å­—åˆ—ã®ã‚µã‚¤ã‚ºã€‚çµ‚ç«¯ãŒnullæ–‡å­—ã®å ´åˆ-1
+		&utf8str[0], // å¤‰æ›ã•ã‚ŒãŸæ–‡å­—åˆ—ã‚’å—ã‘å–ã‚‹
+		u8len,		 // æ–‡å­—åˆ—ã‚’å—ã‘å–ã‚‹ãƒãƒƒãƒ•ã‚¡ã®ã‚µã‚¤ã‚º
+		NULL,		 // æŒ‡å®šã—ãŸã‚³ãƒ¼ãƒ‰ãƒšãƒ¼ã‚¸ã§è¡¨ã™ã“ã¨ãŒã§ããªã„å ´åˆã«ä½¿ç”¨ã™ã‚‹æ–‡å­—ã¸ã®ãƒã‚¤ãƒ³ã‚¿
 		NULL
-	); // •\‚·‚±‚Æ‚ª‚Å‚«‚¸‚ÉŠù’è‚Ì•¶š(?)‚ğg—p‚µ‚½‚©‚Ç‚¤‚©‚ğ¦‚·ƒtƒ‰ƒO‚Ö‚Ìƒ|ƒCƒ“ƒ^
+	); // è¡¨ã™ã“ã¨ãŒã§ããšã«æ—¢å®šã®æ–‡å­—(?)ã‚’ä½¿ç”¨ã—ãŸã‹ã©ã†ã‹ã‚’ç¤ºã™ãƒ•ãƒ©ã‚°ã¸ã®ãƒã‚¤ãƒ³ã‚¿
 
-	// ––”ö‚Ì'\0'‚ğœ‹
+	// æœ«å°¾ã®'\0'ã‚’é™¤å»
 	if (!utf8str.empty() && utf8str.back() == '\0')
 	{
 		utf8str.pop_back();
@@ -228,7 +228,7 @@ std::string mtgb::WideToUTF8(const wchar_t* _wstring)
 
 std::string mtgb::MultiToUTF8(const std::string& _string)
 {
-	// Shitf-JIS ¨ UTF-16 ¨ UTF-8
+	// Shitf-JIS â†’ UTF-16 â†’ UTF-8
 	return WideToUTF8(MultiToWide(_string));
 }
 
@@ -249,7 +249,7 @@ std::string mtgb::UTF8ToMulti(const char* _string)
 
 std::string mtgb::ExtractClassName(const std::string& _fullName)
 {
-	// "Box3D (0)" ¨ "Box3D"
+	// "Box3D (0)" â†’ "Box3D"
 	size_t pos = _fullName.rfind(" (");
 	if (pos != std::string::npos)
 	{

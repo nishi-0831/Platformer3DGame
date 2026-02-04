@@ -7,7 +7,7 @@ namespace mtgb
 {
 	class MeshRenderer;
 	/// <summary>
-	/// MeshRendererコンポーネントシステム
+	/// MeshRenderer繧ｳ繝ｳ繝昴�ｼ繝阪Φ繝医す繧ｹ繝�繝
 	/// </summary>
 	class MeshRendererCP : public IRenderableCP, public ComponentPool<MeshRenderer, MeshRendererCP>
 	{

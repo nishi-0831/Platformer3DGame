@@ -4,7 +4,7 @@
 namespace mtbin
 {
 	/// <summary>
-	/// <para>Byte”z—ñ‚ÌƒXƒgƒŠ[ƒ€</para>
+	/// <para>Byteé…åˆ—ã®ã‚¹ãƒˆãƒªãƒ¼ãƒ </para>
 	/// </summary>
 	class MemoryStream
 	{
@@ -13,7 +13,7 @@ namespace mtbin
 
 		enum struct SeekDir : SeekPoint
 		{
-			Head, // ˆê”Ô“ª
+			HEAD, // ä¸€ç•ªé ­
 		};
 
 	  public:
@@ -21,47 +21,47 @@ namespace mtbin
 		virtual ~MemoryStream();
 
 		/// <summary>
-		/// ƒƒ‚ƒŠƒXƒgƒŠ[ƒ€‚É”CˆÓ‚ÌŒ^‚ğ‘‚«‚Ş
+		/// ãƒ¡ãƒ¢ãƒªã‚¹ãƒˆãƒªãƒ¼ãƒ ã«ä»»æ„ã®å‹ã‚’æ›¸ãè¾¼ã‚€
 		/// </summary>
-		/// <typeparam name="T">”CˆÓ‚ÌŒ^</typeparam>
-		/// <param name="_value">‘‚«‚ŞƒIƒuƒWƒFƒNƒg</param>
+		/// <typeparam name="T">ä»»æ„ã®å‹</typeparam>
+		/// <param name="_value">æ›¸ãè¾¼ã‚€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</param>
 		template <typename T> void Write(T _value);
 
 		/// <summary>
-		/// ƒƒ‚ƒŠƒXƒgƒŠ[ƒ€‚É”CˆÓ‚ÌŒ^‚Ì”z—ñ‚ğ‘‚«‚Ş
+		/// ãƒ¡ãƒ¢ãƒªã‚¹ãƒˆãƒªãƒ¼ãƒ ã«ä»»æ„ã®å‹ã®é…åˆ—ã‚’æ›¸ãè¾¼ã‚€
 		/// </summary>
-		/// <param name="_pArray">”z—ñ‚Ìƒ|ƒCƒ“ƒ^</param>
-		/// <param name="_arrayLength">—v‘f”</param>
+		/// <param name="_pArray">é…åˆ—ã®ãƒã‚¤ãƒ³ã‚¿</param>
+		/// <param name="_arrayLength">è¦ç´ æ•°</param>
 		template <typename T> void Write(T* _pArray, const int& _arrayLength);
 
 		/// <summary>
-		/// ƒƒ‚ƒŠƒXƒgƒŠ[ƒ€‚©‚ç”CˆÓ‚ÌŒ^ƒTƒCƒY•ª“Ç‚İæ‚é
+		/// ãƒ¡ãƒ¢ãƒªã‚¹ãƒˆãƒªãƒ¼ãƒ ã‹ã‚‰ä»»æ„ã®å‹ã‚µã‚¤ã‚ºåˆ†èª­ã¿å–ã‚‹
 		/// </summary>
-		/// <typeparam name="T">”CˆÓ‚ÌŒ^</typeparam>
-		/// <returns>“Ç‚İæ‚Á‚½ƒIƒuƒWƒFƒNƒg</returns>
+		/// <typeparam name="T">ä»»æ„ã®å‹</typeparam>
+		/// <returns>èª­ã¿å–ã£ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ</returns>
 		template <typename T> T Read();
 
 		/// <summary>
-		/// ƒƒ‚ƒŠƒXƒgƒŠ[ƒ€‚©‚ç”CˆÓ‚ÌŒ^‚Ì”z—ñ‚ğ“Ç‚İæ‚é
+		/// ãƒ¡ãƒ¢ãƒªã‚¹ãƒˆãƒªãƒ¼ãƒ ã‹ã‚‰ä»»æ„ã®å‹ã®é…åˆ—ã‚’èª­ã¿å–ã‚‹
 		/// </summary>
-		/// <param name="_pWriteBuffer">“Ç‚İæ‚Á‚Ä‘‚«‚Ş”z—ñ‚Ìƒ|ƒCƒ“ƒ^</param>
-		/// <param name="_writeBufferLength">“Ç‚İæ‚Á‚Ä‘‚«‚Ş”z—ñ‚Ì—v‘f”</param>
-		/// <param name="_arrayLength">—v‘f”</param>
+		/// <param name="_pWriteBuffer">èª­ã¿å–ã£ã¦æ›¸ãè¾¼ã‚€é…åˆ—ã®ãƒã‚¤ãƒ³ã‚¿</param>
+		/// <param name="_writeBufferLength">èª­ã¿å–ã£ã¦æ›¸ãè¾¼ã‚€é…åˆ—ã®è¦ç´ æ•°</param>
+		/// <param name="_arrayLength">è¦ç´ æ•°</param>
 		template <typename T> void Read(T* _pWriteBuffer, const int& _writeBufferLength, const int& _arrayLength);
 
 		/// <summary>
-		/// “Ç‚İ‘‚«‚·‚éêŠ‚ğˆÚ“®‚·‚é
+		/// èª­ã¿æ›¸ãã™ã‚‹å ´æ‰€ã‚’ç§»å‹•ã™ã‚‹
 		/// </summary>
-		/// <param name="_point">ˆÚ“®‚·‚éêŠ(’¼)</param>
+		/// <param name="_point">ç§»å‹•ã™ã‚‹å ´æ‰€(ç›´)</param>
 		void Seek(SeekPoint _point);
 		/// <summary>
-		/// “Ç‚İ‘‚«‚·‚éêŠ‚ğˆÚ“®‚·‚é
+		/// èª­ã¿æ›¸ãã™ã‚‹å ´æ‰€ã‚’ç§»å‹•ã™ã‚‹
 		/// </summary>
-		/// <param name="_dir">â‘Î“I‚ÈêŠw’è</param>
+		/// <param name="_dir">çµ¶å¯¾çš„ãªå ´æ‰€æŒ‡å®š</param>
 		void Seek(SeekDir _dir);
 
 		/// <summary>
-		/// Œ»İ‚Ì“Ç‚İ‘‚«ˆÊ’u‚ğæ“¾
+		/// ç¾åœ¨ã®èª­ã¿æ›¸ãä½ç½®ã‚’å–å¾—
 		/// </summary>
 		/// <returns></returns>
 		inline size_t Current() const
@@ -70,7 +70,7 @@ namespace mtbin
 		}
 
 		/// <summary>
-		/// ‘Sƒf[ƒ^ƒTƒCƒY‚ğ•Ô‚·
+		/// å…¨ãƒ‡ãƒ¼ã‚¿ã‚µã‚¤ã‚ºã‚’è¿”ã™
 		/// </summary>
 		inline size_t GetLength() const
 		{
@@ -78,7 +78,7 @@ namespace mtbin
 		}
 
 		/// <summary>
-		/// ƒoƒbƒtƒ@ƒ|ƒCƒ“ƒ^‚ğæ“¾‚·‚é
+		/// ãƒãƒƒãƒ•ã‚¡ãƒã‚¤ãƒ³ã‚¿ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
 		/// <returns></returns>
 		inline mtbin::Byte* GetBuffer() const
@@ -87,49 +87,49 @@ namespace mtbin
 		}
 
 	  private:
-		const size_t BUFFER_SIZE; // ƒoƒbƒtƒ@”z—ñ‚ÌƒTƒCƒY
-		mtbin::Byte* pBuffer_;	  // “Ç‚İ‘‚«‚·‚éƒoƒbƒtƒ@”z—ñ
-		size_t currentIndex;	  // Œ»İ‚ÌƒCƒ“ƒfƒbƒNƒX
+		const size_t BUFFER_SIZE; // ãƒãƒƒãƒ•ã‚¡é…åˆ—ã®ã‚µã‚¤ã‚º
+		mtbin::Byte* pBuffer_;	  // èª­ã¿æ›¸ãã™ã‚‹ãƒãƒƒãƒ•ã‚¡é…åˆ—
+		size_t currentIndex;	  // ç¾åœ¨ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 	};
 
 	template <typename T> inline void MemoryStream::Write(T _value)
 	{
 		assert(
-			(currentIndex + sizeof(T)) < BUFFER_SIZE // ‘‚«‚ñ‚Å‚àƒI[ƒo[ƒ‰ƒ“‚µ‚È‚¢
+			(currentIndex + sizeof(T)) < BUFFER_SIZE // æ›¸ãè¾¼ã‚“ã§ã‚‚ã‚ªãƒ¼ãƒãƒ¼ãƒ©ãƒ³ã—ãªã„
 			&& "buffer over run @mtbin::MemoryStream::Write"
 		);
 
 		void* dist	= &(pBuffer_[currentIndex]);
 		void* src	= reinterpret_cast<void*>(&_value);
 		size_t size = sizeof(T);
-		// ‘‚«‚Ş
+		// æ›¸ãè¾¼ã‚€
 		::memcpy(dist, src, size);
-		currentIndex += sizeof(T); // ƒTƒCƒY•ªi‚ß‚é
+		currentIndex += sizeof(T); // ã‚µã‚¤ã‚ºåˆ†é€²ã‚ã‚‹
 	}
 
 	template <typename T> inline void MemoryStream::Write(T* _pArray, const int& _arrayLength)
 	{
-		size_t size{sizeof(T) * _arrayLength}; // ‘‚«‚ŞƒTƒCƒY
+		size_t size{sizeof(T) * _arrayLength}; // æ›¸ãè¾¼ã‚€ã‚µã‚¤ã‚º
 		assert(
-			(currentIndex + size) <= BUFFER_SIZE // ‘‚«‚ñ‚Å‚àƒI[ƒo[ƒ‰ƒ“‚µ‚È‚¢
+			(currentIndex + size) <= BUFFER_SIZE // æ›¸ãè¾¼ã‚“ã§ã‚‚ã‚ªãƒ¼ãƒãƒ¼ãƒ©ãƒ³ã—ãªã„
 			&& "buffer over run @mtbin::MemoryStream::Write"
 		);
 
-		// ‘‚«‚Ş
+		// æ›¸ãè¾¼ã‚€
 		::memcpy(&(pBuffer_[currentIndex]), reinterpret_cast<mtbin::Byte*>(_pArray), size);
-		currentIndex += size; // ƒTƒCƒY•ªi‚ß‚é
+		currentIndex += size; // ã‚µã‚¤ã‚ºåˆ†é€²ã‚ã‚‹
 	}
 
 	template <typename T> inline T MemoryStream::Read()
 	{
 		assert(
-			(currentIndex + sizeof(T)) <= BUFFER_SIZE // “Ç‚İ‚ñ‚Å‚àƒAƒ“ƒ_[ƒ‰ƒ“‚µ‚È‚¢
+			(currentIndex + sizeof(T)) <= BUFFER_SIZE // èª­ã¿è¾¼ã‚“ã§ã‚‚ã‚¢ãƒ³ãƒ€ãƒ¼ãƒ©ãƒ³ã—ãªã„
 			&& "buffer under run @mtbin::MemoryStream::Read"
 		);
 
-		T pickBuffer{};												 // æ‚èo‚µ—pƒoƒbƒtƒ@—pˆÓ
-		::memcpy(&pickBuffer, &(pBuffer_[currentIndex]), sizeof(T)); // æ‚èo‚·
-		currentIndex += sizeof(T);									 // ƒTƒCƒY•ªi‚ß‚é
+		T pickBuffer{};												 // å–ã‚Šå‡ºã—ç”¨ãƒãƒƒãƒ•ã‚¡ç”¨æ„
+		::memcpy(&pickBuffer, &(pBuffer_[currentIndex]), sizeof(T)); // å–ã‚Šå‡ºã™
+		currentIndex += sizeof(T);									 // ã‚µã‚¤ã‚ºåˆ†é€²ã‚ã‚‹
 
 		return pickBuffer;
 	}
@@ -138,22 +138,22 @@ namespace mtbin
 	inline void MemoryStream::Read(T* _pWriteBuffer, const int& _writeBufferLength, const int& _arrayLength)
 	{
 		assert(
-			_pWriteBuffer != nullptr // ‘‚«‚İæ‚Ínullptr‚Å‚Í‚È‚¢
+			_pWriteBuffer != nullptr // æ›¸ãè¾¼ã¿å…ˆã¯nullptrã§ã¯ãªã„
 			&& "write buffer is nullptr @mtbin::MemoryStream::Read"
 		);
 
 		assert(
-			_writeBufferLength >= _arrayLength // ‘‚«‚İæ‚É\•ª‚È—e—Ê‚ ‚è
+			_writeBufferLength >= _arrayLength // æ›¸ãè¾¼ã¿å…ˆã«ååˆ†ãªå®¹é‡ã‚ã‚Š
 			&& "write buffer under run @mtbin::MemoryStream::Read"
 		);
 
-		size_t size{sizeof(T) * _arrayLength}; // “Ç‚İ‚ŞƒTƒCƒY
+		size_t size{sizeof(T) * _arrayLength}; // èª­ã¿è¾¼ã‚€ã‚µã‚¤ã‚º
 		assert(
-			(currentIndex + size) <= BUFFER_SIZE // “Ç‚İ‚ñ‚Å‚àƒAƒ“ƒ_[ƒ‰ƒ“‚µ‚È‚¢
+			(currentIndex + size) <= BUFFER_SIZE // èª­ã¿è¾¼ã‚“ã§ã‚‚ã‚¢ãƒ³ãƒ€ãƒ¼ãƒ©ãƒ³ã—ãªã„
 			&& "buffer under run @mtbin::MemoryStream::Read"
 		);
 
-		::memcpy(_pWriteBuffer, &(pBuffer_[currentIndex]), size); // æ‚èo‚·
-		currentIndex += size;									  // ƒTƒCƒY•ªi‚ß‚é
+		::memcpy(_pWriteBuffer, &(pBuffer_[currentIndex]), size); // å–ã‚Šå‡ºã™
+		currentIndex += size;									  // ã‚µã‚¤ã‚ºåˆ†é€²ã‚ã‚‹
 	}
 } // namespace mtbin

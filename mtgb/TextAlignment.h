@@ -3,13 +3,13 @@
 namespace mtgb
 {
 	/// <summary>
-	/// �e�L�X�g����`�̈���̂ǂ��ɕ\�����邩
+	/// テキストを矩形領域内のどこに表示するか
 	/// </summary>
 	enum class TextAlignment
 	{
-		topLeft,	// ����ɔz�u
-		center,		// �����ɔz�u
-		bottomLeft, // �����̔z�u
-		middleLeft, // �������̔z�u
+		TOP_LEFT,	// 左上に配置
+		CENTER,		// 中央に配置
+		BOTTOM_LEFT, // 左下の配置
+		MIDDLE_LEFT, // 左中央の配置
 	};
 } // namespace mtgb

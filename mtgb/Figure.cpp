@@ -23,24 +23,24 @@ void mtgb::Figure::Draw(const RectInt& _rect, const Color& _color)
 
 void mtgb::Figure::Draw(const RectF& _rect, const Color& _color)
 {
-	using DirectX::XMMatrixIdentity;	// ’PˆÊs—ñ
-	using DirectX::XMMatrixScaling;		// Šgk
-	using DirectX::XMMatrixTranslation; // •½sˆÚ“®
-	using DirectX::XMMatrixTranspose;	// s‚Æ—ñ‚ğ“ü‚ê‘Ö‚¦‚é
+	using DirectX::XMMatrixIdentity;	// å˜ä½è¡Œåˆ—
+	using DirectX::XMMatrixScaling;		// æ‹¡ç¸®
+	using DirectX::XMMatrixTranslation; // å¹³è¡Œç§»å‹•
+	using DirectX::XMMatrixTranspose;	// è¡Œã¨åˆ—ã‚’å…¥ã‚Œæ›¿ãˆã‚‹
 
-	DirectX11Draw::SetBlendMode(BlendMode::Default); // ƒuƒŒƒ“ƒhƒ‚[ƒhƒfƒtƒHƒ‹ƒg
-	DirectX11Draw::SetIsWriteToDepthBuffer(false);	 // [“xƒoƒbƒtƒ@‚Ö‚Ì‘‚«‚İ‚È‚µ
+	DirectX11Draw::SetBlendMode(BlendMode::DEFAULT); // ãƒ–ãƒ¬ãƒ³ãƒ‰ãƒ¢ãƒ¼ãƒ‰ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ
+	DirectX11Draw::SetIsWriteToDepthBuffer(false);	 // æ·±åº¦ãƒãƒƒãƒ•ã‚¡ã¸ã®æ›¸ãè¾¼ã¿ãªã—
 
 	IShader::Draw<ConstantBuffer, Vertex>(
-		[&, this](ConstantBuffer* _pCB)
+		[&](ConstantBuffer* _pCB)
 		{
 			_pCB->g_color		= _color.ToVector4Norm();
 			_pCB->g_worldMatrix = XMMatrixIdentity();
-#pragma region TODO: ŒvZŒ©’¼‚µ•K—v
-			// ƒXƒNƒŠ[ƒ“ƒTƒCƒY‚ğæ“¾
+#pragma region TODO: è¨ˆç®—è¦‹ç›´ã—å¿…è¦
+			// ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚µã‚¤ã‚ºã‚’å–å¾—
 			const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
 
-			// ”ŠwÀ•W‚Æ•`‰æÀ•W‚Ìy²·ˆÙ‰ğÁ
+			// æ•°å­¦åº§æ¨™ã¨æç”»åº§æ¨™ã®yè»¸å·®ç•°è§£æ¶ˆ
 			RectF cartesianBox{_rect};
 			cartesianBox.y = SCREEN_SIZE.y - cartesianBox.y;
 			cartesianBox.height *= -1;
@@ -48,45 +48,45 @@ void mtgb::Figure::Draw(const RectF& _rect, const Color& _color)
 			const Vector2F VIEW_BEGIN{cartesianBox.GetBegin()};
 			const Vector2F VIEW_END{cartesianBox.GetEnd()};
 
-			// •\¦‚·‚éƒTƒCƒY‚É‡‚í‚¹‚é
+			// è¡¨ç¤ºã™ã‚‹ã‚µã‚¤ã‚ºã«åˆã‚ã›ã‚‹
 			Matrix4x4 scalingBox = XMMatrixScaling(
 				std::abs(VIEW_END.x - VIEW_BEGIN.x) * 2.0f,
 				std::abs(VIEW_END.y - VIEW_BEGIN.y) * 2.0f,
 				1.0f
 			);
 
-			// •\¦‚·‚éƒ{ƒbƒNƒX‚ÌˆÊ’u‚ğˆÚ“®‚·‚é
+			// è¡¨ç¤ºã™ã‚‹ãƒœãƒƒã‚¯ã‚¹ã®ä½ç½®ã‚’ç§»å‹•ã™ã‚‹
 			Matrix4x4 moveBox = XMMatrixTranslation(
 				((VIEW_END.x - VIEW_BEGIN.x) / 2.0f + VIEW_BEGIN.x) / (SCREEN_SIZE.x / 2.0f),
 				((VIEW_BEGIN.y - VIEW_END.y) / 2.0f + VIEW_END.y) / (SCREEN_SIZE.y / 2.0f),
 				0.0f
 			);
 
-			// ‰æ–Ê‚É‡‚í‚¹‚é
+			// ç”»é¢ã«åˆã‚ã›ã‚‹
 			Matrix4x4 scalingView = XMMatrixScaling(1.0f / (SCREEN_SIZE.x * 2), 1.0f / (SCREEN_SIZE.y * 2), 1.0f);
 
-			// ƒIƒtƒZƒbƒg - ‰æ–Ê’†S‚Í(0, 0) ¶‰º‚Í(-1, -1)
+			// ã‚ªãƒ•ã‚»ãƒƒãƒˆ - ç”»é¢ä¸­å¿ƒã¯(0, 0) å·¦ä¸‹ã¯(-1, -1)
 			Matrix4x4 offsetView{XMMatrixTranslation(-1.0f, -1.0f, 0.0f)};
 
-			// ÅI“I‚Ès—ñ
+			// æœ€çµ‚çš„ãªè¡Œåˆ—
 			Matrix4x4 world{scalingBox * scalingView * moveBox * offsetView};
 #pragma endregion
 
-			// MEMO: CPU -> s—Dæ, GPU -> —ñ—Dæ
+			// MEMO: CPU -> è¡Œå„ªå…ˆ, GPU -> åˆ—å„ªå…ˆ
 			//  REF: https://qiita.com/niusounds/items/65099654673f5df3be9b
 			_pCB->g_worldMatrix = XMMatrixTranspose(world);
 		},
-		[&, this](ID3D11DeviceContext* _pDC) {}
+		[&](ID3D11DeviceContext* _pDC) {}
 	);
 }
 
 void mtgb::Figure::InitializeVertexBuffer(ID3D11Device* _pDevice)
 {
 	Vertex vertexes[]{
-		Vector3{-1, 1, 0},	// ¶ã
-		Vector3{1, 1, 0},	// ‰Eã
-		Vector3{-1, -1, 0}, // ¶‰º
-		Vector3{1, -1, 0},	// ‰E‰º
+		{Vector3{-1, 1, 0}},	// å·¦ä¸Š
+		{Vector3{1, 1, 0}},	// å³ä¸Š
+		{Vector3{-1, -1, 0}}, // å·¦ä¸‹
+		{Vector3{1, -1, 0}},	// å³ä¸‹
 	};
 
 	const D3D11_BUFFER_DESC BUFFER_DESC{
@@ -108,8 +108,8 @@ void mtgb::Figure::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pVertexBuffer_);
 
 	massert(
-		SUCCEEDED(hResult) // ’¸“_ƒoƒbƒtƒ@‚Ìì¬‚É¬Œ÷
-		&& "’¸“_ƒoƒbƒtƒ@‚Ìì¬‚É¸”s @Figure::InitializeVertexBuffer"
+		SUCCEEDED(hResult) // é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«æˆåŠŸ
+		&& "é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•— @Figure::InitializeVertexBuffer"
 	);
 }
 
@@ -136,8 +136,8 @@ void mtgb::Figure::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pIndexBuffer_);
 
 	massert(
-		SUCCEEDED(hResult) // ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬‚É¬Œ÷
-		&& "ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬‚É¸”s @Figure::InitializeIndexBuffer"
+		SUCCEEDED(hResult) // ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«æˆåŠŸ
+		&& "ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•— @Figure::InitializeIndexBuffer"
 	);
 }
 
@@ -150,7 +150,7 @@ void mtgb::Figure::InitializeConstantBuffer(ID3D11Device* _pDevice)
 
 	const D3D11_BUFFER_DESC BUFFER_DESC{
 		.ByteWidth			 = sizeof(ConstantBuffer),
-		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: “r’†‚Å‘‚«Š·‚¦‚é‚½‚ßdynamic
+		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: é€”ä¸­ã§æ›¸ãæ›ãˆã‚‹ãŸã‚dynamic
 		.BindFlags			 = D3D11_BIND_CONSTANT_BUFFER,
 		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE,
 		.MiscFlags			 = 0,
@@ -167,7 +167,7 @@ void mtgb::Figure::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pConstantBuffer_);
 
 	massert(
-		SUCCEEDED(hResult) // ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìì¬‚É¬Œ÷
-		&& "ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìì¬‚É¸”s @Figure::InitializeConstantBuffer"
+		SUCCEEDED(hResult) // ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«æˆåŠŸ
+		&& "ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•— @Figure::InitializeConstantBuffer"
 	);
 }

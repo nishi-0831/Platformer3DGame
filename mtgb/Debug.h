@@ -10,11 +10,11 @@
 
 #define LOGF(format, ...) mtgb::Debug::LogF(format, __VA_ARGS__)
 
-// Œã•ûŒİŠ·«‚Ì‚½‚ßAŒ³‚Ìƒ}ƒNƒ‚àc‚·
+// å¾Œæ–¹äº’æ›æ€§ã®ãŸã‚ã€å…ƒã®ãƒã‚¯ãƒ­ã‚‚æ®‹ã™
 #define LOGIMGUI(format, ...)                                                                       \
 	Game::System<Debug>().LogImGui("General", std::source_location::current(), format, __VA_ARGS__)
 
-// ƒJƒeƒSƒŠw’è”Å‚ÌV‚µ‚¢ƒ}ƒNƒ
+// ã‚«ãƒ†ã‚´ãƒªæŒ‡å®šç‰ˆã®æ–°ã—ã„ãƒã‚¯ãƒ­
 #define LOGIMGUI_CAT(category, format, ...)                                                        \
 	Game::System<Debug>().LogImGui(category, std::source_location::current(), format, __VA_ARGS__)
 
@@ -36,7 +36,7 @@ namespace mtgb
 		int line;
 		std::string func;
 		std::string objectName;
-		std::string category; // ƒtƒBƒ‹ƒ^[—pƒJƒeƒSƒŠ
+		std::string category; // ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ç”¨ã‚«ãƒ†ã‚´ãƒª
 		int count = 1;
 	};
 
@@ -52,16 +52,16 @@ namespace mtgb
 
 	  public:
 		/// <summary>
-		/// ƒƒO‚ğƒtƒH[ƒ}ƒbƒg‚µ‚Äo—Í‚·‚é
+		/// ãƒ­ã‚°ã‚’ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã—ã¦å‡ºåŠ›ã™ã‚‹
 		/// </summary>
-		/// <typeparam name="...Args">‰Â•Ï’·ˆø”Œ^</typeparam>
-		/// <param name="_format">ƒtƒH[ƒ}ƒbƒg•¶š—ñ</param>
-		/// <param name="..._args">‰Â•Ï’·ˆø”</param>
+		/// <typeparam name="...Args">å¯å¤‰é•·å¼•æ•°å‹</typeparam>
+		/// <param name="_format">ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆæ–‡å­—åˆ—</param>
+		/// <param name="..._args">å¯å¤‰é•·å¼•æ•°</param>
 		template <typename... Args> static void LogF(const char* _format, const Args... _args);
 
 		template <typename... Args>
 		void LogImGui(
-			const std::string& category,
+			const std::string& _category,
 			const std::source_location& _location,
 			const char* _format,
 			const Args... _args
@@ -75,26 +75,26 @@ namespace mtgb
 		}
 
 	  private:
-		static constexpr size_t BUFFER_SIZE{1024}; // ƒƒOo—Í‚Ì•¶š—ñƒoƒbƒtƒ@ƒTƒCƒY
+		static constexpr size_t BUFFER_SIZE{1024}; // ãƒ­ã‚°å‡ºåŠ›æ™‚ã®æ–‡å­—åˆ—ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚º
 		static constexpr UINT MAX_LOG_COUNT{30};
 
-		LogItr RemoveLog(LogItr itr);
+		LogItr RemoveLog(LogItr _itr);
 
 		std::list<LogEntry> logs_;
-		std::unordered_map<std::string, LogItr> logMap_; // ƒƒO‚ªƒL[Alogs_‚Ö‚ÌƒCƒeƒŒ[ƒ^‚ª’l
+		std::unordered_map<std::string, LogItr> logMap_; // ãƒ­ã‚°ãŒã‚­ãƒ¼ã€logs_ã¸ã®ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿ãŒå€¤
 		static std::string MakeKey(
-			const std::string& object,
-			const char* file,
-			int line,
-			const char* func,
-			const std::string msg
+			const std::string& _object,
+			const char* _file,
+			int _line,
+			const char* _func,
+			const std::string _msg
 		);
 	};
 
 	template <typename... Args> inline void Debug::LogF(const char* _format, const Args... _args)
 	{
 		static char buffer[BUFFER_SIZE]{};
-		ZeroMemory(buffer, BUFFER_SIZE); // ƒkƒ‹•¶š–„‚ß
+		ZeroMemory(buffer, BUFFER_SIZE); // ãƒŒãƒ«æ–‡å­—åŸ‹ã‚
 
 		::sprintf_s<BUFFER_SIZE>(buffer, _format, _args...);
 
@@ -103,20 +103,20 @@ namespace mtgb
 
 	template <typename... Args>
 	void Debug::LogImGui(
-		const std::string& category,
+		const std::string& _category,
 		const std::source_location& _location,
 		const char* _format,
 		const Args... _args
 	)
 	{
 		char buffer[BUFFER_SIZE]{};
-		ZeroMemory(buffer, BUFFER_SIZE); // ƒkƒ‹•¶š–„‚ß
+		ZeroMemory(buffer, BUFFER_SIZE); // ãƒŒãƒ«æ–‡å­—åŸ‹ã‚
 
 		::sprintf_s<BUFFER_SIZE>(buffer, _format, _args...);
 
 		std::string msg = mtgb::MultiToUTF8(buffer);
 		std::string key =
-			Debug::MakeKey(category, _location.file_name(), _location.line(), _location.function_name(), msg);
+			Debug::MakeKey(_category, _location.file_name(), _location.line(), _location.function_name(), msg);
 		key		 = mtgb::MultiToUTF8(key);
 		auto itr = logMap_.find(key);
 		if (itr != logMap_.end())
@@ -132,7 +132,7 @@ namespace mtgb
 				.line		= static_cast<int>(_location.line()),
 				.func		= _location.function_name(),
 				.objectName = "",
-				.category	= category, // ƒJƒeƒSƒŠ‚ğİ’è
+				.category	= _category, // ã‚«ãƒ†ã‚´ãƒªã‚’è¨­å®š
 				.count		= 1
 			});
 			logMap_[key] = std::prev(logs_.end());

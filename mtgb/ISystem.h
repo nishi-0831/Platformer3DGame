@@ -11,7 +11,7 @@ namespace mtgb
 		virtual void Initialize() = 0;
 		virtual void Update()	  = 0;
 		/// <summary>
-		/// ŠJ•úˆ—
+		/// é–‹æ”¾å‡¦ç†
 		/// </summary>
 		virtual void Release()
 		{

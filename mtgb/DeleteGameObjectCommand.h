@@ -16,11 +16,11 @@ namespace mtgb
 	{
 	  public:
 		DeleteGameObjectCommand(
-			GameObject* pGameObj,
+			GameObject* _pGameObj,
 			const GameObjectFactory& _gameObjectFactory,
 			const ComponentFactory& _componentFactory
 		);
-		// Command ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
+		// Command ã‚’ä»‹ã—ã¦ç¶™æ‰¿ã•ã‚Œã¾ã—ãŸ
 		void Execute() override;
 		void Undo() override;
 		std::string Name() const override;

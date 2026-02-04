@@ -16,9 +16,9 @@ Player::Player()
 	: GameObject(GameObjectBuilder()
 					 .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
 					 .SetPosition({0, 5, 10})
-					 .SetTag(GameObjectTag::Player)
+					 .SetTag(GameObjectTag::PLAYER)
 					 .Build())
-	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
+	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
 	, IActor(GetEntityId())
 	, pTransform_{Component<Transform>()}
 	, pCollider_{Component<Collider>()}
@@ -47,26 +47,26 @@ Player::Player()
 
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 
-	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
+	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
 
-	// —‰ºƒCƒxƒ“ƒg‚ğw“Ç
+	// è½ä¸‹ã‚¤ãƒ™ãƒ³ãƒˆã‚’è³¼èª­
 	Game::System<EventManager>().GetEvent<PlayerFellOutEvent>().Subscribe(
 		[this](const PlayerFellOutEvent& _event)
 		{
-			// ‹­§“I‚ÉHP‚ğƒ[ƒ‚É‚·‚é
+			// å¼·åˆ¶çš„ã«HPã‚’ã‚¼ãƒ­ã«ã™ã‚‹
 			TakeDamage(hp_);
 		},
-		EventScope::Scene
+		EventScope::SCENE
 	);
 
-	// ƒS[ƒ‹ƒCƒxƒ“ƒg‚ğw“Ç
+	// ã‚´ãƒ¼ãƒ«ã‚¤ãƒ™ãƒ³ãƒˆã‚’è³¼èª­
 	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Subscribe(
 		[this](const PlayerReachedGoalEvent& _event)
 		{
 			pRigidBody_->velocity_ = Vector3::Zero();
 			state_.Change(STATE::VICTORY);
 		},
-		EventScope::Scene
+		EventScope::SCENE
 	);
 }
 
@@ -79,7 +79,7 @@ void Player::Update()
 	if (state_.Current() != STATE::DYING && state_.Current() != STATE::VICTORY)
 	{
 		UpdatePosition();
-		if (InputUtil::GetGamePadDown(PadCode::Cross) || InputUtil::GetKeyDown(KeyCode::Space))
+		if (InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE))
 		{
 			if (pRigidBody_->IsJumping() == false)
 			{
@@ -97,7 +97,7 @@ void Player::Update()
 void Player::InitializeState()
 {
 	animController_ = Fbx::GetAnimationController(pMeshRenderer_->meshHandle);
-	massert(animController_.has_value() && "Player‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ƒRƒ“ƒgƒ[ƒ‰æ“¾‚É¸”s");
+	massert(animController_.has_value() && "Playerã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©å–å¾—ã«å¤±æ•—");
 
 	state_
 		.OnAnyUpdate(
@@ -242,34 +242,34 @@ void Player::SetCamera(Camera* _pCamera)
 Vector3 Player::GetMoveDir()
 {
 	Vector2F axis = InputUtil::GetAxis(StickType::LEFT);
-	if (InputUtil::GetKey(KeyCode::Left))
+	if (InputUtil::GetKey(KeyCode::LEFT) || InputUtil::GetKey(KeyCode::A))
 	{
 		axis.x = -1;
 	}
-	if (InputUtil::GetKey(KeyCode::Right))
+	if (InputUtil::GetKey(KeyCode::RIGHT) || InputUtil::GetKey(KeyCode::D))
 	{
 		axis.x = 1;
 	}
-	if (InputUtil::GetKey(KeyCode::Up))
+	if (InputUtil::GetKey(KeyCode::UP) || InputUtil::GetKey(KeyCode::W))
 	{
 		axis.y = -1;
 	}
-	if (InputUtil::GetKey(KeyCode::Down))
+	if (InputUtil::GetKey(KeyCode::DOWN) || InputUtil::GetKey(KeyCode::S))
 	{
 		axis.y = 1;
 	}
 	if (axis.Size() == 0)
 		return Vector3::Zero();
 
-	// “ü—Í•ûŒü
+	// å…¥åŠ›æ–¹å‘
 	Vector3 inputDir{axis.x, 0.0f, -axis.y};
 
-	// ƒJƒƒ‰‚Ì‰ñ“]s—ñ‚ğæ“¾
+	// ã‚«ãƒ¡ãƒ©ã®å›è»¢è¡Œåˆ—ã‚’å–å¾—
 	Matrix4x4 cameraRotMat;
 	pCameraTransform_->GenerateWorldRotationMatrix(&cameraRotMat);
-	// “ü—Í•ûŒü‚ğƒJƒƒ‰‚ÌŒü‚«‚¾‚¯‰ñ“]
+	// å…¥åŠ›æ–¹å‘ã‚’ã‚«ãƒ¡ãƒ©ã®å‘ãã ã‘å›è»¢
 	Vector3 dir = inputDir * cameraRotMat;
-	// Y¬•ª‚ğÌ‚Ä‚½XZ¬•ª‚Ì‚İæ“¾
+	// Yæˆåˆ†ã‚’æ¨ã¦ãŸXZæˆåˆ†ã®ã¿å–å¾—
 	Vector3 horizontalDir = Vector3{dir.x, 0.0f, dir.z};
 	return Vector3::Normalize(horizontalDir);
 }
@@ -289,8 +289,8 @@ void Player::UpdatePosition()
 	{
 		// -------------------------------------------------------
 		// WARNING:
-		// “ü—Í‚ª‚È‚¢ê‡AXZ‚Ì‘¬“x‚ğƒ[ƒ‚É‚µ‚Ä‚¢‚é!!!!
-		// “ü—ÍˆÈŠO‚Å‘¬“x‚ğ•Ï‚¦‚éê‡‚ÍC³!!!!
+		// å…¥åŠ›ãŒãªã„å ´åˆã€XZã®é€Ÿåº¦ã‚’ã‚¼ãƒ­ã«ã—ã¦ã„ã‚‹!!!!
+		// å…¥åŠ›ä»¥å¤–ã§é€Ÿåº¦ã‚’å¤‰ãˆã‚‹å ´åˆã¯ä¿®æ­£!!!!
 		// -------------------------------------------------------
 		velocity.x = 0.0f;
 		velocity.z = 0.0f;
@@ -328,17 +328,17 @@ void Player::OnCollisionEnter(EntityId _entityId)
 	}
 }
 
-void Player::OnStomped(IActor* pOther)
+void Player::OnStomped(IActor* _pOther)
 {
 }
 
-void Player::OnHitSide(IActor* pOther)
+void Player::OnHitSide(IActor* _pOther)
 {
 }
 
 void Player::TakeDamage(int _damage)
 {
-	// •‰‚Ì’l‚Í–³‹
+	// è² ã®å€¤ã¯ç„¡è¦–
 	if (_damage <= 0)
 		return;
 
@@ -348,7 +348,7 @@ void Player::TakeDamage(int _damage)
 	{
 		state_.Change(STATE::DYING);
 
-		// ƒvƒŒƒCƒ„[‚ÌHP‚ª0‚É‚È‚Á‚½‚±‚Æ‚ğ’Ê’m
+		// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®HPãŒ0ã«ãªã£ãŸã“ã¨ã‚’é€šçŸ¥
 		PlayerHpReachedZeroEvent event{.playerEntityId = GetEntityId()};
 		Game::System<EventManager>().GetEvent<PlayerHpReachedZeroEvent>().Invoke(event);
 	}

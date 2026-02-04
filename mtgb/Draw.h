@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "Vector2Int.h"
 #include "RectInt.h"
 #include "RectF.h"
@@ -29,9 +29,9 @@ namespace mtgb
 	  public:
 		enum struct Pivot
 		{
-			TopLeft,
-			Center,
-			BottomMiddle,
+			TOP_LEFT,
+			CENTER,
+			BOTTOM_MIDDLE,
 		};
 
 	  public:
@@ -92,7 +92,7 @@ namespace mtgb
 			const FBXModelHandle _hFBXModel,
 			const Transform& _pTransform,
 			const int _frame,
-			ShaderType _shaderType = ShaderType::FbxParts
+			ShaderType _shaderType = ShaderType::FBX_PARTS
 		);
 		static void SeaUVScroll(const Transform& _transform);
 		/// <summary>
@@ -225,7 +225,6 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_size"></param>
 		static void ChangeFontSize(int _size);
-		static void GroundPlane();
 
 	  public:
 		Draw();

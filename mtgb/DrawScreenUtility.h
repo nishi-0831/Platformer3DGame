@@ -7,18 +7,18 @@
 
 namespace
 {
-	// UIİŒv’†‚Ì‰ğ‘œ“x
+	// UIè¨­è¨ˆä¸­ã®è§£åƒåº¦
 	const mtgb::Vector2 CANVAS_SIZE{1920.0f, 1080.0f};
 } // namespace
 
 namespace mtgb
 {
 	/// <summary>
-	/// İŒvƒXƒNƒŠ[ƒ“ã‚ÌƒtƒHƒ“ƒgƒTƒCƒY‚©‚ç•`‰æ—pƒtƒHƒ“ƒgƒTƒCƒY‚ğ¶¬‚·‚é
+	/// è¨­è¨ˆã‚¹ã‚¯ãƒªãƒ¼ãƒ³ä¸Šã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‹ã‚‰æç”»ç”¨ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’ç”Ÿæˆã™ã‚‹
 	/// </summary>
-	/// <param name="_to">İŒvã‚ÌƒtƒHƒ“ƒgƒTƒCƒY</param>
-	/// <returns>•`‰æ—pƒtƒHƒ“ƒgƒTƒCƒY</returns>
-	inline const int GenDrawScreenFontSize(const int _to)
+	/// <param name="_to">è¨­è¨ˆä¸Šã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</param>
+	/// <returns>æç”»ç”¨ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</returns>
+	inline int GenDrawScreenFontSize(const int _to)
 	{
 		const float RATE_Y{_to / CANVAS_SIZE.y};
 		const int SCREEN_SIZE_Y{Game::System<Screen>().GetSize().y};
@@ -27,10 +27,10 @@ namespace mtgb
 	}
 
 	/// <summary>
-	/// İŒvã‚ÌƒXƒNƒŠ[ƒ“‹éŒ`‚©‚ç•`‰æ‚ÌƒXƒNƒŠ[ƒ“‹éŒ`‚ğ¶¬‚·‚é
+	/// è¨­è¨ˆä¸Šã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŸ©å½¢ã‹ã‚‰æç”»æ™‚ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŸ©å½¢ã‚’ç”Ÿæˆã™ã‚‹
 	/// </summary>
-	/// <param name="_rect">İŒv‚ÌƒXƒNƒŠ[ƒ“‹éŒ`</param>
-	/// <returns>•`‰æ‚ÌƒXƒNƒŠ[ƒ“‹éŒ`</returns>
+	/// <param name="_rect">è¨­è¨ˆæ™‚ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŸ©å½¢</param>
+	/// <returns>æç”»æ™‚ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³çŸ©å½¢</returns>
 	template <typename T> inline const mtgb::RectT<T> GenDrawScreenFrom(const mtgb::RectT<T>& _to)
 	{
 		return _to;

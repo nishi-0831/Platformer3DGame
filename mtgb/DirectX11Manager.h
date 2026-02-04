@@ -8,9 +8,9 @@
 #include <optional>
 #include "MonitorInfo.h"
 
-#pragma comment(lib, "d3d11.lib") // DirectX11‚Ìƒ‰ƒCƒuƒ‰ƒŠ
+#pragma comment(lib, "d3d11.lib") // DirectX11ã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒª
 #pragma comment(lib, "dxgi.lib")
-#pragma comment(lib, "d3dcompiler.lib") // ƒVƒF[ƒ_ƒRƒ“ƒpƒCƒ‰—pƒ‰ƒCƒuƒ‰ƒŠ
+#pragma comment(lib, "d3dcompiler.lib") // ã‚·ã‚§ãƒ¼ãƒ€ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ç”¨ãƒ©ã‚¤ãƒ–ãƒ©ãƒª
 
 using Microsoft::WRL::ComPtr;
 struct D3D11_INPUT_ELEMENT_DESC;
@@ -38,37 +38,37 @@ namespace mtgb
 		void Update() override;
 
 		void InitializeCommonResources();
-		void CreateDXGISurface(IDXGISwapChain1* pSwapChain1, IDXGISurface** ppDXGISurface);
+		void CreateDXGISurface(IDXGISwapChain1* _pSwapChain1, IDXGISurface** _ppDxgiSurface);
 
 		// void CreateOutput(int index, IDXGIOutput** ppOutput);
-		void CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, IDXGISwapChain1** ppSwapChain1);
-		void CreateRenderTargetView(IDXGISwapChain1* pSwapChain1, ID3D11RenderTargetView** ppRenderTargetView);
-		void CreateViewport(const Vector2Int& size, D3D11_VIEWPORT& viewport);
+		void CreateSwapChain(HWND _hWnd, IDXGIOutput* _pOutput, IDXGISwapChain1** _ppSwapChain1);
+		void CreateRenderTargetView(IDXGISwapChain1* _pSwapChain1, ID3D11RenderTargetView** _ppRenderTargetView);
+		void CreateViewport(const Vector2Int& _size, D3D11_VIEWPORT& _viewport);
 		void CreateDepthStencilAndDepthStencilView(
-			const Vector2Int bufSize,
-			ID3D11Texture2D** ppDepthStencil,
-			ID3D11DepthStencilView** ppDepthStencilView
+			const Vector2Int _bufSize,
+			ID3D11Texture2D** _ppDepthStencil,
+			ID3D11DepthStencilView** _ppDepthStencilView
 		);
 
-		void ChangeViewport(const D3D11_VIEWPORT& viewport);
+		void ChangeViewport(const D3D11_VIEWPORT& _viewport);
 		void ChangeRenderTargets(
-			ComPtr<ID3D11RenderTargetView> pRenderTargetView,
-			ComPtr<ID3D11DepthStencilView> pDepthStencilView
+			ComPtr<ID3D11RenderTargetView> _pRenderTargetView,
+			ComPtr<ID3D11DepthStencilView> _pDepthStencilView
 		);
-		void ChangeSwapChain(ComPtr<IDXGISwapChain1> pSwapChain1);
+		void ChangeSwapChain(ComPtr<IDXGISwapChain1> _pSwapChain1);
 
 		void ClearState();
 		/// <summary>
-		/// ClearStateŒã‚É•K—v‚ÈƒfƒtƒHƒ‹ƒgó‘Ô‚ğÄİ’è
+		/// ClearStateå¾Œã«å¿…è¦ãªãƒ‡ãƒ•ã‚©ãƒ«ãƒˆçŠ¶æ…‹ã‚’å†è¨­å®š
 		/// </summary>
 		void SetDefaultStates();
 
 		/// <summary>
-		/// —˜—p‰Â”\‚Èƒ‚ƒjƒ^[‚ğ©“®‚ÅŠ„‚è“–‚Ä‚é
+		/// åˆ©ç”¨å¯èƒ½ãªãƒ¢ãƒ‹ã‚¿ãƒ¼ã‚’è‡ªå‹•ã§å‰²ã‚Šå½“ã¦ã‚‹
 		/// </summary>
-		/// <param name="ppOutput">‚±‚ê‚Éƒ‚ƒjƒ^[‚ğŠ„‚è“–‚Ä‚é</param>
-		/// <returns>Š„‚è“–‚Ä‚ç‚ê‚½ƒ‚ƒjƒ^[‚ÌƒCƒ“ƒfƒbƒNƒXA¸”s‚Í -1</returns>
-		std::optional<MonitorInfo> AssignAvailableMonitor(IDXGIOutput** ppOutput);
+		/// <param name="ppOutput">ã“ã‚Œã«ãƒ¢ãƒ‹ã‚¿ãƒ¼ã‚’å‰²ã‚Šå½“ã¦ã‚‹</param>
+		/// <returns>å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸãƒ¢ãƒ‹ã‚¿ãƒ¼ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€å¤±æ•—æ™‚ã¯ -1</returns>
+		std::optional<MonitorInfo> AssignAvailableMonitor(IDXGIOutput** _ppOutput);
 
 		int GetAvailableMonitorCount() const;
 
@@ -77,22 +77,22 @@ namespace mtgb
 	  private:
 		std::vector<DXGI_ADAPTER_DESC1> adaptersDesc_;
 		/// <summary>
-		/// —˜—p‰Â”\‚Èƒ‚ƒjƒ^[‚ğ—ñ‹“‚·‚é
+		/// åˆ©ç”¨å¯èƒ½ãªãƒ¢ãƒ‹ã‚¿ãƒ¼ã‚’åˆ—æŒ™ã™ã‚‹
 		/// </summary>
 		void EnumAvailableMonitors();
 		/// <summary>
-		/// ƒVƒF[ƒ_ƒoƒ“ƒhƒ‹‚ğ‰Šú‰»‚·‚é
+		/// ã‚·ã‚§ãƒ¼ãƒ€ãƒãƒ³ãƒ‰ãƒ«ã‚’åˆæœŸåŒ–ã™ã‚‹
 		/// </summary>
 		void InitializeShaderBundle();
 
 		/// <summary>
-		/// ƒVƒF[ƒ_ƒtƒ@ƒCƒ‹‚ğƒRƒ“ƒpƒCƒ‹‚·‚é
+		/// ã‚·ã‚§ãƒ¼ãƒ€ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã™ã‚‹
 		/// </summary>
-		/// <param name="_fileName">ƒtƒ@ƒCƒ‹ƒpƒX</param>
-		/// <param name="_type">ƒVƒF[ƒ_ƒ^ƒCƒv</param>
-		/// <param name="_pHLSLLayout">“ü—Íî•ñ”z—ñ</param>
-		/// <param name="_layoutLength">“ü—Íî•ñ”z—ñ‚Ì—v‘f”</param>
-		/// <param name="_pRasterizerDesc">ƒ‰ƒXƒ^ƒ‰ƒCƒU‚Ìİ’è</param>
+		/// <param name="_fileName">ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹</param>
+		/// <param name="_type">ã‚·ã‚§ãƒ¼ãƒ€ã‚¿ã‚¤ãƒ—</param>
+		/// <param name="_pHLSLLayout">å…¥åŠ›æƒ…å ±é…åˆ—</param>
+		/// <param name="_layoutLength">å…¥åŠ›æƒ…å ±é…åˆ—ã®è¦ç´ æ•°</param>
+		/// <param name="_pRasterizerDesc">ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶ã®è¨­å®š</param>
 		void CompileShader(
 			const std::wstring& _fileName,
 			const ShaderType& _type,

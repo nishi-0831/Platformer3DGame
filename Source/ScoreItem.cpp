@@ -19,7 +19,7 @@ ScoreItem::ScoreItem()
 		[this](EntityId _entityId)
 		{
 			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
-			if (tag == GameObjectTag::Player)
+			if (tag == GameObjectTag::PLAYER)
 			{
 				Game::System<ScoreManager>().AddScore(addScore_);
 				EffectParameters params;
@@ -38,7 +38,7 @@ ScoreItem::ScoreItem()
 	pMeshRenderer_->meshFileName = "Model/Ruby.fbx";
 	pMeshRenderer_->SetMesh(Fbx::Load(pMeshRenderer_->meshFileName));
 	pMeshRenderer_->layer	   = AllLayer();
-	pMeshRenderer_->shaderType = ShaderType::FbxParts;
+	pMeshRenderer_->shaderType = ShaderType::FBX_PARTS;
 
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(ScoreItem));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);

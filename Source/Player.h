@@ -15,9 +15,9 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	void Start() override;
 	void ShowImGui() override;
 	void SetCamera(Camera* _pCamera);
-	// IActor ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
-	void OnStomped(IActor* pOther) override;
-	void OnHitSide(IActor* pOther) override;
+	// IActor ã‚’ä»‹ã—ã¦ç¶™æ‰¿ã•ã‚Œã¾ã—ãŸ
+	void OnStomped(IActor* _pOther) override;
+	void OnHitSide(IActor* _pOther) override;
 	void TakeDamage(int _damage) override;
 
   private:

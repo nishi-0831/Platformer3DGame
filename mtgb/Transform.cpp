@@ -9,8 +9,8 @@ namespace
 mtgb::Transform::Transform()
 	: parent(INVALID_ENTITY)
 	, position{Vector3::Zero()}
-	, rotate{Quaternion::Identity()}
 	, scale{Vector3::One()}
+	, rotate{Quaternion::Identity()}
 	, localPosition_{Vector3::Zero()}
 	, localRotate_{Quaternion::Identity()}
 	, localScale_{Vector3::One()}
@@ -21,8 +21,8 @@ mtgb::Transform::Transform(EntityId _entityId)
 	: IComponent(_entityId)
 	, parent(INVALID_ENTITY)
 	, position{Vector3::Zero()}
-	, rotate{Quaternion::Identity()}
 	, scale{Vector3::One()}
+	, rotate{Quaternion::Identity()}
 	, localPosition_{Vector3::Zero()}
 	, localRotate_{Quaternion::Identity()}
 	, localScale_{Vector3::One()}
@@ -67,11 +67,11 @@ void mtgb::Transform::Compute()
 	using DirectX::XMMatrixTranslation;
 	using DirectX::XMQuaternionNormalize;
 
-	// e‚Ìs—ñ‚ğæ“¾
+	// è¦ªã®è¡Œåˆ—ã‚’å–å¾—
 	Matrix4x4 parentMat{};
 	GenerateParentMatrix(&parentMat);
 
-	// Œ»İ‚Ìƒ[ƒ‹ƒhÀ•W‚©‚çs—ñ‚ğì¬
+	// ç¾åœ¨ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‹ã‚‰è¡Œåˆ—ã‚’ä½œæˆ
 	Matrix4x4 currWorldMat = XMMatrixScaling(scale.x, scale.y, scale.z) *
 							 XMMatrixRotationQuaternion(XMQuaternionNormalize(rotate)) *
 							 XMMatrixTranslation(position.x, position.y, position.z);
@@ -81,10 +81,10 @@ void mtgb::Transform::Compute()
 	DecomposeMatrixImpl(&localPosition_, &localRotate_, &localScale_, matrixLocal_);
 
 	GenerateWorldMatrix(&matrixWorld_);
-	// ƒ[ƒ‹ƒhs—ñ‚ğŒvZ
-	GenerateWorldRotationMatrix(&matrixWorldRot_); // ƒ[ƒ‹ƒh‰ñ“]s—ñXV
+	// ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã‚’è¨ˆç®—
+	GenerateWorldRotationMatrix(&matrixWorldRot_); // ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—æ›´æ–°
 
-	// ƒ[ƒ‹ƒhs—ñ‚©‚çƒ[ƒ‹ƒhÀ•WŒn‚Ì’l‚ğ‹tZ‚µ‚ÄXV
+	// ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã‹ã‚‰ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ç³»ã®å€¤ã‚’é€†ç®—ã—ã¦æ›´æ–°
 	DecomposeMatrixImpl(&position, &rotate, &scale, matrixWorld_);
 
 	/*matrixTranslate_ = XMMatrixTranslation(position.x, position.y, position.z);
@@ -146,7 +146,7 @@ bool mtgb::Transform::DecomposeMatrixImpl(Vector3* _pPos, Quaternion* _pRot, Vec
 
 mtgb::Transform* mtgb::Transform::GetParent() const
 {
-	// eId‚ª–³Œø’l‚È‚ç nullptr ‚ğ•Ô‚·
+	// è¦ªIdãŒç„¡åŠ¹å€¤ãªã‚‰ nullptr ã‚’è¿”ã™
 	if (parent == INVALID_ENTITY)
 	{
 		return nullptr;

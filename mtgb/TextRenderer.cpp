@@ -6,7 +6,7 @@ mtgb::TextRenderer::TextRenderer()
 }
 mtgb::TextRenderer::TextRenderer(EntityId _entityId)
 	: IComponent(_entityId)
-	, alignment{TextAlignment::bottomLeft}
+	, alignment{TextAlignment::BOTTOM_LEFT}
 	, text{""}
 	, rect{0, 0, 0, 0}
 	, fontSize{24}

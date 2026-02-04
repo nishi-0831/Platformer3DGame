@@ -13,35 +13,35 @@ class StageManger : public ISystem
 	void Update() override;
 	std::optional<nlohmann::json> GetStageJson(StageID _stageID);
 	/// <summary>
-	/// ƒXƒe[ƒW‚ÌƒNƒŠƒAó‹µ‚ğ‰Šú‰»
+	/// ã‚¹ãƒ†ãƒ¼ã‚¸ã®ã‚¯ãƒªã‚¢çŠ¶æ³ã‚’åˆæœŸåŒ–
 	/// </summary>
 	/// <param name="_stageID"></param>
 	void InitializeStage(StageID _stageID);
 
 	/// <summary>
-	/// ƒXƒe[ƒW‚ÌƒNƒŠƒAó‹µ‚ğ‰Šú‰»
-	/// Œ»İƒvƒŒƒC‚µ‚Ä‚¢‚éƒXƒe[ƒW‚Æ‚·‚é
+	/// ã‚¹ãƒ†ãƒ¼ã‚¸ã®ã‚¯ãƒªã‚¢çŠ¶æ³ã‚’åˆæœŸåŒ–
+	/// ç¾åœ¨ãƒ—ãƒ¬ã‚¤ã—ã¦ã„ã‚‹ã‚¹ãƒ†ãƒ¼ã‚¸ã¨ã™ã‚‹
 	/// </summary>
 	/// <param name="_stageID"></param>
 	void StartStage(StageID _stageID);
 	/// <summary>
-	/// ƒXƒe[ƒW‚ğƒNƒŠƒA‚³‚ê‚½‚©•Ô‚·
+	/// ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’ã‚¯ãƒªã‚¢ã•ã‚ŒãŸã‹è¿”ã™
 	/// </summary>
 	/// <param name="_stageID"></param>
 	/// <returns></returns>
 	bool IsCleared(StageID _stageID);
 	/// <summary>
-	/// Œ»İ‚ÌƒXƒe[ƒW‚ğƒNƒŠƒA‚³‚ê‚½‚©•Ô‚·
+	/// ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’ã‚¯ãƒªã‚¢ã•ã‚ŒãŸã‹è¿”ã™
 	/// </summary>
 	/// <returns></returns>
 	bool IsClearedCurrentStage();
 	/// <summary>
-	/// ƒXƒe[ƒW‚ğƒNƒŠƒA‚µ‚½ó‘Ô‚É‚·‚é
+	/// ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’ã‚¯ãƒªã‚¢ã—ãŸçŠ¶æ…‹ã«ã™ã‚‹
 	/// </summary>
 	/// <param name="_stageID"></param>
 	void ClearStage(StageID _stageID);
 	/// <summary>
-	/// Œ»İ‚ÌƒXƒe[ƒW‚ğƒNƒŠƒA‚µ‚½ó‘Ô‚É‚·‚é
+	/// ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’ã‚¯ãƒªã‚¢ã—ãŸçŠ¶æ…‹ã«ã™ã‚‹
 	/// </summary>
 	void ClearCurrentStage();
 	StageID GetCurrentStage();
@@ -49,5 +49,5 @@ class StageManger : public ISystem
   private:
 	StageID currStage_;
 	std::unordered_map<StageID, nlohmann::json> stageJsons_;
-	std::unordered_map<StageID, bool> stageCleared_; // ƒXƒe[ƒW‚ğƒNƒŠƒA‚µ‚½‚©
+	std::unordered_map<StageID, bool> stageCleared_; // ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’ã‚¯ãƒªã‚¢ã—ãŸã‹
 };

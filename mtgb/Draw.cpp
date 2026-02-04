@@ -4,12 +4,10 @@
 #include "Fbx.h"
 #include "Figure.h"
 #include "Game.h"
-#include "Ground.h"
 #include "ImGuiRenderer.h"
 #include "Image.h"
 #include "MTAssert.h"
 #include "MTStringUtility.h"
-#include "Model.h"
 #include "OBJ.h"
 #include "PlaneUVScroll.h"
 #include "ReleaseUtility.h"
@@ -21,22 +19,22 @@
 
 void mtgb::Draw::CheckSetShader(const ShaderType _default)
 {
-	if (onceShaderType_ == ShaderType::Max)
+	if (onceShaderType_ == ShaderType::MAX)
 	{
-		// ƒVƒF[ƒ_‚ªƒZƒbƒg‚³‚ê‚Ä‚¢‚È‚¢‚È‚çŠù’èƒVƒF[ƒ_
+		// ã‚·ã‚§ãƒ¼ãƒ€ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ãªã„ãªã‚‰æ—¢å®šã‚·ã‚§ãƒ¼ãƒ€
 		DirectX11Draw::SetShader(_default);
 	}
 	else
 	{
-		// ƒVƒF[ƒ_‚ªƒZƒbƒg‚³‚ê‚Ä‚¢‚é‚È‚ç—Dæ
+		// ã‚·ã‚§ãƒ¼ãƒ€ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ã‚‹ãªã‚‰å„ªå…ˆ
 		DirectX11Draw::SetShader(onceShaderType_);
-		onceShaderType_ = ShaderType::Max; // ˆê“xg‚Á‚½‚çŠO‚·
+		onceShaderType_ = ShaderType::MAX; // ä¸€åº¦ä½¿ã£ãŸã‚‰å¤–ã™
 	}
 }
 
 void mtgb::Draw::Box(const Vector2Int& _begin, const Vector2Int& _end, const Color& _color, const UIParams& _uiParams)
 {
-	CheckSetShader(ShaderType::Figure);
+	CheckSetShader(ShaderType::FIGURE);
 	const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
 
 	Box(RectInt::FromLine(_begin, _end), _color, _uiParams);
@@ -48,7 +46,7 @@ void mtgb::Draw::Box(const RectInt& _rect, const Color& _color, const UIParams& 
 		{_uiParams,
 		 [=]()
 		 {
-			 CheckSetShader(ShaderType::Figure);
+			 CheckSetShader(ShaderType::FIGURE);
 
 			 const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
 
@@ -70,7 +68,7 @@ void mtgb::Draw::Image(
 		{_uiParams,
 		 [=]()
 		 {
-			 CheckSetShader(ShaderType::Sprite2D);
+			 CheckSetShader(ShaderType::SPRITE2_D);
 			 Sprite* pSprite{Game::System<mtgb::Image>().GetSprite(_hImage)};
 
 			 const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
@@ -96,7 +94,7 @@ void mtgb::Draw::Image(
 		{_uiParams,
 		 [=]()
 		 {
-			 CheckSetShader(ShaderType::Sprite2D);
+			 CheckSetShader(ShaderType::SPRITE2_D);
 
 			 Sprite* pSprite{Game::System<mtgb::Image>().GetSprite(_hImage)};
 
@@ -117,7 +115,7 @@ void mtgb::Draw::Image(
 		{_uiParams,
 		 [=, transform = std::move(_transform)]() mutable
 		 {
-			 CheckSetShader(ShaderType::Sprite2D);
+			 CheckSetShader(ShaderType::SPRITE2_D);
 
 			 Sprite* pSprite{Game::System<mtgb::Image>().GetSprite(_hImage)};
 
@@ -129,8 +127,8 @@ void mtgb::Draw::Image(
 
 void mtgb::Draw::Model(const ModelHandle _hModel, const Transform* _pTransform)
 {
-	// TODO: Fbx‚ÆObj‚ğƒ‚ƒfƒ‹‚Æ‚µ‚Äƒnƒ“ƒhƒ‹ŠÜ‚ß“‡A©“®•ªŠò‚·‚é
-	massert(false && "Draw::Model‚ªŒÄ‚Î‚ê‚Ä‚¢‚Ü‚·‚ª–¢À‘•‚Å‚·BFbx‚ÆObj‚Å•ÊŠÖ”‚ğŒÄ‚ñ‚Å‚­‚¾‚³‚¢B @Draw::Model");
+	// TODO: Fbxã¨Objã‚’ãƒ¢ãƒ‡ãƒ«ã¨ã—ã¦ãƒãƒ³ãƒ‰ãƒ«å«ã‚çµ±åˆã€è‡ªå‹•åˆ†å²ã™ã‚‹
+	massert(false && "Draw::ModelãŒå‘¼ã°ã‚Œã¦ã„ã¾ã™ãŒæœªå®Ÿè£…ã§ã™ã€‚Fbxã¨Objã§åˆ¥é–¢æ•°ã‚’å‘¼ã‚“ã§ãã ã•ã„ã€‚ @Draw::Model");
 }
 
 void mtgb::Draw::Text(
@@ -145,7 +143,7 @@ void mtgb::Draw::Text(
 		 [=]()
 		 {
 			 DirectX11Draw::SetIsWriteToDepthBuffer(false);
-			 CheckSetShader(ShaderType::Sprite2D);
+			 CheckSetShader(ShaderType::SPRITE2_D);
 
 			 TextLayoutData* layoutData = Game::System<mtgb::TextCache>().GetTextLayoutData(_hText);
 			 FontFormatData* formatData = Game::System<mtgb::TextCache>().GetOrCreateTextFormat(layoutData->fontSize);
@@ -190,7 +188,7 @@ void mtgb::Draw::ImmediateTextW(
 		 [=]()
 		 {
 			 DirectX11Draw::SetIsWriteToDepthBuffer(false);
-			 CheckSetShader(ShaderType::Sprite2D);
+			 CheckSetShader(ShaderType::SPRITE2_D);
 
 			 FontFormatData* formatData =
 				 Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
@@ -259,7 +257,7 @@ void mtgb::Draw::ImmediateText(
 		 [=]()
 		 {
 			 DirectX11Draw::SetIsWriteToDepthBuffer(false);
-			 CheckSetShader(ShaderType::Sprite2D);
+			 CheckSetShader(ShaderType::SPRITE2_D);
 
 			 FontFormatData* formatData =
 				 Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
@@ -293,7 +291,7 @@ void mtgb::Draw::ImmediateText(
 		 [=, text = std::move(_text)]() mutable
 		 {
 			 DirectX11Draw::SetIsWriteToDepthBuffer(false);
-			 CheckSetShader(ShaderType::Sprite2D);
+			 CheckSetShader(ShaderType::SPRITE2_D);
 
 			 FontFormatData* formatData =
 				 Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
@@ -325,17 +323,9 @@ void mtgb::Draw::ChangeTextAlignment(TextAlignment _alignment)
 	currentDefaultTextAlignment_ = _alignment;
 }
 
-void mtgb::Draw::GroundPlane()
-{
-	DirectX11Draw::SetIsWriteToDepthBuffer(true);
-	CheckSetShader(ShaderType::Ground);
-
-	Game::System<Draw>().pGround_->Draw();
-}
-
 void mtgb::Draw::OBJModel(const OBJModelHandle _hOBJModel, const Transform* _pTransform)
 {
-	CheckSetShader(ShaderType::FbxParts);
+	CheckSetShader(ShaderType::FBX_PARTS);
 
 	Game::System<mtgb::OBJ>().Draw((int)_hOBJModel, _pTransform);
 }
@@ -358,9 +348,9 @@ void mtgb::Draw::SeaUVScroll(const Transform& _transform)
 }
 
 mtgb::Draw::Draw()
-	: pFigure_{nullptr}
+	: pFbxModel_{nullptr}
+	, pFigure_{nullptr}
 	, pGround_{nullptr}
-	, pFbxModel_{nullptr}
 	, pSeaPlane_{nullptr}
 {
 }
@@ -418,8 +408,8 @@ int mtgb::Draw::CalcScaledFontSize(int _baseSize)
 	return static_cast<int>(std::roundf(_baseSize * avg));
 }
 
-ShaderType mtgb::Draw::onceShaderType_{ShaderType::Max};
+ShaderType mtgb::Draw::onceShaderType_{ShaderType::MAX};
 int mtgb::Draw::currentDefaultFontSize_{36};
-TextAlignment mtgb::Draw::currentDefaultTextAlignment_{TextAlignment::center};
+TextAlignment mtgb::Draw::currentDefaultTextAlignment_{TextAlignment::CENTER};
 mtgb::UIParams mtgb::Draw::defaultUIParams_{};
 std::multiset<mtgb::UIDrawCommand> mtgb::Draw::uiDrawCommands_{};

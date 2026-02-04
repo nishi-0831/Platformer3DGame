@@ -6,89 +6,83 @@
 #include "MTImGui.h"
 #include <string>
 // ============================================================================
-// TransformÇÃèÛë‘Çï€ë∂Ç∑ÇÈStateç\ë¢ëÃÇÃíËã`ÅAUndo/RedoÇ…égÇ§MementoÇÃusingêÈåæ
+// Transform„ÅÆÁä∂ÊÖã„Çí‰øùÂ≠ò„Åô„ÇãStateÊßãÈÄ†‰Ωì„ÅÆÂÆöÁæ©„ÄÅUndo/Redo„Å´‰Ωø„ÅÜMemento„ÅÆusingÂÆ£Ë®Ä
 // ============================================================================
-#define MT_COMPONENT_Transform()                                          \
-	struct TransformState                                                 \
-	{                                                                     \
-		EntityId parent;                                                  \
-		Vector3 position;                                                 \
-		Vector3 scale;                                                    \
-		Quaternion rotate;                                                \
-	};                                                                    \
-	class Transform;                                                      \
+#define MT_COMPONENT_Transform() \
+	struct TransformState \
+	{ \
+			EntityId parent; \
+			Vector3 position; \
+			Vector3 scale; \
+			Quaternion rotate; \
+	}; \
+	class Transform;\
 	using TransformMemento = ComponentMemento<Transform, TransformState>;
 
 // ============================================================================
-// TransformÇ∆TransformMementoÇÃëäå›ïœä∑èàóùÇé¿ëï
+// Transform„Å®TransformMemento„ÅÆÁõ∏‰∫íÂ§âÊèõÂá¶ÁêÜ„ÇíÂÆüË£Ö
 // ============================================================================
-#define MT_GENERATED_BODY_Transform()                                                    \
-  public:                                                                                \
-	using Memento = TransformMemento;                                                    \
-	TransformMemento* SaveToMemento()                                                    \
-	{                                                                                    \
-		OnPreSave();                                                                     \
-		TransformState state;                                                            \
-		state.parent   = this->parent;                                                   \
-		state.position = this->position;                                                 \
-		state.scale	   = this->scale;                                                    \
-		state.rotate   = this->rotate;                                                   \
-		return new ComponentMemento<Transform, TransformState>(GetEntityId(), state);    \
-	}                                                                                    \
-                                                                                         \
+#define MT_GENERATED_BODY_Transform() \
+	public: \
+	using Memento = TransformMemento; \
+	TransformMemento* SaveToMemento() \
+	{ \
+	OnPreSave(); \
+		TransformState state; \
+		state.parent = this->parent; \
+		state.position = this->position; \
+		state.scale = this->scale; \
+		state.rotate = this->rotate; \
+		return new ComponentMemento<Transform, TransformState>(GetEntityId(), state); \
+	} \
+	\
 	void RestoreFromMemento(const ComponentMemento<Transform, TransformState>& _memento) \
-	{                                                                                    \
-		const TransformState& state = _memento.GetState();                               \
-		this->parent				= state.parent;                                      \
-		this->position				= state.position;                                    \
-		this->scale					= state.scale;                                       \
-		this->rotate				= state.rotate;                                      \
-		OnPostRestore();                                                                 \
-	}                                                                                    \
-                                                                                         \
-	friend struct Transform_Register;                                                    \
-	friend void to_json(nlohmann::json& _j, const Transform& _target)                    \
-	{                                                                                    \
-		_j["parent"]   = JsonConverter::Serialize<EntityId>(_target.parent);             \
-		_j["position"] = JsonConverter::Serialize<Vector3>(_target.position);            \
-		_j["scale"]	   = JsonConverter::Serialize<Vector3>(_target.scale);               \
-		_j["rotate"]   = JsonConverter::Serialize<Quaternion>(_target.rotate);           \
-	}                                                                                    \
-	friend void from_json(const nlohmann::json& _j, Transform& _target)                  \
-	{                                                                                    \
-		JsonConverter::Deserialize<EntityId>(_target.parent, _j, "parent");              \
-		JsonConverter::Deserialize<Vector3>(_target.position, _j, "position");           \
-		JsonConverter::Deserialize<Vector3>(_target.scale, _j, "scale");                 \
-		JsonConverter::Deserialize<Quaternion>(_target.rotate, _j, "rotate");            \
-		_target.OnPostRestore();                                                         \
-	}                                                                                    \
-	static std::string TypeName()                                                        \
-	{                                                                                    \
-		return "Transform";                                                              \
-	}                                                                                    \
-	/* ImGuiï\é¶èàóùÇÃìoò^ */                                                            \
-	static void RegisterImGui()                                                          \
-	{                                                                                    \
-		static bool registered = false;                                                  \
-		if (registered)                                                                  \
-			return;                                                                      \
-		registered = true;                                                               \
-                                                                                         \
-		RegisterShowFuncHolder::Set<Transform>(                                          \
-			[](Transform* _target, const char* _name)                                    \
-			{                                                                            \
-				TypeRegistry::Instance().CallFunc(&_target->parent, "parent");           \
-				TypeRegistry::Instance().CallFunc(&_target->position, "position");       \
-				TypeRegistry::Instance().CallFunc(&_target->scale, "scale");             \
-				TypeRegistry::Instance().CallFunc(&_target->rotate, "rotate");           \
-			}                                                                            \
-		);                                                                               \
-		MTImGui::Instance().RegisterComponentViewer<Transform>();                        \
+	{ \
+		const TransformState& state = _memento.GetState(); \
+		this->parent = state.parent; \
+		this->position = state.position; \
+		this->scale = state.scale; \
+		this->rotate = state.rotate; \
+		OnPostRestore(); \
+	} \
+	\
+	friend struct Transform_Register; \
+	friend void to_json(nlohmann::json& _j,const Transform& _target) \
+	{ \
+		_j["parent"] = JsonConverter::Serialize<EntityId>(_target.parent); \
+		_j["position"] = JsonConverter::Serialize<Vector3>(_target.position); \
+		_j["scale"] = JsonConverter::Serialize<Vector3>(_target.scale); \
+		_j["rotate"] = JsonConverter::Serialize<Quaternion>(_target.rotate); \
+	} \
+	friend void from_json(const nlohmann::json& _j, Transform& _target) \
+	{ \
+		JsonConverter::Deserialize<EntityId>(_target.parent, _j,"parent"); \
+		JsonConverter::Deserialize<Vector3>(_target.position, _j,"position"); \
+		JsonConverter::Deserialize<Vector3>(_target.scale, _j,"scale"); \
+		JsonConverter::Deserialize<Quaternion>(_target.rotate, _j,"rotate"); \
+		_target.OnPostRestore(); \
+	} \
+	static std::string TypeName(){ return "Transform" ;} \
+	/* ImGuiË°®Á§∫Âá¶ÁêÜ„ÅÆÁôªÈå≤ */ \
+	static void RegisterImGui() \
+	{ \
+		static bool registered = false; \
+		if (registered) return; \
+		registered = true; \
+		\
+		RegisterShowFuncHolder::Set<Transform>([]( Transform* _target, const char* _name) \
+			{ \
+				TypeRegistry::Instance().CallFunc(&_target->parent, "parent"); \
+				TypeRegistry::Instance().CallFunc(&_target->position, "position"); \
+				TypeRegistry::Instance().CallFunc(&_target->scale, "scale"); \
+				TypeRegistry::Instance().CallFunc(&_target->rotate, "rotate"); \
+			}); \
+		MTImGui::Instance().RegisterComponentViewer<Transform>(); \
 	}
 
 #pragma warning(push)
-#pragma warning(disable : 4005)
-// É}ÉNÉçè„èëÇ´
+#pragma warning(disable:4005)
+// „Éû„ÇØ„É≠‰∏äÊõ∏„Åç
 #define MT_COMPONENT() MT_COMPONENT_Transform()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_Transform()
 #pragma warning(pop)

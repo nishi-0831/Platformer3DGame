@@ -17,7 +17,7 @@ namespace mtgb
 			EntityId _srcEntityId
 		);
 		~DuplicateGameObjectCommand();
-		// Command ‚ğ‰î‚µ‚ÄŒp³‚³‚ê‚Ü‚µ‚½
+		// Command ã‚’ä»‹ã—ã¦ç¶™æ‰¿ã•ã‚Œã¾ã—ãŸ
 		void Execute() override;
 
 		void Undo() override;

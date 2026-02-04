@@ -13,8 +13,8 @@ mtgb::RigidBody::RigidBody(const EntityId _entityId)
 	: IComponent{_entityId}
 	, isNeedUpdate_{false}
 	, useGravity_{false}
-	, pTransform_{&Transform::Get(_entityId)}
 	, onHit_{[](const EntityId) {}}
+	, pTransform_{&Transform::Get(_entityId)}
 {
 }
 
@@ -89,10 +89,10 @@ Vector3 mtgb::RigidBody::GetPushAmount(const DirectX::BoundingSphere& _sphere, c
 	Vector3 aabbMin = _aabb.Center - _aabb.Extents;
 	Vector3 aabbMax = _aabb.Center + _aabb.Extents;
 
-	// Å’Z’n“_
+	// æœ€çŸ­åœ°ç‚¹
 	Vector3 closest;
 
-	// ŠeÀ•W²‚ÉƒNƒ‰ƒ“ƒv‚·‚é
+	// å„åº§æ¨™è»¸ã«ã‚¯ãƒ©ãƒ³ãƒ—ã™ã‚‹
 	closest.x = std::clamp(_sphere.Center.x, aabbMin.x, aabbMax.x);
 	closest.y = std::clamp(_sphere.Center.y, aabbMin.y, aabbMax.y);
 	closest.z = std::clamp(_sphere.Center.z, aabbMin.z, aabbMax.z);
@@ -100,12 +100,12 @@ Vector3 mtgb::RigidBody::GetPushAmount(const DirectX::BoundingSphere& _sphere, c
 	Vector3 v  = _sphere.Center - closest;
 	float dist = v.Size();
 
-	// ‹——£‚ª‚Ù‚Úƒ[ƒ‚Ìê‡
+	// è·é›¢ãŒã»ã¼ã‚¼ãƒ­ã®å ´åˆ
 	if (dist <= FLT_EPSILON)
 	{
-		// AABB‚Ì’†S‚©‚ç‹…‚Ì’†S‚Ö‚Ì•ûŒü
+		// AABBã®ä¸­å¿ƒã‹ã‚‰çƒã®ä¸­å¿ƒã¸ã®æ–¹å‘
 		v = Vector3::Normalize(_sphere.Center - _aabb.Center);
-		// •ûŒü‚ªŒˆ‚Ü‚ç‚È‚¯‚ê‚Î‰Ÿ‚µo‚µ‚Í‚µ‚È‚¢
+		// æ–¹å‘ãŒæ±ºã¾ã‚‰ãªã‘ã‚Œã°æŠ¼ã—å‡ºã—ã¯ã—ãªã„
 		if (v.Size() <= FLT_EPSILON)
 			return Vector3::Zero();
 		dist = 0.0f;
@@ -115,11 +115,11 @@ Vector3 mtgb::RigidBody::GetPushAmount(const DirectX::BoundingSphere& _sphere, c
 		v = Vector3::Normalize(v);
 	}
 
-	// ‰Ÿ‚µo‚µ—Ê
+	// æŠ¼ã—å‡ºã—é‡
 	float penetration = _sphere.Radius - dist;
 	if (penetration <= 0.0f)
 		return Vector3::Zero();
 
-	// Å’Z’n“_‚©‚ç‹…‚Ì’†S‚Ö‰Ÿ‚µo‚·
+	// æœ€çŸ­åœ°ç‚¹ã‹ã‚‰çƒã®ä¸­å¿ƒã¸æŠ¼ã—å‡ºã™
 	return v * penetration;
 }

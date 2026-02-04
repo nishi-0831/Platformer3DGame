@@ -30,7 +30,7 @@ namespace mtgb
 		nlohmann::json Serialize() const;
 		void Deserialize(const nlohmann::json& _json);
 		/// <summary>
-		/// –¼‘O‚ğİ’è‚·‚é
+		/// åå‰ã‚’è¨­å®šã™ã‚‹
 		/// </summary>
 		/// <param name="_name"></param>
 		void SetName(const std::string _name)
@@ -39,19 +39,19 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// ƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾/’Ç‰Á
+		/// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—/è¿½åŠ 
 		/// </summary>
-		/// <typeparam name="ComponentT">ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌŒ^</typeparam>
-		/// <returns>ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìƒ|ƒCƒ“ƒ^</returns>
+		/// <typeparam name="ComponentT">ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å‹</typeparam>
+		/// <returns>ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ãƒã‚¤ãƒ³ã‚¿</returns>
 		template <class ComponentT, typename... Args> ComponentT* Component(Args&&... _args);
 
 		/// <summary>
-		/// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğƒCƒ“ƒXƒ^ƒ“ƒX‚·‚é
+		/// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã™ã‚‹
 		/// </summary>
-		/// <typeparam name="GameObjectT">ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ÌŒ^</typeparam>
-		/// <typeparam name="...Args">ƒRƒ“ƒXƒgƒ‰ƒNƒ^‰Â•Ï’·ˆø”Œ^</typeparam>
-		/// <param name="..._args">ƒRƒ“ƒXƒgƒ‰ƒNƒ^‰Â•Ï’·ˆø”</param>
-		/// <returns>ƒCƒ“ƒXƒ^ƒ“ƒX‚³‚ê‚½ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ|ƒCƒ“ƒ^</returns>
+		/// <typeparam name="GameObjectT">ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å‹</typeparam>
+		/// <typeparam name="...Args">ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿å¯å¤‰é•·å¼•æ•°å‹</typeparam>
+		/// <param name="..._args">ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿å¯å¤‰é•·å¼•æ•°</param>
+		/// <returns>ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã•ã‚ŒãŸã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒã‚¤ãƒ³ã‚¿</returns>
 		template <class GameObjectT, typename... Args> static GameObjectT* Instantiate(Args... _args);
 
 		template <typename GameSceneT> GameSceneT& GetScene();
@@ -67,16 +67,16 @@ namespace mtgb
 		static void FindGameObjects(GameObjectTag _tag, std::vector<GameObject*>* _pFoundGameObjects);
 
 		/// <summary>
-		/// ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğíœ‚·‚é
+		/// ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å‰Šé™¤ã™ã‚‹
 		/// </summary>
 		inline void DestroyMe()
 		{
 			status_.toDestroy_ = TRUE;
 		}
 		/// <summary>
-		/// ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ííœ—\’è‚©
+		/// ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¯å‰Šé™¤äºˆå®šã‹
 		/// </summary>
-		/// <returns>íœ—\’è true / false</returns>
+		/// <returns>å‰Šé™¤äºˆå®š true / false</returns>
 		inline const bool IsToDestroy() const
 		{
 			return status_.toDestroy_;
@@ -87,16 +87,16 @@ namespace mtgb
 		}
 		std::string GetClassTypeName() const;
 		/// <summary>
-		/// ƒŒƒCƒ„[ƒtƒ‰ƒO‚ğæ“¾
+		/// ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒ•ãƒ©ã‚°ã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒŒƒCƒ„[ƒtƒ‰ƒO‚ğæ“¾‚·‚é</returns>
+		/// <returns>ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒ•ãƒ©ã‚°ã‚’å–å¾—ã™ã‚‹</returns>
 		GameObjectLayerFlag GetLayerFlag() const
 		{
 			return layerFlag_;
 		}
 
 		/// <summary>
-		/// ƒ^ƒO‚ğæ“¾
+		/// ã‚¿ã‚°ã‚’å–å¾—
 		/// </summary>
 		/// <returns></returns>
 		GameObjectTag GetTag() const
@@ -117,17 +117,17 @@ namespace mtgb
 			uint8_t isActive_ : 1;
 			uint8_t callUpdate_ : 1;
 			uint8_t callDraw_ : 1;
-			uint8_t toDestroy_ : 1; // íœ—\’è‚©
+			uint8_t toDestroy_ : 1; // å‰Šé™¤äºˆå®šã‹
 		};
 
 	  protected:
 		std::string name_;
 
 		Status status_;
-		GameObjectLayerFlag layerFlag_;					 // ƒŒƒCƒ„[‚Ìƒtƒ‰ƒO
-		GameObjectTag tag_;								 // ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ìƒ^ƒO
-		bool isNotCalledStart_;							 // StartŠÖ”‚ªŒÄ‚Ño‚³‚ê‚½‚©
-		std::bitset<COMPONENT_CAPACITY> componentsFlag_; // ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìƒtƒ‰ƒO
+		GameObjectLayerFlag layerFlag_;					 // ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒ•ãƒ©ã‚°
+		GameObjectTag tag_;								 // ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¿ã‚°
+		bool isNotCalledStart_;							 // Starté–¢æ•°ãŒå‘¼ã³å‡ºã•ã‚ŒãŸã‹
+		std::bitset<COMPONENT_CAPACITY> componentsFlag_; // ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ãƒ•ãƒ©ã‚°
 	};
 
 	template <class ComponentT, typename... Args> inline ComponentT* GameObject::Component(Args&&... _args)
@@ -142,18 +142,18 @@ namespace mtgb
 	template <typename GameSceneT> inline GameSceneT& GameObject::GetScene()
 	{
 		GameSceneT* pActiveScene{static_cast<GameSceneT*>(Game::System<SceneSystem>().GetActiveScene())};
-		massert(pActiveScene != nullptr && "ƒAƒNƒeƒBƒuƒV[ƒ“‚Ìæ“¾‚É¸”s @GameObject::GetScene");
+		massert(pActiveScene != nullptr && "ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚·ãƒ¼ãƒ³ã®å–å¾—ã«å¤±æ•— @GameObject::GetScene");
 
 		return *pActiveScene;
 	}
 	template <typename T> inline T* GameObject::FindGameObject()
 	{
-		// templateƒL[ƒ[ƒh‚ğ•t‚¯‚È‚¢‚Æ<T>‚Ì<‚ª¬‚È‚è‚Æ‹æ•Ê‚ª‚Â‚©‚È‚¢?
+		// templateã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰ã‚’ä»˜ã‘ãªã„ã¨<T>ã®<ãŒå°ãªã‚Šã¨åŒºåˆ¥ãŒã¤ã‹ãªã„?
 		return mtgb::Game::System<SceneSystem>().GetActiveScene()->template GetGameObject<T>();
 	}
 	template <typename T> inline void GameObject::FindGameObjects(std::vector<T*>* _pFoundGameObjects)
 	{
-		// templateƒL[ƒ[ƒh‚ğ•t‚¯‚È‚¢‚Æ<T>‚Ì<‚ª¬‚È‚è‚Æ‹æ•Ê‚ª‚Â‚©‚È‚¢?
+		// templateã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰ã‚’ä»˜ã‘ãªã„ã¨<T>ã®<ãŒå°ãªã‚Šã¨åŒºåˆ¥ãŒã¤ã‹ãªã„?
 		mtgb::Game::System<SceneSystem>().GetActiveScene()->template GetGameObjects<T>(_pFoundGameObjects);
 	}
 } // namespace mtgb

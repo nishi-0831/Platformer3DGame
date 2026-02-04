@@ -27,19 +27,19 @@ namespace mtgb
 	{
 		detectedTargets_.clear();
 
-		// ƒ^ƒO‚Åæ“¾
+		// ã‚¿ã‚°ã§å–å¾—
 		std::vector<GameObject*> findObjs;
 		GameObject::FindGameObjects(_config.base.targetTag, &findObjs);
 
 		for (const auto& obj : findObjs)
 		{
-			// Transformæ“¾
+			// Transformå–å¾—
 			Transform* pTransform = &Transform::Get(obj->GetEntityId());
 			Vector3 worldPos	  = pTransform->GetWorldPosition();
 			Vector3 rayOrigin	  = _config.rayTransform->GetWorldPosition();
 			Vector3 rayDirection  = _config.rayTransform->Forward();
 
-			// ‹——£ƒ`ƒFƒbƒN
+			// è·é›¢ãƒã‚§ãƒƒã‚¯
 			float distance = (worldPos - rayOrigin).Size();
 
 			if (distance < _config.base.minDistance || distance > _config.base.maxDistance)
@@ -47,10 +47,10 @@ namespace mtgb
 				continue;
 			}
 
-			// ƒŒƒC‚ÌŠp“x”ÍˆÍ“à‚©ƒ`ƒFƒbƒN
+			// ãƒ¬ã‚¤ã®è§’åº¦ç¯„å›²å†…ã‹ãƒã‚§ãƒƒã‚¯
 			if (IsTargetInRayAngle(worldPos, rayOrigin, rayDirection, _config.maxAngleDegrees))
 			{
-				// ƒ[ƒ‹ƒhÀ•W‚ğƒXƒNƒŠ[ƒ“À•W‚É•ÏŠ·
+				// ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã«å¤‰æ›
 				Vector3 screenPos =
 					Game::System<CameraSystem>().GetWorldToScreenPos(worldPos, _config.base.windowContext);
 				detectedTargets_.emplace_back(worldPos, screenPos, obj->GetEntityId());
@@ -91,28 +91,28 @@ namespace mtgb
 	}
 
 	bool RayDetector::IsTargetInRayAngle(
-		const Vector3& targetPos,
-		const Vector3& rayOrigin,
-		const Vector3& rayDirection,
-		float maxAngleDegrees
+		const Vector3& _targetPos,
+		const Vector3& _rayOrigin,
+		const Vector3& _rayDirection,
+		float _maxAngleDegrees
 	) const
 	{
-		// ƒŒƒC‚Ì‹N“_‚©‚çƒ^[ƒQƒbƒg‚Ö‚ÌƒxƒNƒgƒ‹
-		Vector3 toTarget = Vector3::Normalize(targetPos - rayOrigin);
+		// ãƒ¬ã‚¤ã®èµ·ç‚¹ã‹ã‚‰ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¸ã®ãƒ™ã‚¯ãƒˆãƒ«
+		Vector3 toTarget = Vector3::Normalize(_targetPos - _rayOrigin);
 
-		// ƒŒƒC‚Ì•ûŒüƒxƒNƒgƒ‹‚ğ³‹K‰»
-		Vector3 normalizedRayDir = Vector3::Normalize(rayDirection);
+		// ãƒ¬ã‚¤ã®æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ­£è¦åŒ–
+		Vector3 normalizedRayDir = Vector3::Normalize(_rayDirection);
 
-		// “àÏ‚ğg‚Á‚ÄŠp“x‚ğŒvZ
+		// å†…ç©ã‚’ä½¿ã£ã¦è§’åº¦ã‚’è¨ˆç®—
 		float dotProduct = DirectX::XMVectorGetX(DirectX::XMVector3Dot(normalizedRayDir, toTarget));
 
-		// “àÏ‚©‚çŠp“x‚ğŒvZiƒ‰ƒWƒAƒ“j
+		// å†…ç©ã‹ã‚‰è§’åº¦ã‚’è¨ˆç®—ï¼ˆãƒ©ã‚¸ã‚¢ãƒ³ï¼‰
 		float angleRadians = std::acosf(std::clamp(dotProduct, -1.0f, 1.0f));
 
-		// “x‚É•ÏŠ·
+		// åº¦ã«å¤‰æ›
 		float angleDegrees = DirectX::XMConvertToDegrees(angleRadians);
 
-		// w’èŠp“xˆÈ“à‚©ƒ`ƒFƒbƒN
-		return angleDegrees <= maxAngleDegrees;
+		// æŒ‡å®šè§’åº¦ä»¥å†…ã‹ãƒã‚§ãƒƒã‚¯
+		return angleDegrees <= _maxAngleDegrees;
 	}
 } // namespace mtgb

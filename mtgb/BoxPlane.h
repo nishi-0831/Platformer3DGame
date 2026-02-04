@@ -19,11 +19,11 @@ struct Plane
 };
 
 /// <summary>
-/// AABB‚©‚çw’è‚³‚ê‚½Œü‚«‚Ì•½–Ê‚ğ•Ô‚·
+/// AABBã‹ã‚‰æŒ‡å®šã•ã‚ŒãŸå‘ãã®å¹³é¢ã‚’è¿”ã™
 /// </summary>
 /// <param name="_aabb"> AABB </param>
-/// <param name="_plane"> •½–Ê‚ÌŒü‚« </param>
-/// <returns> •½–Ê•û’ö®A–@ü‚ğ‚Â•½–Ê‚Ì\‘¢‘Ì </returns>
+/// <param name="_plane"> å¹³é¢ã®å‘ã </param>
+/// <returns> å¹³é¢æ–¹ç¨‹å¼ã€æ³•ç·šã‚’æŒã¤å¹³é¢ã®æ§‹é€ ä½“ </returns>
 Plane GetPlane(const DirectX::BoundingBox& _aabb, BoxPlaneDir _planeDir);
 
 float GetPlaneAngleRad(const Plane& _plane, const Vector3& _vec);

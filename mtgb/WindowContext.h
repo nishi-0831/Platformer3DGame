@@ -6,10 +6,10 @@ namespace mtgb
 {
 	enum class WindowContext
 	{
-		First,
-		Second,
-		Both,
-		None
+		FIRST,
+		SECOND,
+		BOTH,
+		NONE
 	};
 	WindowContext CurrContext();
 

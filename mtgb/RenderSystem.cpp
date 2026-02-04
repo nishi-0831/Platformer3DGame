@@ -30,9 +30,9 @@ void mtgb::RenderSystem::Render(GameScene& _scene)
 
 void mtgb::RenderSystem::RenderDirectXWindows(GameScene& _scene)
 {
-	// ˆê‚Â–Ú‚ÌƒEƒBƒ“ƒhƒE
-	WinCtxRes::ChangeResource(WindowContext::First);
-	if (WinCtxRes::Get<CameraResource>(WindowContext::First).NotRegisterCamera())
+	// ä¸€ã¤ç›®ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+	WinCtxRes::ChangeResource(WindowContext::FIRST);
+	if (WinCtxRes::Get<CameraResource>(WindowContext::FIRST).NotRegisterCamera())
 	{
 		Draw::ClearUICommands();
 		return;
@@ -49,33 +49,33 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 {
 	using mtbit::operator|;
 
-	// ImGui‚Íˆê‚Â–Ú‚ÌƒEƒBƒ“ƒhƒE‚ÉˆË‘¶‚µ‚Ä‚¢‚é
-	WinCtxRes::ChangeResource(WindowContext::First);
+	// ImGuiã¯ä¸€ã¤ç›®ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«ä¾å­˜ã—ã¦ã„ã‚‹
+	WinCtxRes::ChangeResource(WindowContext::FIRST);
 
 	ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();
 
 	imGui.BeginFrame();
 	imGui.BeginImGuizmoFrame();
 
-	// Inspector•\¦
-	MTImGui::Instance().ShowWindow(ShowType::Inspector);
+	// Inspectorè¡¨ç¤º
+	MTImGui::Instance().ShowWindow(ShowType::INSPECTOR);
 
-	// Settings•\¦
-	MTImGui::Instance().ShowWindow(ShowType::Settings);
-	MTImGui::Instance().ShowWindow(ShowType::Editor);
-	// ƒƒO•\¦
+	// Settingsè¡¨ç¤º
+	MTImGui::Instance().ShowWindow(ShowType::SETTINGS);
+	MTImGui::Instance().ShowWindow(ShowType::EDITOR);
+	// ãƒ­ã‚°è¡¨ç¤º
 	MTImGui::Instance().ShowLog();
 
-	// SceneView•\¦
+	// SceneViewè¡¨ç¤º
 
-	// RenderTargetView‚ğImGui—p‚ÉØ‚è‘Ö‚¦
+	// RenderTargetViewã‚’ImGuiç”¨ã«åˆ‡ã‚Šæ›¿ãˆ
 	imGui.SetImGuizmoRenderTargetView();
 
 	DirectX11Draw::Begin();
 	Game::System<ImGuiEditorCamera>().SetCamera();
 	DrawGameObjects(_scene, AllLayer());
 
-	MTImGui::Instance().ShowWindow(ShowType::SceneView);
+	MTImGui::Instance().ShowWindow(ShowType::SCENE_VIEW);
 
 	imGui.EndFrame();
 	// DirectX11Draw::End();
@@ -90,9 +90,9 @@ void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene, GameObjectLayerFlag 
 	{
 		cp->RenderLayer(_layer);
 	}
-	// TODO:EffectManager,ColliderCP‚àIRenderableCPƒCƒ“ƒ^[ƒtƒF[ƒX‚ğŒp³‚³‚¹‚é
+	// TODO:EffectManager,ColliderCPã‚‚IRenderableCPã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ç¶™æ‰¿ã•ã›ã‚‹
 	Game::System<EffectManager>().Draw();
-	if (_layer.Has(GameObjectLayer::SceneView))
+	if (_layer.Has(GameObjectLayer::SCENE_VIEW))
 	{
 		Game::System<ColliderCP>().Draw();
 	}

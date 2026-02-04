@@ -33,19 +33,19 @@ void SampleScene::Initialize()
 	if (json.has_value())
 	{
 		GameObjectGenerator::GenerateFromJson(json);
-		// “Ç‚Ýž‚ÝŽžŠÔ‚Å’l‚ª‘å‚«‚­‚È‚Á‚½ƒfƒ‹ƒ^ƒ^ƒCƒ€‚ðˆÀ’è‚³‚¹‚é‚½‚ß‚É2ƒtƒŒ[ƒ€‘Ò‹@‚³‚¹‚é
-		// TODO: ƒ}ƒWƒbƒNƒiƒ“ƒo[‚ðC³
+		// èª­ã¿è¾¼ã¿æ™‚é–“ã§å€¤ãŒå¤§ãããªã£ãŸãƒ‡ãƒ«ã‚¿ã‚¿ã‚¤ãƒ ã‚’å®‰å®šã•ã›ã‚‹ãŸã‚ã«2ãƒ•ãƒ¬ãƒ¼ãƒ å¾…æ©Ÿã•ã›ã‚‹
+		// TODO: ãƒžã‚¸ãƒƒã‚¯ãƒŠãƒ³ãƒãƒ¼ã‚’ä¿®æ­£
 		Time::WaitFrame(2);
 	}
 	else
 	{
-		assert(false && "JSONƒtƒ@ƒCƒ‹‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ");
+		assert(false && "JSONãƒ•ã‚¡ã‚¤ãƒ«ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
 	}
 }
 
 void SampleScene::Update()
 {
-	if (InputUtil::GetKeyDown(KeyCode::Escape))
+	if (InputUtil::GetKeyDown(KeyCode::ESCAPE))
 	{
 		Game::Exit();
 	}

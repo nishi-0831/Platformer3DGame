@@ -9,35 +9,35 @@ namespace mtgb
 {
 	class WindowContextResource;
 	/// <summary>
-	/// ƒŠƒ\[ƒX‚ğˆê“Z‚ß‚É‚µ‚½\‘¢‘Ì
+	/// ãƒªã‚½ãƒ¼ã‚¹ã‚’ä¸€çºã‚ã«ã—ãŸæ§‹é€ ä½“
 	/// </summary>
 	struct ResourceCollection
 	{
-		std::map<std::type_index, WindowContextResource*> resourceCollection_; // ƒŠƒ\[ƒXŒQ
+		std::map<std::type_index, WindowContextResource*> resourceCollection_; // ãƒªã‚½ãƒ¼ã‚¹ç¾¤
 		ResourceCollection() = default;
 		~ResourceCollection();
 
-		WindowContextResource*& operator[](const std::type_index& key);
-		const WindowContextResource* operator[](const std::type_index& key) const;
+		WindowContextResource*& operator[](const std::type_index& _key);
+		const WindowContextResource* operator[](const std::type_index& _key) const;
 
 		void Insert(const std::type_index& _key, WindowContextResource* _pResource);
-		void Swap(ResourceCollection& other);
+		void Swap(ResourceCollection& _other);
 		void Release();
 
 		/// <summary>
-		/// <para> w’è‚³‚ê‚½ƒŠƒ\[ƒX‚ÌQÆ‚ğ•Ô‚· </para>
-		/// <para> Œ©‚Â‚©‚ç‚È‚¢ê‡‚Íassert‚ÅƒvƒƒOƒ‰ƒ€’†~ </para>
+		/// <para> æŒ‡å®šã•ã‚ŒãŸãƒªã‚½ãƒ¼ã‚¹ã®å‚ç…§ã‚’è¿”ã™ </para>
+		/// <para> è¦‹ã¤ã‹ã‚‰ãªã„å ´åˆã¯assertã§ãƒ—ãƒ­ã‚°ãƒ©ãƒ ä¸­æ­¢ </para>
 		/// </summary>
-		/// <typeparam name="Type">ƒŠƒ\[ƒX‚ÌŒ^</typeparam>
-		/// <returns>w’è‚³‚ê‚½ƒŠƒ\[ƒX‚ÌQÆ</returns>
+		/// <typeparam name="Type">ãƒªã‚½ãƒ¼ã‚¹ã®å‹</typeparam>
+		/// <returns>æŒ‡å®šã•ã‚ŒãŸãƒªã‚½ãƒ¼ã‚¹ã®å‚ç…§</returns>
 		template <typename Type> Type& Get()
 		{
 			auto itr = resourceCollection_.find(typeid(Type));
-			assert(itr != resourceCollection_.end() && "w’è‚³‚ê‚½Œ^‚ÌƒŠƒ\[ƒX‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ");
+			assert(itr != resourceCollection_.end() && "æŒ‡å®šã•ã‚ŒãŸå‹ã®ãƒªã‚½ãƒ¼ã‚¹ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
 			return *dynamic_cast<Type*>(itr->second);
 		}
 
-		// ”ñconstƒo[ƒWƒ‡ƒ“
+		// éconstãƒãƒ¼ã‚¸ãƒ§ãƒ³
 		auto begin()
 		{
 			return resourceCollection_.begin();
@@ -47,7 +47,7 @@ namespace mtgb
 			return resourceCollection_.end();
 		}
 
-		// constƒo[ƒWƒ‡ƒ“
+		// constãƒãƒ¼ã‚¸ãƒ§ãƒ³
 		auto begin() const
 		{
 			return resourceCollection_.begin();

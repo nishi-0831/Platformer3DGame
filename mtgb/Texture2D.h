@@ -14,7 +14,7 @@ struct D3D11_TEXTURE2D_DESC;
 namespace mtgb
 {
 	/// <summary>
-	/// 2D‚ÌƒeƒNƒXƒ`ƒƒ
+	/// 2Dã®ãƒ†ã‚¯ã‚¹ãƒãƒ£
 	/// </summary>
 	class Texture2D
 	{
@@ -23,40 +23,40 @@ namespace mtgb
 		~Texture2D();
 
 		/// <summary>
-		/// ‰æ‘œƒtƒ@ƒCƒ‹‚©‚çƒeƒNƒXƒ`ƒƒ‚ğƒ[ƒh‚·‚é
+		/// ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
 		/// </summary>
-		/// <param name="fileName">ƒtƒ@ƒCƒ‹‚ÌƒpƒX</param>
+		/// <param name="fileName">ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹</param>
 		void Load(const std::wstring& _fileName);
 
 		/// <summary>
-		/// ƒTƒ“ƒvƒ‰[ƒXƒe[ƒg‚ğæ“¾
+		/// ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‚¹ãƒ†ãƒ¼ãƒˆã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒTƒ“ƒvƒ‰[ƒXƒe[ƒg‚Ìƒ|ƒCƒ“ƒ^</returns>
+		/// <returns>ã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‚¹ãƒ†ãƒ¼ãƒˆã®ãƒã‚¤ãƒ³ã‚¿</returns>
 		inline ID3D11SamplerState* GetSamplerState()
 		{
 			return pSamplerLinear_.Get();
 		}
 		/// <summary>
-		/// ƒVƒF[ƒ_ƒŠƒ\[ƒXƒrƒ…‚ğæ“¾
+		/// ã‚·ã‚§ãƒ¼ãƒ€ãƒªã‚½ãƒ¼ã‚¹ãƒ“ãƒ¥ã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒVƒF[ƒ_ƒŠƒ\[ƒXƒrƒ…‚Ìƒ|ƒCƒ“ƒ^</returns>
+		/// <returns>ã‚·ã‚§ãƒ¼ãƒ€ãƒªã‚½ãƒ¼ã‚¹ãƒ“ãƒ¥ã®ãƒã‚¤ãƒ³ã‚¿</returns>
 		inline ID3D11ShaderResourceView* GetShaderResourceView()
 		{
 			return pShaderResourceView_.Get();
 		}
 
 		/// <summary>
-		/// ƒeƒNƒXƒ`ƒƒ‚Ì‰æ‘œ‚ÌƒTƒCƒY‚ğæ“¾
+		/// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ç”»åƒã®ã‚µã‚¤ã‚ºã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒˆƒR•‚Æƒ^ƒe•‚ÌƒsƒNƒZƒ‹</returns>
+		/// <returns>ãƒ¨ã‚³å¹…ã¨ã‚¿ãƒ†å¹…ã®ãƒ”ã‚¯ã‚»ãƒ«</returns>
 		inline const Vector2Int GetSize() const
 		{
 			return size_;
 		}
 
 	  private:
-		ComPtr<ID3D11SamplerState> pSamplerLinear_;			   // “\‚è•û
-		ComPtr<ID3D11ShaderResourceView> pShaderResourceView_; // ƒVƒF[ƒ_‚É‘—‚é‚½‚ß‚Ì‚à‚Ì
-		Vector2Int size_;									   // ‰æ‘œ‚ÌƒTƒCƒY
+		ComPtr<ID3D11SamplerState> pSamplerLinear_;			   // è²¼ã‚Šæ–¹
+		ComPtr<ID3D11ShaderResourceView> pShaderResourceView_; // ã‚·ã‚§ãƒ¼ãƒ€ã«é€ã‚‹ãŸã‚ã®ã‚‚ã®
+		Vector2Int size_;									   // ç”»åƒã®ã‚µã‚¤ã‚º
 	};
 } // namespace mtgb

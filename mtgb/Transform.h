@@ -6,7 +6,6 @@
 #include "IComponentMemento.h"
 
 #include "Vector3.h"
-#include "Vector3Ref.h"
 #include "Quaternion.h"
 #include "Matrix4x4.h"
 #include "cmtgb.h"
@@ -28,123 +27,121 @@ namespace mtgb
 		Transform& operator=(const Transform& _other);
 
 		/// <summary>
-		/// ŒvZ‚·‚é
+		/// è¨ˆç®—ã™ã‚‹
 		/// </summary>
 		void Compute();
 
 		/// <summary>
-		/// ƒ[ƒJƒ‹s—ñ‚ğ¶¬‚·‚é
+		/// ãƒ­ãƒ¼ã‚«ãƒ«è¡Œåˆ—ã‚’ç”Ÿæˆã™ã‚‹
 		/// </summary>
-		/// <param name="_pMatrix">s—ñ‚Ìƒ|ƒCƒ“ƒ^“n‚µ</param>
+		/// <param name="_pMatrix">è¡Œåˆ—ã®ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—</param>
 		void GenerateLocalMatrix(Matrix4x4* _pMatrix) const;
 		/// <summary>
-		/// ƒ[ƒ‹ƒhs—ñ‚ğ¶¬‚·‚é
+		/// ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã‚’ç”Ÿæˆã™ã‚‹
 		/// </summary>
-		/// <param name="_pMatrix">s—ñ‚Ìƒ|ƒCƒ“ƒ^“n‚µ</param>
+		/// <param name="_pMatrix">è¡Œåˆ—ã®ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—</param>
 		void GenerateWorldMatrix(Matrix4x4* _pMatrix) const;
 		/// <summary>
-		/// ƒ[ƒ‹ƒh‰ñ“]s—ñ‚ğ¶¬‚·‚é
+		/// ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—ã‚’ç”Ÿæˆã™ã‚‹
 		/// </summary>
-		/// <param name="_pMatrix">s—ñ‚Ìƒ|ƒCƒ“ƒ^“n‚µ</param>
+		/// <param name="_pMatrix">è¡Œåˆ—ã®ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—</param>
 		void GenerateWorldRotationMatrix(Matrix4x4* _pMatrix) const;
 		/// <summary>
-		/// e‚Ìs—ñ‚ğ¶¬‚·‚é
+		/// è¦ªã®è¡Œåˆ—ã‚’ç”Ÿæˆã™ã‚‹
 		/// </summary>
-		/// <param name="_pMatrix">s—ñ‚Ìƒ|ƒCƒ“ƒ^“n‚µ</param>
+		/// <param name="_pMatrix">è¡Œåˆ—ã®ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—</param>
 		void GenerateParentMatrix(Matrix4x4* _pMatrix) const;
 		/// <summary>
-		/// e‚Ì‰ñ“]s—ñ‚ğ¶¬‚·‚é
+		/// è¦ªã®å›è»¢è¡Œåˆ—ã‚’ç”Ÿæˆã™ã‚‹
 		/// </summary>
-		/// <param name="_pMatrix">s—ñ‚Ìƒ|ƒCƒ“ƒ^“n‚µ</param>
+		/// <param name="_pMatrix">è¡Œåˆ—ã®ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—</param>
 		void GenerateParentRotationMatrix(Matrix4x4* _pMatrix) const;
-
 		/// <summary>
-		/// s—ñ‚ğƒXƒP[ƒ‹A‰ñ“]AˆÚ“®¬•ª‚É•ªŠ„A“K—p‚·‚é
+		/// è¡Œåˆ—ã‚’ã‚¹ã‚±ãƒ¼ãƒ«ã€å›è»¢ã€ç§»å‹•æˆåˆ†ã«åˆ†å‰²ã€é©ç”¨ã™ã‚‹
 		/// </summary>
-		/// <param name="_matrix">•ÏŠ·‚Ég—p‚·‚és—ñ</param>
+		/// <param name="_matrix">å¤‰æ›ã«ä½¿ç”¨ã™ã‚‹è¡Œåˆ—</param>
 		/// <returns>  </returns>
 		bool DecomposeMatrix(const Matrix4x4& _matrix);
 		/// <summary>
-		/// e‚ÌStatefulTransform‚ğæ“¾
+		/// è¦ªã®StatefulTransformã‚’å–å¾—
 		/// </summary>
-		/// <returns>StatefulTransform‚Ìƒ|ƒCƒ“ƒ^</returns>
+		/// <returns>StatefulTransformã®ãƒã‚¤ãƒ³ã‚¿</returns>
 		Transform* GetParent() const;
 		/// <summary>
-		/// e‚ÌStatefulTransform‚ğİ’è
+		/// è¦ªã®StatefulTransformã‚’è¨­å®š
 		/// </summary>
-		/// <param name="_entityId">e‚É‚·‚éƒGƒ“ƒeƒBƒeƒB¯•Êq</param>
+		/// <param name="_entityId">è¦ªã«ã™ã‚‹ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£è­˜åˆ¥å­</param>
 		void SetParent(const EntityId _entityId);
-
 		/// <summary>
-		/// ‰ñ“]‚·‚é
+		/// å›è»¢ã™ã‚‹
 		/// </summary>
-		/// <param name="_rotate">ƒIƒCƒ‰[Šp(ƒ‰ƒWƒAƒ“)</param>
+		/// <param name="_rotate">ã‚ªã‚¤ãƒ©ãƒ¼è§’(ãƒ©ã‚¸ã‚¢ãƒ³)</param>
 		void Rotation(const Vector3& _rotate);
 		/// <summary>
-		/// ²ƒxƒNƒgƒ‹‚Å‰ñ“]‚·‚é
+		/// è»¸ãƒ™ã‚¯ãƒˆãƒ«ã§å›è»¢ã™ã‚‹
 		/// </summary>
-		/// <param name="_axis">²‚ÌƒxƒNƒgƒ‹</param>
-		/// <param name="_angle">‰ñ“]Šp“x(ƒ‰ƒWƒAƒ“)</param>
+		/// <param name="_axis">è»¸ã®ãƒ™ã‚¯ãƒˆãƒ«</param>
+		/// <param name="_angle">å›è»¢è§’åº¦(ãƒ©ã‚¸ã‚¢ãƒ³)</param>
 		void Rotation(const Vector3& _axis, const float _angle);
 
 		/// <summary>
-		/// ã•ûŒü‚Ìƒ[ƒ‹ƒhƒxƒNƒgƒ‹
+		/// ä¸Šæ–¹å‘ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰ãƒ™ã‚¯ãƒˆãƒ«
 		/// </summary>
-		/// <returns>ƒ[ƒ‹ƒh‰ñ“]s—ñ‚ª‚©‚¯‚ç‚ê‚½ƒxƒNƒgƒ‹</returns>
+		/// <returns>ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—ãŒã‹ã‘ã‚‰ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«</returns>
 		Vector3 Up() const
 		{
 			return Vector3::Up() * matrixWorldRot_;
 		}
 		/// <summary>
-		/// ‰º•ûŒü‚Ìƒ[ƒ‹ƒhƒxƒNƒgƒ‹
+		/// ä¸‹æ–¹å‘ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰ãƒ™ã‚¯ãƒˆãƒ«
 		/// </summary>
-		/// <returns>ƒ[ƒ‹ƒh‰ñ“]s—ñ‚ª‚©‚¯‚ç‚ê‚½ƒxƒNƒgƒ‹</returns>
+		/// <returns>ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—ãŒã‹ã‘ã‚‰ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«</returns>
 		Vector3 Down() const
 		{
 			return Vector3::Down() * matrixWorldRot_;
 		}
 		/// <summary>
-		/// ¶•ûŒü‚Ìƒ[ƒ‹ƒhƒxƒNƒgƒ‹
+		/// å·¦æ–¹å‘ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰ãƒ™ã‚¯ãƒˆãƒ«
 		/// </summary>
-		/// <returns>ƒ[ƒ‹ƒh‰ñ“]s—ñ‚ª‚©‚¯‚ç‚ê‚½ƒxƒNƒgƒ‹</returns>
+		/// <returns>ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—ãŒã‹ã‘ã‚‰ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«</returns>
 		Vector3 Left() const
 		{
 			return Vector3::Left() * matrixWorldRot_;
 		}
 		/// <summary>
-		/// ‰E•ûŒü‚Ìƒ[ƒ‹ƒhƒxƒNƒgƒ‹
+		/// å³æ–¹å‘ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰ãƒ™ã‚¯ãƒˆãƒ«
 		/// </summary>
-		/// <returns>ƒ[ƒ‹ƒh‰ñ“]s—ñ‚ª‚©‚¯‚ç‚ê‚½ƒxƒNƒgƒ‹</returns>
+		/// <returns>ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—ãŒã‹ã‘ã‚‰ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«</returns>
 		Vector3 Right() const
 		{
 			return Vector3::Right() * matrixWorldRot_;
 		}
 		/// <summary>
-		/// Œã•ûŒü‚Ìƒ[ƒ‹ƒhƒxƒNƒgƒ‹
+		/// å¾Œæ–¹å‘ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰ãƒ™ã‚¯ãƒˆãƒ«
 		/// </summary>
-		/// <returns>ƒ[ƒ‹ƒh‰ñ“]s—ñ‚ª‚©‚¯‚ç‚ê‚½ƒxƒNƒgƒ‹</returns>
+		/// <returns>ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—ãŒã‹ã‘ã‚‰ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«</returns>
 		Vector3 Back() const
 		{
 			return Vector3::Back() * matrixWorldRot_;
 		}
 		/// <summary>
-		/// ‘O•ûŒü‚Ìƒ[ƒ‹ƒhƒxƒNƒgƒ‹
+		/// å‰æ–¹å‘ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰ãƒ™ã‚¯ãƒˆãƒ«
 		/// </summary>
-		/// <returns>ƒ[ƒ‹ƒh‰ñ“]s—ñ‚ª‚©‚¯‚ç‚ê‚½ƒxƒNƒgƒ‹</returns>
+		/// <returns>ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—ãŒã‹ã‘ã‚‰ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«</returns>
 		Vector3 Forward() const;
 
 		/// <summary>
-		/// ƒ[ƒ‹ƒhÀ•W‚ğæ“¾
+		/// ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒ[ƒ‹ƒhÀ•W‚ÌƒxƒNƒgƒ‹</returns>
+		/// <returns>ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã®ãƒ™ã‚¯ãƒˆãƒ«</returns>
 		Vector3 GetWorldPosition() const
 		{
 			return Vector3::Zero() * matrixWorld_;
 		}
 		/// <summary>
-		/// ƒ[ƒ‹ƒh‰ñ“]‚ğæ“¾
+		/// ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢ã‚’å–å¾—
 		/// </summary>
-		/// <returns>ƒ[ƒ‹ƒh‰ñ“]‚ÌlŒ³”</returns>
+		/// <returns>ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢ã®å››å…ƒæ•°</returns>
 		Quaternion GetWorldRotate() const;
 
 		void OnPostRestore() override;
@@ -161,22 +158,22 @@ namespace mtgb
 		bool DecomposeMatrixImpl(Vector3* _pPos, Quaternion* _pRot, Vector3* _pScale, const Matrix4x4& _matrix);
 
 		/// <summary>
-		/// ŒvZ—p©•ª©g‚Ìƒ[ƒ‹ƒhs—ñ‚ğ¶¬‚·‚é
+		/// è¨ˆç®—ç”¨è‡ªåˆ†è‡ªèº«ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã‚’ç”Ÿæˆã™ã‚‹
 		/// </summary>
-		/// <param name="_pMatrix">s—ñ‚Ìƒ|ƒCƒ“ƒ^“n‚µ</param>
+		/// <param name="_pMatrix">è¡Œåˆ—ã®ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—</param>
 		void GenerateWorldMatrixSelf(Matrix4x4* _pMatrix) const;
 		/// <summary>
-		/// ŒvZ—p©•ª©g‚Ìƒ[ƒ‹ƒh‰ñ“]s—ñ‚ğ¶¬‚·‚é
+		/// è¨ˆç®—ç”¨è‡ªåˆ†è‡ªèº«ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—ã‚’ç”Ÿæˆã™ã‚‹
 		/// </summary>
-		/// <param name="_pMatrix">s—ñ‚Ìƒ|ƒCƒ“ƒ^“n‚µ</param>
+		/// <param name="_pMatrix">è¡Œåˆ—ã®ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—</param>
 		void GenerateWorldRotMatrixSelf(Matrix4x4* _pMatrix) const;
 
 	  public:						  // private:
-		Matrix4x4 matrixTranslate_{}; // ŒvZ‚³‚ê‚½ˆÚ“®s—ñ
-		Matrix4x4 matrixRotate_{};	  // ŒvZ‚³‚ê‚½‰ñ“]s—ñ
-		Matrix4x4 matrixScale_{};	  // ŒvZ‚³‚ê‚½Šgks—ñ
-		Matrix4x4 matrixWorld_{};	  // ŒvZ‚³‚ê‚½ƒ[ƒ‹ƒhs—ñ
-		Matrix4x4 matrixWorldRot_{};  // ŒvZ‚³‚ê‚½ƒ[ƒ‹ƒh‰ñ“]s—ñ
+		Matrix4x4 matrixTranslate_{}; // è¨ˆç®—ã•ã‚ŒãŸç§»å‹•è¡Œåˆ—
+		Matrix4x4 matrixRotate_{};	  // è¨ˆç®—ã•ã‚ŒãŸå›è»¢è¡Œåˆ—
+		Matrix4x4 matrixScale_{};	  // è¨ˆç®—ã•ã‚ŒãŸæ‹¡ç¸®è¡Œåˆ—
+		Matrix4x4 matrixWorld_{};	  // è¨ˆç®—ã•ã‚ŒãŸãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—
+		Matrix4x4 matrixWorldRot_{};  // è¨ˆç®—ã•ã‚ŒãŸãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—
 		Matrix4x4 matrixLocal_{};
 		Matrix4x4 prevParentMatrix_{};
 		Vector3 localPosition_;

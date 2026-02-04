@@ -10,12 +10,12 @@
 class Command;
 struct Vector3Show : refl::attr::usage::type
 {
-	Command* operator()(mtgb::Vector3* vec, const char* name) const;
+	Command* operator()(mtgb::Vector3* _vec, const char* _name) const;
 };
 
-struct QuaternionSHow : refl::attr::usage::type
+struct QuaternionShow : refl::attr::usage::type
 {
-	Command* operator()(DirectX::XMVECTORF32* vec, const char* name) const;
+	Command* operator()(DirectX::XMVECTORF32* _vec, const char* _name) const;
 };
 
 struct Vector4Show : refl::attr::usage::type
@@ -24,7 +24,7 @@ struct Vector4Show : refl::attr::usage::type
 };
 
 /// <summary>
-/// �s��̕ύX��Undo/Redo�@�\�ɑΉ��ł��Ă��Ȃ��B
+/// 行列の変更をUndo/Redo機能に対応できていない。
 /// </summary>
 struct MatrixShow : refl::attr::usage::type
 {
@@ -36,13 +36,13 @@ template <typename T> struct Range : refl::attr::usage::member
 	T Min;
 	T Max;
 
-	Range(T min, T max)
+	Range(T _min, T _max)
 		: Min(min)
 		, Max(max)
 	{
 	}
 
-	template <typename FieldType> void operator()(FieldType* instance, const char* name) const
+	template <typename FieldType> void operator()(FieldType* _instance, const char* _name) const
 	{
 		ShowRange(instance, name, Min, Max);
 	}
@@ -53,7 +53,7 @@ template <typename T> struct ProxyFor : refl::attr::usage::type
 	using TargetType = T;
 };
 
-template <typename T> void ShowRange(T* instance, const char* name, T min, T max)
+template <typename T> void ShowRange(T* _instance, const char* _name, T _min, T _max)
 {
 	if constexpr (std::is_same_v<T, int>)
 	{
@@ -88,7 +88,7 @@ struct DisplayName : refl::attr::usage::type
 
 template <typename T> struct ReadOnly : refl::attr::usage::member
 {
-	template <typename FieldType> void operator()(FieldType* instance, const char* name) const
+	template <typename FieldType> void operator()(FieldType* _instance, const char* _name) const
 	{
 	}
 };

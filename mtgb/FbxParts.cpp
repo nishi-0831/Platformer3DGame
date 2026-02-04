@@ -17,9 +17,10 @@ namespace
 	Vector4 lightDir{0, 1, 1, 0};
 }
 
-// FbxParts ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Ì‰Šú‰»ƒŠƒXƒg‚ğŠg’£‚µ‚ÄA‘Sƒƒ“ƒo[•Ï”‚ğ‰Šú‰»
+// FbxParts ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®åˆæœŸåŒ–ãƒªã‚¹ãƒˆã‚’æ‹¡å¼µã—ã¦ã€å…¨ãƒ¡ãƒ³ãƒãƒ¼å¤‰æ•°ã‚’åˆæœŸåŒ–
 mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
-	: vertexCount_{0}
+	: hasSkinnedMesh_{false}
+	, vertexCount_{0}
 	, polygonCount_{0}
 	, indexCount_{0}
 	, materialCount_{0}
@@ -35,7 +36,6 @@ mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
 	, ppIndexBuffer_{nullptr}
 	, unitScaleFactor_{_unitScaleFactor}
 	, fbxToWorldScaleFactor_{static_cast<float>(1.0f / _unitScaleFactor)}
-	, hasSkinnedMesh_{false}
 {
 	if (_parent != nullptr)
 	{
@@ -52,14 +52,14 @@ mtgb::FbxParts::~FbxParts()
 
 void mtgb::FbxParts::Initialize()
 {
-	// MEMO: ƒeƒNƒXƒ`ƒƒUV‚ªˆÙ‚È‚é’¸“_‚ğ•ªŠ„&•¡» ¨ UVî•ñ‚Æ’¸“_î•ñ‚Ìˆê’v’²®
-	pMesh_->SplitPoints(FbxLayerElement::eTextureDiffuse);
-	// Šeî•ñ‚ÌŒÂ”‚ğæ“¾
-	vertexCount_		= pMesh_->GetControlPointsCount(); // ’¸“_‚Ì”
-	polygonCount_		= pMesh_->GetPolygonCount();	   // ƒ|ƒŠƒSƒ“‚Ì”
-	polygonVertexCount_ = pMesh_->GetPolygonVertexCount(); // ƒ|ƒŠƒSƒ“’¸“_ƒCƒ“ƒfƒbƒNƒX”
+	// MEMO: ãƒ†ã‚¯ã‚¹ãƒãƒ£UVãŒç•°ãªã‚‹é ‚ç‚¹ã‚’åˆ†å‰²&è¤‡è£½ â†’ UVæƒ…å ±ã¨é ‚ç‚¹æƒ…å ±ã®ä¸€è‡´èª¿æ•´
+	// pMesh_->SplitPoints(FbxLayerElement::eTextureDiffuse);
+	// å„æƒ…å ±ã®å€‹æ•°ã‚’å–å¾—
+	vertexCount_		= pMesh_->GetControlPointsCount(); // é ‚ç‚¹ã®æ•°
+	polygonCount_		= pMesh_->GetPolygonCount();	   // ãƒãƒªã‚´ãƒ³ã®æ•°
+	polygonVertexCount_ = pMesh_->GetPolygonVertexCount(); // ãƒãƒªã‚´ãƒ³é ‚ç‚¹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹æ•°
 	InitializeMaterial();
-	IShader::Initialize(); // ’¸“_EƒCƒ“ƒfƒbƒNƒXE’è” ƒoƒbƒtƒ@‚Ì‰Šú‰»
+	IShader::Initialize(); // é ‚ç‚¹ãƒ»ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒ»å®šæ•° ãƒãƒƒãƒ•ã‚¡ã®åˆæœŸåŒ–
 }
 
 void mtgb::FbxParts::Release()
@@ -90,44 +90,44 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 
 	if (hasSkinnedMesh_)
 	{
-		DirectX11Draw::SetShader(ShaderType::FbxPartsSkin);
+		DirectX11Draw::SetShader(ShaderType::FBX_PARTS_SKIN);
 	}
 	DirectX11Draw::SetIsWriteToDepthBuffer(true);
-	// •`‰æî•ñ‚ğƒVƒF[ƒ_‚É“n‚·
+	// æç”»æƒ…å ±ã‚’ã‚·ã‚§ãƒ¼ãƒ€ã«æ¸¡ã™
 	UINT stride{sizeof(Vertex)};
 	UINT offset{0};
 	DirectX11Draw::pContext_->IASetVertexBuffers(0, 1, pVertexBuffer_.GetAddressOf(), &stride, &offset);
 
-	// g—p‚·‚éƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚ğƒVƒF[ƒ_‚É“`‚¦‚é
+	// ä½¿ç”¨ã™ã‚‹ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã‚’ã‚·ã‚§ãƒ¼ãƒ€ã«ä¼ãˆã‚‹
 	DirectX11Draw::pContext_->VSSetConstantBuffers(0, 1, pConstantBuffer_.GetAddressOf());
 	DirectX11Draw::pContext_->PSSetConstantBuffers(0, 1, pConstantBuffer_.GetAddressOf());
 
 	if (hasSkinnedMesh_)
 	{
-		SetBoneMatrix(); // ƒ{[ƒ“s—ñ
+		SetBoneMatrix(); // ãƒœãƒ¼ãƒ³è¡Œåˆ—
 		DirectX11Draw::pContext_->VSSetConstantBuffers(1, 1, pBoneConstantBuffer_.GetAddressOf());
 	}
 
-	// ƒJƒƒ‰ƒVƒXƒeƒ€‚Ö‚ÌƒAƒNƒZƒX—p
+	// ã‚«ãƒ¡ãƒ©ã‚·ã‚¹ãƒ†ãƒ ã¸ã®ã‚¢ã‚¯ã‚»ã‚¹ç”¨
 	const CameraSystem& CAMERA{Game::System<CameraSystem>()};
 
-	// ƒVƒF[ƒ_‚ÌƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@[‚ÉŠeíƒf[ƒ^‚ğ“n‚·
+	// ã‚·ã‚§ãƒ¼ãƒ€ã®ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ãƒ¼ã«å„ç¨®ãƒ‡ãƒ¼ã‚¿ã‚’æ¸¡ã™
 	for (DWORD i = 0; i < materialCount_; i++)
 	{
 		UINT stride{sizeof(int)};
 		UINT offset{0};
 		DirectX11Draw::pContext_->IASetIndexBuffer(ppIndexBuffer_[i].Get(), DXGI_FORMAT_R32_UINT, 0);
 
-		// ƒpƒ‰ƒ[ƒ^‚Ìó‚¯“n‚µ
+		// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å—ã‘æ¸¡ã—
 		D3D11_MAPPED_SUBRESOURCE pdata_;
 		ConstantBuffer cb{};
 		Matrix4x4 mWorld{};
 		_transform.GenerateWorldMatrix(&mWorld);
 
-		Matrix4x4 mView{}; // ƒrƒ…[s—ñ
+		Matrix4x4 mView{}; // ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—
 		CAMERA.GetViewMatrix(&mView);
 
-		Matrix4x4 mProj{}; // ƒvƒƒWƒFƒNƒVƒ‡ƒ“s—ñ
+		Matrix4x4 mProj{}; // ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³è¡Œåˆ—
 		CAMERA.GetProjMatrix(&mProj);
 
 		cb.g_matrixWorldViewProj = XMMatrixTranspose(mWorld * mView * mProj);
@@ -148,7 +148,7 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 		cb.g_shininess		   = pMaterial_[i].shininess;
 		CAMERA.GetPosition(&cb.g_cameraPosition);
 
-		cb.g_lightDirection = lightDir; // ƒ‰ƒCƒg‚ÌŒü‚«
+		cb.g_lightDirection = lightDir; // ãƒ©ã‚¤ãƒˆã®å‘ã
 		cb.g_isTexture		= (pMaterial_[i].pTexture != nullptr);
 		cb.g_textureScale	= Vector4(_transform.scale.x, _transform.scale.y, _transform.scale.z, 0.0f);
 		DirectX11Draw::pContext_->Map(pConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &pdata_);
@@ -164,7 +164,7 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 		}
 		else
 		{
-			// ƒeƒNƒXƒ`ƒƒ‚ª‚È‚¢ê‡‚Å‚àƒfƒtƒHƒ‹ƒgƒTƒ“ƒvƒ‰[‚ğİ’è
+			// ãƒ†ã‚¯ã‚¹ãƒãƒ£ãŒãªã„å ´åˆã§ã‚‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚µãƒ³ãƒ—ãƒ©ãƒ¼ã‚’è¨­å®š
 			ID3D11SamplerState* pDefaultSampler = nullptr;
 			DirectX11Draw::pContext_->PSSetSamplers(0, 1, DirectX11Draw::pDefaultSamplerState_.GetAddressOf());
 
@@ -173,17 +173,17 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 		}
 		DirectX11Draw::pContext_->Unmap(pConstantBuffer_.Get(), 0);
 
-		// ƒ|ƒŠƒSƒ“ƒƒbƒVƒ…‚ğ•`‰æ‚·‚é
+		// ãƒãƒªã‚´ãƒ³ãƒ¡ãƒƒã‚·ãƒ¥ã‚’æç”»ã™ã‚‹
 		DirectX11Draw::pContext_->DrawIndexed(pMaterial_[i].polygonCount * 3, 0, 0);
 	}
 }
 
 void mtgb::FbxParts::DrawSkinAnimation(const Transform& _transform, FbxTime _time)
 {
-	// ƒAƒjƒ[ƒVƒ‡ƒ“ŠÔ‚ğİ’è
+	// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“ã‚’è¨­å®š
 	SetAnimationTime(_time);
 
-	// ’Êí‚Ì•`‰æˆ—‚ğŒÄ‚Ño‚µ
+	// é€šå¸¸ã®æç”»å‡¦ç†ã‚’å‘¼ã³å‡ºã—
 	Draw(_transform);
 }
 
@@ -196,7 +196,7 @@ bool mtgb::FbxParts::TryGetBonePosition(const std::string& _boneName, Vector3* _
 {
 	for (int i = 0; i < boneCount_; i++)
 	{
-		// Œ©‚Â‚©‚Á‚½I
+		// è¦‹ã¤ã‹ã£ãŸï¼
 		if (_boneName == ppCluster_[i]->GetLink()->GetName())
 		{
 			FbxAMatrix m{};
@@ -216,13 +216,12 @@ bool mtgb::FbxParts::TryGetBonePosition(const std::string& _boneName, Vector3* _
 bool mtgb::FbxParts::TryGetBonePositionAtNow(const std::string& _boneName, Vector3* _pPosition)
 {
 	auto itr{boneNamePair_.find(_boneName)};
-	if (itr != boneNamePair_.end()) // end ‚¶‚á‚È‚¢‚È‚çŒ©‚Â‚©‚Á‚½
+	if (itr != boneNamePair_.end()) // end ã˜ã‚ƒãªã„ãªã‚‰è¦‹ã¤ã‹ã£ãŸ
 	{
 		Matrix4x4 m{};
-		// DirectX::XMStoreFloat4x4(&m, itr->second->newPose);
-		_pPosition->x = m.r[3].m128_f32[0];
-		_pPosition->y = m.r[3].m128_f32[1];
-		_pPosition->z = m.r[3].m128_f32[2];
+		_pPosition->x = DirectX::XMVectorGetX(m.r[3]);
+		_pPosition->y = DirectX::XMVectorGetY(m.r[3]);
+		_pPosition->z = DirectX::XMVectorGetZ(m.r[3]);
 
 		return true;
 	}
@@ -242,14 +241,14 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 		{
 			int index{pMesh_->GetPolygonVertex(poly, vertex)};
 
-			// ƒCƒ“ƒfƒbƒNƒX‚ª”ÍˆÍ“à‚©ƒ`ƒFƒbƒN
+			// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒç¯„å›²å†…ã‹ãƒã‚§ãƒƒã‚¯
 			if (index < 0 || index >= static_cast<int>(vertexCount_))
 			{
 				massert(false && "Vertex index out of range in FbxParts::InitializeVertexBuffer");
 				continue;
 			}
 
-			// ’¸“_‚ÌÀ•W
+			// é ‚ç‚¹ã®åº§æ¨™
 			FbxVector4 position		   = pMesh_->GetControlPointAt(index);
 			pVertexes_[index].position = {
 				static_cast<float>(position[0]) * fbxToWorldScaleFactor_,
@@ -258,7 +257,7 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 
 			};
 
-			// ’¸“_‚Ì–@ü
+			// é ‚ç‚¹ã®æ³•ç·š
 			FbxVector4 normal;
 			pMesh_->GetPolygonVertexNormal(poly, vertex, normal);
 			pVertexes_[index].normal = {
@@ -267,7 +266,7 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 				static_cast<float>(normal[2]),
 			};
 
-			// ƒXƒLƒjƒ“ƒOŠÖ˜A‚Ì‰Šú‰»
+			// ã‚¹ã‚­ãƒ‹ãƒ³ã‚°é–¢é€£ã®åˆæœŸåŒ–
 			if (hasSkinnedMesh_)
 			{
 				for (int i = 0; i < 4; ++i)
@@ -278,7 +277,7 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 			}
 			else
 			{
-				// ƒXƒLƒjƒ“ƒO–³‚µ‚Ìê‡‚ÍƒfƒtƒHƒ‹ƒg’l
+				// ã‚¹ã‚­ãƒ‹ãƒ³ã‚°ç„¡ã—ã®å ´åˆã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤
 				pVertexes_[index].boneIndex[0]	= 0;
 				pVertexes_[index].boneWeight[0] = 1.0f;
 				for (int i = 1; i < 4; ++i)
@@ -290,43 +289,131 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 		}
 	}
 
-	// UVÀ•W‚Ìˆ—
+	// UVåº§æ¨™ã®å‡¦ç†
 
 	int uvCount{pMesh_->GetTextureUVCount()};
 	FbxLayerElementUV* pUV{pMesh_->GetLayer(0)->GetUVs()};
-	if (uvCount > 0 && pUV->GetMappingMode() == FbxLayerElement::eByControlPoint)
+	if (pUV == nullptr || uvCount == 0)
 	{
-		int writeCount = (std::min)(uvCount, static_cast<int>(vertexCount_));
-		for (int i = 0; i < writeCount; i++)
+		// UVãŒå­˜åœ¨ã—ãªã„å ´åˆã€ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤ã‚’è¨­å®š
+		for (uint32_t i = 0; i < vertexCount_; i++)
 		{
-			fbxsdk::FbxVector2 uv{pUV->GetDirectArray().GetAt(i)};
-			pVertexes_[i]
-				.uv = {static_cast<float>(uv.mData[0]), static_cast<float>(1.0 - uv.mData[1]), static_cast<float>(0.0)};
+			pVertexes_[i].uv = {0.0f, 0.0f, 0.0f};
 		}
 	}
-
-	// œ‚Ìˆ—
-	if (hasSkinnedMesh_)
+	else
 	{
-		InitializeSkelton();
+		FbxLayerElement::EMappingMode mappingMode	  = pUV->GetMappingMode();
+		FbxLayerElement::EReferenceMode referenceMode = pUV->GetReferenceMode();
+
+		if (mappingMode == FbxLayerElement::eByControlPoint)
+		{
+			if (referenceMode == FbxLayerElement::eDirect)
+			{
+				// ç›´æ¥ã‚¢ã‚¯ã‚»ã‚¹: ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒã‚¤ãƒ³ãƒˆã”ã¨ã«1ã¤ã®UV
+				int writeCount = (std::min)(uvCount, static_cast<int>(vertexCount_));
+				for (int i = 0; i < writeCount; i++)
+				{
+					FbxVector2 uv	 = pUV->GetDirectArray().GetAt(i);
+					pVertexes_[i].uv = {
+						static_cast<float>(uv[0]),
+						static_cast<float>(1.0 - uv[1]), // Yåº§æ¨™ã‚’åè»¢
+						0.0f
+					};
+				}
+			}
+			else if (referenceMode == FbxLayerElement::eIndexToDirect)
+			{
+				// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹å‚ç…§: ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒã‚¤ãƒ³ãƒˆã”ã¨ã«ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
+				for (uint32_t i = 0; i < vertexCount_; i++)
+				{
+					if (i < static_cast<uint32_t>(pUV->GetIndexArray().GetCount()))
+					{
+						int uvIndex = pUV->GetIndexArray().GetAt(i);
+						if (uvIndex >= 0 && uvIndex < pUV->GetDirectArray().GetCount())
+						{
+							FbxVector2 uv	 = pUV->GetDirectArray().GetAt(uvIndex);
+							pVertexes_[i].uv = {static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f};
+						}
+					}
+				}
+			}
+		}
+		else if (mappingMode == FbxLayerElement::eByPolygonVertex)
+		{
+			if (referenceMode == FbxLayerElement::eDirect)
+			{
+				// ç›´æ¥ã‚¢ã‚¯ã‚»ã‚¹: ãƒãƒªã‚´ãƒ³é ‚ç‚¹ã”ã¨ã«1ã¤ã®UV
+				int polygonVertexIndex = 0;
+				for (uint32_t poly = 0; poly < polygonCount_; poly++)
+				{
+					for (uint32_t vertex = 0; vertex < 3; vertex++)
+					{
+						int controlPointIndex = pMesh_->GetPolygonVertex(poly, vertex);
+
+						if (polygonVertexIndex < pUV->GetDirectArray().GetCount() && controlPointIndex >= 0 &&
+							controlPointIndex < static_cast<int>(vertexCount_))
+						{
+
+							FbxVector2 uv = pUV->GetDirectArray().GetAt(polygonVertexIndex);
+							pVertexes_[controlPointIndex]
+								.uv = {static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f};
+						}
+						polygonVertexIndex++;
+					}
+				}
+			}
+			else if (referenceMode == FbxLayerElement::eIndexToDirect)
+			{
+				// ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹å‚ç…§: ãƒãƒªã‚´ãƒ³é ‚ç‚¹ã”ã¨ã«ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
+				int polygonVertexIndex = 0;
+				for (uint32_t poly = 0; poly < polygonCount_; poly++)
+				{
+					for (uint32_t vertex = 0; vertex < 3; vertex++)
+					{
+						int controlPointIndex = pMesh_->GetPolygonVertex(poly, vertex);
+
+						if (polygonVertexIndex < pUV->GetIndexArray().GetCount() && controlPointIndex >= 0 &&
+							controlPointIndex < static_cast<int>(vertexCount_))
+						{
+
+							int uvIndex = pUV->GetIndexArray().GetAt(polygonVertexIndex);
+							if (uvIndex >= 0 && uvIndex < pUV->GetDirectArray().GetCount())
+							{
+								FbxVector2 uv = pUV->GetDirectArray().GetAt(uvIndex);
+								pVertexes_[controlPointIndex]
+									.uv = {static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f};
+							}
+						}
+						polygonVertexIndex++;
+					}
+				}
+			}
+		}
+
+		// éª¨ã®å‡¦ç†
+		if (hasSkinnedMesh_)
+		{
+			InitializeSkelton();
+		}
+
+		const D3D11_BUFFER_DESC BUFFER_DESC{
+			.ByteWidth			 = static_cast<UINT>(sizeof(Vertex) * vertexCount_),
+			.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: é€”ä¸­ã§æ›¸ãæ›ãˆã‚‹ãŸã‚ dynamic
+			.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
+			.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE, // é€”ä¸­ã§æ›¸ãæ›ãˆã‚‹ã‹ã‚‰
+			.MiscFlags			 = 0,
+			.StructureByteStride = 0,
+		};
+
+		const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+			.pSysMem		  = pVertexes_,
+			.SysMemPitch	  = 0,
+			.SysMemSlicePitch = 0,
+		};
+
+		_pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, pVertexBuffer_.ReleaseAndGetAddressOf());
 	}
-
-	const D3D11_BUFFER_DESC BUFFER_DESC{
-		.ByteWidth			 = sizeof(Vertex) * vertexCount_,
-		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: “r’†‚Å‘‚«Š·‚¦‚é‚½‚ß dynamic
-		.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
-		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE, // “r’†‚Å‘‚«Š·‚¦‚é‚©‚ç
-		.MiscFlags			 = 0,
-		.StructureByteStride = 0,
-	};
-
-	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
-		.pSysMem		  = pVertexes_,
-		.SysMemPitch	  = 0,
-		.SysMemSlicePitch = 0,
-	};
-
-	_pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, pVertexBuffer_.ReleaseAndGetAddressOf());
 }
 
 void mtgb::FbxParts::InitializeIndexBuffer(ID3D11Device* _pDevice)
@@ -353,17 +440,17 @@ void mtgb::FbxParts::InitializeIndexBuffer(ID3D11Device* _pDevice)
 			}
 		}
 
-		// ƒoƒbƒtƒ@‚Ìİ’è
+		// ãƒãƒƒãƒ•ã‚¡ã®è¨­å®š
 		const D3D11_BUFFER_DESC BUFFER_DESC{
-			.ByteWidth			 = sizeof(DWORD) * count,
-			.Usage				 = D3D11_USAGE_DEFAULT, // MEMO: “r’†‚Å‘‚«Š·‚¦‚È‚¢‚½‚ß DEFAULT
+			.ByteWidth			 = static_cast<UINT>(sizeof(DWORD) * count),
+			.Usage				 = D3D11_USAGE_DEFAULT, // MEMO: é€”ä¸­ã§æ›¸ãæ›ãˆãªã„ãŸã‚ DEFAULT
 			.BindFlags			 = D3D11_BIND_INDEX_BUFFER,
 			.CPUAccessFlags		 = 0,
 			.MiscFlags			 = 0,
 			.StructureByteStride = 0,
 		};
 
-		// ‰Šúƒf[ƒ^
+		// åˆæœŸãƒ‡ãƒ¼ã‚¿
 		const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
 			.pSysMem		  = pIndex,
 			.SysMemPitch	  = 0,
@@ -373,7 +460,7 @@ void mtgb::FbxParts::InitializeIndexBuffer(ID3D11Device* _pDevice)
 		HRESULT hResult{};
 		hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, ppIndexBuffer_[i].ReleaseAndGetAddressOf());
 
-		massert(SUCCEEDED(hResult) && "ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬‚É¸”s");
+		massert(SUCCEEDED(hResult) && "ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•—");
 
 		pMaterial_[i].polygonCount = count / 3;
 		ppIndexData_[i]			   = new DWORD[count];
@@ -386,7 +473,7 @@ void mtgb::FbxParts::InitializeConstantBuffer(ID3D11Device* _pDevice)
 {
 	const D3D11_BUFFER_DESC BUFFER_DESC{
 		.ByteWidth			 = sizeof(ConstantBuffer),
-		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: “r’†‚Å‘‚«Š·‚¦‚é‚½‚ßdynamic
+		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: é€”ä¸­ã§æ›¸ãæ›ãˆã‚‹ãŸã‚dynamic
 		.BindFlags			 = D3D11_BIND_CONSTANT_BUFFER,
 		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE,
 		.MiscFlags			 = 0,
@@ -396,13 +483,13 @@ void mtgb::FbxParts::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	HRESULT hResult{};
 	hResult = _pDevice->CreateBuffer(
 		&BUFFER_DESC,
-		nullptr, // ‰Šúƒf[ƒ^‚È‚µ
+		nullptr, // åˆæœŸãƒ‡ãƒ¼ã‚¿ãªã—
 		pConstantBuffer_.ReleaseAndGetAddressOf()
 	);
 
-	massert(SUCCEEDED(hResult) && "ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìì¬‚É¸”s @FbxParts::InitializeConstantBuffer");
+	massert(SUCCEEDED(hResult) && "ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•— @FbxParts::InitializeConstantBuffer");
 
-	// ƒ{[ƒ“s—ñ—pƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@
+	// ãƒœãƒ¼ãƒ³è¡Œåˆ—ç”¨ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡
 	if (hasSkinnedMesh_)
 	{
 		const D3D11_BUFFER_DESC BUFFER_DESC{
@@ -416,12 +503,12 @@ void mtgb::FbxParts::InitializeConstantBuffer(ID3D11Device* _pDevice)
 
 		hResult = _pDevice->CreateBuffer(
 			&BUFFER_DESC,
-			nullptr, // ‰Šúƒf[ƒ^‚È‚µ
+			nullptr, // åˆæœŸãƒ‡ãƒ¼ã‚¿ãªã—
 			pBoneConstantBuffer_.ReleaseAndGetAddressOf()
 		);
 
 		massert(
-			SUCCEEDED(hResult) && "ƒ{[ƒ“s—ñ—pƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚Ìì¬‚É¸”s @FbxParts::InitializeConstantBuffer"
+			SUCCEEDED(hResult) && "ãƒœãƒ¼ãƒ³è¡Œåˆ—ç”¨ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®ä½œæˆã«å¤±æ•— @FbxParts::InitializeConstantBuffer"
 		);
 
 		hasSkinnedMesh_ = true;
@@ -430,7 +517,7 @@ void mtgb::FbxParts::InitializeConstantBuffer(ID3D11Device* _pDevice)
 
 void mtgb::FbxParts::InitializeMaterial()
 {
-	// ƒ}ƒeƒŠƒAƒ‹ƒoƒbƒtƒ@‚Ìì¬
+	// ãƒãƒ†ãƒªã‚¢ãƒ«ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ
 	materialCount_ = pNode_->GetMaterialCount();
 	pMaterial_	   = new Material[materialCount_]{};
 
@@ -440,14 +527,14 @@ void mtgb::FbxParts::InitializeMaterial()
 
 		FbxSurfacePhong* pPhong = static_cast<FbxSurfacePhong*>(pSurfaceMaterial);
 
-		// ŠÂ‹«Œõ
+		// ç’°å¢ƒå…‰
 		FbxDouble3 ambient = FbxDouble3(0, 0, 0);
-		// ŠgU”½ËŒõ
+		// æ‹¡æ•£åå°„å…‰
 		FbxDouble3 diffuse = FbxDouble3(0, 0, 0);
-		// ‹¾–Ê”½Ë
+		// é¡é¢åå°„
 		FbxDouble3 specular = FbxDouble3(0, 0, 0);
 
-		// Ambient‚ÌƒvƒƒpƒeƒB‚ğŒ©‚Â‚¯‚é
+		// Ambientã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚’è¦‹ã¤ã‘ã‚‹
 		FbxProperty prop{};
 
 		prop = pPhong->FindProperty(FbxSurfaceMaterial::sAmbient);
@@ -460,7 +547,7 @@ void mtgb::FbxParts::InitializeMaterial()
 		{
 			diffuse = pPhong->Diffuse;
 		}
-		// MEMO: “à•”‚Åtypedef double FbxDouble ‚³‚ê‚Ä‚¢‚é‚½‚ßfloat‚ÉƒLƒƒƒXƒg
+		// MEMO: å†…éƒ¨ã§typedef double FbxDouble ã•ã‚Œã¦ã„ã‚‹ãŸã‚floatã«ã‚­ãƒ£ã‚¹ãƒˆ
 		pMaterial_[i].ambient	= {(float)ambient[0], (float)ambient[1], (float)ambient[2], 1.0f};
 		pMaterial_[i].diffuse	= {(float)diffuse[0], (float)diffuse[1], (float)diffuse[2], 1.0f};
 		pMaterial_[i].specular	= {0, 0, 0, 0};
@@ -469,7 +556,7 @@ void mtgb::FbxParts::InitializeMaterial()
 		if (pSurfaceMaterial->GetClassId().Is(FbxSurfacePhong::ClassId))
 		{
 			prop = pPhong->FindProperty(FbxSurfaceMaterial::sSpecular);
-			if (prop.IsValid()) // —LŒø’l‚È‚ç
+			if (prop.IsValid()) // æœ‰åŠ¹å€¤ãªã‚‰
 			{
 				specular = pPhong->Specular;
 			}
@@ -481,7 +568,7 @@ void mtgb::FbxParts::InitializeMaterial()
 			{
 				pMaterial_[i].shininess = (float)pPhong->Shininess;
 			}
-			else // Shininess‚Ì’l‚ª–³Œø‚È‚ç
+			else // Shininessã®å€¤ãŒç„¡åŠ¹ãªã‚‰
 			{
 				pMaterial_[i].shininess = 1.0f;
 			}
@@ -492,17 +579,17 @@ void mtgb::FbxParts::InitializeMaterial()
 
 void mtgb::FbxParts::InitializeTexture(FbxSurfaceMaterial* _pMaterial, const DWORD _i)
 {
-	// ƒeƒNƒXƒ`ƒƒ‚Ìî•ñ
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®æƒ…å ±
 	FbxProperty prop = _pMaterial->FindProperty(FbxSurfaceMaterial::sDiffuse);
 
-	// ƒeƒNƒXƒ`ƒƒ”
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£æ•°
 	int fileTextureCount{prop.GetSrcObjectCount<FbxFileTexture>()};
 
-	if (fileTextureCount > 0) // ƒeƒNƒXƒ`ƒƒ‚ª‚ ‚é‚È‚ç
+	if (fileTextureCount > 0) // ãƒ†ã‚¯ã‚¹ãƒãƒ£ãŒã‚ã‚‹ãªã‚‰
 	{
 		FbxFileTexture* pTexture{prop.GetSrcObject<FbxFileTexture>()};
 
-		// ƒtƒ@ƒCƒ‹–¼ + Šg’£ ‚¾‚¯‚É‚·‚é
+		// ãƒ•ã‚¡ã‚¤ãƒ«å + æ‹¡å¼µ ã ã‘ã«ã™ã‚‹
 		char name[_MAX_FNAME]{};
 		char ext[_MAX_EXT]{};
 		_splitpath_s(pTexture->GetRelativeFileName(), nullptr, 0, nullptr, 0, name, _MAX_FNAME, ext, _MAX_EXT);
@@ -518,19 +605,19 @@ void mtgb::FbxParts::InitializeSkelton()
 	FbxDeformer* pDeformer{pMesh_->GetDeformer(0)};
 	if (pDeformer == nullptr)
 	{
-		return; // ƒ{[ƒ“‚ª‚È‚¢‚½‚ß‰ñ‹A
+		return; // ãƒœãƒ¼ãƒ³ãŒãªã„ãŸã‚å›å¸°
 	}
 
 	pSkin_ = static_cast<FbxSkin*>(pDeformer);
 
 	struct POLY_INDEX
 	{
-		int* polyIndex;	  // ƒ|ƒŠƒSƒ“‚Ì”Ô†
-		int* vertexIndex; // ’¸“_‚Ì”Ô†
-		int numRef;		  // ’¸“_‚ğ‹¤—L‚·‚éƒ|ƒŠƒSƒ“”
+		int* polyIndex;	  // ãƒãƒªã‚´ãƒ³ã®ç•ªå·
+		int* vertexIndex; // é ‚ç‚¹ã®ç•ªå·
+		int numRef;		  // é ‚ç‚¹ã‚’å…±æœ‰ã™ã‚‹ãƒãƒªã‚´ãƒ³æ•°
 	};
 
-	// Šeƒ{[ƒ“‚Ìî•ñ‚ğæ“¾‚·‚é
+	// å„ãƒœãƒ¼ãƒ³ã®æƒ…å ±ã‚’å–å¾—ã™ã‚‹
 	boneCount_ = pSkin_->GetClusterCount();
 	ppCluster_ = new FbxCluster*[boneCount_];
 	for (int i = 0; i < boneCount_; i++)
@@ -538,7 +625,7 @@ void mtgb::FbxParts::InitializeSkelton()
 		ppCluster_[i] = pSkin_->GetCluster(i);
 	}
 
-	// ‚Ü‚¸‘S’¸“_‚ÌƒEƒFƒCƒg‚ğ‰Šú‰»
+	// ã¾ãšå…¨é ‚ç‚¹ã®ã‚¦ã‚§ã‚¤ãƒˆã‚’åˆæœŸåŒ–
 	for (DWORD v = 0; v < vertexCount_; v++)
 	{
 		for (int b = 0; b < 4; b++)
@@ -548,35 +635,35 @@ void mtgb::FbxParts::InitializeSkelton()
 		}
 	}
 
-	// ƒ{[ƒ“‚Ì”‚É‡‚í‚¹‚ÄƒEƒFƒCƒgî•ñ‚ğ€”õ
+	// ãƒœãƒ¼ãƒ³ã®æ•°ã«åˆã‚ã›ã¦ã‚¦ã‚§ã‚¤ãƒˆæƒ…å ±ã‚’æº–å‚™
 	for (int i = 0; i < boneCount_; i++)
 	{
-		// i”Ô–Ú‚Ìƒ{[ƒ“‚ª‰e‹¿‚ğ—^‚¦‚é’¸“_”
+		// iç•ªç›®ã®ãƒœãƒ¼ãƒ³ãŒå½±éŸ¿ã‚’ä¸ãˆã‚‹é ‚ç‚¹æ•°
 		int influencedVertexCount{ppCluster_[i]->GetControlPointIndicesCount()};
-		// ’¸“_‚ÌƒCƒ“ƒfƒbƒNƒX‚Ì”z—ñ
+		// é ‚ç‚¹ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®é…åˆ—
 		int* boneInfluencedVertexIndices{ppCluster_[i]->GetControlPointIndices()};
-		// ’¸“_‚ÌƒEƒFƒCƒg‚Ì”z—ñ
+		// é ‚ç‚¹ã®ã‚¦ã‚§ã‚¤ãƒˆã®é…åˆ—
 		double* boneInfluencedWeights{ppCluster_[i]->GetControlPointWeights()};
 
-		// ‰e‹¿‚ğó‚¯‚Ä‚¢‚é’¸“_‚Ì”‚¾‚¯ƒ‹[ƒv
+		// å½±éŸ¿ã‚’å—ã‘ã¦ã„ã‚‹é ‚ç‚¹ã®æ•°ã ã‘ãƒ«ãƒ¼ãƒ—
 		for (int k = 0; k < influencedVertexCount; k++)
 		{
-			// k”Ô–Ú‚Ì’¸“_‚ÌƒCƒ“ƒfƒbƒNƒX
+			// kç•ªç›®ã®é ‚ç‚¹ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 			int vertexIndex = boneInfluencedVertexIndices[k];
-			// k”Ô–Ú‚Ì’¸“_‚ÌƒEƒFƒCƒg
+			// kç•ªç›®ã®é ‚ç‚¹ã®ã‚¦ã‚§ã‚¤ãƒˆ
 			double weight = boneInfluencedWeights[k];
 
-			// 1’¸“_Å‘å4‚Â‚Ü‚Å‚Ìƒ{[ƒ“‚©‚ç‰e‹¿‚ğó‚¯‚é‚æ‚¤§ŒÀ
+			// 1é ‚ç‚¹æœ€å¤§4ã¤ã¾ã§ã®ãƒœãƒ¼ãƒ³ã‹ã‚‰å½±éŸ¿ã‚’å—ã‘ã‚‹ã‚ˆã†åˆ¶é™
 			for (int m = 0; m < 4; m++)
 			{
 				if (m >= boneCount_)
 					break;
 
-				// m”Ô–Ú‚ÌƒEƒFƒCƒg‚æ‚è‘å‚«‚¢‚È‚çã‘‚«
-				// –{—ˆ‚ÍƒEƒFƒCƒg‚Ì‘å‚«‚¢‡‚Éƒ\[ƒg‚·‚×‚«
+				// mç•ªç›®ã®ã‚¦ã‚§ã‚¤ãƒˆã‚ˆã‚Šå¤§ãã„ãªã‚‰ä¸Šæ›¸ã
+				// æœ¬æ¥ã¯ã‚¦ã‚§ã‚¤ãƒˆã®å¤§ãã„é †ã«ã‚½ãƒ¼ãƒˆã™ã¹ã
 				if (weight > pVertexes_[vertexIndex].boneWeight[m])
 				{
-					// Šù‘¶‚Ìƒf[ƒ^‚ğŒã‚ë‚É‚¸‚ç‚·
+					// æ—¢å­˜ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¾Œã‚ã«ãšã‚‰ã™
 					for (int n = 3; n > m; n--)
 					{
 						pVertexes_[vertexIndex].boneIndex[n]  = pVertexes_[vertexIndex].boneIndex[n - 1];
@@ -595,7 +682,7 @@ void mtgb::FbxParts::InitializeSkelton()
 		}
 	}
 
-	// ƒEƒFƒCƒg‚Ì‡Œv‚ğ1‚É‚·‚é
+	// ã‚¦ã‚§ã‚¤ãƒˆã®åˆè¨ˆã‚’1ã«ã™ã‚‹
 	for (DWORD v = 0; v < vertexCount_; v++)
 	{
 		Vertex& vertex	  = pVertexes_[v];
@@ -605,7 +692,7 @@ void mtgb::FbxParts::InitializeSkelton()
 			totalWeight += vertex.boneWeight[b];
 		}
 
-		// ‡Œv‚ª0‚Å‚È‚¢ê‡A1‚É‚·‚é
+		// åˆè¨ˆãŒ0ã§ãªã„å ´åˆã€1ã«ã™ã‚‹
 		if (totalWeight > 0.0f)
 		{
 			for (int b = 0; b < 4; b++)
@@ -614,14 +701,14 @@ void mtgb::FbxParts::InitializeSkelton()
 			}
 		}
 
-		// ƒEƒFƒCƒg‚Ì‘å‚«‚¢‡‚Éƒ\[ƒg
+		// ã‚¦ã‚§ã‚¤ãƒˆã®å¤§ãã„é †ã«ã‚½ãƒ¼ãƒˆ
 		for (int i = 0; i < 3; i++)
 		{
 			for (int j = i + 1; j < 4; j++)
 			{
 				if (vertex.boneWeight[i] < vertex.boneWeight[j])
 				{
-					// ƒ{[ƒ“‚ÌƒEƒFƒCƒg‚ÆƒCƒ“ƒfƒbƒNƒX‚ğƒXƒƒbƒv
+					// ãƒœãƒ¼ãƒ³ã®ã‚¦ã‚§ã‚¤ãƒˆã¨ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’ã‚¹ãƒ¯ãƒƒãƒ—
 					std::swap(vertex.boneWeight[i], vertex.boneWeight[j]);
 					std::swap(vertex.boneIndex[i], vertex.boneIndex[j]);
 				}
@@ -629,7 +716,7 @@ void mtgb::FbxParts::InitializeSkelton()
 		}
 	}
 
-	// ƒ{[ƒ“ì‚é
+	// ãƒœãƒ¼ãƒ³ä½œã‚‹
 	bones_.resize(boneCount_);
 	for (int i = 0; i < boneCount_; i++)
 	{
@@ -661,7 +748,7 @@ void mtgb::FbxParts::SetBoneMatrix()
 {
 	using namespace DirectX;
 
-	// À•WŒn•ÏŠ·s—ñ‚ğ–‘O‚É€”õ
+	// åº§æ¨™ç³»å¤‰æ›è¡Œåˆ—ã‚’äº‹å‰ã«æº–å‚™
 	XMFLOAT4X4 mirrorMatFloat{};
 	XMStoreFloat4x4(&mirrorMatFloat, XMMatrixIdentity());
 	mirrorMatFloat._11 *= -1.0f;
@@ -669,7 +756,7 @@ void mtgb::FbxParts::SetBoneMatrix()
 
 	XMMATRIX mMirror = XMLoadFloat4x4(&mirrorMatFloat);
 
-	// ƒXƒP[ƒ‹ŒW”‚Ìs—ñ
+	// ã‚¹ã‚±ãƒ¼ãƒ«ä¿‚æ•°ã®è¡Œåˆ—
 	XMMATRIX scaleMatrix = XMMatrixScaling(fbxToWorldScaleFactor_, fbxToWorldScaleFactor_, fbxToWorldScaleFactor_);
 
 	BoneMatrices boneMatrices_;
@@ -678,7 +765,7 @@ void mtgb::FbxParts::SetBoneMatrix()
 		FbxAnimEvaluator* evaluator{ppCluster_[i]->GetLink()->GetScene()->GetAnimationEvaluator()};
 		FbxMatrix mCurrent{evaluator->GetNodeGlobalTransform(ppCluster_[i]->GetLink(), currentTime_)};
 
-		// FbxMatrix ‚ğ DirectX::XMMATRIX ‚É•ÏŠ·
+		// FbxMatrix ã‚’ DirectX::XMMATRIX ã«å¤‰æ›
 		XMFLOAT4X4 pose{};
 		for (DWORD x = 0; x < 4; x++)
 		{
@@ -689,16 +776,16 @@ void mtgb::FbxParts::SetBoneMatrix()
 		}
 		Matrix4x4 currentPose = XMLoadFloat4x4(&pose);
 
-		// ƒoƒCƒ“ƒhƒ|[ƒY‚Ì‹ts—ñ
+		// ãƒã‚¤ãƒ³ãƒ‰ãƒãƒ¼ã‚ºã®é€†è¡Œåˆ—
 		Matrix4x4 bindPoseInv = XMMatrixInverse(nullptr, bones_[i].bindPose);
 
-		// ÅI“I‚Èƒ{[ƒ“s—ñ = ƒoƒCƒ“ƒhƒ|[ƒY‚Ì‹ts—ñ ~ Œ»İ‚Ìƒ|[ƒY
+		// æœ€çµ‚çš„ãªãƒœãƒ¼ãƒ³è¡Œåˆ— = ãƒã‚¤ãƒ³ãƒ‰ãƒãƒ¼ã‚ºã®é€†è¡Œåˆ— Ã— ç¾åœ¨ã®ãƒãƒ¼ã‚º
 		Matrix4x4 finalBoneMatrix = bindPoseInv * currentPose;
 
 		boneMatrices_.boneMatrices[i] = XMMatrixTranspose(finalBoneMatrix);
 	}
 
-	// ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@‚É‘‚«‚İ
+	// ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã«æ›¸ãè¾¼ã¿
 	D3D11_MAPPED_SUBRESOURCE mappedSubResource{};
 	DirectX11Draw::pContext_->Map(pBoneConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedSubResource);
 

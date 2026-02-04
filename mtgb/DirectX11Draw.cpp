@@ -11,25 +11,25 @@
 
 using namespace mtgb;
 
-ComPtr<ID3D11Device> DirectX11Draw::pDevice_{nullptr}; // •`‰æ‚ğs‚¤‚½‚ß‚ÌŠÂ‹«AƒŠƒ\[ƒX‚Ìì¬‚Ég‚¤
+ComPtr<ID3D11Device> DirectX11Draw::pDevice_{nullptr}; // æç”»ã‚’è¡Œã†ãŸã‚ã®ç’°å¢ƒã€ãƒªã‚½ãƒ¼ã‚¹ã®ä½œæˆã«ä½¿ã†
 ComPtr<ID3D11DeviceContext> DirectX11Draw::pContext_{nullptr};
 ComPtr<IDXGIDevice1> DirectX11Draw::pDXGIDevice_{nullptr};
 std::vector<ComPtr<IDXGIAdapter1>> DirectX11Draw::pDXGIAdapters_{};
 std::vector<MonitorInfo> DirectX11Draw::monitorInfos_{};
 ComPtr<IDXGIFactory2> DirectX11Draw::pDXGIFactory_{nullptr};
 
-IDXGISwapChain* DirectX11Draw::pSwapChain_{nullptr};					   // ƒ_ƒuƒ‹ƒoƒbƒtƒ@ƒŠƒ“ƒO‚·‚é‚â‚Â
-ComPtr<ID3D11RenderTargetView> DirectX11Draw::pRenderTargetView_{nullptr}; // •`‰ææ
+IDXGISwapChain* DirectX11Draw::pSwapChain_{nullptr};					   // ãƒ€ãƒ–ãƒ«ãƒãƒƒãƒ•ã‚¡ãƒªãƒ³ã‚°ã™ã‚‹ã‚„ã¤
+ComPtr<ID3D11RenderTargetView> DirectX11Draw::pRenderTargetView_{nullptr}; // æç”»å…ˆ
 ComPtr<IDXGISwapChain1> DirectX11Draw::pSwapChain1_{nullptr};
-ComPtr<ID3D11DepthStencilView> DirectX11Draw::pDepthStencilView_{nullptr}; // [“xƒoƒbƒtƒ@
-std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::Max)> DirectX11Draw::pDepthStencilState_{
+ComPtr<ID3D11DepthStencilView> DirectX11Draw::pDepthStencilView_{nullptr}; // æ·±åº¦ãƒãƒƒãƒ•ã‚¡
+std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::MAX)> DirectX11Draw::pDepthStencilState_{
 	nullptr
-}; // ƒuƒŒƒ“ƒh‚É‚æ‚é[“xƒoƒbƒtƒ@‚Ö‚Ì‘‚«‚İî•ñ
-ComPtr<ID3D11Texture2D> DirectX11Draw::pDepthStencil_{nullptr}; // ƒuƒŒƒ“ƒh‚Ìî•ñ
-std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::Max)> DirectX11Draw::pBlendState_{nullptr
-}; // ƒuƒŒƒ“ƒh‚Ìî•ñ
+}; // ãƒ–ãƒ¬ãƒ³ãƒ‰ã«ã‚ˆã‚‹æ·±åº¦ãƒãƒƒãƒ•ã‚¡ã¸ã®æ›¸ãè¾¼ã¿æƒ…å ±
+ComPtr<ID3D11Texture2D> DirectX11Draw::pDepthStencil_{nullptr}; // ãƒ–ãƒ¬ãƒ³ãƒ‰ã®æƒ…å ±
+std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::MAX)> DirectX11Draw::pBlendState_{nullptr
+}; // ãƒ–ãƒ¬ãƒ³ãƒ‰ã®æƒ…å ±
 ComPtr<ID3D11SamplerState> DirectX11Draw::pDefaultSamplerState_{nullptr};
-ShaderBundle DirectX11Draw::shaderBundle_[static_cast<int8_t>(ShaderType::Max)]{}; // ƒVƒF[ƒ_‚Ìƒoƒ“ƒhƒ‹
+ShaderBundle DirectX11Draw::shaderBundle_[static_cast<int8_t>(ShaderType::MAX)]{}; // ã‚·ã‚§ãƒ¼ãƒ€ã®ãƒãƒ³ãƒ‰ãƒ«
 Vector4 DirectX11Draw::backgroundColor_{0, 1, 0, 1};
 
 void mtgb::DirectX11Draw::SetShader(const ShaderType _type)
@@ -45,11 +45,11 @@ void mtgb::DirectX11Draw::SetBlendMode(const BlendMode _mode)
 {
 	const int INDEX{static_cast<int>(_mode)};
 
-	// ‰ÁZ‡¬
+	// åŠ ç®—åˆæˆ
 	float blendFactor[]{D3D11_BLEND_ZERO, D3D11_BLEND_ZERO, D3D11_BLEND_ZERO, D3D11_BLEND_ZERO};
 	pContext_->OMSetBlendState(pBlendState_[INDEX].Get(), blendFactor, 0xffffffffU);
 
-	// [“xƒXƒeƒ“ƒVƒ‹‚Ö‚Ì‘‚«‚İ
+	// æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ã¸ã®æ›¸ãè¾¼ã¿
 	pContext_->OMSetDepthStencilState(pDepthStencilState_[INDEX].Get(), 0);
 }
 
@@ -57,28 +57,28 @@ void mtgb::DirectX11Draw::SetIsWriteToDepthBuffer(const bool _enabled)
 {
 	if (_enabled)
 	{
-		// [“xƒoƒbƒtƒ@‚ğw’è‚·‚é
+		// æ·±åº¦ãƒãƒƒãƒ•ã‚¡ã‚’æŒ‡å®šã™ã‚‹
 		pContext_->OMSetRenderTargets(1, pRenderTargetView_.GetAddressOf(), pDepthStencilView_.Get());
 	}
 	else
 	{
-		// [“xƒoƒbƒtƒ@‚ğŠO‚· nullptr‚ğw’è‚·‚é
+		// æ·±åº¦ãƒãƒƒãƒ•ã‚¡ã‚’å¤–ã™ nullptrã‚’æŒ‡å®šã™ã‚‹
 		pContext_->OMSetRenderTargets(1, pRenderTargetView_.GetAddressOf(), nullptr);
 	}
 }
 
 void mtgb::DirectX11Draw::Begin()
 {
-	// •`‰æƒrƒ…[ƒNƒŠƒA
+	// æç”»ãƒ“ãƒ¥ãƒ¼ã‚¯ãƒªã‚¢
 	pContext_->ClearRenderTargetView(pRenderTargetView_.Get(), backgroundColor_.f);
 
-	// [“xƒoƒbƒtƒ@ƒNƒŠƒA
+	// æ·±åº¦ãƒãƒƒãƒ•ã‚¡ã‚¯ãƒªã‚¢
 	pContext_->ClearDepthStencilView(pDepthStencilView_.Get(), D3D11_CLEAR_DEPTH, 1.0f, 0U);
 }
 
 void mtgb::DirectX11Draw::End()
 {
-	// ƒXƒƒbƒv‚µ‚Ä‰æ–ÊXV
+	// ã‚¹ãƒ¯ãƒƒãƒ—ã—ã¦ç”»é¢æ›´æ–°
 	// pSwapChain_->Present(0U, 0U);
 	HRESULT hr = pSwapChain1_->Present(0U, 0U);
 	if (FAILED(hr))
@@ -114,7 +114,7 @@ void mtgb::DirectX11Draw::Release()
 
 	if (SUCCEEDED(pDevice_->QueryInterface(__uuidof(ID3D11Debug), reinterpret_cast<void**>(&pDebug))))
 	{
-		// D3D11_RLO_DETAIL‚ÅÚ×‚ÈƒŒƒ|[ƒg
+		// D3D11_RLO_DETAILã§è©³ç´°ãªãƒ¬ãƒãƒ¼ãƒˆ
 		pDebug->ReportLiveDeviceObjects(D3D11_RLDO_DETAIL);
 		pDebug->Release();
 	}

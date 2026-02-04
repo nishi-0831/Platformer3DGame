@@ -3,7 +3,7 @@
 #include "SceneSystem.h"
 #include "EntityManager.h"
 mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
-	GameObject* pGameObj,
+	GameObject* _pGameObj,
 	const GameObjectFactory& _gameObjectFactory,
 	const ComponentFactory& _componentFactory
 )
@@ -12,20 +12,20 @@ mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
 	, targetEntityId_{INVALID_ENTITY}
 	, name_{" Unknown"}
 	, layerFlag_{AllLayer()}
-	, tag_{GameObjectTag::Untagged}
+	, tag_{GameObjectTag::UNTAGGED}
 	, isNotCalledStart_{false}
 	, typeName_{"Unknown"}
 {
-	if (pGameObj == nullptr)
+	if (_pGameObj == nullptr)
 		return;
 
-	name_	   = pGameObj->GetName();
-	layerFlag_ = pGameObj->GetLayerFlag();
-	tag_	   = pGameObj->GetTag();
-	typeName_  = pGameObj->GetClassTypeName();
+	name_	   = _pGameObj->GetName();
+	layerFlag_ = _pGameObj->GetLayerFlag();
+	tag_	   = _pGameObj->GetTag();
+	typeName_  = _pGameObj->GetClassTypeName();
 
-	targetEntityId_ = pGameObj->GetEntityId();
-	// ID‚ÉŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚éƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹‚ÌŒ^î•ñ‚ğæ“¾
+	targetEntityId_ = _pGameObj->GetEntityId();
+	// IDã«å‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«ã®å‹æƒ…å ±ã‚’å–å¾—
 	std::optional<std::vector<std::type_index>> cpTypes =
 		Game::System<ComponentRegistry>().GetComponentPoolTypes(targetEntityId_);
 	if (cpTypes.has_value() == false)
@@ -33,12 +33,12 @@ mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
 
 	for (std::type_index cpType : cpTypes.value())
 	{
-		// ƒRƒ“ƒ|[ƒlƒ“ƒgƒv[ƒ‹‚ÌƒCƒ“ƒ^[ƒtƒF[ƒXæ“¾
+		// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãƒ—ãƒ¼ãƒ«ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹å–å¾—
 		IComponentPool* pComponentPool = Game::GetCP(cpType);
 		if (pComponentPool == nullptr)
 			continue;
 
-		// ƒƒƒ“ƒg‚ğì¬
+		// ãƒ¡ãƒ¡ãƒ³ãƒˆã‚’ä½œæˆ
 		IComponentMemento* pMemento = pComponentPool->SaveToMemento(targetEntityId_);
 		if (pMemento == nullptr)
 			continue;
@@ -57,7 +57,7 @@ void mtgb::DeleteGameObjectCommand::Undo()
 	Game::System<EntityManager>().DecrementCounter();
 	GameObject* pGameObj = gameObjectFactory_.Create(typeName_);
 	pGameObj->SetName(name_);
-	// FIXME: ƒAƒNƒZƒX§ŒÀ‚É‚æ‚è‘‚«Š·‚¦‚Å‚«‚È‚¢‚½‚ßAŠ®‘S‚ÈUndo‚Å‚Í‚È‚¢
+	// FIXME: ã‚¢ã‚¯ã‚»ã‚¹åˆ¶é™ã«ã‚ˆã‚Šæ›¸ãæ›ãˆã§ããªã„ãŸã‚ã€å®Œå…¨ãªUndoã§ã¯ãªã„
 	// pGameObj->layerFlag_ = layerFlag_;
 	// pGameObj->tag_ = tag_;
 	// pGameObj->isNotCalledStart_ = isNotCalledStart_;

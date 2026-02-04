@@ -10,10 +10,10 @@ namespace mtgb
 	class Transform;
 	enum class CameraOperation
 	{
-		Track,
-		Dolly, // ƒJƒƒ‰‚ğ¶‰E‚ÉˆÚ“®
-		Pan,   // ƒJƒƒ‰©g‚ğ²‚Æ‚µ‚Ä‰ñ“]
-		Orbit  // ƒ^[ƒQƒbƒg‚ğ²‚Æ‚µ‚Ä‰ñ“]
+		TRACK,
+		DOLLY, // ã‚«ãƒ¡ãƒ©ã‚’å·¦å³ã«ç§»å‹•
+		PAN,   // ã‚«ãƒ¡ãƒ©è‡ªèº«ã‚’è»¸ã¨ã—ã¦å›è»¢
+		ORBIT  // ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’è»¸ã¨ã—ã¦å›è»¢
 	};
 	class ImGuiEditorCamera : public ImGuiShowable, public ISystem, public ICamera
 	{

@@ -3,17 +3,17 @@
 #include "SampleGame.h"
 namespace mtgb
 {
-#ifdef _DEBUG // ƒfƒoƒbƒN‚É‚Ì‚İÀs
+#ifdef _DEBUG // ãƒ‡ãƒãƒƒã‚¯æ™‚ã«ã®ã¿å®Ÿè¡Œ
 #define _CRTDBG_MAP_ALLOC
 #include <cstdlib>
 #include <crtdbg.h>
 
-	// ƒƒ‚ƒŠƒŠ[ƒN‰ÓŠ‚ğo—Í‚·‚éƒ}ƒNƒ
+	// ãƒ¡ãƒ¢ãƒªãƒªãƒ¼ã‚¯ç®‡æ‰€ã‚’å‡ºåŠ›ã™ã‚‹ãƒã‚¯ãƒ­
 #define new new (_NORMAL_BLOCK, __FILE__, __LINE__)
 #endif
 } // namespace mtgb
-// ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg
-int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
+// ã‚¨ãƒ³ãƒˆãƒªãƒã‚¤ãƒ³ãƒˆ
+int WINAPI WinMain(_In_ HINSTANCE _hInstance, _In_opt_ HINSTANCE _hPrevInstance, _In_ LPSTR _lpCmdLine, _In_ int _nShowCmd)
 {
 	_CrtSetBreakAlloc(125);
 	mtgb::Game::Run<SampleGame>();

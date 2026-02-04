@@ -4,43 +4,43 @@
 #include "../ImGui/imgui.h"
 #include "Input.h"
 
-mtgb::JoystickProxy::JoystickProxy(const DIJOYSTATE& js)
-	: lX(js.lX)
-	, lY(js.lY)
-	, lZ(js.lZ)
-	, lRx(js.lRx)
-	, lRy(js.lRy)
-	, lRz(js.lRz)
+mtgb::JoystickProxy::JoystickProxy(const DIJOYSTATE& _js)
+	: lX(_js.lX)
+	, lY(_js.lY)
+	, lZ(_js.lZ)
+	, lRx(_js.lRx)
+	, lRy(_js.lRy)
+	, lRz(_js.lRz)
 {
-	std::copy(std::begin(js.rglSlider), std::end(js.rglSlider), rglSlider);
-	std::copy(std::begin(js.rgdwPOV), std::end(js.rgdwPOV), rgdwPOV);
-	std::copy(std::begin(js.rgbButtons), std::end(js.rgbButtons), rgbButtons);
+	std::copy(std::begin(_js.rglSlider), std::end(_js.rglSlider), rglSlider);
+	std::copy(std::begin(_js.rgdwPOV), std::end(_js.rgdwPOV), rgdwPOV);
+	std::copy(std::begin(_js.rgbButtons), std::end(_js.rgbButtons), rgbButtons);
 }
 
-void mtgb::JoystickProxy::UpdateFromInput(GUID guid)
+void mtgb::JoystickProxy::UpdateFromInput(GUID _guid)
 {
 	Input& input = Game::System<Input>();
 
 	/*isConnected = input.IsJoystickConnected(guid);
 	isAssigned = input.IsJoystickAssigned(guid);*/
-	connectionStatus  = input.IsJoystickConnected(guid) ? "ê⁄ë±íÜ" : "êÿíf";
-	assignmentStatus  = input.IsJoystickAssigned(guid) ? "äÑÇËìñÇƒçœÇ›" : "ñ¢äÑìñ";
-	lastErrorMessage  = input.GetJoystickStatusMessage(guid);
-	deviceName		  = input.GetDeviceName(guid);
-	deviceProductName = input.GetDeviceProductName(guid);
+	connectionStatus  = input.IsJoystickConnected(_guid) ? "Êé•Á∂ö‰∏≠" : "ÂàáÊñ≠";
+	assignmentStatus  = input.IsJoystickAssigned(_guid) ? "Ââ≤„ÇäÂΩì„Å¶Ê∏à„Åø" : "Êú™Ââ≤ÂΩì";
+	lastErrorMessage  = input.GetJoystickStatusMessage(_guid);
+	deviceName		  = input.GetDeviceName(_guid);
+	deviceProductName = input.GetDeviceProductName(_guid);
 }
 
-void mtgb::JoystickProxy::UpdateInputData(const DIJOYSTATE& js)
+void mtgb::JoystickProxy::UpdateInputData(const DIJOYSTATE& _js)
 {
-	lX	= js.lX;
-	lY	= js.lY;
-	lZ	= js.lZ;
-	lRx = js.lRx;
-	lRy = js.lRy;
-	lRz = js.lRz;
-	std::copy(std::begin(js.rglSlider), std::end(js.rglSlider), rglSlider);
-	std::copy(std::begin(js.rgdwPOV), std::end(js.rgdwPOV), rgdwPOV);
-	std::copy(std::begin(js.rgbButtons), std::end(js.rgbButtons), rgbButtons);
+	lX	= _js.lX;
+	lY	= _js.lY;
+	lZ	= _js.lZ;
+	lRx = _js.lRx;
+	lRy = _js.lRy;
+	lRz = _js.lRz;
+	std::copy(std::begin(_js.rglSlider), std::end(_js.rglSlider), rglSlider);
+	std::copy(std::begin(_js.rgdwPOV), std::end(_js.rgdwPOV), rgdwPOV);
+	std::copy(std::begin(_js.rgbButtons), std::end(_js.rgbButtons), rgbButtons);
 }
 
 // mtgb::JoystickProxy mtgb::JoystickProxy::operator=(const DIJOYSTATE& js)

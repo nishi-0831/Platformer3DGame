@@ -5,7 +5,7 @@
 #include "Color.h"
 namespace nlohmann
 {
-	// adl_serializerを特殊化してシリアライズ、デシリアライズ関数を定義する
+	// adl_serializer繧堤音谿雁喧縺励※繧ｷ繝ｪ繧｢繝ｩ繧､繧ｺ縲√ョ繧ｷ繝ｪ繧｢繝ｩ繧､繧ｺ髢｢謨ｰ繧貞ｮ夂ｾｩ縺吶ｋ
 
 	template <std::size_t N> struct adl_serializer<std::bitset<N>>
 	{
@@ -37,18 +37,18 @@ namespace nlohmann
 	{
 		using BitsetT = std::bitset<(sizeof(EnumStructT) * 8)>;
 
-		static void to_json(nlohmann::json& j, const ::mtbit::BitFlag<EnumStructT>& flag)
+		static void to_json(nlohmann::json& _j, const ::mtbit::BitFlag<EnumStructT>& _flag)
 		{
-			// std::bitsetのadl_serializerを使用
-			j = flag.Value();
+			// std::bitset縺ｮadl_serializer繧剃ｽｿ逕ｨ
+			_j = _flag.Value();
 		}
 
-		static void from_json(const nlohmann::json& j, ::mtbit::BitFlag<EnumStructT>& flag)
+		static void from_json(const nlohmann::json& _j, ::mtbit::BitFlag<EnumStructT>& _flag)
 		{
 			BitsetT bs;
 
-			j.get_to(bs);
-			flag = ::mtbit::BitFlag<EnumStructT>(bs);
+			_j.get_to(bs);
+			_flag = ::mtbit::BitFlag<EnumStructT>(bs);
 		}
 	};
 
@@ -57,10 +57,10 @@ namespace nlohmann
 		static void to_json(nlohmann::json& _j, const ::mtgb::Color& _color)
 		{
 			_j = {
-				{"r", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Red)]},
-				{"g", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Green)]},
-				{"b", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Blue)]},
-				{"a", _color.component[static_cast<int32_t>(::mtgb::Color::Component::Alpha)]}
+				{"r", _color.component[static_cast<int32_t>(::mtgb::Color::Component::RED)]},
+				{"g", _color.component[static_cast<int32_t>(::mtgb::Color::Component::GREEN)]},
+				{"b", _color.component[static_cast<int32_t>(::mtgb::Color::Component::BLUE)]},
+				{"a", _color.component[static_cast<int32_t>(::mtgb::Color::Component::ALPHA)]}
 			};
 		}
 

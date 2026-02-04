@@ -16,7 +16,7 @@ class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, 
 
   private:
 	/// <summary>
-	/// ƒvƒŒƒCƒ„[‚É‘Ì“–‚½‚è‚µ‚½Û‚Ìˆ—
+	/// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã«ä½“å½“ãŸã‚Šã—ãŸéš›ã®å‡¦ç†
 	/// </summary>
 	void OnChargePlayer();
 	void OnCollisionEnter(EntityId _entityId);
@@ -25,30 +25,30 @@ class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, 
 	MeshRenderer* pMeshRenderer_;
 	Collider* pCollider_;
 
-	// ‘{õ‘ÎÛ‚ÌTransform
+	// æœç´¢å¯¾è±¡ã®Transform
 	Transform* pTargetTransform_;
-	// ”­Œ©‚Æ”»’è‚·‚éŠp“x
+	// ç™ºè¦‹ã¨åˆ¤å®šã™ã‚‹è§’åº¦
 	float foundFOV_;
-	// ”­Œ©‚Æ”»’è‚·‚é‹——£
+	// ç™ºè¦‹ã¨åˆ¤å®šã™ã‚‹è·é›¢
 	float foundDistance_;
-	// „‰ñ‚Ég‚¤
+	// å·¡å›ã«ä½¿ã†
 	Interpolator* pInterpolator_;
 	static unsigned int generateCounter_;
-	// ‘{õ‘ÎÛ‚ÌEntityId
+	// æœç´¢å¯¾è±¡ã®EntityId
 	EntityId targetEntityId_;
-	// „‰ñ’n“_‚É–ß‚é‘¬“x
+	// å·¡å›åœ°ç‚¹ã«æˆ»ã‚‹é€Ÿåº¦
 	float returnToPatrolSpeed_;
 	std::optional<FbxAnimationController> animController_;
 
   private:
-	// ó‘Ô
+	// çŠ¶æ…‹
 	enum class STATE
 	{
-		PATROL,			  // „‰ñ
-		CHARGE,			  // “Ëi
-		WAIT,			  // ‚»‚Ìê‚Å‘Ò‹@
-		RETURN_TO_PATROL, // „‰ñ’n“_‚É–ß‚é
-		DYING			  // €–Só‘Ô
+		PATROL,			  // å·¡å›
+		CHARGE,			  // çªé€²
+		WAIT,			  // ãã®å ´ã§å¾…æ©Ÿ
+		RETURN_TO_PATROL, // å·¡å›åœ°ç‚¹ã«æˆ»ã‚‹
+		DYING			  // æ­»äº¡çŠ¶æ…‹
 	};
 	void InitializeState();
 	void Patrol();
@@ -59,34 +59,34 @@ class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, 
 	bool Search();
 	mtstat::MTStat<STATE> state_;
 
-	// ------„‰ñó‘Ô------
-	// ƒ^[ƒQƒbƒg‚ğŒ©‚Â‚¯‚Ä‚©‚ç“Ëió‘Ô‚É‘JˆÚ‚·‚é‚Ü‚Å‚Ì‘Ò‹@ŠÔ
+	// ------å·¡å›çŠ¶æ…‹------
+	// ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’è¦‹ã¤ã‘ã¦ã‹ã‚‰çªé€²çŠ¶æ…‹ã«é·ç§»ã™ã‚‹ã¾ã§ã®å¾…æ©Ÿæ™‚é–“
 	float waitTimeTransitionCharge_;
 	// -------------------
 
-	// ------“Ëió‘Ô------
-	// “Ëi‚Ì‘¬“x
+	// ------çªé€²çŠ¶æ…‹------
+	// çªé€²ã®é€Ÿåº¦
 	float chargeSpeed_;
-	// “Ëi‚ğ‚·‚éŠÔB’´‚¦‚é‚Æ’ú‚ß‚Ä‹A‚é
+	// çªé€²ã‚’ã™ã‚‹æ™‚é–“ã€‚è¶…ãˆã‚‹ã¨è«¦ã‚ã¦å¸°ã‚‹
 	float chargeTime_;
-	// Õ“ËŒã‚Ì‘Ò‚¿ŠÔ
+	// è¡çªå¾Œã®å¾…ã¡æ™‚é–“
 	float waitTimeAfterCharge_;
-	// —^‚¦‚éƒ_ƒ[ƒW”
+	// ä¸ãˆã‚‹ãƒ€ãƒ¡ãƒ¼ã‚¸æ•°
 	int takeDamageNum_;
 	// --------------------
 
-	// ------•à‚«ó‘Ô-----
-	// •à‚­ƒAƒjƒ[ƒVƒ‡ƒ“‚ÌÄ¶‘¬“x
+	// ------æ­©ãçŠ¶æ…‹-----
+	// æ­©ãã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®å†ç”Ÿé€Ÿåº¦
 	float walkAnimSpeed_;
 	// -------------------
 
-	// ------‘Ò‹@ó‘Ô------
-	// ‘Ò‚¿ŠÔ
+	// ------å¾…æ©ŸçŠ¶æ…‹------
+	// å¾…ã¡æ™‚é–“
 	float waitTime_;
-	// Ÿ‚É‘JˆÚ‚·‚éó‘Ô
+	// æ¬¡ã«é·ç§»ã™ã‚‹çŠ¶æ…‹
 	STATE nextState_;
 	// -------------------
 
-	// “¥‚İ‚Â‚¯‚½ƒAƒNƒ^[‚É‰Á‚¦‚é—Í
+	// è¸ã¿ã¤ã‘ãŸã‚¢ã‚¯ã‚¿ãƒ¼ã«åŠ ãˆã‚‹åŠ›
 	float onStompedBounce_;
 };

@@ -20,20 +20,20 @@ mtgb::InputResource::InputResource(WindowContext _windowContext)
 {
 	HWND hWnd = WinCtxRes::GetHWND(_windowContext);
 
-	// ÉLÅ[É{Å[ÉhÇÃéÊìæ
+	// „Ç≠„Éº„Éú„Éº„Éâ„ÅÆÂèñÂæó
 	Game::System<Input>().CreateKeyDevice(hWnd, pKeyDevice_.ReleaseAndGetAddressOf());
 
-	// É}ÉEÉXÇÃéÊìæ
+	// „Éû„Ç¶„Çπ„ÅÆÂèñÂæó
 	Game::System<Input>().CreateMouseDevice(hWnd, pMouseDevice_.ReleaseAndGetAddressOf());
 
-	// ì¸óÕèÛë‘Çï€éùÇ∑ÇÈÉfÅ[É^
+	// ÂÖ•ÂäõÁä∂ÊÖã„Çí‰øùÊåÅ„Åô„Çã„Éá„Éº„Çø
 	pInputData_ = new InputData();
 
-	// ImGuiï\é¶ópÇÃÉvÉçÉLÉV
+	// ImGuiË°®Á§∫Áî®„ÅÆ„Éó„É≠„Ç≠„Ç∑
 	pMouseStateProxy_ = new MouseStateProxy(pInputData_->mouseStateCurrent_);
 	pJoystickProxy_	  = new JoystickProxy(pInputData_->joyStateCurrent_);
 
-	// ì¸óÕÇÃéûä‘îÕàÕÇê›íË
+	// ÂÖ•Âäõ„ÅÆÊôÇÈñìÁØÑÂõ≤„ÇíË®≠ÂÆö
 	pInputData_->config_.SetRange(1000);
 	pInputData_->config_.SetDeadZone(0.1f);
 
@@ -41,21 +41,21 @@ mtgb::InputResource::InputResource(WindowContext _windowContext)
 	reservation.config = pInputData_->config_;
 	reservation.hWnd   = hWnd;
 
-	if (_windowContext == WindowContext::First)
+	if (_windowContext == WindowContext::FIRST)
 	{
-		reservation.deviceType = DeviceType::Unknown;
+		reservation.deviceType = DeviceType::UNKNOWN;
 		name_				   = "FirstWindowController";
 	}
-	else if (_windowContext == WindowContext::Second)
+	else if (_windowContext == WindowContext::SECOND)
 	{
-		reservation.deviceType = DeviceType::GamePad;
+		reservation.deviceType = DeviceType::GAME_PAD;
 		name_				   = "SecondWindowController";
 	}
 
-	reservation.onAssign = [this](ComPtr<IDirectInputDevice8> device, GUID guid)
+	reservation.onAssign = [this](ComPtr<IDirectInputDevice8> _device, GUID _guid)
 	{
-		pJoystickDevice_	  = device;
-		assignedJoystickGuid_ = guid;
+		pJoystickDevice_	  = _device;
+		assignedJoystickGuid_ = _guid;
 		isInitialized		  = true;
 		Game::System<Input>().SetJoystickGuid(assignedJoystickGuid_);
 		pInputData_->controllerType_ = Input::GetControllerTypeByVendor(pJoystickDevice_);
@@ -78,10 +78,10 @@ void mtgb::InputResource::Update()
 	pJoystickProxy_->UpdateFromInput(assignedJoystickGuid_);
 	pJoystickProxy_->UpdateInputData(pInputData_->joyStateCurrent_);
 
-	MTImGui::Instance().TypedShow<JoystickProxy>(pJoystickProxy_, name_ + ":Joystick", ShowType::Settings);
+	MTImGui::Instance().TypedShow<JoystickProxy>(pJoystickProxy_, name_ + ":Joystick", ShowType::SETTINGS);
 
 	pMouseStateProxy_->UpdateInputData(pInputData_->mouseStateCurrent_);
-	MTImGui::Instance().TypedShow<MouseStateProxy>(pMouseStateProxy_, name_ + ":Mouse", ShowType::Settings);
+	MTImGui::Instance().TypedShow<MouseStateProxy>(pMouseStateProxy_, name_ + ":Mouse", ShowType::SETTINGS);
 }
 
 void InputResource::SetResource()

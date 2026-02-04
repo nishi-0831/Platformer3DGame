@@ -28,10 +28,10 @@ namespace mtgb
 
 		Vector2T() = default;
 		Vector2T(T _x, T _y);
-		// ƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		// ã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		Vector2T(const Vector2T& _other) = default;
 
-		// ƒ€[ƒuƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		// ãƒ ãƒ¼ãƒ–ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		Vector2T(Vector2T&& _other)			 = default;
 		Vector2T& operator=(const Vector2T&) = default;
 		Vector2T& operator=(Vector2T&&)		 = default;
@@ -41,7 +41,6 @@ namespace mtgb
 		{
 			return std::sqrt(x * x + y * y);
 		}
-#pragma region l‘¥‰‰Z
 		inline Vector2T& operator*=(T _scalar)
 		{
 			x *= _scalar;
@@ -79,9 +78,7 @@ namespace mtgb
 			y -= _other.y;
 			return *this;
 		}
-#pragma endregion
 
-#pragma region ’è”
 		static Vector2T Zero()
 		{
 			return Vector2T(T{}, T{});
@@ -90,9 +87,7 @@ namespace mtgb
 		{
 			return Vector2T(T{1}, T{1});
 		}
-#pragma endregion
 	};
-#pragma region ƒOƒ[ƒoƒ‹ƒIƒyƒŒ[ƒ^
 	template <typename T> inline Vector2T<T> operator*(const Vector2T<T>& _v, T _scalar)
 	{
 		return Vector2T<T>{_v} *= _scalar;
@@ -122,7 +117,7 @@ namespace mtgb
 		return Vector2T<T>{_v1} -= _v2;
 	}
 
-	// ˆÙ‚È‚éŒ^“¯m‚Ì‰‰Z
+	// ç•°ãªã‚‹å‹åŒå£«ã®æ¼”ç®—
 
 	template <typename T, typename U>
 	inline auto operator+(const Vector2T<T>& _v1, const Vector2T<U>& _v2) -> Vector2T<std::common_type_t<T, U>>
@@ -154,7 +149,7 @@ namespace mtgb
 		);
 	}
 
-	// TODO: _scalar‚ª•ÏŠ·‚Å‚«‚¸‚ÉƒGƒ‰[
+	// TODO: _scalarãŒå¤‰æ›ã§ããšã«ã‚¨ãƒ©ãƒ¼
 	template <typename T, typename U>
 	inline auto operator*(const Vector2T<T>& _v1, Vector2T<U> _v2) -> Vector2T<std::common_type_t<T, U>>
 	{
@@ -197,7 +192,6 @@ namespace mtgb
 	{
 		return !(_v1 == _v2);
 	}
-#pragma endregion
 
 	template <Arithmetic T>
 	inline Vector2T<T>::Vector2T(T _x, T _y)

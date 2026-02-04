@@ -31,12 +31,12 @@ void GameOverZone::Start()
 	pTransform_ = Component<Transform>();
 
 	pRigidBody_->OnCollisionEnter(
-		[this](EntityId _entityId)
+		[](EntityId _entityId)
 		{
 			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
-			if (tag == GameObjectTag::Player)
+			if (tag == GameObjectTag::PLAYER)
 			{
-				// 落下イベント通知
+				// 關ｽ荳九う繝吶Φ繝磯夂衍
 				PlayerFellOutEvent event{.playerEntityId = _entityId};
 				Game::System<EventManager>().GetEvent<PlayerFellOutEvent>().Invoke(event);
 			}

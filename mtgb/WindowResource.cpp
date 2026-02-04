@@ -12,89 +12,89 @@
 using namespace mtgb;
 
 /// <summary>
-/// ƒEƒBƒ“ƒhƒE‚©‚ç‚ÌƒƒbƒZ[ƒW‚ğóM‚µ‚ÄImGui‚Ì“ü—Í‚âƒCƒxƒ“ƒg‚ğ—LŒø‚É‚·‚é‚½‚ß‚ÌƒR[ƒ‹ƒoƒbƒNŠÖ”
+/// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‹ã‚‰ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å—ä¿¡ã—ã¦ImGuiã®å…¥åŠ›ã‚„ã‚¤ãƒ™ãƒ³ãƒˆã‚’æœ‰åŠ¹ã«ã™ã‚‹ãŸã‚ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 /// </summary>
-/// <param name="hwnd">ƒEƒBƒ“ƒhƒEƒnƒ“ƒhƒ‹</param>
-/// <param name="msg">ƒƒbƒZ[ƒW</param>
-/// <param name="wParam">ƒpƒ‰ƒ[ƒ^</param>
-/// <param name="lParam">ƒpƒ‰ƒ[ƒ^</param>
+/// <param name="hwnd">ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒãƒ³ãƒ‰ãƒ«</param>
+/// <param name="msg">ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</param>
+/// <param name="wParam">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿</param>
+/// <param name="lParam">ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿</param>
 /// <returns></returns>
-extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND _hwnd, UINT _msg, WPARAM _wParam, LPARAM _lParam);
 
 /// <summary>
-/// ŠeƒEƒBƒ“ƒhƒE‚É‹¤’Ê‚Ìˆ—‚ğ‹LqB‚±‚ê‚ğWNDCLASS‚É“n‚·
+/// å„ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«å…±é€šã®å‡¦ç†ã‚’è¨˜è¿°ã€‚ã“ã‚Œã‚’WNDCLASSã«æ¸¡ã™
 /// </summary>
 /// <param name="hWnd"></param>
 /// <param name="msg"></param>
 /// <param name="wParam"></param>
-/// <param name="lParam">ƒCƒ“ƒXƒ^ƒ“ƒX‚ğæ“¾‚·‚é‚½‚ß‚ÉACreateWindow‚ÌlpParam‚Éthis‚ğ“n‚·•K—v‚ª‚ ‚é</param>
+/// <param name="lParam">ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å–å¾—ã™ã‚‹ãŸã‚ã«ã€CreateWindowã®lpParamã«thisã‚’æ¸¡ã™å¿…è¦ãŒã‚ã‚‹</param>
 /// <returns></returns>
-LRESULT WindowResource::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT WindowResource::WndProc(HWND _hWnd, UINT _msg, WPARAM _wParam, LPARAM _lParam)
 {
 	WindowResource* pThis;
-	if (msg == WM_NCCREATE)
+	if (_msg == WM_NCCREATE)
 	{
-		// ì¬‚Ìƒpƒ‰ƒ[ƒ^‚©‚çthis‚ğæ“¾AƒLƒƒƒXƒg
-		pThis = static_cast<WindowResource*>(reinterpret_cast<LPCREATESTRUCT>(lParam)->lpCreateParams);
-		// this‚ÌUSERDATA‚Éthis‚ğ•R•t‚¯‚é
-		SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pThis));
-		pThis->hWnd_ = hWnd;
+		// ä½œæˆæ™‚ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‹ã‚‰thisã‚’å–å¾—ã€ã‚­ãƒ£ã‚¹ãƒˆ
+		pThis = static_cast<WindowResource*>(reinterpret_cast<LPCREATESTRUCT>(_lParam)->lpCreateParams);
+		// thisã®USERDATAã«thisã‚’ç´ä»˜ã‘ã‚‹
+		SetWindowLongPtr(_hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pThis));
+		pThis->hWnd_ = _hWnd;
 	}
 	else
 	{
-		// hWnd‚Éthis‚ğ•R‚Ã‚¯‚Ä‚¨‚¢‚½‚Ì‚Åæ“¾
-		pThis = reinterpret_cast<WindowResource*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
+		// hWndã«thisã‚’ç´ã¥ã‘ã¦ãŠã„ãŸã®ã§å–å¾—
+		pThis = reinterpret_cast<WindowResource*>(GetWindowLongPtr(_hWnd, GWLP_USERDATA));
 		if (pThis)
 		{
-			pThis->hWnd_ = hWnd;
+			pThis->hWnd_ = _hWnd;
 		}
 	}
 	if (pThis)
 	{
-		return pThis->HandleWindowMessage(hWnd, msg, wParam, lParam);
+		return pThis->HandleWindowMessage(_hWnd, _msg, _wParam, _lParam);
 	}
-	return DefWindowProc(hWnd, msg, wParam, lParam);
+	return DefWindowProc(_hWnd, _msg, _wParam, _lParam);
 }
 
-LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT WindowResource::HandleWindowMessage(HWND _hWnd, UINT _msg, WPARAM _wParam, LPARAM _lParam)
 {
-	if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
+	if (ImGui_ImplWin32_WndProcHandler(_hWnd, _msg, _wParam, _lParam))
 	{
 		return true;
 	}
 
-	switch (msg)
+	switch (_msg)
 	{
 	case WM_CLOSE :
 		Game::Exit();
 		return 0;
-	case WM_DESTROY : // ƒEƒBƒ“ƒhƒE‚ğ•Â‚¶‚½
+	case WM_DESTROY : // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‰ã˜ãŸ
 		return S_OK;
-	case WM_MOUSEMOVE : // ƒ}ƒEƒX‚ª“®‚¢‚½
-		Game::System<Input>().UpdateMousePositionData(LOWORD(lParam), HIWORD(lParam));
+	case WM_MOUSEMOVE : // ãƒã‚¦ã‚¹ãŒå‹•ã„ãŸ
+		Game::System<Input>().UpdateMousePositionData(LOWORD(_lParam), HIWORD(_lParam));
 		return S_OK;
-	case WM_SIZE : // ƒEƒBƒ“ƒhƒEƒTƒCƒY‚ª•Ï‚í‚Á‚½
+	case WM_SIZE : // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºãŒå¤‰ã‚ã£ãŸ
 	{
-		if (this && wParam != SIZE_MINIMIZED)
+		if (this && _wParam != SIZE_MINIMIZED)
 		{
 			if (!isInitialized_)
 			{
-				// ‚Ü‚¾‰Šú‰»‚³‚ê‚Ä‚¢‚È‚¢‚È‚çƒXƒLƒbƒv‚·‚é
+				// ã¾ã åˆæœŸåŒ–ã•ã‚Œã¦ã„ãªã„ãªã‚‰ã‚¹ã‚­ãƒƒãƒ—ã™ã‚‹
 				return S_OK;
 			}
 
-			UINT width	= LOWORD(lParam);
-			UINT height = HIWORD(lParam);
+			UINT width	= LOWORD(_lParam);
+			UINT height = HIWORD(_lParam);
 		}
 		return S_OK;
 	}
 
-	default : // ‚»‚êˆÈŠO‚ÌƒƒbƒZ[ƒW‚Í÷“n
+	default : // ãã‚Œä»¥å¤–ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¯è­²æ¸¡
 		break;
 	}
 
-	// NOTE: ‚±‚ê‚ª”²‚¯‚Ä‚¢‚é‚ÆƒEƒBƒ“ƒhƒE•\¦‚³‚ê‚È‚¢‚µAƒGƒ‰[‚Ío‚È‚¢‚µ‚Å‹ê˜J‚·‚é(‚µ‚½)
-	return DefWindowProc(hWnd, msg, wParam, lParam);
+	// NOTE: ã“ã‚ŒãŒæŠœã‘ã¦ã„ã‚‹ã¨ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦è¡¨ç¤ºã•ã‚Œãªã„ã—ã€ã‚¨ãƒ©ãƒ¼ã¯å‡ºãªã„ã—ã§è‹¦åŠ´ã™ã‚‹(ã—ãŸ)
+	return DefWindowProc(_hWnd, _msg, _wParam, _lParam);
 }
 
 HWND mtgb::WindowResource::GetHWND()
@@ -143,7 +143,7 @@ void mtgb::WindowResource::OnResize(UINT _width, UINT _height)
 
 	Game::System<Screen>().SetSize(static_cast<int>(_width), static_cast<int>(_height));
 
-	// WindowConfig‚ÌƒTƒCƒY‚ğXV
+	// WindowConfigã®ã‚µã‚¤ã‚ºã‚’æ›´æ–°
 	WindowConfig config = Game::System<WindowManager>().GetWindowConfig(windowContext_);
 	config.width		= _width;
 	config.height		= _height;
@@ -157,12 +157,12 @@ void mtgb::WindowResource::SetWindowMode()
 
 void mtgb::WindowResource::SetFullScreen(const RECT& _monitorRect)
 {
-	// ƒtƒ‹ƒXƒNƒŠ[ƒ“‚É‚È‚é
+	// ãƒ•ãƒ«ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã«ãªã‚‹
 	isFullscreen_ = true;
 
 	GetWindowInfo();
 
-	// ƒEƒBƒ“ƒhƒEƒXƒ^ƒCƒ‹‚ğ˜g‚È‚µƒ|ƒbƒvƒAƒbƒv‚É•ÏX
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¹ã‚¿ã‚¤ãƒ«ã‚’æ ãªã—ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ã«å¤‰æ›´
 	SetWindowLong(hWnd_, GWL_STYLE, currInfo_.windowedStyle_ & ~(WS_CAPTION | WS_THICKFRAME));
 	SetWindowLong(
 		hWnd_,
@@ -170,22 +170,22 @@ void mtgb::WindowResource::SetFullScreen(const RECT& _monitorRect)
 		currInfo_.windowedExStyle_ & ~(WS_EX_DLGMODALFRAME | WS_EX_WINDOWEDGE | WS_EX_CLIENTEDGE | WS_EX_STATICEDGE)
 	);
 
-	// w’è‚³‚ê‚½ƒ‚ƒjƒ^[À•W‚ğ’¼Úg—p
+	// æŒ‡å®šã•ã‚ŒãŸãƒ¢ãƒ‹ã‚¿ãƒ¼åº§æ¨™ã‚’ç›´æ¥ä½¿ç”¨
 	SetWindowPos(
 		hWnd_,
 		HWND_TOP,
 		_monitorRect.left,
-		_monitorRect.top,						// ƒEƒBƒ“ƒhƒE‚ÌˆÊ’u
-		_monitorRect.right - _monitorRect.left, // ƒEƒBƒ“ƒhƒE‚ÌƒTƒCƒY(•)
-		_monitorRect.bottom - _monitorRect.top, // ƒEƒBƒ“ƒhƒE‚ÌƒTƒCƒY(‚‚³)
-		// ƒI[ƒi[(?)ƒEƒBƒ“ƒhƒE‚ÌZ‡˜‚Í•ÏX‚µ‚È‚¢AƒXƒ^ƒCƒ‹‚Ì•ÏX‚ğ“K—p
+		_monitorRect.top,						// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ä½ç½®
+		_monitorRect.right - _monitorRect.left, // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚µã‚¤ã‚º(å¹…)
+		_monitorRect.bottom - _monitorRect.top, // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚µã‚¤ã‚º(é«˜ã•)
+		// ã‚ªãƒ¼ãƒŠãƒ¼(?)ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®Zé †åºã¯å¤‰æ›´ã—ãªã„ã€ã‚¹ã‚¿ã‚¤ãƒ«ã®å¤‰æ›´ã‚’é©ç”¨
 		SWP_NOOWNERZORDER | SWP_FRAMECHANGED
 	);
 }
 
 void mtgb::WindowResource::GetWindowInfo()
 {
-	// Œ»İ‚ÌƒEƒBƒ“ƒhƒE‚ÌƒXƒ^ƒCƒ‹‚ÆˆÊ’u‚ğ•Û‘¶
+	// ç¾åœ¨ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚¹ã‚¿ã‚¤ãƒ«ã¨ä½ç½®ã‚’ä¿å­˜
 	currInfo_.windowedStyle_   = GetWindowLong(hWnd_, GWL_STYLE);
 	currInfo_.windowedExStyle_ = GetWindowLong(hWnd_, GWL_EXSTYLE);
 	GetWindowRect(hWnd_, &currInfo_.windowedRect_);
@@ -200,7 +200,7 @@ void mtgb::WindowResource::SetPosition(const RECT& _monitorRect)
 		_monitorRect.top,
 		_monitorRect.right - _monitorRect.left,
 		_monitorRect.bottom - _monitorRect.top,
-		// ƒI[ƒi[ƒEƒBƒ“ƒhƒE(?)‚ÌZ‡˜‚Í•ÏX‚µ‚È‚¢AƒXƒ^ƒCƒ‹‚Ì•ÏX‚ğ“K—p
+		// ã‚ªãƒ¼ãƒŠãƒ¼ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦(?)ã®Zé †åºã¯å¤‰æ›´ã—ãªã„ã€ã‚¹ã‚¿ã‚¤ãƒ«ã®å¤‰æ›´ã‚’é©ç”¨
 		SWP_NOOWNERZORDER
 	);
 
@@ -209,14 +209,14 @@ void mtgb::WindowResource::SetPosition(const RECT& _monitorRect)
 
 void mtgb::WindowResource::SetWindowModeImpl(WindowModeInfo _info)
 {
-	// ƒEƒBƒ“ƒhƒEƒ‚[ƒh‚É–ß‚é
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰ã«æˆ»ã‚‹
 	isFullscreen_ = false;
 
-	// ƒEƒBƒ“ƒhƒEƒXƒ^ƒCƒ‹‚ğŒ³‚É–ß‚·
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¹ã‚¿ã‚¤ãƒ«ã‚’å…ƒã«æˆ»ã™
 	SetWindowLong(hWnd_, GWL_STYLE, _info.windowedStyle_);
 	SetWindowLong(hWnd_, GWL_EXSTYLE, _info.windowedExStyle_);
 
-	// •Û‘¶‚µ‚Ä‚¨‚¢‚½ƒEƒBƒ“ƒhƒE‚ÌˆÊ’uAƒTƒCƒY‚ğ–ß‚·
+	// ä¿å­˜ã—ã¦ãŠã„ãŸã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ä½ç½®ã€ã‚µã‚¤ã‚ºã‚’æˆ»ã™
 	RECT rect = _info.windowedRect_;
 	SetWindowPos(
 		hWnd_,
@@ -225,7 +225,7 @@ void mtgb::WindowResource::SetWindowModeImpl(WindowModeInfo _info)
 		rect.top,
 		rect.right - rect.left,
 		rect.bottom - rect.top,
-		// ƒI[ƒi[ƒEƒBƒ“ƒhƒE(?)‚ÌZ‡˜‚Í•ÏX‚µ‚È‚¢AƒXƒ^ƒCƒ‹‚Ì•ÏX‚ğ“K—p
+		// ã‚ªãƒ¼ãƒŠãƒ¼ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦(?)ã®Zé †åºã¯å¤‰æ›´ã—ãªã„ã€ã‚¹ã‚¿ã‚¤ãƒ«ã®å¤‰æ›´ã‚’é©ç”¨
 		SWP_NOOWNERZORDER | SWP_FRAMECHANGED
 	);
 }

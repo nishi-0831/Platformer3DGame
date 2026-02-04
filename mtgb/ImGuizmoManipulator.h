@@ -6,7 +6,6 @@
 #include "../ImGui/ImGuizmo.h"
 #include <functional>
 #include "Command.h"
-#include "CommandHandlerRegistry.h"
 #include "GameObjectSelectionEvent.h"
 #include "SelectionCommand.h"
 #include "Transform.h"

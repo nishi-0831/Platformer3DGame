@@ -10,44 +10,44 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ŒŸoŠí‚Ì‹¤’Êİ’è
+	/// æ¤œå‡ºå™¨ã®å…±é€šè¨­å®š
 	/// </summary>
 	struct DetectorConfigBase
 	{
-		// std::string targetName;         // ŒŸo‘ÎÛ‚Ì–¼‘O
-		GameObjectTag targetTag;	 // ŒŸo‘ÎÛ‚Ìƒ^ƒO
-		WindowContext windowContext; // ‘ÎÛ‚ÌƒEƒBƒ“ƒhƒE
-		float maxDistance;			 // ”»’è‚·‚éÅ‘å‹——£
-		float minDistance = 0.0f;	 // ”»’è‚·‚éÅ¬‹——£
+		// std::string targetName;         // æ¤œå‡ºå¯¾è±¡ã®åå‰
+		GameObjectTag targetTag;	 // æ¤œå‡ºå¯¾è±¡ã®ã‚¿ã‚°
+		WindowContext windowContext; // å¯¾è±¡ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+		float maxDistance;			 // åˆ¤å®šã™ã‚‹æœ€å¤§è·é›¢
+		float minDistance = 0.0f;	 // åˆ¤å®šã™ã‚‹æœ€å°è·é›¢
 		UIParams uiParams;
 	};
 
 	/// <summary>
-	/// ‹éŒ`ŒŸoŠí‚Ìİ’è
+	/// çŸ©å½¢æ¤œå‡ºå™¨ã®è¨­å®š
 	/// </summary>
 	struct RectDetectorConfig
 	{
 		DetectorConfigBase base;
-		RectF detectionRect; // ŒŸo”ÍˆÍ‚Ì‹éŒ`
+		RectF detectionRect; // æ¤œå‡ºç¯„å›²ã®çŸ©å½¢
 	};
 
 	/// <summary>
-	/// ‰~ŒŸoŠí‚Ìİ’è
+	/// å††æ¤œå‡ºå™¨ã®è¨­å®š
 	/// </summary>
 	struct CircleDetectorConfig
 	{
 		DetectorConfigBase base;
-		Vector2F center; // ‰~‚Ì’†SÀ•WiƒXƒNƒŠ[ƒ“À•Wj
-		float radius;	 // ‰~‚Ì”¼Œa
+		Vector2F center; // å††ã®ä¸­å¿ƒåº§æ¨™ï¼ˆã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ï¼‰
+		float radius;	 // å††ã®åŠå¾„
 	};
 
 	/// <summary>
-	/// ƒŒƒCŒŸoŠí‚Ìİ’è
+	/// ãƒ¬ã‚¤æ¤œå‡ºå™¨ã®è¨­å®š
 	/// </summary>
 	struct RayDetectorConfig
 	{
 		DetectorConfigBase base;
-		Transform* rayTransform; // ƒŒƒC‚Ì‹N“_A•ûŒü
-		float maxAngleDegrees;	 // ŒŸo‰Â”\‚ÈÅ‘åŠp“xi“xj
+		Transform* rayTransform; // ãƒ¬ã‚¤ã®èµ·ç‚¹ã€æ–¹å‘
+		float maxAngleDegrees;	 // æ¤œå‡ºå¯èƒ½ãªæœ€å¤§è§’åº¦ï¼ˆåº¦ï¼‰
 	};
 } // namespace mtgb

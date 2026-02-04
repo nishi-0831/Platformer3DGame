@@ -18,65 +18,65 @@ namespace mtgb
 		~FbxAnimationController();
 
 		/// <summary>
-		/// ƒAƒjƒ[ƒVƒ‡ƒ“ƒNƒŠƒbƒv‚ğ“o˜^
+		/// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¯ãƒªãƒƒãƒ—ã‚’ç™»éŒ²
 		/// </summary>
 		/// <param name="_animClip"></param>
 		void RegisterAnimationClip(const FbxAnimationClip& _animClip);
 
 		/// <summary>
-		/// ƒAƒjƒ[ƒVƒ‡ƒ“ƒNƒŠƒbƒv‚ğ“o˜^
+		/// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¯ãƒªãƒƒãƒ—ã‚’ç™»éŒ²
 		/// </summary>
 		/// <param name="_animClip"></param>
 		void RegisterAnimationClip(FbxAnimationClip&& _animClip);
 
 		/// <summary>
-		/// Œ»İ‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒŒ[ƒ€‚ğæ“¾
+		/// ç¾åœ¨ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å–å¾—
 		/// </summary>
 		/// <returns></returns>
 		int GetCurrentFrame() const;
 
 		/// <summary>
-		/// <para> ƒAƒjƒ[ƒVƒ‡ƒ“‚ğÄ¶ </para>
-		/// <para> –¼‘O‚É‘Î‰‚·‚éƒNƒŠƒbƒv‚ª–³‚¢ê‡‚Í‰½‚à‚µ‚È‚¢ </para>
+		/// <para> ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å†ç”Ÿ </para>
+		/// <para> åå‰ã«å¯¾å¿œã™ã‚‹ã‚¯ãƒªãƒƒãƒ—ãŒç„¡ã„å ´åˆã¯ä½•ã‚‚ã—ãªã„ </para>
 		/// </summary>
-		/// <param name="_clipName">Ä¶‚·‚éƒNƒŠƒbƒv–¼</param>
-		/// <param name="_isLooping">ƒ‹[ƒv‚·‚é‚©</param>
+		/// <param name="_clipName">å†ç”Ÿã™ã‚‹ã‚¯ãƒªãƒƒãƒ—å</param>
+		/// <param name="_isLooping">ãƒ«ãƒ¼ãƒ—ã™ã‚‹ã‹</param>
 		void PlayAnimation(std::string_view _clipName, bool _isLooping = true);
 
 		/// <summary>
-		/// ƒtƒŒ[ƒ€‚ğXV
+		/// ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æ›´æ–°
 		/// </summary>
 		void UpdateFrame();
 
 		/// <summary>
-		/// ƒAƒjƒ[ƒVƒ‡ƒ“‚ğˆê’â~
+		/// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ä¸€æ™‚åœæ­¢
 		/// </summary>
 		void PauseAnimation();
 
 		/// <summary>
-		/// ƒAƒjƒ[ƒVƒ‡ƒ“‚ğÄŠJ
+		/// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å†é–‹
 		/// </summary>
 		void ResumeAnimation();
 		/// <summary>
-		/// ƒAƒjƒ[ƒVƒ‡ƒ“‚ÌÄ¶‘¬“x‚ğİ’è
+		/// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®å†ç”Ÿé€Ÿåº¦ã‚’è¨­å®š
 		/// </summary>
 		/// <param name="_animSpeed"></param>
 		void SetAnimationSpeed(float _animSpeed);
 		/// <summary>
-		/// <para> ƒAƒjƒ[ƒVƒ‡ƒ“‚ªI—¹‚µ‚½‚© </para>
-		/// <para> ƒ‹[ƒv‚µ‚Ä‚¢‚éó‘Ô‚Å‚ÍI—¹‚Æ”»’è‚µ‚È‚¢ </para>
+		/// <para> ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãŒçµ‚äº†ã—ãŸã‹ </para>
+		/// <para> ãƒ«ãƒ¼ãƒ—ã—ã¦ã„ã‚‹çŠ¶æ…‹ã§ã¯çµ‚äº†ã¨åˆ¤å®šã—ãªã„ </para>
 		/// </summary>
 		/// <returns></returns>
 		bool IsFinishedAnimation();
 
 	  private:
 		std::unordered_map<std::string, FbxAnimationClip, TransparentStringHash, TransparentStringEq> clipMap_;
-		FbxAnimationClip* pCurrentClip_; // Œ»İÄ¶’†‚ÌƒNƒŠƒbƒv
-		float currentFrame_;			 // Œ»İ‚ÌƒtƒŒ[ƒ€
-		float animationSpeed_;			 // Ä¶‘¬“x(”{—¦)
-		bool isPlaying_;				 // Ä¶’†‚©
-		bool isLooping_;				 // ƒ‹[ƒv‚ğ‚·‚é‚©
-		bool isFinished_;				 // I—¹‚µ‚Ä‚¢‚é‚©
+		FbxAnimationClip* pCurrentClip_; // ç¾åœ¨å†ç”Ÿä¸­ã®ã‚¯ãƒªãƒƒãƒ—
+		float currentFrame_;			 // ç¾åœ¨ã®ãƒ•ãƒ¬ãƒ¼ãƒ 
+		float animationSpeed_;			 // å†ç”Ÿé€Ÿåº¦(å€ç‡)
+		bool isPlaying_;				 // å†ç”Ÿä¸­ã‹
+		bool isLooping_;				 // ãƒ«ãƒ¼ãƒ—ã‚’ã™ã‚‹ã‹
+		bool isFinished_;				 // çµ‚äº†ã—ã¦ã„ã‚‹ã‹
 		fbxsdk::FbxScene* pFbxScene_;
 	};
 } // namespace mtgb

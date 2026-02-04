@@ -27,64 +27,64 @@ namespace mtgb
 		void Update() override;
 
 		/// <summary>
-		/// ƒ[ƒhÏ‚İ‚ÌAudioClip‚ğæ“¾
+		/// ãƒ­ãƒ¼ãƒ‰æ¸ˆã¿ã®AudioClipã‚’å–å¾—
 		/// </summary>
-		/// <param name="_hAudio">‰¹ºƒnƒ“ƒhƒ‹</param>
-		/// <returns>AudioSource‚Ìƒ|ƒCƒ“ƒ^</returns>
+		/// <param name="_hAudio">éŸ³å£°ãƒãƒ³ãƒ‰ãƒ«</param>
+		/// <returns>AudioSourceã®ãƒã‚¤ãƒ³ã‚¿</returns>
 		AudioClip* GetAudioClip(const AudioHandle _hAudio);
 
 		/// <summary>
-		/// SourceVoice‚ğì¬‚·‚é
+		/// SourceVoiceã‚’ä½œæˆã™ã‚‹
 		/// </summary>
-		/// <param name="ppSourceVoice">Ši”[—pSourceVoice‚Ìƒ|ƒCƒ“ƒ^“n‚µ</param>
-		/// <param name="_pWaveData">ƒtƒH[ƒ}ƒbƒg—p‚ÌWaveData</param>
-		void CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, const WaveData* _pWaveData);
+		/// <param name="ppSourceVoice">æ ¼ç´ç”¨SourceVoiceã®ãƒã‚¤ãƒ³ã‚¿æ¸¡ã—</param>
+		/// <param name="_pWaveData">ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆç”¨ã®WaveData</param>
+		void CreateSourceVoice(IXAudio2SourceVoice** _ppSourceVoice, const WaveData* _pWaveData);
 
 	  private:
-		IXAudio2* pXAudio2_;					  // XAudio2‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
-		IXAudio2MasteringVoice* pMasteringVoice_; // åƒ{ƒCƒX
+		IXAudio2* pXAudio2_;					  // XAudio2ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
+		IXAudio2MasteringVoice* pMasteringVoice_; // ä¸»ãƒœã‚¤ã‚¹
 
 	  public:
 		/// <summary>
-		/// ‰¹ºƒtƒ@ƒCƒ‹‚ğƒ[ƒh‚·‚é
+		/// éŸ³å£°ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
 		/// </summary>
-		/// <param name="_fileName">ƒtƒ@ƒCƒ‹–¼</param>
-		/// <returns>‰¹ºƒnƒ“ƒhƒ‹</returns>
+		/// <param name="_fileName">ãƒ•ã‚¡ã‚¤ãƒ«å</param>
+		/// <returns>éŸ³å£°ãƒãƒ³ãƒ‰ãƒ«</returns>
 		static AudioHandle Load(const std::string& _fileName);
 		/// <summary>
-		/// Waveƒtƒ@ƒCƒ‹‚Ìƒoƒbƒtƒ@‚ğ’¼Ä¶‚·‚é
+		/// Waveãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒƒãƒ•ã‚¡ã‚’ç›´å†ç”Ÿã™ã‚‹
 		/// </summary>
-		/// <param name="pBuffer">Waveƒtƒ@ƒCƒ‹‚Ìƒoƒbƒtƒ@ƒ|ƒCƒ“ƒ^</param>
-		/// <param name="_bufferSize">ƒoƒbƒtƒ@ƒTƒCƒY</param>
-		static void PlayOneShotBuffer(byte* pBuffer, const size_t _bufferSize);
+		/// <param name="pBuffer">Waveãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒƒãƒ•ã‚¡ãƒã‚¤ãƒ³ã‚¿</param>
+		/// <param name="_bufferSize">ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚º</param>
+		static void PlayOneShotBuffer(byte* _pBuffer, const size_t _bufferSize);
 		/// <summary>
-		/// ‰¹ºƒtƒ@ƒCƒ‹‚Ìƒoƒbƒtƒ@‚ğ’¼Ä¶‚·‚é
+		/// éŸ³å£°ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒƒãƒ•ã‚¡ã‚’ç›´å†ç”Ÿã™ã‚‹
 		/// </summary>
-		/// <param name="_fileName">ƒtƒ@ƒCƒ‹–¼</param>
+		/// <param name="_fileName">ãƒ•ã‚¡ã‚¤ãƒ«å</param>
 		static void PlayOneShotFile(const std::string& _fileName);
 		/// <summary>
-		/// Ä¶ƒLƒ…[‚ğƒNƒŠƒA‚·‚é
+		/// å†ç”Ÿã‚­ãƒ¥ãƒ¼ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 		/// </summary>
 		static void Clear();
 
 	  private:
 		/// <summary>
-		/// w’èƒnƒ“ƒhƒ‹‚Ì‰¹º‚ğƒ[ƒh‚·‚é
+		/// æŒ‡å®šãƒãƒ³ãƒ‰ãƒ«ã®éŸ³å£°ã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
 		/// </summary>
-		/// <param name="_hAudio">‰¹ºƒnƒ“ƒhƒ‹</param>
-		/// <param name="pBuffer">ƒ[ƒh‚·‚éƒoƒbƒtƒ@</param>
-		/// <param name="_bufferSize">ƒ[ƒh‚·‚éƒoƒbƒtƒ@ƒTƒCƒY</param>
-		static void LoadAudioSource(const AudioHandle _hAudio, byte* pBuffer, const size_t _bufferSize);
+		/// <param name="_hAudio">éŸ³å£°ãƒãƒ³ãƒ‰ãƒ«</param>
+		/// <param name="pBuffer">ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ãƒãƒƒãƒ•ã‚¡</param>
+		/// <param name="_bufferSize">ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚º</param>
+		static void LoadAudioSource(const AudioHandle _hAudio, byte* _pBuffer, const size_t _bufferSize);
 		/// <summary>
-		/// <para>’P”­‰¹ºƒLƒ…[‚É’Ç‰Á</para>
-		/// <para>CPU‚ÌSleepƒvƒƒZƒX‚ğQl</para>
+		/// <para>å˜ç™ºéŸ³å£°ã‚­ãƒ¥ãƒ¼ã«è¿½åŠ </para>
+		/// <para>CPUã®Sleepãƒ—ãƒ­ã‚»ã‚¹ã‚’å‚è€ƒ</para>
 		/// </summary>
-		/// <param name="_oneShot">’Ç‰Á‚·‚é’P”­‰¹º</param>
+		/// <param name="_oneShot">è¿½åŠ ã™ã‚‹å˜ç™ºéŸ³å£°</param>
 		static void EnqueueOneShot(AudioOneShot* _pOneShot);
 
 	  private:
-		static AudioHandle handleCounter_;					   // ƒnƒ“ƒhƒ‰‰ÁZ—p
-		static std::map<AudioHandle, AudioClip*> pAudioClips_; // ƒnƒ“ƒhƒ‹‚ÆAudioClip‚Ì‘Î‰•tmap
-		static std::list<AudioOneShot*> pOneShotQueue_;		   // ’P”­‰¹º‚ÌƒLƒ…[
+		static AudioHandle handleCounter_;					   // ãƒãƒ³ãƒ‰ãƒ©åŠ ç®—ç”¨
+		static std::map<AudioHandle, AudioClip*> pAudioClips_; // ãƒãƒ³ãƒ‰ãƒ«ã¨AudioClipã®å¯¾å¿œä»˜map
+		static std::list<AudioOneShot*> pOneShotQueue_;		   // å˜ç™ºéŸ³å£°ã®ã‚­ãƒ¥ãƒ¼
 	};
 } // namespace mtgb

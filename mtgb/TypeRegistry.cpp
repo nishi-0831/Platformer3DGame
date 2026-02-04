@@ -29,7 +29,7 @@ void TypeRegistry::CallFunc(std::type_index _typeIdx, std::any _instance, const 
 		Command* command = itr->second(std::any(_instance), _name);
 		if (command == nullptr)
 			return;
-		// ‘€ìƒRƒ}ƒ“ƒh‚ğ“n‚·
+		// æ“ä½œã‚³ãƒãƒ³ãƒ‰ã‚’æ¸¡ã™
 		commandListener_(command);
 	}
 }

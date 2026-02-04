@@ -24,8 +24,8 @@ namespace mtgb
 	  public:
 		enum class WindowFlag
 		{
-			None,
-			NoMoveWhenHovered // ƒ}ƒEƒXƒJ[ƒ\ƒ‹‚ªƒEƒBƒ“ƒhƒE“à‚É‚ ‚é‚Æ‚«ˆÚ“®‹ÖŽ~
+			NONE,
+			NO_MOVE_WHEN_HOVERED // ãƒžã‚¦ã‚¹ã‚«ãƒ¼ã‚½ãƒ«ãŒã‚¦ã‚£ãƒ³ãƒ‰ã‚¦å†…ã«ã‚ã‚‹ã¨ãç§»å‹•ç¦æ­¢
 		};
 
 	  public:
@@ -36,10 +36,10 @@ namespace mtgb
 		void BeginFrame();
 		void BeginImGuizmoFrame();
 
-		void Begin(const char* _str, bool* _isOpen = NULL, WindowFlag _flag = WindowFlag::None);
+		void Begin(const char* _str, bool* _isOpen = NULL, WindowFlag _flag = WindowFlag::NONE);
 
 		/// <summary>
-		/// ImGuizmoƒEƒBƒ“ƒhƒE‚ð•`‰æ‚·‚é‚½‚ß‚ÉRTV‚ðƒZƒbƒg
+		/// ImGuizmoã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’æç”»ã™ã‚‹ãŸã‚ã«RTVã‚’ã‚»ãƒƒãƒˆ
 		/// </summary>
 		void SetImGuizmoRenderTargetView();
 
@@ -58,11 +58,11 @@ namespace mtgb
 		/// </summary>
 		void ResetComPtrs();
 		/// <summary>
-		/// ƒEƒBƒ“ƒhƒEƒŠƒTƒCƒYŽž‚Ìˆ—
+		/// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒªã‚µã‚¤ã‚ºæ™‚ã®å‡¦ç†
 		/// </summary>
-		/// <param name="width">V‚µ‚¢•</param>
-		/// <param name="height">V‚µ‚¢‚‚³</param>
-		void OnResize(UINT width, UINT height);
+		/// <param name="width">æ–°ã—ã„å¹…</param>
+		/// <param name="height">æ–°ã—ã„é«˜ã•</param>
+		void OnResize(UINT _width, UINT _height);
 
 		D3D11_VIEWPORT GetViewport()
 		{
@@ -73,7 +73,7 @@ namespace mtgb
 		void CreateD3DResources();
 		UINT winWidth_, winHeight_;
 
-		// Game ViewƒEƒBƒ“ƒhƒE‚Ì‘OƒtƒŒ[ƒ€î•ñ
+		// Game Viewã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å‰ãƒ•ãƒ¬ãƒ¼ãƒ æƒ…å ±
 		ImVec2 gameViewPos_;
 		ImVec2 gameViewSize_;
 		bool gameViewRectValid_;

@@ -5,16 +5,16 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ƒWƒ‡ƒCƒXƒeƒBƒbƒN‚Ì“ü—Í‚ğImGui‚Å•\¦‚·‚é—p
+	/// ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã®å…¥åŠ›ã‚’ImGuiã§è¡¨ç¤ºã™ã‚‹ç”¨
 	/// </summary>
 	struct JoystickProxy
 	{
-		JoystickProxy(const DIJOYSTATE& js);
+		JoystickProxy(const DIJOYSTATE& _js);
 		LONG lX;
 		LONG lY;
 		LONG lZ;
-		LONG lRx; // ¶‚ÌƒgƒŠƒK[ƒ{ƒ^ƒ“
-		LONG lRy; // ‰E‚ÌƒgƒŠƒK[ƒ{ƒ^ƒ“
+		LONG lRx; // å·¦ã®ãƒˆãƒªã‚¬ãƒ¼ãƒœã‚¿ãƒ³
+		LONG lRy; // å³ã®ãƒˆãƒªã‚¬ãƒ¼ãƒœã‚¿ãƒ³
 		LONG lRz;
 		LONG rglSlider[2];
 		DWORD rgdwPOV[4];
@@ -28,12 +28,12 @@ namespace mtgb
 		bool isConnected;
 		bool isAssigned;
 
-		void UpdateFromInput(GUID guid);
-		void UpdateInputData(const DIJOYSTATE& js);
+		void UpdateFromInput(GUID _guid);
+		void UpdateInputData(const DIJOYSTATE& _js);
 		// JoystickProxy operator=(const DIJOYSTATE& js);
 	};
 
-	// Dual Shock‚Ìê‡
-	// lRx,lRy‚ª¶A‰E‚ÌƒgƒŠƒK[ƒ{ƒ^ƒ“
-	// lY‚Íã‚É“|‚·‚Æ•‰A‰º‚Å³AlX‚Í¶‚ª•‰A‰E‚ª³
+	// Dual Shockã®å ´åˆ
+	// lRx,lRyãŒå·¦ã€å³ã®ãƒˆãƒªã‚¬ãƒ¼ãƒœã‚¿ãƒ³
+	// lYã¯ä¸Šã«å€’ã™ã¨è² ã€ä¸‹ã§æ­£ã€lXã¯å·¦ãŒè² ã€å³ãŒæ­£
 } // namespace mtgb

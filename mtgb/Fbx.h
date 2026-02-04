@@ -16,7 +16,7 @@ namespace mtgb
 {
 	class FbxParts;
 	/// <summary>
-	/// 3Dƒ‚ƒfƒ‹‚ÌFbx‚ğ“Ç‚İ‚İ‚·‚éƒNƒ‰ƒX
+	/// 3Dãƒ¢ãƒ‡ãƒ«ã®Fbxã‚’èª­ã¿è¾¼ã¿ã™ã‚‹ã‚¯ãƒ©ã‚¹
 	/// </summary>
 	class Fbx : public ISystem
 	{
@@ -30,35 +30,35 @@ namespace mtgb
 		void Update() override;
 
 		/// <summary>
-		/// FbxManager‚ğæ“¾‚·‚é
+		/// FbxManagerã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <returns>FbxManager‚Ìƒ|ƒCƒ“ƒ^</returns>
+		/// <returns>FbxManagerã®ãƒã‚¤ãƒ³ã‚¿</returns>
 		inline FbxManager* GetFbxManager()
 		{
 			return pFbxManager_;
 		}
 
 		/// <summary>
-		/// Fbxƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚İ‚·‚é
+		/// Fbxãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã¿ã™ã‚‹
 		/// </summary>
-		/// <param name="_fileName">3Dƒ‚ƒfƒ‹‚Ìƒtƒ@ƒCƒ‹–¼</param>
+		/// <param name="_fileName">3Dãƒ¢ãƒ‡ãƒ«ã®ãƒ•ã‚¡ã‚¤ãƒ«å</param>
 		static FBXModelHandle Load(const std::string& _fileName);
 		/// <summary>
-		/// Fbxƒ‚ƒfƒ‹‚ğ•`‰æ‚·‚é
+		/// Fbxãƒ¢ãƒ‡ãƒ«ã‚’æç”»ã™ã‚‹
 		/// </summary>
-		/// <param name="_transfrom">À•WŒn</param>
-		/// <param name="_frame">ƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒŒ[ƒ€</param>
+		/// <param name="_transfrom">åº§æ¨™ç³»</param>
+		/// <param name="_frame">ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ãƒ¬ãƒ¼ãƒ </param>
 		void Draw(const FBXModelHandle _hModel, const Transform& _transfrom, int _frame);
 		/// <summary>
-		/// ‰ğ•úˆ—
+		/// è§£æ”¾å‡¦ç†
 		/// </summary>
 		void Release();
 		static std::optional<FbxAnimationController> GetAnimationController(FBXModelHandle _hModel);
 
 	  private:
-		FbxManager* pFbxManager_; // Fbxƒtƒ@ƒCƒ‹‚ğˆµ‚¤–{‘Ì
+		FbxManager* pFbxManager_; // Fbxãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ‰±ã†æœ¬ä½“
 
-		FBXModelHandle handleCounter_;					 // ƒnƒ“ƒhƒ‰‚Ì‰ÁZ—p
-		std::map<FBXModelHandle, FbxModel*> pFbxModels_; // “Ç‚İ‚Ü‚ê‚½ƒXƒvƒ‰ƒCƒg
+		FBXModelHandle handleCounter_;					 // ãƒãƒ³ãƒ‰ãƒ©ã®åŠ ç®—ç”¨
+		std::map<FBXModelHandle, FbxModel*> pFbxModels_; // èª­ã¿è¾¼ã¾ã‚ŒãŸã‚¹ãƒ—ãƒ©ã‚¤ãƒˆ
 	};
 } // namespace mtgb

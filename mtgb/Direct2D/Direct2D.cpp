@@ -8,7 +8,7 @@
 #include <d3d11.h>
 #include <d2d1.h>
 #include "IncludingWindows.h"
-// #include <dwrite.h>  // direct write ÇÃÇ‚Ç¬
+// #include <dwrite.h>  // direct write „ÅÆ„ÇÑ„Å§
 
 #pragma comment(lib, "d3d11.lib")
 // #pragma comment(lib,"d3dx11.lib")
@@ -31,53 +31,53 @@ void mtgb::Direct2D::Initialize()
 
 void mtgb::Direct2D::InitializeCommonResource()
 {
-	// ÉtÉ@ÉNÉgÉäÅ[çÏê¨
+	// „Éï„Ç°„ÇØ„Éà„É™„Éº‰ΩúÊàê
 	HRESULT hResult = D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, pD2DFactory_.ReleaseAndGetAddressOf());
 
-	massert(SUCCEEDED(hResult) && "D2D1CreateFactoryÇ…é∏îs @Direct2D::Initialize");
+	massert(SUCCEEDED(hResult) && "D2D1CreateFactory„Å´Â§±Êïó @Direct2D::Initialize");
 }
 
-void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* pIDXGISurface, ID2D1RenderTarget** ppRenderTarget_)
+void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* _pIdxgiSurface, ID2D1RenderTarget** _ppRenderTarget)
 {
-	// ÉåÉìÉ_Å[É^Å[ÉQÉbÉgÇÃÉvÉçÉpÉeÉBê›íËèëÇ≠
+	// „É¨„É≥„ÉÄ„Éº„Çø„Éº„Ç≤„ÉÉ„Éà„ÅÆ„Éó„É≠„Éë„ÉÜ„Ç£Ë®≠ÂÆöÊõ∏„Åè
 	D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties = D2D1::RenderTargetProperties(
 
-		D2D1_RENDER_TARGET_TYPE_DEFAULT, // ÉåÉìÉ_ÉäÉìÉOÉÇÅ[ÉhÅBDEFAULTÇæÇ∆égópâ¬î\Ç»ÇÁGPUÅAÇªÇÍà»äOÇÕCPUÇ≈ÉåÉìÉ_ÉäÉìÉO
+		D2D1_RENDER_TARGET_TYPE_DEFAULT, // „É¨„É≥„ÉÄ„É™„É≥„Ç∞„É¢„Éº„Éâ„ÄÇDEFAULT„Å†„Å®‰ΩøÁî®ÂèØËÉΩ„Å™„ÇâGPU„ÄÅ„Åù„Çå‰ª•Â§ñ„ÅØCPU„Åß„É¨„É≥„ÉÄ„É™„É≥„Ç∞
 
-		D2D1::PixelFormat(DXGI_FORMAT_R8G8B8A8_UNORM, D2D1_ALPHA_MODE_PREMULTIPLIED), // ÉsÉNÉZÉãÇÃå`éÆÅAÉAÉãÉtÉ@íl
+		D2D1::PixelFormat(DXGI_FORMAT_R8G8B8A8_UNORM, D2D1_ALPHA_MODE_PREMULTIPLIED), // „Éî„ÇØ„Çª„É´„ÅÆÂΩ¢Âºè„ÄÅ„Ç¢„É´„Éï„Ç°ÂÄ§
 
-		0, // xï˚å¸ÇÃdpi
-		0, // yï˚å¸ÇÃdpi
+		0, // xÊñπÂêë„ÅÆdpi
+		0, // yÊñπÂêë„ÅÆdpi
 
-		D2D1_RENDER_TARGET_USAGE_NONE, // âΩÇ©ÇµÇÁÇÃóòópï˚ñ@Çê›íË
+		D2D1_RENDER_TARGET_USAGE_NONE, // ‰Ωï„Åã„Åó„Çâ„ÅÆÂà©Áî®ÊñπÊ≥ï„ÇíË®≠ÂÆö
 
-		D2D1_FEATURE_LEVEL_DEFAULT // ç≈è¨ÇÃã@î\ÉåÉxÉãÇéwíË
+		D2D1_FEATURE_LEVEL_DEFAULT // ÊúÄÂ∞è„ÅÆÊ©üËÉΩ„É¨„Éô„É´„ÇíÊåáÂÆö
 
 	);
 
-	// ÉåÉìÉ_Å[É^Å[ÉQÉbÉgçÏê¨
+	// „É¨„É≥„ÉÄ„Éº„Çø„Éº„Ç≤„ÉÉ„Éà‰ΩúÊàê
 	HRESULT hResult =
-		pD2DFactory_->CreateDxgiSurfaceRenderTarget(pIDXGISurface, renderTargetProperties, ppRenderTarget_);
+		pD2DFactory_->CreateDxgiSurfaceRenderTarget(_pIdxgiSurface, renderTargetProperties, _ppRenderTarget);
 
-	massert(SUCCEEDED(hResult) && "CreateDxgiSurfaceRenderTargetÇ…é∏îs @Direct2D::CreateDXGISurfaceRenderTarget");
+	massert(SUCCEEDED(hResult) && "CreateDxgiSurfaceRenderTarget„Å´Â§±Êïó @Direct2D::CreateDXGISurfaceRenderTarget");
 }
 
 void mtgb::Direct2D::CreateSolidColorBrush(
-	const D2D1::ColorF& color,
-	ID2D1RenderTarget* pRenderTarget,
-	ID2D1SolidColorBrush** ppD2DBrush
+	const D2D1::ColorF& _color,
+	ID2D1RenderTarget* _pRenderTarget,
+	ID2D1SolidColorBrush** _ppD2DBrush
 )
 {
-	// ÉuÉâÉVçÏê¨
-	HRESULT hResult = pRenderTarget->CreateSolidColorBrush(color, ppD2DBrush);
+	// „Éñ„É©„Ç∑‰ΩúÊàê
+	HRESULT hResult = _pRenderTarget->CreateSolidColorBrush(_color, _ppD2DBrush);
 
-	massert(SUCCEEDED(hResult) && "CreateSolidColorBrushÇ…é∏îs @Direct2D::CreateSolidColorBrush");
+	massert(SUCCEEDED(hResult) && "CreateSolidColorBrush„Å´Â§±Êïó @Direct2D::CreateSolidColorBrush");
 }
 
-void mtgb::Direct2D::ChangeRenderTarget(ComPtr<ID2D1SolidColorBrush> pD2DBrush, ComPtr<ID2D1RenderTarget> pRenderTarget)
+void mtgb::Direct2D::ChangeRenderTarget(ComPtr<ID2D1SolidColorBrush> _pD2DBrush, ComPtr<ID2D1RenderTarget> _pRenderTarget)
 {
-	pDefD2DBrush_	  = pD2DBrush;
-	pDefRenderTarget_ = pRenderTarget;
+	pDefD2DBrush_	  = _pD2DBrush;
+	pDefRenderTarget_ = _pRenderTarget;
 }
 
 void mtgb::Direct2D::Update()

@@ -6,61 +6,59 @@
 #include "MTImGui.h"
 #include <string>
 // ============================================================================
-// TextRenderer‚Ìó‘Ô‚ğ•Û‘¶‚·‚éState\‘¢‘Ì‚Ì’è‹`AUndo/Redo‚Ég‚¤Memento‚ÌusingéŒ¾
+// TextRendererã®çŠ¶æ…‹ã‚’ä¿å­˜ã™ã‚‹Stateæ§‹é€ ä½“ã®å®šç¾©ã€Undo/Redoã«ä½¿ã†Mementoã®usingå®£è¨€
 // ============================================================================
-#define MT_COMPONENT_TextRenderer()                                                \
-	struct TextRendererState                                                       \
-	{                                                                              \
-	};                                                                             \
-	class TextRenderer;                                                            \
+#define MT_COMPONENT_TextRenderer() \
+	struct TextRendererState \
+	{ \
+	}; \
+	class TextRenderer;\
 	using TextRendererMemento = ComponentMemento<TextRenderer, TextRendererState>;
 
 // ============================================================================
-// TextRenderer‚ÆTextRendererMemento‚Ì‘ŠŒİ•ÏŠ·ˆ—‚ğÀ‘•
+// TextRendererã¨TextRendererMementoã®ç›¸äº’å¤‰æ›å‡¦ç†ã‚’å®Ÿè£…
 // ============================================================================
-#define MT_GENERATED_BODY_TextRenderer()                                                            \
-  public:                                                                                           \
-	using Memento = TextRendererMemento;                                                            \
-	TextRendererMemento* SaveToMemento()                                                            \
-	{                                                                                               \
-		OnPreSave();                                                                                \
-		TextRendererState state;                                                                    \
-		return new ComponentMemento<TextRenderer, TextRendererState>(GetEntityId(), state);         \
-	}                                                                                               \
-                                                                                                    \
-	void RestoreFromMemento(const ComponentMemento<TextRenderer, TextRendererState>& _memento)      \
-	{                                                                                               \
-		const TextRendererState& state = _memento.GetState();                                       \
-		OnPostRestore();                                                                            \
-	}                                                                                               \
-                                                                                                    \
-	friend struct TextRenderer_Register;                                                            \
-	friend void to_json(nlohmann::json& _j, const TextRenderer& _target)                            \
-	{                                                                                               \
-	}                                                                                               \
-	friend void from_json(const nlohmann::json& _j, TextRenderer& _target)                          \
-	{                                                                                               \
-		_target.OnPostRestore();                                                                    \
-	}                                                                                               \
-	static std::string TypeName()                                                                   \
-	{                                                                                               \
-		return "TextRenderer";                                                                      \
-	}                                                                                               \
-	/* ImGui•\¦ˆ—‚Ì“o˜^ */                                                                       \
-	static void RegisterImGui()                                                                     \
-	{                                                                                               \
-		static bool registered = false;                                                             \
-		if (registered)                                                                             \
-			return;                                                                                 \
-		registered = true;                                                                          \
-                                                                                                    \
-		RegisterShowFuncHolder::Set<TextRenderer>([](TextRenderer* _target, const char* _name) {}); \
-		MTImGui::Instance().RegisterComponentViewer<TextRenderer>();                                \
+#define MT_GENERATED_BODY_TextRenderer() \
+	public: \
+	using Memento = TextRendererMemento; \
+	TextRendererMemento* SaveToMemento() \
+	{ \
+	OnPreSave(); \
+		TextRendererState state; \
+		return new ComponentMemento<TextRenderer, TextRendererState>(GetEntityId(), state); \
+	} \
+	\
+	void RestoreFromMemento(const ComponentMemento<TextRenderer, TextRendererState>& _memento) \
+	{ \
+		const TextRendererState& state = _memento.GetState(); \
+		OnPostRestore(); \
+	} \
+	\
+	friend struct TextRenderer_Register; \
+	friend void to_json(nlohmann::json& _j,const TextRenderer& _target) \
+	{ \
+	} \
+	friend void from_json(const nlohmann::json& _j, TextRenderer& _target) \
+	{ \
+		_target.OnPostRestore(); \
+	} \
+	static std::string TypeName(){ return "TextRenderer" ;} \
+	/* ImGuiè¡¨ç¤ºå‡¦ç†ã®ç™»éŒ² */ \
+	static void RegisterImGui() \
+	{ \
+		static bool registered = false; \
+		if (registered) return; \
+		registered = true; \
+		\
+		RegisterShowFuncHolder::Set<TextRenderer>([]( TextRenderer* _target, const char* _name) \
+			{ \
+			}); \
+		MTImGui::Instance().RegisterComponentViewer<TextRenderer>(); \
 	}
 
 #pragma warning(push)
-#pragma warning(disable : 4005)
-// ƒ}ƒNƒã‘‚«
+#pragma warning(disable:4005)
+// ãƒã‚¯ãƒ­ä¸Šæ›¸ã
 #define MT_COMPONENT() MT_COMPONENT_TextRenderer()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_TextRenderer()
 #pragma warning(pop)

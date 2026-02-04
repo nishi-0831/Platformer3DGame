@@ -13,7 +13,7 @@ mtgb::GameScene::~GameScene()
 	for (auto& pGameObject : pGameObjects_)
 	{
 		Game::RemoveEntityAllComponent(pGameObject->GetEntityId());
-		pGameObject->DestroyMe(); // íœƒtƒ‰ƒO‚ğ—§‚Ä‚Ä‚¨‚­
+		pGameObject->DestroyMe(); // å‰Šé™¤ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã¦ãŠã
 	}
 	SAFE_CLEAR_CONTAINER_DELETE(pGameObjects_);
 }
@@ -22,7 +22,7 @@ void mtgb::GameScene::RegisterGameObject(GameObject* _pGameObject)
 {
 	for (GameObject* pObj : pGameObjects_)
 	{
-		// Šù‚É“o˜^Ï‚İ‚Ìê‡‚Í‰½‚à‚µ‚È‚¢
+		// æ—¢ã«ç™»éŒ²æ¸ˆã¿ã®å ´åˆã¯ä½•ã‚‚ã—ãªã„
 		if (pObj->GetEntityId() == _pGameObject->GetEntityId())
 			return;
 	}
@@ -134,7 +134,7 @@ void mtgb::GameScene::DestroyGameObject(EntityId _entityId)
 nlohmann::json mtgb::GameScene::SerializeGameObjects() const
 {
 	nlohmann::json j;
-	// ”z—ñ‚Æ‚µ‚Ä‰Šú‰»
+	// é…åˆ—ã¨ã—ã¦åˆæœŸåŒ–
 	j["GameObject"] = nlohmann::json::array();
 	for (auto& object : pGameObjects_)
 	{

@@ -12,8 +12,8 @@
 
 mtgb::DoubleWindow::DoubleWindow()
 {
-	context1_ = WindowContext::First;
-	context2_ = WindowContext::Second;
+	context1_ = WindowContext::FIRST;
+	context2_ = WindowContext::SECOND;
 }
 
 mtgb::DoubleWindow::~DoubleWindow()
@@ -45,24 +45,24 @@ void mtgb::DoubleWindow::Initialize()
 	// mtgb::WindowManager::CreateWindowContext(config1, &context1_);
 	// mtgb::WindowManager::CreateWindowContext(config2, &context2_);
 
-	// ƒŠƒ\[ƒX‚Ì‰Šú‰»‚à‚±‚±‚Ås‚¤
-	Game::System<WindowManager>().SetWindowConfig(WindowContext::First, config1);
-	Game::System<WindowManager>().SetWindowConfig(WindowContext::Second, config2);
+	// ãƒªã‚½ãƒ¼ã‚¹ã®åˆæœŸåŒ–ã‚‚ã“ã“ã§è¡Œã†
+	Game::System<WindowManager>().SetWindowConfig(WindowContext::FIRST, config1);
+	Game::System<WindowManager>().SetWindowConfig(WindowContext::SECOND, config2);
 
-	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::First);
-	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::Second);
+	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::FIRST);
+	Game::System<WindowContextResourceManager>().CreateResource(WindowContext::SECOND);
 
-	HWND hWnd1 = WinCtxRes::GetHWND(WindowContext::First);
-	HWND hWnd2 = WinCtxRes::GetHWND(WindowContext::Second);
+	HWND hWnd1 = WinCtxRes::GetHWND(WindowContext::FIRST);
+	HWND hWnd2 = WinCtxRes::GetHWND(WindowContext::SECOND);
 
 	ShowWindow(hWnd1, SW_SHOW);
 	ShowWindow(hWnd2, SW_SHOW);
 
-	// ƒEƒBƒ“ƒhƒE‚Ì•\¦A‰Šú‰»Š®—¹‚ğƒ}[ƒN
-	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::First).MarkInitialized();
-	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::Second).MarkInitialized();
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è¡¨ç¤ºã€åˆæœŸåŒ–å®Œäº†ã‚’ãƒãƒ¼ã‚¯
+	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::FIRST).MarkInitialized();
+	Game::System<WindowContextResourceManager>().Get<WindowResource>(WindowContext::SECOND).MarkInitialized();
 
-	Game::System<WindowContextResourceManager>().ChangeActiveResource(WindowContext::First);
+	Game::System<WindowContextResourceManager>().ChangeActiveResource(WindowContext::FIRST);
 
 	SetDoubleWindowPos();
 
@@ -75,15 +75,15 @@ void mtgb::DoubleWindow::Update()
 
 void mtgb::DoubleWindow::SetDoubleWindowPos()
 {
-	// ƒ‚ƒjƒ^[ƒTƒCƒYæ“¾
+	// ãƒ¢ãƒ‹ã‚¿ãƒ¼ã‚µã‚¤ã‚ºå–å¾—
 	RECT monitorRect;
 	GetWindowRect(GetDesktopWindow(), &monitorRect);
 	int monitorWidth = monitorRect.right - monitorRect.left;
 
-	HWND hWnd1 = WinCtxRes::GetHWND(WindowContext::First);
-	HWND hWnd2 = WinCtxRes::GetHWND(WindowContext::Second);
+	HWND hWnd1 = WinCtxRes::GetHWND(WindowContext::FIRST);
+	HWND hWnd2 = WinCtxRes::GetHWND(WindowContext::SECOND);
 
-	// ƒEƒBƒ“ƒhƒEƒTƒCƒYæ“¾
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºå–å¾—
 	RECT win1Rect, win2Rect;
 	GetWindowRect(hWnd1, &win1Rect);
 	GetWindowRect(hWnd2, &win2Rect);
@@ -92,18 +92,18 @@ void mtgb::DoubleWindow::SetDoubleWindowPos()
 
 	int win1X = 0;
 	int win2X = 0;
-	// “ñ‚Â–Ú‚ÌƒEƒBƒ“ƒhƒE‚àû‚Ü‚é‚È‚çˆê‚Â–Ú‚Ì‰¡‚É•À‚×‚Ä”z’uAŒ©Ø‚ê‚é‚È‚çƒ‚ƒjƒ^[‚Ì‰E’[‚É‡‚í‚¹‚é
+	// äºŒã¤ç›®ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚‚åã¾ã‚‹ãªã‚‰ä¸€ã¤ç›®ã®æ¨ªã«ä¸¦ã¹ã¦é…ç½®ã€è¦‹åˆ‡ã‚Œã‚‹ãªã‚‰ãƒ¢ãƒ‹ã‚¿ãƒ¼ã®å³ç«¯ã«åˆã‚ã›ã‚‹
 	if (win1Width + win2Width <= monitorWidth)
 	{
-		win2X = win1X + win1Width; // •À‚×‚é
+		win2X = win1X + win1Width; // ä¸¦ã¹ã‚‹
 	}
 	else
 	{
-		WindowConfig config = Game::System<WindowManager>().GetWindowConfig(WindowContext::Second);
-		win2X				= monitorRect.right - config.width; // ‰E’[‚É‡‚í‚¹‚é
+		WindowConfig config = Game::System<WindowManager>().GetWindowConfig(WindowContext::SECOND);
+		win2X				= monitorRect.right - config.width; // å³ç«¯ã«åˆã‚ã›ã‚‹
 	}
 
-	// ˆÊ’u’²®
+	// ä½ç½®èª¿æ•´
 	SetWindowPos(hWnd1, nullptr, win1X, 0, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 	SetWindowPos(hWnd2, nullptr, win2X, 0, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 }

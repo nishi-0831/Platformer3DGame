@@ -149,12 +149,6 @@ void mtgb::Game::ReleaseSystems(const std::list<ISystem*>& _runnings)
 		pSystem->Release();
 		delete pSystem;
 	}
-
-	/*for (auto itr = _runnings.rbegin(); itr != _runnings.rend(); itr++)
-	{
-		(*itr)->Release();
-		delete (*itr);
-	}*/
 }
 
 void mtgb::Game::RunLoopGameCycle()
@@ -166,7 +160,7 @@ void mtgb::Game::RunLoopGameCycle()
 			updateSystem->Update();
 		}
 
-		if (toExit_) // 終了フラグが立っていたらサイクル離脱
+		if (toExit_) // 邨ゆｺ�繝輔Λ繧ｰ縺檎ｫ九▲縺ｦ縺�縺溘ｉ繧ｵ繧､繧ｯ繝ｫ髮｢閼ｱ
 		{
 			break;
 		}

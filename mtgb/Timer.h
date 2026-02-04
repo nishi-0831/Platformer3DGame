@@ -29,11 +29,9 @@ namespace mtgb
 		static void Remove(TimerHandle _hTimer);
 
 		/// <summary>
-		/// ƒ^ƒCƒ}[ƒLƒ…[‚ð‚·‚×‚ÄƒNƒŠƒA‚·‚é
+		/// ã‚¿ã‚¤ãƒžãƒ¼ã‚­ãƒ¥ãƒ¼ã‚’ã™ã¹ã¦ã‚¯ãƒªã‚¢ã™ã‚‹
 		/// </summary>
 		static void Clear();
-
-		static void Release();
 
 	  public:
 		Timer();
@@ -41,6 +39,7 @@ namespace mtgb
 
 		void Initialize() override;
 		void Update() override;
+		void Release() override;
 
 		void EnqueueTimer(QUEUE_ELEMENT* _pElement);
 
@@ -52,8 +51,8 @@ namespace mtgb
 
 	  private:
 		static Timer* pInstance_;
-		std::list<QUEUE_ELEMENT*> pTimerQueue_;				 // ƒ^ƒCƒ}[ƒLƒ…[
-		std::map<QUEUE_ELEMENT*, float> pReenqueueElements_; // Žg‚¢‚Ü‚í‚µ‚·‚é—v‘f‚Ìƒ^ƒCƒ}[î•ñ
-		std::set<QUEUE_ELEMENT*> toErase_;					 // Á‚·—\’è‚ÌƒLƒ…[
+		std::list<QUEUE_ELEMENT*> pTimerQueue_;				 // ã‚¿ã‚¤ãƒžãƒ¼ã‚­ãƒ¥ãƒ¼
+		std::map<QUEUE_ELEMENT*, float> pReenqueueElements_; // ä½¿ã„ã¾ã‚ã—ã™ã‚‹è¦ç´ ã®ã‚¿ã‚¤ãƒžãƒ¼æƒ…å ±
+		std::set<QUEUE_ELEMENT*> toErase_;					 // æ¶ˆã™äºˆå®šã®ã‚­ãƒ¥ãƒ¼
 	};
 } // namespace mtgb

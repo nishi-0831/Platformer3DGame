@@ -25,58 +25,58 @@ namespace mtgb
 	class InputUtil final
 	{
 	  public:
-		static const bool GetKey(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetKeyUp(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetMouse(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetMouseDown(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetMouseUp(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetGamePad(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetGamePadDown(
+		static bool GetKey(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetKeyDown(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetKeyUp(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetMouse(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetMouseDown(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetMouseUp(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetGamePad(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetGamePadDown(
 			const PadCode _padButtonCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const bool GetGamePadUp(
+		static bool GetGamePadUp(
 			const PadCode _padButtonCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const bool GetGamePad(
+		static bool GetGamePad(
 			const FlightStickCode _flightStickCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const bool GetGamePadDown(
+		static bool GetGamePadDown(
 			const FlightStickCode _flightStickCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const bool GetGamePadUp(
+		static bool GetGamePadUp(
 			const FlightStickCode _flightStickCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
 		// static inline const size_t* GetActiveGamePadID() { return activeGamepadID.data(); }
 
-		static const float GetTrigger(
+		static float GetTrigger(
 			FlightStickAxisCode _flightStickCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const float GetTrigger(PadAxisCode _padCode, WindowContext _context = mtgb::WindowContext::First);
-		static const float GetAxis(
+		static float GetTrigger(PadAxisCode _padCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static float GetAxis(
 			Axis _axis,
 			StickType _stickType,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const Vector2F GetAxis(StickType _stickType, WindowContext _context = mtgb::WindowContext::First);
+		static const Vector2F GetAxis(StickType _stickType, WindowContext _context = mtgb::WindowContext::FIRST);
 
-		static const Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::First);
-		static const Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::First);
+		static const Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::FIRST);
+		static const Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::FIRST);
 
 	  private:								// Utilities
-		static const size_t KEY_COUNT{256}; // ƒL[‚Ì”
+		static const size_t KEY_COUNT{256}; // ã‚­ãƒ¼ã®æ•°
 		/// <summary>
-		/// curr‚Æprev‚Ìxor‚ğæ“¾
+		/// currã¨prevã®xorã‚’å–å¾—
 		/// </summary>
-		/// <param name="_keyCode">ƒL[ƒR[ƒh</param>
-		/// <returns>0: ·–³‚µ, 1: ·—L‚è</returns>
-		static inline const int KeyXOR(
+		/// <param name="_keyCode">ã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰</param>
+		/// <returns>0: å·®ç„¡ã—, 1: å·®æœ‰ã‚Š</returns>
+		static inline int KeyXOR(
 			const KeyCode _keyCode,
 			const std::bitset<KEY_COUNT>& _keyStateCurrent,
 			const std::bitset<KEY_COUNT>& _keyStatePrevious
@@ -85,7 +85,7 @@ namespace mtgb
 			return _keyStateCurrent[Index(_keyCode)] ^ _keyStatePrevious[Index(_keyCode)];
 		}
 
-		static inline const int MouseXOR(
+		static inline int MouseXOR(
 			const MouseCode _mouseCode,
 			const _DIMOUSESTATE& _mouseStateCurrent,
 			const _DIMOUSESTATE& _mouseStatePrevious
@@ -95,38 +95,38 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// ƒL[ƒR[ƒh\‘¢‘Ì—ñ‹“Œ^‚ğƒCƒ“ƒfƒbƒNƒX‚É•ÏŠ·
+		/// ã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰æ§‹é€ ä½“åˆ—æŒ™å‹ã‚’ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã«å¤‰æ›
 		/// </summary>
-		/// <param name="_keyCode">ƒL[ƒR[ƒh</param>
-		/// <returns>ƒL[”z—ñ‚ÌƒCƒ“ƒfƒbƒNƒX</returns>
-		static inline const size_t Index(const KeyCode _keyCode)
+		/// <param name="_keyCode">ã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰</param>
+		/// <returns>ã‚­ãƒ¼é…åˆ—ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹</returns>
+		static inline size_t Index(const KeyCode _keyCode)
 		{
 			return static_cast<size_t>(_keyCode);
 		}
 
-		static inline const size_t Index(const MouseCode _moudeCode)
+		static inline size_t Index(const MouseCode _moudeCode)
 		{
 			return static_cast<size_t>(_moudeCode);
 		}
 
-		static inline const size_t Index(const PadCode _padCode)
+		static inline size_t Index(const PadCode _padCode)
 		{
 			return static_cast<size_t>(_padCode);
 		}
-		static inline const size_t Index(const FlightStickCode _flightStickCode)
+		static inline size_t Index(const FlightStickCode _flightStickCode)
 		{
 			return static_cast<size_t>(_flightStickCode);
 		}
 
 		/// <summary>
-		/// “ü—Íó‘Ô‚ğæ“¾
-		/// ‚Ç‚ÌƒEƒBƒ“ƒhƒE‚Å‚à\‚í‚È‚¢ê‡‚ÍWindowContext::First‚ÌƒEƒBƒ“ƒhƒE‚ªæ“¾‚³‚ê‚é
+		/// å…¥åŠ›çŠ¶æ…‹ã‚’å–å¾—
+		/// ã©ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã§ã‚‚æ§‹ã‚ãªã„å ´åˆã¯WindowContext::Firstã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒå–å¾—ã•ã‚Œã‚‹
 		/// </summary>
-		/// <param name="_context">ƒEƒBƒ“ƒhƒE‚ğw’è</param>
+		/// <param name="_context">ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’æŒ‡å®š</param>
 		/// <returns></returns>
 		static const InputData& GetInput(WindowContext _context);
 
-		static inline const int PadXOR(
+		static inline int PadXOR(
 			const PadCode _padCode,
 			const DIJOYSTATE& _padStateCurrent,
 			const DIJOYSTATE& _padStatePrevious
@@ -155,24 +155,24 @@ namespace mtgb
 		friend class InputResource;
 
 	  private:									  // Data
-		static const size_t KEY_COUNT{256};		  // ƒL[‚Ì”
-		std::bitset<KEY_COUNT> keyStateCurrent_;  // ƒL[‚Ìó‘ÔŒ»İ
-		std::bitset<KEY_COUNT> keyStatePrevious_; // ƒL[‚Ìó‘Ô‘O‰ñ
+		static const size_t KEY_COUNT{256};		  // ã‚­ãƒ¼ã®æ•°
+		std::bitset<KEY_COUNT> keyStateCurrent_;  // ã‚­ãƒ¼ã®çŠ¶æ…‹ç¾åœ¨
+		std::bitset<KEY_COUNT> keyStatePrevious_; // ã‚­ãƒ¼ã®çŠ¶æ…‹å‰å›
 
-		_DIMOUSESTATE mouseStateCurrent_;  // ƒ}ƒEƒX‚Ìó‘ÔŒ»İ
-		_DIMOUSESTATE mouseStatePrevious_; // ƒ}ƒEƒX‚Ìó‘Ô‘O‰ñ
-		DIJOYSTATE joyStateCurrent_;	   // ƒWƒ‡ƒCƒXƒeƒBƒbƒN‚Ìó‘ÔŒ»İ
-		DIJOYSTATE joyStatePrevious_;	   // ƒWƒ‡ƒCƒXƒeƒBƒbƒN‚Ìó‘ÔŒ»İ
-		ControllerType controllerType_;	   // ƒRƒ“ƒgƒ[ƒ‰[‚Ìí—Ş
-		InputConfig config_;			   // “ü—Í‚Ìæ‚è•û‚Ìİ’è
+		_DIMOUSESTATE mouseStateCurrent_;  // ãƒã‚¦ã‚¹ã®çŠ¶æ…‹ç¾åœ¨
+		_DIMOUSESTATE mouseStatePrevious_; // ãƒã‚¦ã‚¹ã®çŠ¶æ…‹å‰å›
+		DIJOYSTATE joyStateCurrent_;	   // ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã®çŠ¶æ…‹ç¾åœ¨
+		DIJOYSTATE joyStatePrevious_;	   // ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã®çŠ¶æ…‹ç¾åœ¨
+		ControllerType controllerType_;	   // ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼ã®ç¨®é¡
+		InputConfig config_;			   // å…¥åŠ›ã®å–ã‚Šæ–¹ã®è¨­å®š
 
-		Vector2Int mousePosition_; // ƒ}ƒEƒXƒJ[ƒ\ƒ‹‚ÌÀ•W
+		Vector2Int mousePosition_; // ãƒã‚¦ã‚¹ã‚«ãƒ¼ã‚½ãƒ«ã®åº§æ¨™
 
-		static const size_t GAME_PAD_COUNT{XUSER_MAX_COUNT};			 // ƒQ[ƒ€ƒpƒbƒh‚ÌÅ‘åÚ‘±‰Â”\”
-		std::array<_XINPUT_STATE, GAME_PAD_COUNT> gamePadStateCurrent_;	 // ƒQ[ƒ€ƒpƒbƒh‚Ìó‘ÔŒ»İ
-		std::array<_XINPUT_STATE, GAME_PAD_COUNT> gamePadStatePrevious_; // ƒQ[ƒ€ƒpƒbƒh‚Ìó‘Ô‘O‰ñ
-		std::map<PadIDState, int> activeGamePadID;						 // —LŒø‚ÈƒRƒ“ƒgƒ[ƒ‰‚ÌID(0~3‚ª“ü‚é)
-		int gamePadID;													 // ƒRƒ“ƒeƒLƒXƒg‚ÉŠ„‚è“–‚Ä‚ç‚ê‚½ƒRƒ“ƒgƒ[ƒ‰‚ÌID
+		static const size_t GAME_PAD_COUNT{XUSER_MAX_COUNT};			 // ã‚²ãƒ¼ãƒ ãƒ‘ãƒƒãƒ‰ã®æœ€å¤§æ¥ç¶šå¯èƒ½æ•°
+		std::array<_XINPUT_STATE, GAME_PAD_COUNT> gamePadStateCurrent_;	 // ã‚²ãƒ¼ãƒ ãƒ‘ãƒƒãƒ‰ã®çŠ¶æ…‹ç¾åœ¨
+		std::array<_XINPUT_STATE, GAME_PAD_COUNT> gamePadStatePrevious_; // ã‚²ãƒ¼ãƒ ãƒ‘ãƒƒãƒ‰ã®çŠ¶æ…‹å‰å›
+		std::map<PadIDState, int> activeGamePadID;						 // æœ‰åŠ¹ãªã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã®ID(0~3ãŒå…¥ã‚‹)
+		int gamePadID;													 // ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã«å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã®ID
 
 	  public:
 		// InputData();

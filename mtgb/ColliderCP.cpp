@@ -21,10 +21,10 @@ mtgb::ColliderCP::~ColliderCP()
 void mtgb::ColliderCP::Start()
 {
 	Collider::hSphereModel_ = Fbx::Load("Model/SphereCollider.fbx");
-	massert(Collider::hSphereModel_ >= 0 && "SphereColliderƒ‚ƒfƒ‹‚Ì“Ç‚İ‚İ‚É¸”s @ColliderCP::Start");
+	massert(Collider::hSphereModel_ >= 0 && "SphereColliderãƒ¢ãƒ‡ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¤±æ•— @ColliderCP::Start");
 
 	Collider::hBoxModel_ = Fbx::Load("Model/BoxCollider.fbx");
-	massert(Collider::hBoxModel_ >= 0 && "BoxColliderƒ‚ƒfƒ‹‚Ì“Ç‚İ‚İ‚É¸”s @ColliderCP::Start");
+	massert(Collider::hBoxModel_ >= 0 && "BoxColliderãƒ¢ãƒ‡ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¤±æ•— @ColliderCP::Start");
 }
 
 void mtgb::ColliderCP::Update()
@@ -99,10 +99,10 @@ void mtgb::ColliderCP::Draw()
 		}
 	}
 }
-mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vector3& _dir, float dist)
+mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vector3& _dir, float _dist)
 {
 	EntityId nearestEntity = INVALID_ENTITY;
-	float nearest		   = dist;
+	float nearest		   = _dist;
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
 		if (poolId_[i] != INVALID_ENTITY)
@@ -122,7 +122,7 @@ mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vec
 	return nearestEntity;
 }
 
-bool mtgb::ColliderCP::RayCastHit(const Vector3& _origin, const Vector3& _dir, float* dist, EntityId _entityId)
+bool mtgb::ColliderCP::RayCastHit(const Vector3& _origin, const Vector3& _dir, float* _dist, EntityId _entityId)
 {
 	std::vector<Collider*> colliders{};
 	if (!TryGet(&colliders, _entityId))
@@ -130,7 +130,7 @@ bool mtgb::ColliderCP::RayCastHit(const Vector3& _origin, const Vector3& _dir, f
 
 	for (auto& collider : colliders)
 	{
-		return collider->IsHit(_origin, _dir, dist);
+		return collider->IsHit(_origin, _dir, _dist);
 	}
 	return false;
 }

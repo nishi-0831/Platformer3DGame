@@ -8,46 +8,46 @@ namespace mtgb
 
 	/// <summary>
 	/// WindowContextResource
-	/// ƒ‰ƒbƒp[A‹ïÛƒNƒ‰ƒXˆË‘¶‚Ì•Ö—˜ŠÖ”ŒQ
+	/// ãƒ©ãƒƒãƒ‘ãƒ¼ã€å…·è±¡ã‚¯ãƒ©ã‚¹ä¾å­˜ã®ä¾¿åˆ©é–¢æ•°ç¾¤
 	/// </summary>
 	namespace WinCtxRes
 	{
 		/// <summary>
-		/// ƒŠƒ\[ƒX‚ğæ“¾‚·‚é
+		/// ãƒªã‚½ãƒ¼ã‚¹ã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <typeparam name="ResourceT">ƒŠƒ\[ƒX‚ÌŒ^</typeparam>
-		/// <param name="ctx">æ“¾‚·‚éƒEƒBƒ“ƒhƒE‚Ì¯•Êq</param>
+		/// <typeparam name="ResourceT">ãƒªã‚½ãƒ¼ã‚¹ã®å‹</typeparam>
+		/// <param name="ctx">å–å¾—ã™ã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­</param>
 		/// <returns></returns>
-		template <typename ResourceT> ResourceT& Get(WindowContext ctx)
+		template <typename ResourceT> ResourceT& Get(WindowContext _ctx)
 		{
-			return Game::System<WinCtxResManager>().Get<ResourceT>(ctx);
+			return Game::System<WinCtxResManager>().Get<ResourceT>(_ctx);
 		}
 
 		/// <summary>
-		/// ƒŠƒ\[ƒX‚ğØ‚è‘Ö‚¦‚é
+		/// ãƒªã‚½ãƒ¼ã‚¹ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
 		/// </summary>
-		/// <param name="ctx">Ø‚è‘Ö‚¦‚éƒEƒBƒ“ƒhƒE‚Ì¯•Êq</param>
-		void ChangeResource(WindowContext ctx);
+		/// <param name="ctx">åˆ‡ã‚Šæ›¿ãˆã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­</param>
+		void ChangeResource(WindowContext _ctx);
 
 		/// <summary>
-		/// Œ»İ—LŒø‚ÈƒEƒBƒ“ƒhƒE‚Ì¯•Êq‚ğ•Ô‚·
+		/// ç¾åœ¨æœ‰åŠ¹ãªã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­ã‚’è¿”ã™
 		/// </summary>
-		/// <returns>Œ»İ‚ÌWindowContext</returns>
+		/// <returns>ç¾åœ¨ã®WindowContext</returns>
 		WindowContext CurrContext();
 
 		/// <summary>
-		/// ‚»‚ÌƒEƒBƒ“ƒhƒE‚ÌHWND‚ğæ“¾‚·‚é
+		/// ãã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®HWNDã‚’å–å¾—ã™ã‚‹
 		/// </summary>
-		/// <param name="ctx">ƒEƒBƒ“ƒhƒE‚Ì¯•Êq</param>
+		/// <param name="ctx">ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­</param>
 		/// <returns></returns>
-		HWND GetHWND(WindowContext ctx);
+		HWND GetHWND(WindowContext _ctx);
 
 		/// <summary>
-		/// <para> “ñ‚Â‚ÌƒEƒBƒ“ƒhƒE‚Ì•`‰æƒŠƒ\[ƒX‚ğØ‚è‘Ö‚¦‚é </para>
-		/// <para> “ü—Í‚âƒJƒƒ‰‚È‚Ç‚ÍØ‚èŠ·‚¦‚È‚¢ </para>
+		/// <para> äºŒã¤ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®æç”»ãƒªã‚½ãƒ¼ã‚¹ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹ </para>
+		/// <para> å…¥åŠ›ã‚„ã‚«ãƒ¡ãƒ©ãªã©ã¯åˆ‡ã‚Šæ›ãˆãªã„ </para>
 		/// </summary>
 		/// <param name="_ctx1"></param>
 		/// <param name="_ctx2"></param>
-		void SwapWindow(WindowContext _ctx1 = WindowContext::First, WindowContext _ctx2 = WindowContext::Second);
+		void SwapWindow(WindowContext _ctx1 = WindowContext::FIRST, WindowContext _ctx2 = WindowContext::SECOND);
 	} // namespace WinCtxRes
 } // namespace mtgb

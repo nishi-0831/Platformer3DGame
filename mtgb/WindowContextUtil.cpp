@@ -9,22 +9,22 @@
 using namespace mtgb;
 
 /// <summary>
-/// Œ»İ—LŒø‚ÈƒEƒBƒ“ƒhƒE‚Ì¯•Êq‚ğ•Ô‚·
+/// ç¾åœ¨æœ‰åŠ¹ãªã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­ã‚’è¿”ã™
 /// </summary>
-/// <returns>Œ»İ‚ÌWindowContext</returns>
+/// <returns>ç¾åœ¨ã®WindowContext</returns>
 WindowContext WinCtxRes::CurrContext()
 {
 	return Game::System<WinCtxResManager>().CurrCtx();
 }
 
 /// <summary>
-/// ‚»‚ÌƒEƒBƒ“ƒhƒE‚ÌHWND‚ğæ“¾‚·‚é
+/// ãã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®HWNDã‚’å–å¾—ã™ã‚‹
 /// </summary>
-/// <param name="ctx">ƒEƒBƒ“ƒhƒE‚Ì¯•Êq</param>
+/// <param name="ctx">ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è­˜åˆ¥å­</param>
 /// <returns></returns>
-HWND WinCtxRes::GetHWND(WindowContext ctx)
+HWND WinCtxRes::GetHWND(WindowContext _ctx)
 {
-	return WinCtxRes::Get<WindowResource>(ctx).GetHWND();
+	return WinCtxRes::Get<WindowResource>(_ctx).GetHWND();
 }
 
 void mtgb::WinCtxRes::SwapWindow(WindowContext _ctx1, WindowContext _ctx2)
@@ -35,7 +35,7 @@ void mtgb::WinCtxRes::SwapWindow(WindowContext _ctx1, WindowContext _ctx2)
 	Game::System<WinCtxResManager>().SwapResource<Direct2DResource>(_ctx1, _ctx2);
 }
 
-void WinCtxRes::ChangeResource(WindowContext ctx)
+void WinCtxRes::ChangeResource(WindowContext _ctx)
 {
-	Game::System<WinCtxResManager>().ChangeActiveResource(ctx);
+	Game::System<WinCtxResManager>().ChangeActiveResource(_ctx);
 }

@@ -14,19 +14,19 @@ namespace mtgb
 		~SceneSystem();
 
 		/// <summary>
-		/// <para>�V�[���J�ڂ�����</para>
-		/// <para>NOTE: �Ă񂾏u�ԁA�J�ڐ�N���X�̃R���X�g���N�^�͌Ă΂�邪�A</para>
-		/// <para>----: Initialize�͎��̃t���[���ŌĂ΂��B</para>
+		/// <para>シーン遷移をする</para>
+		/// <para>NOTE: 呼んだ瞬間、遷移先クラスのコンストラクタは呼ばれるが、</para>
+		/// <para>----: Initializeは次のフレームで呼ばれる。</para>
 		/// </summary>
-		/// <typeparam name="NextSceneT">�J�ڐ�̃V�[���N���X�̌^</typeparam>
-		/// <typeparam name="...Args">�J�ڐ�N���X�̃R���X�g���N�^�ϒ�����</typeparam>
-		/// <param name="..._args">�J�ڐ�N���X�̃R���X�g���N�^����</param>
+		/// <typeparam name="NextSceneT">遷移先のシーンクラスの型</typeparam>
+		/// <typeparam name="...Args">遷移先クラスのコンストラクタ可変長引数</typeparam>
+		/// <param name="..._args">遷移先クラスのコンストラクタ引数</param>
 		template <class NextSceneT, typename... Args> void Move(Args... _args);
 
 		/// <summary>
-		/// ���݂̃V�[���̃|�C���^�̎擾
+		/// 現在のシーンのポインタの取得
 		/// </summary>
-		/// <returns>�V�[���̃|�C���^</returns>
+		/// <returns>シーンのポインタ</returns>
 		GameScene* GetActiveScene() const
 		{
 			return GameScene::pInstance_;
@@ -36,7 +36,7 @@ namespace mtgb
 		void Update() override;
 
 		/// <summary>
-		/// �V�[���J�ڎ��̃C�x���g���󂯂�
+		/// シーン遷移時のイベントを受ける
 		/// </summary>
 		/// <param name="_onMove">void()</param>
 		void OnMove(const std::function<void()>& _onMove)
@@ -45,15 +45,15 @@ namespace mtgb
 		}
 
 		/// <summary>
-		/// <para> ���̃t���[���̃V�[���̍X�V�A�`��O�Ɏ��s����R�[���o�b�N��o�^ </para>
-		/// <para> �R�[���o�b�N�͈�񂾂����s����A���̌�j������� </para>
+		/// <para> 次のフレームのシーンの更新、描画前に実行するコールバックを登録 </para>
+		/// <para> コールバックは一回だけ実行され、その後破棄される </para>
 		/// </summary>
-		/// <param name="_callback">�o�^����R�[���o�b�N</param>
+		/// <param name="_callback">登録するコールバック</param>
 		void RegisterPendingCallback(std::function<void()> _callback);
 
 		/// <summary>
-		/// <para> ���̃t���[���̃V�[���̍X�V�A�`��O�Ɏ��s����R�[���o�b�N�����s</para>
-		/// <para> ��񂾂����s����A���̌�j������� </para>
+		/// <para> 次のフレームのシーンの更新、描画前に実行するコールバックを実行</para>
+		/// <para> 一回だけ実行され、その後破棄される </para>
 		/// </summary>
 		void ExecutePendingCallbacks();
 
@@ -63,19 +63,19 @@ namespace mtgb
 	  private:
 		GameScene* pNextScene_;
 
-		std::queue<std::function<void()>> pendingCallbacks_; // ���̃t���[���̃V�[���̍X�V�A�`��O�Ɏ��s����R�[���o�b�N
-		std::vector<std::function<void()>> onMoveListener_;	 // �V�[���J�ڎ��Ɏ��s����R�[���o�b�N
+		std::queue<std::function<void()>> pendingCallbacks_; // 次のフレームのシーンの更新、描画前に実行するコールバック
+		std::vector<std::function<void()>> onMoveListener_;	 // シーン遷移時に実行するコールバック
 	};
 
 	template <class NextSceneT, typename... Args> inline void SceneSystem::Move(Args... _args)
 	{
-		// ���N���X��GameScene�ł��邩
+		// 基底クラスがGameSceneであるか
 		static_assert(
 			std::is_base_of<GameScene, NextSceneT>().value &&
-			"GameScene�N���X���p�����Ă��Ȃ��N���X�ɃV�[���J�ڂł��܂���B"
+			"GameSceneクラスを継承していないクラスにシーン遷移できません。"
 		);
 
-		// ���Ɏ��̃V�[�������蓖�Ă��Ă���Ȃ�������
+		// 既に次のシーンが割り当てられているなら解放する
 		SAFE_DELETE(pNextScene_);
 
 		pNextScene_ = new NextSceneT{_args...};

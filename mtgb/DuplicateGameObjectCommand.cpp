@@ -10,10 +10,10 @@ mtgb::DuplicateGameObjectCommand::DuplicateGameObjectCommand(
 	const ComponentFactory& _componentFactory,
 	EntityId _srcEntityId
 )
-	: createFunc_{_createFunc}
-	, componentFactory_{_componentFactory}
+	: notSaveMementos_{true}
 	, srcEntityId_{_srcEntityId}
-	, notSaveMementos_{true}
+	, createFunc_{_createFunc}
+	, componentFactory_{_componentFactory}
 {
 	GameObject* src = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(srcEntityId_);
 	if (src == nullptr)
