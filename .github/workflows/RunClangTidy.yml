@@ -34,6 +34,12 @@ jobs:
     run: |
      cmake --preset default
 
+  # run-clang-tidy.pyが内部でPyYAMLを扱う
+  - name: Install PyYAML
+    shell: pwsh
+    run: |
+      pip install PyYAML
+
   # clang-tidyを実行
   - name: Run clang-tidy
     run: |
