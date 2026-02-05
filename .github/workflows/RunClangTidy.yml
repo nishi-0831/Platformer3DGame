@@ -22,17 +22,7 @@ jobs:
   env:
    VCPKG_ROOT: ${{vars.VCPKG_ROOT}}
   steps:
-  # キャッシュ削除
-  - name: Remove CMake cache
-    run: |
-     # ビルドツリーを削除
-     if (Test-Path out/build/default) { Remove-Item -Recurse -Force out/build/default }
-    shell: pwsh
-
-  # キャッシュ再構成
-  - name: Reconfigure CMake cache
-    run: |
-     cmake --preset default
+  
 
   # clang-tidyを実行
   - name: Run clang-tidy

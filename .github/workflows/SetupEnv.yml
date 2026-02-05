@@ -19,9 +19,6 @@ jobs:
   - name: Checkout
     uses: actions/checkout@v4
 
-  - name: Setup CMake
-    uses: lukka/get-cmake@latest
-
   - name: Setup vcpkg
     uses: lukka/run-vcpkg@v11
     with:
@@ -29,10 +26,23 @@ jobs:
      vcpkgDirectory: '${{ vars.VCPKG_ROOT }}'
      # コミットIDをセット
      vcpkgGitCommitId: '${{ vars.VCPKG_COMMIT_ID }}'
+     # vcpkg install を実行する
+     runVcpkgInstall: true
+
+  - name: Setup CMake
+    uses: lukka/get-cmake@latest
   
-  - name: Configure CMake
+  # キャッシュ削除
+  - name: Remove CMake cache
     run: |
-     cmake -S . -B out/build/default -G Ninja
+     # ビルドツリーを削除
+     if (Test-Path out/build/default) { Remove-Item -Recurse -Force out/build/default }
+    shell: pwsh
+
+  # キャッシュ構成
+  - name: Configure CMake cache
+    run: |
+     cmake --preset default
 
   - name: Restore FBX SDK cache
     id: cache-fbx
