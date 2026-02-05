@@ -22,8 +22,12 @@ jobs:
   env:
    VCPKG_ROOT: ${{vars.VCPKG_ROOT}}
   steps:
-  
 
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  - name: Configure CMake
+    run: cmake --preset default
   # clang-tidyを実行
   - name: Run clang-tidy
     run: |
@@ -35,6 +39,6 @@ jobs:
     if: always() 
     with:
     # SARIFファイルのパス(相対パス)
-     sarif_file: tidy-output.sairf
+     sarif_file: tidy-output.sarif
      category: clang-tidy
 
