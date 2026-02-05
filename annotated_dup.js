@@ -226,6 +226,7 @@ var annotated_dup =
     [ "A", "classA.html", "classA" ],
     [ "ActorManager", "classActorManager.html", "classActorManager" ],
     [ "Afterdoc_Test", "classAfterdoc__Test.html", "classAfterdoc__Test" ],
+    [ "AnimationEvent", "structAnimationEvent.html", "structAnimationEvent" ],
     [ "Autolink_Test", "classAutolink__Test.html", "classAutolink__Test" ],
     [ "B", "classB.html", "classB" ],
     [ "Bar", "classBar.html", "classBar" ],

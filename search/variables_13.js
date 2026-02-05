@@ -39,7 +39,7 @@ var searchData=
   ['stageid_5f_36',['stageID_',['../classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0',1,'SampleScene']]],
   ['stagejsons_5f_37',['stageJsons_',['../classStageManger.html#aa5e7017c1dc67466fbb8639a2eb8dfd2',1,'StageManger']]],
   ['startfadeoutdelay_5f_38',['startFadeOutDelay_',['../classGameOverManager.html#a1086a257754a83c81f889c496aef8875',1,'GameOverManager']]],
-  ['startframe_39',['startFrame',['../structmtgb_1_1FbxAnimationClip.html#a871007c701272cbdb5aa482043198ac7',1,'mtgb::FbxAnimationClip']]],
+  ['startframe_39',['startFrame',['../structmtgb_1_1FbxAnimationClip.html#a871007c701272cbdb5aa482043198ac7',1,'mtgb::FbxAnimationClip::startFrame()'],['../structAnimationEvent.html#ae6700c76d67a8b76db5aff2e519b3051',1,'AnimationEvent::startFrame()']]],
   ['startframe_5f_40',['startFrame_',['../classmtgb_1_1FbxModel.html#a59c08964cdaa5e81d32124a0030ef4fb',1,'mtgb::FbxModel']]],
   ['startfuncs_5f_41',['startFuncs_',['../classmtstat_1_1MTStat.html#a4e78173c0a0580278b4c5d2e200a8a6a',1,'mtstat::MTStat']]],
   ['startpos_5f_42',['startPos_',['../classmtgb_1_1Interpolator.html#a5867fad8cf2861dca398602f0ea3be51',1,'mtgb::Interpolator']]],

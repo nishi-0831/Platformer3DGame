@@ -37,6 +37,7 @@ var classPatrolChargerEnemy =
     [ "IsToDestroy", "classPatrolChargerEnemy.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
     [ "MarkAsCalledStart", "classPatrolChargerEnemy.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
     [ "OnCollisionEnter", "classPatrolChargerEnemy.html#a2f43ee34b96e063b917a78799136bd79", null ],
+    [ "OnFootStep", "classPatrolChargerEnemy.html#a7a4351a569dd4e1aa837ae75979b1738", null ],
     [ "OnHitSide", "classPatrolChargerEnemy.html#a9b82572da6a4bf7a17ef993859ce9d43", null ],
     [ "OnStomped", "classPatrolChargerEnemy.html#ab3d70cf6a23a35c33c3aa5db4fde4b45", null ],
     [ "Patrol", "classPatrolChargerEnemy.html#adfe79074fb34615599e8132528572e42", null ],

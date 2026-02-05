@@ -7,6 +7,7 @@ var dir_3cf6e300f4ed75b2a0531d7b20a0e51f =
     [ "AddComponentCommand.cpp", "AddComponentCommand_8cpp.html", null ],
     [ "AddComponentCommand.h", "AddComponentCommand_8h.html", "AddComponentCommand_8h" ],
     [ "AddComponentCommandGeneric.h", "AddComponentCommandGeneric_8h.html", "AddComponentCommandGeneric_8h" ],
+    [ "AnimationEvent.h", "AnimationEvent_8h.html", "AnimationEvent_8h" ],
     [ "AssetsManager.cpp", "AssetsManager_8cpp.html", null ],
     [ "AssetsManager.h", "AssetsManager_8h.html", "AssetsManager_8h" ],
     [ "Audio.cpp", "Audio_8cpp.html", null ],

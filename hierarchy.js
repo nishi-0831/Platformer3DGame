@@ -11,6 +11,7 @@ var hierarchy =
     [ "nlohmann::adl_serializer<::mtbit::BitFlag< EnumStructT > >", "structnlohmann_1_1adl__serializer_3_1_1mtbit_1_1BitFlag_3_01EnumStructT_01_4_01_4.html", null ],
     [ "nlohmann::adl_serializer<::mtgb::Color >", "structnlohmann_1_1adl__serializer_3_1_1mtgb_1_1Color_01_4.html", null ],
     [ "Afterdoc_Test", "classAfterdoc__Test.html", null ],
+    [ "AnimationEvent", "structAnimationEvent.html", null ],
     [ "mtgb::AudioClip", "classmtgb_1_1AudioClip.html", null ],
     [ "mtgb::AudioOneShot", "structmtgb_1_1AudioOneShot.html", null ],
     [ "Autolink_Test", "classAutolink__Test.html", null ],

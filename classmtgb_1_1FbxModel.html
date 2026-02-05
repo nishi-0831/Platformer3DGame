@@ -143,12 +143,12 @@ mtgb::FbxModel 連携図</div>
 <tr class="memitem:a812d3185698e7e97930d107de6c245f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1FbxParts.html">FbxParts</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a812d3185698e7e97930d107de6c245f6">GetFbxParts</a> (const int _index)</td></tr>
 <tr class="memdesc:a812d3185698e7e97930d107de6c245f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fbxパーツを取得する  <br /></td></tr>
 <tr class="separator:a812d3185698e7e97930d107de6c245f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7772d9e985829ba551adbc57165befb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a7772d9e985829ba551adbc57165befb5">GetBonePosition</a> (std::string _boneName)</td></tr>
-<tr class="memdesc:a7772d9e985829ba551adbc57165befb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">任意のボーンの位置を取得  <br /></td></tr>
-<tr class="separator:a7772d9e985829ba551adbc57165befb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbe338c2f4ac140420bec57e90209d1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#adbe338c2f4ac140420bec57e90209d1a">GetAnimBonePosition</a> (std::string _boneName)</td></tr>
-<tr class="memdesc:adbe338c2f4ac140420bec57e90209d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキンメッシュアニメ中の現在の任意のボーンの位置を取得  <br /></td></tr>
-<tr class="separator:adbe338c2f4ac140420bec57e90209d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a670565187b91164dd95a76dce5032b0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a670565187b91164dd95a76dce5032b0e">GetBonePosition</a> (const std::string &amp;_boneName)</td></tr>
+<tr class="memdesc:a670565187b91164dd95a76dce5032b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">任意のボーンの位置を取得  <br /></td></tr>
+<tr class="separator:a670565187b91164dd95a76dce5032b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cfe4f92217d7637ac7e4a4b608f5937"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtgb_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#a4cfe4f92217d7637ac7e4a4b608f5937">GetAnimBonePosition</a> (const std::string &amp;_boneName)</td></tr>
+<tr class="memdesc:a4cfe4f92217d7637ac7e4a4b608f5937"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキンメッシュアニメ中の現在の任意のボーンの位置を取得  <br /></td></tr>
+<tr class="separator:a4cfe4f92217d7637ac7e4a4b608f5937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8166001954bc1d1a3eeefd79b49cfb6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1FbxModel.html#af8166001954bc1d1a3eeefd79b49cfb6">GetFileName</a> () const</td></tr>
 <tr class="memdesc:af8166001954bc1d1a3eeefd79b49cfb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ロードしたときのモデルファイルの名前を取得  <br /></td></tr>
 <tr class="separator:af8166001954bc1d1a3eeefd79b49cfb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -417,13 +417,14 @@ mtgb::FbxModel 連携図</div>
 
 <p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00183">183</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  184</span>{</div>
-<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">return</span> FbxAnimationController(<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>);</div>
+<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">return</span> FbxAnimationController(<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>,<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">fileName_</a>);</div>
 <div class="line"><span class="lineno">  186</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_afcd8c266f7ea5ba29aa7bad440df3cd3"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">mtgb::FbxModel::fileName_</a></div><div class="ttdeci">std::string fileName_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00094">FbxModel.h:94</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="adbe338c2f4ac140420bec57e90209d1a" name="adbe338c2f4ac140420bec57e90209d1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbe338c2f4ac140420bec57e90209d1a">&#9670;&#160;</a></span>GetAnimBonePosition()</h2>
+<a id="a4cfe4f92217d7637ac7e4a4b608f5937" name="a4cfe4f92217d7637ac7e4a4b608f5937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cfe4f92217d7637ac7e4a4b608f5937">&#9670;&#160;</a></span>GetAnimBonePosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -431,7 +432,7 @@ mtgb::FbxModel 連携図</div>
         <tr>
           <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> mtgb::FbxModel::GetAnimBonePosition </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>_boneName</em></td><td>)</td>
           <td></td>
         </tr>
@@ -459,8 +460,8 @@ mtgb::FbxModel 連携図</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a7772d9e985829ba551adbc57165befb5" name="a7772d9e985829ba551adbc57165befb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7772d9e985829ba551adbc57165befb5">&#9670;&#160;</a></span>GetBonePosition()</h2>
+<a id="a670565187b91164dd95a76dce5032b0e" name="a670565187b91164dd95a76dce5032b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670565187b91164dd95a76dce5032b0e">&#9670;&#160;</a></span>GetBonePosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -468,7 +469,7 @@ mtgb::FbxModel 連携図</div>
         <tr>
           <td class="memname"><a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> mtgb::FbxModel::GetBonePosition </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>_boneName</em></td><td>)</td>
           <td></td>
         </tr>
@@ -603,7 +604,6 @@ mtgb::FbxModel 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">   66</span>        {</div>
 <div class="line"><span class="lineno">   67</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">fileName_</a>;</div>
 <div class="line"><span class="lineno">   68</span>        }</div>
-<div class="ttc" id="aclassmtgb_1_1FbxModel_html_afcd8c266f7ea5ba29aa7bad440df3cd3"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">mtgb::FbxModel::fileName_</a></div><div class="ttdeci">std::string fileName_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00094">FbxModel.h:94</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="FbxModel_8h_source.html#l00094">fileName_</a>.</p>
 
@@ -730,7 +730,7 @@ mtgb::FbxModel 連携図</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="FbxParts_8cpp_source.html#l00053">mtgb::FbxParts::Initialize()</a>, <a class="el" href="MTAssert_8h_source.html#l00057">massert</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00028">SAFE_DESTROY</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="Fbx_8cpp_source.html#l00028">mtgb::Fbx::Load()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Fbx_8cpp_source.html#l00027">mtgb::Fbx::Load()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
