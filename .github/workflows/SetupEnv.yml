@@ -19,9 +19,6 @@ jobs:
   - name: Checkout
     uses: actions/checkout@v4
 
-  - name: Setup CMake
-    uses: lukka/get-cmake@latest
-
   - name: Setup vcpkg
     uses: lukka/run-vcpkg@v11
     with:
@@ -29,17 +26,30 @@ jobs:
      vcpkgDirectory: '${{ vars.VCPKG_ROOT }}'
      # コミットIDをセット
      vcpkgGitCommitId: '${{ vars.VCPKG_COMMIT_ID }}'
-  
-  - name: Configure CMake
-    run: |
-     cmake -S . -B out/build/default -G Ninja
+     # vcpkg install を実行する
+     runVcpkgInstall: true
 
-  - name: Restore FBX SDK cache
+  - name: Setup CMake
+    uses: lukka/get-cmake@latest
+  
+  # キャッシュ削除
+  - name: Remove CMake cache
+    run: |
+     # ビルドツリーを削除
+     if (Test-Path out/build/default) { Remove-Item -Recurse -Force out/build/default }
+    shell: pwsh
+
+  # キャッシュ構成
+  - name: Configure CMake cache
+    run: |
+     cmake --preset default
+
+  - name: cache FBX SDK 
     id: cache-fbx
     uses: actions/cache@v4
     with:
       path: C:\fbxsdk
-      key: fbx-sdk-202037-{{ hashFiles('**/FBXVersion.txt') }}
+      key: fbx-sdk-202037-${{ hashFiles('**/FBXVersion.txt') }}
       restore-keys: |
         fbx-sdk-202037-
       # キャッシュミスでも、失敗判定にしない
@@ -48,7 +58,7 @@ jobs:
   # キャッシュミス時のみダウンロード、インストール
   # FBX SDKインストーラをダウンロード
   - name: Download FBX SDK installer(if not cached)
-    if: steps.cache-fbx.outputs.cache.hit != 'true'
+    if: steps.cache-fbx.outputs.cache-hit != 'true'
     shell: powershell
     run: |
       $url = 'https://damassets.autodesk.net/content/dam/autodesk/www/files/fbx202037_fbxsdk_vs2022_win.exe'
@@ -57,7 +67,7 @@ jobs:
 
   # FBX SDKをインストール
   - name: install FBX SDK(if not cached)
-    if: steps.cache-fbx.outputs.cache.hit != 'true'
+    if: steps.cache-fbx.outputs.cache-hit != 'true'
     shell: cmd
     run: |
       FBXInstaller.exe /S /D=C:\fbxsdk
