@@ -3,7 +3,11 @@
 #include "FbxAnimationController.h"
 #include "GameTime.h"
 #include "Debug.h"
-mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene)
+#include "EventManager.h"
+#include "Fbx.h"
+#include <filesystem>
+#include <fstream>
+mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene, std::string_view _fileName)
 	: pCurrentClip_{nullptr}
 	, currentFrame_{0.0f}
 	, animationSpeed_{1.0f}
@@ -11,6 +15,7 @@ mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene
 	, isLooping_{false}
 	, isFinished_{false}
 	, pFbxScene_{_fbxScene}
+	, fileName_{_fileName}
 {
 	int animStackCount = _fbxScene->GetSrcObjectCount<FbxAnimStack>();
 
@@ -25,6 +30,40 @@ mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene
 
 		// コントローラに登録
 		RegisterAnimationClip(animClip);
+	}
+	
+	std::filesystem::path path(fileName_);
+	path.replace_extension();
+	path.concat(".Event.json");
+	path.make_preferred();
+	if (std::filesystem::exists(path))
+	{
+		std::fstream input(path);
+		if (input.fail())
+		{
+			LOGIMGUI("failed to read {}.Event.json", path.c_str());
+			return;
+		}
+		
+		nlohmann::json json;
+		try
+		{
+			input >> json;
+		}
+		catch (const nlohmann::json::parse_error& e)
+		{
+			const char* errMsg = e.what();
+			LOGIMGUI("parse error : {}", errMsg);
+			return;
+		}
+
+		for (nlohmann::json::iterator itr = json.begin(); itr != json.end(); itr++)
+		{
+			nlohmann::json evtJson = *itr;
+			AnimationEvent animEvt;
+			animEvt = evtJson;
+			events_.push_back(std::move(animEvt));
+		}
 	}
 }
 
@@ -102,6 +141,7 @@ void mtgb::FbxAnimationController::UpdateFrame()
 			isFinished_	  = true;
 		}
 	}
+	CheckEvents();
 }
 
 void mtgb::FbxAnimationController::PauseAnimation()
@@ -122,4 +162,35 @@ void mtgb::FbxAnimationController::SetAnimationSpeed(float _animSpeed)
 bool mtgb::FbxAnimationController::IsFinishedAnimation()
 {
 	return isFinished_;
+}
+
+void mtgb::FbxAnimationController::CheckEvents()
+{
+	for (const AnimationEvent& event : events_)
+	{
+		// 現在のフレームが、イベント対象のフレームの範囲内か
+		if (currentFrame_ >= event.startFrame && currentFrame_ <= event.endFrame)
+		{
+			using iterator					  = decltype(eventCallbackMap_)::iterator;
+			// イベント名に該当するコールバック関数を取得
+			std::pair<iterator, iterator> ret = eventCallbackMap_.equal_range(event.eventName);
+
+			if (ret.first == eventCallbackMap_.end())
+				return;
+
+			for (iterator itr = ret.first; itr != ret.second; itr++)
+			{
+				auto& func = itr->second;
+				func(event);
+			}
+		}
+	}
+}
+
+void mtgb::FbxAnimationController::SetEventCallback(
+	std::string_view _eventName,
+	std::function<void(const AnimationEvent&)> _callback
+)
+{
+	eventCallbackMap_.emplace(_eventName, _callback);
 }

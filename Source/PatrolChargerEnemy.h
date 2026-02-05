@@ -16,6 +16,7 @@ class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, 
 
   private:
 	void OnCollisionEnter(EntityId _entityId);
+	void OnFootStep(const AnimationEvent& _event);
 	Transform* pTransform_;
 	RigidBody* pRigidBody_;
 	MeshRenderer* pMeshRenderer_;

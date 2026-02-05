@@ -48,6 +48,14 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	pRigidBody_->isKinematic_ = false;
 
 	InitializeState();
+
+	animController_.value().SetEventCallback(
+		"Footstep",
+		[this](const AnimationEvent& _evt)
+		{
+			OnFootStep(_evt);
+		}
+	);
 }
 
 PatrolChargerEnemy::~PatrolChargerEnemy()
@@ -348,16 +356,22 @@ bool PatrolChargerEnemy::Search()
 
 void PatrolChargerEnemy::OnCollisionEnter(EntityId _entityId)
 {
-	/*if (_entityId != targetEntityId_)
-		return;
+}
 
-	LOGIMGUI("collision enter player : ChargeEnemy");
-	GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-	Transform& otherTransform = Transform::Get(_entityId);
-
-	if ( pTransform_->position.y <= otherTransform.position.y)
-	{
-
-		return;
-	}*/
+void PatrolChargerEnemy::OnFootStep(const AnimationEvent& _event)
+{
+	// ボーンの名前を取得
+	std::string boneName = _event.boneName;
+	// ボーンの座標を取得
+	Vector3 bonePos		 = Fbx::GetAnimBonePosition(pMeshRenderer_->GetMesh(), boneName);
+	EffectParameters params;
+	Matrix4x4 mat;
+	pTransform_->GenerateWorldMatrix(&mat);
+	// ボーンのワールド行列を計算
+	Vector3 worldBonePos = bonePos * mat;
+	Matrix4x4 boneMat	 = DirectX::XMMatrixTranslation(worldBonePos.x, worldBonePos.y, worldBonePos.z);
+	params.worldMat		 = boneMat;
+	params.isLoop		 = false;
+	// 煙のエフェクトを再生
+	Game::System<EffectManager>().Play("WalkSmoke", params);
 }

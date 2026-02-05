@@ -19,5 +19,5 @@ struct PlayerCollideRespawnPointEvent
 {
 	mtgb::EntityId playerEntityId;
 	mtgb::EntityId respawnPointEntityId;
-	int priority; // ���X�|�[���|�C���g�̗D��x�B�Ⴆ�΁A�S�[���ɋ߂����̂�D�悵�����ꍇ�ȂǂɎg��
+	int priority; // リスポーンポイントの優先度。例えば、ゴールに近いものを優先したい場合などに使う
 };

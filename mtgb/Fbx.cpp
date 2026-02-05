@@ -3,7 +3,6 @@
 #include "FbxParts.h"
 #include "DirectX11Draw.h"
 #include "MTAssert.h"
-#include "MTAssert.h"
 
 mtgb::Fbx::Fbx()
 	: pFbxManager_{nullptr}
@@ -76,4 +75,26 @@ std::optional<FbxAnimationController> mtgb::Fbx::GetAnimationController(FBXModel
 
 	massert(instance.pFbxModels_.count(_hModel) != 0 && "モデルが存在しない @Fbx::Draw");
 	return instance.pFbxModels_[_hModel]->GetAnimationController();
+}
+
+Vector3 mtgb::Fbx::GetBonePosition(FBXModelHandle _hModel, const std::string& _boneName)
+{
+	Fbx& instance{Game::System<Fbx>()};
+
+	massert((0 < _hModel) && (_hModel <= instance.handleCounter_) && "無効なハンドラ @Fbx::Draw");
+
+	massert(instance.pFbxModels_.count(_hModel) != 0 && "モデルが存在しない @Fbx::Draw");
+
+	return instance.pFbxModels_[_hModel]->GetBonePosition(_boneName);
+}
+
+Vector3 mtgb::Fbx::GetAnimBonePosition(FBXModelHandle _hModel, const std::string& _boneName)
+{
+	Fbx& instance{Game::System<Fbx>()};
+
+	massert((0 < _hModel) && (_hModel <= instance.handleCounter_) && "無効なハンドラ @Fbx::Draw");
+
+	massert(instance.pFbxModels_.count(_hModel) != 0 && "モデルが存在しない @Fbx::Draw");
+
+	return instance.pFbxModels_[_hModel]->GetAnimBonePosition(_boneName);
 }

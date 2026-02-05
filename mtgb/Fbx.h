@@ -54,7 +54,8 @@ namespace mtgb
 		/// </summary>
 		void Release();
 		static std::optional<FbxAnimationController> GetAnimationController(FBXModelHandle _hModel);
-
+		static Vector3 GetBonePosition(FBXModelHandle _hModel, const std::string& _boneName);
+		static Vector3 GetAnimBonePosition(FBXModelHandle _hModel, const std::string& _boneName);
 	  private:
 		FbxManager* pFbxManager_; // Fbxファイルを扱う本体
 
