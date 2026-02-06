@@ -22,7 +22,18 @@ jobs:
   env:
    VCPKG_ROOT: ${{vars.VCPKG_ROOT}}
   steps:
-  
+
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  # CMakeの構成
+  - name: Configure CMake
+    run: cmake --preset default
+  # run-clang-tidy.pyが内部でPyYAMLを扱う
+  - name: Install PyYAML
+    shell: pwsh
+    run: |
+      pip install PyYAML
 
   # clang-tidyを実行
   - name: Run clang-tidy
@@ -35,6 +46,6 @@ jobs:
     if: always() 
     with:
     # SARIFファイルのパス(相対パス)
-     sarif_file: tidy-output.sairf
+     sarif_file: tidy-output.sarif
      category: clang-tidy
 

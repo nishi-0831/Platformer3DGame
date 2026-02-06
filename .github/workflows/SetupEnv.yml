@@ -44,12 +44,12 @@ jobs:
     run: |
      cmake --preset default
 
-  - name: Restore FBX SDK cache
+  - name: cache FBX SDK 
     id: cache-fbx
     uses: actions/cache@v4
     with:
       path: C:\fbxsdk
-      key: fbx-sdk-202037-{{ hashFiles('**/FBXVersion.txt') }}
+      key: fbx-sdk-202037-${{ hashFiles('**/FBXVersion.txt') }}
       restore-keys: |
         fbx-sdk-202037-
       # キャッシュミスでも、失敗判定にしない
@@ -58,7 +58,7 @@ jobs:
   # キャッシュミス時のみダウンロード、インストール
   # FBX SDKインストーラをダウンロード
   - name: Download FBX SDK installer(if not cached)
-    if: steps.cache-fbx.outputs.cache.hit != 'true'
+    if: steps.cache-fbx.outputs.cache-hit != 'true'
     shell: powershell
     run: |
       $url = 'https://damassets.autodesk.net/content/dam/autodesk/www/files/fbx202037_fbxsdk_vs2022_win.exe'
@@ -67,7 +67,7 @@ jobs:
 
   # FBX SDKをインストール
   - name: install FBX SDK(if not cached)
-    if: steps.cache-fbx.outputs.cache.hit != 'true'
+    if: steps.cache-fbx.outputs.cache-hit != 'true'
     shell: cmd
     run: |
       FBXInstaller.exe /S /D=C:\fbxsdk
