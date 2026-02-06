@@ -12,7 +12,7 @@ function(register_clang_tidy_target FUNC_NAME)
         COMMAND powershell -NoProfile -ExecutionPolicy Bypass -File "${SCRIPT_FILE}"
         -ClangTidyWrapper ${EXE_PATH} -SarifConverter ${SARIF_CONVERTER}
         -OutputJson ${OUTPUT_JSON} -OutputSarif ${OUTPUT_SARIF}
-        -SrcDir ${CMAKE_SOURCE_DIR} -BinDir ${CMAKE_BINARY_DIR}
+        -SrcDir "$<SHELL_PATH:${CMAKE_SOURCE_DIR}>" -BinDir "$<SHELL_PATH:${CMAKE_BINARY_DIR}>"
         WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
         COMMENT "Run clang-tidy and convert to SARIF"
         USES_TERMINAL
