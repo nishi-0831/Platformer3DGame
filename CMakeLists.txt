@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16.0)
+cmake_minimum_required(VERSION 3.17.0)
 
 # 使用するOSのバージョン
 set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
