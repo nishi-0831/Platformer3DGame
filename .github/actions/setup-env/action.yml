@@ -34,8 +34,8 @@ runs:
     - name: Set environment variables
       shell: pwsh
       run: |
-        $fbxsdk = "C:\fbxsdk"
-        $llvmPath = "C:\Program Files\LLVM"
+        $fbxsdk = 'C:\fbxsdk'
+        $llvmPath = 'C:\Program Files\LLVM'
 
         "FBX_SDK=$fbxsdk" | Add-Content -Path $env:GITHUB_ENV
         "LLVM_PATH=$llvmPath" | Add-Content -Path $env:GITHUB_ENV
@@ -44,7 +44,7 @@ runs:
       id: cache-fbx
       uses: actions/cache@v4
       with:
-        path: ${{env.FBX_SDK}}
+        path: "${{env.FBX_SDK}}"
         key: fbx-sdk-202037-${{ hashFiles('**/FBXVersion.txt') }}
         restore-keys: |
           fbx-sdk-202037-
@@ -66,16 +66,16 @@ runs:
       if: steps.cache-fbx.outputs.cache-hit != 'true'
       shell: cmd
       run: |
-        FBXInstaller.exe /S /D=${{env.FBX_SDK}}
-        echo FBX SDK installed to ${{env.FBX_SDK}}
-        dir ${{env.FBX_SDK}}
+        FBXInstaller.exe /S /D="${{env.FBX_SDK}}"
+        echo FBX SDK installed to "${{env.FBX_SDK}}"
+        dir "${{env.FBX_SDK}}"
   
     - name: Cache LLVM
       id: cache-llvm
       uses: actions/cache@v4
       with:
-        path: ${{env.LLVM_PATH}}
-        key: llvm-${{hashFiles('**/LLVMVersion.txt')}}
+        path: "${{env.LLVM_PATH}}"
+        key: "llvm-${{hashFiles('**/LLVMVersion.txt')}}"
         restore-keys: |
           llvm-
         fail-on-cache-miss: false
@@ -89,6 +89,6 @@ runs:
     - name: Set PATH
       shell: pwsh
       run: |
-        Add-Content -Path $env:GITHUB_PATH -Value ${{env.FBX_SDK}}
-        Add-Content -Path $env:GITHUB_PATH -Value ${{env.LLVM_PATH}}
+        Add-Content -Path $env:GITHUB_PATH -Value "${{env.FBX_SDK}}"
+        Add-Content -Path $env:GITHUB_PATH -Value "${{env.LLVM_PATH}}"
     
