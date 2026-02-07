@@ -13,22 +13,17 @@ concurrency:
  cancel-in-progress: true
 
 jobs:
- setup:
-  uses: ./.github/workflows/SetupEnv.yml
  clang-tidy:
-  # 環境設定が完了してからジョブを実行する
-  needs: setup
   runs-on: windows-latest
-  env:
-   VCPKG_ROOT: ${{vars.VCPKG_ROOT}}
+
   steps:
 
   - name: Checkout repository
     uses: actions/checkout@v4
 
-  # CMakeの構成
-  - name: Configure CMake
-    run: cmake --preset default
+  - name: Setup Env
+    uses: ./.github/actions/setup-env
+
   # run-clang-tidy.pyが内部でPyYAMLを扱う
   - name: Install PyYAML
     shell: pwsh

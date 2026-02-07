@@ -15,6 +15,7 @@ jobs:
    fbx-cached: ${{ steps.cache-fbx.outputs.cache-hit }}
   env:
    FBX: 'C:\fbxsdk'
+   LLVM_DIR: 'C:\Program Files\LLVM\bin'
   steps:
   - name: Checkout
     uses: actions/checkout@v4
@@ -82,3 +83,20 @@ jobs:
         throw 'FBX SDK not found at C:\fxsdk'
       }
       Write-Host "FBX SDK verified at C:\fbxsdk"
+
+  - name: Cache LLVM
+    id: cache-llvm
+    uses: actions/cache@v4
+    with:
+      path: ${{env.LLVM_DIR}}
+      key: llvm-${{hashFiles('**/LLVMVersion.txt')}}
+      restore-keys: |
+        llvm-
+      fail-on-cache-miss: false
+
+  - name: Install LLVM(if not cached)
+    if: steps.cache-llvm.outputs.cache-hit != 'true'
+    shell: pwsh
+    run: |
+      choco install llvm --version=21.1.0 -y
+      $env:Path = ${{env.LLVM_DIR}} + $env:Path

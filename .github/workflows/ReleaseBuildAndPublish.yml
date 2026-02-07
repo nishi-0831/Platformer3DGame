@@ -13,16 +13,16 @@ concurrency:
   group: release-${{ github.ref }}
 
 jobs:
- setup:
-  uses: ./.github/workflows/SetupEnv.yml
  build-and-release:
-  # 環境設定が完了してからジョブを実行する
-  needs: setup
   # windows環境で動かす
   runs-on: windows-latest
-  env:
-   VCPKG_ROOT: ${{vars.VCPKG_ROOT}}
+
   steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  - name: Setup Env
+    uses: ./.github/actions/setup-env
 
   # Release ビルド
   - name: Build solution(Release x64)
