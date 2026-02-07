@@ -37,8 +37,8 @@ runs:
         $fbxsdk = "C:\fbxsdk"
         $llvmPath = "C:\Program Files\LLVM"
 
-        "FBX_SDK=$fbxsdk" | Add-Content -Path $GITHUB_ENV
-        "LLVM_PATH=$llvmPath" | Add-Content -Path $GITHUB_ENV
+        "FBX_SDK=$fbxsdk" | Add-Content -Path $env:GITHUB_ENV
+        "LLVM_PATH=$llvmPath" | Add-Content -Path $env:GITHUB_ENV
 
     - name: Cache FBX SDK 
       id: cache-fbx
