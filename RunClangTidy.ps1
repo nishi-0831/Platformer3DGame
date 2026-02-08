@@ -17,7 +17,7 @@ function RunClangTidy
     $output = & $ClangTidyWrapper $SrcDir -p $BinDir
     
     Write-Host "Success clang-tidy. output to JSON"
-    $output | Out-File -FilePath $OutputJson -Encoding utf8
+    $output | Out-File -FilePath $OutputJson -Encoding utf8NoBOM
     Write-Host "Success output to JSON"
     return 0
 }
@@ -35,7 +35,7 @@ function ConvertToSarif
             return $exitCode;   
         }
         
-        $output | Out-File -FilePath $OutputSarif -Encoding utf8   
+        $output | Out-File -FilePath $OutputSarif -Encoding utf8NoBOM
     }
     catch 
     {
