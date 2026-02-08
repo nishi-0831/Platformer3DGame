@@ -15,9 +15,11 @@ function RunClangTidy
     Write-Host "Running clang-tidy."
     Write-Host "Command: & $ClangTidyWrapper $SrcDir -p $BinDir"
     $output = & $ClangTidyWrapper $SrcDir -p $BinDir
-    
+    # falseでBOM無しを指定
+    $utf8NoBom = New-Object System.Text.UTF8Encoding $false
     Write-Host "Success clang-tidy. output to JSON"
-    $output | Out-File -FilePath $OutputJson -Encoding utf8NoBOM
+    # 書き込むファイル、ファイルに書き込む文字列、エンコード
+    [System.IO.File]::WriteAllText($OutputJson,$output,$utf8NoBom)
     Write-Host "Success output to JSON"
     return 0
 }
@@ -34,8 +36,10 @@ function ConvertToSarif
             Write-Error("ErrorCode: $exitCode $output")
             return $exitCode;   
         }
-        
-        $output | Out-File -FilePath $OutputSarif -Encoding utf8NoBOM
+        # falseでBOM無しを指定
+        $utf8NoBom = New-Object System.Text.UTF8Encoding $false
+        # 書き込むファイル、ファイルに書き込む文字列、エンコード
+        [System.IO.File]::WriteAllText($OutputSarif,$output,$utf8NoBom)
     }
     catch 
     {
