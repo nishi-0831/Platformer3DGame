@@ -30,6 +30,11 @@ jobs:
     run: |
       pip install PyYAML
 
+  # PCHを生成
+  - name: Generate Pch
+    run: |
+      cmake --build out/build/default --target generate-pch
+
   # clang-tidyを実行
   - name: Run clang-tidy
     run: |
