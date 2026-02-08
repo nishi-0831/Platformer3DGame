@@ -49,12 +49,19 @@ jobs:
      sarif_file: tidy-output.sarif
      category: clang-tidy
 
-    # エラーが発生した場合、SARIFをアーティファクトとしてアップロード
-  - name: Update log on failure
+    # SARIFをアーティファクトとしてアップロード
+  - name: Update sarif log (debug)
     if: always()
     uses: actions/upload-artifact@v4
     with:
       name: tidy-output.sarif
       path: tidy-output.sarif
-  
 
+    # JSONをアーティファクトとしてアップロード
+  - name: Update json log (debug)
+    if: always()
+    uses: actions/upload-artifact@v4
+    with:
+      name: tidy-output.json
+      path: tidy-output.json
+  
