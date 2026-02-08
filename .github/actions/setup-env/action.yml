@@ -75,7 +75,7 @@ runs:
       uses: actions/cache@v4
       with:
         path: "${{env.LLVM_PATH}}"
-        key: "llvm-${{hashFiles('**/LLVMVersion.txt')}}"
+        key: llvm-${{hashFiles('**/LLVMVersion.txt')}}
         restore-keys: |
           llvm-
         fail-on-cache-miss: false

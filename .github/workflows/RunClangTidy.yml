@@ -41,11 +41,20 @@ jobs:
      cmake --build out/build/default --target clang-tidy
 
   - name: Upload SARIF to GitHub
-    uses: github/codeql-action/upload-sarif@v3
+    uses: github/codeql-action/upload-sarif@v4
     # エラーがあってもSARIFをアップロードする
     if: always() 
     with:
     # SARIFファイルのパス(相対パス)
      sarif_file: tidy-output.sarif
      category: clang-tidy
+
+    # エラーが発生した場合、ログをアップロード
+  - name: Update log on failure
+    if: failure()
+    uses: actions/upload-artifact@v4
+    with:
+      name: tidy-output.json
+      path: tidy-output.json
+  
 
