@@ -35,7 +35,7 @@ runs:
       shell: pwsh
       run: |
         $fbxsdk = 'C:\fbxsdk'
-        $llvmPath = 'C:\Program Files\LLVM\bin'
+        $llvmPath = 'C:\Program Files\LLVM'
 
         "FBX_SDK=$fbxsdk" | Add-Content -Path $env:GITHUB_ENV
         "LLVM_PATH=$llvmPath" | Add-Content -Path $env:GITHUB_ENV
@@ -69,7 +69,13 @@ runs:
         FBXInstaller.exe /S /D="${{env.FBX_SDK}}"
         echo FBX SDK installed to "${{env.FBX_SDK}}"
         dir "${{env.FBX_SDK}}"
-  
+        
+    - name: Debug LLVM env
+      shell: pwsh
+      run: |
+        Write-Host "env.LLVM_PATH : $env:LLVM_PATH"
+        if (Test-Path $env:LLVM_PATH) { Write-Host "LLVM path exists" } else { Write-Host "LLVM path does NOT exist"}
+        
     - name: Cache LLVM
       id: cache-llvm
       uses: actions/cache@v4
