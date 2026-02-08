@@ -51,7 +51,7 @@ jobs:
 
     # エラーが発生した場合、SARIFをアーティファクトとしてアップロード
   - name: Update log on failure
-    if: failure()
+    if: always()
     uses: actions/upload-artifact@v4
     with:
       name: tidy-output.sarif
