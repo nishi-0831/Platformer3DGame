@@ -35,7 +35,7 @@ runs:
       shell: pwsh
       run: |
         $fbxsdk = 'C:\fbxsdk'
-        $llvmPath = 'C:\Program Files\LLVM'
+        $llvmPath = 'C:\Program Files\LLVM\bin'
 
         "FBX_SDK=$fbxsdk" | Add-Content -Path $env:GITHUB_ENV
         "LLVM_PATH=$llvmPath" | Add-Content -Path $env:GITHUB_ENV
