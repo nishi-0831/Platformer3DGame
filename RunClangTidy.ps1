@@ -66,7 +66,16 @@ function ConvertToSarif
     return 0
 }
 
+function DeduplicateSarif
+{
+    Write-Host "Deduplicate sarif"
+    $deduplicatorPath = Join-Path -Path $SrcDir -ChildPath "Tools\SarifDeduplicator\SarifDeduplicator.exe"
+    & $deduplicatorPath $SrcDir
+}
+
+
 RunClangTidy
 ConvertToSarif
+DeduplicateSarif
 
 exit
