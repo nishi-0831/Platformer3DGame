@@ -53,10 +53,24 @@ function ConvertToSarif
             return $exitCode;   
         }
         Write-Host "write to sarif"
+
         # falseでBOM無しを指定
         $utf8NoBom = New-Object System.Text.UTF8Encoding $false
+
         # 書き込むファイル、ファイルに書き込む文字列、エンコード
-        [System.IO.File]::WriteAllText($OutputSarif, $output, $utf8NoBom)
+        $streamWriter = New-Object System.IO.StreamWriter($OutputSarif, $false, $utf8NoBom)
+        try
+        {
+            foreach($line in $output)
+            {
+                $streamWriter.WriteLine($line)
+            }
+        }
+        finally
+        {
+            $streamWriter.Close()
+            $streamWriter.Dispose()
+        }
     }
     catch 
     {
