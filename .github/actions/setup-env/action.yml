@@ -16,21 +16,10 @@ runs:
        vcpkgGitCommitId: '${{ vars.VCPKG_COMMIT_ID }}'
        # vcpkg install を実行する
        runVcpkgInstall: true
+
     - name: Setup CMake
       uses: lukka/get-cmake@latest
     
-    # キャッシュ削除
-    - name: Remove CMake cache
-      shell: pwsh
-      run: |
-       # ビルドツリーを削除
-       if (Test-Path out/build/default) { Remove-Item -Recurse -Force out/build/default }
-
-    - name: Configure CMake cache
-      shell: pwsh
-      run: |
-        cmake --preset default
-
     - name: Set environment variables
       shell: pwsh
       run: |

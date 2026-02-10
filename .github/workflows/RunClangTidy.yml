@@ -30,15 +30,26 @@ jobs:
     run: |
       pip install PyYAML
 
+    # キャッシュ削除
+  - name: Remove CMake cache
+    shell: pwsh
+    run: |
+        # ビルドツリーを削除
+        if (Test-Path out/build/default-debug) { Remove-Item -Recurse -Force out/build/default-debug }
+
+  - name: Configure CMake cache
+    shell: pwsh
+    run: |
+        cmake --preset default-debug
   # PCHを生成
   - name: Generate Pch
     run: |
-      cmake --build out/build/default --target generate-pch
+      cmake --build out/build/default-debug --target generate-pch
 
   # clang-tidyを実行
   - name: Run clang-tidy
     run: |
-     cmake --build out/build/default --target clang-tidy
+     cmake --build out/build/default-debug --target clang-tidy
 
   - name: Upload SARIF to GitHub
     uses: github/codeql-action/upload-sarif@v4
