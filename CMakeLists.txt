@@ -823,7 +823,7 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         # リリースビルド時のインクルードディレクトリ
         "$<$<CONFIG:Release>:${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;$ENV{REFL_CPP}>"
         # どのビルド・モードでも共通
-        "$ENV{FBX}/include;"
+        "$ENV{FBX_SDK}/include;"
         "${CMAKE_CURRENT_SOURCE_DIR}/refl-cpp;"
         "${CMAKE_CURRENT_SOURCE_DIR}/EffekseeLib/install_msvc2022_x64/include/Effekseer;"
         "${CMAKE_CURRENT_SOURCE_DIR}/mtgb"
@@ -1042,11 +1042,11 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     target_link_directories(${PROJECT_NAME} PRIVATE
         # デバッグビルド
         "$<$<CONFIG:Debug>:"
-            "$ENV{FBX}/lib/x64/debug;"
+            "$ENV{FBX_SDK}/lib/x64/debug;"
         ">"
         # リリースビルド
         "$<$<CONFIG:Release>:"
-            "$ENV{FBX}/lib/x64/release;"
+            "$ENV{FBX_SDK}/lib/x64/release;"
         ">"
         # どのビルドモードでも共通
         "${CMAKE_CURRENT_SOURCE_DIR}//EffekseeLib/install_msvc2022_x64/lib"
