@@ -14,8 +14,8 @@ void StageEditScene::Initialize()
 {
 	Game::System<ImGuiEditorCamera>().CreateCamera();
 
-	TypeRegistry::Instance();
-	TypeRegistry::Instance().Initialize();
+	PropertyDisplayRegistry::Instance();
+	PropertyDisplayRegistry::Instance().Initialize();
 	MTImGui::Instance().Initialize();
 }
 

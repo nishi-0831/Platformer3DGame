@@ -153,8 +153,8 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 
 	ImVec2 localPos = ImVec2(mousePos.x - windowPos.x, mousePos.y - windowPos.y);
 
-	TypeRegistry::Instance().CallFunc(&pCameraTransform_->position, "cameraPos");
-	TypeRegistry::Instance().CallFunc(&pCameraTransform_->rotate, "cameraRot");
+	PropertyDisplayRegistry::Instance().ShowProperty(&pCameraTransform_->position, "cameraPos");
+	PropertyDisplayRegistry::Instance().ShowProperty(&pCameraTransform_->rotate, "cameraRot");
 	ImGui::InputFloat4("quat", pCameraTransform_->rotate.f);
 	ImGui::InputFloat("AngleX", &polarAngleRad_);
 	ImGui::InputFloat("AngleY", &azimuthalAngleRad_);

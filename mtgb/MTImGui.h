@@ -61,7 +61,8 @@ namespace mtgb
 		/// <param name="target">表示対象のポインタ</param>
 		/// <param name="name">表示対象の名前</param>
 		/// <param name="show">表示するImGuiWindow</param>
-		template <typename T> void TypedShow(T* _target, const std::string& _name, ShowType _show = ShowType::INSPECTOR);
+		template <typename T>
+		void TypedShow(T* _target, const std::string& _name, ShowType _show = ShowType::INSPECTOR);
 		/// <summary>
 		/// ImGuiShowable*インスタンスを登録、毎回ShowImGuiを呼ぶ
 		/// ImGuiShowableは自動で登録される
@@ -182,7 +183,7 @@ namespace mtgb
 		DirectShow(
 			[=]()
 			{
-				TypeRegistry::Instance().CallFunc<Type>(_target, _name.c_str());
+				PropertyDisplayRegistry::Instance().ShowProperty<Type>(_target, _name.c_str());
 			},
 			_name,
 			_show
@@ -196,7 +197,7 @@ namespace mtgb
 		{
 			GameObject* obj	 = mtgb::GameObject::FindGameObject(_entityId);
 			std::string name = obj->GetName() + ":Components";
-			TypeRegistry::Instance().CallFunc<T>(&(T::Get(_entityId)), name.c_str());
+			PropertyDisplayRegistry::Instance().ShowProperty<T>(&(T::Get(_entityId)), name.c_str());
 		};
 	}
 

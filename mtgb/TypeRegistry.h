@@ -6,20 +6,20 @@
 #include "DefaultShow.h"
 
 class Command;
-class TypeRegistry
+class PropertyDisplayRegistry
 {
   public:
 	template <typename T> void RegisterType();
 
 	template <typename T> void RegisterFunc(std::function<Command*(std::any, const char*)> _func);
 
-	static TypeRegistry& Instance();
+	static PropertyDisplayRegistry& Instance();
 	// プログラム開始時に登録したい関数を登録
 	void ProvisionalRegister(std::type_index _typeIdx, std::function<void(void)> _registerFunc);
 	void Initialize();
-	template <typename T> void CallFunc(T* _instance, const char* _name);
+	template <typename T> void ShowProperty(T* _instance, const char* _name);
 
-	void CallFunc(std::type_index _typeIdx, std::any _instance, const char* _name);
+	void ShowProperty(std::type_index _typeIdx, std::any _instance, const char* _name);
 	bool IsRegisteredType(std::type_index _typeIdx);
 
 	void RegisterCommandListener(std::function<void(Command*)> _commandListener);
@@ -40,11 +40,11 @@ class TypeRegistry
 
 	template <typename T> bool ShowMemberWithReflection(T _memberValue, const char* _name, Command* _command);
 
-	TypeRegistry();
-	TypeRegistry(const TypeRegistry&)			 = delete;
-	TypeRegistry& operator=(const TypeRegistry&) = delete;
+	PropertyDisplayRegistry();
+	PropertyDisplayRegistry(const PropertyDisplayRegistry&)			   = delete;
+	PropertyDisplayRegistry& operator=(const PropertyDisplayRegistry&) = delete;
 };
-template <typename T> void TypeRegistry::CallFunc(T* _instance, const char* _name)
+template <typename T> void PropertyDisplayRegistry::ShowProperty(T* _instance, const char* _name)
 {
 	Command* command = nullptr;
 	const auto& itr	 = showFunctions_.find(typeid(T));
@@ -66,7 +66,7 @@ template <typename T> void TypeRegistry::CallFunc(T* _instance, const char* _nam
 	commandListener_(command);
 }
 
-template <typename T> void TypeRegistry::RegisterFunc(std::function<Command*(std::any, const char*)> _func)
+template <typename T> void PropertyDisplayRegistry::RegisterFunc(std::function<Command*(std::any, const char*)> _func)
 {
 	using Type = std::remove_cvref_t<T>;
 	std::type_index typeIdx(typeid(Type));
@@ -83,7 +83,7 @@ namespace RegisterShowFuncHolder
 	{
 		// TODO : Setに渡した関数自体はCommandとして作られないという説明をするようコメントを更新
 
-		TypeRegistry::Instance().RegisterFunc<Type>(
+		PropertyDisplayRegistry::Instance().RegisterFunc<Type>(
 			[=](std::any _target, const char* _name) -> Command*
 			{
 				_func(std::any_cast<Type*>(_target), _name);
@@ -94,21 +94,21 @@ namespace RegisterShowFuncHolder
 }; // namespace RegisterShowFuncHolder
 
 // マクロ定義
-#define REGISTER_TYPE(Type, ...)                                   \
-	struct Type##_TypeRegister                                     \
-	{                                                              \
-		Type##_TypeRegister()                                      \
-		{                                                          \
-			TypeRegistry::Instance().ProvisionalRegister(          \
-				typeid(Type),                                      \
-				[]()                                               \
-				{                                                  \
-					TypeRegistry::Instance().RegisterType<Type>(); \
-				}                                                  \
-			);                                                     \
-		}                                                          \
-	};                                                             \
-	static Type##_TypeRegister Type##_instance;                    \
+#define REGISTER_TYPE(Type, ...)                                              \
+	struct Type##_TypeRegister                                                \
+	{                                                                         \
+		Type##_TypeRegister()                                                 \
+		{                                                                     \
+			PropertyDisplayRegistry::Instance().ProvisionalRegister(          \
+				typeid(Type),                                                 \
+				[]()                                                          \
+				{                                                             \
+					PropertyDisplayRegistry::Instance().RegisterType<Type>(); \
+				}                                                             \
+			);                                                                \
+		}                                                                     \
+	};                                                                        \
+	static Type##_TypeRegister Type##_instance;                               \
 	REFL_TYPE(Type, __VA_ARGS__)
 
 #define REGISTER_FIELD(MemberName, ...) REFL_FIELD(MemberName, __VA_ARGS__)

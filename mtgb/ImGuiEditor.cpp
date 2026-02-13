@@ -24,7 +24,7 @@ mtgb::ImGuiEditor::ImGuiEditor()
 	pManipulator_ = new ImGuizmoManipulator(commandListener_);
 
 	GameObjectGenerator::RegisterCommandListener(commandListener_);
-	TypeRegistry::Instance().RegisterCommandListener(commandListener_);
+	PropertyDisplayRegistry::Instance().RegisterCommandListener(commandListener_);
 }
 
 mtgb::ImGuiEditor::~ImGuiEditor()

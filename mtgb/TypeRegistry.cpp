@@ -2,18 +2,18 @@
 #include "TypeRegistryImpl.h"
 #include "ReflectionInfo.h"
 #include "Command.h"
-void TypeRegistry::ProvisionalRegister(std::type_index _typeIdx, std::function<void(void)> _registerFunc)
+void PropertyDisplayRegistry::ProvisionalRegister(std::type_index _typeIdx, std::function<void(void)> _registerFunc)
 {
 	provisionalRegisterFunc_.emplace(_typeIdx, _registerFunc);
 }
 
-TypeRegistry& TypeRegistry::Instance()
+PropertyDisplayRegistry& PropertyDisplayRegistry::Instance()
 {
-	static TypeRegistry instance;
+	static PropertyDisplayRegistry instance;
 	return instance;
 }
 
-void TypeRegistry::Initialize()
+void PropertyDisplayRegistry::Initialize()
 {
 	for (auto& itr : provisionalRegisterFunc_)
 	{
@@ -21,7 +21,7 @@ void TypeRegistry::Initialize()
 	}
 }
 
-void TypeRegistry::CallFunc(std::type_index _typeIdx, std::any _instance, const char* _name)
+void PropertyDisplayRegistry::ShowProperty(std::type_index _typeIdx, std::any _instance, const char* _name)
 {
 	const auto& itr = showFunctions_.find(_typeIdx);
 	if (itr != showFunctions_.end())
@@ -33,15 +33,15 @@ void TypeRegistry::CallFunc(std::type_index _typeIdx, std::any _instance, const 
 		commandListener_(command);
 	}
 }
-bool TypeRegistry::IsRegisteredType(std::type_index _typeIdx)
+bool PropertyDisplayRegistry::IsRegisteredType(std::type_index _typeIdx)
 {
 	return showFunctions_.contains(_typeIdx);
 }
-void TypeRegistry::RegisterCommandListener(std::function<void(Command*)> _commandListenner)
+void PropertyDisplayRegistry::RegisterCommandListener(std::function<void(Command*)> _commandListenner)
 {
 	commandListener_ = _commandListenner;
 }
-TypeRegistry::TypeRegistry()
+PropertyDisplayRegistry::PropertyDisplayRegistry()
 	: commandListener_{nullptr}
 {
 }

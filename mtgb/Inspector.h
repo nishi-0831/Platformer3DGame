@@ -35,9 +35,9 @@ template <typename T> void Inspector::ShowInspector(T* _instance, const char* _n
 		return;
 	}
 
-	if (TypeRegistry::Instance().IsRegisteredType(typeIdx))
+	if (PropertyDisplayRegistry::Instance().IsRegisteredType(typeIdx))
 	{
-		TypeRegistry::Instance().CallFunc(typeIdx, std::any(_instance), _name);
+		PropertyDisplayRegistry::Instance().ShowProperty(typeIdx, std::any(_instance), _name);
 	}
 	else
 	{
