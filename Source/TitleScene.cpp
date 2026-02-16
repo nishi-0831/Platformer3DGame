@@ -24,7 +24,7 @@ void TitleScene::Initialize()
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 	hImage						= Image::Load("Image/TitleImage.png");
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
-	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
+	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
 }
 
 void TitleScene::Update()

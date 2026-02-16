@@ -25,7 +25,7 @@ void mtgb::GameObjectGenerator::Initialize()
 
 void mtgb::GameObjectGenerator::Generate(GenerateType _primitive)
 {
-	if (GenerateType::Box == _primitive)
+	if (GenerateType::BOX == _primitive)
 	{
 		GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
 			[]()

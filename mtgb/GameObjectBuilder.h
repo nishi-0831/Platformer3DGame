@@ -18,7 +18,7 @@ namespace mtgb
 		Vector3 scale{Vector3::One()};
 		Quaternion rotate{Quaternion::Identity()};
 		GameObjectLayerFlag layerFlag{GameObjectLayerFlag::New().BeginEdit().OnAll().EndEdit()};
-		GameObjectTag tag{GameObjectTag::Untagged};
+		GameObjectTag tag{GameObjectTag::UNTAGGED};
 		bool isActive{true};
 		bool callUpdate{true};
 		bool callDraw{true};

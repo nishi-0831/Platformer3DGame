@@ -13,7 +13,7 @@ namespace mtbin
 
 		enum struct SeekDir : SeekPoint
 		{
-			Head, // 一番頭
+			HEAD, // 一番頭
 		};
 
 	  public:

@@ -5,13 +5,13 @@ unsigned int mtgb::CircularSaw::generateCounter_{0};
 
 mtgb::CircularSaw::CircularSaw()
 	: GameObject()
+	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
 	, pTransform_{Component<Transform>()}
 	, pMeshRenderer_{Component<MeshRenderer>()}
 	, pCollider_{Component<Collider>()}
-	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
 	, sawRadius_{2.5f}
-	, rotateAngleSec_{45.0f}
 	, sawOffset_{5.0f}
+	, rotateAngleSec_{45.0f}
 	, rotateAngleSecSaw_{360.0f}
 {
 	pTransform_->position.z = -5.0f;

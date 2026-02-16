@@ -31,8 +31,8 @@ void mtgb::RenderSystem::Render(GameScene& _scene)
 void mtgb::RenderSystem::RenderDirectXWindows(GameScene& _scene)
 {
 	// 一つ目のウィンドウ
-	WinCtxRes::ChangeResource(WindowContext::First);
-	if (WinCtxRes::Get<CameraResource>(WindowContext::First).NotRegisterCamera())
+	WinCtxRes::ChangeResource(WindowContext::FIRST);
+	if (WinCtxRes::Get<CameraResource>(WindowContext::FIRST).NotRegisterCamera())
 	{
 		Draw::ClearUICommands();
 		return;
@@ -50,7 +50,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	using mtbit::operator|;
 
 	// ImGuiは一つ目のウィンドウに依存している
-	WinCtxRes::ChangeResource(WindowContext::First);
+	WinCtxRes::ChangeResource(WindowContext::FIRST);
 
 	ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();
 
@@ -58,11 +58,11 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	imGui.BeginImGuizmoFrame();
 
 	// Inspector表示
-	MTImGui::Instance().ShowWindow(ShowType::Inspector);
+	MTImGui::Instance().ShowWindow(ShowType::INSPECTOR);
 
 	// Settings表示
-	MTImGui::Instance().ShowWindow(ShowType::Settings);
-	MTImGui::Instance().ShowWindow(ShowType::Editor);
+	MTImGui::Instance().ShowWindow(ShowType::SETTINGS);
+	MTImGui::Instance().ShowWindow(ShowType::EDITOR);
 	// ログ表示
 	MTImGui::Instance().ShowLog();
 
@@ -75,7 +75,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	Game::System<ImGuiEditorCamera>().SetCamera();
 	DrawGameObjects(_scene, AllLayer());
 
-	MTImGui::Instance().ShowWindow(ShowType::SceneView);
+	MTImGui::Instance().ShowWindow(ShowType::SCENE_VIEW);
 
 	imGui.EndFrame();
 	// DirectX11Draw::End();
@@ -92,7 +92,7 @@ void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene, GameObjectLayerFlag 
 	}
 	// TODO:EffectManager,ColliderCPもIRenderableCPインターフェースを継承させる
 	Game::System<EffectManager>().Draw();
-	if (_layer.Has(GameObjectLayer::SceneView))
+	if (_layer.Has(GameObjectLayer::SCENE_VIEW))
 	{
 		Game::System<ColliderCP>().Draw();
 	}

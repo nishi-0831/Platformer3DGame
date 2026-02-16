@@ -7,11 +7,11 @@ namespace
 	constexpr size_t BUFFER_SIZE{256};
 }
 mtgb::MeshRenderer::MeshRenderer()
-	: frame_{0}
-	, meshFileName{""}
+	: meshFileName{""}
 	, meshHandle{INVALID_HANDLE}
 	, layer{AllLayer()}
-	, shaderType{ShaderType::FbxParts}
+	, shaderType{ShaderType::FBX_PARTS}
+	, frame_{0}
 {
 	enabled_ = true;
 	meshFileName.resize(BUFFER_SIZE);
@@ -22,14 +22,14 @@ mtgb::MeshRenderer::MeshRenderer(EntityId _entityId)
 	, meshFileName{""}
 	, meshHandle{INVALID_HANDLE}
 	, layer{AllLayer()}
-	, shaderType{ShaderType::FbxParts}
+	, shaderType{ShaderType::FBX_PARTS}
 	, frame_{0}
 {
 	enabled_ = true;
 	meshFileName.resize(BUFFER_SIZE);
 }
 
-MeshRenderer& mtgb::MeshRenderer::operator=(const MeshRenderer& _other)
+mtgb::MeshRenderer& mtgb::MeshRenderer::operator=(const MeshRenderer& _other)
 {
 	meshFileName = _other.meshFileName;
 	meshHandle	 = _other.meshHandle;
@@ -47,7 +47,7 @@ void mtgb::MeshRenderer::OnChangeMeshFileName()
 
 void mtgb::MeshRenderer::Render() const
 {
-	if (shaderType == ShaderType::Sea)
+	if (shaderType == ShaderType::SEA)
 	{
 		Draw::SeaUVScroll(Transform::Get(GetEntityId()));
 	}

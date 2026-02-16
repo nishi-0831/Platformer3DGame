@@ -17,11 +17,11 @@ namespace mtgb
 		ResourceCollection() = default;
 		~ResourceCollection();
 
-		WindowContextResource*& operator[](const std::type_index& key);
-		const WindowContextResource* operator[](const std::type_index& key) const;
+		WindowContextResource*& operator[](const std::type_index& _key);
+		const WindowContextResource* operator[](const std::type_index& _key) const;
 
 		void Insert(const std::type_index& _key, WindowContextResource* _pResource);
-		void Swap(ResourceCollection& other);
+		void Swap(ResourceCollection& _other);
 		void Release();
 
 		/// <summary>

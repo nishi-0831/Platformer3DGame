@@ -18,11 +18,11 @@ namespace mtgb
 		void Initialize() override;
 		void Update() override;
 
-		static inline const double DeltaTime()
+		static inline double DeltaTime()
 		{
 			return deltaTime_;
 		}
-		static inline const float DeltaTimeF()
+		static inline float DeltaTimeF()
 		{
 			return static_cast<const float>(deltaTime_);
 		}

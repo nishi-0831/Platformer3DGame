@@ -20,7 +20,7 @@ RespawnManager::RespawnManager()
 				playerEntityId_ = _event.playerEntityId;
 			});
 
-	// —‰ºƒCƒxƒ“ƒg‚ğw“Ç
+	// è½ä¸‹ã‚¤ãƒ™ãƒ³ãƒˆã‚’è³¼èª­
 	Game::System<EventManager>().GetEvent<PlayerFellOutEvent>().Subscribe([this](const PlayerFellOutEvent& _event)
 		{
 			if (currentRespawnPointEntityId_ == INVALID_ENTITY)
@@ -33,7 +33,7 @@ RespawnManager::RespawnManager()
 				Transform* pRespawnPointTransform = &Transform::Get(currentRespawnPointEntityId_);
 				pPlayerTransform->position = pRespawnPointTransform->position;
 			}
-		}, EventScope::Scene);
+		}, EventScope::SCENE);
 }
 
 RespawnManager::~RespawnManager()
@@ -93,7 +93,7 @@ void RespawnPoint::OnCollisionEnter(EntityId _entityId)
 	GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
 	if (pGameObj == nullptr)
 		return;
-	if (pGameObj->GetTag() != GameObjectTag::Player)
+	if (pGameObj->GetTag() != GameObjectTag::PLAYER)
 		return;
 	
 	PlayerCollideRespawnPointEvent event

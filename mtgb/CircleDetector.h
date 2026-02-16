@@ -49,7 +49,7 @@ namespace mtgb
 		/// <summary>
 		/// 点が円内にあるかチェック
 		/// </summary>
-		bool IsPointInCircle(const Vector2F& point, const Vector2F& center, float radius) const;
+		bool IsPointInCircle(const Vector2F& _point, const Vector2F& _center, float _radius) const;
 
 		CircleDetectorConfig config;
 	};

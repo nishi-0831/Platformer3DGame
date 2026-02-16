@@ -25,49 +25,49 @@ namespace mtgb
 	class InputUtil final
 	{
 	  public:
-		static const bool GetKey(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetKeyUp(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetMouse(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetMouseDown(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetMouseUp(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetGamePad(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::First);
-		static const bool GetGamePadDown(
+		static bool GetKey(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetKeyDown(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetKeyUp(const KeyCode _keyCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetMouse(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetMouseDown(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetMouseUp(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetGamePad(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetGamePadDown(
 			const PadCode _padButtonCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const bool GetGamePadUp(
+		static bool GetGamePadUp(
 			const PadCode _padButtonCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const bool GetGamePad(
+		static bool GetGamePad(
 			const FlightStickCode _flightStickCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const bool GetGamePadDown(
+		static bool GetGamePadDown(
 			const FlightStickCode _flightStickCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const bool GetGamePadUp(
+		static bool GetGamePadUp(
 			const FlightStickCode _flightStickCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
 		// static inline const size_t* GetActiveGamePadID() { return activeGamepadID.data(); }
 
-		static const float GetTrigger(
+		static float GetTrigger(
 			FlightStickAxisCode _flightStickCode,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const float GetTrigger(PadAxisCode _padCode, WindowContext _context = mtgb::WindowContext::First);
-		static const float GetAxis(
+		static float GetTrigger(PadAxisCode _padCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static float GetAxis(
 			Axis _axis,
 			StickType _stickType,
-			WindowContext _context = mtgb::WindowContext::First
+			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		static const Vector2F GetAxis(StickType _stickType, WindowContext _context = mtgb::WindowContext::First);
+		static const Vector2F GetAxis(StickType _stickType, WindowContext _context = mtgb::WindowContext::FIRST);
 
-		static const Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::First);
-		static const Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::First);
+		static const Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::FIRST);
+		static const Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::FIRST);
 
 	  private:								// Utilities
 		static const size_t KEY_COUNT{256}; // キーの数
@@ -76,7 +76,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_keyCode">キーコード</param>
 		/// <returns>0: 差無し, 1: 差有り</returns>
-		static inline const int KeyXOR(
+		static inline int KeyXOR(
 			const KeyCode _keyCode,
 			const std::bitset<KEY_COUNT>& _keyStateCurrent,
 			const std::bitset<KEY_COUNT>& _keyStatePrevious
@@ -85,7 +85,7 @@ namespace mtgb
 			return _keyStateCurrent[Index(_keyCode)] ^ _keyStatePrevious[Index(_keyCode)];
 		}
 
-		static inline const int MouseXOR(
+		static inline int MouseXOR(
 			const MouseCode _mouseCode,
 			const _DIMOUSESTATE& _mouseStateCurrent,
 			const _DIMOUSESTATE& _mouseStatePrevious
@@ -99,21 +99,21 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_keyCode">キーコード</param>
 		/// <returns>キー配列のインデックス</returns>
-		static inline const size_t Index(const KeyCode _keyCode)
+		static inline size_t Index(const KeyCode _keyCode)
 		{
 			return static_cast<size_t>(_keyCode);
 		}
 
-		static inline const size_t Index(const MouseCode _moudeCode)
+		static inline size_t Index(const MouseCode _moudeCode)
 		{
 			return static_cast<size_t>(_moudeCode);
 		}
 
-		static inline const size_t Index(const PadCode _padCode)
+		static inline size_t Index(const PadCode _padCode)
 		{
 			return static_cast<size_t>(_padCode);
 		}
-		static inline const size_t Index(const FlightStickCode _flightStickCode)
+		static inline size_t Index(const FlightStickCode _flightStickCode)
 		{
 			return static_cast<size_t>(_flightStickCode);
 		}
@@ -126,7 +126,7 @@ namespace mtgb
 		/// <returns></returns>
 		static const InputData& GetInput(WindowContext _context);
 
-		static inline const int PadXOR(
+		static inline int PadXOR(
 			const PadCode _padCode,
 			const DIJOYSTATE& _padStateCurrent,
 			const DIJOYSTATE& _padStatePrevious

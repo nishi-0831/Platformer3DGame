@@ -49,10 +49,10 @@ namespace mtgb
 		/// ターゲットがレイの角度範囲内にあるかチェック
 		/// </summary>
 		bool IsTargetInRayAngle(
-			const Vector3& targetPos,
-			const Vector3& rayOrigin,
-			const Vector3& rayDirection,
-			float maxAngleDegrees
+			const Vector3& _targetPos,
+			const Vector3& _rayOrigin,
+			const Vector3& _rayDirection,
+			float _maxAngleDegrees
 		) const;
 
 		RayDetectorConfig config;

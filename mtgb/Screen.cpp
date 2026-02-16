@@ -5,9 +5,9 @@
 #include "Game.h"
 #include "WindowContext.h"
 mtgb::Screen::Screen()
-	: size_{0, 0}
+	: sizeRatio_{1.0f, 1.0f}
 	, initialSize_{0, 0}
-	, sizeRatio_{1.0f, 1.0f}
+	, size_{0, 0}
 	, fpsLimit_{0}
 {
 }

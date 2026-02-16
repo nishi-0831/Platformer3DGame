@@ -28,7 +28,7 @@ mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 mtgb::GameObject::GameObject()
 	: status_{.isActive_ = true, .callUpdate_ = true, .callDraw_ = true, .toDestroy_ = FALSE}
 	, layerFlag_{AllLayer()}
-	, tag_{GameObjectTag::Untagged}
+	, tag_{GameObjectTag::UNTAGGED}
 {
 	entityId_		  = Game::System<EntityManager>().CreateEntity();
 	isNotCalledStart_ = true;
@@ -37,8 +37,8 @@ mtgb::GameObject::GameObject()
 mtgb::GameObject::GameObject(const GameObject& _other)
 	: Entity()
 	, status_{_other.status_}
+	, tag_{GameObjectTag::UNTAGGED}
 	, componentsFlag_{_other.componentsFlag_}
-	, tag_{GameObjectTag::Untagged}
 {
 	isNotCalledStart_ = true;
 }
@@ -79,7 +79,7 @@ void mtgb::GameObject::Deserialize(const nlohmann::json& _json)
 	tag_  = _json.at("tag").get<GameObjectTag>();
 }
 
-GameObject* mtgb::GameObject::FindGameObject(GameObjectTag _tag)
+mtgb::GameObject* mtgb::GameObject::FindGameObject(GameObjectTag _tag)
 {
 	return mtgb::Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_tag);
 }

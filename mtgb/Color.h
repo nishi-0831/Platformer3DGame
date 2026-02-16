@@ -27,11 +27,11 @@ namespace mtgb
 		/// </summary>
 		enum struct Component : int32_t
 		{
-			Blue,  // 青色成分
-			Green, // 緑色成分
-			Red,   // 赤色成分
-			Alpha, // 透過度成分
-			Max,   // 色成分の種類数
+			BLUE,  // 青色成分
+			GREEN, // 緑色成分
+			RED,   // 赤色成分
+			ALPHA, // 透過度成分
+			MAX,   // 色成分の種類数
 		};
 
 		/// <summary>
@@ -63,7 +63,7 @@ namespace mtgb
 		/// <returns>透明度成分の正規化された値</returns>
 		inline float GetAlphaNorm() const
 		{
-			return static_cast<float>(component[static_cast<int32_t>(Component::Alpha)]) / UINT8_MAX;
+			return static_cast<float>(component[static_cast<int32_t>(Component::ALPHA)]) / UINT8_MAX;
 		}
 		/// <summary>
 		/// 各色成分を正規化した3次元ベクトルを取得
@@ -72,9 +72,9 @@ namespace mtgb
 		inline Vector3 ToVector3Norm() const
 		{
 			return {
-				static_cast<float>(component[static_cast<int32_t>(Component::Red)]) / UINT8_MAX,
-				static_cast<float>(component[static_cast<int32_t>(Component::Green)]) / UINT8_MAX,
-				static_cast<float>(component[static_cast<int32_t>(Component::Blue)]) / UINT8_MAX,
+				static_cast<float>(component[static_cast<int32_t>(Component::RED)]) / UINT8_MAX,
+				static_cast<float>(component[static_cast<int32_t>(Component::GREEN)]) / UINT8_MAX,
+				static_cast<float>(component[static_cast<int32_t>(Component::BLUE)]) / UINT8_MAX,
 			};
 		}
 		/// <summary>
@@ -84,10 +84,10 @@ namespace mtgb
 		inline Vector4 ToVector4Norm() const
 		{
 			return {
-				static_cast<float>(component[static_cast<int32_t>(Component::Red)]) / UINT8_MAX,
-				static_cast<float>(component[static_cast<int32_t>(Component::Green)]) / UINT8_MAX,
-				static_cast<float>(component[static_cast<int32_t>(Component::Blue)]) / UINT8_MAX,
-				static_cast<float>(component[static_cast<int32_t>(Component::Alpha)]) / UINT8_MAX,
+				static_cast<float>(component[static_cast<int32_t>(Component::RED)]) / UINT8_MAX,
+				static_cast<float>(component[static_cast<int32_t>(Component::GREEN)]) / UINT8_MAX,
+				static_cast<float>(component[static_cast<int32_t>(Component::BLUE)]) / UINT8_MAX,
+				static_cast<float>(component[static_cast<int32_t>(Component::ALPHA)]) / UINT8_MAX,
 			};
 		}
 

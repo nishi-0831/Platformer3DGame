@@ -183,7 +183,7 @@ bool mtgb::Collider::IsHit(
 	const DirectX::BoundingSphere& _sphere,
 	const Vector3& _origin,
 	const Vector3& _dir,
-	float* dist
+	float* _dist
 )
 {
 	/////
@@ -269,26 +269,26 @@ bool mtgb::Collider::IsHit(
 
 	if (XMVector4NotEqualInt(NoIntersection, XMVectorTrueInt()))
 	{
-		DirectX::XMStoreFloat(dist, t);
+		DirectX::XMStoreFloat(_dist, t);
 		return true;
 	}
 
 	return false;
 }
 
-bool mtgb::Collider::IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* dist)
+bool mtgb::Collider::IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* _dist)
 {
-	return _aabb.Intersects(_origin, _dir, *dist);
+	return _aabb.Intersects(_origin, _dir, *_dist);
 }
 
 bool mtgb::Collider::IsHit(
 	const DirectX::BoundingOrientedBox& _obb,
 	const Vector3& _origin,
 	const Vector3& _dir,
-	float* dist
+	float* _dist
 )
 {
-	return _obb.Intersects(_origin, _dir, *dist);
+	return _obb.Intersects(_origin, _dir, *_dist);
 }
 
 bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist)
@@ -578,7 +578,7 @@ void mtgb::Collider::Draw() const
 		copyTransform.position += center_;
 		copyTransform.scale *= Vector3::One() * computeSphere_.Radius;
 		copyTransform.Compute();
-		Draw::FBXModel(hSphereModel_, copyTransform, 0, ShaderType::Debug3D);
+		Draw::FBXModel(hSphereModel_, copyTransform, 0, ShaderType::DEBUG3_D);
 		break;
 	case ColliderType::TYPE_CAPSULE :
 		break;
@@ -609,7 +609,7 @@ void mtgb::Collider::Draw() const
 			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
 		copyTransform.Compute();
-		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::Debug3D);
+		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::DEBUG3_D);
 		break;
 	case ColliderType::TYPE_OBB :
 		if (isStatic_)
@@ -634,7 +634,7 @@ void mtgb::Collider::Draw() const
 			copyTransform.scale = computeBox_.Extents * 2.0f;
 		}
 		copyTransform.Compute();
-		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::Debug3D);
+		Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::DEBUG3_D);
 		break;
 	default :
 		break;

@@ -74,16 +74,16 @@ HWND mtgb::WindowManager::CreateWindowContext(WindowResource* _windowResource)
 	return hWnd;
 }
 
-mtgb::Vector2Int mtgb::WindowManager::GetWindowSize(WindowContext context)
+mtgb::Vector2Int mtgb::WindowManager::GetWindowSize(WindowContext _context)
 {
-	if (context == WindowContext::Both)
+	if (_context == WindowContext::BOTH)
 	{
 		return mtgb::Vector2Int{
-			windowConfigMap_[WindowContext::First].width,
-			windowConfigMap_[WindowContext::First].height
+			windowConfigMap_[WindowContext::FIRST].width,
+			windowConfigMap_[WindowContext::FIRST].height
 		};
 	}
-	return mtgb::Vector2Int{windowConfigMap_[context].width, windowConfigMap_[context].height};
+	return mtgb::Vector2Int{windowConfigMap_[_context].width, windowConfigMap_[_context].height};
 }
 
 void mtgb::WindowManager::Initialize()
@@ -104,22 +104,22 @@ void mtgb::WindowManager::Release()
 {
 }
 
-void mtgb::WindowManager::SetWindowConfig(WindowContext windowContext, const WindowConfig& config)
+void mtgb::WindowManager::SetWindowConfig(WindowContext _windowContext, const WindowConfig& _config)
 {
-	windowConfigMap_[windowContext] = config;
+	windowConfigMap_[_windowContext] = _config;
 }
 
-mtgb::WindowConfig mtgb::WindowManager::GetWindowConfig(WindowContext windowContext)
+mtgb::WindowConfig mtgb::WindowManager::GetWindowConfig(WindowContext _windowContext)
 {
-	auto itr = windowConfigMap_.find(windowContext);
+	auto itr = windowConfigMap_.find(_windowContext);
 
 	massert(itr != windowConfigMap_.end() && "指定されたWindowContextのConfigが見つかりません");
 	return itr->second;
 }
 
-mtgb::WindowResource& mtgb::WindowManager::GetWindowResource(WindowContext windowContext)
+mtgb::WindowResource& mtgb::WindowManager::GetWindowResource(WindowContext _windowContext)
 {
-	return Game::System<WindowContextResourceManager>().Get<WindowResource>(windowContext);
+	return Game::System<WindowContextResourceManager>().Get<WindowResource>(_windowContext);
 }
 
 void mtgb::WindowManager::ChangeFullScreenState(WindowContext _ctx)
@@ -170,7 +170,7 @@ void mtgb::WindowManager::ResizeWindow(WindowContext _windowContext, UINT _width
 {
 	// パイプラインにバインドした設定、スワップチェーンのバックバッファを参照するリソースのリセット
 	Game::System<DirectX11Manager>().ClearState();
-	if (_windowContext == WindowContext::First)
+	if (_windowContext == WindowContext::FIRST)
 	{
 		Game::System<ImGuiRenderer>().ResetComPtrs();
 	}
@@ -181,7 +181,7 @@ void mtgb::WindowManager::ResizeWindow(WindowContext _windowContext, UINT _width
 	Game::System<DirectX11Manager>().SetDefaultStates();
 
 	// ImGuiも更新
-	if (_windowContext == WindowContext::First)
+	if (_windowContext == WindowContext::FIRST)
 	{
 		Game::System<ImGuiRenderer>().OnResize(_width, _height);
 	}

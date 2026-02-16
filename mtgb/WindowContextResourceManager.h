@@ -42,13 +42,13 @@ namespace mtgb
 		/// ウィンドウごとに必要なリソースを作成
 		/// </summary>
 		/// <param name="windowContext">作成するウィンドウの識別子</param>
-		void CreateResource(WindowContext windowContext);
+		void CreateResource(WindowContext _windowContext);
 
 		/// <summary>
 		/// リソースを切り替える
 		/// </summary>
 		/// <param name="windowContext">切り替えるウィンドウの識別子</param>
-		void ChangeActiveResource(WindowContext windowContext);
+		void ChangeActiveResource(WindowContext _windowContext);
 
 		/// <summary>
 		/// 全リソースのOnResizeを呼びだす
@@ -56,7 +56,7 @@ namespace mtgb
 		/// <param name="windowContext"></param>
 		/// <param name="width"></param>
 		/// <param name="height"></param>
-		void OnResizeAll(WindowContext windowContext, UINT width, UINT height);
+		void OnResizeAll(WindowContext _windowContext, UINT _width, UINT _height);
 
 		/// <summary>
 		/// 指定した二つのウィンドウの指定したリソースを交換する
@@ -67,8 +67,8 @@ namespace mtgb
 		/// <param name="context2">デフォルトでSecond</param>
 		template <typename ResourceT>
 		void SwapResource(
-			WindowContext context1 = WindowContext::First,
-			WindowContext context2 = WindowContext::Second
+			WindowContext _context1 = WindowContext::FIRST,
+			WindowContext _context2 = WindowContext::SECOND
 		);
 
 		/// <summary>
@@ -77,9 +77,9 @@ namespace mtgb
 		/// <typeparam name="ResourceT">リソースの型</typeparam>
 		/// <param name="windowContext">取得するウィンドウの識別子</param>
 		/// <returns>リソースの参照</returns>
-		template <typename ResourceT> ResourceT& Get(WindowContext windowContext)
+		template <typename ResourceT> ResourceT& Get(WindowContext _windowContext)
 		{
-			auto itr = collectionMap_.find(windowContext);
+			auto itr = collectionMap_.find(_windowContext);
 			assert(itr != collectionMap_.end() && "指定されたWindowContextのリソースが見つかりません");
 
 			static_assert(
@@ -127,17 +127,17 @@ namespace mtgb
 	}
 
 	template <typename ResourceT>
-	inline void WindowContextResourceManager::SwapResource(WindowContext context1, WindowContext context2)
+	inline void WindowContextResourceManager::SwapResource(WindowContext _context1, WindowContext _context2)
 	{
 		// 同じウィンドウを指定していないか確認
-		if (context1 == context2)
+		if (_context1 == _context2)
 		{
 			return;
 		}
 
 		// context1,2のResourceCollectionが登録されている確認
-		auto itr1 = collectionMap_.find(context1);
-		auto itr2 = collectionMap_.find(context2);
+		auto itr1 = collectionMap_.find(_context1);
+		auto itr2 = collectionMap_.find(_context2);
 
 		assert(itr1 != collectionMap_.end() && "指定されたWindowContextが見つかりません");
 		assert(itr2 != collectionMap_.end() && "指定されたWindowContextが見つかりません");

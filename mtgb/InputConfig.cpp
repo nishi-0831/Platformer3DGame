@@ -28,14 +28,14 @@ void mtgb::InputConfig::SetDeadZone(float _deadZone)
 	deadZone = _deadZone;
 }
 
-float mtgb::InputConfig::ApplyDeadZone(const float value) const
+float mtgb::InputConfig::ApplyDeadZone(const float _value) const
 {
 	// 絶対値がデッドゾーンに満たないなら0
-	if (std::abs(value) < deadZone)
+	if (std::abs(_value) < deadZone)
 	{
 		return 0.0f;
 	}
 	// 0～1の範囲に正規化する
-	float sign = (value > 0) ? 1.0f : -1.0f;
-	return sign * (std::abs(value) - deadZone) / (1.0f - deadZone);
+	float sign = (_value > 0) ? 1.0f : -1.0f;
+	return sign * (std::abs(_value) - deadZone) / (1.0f - deadZone);
 }

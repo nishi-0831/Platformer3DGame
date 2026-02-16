@@ -1,0 +1,89 @@
+name: "Setup Environment"
+description: "setup environment"
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup vcpkg
+      uses: lukka/run-vcpkg@v11
+      with:
+       # vcpkgを配置するディレクトリ
+       vcpkgDirectory: 'C:\vcpkg'
+       # コミットIDをセット
+       vcpkgGitCommitId: '${{ vars.VCPKG_COMMIT_ID }}'
+       # vcpkg install を実行する
+       runVcpkgInstall: true
+
+    - name: Setup CMake
+      uses: lukka/get-cmake@latest
+    
+    - name: Set environment variables
+      shell: pwsh
+      run: |
+        $fbxsdk = 'C:\fbxsdk'
+        $llvmPath = 'C:\Program Files\LLVM'
+
+        "FBX_SDK=$fbxsdk" | Add-Content -Path $env:GITHUB_ENV
+        "LLVM_PATH=$llvmPath" | Add-Content -Path $env:GITHUB_ENV
+
+    - name: Cache FBX SDK 
+      id: cache-fbx
+      uses: actions/cache@v4
+      with:
+        path: "${{env.FBX_SDK}}"
+        key: fbx-sdk-202037-${{ hashFiles('**/FBXVersion.txt') }}
+        restore-keys: |
+          fbx-sdk-202037-
+        # キャッシュミスでも、失敗判定にしない
+        fail-on-cache-miss: false
+  
+    # キャッシュミス時のみダウンロード、インストール
+    # FBX SDKインストーラをダウンロード
+    - name: Download FBX SDK installer(if not cached)
+      if: steps.cache-fbx.outputs.cache-hit != 'true'
+      shell: powershell
+      run: |
+        $url = 'https://damassets.autodesk.net/content/dam/autodesk/www/files/fbx202037_fbxsdk_vs2022_win.exe'
+        Invoke-WebRequest -Uri $url -OutFile '.\FBXInstaller.exe' -ErrorAction Stop
+        Write-Host "FBX SDK installer downloaded"
+  
+    # FBX SDKをインストール
+    - name: Install FBX SDK(if not cached)
+      if: steps.cache-fbx.outputs.cache-hit != 'true'
+      shell: cmd
+      run: |
+        FBXInstaller.exe /S /D="${{env.FBX_SDK}}"
+        echo FBX SDK installed to "${{env.FBX_SDK}}"
+        dir "${{env.FBX_SDK}}"
+        
+    - name: Debug LLVM env
+      shell: pwsh
+      run: |
+        Write-Host "env.LLVM_PATH : $env:LLVM_PATH"
+        if (Test-Path $env:LLVM_PATH) { Write-Host "LLVM path exists" } else { Write-Host "LLVM path does NOT exist"}
+        
+    - name: Cache LLVM
+      id: cache-llvm
+      uses: actions/cache@v4
+      with:
+        path: "${{env.LLVM_PATH}}"
+        key: llvm-${{hashFiles('**/LLVMVersion.txt')}}
+        restore-keys: |
+          llvm-
+        fail-on-cache-miss: false
+  
+    - name: Install LLVM(if not cached)
+      if: steps.cache-llvm.outputs.cache-hit != 'true'
+      shell: pwsh
+      run: |
+        choco install llvm --version=21.1.0 -y
+    
+    - name: Set PATH
+      shell: pwsh
+      run: |
+        Add-Content -Path $env:GITHUB_PATH -Value "${{env.FBX_SDK}}"
+        Add-Content -Path $env:GITHUB_PATH -Value "${{env.LLVM_PATH}}"
+    

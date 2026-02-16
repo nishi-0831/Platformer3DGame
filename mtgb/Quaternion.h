@@ -58,7 +58,7 @@ namespace mtgb
 		}
 		Quaternion(const DirectX::XMVECTORF32& _v)
 		{
-			v = _v;
+			v = _v.v;
 		}
 		Quaternion(const DirectX::XMVECTOR& _v)
 		{
@@ -135,7 +135,7 @@ namespace mtgb
 
 		static Quaternion SLerp(const Quaternion& _self, const Quaternion& _to, float _lerp)
 		{
-			return DirectX::XMQuaternionSlerp(_self, _to, _lerp);
+			return DirectX::XMQuaternionSlerp(_self.v, _to.v, _lerp);
 		}
 
 		/// <summary>
@@ -179,7 +179,7 @@ namespace mtgb
 
 		inline Quaternion& operator*=(const Quaternion& _other)
 		{
-			*this = DirectX::XMQuaternionMultiply(*this, _other);
+			*this = DirectX::XMQuaternionMultiply((*this).v, _other.v);
 			return *this;
 		};
 		// inline Quaternion& operator+=(const Quaternion& _other) { f[0] += f[0]; f[1] += f[1]; f[2] += f[2]; f[3] +=

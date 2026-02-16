@@ -15,10 +15,9 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	void Draw() const override;
 	void Start() override;
 	void ShowImGui() override;
-	void SetCamera(SphericalCamera* _pCamera);
-	// IActor 繧剃ｻ九＠縺ｦ邯呎価縺輔ｌ縺ｾ縺励◆
-	void OnStomped(IActor* pOther) override;
-	void OnHitSide(IActor* pOther) override;
+	// IActor を介して継承されました
+	void OnStomped(IActor* _pOther) override;
+	void OnHitSide(IActor* _pOther) override;
 	void TakeDamage(int _damage) override;
 
   private:
@@ -42,7 +41,6 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	MeshRenderer* pMeshRenderer_;
 	RigidBody* pRigidBody_;
 	QuaternionCamera* pNewCamera_;
-	SphericalCamera* pCamera_;
 	const Transform* pCameraTransform_;
 	std::optional<FbxAnimationController> animController_;
 	int hp_;

@@ -7,16 +7,16 @@
 /// </summary>
 enum struct XInputPadCode : WORD
 {
-	Up		= XINPUT_GAMEPAD_DPAD_UP,
-	Down	= XINPUT_GAMEPAD_DPAD_DOWN,
-	Left	= XINPUT_GAMEPAD_DPAD_LEFT,
-	Right	= XINPUT_GAMEPAD_DPAD_RIGHT,
-	Start	= XINPUT_GAMEPAD_START,
-	Back	= XINPUT_GAMEPAD_BACK, // いわゆるselectボタンのこと。
-	LStick	= XINPUT_GAMEPAD_LEFT_THUMB,
-	RStick	= XINPUT_GAMEPAD_RIGHT_THUMB,
-	Lbutton = XINPUT_GAMEPAD_LEFT_SHOULDER,
-	Rbutton = XINPUT_GAMEPAD_RIGHT_SHOULDER,
+	UP		= XINPUT_GAMEPAD_DPAD_UP,
+	DOWN	= XINPUT_GAMEPAD_DPAD_DOWN,
+	LEFT	= XINPUT_GAMEPAD_DPAD_LEFT,
+	RIGHT	= XINPUT_GAMEPAD_DPAD_RIGHT,
+	START	= XINPUT_GAMEPAD_START,
+	BACK	= XINPUT_GAMEPAD_BACK, // いわゆるselectボタンのこと。
+	L_STICK	= XINPUT_GAMEPAD_LEFT_THUMB,
+	R_STICK	= XINPUT_GAMEPAD_RIGHT_THUMB,
+	LBUTTON = XINPUT_GAMEPAD_LEFT_SHOULDER,
+	RBUTTON = XINPUT_GAMEPAD_RIGHT_SHOULDER,
 	A		= XINPUT_GAMEPAD_A,
 	B		= XINPUT_GAMEPAD_B,
 	X		= XINPUT_GAMEPAD_X,
@@ -34,14 +34,14 @@ enum struct PadCode : uint8_t
 	Y	   = 3,
 	LB	   = 4,
 	RB	   = 5,
-	Back   = 6,
-	LStick = 6,
-	RStick = 7,
-	Start  = 9,
+	BACK   = 6,
+	L_STICK = 6,
+	R_STICK = 7,
+	START  = 9,
 
-	Cross	 = 1,
-	Circle	 = 2,
-	Triangle = 3,
+	CROSS	 = 1,
+	CIRCLE	 = 2,
+	TRIANGLE = 3,
 	L1		 = 4,
 	R1		 = 5,
 	L2		 = 6,
@@ -62,10 +62,10 @@ enum struct StickType : uint8_t
 /// </summary>
 enum struct FlightStickCode : uint8_t
 {
-	Thumb	= 0, // 親指
-	Trigger = 1,
-	Button3 = 2,
-	Button4 = 3,
+	THUMB	= 0, // 親指
+	TRIGGER = 1,
+	BUTTON3 = 2,
+	BUTTON4 = 3,
 };
 
 enum struct PadIDState

@@ -41,7 +41,7 @@ namespace mtgb
 		ComPtr<IDWriteTextFormat> format;
 		PixelFontMetrics pixelFontMetrics;
 
-		FontFormatData(int size, IDWriteTextFormat* fmt, const PixelFontMetrics& metrics);
+		FontFormatData(int _size, IDWriteTextFormat* _fmt, const PixelFontMetrics& _metrics);
 
 		~FontFormatData();
 	};
@@ -82,7 +82,7 @@ namespace mtgb
 		/// </summary>
 		void Initialize() override;
 
-		void CreateFontFormatData(const std::wstring& fileName, int fontSize, FontFormatData** ppFontFormatData);
+		void CreateFontFormatData(const std::wstring& _fileName, int _fontSize, FontFormatData** _ppFontFormatData);
 		/// <summary>
 		/// 更新処理
 		/// </summary>
@@ -97,7 +97,7 @@ namespace mtgb
 		/// <param name="y">テキストの上端</param>
 		// void Draw(int handle, float x, float y);
 
-		void Draw(ComPtr<IDWriteTextLayout> textLayout, float x, float y);
+		void Draw(ComPtr<IDWriteTextLayout> _textLayout, float _x, float _y);
 
 		/// <summary>
 		/// 即時描画
@@ -106,25 +106,25 @@ namespace mtgb
 		/// <param name="text">描画するテキスト</param>
 		/// <param name="x">テキストの左端</param>
 		/// <param name="y">テキストの上端</param>
-		void ImmediateDraw(const std::wstring& text, float x, float y);
+		void ImmediateDraw(const std::wstring& _text, float _x, float _y);
 
 		// void ImmediateDraw(const std::string& text, float x, float y, int size);
 		void ImmediateDraw(
-			const std::wstring& text,
-			ComPtr<IDWriteTextFormat> format,
-			const PixelFontMetrics& pixelFontMetrics,
-			float x,
-			float y,
-			float width,
-			float height
+			const std::wstring& _text,
+			ComPtr<IDWriteTextFormat> _format,
+			const PixelFontMetrics& _pixelFontMetrics,
+			float _x,
+			float _y,
+			float _width,
+			float _height
 		);
 
 		void ImmediateDraw(
-			const std::wstring& text,
-			ComPtr<IDWriteTextFormat> format,
-			const PixelFontMetrics& pixelFontMetrics,
-			float x,
-			float y
+			const std::wstring& _text,
+			ComPtr<IDWriteTextFormat> _format,
+			const PixelFontMetrics& _pixelFontMetrics,
+			float _x,
+			float _y
 		);
 
 		/// <summary>
@@ -133,7 +133,7 @@ namespace mtgb
 		/// <param name="size">新しいデフォルトサイズ</param>
 		// void ChangeFontSize(int size);
 
-		void ChangeFormat(ComPtr<IDWriteTextFormat> format, mtgb::PixelFontMetrics& metrics);
+		void ChangeFormat(ComPtr<IDWriteTextFormat> _format, mtgb::PixelFontMetrics& _metrics);
 
 		void Release() override;
 
@@ -165,9 +165,9 @@ namespace mtgb
 		/// <param name="size">フォントサイズ</param>
 		/// <param name="ppTextFormat">作成されるIDWriteTextFormat</param>
 		/// <param name="outMetrics">計算されるPixelFontMetrics</param>
-		void CreateTextFormat(int size, IDWriteTextFormat** ppTextFormat, PixelFontMetrics& outMetrics);
+		void CreateTextFormat(int _size, IDWriteTextFormat** _ppTextFormat, PixelFontMetrics& _outMetrics);
 
-		void SetTextAlignment(TextAlignment alignment, ComPtr<IDWriteTextFormat> format);
+		void SetTextAlignment(TextAlignment _alignment, ComPtr<IDWriteTextFormat> _format);
 
 	  private:
 		static DWRITE_FONT_METRICS fontMetrics_;

@@ -58,9 +58,9 @@ GUID mtgb::Input::GetDeviceGuid(ComPtr<IDirectInputDevice8> _pInputDevice)
 	return deviceInstance.guidInstance;
 }
 
-bool operator<(const GUID& lhs, const GUID& rhs)
+bool operator<(const GUID& _lhs, const GUID& _rhs)
 {
-	return std::memcmp(&lhs, &rhs, sizeof(GUID)) < 0;
+	return std::memcmp(&_lhs, &_rhs, sizeof(GUID)) < 0;
 }
 
 mtgb::Input::Input()
@@ -377,7 +377,7 @@ void mtgb::Input::ChangeJoystickDevice(ComPtr<IDirectInputDevice8> _pJoystickDev
 /// <param name="lpddi">デバイスの情報を持つインスタンス</param>
 /// <param name="pvRef">EnumDevicesで渡した値</param>
 /// <returns></returns>
-BOOL CALLBACK EnumJoysticksCallback(const LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)
+BOOL CALLBACK EnumJoysticksCallback(const LPCDIDEVICEINSTANCE _lpddi, LPVOID _pvRef)
 {
 	auto& input = Game::System<Input>();
 
@@ -386,7 +386,7 @@ BOOL CALLBACK EnumJoysticksCallback(const LPCDIDEVICEINSTANCE lpddi, LPVOID pvRe
 	{
 		return DIENUM_STOP;
 	}
-	DeviceType devType = Input::GetDeviceType(*lpddi);
+	DeviceType devType = Input::GetDeviceType(*_lpddi);
 
 	int reservationIndex = input.FindReservationIndexForDevice(devType);
 
@@ -395,21 +395,21 @@ BOOL CALLBACK EnumJoysticksCallback(const LPCDIDEVICEINSTANCE lpddi, LPVOID pvRe
 		// デバイスを要求している予約はない
 		return DIENUM_CONTINUE;
 	}
-	LPDIRECTINPUT8 pDirectInput			= reinterpret_cast<LPDIRECTINPUT8>(pvRef);
+	LPDIRECTINPUT8 pDirectInput			= reinterpret_cast<LPDIRECTINPUT8>(_pvRef);
 	ComPtr<IDirectInputDevice8> pDevice = nullptr;
 
 	// 割り当て予約があり、未割当なのでデバイス作成
-	HRESULT hResult = pDirectInput->CreateDevice(lpddi->guidInstance, pDevice.GetAddressOf(), nullptr);
+	HRESULT hResult = pDirectInput->CreateDevice(_lpddi->guidInstance, pDevice.GetAddressOf(), nullptr);
 	massert(SUCCEEDED(hResult) && "ジョイスティックのデバイスの作成に失敗 @EnumJoysticksCallback");
 
-	if (Game::System<Input>().RegisterJoystickGuid(lpddi->guidInstance) == false)
+	if (Game::System<Input>().RegisterJoystickGuid(_lpddi->guidInstance) == false)
 	{
 		// 既に割り当て済みの為、他のデバイスの列挙に移す
 		pDevice.Reset();
 		return DIENUM_CONTINUE;
 	}
 
-	input.AssignJoystickToReservation(pDevice, static_cast<size_t>(reservationIndex), lpddi->guidInstance);
+	input.AssignJoystickToReservation(pDevice, static_cast<size_t>(reservationIndex), _lpddi->guidInstance);
 	LOGIMGUI_CAT("Input", "Assigned reservationIndex=%d", reservationIndex);
 
 	// 予約がまだ残っているなら続行
@@ -501,7 +501,7 @@ ControllerType mtgb::Input::GetControllerTypeByVendor(ComPtr<IDirectInputDevice8
 	deviceInstance.dwSize			= sizeof(DIDEVICEINSTANCE);
 	HRESULT hResult					= _pInputDevice->GetDeviceInfo(&deviceInstance);
 	if (FAILED(hResult))
-		return ControllerType::Unknown;
+		return ControllerType::UNKNOWN;
 
 	// ベンダーID
 	DWORD vendorId	= HIWORD(deviceInstance.guidProduct.Data1);
@@ -509,15 +509,15 @@ ControllerType mtgb::Input::GetControllerTypeByVendor(ComPtr<IDirectInputDevice8
 
 	if (vendorId == VENDOR_ID_DUAL_SHOCK)
 	{
-		return ControllerType::DualShock;
+		return ControllerType::DUAL_SHOCK;
 	}
 
 	if (vendorId == VENDOR_ID_XBOX)
 	{
-		return ControllerType::Xbox;
+		return ControllerType::XBOX;
 	}
 
-	return ControllerType::Unknown;
+	return ControllerType::UNKNOWN;
 }
 
 std::string mtgb::Input::GetDeviceName(ComPtr<IDirectInputDevice8> _pInputDevice)
@@ -558,9 +558,9 @@ std::string mtgb::Input::GetDeviceProductName(GUID _guid)
 	return "None";
 }
 
-std::string mtgb::Input::ConvertHResultToMessage(HRESULT hr) const
+std::string mtgb::Input::ConvertHResultToMessage(HRESULT _hr) const
 {
-	switch (hr)
+	switch (_hr)
 	{
 	case DI_OK :
 		return "取得";
@@ -590,7 +590,7 @@ DeviceType mtgb::Input::GetDeviceType(ComPtr<IDirectInputDevice8> _pInputDevice)
 
 DeviceType mtgb::Input::GetDeviceType(const DIDEVICEINSTANCE& _inst)
 {
-	DeviceType deviceType = DeviceType::Unknown;
+	DeviceType deviceType = DeviceType::UNKNOWN;
 
 	// REF:https://learn.microsoft.com/ja-jp/previous-versions/windows/desktop/ee416610(v=vs.85)?devlangs=cpp&f1url=%3FappId%3DDev17IDEF1%26l%3DJA-JP%26k%3Dk(DINPUT%2FDIDEVICEINSTANCE)%3Bk(DIDEVICEINSTANCE)%3Bk(DevLang-C%2B%2B)%3Bk(TargetOS-Windows)%26rd%3Dtrue
 	//  下位ビットでデバイスの大まかなタイプを判別
@@ -599,22 +599,22 @@ DeviceType mtgb::Input::GetDeviceType(const DIDEVICEINSTANCE& _inst)
 	switch (major)
 	{
 	case DI8DEVTYPE_FLIGHT :
-		deviceType = DeviceType::FlightStick;
+		deviceType = DeviceType::FLIGHT_STICK;
 		break;
 	case DI8DEVTYPE_GAMEPAD :
 	case DI8DEVTYPE_JOYSTICK :
 	case DI8DEVTYPE_1STPERSON :
-		deviceType = DeviceType::GamePad;
+		deviceType = DeviceType::GAME_PAD;
 		break;
 	default :
-		deviceType = DeviceType::Unknown;
+		deviceType = DeviceType::UNKNOWN;
 		break;
 	}
 
 	return deviceType;
 }
 
-HRESULT mtgb::Input::UpdateJoystickState(GUID guid)
+HRESULT mtgb::Input::UpdateJoystickState(GUID _guid)
 {
 	return E_NOTIMPL;
 }
@@ -629,7 +629,7 @@ int mtgb::Input::FindReservationIndexForDevice(DeviceType _devType) const
 		{
 			return static_cast<int>(i);
 		}
-		if (reservation.deviceType == DeviceType::Unknown && firstUnknown < 0)
+		if (reservation.deviceType == DeviceType::UNKNOWN && firstUnknown < 0)
 		{
 			firstUnknown = static_cast<int>(i);
 		}
@@ -637,9 +637,9 @@ int mtgb::Input::FindReservationIndexForDevice(DeviceType _devType) const
 	return firstUnknown;
 }
 
-const std::string mtgb::Input::GetJoystickStatusMessage(GUID guid) const
+const std::string mtgb::Input::GetJoystickStatusMessage(GUID _guid) const
 {
-	const auto& itr = joystickContext_.find(guid);
+	const auto& itr = joystickContext_.find(_guid);
 	if (itr == joystickContext_.end())
 	{
 		return "未割当";
@@ -647,9 +647,9 @@ const std::string mtgb::Input::GetJoystickStatusMessage(GUID guid) const
 	return ConvertHResultToMessage(itr->second.lastResult);
 }
 
-bool mtgb::Input::IsJoystickConnected(GUID guid) const
+bool mtgb::Input::IsJoystickConnected(GUID _guid) const
 {
-	const auto& itr = joystickContext_.find(guid);
+	const auto& itr = joystickContext_.find(_guid);
 	if (itr == joystickContext_.end())
 	{
 		return false;
@@ -664,9 +664,9 @@ bool mtgb::Input::IsJoystickConnected(GUID guid) const
 	}
 }
 
-bool mtgb::Input::IsJoystickAssigned(GUID guid) const
+bool mtgb::Input::IsJoystickAssigned(GUID _guid) const
 {
-	return (joystickContext_.find(guid) != joystickContext_.end());
+	return (joystickContext_.find(_guid) != joystickContext_.end());
 }
 
 void mtgb::Input::StartEnumTimer()
@@ -752,7 +752,7 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 	ControllerType controllerType = GetControllerTypeByVendor(_pJoystickDevice);
 	switch (controllerType)
 	{
-	case ControllerType::DualShock :
+	case ControllerType::DUAL_SHOCK :
 		// 右スティック、X軸
 		diprg.diph.dwObj = DIJOFS_Z;
 		diprg.lMin		 = -_inputConfig.xRange;
@@ -769,7 +769,7 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
 		massert(SUCCEEDED(hResult) && "値の範囲設定に失敗");
 		break;
-	case ControllerType::Xbox :
+	case ControllerType::XBOX :
 		// 右スティック、X軸
 		diprg.diph.dwObj = DIJOFS_RX;
 		diprg.lMin		 = -_inputConfig.xRange;

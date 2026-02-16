@@ -10,14 +10,14 @@ template <typename Func> struct ShowFunc : refl::attr::usage::type
 		: func(_func)
 	{
 	}
-	template <typename T> Command* operator()(T value, const char* name) const
+	template <typename T> Command* operator()(T _value, const char* _name) const
 	{
-		return func(value, name);
+		return func(_value, _name);
 	}
 };
 
 // ShowFuncを作成するヘルパー関数
-template <typename F> constexpr auto make_show_func(F&& f)
+template <typename F> constexpr auto make_show_func(F&& _f)
 {
-	return ShowFunc<F>(std::forward<F>(f));
+	return ShowFunc<F>(std::forward<F>(_f));
 }

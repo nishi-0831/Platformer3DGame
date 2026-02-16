@@ -45,7 +45,7 @@ void SampleScene::Initialize()
 
 void SampleScene::Update()
 {
-	if (InputUtil::GetKeyDown(KeyCode::Escape))
+	if (InputUtil::GetKeyDown(KeyCode::ESCAPE))
 	{
 		Game::Exit();
 	}

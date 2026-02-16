@@ -7,10 +7,10 @@ mtgb::GameObjectCreateCommand::GameObjectCreateCommand(
 	CreateFunc _createFunc,
 	const ComponentFactory& _componentFactory
 )
-	: createFunc_{_createFunc}
+	: entityId_{INVALID_ENTITY}
 	, componentFactory_{_componentFactory}
+	, createFunc_{_createFunc}
 	, json_{nlohmann::json::object()}
-	, entityId_{INVALID_ENTITY}
 {
 }
 

@@ -8,17 +8,17 @@ namespace mtgb
 	/// </summary>
 	enum struct ShaderType : int8_t
 	{
-		Figure,
-		Sprite2D,
-		FbxParts,
-		FbxPartsSkin,
-		Unlit3D,
-		Debug3D,
-		Ground,
-		Trail,
-		Terrain,
-		Box3D,
-		Sea,
-		Max,
+		FIGURE,
+		SPRITE2_D,
+		FBX_PARTS,
+		FBX_PARTS_SKIN,
+		UNLIT3_D,
+		DEBUG3_D,
+		GROUND,
+		TRAIL,
+		TERRAIN,
+		BOX3_D,
+		SEA,
+		MAX,
 	};
 } // namespace mtgb

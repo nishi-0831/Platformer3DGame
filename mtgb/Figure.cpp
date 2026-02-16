@@ -28,11 +28,11 @@ void mtgb::Figure::Draw(const RectF& _rect, const Color& _color)
 	using DirectX::XMMatrixTranslation; // 平行移動
 	using DirectX::XMMatrixTranspose;	// 行と列を入れ替える
 
-	DirectX11Draw::SetBlendMode(BlendMode::Default); // ブレンドモードデフォルト
+	DirectX11Draw::SetBlendMode(BlendMode::DEFAULT); // ブレンドモードデフォルト
 	DirectX11Draw::SetIsWriteToDepthBuffer(false);	 // 深度バッファへの書き込みなし
 
 	IShader::Draw<ConstantBuffer, Vertex>(
-		[&, this](ConstantBuffer* _pCB)
+		[&](ConstantBuffer* _pCB)
 		{
 			_pCB->g_color		= _color.ToVector4Norm();
 			_pCB->g_worldMatrix = XMMatrixIdentity();
@@ -76,17 +76,17 @@ void mtgb::Figure::Draw(const RectF& _rect, const Color& _color)
 			//  REF: https://qiita.com/niusounds/items/65099654673f5df3be9b
 			_pCB->g_worldMatrix = XMMatrixTranspose(world);
 		},
-		[&, this](ID3D11DeviceContext* _pDC) {}
+		[&](ID3D11DeviceContext* _pDC) {}
 	);
 }
 
 void mtgb::Figure::InitializeVertexBuffer(ID3D11Device* _pDevice)
 {
 	Vertex vertexes[]{
-		Vector3{-1, 1, 0},	// 左上
-		Vector3{1, 1, 0},	// 右上
-		Vector3{-1, -1, 0}, // 左下
-		Vector3{1, -1, 0},	// 右下
+		{Vector3{-1, 1, 0}},	// 左上
+		{Vector3{1, 1, 0}},	// 右上
+		{Vector3{-1, -1, 0}}, // 左下
+		{Vector3{1, -1, 0}},	// 右下
 	};
 
 	const D3D11_BUFFER_DESC BUFFER_DESC{

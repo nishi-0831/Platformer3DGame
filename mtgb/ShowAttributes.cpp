@@ -1,15 +1,15 @@
 #include "ShowAttributes.h"
 #include "ImGuiInputCommand.h"
-Command* Vector3Show::operator()(mtgb::Vector3* vec, const char* name) const
+Command* Vector3Show::operator()(mtgb::Vector3* _vec, const char* _name) const
 {
-	mtgb::Vector3 old = *vec;
+	mtgb::Vector3 old = *_vec;
 
-	bool changed = ImGui::InputFloat3(name, &vec->x, "%.3f", ImGuiInputTextFlags_NoUndoRedo);
+	bool changed = ImGui::InputFloat3(_name, &_vec->x, "%.3f", ImGuiInputTextFlags_NoUndoRedo);
 
 	if (changed == false)
 		return nullptr;
 
-	return new ImGuiInputCommand<mtgb::Vector3>(vec, old, *vec, name);
+	return new ImGuiInputCommand<mtgb::Vector3>(_vec, old, *_vec, _name);
 }
 
 /// <summary>
@@ -19,10 +19,10 @@ Command* Vector3Show::operator()(mtgb::Vector3* vec, const char* name) const
 /// <param name="vec">表示する四元数</param>
 /// <param name="name">ラベル名</param>
 /// <returns></returns>
-Command* QuaternionShow::operator()(DirectX::XMVECTORF32* vec, const char* name) const
+Command* QuaternionShow::operator()(DirectX::XMVECTORF32* _vec, const char* _name) const
 {
-	mtgb::Vector3 vec3 = mtgb::QuatToEuler(*vec);
-	ImGui::InputFloat3(name, &vec3.x, "%.3f", ImGuiInputTextFlags_ReadOnly);
+	mtgb::Vector3 vec3 = mtgb::QuatToEuler(*_vec);
+	ImGui::InputFloat3(_name, &vec3.x, "%.3f", ImGuiInputTextFlags_ReadOnly);
 
 	return nullptr;
 }

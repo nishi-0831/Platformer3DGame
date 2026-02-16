@@ -43,30 +43,30 @@ namespace
 	}
 } // namespace
 
-float EaseOutCirc(float x)
+float EaseOutCirc(float _x)
 {
-	return std::sqrtf(1.0f - std::powf(x - 1.0f, 2.0f));
+	return std::sqrtf(1.0f - std::powf(_x - 1.0f, 2.0f));
 }
 
 mtgb::SphericalCamera::SphericalCamera(GameObject* _pGameObj)
 	: GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName("Camera").Build())
-	, isGrounded_{true}
+	, pCameraTransform_{Component<Transform>()}
+	, pTargetTransform_{&Transform::Get(_pGameObj->GetEntityId())}
 	, inputType_{InputType::JOYPAD}
 	, polarAngleRad_{DirectX::XMConvertToRadians(45.0f + 90.0f)}
 	, azimuthalAngleRad_{DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f)}
-	, orbitSpeed_{1.0f}
-	, distance_{10.0f}
 	, minPolarAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
 	, maxPolarAngleRad_{DirectX::XMConvertToRadians(89.0f + 90.0f)}
 	, minAzimuthalAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
 	, maxAzimuthalAngleRad_{DirectX::XMConvertToRadians(359.0f + 90.0f)}
 	, lookAtPositionOffset_{0, 1, 0}
-	, pCameraTransform_{Component<Transform>()}
-	, pTargetTransform_{&Transform::Get(_pGameObj->GetEntityId())}
+	, orbitSpeed_{1.0f}
+	, distance_{10.0f}
+	, isGrounded_{true}
 	, targetVelocityCache_{Vector3::Zero()}
+	, lookAtPosLerpProgress_{0.0f}
 	, baseY_{0.0f}
 	, distY_{0.0f}
-	, lookAtPosLerpProgress_{0.0f}
 	, lerpSpeedGrounded_{1.0f}
 	, lerpSpeedJumping_{0.3f}
 	, lerpSpeedScalar_{2.0f}
@@ -173,7 +173,7 @@ void mtgb::SphericalCamera::Update()
 			// TypeRegistry::Instance().CallFunc(&sphericalCoord.theta, "theta");
 		},
 		"Camera",
-		ShowType::Inspector
+		ShowType::INSPECTOR
 	);
 
 	DoOrbit();
@@ -235,7 +235,7 @@ bool mtgb::SphericalCamera::IsTargetOffDeadZone() const
 		return false;
 
 	Vector3 targetScreenPos =
-		Game::System<CameraSystem>().GetWorldToScreenPos(pTargetTransform_->position, WindowContext::First);
+		Game::System<CameraSystem>().GetWorldToScreenPos(pTargetTransform_->position, WindowContext::FIRST);
 	Vector2F screenSize = Game::System<Screen>().GetSizeF();
 
 	normalizedX = targetScreenPos.x / screenSize.x;

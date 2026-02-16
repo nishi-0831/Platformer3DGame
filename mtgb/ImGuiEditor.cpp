@@ -15,7 +15,7 @@
 #include "CommandHistoryManager.h"
 #include "MeshRenderer.h"
 mtgb::ImGuiEditor::ImGuiEditor()
-	: ImGuiShowable("ImGuiEditor", ShowType::Editor)
+	: ImGuiShowable("ImGuiEditor", ShowType::EDITOR)
 {
 	commandListener_ = [this](Command* _command)
 	{
@@ -43,7 +43,7 @@ void mtgb::ImGuiEditor::Update()
 {
 	pManipulator_->Update();
 
-	if (InputUtil::GetKey(KeyCode::LeftControl))
+	if (InputUtil::GetKey(KeyCode::LEFT_CONTROL))
 	{
 		if (InputUtil::GetKeyDown(KeyCode::Z))
 		{
@@ -66,7 +66,7 @@ void mtgb::ImGuiEditor::Update()
 			DuplicateGameObject();
 		}
 	}
-	if (InputUtil::GetKeyDown(KeyCode::Delete))
+	if (InputUtil::GetKeyDown(KeyCode::DELETE))
 	{
 		// マニピュレータが選択しているゲームオブジェクトを取得
 		GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
@@ -87,7 +87,7 @@ void mtgb::ImGuiEditor::SaveMapData()
 
 	ofn.lStructSize = sizeof(ofn);
 
-	ofn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::First);
+	ofn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
 	ofn.lpstrFilter = "JSONファイル(*.json)\0*.json";
 	ofn.lpstrFile	= fileName;
 	ofn.nMaxFile	= 255;
@@ -113,7 +113,7 @@ void mtgb::ImGuiEditor::LoadMapData()
 	OPENFILENAME ifn	= {0};
 
 	ifn.lStructSize = sizeof(ifn);
-	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::First);
+	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
 	ifn.lpstrFilter = "JSONファイル(*.json)\0*.json";
 	ifn.lpstrFile	= fileName;
 	ifn.nMaxFile	= 255;

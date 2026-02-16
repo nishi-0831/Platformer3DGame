@@ -7,10 +7,10 @@ unsigned int mtgb::Box3D::generateCounter_{0};
 
 mtgb::Box3D::Box3D()
 	: GameObject()
+	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
 	, pTransform_{Component<Transform>()}
 	, pMeshRenderer_{Component<MeshRenderer>()}
 	, pCollider_{Component<Collider>()}
-	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
 {
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->isStatic_	  = false;
@@ -18,7 +18,7 @@ mtgb::Box3D::Box3D()
 	pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer		 = AllLayer();
-	pMeshRenderer_->shaderType	 = ShaderType::FbxParts;
+	pMeshRenderer_->shaderType	 = ShaderType::FBX_PARTS;
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Box3D));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
@@ -40,7 +40,7 @@ void mtgb::Box3D::Draw() const
 void mtgb::Box3D::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
-	ImGui::Text("EntityId:%d", Entity::entityId_);
+	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 
 void mtgb::Box3D::Start()

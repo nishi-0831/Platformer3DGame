@@ -16,9 +16,9 @@ Player::Player()
 	: GameObject(GameObjectBuilder()
 					 .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
 					 .SetPosition({0, 5, 10})
-					 .SetTag(GameObjectTag::Player)
+					 .SetTag(GameObjectTag::PLAYER)
 					 .Build())
-	, ImGuiShowable(ShowType::Inspector, Entity::entityId_)
+	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
 	, IActor(GetEntityId())
 	, pTransform_{Component<Transform>()}
 	, pCollider_{Component<Collider>()}
@@ -54,7 +54,7 @@ Player::Player()
 
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pNewCamera_);
 
-	WinCtxRes::Get<CameraResource>(WindowContext::First).SetHCamera(hCamera);
+	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
 
 	// ゴールイベントを購読
 	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Subscribe(
@@ -63,7 +63,7 @@ Player::Player()
 			pRigidBody_->velocity_ = Vector3::Zero();
 			state_.Change(STATE::VICTORY);
 		},
-		EventScope::Scene
+		EventScope::SCENE
 	);
 }
 
@@ -76,7 +76,7 @@ void Player::Update()
 	if (state_.Current() != STATE::DYING && state_.Current() != STATE::VICTORY)
 	{
 		UpdatePosition();
-		if (InputUtil::GetGamePadDown(PadCode::Cross) || InputUtil::GetKeyDown(KeyCode::Space))
+		if (InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE))
 		{
 			if (pRigidBody_->isGround_ == true)
 			{
@@ -92,7 +92,7 @@ void Player::Update()
 				Game::System<EffectManager>().Play("JumpSmoke", params);
 			}
 		}
-		if (InputUtil::GetGamePadUp(PadCode::Cross) || InputUtil::GetKeyUp(KeyCode::Space))
+		if (InputUtil::GetGamePadUp(PadCode::CROSS) || InputUtil::GetKeyUp(KeyCode::SPACE))
 		{
 			if (pRigidBody_->IsJumping())
 			{
@@ -273,26 +273,24 @@ void Player::ShowImGui()
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
 }
 
-void Player::SetCamera(SphericalCamera* _pCamera)
-{
-}
+
 
 Vector3 Player::GetMoveDir()
 {
 	Vector2F axis = InputUtil::GetAxis(StickType::LEFT);
-	if (InputUtil::GetKey(KeyCode::Left) || InputUtil::GetKey(KeyCode::A))
+	if (InputUtil::GetKey(KeyCode::LEFT) || InputUtil::GetKey(KeyCode::A))
 	{
 		axis.x = -1;
 	}
-	if (InputUtil::GetKey(KeyCode::Right) || InputUtil::GetKey(KeyCode::D))
+	if (InputUtil::GetKey(KeyCode::RIGHT) || InputUtil::GetKey(KeyCode::D))
 	{
 		axis.x = 1;
 	}
-	if (InputUtil::GetKey(KeyCode::Up) || InputUtil::GetKey(KeyCode::W))
+	if (InputUtil::GetKey(KeyCode::UP) || InputUtil::GetKey(KeyCode::W))
 	{
 		axis.y = -1;
 	}
-	if (InputUtil::GetKey(KeyCode::Down) || InputUtil::GetKey(KeyCode::S))
+	if (InputUtil::GetKey(KeyCode::DOWN) || InputUtil::GetKey(KeyCode::S))
 	{
 		axis.y = 1;
 	}
@@ -366,11 +364,11 @@ void Player::OnCollisionEnter(EntityId _entityId)
 	}
 }
 
-void Player::OnStomped(IActor* pOther)
+void Player::OnStomped(IActor* _pOther)
 {
 }
 
-void Player::OnHitSide(IActor* pOther)
+void Player::OnHitSide(IActor* _pOther)
 {
 }
 

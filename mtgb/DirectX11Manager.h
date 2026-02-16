@@ -38,24 +38,24 @@ namespace mtgb
 		void Update() override;
 
 		void InitializeCommonResources();
-		void CreateDXGISurface(IDXGISwapChain1* pSwapChain1, IDXGISurface** ppDXGISurface);
+		void CreateDXGISurface(IDXGISwapChain1* _pSwapChain1, IDXGISurface** _ppDxgiSurface);
 
 		// void CreateOutput(int index, IDXGIOutput** ppOutput);
-		void CreateSwapChain(HWND hWnd, IDXGIOutput* pOutput, IDXGISwapChain1** ppSwapChain1);
-		void CreateRenderTargetView(IDXGISwapChain1* pSwapChain1, ID3D11RenderTargetView** ppRenderTargetView);
-		void CreateViewport(const Vector2Int& size, D3D11_VIEWPORT& viewport);
+		void CreateSwapChain(HWND _hWnd, IDXGIOutput* _pOutput, IDXGISwapChain1** _ppSwapChain1);
+		void CreateRenderTargetView(IDXGISwapChain1* _pSwapChain1, ID3D11RenderTargetView** _ppRenderTargetView);
+		void CreateViewport(const Vector2Int& _size, D3D11_VIEWPORT& _viewport);
 		void CreateDepthStencilAndDepthStencilView(
-			const Vector2Int bufSize,
-			ID3D11Texture2D** ppDepthStencil,
-			ID3D11DepthStencilView** ppDepthStencilView
+			const Vector2Int _bufSize,
+			ID3D11Texture2D** _ppDepthStencil,
+			ID3D11DepthStencilView** _ppDepthStencilView
 		);
 
-		void ChangeViewport(const D3D11_VIEWPORT& viewport);
+		void ChangeViewport(const D3D11_VIEWPORT& _viewport);
 		void ChangeRenderTargets(
-			ComPtr<ID3D11RenderTargetView> pRenderTargetView,
-			ComPtr<ID3D11DepthStencilView> pDepthStencilView
+			ComPtr<ID3D11RenderTargetView> _pRenderTargetView,
+			ComPtr<ID3D11DepthStencilView> _pDepthStencilView
 		);
-		void ChangeSwapChain(ComPtr<IDXGISwapChain1> pSwapChain1);
+		void ChangeSwapChain(ComPtr<IDXGISwapChain1> _pSwapChain1);
 
 		void ClearState();
 		/// <summary>
@@ -68,7 +68,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="ppOutput">これにモニターを割り当てる</param>
 		/// <returns>割り当てられたモニターのインデックス、失敗時は -1</returns>
-		std::optional<MonitorInfo> AssignAvailableMonitor(IDXGIOutput** ppOutput);
+		std::optional<MonitorInfo> AssignAvailableMonitor(IDXGIOutput** _ppOutput);
 
 		int GetAvailableMonitorCount() const;
 

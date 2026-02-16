@@ -58,12 +58,12 @@ namespace mtgb
 		void Update() override;
 		void Release() override;
 
-		static int Load(const std::string& fileName);
-		void Draw(int hModel, const Transform* transform);
+		static int Load(const std::string& _fileName);
+		void Draw(int _hModel, const Transform* _transform);
 
 	  private:
 		std::vector<ModelData*> datas_;
-		void InitMesh(const std::string& fileName, SimpleMesh* mesh);
+		void InitMesh(const std::string& _fileName, SimpleMesh* _mesh);
 
 		// ↓モデルの種類ごと(モデルの構造が全て同一ならアプリにひとつ）
 		static ComPtr<ID3D11InputLayout> pInputLayout_;

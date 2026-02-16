@@ -9,7 +9,7 @@ namespace mtgb
 	/// </summary>
 	struct JoystickProxy
 	{
-		JoystickProxy(const DIJOYSTATE& js);
+		JoystickProxy(const DIJOYSTATE& _js);
 		LONG lX;
 		LONG lY;
 		LONG lZ;
@@ -28,8 +28,8 @@ namespace mtgb
 		bool isConnected;
 		bool isAssigned;
 
-		void UpdateFromInput(GUID guid);
-		void UpdateInputData(const DIJOYSTATE& js);
+		void UpdateFromInput(GUID _guid);
+		void UpdateInputData(const DIJOYSTATE& _js);
 		// JoystickProxy operator=(const DIJOYSTATE& js);
 	};
 

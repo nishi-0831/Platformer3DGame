@@ -90,11 +90,11 @@ mtgb::AudioClip* mtgb::Audio::GetAudioClip(const AudioHandle _hAudio)
 	return pAudioClips_[_hAudio];
 }
 
-void mtgb::Audio::CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, const WaveData* _pWaveData)
+void mtgb::Audio::CreateSourceVoice(IXAudio2SourceVoice** _ppSourceVoice, const WaveData* _pWaveData)
 {
 	HRESULT hResult{};
 
-	hResult = pXAudio2_->CreateSourceVoice(ppSourceVoice, &_pWaveData->waveFormat);
+	hResult = pXAudio2_->CreateSourceVoice(_ppSourceVoice, &_pWaveData->waveFormat);
 	massert(
 		SUCCEEDED(hResult) // SourceVoice作成に成功
 		&& "SourceVoice作成に失敗 @Audio::SetSourceVoice"
@@ -156,11 +156,11 @@ mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
 	return handleCounter_;
 }
 
-void mtgb::Audio::PlayOneShotBuffer(byte* pBuffer, const size_t _bufferSize)
+void mtgb::Audio::PlayOneShotBuffer(byte* _pBuffer, const size_t _bufferSize)
 {
 	AudioOneShot* oneShot{new AudioOneShot{}};
 
-	mtbin::MemoryStream ms{pBuffer, _bufferSize};
+	mtbin::MemoryStream ms{_pBuffer, _bufferSize};
 	oneShot->pAudioClip->Load(ms);
 
 	Game::System<Audio>().CreateSourceVoice(&oneShot->pSourceVoice, oneShot->pAudioClip->pWaveData_);
@@ -254,9 +254,9 @@ void mtgb::Audio::Clear()
 	pAudioClips_.clear();
 }
 
-void mtgb::Audio::LoadAudioSource(const AudioHandle _hAudio, byte* pBuffer, const size_t _bufferSize)
+void mtgb::Audio::LoadAudioSource(const AudioHandle _hAudio, byte* _pBuffer, const size_t _bufferSize)
 {
-	mtbin::MemoryStream ms{pBuffer, _bufferSize};
+	mtbin::MemoryStream ms{_pBuffer, _bufferSize};
 	pAudioClips_[_hAudio]->Load(ms);
 }
 

@@ -49,7 +49,7 @@ void mtgb::QuaternionCamera::Update()
 		Vector3::Up()
 	);
 	// カメラのローカル座標系でのRight軸
-	Vector3 localRight = DirectX::XMVector3Rotate(Vector3::Right(), rotate);
+	Vector3 localRight = DirectX::XMVector3Rotate(Vector3::Right(), rotate.v);
 
 	// カメラの右方向を軸に回転
 	Quaternion localRotateX = Quaternion::AngleAxis(
@@ -59,7 +59,7 @@ void mtgb::QuaternionCamera::Update()
 
 	// 回転を計算
 	Quaternion testRotate = rotate * worldRotateY * localRotateX;
-	Vector3 testForward	  = DirectX::XMVector3Rotate(Vector3::Forward(), testRotate);
+	Vector3 testForward	  = DirectX::XMVector3Rotate(Vector3::Forward(), testRotate.v);
 
 	// 制限角度
 	float testPitch	  = asinf(-testForward.y);
@@ -81,7 +81,7 @@ void mtgb::QuaternionCamera::Update()
 	lookAtPos_.y = Mathf::Lerp(lookAtPos_.y, pTargetTransform_->position.y, currentLerpSpeed_);
 	lookAtPos_.z = pTargetTransform_->position.z;
 
-	Vector3 toTargetDir	  = DirectX::XMVector3Rotate(Vector3::Forward(), rotate);
+	Vector3 toTargetDir	  = DirectX::XMVector3Rotate(Vector3::Forward(), rotate.v);
 	pTransform_->position = lookAtPos_ - (toTargetDir * distance_) + lookAtPositionOffset_;
 
 	MTImGui::Instance().DirectShow(
@@ -91,7 +91,7 @@ void mtgb::QuaternionCamera::Update()
 			TypeRegistry::Instance().CallFunc(&pTargetRigidBody_->velocity_, "vel");
 		},
 		"lerpSpeed",
-		ShowType::Inspector
+		ShowType::INSPECTOR
 	);
 }
 

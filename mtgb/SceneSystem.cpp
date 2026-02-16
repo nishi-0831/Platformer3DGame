@@ -63,7 +63,7 @@ void mtgb::SceneSystem::Update()
 	{
 		Game::System<Input>().EnumJoystick();
 	}
-	WinCtxRes::ChangeResource(WindowContext::First);
+	WinCtxRes::ChangeResource(WindowContext::FIRST);
 	Game::System<Input>().Update();
 	Game::System<WindowContextResourceManager>().Update();
 

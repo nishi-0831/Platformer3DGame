@@ -18,7 +18,7 @@ FadeOutScreen::FadeOutScreen()
 
 	pImageRenderer_->drawRect_ = RectF{Vector2F::Zero(), screenSize};
 
-	pImageRenderer_->color_.component[static_cast<int32_t>(Color::Component::Alpha)] = 0;
+	pImageRenderer_->color_.component[static_cast<int32_t>(Color::Component::ALPHA)] = 0;
 }
 
 FadeOutScreen::FadeOutScreen(float _duration)
@@ -39,7 +39,7 @@ void FadeOutScreen::Update()
 	elapsed_ += Time::DeltaTimeF();
 	float progress = elapsed_ / duration_;
 	float alpha	   = (progress * static_cast<float>(UINT8_MAX));
-	pImageRenderer_->color_.component[static_cast<int32_t>(Color::Component::Alpha)] = static_cast<int32_t>(alpha);
+	pImageRenderer_->color_.component[static_cast<int32_t>(Color::Component::ALPHA)] = static_cast<int32_t>(alpha);
 
 	if (progress >= 1.0f)
 	{

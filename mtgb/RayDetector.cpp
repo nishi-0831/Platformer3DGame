@@ -91,17 +91,17 @@ namespace mtgb
 	}
 
 	bool RayDetector::IsTargetInRayAngle(
-		const Vector3& targetPos,
-		const Vector3& rayOrigin,
-		const Vector3& rayDirection,
-		float maxAngleDegrees
+		const Vector3& _targetPos,
+		const Vector3& _rayOrigin,
+		const Vector3& _rayDirection,
+		float _maxAngleDegrees
 	) const
 	{
 		// レイの起点からターゲットへのベクトル
-		Vector3 toTarget = Vector3::Normalize(targetPos - rayOrigin);
+		Vector3 toTarget = Vector3::Normalize(_targetPos - _rayOrigin);
 
 		// レイの方向ベクトルを正規化
-		Vector3 normalizedRayDir = Vector3::Normalize(rayDirection);
+		Vector3 normalizedRayDir = Vector3::Normalize(_rayDirection);
 
 		// 内積を使って角度を計算
 		float dotProduct = DirectX::XMVectorGetX(DirectX::XMVector3Dot(normalizedRayDir, toTarget));
@@ -113,6 +113,6 @@ namespace mtgb
 		float angleDegrees = DirectX::XMConvertToDegrees(angleRadians);
 
 		// 指定角度以内かチェック
-		return angleDegrees <= maxAngleDegrees;
+		return angleDegrees <= _maxAngleDegrees;
 	}
 } // namespace mtgb

@@ -9,39 +9,39 @@ namespace mtgb
 	/// </summary>
 	struct Ease
 	{
-		static inline float OutExpo(const float x)
+		static inline float OutExpo(const float _x)
 		{
 			// https://easings.net/ja#easeOutExpo
-			return x == 1.0f ? 1.0f : 1.0f - std::powf(2.0f, -10.0f * x);
+			return _x == 1.0f ? 1.0f : 1.0f - std::powf(2.0f, -10.0f * _x);
 		}
 
-		static inline float OutQuart(const float x)
+		static inline float OutQuart(const float _x)
 		{
 			// https://easings.net/ja#easeOutQuart
-			return 1.0f - std::powf(1.0f - x, 4.0f);
+			return 1.0f - std::powf(1.0f - _x, 4.0f);
 		}
 
-		static inline float OutBounce(float x)
+		static inline float OutBounce(float _x)
 		{
 			// https://easings.net/ja#easeOutBounce
 			static const float n1 = 7.5625f;
 			static const float d1 = 2.75f;
 
-			if (x < 1.0f / d1)
+			if (_x < 1.0f / d1)
 			{
-				return n1 * x * x;
+				return n1 * _x * _x;
 			}
-			else if (x < 2.0f / d1)
+			else if (_x < 2.0f / d1)
 			{
-				return n1 * (x -= 1.5f / d1) * x + 0.75f;
+				return n1 * (_x -= 1.5f / d1) * _x + 0.75f;
 			}
-			else if (x < 2.5f / d1)
+			else if (_x < 2.5f / d1)
 			{
-				return n1 * (x -= 2.25f / d1) * x + 0.9375f;
+				return n1 * (_x -= 2.25f / d1) * _x + 0.9375f;
 			}
 			else
 			{
-				return n1 * (x -= 2.625f / d1) * x + 0.984375f;
+				return n1 * (_x -= 2.625f / d1) * _x + 0.984375f;
 			}
 		}
 	};

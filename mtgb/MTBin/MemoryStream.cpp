@@ -30,7 +30,7 @@ void mtbin::MemoryStream::Seek(SeekDir _dir)
 {
 	switch (_dir)
 	{
-	case SeekDir::Head :
+	case SeekDir::HEAD :
 		currentIndex = 0;
 		break;
 	default :

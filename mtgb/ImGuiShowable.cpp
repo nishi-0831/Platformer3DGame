@@ -10,7 +10,7 @@ namespace
 }
 mtgb::ImGuiShowable::ImGuiShowable(mtgb::EntityId _entityId)
 	: targetEntityId_{_entityId}
-	, show_{ShowType::Inspector}
+	, show_{ShowType::INSPECTOR}
 {
 	MTImGui::Instance().Register(this);
 	displayName_ = "Default (" + std::to_string(defNameCount++) + ")";

@@ -41,7 +41,7 @@ void mtgb::CameraSystem::Update()
 	currentFrameId_++;
 }
 
-mtgb::CameraHandleInScene mtgb::CameraSystem::RegisterDrawCamera(Transform* pCameraTransform_)
+mtgb::CameraHandleInScene mtgb::CameraSystem::RegisterDrawCamera(Transform* _pCameraTransform)
 {
 	CameraHandleInScene handle{INVALID_HANDLE};
 
@@ -50,17 +50,17 @@ mtgb::CameraHandleInScene mtgb::CameraSystem::RegisterDrawCamera(Transform* pCam
 	{
 		handle = 0;
 		SetDrawCamera(handle);
-		pTransforms_.push_back(pCameraTransform_);
+		pTransforms_.push_back(_pCameraTransform);
 		return handle;
 	}
 
-	auto itr{std::find(pTransforms_.begin(), pTransforms_.end(), pCameraTransform_)};
+	auto itr{std::find(pTransforms_.begin(), pTransforms_.end(), _pCameraTransform)};
 
 	// 見つからなかった
 	if (itr == pTransforms_.end())
 	{
 		handle = static_cast<CameraHandleInScene>(pTransforms_.size());
-		pTransforms_.push_back(pCameraTransform_);
+		pTransforms_.push_back(_pCameraTransform);
 	}
 	else // 既にある
 	{
@@ -76,11 +76,11 @@ void mtgb::CameraSystem::ClearDrawCameraAll()
 	pTransforms_.clear();
 }
 
-void mtgb::CameraSystem::UnregisterDrawCamera(const Transform* pCameraTransform_)
+void mtgb::CameraSystem::UnregisterDrawCamera(const Transform* _pCameraTransform)
 {
 	for (auto itr = pTransforms_.begin(); itr != pTransforms_.end(); itr++)
 	{
-		if ((*itr) == pCameraTransform_)
+		if ((*itr) == _pCameraTransform)
 		{
 			(*itr) = nullptr;
 			return; // 一致したらnullptrにして回帰

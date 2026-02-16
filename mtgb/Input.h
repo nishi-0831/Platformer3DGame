@@ -24,16 +24,16 @@ namespace mtgb
 
 	enum class DeviceType
 	{
-		Unknown,
-		GamePad,
-		FlightStick
+		UNKNOWN,
+		GAME_PAD,
+		FLIGHT_STICK
 	};
 
 	enum class ControllerType
 	{
-		Unknown,
-		DualShock,
-		Xbox
+		UNKNOWN,
+		DUAL_SHOCK,
+		XBOX
 	};
 
 	struct JoystickContext
@@ -176,7 +176,7 @@ namespace mtgb
 		/// <returns>デバイス名</returns>
 		std::string GetDeviceProductName(ComPtr<IDirectInputDevice8> _pInputDevice);
 		std::string GetDeviceProductName(GUID _guid);
-		std::string ConvertHResultToMessage(HRESULT hr) const;
+		std::string ConvertHResultToMessage(HRESULT _hr) const;
 
 		/// <summary>
 		/// デバイスのタイプを判別
@@ -186,7 +186,7 @@ namespace mtgb
 		///
 		static DeviceType GetDeviceType(ComPtr<IDirectInputDevice8> _pInputDevice);
 		static DeviceType GetDeviceType(const DIDEVICEINSTANCE& _inst);
-		HRESULT UpdateJoystickState(GUID guid);
+		HRESULT UpdateJoystickState(GUID _guid);
 
 		/// <summary>
 		/// <para> 予約の中から指定された種類のデバイスを要求しているものを探し、先着順で割り当てを行う </para>
@@ -195,9 +195,9 @@ namespace mtgb
 		/// <param name="_devType">要求するデバイスの種類</param>
 		/// <returns></returns>
 		int FindReservationIndexForDevice(DeviceType _devType) const;
-		const std::string GetJoystickStatusMessage(GUID guid) const;
-		bool IsJoystickConnected(GUID guid) const;
-		bool IsJoystickAssigned(GUID guid) const;
+		const std::string GetJoystickStatusMessage(GUID _guid) const;
+		bool IsJoystickConnected(GUID _guid) const;
+		bool IsJoystickAssigned(GUID _guid) const;
 
 	  private:
 		void StartEnumTimer();

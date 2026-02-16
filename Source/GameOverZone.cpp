@@ -37,7 +37,7 @@ void GameOverZone::Start()
 		{
 			IActor* pActor	  = Game::System<ActorManager>().GetActor(_entityId);
 			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
-			if (tag == GameObjectTag::Player)
+			if (tag == GameObjectTag::PLAYER)
 			{
 				// 落下イベント通知
 				PlayerFellOutEvent event{.playerEntityId = _entityId};

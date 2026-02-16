@@ -3,16 +3,16 @@
 #include "GameTime.h"
 #include "Transform.h"
 mtgb::ICamera::ICamera()
-	: pCameraTransform_{nullptr}
-	, pTargetTransform_{nullptr}
-	, polarAngleRad_{0.0f}
+	: polarAngleRad_{0.0f}
 	, azimuthalAngleRad_{0.0f}
-	, followTarget_{false}
-	, adjustTargetDirection_{false}
-	, inputType_{InputType::MOUSE}
-	, orbitSpeed_{1.0f}
 	, rotateSensitivity_{1.0f}
-	, distance_{5.0f} // デフォルトの角度制限（ラジアン）
+	, orbitSpeed_{1.0f}
+	, pCameraTransform_{nullptr}
+	, pTargetTransform_{nullptr}
+	, inputType_{InputType::MOUSE}
+	, distance_{5.0f}
+	, followTarget_{false}
+	, adjustTargetDirection_{false} // デフォルトの角度制限（ラジアン）
 	, minPolarAngleRad_{DirectX::XMConvertToRadians(0.1f)}
 	, maxPolarAngleRad_{DirectX::XMConvertToRadians(179.0f)}
 	, minAzimuthalAngleRad_{-(std::numeric_limits<float>::max)()}

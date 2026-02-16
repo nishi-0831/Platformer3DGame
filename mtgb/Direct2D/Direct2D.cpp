@@ -37,7 +37,7 @@ void mtgb::Direct2D::InitializeCommonResource()
 	massert(SUCCEEDED(hResult) && "D2D1CreateFactoryに失敗 @Direct2D::Initialize");
 }
 
-void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* pIDXGISurface, ID2D1RenderTarget** ppRenderTarget_)
+void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* _pIdxgiSurface, ID2D1RenderTarget** _ppRenderTarget)
 {
 	// レンダーターゲットのプロパティ設定書く
 	D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties = D2D1::RenderTargetProperties(
@@ -57,7 +57,7 @@ void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* pIDXGISurface, ID2D1Ren
 
 	// レンダーターゲット作成
 	HRESULT hResult =
-		pD2DFactory_->CreateDxgiSurfaceRenderTarget(pIDXGISurface, renderTargetProperties, ppRenderTarget_);
+		pD2DFactory_->CreateDxgiSurfaceRenderTarget(_pIdxgiSurface, renderTargetProperties, _ppRenderTarget);
 
 	// massert(SUCCEEDED(hResult) && "CreateDxgiSurfaceRenderTargetに失敗 @Direct2D::CreateDXGISurfaceRenderTarget");
 	if (FAILED(hResult))
@@ -71,21 +71,21 @@ void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* pIDXGISurface, ID2D1Ren
 }
 
 void mtgb::Direct2D::CreateSolidColorBrush(
-	const D2D1::ColorF& color,
-	ID2D1RenderTarget* pRenderTarget,
-	ID2D1SolidColorBrush** ppD2DBrush
+	const D2D1::ColorF& _color,
+	ID2D1RenderTarget* _pRenderTarget,
+	ID2D1SolidColorBrush** _ppD2DBrush
 )
 {
 	// ブラシ作成
-	HRESULT hResult = pRenderTarget->CreateSolidColorBrush(color, ppD2DBrush);
+	HRESULT hResult = _pRenderTarget->CreateSolidColorBrush(_color, _ppD2DBrush);
 
 	massert(SUCCEEDED(hResult) && "CreateSolidColorBrushに失敗 @Direct2D::CreateSolidColorBrush");
 }
 
-void mtgb::Direct2D::ChangeRenderTarget(ComPtr<ID2D1SolidColorBrush> pD2DBrush, ComPtr<ID2D1RenderTarget> pRenderTarget)
+void mtgb::Direct2D::ChangeRenderTarget(ComPtr<ID2D1SolidColorBrush> _pD2DBrush, ComPtr<ID2D1RenderTarget> _pRenderTarget)
 {
-	pDefD2DBrush_	  = pD2DBrush;
-	pDefRenderTarget_ = pRenderTarget;
+	pDefD2DBrush_	  = _pD2DBrush;
+	pDefRenderTarget_ = _pRenderTarget;
 }
 
 void mtgb::Direct2D::Update()

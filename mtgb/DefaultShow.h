@@ -8,7 +8,7 @@
 class Command;
 namespace mtgb
 {
-	template <typename T> Command* DefaultShow(T* value, const char* name);
+	template <typename T> Command* DefaultShow(T* _value, const char* _name);
 }
 
 // テンプレート実装をインラインで含める

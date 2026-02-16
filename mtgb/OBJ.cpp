@@ -86,7 +86,7 @@ void mtgb::OBJ::Initialize()
 	massert(SUCCEEDED(hResult) && "コンスタントバッファの作成に失敗 @OBJ::Initialize");
 }
 
-int mtgb::OBJ::Load(const std::string& fileName)
+int mtgb::OBJ::Load(const std::string& _fileName)
 {
 	ModelData* pData = new ModelData;
 
@@ -97,7 +97,7 @@ int mtgb::OBJ::Load(const std::string& fileName)
 	for (int i = 0; i < pInstance.datas_.size(); i++)
 	{
 		// 既に開いている場合
-		if (pInstance.datas_[i] != nullptr && pInstance.datas_[i]->fileName == fileName)
+		if (pInstance.datas_[i] != nullptr && pInstance.datas_[i]->fileName == _fileName)
 		{
 			pData->mesh = pInstance.datas_[i]->mesh;
 			isExist		= true;
@@ -109,7 +109,7 @@ int mtgb::OBJ::Load(const std::string& fileName)
 	if (isExist == false)
 	{
 		pData->mesh = new SimpleMesh;
-		pInstance.InitMesh(fileName, pData->mesh);
+		pInstance.InitMesh(_fileName, pData->mesh);
 	}
 
 	// 使ってない番号が無いか探す
@@ -142,12 +142,12 @@ void mtgb::OBJ::Release()
 	pConstantBuffer_.Reset();
 }
 
-void mtgb::OBJ::Draw(int hModel, const Transform* transform)
+void mtgb::OBJ::Draw(int _hModel, const Transform* _transform)
 {
 	DirectX11Draw::SetIsWriteToDepthBuffer(true);
 	// DirectX::XMMATRIX mWorld;
 	Matrix4x4 mWorld;
-	transform->GenerateWorldMatrix(&mWorld);
+	_transform->GenerateWorldMatrix(&mWorld);
 
 	Matrix4x4 mView;
 	// ビュートランスフォーム（視点座標変換）
@@ -190,18 +190,18 @@ void mtgb::OBJ::Draw(int hModel, const Transform* transform)
 		// 頂点バッファセット
 		UINT stride = sizeof(SimpleVertex);
 		UINT offset = 0;
-		tmpContext->IASetVertexBuffers(slot, 1, datas_[hModel]->mesh->pVertexBuffer.GetAddressOf(), &stride, &offset);
+		tmpContext->IASetVertexBuffers(slot, 1, datas_[_hModel]->mesh->pVertexBuffer.GetAddressOf(), &stride, &offset);
 
 		// インデックスバッファセット
-		tmpContext->IASetIndexBuffer(datas_[hModel]->mesh->pIndexBuffer.Get(), DXGI_FORMAT_R32_UINT, 0);
+		tmpContext->IASetIndexBuffer(datas_[_hModel]->mesh->pIndexBuffer.Get(), DXGI_FORMAT_R32_UINT, 0);
 		// プリミティブをレンダリング
-		tmpContext->DrawIndexed(datas_[hModel]->mesh->numFace * 3, 0, 0);
+		tmpContext->DrawIndexed(datas_[_hModel]->mesh->numFace * 3, 0, 0);
 
 		// DirectX11Draw::End();
 	}
 }
 
-void mtgb::OBJ::InitMesh(const std::string& fileName, SimpleMesh* mesh)
+void mtgb::OBJ::InitMesh(const std::string& _fileName, SimpleMesh* _mesh)
 {
 	float x, y, z;
 	int v1 = 0, v2 = 0, v3 = 0;
@@ -209,7 +209,7 @@ void mtgb::OBJ::InitMesh(const std::string& fileName, SimpleMesh* mesh)
 
 	// ファイルを開いて内容を読み込む
 	FILE* fp = NULL;
-	fopen_s(&fp, fileName.c_str(), "rt");
+	fopen_s(&fp, _fileName.c_str(), "rt");
 
 	// ファイルオープンの確認
 	/*if (fp == NULL) {
@@ -218,8 +218,8 @@ void mtgb::OBJ::InitMesh(const std::string& fileName, SimpleMesh* mesh)
 	}*/
 
 	// 初期化
-	mesh->numVert = 0;
-	mesh->numFace = 0;
+	_mesh->numVert = 0;
+	_mesh->numFace = 0;
 
 	// まずは頂点数、ポリゴン数を調べる
 	while (!feof(fp))
@@ -229,18 +229,18 @@ void mtgb::OBJ::InitMesh(const std::string& fileName, SimpleMesh* mesh)
 		// 頂点
 		if (strcmp(key, "v") == 0)
 		{
-			mesh->numVert++;
+			_mesh->numVert++;
 		}
 		// フェイス（ポリゴン）
 		if (strcmp(key, "f") == 0)
 		{
-			mesh->numFace++;
+			_mesh->numFace++;
 		}
 	}
 
 	// 一時的なメモリ確保（頂点バッファとインデックスバッファ）
-	SimpleVertex* pVertexBuffer = new SimpleVertex[mesh->numVert];
-	int* pIndexBuffer			= new int[mesh->numFace * 3];
+	SimpleVertex* pVertexBuffer = new SimpleVertex[_mesh->numVert];
+	int* pIndexBuffer			= new int[_mesh->numFace * 3];
 
 	// 本読み込み
 	fseek(fp, SEEK_SET, 0);
@@ -276,7 +276,7 @@ void mtgb::OBJ::InitMesh(const std::string& fileName, SimpleMesh* mesh)
 	// 頂点バッファ作成
 	D3D11_BUFFER_DESC bd;
 	bd.Usage		  = D3D11_USAGE_DEFAULT;
-	bd.ByteWidth	  = sizeof(SimpleVertex) * mesh->numVert;
+	bd.ByteWidth	  = sizeof(SimpleVertex) * _mesh->numVert;
 	bd.BindFlags	  = D3D11_BIND_VERTEX_BUFFER;
 	bd.CPUAccessFlags = 0;
 	bd.MiscFlags	  = 0;
@@ -286,19 +286,19 @@ void mtgb::OBJ::InitMesh(const std::string& fileName, SimpleMesh* mesh)
 	initData.SysMemSlicePitch = 0;
 
 	HRESULT hResult =
-		DirectX11Draw::pDevice_->CreateBuffer(&bd, &initData, mesh->pVertexBuffer.ReleaseAndGetAddressOf());
+		DirectX11Draw::pDevice_->CreateBuffer(&bd, &initData, _mesh->pVertexBuffer.ReleaseAndGetAddressOf());
 	massert(SUCCEEDED(hResult) && "頂点バッファの作成に失敗しました @OBJ::InitStaticMesh");
 
 	// インデックスバッファ作成
 	bd.Usage				  = D3D11_USAGE_DEFAULT;
-	bd.ByteWidth			  = sizeof(int) * mesh->numFace * 3;
+	bd.ByteWidth			  = sizeof(int) * _mesh->numFace * 3;
 	bd.BindFlags			  = D3D11_BIND_INDEX_BUFFER;
 	bd.CPUAccessFlags		  = 0;
 	bd.MiscFlags			  = 0;
 	initData.pSysMem		  = pIndexBuffer;
 	initData.SysMemPitch	  = 0;
 	initData.SysMemSlicePitch = 0;
-	hResult = DirectX11Draw::pDevice_->CreateBuffer(&bd, &initData, mesh->pIndexBuffer.ReleaseAndGetAddressOf());
+	hResult = DirectX11Draw::pDevice_->CreateBuffer(&bd, &initData, _mesh->pIndexBuffer.ReleaseAndGetAddressOf());
 	massert(SUCCEEDED(hResult) && "インデックスバッファの作成に失敗しました @OBJ::InitStaticMesh");
 
 	delete[] pVertexBuffer;

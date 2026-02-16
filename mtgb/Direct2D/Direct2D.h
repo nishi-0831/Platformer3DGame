@@ -21,14 +21,14 @@ namespace mtgb
 		~Direct2D();
 		void Initialize() override;
 		void InitializeCommonResource();
-		void CreateD2DRenderTarget(IDXGISurface* pIDXGISurface, ID2D1RenderTarget** ppRenderTarget_);
+		void CreateD2DRenderTarget(IDXGISurface* _pIdxgiSurface, ID2D1RenderTarget** _ppRenderTarget);
 		void CreateSolidColorBrush(
-			const D2D1::ColorF& color,
-			ID2D1RenderTarget* pRenderTarget,
-			ID2D1SolidColorBrush** ppD2DBrush
+			const D2D1::ColorF& _color,
+			ID2D1RenderTarget* _pRenderTarget,
+			ID2D1SolidColorBrush** _ppD2DBrush
 		);
 
-		void ChangeRenderTarget(ComPtr<ID2D1SolidColorBrush> pD2DBrush, ComPtr<ID2D1RenderTarget> pRenderTarget);
+		void ChangeRenderTarget(ComPtr<ID2D1SolidColorBrush> _pD2DBrush, ComPtr<ID2D1RenderTarget> _pRenderTarget);
 
 		void Update() override;
 		void Draw();

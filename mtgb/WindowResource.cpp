@@ -19,7 +19,7 @@ using namespace mtgb;
 /// <param name="wParam">パラメータ</param>
 /// <param name="lParam">パラメータ</param>
 /// <returns></returns>
-extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND _hwnd, UINT _msg, WPARAM _wParam, LPARAM _lParam);
 
 /// <summary>
 /// 各ウィンドウに共通の処理を記述。これをWNDCLASSに渡す
@@ -29,41 +29,41 @@ extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg
 /// <param name="wParam"></param>
 /// <param name="lParam">インスタンスを取得するために、CreateWindowのlpParamにthisを渡す必要がある</param>
 /// <returns></returns>
-LRESULT WindowResource::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT WindowResource::WndProc(HWND _hWnd, UINT _msg, WPARAM _wParam, LPARAM _lParam)
 {
 	WindowResource* pThis;
-	if (msg == WM_NCCREATE)
+	if (_msg == WM_NCCREATE)
 	{
 		// 作成時のパラメータからthisを取得、キャスト
-		pThis = static_cast<WindowResource*>(reinterpret_cast<LPCREATESTRUCT>(lParam)->lpCreateParams);
+		pThis = static_cast<WindowResource*>(reinterpret_cast<LPCREATESTRUCT>(_lParam)->lpCreateParams);
 		// thisのUSERDATAにthisを紐付ける
-		SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pThis));
-		pThis->hWnd_ = hWnd;
+		SetWindowLongPtr(_hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pThis));
+		pThis->hWnd_ = _hWnd;
 	}
 	else
 	{
 		// hWndにthisを紐づけておいたので取得
-		pThis = reinterpret_cast<WindowResource*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
+		pThis = reinterpret_cast<WindowResource*>(GetWindowLongPtr(_hWnd, GWLP_USERDATA));
 		if (pThis)
 		{
-			pThis->hWnd_ = hWnd;
+			pThis->hWnd_ = _hWnd;
 		}
 	}
 	if (pThis)
 	{
-		return pThis->HandleWindowMessage(hWnd, msg, wParam, lParam);
+		return pThis->HandleWindowMessage(_hWnd, _msg, _wParam, _lParam);
 	}
-	return DefWindowProc(hWnd, msg, wParam, lParam);
+	return DefWindowProc(_hWnd, _msg, _wParam, _lParam);
 }
 
-LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT WindowResource::HandleWindowMessage(HWND _hWnd, UINT _msg, WPARAM _wParam, LPARAM _lParam)
 {
-	if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
+	if (ImGui_ImplWin32_WndProcHandler(_hWnd, _msg, _wParam, _lParam))
 	{
 		return true;
 	}
 
-	switch (msg)
+	switch (_msg)
 	{
 	case WM_CLOSE :
 		Game::Exit();
@@ -71,11 +71,11 @@ LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, 
 	case WM_DESTROY : // ウィンドウを閉じた
 		return S_OK;
 	case WM_MOUSEMOVE : // マウスが動いた
-		Game::System<Input>().UpdateMousePositionData(LOWORD(lParam), HIWORD(lParam));
+		Game::System<Input>().UpdateMousePositionData(LOWORD(_lParam), HIWORD(_lParam));
 		return S_OK;
 	case WM_SIZE : // ウィンドウサイズが変わった
 	{
-		if (this && wParam != SIZE_MINIMIZED)
+		if (this && _wParam != SIZE_MINIMIZED)
 		{
 			if (!isInitialized_)
 			{
@@ -83,8 +83,8 @@ LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, 
 				return S_OK;
 			}
 
-			UINT width	= LOWORD(lParam);
-			UINT height = HIWORD(lParam);
+			UINT width	= LOWORD(_lParam);
+			UINT height = HIWORD(_lParam);
 		}
 		return S_OK;
 	}
@@ -94,7 +94,7 @@ LRESULT WindowResource::HandleWindowMessage(HWND hWnd, UINT msg, WPARAM wParam, 
 	}
 
 	// NOTE: これが抜けているとウィンドウ表示されないし、エラーは出ないしで苦労する(した)
-	return DefWindowProc(hWnd, msg, wParam, lParam);
+	return DefWindowProc(_hWnd, _msg, _wParam, _lParam);
 }
 
 HWND mtgb::WindowResource::GetHWND()

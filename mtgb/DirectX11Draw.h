@@ -40,9 +40,9 @@ namespace mtgb
 	/// </summary>
 	enum struct BlendMode : int8_t
 	{
-		Default,
-		Sprite,
-		Max,
+		DEFAULT,
+		SPRITE,
+		MAX,
 	};
 
 	/// <summary>
@@ -147,11 +147,11 @@ namespace mtgb
 		static ComPtr<IDXGISwapChain1> pSwapChain1_;
 		static ComPtr<ID3D11RenderTargetView> pRenderTargetView_; // 描画先
 		static ComPtr<ID3D11DepthStencilView> pDepthStencilView_; // 深度バッファ
-		static std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::Max)>
+		static std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::MAX)>
 			pDepthStencilState_;					   // ブレンドによる深度バッファへの書き込み情報
 		static ComPtr<ID3D11Texture2D> pDepthStencil_; // 深度ステンシル
-		static std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::Max)> pBlendState_; // ブレンドの情報
-		static ShaderBundle shaderBundle_[static_cast<int8_t>(ShaderType::Max)]; // シェーダのバンドル
+		static std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::MAX)> pBlendState_; // ブレンドの情報
+		static ShaderBundle shaderBundle_[static_cast<int8_t>(ShaderType::MAX)]; // シェーダのバンドル
 		static Vector4 backgroundColor_;
 		static ComPtr<ID3D11SamplerState> pDefaultSamplerState_;
 	};

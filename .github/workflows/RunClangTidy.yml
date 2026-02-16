@@ -1,0 +1,78 @@
+name: Run clang-tidy
+
+on: 
+ push:
+  branches: ['**']
+
+permissions:
+ contents: read
+ security-events: write
+
+concurrency:
+ group: clang-tidy-${{ github.ref }}
+ cancel-in-progress: true
+
+jobs:
+ clang-tidy:
+  runs-on: windows-latest
+
+  steps:
+
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  - name: Setup Env
+    uses: ./.github/actions/setup-env
+
+  # run-clang-tidy.pyが内部でPyYAMLを扱う
+  - name: Install PyYAML
+    shell: pwsh
+    run: |
+      pip install PyYAML
+
+    # キャッシュ削除
+  - name: Remove CMake cache
+    shell: pwsh
+    run: |
+        # ビルドツリーを削除
+        if (Test-Path out/build/default-debug) { Remove-Item -Recurse -Force out/build/default-debug }
+
+  - name: Configure CMake cache
+    shell: pwsh
+    run: |
+        cmake --preset default-debug
+  # PCHを生成
+  - name: Generate Pch
+    run: |
+      cmake --build out/build/default-debug --target generate-pch
+
+  # clang-tidyを実行
+  - name: Run clang-tidy
+    run: |
+     cmake --build out/build/default-debug --target clang-tidy
+
+  - name: Upload SARIF to GitHub
+    uses: github/codeql-action/upload-sarif@v4
+    # エラーがあってもSARIFをアップロードする
+    if: always() 
+    with:
+    # SARIFファイルのパス(相対パス)
+     sarif_file: tidy-output.sarif
+     category: clang-tidy
+
+    # SARIFをアーティファクトとしてアップロード
+  - name: Update sarif log (debug)
+    if: always()
+    uses: actions/upload-artifact@v4
+    with:
+      name: tidy-output.sarif
+      path: tidy-output.sarif
+
+    # JSONをアーティファクトとしてアップロード
+  - name: Update json log (debug)
+    if: always()
+    uses: actions/upload-artifact@v4
+    with:
+      name: tidy-output.json
+      path: tidy-output.json
+  

@@ -3,8 +3,8 @@
 #include "MTStringUtility.h"
 
 mtgb::Image::Image()
-	: sprites_{}
-	, handleCounter_{0}
+	: handleCounter_{0}
+	, sprites_{}
 {
 }
 

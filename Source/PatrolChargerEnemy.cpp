@@ -6,31 +6,31 @@
 unsigned int PatrolChargerEnemy::generateCounter_{0};
 
 PatrolChargerEnemy::PatrolChargerEnemy()
-	: pTransform_{Component<Transform>()}
-	, IActor(GetEntityId())
+	: IActor(GetEntityId())
+	, pTransform_{Component<Transform>()}
 	, pRigidBody_{Component<RigidBody>()}
 	, pMeshRenderer_{Component<MeshRenderer>()}
 	, pCollider_{Component<Collider>()}
 	, pTargetTransform_{nullptr}
-	, pInterpolator_{Component<Interpolator>()}
 	, foundFOV_{45.0f}
-	, foundDistance_{6.0f}
-	, waitTimeTransitionCharge_{1.0f}
-	, waitTime_{3.0f}
-	, chargeSpeed_{4.0f}
-	, chargeTime_{5.0f}
-	, takeDamageNum_{1}
-	, walkAnimSpeed_{0.5f}
-	, waitTimeAfterCharge_{2.0f}
+	, foundDistance_{5.0f}
+	, pInterpolator_{Component<Interpolator>()}
 	, targetEntityId_{INVALID_ENTITY}
 	, returnToPatrolSpeed_{2.0f}
+	, waitTimeTransitionCharge_{1.0f}
+	, chargeSpeed_{4.0f}
+	, chargeTime_{5.0f}
+	, waitTimeAfterCharge_{2.0f}
+	, takeDamageNum_{1}
+	, walkAnimSpeed_{0.5f}
+	, waitTime_{3.0f}
 	, onStompedBounce_{5.0f}
 {
-	tag_						 = GameObjectTag::Enemy;
+	tag_						 = GameObjectTag::ENEMY;
 	pMeshRenderer_->meshFileName = "Model/GolemAnim.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer		 = AllLayer();
-	pMeshRenderer_->shaderType	 = ShaderType::FbxPartsSkin;
+	pMeshRenderer_->shaderType	 = ShaderType::FBX_PARTS_SKIN;
 
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->SetExtents({1.0f, 1.0f, 1.0f});
@@ -79,7 +79,7 @@ void PatrolChargerEnemy::Draw() const
 void PatrolChargerEnemy::Start()
 {
 	// TagがPlayerのGameObjectを探す
-	GameObject* targetGameObj = FindGameObject(GameObjectTag::Player);
+	GameObject* targetGameObj = FindGameObject(GameObjectTag::PLAYER);
 	if (targetGameObj == nullptr)
 	{
 		LOGIMGUI("Not Found Target");

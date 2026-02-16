@@ -14,8 +14,8 @@ mtgb::RigidBody::RigidBody(const EntityId _entityId)
 	: IComponent{_entityId}
 	, isNeedUpdate_{false}
 	, useGravity_{false}
-	, pTransform_{&Transform::Get(_entityId)}
 	, onHit_{[](const EntityId) {}}
+	, pTransform_{&Transform::Get(_entityId)}
 {
 }
 

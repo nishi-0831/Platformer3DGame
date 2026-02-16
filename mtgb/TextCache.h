@@ -88,7 +88,7 @@ namespace mtgb
 		/// <param name="str">読み込む文字列</param>
 		/// <param name="size">テキストのフォントサイズ</param>
 		/// <returns></returns>
-		static int Load(const std::string& str, int size);
+		static int Load(const std::string& _str, int _size);
 
 		/// <summary>
 		/// <para> テキストを読み込んでそのハンドルを返す </para>
@@ -100,7 +100,7 @@ namespace mtgb
 		/// <param name="layoutBoxWidth">矩形領域の幅</param>
 		/// <param name="layoutBoxHeight">矩形領域の高さ</param>
 		/// <returns></returns>
-		static int Load(const std::string& str, int fontSize, float layoutBoxWidth, float layoutBoxHeight);
+		static int Load(const std::string& _str, int _fontSize, float _layoutBoxWidth, float _layoutBoxHeight);
 
 		/// <summary>
 		/// <para> テキストを読み込んでそのハンドルを返す </para>
@@ -111,7 +111,7 @@ namespace mtgb
 		/// <param name="fontSize">テキストのフォントサイズ</param>
 		/// <param name="layoutBoxSize">矩形領域の幅、高さ</param>
 		/// <returns></returns>
-		static int Load(const std::string& str, int fontSize, Vector2F layoutBoxSize);
+		static int Load(const std::string& _str, int _fontSize, Vector2F _layoutBoxSize);
 
 	  private:
 		/// <summary>
@@ -120,17 +120,17 @@ namespace mtgb
 		/// <param name="text"></param>
 		/// <param name="size"></param>
 		/// <returns></returns>
-		int GetOrCreateTextLayoutHandle(const std::wstring& text, int size);
-		int GetOrCreateTextLayoutHandle(const std::wstring& text, int size, float width, float height);
+		int GetOrCreateTextLayoutHandle(const std::wstring& _text, int _size);
+		int GetOrCreateTextLayoutHandle(const std::wstring& _text, int _size, float _width, float _height);
 
-		TextLayoutData* GetTextLayoutData(int handle);
+		TextLayoutData* GetTextLayoutData(int _handle);
 
 		/// <summary>
 		/// 指定サイズのIDWriteTextFormatを取得または作成
 		/// </summary>
 		/// <param name="size">フォントサイズ</param>
 		/// <returns>IDWriteTextFormatとPixelFontMetricsのペア</returns>
-		FontFormatData* GetOrCreateTextFormat(int size);
+		FontFormatData* GetOrCreateTextFormat(int _size);
 
 		// 現在のデフォルトのフォントサイズ
 		int currentDefaultFontSize_;

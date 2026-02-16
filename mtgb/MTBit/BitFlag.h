@@ -144,7 +144,7 @@ namespace mtbit
 	};
 
 	template <typename T>
-	concept BitFlagEnumStruct = IsEnumStruct<T> && requires(T t) { static_cast<mtbit::BitFlag<T>>(t); };
+	concept BitFlagEnumStruct = IsEnumStruct<T> && requires(T _t) { static_cast<mtbit::BitFlag<T>>(_t); };
 
 	template <BitFlagEnumStruct EnumStructT>
 	inline mtbit::BitFlag<EnumStructT> operator|(const EnumStructT _e1, const EnumStructT _e2)

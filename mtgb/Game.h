@@ -34,10 +34,10 @@ namespace mtgb
 		/// </summary>
 		enum struct SystemUpdateType : int8_t
 		{
-			DontCallMe, // 呼び出さないで！
-			Cycle,		// 毎サイクル
-			Frame,		// 毎フレーム
-			Fixed,		// 一定の間隔
+			DONT_CALL_ME, // 呼び出さないで！
+			CYCLE,		// 毎サイクル
+			FRAME,		// 毎フレーム
+			FIXED,		// 一定の間隔
 		};
 
 		/// <summary>
@@ -239,16 +239,16 @@ namespace mtgb
 		pInstance_->pRegisterSystems_.insert({typeid(T), pSystem});
 		switch (_systemUpdateType)
 		{
-		case SystemUpdateType::Cycle :
+		case SystemUpdateType::CYCLE :
 			pInstance_->pCycleUpdateSystems_.push_back(pSystem);
 			break;
-		case SystemUpdateType::Frame :
+		case SystemUpdateType::FRAME :
 			pInstance_->pFrameUpdateSystems_.push_back(pSystem);
 			break;
-		case SystemUpdateType::Fixed :
+		case SystemUpdateType::FIXED :
 			pInstance_->pFixedUpdateSystems_.push_back(pSystem);
 			break;
-		case SystemUpdateType::DontCallMe :
+		case SystemUpdateType::DONT_CALL_ME :
 		default :
 			break;
 		}
@@ -278,16 +278,16 @@ namespace mtgb
 				 pInstance_->pRegisterSystems_.insert({_systemType, _pSystem});
 				 switch (_systemUpdateType)
 				 {
-				 case SystemUpdateType::Cycle :
+				 case SystemUpdateType::CYCLE :
 					 pInstance_->pCycleUpdateSystems_.push_back(_pSystem);
 					 break;
-				 case SystemUpdateType::Frame :
+				 case SystemUpdateType::FRAME :
 					 pInstance_->pFrameUpdateSystems_.push_back(_pSystem);
 					 break;
-				 case SystemUpdateType::Fixed :
+				 case SystemUpdateType::FIXED :
 					 pInstance_->pFixedUpdateSystems_.push_back(_pSystem);
 					 break;
-				 case SystemUpdateType::DontCallMe :
+				 case SystemUpdateType::DONT_CALL_ME :
 				 default :
 					 break;
 				 }

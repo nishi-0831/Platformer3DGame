@@ -9,8 +9,8 @@ namespace
 mtgb::Transform::Transform()
 	: parent(INVALID_ENTITY)
 	, position{Vector3::Zero()}
-	, rotate{Quaternion::Identity()}
 	, scale{Vector3::One()}
+	, rotate{Quaternion::Identity()}
 	, localPosition_{Vector3::Zero()}
 	, localRotate_{Quaternion::Identity()}
 	, localScale_{Vector3::One()}
@@ -21,8 +21,8 @@ mtgb::Transform::Transform(EntityId _entityId)
 	: IComponent(_entityId)
 	, parent(INVALID_ENTITY)
 	, position{Vector3::Zero()}
-	, rotate{Quaternion::Identity()}
 	, scale{Vector3::One()}
+	, rotate{Quaternion::Identity()}
 	, localPosition_{Vector3::Zero()}
 	, localRotate_{Quaternion::Identity()}
 	, localScale_{Vector3::One()}

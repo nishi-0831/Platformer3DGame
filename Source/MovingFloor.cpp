@@ -14,14 +14,14 @@ MovingFloor::MovingFloor()
 	, groundedEntity_{INVALID_ENTITY}
 	, pTransform_{&Transform::Get(entityId_)}
 	, pMeshRenderer_{&MeshRenderer::Get(entityId_)}
-	, pRigidBody_{&RigidBody::Get(entityId_)}
 	, pCollider_{&Collider::Get(entityId_)}
+	, pRigidBody_{&RigidBody::Get(entityId_)}
 	, pInterpolator_{&Interpolator::Get(entityId_)}
 {
 	pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer		 = AllLayer();
-	pMeshRenderer_->shaderType	 = ShaderType::FbxParts;
+	pMeshRenderer_->shaderType	 = ShaderType::FBX_PARTS;
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(MovingFloor));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
@@ -54,7 +54,7 @@ void MovingFloor::Update()
 void MovingFloor::ShowImGui()
 {
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
-	ImGui::Text("EntityId:%d", Entity::entityId_);
+	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 
 void MovingFloor::OnCollisionEnter(EntityId _entityId)
@@ -64,7 +64,7 @@ void MovingFloor::OnCollisionEnter(EntityId _entityId)
 
 	// プレイヤーのみ対象にする
 	// TODO: プレイヤー以外のアクターも対象にする
-	if (tag != GameObjectTag::Player)
+	if (tag != GameObjectTag::PLAYER)
 		return;
 
 	// 自身に触れたTransform
@@ -87,7 +87,7 @@ void MovingFloor::OnCollisionExit(EntityId _entityId)
 
 	// プレイヤーのみ対象にする
 	// TODO: プレイヤー以外のアクターも対象にする
-	if (tag != GameObjectTag::Player)
+	if (tag != GameObjectTag::PLAYER)
 		return;
 
 	// 現在着地しているEntityと異なるならスキップ
