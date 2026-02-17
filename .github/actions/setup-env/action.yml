@@ -55,7 +55,8 @@ runs:
       if: steps.cache-fbx.outputs.cache-hit != 'true'
       shell: cmd
       run: |
-        FBXInstaller.exe /S /D="${{env.FBX_SDK}}"
+        # パスにスペースが入っていたとしても、引用符で囲ってはいけない
+        FBXInstaller.exe /S /D=${{env.FBX_SDK}}
         echo FBX SDK installed to "${{env.FBX_SDK}}"
         dir "${{env.FBX_SDK}}"
         
