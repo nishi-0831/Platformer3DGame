@@ -1,6 +1,5 @@
 #pragma once
 #include "ReflectionMacro.h"
-#include "RigidBody.generated.h"
 #include "ISerializableObject.h"
 #include "IComponent.h"
 #include "IComponentMemento.h"
@@ -10,13 +9,13 @@
 #include <functional>
 #include <DirectXCollision.h>
 
+#include "RigidBody.generated.h"
 namespace mtgb
 {
 
 	class Transform;
 	class RigidBodyCP;
-	MT_COMPONENT()
-	class RigidBody : public IComponent<RigidBodyCP, RigidBody>, public ISerializableObject
+	class [[MT_COMPONENT()]] RigidBody : public IComponent<RigidBodyCP, RigidBody>, public ISerializableObject
 	{
 	  public:
 		MT_GENERATED_BODY()
@@ -43,10 +42,10 @@ namespace mtgb
 	  public:
 		bool isNeedUpdate_;
 		Vector3 velocity_;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		bool useGravity_;
 		bool isGround_;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		bool isKinematic_;
 
 	  private:

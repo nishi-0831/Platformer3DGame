@@ -11,15 +11,33 @@
 struct {{ class_name }}State
 {
 	{{- for member in properties}}
-		{{ if member.name_space == ""}}
+		{{- if member.name_space == ""}}
 			{{ member.type_name }} {{ member.name }};
-		{{ else }}
+		{{- else }}
 			{{ member.name_space }}::{{ member.type_name }} {{ member.name }};
-		{{ end }}
+		{{- end }}
 	{{- end }}
 };
-class {{ class_name }};
-using {{ class_name }}Memento = mtgb::ComponentMemento<{{ class_name }}, {{ class_name }}State>;
+
+// クラスの前方宣言
+{{- if name_space == "" }}
+	class {{ class_name }};
+{{- else }}
+	namespace {{ name_space }}
+	{{ "{" }}
+		class {{ class_name }};
+	{{ "}" }}
+{{- end}}
+
+{{ # 名前空間付きの完全名 }}
+{{ fully_qualified_name = "" }}
+{{- if name_space == "" }}
+	{{ fully_qualified_name = $"{ class_name }" }}
+{{- else }}
+	{{ fully_qualified_name = $"{name_space}::{ class_name }" }}
+{{- end }}
+
+using {{ class_name }}Memento = mtgb::ComponentMemento<{{ fully_qualified_name }}, {{ class_name }}State>;
 
 // ============================================================================
 // {{ class_name }}と{{ class_name }}Mementoの相互変換処理を実装

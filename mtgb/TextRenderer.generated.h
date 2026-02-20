@@ -8,12 +8,21 @@
 // ============================================================================
 // TextRendererの状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言
 // ============================================================================
-#define MT_COMPONENT_TextRenderer() \
-	struct TextRendererState \
-	{ \
-	}; \
-	class TextRenderer;\
-	using TextRendererMemento = ComponentMemento<TextRenderer, TextRendererState>;
+struct TextRendererState
+{
+};
+
+// クラスの前方宣言
+	namespace mtgb
+	{
+		class TextRenderer;
+	}
+
+
+
+	
+
+using TextRendererMemento = mtgb::ComponentMemento<mtgb::TextRenderer, TextRendererState>;
 
 // ============================================================================
 // TextRendererとTextRendererMementoの相互変換処理を実装
@@ -25,10 +34,10 @@
 	{ \
 	OnPreSave(); \
 		TextRendererState state; \
-		return new ComponentMemento<TextRenderer, TextRendererState>(GetEntityId(), state); \
+		return new Memento(GetEntityId(), state); \
 	} \
 	\
-	void RestoreFromMemento(const ComponentMemento<TextRenderer, TextRendererState>& _memento) \
+	void RestoreFromMemento(const Memento& _memento) \
 	{ \
 		const TextRendererState& state = _memento.GetState(); \
 		OnPostRestore(); \
@@ -59,6 +68,5 @@
 #pragma warning(push)
 #pragma warning(disable:4005)
 // マクロ上書き
-#define MT_COMPONENT() MT_COMPONENT_TextRenderer()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_TextRenderer()
 #pragma warning(pop)

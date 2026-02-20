@@ -8,19 +8,28 @@
 // ============================================================================
 // Colliderの状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言
 // ============================================================================
-#define MT_COMPONENT_Collider() \
-	struct ColliderState \
-	{ \
-			ColliderType colliderType_; \
-			bool isStatic_; \
-			ColliderTag colliderTag_; \
-			bool isTrigger_; \
-			Vector3 center_; \
-			float radius_; \
-			Vector3 extents_; \
-	}; \
-	class Collider;\
-	using ColliderMemento = ComponentMemento<Collider, ColliderState>;
+struct ColliderState
+{
+			ColliderType colliderType_;
+			bool isStatic_;
+			ColliderTag colliderTag_;
+			bool isTrigger_;
+			mtgb::Vector3 center_;
+			float radius_;
+			mtgb::Vector3 extents_;
+};
+
+// クラスの前方宣言
+	namespace mtgb
+	{
+		class Collider;
+	}
+
+
+
+	
+
+using ColliderMemento = mtgb::ComponentMemento<mtgb::Collider, ColliderState>;
 
 // ============================================================================
 // ColliderとColliderMementoの相互変換処理を実装
@@ -39,10 +48,10 @@
 		state.center_ = this->center_; \
 		state.radius_ = this->radius_; \
 		state.extents_ = this->extents_; \
-		return new ComponentMemento<Collider, ColliderState>(GetEntityId(), state); \
+		return new Memento(GetEntityId(), state); \
 	} \
 	\
-	void RestoreFromMemento(const ComponentMemento<Collider, ColliderState>& _memento) \
+	void RestoreFromMemento(const Memento& _memento) \
 	{ \
 		const ColliderState& state = _memento.GetState(); \
 		this->colliderType_ = state.colliderType_; \
@@ -101,6 +110,5 @@
 #pragma warning(push)
 #pragma warning(disable:4005)
 // マクロ上書き
-#define MT_COMPONENT() MT_COMPONENT_Collider()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_Collider()
 #pragma warning(pop)

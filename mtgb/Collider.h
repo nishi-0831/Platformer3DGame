@@ -1,6 +1,5 @@
 #pragma once
 #include "ReflectionMacro.h"
-#include "Collider.generated.h"
 #include "ISerializableObject.h"
 #include "IComponentMemento.h"
 #include <set>
@@ -9,6 +8,7 @@
 #include "ColliderType.h"
 #include "ColliderCP.h"
 #include <optional>
+#include "Collider.generated.h"
 
 namespace mtgb
 {
@@ -19,8 +19,8 @@ namespace mtgb
 	};
 	class ColliderCP;
 	class Transform;
-	MT_COMPONENT()
-	class Collider : public IComponent<ColliderCP, Collider>, public ISerializableObject
+	
+	class [[MT_COMPONENT()]] Collider : public IComponent<ColliderCP, Collider>, public ISerializableObject
 	{
 
 	  public:
@@ -87,15 +87,15 @@ namespace mtgb
 		std::set<Collider*> onColliders_;
 		std::set<Collider*> onColldiersPrev_;
 
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		// 当たり判定の形
 		ColliderType colliderType_;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		// 静的な、Transform不要なコライダー用のフラグ
 		bool isStatic_;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		ColliderTag colliderTag_;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		bool isTrigger_;
 
 	  private:
@@ -112,11 +112,11 @@ namespace mtgb
 		// ColliderTag colliderTag;
 		static FBXModelHandle hSphereModel_;
 		static FBXModelHandle hBoxModel_;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		Vector3 center_;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		float radius_;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		Vector3 extents_;
 	};
 } // namespace mtgb

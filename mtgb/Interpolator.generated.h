@@ -8,17 +8,26 @@
 // ============================================================================
 // Interpolatorの状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言
 // ============================================================================
-#define MT_COMPONENT_Interpolator() \
-	struct InterpolatorState \
-	{ \
-			float dir_; \
-			float elapsed_; \
-			float duration_; \
-			Vector3 startPos_; \
-			Vector3 endPos_; \
-	}; \
-	class Interpolator;\
-	using InterpolatorMemento = ComponentMemento<Interpolator, InterpolatorState>;
+struct InterpolatorState
+{
+			float dir_;
+			float elapsed_;
+			float duration_;
+			mtgb::Vector3 startPos_;
+			mtgb::Vector3 endPos_;
+};
+
+// クラスの前方宣言
+	namespace mtgb
+	{
+		class Interpolator;
+	}
+
+
+
+	
+
+using InterpolatorMemento = mtgb::ComponentMemento<mtgb::Interpolator, InterpolatorState>;
 
 // ============================================================================
 // InterpolatorとInterpolatorMementoの相互変換処理を実装
@@ -35,10 +44,10 @@
 		state.duration_ = this->duration_; \
 		state.startPos_ = this->startPos_; \
 		state.endPos_ = this->endPos_; \
-		return new ComponentMemento<Interpolator, InterpolatorState>(GetEntityId(), state); \
+		return new Memento(GetEntityId(), state); \
 	} \
 	\
-	void RestoreFromMemento(const ComponentMemento<Interpolator, InterpolatorState>& _memento) \
+	void RestoreFromMemento(const Memento& _memento) \
 	{ \
 		const InterpolatorState& state = _memento.GetState(); \
 		this->dir_ = state.dir_; \
@@ -89,6 +98,5 @@
 #pragma warning(push)
 #pragma warning(disable:4005)
 // マクロ上書き
-#define MT_COMPONENT() MT_COMPONENT_Interpolator()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_Interpolator()
 #pragma warning(pop)

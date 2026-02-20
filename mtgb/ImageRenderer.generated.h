@@ -8,12 +8,21 @@
 // ============================================================================
 // ImageRendererの状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言
 // ============================================================================
-#define MT_COMPONENT_ImageRenderer() \
-	struct ImageRendererState \
-	{ \
-	}; \
-	class ImageRenderer;\
-	using ImageRendererMemento = ComponentMemento<ImageRenderer, ImageRendererState>;
+struct ImageRendererState
+{
+};
+
+// クラスの前方宣言
+	namespace mtgb
+	{
+		class ImageRenderer;
+	}
+
+
+
+	
+
+using ImageRendererMemento = mtgb::ComponentMemento<mtgb::ImageRenderer, ImageRendererState>;
 
 // ============================================================================
 // ImageRendererとImageRendererMementoの相互変換処理を実装
@@ -25,10 +34,10 @@
 	{ \
 	OnPreSave(); \
 		ImageRendererState state; \
-		return new ComponentMemento<ImageRenderer, ImageRendererState>(GetEntityId(), state); \
+		return new Memento(GetEntityId(), state); \
 	} \
 	\
-	void RestoreFromMemento(const ComponentMemento<ImageRenderer, ImageRendererState>& _memento) \
+	void RestoreFromMemento(const Memento& _memento) \
 	{ \
 		const ImageRendererState& state = _memento.GetState(); \
 		OnPostRestore(); \
@@ -59,6 +68,5 @@
 #pragma warning(push)
 #pragma warning(disable:4005)
 // マクロ上書き
-#define MT_COMPONENT() MT_COMPONENT_ImageRenderer()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_ImageRenderer()
 #pragma warning(pop)
