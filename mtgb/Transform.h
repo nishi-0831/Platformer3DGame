@@ -1,6 +1,5 @@
 #pragma once
 #include "ReflectionMacro.h"
-#include "Transform.generated.h"
 #include "ISerializableObject.h"
 #include "IComponent.h"
 #include "IComponentMemento.h"
@@ -10,10 +9,11 @@
 #include "Matrix4x4.h"
 #include "cmtgb.h"
 #include "TransformCP.h"
+#include "Transform.generated.h"
 namespace mtgb
 {
-	MT_COMPONENT()
-	class Transform : public IComponent<TransformCP, Transform>, public ISerializableObject
+
+	class [[MT_COMPONENT()]] Transform : public IComponent<TransformCP, Transform>, public ISerializableObject
 	{
 	  public:
 		MT_GENERATED_BODY()
@@ -145,13 +145,13 @@ namespace mtgb
 		Quaternion GetWorldRotate() const;
 
 		void OnPostRestore() override;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		EntityId parent;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		Vector3 position;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		Vector3 scale;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		Quaternion rotate;
 
 	  private:
