@@ -10,7 +10,7 @@
 #include "ShowAttributes.h"
 
 // TypeRegistryのテンプレート実装
-template <typename T> void TypeRegistry::RegisterType()
+template <typename T> void PropertyDisplayRegistry::RegisterType()
 {
 	using Type					 = std::remove_pointer_t<std::remove_cvref_t<T>>;
 	showFunctions_[typeid(Type)] = [this](std::any _ptr, const char* _name) -> Command*
@@ -27,7 +27,8 @@ template <typename T> void TypeRegistry::RegisterType()
 				registerInstance = const_cast<T*>(std::any_cast<const T*>(_ptr));
 			}
 			massert(
-				registerInstance != nullptr && "instanceのany_castに失敗:ptrがnullptrです @TypeRegistry::RegisterType"
+				registerInstance != nullptr &&
+				"instanceのany_castに失敗:ptrがnullptrです @PropertyDisplayRegistry::RegisterType"
 			);
 			constexpr auto type = refl::reflect<Type>();
 
@@ -129,7 +130,8 @@ template <typename T> void TypeRegistry::RegisterType()
 }
 
 // メンバの型がリフレクションされているかチェックし、ShowFunc属性があればそれを使用
-template <typename T> bool TypeRegistry::ShowMemberWithReflection(T _memberValue, const char* _name, Command* _command)
+template <typename T>
+bool PropertyDisplayRegistry::ShowMemberWithReflection(T _memberValue, const char* _name, Command* _command)
 {
 	using MemberType = std::remove_pointer_t<std::remove_cvref_t<T>>;
 	if constexpr (refl::is_reflectable<MemberType>())
@@ -179,11 +181,11 @@ template <typename T> bool TypeRegistry::ShowMemberWithReflection(T _memberValue
 		{
 			if constexpr (std::is_pointer_v<T>)
 			{
-				this->CallFunc(memberTypeIdx, std::any(_memberValue), _name);
+				this->ShowProperty(memberTypeIdx, std::any(_memberValue), _name);
 			}
 			else
 			{
-				this->CallFunc(memberTypeIdx, std::any(&_memberValue), _name);
+				this->ShowProperty(memberTypeIdx, std::any(&_memberValue), _name);
 			}
 			return true;
 		}
@@ -193,7 +195,7 @@ template <typename T> bool TypeRegistry::ShowMemberWithReflection(T _memberValue
 }
 
 template <typename... Args, typename T>
-Command* TypeRegistry::CheckCustomAttrs(std::tuple<Args...>& _attrs, T _valPtr, const char* _name)
+Command* PropertyDisplayRegistry::CheckCustomAttrs(std::tuple<Args...>& _attrs, T _valPtr, const char* _name)
 {
 	Command* command = nullptr;
 	std::apply(
@@ -216,7 +218,7 @@ Command* TypeRegistry::CheckCustomAttrs(std::tuple<Args...>& _attrs, T _valPtr, 
 	return command;
 }
 
-template <typename T> void TypeRegistry::CheckProxyAttrs()
+template <typename T> void PropertyDisplayRegistry::CheckProxyAttrs()
 {
 	using ProxyType = std::remove_pointer_t<std::remove_cvref_t<T>>;
 

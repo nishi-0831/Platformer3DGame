@@ -88,7 +88,7 @@ void mtgb::QuaternionCamera::Update()
 		[this]()
 		{
 			ImGui::InputFloat("s", &currentLerpSpeed_);
-			TypeRegistry::Instance().CallFunc(&pTargetRigidBody_->velocity_, "vel");
+			PropertyDisplayRegistry::Instance().ShowProperty(&pTargetRigidBody_->velocity_, "vel");
 		},
 		"lerpSpeed",
 		ShowType::INSPECTOR

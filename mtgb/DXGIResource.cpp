@@ -86,7 +86,7 @@ void mtgb::DXGIResource::Update()
 			ImGui::PushID(&monitorInfo_);
 			ImGui::LabelText("adapterIndex", "%d", monitorInfo_.adapterIndex);
 			ImGui::LabelText("outputIndex", "%d", monitorInfo_.outputIndex);
-			TypeRegistry::Instance().CallFunc(&monitorInfo_.desc, "OutputDesc");
+			PropertyDisplayRegistry::Instance().ShowProperty(&monitorInfo_.desc, "OutputDesc");
 			ImGui::PopID();
 			ImGui::Separator();
 		},

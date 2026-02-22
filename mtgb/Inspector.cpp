@@ -14,5 +14,5 @@ void Inspector::Show(std::type_index _typeIdx, std::any _instance, const char* _
 	{
 		return;
 	}
-	TypeRegistry::Instance().CallFunc(_typeIdx, _instance, _name);
+	PropertyDisplayRegistry::Instance().ShowProperty(_typeIdx, _instance, _name);
 }

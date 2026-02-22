@@ -155,8 +155,8 @@ void mtgb::SphericalCamera::Update()
 	MTImGui::Instance().DirectShow(
 		[&, sphericalCoord]()
 		{
-			TypeRegistry::Instance().CallFunc(pCameraTransform_, "Transform");
-			TypeRegistry::Instance().CallFunc(&lookAtPositionOffset_, "lookAtPositionOffset_");
+			PropertyDisplayRegistry::Instance().ShowProperty(pCameraTransform_, "Transform");
+			PropertyDisplayRegistry::Instance().ShowProperty(&lookAtPositionOffset_, "lookAtPositionOffset_");
 
 			float degX = DirectX::XMConvertToDegrees(polarAngleRad_) - 90.0f;
 			float degY = DirectX::XMConvertToDegrees(azimuthalAngleRad_) - 90.0f;
@@ -165,12 +165,9 @@ void mtgb::SphericalCamera::Update()
 			ImGui::Text("Target Velocity Y: %.3f", targetVelocityCache_.y);
 			ImGui::Text("lookAtPosLerpProgress: %.3f", lookAtPosLerpProgress_);
 			ImGui::Text("Is Grounded: %s", isGrounded_ ? "true" : "false");
-			ImGui::Text("Is Off Screen: %s", IsTargetOffDeadZone() ? "true" : "false");
-			TypeRegistry::Instance().CallFunc(&normalizedX, "normalizedX");
-			TypeRegistry::Instance().CallFunc(&normalizedY, "normalizedY");
-			// TypeRegistry::Instance().CallFunc(&sphericalCoord.phi, "phi");
-			// TypeRegistry::Instance().CallFunc(&sphericalCoord.r, "r");
-			// TypeRegistry::Instance().CallFunc(&sphericalCoord.theta, "theta");
+			ImGui::Text("Is Off Screen: %s", IsTargetOffScreen() ? "true" : "false");
+			PropertyDisplayRegistry::Instance().ShowProperty(&normalizedX, "normalizedX");
+			PropertyDisplayRegistry::Instance().ShowProperty(&normalizedY, "normalizedY");
 		},
 		"Camera",
 		ShowType::INSPECTOR

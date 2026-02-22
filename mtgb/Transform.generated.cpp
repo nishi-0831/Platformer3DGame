@@ -14,10 +14,10 @@ namespace mtgb
 			RegisterShowFuncHolder::Set<Transform>(
 				[](Transform* _target, const char* _name)
 				{
-					TypeRegistry::Instance().CallFunc(&_target->parent, "parent");
-					TypeRegistry::Instance().CallFunc(&_target->position, "position");
-					TypeRegistry::Instance().CallFunc(&_target->scale, "scale");
-					TypeRegistry::Instance().CallFunc(&_target->rotate, "rotate");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->parent, "parent");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->position, "position");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->scale, "scale");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->rotate, "rotate");
 				}
 			);
 			MTImGui::Instance().RegisterComponentViewer<Transform>();

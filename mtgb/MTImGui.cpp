@@ -222,7 +222,7 @@ void mtgb::MTImGui::SetupShowFunc()
 	Set<ScreenCoordContainsInfo>(
 		[](ScreenCoordContainsInfo* _target, const char* _name)
 		{
-			TypeRegistry::Instance().CallFunc(&_target->worldPos, "WorldPos");
+			PropertyDisplayRegistry::Instance().ShowProperty(&_target->worldPos, "WorldPos");
 			ImGui::Text("ScreenPos (%.3f,%.3f)", _target->screenPos.x, _target->screenPos.y);
 
 			ImGui::Text("EntityId : %lld", _target->entityId);
@@ -234,7 +234,7 @@ void mtgb::MTImGui::SetupShowFunc()
 		{
 			for (auto& target : _target->GetDetectedTargets())
 			{
-				TypeRegistry::Instance().CallFunc(&target, "RectContains:" + target.entityId);
+				PropertyDisplayRegistry::Instance().ShowProperty(&target, "RectContains:" + target.entityId);
 			}
 		}
 	);

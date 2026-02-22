@@ -8,6 +8,7 @@
 #include "JsonConverter.h"
 #include "AddComponentCommandGeneric.h"
 #include "CommandHistoryManager.h"
+#include "MTAssert.h"
 namespace mtgb
 {
 	static constexpr size_t COMPONENT_CAPACITY{8192};
@@ -78,9 +79,15 @@ namespace mtgb
 		void UnRegister(EntityId _entityId);
 
 	  protected:
-		std::vector<ComponentT> pool_; // コンポーネントそのものを格納するプール
-		std::vector<EntityId> poolId_; // コンポーネントの登録エンティティId
+		std::vector<ComponentT> pool_;			  // コンポーネントそのものを格納するプール
+		std::vector<EntityId> poolId_;			  // コンポーネントの登録エンティティId
+		std::bitset<COMPONENT_CAPACITY> useFlag_; // コンポーネントが使用されているかのフラグ
 	  private:
+		/// <summary>
+		/// エンティティを登録する
+		/// </summary>
+		/// <param name="_entityId"></param>
+		void RegisterComponent(EntityId _entityId, int _poolIndex);
 		template <typename T = ComponentT> std::enable_if_t<detail::has_register_imgui_v<T>> RegisterImGuiIfExists();
 		template <typename T = ComponentT> std::enable_if_t<!detail::has_register_imgui_v<T>> RegisterImGuiIfExists();
 	};
@@ -121,9 +128,6 @@ namespace mtgb
 	{
 		pool_.clear();
 		poolId_.clear();
-
-		// pool_.reserve(COMPONENT_CAPACITY);
-		// poolId_.reserve(COMPONENT_CAPACITY);
 	}
 
 	template <typename ComponentT, typename DerivedT, bool IsSingleton>
@@ -204,6 +208,8 @@ namespace mtgb
 	template <typename... Args>
 	inline ComponentT& ComponentPool<ComponentT, DerivedT, IsSingleton>::Get(EntityId _entityId, Args&&... _args)
 	{
+		massert(_entityId != INVALID_ENTITY && "無効なEntityIdが渡されました");
+
 		for (int i = 0; i < poolId_.size(); i++)
 		{
 			if (poolId_[i] == _entityId)
@@ -212,22 +218,27 @@ namespace mtgb
 			}
 		}
 
-		// プールに存在しないなら新たに追加
+		// 再利用できる箇所を探す
+		for (int i = 0; i < poolId_.size(); i++)
+		{
+			if (poolId_[i] == INVALID_ENTITY)
+			{
+				poolId_[i] = _entityId;
+				pool_[i]   = ComponentT{_entityId, std::forward<Args>(_args)...};
+				pool_[i].Initialize();
+				RegisterComponent(_entityId, i);
+				return pool_[i];
+			}
+		}
+
+		massert(poolId_.size() + 1 <= COMPONENT_CAPACITY && "プールがキャパシティを超過しました");
+
+		// 再利用できないなら新たに追加
 		poolId_.push_back(_entityId);
-		// NOTE: emplace_backで実体をそのまま追加
-		pool_.emplace_back(_entityId, std::forward<Args>(_args)...); // 可変長引数でコンストラクタ呼び出し
+		pool_.emplace_back(_entityId, std::forward<Args>(_args)...);
 		// 追加したら初期化処理
 		pool_.back().Initialize();
-		assert(poolId_.size() < COMPONENT_CAPACITY);
-
-		// インデックスを記録
-		size_t poolIndex = pool_.size() - 1;
-		Game::System<ComponentRegistry>()
-			.RegisterComponentIndex(_entityId, std::type_index(typeid(ComponentT)), poolIndex);
-
-		// EntityIdに割り当てられたComponentとして登録
-		Game::System<ComponentRegistry>().RegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
-
+		RegisterComponent(_entityId, pool_.size() - 1);
 		return pool_.back(); // 追加&&初期化したコンポーネントを返す
 	}
 
@@ -327,5 +338,16 @@ namespace mtgb
 				return; // ポインタが一致したなら消す
 			}
 		}
+	}
+	template <typename ComponentT, typename DerivedT, bool IsSingleton>
+	inline void ComponentPool<ComponentT, DerivedT, IsSingleton>::RegisterComponent(EntityId _entityId, int _poolIndex)
+	{
+		// インデックスを記録
+
+		Game::System<ComponentRegistry>()
+			.RegisterComponentIndex(_entityId, std::type_index(typeid(ComponentT)), _poolIndex);
+
+		// EntityIdに割り当てられたComponentとして登録
+		Game::System<ComponentRegistry>().RegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
 	}
 } // namespace mtgb

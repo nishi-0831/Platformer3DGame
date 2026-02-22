@@ -14,10 +14,10 @@ namespace mtgb
 			RegisterShowFuncHolder::Set<MeshRenderer>(
 				[](MeshRenderer* _target, const char* _name)
 				{
-					TypeRegistry::Instance().CallFunc(&_target->meshFileName, "meshFileName");
-					TypeRegistry::Instance().CallFunc(&_target->meshHandle, "meshHandle");
-					TypeRegistry::Instance().CallFunc(&_target->layer, "layer");
-					TypeRegistry::Instance().CallFunc(&_target->shaderType, "shaderType");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->meshFileName, "meshFileName");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->meshHandle, "meshHandle");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->layer, "layer");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->shaderType, "shaderType");
 				}
 			);
 			MTImGui::Instance().RegisterComponentViewer<MeshRenderer>();

@@ -39,7 +39,7 @@ void mtgb::DirectX11Manager::Update()
 			for (auto& desc : adaptersDesc_)
 			{
 				ImGui::PushID(&desc);
-				TypeRegistry::Instance().CallFunc(&desc, "AdapterDesc");
+				PropertyDisplayRegistry::Instance().ShowProperty(&desc, "AdapterDesc");
 				ImGui::PopID();
 				ImGui::Separator();
 			}
@@ -50,7 +50,7 @@ void mtgb::DirectX11Manager::Update()
 				ImGui::PushID(&monitorInfo);
 				ImGui::LabelText("adapterIndex", "%d", monitorInfo.adapterIndex);
 				ImGui::LabelText("outputIndex", "%d", monitorInfo.outputIndex);
-				TypeRegistry::Instance().CallFunc(&monitorInfo.desc, "OutputDesc");
+				PropertyDisplayRegistry::Instance().ShowProperty(&monitorInfo.desc, "OutputDesc");
 				ImGui::PopID();
 				ImGui::Separator();
 			}
@@ -246,7 +246,8 @@ void mtgb::DirectX11Manager::CreateDXGISurface(IDXGISwapChain1* _pSwapChain1, ID
 
 	// バックバッファ受け取る
 	ComPtr<ID3D11Texture2D> pBackBuffer = nullptr;
-	hResult = _pSwapChain1->GetBuffer(0, _uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));
+	hResult =
+		_pSwapChain1->GetBuffer(0, _uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));
 	massert(SUCCEEDED(hResult) && "GetBufferに失敗 @DirectX11Manager::CreateDXGISurface");
 
 	// バックバッファからIDXGISurfaceインターフェースを取り出す
