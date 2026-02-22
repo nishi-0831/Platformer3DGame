@@ -5,17 +5,24 @@
 #include "JsonConverter.h"
 #include "MTImGui.h"
 #include <string>
+
+{{ # 名前空間を含む型名を返す }}
+{{- func get_fully_qualified_type(member)
+	if member.name_space == ""
+		ret member.type_name
+	else
+		ret member.name_space + "::" + member.type_name
+	end
+end
+}}
+
 // ============================================================================
 // {{ class_name }}の状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言
 // ============================================================================
 struct {{ class_name }}State
 {
 	{{- for member in properties}}
-		{{- if member.name_space == ""}}
-			{{ member.type_name }} {{ member.name }};
-		{{- else }}
-			{{ member.name_space }}::{{ member.type_name }} {{ member.name }};
-		{{- end }}
+		{{ get_fully_qualified_type(member) }} {{ member.name }};
 	{{- end }}
 };
 
@@ -68,13 +75,13 @@ using {{ class_name }}Memento = mtgb::ComponentMemento<{{ fully_qualified_name }
 	friend void to_json(nlohmann::json& _j,const {{ class_name }}& _target) \
 	{ \
 {{- for member in properties }}
-		_j["{{ member.name }}"] = JsonConverter::Serialize<{{ member.type_name }}>(_target.{{ member.name }}); \
+		_j["{{ member.name }}"] = JsonConverter::Serialize<{{  get_fully_qualified_type(member) }}>(_target.{{ member.name }}); \
 {{- end }}
 	} \
 	friend void from_json(const nlohmann::json& _j, {{ class_name }}& _target) \
 	{ \
 {{- for member in properties }}
-		JsonConverter::Deserialize<{{ member.type_name }}>(_target.{{ member.name }}, _j,"{{ member.name }}"); \
+		JsonConverter::Deserialize<{{ get_fully_qualified_type(member) }}>(_target.{{ member.name }}, _j,"{{ member.name }}"); \
 {{- end }}
 		_target.OnPostRestore(); \
 	} \

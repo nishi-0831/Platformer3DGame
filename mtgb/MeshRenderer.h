@@ -12,7 +12,6 @@
 #include "MeshRenderer.generated.h"
 namespace mtgb
 {
-
 	class MeshRendererCP;
 
 	/// <summary>
