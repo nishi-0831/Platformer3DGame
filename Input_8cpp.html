@@ -125,15 +125,15 @@ Input.cpp の依存先関係図:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:ae5d4f7c49a6eb597055659c6416ebb2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Input_8cpp.html#ae5d4f7c49a6eb597055659c6416ebb2f">operator&lt;</a> (const GUID &amp;lhs, const GUID &amp;rhs)</td></tr>
-<tr class="separator:ae5d4f7c49a6eb597055659c6416ebb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac887364fb84e2f99c3a6c776fbfd0083"><td class="memItemLeft" align="right" valign="top">BOOL CALLBACK&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Input_8cpp.html#ac887364fb84e2f99c3a6c776fbfd0083">EnumJoysticksCallback</a> (const LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef)</td></tr>
-<tr class="memdesc:ac887364fb84e2f99c3a6c776fbfd0083"><td class="mdescLeft">&#160;</td><td class="mdescRight">ジョイスティックが接続されている場合、デバイスに割り当てる  <br /></td></tr>
-<tr class="separator:ac887364fb84e2f99c3a6c776fbfd0083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fc6739f45e61e4ad26d81635f3a3f33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Input_8cpp.html#a7fc6739f45e61e4ad26d81635f3a3f33">operator&lt;</a> (const GUID &amp;_lhs, const GUID &amp;_rhs)</td></tr>
+<tr class="separator:a7fc6739f45e61e4ad26d81635f3a3f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceffc1d4bd89596f8d62324d2a6e3029"><td class="memItemLeft" align="right" valign="top">BOOL CALLBACK&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Input_8cpp.html#aceffc1d4bd89596f8d62324d2a6e3029">EnumJoysticksCallback</a> (const LPCDIDEVICEINSTANCE _lpddi, LPVOID _pvRef)</td></tr>
+<tr class="memdesc:aceffc1d4bd89596f8d62324d2a6e3029"><td class="mdescLeft">&#160;</td><td class="mdescRight">ジョイスティックが接続されている場合、デバイスに割り当てる  <br /></td></tr>
+<tr class="separator:aceffc1d4bd89596f8d62324d2a6e3029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
-<a id="ac887364fb84e2f99c3a6c776fbfd0083" name="ac887364fb84e2f99c3a6c776fbfd0083"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac887364fb84e2f99c3a6c776fbfd0083">&#9670;&#160;</a></span>EnumJoysticksCallback()</h2>
+<a id="aceffc1d4bd89596f8d62324d2a6e3029" name="aceffc1d4bd89596f8d62324d2a6e3029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceffc1d4bd89596f8d62324d2a6e3029">&#9670;&#160;</a></span>EnumJoysticksCallback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,13 +142,13 @@ Input.cpp の依存先関係図:</div>
           <td class="memname">BOOL CALLBACK EnumJoysticksCallback </td>
           <td>(</td>
           <td class="paramtype">const LPCDIDEVICEINSTANCE&#160;</td>
-          <td class="paramname"><em>lpddi</em>, </td>
+          <td class="paramname"><em>_lpddi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">LPVOID&#160;</td>
-          <td class="paramname"><em>pvRef</em>&#160;</td>
+          <td class="paramname"><em>_pvRef</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -177,7 +177,7 @@ Input.cpp の依存先関係図:</div>
 <div class="line"><span class="lineno">  386</span>    {</div>
 <div class="line"><span class="lineno">  387</span>        <span class="keywordflow">return</span> DIENUM_STOP;</div>
 <div class="line"><span class="lineno">  388</span>    }</div>
-<div class="line"><span class="lineno">  389</span>    <a class="code hl_enumeration" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97">DeviceType</a> devType = <a class="code hl_function" href="classmtgb_1_1Input.html#a5e7d3ec55273498dde61ab62c818fecd">Input::GetDeviceType</a>(*lpddi);</div>
+<div class="line"><span class="lineno">  389</span>    <a class="code hl_enumeration" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97">DeviceType</a> devType = <a class="code hl_function" href="classmtgb_1_1Input.html#a5e7d3ec55273498dde61ab62c818fecd">Input::GetDeviceType</a>(*_lpddi);</div>
 <div class="line"><span class="lineno">  390</span> </div>
 <div class="line"><span class="lineno">  391</span>    <span class="keywordtype">int</span> reservationIndex = input.FindReservationIndexForDevice(devType);</div>
 <div class="line"><span class="lineno">  392</span> </div>
@@ -186,21 +186,21 @@ Input.cpp の依存先関係図:</div>
 <div class="line"><span class="lineno">  395</span>        <span class="comment">// デバイスを要求している予約はない</span></div>
 <div class="line"><span class="lineno">  396</span>        <span class="keywordflow">return</span> DIENUM_CONTINUE;</div>
 <div class="line"><span class="lineno">  397</span>    }</div>
-<div class="line"><span class="lineno">  398</span>    LPDIRECTINPUT8 pDirectInput         = <span class="keyword">reinterpret_cast&lt;</span>LPDIRECTINPUT8<span class="keyword">&gt;</span>(pvRef);</div>
+<div class="line"><span class="lineno">  398</span>    LPDIRECTINPUT8 pDirectInput         = <span class="keyword">reinterpret_cast&lt;</span>LPDIRECTINPUT8<span class="keyword">&gt;</span>(_pvRef);</div>
 <div class="line"><span class="lineno">  399</span>    ComPtr&lt;IDirectInputDevice8&gt; pDevice = <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">  400</span> </div>
 <div class="line"><span class="lineno">  401</span>    <span class="comment">// 割り当て予約があり、未割当なのでデバイス作成</span></div>
-<div class="line"><span class="lineno">  402</span>    HRESULT hResult = pDirectInput-&gt;CreateDevice(lpddi-&gt;guidInstance, pDevice.GetAddressOf(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  402</span>    HRESULT hResult = pDirectInput-&gt;CreateDevice(_lpddi-&gt;guidInstance, pDevice.GetAddressOf(), <span class="keyword">nullptr</span>);</div>
 <div class="line"><span class="lineno">  403</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;ジョイスティックのデバイスの作成に失敗 @EnumJoysticksCallback&quot;</span>);</div>
 <div class="line"><span class="lineno">  404</span> </div>
-<div class="line"><span class="lineno">  405</span>    <span class="keywordflow">if</span> (Game::System&lt;Input&gt;().RegisterJoystickGuid(lpddi-&gt;guidInstance) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  405</span>    <span class="keywordflow">if</span> (Game::System&lt;Input&gt;().RegisterJoystickGuid(_lpddi-&gt;guidInstance) == <span class="keyword">false</span>)</div>
 <div class="line"><span class="lineno">  406</span>    {</div>
 <div class="line"><span class="lineno">  407</span>        <span class="comment">// 既に割り当て済みの為、他のデバイスの列挙に移す</span></div>
 <div class="line"><span class="lineno">  408</span>        pDevice.Reset();</div>
 <div class="line"><span class="lineno">  409</span>        <span class="keywordflow">return</span> DIENUM_CONTINUE;</div>
 <div class="line"><span class="lineno">  410</span>    }</div>
 <div class="line"><span class="lineno">  411</span> </div>
-<div class="line"><span class="lineno">  412</span>    input.AssignJoystickToReservation(pDevice, <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(reservationIndex), lpddi-&gt;guidInstance);</div>
+<div class="line"><span class="lineno">  412</span>    input.AssignJoystickToReservation(pDevice, <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(reservationIndex), _lpddi-&gt;guidInstance);</div>
 <div class="line"><span class="lineno">  413</span>    <a class="code hl_define" href="Debug_8h.html#a22dfbe5038b17240020faa877835bc46">LOGIMGUI_CAT</a>(<span class="stringliteral">&quot;Input&quot;</span>, <span class="stringliteral">&quot;Assigned reservationIndex=%d&quot;</span>, reservationIndex);</div>
 <div class="line"><span class="lineno">  414</span> </div>
 <div class="line"><span class="lineno">  415</span>    <span class="comment">// 予約がまだ残っているなら続行</span></div>
@@ -217,20 +217,20 @@ Input.cpp の依存先関係図:</div>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Input_8cpp_ac887364fb84e2f99c3a6c776fbfd0083_cgraph.svg" width="435" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Input_8cpp_aceffc1d4bd89596f8d62324d2a6e3029_cgraph.svg" width="435" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Input_8cpp_ac887364fb84e2f99c3a6c776fbfd0083_icgraph.svg" width="426" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Input_8cpp_aceffc1d4bd89596f8d62324d2a6e3029_icgraph.svg" width="426" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="ae5d4f7c49a6eb597055659c6416ebb2f" name="ae5d4f7c49a6eb597055659c6416ebb2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5d4f7c49a6eb597055659c6416ebb2f">&#9670;&#160;</a></span>operator&lt;()</h2>
+<a id="a7fc6739f45e61e4ad26d81635f3a3f33" name="a7fc6739f45e61e4ad26d81635f3a3f33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fc6739f45e61e4ad26d81635f3a3f33">&#9670;&#160;</a></span>operator&lt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,13 +239,13 @@ Input.cpp の依存先関係図:</div>
           <td class="memname">bool operator&lt; </td>
           <td>(</td>
           <td class="paramtype">const GUID &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
+          <td class="paramname"><em>_lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const GUID &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
+          <td class="paramname"><em>_rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -257,7 +257,7 @@ Input.cpp の依存先関係図:</div>
 
 <p class="definition"> <a class="el" href="Input_8cpp_source.html">Input.cpp</a> の <a class="el" href="Input_8cpp_source.html#l00061">61</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> std::memcmp(&amp;lhs, &amp;rhs, <span class="keyword">sizeof</span>(GUID)) &lt; 0;</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> std::memcmp(&amp;_lhs, &amp;_rhs, <span class="keyword">sizeof</span>(GUID)) &lt; 0;</div>
 <div class="line"><span class="lineno">   64</span>}</div>
 </div><!-- fragment -->
 </div>

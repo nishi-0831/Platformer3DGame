@@ -6,6 +6,7 @@ var classmtgb_1_1MeshRendererCP =
     [ "Deserialize", "classmtgb_1_1MeshRendererCP.html#ab14e90cb0dd0d6c5df498fe230458bbf", null ],
     [ "Get", "classmtgb_1_1MeshRendererCP.html#a46d912d48cb0755f013969a21967d6ad", null ],
     [ "Initialize", "classmtgb_1_1MeshRendererCP.html#a236c9bc1e61d45f39517399a235b94f9", null ],
+    [ "RegisterComponent", "classmtgb_1_1MeshRendererCP.html#a9b0b2edd12341a67d7b1c2b6acd2c703", null ],
     [ "RegisterCurrentScene", "classmtgb_1_1MeshRendererCP.html#a4d2d02ef42687005a44d0fb93b353182", null ],
     [ "RegisterImGuiIfExists", "classmtgb_1_1MeshRendererCP.html#aad8cb5427de9992720dbc1de18164eee", null ],
     [ "RegisterImGuiIfExists", "classmtgb_1_1MeshRendererCP.html#a2d34accda3456f0ff7ac5a0e6e252b91", null ],
@@ -22,5 +23,6 @@ var classmtgb_1_1MeshRendererCP =
     [ "UnRegister", "classmtgb_1_1MeshRendererCP.html#ab82a287462c507e3466b04a558bcd5b7", null ],
     [ "Update", "classmtgb_1_1MeshRendererCP.html#a2bf1e9b89db13db0cf40c80c25585caf", null ],
     [ "pool_", "classmtgb_1_1MeshRendererCP.html#a7e94ec8a5981bee7000d7ab292a767d4", null ],
-    [ "poolId_", "classmtgb_1_1MeshRendererCP.html#a1a037eb9620331b340d705b109d7a3d5", null ]
+    [ "poolId_", "classmtgb_1_1MeshRendererCP.html#a1a037eb9620331b340d705b109d7a3d5", null ],
+    [ "useFlag_", "classmtgb_1_1MeshRendererCP.html#a757b1b87b0a9b8a25fb21680b43933da", null ]
 ];

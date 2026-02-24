@@ -44,6 +44,6 @@ var searchData=
   ['viewport_41',['viewport',['../structmtgb_1_1WorldToScreenData.html#a3ea595e66cb0ff97f71ffa1cbdb00c3c',1,'mtgb::WorldToScreenData']]],
   ['viewport_5f_42',['viewPort_',['../classmtgb_1_1Direct3DResource.html#ad77dbf312ced6177dd54481d0dae0ca5',1,'mtgb::Direct3DResource']]],
   ['viewport_5f_43',['viewport_',['../classmtgb_1_1ImGuiRenderer.html#ad917df25388e31a52ca448aa9eefe72c',1,'mtgb::ImGuiRenderer']]],
-  ['volumedown_44',['VolumeDown',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a91f1f883ea91306f79dbf0ca1b108bad',1,'InputKeyCode.h']]],
-  ['volumeup_45',['VolumeUp',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af5311ec6ce071e43882685428cc9d56a',1,'InputKeyCode.h']]]
+  ['volume_5fdown_44',['VOLUME_DOWN',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab51dc9db6e5110cf7e1bdc44b218ad66',1,'InputKeyCode.h']]],
+  ['volume_5fup_45',['VOLUME_UP',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a6749145ac295af704786a39516c5bf40',1,'InputKeyCode.h']]]
 ];

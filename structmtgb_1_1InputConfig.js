@@ -1,6 +1,6 @@
 var structmtgb_1_1InputConfig =
 [
-    [ "ApplyDeadZone", "structmtgb_1_1InputConfig.html#afd92c594e07fda5437b692f44e165241", null ],
+    [ "ApplyDeadZone", "structmtgb_1_1InputConfig.html#a762d353ff2453bc00c4a7a558ef370c7", null ],
     [ "SetDeadZone", "structmtgb_1_1InputConfig.html#a7cfaa222e580256a0c7b282df8d55974", null ],
     [ "SetRange", "structmtgb_1_1InputConfig.html#ab0bbd37131538f932f4c03db2be7053c", null ],
     [ "SetRange", "structmtgb_1_1InputConfig.html#a40546ad5a6dcb5f80a3e7eab72513df6", null ],

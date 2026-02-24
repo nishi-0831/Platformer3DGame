@@ -3,10 +3,10 @@ var classmtgb_1_1Game =
     [ "RegisterSystemFuncHolder", "classmtgb_1_1Game_1_1RegisterSystemFuncHolder.html", "classmtgb_1_1Game_1_1RegisterSystemFuncHolder" ],
     [ "RegisterSystem", "classmtgb_1_1Game.html#a7eea92b18fc37c8fc4aaca16bb3323af", null ],
     [ "SystemUpdateType", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b", [
-      [ "DontCallMe", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840", null ],
-      [ "Cycle", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938", null ],
-      [ "Frame", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a", null ],
-      [ "Fixed", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61", null ]
+      [ "DONT_CALL_ME", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba6c3bc398fab8a28ec70599e05ea901a5", null ],
+      [ "CYCLE", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba11729ccb73dc5f4f62d40435e8a0c078", null ],
+      [ "FRAME", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac57e921596445b99ab85558984966184", null ],
+      [ "FIXED", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac6e6dc18b53b4c2681394b9d8aefcec7", null ]
     ] ],
     [ "Game", "classmtgb_1_1Game.html#ae512bb97ff6fdd2af8122b2d3c854389", null ],
     [ "~Game", "classmtgb_1_1Game.html#a315f86a443273ccc0c278f75620a7d18", null ],

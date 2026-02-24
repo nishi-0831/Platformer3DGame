@@ -22,6 +22,12 @@ var namespaces_dup =
     ] ],
     [ "run", "namespacerun.html", null ],
     [ "run-clang-tidy", "namespacerun-clang-tidy.html", "namespacerun-clang-tidy" ],
+    [ "run-find-all-symbols", "namespacerun-find-all-symbols.html", [
+      [ "find_compilation_database", "namespacerun-find-all-symbols.html#a5ad64c09db71bb9a4fe904dbdc710e97", null ],
+      [ "main", "namespacerun-find-all-symbols.html#a6102e68954047aad2cc9b542082ccc86", null ],
+      [ "MergeSymbols", "namespacerun-find-all-symbols.html#a55f6885cb37e1752efa93cd3e4557b97", null ],
+      [ "run_find_all_symbols", "namespacerun-find-all-symbols.html#a789165238620172c5596272f6b1bb04f", null ]
+    ] ],
     [ "strip_example", "namespacestrip__example.html", [
       [ "do_print", "namespacestrip__example.html#a9fff99ba5b5564a70fa48b9757ef9885", null ]
     ] ]

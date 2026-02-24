@@ -1,9 +1,9 @@
 var classmtgb_1_1Direct2D =
 [
     [ "~Direct2D", "classmtgb_1_1Direct2D.html#afa16bd7d41493e2a76d9d7596a66cef1", null ],
-    [ "ChangeRenderTarget", "classmtgb_1_1Direct2D.html#a34d11db16f98dcb5bee96bf29530c5c6", null ],
-    [ "CreateD2DRenderTarget", "classmtgb_1_1Direct2D.html#a1049944e949e09a76253068ecbbd3484", null ],
-    [ "CreateSolidColorBrush", "classmtgb_1_1Direct2D.html#a3db57726fee14226400c7d7d3468e681", null ],
+    [ "ChangeRenderTarget", "classmtgb_1_1Direct2D.html#a6c99b9db2c2cd3834630af4730e7fbd1", null ],
+    [ "CreateD2DRenderTarget", "classmtgb_1_1Direct2D.html#abe2d591a928f5755fe7b1bbfc41f22d9", null ],
+    [ "CreateSolidColorBrush", "classmtgb_1_1Direct2D.html#a5b2e0010e9fd608aaed3f55f3e2c6bd4", null ],
     [ "Draw", "classmtgb_1_1Direct2D.html#aa99edab7a5edd30088bb447511de2363", null ],
     [ "GetRenderTargetSize", "classmtgb_1_1Direct2D.html#ab1e32008048b1a4f376bb0cd1bf58314", null ],
     [ "Initialize", "classmtgb_1_1Direct2D.html#aeec060e7b5aa4b1c5170732b88c634f3", null ],

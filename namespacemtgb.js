@@ -11,11 +11,11 @@ var namespacemtgb =
     ] ],
     [ "Mathf", "namespacemtgb_1_1Mathf.html", "namespacemtgb_1_1Mathf" ],
     [ "WinCtxRes", "namespacemtgb_1_1WinCtxRes.html", [
-      [ "ChangeResource", "namespacemtgb_1_1WinCtxRes.html#aba4a5d6cb4d9f8fc555f3ebaba2ed511", null ],
+      [ "ChangeResource", "namespacemtgb_1_1WinCtxRes.html#a90b0731648ebd84cb9086bd6ce11bb42", null ],
       [ "CurrContext", "namespacemtgb_1_1WinCtxRes.html#aab085b2a33fdc4aac9d595eb57b58018", null ],
-      [ "Get", "namespacemtgb_1_1WinCtxRes.html#ab0926fb61d0db1d7c5f68fa830731d9e", null ],
-      [ "GetHWND", "namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099", null ],
-      [ "SwapWindow", "namespacemtgb_1_1WinCtxRes.html#a313dc121054a1ad972d12e05373daa9c", null ]
+      [ "Get", "namespacemtgb_1_1WinCtxRes.html#a8baba59d1c7568bd3fe62914c91bc555", null ],
+      [ "GetHWND", "namespacemtgb_1_1WinCtxRes.html#aeb419b2e87a896cdbac90e6cb9a92847", null ],
+      [ "SwapWindow", "namespacemtgb_1_1WinCtxRes.html#a0b5eb23b9f618ff29f898295f0c21d1a", null ]
     ] ],
     [ "AABB", "structmtgb_1_1AABB.html", "structmtgb_1_1AABB" ],
     [ "AddComponentCommand", "classmtgb_1_1AddComponentCommand.html", "classmtgb_1_1AddComponentCommand" ],
@@ -31,7 +31,6 @@ var namespacemtgb =
     [ "CircleDetectorConfig", "structmtgb_1_1CircleDetectorConfig.html", "structmtgb_1_1CircleDetectorConfig" ],
     [ "CircularSaw", "classmtgb_1_1CircularSaw.html", "classmtgb_1_1CircularSaw" ],
     [ "Collider", "classmtgb_1_1Collider.html", "classmtgb_1_1Collider" ],
-    [ "Collider_Register", "structmtgb_1_1Collider__Register.html", "structmtgb_1_1Collider__Register" ],
     [ "ColliderCP", "classmtgb_1_1ColliderCP.html", "classmtgb_1_1ColliderCP" ],
     [ "Color", "structmtgb_1_1Color.html", "structmtgb_1_1Color" ],
     [ "CommandHistoryManager", "classmtgb_1_1CommandHistoryManager.html", "classmtgb_1_1CommandHistoryManager" ],
@@ -127,7 +126,6 @@ var namespacemtgb =
     [ "LogEntry", "structmtgb_1_1LogEntry.html", "structmtgb_1_1LogEntry" ],
     [ "Matrix4x4", "structmtgb_1_1Matrix4x4.html", "structmtgb_1_1Matrix4x4" ],
     [ "MeshRenderer", "classmtgb_1_1MeshRenderer.html", "classmtgb_1_1MeshRenderer" ],
-    [ "MeshRenderer_Register", "structmtgb_1_1MeshRenderer__Register.html", "structmtgb_1_1MeshRenderer__Register" ],
     [ "MeshRendererCP", "classmtgb_1_1MeshRendererCP.html", "classmtgb_1_1MeshRendererCP" ],
     [ "ModelData", "structmtgb_1_1ModelData.html", "structmtgb_1_1ModelData" ],
     [ "MonitorInfo", "structmtgb_1_1MonitorInfo.html", "structmtgb_1_1MonitorInfo" ],
@@ -151,7 +149,6 @@ var namespacemtgb =
     [ "RenderSystem", "classmtgb_1_1RenderSystem.html", "classmtgb_1_1RenderSystem" ],
     [ "ResourceCollection", "structmtgb_1_1ResourceCollection.html", "structmtgb_1_1ResourceCollection" ],
     [ "RigidBody", "classmtgb_1_1RigidBody.html", "classmtgb_1_1RigidBody" ],
-    [ "RigidBody_Register", "structmtgb_1_1RigidBody__Register.html", "structmtgb_1_1RigidBody__Register" ],
     [ "RigidBodyCP", "classmtgb_1_1RigidBodyCP.html", "classmtgb_1_1RigidBodyCP" ],
     [ "Saw", "classmtgb_1_1Saw.html", "classmtgb_1_1Saw" ],
     [ "SceneSystem", "classmtgb_1_1SceneSystem.html", "classmtgb_1_1SceneSystem" ],
@@ -181,7 +178,6 @@ var namespacemtgb =
     [ "Time", "classmtgb_1_1Time.html", "classmtgb_1_1Time" ],
     [ "Timer", "classmtgb_1_1Timer.html", "classmtgb_1_1Timer" ],
     [ "Transform", "classmtgb_1_1Transform.html", "classmtgb_1_1Transform" ],
-    [ "Transform_Register", "structmtgb_1_1Transform__Register.html", "structmtgb_1_1Transform__Register" ],
     [ "TransformCore", "structmtgb_1_1TransformCore.html", "structmtgb_1_1TransformCore" ],
     [ "TransformCP", "classmtgb_1_1TransformCP.html", "classmtgb_1_1TransformCP" ],
     [ "TransparentStringEq", "structmtgb_1_1TransparentStringEq.html", "structmtgb_1_1TransparentStringEq" ],
@@ -239,80 +235,80 @@ var namespacemtgb =
       [ "Z", "namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa21c2e59531c8710156d34a3c30ac81d5", null ]
     ] ],
     [ "BlendMode", "namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748", [
-      [ "Default", "namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a7a1920d61156abc05a60135aefe8bc67", null ],
-      [ "Sprite", "namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd", null ],
-      [ "Max", "namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a6a061313d22e51e0f25b7cd4dc065233", null ]
+      [ "DEFAULT", "namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a5b39c8b553c821e7cddc6da64b5bd2ee", null ],
+      [ "SPRITE", "namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a2a3389b1d8bc619aed964477ec7b1a2d", null ],
+      [ "MAX", "namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a26a4b44a837bf97b972628509912b4a5", null ]
     ] ],
     [ "CameraOperation", "namespacemtgb.html#a37101587d14921b46ed8416616e9f088", [
-      [ "Track", "namespacemtgb.html#a37101587d14921b46ed8416616e9f088a92ea731d3af6677905303c88689f5d55", null ],
-      [ "Dolly", "namespacemtgb.html#a37101587d14921b46ed8416616e9f088a9248f8c529bc6873b8f4324e94777333", null ],
-      [ "Pan", "namespacemtgb.html#a37101587d14921b46ed8416616e9f088af6d4a17b27da35c2d90ce13801f36782", null ],
-      [ "Orbit", "namespacemtgb.html#a37101587d14921b46ed8416616e9f088a76e1ab7a1df8e64fe867b420645c8a68", null ]
+      [ "TRACK", "namespacemtgb.html#a37101587d14921b46ed8416616e9f088ab82057c0f8a7631cf533363631986a00", null ],
+      [ "DOLLY", "namespacemtgb.html#a37101587d14921b46ed8416616e9f088a0372b5bb7c1a52c53ee2e49bc393675f", null ],
+      [ "PAN", "namespacemtgb.html#a37101587d14921b46ed8416616e9f088ad74461db15255d85a44ffd72419646b3", null ],
+      [ "ORBIT", "namespacemtgb.html#a37101587d14921b46ed8416616e9f088a48d80811ec81276fb3ee0df3944e7aee", null ]
     ] ],
     [ "ControllerType", "namespacemtgb.html#ad5fce522aec9941a8920f42294209e65", [
-      [ "Unknown", "namespacemtgb.html#ad5fce522aec9941a8920f42294209e65a88183b946cc5f0e8c96b2e66e1c74a7e", null ],
-      [ "DualShock", "namespacemtgb.html#ad5fce522aec9941a8920f42294209e65ab53b94195dd24d77f138ebdfb78df4aa", null ],
-      [ "Xbox", "namespacemtgb.html#ad5fce522aec9941a8920f42294209e65a183709ebe3a1d675014d32b94ad7ed94", null ]
+      [ "UNKNOWN", "namespacemtgb.html#ad5fce522aec9941a8920f42294209e65a696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "DUAL_SHOCK", "namespacemtgb.html#ad5fce522aec9941a8920f42294209e65a32c4e1b2f367ffdff5e9fe9e2ee13a50", null ],
+      [ "XBOX", "namespacemtgb.html#ad5fce522aec9941a8920f42294209e65afe5f3ddabe2d78e8fa74cb11e1d035fc", null ]
     ] ],
     [ "DeviceType", "namespacemtgb.html#a919a09feaf3649c048364fffc3053d97", [
-      [ "Unknown", "namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a88183b946cc5f0e8c96b2e66e1c74a7e", null ],
-      [ "GamePad", "namespacemtgb.html#a919a09feaf3649c048364fffc3053d97abb8134cd77c31c188e34a0355f88bbc3", null ],
-      [ "FlightStick", "namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a82bfe87f5051b04e94fcddc085522da8", null ]
+      [ "UNKNOWN", "namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "GAME_PAD", "namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a8223371563afa8b540c699175eea42c4", null ],
+      [ "FLIGHT_STICK", "namespacemtgb.html#a919a09feaf3649c048364fffc3053d97ada99d55da1e236376d287fadb292f23d", null ]
     ] ],
     [ "EventScope", "namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eb", [
-      [ "Scene", "namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b", null ],
-      [ "Global", "namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8", null ]
+      [ "SCENE", "namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9ebaf151a543099185593a5a87339c552698", null ],
+      [ "GLOBAL", "namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba6eecfba72d12922ee1dead07a0ef3334", null ]
     ] ],
     [ "FlightStickAxisCode", "namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09", [
-      [ "Slider", "namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09a2d9b9a764fb0be4be10e1b2fce63f561", null ]
+      [ "SLIDER", "namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09a3c93f85078b290625b7c4db299979c4f", null ]
     ] ],
     [ "GameObjectLayer", "namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975c", [
       [ "A", "namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca7fc56270e7a70fa81a5935b72eacbe29", null ],
       [ "B", "namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca9d5ed678fe57bcca610140957afab571", null ],
-      [ "SceneView", "namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca7f62a1b28904e8f2bcca181b7f4de53a", null ]
+      [ "SCENE_VIEW", "namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca624337bf78e1f432337ba77ccfa867d5", null ]
     ] ],
     [ "GameObjectTag", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6", [
-      [ "Untagged", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a4cca2a863deef0fc4de9115b9164537b", null ],
-      [ "PlayerPlane", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6aee33f0b67ec108798fda18062ea5db55", null ],
-      [ "Player", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a636da1d35e805b00eae0fcd8333f9234", null ],
-      [ "Enemy", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a8c6d21187fb58b7a079d70030686b33e", null ]
+      [ "UNTAGGED", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6af06e4caec01a402c62ab55eb99588af9", null ],
+      [ "PLAYER_PLANE", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a80856e8e26e3b250a7ee160e16c59204", null ],
+      [ "PLAYER", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a07c80e2a355d91402a00d82b1fa13855", null ],
+      [ "ENEMY", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a92b09d1635332c90ae8508618a174244", null ]
     ] ],
     [ "GenerateType", "namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184", [
-      [ "Box", "namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184a3cfce651e667ab85486dd42a8185f98a", null ]
+      [ "BOX", "namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184ae657cce1913c857166b0475f18668ef5", null ]
     ] ],
     [ "InputType", "namespacemtgb.html#a849b27857061661deeb701b23f338eca", [
       [ "MOUSE", "namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4", null ],
       [ "JOYPAD", "namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234", null ]
     ] ],
     [ "PadAxisCode", "namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ff", [
-      [ "LeftTrigger", "namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ffac412c6d19da2afaf2dc8891f5bcb8901", null ],
-      [ "RightTrigger", "namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ffa837ed99a897594cef0d37403a18f0df0", null ]
+      [ "LEFT_TRIGGER", "namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ffa87cefa1bf6e203cee834747ea138e766", null ],
+      [ "RIGHT_TRIGGER", "namespacemtgb.html#ad61bbafbad13195ce5319d2a5ff838ffa1c6f9e180caaad13119136f0193b64e0", null ]
     ] ],
     [ "ShaderType", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd", [
-      [ "Figure", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda666df2f48cd16f38212c093999248769", null ],
-      [ "Sprite2D", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda411b82db44407403782a5ccfe79bac26", null ],
-      [ "FbxParts", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64", null ],
-      [ "FbxPartsSkin", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda4f4ef2d5fdce24d142a29d1d8b273cf3", null ],
-      [ "Unlit3D", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda0d5cb44a44795685855401fb93958bd5", null ],
-      [ "Debug3D", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951", null ],
-      [ "Ground", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda3519d51443d41746a097cd54cd5c11cf", null ],
-      [ "Trail", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdad518a06262ac68f1f006a4f802588130", null ],
-      [ "Terrain", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda4ccfea7a25fae3c1d31555f0856d2b42", null ],
-      [ "Box3D", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda171f0a41200dfd456bfe2c1f4818c74d", null ],
-      [ "Sea", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdad2379e01a93b56ed8fdc81907f7bf8c0", null ],
-      [ "Max", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda6a061313d22e51e0f25b7cd4dc065233", null ]
+      [ "FIGURE", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda09d157d9acf15ef510452fde936a4302", null ],
+      [ "SPRITE2_D", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdadc33fd0ad62ec97d3960478f7fb73e88", null ],
+      [ "FBX_PARTS", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda064c7ce013731f15c809ec3cec9d431b", null ],
+      [ "FBX_PARTS_SKIN", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda02bab20daa3c5b8cb538f2028df8c359", null ],
+      [ "UNLIT3_D", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda26ffa7174810ac0d7d09bd2f4a5a1fa4", null ],
+      [ "DEBUG3_D", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda5d66484f2e3c70ea2ee607571e02c907", null ],
+      [ "GROUND", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdadedcb56e75fe1488e20865e0ea36d0b9", null ],
+      [ "TRAIL", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdaaaaa969ded464fb875e8f46a907d85d7", null ],
+      [ "TERRAIN", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdabdfa171c5b4d44824eec5798556eef32", null ],
+      [ "BOX3_D", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda291aca4b0b422607796ebbe0706e751e", null ],
+      [ "SEA", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda9abd3d9b983e99aa1fd94837498b0bea", null ],
+      [ "MAX", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda26a4b44a837bf97b972628509912b4a5", null ]
     ] ],
     [ "TextAlignment", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dba", [
-      [ "topLeft", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa79ad18f72445fe00af22637f175bf878", null ],
-      [ "center", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667", null ],
-      [ "bottomLeft", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa5d42a1b01d408cdd65bb03d50fa0dd22", null ],
-      [ "middleLeft", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa272d5b527ad3bc9396d52e072a96c88b", null ]
+      [ "TOP_LEFT", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa747385047b85ae751f83adb36435a3c1", null ],
+      [ "CENTER", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaac397289ee45877be0cd49811fe245b4e", null ],
+      [ "BOTTOM_LEFT", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa8d81ac82421d1b03da58fccb9174892e", null ],
+      [ "MIDDLE_LEFT", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa9d4989e254422a15442ed8c59c600f1a", null ]
     ] ],
     [ "WindowContext", "namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1", [
-      [ "First", "namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04", null ],
-      [ "Second", "namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ac22cf8376b1893dcfcef0649fe1a7d87", null ],
-      [ "Both", "namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a130c5b3473c57faa76e2a1c54e26f88e", null ],
-      [ "None", "namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a6adf97f83acf6453d4a6a4b1070f3754", null ]
+      [ "FIRST", "namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade", null ],
+      [ "SECOND", "namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a2200becb80f0019c4a2ccecec350d0db", null ],
+      [ "BOTH", "namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a6328e5e3186c227a021ef2ff77e40197", null ],
+      [ "NONE", "namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1ab50339a10e1de285ac99d4c3990b8693", null ]
     ] ],
     [ "AllLayer", "namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca", null ],
     [ "CnvMat", "namespacemtgb.html#aef476b5efa10f9db87b5e54c07d1b1a4", null ],
@@ -320,9 +316,9 @@ var namespacemtgb =
     [ "CnvMat43", "namespacemtgb.html#a5e86786f434e471dcd0ca0d85a99d762", null ],
     [ "CnvMat43", "namespacemtgb.html#ae1551131a0e9dbd717886ccb05653588", null ],
     [ "CurrContext", "namespacemtgb.html#aab085b2a33fdc4aac9d595eb57b58018", null ],
-    [ "DefaultShow", "namespacemtgb.html#aedc3f191ebf23589770f544d20f22e68", null ],
+    [ "DefaultShow", "namespacemtgb.html#ab0200899390745ca410a56a016b7f1ad", null ],
     [ "ExtractClassName", "namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52", null ],
-    [ "GenDrawScreenFontSize", "namespacemtgb.html#ab4b8dd978ab7067457c64fff58ce96d3", null ],
+    [ "GenDrawScreenFontSize", "namespacemtgb.html#a5b4bfb3fd8bd3e08de326eef8202e396", null ],
     [ "GenDrawScreenFrom", "namespacemtgb.html#a2778ba0b24292346dd95d8772e138aa4", null ],
     [ "GenDrawScreenFrom", "namespacemtgb.html#aa0c8aa1c7d488ecaa2531125bc09dc55", null ],
     [ "GetMaxFrame", "namespacemtgb.html#ae2e78311ae690898379d70c5b3cfc4e7", null ],
@@ -348,7 +344,7 @@ var namespacemtgb =
     [ "operator+", "namespacemtgb.html#a8fac7a86cfff264e187ea61b965d462d", null ],
     [ "operator+", "namespacemtgb.html#aa5e9b994c29e0b7cdf179661f4474839", null ],
     [ "operator+", "namespacemtgb.html#a86e6fd350ac970e443231c09a6ce62d3", null ],
-    [ "operator+", "namespacemtgb.html#ab15672e8da758972ce15c3c7bc86a60e", null ],
+    [ "operator+", "namespacemtgb.html#aadb9bae94b48e862374916eb4c6b8c4a", null ],
     [ "operator-", "namespacemtgb.html#aee5a38752e79c786c5e0dfb719963168", null ],
     [ "operator-", "namespacemtgb.html#a0dd935bb928f4f940d7c96eece1425bc", null ],
     [ "operator-", "namespacemtgb.html#a423927b037e9e8a0a3f441d2a4b012f4", null ],
@@ -375,7 +371,6 @@ var namespacemtgb =
     [ "WideToMulti", "namespacemtgb.html#adc8c20922776d57ec11b4e9edaf40e52", null ],
     [ "WideToUTF8", "namespacemtgb.html#a7c912560b5d5b96e146066d28ef4da99", null ],
     [ "WideToUTF8", "namespacemtgb.html#a274542571e8161144eb6ddaa20f32fbd", null ],
-    [ "collider_register", "namespacemtgb.html#a27b5858b6e9545571cc006bee8a3ee2e", null ],
     [ "COMPONENT_CAPACITY", "namespacemtgb.html#a1ced21cf2838c5ebbe6588362fd2bf8e", null ],
     [ "false_v", "namespacemtgb.html#a5a8d3d1f7081ef4a73afb582d7bf8c13", null ],
     [ "ignoreName", "namespacemtgb.html#a55735a172a253178e6e8d0a5c3035ec2", null ],
@@ -383,8 +378,5 @@ var namespacemtgb =
     [ "INVALID_HANDLE", "namespacemtgb.html#a461c37884dafe5e26f7d9b0e2f97148b", null ],
     [ "MAX_BONE_COUNT", "namespacemtgb.html#a4db793b5c9051485f276693c97e7e757", null ],
     [ "MAX_SQUARE", "namespacemtgb.html#a386990ddd9c5071735e442afea1af977", null ],
-    [ "meshrenderer_register", "namespacemtgb.html#ada9b5c703d0a8d931a538f94c803a762", null ],
-    [ "movingfloor_register", "namespacemtgb.html#a53f72979020830164fcc77403794378f", null ],
-    [ "rigidbody_register", "namespacemtgb.html#a37e3168d82eed8b139922b6007e67a97", null ],
-    [ "transform_register", "namespacemtgb.html#afdeeac30af12a43ec6409f7d83752234", null ]
+    [ "movingfloor_register", "namespacemtgb.html#a53f72979020830164fcc77403794378f", null ]
 ];

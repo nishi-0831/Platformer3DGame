@@ -8,9 +8,9 @@ var structmtgb_1_1ResourceCollection =
     [ "end", "structmtgb_1_1ResourceCollection.html#a05c1aa1fd9408052946a952e22a2bb0d", null ],
     [ "Get", "structmtgb_1_1ResourceCollection.html#a29f4a3194911979cb1326fd55a8fe73f", null ],
     [ "Insert", "structmtgb_1_1ResourceCollection.html#a66e5c06f5d0f63400cad2f3cde381b3e", null ],
-    [ "operator[]", "structmtgb_1_1ResourceCollection.html#a9ac74afe9467f5af31709d44f38e758a", null ],
-    [ "operator[]", "structmtgb_1_1ResourceCollection.html#a25c66a4d4dcaa08efbf878b43a8a589d", null ],
+    [ "operator[]", "structmtgb_1_1ResourceCollection.html#ad44c8f50157cc616a222afa32f741a3c", null ],
+    [ "operator[]", "structmtgb_1_1ResourceCollection.html#aa0489fe20315e548b81e8f1dfee7dee6", null ],
     [ "Release", "structmtgb_1_1ResourceCollection.html#a1af8071476cc0164fc4515ae01090549", null ],
-    [ "Swap", "structmtgb_1_1ResourceCollection.html#aed7d5da423cef2d96d998c4b7d7acc07", null ],
+    [ "Swap", "structmtgb_1_1ResourceCollection.html#a1b5be1d185c1db86b4b34584f6156d10", null ],
     [ "resourceCollection_", "structmtgb_1_1ResourceCollection.html#a937d852a677be22dc1a74cb65636bfd2", null ]
 ];

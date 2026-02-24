@@ -1,14 +1,14 @@
 var searchData=
 [
   ['d_0',['D',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af623e75af30e62bbd73d6df5b50bb7b5',1,'InputKeyCode.h']]],
-  ['debug3d_1',['Debug3D',['../namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951',1,'mtgb']]],
-  ['decimal_2',['Decimal',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a937504f318f04eaf0f1d701df4c4d7f3',1,'InputKeyCode.h']]],
-  ['default_3',['Default',['../namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a7a1920d61156abc05a60135aefe8bc67',1,'mtgb']]],
-  ['delete_4',['Delete',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af2a6c498fb90ee345d997f888fce3b18',1,'InputKeyCode.h']]],
-  ['divide_5',['Divide',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a0b914e196182d02615487e9793ecff3d',1,'InputKeyCode.h']]],
-  ['dolly_6',['Dolly',['../namespacemtgb.html#a37101587d14921b46ed8416616e9f088a9248f8c529bc6873b8f4324e94777333',1,'mtgb']]],
-  ['dontcallme_7',['DontCallMe',['../classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840',1,'mtgb::Game']]],
-  ['down_8',['Down',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a08a38277b0309070706f6652eeae9a53',1,'Down():&#160;InputKeyCode.h'],['../InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a08a38277b0309070706f6652eeae9a53',1,'Down():&#160;InputPadCode.h']]],
+  ['debug3_5fd_1',['DEBUG3_D',['../namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda5d66484f2e3c70ea2ee607571e02c907',1,'mtgb']]],
+  ['decimal_2',['DECIMAL',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a13d992d671957e9a2b3e936ca0cf14a4',1,'InputKeyCode.h']]],
+  ['default_3',['DEFAULT',['../namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a5b39c8b553c821e7cddc6da64b5bd2ee',1,'mtgb']]],
+  ['delete_4',['DELETE',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a32f68a60cef40faedbc6af20298c1a1e',1,'InputKeyCode.h']]],
+  ['divide_5',['DIVIDE',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a210c66d794cec40488f3f8f634d6c33b',1,'InputKeyCode.h']]],
+  ['dolly_6',['DOLLY',['../namespacemtgb.html#a37101587d14921b46ed8416616e9f088a0372b5bb7c1a52c53ee2e49bc393675f',1,'mtgb']]],
+  ['dont_5fcall_5fme_7',['DONT_CALL_ME',['../classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba6c3bc398fab8a28ec70599e05ea901a5',1,'mtgb::Game']]],
+  ['down_8',['DOWN',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ac4e0e4e3118472beeb2ae75827450f1f',1,'DOWN():&#160;InputKeyCode.h'],['../InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9ac4e0e4e3118472beeb2ae75827450f1f',1,'DOWN():&#160;InputPadCode.h']]],
   ['drmp3_5fmetadata_5ftype_5fape_9',['DRMP3_METADATA_TYPE_APE',['../dr__mp3_8h.html#a65f139d4bec1e0395093497f44bdce46a28b12b320e8039aa9c539b680767d7c7',1,'dr_mp3.h']]],
   ['drmp3_5fmetadata_5ftype_5fid3v1_10',['DRMP3_METADATA_TYPE_ID3V1',['../dr__mp3_8h.html#a65f139d4bec1e0395093497f44bdce46a2e8aeb6b0c552b92e91d41dbd15730bf',1,'dr_mp3.h']]],
   ['drmp3_5fmetadata_5ftype_5fid3v2_11',['DRMP3_METADATA_TYPE_ID3V2',['../dr__mp3_8h.html#a65f139d4bec1e0395093497f44bdce46acb85708f2ddcbc50d297ff4ecf65c556',1,'dr_mp3.h']]],
@@ -17,6 +17,6 @@ var searchData=
   ['drmp3_5fseek_5fcur_14',['DRMP3_SEEK_CUR',['../dr__mp3_8h.html#a09c24b549f31048ce551a25ee2418550ac8a71a19b390403f5131a0d7e180b89f',1,'dr_mp3.h']]],
   ['drmp3_5fseek_5fend_15',['DRMP3_SEEK_END',['../dr__mp3_8h.html#a09c24b549f31048ce551a25ee2418550a82cb5d79f26fcefb3f3f8afae08b240a',1,'dr_mp3.h']]],
   ['drmp3_5fseek_5fset_16',['DRMP3_SEEK_SET',['../dr__mp3_8h.html#a09c24b549f31048ce551a25ee2418550a2038f87fffa40c0b3d9d4721261ea470',1,'dr_mp3.h']]],
-  ['dualshock_17',['DualShock',['../namespacemtgb.html#ad5fce522aec9941a8920f42294209e65ab53b94195dd24d77f138ebdfb78df4aa',1,'mtgb']]],
+  ['dual_5fshock_17',['DUAL_SHOCK',['../namespacemtgb.html#ad5fce522aec9941a8920f42294209e65a32c4e1b2f367ffdff5e9fe9e2ee13a50',1,'mtgb']]],
   ['dying_18',['DYING',['../classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52',1,'Player::DYING()'],['../classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498abfedf8515782de6fc236141383aeae52',1,'PatrolChargerEnemy::DYING()']]]
 ];

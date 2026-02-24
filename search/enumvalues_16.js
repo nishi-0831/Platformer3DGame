@@ -2,13 +2,13 @@ var searchData=
 [
   ['w_0',['W',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a61e9c06ea9a85a5088a499df6458d276',1,'InputKeyCode.h']]],
   ['wait_1',['WAIT',['../classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498ad5cc6a0064b5c25ba37826aa3fda910c',1,'PatrolChargerEnemy']]],
-  ['wake_2',['Wake',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a688761c83ec62d30ec1fe269849d42ad',1,'InputKeyCode.h']]],
-  ['webback_3',['WebBack',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aa92d4d6d44883cf23c0de1888df640cd',1,'InputKeyCode.h']]],
-  ['webfavorites_4',['WebFavorites',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ac106a2b486a095e48409ba5371457f17',1,'InputKeyCode.h']]],
-  ['webforward_5',['WebForward',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aa8ae070027b0ed730503dc55b7c31b99',1,'InputKeyCode.h']]],
-  ['webhome_6',['WebHome',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a498251363288fa6669ca2e50841cd4fe',1,'InputKeyCode.h']]],
-  ['webrefresh_7',['WebRefresh',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a29e149f448653b499ed0de9608fd63e3',1,'InputKeyCode.h']]],
-  ['websearch_8',['WebSearch',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ac21eb5535c0f81a03619367736493393',1,'InputKeyCode.h']]],
-  ['webstop_9',['WebStop',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a37f529327b6bb5bc9e6b44cd8190ec20',1,'InputKeyCode.h']]],
+  ['wake_2',['WAKE',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab275d6bfcd179f9ffb5011008e30cb48',1,'InputKeyCode.h']]],
+  ['web_5fback_3',['WEB_BACK',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aa82e7c2ac5c81f73d9972e7b621cf506',1,'InputKeyCode.h']]],
+  ['web_5ffavorites_4',['WEB_FAVORITES',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a9a50aa85ecfd48ed45f496016d1acf50',1,'InputKeyCode.h']]],
+  ['web_5fforward_5',['WEB_FORWARD',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4feeb783d4abf6e15dfb649ffd16d57e',1,'InputKeyCode.h']]],
+  ['web_5fhome_6',['WEB_HOME',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a6c0a349b5b8113fb022682c66d911f28',1,'InputKeyCode.h']]],
+  ['web_5frefresh_7',['WEB_REFRESH',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a17cfa316273104dc41038dc873e94a32',1,'InputKeyCode.h']]],
+  ['web_5fsearch_8',['WEB_SEARCH',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574abd673c9bcff84a713f6807a5ab356393',1,'InputKeyCode.h']]],
+  ['web_5fstop_9',['WEB_STOP',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a93f1e348eac48cc907388a84fed4f188',1,'InputKeyCode.h']]],
   ['white_10',['WHITE',['../structmtgb_1_1Color.html#aebd103a390fa9fa8a8cd4ba98446655faf56aa40412b574bb5b3feba5b9e2be32',1,'mtgb::Color']]]
 ];

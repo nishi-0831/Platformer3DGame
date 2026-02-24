@@ -131,9 +131,9 @@ mtgb::Event&lt; EventDataType &gt; 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:ad189bd0a8ae1e0a3036e7013da5ff52f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#ad738259c78f720b2b17dfaa0fd8b2346">EventHandlerId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Event.html#ad189bd0a8ae1e0a3036e7013da5ff52f">Subscribe</a> (<a class="el" href="classmtgb_1_1Event.html#a950f5e33529a4d411e782b036a0dafca">EventHandler</a> _handler, <a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eb">EventScope</a> _scope=<a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b">EventScope::Scene</a>)</td></tr>
-<tr class="memdesc:ad189bd0a8ae1e0a3036e7013da5ff52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ハンドラを登録し、登録に割り当てられた ID を返す  <br /></td></tr>
-<tr class="separator:ad189bd0a8ae1e0a3036e7013da5ff52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2f89b4fbfa3abafcba906ea92e4a88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemtgb.html#ad738259c78f720b2b17dfaa0fd8b2346">EventHandlerId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Event.html#ace2f89b4fbfa3abafcba906ea92e4a88">Subscribe</a> (<a class="el" href="classmtgb_1_1Event.html#a950f5e33529a4d411e782b036a0dafca">EventHandler</a> _handler, <a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eb">EventScope</a> _scope=<a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9ebaf151a543099185593a5a87339c552698">EventScope::SCENE</a>)</td></tr>
+<tr class="memdesc:ace2f89b4fbfa3abafcba906ea92e4a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">ハンドラを登録し、登録に割り当てられた ID を返す  <br /></td></tr>
+<tr class="separator:ace2f89b4fbfa3abafcba906ea92e4a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89abe4569395be46d54ebaaffa657e79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Event.html#a89abe4569395be46d54ebaaffa657e79">Unsubscribe</a> (<a class="el" href="namespacemtgb.html#ad738259c78f720b2b17dfaa0fd8b2346">EventHandlerId</a> _id)</td></tr>
 <tr class="memdesc:a89abe4569395be46d54ebaaffa657e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したハンドラ ID を保留解除キューに追加する  <br /></td></tr>
 <tr class="separator:a89abe4569395be46d54ebaaffa657e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,8 +232,8 @@ template&lt;typename EventDataType &gt; </div>
 
 </div>
 </div>
-<a id="ad189bd0a8ae1e0a3036e7013da5ff52f" name="ad189bd0a8ae1e0a3036e7013da5ff52f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad189bd0a8ae1e0a3036e7013da5ff52f">&#9670;&#160;</a></span>Subscribe()</h2>
+<a id="ace2f89b4fbfa3abafcba906ea92e4a88" name="ace2f89b4fbfa3abafcba906ea92e4a88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace2f89b4fbfa3abafcba906ea92e4a88">&#9670;&#160;</a></span>Subscribe()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,7 +253,7 @@ template&lt;typename EventDataType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eb">EventScope</a>&#160;</td>
-          <td class="paramname"><em>_scope</em> = <code><a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b">EventScope::Scene</a></code>&#160;</td>
+          <td class="paramname"><em>_scope</em> = <code><a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9ebaf151a543099185593a5a87339c552698">EventScope::SCENE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -399,7 +399,7 @@ template&lt;typename EventDataType &gt; </div>
 <div class="line"><span class="lineno">   71</span> </div>
 <div class="line"><span class="lineno">   72</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.begin(); itr != <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.end();)</div>
 <div class="line"><span class="lineno">   73</span>            {</div>
-<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">if</span> (itr-&gt;second.scope == <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b">EventScope::Scene</a>)</div>
+<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">if</span> (itr-&gt;second.scope == <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9ebaf151a543099185593a5a87339c552698">EventScope::SCENE</a>)</div>
 <div class="line"><span class="lineno">   75</span>                {</div>
 <div class="line"><span class="lineno">   76</span>                    itr = <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.erase(itr);</div>
 <div class="line"><span class="lineno">   77</span>                }</div>
@@ -409,9 +409,9 @@ template&lt;typename EventDataType &gt; </div>
 <div class="line"><span class="lineno">   81</span>                }</div>
 <div class="line"><span class="lineno">   82</span>            }</div>
 <div class="line"><span class="lineno">   83</span>        }</div>
-<div class="ttc" id="anamespacemtgb_html_acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b"><div class="ttname"><a href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b">mtgb::EventScope::Scene</a></div><div class="ttdeci">@ Scene</div></div>
+<div class="ttc" id="anamespacemtgb_html_acd206f28363bccdce4c5fc97d67cf9ebaf151a543099185593a5a87339c552698"><div class="ttname"><a href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9ebaf151a543099185593a5a87339c552698">mtgb::EventScope::SCENE</a></div><div class="ttdeci">@ SCENE</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00109">mtgb::Event&lt; EventDataType &gt;::handlers_</a>, <a class="el" href="EventManager_8h_source.html#l00110">mtgb::Event&lt; EventDataType &gt;::pendingUnsubscribeIds</a>, <a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba9ead0d38e06ec253ca0ecbf6ea56e59b">mtgb::Scene</a>.</p>
+<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00109">mtgb::Event&lt; EventDataType &gt;::handlers_</a>, <a class="el" href="EventManager_8h_source.html#l00110">mtgb::Event&lt; EventDataType &gt;::pendingUnsubscribeIds</a>, <a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9ebaf151a543099185593a5a87339c552698">mtgb::SCENE</a>.</p>
 
 </div>
 </div>

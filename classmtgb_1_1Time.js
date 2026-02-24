@@ -2,8 +2,8 @@ var classmtgb_1_1Time =
 [
     [ "Time", "classmtgb_1_1Time.html#a96233c8e9dbb2fe07cfc51a0285c91bf", null ],
     [ "~Time", "classmtgb_1_1Time.html#abe2f8ab31a0ed55ff7de7b793557461f", null ],
-    [ "DeltaTime", "classmtgb_1_1Time.html#aae0c02a40ac234ba42be555d54a177cb", null ],
-    [ "DeltaTimeF", "classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d", null ],
+    [ "DeltaTime", "classmtgb_1_1Time.html#ab4e3e9adf3ec8db3eced538cc6145aa9", null ],
+    [ "DeltaTimeF", "classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe", null ],
     [ "Initialize", "classmtgb_1_1Time.html#a7d6fe4a36d89d9a121ebb06722e4b9ba", null ],
     [ "Release", "classmtgb_1_1Time.html#aa2823e5390468dfc47213b845c55d3ac", null ],
     [ "Update", "classmtgb_1_1Time.html#a49391dbce8d82d23e81bc378ed71b6b2", null ],

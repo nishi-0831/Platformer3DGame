@@ -2,7 +2,7 @@ var classmtbin_1_1MemoryStream =
 [
     [ "SeekPoint", "classmtbin_1_1MemoryStream.html#a7bcfcbc664e53c5d90a16fa53c28f3ce", null ],
     [ "SeekDir", "classmtbin_1_1MemoryStream.html#a210b2d7f90f31993dd13e9368bc95af5", [
-      [ "Head", "classmtbin_1_1MemoryStream.html#a210b2d7f90f31993dd13e9368bc95af5a98921133d10fbdb0fb6dbb7b2648befe", null ]
+      [ "HEAD", "classmtbin_1_1MemoryStream.html#a210b2d7f90f31993dd13e9368bc95af5ae15e216fc1c639f787b1231ecdfa1bf8", null ]
     ] ],
     [ "MemoryStream", "classmtbin_1_1MemoryStream.html#a521fabf5ce93a48d6a8e990f46cdcdbb", null ],
     [ "~MemoryStream", "classmtbin_1_1MemoryStream.html#ad37d8ace36320854dc655497b7c1e94b", null ],

@@ -1,11 +1,11 @@
 var structmtgb_1_1Color =
 [
     [ "Component", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025e", [
-      [ "Blue", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea9594eec95be70e7b1710f730fdda33d9", null ],
-      [ "Green", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ead382816a3cbeed082c9e216e7392eed1", null ],
-      [ "Red", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025eaee38e4d5dd68c4e440825018d549cb47", null ],
-      [ "Alpha", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea6132295fcf5570fb8b0a944ef322a598", null ],
-      [ "Max", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea6a061313d22e51e0f25b7cd4dc065233", null ]
+      [ "BLUE", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea1b3e1ee9bff86431dea6b181365ba65f", null ],
+      [ "GREEN", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea9de0e5dd94e861317e74964bed179fa0", null ],
+      [ "RED", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025eaa2d9547b5d3dd9f05984475f7c926da0", null ],
+      [ "ALPHA", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea002101f8725e5c78d9f30d87f3fa4c87", null ],
+      [ "MAX", "structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea26a4b44a837bf97b972628509912b4a5", null ]
     ] ],
     [ "Color", "structmtgb_1_1Color.html#ad20b878fe9204b2010aec94718a64013", null ],
     [ "Color", "structmtgb_1_1Color.html#ab10eb2aba186ca859f279371a15a60c6", null ],

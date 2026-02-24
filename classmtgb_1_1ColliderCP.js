@@ -10,11 +10,12 @@ var classmtgb_1_1ColliderCP =
     [ "Get", "classmtgb_1_1ColliderCP.html#a46d912d48cb0755f013969a21967d6ad", null ],
     [ "Initialize", "classmtgb_1_1ColliderCP.html#ae1e9531d09f9efd3bf9eb8952ffd6b63", null ],
     [ "IsHitAll", "classmtgb_1_1ColliderCP.html#ac350bcabc48cda29ce797380cc727243", null ],
-    [ "RayCastHit", "classmtgb_1_1ColliderCP.html#a18b51e8f2fed80229dc6d8350378173b", null ],
-    [ "RayCastHitAll", "classmtgb_1_1ColliderCP.html#a651100ac87d5652ca40de82ad1d4cf9b", null ],
+    [ "RayCastHit", "classmtgb_1_1ColliderCP.html#adaff30b59f72e58050b1b3f10af75944", null ],
+    [ "RayCastHitAll", "classmtgb_1_1ColliderCP.html#a44c1ce38039e2df6b0a16266f59dad91", null ],
     [ "RectContains", "classmtgb_1_1ColliderCP.html#a5ff747fb10756f92be4466366204caa9", null ],
     [ "RectContains", "classmtgb_1_1ColliderCP.html#a05b6311298d2cf0aefa1569a7806cae6", null ],
     [ "RectContainsImpl", "classmtgb_1_1ColliderCP.html#a0dbebdc49dc985a5e41b5cfbc1cdb309", null ],
+    [ "RegisterComponent", "classmtgb_1_1ColliderCP.html#a9b0b2edd12341a67d7b1c2b6acd2c703", null ],
     [ "RegisterCurrentScene", "classmtgb_1_1ColliderCP.html#a4d2d02ef42687005a44d0fb93b353182", null ],
     [ "RegisterImGuiIfExists", "classmtgb_1_1ColliderCP.html#aad8cb5427de9992720dbc1de18164eee", null ],
     [ "RegisterImGuiIfExists", "classmtgb_1_1ColliderCP.html#a2d34accda3456f0ff7ac5a0e6e252b91", null ],
@@ -29,5 +30,6 @@ var classmtgb_1_1ColliderCP =
     [ "UnRegister", "classmtgb_1_1ColliderCP.html#ab82a287462c507e3466b04a558bcd5b7", null ],
     [ "Update", "classmtgb_1_1ColliderCP.html#a4efce876b843c2f381cff7b6854e9988", null ],
     [ "pool_", "classmtgb_1_1ColliderCP.html#a7e94ec8a5981bee7000d7ab292a767d4", null ],
-    [ "poolId_", "classmtgb_1_1ColliderCP.html#a1a037eb9620331b340d705b109d7a3d5", null ]
+    [ "poolId_", "classmtgb_1_1ColliderCP.html#a1a037eb9620331b340d705b109d7a3d5", null ],
+    [ "useFlag_", "classmtgb_1_1ColliderCP.html#a757b1b87b0a9b8a25fb21680b43933da", null ]
 ];

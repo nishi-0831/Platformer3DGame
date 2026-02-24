@@ -176,8 +176,8 @@ mtgb::CommandHistoryManager 連携図</div>
 
 <p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00004">4</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>    : <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a46ea6557225433f93979045211c5af97">inner_</a>{<span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1NamedCommandHistory.html">NamedCommandHistory</a>(<span class="keyword">new</span> <a class="code hl_class" href="classCommandHistory.html">CommandHistory</a>())}</div>
-<div class="line"><span class="lineno">    6</span>    , <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>{<span class="keyword">nullptr</span>}</div>
-<div class="line"><span class="lineno">    7</span>    , <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a>{<span class="keyword">false</span>}</div>
+<div class="line"><span class="lineno">    6</span>    , <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a766ca2aba5998bc49d6b10066a1af5e3">isGrouping_</a>{<span class="keyword">false</span>}</div>
+<div class="line"><span class="lineno">    7</span>    , <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a1a9ab0077eb66e5a289efc1a3f07083b">pGroupCommand_</a>{<span class="keyword">nullptr</span>}</div>
 <div class="line"><span class="lineno">    8</span>{</div>
 <div class="line"><span class="lineno">    9</span>}</div>
 <div class="ttc" id="aclassCommandHistory_html"><div class="ttname"><a href="classCommandHistory.html">CommandHistory</a></div><div class="ttdoc">コマンドのスタックを保持し、管理を行う</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8h_source.html#l00045">CommandHistory.h:46</a></div></div>
@@ -604,17 +604,17 @@ mtgb::CommandHistoryManager 連携図</div>
 
 <p class="definition"> <a class="el" href="CommandHistoryManager_8cpp_source.html">CommandHistoryManager.cpp</a> の <a class="el" href="CommandHistoryManager_8cpp_source.html#l00015">15</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">DirectShow</a>(</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">MTImGui::Instance</a>().<a class="code hl_function" href="classmtgb_1_1MTImGui.html#ae90adc7088ed07fe92310d50ab70df16">DirectShow</a>(</div>
 <div class="line"><span class="lineno">   18</span>        [<span class="keyword">this</span>]()</div>
 <div class="line"><span class="lineno">   19</span>        {</div>
 <div class="line"><span class="lineno">   20</span>            <a class="code hl_variable" href="classmtgb_1_1CommandHistoryManager.html#a46ea6557225433f93979045211c5af97">inner_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1NamedCommandHistory.html#ae1fa4296f8be70e945df95b49922d449">DrawImGuiStack</a>();</div>
 <div class="line"><span class="lineno">   21</span>        },</div>
 <div class="line"><span class="lineno">   22</span>        <span class="stringliteral">&quot;CommandStack&quot;</span>,</div>
-<div class="line"><span class="lineno">   23</span>        ShowType::Editor</div>
+<div class="line"><span class="lineno">   23</span>        ShowType::EDITOR</div>
 <div class="line"><span class="lineno">   24</span>    );</div>
 <div class="line"><span class="lineno">   25</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00036">MTImGui.h:36</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_aa9081f2cfb7ed13e429f9da025d215d4"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aa9081f2cfb7ed13e429f9da025d215d4">mtgb::MTImGui::DirectShow</a></div><div class="ttdeci">void DirectShow(std::function&lt; void()&gt; func, const std::string &amp;name, ShowType show)</div><div class="ttdoc">コールバックを表示キューに直接積む</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00458">MTImGui.cpp:458</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1MTImGui_html_ae90adc7088ed07fe92310d50ab70df16"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#ae90adc7088ed07fe92310d50ab70df16">mtgb::MTImGui::DirectShow</a></div><div class="ttdeci">void DirectShow(std::function&lt; void()&gt; _func, const std::string &amp;_name, ShowType _show)</div><div class="ttdoc">コールバックを表示キューに直接積む</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00458">MTImGui.cpp:458</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1NamedCommandHistory_html_ae1fa4296f8be70e945df95b49922d449"><div class="ttname"><a href="classmtgb_1_1NamedCommandHistory.html#ae1fa4296f8be70e945df95b49922d449">mtgb::NamedCommandHistory::DrawImGuiStack</a></div><div class="ttdeci">void DrawImGuiStack() const</div><div class="ttdef"><b>Definition:</b> <a href="NamedCommandHistory_8cpp_source.html#l00096">NamedCommandHistory.cpp:96</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="MTImGui_8cpp_source.html#l00458">mtgb::MTImGui::DirectShow()</a>, <a class="el" href="NamedCommandHistory_8cpp_source.html#l00096">mtgb::NamedCommandHistory::DrawImGuiStack()</a>, <a class="el" href="CommandHistoryManager_8h_source.html#l00026">inner_</a>, <a class="el" href="MTImGui_8h_source.html#l00036">mtgb::MTImGui::Instance()</a>.</p>

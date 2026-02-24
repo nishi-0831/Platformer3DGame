@@ -6,10 +6,10 @@ var Axis_8h =
       [ "Z", "Axis_8h.html#ad8e6de006fc9434a3c3d40499268cf8aa21c2e59531c8710156d34a3c30ac81d5", null ]
     ] ],
     [ "FlightStickAxisCode", "Axis_8h.html#a797dd9c444461d95b1013c74c135cf09", [
-      [ "Slider", "Axis_8h.html#a797dd9c444461d95b1013c74c135cf09a2d9b9a764fb0be4be10e1b2fce63f561", null ]
+      [ "SLIDER", "Axis_8h.html#a797dd9c444461d95b1013c74c135cf09a3c93f85078b290625b7c4db299979c4f", null ]
     ] ],
     [ "PadAxisCode", "Axis_8h.html#ad61bbafbad13195ce5319d2a5ff838ff", [
-      [ "LeftTrigger", "Axis_8h.html#ad61bbafbad13195ce5319d2a5ff838ffac412c6d19da2afaf2dc8891f5bcb8901", null ],
-      [ "RightTrigger", "Axis_8h.html#ad61bbafbad13195ce5319d2a5ff838ffa837ed99a897594cef0d37403a18f0df0", null ]
+      [ "LEFT_TRIGGER", "Axis_8h.html#ad61bbafbad13195ce5319d2a5ff838ffa87cefa1bf6e203cee834747ea138e766", null ],
+      [ "RIGHT_TRIGGER", "Axis_8h.html#ad61bbafbad13195ce5319d2a5ff838ffa1c6f9e180caaad13119136f0193b64e0", null ]
     ] ]
 ];

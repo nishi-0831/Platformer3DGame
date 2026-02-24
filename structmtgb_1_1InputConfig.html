@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('structmtgb_1_1InputConfig.html',''); i
 <div class="dynheader">
 mtgb::InputConfig 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structmtgb_1_1InputConfig__coll__graph.svg" width="202" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmtgb_1_1InputConfig__coll__graph.svg" width="202" height="250"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -120,9 +120,9 @@ mtgb::InputConfig 連携図</div>
 <tr class="memitem:a7cfaa222e580256a0c7b282df8d55974"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1InputConfig.html#a7cfaa222e580256a0c7b282df8d55974">SetDeadZone</a> (float _deadZone)</td></tr>
 <tr class="memdesc:a7cfaa222e580256a0c7b282df8d55974"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定した値(割合)をデッドゾーンに設定  <br /></td></tr>
 <tr class="separator:a7cfaa222e580256a0c7b282df8d55974"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd92c594e07fda5437b692f44e165241"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1InputConfig.html#afd92c594e07fda5437b692f44e165241">ApplyDeadZone</a> (const float value) const</td></tr>
-<tr class="memdesc:afd92c594e07fda5437b692f44e165241"><td class="mdescLeft">&#160;</td><td class="mdescRight">デッドゾーンを適用して0～1の範囲に正規化する  <br /></td></tr>
-<tr class="separator:afd92c594e07fda5437b692f44e165241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a762d353ff2453bc00c4a7a558ef370c7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1InputConfig.html#a762d353ff2453bc00c4a7a558ef370c7">ApplyDeadZone</a> (const float _value) const</td></tr>
+<tr class="memdesc:a762d353ff2453bc00c4a7a558ef370c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">デッドゾーンを適用して0～1の範囲に正規化する  <br /></td></tr>
+<tr class="separator:a762d353ff2453bc00c4a7a558ef370c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 公開変数類</h2></td></tr>
@@ -139,8 +139,8 @@ mtgb::InputConfig 連携図</div>
 <div class="textblock">
 <p class="definition"> <a class="el" href="InputConfig_8h_source.html">InputConfig.h</a> の <a class="el" href="InputConfig_8h_source.html#l00006">6</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
-<a id="afd92c594e07fda5437b692f44e165241" name="afd92c594e07fda5437b692f44e165241"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd92c594e07fda5437b692f44e165241">&#9670;&#160;</a></span>ApplyDeadZone()</h2>
+<a id="a762d353ff2453bc00c4a7a558ef370c7" name="a762d353ff2453bc00c4a7a558ef370c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a762d353ff2453bc00c4a7a558ef370c7">&#9670;&#160;</a></span>ApplyDeadZone()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -149,7 +149,7 @@ mtgb::InputConfig 連携図</div>
           <td class="memname">float mtgb::InputConfig::ApplyDeadZone </td>
           <td>(</td>
           <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramname"><em>_value</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -167,13 +167,13 @@ mtgb::InputConfig 連携図</div>
 <p class="definition"> <a class="el" href="InputConfig_8cpp_source.html">InputConfig.cpp</a> の <a class="el" href="InputConfig_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
 <div class="line"><span class="lineno">   33</span>    <span class="comment">// 絶対値がデッドゾーンに満たないなら0</span></div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (std::abs(value) &lt; <a class="code hl_variable" href="structmtgb_1_1InputConfig.html#a7d63de7973346c369da9691b0d00ca88">deadZone</a>)</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (std::abs(_value) &lt; <a class="code hl_variable" href="structmtgb_1_1InputConfig.html#a7d63de7973346c369da9691b0d00ca88">deadZone</a>)</div>
 <div class="line"><span class="lineno">   35</span>    {</div>
 <div class="line"><span class="lineno">   36</span>        <span class="keywordflow">return</span> 0.0f;</div>
 <div class="line"><span class="lineno">   37</span>    }</div>
 <div class="line"><span class="lineno">   38</span>    <span class="comment">// 0～1の範囲に正規化する</span></div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">float</span> sign = (value &gt; 0) ? 1.0f : -1.0f;</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> sign * (std::abs(value) - <a class="code hl_variable" href="structmtgb_1_1InputConfig.html#a7d63de7973346c369da9691b0d00ca88">deadZone</a>) / (1.0f - <a class="code hl_variable" href="structmtgb_1_1InputConfig.html#a7d63de7973346c369da9691b0d00ca88">deadZone</a>);</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">float</span> sign = (_value &gt; 0) ? 1.0f : -1.0f;</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> sign * (std::abs(_value) - <a class="code hl_variable" href="structmtgb_1_1InputConfig.html#a7d63de7973346c369da9691b0d00ca88">deadZone</a>) / (1.0f - <a class="code hl_variable" href="structmtgb_1_1InputConfig.html#a7d63de7973346c369da9691b0d00ca88">deadZone</a>);</div>
 <div class="line"><span class="lineno">   41</span>}</div>
 <div class="ttc" id="astructmtgb_1_1InputConfig_html_a7d63de7973346c369da9691b0d00ca88"><div class="ttname"><a href="structmtgb_1_1InputConfig.html#a7d63de7973346c369da9691b0d00ca88">mtgb::InputConfig::deadZone</a></div><div class="ttdeci">float deadZone</div><div class="ttdef"><b>Definition:</b> <a href="InputConfig_8h_source.html#l00013">InputConfig.h:13</a></div></div>
 </div><!-- fragment -->
@@ -181,7 +181,7 @@ mtgb::InputConfig 連携図</div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structmtgb_1_1InputConfig_afd92c594e07fda5437b692f44e165241_icgraph.svg" width="1026" height="223"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmtgb_1_1InputConfig_a762d353ff2453bc00c4a7a558ef370c7_icgraph.svg" width="1026" height="223"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

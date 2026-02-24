@@ -2,10 +2,10 @@ var classSampleGame =
 [
     [ "RegisterSystem", "classSampleGame.html#a7eea92b18fc37c8fc4aaca16bb3323af", null ],
     [ "SystemUpdateType", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686b", [
-      [ "DontCallMe", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba3faf43f049af9fd9ea3be12578807840", null ],
-      [ "Cycle", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba46e4c9ef8686e58a89edb553aba6d938", null ],
-      [ "Frame", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba3bb3e8c8a24891ba0f7608bcc96f8b0a", null ],
-      [ "Fixed", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba4457d440870ad6d42bab9082d9bf9b61", null ]
+      [ "DONT_CALL_ME", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba6c3bc398fab8a28ec70599e05ea901a5", null ],
+      [ "CYCLE", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba11729ccb73dc5f4f62d40435e8a0c078", null ],
+      [ "FRAME", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686bac57e921596445b99ab85558984966184", null ],
+      [ "FIXED", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686bac6e6dc18b53b4c2681394b9d8aefcec7", null ]
     ] ],
     [ "SampleGame", "classSampleGame.html#a3839efdd6fe6babe3e11f14a1641436f", null ],
     [ "~SampleGame", "classSampleGame.html#a2bf32805041111b4ae385e5ae0464806", null ],

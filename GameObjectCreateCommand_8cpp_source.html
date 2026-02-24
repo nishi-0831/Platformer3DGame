@@ -107,10 +107,10 @@ $(document).ready(function(){initNavTree('GameObjectCreateCommand_8cpp_source.ht
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_typedef" href="classmtgb_1_1GameObjectCreateCommand.html#a1c3d511a0b2f8df5ed8fa5125b0bc704">CreateFunc</a> _createFunc,</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1ComponentFactory.html">ComponentFactory</a>&amp; _componentFactory</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    : createFunc_{_createFunc}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    : entityId_{INVALID_ENTITY}</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    , componentFactory_{_componentFactory}</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    , json_{<a class="code hl_namespace" href="namespacenlohmann.html">nlohmann</a>::json::object()}</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    , entityId_{INVALID_ENTITY}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    , createFunc_{_createFunc}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    , json_{}</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
@@ -192,7 +192,6 @@ $(document).ready(function(){initNavTree('GameObjectCreateCommand_8cpp_source.ht
 <div class="ttc" id="aclassmtgb_1_1GameObject_html_ac149c70cc2d54f8e5d13280a99c7a793"><div class="ttname"><a href="classmtgb_1_1GameObject.html#ac149c70cc2d54f8e5d13280a99c7a793">mtgb::GameObject::Deserialize</a></div><div class="ttdeci">void Deserialize(const nlohmann::json &amp;_json)</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00076">GameObject.cpp:76</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html_adca80cc33581de34dd622983ac232707"><div class="ttname"><a href="classmtgb_1_1GameObject.html#adca80cc33581de34dd622983ac232707">mtgb::GameObject::GetName</a></div><div class="ttdeci">std::string GetName() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00084">GameObject.h:84</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
-<div class="ttc" id="anamespacenlohmann_html"><div class="ttname"><a href="namespacenlohmann.html">nlohmann</a></div><div class="ttdef"><b>Definition:</b> <a href="JsonADLSerializers_8h_source.html#l00006">JsonADLSerializers.h:7</a></div></div>
 <div class="ttc" id="astructmtgb_1_1GameObjectCreatedEvent_html"><div class="ttname"><a href="structmtgb_1_1GameObjectCreatedEvent.html">mtgb::GameObjectCreatedEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObjectSelectionEvent_8h_source.html#l00021">GameObjectSelectionEvent.h:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

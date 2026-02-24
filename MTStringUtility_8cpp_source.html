@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('MTStringUtility_8cpp_source.html','');
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespacemtgb.html#a8bf63c742ebb02fe2ea2e13236c6efdc">    5</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacemtgb.html#a8bf63c742ebb02fe2ea2e13236c6efdc">mtgb::GetSizeUTF8Characters</a>(<span class="keyword">const</span> std::u8string&amp; _string)</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">enum</span> BYTE_SIZE : <span class="keywordtype">int</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">enum</span> ByteSize : <span class="keywordtype">int</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        BYTE_SIZE_IDK,</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        BYTE_SIZE1,</div>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('MTStringUtility_8cpp_source.html','');
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">size_t</span> charasCount{};</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> byteIndex = 0; byteIndex &lt; _string.size();)</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        BYTE_SIZE charaByteSize{};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        ByteSize charaByteSize{};</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">if</span> (isMatchByteSize(_string[byteIndex], 0b0000&#39;0000, 0b1000&#39;0000))</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            charaByteSize = BYTE_SIZE1;</div>
@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('MTStringUtility_8cpp_source.html','');
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespacemtgb.html#aeccdf685def035238bcaed9d4ba1b04c">   54</a></span>std::u8string <a class="code hl_function" href="namespacemtgb.html#aeccdf685def035238bcaed9d4ba1b04c">mtgb::SubStrBegin</a>(<span class="keyword">const</span> std::u8string&amp; _string, <span class="keyword">const</span> <span class="keywordtype">int</span> _count)</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">enum</span> BYTE_SIZE : <span class="keywordtype">int</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">enum</span> ByteSize : <span class="keywordtype">int</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        BYTE_SIZE_IDK,</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        BYTE_SIZE1,</div>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('MTStringUtility_8cpp_source.html','');
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">// REF: https://ja.wikipedia.org/wiki/UTF-8</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">for</span> (byteIndex = 0; charaCount &lt; _count &amp;&amp; byteIndex &lt; _string.size();)</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        BYTE_SIZE charaByteSize{};</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        ByteSize charaByteSize{};</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">if</span> (isMatchByteSize(_string[byteIndex], 0b0000&#39;0000, 0b1000&#39;0000))</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        {</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            charaByteSize = BYTE_SIZE1;</div>

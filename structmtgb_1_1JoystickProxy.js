@@ -1,8 +1,8 @@
 var structmtgb_1_1JoystickProxy =
 [
-    [ "JoystickProxy", "structmtgb_1_1JoystickProxy.html#aab3b03829abb55b2fbbbb098c555afdc", null ],
-    [ "UpdateFromInput", "structmtgb_1_1JoystickProxy.html#ae717dc3fdd903012c40dde213f41c88e", null ],
-    [ "UpdateInputData", "structmtgb_1_1JoystickProxy.html#a41478460177e8bf0ff956ddd61d309ad", null ],
+    [ "JoystickProxy", "structmtgb_1_1JoystickProxy.html#ab893570e7636280450fd45ac39c20606", null ],
+    [ "UpdateFromInput", "structmtgb_1_1JoystickProxy.html#a215d0844786eb0a90566881d85a46b5f", null ],
+    [ "UpdateInputData", "structmtgb_1_1JoystickProxy.html#ab06b3b369e835c5df197b0cfe9d83a9b", null ],
     [ "assignmentStatus", "structmtgb_1_1JoystickProxy.html#a70ba01360111421638c1d3782d527cd6", null ],
     [ "connectionStatus", "structmtgb_1_1JoystickProxy.html#af47c3b947ab41f4b0b5ccd5df2ca46ff", null ],
     [ "deviceName", "structmtgb_1_1JoystickProxy.html#a4f6268c4f7efd633924aabc8ca4cd1bf", null ],

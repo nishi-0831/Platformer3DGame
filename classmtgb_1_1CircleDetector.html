@@ -154,9 +154,9 @@ mtgb::CircleDetector 連携図</div>
 <tr class="separator:a0a611145fdd3062ca728be733ace6c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ab366bfab628af2b51a80e1ae61b320"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CircleDetector.html#a2ab366bfab628af2b51a80e1ae61b320">ForEach</a> (std::function&lt; void(const <a class="el" href="structmtgb_1_1ScreenCoordContainsInfo.html">ScreenCoordContainsInfo</a> &amp;)&gt; _func) const override</td></tr>
 <tr class="separator:a2ab366bfab628af2b51a80e1ae61b320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77c38b9a4121e3ce69c6eda3add26568"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CircleDetector.html#a77c38b9a4121e3ce69c6eda3add26568">IsPointInCircle</a> (const <a class="el" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> &amp;point, const <a class="el" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> &amp;<a class="el" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">center</a>, float radius) const</td></tr>
-<tr class="memdesc:a77c38b9a4121e3ce69c6eda3add26568"><td class="mdescLeft">&#160;</td><td class="mdescRight">点が円内にあるかチェック  <br /></td></tr>
-<tr class="separator:a77c38b9a4121e3ce69c6eda3add26568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a044d1f7b7299cb824257917a5b7e542e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1CircleDetector.html#a044d1f7b7299cb824257917a5b7e542e">IsPointInCircle</a> (const <a class="el" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> &amp;_point, const <a class="el" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> &amp;_center, float _radius) const</td></tr>
+<tr class="memdesc:a044d1f7b7299cb824257917a5b7e542e"><td class="mdescLeft">&#160;</td><td class="mdescRight">点が円内にあるかチェック  <br /></td></tr>
+<tr class="separator:a044d1f7b7299cb824257917a5b7e542e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 公開変数類</h2></td></tr>
@@ -423,15 +423,14 @@ mtgb::CircleDetector 連携図</div>
 <div class="line"><span class="lineno">   97</span>        <span class="keywordtype">float</span> scale    = (std::min)(ratio.x, ratio.y);</div>
 <div class="line"><span class="lineno">   98</span> </div>
 <div class="line"><span class="lineno">   99</span>        <span class="keywordtype">float</span> scaledSize  = <a class="code hl_variable" href="classmtgb_1_1CircleDetector.html#a2d012a00837e779d722758018ae9dfd5">config</a>.<a class="code hl_variable" href="structmtgb_1_1CircleDetectorConfig.html#ae902e6c3072efc2cff21a03beab3ec0c">radius</a> * 2.0f * scale;</div>
-<div class="line"><span class="lineno">  100</span>        <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">center</a>   = Game::System&lt;Screen&gt;().GetSizeF() * 0.5f;</div>
-<div class="line"><span class="lineno">  101</span>        <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> newPoint = <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">center</a> - <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a>{scaledSize, scaledSize} * 0.5f;</div>
+<div class="line"><span class="lineno">  100</span>        <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> center   = Game::System&lt;Screen&gt;().GetSizeF() * 0.5f;</div>
+<div class="line"><span class="lineno">  101</span>        <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> newPoint = center - <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a>{scaledSize, scaledSize} * 0.5f;</div>
 <div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span> {newPoint, {scaledSize, scaledSize}};</div>
 <div class="line"><span class="lineno">  103</span>    }</div>
 <div class="ttc" id="anamespacemtgb_html_a0a8a0914ad55f984fdc2defcfff41f9d"><div class="ttname"><a href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">mtgb::Vector2F</a></div><div class="ttdeci">Vector2T&lt; float &gt; Vector2F</div><div class="ttdef"><b>Definition:</b> <a href="Vector2F_8h_source.html#l00005">Vector2F.h:5</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667"><div class="ttname"><a href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">mtgb::TextAlignment::center</a></div><div class="ttdeci">@ center</div></div>
 <div class="ttc" id="astructmtgb_1_1CircleDetectorConfig_html_ae902e6c3072efc2cff21a03beab3ec0c"><div class="ttname"><a href="structmtgb_1_1CircleDetectorConfig.html#ae902e6c3072efc2cff21a03beab3ec0c">mtgb::CircleDetectorConfig::radius</a></div><div class="ttdeci">float radius</div><div class="ttdef"><b>Definition:</b> <a href="DetectorConfigs_8h_source.html#l00041">DetectorConfigs.h:41</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">mtgb::center</a>, <a class="el" href="CircleDetector_8h_source.html#l00054">config</a>, <a class="el" href="DetectorConfigs_8h_source.html#l00041">mtgb::CircleDetectorConfig::radius</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
+<p class="reference">参照先 <a class="el" href="CircleDetector_8h_source.html#l00054">config</a>, <a class="el" href="DetectorConfigs_8h_source.html#l00041">mtgb::CircleDetectorConfig::radius</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
 
 </div>
 </div>
@@ -471,8 +470,8 @@ mtgb::CircleDetector 連携図</div>
 
 </div>
 </div>
-<a id="a77c38b9a4121e3ce69c6eda3add26568" name="a77c38b9a4121e3ce69c6eda3add26568"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77c38b9a4121e3ce69c6eda3add26568">&#9670;&#160;</a></span>IsPointInCircle()</h2>
+<a id="a044d1f7b7299cb824257917a5b7e542e" name="a044d1f7b7299cb824257917a5b7e542e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a044d1f7b7299cb824257917a5b7e542e">&#9670;&#160;</a></span>IsPointInCircle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -481,19 +480,19 @@ mtgb::CircleDetector 連携図</div>
           <td class="memname">bool mtgb::CircleDetector::IsPointInCircle </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> &amp;&#160;</td>
-          <td class="paramname"><em>point</em>, </td>
+          <td class="paramname"><em>_point</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> &amp;&#160;</td>
-          <td class="paramname"><em>center</em>, </td>
+          <td class="paramname"><em>_center</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>radius</em>&#160;</td>
+          <td class="paramname"><em>_radius</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -507,19 +506,19 @@ mtgb::CircleDetector 連携図</div>
 
 <p class="definition"> <a class="el" href="CircleDetector_8cpp_source.html">CircleDetector.cpp</a> の <a class="el" href="CircleDetector_8cpp_source.html#l00126">126</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  127</span>    {</div>
-<div class="line"><span class="lineno">  128</span>        <span class="keywordtype">float</span> dx              = point.x - <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">center</a>.x;</div>
-<div class="line"><span class="lineno">  129</span>        <span class="keywordtype">float</span> dy              = point.y - <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">center</a>.y;</div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordtype">float</span> dx              = _point.x - _center.x;</div>
+<div class="line"><span class="lineno">  129</span>        <span class="keywordtype">float</span> dy              = _point.y - _center.y;</div>
 <div class="line"><span class="lineno">  130</span>        <span class="keywordtype">float</span> distanceSquared = dx * dx + dy * dy;</div>
-<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">return</span> distanceSquared &lt;= (radius * radius);</div>
+<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">return</span> distanceSquared &lt;= (_radius * _radius);</div>
 <div class="line"><span class="lineno">  132</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaaadb115059e28d960fa8badfac5516667">mtgb::center</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
+<p class="reference">参照先 <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="CircleDetector_8cpp_source.html#l00035">UpdateDetection()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CircleDetector_a77c38b9a4121e3ce69c6eda3add26568_icgraph.svg" width="374" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CircleDetector_a044d1f7b7299cb824257917a5b7e542e_icgraph.svg" width="374" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -669,13 +668,13 @@ mtgb::CircleDetector 連携図</div>
 <div class="line"><span class="lineno">   73</span> </div>
 <div class="line"><span class="lineno">   74</span>            <span class="comment">// 円形範囲内かチェック</span></div>
 <div class="line"><span class="lineno">   75</span>            <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> screenPos2D = {screenPos.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>, screenPos.y};</div>
-<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1CircleDetector.html#a77c38b9a4121e3ce69c6eda3add26568">IsPointInCircle</a>(screenPos2D, _config.center, _config.radius))</div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1CircleDetector.html#a044d1f7b7299cb824257917a5b7e542e">IsPointInCircle</a>(screenPos2D, _config.center, _config.radius))</div>
 <div class="line"><span class="lineno">   77</span>            {</div>
 <div class="line"><span class="lineno">   78</span>                <a class="code hl_variable" href="classmtgb_1_1IDetector.html#a17cf45aaecf668eaa199bc0d99989621">detectedTargets_</a>.emplace_back(worldPos, screenPos, obj-&gt;GetEntityId());</div>
 <div class="line"><span class="lineno">   79</span>            }</div>
 <div class="line"><span class="lineno">   80</span>        }</div>
 <div class="line"><span class="lineno">   81</span>    }</div>
-<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_a77c38b9a4121e3ce69c6eda3add26568"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#a77c38b9a4121e3ce69c6eda3add26568">mtgb::CircleDetector::IsPointInCircle</a></div><div class="ttdeci">bool IsPointInCircle(const Vector2F &amp;point, const Vector2F &amp;center, float radius) const</div><div class="ttdoc">点が円内にあるかチェック</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00126">CircleDetector.cpp:126</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1CircleDetector_html_a044d1f7b7299cb824257917a5b7e542e"><div class="ttname"><a href="classmtgb_1_1CircleDetector.html#a044d1f7b7299cb824257917a5b7e542e">mtgb::CircleDetector::IsPointInCircle</a></div><div class="ttdeci">bool IsPointInCircle(const Vector2F &amp;_point, const Vector2F &amp;_center, float _radius) const</div><div class="ttdoc">点が円内にあるかチェック</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00126">CircleDetector.cpp:126</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html_a3fc1888ffcabb393d47b094980aad73f"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a3fc1888ffcabb393d47b094980aad73f">mtgb::GameObject::FindGameObjects</a></div><div class="ttdeci">static void FindGameObjects(std::vector&lt; T * &gt; *_pFoundGameObjects)</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00154">GameObject.h:154</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponent_html_a931ae7565817c83a4e3c5f9004c074d5"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get</a></div><div class="ttdeci">static Transform &amp; Get(const EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00031">IComponent.h:68</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a55735a172a253178e6e8d0a5c3035ec2"><div class="ttname"><a href="namespacemtgb.html#a55735a172a253178e6e8d0a5c3035ec2">mtgb::ignoreName</a></div><div class="ttdeci">const std::string ignoreName</div><div class="ttdef"><b>Definition:</b> <a href="CircleDetector_8cpp_source.html#l00013">CircleDetector.cpp:13</a></div></div>
@@ -685,7 +684,7 @@ mtgb::CircleDetector 連携図</div>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CircleDetector_ae02e16dc95672d66b9c8b7294718ef50_cgraph.svg" width="638" height="243"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1CircleDetector_ae02e16dc95672d66b9c8b7294718ef50_cgraph.svg" width="439" height="243"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

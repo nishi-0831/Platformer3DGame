@@ -115,7 +115,7 @@ mtgb::ImGuiEditor の継承関係図</div>
 <div class="dynheader">
 mtgb::ImGuiEditor 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiEditor__coll__graph.svg" width="1250" height="2907"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiEditor__coll__graph.svg" width="1510" height="2863"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -190,7 +190,7 @@ mtgb::ImGuiEditor 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="ImGuiEditor_8cpp_source.html">ImGuiEditor.cpp</a> の <a class="el" href="ImGuiEditor_8cpp_source.html#l00017">17</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>    : <a class="code hl_function" href="classmtgb_1_1ImGuiShowable.html#ab5325307199400037e23102d3e54f83d">ImGuiShowable</a>(<span class="stringliteral">&quot;ImGuiEditor&quot;</span>, ShowType::Editor)</div>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>    : <a class="code hl_function" href="classmtgb_1_1ImGuiShowable.html#ab5325307199400037e23102d3e54f83d">ImGuiShowable</a>(<span class="stringliteral">&quot;ImGuiEditor&quot;</span>, ShowType::EDITOR)</div>
 <div class="line"><span class="lineno">   19</span>{</div>
 <div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">commandListener_</a> = [<span class="keyword">this</span>](<a class="code hl_class" href="classCommand.html">Command</a>* _command)</div>
 <div class="line"><span class="lineno">   21</span>    {</div>
@@ -199,21 +199,21 @@ mtgb::ImGuiEditor 連携図</div>
 <div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a61eb96ea761c9c2d2e1ed91aeca08305">pManipulator_</a> = <span class="keyword">new</span> ImGuizmoManipulator(<a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">commandListener_</a>);</div>
 <div class="line"><span class="lineno">   25</span> </div>
 <div class="line"><span class="lineno">   26</span>    <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a6b124991e9a49adede9355605b79eee0">GameObjectGenerator::RegisterCommandListener</a>(<a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">commandListener_</a>);</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a>().<a class="code hl_function" href="classTypeRegistry.html#a2792a4750db12f7ce2337a986338ec24">RegisterCommandListener</a>(<a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">commandListener_</a>);</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab54d85991e30fd920da3f573feeac14d">RegisterCommandListener</a>(<a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">commandListener_</a>);</div>
 <div class="line"><span class="lineno">   28</span>}</div>
 <div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00004">Command.h:5</a></div></div>
-<div class="ttc" id="aclassTypeRegistry_html_a2792a4750db12f7ce2337a986338ec24"><div class="ttname"><a href="classTypeRegistry.html#a2792a4750db12f7ce2337a986338ec24">TypeRegistry::RegisterCommandListener</a></div><div class="ttdeci">void RegisterCommandListener(std::function&lt; void(Command *)&gt; _commandListener)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00040">TypeRegistry.cpp:40</a></div></div>
-<div class="ttc" id="aclassTypeRegistry_html_a45f221653ae5cef14b554cb67ead4274"><div class="ttname"><a href="classTypeRegistry.html#a45f221653ae5cef14b554cb67ead4274">TypeRegistry::Instance</a></div><div class="ttdeci">static TypeRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry.cpp:10</a></div></div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html_ab54d85991e30fd920da3f573feeac14d"><div class="ttname"><a href="classPropertyDisplayRegistry.html#ab54d85991e30fd920da3f573feeac14d">PropertyDisplayRegistry::RegisterCommandListener</a></div><div class="ttdeci">void RegisterCommandListener(std::function&lt; void(Command *)&gt; _commandListener)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00040">TypeRegistry.cpp:40</a></div></div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html_afc910235065385c0a147e03f9a2305e1"><div class="ttname"><a href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a></div><div class="ttdeci">static PropertyDisplayRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry.cpp:10</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a6b124991e9a49adede9355605b79eee0"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a6b124991e9a49adede9355605b79eee0">mtgb::GameObjectGenerator::RegisterCommandListener</a></div><div class="ttdeci">static void RegisterCommandListener(std::function&lt; void(Command *)&gt; _commandListener)</div><div class="ttdoc">コマンドを渡すことができるリスナーを登録</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00082">GameObjectGenerator.cpp:82</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a07981171778cc17d6d5a3d1234fc41ec"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a07981171778cc17d6d5a3d1234fc41ec">mtgb::ImGuiEditor::commandListener_</a></div><div class="ttdeci">std::function&lt; void(Command *)&gt; commandListener_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8h_source.html#l00036">ImGuiEditor.h:36</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_a61eb96ea761c9c2d2e1ed91aeca08305"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#a61eb96ea761c9c2d2e1ed91aeca08305">mtgb::ImGuiEditor::pManipulator_</a></div><div class="ttdeci">ImGuizmoManipulator * pManipulator_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8h_source.html#l00034">ImGuiEditor.h:34</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiShowable_html_ab5325307199400037e23102d3e54f83d"><div class="ttname"><a href="classmtgb_1_1ImGuiShowable.html#ab5325307199400037e23102d3e54f83d">mtgb::ImGuiShowable::ImGuiShowable</a></div><div class="ttdeci">ImGuiShowable(EntityId _entityId=INVALID_ENTITY)</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiShowable_8cpp_source.html#l00011">ImGuiShowable.cpp:11</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="ImGuiEditor_8h_source.html#l00036">commandListener_</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry::Instance()</a>, <a class="el" href="ImGuiEditor_8h_source.html#l00034">pManipulator_</a>, <a class="el" href="GameObjectGenerator_8cpp_source.html#l00082">mtgb::GameObjectGenerator::RegisterCommandListener()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00040">TypeRegistry::RegisterCommandListener()</a>.</p>
+<p class="reference">参照先 <a class="el" href="ImGuiEditor_8h_source.html#l00036">commandListener_</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00010">PropertyDisplayRegistry::Instance()</a>, <a class="el" href="ImGuiEditor_8h_source.html#l00034">pManipulator_</a>, <a class="el" href="GameObjectGenerator_8cpp_source.html#l00082">mtgb::GameObjectGenerator::RegisterCommandListener()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00040">PropertyDisplayRegistry::RegisterCommandListener()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiEditor_a9ae66a9f1e3177a1998d59d45588c03b_cgraph.svg" width="443" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuiEditor_a9ae66a9f1e3177a1998d59d45588c03b_cgraph.svg" width="419" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -401,7 +401,7 @@ mtgb::ImGuiEditor 連携図</div>
 <div class="line"><span class="lineno">  113</span>    OPENFILENAME ifn    = {0};</div>
 <div class="line"><span class="lineno">  114</span> </div>
 <div class="line"><span class="lineno">  115</span>    ifn.lStructSize = <span class="keyword">sizeof</span>(ifn);</div>
-<div class="line"><span class="lineno">  116</span>    ifn.hwndOwner   = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">WinCtxRes::GetHWND</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><span class="lineno">  116</span>    ifn.hwndOwner   = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#aeb419b2e87a896cdbac90e6cb9a92847">WinCtxRes::GetHWND</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade">WindowContext::FIRST</a>);</div>
 <div class="line"><span class="lineno">  117</span>    ifn.lpstrFilter = <span class="stringliteral">&quot;JSONファイル(*.json)\0*.json&quot;</span>;</div>
 <div class="line"><span class="lineno">  118</span>    ifn.lpstrFile   = fileName;</div>
 <div class="line"><span class="lineno">  119</span>    ifn.nMaxFile    = 255;</div>
@@ -432,10 +432,10 @@ mtgb::ImGuiEditor 連携図</div>
 <div class="line"><span class="lineno">  144</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a75cbc1b1bde2c45d36a91cacc6fbdd3f"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">mtgb::GameObjectGenerator::GenerateFromJson</a></div><div class="ttdeci">static void GenerateFromJson(const nlohmann::json &amp;_json)</div><div class="ttdoc">JSONからゲームオブジェクトを生成する</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00041">GameObjectGenerator.cpp:41</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Time_html_a861d48000e2c98be1942c717ea17ae53"><div class="ttname"><a href="classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53">mtgb::Time::WaitFrame</a></div><div class="ttdeci">static void WaitFrame(unsigned int _frame)</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00029">GameTime.h:29</a></div></div>
-<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_ac3067c8903d57f25d01d82b155657099"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">mtgb::WinCtxRes::GetHWND</a></div><div class="ttdeci">HWND GetHWND(WindowContext ctx)</div><div class="ttdoc">そのウィンドウのHWNDを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00025">WindowContextUtil.cpp:25</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::WindowContext::First</a></div><div class="ttdeci">@ First</div></div>
+<div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_aeb419b2e87a896cdbac90e6cb9a92847"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#aeb419b2e87a896cdbac90e6cb9a92847">mtgb::WinCtxRes::GetHWND</a></div><div class="ttdeci">HWND GetHWND(WindowContext _ctx)</div><div class="ttdoc">そのウィンドウのHWNDを取得する</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00025">WindowContextUtil.cpp:25</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade">mtgb::WindowContext::FIRST</a></div><div class="ttdeci">@ FIRST</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="GameObjectGenerator_8cpp_source.html#l00041">mtgb::GameObjectGenerator::GenerateFromJson()</a>, <a class="el" href="WindowContextUtil_8cpp_source.html#l00025">mtgb::WinCtxRes::GetHWND()</a>, <a class="el" href="GameTime_8h_source.html#l00029">mtgb::Time::WaitFrame()</a>.</p>
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade">mtgb::FIRST</a>, <a class="el" href="GameObjectGenerator_8cpp_source.html#l00041">mtgb::GameObjectGenerator::GenerateFromJson()</a>, <a class="el" href="WindowContextUtil_8cpp_source.html#l00025">mtgb::WinCtxRes::GetHWND()</a>, <a class="el" href="GameTime_8h_source.html#l00029">mtgb::Time::WaitFrame()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -508,7 +508,7 @@ mtgb::ImGuiEditor 連携図</div>
 <div class="line"><span class="lineno">   87</span> </div>
 <div class="line"><span class="lineno">   88</span>    ofn.lStructSize = <span class="keyword">sizeof</span>(ofn);</div>
 <div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>    ofn.hwndOwner   = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#ac3067c8903d57f25d01d82b155657099">WinCtxRes::GetHWND</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">WindowContext::First</a>);</div>
+<div class="line"><span class="lineno">   90</span>    ofn.hwndOwner   = <a class="code hl_function" href="namespacemtgb_1_1WinCtxRes.html#aeb419b2e87a896cdbac90e6cb9a92847">WinCtxRes::GetHWND</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade">WindowContext::FIRST</a>);</div>
 <div class="line"><span class="lineno">   91</span>    ofn.lpstrFilter = <span class="stringliteral">&quot;JSONファイル(*.json)\0*.json&quot;</span>;</div>
 <div class="line"><span class="lineno">   92</span>    ofn.lpstrFile   = fileName;</div>
 <div class="line"><span class="lineno">   93</span>    ofn.nMaxFile    = 255;</div>
@@ -529,7 +529,7 @@ mtgb::ImGuiEditor 連携図</div>
 <div class="line"><span class="lineno">  108</span>}</div>
 <div class="ttc" id="aDebug_8h_html_a22dfbe5038b17240020faa877835bc46"><div class="ttname"><a href="Debug_8h.html#a22dfbe5038b17240020faa877835bc46">LOGIMGUI_CAT</a></div><div class="ttdeci">#define LOGIMGUI_CAT(category, format,...)</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8h_source.html#l00025">Debug.h:25</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a7fb55ed0b7a30342ba6da306428cae04">mtgb::First</a>, <a class="el" href="WindowContextUtil_8cpp_source.html#l00025">mtgb::WinCtxRes::GetHWND()</a>, <a class="el" href="Debug_8h_source.html#l00025">LOGIMGUI_CAT</a>.</p>
+<p class="reference">参照先 <a class="el" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade">mtgb::FIRST</a>, <a class="el" href="WindowContextUtil_8cpp_source.html#l00025">mtgb::WinCtxRes::GetHWND()</a>, <a class="el" href="Debug_8h_source.html#l00025">LOGIMGUI_CAT</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -708,30 +708,30 @@ mtgb::ImGuiEditor 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
 <div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a61eb96ea761c9c2d2e1ed91aeca08305">pManipulator_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1ImGuizmoManipulator.html#ab695da81afe93e33b27470aa298bd6e3">Update</a>();</div>
 <div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a920280bc3d6f2d8f967385d733aad1b2">InputUtil::GetKey</a>(KeyCode::LeftControl))</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4e7b74ef02bc35540de0e4abe01619be">InputUtil::GetKey</a>(KeyCode::LEFT_CONTROL))</div>
 <div class="line"><span class="lineno">   47</span>    {</div>
-<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::Z))</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">InputUtil::GetKeyDown</a>(KeyCode::Z))</div>
 <div class="line"><span class="lineno">   49</span>        {</div>
 <div class="line"><span class="lineno">   50</span>            Game::System&lt;CommandHistoryManager&gt;().UndoCommand();</div>
 <div class="line"><span class="lineno">   51</span>        }</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::Y))</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">InputUtil::GetKeyDown</a>(KeyCode::Y))</div>
 <div class="line"><span class="lineno">   53</span>        {</div>
 <div class="line"><span class="lineno">   54</span>            Game::System&lt;CommandHistoryManager&gt;().RedoCommand();</div>
 <div class="line"><span class="lineno">   55</span>        }</div>
-<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::S))</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">InputUtil::GetKeyDown</a>(KeyCode::S))</div>
 <div class="line"><span class="lineno">   57</span>        {</div>
 <div class="line"><span class="lineno">   58</span>            <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#a19099e09efd8947cdbc48b114cf27407">SaveMapData</a>();</div>
 <div class="line"><span class="lineno">   59</span>        }</div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::O))</div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">InputUtil::GetKeyDown</a>(KeyCode::O))</div>
 <div class="line"><span class="lineno">   61</span>        {</div>
 <div class="line"><span class="lineno">   62</span>            <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#ae5e6810893d4adec725a83bfe37bc579">LoadMapData</a>();</div>
 <div class="line"><span class="lineno">   63</span>        }</div>
-<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::D))</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">InputUtil::GetKeyDown</a>(KeyCode::D))</div>
 <div class="line"><span class="lineno">   65</span>        {</div>
 <div class="line"><span class="lineno">   66</span>            <a class="code hl_function" href="classmtgb_1_1ImGuiEditor.html#ae43edf44b6b7a58bf12baacc5dcc48e7">DuplicateGameObject</a>();</div>
 <div class="line"><span class="lineno">   67</span>        }</div>
 <div class="line"><span class="lineno">   68</span>    }</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::Delete))</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">InputUtil::GetKeyDown</a>(KeyCode::DELETE))</div>
 <div class="line"><span class="lineno">   70</span>    {</div>
 <div class="line"><span class="lineno">   71</span>        <span class="comment">// マニピュレータが選択しているゲームオブジェクトを取得</span></div>
 <div class="line"><span class="lineno">   72</span>        <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#aa6417b60c46ac80df9f0a65c6e9d37fb">GameObjectGenerator::Delete</a>(<a class="code hl_variable" href="classmtgb_1_1ImGuiEditor.html#a61eb96ea761c9c2d2e1ed91aeca08305">pManipulator_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1ImGuizmoManipulator.html#a517338e12a0c671e1c557d504969c9e4">GetSelectedEntityId</a>());</div>
@@ -742,8 +742,8 @@ mtgb::ImGuiEditor 連携図</div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_ae43edf44b6b7a58bf12baacc5dcc48e7"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#ae43edf44b6b7a58bf12baacc5dcc48e7">mtgb::ImGuiEditor::DuplicateGameObject</a></div><div class="ttdeci">void DuplicateGameObject()</div><div class="ttdoc">現在選択されているゲームオブジェクトの複製を行う</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00146">ImGuiEditor.cpp:146</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiEditor_html_ae5e6810893d4adec725a83bfe37bc579"><div class="ttname"><a href="classmtgb_1_1ImGuiEditor.html#ae5e6810893d4adec725a83bfe37bc579">mtgb::ImGuiEditor::LoadMapData</a></div><div class="ttdeci">void LoadMapData()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiEditor_8cpp_source.html#l00110">ImGuiEditor.cpp:110</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImGuizmoManipulator_html_ab695da81afe93e33b27470aa298bd6e3"><div class="ttname"><a href="classmtgb_1_1ImGuizmoManipulator.html#ab695da81afe93e33b27470aa298bd6e3">mtgb::ImGuizmoManipulator::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="ImGuizmoManipulator_8cpp_source.html#l00158">ImGuizmoManipulator.cpp:158</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a4dade03e3bbb665d967f7411d82b8d94"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a920280bc3d6f2d8f967385d733aad1b2"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a920280bc3d6f2d8f967385d733aad1b2">mtgb::InputUtil::GetKey</a></div><div class="ttdeci">static const bool GetKey(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00017">InputData.cpp:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a0228ab943ec558bd2599ce2d43d0397f"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static bool GetKeyDown(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::FIRST)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a4e7b74ef02bc35540de0e4abe01619be"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a4e7b74ef02bc35540de0e4abe01619be">mtgb::InputUtil::GetKey</a></div><div class="ttdeci">static bool GetKey(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::FIRST)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00017">InputData.cpp:17</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="GameObjectGenerator_8cpp_source.html#l00104">mtgb::GameObjectGenerator::Delete()</a>, <a class="el" href="InputData_8cpp_source.html#l00017">mtgb::InputUtil::GetKey()</a>, <a class="el" href="InputData_8cpp_source.html#l00028">mtgb::InputUtil::GetKeyDown()</a>.</p>
 <div class="dynheader">

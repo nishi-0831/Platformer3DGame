@@ -2,7 +2,7 @@ var searchData=
 [
   ['lasterrormessage_0',['lastErrorMessage',['../structmtgb_1_1JoystickProxy.html#aadac1f558532922ff9e07b3be2851044',1,'mtgb::JoystickProxy']]],
   ['lastresult_1',['lastResult',['../structmtgb_1_1JoystickContext.html#acf51528aede2a94ede182cb1d4e60a37',1,'mtgb::JoystickContext']]],
-  ['layer_2',['layer',['../classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200',1,'mtgb::MeshRenderer::layer()'],['../structdrmp3dec__frame__info.html#a91703350261bae1eb34df2e6a6e7661e',1,'drmp3dec_frame_info::layer()']]],
+  ['layer_2',['layer',['../structMeshRendererState.html#a27ed016dd168be0c97aa96afa41fa444',1,'MeshRendererState::layer()'],['../classmtgb_1_1MeshRenderer.html#a8f0118f84a374505712675047e040200',1,'mtgb::MeshRenderer::layer()'],['../structdrmp3dec__frame__info.html#a91703350261bae1eb34df2e6a6e7661e',1,'drmp3dec_frame_info::layer()']]],
   ['layer_5f_3',['layer_',['../classmtgb_1_1ImageRenderer.html#aa863cc3abc1f971e1d12c75239a5a584',1,'mtgb::ImageRenderer']]],
   ['layerflag_4',['layerFlag',['../structmtgb_1_1GAME__OBJECT__DESC.html#aa448b662d1b20a949454525c69073dd7',1,'mtgb::GAME_OBJECT_DESC::layerFlag()'],['../structmtgb_1_1UIParams.html#ad6b128e243c7c5e996ae56d74a8aa1d3',1,'mtgb::UIParams::layerFlag()']]],
   ['layerflag_5f_5',['layerFlag_',['../classmtgb_1_1DeleteGameObjectCommand.html#afb968615ec9eaedeb2fc71e49e7886a3',1,'mtgb::DeleteGameObjectCommand::layerFlag_()'],['../classmtgb_1_1GameObject.html#af889133148e81bfcd2341b8573e5abc6',1,'mtgb::GameObject::layerFlag_()']]],

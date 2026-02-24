@@ -115,7 +115,7 @@ mtgb::ImGuizmoManipulator の継承関係図</div>
 <div class="dynheader">
 mtgb::ImGuizmoManipulator 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuizmoManipulator__coll__graph.svg" width="1250" height="2488"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuizmoManipulator__coll__graph.svg" width="1510" height="2444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -201,9 +201,9 @@ mtgb::ImGuizmoManipulator 連携図</div>
 <tr class="separator:a2a19eec3880549b0bb02101c81fd931e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eb143a4ae2236e79d1cfd0767702c2b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuizmoManipulator.html#a2eb143a4ae2236e79d1cfd0767702c2b">isUsing_</a></td></tr>
 <tr class="separator:a2eb143a4ae2236e79d1cfd0767702c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa50bcc2b8f6013c4e955ba355c5449f8"><td class="memItemLeft" align="right" valign="top">TransformMemento *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuizmoManipulator.html#aa50bcc2b8f6013c4e955ba355c5449f8">pTargetPrevTransformMemento_</a></td></tr>
+<tr class="memitem:aa50bcc2b8f6013c4e955ba355c5449f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Transform_8generated_8h.html#aeefa60442d625f7a6343c1ef8013a7f5">TransformMemento</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuizmoManipulator.html#aa50bcc2b8f6013c4e955ba355c5449f8">pTargetPrevTransformMemento_</a></td></tr>
 <tr class="separator:aa50bcc2b8f6013c4e955ba355c5449f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f5013f14b14fa1cc32512aa7a090f4"><td class="memItemLeft" align="right" valign="top">TransformMemento *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuizmoManipulator.html#ae6f5013f14b14fa1cc32512aa7a090f4">pTargetTransformMemento_</a></td></tr>
+<tr class="memitem:ae6f5013f14b14fa1cc32512aa7a090f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Transform_8generated_8h.html#aeefa60442d625f7a6343c1ef8013a7f5">TransformMemento</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ImGuizmoManipulator.html#ae6f5013f14b14fa1cc32512aa7a090f4">pTargetTransformMemento_</a></td></tr>
 <tr class="separator:ae6f5013f14b14fa1cc32512aa7a090f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -227,7 +227,7 @@ mtgb::ImGuizmoManipulator 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="ImGuizmoManipulator_8cpp_source.html">ImGuizmoManipulator.cpp</a> の <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00138">138</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>    : <a class="code hl_function" href="classmtgb_1_1ImGuiShowable.html#ab5325307199400037e23102d3e54f83d">ImGuiShowable</a>(<span class="stringliteral">&quot;Manipulater&quot;</span>, ShowType::SceneView)</div>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>    : <a class="code hl_function" href="classmtgb_1_1ImGuiShowable.html#ab5325307199400037e23102d3e54f83d">ImGuiShowable</a>(<span class="stringliteral">&quot;Manipulater&quot;</span>, ShowType::SCENE_VIEW)</div>
 <div class="line"><span class="lineno">  140</span>    , <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a6d2b68f045d526a71165d8779be33b77">operation_</a>{ImGuizmo::TRANSLATE}</div>
 <div class="line"><span class="lineno">  141</span>    , <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a0ea4a818641874d07e8dbdbc16debc8a">mode_</a>{ImGuizmo::LOCAL}</div>
 <div class="line"><span class="lineno">  142</span>    , <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#ac73e4de21610e9cbf0ec7665f430da4b">commandListener_</a>{_commandListener}</div>
@@ -766,14 +766,14 @@ mtgb::ImGuizmoManipulator 連携図</div>
 <div class="line"><span class="lineno">   87</span>        {</div>
 <div class="line"><span class="lineno">   88</span>            <a class="code hl_function" href="classmtgb_1_1ImGuizmoManipulator.html#ad0468028c702b6b110fa5745fc0fa0f1">GenerateCommand</a>(_event);</div>
 <div class="line"><span class="lineno">   89</span>        },</div>
-<div class="line"><span class="lineno">   90</span>        <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8">EventScope::Global</a></div>
+<div class="line"><span class="lineno">   90</span>        <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba6eecfba72d12922ee1dead07a0ef3334">EventScope::GLOBAL</a></div>
 <div class="line"><span class="lineno">   91</span>    );</div>
 <div class="line"><span class="lineno">   92</span> </div>
 <div class="line"><span class="lineno">   93</span>    eventManager.GetEvent&lt;SelectionClearedEvent&gt;().Subscribe(</div>
 <div class="line"><span class="lineno">   94</span>        [<span class="keyword">this</span>](<span class="keyword">const</span> SelectionClearedEvent&amp; _event)</div>
 <div class="line"><span class="lineno">   95</span>        {</div>
 <div class="line"><span class="lineno">   96</span>            </div>
-<div class="line"><span class="lineno">   97</span>        }, <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8">EventScope::Global</a>);</div>
+<div class="line"><span class="lineno">   97</span>        }, <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba6eecfba72d12922ee1dead07a0ef3334">EventScope::GLOBAL</a>);</div>
 <div class="line"><span class="lineno">   98</span> </div>
 <div class="line"><span class="lineno">   99</span>    <span class="comment">// 今後、同時に複数のオブジェクトを選択可能な場合になった際には修正</span></div>
 <div class="line"><span class="lineno">  100</span>    eventManager.GetEvent&lt;GameObjectDeselectedEvent&gt;().Subscribe(</div>
@@ -781,7 +781,7 @@ mtgb::ImGuizmoManipulator 連携図</div>
 <div class="line"><span class="lineno">  102</span>        {</div>
 <div class="line"><span class="lineno">  103</span>            <a class="code hl_function" href="classmtgb_1_1ImGuizmoManipulator.html#ad0468028c702b6b110fa5745fc0fa0f1">GenerateCommand</a>(_event);</div>
 <div class="line"><span class="lineno">  104</span>        },</div>
-<div class="line"><span class="lineno">  105</span>        <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8">EventScope::Global</a></div>
+<div class="line"><span class="lineno">  105</span>        <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba6eecfba72d12922ee1dead07a0ef3334">EventScope::GLOBAL</a></div>
 <div class="line"><span class="lineno">  106</span>    );</div>
 <div class="line"><span class="lineno">  107</span> </div>
 <div class="line"><span class="lineno">  108</span>    <span class="comment">// ゲームオブジェクト作成イベント</span></div>
@@ -790,13 +790,13 @@ mtgb::ImGuizmoManipulator 連携図</div>
 <div class="line"><span class="lineno">  111</span>        {</div>
 <div class="line"><span class="lineno">  112</span>            <a class="code hl_function" href="classmtgb_1_1ImGuizmoManipulator.html#ad0468028c702b6b110fa5745fc0fa0f1">GenerateCommand</a>(_event);</div>
 <div class="line"><span class="lineno">  113</span>        },</div>
-<div class="line"><span class="lineno">  114</span>        <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8">EventScope::Global</a></div>
+<div class="line"><span class="lineno">  114</span>        <a class="code hl_enumvalue" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba6eecfba72d12922ee1dead07a0ef3334">EventScope::GLOBAL</a></div>
 <div class="line"><span class="lineno">  115</span>    );</div>
 <div class="line"><span class="lineno">  116</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1ImGuizmoManipulator_html_ad0468028c702b6b110fa5745fc0fa0f1"><div class="ttname"><a href="classmtgb_1_1ImGuizmoManipulator.html#ad0468028c702b6b110fa5745fc0fa0f1">mtgb::ImGuizmoManipulator::GenerateCommand</a></div><div class="ttdeci">void GenerateCommand(const GameObjectSelectedEvent &amp;_event)</div><div class="ttdef"><b>Definition:</b> <a href="ImGuizmoManipulator_8cpp_source.html#l00271">ImGuizmoManipulator.cpp:271</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8"><div class="ttname"><a href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8">mtgb::EventScope::Global</a></div><div class="ttdeci">@ Global</div></div>
+<div class="ttc" id="anamespacemtgb_html_acd206f28363bccdce4c5fc97d67cf9eba6eecfba72d12922ee1dead07a0ef3334"><div class="ttname"><a href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba6eecfba72d12922ee1dead07a0ef3334">mtgb::EventScope::GLOBAL</a></div><div class="ttdeci">@ GLOBAL</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00127">mtgb::EventManager::GetEvent()</a>, <a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba4cc6684df7b4a92b1dec6fce3264fac8">mtgb::Global</a>.</p>
+<p class="reference">参照先 <a class="el" href="EventManager_8h_source.html#l00127">mtgb::EventManager::GetEvent()</a>, <a class="el" href="namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eba6eecfba72d12922ee1dead07a0ef3334">mtgb::GLOBAL</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00138">ImGuizmoManipulator()</a>.</p>
 <div class="dynheader">
@@ -880,7 +880,7 @@ mtgb::ImGuizmoManipulator 連携図</div>
 <div class="line"><span class="lineno">  243</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#aa50bcc2b8f6013c4e955ba355c5449f8">pTargetPrevTransformMemento_</a> == <span class="keyword">nullptr</span> || <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a1feeed5bea3d1a88831718bbade8e368">pTargetTransform_</a> == <span class="keyword">nullptr</span>)</div>
 <div class="line"><span class="lineno">  244</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  245</span> </div>
-<div class="line"><span class="lineno">  246</span>        TransformMemento* memento = <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a1feeed5bea3d1a88831718bbade8e368">pTargetTransform_</a>-&gt;SaveToMemento();</div>
+<div class="line"><span class="lineno">  246</span>        <a class="code hl_class" href="classmtgb_1_1ComponentMemento.html">TransformMemento</a>* memento = <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a1feeed5bea3d1a88831718bbade8e368">pTargetTransform_</a>-&gt;SaveToMemento();</div>
 <div class="line"><span class="lineno">  247</span>        GuizmoManipulateCommand* <span class="keyword">event</span> =</div>
 <div class="line"><span class="lineno">  248</span>            <span class="keyword">new</span> GuizmoManipulateCommand(<a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#aa50bcc2b8f6013c4e955ba355c5449f8">pTargetPrevTransformMemento_</a>, memento, <a class="code hl_function" href="classmtgb_1_1Game.html#a66362917a1d96665e8160adcb72f031f">Game::GetComponentFactory</a>());</div>
 <div class="line"><span class="lineno">  249</span>        <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#ac73e4de21610e9cbf0ec7665f430da4b">commandListener_</a>(event);</div>
@@ -888,6 +888,7 @@ mtgb::ImGuizmoManipulator 連携図</div>
 <div class="line"><span class="lineno">  251</span> </div>
 <div class="line"><span class="lineno">  252</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a2a19eec3880549b0bb02101c81fd931e">wasUsing_</a> = <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a2eb143a4ae2236e79d1cfd0767702c2b">isUsing_</a>;</div>
 <div class="line"><span class="lineno">  253</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1ComponentMemento_html"><div class="ttname"><a href="classmtgb_1_1ComponentMemento.html">mtgb::ComponentMemento</a></div><div class="ttdef"><b>Definition:</b> <a href="IComponentMemento_8h_source.html#l00015">IComponentMemento.h:16</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Game_html_a66362917a1d96665e8160adcb72f031f"><div class="ttname"><a href="classmtgb_1_1Game.html#a66362917a1d96665e8160adcb72f031f">mtgb::Game::GetComponentFactory</a></div><div class="ttdeci">static ComponentFactory &amp; GetComponentFactory()</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00130">Game.h:130</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImGuizmoManipulator_html_aa50bcc2b8f6013c4e955ba355c5449f8"><div class="ttname"><a href="classmtgb_1_1ImGuizmoManipulator.html#aa50bcc2b8f6013c4e955ba355c5449f8">mtgb::ImGuizmoManipulator::pTargetPrevTransformMemento_</a></div><div class="ttdeci">TransformMemento * pTargetPrevTransformMemento_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuizmoManipulator_8h_source.html#l00058">ImGuizmoManipulator.h:58</a></div></div>
 </div><!-- fragment -->
@@ -926,20 +927,20 @@ mtgb::ImGuizmoManipulator 連携図</div>
 
 <p class="definition"> <a class="el" href="ImGuizmoManipulator_8cpp_source.html">ImGuizmoManipulator.cpp</a> の <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00255">255</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  256</span>{</div>
-<div class="line"><span class="lineno">  257</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::W))</div>
+<div class="line"><span class="lineno">  257</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">InputUtil::GetKeyDown</a>(KeyCode::W))</div>
 <div class="line"><span class="lineno">  258</span>    {</div>
 <div class="line"><span class="lineno">  259</span>        <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a6d2b68f045d526a71165d8779be33b77">operation_</a> = ImGuizmo::TRANSLATE;</div>
 <div class="line"><span class="lineno">  260</span>    }</div>
-<div class="line"><span class="lineno">  261</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::E))</div>
+<div class="line"><span class="lineno">  261</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">InputUtil::GetKeyDown</a>(KeyCode::E))</div>
 <div class="line"><span class="lineno">  262</span>    {</div>
 <div class="line"><span class="lineno">  263</span>        <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a6d2b68f045d526a71165d8779be33b77">operation_</a> = ImGuizmo::SCALE;</div>
 <div class="line"><span class="lineno">  264</span>    }</div>
-<div class="line"><span class="lineno">  265</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">InputUtil::GetKeyDown</a>(KeyCode::R))</div>
+<div class="line"><span class="lineno">  265</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">InputUtil::GetKeyDown</a>(KeyCode::R))</div>
 <div class="line"><span class="lineno">  266</span>    {</div>
 <div class="line"><span class="lineno">  267</span>        <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a6d2b68f045d526a71165d8779be33b77">operation_</a> = ImGuizmo::ROTATE;</div>
 <div class="line"><span class="lineno">  268</span>    }</div>
 <div class="line"><span class="lineno">  269</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a4dade03e3bbb665d967f7411d82b8d94"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a4dade03e3bbb665d967f7411d82b8d94">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static const bool GetKeyDown(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::First)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a0228ab943ec558bd2599ce2d43d0397f"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static bool GetKeyDown(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::FIRST)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="InputData_8cpp_source.html#l00028">mtgb::InputUtil::GetKeyDown()</a>.</p>
 <div class="dynheader">
@@ -1234,7 +1235,7 @@ mtgb::ImGuizmoManipulator 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TransformMemento* mtgb::ImGuizmoManipulator::pTargetPrevTransformMemento_</td>
+          <td class="memname"><a class="el" href="Transform_8generated_8h.html#aeefa60442d625f7a6343c1ef8013a7f5">TransformMemento</a>* mtgb::ImGuizmoManipulator::pTargetPrevTransformMemento_</td>
         </tr>
       </table>
   </td>
@@ -1284,7 +1285,7 @@ mtgb::ImGuizmoManipulator 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TransformMemento* mtgb::ImGuizmoManipulator::pTargetTransformMemento_</td>
+          <td class="memname"><a class="el" href="Transform_8generated_8h.html#aeefa60442d625f7a6343c1ef8013a7f5">TransformMemento</a>* mtgb::ImGuizmoManipulator::pTargetTransformMemento_</td>
         </tr>
       </table>
   </td>

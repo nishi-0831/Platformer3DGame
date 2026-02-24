@@ -113,8 +113,8 @@ mtgb::FontFormatData 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:aa7e5e2db5603f94ff646b9cac586c820"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1FontFormatData.html#aa7e5e2db5603f94ff646b9cac586c820">FontFormatData</a> (int size, IDWriteTextFormat *fmt, const <a class="el" href="structmtgb_1_1PixelFontMetrics.html">PixelFontMetrics</a> &amp;metrics)</td></tr>
-<tr class="separator:aa7e5e2db5603f94ff646b9cac586c820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a612aa91216c8541ab85ca013ec3ff0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1FontFormatData.html#a5a612aa91216c8541ab85ca013ec3ff0">FontFormatData</a> (int _size, IDWriteTextFormat *_fmt, const <a class="el" href="structmtgb_1_1PixelFontMetrics.html">PixelFontMetrics</a> &amp;_metrics)</td></tr>
+<tr class="separator:a5a612aa91216c8541ab85ca013ec3ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c7e9c64100a464c2c9a15a213af22a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1FontFormatData.html#a9c7e9c64100a464c2c9a15a213af22a8">~FontFormatData</a> ()</td></tr>
 <tr class="separator:a9c7e9c64100a464c2c9a15a213af22a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -131,8 +131,8 @@ mtgb::FontFormatData 連携図</div>
 <div class="textblock">
 <p class="definition"> <a class="el" href="DirectWrite_8h_source.html">DirectWrite.h</a> の <a class="el" href="DirectWrite_8h_source.html#l00038">38</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="aa7e5e2db5603f94ff646b9cac586c820" name="aa7e5e2db5603f94ff646b9cac586c820"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7e5e2db5603f94ff646b9cac586c820">&#9670;&#160;</a></span>FontFormatData()</h2>
+<a id="a5a612aa91216c8541ab85ca013ec3ff0" name="a5a612aa91216c8541ab85ca013ec3ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a612aa91216c8541ab85ca013ec3ff0">&#9670;&#160;</a></span>FontFormatData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,19 +141,19 @@ mtgb::FontFormatData 連携図</div>
           <td class="memname">mtgb::FontFormatData::FontFormatData </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramname"><em>_size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">IDWriteTextFormat *&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
+          <td class="paramname"><em>_fmt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structmtgb_1_1PixelFontMetrics.html">PixelFontMetrics</a> &amp;&#160;</td>
-          <td class="paramname"><em>metrics</em>&#160;</td>
+          <td class="paramname"><em>_metrics</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -164,10 +164,10 @@ mtgb::FontFormatData 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="DirectWrite_8cpp_source.html">DirectWrite.cpp</a> の <a class="el" href="DirectWrite_8cpp_source.html#l00035">35</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>    : <a class="code hl_variable" href="structmtgb_1_1FontFormatData.html#a7962e4d1ba86aec9359d735f107a40f6">fontSize</a>(size)</div>
-<div class="line"><span class="lineno">   37</span>    , <a class="code hl_variable" href="structmtgb_1_1FontFormatData.html#a2f5eeb997b37aa98ef5d7809ac4a4b30">pixelFontMetrics</a>(metrics)</div>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>    : <a class="code hl_variable" href="structmtgb_1_1FontFormatData.html#a7962e4d1ba86aec9359d735f107a40f6">fontSize</a>(_size)</div>
+<div class="line"><span class="lineno">   37</span>    , <a class="code hl_variable" href="structmtgb_1_1FontFormatData.html#a2f5eeb997b37aa98ef5d7809ac4a4b30">pixelFontMetrics</a>(_metrics)</div>
 <div class="line"><span class="lineno">   38</span>{</div>
-<div class="line"><span class="lineno">   39</span>    <a class="code hl_variable" href="structmtgb_1_1FontFormatData.html#a0878f6d4b2468f8c11a31aa51bb5c108">format</a>.Attach(fmt);</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_variable" href="structmtgb_1_1FontFormatData.html#a0878f6d4b2468f8c11a31aa51bb5c108">format</a>.Attach(_fmt);</div>
 <div class="line"><span class="lineno">   40</span>}</div>
 <div class="ttc" id="astructmtgb_1_1FontFormatData_html_a0878f6d4b2468f8c11a31aa51bb5c108"><div class="ttname"><a href="structmtgb_1_1FontFormatData.html#a0878f6d4b2468f8c11a31aa51bb5c108">mtgb::FontFormatData::format</a></div><div class="ttdeci">ComPtr&lt; IDWriteTextFormat &gt; format</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00041">DirectWrite.h:41</a></div></div>
 <div class="ttc" id="astructmtgb_1_1FontFormatData_html_a2f5eeb997b37aa98ef5d7809ac4a4b30"><div class="ttname"><a href="structmtgb_1_1FontFormatData.html#a2f5eeb997b37aa98ef5d7809ac4a4b30">mtgb::FontFormatData::pixelFontMetrics</a></div><div class="ttdeci">PixelFontMetrics pixelFontMetrics</div><div class="ttdef"><b>Definition:</b> <a href="DirectWrite_8h_source.html#l00042">DirectWrite.h:42</a></div></div>
@@ -230,7 +230,7 @@ mtgb::FontFormatData 連携図</div>
 
 <p class="definition"> <a class="el" href="DirectWrite_8h_source.html">DirectWrite.h</a> の <a class="el" href="DirectWrite_8h_source.html#l00041">41</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Draw_8cpp_source.html#l00314">mtgb::Draw::ChangeFontSize()</a>, <a class="el" href="DirectWrite_8cpp_source.html#l00035">FontFormatData()</a>, <a class="el" href="TextCache_8cpp_source.html#l00185">mtgb::TextCache::GetOrCreateTextFormat()</a>, <a class="el" href="TextCache_8cpp_source.html#l00147">mtgb::TextCache::GetOrCreateTextLayoutHandle()</a>, <a class="el" href="Draw_8cpp_source.html#l00247">mtgb::Draw::ImmediateText()</a>, <a class="el" href="Draw_8cpp_source.html#l00178">mtgb::Draw::ImmediateTextW()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Draw_8cpp_source.html#l00314">mtgb::Draw::ChangeFontSize()</a>, <a class="el" href="DirectWrite_8cpp_source.html#l00035">FontFormatData()</a>, <a class="el" href="TextCache_8cpp_source.html#l00186">mtgb::TextCache::GetOrCreateTextFormat()</a>, <a class="el" href="TextCache_8cpp_source.html#l00148">mtgb::TextCache::GetOrCreateTextLayoutHandle()</a>, <a class="el" href="Draw_8cpp_source.html#l00247">mtgb::Draw::ImmediateText()</a>, <a class="el" href="Draw_8cpp_source.html#l00178">mtgb::Draw::ImmediateTextW()</a>.</p>
 
 </div>
 </div>
@@ -248,7 +248,7 @@ mtgb::FontFormatData 連携図</div>
 
 <p class="definition"> <a class="el" href="DirectWrite_8h_source.html">DirectWrite.h</a> の <a class="el" href="DirectWrite_8h_source.html#l00042">42</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Draw_8cpp_source.html#l00314">mtgb::Draw::ChangeFontSize()</a>, <a class="el" href="TextCache_8cpp_source.html#l00185">mtgb::TextCache::GetOrCreateTextFormat()</a>, <a class="el" href="Draw_8cpp_source.html#l00247">mtgb::Draw::ImmediateText()</a>, <a class="el" href="Draw_8cpp_source.html#l00178">mtgb::Draw::ImmediateTextW()</a>, <a class="el" href="Draw_8cpp_source.html#l00134">mtgb::Draw::Text()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Draw_8cpp_source.html#l00314">mtgb::Draw::ChangeFontSize()</a>, <a class="el" href="TextCache_8cpp_source.html#l00186">mtgb::TextCache::GetOrCreateTextFormat()</a>, <a class="el" href="Draw_8cpp_source.html#l00247">mtgb::Draw::ImmediateText()</a>, <a class="el" href="Draw_8cpp_source.html#l00178">mtgb::Draw::ImmediateTextW()</a>, <a class="el" href="Draw_8cpp_source.html#l00134">mtgb::Draw::Text()</a>.</p>
 
 </div>
 </div>

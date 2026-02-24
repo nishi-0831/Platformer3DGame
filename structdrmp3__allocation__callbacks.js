@@ -1,7 +1,7 @@
 var structdrmp3__allocation__callbacks =
 [
-    [ "onFree", "structdrmp3__allocation__callbacks.html#a02fd70d856ae1a74f2f40f2fa45530f4", null ],
-    [ "onMalloc", "structdrmp3__allocation__callbacks.html#ae3ce36e07e3607556a25b1206b7fde10", null ],
-    [ "onRealloc", "structdrmp3__allocation__callbacks.html#a4e7e5575a36cf980600bd2d3b82d5550", null ],
+    [ "onFree", "structdrmp3__allocation__callbacks.html#a44845ba90217beb9a5e90a243e160ca4", null ],
+    [ "onMalloc", "structdrmp3__allocation__callbacks.html#af22239aeeff6363da2ce8550018a5d11", null ],
+    [ "onRealloc", "structdrmp3__allocation__callbacks.html#a2e63346b28ea8bb495556913d0b23e7f", null ],
     [ "pUserData", "structdrmp3__allocation__callbacks.html#a6143e313c75cae01f6aa30544d476dc2", null ]
 ];

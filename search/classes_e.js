@@ -12,6 +12,7 @@ var searchData=
   ['playerreachedgoalevent_9',['PlayerReachedGoalEvent',['../structPlayerReachedGoalEvent.html',1,'']]],
   ['profileint_10',['ProfileInt',['../structmtgb_1_1ProfileInt.html',1,'mtgb']]],
   ['propertychangecommand_11',['PropertyChangeCommand',['../classmtgb_1_1PropertyChangeCommand.html',1,'mtgb']]],
-  ['proxyfor_12',['ProxyFor',['../structProxyFor.html',1,'']]],
-  ['pyclass_13',['PyClass',['../classdocstring_1_1PyClass.html',1,'docstring.PyClass'],['../classpyexample_1_1PyClass.html',1,'pyexample.PyClass']]]
+  ['propertydisplayregistry_12',['PropertyDisplayRegistry',['../classPropertyDisplayRegistry.html',1,'']]],
+  ['proxyfor_13',['ProxyFor',['../structProxyFor.html',1,'']]],
+  ['pyclass_14',['PyClass',['../classdocstring_1_1PyClass.html',1,'docstring.PyClass'],['../classpyexample_1_1PyClass.html',1,'pyexample.PyClass']]]
 ];

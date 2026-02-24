@@ -133,12 +133,12 @@ mtgb::IOriginalShader&lt; EnumStructT, OriginalShaderT &gt; 連携図</div>
 <tr class="memitem:ac0a74d3c5bc501d99575f58705304798"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IOriginalShader.html#ac0a74d3c5bc501d99575f58705304798">InitializeConstantBuffer</a> (ID3D11Device *_pDevice)</td></tr>
 <tr class="memdesc:ac0a74d3c5bc501d99575f58705304798"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンスタントバッファの初期化  <br /></td></tr>
 <tr class="separator:ac0a74d3c5bc501d99575f58705304798"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a253b41bf6f597bb4221d1a90b11205"><td class="memTemplParams" colspan="2">template&lt;typename VertexT , size_t VertexesSize&gt; </td></tr>
-<tr class="memitem:a6a253b41bf6f597bb4221d1a90b11205"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IOriginalShader.html#a6a253b41bf6f597bb4221d1a90b11205">OnWriteVertexBuffer</a> (std::function&lt; void(std::array&lt; VertexT, VertexesSize &gt; &amp;)&gt; vertexes)</td></tr>
-<tr class="separator:a6a253b41bf6f597bb4221d1a90b11205"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33548486d07feaa3e7fba1c2625f24c6"><td class="memTemplParams" colspan="2">template&lt;size_t IndexSize&gt; </td></tr>
-<tr class="memitem:a33548486d07feaa3e7fba1c2625f24c6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IOriginalShader.html#a33548486d07feaa3e7fba1c2625f24c6">OnWriteIndexBuffer</a> (std::function&lt; std::array&lt; int, IndexSize &gt; &amp; &gt; pIndexes)</td></tr>
-<tr class="separator:a33548486d07feaa3e7fba1c2625f24c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173f4967922abea7ed1f0a627101c063"><td class="memTemplParams" colspan="2">template&lt;typename VertexT , size_t VertexesSize&gt; </td></tr>
+<tr class="memitem:a173f4967922abea7ed1f0a627101c063"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IOriginalShader.html#a173f4967922abea7ed1f0a627101c063">OnWriteVertexBuffer</a> (std::function&lt; void(std::array&lt; VertexT, VertexesSize &gt; &amp;)&gt; _vertexes)</td></tr>
+<tr class="separator:a173f4967922abea7ed1f0a627101c063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a8c0491151e33047ab39a6336cc19fb"><td class="memTemplParams" colspan="2">template&lt;size_t IndexSize&gt; </td></tr>
+<tr class="memitem:a6a8c0491151e33047ab39a6336cc19fb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IOriginalShader.html#a6a8c0491151e33047ab39a6336cc19fb">OnWriteIndexBuffer</a> (std::function&lt; std::array&lt; int, IndexSize &gt; &amp; &gt; _pIndexes)</td></tr>
+<tr class="separator:a6a8c0491151e33047ab39a6336cc19fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a458697560dfe439bb1bf92671ac92087"><td class="memTemplParams" colspan="2">template&lt;typename ConstantBufferT &gt; </td></tr>
 <tr class="memitem:a458697560dfe439bb1bf92671ac92087"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IOriginalShader.html#a458697560dfe439bb1bf92671ac92087">OnWriteConstantBuffer</a> (std::function&lt; ConstantBufferT * &gt; _pConstantBuffer)</td></tr>
 <tr class="memdesc:a458697560dfe439bb1bf92671ac92087"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンスタントバッファに書き込み  <br /></td></tr>
@@ -393,8 +393,8 @@ template&lt;typename ConstantBufferT &gt; </div>
 
 </div>
 </div>
-<a id="a33548486d07feaa3e7fba1c2625f24c6" name="a33548486d07feaa3e7fba1c2625f24c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33548486d07feaa3e7fba1c2625f24c6">&#9670;&#160;</a></span>OnWriteIndexBuffer()</h2>
+<a id="a6a8c0491151e33047ab39a6336cc19fb" name="a6a8c0491151e33047ab39a6336cc19fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a8c0491151e33047ab39a6336cc19fb">&#9670;&#160;</a></span>OnWriteIndexBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,7 +410,7 @@ template&lt;size_t IndexSize&gt; </div>
           <td class="memname">void <a class="el" href="classmtgb_1_1IOriginalShader.html">mtgb::IOriginalShader</a>&lt; EnumStructT, OriginalShaderT &gt;::OnWriteIndexBuffer </td>
           <td>(</td>
           <td class="paramtype">std::function&lt; std::array&lt; int, IndexSize &gt; &amp; &gt;&#160;</td>
-          <td class="paramname"><em>pIndexes</em></td><td>)</td>
+          <td class="paramname"><em>_pIndexes</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -463,8 +463,8 @@ template&lt;IsEnumStruct EnumStructT, typename OriginalShaderT &gt; </div>
 
 </div>
 </div>
-<a id="a6a253b41bf6f597bb4221d1a90b11205" name="a6a253b41bf6f597bb4221d1a90b11205"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a253b41bf6f597bb4221d1a90b11205">&#9670;&#160;</a></span>OnWriteVertexBuffer()</h2>
+<a id="a173f4967922abea7ed1f0a627101c063" name="a173f4967922abea7ed1f0a627101c063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a173f4967922abea7ed1f0a627101c063">&#9670;&#160;</a></span>OnWriteVertexBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -480,7 +480,7 @@ template&lt;typename VertexT , size_t VertexesSize&gt; </div>
           <td class="memname">void <a class="el" href="classmtgb_1_1IOriginalShader.html">mtgb::IOriginalShader</a>&lt; EnumStructT, OriginalShaderT &gt;::OnWriteVertexBuffer </td>
           <td>(</td>
           <td class="paramtype">std::function&lt; void(std::array&lt; VertexT, VertexesSize &gt; &amp;)&gt;&#160;</td>
-          <td class="paramname"><em>vertexes</em></td><td>)</td>
+          <td class="paramname"><em>_vertexes</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

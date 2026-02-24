@@ -322,7 +322,7 @@ mtgb::Quaternion 連携図</div>
 
 <p class="definition"> <a class="el" href="Quaternion_8h_source.html">Quaternion.h</a> の <a class="el" href="Quaternion_8h_source.html#l00059">59</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   60</span>        {</div>
-<div class="line"><span class="lineno">   61</span>            v = _v;</div>
+<div class="line"><span class="lineno">   61</span>            v = _v.v;</div>
 <div class="line"><span class="lineno">   62</span>        }</div>
 </div><!-- fragment -->
 </div>
@@ -871,7 +871,7 @@ mtgb::Quaternion 連携図</div>
 <div class="line"><span class="lineno">   23</span>    <span class="keywordflow">return</span> XMQuaternionRotationMatrix(mRot);</div>
 <div class="line"><span class="lineno">   24</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="Interpolator_8cpp_source.html#l00108">mtgb::Interpolator::CalculateRot()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00274">PatrolChargerEnemy::Charge()</a>, <a class="el" href="ICamera_8cpp_source.html#l00023">mtgb::ICamera::MoveCameraSpherical()</a>, <a class="el" href="SphericalCamera_8cpp_source.html#l00250">mtgb::SphericalCamera::MoveCameraSpherical()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00252">mtgb::ImGuiEditorCamera::MoveCameraSphericalOnTheSpot()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00255">PatrolChargerEnemy::Patrol()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00311">PatrolChargerEnemy::ReturnToPatrol()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00049">mtgb::CircularSaw::Start()</a>, <a class="el" href="Player_8cpp_source.html#l00338">Player::UpdateRotate()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Interpolator_8cpp_source.html#l00108">mtgb::Interpolator::CalculateRot()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00274">PatrolChargerEnemy::Charge()</a>, <a class="el" href="ICamera_8cpp_source.html#l00023">mtgb::ICamera::MoveCameraSpherical()</a>, <a class="el" href="SphericalCamera_8cpp_source.html#l00247">mtgb::SphericalCamera::MoveCameraSpherical()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00252">mtgb::ImGuiEditorCamera::MoveCameraSphericalOnTheSpot()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00255">PatrolChargerEnemy::Patrol()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00311">PatrolChargerEnemy::ReturnToPatrol()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00049">mtgb::CircularSaw::Start()</a>, <a class="el" href="Player_8cpp_source.html#l00336">Player::UpdateRotate()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -907,7 +907,7 @@ mtgb::Quaternion 連携図</div>
 
 <p class="definition"> <a class="el" href="Quaternion_8h_source.html">Quaternion.h</a> の <a class="el" href="Quaternion_8h_source.html#l00180">180</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  181</span>        {</div>
-<div class="line"><span class="lineno">  182</span>            *<span class="keyword">this</span> = DirectX::XMQuaternionMultiply(*<span class="keyword">this</span>, _other);</div>
+<div class="line"><span class="lineno">  182</span>            *<span class="keyword">this</span> = DirectX::XMQuaternionMultiply((*this).v, _other.v);</div>
 <div class="line"><span class="lineno">  183</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  184</span>        };</div>
 </div><!-- fragment -->
@@ -955,7 +955,7 @@ mtgb::Quaternion 連携図</div>
 
 <p class="definition"> <a class="el" href="Quaternion_8h_source.html">Quaternion.h</a> の <a class="el" href="Quaternion_8h_source.html#l00136">136</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  137</span>        {</div>
-<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">return</span> DirectX::XMQuaternionSlerp(_self, _to, _lerp);</div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">return</span> DirectX::XMQuaternionSlerp(_self.v, _to.v, _lerp);</div>
 <div class="line"><span class="lineno">  139</span>        }</div>
 </div><!-- fragment -->
 </div>

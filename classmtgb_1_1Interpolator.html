@@ -828,7 +828,7 @@ mtgb::Interpolator 連携図</div>
 
 <p class="definition"> <a class="el" href="Interpolator_8cpp_source.html">Interpolator.cpp</a> の <a class="el" href="Interpolator_8cpp_source.html#l00089">89</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   90</span>{</div>
-<div class="line"><span class="lineno">   91</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a4121ff788f7bdd832d9cbb5d72f2bdd5">elapsed_</a> += <a class="code hl_function" href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">Time::DeltaTimeF</a>() * <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a4d071516469c944b2c1b0d10f3b3c670">dir_</a>;</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a4121ff788f7bdd832d9cbb5d72f2bdd5">elapsed_</a> += <a class="code hl_function" href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">Time::DeltaTimeF</a>() * <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a4d071516469c944b2c1b0d10f3b3c670">dir_</a>;</div>
 <div class="line"><span class="lineno">   92</span>    <span class="keywordtype">float</span> progress = <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a4121ff788f7bdd832d9cbb5d72f2bdd5">elapsed_</a> / <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a9f4985e5a9a6f0e8008b39e658b29ee5">duration_</a>;</div>
 <div class="line"><span class="lineno">   93</span>    <span class="comment">// 進行度が0から1を超えた場合、進行方向を反転させる</span></div>
 <div class="line"><span class="lineno">   94</span>    <span class="keywordflow">if</span> (progress &gt; 1.0f || progress &lt; 0.0f)</div>
@@ -837,7 +837,7 @@ mtgb::Interpolator 連携図</div>
 <div class="line"><span class="lineno">   97</span>        <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a4121ff788f7bdd832d9cbb5d72f2bdd5">elapsed_</a> = std::clamp(<a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a4121ff788f7bdd832d9cbb5d72f2bdd5">elapsed_</a>, 0.0f, <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a9f4985e5a9a6f0e8008b39e658b29ee5">duration_</a>);</div>
 <div class="line"><span class="lineno">   98</span>    }</div>
 <div class="line"><span class="lineno">   99</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1Time_html_a65abdc2a0dc82415c4d4ff372815973d"><div class="ttname"><a href="classmtgb_1_1Time.html#a65abdc2a0dc82415c4d4ff372815973d">mtgb::Time::DeltaTimeF</a></div><div class="ttdeci">static const float DeltaTimeF()</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00025">GameTime.h:25</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_a561b9381599a78b330575d350f5130fe"><div class="ttname"><a href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">mtgb::Time::DeltaTimeF</a></div><div class="ttdeci">static float DeltaTimeF()</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00025">GameTime.h:25</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="GameTime_8h_source.html#l00025">mtgb::Time::DeltaTimeF()</a>.</p>
 

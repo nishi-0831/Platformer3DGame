@@ -106,27 +106,27 @@ $(document).ready(function(){initNavTree('structVector3Show.html',''); initResiz
 <div class="dynheader">
 Vector3Show の継承関係図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structVector3Show__inherit__graph.svg" width="196" height="243"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structVector3Show__inherit__graph.svg" width="203" height="243"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Vector3Show 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structVector3Show__coll__graph.svg" width="196" height="243"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structVector3Show__coll__graph.svg" width="203" height="243"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a66a9fb28b582681eadda961c904c0f9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCommand.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVector3Show.html#a66a9fb28b582681eadda961c904c0f9a">operator()</a> (<a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> *vec, const char *name) const</td></tr>
-<tr class="separator:a66a9fb28b582681eadda961c904c0f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23a8a0b9c61152bd453c859f956a88eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCommand.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVector3Show.html#a23a8a0b9c61152bd453c859f956a88eb">operator()</a> (<a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> *_vec, const char *_name) const</td></tr>
+<tr class="separator:a23a8a0b9c61152bd453c859f956a88eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
 <p class="definition"> <a class="el" href="ShowAttributes_8h_source.html">ShowAttributes.h</a> の <a class="el" href="ShowAttributes_8h_source.html#l00011">11</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
-<a id="a66a9fb28b582681eadda961c904c0f9a" name="a66a9fb28b582681eadda961c904c0f9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66a9fb28b582681eadda961c904c0f9a">&#9670;&#160;</a></span>operator()()</h2>
+<a id="a23a8a0b9c61152bd453c859f956a88eb" name="a23a8a0b9c61152bd453c859f956a88eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23a8a0b9c61152bd453c859f956a88eb">&#9670;&#160;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,13 +135,13 @@ Vector3Show 連携図</div>
           <td class="memname"><a class="el" href="classCommand.html">Command</a> * Vector3Show::operator() </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> *&#160;</td>
-          <td class="paramname"><em>vec</em>, </td>
+          <td class="paramname"><em>_vec</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
+          <td class="paramname"><em>_name</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -153,14 +153,14 @@ Vector3Show 連携図</div>
 
 <p class="definition"> <a class="el" href="ShowAttributes_8cpp_source.html">ShowAttributes.cpp</a> の <a class="el" href="ShowAttributes_8cpp_source.html#l00003">3</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">    4</span>{</div>
-<div class="line"><span class="lineno">    5</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> old = *vec;</div>
+<div class="line"><span class="lineno">    5</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> old = *_vec;</div>
 <div class="line"><span class="lineno">    6</span> </div>
-<div class="line"><span class="lineno">    7</span>    <span class="keywordtype">bool</span> changed = ImGui::InputFloat3(name, &amp;vec-&gt;x, <span class="stringliteral">&quot;%.3f&quot;</span>, ImGuiInputTextFlags_NoUndoRedo);</div>
+<div class="line"><span class="lineno">    7</span>    <span class="keywordtype">bool</span> changed = ImGui::InputFloat3(_name, &amp;_vec-&gt;x, <span class="stringliteral">&quot;%.3f&quot;</span>, ImGuiInputTextFlags_NoUndoRedo);</div>
 <div class="line"><span class="lineno">    8</span> </div>
 <div class="line"><span class="lineno">    9</span>    <span class="keywordflow">if</span> (changed == <span class="keyword">false</span>)</div>
 <div class="line"><span class="lineno">   10</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">   11</span> </div>
-<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> ImGuiInputCommand&lt;mtgb::Vector3&gt;(vec, old, *vec, name);</div>
+<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> ImGuiInputCommand&lt;mtgb::Vector3&gt;(_vec, old, *_vec, _name);</div>
 <div class="line"><span class="lineno">   13</span>}</div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
 </div><!-- fragment -->

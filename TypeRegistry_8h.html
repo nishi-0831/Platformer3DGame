@@ -117,7 +117,7 @@ TypeRegistry.h の依存先関係図:</div>
 </div><div class="textblock"><div class="dynheader">
 被依存関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="TypeRegistry_8h__dep__incl.svg" width="4090" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="TypeRegistry_8h__dep__incl.svg" width="3732" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -125,7 +125,7 @@ TypeRegistry.h の依存先関係図:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 クラス</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTypeRegistry.html">TypeRegistry</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html">PropertyDisplayRegistry</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -253,20 +253,20 @@ TypeRegistry.h の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>値:</b><div class="fragment"><div class="line">    <span class="keyword">struct </span>Type##_TypeRegister                                     \</div>
-<div class="line">    {                                                              \</div>
-<div class="line">        Type##_TypeRegister()                                      \</div>
-<div class="line">        {                                                          \</div>
-<div class="line">            TypeRegistry::Instance().ProvisionalRegister(          \</div>
-<div class="line">                <span class="keyword">typeid</span>(Type),                                      \</div>
-<div class="line">                []()                                               \</div>
-<div class="line">                {                                                  \</div>
-<div class="line">                    TypeRegistry::Instance().RegisterType&lt;Type&gt;(); \</div>
-<div class="line">                }                                                  \</div>
-<div class="line">            );                                                     \</div>
-<div class="line">        }                                                          \</div>
-<div class="line">    };                                                             \</div>
-<div class="line">    <span class="keyword">static</span> Type##_TypeRegister Type##_instance;                    \</div>
+<b>値:</b><div class="fragment"><div class="line">    <span class="keyword">struct </span>Type##_TypeRegister                                                \</div>
+<div class="line">    {                                                                         \</div>
+<div class="line">        Type##_TypeRegister()                                                 \</div>
+<div class="line">        {                                                                     \</div>
+<div class="line">            PropertyDisplayRegistry::Instance().ProvisionalRegister(          \</div>
+<div class="line">                <span class="keyword">typeid</span>(Type),                                                 \</div>
+<div class="line">                []()                                                          \</div>
+<div class="line">                {                                                             \</div>
+<div class="line">                    PropertyDisplayRegistry::Instance().RegisterType&lt;Type&gt;(); \</div>
+<div class="line">                }                                                             \</div>
+<div class="line">            );                                                                \</div>
+<div class="line">        }                                                                     \</div>
+<div class="line">    };                                                                        \</div>
+<div class="line">    <span class="keyword">static</span> Type##_TypeRegister Type##_instance;                               \</div>
 <div class="line">    REFL_TYPE(Type, __VA_ARGS__)</div>
 </div><!-- fragment -->
 <p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00097">97</a> 行目に定義があります。</p>

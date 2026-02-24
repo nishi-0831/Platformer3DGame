@@ -1,9 +1,9 @@
 var classmtgb_1_1Draw =
 [
     [ "Pivot", "classmtgb_1_1Draw.html#a26b942a58b77cff8d8a29e9c93af2368", [
-      [ "TopLeft", "classmtgb_1_1Draw.html#a26b942a58b77cff8d8a29e9c93af2368ab32beb056fbfe36afbabc6c88c81ab36", null ],
-      [ "Center", "classmtgb_1_1Draw.html#a26b942a58b77cff8d8a29e9c93af2368a4f1f6016fc9f3f2353c0cc7c67b292bd", null ],
-      [ "BottomMiddle", "classmtgb_1_1Draw.html#a26b942a58b77cff8d8a29e9c93af2368ab39823fd00c542c61dff787f5f230fa1", null ]
+      [ "TOP_LEFT", "classmtgb_1_1Draw.html#a26b942a58b77cff8d8a29e9c93af2368a747385047b85ae751f83adb36435a3c1", null ],
+      [ "CENTER", "classmtgb_1_1Draw.html#a26b942a58b77cff8d8a29e9c93af2368ac397289ee45877be0cd49811fe245b4e", null ],
+      [ "BOTTOM_MIDDLE", "classmtgb_1_1Draw.html#a26b942a58b77cff8d8a29e9c93af2368a041fc1121de9bf050d69a8edad008695", null ]
     ] ],
     [ "Draw", "classmtgb_1_1Draw.html#a883030a73b195b241ea714ab331d229a", null ],
     [ "~Draw", "classmtgb_1_1Draw.html#a014ee33ed5d27fcaa5a956d7c0bdf41c", null ],
@@ -14,7 +14,7 @@ var classmtgb_1_1Draw =
     [ "ChangeTextAlignment", "classmtgb_1_1Draw.html#acdcbe5695140c24ffb212ed3672e5271", null ],
     [ "CheckSetShader", "classmtgb_1_1Draw.html#a972e48a671d7610a2a71b8ae76339cf7", null ],
     [ "ClearUICommands", "classmtgb_1_1Draw.html#a329b7551cf069a060c2dfc19c6cd79cc", null ],
-    [ "FBXModel", "classmtgb_1_1Draw.html#a623126b2353e4747da1340c91af6e4bf", null ],
+    [ "FBXModel", "classmtgb_1_1Draw.html#a4ace0698cc408782fb10febde7cd3b6b", null ],
     [ "FlushUIDrawCommands", "classmtgb_1_1Draw.html#ab49701b73420c858c1eec301402ec530", null ],
     [ "Image", "classmtgb_1_1Draw.html#ab8a5e461f30dbedb33254572aa22efc1", null ],
     [ "Image", "classmtgb_1_1Draw.html#a154c60bcdc6f24027425656a4c6af4ff", null ],

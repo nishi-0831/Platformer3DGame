@@ -1,6 +1,6 @@
 var structmtgb_1_1Ease =
 [
-    [ "OutBounce", "structmtgb_1_1Ease.html#ad7d1d743957e8fb9931851134832a334", null ],
-    [ "OutExpo", "structmtgb_1_1Ease.html#a9678ff59e40d71f5ba1edd3eb4458c1d", null ],
-    [ "OutQuart", "structmtgb_1_1Ease.html#aefa6a3c90f1a7a884f2a21d1dd57a0bd", null ]
+    [ "OutBounce", "structmtgb_1_1Ease.html#acb4cecce76136862e080f009abe52ea6", null ],
+    [ "OutExpo", "structmtgb_1_1Ease.html#a69e5f6e1e093150a768c3248ad9ab7b6", null ],
+    [ "OutQuart", "structmtgb_1_1Ease.html#a92de28b712304e854e51c9204f1d3ed6", null ]
 ];

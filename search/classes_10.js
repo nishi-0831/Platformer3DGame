@@ -17,6 +17,6 @@ var searchData=
   ['respawnpoint_14',['RespawnPoint',['../classRespawnPoint.html',1,'']]],
   ['resultscene_15',['ResultScene',['../classResultScene.html',1,'']]],
   ['rigidbody_16',['RigidBody',['../classmtgb_1_1RigidBody.html',1,'mtgb']]],
-  ['rigidbody_5fregister_17',['RigidBody_Register',['../structmtgb_1_1RigidBody__Register.html',1,'mtgb']]],
-  ['rigidbodycp_18',['RigidBodyCP',['../classmtgb_1_1RigidBodyCP.html',1,'mtgb']]]
+  ['rigidbodycp_17',['RigidBodyCP',['../classmtgb_1_1RigidBodyCP.html',1,'mtgb']]],
+  ['rigidbodystate_18',['RigidBodyState',['../structRigidBodyState.html',1,'']]]
 ];

@@ -9,7 +9,7 @@ var classmtgb_1_1CircleDetector =
     [ "GetDetectedTargets", "classmtgb_1_1CircleDetector.html#ae955a0b4db6f216d6b96836d426b18e9", null ],
     [ "GetDetectionArea", "classmtgb_1_1CircleDetector.html#a57e8356168ce7dc2d14cdeae1996448e", null ],
     [ "HasDetectedTargets", "classmtgb_1_1CircleDetector.html#aa68e5d9f6ede47abe73144c82baaa713", null ],
-    [ "IsPointInCircle", "classmtgb_1_1CircleDetector.html#a77c38b9a4121e3ce69c6eda3add26568", null ],
+    [ "IsPointInCircle", "classmtgb_1_1CircleDetector.html#a044d1f7b7299cb824257917a5b7e542e", null ],
     [ "UpdateAndSetDetection", "classmtgb_1_1CircleDetector.html#a0186fdae2b53827e86d08e4a52c52430", null ],
     [ "UpdateDetection", "classmtgb_1_1CircleDetector.html#a68b53e77c3cef60f8c6624dd29804201", null ],
     [ "UpdateDetection", "classmtgb_1_1CircleDetector.html#ae02e16dc95672d66b9c8b7294718ef50", null ],

@@ -31,7 +31,7 @@ var hierarchy =
     [ "C5", "classC5.html", null ],
     [ "mtgb::CircleDetectorConfig", "structmtgb_1_1CircleDetectorConfig.html", null ],
     [ "run-clang-tidy.ClangTidyResult", "classrun-clang-tidy_1_1ClangTidyResult.html", null ],
-    [ "mtgb::Collider_Register", "structmtgb_1_1Collider__Register.html", null ],
+    [ "ColliderState", "structColliderState.html", null ],
     [ "mtgb::Color", "structmtgb_1_1Color.html", null ],
     [ "Command", "classCommand.html", [
       [ "mtgb::AddComponentCommand", "classmtgb_1_1AddComponentCommand.html", null ],
@@ -200,6 +200,7 @@ var hierarchy =
     [ "mtgb::IGameObjectRegistrar", "classmtgb_1_1IGameObjectRegistrar.html", [
       [ "mtgb::GameObjectFactory", "classmtgb_1_1GameObjectFactory.html", null ]
     ] ],
+    [ "ImageRendererState", "structImageRendererState.html", null ],
     [ "ImGuiShowable", null, [
       [ "Goal", "classGoal.html", null ],
       [ "MovingFloor", "classMovingFloor.html", null ],
@@ -227,6 +228,7 @@ var hierarchy =
     [ "mtgb::InputData", "classmtgb_1_1InputData.html", null ],
     [ "mtgb::InputUtil", "classmtgb_1_1InputUtil.html", null ],
     [ "Inspector", "classInspector.html", null ],
+    [ "InterpolatorState", "structInterpolatorState.html", null ],
     [ "mtgb::IntersectInfo", "structmtgb_1_1IntersectInfo.html", null ],
     [ "mtgb::IOriginalShader< EnumStructT, OriginalShaderT >", "classmtgb_1_1IOriginalShader.html", null ],
     [ "mtgb::IProfile< T, ExtendT >", "classmtgb_1_1IProfile.html", null ],
@@ -320,7 +322,7 @@ var hierarchy =
     ] ],
     [ "Memgrp_Test", "classMemgrp__Test.html", null ],
     [ "mtbin::MemoryStream", "classmtbin_1_1MemoryStream.html", null ],
-    [ "mtgb::MeshRenderer_Register", "structmtgb_1_1MeshRenderer__Register.html", null ],
+    [ "MeshRendererState", "structMeshRendererState.html", null ],
     [ "mtgb::ModelData", "structmtgb_1_1ModelData.html", null ],
     [ "mtgb::MonitorInfo", "structmtgb_1_1MonitorInfo.html", null ],
     [ "mtgb::MouseStateProxy", "structmtgb_1_1MouseStateProxy.html", null ],
@@ -344,6 +346,7 @@ var hierarchy =
     [ "PlayerFellOutEvent", "structPlayerFellOutEvent.html", null ],
     [ "PlayerHpReachedZeroEvent", "structPlayerHpReachedZeroEvent.html", null ],
     [ "PlayerReachedGoalEvent", "structPlayerReachedGoalEvent.html", null ],
+    [ "PropertyDisplayRegistry", "classPropertyDisplayRegistry.html", null ],
     [ "docstring.PyClass", "classdocstring_1_1PyClass.html", null ],
     [ "pyexample.PyClass", "classpyexample_1_1PyClass.html", null ],
     [ "QTstyle_Test", "classQTstyle__Test.html", null ],
@@ -355,7 +358,7 @@ var hierarchy =
     [ "mtgb::RectT< float >", "structmtgb_1_1RectT.html", null ],
     [ "mtgb::Game::RegisterSystemFuncHolder", "classmtgb_1_1Game_1_1RegisterSystemFuncHolder.html", null ],
     [ "mtgb::ResourceCollection", "structmtgb_1_1ResourceCollection.html", null ],
-    [ "mtgb::RigidBody_Register", "structmtgb_1_1RigidBody__Register.html", null ],
+    [ "RigidBodyState", "structRigidBodyState.html", null ],
     [ "mtgb::ScreenCoordContainsInfo", "structmtgb_1_1ScreenCoordContainsInfo.html", null ],
     [ "mtgb::SelectionClearedEvent", "structmtgb_1_1SelectionClearedEvent.html", null ],
     [ "mtgb::ShaderBundle", "structmtgb_1_1ShaderBundle.html", null ],
@@ -375,11 +378,12 @@ var hierarchy =
     ] ],
     [ "mtgb::text_layout_order", "structmtgb_1_1text__layout__order.html", null ],
     [ "mtgb::TextLayoutData", "structmtgb_1_1TextLayoutData.html", null ],
+    [ "TextRendererState", "structTextRendererState.html", null ],
     [ "mtgb::Texture2D", "classmtgb_1_1Texture2D.html", null ],
     [ "mtgb::PlaneUVScroll::TimeBuffer", "structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html", null ],
-    [ "mtgb::Transform_Register", "structmtgb_1_1Transform__Register.html", null ],
     [ "mtgb::TransformCore", "structmtgb_1_1TransformCore.html", null ],
     [ "TransformGuizmo", "classTransformGuizmo.html", null ],
+    [ "TransformState", "structTransformState.html", null ],
     [ "mtgb::TransparentStringEq", "structmtgb_1_1TransparentStringEq.html", null ],
     [ "mtgb::TransparentStringHash", "structmtgb_1_1TransparentStringHash.html", null ],
     [ "std::true_type", null, [
@@ -396,7 +400,6 @@ var hierarchy =
       [ "Vector3Show", "structVector3Show.html", null ],
       [ "Vector4Show", "structVector4Show.html", null ]
     ] ],
-    [ "TypeRegistry", "classTypeRegistry.html", null ],
     [ "mtgb::UIDrawCommand", "structmtgb_1_1UIDrawCommand.html", null ],
     [ "mtgb::UIParams", "structmtgb_1_1UIParams.html", null ],
     [ "mtgb::Vector2T< T >", "structmtgb_1_1Vector2T.html", null ],

@@ -1,12 +1,12 @@
 var classmtgb_1_1ImGuiRenderer =
 [
     [ "WindowFlag", "classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61f", [
-      [ "None", "classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa6adf97f83acf6453d4a6a4b1070f3754", null ],
-      [ "NoMoveWhenHovered", "classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fa3939a69c29f1a20c975c29d4ef1878e8", null ]
+      [ "NONE", "classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fab50339a10e1de285ac99d4c3990b8693", null ],
+      [ "NO_MOVE_WHEN_HOVERED", "classmtgb_1_1ImGuiRenderer.html#a3fccf4056d9af7bc69cea6395627f61fae24d4ea3fdfcef6077c2f4ef903b23c2", null ]
     ] ],
     [ "ImGuiRenderer", "classmtgb_1_1ImGuiRenderer.html#a9918c6f6ab2f085b2f10f18ba550c27a", null ],
     [ "~ImGuiRenderer", "classmtgb_1_1ImGuiRenderer.html#a789972e2b431b1afe7789385145eab59", null ],
-    [ "Begin", "classmtgb_1_1ImGuiRenderer.html#a704d60c97459c9dd8e90a0010eead60c", null ],
+    [ "Begin", "classmtgb_1_1ImGuiRenderer.html#a8cfde8385919ff0f47e1095f0521df22", null ],
     [ "BeginFrame", "classmtgb_1_1ImGuiRenderer.html#a4684d4374beee1f52053b4634edae2c8", null ],
     [ "BeginImGuizmoFrame", "classmtgb_1_1ImGuiRenderer.html#a6a554c68a5c78f9e77caf43d584c7507", null ],
     [ "CreateD3DResources", "classmtgb_1_1ImGuiRenderer.html#a5e8eab8d4237edc15d0e30f92b9b75ea", null ],
@@ -15,7 +15,7 @@ var classmtgb_1_1ImGuiRenderer =
     [ "EndFrame", "classmtgb_1_1ImGuiRenderer.html#a8659d92cdaecc531688232b504e8c637", null ],
     [ "GetViewport", "classmtgb_1_1ImGuiRenderer.html#ac2ab8d15428a8eedfe82d7df92a137e6", null ],
     [ "Initialize", "classmtgb_1_1ImGuiRenderer.html#a4db4a95a57f586a5fda30be1957f247a", null ],
-    [ "OnResize", "classmtgb_1_1ImGuiRenderer.html#a74f0efdd24aa11e4798dfbd1f685cbec", null ],
+    [ "OnResize", "classmtgb_1_1ImGuiRenderer.html#a211643defaba029693f1225c0622d715", null ],
     [ "Release", "classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b", null ],
     [ "RenderSceneView", "classmtgb_1_1ImGuiRenderer.html#ab1b0148d8603765edd4109ca24dedf92", null ],
     [ "ResetComPtrs", "classmtgb_1_1ImGuiRenderer.html#a434147aa5ce3fe561ed4760fdd56ec83", null ],

@@ -1,8 +1,8 @@
 var InputMouseCode_8h =
 [
     [ "MouseCode", "InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13e", [
-      [ "Left", "InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13ea945d5e233cf7d6240f6b783b36a374ff", null ],
-      [ "Right", "InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13ea92b09c7c48c520c3c55e497875da437c", null ],
-      [ "Middle", "InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13eab1ca34f82e83c52b010f86955f264e05", null ]
+      [ "LEFT", "InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13ea684d325a7303f52e64011467ff5c5758", null ],
+      [ "RIGHT", "InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13ea21507b40c80068eda19865706fdc2403", null ],
+      [ "MIDDLE", "InputMouseCode_8h.html#a3cf958d6f304c55e15051a9052d9b13ea43eedd8685eb86592022f8da962e3474", null ]
     ] ]
 ];

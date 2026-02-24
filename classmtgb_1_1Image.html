@@ -173,8 +173,8 @@ mtgb::Image 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="Image_8cpp_source.html">Image.cpp</a> の <a class="el" href="Image_8cpp_source.html#l00005">5</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    6</span>    : <a class="code hl_variable" href="classmtgb_1_1Image.html#ae22f011aec9ab2abb5a7bab58d618992">sprites_</a>{}</div>
-<div class="line"><span class="lineno">    7</span>    , <a class="code hl_variable" href="classmtgb_1_1Image.html#a3cdcef4030ed5ee42a6bb174417d0a13">handleCounter_</a>{0}</div>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>    : <a class="code hl_variable" href="classmtgb_1_1Image.html#a3cdcef4030ed5ee42a6bb174417d0a13">handleCounter_</a>{0}</div>
+<div class="line"><span class="lineno">    7</span>    , <a class="code hl_variable" href="classmtgb_1_1Image.html#ae22f011aec9ab2abb5a7bab58d618992">sprites_</a>{}</div>
 <div class="line"><span class="lineno">    8</span>{</div>
 <div class="line"><span class="lineno">    9</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1Image_html_a3cdcef4030ed5ee42a6bb174417d0a13"><div class="ttname"><a href="classmtgb_1_1Image.html#a3cdcef4030ed5ee42a6bb174417d0a13">mtgb::Image::handleCounter_</a></div><div class="ttdeci">ImageHandle handleCounter_</div><div class="ttdef"><b>Definition:</b> <a href="Image_8h_source.html#l00054">Image.h:54</a></div></div>
@@ -423,7 +423,7 @@ mtgb::Image 連携図</div>
 <div class="line"><span class="lineno">   38</span>        }</div>
 <div class="line"><span class="lineno">   39</span>    }</div>
 <div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    <a class="code hl_enumvalue" href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd">Sprite</a>* pSprite{<span class="keyword">new</span> <a class="code hl_enumvalue" href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd">Sprite</a>{}};</div>
+<div class="line"><span class="lineno">   41</span>    Sprite* pSprite{<span class="keyword">new</span> Sprite{}};</div>
 <div class="line"><span class="lineno">   42</span>    pSprite-&gt;Initialize();</div>
 <div class="line"><span class="lineno">   43</span>    pSprite-&gt;Load(<a class="code hl_function" href="namespacemtgb.html#a617eca76bf9fafbeec11995aa89bedc9">ToWString</a>(_fileName));</div>
 <div class="line"><span class="lineno">   44</span>    <a class="code hl_typedef" href="namespacemtgb.html#a619011839f99f1dc77148dee609d87c2">ImageHandle</a> handle{++instance.handleCounter_};</div>
@@ -434,7 +434,6 @@ mtgb::Image 連携図</div>
 <div class="ttc" id="aclassmtgb_1_1Image_html_a05c07a8bb2e4e7167601cd7fe482aac5"><div class="ttname"><a href="classmtgb_1_1Image.html#a05c07a8bb2e4e7167601cd7fe482aac5">mtgb::Image::Image</a></div><div class="ttdeci">Image()</div><div class="ttdef"><b>Definition:</b> <a href="Image_8cpp_source.html#l00005">Image.cpp:5</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a617eca76bf9fafbeec11995aa89bedc9"><div class="ttname"><a href="namespacemtgb.html#a617eca76bf9fafbeec11995aa89bedc9">mtgb::ToWString</a></div><div class="ttdeci">std::wstring ToWString(const std::string &amp;_string)</div><div class="ttdoc">ワイド文字列に変換する</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8h_source.html#l00027">MTStringUtility.h:27</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a619011839f99f1dc77148dee609d87c2"><div class="ttname"><a href="namespacemtgb.html#a619011839f99f1dc77148dee609d87c2">mtgb::ImageHandle</a></div><div class="ttdeci">int32_t ImageHandle</div><div class="ttdoc">画像のハンドル</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00011">Handlers.h:11</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd"><div class="ttname"><a href="namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748a51f2b7b14433aa22c67d1f4fc18943cd">mtgb::BlendMode::Sprite</a></div><div class="ttdeci">@ Sprite</div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="IShader_8cpp_source.html#l00013">mtgb::IShader::Initialize()</a>, <a class="el" href="MTStringUtility_8h_source.html#l00027">mtgb::ToWString()</a>.</p>
 

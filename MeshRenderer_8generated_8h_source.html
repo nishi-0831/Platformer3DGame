@@ -105,89 +105,110 @@ $(document).ready(function(){initNavTree('MeshRenderer_8generated_8h_source.html
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="JsonConverter_8h.html">JsonConverter.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="MTImGui_8h.html">MTImGui.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// ============================================================================</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// MeshRendererの状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// ============================================================================</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="MeshRenderer_8generated_8h.html#a2afccead7bf53b78b17cd45ccab2d95b">   11</a></span><span class="preprocessor">#define MT_COMPONENT_MeshRenderer() \</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">    struct MeshRendererState \</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">    { \</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">            std::string meshFileName; \</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">            FBXModelHandle meshHandle; \</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">            GameObjectLayerFlag layer; \</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">            ShaderType shaderType; \</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">    }; \</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">    class MeshRenderer;\</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">    using MeshRendererMemento = ComponentMemento&lt;MeshRenderer, MeshRendererState&gt;;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// MeshRendererの状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structMeshRendererState.html">   14</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structMeshRendererState.html">MeshRendererState</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structMeshRendererState.html#a4743f41d2804319544bdc882e4ac0ee7">   16</a></span>        std::string <a class="code hl_variable" href="structMeshRendererState.html#a4743f41d2804319544bdc882e4ac0ee7">meshFileName</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structMeshRendererState.html#ad2e0f3ed45a3c66787ae235a8d17f045">   17</a></span>        <a class="code hl_typedef" href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">mtgb::FBXModelHandle</a> <a class="code hl_variable" href="structMeshRendererState.html#ad2e0f3ed45a3c66787ae235a8d17f045">meshHandle</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structMeshRendererState.html#a27ed016dd168be0c97aa96afa41fa444">   18</a></span>        <a class="code hl_class" href="classmtbit_1_1BitFlag.html">mtgb::GameObjectLayerFlag</a> <a class="code hl_variable" href="structMeshRendererState.html#a27ed016dd168be0c97aa96afa41fa444">layer</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structMeshRendererState.html#a0a67e691a3168718af8913c0a6e54c83">   19</a></span>        <a class="code hl_enumeration" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">mtgb::ShaderType</a> <a class="code hl_variable" href="structMeshRendererState.html#a0a67e691a3168718af8913c0a6e54c83">shaderType</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// ============================================================================</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// MeshRendererとMeshRendererMementoの相互変換処理を実装</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// ============================================================================</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="MeshRenderer_8generated_8h.html#aea634767ae9c721bd4999c224aea73f7">   25</a></span><span class="preprocessor">#define MT_GENERATED_BODY_MeshRenderer() \</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">    public: \</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">    using Memento = MeshRendererMemento; \</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">    MeshRendererMemento* SaveToMemento() \</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">    { \</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">    OnPreSave(); \</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">        MeshRendererState state; \</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">        state.meshFileName = this-&gt;meshFileName; \</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">        state.meshHandle = this-&gt;meshHandle; \</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">        state.layer = this-&gt;layer; \</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">        state.shaderType = this-&gt;shaderType; \</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">        return new ComponentMemento&lt;MeshRenderer, MeshRendererState&gt;(GetEntityId(), state); \</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">    } \</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">    \</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">    void RestoreFromMemento(const ComponentMemento&lt;MeshRenderer, MeshRendererState&gt;&amp; _memento) \</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">    { \</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">        const MeshRendererState&amp; state = _memento.GetState(); \</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">        this-&gt;meshFileName = state.meshFileName; \</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">        this-&gt;meshHandle = state.meshHandle; \</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">        this-&gt;layer = state.layer; \</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">        this-&gt;shaderType = state.shaderType; \</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">        OnPostRestore(); \</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">    } \</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">    \</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">    friend struct MeshRenderer_Register; \</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">    friend void to_json(nlohmann::json&amp; _j,const MeshRenderer&amp; _target) \</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">    { \</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">        _j[&quot;meshFileName&quot;</span>] = JsonConverter::Serialize&lt;std::string&gt;(_target.meshFileName); \</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        _j[&quot;meshHandle&quot;] = JsonConverter::Serialize&lt;FBXModelHandle&gt;(_target.meshHandle); \</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        _j[&quot;layer&quot;] = JsonConverter::Serialize&lt;GameObjectLayerFlag&gt;(_target.layer); \</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        _j[&quot;shaderType&quot;] = JsonConverter::Serialize&lt;ShaderType&gt;(_target.shaderType); \</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    } \</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    friend void from_json(const nlohmann::json&amp; _j, MeshRenderer&amp; _target) \</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    { \</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        JsonConverter::Deserialize&lt;std::string&gt;(_target.meshFileName, _j,&quot;meshFileName&quot;); \</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        JsonConverter::Deserialize&lt;FBXModelHandle&gt;(_target.meshHandle, _j,&quot;meshHandle&quot;); \</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        JsonConverter::Deserialize&lt;GameObjectLayerFlag&gt;(_target.layer, _j,&quot;layer&quot;); \</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        JsonConverter::Deserialize&lt;ShaderType&gt;(_target.shaderType, _j,&quot;shaderType&quot;); \</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        _target.OnPostRestore(); \</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    } \</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    static std::string TypeName(){ return &quot;MeshRenderer&quot; ;} \</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">/* ImGui表示処理の登録 */</span><span class="preprocessor"> \</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">    static void RegisterImGui() \</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">    { \</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">        static bool registered = false; \</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">        if (registered) return; \</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">        registered = true; \</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">        \</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">        RegisterShowFuncHolder::Set&lt;MeshRenderer&gt;([]( MeshRenderer* _target, const char* _name) \</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">            { \</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">                TypeRegistry::Instance().CallFunc(&amp;_target-&gt;meshFileName, &quot;meshFileName&quot;</span>); \</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                TypeRegistry::Instance().CallFunc(&amp;_target-&gt;meshHandle, &quot;meshHandle&quot;); \</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                TypeRegistry::Instance().CallFunc(&amp;_target-&gt;layer, &quot;layer&quot;); \</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                TypeRegistry::Instance().CallFunc(&amp;_target-&gt;shaderType, &quot;shaderType&quot;); \</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            }); \</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        MTImGui::Instance().RegisterComponentViewer&lt;MeshRenderer&gt;(); \</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#pragma warning(push)</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#pragma warning(disable:4005)</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">// マクロ上書き</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="MeshRenderer_8generated_8h.html#a8fcf0c8808eaf778437825f1f96023ac">   86</a></span><span class="preprocessor">#define MT_COMPONENT() MT_COMPONENT_MeshRenderer()</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="MeshRenderer_8generated_8h.html#a37ea79c1d7c1153a3868c2e33ba1c9eb">   87</a></span><span class="preprocessor">#define MT_GENERATED_BODY() MT_GENERATED_BODY_MeshRenderer()</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#pragma warning(pop)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// クラスの前方宣言</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">class </span>MeshRenderer;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="MeshRenderer_8generated_8h.html#ae63a8be8b651ef0b38c76177076e2a91">   32</a></span><span class="keyword">using </span><a class="code hl_class" href="classmtgb_1_1ComponentMemento.html">MeshRendererMemento</a> = <a class="code hl_class" href="classmtgb_1_1ComponentMemento.html">mtgb::ComponentMemento&lt;mtgb::MeshRenderer, MeshRendererState&gt;</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// MeshRendererとMeshRendererMementoの相互変換処理を実装</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="MeshRenderer_8generated_8h.html#aea634767ae9c721bd4999c224aea73f7">   37</a></span><span class="preprocessor">#define MT_GENERATED_BODY_MeshRenderer() \</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">    public: \</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">    using Memento = MeshRendererMemento; \</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">    MeshRendererMemento* SaveToMemento() \</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">    { \</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">    OnPreSave(); \</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">        MeshRendererState state; \</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">        state.meshFileName = this-&gt;meshFileName; \</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">        state.meshHandle = this-&gt;meshHandle; \</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">        state.layer = this-&gt;layer; \</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">        state.shaderType = this-&gt;shaderType; \</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">        return new Memento(GetEntityId(), state); \</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">    } \</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">    \</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">    void RestoreFromMemento(const Memento&amp; _memento) \</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">    { \</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">        const MeshRendererState&amp; state = _memento.GetState(); \</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">        this-&gt;meshFileName = state.meshFileName; \</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">        this-&gt;meshHandle = state.meshHandle; \</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">        this-&gt;layer = state.layer; \</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">        this-&gt;shaderType = state.shaderType; \</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">        OnPostRestore(); \</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">    } \</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">    \</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">    friend struct MeshRenderer_Register; \</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">    friend void to_json(nlohmann::json&amp; _j,const MeshRenderer&amp; _target) \</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">    { \</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">        _j[&quot;meshFileName&quot;</span>] = JsonConverter::Serialize&lt;std::string&gt;(_target.meshFileName); \</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        _j[&quot;meshHandle&quot;] = JsonConverter::Serialize&lt;mtgb::FBXModelHandle&gt;(_target.meshHandle); \</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        _j[&quot;layer&quot;] = JsonConverter::Serialize&lt;mtgb::GameObjectLayerFlag&gt;(_target.layer); \</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        _j[&quot;shaderType&quot;] = JsonConverter::Serialize&lt;mtgb::ShaderType&gt;(_target.shaderType); \</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    } \</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    friend void from_json(const nlohmann::json&amp; _j, MeshRenderer&amp; _target) \</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    { \</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        JsonConverter::Deserialize&lt;std::string&gt;(_target.meshFileName, _j,&quot;meshFileName&quot;); \</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        JsonConverter::Deserialize&lt;mtgb::FBXModelHandle&gt;(_target.meshHandle, _j,&quot;meshHandle&quot;); \</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        JsonConverter::Deserialize&lt;mtgb::GameObjectLayerFlag&gt;(_target.layer, _j,&quot;layer&quot;); \</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        JsonConverter::Deserialize&lt;mtgb::ShaderType&gt;(_target.shaderType, _j,&quot;shaderType&quot;); \</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        _target.OnPostRestore(); \</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    } \</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    static std::string TypeName(){ return &quot;MeshRenderer&quot; ;} \</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">/* ImGui表示処理の登録 */</span><span class="preprocessor"> \</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">    static void RegisterImGui() \</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">    { \</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">        static bool registered = false; \</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">        if (registered) return; \</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">        registered = true; \</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">        \</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">        RegisterShowFuncHolder::Set&lt;MeshRenderer&gt;([]( MeshRenderer* _target, const char* _name) \</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">            { \</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">                PropertyDisplayRegistry::Instance().ShowProperty(&amp;_target-&gt;meshFileName, &quot;meshFileName&quot;</span>); \</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                PropertyDisplayRegistry::Instance().ShowProperty(&amp;_target-&gt;meshHandle, &quot;meshHandle&quot;); \</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                PropertyDisplayRegistry::Instance().ShowProperty(&amp;_target-&gt;layer, &quot;layer&quot;); \</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                PropertyDisplayRegistry::Instance().ShowProperty(&amp;_target-&gt;shaderType, &quot;shaderType&quot;); \</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            }); \</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        MTImGui::Instance().RegisterComponentViewer&lt;MeshRenderer&gt;(); \</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#pragma warning(push)</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#pragma warning(disable:4005)</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">// マクロ上書き</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="MeshRenderer_8generated_8h.html#a37ea79c1d7c1153a3868c2e33ba1c9eb">   98</a></span><span class="preprocessor">#define MT_GENERATED_BODY() MT_GENERATED_BODY_MeshRenderer()</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#pragma warning(pop)</span></div>
 <div class="ttc" id="aJsonConverter_8h_html"><div class="ttname"><a href="JsonConverter_8h.html">JsonConverter.h</a></div></div>
 <div class="ttc" id="aMTImGui_8h_html"><div class="ttname"><a href="MTImGui_8h.html">MTImGui.h</a></div></div>
+<div class="ttc" id="aclassmtbit_1_1BitFlag_html"><div class="ttname"><a href="classmtbit_1_1BitFlag.html">mtbit::BitFlag&lt; GameObjectLayer &gt;</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ComponentMemento_html"><div class="ttname"><a href="classmtgb_1_1ComponentMemento.html">mtgb::ComponentMemento</a></div><div class="ttdef"><b>Definition:</b> <a href="IComponentMemento_8h_source.html#l00015">IComponentMemento.h:16</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommand_8h_source.html#l00008">AddComponentCommand.h:9</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a6d92d01c70f7be66651f2c2f73fc3710"><div class="ttname"><a href="namespacemtgb.html#a6d92d01c70f7be66651f2c2f73fc3710">mtgb::FBXModelHandle</a></div><div class="ttdeci">int32_t FBXModelHandle</div><div class="ttdoc">FBXモデルのハンドル</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00027">Handlers.h:27</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fd"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fd">mtgb::ShaderType</a></div><div class="ttdeci">ShaderType</div><div class="ttdoc">シェーダタイプ</div><div class="ttdef"><b>Definition:</b> <a href="ShaderType_8h_source.html#l00009">ShaderType.h:10</a></div></div>
+<div class="ttc" id="astructMeshRendererState_html"><div class="ttname"><a href="structMeshRendererState.html">MeshRendererState</a></div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8generated_8h_source.html#l00014">MeshRenderer.generated.h:15</a></div></div>
+<div class="ttc" id="astructMeshRendererState_html_a0a67e691a3168718af8913c0a6e54c83"><div class="ttname"><a href="structMeshRendererState.html#a0a67e691a3168718af8913c0a6e54c83">MeshRendererState::shaderType</a></div><div class="ttdeci">mtgb::ShaderType shaderType</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8generated_8h_source.html#l00019">MeshRenderer.generated.h:19</a></div></div>
+<div class="ttc" id="astructMeshRendererState_html_a27ed016dd168be0c97aa96afa41fa444"><div class="ttname"><a href="structMeshRendererState.html#a27ed016dd168be0c97aa96afa41fa444">MeshRendererState::layer</a></div><div class="ttdeci">mtgb::GameObjectLayerFlag layer</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8generated_8h_source.html#l00018">MeshRenderer.generated.h:18</a></div></div>
+<div class="ttc" id="astructMeshRendererState_html_a4743f41d2804319544bdc882e4ac0ee7"><div class="ttname"><a href="structMeshRendererState.html#a4743f41d2804319544bdc882e4ac0ee7">MeshRendererState::meshFileName</a></div><div class="ttdeci">std::string meshFileName</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8generated_8h_source.html#l00016">MeshRenderer.generated.h:16</a></div></div>
+<div class="ttc" id="astructMeshRendererState_html_ad2e0f3ed45a3c66787ae235a8d17f045"><div class="ttname"><a href="structMeshRendererState.html#ad2e0f3ed45a3c66787ae235a8d17f045">MeshRendererState::meshHandle</a></div><div class="ttdeci">mtgb::FBXModelHandle meshHandle</div><div class="ttdef"><b>Definition:</b> <a href="MeshRenderer_8generated_8h_source.html#l00017">MeshRenderer.generated.h:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

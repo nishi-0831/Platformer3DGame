@@ -9,7 +9,7 @@ var classmtgb_1_1RayDetector =
     [ "GetDetectedTargets", "classmtgb_1_1RayDetector.html#a549f99a62ccd2248c13c4c799109f8ca", null ],
     [ "GetDetectionArea", "classmtgb_1_1RayDetector.html#a4711d21858256f57427e791e284fa349", null ],
     [ "HasDetectedTargets", "classmtgb_1_1RayDetector.html#acc216b19d99b832471f20376cec2f43b", null ],
-    [ "IsTargetInRayAngle", "classmtgb_1_1RayDetector.html#ac89055dcb37a18ddea33ee1b182a981a", null ],
+    [ "IsTargetInRayAngle", "classmtgb_1_1RayDetector.html#a5e05a505d5a71d4a0a6dd0c8295e72de", null ],
     [ "UpdateAndSetDetection", "classmtgb_1_1RayDetector.html#a6ecf448ea08b133895c3d3288c3db2f2", null ],
     [ "UpdateDetection", "classmtgb_1_1RayDetector.html#a0697b9fde904454254f421cc9d7803a6", null ],
     [ "UpdateDetection", "classmtgb_1_1RayDetector.html#a927a7b71d5f27184afe1a8f3ca9579d8", null ],

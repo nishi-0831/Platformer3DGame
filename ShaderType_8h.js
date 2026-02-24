@@ -1,17 +1,17 @@
 var ShaderType_8h =
 [
     [ "ShaderType", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fd", [
-      [ "Figure", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda666df2f48cd16f38212c093999248769", null ],
-      [ "Sprite2D", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda411b82db44407403782a5ccfe79bac26", null ],
-      [ "FbxParts", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fdab359fb7b514d02d86aa33aae5ce85b64", null ],
-      [ "FbxPartsSkin", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda4f4ef2d5fdce24d142a29d1d8b273cf3", null ],
-      [ "Unlit3D", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda0d5cb44a44795685855401fb93958bd5", null ],
-      [ "Debug3D", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda13af76cd18ee3ef6efa9bcbd04f9a951", null ],
-      [ "Ground", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda3519d51443d41746a097cd54cd5c11cf", null ],
-      [ "Trail", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fdad518a06262ac68f1f006a4f802588130", null ],
-      [ "Terrain", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda4ccfea7a25fae3c1d31555f0856d2b42", null ],
-      [ "Box3D", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda171f0a41200dfd456bfe2c1f4818c74d", null ],
-      [ "Sea", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fdad2379e01a93b56ed8fdc81907f7bf8c0", null ],
-      [ "Max", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda6a061313d22e51e0f25b7cd4dc065233", null ]
+      [ "FIGURE", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda09d157d9acf15ef510452fde936a4302", null ],
+      [ "SPRITE2_D", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fdadc33fd0ad62ec97d3960478f7fb73e88", null ],
+      [ "FBX_PARTS", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda064c7ce013731f15c809ec3cec9d431b", null ],
+      [ "FBX_PARTS_SKIN", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda02bab20daa3c5b8cb538f2028df8c359", null ],
+      [ "UNLIT3_D", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda26ffa7174810ac0d7d09bd2f4a5a1fa4", null ],
+      [ "DEBUG3_D", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda5d66484f2e3c70ea2ee607571e02c907", null ],
+      [ "GROUND", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fdadedcb56e75fe1488e20865e0ea36d0b9", null ],
+      [ "TRAIL", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fdaaaaa969ded464fb875e8f46a907d85d7", null ],
+      [ "TERRAIN", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fdabdfa171c5b4d44824eec5798556eef32", null ],
+      [ "BOX3_D", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda291aca4b0b422607796ebbe0706e751e", null ],
+      [ "SEA", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda9abd3d9b983e99aa1fd94837498b0bea", null ],
+      [ "MAX", "ShaderType_8h.html#abd56f621e81af02c018dca9fbb31a5fda26a4b44a837bf97b972628509912b4a5", null ]
     ] ]
 ];
