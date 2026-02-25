@@ -72,7 +72,7 @@ namespace mtgb
 		void UpdateJoystickDevice();
 		void UpdateGamePadDevice();
 
-		void Release();
+		void Release() override;
 
 		/// <summary>
 		/// マウスの座標データを更新する

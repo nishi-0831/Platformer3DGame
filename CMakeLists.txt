@@ -327,7 +327,6 @@ set(03mtgb__System__Camera
 source_group("03mtgb\\System\\Camera" FILES ${03mtgb__System__Camera})
 
 set(03mtgb__System__Collider
-    "mtgb/BoxPlane.h"
     "mtgb/RectDetector.h"
 )
 source_group("03mtgb\\System\\Collider" FILES ${03mtgb__System__Collider})

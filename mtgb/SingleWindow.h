@@ -14,8 +14,6 @@ namespace mtgb
 		void Initialize() override;
 		void Update() override;
 
-		void SetDoubleWindowPos();
-
 	  private:
 		WindowContext context_;
 	};
