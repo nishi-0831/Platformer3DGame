@@ -229,6 +229,15 @@ void mtgb::MTImGui::SetupShowFunc()
 		}
 	);
 
+	RegisterShowFuncHolder::Set<Transform>(
+		[](Transform* _target, const char* _name)
+		{
+			PropertyDisplayRegistry::Instance().ShowProperty(&_target->position, "position");
+			PropertyDisplayRegistry::Instance().ShowProperty(&_target->rotate, "rotate");
+			PropertyDisplayRegistry::Instance().ShowProperty(&_target->rotate, "rotate");
+		}
+	);
+
 	Set<RectDetector>(
 		[](RectDetector* _target, const char* _name)
 		{
