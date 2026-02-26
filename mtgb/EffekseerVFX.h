@@ -9,6 +9,7 @@
 #include <DirectXMath.h>
 #include "ISystem.h"
 #include "Matrix4x4.h"
+#include "StringComparators.h"
 
 namespace fs = std::filesystem;
 
@@ -132,7 +133,7 @@ namespace mtgb
 
 	  private:
 		void SetCamera();
-		void Release() noexcept
+		void Release() override
 		{
 			managerRef_.Reset();
 			rendererRef_.Reset();
@@ -145,7 +146,8 @@ namespace mtgb
 		// エフェクトのマネージャーの参照
 		Effekseer::ManagerRef managerRef_;
 		// 個々のエフェクトのデータ
-		std::unordered_map<std::string, std::shared_ptr<EffectData>> effectList_;
+		std::unordered_map<std::string, std::shared_ptr<EffectData>, TransparentStringHash, TransparentStringEq>
+			effectList_;
 		// エフェクトインスタンスのプール
 		std::vector<std::unique_ptr<EffectInstance>> effectInstances_;
 		inline static constexpr size_t kEffectPoolCapacity{256};

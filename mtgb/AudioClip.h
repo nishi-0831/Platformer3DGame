@@ -8,7 +8,6 @@ typedef struct tWAVEFORMATEX WAVEFORMATEX;
 namespace mtgb
 {
 	struct WaveData;
-	class AudioPlayer;
 	class Audio;
 
 	/// <summary>
@@ -17,7 +16,6 @@ namespace mtgb
 	/// </summary>
 	class AudioClip
 	{
-		friend AudioPlayer;
 		friend Audio;
 
 	  public:

@@ -23,6 +23,7 @@ mtgb::Audio::~Audio()
 		pMasteringVoice_->DestroyVoice();
 		pMasteringVoice_ = nullptr;
 	}
+	pXAudio2_.Reset();
 }
 
 void mtgb::Audio::Initialize()
@@ -35,7 +36,7 @@ void mtgb::Audio::Initialize()
 		&& "COMの初期化に失敗 @Audio::Initialize"
 	);
 
-	hResult = XAudio2Create(&pXAudio2_);
+	hResult = XAudio2Create(pXAudio2_.ReleaseAndGetAddressOf());
 	massert(
 		SUCCEEDED(hResult) // XAudio2の作成に成功
 		&& "XAudio2の作成に失敗 @Audio::Initialize"
@@ -50,7 +51,7 @@ void mtgb::Audio::Initialize()
 
 void mtgb::Audio::Update()
 {
-	if (pOneShotQueue_.size() <= 0)
+	if (oneShotQueue_.size() <= 0)
 	{
 		return; // キューが空なら回帰
 	}
@@ -58,7 +59,7 @@ void mtgb::Audio::Update()
 	//  REF: CPUのSleepプロセス
 
 	// 再生終了をデキューする
-	auto itr = pOneShotQueue_.begin();
+	auto itr = oneShotQueue_.begin();
 	while (true)
 	{
 		(*itr)->timeLeft -= Time::DeltaTimeF();
@@ -72,8 +73,8 @@ void mtgb::Audio::Update()
 		{
 			(*itr)->Release();
 			// delete (*itr);  // 解放する
-			itr = pOneShotQueue_.erase(pOneShotQueue_.begin()); // 消す
-			if (itr == pOneShotQueue_.end())
+			itr = oneShotQueue_.erase(oneShotQueue_.begin()); // 消す
+			if (itr == oneShotQueue_.end())
 			{
 				break; // 後続がない = キューが空なら離脱
 			}
@@ -81,13 +82,6 @@ void mtgb::Audio::Update()
 			continue;				  // 後続も終了している可能性があるため継続
 		}
 	}
-}
-
-mtgb::AudioClip* mtgb::Audio::GetAudioClip(const AudioHandle _hAudio)
-{
-	massert((pAudioClips_.count(_hAudio) > 0) && "指定されたハンドルは無効/まだロードされていない");
-
-	return pAudioClips_[_hAudio];
 }
 
 void mtgb::Audio::CreateSourceVoice(IXAudio2SourceVoice** _ppSourceVoice, const WaveData* _pWaveData)
@@ -101,14 +95,20 @@ void mtgb::Audio::CreateSourceVoice(IXAudio2SourceVoice** _ppSourceVoice, const 
 	);
 }
 
-mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
+void mtgb::Audio::Register(std::string_view _soundName, std::string_view _filePath)
 {
-	handleCounter_++;
-	pAudioClips_.insert({handleCounter_, new AudioClip{}});
+	// 登録済みの場合はreturn
+	if (audioClipMap_.contains(_soundName))
+		return;
 
+	audioClipMap_.emplace(_soundName, Load(_filePath));
+}
+
+mtgb::AudioClip* mtgb::Audio::Load(std::string_view _filePath)
+{
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-createfilea
 	HANDLE hFile = CreateFile(
-		_fileName.c_str(),	   // ファイル名
+		_filePath.data(),	   // ファイル名
 		GENERIC_READ,		   // 読み取りますよー
 		FILE_SHARE_READ,	   // Closeされるまで、他のアプリはファイルの読み取りだけしていいよー
 		nullptr,			   // セキュリティ属性用の構造体ポインタを指定
@@ -120,7 +120,7 @@ mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
 	if (hFile == INVALID_HANDLE_VALUE)
 	{
 		massert(false && "ファイルOpenに失敗 @Audio::Load");
-		return INVALID_HANDLE;
+		return nullptr;
 	}
 
 	BOOL succeed{FALSE};
@@ -131,7 +131,7 @@ mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
 	if (succeed == FALSE)
 	{
 		massert(false && "ファイルサイズ取得に失敗 @Audio::Load");
-		return INVALID_HANDLE;
+		return nullptr;
 	}
 
 	DWORD readedSize{0}; // 実際に読み取れたバイト数
@@ -143,17 +143,19 @@ mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
 	{
 		massert(false && "ファイルの読み取りに失敗 @Audio::Load");
 		delete[] pBuffer; // バッファ解放
-		return INVALID_HANDLE;
+		return nullptr;
 	}
 
 	CloseHandle(hFile); // ファイルを閉じる
 
 	// いざ読み込み
-	LoadAudioSource(handleCounter_, pBuffer, fileSize.QuadPart);
+	mtbin::MemoryStream ms{pBuffer, static_cast<size_t>(fileSize.QuadPart)};
+	AudioClip* audioClip = new AudioClip();
+	audioClip->Load(ms);
 
 	delete[] pBuffer; // バッファ解放
 
-	return handleCounter_;
+	return audioClip;
 }
 
 void mtgb::Audio::PlayOneShotBuffer(byte* _pBuffer, const size_t _bufferSize)
@@ -187,11 +189,11 @@ void mtgb::Audio::PlayOneShotBuffer(byte* _pBuffer, const size_t _bufferSize)
 	oneShot->pSourceVoice->Start(); // 再生
 }
 
-void mtgb::Audio::PlayOneShotFile(const std::string& _fileName)
+void mtgb::Audio::PlayOneShotFile(std::string_view _fileName)
 {
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-createfilea
 	HANDLE hFile = CreateFile(
-		_fileName.c_str(),	   // ファイル名
+		_fileName.data(),	   // ファイル名
 		GENERIC_READ,		   // 読み取りますよー
 		FILE_SHARE_READ,	   // Closeされるまで、他のアプリはファイルの読み取りだけしていいよー
 		nullptr,			   // セキュリティ属性用の構造体ポインタを指定
@@ -239,25 +241,38 @@ void mtgb::Audio::PlayOneShotFile(const std::string& _fileName)
 
 void mtgb::Audio::Clear()
 {
-	for (auto& oneShot : pOneShotQueue_)
+	for (auto& oneShot : oneShotQueue_)
 	{
 		oneShot->pSourceVoice->ExitLoop();
 		oneShot->pSourceVoice->Stop();
 		oneShot->Release();
 		delete oneShot;
 	}
-	pOneShotQueue_.clear();
-	for (auto& audioClip : pAudioClips_)
+	oneShotQueue_.clear();
+	for (auto& audioClip : audioClips_)
 	{
 		SAFE_DELETE(audioClip.second);
 	}
-	pAudioClips_.clear();
+	audioClips_.clear();
 }
 
-void mtgb::Audio::LoadAudioSource(const AudioHandle _hAudio, byte* _pBuffer, const size_t _bufferSize)
+void mtgb::Audio::Play(std::string_view _soundName)
 {
-	mtbin::MemoryStream ms{_pBuffer, _bufferSize};
-	pAudioClips_[_hAudio]->Load(ms);
+	auto itr = audioClipMap_.find(_soundName);
+	if (itr == audioClipMap_.end())
+		return;
+
+	AudioClip* audioClip	  = (*itr).second;
+	const WaveData* pWaveData = audioClip->pWaveData_;
+
+	XAUDIO2_BUFFER buffer{
+		.Flags		= XAUDIO2_END_OF_STREAM,
+		.AudioBytes = static_cast<UINT32>(pWaveData->bufferSize),
+		.pAudioData = pWaveData->pBuffer,
+		.LoopCount	= 0
+	};
+
+	// HRESULT hResult = ;
 }
 
 void mtgb::Audio::EnqueueOneShot(AudioOneShot* _pOneShot)
@@ -265,12 +280,12 @@ void mtgb::Audio::EnqueueOneShot(AudioOneShot* _pOneShot)
 	float lefter{_pOneShot->timeLeft}; // 減算用
 	float righter{0};				   // 加算用
 	// 適切な挿入ポイントを見つける
-	for (auto itr = pOneShotQueue_.begin(); itr != pOneShotQueue_.end(); itr++)
+	for (auto itr = oneShotQueue_.begin(); itr != oneShotQueue_.end(); itr++)
 	{
 		if (lefter <= righter + (*itr)->timeLeft)
 		{
 			_pOneShot->timeLeft = lefter - righter;
-			itr					= pOneShotQueue_.insert(itr, _pOneShot);
+			itr					= oneShotQueue_.insert(itr, _pOneShot);
 			itr++;
 			(*itr)->timeLeft -= _pOneShot->timeLeft;
 			return;
@@ -278,9 +293,9 @@ void mtgb::Audio::EnqueueOneShot(AudioOneShot* _pOneShot)
 		righter += (*itr)->timeLeft;
 	}
 	// 見つからなかったら末端に追加
-	pOneShotQueue_.push_back(_pOneShot);
+	oneShotQueue_.push_back(_pOneShot);
 }
 
 mtgb::AudioHandle mtgb::Audio::handleCounter_{mtgb::INVALID_HANDLE};
-std::map<mtgb::AudioHandle, mtgb::AudioClip*> mtgb::Audio::pAudioClips_{};
-std::list<mtgb::AudioOneShot*> mtgb::Audio::pOneShotQueue_{};
+std::map<mtgb::AudioHandle, mtgb::AudioClip*> mtgb::Audio::audioClips_{};
+std::list<mtgb::AudioOneShot*> mtgb::Audio::oneShotQueue_{};
