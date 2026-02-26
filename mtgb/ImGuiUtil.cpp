@@ -1,5 +1,5 @@
 #include "ImGuiUtil.h"
-#include "../ImGui/imgui_internal.h"
+#include "ImGui/imgui_internal.h"
 #include <d3d11.h>
 
 void mtgb::ImGuiUtil::GetMouseRay(

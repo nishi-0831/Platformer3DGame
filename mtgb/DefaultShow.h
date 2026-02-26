@@ -2,7 +2,7 @@
 #include <type_traits>
 #include <string>
 #include <vector>
-#include "../ImGui/imgui.h"
+#include "ImGui/imgui.h"
 #include "MTStringUtility.h"
 
 class Command;

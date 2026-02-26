@@ -10,7 +10,7 @@
 #include "Game.h"
 #include "ISystem.h"
 #include "Debug.h"
-#include "../ImGui/imgui.h"
+#include "ImGui/imgui.h"
 #include "Timer.h"
 
 namespace

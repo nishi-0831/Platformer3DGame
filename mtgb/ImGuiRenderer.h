@@ -2,7 +2,7 @@
 
 #include <d3d11.h>
 #include <wrl/client.h>
-#include "../ImGui/imgui.h"
+#include "ImGui/imgui.h"
 
 #include "ISystem.h"
 #include "ImGuizmoManipulator.h"

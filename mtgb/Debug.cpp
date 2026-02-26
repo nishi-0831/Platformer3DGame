@@ -1,5 +1,5 @@
 #include "Debug.h"
-#include "..\ImGui\imgui.h"
+#include "ImGui/imgui.h"
 
 mtgb::Debug::Debug()
 {

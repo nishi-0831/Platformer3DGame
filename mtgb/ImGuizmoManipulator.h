@@ -2,8 +2,8 @@
 #include "ImGuiShowable.h"
 #include "Matrix4x4.h"
 
-#include "../ImGui/imgui_impl_win32.h"
-#include "../ImGui/ImGuizmo.h"
+#include "ImGui/imgui_impl_win32.h"
+#include "ImGui/ImGuizmo.h"
 #include <functional>
 #include "Command.h"
 #include "GameObjectSelectionEvent.h"

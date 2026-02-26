@@ -1,7 +1,7 @@
-#include "../ImGui/imgui_impl_win32.h"
-#include "../ImGui/imgui_internal.h"
+#include "ImGui/imgui_impl_win32.h"
+#include "ImGui/imgui_internal.h"
 
-#include "../ImGui/ImGuizmo.h"
+#include "ImGui/ImGuizmo.h"
 #include "ImGuiEditorCamera.h"
 #include "Game.h"
 #include "GameObject.h"

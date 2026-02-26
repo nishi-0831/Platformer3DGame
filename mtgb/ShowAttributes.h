@@ -1,7 +1,7 @@
 
 #pragma once
-#include <refl.hpp>
-#include "../ImGui/imgui.h"
+#include <refl-cpp/refl.hpp>
+#include "ImGui/imgui.h"
 #include "Vector3.h"
 
 #include "ShowFunc.h"
