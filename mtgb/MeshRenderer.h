@@ -1,6 +1,5 @@
 #pragma once
 #include "ReflectionMacro.h"
-#include "MeshRenderer.generated.h"
 #include "IComponent.h"
 #include "ISerializableObject.h"
 #include "IComponentMemento.h"
@@ -10,15 +9,17 @@
 #include "ShaderType.h"
 #include "IRenderable.h"
 #include "cmtgb.h"
+#include "MeshRenderer.generated.h"
 namespace mtgb
 {
-
 	class MeshRendererCP;
-	MT_COMPONENT()
+
 	/// <summary>
 	/// メッシュとマテリアルを管理する描画コンポーネント
 	/// </summary>
-	class MeshRenderer : public IRenderable, public IComponent<MeshRendererCP, MeshRenderer>, public ISerializableObject
+	class [[MT_COMPONENT()]] MeshRenderer : public IRenderable,
+											public IComponent<MeshRendererCP, MeshRenderer>,
+											public ISerializableObject
 	{
 	  public:
 		MT_GENERATED_BODY()
@@ -67,13 +68,13 @@ namespace mtgb
 			return meshHandle != INVALID_HANDLE;
 		};
 		void SetFrame(int _frame);
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		std::string meshFileName;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		FBXModelHandle meshHandle;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		GameObjectLayerFlag layer;
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		ShaderType shaderType;
 
 	  protected:

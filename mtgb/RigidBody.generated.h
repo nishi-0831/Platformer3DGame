@@ -5,17 +5,23 @@
 #include "JsonConverter.h"
 #include "MTImGui.h"
 #include <string>
+
 // ============================================================================
 // RigidBodyの状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言
 // ============================================================================
-#define MT_COMPONENT_RigidBody()                                          \
-	struct RigidBodyState                                                 \
-	{                                                                     \
-		bool useGravity_;                                                 \
-		bool isKinematic_;                                                \
-	};                                                                    \
-	class RigidBody;                                                      \
-	using RigidBodyMemento = ComponentMemento<RigidBody, RigidBodyState>;
+struct RigidBodyState
+{
+	bool useGravity_;
+	bool isKinematic_;
+};
+
+// クラスの前方宣言
+namespace mtgb
+{
+	class RigidBody;
+}
+
+using RigidBodyMemento = mtgb::ComponentMemento<mtgb::RigidBody, RigidBodyState>;
 
 // ============================================================================
 // RigidBodyとRigidBodyMementoの相互変換処理を実装
@@ -29,10 +35,10 @@
 		RigidBodyState state;                                                                             \
 		state.useGravity_  = this->useGravity_;                                                           \
 		state.isKinematic_ = this->isKinematic_;                                                          \
-		return new ComponentMemento<RigidBody, RigidBodyState>(GetEntityId(), state);                     \
+		return new Memento(GetEntityId(), state);                                                         \
 	}                                                                                                     \
                                                                                                           \
-	void RestoreFromMemento(const ComponentMemento<RigidBody, RigidBodyState>& _memento)                  \
+	void RestoreFromMemento(const Memento& _memento)                                                      \
 	{                                                                                                     \
 		const RigidBodyState& state = _memento.GetState();                                                \
 		this->useGravity_			= state.useGravity_;                                                  \
@@ -77,6 +83,5 @@
 #pragma warning(push)
 #pragma warning(disable : 4005)
 // マクロ上書き
-#define MT_COMPONENT() MT_COMPONENT_RigidBody()
 #define MT_GENERATED_BODY() MT_GENERATED_BODY_RigidBody()
 #pragma warning(pop)

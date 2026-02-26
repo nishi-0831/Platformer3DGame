@@ -15,5 +15,6 @@ class GameOverZone : public mtgb::GameObject
 	Transform* pTransform_;
 	Collider* pCollider_;
 	RigidBody* pRigidBody_;
+	int takeDamageAmoundOnPlayerFellout_;
 	static unsigned int generateCounter_;
 };

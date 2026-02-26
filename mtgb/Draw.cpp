@@ -377,7 +377,7 @@ void mtgb::Draw::Initialize()
 	pGround_->Initialize();*/
 	pSeaPlane_ = new PlaneUVScroll();
 	pSeaPlane_->Initialize();
-	pSeaPlane_->LoadTexture(L"Image/Sea.png");
+	pSeaPlane_->LoadTexture(L"Image/sea.png");
 }
 
 void mtgb::Draw::Update()

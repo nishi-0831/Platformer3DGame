@@ -1,10 +1,13 @@
 #include "stdafx.h"
 #include "MovingFloor.h"
 #include "Debug.h"
+#include <format>
 namespace
 {
 	mtgb::Vector3 INIT_OFFSET{1.0f, 0.0f, 0.0f};
 }
+
+unsigned int MovingFloor::generateCounter_{0};
 
 MovingFloor::MovingFloor()
 	: GameObject()
@@ -20,11 +23,12 @@ MovingFloor::MovingFloor()
 	pMeshRenderer_->layer		 = AllLayer();
 	pMeshRenderer_->shaderType	 = ShaderType::FBX_PARTS;
 	// 型情報に登録された名前を取得
-	name_		 = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(MovingFloor));
-	displayName_ = name_;
+	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(MovingFloor));
+	name_				 = std::format("{} ({})", typeName, generateCounter_++);
+	displayName_		 = name_;
 	// コライダーの設定
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
-	pCollider_->SetExtents(Vector3(1, 1, 1));
+	pCollider_->SetExtents(Vector3(0.5, 0.5, 0.5));
 
 	// RigidBodyの設定
 	pRigidBody_->OnCollisionEnter(

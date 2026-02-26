@@ -7,7 +7,8 @@
 #include "GameTime.h"
 namespace
 {
-	float GRAVITY{-20.0f};
+	// TODO:重力を外部から設定可能にする
+	float gravity{-20.0f};
 }
 mtgb::RigidBody::RigidBody(const EntityId _entityId)
 	: IComponent{_entityId}
@@ -46,7 +47,7 @@ void mtgb::RigidBody::UpdateVelocity()
 {
 	if (useGravity_)
 	{
-		velocity_ += Vector3::Up() * GRAVITY * Time::DeltaTimeF();
+		velocity_ += Vector3::Up() * gravity * Time::DeltaTimeF();
 	}
 	pTransform_->position += velocity_ * Time::DeltaTimeF();
 	if (FLT_EPSILON <= std::abs(velocity_.y))
@@ -122,4 +123,9 @@ Vector3 mtgb::RigidBody::GetPushAmount(const DirectX::BoundingSphere& _sphere, c
 
 	// 最短地点から球の中心へ押し出す
 	return v * penetration;
+}
+
+float mtgb::RigidBody::GetGravity()
+{
+	return gravity;
 }

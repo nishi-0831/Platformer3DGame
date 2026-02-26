@@ -4,7 +4,7 @@
 #include "ReleaseUtility.h"
 
 #include <d3d11_1.h>
-
+#include <comdef.h>
 #include <d3d11.h>
 #include <d2d1.h>
 #include "IncludingWindows.h"
@@ -32,7 +32,7 @@ void mtgb::Direct2D::Initialize()
 void mtgb::Direct2D::InitializeCommonResource()
 {
 	// ファクトリー作成
-	HRESULT hResult = D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, pD2DFactory_.ReleaseAndGetAddressOf());
+	HRESULT hResult = D2D1CreateFactory(D2D1_FACTORY_TYPE_MULTI_THREADED, pD2DFactory_.ReleaseAndGetAddressOf());
 
 	massert(SUCCEEDED(hResult) && "D2D1CreateFactoryに失敗 @Direct2D::Initialize");
 }
@@ -44,7 +44,7 @@ void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* _pIdxgiSurface, ID2D1Re
 
 		D2D1_RENDER_TARGET_TYPE_DEFAULT, // レンダリングモード。DEFAULTだと使用可能ならGPU、それ以外はCPUでレンダリング
 
-		D2D1::PixelFormat(DXGI_FORMAT_R8G8B8A8_UNORM, D2D1_ALPHA_MODE_PREMULTIPLIED), // ピクセルの形式、アルファ値
+		D2D1::PixelFormat(DXGI_FORMAT_R8G8B8A8_UNORM, D2D1_ALPHA_MODE_IGNORE), // ピクセルの形式、アルファ値
 
 		0, // x方向のdpi
 		0, // y方向のdpi
@@ -59,7 +59,15 @@ void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* _pIdxgiSurface, ID2D1Re
 	HRESULT hResult =
 		pD2DFactory_->CreateDxgiSurfaceRenderTarget(_pIdxgiSurface, renderTargetProperties, _ppRenderTarget);
 
-	massert(SUCCEEDED(hResult) && "CreateDxgiSurfaceRenderTargetに失敗 @Direct2D::CreateDXGISurfaceRenderTarget");
+	// massert(SUCCEEDED(hResult) && "CreateDxgiSurfaceRenderTargetに失敗 @Direct2D::CreateDXGISurfaceRenderTarget");
+	if (FAILED(hResult))
+	{
+		_com_error error(hResult);
+		LPCTSTR message = error.ErrorMessage();
+		std::string str = mtgb::MultiToUTF8( message);
+		MessageBoxW(NULL, mtgb::UTF8ToWide(str.c_str()).c_str(), L"f", MB_YESNOCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL);
+
+	}
 }
 
 void mtgb::Direct2D::CreateSolidColorBrush(

@@ -15,11 +15,8 @@ class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, 
 	void TakeDamage(int _damage) override;
 
   private:
-	/// <summary>
-	/// プレイヤーに体当たりした際の処理
-	/// </summary>
-	void OnChargePlayer();
 	void OnCollisionEnter(EntityId _entityId);
+	void OnFootStep(const AnimationEvent& _event);
 	Transform* pTransform_;
 	RigidBody* pRigidBody_;
 	MeshRenderer* pMeshRenderer_;

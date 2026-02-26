@@ -1,6 +1,5 @@
 #pragma once
 #include "ReflectionMacro.h"
-#include "ImageRenderer.generated.h"
 #include "IComponent.h"
 #include "ISerializableObject.h"
 #include "IComponentMemento.h"
@@ -8,13 +7,14 @@
 #include "RectF.h"
 #include "UIDrawCommand.h"
 #include "IRenderable.h"
+#include "ImageRenderer.generated.h"
 
 namespace mtgb
 {
 	class ImageRendererCP;
 
-	MT_COMPONENT()
-	class ImageRenderer : public IRenderable,
+	
+	class [[MT_COMPONENT()]] ImageRenderer : public IRenderable,
 						  public IComponent<ImageRendererCP, ImageRenderer>,
 						  public ISerializableObject
 	{

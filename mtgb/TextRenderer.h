@@ -1,6 +1,5 @@
 #pragma once
 #include "ReflectionMacro.h"
-#include "TextRenderer.generated.h"
 #include "IComponent.h"
 #include "ISerializableObject.h"
 #include "IComponentMemento.h"
@@ -10,12 +9,15 @@
 #include "TextAlignment.h"
 #include "TextRendererCP.h"
 #include "IRenderable.h"
+#include "TextRenderer.generated.h"
 namespace mtgb
 {
 	class TextRendererCP;
 
-	MT_COMPONENT()
-	class TextRenderer : public IRenderable, public IComponent<TextRendererCP, TextRenderer>, public ISerializableObject
+	
+	class [[MT_COMPONENT()]] TextRenderer : public IRenderable,
+											public IComponent<TextRendererCP, TextRenderer>,
+											public ISerializableObject
 	{
 	  public:
 		MT_GENERATED_BODY()

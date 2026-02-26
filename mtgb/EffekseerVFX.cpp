@@ -16,6 +16,8 @@ namespace mtgb
 		effectManager.RegisterEffect("ScoreItem", "Effect/ScoreItem.efkefc");
 		effectManager.RegisterEffect("Stomp", "Effect/Stomp.efkefc");
 		effectManager.RegisterEffect("Treasure", "Effect/Treasure.efkefc");
+		effectManager.RegisterEffect("WalkSmoke", "Effect/WalkSmoke.efkefc");
+		effectManager.RegisterEffect("JumpSmoke", "Effect/JumpSmoke.efkefc");
 	}
 	using namespace Effekseer;
 	using namespace EffekseerRendererDX11;

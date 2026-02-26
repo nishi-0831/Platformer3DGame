@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Player.h"
-#include "Camera.h"
+#include "QuaternionCamera.h"
 #include "ActorManager.h"
 #include "ResultScene.h"
 #include "GameEvents.h"
@@ -8,7 +8,7 @@
 namespace
 {
 	float speed							 = 5.0f;
-	float jumpHeight					 = 15.0f;
+	float jumpHeight					 = 5.0f;
 	const unsigned int TAKE_DAMGE_AMOUNT = 1;
 } // namespace
 
@@ -23,11 +23,18 @@ Player::Player()
 	, pTransform_{Component<Transform>()}
 	, pCollider_{Component<Collider>()}
 	, pMeshRenderer_{Component<MeshRenderer>()}
-	, pRigidBody_{Component<RigidBody>()}
-	, pCamera_{Instantiate<Camera>(this)}
-	, pCameraTransform_{&Transform::Get(pCamera_->GetEntityId())}
+	, pRigidBody_{Component<RigidBody>()} //, pCamera_{Instantiate<Camera>(this)}
+	, pNewCamera_{Instantiate<QuaternionCamera>(GetEntityId())}
+	, pCameraTransform_{&Transform::Get(pNewCamera_->GetEntityId())}
 	, hp_{3}
 	, pHPViewer_{nullptr}
+	, isInvincible_{false}
+	, invincibilityTimeSec_{2.0f}
+	, changeVisibilitySpan_{0.3f}
+	, elapsedInvincibilityTime_{0.0f}
+	, jumpController_{GetEntityId()}
+	, walkSmokeInterval_{0.3f}
+	, walkSmokeElapsedTime_{0.0f}
 {
 	// pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
@@ -45,19 +52,9 @@ Player::Player()
 
 	displayName_ = name_;
 
-	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
+	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pNewCamera_);
 
 	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
-
-	// 落下イベントを購読
-	Game::System<EventManager>().GetEvent<PlayerFellOutEvent>().Subscribe(
-		[this](const PlayerFellOutEvent& _event)
-		{
-			// 強制的にHPをゼロにする
-			TakeDamage(hp_);
-		},
-		EventScope::SCENE
-	);
 
 	// ゴールイベントを購読
 	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Subscribe(
@@ -81,17 +78,44 @@ void Player::Update()
 		UpdatePosition();
 		if (InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE))
 		{
-			if (pRigidBody_->IsJumping() == false)
+			if (pRigidBody_->isGround_ == true)
 			{
-				pRigidBody_->velocity_.y += jumpHeight;
+				// pRigidBody_->velocity_.y += jumpHeight;
+				jumpController_.StartJump(jumpHeight);
 				Audio::PlayOneShotFile("Sound/Jump.mp3");
+
+				Matrix4x4 worldMat;
+				pTransform_->GenerateWorldMatrix(&worldMat);
+				EffectParameters params;
+				params.isLoop = false;
+				params.worldMat = worldMat;
+				Game::System<EffectManager>().Play("JumpSmoke", params);
+			}
+		}
+		if (InputUtil::GetGamePadUp(PadCode::CROSS) || InputUtil::GetKeyUp(KeyCode::SPACE))
+		{
+			if (pRigidBody_->IsJumping())
+			{
+				jumpController_.ReleaseButton();
 			}
 		}
 		UpdateRotate();
 	}
-	pCamera_->SetFollowMode(pRigidBody_->isGround_, pRigidBody_->velocity_);
 
 	state_.Update();
+
+	// ダメージを受けた後の無敵時間
+	if (isInvincible_)
+	{
+		elapsedInvincibilityTime_ += Time::DeltaTimeF();
+		if (elapsedInvincibilityTime_ >= invincibilityTimeSec_)
+		{
+			isInvincible_			  = false;
+			pMeshRenderer_->enabled_  = true;
+			elapsedInvincibilityTime_ = 0.0f;
+			Timer::Remove(hTimerChangeVisibility_);
+		}
+	}
 }
 
 void Player::InitializeState()
@@ -138,6 +162,7 @@ void Player::InitializeState()
 			[this]
 			{
 				animController_->PlayAnimation("Run", true);
+				walkSmokeElapsedTime_ = 0.0f;
 			}
 		)
 		.OnUpdate(
@@ -158,6 +183,19 @@ void Player::InitializeState()
 				{
 					state_.Change(STATE::FALL);
 					return;
+				}
+
+				walkSmokeElapsedTime_ += Time::DeltaTimeF();
+				if (walkSmokeElapsedTime_ >= walkSmokeInterval_)
+				{
+					EffectParameters params;
+					params.isLoop = false;
+					Matrix4x4 worldMat;
+					pTransform_->GenerateWorldMatrix(&worldMat);
+					params.worldMat = worldMat;
+					Game::System<EffectManager>().Play("WalkSmoke",params);
+
+					walkSmokeElapsedTime_ = 0.0f;
 				}
 			}
 		)
@@ -235,9 +273,7 @@ void Player::ShowImGui()
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
 }
 
-void Player::SetCamera(Camera* _pCamera)
-{
-}
+
 
 Vector3 Player::GetMoveDir()
 {
@@ -261,15 +297,15 @@ Vector3 Player::GetMoveDir()
 	if (axis.Size() == 0)
 		return Vector3::Zero();
 
-	// 入力方向
+	// 蜈･蜉帶婿蜷・
 	Vector3 inputDir{axis.x, 0.0f, -axis.y};
 
-	// カメラの回転行列を取得
+	// 繧ｫ繝｡繝ｩ縺ｮ蝗櫁ｻ｢陦悟・繧貞叙蠕・
 	Matrix4x4 cameraRotMat;
 	pCameraTransform_->GenerateWorldRotationMatrix(&cameraRotMat);
-	// 入力方向をカメラの向きだけ回転
+	// 蜈･蜉帶婿蜷代ｒ繧ｫ繝｡繝ｩ縺ｮ蜷代″縺縺大屓霆｢
 	Vector3 dir = inputDir * cameraRotMat;
-	// Y成分を捨てたXZ成分のみ取得
+	// Y謌仙・繧呈昏縺ｦ縺盜Z謌仙・縺ｮ縺ｿ蜿門ｾ・
 	Vector3 horizontalDir = Vector3{dir.x, 0.0f, dir.z};
 	return Vector3::Normalize(horizontalDir);
 }
@@ -338,6 +374,9 @@ void Player::OnHitSide(IActor* _pOther)
 
 void Player::TakeDamage(int _damage)
 {
+	// 無敵ならダメージ処理は行わない
+	if (isInvincible_)
+		return;
 	// 負の値は無視
 	if (_damage <= 0)
 		return;
@@ -347,6 +386,7 @@ void Player::TakeDamage(int _damage)
 	if (hp_ <= 0)
 	{
 		state_.Change(STATE::DYING);
+		pRigidBody_->velocity_ = Vector3::Zero();
 
 		// プレイヤーのHPが0になったことを通知
 		PlayerHpReachedZeroEvent event{.playerEntityId = GetEntityId()};
@@ -354,4 +394,14 @@ void Player::TakeDamage(int _damage)
 	}
 
 	pHPViewer_->TakeDamage(_damage);
+
+	isInvincible_			= true;
+	hTimerChangeVisibility_ = Timer::AddInterval(
+		changeVisibilitySpan_,
+		[this]
+		{
+			pMeshRenderer_->enabled_ = !pMeshRenderer_->enabled_;
+		},
+		true // firstCall: 即座に処理を呼ぶ
+	);
 }

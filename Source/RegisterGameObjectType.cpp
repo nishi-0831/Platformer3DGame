@@ -8,6 +8,7 @@
 #include "PatrolChargerEnemy.h"
 #include "SeaPlane.h"
 #include "CircularSaw.h"
+#include "RespawnManager.h"
 void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegistrar)
 {
 	_pGameObjectRegistrar->Register<MovingFloor>("MovingFloor");
@@ -18,4 +19,5 @@ void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegist
 	_pGameObjectRegistrar->Register<PatrolChargerEnemy>("PatrolChargerEnemy");
 	_pGameObjectRegistrar->Register<SeaPlane>("SeaPlane");
 	_pGameObjectRegistrar->Register<CircularSaw>("CircularSaw");
+	_pGameObjectRegistrar->Register<RespawnPoint>("RespawnPoint");
 }

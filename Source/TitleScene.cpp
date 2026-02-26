@@ -2,7 +2,6 @@
 #include <mtgb.h>
 #include "TitleScene.h"
 #include "Scenes/SampleScene.h"
-#include "../Source/Camera.h"
 namespace
 {
 	// 118,90 , 565,100

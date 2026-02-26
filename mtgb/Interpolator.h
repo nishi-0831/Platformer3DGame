@@ -11,8 +11,8 @@
 namespace mtgb
 {
 	class InterpolatorCP;
-	MT_COMPONENT()
-	class Interpolator : public IComponent<InterpolatorCP, Interpolator>, public ISerializableObject
+	
+	class [[MT_COMPONENT()]] Interpolator : public IComponent<InterpolatorCP, Interpolator>, public ISerializableObject
 	{
 	  public:
 		MT_GENERATED_BODY()
@@ -47,23 +47,23 @@ namespace mtgb
 	  private:
 		Transform* pTransform_;
 
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		// 進行方向
 		float dir_;
 
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		// 経過時間
 		float elapsed_;
 
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		// 補間にかかる時間(秒)
 		float duration_;
 
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		// 始点の座標(シリアライズ用)
 		Vector3 startPos_;
 
-		MT_PROPERTY()
+		[[MT_PROPERTY()]]
 		// 終点の座標(シリアライズ用)
 		Vector3 endPos_;
 

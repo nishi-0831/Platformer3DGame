@@ -22,6 +22,8 @@ void mtgb::MeshRendererCP::RenderLayer(GameObjectLayerFlag _layerFlag) const
 			continue;
 
 		const MeshRenderer& renderer = pool_[i];
+		if (renderer.enabled_ == false)
+			continue;
 		if (renderer.CanRender() == false || _layerFlag.Has(renderer.GetLayer()) == false)
 			continue;
 

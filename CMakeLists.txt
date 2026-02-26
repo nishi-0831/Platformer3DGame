@@ -108,8 +108,8 @@ set(01Game
     "mtgb/Box3D.cpp"
     "mtgb/Box3D.h"
     "Source/ActorManager.h"
-    "Source/Camera.cpp"
-    "Source/Camera.h"
+    "Source/QuaternionCamera.cpp"
+    "Source/QuaternionCamera.h"
     "Source/CircularSaw.h"
     "Source/FadeOutScreen.h"
     "Source/GameEvents.h"
@@ -712,6 +712,10 @@ set(Unfiltered
     "Source/SkySphere.cpp"
     "Source/StageEditScene.cpp"
     "Source/StageManager.cpp"
+    "Source/JumpController.cpp"
+    "Source/JumpController.h"
+    "Source/RespawnManager.cpp"
+    "Source/RespawnManager.h"
 )
 source_group("Unfiltered" FILES ${Unfiltered})
 

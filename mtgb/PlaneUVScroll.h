@@ -14,6 +14,7 @@ namespace mtgb
 
 	class PlaneUVScroll : public IShader
 	{
+	  public:
 		/// <summary>
 		/// 頂点情報
 		/// </summary>
@@ -32,6 +33,7 @@ namespace mtgb
 			Matrix4x4 g_matrixWorldViewProj; // ワールド・ビュー・プロジェクション行列
 			Matrix4x4 g_matrixNormalTrans;	 // 回転行列と拡大行列の逆行列
 			Matrix4x4 g_matrixWorld;		 // ワールド行列
+			Matrix4x4 g_matrixViewProj;		 // ビュー・プロジェクション行列
 			Vector4 g_lightDirection;		 // ライトの向き
 			Vector4 g_diffuse;				 // 拡散反射
 			Vector4 g_ambient;				 // 環境光

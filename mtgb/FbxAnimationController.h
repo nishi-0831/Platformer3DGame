@@ -1,9 +1,13 @@
 #pragma once
 #include <unordered_map>
 #include <string_view>
+#include <vector>
+#include <functional>
 #include "FbxAnimationClip.h"
 #include "StringComparators.h"
 #include "Handlers.h"
+#include "AnimationEvent.h"
+
 namespace fbxsdk
 {
 	class FbxScene;
@@ -14,7 +18,7 @@ namespace mtgb
 	{
 	  public:
 		FbxAnimationController() = delete;
-		explicit FbxAnimationController(fbxsdk::FbxScene* _fbxScene);
+		explicit FbxAnimationController(fbxsdk::FbxScene* _fbxScene,std::string_view _fileName);
 		~FbxAnimationController();
 
 		/// <summary>
@@ -68,9 +72,21 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		bool IsFinishedAnimation();
-
+		/// <summary>
+		/// 現在のフレームに該当するイベントがあるか確認
+		/// ある場合は、イベントの通知を行う
+		/// </summary>
+		void CheckEvents();
+		
+		void SetEventCallback(std::string_view _eventName,std::function<void(const AnimationEvent&)> _callback);
 	  private:
 		std::unordered_map<std::string, FbxAnimationClip, TransparentStringHash, TransparentStringEq> clipMap_;
+		std::unordered_multimap<
+			std::string,
+			std::function<void(const AnimationEvent&)>,
+			TransparentStringHash,
+			TransparentStringEq>
+			eventCallbackMap_;
 		FbxAnimationClip* pCurrentClip_; // 現在再生中のクリップ
 		float currentFrame_;			 // 現在のフレーム
 		float animationSpeed_;			 // 再生速度(倍率)
@@ -78,5 +94,7 @@ namespace mtgb
 		bool isLooping_;				 // ループをするか
 		bool isFinished_;				 // 終了しているか
 		fbxsdk::FbxScene* pFbxScene_;
+		std::string fileName_;
+		std::vector<AnimationEvent> events_;
 	};
 } // namespace mtgb

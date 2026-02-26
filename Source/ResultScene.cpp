@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "ResultScene.h"
 // #include "../Source/ScoreViewer.h"
-#include "../Source/Camera.h"
 #include "../Source/TitleScene.h"
 #include "../Source/StageManager.h"
 namespace

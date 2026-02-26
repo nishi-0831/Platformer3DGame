@@ -1,26 +1,28 @@
-Texture2D g_texture : register(t0);  // ƒeƒNƒXƒ`ƒƒ
-SamplerState g_sampler : register(s0);  // ƒeƒNƒXƒ`ƒƒ‚ÌƒTƒ“ƒvƒ‰
+Texture2D g_texture : register(t0);  // ãƒ†ã‚¯ã‚¹ãƒãƒ£
+SamplerState g_sampler : register(s0);  // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ã‚µãƒ³ãƒ—ãƒ©
 
 cbuffer global : register(b0)
 {
-    matrix g_matrixWVP;  // ƒ[ƒ‹ƒhEƒrƒ…[EƒvƒƒWƒFƒNƒVƒ‡ƒ“‚Ì‡¬s—ñ
-    matrix g_matrixNormalTrans;  // –@ü‚Ì•ÏŠ·s—ñ (‰ñ“]s—ñ)
-    matrix g_matrixW;    // ƒ[ƒ‹ƒh•ÏŠ·s—ñ
-    float4 g_lightDir;  // ŠÂ‹«Œõü
-    float4 g_diffuseColor;  // ƒ}ƒeƒŠƒAƒ‹‚ÌF
-    float4 g_ambientColor;  // ‰e‚ÌF
-    float4 g_speculerColor;  // ƒXƒyƒLƒ…ƒ‰[‚©‚ç‚ÌF
-    float4 g_cameraPosition;  // ‹“_ (ƒJƒƒ‰‚ÌÀ•W)
-    float g_shuniness;  // ƒnƒCƒ‰ƒCƒg‚Ì‹­‚³
-    bool g_hasTexture;  // ƒeƒNƒXƒ`ƒƒ‚ğ‚Á‚Ä‚¢‚é‚©
+    matrix g_matrixWVP;  // ãƒ¯ãƒ¼ãƒ«ãƒ‰ãƒ»ãƒ“ãƒ¥ãƒ¼ãƒ»ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³ã®åˆæˆè¡Œåˆ—
+    matrix g_matrixNormalTrans;  // æ³•ç·šã®å¤‰æ›è¡Œåˆ— (å›è»¢è¡Œåˆ—)
+    matrix g_matrixW;    // ãƒ¯ãƒ¼ãƒ«ãƒ‰å¤‰æ›è¡Œåˆ—
+    float4 g_lightDir;  // ç’°å¢ƒå…‰ç·š
+    float4 g_diffuseColor;  // ãƒãƒ†ãƒªã‚¢ãƒ«ã®è‰²
+    float4 g_ambientColor;  // å½±ã®è‰²
+    float4 g_speculerColor;  // ã‚¹ãƒšã‚­ãƒ¥ãƒ©ãƒ¼ã‹ã‚‰ã®è‰²
+    float4 g_cameraPosition;  // è¦–ç‚¹ (ã‚«ãƒ¡ãƒ©ã®åº§æ¨™)
+    float g_shuniness;  // ãƒã‚¤ãƒ©ã‚¤ãƒˆã®å¼·ã•
+    bool g_hasTexture;  // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’æŒã£ã¦ã„ã‚‹ã‹
     float2 padding;
     float4 g_textureScale;
 };
 
 struct VS_OUT
 {
-    float4 position : SV_POSITION;  // ˆÊ’u
-    float4 normal : NORMAL0;  // –@ü
-    float2 uv : TEXCOORD; // uvÀ•W
+    float4 position : SV_POSITION;  // ä½ç½®
+    float4 normal : NORMAL0;  // æ³•ç·š
+    float2 uv : TEXCOORD; // uvåº§æ¨™
     float4 eye : NORMAL1;
 };
+
+

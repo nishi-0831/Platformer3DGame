@@ -48,6 +48,14 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	pRigidBody_->isKinematic_ = false;
 
 	InitializeState();
+
+	animController_.value().SetEventCallback(
+		"Footstep",
+		[this](const AnimationEvent& _evt)
+		{
+			OnFootStep(_evt);
+		}
+	);
 }
 
 PatrolChargerEnemy::~PatrolChargerEnemy()
@@ -135,7 +143,11 @@ void PatrolChargerEnemy::OnHitSide(IActor* _pOther)
 {
 	if (state_.Current() == STATE::CHARGE)
 	{
+		LOGIMGUI("collision enter player : ChargeEnemy");
 		_pOther->TakeDamage(takeDamageNum_);
+		state_.Change(STATE::WAIT);
+		waitTime_  = waitTimeAfterCharge_;
+		nextState_ = STATE::RETURN_TO_PATROL;
 	}
 }
 
@@ -268,6 +280,7 @@ void PatrolChargerEnemy::Charge()
 	// ターゲットとのy座標が異なると空中歩行してしまうから。
 	// 斜面を移動させる場合は修正が必要
 	// ------------------------------------------------------
+	// Vector3 distPos = { pTargetTransform_->position };
 	Vector3 distPos		= {pTargetTransform_->position.x, pTransform_->position.y, pTargetTransform_->position.z};
 	Vector3 toTarget	= distPos - pTransform_->GetWorldPosition();
 	Vector3 toTargetDir = Vector3::Normalize(toTarget);
@@ -341,26 +354,24 @@ bool PatrolChargerEnemy::Search()
 	return false;
 }
 
-void PatrolChargerEnemy::OnChargePlayer()
-{
-	LOGIMGUI("collision enter player : ChargeEnemy");
-	state_.Change(STATE::WAIT);
-	waitTime_  = waitTimeAfterCharge_;
-	nextState_ = STATE::RETURN_TO_PATROL;
-}
-
 void PatrolChargerEnemy::OnCollisionEnter(EntityId _entityId)
 {
-	/*if (_entityId != targetEntityId_)
-		return;
+}
 
-	LOGIMGUI("collision enter player : ChargeEnemy");
-	GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-	Transform& otherTransform = Transform::Get(_entityId);
-
-	if ( pTransform_->position.y <= otherTransform.position.y)
-	{
-
-		return;
-	}*/
+void PatrolChargerEnemy::OnFootStep(const AnimationEvent& _event)
+{
+	// ボーンの名前を取得
+	std::string boneName = _event.boneName;
+	// ボーンの座標を取得
+	Vector3 bonePos		 = Fbx::GetAnimBonePosition(pMeshRenderer_->GetMesh(), boneName);
+	EffectParameters params;
+	Matrix4x4 mat;
+	pTransform_->GenerateWorldMatrix(&mat);
+	// ボーンのワールド行列を計算
+	Vector3 worldBonePos = bonePos * mat;
+	Matrix4x4 boneMat	 = DirectX::XMMatrixTranslation(worldBonePos.x, worldBonePos.y, worldBonePos.z);
+	params.worldMat		 = boneMat;
+	params.isLoop		 = false;
+	// 煙のエフェクトを再生
+	Game::System<EffectManager>().Play("WalkSmoke", params);
 }
