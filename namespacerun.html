@@ -103,7 +103,6 @@ $(document).ready(function(){initNavTree('namespacerun.html',''); initResizable(
 <a href="namespacerun.html#details">[詳解]</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>-clang-tidy </p>
-<p>-find-all-symbols</p>
 <pre class="fragment">Parallel clang-tidy runner
 ==========================
 
@@ -122,17 +121,6 @@ Example invocations.
   for clang-tidy headers.
     run-clang-tidy.py -fix -checks=-*,llvm-header-guard extra/clang-tidy \
                       -header-filter=extra/clang-tidy
-
-Compilation database setup:
-http://clang.llvm.org/docs/HowToSetupToolingForLLVM.html
-</pre><pre class="fragment">Parallel find-all-symbols runner
-================================
-
-Runs find-all-symbols over all files in a compilation database.
-
-Example invocations.
-- Run find-all-symbols on all files in the current working directory.
-    run-find-all-symbols.py &lt;source-file&gt;
 
 Compilation database setup:
 http://clang.llvm.org/docs/HowToSetupToolingForLLVM.html

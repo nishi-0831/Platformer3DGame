@@ -15,6 +15,5 @@ var searchData=
   ['figure_2ecpp_12',['Figure.cpp',['../Figure_8cpp.html',1,'']]],
   ['figure_2eh_13',['Figure.h',['../Figure_8h.html',1,'']]],
   ['file_2eh_14',['file.h',['../file_8h.html',1,'']]],
-  ['flightstickcode_2eh_15',['FlightStickCode.h',['../FlightStickCode_8h.html',1,'']]],
-  ['func_2eh_16',['func.h',['../func_8h.html',1,'']]]
+  ['func_2eh_15',['func.h',['../func_8h.html',1,'']]]
 ];

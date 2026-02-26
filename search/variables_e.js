@@ -8,7 +8,7 @@ var searchData=
   ['nexthandle_5f_5',['nextHandle_',['../classmtgb_1_1TextCache.html#a5f0c142cf94f4c684b403f115d32bf17',1,'mtgb::TextCache']]],
   ['nextid_6',['nextId',['../classmtgb_1_1Event.html#adba10145603f54a9aff01123c252b330',1,'mtgb::Event']]],
   ['nextstate_5f_7',['nextState_',['../classPatrolChargerEnemy.html#abb7b572ac1db9e336fd01271a0007b80',1,'PatrolChargerEnemy']]],
-  ['normal_8',['normal',['../structPlane.html#a338da57ef85d4d8d32d80a8674e90ab7',1,'Plane::normal()'],['../structmtgb_1_1FbxParts_1_1Vertex.html#aed2667652a581038d062cd29afbe11b3',1,'mtgb::FbxParts::Vertex::normal()'],['../structmtgb_1_1PlaneUVScroll_1_1Vertex.html#a3e02c9f4b634f443205b275cf60765b8',1,'mtgb::PlaneUVScroll::Vertex::normal()'],['../structmtgb_1_1TerrainVertex.html#afb361690decc118e7c89b781c678d305',1,'mtgb::TerrainVertex::normal()']]],
+  ['normal_8',['normal',['../structmtgb_1_1FbxParts_1_1Vertex.html#aed2667652a581038d062cd29afbe11b3',1,'mtgb::FbxParts::Vertex::normal()'],['../structmtgb_1_1PlaneUVScroll_1_1Vertex.html#a3e02c9f4b634f443205b275cf60765b8',1,'mtgb::PlaneUVScroll::Vertex::normal()'],['../structmtgb_1_1TerrainVertex.html#afb361690decc118e7c89b781c678d305',1,'mtgb::TerrainVertex::normal()']]],
   ['notsavemementos_5f_9',['notSaveMementos_',['../classmtgb_1_1DuplicateGameObjectCommand.html#a318d6d472cf6ebe43e3d45f196a2994a',1,'mtgb::DuplicateGameObjectCommand']]],
   ['numface_10',['numFace',['../structmtgb_1_1SimpleMesh.html#a546b6e261cfa4e20a2006a51e8f1a291',1,'mtgb::SimpleMesh']]],
   ['numvert_11',['numVert',['../structmtgb_1_1SimpleMesh.html#ac03969bdbac2961ad605c97fe5493377',1,'mtgb::SimpleMesh']]]

@@ -29,7 +29,7 @@ var classmtgb_1_1Input =
     [ "IsJoystickConnected", "classmtgb_1_1Input.html#a0fea2e57efa894cd6c7b4bc2fede1bdc", null ],
     [ "IsNotSubscribed", "classmtgb_1_1Input.html#a06c438218702ba957be849b073b88f90", null ],
     [ "RegisterJoystickGuid", "classmtgb_1_1Input.html#a695557c158da89b83ffa9767a281e54c", null ],
-    [ "Release", "classmtgb_1_1Input.html#aaeb9eca1ca02568bf898253c804baea7", null ],
+    [ "Release", "classmtgb_1_1Input.html#a069579821c540ac304ae750c3406f24a", null ],
     [ "RequestJoystickDevice", "classmtgb_1_1Input.html#a6ea9070f8a104556df55e3856dbb91a7", null ],
     [ "RequestJoystickDevice", "classmtgb_1_1Input.html#a81bf954e5b1ab3ce6653c1c09b6af97a", null ],
     [ "SetAcquireInterval", "classmtgb_1_1Input.html#ab876d95c52dda3d075a9c5052fa61b31", null ],

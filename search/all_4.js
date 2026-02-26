@@ -46,8 +46,8 @@ var searchData=
   ['destentityid_5f_43',['destEntityId_',['../classmtgb_1_1DuplicateGameObjectCommand.html#a1853bcf71548e1fdb366136ee854d059',1,'mtgb::DuplicateGameObjectCommand']]],
   ['destgameobjname_5f_44',['destGameObjName_',['../classmtgb_1_1DuplicateGameObjectCommand.html#a5441f9d74fdff67309b88b3a9ac97e0a',1,'mtgb::DuplicateGameObjectCommand']]],
   ['destroygameobject_45',['DestroyGameObject',['../classmtgb_1_1GameScene.html#ae6947b574cd958fe123b72e10e8a520d',1,'mtgb::GameScene']]],
-  ['destroyme_46',['destroyMe',['../structmtgb_1_1EffectParameters.html#aa43758454d7f78380b4420008fa2f142',1,'mtgb::EffectParameters']]],
-  ['destroyme_47',['DestroyMe',['../classmtgb_1_1GameObject.html#a78fb345c550e9f448e08654127792564',1,'mtgb::GameObject']]],
+  ['destroyme_46',['DestroyMe',['../classmtgb_1_1GameObject.html#a78fb345c550e9f448e08654127792564',1,'mtgb::GameObject']]],
+  ['destroyme_47',['destroyMe',['../structmtgb_1_1EffectParameters.html#aa43758454d7f78380b4420008fa2f142',1,'mtgb::EffectParameters']]],
   ['detectedtargets_5f_48',['detectedTargets_',['../classmtgb_1_1IDetector.html#a17cf45aaecf668eaa199bc0d99989621',1,'mtgb::IDetector']]],
   ['detectionrect_49',['detectionRect',['../structmtgb_1_1RectDetectorConfig.html#a2eef8fabe169d02673acce75eea0856a',1,'mtgb::RectDetectorConfig']]],
   ['detectorconfigbase_50',['DetectorConfigBase',['../structmtgb_1_1DetectorConfigBase.html',1,'mtgb']]],
@@ -87,8 +87,8 @@ var searchData=
   ['directx11manager_84',['DirectX11Manager',['../classmtgb_1_1DirectX11Draw.html#af0f9e54ccad2388d303e02c204aade57',1,'mtgb::DirectX11Draw::DirectX11Manager()'],['../classmtgb_1_1DirectX11Manager.html#a6de71deea6f4e064c124f8e42056de29',1,'mtgb::DirectX11Manager::DirectX11Manager()'],['../classmtgb_1_1DirectX11Manager.html',1,'mtgb::DirectX11Manager']]],
   ['directx11manager_2ecpp_85',['DirectX11Manager.cpp',['../DirectX11Manager_8cpp.html',1,'']]],
   ['directx11manager_2eh_86',['DirectX11Manager.h',['../DirectX11Manager_8h.html',1,'']]],
-  ['displayname_87',['displayName',['../structDisplayName.html#abb0dfae84018b1f41f21c15c9e470ebe',1,'DisplayName']]],
-  ['displayname_88',['DisplayName',['../structDisplayName.html',1,'DisplayName'],['../structDisplayName.html#a07ff1b976672d2906751b46be558b89b',1,'DisplayName::DisplayName()']]],
+  ['displayname_87',['DisplayName',['../structDisplayName.html#a07ff1b976672d2906751b46be558b89b',1,'DisplayName::DisplayName()'],['../structDisplayName.html',1,'DisplayName']]],
+  ['displayname_88',['displayName',['../structDisplayName.html#abb0dfae84018b1f41f21c15c9e470ebe',1,'DisplayName']]],
   ['displayname_5f_89',['displayName_',['../classmtgb_1_1ImGuiShowable.html#a53eca55c2c3901c5713e857417100496',1,'mtgb::ImGuiShowable']]],
   ['distance_5f_90',['distance_',['../classmtgb_1_1SphericalCamera.html#a91e9c2ec1c431b5ce5afeede20ecf1bc',1,'mtgb::SphericalCamera::distance_()'],['../classmtgb_1_1ICamera.html#a653a6ea58d0a0fa68ac1f761ef9cf73a',1,'mtgb::ICamera::distance_()'],['../classmtgb_1_1QuaternionCamera.html#afe1c3ca5cc39892ce80ce2c34a933bd3',1,'mtgb::QuaternionCamera::distance_()']]],
   ['disty_5f_91',['distY_',['../classmtgb_1_1SphericalCamera.html#a088fbddfdbe3fe9804e0ae5b9c10b7c0',1,'mtgb::SphericalCamera']]],
@@ -269,6 +269,6 @@ var searchData=
   ['dxgiresource_266',['DXGIResource',['../classmtgb_1_1DXGIResource.html#ac54b1e44c06ea8a50b51a09c7da44108',1,'mtgb::DXGIResource::DXGIResource(const DXGIResource &amp;)=delete'],['../classmtgb_1_1DXGIResource.html#a7cc6bc8813f4dc5b7b8a5516266fee07',1,'mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)'],['../classmtgb_1_1DXGIResource.html',1,'mtgb::DXGIResource']]],
   ['dxgiresource_2ecpp_267',['DXGIResource.cpp',['../DXGIResource_8cpp.html',1,'']]],
   ['dxgiresource_2eh_268',['DXGIResource.h',['../DXGIResource_8h.html',1,'']]],
-  ['dying_269',['Dying',['../classPatrolChargerEnemy.html#a114e68743eccd80492958b04fde3da84',1,'PatrolChargerEnemy']]],
-  ['dying_270',['DYING',['../classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498abfedf8515782de6fc236141383aeae52',1,'PatrolChargerEnemy::DYING()'],['../classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52',1,'Player::DYING()']]]
+  ['dying_269',['DYING',['../classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498abfedf8515782de6fc236141383aeae52',1,'PatrolChargerEnemy::DYING()'],['../classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52',1,'Player::DYING()']]],
+  ['dying_270',['Dying',['../classPatrolChargerEnemy.html#a114e68743eccd80492958b04fde3da84',1,'PatrolChargerEnemy']]]
 ];

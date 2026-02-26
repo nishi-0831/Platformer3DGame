@@ -23,6 +23,5 @@ var searchData=
   ['first_20',['FIRST',['../namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade',1,'mtgb']]],
   ['fixed_21',['FIXED',['../classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac6e6dc18b53b4c2681394b9d8aefcec7',1,'mtgb::Game']]],
   ['flight_5fstick_22',['FLIGHT_STICK',['../namespacemtgb.html#a919a09feaf3649c048364fffc3053d97ada99d55da1e236376d287fadb292f23d',1,'mtgb']]],
-  ['frame_23',['FRAME',['../classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac57e921596445b99ab85558984966184',1,'mtgb::Game']]],
-  ['front_24',['FRONT',['../BoxPlane_8h.html#a05def78b3b5cd4bc21bfbf797733d986abb2fe5c916efb43aab8cbb68f997d2ee',1,'BoxPlane.h']]]
+  ['frame_23',['FRAME',['../classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac57e921596445b99ab85558984966184',1,'mtgb::Game']]]
 ];

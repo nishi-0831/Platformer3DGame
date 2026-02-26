@@ -31,6 +31,5 @@ var searchData=
   ['rigidbody_2eh_28',['RigidBody.h',['../RigidBody_8h.html',1,'']]],
   ['rigidbodycp_2ecpp_29',['RigidBodyCP.cpp',['../RigidBodyCP_8cpp.html',1,'']]],
   ['rigidbodycp_2eh_30',['RigidBodyCP.h',['../RigidBodyCP_8h.html',1,'']]],
-  ['run_2dclang_2dtidy_2epy_31',['run-clang-tidy.py',['../run-clang-tidy_8py.html',1,'']]],
-  ['run_2dfind_2dall_2dsymbols_2epy_32',['run-find-all-symbols.py',['../run-find-all-symbols_8py.html',1,'']]]
+  ['run_2dclang_2dtidy_2epy_31',['run-clang-tidy.py',['../run-clang-tidy_8py.html',1,'']]]
 ];

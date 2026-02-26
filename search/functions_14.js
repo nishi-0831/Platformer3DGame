@@ -22,13 +22,12 @@ var searchData=
   ['tovector3norm_19',['ToVector3Norm',['../structmtgb_1_1Color.html#aa45813812dbd0e403336e8b7d6379435',1,'mtgb::Color']]],
   ['tovector4norm_20',['ToVector4Norm',['../structmtgb_1_1Color.html#a5d6da2a7e2ce459c8fe4c7454e392f84',1,'mtgb::Color']]],
   ['towstring_21',['ToWString',['../namespacemtgb.html#a120406ef0b97a708844e0e1e954639d2',1,'mtgb::ToWString(const std::string_view &amp;_stringView)'],['../namespacemtgb.html#a617eca76bf9fafbeec11995aa89bedc9',1,'mtgb::ToWString(const std::string &amp;_string)']]],
-  ['transform_22',['Transform',['../classmtgb_1_1Transform.html#a25aac3b6926049709392fd5e7db53673',1,'mtgb::Transform::Transform()'],['../classmtgb_1_1Transform.html#a602fedab5684c24ccb169c8317eb2a51',1,'mtgb::Transform::Transform(EntityId _entityId)']]],
+  ['transform_22',['Transform',['../classmtgb_1_1Transform.html#a602fedab5684c24ccb169c8317eb2a51',1,'mtgb::Transform::Transform(EntityId _entityId)'],['../classmtgb_1_1Transform.html#a25aac3b6926049709392fd5e7db53673',1,'mtgb::Transform::Transform()']]],
   ['transformcore_23',['TransformCore',['../structmtgb_1_1TransformCore.html#a6065389d5d4dcaff9eba4b43f761c93e',1,'mtgb::TransformCore']]],
   ['transformcp_24',['TransformCP',['../classmtgb_1_1TransformCP.html#a6ada7fcfbd68d9403a907a4c5e3bde45',1,'mtgb::TransformCP']]],
-  ['tryget_25',['TryGet',['../classmtgb_1_1ComponentPool.html#a127206429f4fdba6791e9e560a9274a8',1,'mtgb::ComponentPool::TryGet(std::vector&lt; ComponentT * &gt; *_pComponents, const EntityId _entityId)'],['../classmtgb_1_1ComponentPool.html#ae9f975e7c7eb07ee6c313867fd4dd48f',1,'mtgb::ComponentPool::TryGet(ComponentT *&amp;_pComponent, const EntityId _entityId)']]],
+  ['tryget_25',['TryGet',['../classmtgb_1_1ComponentPool.html#ae9f975e7c7eb07ee6c313867fd4dd48f',1,'mtgb::ComponentPool::TryGet(ComponentT *&amp;_pComponent, const EntityId _entityId)'],['../classmtgb_1_1ComponentPool.html#a127206429f4fdba6791e9e560a9274a8',1,'mtgb::ComponentPool::TryGet(std::vector&lt; ComponentT * &gt; *_pComponents, const EntityId _entityId)']]],
   ['trygetboneposition_26',['TryGetBonePosition',['../classmtgb_1_1FbxParts.html#a17a7e481e5d26637ddd3cf89428b0f30',1,'mtgb::FbxParts']]],
   ['trygetbonepositionatnow_27',['TryGetBonePositionAtNow',['../classmtgb_1_1FbxParts.html#a05b2d9f529cfc1045075ee060b0c4487',1,'mtgb::FbxParts']]],
-  ['trygetfacingplane_28',['TryGetFacingPlane',['../BoxPlane_8h.html#aa8091f419f272b80b543567d2adda8b3',1,'BoxPlane.h']]],
-  ['trygetnextstate_29',['TryGetNextState',['../classmtstat_1_1MTStat.html#a5ba2ba59cbf495e625244879ebde94d5',1,'mtstat::MTStat']]],
-  ['typedshow_30',['TypedShow',['../classmtgb_1_1MTImGui.html#a7a5d137f21d74b9dfe94416ea3dfcb6a',1,'mtgb::MTImGui']]]
+  ['trygetnextstate_28',['TryGetNextState',['../classmtstat_1_1MTStat.html#a5ba2ba59cbf495e625244879ebde94d5',1,'mtstat::MTStat']]],
+  ['typedshow_29',['TypedShow',['../classmtgb_1_1MTImGui.html#a7a5d137f21d74b9dfe94416ea3dfcb6a',1,'mtgb::MTImGui']]]
 ];
