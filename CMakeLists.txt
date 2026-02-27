@@ -313,8 +313,6 @@ set(03mtgb__System__Audio
     "mtgb/Audio.h"
     "mtgb/AudioClip.cpp"
     "mtgb/AudioClip.h"
-    "mtgb/AudioOneShot.cpp"
-    "mtgb/AudioOneShot.h"
     "mtgb/WaveData.cpp"
     "mtgb/WaveData.h"
 )

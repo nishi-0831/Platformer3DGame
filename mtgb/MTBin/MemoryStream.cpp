@@ -1,5 +1,6 @@
 #include "MemoryStream.h"
-
+#include <utility>
+#include "../ReleaseUtility.h"
 mtbin::MemoryStream::MemoryStream(mtbin::Byte* _pBuffer, const size_t& _bufferSize)
 	: BUFFER_SIZE{_bufferSize}
 	, pBuffer_{_pBuffer}
@@ -7,8 +8,17 @@ mtbin::MemoryStream::MemoryStream(mtbin::Byte* _pBuffer, const size_t& _bufferSi
 {
 }
 
+mtbin::MemoryStream::MemoryStream(MemoryStream&& _other) noexcept
+	: BUFFER_SIZE{_other.BUFFER_SIZE}
+	, pBuffer_{_other.pBuffer_}
+	, currentIndex{_other.currentIndex}
+{
+	_other.pBuffer_ = nullptr;
+}
+
 mtbin::MemoryStream::~MemoryStream()
 {
+	SAFE_DELETE(pBuffer_);
 }
 
 void mtbin::MemoryStream::Seek(SeekPoint _point)

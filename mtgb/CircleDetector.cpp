@@ -21,7 +21,7 @@ namespace mtgb
 		config = _config;
 	}
 
-	CircleDetector::CircleDetector(CircleDetectorConfig&& _config)
+	CircleDetector::CircleDetector(CircleDetectorConfig&& _config) noexcept
 		: CircleDetector{}
 	{
 		config = std::move(_config);

@@ -29,7 +29,7 @@ ScoreItem::ScoreItem()
 				params.worldMat = worldMat;
 				Game::System<EffectManager>().Play("ScoreItem", params);
 
-				Audio::PlayOneShotFile("Sound/ItemGetSound.mp3");
+				Game::System<Audio>().Play("ItemGet");
 				DestroyMe();
 			}
 		}

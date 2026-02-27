@@ -128,7 +128,7 @@ void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 		Game::System<EffectManager>().Play("Stomp", params);
 
 		// 踏まれたSE再生
-		Audio::PlayOneShotFile("Sound/Stomp.mp3");
+		Game::System<Audio>().Play("Stomp");
 
 		// 踏んだアクターを上に飛ばす
 		EntityId id				  = _pOther->GetId();
@@ -363,7 +363,7 @@ void PatrolChargerEnemy::OnFootStep(const AnimationEvent& _event)
 	// ボーンの名前を取得
 	std::string boneName = _event.boneName;
 	// ボーンの座標を取得
-	Vector3 bonePos		 = Fbx::GetAnimBonePosition(pMeshRenderer_->GetMesh(), boneName);
+	Vector3 bonePos = Fbx::GetAnimBonePosition(pMeshRenderer_->GetMesh(), boneName);
 	EffectParameters params;
 	Matrix4x4 mat;
 	pTransform_->GenerateWorldMatrix(&mat);

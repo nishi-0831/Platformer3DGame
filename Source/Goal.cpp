@@ -75,7 +75,7 @@ void Goal::ShowImGui()
 
 void Goal::OnClear()
 {
-	Audio::PlayOneShotFile("Sound/ClearScene.mp3");
+	Game::System<Audio>().Play("GameClear");
 
 	Timer::AddAram(
 		transitionSceneDelay_,
