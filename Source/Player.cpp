@@ -297,15 +297,15 @@ Vector3 Player::GetMoveDir()
 	if (axis.Size() == 0)
 		return Vector3::Zero();
 
-	// 蜈･蜉帶婿蜷・
+	// 入力方向
 	Vector3 inputDir{axis.x, 0.0f, -axis.y};
 
-	// 繧ｫ繝｡繝ｩ縺ｮ蝗櫁ｻ｢陦悟・繧貞叙蠕・
+	// カメラの回転行列を取得
 	Matrix4x4 cameraRotMat;
 	pCameraTransform_->GenerateWorldRotationMatrix(&cameraRotMat);
-	// 蜈･蜉帶婿蜷代ｒ繧ｫ繝｡繝ｩ縺ｮ蜷代″縺縺大屓霆｢
+	// 入力方向をカメラの向きだけ回転
 	Vector3 dir = inputDir * cameraRotMat;
-	// Y謌仙・繧呈昏縺ｦ縺盜Z謌仙・縺ｮ縺ｿ蜿門ｾ・
+	// Y成分を捨てたXZ成分のみ取得
 	Vector3 horizontalDir = Vector3{dir.x, 0.0f, dir.z};
 	return Vector3::Normalize(horizontalDir);
 }
