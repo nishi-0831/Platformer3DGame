@@ -1,4 +1,4 @@
-﻿---
+---
 BasedOnStyle: Microsoft
 Language: Cpp
 Standard: c++20
@@ -27,6 +27,7 @@ BraceWrapping:
   AfterStruct: true
   AfterUnion: true
   AfterExternBlock: true
+  # Before<> : <>の前で改行するか
   BeforeCatch: true
   BeforeElse: true
   BeforeLambdaBody: true
@@ -51,7 +52,11 @@ BinPackArguments: false
 # 関数宣言・呼び出し時、一行に収まりきらない場合は複数行に並べるか
 AllowAllArgumentsOnNextLine: false
 AllowAllParametersOfDeclarationOnNextLine: false
-AllowShortLambdasOnASingleLine: Empty
+# 短いブロックでも一行にまとめない
+AllowShortLambdasOnASingleLine: None
+AllowShortBlocksOnASingleLine: Never
+# 短い関数を一行にまとめるかどうか。 InlineOnly : インライン関数のみ一行にまとめる
+AllowShortFunctionsOnASingleLine: InlineOnly
 # 末尾のコメント行
 AlignTrailingComments: true
 # 変数への代入が連続した際に=で整列するか
@@ -64,7 +69,17 @@ AlignAfterOpenBracket: BlockIndent
 SpaceBeforeParens: ControlStatements
 # switch-caseのコロン前にスペースを入れるか
 SpaceBeforeCaseColon: true
-# コンストラクタ初期化子リスト
+# 初期化子リストの前に空白を入れるか
+SpaceBeforeCpp11BracedList: true
+# メンバ初期化子リストのコロン前に空白を入れるか
+SpaceBeforeCtorInitializerColon : true
+# メンバ初期化子リストの波かっこの前後に空白を入れないか
+# 例 false : vector<int> x{ 1, 2, 3, 4}; となる
+Cpp11BracedListStyle: false
+# コロン及びカンマの前で改行
 BreakConstructorInitializers: BeforeComma
 ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 4
+
+# コンセプトの前で改行するか
+BreakBeforeConceptDeclarations: true
