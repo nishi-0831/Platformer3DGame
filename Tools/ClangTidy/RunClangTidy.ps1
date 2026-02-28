@@ -13,8 +13,8 @@ function RunClangTidy
     
     # clang-tidyの出力を保存
     Write-Host "Running clang-tidy."
-    Write-Host "Command: & $ClangTidyWrapper $SrcDir -p $BinDir"
-    $output = & $ClangTidyWrapper $SrcDir -p $BinDir
+    Write-Host "Command: & $ClangTidyWrapper $SrcDir --config Tools/ClangTidy -p $BinDir"
+    $output = & $ClangTidyWrapper $SrcDir --config Tools/ClangTidy -p $BinDir
 
     Write-Host "Success clang-tidy. output to JSON"
 
@@ -84,7 +84,7 @@ function DeduplicateSarif
 {
     Write-Host "Deduplicate sarif"
     $deduplicatorPath = Join-Path -Path $SrcDir -ChildPath "Tools\SarifDeduplicator\SarifDeduplicator.exe"
-    & $deduplicatorPath $SrcDir
+    & $deduplicatorPath $OutputSarif
 }
 
 

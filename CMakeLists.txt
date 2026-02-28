@@ -99,8 +99,6 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(no_group_source_files
     ".clang-format"
     ".pre-commit-config.yaml"
-    "scripts/clang-tidy-wrapper.py"
-    "通信体系.txt"
 )
 source_group("" FILES ${no_group_source_files})
 
