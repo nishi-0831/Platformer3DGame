@@ -2,19 +2,17 @@
 #include "JumpController.h"
 
 JumpController::JumpController(EntityId _targetId)
-	: pTargetTransform_{&Transform::Get(_targetId)}
-	, pTargetRigidBody_{&RigidBody::Get(_targetId)}
-	, isJumping_{false}
-	, isHolding_{false}
-	, holdTime_{0.0f}
-	, onStartJumpVelocity_{0.0f}
-	, maxHoldTime_{0.5f}
+	: pTargetTransform_ { &Transform::Get(_targetId) }
+	, pTargetRigidBody_ { &RigidBody::Get(_targetId) }
+	, isJumping_ { false }
+	, isHolding_ { false }
+	, holdTime_ { 0.0f }
+	, onStartJumpVelocity_ { 0.0f }
+	, maxHoldTime_ { 0.5f }
 {
 }
 
-JumpController::~JumpController()
-{
-}
+JumpController::~JumpController() {}
 
 void JumpController::Update()
 {
@@ -35,9 +33,9 @@ void JumpController::StartJump(float _maxHeight)
 	isJumping_ = true;
 	isHolding_ = true;
 
-	float gravity	  = RigidBody::GetGravity();
-	Vector3& velocity = pTargetRigidBody_->velocity_;
-	onStartJumpVelocity_		  = std::sqrt(2.0f * std::abs(gravity) * _maxHeight);
+	float gravity		 = RigidBody::GetGravity();
+	Vector3& velocity	 = pTargetRigidBody_->velocity_;
+	onStartJumpVelocity_ = std::sqrt(2.0f * std::abs(gravity) * _maxHeight);
 	velocity.y			 = onStartJumpVelocity_;
 }
 
@@ -45,5 +43,5 @@ void JumpController::ReleaseButton()
 {
 	// StartJumpによってジャンプしていたら、速度を0にする
 	pTargetRigidBody_->velocity_.y = 0.0f;
-	isHolding_ = false;
+	isHolding_					   = false;
 }

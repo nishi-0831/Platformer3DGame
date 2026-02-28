@@ -80,7 +80,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 
 void mtgb::ImGuizmoManipulator::SubscribeEvents()
 {
-	EventManager& eventManager{Game::System<EventManager>()};
+	EventManager& eventManager { Game::System<EventManager>() };
 	// ゲームオブジェクト選択イベント
 	eventManager.GetEvent<GameObjectSelectedEvent>().Subscribe(
 		[this](const GameObjectSelectedEvent& _event)
@@ -93,8 +93,10 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 	eventManager.GetEvent<SelectionClearedEvent>().Subscribe(
 		[this](const SelectionClearedEvent& _event)
 		{
-			
-		}, EventScope::GLOBAL);
+
+		},
+		EventScope::GLOBAL
+	);
 
 	// 今後、同時に複数のオブジェクトを選択可能な場合になった際には修正
 	eventManager.GetEvent<GameObjectDeselectedEvent>().Subscribe(
@@ -137,23 +139,19 @@ void mtgb::ImGuizmoManipulator::Calculate()
 
 mtgb::ImGuizmoManipulator::ImGuizmoManipulator(std::function<void(Command*)> _commandListener)
 	: ImGuiShowable("Manipulater", ShowType::SCENE_VIEW)
-	, operation_{ImGuizmo::TRANSLATE}
-	, mode_{ImGuizmo::LOCAL}
-	, commandListener_{_commandListener}
-	, isUsing_{false}
-	, wasUsing_{false}
-	, pTargetTransform_{nullptr}
+	, operation_ { ImGuizmo::TRANSLATE }
+	, mode_ { ImGuizmo::LOCAL }
+	, commandListener_ { _commandListener }
+	, isUsing_ { false }
+	, wasUsing_ { false }
+	, pTargetTransform_ { nullptr }
 {
 	SubscribeEvents();
 }
 
-mtgb::ImGuizmoManipulator::~ImGuizmoManipulator()
-{
-}
+mtgb::ImGuizmoManipulator::~ImGuizmoManipulator() {}
 
-void mtgb::ImGuizmoManipulator::Initialize()
-{
-}
+void mtgb::ImGuizmoManipulator::Initialize() {}
 
 void mtgb::ImGuizmoManipulator::Update()
 {

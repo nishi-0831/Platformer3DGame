@@ -1,18 +1,18 @@
 #include "stdafx.h"
 #include "CircularSaw.h"
 
-unsigned int mtgb::CircularSaw::generateCounter_{0};
+unsigned int mtgb::CircularSaw::generateCounter_ { 0 };
 
 mtgb::CircularSaw::CircularSaw()
 	: GameObject()
 	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
-	, pTransform_{Component<Transform>()}
-	, pMeshRenderer_{Component<MeshRenderer>()}
-	, pCollider_{Component<Collider>()}
-	, sawRadius_{2.5f}
-	, sawOffset_{5.0f}
-	, rotateAngleSec_{45.0f}
-	, rotateAngleSecSaw_{360.0f}
+	, pTransform_ { Component<Transform>() }
+	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, pCollider_ { Component<Collider>() }
+	, sawRadius_ { 2.5f }
+	, sawOffset_ { 5.0f }
+	, rotateAngleSec_ { 45.0f }
+	, rotateAngleSecSaw_ { 360.0f }
 {
 	pTransform_->position.z = -5.0f;
 
@@ -27,9 +27,7 @@ mtgb::CircularSaw::CircularSaw()
 	displayName_		 = name_;
 }
 
-mtgb::CircularSaw::~CircularSaw()
-{
-}
+mtgb::CircularSaw::~CircularSaw() {}
 
 void mtgb::CircularSaw::Update()
 {
@@ -38,13 +36,9 @@ void mtgb::CircularSaw::Update()
 	pTransform_->rotate = rot * pTransform_->rotate;
 }
 
-void mtgb::CircularSaw::Draw() const
-{
-}
+void mtgb::CircularSaw::Draw() const {}
 
-void mtgb::CircularSaw::ShowImGui()
-{
-}
+void mtgb::CircularSaw::ShowImGui() {}
 
 void mtgb::CircularSaw::Start()
 {
@@ -79,23 +73,21 @@ void mtgb::CircularSaw::Start()
 mtgb::Saw::Saw()
 	: GameObject()
 	, IActor(GetEntityId())
-	, pTransform_{Component<Transform>()}
-	, pMeshRenderer_{Component<MeshRenderer>()}
-	, pCollider_{Component<Collider>()}
-	, pRigidBody_{Component<RigidBody>()}
-	, rotateAngleSec_{360.0f}
-	, radius_{3.0f}
-	, takeDamageAmount_{1}
+	, pTransform_ { Component<Transform>() }
+	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, pCollider_ { Component<Collider>() }
+	, pRigidBody_ { Component<RigidBody>() }
+	, rotateAngleSec_ { 360.0f }
+	, radius_ { 3.0f }
+	, takeDamageAmount_ { 1 }
 {
-	pTransform_->scale			 = Vector3{radius_, 1.0f, radius_};
+	pTransform_->scale			 = Vector3 { radius_, 1.0f, radius_ };
 	pCollider_->colliderType_	 = ColliderType::TYPE_OBB;
 	pMeshRenderer_->meshFileName = "Model/Saw.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load("Model/Saw.fbx");
 }
 
-mtgb::Saw::~Saw()
-{
-}
+mtgb::Saw::~Saw() {}
 
 void mtgb::Saw::Update()
 {
@@ -104,13 +96,9 @@ void mtgb::Saw::Update()
 	pTransform_->rotate = rot * pTransform_->rotate;
 }
 
-void mtgb::Saw::Draw() const
-{
-}
+void mtgb::Saw::Draw() const {}
 
-void mtgb::Saw::Start()
-{
-}
+void mtgb::Saw::Start() {}
 
 void mtgb::Saw::ShowImGui()
 {
@@ -127,6 +115,4 @@ void mtgb::Saw::OnHitSide(IActor* _pOther)
 	_pOther->TakeDamage(takeDamageAmount_);
 }
 
-void mtgb::Saw::TakeDamage(int _damage)
-{
-}
+void mtgb::Saw::TakeDamage(int _damage) {}

@@ -19,7 +19,7 @@ namespace mtgb
 		}
 		inline const Vector2F GetSizeF() const
 		{
-			return Vector2F{static_cast<float>(size_.x), static_cast<float>(size_.y)};
+			return Vector2F { static_cast<float>(size_.x), static_cast<float>(size_.y) };
 		}
 		// inline const Vector2Int GetInitialSize() const { return Vector2Int{ initialWidth_,initialHeight_ }; }
 		/// <summary>

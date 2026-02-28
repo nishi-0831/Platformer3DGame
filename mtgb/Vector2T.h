@@ -15,14 +15,14 @@ namespace mtgb
 
 		template <typename U>
 		Vector2T(const Vector2T<U>& _other)
-			: x{static_cast<T>(_other.x)}
-			, y{static_cast<T>(_other.y)}
+			: x { static_cast<T>(_other.x) }
+			, y { static_cast<T>(_other.y) }
 		{
 		}
 		template <typename U>
 		Vector2T(U _x, U _y)
-			: x{static_cast<T>(_x)}
-			, y{static_cast<T>(_y)}
+			: x { static_cast<T>(_x) }
+			, y { static_cast<T>(_y) }
 		{
 		}
 
@@ -81,40 +81,40 @@ namespace mtgb
 
 		static Vector2T Zero()
 		{
-			return Vector2T(T{}, T{});
+			return Vector2T(T {}, T {});
 		}
 		static Vector2T One()
 		{
-			return Vector2T(T{1}, T{1});
+			return Vector2T(T { 1 }, T { 1 });
 		}
 	};
 	template <typename T> inline Vector2T<T> operator*(const Vector2T<T>& _v, T _scalar)
 	{
-		return Vector2T<T>{_v} *= _scalar;
+		return Vector2T<T> { _v } *= _scalar;
 	}
 	template <typename T> inline Vector2T<T> operator*(T _scalar, const Vector2T<T>& _v)
 	{
-		return Vector2T<T>{_v} *= _scalar;
+		return Vector2T<T> { _v } *= _scalar;
 	}
 	template <typename T> inline Vector2T<T> operator/(const Vector2T<T>& _v, T _scalar)
 	{
-		return Vector2T<T>{_v} /= _scalar;
+		return Vector2T<T> { _v } /= _scalar;
 	}
 	template <typename T> inline Vector2T<T> operator/(T _scalar, const Vector2T<T>& _v)
 	{
-		return Vector2T<T>{_v} /= _scalar;
+		return Vector2T<T> { _v } /= _scalar;
 	}
 	template <typename T> inline Vector2T<T> operator/(const Vector2T<T>& _v1, const Vector2T<T>& _v2)
 	{
-		return Vector2T<T>{_v1.x / _v2.x, _v1.y / _v2.y};
+		return Vector2T<T> { _v1.x / _v2.x, _v1.y / _v2.y };
 	}
 	template <typename T> inline Vector2T<T> operator+(const Vector2T<T>& _v1, Vector2T<T> _v2)
 	{
-		return Vector2T<T>{_v1} += _v2;
+		return Vector2T<T> { _v1 } += _v2;
 	}
 	template <typename T> inline Vector2T<T> operator-(const Vector2T<T>& _v1, const Vector2T<T>& _v2)
 	{
-		return Vector2T<T>{_v1} -= _v2;
+		return Vector2T<T> { _v1 } -= _v2;
 	}
 
 	// 異なる型同士の演算
@@ -195,8 +195,8 @@ namespace mtgb
 
 	template <Arithmetic T>
 	inline Vector2T<T>::Vector2T(T _x, T _y)
-		: x{_x}
-		, y{_y}
+		: x { _x }
+		, y { _y }
 	{
 	}
 

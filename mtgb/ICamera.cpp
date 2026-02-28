@@ -3,21 +3,21 @@
 #include "GameTime.h"
 #include "Transform.h"
 mtgb::ICamera::ICamera()
-	: polarAngleRad_{0.0f}
-	, azimuthalAngleRad_{0.0f}
-	, rotateSensitivity_{1.0f}
-	, orbitSpeed_{1.0f}
-	, pCameraTransform_{nullptr}
-	, pTargetTransform_{nullptr}
-	, inputType_{InputType::MOUSE}
-	, distance_{5.0f}
-	, followTarget_{false}
-	, adjustTargetDirection_{false} // デフォルトの角度制限（ラジアン）
-	, minPolarAngleRad_{DirectX::XMConvertToRadians(0.1f)}
-	, maxPolarAngleRad_{DirectX::XMConvertToRadians(179.0f)}
-	, minAzimuthalAngleRad_{-(std::numeric_limits<float>::max)()}
-	, maxAzimuthalAngleRad_{(std::numeric_limits<float>::max)()}
-	, lookAtPositionOffset_{0, 0, 0}
+	: polarAngleRad_ { 0.0f }
+	, azimuthalAngleRad_ { 0.0f }
+	, rotateSensitivity_ { 1.0f }
+	, orbitSpeed_ { 1.0f }
+	, pCameraTransform_ { nullptr }
+	, pTargetTransform_ { nullptr }
+	, inputType_ { InputType::MOUSE }
+	, distance_ { 5.0f }
+	, followTarget_ { false }
+	, adjustTargetDirection_ { false } // デフォルトの角度制限（ラジアン）
+	, minPolarAngleRad_ { DirectX::XMConvertToRadians(0.1f) }
+	, maxPolarAngleRad_ { DirectX::XMConvertToRadians(179.0f) }
+	, minAzimuthalAngleRad_ { -(std::numeric_limits<float>::max)() }
+	, maxAzimuthalAngleRad_ { (std::numeric_limits<float>::max)() }
+	, lookAtPositionOffset_ { 0, 0, 0 }
 {
 }
 void mtgb::ICamera::MoveCameraSpherical(float _distance)
@@ -68,14 +68,14 @@ void mtgb::ICamera::DoOrbit()
 	Vector3 movement;
 	switch (inputType_)
 	{
-	case InputType::MOUSE :
-		movement = InputUtil::GetMouseMove();
-		break;
-	case InputType::JOYPAD :
-		Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
-		movement.x	  = -vec2.x;
-		movement.y	  = vec2.y;
-		break;
+		case InputType::MOUSE :
+			movement = InputUtil::GetMouseMove();
+			break;
+		case InputType::JOYPAD :
+			Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
+			movement.x	  = -vec2.x;
+			movement.y	  = vec2.y;
+			break;
 	}
 
 	if (movement.Size() != 0)

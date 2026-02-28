@@ -4,9 +4,7 @@
 #include "Transform.h"
 #include "CameraSystem.h"
 #include "GameObjectTypeRegistry.h"
-mtgb::GameScene::GameScene()
-{
-}
+mtgb::GameScene::GameScene() {}
 
 mtgb::GameScene::~GameScene()
 {
@@ -31,25 +29,17 @@ void mtgb::GameScene::RegisterGameObject(GameObject* _pGameObject)
 
 mtgb::CameraHandleInScene mtgb::GameScene::RegisterCameraGameObject(GameObject* _pGameObject) const
 {
-	Transform* pTransform{&Transform::Get(_pGameObject->GetEntityId())};
+	Transform* pTransform { &Transform::Get(_pGameObject->GetEntityId()) };
 	return Game::System<CameraSystem>().RegisterDrawCamera(pTransform);
 }
 
-void mtgb::GameScene::Initialize()
-{
-}
+void mtgb::GameScene::Initialize() {}
 
-void mtgb::GameScene::Update()
-{
-}
+void mtgb::GameScene::Update() {}
 
-void mtgb::GameScene::Draw() const
-{
-}
+void mtgb::GameScene::Draw() const {}
 
-void mtgb::GameScene::End()
-{
-}
+void mtgb::GameScene::End() {}
 
 mtgb::GameObject* mtgb::GameScene::GetGameObject(std::string _name) const
 {
@@ -152,4 +142,4 @@ nlohmann::json mtgb::GameScene::SerializeGameObjects() const
 	return j;
 }
 
-mtgb::GameScene* mtgb::GameScene::pInstance_{nullptr};
+mtgb::GameScene* mtgb::GameScene::pInstance_ { nullptr };

@@ -1,15 +1,13 @@
 #include "MemoryStream.h"
 
 mtbin::MemoryStream::MemoryStream(mtbin::Byte* _pBuffer, const size_t& _bufferSize)
-	: BUFFER_SIZE{_bufferSize}
-	, pBuffer_{_pBuffer}
-	, currentIndex{0}
+	: BUFFER_SIZE { _bufferSize }
+	, pBuffer_ { _pBuffer }
+	, currentIndex { 0 }
 {
 }
 
-mtbin::MemoryStream::~MemoryStream()
-{
-}
+mtbin::MemoryStream::~MemoryStream() {}
 
 void mtbin::MemoryStream::Seek(SeekPoint _point)
 {
@@ -30,10 +28,10 @@ void mtbin::MemoryStream::Seek(SeekDir _dir)
 {
 	switch (_dir)
 	{
-	case SeekDir::HEAD :
-		currentIndex = 0;
-		break;
-	default :
-		break;
+		case SeekDir::HEAD :
+			currentIndex = 0;
+			break;
+		default :
+			break;
 	}
 }

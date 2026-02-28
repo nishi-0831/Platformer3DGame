@@ -14,22 +14,18 @@ mtgb::SingleWindow::SingleWindow()
 	context_ = WindowContext::FIRST;
 }
 
-mtgb::SingleWindow::~SingleWindow()
-{
-}
+mtgb::SingleWindow::~SingleWindow() {}
 
 void mtgb::SingleWindow::Initialize()
 {
-	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
+	const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
-	WindowConfig config1 = {
-		.title	   = "Player1",
-		.className = "Player1WindowClass",
-		.width	   = SCREEN_SIZE.x,
-		.height	   = SCREEN_SIZE.y,
-		.x		   = 0,
-		.y		   = 0
-	};
+	WindowConfig config1 = { .title		= "Player1",
+							 .className = "Player1WindowClass",
+							 .width		= SCREEN_SIZE.x,
+							 .height	= SCREEN_SIZE.y,
+							 .x			= 0,
+							 .y			= 0 };
 
 	// リソースの初期化もここで行う
 	Game::System<WindowManager>().SetWindowConfig(WindowContext::FIRST, config1);
@@ -48,6 +44,4 @@ void mtgb::SingleWindow::Initialize()
 	SetForegroundWindow(hWnd1);
 }
 
-void mtgb::SingleWindow::Update()
-{
-}
+void mtgb::SingleWindow::Update() {}

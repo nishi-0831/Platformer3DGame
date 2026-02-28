@@ -62,12 +62,8 @@ namespace mtgb
 
 		   };*/
 	  public:
-		IOriginalShader()
-		{
-		}
-		virtual ~IOriginalShader()
-		{
-		}
+		IOriginalShader() {}
+		virtual ~IOriginalShader() {}
 
 	  protected:
 		virtual std::string_view GetFileName() = 0;

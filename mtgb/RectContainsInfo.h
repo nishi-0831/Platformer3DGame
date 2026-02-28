@@ -9,14 +9,14 @@ namespace mtgb
 	/// </summary>
 	struct ScreenCoordContainsInfo
 	{
-		Vector3 worldPos{};	 // ワールド座標での座標
-		Vector3 screenPos{}; // スクリーン座標系での座標
+		Vector3 worldPos {};  // ワールド座標での座標
+		Vector3 screenPos {}; // スクリーン座標系での座標
 		EntityId entityId;
 		ScreenCoordContainsInfo() = default;
 		ScreenCoordContainsInfo(Vector3 _worldPos, Vector3 _screenPos, EntityId _entityId)
-			: worldPos{_worldPos}
-			, screenPos{_screenPos}
-			, entityId{_entityId}
+			: worldPos { _worldPos }
+			, screenPos { _screenPos }
+			, entityId { _entityId }
 		{
 		}
 	};

@@ -10,19 +10,17 @@
 namespace mtgb
 {
 	// ターゲットとして無視する敵の名前
-	const std::string ignoreName{"EnemyBroken"};
+	const std::string ignoreName { "EnemyBroken" };
 
-	CircleDetector::CircleDetector()
-	{
-	}
+	CircleDetector::CircleDetector() {}
 	CircleDetector::CircleDetector(const CircleDetectorConfig& _config)
-		: CircleDetector{}
+		: CircleDetector {}
 	{
 		config = _config;
 	}
 
 	CircleDetector::CircleDetector(CircleDetectorConfig&& _config)
-		: CircleDetector{}
+		: CircleDetector {}
 	{
 		config = std::move(_config);
 	}
@@ -72,7 +70,7 @@ namespace mtgb
 			}
 
 			// 円形範囲内かチェック
-			Vector2F screenPos2D = {screenPos.x, screenPos.y};
+			Vector2F screenPos2D = { screenPos.x, screenPos.y };
 			if (IsPointInCircle(screenPos2D, _config.center, _config.radius))
 			{
 				detectedTargets_.emplace_back(worldPos, screenPos, obj->GetEntityId());
@@ -98,8 +96,8 @@ namespace mtgb
 
 		float scaledSize  = config.radius * 2.0f * scale;
 		Vector2F center	  = Game::System<Screen>().GetSizeF() * 0.5f;
-		Vector2F newPoint = center - Vector2F{scaledSize, scaledSize} * 0.5f;
-		return {newPoint, {scaledSize, scaledSize}};
+		Vector2F newPoint = center - Vector2F { scaledSize, scaledSize } * 0.5f;
+		return { newPoint, { scaledSize, scaledSize } };
 	}
 
 	const std::vector<ScreenCoordContainsInfo>& CircleDetector::GetDetectedTargets() const

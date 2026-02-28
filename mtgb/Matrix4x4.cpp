@@ -3,7 +3,7 @@
 
 std::string mtgb::Matrix4x4::ToString()
 {
-	std::string str{};
+	std::string str {};
 	for (int y = 0; y < ROW_SIZE; y++)
 	{
 		for (int x = 0; x < COLUMN_SIZE; x++)

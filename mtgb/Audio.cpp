@@ -11,8 +11,8 @@
 #include "Debug.h"
 
 mtgb::Audio::Audio()
-	: pXAudio2_{nullptr}
-	, pMasteringVoice_{nullptr}
+	: pXAudio2_ { nullptr }
+	, pMasteringVoice_ { nullptr }
 {
 }
 
@@ -27,7 +27,7 @@ mtgb::Audio::~Audio()
 
 void mtgb::Audio::Initialize()
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
 	hResult = CoInitializeEx(NULL, COINIT_MULTITHREADED);
 	massert(
@@ -63,8 +63,8 @@ void mtgb::Audio::Update()
 	{
 		(*itr)->timeLeft -= Time::DeltaTimeF();
 
-		float diff{(*itr)->timeLeft}; // 差分
-		if (diff > 0)				  // 差分が0より大きい = 再生中
+		float diff { (*itr)->timeLeft }; // 差分
+		if (diff > 0)					 // 差分が0より大きい = 再生中
 		{
 			break; // 再生終了していないため離脱
 		}
@@ -92,7 +92,7 @@ mtgb::AudioClip* mtgb::Audio::GetAudioClip(const AudioHandle _hAudio)
 
 void mtgb::Audio::CreateSourceVoice(IXAudio2SourceVoice** _ppSourceVoice, const WaveData* _pWaveData)
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
 	hResult = pXAudio2_->CreateSourceVoice(_ppSourceVoice, &_pWaveData->waveFormat);
 	massert(
@@ -104,7 +104,7 @@ void mtgb::Audio::CreateSourceVoice(IXAudio2SourceVoice** _ppSourceVoice, const 
 mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
 {
 	handleCounter_++;
-	pAudioClips_.insert({handleCounter_, new AudioClip{}});
+	pAudioClips_.insert({ handleCounter_, new AudioClip {} });
 
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-createfilea
 	HANDLE hFile = CreateFile(
@@ -123,10 +123,10 @@ mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
 		return INVALID_HANDLE;
 	}
 
-	BOOL succeed{FALSE};
+	BOOL succeed { FALSE };
 
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-getfilesizeex
-	LARGE_INTEGER fileSize{}; // ファイルサイズ格納用
+	LARGE_INTEGER fileSize {}; // ファイルサイズ格納用
 	succeed = GetFileSizeEx(hFile, &fileSize);
 	if (succeed == FALSE)
 	{
@@ -134,9 +134,9 @@ mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
 		return INVALID_HANDLE;
 	}
 
-	DWORD readedSize{0}; // 実際に読み取れたバイト数
+	DWORD readedSize { 0 }; // 実際に読み取れたバイト数
 
-	byte* pBuffer{new byte[fileSize.QuadPart]}; // バッファ動的確保
+	byte* pBuffer { new byte[fileSize.QuadPart] }; // バッファ動的確保
 
 	succeed = ReadFile(hFile, pBuffer, static_cast<DWORD>(fileSize.QuadPart), &readedSize, NULL);
 	if (succeed == FALSE || readedSize != fileSize.QuadPart)
@@ -158,9 +158,9 @@ mtgb::AudioHandle mtgb::Audio::Load(const std::string& _fileName)
 
 void mtgb::Audio::PlayOneShotBuffer(byte* _pBuffer, const size_t _bufferSize)
 {
-	AudioOneShot* oneShot{new AudioOneShot{}};
+	AudioOneShot* oneShot { new AudioOneShot {} };
 
-	mtbin::MemoryStream ms{_pBuffer, _bufferSize};
+	mtbin::MemoryStream ms { _pBuffer, _bufferSize };
 	oneShot->pAudioClip->Load(ms);
 
 	Game::System<Audio>().CreateSourceVoice(&oneShot->pSourceVoice, oneShot->pAudioClip->pWaveData_);
@@ -169,14 +169,14 @@ void mtgb::Audio::PlayOneShotBuffer(byte* _pBuffer, const size_t _bufferSize)
 
 	EnqueueOneShot(oneShot); // 自動解放キューに追加
 
-	const XAUDIO2_BUFFER BUFFER{
+	const XAUDIO2_BUFFER BUFFER {
 		.Flags		= XAUDIO2_END_OF_STREAM,
 		.AudioBytes = static_cast<UINT32>(oneShot->pAudioClip->pWaveData_->bufferSize),
 		.pAudioData = oneShot->pAudioClip->pWaveData_->pBuffer,
 		.LoopCount	= 0,
 	};
 
-	HRESULT hResult{};
+	HRESULT hResult {};
 	hResult = oneShot->pSourceVoice->SubmitSourceBuffer(&BUFFER);
 
 	massert(
@@ -206,10 +206,10 @@ void mtgb::Audio::PlayOneShotFile(const std::string& _fileName)
 		return;
 	}
 
-	BOOL succeed{FALSE};
+	BOOL succeed { FALSE };
 
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-getfilesizeex
-	LARGE_INTEGER fileSize{}; // ファイルサイズ格納用
+	LARGE_INTEGER fileSize {}; // ファイルサイズ格納用
 	succeed = GetFileSizeEx(hFile, &fileSize);
 	if (succeed == FALSE)
 	{
@@ -217,9 +217,9 @@ void mtgb::Audio::PlayOneShotFile(const std::string& _fileName)
 		return;
 	}
 
-	DWORD readedSize{0}; // 実際に読み取れたバイト数
+	DWORD readedSize { 0 }; // 実際に読み取れたバイト数
 
-	byte* pBuffer{new byte[fileSize.QuadPart]}; // バッファ動的確保
+	byte* pBuffer { new byte[fileSize.QuadPart] }; // バッファ動的確保
 
 	succeed = ReadFile(hFile, pBuffer, static_cast<DWORD>(fileSize.QuadPart), &readedSize, NULL);
 	if (succeed == FALSE || readedSize != fileSize.QuadPart)
@@ -256,14 +256,14 @@ void mtgb::Audio::Clear()
 
 void mtgb::Audio::LoadAudioSource(const AudioHandle _hAudio, byte* _pBuffer, const size_t _bufferSize)
 {
-	mtbin::MemoryStream ms{_pBuffer, _bufferSize};
+	mtbin::MemoryStream ms { _pBuffer, _bufferSize };
 	pAudioClips_[_hAudio]->Load(ms);
 }
 
 void mtgb::Audio::EnqueueOneShot(AudioOneShot* _pOneShot)
 {
-	float lefter{_pOneShot->timeLeft}; // 減算用
-	float righter{0};				   // 加算用
+	float lefter { _pOneShot->timeLeft }; // 減算用
+	float righter { 0 };				  // 加算用
 	// 適切な挿入ポイントを見つける
 	for (auto itr = pOneShotQueue_.begin(); itr != pOneShotQueue_.end(); itr++)
 	{
@@ -281,6 +281,6 @@ void mtgb::Audio::EnqueueOneShot(AudioOneShot* _pOneShot)
 	pOneShotQueue_.push_back(_pOneShot);
 }
 
-mtgb::AudioHandle mtgb::Audio::handleCounter_{mtgb::INVALID_HANDLE};
-std::map<mtgb::AudioHandle, mtgb::AudioClip*> mtgb::Audio::pAudioClips_{};
-std::list<mtgb::AudioOneShot*> mtgb::Audio::pOneShotQueue_{};
+mtgb::AudioHandle mtgb::Audio::handleCounter_ { mtgb::INVALID_HANDLE };
+std::map<mtgb::AudioHandle, mtgb::AudioClip*> mtgb::Audio::pAudioClips_ {};
+std::list<mtgb::AudioOneShot*> mtgb::Audio::pOneShotQueue_ {};

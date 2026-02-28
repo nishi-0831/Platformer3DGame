@@ -19,16 +19,16 @@ mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 	entityId_		  = Game::System<EntityManager>().CreateEntity();
 	isNotCalledStart_ = true;
 
-	Transform* pTransform_{Component<Transform>()};
+	Transform* pTransform_ { Component<Transform>() };
 	pTransform_->position = _desc.position;
 	pTransform_->rotate	  = _desc.rotate;
 	pTransform_->scale	  = _desc.scale;
 }
 
 mtgb::GameObject::GameObject()
-	: status_{.isActive_ = true, .callUpdate_ = true, .callDraw_ = true, .toDestroy_ = FALSE}
-	, layerFlag_{AllLayer()}
-	, tag_{GameObjectTag::UNTAGGED}
+	: status_ { .isActive_ = true, .callUpdate_ = true, .callDraw_ = true, .toDestroy_ = FALSE }
+	, layerFlag_ { AllLayer() }
+	, tag_ { GameObjectTag::UNTAGGED }
 {
 	entityId_		  = Game::System<EntityManager>().CreateEntity();
 	isNotCalledStart_ = true;
@@ -36,9 +36,9 @@ mtgb::GameObject::GameObject()
 
 mtgb::GameObject::GameObject(const GameObject& _other)
 	: Entity()
-	, status_{_other.status_}
-	, tag_{GameObjectTag::UNTAGGED}
-	, componentsFlag_{_other.componentsFlag_}
+	, status_ { _other.status_ }
+	, tag_ { GameObjectTag::UNTAGGED }
+	, componentsFlag_ { _other.componentsFlag_ }
 {
 	isNotCalledStart_ = true;
 }
@@ -50,7 +50,7 @@ mtgb::GameObject::~GameObject()
 
 nlohmann::json mtgb::GameObject::Serialize() const
 {
-	nlohmann::json j{};
+	nlohmann::json j {};
 	j["name"]			= GetName();
 	j["classType"]		= mtgb::ExtractClassName(GetName());
 	j["tag"]			= GetTag();

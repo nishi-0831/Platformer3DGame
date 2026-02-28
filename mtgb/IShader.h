@@ -16,9 +16,7 @@ namespace mtgb
 	{
 	  public:
 		IShader();
-		virtual ~IShader()
-		{
-		}
+		virtual ~IShader() {}
 
 		/// <summary>
 		/// シェーダの初期化処理
@@ -87,8 +85,8 @@ namespace mtgb
 		const int _drawIndexCount
 	)
 	{
-		UINT stride{0U};
-		UINT offset{0U};
+		UINT stride { 0U };
+		UINT offset { 0U };
 
 		stride = sizeof(VertexT);
 		offset = 0;
@@ -115,14 +113,14 @@ namespace mtgb
 			pConstantBuffer_.GetAddressOf()
 		); // ピクセルシェーダのコンスタントバッファをセット
 
-		ConstantBufferT constantBuffer{};
+		ConstantBufferT constantBuffer {};
 
 		_makeConstantBufferCallback(&constantBuffer);
 
-		HRESULT hResult{};
+		HRESULT hResult {};
 
 		// シェーダに渡すためのデータ
-		D3D11_MAPPED_SUBRESOURCE mappedSubresource{};
+		D3D11_MAPPED_SUBRESOURCE mappedSubresource {};
 
 		// GPUからのデータアクセスをせき止める
 		hResult = DirectX11Draw::pContext_
@@ -157,8 +155,8 @@ namespace mtgb
 		const int _drawIndexCount
 	)
 	{
-		UINT stride{0U};
-		UINT offset{0U};
+		UINT stride { 0U };
+		UINT offset { 0U };
 
 		stride = sizeof(VertexT);
 		offset = 0;
@@ -185,14 +183,14 @@ namespace mtgb
 			pConstantBuffer_.Get()
 		); // ピクセルシェーダのコンスタントバッファをセット
 
-		ConstantBufferT constantBuffer{};
+		ConstantBufferT constantBuffer {};
 
 		_makeConstantBufferCallback(&constantBuffer);
 
-		HRESULT hResult{};
+		HRESULT hResult {};
 
 		// シェーダに渡すためのデータ
-		D3D11_MAPPED_SUBRESOURCE mappedSubresource{};
+		D3D11_MAPPED_SUBRESOURCE mappedSubresource {};
 
 		// GPUからのデータアクセスをせき止める
 		hResult = DirectX11Draw::pContext_
@@ -215,7 +213,7 @@ namespace mtgb
 		DirectX11Draw::pContext_->Unmap(pConstantBuffer_.Get(), 0);
 
 		// シェーダに渡すためのデータ
-		D3D11_MAPPED_SUBRESOURCE mappedSubresource{};
+		D3D11_MAPPED_SUBRESOURCE mappedSubresource {};
 
 		// GPUからのデータアクセスをせき止める
 		hResult = DirectX11Draw::pContext_

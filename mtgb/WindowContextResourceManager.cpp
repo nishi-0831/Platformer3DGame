@@ -1,7 +1,7 @@
 #include "WindowContextResourceManager.h"
 
 mtgb::WindowContextResourceManager::WindowContextResourceManager()
-	: currentContext_{WindowContext::FIRST}
+	: currentContext_ { WindowContext::FIRST }
 {
 }
 
@@ -10,9 +10,7 @@ mtgb::WindowContextResourceManager::~WindowContextResourceManager()
 	Release();
 }
 
-void mtgb::WindowContextResourceManager::Initialize()
-{
-}
+void mtgb::WindowContextResourceManager::Initialize() {}
 
 void mtgb::WindowContextResourceManager::Update()
 {

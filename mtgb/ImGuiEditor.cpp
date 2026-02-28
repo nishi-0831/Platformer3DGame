@@ -27,17 +27,11 @@ mtgb::ImGuiEditor::ImGuiEditor()
 	PropertyDisplayRegistry::Instance().RegisterCommandListener(commandListener_);
 }
 
-mtgb::ImGuiEditor::~ImGuiEditor()
-{
-}
+mtgb::ImGuiEditor::~ImGuiEditor() {}
 
-void mtgb::ImGuiEditor::Initialize()
-{
-}
+void mtgb::ImGuiEditor::Initialize() {}
 
-void mtgb::ImGuiEditor::Release()
-{
-}
+void mtgb::ImGuiEditor::Release() {}
 
 void mtgb::ImGuiEditor::Update()
 {
@@ -83,7 +77,7 @@ void mtgb::ImGuiEditor::ShowImGui()
 void mtgb::ImGuiEditor::SaveMapData()
 {
 	TCHAR fileName[255] = "";
-	OPENFILENAME ofn	= {0};
+	OPENFILENAME ofn	= { 0 };
 
 	ofn.lStructSize = sizeof(ofn);
 
@@ -110,7 +104,7 @@ void mtgb::ImGuiEditor::SaveMapData()
 void mtgb::ImGuiEditor::LoadMapData()
 {
 	TCHAR fileName[255] = "";
-	OPENFILENAME ifn	= {0};
+	OPENFILENAME ifn	= { 0 };
 
 	ifn.lStructSize = sizeof(ifn);
 	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);

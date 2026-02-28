@@ -9,7 +9,7 @@ namespace
 namespace mtgb
 {
 	NamedCommandHistory::NamedCommandHistory(ICommandHistory* _inner)
-		: inner_{_inner}
+		: inner_ { _inner }
 	{
 	}
 

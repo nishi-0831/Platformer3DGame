@@ -26,7 +26,7 @@ namespace mtgb
 	/// <returns></returns>
 	inline std::wstring ToWString(const std::string& _string)
 	{
-		return {_string.begin(), _string.end()};
+		return { _string.begin(), _string.end() };
 	}
 
 	/// <summary>
@@ -36,7 +36,7 @@ namespace mtgb
 	/// <returns></returns>
 	inline std::wstring ToWString(const std::string_view& _stringView)
 	{
-		return {_stringView.begin(), _stringView.end()};
+		return { _stringView.begin(), _stringView.end() };
 	}
 
 	/// <summary>

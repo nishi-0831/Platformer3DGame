@@ -1,15 +1,15 @@
 #include "stdafx.h"
 #include "ScoreItem.h"
 #include <format>
-unsigned int ScoreItem::generateCounter_{0};
+unsigned int ScoreItem::generateCounter_ { 0 };
 
 ScoreItem::ScoreItem()
 	: GameObject()
-	, pTransform_{Component<Transform>()}
-	, pCollider_{Component<Collider>()}
-	, pRigidBody_{Component<RigidBody>()}
-	, pMeshRenderer_{Component<MeshRenderer>()}
-	, addScore_{100}
+	, pTransform_ { Component<Transform>() }
+	, pCollider_ { Component<Collider>() }
+	, pRigidBody_ { Component<RigidBody>() }
+	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, addScore_ { 100 }
 {
 	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
 	pCollider_->isStatic_	  = false;
@@ -44,18 +44,10 @@ ScoreItem::ScoreItem()
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 }
 
-ScoreItem::~ScoreItem()
-{
-}
+ScoreItem::~ScoreItem() {}
 
-void ScoreItem::Update()
-{
-}
+void ScoreItem::Update() {}
 
-void ScoreItem::Start()
-{
-}
+void ScoreItem::Start() {}
 
-void ScoreItem::Draw() const
-{
-}
+void ScoreItem::Draw() const {}

@@ -3,15 +3,15 @@
 #include "ResultScene.h"
 #include "StageManager.h"
 #include "GameEvents.h"
-unsigned int Goal::generateCounter_{0};
+unsigned int Goal::generateCounter_ { 0 };
 
 Goal::Goal()
 	: GameObject()
-	, pTransform_{Component<Transform>()}
-	, pCollider_{Component<Collider>()}
-	, pRigidBody_{Component<RigidBody>()}
-	, pMeshRenderer_{Component<MeshRenderer>()}
-	, transitionSceneDelay_{4.0f}
+	, pTransform_ { Component<Transform>() }
+	, pCollider_ { Component<Collider>() }
+	, pRigidBody_ { Component<RigidBody>() }
+	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, transitionSceneDelay_ { 4.0f }
 {
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->isStatic_	  = false;
@@ -35,9 +35,7 @@ Goal::~Goal()
 	}
 }
 
-void Goal::Update()
-{
-}
+void Goal::Update() {}
 
 void Goal::Start()
 {
@@ -63,9 +61,7 @@ void Goal::Start()
 	pEffect_		= Game::System<EffectManager>().Play("Treasure", params);
 }
 
-void Goal::Draw() const
-{
-}
+void Goal::Draw() const {}
 
 void Goal::ShowImGui()
 {
@@ -86,5 +82,5 @@ void Goal::OnClear()
 		}
 	);
 
-	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Invoke(PlayerReachedGoalEvent{});
+	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Invoke(PlayerReachedGoalEvent {});
 }

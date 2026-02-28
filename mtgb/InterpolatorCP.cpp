@@ -1,13 +1,9 @@
 #include "stdafx.h"
 #include "InterpolatorCP.h"
 #include "Interpolator.h"
-mtgb::InterpolatorCP::InterpolatorCP()
-{
-}
+mtgb::InterpolatorCP::InterpolatorCP() {}
 
-mtgb::InterpolatorCP::~InterpolatorCP()
-{
-}
+mtgb::InterpolatorCP::~InterpolatorCP() {}
 
 void mtgb::InterpolatorCP::Update()
 {

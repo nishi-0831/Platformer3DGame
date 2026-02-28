@@ -6,20 +6,18 @@
 
 namespace
 {
-	static const mtgb::Vector2Int DEFAULT_SCREEN_SIZE{800, 600};
+	static const mtgb::Vector2Int DEFAULT_SCREEN_SIZE { 800, 600 };
 }
 
 mtgb::Game::Game()
-	: pRegisterSystems_{}
-	, pFrameUpdateSystems_{}
-	, pFixedUpdateSystems_{}
-	, pComponentPools_{}
+	: pRegisterSystems_ {}
+	, pFrameUpdateSystems_ {}
+	, pFixedUpdateSystems_ {}
+	, pComponentPools_ {}
 {
 }
 
-mtgb::Game::~Game()
-{
-}
+mtgb::Game::~Game() {}
 
 mtgb::Vector2Int mtgb::Game::GetScreenSize() const
 {
@@ -130,7 +128,7 @@ void mtgb::Game::DeserializeComponents(EntityId _entityId, const nlohmann::json&
 
 std::span<IRenderableCP*> mtgb::Game::GetRenderableCPs()
 {
-	return {pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size()};
+	return { pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size() };
 }
 
 void mtgb::Game::InitializeSystems(const std::list<ISystem*>& _uninitialized)
@@ -167,5 +165,5 @@ void mtgb::Game::RunLoopGameCycle()
 	}
 }
 
-mtgb::Game* mtgb::Game::pInstance_{nullptr};
-bool mtgb::Game::toExit_{false};
+mtgb::Game* mtgb::Game::pInstance_ { nullptr };
+bool mtgb::Game::toExit_ { false };

@@ -15,26 +15,26 @@ namespace
 Player::Player()
 	: GameObject(GameObjectBuilder()
 					 .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
-					 .SetPosition({0, 5, 10})
+					 .SetPosition({ 0, 5, 10 })
 					 .SetTag(GameObjectTag::PLAYER)
 					 .Build())
 	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
 	, IActor(GetEntityId())
-	, pTransform_{Component<Transform>()}
-	, pCollider_{Component<Collider>()}
-	, pMeshRenderer_{Component<MeshRenderer>()}
-	, pRigidBody_{Component<RigidBody>()} //, pCamera_{Instantiate<Camera>(this)}
-	, pNewCamera_{Instantiate<QuaternionCamera>(GetEntityId())}
-	, pCameraTransform_{&Transform::Get(pNewCamera_->GetEntityId())}
-	, hp_{3}
-	, pHPViewer_{nullptr}
-	, isInvincible_{false}
-	, invincibilityTimeSec_{2.0f}
-	, changeVisibilitySpan_{0.3f}
-	, elapsedInvincibilityTime_{0.0f}
-	, jumpController_{GetEntityId()}
-	, walkSmokeInterval_{0.3f}
-	, walkSmokeElapsedTime_{0.0f}
+	, pTransform_ { Component<Transform>() }
+	, pCollider_ { Component<Collider>() }
+	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, pRigidBody_ { Component<RigidBody>() } //, pCamera_{Instantiate<Camera>(this)}
+	, pNewCamera_ { Instantiate<QuaternionCamera>(GetEntityId()) }
+	, pCameraTransform_ { &Transform::Get(pNewCamera_->GetEntityId()) }
+	, hp_ { 3 }
+	, pHPViewer_ { nullptr }
+	, isInvincible_ { false }
+	, invincibilityTimeSec_ { 2.0f }
+	, changeVisibilitySpan_ { 0.3f }
+	, elapsedInvincibilityTime_ { 0.0f }
+	, jumpController_ { GetEntityId() }
+	, walkSmokeInterval_ { 0.3f }
+	, walkSmokeElapsedTime_ { 0.0f }
 {
 	// pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
@@ -67,9 +67,7 @@ Player::Player()
 	);
 }
 
-Player::~Player()
-{
-}
+Player::~Player() {}
 
 void Player::Update()
 {
@@ -87,7 +85,7 @@ void Player::Update()
 				Matrix4x4 worldMat;
 				pTransform_->GenerateWorldMatrix(&worldMat);
 				EffectParameters params;
-				params.isLoop = false;
+				params.isLoop	= false;
 				params.worldMat = worldMat;
 				Game::System<EffectManager>().Play("JumpSmoke", params);
 			}
@@ -193,7 +191,7 @@ void Player::InitializeState()
 					Matrix4x4 worldMat;
 					pTransform_->GenerateWorldMatrix(&worldMat);
 					params.worldMat = worldMat;
-					Game::System<EffectManager>().Play("WalkSmoke",params);
+					Game::System<EffectManager>().Play("WalkSmoke", params);
 
 					walkSmokeElapsedTime_ = 0.0f;
 				}
@@ -256,9 +254,7 @@ void Player::InitializeState()
 		);
 }
 
-void Player::Draw() const
-{
-}
+void Player::Draw() const {}
 
 void Player::Start()
 {
@@ -272,8 +268,6 @@ void Player::ShowImGui()
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
 }
-
-
 
 Vector3 Player::GetMoveDir()
 {
@@ -298,7 +292,7 @@ Vector3 Player::GetMoveDir()
 		return Vector3::Zero();
 
 	// 入力方向
-	Vector3 inputDir{axis.x, 0.0f, -axis.y};
+	Vector3 inputDir { axis.x, 0.0f, -axis.y };
 
 	// カメラの回転行列を取得
 	Matrix4x4 cameraRotMat;
@@ -306,7 +300,7 @@ Vector3 Player::GetMoveDir()
 	// 入力方向をカメラの向きだけ回転
 	Vector3 dir = inputDir * cameraRotMat;
 	// Y成分を捨てたXZ成分のみ取得
-	Vector3 horizontalDir = Vector3{dir.x, 0.0f, dir.z};
+	Vector3 horizontalDir = Vector3 { dir.x, 0.0f, dir.z };
 	return Vector3::Normalize(horizontalDir);
 }
 
@@ -364,13 +358,9 @@ void Player::OnCollisionEnter(EntityId _entityId)
 	}
 }
 
-void Player::OnStomped(IActor* _pOther)
-{
-}
+void Player::OnStomped(IActor* _pOther) {}
 
-void Player::OnHitSide(IActor* _pOther)
-{
-}
+void Player::OnHitSide(IActor* _pOther) {}
 
 void Player::TakeDamage(int _damage)
 {
@@ -389,7 +379,7 @@ void Player::TakeDamage(int _damage)
 		pRigidBody_->velocity_ = Vector3::Zero();
 
 		// プレイヤーのHPが0になったことを通知
-		PlayerHpReachedZeroEvent event{.playerEntityId = GetEntityId()};
+		PlayerHpReachedZeroEvent event { .playerEntityId = GetEntityId() };
 		Game::System<EventManager>().GetEvent<PlayerHpReachedZeroEvent>().Invoke(event);
 	}
 

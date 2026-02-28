@@ -4,15 +4,13 @@
 #include "ReleaseUtility.h"
 
 mtgb::AudioOneShot::AudioOneShot()
-	: timeLeft{0}
-	, pSourceVoice{nullptr}
-	, pAudioClip{new AudioClip{}}
+	: timeLeft { 0 }
+	, pSourceVoice { nullptr }
+	, pAudioClip { new AudioClip {} }
 {
 }
 
-mtgb::AudioOneShot::~AudioOneShot()
-{
-}
+mtgb::AudioOneShot::~AudioOneShot() {}
 
 void mtgb::AudioOneShot::Release()
 {

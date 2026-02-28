@@ -5,9 +5,7 @@ void mtgb::EntityManager::Initialize()
 	entityCounter_ = INVALID_ENTITY;
 }
 
-void mtgb::EntityManager::Update()
-{
-}
+void mtgb::EntityManager::Update() {}
 
 mtgb::EntityId mtgb::EntityManager::CreateEntity()
 {

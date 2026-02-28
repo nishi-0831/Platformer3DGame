@@ -148,7 +148,7 @@ namespace mtgb
 		std::unordered_map<std::string, std::shared_ptr<EffectData>> effectList_;
 		// エフェクトインスタンスのプール
 		std::vector<std::unique_ptr<EffectInstance>> effectInstances_;
-		inline static constexpr size_t kEffectPoolCapacity{256};
+		inline static constexpr size_t kEffectPoolCapacity { 256 };
 	};
 
 } // namespace mtgb

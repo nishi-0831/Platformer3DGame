@@ -2,15 +2,13 @@
 #include "CommandHistoryManager.h"
 #include "assert.h"
 CommandHistoryManager::CommandHistoryManager()
-	: inner_{new NamedCommandHistory(new CommandHistory())}
-	, isGrouping_{false}
-	, pGroupCommand_{nullptr}
+	: inner_ { new NamedCommandHistory(new CommandHistory()) }
+	, isGrouping_ { false }
+	, pGroupCommand_ { nullptr }
 {
 }
 
-void CommandHistoryManager::Initialize()
-{
-}
+void CommandHistoryManager::Initialize() {}
 
 void CommandHistoryManager::Update()
 {
@@ -85,6 +83,4 @@ void CommandHistoryManager::ClearAllStack()
 	inner_->ClearAllStack();
 }
 
-void CommandHistoryManager::ClearRedoStack()
-{
-}
+void CommandHistoryManager::ClearRedoStack() {}

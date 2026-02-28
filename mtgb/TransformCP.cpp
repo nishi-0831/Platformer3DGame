@@ -1,13 +1,9 @@
 #include "TransformCP.h"
 #include "Transform.h"
 
-mtgb::TransformCP::TransformCP()
-{
-}
+mtgb::TransformCP::TransformCP() {}
 
-mtgb::TransformCP::~TransformCP()
-{
-}
+mtgb::TransformCP::~TransformCP() {}
 
 void mtgb::TransformCP::Update()
 {

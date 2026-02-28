@@ -35,10 +35,10 @@ namespace mtgb
 		ComPtr<ID3D11Buffer> pVertexBuffer;
 		ComPtr<ID3D11Buffer> pIndexBuffer;
 		SimpleMesh()
-			: numVert{0}
-			, numFace{0}
-			, pVertexBuffer{nullptr}
-			, pIndexBuffer{nullptr}
+			: numVert { 0 }
+			, numFace { 0 }
+			, pVertexBuffer { nullptr }
+			, pIndexBuffer { nullptr }
 		{
 		}
 	};

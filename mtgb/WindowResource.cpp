@@ -65,32 +65,32 @@ LRESULT WindowResource::HandleWindowMessage(HWND _hWnd, UINT _msg, WPARAM _wPara
 
 	switch (_msg)
 	{
-	case WM_CLOSE :
-		Game::Exit();
-		return 0;
-	case WM_DESTROY : // ウィンドウを閉じた
-		return S_OK;
-	case WM_MOUSEMOVE : // マウスが動いた
-		Game::System<Input>().UpdateMousePositionData(LOWORD(_lParam), HIWORD(_lParam));
-		return S_OK;
-	case WM_SIZE : // ウィンドウサイズが変わった
-	{
-		if (this && _wParam != SIZE_MINIMIZED)
+		case WM_CLOSE :
+			Game::Exit();
+			return 0;
+		case WM_DESTROY : // ウィンドウを閉じた
+			return S_OK;
+		case WM_MOUSEMOVE : // マウスが動いた
+			Game::System<Input>().UpdateMousePositionData(LOWORD(_lParam), HIWORD(_lParam));
+			return S_OK;
+		case WM_SIZE : // ウィンドウサイズが変わった
 		{
-			if (!isInitialized_)
+			if (this && _wParam != SIZE_MINIMIZED)
 			{
-				// まだ初期化されていないならスキップする
-				return S_OK;
+				if (!isInitialized_)
+				{
+					// まだ初期化されていないならスキップする
+					return S_OK;
+				}
+
+				UINT width	= LOWORD(_lParam);
+				UINT height = HIWORD(_lParam);
 			}
-
-			UINT width	= LOWORD(_lParam);
-			UINT height = HIWORD(_lParam);
+			return S_OK;
 		}
-		return S_OK;
-	}
 
-	default : // それ以外のメッセージは譲渡
-		break;
+		default : // それ以外のメッセージは譲渡
+			break;
 	}
 
 	// NOTE: これが抜けているとウィンドウ表示されないし、エラーは出ないしで苦労する(した)
@@ -104,12 +104,12 @@ HWND mtgb::WindowResource::GetHWND()
 
 mtgb::WindowResource::WindowResource(WindowContext _windowContext)
 	: WindowContextResource(_windowContext)
-	, hWnd_{nullptr}
-	, isActive_{false}
-	, isFullscreen_{false}
-	, currInfo_{}
-	, initialInfo_{}
-	, isInitialized_{false}
+	, hWnd_ { nullptr }
+	, isActive_ { false }
+	, isFullscreen_ { false }
+	, currInfo_ {}
+	, initialInfo_ {}
+	, isInitialized_ { false }
 {
 	hWnd_		   = Game::System<WindowManager>().CreateWindowContext(this);
 	isActive_	   = true;
@@ -122,9 +122,7 @@ mtgb::WindowResource::WindowResource(WindowContext _windowContext)
 	initialInfo_ = currInfo_;
 }
 
-void WindowResource::SetResource()
-{
-}
+void WindowResource::SetResource() {}
 
 mtgb::WindowResource::~WindowResource()
 {
@@ -236,8 +234,8 @@ void mtgb::WindowResource::Release()
 }
 
 mtgb::WindowModeInfo::WindowModeInfo()
-	: windowedRect_{0, 0, 0, 0}
-	, windowedStyle_{0}
-	, windowedExStyle_{0}
+	: windowedRect_ { 0, 0, 0, 0 }
+	, windowedStyle_ { 0 }
+	, windowedExStyle_ { 0 }
 {
 }

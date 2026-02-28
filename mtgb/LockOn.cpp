@@ -49,7 +49,7 @@ mtgb::Vector3 mtgb::LockOn::GetTargetPos()
 void mtgb::LockOn::Draw() const
 {
 	// 自動で狙いを定める範囲を描画
-	const Vector2Int DRAW_SIZE{lockOnSide, lockOnSide};
+	const Vector2Int DRAW_SIZE { lockOnSide, lockOnSide };
 	Draw::Image(frameImage, rectDetector.config.detectionRect, uiParams);
 
 	// 狙いが定まっている敵を強調表示

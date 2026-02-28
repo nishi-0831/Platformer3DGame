@@ -7,17 +7,17 @@ namespace mtgb
 	{
 		Vector2(const float _x, const float _y);
 		Vector2()
-			: Vector2{0, 0}
+			: Vector2 { 0, 0 }
 		{
 		}
 
 		static inline auto Zero()
 		{
-			return Vector2{0, 0};
+			return Vector2 { 0, 0 };
 		}
 		static inline auto One()
 		{
-			return Vector2{1, 1};
+			return Vector2 { 1, 1 };
 		}
 	};
 } // namespace mtgb

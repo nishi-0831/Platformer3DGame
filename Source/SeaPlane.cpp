@@ -1,14 +1,14 @@
 #include "stdafx.h"
 #include "SeaPlane.h"
 
-unsigned int SeaPlane::generateCounter_{0};
+unsigned int SeaPlane::generateCounter_ { 0 };
 
 SeaPlane::SeaPlane()
 	: GameObject()
 	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
-	, pTransform_{Component<Transform>()}
-	, pMeshRenderer_{Component<MeshRenderer>()}
-	, pCollider_{Component<Collider>()}
+	, pTransform_ { Component<Transform>() }
+	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, pCollider_ { Component<Collider>() }
 {
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->isStatic_	  = false;
@@ -24,17 +24,11 @@ SeaPlane::SeaPlane()
 	displayName_		 = name_;
 }
 
-SeaPlane::~SeaPlane()
-{
-}
+SeaPlane::~SeaPlane() {}
 
-void SeaPlane::Update()
-{
-}
+void SeaPlane::Update() {}
 
-void SeaPlane::Draw() const
-{
-}
+void SeaPlane::Draw() const {}
 
 void SeaPlane::ShowImGui()
 {
@@ -42,6 +36,4 @@ void SeaPlane::ShowImGui()
 	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 
-void SeaPlane::Start()
-{
-}
+void SeaPlane::Start() {}

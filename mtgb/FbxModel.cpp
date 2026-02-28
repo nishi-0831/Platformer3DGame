@@ -5,18 +5,16 @@
 #include "MTAssert.h"
 
 mtgb::FbxModel::FbxModel()
-	: pFbxScene_{nullptr}
-	, frameRate_{FbxTime::EMode::eFrames60}
-	, animationSpeed_{1.0f}
-	, startFrame_{0}
-	, endFrame_{0}
-	, unitScaleFactor_{1.0}
+	: pFbxScene_ { nullptr }
+	, frameRate_ { FbxTime::EMode::eFrames60 }
+	, animationSpeed_ { 1.0f }
+	, startFrame_ { 0 }
+	, endFrame_ { 0 }
+	, unitScaleFactor_ { 1.0 }
 {
 }
 
-mtgb::FbxModel::~FbxModel()
-{
-}
+mtgb::FbxModel::~FbxModel() {}
 
 void mtgb::FbxModel::Load(const std::string& _fileName)
 {
@@ -25,12 +23,12 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 		&& "既にFbxModelは読み込まれているよ！ @FbxModel::Load"
 	);
 
-	FbxManager* pFbxManager{Game::System<Fbx>().GetFbxManager()};
+	FbxManager* pFbxManager { Game::System<Fbx>().GetFbxManager() };
 
 	pFbxScene_ = FbxScene::Create(pFbxManager, "fbxscene");
 
-	FbxString fileName{_fileName.c_str()};
-	FbxImporter* fbxImporter{FbxImporter::Create(pFbxManager, "imp")};
+	FbxString fileName { _fileName.c_str() };
+	FbxImporter* fbxImporter { FbxImporter::Create(pFbxManager, "imp") };
 
 	FbxIOSettings* ios = FbxIOSettings::Create(pFbxManager, IOSROOT);
 
@@ -43,10 +41,10 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 
 	fileName_ = _fileName;
 
-	char str[MAX_PATH]{};
+	char str[MAX_PATH] {};
 	GetCurrentDirectory(MAX_PATH, str);
 
-	bool succeed{false};
+	bool succeed { false };
 	succeed = fbxImporter->Initialize(fileName.Buffer(), -1, pFbxManager->GetIOSettings());
 	massert(succeed && "fbxImporterの初期化に失敗した @Fbx::Load");
 
@@ -61,7 +59,7 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	directXLeftHanded.DeepConvertScene(pFbxScene_);
 
 	// 3角ポリゴン
-	FbxGeometryConverter geometryConverter{pFbxManager};
+	FbxGeometryConverter geometryConverter { pFbxManager };
 
 	// アニメーションタイムモードの取得
 	frameRate_ = pFbxScene_->GetGlobalSettings().GetTimeMode();
@@ -69,16 +67,16 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	// スケール単位を取得
 	unitScaleFactor_ = pFbxScene_->GetGlobalSettings().GetSystemUnit().GetScaleFactor();
 	// 現在のカレントディレクトリを取得
-	char defaultCurrentDirectory[MAX_PATH]{};
+	char defaultCurrentDirectory[MAX_PATH] {};
 	GetCurrentDirectory(MAX_PATH, defaultCurrentDirectory);
 
 	// カレントディレクトリを移動
-	char directory[MAX_PATH]{};
+	char directory[MAX_PATH] {};
 	_splitpath_s(_fileName.c_str(), nullptr, 0, directory, MAX_PATH, nullptr, 0, nullptr, 0);
 	SetCurrentDirectory(directory);
 
 	int animStackCount_ = pFbxScene_->GetSrcObjectCount<FbxAnimStack>();
-	int meshCount{pFbxScene_->GetSrcObjectCount<FbxMesh>()};
+	int meshCount { pFbxScene_->GetSrcObjectCount<FbxMesh>() };
 	for (int i = 0; i < meshCount; i++)
 	{
 		FbxMesh* pMesh = pFbxScene_->GetSrcObject<FbxMesh>(i);
@@ -155,7 +153,7 @@ mtgb::Vector3 mtgb::FbxModel::GetAnimBonePosition(const std::string& _boneName)
 void mtgb::FbxModel::CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _pPartsList)
 {
 	// ノードの属性情報
-	FbxNodeAttribute* pNodeAttribute{_pNode->GetNodeAttribute()};
+	FbxNodeAttribute* pNodeAttribute { _pNode->GetNodeAttribute() };
 
 	if (pNodeAttribute == nullptr)
 	{
@@ -171,7 +169,7 @@ void mtgb::FbxModel::CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _pPartsL
 	}
 
 	// 子の数
-	int childCount{_pNode->GetChildCount()};
+	int childCount { _pNode->GetChildCount() };
 
 	// 1つずつチェック
 	for (int i = 0; i < childCount; i++)
@@ -182,5 +180,5 @@ void mtgb::FbxModel::CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _pPartsL
 
 std::optional<FbxAnimationController> mtgb::FbxModel::GetAnimationController()
 {
-	return FbxAnimationController(pFbxScene_,fileName_);
+	return FbxAnimationController(pFbxScene_, fileName_);
 }

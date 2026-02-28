@@ -3,14 +3,14 @@
 #include "ResultScene.h"
 #include "GameEvents.h"
 #include "ActorManager.h"
-unsigned int GameOverZone::generateCounter_{0};
+unsigned int GameOverZone::generateCounter_ { 0 };
 
 GameOverZone::GameOverZone()
 	: GameObject()
-	, pTransform_{Component<Transform>()}
-	, pCollider_{Component<Collider>()}
-	, pRigidBody_{Component<RigidBody>()}
-	, takeDamageAmoundOnPlayerFellout_{1}
+	, pTransform_ { Component<Transform>() }
+	, pCollider_ { Component<Collider>() }
+	, pRigidBody_ { Component<RigidBody>() }
+	, takeDamageAmoundOnPlayerFellout_ { 1 }
 {
 	pTransform_->position	  = Vector3(0, -3, 0);
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
@@ -20,13 +20,9 @@ GameOverZone::GameOverZone()
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 }
 
-GameOverZone::~GameOverZone()
-{
-}
+GameOverZone::~GameOverZone() {}
 
-void GameOverZone::Update()
-{
-}
+void GameOverZone::Update() {}
 
 void GameOverZone::Start()
 {
@@ -40,7 +36,7 @@ void GameOverZone::Start()
 			if (tag == GameObjectTag::PLAYER)
 			{
 				// 落下イベント通知
-				PlayerFellOutEvent event{.playerEntityId = _entityId};
+				PlayerFellOutEvent event { .playerEntityId = _entityId };
 				Game::System<EventManager>().GetEvent<PlayerFellOutEvent>().Invoke(event);
 				if (pActor == nullptr)
 					return;
@@ -57,6 +53,4 @@ void GameOverZone::Start()
 	);
 }
 
-void GameOverZone::Draw() const
-{
-}
+void GameOverZone::Draw() const {}

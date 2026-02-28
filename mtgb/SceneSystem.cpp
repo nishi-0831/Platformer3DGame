@@ -18,8 +18,8 @@
 #include "WindowResource.h"
 
 mtgb::SceneSystem::SceneSystem()
-	: pNextScene_{nullptr}
-	, onMoveListener_{}
+	: pNextScene_ { nullptr }
+	, onMoveListener_ {}
 {
 }
 
@@ -68,7 +68,7 @@ void mtgb::SceneSystem::Update()
 	Game::System<WindowContextResourceManager>().Update();
 
 	// 現在のシーン
-	GameScene& currentScene{*GameScene::pInstance_};
+	GameScene& currentScene { *GameScene::pInstance_ };
 
 	// 更新処理
 	currentScene.Update();

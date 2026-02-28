@@ -130,19 +130,19 @@ namespace mtgb
 
 	template <typename StageDataBit>
 	inline TerrainReader<StageDataBit>::TerrainReader()
-		: width{513}
-		, height{513}
-		, heightScale{50.0f}
-		, widthScale{300.0f}
-		, divisions{3}
-		, highestHeight{0.0f}
-		, ceilingOffset{100.0f}
+		: width { 513 }
+		, height { 513 }
+		, heightScale { 50.0f }
+		, widthScale { 300.0f }
+		, divisions { 3 }
+		, highestHeight { 0.0f }
+		, ceilingOffset { 100.0f }
 	{
 		stageBuffer.resize(width * height);
 		hModelCollider_	  = Fbx::Load("Model/BoxCollider.fbx");
 		EntityId id		  = Game::System<EntityManager>().CreateEntity();
 		pTransform		  = &(Transform::Get(id));
-		pTransform->scale = {1, 1, 1};
+		pTransform->scale = { 1, 1, 1 };
 	}
 
 	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::ReadTerrain(const char* fileName)
@@ -167,7 +167,7 @@ namespace mtgb
 
 	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::Initialize()
 	{
-		CreateTextureMipmap(ToWString(std::string{"Image/Dirt.png"}));
+		CreateTextureMipmap(ToWString(std::string { "Image/Dirt.png" }));
 		ReadTerrain("terrain.raw");
 		GenerateQuadtreeHeightMap();
 		GenerateStageBoundaryCollider();
@@ -270,15 +270,15 @@ namespace mtgb
 				//// セルの最小、最高高度
 				//// セルの中から補間はせずに
 				// float minHeight = (std::min)({ topLeft,topRight,bottomLeft,bottomRight });
-				float maxHeight = (std::max)({topLeft, topRight, bottomLeft, bottomRight});
+				float maxHeight = (std::max)({ topLeft, topRight, bottomLeft, bottomRight });
 
 				float height = maxHeight;
 				// float height = GetHeightAt(x, z);
 				//  ワールド座標系に変換
 
-				Vector3 cellWorldPos = {CellIndexToWorld(x), height, CellIndexToWorld(z)};
+				Vector3 cellWorldPos = { CellIndexToWorld(x), height, CellIndexToWorld(z) };
 
-				Vector3 extents = {widthScale / 2.0f, height / 2.0f, widthScale / 2.0f};
+				Vector3 extents = { widthScale / 2.0f, height / 2.0f, widthScale / 2.0f };
 				Vector3 center	= cellWorldPos - extents;
 				//_aabbs->emplace_back(center, extents);
 
@@ -442,7 +442,7 @@ namespace mtgb
 			.CPUAccessFlags = 0,
 		};
 
-		D3D11_SUBRESOURCE_DATA initData = {.pSysMem = vertices_.data()};
+		D3D11_SUBRESOURCE_DATA initData = { .pSysMem = vertices_.data() };
 
 		HRESULT hResult = _pDevice->CreateBuffer(&bufferDesc, &initData, &pVertexBuffer_);
 
@@ -452,14 +452,12 @@ namespace mtgb
 	template <typename StageDataBit>
 	inline void TerrainReader<StageDataBit>::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	{
-		D3D11_BUFFER_DESC bufferDesc = {
-			.ByteWidth		= static_cast<UINT>(sizeof(DWORD) * indices_.size()),
-			.Usage			= D3D11_USAGE_DEFAULT,
-			.BindFlags		= D3D11_BIND_INDEX_BUFFER,
-			.CPUAccessFlags = 0
-		};
+		D3D11_BUFFER_DESC bufferDesc = { .ByteWidth		 = static_cast<UINT>(sizeof(DWORD) * indices_.size()),
+										 .Usage			 = D3D11_USAGE_DEFAULT,
+										 .BindFlags		 = D3D11_BIND_INDEX_BUFFER,
+										 .CPUAccessFlags = 0 };
 
-		D3D11_SUBRESOURCE_DATA initData = {.pSysMem = indices_.data()};
+		D3D11_SUBRESOURCE_DATA initData = { .pSysMem = indices_.data() };
 
 		HRESULT hResult = _pDevice->CreateBuffer(&bufferDesc, &initData, &pIndexBuffer_);
 
@@ -469,12 +467,10 @@ namespace mtgb
 	template <typename StageDataBit>
 	inline void TerrainReader<StageDataBit>::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	{
-		D3D11_BUFFER_DESC bufferDesc = {
-			.ByteWidth		= sizeof(TerrainConstantBuffer),
-			.Usage			= D3D11_USAGE_DYNAMIC,
-			.BindFlags		= D3D11_BIND_CONSTANT_BUFFER,
-			.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE
-		};
+		D3D11_BUFFER_DESC bufferDesc = { .ByteWidth		 = sizeof(TerrainConstantBuffer),
+										 .Usage			 = D3D11_USAGE_DYNAMIC,
+										 .BindFlags		 = D3D11_BIND_CONSTANT_BUFFER,
+										 .CPUAccessFlags = D3D11_CPU_ACCESS_WRITE };
 
 		HRESULT hResult = _pDevice->CreateBuffer(&bufferDesc, nullptr, pConstantBuffer_.ReleaseAndGetAddressOf());
 
@@ -487,9 +483,7 @@ namespace mtgb
 		pTexture_.Load(_fileName);
 	}
 
-	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::DrawTerran() const
-	{
-	}
+	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::DrawTerran() const {}
 
 	template <typename StageDataBit> inline void TerrainReader<StageDataBit>::GenerateStageBoundaryCollider()
 	{
@@ -505,9 +499,9 @@ namespace mtgb
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center = {(stageMin + stageMax) / 2.0f, wallHeight / 2.0f, stageMax + (wallThickness / 2.0f)};
+			Vector3 center = { (stageMin + stageMax) / 2.0f, wallHeight / 2.0f, stageMax + (wallThickness / 2.0f) };
 
-			Vector3 extents = {(stageMax - stageMin) / 2.0f, wallHeight / 2.0f, wallThickness / 2.0f};
+			Vector3 extents = { (stageMax - stageMin) / 2.0f, wallHeight / 2.0f, wallThickness / 2.0f };
 
 			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
@@ -521,9 +515,9 @@ namespace mtgb
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center = {(stageMin + stageMax) / 2.0f, wallHeight / 2.0f, stageMin - (wallThickness / 2.0f)};
+			Vector3 center = { (stageMin + stageMax) / 2.0f, wallHeight / 2.0f, stageMin - (wallThickness / 2.0f) };
 
-			Vector3 extents = {(stageMax - stageMin) / 2.0f, wallHeight / 2.0f, wallThickness / 2.0f};
+			Vector3 extents = { (stageMax - stageMin) / 2.0f, wallHeight / 2.0f, wallThickness / 2.0f };
 
 			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
@@ -537,9 +531,9 @@ namespace mtgb
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center = {stageMax + (wallThickness / 2.0f), wallHeight / 2.0f, (stageMin + stageMax) / 2.0f};
+			Vector3 center = { stageMax + (wallThickness / 2.0f), wallHeight / 2.0f, (stageMin + stageMax) / 2.0f };
 
-			Vector3 extents = {wallThickness / 2.0f, wallHeight / 2.0f, (stageMax - stageMin) / 2.0f};
+			Vector3 extents = { wallThickness / 2.0f, wallHeight / 2.0f, (stageMax - stageMin) / 2.0f };
 
 			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
@@ -553,9 +547,9 @@ namespace mtgb
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center = {stageMin - (wallThickness / 2.0f), wallHeight / 2.0f, (stageMin + stageMax) / 2.0f};
+			Vector3 center = { stageMin - (wallThickness / 2.0f), wallHeight / 2.0f, (stageMin + stageMax) / 2.0f };
 
-			Vector3 extents = {wallThickness / 2.0f, wallHeight / 2.0f, (stageMax - stageMin) / 2.0f};
+			Vector3 extents = { wallThickness / 2.0f, wallHeight / 2.0f, (stageMax - stageMin) / 2.0f };
 
 			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);
@@ -569,10 +563,11 @@ namespace mtgb
 			Collider* pCollider		 = &(Game::System<ColliderCP>().Get(id, ColliderTag::STAGE_BOUNDARY));
 			pCollider->colliderType_ = ColliderType::TYPE__AABB;
 
-			Vector3 center =
-				{(stageMin + stageMax) / 2.0f, wallHeight + (wallThickness / 2.0f), (stageMin + stageMax) / 2.0f};
+			Vector3 center = { (stageMin + stageMax) / 2.0f,
+							   wallHeight + (wallThickness / 2.0f),
+							   (stageMin + stageMax) / 2.0f };
 
-			Vector3 extents = {(stageMax - stageMin) / 2.0f, wallThickness / 2.0f, (stageMax - stageMin) / 2.0f};
+			Vector3 extents = { (stageMax - stageMin) / 2.0f, wallThickness / 2.0f, (stageMax - stageMin) / 2.0f };
 
 			pCollider->isStatic_ = true;
 			pCollider->SetCenter(center);

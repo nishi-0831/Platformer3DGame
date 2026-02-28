@@ -53,10 +53,11 @@ BinPackArguments: false
 AllowAllArgumentsOnNextLine: false
 AllowAllParametersOfDeclarationOnNextLine: false
 # 短いブロックでも一行にまとめない
-AllowShortLambdasOnASingleLine: None
-AllowShortBlocksOnASingleLine: Never
-# 短い関数を一行にまとめるかどうか。 InlineOnly : インライン関数のみ一行にまとめる
-AllowShortFunctionsOnASingleLine: InlineOnly
+AllowShortLambdasOnASingleLine: Empty
+AllowShortBlocksOnASingleLine: Empty
+AllowShortEnumsOnASingleLine: false
+# 短い関数を一行にまとめるかどうか
+AllowShortFunctionsOnASingleLine: Empty
 # 末尾のコメント行
 AlignTrailingComments: true
 # 変数への代入が連続した際に=で整列するか
@@ -69,6 +70,8 @@ AlignAfterOpenBracket: BlockIndent
 SpaceBeforeParens: ControlStatements
 # switch-caseのコロン前にスペースを入れるか
 SpaceBeforeCaseColon: true
+# caseラベルでインデントするか
+IndentCaseLabels: true
 # 初期化子リストの前に空白を入れるか
 SpaceBeforeCpp11BracedList: true
 # メンバ初期化子リストのコロン前に空白を入れるか
@@ -83,3 +86,5 @@ ContinuationIndentWidth: 4
 
 # コンセプトの前で改行するか
 BreakBeforeConceptDeclarations: true
+
+

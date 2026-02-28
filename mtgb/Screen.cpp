@@ -5,16 +5,14 @@
 #include "Game.h"
 #include "WindowContext.h"
 mtgb::Screen::Screen()
-	: sizeRatio_{1.0f, 1.0f}
-	, initialSize_{0, 0}
-	, size_{0, 0}
-	, fpsLimit_{0}
+	: sizeRatio_ { 1.0f, 1.0f }
+	, initialSize_ { 0, 0 }
+	, size_ { 0, 0 }
+	, fpsLimit_ { 0 }
 {
 }
 
-mtgb::Screen::~Screen()
-{
-}
+mtgb::Screen::~Screen() {}
 
 void mtgb::Screen::Initialize()
 {
@@ -28,9 +26,7 @@ void mtgb::Screen::Initialize()
 	size_ = initialSize_;
 }
 
-void mtgb::Screen::Update()
-{
-}
+void mtgb::Screen::Update() {}
 
 const mtgb::Vector2F mtgb::Screen::GetSizeRatio() const
 {
@@ -47,7 +43,7 @@ void mtgb::Screen::SetSize(int _width, int _height)
 	size_.x = _width;
 	size_.y = _height;
 
-	sizeRatio_ = {(static_cast<float>(size_.x) / initialSize_.x), static_cast<float>(size_.y) / initialSize_.y};
+	sizeRatio_ = { (static_cast<float>(size_.x) / initialSize_.x), static_cast<float>(size_.y) / initialSize_.y };
 }
 
 int mtgb::Screen::GetFPS() const

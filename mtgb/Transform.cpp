@@ -8,30 +8,28 @@ namespace
 
 mtgb::Transform::Transform()
 	: parent(INVALID_ENTITY)
-	, position{Vector3::Zero()}
-	, scale{Vector3::One()}
-	, rotate{Quaternion::Identity()}
-	, localPosition_{Vector3::Zero()}
-	, localRotate_{Quaternion::Identity()}
-	, localScale_{Vector3::One()}
+	, position { Vector3::Zero() }
+	, scale { Vector3::One() }
+	, rotate { Quaternion::Identity() }
+	, localPosition_ { Vector3::Zero() }
+	, localRotate_ { Quaternion::Identity() }
+	, localScale_ { Vector3::One() }
 {
 }
 
 mtgb::Transform::Transform(EntityId _entityId)
 	: IComponent(_entityId)
 	, parent(INVALID_ENTITY)
-	, position{Vector3::Zero()}
-	, scale{Vector3::One()}
-	, rotate{Quaternion::Identity()}
-	, localPosition_{Vector3::Zero()}
-	, localRotate_{Quaternion::Identity()}
-	, localScale_{Vector3::One()}
+	, position { Vector3::Zero() }
+	, scale { Vector3::One() }
+	, rotate { Quaternion::Identity() }
+	, localPosition_ { Vector3::Zero() }
+	, localRotate_ { Quaternion::Identity() }
+	, localScale_ { Vector3::One() }
 {
 }
 
-mtgb::Transform::~Transform()
-{
-}
+mtgb::Transform::~Transform() {}
 
 mtgb::Transform& mtgb::Transform::operator=(const Transform& _other)
 {
@@ -68,7 +66,7 @@ void mtgb::Transform::Compute()
 	using DirectX::XMQuaternionNormalize;
 
 	// 親の行列を取得
-	Matrix4x4 parentMat{};
+	Matrix4x4 parentMat {};
 	GenerateParentMatrix(&parentMat);
 
 	// 現在のワールド座標から行列を作成
@@ -237,7 +235,7 @@ void mtgb::Transform::GenerateWorldRotMatrixSelf(Matrix4x4* _pMatrix) const
 	Matrix4x4 matLocalRot = DirectX::XMMatrixRotationQuaternion(XMQuaternionNormalize(localRotate_));
 	if (parent != INVALID_ENTITY)
 	{
-		Matrix4x4 mWorldRotParent{};
+		Matrix4x4 mWorldRotParent {};
 		GetParent()->GenerateWorldRotMatrixSelf(&mWorldRotParent);
 		*_pMatrix = matLocalRot * mWorldRotParent;
 	}

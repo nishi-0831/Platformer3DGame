@@ -15,9 +15,9 @@ namespace mtgb::Mathf
 	/// <returns>最小値から最大値を線形補間した_valueの値</returns>
 	static inline float LerpForward(const float _a, const float _b, const float _value)
 	{
-		float min{std::fminf(_a, _b)};
-		float max{std::fmaxf(_a, _b)};
-		float rate{std::fmaxf(0.0f, std::fminf(_value, 1.0f))};
+		float min { std::fminf(_a, _b) };
+		float max { std::fmaxf(_a, _b) };
+		float rate { std::fmaxf(0.0f, std::fminf(_value, 1.0f)) };
 
 		return min + (max - min) * rate;
 	}
@@ -31,14 +31,14 @@ namespace mtgb::Mathf
 	/// <returns>最小値から最大値を線形補間した_valueの値</returns>
 	static inline float Lerp(const float _a, const float _b, const float _value)
 	{
-		float rate{std::fmaxf(0.0f, std::fminf(_value, 1.0f))};
+		float rate { std::fmaxf(0.0f, std::fminf(_value, 1.0f)) };
 
 		return _a + (_b - _a) * rate;
 	}
 
 	static Vector3 Lerp(const Vector3& _a, const Vector3& _b, float _value)
 	{
-		return Vector3{Lerp(_a.x, _b.x, _value), Lerp(_a.y, _b.y, _value), Lerp(_a.z, _b.z, _value)};
+		return Vector3 { Lerp(_a.x, _b.x, _value), Lerp(_a.y, _b.y, _value), Lerp(_a.z, _b.z, _value) };
 	}
 	/*static inline float LerpForward(const float _a, const float _b, const float _value)
 	{
@@ -104,17 +104,16 @@ namespace mtgb::Mathf
 		float _bulletSpeed
 	)
 	{
-		const float BULLET_SPEED{_bulletSpeed * Time::DeltaTimeF()};
+		const float BULLET_SPEED { _bulletSpeed * Time::DeltaTimeF() };
 
-		const Vector3 MOVE{_targetMove * Time::DeltaTimeF()};
+		const Vector3 MOVE { _targetMove * Time::DeltaTimeF() };
 
-		Vector3 toTargetDiff{_targetPosition - _shotPosition};
+		Vector3 toTargetDiff { _targetPosition - _shotPosition };
 
-		const float A{(MOVE.x * MOVE.x) + (MOVE.y * MOVE.y) + (MOVE.z * MOVE.z) - (BULLET_SPEED * BULLET_SPEED)};
-		const float B{2.0f * ((toTargetDiff.x * MOVE.x) + (toTargetDiff.y * MOVE.y) + (toTargetDiff.z * MOVE.z))};
-		const float C{
-			toTargetDiff.x * toTargetDiff.x + toTargetDiff.y * toTargetDiff.y + toTargetDiff.z * toTargetDiff.z
-		};
+		const float A { (MOVE.x * MOVE.x) + (MOVE.y * MOVE.y) + (MOVE.z * MOVE.z) - (BULLET_SPEED * BULLET_SPEED) };
+		const float B { 2.0f * ((toTargetDiff.x * MOVE.x) + (toTargetDiff.y * MOVE.y) + (toTargetDiff.z * MOVE.z)) };
+		const float C { toTargetDiff.x * toTargetDiff.x + toTargetDiff.y * toTargetDiff.y +
+						toTargetDiff.z * toTargetDiff.z };
 
 		// 0除算防止
 		if (std::fabsf(A) <= FLT_EPSILON)
@@ -130,12 +129,12 @@ namespace mtgb::Mathf
 		}
 
 		// 当たる秒数
-		float sec{};
+		float sec {};
 		// 解
-		float s1{}, s2{};
+		float s1 {}, s2 {};
 
 		// 2次方程式の解の公式 判別式D
-		const float D{B * B - 4.0f * A * C};
+		const float D { B * B - 4.0f * A * C };
 		if (D > FLT_EPSILON)
 		{
 			const float E = std::sqrtf(D);
@@ -162,10 +161,8 @@ namespace mtgb::Mathf
 		float y = _position.y;
 		float z = _position.z;
 
-		return SphericalCoord{
-			.r	   = sqrtf(x * x + y * y + z * z),
-			.theta = std::acosf(y / sqrtf(x * x + y * y + z * z)),
-			.phi   = std::signbit(z) * std::acosf(x / sqrtf(x * x + z * z))
-		};
+		return SphericalCoord { .r	   = sqrtf(x * x + y * y + z * z),
+								.theta = std::acosf(y / sqrtf(x * x + y * y + z * z)),
+								.phi   = std::signbit(z) * std::acosf(x / sqrtf(x * x + z * z)) };
 	}
 } // namespace mtgb::Mathf

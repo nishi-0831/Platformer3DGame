@@ -24,17 +24,17 @@ namespace mtgb
 		explicit Vector4(const Vector3& _vec3);
 
 		Vector4()
-			: Vector4{0.0f, 0.0f, 0.0f, 0.0f}
+			: Vector4 { 0.0f, 0.0f, 0.0f, 0.0f }
 		{
 		}
 
 		static inline auto Zero()
 		{
-			return Vector4{0, 0, 0, 0};
+			return Vector4 { 0, 0, 0, 0 };
 		}
 		static inline auto One()
 		{
-			return Vector4{1, 1, 1, 1};
+			return Vector4 { 1, 1, 1, 1 };
 		}
 
 		inline Vector4& operator+=(const Vector3& _other)
@@ -54,6 +54,6 @@ namespace mtgb
 	};
 	inline Vector4 operator+(const Vector4& _lhs, const Vector4& _rhs)
 	{
-		return Vector4{_lhs.f[0] + _rhs.f[0], _lhs.f[1] + _rhs.f[1], _lhs.f[2] + _rhs.f[2], _lhs.f[3] + _rhs.f[3]};
+		return Vector4 { _lhs.f[0] + _rhs.f[0], _lhs.f[1] + _rhs.f[1], _lhs.f[2] + _rhs.f[2], _lhs.f[3] + _rhs.f[3] };
 	}
 } // namespace mtgb

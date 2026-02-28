@@ -13,10 +13,9 @@ namespace mtgb
 {
 	class ImageRendererCP;
 
-	
 	class [[MT_COMPONENT()]] ImageRenderer : public IRenderable,
-						  public IComponent<ImageRendererCP, ImageRenderer>,
-						  public ISerializableObject
+											 public IComponent<ImageRendererCP, ImageRenderer>,
+											 public ISerializableObject
 	{
 	  public:
 		MT_GENERATED_BODY()

@@ -9,9 +9,7 @@ namespace mtgb
 	  public:
 		ScoreManager();
 		~ScoreManager();
-		void Initialize() override
-		{
-		}
+		void Initialize() override {}
 		void Update() override;
 
 		/// <summary>

@@ -16,9 +16,7 @@ namespace mtgb
 		AddComponentCommandGeneric(T& _component);
 		~AddComponentCommandGeneric();
 		// Command を介して継承されました
-		void Execute() override
-		{
-		}
+		void Execute() override {}
 		void Undo() override
 		{
 			using PoolType = typename T::Pool;
@@ -43,7 +41,7 @@ namespace mtgb
 	};
 	template <typename T>
 	inline AddComponentCommandGeneric<T>::AddComponentCommandGeneric(T& _component)
-		: memento_{_component.SaveToMemento()}
+		: memento_ { _component.SaveToMemento() }
 	{
 	}
 	template <typename T> inline AddComponentCommandGeneric<T>::~AddComponentCommandGeneric()

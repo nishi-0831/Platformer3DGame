@@ -7,7 +7,7 @@
 #include "Transform.h"
 #include "IComponentMemento.h"
 #include <nlohmann/json.hpp>
-constexpr size_t COMPONENT_CAPACITY{(8 * 8) - 4};
+constexpr size_t COMPONENT_CAPACITY { (8 * 8) - 4 };
 
 namespace mtgb
 {
@@ -141,7 +141,7 @@ namespace mtgb
 	}
 	template <typename GameSceneT> inline GameSceneT& GameObject::GetScene()
 	{
-		GameSceneT* pActiveScene{static_cast<GameSceneT*>(Game::System<SceneSystem>().GetActiveScene())};
+		GameSceneT* pActiveScene { static_cast<GameSceneT*>(Game::System<SceneSystem>().GetActiveScene()) };
 		massert(pActiveScene != nullptr && "アクティブシーンの取得に失敗 @GameObject::GetScene");
 
 		return *pActiveScene;

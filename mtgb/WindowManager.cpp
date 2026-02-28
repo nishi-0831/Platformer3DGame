@@ -14,12 +14,12 @@
 #include "DXGIResource.h"
 #include "Screen.h"
 
-MSG* mtgb::WindowManager::pPeekedMessage_{nullptr};
+MSG* mtgb::WindowManager::pPeekedMessage_ { nullptr };
 std::map<mtgb::WindowContext, mtgb::WindowConfig> mtgb::WindowManager::windowConfigMap_;
 
 mtgb::WindowManager::WindowManager()
 {
-	pPeekedMessage_ = new MSG{};
+	pPeekedMessage_ = new MSG {};
 }
 
 mtgb::WindowManager::~WindowManager()
@@ -31,7 +31,7 @@ HWND mtgb::WindowManager::CreateWindowContext(WindowResource* _windowResource)
 {
 	WindowConfig config = WindowManager::GetWindowConfig(_windowResource->GetWindowContext());
 	// ウィンドウ作成処理
-	WNDCLASSEX windowClass{};
+	WNDCLASSEX windowClass {};
 	windowClass.cbSize		  = sizeof(WNDCLASSEX);
 	windowClass.hInstance	  = GetModuleHandle(NULL);
 	windowClass.lpszClassName = config.className.c_str();
@@ -47,7 +47,7 @@ HWND mtgb::WindowManager::CreateWindowContext(WindowResource* _windowResource)
 
 	massert(RegisterClassEx(&windowClass) != 0 && "RegisterClassExに失敗 @WindowManager::CreateWindowContext");
 
-	RECT windowRect{0, 0, config.width, config.height};
+	RECT windowRect { 0, 0, config.width, config.height };
 	massert(
 		AdjustWindowRectEx(&windowRect, WS_OVERLAPPEDWINDOW, FALSE, WS_EX_OVERLAPPEDWINDOW) != FALSE &&
 		"AdjustWindowRectExに失敗 @WindowManager::CreateWindowContext"
@@ -78,17 +78,13 @@ mtgb::Vector2Int mtgb::WindowManager::GetWindowSize(WindowContext _context)
 {
 	if (_context == WindowContext::BOTH)
 	{
-		return mtgb::Vector2Int{
-			windowConfigMap_[WindowContext::FIRST].width,
-			windowConfigMap_[WindowContext::FIRST].height
-		};
+		return mtgb::Vector2Int { windowConfigMap_[WindowContext::FIRST].width,
+								  windowConfigMap_[WindowContext::FIRST].height };
 	}
-	return mtgb::Vector2Int{windowConfigMap_[_context].width, windowConfigMap_[_context].height};
+	return mtgb::Vector2Int { windowConfigMap_[_context].width, windowConfigMap_[_context].height };
 }
 
-void mtgb::WindowManager::Initialize()
-{
-}
+void mtgb::WindowManager::Initialize() {}
 
 void mtgb::WindowManager::Update()
 {
@@ -100,9 +96,7 @@ void mtgb::WindowManager::Update()
 	}
 }
 
-void mtgb::WindowManager::Release()
-{
-}
+void mtgb::WindowManager::Release() {}
 
 void mtgb::WindowManager::SetWindowConfig(WindowContext _windowContext, const WindowConfig& _config)
 {

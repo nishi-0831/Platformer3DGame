@@ -6,9 +6,7 @@ namespace mtgb
 	template <typename T, class ExtendT> class IProfile
 	{
 	  public:
-		virtual ~IProfile()
-		{
-		}
+		virtual ~IProfile() {}
 
 		virtual ExtendT& Extend() = 0;
 
@@ -31,7 +29,7 @@ namespace mtgb
 
 		static inline ExtendT Load()
 		{
-			return ExtendT{};
+			return ExtendT {};
 		}
 
 	  protected:
@@ -41,7 +39,7 @@ namespace mtgb
 		static const char* PATH;
 
 	  private:
-		ExtendT* pExtend_{nullptr};
+		ExtendT* pExtend_ { nullptr };
 	};
 
 	struct ProfileInt : IProfile<int, ProfileInt>
@@ -57,5 +55,5 @@ namespace mtgb
 		}
 	};
 
-	template <typename T, class ExtendT> const char* IProfile<T, ExtendT>::PATH{"./setup.ini"};
+	template <typename T, class ExtendT> const char* IProfile<T, ExtendT>::PATH { "./setup.ini" };
 } // namespace mtgb

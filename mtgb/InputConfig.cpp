@@ -11,15 +11,15 @@ void mtgb::InputConfig::SetRange(LONG _range, Axis _axis)
 {
 	switch (_axis)
 	{
-	case Axis::X :
-		xRange = _range;
-		break;
-	case Axis::Y :
-		yRange = _range;
-		break;
-	case Axis::Z :
-		zRange = _range;
-		break;
+		case Axis::X :
+			xRange = _range;
+			break;
+		case Axis::Y :
+			yRange = _range;
+			break;
+		case Axis::Z :
+			zRange = _range;
+			break;
 	}
 }
 

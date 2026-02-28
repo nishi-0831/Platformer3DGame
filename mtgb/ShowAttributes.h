@@ -73,7 +73,7 @@ struct DisplayName : refl::attr::usage::type
 {
   public:
 	constexpr DisplayName(const char* _displayName) noexcept
-		: displayName{_displayName}
+		: displayName { _displayName }
 	{
 	}
 
@@ -88,7 +88,5 @@ struct DisplayName : refl::attr::usage::type
 
 template <typename T> struct ReadOnly : refl::attr::usage::member
 {
-	template <typename FieldType> void operator()(FieldType* _instance, const char* _name) const
-	{
-	}
+	template <typename FieldType> void operator()(FieldType* _instance, const char* _name) const {}
 };

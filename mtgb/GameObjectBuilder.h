@@ -13,15 +13,15 @@ namespace mtgb
 	/// </summary>
 	struct GAME_OBJECT_DESC
 	{
-		std::string name{};
-		Vector3 position{Vector3::Zero()};
-		Vector3 scale{Vector3::One()};
-		Quaternion rotate{Quaternion::Identity()};
-		GameObjectLayerFlag layerFlag{GameObjectLayerFlag::New().BeginEdit().OnAll().EndEdit()};
-		GameObjectTag tag{GameObjectTag::UNTAGGED};
-		bool isActive{true};
-		bool callUpdate{true};
-		bool callDraw{true};
+		std::string name {};
+		Vector3 position { Vector3::Zero() };
+		Vector3 scale { Vector3::One() };
+		Quaternion rotate { Quaternion::Identity() };
+		GameObjectLayerFlag layerFlag { GameObjectLayerFlag::New().BeginEdit().OnAll().EndEdit() };
+		GameObjectTag tag { GameObjectTag::UNTAGGED };
+		bool isActive { true };
+		bool callUpdate { true };
+		bool callDraw { true };
 		// padding 10byte
 	};
 
@@ -39,12 +39,8 @@ namespace mtgb
 		/// <para>以下のように使う</para>
 		/// <para>GameObjectBuilder().SetName("Name").Set...().Build()</para>
 		/// </summary>
-		GameObjectBuilder()
-		{
-		}
-		~GameObjectBuilder()
-		{
-		}
+		GameObjectBuilder() {}
+		~GameObjectBuilder() {}
 
 		GameObjectBuilder& SetName(const std::string& _name)
 		{

@@ -10,13 +10,9 @@
 #include "SceneSystem.h"
 #include "CameraSystem.h"
 #include "Screen.h"
-mtgb::ColliderCP::ColliderCP()
-{
-}
+mtgb::ColliderCP::ColliderCP() {}
 
-mtgb::ColliderCP::~ColliderCP()
-{
-}
+mtgb::ColliderCP::~ColliderCP() {}
 
 void mtgb::ColliderCP::Start()
 {
@@ -29,7 +25,7 @@ void mtgb::ColliderCP::Start()
 
 void mtgb::ColliderCP::Update()
 {
-	static Matrix4x4 matrix{};
+	static Matrix4x4 matrix {};
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
 		if (poolId_[i] != INVALID_ENTITY)
@@ -60,7 +56,7 @@ void mtgb::ColliderCP::Update()
 						if (a.isTrigger_ || b.isTrigger_)
 							continue;
 
-						RigidBody* aRigidBody{nullptr};
+						RigidBody* aRigidBody { nullptr };
 
 						bool existRigidBody = Game::System<RigidBodyCP>().TryGet(aRigidBody, a.GetEntityId());
 						if (existRigidBody)
@@ -72,7 +68,7 @@ void mtgb::ColliderCP::Update()
 							}
 						}
 
-						RigidBody* bRigidBody{nullptr};
+						RigidBody* bRigidBody { nullptr };
 						existRigidBody = Game::System<RigidBodyCP>().TryGet(bRigidBody, b.GetEntityId());
 						if (existRigidBody)
 						{
@@ -124,7 +120,7 @@ mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vec
 
 bool mtgb::ColliderCP::RayCastHit(const Vector3& _origin, const Vector3& _dir, float* _dist, EntityId _entityId)
 {
-	std::vector<Collider*> colliders{};
+	std::vector<Collider*> colliders {};
 	if (!TryGet(&colliders, _entityId))
 		return false;
 
@@ -201,7 +197,7 @@ void mtgb::ColliderCP::RectContainsImpl(
 			_info->emplace_back(worldPos,screenPos,object->GetEntityId());
 		}*/
 		if (RectF::Contains(
-				Vector2F{screenPos.x, screenPos.y},
+				Vector2F { screenPos.x, screenPos.y },
 				RectF(_rect.x * ratio.x, _rect.y * ratio.y, _rect.width * ratio.x, _rect.height * ratio.y)
 			))
 		{

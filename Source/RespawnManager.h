@@ -1,28 +1,29 @@
 #pragma once
 #include <mtgb.h>
-class RespawnManager : public mtgb::GameObject , public mtgb::ImGuiShowable
+class RespawnManager : public mtgb::GameObject, public mtgb::ImGuiShowable
 {
-public:
+  public:
 	RespawnManager();
 	~RespawnManager();
 	void Update() override;
 	void ShowImGui() override;
 
-private:
+  private:
 	// 現在のリスポーンポイントに割り当てられている優先度
 	int currentRespawnPointPriority_;
 	EntityId playerEntityId_;
 	EntityId currentRespawnPointEntityId_;
 };
 
-class RespawnPoint : public mtgb::GameObject , public mtgb::ImGuiShowable
+class RespawnPoint : public mtgb::GameObject, public mtgb::ImGuiShowable
 {
-public:
+  public:
 	RespawnPoint();
 	~RespawnPoint();
 	void Update() override;
 	void ShowImGui() override;
-private:
+
+  private:
 	void OnCollisionEnter(EntityId _entityId);
 	int priority_;
 	Transform* pTransform_;

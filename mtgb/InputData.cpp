@@ -67,10 +67,8 @@ bool mtgb::InputUtil::GetKeyUp(const KeyCode _keyCode, WindowContext _context)
 	}
 
 	const InputData& input = GetInput(_context);
-	int result{
-		KeyXOR(_keyCode, input.keyStateCurrent_, input.keyStatePrevious_) &
-		static_cast<int>(input.keyStatePrevious_[Index(_keyCode)])
-	};
+	int result { KeyXOR(_keyCode, input.keyStateCurrent_, input.keyStatePrevious_) &
+				 static_cast<int>(input.keyStatePrevious_[Index(_keyCode)]) };
 	return static_cast<bool>(result);
 }
 
@@ -189,10 +187,10 @@ float mtgb::InputUtil::GetTrigger(FlightStickAxisCode _flightStickCode, WindowCo
 	const InputData& input = GetInput(_context);
 	switch (_flightStickCode)
 	{
-	case FlightStickAxisCode::SLIDER :
-		return static_cast<float>(input.joyStateCurrent_.rglSlider[0]) / JOY_AXIS_MAX;
-	default :
-		return 0.0f;
+		case FlightStickAxisCode::SLIDER :
+			return static_cast<float>(input.joyStateCurrent_.rglSlider[0]) / JOY_AXIS_MAX;
+		default :
+			return 0.0f;
 	}
 }
 
@@ -202,12 +200,12 @@ float mtgb::InputUtil::GetTrigger(PadAxisCode _padCode, WindowContext _context)
 
 	switch (_padCode)
 	{
-	case PadAxisCode::LEFT_TRIGGER :
-		return static_cast<float>(input.joyStateCurrent_.lRy) / JOY_AXIS_MAX;
-	case PadAxisCode::RIGHT_TRIGGER :
-		return static_cast<float>(input.joyStateCurrent_.lRx) / JOY_AXIS_MAX;
-	default :
-		return 0.0f;
+		case PadAxisCode::LEFT_TRIGGER :
+			return static_cast<float>(input.joyStateCurrent_.lRy) / JOY_AXIS_MAX;
+		case PadAxisCode::RIGHT_TRIGGER :
+			return static_cast<float>(input.joyStateCurrent_.lRx) / JOY_AXIS_MAX;
+		default :
+			return 0.0f;
 	}
 }
 
@@ -217,53 +215,53 @@ float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType, WindowContext _
 	float value			   = 0.0f;
 	switch (_axis)
 	{
-	case Axis::X :
-		if (_stickType == StickType::LEFT)
-		{
-			value = static_cast<float>(input.joyStateCurrent_.lX);
-		}
-		else
-		{
-			if (input.controllerType_ == ControllerType::DUAL_SHOCK)
+		case Axis::X :
+			if (_stickType == StickType::LEFT)
 			{
-				value = static_cast<float>(input.joyStateCurrent_.lZ);
-			}
-			else if (input.controllerType_ == ControllerType::XBOX)
-			{
-				value = static_cast<float>(input.joyStateCurrent_.lRx);
+				value = static_cast<float>(input.joyStateCurrent_.lX);
 			}
 			else
 			{
-				value = static_cast<float>(input.joyStateCurrent_.lZ);
+				if (input.controllerType_ == ControllerType::DUAL_SHOCK)
+				{
+					value = static_cast<float>(input.joyStateCurrent_.lZ);
+				}
+				else if (input.controllerType_ == ControllerType::XBOX)
+				{
+					value = static_cast<float>(input.joyStateCurrent_.lRx);
+				}
+				else
+				{
+					value = static_cast<float>(input.joyStateCurrent_.lZ);
+				}
 			}
-		}
-		value /= input.config_.xRange;
-		break;
+			value /= input.config_.xRange;
+			break;
 
-	case Axis::Y :
-		if (_stickType == StickType::LEFT)
-		{
-			value = static_cast<float>(input.joyStateCurrent_.lY);
-		}
-		else
-		{
-			if (input.controllerType_ == ControllerType::DUAL_SHOCK)
+		case Axis::Y :
+			if (_stickType == StickType::LEFT)
 			{
-				value = static_cast<float>(input.joyStateCurrent_.lRz);
-			}
-			else if (input.controllerType_ == ControllerType::XBOX)
-			{
-				value = -static_cast<float>(input.joyStateCurrent_.lRy);
+				value = static_cast<float>(input.joyStateCurrent_.lY);
 			}
 			else
 			{
-				value = static_cast<float>(input.joyStateCurrent_.lRz);
+				if (input.controllerType_ == ControllerType::DUAL_SHOCK)
+				{
+					value = static_cast<float>(input.joyStateCurrent_.lRz);
+				}
+				else if (input.controllerType_ == ControllerType::XBOX)
+				{
+					value = -static_cast<float>(input.joyStateCurrent_.lRy);
+				}
+				else
+				{
+					value = static_cast<float>(input.joyStateCurrent_.lRz);
+				}
 			}
-		}
-		value /= input.config_.yRange;
-		break;
-	default :
-		return 0.0f;
+			value /= input.config_.yRange;
+			break;
+		default :
+			return 0.0f;
 	}
 	return input.config_.ApplyDeadZone(value);
 }
@@ -271,7 +269,7 @@ float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType, WindowContext _
 const mtgb::Vector2F mtgb::InputUtil::GetAxis(StickType _stickType, WindowContext _context)
 {
 	const InputData& input = GetInput(_context);
-	return Vector2F{GetAxis(Axis::X, _stickType, _context), GetAxis(Axis::Y, _stickType, _context)};
+	return Vector2F { GetAxis(Axis::X, _stickType, _context), GetAxis(Axis::Y, _stickType, _context) };
 }
 
 const mtgb::Vector2Int mtgb::InputUtil::GetMousePosition(WindowContext _context)
@@ -281,7 +279,7 @@ const mtgb::Vector2Int mtgb::InputUtil::GetMousePosition(WindowContext _context)
 
 const mtgb::Vector3 mtgb::InputUtil::GetMouseMove(WindowContext _context)
 {
-	return mtgb::Vector3{
+	return mtgb::Vector3 {
 		static_cast<float>(InputUtil::GetInput(_context).mouseStateCurrent_.lX),
 		static_cast<float>(InputUtil::GetInput(_context).mouseStateCurrent_.lY),
 		static_cast<float>(InputUtil::GetInput(_context).mouseStateCurrent_.lZ),

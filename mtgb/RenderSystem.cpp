@@ -13,13 +13,9 @@
 #include "ColliderCP.h"
 #include "CameraResource.h"
 #include "EffekseerVFX.h"
-void mtgb::RenderSystem::Initialize()
-{
-}
+void mtgb::RenderSystem::Initialize() {}
 
-void mtgb::RenderSystem::Update()
-{
-}
+void mtgb::RenderSystem::Update() {}
 
 void mtgb::RenderSystem::Render(GameScene& _scene)
 {

@@ -10,13 +10,13 @@ using namespace mtgb;
 
 mtgb::InputResource::InputResource(WindowContext _windowContext)
 	: WindowContextResource(_windowContext)
-	, pInputData_{nullptr}
-	, pKeyDevice_{nullptr}
-	, pMouseDevice_{nullptr}
-	, pJoystickProxy_{nullptr}
-	, pMouseStateProxy_{nullptr}
-	, assignedJoystickGuid_{GUID_NULL}
-	, isInitialized{false}
+	, pInputData_ { nullptr }
+	, pKeyDevice_ { nullptr }
+	, pMouseDevice_ { nullptr }
+	, pJoystickProxy_ { nullptr }
+	, pMouseStateProxy_ { nullptr }
+	, assignedJoystickGuid_ { GUID_NULL }
+	, isInitialized { false }
 {
 	HWND hWnd = WinCtxRes::GetHWND(_windowContext);
 

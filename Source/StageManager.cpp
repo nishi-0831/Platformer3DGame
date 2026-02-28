@@ -18,9 +18,7 @@ void StageManger::Initialize()
 	stageJsons_[StageID::STAGE_ONE] = j;
 }
 
-void StageManger::Update()
-{
-}
+void StageManger::Update() {}
 
 std::optional<nlohmann::json> StageManger::GetStageJson(StageID _stageID)
 {

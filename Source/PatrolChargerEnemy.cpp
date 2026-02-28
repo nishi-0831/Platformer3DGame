@@ -3,28 +3,28 @@
 #include "Debug.h"
 #include <format>
 
-unsigned int PatrolChargerEnemy::generateCounter_{0};
+unsigned int PatrolChargerEnemy::generateCounter_ { 0 };
 
 PatrolChargerEnemy::PatrolChargerEnemy()
 	: IActor(GetEntityId())
-	, pTransform_{Component<Transform>()}
-	, pRigidBody_{Component<RigidBody>()}
-	, pMeshRenderer_{Component<MeshRenderer>()}
-	, pCollider_{Component<Collider>()}
-	, pTargetTransform_{nullptr}
-	, foundFOV_{45.0f}
-	, foundDistance_{5.0f}
-	, pInterpolator_{Component<Interpolator>()}
-	, targetEntityId_{INVALID_ENTITY}
-	, returnToPatrolSpeed_{2.0f}
-	, waitTimeTransitionCharge_{1.0f}
-	, chargeSpeed_{4.0f}
-	, chargeTime_{5.0f}
-	, waitTimeAfterCharge_{2.0f}
-	, takeDamageNum_{1}
-	, walkAnimSpeed_{0.5f}
-	, waitTime_{3.0f}
-	, onStompedBounce_{5.0f}
+	, pTransform_ { Component<Transform>() }
+	, pRigidBody_ { Component<RigidBody>() }
+	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, pCollider_ { Component<Collider>() }
+	, pTargetTransform_ { nullptr }
+	, foundFOV_ { 45.0f }
+	, foundDistance_ { 5.0f }
+	, pInterpolator_ { Component<Interpolator>() }
+	, targetEntityId_ { INVALID_ENTITY }
+	, returnToPatrolSpeed_ { 2.0f }
+	, waitTimeTransitionCharge_ { 1.0f }
+	, chargeSpeed_ { 4.0f }
+	, chargeTime_ { 5.0f }
+	, waitTimeAfterCharge_ { 2.0f }
+	, takeDamageNum_ { 1 }
+	, walkAnimSpeed_ { 0.5f }
+	, waitTime_ { 3.0f }
+	, onStompedBounce_ { 5.0f }
 {
 	tag_						 = GameObjectTag::ENEMY;
 	pMeshRenderer_->meshFileName = "Model/GolemAnim.fbx";
@@ -33,7 +33,7 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	pMeshRenderer_->shaderType	 = ShaderType::FBX_PARTS_SKIN;
 
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
-	pCollider_->SetExtents({1.0f, 1.0f, 1.0f});
+	pCollider_->SetExtents({ 1.0f, 1.0f, 1.0f });
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(PatrolChargerEnemy));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
@@ -58,9 +58,7 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	);
 }
 
-PatrolChargerEnemy::~PatrolChargerEnemy()
-{
-}
+PatrolChargerEnemy::~PatrolChargerEnemy() {}
 
 void PatrolChargerEnemy::Update()
 {
@@ -72,9 +70,7 @@ void PatrolChargerEnemy::Update()
 	state_.Update();
 }
 
-void PatrolChargerEnemy::Draw() const
-{
-}
+void PatrolChargerEnemy::Draw() const {}
 
 void PatrolChargerEnemy::Start()
 {
@@ -118,13 +114,11 @@ void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 		// 踏まれたエフェクト再生
 		EffectParameters params;
 		params.isLoop	  = false;
-		Vector3 effectPos = Vector3{
-			pTransform_->position.x,
-			pTransform_->position.y + pCollider_->GetExtents().y,
-			pTransform_->position.z
-		};
-		Matrix4x4 mat	= DirectX::XMMatrixTranslation(effectPos.x, effectPos.y, effectPos.z);
-		params.worldMat = mat;
+		Vector3 effectPos = Vector3 { pTransform_->position.x,
+									  pTransform_->position.y + pCollider_->GetExtents().y,
+									  pTransform_->position.z };
+		Matrix4x4 mat	  = DirectX::XMMatrixTranslation(effectPos.x, effectPos.y, effectPos.z);
+		params.worldMat	  = mat;
 		Game::System<EffectManager>().Play("Stomp", params);
 
 		// 踏まれたSE再生
@@ -281,7 +275,7 @@ void PatrolChargerEnemy::Charge()
 	// 斜面を移動させる場合は修正が必要
 	// ------------------------------------------------------
 	// Vector3 distPos = { pTargetTransform_->position };
-	Vector3 distPos		= {pTargetTransform_->position.x, pTransform_->position.y, pTargetTransform_->position.z};
+	Vector3 distPos		= { pTargetTransform_->position.x, pTransform_->position.y, pTargetTransform_->position.z };
 	Vector3 toTarget	= distPos - pTransform_->GetWorldPosition();
 	Vector3 toTargetDir = Vector3::Normalize(toTarget);
 
@@ -354,16 +348,14 @@ bool PatrolChargerEnemy::Search()
 	return false;
 }
 
-void PatrolChargerEnemy::OnCollisionEnter(EntityId _entityId)
-{
-}
+void PatrolChargerEnemy::OnCollisionEnter(EntityId _entityId) {}
 
 void PatrolChargerEnemy::OnFootStep(const AnimationEvent& _event)
 {
 	// ボーンの名前を取得
 	std::string boneName = _event.boneName;
 	// ボーンの座標を取得
-	Vector3 bonePos		 = Fbx::GetAnimBonePosition(pMeshRenderer_->GetMesh(), boneName);
+	Vector3 bonePos = Fbx::GetAnimBonePosition(pMeshRenderer_->GetMesh(), boneName);
 	EffectParameters params;
 	Matrix4x4 mat;
 	pTransform_->GenerateWorldMatrix(&mat);

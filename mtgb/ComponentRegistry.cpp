@@ -1,16 +1,10 @@
 #include "ComponentRegistry.h"
 
-void mtgb::ComponentRegistry::Initialize()
-{
-}
+void mtgb::ComponentRegistry::Initialize() {}
 
-void mtgb::ComponentRegistry::Update()
-{
-}
+void mtgb::ComponentRegistry::Update() {}
 
-mtgb::ComponentRegistry::ComponentRegistry()
-{
-}
+mtgb::ComponentRegistry::ComponentRegistry() {}
 
 void mtgb::ComponentRegistry::RegisterComponentIndex(
 	EntityId _entityId,

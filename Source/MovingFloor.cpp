@@ -4,19 +4,19 @@
 #include <format>
 namespace
 {
-	mtgb::Vector3 INIT_OFFSET{1.0f, 0.0f, 0.0f};
+	mtgb::Vector3 INIT_OFFSET { 1.0f, 0.0f, 0.0f };
 }
 
-unsigned int MovingFloor::generateCounter_{0};
+unsigned int MovingFloor::generateCounter_ { 0 };
 
 MovingFloor::MovingFloor()
 	: GameObject()
-	, groundedEntity_{INVALID_ENTITY}
-	, pTransform_{&Transform::Get(entityId_)}
-	, pMeshRenderer_{&MeshRenderer::Get(entityId_)}
-	, pCollider_{&Collider::Get(entityId_)}
-	, pRigidBody_{&RigidBody::Get(entityId_)}
-	, pInterpolator_{&Interpolator::Get(entityId_)}
+	, groundedEntity_ { INVALID_ENTITY }
+	, pTransform_ { &Transform::Get(entityId_) }
+	, pMeshRenderer_ { &MeshRenderer::Get(entityId_) }
+	, pCollider_ { &Collider::Get(entityId_) }
+	, pRigidBody_ { &RigidBody::Get(entityId_) }
+	, pInterpolator_ { &Interpolator::Get(entityId_) }
 {
 	pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);

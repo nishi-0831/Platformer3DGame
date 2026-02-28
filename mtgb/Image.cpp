@@ -3,8 +3,8 @@
 #include "MTStringUtility.h"
 
 mtgb::Image::Image()
-	: handleCounter_{0}
-	, sprites_{}
+	: handleCounter_ { 0 }
+	, sprites_ {}
 {
 }
 
@@ -17,32 +17,28 @@ mtgb::Image::~Image()
 	sprites_.clear();
 }
 
-void mtgb::Image::Initialize()
-{
-}
+void mtgb::Image::Initialize() {}
 
-void mtgb::Image::Update()
-{
-}
+void mtgb::Image::Update() {}
 
 mtgb::ImageHandle mtgb::Image::Load(const std::string_view& _fileName)
 {
-	Image& instance{Game::System<Image>()};
+	Image& instance { Game::System<Image>() };
 
 	for (auto itr = instance.sprites_.begin(); itr != instance.sprites_.end(); itr++)
 	{
-		std::wstring str{_fileName.begin(), _fileName.end()};
+		std::wstring str { _fileName.begin(), _fileName.end() };
 		if ((*itr).second->GetFileName() == str)
 		{
 			return (*itr).first;
 		}
 	}
 
-	Sprite* pSprite{new Sprite{}};
+	Sprite* pSprite { new Sprite {} };
 	pSprite->Initialize();
 	pSprite->Load(ToWString(_fileName));
-	ImageHandle handle{++instance.handleCounter_};
-	instance.sprites_.insert({handle, pSprite});
+	ImageHandle handle { ++instance.handleCounter_ };
+	instance.sprites_.insert({ handle, pSprite });
 
 	return handle;
 }

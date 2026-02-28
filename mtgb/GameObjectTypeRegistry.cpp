@@ -1,13 +1,9 @@
 #include "stdafx.h"
 #include "GameObjectTypeRegistry.h"
 
-void mtgb::GameObjectTypeRegistry::Initialize()
-{
-}
+void mtgb::GameObjectTypeRegistry::Initialize() {}
 
-void mtgb::GameObjectTypeRegistry::Update()
-{
-}
+void mtgb::GameObjectTypeRegistry::Update() {}
 
 std::vector<std::string> mtgb::GameObjectTypeRegistry::GetRegisteredNames() const
 {

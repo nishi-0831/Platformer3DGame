@@ -8,14 +8,14 @@ using namespace mtgb;
 
 mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)
 	: WindowContextResource(_windowContext)
-	, pSwapChain1_{nullptr}
-	, pOutput_{nullptr}
-	, pDXGISurface_{nullptr}
-	, monitorInfo_{}
-	, isMultiMonitor_{true}
-	, isBorderlessWindow{true}
-	, name_{"UnknownWindow"}
-	, outputDesc_{}
+	, pSwapChain1_ { nullptr }
+	, pOutput_ { nullptr }
+	, pDXGISurface_ { nullptr }
+	, monitorInfo_ {}
+	, isMultiMonitor_ { true }
+	, isBorderlessWindow { true }
+	, name_ { "UnknownWindow" }
+	, outputDesc_ {}
 {
 	if (_windowContext == WindowContext::FIRST)
 	{

@@ -41,9 +41,7 @@ using TextRendererMemento = mtgb::ComponentMemento<mtgb::TextRenderer, TextRende
 	}                                                                                               \
                                                                                                     \
 	friend struct TextRenderer_Register;                                                            \
-	friend void to_json(nlohmann::json& _j, const TextRenderer& _target)                            \
-	{                                                                                               \
-	}                                                                                               \
+	friend void to_json(nlohmann::json& _j, const TextRenderer& _target) {}                         \
 	friend void from_json(const nlohmann::json& _j, TextRenderer& _target)                          \
 	{                                                                                               \
 		_target.OnPostRestore();                                                                    \

@@ -5,9 +5,9 @@ mtgb::PropertyChangeCommand::PropertyChangeCommand(
 	IComponentMemento* _pMemento,
 	const ComponentFactory& _componentfactory
 )
-	: componentFactory_{componentFactory_}
-	, pPrevMemento_{_pPrevMemento}
-	, pMemento_{_pMemento}
+	: componentFactory_ { componentFactory_ }
+	, pPrevMemento_ { _pPrevMemento }
+	, pMemento_ { _pMemento }
 {
 }
 

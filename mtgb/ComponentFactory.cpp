@@ -2,7 +2,7 @@
 
 mtgb::IComponentMemento* mtgb::ComponentFactory::AddComponent(const std::type_index& _info, EntityId _id) const
 {
-	std::type_index typeIdx{_info};
+	std::type_index typeIdx { _info };
 	auto itr = creators_.find(typeIdx);
 	if (itr != creators_.end())
 	{
@@ -15,7 +15,7 @@ mtgb::IComponentMemento* mtgb::ComponentFactory::AddComponent(const std::type_in
 
 bool mtgb::ComponentFactory::AddComponentFromMemento(const IComponentMemento& _memento) const
 {
-	std::type_index typeIdx{_memento.GetComponentType()};
+	std::type_index typeIdx { _memento.GetComponentType() };
 	auto itr = creatorsFromMemento_.find(typeIdx);
 	if (itr != creatorsFromMemento_.end())
 	{

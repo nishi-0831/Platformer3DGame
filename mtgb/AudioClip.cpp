@@ -9,7 +9,7 @@
 using mtbin::Utility::CompareId;
 
 mtgb::AudioClip::AudioClip()
-	: pWaveData_{nullptr}
+	: pWaveData_ { nullptr }
 {
 }
 
@@ -21,7 +21,7 @@ mtgb::AudioClip::~AudioClip()
 void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms)
 {
 	SAFE_DELETE(pWaveData_);
-	pWaveData_ = new WaveData{};
+	pWaveData_ = new WaveData {};
 	_ms.Seek(0);
 
 	// 先頭4バイトを読み取る
@@ -50,14 +50,14 @@ void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms)
 void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 {
 	// チャンク識別子は 4 byte
-	static const size_t ID_SIZE{4};
+	static const size_t ID_SIZE { 4 };
 
 	// チャンクヘッダ情報
 	struct ChunkHeader
 	{
 		ChunkHeader()
-			: id{}
-			, size{0}
+			: id {}
+			, size { 0 }
 		{
 		}
 
@@ -66,18 +66,18 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 	};
 
 	// RIFF チャンク
-	ChunkHeader riff{};
+	ChunkHeader riff {};
 	_ms.Read(riff.id, sizeof(riff.id), ID_SIZE);
 	massert(CompareId<ID_SIZE>(riff.id, "RIFF") && "RIFF チャンクIdの不一致 @AudioClip::Load");
 	riff.size = _ms.Read<uint32_t>();
 
 	// WAVE チャンク
-	byte wave[ID_SIZE]{};
+	byte wave[ID_SIZE] {};
 	_ms.Read(wave, sizeof(wave), ID_SIZE);
 	massert(CompareId<ID_SIZE>(wave, "WAVE") && "WAVE チャンクIdの不一致 @AudioClip::Load");
 
 	// フォーマットチャンク
-	ChunkHeader format{};
+	ChunkHeader format {};
 	_ms.Read(format.id, sizeof(format.id), ID_SIZE);
 	massert(CompareId<ID_SIZE>(format.id, "fmt ") && "フォーマット チャンクIdの不一致 @AudioClip::Load");
 	format.size = _ms.Read<uint32_t>();
@@ -91,7 +91,7 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 	pWaveData_->waveFormat.nAvgBytesPerSec = pWaveData_->waveFormat.nSamplesPerSec * pWaveData_->waveFormat.nBlockAlign;
 
 	// dataチャンクを探す
-	ChunkHeader header{};
+	ChunkHeader header {};
 	while (true)
 	{
 		_ms.Read(header.id, sizeof(header.id), ID_SIZE);
@@ -108,7 +108,7 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 	}
 
 	pWaveData_->bufferSize = header.size;
-	pWaveData_->pBuffer	   = new byte[header.size]{};
+	pWaveData_->pBuffer	   = new byte[header.size] {};
 	_ms.Read(pWaveData_->pBuffer, header.size, header.size);
 }
 

@@ -6,7 +6,7 @@ mtgb::HPViewer::HPViewer(int _hpCount)
 	for (int i = 0; i < _hpCount; i++)
 	{
 		std::string name	 = std::format("HP ({})", i);
-		GameObject* pHpImage = new GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName(name).Build());
+		GameObject* pHpImage = new GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName(name).Build());
 		Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pHpImage);
 
 		ImageRenderer& imageRenderer = ImageRenderer::Get(pHpImage->GetEntityId());
@@ -17,27 +17,21 @@ mtgb::HPViewer::HPViewer(int _hpCount)
 	size_ = Vector2F(30, 30);
 }
 
-mtgb::HPViewer::~HPViewer()
-{
-}
+mtgb::HPViewer::~HPViewer() {}
 
 void mtgb::HPViewer::Update()
 {
 	for (int i = 0; i < pHpImages_.size(); i++)
 	{
 		ImageRenderer* pImageRenderer = pHpImages_[i];
-		Vector2F pos				  = {pos_.x + size_.x * i, pos_.y};
+		Vector2F pos				  = { pos_.x + size_.x * i, pos_.y };
 		pImageRenderer->drawRect_	  = RectF(pos, size_);
 	}
 }
 
-void mtgb::HPViewer::Draw() const
-{
-}
+void mtgb::HPViewer::Draw() const {}
 
-void mtgb::HPViewer::Start()
-{
-}
+void mtgb::HPViewer::Start() {}
 
 void mtgb::HPViewer::TakeDamage(int _damage)
 {

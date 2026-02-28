@@ -39,6 +39,7 @@ namespace mtgb
 		bool IsJumping();
 		static Vector3 GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
 		static float GetGravity();
+
 	  public:
 		bool isNeedUpdate_;
 		Vector3 velocity_;

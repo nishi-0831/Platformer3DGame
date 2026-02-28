@@ -13,28 +13,24 @@
 #include "MTImGui.h"
 namespace
 {
-	static const float DEFAULT_FOV{60.0f};	   // デフォルトの視野角 (Field Of View)
-	static const float DEFAULT_NEAR{0.1f};	   // デフォルトのニヤー距離
-	static const float DEFAULT_FAR{100000.0f}; // デフォルトのファー距離
+	static const float DEFAULT_FOV { 60.0f };	  // デフォルトの視野角 (Field Of View)
+	static const float DEFAULT_NEAR { 0.1f };	  // デフォルトのニヤー距離
+	static const float DEFAULT_FAR { 100000.0f }; // デフォルトのファー距離
 } // namespace
 
 mtgb::CameraSystem::CameraSystem()
-	: pTransforms_{}
-	, fov_{DEFAULT_FOV}
-	, near_{DEFAULT_NEAR}
-	, far_{DEFAULT_FAR}
-	, hCurrentCamera_{INVALID_HANDLE}
-	, currentFrameId_{0}
+	: pTransforms_ {}
+	, fov_ { DEFAULT_FOV }
+	, near_ { DEFAULT_NEAR }
+	, far_ { DEFAULT_FAR }
+	, hCurrentCamera_ { INVALID_HANDLE }
+	, currentFrameId_ { 0 }
 {
 }
 
-mtgb::CameraSystem::~CameraSystem()
-{
-}
+mtgb::CameraSystem::~CameraSystem() {}
 
-void mtgb::CameraSystem::Initialize()
-{
-}
+void mtgb::CameraSystem::Initialize() {}
 
 void mtgb::CameraSystem::Update()
 {
@@ -43,7 +39,7 @@ void mtgb::CameraSystem::Update()
 
 mtgb::CameraHandleInScene mtgb::CameraSystem::RegisterDrawCamera(Transform* _pCameraTransform)
 {
-	CameraHandleInScene handle{INVALID_HANDLE};
+	CameraHandleInScene handle { INVALID_HANDLE };
 
 	// もしカメラが未登録なら
 	if (pTransforms_.size() == 0)
@@ -54,7 +50,7 @@ mtgb::CameraHandleInScene mtgb::CameraSystem::RegisterDrawCamera(Transform* _pCa
 		return handle;
 	}
 
-	auto itr{std::find(pTransforms_.begin(), pTransforms_.end(), _pCameraTransform)};
+	auto itr { std::find(pTransforms_.begin(), pTransforms_.end(), _pCameraTransform) };
 
 	// 見つからなかった
 	if (itr == pTransforms_.end())
@@ -152,7 +148,7 @@ const mtgb::Transform& mtgb::CameraSystem::GetTransform(CameraHandleInScene _hCa
 {
 	massert(0 <= _hCamera && _hCamera < pTransforms_.size() && "カメラハンドルが無効です。");
 
-	Transform* pTransform{pTransforms_[_hCamera]};
+	Transform* pTransform { pTransforms_[_hCamera] };
 
 	massert(pTransform != nullptr && "既に無効化されたカメラが参照されました。");
 
@@ -171,11 +167,11 @@ void mtgb::CameraSystem::GetViewMatrix(Matrix4x4* _pView) const
 
 void mtgb::CameraSystem::GetViewMatrix(Matrix4x4* _pView, CameraHandleInScene _hCamera) const
 {
-	const Transform& cameraTransform{GetTransform(_hCamera)};
+	const Transform& cameraTransform { GetTransform(_hCamera) };
 
-	Vector4 vEyePt{cameraTransform.GetWorldPosition()};				// カメラ（視点）位置
-	Vector4 vLookatPt{Vector4(cameraTransform.Forward()) + vEyePt}; // 注視位置
-	Vector4 vUpVec{cameraTransform.Up()};							// 上方位置
+	Vector4 vEyePt { cameraTransform.GetWorldPosition() };			   // カメラ（視点）位置
+	Vector4 vLookatPt { Vector4(cameraTransform.Forward()) + vEyePt }; // 注視位置
+	Vector4 vUpVec { cameraTransform.Up() };						   // 上方位置
 	*_pView = XMMatrixLookAtLH(vEyePt, vLookatPt, vUpVec);
 }
 
@@ -184,7 +180,7 @@ void mtgb::CameraSystem::GetProjMatrix(Matrix4x4* _pProj) const
 	using DirectX::XMConvertToRadians;
 	using DirectX::XMMatrixPerspectiveFovLH;
 
-	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
+	const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
 	*_pProj = XMMatrixPerspectiveFovLH(
 		XMConvertToRadians(fov_),
@@ -196,7 +192,7 @@ void mtgb::CameraSystem::GetProjMatrix(Matrix4x4* _pProj) const
 
 void mtgb::CameraSystem::GetPosition(Vector4* _pPosition) const
 {
-	*_pPosition = Vector4{GetTransform().GetWorldPosition()};
+	*_pPosition = Vector4 { GetTransform().GetWorldPosition() };
 }
 
 float mtgb::CameraSystem::GetNear() const
