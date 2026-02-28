@@ -1,10 +1,10 @@
 #include "AudioClip.h"
 #include "ReleaseUtility.h"
-#include "cmtgb.h"
+#include "MTAssert.h"
 #include "WaveData.h"
 
 #define DR_MP3_IMPLEMENTATION
-#include "../dr_mp3.h"
+#include "dr_libs/dr_mp3.h"
 
 using mtbin::Utility::CompareId;
 
