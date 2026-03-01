@@ -1,7 +1,7 @@
 var searchData=
 [
   ['effectinstances_5f_0',['effectInstances_',['../classmtgb_1_1EffectManager.html#a5cbd85a69983467d999df68e8c8f418f',1,'mtgb::EffectManager']]],
-  ['effectlist_5f_1',['effectList_',['../classmtgb_1_1EffectManager.html#a7e6ce820f401591e0901273ba2d25b5b',1,'mtgb::EffectManager']]],
+  ['effectlist_5f_1',['effectList_',['../classmtgb_1_1EffectManager.html#a358bb160e41197e9e7bf548d96153c18',1,'mtgb::EffectManager']]],
   ['effectref_5f_2',['effectRef_',['../classmtgb_1_1EffectData.html#ac0f882bb1b38192d161612ceff4b4cf2',1,'mtgb::EffectData']]],
   ['elapsed_3',['elapsed',['../classrun-clang-tidy_1_1ClangTidyResult.html#ab2b4c0e675e1b0dfaefb0c1864432797',1,'run-clang-tidy::ClangTidyResult']]],
   ['elapsed_5f_4',['elapsed_',['../structInterpolatorState.html#a0d67a92d5a1fd10c3d01848bb7117cd1',1,'InterpolatorState::elapsed_()'],['../classmtgb_1_1Interpolator.html#a4121ff788f7bdd832d9cbb5d72f2bdd5',1,'mtgb::Interpolator::elapsed_()'],['../classFadeOutScreen.html#a97fe91fcb98796467d3e13822a33f295',1,'FadeOutScreen::elapsed_()']]],

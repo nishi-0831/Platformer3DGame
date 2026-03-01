@@ -119,10 +119,10 @@ $(document).ready(function(){initNavTree('OBJ_8cpp_source.html',''); initResizab
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma comment(lib, &quot;d3dCompiler.lib&quot;</span>)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma comment(lib, &quot;winmm.lib&quot;</span>)</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>ComPtr&lt;ID3D11InputLayout&gt; <a class="code hl_variable" href="classmtgb_1_1OBJ.html#aecf92908ebf5294ce61266f576f8181c">mtgb::OBJ::pInputLayout_</a>{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>ComPtr&lt;ID3D11VertexShader&gt; <a class="code hl_variable" href="classmtgb_1_1OBJ.html#a18e30ddfc33a646fedabd0d322b500b4">mtgb::OBJ::pVertexShader_</a>{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>ComPtr&lt;ID3D11PixelShader&gt; <a class="code hl_variable" href="classmtgb_1_1OBJ.html#a053aef263e8e3fdf3a997e5b62ef4bf7">mtgb::OBJ::pPixelShader_</a>{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>ComPtr&lt;ID3D11Buffer&gt; <a class="code hl_variable" href="classmtgb_1_1OBJ.html#a250fcb4734e99bcebab07a7351fe89e0">mtgb::OBJ::pConstantBuffer_</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>ComPtr&lt;ID3D11InputLayout&gt; <a class="code hl_variable" href="classmtgb_1_1OBJ.html#aecf92908ebf5294ce61266f576f8181c">mtgb::OBJ::pInputLayout_</a> { <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>ComPtr&lt;ID3D11VertexShader&gt; <a class="code hl_variable" href="classmtgb_1_1OBJ.html#a18e30ddfc33a646fedabd0d322b500b4">mtgb::OBJ::pVertexShader_</a> { <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>ComPtr&lt;ID3D11PixelShader&gt; <a class="code hl_variable" href="classmtgb_1_1OBJ.html#a053aef263e8e3fdf3a997e5b62ef4bf7">mtgb::OBJ::pPixelShader_</a> { <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>ComPtr&lt;ID3D11Buffer&gt; <a class="code hl_variable" href="classmtgb_1_1OBJ.html#a250fcb4734e99bcebab07a7351fe89e0">mtgb::OBJ::pConstantBuffer_</a> { <span class="keyword">nullptr</span> };</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classmtgb_1_1OBJ.html#a5476ef76649251ab9d32e2fe720bc3c4">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1OBJ.html#a5476ef76649251ab9d32e2fe720bc3c4">mtgb::OBJ::Initialize</a>()</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('OBJ_8cpp_source.html',''); initResizab
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">// 頂点インプットレイアウトを定義</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    D3D11_INPUT_ELEMENT_DESC layout[] = {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        {<span class="stringliteral">&quot;POSITION&quot;</span>, 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0},</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        { <span class="stringliteral">&quot;POSITION&quot;</span>, 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    };</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">int</span> numElements = <span class="keyword">sizeof</span>(layout) / <span class="keyword">sizeof</span>(layout[0]);</div>
@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('OBJ_8cpp_source.html',''); initResizab
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_struct" href="structmtgb_1_1ModelData.html">ModelData</a>* pData = <span class="keyword">new</span> <a class="code hl_struct" href="structmtgb_1_1ModelData.html">ModelData</a>;</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_class" href="classmtgb_1_1OBJ.html">OBJ</a>&amp; pInstance{Game::System&lt;OBJ&gt;()};</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_class" href="classmtgb_1_1OBJ.html">OBJ</a>&amp; pInstance { Game::System&lt;OBJ&gt;() };</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="comment">// 開いたファイル一覧から同じファイル名のものが無いか探す</span></div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">bool</span> isExist = <span class="keyword">false</span>;</div>
@@ -227,183 +227,181 @@ $(document).ready(function(){initNavTree('OBJ_8cpp_source.html',''); initResizab
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)pInstance.datas_.size() - 1;</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classmtgb_1_1OBJ.html#a588ee3a098845d3abe50ba48da693b63">  130</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1OBJ.html#a588ee3a098845d3abe50ba48da693b63">mtgb::OBJ::Update</a>()</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>{</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">  134</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ::Release</a>()</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>{</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classmtgb_1_1OBJ.html#a588ee3a098845d3abe50ba48da693b63">  130</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1OBJ.html#a588ee3a098845d3abe50ba48da693b63">mtgb::OBJ::Update</a>() {}</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">  132</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ::Release</a>()</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>{</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6e6b17e6da131dce7661c9b95eaae637">SAFE_CLEAR_CONTAINER_DELETE</a>(datas_);</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6e6b17e6da131dce7661c9b95eaae637">SAFE_CLEAR_CONTAINER_DELETE</a>(datas_);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    pInputLayout_.Reset();</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    pVertexShader_.Reset();</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    pPixelShader_.Reset();</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    pConstantBuffer_.Reset();</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>}</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classmtgb_1_1OBJ.html#a5c7f971dd3ec79f079b65816701a9ed8">  145</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1OBJ.html#a5c7f971dd3ec79f079b65816701a9ed8">mtgb::OBJ::Draw</a>(<span class="keywordtype">int</span> _hModel, <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>* _transform)</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a80c3f65ad5458eebc5095d6520d85510">DirectX11Draw::SetIsWriteToDepthBuffer</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">// DirectX::XMMATRIX mWorld;</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mWorld;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    _transform-&gt;<a class="code hl_function" href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">GenerateWorldMatrix</a>(&amp;mWorld);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mView;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="comment">// ビュートランスフォーム（視点座標変換）</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&amp; cameraTransform = Game::System&lt;CameraSystem&gt;().GetTransform();</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    Game::System&lt;CameraSystem&gt;().GetViewMatrix(&amp;mView);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mProj;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    Game::System&lt;CameraSystem&gt;().GetProjMatrix(&amp;mProj);</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2Int</a> SCREEN_SIZE{Game::System&lt;Screen&gt;().GetSize()};</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    ID3D11DeviceContext* tmpContext = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>.Get();</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    tmpContext-&gt;VSSetShader(pVertexShader_.Get(), NULL, 0);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    tmpContext-&gt;PSSetShader(pPixelShader_.Get(), NULL, 0);</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="comment">// シェーダーのコンスタントバッファーに各種データを渡す</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    D3D11_MAPPED_SUBRESOURCE pData;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <a class="code hl_struct" href="structmtgb_1_1SimpleConstantBuffer.html">SimpleConstantBuffer</a> cb;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    HRESULT hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;Map(pConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &amp;pData);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;Mapに失敗 @OBJ::Draw&quot;</span>);</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">if</span> (SUCCEEDED(hResult))</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    {</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        DirectX::XMMATRIX mWVP = (mWorld)*mView * mProj;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="comment">// cb.mWVP = DirectX::XMMatrixTranspose(*mWorld);</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        cb.<a class="code hl_variable" href="structmtgb_1_1SimpleConstantBuffer.html#a83b0ab1c4c17b58a8d83b6be86cb26ea">mWVP</a> = DirectX::XMMatrixTranspose(mWVP);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    pInputLayout_.Reset();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    pVertexShader_.Reset();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    pPixelShader_.Reset();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    pConstantBuffer_.Reset();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classmtgb_1_1OBJ.html#a5c7f971dd3ec79f079b65816701a9ed8">  143</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1OBJ.html#a5c7f971dd3ec79f079b65816701a9ed8">mtgb::OBJ::Draw</a>(<span class="keywordtype">int</span> _hModel, <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>* _transform)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>{</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a80c3f65ad5458eebc5095d6520d85510">DirectX11Draw::SetIsWriteToDepthBuffer</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="comment">// DirectX::XMMATRIX mWorld;</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mWorld;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    _transform-&gt;<a class="code hl_function" href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">GenerateWorldMatrix</a>(&amp;mWorld);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mView;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="comment">// ビュートランスフォーム（視点座標変換）</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&amp; cameraTransform = Game::System&lt;CameraSystem&gt;().GetTransform();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    Game::System&lt;CameraSystem&gt;().GetViewMatrix(&amp;mView);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mProj;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    Game::System&lt;CameraSystem&gt;().GetProjMatrix(&amp;mProj);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2Int</a> SCREEN_SIZE { Game::System&lt;Screen&gt;().GetSize() };</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    ID3D11DeviceContext* tmpContext = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>.Get();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    tmpContext-&gt;VSSetShader(pVertexShader_.Get(), NULL, 0);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    tmpContext-&gt;PSSetShader(pPixelShader_.Get(), NULL, 0);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="comment">// シェーダーのコンスタントバッファーに各種データを渡す</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    D3D11_MAPPED_SUBRESOURCE pData;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <a class="code hl_struct" href="structmtgb_1_1SimpleConstantBuffer.html">SimpleConstantBuffer</a> cb;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    HRESULT hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;Map(pConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &amp;pData);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;Mapに失敗 @OBJ::Draw&quot;</span>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">if</span> (SUCCEEDED(hResult))</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        DirectX::XMMATRIX mWVP = (mWorld)*mView * mProj;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="comment">// cb.mWVP = DirectX::XMMatrixTranspose(*mWorld);</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        cb.<a class="code hl_variable" href="structmtgb_1_1SimpleConstantBuffer.html#a83b0ab1c4c17b58a8d83b6be86cb26ea">mWVP</a> = DirectX::XMMatrixTranspose(mWVP);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        memcpy_s(pData.pData, pData.RowPitch, (<span class="keywordtype">void</span>*)&amp;cb, <span class="keyword">sizeof</span>(cb));</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        memcpy_s(pData.pData, pData.RowPitch, (<span class="keywordtype">void</span>*)&amp;cb, <span class="keyword">sizeof</span>(cb));</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;Unmap(pConstantBuffer_.Get(), 0);</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;Unmap(pConstantBuffer_.Get(), 0);</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordtype">int</span> slot = 0;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        tmpContext-&gt;VSSetConstantBuffers(slot, 1, pConstantBuffer_.GetAddressOf());</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        tmpContext-&gt;PSSetConstantBuffers(slot, 1, pConstantBuffer_.GetAddressOf());</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordtype">int</span> slot = 0;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        tmpContext-&gt;VSSetConstantBuffers(slot, 1, pConstantBuffer_.GetAddressOf());</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        tmpContext-&gt;PSSetConstantBuffers(slot, 1, pConstantBuffer_.GetAddressOf());</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        tmpContext-&gt;IASetInputLayout(pInputLayout_.Get());</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        tmpContext-&gt;IASetInputLayout(pInputLayout_.Get());</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        tmpContext-&gt;IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        tmpContext-&gt;IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="comment">// 頂点バッファセット</span></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        UINT stride = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structmtgb_1_1SimpleVertex.html">SimpleVertex</a>);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        UINT offset = 0;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        tmpContext-&gt;IASetVertexBuffers(slot, 1, datas_[_hModel]-&gt;mesh-&gt;pVertexBuffer.GetAddressOf(), &amp;stride, &amp;offset);</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="comment">// インデックスバッファセット</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        tmpContext-&gt;IASetIndexBuffer(datas_[_hModel]-&gt;mesh-&gt;pIndexBuffer.Get(), DXGI_FORMAT_R32_UINT, 0);</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="comment">// プリミティブをレンダリング</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        tmpContext-&gt;DrawIndexed(datas_[_hModel]-&gt;mesh-&gt;numFace * 3, 0, 0);</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="comment">// DirectX11Draw::End();</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    }</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classmtgb_1_1OBJ.html#af040ad8035d2a47c94950b914fc8751c">  204</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1OBJ.html#af040ad8035d2a47c94950b914fc8751c">mtgb::OBJ::InitMesh</a>(<span class="keyword">const</span> std::string&amp; _fileName, <a class="code hl_struct" href="structmtgb_1_1SimpleMesh.html">SimpleMesh</a>* _mesh)</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>{</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordtype">float</span> x, y, z;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordtype">int</span> v1 = 0, v2 = 0, v3 = 0;</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordtype">char</span> key[190] = {0};</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="comment">// ファイルを開いて内容を読み込む</span></div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    FILE* fp = NULL;</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    fopen_s(&amp;fp, _fileName.c_str(), <span class="stringliteral">&quot;rt&quot;</span>);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="comment">// ファイルオープンの確認</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="comment">/*if (fp == NULL) {</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">        massert(false &amp;&amp; &quot;OBJファイルのオープンに失敗 @OBJ::InitMesh&quot;);</span></div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">        return;</span></div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">    }*/</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="comment">// 初期化</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#ac03969bdbac2961ad605c97fe5493377">numVert</a> = 0;</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a546b6e261cfa4e20a2006a51e8f1a291">numFace</a> = 0;</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">// まずは頂点数、ポリゴン数を調べる</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">while</span> (!feof(fp))</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="comment">// キーワード読み込み</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        fscanf_s(fp, <span class="stringliteral">&quot;%s &quot;</span>, key, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)<span class="keyword">sizeof</span>(key));</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="comment">// 頂点</span></div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a>(key, <span class="stringliteral">&quot;v&quot;</span>) == 0)</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        {</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#ac03969bdbac2961ad605c97fe5493377">numVert</a>++;</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        }</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        <span class="comment">// フェイス（ポリゴン）</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a>(key, <span class="stringliteral">&quot;f&quot;</span>) == 0)</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        {</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a546b6e261cfa4e20a2006a51e8f1a291">numFace</a>++;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        }</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    }</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="comment">// 一時的なメモリ確保（頂点バッファとインデックスバッファ）</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <a class="code hl_struct" href="structmtgb_1_1SimpleVertex.html">SimpleVertex</a>* pVertexBuffer = <span class="keyword">new</span> <a class="code hl_struct" href="structmtgb_1_1SimpleVertex.html">SimpleVertex</a>[_mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#ac03969bdbac2961ad605c97fe5493377">numVert</a>];</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keywordtype">int</span>* pIndexBuffer           = <span class="keyword">new</span> <span class="keywordtype">int</span>[_mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a546b6e261cfa4e20a2006a51e8f1a291">numFace</a> * 3];</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="comment">// 本読み込み</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    fseek(fp, SEEK_SET, 0);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordtype">int</span> vertCount = 0; <span class="comment">// 読み込みカウンター</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keywordtype">int</span> faceCount = 0; <span class="comment">// 読み込みカウンター</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordflow">while</span> (!feof(fp))</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    {</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <span class="comment">// キーワード読み込み</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        ZeroMemory(key, <span class="keyword">sizeof</span>(key));</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        fscanf_s(fp, <span class="stringliteral">&quot;%s &quot;</span>, key, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)<span class="keyword">sizeof</span>(key));</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        <span class="comment">// 頂点 読み込み</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a>(key, <span class="stringliteral">&quot;v&quot;</span>) == 0)</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        {</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            fscanf_s(fp, <span class="stringliteral">&quot;%f %f %f&quot;</span>, &amp;x, &amp;y, &amp;z);</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            <span class="comment">// OBJは右手座標系なのでxあるいはｚを反転</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            pVertexBuffer[vertCount].<a class="code hl_variable" href="structmtgb_1_1SimpleVertex.html#a5a797030a97fd287e35923d1d76dd12f">pos</a> = DirectX::XMVectorSet(-x, y, z, 1);</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            vertCount++;</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        }</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="comment">// フェイス（ポリゴン） 読み込み</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a>(key, <span class="stringliteral">&quot;f&quot;</span>) == 0)</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        {</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            fscanf_s(fp, <span class="stringliteral">&quot;%d %d %d&quot;</span>, &amp;v1, &amp;v2, &amp;v3);</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            pIndexBuffer[faceCount * 3]     = v1 - 1;</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            pIndexBuffer[faceCount * 3 + 1] = v2 - 1;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            pIndexBuffer[faceCount * 3 + 2] = v3 - 1;</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            faceCount++;</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        }</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="comment">// 頂点バッファセット</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        UINT stride = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structmtgb_1_1SimpleVertex.html">SimpleVertex</a>);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        UINT offset = 0;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        tmpContext-&gt;IASetVertexBuffers(slot, 1, datas_[_hModel]-&gt;mesh-&gt;pVertexBuffer.GetAddressOf(), &amp;stride, &amp;offset);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="comment">// インデックスバッファセット</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        tmpContext-&gt;IASetIndexBuffer(datas_[_hModel]-&gt;mesh-&gt;pIndexBuffer.Get(), DXGI_FORMAT_R32_UINT, 0);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="comment">// プリミティブをレンダリング</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        tmpContext-&gt;DrawIndexed(datas_[_hModel]-&gt;mesh-&gt;numFace * 3, 0, 0);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="comment">// DirectX11Draw::End();</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>}</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="classmtgb_1_1OBJ.html#af040ad8035d2a47c94950b914fc8751c">  202</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1OBJ.html#af040ad8035d2a47c94950b914fc8751c">mtgb::OBJ::InitMesh</a>(<span class="keyword">const</span> std::string&amp; _fileName, <a class="code hl_struct" href="structmtgb_1_1SimpleMesh.html">SimpleMesh</a>* _mesh)</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>{</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordtype">float</span> x, y, z;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordtype">int</span> v1 = 0, v2 = 0, v3 = 0;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordtype">char</span> key[190] = { 0 };</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="comment">// ファイルを開いて内容を読み込む</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    FILE* fp = NULL;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    fopen_s(&amp;fp, _fileName.c_str(), <span class="stringliteral">&quot;rt&quot;</span>);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="comment">// ファイルオープンの確認</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="comment">/*if (fp == NULL) {</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">        massert(false &amp;&amp; &quot;OBJファイルのオープンに失敗 @OBJ::InitMesh&quot;);</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">        return;</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">    }*/</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="comment">// 初期化</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#ac03969bdbac2961ad605c97fe5493377">numVert</a> = 0;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a546b6e261cfa4e20a2006a51e8f1a291">numFace</a> = 0;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="comment">// まずは頂点数、ポリゴン数を調べる</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordflow">while</span> (!feof(fp))</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="comment">// キーワード読み込み</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        fscanf_s(fp, <span class="stringliteral">&quot;%s &quot;</span>, key, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)<span class="keyword">sizeof</span>(key));</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="comment">// 頂点</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a>(key, <span class="stringliteral">&quot;v&quot;</span>) == 0)</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#ac03969bdbac2961ad605c97fe5493377">numVert</a>++;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="comment">// フェイス（ポリゴン）</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a>(key, <span class="stringliteral">&quot;f&quot;</span>) == 0)</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        {</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a546b6e261cfa4e20a2006a51e8f1a291">numFace</a>++;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="comment">// 一時的なメモリ確保（頂点バッファとインデックスバッファ）</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <a class="code hl_struct" href="structmtgb_1_1SimpleVertex.html">SimpleVertex</a>* pVertexBuffer = <span class="keyword">new</span> <a class="code hl_struct" href="structmtgb_1_1SimpleVertex.html">SimpleVertex</a>[_mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#ac03969bdbac2961ad605c97fe5493377">numVert</a>];</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordtype">int</span>* pIndexBuffer           = <span class="keyword">new</span> <span class="keywordtype">int</span>[_mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a546b6e261cfa4e20a2006a51e8f1a291">numFace</a> * 3];</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="comment">// 本読み込み</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    fseek(fp, SEEK_SET, 0);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordtype">int</span> vertCount = 0; <span class="comment">// 読み込みカウンター</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordtype">int</span> faceCount = 0; <span class="comment">// 読み込みカウンター</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keywordflow">while</span> (!feof(fp))</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <span class="comment">// キーワード読み込み</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        ZeroMemory(key, <span class="keyword">sizeof</span>(key));</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        fscanf_s(fp, <span class="stringliteral">&quot;%s &quot;</span>, key, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)<span class="keyword">sizeof</span>(key));</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="comment">// 頂点 読み込み</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a>(key, <span class="stringliteral">&quot;v&quot;</span>) == 0)</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            fscanf_s(fp, <span class="stringliteral">&quot;%f %f %f&quot;</span>, &amp;x, &amp;y, &amp;z);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            <span class="comment">// OBJは右手座標系なのでxあるいはｚを反転</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            pVertexBuffer[vertCount].<a class="code hl_variable" href="structmtgb_1_1SimpleVertex.html#a5a797030a97fd287e35923d1d76dd12f">pos</a> = DirectX::XMVectorSet(-x, y, z, 1);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            vertCount++;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="comment">// フェイス（ポリゴン） 読み込み</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a>(key, <span class="stringliteral">&quot;f&quot;</span>) == 0)</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            fscanf_s(fp, <span class="stringliteral">&quot;%d %d %d&quot;</span>, &amp;v1, &amp;v2, &amp;v3);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            pIndexBuffer[faceCount * 3]     = v1 - 1;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            pIndexBuffer[faceCount * 3 + 1] = v2 - 1;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            pIndexBuffer[faceCount * 3 + 2] = v3 - 1;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            faceCount++;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        }</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    }</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    fclose(fp);</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    fclose(fp);</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="comment">// 頂点バッファ作成</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    D3D11_BUFFER_DESC bd;</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    bd.Usage          = D3D11_USAGE_DEFAULT;</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    bd.ByteWidth      = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structmtgb_1_1SimpleVertex.html">SimpleVertex</a>) * _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#ac03969bdbac2961ad605c97fe5493377">numVert</a>;</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    bd.BindFlags      = D3D11_BIND_VERTEX_BUFFER;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    bd.CPUAccessFlags = 0;</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    bd.MiscFlags      = 0;</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    D3D11_SUBRESOURCE_DATA initData;</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    initData.pSysMem          = pVertexBuffer;</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    initData.SysMemPitch      = 0;</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    initData.SysMemSlicePitch = 0;</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    HRESULT hResult =</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateBuffer(&amp;bd, &amp;initData, _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a0537e8adfc7f8382483a52c4bb6a0ed2">pVertexBuffer</a>.ReleaseAndGetAddressOf());</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;頂点バッファの作成に失敗しました @OBJ::InitStaticMesh&quot;</span>);</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="comment">// インデックスバッファ作成</span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    bd.Usage                  = D3D11_USAGE_DEFAULT;</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    bd.ByteWidth              = <span class="keyword">sizeof</span>(int) * _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a546b6e261cfa4e20a2006a51e8f1a291">numFace</a> * 3;</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    bd.BindFlags              = D3D11_BIND_INDEX_BUFFER;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    bd.CPUAccessFlags         = 0;</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    bd.MiscFlags              = 0;</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    initData.pSysMem          = pIndexBuffer;</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    initData.SysMemPitch      = 0;</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    initData.SysMemSlicePitch = 0;</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateBuffer(&amp;bd, &amp;initData, _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a38df052bf12ba154fb9e89c4ccbfe138">pIndexBuffer</a>.ReleaseAndGetAddressOf());</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;インデックスバッファの作成に失敗しました @OBJ::InitStaticMesh&quot;</span>);</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keyword">delete</span>[] pVertexBuffer;</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keyword">delete</span>[] pIndexBuffer;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>}</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="comment">// 頂点バッファ作成</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    D3D11_BUFFER_DESC bd;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    bd.Usage          = D3D11_USAGE_DEFAULT;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    bd.ByteWidth      = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structmtgb_1_1SimpleVertex.html">SimpleVertex</a>) * _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#ac03969bdbac2961ad605c97fe5493377">numVert</a>;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    bd.BindFlags      = D3D11_BIND_VERTEX_BUFFER;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    bd.CPUAccessFlags = 0;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    bd.MiscFlags      = 0;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    D3D11_SUBRESOURCE_DATA initData;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    initData.pSysMem          = pVertexBuffer;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    initData.SysMemPitch      = 0;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    initData.SysMemSlicePitch = 0;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    HRESULT hResult =</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateBuffer(&amp;bd, &amp;initData, _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a0537e8adfc7f8382483a52c4bb6a0ed2">pVertexBuffer</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;頂点バッファの作成に失敗しました @OBJ::InitStaticMesh&quot;</span>);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="comment">// インデックスバッファ作成</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    bd.Usage                  = D3D11_USAGE_DEFAULT;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    bd.ByteWidth              = <span class="keyword">sizeof</span>(int) * _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a546b6e261cfa4e20a2006a51e8f1a291">numFace</a> * 3;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    bd.BindFlags              = D3D11_BIND_INDEX_BUFFER;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    bd.CPUAccessFlags         = 0;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    bd.MiscFlags              = 0;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    initData.pSysMem          = pIndexBuffer;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    initData.SysMemPitch      = 0;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    initData.SysMemSlicePitch = 0;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateBuffer(&amp;bd, &amp;initData, _mesh-&gt;<a class="code hl_variable" href="structmtgb_1_1SimpleMesh.html#a38df052bf12ba154fb9e89c4ccbfe138">pIndexBuffer</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;インデックスバッファの作成に失敗しました @OBJ::InitStaticMesh&quot;</span>);</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keyword">delete</span>[] pVertexBuffer;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keyword">delete</span>[] pIndexBuffer;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>}</div>
 <div class="ttc" id="aCameraSystem_8h_html"><div class="ttname"><a href="CameraSystem_8h.html">CameraSystem.h</a></div></div>
 <div class="ttc" id="aDirectX11Draw_8h_html"><div class="ttname"><a href="DirectX11Draw_8h.html">DirectX11Draw.h</a></div></div>
 <div class="ttc" id="aISystem_8h_html"><div class="ttname"><a href="ISystem_8h.html">ISystem.h</a></div></div>
@@ -421,7 +419,7 @@ $(document).ready(function(){initNavTree('OBJ_8cpp_source.html',''); initResizab
 <div class="ttc" id="aTransform_8h_html"><div class="ttname"><a href="Transform_8h.html">Transform.h</a></div></div>
 <div class="ttc" id="aVector2Int_8h_html"><div class="ttname"><a href="Vector2Int_8h.html">Vector2Int.h</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a5339b5f02833ad0ae154686c4a0ae037"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">mtgb::DirectX11Draw::pDevice_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11Device &gt; pDevice_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00139">DirectX11Draw.h:139</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a80c3f65ad5458eebc5095d6520d85510"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a80c3f65ad5458eebc5095d6520d85510">mtgb::DirectX11Draw::SetIsWriteToDepthBuffer</a></div><div class="ttdeci">static void SetIsWriteToDepthBuffer(const bool _enabled)</div><div class="ttdoc">深度バッファへの書き込みをするか</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8cpp_source.html#l00056">DirectX11Draw.cpp:56</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a80c3f65ad5458eebc5095d6520d85510"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a80c3f65ad5458eebc5095d6520d85510">mtgb::DirectX11Draw::SetIsWriteToDepthBuffer</a></div><div class="ttdeci">static void SetIsWriteToDepthBuffer(const bool _enabled)</div><div class="ttdoc">深度バッファへの書き込みをするか</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8cpp_source.html#l00057">DirectX11Draw.cpp:57</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_acad8126bc4c4a3ab9b2c871cf5dc94d1"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">mtgb::DirectX11Draw::pContext_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11DeviceContext &gt; pContext_</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8h_source.html#l00140">DirectX11Draw.h:140</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1OBJ_html"><div class="ttname"><a href="classmtgb_1_1OBJ.html">mtgb::OBJ</a></div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8h_source.html#l00054">OBJ.h:55</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1OBJ_html_a053aef263e8e3fdf3a997e5b62ef4bf7"><div class="ttname"><a href="classmtgb_1_1OBJ.html#a053aef263e8e3fdf3a997e5b62ef4bf7">mtgb::OBJ::pPixelShader_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11PixelShader &gt; pPixelShader_</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8h_source.html#l00071">OBJ.h:71</a></div></div>
@@ -429,13 +427,13 @@ $(document).ready(function(){initNavTree('OBJ_8cpp_source.html',''); initResizab
 <div class="ttc" id="aclassmtgb_1_1OBJ_html_a250fcb4734e99bcebab07a7351fe89e0"><div class="ttname"><a href="classmtgb_1_1OBJ.html#a250fcb4734e99bcebab07a7351fe89e0">mtgb::OBJ::pConstantBuffer_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11Buffer &gt; pConstantBuffer_</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8h_source.html#l00072">OBJ.h:72</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1OBJ_html_a5476ef76649251ab9d32e2fe720bc3c4"><div class="ttname"><a href="classmtgb_1_1OBJ.html#a5476ef76649251ab9d32e2fe720bc3c4">mtgb::OBJ::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8cpp_source.html#l00027">OBJ.cpp:27</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1OBJ_html_a588ee3a098845d3abe50ba48da693b63"><div class="ttname"><a href="classmtgb_1_1OBJ.html#a588ee3a098845d3abe50ba48da693b63">mtgb::OBJ::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8cpp_source.html#l00130">OBJ.cpp:130</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1OBJ_html_a5c7f971dd3ec79f079b65816701a9ed8"><div class="ttname"><a href="classmtgb_1_1OBJ.html#a5c7f971dd3ec79f079b65816701a9ed8">mtgb::OBJ::Draw</a></div><div class="ttdeci">void Draw(int _hModel, const Transform *_transform)</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8cpp_source.html#l00145">OBJ.cpp:145</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1OBJ_html_acc72f3ba716b9e4c637f1aa4161a4037"><div class="ttname"><a href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8cpp_source.html#l00134">OBJ.cpp:134</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1OBJ_html_a5c7f971dd3ec79f079b65816701a9ed8"><div class="ttname"><a href="classmtgb_1_1OBJ.html#a5c7f971dd3ec79f079b65816701a9ed8">mtgb::OBJ::Draw</a></div><div class="ttdeci">void Draw(int _hModel, const Transform *_transform)</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8cpp_source.html#l00143">OBJ.cpp:143</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1OBJ_html_acc72f3ba716b9e4c637f1aa4161a4037"><div class="ttname"><a href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8cpp_source.html#l00132">OBJ.cpp:132</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1OBJ_html_ae5dd55a4bb4b2dc4934c7eeeef172123"><div class="ttname"><a href="classmtgb_1_1OBJ.html#ae5dd55a4bb4b2dc4934c7eeeef172123">mtgb::OBJ::Load</a></div><div class="ttdeci">static int Load(const std::string &amp;_fileName)</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8cpp_source.html#l00089">OBJ.cpp:89</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1OBJ_html_aecf92908ebf5294ce61266f576f8181c"><div class="ttname"><a href="classmtgb_1_1OBJ.html#aecf92908ebf5294ce61266f576f8181c">mtgb::OBJ::pInputLayout_</a></div><div class="ttdeci">static ComPtr&lt; ID3D11InputLayout &gt; pInputLayout_</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8h_source.html#l00069">OBJ.h:69</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1OBJ_html_af040ad8035d2a47c94950b914fc8751c"><div class="ttname"><a href="classmtgb_1_1OBJ.html#af040ad8035d2a47c94950b914fc8751c">mtgb::OBJ::InitMesh</a></div><div class="ttdeci">void InitMesh(const std::string &amp;_fileName, SimpleMesh *_mesh)</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8cpp_source.html#l00204">OBJ.cpp:204</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1OBJ_html_af040ad8035d2a47c94950b914fc8751c"><div class="ttname"><a href="classmtgb_1_1OBJ.html#af040ad8035d2a47c94950b914fc8751c">mtgb::OBJ::InitMesh</a></div><div class="ttdeci">void InitMesh(const std::string &amp;_fileName, SimpleMesh *_mesh)</div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8cpp_source.html#l00202">OBJ.cpp:202</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html"><div class="ttname"><a href="classmtgb_1_1Transform.html">mtgb::Transform</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00016">Transform.h:17</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Transform_html_a2c166b8c575ce4893f881836eee54bc1"><div class="ttname"><a href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">mtgb::Transform::GenerateWorldMatrix</a></div><div class="ttdeci">void GenerateWorldMatrix(Matrix4x4 *_pMatrix) const</div><div class="ttdoc">ワールド行列を生成する</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00104">Transform.cpp:104</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a2c166b8c575ce4893f881836eee54bc1"><div class="ttname"><a href="classmtgb_1_1Transform.html#a2c166b8c575ce4893f881836eee54bc1">mtgb::Transform::GenerateWorldMatrix</a></div><div class="ttdeci">void GenerateWorldMatrix(Matrix4x4 *_pMatrix) const</div><div class="ttdoc">ワールド行列を生成する</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00102">Transform.cpp:102</a></div></div>
 <div class="ttc" id="arelates_8cpp_html_a7ceb7d379a52f7e26418e7a446b4a41a"><div class="ttname"><a href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a></div><div class="ttdeci">int strcmp(const String &amp;s1, const String &amp;s2)</div><div class="ttdef"><b>Definition:</b> <a href="relates_8cpp_source.html#l00014">relates.cpp:14</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Matrix4x4_html"><div class="ttname"><a href="structmtgb_1_1Matrix4x4.html">mtgb::Matrix4x4</a></div><div class="ttdef"><b>Definition:</b> <a href="Matrix4x4_8h_source.html#l00008">Matrix4x4.h:9</a></div></div>
 <div class="ttc" id="astructmtgb_1_1ModelData_html"><div class="ttname"><a href="structmtgb_1_1ModelData.html">mtgb::ModelData</a></div><div class="ttdef"><b>Definition:</b> <a href="OBJ_8h_source.html#l00046">OBJ.h:47</a></div></div>

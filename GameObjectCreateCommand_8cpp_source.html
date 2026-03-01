@@ -107,10 +107,10 @@ $(document).ready(function(){initNavTree('GameObjectCreateCommand_8cpp_source.ht
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_typedef" href="classmtgb_1_1GameObjectCreateCommand.html#a1c3d511a0b2f8df5ed8fa5125b0bc704">CreateFunc</a> _createFunc,</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1ComponentFactory.html">ComponentFactory</a>&amp; _componentFactory</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    : entityId_{INVALID_ENTITY}</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    , componentFactory_{_componentFactory}</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    , createFunc_{_createFunc}</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    , json_{}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    : entityId_ { INVALID_ENTITY }</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    , componentFactory_ { _componentFactory }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    , createFunc_ { _createFunc }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    , json_ {}</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('GameObjectCreateCommand_8cpp_source.ht
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        Deserialize(obj);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Game::System&lt;EventManager&gt;().GetEvent&lt;<a class="code hl_struct" href="structmtgb_1_1GameObjectCreatedEvent.html">GameObjectCreatedEvent</a>&gt;().Invoke({.entityId = obj-&gt;<a class="code hl_function" href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">GetEntityId</a>()});</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Game::System&lt;EventManager&gt;().GetEvent&lt;<a class="code hl_struct" href="structmtgb_1_1GameObjectCreatedEvent.html">GameObjectCreatedEvent</a>&gt;().Invoke({ .entityId = obj-&gt;<a class="code hl_function" href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">GetEntityId</a>() });</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectCreateCommand.html#a4ef228c476089d83be188cd7a0d996d9">   48</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectCreateCommand.html#a4ef228c476089d83be188cd7a0d996d9">mtgb::GameObjectCreateCommand::Undo</a>()</div>
@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('GameObjectCreateCommand_8cpp_source.ht
 <div class="ttc" id="aGameObjectSelectionEvent_8h_html"><div class="ttname"><a href="GameObjectSelectionEvent_8h.html">GameObjectSelectionEvent.h</a></div></div>
 <div class="ttc" id="aSceneSystem_8h_html"><div class="ttname"><a href="SceneSystem_8h.html">SceneSystem.h</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ComponentFactory_html"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html">mtgb::ComponentFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8h_source.html#l00015">ComponentFactory.h:16</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Entity_html_a7f534d8f54f1d8bd4e6e0a6902ba7736"><div class="ttname"><a href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">mtgb::Entity::GetEntityId</a></div><div class="ttdeci">const EntityId GetEntityId() const</div><div class="ttdoc">エンティティIdを取得する</div><div class="ttdef"><b>Definition:</b> <a href="Entity_8h_source.html#l00024">Entity.h:24</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Entity_html_a7f534d8f54f1d8bd4e6e0a6902ba7736"><div class="ttname"><a href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">mtgb::Entity::GetEntityId</a></div><div class="ttdeci">const EntityId GetEntityId() const</div><div class="ttdoc">エンティティIdを取得する</div><div class="ttdef"><b>Definition:</b> <a href="Entity_8h_source.html#l00020">Entity.h:20</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html">mtgb::GameObjectCreateCommand</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8h_source.html#l00014">GameObjectCreateCommand.h:15</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_a0c5a7a1ed9267d9dd4cfd16319a193d3"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#a0c5a7a1ed9267d9dd4cfd16319a193d3">mtgb::GameObjectCreateCommand::Name</a></div><div class="ttdeci">std::string Name() const override</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8cpp_source.html#l00060">GameObjectCreateCommand.cpp:60</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_a17bd652fbff522aa55e2f4d245174ce5"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#a17bd652fbff522aa55e2f4d245174ce5">mtgb::GameObjectCreateCommand::Deserialize</a></div><div class="ttdeci">void Deserialize(GameObject *_obj)</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8cpp_source.html#l00070">GameObjectCreateCommand.cpp:70</a></div></div>

@@ -108,24 +108,24 @@ $(document).ready(function(){initNavTree('Quaternion_8cpp_source.html',''); init
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">using </span>DirectX::XMVector3Cross;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">using </span>DirectX::XMVector3Normalize;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> forward{XMVector3Normalize(_dir)};</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> up{XMVector3Normalize(_upVec)};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> forward { XMVector3Normalize(_dir) };</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> up { XMVector3Normalize(_upVec) };</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// 外積で右ベクトルを求める</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> right{XMVector3Normalize(XMVector3Cross(up, forward))};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> right { XMVector3Normalize(XMVector3Cross(up, forward)) };</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// 垂直な上ベクトルを再計算</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> verticalUp{XMVector3Cross(forward, right)};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> verticalUp { XMVector3Cross(forward, right) };</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// 回転行列にする</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mRot{DirectX::XMMATRIX{right, verticalUp, forward, <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a>{0, 0, 0, 1}}};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_struct" href="structmtgb_1_1Matrix4x4.html">Matrix4x4</a> mRot { DirectX::XMMATRIX { right, verticalUp, forward, <a class="code hl_struct" href="structmtgb_1_1Vector4.html">Vector4</a> { 0, 0, 0, 1 } } };</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> XMQuaternionRotationMatrix(mRot);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structmtgb_1_1Quaternion.html#a0d97eb7a0b9d31da9c2a97e4a13cdab0">   26</a></span>std::string <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a0d97eb7a0b9d31da9c2a97e4a13cdab0">mtgb::Quaternion::ToString</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::string str{<span class="stringliteral">&quot;(&quot;</span>};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::string str { <span class="stringliteral">&quot;(&quot;</span> };</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="structmtgb_1_1Quaternion.html#a71140f5915ddfe76ebdc22f0bc902c9d">Quaternion::COUNT</a>; i++)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        str += std::to_string(f[i]);</div>

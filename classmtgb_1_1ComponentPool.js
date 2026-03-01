@@ -1,7 +1,6 @@
 var classmtgb_1_1ComponentPool =
 [
     [ "Component", "classmtgb_1_1ComponentPool.html#ac1e507a41099ff80a3746061ceb79adf", null ],
-    [ "ComponentIndexMap", "classmtgb_1_1ComponentPool.html#ace36a65e41de4dfe9ebab97ae7b32a5d", null ],
     [ "ComponentPool", "classmtgb_1_1ComponentPool.html#a7a722c2c0c1fdc94654aa2466c91f286", null ],
     [ "~ComponentPool", "classmtgb_1_1ComponentPool.html#a43b0de38840b34b6ddea9e26ab679ede", null ],
     [ "Copy", "classmtgb_1_1ComponentPool.html#afd34c9ea8411e556791445ec9ba9a894", null ],

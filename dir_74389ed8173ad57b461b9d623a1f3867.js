@@ -52,7 +52,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "StageID.h", "StageID_8h.html", "StageID_8h" ],
     [ "StageManager.cpp", "StageManager_8cpp.html", null ],
     [ "StageManager.h", "StageManager_8h.html", "StageManager_8h" ],
-    [ "Source/TheMain.cpp", "Source_2TheMain_8cpp.html", "Source_2TheMain_8cpp" ],
+    [ "TheMain.cpp", "TheMain_8cpp.html", "TheMain_8cpp" ],
     [ "TitleScene.cpp", "TitleScene_8cpp.html", null ],
     [ "TitleScene.h", "TitleScene_8h.html", "TitleScene_8h" ]
 ];

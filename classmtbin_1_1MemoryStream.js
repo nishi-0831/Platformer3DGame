@@ -5,7 +5,9 @@ var classmtbin_1_1MemoryStream =
       [ "HEAD", "classmtbin_1_1MemoryStream.html#a210b2d7f90f31993dd13e9368bc95af5ae15e216fc1c639f787b1231ecdfa1bf8", null ]
     ] ],
     [ "MemoryStream", "classmtbin_1_1MemoryStream.html#a521fabf5ce93a48d6a8e990f46cdcdbb", null ],
+    [ "MemoryStream", "classmtbin_1_1MemoryStream.html#a782ce691ae6a4facc316dc546801fbbb", null ],
     [ "~MemoryStream", "classmtbin_1_1MemoryStream.html#ad37d8ace36320854dc655497b7c1e94b", null ],
+    [ "MemoryStream", "classmtbin_1_1MemoryStream.html#aaa0e7afce108ea50e313fc2811f3117a", null ],
     [ "Current", "classmtbin_1_1MemoryStream.html#ae25220b721616a04c0eddfe69a27ae1e", null ],
     [ "GetBuffer", "classmtbin_1_1MemoryStream.html#aa085bb9363c58f12bbeafecb12906112", null ],
     [ "GetLength", "classmtbin_1_1MemoryStream.html#a0d2c7da59cb67f59f8d68837da782aed", null ],

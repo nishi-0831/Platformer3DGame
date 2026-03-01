@@ -189,7 +189,7 @@ mtgb::Quaternion 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 静的公開変数類</h2></td></tr>
-<tr class="memitem:a71140f5915ddfe76ebdc22f0bc902c9d"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1Quaternion.html#a71140f5915ddfe76ebdc22f0bc902c9d">COUNT</a> {4}</td></tr>
+<tr class="memitem:a71140f5915ddfe76ebdc22f0bc902c9d"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1Quaternion.html#a71140f5915ddfe76ebdc22f0bc902c9d">COUNT</a> { 4 }</td></tr>
 <tr class="separator:a71140f5915ddfe76ebdc22f0bc902c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -221,7 +221,7 @@ mtgb::Quaternion 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="Quaternion_8h_source.html">Quaternion.h</a> の <a class="el" href="Quaternion_8h_source.html#l00048">48</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>            : <a class="code hl_function" href="structmtgb_1_1Quaternion.html#af66b78cad00145372b9e4fb7a0535ac3">Quaternion</a>{0, 0, 0, 0}</div>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>            : <a class="code hl_function" href="structmtgb_1_1Quaternion.html#af66b78cad00145372b9e4fb7a0535ac3">Quaternion</a> { 0, 0, 0, 0 }</div>
 <div class="line"><span class="lineno">   50</span>        {</div>
 <div class="line"><span class="lineno">   51</span>        }</div>
 <div class="ttc" id="astructmtgb_1_1Quaternion_html_af66b78cad00145372b9e4fb7a0535ac3"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#af66b78cad00145372b9e4fb7a0535ac3">mtgb::Quaternion::Quaternion</a></div><div class="ttdeci">Quaternion()</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00048">Quaternion.h:48</a></div></div>
@@ -442,7 +442,7 @@ mtgb::Quaternion 連携図</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Vector3_8h_source.html#l00103">mtgb::Vector3::Normalize()</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="QuaternionCamera_8cpp_source.html#l00026">mtgb::QuaternionCamera::Update()</a>.</p>
+<p class="reference">参照元 <a class="el" href="QuaternionCamera_8cpp_source.html#l00024">mtgb::QuaternionCamera::Update()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -496,7 +496,7 @@ mtgb::Quaternion 連携図</div>
 <div class="line"><span class="lineno">   89</span>            <span class="keywordflow">return</span> DirectX::XMQuaternionRotationRollPitchYaw(_vec.x, _vec.y, _vec.z);</div>
 <div class="line"><span class="lineno">   90</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00185">mtgb::ImGuiEditorCamera::CreateCamera()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00181">mtgb::ImGuiEditorCamera::CreateCamera()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -558,15 +558,15 @@ mtgb::Quaternion 連携図</div>
 <div class="line"><span class="lineno">  160</span>            <span class="comment">// MEMO: 4. 四元数生成</span></div>
 <div class="line"><span class="lineno">  161</span>            <span class="comment">// MEMO: -. q = (x sin(th / 2), y sin(th / 2), z sin(th / 2), cos(th / 2))</span></div>
 <div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>            Vector3 v1{<a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(_fromDir)};</div>
-<div class="line"><span class="lineno">  164</span>            Vector3 v2{<a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(_toDir)};</div>
+<div class="line"><span class="lineno">  163</span>            Vector3 v1 { <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(_fromDir) };</div>
+<div class="line"><span class="lineno">  164</span>            Vector3 v2 { <a class="code hl_function" href="structmtgb_1_1Vector3.html#ae4cb4e8c99cfae50150e86f1f1450acc">Vector3::Normalize</a>(_toDir) };</div>
 <div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>            Vector3 axis{DirectX::XMVector3Cross(v1, v2)};</div>
-<div class="line"><span class="lineno">  167</span>            <span class="keywordtype">float</span> th{acosf(DirectX::XMVectorGetX(DirectX::XMVector3Dot(v1, v2)))};</div>
-<div class="line"><span class="lineno">  168</span>            <span class="keywordtype">float</span> s{sinf(th * 0.5f)};</div>
-<div class="line"><span class="lineno">  169</span>            <span class="keywordtype">float</span> w{cosf(th * 0.5f)};</div>
+<div class="line"><span class="lineno">  166</span>            Vector3 axis { DirectX::XMVector3Cross(v1, v2) };</div>
+<div class="line"><span class="lineno">  167</span>            <span class="keywordtype">float</span> th { acosf(DirectX::XMVectorGetX(DirectX::XMVector3Dot(v1, v2))) };</div>
+<div class="line"><span class="lineno">  168</span>            <span class="keywordtype">float</span> s { sinf(th * 0.5f) };</div>
+<div class="line"><span class="lineno">  169</span>            <span class="keywordtype">float</span> w { cosf(th * 0.5f) };</div>
 <div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span>            <span class="keywordflow">return</span> {axis.x * s, axis.y * s, axis.z * s, w};</div>
+<div class="line"><span class="lineno">  171</span>            <span class="keywordflow">return</span> { axis.x * s, axis.y * s, axis.z * s, w };</div>
 <div class="line"><span class="lineno">  172</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Vector3_8h_source.html#l00103">mtgb::Vector3::Normalize()</a>.</p>
@@ -607,7 +607,7 @@ mtgb::Quaternion 連携図</div>
 
 <p class="definition"> <a class="el" href="Quaternion_8h_source.html">Quaternion.h</a> の <a class="el" href="Quaternion_8h_source.html#l00105">105</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  106</span>        {</div>
-<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">return</span> {-<a class="code hl_function" href="structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac">X</a>(), -<a class="code hl_function" href="structmtgb_1_1Quaternion.html#aa4e533f5fd28821dc19f8c4037832d58">Y</a>(), -<a class="code hl_function" href="structmtgb_1_1Quaternion.html#a63e96e97a32898ededd6c2e71eb30a33">Z</a>(), <a class="code hl_function" href="structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992">W</a>()};</div>
+<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">return</span> { -<a class="code hl_function" href="structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac">X</a>(), -<a class="code hl_function" href="structmtgb_1_1Quaternion.html#aa4e533f5fd28821dc19f8c4037832d58">Y</a>(), -<a class="code hl_function" href="structmtgb_1_1Quaternion.html#a63e96e97a32898ededd6c2e71eb30a33">Z</a>(), <a class="code hl_function" href="structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992">W</a>() };</div>
 <div class="line"><span class="lineno">  108</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Quaternion_8h_source.html#l00027">W()</a>, <a class="el" href="Quaternion_8h_source.html#l00015">X()</a>, <a class="el" href="Quaternion_8h_source.html#l00019">Y()</a>, <a class="el" href="Quaternion_8h_source.html#l00023">Z()</a>.</p>
@@ -856,22 +856,22 @@ mtgb::Quaternion 連携図</div>
 <div class="line"><span class="lineno">    8</span>    <span class="keyword">using </span>DirectX::XMVector3Cross;</div>
 <div class="line"><span class="lineno">    9</span>    <span class="keyword">using </span>DirectX::XMVector3Normalize;</div>
 <div class="line"><span class="lineno">   10</span> </div>
-<div class="line"><span class="lineno">   11</span>    Vector3 forward{XMVector3Normalize(_dir)};</div>
-<div class="line"><span class="lineno">   12</span>    Vector3 up{XMVector3Normalize(_upVec)};</div>
+<div class="line"><span class="lineno">   11</span>    Vector3 forward { XMVector3Normalize(_dir) };</div>
+<div class="line"><span class="lineno">   12</span>    Vector3 up { XMVector3Normalize(_upVec) };</div>
 <div class="line"><span class="lineno">   13</span> </div>
 <div class="line"><span class="lineno">   14</span>    <span class="comment">// 外積で右ベクトルを求める</span></div>
-<div class="line"><span class="lineno">   15</span>    Vector3 right{XMVector3Normalize(XMVector3Cross(up, forward))};</div>
+<div class="line"><span class="lineno">   15</span>    Vector3 right { XMVector3Normalize(XMVector3Cross(up, forward)) };</div>
 <div class="line"><span class="lineno">   16</span> </div>
 <div class="line"><span class="lineno">   17</span>    <span class="comment">// 垂直な上ベクトルを再計算</span></div>
-<div class="line"><span class="lineno">   18</span>    Vector3 verticalUp{XMVector3Cross(forward, right)};</div>
+<div class="line"><span class="lineno">   18</span>    Vector3 verticalUp { XMVector3Cross(forward, right) };</div>
 <div class="line"><span class="lineno">   19</span> </div>
 <div class="line"><span class="lineno">   20</span>    <span class="comment">// 回転行列にする</span></div>
-<div class="line"><span class="lineno">   21</span>    Matrix4x4 mRot{DirectX::XMMATRIX{right, verticalUp, forward, Vector4{0, 0, 0, 1}}};</div>
+<div class="line"><span class="lineno">   21</span>    Matrix4x4 mRot { DirectX::XMMATRIX { right, verticalUp, forward, Vector4 { 0, 0, 0, 1 } } };</div>
 <div class="line"><span class="lineno">   22</span> </div>
 <div class="line"><span class="lineno">   23</span>    <span class="keywordflow">return</span> XMQuaternionRotationMatrix(mRot);</div>
 <div class="line"><span class="lineno">   24</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="Interpolator_8cpp_source.html#l00108">mtgb::Interpolator::CalculateRot()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00274">PatrolChargerEnemy::Charge()</a>, <a class="el" href="ICamera_8cpp_source.html#l00023">mtgb::ICamera::MoveCameraSpherical()</a>, <a class="el" href="SphericalCamera_8cpp_source.html#l00247">mtgb::SphericalCamera::MoveCameraSpherical()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00252">mtgb::ImGuiEditorCamera::MoveCameraSphericalOnTheSpot()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00255">PatrolChargerEnemy::Patrol()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00311">PatrolChargerEnemy::ReturnToPatrol()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00049">mtgb::CircularSaw::Start()</a>, <a class="el" href="Player_8cpp_source.html#l00336">Player::UpdateRotate()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Interpolator_8cpp_source.html#l00108">mtgb::Interpolator::CalculateRot()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00268">PatrolChargerEnemy::Charge()</a>, <a class="el" href="ICamera_8cpp_source.html#l00023">mtgb::ICamera::MoveCameraSpherical()</a>, <a class="el" href="SphericalCamera_8cpp_source.html#l00243">mtgb::SphericalCamera::MoveCameraSpherical()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00248">mtgb::ImGuiEditorCamera::MoveCameraSphericalOnTheSpot()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00249">PatrolChargerEnemy::Patrol()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00305">PatrolChargerEnemy::ReturnToPatrol()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00043">mtgb::CircularSaw::Start()</a>, <a class="el" href="Player_8cpp_source.html#l00330">Player::UpdateRotate()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -980,7 +980,7 @@ mtgb::Quaternion 連携図</div>
 
 <p class="definition"> <a class="el" href="Quaternion_8cpp_source.html">Quaternion.cpp</a> の <a class="el" href="Quaternion_8cpp_source.html#l00026">26</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
-<div class="line"><span class="lineno">   28</span>    std::string str{<span class="stringliteral">&quot;(&quot;</span>};</div>
+<div class="line"><span class="lineno">   28</span>    std::string str { <span class="stringliteral">&quot;(&quot;</span> };</div>
 <div class="line"><span class="lineno">   29</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="structmtgb_1_1Quaternion.html#a71140f5915ddfe76ebdc22f0bc902c9d">Quaternion::COUNT</a>; i++)</div>
 <div class="line"><span class="lineno">   30</span>    {</div>
 <div class="line"><span class="lineno">   31</span>        str += std::to_string(f[i]);</div>
@@ -1282,7 +1282,7 @@ mtgb::Quaternion 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const size_t mtgb::Quaternion::COUNT {4}</td>
+          <td class="memname">const size_t mtgb::Quaternion::COUNT { 4 }</td>
         </tr>
       </table>
   </td>

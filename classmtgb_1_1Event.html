@@ -273,7 +273,7 @@ template&lt;typename EventDataType &gt; </div>
 <p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00037">37</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   38</span>        {</div>
 <div class="line"><span class="lineno">   39</span>            <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#ad738259c78f720b2b17dfaa0fd8b2346">EventHandlerId</a> <span class="keywordtype">id</span> = <a class="code hl_variable" href="classmtgb_1_1Event.html#adba10145603f54a9aff01123c252b330">nextId</a>++;</div>
-<div class="line"><span class="lineno">   40</span>            <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.emplace(<span class="keywordtype">id</span>, HandlerEntry{std::move(_handler), _scope});</div>
+<div class="line"><span class="lineno">   40</span>            <a class="code hl_variable" href="classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e">handlers_</a>.emplace(<span class="keywordtype">id</span>, HandlerEntry { std::move(_handler), _scope });</div>
 <div class="line"><span class="lineno">   41</span>            <span class="keywordflow">return</span> id;</div>
 <div class="line"><span class="lineno">   42</span>        }</div>
 <div class="ttc" id="aclassmtgb_1_1Event_html_adba10145603f54a9aff01123c252b330"><div class="ttname"><a href="classmtgb_1_1Event.html#adba10145603f54a9aff01123c252b330">mtgb::Event::nextId</a></div><div class="ttdeci">EventHandlerId nextId</div><div class="ttdef"><b>Definition:</b> <a href="EventManager_8h_source.html#l00111">EventManager.h:111</a></div></div>

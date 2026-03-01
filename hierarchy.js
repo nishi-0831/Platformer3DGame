@@ -13,12 +13,10 @@ var hierarchy =
     [ "Afterdoc_Test", "classAfterdoc__Test.html", null ],
     [ "AnimationEvent", "structAnimationEvent.html", null ],
     [ "mtgb::AudioClip", "classmtgb_1_1AudioClip.html", null ],
-    [ "mtgb::AudioOneShot", "structmtgb_1_1AudioOneShot.html", null ],
     [ "Autolink_Test", "classAutolink__Test.html", null ],
     [ "B", "classB.html", [
       [ "D", "classD.html", null ]
     ] ],
-    [ "Bar", "classBar.html", null ],
     [ "mtbit::BitFlag< EnumStructT >", "classmtbit_1_1BitFlag.html", null ],
     [ "mtbit::BitFlag< GameObjectLayer >", "classmtbit_1_1BitFlag.html", null ],
     [ "mtbit::BitFlag< EnumStructT >::BitFlagEditor", "classmtbit_1_1BitFlag_1_1BitFlagEditor.html", null ],

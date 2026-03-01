@@ -1,7 +1,6 @@
 var classmtgb_1_1TransformCP =
 [
     [ "Component", "classmtgb_1_1TransformCP.html#ac1e507a41099ff80a3746061ceb79adf", null ],
-    [ "ComponentIndexMap", "classmtgb_1_1TransformCP.html#ace36a65e41de4dfe9ebab97ae7b32a5d", null ],
     [ "TransformCP", "classmtgb_1_1TransformCP.html#a6ada7fcfbd68d9403a907a4c5e3bde45", null ],
     [ "~TransformCP", "classmtgb_1_1TransformCP.html#a6b8b51c2dd4bac26f9d21997e46e48bf", null ],
     [ "Copy", "classmtgb_1_1TransformCP.html#afd34c9ea8411e556791445ec9ba9a894", null ],

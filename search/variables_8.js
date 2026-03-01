@@ -2,7 +2,7 @@ var searchData=
 [
   ['handle_0',['handle',['../structmtgb_1_1TextLayoutData.html#a99f7bcf6392b69864a5c6003f9d41189',1,'mtgb::TextLayoutData']]],
   ['handle_5f_1',['handle_',['../classmtgb_1_1EffectInstance.html#af2b48bbf3692e1114ca3e2aa342d21a2',1,'mtgb::EffectInstance::handle_()'],['../classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05',1,'mtgb::ImageRenderer::handle_()']]],
-  ['handlecounter_5f_2',['handleCounter_',['../classmtgb_1_1Audio.html#a062520910d81e6de34d74e0d8555640b',1,'mtgb::Audio::handleCounter_()'],['../classmtgb_1_1Fbx.html#a8db9a8c4ab3eaa78612a646c3c81b740',1,'mtgb::Fbx::handleCounter_()'],['../classmtgb_1_1Image.html#a3cdcef4030ed5ee42a6bb174417d0a13',1,'mtgb::Image::handleCounter_()']]],
+  ['handlecounter_5f_2',['handleCounter_',['../classmtgb_1_1Fbx.html#a8db9a8c4ab3eaa78612a646c3c81b740',1,'mtgb::Fbx::handleCounter_()'],['../classmtgb_1_1Image.html#a3cdcef4030ed5ee42a6bb174417d0a13',1,'mtgb::Image::handleCounter_()']]],
   ['handler_3',['handler',['../classJavadoc__Test.html#ace81a523a4eef44501a841a6d338832b',1,'Javadoc_Test::handler()'],['../classQTstyle__Test.html#a79dd4e5498f09057775a819d911349e2',1,'QTstyle_Test::handler()'],['../structmtgb_1_1Event_1_1HandlerEntry.html#a085c5024dd440f1aa1e463891d1ff65b',1,'mtgb::Event::HandlerEntry::handler()']]],
   ['handlers_5f_4',['handlers_',['../classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e',1,'mtgb::Event']]],
   ['has_5fadl_5fserializer_5fv_5',['has_adl_serializer_v',['../namespaceJsonConverter_1_1detail.html#a84f91f174f7a7197e0c38c6cbe51d121',1,'JsonConverter::detail']]],

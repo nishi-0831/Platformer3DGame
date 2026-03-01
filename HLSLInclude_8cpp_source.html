@@ -110,10 +110,10 @@ $(document).ready(function(){initNavTree('HLSLInclude_8cpp_source.html',''); ini
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    UINT* _pBytes</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>)</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    std::string fileName{_pFileName};</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    std::string headersDirectory{<span class="stringliteral">&quot;../Assets/Shader/&quot;</span>};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    std::string fileName { _pFileName };</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    std::string headersDirectory { <span class="stringliteral">&quot;../Assets/Shader/&quot;</span> };</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    std::ifstream ifs{headersDirectory + fileName, std::ios::binary};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    std::ifstream ifs { headersDirectory + fileName, std::ios::binary };</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    ifs.seekg(0, std::ios::end);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    *_pBytes = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(ifs.tellg());</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('HLSLInclude_8cpp_source.html',''); ini
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    ifs.seekg(0, std::ios::beg);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// バッファを動的確保して読み取る</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">char</span>* buffer{<span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(*_ppData))};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">char</span>* buffer { <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(*_ppData)) };</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    ifs.read(buffer, *_pBytes);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">return</span> S_OK;</div>

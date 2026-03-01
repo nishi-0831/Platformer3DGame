@@ -207,12 +207,12 @@ mtgb::FbxModel 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00007">7</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>    : <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>{<span class="keyword">nullptr</span>}</div>
-<div class="line"><span class="lineno">    9</span>    , <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">frameRate_</a>{FbxTime::EMode::eFrames60}</div>
-<div class="line"><span class="lineno">   10</span>    , <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#ac61082efc681662072ca93c29fca6c97">animationSpeed_</a>{1.0f}</div>
-<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a59c08964cdaa5e81d32124a0030ef4fb">startFrame_</a>{0}</div>
-<div class="line"><span class="lineno">   12</span>    , <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#aa83ec50e4eba4f4fa81c5a5bcb882486">endFrame_</a>{0}</div>
-<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a>{1.0}</div>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>    : <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a> { <span class="keyword">nullptr</span> }</div>
+<div class="line"><span class="lineno">    9</span>    , <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">frameRate_</a> { FbxTime::EMode::eFrames60 }</div>
+<div class="line"><span class="lineno">   10</span>    , <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#ac61082efc681662072ca93c29fca6c97">animationSpeed_</a> { 1.0f }</div>
+<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a59c08964cdaa5e81d32124a0030ef4fb">startFrame_</a> { 0 }</div>
+<div class="line"><span class="lineno">   12</span>    , <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#aa83ec50e4eba4f4fa81c5a5bcb882486">endFrame_</a> { 0 }</div>
+<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a> { 1.0 }</div>
 <div class="line"><span class="lineno">   14</span>{</div>
 <div class="line"><span class="lineno">   15</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1FbxModel_html_a4e8b822a3b5076421a6fc00754aabcae"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">mtgb::FbxModel::unitScaleFactor_</a></div><div class="ttdeci">double unitScaleFactor_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00095">FbxModel.h:95</a></div></div>
@@ -240,8 +240,7 @@ mtgb::FbxModel 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00017">17</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
-<div class="line"><span class="lineno">   19</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -289,37 +288,37 @@ mtgb::FbxModel 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00155">155</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  156</span>{</div>
-<div class="line"><span class="lineno">  157</span>    <span class="comment">// ノードの属性情報</span></div>
-<div class="line"><span class="lineno">  158</span>    FbxNodeAttribute* pNodeAttribute{_pNode-&gt;GetNodeAttribute()};</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">if</span> (pNodeAttribute == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  161</span>    {</div>
-<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">return</span>; <span class="comment">// ノードが nullptr なら回帰</span></div>
-<div class="line"><span class="lineno">  163</span>    }</div>
-<div class="line"><span class="lineno">  164</span> </div>
-<div class="line"><span class="lineno">  165</span>    <span class="comment">// メッシュの情報が入っているなら</span></div>
-<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">if</span> (pNodeAttribute-&gt;GetAttributeType() == FbxNodeAttribute::eMesh)</div>
-<div class="line"><span class="lineno">  167</span>    {</div>
-<div class="line"><span class="lineno">  168</span>        <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>* pParts = <span class="keyword">new</span> <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>(_pNode, <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a>);</div>
-<div class="line"><span class="lineno">  169</span>        pParts-&gt;Initialize();</div>
-<div class="line"><span class="lineno">  170</span>        _pPartsList.push_back(pParts);</div>
-<div class="line"><span class="lineno">  171</span>    }</div>
-<div class="line"><span class="lineno">  172</span> </div>
-<div class="line"><span class="lineno">  173</span>    <span class="comment">// 子の数</span></div>
-<div class="line"><span class="lineno">  174</span>    <span class="keywordtype">int</span> childCount{_pNode-&gt;GetChildCount()};</div>
-<div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>    <span class="comment">// 1つずつチェック</span></div>
-<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; childCount; i++)</div>
-<div class="line"><span class="lineno">  178</span>    {</div>
-<div class="line"><span class="lineno">  179</span>        <a class="code hl_function" href="classmtgb_1_1FbxModel.html#aeee0ddcee29e27e5df913cba1efeff18">CheckNode</a>(_pNode-&gt;GetChild(i), _pPartsList);</div>
-<div class="line"><span class="lineno">  180</span>    }</div>
-<div class="line"><span class="lineno">  181</span>}</div>
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00153">153</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>{</div>
+<div class="line"><span class="lineno">  155</span>    <span class="comment">// ノードの属性情報</span></div>
+<div class="line"><span class="lineno">  156</span>    FbxNodeAttribute* pNodeAttribute { _pNode-&gt;GetNodeAttribute() };</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (pNodeAttribute == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  159</span>    {</div>
+<div class="line"><span class="lineno">  160</span>        <span class="keywordflow">return</span>; <span class="comment">// ノードが nullptr なら回帰</span></div>
+<div class="line"><span class="lineno">  161</span>    }</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <span class="comment">// メッシュの情報が入っているなら</span></div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">if</span> (pNodeAttribute-&gt;GetAttributeType() == FbxNodeAttribute::eMesh)</div>
+<div class="line"><span class="lineno">  165</span>    {</div>
+<div class="line"><span class="lineno">  166</span>        <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>* pParts = <span class="keyword">new</span> <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>(_pNode, <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a>);</div>
+<div class="line"><span class="lineno">  167</span>        pParts-&gt;Initialize();</div>
+<div class="line"><span class="lineno">  168</span>        _pPartsList.push_back(pParts);</div>
+<div class="line"><span class="lineno">  169</span>    }</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>    <span class="comment">// 子の数</span></div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordtype">int</span> childCount { _pNode-&gt;GetChildCount() };</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>    <span class="comment">// 1つずつチェック</span></div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; childCount; i++)</div>
+<div class="line"><span class="lineno">  176</span>    {</div>
+<div class="line"><span class="lineno">  177</span>        <a class="code hl_function" href="classmtgb_1_1FbxModel.html#aeee0ddcee29e27e5df913cba1efeff18">CheckNode</a>(_pNode-&gt;GetChild(i), _pPartsList);</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+<div class="line"><span class="lineno">  179</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1FbxModel_html_ad3185fd2e3fd900090c9d58d849d716b"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">mtgb::FbxModel::FbxParts</a></div><div class="ttdeci">friend class FbxParts</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00019">FbxModel.h:19</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1FbxModel_html_aeee0ddcee29e27e5df913cba1efeff18"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#aeee0ddcee29e27e5df913cba1efeff18">mtgb::FbxModel::CheckNode</a></div><div class="ttdeci">void CheckNode(FbxNode *_pNode, std::vector&lt; FbxParts * &gt; &amp;_parts)</div><div class="ttdoc">ノードの中身を調べる</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8cpp_source.html#l00155">FbxModel.cpp:155</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1FbxModel_html_aeee0ddcee29e27e5df913cba1efeff18"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#aeee0ddcee29e27e5df913cba1efeff18">mtgb::FbxModel::CheckNode</a></div><div class="ttdeci">void CheckNode(FbxNode *_pNode, std::vector&lt; FbxParts * &gt; &amp;_parts)</div><div class="ttdoc">ノードの中身を調べる</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8cpp_source.html#l00153">FbxModel.cpp:153</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="FbxParts_8cpp_source.html#l00053">mtgb::FbxParts::Initialize()</a>.</p>
+<p class="reference">参照先 <a class="el" href="FbxParts_8cpp_source.html#l00051">mtgb::FbxParts::Initialize()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -374,25 +373,25 @@ mtgb::FbxModel 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1IModelPack.html#abec9e3cc895fed962c81193dbe12d040">mtgb::IModelPack</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00104">104</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
-<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.size(); i++)</div>
-<div class="line"><span class="lineno">  107</span>    {</div>
-<div class="line"><span class="lineno">  108</span>        <span class="comment">// アニメーションタイムの姿勢行列を取得する</span></div>
-<div class="line"><span class="lineno">  109</span>        FbxTime time;</div>
-<div class="line"><span class="lineno">  110</span>        time.SetTime(0, 0, 0, _frame, 0, 0, <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">frameRate_</a>);</div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>        <span class="comment">// ボーンがあるスキンアニメーション</span></div>
-<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;GetSkin() != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  114</span>        {</div>
-<div class="line"><span class="lineno">  115</span>            <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;DrawSkinAnimation(_transform, time);</div>
-<div class="line"><span class="lineno">  116</span>        }</div>
-<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">else</span> <span class="comment">// メッシュアニメーション</span></div>
-<div class="line"><span class="lineno">  118</span>        {</div>
-<div class="line"><span class="lineno">  119</span>            <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;DrawMeshAnimation(_transform, time);</div>
-<div class="line"><span class="lineno">  120</span>        }</div>
-<div class="line"><span class="lineno">  121</span>    }</div>
-<div class="line"><span class="lineno">  122</span>}</div>
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00102">102</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>{</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  105</span>    {</div>
+<div class="line"><span class="lineno">  106</span>        <span class="comment">// アニメーションタイムの姿勢行列を取得する</span></div>
+<div class="line"><span class="lineno">  107</span>        FbxTime time;</div>
+<div class="line"><span class="lineno">  108</span>        time.SetTime(0, 0, 0, _frame, 0, 0, <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">frameRate_</a>);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        <span class="comment">// ボーンがあるスキンアニメーション</span></div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;GetSkin() != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  112</span>        {</div>
+<div class="line"><span class="lineno">  113</span>            <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;DrawSkinAnimation(_transform, time);</div>
+<div class="line"><span class="lineno">  114</span>        }</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">else</span> <span class="comment">// メッシュアニメーション</span></div>
+<div class="line"><span class="lineno">  116</span>        {</div>
+<div class="line"><span class="lineno">  117</span>            <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;DrawMeshAnimation(_transform, time);</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>    }</div>
+<div class="line"><span class="lineno">  120</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1FbxModel_html_a0c3027067420013bfb746c1cc8682048"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">mtgb::FbxModel::pParts_</a></div><div class="ttdeci">std::vector&lt; FbxParts * &gt; pParts_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00085">FbxModel.h:85</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -415,10 +414,10 @@ mtgb::FbxModel 連携図</div>
 <p>アニメーションのコントローラを返す </p>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00183">183</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  184</span>{</div>
-<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">return</span> FbxAnimationController(<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>,<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">fileName_</a>);</div>
-<div class="line"><span class="lineno">  186</span>}</div>
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00181">181</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>{</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">return</span> FbxAnimationController(<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>, <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">fileName_</a>);</div>
+<div class="line"><span class="lineno">  184</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1FbxModel_html_afcd8c266f7ea5ba29aa7bad440df3cd3"><div class="ttname"><a href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">mtgb::FbxModel::fileName_</a></div><div class="ttdeci">std::string fileName_</div><div class="ttdef"><b>Definition:</b> <a href="FbxModel_8h_source.html#l00094">FbxModel.h:94</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -447,16 +446,16 @@ mtgb::FbxModel 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00144">144</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  145</span>{</div>
-<div class="line"><span class="lineno">  146</span>    Vector3 position_ = Vector3(0, 0, 0);</div>
-<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.size(); i++)</div>
-<div class="line"><span class="lineno">  148</span>    {</div>
-<div class="line"><span class="lineno">  149</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;TryGetBonePositionAtNow(_boneName, &amp;position_))</div>
-<div class="line"><span class="lineno">  150</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  151</span>    }</div>
-<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">return</span> position_;</div>
-<div class="line"><span class="lineno">  153</span>}</div>
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00142">142</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  143</span>{</div>
+<div class="line"><span class="lineno">  144</span>    Vector3 position_ = Vector3(0, 0, 0);</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  146</span>    {</div>
+<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;TryGetBonePositionAtNow(_boneName, &amp;position_))</div>
+<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  149</span>    }</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">return</span> position_;</div>
+<div class="line"><span class="lineno">  151</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -484,16 +483,16 @@ mtgb::FbxModel 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00133">133</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
-<div class="line"><span class="lineno">  135</span>    Vector3 position_ = Vector3(0, 0, 0);</div>
-<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.size(); i++)</div>
-<div class="line"><span class="lineno">  137</span>    {</div>
-<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;TryGetBonePosition(_boneName, &amp;position_))</div>
-<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  140</span>    }</div>
-<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">return</span> position_;</div>
-<div class="line"><span class="lineno">  142</span>}</div>
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00131">131</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>{</div>
+<div class="line"><span class="lineno">  133</span>    Vector3 position_ = Vector3(0, 0, 0);</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.size(); i++)</div>
+<div class="line"><span class="lineno">  135</span>    {</div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>[i]-&gt;TryGetBonePosition(_boneName, &amp;position_))</div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  138</span>    }</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> position_;</div>
+<div class="line"><span class="lineno">  140</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -643,94 +642,94 @@ mtgb::FbxModel 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1IModelPack.html#aeaa4df6775a1d66fb8370df8eecc3320">mtgb::IModelPack</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
-<div class="line"><span class="lineno">   23</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
-<div class="line"><span class="lineno">   24</span>        <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a> == <span class="keyword">nullptr</span> <span class="comment">// まだ読み込まれていない</span></div>
-<div class="line"><span class="lineno">   25</span>        &amp;&amp; <span class="stringliteral">&quot;既にFbxModelは読み込まれているよ！ @FbxModel::Load&quot;</span></div>
-<div class="line"><span class="lineno">   26</span>    );</div>
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
+<div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a> == <span class="keyword">nullptr</span> <span class="comment">// まだ読み込まれていない</span></div>
+<div class="line"><span class="lineno">   23</span>        &amp;&amp; <span class="stringliteral">&quot;既にFbxModelは読み込まれているよ！ @FbxModel::Load&quot;</span></div>
+<div class="line"><span class="lineno">   24</span>    );</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    FbxManager* pFbxManager { Game::System&lt;Fbx&gt;().GetFbxManager() };</div>
 <div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>    FbxManager* pFbxManager{Game::System&lt;Fbx&gt;().GetFbxManager()};</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a> = FbxScene::Create(pFbxManager, <span class="stringliteral">&quot;fbxscene&quot;</span>);</div>
 <div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a> = FbxScene::Create(pFbxManager, <span class="stringliteral">&quot;fbxscene&quot;</span>);</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    FbxString fileName{_fileName.c_str()};</div>
-<div class="line"><span class="lineno">   33</span>    FbxImporter* fbxImporter{FbxImporter::Create(pFbxManager, <span class="stringliteral">&quot;imp&quot;</span>)};</div>
+<div class="line"><span class="lineno">   30</span>    FbxString fileName { _fileName.c_str() };</div>
+<div class="line"><span class="lineno">   31</span>    FbxImporter* fbxImporter { FbxImporter::Create(pFbxManager, <span class="stringliteral">&quot;imp&quot;</span>) };</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    FbxIOSettings* ios = FbxIOSettings::Create(pFbxManager, IOSROOT);</div>
 <div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>    FbxIOSettings* ios = FbxIOSettings::Create(pFbxManager, IOSROOT);</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>    pFbxManager-&gt;SetIOSettings(ios);</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (!fbxImporter-&gt;Initialize(fileName.Buffer(), -1, ios))</div>
-<div class="line"><span class="lineno">   39</span>    {</div>
-<div class="line"><span class="lineno">   40</span>        MessageBoxA(NULL, fbxImporter-&gt;GetStatus().GetErrorString(), <span class="stringliteral">&quot;FBX Import Error&quot;</span>, MB_OK);</div>
-<div class="line"><span class="lineno">   41</span>        <span class="comment">// もしくはログ出力</span></div>
-<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   35</span>    pFbxManager-&gt;SetIOSettings(ios);</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (!fbxImporter-&gt;Initialize(fileName.Buffer(), -1, ios))</div>
+<div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   38</span>        MessageBoxA(NULL, fbxImporter-&gt;GetStatus().GetErrorString(), <span class="stringliteral">&quot;FBX Import Error&quot;</span>, MB_OK);</div>
+<div class="line"><span class="lineno">   39</span>        <span class="comment">// もしくはログ出力</span></div>
+<div class="line"><span class="lineno">   40</span>    }</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">fileName_</a> = _fileName;</div>
 <div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#afcd8c266f7ea5ba29aa7bad440df3cd3">fileName_</a> = _fileName;</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordtype">char</span> str[MAX_PATH]{};</div>
-<div class="line"><span class="lineno">   47</span>    GetCurrentDirectory(MAX_PATH, str);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordtype">bool</span> succeed{<span class="keyword">false</span>};</div>
-<div class="line"><span class="lineno">   50</span>    succeed = fbxImporter-&gt;Initialize(fileName.Buffer(), -1, pFbxManager-&gt;GetIOSettings());</div>
-<div class="line"><span class="lineno">   51</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(succeed &amp;&amp; <span class="stringliteral">&quot;fbxImporterの初期化に失敗した @Fbx::Load&quot;</span>);</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    succeed = fbxImporter-&gt;Import(<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>);</div>
-<div class="line"><span class="lineno">   54</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(succeed &amp;&amp; <span class="stringliteral">&quot;読み込みに失敗した @Fbx::Load&quot;</span>);</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordtype">char</span> str[MAX_PATH] {};</div>
+<div class="line"><span class="lineno">   45</span>    GetCurrentDirectory(MAX_PATH, str);</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordtype">bool</span> succeed { <span class="keyword">false</span> };</div>
+<div class="line"><span class="lineno">   48</span>    succeed = fbxImporter-&gt;Initialize(fileName.Buffer(), -1, pFbxManager-&gt;GetIOSettings());</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(succeed &amp;&amp; <span class="stringliteral">&quot;fbxImporterの初期化に失敗した @Fbx::Load&quot;</span>);</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    succeed = fbxImporter-&gt;Import(<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>);</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(succeed &amp;&amp; <span class="stringliteral">&quot;読み込みに失敗した @Fbx::Load&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a8fec617b8766eb3a0366bc02a8408d74">SAFE_DESTROY</a>(fbxImporter); <span class="comment">// インポータは解放</span></div>
 <div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a8fec617b8766eb3a0366bc02a8408d74">SAFE_DESTROY</a>(fbxImporter); <span class="comment">// インポータは解放</span></div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    <span class="comment">// DirectXの座標系に変換</span></div>
-<div class="line"><span class="lineno">   59</span>    FbxAxisSystem directXLeftHanded(FbxAxisSystem::eYAxis, FbxAxisSystem::eParityOdd, FbxAxisSystem::eLeftHanded);</div>
-<div class="line"><span class="lineno">   60</span>    <span class="comment">// MEMO: DeepConvertにすることでシーン全体を変換できる。Convertだとルートのノードだけ</span></div>
-<div class="line"><span class="lineno">   61</span>    directXLeftHanded.DeepConvertScene(<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>);</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>    <span class="comment">// 3角ポリゴン</span></div>
-<div class="line"><span class="lineno">   64</span>    FbxGeometryConverter geometryConverter{pFbxManager};</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>    <span class="comment">// アニメーションタイムモードの取得</span></div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">frameRate_</a> = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetGlobalSettings().GetTimeMode();</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>    <span class="comment">// スケール単位を取得</span></div>
-<div class="line"><span class="lineno">   70</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a> = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetGlobalSettings().GetSystemUnit().GetScaleFactor();</div>
-<div class="line"><span class="lineno">   71</span>    <span class="comment">// 現在のカレントディレクトリを取得</span></div>
-<div class="line"><span class="lineno">   72</span>    <span class="keywordtype">char</span> defaultCurrentDirectory[MAX_PATH]{};</div>
-<div class="line"><span class="lineno">   73</span>    GetCurrentDirectory(MAX_PATH, defaultCurrentDirectory);</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>    <span class="comment">// カレントディレクトリを移動</span></div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordtype">char</span> directory[MAX_PATH]{};</div>
-<div class="line"><span class="lineno">   77</span>    _splitpath_s(_fileName.c_str(), <span class="keyword">nullptr</span>, 0, directory, MAX_PATH, <span class="keyword">nullptr</span>, 0, <span class="keyword">nullptr</span>, 0);</div>
-<div class="line"><span class="lineno">   78</span>    SetCurrentDirectory(directory);</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordtype">int</span> animStackCount_ = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetSrcObjectCount&lt;FbxAnimStack&gt;();</div>
-<div class="line"><span class="lineno">   81</span>    <span class="keywordtype">int</span> meshCount{<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetSrcObjectCount&lt;FbxMesh&gt;()};</div>
-<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; meshCount; i++)</div>
-<div class="line"><span class="lineno">   83</span>    {</div>
-<div class="line"><span class="lineno">   84</span>        FbxMesh* pMesh = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetSrcObject&lt;FbxMesh&gt;(i);</div>
-<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">if</span> (pMesh == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>        FbxNode* pNode = pMesh-&gt;GetNode();</div>
-<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">if</span> (pNode == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>        <span class="comment">// 作成前にノードのメッシュ有無確認</span></div>
-<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> (pNode-&gt;GetMesh() == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>        <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>* pParts = <span class="keyword">new</span> <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>(pNode, <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a>);</div>
-<div class="line"><span class="lineno">   97</span>        pParts-&gt;Initialize();</div>
-<div class="line"><span class="lineno">   98</span>        <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.push_back(pParts);</div>
-<div class="line"><span class="lineno">   99</span>    }</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    SetCurrentDirectory(defaultCurrentDirectory);</div>
-<div class="line"><span class="lineno">  102</span>}</div>
+<div class="line"><span class="lineno">   56</span>    <span class="comment">// DirectXの座標系に変換</span></div>
+<div class="line"><span class="lineno">   57</span>    FbxAxisSystem directXLeftHanded(FbxAxisSystem::eYAxis, FbxAxisSystem::eParityOdd, FbxAxisSystem::eLeftHanded);</div>
+<div class="line"><span class="lineno">   58</span>    <span class="comment">// MEMO: DeepConvertにすることでシーン全体を変換できる。Convertだとルートのノードだけ</span></div>
+<div class="line"><span class="lineno">   59</span>    directXLeftHanded.DeepConvertScene(<a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>);</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="comment">// 3角ポリゴン</span></div>
+<div class="line"><span class="lineno">   62</span>    FbxGeometryConverter geometryConverter { pFbxManager };</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <span class="comment">// アニメーションタイムモードの取得</span></div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a5b6ef7f31485b48e427b2bcd456ab2a6">frameRate_</a> = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetGlobalSettings().GetTimeMode();</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="comment">// スケール単位を取得</span></div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a> = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetGlobalSettings().GetSystemUnit().GetScaleFactor();</div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">// 現在のカレントディレクトリを取得</span></div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordtype">char</span> defaultCurrentDirectory[MAX_PATH] {};</div>
+<div class="line"><span class="lineno">   71</span>    GetCurrentDirectory(MAX_PATH, defaultCurrentDirectory);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="comment">// カレントディレクトリを移動</span></div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordtype">char</span> directory[MAX_PATH] {};</div>
+<div class="line"><span class="lineno">   75</span>    _splitpath_s(_fileName.c_str(), <span class="keyword">nullptr</span>, 0, directory, MAX_PATH, <span class="keyword">nullptr</span>, 0, <span class="keyword">nullptr</span>, 0);</div>
+<div class="line"><span class="lineno">   76</span>    SetCurrentDirectory(directory);</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordtype">int</span> animStackCount_ = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetSrcObjectCount&lt;FbxAnimStack&gt;();</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordtype">int</span> meshCount { <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetSrcObjectCount&lt;FbxMesh&gt;() };</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; meshCount; i++)</div>
+<div class="line"><span class="lineno">   81</span>    {</div>
+<div class="line"><span class="lineno">   82</span>        FbxMesh* pMesh = <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a9c4b7e6f6c5eadff47768fc4d23f22a7">pFbxScene_</a>-&gt;GetSrcObject&lt;FbxMesh&gt;(i);</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (pMesh == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>        FbxNode* pNode = pMesh-&gt;GetNode();</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">if</span> (pNode == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>        <span class="comment">// 作成前にノードのメッシュ有無確認</span></div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">if</span> (pNode-&gt;GetMesh() == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>        <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>* pParts = <span class="keyword">new</span> <a class="code hl_friend" href="classmtgb_1_1FbxModel.html#ad3185fd2e3fd900090c9d58d849d716b">FbxParts</a>(pNode, <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a4e8b822a3b5076421a6fc00754aabcae">unitScaleFactor_</a>);</div>
+<div class="line"><span class="lineno">   95</span>        pParts-&gt;Initialize();</div>
+<div class="line"><span class="lineno">   96</span>        <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>.push_back(pParts);</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>    SetCurrentDirectory(defaultCurrentDirectory);</div>
+<div class="line"><span class="lineno">  100</span>}</div>
 <div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00057">MTAssert.h:57</a></div></div>
 <div class="ttc" id="aReleaseUtility_8h_html_a8fec617b8766eb3a0366bc02a8408d74"><div class="ttname"><a href="ReleaseUtility_8h.html#a8fec617b8766eb3a0366bc02a8408d74">SAFE_DESTROY</a></div><div class="ttdeci">#define SAFE_DESTROY(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00028">ReleaseUtility.h:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="FbxParts_8cpp_source.html#l00053">mtgb::FbxParts::Initialize()</a>, <a class="el" href="MTAssert_8h_source.html#l00057">massert</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00028">SAFE_DESTROY</a>.</p>
+<p class="reference">参照先 <a class="el" href="FbxParts_8cpp_source.html#l00051">mtgb::FbxParts::Initialize()</a>, <a class="el" href="MTAssert_8h_source.html#l00057">massert</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00028">SAFE_DESTROY</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="Fbx_8cpp_source.html#l00027">mtgb::Fbx::Load()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Fbx_8cpp_source.html#l00025">mtgb::Fbx::Load()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -773,14 +772,14 @@ mtgb::FbxModel 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1IModelPack.html#a7baa74f1ab5e0cb57effb5f5dac67606">mtgb::IModelPack</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00124">124</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
-<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fbxParts : <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>)</div>
-<div class="line"><span class="lineno">  127</span>    {</div>
-<div class="line"><span class="lineno">  128</span>        fbxParts-&gt;Release();</div>
-<div class="line"><span class="lineno">  129</span>        <span class="keyword">delete</span> fbxParts;</div>
-<div class="line"><span class="lineno">  130</span>    }</div>
-<div class="line"><span class="lineno">  131</span>}</div>
+<p class="definition"> <a class="el" href="FbxModel_8cpp_source.html">FbxModel.cpp</a> の <a class="el" href="FbxModel_8cpp_source.html#l00122">122</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>{</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fbxParts : <a class="code hl_variable" href="classmtgb_1_1FbxModel.html#a0c3027067420013bfb746c1cc8682048">pParts_</a>)</div>
+<div class="line"><span class="lineno">  125</span>    {</div>
+<div class="line"><span class="lineno">  126</span>        fbxParts-&gt;Release();</div>
+<div class="line"><span class="lineno">  127</span>        <span class="keyword">delete</span> fbxParts;</div>
+<div class="line"><span class="lineno">  128</span>    }</div>
+<div class="line"><span class="lineno">  129</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

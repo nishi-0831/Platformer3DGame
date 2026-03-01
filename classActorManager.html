@@ -166,23 +166,23 @@ ActorManager 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>引数のIdに合致するアクターのポインタ。いない場合はnullptr</dd></dl>
 
-<p class="definition"> <a class="el" href="ActorManager_8cpp_source.html">ActorManager.cpp</a> の <a class="el" href="ActorManager_8cpp_source.html#l00042">42</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (_id == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
-<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classIActor.html">IActor</a>* pActor : <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>)</div>
-<div class="line"><span class="lineno">   48</span>    {</div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">if</span> (pActor == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">if</span> (pActor-&gt;GetId() == _id)</div>
-<div class="line"><span class="lineno">   53</span>        {</div>
-<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">return</span> pActor;</div>
-<div class="line"><span class="lineno">   55</span>        }</div>
-<div class="line"><span class="lineno">   56</span>    }</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   58</span>}</div>
+<p class="definition"> <a class="el" href="ActorManager_8cpp_source.html">ActorManager.cpp</a> の <a class="el" href="ActorManager_8cpp_source.html#l00038">38</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (_id == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classIActor.html">IActor</a>* pActor : <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>)</div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">if</span> (pActor == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   46</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">if</span> (pActor-&gt;GetId() == _id)</div>
+<div class="line"><span class="lineno">   49</span>        {</div>
+<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">return</span> pActor;</div>
+<div class="line"><span class="lineno">   51</span>        }</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   54</span>}</div>
 <div class="ttc" id="aclassActorManager_html_a3f5df14e2f7db8ef6ba536163cfe774b"><div class="ttname"><a href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">ActorManager::actors_</a></div><div class="ttdeci">std::list&lt; IActor * &gt; actors_</div><div class="ttdef"><b>Definition:</b> <a href="ActorManager_8h_source.html#l00027">ActorManager.h:27</a></div></div>
 <div class="ttc" id="aclassIActor_html"><div class="ttname"><a href="classIActor.html">IActor</a></div><div class="ttdef"><b>Definition:</b> <a href="IActor_8h_source.html#l00003">IActor.h:4</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
@@ -215,8 +215,7 @@ ActorManager 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="ActorManager_8cpp_source.html">ActorManager.cpp</a> の <a class="el" href="ActorManager_8cpp_source.html#l00004">4</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
-<div class="line"><span class="lineno">    6</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -244,20 +243,20 @@ ActorManager 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="ActorManager_8cpp_source.html">ActorManager.cpp</a> の <a class="el" href="ActorManager_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>{</div>
-<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span> (_pActor-&gt;<a class="code hl_function" href="classIActor.html#a788d01e1e3c5042eeeb7d13ba7feeef9">GetId</a>() == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
-<div class="line"><span class="lineno">   15</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">if</span> (_pActor == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   17</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classIActor.html">IActor</a>* pActor : <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>)</div>
-<div class="line"><span class="lineno">   20</span>    {</div>
-<div class="line"><span class="lineno">   21</span>        <span class="keywordflow">if</span> (pActor-&gt;GetId() == _pActor-&gt;<a class="code hl_function" href="classIActor.html#a788d01e1e3c5042eeeb7d13ba7feeef9">GetId</a>())</div>
-<div class="line"><span class="lineno">   22</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   23</span>    }</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>.push_back(_pActor);</div>
-<div class="line"><span class="lineno">   25</span>}</div>
+<p class="definition"> <a class="el" href="ActorManager_8cpp_source.html">ActorManager.cpp</a> の <a class="el" href="ActorManager_8cpp_source.html#l00008">8</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>{</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">if</span> (_pActor-&gt;<a class="code hl_function" href="classIActor.html#a788d01e1e3c5042eeeb7d13ba7feeef9">GetId</a>() == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">   11</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">if</span> (_pActor == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   13</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classIActor.html">IActor</a>* pActor : <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>)</div>
+<div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>        <span class="keywordflow">if</span> (pActor-&gt;GetId() == _pActor-&gt;<a class="code hl_function" href="classIActor.html#a788d01e1e3c5042eeeb7d13ba7feeef9">GetId</a>())</div>
+<div class="line"><span class="lineno">   18</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>.push_back(_pActor);</div>
+<div class="line"><span class="lineno">   21</span>}</div>
 <div class="ttc" id="aclassIActor_html_a788d01e1e3c5042eeeb7d13ba7feeef9"><div class="ttname"><a href="classIActor.html#a788d01e1e3c5042eeeb7d13ba7feeef9">IActor::GetId</a></div><div class="ttdeci">EntityId GetId()</div><div class="ttdef"><b>Definition:</b> <a href="IActor_8h_source.html#l00011">IActor.h:11</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="ActorManager_8h_source.html#l00027">actors_</a>, <a class="el" href="IActor_8h_source.html#l00011">IActor::GetId()</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
@@ -286,20 +285,20 @@ ActorManager 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ActorManager_8cpp_source.html">ActorManager.cpp</a> の <a class="el" href="ActorManager_8cpp_source.html#l00027">27</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>{</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (_id == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>.begin(); itr != <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>.end(); itr++)</div>
-<div class="line"><span class="lineno">   33</span>    {</div>
-<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">if</span> ((*itr)-&gt;GetId() == _id)</div>
-<div class="line"><span class="lineno">   35</span>        {</div>
-<div class="line"><span class="lineno">   36</span>            <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>.erase(itr);</div>
-<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   38</span>        }</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span>}</div>
+<p class="definition"> <a class="el" href="ActorManager_8cpp_source.html">ActorManager.cpp</a> の <a class="el" href="ActorManager_8cpp_source.html#l00023">23</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (_id == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>.begin(); itr != <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>.end(); itr++)</div>
+<div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> ((*itr)-&gt;GetId() == _id)</div>
+<div class="line"><span class="lineno">   31</span>        {</div>
+<div class="line"><span class="lineno">   32</span>            <a class="code hl_variable" href="classActorManager.html#a3f5df14e2f7db8ef6ba536163cfe774b">actors_</a>.erase(itr);</div>
+<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   34</span>        }</div>
+<div class="line"><span class="lineno">   35</span>    }</div>
+<div class="line"><span class="lineno">   36</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="ActorManager_8h_source.html#l00027">actors_</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
 
@@ -328,9 +327,8 @@ ActorManager 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ActorManager_8cpp_source.html">ActorManager.cpp</a> の <a class="el" href="ActorManager_8cpp_source.html#l00008">8</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>{</div>
-<div class="line"><span class="lineno">   10</span>}</div>
+<p class="definition"> <a class="el" href="ActorManager_8cpp_source.html">ActorManager.cpp</a> の <a class="el" href="ActorManager_8cpp_source.html#l00006">6</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -357,7 +355,7 @@ ActorManager 連携図</div>
 
 <p class="definition"> <a class="el" href="ActorManager_8h_source.html">ActorManager.h</a> の <a class="el" href="ActorManager_8h_source.html#l00027">27</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="ActorManager_8cpp_source.html#l00042">GetActor()</a>, <a class="el" href="ActorManager_8cpp_source.html#l00012">RegisterActor()</a>, <a class="el" href="ActorManager_8cpp_source.html#l00027">UnregisterActor()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ActorManager_8cpp_source.html#l00038">GetActor()</a>, <a class="el" href="ActorManager_8cpp_source.html#l00008">RegisterActor()</a>, <a class="el" href="ActorManager_8cpp_source.html#l00023">UnregisterActor()</a>.</p>
 
 </div>
 </div>

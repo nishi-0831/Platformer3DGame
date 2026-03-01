@@ -172,7 +172,7 @@ mtgb::TextCache 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 静的非公開変数類</h2></td></tr>
-<tr class="memitem:aebb8e848564761ecfe2d2e9d175b8c01"><td class="memItemLeft" align="right" valign="top">static const wchar_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1TextCache.html#aebb8e848564761ecfe2d2e9d175b8c01">DEFAULT_FONT_FAMILY_NAME</a> {L&quot;Noto Sans JP&quot;}</td></tr>
+<tr class="memitem:aebb8e848564761ecfe2d2e9d175b8c01"><td class="memItemLeft" align="right" valign="top">static const wchar_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1TextCache.html#aebb8e848564761ecfe2d2e9d175b8c01">DEFAULT_FONT_FAMILY_NAME</a> { L&quot;Noto Sans JP&quot; }</td></tr>
 <tr class="separator:aebb8e848564761ecfe2d2e9d175b8c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -200,8 +200,8 @@ mtgb::TextCache 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00013">13</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>    : <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a1f283b94d8f4f3da30d3b14d367be6f3">currentDefaultFontSize_</a>{72}</div>
-<div class="line"><span class="lineno">   15</span>    , <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a5f0c142cf94f4c684b403f115d32bf17">nextHandle_</a>{0}</div>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>    : <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a1f283b94d8f4f3da30d3b14d367be6f3">currentDefaultFontSize_</a> { 72 }</div>
+<div class="line"><span class="lineno">   15</span>    , <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a5f0c142cf94f4c684b403f115d32bf17">nextHandle_</a> { 0 }</div>
 <div class="line"><span class="lineno">   16</span>{</div>
 <div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a> = <span class="keyword">new</span> <a class="code hl_typedef" href="namespacemtgb.html#a5a7e24bab9f019b2c04e470598857c15">TextLayoutContainer</a>();</div>
 <div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a> = <span class="keyword">new</span> <a class="code hl_typedef" href="namespacemtgb.html#ac9742457ae6d050bc36259ec732e6445">FontFormatContainer</a>();</div>
@@ -233,8 +233,7 @@ mtgb::TextCache 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
-<div class="line"><span class="lineno">   23</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -272,25 +271,25 @@ mtgb::TextCache 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>IDWriteTextFormatとPixelFontMetricsのペア</dd></dl>
 
-<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00186">186</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>{</div>
-<div class="line"><span class="lineno">  188</span>    <span class="keyword">auto</span>&amp; size_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>-&gt;get&lt;font_size_order&gt;();</div>
-<div class="line"><span class="lineno">  189</span>    <span class="keyword">auto</span> it          = size_index.find(_size);</div>
+<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00180">180</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>{</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keyword">auto</span>&amp; size_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>-&gt;get&lt;font_size_order&gt;();</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keyword">auto</span> it          = size_index.find(_size);</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">if</span> (it != size_index.end())</div>
+<div class="line"><span class="lineno">  186</span>    {</div>
+<div class="line"><span class="lineno">  187</span>        <span class="comment">// 既存のフォーマットを返す</span></div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">return</span> *it;</div>
+<div class="line"><span class="lineno">  189</span>    }</div>
 <div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>    <span class="keywordflow">if</span> (it != size_index.end())</div>
-<div class="line"><span class="lineno">  192</span>    {</div>
-<div class="line"><span class="lineno">  193</span>        <span class="comment">// 既存のフォーマットを返す</span></div>
-<div class="line"><span class="lineno">  194</span>        <span class="keywordflow">return</span> *it;</div>
-<div class="line"><span class="lineno">  195</span>    }</div>
+<div class="line"><span class="lineno">  191</span>    FontFormatData* fontFormatData = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  192</span>    Game::System&lt;DirectWrite&gt;().CreateFontFormatData(<a class="code hl_variable" href="classmtgb_1_1TextCache.html#aebb8e848564761ecfe2d2e9d175b8c01">DEFAULT_FONT_FAMILY_NAME</a>, _size, &amp;fontFormatData);</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>    Game::System&lt;DirectWrite&gt;().ChangeFormat(fontFormatData-&gt;format, fontFormatData-&gt;pixelFontMetrics);</div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>-&gt;insert(fontFormatData);</div>
 <div class="line"><span class="lineno">  196</span> </div>
-<div class="line"><span class="lineno">  197</span>    FontFormatData* fontFormatData = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  198</span>    Game::System&lt;DirectWrite&gt;().CreateFontFormatData(<a class="code hl_variable" href="classmtgb_1_1TextCache.html#aebb8e848564761ecfe2d2e9d175b8c01">DEFAULT_FONT_FAMILY_NAME</a>, _size, &amp;fontFormatData);</div>
-<div class="line"><span class="lineno">  199</span> </div>
-<div class="line"><span class="lineno">  200</span>    Game::System&lt;DirectWrite&gt;().ChangeFormat(fontFormatData-&gt;format, fontFormatData-&gt;pixelFontMetrics);</div>
-<div class="line"><span class="lineno">  201</span>    <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>-&gt;insert(fontFormatData);</div>
-<div class="line"><span class="lineno">  202</span> </div>
-<div class="line"><span class="lineno">  203</span>    <span class="keywordflow">return</span> fontFormatData;</div>
-<div class="line"><span class="lineno">  204</span>}</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span> fontFormatData;</div>
+<div class="line"><span class="lineno">  198</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1TextCache_html_aebb8e848564761ecfe2d2e9d175b8c01"><div class="ttname"><a href="classmtgb_1_1TextCache.html#aebb8e848564761ecfe2d2e9d175b8c01">mtgb::TextCache::DEFAULT_FONT_FAMILY_NAME</a></div><div class="ttdeci">static const wchar_t * DEFAULT_FONT_FAMILY_NAME</div><div class="ttdef"><b>Definition:</b> <a href="TextCache_8h_source.html#l00141">TextCache.h:141</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="DirectWrite_8h_source.html#l00041">mtgb::FontFormatData::format</a>, <a class="el" href="DirectWrite_8h_source.html#l00042">mtgb::FontFormatData::pixelFontMetrics</a>.</p>
@@ -341,12 +340,12 @@ mtgb::TextCache 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00142">142</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  143</span>{</div>
-<div class="line"><span class="lineno">  144</span>    D2D1_SIZE_F layoutBoxSize = Game::System&lt;Direct2D&gt;().GetRenderTargetSize();</div>
-<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1TextCache.html#a7b22c1317b399874b1f96686ef6b0c12">GetOrCreateTextLayoutHandle</a>(_text, _size, layoutBoxSize.width, layoutBoxSize.height);</div>
-<div class="line"><span class="lineno">  146</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1TextCache_html_a7b22c1317b399874b1f96686ef6b0c12"><div class="ttname"><a href="classmtgb_1_1TextCache.html#a7b22c1317b399874b1f96686ef6b0c12">mtgb::TextCache::GetOrCreateTextLayoutHandle</a></div><div class="ttdeci">int GetOrCreateTextLayoutHandle(const std::wstring &amp;_text, int _size)</div><div class="ttdoc">新規または既存のテキストのハンドルを返す</div><div class="ttdef"><b>Definition:</b> <a href="TextCache_8cpp_source.html#l00142">TextCache.cpp:142</a></div></div>
+<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00136">136</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>{</div>
+<div class="line"><span class="lineno">  138</span>    D2D1_SIZE_F layoutBoxSize = Game::System&lt;Direct2D&gt;().GetRenderTargetSize();</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1TextCache.html#a7b22c1317b399874b1f96686ef6b0c12">GetOrCreateTextLayoutHandle</a>(_text, _size, layoutBoxSize.width, layoutBoxSize.height);</div>
+<div class="line"><span class="lineno">  140</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1TextCache_html_a7b22c1317b399874b1f96686ef6b0c12"><div class="ttname"><a href="classmtgb_1_1TextCache.html#a7b22c1317b399874b1f96686ef6b0c12">mtgb::TextCache::GetOrCreateTextLayoutHandle</a></div><div class="ttdeci">int GetOrCreateTextLayoutHandle(const std::wstring &amp;_text, int _size)</div><div class="ttdoc">新規または既存のテキストのハンドルを返す</div><div class="ttdef"><b>Definition:</b> <a href="TextCache_8cpp_source.html#l00136">TextCache.cpp:136</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -396,33 +395,33 @@ mtgb::TextCache 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00148">148</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  149</span>{</div>
-<div class="line"><span class="lineno">  150</span>    <span class="comment">// text + size の範囲を取得</span></div>
-<div class="line"><span class="lineno">  151</span>    <span class="keyword">auto</span>&amp; text_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;get&lt;text_layout_order&gt;();</div>
-<div class="line"><span class="lineno">  152</span>    <span class="keyword">auto</span> range       = text_index.equal_range(std::make_tuple(_text, _size));</div>
-<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = range.first; it != range.second; ++it)</div>
-<div class="line"><span class="lineno">  154</span>    {</div>
-<div class="line"><span class="lineno">  155</span>        <span class="comment">// width / height も一致するものを探す</span></div>
-<div class="line"><span class="lineno">  156</span>        TextLayoutData* data = *it;</div>
-<div class="line"><span class="lineno">  157</span>        <span class="keywordflow">if</span> (data-&gt;width == _width &amp;&amp; data-&gt;height == _height)</div>
-<div class="line"><span class="lineno">  158</span>        {</div>
-<div class="line"><span class="lineno">  159</span>            <span class="keywordflow">return</span> data-&gt;handle; <span class="comment">// 完全一致があれば再利用</span></div>
-<div class="line"><span class="lineno">  160</span>        }</div>
-<div class="line"><span class="lineno">  161</span>    }</div>
+<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00142">142</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  143</span>{</div>
+<div class="line"><span class="lineno">  144</span>    <span class="comment">// text + size の範囲を取得</span></div>
+<div class="line"><span class="lineno">  145</span>    <span class="keyword">auto</span>&amp; text_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;get&lt;text_layout_order&gt;();</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keyword">auto</span> range       = text_index.equal_range(std::make_tuple(_text, _size));</div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = range.first; it != range.second; ++it)</div>
+<div class="line"><span class="lineno">  148</span>    {</div>
+<div class="line"><span class="lineno">  149</span>        <span class="comment">// width / height も一致するものを探す</span></div>
+<div class="line"><span class="lineno">  150</span>        TextLayoutData* data = *it;</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">if</span> (data-&gt;width == _width &amp;&amp; data-&gt;height == _height)</div>
+<div class="line"><span class="lineno">  152</span>        {</div>
+<div class="line"><span class="lineno">  153</span>            <span class="keywordflow">return</span> data-&gt;handle; <span class="comment">// 完全一致があれば再利用</span></div>
+<div class="line"><span class="lineno">  154</span>        }</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <span class="comment">// 新規作成する</span></div>
+<div class="line"><span class="lineno">  158</span>    FontFormatData* formatData = <a class="code hl_function" href="classmtgb_1_1TextCache.html#ad709520e689e0c43ba49d0f66205bb68">GetOrCreateTextFormat</a>(_size);</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    IDWriteTextLayout* pTextLayout = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  161</span>    Game::System&lt;DirectWrite&gt;().CreateTextLayout(_text, _width, _height, _size, formatData-&gt;format, &amp;pTextLayout);</div>
 <div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>    <span class="comment">// 新規作成する</span></div>
-<div class="line"><span class="lineno">  164</span>    FontFormatData* formatData = <a class="code hl_function" href="classmtgb_1_1TextCache.html#ad709520e689e0c43ba49d0f66205bb68">GetOrCreateTextFormat</a>(_size);</div>
-<div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>    IDWriteTextLayout* pTextLayout = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  167</span>    Game::System&lt;DirectWrite&gt;().CreateTextLayout(_text, _width, _height, _size, formatData-&gt;format, &amp;pTextLayout);</div>
-<div class="line"><span class="lineno">  168</span> </div>
-<div class="line"><span class="lineno">  169</span>    <span class="keywordtype">int</span> handle                 = ++<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a5f0c142cf94f4c684b403f115d32bf17">nextHandle_</a>;</div>
-<div class="line"><span class="lineno">  170</span>    TextLayoutData* layoutData = <span class="keyword">new</span> TextLayoutData{_text, _size, _width, _height, pTextLayout, handle};</div>
-<div class="line"><span class="lineno">  171</span>    <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;insert(layoutData);</div>
-<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> handle;</div>
-<div class="line"><span class="lineno">  173</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1TextCache_html_ad709520e689e0c43ba49d0f66205bb68"><div class="ttname"><a href="classmtgb_1_1TextCache.html#ad709520e689e0c43ba49d0f66205bb68">mtgb::TextCache::GetOrCreateTextFormat</a></div><div class="ttdeci">FontFormatData * GetOrCreateTextFormat(int _size)</div><div class="ttdoc">指定サイズのIDWriteTextFormatを取得または作成</div><div class="ttdef"><b>Definition:</b> <a href="TextCache_8cpp_source.html#l00186">TextCache.cpp:186</a></div></div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordtype">int</span> handle                 = ++<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a5f0c142cf94f4c684b403f115d32bf17">nextHandle_</a>;</div>
+<div class="line"><span class="lineno">  164</span>    TextLayoutData* layoutData = <span class="keyword">new</span> TextLayoutData { _text, _size, _width, _height, pTextLayout, handle };</div>
+<div class="line"><span class="lineno">  165</span>    <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;insert(layoutData);</div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">return</span> handle;</div>
+<div class="line"><span class="lineno">  167</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1TextCache_html_ad709520e689e0c43ba49d0f66205bb68"><div class="ttname"><a href="classmtgb_1_1TextCache.html#ad709520e689e0c43ba49d0f66205bb68">mtgb::TextCache::GetOrCreateTextFormat</a></div><div class="ttdeci">FontFormatData * GetOrCreateTextFormat(int _size)</div><div class="ttdoc">指定サイズのIDWriteTextFormatを取得または作成</div><div class="ttdef"><b>Definition:</b> <a href="TextCache_8cpp_source.html#l00180">TextCache.cpp:180</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="DirectWrite_8h_source.html#l00041">mtgb::FontFormatData::format</a>, <a class="el" href="DirectWrite_8h_source.html#l00057">mtgb::TextLayoutData::handle</a>, <a class="el" href="DirectWrite_8h_source.html#l00054">mtgb::TextLayoutData::height</a>, <a class="el" href="DirectWrite_8h_source.html#l00054">mtgb::TextLayoutData::width</a>.</p>
 
@@ -452,16 +451,16 @@ mtgb::TextCache 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00175">175</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  176</span>{</div>
-<div class="line"><span class="lineno">  177</span>    <span class="keyword">auto</span>&amp; handle_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;get&lt;handle_order&gt;();</div>
-<div class="line"><span class="lineno">  178</span>    <span class="keyword">auto</span> it            = handle_index.find(_handle);</div>
-<div class="line"><span class="lineno">  179</span> </div>
-<div class="line"><span class="lineno">  180</span>    <span class="keywordflow">if</span> (it == handle_index.end())</div>
-<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  182</span> </div>
-<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">return</span> *it;</div>
-<div class="line"><span class="lineno">  184</span>}</div>
+<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00169">169</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>{</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keyword">auto</span>&amp; handle_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;get&lt;handle_order&gt;();</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keyword">auto</span> it            = handle_index.find(_handle);</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">if</span> (it == handle_index.end())</div>
+<div class="line"><span class="lineno">  175</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">return</span> *it;</div>
+<div class="line"><span class="lineno">  178</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -490,9 +489,8 @@ mtgb::TextCache 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00025">25</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
-<div class="line"><span class="lineno">   27</span>}</div>
+<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00023">23</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -555,14 +553,14 @@ mtgb::TextCache 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00061">61</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> Game::System&lt;TextCache&gt;()</div>
-<div class="line"><span class="lineno">   64</span>        .GetOrCreateTextLayoutHandle(<a class="code hl_function" href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">MultiToWide</a>(_str), _fontSize, _layoutBoxWidth, _layoutBoxHeight);</div>
-<div class="line"><span class="lineno">   65</span>}</div>
-<div class="ttc" id="anamespacemtgb_html_a11fc0443ed8ddf859bdd5882dd48d3af"><div class="ttname"><a href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">mtgb::MultiToWide</a></div><div class="ttdeci">std::wstring MultiToWide(const std::string &amp;_string)</div><div class="ttdoc">マルチバイト文字列からワイド文字列へ変換</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00106">MTStringUtility.cpp:106</a></div></div>
+<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> Game::System&lt;TextCache&gt;()</div>
+<div class="line"><span class="lineno">   58</span>        .GetOrCreateTextLayoutHandle(<a class="code hl_function" href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">MultiToWide</a>(_str), _fontSize, _layoutBoxWidth, _layoutBoxHeight);</div>
+<div class="line"><span class="lineno">   59</span>}</div>
+<div class="ttc" id="anamespacemtgb_html_a11fc0443ed8ddf859bdd5882dd48d3af"><div class="ttname"><a href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">mtgb::MultiToWide</a></div><div class="ttdeci">std::wstring MultiToWide(const std::string &amp;_string)</div><div class="ttdoc">マルチバイト文字列からワイド文字列へ変換</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00102">MTStringUtility.cpp:102</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTStringUtility_8cpp_source.html#l00106">mtgb::MultiToWide()</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTStringUtility_8cpp_source.html#l00102">mtgb::MultiToWide()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -624,13 +622,13 @@ mtgb::TextCache 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00067">67</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> Game::System&lt;TextCache&gt;()</div>
-<div class="line"><span class="lineno">   70</span>        .GetOrCreateTextLayoutHandle(<a class="code hl_function" href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">MultiToWide</a>(_str), _fontSize, _layoutBoxSize.x, _layoutBoxSize.y);</div>
-<div class="line"><span class="lineno">   71</span>}</div>
+<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00061">61</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> Game::System&lt;TextCache&gt;()</div>
+<div class="line"><span class="lineno">   64</span>        .GetOrCreateTextLayoutHandle(<a class="code hl_function" href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">MultiToWide</a>(_str), _fontSize, _layoutBoxSize.x, _layoutBoxSize.y);</div>
+<div class="line"><span class="lineno">   65</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTStringUtility_8cpp_source.html#l00106">mtgb::MultiToWide()</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTStringUtility_8cpp_source.html#l00102">mtgb::MultiToWide()</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -684,12 +682,12 @@ mtgb::TextCache 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00056">56</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> Game::System&lt;TextCache&gt;().GetOrCreateTextLayoutHandle(<a class="code hl_function" href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">MultiToWide</a>(_str), _size);</div>
-<div class="line"><span class="lineno">   59</span>}</div>
+<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">return</span> Game::System&lt;TextCache&gt;().GetOrCreateTextLayoutHandle(<a class="code hl_function" href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">MultiToWide</a>(_str), _size);</div>
+<div class="line"><span class="lineno">   53</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTStringUtility_8cpp_source.html#l00106">mtgb::MultiToWide()</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTStringUtility_8cpp_source.html#l00102">mtgb::MultiToWide()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -726,28 +724,28 @@ mtgb::TextCache 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">mtgb::ISystem</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00029">29</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   32</span>    {</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> entry : *<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>)</div>
-<div class="line"><span class="lineno">   34</span>        {</div>
-<div class="line"><span class="lineno">   35</span>            <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(entry);</div>
-<div class="line"><span class="lineno">   36</span>        }</div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;clear();</div>
-<div class="line"><span class="lineno">   38</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>);</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   42</span>    {</div>
-<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> entry : *<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>)</div>
-<div class="line"><span class="lineno">   44</span>        {</div>
-<div class="line"><span class="lineno">   45</span>            <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(entry);</div>
-<div class="line"><span class="lineno">   46</span>        }</div>
-<div class="line"><span class="lineno">   47</span>        <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>-&gt;clear();</div>
-<div class="line"><span class="lineno">   48</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>);</div>
-<div class="line"><span class="lineno">   49</span>    }</div>
-<div class="line"><span class="lineno">   50</span>}</div>
+<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   28</span>    {</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> entry : *<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>)</div>
+<div class="line"><span class="lineno">   30</span>        {</div>
+<div class="line"><span class="lineno">   31</span>            <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(entry);</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;clear();</div>
+<div class="line"><span class="lineno">   34</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>);</div>
+<div class="line"><span class="lineno">   35</span>    }</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> entry : *<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>)</div>
+<div class="line"><span class="lineno">   40</span>        {</div>
+<div class="line"><span class="lineno">   41</span>            <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(entry);</div>
+<div class="line"><span class="lineno">   42</span>        }</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>-&gt;clear();</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>);</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span>}</div>
 <div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
@@ -779,9 +777,8 @@ mtgb::TextCache 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00052">52</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
-<div class="line"><span class="lineno">   54</span>}</div>
+<p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00048">48</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -869,7 +866,7 @@ mtgb::TextCache 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const wchar_t * mtgb::TextCache::DEFAULT_FONT_FAMILY_NAME {L&quot;Noto Sans JP&quot;}</td>
+          <td class="memname">const wchar_t * mtgb::TextCache::DEFAULT_FONT_FAMILY_NAME { L&quot;Noto Sans JP&quot; }</td>
         </tr>
       </table>
   </td>

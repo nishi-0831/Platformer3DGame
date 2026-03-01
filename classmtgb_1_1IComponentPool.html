@@ -97,7 +97,6 @@ $(document).ready(function(){initNavTree('classmtgb_1_1IComponentPool.html','');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
-<a href="#pro-types">限定公開型</a> &#124;
 <a href="#pro-methods">限定公開メンバ関数</a> &#124;
 <a href="classmtgb_1_1IComponentPool-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle"><div class="title">mtgb::IComponentPool クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
@@ -138,11 +137,6 @@ mtgb::IComponentPool 連携図</div>
 <tr class="memitem:af31537171d4d3a72f1b245dbe9fb9afb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponentPool.html#af31537171d4d3a72f1b245dbe9fb9afb">Copy</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _dest, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _src)=0</td></tr>
 <tr class="separator:af31537171d4d3a72f1b245dbe9fb9afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
-限定公開型</h2></td></tr>
-<tr class="memitem:ace36a65e41de4dfe9ebab97ae7b32a5d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponentPool.html#ace36a65e41de4dfe9ebab97ae7b32a5d">ComponentIndexMap</a> = std::unordered_map&lt; std::type_index, size_t &gt;</td></tr>
-<tr class="separator:ace36a65e41de4dfe9ebab97ae7b32a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
 <tr class="memitem:a4d2d02ef42687005a44d0fb93b353182"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponentPool.html#a4d2d02ef42687005a44d0fb93b353182">RegisterCurrentScene</a> (const std::function&lt; void()&gt; &amp;_onMove)</td></tr>
@@ -152,32 +146,7 @@ mtgb::IComponentPool 連携図</div>
 <div class="textblock"><p>コンポーネントプールのインタフェース </p>
 
 <p class="definition"> <a class="el" href="IComponentPool_8h_source.html">IComponentPool.h</a> の <a class="el" href="IComponentPool_8h_source.html#l00017">17</a> 行目に定義があります。</p>
-</div><h2 class="groupheader">型定義メンバ詳解</h2>
-<a id="ace36a65e41de4dfe9ebab97ae7b32a5d" name="ace36a65e41de4dfe9ebab97ae7b32a5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace36a65e41de4dfe9ebab97ae7b32a5d">&#9670;&#160;</a></span>ComponentIndexMap</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classmtgb_1_1IComponentPool.html#ace36a65e41de4dfe9ebab97ae7b32a5d">mtgb::IComponentPool::ComponentIndexMap</a> =  std::unordered_map&lt;std::type_index, size_t&gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition"> <a class="el" href="IComponentPool_8h_source.html">IComponentPool.h</a> の <a class="el" href="IComponentPool_8h_source.html#l00031">31</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<h2 class="groupheader">構築子と解体子</h2>
+</div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a5c63945b03f43ea53e7df45183976639" name="a5c63945b03f43ea53e7df45183976639"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c63945b03f43ea53e7df45183976639">&#9670;&#160;</a></span>IComponentPool()</h2>
 
@@ -194,8 +163,7 @@ mtgb::IComponentPool 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="IComponentPool_8cpp_source.html">IComponentPool.cpp</a> の <a class="el" href="IComponentPool_8cpp_source.html#l00004">4</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
-<div class="line"><span class="lineno">    6</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -222,9 +190,8 @@ mtgb::IComponentPool 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponentPool_8cpp_source.html">IComponentPool.cpp</a> の <a class="el" href="IComponentPool_8cpp_source.html#l00008">8</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>{</div>
-<div class="line"><span class="lineno">   10</span>}</div>
+<p class="definition"> <a class="el" href="IComponentPool_8cpp_source.html">IComponentPool.cpp</a> の <a class="el" href="IComponentPool_8cpp_source.html#l00006">6</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -311,7 +278,7 @@ mtgb::IComponentPool 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ComponentPool.html#ab14e90cb0dd0d6c5df498fe230458bbf">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ab14e90cb0dd0d6c5df498fe230458bbf">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ab14e90cb0dd0d6c5df498fe230458bbf">mtgb::ComponentPool&lt; ImageRenderer, ImageRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ab14e90cb0dd0d6c5df498fe230458bbf">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ab14e90cb0dd0d6c5df498fe230458bbf">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ab14e90cb0dd0d6c5df498fe230458bbf">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ab14e90cb0dd0d6c5df498fe230458bbf">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ab14e90cb0dd0d6c5df498fe230458bbf">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>で実装されています。</p>
 
-<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00100">mtgb::Game::DeserializeComponent()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00098">mtgb::Game::DeserializeComponent()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -345,10 +312,10 @@ mtgb::IComponentPool 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponentPool_8cpp_source.html">IComponentPool.cpp</a> の <a class="el" href="IComponentPool_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>{</div>
-<div class="line"><span class="lineno">   14</span>    Game::System&lt;SceneSystem&gt;().OnMove(_onMove);</div>
-<div class="line"><span class="lineno">   15</span>}</div>
+<p class="definition"> <a class="el" href="IComponentPool_8cpp_source.html">IComponentPool.cpp</a> の <a class="el" href="IComponentPool_8cpp_source.html#l00008">8</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>{</div>
+<div class="line"><span class="lineno">   10</span>    Game::System&lt;SceneSystem&gt;().OnMove(_onMove);</div>
+<div class="line"><span class="lineno">   11</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -378,7 +345,7 @@ mtgb::IComponentPool 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ComponentPool.html#a58faea5d0d7b8c7c81d09bc79670287b">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#a58faea5d0d7b8c7c81d09bc79670287b">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#a58faea5d0d7b8c7c81d09bc79670287b">mtgb::ComponentPool&lt; ImageRenderer, ImageRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#a58faea5d0d7b8c7c81d09bc79670287b">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#a58faea5d0d7b8c7c81d09bc79670287b">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#a58faea5d0d7b8c7c81d09bc79670287b">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#a58faea5d0d7b8c7c81d09bc79670287b">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#a58faea5d0d7b8c7c81d09bc79670287b">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>で実装されています。</p>
 
-<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00067">mtgb::Game::RemoveEntityComponent()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00065">mtgb::Game::RemoveEntityComponent()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -450,7 +417,7 @@ mtgb::IComponentPool 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ComponentPool.html#adb0fe836ea4a70158debee8defb1854f">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#adb0fe836ea4a70158debee8defb1854f">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#adb0fe836ea4a70158debee8defb1854f">mtgb::ComponentPool&lt; ImageRenderer, ImageRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#adb0fe836ea4a70158debee8defb1854f">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#adb0fe836ea4a70158debee8defb1854f">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#adb0fe836ea4a70158debee8defb1854f">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#adb0fe836ea4a70158debee8defb1854f">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#adb0fe836ea4a70158debee8defb1854f">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>で実装されています。</p>
 
-<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00082">mtgb::Game::SerializeComponent()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Game_8cpp_source.html#l00080">mtgb::Game::SerializeComponent()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">

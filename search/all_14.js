@@ -74,7 +74,7 @@ var searchData=
   ['time_71',['Time',['../classmtgb_1_1Time.html',1,'mtgb::Time'],['../classmtgb_1_1Time.html#a96233c8e9dbb2fe07cfc51a0285c91bf',1,'mtgb::Time::Time()']]],
   ['time_5f_72',['time_',['../classmtgb_1_1PlaneUVScroll.html#ae21544b051680748d3ec5bcb6006432e',1,'mtgb::PlaneUVScroll']]],
   ['timebuffer_73',['TimeBuffer',['../structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html',1,'mtgb::PlaneUVScroll']]],
-  ['timeleft_74',['timeLeft',['../structmtgb_1_1AudioOneShot.html#a42e82aae0c2668ad145b39767398c1bc',1,'mtgb::AudioOneShot::timeLeft()'],['../structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html#abe5a2e259512c3fb7aa80e8cf415c275',1,'mtgb::Timer::QUEUE_ELEMENT::timeLeft()']]],
+  ['timeleft_74',['timeLeft',['../structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html#abe5a2e259512c3fb7aa80e8cf415c275',1,'mtgb::Timer::QUEUE_ELEMENT']]],
   ['timer_75',['Timer',['../classmtgb_1_1Timer.html',1,'mtgb::Timer'],['../classmtgb_1_1Timer.html#a77eeb0c0c25082dbf29d9adfc99ec4f7',1,'mtgb::Timer::Timer()']]],
   ['timer_2ecpp_76',['Timer.cpp',['../Timer_8cpp.html',1,'']]],
   ['timer_2eh_77',['Timer.h',['../Timer_8h.html',1,'']]],

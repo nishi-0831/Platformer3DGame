@@ -1,7 +1,6 @@
 var classmtgb_1_1RigidBodyCP =
 [
     [ "Component", "classmtgb_1_1RigidBodyCP.html#ac1e507a41099ff80a3746061ceb79adf", null ],
-    [ "ComponentIndexMap", "classmtgb_1_1RigidBodyCP.html#ace36a65e41de4dfe9ebab97ae7b32a5d", null ],
     [ "RigidBodyCP", "classmtgb_1_1RigidBodyCP.html#ab993aaf7f5f9aa8e8c4955576ccfe762", null ],
     [ "RigidBodyCP", "classmtgb_1_1RigidBodyCP.html#aa7cdb808c64492782fb4871eeeef4026", null ],
     [ "~RigidBodyCP", "classmtgb_1_1RigidBodyCP.html#a1c61468ab4b3b5e044631161714ef3a8", null ],

@@ -175,7 +175,7 @@ SampleScene 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 静的非公開変数類</h2></td></tr>
-<tr class="memitem:a280eb590943cbe7bb792522f60d34b9e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1GameScene.html#a77c1fea10b6a60d1a3a499a6c745c1fb">GameScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">pInstance_</a> {nullptr}</td></tr>
+<tr class="memitem:a280eb590943cbe7bb792522f60d34b9e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1GameScene.html#a77c1fea10b6a60d1a3a499a6c745c1fb">GameScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">pInstance_</a> { nullptr }</td></tr>
 <tr class="separator:a280eb590943cbe7bb792522f60d34b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -198,7 +198,7 @@ SampleScene 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00013">13</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>    : <a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a>{StageID::STAGE_ONE}</div>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>    : <a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a> { StageID::STAGE_ONE }</div>
 <div class="line"><span class="lineno">   15</span>{</div>
 <div class="line"><span class="lineno">   16</span>}</div>
 <div class="ttc" id="aclassSampleScene_html_a40cb91676e4af6ab8236fb0f117716b0"><div class="ttname"><a href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">SampleScene::stageID_</a></div><div class="ttdeci">StageID stageID_</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8h_source.html#l00016">SampleScene.h:16</a></div></div>
@@ -221,8 +221,7 @@ SampleScene 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00018">18</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>{</div>
-<div class="line"><span class="lineno">   20</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -251,20 +250,20 @@ SampleScene 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00119">119</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  120</span>{</div>
-<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (_entityId == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
-<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
-<div class="line"><span class="lineno">  125</span>    {</div>
-<div class="line"><span class="lineno">  126</span>        <span class="keywordflow">if</span> (object-&gt;GetEntityId() != _entityId)</div>
-<div class="line"><span class="lineno">  127</span>        {</div>
-<div class="line"><span class="lineno">  128</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  129</span>        }</div>
-<div class="line"><span class="lineno">  130</span>        <span class="keywordtype">object</span>-&gt;DestroyMe();</div>
-<div class="line"><span class="lineno">  131</span>    }</div>
-<div class="line"><span class="lineno">  132</span>}</div>
+<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00109">109</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>{</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">if</span> (_entityId == <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
+<div class="line"><span class="lineno">  115</span>    {</div>
+<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">if</span> (object-&gt;GetEntityId() != _entityId)</div>
+<div class="line"><span class="lineno">  117</span>        {</div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  119</span>        }</div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordtype">object</span>-&gt;DestroyMe();</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="line"><span class="lineno">  122</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1GameScene_html_a3cfe6412123432bb9b77cbbf918a1b22"><div class="ttname"><a href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">mtgb::GameScene::pGameObjects_</a></div><div class="ttdeci">std::list&lt; GameObject * &gt; pGameObjects_</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8h_source.html#l00090">GameScene.h:90</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
 </div><!-- fragment -->
@@ -297,9 +296,8 @@ SampleScene 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#a62c3eb59801fdd460e8b316a0a879bb4">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
-<div class="line"><span class="lineno">   57</span>}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00053">53</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -328,9 +326,8 @@ SampleScene 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#ae9f7881aa324e201222b276fdacec76b">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00059">59</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
-<div class="line"><span class="lineno">   61</span>}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -423,19 +420,19 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>存在しないならnullptr</dd></dl>
 
-<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00105">105</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>{</div>
-<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
-<div class="line"><span class="lineno">  108</span>    {</div>
-<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">if</span> (object-&gt;GetEntityId() != _entityId)</div>
-<div class="line"><span class="lineno">  110</span>        {</div>
-<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  112</span>        }</div>
-<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">return</span> object;</div>
-<div class="line"><span class="lineno">  114</span>    }</div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  117</span>}</div>
+<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00095">95</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>{</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
+<div class="line"><span class="lineno">   98</span>    {</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">if</span> (object-&gt;GetEntityId() != _entityId)</div>
+<div class="line"><span class="lineno">  100</span>        {</div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  102</span>        }</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">return</span> object;</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  107</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -472,17 +469,17 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>一致するタグのゲームオブジェクトのポインタ、一致したのが存在しない場合はnullptr</dd></dl>
 
-<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00067">67</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
-<div class="line"><span class="lineno">   70</span>    {</div>
-<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">if</span> (object-&gt;GetTag() == _tag)</div>
-<div class="line"><span class="lineno">   72</span>        {</div>
-<div class="line"><span class="lineno">   73</span>            <span class="keywordflow">return</span> object;</div>
-<div class="line"><span class="lineno">   74</span>        }</div>
-<div class="line"><span class="lineno">   75</span>    }</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   77</span>}</div>
+<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00057">57</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>{</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
+<div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">if</span> (object-&gt;GetTag() == _tag)</div>
+<div class="line"><span class="lineno">   62</span>        {</div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">return</span> object;</div>
+<div class="line"><span class="lineno">   64</span>        }</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   67</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -519,18 +516,18 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>一致する名前のゲームオブジェクトのポインタ、一致したのが存在しない場合はnullptr</dd></dl>
 
-<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00054">54</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>{</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
-<div class="line"><span class="lineno">   57</span>    {</div>
-<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span> (object-&gt;GetName() != _name)</div>
-<div class="line"><span class="lineno">   59</span>        {</div>
-<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   61</span>        }</div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">return</span> object;</div>
-<div class="line"><span class="lineno">   63</span>    }</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   65</span>}</div>
+<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00044">44</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
+<div class="line"><span class="lineno">   47</span>    {</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">if</span> (object-&gt;GetName() != _name)</div>
+<div class="line"><span class="lineno">   49</span>        {</div>
+<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   51</span>        }</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span> object;</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   55</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -568,18 +565,18 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00079">79</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>{</div>
-<div class="line"><span class="lineno">   81</span>    _pFoundGameObjects-&gt;clear();</div>
-<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
-<div class="line"><span class="lineno">   83</span>    {</div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">if</span> (object-&gt;GetName() != _name)</div>
-<div class="line"><span class="lineno">   85</span>        {</div>
-<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   87</span>        }</div>
-<div class="line"><span class="lineno">   88</span>        _pFoundGameObjects-&gt;push_back(<span class="keywordtype">object</span>);</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
-<div class="line"><span class="lineno">   90</span>}</div>
+<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00069">69</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>{</div>
+<div class="line"><span class="lineno">   71</span>    _pFoundGameObjects-&gt;clear();</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
+<div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">if</span> (object-&gt;GetName() != _name)</div>
+<div class="line"><span class="lineno">   75</span>        {</div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+<div class="line"><span class="lineno">   78</span>        _pFoundGameObjects-&gt;push_back(<span class="keywordtype">object</span>);</div>
+<div class="line"><span class="lineno">   79</span>    }</div>
+<div class="line"><span class="lineno">   80</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -617,18 +614,18 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00092">92</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>{</div>
-<div class="line"><span class="lineno">   94</span>    _pFoundGameObjects-&gt;clear();</div>
-<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
-<div class="line"><span class="lineno">   96</span>    {</div>
-<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">if</span> (object-&gt;GetTag() != _tag)</div>
-<div class="line"><span class="lineno">   98</span>        {</div>
-<div class="line"><span class="lineno">   99</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  100</span>        }</div>
-<div class="line"><span class="lineno">  101</span>        _pFoundGameObjects-&gt;push_back(<span class="keywordtype">object</span>);</div>
-<div class="line"><span class="lineno">  102</span>    }</div>
-<div class="line"><span class="lineno">  103</span>}</div>
+<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00082">82</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{</div>
+<div class="line"><span class="lineno">   84</span>    _pFoundGameObjects-&gt;clear();</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
+<div class="line"><span class="lineno">   86</span>    {</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">if</span> (object-&gt;GetTag() != _tag)</div>
+<div class="line"><span class="lineno">   88</span>        {</div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
+<div class="line"><span class="lineno">   91</span>        _pFoundGameObjects-&gt;push_back(<span class="keywordtype">object</span>);</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -708,30 +705,30 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#a1bd20af76384c4d0d1e1fa448419b45d">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00022">22</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
-<div class="line"><span class="lineno">   24</span>    Game::System&lt;ImGuiEditorCamera&gt;().CreateCamera();</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>();</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#a28a8021dd97f8ea30b8e1d35c769e483">Initialize</a>();</div>
-<div class="line"><span class="lineno">   28</span>    MTImGui::Instance().Initialize();</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    Instantiate&lt;GameOverManager&gt;();</div>
-<div class="line"><span class="lineno">   31</span>    Instantiate&lt;SkySphere&gt;();</div>
-<div class="line"><span class="lineno">   32</span>    Instantiate&lt;RespawnManager&gt;();</div>
-<div class="line"><span class="lineno">   33</span>    std::optional&lt;nlohmann::json&gt; json = Game::System&lt;StageManger&gt;().GetStageJson(<a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a>);</div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (json.has_value())</div>
-<div class="line"><span class="lineno">   35</span>    {</div>
-<div class="line"><span class="lineno">   36</span>        GameObjectGenerator::GenerateFromJson(json);</div>
-<div class="line"><span class="lineno">   37</span>        <span class="comment">// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる</span></div>
-<div class="line"><span class="lineno">   38</span>        <span class="comment">// TODO: マジックナンバーを修正</span></div>
-<div class="line"><span class="lineno">   39</span>        Time::WaitFrame(2);</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   42</span>    {</div>
-<div class="line"><span class="lineno">   43</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;JSONファイルが見つかりません&quot;</span>);</div>
-<div class="line"><span class="lineno">   44</span>    }</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span>    Game::System&lt;ImGuiEditorCamera&gt;().CreateCamera();</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>();</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#a28a8021dd97f8ea30b8e1d35c769e483">Initialize</a>();</div>
+<div class="line"><span class="lineno">   26</span>    MTImGui::Instance().Initialize();</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    Instantiate&lt;GameOverManager&gt;();</div>
+<div class="line"><span class="lineno">   29</span>    Instantiate&lt;SkySphere&gt;();</div>
+<div class="line"><span class="lineno">   30</span>    Instantiate&lt;RespawnManager&gt;();</div>
+<div class="line"><span class="lineno">   31</span>    std::optional&lt;nlohmann::json&gt; json = Game::System&lt;StageManger&gt;().GetStageJson(<a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a>);</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (json.has_value())</div>
+<div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>        GameObjectGenerator::GenerateFromJson(json);</div>
+<div class="line"><span class="lineno">   35</span>        <span class="comment">// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる</span></div>
+<div class="line"><span class="lineno">   36</span>        <span class="comment">// TODO: マジックナンバーを修正</span></div>
+<div class="line"><span class="lineno">   37</span>        Time::WaitFrame(2);</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;JSONファイルが見つかりません&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span>}</div>
 <div class="ttc" id="aclassPropertyDisplayRegistry_html_a28a8021dd97f8ea30b8e1d35c769e483"><div class="ttname"><a href="classPropertyDisplayRegistry.html#a28a8021dd97f8ea30b8e1d35c769e483">PropertyDisplayRegistry::Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00016">TypeRegistry.cpp:16</a></div></div>
 <div class="ttc" id="aclassPropertyDisplayRegistry_html_afc910235065385c0a147e03f9a2305e1"><div class="ttname"><a href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a></div><div class="ttdeci">static PropertyDisplayRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry.cpp:10</a></div></div>
 </div><!-- fragment -->
@@ -779,7 +776,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="line"><span class="lineno">   98</span>            <span class="stringliteral">&quot;GameObjectクラスを継承していないクラスはインスタンスできません。&quot;</span></div>
 <div class="line"><span class="lineno">   99</span>        );</div>
 <div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>        GameObjectT* pInstance{<span class="keyword">new</span> GameObjectT{_args...}};</div>
+<div class="line"><span class="lineno">  101</span>        GameObjectT* pInstance { <span class="keyword">new</span> GameObjectT { _args... } };</div>
 <div class="line"><span class="lineno">  102</span> </div>
 <div class="line"><span class="lineno">  103</span>        <span class="comment">// TODO: ここも連続した配列にする</span></div>
 <div class="line"><span class="lineno">  104</span>        <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>.push_back(pInstance);</div>
@@ -824,16 +821,16 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>登録されたカメラハンドル</dd></dl>
 
-<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00032">32</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>{</div>
-<div class="line"><span class="lineno">   34</span>    Transform* pTransform{&amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(_pGameObject-&gt;GetEntityId())};</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">return</span> Game::System&lt;CameraSystem&gt;().RegisterDrawCamera(pTransform);</div>
-<div class="line"><span class="lineno">   36</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1IComponent_html_a931ae7565817c83a4e3c5f9004c074d5"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get</a></div><div class="ttdeci">static Transform &amp; Get(const EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00031">IComponent.h:68</a></div></div>
+<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
+<div class="line"><span class="lineno">   32</span>    Transform* pTransform { &amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">Transform::Get</a>(_pGameObject-&gt;GetEntityId()) };</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> Game::System&lt;CameraSystem&gt;().RegisterDrawCamera(pTransform);</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a931ae7565817c83a4e3c5f9004c074d5"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a931ae7565817c83a4e3c5f9004c074d5">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get</a></div><div class="ttdeci">static Transform &amp; Get(const EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00031">IComponent.h:66</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="IComponent_8h_source.html#l00068">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get()</a>, <a class="el" href="Entity_8h_source.html#l00024">mtgb::Entity::GetEntityId()</a>.</p>
+<p class="reference">参照先 <a class="el" href="IComponent_8h_source.html#l00066">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get()</a>, <a class="el" href="Entity_8h_source.html#l00020">mtgb::Entity::GetEntityId()</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="ResultScene_8cpp_source.html#l00021">ResultScene::Initialize()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00020">TitleScene::Initialize()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ResultScene_8cpp_source.html#l00017">ResultScene::Initialize()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00016">TitleScene::Initialize()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -881,18 +878,18 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">for</span> (GameObject* pObj : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
-<div class="line"><span class="lineno">   24</span>    {</div>
-<div class="line"><span class="lineno">   25</span>        <span class="comment">// 既に登録済みの場合は何もしない</span></div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (pObj-&gt;GetEntityId() == _pGameObject-&gt;GetEntityId())</div>
-<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>.push_back(_pGameObject);</div>
-<div class="line"><span class="lineno">   30</span>}</div>
+<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">for</span> (GameObject* pObj : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
+<div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        <span class="comment">// 既に登録済みの場合は何もしない</span></div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (pObj-&gt;GetEntityId() == _pGameObject-&gt;GetEntityId())</div>
+<div class="line"><span class="lineno">   25</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   26</span>    }</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>.push_back(_pGameObject);</div>
+<div class="line"><span class="lineno">   28</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Entity_8h_source.html#l00024">mtgb::Entity::GetEntityId()</a>.</p>
+<p class="reference">参照先 <a class="el" href="Entity_8h_source.html#l00020">mtgb::Entity::GetEntityId()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -925,29 +922,29 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00134">134</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>{</div>
-<div class="line"><span class="lineno">  136</span>    nlohmann::json j;</div>
-<div class="line"><span class="lineno">  137</span>    <span class="comment">// 配列として初期化</span></div>
-<div class="line"><span class="lineno">  138</span>    j[<span class="stringliteral">&quot;GameObject&quot;</span>] = nlohmann::json::array();</div>
-<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
-<div class="line"><span class="lineno">  140</span>    {</div>
-<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">if</span> (!<span class="keywordtype">object</span>)</div>
-<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span>        GameObjectTypeRegistry&amp; gameObjTypeRegistry = Game::System&lt;GameObjectTypeRegistry&gt;();</div>
-<div class="line"><span class="lineno">  145</span> </div>
-<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">if</span> (gameObjTypeRegistry.IsRegistered(<a class="code hl_function" href="namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52">mtgb::ExtractClassName</a>(object-&gt;GetName())) == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">  147</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  148</span> </div>
-<div class="line"><span class="lineno">  149</span>        nlohmann::json objJson = <span class="keywordtype">object</span>-&gt;Serialize();</div>
-<div class="line"><span class="lineno">  150</span>        j[<span class="stringliteral">&quot;GameObject&quot;</span>].push_back(objJson);</div>
-<div class="line"><span class="lineno">  151</span>    }</div>
-<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">return</span> j;</div>
-<div class="line"><span class="lineno">  153</span>}</div>
-<div class="ttc" id="anamespacemtgb_html_a6c1ea0e60021df7bdf67c9c25f26eb52"><div class="ttname"><a href="namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52">mtgb::ExtractClassName</a></div><div class="ttdeci">std::string ExtractClassName(const std::string &amp;_fullName)</div><div class="ttdoc">インスタンス名から生成番号を削除し、クラス名を返す</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00250">MTStringUtility.cpp:250</a></div></div>
+<p class="definition"> <a class="el" href="GameScene_8cpp_source.html">GameScene.cpp</a> の <a class="el" href="GameScene_8cpp_source.html#l00124">124</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
+<div class="line"><span class="lineno">  126</span>    nlohmann::json j;</div>
+<div class="line"><span class="lineno">  127</span>    <span class="comment">// 配列として初期化</span></div>
+<div class="line"><span class="lineno">  128</span>    j[<span class="stringliteral">&quot;GameObject&quot;</span>] = nlohmann::json::array();</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <span class="keywordtype">object</span> : <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a3cfe6412123432bb9b77cbbf918a1b22">pGameObjects_</a>)</div>
+<div class="line"><span class="lineno">  130</span>    {</div>
+<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">if</span> (!<span class="keywordtype">object</span>)</div>
+<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>        GameObjectTypeRegistry&amp; gameObjTypeRegistry = Game::System&lt;GameObjectTypeRegistry&gt;();</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">if</span> (gameObjTypeRegistry.IsRegistered(<a class="code hl_function" href="namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52">mtgb::ExtractClassName</a>(object-&gt;GetName())) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>        nlohmann::json objJson = <span class="keywordtype">object</span>-&gt;Serialize();</div>
+<div class="line"><span class="lineno">  140</span>        j[<span class="stringliteral">&quot;GameObject&quot;</span>].push_back(objJson);</div>
+<div class="line"><span class="lineno">  141</span>    }</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">return</span> j;</div>
+<div class="line"><span class="lineno">  143</span>}</div>
+<div class="ttc" id="anamespacemtgb_html_a6c1ea0e60021df7bdf67c9c25f26eb52"><div class="ttname"><a href="namespacemtgb.html#a6c1ea0e60021df7bdf67c9c25f26eb52">mtgb::ExtractClassName</a></div><div class="ttdeci">std::string ExtractClassName(const std::string &amp;_fullName)</div><div class="ttdoc">インスタンス名から生成番号を削除し、クラス名を返す</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00246">MTStringUtility.cpp:246</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTStringUtility_8cpp_source.html#l00250">mtgb::ExtractClassName()</a>, <a class="el" href="GameObjectTypeRegistry_8h_source.html#l00064">mtgb::GameObjectTypeRegistry::IsRegistered()</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTStringUtility_8cpp_source.html#l00246">mtgb::ExtractClassName()</a>, <a class="el" href="GameObjectTypeRegistry_8h_source.html#l00064">mtgb::GameObjectTypeRegistry::IsRegistered()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -982,13 +979,13 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#aee3999ef14c77f7a41365d751867d4ab">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00047">47</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (InputUtil::GetKeyDown(KeyCode::ESCAPE))</div>
-<div class="line"><span class="lineno">   50</span>    {</div>
-<div class="line"><span class="lineno">   51</span>        Game::Exit();</div>
-<div class="line"><span class="lineno">   52</span>    }</div>
-<div class="line"><span class="lineno">   53</span>}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (InputUtil::GetKeyDown(KeyCode::ESCAPE))</div>
+<div class="line"><span class="lineno">   48</span>    {</div>
+<div class="line"><span class="lineno">   49</span>        Game::Exit();</div>
+<div class="line"><span class="lineno">   50</span>    }</div>
+<div class="line"><span class="lineno">   51</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1029,7 +1026,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmtgb_1_1GameScene.html">mtgb::GameScene</a> * mtgb::GameScene::pInstance_ {nullptr}</td>
+          <td class="memname"><a class="el" href="classmtgb_1_1GameScene.html">mtgb::GameScene</a> * mtgb::GameScene::pInstance_ { nullptr }</td>
         </tr>
       </table>
   </td>
@@ -1067,7 +1064,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 
 <p class="definition"> <a class="el" href="SampleScene_8h_source.html">SampleScene.h</a> の <a class="el" href="SampleScene_8h_source.html#l00016">16</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00022">Initialize()</a>.</p>
+<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00020">Initialize()</a>.</p>
 
 </div>
 </div>

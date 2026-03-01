@@ -170,7 +170,7 @@ mtbit::BitFlag&lt; EnumStructT &gt; 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 静的非公開変数類</h2></td></tr>
-<tr class="memitem:a0ae5f880c73778f542cde8e1307a3a8a"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtbit_1_1BitFlag.html#a0ae5f880c73778f542cde8e1307a3a8a">BIT_COUNT</a> {sizeof(EnumStructT) * 8}</td></tr>
+<tr class="memitem:a0ae5f880c73778f542cde8e1307a3a8a"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtbit_1_1BitFlag.html#a0ae5f880c73778f542cde8e1307a3a8a">BIT_COUNT</a> { sizeof(EnumStructT) * 8 }</td></tr>
 <tr class="separator:a0ae5f880c73778f542cde8e1307a3a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -301,7 +301,7 @@ template&lt;typename EnumStructT &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="BitFlag_8h_source.html">BitFlag.h</a> の <a class="el" href="BitFlag_8h_source.html#l00183">183</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  184</span>    : <a class="code hl_variable" href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">value_</a>{_bitset}</div>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>    : <a class="code hl_variable" href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">value_</a> { _bitset }</div>
 <div class="line"><span class="lineno">  185</span>{</div>
 <div class="line"><span class="lineno">  186</span>}</div>
 </div><!-- fragment -->
@@ -365,7 +365,7 @@ template&lt;typename EnumStructT &gt; </div>
 
 <p class="definition"> <a class="el" href="BitFlag_8h_source.html">BitFlag.h</a> の <a class="el" href="BitFlag_8h_source.html#l00099">99</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  100</span>        {</div>
-<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">return</span> BitFlagEditor{*<span class="keyword">this</span>};</div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">return</span> BitFlagEditor { *<span class="keyword">this</span> };</div>
 <div class="line"><span class="lineno">  102</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="BitFlag_8h_source.html#l00156">mtbit::operator|()</a>.</p>
@@ -462,7 +462,7 @@ template&lt;typename EnumStructT &gt; </div>
 <div class="line"><span class="lineno">  190</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtbit_1_1BitFlag.html#a6f41950facaa1b6a6d5f4754c11c6eb1">value_</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(_e)];</div>
 <div class="line"><span class="lineno">  191</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="RenderSystem_8cpp_source.html#l00084">mtgb::RenderSystem::DrawGameObjects()</a>, <a class="el" href="ImageRendererCP_8cpp_source.html#l00017">mtgb::ImageRendererCP::RenderLayer()</a>, <a class="el" href="MeshRendererCP_8cpp_source.html#l00015">mtgb::MeshRendererCP::RenderLayer()</a>, <a class="el" href="TextRendererCP_8cpp_source.html#l00012">mtgb::TextRendererCP::RenderLayer()</a>.</p>
+<p class="reference">参照元 <a class="el" href="RenderSystem_8cpp_source.html#l00080">mtgb::RenderSystem::DrawGameObjects()</a>, <a class="el" href="ImageRendererCP_8cpp_source.html#l00013">mtgb::ImageRendererCP::RenderLayer()</a>, <a class="el" href="MeshRendererCP_8cpp_source.html#l00011">mtgb::MeshRendererCP::RenderLayer()</a>, <a class="el" href="TextRendererCP_8cpp_source.html#l00008">mtgb::TextRendererCP::RenderLayer()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -546,7 +546,7 @@ template&lt;typename EnumStructT &gt; </div>
 
 <p class="definition"> <a class="el" href="BitFlag_8h_source.html">BitFlag.h</a> の <a class="el" href="BitFlag_8h_source.html#l00128">128</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  129</span>        {</div>
-<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#a651f499c087823b23052bb68bbb16496">BitFlag</a>{};</div>
+<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmtbit_1_1BitFlag.html#a651f499c087823b23052bb68bbb16496">BitFlag</a> {};</div>
 <div class="line"><span class="lineno">  131</span>        }</div>
 <div class="ttc" id="aclassmtbit_1_1BitFlag_html_a651f499c087823b23052bb68bbb16496"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#a651f499c087823b23052bb68bbb16496">mtbit::BitFlag::BitFlag</a></div><div class="ttdeci">BitFlag()=default</div></div>
 </div><!-- fragment -->
@@ -602,7 +602,7 @@ template&lt;typename EnumStructT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr size_t <a class="el" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag</a>&lt; EnumStructT &gt;::BIT_COUNT {sizeof(EnumStructT) * 8}</td>
+          <td class="memname">constexpr size_t <a class="el" href="classmtbit_1_1BitFlag.html">mtbit::BitFlag</a>&lt; EnumStructT &gt;::BIT_COUNT { sizeof(EnumStructT) * 8 }</td>
         </tr>
       </table>
   </td>

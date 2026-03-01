@@ -1,7 +1,6 @@
 var classmtgb_1_1ColliderCP =
 [
     [ "Component", "classmtgb_1_1ColliderCP.html#ac1e507a41099ff80a3746061ceb79adf", null ],
-    [ "ComponentIndexMap", "classmtgb_1_1ColliderCP.html#ace36a65e41de4dfe9ebab97ae7b32a5d", null ],
     [ "ColliderCP", "classmtgb_1_1ColliderCP.html#a428fb9ece7d9e72449211ade16e9e619", null ],
     [ "~ColliderCP", "classmtgb_1_1ColliderCP.html#a4767a39564fe9a093889f0611261ce8c", null ],
     [ "Copy", "classmtgb_1_1ColliderCP.html#afd34c9ea8411e556791445ec9ba9a894", null ],

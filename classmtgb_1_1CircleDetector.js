@@ -2,7 +2,7 @@ var classmtgb_1_1CircleDetector =
 [
     [ "CircleDetector", "classmtgb_1_1CircleDetector.html#ad74c50c952128b9e598f6b48163bc66f", null ],
     [ "CircleDetector", "classmtgb_1_1CircleDetector.html#a47066c9556602e0b807329d6c5c6ba94", null ],
-    [ "CircleDetector", "classmtgb_1_1CircleDetector.html#a6a925ef048126a8da069c1d7e10b68bf", null ],
+    [ "CircleDetector", "classmtgb_1_1CircleDetector.html#a0ab9ecab24f9b270fa86e70b724ad0b1", null ],
     [ "~CircleDetector", "classmtgb_1_1CircleDetector.html#a14c87a0b9c408b8db664878ab404edca", null ],
     [ "ForEach", "classmtgb_1_1CircleDetector.html#a2ab366bfab628af2b51a80e1ae61b320", null ],
     [ "ForEach", "classmtgb_1_1CircleDetector.html#a0a611145fdd3062ca728be733ace6c2d", null ],

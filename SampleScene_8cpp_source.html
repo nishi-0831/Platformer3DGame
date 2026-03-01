@@ -111,54 +111,48 @@ $(document).ready(function(){initNavTree('SampleScene_8cpp_source.html',''); ini
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;../Source/RespawnManager.h&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classSampleScene.html#a4cd7f53a24279f0a9fecc102b2d2c84a">   13</a></span><a class="code hl_function" href="classSampleScene.html#a4cd7f53a24279f0a9fecc102b2d2c84a">SampleScene::SampleScene</a>()</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    : stageID_{<a class="code hl_enumeration" href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1">StageID</a>::<a class="code hl_enumvalue" href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1a01feac2740c332f400d8df7294eb2c27">STAGE_ONE</a>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    : stageID_ { <a class="code hl_enumeration" href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1">StageID</a>::<a class="code hl_enumvalue" href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1a01feac2740c332f400d8df7294eb2c27">STAGE_ONE</a> }</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classSampleScene.html#a77089ab9753c23411bbdd8b70313a5a5">   18</a></span><a class="code hl_function" href="classSampleScene.html#a77089ab9753c23411bbdd8b70313a5a5">SampleScene::~SampleScene</a>()</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classSampleScene.html#aae186be401040c6ad4aef71afd78f711">   22</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSampleScene.html#aae186be401040c6ad4aef71afd78f711">SampleScene::Initialize</a>()</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Game::System&lt;ImGuiEditorCamera&gt;().CreateCamera();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#a28a8021dd97f8ea30b8e1d35c769e483">Initialize</a>();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    MTImGui::Instance().Initialize();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    Instantiate&lt;GameOverManager&gt;();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Instantiate&lt;SkySphere&gt;();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    Instantiate&lt;RespawnManager&gt;();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::optional&lt;nlohmann::json&gt; json = Game::System&lt;StageManger&gt;().GetStageJson(<a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a>);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">if</span> (json.has_value())</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        GameObjectGenerator::GenerateFromJson(json);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="comment">// TODO: マジックナンバーを修正</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        Time::WaitFrame(2);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;JSONファイルが見つかりません&quot;</span>);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classSampleScene.html#a4ed69fb86200cf54053ca9cb9f2143bf">   47</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSampleScene.html#a4ed69fb86200cf54053ca9cb9f2143bf">SampleScene::Update</a>()</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (InputUtil::GetKeyDown(KeyCode::ESCAPE))</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        Game::Exit();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classSampleScene.html#a77089ab9753c23411bbdd8b70313a5a5">   18</a></span><a class="code hl_function" href="classSampleScene.html#a77089ab9753c23411bbdd8b70313a5a5">SampleScene::~SampleScene</a>() {}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classSampleScene.html#aae186be401040c6ad4aef71afd78f711">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSampleScene.html#aae186be401040c6ad4aef71afd78f711">SampleScene::Initialize</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Game::System&lt;ImGuiEditorCamera&gt;().CreateCamera();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#a28a8021dd97f8ea30b8e1d35c769e483">Initialize</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    MTImGui::Instance().Initialize();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    Instantiate&lt;GameOverManager&gt;();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    Instantiate&lt;SkySphere&gt;();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    Instantiate&lt;RespawnManager&gt;();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::optional&lt;nlohmann::json&gt; json = Game::System&lt;StageManger&gt;().GetStageJson(<a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (json.has_value())</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        GameObjectGenerator::GenerateFromJson(json);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="comment">// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="comment">// TODO: マジックナンバーを修正</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        Time::WaitFrame(2);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;JSONファイルが見つかりません&quot;</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classSampleScene.html#a4ed69fb86200cf54053ca9cb9f2143bf">   45</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSampleScene.html#a4ed69fb86200cf54053ca9cb9f2143bf">SampleScene::Update</a>()</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (InputUtil::GetKeyDown(KeyCode::ESCAPE))</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        Game::Exit();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classSampleScene.html#a7fe2abd741221eb37db47a1c6b43737e">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSampleScene.html#a7fe2abd741221eb37db47a1c6b43737e">SampleScene::Draw</a>()<span class="keyword"> const </span>{}</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classSampleScene.html#a7fe2abd741221eb37db47a1c6b43737e">   55</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSampleScene.html#a7fe2abd741221eb37db47a1c6b43737e">SampleScene::Draw</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classSampleScene.html#a81e26cc660526b4e073a26ffb8f9ff18">   59</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSampleScene.html#a81e26cc660526b4e073a26ffb8f9ff18">SampleScene::End</a>()</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>{</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classSampleScene.html#a81e26cc660526b4e073a26ffb8f9ff18">   55</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSampleScene.html#a81e26cc660526b4e073a26ffb8f9ff18">SampleScene::End</a>() {}</div>
 <div class="ttc" id="aSampleScene_8h_html"><div class="ttname"><a href="SampleScene_8h.html">SampleScene.h</a></div></div>
 <div class="ttc" id="aStageID_8h_html_a2dec0eb07ce69be2b4cdaa2b2e2115e1"><div class="ttname"><a href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1">StageID</a></div><div class="ttdeci">StageID</div><div class="ttdef"><b>Definition:</b> <a href="StageID_8h_source.html#l00003">StageID.h:4</a></div></div>
 <div class="ttc" id="aStageID_8h_html_a2dec0eb07ce69be2b4cdaa2b2e2115e1a01feac2740c332f400d8df7294eb2c27"><div class="ttname"><a href="StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1a01feac2740c332f400d8df7294eb2c27">StageID::STAGE_ONE</a></div><div class="ttdeci">@ STAGE_ONE</div></div>
@@ -166,11 +160,11 @@ $(document).ready(function(){initNavTree('SampleScene_8cpp_source.html',''); ini
 <div class="ttc" id="aclassPropertyDisplayRegistry_html_afc910235065385c0a147e03f9a2305e1"><div class="ttname"><a href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a></div><div class="ttdeci">static PropertyDisplayRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry.cpp:10</a></div></div>
 <div class="ttc" id="aclassSampleScene_html_a40cb91676e4af6ab8236fb0f117716b0"><div class="ttname"><a href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">SampleScene::stageID_</a></div><div class="ttdeci">StageID stageID_</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8h_source.html#l00016">SampleScene.h:16</a></div></div>
 <div class="ttc" id="aclassSampleScene_html_a4cd7f53a24279f0a9fecc102b2d2c84a"><div class="ttname"><a href="classSampleScene.html#a4cd7f53a24279f0a9fecc102b2d2c84a">SampleScene::SampleScene</a></div><div class="ttdeci">SampleScene()</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8cpp_source.html#l00013">SampleScene.cpp:13</a></div></div>
-<div class="ttc" id="aclassSampleScene_html_a4ed69fb86200cf54053ca9cb9f2143bf"><div class="ttname"><a href="classSampleScene.html#a4ed69fb86200cf54053ca9cb9f2143bf">SampleScene::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8cpp_source.html#l00047">SampleScene.cpp:47</a></div></div>
+<div class="ttc" id="aclassSampleScene_html_a4ed69fb86200cf54053ca9cb9f2143bf"><div class="ttname"><a href="classSampleScene.html#a4ed69fb86200cf54053ca9cb9f2143bf">SampleScene::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8cpp_source.html#l00045">SampleScene.cpp:45</a></div></div>
 <div class="ttc" id="aclassSampleScene_html_a77089ab9753c23411bbdd8b70313a5a5"><div class="ttname"><a href="classSampleScene.html#a77089ab9753c23411bbdd8b70313a5a5">SampleScene::~SampleScene</a></div><div class="ttdeci">~SampleScene()</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8cpp_source.html#l00018">SampleScene.cpp:18</a></div></div>
-<div class="ttc" id="aclassSampleScene_html_a7fe2abd741221eb37db47a1c6b43737e"><div class="ttname"><a href="classSampleScene.html#a7fe2abd741221eb37db47a1c6b43737e">SampleScene::Draw</a></div><div class="ttdeci">void Draw() const override</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8cpp_source.html#l00055">SampleScene.cpp:55</a></div></div>
-<div class="ttc" id="aclassSampleScene_html_a81e26cc660526b4e073a26ffb8f9ff18"><div class="ttname"><a href="classSampleScene.html#a81e26cc660526b4e073a26ffb8f9ff18">SampleScene::End</a></div><div class="ttdeci">void End() override</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8cpp_source.html#l00059">SampleScene.cpp:59</a></div></div>
-<div class="ttc" id="aclassSampleScene_html_aae186be401040c6ad4aef71afd78f711"><div class="ttname"><a href="classSampleScene.html#aae186be401040c6ad4aef71afd78f711">SampleScene::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8cpp_source.html#l00022">SampleScene.cpp:22</a></div></div>
+<div class="ttc" id="aclassSampleScene_html_a7fe2abd741221eb37db47a1c6b43737e"><div class="ttname"><a href="classSampleScene.html#a7fe2abd741221eb37db47a1c6b43737e">SampleScene::Draw</a></div><div class="ttdeci">void Draw() const override</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8cpp_source.html#l00053">SampleScene.cpp:53</a></div></div>
+<div class="ttc" id="aclassSampleScene_html_a81e26cc660526b4e073a26ffb8f9ff18"><div class="ttname"><a href="classSampleScene.html#a81e26cc660526b4e073a26ffb8f9ff18">SampleScene::End</a></div><div class="ttdeci">void End() override</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8cpp_source.html#l00055">SampleScene.cpp:55</a></div></div>
+<div class="ttc" id="aclassSampleScene_html_aae186be401040c6ad4aef71afd78f711"><div class="ttname"><a href="classSampleScene.html#aae186be401040c6ad4aef71afd78f711">SampleScene::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8cpp_source.html#l00020">SampleScene.cpp:20</a></div></div>
 <div class="ttc" id="amtgb_8h_html"><div class="ttname"><a href="mtgb_8h.html">mtgb.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

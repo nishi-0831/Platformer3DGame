@@ -138,9 +138,9 @@ mtgb::Matrix4x4 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 静的公開変数類</h2></td></tr>
-<tr class="memitem:aa6c7530ae3982a4c4005f9200423cb0f"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f">ROW_SIZE</a> {4}</td></tr>
+<tr class="memitem:aa6c7530ae3982a4c4005f9200423cb0f"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f">ROW_SIZE</a> { 4 }</td></tr>
 <tr class="separator:aa6c7530ae3982a4c4005f9200423cb0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab91760ae89336601c4f38c1cc045e856"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1Matrix4x4.html#ab91760ae89336601c4f38c1cc045e856">COLUMN_SIZE</a> {4}</td></tr>
+<tr class="memitem:ab91760ae89336601c4f38c1cc045e856"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1Matrix4x4.html#ab91760ae89336601c4f38c1cc045e856">COLUMN_SIZE</a> { 4 }</td></tr>
 <tr class="separator:ab91760ae89336601c4f38c1cc045e856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -171,7 +171,7 @@ mtgb::Matrix4x4 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="Matrix4x4_8h_source.html">Matrix4x4.h</a> の <a class="el" href="Matrix4x4_8h_source.html#l00015">15</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>            : XMMATRIX{DirectX::XMMatrixIdentity()}</div>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>            : XMMATRIX { DirectX::XMMatrixIdentity() }</div>
 <div class="line"><span class="lineno">   17</span>        {</div>
 <div class="line"><span class="lineno">   18</span>        }</div>
 </div><!-- fragment -->
@@ -228,7 +228,7 @@ mtgb::Matrix4x4 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="Matrix4x4_8h_source.html">Matrix4x4.h</a> の <a class="el" href="Matrix4x4_8h_source.html#l00022">22</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>            : XMMATRIX{_xmMatrix}</div>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>            : XMMATRIX { _xmMatrix }</div>
 <div class="line"><span class="lineno">   24</span>        {</div>
 <div class="line"><span class="lineno">   25</span>        }</div>
 </div><!-- fragment -->
@@ -262,8 +262,8 @@ mtgb::Matrix4x4 連携図</div>
 <p class="definition"> <a class="el" href="Matrix4x4_8h_source.html">Matrix4x4.h</a> の <a class="el" href="Matrix4x4_8h_source.html#l00036">36</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   37</span>        {</div>
 <div class="line"><span class="lineno">   38</span>            <span class="comment">// FLT_EPSILON</span></div>
-<div class="line"><span class="lineno">   39</span>            DirectX::XMFLOAT4X4 a{};</div>
-<div class="line"><span class="lineno">   40</span>            DirectX::XMFLOAT4X4 b{};</div>
+<div class="line"><span class="lineno">   39</span>            DirectX::XMFLOAT4X4 a {};</div>
+<div class="line"><span class="lineno">   40</span>            DirectX::XMFLOAT4X4 b {};</div>
 <div class="line"><span class="lineno">   41</span>            DirectX::XMStoreFloat4x4(&amp;a, *<span class="keyword">this</span>);</div>
 <div class="line"><span class="lineno">   42</span>            DirectX::XMStoreFloat4x4(&amp;b, _other);</div>
 <div class="line"><span class="lineno">   43</span> </div>
@@ -413,7 +413,7 @@ mtgb::Matrix4x4 連携図</div>
 
 <p class="definition"> <a class="el" href="Matrix4x4_8cpp_source.html">Matrix4x4.cpp</a> の <a class="el" href="Matrix4x4_8cpp_source.html#l00004">4</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
-<div class="line"><span class="lineno">    6</span>    std::string str{};</div>
+<div class="line"><span class="lineno">    6</span>    std::string str {};</div>
 <div class="line"><span class="lineno">    7</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; <a class="code hl_variable" href="structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f">ROW_SIZE</a>; y++)</div>
 <div class="line"><span class="lineno">    8</span>    {</div>
 <div class="line"><span class="lineno">    9</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; <a class="code hl_variable" href="structmtgb_1_1Matrix4x4.html#ab91760ae89336601c4f38c1cc045e856">COLUMN_SIZE</a>; x++)</div>
@@ -452,7 +452,7 @@ mtgb::Matrix4x4 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const size_t mtgb::Matrix4x4::COLUMN_SIZE {4}</td>
+          <td class="memname">const size_t mtgb::Matrix4x4::COLUMN_SIZE { 4 }</td>
         </tr>
       </table>
   </td>
@@ -478,7 +478,7 @@ mtgb::Matrix4x4 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const size_t mtgb::Matrix4x4::ROW_SIZE {4}</td>
+          <td class="memname">const size_t mtgb::Matrix4x4::ROW_SIZE { 4 }</td>
         </tr>
       </table>
   </td>

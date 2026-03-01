@@ -207,7 +207,7 @@ mtgb::ComponentFactory 連携図</div>
 
 <p class="definition"> <a class="el" href="ComponentFactory_8cpp_source.html">ComponentFactory.cpp</a> の <a class="el" href="ComponentFactory_8cpp_source.html#l00003">3</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">    4</span>{</div>
-<div class="line"><span class="lineno">    5</span>    std::type_index typeIdx{_info};</div>
+<div class="line"><span class="lineno">    5</span>    std::type_index typeIdx { _info };</div>
 <div class="line"><span class="lineno">    6</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#af68695b039d21635b82a903b395057e0">creators_</a>.find(typeIdx);</div>
 <div class="line"><span class="lineno">    7</span>    <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#af68695b039d21635b82a903b395057e0">creators_</a>.end())</div>
 <div class="line"><span class="lineno">    8</span>    {</div>
@@ -241,7 +241,7 @@ mtgb::ComponentFactory 連携図</div>
 
 <p class="definition"> <a class="el" href="ComponentFactory_8cpp_source.html">ComponentFactory.cpp</a> の <a class="el" href="ComponentFactory_8cpp_source.html#l00016">16</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   17</span>{</div>
-<div class="line"><span class="lineno">   18</span>    std::type_index typeIdx{_memento.GetComponentType()};</div>
+<div class="line"><span class="lineno">   18</span>    std::type_index typeIdx { _memento.GetComponentType() };</div>
 <div class="line"><span class="lineno">   19</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#a5607f7f14eaaec0a2b388b97271b3fee">creatorsFromMemento_</a>.find(typeIdx);</div>
 <div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#a5607f7f14eaaec0a2b388b97271b3fee">creatorsFromMemento_</a>.end())</div>
 <div class="line"><span class="lineno">   21</span>    {</div>
@@ -326,7 +326,7 @@ mtgb::ComponentFactory 連携図</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="ComponentFactory_8h_source.html#l00039">types_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="ImGuiEditor_8cpp_source.html#l00162">mtgb::ImGuiEditor::ShowAddComponentDialog()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ImGuiEditor_8cpp_source.html#l00156">mtgb::ImGuiEditor::ShowAddComponentDialog()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">

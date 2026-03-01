@@ -17,7 +17,7 @@ var searchData=
   ['texture_5f_14',['texture_',['../classmtgb_1_1PlaneUVScroll.html#a06095949fce0e74ebbe45d424ca334bf',1,'mtgb::PlaneUVScroll']]],
   ['theta_15',['theta',['../structmtgb_1_1Mathf_1_1SphericalCoord.html#a04a1b0f77b898c932351c429d39a116c',1,'mtgb::Mathf::SphericalCoord']]],
   ['time_5f_16',['time_',['../classmtgb_1_1PlaneUVScroll.html#ae21544b051680748d3ec5bcb6006432e',1,'mtgb::PlaneUVScroll']]],
-  ['timeleft_17',['timeLeft',['../structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html#abe5a2e259512c3fb7aa80e8cf415c275',1,'mtgb::Timer::QUEUE_ELEMENT::timeLeft()'],['../structmtgb_1_1AudioOneShot.html#a42e82aae0c2668ad145b39767398c1bc',1,'mtgb::AudioOneShot::timeLeft()']]],
+  ['timeleft_17',['timeLeft',['../structmtgb_1_1Timer_1_1QUEUE__ELEMENT.html#abe5a2e259512c3fb7aa80e8cf415c275',1,'mtgb::Timer::QUEUE_ELEMENT']]],
   ['timerhandle_18',['timerHandle',['../structmtgb_1_1JoystickContext.html#a838190d163810c64aaf3f60e0743a068',1,'mtgb::JoystickContext']]],
   ['title_19',['title',['../structmtgb_1_1WindowConfig.html#aa69a7a9cb325e24270e366d364645429',1,'mtgb::WindowConfig']]],
   ['todestroy_5f_20',['toDestroy_',['../structmtgb_1_1GameObject_1_1Status.html#ad0cde9231616845f8bbef5601a894d81',1,'mtgb::GameObject::Status']]],

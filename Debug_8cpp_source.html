@@ -99,61 +99,55 @@ $(document).ready(function(){initNavTree('Debug_8cpp_source.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <a href="Debug_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Debug_8h.html">Debug.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;..\ImGui\imgui.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;ImGui/imgui.h&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#a9e99e2688a80681c262941c8ddefbe91">    4</a></span><a class="code hl_function" href="classmtgb_1_1Debug.html#a9e99e2688a80681c262941c8ddefbe91">mtgb::Debug::Debug</a>()</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#a9e99e2688a80681c262941c8ddefbe91">    4</a></span><a class="code hl_function" href="classmtgb_1_1Debug.html#a9e99e2688a80681c262941c8ddefbe91">mtgb::Debug::Debug</a>() {}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#a702808db94b000adb234652f828fdd81">    6</a></span><a class="code hl_function" href="classmtgb_1_1Debug.html#a702808db94b000adb234652f828fdd81">mtgb::Debug::~Debug</a>() {}</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#a702808db94b000adb234652f828fdd81">    8</a></span><a class="code hl_function" href="classmtgb_1_1Debug.html#a702808db94b000adb234652f828fdd81">mtgb::Debug::~Debug</a>()</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#a782371ed5a6873941a083bad5926544c">   12</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Debug.html#a782371ed5a6873941a083bad5926544c">mtgb::Debug::Initialize</a>()</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#a60c40cd4897095e86ab508e8a7938c5d">   16</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Debug.html#a60c40cd4897095e86ab508e8a7938c5d">mtgb::Debug::Update</a>()</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">if</span> (logs_.size() &gt; MAX_LOG_COUNT)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classmtgb_1_1Debug.html#a5d34a112a679a14dea76ac8a54da41dd">LogItr</a> itr = logs_.begin(); itr != std::next(logs_.begin(), logs_.size() - MAX_LOG_COUNT);)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            itr = RemoveLog(itr);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#a18f85855c40bc04d7835b596ce79c625">   27</a></span>std::list&lt;mtgb::LogEntry&gt; <a class="code hl_function" href="classmtgb_1_1Debug.html#a18f85855c40bc04d7835b596ce79c625">mtgb::Debug::GetLog</a>()</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span> logs_;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#a782371ed5a6873941a083bad5926544c">    8</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Debug.html#a782371ed5a6873941a083bad5926544c">mtgb::Debug::Initialize</a>() {}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#a60c40cd4897095e86ab508e8a7938c5d">   10</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Debug.html#a60c40cd4897095e86ab508e8a7938c5d">mtgb::Debug::Update</a>()</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">if</span> (logs_.size() &gt; MAX_LOG_COUNT)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classmtgb_1_1Debug.html#a5d34a112a679a14dea76ac8a54da41dd">LogItr</a> itr = logs_.begin(); itr != std::next(logs_.begin(), logs_.size() - MAX_LOG_COUNT);)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            itr = RemoveLog(itr);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#a18f85855c40bc04d7835b596ce79c625">   21</a></span>std::list&lt;mtgb::LogEntry&gt; <a class="code hl_function" href="classmtgb_1_1Debug.html#a18f85855c40bc04d7835b596ce79c625">mtgb::Debug::GetLog</a>()</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> logs_;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#aa361df8a39f2f5bc275880af741f4a55">   26</a></span><a class="code hl_typedef" href="classmtgb_1_1Debug.html#a5d34a112a679a14dea76ac8a54da41dd">mtgb::Debug::LogItr</a> <a class="code hl_function" href="classmtgb_1_1Debug.html#aa361df8a39f2f5bc275880af741f4a55">mtgb::Debug::RemoveLog</a>(<a class="code hl_typedef" href="classmtgb_1_1Debug.html#a5d34a112a679a14dea76ac8a54da41dd">LogItr</a> _itr)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    logMap_.erase(_itr-&gt;msgDetail);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span> logs_.erase(_itr);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#aa361df8a39f2f5bc275880af741f4a55">   32</a></span><a class="code hl_typedef" href="classmtgb_1_1Debug.html#a5d34a112a679a14dea76ac8a54da41dd">mtgb::Debug::LogItr</a> <a class="code hl_function" href="classmtgb_1_1Debug.html#aa361df8a39f2f5bc275880af741f4a55">mtgb::Debug::RemoveLog</a>(<a class="code hl_typedef" href="classmtgb_1_1Debug.html#a5d34a112a679a14dea76ac8a54da41dd">LogItr</a> _itr)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    logMap_.erase(_itr-&gt;msgDetail);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> logs_.erase(_itr);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#acd36fc01d6475539b923aac4a97ec619">   38</a></span>std::string <a class="code hl_function" href="classmtgb_1_1Debug.html#acd36fc01d6475539b923aac4a97ec619">mtgb::Debug::MakeKey</a>(</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> std::string&amp; _object,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* _file,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> _line,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* _func,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">const</span> std::string _msg</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> _msg + <span class="stringliteral">&quot;|&quot;</span> + _object + <span class="stringliteral">&quot;|&quot;</span> + _file + <span class="stringliteral">&quot;|&quot;</span> + std::to_string(_line) + _func;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classmtgb_1_1Debug.html#acd36fc01d6475539b923aac4a97ec619">   32</a></span>std::string <a class="code hl_function" href="classmtgb_1_1Debug.html#acd36fc01d6475539b923aac4a97ec619">mtgb::Debug::MakeKey</a>(</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">const</span> std::string&amp; _object,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* _file,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">int</span> _line,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* _func,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">const</span> std::string _msg</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">return</span> _msg + <span class="stringliteral">&quot;|&quot;</span> + _object + <span class="stringliteral">&quot;|&quot;</span> + _file + <span class="stringliteral">&quot;|&quot;</span> + std::to_string(_line) + _func;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
 <div class="ttc" id="aDebug_8h_html"><div class="ttname"><a href="Debug_8h.html">Debug.h</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Debug_html_a18f85855c40bc04d7835b596ce79c625"><div class="ttname"><a href="classmtgb_1_1Debug.html#a18f85855c40bc04d7835b596ce79c625">mtgb::Debug::GetLog</a></div><div class="ttdeci">std::list&lt; LogEntry &gt; GetLog()</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00027">Debug.cpp:27</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Debug_html_a18f85855c40bc04d7835b596ce79c625"><div class="ttname"><a href="classmtgb_1_1Debug.html#a18f85855c40bc04d7835b596ce79c625">mtgb::Debug::GetLog</a></div><div class="ttdeci">std::list&lt; LogEntry &gt; GetLog()</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00021">Debug.cpp:21</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Debug_html_a5d34a112a679a14dea76ac8a54da41dd"><div class="ttname"><a href="classmtgb_1_1Debug.html#a5d34a112a679a14dea76ac8a54da41dd">mtgb::Debug::LogItr</a></div><div class="ttdeci">std::list&lt; LogEntry &gt;::iterator LogItr</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8h_source.html#l00046">Debug.h:46</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Debug_html_a60c40cd4897095e86ab508e8a7938c5d"><div class="ttname"><a href="classmtgb_1_1Debug.html#a60c40cd4897095e86ab508e8a7938c5d">mtgb::Debug::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00016">Debug.cpp:16</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Debug_html_a702808db94b000adb234652f828fdd81"><div class="ttname"><a href="classmtgb_1_1Debug.html#a702808db94b000adb234652f828fdd81">mtgb::Debug::~Debug</a></div><div class="ttdeci">~Debug()</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00008">Debug.cpp:8</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Debug_html_a782371ed5a6873941a083bad5926544c"><div class="ttname"><a href="classmtgb_1_1Debug.html#a782371ed5a6873941a083bad5926544c">mtgb::Debug::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00012">Debug.cpp:12</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Debug_html_a60c40cd4897095e86ab508e8a7938c5d"><div class="ttname"><a href="classmtgb_1_1Debug.html#a60c40cd4897095e86ab508e8a7938c5d">mtgb::Debug::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00010">Debug.cpp:10</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Debug_html_a702808db94b000adb234652f828fdd81"><div class="ttname"><a href="classmtgb_1_1Debug.html#a702808db94b000adb234652f828fdd81">mtgb::Debug::~Debug</a></div><div class="ttdeci">~Debug()</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00006">Debug.cpp:6</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Debug_html_a782371ed5a6873941a083bad5926544c"><div class="ttname"><a href="classmtgb_1_1Debug.html#a782371ed5a6873941a083bad5926544c">mtgb::Debug::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00008">Debug.cpp:8</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Debug_html_a9e99e2688a80681c262941c8ddefbe91"><div class="ttname"><a href="classmtgb_1_1Debug.html#a9e99e2688a80681c262941c8ddefbe91">mtgb::Debug::Debug</a></div><div class="ttdeci">Debug()</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00004">Debug.cpp:4</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Debug_html_aa361df8a39f2f5bc275880af741f4a55"><div class="ttname"><a href="classmtgb_1_1Debug.html#aa361df8a39f2f5bc275880af741f4a55">mtgb::Debug::RemoveLog</a></div><div class="ttdeci">LogItr RemoveLog(LogItr _itr)</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00032">Debug.cpp:32</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Debug_html_acd36fc01d6475539b923aac4a97ec619"><div class="ttname"><a href="classmtgb_1_1Debug.html#acd36fc01d6475539b923aac4a97ec619">mtgb::Debug::MakeKey</a></div><div class="ttdeci">static std::string MakeKey(const std::string &amp;_object, const char *_file, int _line, const char *_func, const std::string _msg)</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00038">Debug.cpp:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Debug_html_aa361df8a39f2f5bc275880af741f4a55"><div class="ttname"><a href="classmtgb_1_1Debug.html#aa361df8a39f2f5bc275880af741f4a55">mtgb::Debug::RemoveLog</a></div><div class="ttdeci">LogItr RemoveLog(LogItr _itr)</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00026">Debug.cpp:26</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Debug_html_acd36fc01d6475539b923aac4a97ec619"><div class="ttname"><a href="classmtgb_1_1Debug.html#acd36fc01d6475539b923aac4a97ec619">mtgb::Debug::MakeKey</a></div><div class="ttdeci">static std::string MakeKey(const std::string &amp;_object, const char *_file, int _line, const char *_func, const std::string _msg)</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00032">Debug.cpp:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

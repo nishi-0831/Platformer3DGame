@@ -13,9 +13,7 @@ var searchData=
   ['audio_2eh_10',['Audio.h',['../Audio_8h.html',1,'']]],
   ['audioclip_2ecpp_11',['AudioClip.cpp',['../AudioClip_8cpp.html',1,'']]],
   ['audioclip_2eh_12',['AudioClip.h',['../AudioClip_8h.html',1,'']]],
-  ['audiooneshot_2ecpp_13',['AudioOneShot.cpp',['../AudioOneShot_8cpp.html',1,'']]],
-  ['audiooneshot_2eh_14',['AudioOneShot.h',['../AudioOneShot_8h.html',1,'']]],
-  ['author_2ecpp_15',['author.cpp',['../author_8cpp.html',1,'']]],
-  ['autolink_2ecpp_16',['autolink.cpp',['../autolink_8cpp.html',1,'']]],
-  ['axis_2eh_17',['Axis.h',['../Axis_8h.html',1,'']]]
+  ['author_2ecpp_13',['author.cpp',['../author_8cpp.html',1,'']]],
+  ['autolink_2ecpp_14',['autolink.cpp',['../autolink_8cpp.html',1,'']]],
+  ['axis_2eh_15',['Axis.h',['../Axis_8h.html',1,'']]]
 ];

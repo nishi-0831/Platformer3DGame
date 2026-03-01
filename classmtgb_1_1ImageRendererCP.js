@@ -1,7 +1,6 @@
 var classmtgb_1_1ImageRendererCP =
 [
     [ "Component", "classmtgb_1_1ImageRendererCP.html#ac1e507a41099ff80a3746061ceb79adf", null ],
-    [ "ComponentIndexMap", "classmtgb_1_1ImageRendererCP.html#ace36a65e41de4dfe9ebab97ae7b32a5d", null ],
     [ "Copy", "classmtgb_1_1ImageRendererCP.html#afd34c9ea8411e556791445ec9ba9a894", null ],
     [ "Deserialize", "classmtgb_1_1ImageRendererCP.html#ab14e90cb0dd0d6c5df498fe230458bbf", null ],
     [ "Get", "classmtgb_1_1ImageRendererCP.html#a46d912d48cb0755f013969a21967d6ad", null ],

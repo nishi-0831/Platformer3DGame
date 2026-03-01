@@ -102,18 +102,18 @@ $(document).ready(function(){initNavTree('MouseStateProxy_8cpp_source.html','');
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;array&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iterator&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="structmtgb_1_1MouseStateProxy.html#af18f8d3265e2bc6cf01f590deb7d480e">    4</a></span><a class="code hl_function" href="structmtgb_1_1MouseStateProxy.html#af18f8d3265e2bc6cf01f590deb7d480e">mtgb::MouseStateProxy::MouseStateProxy</a>(<span class="keyword">const</span> _DIMOUSESTATE&amp; _ms)</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    : lX{_ms.lX}</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    , lY{_ms.lY}</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    , lZ{_ms.lZ}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    : lX { _ms.lX }</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    , lY { _ms.lY }</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    , lZ { _ms.lZ }</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    std::copy(std::begin(_ms.rgbButtons), std::end(_ms.rgbButtons), <a class="code hl_variable" href="structmtgb_1_1MouseStateProxy.html#aeb78629cb31012cdefeebc0865ca8b06">rgbButtons</a>);</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structmtgb_1_1MouseStateProxy.html#a09f47018c7643218595f27a025ae6e48">   12</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="structmtgb_1_1MouseStateProxy.html#a09f47018c7643218595f27a025ae6e48">mtgb::MouseStateProxy::UpdateInputData</a>(<span class="keyword">const</span> _DIMOUSESTATE&amp; _ms)</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    lX = {_ms.lX};</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    lY = {_ms.lY};</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    lZ = {_ms.lZ};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    lX = { _ms.lX };</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    lY = { _ms.lY };</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    lZ = { _ms.lZ };</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    std::copy(std::begin(_ms.rgbButtons), std::end(_ms.rgbButtons), rgbButtons);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>

@@ -1,7 +1,6 @@
 var classmtgb_1_1InterpolatorCP =
 [
     [ "Component", "classmtgb_1_1InterpolatorCP.html#ac1e507a41099ff80a3746061ceb79adf", null ],
-    [ "ComponentIndexMap", "classmtgb_1_1InterpolatorCP.html#ace36a65e41de4dfe9ebab97ae7b32a5d", null ],
     [ "InterpolatorCP", "classmtgb_1_1InterpolatorCP.html#a878495d3471dd9db6cc7b74109ab1719", null ],
     [ "~InterpolatorCP", "classmtgb_1_1InterpolatorCP.html#a663560a462d68701592d0975eb2750d5", null ],
     [ "Copy", "classmtgb_1_1InterpolatorCP.html#afd34c9ea8411e556791445ec9ba9a894", null ],

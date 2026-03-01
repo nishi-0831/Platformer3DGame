@@ -101,37 +101,33 @@ $(document).ready(function(){initNavTree('GameObjectTypeRegistry_8cpp_source.htm
 <a href="GameObjectTypeRegistry_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="stdafx_8h.html">stdafx.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="GameObjectTypeRegistry_8h.html">GameObjectTypeRegistry.h</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectTypeRegistry.html#a7be03e7e3e7709c153162c63dee7659f">    4</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectTypeRegistry.html#a7be03e7e3e7709c153162c63dee7659f">mtgb::GameObjectTypeRegistry::Initialize</a>()</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectTypeRegistry.html#a7be03e7e3e7709c153162c63dee7659f">    4</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectTypeRegistry.html#a7be03e7e3e7709c153162c63dee7659f">mtgb::GameObjectTypeRegistry::Initialize</a>() {}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectTypeRegistry.html#a4dbdabdb4962e9932405db05c1916f8b">    6</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectTypeRegistry.html#a4dbdabdb4962e9932405db05c1916f8b">mtgb::GameObjectTypeRegistry::Update</a>() {}</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectTypeRegistry.html#a4dbdabdb4962e9932405db05c1916f8b">    8</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1GameObjectTypeRegistry.html#a4dbdabdb4962e9932405db05c1916f8b">mtgb::GameObjectTypeRegistry::Update</a>()</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectTypeRegistry.html#ae8465c03140c09a4293dc8716c05f8bc">   12</a></span>std::vector&lt;std::string&gt; <a class="code hl_function" href="classmtgb_1_1GameObjectTypeRegistry.html#ae8465c03140c09a4293dc8716c05f8bc">mtgb::GameObjectTypeRegistry::GetRegisteredNames</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    std::vector&lt;std::string&gt; names;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    names.reserve(nameToType_.size());</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; keyValue : nameToType_)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        names.emplace_back(keyValue.first);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::sort(names.begin(), names.end());</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> names;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectTypeRegistry.html#a7f2115dfeb7dfb3f27e62ec25f9d1736">   26</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classmtgb_1_1GameObjectTypeRegistry.html#a8201021f22262070cc39c843c44820a4">mtgb::GameObjectTypeRegistry::IsRegistered</a>(std::string_view _typeName)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">return</span> nameToType_.contains(_typeName);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectTypeRegistry.html#ae8465c03140c09a4293dc8716c05f8bc">    8</a></span>std::vector&lt;std::string&gt; <a class="code hl_function" href="classmtgb_1_1GameObjectTypeRegistry.html#ae8465c03140c09a4293dc8716c05f8bc">mtgb::GameObjectTypeRegistry::GetRegisteredNames</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    std::vector&lt;std::string&gt; names;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    names.reserve(nameToType_.size());</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; keyValue : nameToType_)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        names.emplace_back(keyValue.first);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    std::sort(names.begin(), names.end());</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> names;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classmtgb_1_1GameObjectTypeRegistry.html#a7f2115dfeb7dfb3f27e62ec25f9d1736">   22</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classmtgb_1_1GameObjectTypeRegistry.html#a8201021f22262070cc39c843c44820a4">mtgb::GameObjectTypeRegistry::IsRegistered</a>(std::string_view _typeName)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> nameToType_.contains(_typeName);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 <div class="ttc" id="aGameObjectTypeRegistry_8h_html"><div class="ttname"><a href="GameObjectTypeRegistry_8h.html">GameObjectTypeRegistry.h</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectTypeRegistry_html_a4dbdabdb4962e9932405db05c1916f8b"><div class="ttname"><a href="classmtgb_1_1GameObjectTypeRegistry.html#a4dbdabdb4962e9932405db05c1916f8b">mtgb::GameObjectTypeRegistry::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectTypeRegistry_8cpp_source.html#l00008">GameObjectTypeRegistry.cpp:8</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectTypeRegistry_html_a4dbdabdb4962e9932405db05c1916f8b"><div class="ttname"><a href="classmtgb_1_1GameObjectTypeRegistry.html#a4dbdabdb4962e9932405db05c1916f8b">mtgb::GameObjectTypeRegistry::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectTypeRegistry_8cpp_source.html#l00006">GameObjectTypeRegistry.cpp:6</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectTypeRegistry_html_a7be03e7e3e7709c153162c63dee7659f"><div class="ttname"><a href="classmtgb_1_1GameObjectTypeRegistry.html#a7be03e7e3e7709c153162c63dee7659f">mtgb::GameObjectTypeRegistry::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectTypeRegistry_8cpp_source.html#l00004">GameObjectTypeRegistry.cpp:4</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectTypeRegistry_html_a8201021f22262070cc39c843c44820a4"><div class="ttname"><a href="classmtgb_1_1GameObjectTypeRegistry.html#a8201021f22262070cc39c843c44820a4">mtgb::GameObjectTypeRegistry::IsRegistered</a></div><div class="ttdeci">bool IsRegistered(const std::type_index &amp;_typeIndex) const</div><div class="ttdoc">型が登録されているか確認</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectTypeRegistry_8h_source.html#l00064">GameObjectTypeRegistry.h:64</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectTypeRegistry_html_ae8465c03140c09a4293dc8716c05f8bc"><div class="ttname"><a href="classmtgb_1_1GameObjectTypeRegistry.html#ae8465c03140c09a4293dc8716c05f8bc">mtgb::GameObjectTypeRegistry::GetRegisteredNames</a></div><div class="ttdeci">std::vector&lt; std::string &gt; GetRegisteredNames() const</div><div class="ttdoc">登録されている全ての型の名前を返す</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectTypeRegistry_8cpp_source.html#l00012">GameObjectTypeRegistry.cpp:12</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectTypeRegistry_html_ae8465c03140c09a4293dc8716c05f8bc"><div class="ttname"><a href="classmtgb_1_1GameObjectTypeRegistry.html#ae8465c03140c09a4293dc8716c05f8bc">mtgb::GameObjectTypeRegistry::GetRegisteredNames</a></div><div class="ttdeci">std::vector&lt; std::string &gt; GetRegisteredNames() const</div><div class="ttdoc">登録されている全ての型の名前を返す</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectTypeRegistry_8cpp_source.html#l00008">GameObjectTypeRegistry.cpp:8</a></div></div>
 <div class="ttc" id="astdafx_8h_html"><div class="ttname"><a href="stdafx_8h.html">stdafx.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

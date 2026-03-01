@@ -155,15 +155,15 @@ nlohmann::adl_serializer&lt;::mtgb::Color &gt; 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="JsonADLSerializers_8h_source.html">JsonADLSerializers.h</a> の <a class="el" href="JsonADLSerializers_8h_source.html#l00067">67</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>        {</div>
-<div class="line"><span class="lineno">   69</span>            uint8_t r = _j.value(<span class="stringliteral">&quot;r&quot;</span>, uint8_t(0));</div>
-<div class="line"><span class="lineno">   70</span>            uint8_t g = _j.value(<span class="stringliteral">&quot;g&quot;</span>, uint8_t(0));</div>
-<div class="line"><span class="lineno">   71</span>            uint8_t b = _j.value(<span class="stringliteral">&quot;b&quot;</span>, uint8_t(0));</div>
-<div class="line"><span class="lineno">   72</span>            uint8_t a = _j.value(<span class="stringliteral">&quot;a&quot;</span>, uint8_t(255));</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>            _color = <a class="code hl_struct" href="structmtgb_1_1Color.html">::mtgb::Color</a>(r, g, b, a);</div>
-<div class="line"><span class="lineno">   75</span>        }</div>
+<p class="definition"> <a class="el" href="JsonADLSerializers_8h_source.html">JsonADLSerializers.h</a> の <a class="el" href="JsonADLSerializers_8h_source.html#l00065">65</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>        {</div>
+<div class="line"><span class="lineno">   67</span>            uint8_t r = _j.value(<span class="stringliteral">&quot;r&quot;</span>, uint8_t(0));</div>
+<div class="line"><span class="lineno">   68</span>            uint8_t g = _j.value(<span class="stringliteral">&quot;g&quot;</span>, uint8_t(0));</div>
+<div class="line"><span class="lineno">   69</span>            uint8_t b = _j.value(<span class="stringliteral">&quot;b&quot;</span>, uint8_t(0));</div>
+<div class="line"><span class="lineno">   70</span>            uint8_t a = _j.value(<span class="stringliteral">&quot;a&quot;</span>, uint8_t(255));</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>            _color = <a class="code hl_struct" href="structmtgb_1_1Color.html">::mtgb::Color</a>(r, g, b, a);</div>
+<div class="line"><span class="lineno">   73</span>        }</div>
 <div class="ttc" id="astructmtgb_1_1Color_html"><div class="ttname"><a href="structmtgb_1_1Color.html">mtgb::Color</a></div><div class="ttdoc">色を0~255の範囲で表現する構造体</div><div class="ttdef"><b>Definition:</b> <a href="Color_8h_source.html#l00011">Color.h:12</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -204,13 +204,11 @@ nlohmann::adl_serializer&lt;::mtgb::Color &gt; 連携図</div>
 
 <p class="definition"> <a class="el" href="JsonADLSerializers_8h_source.html">JsonADLSerializers.h</a> の <a class="el" href="JsonADLSerializers_8h_source.html#l00057">57</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   58</span>        {</div>
-<div class="line"><span class="lineno">   59</span>            _j = {</div>
-<div class="line"><span class="lineno">   60</span>                {<span class="stringliteral">&quot;r&quot;</span>, _color.<a class="code hl_variable" href="structmtgb_1_1Color.html#a8f9cbe28f34734c94a0a9b5af8b2a4ae">component</a>[<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025eaa2d9547b5d3dd9f05984475f7c926da0">::mtgb::Color::Component::RED</a>)]},</div>
-<div class="line"><span class="lineno">   61</span>                {<span class="stringliteral">&quot;g&quot;</span>, _color.<a class="code hl_variable" href="structmtgb_1_1Color.html#a8f9cbe28f34734c94a0a9b5af8b2a4ae">component</a>[<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea9de0e5dd94e861317e74964bed179fa0">::mtgb::Color::Component::GREEN</a>)]},</div>
-<div class="line"><span class="lineno">   62</span>                {<span class="stringliteral">&quot;b&quot;</span>, _color.<a class="code hl_variable" href="structmtgb_1_1Color.html#a8f9cbe28f34734c94a0a9b5af8b2a4ae">component</a>[<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea1b3e1ee9bff86431dea6b181365ba65f">::mtgb::Color::Component::BLUE</a>)]},</div>
-<div class="line"><span class="lineno">   63</span>                {<span class="stringliteral">&quot;a&quot;</span>, _color.<a class="code hl_variable" href="structmtgb_1_1Color.html#a8f9cbe28f34734c94a0a9b5af8b2a4ae">component</a>[<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea002101f8725e5c78d9f30d87f3fa4c87">::mtgb::Color::Component::ALPHA</a>)]}</div>
-<div class="line"><span class="lineno">   64</span>            };</div>
-<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="line"><span class="lineno">   59</span>            _j = { { <span class="stringliteral">&quot;r&quot;</span>, _color.<a class="code hl_variable" href="structmtgb_1_1Color.html#a8f9cbe28f34734c94a0a9b5af8b2a4ae">component</a>[<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025eaa2d9547b5d3dd9f05984475f7c926da0">::mtgb::Color::Component::RED</a>)] },</div>
+<div class="line"><span class="lineno">   60</span>                   { <span class="stringliteral">&quot;g&quot;</span>, _color.<a class="code hl_variable" href="structmtgb_1_1Color.html#a8f9cbe28f34734c94a0a9b5af8b2a4ae">component</a>[<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea9de0e5dd94e861317e74964bed179fa0">::mtgb::Color::Component::GREEN</a>)] },</div>
+<div class="line"><span class="lineno">   61</span>                   { <span class="stringliteral">&quot;b&quot;</span>, _color.<a class="code hl_variable" href="structmtgb_1_1Color.html#a8f9cbe28f34734c94a0a9b5af8b2a4ae">component</a>[<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea1b3e1ee9bff86431dea6b181365ba65f">::mtgb::Color::Component::BLUE</a>)] },</div>
+<div class="line"><span class="lineno">   62</span>                   { <span class="stringliteral">&quot;a&quot;</span>, _color.<a class="code hl_variable" href="structmtgb_1_1Color.html#a8f9cbe28f34734c94a0a9b5af8b2a4ae">component</a>[<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea002101f8725e5c78d9f30d87f3fa4c87">::mtgb::Color::Component::ALPHA</a>)] } };</div>
+<div class="line"><span class="lineno">   63</span>        }</div>
 <div class="ttc" id="astructmtgb_1_1Color_html_a2903026d7b264844673f9bebac9f025ea002101f8725e5c78d9f30d87f3fa4c87"><div class="ttname"><a href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea002101f8725e5c78d9f30d87f3fa4c87">mtgb::Color::Component::ALPHA</a></div><div class="ttdeci">@ ALPHA</div></div>
 <div class="ttc" id="astructmtgb_1_1Color_html_a2903026d7b264844673f9bebac9f025ea1b3e1ee9bff86431dea6b181365ba65f"><div class="ttname"><a href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea1b3e1ee9bff86431dea6b181365ba65f">mtgb::Color::Component::BLUE</a></div><div class="ttdeci">@ BLUE</div></div>
 <div class="ttc" id="astructmtgb_1_1Color_html_a2903026d7b264844673f9bebac9f025ea9de0e5dd94e861317e74964bed179fa0"><div class="ttname"><a href="structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025ea9de0e5dd94e861317e74964bed179fa0">mtgb::Color::Component::GREEN</a></div><div class="ttdeci">@ GREEN</div></div>

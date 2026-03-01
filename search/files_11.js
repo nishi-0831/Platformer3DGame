@@ -40,6 +40,5 @@ var searchData=
   ['stdafx_2eh_37',['stdafx.h',['../stdafx_8h.html',1,'']]],
   ['stringcomparators_2eh_38',['StringComparators.h',['../StringComparators_8h.html',1,'']]],
   ['strip_5fexample_2epy_39',['strip_example.py',['../strip__example_8py.html',1,'']]],
-  ['structcmd_2eh_40',['structcmd.h',['../structcmd_8h.html',1,'']]],
-  ['themain_2ecpp_41',['TheMain.cpp',['../Source_2TheMain_8cpp.html',1,'']]]
+  ['structcmd_2eh_40',['structcmd.h',['../structcmd_8h.html',1,'']]]
 ];
