@@ -18,6 +18,7 @@ namespace mtbin
 
 	  public:
 		MemoryStream(mtbin::Byte* _pBuffer, const size_t& _bufferSize);
+		MemoryStream(MemoryStream&& _other) noexcept;
 		virtual ~MemoryStream();
 
 		/// <summary>
@@ -87,6 +88,7 @@ namespace mtbin
 		}
 
 	  private:
+		MemoryStream() = delete;
 		const size_t BUFFER_SIZE; // バッファ配列のサイズ
 		mtbin::Byte* pBuffer_;	  // 読み書きするバッファ配列
 		size_t currentIndex;	  // 現在のインデックス

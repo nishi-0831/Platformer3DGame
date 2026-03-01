@@ -250,7 +250,7 @@ namespace mtgb
 		const EffectParameters& _effectParameters
 	)
 	{
-		if (auto iter = effectList_.find(_effectName.data()); iter != effectList_.end())
+		if (auto iter = effectList_.find(_effectName); iter != effectList_.end())
 		{
 			// 空きスロットを再利用
 			for (auto& slot : effectInstances_)
@@ -289,12 +289,12 @@ namespace mtgb
 	}
 
 	EffectData::EffectData(std::string_view _filePath)
-		: filePath_(_filePath)
+		: filePath_{_filePath}
 	{
 	}
 
 	EffectData::EffectData(const Effekseer::ManagerRef& _manager, std::string_view _filePath)
-		: filePath_(_filePath)
+		: filePath_{_filePath}
 	{
 		Load(_manager);
 	}

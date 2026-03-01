@@ -14,7 +14,7 @@ namespace mtgb
 	  public:
 		CircleDetector();
 		CircleDetector(const CircleDetectorConfig& _config);
-		CircleDetector(CircleDetectorConfig&& _config);
+		CircleDetector(CircleDetectorConfig&& _config) noexcept;
 		~CircleDetector() = default;
 
 		/// <summary>

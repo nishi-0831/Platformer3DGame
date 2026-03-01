@@ -27,9 +27,6 @@ namespace mtgb
 		virtual void Copy(EntityId _dest, EntityId _src)						  = 0;
 
 	  protected:
-		// キー : Componentの型情報, 値 : プール内のインデックス
-		using ComponentIndexMap = std::unordered_map<std::type_index, size_t>;
-		// キー : EntityId, 値 : ComponentIndexMap
 		void RegisterCurrentScene(const std::function<void()>& _onMove);
 	};
 } // namespace mtgb

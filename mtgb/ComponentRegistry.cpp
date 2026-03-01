@@ -147,6 +147,5 @@ std::optional<std::set<std::type_index>> mtgb::ComponentRegistry::GetComponentTy
 	if (components.empty())
 		return std::nullopt;
 
-	// 明示的にムーブする
-	return std::optional<std::set<std::type_index>>(std::move(components));
+	return components;
 }

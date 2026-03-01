@@ -2,23 +2,54 @@
 #include "ReleaseUtility.h"
 #include "cmtgb.h"
 #include "WaveData.h"
+#include "MTAssert.h"
 
 #define DR_MP3_IMPLEMENTATION
 #include "../dr_mp3.h"
 
 using mtbin::Utility::CompareId;
 
-mtgb::AudioClip::AudioClip()
+mtgb::AudioClip::AudioClip(std::string_view _filePath, ComPtr<IXAudio2> _pXAudio2)
 	: pWaveData_{nullptr}
+	, pSourceVoice_{nullptr}
 {
+	std::optional<mtbin::MemoryStream> ms = GetMemoryStream(_filePath);
+	if (ms.has_value() == false)
+		return;
+
+	Load(ms.value(), _pXAudio2);
 }
 
 mtgb::AudioClip::~AudioClip()
 {
 	SAFE_DELETE(pWaveData_);
+	SAFE_DELETE(pSourceVoice_);
 }
 
-void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms)
+void mtgb::AudioClip::Play()
+{
+	// 音声の再生を停止。そうしないとFlushSourceBuffersで消えない
+	pSourceVoice_->Stop(0, 0);
+	// 再生待ち中の音声を全て削除
+	pSourceVoice_->FlushSourceBuffers();
+	XAUDIO2_BUFFER buffer{
+		.Flags		= XAUDIO2_END_OF_STREAM,
+		.AudioBytes = static_cast<UINT32>(pWaveData_->bufferSize),
+		.pAudioData = pWaveData_->pBuffer,
+		.LoopCount	= 0
+	};
+
+	HRESULT hResult = pSourceVoice_->SubmitSourceBuffer(&buffer);
+	if (FAILED(hResult))
+	{
+		massert(false && "ソースボイスにサブミット失敗");
+		return;
+	}
+
+	pSourceVoice_->Start();
+}
+
+void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms, ComPtr<IXAudio2> _pXAudio2)
 {
 	SAFE_DELETE(pWaveData_);
 	pWaveData_ = new WaveData{};
@@ -45,6 +76,8 @@ void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms)
 	{
 		massert(false && "対応していない音声フォーマットです @AudioClip::Load");
 	}
+
+	_pXAudio2->CreateSourceVoice(&pSourceVoice_, &pWaveData_->waveFormat);
 }
 
 void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
@@ -85,8 +118,6 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 	_ms.Read(reinterpret_cast<byte*>(&pWaveData_->waveFormat), sizeof(WAVEFORMATEX), format.size);
 
 	// wBitsPerSampleを設定
-	/*pWaveData_->waveFormat.wBitsPerSample =
-		pWaveData_->waveFormat.nBlockAlign * 8 / pWaveData_->waveFormat.nChannels;*/
 	pWaveData_->waveFormat.nBlockAlign = pWaveData_->waveFormat.nChannels * pWaveData_->waveFormat.wBitsPerSample / 8;
 	pWaveData_->waveFormat.nAvgBytesPerSec = pWaveData_->waveFormat.nSamplesPerSec * pWaveData_->waveFormat.nBlockAlign;
 
@@ -163,4 +194,54 @@ float mtgb::AudioClip::GetTotalTimeSec() const
 	massert(pWaveData_->waveFormat.nAvgBytesPerSec != 0 && "0除算してしまいます。");
 	// データサイズ / 1秒間あたりの読みバイト数 = 総再生時間
 	return pWaveData_->bufferSize / static_cast<float>(pWaveData_->waveFormat.nAvgBytesPerSec);
+}
+
+std::optional<mtbin::MemoryStream> mtgb::AudioClip::GetMemoryStream(std::string_view _filePath)
+{
+	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-createfilea
+	HANDLE hFile = CreateFile(
+		_filePath.data(),	   // ファイル名
+		GENERIC_READ,		   // 読み取りますよー
+		FILE_SHARE_READ,	   // Closeされるまで、他のアプリはファイルの読み取りだけしていいよー
+		nullptr,			   // セキュリティ属性用の構造体ポインタを指定
+		OPEN_EXISTING,		   // 開く - ファイルが無かったら失敗
+		FILE_ATTRIBUTE_NORMAL, // 普通のファイル属性
+		NULL
+	); // 既存のファイルを開く場合は関係ないやつ
+
+	if (hFile == INVALID_HANDLE_VALUE)
+	{
+		massert(false && "ファイルOpenに失敗 @Audio::Load");
+		return std::nullopt;
+	}
+
+	BOOL succeed{FALSE};
+
+	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-getfilesizeex
+	LARGE_INTEGER fileSize{}; // ファイルサイズ格納用
+	succeed = GetFileSizeEx(hFile, &fileSize);
+	if (succeed == FALSE)
+	{
+		massert(false && "ファイルサイズ取得に失敗 @Audio::Load");
+		return std::nullopt;
+	}
+
+	DWORD readedSize{0}; // 実際に読み取れたバイト数
+
+	byte* pBuffer{new byte[fileSize.QuadPart]}; // バッファ動的確保
+
+	succeed = ReadFile(hFile, pBuffer, static_cast<DWORD>(fileSize.QuadPart), &readedSize, NULL);
+	if (succeed == FALSE || readedSize != fileSize.QuadPart)
+	{
+		massert(false && "ファイルの読み取りに失敗 @Audio::Load");
+		delete[] pBuffer; // バッファ解放
+		return std::nullopt;
+	}
+
+	CloseHandle(hFile); // ファイルを閉じる
+
+	// メモリストリーム作成
+	mtbin::MemoryStream ms{pBuffer, static_cast<size_t>(fileSize.QuadPart)};
+
+	return ms;
 }

@@ -82,12 +82,12 @@ void Player::Update()
 			{
 				// pRigidBody_->velocity_.y += jumpHeight;
 				jumpController_.StartJump(jumpHeight);
-				Audio::PlayOneShotFile("Sound/Jump.mp3");
+				Game::System<Audio>().Play("Jump");
 
 				Matrix4x4 worldMat;
 				pTransform_->GenerateWorldMatrix(&worldMat);
 				EffectParameters params;
-				params.isLoop = false;
+				params.isLoop	= false;
 				params.worldMat = worldMat;
 				Game::System<EffectManager>().Play("JumpSmoke", params);
 			}
@@ -193,7 +193,7 @@ void Player::InitializeState()
 					Matrix4x4 worldMat;
 					pTransform_->GenerateWorldMatrix(&worldMat);
 					params.worldMat = worldMat;
-					Game::System<EffectManager>().Play("WalkSmoke",params);
+					Game::System<EffectManager>().Play("WalkSmoke", params);
 
 					walkSmokeElapsedTime_ = 0.0f;
 				}
@@ -272,8 +272,6 @@ void Player::ShowImGui()
 	MTImGui::Instance().ShowComponents(Entity::entityId_);
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
 }
-
-
 
 Vector3 Player::GetMoveDir()
 {

@@ -49,5 +49,5 @@ void GameOverManager::OnGameOver()
 			pFadeOutScreen_->StartFadeOut();
 		}
 	);
-	Audio::PlayOneShotFile("Sound/GameOverSound.mp3");
+	Game::System<Audio>().Play("GameOver");
 }

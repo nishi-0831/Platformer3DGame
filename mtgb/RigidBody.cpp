@@ -1,7 +1,6 @@
 #include "RigidBody.h"
 #include "Transform.h"
 #include <DirectXCollision.h>
-#include "BoxPlane.h"
 #include <tuple>
 #include <vector>
 #include "GameTime.h"
@@ -9,7 +8,7 @@ namespace
 {
 	// TODO:重力を外部から設定可能にする
 	float gravity{-20.0f};
-}
+} // namespace
 mtgb::RigidBody::RigidBody(const EntityId _entityId)
 	: IComponent{_entityId}
 	, isNeedUpdate_{false}
