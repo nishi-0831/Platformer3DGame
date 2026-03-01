@@ -1021,15 +1021,18 @@ endif()
 ################################################################################
 # Pre build events (ビルド前イベント)
 ################################################################################
-# コンパイル前に実行されるように依存させる
+
+# コード生成ツールを実行するコマンド
+set(GENERATE_SOURCE_CODE_COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangSourceGenerator/bin/ClangSourceGenerator.exe> " --config "Tools/ClangSourceGenerator" --projDir "${CMAKE_CURRENT_SOURCE_DIR}")
  add_custom_target(generate_source_code
-    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangReflection/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>"
+    COMMAND ${GENERATE_SOURCE_CODE_COMMAND}
     USES_TERMINAL)
+# コンパイル前に実行されるように依存させる
  add_dependencies(${PROJECT_NAME} generate_source_code)
 
  # キャッシュを削除し、再生成を行う
  add_custom_target(force_generate_source_code
-    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangReflection/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>" --force
+    COMMAND ${GENERATE_SOURCE_CODE_COMMAND} --force
     USES_TERMINAL
  )
 
