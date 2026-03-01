@@ -32,14 +32,8 @@ namespace mtgb
 		static bool GetMouseDown(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::FIRST);
 		static bool GetMouseUp(const MouseCode _mouseCode, WindowContext _context = mtgb::WindowContext::FIRST);
 		static bool GetGamePad(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::FIRST);
-		static bool GetGamePadDown(
-			const PadCode _padButtonCode,
-			WindowContext _context = mtgb::WindowContext::FIRST
-		);
-		static bool GetGamePadUp(
-			const PadCode _padButtonCode,
-			WindowContext _context = mtgb::WindowContext::FIRST
-		);
+		static bool GetGamePadDown(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::FIRST);
+		static bool GetGamePadUp(const PadCode _padButtonCode, WindowContext _context = mtgb::WindowContext::FIRST);
 		static bool GetGamePad(
 			const FlightStickCode _flightStickCode,
 			WindowContext _context = mtgb::WindowContext::FIRST
@@ -59,18 +53,14 @@ namespace mtgb
 			WindowContext _context = mtgb::WindowContext::FIRST
 		);
 		static float GetTrigger(PadAxisCode _padCode, WindowContext _context = mtgb::WindowContext::FIRST);
-		static float GetAxis(
-			Axis _axis,
-			StickType _stickType,
-			WindowContext _context = mtgb::WindowContext::FIRST
-		);
+		static float GetAxis(Axis _axis, StickType _stickType, WindowContext _context = mtgb::WindowContext::FIRST);
 		static const Vector2F GetAxis(StickType _stickType, WindowContext _context = mtgb::WindowContext::FIRST);
 
 		static const Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::FIRST);
 		static const Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::FIRST);
 
-	  private:								// Utilities
-		static const size_t KEY_COUNT{256}; // キーの数
+	  private:								   // Utilities
+		static const size_t KEY_COUNT { 256 }; // キーの数
 		/// <summary>
 		/// currとprevのxorを取得
 		/// </summary>
@@ -155,7 +145,7 @@ namespace mtgb
 		friend class InputResource;
 
 	  private:									  // Data
-		static const size_t KEY_COUNT{256};		  // キーの数
+		static const size_t KEY_COUNT { 256 };	  // キーの数
 		std::bitset<KEY_COUNT> keyStateCurrent_;  // キーの状態現在
 		std::bitset<KEY_COUNT> keyStatePrevious_; // キーの状態前回
 
@@ -168,7 +158,7 @@ namespace mtgb
 
 		Vector2Int mousePosition_; // マウスカーソルの座標
 
-		static const size_t GAME_PAD_COUNT{XUSER_MAX_COUNT};			 // ゲームパッドの最大接続可能数
+		static const size_t GAME_PAD_COUNT { XUSER_MAX_COUNT };			 // ゲームパッドの最大接続可能数
 		std::array<_XINPUT_STATE, GAME_PAD_COUNT> gamePadStateCurrent_;	 // ゲームパッドの状態現在
 		std::array<_XINPUT_STATE, GAME_PAD_COUNT> gamePadStatePrevious_; // ゲームパッドの状態前回
 		std::map<PadIDState, int> activeGamePadID;						 // 有効なコントローラのID(0~3が入る)

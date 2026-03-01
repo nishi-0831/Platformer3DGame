@@ -1,8 +1,8 @@
 #pragma once
 #include "TypeRegistry.h"
-#include <refl.hpp>
+#include <refl-cpp/refl.hpp>
 #include <iostream>
-#include "../ImGui/imgui.h"
+#include "ImGui/imgui.h"
 #include "WindowContext.h"
 #include "MTAssert.h"
 #include "MTStringUtility.h"

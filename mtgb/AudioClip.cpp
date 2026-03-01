@@ -1,17 +1,17 @@
 #include "AudioClip.h"
 #include "ReleaseUtility.h"
-#include "cmtgb.h"
+#include "MTAssert.h"
 #include "WaveData.h"
 #include "MTAssert.h"
 
 #define DR_MP3_IMPLEMENTATION
-#include "../dr_mp3.h"
+#include "dr_libs/dr_mp3.h"
 
 using mtbin::Utility::CompareId;
 
 mtgb::AudioClip::AudioClip(std::string_view _filePath, ComPtr<IXAudio2> _pXAudio2)
-	: pWaveData_{nullptr}
-	, pSourceVoice_{nullptr}
+	: pWaveData_ { nullptr }
+	, pSourceVoice_ { nullptr }
 {
 	std::optional<mtbin::MemoryStream> ms = GetMemoryStream(_filePath);
 	if (ms.has_value() == false)
@@ -32,12 +32,10 @@ void mtgb::AudioClip::Play()
 	pSourceVoice_->Stop(0, 0);
 	// 再生待ち中の音声を全て削除
 	pSourceVoice_->FlushSourceBuffers();
-	XAUDIO2_BUFFER buffer{
-		.Flags		= XAUDIO2_END_OF_STREAM,
-		.AudioBytes = static_cast<UINT32>(pWaveData_->bufferSize),
-		.pAudioData = pWaveData_->pBuffer,
-		.LoopCount	= 0
-	};
+	XAUDIO2_BUFFER buffer { .Flags		= XAUDIO2_END_OF_STREAM,
+							.AudioBytes = static_cast<UINT32>(pWaveData_->bufferSize),
+							.pAudioData = pWaveData_->pBuffer,
+							.LoopCount	= 0 };
 
 	HRESULT hResult = pSourceVoice_->SubmitSourceBuffer(&buffer);
 	if (FAILED(hResult))
@@ -52,7 +50,7 @@ void mtgb::AudioClip::Play()
 void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms, ComPtr<IXAudio2> _pXAudio2)
 {
 	SAFE_DELETE(pWaveData_);
-	pWaveData_ = new WaveData{};
+	pWaveData_ = new WaveData {};
 	_ms.Seek(0);
 
 	// 先頭4バイトを読み取る
@@ -83,14 +81,14 @@ void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms, ComPtr<IXAudio2> _pXAudio2)
 void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 {
 	// チャンク識別子は 4 byte
-	static const size_t ID_SIZE{4};
+	static const size_t ID_SIZE { 4 };
 
 	// チャンクヘッダ情報
 	struct ChunkHeader
 	{
 		ChunkHeader()
-			: id{}
-			, size{0}
+			: id {}
+			, size { 0 }
 		{
 		}
 
@@ -99,18 +97,18 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 	};
 
 	// RIFF チャンク
-	ChunkHeader riff{};
+	ChunkHeader riff {};
 	_ms.Read(riff.id, sizeof(riff.id), ID_SIZE);
 	massert(CompareId<ID_SIZE>(riff.id, "RIFF") && "RIFF チャンクIdの不一致 @AudioClip::Load");
 	riff.size = _ms.Read<uint32_t>();
 
 	// WAVE チャンク
-	byte wave[ID_SIZE]{};
+	byte wave[ID_SIZE] {};
 	_ms.Read(wave, sizeof(wave), ID_SIZE);
 	massert(CompareId<ID_SIZE>(wave, "WAVE") && "WAVE チャンクIdの不一致 @AudioClip::Load");
 
 	// フォーマットチャンク
-	ChunkHeader format{};
+	ChunkHeader format {};
 	_ms.Read(format.id, sizeof(format.id), ID_SIZE);
 	massert(CompareId<ID_SIZE>(format.id, "fmt ") && "フォーマット チャンクIdの不一致 @AudioClip::Load");
 	format.size = _ms.Read<uint32_t>();
@@ -122,7 +120,7 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 	pWaveData_->waveFormat.nAvgBytesPerSec = pWaveData_->waveFormat.nSamplesPerSec * pWaveData_->waveFormat.nBlockAlign;
 
 	// dataチャンクを探す
-	ChunkHeader header{};
+	ChunkHeader header {};
 	while (true)
 	{
 		_ms.Read(header.id, sizeof(header.id), ID_SIZE);
@@ -139,7 +137,7 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 	}
 
 	pWaveData_->bufferSize = header.size;
-	pWaveData_->pBuffer	   = new byte[header.size]{};
+	pWaveData_->pBuffer	   = new byte[header.size] {};
 	_ms.Read(pWaveData_->pBuffer, header.size, header.size);
 }
 
@@ -215,10 +213,10 @@ std::optional<mtbin::MemoryStream> mtgb::AudioClip::GetMemoryStream(std::string_
 		return std::nullopt;
 	}
 
-	BOOL succeed{FALSE};
+	BOOL succeed { FALSE };
 
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-getfilesizeex
-	LARGE_INTEGER fileSize{}; // ファイルサイズ格納用
+	LARGE_INTEGER fileSize {}; // ファイルサイズ格納用
 	succeed = GetFileSizeEx(hFile, &fileSize);
 	if (succeed == FALSE)
 	{
@@ -226,9 +224,9 @@ std::optional<mtbin::MemoryStream> mtgb::AudioClip::GetMemoryStream(std::string_
 		return std::nullopt;
 	}
 
-	DWORD readedSize{0}; // 実際に読み取れたバイト数
+	DWORD readedSize { 0 }; // 実際に読み取れたバイト数
 
-	byte* pBuffer{new byte[fileSize.QuadPart]}; // バッファ動的確保
+	byte* pBuffer { new byte[fileSize.QuadPart] }; // バッファ動的確保
 
 	succeed = ReadFile(hFile, pBuffer, static_cast<DWORD>(fileSize.QuadPart), &readedSize, NULL);
 	if (succeed == FALSE || readedSize != fileSize.QuadPart)
@@ -241,7 +239,7 @@ std::optional<mtbin::MemoryStream> mtgb::AudioClip::GetMemoryStream(std::string_
 	CloseHandle(hFile); // ファイルを閉じる
 
 	// メモリストリーム作成
-	mtbin::MemoryStream ms{pBuffer, static_cast<size_t>(fileSize.QuadPart)};
+	mtbin::MemoryStream ms { pBuffer, static_cast<size_t>(fileSize.QuadPart) };
 
 	return ms;
 }

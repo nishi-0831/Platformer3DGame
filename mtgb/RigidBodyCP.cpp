@@ -4,13 +4,9 @@
 #include "ColliderCP.h"
 #include <algorithm>
 #include "Debug.h"
-mtgb::RigidBodyCP::RigidBodyCP()
-{
-}
+mtgb::RigidBodyCP::RigidBodyCP() {}
 
-mtgb::RigidBodyCP::~RigidBodyCP()
-{
-}
+mtgb::RigidBodyCP::~RigidBodyCP() {}
 
 void mtgb::RigidBodyCP::Update()
 {
@@ -19,7 +15,7 @@ void mtgb::RigidBodyCP::Update()
 		if (poolId_[i] == INVALID_ENTITY)
 			continue;
 
-		std::vector<Collider*> colliders{};
+		std::vector<Collider*> colliders {};
 		Game::System<ColliderCP>().TryGet(&colliders, poolId_[i]);
 		RigidBody& rigidBody = pool_[i];
 		rigidBody.UpdateVelocity();

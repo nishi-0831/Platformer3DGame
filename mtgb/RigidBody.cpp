@@ -7,20 +7,18 @@
 namespace
 {
 	// TODO:重力を外部から設定可能にする
-	float gravity{-20.0f};
+	float gravity { -20.0f };
 } // namespace
 mtgb::RigidBody::RigidBody(const EntityId _entityId)
-	: IComponent{_entityId}
-	, isNeedUpdate_{false}
-	, useGravity_{false}
-	, onHit_{[](const EntityId) {}}
-	, pTransform_{&Transform::Get(_entityId)}
+	: IComponent { _entityId }
+	, isNeedUpdate_ { false }
+	, useGravity_ { false }
+	, onHit_ { [](const EntityId) {} }
+	, pTransform_ { &Transform::Get(_entityId) }
 {
 }
 
-mtgb::RigidBody::~RigidBody()
-{
-}
+mtgb::RigidBody::~RigidBody() {}
 
 RigidBody& mtgb::RigidBody::operator=(const RigidBody& _other)
 {

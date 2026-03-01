@@ -15,9 +15,9 @@
 // #pragma comment(lib,"dwrite.lib")
 #pragma comment(lib, "d2d1.lib")
 
-ComPtr<ID2D1Factory> mtgb::Direct2D::pD2DFactory_{nullptr};
-ComPtr<ID2D1SolidColorBrush> mtgb::Direct2D::pDefD2DBrush_{nullptr};
-ComPtr<ID2D1RenderTarget> mtgb::Direct2D::pDefRenderTarget_{nullptr};
+ComPtr<ID2D1Factory> mtgb::Direct2D::pD2DFactory_ { nullptr };
+ComPtr<ID2D1SolidColorBrush> mtgb::Direct2D::pDefD2DBrush_ { nullptr };
+ComPtr<ID2D1RenderTarget> mtgb::Direct2D::pDefRenderTarget_ { nullptr };
 
 mtgb::Direct2D::~Direct2D()
 {
@@ -64,9 +64,8 @@ void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* _pIdxgiSurface, ID2D1Re
 	{
 		_com_error error(hResult);
 		LPCTSTR message = error.ErrorMessage();
-		std::string str = mtgb::MultiToUTF8( message);
+		std::string str = mtgb::MultiToUTF8(message);
 		MessageBoxW(NULL, mtgb::UTF8ToWide(str.c_str()).c_str(), L"f", MB_YESNOCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL);
-
 	}
 }
 
@@ -82,19 +81,18 @@ void mtgb::Direct2D::CreateSolidColorBrush(
 	massert(SUCCEEDED(hResult) && "CreateSolidColorBrushに失敗 @Direct2D::CreateSolidColorBrush");
 }
 
-void mtgb::Direct2D::ChangeRenderTarget(ComPtr<ID2D1SolidColorBrush> _pD2DBrush, ComPtr<ID2D1RenderTarget> _pRenderTarget)
+void mtgb::Direct2D::ChangeRenderTarget(
+	ComPtr<ID2D1SolidColorBrush> _pD2DBrush,
+	ComPtr<ID2D1RenderTarget> _pRenderTarget
+)
 {
 	pDefD2DBrush_	  = _pD2DBrush;
 	pDefRenderTarget_ = _pRenderTarget;
 }
 
-void mtgb::Direct2D::Update()
-{
-}
+void mtgb::Direct2D::Update() {}
 
-void mtgb::Direct2D::Draw()
-{
-}
+void mtgb::Direct2D::Draw() {}
 
 void mtgb::Direct2D::Release()
 {

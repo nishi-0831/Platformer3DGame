@@ -18,7 +18,7 @@ namespace mtgb
 		friend ComponentPoolT;
 		friend ComponentPool<ComponentT, ComponentPoolT>;
 		IComponent()
-			: entityId_{INVALID_ENTITY}
+			: entityId_ { INVALID_ENTITY }
 		{
 		}
 		IComponent(const EntityId _entityId);
@@ -32,9 +32,7 @@ namespace mtgb
 		template <typename... Args> static ComponentT& Get(const EntityId _entityId, Args&&... _args);
 
 		static ComponentT* Reuse(size_t _index, EntityId _entityId);
-		virtual void Initialize()
-		{
-		}
+		virtual void Initialize() {}
 
 		const EntityId GetEntityId() const
 		{
@@ -47,7 +45,7 @@ namespace mtgb
 
 	template <class ComponentPoolT, typename ComponentT>
 	inline IComponent<ComponentPoolT, ComponentT>::IComponent(const EntityId _entityId)
-		: entityId_{_entityId}
+		: entityId_ { _entityId }
 	{
 		// Game::System<ComponentPoolT>().Register(_entityId);
 	}

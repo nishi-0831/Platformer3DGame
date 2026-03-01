@@ -13,13 +13,9 @@
 
 using namespace mtgb;
 
-SampleGame::SampleGame()
-{
-}
+SampleGame::SampleGame() {}
 
-SampleGame::~SampleGame()
-{
-}
+SampleGame::~SampleGame() {}
 
 void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 {

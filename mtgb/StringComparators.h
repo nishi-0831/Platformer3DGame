@@ -19,15 +19,15 @@ namespace mtgb
 		using is_transparent = void;
 		size_t operator()(std::string_view _s) const noexcept
 		{
-			return std::hash<std::string_view>{}(_s);
+			return std::hash<std::string_view> {}(_s);
 		}
 		size_t operator()(const std::string& _s) const noexcept
 		{
-			return std::hash<std::string_view>{}(_s);
+			return std::hash<std::string_view> {}(_s);
 		}
 		size_t operator()(const char* _s) const noexcept
 		{
-			return std::hash<std::string_view>{}(_s);
+			return std::hash<std::string_view> {}(_s);
 		}
 	};
 

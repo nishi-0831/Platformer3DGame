@@ -3,14 +3,14 @@
 #include "Fbx.h"
 #include "Entity.h"
 #include <format>
-unsigned int mtgb::Box3D::generateCounter_{0};
+unsigned int mtgb::Box3D::generateCounter_ { 0 };
 
 mtgb::Box3D::Box3D()
 	: GameObject()
 	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
-	, pTransform_{Component<Transform>()}
-	, pMeshRenderer_{Component<MeshRenderer>()}
-	, pCollider_{Component<Collider>()}
+	, pTransform_ { Component<Transform>() }
+	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, pCollider_ { Component<Collider>() }
 {
 	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
 	pCollider_->isStatic_	  = false;
@@ -25,17 +25,11 @@ mtgb::Box3D::Box3D()
 	displayName_		 = name_;
 }
 
-mtgb::Box3D::~Box3D()
-{
-}
+mtgb::Box3D::~Box3D() {}
 
-void mtgb::Box3D::Update()
-{
-}
+void mtgb::Box3D::Update() {}
 
-void mtgb::Box3D::Draw() const
-{
-}
+void mtgb::Box3D::Draw() const {}
 
 void mtgb::Box3D::ShowImGui()
 {
@@ -43,6 +37,4 @@ void mtgb::Box3D::ShowImGui()
 	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 
-void mtgb::Box3D::Start()
-{
-}
+void mtgb::Box3D::Start() {}

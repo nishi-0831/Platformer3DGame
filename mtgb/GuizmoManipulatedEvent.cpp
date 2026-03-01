@@ -6,14 +6,12 @@ mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand(
 	const ComponentFactory& _componentFactory
 )
 	: componentFactory_(_componentFactory)
-	, pPrevMemento_{_pPrevMemento}
-	, pMemento_{_pMemento}
+	, pPrevMemento_ { _pPrevMemento }
+	, pMemento_ { _pMemento }
 {
 }
 
-void mtgb::GuizmoManipulateCommand::Execute()
-{
-}
+void mtgb::GuizmoManipulateCommand::Execute() {}
 
 void mtgb::GuizmoManipulateCommand::Undo()
 {

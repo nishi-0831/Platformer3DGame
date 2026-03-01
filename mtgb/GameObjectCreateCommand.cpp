@@ -7,10 +7,10 @@ mtgb::GameObjectCreateCommand::GameObjectCreateCommand(
 	CreateFunc _createFunc,
 	const ComponentFactory& _componentFactory
 )
-	: entityId_{INVALID_ENTITY}
-	, componentFactory_{_componentFactory}
-	, createFunc_{_createFunc}
-	, json_{}
+	: entityId_ { INVALID_ENTITY }
+	, componentFactory_ { _componentFactory }
+	, createFunc_ { _createFunc }
+	, json_ {}
 {
 }
 
@@ -42,7 +42,7 @@ void mtgb::GameObjectCreateCommand::Execute()
 		Deserialize(obj);
 	}
 
-	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Invoke({.entityId = obj->GetEntityId()});
+	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Invoke({ .entityId = obj->GetEntityId() });
 }
 
 void mtgb::GameObjectCreateCommand::Undo()

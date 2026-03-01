@@ -1,0 +1,11 @@
+CacheFileDirectory: "Tools/ClangSourceGenerator"
+ExcludeDirectories:
+  - "ThirdParty"
+  - "vcpkg_installed"
+  - "ImGui" 
+  - "packages" 
+MaxDegreeOfParallelism: 4
+CodeGenerationRules:
+  -  ClassMetadataType: "MT_COMPONENT"
+     MemberMetadataType: "MT_PROPERTY"
+     OutputTemplate: "Tools/ClangSourceGenerator/GenerateComponentHeader.sbn"

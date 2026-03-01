@@ -4,10 +4,10 @@
 #include "GameEvents.h"
 
 GameOverManager::GameOverManager()
-	: GameObject{}
-	, pFadeOutScreen_{nullptr}
-	, fadeOutDuration_{3.0f}
-	, startFadeOutDelay_{1.5f}
+	: GameObject {}
+	, pFadeOutScreen_ { nullptr }
+	, fadeOutDuration_ { 3.0f }
+	, startFadeOutDelay_ { 1.5f }
 {
 	pFadeOutScreen_ = Instantiate<FadeOutScreen>(fadeOutDuration_);
 
@@ -24,9 +24,7 @@ GameOverManager::GameOverManager()
 	);
 }
 
-GameOverManager::~GameOverManager()
-{
-}
+GameOverManager::~GameOverManager() {}
 
 void GameOverManager::Update()
 {
@@ -36,9 +34,7 @@ void GameOverManager::Update()
 	}
 }
 
-void GameOverManager::Start()
-{
-}
+void GameOverManager::Start() {}
 
 void GameOverManager::OnGameOver()
 {

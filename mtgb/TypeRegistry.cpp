@@ -42,6 +42,6 @@ void PropertyDisplayRegistry::RegisterCommandListener(std::function<void(Command
 	commandListener_ = _commandListenner;
 }
 PropertyDisplayRegistry::PropertyDisplayRegistry()
-	: commandListener_{nullptr}
+	: commandListener_ { nullptr }
 {
 }

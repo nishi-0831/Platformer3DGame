@@ -56,12 +56,10 @@ namespace nlohmann
 	{
 		static void to_json(nlohmann::json& _j, const ::mtgb::Color& _color)
 		{
-			_j = {
-				{"r", _color.component[static_cast<int32_t>(::mtgb::Color::Component::RED)]},
-				{"g", _color.component[static_cast<int32_t>(::mtgb::Color::Component::GREEN)]},
-				{"b", _color.component[static_cast<int32_t>(::mtgb::Color::Component::BLUE)]},
-				{"a", _color.component[static_cast<int32_t>(::mtgb::Color::Component::ALPHA)]}
-			};
+			_j = { { "r", _color.component[static_cast<int32_t>(::mtgb::Color::Component::RED)] },
+				   { "g", _color.component[static_cast<int32_t>(::mtgb::Color::Component::GREEN)] },
+				   { "b", _color.component[static_cast<int32_t>(::mtgb::Color::Component::BLUE)] },
+				   { "a", _color.component[static_cast<int32_t>(::mtgb::Color::Component::ALPHA)] } };
 		}
 
 		static void from_json(const nlohmann::json& _j, ::mtgb::Color& _color)

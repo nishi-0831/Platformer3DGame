@@ -98,7 +98,7 @@ namespace mtgb
 			"GameObjectクラスを継承していないクラスはインスタンスできません。"
 		);
 
-		GameObjectT* pInstance{new GameObjectT{_args...}};
+		GameObjectT* pInstance { new GameObjectT { _args... } };
 
 		// TODO: ここも連続した配列にする
 		pGameObjects_.push_back(pInstance);

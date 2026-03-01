@@ -12,12 +12,12 @@
 using namespace mtgb;
 
 mtgb::RectDetector::RectDetector(const RectDetectorConfig& _config)
-	: config{_config}
+	: config { _config }
 {
 }
 
 mtgb::RectDetector::RectDetector(RectDetectorConfig&& _config)
-	: config{std::move(_config)}
+	: config { std::move(_config) }
 {
 }
 
@@ -89,8 +89,8 @@ RectF mtgb::RectDetector::GetDetectionArea() const
 
 	float scaledSize  = config.detectionRect.size.x * scale;
 	Vector2F center	  = Game::System<Screen>().GetSizeF() * 0.5f;
-	Vector2F newPoint = center - Vector2F{scaledSize, scaledSize} * 0.5f;
-	return {newPoint, {scaledSize, scaledSize}};
+	Vector2F newPoint = center - Vector2F { scaledSize, scaledSize } * 0.5f;
+	return { newPoint, { scaledSize, scaledSize } };
 }
 
 const std::vector<ScreenCoordContainsInfo>& mtgb::RectDetector::GetDetectedTargets() const

@@ -11,13 +11,11 @@
 #include "../Source/RespawnManager.h"
 
 SampleScene::SampleScene()
-	: stageID_{StageID::STAGE_ONE}
+	: stageID_ { StageID::STAGE_ONE }
 {
 }
 
-SampleScene::~SampleScene()
-{
-}
+SampleScene::~SampleScene() {}
 
 void SampleScene::Initialize()
 {
@@ -52,10 +50,6 @@ void SampleScene::Update()
 	}
 }
 
-void SampleScene::Draw() const
-{
-}
+void SampleScene::Draw() const {}
 
-void SampleScene::End()
-{
-}
+void SampleScene::End() {}

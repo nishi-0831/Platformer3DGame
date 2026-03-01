@@ -9,7 +9,7 @@
 #include "CommandHistoryManager.h"
 #include "DeleteGameObjectCommand.h"
 
-GameObjectGenerator* mtgb::GameObjectGenerator::pInstance_{nullptr};
+GameObjectGenerator* mtgb::GameObjectGenerator::pInstance_ { nullptr };
 
 void mtgb::GameObjectGenerator::Initialize()
 {

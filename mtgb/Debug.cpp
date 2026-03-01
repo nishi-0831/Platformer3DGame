@@ -1,17 +1,11 @@
 #include "Debug.h"
-#include "..\ImGui\imgui.h"
+#include "ImGui/imgui.h"
 
-mtgb::Debug::Debug()
-{
-}
+mtgb::Debug::Debug() {}
 
-mtgb::Debug::~Debug()
-{
-}
+mtgb::Debug::~Debug() {}
 
-void mtgb::Debug::Initialize()
-{
-}
+void mtgb::Debug::Initialize() {}
 
 void mtgb::Debug::Update()
 {

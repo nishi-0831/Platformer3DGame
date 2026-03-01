@@ -2,14 +2,14 @@
 #include "ImageRenderer.h"
 #include "Draw.h"
 mtgb::ImageRenderer::ImageRenderer()
-	: color_{Color::WHITE}
+	: color_ { Color::WHITE }
 {
 }
 mtgb::ImageRenderer::ImageRenderer(EntityId _entityId)
-	: IComponent{_entityId}
-	, handle_{INVALID_HANDLE}
-	, layer_{AllLayer()}
-	, color_{Color::WHITE}
+	: IComponent { _entityId }
+	, handle_ { INVALID_HANDLE }
+	, layer_ { AllLayer() }
+	, color_ { Color::WHITE }
 {
 }
 

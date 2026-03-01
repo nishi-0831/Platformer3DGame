@@ -19,7 +19,7 @@ namespace mtgb
 	};
 	class ColliderCP;
 	class Transform;
-	
+
 	class [[MT_COMPONENT()]] Collider : public IComponent<ColliderCP, Collider>, public ISerializableObject
 	{
 

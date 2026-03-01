@@ -9,8 +9,8 @@ namespace
 	uint32_t defNameCount = 0;
 }
 mtgb::ImGuiShowable::ImGuiShowable(mtgb::EntityId _entityId)
-	: targetEntityId_{_entityId}
-	, show_{ShowType::INSPECTOR}
+	: targetEntityId_ { _entityId }
+	, show_ { ShowType::INSPECTOR }
 {
 	MTImGui::Instance().Register(this);
 	displayName_ = "Default (" + std::to_string(defNameCount++) + ")";
@@ -22,13 +22,11 @@ mtgb::ImGuiShowable::ImGuiShowable(mtgb::EntityId _entityId)
 	}*/
 }
 
-void mtgb::ImGuiShowable::ShowImGui()
-{
-}
+void mtgb::ImGuiShowable::ShowImGui() {}
 
 mtgb::ImGuiShowable::ImGuiShowable(ShowType _showType, mtgb::EntityId _entityId)
-	: targetEntityId_{_entityId}
-	, show_{_showType}
+	: targetEntityId_ { _entityId }
+	, show_ { _showType }
 {
 	MTImGui::Instance().Register(this);
 }

@@ -57,7 +57,7 @@ jobs:
     if: always() 
     with:
     # SARIFファイルのパス(相対パス)
-     sarif_file: tidy-output.sarif
+     sarif_file: Tools/ClangTidy/tidy-output.sarif
      category: clang-tidy
 
     # SARIFをアーティファクトとしてアップロード
@@ -66,7 +66,7 @@ jobs:
     uses: actions/upload-artifact@v4
     with:
       name: tidy-output.sarif
-      path: tidy-output.sarif
+      path: Tools/ClangTidy/tidy-output.sarif
 
     # JSONをアーティファクトとしてアップロード
   - name: Update json log (debug)
@@ -74,5 +74,5 @@ jobs:
     uses: actions/upload-artifact@v4
     with:
       name: tidy-output.json
-      path: tidy-output.json
+      path: Tools/ClangTidy/tidy-output.json
   

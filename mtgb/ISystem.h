@@ -13,8 +13,6 @@ namespace mtgb
 		/// <summary>
 		/// 開放処理
 		/// </summary>
-		virtual void Release()
-		{
-		}
+		virtual void Release() {}
 	};
 } // namespace mtgb

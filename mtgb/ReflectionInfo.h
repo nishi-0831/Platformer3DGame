@@ -1,5 +1,5 @@
 #pragma once
-#include <refl.hpp>
+#include <refl-cpp/refl.hpp>
 #include "Vector3.h"
 #include "Quaternion.h"
 #include "JoystickProxy.h"
@@ -11,20 +11,20 @@
 // #include "TypeRegistryImpl.h"
 #include <string>
 using namespace mtgb;
-REGISTER_TYPE(Quaternion, ShowFunc(QuaternionShow{}))
+REGISTER_TYPE(Quaternion, ShowFunc(QuaternionShow {}))
 REGISTER_MEMBER_FUNC(X, property("x"))
 REGISTER_MEMBER_FUNC(Y, property("y"))
 REGISTER_MEMBER_FUNC(Z, property("z"))
 REGISTER_MEMBER_FUNC(W, property("w"))
 REGISTER_END
 
-REGISTER_TYPE(Vector3, ShowFunc(Vector3Show{}))
+REGISTER_TYPE(Vector3, ShowFunc(Vector3Show {}))
 REGISTER_FIELD(x)
 REGISTER_FIELD(y)
 REGISTER_FIELD(z)
 REGISTER_END
 
-REGISTER_TYPE(Matrix4x4, ShowFunc(MatrixShow{}))
+REGISTER_TYPE(Matrix4x4, ShowFunc(MatrixShow {}))
 REGISTER_END
 
 REGISTER_TYPE(JoystickProxy)

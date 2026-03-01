@@ -13,8 +13,8 @@ enum struct XInputPadCode : WORD
 	RIGHT	= XINPUT_GAMEPAD_DPAD_RIGHT,
 	START	= XINPUT_GAMEPAD_START,
 	BACK	= XINPUT_GAMEPAD_BACK, // いわゆるselectボタンのこと。
-	L_STICK	= XINPUT_GAMEPAD_LEFT_THUMB,
-	R_STICK	= XINPUT_GAMEPAD_RIGHT_THUMB,
+	L_STICK = XINPUT_GAMEPAD_LEFT_THUMB,
+	R_STICK = XINPUT_GAMEPAD_RIGHT_THUMB,
 	LBUTTON = XINPUT_GAMEPAD_LEFT_SHOULDER,
 	RBUTTON = XINPUT_GAMEPAD_RIGHT_SHOULDER,
 	A		= XINPUT_GAMEPAD_A,
@@ -28,16 +28,16 @@ enum struct XInputPadCode : WORD
 /// </summary>
 enum struct PadCode : uint8_t
 {
-	B	   = 0,
-	A	   = 1,
-	X	   = 2,
-	Y	   = 3,
-	LB	   = 4,
-	RB	   = 5,
-	BACK   = 6,
+	B		= 0,
+	A		= 1,
+	X		= 2,
+	Y		= 3,
+	LB		= 4,
+	RB		= 5,
+	BACK	= 6,
 	L_STICK = 6,
 	R_STICK = 7,
-	START  = 9,
+	START	= 9,
 
 	CROSS	 = 1,
 	CIRCLE	 = 2,

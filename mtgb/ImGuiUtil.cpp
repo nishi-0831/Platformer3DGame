@@ -1,5 +1,5 @@
 #include "ImGuiUtil.h"
-#include "../ImGui/imgui_internal.h"
+#include "ImGui/imgui_internal.h"
 #include <d3d11.h>
 
 void mtgb::ImGuiUtil::GetMouseRay(
@@ -15,7 +15,7 @@ void mtgb::ImGuiUtil::GetMouseRay(
 
 	ImVec2 localPos = ImVec2(mousePos.x - _windowPos.x, mousePos.y - _windowPos.y);
 
-	Vector3 nearVec = {localPos.x, localPos.y, 0.0f};
+	Vector3 nearVec = { localPos.x, localPos.y, 0.0f };
 
 	_near = DirectX::XMVector3Unproject(
 		nearVec,
@@ -30,7 +30,7 @@ void mtgb::ImGuiUtil::GetMouseRay(
 		DirectX::XMMatrixIdentity()
 	);
 
-	Vector3 farVec = {static_cast<float>(localPos.x), static_cast<float>(localPos.y), 1.0f};
+	Vector3 farVec = { static_cast<float>(localPos.x), static_cast<float>(localPos.y), 1.0f };
 
 	_far = DirectX::XMVector3Unproject(
 		farVec,

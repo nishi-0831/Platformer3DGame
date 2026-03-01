@@ -52,5 +52,5 @@ mtgb::Vector3 mtgb::QuatToEuler(DirectX::XMVECTORF32 _q)
 	float yaw_deg	= DirectX::XMConvertToDegrees(yaw);
 	float roll_deg	= DirectX::XMConvertToDegrees(roll);
 
-	return {pitch_deg, yaw_deg, roll_deg};
+	return { pitch_deg, yaw_deg, roll_deg };
 }

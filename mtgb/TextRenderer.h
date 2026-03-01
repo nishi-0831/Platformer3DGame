@@ -14,7 +14,6 @@ namespace mtgb
 {
 	class TextRendererCP;
 
-	
 	class [[MT_COMPONENT()]] TextRenderer : public IRenderable,
 											public IComponent<TextRendererCP, TextRenderer>,
 											public ISerializableObject

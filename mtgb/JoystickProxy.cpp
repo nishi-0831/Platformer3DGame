@@ -1,7 +1,7 @@
 #include <array>
 #include "JoystickProxy.h"
 #include <iterator>
-#include "../ImGui/imgui.h"
+#include "ImGui/imgui.h"
 #include "Input.h"
 
 mtgb::JoystickProxy::JoystickProxy(const DIJOYSTATE& _js)

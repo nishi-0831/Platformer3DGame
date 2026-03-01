@@ -14,28 +14,28 @@
 
 namespace
 {
-	Vector4 lightDir{0, 1, 1, 0};
+	Vector4 lightDir { 0, 1, 1, 0 };
 }
 
 // FbxParts コンストラクタの初期化リストを拡張して、全メンバー変数を初期化
 mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
-	: hasSkinnedMesh_{false}
-	, vertexCount_{0}
-	, polygonCount_{0}
-	, indexCount_{0}
-	, materialCount_{0}
-	, polygonVertexCount_{0}
-	, pNode_{nullptr}
-	, pMaterial_{nullptr}
-	, pMesh_{nullptr}
-	, pSkin_{nullptr}
-	, ppCluster_{nullptr}
-	, boneCount_{0}
-	, pVertexes_{nullptr}
-	, ppIndexData_{nullptr}
-	, ppIndexBuffer_{nullptr}
-	, unitScaleFactor_{_unitScaleFactor}
-	, fbxToWorldScaleFactor_{static_cast<float>(1.0f / _unitScaleFactor)}
+	: hasSkinnedMesh_ { false }
+	, vertexCount_ { 0 }
+	, polygonCount_ { 0 }
+	, indexCount_ { 0 }
+	, materialCount_ { 0 }
+	, polygonVertexCount_ { 0 }
+	, pNode_ { nullptr }
+	, pMaterial_ { nullptr }
+	, pMesh_ { nullptr }
+	, pSkin_ { nullptr }
+	, ppCluster_ { nullptr }
+	, boneCount_ { 0 }
+	, pVertexes_ { nullptr }
+	, ppIndexData_ { nullptr }
+	, ppIndexBuffer_ { nullptr }
+	, unitScaleFactor_ { _unitScaleFactor }
+	, fbxToWorldScaleFactor_ { static_cast<float>(1.0f / _unitScaleFactor) }
 {
 	if (_parent != nullptr)
 	{
@@ -46,9 +46,7 @@ mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
 	massert(pMesh_ != nullptr && "FbxParts: pMesh_ is null");
 }
 
-mtgb::FbxParts::~FbxParts()
-{
-}
+mtgb::FbxParts::~FbxParts() {}
 
 void mtgb::FbxParts::Initialize()
 {
@@ -94,8 +92,8 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 	}
 	DirectX11Draw::SetIsWriteToDepthBuffer(true);
 	// 描画情報をシェーダに渡す
-	UINT stride{sizeof(Vertex)};
-	UINT offset{0};
+	UINT stride { sizeof(Vertex) };
+	UINT offset { 0 };
 	DirectX11Draw::pContext_->IASetVertexBuffers(0, 1, pVertexBuffer_.GetAddressOf(), &stride, &offset);
 
 	// 使用するコンスタントバッファをシェーダに伝える
@@ -109,25 +107,25 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 	}
 
 	// カメラシステムへのアクセス用
-	const CameraSystem& CAMERA{Game::System<CameraSystem>()};
+	const CameraSystem& CAMERA { Game::System<CameraSystem>() };
 
 	// シェーダのコンスタントバッファーに各種データを渡す
 	for (DWORD i = 0; i < materialCount_; i++)
 	{
-		UINT stride{sizeof(int)};
-		UINT offset{0};
+		UINT stride { sizeof(int) };
+		UINT offset { 0 };
 		DirectX11Draw::pContext_->IASetIndexBuffer(ppIndexBuffer_[i].Get(), DXGI_FORMAT_R32_UINT, 0);
 
 		// パラメータの受け渡し
 		D3D11_MAPPED_SUBRESOURCE pdata_;
-		ConstantBuffer cb{};
-		Matrix4x4 mWorld{};
+		ConstantBuffer cb {};
+		Matrix4x4 mWorld {};
 		_transform.GenerateWorldMatrix(&mWorld);
 
-		Matrix4x4 mView{}; // ビュー行列
+		Matrix4x4 mView {}; // ビュー行列
 		CAMERA.GetViewMatrix(&mView);
 
-		Matrix4x4 mProj{}; // プロジェクション行列
+		Matrix4x4 mProj {}; // プロジェクション行列
 		CAMERA.GetProjMatrix(&mProj);
 
 		cb.g_matrixWorldViewProj = XMMatrixTranspose(mWorld * mView * mProj);
@@ -199,7 +197,7 @@ bool mtgb::FbxParts::TryGetBonePosition(const std::string& _boneName, Vector3* _
 		// 見つかった！
 		if (_boneName == ppCluster_[i]->GetLink()->GetName())
 		{
-			FbxAMatrix m{};
+			FbxAMatrix m {};
 			ppCluster_[i]->GetTransformLinkMatrix(m);
 
 			_pPosition->x = static_cast<float>(m[3][0]);
@@ -215,10 +213,10 @@ bool mtgb::FbxParts::TryGetBonePosition(const std::string& _boneName, Vector3* _
 
 bool mtgb::FbxParts::TryGetBonePositionAtNow(const std::string& _boneName, Vector3* _pPosition)
 {
-	auto itr{boneNamePair_.find(_boneName)};
+	auto itr { boneNamePair_.find(_boneName) };
 	if (itr != boneNamePair_.end()) // end じゃないなら見つかった
 	{
-		Matrix4x4 m{};
+		Matrix4x4 m {};
 		_pPosition->x = DirectX::XMVectorGetX(m.r[3]);
 		_pPosition->y = DirectX::XMVectorGetY(m.r[3]);
 		_pPosition->z = DirectX::XMVectorGetZ(m.r[3]);
@@ -231,7 +229,7 @@ bool mtgb::FbxParts::TryGetBonePositionAtNow(const std::string& _boneName, Vecto
 void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 {
 	vertexCount_		   = pMesh_->GetControlPointsCount();
-	pVertexes_			   = new Vertex[vertexCount_]{};
+	pVertexes_			   = new Vertex[vertexCount_] {};
 	FbxDeformer* pDeformer = pMesh_->GetDeformer(0);
 	hasSkinnedMesh_		   = (pDeformer != nullptr);
 
@@ -239,7 +237,7 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	{
 		for (uint32_t vertex = 0; vertex < 3; vertex++)
 		{
-			int index{pMesh_->GetPolygonVertex(poly, vertex)};
+			int index { pMesh_->GetPolygonVertex(poly, vertex) };
 
 			// インデックスが範囲内かチェック
 			if (index < 0 || index >= static_cast<int>(vertexCount_))
@@ -291,14 +289,14 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 
 	// UV座標の処理
 
-	int uvCount{pMesh_->GetTextureUVCount()};
-	FbxLayerElementUV* pUV{pMesh_->GetLayer(0)->GetUVs()};
+	int uvCount { pMesh_->GetTextureUVCount() };
+	FbxLayerElementUV* pUV { pMesh_->GetLayer(0)->GetUVs() };
 	if (pUV == nullptr || uvCount == 0)
 	{
 		// UVが存在しない場合、デフォルト値を設定
 		for (uint32_t i = 0; i < vertexCount_; i++)
 		{
-			pVertexes_[i].uv = {0.0f, 0.0f, 0.0f};
+			pVertexes_[i].uv = { 0.0f, 0.0f, 0.0f };
 		}
 	}
 	else
@@ -315,11 +313,9 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 				for (int i = 0; i < writeCount; i++)
 				{
 					FbxVector2 uv	 = pUV->GetDirectArray().GetAt(i);
-					pVertexes_[i].uv = {
-						static_cast<float>(uv[0]),
-						static_cast<float>(1.0 - uv[1]), // Y座標を反転
-						0.0f
-					};
+					pVertexes_[i].uv = { static_cast<float>(uv[0]),
+										 static_cast<float>(1.0 - uv[1]), // Y座標を反転
+										 0.0f };
 				}
 			}
 			else if (referenceMode == FbxLayerElement::eIndexToDirect)
@@ -333,7 +329,7 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 						if (uvIndex >= 0 && uvIndex < pUV->GetDirectArray().GetCount())
 						{
 							FbxVector2 uv	 = pUV->GetDirectArray().GetAt(uvIndex);
-							pVertexes_[i].uv = {static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f};
+							pVertexes_[i].uv = { static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f };
 						}
 					}
 				}
@@ -355,9 +351,10 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 							controlPointIndex < static_cast<int>(vertexCount_))
 						{
 
-							FbxVector2 uv = pUV->GetDirectArray().GetAt(polygonVertexIndex);
-							pVertexes_[controlPointIndex]
-								.uv = {static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f};
+							FbxVector2 uv					 = pUV->GetDirectArray().GetAt(polygonVertexIndex);
+							pVertexes_[controlPointIndex].uv = { static_cast<float>(uv[0]),
+																 static_cast<float>(1.0 - uv[1]),
+																 0.0f };
 						}
 						polygonVertexIndex++;
 					}
@@ -380,9 +377,10 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 							int uvIndex = pUV->GetIndexArray().GetAt(polygonVertexIndex);
 							if (uvIndex >= 0 && uvIndex < pUV->GetDirectArray().GetCount())
 							{
-								FbxVector2 uv = pUV->GetDirectArray().GetAt(uvIndex);
-								pVertexes_[controlPointIndex]
-									.uv = {static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f};
+								FbxVector2 uv					 = pUV->GetDirectArray().GetAt(uvIndex);
+								pVertexes_[controlPointIndex].uv = { static_cast<float>(uv[0]),
+																	 static_cast<float>(1.0 - uv[1]),
+																	 0.0f };
 							}
 						}
 						polygonVertexIndex++;
@@ -397,7 +395,7 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 			InitializeSkelton();
 		}
 
-		const D3D11_BUFFER_DESC BUFFER_DESC{
+		const D3D11_BUFFER_DESC BUFFER_DESC {
 			.ByteWidth			 = static_cast<UINT>(sizeof(Vertex) * vertexCount_),
 			.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: 途中で書き換えるため dynamic
 			.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
@@ -406,7 +404,7 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 			.StructureByteStride = 0,
 		};
 
-		const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+		const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA {
 			.pSysMem		  = pVertexes_,
 			.SysMemPitch	  = 0,
 			.SysMemSlicePitch = 0,
@@ -421,15 +419,15 @@ void mtgb::FbxParts::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	ppIndexBuffer_.resize(materialCount_);
 	ppIndexData_ = new DWORD*[materialCount_];
 
-	int count{0};
+	int count { 0 };
 	for (DWORD i = 0; i < materialCount_; i++)
 	{
 		count = 0;
-		DWORD* pIndex{new DWORD[polygonCount_ * 3]{}};
+		DWORD* pIndex { new DWORD[polygonCount_ * 3] {} };
 		for (DWORD j = 0; j < polygonCount_; j++)
 		{
-			FbxLayerElementMaterial* material{pMesh_->GetLayer(0)->GetMaterials()};
-			int materialId{material->GetIndexArray().GetAt(j)};
+			FbxLayerElementMaterial* material { pMesh_->GetLayer(0)->GetMaterials() };
+			int materialId { material->GetIndexArray().GetAt(j) };
 			if (materialId == i)
 			{
 				for (DWORD k = 0; k < 3; k++)
@@ -441,7 +439,7 @@ void mtgb::FbxParts::InitializeIndexBuffer(ID3D11Device* _pDevice)
 		}
 
 		// バッファの設定
-		const D3D11_BUFFER_DESC BUFFER_DESC{
+		const D3D11_BUFFER_DESC BUFFER_DESC {
 			.ByteWidth			 = static_cast<UINT>(sizeof(DWORD) * count),
 			.Usage				 = D3D11_USAGE_DEFAULT, // MEMO: 途中で書き換えないため DEFAULT
 			.BindFlags			 = D3D11_BIND_INDEX_BUFFER,
@@ -451,13 +449,13 @@ void mtgb::FbxParts::InitializeIndexBuffer(ID3D11Device* _pDevice)
 		};
 
 		// 初期データ
-		const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+		const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA {
 			.pSysMem		  = pIndex,
 			.SysMemPitch	  = 0,
 			.SysMemSlicePitch = 0,
 		};
 
-		HRESULT hResult{};
+		HRESULT hResult {};
 		hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, ppIndexBuffer_[i].ReleaseAndGetAddressOf());
 
 		massert(SUCCEEDED(hResult) && "インデックスバッファの作成に失敗");
@@ -471,7 +469,7 @@ void mtgb::FbxParts::InitializeIndexBuffer(ID3D11Device* _pDevice)
 
 void mtgb::FbxParts::InitializeConstantBuffer(ID3D11Device* _pDevice)
 {
-	const D3D11_BUFFER_DESC BUFFER_DESC{
+	const D3D11_BUFFER_DESC BUFFER_DESC {
 		.ByteWidth			 = sizeof(ConstantBuffer),
 		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: 途中で書き換えるためdynamic
 		.BindFlags			 = D3D11_BIND_CONSTANT_BUFFER,
@@ -480,7 +478,7 @@ void mtgb::FbxParts::InitializeConstantBuffer(ID3D11Device* _pDevice)
 		.StructureByteStride = 0,
 	};
 
-	HRESULT hResult{};
+	HRESULT hResult {};
 	hResult = _pDevice->CreateBuffer(
 		&BUFFER_DESC,
 		nullptr, // 初期データなし
@@ -492,7 +490,7 @@ void mtgb::FbxParts::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	// ボーン行列用コンスタントバッファ
 	if (hasSkinnedMesh_)
 	{
-		const D3D11_BUFFER_DESC BUFFER_DESC{
+		const D3D11_BUFFER_DESC BUFFER_DESC {
 			.ByteWidth			 = sizeof(BoneMatrices),
 			.Usage				 = D3D11_USAGE_DYNAMIC,
 			.BindFlags			 = D3D11_BIND_CONSTANT_BUFFER,
@@ -519,7 +517,7 @@ void mtgb::FbxParts::InitializeMaterial()
 {
 	// マテリアルバッファの作成
 	materialCount_ = pNode_->GetMaterialCount();
-	pMaterial_	   = new Material[materialCount_]{};
+	pMaterial_	   = new Material[materialCount_] {};
 
 	for (DWORD i = 0; i < materialCount_; i++)
 	{
@@ -535,7 +533,7 @@ void mtgb::FbxParts::InitializeMaterial()
 		FbxDouble3 specular = FbxDouble3(0, 0, 0);
 
 		// Ambientのプロパティを見つける
-		FbxProperty prop{};
+		FbxProperty prop {};
 
 		prop = pPhong->FindProperty(FbxSurfaceMaterial::sAmbient);
 		if (prop.IsValid())
@@ -548,9 +546,9 @@ void mtgb::FbxParts::InitializeMaterial()
 			diffuse = pPhong->Diffuse;
 		}
 		// MEMO: 内部でtypedef double FbxDouble されているためfloatにキャスト
-		pMaterial_[i].ambient	= {(float)ambient[0], (float)ambient[1], (float)ambient[2], 1.0f};
-		pMaterial_[i].diffuse	= {(float)diffuse[0], (float)diffuse[1], (float)diffuse[2], 1.0f};
-		pMaterial_[i].specular	= {0, 0, 0, 0};
+		pMaterial_[i].ambient	= { (float)ambient[0], (float)ambient[1], (float)ambient[2], 1.0f };
+		pMaterial_[i].diffuse	= { (float)diffuse[0], (float)diffuse[1], (float)diffuse[2], 1.0f };
+		pMaterial_[i].specular	= { 0, 0, 0, 0 };
 		pMaterial_[i].shininess = 0;
 
 		if (pSurfaceMaterial->GetClassId().Is(FbxSurfacePhong::ClassId))
@@ -561,7 +559,7 @@ void mtgb::FbxParts::InitializeMaterial()
 				specular = pPhong->Specular;
 			}
 
-			pMaterial_[i].specular = {(float)specular[0], (float)specular[1], (float)specular[2], 1.0f};
+			pMaterial_[i].specular = { (float)specular[0], (float)specular[1], (float)specular[2], 1.0f };
 			prop				   = pPhong->FindProperty(FbxSurfaceMaterial::sShininess);
 
 			if (prop.IsValid())
@@ -583,26 +581,26 @@ void mtgb::FbxParts::InitializeTexture(FbxSurfaceMaterial* _pMaterial, const DWO
 	FbxProperty prop = _pMaterial->FindProperty(FbxSurfaceMaterial::sDiffuse);
 
 	// テクスチャ数
-	int fileTextureCount{prop.GetSrcObjectCount<FbxFileTexture>()};
+	int fileTextureCount { prop.GetSrcObjectCount<FbxFileTexture>() };
 
 	if (fileTextureCount > 0) // テクスチャがあるなら
 	{
-		FbxFileTexture* pTexture{prop.GetSrcObject<FbxFileTexture>()};
+		FbxFileTexture* pTexture { prop.GetSrcObject<FbxFileTexture>() };
 
 		// ファイル名 + 拡張 だけにする
-		char name[_MAX_FNAME]{};
-		char ext[_MAX_EXT]{};
+		char name[_MAX_FNAME] {};
+		char ext[_MAX_EXT] {};
 		_splitpath_s(pTexture->GetRelativeFileName(), nullptr, 0, nullptr, 0, name, _MAX_FNAME, ext, _MAX_EXT);
 		wsprintf(name, "%s%s", name, ext);
 
-		pMaterial_[_i].pTexture = new Texture2D{};
-		pMaterial_[_i].pTexture->Load(ToWString(std::string{name}));
+		pMaterial_[_i].pTexture = new Texture2D {};
+		pMaterial_[_i].pTexture->Load(ToWString(std::string { name }));
 	}
 }
 
 void mtgb::FbxParts::InitializeSkelton()
 {
-	FbxDeformer* pDeformer{pMesh_->GetDeformer(0)};
+	FbxDeformer* pDeformer { pMesh_->GetDeformer(0) };
 	if (pDeformer == nullptr)
 	{
 		return; // ボーンがないため回帰
@@ -639,11 +637,11 @@ void mtgb::FbxParts::InitializeSkelton()
 	for (int i = 0; i < boneCount_; i++)
 	{
 		// i番目のボーンが影響を与える頂点数
-		int influencedVertexCount{ppCluster_[i]->GetControlPointIndicesCount()};
+		int influencedVertexCount { ppCluster_[i]->GetControlPointIndicesCount() };
 		// 頂点のインデックスの配列
-		int* boneInfluencedVertexIndices{ppCluster_[i]->GetControlPointIndices()};
+		int* boneInfluencedVertexIndices { ppCluster_[i]->GetControlPointIndices() };
 		// 頂点のウェイトの配列
-		double* boneInfluencedWeights{ppCluster_[i]->GetControlPointWeights()};
+		double* boneInfluencedWeights { ppCluster_[i]->GetControlPointWeights() };
 
 		// 影響を受けている頂点の数だけループ
 		for (int k = 0; k < influencedVertexCount; k++)
@@ -723,7 +721,7 @@ void mtgb::FbxParts::InitializeSkelton()
 		FbxAMatrix matrix;
 		ppCluster_[i]->GetTransformLinkMatrix(matrix);
 
-		DirectX::XMFLOAT4X4 pose{};
+		DirectX::XMFLOAT4X4 pose {};
 		for (DWORD x = 0; x < 4; x++)
 		{
 			for (DWORD y = 0; y < 4; y++)
@@ -732,7 +730,7 @@ void mtgb::FbxParts::InitializeSkelton()
 			}
 		}
 
-		DirectX::XMFLOAT4X4 mirrorMat{};
+		DirectX::XMFLOAT4X4 mirrorMat {};
 		DirectX::XMStoreFloat4x4(&mirrorMat, DirectX::XMMatrixIdentity());
 		mirrorMat._11 *= -1.0f;
 		DirectX::XMMATRIX mirrorMatrix	 = DirectX::XMLoadFloat4x4(&mirrorMat);
@@ -749,7 +747,7 @@ void mtgb::FbxParts::SetBoneMatrix()
 	using namespace DirectX;
 
 	// 座標系変換行列を事前に準備
-	XMFLOAT4X4 mirrorMatFloat{};
+	XMFLOAT4X4 mirrorMatFloat {};
 	XMStoreFloat4x4(&mirrorMatFloat, XMMatrixIdentity());
 	mirrorMatFloat._11 *= -1.0f;
 	// mirrorMatFloat._33 *= -1.0f;
@@ -762,11 +760,11 @@ void mtgb::FbxParts::SetBoneMatrix()
 	BoneMatrices boneMatrices_;
 	for (int i = 0; i < boneCount_; i++)
 	{
-		FbxAnimEvaluator* evaluator{ppCluster_[i]->GetLink()->GetScene()->GetAnimationEvaluator()};
-		FbxMatrix mCurrent{evaluator->GetNodeGlobalTransform(ppCluster_[i]->GetLink(), currentTime_)};
+		FbxAnimEvaluator* evaluator { ppCluster_[i]->GetLink()->GetScene()->GetAnimationEvaluator() };
+		FbxMatrix mCurrent { evaluator->GetNodeGlobalTransform(ppCluster_[i]->GetLink(), currentTime_) };
 
 		// FbxMatrix を DirectX::XMMATRIX に変換
-		XMFLOAT4X4 pose{};
+		XMFLOAT4X4 pose {};
 		for (DWORD x = 0; x < 4; x++)
 		{
 			for (DWORD y = 0; y < 4; y++)
@@ -786,7 +784,7 @@ void mtgb::FbxParts::SetBoneMatrix()
 	}
 
 	// コンスタントバッファに書き込み
-	D3D11_MAPPED_SUBRESOURCE mappedSubResource{};
+	D3D11_MAPPED_SUBRESOURCE mappedSubResource {};
 	DirectX11Draw::pContext_->Map(pBoneConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedSubResource);
 
 	memcpy_s(mappedSubResource.pData, mappedSubResource.RowPitch, (void*)&boneMatrices_, sizeof(BoneMatrices));

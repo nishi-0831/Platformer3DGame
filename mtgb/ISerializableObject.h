@@ -2,10 +2,6 @@
 class ISerializableObject
 {
   public:
-	virtual void OnPreSave()
-	{
-	}
-	virtual void OnPostRestore()
-	{
-	}
+	virtual void OnPreSave() {}
+	virtual void OnPostRestore() {}
 };

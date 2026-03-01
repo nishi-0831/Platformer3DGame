@@ -204,8 +204,8 @@ namespace mtgb
 		void StopEnumTimer();
 		void AutoEnum();
 		// 定期的にデバイス列挙をタイマー
-		TimerHandle enumTimerHandle_{nullptr};
-		float enumInterval_{1.0f};
+		TimerHandle enumTimerHandle_ { nullptr };
+		float enumInterval_ { 1.0f };
 
 		/// <summary>
 		/// アクティブなコントローラのIDを調べる

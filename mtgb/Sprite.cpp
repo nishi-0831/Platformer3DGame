@@ -3,18 +3,16 @@
 #include "Debug.h"
 
 mtgb::Sprite::Sprite()
-	: texture2D_{}
+	: texture2D_ {}
 {
 }
 
-mtgb::Sprite::~Sprite()
-{
-}
+mtgb::Sprite::~Sprite() {}
 
 void mtgb::Sprite::Load(const std::wstring& _fileName)
 {
 	fileName_ = _fileName;
-	texture2D_.Load({_fileName});
+	texture2D_.Load({ _fileName });
 }
 
 void mtgb::Sprite::Draw(const RectF& _draw, const float _rotationZ, const RectF& _cut, const Color& _color)
@@ -40,15 +38,15 @@ void mtgb::Sprite::Draw(const RectF& _draw, const float _rotationZ, const RectF&
 
 #pragma region TODO: 計算見直し必要
 			// スクリーンサイズを取得
-			const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
+			const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
 			// 数学座標と描画座標のy軸差異解消
-			RectF cartesianBox{_draw};
+			RectF cartesianBox { _draw };
 			cartesianBox.y = SCREEN_SIZE.y - cartesianBox.y;
 			cartesianBox.height *= -1;
 
-			const Vector2F VIEW_BEGIN{cartesianBox.GetBegin()};
-			const Vector2F VIEW_END{cartesianBox.GetEnd()};
+			const Vector2F VIEW_BEGIN { cartesianBox.GetBegin() };
+			const Vector2F VIEW_END { cartesianBox.GetEnd() };
 
 			// 表示するサイズに合わせる
 			Matrix4x4 scalingBox = XMMatrixScaling(
@@ -68,10 +66,10 @@ void mtgb::Sprite::Draw(const RectF& _draw, const float _rotationZ, const RectF&
 			Matrix4x4 scalingView = XMMatrixScaling(1.0f / (SCREEN_SIZE.x * 2), 1.0f / (SCREEN_SIZE.y * 2), 1.0f);
 
 			// オフセット - 画面中心は(0, 0) 左下は(-1, -1)
-			Matrix4x4 offsetView{XMMatrixTranslation(-1.0f, -1.0f, 0.0f)};
+			Matrix4x4 offsetView { XMMatrixTranslation(-1.0f, -1.0f, 0.0f) };
 
 			// 最終的な行列
-			Matrix4x4 world{scalingBox * scalingView * moveBox * offsetView};
+			Matrix4x4 world { scalingBox * scalingView * moveBox * offsetView };
 
 			_pCB->g_matrixWorldTranslate = XMMatrixTranspose(world);
 #pragma endregion
@@ -79,8 +77,8 @@ void mtgb::Sprite::Draw(const RectF& _draw, const float _rotationZ, const RectF&
 #pragma region UV計算
 			// トリミング計算
 
-			const Vector2F CUT_BEGIN{_cut.GetBegin()};
-			const Vector2F CUT_END{_cut.GetEnd()};
+			const Vector2F CUT_BEGIN { _cut.GetBegin() };
+			const Vector2F CUT_END { _cut.GetEnd() };
 
 			// トリミング矩形の左上点を並行移動
 			Matrix4x4 uvMove = XMMatrixTranslation(
@@ -96,17 +94,17 @@ void mtgb::Sprite::Draw(const RectF& _draw, const float _rotationZ, const RectF&
 				1.0f
 			);
 
-			Matrix4x4 uv{uvScaling * uvMove};
+			Matrix4x4 uv { uvScaling * uvMove };
 
 			_pCB->g_matrixTexture = XMMatrixTranspose(uv);
 #pragma endregion
 		},
 		[&, this](ID3D11DeviceContext* _pDC)
 		{
-			ID3D11SamplerState* pSamplerState{texture2D_.GetSamplerState()};
+			ID3D11SamplerState* pSamplerState { texture2D_.GetSamplerState() };
 			_pDC->PSSetSamplers(0, 1, &pSamplerState);
 
-			ID3D11ShaderResourceView* pSRV{texture2D_.GetShaderResourceView()};
+			ID3D11ShaderResourceView* pSRV { texture2D_.GetShaderResourceView() };
 			_pDC->PSSetShaderResources(0, 1, &pSRV);
 		}
 	);
@@ -211,7 +209,7 @@ void mtgb::Sprite::Draw(
 
 #pragma region TODO: 計算見直し必要
 			// スクリーンサイズを一度だけ取得
-			static const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
+			static const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
 			// 数学座標と描画座標のy軸差異解消
 			/*RectInt cartesianBox{ _draw };
@@ -231,7 +229,7 @@ void mtgb::Sprite::Draw(
 			// DirectX::XMMatrixTranslationFromVector(_pTransform->position_);
 
 			// ボックスの座標変換
-			Matrix4x4 boxTranslate{};
+			Matrix4x4 boxTranslate {};
 			_pTransform->GenerateLocalMatrix(&boxTranslate);
 
 			//// 画像サイズに合わせる
@@ -248,7 +246,7 @@ void mtgb::Sprite::Draw(
 			Matrix4x4 scalingView = XMMatrixScaling(1.0f / (SCREEN_SIZE.x * 1), 1.0f / (SCREEN_SIZE.y * 1), 1.0f);
 
 			// 最終的な行列
-			Matrix4x4 worldTranslate{scalingBox * scalingView * boxTranslate};
+			Matrix4x4 worldTranslate { scalingBox * scalingView * boxTranslate };
 			_pCB->g_matrixWorldTranslate = XMMatrixTranspose(worldTranslate);
 
 			_pTransform->GenerateWorldRotationMatrix(&_pCB->g_matrixWorldRotation);
@@ -261,10 +259,10 @@ void mtgb::Sprite::Draw(
 		},
 		[&, this](ID3D11DeviceContext* _pDC)
 		{
-			ID3D11SamplerState* pSamplerState{texture2D_.GetSamplerState()};
+			ID3D11SamplerState* pSamplerState { texture2D_.GetSamplerState() };
 			_pDC->PSSetSamplers(0, 1, &pSamplerState);
 
-			ID3D11ShaderResourceView* pSRV{texture2D_.GetShaderResourceView()};
+			ID3D11ShaderResourceView* pSRV { texture2D_.GetShaderResourceView() };
 			_pDC->PSSetShaderResources(0, 1, &pSRV);
 		}
 	);
@@ -272,14 +270,14 @@ void mtgb::Sprite::Draw(
 
 void mtgb::Sprite::InitializeVertexBuffer(ID3D11Device* _pDevice)
 {
-	Vertex vertexes[]{
-		{Vector3{-1, 1, 0}, Vector3{0, 0, 0}},	// 左上
-		{Vector3{1, 1, 0}, Vector3{1, 0, 0}},	// 右上
-		{Vector3{-1, -1, 0}, Vector3{0, 1, 0}}, // 左下
-		{Vector3{1, -1, 0}, Vector3{1, 1, 0}},	// 右下
+	Vertex vertexes[] {
+		{ Vector3 { -1, 1, 0 }, Vector3 { 0, 0, 0 } },	// 左上
+		{ Vector3 { 1, 1, 0 }, Vector3 { 1, 0, 0 } },	// 右上
+		{ Vector3 { -1, -1, 0 }, Vector3 { 0, 1, 0 } }, // 左下
+		{ Vector3 { 1, -1, 0 }, Vector3 { 1, 1, 0 } },	// 右下
 	};
 
-	const D3D11_BUFFER_DESC BUFFER_DESC{
+	const D3D11_BUFFER_DESC BUFFER_DESC {
 		.ByteWidth			 = sizeof(vertexes),
 		.Usage				 = D3D11_USAGE_DEFAULT,
 		.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
@@ -288,13 +286,13 @@ void mtgb::Sprite::InitializeVertexBuffer(ID3D11Device* _pDevice)
 		.StructureByteStride = 0,
 	};
 
-	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA {
 		.pSysMem		  = vertexes,
 		.SysMemPitch	  = 0,
 		.SysMemSlicePitch = 0,
 	};
 
-	HRESULT hResult{};
+	HRESULT hResult {};
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, pVertexBuffer_.ReleaseAndGetAddressOf());
 
 	massert(
@@ -305,10 +303,10 @@ void mtgb::Sprite::InitializeVertexBuffer(ID3D11Device* _pDevice)
 
 void mtgb::Sprite::InitializeIndexBuffer(ID3D11Device* _pDevice)
 {
-	static const int INDEXES[]{2, 1, 0, 2, 3, 1};
+	static const int INDEXES[] { 2, 1, 0, 2, 3, 1 };
 	// static const int INDEXES[]{ 0, 1, 2, 2, 1, 3 };
 
-	const D3D11_BUFFER_DESC BUFFER_DESC{
+	const D3D11_BUFFER_DESC BUFFER_DESC {
 		.ByteWidth			 = sizeof(INDEXES),
 		.Usage				 = D3D11_USAGE_DEFAULT,
 		.BindFlags			 = D3D11_BIND_INDEX_BUFFER,
@@ -317,13 +315,13 @@ void mtgb::Sprite::InitializeIndexBuffer(ID3D11Device* _pDevice)
 		.StructureByteStride = 0,
 	};
 
-	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA {
 		.pSysMem		  = INDEXES,
 		.SysMemPitch	  = 0,
 		.SysMemSlicePitch = 0,
 	};
 
-	HRESULT hResult{};
+	HRESULT hResult {};
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, pIndexBuffer_.ReleaseAndGetAddressOf());
 
 	massert(
@@ -334,7 +332,7 @@ void mtgb::Sprite::InitializeIndexBuffer(ID3D11Device* _pDevice)
 
 void mtgb::Sprite::InitializeConstantBuffer(ID3D11Device* _pDevice)
 {
-	const D3D11_BUFFER_DESC BUFFER_DESC{
+	const D3D11_BUFFER_DESC BUFFER_DESC {
 		.ByteWidth			 = sizeof(ConstantBuffer),
 		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: 途中で書き換えるためdynamic
 		.BindFlags			 = D3D11_BIND_CONSTANT_BUFFER,
@@ -343,7 +341,7 @@ void mtgb::Sprite::InitializeConstantBuffer(ID3D11Device* _pDevice)
 		.StructureByteStride = 0,
 	};
 
-	HRESULT hResult{};
+	HRESULT hResult {};
 	hResult = _pDevice->CreateBuffer(
 		&BUFFER_DESC,
 		nullptr, // 初期データなし

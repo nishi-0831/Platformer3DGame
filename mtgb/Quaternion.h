@@ -10,7 +10,7 @@ namespace mtgb
 	/// </summary>
 	struct Quaternion : DirectX::XMVECTORF32
 	{
-		static const size_t COUNT{4};
+		static const size_t COUNT { 4 };
 
 		inline const float& X() const
 		{
@@ -46,7 +46,7 @@ namespace mtgb
 		}
 
 		Quaternion()
-			: Quaternion{0, 0, 0, 0}
+			: Quaternion { 0, 0, 0, 0 }
 		{
 		}
 		Quaternion(float _x, float _y, float _z, float _w)
@@ -104,7 +104,7 @@ namespace mtgb
 		/// <returns>逆四元数</returns>
 		Quaternion GetInverse() const
 		{
-			return {-X(), -Y(), -Z(), W()};
+			return { -X(), -Y(), -Z(), W() };
 		}
 		/// <summary>
 		/// 逆四元数/共役を取得
@@ -160,15 +160,15 @@ namespace mtgb
 			// MEMO: 4. 四元数生成
 			// MEMO: -. q = (x sin(th / 2), y sin(th / 2), z sin(th / 2), cos(th / 2))
 
-			Vector3 v1{Vector3::Normalize(_fromDir)};
-			Vector3 v2{Vector3::Normalize(_toDir)};
+			Vector3 v1 { Vector3::Normalize(_fromDir) };
+			Vector3 v2 { Vector3::Normalize(_toDir) };
 
-			Vector3 axis{DirectX::XMVector3Cross(v1, v2)};
-			float th{acosf(DirectX::XMVectorGetX(DirectX::XMVector3Dot(v1, v2)))};
-			float s{sinf(th * 0.5f)};
-			float w{cosf(th * 0.5f)};
+			Vector3 axis { DirectX::XMVector3Cross(v1, v2) };
+			float th { acosf(DirectX::XMVectorGetX(DirectX::XMVector3Dot(v1, v2))) };
+			float s { sinf(th * 0.5f) };
+			float w { cosf(th * 0.5f) };
 
-			return {axis.x * s, axis.y * s, axis.z * s, w};
+			return { axis.x * s, axis.y * s, axis.z * s, w };
 		}
 
 		/// <summary>
@@ -189,6 +189,6 @@ namespace mtgb
 
 	inline Quaternion operator*(const Quaternion& _q1, const Quaternion& _q2)
 	{
-		return Quaternion{_q1} *= _q2;
+		return Quaternion { _q1 } *= _q2;
 	};
 } // namespace mtgb

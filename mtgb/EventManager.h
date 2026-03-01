@@ -37,7 +37,7 @@ namespace mtgb
 		EventHandlerId Subscribe(EventHandler _handler, EventScope _scope = EventScope::SCENE)
 		{
 			const EventHandlerId id = nextId++;
-			handlers_.emplace(id, HandlerEntry{std::move(_handler), _scope});
+			handlers_.emplace(id, HandlerEntry { std::move(_handler), _scope });
 			return id;
 		}
 
@@ -116,9 +116,7 @@ namespace mtgb
 	  public:
 		~EventManager();
 		void Initialize() override;
-		void Update() override
-		{
-		}
+		void Update() override {}
 
 		template <typename EventDataType>
 		/// <summary>

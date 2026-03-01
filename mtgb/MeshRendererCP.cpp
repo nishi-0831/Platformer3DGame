@@ -1,11 +1,7 @@
 #include "MeshRendererCP.h"
-void mtgb::MeshRendererCP::Initialize()
-{
-}
+void mtgb::MeshRendererCP::Initialize() {}
 
-void mtgb::MeshRendererCP::Update()
-{
-}
+void mtgb::MeshRendererCP::Update() {}
 
 void mtgb::MeshRendererCP::RenderAll() const
 {

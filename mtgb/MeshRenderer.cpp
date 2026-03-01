@@ -4,14 +4,14 @@
 #include "Transform.h"
 namespace
 {
-	constexpr size_t BUFFER_SIZE{256};
+	constexpr size_t BUFFER_SIZE { 256 };
 }
 mtgb::MeshRenderer::MeshRenderer()
-	: meshFileName{""}
-	, meshHandle{INVALID_HANDLE}
-	, layer{AllLayer()}
-	, shaderType{ShaderType::FBX_PARTS}
-	, frame_{0}
+	: meshFileName { "" }
+	, meshHandle { INVALID_HANDLE }
+	, layer { AllLayer() }
+	, shaderType { ShaderType::FBX_PARTS }
+	, frame_ { 0 }
 {
 	enabled_ = true;
 	meshFileName.resize(BUFFER_SIZE);
@@ -19,11 +19,11 @@ mtgb::MeshRenderer::MeshRenderer()
 
 mtgb::MeshRenderer::MeshRenderer(EntityId _entityId)
 	: IComponent(_entityId)
-	, meshFileName{""}
-	, meshHandle{INVALID_HANDLE}
-	, layer{AllLayer()}
-	, shaderType{ShaderType::FBX_PARTS}
-	, frame_{0}
+	, meshFileName { "" }
+	, meshHandle { INVALID_HANDLE }
+	, layer { AllLayer() }
+	, shaderType { ShaderType::FBX_PARTS }
+	, frame_ { 0 }
 {
 	enabled_ = true;
 	meshFileName.resize(BUFFER_SIZE);

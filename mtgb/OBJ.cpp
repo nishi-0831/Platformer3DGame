@@ -19,10 +19,10 @@
 #pragma comment(lib, "d3dCompiler.lib")
 #pragma comment(lib, "winmm.lib")
 
-ComPtr<ID3D11InputLayout> mtgb::OBJ::pInputLayout_{nullptr};
-ComPtr<ID3D11VertexShader> mtgb::OBJ::pVertexShader_{nullptr};
-ComPtr<ID3D11PixelShader> mtgb::OBJ::pPixelShader_{nullptr};
-ComPtr<ID3D11Buffer> mtgb::OBJ::pConstantBuffer_{nullptr};
+ComPtr<ID3D11InputLayout> mtgb::OBJ::pInputLayout_ { nullptr };
+ComPtr<ID3D11VertexShader> mtgb::OBJ::pVertexShader_ { nullptr };
+ComPtr<ID3D11PixelShader> mtgb::OBJ::pPixelShader_ { nullptr };
+ComPtr<ID3D11Buffer> mtgb::OBJ::pConstantBuffer_ { nullptr };
 
 void mtgb::OBJ::Initialize()
 {
@@ -45,7 +45,7 @@ void mtgb::OBJ::Initialize()
 
 	// 頂点インプットレイアウトを定義
 	D3D11_INPUT_ELEMENT_DESC layout[] = {
-		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
 	};
 
 	int numElements = sizeof(layout) / sizeof(layout[0]);
@@ -90,7 +90,7 @@ int mtgb::OBJ::Load(const std::string& _fileName)
 {
 	ModelData* pData = new ModelData;
 
-	OBJ& pInstance{Game::System<OBJ>()};
+	OBJ& pInstance { Game::System<OBJ>() };
 
 	// 開いたファイル一覧から同じファイル名のものが無いか探す
 	bool isExist = false;
@@ -127,9 +127,7 @@ int mtgb::OBJ::Load(const std::string& _fileName)
 	return (int)pInstance.datas_.size() - 1;
 }
 
-void mtgb::OBJ::Update()
-{
-}
+void mtgb::OBJ::Update() {}
 
 void mtgb::OBJ::Release()
 {
@@ -157,7 +155,7 @@ void mtgb::OBJ::Draw(int _hModel, const Transform* _transform)
 
 	Matrix4x4 mProj;
 	Game::System<CameraSystem>().GetProjMatrix(&mProj);
-	static const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
+	static const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
 	ID3D11DeviceContext* tmpContext = DirectX11Draw::pContext_.Get();
 	tmpContext->VSSetShader(pVertexShader_.Get(), NULL, 0);
@@ -205,7 +203,7 @@ void mtgb::OBJ::InitMesh(const std::string& _fileName, SimpleMesh* _mesh)
 {
 	float x, y, z;
 	int v1 = 0, v2 = 0, v3 = 0;
-	char key[190] = {0};
+	char key[190] = { 0 };
 
 	// ファイルを開いて内容を読み込む
 	FILE* fp = NULL;

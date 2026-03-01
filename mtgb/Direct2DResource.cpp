@@ -11,8 +11,8 @@ using namespace mtgb;
 
 mtgb::Direct2DResource::Direct2DResource(WindowContext _windowContext)
 	: WindowContextResource(_windowContext)
-	, pRenderTarget_{nullptr}
-	, pD2DBrush_{nullptr}
+	, pRenderTarget_ { nullptr }
+	, pD2DBrush_ { nullptr }
 {
 	// DXGI,Direct3Dのリソースを取得
 	DXGIResource& dxgiResource	  = Game::System<WindowContextResourceManager>().Get<DXGIResource>(_windowContext);

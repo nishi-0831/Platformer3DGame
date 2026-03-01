@@ -9,13 +9,9 @@ namespace mtgb
 	class Entity
 	{
 	  public:
-		Entity()
-		{
-		}
+		Entity() {}
 
-		virtual ~Entity()
-		{
-		}
+		virtual ~Entity() {}
 
 		/// <summary>
 		/// エンティティIdを取得する
@@ -27,7 +23,7 @@ namespace mtgb
 		}
 
 	  protected:
-		EntityId entityId_{INVALID_ENTITY}; // エンティティの識別子
+		EntityId entityId_ { INVALID_ENTITY }; // エンティティの識別子
 
 	  private:
 		// static EntityId entityCounter_;  // エンティティ識別子のカウンタ

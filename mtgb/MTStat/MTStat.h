@@ -19,12 +19,10 @@ namespace mtstat
 	{
 	  public:
 		MTStat()
-			: stat_{}
+			: stat_ {}
 		{
 		}
-		~MTStat()
-		{
-		}
+		~MTStat() {}
 
 		MTStat& OnStart(const StatEnumT _statEnum, const std::function<void()>& _callback);
 		MTStat& OnUpdate(const StatEnumT _statEnum, const std::function<void()>& _callback);
@@ -96,7 +94,7 @@ namespace mtstat
 		const std::function<void()>& _callback
 	)
 	{
-		startFuncs_.insert({_statEnum, _callback});
+		startFuncs_.insert({ _statEnum, _callback });
 		return *this;
 	}
 
@@ -106,7 +104,7 @@ namespace mtstat
 		const std::function<void()>& _callback
 	)
 	{
-		updateFuncs_.insert({_statEnum, _callback});
+		updateFuncs_.insert({ _statEnum, _callback });
 		return *this;
 	}
 
@@ -116,7 +114,7 @@ namespace mtstat
 		const std::function<void()>& _callback
 	)
 	{
-		endFuncs_.insert({_statEnum, _callback});
+		endFuncs_.insert({ _statEnum, _callback });
 		return *this;
 	}
 

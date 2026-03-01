@@ -78,6 +78,6 @@ namespace mtgb
 		// 既に次のシーンが割り当てられているなら解放する
 		SAFE_DELETE(pNextScene_);
 
-		pNextScene_ = new NextSceneT{_args...};
+		pNextScene_ = new NextSceneT { _args... };
 	}
 } // namespace mtgb

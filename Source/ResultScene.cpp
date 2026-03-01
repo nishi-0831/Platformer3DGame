@@ -7,16 +7,12 @@ namespace
 {
 	// 118,90 , 565,100
 	ImageHandle hImage;
-	RectF draw{118, 90, 565, 100};
-	UIParams params{.depth = 0, .layerFlag = AllLayer()};
+	RectF draw { 118, 90, 565, 100 };
+	UIParams params { .depth = 0, .layerFlag = AllLayer() };
 } // namespace
-ResultScene::ResultScene()
-{
-}
+ResultScene::ResultScene() {}
 
-ResultScene::~ResultScene()
-{
-}
+ResultScene::~ResultScene() {}
 
 void ResultScene::Initialize()
 {
@@ -24,14 +20,14 @@ void ResultScene::Initialize()
 	Game::System<ImGuiEditorCamera>().CreateCamera();
 
 	// シーンのカメラを生成
-	GameObject* pCamera = new GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName("SceneCamera").Build());
+	GameObject* pCamera = new GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName("SceneCamera").Build());
 
 	// ゲームオブジェクトを管理クラスに登録
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 
 	// スコアを表示
-	RectF rect{0, 0, 800, 600};
-	int fontSize{36};
+	RectF rect { 0, 0, 800, 600 };
+	int fontSize { 36 };
 	// Instantiate<ScoreViewer>(rect, fontSize,TextAlignment::center);
 
 	// カメラを管理クラスに登録
@@ -65,6 +61,4 @@ void ResultScene::Draw() const
 	Draw::Image(hImage, draw);
 }
 
-void ResultScene::End()
-{
-}
+void ResultScene::End() {}

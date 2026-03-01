@@ -35,9 +35,9 @@ namespace mtgb
 		enum struct SystemUpdateType : int8_t
 		{
 			DONT_CALL_ME, // 呼び出さないで！
-			CYCLE,		// 毎サイクル
-			FRAME,		// 毎フレーム
-			FIXED,		// 一定の間隔
+			CYCLE,		  // 毎サイクル
+			FRAME,		  // 毎フレーム
+			FIXED,		  // 一定の間隔
 		};
 
 		/// <summary>
@@ -57,14 +57,14 @@ namespace mtgb
 		{
 		  public:
 			RegisterSystemFuncHolder(RegisterSystem _function)
-				: function_{_function}
+				: function_ { _function }
 			{
 			}
 
 			template <typename SystemT> void Set(SystemUpdateType _type, const bool _isComponentCP = false) const
 			{
 
-				function_(typeid(SystemT), dynamic_cast<ISystem*>(new SystemT{}), _isComponentCP, _type);
+				function_(typeid(SystemT), dynamic_cast<ISystem*>(new SystemT {}), _isComponentCP, _type);
 			}
 
 		  private:
@@ -236,62 +236,64 @@ namespace mtgb
 			pInstance_->pRenderablePools_.push_back(dynamic_cast<IRenderableCP*>(pSystem));
 		}
 
-		pInstance_->pRegisterSystems_.insert({typeid(T), pSystem});
+		pInstance_->pRegisterSystems_.insert({ typeid(T), pSystem });
 		switch (_systemUpdateType)
 		{
-		case SystemUpdateType::CYCLE :
-			pInstance_->pCycleUpdateSystems_.push_back(pSystem);
-			break;
-		case SystemUpdateType::FRAME :
-			pInstance_->pFrameUpdateSystems_.push_back(pSystem);
-			break;
-		case SystemUpdateType::FIXED :
-			pInstance_->pFixedUpdateSystems_.push_back(pSystem);
-			break;
-		case SystemUpdateType::DONT_CALL_ME :
-		default :
-			break;
+			case SystemUpdateType::CYCLE :
+				pInstance_->pCycleUpdateSystems_.push_back(pSystem);
+				break;
+			case SystemUpdateType::FRAME :
+				pInstance_->pFrameUpdateSystems_.push_back(pSystem);
+				break;
+			case SystemUpdateType::FIXED :
+				pInstance_->pFixedUpdateSystems_.push_back(pSystem);
+				break;
+			case SystemUpdateType::DONT_CALL_ME :
+			default :
+				break;
 		}
 	}
 
 	template <typename GameT, typename... Args> inline void Game::Run(Args... _args)
 	{
 		// ゲームをインスタンスする
-		pInstance_ = new GameT{_args...};
+		pInstance_ = new GameT { _args... };
 
-		std::list<ISystem*> systems{};
+		std::list<ISystem*> systems {};
 
 		// 各システムの登録
 		pInstance_->SetupSystems(
-			{[&](std::type_index _systemType,
-				 ISystem* _pSystem,
-				 const bool _isComponentPool,
-				 const SystemUpdateType _systemUpdateType)
-			 {
-				 assert(_pSystem != nullptr && "ISystemへのアップキャストに失敗、継承関係がpublicになっているか確認。");
+			{ [&](std::type_index _systemType,
+				  ISystem* _pSystem,
+				  const bool _isComponentPool,
+				  const SystemUpdateType _systemUpdateType)
+			  {
+				  assert(
+					  _pSystem != nullptr && "ISystemへのアップキャストに失敗、継承関係がpublicになっているか確認。"
+				  );
 
-				 systems.push_back(_pSystem);
-				 if (_isComponentPool)
-				 {
-					 pInstance_->pComponentPools_.push_back(dynamic_cast<IComponentPool*>(_pSystem));
-				 }
-				 pInstance_->pRegisterSystems_.insert({_systemType, _pSystem});
-				 switch (_systemUpdateType)
-				 {
-				 case SystemUpdateType::CYCLE :
-					 pInstance_->pCycleUpdateSystems_.push_back(_pSystem);
-					 break;
-				 case SystemUpdateType::FRAME :
-					 pInstance_->pFrameUpdateSystems_.push_back(_pSystem);
-					 break;
-				 case SystemUpdateType::FIXED :
-					 pInstance_->pFixedUpdateSystems_.push_back(_pSystem);
-					 break;
-				 case SystemUpdateType::DONT_CALL_ME :
-				 default :
-					 break;
-				 }
-			 }}
+				  systems.push_back(_pSystem);
+				  if (_isComponentPool)
+				  {
+					  pInstance_->pComponentPools_.push_back(dynamic_cast<IComponentPool*>(_pSystem));
+				  }
+				  pInstance_->pRegisterSystems_.insert({ _systemType, _pSystem });
+				  switch (_systemUpdateType)
+				  {
+					  case SystemUpdateType::CYCLE :
+						  pInstance_->pCycleUpdateSystems_.push_back(_pSystem);
+						  break;
+					  case SystemUpdateType::FRAME :
+						  pInstance_->pFrameUpdateSystems_.push_back(_pSystem);
+						  break;
+					  case SystemUpdateType::FIXED :
+						  pInstance_->pFixedUpdateSystems_.push_back(_pSystem);
+						  break;
+					  case SystemUpdateType::DONT_CALL_ME :
+					  default :
+						  break;
+				  }
+			  } }
 		);
 		// 各システムの初期化
 		pInstance_->InitializeSystems(systems);
@@ -311,7 +313,7 @@ namespace mtgb
 	{
 		const char* t = typeid(SystemT).name();
 
-		ISystem* pSystem{pInstance_->pRegisterSystems_[typeid(SystemT)]};
+		ISystem* pSystem { pInstance_->pRegisterSystems_[typeid(SystemT)] };
 
 		assert(pSystem != nullptr);
 

@@ -2,26 +2,24 @@
 #include "QuaternionCamera.h"
 
 mtgb::QuaternionCamera::QuaternionCamera(EntityId _entityId)
-	: GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName("Camera").Build())
-	, pTransform_{Component<Transform>()}
-	, pTargetTransform_{&Transform::Get(_entityId)}
-	, pTargetRigidBody_{&RigidBody::Get(_entityId)}
-	, lookAtPositionOffset_{Vector3{0, 2, 0}}
-	, rotateAngleDeg_{30.0f}
-	, distance_{8.0f}
-	, inputType_{InputType::JOYPAD}
-	, minPitchAngleDeg_{-5.0f}
-	, maxPitchAngleDeg_{80.0f}
-	, currentLerpSpeed_{0.01f}
-	, lerpSpeedOnJumping_{0.1f}
-	, lerpSpeedOnDescending_{0.1f}
-	, lerpSpeedOnGrounded_{0.3f}
+	: GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName("Camera").Build())
+	, pTransform_ { Component<Transform>() }
+	, pTargetTransform_ { &Transform::Get(_entityId) }
+	, pTargetRigidBody_ { &RigidBody::Get(_entityId) }
+	, lookAtPositionOffset_ { Vector3 { 0, 2, 0 } }
+	, rotateAngleDeg_ { 30.0f }
+	, distance_ { 8.0f }
+	, inputType_ { InputType::JOYPAD }
+	, minPitchAngleDeg_ { -5.0f }
+	, maxPitchAngleDeg_ { 80.0f }
+	, currentLerpSpeed_ { 0.01f }
+	, lerpSpeedOnJumping_ { 0.1f }
+	, lerpSpeedOnDescending_ { 0.1f }
+	, lerpSpeedOnGrounded_ { 0.3f }
 {
 }
 
-mtgb::QuaternionCamera::~QuaternionCamera()
-{
-}
+mtgb::QuaternionCamera::~QuaternionCamera() {}
 
 void mtgb::QuaternionCamera::Update()
 {
@@ -31,17 +29,17 @@ void mtgb::QuaternionCamera::Update()
 	// デバイスから入力を取得する
 	switch (inputType_)
 	{
-		// マウス
-	case InputType::MOUSE :
-		movement = InputUtil::GetMouseMove();
-		break;
+			// マウス
+		case InputType::MOUSE :
+			movement = InputUtil::GetMouseMove();
+			break;
 
-		// ゲームパッド
-	case InputType::JOYPAD :
-		Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
-		movement.x	  = -vec2.y;
-		movement.y	  = -vec2.x;
-		break;
+			// ゲームパッド
+		case InputType::JOYPAD :
+			Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
+			movement.x	  = -vec2.y;
+			movement.y	  = -vec2.x;
+			break;
 	}
 	Quaternion& rotate		= pTransform_->rotate;
 	Quaternion worldRotateY = Quaternion::AngleAxis(

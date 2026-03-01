@@ -8,19 +8,19 @@ namespace mtgb
 	{
 		Vector3(const float _x, const float _y, const float _z);
 		Vector3()
-			: Vector3{0, 0, 0}
+			: Vector3 { 0, 0, 0 }
 		{
 		}
 		Vector3(const Vector3& _other)
-			: Vector3{_other.x, _other.y, _other.z}
+			: Vector3 { _other.x, _other.y, _other.z }
 		{
 		}
 		Vector3(const DirectX::XMFLOAT3& _other)
-			: Vector3{_other.x, _other.y, _other.z}
+			: Vector3 { _other.x, _other.y, _other.z }
 		{
 		}
 		Vector3(const DirectX::XMVECTOR& _v)
-			: Vector3{DirectX::XMVectorGetX(_v), DirectX::XMVectorGetY(_v), DirectX::XMVectorGetZ(_v)}
+			: Vector3 { DirectX::XMVectorGetX(_v), DirectX::XMVectorGetY(_v), DirectX::XMVectorGetZ(_v) }
 		{
 		}
 
@@ -39,7 +39,7 @@ namespace mtgb
 			using DirectX::XMVECTOR;
 			using DirectX::XMVector3TransformCoord;
 
-			XMVECTOR v{(XMVECTOR) * this};
+			XMVECTOR v { (XMVECTOR) * this };
 			v = XMVector3TransformCoord(v, _matrix);
 			XMStoreFloat3(this, v);
 
@@ -107,7 +107,7 @@ namespace mtgb
 		}
 		static Vector3 Normalize(const Vector3& _v)
 		{
-			return Vector3{_v} /= _v.Size();
+			return Vector3 { _v } /= _v.Size();
 		}
 
 		/// <summary>
@@ -115,38 +115,38 @@ namespace mtgb
 		/// </summary>
 		static inline auto Zero()
 		{
-			return Vector3{0, 0, 0};
+			return Vector3 { 0, 0, 0 };
 		}
 		/// <summary>
 		/// 単位ベクトル
 		/// </summary>
 		static inline auto One()
 		{
-			return Vector3{1, 1, 1};
+			return Vector3 { 1, 1, 1 };
 		}
 		static inline auto Up()
 		{
-			return Vector3{0, 1, 0};
+			return Vector3 { 0, 1, 0 };
 		}
 		static inline auto Down()
 		{
-			return Vector3{0, -1, 0};
+			return Vector3 { 0, -1, 0 };
 		}
 		static inline auto Left()
 		{
-			return Vector3{-1, 0, 0};
+			return Vector3 { -1, 0, 0 };
 		}
 		static inline auto Right()
 		{
-			return Vector3{1, 0, 0};
+			return Vector3 { 1, 0, 0 };
 		}
 		static inline auto Back()
 		{
-			return Vector3{0, 0, -1};
+			return Vector3 { 0, 0, -1 };
 		}
 		static inline auto Forward()
 		{
-			return Vector3{0, 0, 1};
+			return Vector3 { 0, 0, 1 };
 		}
 
 		static inline Vector3 Cross(const Vector3& _v1, const Vector3& _v2)
@@ -157,38 +157,38 @@ namespace mtgb
 
 	inline Vector3 operator*(const Vector3& _v, const DirectX::XMMATRIX _matrix)
 	{
-		return Vector3{_v} *= _matrix;
+		return Vector3 { _v } *= _matrix;
 	}
 	inline Vector3 operator*(const Vector3& _v, const float _value)
 	{
-		return Vector3{_v} *= _value;
+		return Vector3 { _v } *= _value;
 	}
 	inline Vector3 operator*(const float _value, const Vector3& _v)
 	{
-		return Vector3{_v} *= _value;
+		return Vector3 { _v } *= _value;
 	}
 	inline Vector3 operator/(const Vector3& _v, const float _value)
 	{
-		return Vector3{_v} /= _value;
+		return Vector3 { _v } /= _value;
 	}
 	inline Vector3 operator/(const float _value, const Vector3& _v)
 	{
-		return Vector3{_v} /= _value;
+		return Vector3 { _v } /= _value;
 	}
 	inline Vector3 operator%(const Vector3& _v, const float _value)
 	{
-		return Vector3{_v} %= _value;
+		return Vector3 { _v } %= _value;
 	}
 	inline Vector3 operator%(const float _value, const Vector3& _v)
 	{
-		return Vector3{_v} %= _value;
+		return Vector3 { _v } %= _value;
 	}
 	inline Vector3 operator+(const Vector3& _v1, const Vector3& _v2)
 	{
-		return Vector3{_v1} += _v2;
+		return Vector3 { _v1 } += _v2;
 	}
 	inline Vector3 operator-(const Vector3& _v1, const Vector3& _v2)
 	{
-		return Vector3{_v1} -= _v2;
+		return Vector3 { _v1 } -= _v2;
 	}
 } // namespace mtgb

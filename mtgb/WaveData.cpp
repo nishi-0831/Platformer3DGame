@@ -2,9 +2,9 @@
 #include "ReleaseUtility.h"
 
 mtgb::WaveData::WaveData()
-	: waveFormat{}
-	, pBuffer{nullptr}
-	, bufferSize{0}
+	: waveFormat {}
+	, pBuffer { nullptr }
+	, bufferSize { 0 }
 {
 }
 

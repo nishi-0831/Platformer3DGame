@@ -41,9 +41,7 @@ using ImageRendererMemento = mtgb::ComponentMemento<mtgb::ImageRenderer, ImageRe
 	}                                                                                                 \
                                                                                                       \
 	friend struct ImageRenderer_Register;                                                             \
-	friend void to_json(nlohmann::json& _j, const ImageRenderer& _target)                             \
-	{                                                                                                 \
-	}                                                                                                 \
+	friend void to_json(nlohmann::json& _j, const ImageRenderer& _target) {}                          \
 	friend void from_json(const nlohmann::json& _j, ImageRenderer& _target)                           \
 	{                                                                                                 \
 		_target.OnPostRestore();                                                                      \

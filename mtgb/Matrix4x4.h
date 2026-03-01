@@ -7,20 +7,20 @@ namespace mtgb
 {
 	struct Matrix4x4 : DirectX::XMMATRIX
 	{
-		static const size_t ROW_SIZE{4};
-		static const size_t COLUMN_SIZE{4};
+		static const size_t ROW_SIZE { 4 };
+		static const size_t COLUMN_SIZE { 4 };
 
 		// using DirectX::XMMATRIX::XMMATRIX;
 
 		inline Matrix4x4()
-			: XMMATRIX{DirectX::XMMatrixIdentity()}
+			: XMMATRIX { DirectX::XMMatrixIdentity() }
 		{
 		}
 
 		inline Matrix4x4(const Matrix4x4& _other) = default;
 
 		inline Matrix4x4(const DirectX::XMMATRIX& _xmMatrix)
-			: XMMATRIX{_xmMatrix}
+			: XMMATRIX { _xmMatrix }
 		{
 		}
 
@@ -36,8 +36,8 @@ namespace mtgb
 		inline bool Equals(const Matrix4x4& _other) const
 		{
 			// FLT_EPSILON
-			DirectX::XMFLOAT4X4 a{};
-			DirectX::XMFLOAT4X4 b{};
+			DirectX::XMFLOAT4X4 a {};
+			DirectX::XMFLOAT4X4 b {};
 			DirectX::XMStoreFloat4x4(&a, *this);
 			DirectX::XMStoreFloat4x4(&b, _other);
 

@@ -1,7 +1,7 @@
-#include "../ImGui/imgui_impl_win32.h"
-#include "../ImGui/imgui_internal.h"
+#include "ImGui/imgui_impl_win32.h"
+#include "ImGui/imgui_internal.h"
 
-#include "../ImGui/ImGuizmo.h"
+#include "ImGui/ImGuizmo.h"
 #include "ImGuiEditorCamera.h"
 #include "Game.h"
 #include "GameObject.h"
@@ -26,15 +26,15 @@ const char* ShowState(mtgb::CameraOperation _cameraOperation);
 
 namespace
 {
-	const mtgb::Vector3 INIT_ANGLE{0, 0, 0};
+	const mtgb::Vector3 INIT_ANGLE { 0, 0, 0 };
 	// 球面座標系の基準方向を正面(+z方向)とするためのオフセット
 	constexpr float SPHERICAL_COORDINATE_FRONT_OFFSET_DEG = 90.0f;
 } // namespace
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
-	: ImGuiShowable{"EditorCamera", ShowType::EDITOR}
-	, moveSpeed_{10.0f}
-	, rotateSensitivity_{1.0f}
-	, hCamera_{INVALID_ENTITY}
+	: ImGuiShowable { "EditorCamera", ShowType::EDITOR }
+	, moveSpeed_ { 10.0f }
+	, rotateSensitivity_ { 1.0f }
+	, hCamera_ { INVALID_ENTITY }
 {
 	distance_	= 10.0f;
 	orbitSpeed_ = 1.0f;
@@ -142,9 +142,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 		);
 }
 
-mtgb::ImGuiEditorCamera::~ImGuiEditorCamera()
-{
-}
+mtgb::ImGuiEditorCamera::~ImGuiEditorCamera() {}
 
 void mtgb::ImGuiEditorCamera::ShowImGui()
 {
@@ -162,9 +160,7 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	ImGui::LabelText("State", "%s", statName);
 }
 
-void mtgb::ImGuiEditorCamera::Initialize()
-{
-}
+void mtgb::ImGuiEditorCamera::Initialize() {}
 
 void mtgb::ImGuiEditorCamera::SetCamera()
 {
@@ -186,7 +182,7 @@ void mtgb::ImGuiEditorCamera::CreateCamera()
 {
 	// カメラに使うGameObject作成
 	GameObject* pCamera = new GameObject(GameObjectBuilder()
-											 .SetPosition({0, 0, 0})
+											 .SetPosition({ 0, 0, 0 })
 											 .SetRotate(Quaternion::Euler(INIT_ANGLE))
 											 .SetName("EditorCamera")
 											 .Build());
@@ -291,7 +287,7 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 		proj,
 		view,
 		Game::System<ImGuiRenderer>().GetViewport(),
-		{workPos.x, workPos.y}
+		{ workPos.x, workPos.y }
 	);
 
 	vec = end - origin;
@@ -308,7 +304,7 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 		// EntityがTransformコンポーネントを持っていない可能性があるのでTryGet
 		Game::System<TransformCP>().TryGet(pTargetTransform_, entityId);
 
-		mtgb::GameObjectSelectedEvent event{.entityId = entityId};
+		mtgb::GameObjectSelectedEvent event { .entityId = entityId };
 		Game::System<EventManager>().GetEvent<mtgb::GameObjectSelectedEvent>().Invoke(event);
 		LOGIMGUI("EditorCamera:Selected");
 	}
@@ -317,12 +313,12 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 		mtgb::GameObjectDeselectedEvent event;
 		if (pTargetTransform_ != nullptr)
 		{
-			event			  = {.entityId = pTargetTransform_->GetEntityId()};
+			event			  = { .entityId = pTargetTransform_->GetEntityId() };
 			pTargetTransform_ = nullptr;
 		}
 		else
 		{
-			event = {.entityId = INVALID_ENTITY};
+			event = { .entityId = INVALID_ENTITY };
 		}
 
 		Game::System<EventManager>().GetEvent<mtgb::GameObjectDeselectedEvent>().Invoke(event);
@@ -336,15 +332,15 @@ const char* ShowState(mtgb::CameraOperation _cameraOperation)
 
 	switch (_cameraOperation)
 	{
-	case CameraOperation::TRACK :
-		return "Track";
-	case CameraOperation::DOLLY :
-		return "Dolly";
-	case CameraOperation::PAN :
-		return "Pan";
-	case CameraOperation::ORBIT :
-		return "Orbit";
-	default :
-		return "Unknown";
+		case CameraOperation::TRACK :
+			return "Track";
+		case CameraOperation::DOLLY :
+			return "Dolly";
+		case CameraOperation::PAN :
+			return "Pan";
+		case CameraOperation::ORBIT :
+			return "Orbit";
+		default :
+			return "Unknown";
 	}
 }

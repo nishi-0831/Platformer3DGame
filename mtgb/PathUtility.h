@@ -12,7 +12,7 @@ namespace mtgb
 		/// <returns>拡張子の文字列</returns>
 		inline std::string_view GetExtension(const std::string_view& _fileName)
 		{
-			size_t extPos{_fileName.find_last_of('.')};
+			size_t extPos { _fileName.find_last_of('.') };
 			return _fileName.substr(extPos, _fileName.size() - extPos);
 		}
 	} // namespace FilePath

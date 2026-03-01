@@ -39,7 +39,7 @@ namespace mtgb
 		/// <returns></returns>
 		virtual RectF GetDetectionArea() const
 		{
-			return RectF{};
+			return RectF {};
 		};
 		/// <summary>
 		/// 検出結果を操作

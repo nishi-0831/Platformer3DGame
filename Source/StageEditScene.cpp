@@ -2,13 +2,9 @@
 #include <mtgb.h>
 #include "StageEditScene.h"
 
-StageEditScene::StageEditScene()
-{
-}
+StageEditScene::StageEditScene() {}
 
-StageEditScene::~StageEditScene()
-{
-}
+StageEditScene::~StageEditScene() {}
 
 void StageEditScene::Initialize()
 {
@@ -19,14 +15,8 @@ void StageEditScene::Initialize()
 	MTImGui::Instance().Initialize();
 }
 
-void StageEditScene::Update()
-{
-}
+void StageEditScene::Update() {}
 
-void StageEditScene::Draw() const
-{
-}
+void StageEditScene::Draw() const {}
 
-void StageEditScene::End()
-{
-}
+void StageEditScene::End() {}

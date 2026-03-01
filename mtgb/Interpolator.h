@@ -11,7 +11,7 @@
 namespace mtgb
 {
 	class InterpolatorCP;
-	
+
 	class [[MT_COMPONENT()]] Interpolator : public IComponent<InterpolatorCP, Interpolator>, public ISerializableObject
 	{
 	  public:

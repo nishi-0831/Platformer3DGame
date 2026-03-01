@@ -8,7 +8,7 @@
 namespace
 {
 	// UI設計中の解像度
-	const mtgb::Vector2 CANVAS_SIZE{1920.0f, 1080.0f};
+	const mtgb::Vector2 CANVAS_SIZE { 1920.0f, 1080.0f };
 } // namespace
 
 namespace mtgb
@@ -20,8 +20,8 @@ namespace mtgb
 	/// <returns>描画用フォントサイズ</returns>
 	inline int GenDrawScreenFontSize(const int _to)
 	{
-		const float RATE_Y{_to / CANVAS_SIZE.y};
-		const int SCREEN_SIZE_Y{Game::System<Screen>().GetSize().y};
+		const float RATE_Y { _to / CANVAS_SIZE.y };
+		const int SCREEN_SIZE_Y { Game::System<Screen>().GetSize().y };
 
 		return static_cast<int>(SCREEN_SIZE_Y * RATE_Y);
 	}
@@ -34,13 +34,13 @@ namespace mtgb
 	template <typename T> inline const mtgb::RectT<T> GenDrawScreenFrom(const mtgb::RectT<T>& _to)
 	{
 		return _to;
-		const RectF RATE{
+		const RectF RATE {
 			_to.point.x / CANVAS_SIZE.x,
 			_to.point.y / CANVAS_SIZE.y,
 			_to.size.x / CANVAS_SIZE.x,
 			_to.size.y / CANVAS_SIZE.y,
 		};
-		const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
+		const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
 		return {
 			RATE.point.x * SCREEN_SIZE.x,
@@ -53,9 +53,9 @@ namespace mtgb
 	template <typename T> inline const mtgb::Vector2T<T> GenDrawScreenFrom(const mtgb::Vector2T<T>& _to)
 	{
 		return _to;
-		const Vector2 RATE{_to.x / CANVAS_SIZE.x, _to.y / CANVAS_SIZE.y};
-		const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
+		const Vector2 RATE { _to.x / CANVAS_SIZE.x, _to.y / CANVAS_SIZE.y };
+		const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
-		return {SCREEN_SIZE.x * RATE.x, SCREEN_SIZE.y * RATE.y};
+		return { SCREEN_SIZE.x * RATE.x, SCREEN_SIZE.y * RATE.y };
 	}
 } // namespace mtgb

@@ -75,8 +75,8 @@ namespace mtgb
 		}
 
 	  private:
-		static constexpr size_t BUFFER_SIZE{1024}; // ログ出力時の文字列バッファサイズ
-		static constexpr UINT MAX_LOG_COUNT{30};
+		static constexpr size_t BUFFER_SIZE { 1024 }; // ログ出力時の文字列バッファサイズ
+		static constexpr UINT MAX_LOG_COUNT { 30 };
 
 		LogItr RemoveLog(LogItr _itr);
 
@@ -93,7 +93,7 @@ namespace mtgb
 
 	template <typename... Args> inline void Debug::LogF(const char* _format, const Args... _args)
 	{
-		static char buffer[BUFFER_SIZE]{};
+		static char buffer[BUFFER_SIZE] {};
 		ZeroMemory(buffer, BUFFER_SIZE); // ヌル文字埋め
 
 		::sprintf_s<BUFFER_SIZE>(buffer, _format, _args...);
@@ -109,7 +109,7 @@ namespace mtgb
 		const Args... _args
 	)
 	{
-		char buffer[BUFFER_SIZE]{};
+		char buffer[BUFFER_SIZE] {};
 		ZeroMemory(buffer, BUFFER_SIZE); // ヌル文字埋め
 
 		::sprintf_s<BUFFER_SIZE>(buffer, _format, _args...);
@@ -125,16 +125,14 @@ namespace mtgb
 		}
 		else
 		{
-			logs_.push_back(LogEntry{
-				.msg		= msg,
-				.msgDetail	= key,
-				.file		= _location.file_name(),
-				.line		= static_cast<int>(_location.line()),
-				.func		= _location.function_name(),
-				.objectName = "",
-				.category	= _category, // カテゴリを設定
-				.count		= 1
-			});
+			logs_.push_back(LogEntry { .msg		   = msg,
+									   .msgDetail  = key,
+									   .file	   = _location.file_name(),
+									   .line	   = static_cast<int>(_location.line()),
+									   .func	   = _location.function_name(),
+									   .objectName = "",
+									   .category   = _category, // カテゴリを設定
+									   .count	   = 1 });
 			logMap_[key] = std::prev(logs_.end());
 		}
 	}

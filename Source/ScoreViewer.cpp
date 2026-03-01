@@ -4,20 +4,18 @@
 namespace
 {
 	// 608,13
-	Vector2F pos{608, 13};
-	TextAlignment alignment{TextAlignment::topLeft};
+	Vector2F pos { 608, 13 };
+	TextAlignment alignment { TextAlignment::topLeft };
 } // namespace
 ScoreViewer::ScoreViewer()
-	: pTransform_{Component<Transform>()}
-	, pTextRenderer_{Component<TextRenderer>()}
+	: pTransform_ { Component<Transform>() }
+	, pTextRenderer_ { Component<TextRenderer>() }
 {
-	TextRendererData data{
-		.rect	   = RectF{608, 13, 800, 43},
-		.fontSize  = 36,
-		.params	   = {.depth = 0, .layerFlag = AllLayer()},
-		.alignment = TextAlignment::topLeft,
-		.layer	   = AllLayer()
-	};
+	TextRendererData data { .rect	   = RectF { 608, 13, 800, 43 },
+							.fontSize  = 36,
+							.params	   = { .depth = 0, .layerFlag = AllLayer() },
+							.alignment = TextAlignment::topLeft,
+							.layer	   = AllLayer() };
 	pTextRenderer_->text	  = "Score";
 	pTextRenderer_->rect	  = data.rect;
 	pTextRenderer_->fontSize  = data.fontSize;
@@ -27,18 +25,16 @@ ScoreViewer::ScoreViewer()
 }
 
 ScoreViewer::ScoreViewer(RectF _rect, int _fontSize, TextAlignment _textAlignment)
-	: pTextRenderer_{Component<TextRenderer>()}
+	: pTextRenderer_ { Component<TextRenderer>() }
 {
 	pTextRenderer_->rect	  = _rect;
 	pTextRenderer_->fontSize  = _fontSize;
 	pTextRenderer_->alignment = _textAlignment;
-	pTextRenderer_->params	  = {.depth = 0, .layerFlag = AllLayer()};
+	pTextRenderer_->params	  = { .depth = 0, .layerFlag = AllLayer() };
 	pTextRenderer_->layer	  = AllLayer();
 }
 
-ScoreViewer::~ScoreViewer()
-{
-}
+ScoreViewer::~ScoreViewer() {}
 
 void ScoreViewer::Update()
 {

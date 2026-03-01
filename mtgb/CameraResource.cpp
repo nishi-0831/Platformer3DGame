@@ -8,13 +8,11 @@
 
 mtgb::CameraResource::CameraResource(WindowContext _windowContext)
 	: WindowContextResource(_windowContext)
-	, hCamera_{INVALID_HANDLE}
+	, hCamera_ { INVALID_HANDLE }
 {
 }
 
-mtgb::CameraResource::~CameraResource()
-{
-}
+mtgb::CameraResource::~CameraResource() {}
 
 void mtgb::CameraResource::SetResource()
 {
@@ -22,9 +20,7 @@ void mtgb::CameraResource::SetResource()
 	Game::System<CameraSystem>().SetDrawCamera(hCamera_);
 }
 
-void mtgb::CameraResource::Release()
-{
-}
+void mtgb::CameraResource::Release() {}
 
 void mtgb::CameraResource::SetHCamera(CameraHandleInScene _hCamera)
 {

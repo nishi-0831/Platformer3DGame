@@ -6,9 +6,9 @@
 #include "DirectX11Draw.h"
 
 mtgb::Texture2D::Texture2D()
-	: pSamplerLinear_{nullptr}
-	, pShaderResourceView_{nullptr}
-	, size_{Vector2Int::Zero()}
+	: pSamplerLinear_ { nullptr }
+	, pShaderResourceView_ { nullptr }
+	, size_ { Vector2Int::Zero() }
 {
 }
 
@@ -20,7 +20,7 @@ mtgb::Texture2D::~Texture2D()
 
 void mtgb::Texture2D::Load(const std::wstring& _fileName)
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
 	// TODO: COMを正しく理解する
 	// MEMO: MTAに属するようにする
@@ -31,10 +31,10 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 		&& "CoInitializeExできなかった @Texture2D::Load"
 	);
 
-	IWICImagingFactory* pFactory{nullptr};
-	IWICBitmapDecoder* pDecoder{nullptr};
-	IWICBitmapFrameDecode* pFrame{nullptr};
-	IWICFormatConverter* pFormatConverter{nullptr};
+	IWICImagingFactory* pFactory { nullptr };
+	IWICBitmapDecoder* pDecoder { nullptr };
+	IWICBitmapFrameDecode* pFrame { nullptr };
+	IWICFormatConverter* pFormatConverter { nullptr };
 
 	hResult = CoCreateInstance(
 		CLSID_WICImagingFactory,
@@ -99,8 +99,8 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 		&& "フォーマットコンバータの初期化に失敗 @Texture2D::Load"
 	);
 
-	UINT imageWidth{};	// 画像の横幅
-	UINT imageHeight{}; // 画像の縦幅
+	UINT imageWidth {};	 // 画像の横幅
+	UINT imageHeight {}; // 画像の縦幅
 	hResult = pFormatConverter->GetSize(&imageWidth, &imageHeight);
 
 	massert(
@@ -109,7 +109,7 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 	);
 
 	// 画像のサイズをVector2Intに変換してメンバ変数に入れておく
-	size_ = Vector2Int{static_cast<int>(imageWidth), static_cast<int>(imageHeight)};
+	size_ = Vector2Int { static_cast<int>(imageWidth), static_cast<int>(imageHeight) };
 
 	// ピクセルデータを一時的に保存するバッファを用意
 	std::vector<BYTE> pixelData(imageWidth * imageHeight * 4);
@@ -128,7 +128,7 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 	// ミップマップレベルを計算
 	int mipLevels = static_cast<int>(std::floor(std::log2((std::max)(imageWidth, imageHeight)))) + 1;
 
-	ID3D11Texture2D* pTexture{nullptr};
+	ID3D11Texture2D* pTexture { nullptr };
 
 	const D3D11_TEXTURE2D_DESC TEXTURE2D_DESC // テクスチャの設定
 		{
@@ -137,7 +137,7 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 			.MipLevels = static_cast<UINT>(mipLevels),
 			.ArraySize = 1,
 			.Format	   = DXGI_FORMAT_R8G8B8A8_UNORM,
-			.SampleDesc{.Count = 1, .Quality = 0},
+			.SampleDesc { .Count = 1, .Quality = 0 },
 			.Usage = D3D11_USAGE_DEFAULT,
 			//.Usage = D3D11_USAGE_DYNAMIC,
 			.BindFlags = D3D11_BIND_SHADER_RESOURCE | D3D11_BIND_RENDER_TARGET,
@@ -160,7 +160,7 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 		&& "2Dテクスチャの作成に失敗 @Texture2D::Load"
 	);
 
-	D3D11_MAPPED_SUBRESOURCE hMappedSubresource{};
+	D3D11_MAPPED_SUBRESOURCE hMappedSubresource {};
 
 	//// テクスチャをマップ(登録)する
 	// hResult = DirectX11Draw::pContext_->Map(
@@ -175,14 +175,12 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 
 	/*DirectX11Draw::pContext_->Unmap(pTexture, 0U);*/
 
-	const D3D11_SHADER_RESOURCE_VIEW_DESC SHADER_RESOURCE_VIEW_DESC{
-		.Format		   = DXGI_FORMAT_R8G8B8A8_UNORM,
-		.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D,
-		.Texture2D{
-			.MostDetailedMip = 0U,
-			.MipLevels		 = static_cast<UINT>(mipLevels),
-		}
-	};
+	const D3D11_SHADER_RESOURCE_VIEW_DESC SHADER_RESOURCE_VIEW_DESC { .Format		 = DXGI_FORMAT_R8G8B8A8_UNORM,
+																	  .ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D,
+																	  .Texture2D {
+																		  .MostDetailedMip = 0U,
+																		  .MipLevels = static_cast<UINT>(mipLevels),
+																	  } };
 
 	hResult = DirectX11Draw::pDevice_->CreateShaderResourceView(
 		pTexture,
@@ -209,7 +207,7 @@ void mtgb::Texture2D::Load(const std::wstring& _fileName)
 	DirectX11Draw::pContext_->GenerateMips(pShaderResourceView_.Get());
 
 	// サンプラーステートの設定(ミップマップ対応に)
-	const D3D11_SAMPLER_DESC SAMPLER_DESC{
+	const D3D11_SAMPLER_DESC SAMPLER_DESC {
 		// MEMO: サンプリングするときのフィルタ (かなり種類多い)
 		//     : Unityのテクスチャ設定みたいな感じ
 		//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/d3d11/ne-d3d11-d3d11_filter

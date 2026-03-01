@@ -8,14 +8,14 @@
 #include <filesystem>
 #include <fstream>
 mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene, std::string_view _fileName)
-	: pCurrentClip_{nullptr}
-	, currentFrame_{0.0f}
-	, animationSpeed_{1.0f}
-	, isPlaying_{false}
-	, isLooping_{false}
-	, isFinished_{false}
-	, pFbxScene_{_fbxScene}
-	, fileName_{_fileName}
+	: pCurrentClip_ { nullptr }
+	, currentFrame_ { 0.0f }
+	, animationSpeed_ { 1.0f }
+	, isPlaying_ { false }
+	, isLooping_ { false }
+	, isFinished_ { false }
+	, pFbxScene_ { _fbxScene }
+	, fileName_ { _fileName }
 {
 	int animStackCount = _fbxScene->GetSrcObjectCount<FbxAnimStack>();
 
@@ -31,7 +31,7 @@ mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene
 		// コントローラに登録
 		RegisterAnimationClip(animClip);
 	}
-	
+
 	std::filesystem::path path(fileName_);
 	path.replace_extension();
 	path.concat(".Event.json");
@@ -44,7 +44,7 @@ mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene
 			LOGIMGUI("failed to read {}.Event.json", path.c_str());
 			return;
 		}
-		
+
 		nlohmann::json json;
 		try
 		{
@@ -67,9 +67,7 @@ mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene
 	}
 }
 
-mtgb::FbxAnimationController::~FbxAnimationController()
-{
-}
+mtgb::FbxAnimationController::~FbxAnimationController() {}
 
 void mtgb::FbxAnimationController::RegisterAnimationClip(const FbxAnimationClip& _animClip)
 {
@@ -171,7 +169,7 @@ void mtgb::FbxAnimationController::CheckEvents()
 		// 現在のフレームが、イベント対象のフレームの範囲内か
 		if (currentFrame_ >= event.startFrame && currentFrame_ <= event.endFrame)
 		{
-			using iterator					  = decltype(eventCallbackMap_)::iterator;
+			using iterator = decltype(eventCallbackMap_)::iterator;
 			// イベント名に該当するコールバック関数を取得
 			std::pair<iterator, iterator> ret = eventCallbackMap_.equal_range(event.eventName);
 

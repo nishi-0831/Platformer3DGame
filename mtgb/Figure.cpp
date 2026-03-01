@@ -8,13 +8,9 @@
 #include "Game.h"
 #include "Screen.h"
 
-mtgb::Figure::Figure()
-{
-}
+mtgb::Figure::Figure() {}
 
-mtgb::Figure::~Figure()
-{
-}
+mtgb::Figure::~Figure() {}
 
 void mtgb::Figure::Draw(const RectInt& _rect, const Color& _color)
 {
@@ -38,15 +34,15 @@ void mtgb::Figure::Draw(const RectF& _rect, const Color& _color)
 			_pCB->g_worldMatrix = XMMatrixIdentity();
 #pragma region TODO: 計算見直し必要
 			// スクリーンサイズを取得
-			const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
+			const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
 			// 数学座標と描画座標のy軸差異解消
-			RectF cartesianBox{_rect};
+			RectF cartesianBox { _rect };
 			cartesianBox.y = SCREEN_SIZE.y - cartesianBox.y;
 			cartesianBox.height *= -1;
 
-			const Vector2F VIEW_BEGIN{cartesianBox.GetBegin()};
-			const Vector2F VIEW_END{cartesianBox.GetEnd()};
+			const Vector2F VIEW_BEGIN { cartesianBox.GetBegin() };
+			const Vector2F VIEW_END { cartesianBox.GetEnd() };
 
 			// 表示するサイズに合わせる
 			Matrix4x4 scalingBox = XMMatrixScaling(
@@ -66,10 +62,10 @@ void mtgb::Figure::Draw(const RectF& _rect, const Color& _color)
 			Matrix4x4 scalingView = XMMatrixScaling(1.0f / (SCREEN_SIZE.x * 2), 1.0f / (SCREEN_SIZE.y * 2), 1.0f);
 
 			// オフセット - 画面中心は(0, 0) 左下は(-1, -1)
-			Matrix4x4 offsetView{XMMatrixTranslation(-1.0f, -1.0f, 0.0f)};
+			Matrix4x4 offsetView { XMMatrixTranslation(-1.0f, -1.0f, 0.0f) };
 
 			// 最終的な行列
-			Matrix4x4 world{scalingBox * scalingView * moveBox * offsetView};
+			Matrix4x4 world { scalingBox * scalingView * moveBox * offsetView };
 #pragma endregion
 
 			// MEMO: CPU -> 行優先, GPU -> 列優先
@@ -82,14 +78,14 @@ void mtgb::Figure::Draw(const RectF& _rect, const Color& _color)
 
 void mtgb::Figure::InitializeVertexBuffer(ID3D11Device* _pDevice)
 {
-	Vertex vertexes[]{
-		{Vector3{-1, 1, 0}},	// 左上
-		{Vector3{1, 1, 0}},	// 右上
-		{Vector3{-1, -1, 0}}, // 左下
-		{Vector3{1, -1, 0}},	// 右下
+	Vertex vertexes[] {
+		{ Vector3 { -1, 1, 0 } },  // 左上
+		{ Vector3 { 1, 1, 0 } },   // 右上
+		{ Vector3 { -1, -1, 0 } }, // 左下
+		{ Vector3 { 1, -1, 0 } },  // 右下
 	};
 
-	const D3D11_BUFFER_DESC BUFFER_DESC{
+	const D3D11_BUFFER_DESC BUFFER_DESC {
 		.ByteWidth			 = sizeof(vertexes),
 		.Usage				 = D3D11_USAGE_DEFAULT,
 		.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
@@ -98,13 +94,13 @@ void mtgb::Figure::InitializeVertexBuffer(ID3D11Device* _pDevice)
 		.StructureByteStride = 0,
 	};
 
-	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA {
 		.pSysMem		  = vertexes,
 		.SysMemPitch	  = 0,
 		.SysMemSlicePitch = 0,
 	};
 
-	HRESULT hResult{};
+	HRESULT hResult {};
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pVertexBuffer_);
 
 	massert(
@@ -115,9 +111,9 @@ void mtgb::Figure::InitializeVertexBuffer(ID3D11Device* _pDevice)
 
 void mtgb::Figure::InitializeIndexBuffer(ID3D11Device* _pDevice)
 {
-	static const int INDEXES[]{2, 1, 0, 2, 3, 1};
+	static const int INDEXES[] { 2, 1, 0, 2, 3, 1 };
 
-	const D3D11_BUFFER_DESC BUFFER_DESC{
+	const D3D11_BUFFER_DESC BUFFER_DESC {
 		.ByteWidth			 = sizeof(INDEXES),
 		.Usage				 = D3D11_USAGE_DEFAULT,
 		.BindFlags			 = D3D11_BIND_INDEX_BUFFER,
@@ -126,13 +122,13 @@ void mtgb::Figure::InitializeIndexBuffer(ID3D11Device* _pDevice)
 		.StructureByteStride = 0,
 	};
 
-	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA {
 		.pSysMem		  = INDEXES,
 		.SysMemPitch	  = 0,
 		.SysMemSlicePitch = 0,
 	};
 
-	HRESULT hResult{};
+	HRESULT hResult {};
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pIndexBuffer_);
 
 	massert(
@@ -143,12 +139,12 @@ void mtgb::Figure::InitializeIndexBuffer(ID3D11Device* _pDevice)
 
 void mtgb::Figure::InitializeConstantBuffer(ID3D11Device* _pDevice)
 {
-	static const ConstantBuffer INITIALIZE_CONSTANT_BUFFER{
-		.g_color	   = {1, 0, 0, 1},
+	static const ConstantBuffer INITIALIZE_CONSTANT_BUFFER {
+		.g_color	   = { 1, 0, 0, 1 },
 		.g_worldMatrix = DirectX::XMMatrixTranspose(DirectX::XMMatrixIdentity()),
 	};
 
-	const D3D11_BUFFER_DESC BUFFER_DESC{
+	const D3D11_BUFFER_DESC BUFFER_DESC {
 		.ByteWidth			 = sizeof(ConstantBuffer),
 		.Usage				 = D3D11_USAGE_DYNAMIC, // MEMO: 途中で書き換えるためdynamic
 		.BindFlags			 = D3D11_BIND_CONSTANT_BUFFER,
@@ -157,13 +153,13 @@ void mtgb::Figure::InitializeConstantBuffer(ID3D11Device* _pDevice)
 		.StructureByteStride = 0,
 	};
 
-	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA{
+	const D3D11_SUBRESOURCE_DATA INITIALIZE_DATA {
 		.pSysMem		  = &INITIALIZE_CONSTANT_BUFFER,
 		.SysMemPitch	  = 0,
 		.SysMemSlicePitch = 0,
 	};
 
-	HRESULT hResult{};
+	HRESULT hResult {};
 	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, &pConstantBuffer_);
 
 	massert(

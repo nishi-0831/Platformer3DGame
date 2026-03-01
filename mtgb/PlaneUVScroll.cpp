@@ -16,18 +16,16 @@ using namespace DirectX;
 namespace
 {
 	int indexCount = 0;
-	int subCount = 5;
-	Vector4 kLightDir{0, 1, 1, 0};
-}
+	int subCount   = 5;
+	Vector4 kLightDir { 0, 1, 1, 0 };
+} // namespace
 
 mtgb::PlaneUVScroll::PlaneUVScroll()
-	: time_{0.0f}
+	: time_ { 0.0f }
 {
 }
 
-mtgb::PlaneUVScroll::~PlaneUVScroll()
-{
-}
+mtgb::PlaneUVScroll::~PlaneUVScroll() {}
 
 void mtgb::PlaneUVScroll::Initialize()
 {
@@ -54,13 +52,13 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 
 	const CameraSystem& camera = Game::System<CameraSystem>();
 
-	Matrix4x4 mWorld{};
+	Matrix4x4 mWorld {};
 	_transform.GenerateWorldMatrix(&mWorld);
 
-	Matrix4x4 mView{};
+	Matrix4x4 mView {};
 	camera.GetViewMatrix(&mView);
 
-	Matrix4x4 mProj{};
+	Matrix4x4 mProj {};
 	camera.GetProjMatrix(&mProj);
 
 	IShader::Draw<ConstantBuffer, Vertex>(
@@ -78,9 +76,9 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 			_pCB->g_matrixNormalTrans = XMMatrixTranspose(matRotate * XMMatrixInverse(nullptr, matScale));
 
 			_pCB->g_lightDirection = kLightDir;
-			_pCB->g_diffuse		   = Vector4{1, 1, 1, 1};
-			_pCB->g_ambient		   = Vector4{1, 1, 1, 1};
-			_pCB->g_speculer	   = Vector4{0, 0, 0, 0};
+			_pCB->g_diffuse		   = Vector4 { 1, 1, 1, 1 };
+			_pCB->g_ambient		   = Vector4 { 1, 1, 1, 1 };
+			_pCB->g_speculer	   = Vector4 { 0, 0, 0, 0 };
 			_pCB->g_shininess	   = 0.0f;
 			camera.GetPosition(&_pCB->g_cameraPosition);
 			_pCB->g_isTexture	 = TRUE;
@@ -92,10 +90,10 @@ void mtgb::PlaneUVScroll::Draw(const Transform& _transform)
 			_pContext->PSSetConstantBuffers(1, 1, pTimeConstantBuffer_.GetAddressOf());
 
 			// UVスクロールに使うデルタタイムをセット
-			D3D11_MAPPED_SUBRESOURCE mapped{};
+			D3D11_MAPPED_SUBRESOURCE mapped {};
 			if (SUCCEEDED(_pContext->Map(pTimeConstantBuffer_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &mapped)))
 			{
-				TimeBuffer tb{};
+				TimeBuffer tb {};
 				tb.g_time = time_;
 				memcpy_s(mapped.pData, mapped.RowPitch, &tb, sizeof(tb));
 				_pContext->Unmap(pTimeConstantBuffer_.Get(), 0);
@@ -127,7 +125,7 @@ void mtgb::PlaneUVScroll::InitializeVertexBuffer(ID3D11Device* _pDevice)
 			vert.position.x -= 0.5f;
 			vert.position.z -= 0.5f;
 
-			vert.uv.x = ( (1.0f / subCount) * x);
+			vert.uv.x = ((1.0f / subCount) * x);
 			vert.uv.y = 1.0f - ((1.0f / subCount) * z);
 
 			vert.normal = Vector3(0.0f, 1.0f, 0.0f);
@@ -137,8 +135,7 @@ void mtgb::PlaneUVScroll::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	}
 
 	UINT width = static_cast<UINT>(vertices.size() * sizeof(Vertex));
-	D3D11_BUFFER_DESC desc
-	{
+	D3D11_BUFFER_DESC desc {
 		.ByteWidth			 = width,
 		.Usage				 = D3D11_USAGE_DEFAULT,
 		.BindFlags			 = D3D11_BIND_VERTEX_BUFFER,
@@ -147,8 +144,7 @@ void mtgb::PlaneUVScroll::InitializeVertexBuffer(ID3D11Device* _pDevice)
 		.StructureByteStride = 0,
 	};
 
-	D3D11_SUBRESOURCE_DATA init
-	{
+	D3D11_SUBRESOURCE_DATA init {
 		.pSysMem		  = vertices.data(),
 		.SysMemPitch	  = 0,
 		.SysMemSlicePitch = 0,
@@ -180,8 +176,7 @@ void mtgb::PlaneUVScroll::InitializeIndexBuffer(ID3D11Device* _pDevice)
 		}
 	}
 	indexCount = static_cast<int>(indices.size());
-	D3D11_BUFFER_DESC desc
-	{
+	D3D11_BUFFER_DESC desc {
 		.ByteWidth			 = static_cast<UINT>(indices.size() * sizeof(UINT)),
 		.Usage				 = D3D11_USAGE_DEFAULT,
 		.BindFlags			 = D3D11_BIND_INDEX_BUFFER,
@@ -190,8 +185,7 @@ void mtgb::PlaneUVScroll::InitializeIndexBuffer(ID3D11Device* _pDevice)
 		.StructureByteStride = 0,
 	};
 
-	D3D11_SUBRESOURCE_DATA init
-	{
+	D3D11_SUBRESOURCE_DATA init {
 		.pSysMem		  = indices.data(),
 		.SysMemPitch	  = 0,
 		.SysMemSlicePitch = 0,
@@ -203,8 +197,7 @@ void mtgb::PlaneUVScroll::InitializeIndexBuffer(ID3D11Device* _pDevice)
 void mtgb::PlaneUVScroll::InitializeConstantBuffer(ID3D11Device* _pDevice)
 {
 	{
-		const D3D11_BUFFER_DESC desc
-		{
+		const D3D11_BUFFER_DESC desc {
 			.ByteWidth			 = sizeof(ConstantBuffer),
 			.Usage				 = D3D11_USAGE_DYNAMIC,
 			.BindFlags			 = D3D11_BIND_CONSTANT_BUFFER,
@@ -217,8 +210,7 @@ void mtgb::PlaneUVScroll::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	}
 
 	{
-		const D3D11_BUFFER_DESC desc
-		{
+		const D3D11_BUFFER_DESC desc {
 			.ByteWidth			 = sizeof(TimeBuffer),
 			.Usage				 = D3D11_USAGE_DYNAMIC,
 			.BindFlags			 = D3D11_BIND_CONSTANT_BUFFER,

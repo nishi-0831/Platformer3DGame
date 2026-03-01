@@ -2,12 +2,12 @@
 #include "FadeOutScreen.h"
 
 FadeOutScreen::FadeOutScreen()
-	: GameObject{}
-	, pImageRenderer_{Component<ImageRenderer>()}
-	, duration_{3.0f}
-	, elapsed_{0.0f}
-	, isStarted_{false}
-	, isFinished_{false}
+	: GameObject {}
+	, pImageRenderer_ { Component<ImageRenderer>() }
+	, duration_ { 3.0f }
+	, elapsed_ { 0.0f }
+	, isStarted_ { false }
+	, isFinished_ { false }
 {
 	pImageRenderer_->imageFileName_		 = "Image/Black.png";
 	pImageRenderer_->handle_			 = Image::Load(pImageRenderer_->imageFileName_);
@@ -16,20 +16,18 @@ FadeOutScreen::FadeOutScreen()
 	pImageRenderer_->uiParams_.layerFlag = AllLayer();
 	Vector2F screenSize					 = Game::System<Screen>().GetSizeF();
 
-	pImageRenderer_->drawRect_ = RectF{Vector2F::Zero(), screenSize};
+	pImageRenderer_->drawRect_ = RectF { Vector2F::Zero(), screenSize };
 
 	pImageRenderer_->color_.component[static_cast<int32_t>(Color::Component::ALPHA)] = 0;
 }
 
 FadeOutScreen::FadeOutScreen(float _duration)
-	: FadeOutScreen{}
+	: FadeOutScreen {}
 {
 	duration_ = _duration;
 }
 
-FadeOutScreen::~FadeOutScreen()
-{
-}
+FadeOutScreen::~FadeOutScreen() {}
 
 void FadeOutScreen::Update()
 {
@@ -47,13 +45,9 @@ void FadeOutScreen::Update()
 	}
 }
 
-void FadeOutScreen::Draw() const
-{
-}
+void FadeOutScreen::Draw() const {}
 
-void FadeOutScreen::Start()
-{
-}
+void FadeOutScreen::Start() {}
 
 void FadeOutScreen::StartFadeOut()
 {

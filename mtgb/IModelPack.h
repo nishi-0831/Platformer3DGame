@@ -11,12 +11,8 @@ namespace mtgb
 	class IModelPack
 	{
 	  public:
-		IModelPack()
-		{
-		}
-		virtual ~IModelPack()
-		{
-		}
+		IModelPack() {}
+		virtual ~IModelPack() {}
 
 		/// <summary>
 		/// 3Dモデルの読み込みをする

@@ -3,15 +3,15 @@
 
 TimerHandle mtgb::Timer::AddAram(const float _time, const std::function<void()>& _callback)
 {
-	QUEUE_ELEMENT* pElement{new QUEUE_ELEMENT{_callback, _time}};
+	QUEUE_ELEMENT* pElement { new QUEUE_ELEMENT { _callback, _time } };
 	Instance().EnqueueTimer(pElement);
 	return reinterpret_cast<TimerHandle>(pElement);
 }
 
 TimerHandle mtgb::Timer::AddInterval(const float _time, const std::function<void()>& _callback, const bool _firstCall)
 {
-	QUEUE_ELEMENT* pElement{new QUEUE_ELEMENT{_callback, _firstCall ? 0 : _time}};
-	Instance().pReenqueueElements_.insert({pElement, _time});
+	QUEUE_ELEMENT* pElement { new QUEUE_ELEMENT { _callback, _firstCall ? 0 : _time } };
+	Instance().pReenqueueElements_.insert({ pElement, _time });
 	Instance().EnqueueTimer(pElement);
 	return reinterpret_cast<TimerHandle>(pElement);
 }
@@ -19,7 +19,7 @@ TimerHandle mtgb::Timer::AddInterval(const float _time, const std::function<void
 void mtgb::Timer::Remove(TimerHandle _hTimer)
 {
 
-	QUEUE_ELEMENT* pElement{reinterpret_cast<QUEUE_ELEMENT*>(_hTimer)};
+	QUEUE_ELEMENT* pElement { reinterpret_cast<QUEUE_ELEMENT*>(_hTimer) };
 	Instance().toErase_.insert(pElement); // 削除予定に追加する
 
 	// if (Instance().pReenqueueElements_.count(pElement) > 0)
@@ -54,9 +54,7 @@ void mtgb::Timer::Release()
 	Clear();
 }
 
-void mtgb::Timer::Initialize()
-{
-}
+void mtgb::Timer::Initialize() {}
 
 void mtgb::Timer::Update()
 {
@@ -70,8 +68,8 @@ void mtgb::Timer::Update()
 	{
 		(*itr)->timeLeft -= Time::DeltaTimeF();
 
-		float diff{(*itr)->timeLeft}; // 差分
-		if (diff > 0)				  // 差分が0より大きい = 待機中
+		float diff { (*itr)->timeLeft }; // 差分
+		if (diff > 0)					 // 差分が0より大きい = 待機中
 		{
 			break; // タイマー終了していないため離脱
 		}
@@ -132,14 +130,12 @@ mtgb::Timer::Timer()
 	pInstance_ = this;
 }
 
-mtgb::Timer::~Timer()
-{
-}
+mtgb::Timer::~Timer() {}
 
 void mtgb::Timer::EnqueueTimer(QUEUE_ELEMENT* _pElement)
 {
-	float lefter{_pElement->timeLeft}; // 減算用
-	float righter{0};				   // 加算用
+	float lefter { _pElement->timeLeft }; // 減算用
+	float righter { 0 };				  // 加算用
 	// 適切な挿入ポイントを見つける
 	for (auto itr = Instance().pTimerQueue_.begin(); itr != Instance().pTimerQueue_.end(); itr++)
 	{
@@ -157,4 +153,4 @@ void mtgb::Timer::EnqueueTimer(QUEUE_ELEMENT* _pElement)
 	Instance().pTimerQueue_.push_back(_pElement);
 }
 
-mtgb::Timer* mtgb::Timer::pInstance_{nullptr};
+mtgb::Timer* mtgb::Timer::pInstance_ { nullptr };

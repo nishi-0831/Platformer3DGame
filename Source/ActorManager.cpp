@@ -1,13 +1,9 @@
 #include "stdafx.h"
 #include "ActorManager.h"
 
-void ActorManager::Initialize()
-{
-}
+void ActorManager::Initialize() {}
 
-void ActorManager::Update()
-{
-}
+void ActorManager::Update() {}
 
 void ActorManager::RegisterActor(IActor* _pActor)
 {

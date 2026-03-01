@@ -5,14 +5,12 @@
 #pragma comment(lib, "Winmm.lib")
 
 mtgb::Time::Time()
-	: current_{}
-	, previous_{}
+	: current_ {}
+	, previous_ {}
 {
 }
 
-mtgb::Time::~Time()
-{
-}
+mtgb::Time::~Time() {}
 
 void mtgb::Time::Initialize()
 {
@@ -42,7 +40,7 @@ void mtgb::Time::Update()
 	timeEndPeriod(1);
 }
 
-double mtgb::Time::deltaTime_{};
-const LONGLONG mtgb::Time::SEC_TO_MICRO{1000000};
-const double mtgb::Time::MICRO_TO_SEC{0.0000001};
-unsigned int mtgb::Time::waitFrame_{0};
+double mtgb::Time::deltaTime_ {};
+const LONGLONG mtgb::Time::SEC_TO_MICRO { 1000000 };
+const double mtgb::Time::MICRO_TO_SEC { 0.0000001 };
+unsigned int mtgb::Time::waitFrame_ { 0 };

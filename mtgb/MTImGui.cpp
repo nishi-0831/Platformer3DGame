@@ -5,8 +5,8 @@
 #include "RigidBody.h"
 #include "Vector3.h"
 #include "ImGuiRenderer.h"
-#include "../ImGui/imgui.h"
-#include "../ImGui/ImGuizmo.h"
+#include "ImGui/imgui.h"
+#include "ImGui/ImGuizmo.h"
 #include "SceneSystem.h"
 #include "RectContainsInfo.h"
 #include "RectDetector.h"
@@ -374,15 +374,13 @@ void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
 		}
 	}
 }
-void mtgb::MTImGui::RegisterAllComponentViewers()
-{
-}
+void mtgb::MTImGui::RegisterAllComponentViewers() {}
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {
 	Matrix4x4 proj, view;
 	Game::System<CameraSystem>().GetProjMatrix(&proj);
 	Game::System<CameraSystem>().GetViewMatrix(&view);
-	D3D11_VIEWPORT viewport{Game::System<mtgb::ImGuiRenderer>().GetViewport()};
+	D3D11_VIEWPORT viewport { Game::System<mtgb::ImGuiRenderer>().GetViewport() };
 	std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_start, proj, view, viewport);
 	std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_start + _dir, proj, view, viewport);
 
@@ -396,7 +394,7 @@ void mtgb::MTImGui::DrawLineImpl(const Vector3& _from, const Vector3& _to, float
 	Matrix4x4 proj, view;
 	Game::System<CameraSystem>().GetProjMatrix(&proj);
 	Game::System<CameraSystem>().GetViewMatrix(&view);
-	D3D11_VIEWPORT viewport{Game::System<mtgb::ImGuiRenderer>().GetViewport()};
+	D3D11_VIEWPORT viewport { Game::System<mtgb::ImGuiRenderer>().GetViewport() };
 	std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_from, proj, view, viewport);
 	std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_to, proj, view, viewport);
 
@@ -538,7 +536,7 @@ void mtgb::MTImGui::DrawCone(
 
 	// 上下方向を決定
 	Vector3 up =
-		std::fabsf(DirectX::XMVectorGetY(forward)) < 0.9f ? Vector3{0.0f, 1.0f, 0.0f} : Vector3{1.0f, 0.0f, 0.0f};
+		std::fabsf(DirectX::XMVectorGetY(forward)) < 0.9f ? Vector3 { 0.0f, 1.0f, 0.0f } : Vector3 { 1.0f, 0.0f, 0.0f };
 
 	// 右方向を計算
 	Vector3 right = Vector3::Normalize(Vector3::Cross(forward, up));

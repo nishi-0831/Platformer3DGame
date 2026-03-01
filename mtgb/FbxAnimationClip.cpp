@@ -4,10 +4,10 @@
 #include "FbxAnimationClip.h"
 
 mtgb::FbxAnimationClip::FbxAnimationClip(FbxAnimStack* _pAnimStack)
-	: name{""}
-	, startFrame{0}
-	, endFrame{0}
-	, pAnimStack{_pAnimStack}
+	: name { "" }
+	, startFrame { 0 }
+	, endFrame { 0 }
+	, pAnimStack { _pAnimStack }
 {
 	if (_pAnimStack == nullptr)
 		return;

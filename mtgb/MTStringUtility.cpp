@@ -13,18 +13,16 @@ size_t mtgb::GetSizeUTF8Characters(const std::u8string& _string)
 		BYTE_SIZE4,
 	};
 
-	static auto isMatchByteSize{
-		[](const uint8_t _byte, const uint8_t _idByte, const uint8_t _byteMask) -> bool
-		{
-			return (_byte & _byteMask) == _idByte;
-		}
-	};
+	static auto isMatchByteSize { [](const uint8_t _byte, const uint8_t _idByte, const uint8_t _byteMask) -> bool
+								  {
+									  return (_byte & _byteMask) == _idByte;
+								  } };
 
 	// REF: https://ja.wikipedia.org/wiki/UTF-8
-	size_t charasCount{};
+	size_t charasCount {};
 	for (int byteIndex = 0; byteIndex < _string.size();)
 	{
-		ByteSize charaByteSize{};
+		ByteSize charaByteSize {};
 		if (isMatchByteSize(_string[byteIndex], 0b0000'0000, 0b1000'0000))
 		{
 			charaByteSize = BYTE_SIZE1;
@@ -62,21 +60,19 @@ std::u8string mtgb::SubStrBegin(const std::u8string& _string, const int _count)
 		BYTE_SIZE4,
 	};
 
-	int charaCount{}; // utf8の文字数カウント
-	int byteCount{};  // 1文字を構成するバイト数カウント
-	int byteIndex{};
+	int charaCount {}; // utf8の文字数カウント
+	int byteCount {};  // 1文字を構成するバイト数カウント
+	int byteIndex {};
 
-	static auto isMatchByteSize{
-		[](const uint8_t _byte, const uint8_t _idByte, const uint8_t _byteMask) -> bool
-		{
-			return (_byte & _byteMask) == _idByte;
-		}
-	};
+	static auto isMatchByteSize { [](const uint8_t _byte, const uint8_t _idByte, const uint8_t _byteMask) -> bool
+								  {
+									  return (_byte & _byteMask) == _idByte;
+								  } };
 
 	// REF: https://ja.wikipedia.org/wiki/UTF-8
 	for (byteIndex = 0; charaCount < _count && byteIndex < _string.size();)
 	{
-		ByteSize charaByteSize{};
+		ByteSize charaByteSize {};
 		if (isMatchByteSize(_string[byteIndex], 0b0000'0000, 0b1000'0000))
 		{
 			charaByteSize = BYTE_SIZE1;

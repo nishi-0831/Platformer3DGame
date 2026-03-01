@@ -4,7 +4,7 @@ namespace
 {
 	float normalizedX;
 	float normalizedY;
-	const mtgb::Vector3 INIT_ANGLE{0, 0, 0};
+	const mtgb::Vector3 INIT_ANGLE { 0, 0, 0 };
 	/// <summary>
 	/// ラジアン単位の値を、0～2πの範囲に正規化する
 	/// </summary>
@@ -39,7 +39,7 @@ namespace
 		float theta = std::acosf(-y / r); // カメラ用の極角
 		float phi	= std::atan2f(-z, x); // カメラ用の方位角
 
-		return Mathf::SphericalCoord{.r = r, .theta = theta, .phi = phi};
+		return Mathf::SphericalCoord { .r = r, .theta = theta, .phi = phi };
 	}
 } // namespace
 
@@ -49,29 +49,29 @@ float EaseOutCirc(float _x)
 }
 
 mtgb::SphericalCamera::SphericalCamera(GameObject* _pGameObj)
-	: GameObject(GameObjectBuilder().SetPosition({0, 0, 0}).SetName("Camera").Build())
-	, pCameraTransform_{Component<Transform>()}
-	, pTargetTransform_{&Transform::Get(_pGameObj->GetEntityId())}
-	, inputType_{InputType::JOYPAD}
-	, polarAngleRad_{DirectX::XMConvertToRadians(45.0f + 90.0f)}
-	, azimuthalAngleRad_{DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f)}
-	, minPolarAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
-	, maxPolarAngleRad_{DirectX::XMConvertToRadians(89.0f + 90.0f)}
-	, minAzimuthalAngleRad_{DirectX::XMConvertToRadians(1.0f + 90.0f)}
-	, maxAzimuthalAngleRad_{DirectX::XMConvertToRadians(359.0f + 90.0f)}
-	, lookAtPositionOffset_{0, 1, 0}
-	, orbitSpeed_{1.0f}
-	, distance_{10.0f}
-	, isGrounded_{true}
-	, targetVelocityCache_{Vector3::Zero()}
-	, lookAtPosLerpProgress_{0.0f}
-	, baseY_{0.0f}
-	, distY_{0.0f}
-	, lerpSpeedGrounded_{1.0f}
-	, lerpSpeedJumping_{0.3f}
-	, lerpSpeedScalar_{2.0f}
-	, yDeadZoneMax_{0.7f}
-	, yDeadZoneMin_{0.2f}
+	: GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName("Camera").Build())
+	, pCameraTransform_ { Component<Transform>() }
+	, pTargetTransform_ { &Transform::Get(_pGameObj->GetEntityId()) }
+	, inputType_ { InputType::JOYPAD }
+	, polarAngleRad_ { DirectX::XMConvertToRadians(45.0f + 90.0f) }
+	, azimuthalAngleRad_ { DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f) }
+	, minPolarAngleRad_ { DirectX::XMConvertToRadians(1.0f + 90.0f) }
+	, maxPolarAngleRad_ { DirectX::XMConvertToRadians(89.0f + 90.0f) }
+	, minAzimuthalAngleRad_ { DirectX::XMConvertToRadians(1.0f + 90.0f) }
+	, maxAzimuthalAngleRad_ { DirectX::XMConvertToRadians(359.0f + 90.0f) }
+	, lookAtPositionOffset_ { 0, 1, 0 }
+	, orbitSpeed_ { 1.0f }
+	, distance_ { 10.0f }
+	, isGrounded_ { true }
+	, targetVelocityCache_ { Vector3::Zero() }
+	, lookAtPosLerpProgress_ { 0.0f }
+	, baseY_ { 0.0f }
+	, distY_ { 0.0f }
+	, lerpSpeedGrounded_ { 1.0f }
+	, lerpSpeedJumping_ { 0.3f }
+	, lerpSpeedScalar_ { 2.0f }
+	, yDeadZoneMax_ { 0.7f }
+	, yDeadZoneMin_ { 0.2f }
 {
 	// カメラ補間速度の初期化
 	cameraStat_
@@ -141,9 +141,7 @@ mtgb::SphericalCamera::SphericalCamera(GameObject* _pGameObj)
 		);
 }
 
-mtgb::SphericalCamera::~SphericalCamera()
-{
-}
+mtgb::SphericalCamera::~SphericalCamera() {}
 
 void mtgb::SphericalCamera::Update()
 {
@@ -178,9 +176,7 @@ void mtgb::SphericalCamera::Update()
 	MoveCameraSpherical(distance_);
 }
 
-void mtgb::SphericalCamera::Draw() const
-{
-}
+void mtgb::SphericalCamera::Draw() const {}
 
 void mtgb::SphericalCamera::DoOrbit()
 {
@@ -189,17 +185,17 @@ void mtgb::SphericalCamera::DoOrbit()
 	// デバイスから入力を取得する
 	switch (inputType_)
 	{
-		// マウス
-	case InputType::MOUSE :
-		movement = InputUtil::GetMouseMove();
-		break;
+			// マウス
+		case InputType::MOUSE :
+			movement = InputUtil::GetMouseMove();
+			break;
 
-		// ゲームパッド
-	case InputType::JOYPAD :
-		Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
-		movement.x	  = -vec2.x;
-		movement.y	  = vec2.y;
-		break;
+			// ゲームパッド
+		case InputType::JOYPAD :
+			Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
+			movement.x	  = -vec2.x;
+			movement.y	  = vec2.y;
+			break;
 	}
 
 	if (movement.Size() != 0)

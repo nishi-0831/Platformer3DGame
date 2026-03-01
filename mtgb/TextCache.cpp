@@ -5,26 +5,22 @@
 #include "MTStringUtility.h"
 #include <dwrite.h>
 #include "Direct2D/Direct2D.h"
-const wchar_t* mtgb::TextCache::DEFAULT_FONT_FAMILY_NAME{L"Noto Sans JP"};
+const wchar_t* mtgb::TextCache::DEFAULT_FONT_FAMILY_NAME { L"Noto Sans JP" };
 
 namespace
 {
 }
 mtgb::TextCache::TextCache()
-	: currentDefaultFontSize_{72}
-	, nextHandle_{0}
+	: currentDefaultFontSize_ { 72 }
+	, nextHandle_ { 0 }
 {
 	textLayoutData_ = new TextLayoutContainer();
 	fontFormatData_ = new FontFormatContainer();
 }
 
-mtgb::TextCache::~TextCache()
-{
-}
+mtgb::TextCache::~TextCache() {}
 
-void mtgb::TextCache::Initialize()
-{
-}
+void mtgb::TextCache::Initialize() {}
 
 void mtgb::TextCache::Release()
 {
@@ -49,9 +45,7 @@ void mtgb::TextCache::Release()
 	}
 }
 
-void mtgb::TextCache::Update()
-{
-}
+void mtgb::TextCache::Update() {}
 
 int mtgb::TextCache::Load(const std::string& _str, int _size)
 {
@@ -167,7 +161,7 @@ int mtgb::TextCache::GetOrCreateTextLayoutHandle(const std::wstring& _text, int 
 	Game::System<DirectWrite>().CreateTextLayout(_text, _width, _height, _size, formatData->format, &pTextLayout);
 
 	int handle				   = ++nextHandle_;
-	TextLayoutData* layoutData = new TextLayoutData{_text, _size, _width, _height, pTextLayout, handle};
+	TextLayoutData* layoutData = new TextLayoutData { _text, _size, _width, _height, pTextLayout, handle };
 	textLayoutData_->insert(layoutData);
 	return handle;
 }

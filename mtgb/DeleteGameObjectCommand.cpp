@@ -7,14 +7,14 @@ mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
 	const GameObjectFactory& _gameObjectFactory,
 	const ComponentFactory& _componentFactory
 )
-	: componentFactory_{_componentFactory}
-	, gameObjectFactory_{_gameObjectFactory}
-	, targetEntityId_{INVALID_ENTITY}
-	, name_{" Unknown"}
-	, layerFlag_{AllLayer()}
-	, tag_{GameObjectTag::UNTAGGED}
-	, isNotCalledStart_{false}
-	, typeName_{"Unknown"}
+	: componentFactory_ { _componentFactory }
+	, gameObjectFactory_ { _gameObjectFactory }
+	, targetEntityId_ { INVALID_ENTITY }
+	, name_ { " Unknown" }
+	, layerFlag_ { AllLayer() }
+	, tag_ { GameObjectTag::UNTAGGED }
+	, isNotCalledStart_ { false }
+	, typeName_ { "Unknown" }
 {
 	if (_pGameObj == nullptr)
 		return;

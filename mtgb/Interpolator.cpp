@@ -10,22 +10,22 @@ namespace
 	// 始点、終点の初期設定
 
 	// 座標のオフセット
-	mtgb::Vector3 INIT_OFFSET{1.0f, 0.0f, 0.0f};
+	mtgb::Vector3 INIT_OFFSET { 1.0f, 0.0f, 0.0f };
 	// コライダー(球)の半径
-	float INIT_RADIUS{1.0f};
+	float INIT_RADIUS { 1.0f };
 } // namespace
 
 mtgb::Interpolator::Interpolator(EntityId _entityId)
-	: pTransform_{&Transform::Get(_entityId)}
-	, dir_{1.0f}
-	, elapsed_{0.0f}
-	, duration_{1.0f}
-	, startPos_{Vector3::Zero()}
-	, endPos_{Vector3::Zero()}
-	, pStartTransform_{nullptr}
-	, pEndTransform_{nullptr}
-	, pStartCollider_{nullptr}
-	, pEndCollider_{nullptr}
+	: pTransform_ { &Transform::Get(_entityId) }
+	, dir_ { 1.0f }
+	, elapsed_ { 0.0f }
+	, duration_ { 1.0f }
+	, startPos_ { Vector3::Zero() }
+	, endPos_ { Vector3::Zero() }
+	, pStartTransform_ { nullptr }
+	, pEndTransform_ { nullptr }
+	, pStartCollider_ { nullptr }
+	, pEndCollider_ { nullptr }
 {
 	// 始点、終点のゲームオブジェクト作成
 	GameObject* start = new GameObject();
@@ -40,8 +40,8 @@ mtgb::Interpolator::Interpolator(EntityId _entityId)
 	pEndTransform_	 = end->Component<Transform>();
 	// オフセット分動かす
 
-	pStartTransform_->position = pTransform_->position - Vector3{pTransform_->scale * INIT_OFFSET};
-	pEndTransform_->position   = pTransform_->position + Vector3{pTransform_->scale * INIT_OFFSET};
+	pStartTransform_->position = pTransform_->position - Vector3 { pTransform_->scale * INIT_OFFSET };
+	pEndTransform_->position   = pTransform_->position + Vector3 { pTransform_->scale * INIT_OFFSET };
 
 	// コライダー作成
 	pStartCollider_ = start->Component<Collider>();

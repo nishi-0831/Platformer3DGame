@@ -17,13 +17,9 @@
 #include "MTImGui.h"
 #include "DirectX11Draw.h"
 
-mtgb::DirectX11Manager::DirectX11Manager()
-{
-}
+mtgb::DirectX11Manager::DirectX11Manager() {}
 
-mtgb::DirectX11Manager::~DirectX11Manager()
-{
-}
+mtgb::DirectX11Manager::~DirectX11Manager() {}
 
 void mtgb::DirectX11Manager::Initialize()
 {
@@ -62,13 +58,13 @@ void mtgb::DirectX11Manager::Update()
 
 void mtgb::DirectX11Manager::InitializeCommonResources()
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
-	STARTUPINFO startupInfo{};
+	STARTUPINFO startupInfo {};
 	GetStartupInfo(&startupInfo);
 	int nCmdShow = startupInfo.wShowWindow;
 
-	D3D_FEATURE_LEVEL level{};
+	D3D_FEATURE_LEVEL level {};
 
 	massert(SUCCEEDED(hResult) && "QueryInterfaceに失敗 @DirectX11Manager::InitializeCommonResources");
 
@@ -113,7 +109,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 	InitializeShaderBundle(); // シェーダバンドルの初期化
 
-	const D3D11_SAMPLER_DESC SAMPLER_DESC{
+	const D3D11_SAMPLER_DESC SAMPLER_DESC {
 		.Filter	  = D3D11_FILTER_MIN_MAG_MIP_LINEAR,
 		.AddressU = D3D11_TEXTURE_ADDRESS_WRAP,
 		.AddressV = D3D11_TEXTURE_ADDRESS_WRAP,
@@ -128,15 +124,15 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 #pragma region 深度ステンシルステート作成
 
 	// BlendMode::Defaultの作成
-	D3D11_DEPTH_STENCIL_DESC DEPTH_STENCIL_DESC{
+	D3D11_DEPTH_STENCIL_DESC DEPTH_STENCIL_DESC {
 		.DepthEnable	  = TRUE, // 深度テストを行うかどうか
 		.DepthWriteMask	  = D3D11_DEPTH_WRITE_MASK_ALL,
 		.DepthFunc		  = D3D11_COMPARISON_LESS_EQUAL, // 深度の比較方法 : LESS_EQUALは深度が元データ以下の場合に成功
 		.StencilEnable	  = TRUE,						 // ステンシルテストを行うかどうか
 		.StencilReadMask  = {},
 		.StencilWriteMask = {},
-		.FrontFace // カメラを向いているピクセルの深度、ステンシルテストの結果に対する操作を指定
-		{
+		.FrontFace {
+			// カメラを向いているピクセルの深度、ステンシルテストの結果に対する操作を指定
 			.StencilFailOp		= D3D11_STENCIL_OP_KEEP, // ステンシルテスト失敗時
 			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP, // ステンシルテスト成功、深度テスト失敗時
 			.StencilPassOp		= D3D11_STENCIL_OP_KEEP, // 深度、ステンシルの両方のテストに成功時
@@ -163,26 +159,24 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 	);
 
 	// BlendMode::Spriteの作成
-	DEPTH_STENCIL_DESC = {
-		.DepthEnable	  = FALSE, // 深度テストを行うかどうか
-		.DepthWriteMask	  = D3D11_DEPTH_WRITE_MASK_ZERO,
-		.DepthFunc		  = D3D11_COMPARISON_LESS_EQUAL,
-		.StencilEnable	  = FALSE, // ステンシルテストを行うかどうか
-		.StencilReadMask  = {},
-		.StencilWriteMask = {},
-		.FrontFace{
-			.StencilFailOp		= D3D11_STENCIL_OP_KEEP,
-			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-			.StencilPassOp		= D3D11_STENCIL_OP_KEEP,
-			.StencilFunc		= D3D11_COMPARISON_ALWAYS,
-		},
-		.BackFace{
-			.StencilFailOp		= D3D11_STENCIL_OP_KEEP,
-			.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-			.StencilPassOp		= D3D11_STENCIL_OP_KEEP,
-			.StencilFunc		= D3D11_COMPARISON_ALWAYS,
-		}
-	};
+	DEPTH_STENCIL_DESC = { .DepthEnable		 = FALSE, // 深度テストを行うかどうか
+						   .DepthWriteMask	 = D3D11_DEPTH_WRITE_MASK_ZERO,
+						   .DepthFunc		 = D3D11_COMPARISON_LESS_EQUAL,
+						   .StencilEnable	 = FALSE, // ステンシルテストを行うかどうか
+						   .StencilReadMask	 = {},
+						   .StencilWriteMask = {},
+						   .FrontFace {
+							   .StencilFailOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
+							   .StencilPassOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilFunc		   = D3D11_COMPARISON_ALWAYS,
+						   },
+						   .BackFace {
+							   .StencilFailOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
+							   .StencilPassOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilFunc		   = D3D11_COMPARISON_ALWAYS,
+						   } };
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
@@ -197,11 +191,11 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 #pragma region ブレンドステート作成
 
 	// BlendMode::Defaultの作成
-	const D3D11_BLEND_DESC BLEND_DESC{
+	const D3D11_BLEND_DESC BLEND_DESC {
 		.AlphaToCoverageEnable	= FALSE,
 		.IndependentBlendEnable = FALSE,
-		.RenderTarget{
-			D3D11_RENDER_TARGET_BLEND_DESC{
+		.RenderTarget {
+			D3D11_RENDER_TARGET_BLEND_DESC {
 				.BlendEnable		   = TRUE,
 				.SrcBlend			   = D3D11_BLEND_SRC_ALPHA,
 				.DestBlend			   = D3D11_BLEND_INV_SRC_ALPHA,
@@ -242,7 +236,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 void mtgb::DirectX11Manager::CreateDXGISurface(IDXGISwapChain1* _pSwapChain1, IDXGISurface** _ppDxgiSurface)
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
 	// バックバッファ受け取る
 	ComPtr<ID3D11Texture2D> pBackBuffer = nullptr;
@@ -260,16 +254,16 @@ void mtgb::DirectX11Manager::CreateDXGISurface(IDXGISwapChain1* _pSwapChain1, ID
 
 void mtgb::DirectX11Manager::CreateSwapChain(HWND _hWnd, IDXGIOutput* _pOutput, IDXGISwapChain1** _ppSwapChain1)
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
-	const Vector2Int SCREEN_SIZE{Game::System<Screen>().GetSize()};
+	const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
-	DXGI_SWAP_CHAIN_DESC1 desc{
+	DXGI_SWAP_CHAIN_DESC1 desc {
 		.Width	= static_cast<UINT>(SCREEN_SIZE.x), // 解像度(ピクセル数)。0ならウィンドウのサイズに合わせる
 		.Height = static_cast<UINT>(SCREEN_SIZE.y), // 解像度(ピクセル数)。0ならウィンドウのサイズに合わせる
 		.Format = DXGI_FORMAT_R8G8B8A8_UNORM,		// 使える色数
 		.Stereo = FALSE,							// ステレオ(3D立体視)表示を有効にするか
-		.SampleDesc{
+		.SampleDesc {
 			.Count	 = 1,
 			.Quality = 0,
 		},
@@ -284,7 +278,7 @@ void mtgb::DirectX11Manager::CreateSwapChain(HWND _hWnd, IDXGIOutput* _pOutput, 
 	// 仮のフラグ、
 	bool fullscreen								   = false;
 	DXGI_SWAP_CHAIN_FULLSCREEN_DESC fullscreenDesc = {
-		.RefreshRate{.Numerator = 60, .Denominator = 1},
+		.RefreshRate { .Numerator = 60, .Denominator = 1 },
 		.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED,
 		.Scaling		  = DXGI_MODE_SCALING_UNSPECIFIED,
 		.Windowed		  = FALSE, // フルスクリーン
@@ -320,9 +314,9 @@ void mtgb::DirectX11Manager::CreateRenderTargetView(
 	ID3D11RenderTargetView** _ppRenderTargetView
 )
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
-	ComPtr<ID3D11Texture2D> pBackBuffer{nullptr};
+	ComPtr<ID3D11Texture2D> pBackBuffer { nullptr };
 	hResult =
 		_pSwapChain1->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(pBackBuffer.GetAddressOf()));
 	massert(SUCCEEDED(hResult) && "GetBufferに失敗 @DirectX11Manager::CreateRenderTargetView");
@@ -351,18 +345,18 @@ void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(
 	ID3D11DepthStencilView** _ppDepthStencilView
 )
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
 	// const Vector2Int SCREEN_SIZE{ Game::System<Screen>().GetSize() };
 
 	// 深度バッファの設定
-	const D3D11_TEXTURE2D_DESC DEPTH_TEXTURE2D_DESC{
+	const D3D11_TEXTURE2D_DESC DEPTH_TEXTURE2D_DESC {
 		.Width	   = static_cast<UINT>(_bufSize.x),
 		.Height	   = static_cast<UINT>(_bufSize.y),
 		.MipLevels = 1,
 		.ArraySize = 1,
 		.Format	   = DXGI_FORMAT_D32_FLOAT,
-		.SampleDesc{.Count = 1, .Quality = 0},
+		.SampleDesc { .Count = 1, .Quality = 0 },
 		.Usage			= D3D11_USAGE_DEFAULT,
 		.BindFlags		= D3D11_BIND_DEPTH_STENCIL,
 		.CPUAccessFlags = 0,
@@ -491,7 +485,7 @@ void mtgb::DirectX11Manager::EnumAvailableMonitors()
 			   DXGI_ERROR_NOT_FOUND)
 		{
 
-			MonitorInfo info{};
+			MonitorInfo info {};
 			info.adapterIndex = static_cast<int>(adapterIndex);
 			info.outputIndex  = outputIndex;
 			info.isRequested  = false;
@@ -508,12 +502,12 @@ void mtgb::DirectX11Manager::EnumAvailableMonitors()
 
 void mtgb::DirectX11Manager::InitializeShaderBundle()
 {
-	DWORD vectorSize{sizeof(Vector3)};
+	DWORD vectorSize { sizeof(Vector3) };
 
-	CD3D11_RASTERIZER_DESC cRasterizerDesc{};
+	CD3D11_RASTERIZER_DESC cRasterizerDesc {};
 
 	// 2D共通のインプットレイアウト
-	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_2D[]{
+	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_2D[] {
 		{
 			.SemanticName		  = "POSITION",
 			.SemanticIndex		  = 0,
@@ -535,7 +529,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 	};
 
 	// 3D共通のインプットレイアウト
-	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_3D[]{
+	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_3D[] {
 		{
 			.SemanticName		  = "POSITION",
 			.SemanticIndex		  = 0,
@@ -565,7 +559,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 		},
 	};
 
-	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_SKINNED[]{
+	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_SKINNED[] {
 		{
 			.SemanticName		  = "POSITION",
 			.SemanticIndex		  = 0,
@@ -615,7 +609,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 	// 2D図形用シェーダの読み込み
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
 			.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
 			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
@@ -639,7 +633,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 	// 2Dスプライトシェーダの読み込み
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
 			.CullMode			   = D3D11_CULL_NONE,  // カリング: 陰面消去
 			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
@@ -663,7 +657,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 	// FbxPartsシェーダの読み込み
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
 			.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
 			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
@@ -697,7 +691,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 	// Unlit3Dシェーダの読み込み
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
 			.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
 			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
@@ -721,7 +715,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 	// Debug3Dシェーダの読み込み
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 			.FillMode			   = D3D11_FILL_WIREFRAME, // 枠だけ: wireframe
 			.CullMode			   = D3D11_CULL_NONE,	   // カリング: 隠面消去しない
 			.FrontCounterClockwise = FALSE,				   // 三角形の正面向き = 時計回り
@@ -745,7 +739,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 	// 地形シェーダの読み込み
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし
 			.CullMode			   = D3D11_CULL_BACK,  // カリング: 隠面消去
 			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
@@ -769,7 +763,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 	// Terrain
 	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし
 			.CullMode			   = D3D11_CULL_BACK,  // カリング: 隠面消去
 			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
@@ -793,7 +787,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 
 	// トレイルシェーダの読み込み
 	{
-		const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_TRAIL[]{
+		const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_TRAIL[] {
 			{
 				.SemanticName		  = "POSITION",
 				.SemanticIndex		  = 0,
@@ -813,7 +807,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 				.InstanceDataStepRate = 0,
 			},
 		};
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし
 			.CullMode			   = D3D11_CULL_NONE,  // カリング: 隠面消去
 			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
@@ -834,7 +828,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			&cRasterizerDesc
 		);
 
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
 			.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
 			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
@@ -855,7 +849,7 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			&cRasterizerDesc
 		);
 
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC{
+		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
 			.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
 			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
@@ -886,12 +880,12 @@ void mtgb::DirectX11Manager::CompileShader(
 	const CD3D11_RASTERIZER_DESC* _pRasterizerDesc
 )
 {
-	HLSLInclude hlslInclude{};
-	HRESULT hResult{};
+	HLSLInclude hlslInclude {};
+	HRESULT hResult {};
 
 #pragma region 頂点シェーダ
 	// 項点シェーダのインタフェース
-	ID3DBlob* pCompileVS{nullptr};
+	ID3DBlob* pCompileVS { nullptr };
 
 	// 頂点シェーダのコンパイル
 	hResult = D3DCompileFromFile(
@@ -926,7 +920,7 @@ void mtgb::DirectX11Manager::CompileShader(
 
 #pragma region ピクセルシェーダ
 	// ピクセルシェーダのインタフェース
-	ID3DBlob* pCompilePS{nullptr};
+	ID3DBlob* pCompilePS { nullptr };
 
 	// ピクセルシェーダのコンパイル
 	hResult = D3DCompileFromFile(

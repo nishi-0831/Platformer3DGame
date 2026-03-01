@@ -11,7 +11,7 @@
 #include "MTAssert.h"
 namespace mtgb
 {
-	static constexpr size_t COMPONENT_CAPACITY{8192};
+	static constexpr size_t COMPONENT_CAPACITY { 8192 };
 
 	namespace detail
 	{
@@ -42,9 +42,7 @@ namespace mtgb
 
 		void Initialize() override;
 		virtual void Start() {};
-		virtual void Update() override
-		{
-		}
+		virtual void Update() override {}
 
 		void Release() override;
 		nlohmann::json Serialize(EntityId _entityId) override;
@@ -94,8 +92,8 @@ namespace mtgb
 
 	template <typename ComponentT, typename DerivedT, bool IsSingleton>
 	inline ComponentPool<ComponentT, DerivedT, IsSingleton>::ComponentPool()
-		: pool_{}
-		, poolId_{}
+		: pool_ {}
+		, poolId_ {}
 	{
 		pool_.reserve(COMPONENT_CAPACITY);
 		poolId_.reserve(COMPONENT_CAPACITY);
@@ -145,7 +143,7 @@ namespace mtgb
 				return j;
 			}
 		}
-		return nlohmann::json{};
+		return nlohmann::json {};
 	}
 
 	template <typename ComponentT, typename DerivedT, bool IsSingleton>
@@ -224,7 +222,7 @@ namespace mtgb
 			if (poolId_[i] == INVALID_ENTITY)
 			{
 				poolId_[i] = _entityId;
-				pool_[i]   = ComponentT{_entityId, std::forward<Args>(_args)...};
+				pool_[i]   = ComponentT { _entityId, std::forward<Args>(_args)... };
 				pool_[i].Initialize();
 				RegisterComponent(_entityId, i);
 				return pool_[i];

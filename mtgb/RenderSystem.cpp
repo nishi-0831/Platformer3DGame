@@ -7,19 +7,15 @@
 #include "GameObject.h"
 #include "Debug.h"
 #include "MTImGui.h"
-#include "../ImGui/imgui.h"
+#include "ImGui/imgui.h"
 #include "Draw.h"
 #include "MeshRendererCP.h"
 #include "ColliderCP.h"
 #include "CameraResource.h"
 #include "EffekseerVFX.h"
-void mtgb::RenderSystem::Initialize()
-{
-}
+void mtgb::RenderSystem::Initialize() {}
 
-void mtgb::RenderSystem::Update()
-{
-}
+void mtgb::RenderSystem::Update() {}
 
 void mtgb::RenderSystem::Render(GameScene& _scene)
 {

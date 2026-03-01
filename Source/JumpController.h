@@ -26,6 +26,7 @@ class JumpController
 	/// ボタンを離した際に呼ぶ
 	/// </summary>
 	void ReleaseButton();
+
   private:
 	Transform* pTargetTransform_;
 	RigidBody* pTargetRigidBody_;

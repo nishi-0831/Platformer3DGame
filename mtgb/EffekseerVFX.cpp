@@ -21,10 +21,10 @@ namespace mtgb
 	}
 	using namespace Effekseer;
 	using namespace EffekseerRendererDX11;
-	constexpr int MAX_SQUARE{8192};
+	constexpr int MAX_SQUARE { 8192 };
 	Effekseer::Matrix43 CnvMat43(DirectX::XMFLOAT4X4 _mat)
 	{
-		Effekseer::Matrix43 mat43{};
+		Effekseer::Matrix43 mat43 {};
 		for (int i = 0; i < 4; ++i)
 		{
 			for (int j = 0; j < 3; ++j)
@@ -274,13 +274,13 @@ namespace mtgb
 				return weakRef;
 			}
 
-			LOGIMGUI("Effect pool is full. Cannot play %s", std::string{_effectName}.c_str());
+			LOGIMGUI("Effect pool is full. Cannot play %s", std::string { _effectName }.c_str());
 		}
 		// 名前に対応するエフェクトが存在しない
 		else
 		{
 			// ログに出力
-			std::string effectNameStr{_effectName};
+			std::string effectNameStr { _effectName };
 			LOGIMGUI("EffectName %s is not found !", effectNameStr.c_str());
 		}
 
@@ -289,12 +289,12 @@ namespace mtgb
 	}
 
 	EffectData::EffectData(std::string_view _filePath)
-		: filePath_{_filePath}
+		: filePath_ { _filePath }
 	{
 	}
 
 	EffectData::EffectData(const Effekseer::ManagerRef& _manager, std::string_view _filePath)
-		: filePath_{_filePath}
+		: filePath_ { _filePath }
 	{
 		Load(_manager);
 	}
@@ -323,9 +323,9 @@ namespace mtgb
 	}
 
 	EffectInstance::EffectInstance(const std::shared_ptr<EffectData>& _effectData)
-		: elapsedTime_{0}
-		, handle_{-1}
-		, pEffectData_{_effectData}
+		: elapsedTime_ { 0 }
+		, handle_ { -1 }
+		, pEffectData_ { _effectData }
 	{
 	}
 

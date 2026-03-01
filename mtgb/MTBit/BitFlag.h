@@ -18,7 +18,7 @@ namespace mtbit
 	{
 		static_assert(IsEnumStruct<EnumStructT> && "enum structのみ指定できます。");
 		// 指定された enum struct のサイズ分のビット数
-		static constexpr size_t BIT_COUNT{sizeof(EnumStructT) * 8};
+		static constexpr size_t BIT_COUNT { sizeof(EnumStructT) * 8 };
 
 	  public:
 		/// <summary>
@@ -77,7 +77,7 @@ namespace mtbit
 
 		  private:
 			BitFlagEditor(BitFlag& _bitFlag)
-				: bitFlag_{_bitFlag}
+				: bitFlag_ { _bitFlag }
 			{
 			}
 
@@ -98,7 +98,7 @@ namespace mtbit
 		/// <returns></returns>
 		BitFlagEditor BeginEdit()
 		{
-			return BitFlagEditor{*this};
+			return BitFlagEditor { *this };
 		}
 
 		/// <summary>
@@ -127,7 +127,7 @@ namespace mtbit
 		/// <returns>インスタンス</returns>
 		static BitFlag New()
 		{
-			return BitFlag{};
+			return BitFlag {};
 		}
 
 		/// <summary>
@@ -149,7 +149,7 @@ namespace mtbit
 	template <BitFlagEnumStruct EnumStructT>
 	inline mtbit::BitFlag<EnumStructT> operator|(const EnumStructT _e1, const EnumStructT _e2)
 	{
-		return mtbit::BitFlag<EnumStructT>{_e1} | _e2;
+		return mtbit::BitFlag<EnumStructT> { _e1 } | _e2;
 	}
 
 	template <typename EnumStructT>
@@ -158,19 +158,19 @@ namespace mtbit
 		const mtbit::BitFlag<EnumStructT> _flag2
 	)
 	{
-		return mtbit::BitFlag<EnumStructT>{_flag1}.BeginEdit().Add(_flag2).EndEdit();
+		return mtbit::BitFlag<EnumStructT> { _flag1 }.BeginEdit().Add(_flag2).EndEdit();
 	}
 
 	template <typename EnumStructT>
 	inline mtbit::BitFlag<EnumStructT> operator|(const EnumStructT _e, const mtbit::BitFlag<EnumStructT> _flag)
 	{
-		return mtbit::BitFlag<EnumStructT>{_flag}.BeginEdit().On(_e).EndEdit();
+		return mtbit::BitFlag<EnumStructT> { _flag }.BeginEdit().On(_e).EndEdit();
 	}
 
 	template <typename EnumStructT>
 	inline mtbit::BitFlag<EnumStructT> operator|(const mtbit::BitFlag<EnumStructT> _flag, const EnumStructT _e)
 	{
-		return mtbit::BitFlag<EnumStructT>{_flag}.BeginEdit().On(_e).EndEdit();
+		return mtbit::BitFlag<EnumStructT> { _flag }.BeginEdit().On(_e).EndEdit();
 	}
 } // namespace mtbit
 
@@ -181,7 +181,7 @@ template <typename EnumStructT> inline mtbit::BitFlag<EnumStructT>::BitFlag(cons
 
 template <typename EnumStructT>
 inline mtbit::BitFlag<EnumStructT>::BitFlag(const std::bitset<BIT_COUNT>& _bitset)
-	: value_{_bitset}
+	: value_ { _bitset }
 {
 }
 

@@ -1,5 +1,5 @@
 #include "NamedCommandHistory.h"
-#include "../ImGui/imgui.h"
+#include "ImGui/imgui.h"
 
 namespace
 {
@@ -9,7 +9,7 @@ namespace
 namespace mtgb
 {
 	NamedCommandHistory::NamedCommandHistory(ICommandHistory* _inner)
-		: inner_{_inner}
+		: inner_ { _inner }
 	{
 	}
 

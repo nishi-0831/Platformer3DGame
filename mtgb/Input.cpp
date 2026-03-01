@@ -10,19 +10,19 @@
 #include "Game.h"
 #include "ISystem.h"
 #include "Debug.h"
-#include "../ImGui/imgui.h"
+#include "ImGui/imgui.h"
 #include "Timer.h"
 
 namespace
 {
-	static const size_t KEY_BUFFER_SIZE{256};
+	static const size_t KEY_BUFFER_SIZE { 256 };
 	LONG min = -1000;
 	LONG max = 1000;
-	LONG xMin{min}, xMax{max}, yMin{min}, yMax{max};
+	LONG xMin { min }, xMax { max }, yMin { min }, yMax { max };
 	float acquireInterval = 10.0f;
 
-	const DWORD VENDOR_ID_DUAL_SHOCK{0x54c};
-	const DWORD VENDOR_ID_XBOX{0x45E};
+	const DWORD VENDOR_ID_DUAL_SHOCK { 0x54c };
+	const DWORD VENDOR_ID_XBOX { 0x45E };
 
 } // namespace
 
@@ -30,22 +30,22 @@ using namespace mtgb;
 
 void mtgb::Input::AcquireJoystick(ComPtr<IDirectInputDevice8> _pJoystickDevice)
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 	hResult										   = _pJoystickDevice->Acquire();
 	joystickContext_[currJoystickGuid_].lastResult = hResult;
 	switch (hResult)
 	{
-	case DI_OK :   // 取得できた
-	case S_FALSE : // 他のアプリも許可を取得している
-		break;
-	case DIERR_OTHERAPPHASPRIO : // 他のアプリが優先権を持っている
-		return;
-	case DIERR_INVALIDPARAM :
-	case DIERR_NOTINITIALIZED :
-		massert(SUCCEEDED(hResult) && "ジョイスティック操作の許可取得の際にエラーが起こりました @Input::Update");
-		return;
-	default :
-		break;
+		case DI_OK :   // 取得できた
+		case S_FALSE : // 他のアプリも許可を取得している
+			break;
+		case DIERR_OTHERAPPHASPRIO : // 他のアプリが優先権を持っている
+			return;
+		case DIERR_INVALIDPARAM :
+		case DIERR_NOTINITIALIZED :
+			massert(SUCCEEDED(hResult) && "ジョイスティック操作の許可取得の際にエラーが起こりました @Input::Update");
+			return;
+		default :
+			break;
 	}
 }
 
@@ -64,10 +64,10 @@ bool operator<(const GUID& _lhs, const GUID& _rhs)
 }
 
 mtgb::Input::Input()
-	: pInputData_{nullptr}
-	, pDirectInput_{nullptr}
-	, pKeyDevice_{nullptr}
-	, pMouseDevice_{nullptr}
+	: pInputData_ { nullptr }
+	, pDirectInput_ { nullptr }
+	, pKeyDevice_ { nullptr }
+	, pMouseDevice_ { nullptr }
 {
 }
 
@@ -78,7 +78,7 @@ mtgb::Input::~Input()
 
 void mtgb::Input::Initialize()
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
 	// DirectInput8のデバイス作成
 	hResult = DirectInput8Create(
@@ -97,7 +97,7 @@ void mtgb::Input::Initialize()
 
 void mtgb::Input::Update()
 {
-	static HRESULT hResult{};
+	static HRESULT hResult {};
 
 #pragma region キーボード
 	UpdateKeyDevice();
@@ -128,7 +128,7 @@ void mtgb::Input::Update()
 
 void mtgb::Input::UpdateKeyDevice()
 {
-	static HRESULT hResult{};
+	static HRESULT hResult {};
 	// キーボード操作の許可ゲット
 	hResult = pKeyDevice_->Acquire();
 
@@ -140,7 +140,7 @@ void mtgb::Input::UpdateKeyDevice()
 		return; // キーボード操作の許可取得に失敗したなら回帰
 	}
 
-	static BYTE keyBuffer[KEY_BUFFER_SIZE]{}; // キー状態取得用バッファ
+	static BYTE keyBuffer[KEY_BUFFER_SIZE] {}; // キー状態取得用バッファ
 
 	pInputData_->keyStatePrevious_ = pInputData_->keyStateCurrent_;
 	pKeyDevice_->GetDeviceState(KEY_BUFFER_SIZE, keyBuffer);
@@ -154,7 +154,7 @@ void mtgb::Input::UpdateKeyDevice()
 
 void mtgb::Input::UpdateMouseDevice()
 {
-	static HRESULT hResult{};
+	static HRESULT hResult {};
 
 	// マウス操作の許可をゲット
 	hResult = pMouseDevice_->Acquire();
@@ -183,7 +183,7 @@ void mtgb::Input::UpdateMouseDevice()
 
 void mtgb::Input::UpdateJoystickDevice()
 {
-	static HRESULT hResult{};
+	static HRESULT hResult {};
 
 	if (joystickContext_.empty())
 		return;
@@ -197,23 +197,23 @@ void mtgb::Input::UpdateJoystickDevice()
 	joystickContext_[currJoystickGuid_].lastResult = hResult;
 	switch (hResult)
 	{
-	case DI_OK :
-		// LOGF("OK\n");
-		break;
-	case DIERR_INPUTLOST : // 入力ロスト、一時的なアクセス不可
-		AcquireJoystick(joystickContext_[currJoystickGuid_].device);
-		return;
-	case DIERR_NOTACQUIRED : // 未取得
-		AcquireJoystick(joystickContext_[currJoystickGuid_].device);
-		return;
-	default : // 何らかの失敗
-	{
-		// デバイスを割り当て済みリストから除外
-		UnregisterJoystickGuid(GetDeviceGuid(joystickContext_[currJoystickGuid_].device));
-		return;
-	}
-		/* massert(false
-			&& "デバイスの状態の取得の際にエラーが起こりました @Input::Update");*/
+		case DI_OK :
+			// LOGF("OK\n");
+			break;
+		case DIERR_INPUTLOST : // 入力ロスト、一時的なアクセス不可
+			AcquireJoystick(joystickContext_[currJoystickGuid_].device);
+			return;
+		case DIERR_NOTACQUIRED : // 未取得
+			AcquireJoystick(joystickContext_[currJoystickGuid_].device);
+			return;
+		default : // 何らかの失敗
+		{
+			// デバイスを割り当て済みリストから除外
+			UnregisterJoystickGuid(GetDeviceGuid(joystickContext_[currJoystickGuid_].device));
+			return;
+		}
+			/* massert(false
+				&& "デバイスの状態の取得の際にエラーが起こりました @Input::Update");*/
 	}
 }
 
@@ -270,7 +270,7 @@ void mtgb::Input::UpdateMousePositionData(const int32_t _x, const int32_t _y)
 
 void mtgb::Input::CreateKeyDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppKeyDevice)
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
 	hResult = pDirectInput_->CreateDevice(GUID_SysKeyboard, _ppKeyDevice, nullptr);
 	massert(
@@ -300,7 +300,7 @@ void mtgb::Input::CreateKeyDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppKeyDevice
 
 void mtgb::Input::CreateMouseDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppMouseDevice)
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
 	hResult = pDirectInput_->CreateDevice(GUID_SysMouse, _ppMouseDevice, nullptr);
 	massert(
@@ -562,18 +562,18 @@ std::string mtgb::Input::ConvertHResultToMessage(HRESULT _hr) const
 {
 	switch (_hr)
 	{
-	case DI_OK :
-		return "取得";
-	case S_FALSE :
-		return "他アプリと共有";
-	case DIERR_INPUTLOST :
-		return "切断";
-	case DIERR_NOTACQUIRED :
-		return "デバイス未取得";
-	case DIERR_OTHERAPPHASPRIO :
-		return "他が優先権を所持";
-	default :
-		return "不明なエラー";
+		case DI_OK :
+			return "取得";
+		case S_FALSE :
+			return "他アプリと共有";
+		case DIERR_INPUTLOST :
+			return "切断";
+		case DIERR_NOTACQUIRED :
+			return "デバイス未取得";
+		case DIERR_OTHERAPPHASPRIO :
+			return "他が優先権を所持";
+		default :
+			return "不明なエラー";
 	}
 }
 
@@ -598,17 +598,17 @@ DeviceType mtgb::Input::GetDeviceType(const DIDEVICEINSTANCE& _inst)
 	DWORD major = _inst.dwDevType & 0xFF;
 	switch (major)
 	{
-	case DI8DEVTYPE_FLIGHT :
-		deviceType = DeviceType::FLIGHT_STICK;
-		break;
-	case DI8DEVTYPE_GAMEPAD :
-	case DI8DEVTYPE_JOYSTICK :
-	case DI8DEVTYPE_1STPERSON :
-		deviceType = DeviceType::GAME_PAD;
-		break;
-	default :
-		deviceType = DeviceType::UNKNOWN;
-		break;
+		case DI8DEVTYPE_FLIGHT :
+			deviceType = DeviceType::FLIGHT_STICK;
+			break;
+		case DI8DEVTYPE_GAMEPAD :
+		case DI8DEVTYPE_JOYSTICK :
+		case DI8DEVTYPE_1STPERSON :
+			deviceType = DeviceType::GAME_PAD;
+			break;
+		default :
+			deviceType = DeviceType::UNKNOWN;
+			break;
 	}
 
 	return deviceType;
@@ -656,11 +656,11 @@ bool mtgb::Input::IsJoystickConnected(GUID _guid) const
 	}
 	switch (itr->second.lastResult)
 	{
-	case DI_OK :
-	case S_FALSE :
-		return true;
-	default :
-		return false;
+		case DI_OK :
+		case S_FALSE :
+			return true;
+		default :
+			return false;
 	}
 }
 
@@ -703,7 +703,7 @@ void mtgb::Input::AutoEnum()
 
 void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, InputConfig _inputConfig)
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
 #pragma region 軸モード設定
 
@@ -752,62 +752,62 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 	ControllerType controllerType = GetControllerTypeByVendor(_pJoystickDevice);
 	switch (controllerType)
 	{
-	case ControllerType::DUAL_SHOCK :
-		// 右スティック、X軸
-		diprg.diph.dwObj = DIJOFS_Z;
-		diprg.lMin		 = -_inputConfig.xRange;
-		diprg.lMax		 = _inputConfig.xRange;
+		case ControllerType::DUAL_SHOCK :
+			// 右スティック、X軸
+			diprg.diph.dwObj = DIJOFS_Z;
+			diprg.lMin		 = -_inputConfig.xRange;
+			diprg.lMax		 = _inputConfig.xRange;
 
-		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		massert(SUCCEEDED(hResult) && "値の範囲設定に失敗 @");
+			hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+			massert(SUCCEEDED(hResult) && "値の範囲設定に失敗 @");
 
-		// 右スティック、Y軸
-		diprg.diph.dwObj = DIJOFS_RZ;
-		diprg.lMin		 = -_inputConfig.yRange;
-		diprg.lMax		 = _inputConfig.yRange;
+			// 右スティック、Y軸
+			diprg.diph.dwObj = DIJOFS_RZ;
+			diprg.lMin		 = -_inputConfig.yRange;
+			diprg.lMax		 = _inputConfig.yRange;
 
-		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		massert(SUCCEEDED(hResult) && "値の範囲設定に失敗");
-		break;
-	case ControllerType::XBOX :
-		// 右スティック、X軸
-		diprg.diph.dwObj = DIJOFS_RX;
-		diprg.lMin		 = -_inputConfig.xRange;
-		diprg.lMax		 = _inputConfig.xRange;
+			hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+			massert(SUCCEEDED(hResult) && "値の範囲設定に失敗");
+			break;
+		case ControllerType::XBOX :
+			// 右スティック、X軸
+			diprg.diph.dwObj = DIJOFS_RX;
+			diprg.lMin		 = -_inputConfig.xRange;
+			diprg.lMax		 = _inputConfig.xRange;
 
-		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		massert(SUCCEEDED(hResult) && "値の範囲設定に失敗");
+			hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+			massert(SUCCEEDED(hResult) && "値の範囲設定に失敗");
 
-		// 左スティック、y軸
-		diprg.diph.dwObj = DIJOFS_RY;
-		diprg.lMin		 = -_inputConfig.yRange;
-		diprg.lMax		 = _inputConfig.yRange;
+			// 左スティック、y軸
+			diprg.diph.dwObj = DIJOFS_RY;
+			diprg.lMin		 = -_inputConfig.yRange;
+			diprg.lMax		 = _inputConfig.yRange;
 
-		hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		massert(SUCCEEDED(hResult) && "値の範囲設定に失敗");
-		break;
+			hResult = _pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+			massert(SUCCEEDED(hResult) && "値の範囲設定に失敗");
+			break;
 
-	default :
-		// 不明な場合は両方設定してしまう
-		// DualShock設定
-		diprg.diph.dwObj = DIJOFS_Z;
-		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		diprg.diph.dwObj = DIJOFS_RZ;
-		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+		default :
+			// 不明な場合は両方設定してしまう
+			// DualShock設定
+			diprg.diph.dwObj = DIJOFS_Z;
+			_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+			diprg.diph.dwObj = DIJOFS_RZ;
+			_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
 
-		// Xbox設定
-		diprg.diph.dwObj = DIJOFS_RX;
-		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		diprg.diph.dwObj = DIJOFS_RY;
-		_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
-		break;
+			// Xbox設定
+			diprg.diph.dwObj = DIJOFS_RX;
+			_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+			diprg.diph.dwObj = DIJOFS_RY;
+			_pJoystickDevice->SetProperty(DIPROP_RANGE, &diprg.diph);
+			break;
 	}
 
 #pragma endregion
 }
 
 mtgb::JoystickContext::JoystickContext()
-	: timerHandle{nullptr}
+	: timerHandle { nullptr }
 {
 }
 
@@ -827,6 +827,4 @@ mtgb::JoystickContext::JoystickContext(ComPtr<IDirectInputDevice8> _device)
 	deviceType = Input::GetDeviceType(device);
 }
 
-mtgb::JoystickReservation::~JoystickReservation()
-{
-}
+mtgb::JoystickReservation::~JoystickReservation() {}

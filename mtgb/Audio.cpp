@@ -26,8 +26,8 @@ namespace mtgb
 } // namespace mtgb
 
 mtgb::Audio::Audio()
-	: pXAudio2_{nullptr}
-	, pMasteringVoice_{nullptr}
+	: pXAudio2_ { nullptr }
+	, pMasteringVoice_ { nullptr }
 {
 }
 
@@ -43,7 +43,7 @@ mtgb::Audio::~Audio()
 
 void mtgb::Audio::Initialize()
 {
-	HRESULT hResult{};
+	HRESULT hResult {};
 
 	hResult = CoInitializeEx(NULL, COINIT_MULTITHREADED);
 	massert(
@@ -66,9 +66,7 @@ void mtgb::Audio::Initialize()
 	RegisterAudios();
 }
 
-void mtgb::Audio::Update()
-{
-}
+void mtgb::Audio::Update() {}
 
 void mtgb::Audio::Register(std::string_view _soundName, std::string_view _filePath)
 {

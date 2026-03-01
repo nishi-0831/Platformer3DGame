@@ -18,7 +18,7 @@ namespace mtgb
 	{
 	  public:
 		FbxAnimationController() = delete;
-		explicit FbxAnimationController(fbxsdk::FbxScene* _fbxScene,std::string_view _fileName);
+		explicit FbxAnimationController(fbxsdk::FbxScene* _fbxScene, std::string_view _fileName);
 		~FbxAnimationController();
 
 		/// <summary>
@@ -77,8 +77,9 @@ namespace mtgb
 		/// ある場合は、イベントの通知を行う
 		/// </summary>
 		void CheckEvents();
-		
-		void SetEventCallback(std::string_view _eventName,std::function<void(const AnimationEvent&)> _callback);
+
+		void SetEventCallback(std::string_view _eventName, std::function<void(const AnimationEvent&)> _callback);
+
 	  private:
 		std::unordered_map<std::string, FbxAnimationClip, TransparentStringHash, TransparentStringEq> clipMap_;
 		std::unordered_multimap<

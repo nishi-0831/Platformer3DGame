@@ -2,19 +2,15 @@
 #include "GroupCommand.h"
 
 mtgb::GroupCommand::GroupCommand()
-	: commandName_{"GroupCommand"}
-	, undoCounter_{0}
-	, redoCounter_{0}
+	: commandName_ { "GroupCommand" }
+	, undoCounter_ { 0 }
+	, redoCounter_ { 0 }
 {
 }
 
-mtgb::GroupCommand::~GroupCommand()
-{
-}
+mtgb::GroupCommand::~GroupCommand() {}
 
-void mtgb::GroupCommand::Execute()
-{
-}
+void mtgb::GroupCommand::Execute() {}
 
 void mtgb::GroupCommand::Undo()
 {

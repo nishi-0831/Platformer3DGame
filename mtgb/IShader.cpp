@@ -4,9 +4,9 @@
 #include "ReleaseUtility.h"
 
 mtgb::IShader::IShader()
-	: pVertexBuffer_{nullptr}
-	, pIndexBuffer_{nullptr}
-	, pConstantBuffer_{nullptr}
+	: pVertexBuffer_ { nullptr }
+	, pIndexBuffer_ { nullptr }
+	, pConstantBuffer_ { nullptr }
 {
 }
 

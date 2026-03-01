@@ -3,8 +3,8 @@
 #include "DirectX11Draw.h"
 #include "DirectX11Manager.h"
 #include "WindowContextUtil.h"
-#include "../ImGui/imgui_impl_win32.h"
-#include "../ImGui/imgui_impl_dx11.h"
+#include "ImGui/imgui_impl_win32.h"
+#include "ImGui/imgui_impl_dx11.h"
 #include "Screen.h"
 #include "ImGuiUtil.h"
 namespace
@@ -15,19 +15,17 @@ namespace
 } // namespace
 
 mtgb::ImGuiRenderer::ImGuiRenderer()
-	: pRenderTargetView_{nullptr}
-	, pSRV_{nullptr}
-	, pSRVTexture_{nullptr}
-	, pTexture_{nullptr}
-	, pDepthStencil_{nullptr}
-	, pDepthStencilView_{nullptr}
-	, gameViewRectValid_{false}
+	: pRenderTargetView_ { nullptr }
+	, pSRV_ { nullptr }
+	, pSRVTexture_ { nullptr }
+	, pTexture_ { nullptr }
+	, pDepthStencil_ { nullptr }
+	, pDepthStencilView_ { nullptr }
+	, gameViewRectValid_ { false }
 
 {
 }
-mtgb::ImGuiRenderer::~ImGuiRenderer()
-{
-}
+mtgb::ImGuiRenderer::~ImGuiRenderer() {}
 
 void mtgb::ImGuiRenderer::Initialize()
 {
@@ -79,9 +77,7 @@ void mtgb::ImGuiRenderer::Initialize()
 	CreateD3DResources();
 }
 
-void mtgb::ImGuiRenderer::Update()
-{
-}
+void mtgb::ImGuiRenderer::Update() {}
 
 void mtgb::ImGuiRenderer::BeginFrame()
 {
@@ -119,9 +115,7 @@ void mtgb::ImGuiRenderer::SetImGuizmoRenderTargetView()
 	Game::System<DirectX11Manager>().ChangeRenderTargets(pRenderTargetView_, pDepthStencilView_);
 }
 
-void mtgb::ImGuiRenderer::Draw()
-{
-}
+void mtgb::ImGuiRenderer::Draw() {}
 
 void mtgb::ImGuiRenderer::EndFrame()
 {
@@ -201,21 +195,19 @@ void mtgb::ImGuiRenderer::CreateD3DResources()
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
 
 	Game::System<DirectX11Manager>().CreateViewport(
-		{static_cast<int>(winWidth_), static_cast<int>(winHeight_)},
+		{ static_cast<int>(winWidth_), static_cast<int>(winHeight_) },
 		viewport_
 	);
 
 	// RTV用テクスチャ作成
-	D3D11_TEXTURE2D_DESC desc{
-		.Width		= winWidth_,
-		.Height		= winHeight_,
-		.MipLevels	= 1,
-		.ArraySize	= 1,
-		.Format		= DXGI_FORMAT_R8G8B8A8_UNORM,
-		.SampleDesc = {.Count = 1},
-		.Usage		= D3D11_USAGE_DEFAULT,
-		.BindFlags	= D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE
-	};
+	D3D11_TEXTURE2D_DESC desc { .Width		= winWidth_,
+								.Height		= winHeight_,
+								.MipLevels	= 1,
+								.ArraySize	= 1,
+								.Format		= DXGI_FORMAT_R8G8B8A8_UNORM,
+								.SampleDesc = { .Count = 1 },
+								.Usage		= D3D11_USAGE_DEFAULT,
+								.BindFlags	= D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE };
 
 	HRESULT hResult = device->CreateTexture2D(&desc, nullptr, pTexture_.ReleaseAndGetAddressOf());
 	massert(SUCCEEDED(hResult) && "CreateTexture2Dに失敗 @ImGuiRenderer::CreateD3DResources");

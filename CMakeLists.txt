@@ -583,37 +583,37 @@ set(03mtgb__X-Ignore
 source_group("03mtgb\\X-Ignore" FILES ${03mtgb__X-Ignore})
 
 set(04Library__ImGui
-    "ImGui/imconfig.h"
-    "ImGui/imgui.cpp"
-    "ImGui/imgui.h"
-    "ImGui/imgui_demo.cpp"
-    "ImGui/imgui_draw.cpp"
-    "ImGui/imgui_impl_dx11.cpp"
-    "ImGui/imgui_impl_dx11.h"
-    "ImGui/imgui_impl_win32.cpp"
-    "ImGui/imgui_impl_win32.h"
-    "ImGui/imgui_internal.h"
-    "ImGui/imgui_ja_gryph_ranges.cpp"
-    "ImGui/imgui_tables.cpp"
-    "ImGui/imgui_widgets.cpp"
-    "ImGui/imstb_rectpack.h"
-    "ImGui/imstb_textedit.h"
-    "ImGui/imstb_truetype.h"
+    "ThirdParty/ImGui/imconfig.h"
+    "ThirdParty/ImGui/imgui.cpp"
+    "ThirdParty/ImGui/imgui.h"
+    "ThirdParty/ImGui/imgui_demo.cpp"
+    "ThirdParty/ImGui/imgui_draw.cpp"
+    "ThirdParty/ImGui/imgui_impl_dx11.cpp"
+    "ThirdParty/ImGui/imgui_impl_dx11.h"
+    "ThirdParty/ImGui/imgui_impl_win32.cpp"
+    "ThirdParty/ImGui/imgui_impl_win32.h"
+    "ThirdParty/ImGui/imgui_internal.h"
+    "ThirdParty/ImGui/imgui_ja_gryph_ranges.cpp"
+    "ThirdParty/ImGui/imgui_tables.cpp"
+    "ThirdParty/ImGui/imgui_widgets.cpp"
+    "ThirdParty/ImGui/imstb_rectpack.h"
+    "ThirdParty/ImGui/imstb_textedit.h"
+    "ThirdParty/ImGui/imstb_truetype.h"
 )
 source_group("04Library\\ImGui" FILES ${04Library__ImGui})
 
 set(04Library__ImGui__ImGuizmo
-    "ImGui/GraphEditor.cpp"
-    "ImGui/GraphEditor.h"
-    "ImGui/ImCurveEdit.cpp"
-    "ImGui/ImCurveEdit.h"
-    "ImGui/ImGradient.cpp"
-    "ImGui/ImGradient.h"
-    "ImGui/ImGuizmo.cpp"
-    "ImGui/ImGuizmo.h"
-    "ImGui/ImSequencer.cpp"
-    "ImGui/ImSequencer.h"
-    "ImGui/ImZoomSlider.h"
+    "ThirdParty/ImGui/GraphEditor.cpp"
+    "ThirdParty/ImGui/GraphEditor.h"
+    "ThirdParty/ImGui/ImCurveEdit.cpp"
+    "ThirdParty/ImGui/ImCurveEdit.h"
+    "ThirdParty/ImGui/ImGradient.cpp"
+    "ThirdParty/ImGui/ImGradient.h"
+    "ThirdParty/ImGui/ImGuizmo.cpp"
+    "ThirdParty/ImGui/ImGuizmo.h"
+    "ThirdParty/ImGui/ImSequencer.cpp"
+    "ThirdParty/ImGui/ImSequencer.h"
+    "ThirdParty/ImGui/ImZoomSlider.h"
 )
 source_group("04Library\\ImGui\\ImGuizmo" FILES ${04Library__ImGui__ImGuizmo})
 
@@ -818,8 +818,8 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         "$<$<CONFIG:Release>:${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;$ENV{REFL_CPP}>"
         # どのビルド・モードでも共通
         "$ENV{FBX_SDK}/include;"
-        "${CMAKE_CURRENT_SOURCE_DIR}/refl-cpp;"
-        "${CMAKE_CURRENT_SOURCE_DIR}/EffekseeLib/install_msvc2022_x64/include/Effekseer;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/EffekseeLib/install_msvc2022_x64/include/Effekseer;"
         "${CMAKE_CURRENT_SOURCE_DIR}/mtgb"
     )
 endif()
@@ -1013,15 +1013,18 @@ endif()
 ################################################################################
 # Pre build events (ビルド前イベント)
 ################################################################################
-# コンパイル前に実行されるように依存させる
+
+# コード生成ツールを実行するコマンド
+set(GENERATE_SOURCE_CODE_COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangSourceGenerator/bin/ClangSourceGenerator.exe> " --config "Tools/ClangSourceGenerator" --projDir "${CMAKE_CURRENT_SOURCE_DIR}")
  add_custom_target(generate_source_code
-    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangReflection/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>"
+    COMMAND ${GENERATE_SOURCE_CODE_COMMAND}
     USES_TERMINAL)
+# コンパイル前に実行されるように依存させる
  add_dependencies(${PROJECT_NAME} generate_source_code)
 
  # キャッシュを削除し、再生成を行う
  add_custom_target(force_generate_source_code
-    COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangReflection/ClangTest.exe> " "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}>" --force
+    COMMAND ${GENERATE_SOURCE_CODE_COMMAND} --force
     USES_TERMINAL
  )
 
@@ -1043,7 +1046,7 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
             "$ENV{FBX_SDK}/lib/x64/release;"
         ">"
         # どのビルドモードでも共通
-        "${CMAKE_CURRENT_SOURCE_DIR}//EffekseeLib/install_msvc2022_x64/lib"
+        "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/EffekseeLib/install_msvc2022_x64/lib"
     )
 endif()
 
