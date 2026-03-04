@@ -36,7 +36,7 @@ void CommandHistory::RedoCommand()
 
 void CommandHistory::ClearAllStack()
 {
-	while (undoStack_.empty())
+	while (undoStack_.empty() == false)
 	{
 		SAFE_DELETE(undoStack_.top());
 		undoStack_.pop();

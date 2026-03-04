@@ -5,15 +5,10 @@
 #include "GameObjectFactory.h"
 namespace mtgb
 {
-	enum class GenerateType
-	{
-		BOX
-	};
 	class GameObjectGenerator
 	{
 	  public:
 		static void Initialize();
-		static void Generate(GenerateType _primitive);
 		/// <summary>
 		/// JSONからゲームオブジェクトを生成する
 		/// </summary>

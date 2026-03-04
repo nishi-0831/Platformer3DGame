@@ -27,7 +27,10 @@ mtgb::CircularSaw::CircularSaw()
 	displayName_		 = name_;
 }
 
-mtgb::CircularSaw::~CircularSaw() {}
+mtgb::CircularSaw::~CircularSaw()
+{
+	pSaw_->DestroyMe();
+}
 
 void mtgb::CircularSaw::Update()
 {

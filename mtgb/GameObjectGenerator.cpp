@@ -9,7 +9,7 @@
 #include "CommandHistoryManager.h"
 #include "DeleteGameObjectCommand.h"
 
-GameObjectGenerator* mtgb::GameObjectGenerator::pInstance_ { nullptr };
+mtgb::GameObjectGenerator* mtgb::GameObjectGenerator::pInstance_ { nullptr };
 
 void mtgb::GameObjectGenerator::Initialize()
 {
@@ -21,21 +21,6 @@ void mtgb::GameObjectGenerator::Initialize()
 	// ゲームオブジェクトの作成関数、名前を登録
 	mtgb::RegisterCommonGameObjectType(&pInstance_->gameObjFactory_);
 	mtgb::RegisterGameObjectType(&pInstance_->gameObjFactory_);
-}
-
-void mtgb::GameObjectGenerator::Generate(GenerateType _primitive)
-{
-	if (GenerateType::BOX == _primitive)
-	{
-		GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
-			[]()
-			{
-				return GameObject::Instantiate<Box3D>();
-			},
-			Game::GetComponentFactory()
-		);
-		GetInstance()->commandListener_(cmd);
-	}
 }
 
 void mtgb::GameObjectGenerator::GenerateFromJson(const nlohmann::json& _json)
@@ -110,7 +95,7 @@ void mtgb::GameObjectGenerator::Delete(EntityId _entityId)
 	GetInstance()->commandListener_(cmd);
 }
 
-GameObjectGenerator* mtgb::GameObjectGenerator::GetInstance()
+mtgb::GameObjectGenerator* mtgb::GameObjectGenerator::GetInstance()
 {
 	if (pInstance_ == nullptr)
 	{
