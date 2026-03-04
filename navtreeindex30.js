@@ -1,9 +1,5 @@
 var NAVTREEINDEX30 =
 {
-"dr__mp3_8h.html#a4e9ac9e1af8ac5d2bacfe4b8081fcfb8":[6,0,3,0,0,22],
-"dr__mp3_8h.html#a4ee8917908e2f2f1f3437f65950289da":[6,0,3,0,0,114],
-"dr__mp3_8h.html#a4f6b4fc877d2760e4c25181d4d29cf7d":[6,0,3,0,0,31],
-"dr__mp3_8h.html#a4fd095b80e2f3be3de1c9ea7318dfbad":[6,0,3,0,0,58],
 "dr__mp3_8h.html#a50d5a3e51f1eaecc4e7eecf22c5bcb30":[6,0,3,0,0,10],
 "dr__mp3_8h.html#a558503f88766753604deac79028d8980":[6,0,3,0,0,103],
 "dr__mp3_8h.html#a570c8a81268a55a8bcf4392ee1d6b861":[6,0,3,0,0,53],
@@ -249,5 +245,9 @@ var NAVTREEINDEX30 =
 "javadoc-banner_8h.html#a6ec4bf0132201719721e103451590a9e":[6,0,0,0,19,0],
 "javadoc-banner_8h.html#a7acf20d2740fdb0d6086abf738c8688f":[6,0,0,0,19,1],
 "javadoc-banner_8h_source.html":[6,0,0,0,19],
-"jdstyle_8cpp.html":[6,0,0,0,20]
+"jdstyle_8cpp.html":[6,0,0,0,20],
+"jdstyle_8cpp_source.html":[6,0,0,0,20],
+"manual_8c.html":[6,0,0,0,21],
+"manual_8c.html#a00b00bef7a37e8519a62cb3671105c4b":[6,0,0,0,21,4],
+"manual_8c.html#a5220977c04e056b0efcc59a2f05d89a2":[6,0,0,0,21,6]
 };

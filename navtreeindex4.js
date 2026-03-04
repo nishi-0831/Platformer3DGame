@@ -1,7 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"SkySphere_8h_source.html":[6,0,2,44],
-"SphericalCamera_8cpp.html":[6,0,2,45],
 "SphericalCamera_8cpp.html#a998119c068562761432223632bb8bdfc":[6,0,2,45,0],
 "SphericalCamera_8cpp_source.html":[6,0,2,45],
 "SphericalCamera_8h.html":[6,0,2,46],
@@ -249,5 +247,7 @@ var NAVTREEINDEX4 =
 "classC4.html":[2,1,2],
 "classC5.html":[2,2,3],
 "classCommand.html":[5,0,23],
-"classCommand.html#a23e1ca01a9937ac120ba579a69d83aac":[5,0,23,2]
+"classCommand.html#a23e1ca01a9937ac120ba579a69d83aac":[5,0,23,2],
+"classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6":[5,0,23,1],
+"classCommand.html#a75ca9ed49533a4e30fb3e2fcfc549a22":[5,0,23,4]
 };

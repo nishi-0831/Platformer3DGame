@@ -24,8 +24,6 @@ var NAVTREEINDEX1 =
 "GameObjectGenerator_8cpp.html":[6,0,1,100],
 "GameObjectGenerator_8cpp_source.html":[6,0,1,100],
 "GameObjectGenerator_8h.html":[6,0,1,101],
-"GameObjectGenerator_8h.html#afa7b1f35c9a7018a0bf4aca436c19184":[6,0,1,101,1],
-"GameObjectGenerator_8h.html#afa7b1f35c9a7018a0bf4aca436c19184ae657cce1913c857166b0475f18668ef5":[6,0,1,101,1,0],
 "GameObjectGenerator_8h_source.html":[6,0,1,101],
 "GameObjectLayer_8cpp.html":[6,0,1,102],
 "GameObjectLayer_8cpp_source.html":[6,0,1,102],
@@ -249,5 +247,7 @@ var NAVTREEINDEX1 =
 "InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a331b3100a485d8cacff1d3df8e9b0c13":[6,0,1,159,0,27],
 "InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a35bc4beb9ffdb99a487e1b6eb7e14fe8":[6,0,1,159,0,116],
 "InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a37f438df6a6d5ba4c17ef8ca58562f00":[6,0,1,159,0,62],
-"InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a38861d956786fcc3fee5cde337f8e30d":[6,0,1,159,0,90]
+"InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a38861d956786fcc3fee5cde337f8e30d":[6,0,1,159,0,90],
+"InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a3a3ea00cfc35332cedf6e5e9a32e94da":[6,0,1,159,0,17],
+"InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4241fd768d3bb716ed576d02065878f2":[6,0,1,159,0,2]
 };

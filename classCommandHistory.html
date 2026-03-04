@@ -215,7 +215,7 @@ CommandHistory 連携図</div>
 
 <p class="definition"> <a class="el" href="CommandHistory_8cpp_source.html">CommandHistory.cpp</a> の <a class="el" href="CommandHistory_8cpp_source.html#l00037">37</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="classCommandHistory.html#a40203e1b3919eab4e9797673a1394318">undoStack_</a>.empty())</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="classCommandHistory.html#a40203e1b3919eab4e9797673a1394318">undoStack_</a>.empty() == <span class="keyword">false</span>)</div>
 <div class="line"><span class="lineno">   40</span>    {</div>
 <div class="line"><span class="lineno">   41</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classCommandHistory.html#a40203e1b3919eab4e9797673a1394318">undoStack_</a>.top());</div>
 <div class="line"><span class="lineno">   42</span>        <a class="code hl_variable" href="classCommandHistory.html#a40203e1b3919eab4e9797673a1394318">undoStack_</a>.pop();</div>

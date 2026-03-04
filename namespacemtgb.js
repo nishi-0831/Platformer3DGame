@@ -272,9 +272,6 @@ var namespacemtgb =
       [ "PLAYER", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a07c80e2a355d91402a00d82b1fa13855", null ],
       [ "ENEMY", "namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6a92b09d1635332c90ae8508618a174244", null ]
     ] ],
-    [ "GenerateType", "namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184", [
-      [ "BOX", "namespacemtgb.html#afa7b1f35c9a7018a0bf4aca436c19184ae657cce1913c857166b0475f18668ef5", null ]
-    ] ],
     [ "InputType", "namespacemtgb.html#a849b27857061661deeb701b23f338eca", [
       [ "MOUSE", "namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4", null ],
       [ "JOYPAD", "namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234", null ]
