@@ -77,6 +77,8 @@ Interpolator& mtgb::Interpolator::operator=(const Interpolator& _other)
 	return *this;
 }
 
+mtgb::Interpolator::~Interpolator() {}
+
 void mtgb::Interpolator::UpdateTransform()
 {
 	// 進行度を更新

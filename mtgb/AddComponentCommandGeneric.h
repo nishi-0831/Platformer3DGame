@@ -5,12 +5,13 @@
 #include "IComponentMemento.h"
 #include "Entity.h"
 #include "ComponentFactory.h"
+#include "ComponentConcept.h"
 #include <typeindex>
 #include <string>
 
 namespace mtgb
 {
-	template <typename T> class AddComponentCommandGeneric : public Command
+	template <IComponentWithMemento T> class AddComponentCommandGeneric : public Command
 	{
 	  public:
 		AddComponentCommandGeneric(T& _component);
@@ -39,12 +40,12 @@ namespace mtgb
 	  private:
 		T::Memento* memento_;
 	};
-	template <typename T>
+	template <IComponentWithMemento T>
 	inline AddComponentCommandGeneric<T>::AddComponentCommandGeneric(T& _component)
 		: memento_ { _component.SaveToMemento() }
 	{
 	}
-	template <typename T> inline AddComponentCommandGeneric<T>::~AddComponentCommandGeneric()
+	template <IComponentWithMemento T> inline AddComponentCommandGeneric<T>::~AddComponentCommandGeneric()
 	{
 		SAFE_DELETE(memento_);
 	}

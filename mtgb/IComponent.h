@@ -21,20 +21,23 @@ namespace mtgb
 			: entityId_ { INVALID_ENTITY }
 		{
 		}
-		IComponent(const EntityId _entityId);
+		IComponent(EntityId _entityId);
 		virtual ~IComponent();
 		IComponent& operator=(const IComponent& _other)
 		{
-			// entityId_ はコピーしない
 			return *this;
 		}
-		static ComponentT& Get(const EntityId _entityId);
-		template <typename... Args> static ComponentT& Get(const EntityId _entityId, Args&&... _args);
+		static ComponentT& Get(EntityId _entityId);
+		template <typename... Args> static ComponentT& Get(EntityId _entityId, Args&&... _args);
 
 		static ComponentT* Reuse(size_t _index, EntityId _entityId);
 		virtual void Initialize() {}
-
-		const EntityId GetEntityId() const
+		/// <summary>
+		/// <para> ゲームオブジェクトから取り外されたときに呼ばれる </para>
+		/// <para> コンポーネントの状態を初期化するのに使う </para>
+		/// </summary>
+		virtual void Reset() {}
+		EntityId GetEntityId() const
 		{
 			return entityId_;
 		}
@@ -44,26 +47,22 @@ namespace mtgb
 	};
 
 	template <class ComponentPoolT, typename ComponentT>
-	inline IComponent<ComponentPoolT, ComponentT>::IComponent(const EntityId _entityId)
+	inline IComponent<ComponentPoolT, ComponentT>::IComponent(EntityId _entityId)
 		: entityId_ { _entityId }
 	{
-		// Game::System<ComponentPoolT>().Register(_entityId);
 	}
 
-	template <class ComponentPoolT, typename ComponentT> inline IComponent<ComponentPoolT, ComponentT>::~IComponent()
-	{
-		// Game::System<ComponentPoolT>().UnRegister(entityId_);
-	}
+	template <class ComponentPoolT, typename ComponentT> inline IComponent<ComponentPoolT, ComponentT>::~IComponent() {}
 
 	template <class ComponentPoolT, typename ComponentT>
 	template <typename... Args>
-	inline ComponentT& IComponent<ComponentPoolT, ComponentT>::Get(const EntityId _entityId, Args&&... _args)
+	inline ComponentT& IComponent<ComponentPoolT, ComponentT>::Get(EntityId _entityId, Args&&... _args)
 	{
 		return Game::System<ComponentPoolT>().Get(_entityId, std::forward<Args>(_args)...);
 	}
 
 	template <class ComponentPoolT, typename ComponentT>
-	inline ComponentT& IComponent<ComponentPoolT, ComponentT>::Get(const EntityId _entityId)
+	inline ComponentT& IComponent<ComponentPoolT, ComponentT>::Get(EntityId _entityId)
 	{
 		return Game::System<ComponentPoolT>().Get(_entityId);
 	}

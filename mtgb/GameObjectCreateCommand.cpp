@@ -62,7 +62,7 @@ std::string mtgb::GameObjectCreateCommand::Name() const
 	return std::string("CreateGameObject:") + gameObjectName_;
 }
 
-EntityId mtgb::GameObjectCreateCommand::GetCommandTargetEntityId() const
+mtgb::EntityId mtgb::GameObjectCreateCommand::GetCommandTargetEntityId() const
 {
 	return entityId_;
 }

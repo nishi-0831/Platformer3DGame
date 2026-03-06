@@ -3,6 +3,9 @@
 #include "CommandHistory.h"
 #include "NamedCommandHistory.h"
 #include "GroupCommand.h"
+#include "IComponentMemento.h"
+#include "ComponentConcept.h"
+
 namespace mtgb
 {
 	class CommandHistoryManager : public ISystem, public ICommandHistory
