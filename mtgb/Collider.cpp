@@ -53,7 +53,7 @@ mtgb::Collider::Collider(EntityId _entityId, ColliderTag _colliderTag)
 
 mtgb::Collider::~Collider() {}
 
-Collider& mtgb::Collider::operator=(const Collider& _other)
+mtgb::Collider& mtgb::Collider::operator=(const Collider& _other)
 {
 	if (this == &_other)
 	{
@@ -106,10 +106,18 @@ void mtgb::Collider::UpdateBoundingBox()
 {
 	if (!isStatic_)
 	{
-		computeBox_.Center	  = pTransform_->position + center_;
-		computeBox_.Extents.x = extents_.x * pTransform_->scale.x;
-		computeBox_.Extents.y = extents_.y * pTransform_->scale.y;
-		computeBox_.Extents.z = extents_.z * pTransform_->scale.z;
+		if (colliderType_ == ColliderType::TYPE_AABB)
+		{
+			computeBox_.Extents.x = extents_.x * pTransform_->scale.x;
+			computeBox_.Extents.y = extents_.y * pTransform_->scale.y;
+			computeBox_.Extents.z = extents_.z * pTransform_->scale.z;
+		}
+		else if (colliderType_ == ColliderType::TYPE_OBB)
+		{
+			computeOBB_.Extents.x = extents_.x * pTransform_->scale.x;
+			computeOBB_.Extents.y = extents_.y * pTransform_->scale.y;
+			computeOBB_.Extents.z = extents_.z * pTransform_->scale.z;
+		}
 	}
 }
 
@@ -289,7 +297,7 @@ bool mtgb::Collider::IsHit(
 	return _obb.Intersects(_origin, _dir, *_dist);
 }
 
-bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist)
+bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist) const
 {
 	switch (colliderType_)
 	{
@@ -352,33 +360,22 @@ void mtgb::Collider::SetCenter(const Vector3& _center)
 
 void mtgb::Collider::SetExtents(const Vector3& _extents)
 {
-	if (colliderType_ == ColliderType::TYPE_AABB)
-	{
-		computeBox_.Extents.x = _extents.x * pTransform_->scale.x;
-		computeBox_.Extents.y = _extents.y * pTransform_->scale.y;
-		computeBox_.Extents.z = _extents.z * pTransform_->scale.z;
-	}
-	else if (colliderType_ == ColliderType::TYPE_OBB)
-	{
-		computeOBB_.Extents.x = _extents.x * pTransform_->scale.x;
-		computeOBB_.Extents.y = _extents.y * pTransform_->scale.y;
-		computeOBB_.Extents.z = _extents.z * pTransform_->scale.z;
-	}
 	extents_ = _extents;
+	UpdateBoundingBox();
 }
 
 void mtgb::Collider::SetRadius(float _radius)
 {
-	computeSphere_.Radius = _radius * pTransform_->scale.x;
-	radius_				  = _radius;
+	radius_ = _radius;
+	UpdateBoundingSphere();
 }
 
-Vector3 mtgb::Collider::GetCenter()
+mtgb::Vector3 mtgb::Collider::GetCenter()
 {
 	return center_;
 }
 
-Vector3 mtgb::Collider::GetExtents()
+mtgb::Vector3 mtgb::Collider::GetExtents()
 {
 	if (colliderType_ == ColliderType::TYPE_AABB)
 	{
@@ -402,7 +399,7 @@ float mtgb::Collider::GetRadius()
 	return 0.0f;
 }
 
-std::optional<IntersectInfo> mtgb::Collider::Intersect(
+std::optional<mtgb::IntersectInfo> mtgb::Collider::Intersect(
 	const DirectX::BoundingSphere& _sphere,
 	const DirectX::BoundingBox& _aabb
 )
@@ -449,7 +446,7 @@ std::optional<IntersectInfo> mtgb::Collider::Intersect(
 	return info;
 }
 
-std::optional<IntersectInfo> mtgb::Collider::Intersect(
+std::optional<mtgb::IntersectInfo> mtgb::Collider::Intersect(
 	const DirectX::BoundingSphere& _sphere,
 	const DirectX::BoundingOrientedBox& _obb
 )
@@ -563,6 +560,12 @@ void mtgb::Collider::OnPostRestore()
 			SetExtents(extents_);
 			break;
 	}
+}
+
+void mtgb::Collider::Reset()
+{
+	onColliders_.clear();
+	onColldiersPrev_.clear();
 }
 
 void mtgb::Collider::Draw() const

@@ -3,6 +3,7 @@
 #include <nlohmann/json.hpp>
 #include <unordered_map>
 #include <type_traits>
+#include <concepts>
 #include "JsonADLSerializers.h"
 
 template <typename T>
@@ -11,30 +12,13 @@ constexpr bool is_builtin_type_v = std::is_arithmetic_v<T> || std::is_same_v<T, 
 
 namespace JsonConverter::detail
 {
-	// to_json が存在するかチェック
-	template <typename T, typename = void> struct has_to_json : std::false_type
-	{
-	};
-
-	// nlohmann::json json = T value が可能か
 	template <typename T>
-	struct has_to_json<T, std::void_t<decltype(std::declval<nlohmann::json&>() = std::declval<const T&>())>>
-		: std::true_type
-	{
-	};
+	concept HasToJson = requires(nlohmann::json& _j, const T& _t) { to_json(_j, _t); };
 
-	// from_json が存在するかチェック
-	template <typename T, typename = void> struct has_from_json : std::false_type
-	{
-	};
-
-	// nlohmann::json::get<T>() が可能か
 	template <typename T>
-	struct has_from_json<T, std::void_t<decltype(std::declval<const nlohmann::json&>().get<T>())>> : std::true_type
-	{
+	concept HasFromJson = requires(const nlohmann::json& _j, T& _t) {
+		{ from_json(_j, _t) } -> std::same_as<void>;
 	};
-
-	template <typename T> constexpr bool has_adl_serializer_v = has_to_json<T>::value || has_from_json<T>::value;
 } // namespace JsonConverter::detail
 
 namespace JsonConverter
@@ -88,7 +72,7 @@ template <typename T> nlohmann::json JsonConverter::Serialize(const T& _value)
 		// 組み込み型
 		data = _value;
 	}
-	else if constexpr (detail::has_to_json<Type>::value)
+	else if constexpr (detail::HasToJson<Type>)
 	{
 		data = _value;
 	}
@@ -141,7 +125,7 @@ template <typename T> void JsonConverter::Deserialize(T& _value, const nlohmann:
 		// 組み込み型
 		_json.get_to(_value);
 	}
-	else if constexpr (detail::has_from_json<Type>::value)
+	else if constexpr (detail::HasFromJson<Type>)
 	{
 		_json.get_to(_value);
 	}

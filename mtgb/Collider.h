@@ -39,7 +39,7 @@ namespace mtgb
 
 		bool IsHit(const Collider& _other) const;
 		/// <summary>
-		/// レイとの交差判定
+		/// レイと球の交差判定
 		/// </summary>
 		/// <param name="_origin">原点</param>
 		/// <param name="_dir">方向(内部で正規化される)</param>
@@ -47,12 +47,46 @@ namespace mtgb
 		/// <para> レイの原点からコライダーとの最初の交点までの距離を格納。</para>
 		/// <para> レイの原点が球の内側の場合は、球を出る点までの距離</para>
 		/// </param>
-		/// <returns></returns>
-		bool IsHit(const DirectX::BoundingSphere& _sphere, const Vector3& _origin, const Vector3& _dir, float* _dist);
-		bool IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* _dist);
-		bool IsHit(const DirectX::BoundingOrientedBox& _obb, const Vector3& _origin, const Vector3& _dir, float* _dist);
+		/// <returns>交差している場合はtrue、していない場合はfalse</returns>
+		static bool IsHit(
+			const DirectX::BoundingSphere& _sphere,
+			const Vector3& _origin,
+			const Vector3& _dir,
+			float* _dist
+		);
+		/// <summary>
+		/// レイとAABBの交差判定
+		/// </summary>
+		/// <param name="_aabb">AABB</param>
+		/// <param name="_origin">レイの原点</param>
+		/// <param name="_dir">レイの方向</param>
+		/// <param name="_dist">レイの原点とAABBの距離を格納</param>
+		/// <returns>交差している場合はtrue、していない場合はfalse</returns>
+		static bool IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* _dist);
+		/// <summary>
+		/// レイとOBBの交差判定
+		/// </summary>
+		/// <param name="_obb">OBB</param>
+		/// <param name="_origin">レイの原点</param>
+		/// <param name="_dir">レイの方向</param>
+		/// <param name="_dist">レイの原点とOBBの距離を格納</param>
+		/// <returns>交差している場合はtrue、していない場合はfalse</returns>
+		static bool IsHit(
+			const DirectX::BoundingOrientedBox& _obb,
+			const Vector3& _origin,
+			const Vector3& _dir,
+			float* _dist
+		);
 
-		bool IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist);
+		/// <summary>
+		/// <para> レイとの交差判定 </para>
+		/// <para> 自身のコライダーに合わせて判定を行う </para>
+		/// </summary>
+		/// <param name="_origin">レイの原点</param>
+		/// <param name="_dir">レイの方向</param>
+		/// <param name="_dist">レイの原点とコライダーの距離を格納</param>
+		/// <returns>交差している場合はtrue、していない場合はfalse</returns>
+		bool IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist) const;
 		bool IsHit(const Vector3& _center, float _radius) const;
 
 		void Draw() const;
@@ -81,9 +115,8 @@ namespace mtgb
 		);
 		void Push(const Collider& _other);
 
-	  public:
 		void OnPostRestore() override;
-
+		void Reset() override;
 		std::set<Collider*> onColliders_;
 		std::set<Collider*> onColldiersPrev_;
 
