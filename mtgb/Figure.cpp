@@ -12,12 +12,12 @@ mtgb::Figure::Figure() {}
 
 mtgb::Figure::~Figure() {}
 
-void mtgb::Figure::Draw(const RectInt& _rect, const Color& _color)
+void mtgb::Figure::Draw(const RectInt& _rect, Color _color)
 {
 	Draw(RectF(_rect.point, _rect.size), _color);
 }
 
-void mtgb::Figure::Draw(const RectF& _rect, const Color& _color)
+void mtgb::Figure::Draw(const RectF& _rect, Color _color)
 {
 	using DirectX::XMMatrixIdentity;	// 単位行列
 	using DirectX::XMMatrixScaling;		// 拡縮

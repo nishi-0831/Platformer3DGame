@@ -29,7 +29,7 @@ namespace mtgb
 	/// <summary>
 	/// ImGuiに表示をする際に使う
 	/// </summary>
-	class MTImGui final
+	class MTImGui
 	{
 
 	  public:
@@ -73,15 +73,15 @@ namespace mtgb
 		/// 登録解除
 		/// デストラクタで呼ばれる
 		/// </summary>
-		/// <param name="obj"></param>
+		/// <param name="_obj"></param>
 		void Unregister(ImGuiShowable* _obj);
 
 		/// <summary>
 		/// コールバックを表示キューに直接積む
 		/// </summary>
-		/// <param name="func">コールバック</param>
-		/// <param name="show">表示場所</param>
-		void DirectShow(std::function<void()> _func, const std::string& _name, ShowType _show);
+		/// <param name="_func">コールバック</param>
+		/// <param name="_show">表示場所</param>
+		void DirectShow(const std::function<void()>& _func, const std::string& _name, ShowType _show);
 
 		/// <summary>
 		/// <para> ImGuiWindowに線分を描画 </para>
@@ -151,6 +151,7 @@ namespace mtgb
 	  private:
 		MTImGui();
 		MTImGui(const MTImGui& _other) = delete;
+		MTImGui(MTImGui&& _other)	   = delete;
 		~MTImGui();
 
 		/// <summary>

@@ -33,7 +33,7 @@ ComPtr<ID3D11SamplerState> DirectX11Draw::pDefaultSamplerState_ { nullptr };
 ShaderBundle DirectX11Draw::shaderBundle_[static_cast<int8_t>(ShaderType::MAX)] {}; // シェーダのバンドル
 Vector4 DirectX11Draw::backgroundColor_ { 0, 1, 0, 1 };
 
-void mtgb::DirectX11Draw::SetShader(const ShaderType _type)
+void mtgb::DirectX11Draw::SetShader(ShaderType _type)
 {
 	const int INDEX { static_cast<int>(_type) };
 	pContext_->RSSetState(shaderBundle_[INDEX].pRasterizerState.Get());
@@ -42,7 +42,7 @@ void mtgb::DirectX11Draw::SetShader(const ShaderType _type)
 	pContext_->IASetInputLayout(shaderBundle_[INDEX].pVertexLayout.Get());
 }
 
-void mtgb::DirectX11Draw::SetBlendMode(const BlendMode _mode)
+void mtgb::DirectX11Draw::SetBlendMode(BlendMode _mode)
 {
 	const int INDEX { static_cast<int>(_mode) };
 
@@ -54,7 +54,7 @@ void mtgb::DirectX11Draw::SetBlendMode(const BlendMode _mode)
 	pContext_->OMSetDepthStencilState(pDepthStencilState_[INDEX].Get(), 0);
 }
 
-void mtgb::DirectX11Draw::SetIsWriteToDepthBuffer(const bool _enabled)
+void mtgb::DirectX11Draw::SetIsWriteToDepthBuffer(bool _enabled)
 {
 	if (_enabled)
 	{

@@ -32,8 +32,8 @@ namespace mtgb
 		Figure();
 		~Figure();
 
-		void Draw(const RectInt& _rect, const Color& _color);
-		void Draw(const RectF& _rect, const Color& _color);
+		void Draw(const RectInt& _rect, Color _color);
+		void Draw(const RectF& _rect, Color _color);
 
 	  private:
 		/// <summary>

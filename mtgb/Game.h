@@ -56,7 +56,7 @@ namespace mtgb
 		class RegisterSystemFuncHolder
 		{
 		  public:
-			RegisterSystemFuncHolder(RegisterSystem _function)
+			RegisterSystemFuncHolder(const RegisterSystem& _function)
 				: function_ { _function }
 			{
 			}
@@ -167,14 +167,14 @@ namespace mtgb
 		/// エンティティに対応する全てのコンポーネントを削除する
 		/// </summary>
 		/// <param name="_entityId"></param>
-		static void RemoveEntityAllComponent(const EntityId _entityId);
+		static void RemoveEntityAllComponent(EntityId _entityId);
 
 		/// <summary>
 		/// エンティティに対応するコンポーネントを削除する
 		/// </summary>
 		/// <param name="_typeIndex"></param>
 		/// <param name="_entityId"></param>
-		static void RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId);
+		static void RemoveEntityComponent(std::type_index _typeIndex, EntityId _entityId);
 
 		/// <summary>
 		/// エンティティに対応するコンポーネントをJSONにシリアライズして返す

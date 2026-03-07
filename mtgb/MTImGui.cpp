@@ -290,12 +290,6 @@ void mtgb::MTImGui::SetupShowFunc()
 		{
 			Vector4 vec4 = _target->ToVector4Norm();
 			ImGui::ColorEdit4(_name, vec4.f, ImGuiColorEditFlags_Uint8);
-			/*ImGui::InputScalar("r", ImGuiDataType_U8,
-			&_target->component[static_cast<int32_t>(::mtgb::Color::Component::Red)]); ImGui::InputScalar("g",
-			ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Green)]);
-			ImGui::InputScalar("b", ImGuiDataType_U8,
-			&_target->component[static_cast<int32_t>(::mtgb::Color::Component::Blue)]); ImGui::InputScalar("a",
-			ImGuiDataType_U8, &_target->component[static_cast<int32_t>(::mtgb::Color::Component::Alpha)]);*/
 		}
 	);
 }
@@ -432,9 +426,9 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
 
 	imGui.End();
 }
-void mtgb::MTImGui::ExecuteShowQueue(ShowType show)
+void mtgb::MTImGui::ExecuteShowQueue(ShowType _show)
 {
-	if (show == ShowType::SCENE_VIEW)
+	if (_show == ShowType::SCENE_VIEW)
 	{
 		while (!sceneViewShowList_.empty())
 		{
@@ -444,34 +438,34 @@ void mtgb::MTImGui::ExecuteShowQueue(ShowType show)
 	}
 	else
 	{
-		ShowListView(show);
+		ShowListView(_show);
 	}
 }
 
-void mtgb::MTImGui::Register(ImGuiShowable* obj)
+void mtgb::MTImGui::Register(ImGuiShowable* _obj)
 {
-	showableObjs_.push_back(obj);
+	showableObjs_.push_back(_obj);
 }
 
-void mtgb::MTImGui::Unregister(ImGuiShowable* obj)
+void mtgb::MTImGui::Unregister(ImGuiShowable* _obj)
 {
-	auto it = std::find(showableObjs_.begin(), showableObjs_.end(), obj);
+	auto it = std::find(showableObjs_.begin(), showableObjs_.end(), _obj);
 	if (it != showableObjs_.end())
 	{
 		showableObjs_.erase(it);
 	}
 }
 
-void mtgb::MTImGui::DirectShow(std::function<void()> func, const std::string& name, ShowType show)
+void mtgb::MTImGui::DirectShow(const std::function<void()>& _func, const std::string& _name, ShowType _show)
 {
-	if (show == ShowType::SCENE_VIEW)
+	if (_show == ShowType::SCENE_VIEW)
 	{
 		// SceneViewは名前不要
-		sceneViewShowList_.push(func);
+		sceneViewShowList_.push(_func);
 	}
 	else
 	{
-		showQueues_[show].emplace(name, func);
+		showQueues_[_show].emplace(_name, _func);
 	}
 }
 

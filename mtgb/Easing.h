@@ -9,13 +9,13 @@ namespace mtgb
 	/// </summary>
 	struct Ease
 	{
-		static inline float OutExpo(const float _x)
+		static inline float OutExpo(float _x)
 		{
 			// https://easings.net/ja#easeOutExpo
 			return _x == 1.0f ? 1.0f : 1.0f - std::powf(2.0f, -10.0f * _x);
 		}
 
-		static inline float OutQuart(const float _x)
+		static inline float OutQuart(float _x)
 		{
 			// https://easings.net/ja#easeOutQuart
 			return 1.0f - std::powf(1.0f - _x, 4.0f);

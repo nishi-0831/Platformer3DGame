@@ -74,7 +74,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_entityId"></param>
 		/// <returns>存在しないならnullptr</returns>
-		GameObject* GetGameObject(const EntityId _entityId) const;
+		GameObject* GetGameObject(EntityId _entityId) const;
 
 		void DestroyGameObject(EntityId _entityId);
 

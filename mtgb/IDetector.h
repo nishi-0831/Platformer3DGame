@@ -44,8 +44,8 @@ namespace mtgb
 		/// <summary>
 		/// 検出結果を操作
 		/// </summary>
-		virtual void ForEach(std::function<void(ScreenCoordContainsInfo&)> _func)			  = 0;
-		virtual void ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const = 0;
+		virtual void ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func)			 = 0;
+		virtual void ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const = 0;
 
 	  protected:
 		std::vector<ScreenCoordContainsInfo> detectedTargets_;

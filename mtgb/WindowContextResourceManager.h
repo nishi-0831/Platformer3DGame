@@ -36,7 +36,7 @@ namespace mtgb
 		~WindowContextResourceManager();
 		void Initialize() override;
 		void Update() override;
-		void Release();
+		void Release() override;
 
 		/// <summary>
 		/// ウィンドウごとに必要なリソースを作成

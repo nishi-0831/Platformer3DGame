@@ -150,7 +150,7 @@ void mtgb::ImGuiEditor::DuplicateGameObject()
 	GameObjectGenerator::Duplicate(currSelectedEntity);
 }
 
-void mtgb::ImGuiEditor::AddComponent(const std::type_index& _componentType, EntityId _entityId)
+void mtgb::ImGuiEditor::AddComponent(std::type_index _componentType, EntityId _entityId)
 {
 	// コンポーネント作成成功
 	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, Game::GetComponentFactory());

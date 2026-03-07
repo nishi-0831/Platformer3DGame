@@ -268,7 +268,7 @@ void mtgb::SphericalCamera::MoveCameraSpherical(float _distance)
 	pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), Vector3::Up());
 }
 
-Vector3 mtgb::SphericalCamera::ApplyDeadZoneConstraints(const Vector3& proposedCameraPos, const Vector3 _lookAtTarget)
+Vector3 mtgb::SphericalCamera::ApplyDeadZoneConstraints(const Vector3& proposedCameraPos, const Vector3& _lookAtTarget)
 	const
 {
 	Vector3 adjustedPos = proposedCameraPos;

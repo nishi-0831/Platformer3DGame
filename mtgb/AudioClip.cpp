@@ -23,7 +23,13 @@ mtgb::AudioClip::AudioClip(std::string_view _filePath, ComPtr<IXAudio2> _pXAudio
 mtgb::AudioClip::~AudioClip()
 {
 	SAFE_DELETE(pWaveData_);
-	SAFE_DELETE(pSourceVoice_);
+	if (pSourceVoice_ != nullptr)
+	{
+		pSourceVoice_->Stop(0);
+		pSourceVoice_->FlushSourceBuffers();
+		pSourceVoice_->DestroyVoice();
+		pSourceVoice_ = nullptr;
+	}
 }
 
 void mtgb::AudioClip::Play()

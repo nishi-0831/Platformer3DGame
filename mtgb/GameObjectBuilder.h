@@ -62,27 +62,27 @@ namespace mtgb
 			desc_.scale = _scale;
 			return *this;
 		}
-		GameObjectBuilder& SetIsActive(const bool _isActive)
+		GameObjectBuilder& SetIsActive(bool _isActive)
 		{
 			desc_.isActive = _isActive;
 			return *this;
 		}
-		GameObjectBuilder& SetCallUpdate(const bool _callUpdate)
+		GameObjectBuilder& SetCallUpdate(bool _callUpdate)
 		{
 			desc_.callUpdate = _callUpdate;
 			return *this;
 		}
-		GameObjectBuilder& SetCallDraw(const bool _callDraw)
+		GameObjectBuilder& SetCallDraw(bool _callDraw)
 		{
 			desc_.callDraw = _callDraw;
 			return *this;
 		}
-		GameObjectBuilder& SetLayerFlag(const GameObjectLayerFlag& _flag)
+		GameObjectBuilder& SetLayerFlag(GameObjectLayerFlag _flag)
 		{
 			desc_.layerFlag = _flag;
 			return *this;
 		}
-		GameObjectBuilder& SetTag(const GameObjectTag& _tag)
+		GameObjectBuilder& SetTag(GameObjectTag _tag)
 		{
 			desc_.tag = _tag;
 			return *this;

@@ -41,7 +41,7 @@ namespace mtgb
 	/// <summary>
 	/// 無効なハンドル値
 	/// </summary>
-	static const int32_t INVALID_HANDLE { -1 };
+	inline constexpr int32_t INVALID_HANDLE { -1 };
 } // namespace mtgb
 
 #pragma endregion

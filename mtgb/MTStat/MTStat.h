@@ -24,9 +24,9 @@ namespace mtstat
 		}
 		~MTStat() {}
 
-		MTStat& OnStart(const StatEnumT _statEnum, const std::function<void()>& _callback);
-		MTStat& OnUpdate(const StatEnumT _statEnum, const std::function<void()>& _callback);
-		MTStat& OnEnd(const StatEnumT _statEnum, const std::function<void()>& _callback);
+		MTStat& OnStart(StatEnumT _statEnum, const std::function<void()>& _callback);
+		MTStat& OnUpdate(StatEnumT _statEnum, const std::function<void()>& _callback);
+		MTStat& OnEnd(StatEnumT _statEnum, const std::function<void()>& _callback);
 
 		// どの状態でも呼ばれる共通関数
 		MTStat& OnAnyStart(const std::function<void()>& _callback);
@@ -60,7 +60,7 @@ namespace mtstat
 		/// <returns> 遷移可能な条件があればtrue、なければfalse </returns>
 		bool TryGetNextState(StatEnumT& _nextState);
 		void Update() const;
-		void Change(const StatEnumT _nextStat);
+		void Change(StatEnumT _nextStat);
 
 		const StatEnumT Current() const
 		{
@@ -76,43 +76,34 @@ namespace mtstat
 	  private:
 		StatEnumT stat_; // 現在のステート
 
-		std::map<StatEnumT, std::function<void()>> updateFuncs_; // 登録されている更新関数
-		std::map<StatEnumT, std::function<void()>> startFuncs_;	 // 登録されている開始関数
-		std::map<StatEnumT, std::function<void()>> endFuncs_;	 // 登録されている終了関数
+		std::unordered_map<StatEnumT, std::function<void()>> updateFuncs_; // 登録されている更新関数
+		std::unordered_map<StatEnumT, std::function<void()>> startFuncs_;  // 登録されている開始関数
+		std::unordered_map<StatEnumT, std::function<void()>> endFuncs_;	   // 登録されている終了関数
 
 		std::function<void()> anyUpdateFunc_;
 		std::function<void()> anyStartFunc_;
 		std::function<void()> anyEndFunc_;
 
-		std::map<StatEnumT, std::vector<StateTransition>> transitionsMap_;
+		std::unordered_map<StatEnumT, std::vector<StateTransition>> transitionsMap_;
 		std::vector<StateTransition> anyTransition_;
 	};
 
 	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnStart(
-		const StatEnumT _statEnum,
-		const std::function<void()>& _callback
-	)
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnStart(StatEnumT _statEnum, const std::function<void()>& _callback)
 	{
 		startFuncs_.insert({ _statEnum, _callback });
 		return *this;
 	}
 
 	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnUpdate(
-		const StatEnumT _statEnum,
-		const std::function<void()>& _callback
-	)
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnUpdate(StatEnumT _statEnum, const std::function<void()>& _callback)
 	{
 		updateFuncs_.insert({ _statEnum, _callback });
 		return *this;
 	}
 
 	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnEnd(
-		const StatEnumT _statEnum,
-		const std::function<void()>& _callback
-	)
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnEnd(StatEnumT _statEnum, const std::function<void()>& _callback)
 	{
 		endFuncs_.insert({ _statEnum, _callback });
 		return *this;

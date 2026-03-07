@@ -17,7 +17,7 @@
 #include <cmath>
 #include <dwrite.h>
 
-void mtgb::Draw::CheckSetShader(const ShaderType _default)
+void mtgb::Draw::CheckSetShader(ShaderType _default)
 {
 	if (onceShaderType_ == ShaderType::MAX)
 	{
@@ -32,7 +32,7 @@ void mtgb::Draw::CheckSetShader(const ShaderType _default)
 	}
 }
 
-void mtgb::Draw::Box(const Vector2Int& _begin, const Vector2Int& _end, const Color& _color, const UIParams& _uiParams)
+void mtgb::Draw::Box(const Vector2Int& _begin, const Vector2Int& _end, Color _color, const UIParams& _uiParams)
 {
 	CheckSetShader(ShaderType::FIGURE);
 	const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
@@ -40,7 +40,7 @@ void mtgb::Draw::Box(const Vector2Int& _begin, const Vector2Int& _end, const Col
 	Box(RectInt::FromLine(_begin, _end), _color, _uiParams);
 }
 
-void mtgb::Draw::Box(const RectInt& _rect, const Color& _color, const UIParams& _uiParams)
+void mtgb::Draw::Box(const RectInt& _rect, Color _color, const UIParams& _uiParams)
 {
 	uiDrawCommands_.insert({ _uiParams,
 							 [=]()
@@ -54,12 +54,12 @@ void mtgb::Draw::Box(const RectInt& _rect, const Color& _color, const UIParams& 
 }
 
 void mtgb::Draw::Image(
-	const ImageHandle _hImage,
+	ImageHandle _hImage,
 	const RectF& _draw,
 	const RectF& _cut,
-	const float _rotationZ,
+	float _rotationZ,
 	const UIParams& _uiParams,
-	const Color& _color
+	Color _color
 )
 {
 	uiDrawCommands_.insert(
@@ -76,17 +76,12 @@ void mtgb::Draw::Image(
 	);
 }
 
-void mtgb::Draw::Image(const ImageHandle _hImage, const RectF& _draw, const UIParams& _uiParams, const Color& _color)
+void mtgb::Draw::Image(ImageHandle _hImage, const RectF& _draw, const UIParams& _uiParams, Color _color)
 {
 	Image(_hImage, _draw, { Vector2F::Zero(), Image::GetSizeF(_hImage) }, 0.0f, _uiParams, _color);
 }
 
-void mtgb::Draw::Image(
-	const ImageHandle _hImage,
-	const Transform& _transform,
-	const Color& _color,
-	const UIParams& _uiParams
-)
+void mtgb::Draw::Image(ImageHandle _hImage, const Transform& _transform, Color _color, const UIParams& _uiParams)
 {
 	uiDrawCommands_.insert({ _uiParams,
 							 [=]()
@@ -100,31 +95,6 @@ void mtgb::Draw::Image(
 							 } });
 }
 
-void mtgb::Draw::Image(
-	const ImageHandle _hImage,
-	Transform&& _transform,
-	const Color& _color,
-	const UIParams& _uiParams
-)
-{
-	uiDrawCommands_.insert({ _uiParams,
-							 [=, transform = std::move(_transform)]() mutable
-							 {
-								 CheckSetShader(ShaderType::SPRITE2_D);
-
-								 Sprite* pSprite { Game::System<mtgb::Image>().GetSprite(_hImage) };
-
-								 const Transform* pCameraTransform = &(Game::System<CameraSystem>().GetTransform());
-								 pSprite->Draw(&transform, pCameraTransform, pSprite->GetSize(), _color);
-							 } });
-}
-
-void mtgb::Draw::Model(const ModelHandle _hModel, const Transform* _pTransform)
-{
-	// TODO: FbxとObjをモデルとしてハンドル含め統合、自動分岐する
-	massert(false && "Draw::Modelが呼ばれていますが未実装です。FbxとObjで別関数を呼んでください。 @Draw::Model");
-}
-
 void mtgb::Draw::Text(
 	const TextHandle _hText,
 	const Vector2F& _origin,
@@ -133,7 +103,7 @@ void mtgb::Draw::Text(
 )
 {
 	uiDrawCommands_.insert({ _uiParams,
-							 [=]()
+							 [&]()
 							 {
 								 DirectX11Draw::SetIsWriteToDepthBuffer(false);
 								 CheckSetShader(ShaderType::SPRITE2_D);
@@ -221,24 +191,6 @@ void mtgb::Draw::ImmediateText(
 }
 
 void mtgb::Draw::ImmediateText(
-	std::string&& _text,
-	Vector2F _topLeft,
-	int _size,
-	TextAlignment _alignment,
-	const UIParams& _uiParams
-)
-{
-	Vector2Int layoutBoxSize = Game::System<Screen>().GetInitialSize();
-	ImmediateText(
-		std::move(_text),
-		{ _topLeft.x, _topLeft.y, static_cast<float>(layoutBoxSize.x), static_cast<float>(layoutBoxSize.y) },
-		_size,
-		_alignment,
-		_uiParams
-	);
-}
-
-void mtgb::Draw::ImmediateText(
 	const std::string& _text,
 	RectF _rect,
 	int _size,
@@ -264,38 +216,6 @@ void mtgb::Draw::ImmediateText(
 									 _rect.x * ratio.x,
 									 _rect.y * ratio.y,
 									 _rect.width * ratio.y,
-									 _rect.height * ratio.y
-								 );
-							 } });
-}
-
-void mtgb::Draw::ImmediateText(
-	std::string&& _text,
-	RectF _rect,
-	int _size,
-	TextAlignment _alignment,
-	const UIParams& _uiParams
-)
-{
-
-	uiDrawCommands_.insert({ _uiParams,
-							 [=, text = std::move(_text)]() mutable
-							 {
-								 DirectX11Draw::SetIsWriteToDepthBuffer(false);
-								 CheckSetShader(ShaderType::SPRITE2_D);
-
-								 FontFormatData* formatData =
-									 Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
-								 Game::System<DirectWrite>().SetTextAlignment(_alignment, formatData->format);
-
-								 const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
-								 Game::System<DirectWrite>().ImmediateDraw(
-									 MultiToWide(text),
-									 formatData->format,
-									 formatData->pixelFontMetrics,
-									 _rect.x * ratio.x,
-									 _rect.y * ratio.y,
-									 _rect.width * ratio.x,
 									 _rect.height * ratio.y
 								 );
 							 } });
@@ -396,8 +316,8 @@ int mtgb::Draw::CalcScaledFontSize(int _baseSize)
 	return static_cast<int>(std::roundf(_baseSize * avg));
 }
 
-ShaderType mtgb::Draw::onceShaderType_ { ShaderType::MAX };
+mtgb::ShaderType mtgb::Draw::onceShaderType_ { ShaderType::MAX };
 int mtgb::Draw::currentDefaultFontSize_ { 36 };
-TextAlignment mtgb::Draw::currentDefaultTextAlignment_ { TextAlignment::CENTER };
+mtgb::TextAlignment mtgb::Draw::currentDefaultTextAlignment_ { TextAlignment::CENTER };
 mtgb::UIParams mtgb::Draw::defaultUIParams_ {};
 std::multiset<mtgb::UIDrawCommand> mtgb::Draw::uiDrawCommands_ {};

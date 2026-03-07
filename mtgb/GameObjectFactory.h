@@ -16,7 +16,7 @@ namespace mtgb
 		GameObjectFactory() = default;
 
 		GameObject* Create(std::string_view _typeName) const;
-		void RegisterFactory(std::string_view _typeName, CreateFunc _creator) override;
+		void RegisterFactory(std::string_view _typeName, const CreateFunc& _creator) override;
 
 	  private:
 		std::unordered_map<std::string, CreateFunc> creators_;

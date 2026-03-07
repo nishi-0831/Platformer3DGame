@@ -13,9 +13,9 @@
 #include "MTImGui.h"
 namespace
 {
-	static const float DEFAULT_FOV { 60.0f };	  // デフォルトの視野角 (Field Of View)
-	static const float DEFAULT_NEAR { 0.1f };	  // デフォルトのニヤー距離
-	static const float DEFAULT_FAR { 100000.0f }; // デフォルトのファー距離
+	constexpr float DEFAULT_FOV { 60.0f };	   // デフォルトの視野角 (Field Of View)
+	constexpr float DEFAULT_NEAR { 0.1f };	   // デフォルトのニヤー距離
+	constexpr float DEFAULT_FAR { 100000.0f }; // デフォルトのファー距離
 } // namespace
 
 mtgb::CameraSystem::CameraSystem()
@@ -84,7 +84,7 @@ void mtgb::CameraSystem::UnregisterDrawCamera(const Transform* _pCameraTransform
 	}
 }
 
-mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, const WorldToScreenData& _data) const
+mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(const Vector3& _pos, const WorldToScreenData& _data) const
 {
 	// Vector3 screenPos = DirectX::XMVector3Project(
 	return DirectX::XMVector3Project(
@@ -105,7 +105,7 @@ mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, const WorldT
 	return Vector2F(screenPos.x, screenPos.y);*/
 }
 
-mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, WindowContext _context)
+mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(const Vector3& _pos, WindowContext _context) const
 {
 	const D3D11_VIEWPORT& viewport = WinCtxRes::Get<Direct3DResource>(_context).GetViewport();
 	CameraHandleInScene hCamera	   = WinCtxRes::Get<CameraResource>(_context).GetHCamera();
@@ -126,21 +126,10 @@ mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(Vector3 _pos, WindowContex
 		viewMat,
 		DirectX::XMMatrixIdentity()
 	);
-
-	// return Vector2F(screenPos.x, screenPos.y) * Game::System<Screen>().GetSizeRatio();
 }
 
 const mtgb::Transform& mtgb::CameraSystem::GetTransform() const
 {
-	/*massert(0 <= hCurrentCamera_ && hCurrentCamera_ < pTransforms_.size()
-		&& "カメラハンドルが無効です。");
-
-	Transform* pTransform{ pTransforms_[hCurrentCamera_] };
-
-	massert(pTransform != nullptr
-		&& "既に無効化されたカメラが参照されました。");
-
-	return *pTransform;*/
 	return GetTransform(hCurrentCamera_);
 }
 

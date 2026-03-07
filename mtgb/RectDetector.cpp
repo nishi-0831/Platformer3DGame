@@ -98,7 +98,7 @@ const std::vector<ScreenCoordContainsInfo>& mtgb::RectDetector::GetDetectedTarge
 	return detectedTargets_;
 }
 
-void mtgb::RectDetector::ForEach(std::function<void(ScreenCoordContainsInfo&)> _func)
+void mtgb::RectDetector::ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func)
 {
 	if (!HasDetectedTargets())
 		return;
@@ -109,7 +109,7 @@ void mtgb::RectDetector::ForEach(std::function<void(ScreenCoordContainsInfo&)> _
 	}
 }
 
-void mtgb::RectDetector::ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const
+void mtgb::RectDetector::ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const
 {
 	if (!HasDetectedTargets())
 		return;

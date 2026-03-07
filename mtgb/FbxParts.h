@@ -13,9 +13,7 @@
 using Microsoft::WRL::ComPtr;
 
 namespace fbxsdk
-{ /*
-	 class FbxMesh;
-	 class FbxSkin;*/
+{
 	class FbxCluster;
 }
 
@@ -25,7 +23,7 @@ namespace mtgb
 	class Transform;
 	class DirectX11Draw;
 
-	static const UINT MAX_BONE_COUNT = 128;
+	inline constexpr UINT MAX_BONE_COUNT = 128;
 
 	class FbxParts : public IShader
 	{
@@ -38,9 +36,7 @@ namespace mtgb
 			Vector3 normal;	  // 法線
 			Vector3 uv;		  // uv座標
 			std::array<uint32_t, 4> boneIndex;
-			// uint32_t boneIndex[4];
 			std::array<float, 4> boneWeight;
-			// float boneWeight[4];
 		};
 
 		struct ConstantBuffer
@@ -162,7 +158,7 @@ namespace mtgb
 		/// <summary>
 		/// テクスチャの初期化
 		/// </summary>
-		void InitializeTexture(FbxSurfaceMaterial* _pMaterial, const DWORD _i);
+		void InitializeTexture(FbxSurfaceMaterial* _pMaterial, DWORD _i);
 		/// <summary>
 		/// 骨情報の初期化
 		/// </summary>

@@ -33,11 +33,19 @@ mtgb::Audio::Audio()
 
 mtgb::Audio::~Audio()
 {
+	for (auto itr = audioClipMap_.begin(); itr != audioClipMap_.end(); itr++)
+	{
+		SAFE_DELETE(itr->second);
+	}
+	audioClipMap_.clear();
+
 	if (pMasteringVoice_ != nullptr)
 	{
 		pMasteringVoice_->DestroyVoice();
 		pMasteringVoice_ = nullptr;
 	}
+
+	// IXAudio2の解放は最後
 	pXAudio2_.Reset();
 }
 

@@ -15,8 +15,6 @@ namespace mtgb
 	class AudioClip;
 	struct WaveData;
 
-	using AudioHandle = int32_t;
-
 	class Audio : public ISystem
 	{
 	  public:

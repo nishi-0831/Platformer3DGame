@@ -8,7 +8,6 @@
 #include "RigidBody.h"
 namespace
 {
-	mtgb::Matrix4x4 matrix {};
 	DirectX::XMVECTORF32 unitVectorEpsilon { FLT_EPSILON, FLT_EPSILON, FLT_EPSILON, FLT_EPSILON };
 	bool XMVECTORIsUnit(DirectX::FXMVECTOR _v)
 	{

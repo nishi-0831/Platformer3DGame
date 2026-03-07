@@ -13,7 +13,6 @@ namespace mtgb
 	{
 	  public:
 		TransformCP();
-		// TransformCP(const TransformCP&) = default;
 		~TransformCP();
 
 		void Update() override;

@@ -102,7 +102,7 @@ void mtgb::SceneSystem::Update()
 	}
 }
 
-void mtgb::SceneSystem::RegisterPendingCallback(std::function<void()> _callback)
+void mtgb::SceneSystem::RegisterPendingCallback(const std::function<void()>& _callback)
 {
 	pendingCallbacks_.push(_callback);
 }

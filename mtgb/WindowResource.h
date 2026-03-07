@@ -59,7 +59,7 @@ namespace mtgb
 		void SetPosition(const RECT& _monitorRect);
 
 	  private:
-		void SetWindowModeImpl(WindowModeInfo _info);
+		void SetWindowModeImpl(const WindowModeInfo& _info);
 		HWND hWnd_;
 		bool isActive_;
 		bool isFullscreen_;

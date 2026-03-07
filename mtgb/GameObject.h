@@ -7,7 +7,6 @@
 #include "Transform.h"
 #include "IComponentMemento.h"
 #include <nlohmann/json.hpp>
-constexpr size_t COMPONENT_CAPACITY { (8 * 8) - 4 };
 
 namespace mtgb
 {
@@ -33,7 +32,7 @@ namespace mtgb
 		/// 名前を設定する
 		/// </summary>
 		/// <param name="_name"></param>
-		void SetName(const std::string _name)
+		void SetName(const std::string& _name)
 		{
 			name_ = _name;
 		}
@@ -63,7 +62,7 @@ namespace mtgb
 		static GameObject* FindGameObject(GameObjectTag _tag);
 		static GameObject* FindGameObject(const std::string& _name);
 		static void FindGameObjects(const std::string& _name, std::vector<GameObject*>* _pFoundGameObjects);
-		static GameObject* FindGameObject(const EntityId _entityId);
+		static GameObject* FindGameObject(EntityId _entityId);
 		static void FindGameObjects(GameObjectTag _tag, std::vector<GameObject*>* _pFoundGameObjects);
 
 		/// <summary>
@@ -124,10 +123,9 @@ namespace mtgb
 		std::string name_;
 
 		Status status_;
-		GameObjectLayerFlag layerFlag_;					 // レイヤーのフラグ
-		GameObjectTag tag_;								 // ゲームオブジェクトのタグ
-		bool isNotCalledStart_;							 // Start関数が呼び出されたか
-		std::bitset<COMPONENT_CAPACITY> componentsFlag_; // コンポーネントのフラグ
+		GameObjectLayerFlag layerFlag_; // レイヤーのフラグ
+		GameObjectTag tag_;				// ゲームオブジェクトのタグ
+		bool isNotCalledStart_;			// Start関数が呼び出されたか
 	};
 
 	template <class ComponentT, typename... Args> inline ComponentT* GameObject::Component(Args&&... _args)

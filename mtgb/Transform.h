@@ -71,7 +71,7 @@ namespace mtgb
 		/// 親のStatefulTransformを設定
 		/// </summary>
 		/// <param name="_entityId">親にするエンティティ識別子</param>
-		void SetParent(const EntityId _entityId);
+		void SetParent(EntityId _entityId);
 		/// <summary>
 		/// 回転する
 		/// </summary>
@@ -179,8 +179,6 @@ namespace mtgb
 		Vector3 localPosition_;
 		Quaternion localRotate_;
 		Vector3 localScale_;
-
-	  private:
 	};
 
 } // namespace mtgb

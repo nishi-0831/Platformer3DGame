@@ -32,7 +32,7 @@ namespace mtgb
 
 		void Initialize() override;
 		void Update() override;
-		void Release();
+		void Release() override;
 
 		/// <summary>
 		/// WindowContextに対応するWindowConfigをセット
@@ -47,8 +47,6 @@ namespace mtgb
 		/// <param name="windowContext">ウィンドウの識別子</param>
 		/// <returns>ウィンドウ設定</returns>
 		static WindowConfig GetWindowConfig(WindowContext _windowContext);
-
-		// void SwapWindowPos(WindowContext _ctx1 = WindowContext::First, WindowContext _ctx2 = WindowContext::Second);
 
 		static WindowResource& GetWindowResource(WindowContext _windowContext);
 

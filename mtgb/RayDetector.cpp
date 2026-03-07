@@ -74,7 +74,7 @@ namespace mtgb
 		return detectedTargets_;
 	}
 
-	void RayDetector::ForEach(std::function<void(ScreenCoordContainsInfo&)> _func)
+	void RayDetector::ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func)
 	{
 		for (auto& target : detectedTargets_)
 		{
@@ -82,7 +82,7 @@ namespace mtgb
 		}
 	}
 
-	void RayDetector::ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const
+	void RayDetector::ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const
 	{
 		for (const auto& target : detectedTargets_)
 		{

@@ -12,7 +12,7 @@ namespace mtgb
 	  public:
 		using CreateFunc = std::function<GameObject*()>;
 		DuplicateGameObjectCommand(
-			CreateFunc _createFunc,
+			const CreateFunc& _createFunc,
 			const ComponentFactory& _componentFactory,
 			EntityId _srcEntityId
 		);

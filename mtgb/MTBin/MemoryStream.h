@@ -17,23 +17,9 @@ namespace mtbin
 		};
 
 	  public:
-		MemoryStream(mtbin::Byte* _pBuffer, const size_t& _bufferSize);
+		MemoryStream(mtbin::Byte* _pBuffer, size_t _bufferSize);
 		MemoryStream(MemoryStream&& _other) noexcept;
 		virtual ~MemoryStream();
-
-		/// <summary>
-		/// メモリストリームに任意の型を書き込む
-		/// </summary>
-		/// <typeparam name="T">任意の型</typeparam>
-		/// <param name="_value">書き込むオブジェクト</param>
-		template <typename T> void Write(T _value);
-
-		/// <summary>
-		/// メモリストリームに任意の型の配列を書き込む
-		/// </summary>
-		/// <param name="_pArray">配列のポインタ</param>
-		/// <param name="_arrayLength">要素数</param>
-		template <typename T> void Write(T* _pArray, const int& _arrayLength);
 
 		/// <summary>
 		/// メモリストリームから任意の型サイズ分読み取る
@@ -48,7 +34,7 @@ namespace mtbin
 		/// <param name="_pWriteBuffer">読み取って書き込む配列のポインタ</param>
 		/// <param name="_writeBufferLength">読み取って書き込む配列の要素数</param>
 		/// <param name="_arrayLength">要素数</param>
-		template <typename T> void Read(T* _pWriteBuffer, const int& _writeBufferLength, const int& _arrayLength);
+		template <typename T> void Read(T* _pWriteBuffer, int _writeBufferLength, int _arrayLength);
 
 		/// <summary>
 		/// 読み書きする場所を移動する
@@ -94,34 +80,6 @@ namespace mtbin
 		size_t currentIndex;	  // 現在のインデックス
 	};
 
-	template <typename T> inline void MemoryStream::Write(T _value)
-	{
-		assert(
-			(currentIndex + sizeof(T)) < BUFFER_SIZE // 書き込んでもオーバーランしない
-			&& "buffer over run @mtbin::MemoryStream::Write"
-		);
-
-		void* dist	= &(pBuffer_[currentIndex]);
-		void* src	= reinterpret_cast<void*>(&_value);
-		size_t size = sizeof(T);
-		// 書き込む
-		::memcpy(dist, src, size);
-		currentIndex += sizeof(T); // サイズ分進める
-	}
-
-	template <typename T> inline void MemoryStream::Write(T* _pArray, const int& _arrayLength)
-	{
-		size_t size { sizeof(T) * _arrayLength }; // 書き込むサイズ
-		assert(
-			(currentIndex + size) <= BUFFER_SIZE // 書き込んでもオーバーランしない
-			&& "buffer over run @mtbin::MemoryStream::Write"
-		);
-
-		// 書き込む
-		::memcpy(&(pBuffer_[currentIndex]), reinterpret_cast<mtbin::Byte*>(_pArray), size);
-		currentIndex += size; // サイズ分進める
-	}
-
 	template <typename T> inline T MemoryStream::Read()
 	{
 		assert(
@@ -136,8 +94,7 @@ namespace mtbin
 		return pickBuffer;
 	}
 
-	template <typename T>
-	inline void MemoryStream::Read(T* _pWriteBuffer, const int& _writeBufferLength, const int& _arrayLength)
+	template <typename T> inline void MemoryStream::Read(T* _pWriteBuffer, int _writeBufferLength, int _arrayLength)
 	{
 		assert(
 			_pWriteBuffer != nullptr // 書き込み先はnullptrではない

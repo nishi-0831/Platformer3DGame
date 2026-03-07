@@ -6,6 +6,7 @@
 #include <nlohmann/json.hpp>
 #include "ISystem.h"
 #include "cmtgb.h"
+#include "StringComparators.h"
 namespace mtgb
 {
 	class ComponentRegistry : public ISystem
@@ -16,7 +17,7 @@ namespace mtgb
 
 		ComponentRegistry();
 
-		void RegisterComponentIndex(EntityId _entityId, const std::type_index& _typeIndex, size_t _componentIndex);
+		void RegisterComponentIndex(EntityId _entityId, std::type_index _typeIndex, size_t _componentIndex);
 
 		/// <summary>
 		/// コンポーネントプール内のインデックスを取得
@@ -24,29 +25,29 @@ namespace mtgb
 		/// <param name="_entityId"></param>
 		/// <param name="_componentTypeIndex"></param>
 		/// <returns></returns>
-		std::optional<size_t> GetComponentIndex(EntityId _entityId, const std::type_index& _componentTypeIndex);
+		std::optional<size_t> GetComponentIndex(EntityId _entityId, std::type_index _componentTypeIndex);
 
 		/// <summary>
 		/// EntityIdが登録されているComponentの型情報を記録する
 		/// </summary>
 		/// <param name="_entityId"></param>
 		/// <param name="_componentTypeIndex"></param>
-		void RegisterComponent(EntityId _entityId, const std::type_index& _componentTypeIndex);
+		void RegisterComponent(EntityId _entityId, std::type_index _componentTypeIndex);
 
 		/// <summary>
 		/// Componentの型情報に対応する文字列を記録する
 		/// </summary>
 		/// <param name="_key"></param>
 		/// <param name="_typeIndex"></param>
-		void RegisterComponentKey(const std::string& _key, const std::type_index& _typeIndex);
+		void RegisterComponentKey(std::string_view _key, std::type_index _typeIndex);
 		/// <summary>
 		/// Componentに対応するComponentPoolの型情報を登録する
 		/// </summary>
 		/// <param name="_comp"></param>
 		/// <param name="_pool"></param>
-		void RegisterComponentPoolType(const std::type_index& _comp, const std::type_index& _pool);
+		void RegisterComponentPoolType(std::type_index _comp, std::type_index _pool);
 
-		void UnRegisterComponent(EntityId _entityId, const std::type_index& _typeIndex);
+		void UnRegisterComponent(EntityId _entityId, std::type_index _typeIndex);
 		void ClearEntity(EntityId _entityId);
 
 		void ClearComponentIndices(EntityId _entityId);
@@ -55,9 +56,9 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_typeIndex">Componentの型情報</param>
 		/// <returns></returns>
-		std::optional<std::type_index> GetComponentPoolType(const std::type_index& _componentTypeIndex);
+		std::optional<std::type_index> GetComponentPoolType(std::type_index _componentTypeIndex);
 
-		std::optional<std::type_index> GetComponentPoolType(const std::string& _componentName);
+		std::optional<std::type_index> GetComponentPoolType(std::string_view _componentName);
 
 		/// <summary>
 		/// EntityIdが登録されているComponentPoolの型情報の配列を返す
@@ -79,7 +80,8 @@ namespace mtgb
 		// EntityId が持つ Component 型情報の集合
 		std::unordered_map<EntityId, std::set<std::type_index>> entityComponents_;
 		// 文字列（名前／キー） → Componentの型情報（string → component type_index）
-		std::unordered_map<std::string, std::type_index> componentNameToTypeMap_;
+		std::unordered_map<std::string, std::type_index, TransparentStringHash, TransparentStringEq>
+			componentNameToTypeMap_;
 		// キー : Componentの型情報, 値 : プール内のインデックス
 		using ComponentIndexMap = std::unordered_map<std::type_index, size_t>;
 		// キー : EntityId, 値 : ComponentIndexMap

@@ -8,7 +8,7 @@ mtgb::ComponentRegistry::ComponentRegistry() {}
 
 void mtgb::ComponentRegistry::RegisterComponentIndex(
 	EntityId _entityId,
-	const std::type_index& _typeIndex,
+	std::type_index _typeIndex,
 	size_t _componentIndex
 )
 {
@@ -17,7 +17,7 @@ void mtgb::ComponentRegistry::RegisterComponentIndex(
 
 std::optional<size_t> mtgb::ComponentRegistry::GetComponentIndex(
 	EntityId _entityId,
-	const std::type_index& _componentTypeIndex
+	std::type_index _componentTypeIndex
 )
 {
 	// EntityIdに割り当てられているコンポーネント:インデックスのマップを取得
@@ -33,22 +33,22 @@ std::optional<size_t> mtgb::ComponentRegistry::GetComponentIndex(
 	return indexItr->second;
 }
 
-void mtgb::ComponentRegistry::RegisterComponent(mtgb::EntityId _entityId, const std::type_index& _componentTypeIndex)
+void mtgb::ComponentRegistry::RegisterComponent(mtgb::EntityId _entityId, std::type_index _componentTypeIndex)
 {
 	entityComponents_[_entityId].insert(_componentTypeIndex);
 }
 
-void mtgb::ComponentRegistry::RegisterComponentKey(const std::string& _key, const std::type_index& _typeIndex)
+void mtgb::ComponentRegistry::RegisterComponentKey(std::string_view _key, std::type_index _typeIndex)
 {
 	componentNameToTypeMap_.emplace(_key, _typeIndex);
 }
 
-void mtgb::ComponentRegistry::RegisterComponentPoolType(const std::type_index& _comp, const std::type_index& _pool)
+void mtgb::ComponentRegistry::RegisterComponentPoolType(std::type_index _comp, std::type_index _pool)
 {
 	componentTypeToPoolTypeMap_.emplace(_comp, _pool);
 }
 
-void mtgb::ComponentRegistry::UnRegisterComponent(mtgb::EntityId _entityId, const std::type_index& _typeIndex)
+void mtgb::ComponentRegistry::UnRegisterComponent(mtgb::EntityId _entityId, std::type_index _typeIndex)
 {
 	auto itr = entityComponents_.find(_entityId);
 	if (itr != entityComponents_.end())
@@ -75,7 +75,7 @@ void mtgb::ComponentRegistry::ClearComponentIndices(EntityId _entityId)
 	componentIndices_.erase(_entityId);
 }
 
-std::optional<std::type_index> mtgb::ComponentRegistry::GetComponentPoolType(const std::type_index& _componentTypeIndex)
+std::optional<std::type_index> mtgb::ComponentRegistry::GetComponentPoolType(std::type_index _componentTypeIndex)
 {
 	auto itr = componentTypeToPoolTypeMap_.find(_componentTypeIndex);
 
@@ -85,7 +85,7 @@ std::optional<std::type_index> mtgb::ComponentRegistry::GetComponentPoolType(con
 	return itr->second;
 }
 
-std::optional<std::type_index> mtgb::ComponentRegistry::GetComponentPoolType(const std::string& _componentName)
+std::optional<std::type_index> mtgb::ComponentRegistry::GetComponentPoolType(std::string_view _componentName)
 {
 	auto itr = componentNameToTypeMap_.find(_componentName);
 
@@ -103,7 +103,7 @@ std::optional<std::vector<std::type_index>> mtgb::ComponentRegistry::GetComponen
 	if (componentTypes == entityComponents_.end())
 		return std::nullopt;
 
-	for (const std::type_index& componentType : componentTypes->second)
+	for (std::type_index componentType : componentTypes->second)
 	{
 		if (auto itr = componentTypeToPoolTypeMap_.find(componentType); itr != componentTypeToPoolTypeMap_.end())
 		{

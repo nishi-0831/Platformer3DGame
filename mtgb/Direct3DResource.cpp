@@ -77,7 +77,7 @@ void mtgb::Direct3DResource::Release()
 	pRenderTargetView_.Reset();
 }
 
-const D3D11_VIEWPORT& mtgb::Direct3DResource::GetViewport()
+const D3D11_VIEWPORT& mtgb::Direct3DResource::GetViewport() const
 {
 	return viewPort_;
 }

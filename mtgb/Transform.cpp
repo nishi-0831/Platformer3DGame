@@ -79,10 +79,6 @@ void mtgb::Transform::Compute()
 	// ワールド行列からワールド座標系の値を逆算して更新
 	DecomposeMatrixImpl(&position, &rotate, &scale, matrixWorld_);
 
-	/*matrixTranslate_ = XMMatrixTranslation(position.x, position.y, position.z);
-	matrixRotate_ = XMMatrixRotationQuaternion(
-		XMQuaternionNormalize(rotate));
-	matrixScale_ = XMMatrixScaling(scale.x, scale.y, scale.z);*/
 	prevParentMatrix_ = parentMat;
 }
 
@@ -149,7 +145,7 @@ mtgb::Transform* mtgb::Transform::GetParent() const
 	}
 }
 
-void mtgb::Transform::SetParent(const EntityId _entityId)
+void mtgb::Transform::SetParent(EntityId _entityId)
 {
 	if (_entityId == GetEntityId() || _entityId == parent)
 		return;

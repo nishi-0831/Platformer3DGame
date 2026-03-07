@@ -21,7 +21,7 @@ namespace mtgb
 		void OnResize(UINT _width, UINT _height) override;
 		void Release() override;
 
-		const D3D11_VIEWPORT& GetViewport();
+		const D3D11_VIEWPORT& GetViewport() const;
 
 	  private:
 		D3D11_VIEWPORT viewPort_;

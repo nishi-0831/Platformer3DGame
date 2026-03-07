@@ -1,7 +1,7 @@
 #include "MemoryStream.h"
 #include <utility>
 #include "../ReleaseUtility.h"
-mtbin::MemoryStream::MemoryStream(mtbin::Byte* _pBuffer, const size_t& _bufferSize)
+mtbin::MemoryStream::MemoryStream(mtbin::Byte* _pBuffer, size_t _bufferSize)
 	: BUFFER_SIZE { _bufferSize }
 	, pBuffer_ { _pBuffer }
 	, currentIndex { 0 }

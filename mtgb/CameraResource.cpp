@@ -28,12 +28,12 @@ void mtgb::CameraResource::SetHCamera(CameraHandleInScene _hCamera)
 	hCamera_ = _hCamera;
 }
 
-mtgb::CameraHandleInScene mtgb::CameraResource::GetHCamera()
+mtgb::CameraHandleInScene mtgb::CameraResource::GetHCamera() const
 {
 	return hCamera_;
 }
 
-bool mtgb::CameraResource::NotRegisterCamera()
+bool mtgb::CameraResource::NotRegisterCamera() const
 {
 	return hCamera_ == INVALID_HANDLE;
 }

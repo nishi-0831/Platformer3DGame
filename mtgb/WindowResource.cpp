@@ -205,7 +205,7 @@ void mtgb::WindowResource::SetPosition(const RECT& _monitorRect)
 	currInfo_.windowedRect_ = _monitorRect;
 }
 
-void mtgb::WindowResource::SetWindowModeImpl(WindowModeInfo _info)
+void mtgb::WindowResource::SetWindowModeImpl(const WindowModeInfo& _info)
 {
 	// ウィンドウモードに戻る
 	isFullscreen_ = false;

@@ -9,11 +9,11 @@ namespace
 	// TODO:重力を外部から設定可能にする
 	float gravity { -20.0f };
 } // namespace
-mtgb::RigidBody::RigidBody(const EntityId _entityId)
+mtgb::RigidBody::RigidBody(EntityId _entityId)
 	: IComponent { _entityId }
 	, isNeedUpdate_ { false }
 	, useGravity_ { false }
-	, onHit_ { [](const EntityId) {} }
+	, onHit_ { [](EntityId) {} }
 	, pTransform_ { &Transform::Get(_entityId) }
 {
 }
@@ -59,19 +59,19 @@ void mtgb::RigidBody::OnGround()
 	velocity_.y = (std::max)(velocity_.y, 0.0f);
 }
 
-void mtgb::RigidBody::OnCollisionEnter(const std::function<void(const EntityId)>& _onHit)
+void mtgb::RigidBody::OnCollisionEnter(const std::function<void(EntityId)>& _onHit)
 {
 	isNeedUpdate_ = true;
 	onHit_		  = _onHit;
 }
 
-void mtgb::RigidBody::OnCollisionStay(const std::function<void(const EntityId)>& _onHit)
+void mtgb::RigidBody::OnCollisionStay(const std::function<void(EntityId)>& _onHit)
 {
 	isNeedUpdate_ = true;
 	onStay_		  = _onHit;
 }
 
-void mtgb::RigidBody::OnCollisionExit(const std::function<void(const EntityId)>& _onExit)
+void mtgb::RigidBody::OnCollisionExit(const std::function<void(EntityId)>& _onExit)
 {
 	isNeedUpdate_ = true;
 	onExit_		  = _onExit;

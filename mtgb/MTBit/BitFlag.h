@@ -36,25 +36,25 @@ namespace mtbit
 			/// </summary>
 			/// <param name="_e">スコープ付き列挙型</param>
 			/// <returns>続けて関数を呼び出せる</returns>
-			BitFlagEditor& On(const EnumStructT _e);
+			BitFlagEditor& On(EnumStructT _e);
 			/// <summary>
 			/// 指定のフラグを降ろす
 			/// </summary>
 			/// <param name="_e">スコープ付き列挙型</param>
 			/// <returns>続けて関数を呼び出せる</returns>
-			BitFlagEditor& Off(const EnumStructT _e);
+			BitFlagEditor& Off(EnumStructT _e);
 			/// <summary>
 			/// 指定のフラグを追加する
 			/// </summary>
 			/// <param name="_other">スコープ付き列挙型</param>
 			/// <returns>続けて関数を呼び出せる</returns>
-			BitFlagEditor& Add(const BitFlag _other);
+			BitFlagEditor& Add(BitFlag _other);
 			/// <summary>
 			/// 指定のフラグを引く
 			/// </summary>
 			/// <param name="_other">スコープ付き列挙型</param>
 			/// <returns>続けて関数を呼び出せる</returns>
-			BitFlagEditor& Sub(const BitFlag _other);
+			BitFlagEditor& Sub(BitFlag _other);
 			/// <summary>
 			/// すべてのフラグを立てる
 			/// </summary>
@@ -88,7 +88,7 @@ namespace mtbit
 	  public:
 		BitFlag()				= default;
 		BitFlag(const BitFlag&) = default;
-		BitFlag(const EnumStructT _e);
+		BitFlag(EnumStructT _e);
 		BitFlag(const std::bitset<BIT_COUNT>& _bitset);
 		~BitFlag() = default;
 
@@ -106,20 +106,20 @@ namespace mtbit
 		/// </summary>
 		/// <param name="_e">指定フラグ</param>
 		/// <returns>立っている true / false</returns>
-		bool Has(const EnumStructT _e) const;
+		bool Has(EnumStructT _e) const;
 		/// <summary>
 		/// 指定したフラグのいずれかが立っているかどうか
 		/// </summary>
 		/// <param name="_other">指定フラグ</param>
 		/// <returns>立っている true / false</returns>
-		bool Has(const BitFlag _other) const;
+		bool Has(BitFlag _other) const;
 
 		/// <summary>
 		/// フラグが一致しているか
 		/// </summary>
 		/// <param name="_other">フラグ</param>
 		/// <returns>一致している true / false</returns>
-		bool Is(const BitFlag _other) const;
+		bool Is(BitFlag _other) const;
 
 		/// <summary>
 		/// インスタンスを作る
@@ -147,7 +147,7 @@ namespace mtbit
 	concept BitFlagEnumStruct = IsEnumStruct<T> && requires(T _t) { static_cast<mtbit::BitFlag<T>>(_t); };
 
 	template <BitFlagEnumStruct EnumStructT>
-	inline mtbit::BitFlag<EnumStructT> operator|(const EnumStructT _e1, const EnumStructT _e2)
+	inline mtbit::BitFlag<EnumStructT> operator|(EnumStructT _e1, EnumStructT _e2)
 	{
 		return mtbit::BitFlag<EnumStructT> { _e1 } | _e2;
 	}
@@ -162,19 +162,19 @@ namespace mtbit
 	}
 
 	template <typename EnumStructT>
-	inline mtbit::BitFlag<EnumStructT> operator|(const EnumStructT _e, const mtbit::BitFlag<EnumStructT> _flag)
+	inline mtbit::BitFlag<EnumStructT> operator|(EnumStructT _e, mtbit::BitFlag<EnumStructT> _flag)
 	{
 		return mtbit::BitFlag<EnumStructT> { _flag }.BeginEdit().On(_e).EndEdit();
 	}
 
 	template <typename EnumStructT>
-	inline mtbit::BitFlag<EnumStructT> operator|(const mtbit::BitFlag<EnumStructT> _flag, const EnumStructT _e)
+	inline mtbit::BitFlag<EnumStructT> operator|(mtbit::BitFlag<EnumStructT> _flag, EnumStructT _e)
 	{
 		return mtbit::BitFlag<EnumStructT> { _flag }.BeginEdit().On(_e).EndEdit();
 	}
 } // namespace mtbit
 
-template <typename EnumStructT> inline mtbit::BitFlag<EnumStructT>::BitFlag(const EnumStructT _e)
+template <typename EnumStructT> inline mtbit::BitFlag<EnumStructT>::BitFlag(EnumStructT _e)
 {
 	value_.set(static_cast<size_t>(_e));
 }
@@ -185,24 +185,24 @@ inline mtbit::BitFlag<EnumStructT>::BitFlag(const std::bitset<BIT_COUNT>& _bitse
 {
 }
 
-template <typename EnumStructT> inline bool mtbit::BitFlag<EnumStructT>::Has(const EnumStructT _e) const
+template <typename EnumStructT> inline bool mtbit::BitFlag<EnumStructT>::Has(EnumStructT _e) const
 {
 	return value_[static_cast<size_t>(_e)];
 }
 
-template <typename EnumStructT> inline bool mtbit::BitFlag<EnumStructT>::Has(const BitFlag _other) const
+template <typename EnumStructT> inline bool mtbit::BitFlag<EnumStructT>::Has(BitFlag _other) const
 {
 	return (value_ & _other.value_).any();
 }
 
-template <typename EnumStructT> inline bool mtbit::BitFlag<EnumStructT>::Is(const BitFlag _other) const
+template <typename EnumStructT> inline bool mtbit::BitFlag<EnumStructT>::Is(BitFlag _other) const
 {
 	return value_ == _other.value_;
 }
 
 template <typename EnumStructT>
 inline typename mtbit::BitFlag<EnumStructT>::BitFlagEditor& mtbit::BitFlag<EnumStructT>::BitFlagEditor::On(
-	const EnumStructT _e
+	EnumStructT _e
 )
 {
 	bitFlag_.value_.set(static_cast<size_t>(_e));
@@ -211,7 +211,7 @@ inline typename mtbit::BitFlag<EnumStructT>::BitFlagEditor& mtbit::BitFlag<EnumS
 
 template <typename EnumStructT>
 inline typename mtbit::BitFlag<EnumStructT>::BitFlagEditor& mtbit::BitFlag<EnumStructT>::BitFlagEditor::Off(
-	const EnumStructT _e
+	EnumStructT _e
 )
 {
 	bitFlag_.value_.reset(static_cast<size_t>(_e));
@@ -220,7 +220,7 @@ inline typename mtbit::BitFlag<EnumStructT>::BitFlagEditor& mtbit::BitFlag<EnumS
 
 template <typename EnumStructT>
 inline typename mtbit::BitFlag<EnumStructT>::BitFlagEditor& mtbit::BitFlag<EnumStructT>::BitFlagEditor::Add(
-	const BitFlag _other
+	BitFlag _other
 )
 {
 	bitFlag_.value_ |= _other.value_;
@@ -229,7 +229,7 @@ inline typename mtbit::BitFlag<EnumStructT>::BitFlagEditor& mtbit::BitFlag<EnumS
 
 template <typename EnumStructT>
 inline typename mtbit::BitFlag<EnumStructT>::BitFlagEditor& mtbit::BitFlag<EnumStructT>::BitFlagEditor::Sub(
-	const BitFlag _other
+	BitFlag _other
 )
 {
 	bitFlag_.value_ &= !_other.value_;

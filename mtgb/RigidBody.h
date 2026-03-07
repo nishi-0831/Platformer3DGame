@@ -22,7 +22,7 @@ namespace mtgb
 		friend RigidBodyCP;
 		using IComponent::IComponent;
 
-		RigidBody(const EntityId _entityId);
+		RigidBody(EntityId _entityId);
 		~RigidBody();
 		RigidBody& operator=(const RigidBody& _other);
 
@@ -32,18 +32,18 @@ namespace mtgb
 		/// <summary>
 		/// コライダ同士の衝突に対するコールバック
 		/// </summary>
-		/// <param name="onHit_">void(const EntityId)</param>
-		void OnCollisionEnter(const std::function<void(const EntityId)>& _onHit);
+		/// <param name="onHit_"></param>
+		void OnCollisionEnter(const std::function<void(EntityId)>& _onHit);
 		/// <summary>
 		/// コライダ同士が接触している際に呼ばれるコールバック
 		/// </summary>
 		/// <param name="_onStay"></param>
-		void OnCollisionStay(const std::function<void(const EntityId)>& _onStay);
+		void OnCollisionStay(const std::function<void(EntityId)>& _onStay);
 		/// <summary>
 		/// コライダ同士が離れた時に呼ばれるコールバック
 		/// </summary>
 		/// <param name="_onExit"></param>
-		void OnCollisionExit(const std::function<void(const EntityId)>& _onExit);
+		void OnCollisionExit(const std::function<void(EntityId)>& _onExit);
 		/// <summary>
 		/// ジャンプをしている状態か
 		/// </summary>
@@ -72,10 +72,10 @@ namespace mtgb
 		bool isKinematic_;
 
 	  private:
-		std::function<void(const EntityId)> onHit_;
-		std::function<void(const EntityId)> onStay_;
-		std::function<void(const EntityId)> onExit_;
-		Transform* pTransform_; // TODO: 危ないTransform
+		std::function<void(EntityId)> onHit_;
+		std::function<void(EntityId)> onStay_;
+		std::function<void(EntityId)> onExit_;
+		Transform* pTransform_;
 	};
 
 } // namespace mtgb

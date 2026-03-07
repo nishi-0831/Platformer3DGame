@@ -105,7 +105,7 @@ namespace mtgb
 		return detectedTargets_;
 	}
 
-	void CircleDetector::ForEach(std::function<void(ScreenCoordContainsInfo&)> _func)
+	void CircleDetector::ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func)
 	{
 		for (auto& target : detectedTargets_)
 		{
@@ -113,7 +113,7 @@ namespace mtgb
 		}
 	}
 
-	void CircleDetector::ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const
+	void CircleDetector::ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const
 	{
 		for (const auto& target : detectedTargets_)
 		{

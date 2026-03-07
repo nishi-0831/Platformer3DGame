@@ -29,7 +29,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_typeIndex"></param>
 		/// <returns></returns>
-		std::string GetNameFromType(const std::type_index& _typeIndex) const
+		std::string GetNameFromType(std::type_index _typeIndex) const
 		{
 			auto it = typeToName_.find(_typeIndex);
 			if (it == typeToName_.end())
@@ -61,7 +61,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_typeIndex"></param>
 		/// <returns></returns>
-		bool IsRegistered(const std::type_index& _typeIndex) const
+		bool IsRegistered(std::type_index _typeIndex) const
 		{
 			return typeToName_.find(_typeIndex) != typeToName_.end();
 		}

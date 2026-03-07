@@ -6,7 +6,7 @@
 #include "EntityManager.h"
 #include <format>
 mtgb::DuplicateGameObjectCommand::DuplicateGameObjectCommand(
-	CreateFunc _createFunc,
+	const CreateFunc& _createFunc,
 	const ComponentFactory& _componentFactory,
 	EntityId _srcEntityId
 )

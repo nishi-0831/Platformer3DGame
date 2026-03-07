@@ -49,7 +49,7 @@ void mtgb::GroupCommand::ExecuteCommand(Command* _pCommand)
 	redoCounter_ = 0;
 }
 
-void mtgb::GroupCommand::SetGroupName(std::string _name)
+void mtgb::GroupCommand::SetGroupName(std::string_view _name)
 {
 	commandName_ = _name;
 }

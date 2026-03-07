@@ -49,7 +49,7 @@ namespace mtgb
 		/// <para> コールバックは一回だけ実行され、その後破棄される </para>
 		/// </summary>
 		/// <param name="_callback">登録するコールバック</param>
-		void RegisterPendingCallback(std::function<void()> _callback);
+		void RegisterPendingCallback(const std::function<void()>& _callback);
 
 		/// <summary>
 		/// <para> 次のフレームのシーンの更新、描画前に実行するコールバックを実行</para>

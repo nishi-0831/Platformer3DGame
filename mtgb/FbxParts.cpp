@@ -575,7 +575,7 @@ void mtgb::FbxParts::InitializeMaterial()
 	}
 }
 
-void mtgb::FbxParts::InitializeTexture(FbxSurfaceMaterial* _pMaterial, const DWORD _i)
+void mtgb::FbxParts::InitializeTexture(FbxSurfaceMaterial* _pMaterial, DWORD _i)
 {
 	// テクスチャの情報
 	FbxProperty prop = _pMaterial->FindProperty(FbxSurfaceMaterial::sDiffuse);

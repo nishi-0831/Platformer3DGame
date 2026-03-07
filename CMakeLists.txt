@@ -215,7 +215,6 @@ set(03mtgb__CoreType
     "mtgb/RectF.h"
     "mtgb/RectInt.h"
     "mtgb/RectT.h"
-    "mtgb/TransformCore.h"
     "mtgb/Vector2.cpp"
     "mtgb/Vector2.h"
     "mtgb/Vector2F.h"

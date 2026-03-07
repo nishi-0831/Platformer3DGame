@@ -50,15 +50,15 @@ namespace mtgb
 		/// <returns>コンポーネントの参照ポインタ (確実に存在する)</returns>
 		template <typename... Args> ComponentT& Get(EntityId _entityId, Args&&... _args);
 
-		bool TryGet(ComponentT*& _pComponent, const EntityId _entityId);
+		bool TryGet(ComponentT*& _pComponent, EntityId _entityId);
 
-		bool TryGet(std::vector<ComponentT*>* _pComponents, const EntityId _entityId);
+		bool TryGet(std::vector<ComponentT*>* _pComponents, EntityId _entityId);
 
 		/// <summary>
 		/// エンティティからコンポーネントを取り除く
 		/// </summary>
 		/// <param name="_entityId">エンティティId</param>
-		void Remove(const EntityId _entityId) override;
+		void Remove(EntityId _entityId) override;
 
 	  protected:
 		std::vector<ComponentT> pool_; // コンポーネントそのものを格納するプール
@@ -227,7 +227,7 @@ namespace mtgb
 	}
 
 	template <typename ComponentT, typename DerivedT>
-	inline bool ComponentPool<ComponentT, DerivedT>::TryGet(ComponentT*& _pComponent, const EntityId _entityId)
+	inline bool ComponentPool<ComponentT, DerivedT>::TryGet(ComponentT*& _pComponent, EntityId _entityId)
 	{
 		for (int i = 0; i < poolId_.size(); i++)
 		{
@@ -242,10 +242,7 @@ namespace mtgb
 	}
 
 	template <typename ComponentT, typename DerivedT>
-	inline bool ComponentPool<ComponentT, DerivedT>::TryGet(
-		std::vector<ComponentT*>* _pComponents,
-		const EntityId _entityId
-	)
+	inline bool ComponentPool<ComponentT, DerivedT>::TryGet(std::vector<ComponentT*>* _pComponents, EntityId _entityId)
 	{
 		_pComponents->clear();
 		for (int i = 0; i < poolId_.size(); i++)
@@ -261,7 +258,7 @@ namespace mtgb
 	}
 
 	template <typename ComponentT, typename DerivedT>
-	inline void ComponentPool<ComponentT, DerivedT>::Remove(const EntityId _entityId)
+	inline void ComponentPool<ComponentT, DerivedT>::Remove(EntityId _entityId)
 	{
 		for (int i = 0; i < poolId_.size(); i++)
 		{

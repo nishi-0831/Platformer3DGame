@@ -28,7 +28,7 @@ namespace mtgb
 		/// 現在選択されているゲームオブジェクトの複製を行う
 		/// </summary>
 		void DuplicateGameObject();
-		void AddComponent(const std::type_index& _componentType, EntityId _entityId);
+		void AddComponent(std::type_index _componentType, EntityId _entityId);
 		void ShowAddComponentDialog(EntityId _entityId);
 		void ShowGenerateGameObjectButton();
 		ImGuizmoManipulator* pManipulator_;

@@ -34,10 +34,10 @@ namespace mtgb
 		/// <summary>
 		/// ハンドラを登録し、登録に割り当てられた ID を返す
 		/// </summary>
-		EventHandlerId Subscribe(EventHandler _handler, EventScope _scope = EventScope::SCENE)
+		EventHandlerId Subscribe(const EventHandler& _handler, EventScope _scope = EventScope::SCENE)
 		{
-			const EventHandlerId id = nextId++;
-			handlers_.emplace(id, HandlerEntry { std::move(_handler), _scope });
+			EventHandlerId id = nextId++;
+			handlers_.emplace(id, HandlerEntry { _handler, _scope });
 			return id;
 		}
 

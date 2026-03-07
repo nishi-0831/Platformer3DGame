@@ -44,7 +44,7 @@ mtgb::FBXModelHandle mtgb::Fbx::Load(const std::string& _fileName)
 	return handle;
 }
 
-void mtgb::Fbx::Draw(const FBXModelHandle _hModel, const Transform& _transfrom, int _frame)
+void mtgb::Fbx::Draw(FBXModelHandle _hModel, const Transform& _transfrom, int _frame)
 {
 	DirectX11Draw::SetBlendMode(BlendMode::DEFAULT);
 
@@ -65,7 +65,7 @@ void mtgb::Fbx::Release()
 	SAFE_DESTROY(pFbxManager_);
 }
 
-std::optional<FbxAnimationController> mtgb::Fbx::GetAnimationController(FBXModelHandle _hModel)
+std::optional<mtgb::FbxAnimationController> mtgb::Fbx::GetAnimationController(FBXModelHandle _hModel)
 {
 	Fbx& instance { Game::System<Fbx>() };
 
@@ -75,7 +75,7 @@ std::optional<FbxAnimationController> mtgb::Fbx::GetAnimationController(FBXModel
 	return instance.pFbxModels_[_hModel]->GetAnimationController();
 }
 
-Vector3 mtgb::Fbx::GetBonePosition(FBXModelHandle _hModel, const std::string& _boneName)
+mtgb::Vector3 mtgb::Fbx::GetBonePosition(FBXModelHandle _hModel, const std::string& _boneName)
 {
 	Fbx& instance { Game::System<Fbx>() };
 
@@ -86,7 +86,7 @@ Vector3 mtgb::Fbx::GetBonePosition(FBXModelHandle _hModel, const std::string& _b
 	return instance.pFbxModels_[_hModel]->GetBonePosition(_boneName);
 }
 
-Vector3 mtgb::Fbx::GetAnimBonePosition(FBXModelHandle _hModel, const std::string& _boneName)
+mtgb::Vector3 mtgb::Fbx::GetAnimBonePosition(FBXModelHandle _hModel, const std::string& _boneName)
 {
 	Fbx& instance { Game::System<Fbx>() };
 

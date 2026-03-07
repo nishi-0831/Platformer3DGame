@@ -24,8 +24,5 @@ namespace mtgb
 
 	  protected:
 		EntityId entityId_ { INVALID_ENTITY }; // エンティティの識別子
-
-	  private:
-		// static EntityId entityCounter_;  // エンティティ識別子のカウンタ
 	};
 } // namespace mtgb

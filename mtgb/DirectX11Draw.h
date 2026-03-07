@@ -33,7 +33,6 @@ namespace mtgb
 {
 	class Figure;
 	class IShader;
-	class ImGuiRenderer;
 
 	/// <summary>
 	/// ブレンドモード
@@ -77,48 +76,10 @@ namespace mtgb
 		ComPtr<ID3D11RasterizerState> pRasterizerState;
 	};
 
-	/// <summary>
-	/// DirectX11で描画するやつ
-	/// </summary>
 	class DirectX11Draw final
 	{
-		// TODO: 極力friendは減らす
-		friend class DirectX11Manager;
-		friend class Texture2D;
-		friend class IShader;
-		friend class DirectWrite;
-		friend class Direct2D;
-		friend class OBJ;
-		friend class ImGuiRenderer;
-		friend class FbxParts;
-		friend class Trail;
-		friend class DoubleWindow;
-		friend class SceneSystem;
-		friend class RenderSystem;
-		friend class EffekseerTest;
-		friend class EffectManager;
-		friend class PlaneUVScroll;
-
 	  public:
-		/// <summary>
-		/// 描画するシェーダをセットする
-		/// </summary>
-		/// <param name="_type">シェーダの種類</param>
-		static void SetShader(const ShaderType _type);
-		/// <summary>
-		/// 描画するブレンドモードをセットする
-		/// </summary>
-		/// <param name="_mode">ブレンドモード</param>
-		static void SetBlendMode(const BlendMode _mode);
-		/// <summary>
-		/// 深度バッファへの書き込みをするか
-		/// </summary>
-		/// <param name="_enabled">書き込みをする true / false</param>
-		static void SetIsWriteToDepthBuffer(const bool _enabled);
-
-	  private:
-		DirectX11Draw()	 = delete;
-		~DirectX11Draw() = delete;
+		friend class DirectX11Manager;
 
 		/// <summary>
 		/// 描画開始 (キャンバスをきれいにする)
@@ -135,9 +96,32 @@ namespace mtgb
 		/// </summary>
 		static void Release();
 
+		/// <summary>
+		/// 描画するシェーダをセットする
+		/// </summary>
+		/// <param name="_type">シェーダの種類</param>
+		static void SetShader(ShaderType _type);
+		/// <summary>
+		/// 描画するブレンドモードをセットする
+		/// </summary>
+		/// <param name="_mode">ブレンドモード</param>
+		static void SetBlendMode(BlendMode _mode);
+		/// <summary>
+		/// 深度バッファへの書き込みをするか
+		/// </summary>
+		/// <param name="_enabled">書き込みをする true / false</param>
+		static void SetIsWriteToDepthBuffer(bool _enabled);
+
 	  private:
+		DirectX11Draw()	 = delete;
+		~DirectX11Draw() = delete;
+
+	  public:
 		static ComPtr<ID3D11Device> pDevice_;		  // 描画を行うための環境、リソースの作成に使う
 		static ComPtr<ID3D11DeviceContext> pContext_; // GPUに命令出すやつ
+		static ComPtr<ID3D11SamplerState> pDefaultSamplerState_;
+
+	  private:
 		static ComPtr<IDXGIDevice1> pDXGIDevice_;
 		static std::vector<ComPtr<IDXGIAdapter1>> pDXGIAdapters_;
 		static ComPtr<IDXGIFactory2> pDXGIFactory_;
@@ -153,6 +137,5 @@ namespace mtgb
 		static std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::MAX)> pBlendState_; // ブレンドの情報
 		static ShaderBundle shaderBundle_[static_cast<int8_t>(ShaderType::MAX)]; // シェーダのバンドル
 		static Vector4 backgroundColor_;
-		static ComPtr<ID3D11SamplerState> pDefaultSamplerState_;
 	};
 } // namespace mtgb

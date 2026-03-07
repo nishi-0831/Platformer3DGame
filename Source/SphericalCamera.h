@@ -34,7 +34,7 @@ namespace mtgb
 		/// <param name="_distance">視点との距離</param>
 		void MoveCameraSpherical(float _distance);
 
-		Vector3 ApplyDeadZoneConstraints(const Vector3& _proposedCameraPos, const Vector3 _lookAtTarget) const;
+		Vector3 ApplyDeadZoneConstraints(const Vector3& _proposedCameraPos, const Vector3& _lookAtTarget) const;
 		enum class CameraState
 		{
 			GROUNDED, // 着地状態：通常のカメラ追従

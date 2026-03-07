@@ -48,11 +48,11 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_transfrom">座標系</param>
 		/// <param name="_frame">アニメーションフレーム</param>
-		void Draw(const FBXModelHandle _hModel, const Transform& _transfrom, int _frame);
+		void Draw(FBXModelHandle _hModel, const Transform& _transfrom, int _frame);
 		/// <summary>
 		/// 解放処理
 		/// </summary>
-		void Release();
+		void Release() override;
 		static std::optional<FbxAnimationController> GetAnimationController(FBXModelHandle _hModel);
 		static Vector3 GetBonePosition(FBXModelHandle _hModel, const std::string& _boneName);
 		static Vector3 GetAnimBonePosition(FBXModelHandle _hModel, const std::string& _boneName);

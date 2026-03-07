@@ -43,8 +43,8 @@ namespace mtgb
 		/// </summary>
 		const std::vector<ScreenCoordContainsInfo>& GetDetectedTargets() const override;
 
-		void ForEach(std::function<void(ScreenCoordContainsInfo&)> _func) override;
-		void ForEach(std::function<void(const ScreenCoordContainsInfo&)> _func) const override;
+		void ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func) override;
+		void ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const override;
 
 		/// <summary>
 		/// 点が円内にあるかチェック

@@ -13,7 +13,7 @@ mtgb::GameObject* mtgb::GameObjectFactory::Create(std::string_view _typeName) co
 	return gameObj;
 }
 
-void mtgb::GameObjectFactory::RegisterFactory(std::string_view _typeName, CreateFunc _creator)
+void mtgb::GameObjectFactory::RegisterFactory(std::string_view _typeName, const CreateFunc& _creator)
 {
 	creators_.emplace(std::string(_typeName), std::move(_creator));
 }

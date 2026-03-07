@@ -31,7 +31,7 @@ namespace mtgb
 		}
 
 	  private:
-		virtual void RegisterFactory(std::string_view _typeName, CreateFunc _creator) = 0;
+		virtual void RegisterFactory(std::string_view _typeName, const CreateFunc& _creator) = 0;
 	};
 
 } // namespace mtgb

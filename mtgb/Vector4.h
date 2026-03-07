@@ -16,7 +16,7 @@ namespace mtgb
 		/// <param name="_y">y成分</param>
 		/// <param name="_z">z成分</param>
 		/// <param name="_w">w成分</param>
-		Vector4(const float _x, const float _y, const float _z, const float _w);
+		Vector4(float _x, float _y, float _z, float _w);
 		/// <summary>
 		/// Vector3から明示的な変換
 		/// </summary>
@@ -28,11 +28,11 @@ namespace mtgb
 		{
 		}
 
-		static inline auto Zero()
+		static inline Vector4 Zero()
 		{
 			return Vector4 { 0, 0, 0, 0 };
 		}
-		static inline auto One()
+		static inline Vector4 One()
 		{
 			return Vector4 { 1, 1, 1, 1 };
 		}

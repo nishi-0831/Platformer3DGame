@@ -92,7 +92,7 @@ void mtgb::GameScene::GetGameObjects(GameObjectTag _tag, std::vector<GameObject*
 	}
 }
 
-mtgb::GameObject* mtgb::GameScene::GetGameObject(const EntityId _entityId) const
+mtgb::GameObject* mtgb::GameScene::GetGameObject(EntityId _entityId) const
 {
 	for (auto& object : pGameObjects_)
 	{

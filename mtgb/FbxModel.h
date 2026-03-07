@@ -42,7 +42,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_index">インデックス</param>
 		/// <returns>Fbxパーツのポインタ</returns>
-		inline FbxParts* GetFbxParts(const int _index)
+		inline FbxParts* GetFbxParts(int _index)
 		{
 			return pParts_[_index];
 		}

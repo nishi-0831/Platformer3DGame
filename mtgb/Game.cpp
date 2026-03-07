@@ -54,7 +54,7 @@ IComponentPool* mtgb::Game::GetCP(std::type_index _typeIndex)
 	return dynamic_cast<IComponentPool*>(itr->second);
 }
 
-void mtgb::Game::RemoveEntityAllComponent(const EntityId _entityId)
+void mtgb::Game::RemoveEntityAllComponent(EntityId _entityId)
 {
 	for (auto&& cpSystem : pInstance_->pComponentPools_)
 	{
@@ -62,7 +62,7 @@ void mtgb::Game::RemoveEntityAllComponent(const EntityId _entityId)
 	}
 }
 
-void mtgb::Game::RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId)
+void mtgb::Game::RemoveEntityComponent(std::type_index _typeIndex, EntityId _entityId)
 {
 	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
 

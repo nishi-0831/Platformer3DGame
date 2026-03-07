@@ -1,5 +1,6 @@
 #pragma once
 #include "cmtgb.h"
+#include "ISystem.h"
 #include <d2d1.h>
 #include <wrl/client.h>
 using Microsoft::WRL::ComPtr;
@@ -32,7 +33,7 @@ namespace mtgb
 
 		void Update() override;
 		void Draw();
-		void Release();
+		void Release() override;
 		void Reset();
 		D2D1_SIZE_F GetRenderTargetSize();
 

@@ -45,7 +45,7 @@ namespace mtgb
 		void CreateRenderTargetView(IDXGISwapChain1* _pSwapChain1, ID3D11RenderTargetView** _ppRenderTargetView);
 		void CreateViewport(const Vector2Int& _size, D3D11_VIEWPORT& _viewport);
 		void CreateDepthStencilAndDepthStencilView(
-			const Vector2Int _bufSize,
+			const Vector2Int& _bufSize,
 			ID3D11Texture2D** _ppDepthStencil,
 			ID3D11DepthStencilView** _ppDepthStencilView
 		);
@@ -95,9 +95,9 @@ namespace mtgb
 		/// <param name="_pRasterizerDesc">ラスタライザの設定</param>
 		void CompileShader(
 			const std::wstring& _fileName,
-			const ShaderType& _type,
+			ShaderType _type,
 			const D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,
-			const unsigned int _layoutLength,
+			unsigned int _layoutLength,
 			const CD3D11_RASTERIZER_DESC* _pRasterizerDesc
 		);
 	};

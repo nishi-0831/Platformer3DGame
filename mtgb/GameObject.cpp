@@ -38,7 +38,6 @@ mtgb::GameObject::GameObject(const GameObject& _other)
 	: Entity()
 	, status_ { _other.status_ }
 	, tag_ { GameObjectTag::UNTAGGED }
-	, componentsFlag_ { _other.componentsFlag_ }
 {
 	isNotCalledStart_ = true;
 }
@@ -94,7 +93,7 @@ void mtgb::GameObject::FindGameObjects(const std::string& _name, std::vector<Gam
 	mtgb::Game::System<SceneSystem>().GetActiveScene()->GetGameObjects(_name, _pFoundGameObjects);
 }
 
-mtgb::GameObject* mtgb::GameObject::FindGameObject(const EntityId _entityId)
+mtgb::GameObject* mtgb::GameObject::FindGameObject(EntityId _entityId)
 {
 	return mtgb::Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
 }

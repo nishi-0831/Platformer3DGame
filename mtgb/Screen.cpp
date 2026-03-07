@@ -28,12 +28,22 @@ void mtgb::Screen::Initialize()
 
 void mtgb::Screen::Update() {}
 
-const mtgb::Vector2F mtgb::Screen::GetSizeRatio() const
+mtgb::Vector2Int mtgb::Screen::GetSize() const
+{
+	return size_;
+}
+
+mtgb::Vector2F mtgb::Screen::GetSizeF() const
+{
+	return Vector2F { static_cast<float>(size_.x), static_cast<float>(size_.y) };
+}
+
+mtgb::Vector2F mtgb::Screen::GetSizeRatio() const
 {
 	return sizeRatio_;
 }
 
-const mtgb::Vector2Int mtgb::Screen::GetInitialSize() const
+mtgb::Vector2Int mtgb::Screen::GetInitialSize() const
 {
 	return initialSize_;
 }

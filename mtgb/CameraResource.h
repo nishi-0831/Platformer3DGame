@@ -27,12 +27,12 @@ namespace mtgb
 		///  割り当てられているカメラのハンドルを返す
 		/// </summary>
 		/// <returns></returns>
-		CameraHandleInScene GetHCamera();
+		CameraHandleInScene GetHCamera() const;
 		/// <summary>
 		/// <para> カメラのハンドルが未登録か否か </para>
 		/// </summary>
 		/// <returns>未登録の場合true、登録済みの場合false</returns>
-		bool NotRegisterCamera();
+		bool NotRegisterCamera() const;
 
 	  private:
 		CameraHandleInScene hCamera_;

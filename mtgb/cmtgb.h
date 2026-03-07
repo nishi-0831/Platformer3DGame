@@ -7,7 +7,6 @@
 
 namespace mtgb
 {
-	using EntityId = int64_t;					 // エンティティの識別番号
-	static const EntityId INVALID_ENTITY { -1 }; // -1番は無効Id
-	template <typename T> constexpr bool false_v = false;
+	using EntityId = int64_t;						 // エンティティの識別番号
+	inline constexpr EntityId INVALID_ENTITY { -1 }; // -1番は無効Id
 } // namespace mtgb

@@ -15,9 +15,9 @@ namespace mtgb
 	{
 	  public:
 		using CreateFunc = std::function<GameObject*()>;
-		GameObjectCreateCommand(CreateFunc _createFunc);
+		GameObjectCreateCommand(const CreateFunc& _createFunc);
 
-		GameObjectCreateCommand(CreateFunc _createFunc, const nlohmann::json& _json);
+		GameObjectCreateCommand(const CreateFunc& _createFunc, const nlohmann::json& _json);
 		void Execute() override;
 		void Undo() override;
 		void Redo() override;

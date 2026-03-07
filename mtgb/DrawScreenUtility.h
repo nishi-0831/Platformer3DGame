@@ -18,7 +18,7 @@ namespace mtgb
 	/// </summary>
 	/// <param name="_to">設計上のフォントサイズ</param>
 	/// <returns>描画用フォントサイズ</returns>
-	inline int GenDrawScreenFontSize(const int _to)
+	inline int GenDrawScreenFontSize(int _to)
 	{
 		const float RATE_Y { _to / CANVAS_SIZE.y };
 		const int SCREEN_SIZE_Y { Game::System<Screen>().GetSize().y };
