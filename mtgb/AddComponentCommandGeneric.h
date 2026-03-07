@@ -25,8 +25,9 @@ namespace mtgb
 		}
 		void Redo() override
 		{
-			T& component = T::Get(memento_->GetEntityId());
-			component.RestoreFromMemento(*memento_);
+			T* pComponent = T::Reuse(memento_->GetEntityId());
+			assert(pComponent != nullptr);
+			pComponent->RestoreFromMemento(*memento_);
 		}
 		std::string Name() const override
 		{

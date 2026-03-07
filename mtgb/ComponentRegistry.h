@@ -5,6 +5,7 @@
 #include <set>
 #include <nlohmann/json.hpp>
 #include "ISystem.h"
+#include "cmtgb.h"
 namespace mtgb
 {
 	class ComponentRegistry : public ISystem

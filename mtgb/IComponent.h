@@ -31,6 +31,7 @@ namespace mtgb
 		template <typename... Args> static ComponentT& Get(EntityId _entityId, Args&&... _args);
 
 		static ComponentT* Reuse(size_t _index, EntityId _entityId);
+		static ComponentT* Reuse(EntityId _entityId);
 		virtual void Initialize() {}
 		/// <summary>
 		/// <para> ゲームオブジェクトから取り外されたときに呼ばれる </para>
@@ -71,6 +72,18 @@ namespace mtgb
 	inline ComponentT* IComponent<ComponentPoolT, ComponentT>::Reuse(size_t _index, EntityId _entityId)
 	{
 		return Game::System<ComponentPoolT>().Reuse(_index, _entityId);
+	}
+
+	template <class ComponentPoolT, typename ComponentT>
+	inline ComponentT* IComponent<ComponentPoolT, ComponentT>::Reuse(EntityId _entityId)
+	{
+		ComponentT* result = nullptr;
+
+		auto componentIndex = Game::System<ComponentRegistry>().GetComponentIndex(_entityId, typeid(ComponentT));
+		if (componentIndex.has_value())
+		{
+			result = Game::System<ComponentPoolT>().Reuse(componentIndex.value(), _entityId);
+		}
 	}
 
 } // namespace mtgb
