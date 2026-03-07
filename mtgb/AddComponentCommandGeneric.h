@@ -4,9 +4,7 @@
 #include "Command.h"
 #include "IComponentMemento.h"
 #include "Entity.h"
-#include "ComponentFactory.h"
 #include "ComponentConcept.h"
-#include <typeindex>
 #include <string>
 
 namespace mtgb
@@ -25,9 +23,9 @@ namespace mtgb
 		}
 		void Redo() override
 		{
-			T* pComponent = T::Reuse(memento_->GetEntityId());
-			assert(pComponent != nullptr);
-			pComponent->RestoreFromMemento(*memento_);
+			using PoolType = typename T::Pool;
+			T& component   = T::Get(memento_->GetEntityId());
+			component.RestoreFromMemento(*memento_);
 		}
 		std::string Name() const override
 		{

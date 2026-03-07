@@ -22,10 +22,6 @@ namespace mtgb
 	} // namespace detail
 	class Entity;
 
-	/// <summary>
-	/// コンポーネントを連続した配置にするプール
-	/// </summary>
-	/// <typeparam name="ComponentT">コンポーネントの型</typeparam>
 	template <typename ComponentT, typename DerivedT> class ComponentPool : public IComponentPool, public ISystem
 	{
 	  public:
@@ -47,7 +43,7 @@ namespace mtgb
 		/// コンポーネントを作成/取得する
 		/// </summary>
 		/// <param name="_entityId">エンティティId</param>
-		/// <returns>コンポーネントの参照ポインタ (確実に存在する)</returns>
+		/// <returns>コンポーネントの参照(確実に存在する)</returns>
 		template <typename... Args> ComponentT& Get(EntityId _entityId, Args&&... _args);
 
 		bool TryGet(ComponentT*& _pComponent, EntityId _entityId);

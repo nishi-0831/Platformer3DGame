@@ -30,7 +30,7 @@ void mtgb::GameObjectCreateCommand::Undo()
 
 void mtgb::GameObjectCreateCommand::Redo()
 {
-	Game::System<EntityManager>().DecrementCounter();
+	Game::System<EntityManager>().ChangeCounter(entityId_ - 1);
 
 	CreateGameObject();
 }

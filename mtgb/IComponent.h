@@ -84,6 +84,7 @@ namespace mtgb
 		{
 			result = Game::System<ComponentPoolT>().Reuse(componentIndex.value(), _entityId);
 		}
+		return result;
 	}
 
 } // namespace mtgb
