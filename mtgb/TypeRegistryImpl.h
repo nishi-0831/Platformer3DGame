@@ -217,36 +217,3 @@ Command* PropertyDisplayRegistry::CheckCustomAttrs(std::tuple<Args...>& _attrs, 
 	);
 	return command;
 }
-
-template <typename T> void PropertyDisplayRegistry::CheckProxyAttrs()
-{
-	using ProxyType = std::remove_pointer_t<std::remove_cvref_t<T>>;
-
-	if constexpr (refl::is_reflectable<T>())
-	{
-		constexpr auto typeDesc = refl::reflect<ProxyType>();
-		std::apply(
-			[&](auto&&... attr)
-			{
-				((
-					 [&]
-					 {
-						 using AttrType = std::decay_t<decltype(attr)>;
-						 if constexpr (refl::trait::is_instance_of_v<ProxyFor, AttrType>)
-						 {
-							 /*RegisterFunc<typename AttrType::TargetType>([this](std::any instance, const char* name) {
-								 using Proxy = T;
-								 using Target = typename AttrType::TargetType;
-								 Target* targetPtr = std::any_cast<Target*>(instance);
-								 Proxy proxy(targetPtr);
-								 showFunctions_[typeid(Proxy)](std::any(&proxy), name);
-								 });*/
-						 }
-					 }()
-				 ),
-				 ...);
-			},
-			typeDesc.attributes
-		);
-	}
-}

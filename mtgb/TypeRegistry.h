@@ -36,8 +36,6 @@ class PropertyDisplayRegistry
 	template <typename... Args, typename T>
 	Command* CheckCustomAttrs(std::tuple<Args...>& _attrs, T _valPtr, const char* _name);
 
-	template <typename T> void CheckProxyAttrs();
-
 	template <typename T> bool ShowMemberWithReflection(T _memberValue, const char* _name, Command* _command);
 
 	PropertyDisplayRegistry();

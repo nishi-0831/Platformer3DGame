@@ -17,17 +17,21 @@
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor", ShowType::EDITOR)
 {
-	commandListener_ = [this](Command* _command)
-	{
-		Game::System<CommandHistoryManager>().ExecuteCommand(_command);
-	};
-	pManipulator_ = new ImGuizmoManipulator(commandListener_);
 
-	GameObjectGenerator::RegisterCommandListener(commandListener_);
-	PropertyDisplayRegistry::Instance().RegisterCommandListener(commandListener_);
+	pManipulator_ = new ImGuizmoManipulator();
+
+	PropertyDisplayRegistry::Instance().RegisterCommandListener(
+		[this](Command* _command)
+		{
+			Game::System<CommandHistoryManager>().ExecuteCommand(_command);
+		}
+	);
 }
 
-mtgb::ImGuiEditor::~ImGuiEditor() {}
+mtgb::ImGuiEditor::~ImGuiEditor()
+{
+	SAFE_DELETE(pManipulator_);
+}
 
 void mtgb::ImGuiEditor::Initialize() {}
 

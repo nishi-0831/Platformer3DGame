@@ -1,28 +1,15 @@
 #include "ImGuizmoManipulator.h"
-#include "GameObject.h"
 #include "Vector3.h"
 #include "Game.h"
-#include "ISystem.h"
 
 #include "ImGui/imgui_internal.h"
-#include "ImGui/imgui_impl_win32.h"
-#include "ImGui/imgui_impl_dx11.h"
+#include "ImGui/imgui.h"
+
 #include "CameraSystem.h"
 #include "InputData.h"
-#include "WindowContextUtil.h"
-#include "QuatToEuler.h"
-#include "ImGuiRenderer.h"
-#include "MTImGui.h"
-#include <algorithm>
-#include "SceneSystem.h"
 #include "EventManager.h"
-#include "Debug.h"
 #include "Entity.h"
 #include "GuizmoManipulatedEvent.h"
-namespace
-{
-
-}
 
 void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 {
@@ -90,14 +77,6 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 		EventScope::GLOBAL
 	);
 
-	eventManager.GetEvent<SelectionClearedEvent>().Subscribe(
-		[this](const SelectionClearedEvent& _event)
-		{
-
-		},
-		EventScope::GLOBAL
-	);
-
 	// 今後、同時に複数のオブジェクトを選択可能な場合になった際には修正
 	eventManager.GetEvent<GameObjectDeselectedEvent>().Subscribe(
 		[this](const GameObjectDeselectedEvent& _event)
@@ -111,7 +90,7 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 	eventManager.GetEvent<GameObjectCreatedEvent>().Subscribe(
 		[this](const GameObjectCreatedEvent& _event)
 		{
-			GenerateCommand(_event);
+			Select(_event.entityId);
 		},
 		EventScope::GLOBAL
 	);
@@ -137,11 +116,10 @@ void mtgb::ImGuizmoManipulator::Calculate()
 	memcpy(projMat_, &float4x4_, sizeof(projMat_));
 }
 
-mtgb::ImGuizmoManipulator::ImGuizmoManipulator(std::function<void(Command*)> _commandListener)
+mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
 	: ImGuiShowable("Manipulater", ShowType::SCENE_VIEW)
 	, operation_ { ImGuizmo::TRANSLATE }
 	, mode_ { ImGuizmo::LOCAL }
-	, commandListener_ { _commandListener }
 	, isUsing_ { false }
 	, wasUsing_ { false }
 	, pTargetTransform_ { nullptr }
@@ -242,9 +220,12 @@ void mtgb::ImGuizmoManipulator::UpdateManpulator()
 			return;
 
 		TransformMemento* memento = pTargetTransform_->SaveToMemento();
-		GuizmoManipulateCommand* event =
+		GuizmoManipulateCommand* cmd =
 			new GuizmoManipulateCommand(pTargetPrevTransformMemento_, memento, Game::GetComponentFactory());
-		commandListener_(event);
+		Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
+
+		// メモリの解放はコマンドが行うと断定して、ポインタを空にする
+		pTargetPrevTransformMemento_ = nullptr;
 	}
 
 	wasUsing_ = isUsing_;
@@ -268,7 +249,7 @@ void mtgb::ImGuizmoManipulator::UpdateOperationMode()
 
 void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectSelectedEvent& _event)
 {
-	commandListener_(new SelectionCommand(
+	SelectionCommand* cmd = new SelectionCommand(
 		(_event.entityId),
 		[this](EntityId _entityId)
 		{
@@ -278,12 +259,13 @@ void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectSelectedEvent& _
 		{
 			Deselect();
 		}
-	));
+	);
+	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 
 void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectDeselectedEvent& _event)
 {
-	commandListener_(new DeselectionCommand(
+	DeselectionCommand* cmd = new DeselectionCommand(
 		(_event.entityId),
 		[this](EntityId _entityId)
 		{
@@ -293,20 +275,6 @@ void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectDeselectedEvent&
 		{
 			Select(_entityId);
 		}
-	));
-}
-
-void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectCreatedEvent& _event)
-{
-	commandListener_(new SelectionCommand(
-		(_event.entityId),
-		[this](EntityId _entityId)
-		{
-			Select(_entityId);
-		},
-		[this](EntityId _entityId)
-		{
-			Deselect();
-		}
-	));
+	);
+	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }

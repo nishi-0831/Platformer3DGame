@@ -33,6 +33,5 @@ namespace mtgb
 		void ShowGenerateGameObjectButton();
 		ImGuizmoManipulator* pManipulator_;
 		std::unordered_map<std::type_index, IComponentMemento*> defMementos_;
-		std::function<void(Command*)> commandListener_;
 	};
 } // namespace mtgb

@@ -1,4 +1,5 @@
 #include "GuizmoManipulatedEvent.h"
+#include "ReleaseUtility.h"
 
 mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand(
 	TransformMemento* _pPrevMemento,
@@ -9,6 +10,12 @@ mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand(
 	, pPrevMemento_ { _pPrevMemento }
 	, pMemento_ { _pMemento }
 {
+}
+
+mtgb::GuizmoManipulateCommand::~GuizmoManipulateCommand()
+{
+	SAFE_DELETE(pPrevMemento_);
+	SAFE_DELETE(pMemento_);
 }
 
 void mtgb::GuizmoManipulateCommand::Execute() {}
@@ -28,7 +35,7 @@ std::string mtgb::GuizmoManipulateCommand::Name() const
 	return "GuizmoManipulatedEvent";
 }
 
-EntityId mtgb::GuizmoManipulateCommand::GetCommandTargetEntityId() const
+mtgb::EntityId mtgb::GuizmoManipulateCommand::GetCommandTargetEntityId() const
 {
 	return pMemento_->GetEntityId();
 }

@@ -22,7 +22,6 @@ namespace mtgb
 		/// <summary>
 		/// コマンドを渡すことができるリスナーを登録
 		/// </summary>
-		static void RegisterCommandListener(std::function<void(Command*)> _commandListener);
 		static void Duplicate(EntityId _srcEntityId);
 		static void Delete(EntityId _entityId);
 
@@ -31,6 +30,5 @@ namespace mtgb
 		static GameObjectGenerator* GetInstance();
 		static GameObjectGenerator* pInstance_;
 		GameObjectFactory gameObjFactory_;
-		std::function<void(Command*)> commandListener_;
 	};
 } // namespace mtgb

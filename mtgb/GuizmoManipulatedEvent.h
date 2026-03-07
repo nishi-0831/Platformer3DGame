@@ -16,7 +16,7 @@ namespace mtgb
 			TransformMemento* _pMemento,
 			const ComponentFactory& _componentFactory
 		);
-
+		~GuizmoManipulateCommand();
 		void Execute() override;
 		void Undo() override;
 		void Redo() override;

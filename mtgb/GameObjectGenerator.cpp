@@ -40,12 +40,11 @@ void mtgb::GameObjectGenerator::GenerateFromJson(const nlohmann::json& _json)
 			{
 				return GetInstance()->gameObjFactory_.Create(classType);
 			},
-			Game::GetComponentFactory(),
 			j
 		);
 
 		// コマンドを渡す
-		GetInstance()->commandListener_(cmd);
+		cmdHitoryManager.ExecuteCommand(cmd);
 		// コンポーネントのデシリアライズ
 		Game::DeserializeComponents(cmd->GetCommandTargetEntityId(), j);
 	}
@@ -58,15 +57,9 @@ void mtgb::GameObjectGenerator::Generate(std::string_view _gameObjName)
 		[_gameObjName]()
 		{
 			return GetInstance()->gameObjFactory_.Create(_gameObjName);
-		},
-		Game::GetComponentFactory()
+		}
 	);
-	GetInstance()->commandListener_(cmd);
-}
-
-void mtgb::GameObjectGenerator::RegisterCommandListener(std::function<void(Command*)> _commandListener)
-{
-	GetInstance()->commandListener_ = _commandListener;
+	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 
 void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
@@ -83,7 +76,7 @@ void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
 		Game::GetComponentFactory(),
 		_srcEntityId
 	);
-	GetInstance()->commandListener_(cmd);
+	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 
 void mtgb::GameObjectGenerator::Delete(EntityId _entityId)
@@ -92,7 +85,7 @@ void mtgb::GameObjectGenerator::Delete(EntityId _entityId)
 
 	DeleteGameObjectCommand* cmd =
 		new DeleteGameObjectCommand(pGameObj, GetInstance()->gameObjFactory_, Game::GetComponentFactory());
-	GetInstance()->commandListener_(cmd);
+	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 
 mtgb::GameObjectGenerator* mtgb::GameObjectGenerator::GetInstance()
