@@ -44,6 +44,7 @@ namespace mtgb
 
 		void OnPostRestore() override;
 		void OnPreSave() override;
+		void Reset() override;
 
 	  private:
 		Transform* pTransform_;

@@ -4,7 +4,7 @@
 #include <format>
 namespace
 {
-	mtgb::Vector3 INIT_OFFSET { 1.0f, 0.0f, 0.0f };
+	const mtgb::Vector3 INIT_OFFSET { 1.0f, 0.0f, 0.0f };
 }
 
 unsigned int MovingFloor::generateCounter_ { 0 };

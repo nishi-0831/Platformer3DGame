@@ -20,7 +20,7 @@ mtgb::RigidBody::RigidBody(const EntityId _entityId)
 
 mtgb::RigidBody::~RigidBody() {}
 
-RigidBody& mtgb::RigidBody::operator=(const RigidBody& _other)
+mtgb::RigidBody& mtgb::RigidBody::operator=(const RigidBody& _other)
 {
 	if (&_other == this)
 	{
@@ -82,7 +82,7 @@ bool mtgb::RigidBody::IsJumping()
 	return velocity_.y > 0.0f;
 }
 
-Vector3 mtgb::RigidBody::GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb)
+mtgb::Vector3 mtgb::RigidBody::GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb)
 {
 	Vector3 aabbMin = _aabb.Center - _aabb.Extents;
 	Vector3 aabbMax = _aabb.Center + _aabb.Extents;

@@ -45,7 +45,11 @@ void Goal::Start()
 	pRigidBody_->OnCollisionEnter(
 		[this](EntityId _entityId)
 		{
-			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
+			GameObject* pGameObj = FindGameObject(_entityId);
+			if (pGameObj == nullptr)
+				return;
+
+			GameObjectTag tag = pGameObj->GetTag();
 			if (tag == GameObjectTag::PLAYER)
 			{
 				OnClear();

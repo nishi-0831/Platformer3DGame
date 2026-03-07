@@ -28,16 +28,38 @@ namespace mtgb
 
 		void UpdateVelocity();
 		void OnGround();
-		void OnPostRestore() {};
+
 		/// <summary>
-		/// 当たったときのイベントコールバック
+		/// コライダ同士の衝突に対するコールバック
 		/// </summary>
 		/// <param name="onHit_">void(const EntityId)</param>
 		void OnCollisionEnter(const std::function<void(const EntityId)>& _onHit);
-		void OnCollisionStay(const std::function<void(const EntityId)>& _onHit);
+		/// <summary>
+		/// コライダ同士が接触している際に呼ばれるコールバック
+		/// </summary>
+		/// <param name="_onStay"></param>
+		void OnCollisionStay(const std::function<void(const EntityId)>& _onStay);
+		/// <summary>
+		/// コライダ同士が離れた時に呼ばれるコールバック
+		/// </summary>
+		/// <param name="_onExit"></param>
 		void OnCollisionExit(const std::function<void(const EntityId)>& _onExit);
+		/// <summary>
+		/// ジャンプをしている状態か
+		/// </summary>
+		/// <returns>ジャンプをしているならtrue、していないならfalse</returns>
 		bool IsJumping();
+		/// <summary>
+		/// 球とAABBの押し出し量を返す
+		/// </summary>
+		/// <param name="_sphere"></param>
+		/// <param name="_aabb"></param>
+		/// <returns>押し出し量のベクトル</returns>
 		static Vector3 GetPushAmount(const DirectX::BoundingSphere& _sphere, const DirectX::BoundingBox& _aabb);
+		/// <summary>
+		/// 現在設定されている重力を返す
+		/// </summary>
+		/// <returns></returns>
 		static float GetGravity();
 
 	  public:

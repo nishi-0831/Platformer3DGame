@@ -16,7 +16,8 @@ namespace
 } // namespace
 
 mtgb::Interpolator::Interpolator(EntityId _entityId)
-	: pTransform_ { &Transform::Get(_entityId) }
+	: IComponent(_entityId)
+	, pTransform_ { &Transform::Get(_entityId) }
 	, dir_ { 1.0f }
 	, elapsed_ { 0.0f }
 	, duration_ { 1.0f }
@@ -147,4 +148,10 @@ void mtgb::Interpolator::OnPreSave()
 	// シリアライズ用の変数に始点、終点の座標を代入
 	startPos_ = pStartTransform_->position;
 	endPos_	  = pEndTransform_->position;
+}
+
+void mtgb::Interpolator::Reset()
+{
+	Game::System<SceneSystem>().GetActiveScene()->DestroyGameObject(pStartCollider_->GetEntityId());
+	Game::System<SceneSystem>().GetActiveScene()->DestroyGameObject(pEndCollider_->GetEntityId());
 }

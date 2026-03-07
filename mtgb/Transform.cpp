@@ -1,13 +1,7 @@
 #include "Transform.h"
 
-#include "MTImGui.h"
-namespace
-{
-	Matrix4x4 m;
-}
-
 mtgb::Transform::Transform()
-	: parent(INVALID_ENTITY)
+	: parent { INVALID_ENTITY }
 	, position { Vector3::Zero() }
 	, scale { Vector3::One() }
 	, rotate { Quaternion::Identity() }
@@ -19,7 +13,7 @@ mtgb::Transform::Transform()
 
 mtgb::Transform::Transform(EntityId _entityId)
 	: IComponent(_entityId)
-	, parent(INVALID_ENTITY)
+	, parent { INVALID_ENTITY }
 	, position { Vector3::Zero() }
 	, scale { Vector3::One() }
 	, rotate { Quaternion::Identity() }
