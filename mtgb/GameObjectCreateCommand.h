@@ -15,13 +15,9 @@ namespace mtgb
 	{
 	  public:
 		using CreateFunc = std::function<GameObject*()>;
-		GameObjectCreateCommand(CreateFunc _createFunc, const ComponentFactory& _componentFactory);
+		GameObjectCreateCommand(CreateFunc _createFunc);
 
-		GameObjectCreateCommand(
-			CreateFunc _createFunc,
-			const ComponentFactory& _componentFactory,
-			const nlohmann::json& _json
-		);
+		GameObjectCreateCommand(CreateFunc _createFunc, const nlohmann::json& _json);
 		void Execute() override;
 		void Undo() override;
 		void Redo() override;
@@ -30,10 +26,10 @@ namespace mtgb
 		EntityId GetCommandTargetEntityId() const override;
 
 	  private:
+		void CreateGameObject();
 		void Deserialize(GameObject* _obj);
 		EntityId entityId_;
 		std::string gameObjectName_;
-		const ComponentFactory& componentFactory_;
 		CreateFunc createFunc_;
 		nlohmann::json json_;
 	};

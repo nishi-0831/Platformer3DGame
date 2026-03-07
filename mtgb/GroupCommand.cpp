@@ -16,7 +16,7 @@ void mtgb::GroupCommand::Undo()
 {
 	while (undoCounter_ != 0)
 	{
-		commandHistoryManager_.UndoCommand();
+		commandHistory_.UndoCommand();
 		undoCounter_--;
 		redoCounter_++;
 	}
@@ -26,7 +26,7 @@ void mtgb::GroupCommand::Redo()
 {
 	while (redoCounter_ != 0)
 	{
-		commandHistoryManager_.RedoCommand();
+		commandHistory_.RedoCommand();
 		undoCounter_++;
 		redoCounter_--;
 	}
@@ -44,7 +44,7 @@ EntityId mtgb::GroupCommand::GetCommandTargetEntityId() const
 
 void mtgb::GroupCommand::ExecuteCommand(Command* _pCommand)
 {
-	commandHistoryManager_.ExecuteCommand(_pCommand);
+	commandHistory_.ExecuteCommand(_pCommand);
 	undoCounter_++;
 	redoCounter_ = 0;
 }

@@ -3,28 +3,49 @@
 #include "EntityManager.h"
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
-mtgb::GameObjectCreateCommand::GameObjectCreateCommand(
-	CreateFunc _createFunc,
-	const ComponentFactory& _componentFactory
-)
+mtgb::GameObjectCreateCommand::GameObjectCreateCommand(CreateFunc _createFunc)
 	: entityId_ { INVALID_ENTITY }
-	, componentFactory_ { _componentFactory }
 	, createFunc_ { _createFunc }
 	, json_ {}
 {
 }
 
-mtgb::GameObjectCreateCommand::GameObjectCreateCommand(
-	CreateFunc _createFunc,
-	const ComponentFactory& _componentFactory,
-	const nlohmann::json& _json
-)
-	: GameObjectCreateCommand(_createFunc, _componentFactory)
+mtgb::GameObjectCreateCommand::GameObjectCreateCommand(CreateFunc _createFunc, const nlohmann::json& _json)
+	: GameObjectCreateCommand(_createFunc)
 {
 	json_ = _json;
 }
 
 void mtgb::GameObjectCreateCommand::Execute()
+{
+	CreateGameObject();
+
+	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Invoke({ .entityId = entityId_ });
+}
+
+void mtgb::GameObjectCreateCommand::Undo()
+{
+	Game::System<SceneSystem>().GetActiveScene()->DestroyGameObject(entityId_);
+}
+
+void mtgb::GameObjectCreateCommand::Redo()
+{
+	Game::System<EntityManager>().DecrementCounter();
+
+	CreateGameObject();
+}
+
+std::string mtgb::GameObjectCreateCommand::Name() const
+{
+	return std::string("CreateGameObject:") + gameObjectName_;
+}
+
+mtgb::EntityId mtgb::GameObjectCreateCommand::GetCommandTargetEntityId() const
+{
+	return entityId_;
+}
+
+void mtgb::GameObjectCreateCommand::CreateGameObject()
 {
 	GameObject* obj = createFunc_();
 
@@ -41,30 +62,6 @@ void mtgb::GameObjectCreateCommand::Execute()
 	{
 		Deserialize(obj);
 	}
-
-	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Invoke({ .entityId = obj->GetEntityId() });
-}
-
-void mtgb::GameObjectCreateCommand::Undo()
-{
-	Game::System<SceneSystem>().GetActiveScene()->DestroyGameObject(entityId_);
-}
-
-void mtgb::GameObjectCreateCommand::Redo()
-{
-	Game::System<EntityManager>().DecrementCounter();
-
-	Execute();
-}
-
-std::string mtgb::GameObjectCreateCommand::Name() const
-{
-	return std::string("CreateGameObject:") + gameObjectName_;
-}
-
-mtgb::EntityId mtgb::GameObjectCreateCommand::GetCommandTargetEntityId() const
-{
-	return entityId_;
 }
 
 void mtgb::GameObjectCreateCommand::Deserialize(GameObject* _obj)

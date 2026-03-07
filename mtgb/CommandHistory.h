@@ -8,7 +8,8 @@
 class ICommandHistory
 {
   public:
-	~ICommandHistory() = default;
+	ICommandHistory()		   = default;
+	virtual ~ICommandHistory() = default;
 	/// <summary>
 	/// コマンドを実行、スタックに積む
 	/// </summary>
@@ -45,6 +46,7 @@ class ICommandHistory
 class CommandHistory : public ICommandHistory
 {
   public:
+	CommandHistory();
 	~CommandHistory();
 	/// <summary>
 	/// コマンドを実行、スタックに積む
@@ -73,7 +75,9 @@ class CommandHistory : public ICommandHistory
 	/// <para> 再実行の履歴を消去する </para>
 	/// <para> コマンドは全て解放される </para>
 	/// </summary>
-	void ClearRedoStack();
+	void ClearRedoStack() override;
 	std::stack<Command*> undoStack_;
 	std::stack<Command*> redoStack_;
+	// コマンドが実行中か否か
+	bool isCommandExecuting_;
 };

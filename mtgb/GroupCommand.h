@@ -21,7 +21,7 @@ namespace mtgb
 		std::string commandName_;
 		unsigned int undoCounter_;
 		unsigned int redoCounter_;
-		CommandHistory commandHistoryManager_;
+		CommandHistory commandHistory_;
 	};
 
 } // namespace mtgb
