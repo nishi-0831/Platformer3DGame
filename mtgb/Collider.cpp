@@ -79,16 +79,11 @@ void mtgb::Collider::UpdateBoundingData()
 			UpdateBoundingSphere();
 			break;
 		case ColliderType::TYPE_AABB :
+		case ColliderType::TYPE_OBB :
 			UpdateBoundingBox();
 			break;
 		case ColliderType::TYPE_CAPSULE :
 			// TODO: カプセル初期化
-		case ColliderType::TYPE_OBB :
-			computeOBB_.Center	  = pTransform_->position + center_;
-			computeOBB_.Extents.x = extents_.x * pTransform_->scale.x;
-			computeOBB_.Extents.y = extents_.y * pTransform_->scale.y;
-			computeOBB_.Extents.z = extents_.z * pTransform_->scale.z;
-			DirectX::XMStoreFloat4(&computeOBB_.Orientation, pTransform_->rotate);
 			break;
 	}
 }
@@ -107,15 +102,18 @@ void mtgb::Collider::UpdateBoundingBox()
 	{
 		if (colliderType_ == ColliderType::TYPE_AABB)
 		{
+			computeBox_.Center	  = pTransform_->position + center_;
 			computeBox_.Extents.x = extents_.x * pTransform_->scale.x;
 			computeBox_.Extents.y = extents_.y * pTransform_->scale.y;
 			computeBox_.Extents.z = extents_.z * pTransform_->scale.z;
 		}
 		else if (colliderType_ == ColliderType::TYPE_OBB)
 		{
+			computeOBB_.Center	  = pTransform_->position + center_;
 			computeOBB_.Extents.x = extents_.x * pTransform_->scale.x;
 			computeOBB_.Extents.y = extents_.y * pTransform_->scale.y;
 			computeOBB_.Extents.z = extents_.z * pTransform_->scale.z;
+			DirectX::XMStoreFloat4(&computeOBB_.Orientation, pTransform_->rotate);
 		}
 	}
 }
