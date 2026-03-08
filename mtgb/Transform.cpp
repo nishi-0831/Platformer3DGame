@@ -150,12 +150,11 @@ void mtgb::Transform::SetParent(EntityId _entityId)
 	if (_entityId == GetEntityId() || _entityId == parent)
 		return;
 
-	Transform& parentTransform = Get(_entityId);
-
-	if (parent == INVALID_ENTITY)
+	if (parent == INVALID_ENTITY && _entityId != INVALID_ENTITY)
 	{
-		Matrix4x4 parentInverse = DirectX::XMMatrixInverse(nullptr, parentTransform.matrixWorld_);
-		Matrix4x4 localMatrix	= matrixWorld_ * parentInverse;
+		Transform& parentTransform = Get(_entityId);
+		Matrix4x4 parentInverse	   = DirectX::XMMatrixInverse(nullptr, parentTransform.matrixWorld_);
+		Matrix4x4 localMatrix	   = matrixWorld_ * parentInverse;
 		DecomposeMatrixImpl(&localPosition_, &localRotate_, &localScale_, localMatrix);
 
 		parent = _entityId;

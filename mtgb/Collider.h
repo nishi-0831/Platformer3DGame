@@ -3,11 +3,12 @@
 #include "ISerializableObject.h"
 #include "IComponentMemento.h"
 #include <set>
+#include <unordered_set>
 #include <DirectXCollision.h>
 #include "Vector3.h"
 #include "ColliderType.h"
 #include "ColliderCP.h"
-#include <optional>
+#include <concepts>
 #include "Collider.generated.h"
 
 namespace mtgb
@@ -46,6 +47,16 @@ namespace mtgb
 		bool IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist) const;
 		bool IsHit(const Vector3& _center, float _radius) const;
 
+		template <typename Func>
+			requires std::is_invocable_v<Func, EntityId>
+		void ForEachCollisionEnter(Func&& _func);
+		template <typename Func>
+			requires std::is_invocable_v<Func, EntityId>
+		void ForEachCollisionStay(Func&& _func);
+		template <typename Func>
+			requires std::is_invocable_v<Func, EntityId>
+		void ForEachCollisionExit(Func&& _func);
+
 		void Draw() const;
 
 		// BoundingSphereを初期化
@@ -64,8 +75,6 @@ namespace mtgb
 
 		void OnPostRestore() override;
 		void Reset() override;
-		std::set<Collider*> onColliders_;
-		std::set<Collider*> onColldiersPrev_;
 
 		[[MT_PROPERTY()]]
 		// 当たり判定の形
@@ -79,6 +88,8 @@ namespace mtgb
 		bool isTrigger_;
 
 	  private:
+		std::unordered_set<Collider*> onColliders_;
+		std::unordered_set<Collider*> onCollidersPrev_;
 		void Push(const Collider& _other);
 		void HandleCollision(const Collider& _other);
 		void UpdateBoundingSphere();
@@ -101,4 +112,47 @@ namespace mtgb
 		[[MT_PROPERTY()]]
 		Vector3 extents_;
 	};
+
+	template <typename Func>
+		requires std::is_invocable_v<Func, EntityId>
+	inline void Collider::ForEachCollisionEnter(Func&& _func)
+	{
+		for (Collider* onCollider : onColliders_)
+		{
+			if (onCollidersPrev_.find(onCollider) == onCollidersPrev_.end())
+			{
+				// 以前は衝突してない
+				_func(onCollider->GetEntityId());
+			}
+		}
+	}
+
+	template <typename Func>
+		requires std::is_invocable_v<Func, EntityId>
+	inline void Collider::ForEachCollisionStay(Func&& _func)
+	{
+		for (Collider* onCollider : onColliders_)
+		{
+			if (onCollidersPrev_.find(onCollider) == onCollidersPrev_.end())
+				continue;
+
+			// 以前から衝突している
+			_func(onCollider->GetEntityId());
+		}
+	}
+
+	template <typename Func>
+		requires std::is_invocable_v<Func, EntityId>
+	inline void Collider::ForEachCollisionExit(Func&& _func)
+	{
+		for (Collider* onColliderPrev : onCollidersPrev_)
+		{
+			if (onColliders_.find(onColliderPrev) != onColliders_.end())
+				continue;
+
+			// 以前は衝突していて、現在はしていない
+			_func(onColliderPrev->GetEntityId());
+		}
+	}
+
 } // namespace mtgb

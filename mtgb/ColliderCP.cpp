@@ -26,7 +26,7 @@ void mtgb::ColliderCP::Update()
 		}
 
 		Collider& collider		  = pool_[i];
-		collider.onColldiersPrev_ = collider.onColliders_;
+		collider.onCollidersPrev_ = collider.onColliders_;
 		collider.onColliders_.clear();
 		pool_[i].UpdateBoundingData();
 	}

@@ -1,9 +1,5 @@
 #include "RigidBodyCP.h"
-#include "Transform.h"
-#include "GameTime.h"
 #include "ColliderCP.h"
-#include <algorithm>
-#include "Debug.h"
 mtgb::RigidBodyCP::RigidBodyCP() {}
 
 mtgb::RigidBodyCP::~RigidBodyCP() {}
@@ -21,35 +17,17 @@ void mtgb::RigidBodyCP::Update()
 		rigidBody.UpdateVelocity();
 		for (auto& collider : colliders)
 		{
-			for (Collider* onCollider : collider->onColliders_)
+			if (rigidBody.onHit_)
 			{
-				// 以前は衝突していないか否か
-				if (collider->onColldiersPrev_.find(onCollider) == collider->onColldiersPrev_.end())
-				{
-					if (rigidBody.onHit_)
-					{
-						rigidBody.onHit_(onCollider->GetEntityId());
-					}
-				}
-				else
-				{
-					if (rigidBody.onStay_)
-					{
-						rigidBody.onStay_(onCollider->GetEntityId());
-					}
-				}
+				collider->ForEachCollisionEnter(rigidBody.onHit_);
 			}
-
-			for (Collider* onColliderPrev : collider->onColldiersPrev_)
+			if (rigidBody.onStay_)
 			{
-				// 現在は衝突していないか否か
-				if (collider->onColliders_.find(onColliderPrev) == collider->onColliders_.end())
-				{
-					if (rigidBody.onExit_)
-					{
-						rigidBody.onExit_(onColliderPrev->GetEntityId());
-					}
-				}
+				collider->ForEachCollisionStay(rigidBody.onStay_);
+			}
+			if (rigidBody.onExit_)
+			{
+				collider->ForEachCollisionExit(rigidBody.onExit_);
 			}
 		}
 	}

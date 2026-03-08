@@ -368,7 +368,7 @@ void mtgb::Collider::OnPostRestore()
 void mtgb::Collider::Reset()
 {
 	onColliders_.clear();
-	onColldiersPrev_.clear();
+	onCollidersPrev_.clear();
 }
 
 void mtgb::Collider::Draw() const
