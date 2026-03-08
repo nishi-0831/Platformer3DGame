@@ -7,7 +7,7 @@ var classmtgb_1_1FbxModel =
     [ "GetAnimationController", "classmtgb_1_1FbxModel.html#a5fa0e848fe5d532fa6fe390a8bf49891", null ],
     [ "GetAnimBonePosition", "classmtgb_1_1FbxModel.html#a4cfe4f92217d7637ac7e4a4b608f5937", null ],
     [ "GetBonePosition", "classmtgb_1_1FbxModel.html#a670565187b91164dd95a76dce5032b0e", null ],
-    [ "GetFbxParts", "classmtgb_1_1FbxModel.html#a812d3185698e7e97930d107de6c245f6", null ],
+    [ "GetFbxParts", "classmtgb_1_1FbxModel.html#a31f869c1f38ac1b43f4a5332ab140a13", null ],
     [ "GetFbxScene", "classmtgb_1_1FbxModel.html#a7196235e488793d345b343e40c147342", null ],
     [ "GetFileName", "classmtgb_1_1FbxModel.html#af8166001954bc1d1a3eeefd79b49cfb6", null ],
     [ "Load", "classmtgb_1_1FbxModel.html#a58f0b2c3e5c0268c573ed445e35dcfd7", null ],

@@ -3,7 +3,6 @@ var classPropertyDisplayRegistry =
     [ "PropertyDisplayRegistry", "classPropertyDisplayRegistry.html#af4e06e78ea6c2938f986e265a88b8d12", null ],
     [ "PropertyDisplayRegistry", "classPropertyDisplayRegistry.html#ae80451588dabaa9096f2105120dea5d9", null ],
     [ "CheckCustomAttrs", "classPropertyDisplayRegistry.html#a9f0f70a014003ba66e4186b1052535f2", null ],
-    [ "CheckProxyAttrs", "classPropertyDisplayRegistry.html#aefb0db1a6ea64b7099475d8bc86bf1ee", null ],
     [ "Initialize", "classPropertyDisplayRegistry.html#a28a8021dd97f8ea30b8e1d35c769e483", null ],
     [ "Instance", "classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1", null ],
     [ "IsRegisteredType", "classPropertyDisplayRegistry.html#affc9d25f2f7cf037f29b898aa7a45225", null ],

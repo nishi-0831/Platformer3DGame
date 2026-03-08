@@ -153,7 +153,7 @@ mtgb::Audio 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00020">20</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00018">18</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="aae184b0088069fde1d7ea6b0545e212c" name="aae184b0088069fde1d7ea6b0545e212c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae184b0088069fde1d7ea6b0545e212c">&#9670;&#160;</a></span>Audio()</h2>
@@ -175,8 +175,8 @@ mtgb::Audio 連携図</div>
 <div class="line"><span class="lineno">   30</span>    , <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> { <span class="keyword">nullptr</span> }</div>
 <div class="line"><span class="lineno">   31</span>{</div>
 <div class="line"><span class="lineno">   32</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1Audio_html_a175cf448fd62a8706ea9eadde9a7f368"><div class="ttname"><a href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">mtgb::Audio::pMasteringVoice_</a></div><div class="ttdeci">IXAudio2MasteringVoice * pMasteringVoice_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00055">Audio.h:55</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Audio_html_a1919ac778affcb56b2ddc71dcc15f838"><div class="ttname"><a href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">mtgb::Audio::pXAudio2_</a></div><div class="ttdeci">ComPtr&lt; IXAudio2 &gt; pXAudio2_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00054">Audio.h:54</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a175cf448fd62a8706ea9eadde9a7f368"><div class="ttname"><a href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">mtgb::Audio::pMasteringVoice_</a></div><div class="ttdeci">IXAudio2MasteringVoice * pMasteringVoice_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00053">Audio.h:53</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a1919ac778affcb56b2ddc71dcc15f838"><div class="ttname"><a href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">mtgb::Audio::pXAudio2_</a></div><div class="ttdeci">ComPtr&lt; IXAudio2 &gt; pXAudio2_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00052">Audio.h:52</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -197,14 +197,26 @@ mtgb::Audio 連携図</div>
 
 <p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00034">34</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.begin(); itr != <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end(); itr++)</div>
 <div class="line"><span class="lineno">   37</span>    {</div>
-<div class="line"><span class="lineno">   38</span>        <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>-&gt;DestroyVoice();</div>
-<div class="line"><span class="lineno">   39</span>        <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
-<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>.Reset();</div>
-<div class="line"><span class="lineno">   42</span>}</div>
+<div class="line"><span class="lineno">   38</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(itr-&gt;second);</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.clear();</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   43</span>    {</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>-&gt;DestroyVoice();</div>
+<div class="line"><span class="lineno">   45</span>        <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    <span class="comment">// IXAudio2の解放は最後</span></div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>.Reset();</div>
+<div class="line"><span class="lineno">   50</span>}</div>
+<div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a7b2788e69185e2d4090f89c20c8ef505"><div class="ttname"><a href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">mtgb::Audio::audioClipMap_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, AudioClip *, TransparentStringHash, TransparentStringEq &gt; audioClipMap_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00054">Audio.h:54</a></div></div>
 </div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -233,34 +245,34 @@ mtgb::Audio 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00044">44</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>{</div>
-<div class="line"><span class="lineno">   46</span>    HRESULT hResult {};</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    hResult = CoInitializeEx(NULL, COINIT_MULTITHREADED);</div>
-<div class="line"><span class="lineno">   49</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
-<div class="line"><span class="lineno">   50</span>        SUCCEEDED(hResult) <span class="comment">// COMの初期化に成功</span></div>
-<div class="line"><span class="lineno">   51</span>        &amp;&amp; <span class="stringliteral">&quot;COMの初期化に失敗 @Audio::Initialize&quot;</span></div>
-<div class="line"><span class="lineno">   52</span>    );</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>    hResult = XAudio2Create(<a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>.ReleaseAndGetAddressOf());</div>
-<div class="line"><span class="lineno">   55</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
-<div class="line"><span class="lineno">   56</span>        SUCCEEDED(hResult) <span class="comment">// XAudio2の作成に成功</span></div>
-<div class="line"><span class="lineno">   57</span>        &amp;&amp; <span class="stringliteral">&quot;XAudio2の作成に失敗 @Audio::Initialize&quot;</span></div>
-<div class="line"><span class="lineno">   58</span>    );</div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>-&gt;CreateMasteringVoice(&amp;<a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>);</div>
-<div class="line"><span class="lineno">   61</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
-<div class="line"><span class="lineno">   62</span>        SUCCEEDED(hResult) <span class="comment">// MasteringVoiceの作成に成功</span></div>
-<div class="line"><span class="lineno">   63</span>        &amp;&amp; <span class="stringliteral">&quot;MasteringVoiceの作成に失敗 @Audio::Initialize&quot;</span></div>
-<div class="line"><span class="lineno">   64</span>    );</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>    <a class="code hl_function" href="namespacemtgb.html#a5e8dde9bf268b4bc0c753104f8f9d413">RegisterAudios</a>();</div>
-<div class="line"><span class="lineno">   67</span>}</div>
-<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00057">MTAssert.h:57</a></div></div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00052">52</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
+<div class="line"><span class="lineno">   54</span>    HRESULT hResult {};</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    hResult = CoInitializeEx(NULL, COINIT_MULTITHREADED);</div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
+<div class="line"><span class="lineno">   58</span>        SUCCEEDED(hResult) <span class="comment">// COMの初期化に成功</span></div>
+<div class="line"><span class="lineno">   59</span>        &amp;&amp; <span class="stringliteral">&quot;COMの初期化に失敗 @Audio::Initialize&quot;</span></div>
+<div class="line"><span class="lineno">   60</span>    );</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    hResult = XAudio2Create(<a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
+<div class="line"><span class="lineno">   64</span>        SUCCEEDED(hResult) <span class="comment">// XAudio2の作成に成功</span></div>
+<div class="line"><span class="lineno">   65</span>        &amp;&amp; <span class="stringliteral">&quot;XAudio2の作成に失敗 @Audio::Initialize&quot;</span></div>
+<div class="line"><span class="lineno">   66</span>    );</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>-&gt;CreateMasteringVoice(&amp;<a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>);</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
+<div class="line"><span class="lineno">   70</span>        SUCCEEDED(hResult) <span class="comment">// MasteringVoiceの作成に成功</span></div>
+<div class="line"><span class="lineno">   71</span>        &amp;&amp; <span class="stringliteral">&quot;MasteringVoiceの作成に失敗 @Audio::Initialize&quot;</span></div>
+<div class="line"><span class="lineno">   72</span>    );</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_function" href="namespacemtgb.html#a5e8dde9bf268b4bc0c753104f8f9d413">RegisterAudios</a>();</div>
+<div class="line"><span class="lineno">   75</span>}</div>
+<div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00048">MTAssert.h:48</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a5e8dde9bf268b4bc0c753104f8f9d413"><div class="ttname"><a href="namespacemtgb.html#a5e8dde9bf268b4bc0c753104f8f9d413">mtgb::RegisterAudios</a></div><div class="ttdeci">void RegisterAudios()</div><div class="ttdoc">ゲームで使用する音声を登録</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00017">Audio.cpp:17</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00057">massert</a>, <a class="el" href="Audio_8cpp_source.html#l00017">mtgb::RegisterAudios()</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00048">massert</a>, <a class="el" href="Audio_8cpp_source.html#l00017">mtgb::RegisterAudios()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -303,12 +315,12 @@ mtgb::Audio 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>音声クリップ</dd></dl>
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00080">80</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>{</div>
-<div class="line"><span class="lineno">   82</span>    AudioClip* audioClip = <span class="keyword">new</span> AudioClip(_filePath, <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>);</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> audioClip;</div>
-<div class="line"><span class="lineno">   85</span>}</div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00088">88</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>{</div>
+<div class="line"><span class="lineno">   90</span>    AudioClip* audioClip = <span class="keyword">new</span> AudioClip(_filePath, <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>);</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> audioClip;</div>
+<div class="line"><span class="lineno">   93</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -337,15 +349,14 @@ mtgb::Audio 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00087">87</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   88</span>{</div>
-<div class="line"><span class="lineno">   89</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.find(_soundName);</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end())</div>
-<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>    itr-&gt;second-&gt;Play();</div>
-<div class="line"><span class="lineno">   94</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1Audio_html_a7b2788e69185e2d4090f89c20c8ef505"><div class="ttname"><a href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">mtgb::Audio::audioClipMap_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, AudioClip *, TransparentStringHash, TransparentStringEq &gt; audioClipMap_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00056">Audio.h:56</a></div></div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00095">95</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>{</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.find(_soundName);</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end())</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    itr-&gt;second-&gt;Play();</div>
+<div class="line"><span class="lineno">  102</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -384,15 +395,15 @@ mtgb::Audio 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00071">71</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>{</div>
-<div class="line"><span class="lineno">   73</span>    <span class="comment">// 登録済みの場合はreturn</span></div>
-<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.contains(_soundName))</div>
-<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.emplace(_soundName, <a class="code hl_function" href="classmtgb_1_1Audio.html#ad48eedf195ae84f68a1ba72f3e320617">Load</a>(_filePath));</div>
-<div class="line"><span class="lineno">   78</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1Audio_html_ad48eedf195ae84f68a1ba72f3e320617"><div class="ttname"><a href="classmtgb_1_1Audio.html#ad48eedf195ae84f68a1ba72f3e320617">mtgb::Audio::Load</a></div><div class="ttdeci">AudioClip * Load(std::string_view _filePath)</div><div class="ttdoc">音声ファイルをロードする</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00080">Audio.cpp:80</a></div></div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00079">79</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>{</div>
+<div class="line"><span class="lineno">   81</span>    <span class="comment">// 登録済みの場合はreturn</span></div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.contains(_soundName))</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.emplace(_soundName, <a class="code hl_function" href="classmtgb_1_1Audio.html#ad48eedf195ae84f68a1ba72f3e320617">Load</a>(_filePath));</div>
+<div class="line"><span class="lineno">   86</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_ad48eedf195ae84f68a1ba72f3e320617"><div class="ttname"><a href="classmtgb_1_1Audio.html#ad48eedf195ae84f68a1ba72f3e320617">mtgb::Audio::Load</a></div><div class="ttdeci">AudioClip * Load(std::string_view _filePath)</div><div class="ttdoc">音声ファイルをロードする</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00088">Audio.cpp:88</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="Audio_8cpp_source.html#l00017">mtgb::RegisterAudios()</a>.</p>
 <div class="dynheader">
@@ -429,7 +440,7 @@ mtgb::Audio 連携図</div>
 
 <p>開放処理 </p>
 
-<p><a class="el" href="classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1Fbx.html#ada19e401d03b5d2056fba392808ec546">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b">mtgb::WindowManager</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ComponentT, DerivedT, IsSingleton &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; ImageRenderer, ImageRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ac95d072ff6d22497e3bec3e5ffa4cd01">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#aaea7343128cc8e07be593ff933bffee6">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1Input.html#a069579821c540ac304ae750c3406f24a">mtgb::Input</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a>, <a class="el" href="classmtgb_1_1Timer.html#aff73a31a4227b61a53f4d7478652eca0">mtgb::Timer</a> (計21項目)で再実装されています。</p>
+<p><a class="el" href="classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b">mtgb::ImGuiRenderer</a>, <a class="el" href="classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2">mtgb::TextCache</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ae1beb41221e47868e09b1450cdee75fb">mtgb::ComponentPool&lt; ComponentT, DerivedT &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ae1beb41221e47868e09b1450cdee75fb">mtgb::ComponentPool&lt; Collider, ColliderCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ae1beb41221e47868e09b1450cdee75fb">mtgb::ComponentPool&lt; ImageRenderer, ImageRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ae1beb41221e47868e09b1450cdee75fb">mtgb::ComponentPool&lt; Interpolator, InterpolatorCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ae1beb41221e47868e09b1450cdee75fb">mtgb::ComponentPool&lt; MeshRenderer, MeshRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ae1beb41221e47868e09b1450cdee75fb">mtgb::ComponentPool&lt; RigidBody, RigidBodyCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ae1beb41221e47868e09b1450cdee75fb">mtgb::ComponentPool&lt; TextRenderer, TextRendererCP &gt;</a>, <a class="el" href="classmtgb_1_1ComponentPool.html#ae1beb41221e47868e09b1450cdee75fb">mtgb::ComponentPool&lt; Transform, TransformCP &gt;</a>, <a class="el" href="classmtgb_1_1Direct2D.html#a0b613a35e929c42072eb0a28477b1f92">mtgb::Direct2D</a>, <a class="el" href="classmtgb_1_1DirectWrite.html#a12660781164dad0bb224b682961153db">mtgb::DirectWrite</a>, <a class="el" href="classmtgb_1_1DirectX11Manager.html#a0691f1df5a5ae0670b2d25a3f5353031">mtgb::DirectX11Manager</a>, <a class="el" href="classmtgb_1_1EffectManager.html#aaea7343128cc8e07be593ff933bffee6">mtgb::EffectManager</a>, <a class="el" href="classmtgb_1_1Fbx.html#a4c68cb7c429205a44770cc1bd93fc5e6">mtgb::Fbx</a>, <a class="el" href="classmtgb_1_1ImGuiEditor.html#a8ec821695a48668c475bbcd206070e5d">mtgb::ImGuiEditor</a>, <a class="el" href="classmtgb_1_1Input.html#a069579821c540ac304ae750c3406f24a">mtgb::Input</a>, <a class="el" href="classmtgb_1_1OBJ.html#acc72f3ba716b9e4c637f1aa4161a4037">mtgb::OBJ</a>, <a class="el" href="classmtgb_1_1Timer.html#aff73a31a4227b61a53f4d7478652eca0">mtgb::Timer</a>, <a class="el" href="classmtgb_1_1WindowContextResourceManager.html#a89bedbab9624771ef11113bf28df3539">mtgb::WindowContextResourceManager</a>, <a class="el" href="classmtgb_1_1WindowManager.html#a54dd9cd9c7009623b4b73394fc5c5324">mtgb::WindowManager</a> (計21項目)で再実装されています。</p>
 
 <p class="definition"> <a class="el" href="ISystem_8h_source.html">ISystem.h</a> の <a class="el" href="ISystem_8h_source.html#l00016">16</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>{}</div>
@@ -469,8 +480,8 @@ mtgb::Audio 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00069">69</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>{}</div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00077">77</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -495,7 +506,7 @@ mtgb::Audio 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00056">56</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00054">54</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -519,7 +530,7 @@ mtgb::Audio 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00055">55</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00053">53</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -543,7 +554,7 @@ mtgb::Audio 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00054">54</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00052">52</a> 行目に定義があります。</p>
 
 </div>
 </div>

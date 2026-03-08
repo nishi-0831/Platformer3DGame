@@ -141,23 +141,23 @@ template&lt;typename Type &gt; </div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00082">82</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>    {</div>
-<div class="line"><span class="lineno">   84</span>        <span class="comment">// TODO : Setに渡した関数自体はCommandとして作られないという説明をするようコメントを更新</span></div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>        <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#ad016d98207d023e8392937658694cfef">RegisterFunc</a>&lt;Type&gt;(</div>
-<div class="line"><span class="lineno">   87</span>            [=](std::any _target, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name) -&gt; <a class="code hl_class" href="classCommand.html">Command</a>*</div>
-<div class="line"><span class="lineno">   88</span>            {</div>
-<div class="line"><span class="lineno">   89</span>                _func(std::any_cast&lt;Type*&gt;(_target), _name);</div>
-<div class="line"><span class="lineno">   90</span>                <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   91</span>            }</div>
-<div class="line"><span class="lineno">   92</span>        );</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
+<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00080">80</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>    {</div>
+<div class="line"><span class="lineno">   82</span>        <span class="comment">// TODO : Setに渡した関数自体はCommandとして作られないという説明をするようコメントを更新</span></div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#ad016d98207d023e8392937658694cfef">RegisterFunc</a>&lt;Type&gt;(</div>
+<div class="line"><span class="lineno">   85</span>            [=](std::any _target, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name) -&gt; <a class="code hl_class" href="classCommand.html">Command</a>*</div>
+<div class="line"><span class="lineno">   86</span>            {</div>
+<div class="line"><span class="lineno">   87</span>                _func(std::any_cast&lt;Type*&gt;(_target), _name);</div>
+<div class="line"><span class="lineno">   88</span>                <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   89</span>            }</div>
+<div class="line"><span class="lineno">   90</span>        );</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
 <div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00004">Command.h:5</a></div></div>
-<div class="ttc" id="aclassPropertyDisplayRegistry_html_ad016d98207d023e8392937658694cfef"><div class="ttname"><a href="classPropertyDisplayRegistry.html#ad016d98207d023e8392937658694cfef">PropertyDisplayRegistry::RegisterFunc</a></div><div class="ttdeci">void RegisterFunc(std::function&lt; Command *(std::any, const char *)&gt; _func)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00069">TypeRegistry.h:69</a></div></div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html_ad016d98207d023e8392937658694cfef"><div class="ttname"><a href="classPropertyDisplayRegistry.html#ad016d98207d023e8392937658694cfef">PropertyDisplayRegistry::RegisterFunc</a></div><div class="ttdeci">void RegisterFunc(std::function&lt; Command *(std::any, const char *)&gt; _func)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00067">TypeRegistry.h:67</a></div></div>
 <div class="ttc" id="aclassPropertyDisplayRegistry_html_afc910235065385c0a147e03f9a2305e1"><div class="ttname"><a href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a></div><div class="ttdeci">static PropertyDisplayRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00010">TypeRegistry.cpp:10</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8cpp_source.html#l00010">PropertyDisplayRegistry::Instance()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00069">PropertyDisplayRegistry::RegisterFunc()</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8cpp_source.html#l00010">PropertyDisplayRegistry::Instance()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00067">PropertyDisplayRegistry::RegisterFunc()</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="MTImGui_8cpp_source.html#l00216">mtgb::MTImGui::SetupShowFunc()</a>.</p>
 <div class="dynheader">

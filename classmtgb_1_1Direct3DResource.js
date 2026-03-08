@@ -3,7 +3,7 @@ var classmtgb_1_1Direct3DResource =
     [ "Direct3DResource", "classmtgb_1_1Direct3DResource.html#a028867d4c20d19552419fab305472a72", null ],
     [ "~Direct3DResource", "classmtgb_1_1Direct3DResource.html#a16e72128287a7c2ef6232900503401bc", null ],
     [ "Direct3DResource", "classmtgb_1_1Direct3DResource.html#a63bf59b5bea95beda1d56524c5e84171", null ],
-    [ "GetViewport", "classmtgb_1_1Direct3DResource.html#a0067d273c8cb49cd3d4f6559d885545a", null ],
+    [ "GetViewport", "classmtgb_1_1Direct3DResource.html#a42bc0b0a29ae714c1c26ec735d8422b3", null ],
     [ "GetWindowContext", "classmtgb_1_1Direct3DResource.html#ae3c7d963d4b5d3d5ca59483bff874a98", null ],
     [ "OnResize", "classmtgb_1_1Direct3DResource.html#a581a88c3cd50ac50a5965fecf079d35c", null ],
     [ "operator=", "classmtgb_1_1Direct3DResource.html#a7dd3f98a2c5f31a9911b7b21d6d41bcc", null ],

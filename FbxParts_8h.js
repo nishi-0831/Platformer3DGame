@@ -6,5 +6,5 @@ var FbxParts_8h =
     [ "mtgb::FbxParts::Material", "structmtgb_1_1FbxParts_1_1Material.html", "structmtgb_1_1FbxParts_1_1Material" ],
     [ "mtgb::FbxParts::BoneMatrices", "structmtgb_1_1FbxParts_1_1BoneMatrices.html", "structmtgb_1_1FbxParts_1_1BoneMatrices" ],
     [ "mtgb::FbxParts::Bone", "structmtgb_1_1FbxParts_1_1Bone.html", "structmtgb_1_1FbxParts_1_1Bone" ],
-    [ "MAX_BONE_COUNT", "FbxParts_8h.html#a4db793b5c9051485f276693c97e7e757", null ]
+    [ "MAX_BONE_COUNT", "FbxParts_8h.html#a847be59dcb6561e7d9080bb0b3446c36", null ]
 ];

@@ -95,11 +95,6 @@ var hierarchy =
     [ "Example_Test", "classExample__Test.html", [
       [ "Tag", "classTag.html", null ]
     ] ],
-    [ "std::false_type", null, [
-      [ "JsonConverter::detail::has_from_json< T, typename >", "structJsonConverter_1_1detail_1_1has__from__json.html", null ],
-      [ "JsonConverter::detail::has_to_json< T, typename >", "structJsonConverter_1_1detail_1_1has__to__json.html", null ],
-      [ "mtgb::detail::has_register_imgui< T, typename >", "structmtgb_1_1detail_1_1has__register__imgui.html", null ]
-    ] ],
     [ "mtgb::FbxAnimationClip", "structmtgb_1_1FbxAnimationClip.html", null ],
     [ "mtgb::FbxAnimationController", "classmtgb_1_1FbxAnimationController.html", null ],
     [ "Fn_Test", "classFn__Test.html", null ],
@@ -182,7 +177,7 @@ var hierarchy =
       [ "mtgb::ComponentPool< Transform, TransformCP >", "classmtgb_1_1ComponentPool.html", [
         [ "mtgb::TransformCP", "classmtgb_1_1TransformCP.html", null ]
       ] ],
-      [ "mtgb::ComponentPool< ComponentT, DerivedT, IsSingleton >", "classmtgb_1_1ComponentPool.html", null ]
+      [ "mtgb::ComponentPool< ComponentT, DerivedT >", "classmtgb_1_1ComponentPool.html", null ]
     ] ],
     [ "ID3DInclude", null, [
       [ "mtgb::HLSLInclude", "structmtgb_1_1HLSLInclude.html", null ]
@@ -226,7 +221,7 @@ var hierarchy =
     [ "mtgb::InputData", "classmtgb_1_1InputData.html", null ],
     [ "mtgb::InputUtil", "classmtgb_1_1InputUtil.html", null ],
     [ "InterpolatorState", "structInterpolatorState.html", null ],
-    [ "mtgb::IntersectInfo", "structmtgb_1_1IntersectInfo.html", null ],
+    [ "mtgb::Intersection::IntersectInfo", "structmtgb_1_1Intersection_1_1IntersectInfo.html", null ],
     [ "mtgb::IOriginalShader< EnumStructT, OriginalShaderT >", "classmtgb_1_1IOriginalShader.html", null ],
     [ "mtgb::IProfile< T, ExtendT >", "classmtgb_1_1IProfile.html", null ],
     [ "mtgb::IProfile< int, ProfileInt >", "classmtgb_1_1IProfile.html", [
@@ -275,7 +270,7 @@ var hierarchy =
       [ "mtgb::Audio", "classmtgb_1_1Audio.html", null ],
       [ "mtgb::CameraSystem", "classmtgb_1_1CameraSystem.html", null ],
       [ "mtgb::CommandHistoryManager", "classmtgb_1_1CommandHistoryManager.html", null ],
-      [ "mtgb::ComponentPool< ComponentT, DerivedT, IsSingleton >", "classmtgb_1_1ComponentPool.html", null ],
+      [ "mtgb::ComponentPool< ComponentT, DerivedT >", "classmtgb_1_1ComponentPool.html", null ],
       [ "mtgb::ComponentRegistry", "classmtgb_1_1ComponentRegistry.html", null ],
       [ "mtgb::Debug", "classmtgb_1_1Debug.html", null ],
       [ "mtgb::Direct2D", "classmtgb_1_1Direct2D.html", null ],
@@ -377,15 +372,9 @@ var hierarchy =
     [ "TextRendererState", "structTextRendererState.html", null ],
     [ "mtgb::Texture2D", "classmtgb_1_1Texture2D.html", null ],
     [ "mtgb::PlaneUVScroll::TimeBuffer", "structmtgb_1_1PlaneUVScroll_1_1TimeBuffer.html", null ],
-    [ "mtgb::TransformCore", "structmtgb_1_1TransformCore.html", null ],
     [ "TransformState", "structTransformState.html", null ],
     [ "mtgb::TransparentStringEq", "structmtgb_1_1TransparentStringEq.html", null ],
     [ "mtgb::TransparentStringHash", "structmtgb_1_1TransparentStringHash.html", null ],
-    [ "std::true_type", null, [
-      [ "JsonConverter::detail::has_from_json< T, std::void_t< decltype(std::declval< const nlohmann::json & >().get< T >())> >", "structJsonConverter_1_1detail_1_1has__from__json_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_5539f2fb88d51f29921dbdffee5ec939.html", null ],
-      [ "JsonConverter::detail::has_to_json< T, std::void_t< decltype(std::declval< nlohmann::json & >()=std::declval< const T & >())> >", "structJsonConverter_1_1detail_1_1has__to__json_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1d88caef94b5dc2b8f52ac6699f6f6cccb.html", null ],
-      [ "mtgb::detail::has_register_imgui< T, std::void_t< decltype(T::RegisterImGui())> >", "structmtgb_1_1detail_1_1has__register__imgui_3_01T_00_01std_1_1void__t_3_01decltype_07T_1_1RegisterImGui_07_08_08_4_01_4.html", null ]
-    ] ],
     [ "refl::attr::usage::type", null, [
       [ "DisplayName", "structDisplayName.html", null ],
       [ "MatrixShow", "structMatrixShow.html", null ],

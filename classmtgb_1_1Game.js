@@ -1,7 +1,7 @@
 var classmtgb_1_1Game =
 [
     [ "RegisterSystemFuncHolder", "classmtgb_1_1Game_1_1RegisterSystemFuncHolder.html", "classmtgb_1_1Game_1_1RegisterSystemFuncHolder" ],
-    [ "RegisterSystem", "classmtgb_1_1Game.html#a7eea92b18fc37c8fc4aaca16bb3323af", null ],
+    [ "RegisterSystem", "classmtgb_1_1Game.html#a38bd9c3e1b8fd3519fff96dba55e6235", null ],
     [ "SystemUpdateType", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b", [
       [ "DONT_CALL_ME", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba6c3bc398fab8a28ec70599e05ea901a5", null ],
       [ "CYCLE", "classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba11729ccb73dc5f4f62d40435e8a0c078", null ],
@@ -14,15 +14,15 @@ var classmtgb_1_1Game =
     [ "DeserializeComponents", "classmtgb_1_1Game.html#aeaa55851e01df60f0661fc0b24e65d7a", null ],
     [ "Exit", "classmtgb_1_1Game.html#a89610789c1e997fbf101d1137f9407a9", null ],
     [ "GetComponentFactory", "classmtgb_1_1Game.html#a66362917a1d96665e8160adcb72f031f", null ],
-    [ "GetCP", "classmtgb_1_1Game.html#a6ccdf8fa3e7bea6e9f5b651f2db9669a", null ],
-    [ "GetRenderableCPs", "classmtgb_1_1Game.html#a3e92de67f7858ed8f5a9a5adcf9cb75b", null ],
+    [ "GetCP", "classmtgb_1_1Game.html#ae18f73b98cae6067735dcb83b8e18334", null ],
+    [ "GetRenderableCPs", "classmtgb_1_1Game.html#a9313d201cb3552b29255d264e7111865", null ],
     [ "GetScreenSize", "classmtgb_1_1Game.html#a5bb1e92d082cafb5312252c5e7290206", null ],
     [ "GetTitle", "classmtgb_1_1Game.html#a175c8a3ebfd3bf724b97505fcfc1e80f", null ],
     [ "GetVersion", "classmtgb_1_1Game.html#a94f6935c2fedd362f4cc47926af6c79b", null ],
     [ "InitializeSystems", "classmtgb_1_1Game.html#acce77edf9df17d4d89bc0e2d970f6c4c", null ],
     [ "ReleaseSystems", "classmtgb_1_1Game.html#ad8e951e959e15a61ba47b16a9867d013", null ],
-    [ "RemoveEntityAllComponent", "classmtgb_1_1Game.html#afa7f596ea64797f4dff66edd5582f1bf", null ],
-    [ "RemoveEntityComponent", "classmtgb_1_1Game.html#a4d3520ed9ed38945557f6cfc2a3e4224", null ],
+    [ "RemoveEntityAllComponent", "classmtgb_1_1Game.html#abdefeca2ccb6e6a93d268c1a62bd0b90", null ],
+    [ "RemoveEntityComponent", "classmtgb_1_1Game.html#a2db541a4846fa7d29ddec68cbc3d5c35", null ],
     [ "Run", "classmtgb_1_1Game.html#ae241b7677e1c59407d3f80fdc2040547", null ],
     [ "RunLoopGameCycle", "classmtgb_1_1Game.html#abaab9ce3626b3a5f3a0e26f602426494", null ],
     [ "SerializeComponent", "classmtgb_1_1Game.html#a8b552e60ee7d044929c35b08c3b46030", null ],

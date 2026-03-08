@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['w_0',['W',['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a61e9c06ea9a85a5088a499df6458d276',1,'W():&#160;InputKeyCode.h'],['../structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992',1,'mtgb::Quaternion::W() const'],['../structmtgb_1_1Quaternion.html#a7afbdbc739d85ee451a37cd345427ac2',1,'mtgb::Quaternion::W()']]],
-  ['wait_1',['Wait',['../classPatrolChargerEnemy.html#a7af8a1d24439f3fc5a4e90c21ec9f51e',1,'PatrolChargerEnemy']]],
-  ['wait_2',['WAIT',['../classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498ad5cc6a0064b5c25ba37826aa3fda910c',1,'PatrolChargerEnemy']]],
+  ['w_0',['W',['../structmtgb_1_1Quaternion.html#a7afbdbc739d85ee451a37cd345427ac2',1,'mtgb::Quaternion::W()'],['../structmtgb_1_1Quaternion.html#af8eb563825e363c5a18a7b247f55e992',1,'mtgb::Quaternion::W() const'],['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a61e9c06ea9a85a5088a499df6458d276',1,'W():&#160;InputKeyCode.h']]],
+  ['wait_1',['WAIT',['../classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498ad5cc6a0064b5c25ba37826aa3fda910c',1,'PatrolChargerEnemy']]],
+  ['wait_2',['Wait',['../classPatrolChargerEnemy.html#a7af8a1d24439f3fc5a4e90c21ec9f51e',1,'PatrolChargerEnemy']]],
   ['waitframe_3',['WaitFrame',['../classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53',1,'mtgb::Time']]],
   ['waitframe_5f_4',['waitFrame_',['../classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad',1,'mtgb::Time']]],
   ['waittime_5f_5',['waitTime_',['../classPatrolChargerEnemy.html#ad7a69752dcdc509d547b1f3d9836a1ea',1,'PatrolChargerEnemy']]],
@@ -28,13 +28,13 @@ var searchData=
   ['white_25',['WHITE',['../structmtgb_1_1Color.html#ac5ba2aff0a58243f194579b54e0862acaf56aa40412b574bb5b3feba5b9e2be32',1,'mtgb::Color']]],
   ['widetomulti_26',['WideToMulti',['../namespacemtgb.html#a08e91c468d83ddc1eb6ce734d3900d0f',1,'mtgb::WideToMulti(const std::wstring &amp;_wstring)'],['../namespacemtgb.html#adc8c20922776d57ec11b4e9edaf40e52',1,'mtgb::WideToMulti(const wchar_t *_wstring)']]],
   ['widetoutf8_27',['WideToUTF8',['../namespacemtgb.html#a7c912560b5d5b96e146066d28ef4da99',1,'mtgb::WideToUTF8(const std::wstring &amp;_wstring)'],['../namespacemtgb.html#a274542571e8161144eb6ddaa20f32fbd',1,'mtgb::WideToUTF8(const wchar_t *_wstring)']]],
-  ['width_28',['width',['../structmtgb_1_1WindowConfig.html#a31dc303d9521454755b8ce82c53313cf',1,'mtgb::WindowConfig::width()'],['../structmtgb_1_1RectT.html#a151ca124d3bd9f94d223079a3953e27d',1,'mtgb::RectT::width()'],['../structmtgb_1_1TextLayoutData.html#a9a7bb4b6b6b794f46fb3fb20b8b62291',1,'mtgb::TextLayoutData::width()'],['../classmtgb_1_1TerrainReader.html#afbf0194fa82f1aef01bbc1cb531cfd6b',1,'mtgb::TerrainReader::width()']]],
+  ['width_28',['width',['../structmtgb_1_1TextLayoutData.html#a9a7bb4b6b6b794f46fb3fb20b8b62291',1,'mtgb::TextLayoutData::width()'],['../structmtgb_1_1RectT.html#a151ca124d3bd9f94d223079a3953e27d',1,'mtgb::RectT::width()'],['../classmtgb_1_1TerrainReader.html#afbf0194fa82f1aef01bbc1cb531cfd6b',1,'mtgb::TerrainReader::width()'],['../structmtgb_1_1WindowConfig.html#a31dc303d9521454755b8ce82c53313cf',1,'mtgb::WindowConfig::width()']]],
   ['widthscale_29',['widthScale',['../classmtgb_1_1TerrainReader.html#acbbe0e2f72660c4c652de87bb6daf2bd',1,'mtgb::TerrainReader']]],
   ['winctxresmanager_30',['WinCtxResManager',['../namespacemtgb.html#a9eed60a2e95d069321022fb7f7acf49d',1,'mtgb']]],
   ['windowconfig_31',['WindowConfig',['../structmtgb_1_1WindowConfig.html',1,'mtgb']]],
   ['windowconfigmap_5f_32',['windowConfigMap_',['../classmtgb_1_1WindowManager.html#acd938f8c6d811d9b8b4f220642f43f2f',1,'mtgb::WindowManager']]],
-  ['windowcontext_33',['WindowContext',['../namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1',1,'mtgb']]],
-  ['windowcontext_34',['windowContext',['../structmtgb_1_1DetectorConfigBase.html#afab0d3e876a91c4e68b4dadd3b2c6f4f',1,'mtgb::DetectorConfigBase']]],
+  ['windowcontext_33',['windowContext',['../structmtgb_1_1DetectorConfigBase.html#afab0d3e876a91c4e68b4dadd3b2c6f4f',1,'mtgb::DetectorConfigBase']]],
+  ['windowcontext_34',['WindowContext',['../namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1',1,'mtgb']]],
   ['windowcontext_2ecpp_35',['WindowContext.cpp',['../WindowContext_8cpp.html',1,'']]],
   ['windowcontext_2eh_36',['WindowContext.h',['../WindowContext_8h.html',1,'']]],
   ['windowcontext_5f_37',['windowContext_',['../classmtgb_1_1WindowContextResource.html#a8c2d2eae95241847d06c966d7f39199a',1,'mtgb::WindowContextResource']]],
@@ -71,6 +71,5 @@ var searchData=
   ['worldtoscreendata_68',['WorldToScreenData',['../structmtgb_1_1WorldToScreenData.html',1,'mtgb']]],
   ['worldtoscreendata_2eh_69',['WorldToScreenData.h',['../WorldToScreenData_8h.html',1,'']]],
   ['worldtoscreendatas_5f_70',['worldToScreenDatas_',['../classmtgb_1_1CameraSystem.html#af342f222ff8a4a055517b5d4554a8401',1,'mtgb::CameraSystem']]],
-  ['write_71',['Write',['../classmtbin_1_1MemoryStream.html#a6eb3030160111d3810468f88d51ab05a',1,'mtbin::MemoryStream::Write(T *_pArray, const int &amp;_arrayLength)'],['../classmtbin_1_1MemoryStream.html#a73214f8f501c9bf0bf6770ee9373befb',1,'mtbin::MemoryStream::Write(T _value)']]],
-  ['write_72',['write',['../structcmd_8h.html#af2a3ea719b83f672637febdd87c36c36',1,'structcmd.h']]]
+  ['write_71',['write',['../structcmd_8h.html#af2a3ea719b83f672637febdd87c36c36',1,'structcmd.h']]]
 ];

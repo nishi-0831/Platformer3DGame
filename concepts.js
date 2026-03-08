@@ -1,17 +1,23 @@
 var concepts =
 [
+    [ "JsonConverter", "namespaceJsonConverter.html", [
+      [ "detail", "namespaceJsonConverter_1_1detail.html", [
+        [ "HasToJson", "conceptJsonConverter_1_1detail_1_1HasToJson.html", null ],
+        [ "HasFromJson", "conceptJsonConverter_1_1detail_1_1HasFromJson.html", null ]
+      ] ]
+    ] ],
     [ "mtbit", "namespacemtbit.html", [
       [ "IsEnumStruct", "conceptmtbit_1_1IsEnumStruct.html", null ],
       [ "BitFlagEnumStruct", "conceptmtbit_1_1BitFlagEnumStruct.html", null ]
     ] ],
     [ "mtgb", "namespacemtgb.html", [
-      [ "ComponentDataT", "conceptmtgb_1_1ComponentDataT.html", null ],
-      [ "DerivedFromDataT", "conceptmtgb_1_1DerivedFromDataT.html", null ],
-      [ "ComponentFromDataT", "conceptmtgb_1_1ComponentFromDataT.html", null ],
-      [ "MementoT", "conceptmtgb_1_1MementoT.html", null ],
-      [ "ComponentWithMementoT", "conceptmtgb_1_1ComponentWithMementoT.html", null ],
-      [ "StatefulComponentT", "conceptmtgb_1_1StatefulComponentT.html", null ],
-      [ "ComponentT", "conceptmtgb_1_1ComponentT.html", null ],
+      [ "detail", "namespacemtgb_1_1detail.html", [
+        [ "HasRegisterImGui", "conceptmtgb_1_1detail_1_1HasRegisterImGui.html", null ]
+      ] ],
+      [ "HasSaveToMementoMethod", "conceptmtgb_1_1HasSaveToMementoMethod.html", null ],
+      [ "HasRestoreFromMementoMethod", "conceptmtgb_1_1HasRestoreFromMementoMethod.html", null ],
+      [ "DerivedIComponent", "conceptmtgb_1_1DerivedIComponent.html", null ],
+      [ "IComponentWithMemento", "conceptmtgb_1_1IComponentWithMemento.html", null ],
       [ "IsEnumStruct", "conceptmtgb_1_1IsEnumStruct.html", null ],
       [ "Arithmetic", "conceptmtgb_1_1Arithmetic.html", null ]
     ] ],

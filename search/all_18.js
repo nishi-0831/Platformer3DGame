@@ -4,5 +4,6 @@ var searchData=
   ['x_1',['X',['../structmtgb_1_1Quaternion.html#a2ea703d13738f74f3f3ebd242f929bac',1,'mtgb::Quaternion::X() const'],['../structmtgb_1_1Quaternion.html#aba6622ba793898732cdc31e9c22d0542',1,'mtgb::Quaternion::X()'],['../namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8aa02129bb861061d1a052c592e2dc6b383',1,'mtgb::X()'],['../InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383',1,'X():&#160;InputKeyCode.h'],['../InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9a02129bb861061d1a052c592e2dc6b383',1,'X():&#160;InputPadCode.h'],['../InputPadCode_8h.html#a7f998f31f782d59044f459491efc3fc9a02129bb861061d1a052c592e2dc6b383',1,'X():&#160;InputPadCode.h']]],
   ['xbox_2',['XBOX',['../namespacemtgb.html#ad5fce522aec9941a8920f42294209e65afe5f3ddabe2d78e8fa74cb11e1d035fc',1,'mtgb']]],
   ['xinputpadcode_3',['XInputPadCode',['../InputPadCode_8h.html#aa71c71268d67fbdf3e2b5d3f877f55d9',1,'InputPadCode.h']]],
-  ['xrange_4',['xRange',['../structmtgb_1_1InputConfig.html#a2c986357e8ac28768df8a2fe2af00172',1,'mtgb::InputConfig']]]
+  ['xmvectorisunit_4',['XMVECTORIsUnit',['../namespacemtgb_1_1Intersection.html#a56b2065d06b98945b8290ccc441fb5ea',1,'mtgb::Intersection']]],
+  ['xrange_5',['xRange',['../structmtgb_1_1InputConfig.html#a2c986357e8ac28768df8a2fe2af00172',1,'mtgb::InputConfig']]]
 ];

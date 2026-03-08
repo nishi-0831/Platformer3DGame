@@ -37,7 +37,7 @@ var searchData=
   ['interpolator_34',['Interpolator',['../classmtgb_1_1Interpolator.html',1,'mtgb']]],
   ['interpolatorcp_35',['InterpolatorCP',['../classmtgb_1_1InterpolatorCP.html',1,'mtgb']]],
   ['interpolatorstate_36',['InterpolatorState',['../structInterpolatorState.html',1,'']]],
-  ['intersectinfo_37',['IntersectInfo',['../structmtgb_1_1IntersectInfo.html',1,'mtgb']]],
+  ['intersectinfo_37',['IntersectInfo',['../structmtgb_1_1Intersection_1_1IntersectInfo.html',1,'mtgb::Intersection']]],
   ['ioriginalshader_38',['IOriginalShader',['../classmtgb_1_1IOriginalShader.html',1,'mtgb']]],
   ['iprofile_39',['IProfile',['../classmtgb_1_1IProfile.html',1,'mtgb']]],
   ['iprofile_3c_20int_2c_20profileint_20_3e_40',['IProfile&lt; int, ProfileInt &gt;',['../classmtgb_1_1IProfile.html',1,'mtgb']]],

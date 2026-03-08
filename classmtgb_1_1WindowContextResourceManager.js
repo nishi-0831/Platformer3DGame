@@ -10,7 +10,7 @@ var classmtgb_1_1WindowContextResourceManager =
     [ "OnResizeAll", "classmtgb_1_1WindowContextResourceManager.html#a09dd7fcc8d31fe892d5d1ab776c90e99", null ],
     [ "RegisterFactory", "classmtgb_1_1WindowContextResourceManager.html#a2d4c5e1e634d095b8ef187b296c146dc", null ],
     [ "RegisterResourceTypes", "classmtgb_1_1WindowContextResourceManager.html#ac633452c55c559ea86c7c47ded503a9c", null ],
-    [ "Release", "classmtgb_1_1WindowContextResourceManager.html#ac1dbb2741c5627e54dc8872f6c5f1c14", null ],
+    [ "Release", "classmtgb_1_1WindowContextResourceManager.html#a89bedbab9624771ef11113bf28df3539", null ],
     [ "SwapResource", "classmtgb_1_1WindowContextResourceManager.html#aa3dd385cf770b696ff34dd12b0e47bb3", null ],
     [ "Update", "classmtgb_1_1WindowContextResourceManager.html#a2cc644c2bd4bd70d1e2d84fe25138dc7", null ],
     [ "collectionMap_", "classmtgb_1_1WindowContextResourceManager.html#af48467561ead10f179785d19c73c0a1f", null ],

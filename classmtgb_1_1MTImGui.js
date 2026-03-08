@@ -2,10 +2,11 @@ var classmtgb_1_1MTImGui =
 [
     [ "MTImGui", "classmtgb_1_1MTImGui.html#ac531bcfd6339f8d63df4ecab9373b144", null ],
     [ "MTImGui", "classmtgb_1_1MTImGui.html#a247f06b966ec09fedefcd6ee23855570", null ],
+    [ "MTImGui", "classmtgb_1_1MTImGui.html#a01bd4aca006518ce064fb43e284a4e03", null ],
     [ "~MTImGui", "classmtgb_1_1MTImGui.html#a734529bbde3e68f851b66fc7454e7e6f", null ],
     [ "ChangeAllWindowOpen", "classmtgb_1_1MTImGui.html#a0300368012e12adb81b7db788b132b77", null ],
     [ "ChangeWindowOpen", "classmtgb_1_1MTImGui.html#a65cbd581d9feb766034c960b21b2f08b", null ],
-    [ "DirectShow", "classmtgb_1_1MTImGui.html#ae90adc7088ed07fe92310d50ab70df16", null ],
+    [ "DirectShow", "classmtgb_1_1MTImGui.html#a73fb695d95ea9b405d8d64430356c710", null ],
     [ "DrawCone", "classmtgb_1_1MTImGui.html#a82d1eeb545c6e973943f03f84b2f0104", null ],
     [ "DrawLine", "classmtgb_1_1MTImGui.html#a003f5ff7f3d5b4d0417a5749961a950b", null ],
     [ "DrawLineImpl", "classmtgb_1_1MTImGui.html#a0ddaa80190cf7fc2738177a7a99882bc", null ],

@@ -7,8 +7,6 @@ var classmtgb_1_1GameObjectGenerator =
     [ "GenerateFromJson", "classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f", null ],
     [ "GetInstance", "classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf", null ],
     [ "Initialize", "classmtgb_1_1GameObjectGenerator.html#a6eb01f32085ac8d3a7d434e6b70439be", null ],
-    [ "RegisterCommandListener", "classmtgb_1_1GameObjectGenerator.html#a6b124991e9a49adede9355605b79eee0", null ],
-    [ "commandListener_", "classmtgb_1_1GameObjectGenerator.html#a8797f1085dbd61a40710ba9b5cc40d77", null ],
     [ "gameObjFactory_", "classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef", null ],
     [ "pInstance_", "classmtgb_1_1GameObjectGenerator.html#abefdbc5e7b31cee2593651ae3d30427a", null ]
 ];

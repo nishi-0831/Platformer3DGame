@@ -3,14 +3,6 @@ var annotated_dup =
     [ "docstring", "namespacedocstring.html", [
       [ "PyClass", "classdocstring_1_1PyClass.html", "classdocstring_1_1PyClass" ]
     ] ],
-    [ "JsonConverter", "namespaceJsonConverter.html", [
-      [ "detail", "namespaceJsonConverter_1_1detail.html", [
-        [ "has_from_json", "structJsonConverter_1_1detail_1_1has__from__json.html", null ],
-        [ "has_from_json< T, std::void_t< decltype(std::declval< const nlohmann::json & >().get< T >())> >", "structJsonConverter_1_1detail_1_1has__from__json_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_5539f2fb88d51f29921dbdffee5ec939.html", null ],
-        [ "has_to_json", "structJsonConverter_1_1detail_1_1has__to__json.html", null ],
-        [ "has_to_json< T, std::void_t< decltype(std::declval< nlohmann::json & >()=std::declval< const T & >())> >", "structJsonConverter_1_1detail_1_1has__to__json_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1d88caef94b5dc2b8f52ac6699f6f6cccb.html", null ]
-      ] ]
-    ] ],
     [ "mtbin", "namespacemtbin.html", [
       [ "MemoryStream", "classmtbin_1_1MemoryStream.html", "classmtbin_1_1MemoryStream" ]
     ] ],
@@ -18,9 +10,8 @@ var annotated_dup =
       [ "BitFlag", "classmtbit_1_1BitFlag.html", "classmtbit_1_1BitFlag" ]
     ] ],
     [ "mtgb", "namespacemtgb.html", [
-      [ "detail", "namespacemtgb_1_1detail.html", [
-        [ "has_register_imgui", "structmtgb_1_1detail_1_1has__register__imgui.html", null ],
-        [ "has_register_imgui< T, std::void_t< decltype(T::RegisterImGui())> >", "structmtgb_1_1detail_1_1has__register__imgui_3_01T_00_01std_1_1void__t_3_01decltype_07T_1_1RegisterImGui_07_08_08_4_01_4.html", null ]
+      [ "Intersection", "namespacemtgb_1_1Intersection.html", [
+        [ "IntersectInfo", "structmtgb_1_1Intersection_1_1IntersectInfo.html", "structmtgb_1_1Intersection_1_1IntersectInfo" ]
       ] ],
       [ "Mathf", "namespacemtgb_1_1Mathf.html", [
         [ "SphericalCoord", "structmtgb_1_1Mathf_1_1SphericalCoord.html", "structmtgb_1_1Mathf_1_1SphericalCoord" ]
@@ -119,7 +110,6 @@ var annotated_dup =
       [ "InputUtil", "classmtgb_1_1InputUtil.html", "classmtgb_1_1InputUtil" ],
       [ "Interpolator", "classmtgb_1_1Interpolator.html", "classmtgb_1_1Interpolator" ],
       [ "InterpolatorCP", "classmtgb_1_1InterpolatorCP.html", "classmtgb_1_1InterpolatorCP" ],
-      [ "IntersectInfo", "structmtgb_1_1IntersectInfo.html", "structmtgb_1_1IntersectInfo" ],
       [ "IOriginalShader", "classmtgb_1_1IOriginalShader.html", "classmtgb_1_1IOriginalShader" ],
       [ "IProfile", "classmtgb_1_1IProfile.html", "classmtgb_1_1IProfile" ],
       [ "IRenderable", "classmtgb_1_1IRenderable.html", "classmtgb_1_1IRenderable" ],
@@ -185,7 +175,6 @@ var annotated_dup =
       [ "Time", "classmtgb_1_1Time.html", "classmtgb_1_1Time" ],
       [ "Timer", "classmtgb_1_1Timer.html", "classmtgb_1_1Timer" ],
       [ "Transform", "classmtgb_1_1Transform.html", "classmtgb_1_1Transform" ],
-      [ "TransformCore", "structmtgb_1_1TransformCore.html", "structmtgb_1_1TransformCore" ],
       [ "TransformCP", "classmtgb_1_1TransformCP.html", "classmtgb_1_1TransformCP" ],
       [ "TransparentStringEq", "structmtgb_1_1TransparentStringEq.html", "structmtgb_1_1TransparentStringEq" ],
       [ "TransparentStringHash", "structmtgb_1_1TransparentStringHash.html", "structmtgb_1_1TransparentStringHash" ],

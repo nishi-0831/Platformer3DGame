@@ -10,11 +10,10 @@ var searchData=
   ['windowcontextresourcemanager_7',['WindowContextResourceManager',['../classmtgb_1_1WindowContextResourceManager.html#aba93c22f0020a4a11564c862fc9f87d6',1,'mtgb::WindowContextResourceManager']]],
   ['windowmanager_8',['WindowManager',['../classmtgb_1_1WindowManager.html#a2acad16b2927ef972d01e6bdc08c7028',1,'mtgb::WindowManager']]],
   ['windowmodeinfo_9',['WindowModeInfo',['../structmtgb_1_1WindowModeInfo.html#afd632e7adc26c503aeef4f458e60f476',1,'mtgb::WindowModeInfo']]],
-  ['windowresource_10',['WindowResource',['../classmtgb_1_1WindowResource.html#a7989d33024eeb95b9ea96e0bc7cb84bf',1,'mtgb::WindowResource::WindowResource(const WindowResource &amp;)=delete'],['../classmtgb_1_1WindowResource.html#a77adc8fe1dc35a6a765618f9d244e705',1,'mtgb::WindowResource::WindowResource(WindowContext _windowContext)']]],
+  ['windowresource_10',['WindowResource',['../classmtgb_1_1WindowResource.html#a77adc8fe1dc35a6a765618f9d244e705',1,'mtgb::WindowResource::WindowResource(WindowContext _windowContext)'],['../classmtgb_1_1WindowResource.html#a7989d33024eeb95b9ea96e0bc7cb84bf',1,'mtgb::WindowResource::WindowResource(const WindowResource &amp;)=delete']]],
   ['winmain_11',['WinMain',['../TheMain_8cpp.html#a37ae374d26fcb562355d607ddcb4d79a',1,'TheMain.cpp']]],
   ['wndproc_12',['WndProc',['../classmtgb_1_1WindowResource.html#a16f44e5272ed0f9b8697714e46cb639a',1,'mtgb::WindowResource']]],
   ['worldtocellindex_13',['WorldToCellIndex',['../classmtgb_1_1TerrainReader.html#a822e23c781ca9754de8de3dd191fae43',1,'mtgb::TerrainReader']]],
   ['worldtoimgui_14',['WorldToImGui',['../namespacemtgb_1_1ImGuiUtil.html#a21fcd4256a75ac9b687c213c62d05d61',1,'mtgb::ImGuiUtil']]],
-  ['write_15',['Write',['../classmtbin_1_1MemoryStream.html#a6eb3030160111d3810468f88d51ab05a',1,'mtbin::MemoryStream::Write(T *_pArray, const int &amp;_arrayLength)'],['../classmtbin_1_1MemoryStream.html#a73214f8f501c9bf0bf6770ee9373befb',1,'mtbin::MemoryStream::Write(T _value)']]],
-  ['write_16',['write',['../structcmd_8h.html#af2a3ea719b83f672637febdd87c36c36',1,'structcmd.h']]]
+  ['write_15',['write',['../structcmd_8h.html#af2a3ea719b83f672637febdd87c36c36',1,'structcmd.h']]]
 ];

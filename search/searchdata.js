@@ -9,11 +9,11 @@ var indexSectionsWithContent =
   6: "abcdefghilmoprstuvw",
   7: "abcdefgikmpstwx",
   8: "abcdefghijklmnopqrstuvwxyz",
-  9: "defgimoprst",
+  9: "dfgimrs",
   10: "_abdilmnrst",
   11: "t",
   12: "ptバ",
-  13: "m"
+  13: "jm"
 };
 
 var indexSectionNames =

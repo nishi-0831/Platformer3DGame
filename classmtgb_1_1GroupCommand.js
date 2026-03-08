@@ -7,9 +7,9 @@ var classmtgb_1_1GroupCommand =
     [ "GetCommandTargetEntityId", "classmtgb_1_1GroupCommand.html#a01282924c8cf945a75f7b767ec66e40b", null ],
     [ "Name", "classmtgb_1_1GroupCommand.html#a21bd4c94ed3f0a655f26b535f83a9e47", null ],
     [ "Redo", "classmtgb_1_1GroupCommand.html#aad9ddb87145b3d63d04bbe3071e7c598", null ],
-    [ "SetGroupName", "classmtgb_1_1GroupCommand.html#a210da49ac0acf3c9ca3cc9b62ff270d9", null ],
+    [ "SetGroupName", "classmtgb_1_1GroupCommand.html#af044b3d66cb8fb347f692cc0e62a60de", null ],
     [ "Undo", "classmtgb_1_1GroupCommand.html#ad8bb1a289825212760d885bcf7b86977", null ],
-    [ "commandHistoryManager_", "classmtgb_1_1GroupCommand.html#a1ae19d8057240bedde0d7ab329f75b4c", null ],
+    [ "commandHistory_", "classmtgb_1_1GroupCommand.html#a97f63212eceb82fcae4e36438fd5ad24", null ],
     [ "commandName_", "classmtgb_1_1GroupCommand.html#a615f6204699efadc3d25c62744ed7cd3", null ],
     [ "redoCounter_", "classmtgb_1_1GroupCommand.html#aab5700d1b70d0c128e44737995512543", null ],
     [ "undoCounter_", "classmtgb_1_1GroupCommand.html#abaac1726ddb3baff0d3d9011669245ff", null ]

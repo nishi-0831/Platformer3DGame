@@ -107,13 +107,13 @@ $(document).ready(function(){initNavTree('classmtgb_1_1GroupCommand.html',''); i
 <div class="dynheader">
 mtgb::GroupCommand の継承関係図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GroupCommand__inherit__graph.svg" width="272" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GroupCommand__inherit__graph.svg" width="279" height="566"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 mtgb::GroupCommand 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GroupCommand__coll__graph.svg" width="459" height="854"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GroupCommand__coll__graph.svg" width="471" height="927"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -138,8 +138,8 @@ mtgb::GroupCommand 連携図</div>
 <tr class="separator:a01282924c8cf945a75f7b767ec66e40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff7d93328690039cd1046e3ea869e4c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GroupCommand.html#aff7d93328690039cd1046e3ea869e4c1">ExecuteCommand</a> (<a class="el" href="classCommand.html">Command</a> *_pCommand)</td></tr>
 <tr class="separator:aff7d93328690039cd1046e3ea869e4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a210da49ac0acf3c9ca3cc9b62ff270d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GroupCommand.html#a210da49ac0acf3c9ca3cc9b62ff270d9">SetGroupName</a> (std::string _name)</td></tr>
-<tr class="separator:a210da49ac0acf3c9ca3cc9b62ff270d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af044b3d66cb8fb347f692cc0e62a60de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GroupCommand.html#af044b3d66cb8fb347f692cc0e62a60de">SetGroupName</a> (std::string_view _name)</td></tr>
+<tr class="separator:af044b3d66cb8fb347f692cc0e62a60de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
@@ -149,8 +149,8 @@ mtgb::GroupCommand 連携図</div>
 <tr class="separator:abaac1726ddb3baff0d3d9011669245ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab5700d1b70d0c128e44737995512543"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GroupCommand.html#aab5700d1b70d0c128e44737995512543">redoCounter_</a></td></tr>
 <tr class="separator:aab5700d1b70d0c128e44737995512543"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ae19d8057240bedde0d7ab329f75b4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCommandHistory.html">CommandHistory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GroupCommand.html#a1ae19d8057240bedde0d7ab329f75b4c">commandHistoryManager_</a></td></tr>
-<tr class="separator:a1ae19d8057240bedde0d7ab329f75b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97f63212eceb82fcae4e36438fd5ad24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCommandHistory.html">CommandHistory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GroupCommand.html#a97f63212eceb82fcae4e36438fd5ad24">commandHistory_</a></td></tr>
+<tr class="separator:a97f63212eceb82fcae4e36438fd5ad24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
@@ -254,18 +254,18 @@ mtgb::GroupCommand 連携図</div>
 
 <p class="definition"> <a class="el" href="GroupCommand_8cpp_source.html">GroupCommand.cpp</a> の <a class="el" href="GroupCommand_8cpp_source.html#l00045">45</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#a1ae19d8057240bedde0d7ab329f75b4c">commandHistoryManager_</a>.<a class="code hl_function" href="classCommandHistory.html#a0511dd5d5db26c9361cba947f4ab2276">ExecuteCommand</a>(_pCommand);</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#a97f63212eceb82fcae4e36438fd5ad24">commandHistory_</a>.<a class="code hl_function" href="classCommandHistory.html#a0511dd5d5db26c9361cba947f4ab2276">ExecuteCommand</a>(_pCommand);</div>
 <div class="line"><span class="lineno">   48</span>    <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#abaac1726ddb3baff0d3d9011669245ff">undoCounter_</a>++;</div>
 <div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#aab5700d1b70d0c128e44737995512543">redoCounter_</a> = 0;</div>
 <div class="line"><span class="lineno">   50</span>}</div>
-<div class="ttc" id="aclassCommandHistory_html_a0511dd5d5db26c9361cba947f4ab2276"><div class="ttname"><a href="classCommandHistory.html#a0511dd5d5db26c9361cba947f4ab2276">CommandHistory::ExecuteCommand</a></div><div class="ttdeci">void ExecuteCommand(Command *_command) override</div><div class="ttdoc">コマンドを実行、スタックに積む</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00010">CommandHistory.cpp:10</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GroupCommand_html_a1ae19d8057240bedde0d7ab329f75b4c"><div class="ttname"><a href="classmtgb_1_1GroupCommand.html#a1ae19d8057240bedde0d7ab329f75b4c">mtgb::GroupCommand::commandHistoryManager_</a></div><div class="ttdeci">CommandHistory commandHistoryManager_</div><div class="ttdef"><b>Definition:</b> <a href="GroupCommand_8h_source.html#l00024">GroupCommand.h:24</a></div></div>
+<div class="ttc" id="aclassCommandHistory_html_a0511dd5d5db26c9361cba947f4ab2276"><div class="ttname"><a href="classCommandHistory.html#a0511dd5d5db26c9361cba947f4ab2276">CommandHistory::ExecuteCommand</a></div><div class="ttdeci">void ExecuteCommand(Command *_command) override</div><div class="ttdoc">コマンドを実行、スタックに積む</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00016">CommandHistory.cpp:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GroupCommand_html_a97f63212eceb82fcae4e36438fd5ad24"><div class="ttname"><a href="classmtgb_1_1GroupCommand.html#a97f63212eceb82fcae4e36438fd5ad24">mtgb::GroupCommand::commandHistory_</a></div><div class="ttdeci">CommandHistory commandHistory_</div><div class="ttdef"><b>Definition:</b> <a href="GroupCommand_8h_source.html#l00024">GroupCommand.h:24</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00043">mtgb::CommandHistoryManager::ExecuteCommand()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GroupCommand_aff7d93328690039cd1046e3ea869e4c1_icgraph.svg" width="464" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GroupCommand_aff7d93328690039cd1046e3ea869e4c1_icgraph.svg" width="920" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -298,9 +298,9 @@ mtgb::GroupCommand 連携図</div>
 
 <p class="definition"> <a class="el" href="GroupCommand_8cpp_source.html">GroupCommand.cpp</a> の <a class="el" href="GroupCommand_8cpp_source.html#l00040">40</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   41</span>{</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">INVALID_ENTITY</a>;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">INVALID_ENTITY</a>;</div>
 <div class="line"><span class="lineno">   43</span>}</div>
-<div class="ttc" id="anamespacemtgb_html_abe484ebb0daeadf7af81df0bedfebf73"><div class="ttname"><a href="namespacemtgb.html#abe484ebb0daeadf7af81df0bedfebf73">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">static const EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_aba34bc7cb291bc67eadab098f1561087"><div class="ttname"><a href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">constexpr EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
 
@@ -372,17 +372,17 @@ mtgb::GroupCommand 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
 <div class="line"><span class="lineno">   27</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#aab5700d1b70d0c128e44737995512543">redoCounter_</a> != 0)</div>
 <div class="line"><span class="lineno">   28</span>    {</div>
-<div class="line"><span class="lineno">   29</span>        <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#a1ae19d8057240bedde0d7ab329f75b4c">commandHistoryManager_</a>.<a class="code hl_function" href="classCommandHistory.html#a81f1fe5bb1bc1d9eb38c901670094d24">RedoCommand</a>();</div>
+<div class="line"><span class="lineno">   29</span>        <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#a97f63212eceb82fcae4e36438fd5ad24">commandHistory_</a>.<a class="code hl_function" href="classCommandHistory.html#a81f1fe5bb1bc1d9eb38c901670094d24">RedoCommand</a>();</div>
 <div class="line"><span class="lineno">   30</span>        <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#abaac1726ddb3baff0d3d9011669245ff">undoCounter_</a>++;</div>
 <div class="line"><span class="lineno">   31</span>        <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#aab5700d1b70d0c128e44737995512543">redoCounter_</a>--;</div>
 <div class="line"><span class="lineno">   32</span>    }</div>
 <div class="line"><span class="lineno">   33</span>}</div>
-<div class="ttc" id="aclassCommandHistory_html_a81f1fe5bb1bc1d9eb38c901670094d24"><div class="ttname"><a href="classCommandHistory.html#a81f1fe5bb1bc1d9eb38c901670094d24">CommandHistory::RedoCommand</a></div><div class="ttdeci">void RedoCommand() override</div><div class="ttdoc">直前に取り消したコマンドの再実行を行う</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00027">CommandHistory.cpp:27</a></div></div>
+<div class="ttc" id="aclassCommandHistory_html_a81f1fe5bb1bc1d9eb38c901670094d24"><div class="ttname"><a href="classCommandHistory.html#a81f1fe5bb1bc1d9eb38c901670094d24">CommandHistory::RedoCommand</a></div><div class="ttdeci">void RedoCommand() override</div><div class="ttdoc">直前に取り消したコマンドの再実行を行う</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00041">CommandHistory.cpp:41</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a210da49ac0acf3c9ca3cc9b62ff270d9" name="a210da49ac0acf3c9ca3cc9b62ff270d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a210da49ac0acf3c9ca3cc9b62ff270d9">&#9670;&#160;</a></span>SetGroupName()</h2>
+<a id="af044b3d66cb8fb347f692cc0e62a60de" name="af044b3d66cb8fb347f692cc0e62a60de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af044b3d66cb8fb347f692cc0e62a60de">&#9670;&#160;</a></span>SetGroupName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -390,7 +390,7 @@ mtgb::GroupCommand 連携図</div>
         <tr>
           <td class="memname">void mtgb::GroupCommand::SetGroupName </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">std::string_view&#160;</td>
           <td class="paramname"><em>_name</em></td><td>)</td>
           <td></td>
         </tr>
@@ -435,18 +435,18 @@ mtgb::GroupCommand 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
 <div class="line"><span class="lineno">   17</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#abaac1726ddb3baff0d3d9011669245ff">undoCounter_</a> != 0)</div>
 <div class="line"><span class="lineno">   18</span>    {</div>
-<div class="line"><span class="lineno">   19</span>        <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#a1ae19d8057240bedde0d7ab329f75b4c">commandHistoryManager_</a>.<a class="code hl_function" href="classCommandHistory.html#a54e4d572813b1f5e90a26f5cd68fd213">UndoCommand</a>();</div>
+<div class="line"><span class="lineno">   19</span>        <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#a97f63212eceb82fcae4e36438fd5ad24">commandHistory_</a>.<a class="code hl_function" href="classCommandHistory.html#a54e4d572813b1f5e90a26f5cd68fd213">UndoCommand</a>();</div>
 <div class="line"><span class="lineno">   20</span>        <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#abaac1726ddb3baff0d3d9011669245ff">undoCounter_</a>--;</div>
 <div class="line"><span class="lineno">   21</span>        <a class="code hl_variable" href="classmtgb_1_1GroupCommand.html#aab5700d1b70d0c128e44737995512543">redoCounter_</a>++;</div>
 <div class="line"><span class="lineno">   22</span>    }</div>
 <div class="line"><span class="lineno">   23</span>}</div>
-<div class="ttc" id="aclassCommandHistory_html_a54e4d572813b1f5e90a26f5cd68fd213"><div class="ttname"><a href="classCommandHistory.html#a54e4d572813b1f5e90a26f5cd68fd213">CommandHistory::UndoCommand</a></div><div class="ttdeci">void UndoCommand() override</div><div class="ttdoc">直前に実行したコマンドの取り消しを行う</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00017">CommandHistory.cpp:17</a></div></div>
+<div class="ttc" id="aclassCommandHistory_html_a54e4d572813b1f5e90a26f5cd68fd213"><div class="ttname"><a href="classCommandHistory.html#a54e4d572813b1f5e90a26f5cd68fd213">CommandHistory::UndoCommand</a></div><div class="ttdeci">void UndoCommand() override</div><div class="ttdoc">直前に実行したコマンドの取り消しを行う</div><div class="ttdef"><b>Definition:</b> <a href="CommandHistory_8cpp_source.html#l00031">CommandHistory.cpp:31</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>
-<a id="a1ae19d8057240bedde0d7ab329f75b4c" name="a1ae19d8057240bedde0d7ab329f75b4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ae19d8057240bedde0d7ab329f75b4c">&#9670;&#160;</a></span>commandHistoryManager_</h2>
+<a id="a97f63212eceb82fcae4e36438fd5ad24" name="a97f63212eceb82fcae4e36438fd5ad24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97f63212eceb82fcae4e36438fd5ad24">&#9670;&#160;</a></span>commandHistory_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -455,7 +455,7 @@ mtgb::GroupCommand 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCommandHistory.html">CommandHistory</a> mtgb::GroupCommand::commandHistoryManager_</td>
+          <td class="memname"><a class="el" href="classCommandHistory.html">CommandHistory</a> mtgb::GroupCommand::commandHistory_</td>
         </tr>
       </table>
   </td>

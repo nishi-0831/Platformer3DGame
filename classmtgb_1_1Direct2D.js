@@ -8,7 +8,7 @@ var classmtgb_1_1Direct2D =
     [ "GetRenderTargetSize", "classmtgb_1_1Direct2D.html#ab1e32008048b1a4f376bb0cd1bf58314", null ],
     [ "Initialize", "classmtgb_1_1Direct2D.html#aeec060e7b5aa4b1c5170732b88c634f3", null ],
     [ "InitializeCommonResource", "classmtgb_1_1Direct2D.html#ae8cad2910b002ebb61812eb32e16a20c", null ],
-    [ "Release", "classmtgb_1_1Direct2D.html#a2cde9ffdc0a71dccc4cb52ad67368910", null ],
+    [ "Release", "classmtgb_1_1Direct2D.html#a0b613a35e929c42072eb0a28477b1f92", null ],
     [ "Reset", "classmtgb_1_1Direct2D.html#afdc8d1bab25d976fbc85655e31231997", null ],
     [ "Update", "classmtgb_1_1Direct2D.html#a0dae23e9d0c20e2e62528b452d63f7a8", null ],
     [ "DirectWrite", "classmtgb_1_1Direct2D.html#a06bd594120c61f67d4b51a426cf18ee6", null ],

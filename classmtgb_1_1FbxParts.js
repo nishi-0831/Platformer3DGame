@@ -21,7 +21,7 @@ var classmtgb_1_1FbxParts =
     [ "InitializeIndexBuffer", "classmtgb_1_1FbxParts.html#a984ea117946982bce580a7fabc7ac912", null ],
     [ "InitializeMaterial", "classmtgb_1_1FbxParts.html#ad483cf282bafbbf79c55b82a99abb874", null ],
     [ "InitializeSkelton", "classmtgb_1_1FbxParts.html#a3a025121b0ca47b981432824825652e3", null ],
-    [ "InitializeTexture", "classmtgb_1_1FbxParts.html#ab9cd7add6238c2b3a2ba9176e6f39030", null ],
+    [ "InitializeTexture", "classmtgb_1_1FbxParts.html#adbe643247be73e02dae29a1dd43e4118", null ],
     [ "InitializeVertexBuffer", "classmtgb_1_1FbxParts.html#a5ac3028b3e4a572023e63ee45e44900b", null ],
     [ "Release", "classmtgb_1_1FbxParts.html#a2ebacdb10f1a362d0cc2c2e51d2b6548", null ],
     [ "SetAnimationTime", "classmtgb_1_1FbxParts.html#a9bfd49f219723a19ec79278d0df10495", null ],

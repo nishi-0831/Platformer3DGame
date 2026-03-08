@@ -10,7 +10,7 @@ var classmtgb_1_1WindowManager =
     [ "GetWindowResource", "classmtgb_1_1WindowManager.html#ae79cc715fa92da7d26b95a548072f43e", null ],
     [ "GetWindowSize", "classmtgb_1_1WindowManager.html#a08f52982e6e638f7c8d0f2149988ee00", null ],
     [ "Initialize", "classmtgb_1_1WindowManager.html#a4b0534089582715ca3db5a1009a10e6c", null ],
-    [ "Release", "classmtgb_1_1WindowManager.html#a8fe05f536e854705f7988df862def89b", null ],
+    [ "Release", "classmtgb_1_1WindowManager.html#a54dd9cd9c7009623b4b73394fc5c5324", null ],
     [ "ResizeWindow", "classmtgb_1_1WindowManager.html#aa97ca9179cfe0884607dc8c6ec23c108", null ],
     [ "SetWindowConfig", "classmtgb_1_1WindowManager.html#a6af135d8fe1a1f831ad072ecbaa60e5b", null ],
     [ "Update", "classmtgb_1_1WindowManager.html#a09d78a2ae590c9ee2ce714d6fdb6d58c", null ],

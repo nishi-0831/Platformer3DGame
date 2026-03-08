@@ -1,6 +1,6 @@
 var classSampleGame =
 [
-    [ "RegisterSystem", "classSampleGame.html#a7eea92b18fc37c8fc4aaca16bb3323af", null ],
+    [ "RegisterSystem", "classSampleGame.html#a38bd9c3e1b8fd3519fff96dba55e6235", null ],
     [ "SystemUpdateType", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686b", [
       [ "DONT_CALL_ME", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba6c3bc398fab8a28ec70599e05ea901a5", null ],
       [ "CYCLE", "classSampleGame.html#acd5aa6dfc99569b487836ee990a9686ba11729ccb73dc5f4f62d40435e8a0c078", null ],
@@ -13,15 +13,15 @@ var classSampleGame =
     [ "DeserializeComponents", "classSampleGame.html#aeaa55851e01df60f0661fc0b24e65d7a", null ],
     [ "Exit", "classSampleGame.html#a89610789c1e997fbf101d1137f9407a9", null ],
     [ "GetComponentFactory", "classSampleGame.html#a66362917a1d96665e8160adcb72f031f", null ],
-    [ "GetCP", "classSampleGame.html#a6ccdf8fa3e7bea6e9f5b651f2db9669a", null ],
-    [ "GetRenderableCPs", "classSampleGame.html#a3e92de67f7858ed8f5a9a5adcf9cb75b", null ],
+    [ "GetCP", "classSampleGame.html#ae18f73b98cae6067735dcb83b8e18334", null ],
+    [ "GetRenderableCPs", "classSampleGame.html#a9313d201cb3552b29255d264e7111865", null ],
     [ "GetScreenSize", "classSampleGame.html#a5bb1e92d082cafb5312252c5e7290206", null ],
     [ "GetTitle", "classSampleGame.html#a797d8f7694629aa2eab457443d731ab8", null ],
     [ "GetVersion", "classSampleGame.html#a83d95acc414cc236587416fd8075ed2d", null ],
     [ "InitializeSystems", "classSampleGame.html#acce77edf9df17d4d89bc0e2d970f6c4c", null ],
     [ "ReleaseSystems", "classSampleGame.html#ad8e951e959e15a61ba47b16a9867d013", null ],
-    [ "RemoveEntityAllComponent", "classSampleGame.html#afa7f596ea64797f4dff66edd5582f1bf", null ],
-    [ "RemoveEntityComponent", "classSampleGame.html#a4d3520ed9ed38945557f6cfc2a3e4224", null ],
+    [ "RemoveEntityAllComponent", "classSampleGame.html#abdefeca2ccb6e6a93d268c1a62bd0b90", null ],
+    [ "RemoveEntityComponent", "classSampleGame.html#a2db541a4846fa7d29ddec68cbc3d5c35", null ],
     [ "Run", "classSampleGame.html#ae241b7677e1c59407d3f80fdc2040547", null ],
     [ "RunLoopGameCycle", "classSampleGame.html#abaab9ce3626b3a5f3a0e26f602426494", null ],
     [ "SerializeComponent", "classSampleGame.html#a8b552e60ee7d044929c35b08c3b46030", null ],

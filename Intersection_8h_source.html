@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: Intersection.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Intersection_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Intersection.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Intersection_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;DirectXCollision.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="RectF_8h.html">RectF.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="Vector3_8h.html">Vector3.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="RectContainsInfo_8h.html">RectContainsInfo.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="WindowContext_8h.html">WindowContext.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="GameObjectTag_8h.html">GameObjectTag.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb_1_1Intersection.html">mtgb::Intersection</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structmtgb_1_1Intersection_1_1IntersectInfo.html">   14</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmtgb_1_1Intersection_1_1IntersectInfo.html">IntersectInfo</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structmtgb_1_1Intersection_1_1IntersectInfo.html#ae15df6114b0805e589054fd2de146081">   16</a></span>        <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> <a class="code hl_variable" href="structmtgb_1_1Intersection_1_1IntersectInfo.html#ae15df6114b0805e589054fd2de146081">closest</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structmtgb_1_1Intersection_1_1IntersectInfo.html#a62294ef66c8ad5889533e28729094ec8">   17</a></span>        <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> <a class="code hl_variable" href="structmtgb_1_1Intersection_1_1IntersectInfo.html#a62294ef66c8ad5889533e28729094ec8">push</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    };</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacemtgb_1_1Intersection.html#a03436e7751de0b43119873d83c9deda5">IsHit</a>(<span class="keyword">const</span> DirectX::BoundingSphere&amp; _sphere, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _origin, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _dir, <span class="keywordtype">float</span>* _dist);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacemtgb_1_1Intersection.html#a03436e7751de0b43119873d83c9deda5">IsHit</a>(<span class="keyword">const</span> DirectX::BoundingBox&amp; _aabb, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _origin, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _dir, <span class="keywordtype">float</span>* _dist);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacemtgb_1_1Intersection.html#a03436e7751de0b43119873d83c9deda5">IsHit</a>(<span class="keyword">const</span> DirectX::BoundingOrientedBox&amp; _obb, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _origin, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _dir, <span class="keywordtype">float</span>* _dist);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    std::optional&lt;IntersectInfo&gt; <a class="code hl_function" href="namespacemtgb_1_1Intersection.html#aa6b3ba42519940a6cd9b189d35888b6f">Intersect</a>(<span class="keyword">const</span> DirectX::BoundingSphere&amp; _sphere, <span class="keyword">const</span> DirectX::BoundingBox&amp; _aabb);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    std::optional&lt;IntersectInfo&gt; <a class="code hl_function" href="namespacemtgb_1_1Intersection.html#aa6b3ba42519940a6cd9b189d35888b6f">Intersect</a>(</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">const</span> DirectX::BoundingSphere&amp; _sphere,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">const</span> DirectX::BoundingOrientedBox&amp; _obb</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    );</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacemtgb_1_1Intersection.html#af224e7f07f04bc423e94031360fd80f4">RectContains</a>(</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1RectT.html">RectF</a>&amp; _rect,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        std::string_view _name,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        std::vector&lt;ScreenCoordContainsInfo&gt;* _info,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    );</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacemtgb_1_1Intersection.html#af224e7f07f04bc423e94031360fd80f4">RectContains</a>(</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keyword">const</span> <a class="code hl_class" href="structmtgb_1_1RectT.html">RectF</a>&amp; _rect,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <a class="code hl_enumeration" href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">GameObjectTag</a> _tag,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        std::vector&lt;ScreenCoordContainsInfo&gt;* _info,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _context</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    );</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>} <span class="comment">// namespace mtgb::Intersection</span></div>
+<div class="ttc" id="aGameObjectTag_8h_html"><div class="ttname"><a href="GameObjectTag_8h.html">GameObjectTag.h</a></div></div>
+<div class="ttc" id="aRectContainsInfo_8h_html"><div class="ttname"><a href="RectContainsInfo_8h.html">RectContainsInfo.h</a></div></div>
+<div class="ttc" id="aRectF_8h_html"><div class="ttname"><a href="RectF_8h.html">RectF.h</a></div></div>
+<div class="ttc" id="aVector3_8h_html"><div class="ttname"><a href="Vector3_8h.html">Vector3.h</a></div></div>
+<div class="ttc" id="aWindowContext_8h_html"><div class="ttname"><a href="WindowContext_8h.html">WindowContext.h</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1Intersection_html"><div class="ttname"><a href="namespacemtgb_1_1Intersection.html">mtgb::Intersection</a></div><div class="ttdef"><b>Definition:</b> <a href="Intersection_8cpp_source.html#l00014">Intersection.cpp:15</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1Intersection_html_a03436e7751de0b43119873d83c9deda5"><div class="ttname"><a href="namespacemtgb_1_1Intersection.html#a03436e7751de0b43119873d83c9deda5">mtgb::Intersection::IsHit</a></div><div class="ttdeci">bool IsHit(const DirectX::BoundingSphere &amp;_sphere, const Vector3 &amp;_origin, const Vector3 &amp;_dir, float *_dist)</div><div class="ttdoc">レイと球の交差判定</div><div class="ttdef"><b>Definition:</b> <a href="Intersection_8cpp_source.html#l00047">Intersection.cpp:47</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1Intersection_html_aa6b3ba42519940a6cd9b189d35888b6f"><div class="ttname"><a href="namespacemtgb_1_1Intersection.html#aa6b3ba42519940a6cd9b189d35888b6f">mtgb::Intersection::Intersect</a></div><div class="ttdeci">std::optional&lt; IntersectInfo &gt; Intersect(const DirectX::BoundingSphere &amp;_sphere, const DirectX::BoundingBox &amp;_aabb)</div><div class="ttdoc">球とAABBの交差判定</div><div class="ttdef"><b>Definition:</b> <a href="Intersection_8cpp_source.html#l00149">Intersection.cpp:149</a></div></div>
+<div class="ttc" id="anamespacemtgb_1_1Intersection_html_af224e7f07f04bc423e94031360fd80f4"><div class="ttname"><a href="namespacemtgb_1_1Intersection.html#af224e7f07f04bc423e94031360fd80f4">mtgb::Intersection::RectContains</a></div><div class="ttdeci">void RectContains(const RectF &amp;_rect, std::string_view _name, std::vector&lt; ScreenCoordContainsInfo &gt; *_info, WindowContext _context)</div><div class="ttdef"><b>Definition:</b> <a href="Intersection_8cpp_source.html#l00238">Intersection.cpp:238</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_ade7a99556f0dbf2962a72d966b7d5ce6"><div class="ttname"><a href="namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6">mtgb::GameObjectTag</a></div><div class="ttdeci">GameObjectTag</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectTag_8h_source.html#l00005">GameObjectTag.h:6</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">mtgb::WindowContext</a></div><div class="ttdeci">WindowContext</div><div class="ttdef"><b>Definition:</b> <a href="WindowContext_8h_source.html#l00007">WindowContext.h:8</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Intersection_1_1IntersectInfo_html"><div class="ttname"><a href="structmtgb_1_1Intersection_1_1IntersectInfo.html">mtgb::Intersection::IntersectInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="Intersection_8h_source.html#l00014">Intersection.h:15</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Intersection_1_1IntersectInfo_html_a62294ef66c8ad5889533e28729094ec8"><div class="ttname"><a href="structmtgb_1_1Intersection_1_1IntersectInfo.html#a62294ef66c8ad5889533e28729094ec8">mtgb::Intersection::IntersectInfo::push</a></div><div class="ttdeci">Vector3 push</div><div class="ttdef"><b>Definition:</b> <a href="Intersection_8h_source.html#l00017">Intersection.h:17</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Intersection_1_1IntersectInfo_html_ae15df6114b0805e589054fd2de146081"><div class="ttname"><a href="structmtgb_1_1Intersection_1_1IntersectInfo.html#ae15df6114b0805e589054fd2de146081">mtgb::Intersection::IntersectInfo::closest</a></div><div class="ttdeci">Vector3 closest</div><div class="ttdef"><b>Definition:</b> <a href="Intersection_8h_source.html#l00016">Intersection.h:16</a></div></div>
+<div class="ttc" id="astructmtgb_1_1RectT_html"><div class="ttname"><a href="structmtgb_1_1RectT.html">mtgb::RectT&lt; float &gt;</a></div></div>
+<div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Intersection_8h.html">Intersection.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

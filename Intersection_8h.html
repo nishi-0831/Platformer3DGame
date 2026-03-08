@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: Intersection.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Intersection_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">Intersection.h ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;DirectXCollision.h&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="RectF_8h_source.html">RectF.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Vector3_8h_source.html">Vector3.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RectContainsInfo_8h_source.html">RectContainsInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="WindowContext_8h_source.html">WindowContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GameObjectTag_8h_source.html">GameObjectTag.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Intersection.h の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Intersection_8h__incl.svg" width="1056" height="403"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Intersection_8h__dep__incl.svg" width="419" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="Intersection_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtgb_1_1Intersection_1_1IntersectInfo.html">mtgb::Intersection::IntersectInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespacemtgb"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html">mtgb</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemtgb_1_1Intersection"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb_1_1Intersection.html">mtgb::Intersection</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a03436e7751de0b43119873d83c9deda5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb_1_1Intersection.html#a03436e7751de0b43119873d83c9deda5">mtgb::Intersection::IsHit</a> (const DirectX::BoundingSphere &amp;_sphere, const Vector3 &amp;_origin, const Vector3 &amp;_dir, float *_dist)</td></tr>
+<tr class="memdesc:a03436e7751de0b43119873d83c9deda5"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイと球の交差判定  <br /></td></tr>
+<tr class="separator:a03436e7751de0b43119873d83c9deda5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c0efb6a90b8d972b52a5cf3cb45cc2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb_1_1Intersection.html#a89c0efb6a90b8d972b52a5cf3cb45cc2">mtgb::Intersection::IsHit</a> (const DirectX::BoundingBox &amp;_aabb, const Vector3 &amp;_origin, const Vector3 &amp;_dir, float *_dist)</td></tr>
+<tr class="memdesc:a89c0efb6a90b8d972b52a5cf3cb45cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイとAABBの交差判定  <br /></td></tr>
+<tr class="separator:a89c0efb6a90b8d972b52a5cf3cb45cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4525d7f6c4d96c002b26e5a0d153ed2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb_1_1Intersection.html#a4525d7f6c4d96c002b26e5a0d153ed2a">mtgb::Intersection::IsHit</a> (const DirectX::BoundingOrientedBox &amp;_obb, const Vector3 &amp;_origin, const Vector3 &amp;_dir, float *_dist)</td></tr>
+<tr class="memdesc:a4525d7f6c4d96c002b26e5a0d153ed2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">レイとOBBの交差判定  <br /></td></tr>
+<tr class="separator:a4525d7f6c4d96c002b26e5a0d153ed2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b3ba42519940a6cd9b189d35888b6f"><td class="memItemLeft" align="right" valign="top">std::optional&lt; IntersectInfo &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb_1_1Intersection.html#aa6b3ba42519940a6cd9b189d35888b6f">mtgb::Intersection::Intersect</a> (const DirectX::BoundingSphere &amp;_sphere, const DirectX::BoundingBox &amp;_aabb)</td></tr>
+<tr class="memdesc:aa6b3ba42519940a6cd9b189d35888b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">球とAABBの交差判定  <br /></td></tr>
+<tr class="separator:aa6b3ba42519940a6cd9b189d35888b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103b32c220aa5a26e3b84e931f921e77"><td class="memItemLeft" align="right" valign="top">std::optional&lt; IntersectInfo &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb_1_1Intersection.html#a103b32c220aa5a26e3b84e931f921e77">mtgb::Intersection::Intersect</a> (const DirectX::BoundingSphere &amp;_sphere, const DirectX::BoundingOrientedBox &amp;_obb)</td></tr>
+<tr class="memdesc:a103b32c220aa5a26e3b84e931f921e77"><td class="mdescLeft">&#160;</td><td class="mdescRight">球とOBBの交差判定  <br /></td></tr>
+<tr class="separator:a103b32c220aa5a26e3b84e931f921e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af224e7f07f04bc423e94031360fd80f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb_1_1Intersection.html#af224e7f07f04bc423e94031360fd80f4">mtgb::Intersection::RectContains</a> (const RectF &amp;_rect, std::string_view _name, std::vector&lt; ScreenCoordContainsInfo &gt; *_info, WindowContext _context)</td></tr>
+<tr class="separator:af224e7f07f04bc423e94031360fd80f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a52a3cf5296fa616ba08b6aca83eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb_1_1Intersection.html#a13a52a3cf5296fa616ba08b6aca83eed">mtgb::Intersection::RectContains</a> (const RectF &amp;_rect, GameObjectTag _tag, std::vector&lt; ScreenCoordContainsInfo &gt; *_info, WindowContext _context)</td></tr>
+<tr class="separator:a13a52a3cf5296fa616ba08b6aca83eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_3cf6e300f4ed75b2a0531d7b20a0e51f.html">mtgb</a></li><li class="navelem"><a class="el" href="Intersection_8h.html">Intersection.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

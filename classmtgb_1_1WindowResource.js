@@ -17,7 +17,7 @@ var classmtgb_1_1WindowResource =
     [ "SetPosition", "classmtgb_1_1WindowResource.html#a58647c1768a043dc64eda911d11885fc", null ],
     [ "SetResource", "classmtgb_1_1WindowResource.html#a6684962cb67d75c40b6a0997ced71ffa", null ],
     [ "SetWindowMode", "classmtgb_1_1WindowResource.html#ab1ac673e6eec005221b218cce5e91031", null ],
-    [ "SetWindowModeImpl", "classmtgb_1_1WindowResource.html#ac53506d2b0eba7563456dec9ac9b6669", null ],
+    [ "SetWindowModeImpl", "classmtgb_1_1WindowResource.html#a846d41e2eac649cb7034ded4459dfb71", null ],
     [ "Update", "classmtgb_1_1WindowResource.html#acc960b1b40665791a3c1f36090250e46", null ],
     [ "WndProc", "classmtgb_1_1WindowResource.html#a16f44e5272ed0f9b8697714e46cb639a", null ],
     [ "currInfo_", "classmtgb_1_1WindowResource.html#ad252f6dbd0be3d1be2ee76557b170da4", null ],

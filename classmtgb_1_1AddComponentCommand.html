@@ -435,7 +435,7 @@ mtgb::AddComponentCommand 連携図</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Command::Execute()</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="CommandHistory_8cpp_source.html#l00027">CommandHistory::RedoCommand()</a>.</p>
+<p class="reference">参照元 <a class="el" href="CommandHistory_8cpp_source.html#l00041">CommandHistory::RedoCommand()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -480,10 +480,10 @@ mtgb::AddComponentCommand 連携図</div>
 <div class="line"><span class="lineno">   45</span>        Game::System&lt;ComponentRegistry&gt;().GetComponentPoolType(<a class="code hl_variable" href="classmtgb_1_1AddComponentCommand.html#a50a540b0eee243ea80c90087f44d56bf">componentType_</a>);</div>
 <div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (componentPoolType.has_value())</div>
 <div class="line"><span class="lineno">   47</span>    {</div>
-<div class="line"><span class="lineno">   48</span>        <a class="code hl_function" href="classmtgb_1_1Game.html#a4d3520ed9ed38945557f6cfc2a3e4224">Game::RemoveEntityComponent</a>(componentPoolType.value(), <a class="code hl_variable" href="classmtgb_1_1AddComponentCommand.html#abc80b5fecefdb7ed35879fd469c1b93d">entityId_</a>);</div>
+<div class="line"><span class="lineno">   48</span>        <a class="code hl_function" href="classmtgb_1_1Game.html#a2db541a4846fa7d29ddec68cbc3d5c35">Game::RemoveEntityComponent</a>(componentPoolType.value(), <a class="code hl_variable" href="classmtgb_1_1AddComponentCommand.html#abc80b5fecefdb7ed35879fd469c1b93d">entityId_</a>);</div>
 <div class="line"><span class="lineno">   49</span>    }</div>
 <div class="line"><span class="lineno">   50</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1Game_html_a4d3520ed9ed38945557f6cfc2a3e4224"><div class="ttname"><a href="classmtgb_1_1Game.html#a4d3520ed9ed38945557f6cfc2a3e4224">mtgb::Game::RemoveEntityComponent</a></div><div class="ttdeci">static void RemoveEntityComponent(const std::type_index _typeIndex, EntityId _entityId)</div><div class="ttdoc">エンティティに対応するコンポーネントを削除する</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00065">Game.cpp:65</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Game_html_a2db541a4846fa7d29ddec68cbc3d5c35"><div class="ttname"><a href="classmtgb_1_1Game.html#a2db541a4846fa7d29ddec68cbc3d5c35">mtgb::Game::RemoveEntityComponent</a></div><div class="ttdeci">static void RemoveEntityComponent(std::type_index _typeIndex, EntityId _entityId)</div><div class="ttdoc">エンティティに対応するコンポーネントを削除する</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00065">Game.cpp:65</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Game_8cpp_source.html#l00065">mtgb::Game::RemoveEntityComponent()</a>.</p>
 <div class="dynheader">

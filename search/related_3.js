@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['game_0',['Game',['../classmtgb_1_1GameScene.html#aa2fab026580d6f14280c2ffb8063a314',1,'mtgb::GameScene']]]
+  ['inputresource_0',['InputResource',['../classmtgb_1_1InputData.html#a39cef4e666edb05e0f48062842917189',1,'mtgb::InputData']]]
 ];
