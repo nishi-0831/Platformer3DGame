@@ -1,5 +1,11 @@
 var NAVTREEINDEX32 =
 {
+"structObject.html#a71225073d06a793b9a6ea9263ed37b12":[5,0,56,0],
+"structObject.html#a924ee0cecc906d148022b3f0d6325cfb":[5,0,56,1],
+"structPlayerCollideRespawnPointEvent.html":[5,0,61],
+"structPlayerCollideRespawnPointEvent.html#a316c16f76fe5970d0ac22d87ecf0c513":[5,0,61,1],
+"structPlayerCollideRespawnPointEvent.html#abb06a4206265c3c496477f544e32eb7f":[5,0,61,0],
+"structPlayerCollideRespawnPointEvent.html#adf069a0a7f665e3b104d48aadaba8900":[5,0,61,2],
 "structPlayerFellOutEvent.html":[5,0,62],
 "structPlayerFellOutEvent.html#a54f532b66231e1e244b8373366c60cf7":[5,0,62,0],
 "structPlayerHpReachedZeroEvent.html":[5,0,63],
@@ -243,11 +249,5 @@ var NAVTREEINDEX32 =
 "structmtgb_1_1FbxParts_1_1ConstantBuffer.html#addd42f024f477c9f92e4d5631f416fac":[3,0,5,54,2,4],
 "structmtgb_1_1FbxParts_1_1ConstantBuffer.html#addd42f024f477c9f92e4d5631f416fac":[5,0,3,50,2,4],
 "structmtgb_1_1FbxParts_1_1ConstantBuffer.html#aeba293be2468762918213268092c22c4":[3,0,5,54,2,2],
-"structmtgb_1_1FbxParts_1_1ConstantBuffer.html#aeba293be2468762918213268092c22c4":[5,0,3,50,2,2],
-"structmtgb_1_1FbxParts_1_1ConstantBuffer.html#af0b5fb0062da0a7265a1df63df48635a":[3,0,5,54,2,3],
-"structmtgb_1_1FbxParts_1_1ConstantBuffer.html#af0b5fb0062da0a7265a1df63df48635a":[5,0,3,50,2,3],
-"structmtgb_1_1FbxParts_1_1Material.html":[5,0,3,50,3],
-"structmtgb_1_1FbxParts_1_1Material.html":[3,0,5,54,3],
-"structmtgb_1_1FbxParts_1_1Material.html#a4d4d7fb96c3f83cdc92f136013b012f6":[5,0,3,50,3,6],
-"structmtgb_1_1FbxParts_1_1Material.html#a4d4d7fb96c3f83cdc92f136013b012f6":[3,0,5,54,3,6]
+"structmtgb_1_1FbxParts_1_1ConstantBuffer.html#aeba293be2468762918213268092c22c4":[5,0,3,50,2,2]
 };

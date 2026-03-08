@@ -1,5 +1,11 @@
 var NAVTREEINDEX31 =
 {
+"namespacemtgb.html#a6fb017445ece9b1ea7cb6b0eb027dc03":[3,0,5,198],
+"namespacemtgb.html#a7513f609e083d2ceedf24478a0dc184e":[3,0,5,268],
+"namespacemtgb.html#a763e454ae409d25218a27862b141c58b":[3,0,5,265],
+"namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975c":[3,0,5,219],
+"namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca624337bf78e1f432337ba77ccfa867d5":[3,0,5,219,2],
+"namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca7fc56270e7a70fa81a5935b72eacbe29":[3,0,5,219,0],
 "namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca9d5ed678fe57bcca610140957afab571":[3,0,5,219,1],
 "namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09":[3,0,5,218],
 "namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09a3c93f85078b290625b7c4db299979c4f":[3,0,5,218,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX31 =
 "structMeshRendererState.html#a4743f41d2804319544bdc882e4ac0ee7":[5,0,53,1],
 "structMeshRendererState.html#ad2e0f3ed45a3c66787ae235a8d17f045":[5,0,53,2],
 "structObject.html":[5,0,56],
-"structObject.html#a1b6037fba835e83243ababce426ff9af":[5,0,56,2],
-"structObject.html#a71225073d06a793b9a6ea9263ed37b12":[5,0,56,0],
-"structObject.html#a924ee0cecc906d148022b3f0d6325cfb":[5,0,56,1],
-"structPlayerCollideRespawnPointEvent.html":[5,0,61],
-"structPlayerCollideRespawnPointEvent.html#a316c16f76fe5970d0ac22d87ecf0c513":[5,0,61,1],
-"structPlayerCollideRespawnPointEvent.html#abb06a4206265c3c496477f544e32eb7f":[5,0,61,0],
-"structPlayerCollideRespawnPointEvent.html#adf069a0a7f665e3b104d48aadaba8900":[5,0,61,2]
+"structObject.html#a1b6037fba835e83243ababce426ff9af":[5,0,56,2]
 };

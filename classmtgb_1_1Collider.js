@@ -5,6 +5,9 @@ var classmtgb_1_1Collider =
     [ "Collider", "classmtgb_1_1Collider.html#a7e905c0552de20976f38c78cd12e0ac8", null ],
     [ "~Collider", "classmtgb_1_1Collider.html#afd99334500470ba50fbac7278e518d44", null ],
     [ "Draw", "classmtgb_1_1Collider.html#a684b04422fd7be8aafddc9b8ad5b7b50", null ],
+    [ "ForEachCollisionEnter", "classmtgb_1_1Collider.html#aca1b2d34f1e3152e616a17f9bc58bf4b", null ],
+    [ "ForEachCollisionExit", "classmtgb_1_1Collider.html#abdddaf6aae77ecca8c29ee5cfe7b46cf", null ],
+    [ "ForEachCollisionStay", "classmtgb_1_1Collider.html#a5aee7c64021ea87886fdf7595267fc8b", null ],
     [ "Get", "classmtgb_1_1Collider.html#af1eb4ba05a672953e5bf9f976695d2c9", null ],
     [ "Get", "classmtgb_1_1Collider.html#a6c254d764532f89c1e69ddca84a25e7b", null ],
     [ "GetCenter", "classmtgb_1_1Collider.html#abbf0ea1d6e28961f5cda3faee82355a5", null ],
@@ -47,8 +50,8 @@ var classmtgb_1_1Collider =
     [ "hSphereModel_", "classmtgb_1_1Collider.html#a21c200078b6404b94b71acc8d0602096", null ],
     [ "isStatic_", "classmtgb_1_1Collider.html#a8d0d2d14b244cd3db740e4dfdd50d479", null ],
     [ "isTrigger_", "classmtgb_1_1Collider.html#ae3cdd36ffab49d607691ce819c169b10", null ],
-    [ "onColldiersPrev_", "classmtgb_1_1Collider.html#a6f0b1e752f3c817dd359aa296150c998", null ],
-    [ "onColliders_", "classmtgb_1_1Collider.html#aed009e13fbc5e0eb0b75eb4f9fe2ca8e", null ],
+    [ "onColliders_", "classmtgb_1_1Collider.html#a097452ddb4ef54038cc8cd9e76deef25", null ],
+    [ "onCollidersPrev_", "classmtgb_1_1Collider.html#a7175069cbbb992979e33411742099465", null ],
     [ "pTransform_", "classmtgb_1_1Collider.html#ab4095dd71e264099938f79fbe65d057a", null ],
     [ "radius_", "classmtgb_1_1Collider.html#a18dd9cce2c089f4e9118bd0ab195853c", null ]
 ];
