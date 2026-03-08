@@ -12,11 +12,7 @@
 
 namespace mtgb
 {
-	struct IntersectInfo
-	{
-		Vector3 closest;
-		Vector3 push;
-	};
+
 	class ColliderCP;
 	class Transform;
 
@@ -38,45 +34,6 @@ namespace mtgb
 		Collider& operator=(const Collider& _other);
 
 		bool IsHit(const Collider& _other) const;
-		/// <summary>
-		/// レイと球の交差判定
-		/// </summary>
-		/// <param name="_origin">原点</param>
-		/// <param name="_dir">方向(内部で正規化される)</param>
-		/// <param name="dist">
-		/// <para> レイの原点からコライダーとの最初の交点までの距離を格納。</para>
-		/// <para> レイの原点が球の内側の場合は、球を出る点までの距離</para>
-		/// </param>
-		/// <returns>交差している場合はtrue、していない場合はfalse</returns>
-		static bool IsHit(
-			const DirectX::BoundingSphere& _sphere,
-			const Vector3& _origin,
-			const Vector3& _dir,
-			float* _dist
-		);
-		/// <summary>
-		/// レイとAABBの交差判定
-		/// </summary>
-		/// <param name="_aabb">AABB</param>
-		/// <param name="_origin">レイの原点</param>
-		/// <param name="_dir">レイの方向</param>
-		/// <param name="_dist">レイの原点とAABBの距離を格納</param>
-		/// <returns>交差している場合はtrue、していない場合はfalse</returns>
-		static bool IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* _dist);
-		/// <summary>
-		/// レイとOBBの交差判定
-		/// </summary>
-		/// <param name="_obb">OBB</param>
-		/// <param name="_origin">レイの原点</param>
-		/// <param name="_dir">レイの方向</param>
-		/// <param name="_dist">レイの原点とOBBの距離を格納</param>
-		/// <returns>交差している場合はtrue、していない場合はfalse</returns>
-		static bool IsHit(
-			const DirectX::BoundingOrientedBox& _obb,
-			const Vector3& _origin,
-			const Vector3& _dir,
-			float* _dist
-		);
 
 		/// <summary>
 		/// <para> レイとの交差判定 </para>
@@ -97,23 +54,13 @@ namespace mtgb
 		void SetCenter(const Vector3& _center);
 		void SetExtents(const Vector3& _extents);
 		void SetRadius(float _radius);
-		Vector3 GetCenter();
-		Vector3 GetExtents();
-		float GetRadius();
-		ColliderTag GetColliderTag() const
+		Vector3 GetCenter() const;
+		Vector3 GetExtents() const;
+		float GetRadius() const;
+		inline ColliderTag GetColliderTag() const
 		{
 			return colliderTag_;
 		}
-
-		static std::optional<IntersectInfo> Intersect(
-			const DirectX::BoundingSphere& _sphere,
-			const DirectX::BoundingBox& _aabb
-		);
-		static std::optional<IntersectInfo> Intersect(
-			const DirectX::BoundingSphere& _sphere,
-			const DirectX::BoundingOrientedBox& _obb
-		);
-		void Push(const Collider& _other);
 
 		void OnPostRestore() override;
 		void Reset() override;
@@ -132,6 +79,8 @@ namespace mtgb
 		bool isTrigger_;
 
 	  private:
+		void Push(const Collider& _other);
+		void HandleCollision(const Collider& _other);
 		void UpdateBoundingSphere();
 		void UpdateBoundingBox();
 		union
@@ -141,8 +90,8 @@ namespace mtgb
 			DirectX::BoundingOrientedBox computeOBB_;
 		};
 
-		Transform* pTransform_; // TODO: 危ないTransform
-		// ColliderTag colliderTag;
+		Transform* pTransform_;
+
 		static FBXModelHandle hSphereModel_;
 		static FBXModelHandle hBoxModel_;
 		[[MT_PROPERTY()]]

@@ -41,7 +41,7 @@ void mtgb::GameScene::Draw() const {}
 
 void mtgb::GameScene::End() {}
 
-mtgb::GameObject* mtgb::GameScene::GetGameObject(std::string _name) const
+mtgb::GameObject* mtgb::GameScene::GetGameObject(std::string_view _name) const
 {
 	for (auto& object : pGameObjects_)
 	{
@@ -54,7 +54,7 @@ mtgb::GameObject* mtgb::GameScene::GetGameObject(std::string _name) const
 	return nullptr;
 }
 
-GameObject* mtgb::GameScene::GetGameObject(GameObjectTag _tag) const
+mtgb::GameObject* mtgb::GameScene::GetGameObject(GameObjectTag _tag) const
 {
 	for (auto& object : pGameObjects_)
 	{
@@ -66,7 +66,7 @@ GameObject* mtgb::GameScene::GetGameObject(GameObjectTag _tag) const
 	return nullptr;
 }
 
-void mtgb::GameScene::GetGameObjects(const std::string& _name, std::vector<GameObject*>* _pFoundGameObjects) const
+void mtgb::GameScene::GetGameObjects(std::string_view _name, std::vector<GameObject*>* _pFoundGameObjects) const
 {
 	_pFoundGameObjects->clear();
 	for (auto& object : pGameObjects_)

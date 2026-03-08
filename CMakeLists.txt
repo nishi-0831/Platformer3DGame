@@ -769,7 +769,7 @@ set(ALL_FILES
 ################################################################################
 # Target
 ################################################################################
-add_executable(${PROJECT_NAME} ${ALL_FILES})
+add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp")
 
 # プリコンパイル済みヘッダを設定する
 target_precompile_headers(${PROJECT_NAME} PRIVATE

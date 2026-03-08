@@ -45,7 +45,7 @@ void mtgb::Game::UpdateFixed()
 	}
 }
 
-IComponentPool* mtgb::Game::GetCP(std::type_index _typeIndex)
+mtgb::IComponentPool* mtgb::Game::GetCP(std::type_index _typeIndex)
 {
 	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
 	if (itr == pInstance_->pRegisterSystems_.end())
@@ -114,7 +114,7 @@ void mtgb::Game::DeserializeComponents(EntityId _entityId, const nlohmann::json&
 	if (components.has_value() == false)
 		return;
 
-	for (const std::type_index& typeIndex : components.value())
+	for (std::type_index typeIndex : components.value())
 	{
 		std::optional<std::type_index> componentPoolType =
 			Game::System<ComponentRegistry>().GetComponentPoolType(typeIndex);
@@ -126,7 +126,7 @@ void mtgb::Game::DeserializeComponents(EntityId _entityId, const nlohmann::json&
 	}
 }
 
-std::span<IRenderableCP*> mtgb::Game::GetRenderableCPs()
+std::span<mtgb::IRenderableCP*> mtgb::Game::GetRenderableCPs()
 {
 	return { pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size() };
 }

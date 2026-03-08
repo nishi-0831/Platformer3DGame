@@ -8,7 +8,7 @@
 #include "CameraSystem.h"
 #include "Entity.h"
 #include "Screen.h"
-#include "Draw.h"
+#include "Intersection.h"
 using namespace mtgb;
 
 mtgb::RectDetector::RectDetector(const RectDetectorConfig& _config)
@@ -31,7 +31,7 @@ void mtgb::RectDetector::UpdateDetection(RectDetectorConfig& _config)
 	// 基底クラスの detectedTargets_を更新
 	detectedTargets_.clear();
 
-	Game::System<ColliderCP>().RectContains(
+	Intersection::RectContains(
 		_config.detectionRect,
 		_config.base.targetTag,
 		&detectedTargets_, // 基底クラスのメンバを使用

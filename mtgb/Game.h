@@ -43,12 +43,8 @@ namespace mtgb
 		/// <summary>
 		/// システム登録のコールバック関数
 		/// </summary>
-		using RegisterSystem = std::function<void(
-			std::type_index _systemTypeName,
-			ISystem* _system,
-			const bool _isComponentPool,
-			const SystemUpdateType
-		)>;
+		using RegisterSystem = std::function<
+			void(std::type_index _systemTypeName, ISystem* _system, bool _isComponentPool, SystemUpdateType)>;
 
 		/// <summary>
 		/// システム登録の関数ホルダ
@@ -61,7 +57,7 @@ namespace mtgb
 			{
 			}
 
-			template <typename SystemT> void Set(SystemUpdateType _type, const bool _isComponentCP = false) const
+			template <typename SystemT> void Set(SystemUpdateType _type, bool _isComponentCP = false) const
 			{
 
 				function_(typeid(SystemT), dynamic_cast<ISystem*>(new SystemT {}), _isComponentCP, _type);
