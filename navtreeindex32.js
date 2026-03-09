@@ -1,7 +1,5 @@
 var NAVTREEINDEX32 =
 {
-"structPlayerHpReachedZeroEvent.html":[5,0,63],
-"structPlayerHpReachedZeroEvent.html#a21157d4ad99cc4fa02cbe0e866e5d868":[5,0,63,0],
 "structPlayerReachedGoalEvent.html":[5,0,64],
 "structProxyFor.html":[5,0,66],
 "structProxyFor.html#a71e4edd6051bfafa8f8cc266a5e1fddd":[5,0,66,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX32 =
 "structmtgb_1_1FbxParts_1_1Material.html#a4d4d7fb96c3f83cdc92f136013b012f6":[5,0,3,50,3,6],
 "structmtgb_1_1FbxParts_1_1Material.html#a4d4d7fb96c3f83cdc92f136013b012f6":[3,0,5,54,3,6],
 "structmtgb_1_1FbxParts_1_1Material.html#a520cef138d92b56264b38a5db014a57f":[5,0,3,50,3,5],
-"structmtgb_1_1FbxParts_1_1Material.html#a520cef138d92b56264b38a5db014a57f":[3,0,5,54,3,5]
+"structmtgb_1_1FbxParts_1_1Material.html#a520cef138d92b56264b38a5db014a57f":[3,0,5,54,3,5],
+"structmtgb_1_1FbxParts_1_1Material.html#a866589b100c94a7fd620cd82cfbeb745":[5,0,3,50,3,4],
+"structmtgb_1_1FbxParts_1_1Material.html#a866589b100c94a7fd620cd82cfbeb745":[3,0,5,54,3,4]
 };

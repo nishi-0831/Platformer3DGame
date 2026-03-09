@@ -1,7 +1,5 @@
 var NAVTREEINDEX30 =
 {
-"examples.html":[7],
-"file_8h.html":[6,0,0,0,14],
 "file_8h.html#a4a86bef4b6181cb3f53bd0461a9a511b":[6,0,0,0,14,0],
 "file_8h_source.html":[6,0,0,0,14],
 "files.html":[6,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX30 =
 "namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca7fc56270e7a70fa81a5935b72eacbe29":[3,0,5,221,0],
 "namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975ca9d5ed678fe57bcca610140957afab571":[3,0,5,221,1],
 "namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09":[3,0,5,220],
-"namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09a3c93f85078b290625b7c4db299979c4f":[3,0,5,220,0]
+"namespacemtgb.html#a797dd9c444461d95b1013c74c135cf09a3c93f85078b290625b7c4db299979c4f":[3,0,5,220,0],
+"namespacemtgb.html#a7c912560b5d5b96e146066d28ef4da99":[3,0,5,288],
+"namespacemtgb.html#a7ff2664c9e2e9708af1e707c6afe488d":[3,0,5,253]
 };

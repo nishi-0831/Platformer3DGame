@@ -18,7 +18,7 @@ var searchData=
   ['destroyme_15',['DestroyMe',['../classmtgb_1_1GameObject.html#a78fb345c550e9f448e08654127792564',1,'mtgb::GameObject']]],
   ['direct2dresource_16',['Direct2DResource',['../classmtgb_1_1Direct2DResource.html#a2a180504724fffa1bc47f7c08c7493be',1,'mtgb::Direct2DResource::Direct2DResource(WindowContext _windowContext)'],['../classmtgb_1_1Direct2DResource.html#a11bc6d1340774dc9a3a2ef0dff11c4de',1,'mtgb::Direct2DResource::Direct2DResource(const Direct2DResource &amp;)=delete']]],
   ['direct3dresource_17',['Direct3DResource',['../classmtgb_1_1Direct3DResource.html#a028867d4c20d19552419fab305472a72',1,'mtgb::Direct3DResource::Direct3DResource(WindowContext _windowContext)'],['../classmtgb_1_1Direct3DResource.html#a63bf59b5bea95beda1d56524c5e84171',1,'mtgb::Direct3DResource::Direct3DResource(const Direct3DResource &amp;)=delete']]],
-  ['directshow_18',['DirectShow',['../classmtgb_1_1MTImGui.html#a73fb695d95ea9b405d8d64430356c710',1,'mtgb::MTImGui']]],
+  ['directshow_18',['DirectShow',['../classmtgb_1_1MTImGui.html#aadd579a29756ab8f7ea3b7ad2bd2e8ca',1,'mtgb::MTImGui']]],
   ['directwrite_19',['DirectWrite',['../classmtgb_1_1DirectWrite.html#a2da77e5b8d52721d26e53e7eb3eeda98',1,'mtgb::DirectWrite']]],
   ['directx11draw_20',['DirectX11Draw',['../classmtgb_1_1DirectX11Draw.html#a83290602e2ec7d9c7807501806e795b5',1,'mtgb::DirectX11Draw']]],
   ['directx11manager_21',['DirectX11Manager',['../classmtgb_1_1DirectX11Manager.html#a6de71deea6f4e064c124f8e42056de29',1,'mtgb::DirectX11Manager']]],

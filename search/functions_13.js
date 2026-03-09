@@ -105,7 +105,7 @@ var searchData=
   ['stringdebug_102',['stringDebug',['../classString.html#a5c07384b505d25ae6f61fc7abf0b0e61',1,'String']]],
   ['strtobool_103',['strtobool',['../namespacerun-clang-tidy.html#a1964b26a0dfbb42ea1a1230c0ca2218a',1,'run-clang-tidy']]],
   ['sub_104',['Sub',['../classmtbit_1_1BitFlag_1_1BitFlagEditor.html#a80ab7e63ba1abc5e13b561790f3be619',1,'mtbit::BitFlag::BitFlagEditor']]],
-  ['subscribe_105',['Subscribe',['../classmtgb_1_1Event.html#abbca8d2be3e690e0afcb60a41f1fe8ec',1,'mtgb::Event']]],
+  ['subscribe_105',['Subscribe',['../classmtgb_1_1Event.html#ab63b934a41e1e37c17a55abc84881844',1,'mtgb::Event']]],
   ['subscribeevents_106',['SubscribeEvents',['../classmtgb_1_1ImGuizmoManipulator.html#aefc230d9123126c4d6d9e51b155c55cb',1,'mtgb::ImGuizmoManipulator']]],
   ['substrbegin_107',['SubStrBegin',['../namespacemtgb.html#aeccdf685def035238bcaed9d4ba1b04c',1,'mtgb']]],
   ['subtractscore_108',['SubtractScore',['../classmtgb_1_1ScoreManager.html#a331b2e534e1fdb28f741a15ece1b20e6',1,'mtgb::ScoreManager']]],

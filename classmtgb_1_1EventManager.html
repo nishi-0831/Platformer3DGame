@@ -127,7 +127,7 @@ mtgb::EventManager 連携図</div>
 <tr class="separator:afefdfca3ae76b22d26bdc17576013cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e2dbf917fa89229d4382f44753208d4"><td class="memTemplParams" colspan="2">template&lt;typename EventDataType &gt; </td></tr>
 <tr class="memitem:a3e2dbf917fa89229d4382f44753208d4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1Event.html">Event</a>&lt; EventDataType &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1EventManager.html#a3e2dbf917fa89229d4382f44753208d4">GetEvent</a> ()</td></tr>
-<tr class="memdesc:a3e2dbf917fa89229d4382f44753208d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定されたイベントデータ型に対応するEvent オブジェクトを返す  <br /></td></tr>
+<tr class="memdesc:a3e2dbf917fa89229d4382f44753208d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定されたイベントデータ型に対応するEventオブジェクトを返す  <br /></td></tr>
 <tr class="separator:a3e2dbf917fa89229d4382f44753208d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf080cd63a34509eeeccd90443af8b88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1EventManager.html#aaf080cd63a34509eeeccd90443af8b88">ClearSceneSubscriptions</a> ()</td></tr>
 <tr class="separator:aaf080cd63a34509eeeccd90443af8b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,7 +142,7 @@ mtgb::EventManager 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00114">114</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00116">116</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="adae6b4fe18674c3769ead4e88e37e672" name="adae6b4fe18674c3769ead4e88e37e672"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adae6b4fe18674c3769ead4e88e37e672">&#9670;&#160;</a></span>~EventManager()</h2>
@@ -240,19 +240,17 @@ template&lt;typename EventDataType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>指定されたイベントデータ型に対応するEvent オブジェクトを返す </p>
+<p>指定されたイベントデータ型に対応するEventオブジェクトを返す </p>
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00125">125</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  126</span>        {</div>
-<div class="line"><span class="lineno">  127</span>            <span class="comment">// テンプレート型 `EventDataType` を識別するための type_index を作成</span></div>
-<div class="line"><span class="lineno">  128</span>            std::type_index typeIdx = std::type_index(<span class="keyword">typeid</span>(EventDataType));</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>            <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1EventManager.html#a3d2b006dbf0f10989ceb557af2b84d5f">events_</a>.find(typeIdx);</div>
-<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1EventManager.html#a3d2b006dbf0f10989ceb557af2b84d5f">events_</a>.end())</div>
-<div class="line"><span class="lineno">  132</span>            {</div>
-<div class="line"><span class="lineno">  133</span>                <span class="comment">// 存在しない場合は新規作成してマップに登録</span></div>
-<div class="line"><span class="lineno">  134</span>                Event&lt;EventDataType&gt;* newEvent = <span class="keyword">new</span> Event&lt;EventDataType&gt;();</div>
-<div class="line"><span class="lineno">  135</span>                <a class="code hl_variable" href="classmtgb_1_1EventManager.html#a3d2b006dbf0f10989ceb557af2b84d5f">events_</a>[typeIdx]               = newEvent;</div>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00127">127</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>        {</div>
+<div class="line"><span class="lineno">  129</span>            std::type_index typeIdx = <span class="keyword">typeid</span>(EventDataType);</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>            <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1EventManager.html#a3d2b006dbf0f10989ceb557af2b84d5f">events_</a>.find(typeIdx);</div>
+<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1EventManager.html#a3d2b006dbf0f10989ceb557af2b84d5f">events_</a>.end())</div>
+<div class="line"><span class="lineno">  133</span>            {</div>
+<div class="line"><span class="lineno">  134</span>                <span class="comment">// 存在しない場合は新規作成してマップに登録</span></div>
+<div class="line"><span class="lineno">  135</span>                <a class="code hl_variable" href="classmtgb_1_1EventManager.html#a3d2b006dbf0f10989ceb557af2b84d5f">events_</a>.emplace(typeIdx, <span class="keyword">new</span> Event&lt;EventDataType&gt;());</div>
 <div class="line"><span class="lineno">  136</span>                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Event&lt;EventDataType&gt;&amp;<span class="keyword">&gt;</span>(*<a class="code hl_variable" href="classmtgb_1_1EventManager.html#a3d2b006dbf0f10989ceb557af2b84d5f">events_</a>[typeIdx]);</div>
 <div class="line"><span class="lineno">  137</span>            }</div>
 <div class="line"><span class="lineno">  138</span> </div>
@@ -375,8 +373,8 @@ template&lt;typename EventDataType &gt; </div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00119">119</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>{}</div>
+<p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00121">121</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -403,7 +401,7 @@ template&lt;typename EventDataType &gt; </div>
 
 <p class="definition"> <a class="el" href="EventManager_8h_source.html">EventManager.h</a> の <a class="el" href="EventManager_8h_source.html#l00159">159</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="EventManager_8h_source.html#l00147">ClearSceneSubscriptions()</a>, <a class="el" href="EventManager_8h_source.html#l00125">GetEvent()</a>, <a class="el" href="EventManager_8cpp_source.html#l00005">~EventManager()</a>.</p>
+<p class="reference">参照元 <a class="el" href="EventManager_8h_source.html#l00147">ClearSceneSubscriptions()</a>, <a class="el" href="EventManager_8h_source.html#l00127">GetEvent()</a>, <a class="el" href="EventManager_8cpp_source.html#l00005">~EventManager()</a>.</p>
 
 </div>
 </div>
