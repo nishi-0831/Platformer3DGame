@@ -6,6 +6,8 @@
 
 #include "Vector3.h"
 #include "RigidBodyCP.h"
+#include "CallbackConcepts.h"
+
 #include <functional>
 #include <DirectXCollision.h>
 
@@ -33,17 +35,17 @@ namespace mtgb
 		/// コライダ同士の衝突に対するコールバック
 		/// </summary>
 		/// <param name="onHit_"></param>
-		void OnCollisionEnter(const std::function<void(EntityId)>& _onHit);
+		template <EntityCallable Func> void OnCollisionEnter(Func&& _onHit);
 		/// <summary>
 		/// コライダ同士が接触している際に呼ばれるコールバック
 		/// </summary>
 		/// <param name="_onStay"></param>
-		void OnCollisionStay(const std::function<void(EntityId)>& _onStay);
+		template <EntityCallable Func> void OnCollisionStay(Func&& _onStay);
 		/// <summary>
 		/// コライダ同士が離れた時に呼ばれるコールバック
 		/// </summary>
 		/// <param name="_onExit"></param>
-		void OnCollisionExit(const std::function<void(EntityId)>& _onExit);
+		template <EntityCallable Func> void OnCollisionExit(Func&& _onExit);
 		/// <summary>
 		/// ジャンプをしている状態か
 		/// </summary>
@@ -63,7 +65,6 @@ namespace mtgb
 		static float GetGravity();
 
 	  public:
-		bool isNeedUpdate_;
 		Vector3 velocity_;
 		[[MT_PROPERTY()]]
 		bool useGravity_;
@@ -77,5 +78,20 @@ namespace mtgb
 		std::function<void(EntityId)> onExit_;
 		Transform* pTransform_;
 	};
+
+	template <EntityCallable Func> inline void RigidBody::OnCollisionEnter(Func&& _onHit)
+	{
+		onHit_ = std::forward<Func>(_onHit);
+	}
+
+	template <EntityCallable Func> inline void RigidBody::OnCollisionStay(Func&& _onStay)
+	{
+		onStay_ = std::forward<Func>(_onStay);
+	}
+
+	template <EntityCallable Func> inline void RigidBody::OnCollisionExit(Func&& _onExit)
+	{
+		onExit_ = std::forward<Func>(_onExit);
+	}
 
 } // namespace mtgb

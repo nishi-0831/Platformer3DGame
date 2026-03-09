@@ -81,7 +81,9 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_func">コールバック</param>
 		/// <param name="_show">表示場所</param>
-		void DirectShow(const std::function<void()>& _func, const std::string& _name, ShowType _show);
+		template <typename Func>
+			requires std::is_invocable_v<Func>
+		void DirectShow(Func&& _func, const std::string& _name, ShowType _show);
 
 		/// <summary>
 		/// <para> ImGuiWindowに線分を描画 </para>
@@ -190,16 +192,33 @@ namespace mtgb
 			_show
 		);
 	}
+	template <typename Func>
+		requires std::is_invocable_v<Func>
+	inline void MTImGui::DirectShow(Func&& _func, const std::string& _name, ShowType _show)
+	{
+		if (_show == ShowType::SCENE_VIEW)
+		{
+			// SceneViewは名前不要
+			sceneViewShowList_.push(std::forward<Func>(_func));
+		}
+		else
+		{
+			showQueues_[_show].emplace(_name, std::forward<Func>(_func));
+		}
+	}
 	template <typename T> void mtgb::MTImGui::RegisterComponentViewer()
 	{
 		std::type_index typeIdx(typeid(T));
 
-		componentShowFuncs_[typeIdx] = [this](EntityId _entityId)
-		{
-			GameObject* obj	 = mtgb::GameObject::FindGameObject(_entityId);
-			std::string name = obj->GetName() + ":Components";
-			PropertyDisplayRegistry::Instance().ShowProperty<T>(&(T::Get(_entityId)), name.c_str());
-		};
+		componentShowFuncs_.emplace(
+			typeIdx,
+			[this](EntityId _entityId)
+			{
+				GameObject* obj	 = mtgb::GameObject::FindGameObject(_entityId);
+				std::string name = obj->GetName() + ":Components";
+				PropertyDisplayRegistry::Instance().ShowProperty<T>(&(T::Get(_entityId)), name.c_str());
+			}
+		);
 	}
 
 } // namespace mtgb

@@ -34,10 +34,12 @@ namespace mtgb
 		/// <summary>
 		/// ハンドラを登録し、登録に割り当てられた ID を返す
 		/// </summary>
-		EventHandlerId Subscribe(const EventHandler& _handler, EventScope _scope = EventScope::SCENE)
+		template <typename Func>
+			requires std::is_convertible_v<Func, EventHandler>
+		EventHandlerId Subscribe(Func&& _handler, EventScope _scope = EventScope::SCENE)
 		{
 			EventHandlerId id = nextId++;
-			handlers_.emplace(id, HandlerEntry { _handler, _scope });
+			handlers_.emplace(id, HandlerEntry { std::forward<Func>(_handler), _scope });
 			return id;
 		}
 
@@ -120,19 +122,17 @@ namespace mtgb
 
 		template <typename EventDataType>
 		/// <summary>
-		/// 指定されたイベントデータ型に対応するEvent オブジェクトを返す
+		/// 指定されたイベントデータ型に対応するEventオブジェクトを返す
 		/// </summary>
 		Event<EventDataType>& GetEvent()
 		{
-			// テンプレート型 `EventDataType` を識別するための type_index を作成
-			std::type_index typeIdx = std::type_index(typeid(EventDataType));
+			std::type_index typeIdx = typeid(EventDataType);
 
 			auto itr = events_.find(typeIdx);
 			if (itr == events_.end())
 			{
 				// 存在しない場合は新規作成してマップに登録
-				Event<EventDataType>* newEvent = new Event<EventDataType>();
-				events_[typeIdx]			   = newEvent;
+				events_.emplace(typeIdx, new Event<EventDataType>());
 				return static_cast<Event<EventDataType>&>(*events_[typeIdx]);
 			}
 

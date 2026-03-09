@@ -48,12 +48,9 @@ namespace mtgb
 		bool IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist) const;
 		bool IsHit(const Vector3& _center, float _radius) const;
 
-		template <EntityCallable Func>
-		void ForEachCollisionEnter(Func&& _func);
-		template <EntityCallable Func>
-		void ForEachCollisionStay(Func&& _func);
-		template <EntityCallable Func>
-		void ForEachCollisionExit(Func&& _func);
+		void ForEachCollisionEnter(const EntityCallback& _func);
+		void ForEachCollisionStay(const EntityCallback& _func);
+		void ForEachCollisionExit(const EntityCallback& _func);
 
 		void Draw() const;
 
@@ -110,44 +107,4 @@ namespace mtgb
 		[[MT_PROPERTY()]]
 		Vector3 extents_;
 	};
-
-	template <EntityCallable Func>
-	inline void Collider::ForEachCollisionEnter(Func&& _func)
-	{
-		for (Collider* onCollider : onColliders_)
-		{
-			if (onCollidersPrev_.find(onCollider) == onCollidersPrev_.end())
-			{
-				// 以前は衝突してない
-				_func(onCollider->GetEntityId());
-			}
-		}
-	}
-
-	template <EntityCallable Func>
-	inline void Collider::ForEachCollisionStay(Func&& _func)
-	{
-		for (Collider* onCollider : onColliders_)
-		{
-			if (onCollidersPrev_.find(onCollider) == onCollidersPrev_.end())
-				continue;
-
-			// 以前から衝突している
-			_func(onCollider->GetEntityId());
-		}
-	}
-
-	template <EntityCallable Func>
-	inline void Collider::ForEachCollisionExit(Func&& _func)
-	{
-		for (Collider* onColliderPrev : onCollidersPrev_)
-		{
-			if (onColliders_.find(onColliderPrev) != onColliders_.end())
-				continue;
-
-			// 以前は衝突していて、現在はしていない
-			_func(onColliderPrev->GetEntityId());
-		}
-	}
-
 } // namespace mtgb

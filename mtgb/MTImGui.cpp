@@ -456,19 +456,6 @@ void mtgb::MTImGui::Unregister(ImGuiShowable* _obj)
 	}
 }
 
-void mtgb::MTImGui::DirectShow(const std::function<void()>& _func, const std::string& _name, ShowType _show)
-{
-	if (_show == ShowType::SCENE_VIEW)
-	{
-		// SceneViewは名前不要
-		sceneViewShowList_.push(_func);
-	}
-	else
-	{
-		showQueues_[_show].emplace(_name, _func);
-	}
-}
-
 void mtgb::MTImGui::DrawLine(const Vector3& _from, const Vector3& _to, float _thickness)
 {
 	if (updatingImGuiShowable_)

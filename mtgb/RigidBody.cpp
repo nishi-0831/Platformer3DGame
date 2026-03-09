@@ -11,7 +11,6 @@ namespace
 } // namespace
 mtgb::RigidBody::RigidBody(EntityId _entityId)
 	: IComponent { _entityId }
-	, isNeedUpdate_ { false }
 	, useGravity_ { false }
 	, onHit_ { [](EntityId) {} }
 	, pTransform_ { &Transform::Get(_entityId) }
@@ -31,7 +30,6 @@ mtgb::RigidBody& mtgb::RigidBody::operator=(const RigidBody& _other)
 	this->onHit_		 = _other.onHit_;
 	this->onStay_		 = _other.onStay_;
 	this->onExit_		 = _other.onExit_;
-	this->isNeedUpdate_	 = _other.isNeedUpdate_;
 	this->useGravity_	 = _other.useGravity_;
 	*(this->pTransform_) = *(_other.pTransform_);
 	this->isGround_		 = _other.isGround_;
@@ -57,24 +55,6 @@ void mtgb::RigidBody::OnGround()
 {
 	isGround_	= true;
 	velocity_.y = (std::max)(velocity_.y, 0.0f);
-}
-
-void mtgb::RigidBody::OnCollisionEnter(const std::function<void(EntityId)>& _onHit)
-{
-	isNeedUpdate_ = true;
-	onHit_		  = _onHit;
-}
-
-void mtgb::RigidBody::OnCollisionStay(const std::function<void(EntityId)>& _onHit)
-{
-	isNeedUpdate_ = true;
-	onStay_		  = _onHit;
-}
-
-void mtgb::RigidBody::OnCollisionExit(const std::function<void(EntityId)>& _onExit)
-{
-	isNeedUpdate_ = true;
-	onExit_		  = _onExit;
 }
 
 bool mtgb::RigidBody::IsJumping()

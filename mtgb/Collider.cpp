@@ -233,6 +233,42 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 	return false;
 }
 
+void mtgb::Collider::ForEachCollisionEnter(const EntityCallback& _func)
+{
+	for (Collider* onCollider : onColliders_)
+	{
+		if (onCollidersPrev_.find(onCollider) == onCollidersPrev_.end())
+		{
+			// 以前は衝突してない
+			_func(onCollider->GetEntityId());
+		}
+	}
+}
+
+void mtgb::Collider::ForEachCollisionStay(const EntityCallback& _func)
+{
+	for (Collider* onCollider : onColliders_)
+	{
+		if (onCollidersPrev_.find(onCollider) == onCollidersPrev_.end())
+			continue;
+
+		// 以前から衝突している
+		_func(onCollider->GetEntityId());
+	}
+}
+
+void mtgb::Collider::ForEachCollisionExit(const EntityCallback& _func)
+{
+	for (Collider* onColliderPrev : onCollidersPrev_)
+	{
+		if (onColliders_.find(onColliderPrev) != onColliders_.end())
+			continue;
+
+		// 以前は衝突していて、現在はしていない
+		_func(onColliderPrev->GetEntityId());
+	}
+}
+
 void mtgb::Collider::SetCenter(const Vector3& _center)
 {
 	if (colliderType_ == ColliderType::TYPE_AABB)
