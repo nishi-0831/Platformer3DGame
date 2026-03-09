@@ -33,19 +33,6 @@ namespace mtgb
 		void UpdateAndSetDetection(RayDetectorConfig&& _config);
 
 		/// <summary>
-		/// 検出された対象があるかどうか
-		/// </summary>
-		bool HasDetectedTargets() const override;
-
-		/// <summary>
-		/// 検出結果を取得
-		/// </summary>
-		const std::vector<ScreenCoordContainsInfo>& GetDetectedTargets() const override;
-
-		void ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func) override;
-		void ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const override;
-
-		/// <summary>
 		/// ターゲットがレイの角度範囲内にあるかチェック
 		/// </summary>
 		bool IsTargetInRayAngle(

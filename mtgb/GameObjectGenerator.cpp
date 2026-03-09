@@ -73,7 +73,6 @@ void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
 		{
 			return GetInstance()->gameObjFactory_.Create(classTypeName);
 		},
-		Game::GetComponentFactory(),
 		_srcEntityId
 	);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
@@ -84,7 +83,7 @@ void mtgb::GameObjectGenerator::Delete(EntityId _entityId)
 	GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
 
 	DeleteGameObjectCommand* cmd =
-		new DeleteGameObjectCommand(pGameObj, GetInstance()->gameObjFactory_, Game::GetComponentFactory());
+		new DeleteGameObjectCommand(pGameObj, GetInstance()->gameObjFactory_);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 

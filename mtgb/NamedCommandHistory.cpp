@@ -1,6 +1,6 @@
 #include "NamedCommandHistory.h"
 #include "ImGui/imgui.h"
-
+#include "ReleaseUtility.h"
 namespace
 {
 	const size_t HISTORY_CAPACITY = 256;
@@ -13,16 +13,22 @@ namespace mtgb
 	{
 	}
 
-	void NamedCommandHistory::ExecuteCommand(Command* _command)
+	NamedCommandHistory::~NamedCommandHistory() 
+	{
+		ClearAllStack();
+		SAFE_DELETE(inner_);
+	}
+
+	void NamedCommandHistory::ExecuteCommand(Command* _pCommand)
 	{
 		if (inner_ == nullptr)
 			return;
-		if (_command == nullptr)
+		if (_pCommand == nullptr)
 			return;
-		inner_->ExecuteCommand(_command);
+		inner_->ExecuteCommand(_pCommand);
 
-		commandHistoryNames_.push_back("Execute:" + _command->Name());
-		undoNames_.push_back(_command->Name());
+		commandHistoryNames_.push_back("Execute:" + _pCommand->Name());
+		undoNames_.push_back(_pCommand->Name());
 		redoNames_.clear();
 
 		// サイズの制限

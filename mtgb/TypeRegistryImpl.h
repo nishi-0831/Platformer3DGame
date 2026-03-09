@@ -129,6 +129,7 @@ template <typename T> void PropertyDisplayRegistry::RegisterType()
 	};
 }
 
+
 // メンバの型がリフレクションされているかチェックし、ShowFunc属性があればそれを使用
 template <typename T>
 bool PropertyDisplayRegistry::ShowMemberWithReflection(T _memberValue, const char* _name, Command* _command)

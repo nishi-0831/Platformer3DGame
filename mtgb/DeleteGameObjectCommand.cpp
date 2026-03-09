@@ -4,11 +4,9 @@
 #include "EntityManager.h"
 mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
 	GameObject* _pGameObj,
-	const GameObjectFactory& _gameObjectFactory,
-	const ComponentFactory& _componentFactory
+	const GameObjectFactory& _gameObjectFactory
 )
-	: componentFactory_ { _componentFactory }
-	, gameObjectFactory_ { _gameObjectFactory }
+	: gameObjectFactory_ { _gameObjectFactory }
 	, targetEntityId_ { INVALID_ENTITY }
 	, name_ { " Unknown" }
 	, layerFlag_ { AllLayer() }
@@ -64,7 +62,7 @@ void mtgb::DeleteGameObjectCommand::Undo()
 
 	for (IComponentMemento* pMemento : mementos_)
 	{
-		componentFactory_.AddComponentFromMemento(*pMemento);
+		Game::GetComponentFactory().AddComponentFromMemento(*pMemento);
 	}
 }
 

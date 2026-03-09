@@ -17,8 +17,7 @@ namespace mtgb
 	  public:
 		DeleteGameObjectCommand(
 			GameObject* _pGameObj,
-			const GameObjectFactory& _gameObjectFactory,
-			const ComponentFactory& _componentFactory
+			const GameObjectFactory& _gameObjectFactory
 		);
 		// Command を介して継承されました
 		void Execute() override;
@@ -27,7 +26,6 @@ namespace mtgb
 		mtgb::EntityId GetCommandTargetEntityId() const override;
 
 	  private:
-		const ComponentFactory& componentFactory_;
 		const GameObjectFactory& gameObjectFactory_;
 		EntityId targetEntityId_;
 		std::string name_;

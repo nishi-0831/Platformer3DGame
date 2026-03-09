@@ -153,7 +153,7 @@ void mtgb::ImGuiEditor::DuplicateGameObject()
 void mtgb::ImGuiEditor::AddComponent(std::type_index _componentType, EntityId _entityId)
 {
 	// コンポーネント作成成功
-	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr, Game::GetComponentFactory());
+	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 

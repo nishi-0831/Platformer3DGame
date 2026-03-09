@@ -8,6 +8,7 @@
 #include <vector>
 #include "GameObject.h"
 #include <nlohmann/json.hpp>
+#include <concepts>
 namespace mtgb
 {
 
@@ -15,9 +16,13 @@ namespace mtgb
 	{
 	  public:
 		using CreateFunc = std::function<GameObject*()>;
-		GameObjectCreateCommand(const CreateFunc& _createFunc);
+		 template<typename Func>
+		 requires std::is_invocable_r_v<GameObject*,Func>
+		GameObjectCreateCommand(Func&& _createFunc);
 
-		GameObjectCreateCommand(const CreateFunc& _createFunc, const nlohmann::json& _json);
+		template <typename Func>
+			 requires std::is_invocable_r_v<GameObject*, Func>
+		GameObjectCreateCommand(Func&& _createFunc, const nlohmann::json& _json);
 		void Execute() override;
 		void Undo() override;
 		void Redo() override;
@@ -33,4 +38,20 @@ namespace mtgb
 		CreateFunc createFunc_;
 		nlohmann::json json_;
 	};
+	template <typename Func>
+		requires std::is_invocable_r_v<GameObject*, Func>
+	inline GameObjectCreateCommand::GameObjectCreateCommand(Func&& _createFunc) 
+		: entityId_ {INVALID_ENTITY}
+		, createFunc_ { std::forward<Func>(_createFunc) }
+		, json_ {}
+	{
+		
+	}
+	template <typename Func>
+		requires std::is_invocable_r_v<GameObject*, Func>
+	inline GameObjectCreateCommand::GameObjectCreateCommand(Func&& _createFunc, const nlohmann::json& _json)
+		: GameObjectCreateCommand(std::forward<Func>(_createFunc))
+	{
+		json_ = _json;
+	}
 } // namespace mtgb

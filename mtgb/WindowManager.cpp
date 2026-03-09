@@ -1,8 +1,6 @@
 #include "WindowManager.h"
 #include "WindowContextResourceManager.h"
 #include "WindowContext.h"
-// #include <Windows.h>
-// #include "WindowRenderContext.h"
 #include "IncludingWindows.h"
 #include "MTAssert.h"
 #include "WindowResource.h"
@@ -180,59 +178,3 @@ void mtgb::WindowManager::ResizeWindow(WindowContext _windowContext, UINT _width
 		Game::System<ImGuiRenderer>().OnResize(_width, _height);
 	}
 }
-
-#pragma region SwapWindowPos()
-// void mtgb::WindowManager::SwapWindowPos(WindowContext _ctx1, WindowContext _ctx2)
-//{
-//	DXGIResource& dxgiRes1 = WinCtxRes::Get<DXGIResource>(_ctx1);
-//	DXGIResource& dxgiRes2 = WinCtxRes::Get<DXGIResource>(_ctx2);
-//
-//	RECT monitorRect1 = dxgiRes1.GetAssignedMonitorRect();
-//	RECT monitorRect2 = dxgiRes2.GetAssignedMonitorRect();
-//
-//	WindowResource& winRes1 = WinCtxRes::Get<WindowResource>(_ctx1);
-//	WindowResource& winRes2 = WinCtxRes::Get<WindowResource>(_ctx2);
-//
-//	bool win1IsFullScreen = winRes1.IsFullScreen();
-//	bool win2IsFullScreen = winRes2.IsFullScreen();
-//
-//
-//
-//	// どちらもフルスクリーン
-//	if (win1IsFullScreen == true && win2IsFullScreen == true)
-//	{
-//		UINT win1Width = monitorRect1.right - monitorRect1.left;
-//		UINT win2Width = monitorRect2.right - monitorRect2.left;
-//
-//		UINT win1Height = monitorRect1.bottom - monitorRect1.top;
-//		UINT win2Height = monitorRect2.bottom - monitorRect2.top;
-//
-//		// スクリーンのサイズが違うか
-//		if (win1Width != win2Width || win1Height != win2Height)
-//		{
-//			// サイズも変更
-//			winRes1.SetFullScreen(monitorRect2);
-//			winRes2.SetFullScreen(monitorRect1);
-//		}
-//		else
-//		{
-//			// 位置だけ変更
-//			winRes1.SetPosition(monitorRect2);
-//			winRes2.SetPosition(monitorRect1);
-//		}
-//	}
-//	// どちらもウィンドウモード
-//	else if (win1IsFullScreen == false && win2IsFullScreen == false)
-//	{
-//		// 位置だけ変更
-//		winRes1.SetPosition(monitorRect2);
-//		winRes2.SetPosition(monitorRect1);
-//	}
-//	// どちらかがフルスクリーン、どちらかがウィンドウモード
-//	else
-//	{
-//		ChangeFullScreenState(_ctx1, monitorRect2);
-//		ChangeFullScreenState(_ctx2, monitorRect1);
-//	}
-// }
-#pragma endregion

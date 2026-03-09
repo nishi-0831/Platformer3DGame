@@ -13,6 +13,7 @@ namespace mtgb
 	  public:
 		// ISystem を介して継承されました
 		CommandHistoryManager();
+		~CommandHistoryManager();
 		void Initialize() override;
 		void Update() override;
 

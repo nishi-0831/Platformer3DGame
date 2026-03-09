@@ -18,16 +18,13 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_entityId">エンティティのID</param>
 		/// <param name="_typeIdx">コンポーネントの型情報</param>
-		/// <param name="_memento">
-		/// nullの場合は_entityIdから既存のコンポーネントを取得、なければ新規作成しMementoに保存する</param> <param
-		/// name="_pComponentFactory"> 参照として保持するので、コマンドより長く生存する必要あり </param>
+		/// <param name="_memento"> nullの場合は_entityIdから既存のコンポーネントを取得、なければ新規作成しMementoに保存する/param>
 		AddComponentCommand(
 			EntityId _entityId,
-			const std::type_index& _typeIdx,
-			IComponentMemento* _memento,
-			const ComponentFactory& _pComponentFactory
+			std::type_index _typeIdx,
+			IComponentMemento* _pMemento
 		);
-		~AddComponentCommand() = default;
+		~AddComponentCommand();
 		void Execute() override;
 		void Undo() override;
 
@@ -36,16 +33,10 @@ namespace mtgb
 
 	  private:
 		EntityId entityId_;
-		size_t componentPoolIndex_;
 		std::type_index componentType_;
-		IComponentMemento* memento_;
-
-		// ComponentFactoryがnullであることを許容しない
-		const ComponentFactory& componentFactory_;
+		IComponentMemento* pMemento_;
 
 		void ApplyMemento();
 		void RemoveComponent() const;
-
-		// Command を介して継承されました
 	};
 } // namespace mtgb

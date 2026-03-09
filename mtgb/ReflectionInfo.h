@@ -50,37 +50,3 @@ REGISTER_FIELD(lY)
 REGISTER_FIELD(lZ)
 REGISTER_FIELD(rgbButtons)
 REGISTER_END
-
-// REGISTER_TYPE(TransformState, DisplayName{ "Transform" })
-// REGISTER_FIELD(parent)
-// REGISTER_FIELD(position)
-// REGISTER_FIELD(scale)
-// REGISTER_FIELD(rotate)
-// REGISTER_END
-//
-// REGISTER_TYPE(MeshRendererState, DisplayName{ "MeshRenderer" })
-// REGISTER_FIELD(meshFileName)
-// REGISTER_FIELD(meshHandle)
-// REGISTER_FIELD(layer)
-// REGISTER_FIELD(shaderType)
-// REGISTER_END
-//
-// REGISTER_TYPE(ColliderState, DisplayName{ "Collider" })
-// REGISTER_FIELD(colliderType)
-// REGISTER_FIELD(isStatic)
-// REGISTER_FIELD(colliderTag)
-// REGISTER_FIELD(center)
-// REGISTER_FIELD(radius)
-// REGISTER_FIELD(extents)
-// REGISTER_END
-//
-// REGISTER_TYPE(RigidBodyState,DisplayName{"RigidBody"})
-// REGISTER_FIELD(useGravity)
-// REGISTER_FIELD(isKinematic)
-// REGISTER_END
-
-// REGISTER_TYPE(MovingFloorState,DisplayName{"MovingFloor"})
-// REGISTER_FIELD(duration)
-// REGISTER_FIELD(to)
-// REGISTER_FIELD(from)
-// REGISTER_END

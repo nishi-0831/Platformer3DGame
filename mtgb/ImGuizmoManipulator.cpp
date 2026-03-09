@@ -250,7 +250,7 @@ void mtgb::ImGuizmoManipulator::UpdateOperationMode()
 void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectSelectedEvent& _event)
 {
 	SelectionCommand* cmd = new SelectionCommand(
-		(_event.entityId),
+		_event.entityId,
 		[this](EntityId _entityId)
 		{
 			Select(_entityId);

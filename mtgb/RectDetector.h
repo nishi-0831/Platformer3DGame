@@ -47,20 +47,7 @@ namespace mtgb
 		/// <param name="_config"> 割り当て、検出に使用する設定</param>
 		void UpdateAndSetDetection(RectDetectorConfig&& _config);
 
-		/// <summary>
-		/// 検出された対象があるかどうか
-		/// </summary>
-		/// <returns>対象が一つでもあるなら true</returns>
-		bool HasDetectedTargets() const override;
-
 		RectF GetDetectionArea() const override;
-		/// <summary>
-		/// 検出結果を取得
-		/// </summary>
-		const std::vector<ScreenCoordContainsInfo>& GetDetectedTargets() const override;
-
-		void ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func) override;
-		void ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const override;
 
 		/// <summary>
 		/// <para> カメラからターゲットに視線が通っているか</para>

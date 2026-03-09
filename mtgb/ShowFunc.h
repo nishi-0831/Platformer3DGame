@@ -1,6 +1,9 @@
 #pragma once
+#include <type_traits>
+
 #include "Command.h"
-template <typename Func> struct ShowFunc : refl::attr::usage::type
+template <typename Func>
+struct ShowFunc : refl::attr::usage::type
 {
   private:
 	Func func;

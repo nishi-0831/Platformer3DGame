@@ -4,20 +4,18 @@
 #include <functional>
 #include "Command.h"
 
-#include "Entity.h"
 #include <concepts>
-#include <any>
-#include <map>
 #include <typeindex>
+#include <type_traits>
+#include "CallbackConcepts.h"
+#include "Entity.h"
 namespace mtgb
 {
 	class SelectionCommand : public Command
 	{
-		using ExecuteFn = std::function<void(EntityId _entityId)>;
-		using UndoFn	= std::function<void(EntityId _entityId)>;
-
 	  public:
-		SelectionCommand(EntityId _entityId, ExecuteFn _selectFunc, UndoFn _deselectFunc);
+		template <EntityCallable FuncA, EntityCallable FuncB>
+		SelectionCommand(EntityId _entityId, FuncA&& _selectFunc, FuncB&& _deselectFunc);
 
 		void Execute() override
 		{
@@ -41,17 +39,15 @@ namespace mtgb
 
 	  private:
 		EntityId entityId_;
-		ExecuteFn selectFunc_;
-		UndoFn deselectFunc_;
+		EntityCallback selectFunc_;
+		EntityCallback deselectFunc_;
 	};
 
 	class DeselectionCommand : public Command
 	{
-		using ExecuteFn = std::function<void(EntityId _entityId)>;
-		using UndoFn	= std::function<void(EntityId _entityId)>;
-
 	  public:
-		DeselectionCommand(EntityId _entityId, ExecuteFn _deselectFunc, UndoFn _selectFunc);
+		template <EntityCallable FuncA, EntityCallable FuncB>
+		DeselectionCommand(EntityId _entityId, FuncA&& _deselectFunc, FuncB&& _selectFunc);
 
 		void Execute() override
 		{
@@ -75,8 +71,24 @@ namespace mtgb
 
 	  private:
 		EntityId entityId_;
-		ExecuteFn deselectFunc_;
-		UndoFn selectFunc_;
+		EntityCallback deselectFunc_;
+		EntityCallback selectFunc_;
 	};
+
+	template <EntityCallable FuncA, EntityCallable FuncB>
+	inline SelectionCommand::SelectionCommand(EntityId _entityId, FuncA&& _selectFunc, FuncB&& _deselectFunc)
+		: entityId_ { _entityId }
+		, selectFunc_ { std::forward<FuncA>(_selectFunc) }
+		, deselectFunc_ { std::forward<FuncB>(_deselectFunc) }
+	{
+	}
+
+	template <EntityCallable FuncA, EntityCallable FuncB>
+	inline DeselectionCommand::DeselectionCommand(EntityId _entityId, FuncA&& _deselectFunc, FuncB&& _selectFunc)
+		: entityId_ { _entityId }
+		, deselectFunc_ { std::forward<FuncA>(_deselectFunc) }
+		, selectFunc_ { std::forward<FuncB>(_selectFunc) }
+	{
+	}
 
 } // namespace mtgb

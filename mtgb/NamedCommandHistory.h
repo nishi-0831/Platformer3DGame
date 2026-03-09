@@ -10,9 +10,9 @@ namespace mtgb
 	{
 	  public:
 		explicit NamedCommandHistory(ICommandHistory* _inner = nullptr);
-		~NamedCommandHistory() = default;
+		~NamedCommandHistory();
 
-		void ExecuteCommand(Command* _command) override;
+		void ExecuteCommand(Command* _pCommand) override;
 		void UndoCommand() override;
 		void RedoCommand() override;
 		void ClearAllStack() override;

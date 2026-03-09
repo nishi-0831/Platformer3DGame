@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <string>
+#include <concepts>
 #include "WindowContext.h"
 #include "RectContainsInfo.h"
 #include "GameObjectTag.h"
@@ -25,13 +26,19 @@ namespace mtgb
 		/// 検出された対象があるかどうか
 		/// </summary>
 		/// <returns>対象が一つでもあるなら true</returns>
-		virtual bool HasDetectedTargets() const = 0;
+		bool HasDetectedTargets() const 
+		{
+			return !detectedTargets_.empty();
+		};
 
 		/// <summary>
 		/// 検出結果を取得
 		/// </summary>
 		/// <returns>検出された対象のリスト</returns>
-		virtual const std::vector<ScreenCoordContainsInfo>& GetDetectedTargets() const = 0;
+		const std::vector<ScreenCoordContainsInfo>& GetDetectedTargets() const
+		{
+			return detectedTargets_;
+		};
 
 		/// <summary>
 		/// 検出範囲を返す
@@ -44,10 +51,32 @@ namespace mtgb
 		/// <summary>
 		/// 検出結果を操作
 		/// </summary>
-		virtual void ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func)			 = 0;
-		virtual void ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const = 0;
+		template <typename Func>
+			requires std::is_invocable_v<Func, ScreenCoordContainsInfo&>
+		void ForEach(Func&& _func);
+		template <typename Func>
+			requires std::is_invocable_v<Func, const ScreenCoordContainsInfo&>
+		void ForEach(Func&& _func) const;
 
 	  protected:
 		std::vector<ScreenCoordContainsInfo> detectedTargets_;
 	};
+	template <typename Func>
+		requires std::is_invocable_v<Func, ScreenCoordContainsInfo&>
+	inline void IDetector::ForEach(Func&& _func)
+	{
+		for (auto& target : detectedTargets_)
+		{
+			_func(target);
+		}
+	}
+	template <typename Func>
+		requires std::is_invocable_v<Func, const ScreenCoordContainsInfo&>
+	inline void IDetector::ForEach(Func&& _func) const
+	{
+		for (const auto& target : detectedTargets_)
+		{
+			_func(target);
+		}
+	}
 } // namespace mtgb

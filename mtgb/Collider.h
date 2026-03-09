@@ -9,6 +9,7 @@
 #include "ColliderType.h"
 #include "ColliderCP.h"
 #include <concepts>
+#include "CallbackConcepts.h"
 #include "Collider.generated.h"
 
 namespace mtgb
@@ -47,14 +48,11 @@ namespace mtgb
 		bool IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist) const;
 		bool IsHit(const Vector3& _center, float _radius) const;
 
-		template <typename Func>
-			requires std::is_invocable_v<Func, EntityId>
+		template <EntityCallable Func>
 		void ForEachCollisionEnter(Func&& _func);
-		template <typename Func>
-			requires std::is_invocable_v<Func, EntityId>
+		template <EntityCallable Func>
 		void ForEachCollisionStay(Func&& _func);
-		template <typename Func>
-			requires std::is_invocable_v<Func, EntityId>
+		template <EntityCallable Func>
 		void ForEachCollisionExit(Func&& _func);
 
 		void Draw() const;
@@ -113,8 +111,7 @@ namespace mtgb
 		Vector3 extents_;
 	};
 
-	template <typename Func>
-		requires std::is_invocable_v<Func, EntityId>
+	template <EntityCallable Func>
 	inline void Collider::ForEachCollisionEnter(Func&& _func)
 	{
 		for (Collider* onCollider : onColliders_)
@@ -127,8 +124,7 @@ namespace mtgb
 		}
 	}
 
-	template <typename Func>
-		requires std::is_invocable_v<Func, EntityId>
+	template <EntityCallable Func>
 	inline void Collider::ForEachCollisionStay(Func&& _func)
 	{
 		for (Collider* onCollider : onColliders_)
@@ -141,8 +137,7 @@ namespace mtgb
 		}
 	}
 
-	template <typename Func>
-		requires std::is_invocable_v<Func, EntityId>
+	template <EntityCallable Func>
 	inline void Collider::ForEachCollisionExit(Func&& _func)
 	{
 		for (Collider* onColliderPrev : onCollidersPrev_)

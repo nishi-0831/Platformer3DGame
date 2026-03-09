@@ -77,11 +77,6 @@ void mtgb::RectDetector::UpdateAndSetDetection(RectDetectorConfig&& _config)
 	UpdateDetection();
 }
 
-bool mtgb::RectDetector::HasDetectedTargets() const
-{
-	return !detectedTargets_.empty();
-}
-
 RectF mtgb::RectDetector::GetDetectionArea() const
 {
 	Vector2F ratio = Game::System<Screen>().GetSizeRatio();
@@ -91,33 +86,6 @@ RectF mtgb::RectDetector::GetDetectionArea() const
 	Vector2F center	  = Game::System<Screen>().GetSizeF() * 0.5f;
 	Vector2F newPoint = center - Vector2F { scaledSize, scaledSize } * 0.5f;
 	return { newPoint, { scaledSize, scaledSize } };
-}
-
-const std::vector<ScreenCoordContainsInfo>& mtgb::RectDetector::GetDetectedTargets() const
-{
-	return detectedTargets_;
-}
-
-void mtgb::RectDetector::ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func)
-{
-	if (!HasDetectedTargets())
-		return;
-
-	for (auto& target : detectedTargets_)
-	{
-		_func(target);
-	}
-}
-
-void mtgb::RectDetector::ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const
-{
-	if (!HasDetectedTargets())
-		return;
-
-	for (const auto& target : detectedTargets_)
-	{
-		_func(target);
-	}
 }
 
 bool mtgb::RectDetector::IsLineOfSight(const Vector3& _cameraPos, const ScreenCoordContainsInfo& _targetInfo)

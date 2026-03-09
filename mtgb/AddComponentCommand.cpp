@@ -1,17 +1,20 @@
 #include "AddComponentCommand.h"
 #include "IComponentPool.h"
 #include "ComponentRegistry.h"
+#include "Game.h"
 mtgb::AddComponentCommand::AddComponentCommand(
 	mtgb::EntityId _entityId,
-	const std::type_index& _typeIdx,
-	mtgb::IComponentMemento* _memento,
-	const mtgb::ComponentFactory& _componentFactory
-)
-	: entityId_(_entityId)
-	, componentType_(_typeIdx)
-	, memento_(_memento)
-	, componentFactory_(_componentFactory)
+	std::type_index _typeIdx,
+	mtgb::IComponentMemento* _pMemento)
+	: entityId_ { _entityId }
+	, componentType_{_typeIdx}
+	, pMemento_{_pMemento}
 {
+}
+
+mtgb::AddComponentCommand::~AddComponentCommand()
+{
+	SAFE_DELETE(pMemento_);
 }
 
 void mtgb::AddComponentCommand::Execute()
@@ -26,16 +29,15 @@ void mtgb::AddComponentCommand::Undo()
 
 void mtgb::AddComponentCommand::ApplyMemento()
 {
-
-	if (memento_ == nullptr)
+	if (pMemento_ == nullptr)
 	{
 		// entityIdから既存のコンポーネントを取得、なければ新規作成しMementoに保存する
-		memento_ = componentFactory_.AddComponent(componentType_, entityId_);
+		pMemento_ = Game::GetComponentFactory().AddComponent(componentType_, entityId_);
 	}
 	else
 	{
 		// Mementoからコンポーネントを復元
-		componentFactory_.AddComponentFromMemento(*memento_);
+		Game::GetComponentFactory().AddComponentFromMemento(*pMemento_);
 	}
 }
 
@@ -54,7 +56,7 @@ std::string mtgb::AddComponentCommand::Name() const
 	return std::string("AddComponent:") + componentType_.name();
 }
 
-EntityId mtgb::AddComponentCommand::GetCommandTargetEntityId() const
+mtgb::EntityId mtgb::AddComponentCommand::GetCommandTargetEntityId() const
 {
 	return entityId_;
 }

@@ -2,10 +2,6 @@
 #include "TypeRegistryImpl.h"
 #include "ReflectionInfo.h"
 #include "Command.h"
-void PropertyDisplayRegistry::ProvisionalRegister(std::type_index _typeIdx, std::function<void(void)> _registerFunc)
-{
-	provisionalRegisterFunc_.emplace(_typeIdx, _registerFunc);
-}
 
 PropertyDisplayRegistry& PropertyDisplayRegistry::Instance()
 {
@@ -37,10 +33,7 @@ bool PropertyDisplayRegistry::IsRegisteredType(std::type_index _typeIdx)
 {
 	return showFunctions_.contains(_typeIdx);
 }
-void PropertyDisplayRegistry::RegisterCommandListener(std::function<void(Command*)> _commandListenner)
-{
-	commandListener_ = _commandListenner;
-}
+
 PropertyDisplayRegistry::PropertyDisplayRegistry()
 	: commandListener_ { nullptr }
 {

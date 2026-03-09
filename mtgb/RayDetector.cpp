@@ -64,32 +64,6 @@ namespace mtgb
 		UpdateDetection();
 	}
 
-	bool RayDetector::HasDetectedTargets() const
-	{
-		return !detectedTargets_.empty();
-	}
-
-	const std::vector<ScreenCoordContainsInfo>& RayDetector::GetDetectedTargets() const
-	{
-		return detectedTargets_;
-	}
-
-	void RayDetector::ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func)
-	{
-		for (auto& target : detectedTargets_)
-		{
-			_func(target);
-		}
-	}
-
-	void RayDetector::ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const
-	{
-		for (const auto& target : detectedTargets_)
-		{
-			_func(target);
-		}
-	}
-
 	bool RayDetector::IsTargetInRayAngle(
 		const Vector3& _targetPos,
 		const Vector3& _rayOrigin,

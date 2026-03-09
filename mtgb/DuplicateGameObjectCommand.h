@@ -11,9 +11,10 @@ namespace mtgb
 	{
 	  public:
 		using CreateFunc = std::function<GameObject*()>;
+		template <typename Func>
+			requires std::is_invocable_r_v<GameObject*, Func>
 		DuplicateGameObjectCommand(
-			const CreateFunc& _createFunc,
-			const ComponentFactory& _componentFactory,
+			Func&& _createFunc,
 			EntityId _srcEntityId
 		);
 		~DuplicateGameObjectCommand();
@@ -34,8 +35,32 @@ namespace mtgb
 		std::string srcGameObjName_;
 		std::string destGameObjName_;
 		CreateFunc createFunc_;
-		const ComponentFactory& componentFactory_;
 		std::vector<IComponentMemento*> mementos_;
 		std::vector<std::type_index> componentPoolTypes_;
 	};
+	template <typename Func>
+		requires std::is_invocable_r_v<GameObject*, Func>
+	inline DuplicateGameObjectCommand::DuplicateGameObjectCommand(
+		Func&& _createFunc,
+		EntityId _srcEntityId
+	)
+		: notSaveMementos_ {true}
+		, createFunc_ { std::forward<Func>(_createFunc) }
+		, srcEntityId_ {_srcEntityId}
+	{
+		GameObject* src = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(srcEntityId_);
+		if (src == nullptr)
+			return;
+
+		srcGameObjName_			  = src->GetName();
+		std::string classTypeName = src->GetClassTypeName();
+
+		std::optional<std::vector<std::type_index>> componentPoolTypes =
+			Game::System<ComponentRegistry>().GetComponentPoolTypes(srcEntityId_);
+
+		if (componentPoolTypes.has_value() == false)
+			return;
+
+		componentPoolTypes_ = std::move(componentPoolTypes.value());
+	}
 } // namespace mtgb

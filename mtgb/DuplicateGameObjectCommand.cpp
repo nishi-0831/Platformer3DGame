@@ -5,31 +5,6 @@
 #include "ComponentRegistry.h"
 #include "EntityManager.h"
 #include <format>
-mtgb::DuplicateGameObjectCommand::DuplicateGameObjectCommand(
-	const CreateFunc& _createFunc,
-	const ComponentFactory& _componentFactory,
-	EntityId _srcEntityId
-)
-	: notSaveMementos_ { true }
-	, srcEntityId_ { _srcEntityId }
-	, createFunc_ { _createFunc }
-	, componentFactory_ { _componentFactory }
-{
-	GameObject* src = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(srcEntityId_);
-	if (src == nullptr)
-		return;
-
-	srcGameObjName_			  = src->GetName();
-	std::string classTypeName = src->GetClassTypeName();
-
-	std::optional<std::vector<std::type_index>> componentPoolTypes =
-		Game::System<ComponentRegistry>().GetComponentPoolTypes(srcEntityId_);
-
-	if (componentPoolTypes.has_value() == false)
-		return;
-
-	componentPoolTypes_ = std::move(componentPoolTypes.value());
-}
 
 mtgb::DuplicateGameObjectCommand::~DuplicateGameObjectCommand()
 {
@@ -76,7 +51,7 @@ void mtgb::DuplicateGameObjectCommand::Redo()
 		if (memento == nullptr)
 			continue;
 
-		componentFactory_.AddComponentFromMemento(*memento);
+		Game::GetComponentFactory().AddComponentFromMemento(*memento);
 	}
 }
 

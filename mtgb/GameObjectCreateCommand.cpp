@@ -3,18 +3,6 @@
 #include "EntityManager.h"
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
-mtgb::GameObjectCreateCommand::GameObjectCreateCommand(const CreateFunc& _createFunc)
-	: entityId_ { INVALID_ENTITY }
-	, createFunc_ { _createFunc }
-	, json_ {}
-{
-}
-
-mtgb::GameObjectCreateCommand::GameObjectCreateCommand(const CreateFunc& _createFunc, const nlohmann::json& _json)
-	: GameObjectCreateCommand(_createFunc)
-{
-	json_ = _json;
-}
 
 void mtgb::GameObjectCreateCommand::Execute()
 {

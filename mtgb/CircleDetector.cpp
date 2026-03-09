@@ -9,9 +9,6 @@
 #include "Image.h"
 namespace mtgb
 {
-	// ターゲットとして無視する敵の名前
-	const std::string ignoreName { "EnemyBroken" };
-
 	CircleDetector::CircleDetector() {}
 	CircleDetector::CircleDetector(const CircleDetectorConfig& _config)
 		: CircleDetector {}
@@ -40,11 +37,6 @@ namespace mtgb
 
 		for (const auto& obj : findObjs)
 		{
-			if (obj->GetName() == ignoreName)
-			{
-				continue; // 名前が無視対象なら回帰
-			}
-
 			// Transform取得
 			Transform* pTransform = &Transform::Get(obj->GetEntityId());
 			Vector3 worldPos	  = pTransform->GetWorldPosition();
@@ -84,11 +76,6 @@ namespace mtgb
 		UpdateDetection();
 	}
 
-	bool CircleDetector::HasDetectedTargets() const
-	{
-		return !detectedTargets_.empty();
-	}
-
 	RectF CircleDetector::GetDetectionArea() const
 	{
 		Vector2F ratio = Game::System<Screen>().GetSizeRatio();
@@ -98,27 +85,6 @@ namespace mtgb
 		Vector2F center	  = Game::System<Screen>().GetSizeF() * 0.5f;
 		Vector2F newPoint = center - Vector2F { scaledSize, scaledSize } * 0.5f;
 		return { newPoint, { scaledSize, scaledSize } };
-	}
-
-	const std::vector<ScreenCoordContainsInfo>& CircleDetector::GetDetectedTargets() const
-	{
-		return detectedTargets_;
-	}
-
-	void CircleDetector::ForEach(const std::function<void(ScreenCoordContainsInfo&)>& _func)
-	{
-		for (auto& target : detectedTargets_)
-		{
-			_func(target);
-		}
-	}
-
-	void CircleDetector::ForEach(const std::function<void(const ScreenCoordContainsInfo&)>& _func) const
-	{
-		for (const auto& target : detectedTargets_)
-		{
-			_func(target);
-		}
 	}
 
 	bool CircleDetector::IsPointInCircle(const Vector2F& _point, const Vector2F& _center, float _radius) const

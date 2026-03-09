@@ -769,7 +769,7 @@ set(ALL_FILES
 ################################################################################
 # Target
 ################################################################################
-add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp")
+add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp" "mtgb/CallbackConcepts.h")
 
 # プリコンパイル済みヘッダを設定する
 target_precompile_headers(${PROJECT_NAME} PRIVATE
@@ -1019,7 +1019,7 @@ set(GENERATE_SOURCE_CODE_COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools
     COMMAND ${GENERATE_SOURCE_CODE_COMMAND}
     USES_TERMINAL)
 # コンパイル前に実行されるように依存させる
- add_dependencies(${PROJECT_NAME} generate_source_code)
+ # add_dependencies(${PROJECT_NAME} generate_source_code)
 
  # キャッシュを削除し、再生成を行う
  add_custom_target(force_generate_source_code

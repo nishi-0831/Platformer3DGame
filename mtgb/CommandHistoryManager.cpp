@@ -1,11 +1,19 @@
 #include "stdafx.h"
 #include "CommandHistoryManager.h"
+#include "ReleaseUtility.h"
 #include "assert.h"
 CommandHistoryManager::CommandHistoryManager()
 	: inner_ { new NamedCommandHistory(new CommandHistory()) }
 	, isGrouping_ { false }
 	, pGroupCommand_ { nullptr }
 {
+}
+
+mtgb::CommandHistoryManager::~CommandHistoryManager() 
+{
+	ClearAllStack();
+	SAFE_DELETE(pGroupCommand_);
+	SAFE_DELETE(inner_);
 }
 
 void CommandHistoryManager::Initialize() {}
@@ -37,6 +45,7 @@ void CommandHistoryManager::EndGroupCommand()
 	if (isGrouping_ == false)
 		return;
 	inner_->ExecuteCommand(pGroupCommand_);
+	pGroupCommand_ = nullptr;
 	isGrouping_ = false;
 }
 
