@@ -1,8 +1,8 @@
 var classmtgb_1_1GameObjectCreateCommand =
 [
     [ "CreateFunc", "classmtgb_1_1GameObjectCreateCommand.html#a1c3d511a0b2f8df5ed8fa5125b0bc704", null ],
-    [ "GameObjectCreateCommand", "classmtgb_1_1GameObjectCreateCommand.html#af359b0afcaf352aa2d1dff78a40d793f", null ],
-    [ "GameObjectCreateCommand", "classmtgb_1_1GameObjectCreateCommand.html#adadbee00b08e77e78f8f86e7f2c3fc1e", null ],
+    [ "GameObjectCreateCommand", "classmtgb_1_1GameObjectCreateCommand.html#a98128f21a8752c1f8f338b2506d8652d", null ],
+    [ "GameObjectCreateCommand", "classmtgb_1_1GameObjectCreateCommand.html#abe549952240c6f40aee34e58965d2b2c", null ],
     [ "CreateGameObject", "classmtgb_1_1GameObjectCreateCommand.html#abab46412421ebb9fd6a4627b03d590f3", null ],
     [ "Deserialize", "classmtgb_1_1GameObjectCreateCommand.html#a17bd652fbff522aa55e2f4d245174ce5", null ],
     [ "Execute", "classmtgb_1_1GameObjectCreateCommand.html#ad32c8184cb004960d92717176f5653d1", null ],

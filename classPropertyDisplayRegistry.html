@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('classPropertyDisplayRegistry.html','')
 <div class="dynheader">
 PropertyDisplayRegistry 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPropertyDisplayRegistry__coll__graph.svg" width="266" height="778"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPropertyDisplayRegistry__coll__graph.svg" width="266" height="690"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -118,11 +118,13 @@ PropertyDisplayRegistry 連携図</div>
 <tr class="memitem:adc3bafee7081204428d853bc74a7e0f6"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
 <tr class="memitem:adc3bafee7081204428d853bc74a7e0f6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#adc3bafee7081204428d853bc74a7e0f6">RegisterType</a> ()</td></tr>
 <tr class="separator:adc3bafee7081204428d853bc74a7e0f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad016d98207d023e8392937658694cfef"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:ad016d98207d023e8392937658694cfef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#ad016d98207d023e8392937658694cfef">RegisterFunc</a> (std::function&lt; <a class="el" href="classCommand.html">Command</a> *(std::any, const char *)&gt; _func)</td></tr>
-<tr class="separator:ad016d98207d023e8392937658694cfef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ca3a9ca6078d9dffe6b7bd2c26e7922"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#a6ca3a9ca6078d9dffe6b7bd2c26e7922">ProvisionalRegister</a> (std::type_index _typeIdx, std::function&lt; void(void)&gt; _registerFunc)</td></tr>
-<tr class="separator:a6ca3a9ca6078d9dffe6b7bd2c26e7922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d5050dfc08242ef24b9c63f8d195142"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , <a class="el" href="conceptShowPropFuncCallable.html">ShowPropFuncCallable</a> Func&gt; </td></tr>
+<tr class="memitem:a6d5050dfc08242ef24b9c63f8d195142"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#a6d5050dfc08242ef24b9c63f8d195142">RegisterFunc</a> (Func &amp;&amp;_func)</td></tr>
+<tr class="separator:a6d5050dfc08242ef24b9c63f8d195142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c28189efd079ee1a0a37f0fbb975160"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; <br />
+requires std::is_invocable_v&lt;Func&gt;</td></tr>
+<tr class="memitem:a0c28189efd079ee1a0a37f0fbb975160"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#a0c28189efd079ee1a0a37f0fbb975160">ProvisionalRegister</a> (std::type_index _typeIdx, Func &amp;&amp;_registerFunc)</td></tr>
+<tr class="separator:a0c28189efd079ee1a0a37f0fbb975160"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28a8021dd97f8ea30b8e1d35c769e483"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#a28a8021dd97f8ea30b8e1d35c769e483">Initialize</a> ()</td></tr>
 <tr class="separator:a28a8021dd97f8ea30b8e1d35c769e483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2a2ac6dfa70ef1c52e281c1e11552d3"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
@@ -132,8 +134,10 @@ PropertyDisplayRegistry 連携図</div>
 <tr class="separator:a7f2bdf4dc70eef27c38bf239b6cf3233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affc9d25f2f7cf037f29b898aa7a45225"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#affc9d25f2f7cf037f29b898aa7a45225">IsRegisteredType</a> (std::type_index _typeIdx)</td></tr>
 <tr class="separator:affc9d25f2f7cf037f29b898aa7a45225"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab54d85991e30fd920da3f573feeac14d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#ab54d85991e30fd920da3f573feeac14d">RegisterCommandListener</a> (std::function&lt; void(<a class="el" href="classCommand.html">Command</a> *)&gt; _commandListener)</td></tr>
-<tr class="separator:ab54d85991e30fd920da3f573feeac14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c09a22d2b4f513c6b2ebf7d0e590d2"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; <br />
+requires std::is_invocable_v&lt;Func, <a class="el" href="classCommand.html">Command</a>*&gt;</td></tr>
+<tr class="memitem:a93c09a22d2b4f513c6b2ebf7d0e590d2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#a93c09a22d2b4f513c6b2ebf7d0e590d2">RegisterCommandListener</a> (Func &amp;&amp;_commandListener)</td></tr>
+<tr class="separator:a93c09a22d2b4f513c6b2ebf7d0e590d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静的公開メンバ関数</h2></td></tr>
@@ -157,8 +161,8 @@ PropertyDisplayRegistry 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
-<tr class="memitem:af6bc94ce626949148532473fdac81f43"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::type_index, std::function&lt; <a class="el" href="classCommand.html">Command</a> *(std::any, const char *)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#af6bc94ce626949148532473fdac81f43">showFunctions_</a></td></tr>
-<tr class="separator:af6bc94ce626949148532473fdac81f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c2c2665fc057d5a9d1ae94be43abe1"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::type_index, <a class="el" href="TypeRegistry_8h.html#a085ed3cb9c0be2e075f84be90b49b811">ShowPropertyFunc</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#ac4c2c2665fc057d5a9d1ae94be43abe1">showFunctions_</a></td></tr>
+<tr class="separator:ac4c2c2665fc057d5a9d1ae94be43abe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b4ccf326ecff784ef70cfda4fd4757b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::type_index, std::function&lt; void(void)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#a8b4ccf326ecff784ef70cfda4fd4757b">provisionalRegisterFunc_</a></td></tr>
 <tr class="separator:a8b4ccf326ecff784ef70cfda4fd4757b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ca473afc9883fcfa9c0b58d9969b010"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(<a class="el" href="classCommand.html">Command</a> *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a></td></tr>
@@ -166,7 +170,7 @@ PropertyDisplayRegistry 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00009">9</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00015">15</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="af4e06e78ea6c2938f986e265a88b8d12" name="af4e06e78ea6c2938f986e265a88b8d12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4e06e78ea6c2938f986e265a88b8d12">&#9670;&#160;</a></span>PropertyDisplayRegistry() <span class="overload">[1/2]</span></h2>
@@ -191,11 +195,11 @@ PropertyDisplayRegistry 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00044">44</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>    : <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a> { <span class="keyword">nullptr</span> }</div>
-<div class="line"><span class="lineno">   46</span>{</div>
-<div class="line"><span class="lineno">   47</span>}</div>
-<div class="ttc" id="aclassPropertyDisplayRegistry_html_a1ca473afc9883fcfa9c0b58d9969b010"><div class="ttname"><a href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">PropertyDisplayRegistry::commandListener_</a></div><div class="ttdeci">std::function&lt; void(Command *)&gt; commandListener_</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00034">TypeRegistry.h:34</a></div></div>
+<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>    : <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a> { <span class="keyword">nullptr</span> }</div>
+<div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>}</div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html_a1ca473afc9883fcfa9c0b58d9969b010"><div class="ttname"><a href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">PropertyDisplayRegistry::commandListener_</a></div><div class="ttdeci">std::function&lt; void(Command *)&gt; commandListener_</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00045">TypeRegistry.h:45</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -268,28 +272,28 @@ template&lt;typename... Args, typename <a class="el" href="InputKeyCode_8h.html#
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistryImpl_8h_source.html">TypeRegistryImpl.h</a> の <a class="el" href="TypeRegistryImpl_8h_source.html#l00198">198</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  199</span>{</div>
-<div class="line"><span class="lineno">  200</span>    <a class="code hl_class" href="classCommand.html">Command</a>* command = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  201</span>    std::apply(</div>
-<div class="line"><span class="lineno">  202</span>        [&amp;](<span class="keyword">auto</span>&amp;&amp;... _attr)</div>
-<div class="line"><span class="lineno">  203</span>        {</div>
-<div class="line"><span class="lineno">  204</span>            ((</div>
-<div class="line"><span class="lineno">  205</span>                 [&amp;]</div>
-<div class="line"><span class="lineno">  206</span>                 {</div>
-<div class="line"><span class="lineno">  207</span>                     <span class="keyword">using </span>AttrType = std::decay_t&lt;<span class="keyword">decltype</span>(_attr)&gt;;</div>
-<div class="line"><span class="lineno">  208</span>                     <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_base_of_v&lt;refl::attr::usage::member, AttrType&gt;)</div>
-<div class="line"><span class="lineno">  209</span>                     {</div>
-<div class="line"><span class="lineno">  210</span>                         command = _attr(_valPtr, _name);</div>
-<div class="line"><span class="lineno">  211</span>                     }</div>
-<div class="line"><span class="lineno">  212</span>                 }()</div>
-<div class="line"><span class="lineno">  213</span>             ),</div>
-<div class="line"><span class="lineno">  214</span>             ...);</div>
-<div class="line"><span class="lineno">  215</span>        },</div>
-<div class="line"><span class="lineno">  216</span>        _attrs</div>
-<div class="line"><span class="lineno">  217</span>    );</div>
-<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">return</span> command;</div>
-<div class="line"><span class="lineno">  219</span>}</div>
+<p class="definition"> <a class="el" href="TypeRegistryImpl_8h_source.html">TypeRegistryImpl.h</a> の <a class="el" href="TypeRegistryImpl_8h_source.html#l00199">199</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  200</span>{</div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_class" href="classCommand.html">Command</a>* command = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  202</span>    std::apply(</div>
+<div class="line"><span class="lineno">  203</span>        [&amp;](<span class="keyword">auto</span>&amp;&amp;... _attr)</div>
+<div class="line"><span class="lineno">  204</span>        {</div>
+<div class="line"><span class="lineno">  205</span>            ((</div>
+<div class="line"><span class="lineno">  206</span>                 [&amp;]</div>
+<div class="line"><span class="lineno">  207</span>                 {</div>
+<div class="line"><span class="lineno">  208</span>                     <span class="keyword">using </span>AttrType = std::decay_t&lt;<span class="keyword">decltype</span>(_attr)&gt;;</div>
+<div class="line"><span class="lineno">  209</span>                     <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_base_of_v&lt;refl::attr::usage::member, AttrType&gt;)</div>
+<div class="line"><span class="lineno">  210</span>                     {</div>
+<div class="line"><span class="lineno">  211</span>                         command = _attr(_valPtr, _name);</div>
+<div class="line"><span class="lineno">  212</span>                     }</div>
+<div class="line"><span class="lineno">  213</span>                 }()</div>
+<div class="line"><span class="lineno">  214</span>             ),</div>
+<div class="line"><span class="lineno">  215</span>             ...);</div>
+<div class="line"><span class="lineno">  216</span>        },</div>
+<div class="line"><span class="lineno">  217</span>        _attrs</div>
+<div class="line"><span class="lineno">  218</span>    );</div>
+<div class="line"><span class="lineno">  219</span>    <span class="keywordflow">return</span> command;</div>
+<div class="line"><span class="lineno">  220</span>}</div>
 <div class="ttc" id="aclassCommand_html"><div class="ttname"><a href="classCommand.html">Command</a></div><div class="ttdef"><b>Definition:</b> <a href="Command_8h_source.html#l00004">Command.h:5</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -309,16 +313,16 @@ template&lt;typename... Args, typename <a class="el" href="InputKeyCode_8h.html#
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>{</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; itr : <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a8b4ccf326ecff784ef70cfda4fd4757b">provisionalRegisterFunc_</a>)</div>
-<div class="line"><span class="lineno">   19</span>    {</div>
-<div class="line"><span class="lineno">   20</span>        itr.second();</div>
-<div class="line"><span class="lineno">   21</span>    }</div>
-<div class="line"><span class="lineno">   22</span>}</div>
-<div class="ttc" id="aclassPropertyDisplayRegistry_html_a8b4ccf326ecff784ef70cfda4fd4757b"><div class="ttname"><a href="classPropertyDisplayRegistry.html#a8b4ccf326ecff784ef70cfda4fd4757b">PropertyDisplayRegistry::provisionalRegisterFunc_</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, std::function&lt; void(void)&gt; &gt; provisionalRegisterFunc_</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00031">TypeRegistry.h:31</a></div></div>
+<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>{</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; itr : <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a8b4ccf326ecff784ef70cfda4fd4757b">provisionalRegisterFunc_</a>)</div>
+<div class="line"><span class="lineno">   15</span>    {</div>
+<div class="line"><span class="lineno">   16</span>        itr.second();</div>
+<div class="line"><span class="lineno">   17</span>    }</div>
+<div class="line"><span class="lineno">   18</span>}</div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html_a8b4ccf326ecff784ef70cfda4fd4757b"><div class="ttname"><a href="classPropertyDisplayRegistry.html#a8b4ccf326ecff784ef70cfda4fd4757b">PropertyDisplayRegistry::provisionalRegisterFunc_</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, std::function&lt; void(void)&gt; &gt; provisionalRegisterFunc_</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00042">TypeRegistry.h:42</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00031">provisionalRegisterFunc_</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00042">provisionalRegisterFunc_</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00020">SampleScene::Initialize()</a>, <a class="el" href="StageEditScene_8cpp_source.html#l00009">StageEditScene::Initialize()</a>.</p>
 <div class="dynheader">
@@ -353,14 +357,14 @@ template&lt;typename... Args, typename <a class="el" href="InputKeyCode_8h.html#
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00010">10</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span>{</div>
-<div class="line"><span class="lineno">   12</span>    <span class="keyword">static</span> <a class="code hl_class" href="classPropertyDisplayRegistry.html">PropertyDisplayRegistry</a> instance;</div>
-<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">return</span> instance;</div>
-<div class="line"><span class="lineno">   14</span>}</div>
-<div class="ttc" id="aclassPropertyDisplayRegistry_html"><div class="ttname"><a href="classPropertyDisplayRegistry.html">PropertyDisplayRegistry</a></div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00009">TypeRegistry.h:10</a></div></div>
+<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00006">6</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>{</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keyword">static</span> <a class="code hl_class" href="classPropertyDisplayRegistry.html">PropertyDisplayRegistry</a> instance;</div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">return</span> instance;</div>
+<div class="line"><span class="lineno">   10</span>}</div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html"><div class="ttname"><a href="classPropertyDisplayRegistry.html">PropertyDisplayRegistry</a></div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00015">TypeRegistry.h:16</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="ImGuiEditor_8cpp_source.html#l00017">mtgb::ImGuiEditor::ImGuiEditor()</a>, <a class="el" href="SampleScene_8cpp_source.html#l00020">SampleScene::Initialize()</a>, <a class="el" href="StageEditScene_8cpp_source.html#l00009">StageEditScene::Initialize()</a>, <a class="el" href="MTImGui_8h_source.html#l00193">mtgb::MTImGui::RegisterComponentViewer()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00080">RegisterShowFuncHolder::Set()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00216">mtgb::MTImGui::SetupShowFunc()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00147">mtgb::ImGuiEditorCamera::ShowImGui()</a>, <a class="el" href="MTImGui_8h_source.html#l00180">mtgb::MTImGui::TypedShow()</a>, <a class="el" href="DirectX11Manager_8cpp_source.html#l00030">mtgb::DirectX11Manager::Update()</a>, <a class="el" href="DXGIResource_8cpp_source.html#l00080">mtgb::DXGIResource::Update()</a>, <a class="el" href="QuaternionCamera_8cpp_source.html#l00024">mtgb::QuaternionCamera::Update()</a>, <a class="el" href="SphericalCamera_8cpp_source.html#l00146">mtgb::SphericalCamera::Update()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ImGuiEditor_8cpp_source.html#l00017">mtgb::ImGuiEditor::ImGuiEditor()</a>, <a class="el" href="SampleScene_8cpp_source.html#l00020">SampleScene::Initialize()</a>, <a class="el" href="StageEditScene_8cpp_source.html#l00009">StageEditScene::Initialize()</a>, <a class="el" href="MTImGui_8h_source.html#l00193">mtgb::MTImGui::RegisterComponentViewer()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00107">RegisterShowFuncHolder::Set()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00216">mtgb::MTImGui::SetupShowFunc()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00147">mtgb::ImGuiEditorCamera::ShowImGui()</a>, <a class="el" href="MTImGui_8h_source.html#l00180">mtgb::MTImGui::TypedShow()</a>, <a class="el" href="DirectX11Manager_8cpp_source.html#l00030">mtgb::DirectX11Manager::Update()</a>, <a class="el" href="DXGIResource_8cpp_source.html#l00080">mtgb::DXGIResource::Update()</a>, <a class="el" href="QuaternionCamera_8cpp_source.html#l00024">mtgb::QuaternionCamera::Update()</a>, <a class="el" href="SphericalCamera_8cpp_source.html#l00146">mtgb::SphericalCamera::Update()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -386,15 +390,15 @@ template&lt;typename... Args, typename <a class="el" href="InputKeyCode_8h.html#
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00036">36</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classPropertyDisplayRegistry.html#af6bc94ce626949148532473fdac81f43">showFunctions_</a>.contains(_typeIdx);</div>
-<div class="line"><span class="lineno">   39</span>}</div>
-<div class="ttc" id="aclassPropertyDisplayRegistry_html_af6bc94ce626949148532473fdac81f43"><div class="ttname"><a href="classPropertyDisplayRegistry.html#af6bc94ce626949148532473fdac81f43">PropertyDisplayRegistry::showFunctions_</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, std::function&lt; Command *(std::any, const char *)&gt; &gt; showFunctions_</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00030">TypeRegistry.h:30</a></div></div>
+<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classPropertyDisplayRegistry.html#ac4c2c2665fc057d5a9d1ae94be43abe1">showFunctions_</a>.contains(_typeIdx);</div>
+<div class="line"><span class="lineno">   35</span>}</div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html_ac4c2c2665fc057d5a9d1ae94be43abe1"><div class="ttname"><a href="classPropertyDisplayRegistry.html#ac4c2c2665fc057d5a9d1ae94be43abe1">PropertyDisplayRegistry::showFunctions_</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, ShowPropertyFunc &gt; showFunctions_</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00041">TypeRegistry.h:41</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00030">showFunctions_</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00041">showFunctions_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="TypeRegistryImpl_8h_source.html#l00134">ShowMemberWithReflection()</a>.</p>
+<p class="reference">参照元 <a class="el" href="TypeRegistryImpl_8h_source.html#l00135">ShowMemberWithReflection()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -430,11 +434,17 @@ template&lt;typename... Args, typename <a class="el" href="InputKeyCode_8h.html#
 
 </div>
 </div>
-<a id="a6ca3a9ca6078d9dffe6b7bd2c26e7922" name="a6ca3a9ca6078d9dffe6b7bd2c26e7922"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ca3a9ca6078d9dffe6b7bd2c26e7922">&#9670;&#160;</a></span>ProvisionalRegister()</h2>
+<a id="a0c28189efd079ee1a0a37f0fbb975160" name="a0c28189efd079ee1a0a37f0fbb975160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c28189efd079ee1a0a37f0fbb975160">&#9670;&#160;</a></span>ProvisionalRegister()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Func &gt; <br />
+requires std::is_invocable_v&lt;Func&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void PropertyDisplayRegistry::ProvisionalRegister </td>
@@ -445,7 +455,7 @@ template&lt;typename... Args, typename <a class="el" href="InputKeyCode_8h.html#
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::function&lt; void(void)&gt;&#160;</td>
+          <td class="paramtype">Func &amp;&amp;&#160;</td>
           <td class="paramname"><em>_registerFunc</em>&#160;</td>
         </tr>
         <tr>
@@ -454,82 +464,106 @@ template&lt;typename... Args, typename <a class="el" href="InputKeyCode_8h.html#
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00005">5</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    6</span>{</div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a8b4ccf326ecff784ef70cfda4fd4757b">provisionalRegisterFunc_</a>.emplace(_typeIdx, _registerFunc);</div>
-<div class="line"><span class="lineno">    8</span>}</div>
+<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00058">58</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a8b4ccf326ecff784ef70cfda4fd4757b">provisionalRegisterFunc_</a>.emplace(_typeIdx, std::forward&lt;Func&gt;(_registerFunc));</div>
+<div class="line"><span class="lineno">   61</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00031">provisionalRegisterFunc_</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00042">provisionalRegisterFunc_</a>.</p>
 
 </div>
 </div>
-<a id="ab54d85991e30fd920da3f573feeac14d" name="ab54d85991e30fd920da3f573feeac14d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab54d85991e30fd920da3f573feeac14d">&#9670;&#160;</a></span>RegisterCommandListener()</h2>
+<a id="a93c09a22d2b4f513c6b2ebf7d0e590d2" name="a93c09a22d2b4f513c6b2ebf7d0e590d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c09a22d2b4f513c6b2ebf7d0e590d2">&#9670;&#160;</a></span>RegisterCommandListener()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Func &gt; <br />
+requires std::is_invocable_v&lt;Func, <a class="el" href="classCommand.html">Command</a>*&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void PropertyDisplayRegistry::RegisterCommandListener </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; void(<a class="el" href="classCommand.html">Command</a> *)&gt;&#160;</td>
+          <td class="paramtype">Func &amp;&amp;&#160;</td>
           <td class="paramname"><em>_commandListener</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00040">40</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>{</div>
-<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a> = _commandListenner;</div>
-<div class="line"><span class="lineno">   43</span>}</div>
+<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00086">86</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>{</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a> = std::forward&lt;Func&gt;(_commandListener);</div>
+<div class="line"><span class="lineno">   89</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00034">commandListener_</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00045">commandListener_</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="ImGuiEditor_8cpp_source.html#l00017">mtgb::ImGuiEditor::ImGuiEditor()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPropertyDisplayRegistry_ab54d85991e30fd920da3f573feeac14d_icgraph.svg" width="411" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPropertyDisplayRegistry_a93c09a22d2b4f513c6b2ebf7d0e590d2_icgraph.svg" width="411" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="ad016d98207d023e8392937658694cfef" name="ad016d98207d023e8392937658694cfef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad016d98207d023e8392937658694cfef">&#9670;&#160;</a></span>RegisterFunc()</h2>
+<a id="a6d5050dfc08242ef24b9c63f8d195142" name="a6d5050dfc08242ef24b9c63f8d195142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d5050dfc08242ef24b9c63f8d195142">&#9670;&#160;</a></span>RegisterFunc()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> , <a class="el" href="conceptShowPropFuncCallable.html">ShowPropFuncCallable</a> Func&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void PropertyDisplayRegistry::RegisterFunc </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; <a class="el" href="classCommand.html">Command</a> *(std::any, const char *)&gt;&#160;</td>
+          <td class="paramtype">Func &amp;&amp;&#160;</td>
           <td class="paramname"><em>_func</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00067">67</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keyword">using </span>Type = std::remove_cvref_t&lt;T&gt;;</div>
-<div class="line"><span class="lineno">   70</span>    std::type_index typeIdx(<span class="keyword">typeid</span>(Type));</div>
-<div class="line"><span class="lineno">   71</span>    <a class="code hl_variable" href="classPropertyDisplayRegistry.html#af6bc94ce626949148532473fdac81f43">showFunctions_</a>[typeIdx] = _func;</div>
-<div class="line"><span class="lineno">   72</span>}</div>
+<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00091">91</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keyword">using </span>Type = std::remove_cvref_t&lt;T&gt;;</div>
+<div class="line"><span class="lineno">   94</span>    std::type_index typeIdx(<span class="keyword">typeid</span>(Type));</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_variable" href="classPropertyDisplayRegistry.html#ac4c2c2665fc057d5a9d1ae94be43abe1">showFunctions_</a>.emplace(typeIdx, std::forward&lt;Func&gt;(_func));</div>
+<div class="line"><span class="lineno">   96</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00030">showFunctions_</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00041">showFunctions_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="TypeRegistry_8h_source.html#l00080">RegisterShowFuncHolder::Set()</a>.</p>
+<p class="reference">参照元 <a class="el" href="TypeRegistry_8h_source.html#l00107">RegisterShowFuncHolder::Set()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPropertyDisplayRegistry_ad016d98207d023e8392937658694cfef_icgraph.svg" width="1203" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPropertyDisplayRegistry_a6d5050dfc08242ef24b9c63f8d195142_icgraph.svg" width="1203" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -552,7 +586,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <p class="definition"> <a class="el" href="TypeRegistryImpl_8h_source.html">TypeRegistryImpl.h</a> の <a class="el" href="TypeRegistryImpl_8h_source.html#l00013">13</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   14</span>{</div>
 <div class="line"><span class="lineno">   15</span>    <span class="keyword">using </span>Type                   = std::remove_pointer_t&lt;std::remove_cvref_t&lt;T&gt;&gt;;</div>
-<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="classPropertyDisplayRegistry.html#af6bc94ce626949148532473fdac81f43">showFunctions_</a>[<span class="keyword">typeid</span>(Type)] = [<span class="keyword">this</span>](std::any _ptr, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name) -&gt; <a class="code hl_class" href="classCommand.html">Command</a>*</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="classPropertyDisplayRegistry.html#ac4c2c2665fc057d5a9d1ae94be43abe1">showFunctions_</a>[<span class="keyword">typeid</span>(Type)] = [<span class="keyword">this</span>](std::any _ptr, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name) -&gt; <a class="code hl_class" href="classCommand.html">Command</a>*</div>
 <div class="line"><span class="lineno">   17</span>    {</div>
 <div class="line"><span class="lineno">   18</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (refl::is_reflectable&lt;Type&gt;())</div>
 <div class="line"><span class="lineno">   19</span>        {</div>
@@ -670,7 +704,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
 <div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00048">MTAssert.h:48</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00048">massert</a>, <a class="el" href="TypeRegistry_8h_source.html#l00030">showFunctions_</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00048">massert</a>, <a class="el" href="TypeRegistry_8h_source.html#l00041">showFunctions_</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
 
 </div>
 </div>
@@ -716,72 +750,72 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistryImpl_8h_source.html">TypeRegistryImpl.h</a> の <a class="el" href="TypeRegistryImpl_8h_source.html#l00134">134</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>{</div>
-<div class="line"><span class="lineno">  136</span>    <span class="keyword">using </span>MemberType = std::remove_pointer_t&lt;std::remove_cvref_t&lt;T&gt;&gt;;</div>
-<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (refl::is_reflectable&lt;MemberType&gt;())</div>
-<div class="line"><span class="lineno">  138</span>    {</div>
-<div class="line"><span class="lineno">  139</span>        <span class="keyword">constexpr</span> <span class="keyword">auto</span> memberType = refl::reflect&lt;MemberType&gt;();</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>        <span class="comment">// メンバの型にShowFunc属性があるかチェック</span></div>
-<div class="line"><span class="lineno">  142</span>        <span class="keywordtype">bool</span> showFuncExecuted = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span>        std::apply(</div>
-<div class="line"><span class="lineno">  145</span>            [&amp;](<span class="keyword">auto</span>&amp;&amp;... _attrs)</div>
-<div class="line"><span class="lineno">  146</span>            {</div>
-<div class="line"><span class="lineno">  147</span>                ((</div>
-<div class="line"><span class="lineno">  148</span>                     [&amp;]</div>
-<div class="line"><span class="lineno">  149</span>                     {</div>
-<div class="line"><span class="lineno">  150</span>                         <span class="keyword">using </span>AttrType = std::decay_t&lt;<span class="keyword">decltype</span>(_attrs)&gt;;</div>
-<div class="line"><span class="lineno">  151</span>                         <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (refl::trait::is_instance_of_v&lt;ShowFunc, AttrType&gt;)</div>
-<div class="line"><span class="lineno">  152</span>                         {</div>
-<div class="line"><span class="lineno">  153</span>                             <span class="comment">// ポインタの場合は値を渡し、値型の場合はそのまま渡す</span></div>
-<div class="line"><span class="lineno">  154</span>                             <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_pointer_v&lt;T&gt;)</div>
-<div class="line"><span class="lineno">  155</span>                             {</div>
-<div class="line"><span class="lineno">  156</span>                                 _command = _attrs(_memberValue, _name);</div>
-<div class="line"><span class="lineno">  157</span>                             }</div>
-<div class="line"><span class="lineno">  158</span>                             <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  159</span>                             {</div>
-<div class="line"><span class="lineno">  160</span>                                 _command = _attrs(&amp;_memberValue, _name);</div>
-<div class="line"><span class="lineno">  161</span>                             }</div>
-<div class="line"><span class="lineno">  162</span>                             showFuncExecuted = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  163</span>                         }</div>
-<div class="line"><span class="lineno">  164</span>                     }()</div>
-<div class="line"><span class="lineno">  165</span>                 ),</div>
-<div class="line"><span class="lineno">  166</span>                 ...);</div>
-<div class="line"><span class="lineno">  167</span>            },</div>
-<div class="line"><span class="lineno">  168</span>            memberType.attributes</div>
-<div class="line"><span class="lineno">  169</span>        );</div>
-<div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">if</span> (showFuncExecuted)</div>
-<div class="line"><span class="lineno">  172</span>        {</div>
-<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  174</span>        }</div>
-<div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>        <span class="comment">// ShowFunc属性がない場合は、TypeRegistryに登録された表示関数を使用</span></div>
-<div class="line"><span class="lineno">  177</span>        std::type_index memberTypeIdx(<span class="keyword">typeid</span>(MemberType));</div>
-<div class="line"><span class="lineno">  178</span> </div>
-<div class="line"><span class="lineno">  179</span>        <span class="comment">// TypeRegistryに登録されているかチェック</span></div>
-<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classPropertyDisplayRegistry.html#affc9d25f2f7cf037f29b898aa7a45225">IsRegisteredType</a>(memberTypeIdx))</div>
-<div class="line"><span class="lineno">  181</span>        {</div>
-<div class="line"><span class="lineno">  182</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_pointer_v&lt;T&gt;)</div>
-<div class="line"><span class="lineno">  183</span>            {</div>
-<div class="line"><span class="lineno">  184</span>                this-&gt;<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">ShowProperty</a>(memberTypeIdx, std::any(_memberValue), _name);</div>
-<div class="line"><span class="lineno">  185</span>            }</div>
-<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  187</span>            {</div>
-<div class="line"><span class="lineno">  188</span>                this-&gt;<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">ShowProperty</a>(memberTypeIdx, std::any(&amp;_memberValue), _name);</div>
-<div class="line"><span class="lineno">  189</span>            }</div>
-<div class="line"><span class="lineno">  190</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  191</span>        }</div>
-<div class="line"><span class="lineno">  192</span>    }</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// リフレクションされていない、または表示関数が見つからない</span></div>
-<div class="line"><span class="lineno">  195</span>}</div>
-<div class="ttc" id="aclassPropertyDisplayRegistry_html_ab2a2ac6dfa70ef1c52e281c1e11552d3"><div class="ttname"><a href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">PropertyDisplayRegistry::ShowProperty</a></div><div class="ttdeci">void ShowProperty(T *_instance, const char *_name)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00045">TypeRegistry.h:45</a></div></div>
-<div class="ttc" id="aclassPropertyDisplayRegistry_html_affc9d25f2f7cf037f29b898aa7a45225"><div class="ttname"><a href="classPropertyDisplayRegistry.html#affc9d25f2f7cf037f29b898aa7a45225">PropertyDisplayRegistry::IsRegisteredType</a></div><div class="ttdeci">bool IsRegisteredType(std::type_index _typeIdx)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00036">TypeRegistry.cpp:36</a></div></div>
+<p class="definition"> <a class="el" href="TypeRegistryImpl_8h_source.html">TypeRegistryImpl.h</a> の <a class="el" href="TypeRegistryImpl_8h_source.html#l00135">135</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>{</div>
+<div class="line"><span class="lineno">  137</span>    <span class="keyword">using </span>MemberType = std::remove_pointer_t&lt;std::remove_cvref_t&lt;T&gt;&gt;;</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (refl::is_reflectable&lt;MemberType&gt;())</div>
+<div class="line"><span class="lineno">  139</span>    {</div>
+<div class="line"><span class="lineno">  140</span>        <span class="keyword">constexpr</span> <span class="keyword">auto</span> memberType = refl::reflect&lt;MemberType&gt;();</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>        <span class="comment">// メンバの型にShowFunc属性があるかチェック</span></div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordtype">bool</span> showFuncExecuted = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>        std::apply(</div>
+<div class="line"><span class="lineno">  146</span>            [&amp;](<span class="keyword">auto</span>&amp;&amp;... _attrs)</div>
+<div class="line"><span class="lineno">  147</span>            {</div>
+<div class="line"><span class="lineno">  148</span>                ((</div>
+<div class="line"><span class="lineno">  149</span>                     [&amp;]</div>
+<div class="line"><span class="lineno">  150</span>                     {</div>
+<div class="line"><span class="lineno">  151</span>                         <span class="keyword">using </span>AttrType = std::decay_t&lt;<span class="keyword">decltype</span>(_attrs)&gt;;</div>
+<div class="line"><span class="lineno">  152</span>                         <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (refl::trait::is_instance_of_v&lt;ShowFunc, AttrType&gt;)</div>
+<div class="line"><span class="lineno">  153</span>                         {</div>
+<div class="line"><span class="lineno">  154</span>                             <span class="comment">// ポインタの場合は値を渡し、値型の場合はそのまま渡す</span></div>
+<div class="line"><span class="lineno">  155</span>                             <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_pointer_v&lt;T&gt;)</div>
+<div class="line"><span class="lineno">  156</span>                             {</div>
+<div class="line"><span class="lineno">  157</span>                                 _command = _attrs(_memberValue, _name);</div>
+<div class="line"><span class="lineno">  158</span>                             }</div>
+<div class="line"><span class="lineno">  159</span>                             <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  160</span>                             {</div>
+<div class="line"><span class="lineno">  161</span>                                 _command = _attrs(&amp;_memberValue, _name);</div>
+<div class="line"><span class="lineno">  162</span>                             }</div>
+<div class="line"><span class="lineno">  163</span>                             showFuncExecuted = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  164</span>                         }</div>
+<div class="line"><span class="lineno">  165</span>                     }()</div>
+<div class="line"><span class="lineno">  166</span>                 ),</div>
+<div class="line"><span class="lineno">  167</span>                 ...);</div>
+<div class="line"><span class="lineno">  168</span>            },</div>
+<div class="line"><span class="lineno">  169</span>            memberType.attributes</div>
+<div class="line"><span class="lineno">  170</span>        );</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">if</span> (showFuncExecuted)</div>
+<div class="line"><span class="lineno">  173</span>        {</div>
+<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  175</span>        }</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>        <span class="comment">// ShowFunc属性がない場合は、TypeRegistryに登録された表示関数を使用</span></div>
+<div class="line"><span class="lineno">  178</span>        std::type_index memberTypeIdx(<span class="keyword">typeid</span>(MemberType));</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>        <span class="comment">// TypeRegistryに登録されているかチェック</span></div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="classPropertyDisplayRegistry.html#affc9d25f2f7cf037f29b898aa7a45225">IsRegisteredType</a>(memberTypeIdx))</div>
+<div class="line"><span class="lineno">  182</span>        {</div>
+<div class="line"><span class="lineno">  183</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_pointer_v&lt;T&gt;)</div>
+<div class="line"><span class="lineno">  184</span>            {</div>
+<div class="line"><span class="lineno">  185</span>                this-&gt;<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">ShowProperty</a>(memberTypeIdx, std::any(_memberValue), _name);</div>
+<div class="line"><span class="lineno">  186</span>            }</div>
+<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  188</span>            {</div>
+<div class="line"><span class="lineno">  189</span>                this-&gt;<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">ShowProperty</a>(memberTypeIdx, std::any(&amp;_memberValue), _name);</div>
+<div class="line"><span class="lineno">  190</span>            }</div>
+<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  192</span>        }</div>
+<div class="line"><span class="lineno">  193</span>    }</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// リフレクションされていない、または表示関数が見つからない</span></div>
+<div class="line"><span class="lineno">  196</span>}</div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html_ab2a2ac6dfa70ef1c52e281c1e11552d3"><div class="ttname"><a href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">PropertyDisplayRegistry::ShowProperty</a></div><div class="ttdeci">void ShowProperty(T *_instance, const char *_name)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8h_source.html#l00062">TypeRegistry.h:62</a></div></div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html_affc9d25f2f7cf037f29b898aa7a45225"><div class="ttname"><a href="classPropertyDisplayRegistry.html#affc9d25f2f7cf037f29b898aa7a45225">PropertyDisplayRegistry::IsRegisteredType</a></div><div class="ttdeci">bool IsRegisteredType(std::type_index _typeIdx)</div><div class="ttdef"><b>Definition:</b> <a href="TypeRegistry_8cpp_source.html#l00032">TypeRegistry.cpp:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8cpp_source.html#l00036">IsRegisteredType()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00045">ShowProperty()</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8cpp_source.html#l00032">IsRegisteredType()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00062">ShowProperty()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -823,20 +857,20 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00024">24</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; itr = <a class="code hl_variable" href="classPropertyDisplayRegistry.html#af6bc94ce626949148532473fdac81f43">showFunctions_</a>.find(_typeIdx);</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classPropertyDisplayRegistry.html#af6bc94ce626949148532473fdac81f43">showFunctions_</a>.end())</div>
-<div class="line"><span class="lineno">   28</span>    {</div>
-<div class="line"><span class="lineno">   29</span>        <a class="code hl_class" href="classCommand.html">Command</a>* command = itr-&gt;second(std::any(_instance), _name);</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> (command == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   32</span>        <span class="comment">// 操作コマンドを渡す</span></div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a>(command);</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
-<div class="line"><span class="lineno">   35</span>}</div>
+<p class="definition"> <a class="el" href="TypeRegistry_8cpp_source.html">TypeRegistry.cpp</a> の <a class="el" href="TypeRegistry_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; itr = <a class="code hl_variable" href="classPropertyDisplayRegistry.html#ac4c2c2665fc057d5a9d1ae94be43abe1">showFunctions_</a>.find(_typeIdx);</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classPropertyDisplayRegistry.html#ac4c2c2665fc057d5a9d1ae94be43abe1">showFunctions_</a>.end())</div>
+<div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>        <a class="code hl_class" href="classCommand.html">Command</a>* command = itr-&gt;second(std::any(_instance), _name);</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (command == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   28</span>        <span class="comment">// 操作コマンドを渡す</span></div>
+<div class="line"><span class="lineno">   29</span>        <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a>(command);</div>
+<div class="line"><span class="lineno">   30</span>    }</div>
+<div class="line"><span class="lineno">   31</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00034">commandListener_</a>, <a class="el" href="TypeRegistry_8h_source.html#l00030">showFunctions_</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00045">commandListener_</a>, <a class="el" href="TypeRegistry_8h_source.html#l00041">showFunctions_</a>.</p>
 
 </div>
 </div>
@@ -868,32 +902,32 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00045">45</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_class" href="classCommand.html">Command</a>* command = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; itr  = <a class="code hl_variable" href="classPropertyDisplayRegistry.html#af6bc94ce626949148532473fdac81f43">showFunctions_</a>.find(<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>));</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classPropertyDisplayRegistry.html#af6bc94ce626949148532473fdac81f43">showFunctions_</a>.end())</div>
-<div class="line"><span class="lineno">   50</span>    {</div>
-<div class="line"><span class="lineno">   51</span>        command = itr-&gt;second(std::any(_instance), _name);</div>
-<div class="line"><span class="lineno">   52</span>    }</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   54</span>    {</div>
-<div class="line"><span class="lineno">   55</span>        command = <a class="code hl_function" href="namespacemtgb.html#ab0200899390745ca410a56a016b7f1ad">mtgb::DefaultShow</a>(_instance, _name);</div>
-<div class="line"><span class="lineno">   56</span>    }</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (command == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a> == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>    <span class="comment">// 操作コマンドを渡す</span></div>
-<div class="line"><span class="lineno">   64</span>    <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a>(command);</div>
-<div class="line"><span class="lineno">   65</span>}</div>
+<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00062">62</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>{</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_class" href="classCommand.html">Command</a>* command = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; itr  = <a class="code hl_variable" href="classPropertyDisplayRegistry.html#ac4c2c2665fc057d5a9d1ae94be43abe1">showFunctions_</a>.find(<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>));</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classPropertyDisplayRegistry.html#ac4c2c2665fc057d5a9d1ae94be43abe1">showFunctions_</a>.end())</div>
+<div class="line"><span class="lineno">   67</span>    {</div>
+<div class="line"><span class="lineno">   68</span>        command = itr-&gt;second(std::any(_instance), _name);</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   71</span>    {</div>
+<div class="line"><span class="lineno">   72</span>        command = <a class="code hl_function" href="namespacemtgb.html#ab0200899390745ca410a56a016b7f1ad">mtgb::DefaultShow</a>(_instance, _name);</div>
+<div class="line"><span class="lineno">   73</span>    }</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span> (command == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <span class="comment">// 操作コマンドを渡す</span></div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010">commandListener_</a>(command);</div>
+<div class="line"><span class="lineno">   82</span>}</div>
 <div class="ttc" id="anamespacemtgb_html_ab0200899390745ca410a56a016b7f1ad"><div class="ttname"><a href="namespacemtgb.html#ab0200899390745ca410a56a016b7f1ad">mtgb::DefaultShow</a></div><div class="ttdeci">Command * DefaultShow(T *_value, const char *_name)</div><div class="ttdef"><b>Definition:</b> <a href="DefaultShow_8inl_source.html#l00007">DefaultShow.inl:7</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00034">commandListener_</a>, <a class="el" href="DefaultShow_8inl_source.html#l00007">mtgb::DefaultShow()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00030">showFunctions_</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<p class="reference">参照先 <a class="el" href="TypeRegistry_8h_source.html#l00045">commandListener_</a>, <a class="el" href="DefaultShow_8inl_source.html#l00007">mtgb::DefaultShow()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00041">showFunctions_</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="MTImGui_8h_source.html#l00193">mtgb::MTImGui::RegisterComponentViewer()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00216">mtgb::MTImGui::SetupShowFunc()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00147">mtgb::ImGuiEditorCamera::ShowImGui()</a>, <a class="el" href="TypeRegistryImpl_8h_source.html#l00134">ShowMemberWithReflection()</a>, <a class="el" href="MTImGui_8h_source.html#l00180">mtgb::MTImGui::TypedShow()</a>, <a class="el" href="DirectX11Manager_8cpp_source.html#l00030">mtgb::DirectX11Manager::Update()</a>, <a class="el" href="DXGIResource_8cpp_source.html#l00080">mtgb::DXGIResource::Update()</a>, <a class="el" href="QuaternionCamera_8cpp_source.html#l00024">mtgb::QuaternionCamera::Update()</a>, <a class="el" href="SphericalCamera_8cpp_source.html#l00146">mtgb::SphericalCamera::Update()</a>.</p>
+<p class="reference">参照元 <a class="el" href="MTImGui_8h_source.html#l00193">mtgb::MTImGui::RegisterComponentViewer()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00216">mtgb::MTImGui::SetupShowFunc()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00147">mtgb::ImGuiEditorCamera::ShowImGui()</a>, <a class="el" href="TypeRegistryImpl_8h_source.html#l00135">ShowMemberWithReflection()</a>, <a class="el" href="MTImGui_8h_source.html#l00180">mtgb::MTImGui::TypedShow()</a>, <a class="el" href="DirectX11Manager_8cpp_source.html#l00030">mtgb::DirectX11Manager::Update()</a>, <a class="el" href="DXGIResource_8cpp_source.html#l00080">mtgb::DXGIResource::Update()</a>, <a class="el" href="QuaternionCamera_8cpp_source.html#l00024">mtgb::QuaternionCamera::Update()</a>, <a class="el" href="SphericalCamera_8cpp_source.html#l00146">mtgb::SphericalCamera::Update()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -930,9 +964,9 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00045">45</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="TypeRegistry_8cpp_source.html#l00040">RegisterCommandListener()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00024">ShowProperty()</a>.</p>
+<p class="reference">参照元 <a class="el" href="TypeRegistry_8h_source.html#l00086">RegisterCommandListener()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00020">ShowProperty()</a>.</p>
 
 </div>
 </div>
@@ -956,14 +990,14 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00042">42</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="TypeRegistry_8cpp_source.html#l00016">Initialize()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00005">ProvisionalRegister()</a>.</p>
+<p class="reference">参照元 <a class="el" href="TypeRegistry_8cpp_source.html#l00012">Initialize()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00058">ProvisionalRegister()</a>.</p>
 
 </div>
 </div>
-<a id="af6bc94ce626949148532473fdac81f43" name="af6bc94ce626949148532473fdac81f43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6bc94ce626949148532473fdac81f43">&#9670;&#160;</a></span>showFunctions_</h2>
+<a id="ac4c2c2665fc057d5a9d1ae94be43abe1" name="ac4c2c2665fc057d5a9d1ae94be43abe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c2c2665fc057d5a9d1ae94be43abe1">&#9670;&#160;</a></span>showFunctions_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -972,7 +1006,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;std::type_index, std::function&lt;<a class="el" href="classCommand.html">Command</a>*(std::any, const char*)&gt; &gt; PropertyDisplayRegistry::showFunctions_</td>
+          <td class="memname">std::unordered_map&lt;std::type_index, <a class="el" href="TypeRegistry_8h.html#a085ed3cb9c0be2e075f84be90b49b811">ShowPropertyFunc</a>&gt; PropertyDisplayRegistry::showFunctions_</td>
         </tr>
       </table>
   </td>
@@ -982,9 +1016,9 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="TypeRegistry_8h_source.html">TypeRegistry.h</a> の <a class="el" href="TypeRegistry_8h_source.html#l00041">41</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="TypeRegistry_8cpp_source.html#l00036">IsRegisteredType()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00067">RegisterFunc()</a>, <a class="el" href="TypeRegistryImpl_8h_source.html#l00013">RegisterType()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00024">ShowProperty()</a>.</p>
+<p class="reference">参照元 <a class="el" href="TypeRegistry_8cpp_source.html#l00032">IsRegisteredType()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00091">RegisterFunc()</a>, <a class="el" href="TypeRegistryImpl_8h_source.html#l00013">RegisterType()</a>, <a class="el" href="TypeRegistry_8cpp_source.html#l00020">ShowProperty()</a>.</p>
 
 </div>
 </div>

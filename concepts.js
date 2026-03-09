@@ -14,6 +14,7 @@ var concepts =
       [ "detail", "namespacemtgb_1_1detail.html", [
         [ "HasRegisterImGui", "conceptmtgb_1_1detail_1_1HasRegisterImGui.html", null ]
       ] ],
+      [ "EntityCallable", "conceptmtgb_1_1EntityCallable.html", null ],
       [ "HasSaveToMementoMethod", "conceptmtgb_1_1HasSaveToMementoMethod.html", null ],
       [ "HasRestoreFromMementoMethod", "conceptmtgb_1_1HasRestoreFromMementoMethod.html", null ],
       [ "DerivedIComponent", "conceptmtgb_1_1DerivedIComponent.html", null ],
@@ -23,5 +24,6 @@ var concepts =
     ] ],
     [ "mtstat", "namespacemtstat.html", [
       [ "EnumT", "conceptmtstat_1_1EnumT.html", null ]
-    ] ]
+    ] ],
+    [ "ShowPropFuncCallable", "conceptShowPropFuncCallable.html", null ]
 ];

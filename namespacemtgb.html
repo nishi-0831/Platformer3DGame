@@ -524,6 +524,9 @@ $(document).ready(function(){initNavTree('namespacemtgb.html',''); initResizable
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptmtgb_1_1EntityCallable.html">EntityCallable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">EntityIdを引数にとるstd::functionに変換可能か調べる <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptmtgb_1_1HasSaveToMementoMethod.html">HasSaveToMementoMethod</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptmtgb_1_1HasRestoreFromMementoMethod.html">HasRestoreFromMementoMethod</a></td></tr>
@@ -539,6 +542,9 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 型定義</h2></td></tr>
+<tr class="memitem:a95a3ec73ce57591bfc35e505015f1602"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html#a95a3ec73ce57591bfc35e505015f1602">EntityCallback</a> = std::function&lt; void(<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)&gt;</td></tr>
+<tr class="memdesc:a95a3ec73ce57591bfc35e505015f1602"><td class="mdescLeft">&#160;</td><td class="mdescRight">EntityIdを引数にとるstd::functionのエイリアス  <br /></td></tr>
+<tr class="separator:a95a3ec73ce57591bfc35e505015f1602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33d2d6c57bed7a7d2ed9aa5f5029547c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> = int64_t</td></tr>
 <tr class="separator:a33d2d6c57bed7a7d2ed9aa5f5029547c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0f2a1cbfc67b4a7e4d991121881af33"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html#af0f2a1cbfc67b4a7e4d991121881af33">RendererRef</a> = EffekseerRendererDX11::RendererRef</td></tr>
@@ -844,8 +850,6 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 変数</h2></td></tr>
-<tr class="memitem:a55735a172a253178e6e8d0a5c3035ec2"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html#a55735a172a253178e6e8d0a5c3035ec2">ignoreName</a> { &quot;EnemyBroken&quot; }</td></tr>
-<tr class="separator:a55735a172a253178e6e8d0a5c3035ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba34bc7cb291bc67eadab098f1561087"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">INVALID_ENTITY</a> { -1 }</td></tr>
 <tr class="separator:aba34bc7cb291bc67eadab098f1561087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ced21cf2838c5ebbe6588362fd2bf8e"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html#a1ced21cf2838c5ebbe6588362fd2bf8e">COMPONENT_CAPACITY</a> { 8192 }</td></tr>
@@ -910,6 +914,24 @@ Concepts</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="IGameObjectRegistrar_8h_source.html">IGameObjectRegistrar.h</a> の <a class="el" href="IGameObjectRegistrar_8h_source.html#l00011">11</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a95a3ec73ce57591bfc35e505015f1602" name="a95a3ec73ce57591bfc35e505015f1602"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a3ec73ce57591bfc35e505015f1602">&#9670;&#160;</a></span>EntityCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemtgb.html#a95a3ec73ce57591bfc35e505015f1602">mtgb::EntityCallback</a> = typedef std::function&lt;void(<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>EntityIdを引数にとるstd::functionのエイリアス </p>
+
+<p class="definition"> <a class="el" href="CallbackConcepts_8h_source.html">CallbackConcepts.h</a> の <a class="el" href="CallbackConcepts_8h_source.html#l00013">13</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -2174,7 +2196,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="DefaultShow_8inl_source.html#l00007">DefaultShow()</a>, <a class="el" href="MTStringUtility_8cpp_source.html#l00225">MultiToUTF8()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="DefaultShow_8inl_source.html#l00007">DefaultShow()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00045">PropertyDisplayRegistry::ShowProperty()</a>.</p>
+<p class="reference">参照元 <a class="el" href="DefaultShow_8inl_source.html#l00007">DefaultShow()</a>, <a class="el" href="TypeRegistry_8h_source.html#l00062">PropertyDisplayRegistry::ShowProperty()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -4154,7 +4176,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="ttc" id="aclassGoal_html"><div class="ttname"><a href="classGoal.html">Goal</a></div><div class="ttdef"><b>Definition:</b> <a href="Goal_8h_source.html#l00004">Goal.h:5</a></div></div>
 <div class="ttc" id="aclassMovingFloor_html"><div class="ttname"><a href="classMovingFloor.html">MovingFloor</a></div><div class="ttdef"><b>Definition:</b> <a href="MovingFloor_8h_source.html#l00004">MovingFloor.h:5</a></div></div>
 <div class="ttc" id="aclassPatrolChargerEnemy_html"><div class="ttname"><a href="classPatrolChargerEnemy.html">PatrolChargerEnemy</a></div><div class="ttdef"><b>Definition:</b> <a href="PatrolChargerEnemy_8h_source.html#l00004">PatrolChargerEnemy.h:5</a></div></div>
-<div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00008">Player.h:9</a></div></div>
+<div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> <a href="Player_8h_source.html#l00010">Player.h:11</a></div></div>
 <div class="ttc" id="aclassRespawnPoint_html"><div class="ttname"><a href="classRespawnPoint.html">RespawnPoint</a></div><div class="ttdef"><b>Definition:</b> <a href="RespawnManager_8h_source.html#l00018">RespawnManager.h:19</a></div></div>
 <div class="ttc" id="aclassScoreItem_html"><div class="ttname"><a href="classScoreItem.html">ScoreItem</a></div><div class="ttdef"><b>Definition:</b> <a href="ScoreItem_8h_source.html#l00004">ScoreItem.h:5</a></div></div>
 <div class="ttc" id="aclassSeaPlane_html"><div class="ttname"><a href="classSeaPlane.html">SeaPlane</a></div><div class="ttdef"><b>Definition:</b> <a href="SeaPlane_8h_source.html#l00005">SeaPlane.h:6</a></div></div>
@@ -4724,24 +4746,6 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 
 </div>
 </div>
-<a id="a55735a172a253178e6e8d0a5c3035ec2" name="a55735a172a253178e6e8d0a5c3035ec2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55735a172a253178e6e8d0a5c3035ec2">&#9670;&#160;</a></span>ignoreName</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string mtgb::ignoreName { &quot;EnemyBroken&quot; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition"> <a class="el" href="CircleDetector_8cpp_source.html">CircleDetector.cpp</a> の <a class="el" href="CircleDetector_8cpp_source.html#l00013">13</a> 行目に定義があります。</p>
-
-<p class="reference">参照元 <a class="el" href="CircleDetector_8cpp_source.html#l00033">mtgb::CircleDetector::UpdateDetection()</a>.</p>
-
-</div>
-</div>
 <a id="aba34bc7cb291bc67eadab098f1561087" name="aba34bc7cb291bc67eadab098f1561087"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba34bc7cb291bc67eadab098f1561087">&#9670;&#160;</a></span>INVALID_ENTITY</h2>
 
@@ -4764,7 +4768,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 
 <p class="definition"> <a class="el" href="cmtgb_8h_source.html">cmtgb.h</a> の <a class="el" href="cmtgb_8h_source.html#l00011">11</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="ImageRenderer_8cpp_source.html#l00021">mtgb::ImageRenderer::CanRender()</a>, <a class="el" href="EntityManager_8cpp_source.html#l00030">mtgb::EntityManager::DecrementCounter()</a>, <a class="el" href="GameScene_8cpp_source.html#l00109">mtgb::GameScene::DestroyGameObject()</a>, <a class="el" href="ColliderCP_8cpp_source.html#l00062">mtgb::ColliderCP::Draw()</a>, <a class="el" href="Collider_8cpp_source.html#l00374">mtgb::Collider::Draw()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00144">mtgb::ImGuiEditor::DuplicateGameObject()</a>, <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00006">mtgb::GameObjectCreateCommand::GameObjectCreateCommand()</a>, <a class="el" href="Transform_8cpp_source.html#l00209">mtgb::Transform::GenerateWorldMatrixSelf()</a>, <a class="el" href="Transform_8cpp_source.html#l00222">mtgb::Transform::GenerateWorldRotMatrixSelf()</a>, <a class="el" href="ComponentPool_8h_source.html#l00180">mtgb::ComponentPool&lt; ComponentT, DerivedT &gt;::Get()</a>, <a class="el" href="ActorManager_8cpp_source.html#l00038">ActorManager::GetActor()</a>, <a class="el" href="GroupCommand_8cpp_source.html#l00040">mtgb::GroupCommand::GetCommandTargetEntityId()</a>, <a class="el" href="ImGuiInputCommand_8h_source.html#l00033">mtgb::ImGuiInputCommand&lt; T &gt;::GetCommandTargetEntityId()</a>, <a class="el" href="Transform_8cpp_source.html#l00135">mtgb::Transform::GetParent()</a>, <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00197">mtgb::ImGuizmoManipulator::GetSelectedEntityId()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00033">mtgb::ImGuiEditorCamera::ImGuiEditorCamera()</a>, <a class="el" href="EntityManager_8cpp_source.html#l00003">mtgb::EntityManager::Initialize()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00083">MovingFloor::OnCollisionExit()</a>, <a class="el" href="Collider_8cpp_source.html#l00294">mtgb::Collider::Push()</a>, <a class="el" href="ColliderCP_8cpp_source.html#l00072">mtgb::ColliderCP::RayCastHitAll()</a>, <a class="el" href="ActorManager_8cpp_source.html#l00008">ActorManager::RegisterActor()</a>, <a class="el" href="ComponentPool_8h_source.html#l00257">mtgb::ComponentPool&lt; ComponentT, DerivedT &gt;::Remove()</a>, <a class="el" href="ImageRendererCP_8cpp_source.html#l00013">mtgb::ImageRendererCP::RenderLayer()</a>, <a class="el" href="MeshRendererCP_8cpp_source.html#l00011">mtgb::MeshRendererCP::RenderLayer()</a>, <a class="el" href="TextRendererCP_8cpp_source.html#l00008">mtgb::TextRendererCP::RenderLayer()</a>, <a class="el" href="RespawnManager_8cpp_source.html#l00006">RespawnManager::RespawnManager()</a>, <a class="el" href="ComponentPool_8h_source.html#l00161">mtgb::ComponentPool&lt; ComponentT, DerivedT &gt;::Reuse()</a>, <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00177">mtgb::ImGuizmoManipulator::Select()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00356">mtgb::MTImGui::SelectGameObject()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00270">mtgb::ImGuiEditorCamera::SelectTransform()</a>, <a class="el" href="Transform_8cpp_source.html#l00148">mtgb::Transform::SetParent()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00342">mtgb::MTImGui::ShowComponents()</a>, <a class="el" href="Transform_8cpp_source.html#l00003">mtgb::Transform::Transform()</a>, <a class="el" href="ActorManager_8cpp_source.html#l00023">ActorManager::UnregisterActor()</a>, <a class="el" href="ColliderCP_8cpp_source.html#l00019">mtgb::ColliderCP::Update()</a>, <a class="el" href="InterpolatorCP_8cpp_source.html#l00008">mtgb::InterpolatorCP::Update()</a>, <a class="el" href="RigidBodyCP_8cpp_source.html#l00007">mtgb::RigidBodyCP::Update()</a>, <a class="el" href="TransformCP_8cpp_source.html#l00008">mtgb::TransformCP::Update()</a> (計38項目).</p>
+<p class="reference">参照元 <a class="el" href="ImageRenderer_8cpp_source.html#l00021">mtgb::ImageRenderer::CanRender()</a>, <a class="el" href="EntityManager_8cpp_source.html#l00030">mtgb::EntityManager::DecrementCounter()</a>, <a class="el" href="GameScene_8cpp_source.html#l00109">mtgb::GameScene::DestroyGameObject()</a>, <a class="el" href="ColliderCP_8cpp_source.html#l00062">mtgb::ColliderCP::Draw()</a>, <a class="el" href="Collider_8cpp_source.html#l00374">mtgb::Collider::Draw()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00144">mtgb::ImGuiEditor::DuplicateGameObject()</a>, <a class="el" href="Transform_8cpp_source.html#l00209">mtgb::Transform::GenerateWorldMatrixSelf()</a>, <a class="el" href="Transform_8cpp_source.html#l00222">mtgb::Transform::GenerateWorldRotMatrixSelf()</a>, <a class="el" href="ComponentPool_8h_source.html#l00180">mtgb::ComponentPool&lt; ComponentT, DerivedT &gt;::Get()</a>, <a class="el" href="ActorManager_8cpp_source.html#l00038">ActorManager::GetActor()</a>, <a class="el" href="GroupCommand_8cpp_source.html#l00040">mtgb::GroupCommand::GetCommandTargetEntityId()</a>, <a class="el" href="ImGuiInputCommand_8h_source.html#l00033">mtgb::ImGuiInputCommand&lt; T &gt;::GetCommandTargetEntityId()</a>, <a class="el" href="Transform_8cpp_source.html#l00135">mtgb::Transform::GetParent()</a>, <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00197">mtgb::ImGuizmoManipulator::GetSelectedEntityId()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00033">mtgb::ImGuiEditorCamera::ImGuiEditorCamera()</a>, <a class="el" href="EntityManager_8cpp_source.html#l00003">mtgb::EntityManager::Initialize()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00083">MovingFloor::OnCollisionExit()</a>, <a class="el" href="Collider_8cpp_source.html#l00294">mtgb::Collider::Push()</a>, <a class="el" href="ColliderCP_8cpp_source.html#l00072">mtgb::ColliderCP::RayCastHitAll()</a>, <a class="el" href="ActorManager_8cpp_source.html#l00008">ActorManager::RegisterActor()</a>, <a class="el" href="ComponentPool_8h_source.html#l00257">mtgb::ComponentPool&lt; ComponentT, DerivedT &gt;::Remove()</a>, <a class="el" href="ImageRendererCP_8cpp_source.html#l00013">mtgb::ImageRendererCP::RenderLayer()</a>, <a class="el" href="MeshRendererCP_8cpp_source.html#l00011">mtgb::MeshRendererCP::RenderLayer()</a>, <a class="el" href="TextRendererCP_8cpp_source.html#l00008">mtgb::TextRendererCP::RenderLayer()</a>, <a class="el" href="RespawnManager_8cpp_source.html#l00006">RespawnManager::RespawnManager()</a>, <a class="el" href="ComponentPool_8h_source.html#l00161">mtgb::ComponentPool&lt; ComponentT, DerivedT &gt;::Reuse()</a>, <a class="el" href="ImGuizmoManipulator_8cpp_source.html#l00177">mtgb::ImGuizmoManipulator::Select()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00356">mtgb::MTImGui::SelectGameObject()</a>, <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00270">mtgb::ImGuiEditorCamera::SelectTransform()</a>, <a class="el" href="Transform_8cpp_source.html#l00148">mtgb::Transform::SetParent()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00342">mtgb::MTImGui::ShowComponents()</a>, <a class="el" href="Transform_8cpp_source.html#l00003">mtgb::Transform::Transform()</a>, <a class="el" href="ActorManager_8cpp_source.html#l00023">ActorManager::UnregisterActor()</a>, <a class="el" href="ColliderCP_8cpp_source.html#l00019">mtgb::ColliderCP::Update()</a>, <a class="el" href="InterpolatorCP_8cpp_source.html#l00008">mtgb::InterpolatorCP::Update()</a>, <a class="el" href="RigidBodyCP_8cpp_source.html#l00007">mtgb::RigidBodyCP::Update()</a>, <a class="el" href="TransformCP_8cpp_source.html#l00008">mtgb::TransformCP::Update()</a> (計37項目).</p>
 
 </div>
 </div>

@@ -15,7 +15,7 @@ var searchData=
   ['desc_12',['desc',['../structmtgb_1_1MonitorInfo.html#a74efd7e13960760435845e42a49cfaa1',1,'mtgb::MonitorInfo']]],
   ['desc_5f_13',['desc_',['../classmtgb_1_1GameObjectBuilder.html#a98b588d041b2a694fc3fb9c479042d80',1,'mtgb::GameObjectBuilder']]],
   ['descentpx_14',['descentPx',['../structmtgb_1_1PixelFontMetrics.html#a1b73e2e5f749bca1591c07d41b48289e',1,'mtgb::PixelFontMetrics']]],
-  ['deselectfunc_5f_15',['deselectFunc_',['../classmtgb_1_1SelectionCommand.html#a8d9587aa404dd02f09194e4d99560b8d',1,'mtgb::SelectionCommand::deselectFunc_()'],['../classmtgb_1_1DeselectionCommand.html#a675f9547a6d4ab2500dca566b69fa036',1,'mtgb::DeselectionCommand::deselectFunc_()']]],
+  ['deselectfunc_5f_15',['deselectFunc_',['../classmtgb_1_1SelectionCommand.html#aee4ffd218afc9d7447b1c0d24b8a6fdc',1,'mtgb::SelectionCommand::deselectFunc_()'],['../classmtgb_1_1DeselectionCommand.html#abe8cb85a965de55037fce817b957ecaa',1,'mtgb::DeselectionCommand::deselectFunc_()']]],
   ['destentityid_5f_16',['destEntityId_',['../classmtgb_1_1DuplicateGameObjectCommand.html#a1853bcf71548e1fdb366136ee854d059',1,'mtgb::DuplicateGameObjectCommand']]],
   ['destgameobjname_5f_17',['destGameObjName_',['../classmtgb_1_1DuplicateGameObjectCommand.html#a5441f9d74fdff67309b88b3a9ac97e0a',1,'mtgb::DuplicateGameObjectCommand']]],
   ['destroyme_18',['destroyMe',['../structmtgb_1_1EffectParameters.html#aa43758454d7f78380b4420008fa2f142',1,'mtgb::EffectParameters']]],

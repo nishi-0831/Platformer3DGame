@@ -1,7 +1,7 @@
 var classmtgb_1_1DuplicateGameObjectCommand =
 [
     [ "CreateFunc", "classmtgb_1_1DuplicateGameObjectCommand.html#a3396ce3994cdd6bc2f51c9d1e8c2acf3", null ],
-    [ "DuplicateGameObjectCommand", "classmtgb_1_1DuplicateGameObjectCommand.html#a8e9c1b28cffe780a2fc3a28df5c89295", null ],
+    [ "DuplicateGameObjectCommand", "classmtgb_1_1DuplicateGameObjectCommand.html#a92e6e79b2faa330079d0e259cbb78b9f", null ],
     [ "~DuplicateGameObjectCommand", "classmtgb_1_1DuplicateGameObjectCommand.html#aa53d04e0b01ffb4d54cfdb20244e434c", null ],
     [ "Execute", "classmtgb_1_1DuplicateGameObjectCommand.html#a154ccd77ee6372d2e437f5589b5a7207", null ],
     [ "GetCommandTargetEntityId", "classmtgb_1_1DuplicateGameObjectCommand.html#a39bc473caa1d5a05a9831a140e760b3d", null ],
@@ -9,7 +9,6 @@ var classmtgb_1_1DuplicateGameObjectCommand =
     [ "Redo", "classmtgb_1_1DuplicateGameObjectCommand.html#a92b8a4fc7b3350dd72693097946aebbb", null ],
     [ "SaveToMementos", "classmtgb_1_1DuplicateGameObjectCommand.html#ae538538b3ee2dc9a1856a7eb5452f6cb", null ],
     [ "Undo", "classmtgb_1_1DuplicateGameObjectCommand.html#a33094258f1685fe4d92a7f6382f6a573", null ],
-    [ "componentFactory_", "classmtgb_1_1DuplicateGameObjectCommand.html#a1d533144e9cbccd2dcb42845f378199d", null ],
     [ "componentPoolTypes_", "classmtgb_1_1DuplicateGameObjectCommand.html#a8011742db034cd525c1946c847a56892", null ],
     [ "createFunc_", "classmtgb_1_1DuplicateGameObjectCommand.html#a402be72f0933f90beab4246d386031b0", null ],
     [ "destEntityId_", "classmtgb_1_1DuplicateGameObjectCommand.html#a1853bcf71548e1fdb366136ee854d059", null ],

@@ -139,8 +139,8 @@ mtgb::AddComponentCommandGeneric&lt; T &gt; 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
-<tr class="memitem:a0aaf1048166c5ae40880968b186e6e57"><td class="memItemLeft" align="right" valign="top">T::Memento *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1AddComponentCommandGeneric.html#a0aaf1048166c5ae40880968b186e6e57">memento_</a></td></tr>
-<tr class="separator:a0aaf1048166c5ae40880968b186e6e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39d965a76d8fa2c248f40d6d72c7271"><td class="memItemLeft" align="right" valign="top">T::Memento *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1AddComponentCommandGeneric.html#ad39d965a76d8fa2c248f40d6d72c7271">pMemento_</a></td></tr>
+<tr class="separator:ad39d965a76d8fa2c248f40d6d72c7271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;IComponentWithMemento T&gt;<br />
@@ -174,10 +174,10 @@ template&lt;IComponentWithMemento T&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="AddComponentCommandGeneric_8h_source.html">AddComponentCommandGeneric.h</a> の <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00043">43</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>        : <a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#a0aaf1048166c5ae40880968b186e6e57">memento_</a> { _component.SaveToMemento() }</div>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>        : <a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#ad39d965a76d8fa2c248f40d6d72c7271">pMemento_</a> { _component.SaveToMemento() }</div>
 <div class="line"><span class="lineno">   45</span>    {</div>
 <div class="line"><span class="lineno">   46</span>    }</div>
-<div class="ttc" id="aclassmtgb_1_1AddComponentCommandGeneric_html_a0aaf1048166c5ae40880968b186e6e57"><div class="ttname"><a href="classmtgb_1_1AddComponentCommandGeneric.html#a0aaf1048166c5ae40880968b186e6e57">mtgb::AddComponentCommandGeneric::memento_</a></div><div class="ttdeci">T::Memento * memento_</div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommandGeneric_8h_source.html#l00040">AddComponentCommandGeneric.h:40</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1AddComponentCommandGeneric_html_ad39d965a76d8fa2c248f40d6d72c7271"><div class="ttname"><a href="classmtgb_1_1AddComponentCommandGeneric.html#ad39d965a76d8fa2c248f40d6d72c7271">mtgb::AddComponentCommandGeneric::pMemento_</a></div><div class="ttdeci">T::Memento * pMemento_</div><div class="ttdef"><b>Definition:</b> <a href="AddComponentCommandGeneric_8h_source.html#l00040">AddComponentCommandGeneric.h:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -205,7 +205,7 @@ template&lt;IComponentWithMemento T&gt; </div>
 
 <p class="definition"> <a class="el" href="AddComponentCommandGeneric_8h_source.html">AddComponentCommandGeneric.h</a> の <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00047">47</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   48</span>    {</div>
-<div class="line"><span class="lineno">   49</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#a0aaf1048166c5ae40880968b186e6e57">memento_</a>);</div>
+<div class="line"><span class="lineno">   49</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#ad39d965a76d8fa2c248f40d6d72c7271">pMemento_</a>);</div>
 <div class="line"><span class="lineno">   50</span>    }</div>
 <div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
 </div><!-- fragment -->
@@ -277,10 +277,10 @@ template&lt;IComponentWithMemento T&gt; </div>
 
 <p class="definition"> <a class="el" href="AddComponentCommandGeneric_8h_source.html">AddComponentCommandGeneric.h</a> の <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00034">34</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   35</span>        {</div>
-<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#a0aaf1048166c5ae40880968b186e6e57">memento_</a>-&gt;GetEntityId();</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#ad39d965a76d8fa2c248f40d6d72c7271">pMemento_</a>-&gt;GetEntityId();</div>
 <div class="line"><span class="lineno">   37</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00040">mtgb::AddComponentCommandGeneric&lt; T &gt;::memento_</a>.</p>
+<p class="reference">参照先 <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00040">mtgb::AddComponentCommandGeneric&lt; T &gt;::pMemento_</a>.</p>
 
 </div>
 </div>
@@ -353,12 +353,12 @@ template&lt;IComponentWithMemento T&gt; </div>
 <p class="definition"> <a class="el" href="AddComponentCommandGeneric_8h_source.html">AddComponentCommandGeneric.h</a> の <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00024">24</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   25</span>        {</div>
 <div class="line"><span class="lineno">   26</span>            <span class="keyword">using </span>PoolType = <span class="keyword">typename</span> T::Pool;</div>
-<div class="line"><span class="lineno">   27</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&amp; component   = T::Get(<a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#a0aaf1048166c5ae40880968b186e6e57">memento_</a>-&gt;GetEntityId());</div>
-<div class="line"><span class="lineno">   28</span>            component.RestoreFromMemento(*<a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#a0aaf1048166c5ae40880968b186e6e57">memento_</a>);</div>
+<div class="line"><span class="lineno">   27</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&amp; component   = T::Get(<a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#ad39d965a76d8fa2c248f40d6d72c7271">pMemento_</a>-&gt;GetEntityId());</div>
+<div class="line"><span class="lineno">   28</span>            component.RestoreFromMemento(*<a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#ad39d965a76d8fa2c248f40d6d72c7271">pMemento_</a>);</div>
 <div class="line"><span class="lineno">   29</span>        }</div>
 <div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00040">mtgb::AddComponentCommandGeneric&lt; T &gt;::memento_</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<p class="reference">参照先 <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00040">mtgb::AddComponentCommandGeneric&lt; T &gt;::pMemento_</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
 
 </div>
 </div>
@@ -394,16 +394,16 @@ template&lt;IComponentWithMemento T&gt; </div>
 <p class="definition"> <a class="el" href="AddComponentCommandGeneric_8h_source.html">AddComponentCommandGeneric.h</a> の <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00019">19</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   20</span>        {</div>
 <div class="line"><span class="lineno">   21</span>            <span class="keyword">using </span>PoolType = <span class="keyword">typename</span> T::Pool;</div>
-<div class="line"><span class="lineno">   22</span>            Game::System&lt;PoolType&gt;().Remove(<a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#a0aaf1048166c5ae40880968b186e6e57">memento_</a>-&gt;GetEntityId());</div>
+<div class="line"><span class="lineno">   22</span>            Game::System&lt;PoolType&gt;().Remove(<a class="code hl_variable" href="classmtgb_1_1AddComponentCommandGeneric.html#ad39d965a76d8fa2c248f40d6d72c7271">pMemento_</a>-&gt;GetEntityId());</div>
 <div class="line"><span class="lineno">   23</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00040">mtgb::AddComponentCommandGeneric&lt; T &gt;::memento_</a>.</p>
+<p class="reference">参照先 <a class="el" href="AddComponentCommandGeneric_8h_source.html#l00040">mtgb::AddComponentCommandGeneric&lt; T &gt;::pMemento_</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>
-<a id="a0aaf1048166c5ae40880968b186e6e57" name="a0aaf1048166c5ae40880968b186e6e57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0aaf1048166c5ae40880968b186e6e57">&#9670;&#160;</a></span>memento_</h2>
+<a id="ad39d965a76d8fa2c248f40d6d72c7271" name="ad39d965a76d8fa2c248f40d6d72c7271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad39d965a76d8fa2c248f40d6d72c7271">&#9670;&#160;</a></span>pMemento_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,7 +414,7 @@ template&lt;IComponentWithMemento T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T::Memento* <a class="el" href="classmtgb_1_1AddComponentCommandGeneric.html">mtgb::AddComponentCommandGeneric</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::memento_</td>
+          <td class="memname">T::Memento* <a class="el" href="classmtgb_1_1AddComponentCommandGeneric.html">mtgb::AddComponentCommandGeneric</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;::pMemento_</td>
         </tr>
       </table>
   </td>

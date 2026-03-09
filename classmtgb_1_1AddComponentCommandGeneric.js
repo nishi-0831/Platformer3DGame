@@ -7,5 +7,5 @@ var classmtgb_1_1AddComponentCommandGeneric =
     [ "Name", "classmtgb_1_1AddComponentCommandGeneric.html#aaf1cf7b1eec07f0e3bde9a353a0a34af", null ],
     [ "Redo", "classmtgb_1_1AddComponentCommandGeneric.html#a616e4423b31cd42908666a8eb6844ab6", null ],
     [ "Undo", "classmtgb_1_1AddComponentCommandGeneric.html#a0e537b8eacf6f665695b29f685319bb7", null ],
-    [ "memento_", "classmtgb_1_1AddComponentCommandGeneric.html#a0aaf1048166c5ae40880968b186e6e57", null ]
+    [ "pMemento_", "classmtgb_1_1AddComponentCommandGeneric.html#ad39d965a76d8fa2c248f40d6d72c7271", null ]
 ];

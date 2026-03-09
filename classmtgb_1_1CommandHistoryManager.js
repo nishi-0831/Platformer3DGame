@@ -1,6 +1,7 @@
 var classmtgb_1_1CommandHistoryManager =
 [
     [ "CommandHistoryManager", "classmtgb_1_1CommandHistoryManager.html#a2243fef14fd822e8fce8332e25300b11", null ],
+    [ "~CommandHistoryManager", "classmtgb_1_1CommandHistoryManager.html#a158ed68c07159d71bd44328a4fd18a19", null ],
     [ "BeginGroupCommand", "classmtgb_1_1CommandHistoryManager.html#ae0a241ec9659df0b9d9c9e48b830e9e9", null ],
     [ "ClearAllStack", "classmtgb_1_1CommandHistoryManager.html#ac341257841bb96c3d15b360676b6bdf9", null ],
     [ "ClearRedoStack", "classmtgb_1_1CommandHistoryManager.html#a59d13afcf9796f82dbb25e9c5b202940", null ],

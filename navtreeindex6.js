@@ -1,5 +1,8 @@
 var NAVTREEINDEX6 =
 {
+"classHighlightEnemy.html#adca80cc33581de34dd622983ac232707":[5,0,42,17],
+"classHighlightEnemy.html#ae183ec7dea108c1dee3af98bbb4a1e03":[5,0,42,11],
+"classHighlightEnemy.html#ae98ecf286d6e93064a967ef02c41a438":[5,0,42,14],
 "classHighlightEnemy.html#aec1d6bd2a9c2953d360201599fc31d4a":[5,0,42,2],
 "classHighlightEnemy.html#aed2d88f25ff20bd9f0068b119d867a8e":[5,0,42,21],
 "classHighlightEnemy.html#aee8629c2c936df1173a2f9efe7747ab9":[5,0,42,33],
@@ -246,8 +249,5 @@ var NAVTREEINDEX6 =
 "classPlayer.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9":[5,0,60,25],
 "classPlayer.html#ad93c54e92318d7c7abb43d424154f019":[5,0,60,0],
 "classPlayer.html#ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b":[5,0,60,0,2],
-"classPlayer.html#ad93c54e92318d7c7abb43d424154f019a479ab1b75080105c17b10096543dc8c5":[5,0,60,0,3],
-"classPlayer.html#ad93c54e92318d7c7abb43d424154f019a855520d2a5b0b1a64b939e7e30889e2a":[5,0,60,0,1],
-"classPlayer.html#ad93c54e92318d7c7abb43d424154f019aa5daf7f2ebbba4975d61dab1c40188c7":[5,0,60,0,0],
-"classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52":[5,0,60,0,4]
+"classPlayer.html#ad93c54e92318d7c7abb43d424154f019a479ab1b75080105c17b10096543dc8c5":[5,0,60,0,3]
 };

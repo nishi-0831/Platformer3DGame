@@ -7,14 +7,14 @@ var classPropertyDisplayRegistry =
     [ "Instance", "classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1", null ],
     [ "IsRegisteredType", "classPropertyDisplayRegistry.html#affc9d25f2f7cf037f29b898aa7a45225", null ],
     [ "operator=", "classPropertyDisplayRegistry.html#a1641edc2965dd8a4cc6263513b3d0675", null ],
-    [ "ProvisionalRegister", "classPropertyDisplayRegistry.html#a6ca3a9ca6078d9dffe6b7bd2c26e7922", null ],
-    [ "RegisterCommandListener", "classPropertyDisplayRegistry.html#ab54d85991e30fd920da3f573feeac14d", null ],
-    [ "RegisterFunc", "classPropertyDisplayRegistry.html#ad016d98207d023e8392937658694cfef", null ],
+    [ "ProvisionalRegister", "classPropertyDisplayRegistry.html#a0c28189efd079ee1a0a37f0fbb975160", null ],
+    [ "RegisterCommandListener", "classPropertyDisplayRegistry.html#a93c09a22d2b4f513c6b2ebf7d0e590d2", null ],
+    [ "RegisterFunc", "classPropertyDisplayRegistry.html#a6d5050dfc08242ef24b9c63f8d195142", null ],
     [ "RegisterType", "classPropertyDisplayRegistry.html#adc3bafee7081204428d853bc74a7e0f6", null ],
     [ "ShowMemberWithReflection", "classPropertyDisplayRegistry.html#a8a0ca14c92532f2f840c3161e3582357", null ],
     [ "ShowProperty", "classPropertyDisplayRegistry.html#a7f2bdf4dc70eef27c38bf239b6cf3233", null ],
     [ "ShowProperty", "classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3", null ],
     [ "commandListener_", "classPropertyDisplayRegistry.html#a1ca473afc9883fcfa9c0b58d9969b010", null ],
     [ "provisionalRegisterFunc_", "classPropertyDisplayRegistry.html#a8b4ccf326ecff784ef70cfda4fd4757b", null ],
-    [ "showFunctions_", "classPropertyDisplayRegistry.html#af6bc94ce626949148532473fdac81f43", null ]
+    [ "showFunctions_", "classPropertyDisplayRegistry.html#ac4c2c2665fc057d5a9d1ae94be43abe1", null ]
 ];

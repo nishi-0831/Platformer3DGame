@@ -12,7 +12,7 @@ var searchData=
   ['handlers_5f_9',['handlers_',['../classmtgb_1_1Event.html#af9ccc0fa06db2eedf7472568e522680e',1,'mtgb::Event']]],
   ['handlewindowmessage_10',['HandleWindowMessage',['../classmtgb_1_1WindowResource.html#ab6fd99c29875cdb8c2a1f4f68aa890c4',1,'mtgb::WindowResource']]],
   ['has_11',['Has',['../classmtbit_1_1BitFlag.html#a9779b5fdd82e7392bef127e691b60026',1,'mtbit::BitFlag::Has(EnumStructT _e) const'],['../classmtbit_1_1BitFlag.html#a7b057677c0fc1d16d96831a15c9766fd',1,'mtbit::BitFlag::Has(BitFlag _other) const']]],
-  ['hasdetectedtargets_12',['HasDetectedTargets',['../classmtgb_1_1RectDetector.html#a769f5e96c6ebb6d4d971d73aa99fd7a2',1,'mtgb::RectDetector::HasDetectedTargets()'],['../classmtgb_1_1CircleDetector.html#aa68e5d9f6ede47abe73144c82baaa713',1,'mtgb::CircleDetector::HasDetectedTargets()'],['../classmtgb_1_1IDetector.html#a5f445e7068fcf80bdcb6988a9b251c4c',1,'mtgb::IDetector::HasDetectedTargets()'],['../classmtgb_1_1RayDetector.html#acc216b19d99b832471f20376cec2f43b',1,'mtgb::RayDetector::HasDetectedTargets()']]],
+  ['hasdetectedtargets_12',['HasDetectedTargets',['../classmtgb_1_1IDetector.html#a0dbc632b1bb171fd85d7de710f31bd9f',1,'mtgb::IDetector']]],
   ['hasskinnedmesh_13',['HasSkinnedMesh',['../classmtgb_1_1FbxParts.html#a96a40437a297fde6f8bbcabc88c0b128',1,'mtgb::FbxParts']]],
   ['hasskinnedmesh_5f_14',['hasSkinnedMesh_',['../classmtgb_1_1FbxParts.html#a3e51536aad681ebd7ab1f173baaa2457',1,'mtgb::FbxParts']]],
   ['hboxmodel_5f_15',['hBoxModel_',['../classmtgb_1_1Collider.html#a0f5236811d09379ad76a79a801026bae',1,'mtgb::Collider']]],

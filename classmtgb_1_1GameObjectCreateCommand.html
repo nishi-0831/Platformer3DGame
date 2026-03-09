@@ -126,10 +126,14 @@ mtgb::GameObjectCreateCommand 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:af359b0afcaf352aa2d1dff78a40d793f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#af359b0afcaf352aa2d1dff78a40d793f">GameObjectCreateCommand</a> (const <a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#a1c3d511a0b2f8df5ed8fa5125b0bc704">CreateFunc</a> &amp;_createFunc)</td></tr>
-<tr class="separator:af359b0afcaf352aa2d1dff78a40d793f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adadbee00b08e77e78f8f86e7f2c3fc1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#adadbee00b08e77e78f8f86e7f2c3fc1e">GameObjectCreateCommand</a> (const <a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#a1c3d511a0b2f8df5ed8fa5125b0bc704">CreateFunc</a> &amp;_createFunc, const nlohmann::json &amp;_json)</td></tr>
-<tr class="separator:adadbee00b08e77e78f8f86e7f2c3fc1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98128f21a8752c1f8f338b2506d8652d"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; <br />
+requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.html">GameObject</a>*,Func&gt;</td></tr>
+<tr class="memitem:a98128f21a8752c1f8f338b2506d8652d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#a98128f21a8752c1f8f338b2506d8652d">GameObjectCreateCommand</a> (Func &amp;&amp;_createFunc)</td></tr>
+<tr class="separator:a98128f21a8752c1f8f338b2506d8652d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe549952240c6f40aee34e58965d2b2c"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; <br />
+requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.html">GameObject</a>*, Func&gt;</td></tr>
+<tr class="memitem:abe549952240c6f40aee34e58965d2b2c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#abe549952240c6f40aee34e58965d2b2c">GameObjectCreateCommand</a> (Func &amp;&amp;_createFunc, const nlohmann::json &amp;_json)</td></tr>
+<tr class="separator:abe549952240c6f40aee34e58965d2b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad32c8184cb004960d92717176f5653d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#ad32c8184cb004960d92717176f5653d1">Execute</a> () override</td></tr>
 <tr class="memdesc:ad32c8184cb004960d92717176f5653d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">実行  <br /></td></tr>
 <tr class="separator:ad32c8184cb004960d92717176f5653d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,7 +168,7 @@ mtgb::GameObjectCreateCommand 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00014">14</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00015">15</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">型定義メンバ詳解</h2>
 <a id="a1c3d511a0b2f8df5ed8fa5125b0bc704" name="a1c3d511a0b2f8df5ed8fa5125b0bc704"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c3d511a0b2f8df5ed8fa5125b0bc704">&#9670;&#160;</a></span>CreateFunc</h2>
@@ -178,52 +182,68 @@ mtgb::GameObjectCreateCommand 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00018">18</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <h2 class="groupheader">構築子と解体子</h2>
-<a id="af359b0afcaf352aa2d1dff78a40d793f" name="af359b0afcaf352aa2d1dff78a40d793f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af359b0afcaf352aa2d1dff78a40d793f">&#9670;&#160;</a></span>GameObjectCreateCommand() <span class="overload">[1/2]</span></h2>
+<a id="a98128f21a8752c1f8f338b2506d8652d" name="a98128f21a8752c1f8f338b2506d8652d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98128f21a8752c1f8f338b2506d8652d">&#9670;&#160;</a></span>GameObjectCreateCommand() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Func &gt; <br />
+requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.html">GameObject</a>*,Func&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">mtgb::GameObjectCreateCommand::GameObjectCreateCommand </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#a1c3d511a0b2f8df5ed8fa5125b0bc704">CreateFunc</a> &amp;&#160;</td>
+          <td class="paramtype">Func &amp;&amp;&#160;</td>
           <td class="paramname"><em>_createFunc</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00006">6</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    7</span>    : <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a> { <a class="code hl_variable" href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">INVALID_ENTITY</a> }</div>
-<div class="line"><span class="lineno">    8</span>    , <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#ad22c9cba2a79e425141cf1083ff18f58">createFunc_</a> { _createFunc }</div>
-<div class="line"><span class="lineno">    9</span>    , <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">json_</a> {}</div>
-<div class="line"><span class="lineno">   10</span>{</div>
-<div class="line"><span class="lineno">   11</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_a219a4eb598d33f6e1f29de43436eaa29"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">mtgb::GameObjectCreateCommand::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8h_source.html#l00031">GameObjectCreateCommand.h:31</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_aa6c7f24882a0cb7d332edcf9843ed9d6"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">mtgb::GameObjectCreateCommand::json_</a></div><div class="ttdeci">nlohmann::json json_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8h_source.html#l00034">GameObjectCreateCommand.h:34</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_ad22c9cba2a79e425141cf1083ff18f58"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#ad22c9cba2a79e425141cf1083ff18f58">mtgb::GameObjectCreateCommand::createFunc_</a></div><div class="ttdeci">CreateFunc createFunc_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8h_source.html#l00033">GameObjectCreateCommand.h:33</a></div></div>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>        : <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a> {<a class="code hl_variable" href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">INVALID_ENTITY</a>}</div>
+<div class="line"><span class="lineno">   45</span>        , <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#ad22c9cba2a79e425141cf1083ff18f58">createFunc_</a> { std::forward&lt;Func&gt;(_createFunc) }</div>
+<div class="line"><span class="lineno">   46</span>        , <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">json_</a> {}</div>
+<div class="line"><span class="lineno">   47</span>    {</div>
+<div class="line"><span class="lineno">   48</span>        </div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_a219a4eb598d33f6e1f29de43436eaa29"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">mtgb::GameObjectCreateCommand::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8h_source.html#l00036">GameObjectCreateCommand.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_aa6c7f24882a0cb7d332edcf9843ed9d6"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">mtgb::GameObjectCreateCommand::json_</a></div><div class="ttdeci">nlohmann::json json_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8h_source.html#l00039">GameObjectCreateCommand.h:39</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_ad22c9cba2a79e425141cf1083ff18f58"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#ad22c9cba2a79e425141cf1083ff18f58">mtgb::GameObjectCreateCommand::createFunc_</a></div><div class="ttdeci">CreateFunc createFunc_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8h_source.html#l00038">GameObjectCreateCommand.h:38</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_aba34bc7cb291bc67eadab098f1561087"><div class="ttname"><a href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">constexpr EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
-
 </div>
 </div>
-<a id="adadbee00b08e77e78f8f86e7f2c3fc1e" name="adadbee00b08e77e78f8f86e7f2c3fc1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adadbee00b08e77e78f8f86e7f2c3fc1e">&#9670;&#160;</a></span>GameObjectCreateCommand() <span class="overload">[2/2]</span></h2>
+<a id="abe549952240c6f40aee34e58965d2b2c" name="abe549952240c6f40aee34e58965d2b2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe549952240c6f40aee34e58965d2b2c">&#9670;&#160;</a></span>GameObjectCreateCommand() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Func &gt; <br />
+requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.html">GameObject</a>*, Func&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">mtgb::GameObjectCreateCommand::GameObjectCreateCommand </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmtgb_1_1GameObjectCreateCommand.html#a1c3d511a0b2f8df5ed8fa5125b0bc704">CreateFunc</a> &amp;&#160;</td>
+          <td class="paramtype">Func &amp;&amp;&#160;</td>
           <td class="paramname"><em>_createFunc</em>, </td>
         </tr>
         <tr>
@@ -238,16 +258,21 @@ mtgb::GameObjectCreateCommand 連携図</div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00013">13</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>    : <a class="code hl_function" href="classmtgb_1_1GameObjectCreateCommand.html#af359b0afcaf352aa2d1dff78a40d793f">GameObjectCreateCommand</a>(_createFunc)</div>
-<div class="line"><span class="lineno">   15</span>{</div>
-<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">json_</a> = _json;</div>
-<div class="line"><span class="lineno">   17</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_af359b0afcaf352aa2d1dff78a40d793f"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#af359b0afcaf352aa2d1dff78a40d793f">mtgb::GameObjectCreateCommand::GameObjectCreateCommand</a></div><div class="ttdeci">GameObjectCreateCommand(const CreateFunc &amp;_createFunc)</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8cpp_source.html#l00006">GameObjectCreateCommand.cpp:6</a></div></div>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00052">52</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>        : <a class="code hl_function" href="classmtgb_1_1GameObjectCreateCommand.html#a98128f21a8752c1f8f338b2506d8652d">GameObjectCreateCommand</a>(std::forward&lt;Func&gt;(_createFunc))</div>
+<div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>        <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">json_</a> = _json;</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_a98128f21a8752c1f8f338b2506d8652d"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#a98128f21a8752c1f8f338b2506d8652d">mtgb::GameObjectCreateCommand::GameObjectCreateCommand</a></div><div class="ttdeci">GameObjectCreateCommand(Func &amp;&amp;_createFunc)</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8h_source.html#l00043">GameObjectCreateCommand.h:43</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="GameObjectCreateCommand_8h_source.html#l00034">json_</a>.</p>
+<p class="reference">参照先 <a class="el" href="GameObjectCreateCommand_8h_source.html#l00039">json_</a>.</p>
 
 </div>
 </div>
@@ -275,32 +300,40 @@ mtgb::GameObjectCreateCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00048">48</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
-<div class="line"><span class="lineno">   50</span>    GameObject* obj = <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#ad22c9cba2a79e425141cf1083ff18f58">createFunc_</a>();</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (obj == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>    <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a> = obj-&gt;GetEntityId();</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">json_</a>.is_null() || <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">json_</a>.empty())</div>
-<div class="line"><span class="lineno">   58</span>    {</div>
-<div class="line"><span class="lineno">   59</span>        <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a50f07a549bf427b0c3c1cd4c5623c06b">gameObjectName_</a> = obj-&gt;GetName();</div>
-<div class="line"><span class="lineno">   60</span>    }</div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   62</span>    {</div>
-<div class="line"><span class="lineno">   63</span>        <a class="code hl_function" href="classmtgb_1_1GameObjectCreateCommand.html#a17bd652fbff522aa55e2f4d245174ce5">Deserialize</a>(obj);</div>
-<div class="line"><span class="lineno">   64</span>    }</div>
-<div class="line"><span class="lineno">   65</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_a17bd652fbff522aa55e2f4d245174ce5"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#a17bd652fbff522aa55e2f4d245174ce5">mtgb::GameObjectCreateCommand::Deserialize</a></div><div class="ttdeci">void Deserialize(GameObject *_obj)</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8cpp_source.html#l00067">GameObjectCreateCommand.cpp:67</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_a50f07a549bf427b0c3c1cd4c5623c06b"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#a50f07a549bf427b0c3c1cd4c5623c06b">mtgb::GameObjectCreateCommand::gameObjectName_</a></div><div class="ttdeci">std::string gameObjectName_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8h_source.html#l00032">GameObjectCreateCommand.h:32</a></div></div>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00036">36</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
+<div class="line"><span class="lineno">   38</span>    GameObject* obj = <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#ad22c9cba2a79e425141cf1083ff18f58">createFunc_</a>();</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (obj == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a> = obj-&gt;GetEntityId();</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">json_</a>.is_null() || <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">json_</a>.empty())</div>
+<div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a50f07a549bf427b0c3c1cd4c5623c06b">gameObjectName_</a> = obj-&gt;GetName();</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_function" href="classmtgb_1_1GameObjectCreateCommand.html#a17bd652fbff522aa55e2f4d245174ce5">Deserialize</a>(obj);</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_a17bd652fbff522aa55e2f4d245174ce5"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#a17bd652fbff522aa55e2f4d245174ce5">mtgb::GameObjectCreateCommand::Deserialize</a></div><div class="ttdeci">void Deserialize(GameObject *_obj)</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8cpp_source.html#l00055">GameObjectCreateCommand.cpp:55</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_a50f07a549bf427b0c3c1cd4c5623c06b"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#a50f07a549bf427b0c3c1cd4c5623c06b">mtgb::GameObjectCreateCommand::gameObjectName_</a></div><div class="ttdeci">std::string gameObjectName_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8h_source.html#l00037">GameObjectCreateCommand.h:37</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Entity_8h_source.html#l00020">mtgb::Entity::GetEntityId()</a>, <a class="el" href="GameObject_8h_source.html#l00083">mtgb::GameObject::GetName()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00007">Execute()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GameObjectCreateCommand_abab46412421ebb9fd6a4627b03d590f3_cgraph.svg" width="528" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GameObjectCreateCommand_abab46412421ebb9fd6a4627b03d590f3_icgraph.svg" width="568" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -330,10 +363,10 @@ mtgb::GameObjectCreateCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00067">67</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
-<div class="line"><span class="lineno">   69</span>    _obj-&gt;Deserialize(<a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">json_</a>);</div>
-<div class="line"><span class="lineno">   70</span>}</div>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>    _obj-&gt;Deserialize(<a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#aa6c7f24882a0cb7d332edcf9843ed9d6">json_</a>);</div>
+<div class="line"><span class="lineno">   58</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="GameObject_8cpp_source.html#l00075">mtgb::GameObject::Deserialize()</a>.</p>
 <div class="dynheader">
@@ -372,14 +405,22 @@ mtgb::GameObjectCreateCommand 連携図</div>
 
 <p><a class="el" href="classCommand.html#a484c34647660fcfc8ee46b04ad5b32b6">Command</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
-<div class="line"><span class="lineno">   21</span>    <a class="code hl_function" href="classmtgb_1_1GameObjectCreateCommand.html#abab46412421ebb9fd6a4627b03d590f3">CreateGameObject</a>();</div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>    Game::System&lt;EventManager&gt;().GetEvent&lt;GameObjectCreatedEvent&gt;().Invoke({ .entityId = <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a> });</div>
-<div class="line"><span class="lineno">   24</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_abab46412421ebb9fd6a4627b03d590f3"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#abab46412421ebb9fd6a4627b03d590f3">mtgb::GameObjectCreateCommand::CreateGameObject</a></div><div class="ttdeci">void CreateGameObject()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8cpp_source.html#l00048">GameObjectCreateCommand.cpp:48</a></div></div>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00007">7</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>{</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_function" href="classmtgb_1_1GameObjectCreateCommand.html#abab46412421ebb9fd6a4627b03d590f3">CreateGameObject</a>();</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    Game::System&lt;EventManager&gt;().GetEvent&lt;GameObjectCreatedEvent&gt;().Invoke({ .entityId = <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a> });</div>
+<div class="line"><span class="lineno">   12</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectCreateCommand_html_abab46412421ebb9fd6a4627b03d590f3"><div class="ttname"><a href="classmtgb_1_1GameObjectCreateCommand.html#abab46412421ebb9fd6a4627b03d590f3">mtgb::GameObjectCreateCommand::CreateGameObject</a></div><div class="ttdeci">void CreateGameObject()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectCreateCommand_8cpp_source.html#l00036">GameObjectCreateCommand.cpp:36</a></div></div>
 </div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00036">CreateGameObject()</a>, <a class="el" href="GameObjectCreateCommand_8h_source.html#l00036">entityId_</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GameObjectCreateCommand_ad32c8184cb004960d92717176f5653d1_cgraph.svg" width="831" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a5b3b5ecfdaf779d917403dc379252a70" name="a5b3b5ecfdaf779d917403dc379252a70"></a>
@@ -407,10 +448,10 @@ mtgb::GameObjectCreateCommand 連携図</div>
 
 <p><a class="el" href="classCommand.html#a23e1ca01a9937ac120ba579a69d83aac">Command</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00043">43</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a>;</div>
-<div class="line"><span class="lineno">   46</span>}</div>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a>;</div>
+<div class="line"><span class="lineno">   34</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -442,10 +483,10 @@ mtgb::GameObjectCreateCommand 連携図</div>
 
 <p><a class="el" href="classCommand.html#aba62319b363ca36a4112803637ee5491">Command</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00038">38</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;CreateGameObject:&quot;</span>) + <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a50f07a549bf427b0c3c1cd4c5623c06b">gameObjectName_</a>;</div>
-<div class="line"><span class="lineno">   41</span>}</div>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00026">26</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;CreateGameObject:&quot;</span>) + <a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a50f07a549bf427b0c3c1cd4c5623c06b">gameObjectName_</a>;</div>
+<div class="line"><span class="lineno">   29</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -476,12 +517,12 @@ mtgb::GameObjectCreateCommand 連携図</div>
 
 <p><a class="el" href="classCommand.html#a75ca9ed49533a4e30fb3e2fcfc549a22">Command</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
-<div class="line"><span class="lineno">   33</span>    Game::System&lt;EntityManager&gt;().ChangeCounter(<a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a> - 1);</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_function" href="classmtgb_1_1GameObjectCreateCommand.html#abab46412421ebb9fd6a4627b03d590f3">CreateGameObject</a>();</div>
-<div class="line"><span class="lineno">   36</span>}</div>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    Game::System&lt;EntityManager&gt;().ChangeCounter(<a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a> - 1);</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_function" href="classmtgb_1_1GameObjectCreateCommand.html#abab46412421ebb9fd6a4627b03d590f3">CreateGameObject</a>();</div>
+<div class="line"><span class="lineno">   24</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -512,10 +553,10 @@ mtgb::GameObjectCreateCommand 連携図</div>
 
 <p><a class="el" href="classCommand.html#acee7d28a866913f07e880a675acc4720">Command</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00026">26</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
-<div class="line"><span class="lineno">   28</span>    Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;DestroyGameObject(<a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a>);</div>
-<div class="line"><span class="lineno">   29</span>}</div>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8cpp_source.html">GameObjectCreateCommand.cpp</a> の <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00014">14</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>{</div>
+<div class="line"><span class="lineno">   16</span>    Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;DestroyGameObject(<a class="code hl_variable" href="classmtgb_1_1GameObjectCreateCommand.html#a219a4eb598d33f6e1f29de43436eaa29">entityId_</a>);</div>
+<div class="line"><span class="lineno">   17</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -540,7 +581,7 @@ mtgb::GameObjectCreateCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00033">33</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00038">38</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -564,7 +605,9 @@ mtgb::GameObjectCreateCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00036">36</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00007">Execute()</a>.</p>
 
 </div>
 </div>
@@ -588,7 +631,7 @@ mtgb::GameObjectCreateCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00037">37</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -612,9 +655,9 @@ mtgb::GameObjectCreateCommand 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="GameObjectCreateCommand_8h_source.html">GameObjectCreateCommand.h</a> の <a class="el" href="GameObjectCreateCommand_8h_source.html#l00039">39</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00013">GameObjectCreateCommand()</a>.</p>
+<p class="reference">参照元 <a class="el" href="GameObjectCreateCommand_8h_source.html#l00052">GameObjectCreateCommand()</a>.</p>
 
 </div>
 </div>

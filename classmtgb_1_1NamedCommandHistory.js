@@ -1,11 +1,11 @@
 var classmtgb_1_1NamedCommandHistory =
 [
     [ "NamedCommandHistory", "classmtgb_1_1NamedCommandHistory.html#a2faed5f2749ebc79890e0f28c3cbc431", null ],
-    [ "~NamedCommandHistory", "classmtgb_1_1NamedCommandHistory.html#acd187e5867aad858e301252b808f54f5", null ],
+    [ "~NamedCommandHistory", "classmtgb_1_1NamedCommandHistory.html#a2dd0efe9cf88760d630f95c3f8623085", null ],
     [ "ClearAllStack", "classmtgb_1_1NamedCommandHistory.html#ad04eca62873d9adac3c2a2fdd3e6875a", null ],
     [ "ClearRedoStack", "classmtgb_1_1NamedCommandHistory.html#a9b6917ea51c838b595ecf5f60744e5d6", null ],
     [ "DrawImGuiStack", "classmtgb_1_1NamedCommandHistory.html#ae1fa4296f8be70e945df95b49922d449", null ],
-    [ "ExecuteCommand", "classmtgb_1_1NamedCommandHistory.html#a778c3558a9e8132bd6e69d399e726c30", null ],
+    [ "ExecuteCommand", "classmtgb_1_1NamedCommandHistory.html#a47c3d5a1f3da923905ca4a948765feac", null ],
     [ "GetRedoNames", "classmtgb_1_1NamedCommandHistory.html#ae038fd7e76b139c3fbedc7534d168067", null ],
     [ "GetUndoNames", "classmtgb_1_1NamedCommandHistory.html#a2964905e9b0dccefae06952047f10555", null ],
     [ "RedoCommand", "classmtgb_1_1NamedCommandHistory.html#a87fff401c3b10c34129efe6aa2220865", null ],
