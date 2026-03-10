@@ -1,5 +1,6 @@
 var classmtgb_1_1FbxAnimationController =
 [
+    [ "AnimationEventCallback", "classmtgb_1_1FbxAnimationController.html#aab4af4ca3d85e22426714ccbc2294a5f", null ],
     [ "FbxAnimationController", "classmtgb_1_1FbxAnimationController.html#a22dda130bce39ace32d4c93751b89586", null ],
     [ "FbxAnimationController", "classmtgb_1_1FbxAnimationController.html#a5467946c024e70c3d3bee8be664ab86c", null ],
     [ "~FbxAnimationController", "classmtgb_1_1FbxAnimationController.html#a0e03e6dfdfdde7f15dcd34bf08c21795", null ],
@@ -12,12 +13,12 @@ var classmtgb_1_1FbxAnimationController =
     [ "RegisterAnimationClip", "classmtgb_1_1FbxAnimationController.html#ad5c6d0171b38dc31a22fa7bbb35374cf", null ],
     [ "ResumeAnimation", "classmtgb_1_1FbxAnimationController.html#ad09b46ec1ccbd6cf867e83214a05eeed", null ],
     [ "SetAnimationSpeed", "classmtgb_1_1FbxAnimationController.html#a1a0e848c00aa087cfef1f901636d7474", null ],
-    [ "SetEventCallback", "classmtgb_1_1FbxAnimationController.html#adf94efdbd2badcc509d5f71117d7fb22", null ],
+    [ "SetEventCallback", "classmtgb_1_1FbxAnimationController.html#ade104363646e014f76791bec9880f824", null ],
     [ "UpdateFrame", "classmtgb_1_1FbxAnimationController.html#af201c3faf2966a1fda4256b5a40d845c", null ],
     [ "animationSpeed_", "classmtgb_1_1FbxAnimationController.html#a270fd9cdfd0e076e5ed4683bd1b4175c", null ],
     [ "clipMap_", "classmtgb_1_1FbxAnimationController.html#a7587a75ef9143d7f6d418b860fece7df", null ],
     [ "currentFrame_", "classmtgb_1_1FbxAnimationController.html#aa86a1c311b26886b2c8f35006ea48979", null ],
-    [ "eventCallbackMap_", "classmtgb_1_1FbxAnimationController.html#a915738b22aa90857f80131ef0a217d80", null ],
+    [ "eventCallbackMap_", "classmtgb_1_1FbxAnimationController.html#addd0d778e7fc379bcd4bec32b8487789", null ],
     [ "events_", "classmtgb_1_1FbxAnimationController.html#afe9a9d661a1b9a5b15136d41ca68ff2d", null ],
     [ "fileName_", "classmtgb_1_1FbxAnimationController.html#a92c5eab37debf0fa870e351747a31ab8", null ],
     [ "isFinished_", "classmtgb_1_1FbxAnimationController.html#a8ef4e6c383eee4d508a442262c68957f", null ],

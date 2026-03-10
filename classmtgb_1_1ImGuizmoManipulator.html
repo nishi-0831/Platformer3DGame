@@ -825,7 +825,7 @@ mtgb::ImGuizmoManipulator 連携図</div>
 <div class="line"><span class="lineno">  221</span> </div>
 <div class="line"><span class="lineno">  222</span>        <a class="code hl_class" href="classmtgb_1_1ComponentMemento.html">TransformMemento</a>* memento = <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a1feeed5bea3d1a88831718bbade8e368">pTargetTransform_</a>-&gt;SaveToMemento();</div>
 <div class="line"><span class="lineno">  223</span>        GuizmoManipulateCommand* cmd =</div>
-<div class="line"><span class="lineno">  224</span>            <span class="keyword">new</span> GuizmoManipulateCommand(<a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#aa50bcc2b8f6013c4e955ba355c5449f8">pTargetPrevTransformMemento_</a>, memento, <a class="code hl_function" href="classmtgb_1_1Game.html#a66362917a1d96665e8160adcb72f031f">Game::GetComponentFactory</a>());</div>
+<div class="line"><span class="lineno">  224</span>            <span class="keyword">new</span> GuizmoManipulateCommand(<a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#aa50bcc2b8f6013c4e955ba355c5449f8">pTargetPrevTransformMemento_</a>, memento);</div>
 <div class="line"><span class="lineno">  225</span>        Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
 <div class="line"><span class="lineno">  226</span> </div>
 <div class="line"><span class="lineno">  227</span>        <span class="comment">// メモリの解放はコマンドが行うと断定して、ポインタを空にする</span></div>
@@ -835,17 +835,8 @@ mtgb::ImGuizmoManipulator 連携図</div>
 <div class="line"><span class="lineno">  231</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a2a19eec3880549b0bb02101c81fd931e">wasUsing_</a> = <a class="code hl_variable" href="classmtgb_1_1ImGuizmoManipulator.html#a2eb143a4ae2236e79d1cfd0767702c2b">isUsing_</a>;</div>
 <div class="line"><span class="lineno">  232</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1ComponentMemento_html"><div class="ttname"><a href="classmtgb_1_1ComponentMemento.html">mtgb::ComponentMemento</a></div><div class="ttdef"><b>Definition:</b> <a href="IComponentMemento_8h_source.html#l00015">IComponentMemento.h:16</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Game_html_a66362917a1d96665e8160adcb72f031f"><div class="ttname"><a href="classmtgb_1_1Game.html#a66362917a1d96665e8160adcb72f031f">mtgb::Game::GetComponentFactory</a></div><div class="ttdeci">static ComponentFactory &amp; GetComponentFactory()</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00126">Game.h:126</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImGuizmoManipulator_html_aa50bcc2b8f6013c4e955ba355c5449f8"><div class="ttname"><a href="classmtgb_1_1ImGuizmoManipulator.html#aa50bcc2b8f6013c4e955ba355c5449f8">mtgb::ImGuizmoManipulator::pTargetPrevTransformMemento_</a></div><div class="ttdeci">TransformMemento * pTargetPrevTransformMemento_</div><div class="ttdef"><b>Definition:</b> <a href="ImGuizmoManipulator_8h_source.html#l00055">ImGuizmoManipulator.h:55</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Game_8h_source.html#l00126">mtgb::Game::GetComponentFactory()</a>.</p>
-<div class="dynheader">
-呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImGuizmoManipulator_a83d7be03b39a1d4e6d6ec57c4a710fcc_cgraph.svg" width="478" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
 </div>
 </div>
 <a id="afe9d186080355059cf6e8f2d97dadbfd" name="afe9d186080355059cf6e8f2d97dadbfd"></a>

@@ -500,9 +500,9 @@
 <text text-anchor="start" x="1943.5" y="-1293.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; float far_</text>
 <text text-anchor="start" x="1943.5" y="-1282.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CameraHandleInScene</text>
 <text text-anchor="start" x="1943.5" y="-1271.5" font-family="Helvetica,sans-Serif" font-size="10.00"> hCurrentCamera_</text>
-<text text-anchor="start" x="1943.5" y="-1260.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::map&lt; WindowContext,</text>
-<text text-anchor="start" x="1943.5" y="-1249.5" font-family="Helvetica,sans-Serif" font-size="10.00"> WorldToScreenData &gt; worldTo</text>
-<text text-anchor="start" x="1943.5" y="-1238.5" font-family="Helvetica,sans-Serif" font-size="10.00">ScreenDatas_</text>
+<text text-anchor="start" x="1943.5" y="-1260.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::unordered_map</text>
+<text text-anchor="start" x="1943.5" y="-1249.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; WindowContext, WorldToScreen</text>
+<text text-anchor="start" x="1943.5" y="-1238.5" font-family="Helvetica,sans-Serif" font-size="10.00">Data &gt; worldToScreenDatas_</text>
 <text text-anchor="start" x="1943.5" y="-1227.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; uint64_t currentFrameId_</text>
 <polyline fill="none" stroke="#666666" points="1935.5,-1220.5 2144.5,-1220.5 "/>
 <text text-anchor="start" x="1943.5" y="-1208.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CameraSystem()</text>
@@ -515,10 +515,10 @@
 <text text-anchor="start" x="1943.5" y="-1131.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void UnregisterDrawCamera</text>
 <text text-anchor="start" x="1943.5" y="-1120.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const Transform *_pCameraTransform)</text>
 <text text-anchor="start" x="1943.5" y="-1109.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ClearDrawCameraAll()</text>
-<text text-anchor="start" x="1943.5" y="-1098.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void SetFOV(const float</text>
-<text text-anchor="start" x="1943.5" y="-1087.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _angle)</text>
+<text text-anchor="start" x="1943.5" y="-1098.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void SetFOV(float </text>
+<text text-anchor="start" x="1943.5" y="-1087.5" font-family="Helvetica,sans-Serif" font-size="10.00">_angle)</text>
 <text text-anchor="start" x="1943.5" y="-1076.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void SetDrawCamera</text>
-<text text-anchor="start" x="1943.5" y="-1065.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const CameraHandleInScene</text>
+<text text-anchor="start" x="1943.5" y="-1065.5" font-family="Helvetica,sans-Serif" font-size="10.00">(CameraHandleInScene</text>
 <text text-anchor="start" x="1943.5" y="-1054.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _hCamera)</text>
 <text text-anchor="start" x="1943.5" y="-1043.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CameraHandleInScene</text>
 <text text-anchor="start" x="1943.5" y="-1032.5" font-family="Helvetica,sans-Serif" font-size="10.00"> GetDrawCamera() const</text>
@@ -1500,38 +1500,36 @@
 <g id="node40" class="node">
 <title>Node40</title>
 <g id="a_node40"><a xlink:href="classmtgb_1_1SceneSystem.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="6414,-1042 6414,-1308 6598,-1308 6598,-1042 6414,-1042"/>
-<text text-anchor="middle" x="6506" y="-1296" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::SceneSystem</text>
-<polyline fill="none" stroke="#666666" points="6414,-1289 6598,-1289 "/>
-<text text-anchor="start" x="6422" y="-1277" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GameScene * pNextScene_</text>
-<text text-anchor="start" x="6422" y="-1266" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::queue&lt; std::function</text>
-<text text-anchor="start" x="6422" y="-1255" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void()&gt; &gt; pendingCallbacks_</text>
-<text text-anchor="start" x="6422" y="-1244" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::vector&lt; std::function</text>
-<text text-anchor="start" x="6422" y="-1233" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void()&gt; &gt; onMoveListener_</text>
-<polyline fill="none" stroke="#666666" points="6414,-1226 6598,-1226 "/>
-<text text-anchor="start" x="6422" y="-1214" font-family="Helvetica,sans-Serif" font-size="10.00">+ SceneSystem()</text>
-<text text-anchor="start" x="6422" y="-1203" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~SceneSystem()</text>
-<text text-anchor="start" x="6422" y="-1192" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Move(Args... </text>
-<text text-anchor="start" x="6422" y="-1181" font-family="Helvetica,sans-Serif" font-size="10.00">_args)</text>
-<text text-anchor="start" x="6422" y="-1170" font-family="Helvetica,sans-Serif" font-size="10.00">+ GameScene * GetActiveScene</text>
-<text text-anchor="start" x="6422" y="-1159" font-family="Helvetica,sans-Serif" font-size="10.00">() const</text>
-<text text-anchor="start" x="6422" y="-1148" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Initialize() override</text>
-<text text-anchor="start" x="6422" y="-1137" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Update() override</text>
-<text text-anchor="start" x="6422" y="-1126" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnMove(const std</text>
-<text text-anchor="start" x="6422" y="-1115" font-family="Helvetica,sans-Serif" font-size="10.00">::function&lt; void()&gt; &amp;</text>
+<polygon fill="white" stroke="#666666" points="6414,-1053 6414,-1297 6598,-1297 6598,-1053 6414,-1053"/>
+<text text-anchor="middle" x="6506" y="-1285" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::SceneSystem</text>
+<polyline fill="none" stroke="#666666" points="6414,-1278 6598,-1278 "/>
+<text text-anchor="start" x="6422" y="-1266" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GameScene * pNextScene_</text>
+<text text-anchor="start" x="6422" y="-1255" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::queue&lt; std::function</text>
+<text text-anchor="start" x="6422" y="-1244" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void()&gt; &gt; pendingCallbacks_</text>
+<text text-anchor="start" x="6422" y="-1233" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; std::vector&lt; std::function</text>
+<text text-anchor="start" x="6422" y="-1222" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void()&gt; &gt; onMoveListener_</text>
+<polyline fill="none" stroke="#666666" points="6414,-1215 6598,-1215 "/>
+<text text-anchor="start" x="6422" y="-1203" font-family="Helvetica,sans-Serif" font-size="10.00">+ SceneSystem()</text>
+<text text-anchor="start" x="6422" y="-1192" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~SceneSystem()</text>
+<text text-anchor="start" x="6422" y="-1181" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Move(Args... </text>
+<text text-anchor="start" x="6422" y="-1170" font-family="Helvetica,sans-Serif" font-size="10.00">_args)</text>
+<text text-anchor="start" x="6422" y="-1159" font-family="Helvetica,sans-Serif" font-size="10.00">+ GameScene * GetActiveScene</text>
+<text text-anchor="start" x="6422" y="-1148" font-family="Helvetica,sans-Serif" font-size="10.00">() const</text>
+<text text-anchor="start" x="6422" y="-1137" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Initialize() override</text>
+<text text-anchor="start" x="6422" y="-1126" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Update() override</text>
+<text text-anchor="start" x="6422" y="-1115" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnMove(Func &amp;&amp;</text>
 <text text-anchor="start" x="6422" y="-1104" font-family="Helvetica,sans-Serif" font-size="10.00">_onMove)</text>
 <text text-anchor="start" x="6422" y="-1093" font-family="Helvetica,sans-Serif" font-size="10.00">+ void RegisterPendingCallback</text>
-<text text-anchor="start" x="6422" y="-1082" font-family="Helvetica,sans-Serif" font-size="10.00">(const std::function&lt; void</text>
-<text text-anchor="start" x="6422" y="-1071" font-family="Helvetica,sans-Serif" font-size="10.00">()&gt; &amp;_callback)</text>
-<text text-anchor="start" x="6422" y="-1060" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ExecutePendingCallbacks()</text>
-<text text-anchor="start" x="6422" y="-1049" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; void ChangeScene()</text>
+<text text-anchor="start" x="6422" y="-1082" font-family="Helvetica,sans-Serif" font-size="10.00">(Func &amp;&amp;_callback)</text>
+<text text-anchor="start" x="6422" y="-1071" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ExecutePendingCallbacks()</text>
+<text text-anchor="start" x="6422" y="-1060" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; void ChangeScene()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node40 -->
 <g id="edge46" class="edge">
 <title>Node1&#45;&gt;Node40</title>
-<path fill="none" stroke="#63b8ff" d="M4266.26,-1631.52C4663.96,-1628.93 6320.95,-1614.03 6405,-1545 6474.03,-1488.3 6498.41,-1389.32 6505.99,-1308.14"/>
+<path fill="none" stroke="#63b8ff" d="M4266.26,-1631.52C4663.96,-1628.93 6320.95,-1614.03 6405,-1545 6477.11,-1485.77 6500.49,-1380.41 6506.91,-1297.39"/>
 <polygon fill="none" stroke="#63b8ff" points="4266.24,-1628.02 4256.26,-1631.59 4266.29,-1635.02 4266.24,-1628.02"/>
 </g>
 <!-- Node41 -->
@@ -1737,14 +1735,14 @@
 <text text-anchor="start" x="7544.5" y="-1170" font-family="Helvetica,sans-Serif" font-size="10.00">+ void EnqueueTimer(QUEUE</text>
 <text text-anchor="start" x="7544.5" y="-1159" font-family="Helvetica,sans-Serif" font-size="10.00">_ELEMENT *_pElement)</text>
 <text text-anchor="start" x="7544.5" y="-1148" font-family="Helvetica,sans-Serif" font-size="10.00">+ static TimerHandle</text>
-<text text-anchor="start" x="7544.5" y="-1137" font-family="Helvetica,sans-Serif" font-size="10.00"> AddAram(const float</text>
-<text text-anchor="start" x="7544.5" y="-1126" font-family="Helvetica,sans-Serif" font-size="10.00"> _time, const std::function</text>
+<text text-anchor="start" x="7544.5" y="-1137" font-family="Helvetica,sans-Serif" font-size="10.00"> AddAram(float _time,</text>
+<text text-anchor="start" x="7544.5" y="-1126" font-family="Helvetica,sans-Serif" font-size="10.00"> const std::function</text>
 <text text-anchor="start" x="7544.5" y="-1115" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void()&gt; &amp;_callback)</text>
 <text text-anchor="start" x="7544.5" y="-1104" font-family="Helvetica,sans-Serif" font-size="10.00">+ static TimerHandle</text>
-<text text-anchor="start" x="7544.5" y="-1093" font-family="Helvetica,sans-Serif" font-size="10.00"> AddInterval(const float</text>
-<text text-anchor="start" x="7544.5" y="-1082" font-family="Helvetica,sans-Serif" font-size="10.00"> _time, const std::function</text>
-<text text-anchor="start" x="7544.5" y="-1071" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void()&gt; &amp;_callback, const</text>
-<text text-anchor="start" x="7544.5" y="-1060" font-family="Helvetica,sans-Serif" font-size="10.00"> bool _firstCall=false)</text>
+<text text-anchor="start" x="7544.5" y="-1093" font-family="Helvetica,sans-Serif" font-size="10.00"> AddInterval(float </text>
+<text text-anchor="start" x="7544.5" y="-1082" font-family="Helvetica,sans-Serif" font-size="10.00">_time, const std::function</text>
+<text text-anchor="start" x="7544.5" y="-1071" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; void()&gt; &amp;_callback, bool</text>
+<text text-anchor="start" x="7544.5" y="-1060" font-family="Helvetica,sans-Serif" font-size="10.00"> _firstCall=false)</text>
 <text text-anchor="start" x="7544.5" y="-1049" font-family="Helvetica,sans-Serif" font-size="10.00">+ static void Remove</text>
 <text text-anchor="start" x="7544.5" y="-1038" font-family="Helvetica,sans-Serif" font-size="10.00">(TimerHandle _hTimer)</text>
 <text text-anchor="start" x="7544.5" y="-1027" font-family="Helvetica,sans-Serif" font-size="10.00">+ static void Clear()</text>

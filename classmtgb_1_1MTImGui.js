@@ -18,7 +18,6 @@ var classmtgb_1_1MTImGui =
     [ "Initialize", "classmtgb_1_1MTImGui.html#a9d99d144b1fc6bbaacf6044db9ef8eba", null ],
     [ "Instance", "classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749", null ],
     [ "Register", "classmtgb_1_1MTImGui.html#a75eecfae4bb42029b2fb21ac621af7c1", null ],
-    [ "RegisterAllComponentViewers", "classmtgb_1_1MTImGui.html#a65cb2822d0702f16756b24f4f905f8c6", null ],
     [ "RegisterComponentViewer", "classmtgb_1_1MTImGui.html#af5b5a6853c9d8c4fcf0b7c6c3d2233f2", null ],
     [ "SelectGameObject", "classmtgb_1_1MTImGui.html#a2afdafecc58adb6a1b5b428cba6b3120", null ],
     [ "SetAllWindowOpen", "classmtgb_1_1MTImGui.html#a597a4d65a42a28ac53a534d0e0ebcb5a", null ],

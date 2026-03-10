@@ -21,8 +21,8 @@ var classmtgb_1_1CameraSystem =
     [ "Initialize", "classmtgb_1_1CameraSystem.html#a586ac71b30731c38d58c29f35d5db87b", null ],
     [ "RegisterDrawCamera", "classmtgb_1_1CameraSystem.html#a4d994f0d1f3cfd0e72f93e7ba773d8ef", null ],
     [ "Release", "classmtgb_1_1CameraSystem.html#aa2823e5390468dfc47213b845c55d3ac", null ],
-    [ "SetDrawCamera", "classmtgb_1_1CameraSystem.html#a659c690b7a06029f943f94ecc940a8b4", null ],
-    [ "SetFOV", "classmtgb_1_1CameraSystem.html#abf82de40447449d80045f9a5b896c99c", null ],
+    [ "SetDrawCamera", "classmtgb_1_1CameraSystem.html#a9913343164ab2fe43b27075425c6936e", null ],
+    [ "SetFOV", "classmtgb_1_1CameraSystem.html#a589195253f33a22bad678377faac0c01", null ],
     [ "UnregisterDrawCamera", "classmtgb_1_1CameraSystem.html#a7a9104c4e898272e42200ad7d14e83a7", null ],
     [ "Update", "classmtgb_1_1CameraSystem.html#ac22eafc15180c2a626c17c5b66784019", null ],
     [ "currentFrameId_", "classmtgb_1_1CameraSystem.html#a31167ffcc75b39751762e26f65eac3ed", null ],
@@ -31,5 +31,5 @@ var classmtgb_1_1CameraSystem =
     [ "hCurrentCamera_", "classmtgb_1_1CameraSystem.html#af542f65adda4c369cb209587da8615b9", null ],
     [ "near_", "classmtgb_1_1CameraSystem.html#ac8e2aabd5a9293f245f5e50637de2f8d", null ],
     [ "pTransforms_", "classmtgb_1_1CameraSystem.html#a417c53c79fa0448d6d74bd490ea4d9f9", null ],
-    [ "worldToScreenDatas_", "classmtgb_1_1CameraSystem.html#af342f222ff8a4a055517b5d4554a8401", null ]
+    [ "worldToScreenDatas_", "classmtgb_1_1CameraSystem.html#aae992695cbad0efd7c50043a4811b714", null ]
 ];

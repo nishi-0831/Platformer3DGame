@@ -41,7 +41,7 @@ var searchData=
   ['startfadeoutdelay_5f_38',['startFadeOutDelay_',['../classGameOverManager.html#a1086a257754a83c81f889c496aef8875',1,'GameOverManager']]],
   ['startframe_39',['startFrame',['../structAnimationEvent.html#ae6700c76d67a8b76db5aff2e519b3051',1,'AnimationEvent::startFrame()'],['../structmtgb_1_1FbxAnimationClip.html#a871007c701272cbdb5aa482043198ac7',1,'mtgb::FbxAnimationClip::startFrame()']]],
   ['startframe_5f_40',['startFrame_',['../classmtgb_1_1FbxModel.html#a59c08964cdaa5e81d32124a0030ef4fb',1,'mtgb::FbxModel']]],
-  ['startfuncs_5f_41',['startFuncs_',['../classmtstat_1_1MTStat.html#ac833f0e6b12852398e4b6ea70041a3d8',1,'mtstat::MTStat']]],
+  ['startfuncs_5f_41',['startFuncs_',['../classmtstat_1_1MTStat.html#ac599301b3bd7d000884478248488b17c',1,'mtstat::MTStat']]],
   ['startpos_5f_42',['startPos_',['../structInterpolatorState.html#aa2503dd32b6e20685fcca6f053d6f63a',1,'InterpolatorState::startPos_()'],['../classmtgb_1_1Interpolator.html#a5867fad8cf2861dca398602f0ea3be51',1,'mtgb::Interpolator::startPos_()']]],
   ['stat_5f_43',['stat_',['../classmtstat_1_1MTStat.html#a80f5ad6b28c9bd294db42bfd2ae8afab',1,'mtstat::MTStat']]],
   ['state_5f_44',['state_',['../classmtgb_1_1ComponentMemento.html#a37a068dedc0264978bc955a33ee09ff6',1,'mtgb::ComponentMemento::state_()'],['../classPatrolChargerEnemy.html#afdc25d4c9be2f93aee277719d0b52106',1,'PatrolChargerEnemy::state_()'],['../classPlayer.html#a8d086ab892906df0ca3f36dbbb22901e',1,'Player::state_()']]],

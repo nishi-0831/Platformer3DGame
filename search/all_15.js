@@ -42,7 +42,7 @@ var searchData=
   ['updatefixed_39',['UpdateFixed',['../classmtgb_1_1Game.html#a137f5152ae4da8972979646ae383b421',1,'mtgb::Game']]],
   ['updateframe_40',['UpdateFrame',['../classmtgb_1_1FbxAnimationController.html#af201c3faf2966a1fda4256b5a40d845c',1,'mtgb::FbxAnimationController::UpdateFrame()'],['../classmtgb_1_1Game.html#af3e67eb32ff2dca48fa29ab66123e71c',1,'mtgb::Game::UpdateFrame()']]],
   ['updatefrominput_41',['UpdateFromInput',['../structmtgb_1_1JoystickProxy.html#a215d0844786eb0a90566881d85a46b5f',1,'mtgb::JoystickProxy']]],
-  ['updatefuncs_5f_42',['updateFuncs_',['../classmtstat_1_1MTStat.html#a449a2a1d9f3e367c123e1587fd075243',1,'mtstat::MTStat']]],
+  ['updatefuncs_5f_42',['updateFuncs_',['../classmtstat_1_1MTStat.html#a0042b09093eda9fb1e989fda7414b99b',1,'mtstat::MTStat']]],
   ['updategamepaddevice_43',['UpdateGamePadDevice',['../classmtgb_1_1Input.html#a568dfa003e2024d5212236b7be42e187',1,'mtgb::Input']]],
   ['updategameviewrect_44',['UpdateGameViewRect',['../classmtgb_1_1ImGuiRenderer.html#a961f6aa8f6af8502404b28fe26a1c0b9',1,'mtgb::ImGuiRenderer']]],
   ['updateinputdata_45',['UpdateInputData',['../structmtgb_1_1JoystickProxy.html#ab06b3b369e835c5df197b0cfe9d83a9b',1,'mtgb::JoystickProxy::UpdateInputData()'],['../structmtgb_1_1MouseStateProxy.html#a09f47018c7643218595f27a025ae6e48',1,'mtgb::MouseStateProxy::UpdateInputData()']]],

@@ -108,13 +108,13 @@ $(document).ready(function(){initNavTree('classmtgb_1_1SceneSystem.html',''); in
 <div class="dynheader">
 mtgb::SceneSystem の継承関係図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1SceneSystem__inherit__graph.svg" width="256" height="551"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1SceneSystem__inherit__graph.svg" width="256" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 mtgb::SceneSystem 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1SceneSystem__coll__graph.svg" width="599" height="1050"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1SceneSystem__coll__graph.svg" width="599" height="1020"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -134,11 +134,15 @@ mtgb::SceneSystem 連携図</div>
 <tr class="separator:ad1456f7056f3ef3744de355af626ff7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3dbe7c990e9f3f537d144ff839af07f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#ab3dbe7c990e9f3f537d144ff839af07f">Update</a> () override</td></tr>
 <tr class="separator:ab3dbe7c990e9f3f537d144ff839af07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e0f261ef1fabbf54ee5672f7a58a173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a9e0f261ef1fabbf54ee5672f7a58a173">OnMove</a> (const std::function&lt; void()&gt; &amp;_onMove)</td></tr>
-<tr class="memdesc:a9e0f261ef1fabbf54ee5672f7a58a173"><td class="mdescLeft">&#160;</td><td class="mdescRight">シーン遷移時のイベントを受ける  <br /></td></tr>
-<tr class="separator:a9e0f261ef1fabbf54ee5672f7a58a173"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b8222cf21fb5ef8b7ef1d2976e56f1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a1b8222cf21fb5ef8b7ef1d2976e56f1e">RegisterPendingCallback</a> (const std::function&lt; void()&gt; &amp;_callback)</td></tr>
-<tr class="separator:a1b8222cf21fb5ef8b7ef1d2976e56f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72fd0856ef80fe4e39821d1242b60e0e"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; <br />
+requires std::is_invocable_v&lt;Func&gt;</td></tr>
+<tr class="memitem:a72fd0856ef80fe4e39821d1242b60e0e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a72fd0856ef80fe4e39821d1242b60e0e">OnMove</a> (Func &amp;&amp;_onMove)</td></tr>
+<tr class="memdesc:a72fd0856ef80fe4e39821d1242b60e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">シーン遷移時のイベントを受ける  <br /></td></tr>
+<tr class="separator:a72fd0856ef80fe4e39821d1242b60e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3085a127a05127fd749c5306e9145eae"><td class="memTemplParams" colspan="2">template&lt;typename Func &gt; <br />
+requires std::is_invocable_v&lt;Func&gt;</td></tr>
+<tr class="memitem:a3085a127a05127fd749c5306e9145eae"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#a3085a127a05127fd749c5306e9145eae">RegisterPendingCallback</a> (Func &amp;&amp;_callback)</td></tr>
+<tr class="separator:a3085a127a05127fd749c5306e9145eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4989a9da5f11fcb09154c1b251ec512"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1SceneSystem.html#ac4989a9da5f11fcb09154c1b251ec512">ExecutePendingCallbacks</a> ()</td></tr>
 <tr class="separator:ac4989a9da5f11fcb09154c1b251ec512"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2823e5390468dfc47213b845c55d3ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">Release</a> ()</td></tr>
@@ -183,8 +187,8 @@ mtgb::SceneSystem 連携図</div>
 <div class="line"><span class="lineno">   22</span>    , <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a> {}</div>
 <div class="line"><span class="lineno">   23</span>{</div>
 <div class="line"><span class="lineno">   24</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a37950cec30abc52cdd104ccd15e500a7"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">mtgb::SceneSystem::pNextScene_</a></div><div class="ttdeci">GameScene * pNextScene_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00064">SceneSystem.h:64</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a4525886896621370f7e58956e470e444"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">mtgb::SceneSystem::onMoveListener_</a></div><div class="ttdeci">std::vector&lt; std::function&lt; void()&gt; &gt; onMoveListener_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00067">SceneSystem.h:67</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a37950cec30abc52cdd104ccd15e500a7"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">mtgb::SceneSystem::pNextScene_</a></div><div class="ttdeci">GameScene * pNextScene_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00068">SceneSystem.h:68</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a4525886896621370f7e58956e470e444"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">mtgb::SceneSystem::onMoveListener_</a></div><div class="ttdeci">std::vector&lt; std::function&lt; void()&gt; &gt; onMoveListener_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00071">SceneSystem.h:71</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -238,28 +242,28 @@ mtgb::SceneSystem 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00119">119</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  120</span>{</div>
-<div class="line"><span class="lineno">  121</span>    <span class="comment">// シーン遷移イベントを発動していく</span></div>
-<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; onMove : <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a>)</div>
-<div class="line"><span class="lineno">  123</span>    {</div>
-<div class="line"><span class="lineno">  124</span>        onMove();</div>
-<div class="line"><span class="lineno">  125</span>    }</div>
-<div class="line"><span class="lineno">  126</span> </div>
-<div class="line"><span class="lineno">  127</span>    <span class="comment">// もし現在のシーンがあるなら終了処理</span></div>
-<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>)</div>
-<div class="line"><span class="lineno">  129</span>    {</div>
-<div class="line"><span class="lineno">  130</span>        <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#ae9f7881aa324e201222b276fdacec76b">End</a>();</div>
-<div class="line"><span class="lineno">  131</span>    }</div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>    <span class="comment">// 解放してポインタ変更</span></div>
-<div class="line"><span class="lineno">  134</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>);</div>
-<div class="line"><span class="lineno">  135</span>    <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a> = <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>;</div>
-<div class="line"><span class="lineno">  136</span>    <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>           = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span>    <span class="comment">// チェンジしたシーンの初期化処理</span></div>
-<div class="line"><span class="lineno">  139</span>    <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a1bd20af76384c4d0d1e1fa448419b45d">Initialize</a>();</div>
-<div class="line"><span class="lineno">  140</span>}</div>
+<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00116">116</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>{</div>
+<div class="line"><span class="lineno">  118</span>    <span class="comment">// シーン遷移イベントを発動していく</span></div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; onMove : <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a>)</div>
+<div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>        onMove();</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="comment">// もし現在のシーンがあるなら終了処理</span></div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>)</div>
+<div class="line"><span class="lineno">  126</span>    {</div>
+<div class="line"><span class="lineno">  127</span>        <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#ae9f7881aa324e201222b276fdacec76b">End</a>();</div>
+<div class="line"><span class="lineno">  128</span>    }</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>    <span class="comment">// 解放してポインタ変更</span></div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>);</div>
+<div class="line"><span class="lineno">  132</span>    <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a> = <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>;</div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>           = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>    <span class="comment">// チェンジしたシーンの初期化処理</span></div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_variable" href="classmtgb_1_1GameScene.html#a280eb590943cbe7bb792522f60d34b9e">GameScene::pInstance_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a1bd20af76384c4d0d1e1fa448419b45d">Initialize</a>();</div>
+<div class="line"><span class="lineno">  137</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1GameScene_html_a1bd20af76384c4d0d1e1fa448419b45d"><div class="ttname"><a href="classmtgb_1_1GameScene.html#a1bd20af76384c4d0d1e1fa448419b45d">mtgb::GameScene::Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00036">GameScene.cpp:36</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameScene_html_ae9f7881aa324e201222b276fdacec76b"><div class="ttname"><a href="classmtgb_1_1GameScene.html#ae9f7881aa324e201222b276fdacec76b">mtgb::GameScene::End</a></div><div class="ttdeci">virtual void End()</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00042">GameScene.cpp:42</a></div></div>
 </div><!-- fragment -->
@@ -290,15 +294,15 @@ mtgb::SceneSystem 連携図</div>
 <p>次のフレームのシーンの更新、描画前に実行するコールバックを実行</p>
 <p>一回だけ実行され、その後破棄される </p>
 
-<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00110">110</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>{</div>
-<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.empty())</div>
-<div class="line"><span class="lineno">  113</span>    {</div>
-<div class="line"><span class="lineno">  114</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.front()();</div>
-<div class="line"><span class="lineno">  115</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.pop();</div>
-<div class="line"><span class="lineno">  116</span>    }</div>
-<div class="line"><span class="lineno">  117</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a8c396a4925af47ea26812331c463b9c0"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">mtgb::SceneSystem::pendingCallbacks_</a></div><div class="ttdeci">std::queue&lt; std::function&lt; void()&gt; &gt; pendingCallbacks_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00066">SceneSystem.h:66</a></div></div>
+<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00107">107</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">while</span> (!<a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.empty())</div>
+<div class="line"><span class="lineno">  110</span>    {</div>
+<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.front()();</div>
+<div class="line"><span class="lineno">  112</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.pop();</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a8c396a4925af47ea26812331c463b9c0"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">mtgb::SceneSystem::pendingCallbacks_</a></div><div class="ttdeci">std::queue&lt; std::function&lt; void()&gt; &gt; pendingCallbacks_</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00070">SceneSystem.h:70</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -364,14 +368,14 @@ mtgb::SceneSystem 連携図</div>
 
 <p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#a9e0f261ef1fabbf54ee5672f7a58a173">OnMove</a>(</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="classmtgb_1_1SceneSystem.html#a72fd0856ef80fe4e39821d1242b60e0e">OnMove</a>(</div>
 <div class="line"><span class="lineno">   34</span>        []()</div>
 <div class="line"><span class="lineno">   35</span>        {</div>
 <div class="line"><span class="lineno">   36</span>            Game::System&lt;Timer&gt;().Clear();</div>
 <div class="line"><span class="lineno">   37</span>        }</div>
 <div class="line"><span class="lineno">   38</span>    );</div>
 <div class="line"><span class="lineno">   39</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a9e0f261ef1fabbf54ee5672f7a58a173"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a9e0f261ef1fabbf54ee5672f7a58a173">mtgb::SceneSystem::OnMove</a></div><div class="ttdeci">void OnMove(const std::function&lt; void()&gt; &amp;_onMove)</div><div class="ttdoc">シーン遷移時のイベントを受ける</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00042">SceneSystem.h:42</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a72fd0856ef80fe4e39821d1242b60e0e"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a72fd0856ef80fe4e39821d1242b60e0e">mtgb::SceneSystem::OnMove</a></div><div class="ttdeci">void OnMove(Func &amp;&amp;_onMove)</div><div class="ttdoc">シーン遷移時のイベントを受ける</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8h_source.html#l00044">SceneSystem.h:44</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -417,29 +421,32 @@ template&lt;class NextSceneT , typename... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00070">70</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>    {</div>
-<div class="line"><span class="lineno">   72</span>        <span class="comment">// 基底クラスがGameSceneであるか</span></div>
-<div class="line"><span class="lineno">   73</span>        <span class="keyword">static_assert</span>(</div>
-<div class="line"><span class="lineno">   74</span>            std::is_base_of&lt;GameScene, NextSceneT&gt;().value &amp;&amp;</div>
-<div class="line"><span class="lineno">   75</span>            <span class="stringliteral">&quot;GameSceneクラスを継承していないクラスにシーン遷移できません。&quot;</span></div>
-<div class="line"><span class="lineno">   76</span>        );</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>        <span class="comment">// 既に次のシーンが割り当てられているなら解放する</span></div>
-<div class="line"><span class="lineno">   79</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>);</div>
-<div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a> = <span class="keyword">new</span> NextSceneT { _args... };</div>
-<div class="line"><span class="lineno">   82</span>    }</div>
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00074">74</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>    {</div>
+<div class="line"><span class="lineno">   76</span>        <span class="comment">// 基底クラスがGameSceneであるか</span></div>
+<div class="line"><span class="lineno">   77</span>        <span class="keyword">static_assert</span>(</div>
+<div class="line"><span class="lineno">   78</span>            std::is_base_of&lt;GameScene, NextSceneT&gt;().value &amp;&amp;</div>
+<div class="line"><span class="lineno">   79</span>            <span class="stringliteral">&quot;GameSceneクラスを継承していないクラスにシーン遷移できません。&quot;</span></div>
+<div class="line"><span class="lineno">   80</span>        );</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>        <span class="comment">// 既に次のシーンが割り当てられているなら解放する</span></div>
+<div class="line"><span class="lineno">   83</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(<a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a>);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a37950cec30abc52cdd104ccd15e500a7">pNextScene_</a> = <span class="keyword">new</span> NextSceneT { _args... };</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="SceneSystem_8h_source.html#l00064">pNextScene_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
+<p class="reference">参照先 <a class="el" href="SceneSystem_8h_source.html#l00068">pNextScene_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
 
 </div>
 </div>
-<a id="a9e0f261ef1fabbf54ee5672f7a58a173" name="a9e0f261ef1fabbf54ee5672f7a58a173"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e0f261ef1fabbf54ee5672f7a58a173">&#9670;&#160;</a></span>OnMove()</h2>
+<a id="a72fd0856ef80fe4e39821d1242b60e0e" name="a72fd0856ef80fe4e39821d1242b60e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72fd0856ef80fe4e39821d1242b60e0e">&#9670;&#160;</a></span>OnMove()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Func &gt; <br />
+requires std::is_invocable_v&lt;Func&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -447,7 +454,7 @@ template&lt;class NextSceneT , typename... Args&gt; </div>
         <tr>
           <td class="memname">void mtgb::SceneSystem::OnMove </td>
           <td>(</td>
-          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramtype">Func &amp;&amp;&#160;</td>
           <td class="paramname"><em>_onMove</em></td><td>)</td>
           <td></td>
         </tr>
@@ -467,29 +474,40 @@ template&lt;class NextSceneT , typename... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00042">42</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>        {</div>
-<div class="line"><span class="lineno">   44</span>            <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a>.push_back(_onMove);</div>
-<div class="line"><span class="lineno">   45</span>        }</div>
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00044">44</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>        {</div>
+<div class="line"><span class="lineno">   46</span>            <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a4525886896621370f7e58956e470e444">onMoveListener_</a>.emplace_back(std::forward&lt;Func&gt;(_onMove));</div>
+<div class="line"><span class="lineno">   47</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="SceneSystem_8h_source.html#l00067">onMoveListener_</a>.</p>
+<p class="reference">参照先 <a class="el" href="SceneSystem_8h_source.html#l00071">onMoveListener_</a>.</p>
 
 </div>
 </div>
-<a id="a1b8222cf21fb5ef8b7ef1d2976e56f1e" name="a1b8222cf21fb5ef8b7ef1d2976e56f1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b8222cf21fb5ef8b7ef1d2976e56f1e">&#9670;&#160;</a></span>RegisterPendingCallback()</h2>
+<a id="a3085a127a05127fd749c5306e9145eae" name="a3085a127a05127fd749c5306e9145eae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3085a127a05127fd749c5306e9145eae">&#9670;&#160;</a></span>RegisterPendingCallback()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Func &gt; <br />
+requires std::is_invocable_v&lt;Func&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void mtgb::SceneSystem::RegisterPendingCallback </td>
           <td>(</td>
-          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramtype">Func &amp;&amp;&#160;</td>
           <td class="paramname"><em>_callback</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>次のフレームのシーンの更新、描画前に実行するコールバックを登録 </p>
 <p>コールバックは一回だけ実行され、その後破棄される </p>
@@ -500,11 +518,13 @@ template&lt;class NextSceneT , typename... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="SceneSystem_8cpp_source.html">SceneSystem.cpp</a> の <a class="el" href="SceneSystem_8cpp_source.html#l00105">105</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>{</div>
-<div class="line"><span class="lineno">  107</span>    <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.push(_callback);</div>
-<div class="line"><span class="lineno">  108</span>}</div>
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00089">89</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>    {</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_variable" href="classmtgb_1_1SceneSystem.html#a8c396a4925af47ea26812331c463b9c0">pendingCallbacks_</a>.emplace(std::forward&lt;Func&gt;(_callback));       </div>
+<div class="line"><span class="lineno">   92</span>    }</div>
 </div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="SceneSystem_8h_source.html#l00070">pendingCallbacks_</a>.</p>
+
 </div>
 </div>
 <a id="aa2823e5390468dfc47213b845c55d3ac" name="aa2823e5390468dfc47213b845c55d3ac"></a>
@@ -641,8 +661,8 @@ template&lt;class NextSceneT , typename... Args&gt; </div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_a0300368012e12adb81b7db788b132b77"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a0300368012e12adb81b7db788b132b77">mtgb::MTImGui::ChangeAllWindowOpen</a></div><div class="ttdeci">void ChangeAllWindowOpen()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00112">MTImGui.cpp:112</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_a42f348d0cd5bb7d3b7d2428543df1749"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749">mtgb::MTImGui::Instance</a></div><div class="ttdeci">static MTImGui &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00036">MTImGui.h:36</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_aaa0a53f638051b52697b3db9d0a62095"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aaa0a53f638051b52697b3db9d0a62095">mtgb::MTImGui::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00057">MTImGui.cpp:57</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a522b456af468f16e125631ece120c58d"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a522b456af468f16e125631ece120c58d">mtgb::SceneSystem::ChangeScene</a></div><div class="ttdeci">void ChangeScene()</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00119">SceneSystem.cpp:119</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_ac4989a9da5f11fcb09154c1b251ec512"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#ac4989a9da5f11fcb09154c1b251ec512">mtgb::SceneSystem::ExecutePendingCallbacks</a></div><div class="ttdeci">void ExecutePendingCallbacks()</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00110">SceneSystem.cpp:110</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_a522b456af468f16e125631ece120c58d"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#a522b456af468f16e125631ece120c58d">mtgb::SceneSystem::ChangeScene</a></div><div class="ttdeci">void ChangeScene()</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00116">SceneSystem.cpp:116</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1SceneSystem_html_ac4989a9da5f11fcb09154c1b251ec512"><div class="ttname"><a href="classmtgb_1_1SceneSystem.html#ac4989a9da5f11fcb09154c1b251ec512">mtgb::SceneSystem::ExecutePendingCallbacks</a></div><div class="ttdeci">void ExecutePendingCallbacks()</div><div class="ttdef"><b>Definition:</b> <a href="SceneSystem_8cpp_source.html#l00107">SceneSystem.cpp:107</a></div></div>
 <div class="ttc" id="anamespacemtgb_1_1WinCtxRes_html_a90b0731648ebd84cb9086bd6ce11bb42"><div class="ttname"><a href="namespacemtgb_1_1WinCtxRes.html#a90b0731648ebd84cb9086bd6ce11bb42">mtgb::WinCtxRes::ChangeResource</a></div><div class="ttdeci">void ChangeResource(WindowContext _ctx)</div><div class="ttdoc">リソースを切り替える</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextUtil_8cpp_source.html#l00038">WindowContextUtil.cpp:38</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade">mtgb::WindowContext::FIRST</a></div><div class="ttdeci">@ FIRST</div></div>
 </div><!-- fragment -->
@@ -677,9 +697,9 @@ template&lt;class NextSceneT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00067">67</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00071">71</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="SceneSystem_8h_source.html#l00042">OnMove()</a>.</p>
+<p class="reference">参照元 <a class="el" href="SceneSystem_8h_source.html#l00044">OnMove()</a>.</p>
 
 </div>
 </div>
@@ -703,7 +723,9 @@ template&lt;class NextSceneT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00066">66</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00070">70</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="SceneSystem_8h_source.html#l00089">RegisterPendingCallback()</a>.</p>
 
 </div>
 </div>
@@ -727,9 +749,9 @@ template&lt;class NextSceneT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00064">64</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="SceneSystem_8h_source.html">SceneSystem.h</a> の <a class="el" href="SceneSystem_8h_source.html#l00068">68</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="SceneSystem_8h_source.html#l00070">Move()</a>.</p>
+<p class="reference">参照元 <a class="el" href="SceneSystem_8h_source.html#l00074">Move()</a>.</p>
 
 </div>
 </div>

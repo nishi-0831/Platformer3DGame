@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game: mtgb::FilePath 名前空間</title>
+<title>Game: mtstat::MTStatTransitionCallback Concept Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('namespacemtgb_1_1FilePath.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('conceptmtstat_1_1MTStatTransitionCallback.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,66 +95,24 @@ $(document).ready(function(){initNavTree('namespacemtgb_1_1FilePath.html',''); i
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">関数</a>  </div>
-  <div class="headertitle"><div class="title">mtgb::FilePath 名前空間</div></div>
+  <div class="headertitle"><div class="title">mtstat::MTStatTransitionCallback Concept Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-関数</h2></td></tr>
-<tr class="memitem:a86807aa019b272d42e13030def1691b1"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb_1_1FilePath.html#a86807aa019b272d42e13030def1691b1">GetExtension</a> (const std::string_view &amp;_fileName)</td></tr>
-<tr class="memdesc:a86807aa019b272d42e13030def1691b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ファイル名拡張子を取得する  <br /></td></tr>
-<tr class="separator:a86807aa019b272d42e13030def1691b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">関数詳解</h2>
-<a id="a86807aa019b272d42e13030def1691b1" name="a86807aa019b272d42e13030def1691b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86807aa019b272d42e13030def1691b1">&#9670;&#160;</a></span>GetExtension()</h2>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string_view mtgb::FilePath::GetExtension </td>
-          <td>(</td>
-          <td class="paramtype">const std::string_view &amp;&#160;</td>
-          <td class="paramname"><em>_fileName</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ファイル名拡張子を取得する </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_fileName</td><td>ファイル名</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>拡張子の文字列</dd></dl>
-
-<p class="definition"> <a class="el" href="PathUtility_8h_source.html">PathUtility.h</a> の <a class="el" href="PathUtility_8h_source.html#l00013">13</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>        {</div>
-<div class="line"><span class="lineno">   15</span>            <span class="keywordtype">size_t</span> extPos { _fileName.find_last_of(<span class="charliteral">&#39;.&#39;</span>) };</div>
-<div class="line"><span class="lineno">   16</span>            <span class="keywordflow">return</span> _fileName.substr(extPos, _fileName.size() - extPos);</div>
-<div class="line"><span class="lineno">   17</span>        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+<p><code>#include &quot;<a class="el" href="MTStat_8h_source.html">MTStat.h</a>&quot;</code></p>
+<h2 class="groupheader">Concept definition</h2>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptmtstat_1_1MTStatTransitionCallback.html">mtstat::MTStatTransitionCallback</a> =  std::is_convertible_v&lt;Func, TransitionCallback&gt;</div>
+<div class="ttc" id="aconceptmtstat_1_1MTStatTransitionCallback_html"><div class="ttname"><a href="conceptmtstat_1_1MTStatTransitionCallback.html">mtstat::MTStatTransitionCallback</a></div><div class="ttdef"><b>Definition:</b> <a href="MTStat_8h_source.html#l00027">MTStat.h:27</a></div></div>
+</div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="MTStat_8h_source.html">MTStat.h</a> の <a class="el" href="MTStat_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacemtgb.html">mtgb</a></li><li class="navelem"><a class="el" href="namespacemtgb_1_1FilePath.html">FilePath</a></li>
+    <li class="navelem"><a class="el" href="namespacemtstat.html">mtstat</a></li><li class="navelem"><a class="el" href="conceptmtstat_1_1MTStatTransitionCallback.html">MTStatTransitionCallback</a></li>
     <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

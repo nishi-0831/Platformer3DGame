@@ -1,8 +1,8 @@
 var searchData=
 [
   ['back_0',['Back',['../structmtgb_1_1Vector3.html#a6c4c39b1c9a4080e092895db05f84837',1,'mtgb::Vector3::Back()'],['../classmtgb_1_1Transform.html#a993c483bf545481b35844f842b762a77',1,'mtgb::Transform::Back()']]],
-  ['begin_1',['Begin',['../classmtgb_1_1DirectX11Draw.html#a375c5c0f9d40193107c6ee7def6a71a0',1,'mtgb::DirectX11Draw::Begin()'],['../classmtgb_1_1ImGuiRenderer.html#a8cfde8385919ff0f47e1095f0521df22',1,'mtgb::ImGuiRenderer::Begin()']]],
-  ['begin_2',['begin',['../structmtgb_1_1ResourceCollection.html#a95554b9772e6d6e9ab9c356eb2cd5e02',1,'mtgb::ResourceCollection::begin()'],['../structmtgb_1_1ResourceCollection.html#a522bf2495344d900922dfcfa4f333c74',1,'mtgb::ResourceCollection::begin() const']]],
+  ['begin_1',['begin',['../structmtgb_1_1ResourceCollection.html#a95554b9772e6d6e9ab9c356eb2cd5e02',1,'mtgb::ResourceCollection::begin()'],['../structmtgb_1_1ResourceCollection.html#a522bf2495344d900922dfcfa4f333c74',1,'mtgb::ResourceCollection::begin() const']]],
+  ['begin_2',['Begin',['../classmtgb_1_1DirectX11Draw.html#a375c5c0f9d40193107c6ee7def6a71a0',1,'mtgb::DirectX11Draw::Begin()'],['../classmtgb_1_1ImGuiRenderer.html#a8cfde8385919ff0f47e1095f0521df22',1,'mtgb::ImGuiRenderer::Begin()']]],
   ['beginedit_3',['BeginEdit',['../classmtbit_1_1BitFlag.html#a20eb2b5133c0927a7e03f10e703dd5db',1,'mtbit::BitFlag']]],
   ['beginframe_4',['BeginFrame',['../classmtgb_1_1ImGuiRenderer.html#a4684d4374beee1f52053b4634edae2c8',1,'mtgb::ImGuiRenderer']]],
   ['begingroupcommand_5',['BeginGroupCommand',['../classmtgb_1_1CommandHistoryManager.html#ae0a241ec9659df0b9d9c9e48b830e9e9',1,'mtgb::CommandHistoryManager']]],

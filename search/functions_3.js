@@ -92,5 +92,5 @@ var searchData=
   ['cstyle_89',['cstyle',['../javadoc-banner_8h.html#a6ec4bf0132201719721e103451590a9e',1,'javadoc-banner.h']]],
   ['currcontext_90',['CurrContext',['../namespacemtgb.html#aab085b2a33fdc4aac9d595eb57b58018',1,'mtgb::CurrContext()'],['../namespacemtgb_1_1WinCtxRes.html#aab085b2a33fdc4aac9d595eb57b58018',1,'mtgb::WinCtxRes::CurrContext()']]],
   ['currctx_91',['CurrCtx',['../classmtgb_1_1WindowContextResourceManager.html#af08b13493b4e1b48a3d3ae477d8ab694',1,'mtgb::WindowContextResourceManager']]],
-  ['current_92',['Current',['../classmtstat_1_1MTStat.html#a1213990a8cf5f5d32236862b53e5b8f7',1,'mtstat::MTStat::Current()'],['../classmtbin_1_1MemoryStream.html#ae25220b721616a04c0eddfe69a27ae1e',1,'mtbin::MemoryStream::Current()']]]
+  ['current_92',['Current',['../classmtstat_1_1MTStat.html#acefa6b19aee9b596b465f0b51556b51b',1,'mtstat::MTStat::Current()'],['../classmtbin_1_1MemoryStream.html#ae25220b721616a04c0eddfe69a27ae1e',1,'mtbin::MemoryStream::Current()']]]
 ];

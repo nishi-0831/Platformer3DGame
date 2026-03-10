@@ -23,7 +23,9 @@ var concepts =
       [ "Arithmetic", "conceptmtgb_1_1Arithmetic.html", null ]
     ] ],
     [ "mtstat", "namespacemtstat.html", [
-      [ "EnumT", "conceptmtstat_1_1EnumT.html", null ]
+      [ "EnumT", "conceptmtstat_1_1EnumT.html", null ],
+      [ "MTStatCallback", "conceptmtstat_1_1MTStatCallback.html", null ],
+      [ "MTStatTransitionCallback", "conceptmtstat_1_1MTStatTransitionCallback.html", null ]
     ] ],
     [ "IsShowFunc", "conceptIsShowFunc.html", null ],
     [ "ShowPropFuncCallable", "conceptShowPropFuncCallable.html", null ]

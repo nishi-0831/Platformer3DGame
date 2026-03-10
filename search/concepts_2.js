@@ -9,5 +9,7 @@ var searchData=
   ['hasrestorefrommementomethod_6',['HasRestoreFromMementoMethod',['../conceptmtgb_1_1HasRestoreFromMementoMethod.html',1,'mtgb']]],
   ['hassavetomementomethod_7',['HasSaveToMementoMethod',['../conceptmtgb_1_1HasSaveToMementoMethod.html',1,'mtgb']]],
   ['icomponentwithmemento_8',['IComponentWithMemento',['../conceptmtgb_1_1IComponentWithMemento.html',1,'mtgb']]],
-  ['isenumstruct_9',['IsEnumStruct',['../conceptmtbit_1_1IsEnumStruct.html',1,'mtbit'],['../conceptmtgb_1_1IsEnumStruct.html',1,'mtgb']]]
+  ['isenumstruct_9',['IsEnumStruct',['../conceptmtbit_1_1IsEnumStruct.html',1,'mtbit'],['../conceptmtgb_1_1IsEnumStruct.html',1,'mtgb']]],
+  ['mtstatcallback_10',['MTStatCallback',['../conceptmtstat_1_1MTStatCallback.html',1,'mtstat']]],
+  ['mtstattransitioncallback_11',['MTStatTransitionCallback',['../conceptmtstat_1_1MTStatTransitionCallback.html',1,'mtstat']]]
 ];

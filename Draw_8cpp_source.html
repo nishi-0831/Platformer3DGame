@@ -183,7 +183,7 @@ $(document).ready(function(){initNavTree('Draw_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classmtgb_1_1Draw.html#a4ac31a5fc32739ddaa572642798d3c09">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">mtgb::Draw::Image</a>(<a class="code hl_typedef" href="namespacemtgb.html#a619011839f99f1dc77148dee609d87c2">ImageHandle</a> _hImage, <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&amp; _transform, <a class="code hl_struct" href="structmtgb_1_1Color.html">Color</a> _color, <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1UIParams.html">UIParams</a>&amp; _uiParams)</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    uiDrawCommands_.insert({ _uiParams,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    uiDrawCommands_.emplace( _uiParams,</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                             [=]()</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                             {</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                                 CheckSetShader(<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdadc33fd0ad62ec97d3960478f7fb73e88">ShaderType::SPRITE2_D</a>);</div>
@@ -192,7 +192,7 @@ $(document).ready(function(){initNavTree('Draw_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                                 <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>* pCameraTransform = &amp;(Game::System&lt;CameraSystem&gt;().GetTransform());</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                                 pSprite-&gt;Draw(&amp;_transform, pCameraTransform, pSprite-&gt;GetSize(), _color);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                             } });</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                             } );</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classmtgb_1_1Draw.html#a71d75abb314195470ea8c4f6e7b2b847">   98</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Draw.html#a71d75abb314195470ea8c4f6e7b2b847">mtgb::Draw::Text</a>(</div>
@@ -202,7 +202,7 @@ $(document).ready(function(){initNavTree('Draw_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1UIParams.html">UIParams</a>&amp; _uiParams</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>)</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    uiDrawCommands_.insert({ _uiParams,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    uiDrawCommands_.emplace( _uiParams,</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                             [&amp;]()</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                             {</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                                 <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a77288e7f8a17e9b18baf75c12bdce57a">DirectX11Draw::SetIsWriteToDepthBuffer</a>(<span class="keyword">false</span>);</div>
@@ -219,7 +219,7 @@ $(document).ready(function(){initNavTree('Draw_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                     _origin.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>,</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                                     (_origin.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#a6b5d8ad644dee9011b00557eaa04e255">y</a> + formatData-&gt;<a class="code hl_variable" href="structmtgb_1_1FontFormatData.html#a2f5eeb997b37aa98ef5d7809ac4a4b30">pixelFontMetrics</a>.<a class="code hl_variable" href="structmtgb_1_1PixelFontMetrics.html#a42fe6a78117959b2673120072e700b7c">textTopOffset</a>)</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                                 );</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                             } });</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                             } );</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classmtgb_1_1Draw.html#a6372dcb10e82163548cf08816bbde6e3">  125</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Draw.html#a6372dcb10e82163548cf08816bbde6e3">mtgb::Draw::ImmediateTextW</a>(</div>
@@ -249,7 +249,7 @@ $(document).ready(function(){initNavTree('Draw_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1UIParams.html">UIParams</a>&amp; _uiParams</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>)</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>{</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    uiDrawCommands_.insert({ _uiParams,</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    uiDrawCommands_.emplace( _uiParams,</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                             [=]()</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                             {</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                                 <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a77288e7f8a17e9b18baf75c12bdce57a">DirectX11Draw::SetIsWriteToDepthBuffer</a>(<span class="keyword">false</span>);</div>
@@ -269,7 +269,7 @@ $(document).ready(function(){initNavTree('Draw_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                                     _rect.<a class="code hl_variable" href="structmtgb_1_1RectT.html#a151ca124d3bd9f94d223079a3953e27d">width</a> * ratio.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>,</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                                     _rect.<a class="code hl_variable" href="structmtgb_1_1RectT.html#ab8401c9f4b9de4a5c92d3dcd78d14fb5">height</a> * ratio.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#a6b5d8ad644dee9011b00557eaa04e255">y</a></div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                                 );</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                             } });</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                             } );</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classmtgb_1_1Draw.html#a06b662d4502952366c6937014f5f0b93">  175</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Draw.html#a06b662d4502952366c6937014f5f0b93">mtgb::Draw::ImmediateText</a>(</div>
@@ -298,7 +298,7 @@ $(document).ready(function(){initNavTree('Draw_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1UIParams.html">UIParams</a>&amp; _uiParams</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>)</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>{</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    uiDrawCommands_.insert({ _uiParams,</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    uiDrawCommands_.emplace( _uiParams,</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                             [=]()</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                             {</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                                 <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a77288e7f8a17e9b18baf75c12bdce57a">DirectX11Draw::SetIsWriteToDepthBuffer</a>(<span class="keyword">false</span>);</div>
@@ -318,7 +318,7 @@ $(document).ready(function(){initNavTree('Draw_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                                     _rect.<a class="code hl_variable" href="structmtgb_1_1RectT.html#a151ca124d3bd9f94d223079a3953e27d">width</a> * ratio.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#a6b5d8ad644dee9011b00557eaa04e255">y</a>,</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                                     _rect.<a class="code hl_variable" href="structmtgb_1_1RectT.html#ab8401c9f4b9de4a5c92d3dcd78d14fb5">height</a> * ratio.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#a6b5d8ad644dee9011b00557eaa04e255">y</a></div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                                 );</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                             } });</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                             } );</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>}</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="classmtgb_1_1Draw.html#a73b234aa9b4f8412ef3f42d484186d79">  224</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Draw.html#a73b234aa9b4f8412ef3f42d484186d79">mtgb::Draw::ChangeFontSize</a>(<span class="keywordtype">int</span> _size)</div>

@@ -1642,7 +1642,7 @@ mtgb::Input 連携図</div>
 
 <p class="definition"> <a class="el" href="Input_8cpp_source.html">Input.cpp</a> の <a class="el" href="Input_8cpp_source.html#l00481">481</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  482</span>{</div>
-<div class="line"><span class="lineno">  483</span>    <a class="code hl_typedef" href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a> hTimer = <a class="code hl_function" href="classmtgb_1_1Timer.html#a627588bc1e9abd685afa4bc49e223617">Timer::AddInterval</a>(</div>
+<div class="line"><span class="lineno">  483</span>    <a class="code hl_typedef" href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a> hTimer = <a class="code hl_function" href="classmtgb_1_1Timer.html#a2c46687946b366be0b928f341b07017c">Timer::AddInterval</a>(</div>
 <div class="line"><span class="lineno">  484</span>        acquireInterval,</div>
 <div class="line"><span class="lineno">  485</span>        [&amp;]()</div>
 <div class="line"><span class="lineno">  486</span>        {</div>
@@ -1653,7 +1653,7 @@ mtgb::Input 連携図</div>
 <div class="line"><span class="lineno">  491</span>}</div>
 <div class="ttc" id="aTimer_8h_html_a1f65b0f3bb4c3a36cee385513f5cfa8d"><div class="ttname"><a href="Timer_8h.html#a1f65b0f3bb4c3a36cee385513f5cfa8d">TimerHandle</a></div><div class="ttdeci">void * TimerHandle</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8h_source.html#l00009">Timer.h:9</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Input_html_a8bae4af740487053c74bac3b9a457f43"><div class="ttname"><a href="classmtgb_1_1Input.html#a8bae4af740487053c74bac3b9a457f43">mtgb::Input::AcquireJoystick</a></div><div class="ttdeci">void AcquireJoystick(ComPtr&lt; IDirectInputDevice8 &gt; _pJoystickDevice)</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00031">Input.cpp:31</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Timer_html_a627588bc1e9abd685afa4bc49e223617"><div class="ttname"><a href="classmtgb_1_1Timer.html#a627588bc1e9abd685afa4bc49e223617">mtgb::Timer::AddInterval</a></div><div class="ttdeci">static TimerHandle AddInterval(const float _time, const std::function&lt; void()&gt; &amp;_callback, const bool _firstCall=false)</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8cpp_source.html#l00011">Timer.cpp:11</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Timer_html_a2c46687946b366be0b928f341b07017c"><div class="ttname"><a href="classmtgb_1_1Timer.html#a2c46687946b366be0b928f341b07017c">mtgb::Timer::AddInterval</a></div><div class="ttdeci">static TimerHandle AddInterval(float _time, const std::function&lt; void()&gt; &amp;_callback, bool _firstCall=false)</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8cpp_source.html#l00011">Timer.cpp:11</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Timer_8cpp_source.html#l00011">mtgb::Timer::AddInterval()</a>.</p>
 <div class="dynheader">
@@ -1873,7 +1873,7 @@ mtgb::Input 連携図</div>
 <div class="line"><span class="lineno">  674</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmtgb_1_1Input.html#a0f758c057a4079e5cc7f015466dab3c6">enumTimerHandle_</a> || <a class="code hl_function" href="classmtgb_1_1Input.html#a06c438218702ba957be849b073b88f90">IsNotSubscribed</a>())</div>
 <div class="line"><span class="lineno">  675</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  676</span> </div>
-<div class="line"><span class="lineno">  677</span>    <a class="code hl_variable" href="classmtgb_1_1Input.html#a0f758c057a4079e5cc7f015466dab3c6">enumTimerHandle_</a> = <a class="code hl_function" href="classmtgb_1_1Timer.html#a627588bc1e9abd685afa4bc49e223617">Timer::AddInterval</a>(</div>
+<div class="line"><span class="lineno">  677</span>    <a class="code hl_variable" href="classmtgb_1_1Input.html#a0f758c057a4079e5cc7f015466dab3c6">enumTimerHandle_</a> = <a class="code hl_function" href="classmtgb_1_1Timer.html#a2c46687946b366be0b928f341b07017c">Timer::AddInterval</a>(</div>
 <div class="line"><span class="lineno">  678</span>        <a class="code hl_variable" href="classmtgb_1_1Input.html#a79a358d1bfa13b50de6cd549efc3bd0c">enumInterval_</a>,</div>
 <div class="line"><span class="lineno">  679</span>        [<span class="keyword">this</span>]()</div>
 <div class="line"><span class="lineno">  680</span>        {</div>

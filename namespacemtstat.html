@@ -97,7 +97,8 @@ $(document).ready(function(){initNavTree('namespacemtstat.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">クラス</a> &#124;
-<a href="#concepts">Concepts</a>  </div>
+<a href="#concepts">Concepts</a> &#124;
+<a href="#typedef-members">型定義</a>  </div>
   <div class="headertitle"><div class="title">mtstat 名前空間</div></div>
 </div><!--header-->
 <div class="contents">
@@ -111,7 +112,57 @@ $(document).ready(function(){initNavTree('namespacemtstat.html',''); initResizab
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptmtstat_1_1EnumT.html">EnumT</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptmtstat_1_1MTStatCallback.html">MTStatCallback</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptmtstat_1_1MTStatTransitionCallback.html">MTStatTransitionCallback</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:abd5ded0a8497f17f07d8cc0ee3fa1a15"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtstat.html#abd5ded0a8497f17f07d8cc0ee3fa1a15">Callback</a> = std::function&lt; void(void)&gt;</td></tr>
+<tr class="memdesc:abd5ded0a8497f17f07d8cc0ee3fa1a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">特定のタイミング(start,update,end)で呼ばれるコールバックの型  <br /></td></tr>
+<tr class="separator:abd5ded0a8497f17f07d8cc0ee3fa1a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c357048d8eaf2cf88525914862a8181"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtstat.html#a1c357048d8eaf2cf88525914862a8181">TransitionCallback</a> = std::function&lt; bool()&gt;</td></tr>
+<tr class="memdesc:a1c357048d8eaf2cf88525914862a8181"><td class="mdescLeft">&#160;</td><td class="mdescRight">遷移条件となるコールバックの型。trueを返すと遷移する  <br /></td></tr>
+<tr class="separator:a1c357048d8eaf2cf88525914862a8181"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">型定義詳解</h2>
+<a id="abd5ded0a8497f17f07d8cc0ee3fa1a15" name="abd5ded0a8497f17f07d8cc0ee3fa1a15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd5ded0a8497f17f07d8cc0ee3fa1a15">&#9670;&#160;</a></span>Callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemtstat.html#abd5ded0a8497f17f07d8cc0ee3fa1a15">mtstat::Callback</a> = typedef std::function&lt;void(void)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>特定のタイミング(start,update,end)で呼ばれるコールバックの型 </p>
+
+<p class="definition"> <a class="el" href="MTStat_8h_source.html">MTStat.h</a> の <a class="el" href="MTStat_8h_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1c357048d8eaf2cf88525914862a8181" name="a1c357048d8eaf2cf88525914862a8181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c357048d8eaf2cf88525914862a8181">&#9670;&#160;</a></span>TransitionCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemtstat.html#a1c357048d8eaf2cf88525914862a8181">mtstat::TransitionCallback</a> = typedef std::function&lt;bool()&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>遷移条件となるコールバックの型。trueを返すと遷移する </p>
+
+<p class="definition"> <a class="el" href="MTStat_8h_source.html">MTStat.h</a> の <a class="el" href="MTStat_8h_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

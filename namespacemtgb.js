@@ -1,9 +1,6 @@
 var namespacemtgb =
 [
     [ "detail", "namespacemtgb_1_1detail.html", "namespacemtgb_1_1detail" ],
-    [ "FilePath", "namespacemtgb_1_1FilePath.html", [
-      [ "GetExtension", "namespacemtgb_1_1FilePath.html#a86807aa019b272d42e13030def1691b1", null ]
-    ] ],
     [ "ImGuiUtil", "namespacemtgb_1_1ImGuiUtil.html", [
       [ "GetMouseRay", "namespacemtgb_1_1ImGuiUtil.html#adf7de16d75832fd676b25e91fcae9801", null ],
       [ "IsMouseInWindow", "namespacemtgb_1_1ImGuiUtil.html#a78d80673fb8413b1ef7201b11bb135fe", null ],
