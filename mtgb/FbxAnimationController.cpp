@@ -184,11 +184,3 @@ void mtgb::FbxAnimationController::CheckEvents()
 		}
 	}
 }
-
-void mtgb::FbxAnimationController::SetEventCallback(
-	std::string_view _eventName,
-	std::function<void(const AnimationEvent&)> _callback
-)
-{
-	eventCallbackMap_.emplace(_eventName, _callback);
-}

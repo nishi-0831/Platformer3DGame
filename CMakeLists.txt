@@ -630,7 +630,6 @@ set(Workflow__Utility
     "mtgb/MTAssert.h"
     "mtgb/MTStringUtility.cpp"
     "mtgb/MTStringUtility.h"
-    "mtgb/PathUtility.h"
     "mtgb/ProfileUtlity.h"
     "mtgb/ReleaseUtility.h"
     "mtgb/StringComparators.h"

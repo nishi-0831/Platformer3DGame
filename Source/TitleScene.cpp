@@ -7,6 +7,7 @@ namespace
 	// 118,90 , 565,100
 	ImageHandle hImage;
 	RectF draw { 118, 90, 565, 100 };
+	RectF textDrawRect { 118, 300, 565, 100 };
 	UIParams params { .depth = 2, .layerFlag = AllLayer() };
 } // namespace
 TitleScene::TitleScene() {}
@@ -34,6 +35,7 @@ void TitleScene::Update()
 void TitleScene::Draw() const
 {
 	Draw::Image(hImage, draw, params);
+	Draw::ImmediateText("push P Key to start game...", textDrawRect);
 }
 
 void TitleScene::End() {}

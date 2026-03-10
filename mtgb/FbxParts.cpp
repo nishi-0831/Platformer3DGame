@@ -46,7 +46,9 @@ mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
 	massert(pMesh_ != nullptr && "FbxParts: pMesh_ is null");
 }
 
-mtgb::FbxParts::~FbxParts() {}
+mtgb::FbxParts::~FbxParts()
+{
+}
 
 void mtgb::FbxParts::Initialize()
 {

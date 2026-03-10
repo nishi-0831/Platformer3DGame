@@ -12,8 +12,7 @@ namespace mtgb
 	  public:
 		PropertyChangeCommand(
 			IComponentMemento* _pPrevMemento,
-			IComponentMemento* _pMemento,
-			const ComponentFactory& _componentfactory
+			IComponentMemento* _pMemento
 		);
 
 		void Execute() override;
@@ -22,8 +21,6 @@ namespace mtgb
 		EntityId GetCommandTargetEntityId() const override;
 
 	  private:
-		// ComponentFactoryがnullであることを許容しない
-		const ComponentFactory& componentFactory_;
 		IComponentMemento* pPrevMemento_;
 		IComponentMemento* pMemento_;
 	};

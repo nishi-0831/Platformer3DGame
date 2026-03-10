@@ -78,13 +78,17 @@ namespace mtgb
 		/// </summary>
 		void CheckEvents();
 
-		void SetEventCallback(std::string_view _eventName, std::function<void(const AnimationEvent&)> _callback);
+		using AnimationEventCallback = std::function<void(const AnimationEvent&)>;
+
+		template<typename Func>
+		requires std::is_convertible_v<Func,AnimationEventCallback>
+		void SetEventCallback(std::string_view _eventName, Func&& _callback);
 
 	  private:
 		std::unordered_map<std::string, FbxAnimationClip, TransparentStringHash, TransparentStringEq> clipMap_;
 		std::unordered_multimap<
 			std::string,
-			std::function<void(const AnimationEvent&)>,
+			AnimationEventCallback,
 			TransparentStringHash,
 			TransparentStringEq>
 			eventCallbackMap_;
@@ -98,4 +102,10 @@ namespace mtgb
 		std::string fileName_;
 		std::vector<AnimationEvent> events_;
 	};
+	template <typename Func>
+		requires std::is_convertible_v<Func, FbxAnimationController::AnimationEventCallback>
+	inline void FbxAnimationController::SetEventCallback(std::string_view _eventName, Func&& _callback)
+	{
+		eventCallbackMap_.emplace(_eventName, std::forward<Func>(_callback));
+	}
 } // namespace mtgb

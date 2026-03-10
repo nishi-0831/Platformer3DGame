@@ -20,7 +20,7 @@ namespace mtgb
 		IComponentPool();
 		virtual ~IComponentPool();
 
-		virtual void Remove(const EntityId _entityId)							  = 0;
+		virtual void Remove(EntityId _entityId)							  = 0;
 		virtual nlohmann::json Serialize(EntityId _entityId)					  = 0;
 		virtual IComponentMemento* SaveToMemento(EntityId _entityId)			  = 0;
 		virtual void Deserialize(EntityId _entityId, const nlohmann::json& _json) = 0;

@@ -3,11 +3,9 @@
 
 mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand(
 	TransformMemento* _pPrevMemento,
-	TransformMemento* _pMemento,
-	const ComponentFactory& _componentFactory
+	TransformMemento* _pMemento
 )
-	: componentFactory_(_componentFactory)
-	, pPrevMemento_ { _pPrevMemento }
+	: pPrevMemento_ { _pPrevMemento }
 	, pMemento_ { _pMemento }
 {
 }
@@ -22,12 +20,12 @@ void mtgb::GuizmoManipulateCommand::Execute() {}
 
 void mtgb::GuizmoManipulateCommand::Undo()
 {
-	componentFactory_.AddComponentFromMemento(*pPrevMemento_);
+	Game::GetComponentFactory().AddComponentFromMemento(*pPrevMemento_);
 }
 
 void mtgb::GuizmoManipulateCommand::Redo()
 {
-	componentFactory_.AddComponentFromMemento(*pMemento_);
+	Game::GetComponentFactory().AddComponentFromMemento(*pMemento_);
 }
 
 std::string mtgb::GuizmoManipulateCommand::Name() const

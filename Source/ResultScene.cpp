@@ -8,6 +8,7 @@ namespace
 	// 118,90 , 565,100
 	ImageHandle hImage;
 	RectF draw { 118, 90, 565, 100 };
+	RectF textDrawRect { 118, 300, 565, 100 };
 	UIParams params { .depth = 0, .layerFlag = AllLayer() };
 } // namespace
 ResultScene::ResultScene() {}
@@ -59,6 +60,7 @@ void ResultScene::Update()
 void ResultScene::Draw() const
 {
 	Draw::Image(hImage, draw);
+	Draw::ImmediateText("push P Key to return title...", textDrawRect);
 }
 
 void ResultScene::End() {}

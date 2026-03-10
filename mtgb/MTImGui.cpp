@@ -199,13 +199,12 @@ void mtgb::MTImGui::ShowLog()
 }
 mtgb::MTImGui::MTImGui()
 {
-	RegisterAllComponentViewers();
 }
 mtgb::MTImGui::~MTImGui()
 {
-	for (auto queue : showQueues_)
+	for (auto& queue : showQueues_)
 	{
-		while (!queue.second.empty())
+		while (queue.second.empty() == false)
 		{
 			queue.second.pop();
 		}
@@ -226,15 +225,6 @@ void mtgb::MTImGui::SetupShowFunc()
 			ImGui::Text("ScreenPos (%.3f,%.3f)", _target->screenPos.x, _target->screenPos.y);
 
 			ImGui::Text("EntityId : %lld", _target->entityId);
-		}
-	);
-
-	RegisterShowFuncHolder::Set<Transform>(
-		[](Transform* _target, const char* _name)
-		{
-			PropertyDisplayRegistry::Instance().ShowProperty(&_target->position, "position");
-			PropertyDisplayRegistry::Instance().ShowProperty(&_target->rotate, "rotate");
-			PropertyDisplayRegistry::Instance().ShowProperty(&_target->rotate, "rotate");
 		}
 	);
 
@@ -368,7 +358,6 @@ void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
 		}
 	}
 }
-void mtgb::MTImGui::RegisterAllComponentViewers() {}
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {
 	Matrix4x4 proj, view;

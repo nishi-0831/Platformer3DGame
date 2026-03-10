@@ -168,7 +168,6 @@ namespace mtgb
 		std::map<ShowType, ShowQueue> showQueues_;
 		std::map<ShowType, ImGuiWindowState> imguiWindowStates_; // ShowTypeごとのウィンドウの状態
 
-		void RegisterAllComponentViewers();
 
 		std::unordered_map<std::type_index, std::function<void(EntityId)>> componentShowFuncs_;
 		std::queue<std::function<void()>> sceneViewShowList_;

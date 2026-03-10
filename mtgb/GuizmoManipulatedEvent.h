@@ -13,8 +13,7 @@ namespace mtgb
 	  public:
 		GuizmoManipulateCommand(
 			TransformMemento* _pPrevMemento,
-			TransformMemento* _pMemento,
-			const ComponentFactory& _componentFactory
+			TransformMemento* _pMemento
 		);
 		~GuizmoManipulateCommand();
 		void Execute() override;
@@ -24,8 +23,6 @@ namespace mtgb
 		EntityId GetCommandTargetEntityId() const override;
 
 	  private:
-		// ComponentFactoryがnullであることを許容しない
-		const ComponentFactory& componentFactory_;
 		TransformMemento* pPrevMemento_;
 		TransformMemento* pMemento_;
 	};

@@ -38,7 +38,7 @@ namespace mtgb
 		/// FOVをセットする
 		/// </summary>
 		/// <param name="_angle">視野角度(Degree)</param>
-		void SetFOV(const float _angle)
+		void SetFOV(float _angle)
 		{
 			fov_ = _angle;
 		}
@@ -46,7 +46,7 @@ namespace mtgb
 		/// 描画対象となるカメラを指定する
 		/// </summary>
 		/// <param name="_hCamera">指定するカメラのハンドル</param>
-		void SetDrawCamera(const CameraHandleInScene _hCamera)
+		void SetDrawCamera(CameraHandleInScene _hCamera)
 		{
 			hCurrentCamera_ = _hCamera;
 		}
@@ -80,7 +80,7 @@ namespace mtgb
 		float near_;
 		float far_;
 		CameraHandleInScene hCurrentCamera_;
-		std::map<WindowContext, WorldToScreenData> worldToScreenDatas_;
+		std::unordered_map<WindowContext, WorldToScreenData> worldToScreenDatas_;
 		uint64_t currentFrameId_;
 	};
 } // namespace mtgb

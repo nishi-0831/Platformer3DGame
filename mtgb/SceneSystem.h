@@ -39,9 +39,11 @@ namespace mtgb
 		/// シーン遷移時のイベントを受ける
 		/// </summary>
 		/// <param name="_onMove">void()</param>
-		void OnMove(const std::function<void()>& _onMove)
+		template <typename Func>
+			requires std::is_invocable_v<Func>
+		void OnMove(Func&& _onMove)
 		{
-			onMoveListener_.push_back(_onMove);
+			onMoveListener_.emplace_back(std::forward<Func>(_onMove));
 		}
 
 		/// <summary>
@@ -49,7 +51,9 @@ namespace mtgb
 		/// <para> コールバックは一回だけ実行され、その後破棄される </para>
 		/// </summary>
 		/// <param name="_callback">登録するコールバック</param>
-		void RegisterPendingCallback(const std::function<void()>& _callback);
+		template <typename Func>
+		requires std::is_invocable_v<Func>
+		void RegisterPendingCallback(Func&& _callback);
 
 		/// <summary>
 		/// <para> 次のフレームのシーンの更新、描画前に実行するコールバックを実行</para>
@@ -79,5 +83,11 @@ namespace mtgb
 		SAFE_DELETE(pNextScene_);
 
 		pNextScene_ = new NextSceneT { _args... };
+	}
+	template <typename Func>
+		requires std::is_invocable_v<Func>
+	inline void SceneSystem::RegisterPendingCallback(Func&& _callback) 
+	{
+		pendingCallbacks_.emplace(std::forward<Func>(_callback));		
 	}
 } // namespace mtgb

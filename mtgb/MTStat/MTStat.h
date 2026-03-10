@@ -11,6 +11,22 @@ namespace mtstat
 	concept EnumT = std::is_enum_v<T>;
 
 	/// <summary>
+	/// 特定のタイミング(start,update,end)で呼ばれるコールバックの型
+	/// </summary>
+	using Callback = std::function<void(void)>;
+
+	template<typename Func>
+	concept MTStatCallback = std::is_convertible_v<Func, Callback>;
+	
+	/// <summary>
+	/// 遷移条件となるコールバックの型。trueを返すと遷移する
+	/// </summary>
+	using TransitionCallback = std::function<bool()>;
+
+	template <typename Func>
+	concept MTStatTransitionCallback = std::is_convertible_v<Func, TransitionCallback>;
+
+	/// <summary>
 	/// <para> ポリモルフィズムを抜きにしたステートクラス </para>
 	/// <para> メソッドチェーンで状態を記述することができる</para>
 	/// </summary>
@@ -18,20 +34,21 @@ namespace mtstat
 	template <EnumT StatEnumT> class MTStat
 	{
 	  public:
+
 		MTStat()
 			: stat_ {}
 		{
 		}
 		~MTStat() {}
 
-		MTStat& OnStart(StatEnumT _statEnum, const std::function<void()>& _callback);
-		MTStat& OnUpdate(StatEnumT _statEnum, const std::function<void()>& _callback);
-		MTStat& OnEnd(StatEnumT _statEnum, const std::function<void()>& _callback);
+		template <MTStatCallback Func> MTStat& OnStart(StatEnumT _statEnum, Func&& _callback);
+		template <MTStatCallback Func> MTStat& OnUpdate(StatEnumT _statEnum, Func&& _callback);
+		template <MTStatCallback Func> MTStat& OnEnd(StatEnumT _statEnum, Func&& _callback);
 
 		// どの状態でも呼ばれる共通関数
-		MTStat& OnAnyStart(const std::function<void()>& _callback);
-		MTStat& OnAnyUpdate(const std::function<void()>& _callback);
-		MTStat& OnAnyEnd(const std::function<void()>& _callback);
+		template <MTStatCallback Func> MTStat& OnAnyStart(Func&& _callback);
+		template <MTStatCallback Func> MTStat& OnAnyUpdate(Func&& _callback);
+		template <MTStatCallback Func> MTStat& OnAnyEnd(Func&& _callback);
 
 		/// <summary>
 		/// <para> 指定した状態から別の状態への遷移条件を登録 </para>
@@ -41,16 +58,18 @@ namespace mtstat
 		/// <param name="_to">遷移先となる状態。条件が満たされたときにこの状態に遷移する</param>
 		/// <param name="_callback">遷移条件を判定するコールバック。trueを返すと遷移する</param>
 		/// <returns></returns>
-		MTStat& RegisterTransition(StatEnumT _from, StatEnumT _to, const std::function<bool()>& _callback);
+		template<MTStatTransitionCallback Func>
+		MTStat& RegisterTransition(StatEnumT _from, StatEnumT _to, Func&& _callback);
 
 		/// <summary>
 		/// <para> あらゆる状態から別の状態への遷移条件を登録 </para>
 		/// <para> 登録順で評価され、優先度は付けられない </para>
 		/// </summary>
 		/// <param name="_to">遷移先となる状態。条件が満たされたときにこの状態に遷移する</param>
-		/// <param name="_callback">条件が満たされたときにこの状態に遷移する</param>
+		/// <param name="_callback">遷移条件を判定するコールバック。trueを返すと遷移する</param>
 		/// <returns></returns>
-		MTStat& RegisterAnyTransition(StatEnumT _to, const std::function<bool()>& _callback);
+		template<MTStatTransitionCallback Func>
+		MTStat& RegisterAnyTransition(StatEnumT _to, Func&& _callback);
 
 		/// <summary>
 		/// <para> 遷移条件を満たした状態の取得を試みる </para>
@@ -58,11 +77,11 @@ namespace mtstat
 		/// </summary>
 		/// <param name="_nextState"> 遷移可能な状態があればその値が格納される。戻り値がtrueの場合のみ有効 </param>
 		/// <returns> 遷移可能な条件があればtrue、なければfalse </returns>
-		bool TryGetNextState(StatEnumT& _nextState);
+		bool TryGetNextState(StatEnumT& _nextState) const;
 		void Update() const;
 		void Change(StatEnumT _nextStat);
 
-		const StatEnumT Current() const
+		StatEnumT Current() const
 		{
 			return stat_;
 		}
@@ -70,91 +89,52 @@ namespace mtstat
 		struct StateTransition
 		{
 			StatEnumT toState;
-			std::function<bool()> condition;
+			TransitionCallback condition;
 		};
 
 	  private:
 		StatEnumT stat_; // 現在のステート
 
-		std::unordered_map<StatEnumT, std::function<void()>> updateFuncs_; // 登録されている更新関数
-		std::unordered_map<StatEnumT, std::function<void()>> startFuncs_;  // 登録されている開始関数
-		std::unordered_map<StatEnumT, std::function<void()>> endFuncs_;	   // 登録されている終了関数
+		std::unordered_map<StatEnumT, Callback> updateFuncs_; // 登録されている更新関数
+		std::unordered_map<StatEnumT, Callback> startFuncs_;  // 登録されている開始関数
+		std::unordered_map<StatEnumT, Callback> endFuncs_;	   // 登録されている終了関数
 
-		std::function<void()> anyUpdateFunc_;
-		std::function<void()> anyStartFunc_;
-		std::function<void()> anyEndFunc_;
+		Callback anyUpdateFunc_;
+		Callback anyStartFunc_;
+		Callback anyEndFunc_;
 
 		std::unordered_map<StatEnumT, std::vector<StateTransition>> transitionsMap_;
 		std::vector<StateTransition> anyTransition_;
 	};
 
 	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnStart(StatEnumT _statEnum, const std::function<void()>& _callback)
-	{
-		startFuncs_.insert({ _statEnum, _callback });
-		return *this;
-	}
-
-	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnUpdate(StatEnumT _statEnum, const std::function<void()>& _callback)
-	{
-		updateFuncs_.insert({ _statEnum, _callback });
-		return *this;
-	}
-
-	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnEnd(StatEnumT _statEnum, const std::function<void()>& _callback)
-	{
-		endFuncs_.insert({ _statEnum, _callback });
-		return *this;
-	}
-
-	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyStart(const std::function<void()>& _callback)
-	{
-		anyStartFunc_ = _callback;
-		return *this;
-	}
-
-	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyUpdate(const std::function<void()>& _callback)
-	{
-		anyUpdateFunc_ = _callback;
-		return *this;
-	}
-
-	template <EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyEnd(const std::function<void()>& _callback)
-	{
-		anyEndFunc_ = _callback;
-		return *this;
-	}
-
-	template <EnumT StatEnumT>
+	template <MTStatTransitionCallback Func>
 	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(
 		StatEnumT _from,
 		StatEnumT _to,
-		const std::function<bool()>& _callback
+		Func&& _callback
 	)
 	{
-		transitionsMap_[_from].emplace_back(_to, _callback);
+		transitionsMap_[_from].emplace_back(_to, std::forward<Func>(_callback));
 		return *this;
 	}
 
 	template <EnumT StatEnumT>
+	template <MTStatTransitionCallback Func>
 	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterAnyTransition(
 		StatEnumT _to,
-		const std::function<bool()>& _callback
+		Func&& _callback
 	)
 	{
-		anyTransition_.emplace_back(_to, _callback);
+		anyTransition_.emplace_back(_to, std::forward<Func>(_callback));
 	}
 
-	template <EnumT StatEnumT> inline bool MTStat<StatEnumT>::TryGetNextState(StatEnumT& _nextState)
+	template <EnumT StatEnumT> inline bool MTStat<StatEnumT>::TryGetNextState(StatEnumT& _nextState) const
 	{
 		if (transitionsMap_.count(stat_))
 		{
-			for (auto transition : transitionsMap_.at(stat_))
+			const std::vector<StateTransition>& transitions = transitionsMap_.at(stat_);
+			for (const StateTransition& transition : transitions)
 			{
 				if (transition.condition())
 				{
@@ -199,5 +179,47 @@ namespace mtstat
 		{
 			startFuncs_[_nextStat]();
 		}
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnStart(StatEnumT _statEnum, Func&& _callback)
+	{
+		startFuncs_.emplace( _statEnum, std::forward<Func>(_callback ));
+		return *this;
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnUpdate(StatEnumT _statEnum, Func&& _callback)
+	{
+		updateFuncs_.emplace(_statEnum, std::forward<Func>( _callback ));
+		return *this;
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnEnd(StatEnumT _statEnum, Func&& _callback)
+	{
+		endFuncs_.emplace( _statEnum, std::forward<Func>( _callback ));
+		return *this;
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyStart(Func&& _callback)
+	{
+		anyStartFunc_ = std::forward<Func>( _callback);
+		return *this;
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyUpdate(Func&& _callback)
+	{
+		anyUpdateFunc_ = std::forward<Func>( _callback);
+		return *this;
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyEnd(Func&& _callback)
+	{
+		anyEndFunc_ = std::forward<Func>(_callback);
+		return *this;
 	}
 } // namespace mtstat

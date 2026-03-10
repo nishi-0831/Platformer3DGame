@@ -83,7 +83,7 @@ void mtgb::Draw::Image(ImageHandle _hImage, const RectF& _draw, const UIParams& 
 
 void mtgb::Draw::Image(ImageHandle _hImage, const Transform& _transform, Color _color, const UIParams& _uiParams)
 {
-	uiDrawCommands_.insert({ _uiParams,
+	uiDrawCommands_.emplace( _uiParams,
 							 [=]()
 							 {
 								 CheckSetShader(ShaderType::SPRITE2_D);
@@ -92,7 +92,7 @@ void mtgb::Draw::Image(ImageHandle _hImage, const Transform& _transform, Color _
 
 								 const Transform* pCameraTransform = &(Game::System<CameraSystem>().GetTransform());
 								 pSprite->Draw(&_transform, pCameraTransform, pSprite->GetSize(), _color);
-							 } });
+							 } );
 }
 
 void mtgb::Draw::Text(
@@ -102,7 +102,7 @@ void mtgb::Draw::Text(
 	const UIParams& _uiParams
 )
 {
-	uiDrawCommands_.insert({ _uiParams,
+	uiDrawCommands_.emplace( _uiParams,
 							 [&]()
 							 {
 								 DirectX11Draw::SetIsWriteToDepthBuffer(false);
@@ -119,7 +119,7 @@ void mtgb::Draw::Text(
 									 _origin.x,
 									 (_origin.y + formatData->pixelFontMetrics.textTopOffset)
 								 );
-							 } });
+							 } );
 }
 
 void mtgb::Draw::ImmediateTextW(
@@ -149,7 +149,7 @@ void mtgb::Draw::ImmediateTextW(
 	const UIParams& _uiParams
 )
 {
-	uiDrawCommands_.insert({ _uiParams,
+	uiDrawCommands_.emplace( _uiParams,
 							 [=]()
 							 {
 								 DirectX11Draw::SetIsWriteToDepthBuffer(false);
@@ -169,7 +169,7 @@ void mtgb::Draw::ImmediateTextW(
 									 _rect.width * ratio.x,
 									 _rect.height * ratio.y
 								 );
-							 } });
+							 } );
 }
 
 void mtgb::Draw::ImmediateText(
@@ -198,7 +198,7 @@ void mtgb::Draw::ImmediateText(
 	const UIParams& _uiParams
 )
 {
-	uiDrawCommands_.insert({ _uiParams,
+	uiDrawCommands_.emplace( _uiParams,
 							 [=]()
 							 {
 								 DirectX11Draw::SetIsWriteToDepthBuffer(false);
@@ -218,7 +218,7 @@ void mtgb::Draw::ImmediateText(
 									 _rect.width * ratio.y,
 									 _rect.height * ratio.y
 								 );
-							 } });
+							 } );
 }
 
 void mtgb::Draw::ChangeFontSize(int _size)

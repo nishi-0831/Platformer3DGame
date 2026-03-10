@@ -121,10 +121,11 @@ void mtgb::FbxModel::Draw(const Transform& _transform, int _frame)
 
 void mtgb::FbxModel::Release()
 {
-	for (auto fbxParts : pParts_)
+	for (FbxParts* fbxParts : pParts_)
 	{
 		fbxParts->Release();
 		delete fbxParts;
+		fbxParts = nullptr;
 	}
 }
 

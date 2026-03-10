@@ -221,7 +221,7 @@ void mtgb::ImGuizmoManipulator::UpdateManpulator()
 
 		TransformMemento* memento = pTargetTransform_->SaveToMemento();
 		GuizmoManipulateCommand* cmd =
-			new GuizmoManipulateCommand(pTargetPrevTransformMemento_, memento, Game::GetComponentFactory());
+			new GuizmoManipulateCommand(pTargetPrevTransformMemento_, memento);
 		Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 
 		// メモリの解放はコマンドが行うと断定して、ポインタを空にする
