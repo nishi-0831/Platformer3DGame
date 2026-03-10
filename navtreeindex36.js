@@ -1,5 +1,6 @@
 var NAVTREEINDEX36 =
 {
+"structmtgb_1_1Vector4.html":[3,0,5,173],
 "structmtgb_1_1Vector4.html#a1c4c9a65deebf73727413f69e4080b49":[5,0,3,169,2],
 "structmtgb_1_1Vector4.html#a1c4c9a65deebf73727413f69e4080b49":[3,0,5,173,2],
 "structmtgb_1_1Vector4.html#a1dd4c97f2561812520338592419dd17e":[3,0,5,173,6],

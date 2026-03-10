@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game: メンバ一覧</title>
+<title>Game: IsShowFunc Concept Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('structShowFunc.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('conceptIsShowFunc.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,20 +95,26 @@ $(document).ready(function(){initNavTree('structShowFunc.html',''); initResizabl
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ShowFunc&lt; Func &gt; メンバ一覧</div></div>
+  <div class="headertitle"><div class="title">IsShowFunc Concept Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>継承メンバを含む <a class="el" href="structShowFunc.html">ShowFunc&lt; Func &gt;</a> の全メンバ一覧です。</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="structShowFunc.html#aa4774a0487e85786598cd628ef5b14ff">func</a></td><td class="entry"><a class="el" href="structShowFunc.html">ShowFunc&lt; Func &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="structShowFunc.html#af62322ef2caac998380d87f23306281b">operator()</a>(T _value, const char *_name) const</td><td class="entry"><a class="el" href="structShowFunc.html">ShowFunc&lt; Func &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structShowFunc.html#a569973ea832808741e691d85f2529b2c">ShowFunc</a>(Func _func)</td><td class="entry"><a class="el" href="structShowFunc.html">ShowFunc&lt; Func &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-</table></div><!-- contents -->
+<p><code>#include &quot;<a class="el" href="ShowFunc_8h_source.html">ShowFunc.h</a>&quot;</code></p>
+<h2 class="groupheader">Concept definition</h2>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func, <span class="keyword">typename</span> ValueT&gt;</div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptIsShowFunc.html">IsShowFunc</a> =  <span class="keyword">requires</span>(Func _f, ValueT _val, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name) {</div>
+<div class="line">    { _f(_val, _name) } -&gt; std::same_as&lt;Command*&gt;;</div>
+<div class="line">}</div>
+<div class="ttc" id="aconceptIsShowFunc_html"><div class="ttname"><a href="conceptIsShowFunc.html">IsShowFunc</a></div><div class="ttdef"><b>Definition:</b> <a href="ShowFunc_8h_source.html#l00007">ShowFunc.h:7</a></div></div>
+</div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="ShowFunc_8h_source.html">ShowFunc.h</a> の <a class="el" href="ShowFunc_8h_source.html#l00007">7</a> 行目に定義があります。</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="conceptIsShowFunc.html">IsShowFunc</a></li>
     <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

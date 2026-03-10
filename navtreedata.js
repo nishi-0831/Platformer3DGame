@@ -101,13 +101,13 @@ var NAVTREEINDEX =
 "classmtgb_1_1TextRenderer.html#a657030a231a22470b5b09bd6e55a2c0e",
 "classmtgb_1_1Transform.html#ab07fa68485a5cf4425eebf1718c82e73",
 "classmtstat_1_1MTStat.html#aa4e76f3f50da985b2e2577acf560989e",
-"file_8h.html#a4a86bef4b6181cb3f53bd0461a9a511b",
-"namespacemtgb.html#a81489851449468121d2effcd1d1441ee",
-"structPlayerReachedGoalEvent.html",
-"structmtgb_1_1FbxParts_1_1Material.html#aaeb14407716dca3867a56981c5a6c65b",
-"structmtgb_1_1MonitorInfo.html#acb609dd160ffad78ef6e0de41d128a07",
-"structmtgb_1_1ScreenCoordContainsInfo.html#a92267c0bf0844d1a16201cfa75936abd",
-"structmtgb_1_1Vector4.html#a1c4c9a65deebf73727413f69e4080b49"
+"file_8h.html",
+"namespacemtgb.html#a7ff2664c9e2e9708af1e707c6afe488d",
+"structPlayerHpReachedZeroEvent.html#a21157d4ad99cc4fa02cbe0e866e5d868",
+"structmtgb_1_1FbxParts_1_1Material.html#a866589b100c94a7fd620cd82cfbeb745",
+"structmtgb_1_1MonitorInfo.html#ac3b235d3fbb0598905a45c36043e2f6e",
+"structmtgb_1_1ScreenCoordContainsInfo.html#a8269488fd5f3a6878767c4e6138f1cd5",
+"structmtgb_1_1Vector4.html"
 ];
 
 var SYNCONMSG = 'クリックで同期表示が無効になります';

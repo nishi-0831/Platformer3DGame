@@ -25,5 +25,6 @@ var concepts =
     [ "mtstat", "namespacemtstat.html", [
       [ "EnumT", "conceptmtstat_1_1EnumT.html", null ]
     ] ],
+    [ "IsShowFunc", "conceptIsShowFunc.html", null ],
     [ "ShowPropFuncCallable", "conceptShowPropFuncCallable.html", null ]
 ];
