@@ -83,16 +83,18 @@ void mtgb::Draw::Image(ImageHandle _hImage, const RectF& _draw, const UIParams& 
 
 void mtgb::Draw::Image(ImageHandle _hImage, const Transform& _transform, Color _color, const UIParams& _uiParams)
 {
-	uiDrawCommands_.emplace( _uiParams,
-							 [=]()
-							 {
-								 CheckSetShader(ShaderType::SPRITE2_D);
+	uiDrawCommands_.emplace(
+		_uiParams,
+		[=]()
+		{
+			CheckSetShader(ShaderType::SPRITE2_D);
 
-								 Sprite* pSprite { Game::System<mtgb::Image>().GetSprite(_hImage) };
+			Sprite* pSprite { Game::System<mtgb::Image>().GetSprite(_hImage) };
 
-								 const Transform* pCameraTransform = &(Game::System<CameraSystem>().GetTransform());
-								 pSprite->Draw(&_transform, pCameraTransform, pSprite->GetSize(), _color);
-							 } );
+			const Transform* pCameraTransform = &(Game::System<CameraSystem>().GetTransform());
+			pSprite->Draw(&_transform, pCameraTransform, pSprite->GetSize(), _color);
+		}
+	);
 }
 
 void mtgb::Draw::Text(
@@ -102,28 +104,26 @@ void mtgb::Draw::Text(
 	const UIParams& _uiParams
 )
 {
-	uiDrawCommands_.emplace( _uiParams,
-							 [&]()
-							 {
-								 DirectX11Draw::SetIsWriteToDepthBuffer(false);
-								 CheckSetShader(ShaderType::SPRITE2_D);
+	uiDrawCommands_.emplace(
+		_uiParams,
+		[&]()
+		{
+			DirectX11Draw::SetIsWriteToDepthBuffer(false);
+			CheckSetShader(ShaderType::SPRITE2_D);
 
-								 TextLayoutData* layoutData = Game::System<mtgb::TextCache>().GetTextLayoutData(_hText);
-								 FontFormatData* formatData =
-									 Game::System<mtgb::TextCache>().GetOrCreateTextFormat(layoutData->fontSize);
+			TextLayoutData* layoutData = Game::System<mtgb::TextCache>().GetTextLayoutData(_hText);
+			FontFormatData* formatData = Game::System<mtgb::TextCache>().GetOrCreateTextFormat(layoutData->fontSize);
 
-								 Game::System<mtgb::DirectWrite>().SetTextAlignment(_alignment, layoutData->layout);
+			Game::System<mtgb::DirectWrite>().SetTextAlignment(_alignment, layoutData->layout);
 
-								 Game::System<mtgb::DirectWrite>().Draw(
-									 layoutData->layout,
-									 _origin.x,
-									 (_origin.y + formatData->pixelFontMetrics.textTopOffset)
-								 );
-							 } );
+			Game::System<mtgb::DirectWrite>()
+				.Draw(layoutData->layout, _origin.x, (_origin.y + formatData->pixelFontMetrics.textTopOffset));
+		}
+	);
 }
 
 void mtgb::Draw::ImmediateTextW(
-	const std::wstring& _text,
+	std::wstring_view _text,
 	Vector2F _topLeft,
 	int _size,
 	TextAlignment _alignment,
@@ -142,38 +142,40 @@ void mtgb::Draw::ImmediateTextW(
 }
 
 void mtgb::Draw::ImmediateTextW(
-	const std::wstring& _text,
+	std::wstring_view _text,
 	RectF _rect,
 	int _size,
 	TextAlignment _alignment,
 	const UIParams& _uiParams
 )
 {
-	uiDrawCommands_.emplace( _uiParams,
-							 [=]()
-							 {
-								 DirectX11Draw::SetIsWriteToDepthBuffer(false);
-								 CheckSetShader(ShaderType::SPRITE2_D);
+	uiDrawCommands_.emplace(
+		_uiParams,
+		[=]()
+		{
+			DirectX11Draw::SetIsWriteToDepthBuffer(false);
+			CheckSetShader(ShaderType::SPRITE2_D);
 
-								 FontFormatData* formatData =
-									 Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
-								 Game::System<DirectWrite>().SetTextAlignment(_alignment, formatData->format);
-								 const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
+			FontFormatData* formatData =
+				Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
+			Game::System<DirectWrite>().SetTextAlignment(_alignment, formatData->format);
+			const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
 
-								 Game::System<DirectWrite>().ImmediateDraw(
-									 _text,
-									 formatData->format,
-									 formatData->pixelFontMetrics,
-									 _rect.x * ratio.x,
-									 _rect.y * ratio.y,
-									 _rect.width * ratio.x,
-									 _rect.height * ratio.y
-								 );
-							 } );
+			Game::System<DirectWrite>().ImmediateDraw(
+				_text,
+				formatData->format,
+				formatData->pixelFontMetrics,
+				_rect.x * ratio.x,
+				_rect.y * ratio.y,
+				_rect.width * ratio.x,
+				_rect.height * ratio.y
+			);
+		}
+	);
 }
 
 void mtgb::Draw::ImmediateText(
-	const std::string& _text,
+	std::string_view _text,
 	Vector2F _topLeft,
 	int _size,
 	TextAlignment _alignment,
@@ -191,34 +193,36 @@ void mtgb::Draw::ImmediateText(
 }
 
 void mtgb::Draw::ImmediateText(
-	const std::string& _text,
+	std::string_view _text,
 	RectF _rect,
 	int _size,
 	TextAlignment _alignment,
 	const UIParams& _uiParams
 )
 {
-	uiDrawCommands_.emplace( _uiParams,
-							 [=]()
-							 {
-								 DirectX11Draw::SetIsWriteToDepthBuffer(false);
-								 CheckSetShader(ShaderType::SPRITE2_D);
+	uiDrawCommands_.emplace(
+		_uiParams,
+		[=]()
+		{
+			DirectX11Draw::SetIsWriteToDepthBuffer(false);
+			CheckSetShader(ShaderType::SPRITE2_D);
 
-								 FontFormatData* formatData =
-									 Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
-								 Game::System<DirectWrite>().SetTextAlignment(_alignment, formatData->format);
+			FontFormatData* formatData =
+				Game::System<mtgb::TextCache>().GetOrCreateTextFormat(CalcScaledFontSize(_size));
+			Game::System<DirectWrite>().SetTextAlignment(_alignment, formatData->format);
 
-								 const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
-								 Game::System<DirectWrite>().ImmediateDraw(
-									 MultiToWide(_text),
-									 formatData->format,
-									 formatData->pixelFontMetrics,
-									 _rect.x * ratio.x,
-									 _rect.y * ratio.y,
-									 _rect.width * ratio.y,
-									 _rect.height * ratio.y
-								 );
-							 } );
+			const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
+			Game::System<DirectWrite>().ImmediateDraw(
+				MultiToWide(_text.data()),
+				formatData->format,
+				formatData->pixelFontMetrics,
+				_rect.x * ratio.x,
+				_rect.y * ratio.y,
+				_rect.width * ratio.y,
+				_rect.height * ratio.y
+			);
+		}
+	);
 }
 
 void mtgb::Draw::ChangeFontSize(int _size)

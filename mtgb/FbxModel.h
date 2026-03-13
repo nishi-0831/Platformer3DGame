@@ -51,12 +51,12 @@ namespace mtgb
 		/// 任意のボーンの位置を取得
 		/// </summary>
 		/// <param name="_boneName">ボーンの名前</param>
-		Vector3 GetBonePosition(const std::string& _boneName);
+		Vector3 GetBonePosition(std::string_view _boneName);
 		/// <summary>
 		/// スキンメッシュアニメ中の現在の任意のボーンの位置を取得
 		/// </summary>
 		/// <param name="_boneName">ボーンの名前</param>
-		Vector3 GetAnimBonePosition(const std::string& _boneName);
+		Vector3 GetAnimBonePosition(std::string_view _boneName);
 
 		/// <summary>
 		/// ロードしたときのモデルファイルの名前を取得

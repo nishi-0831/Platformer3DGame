@@ -38,7 +38,7 @@ void mtgb::ComponentRegistry::RegisterComponent(mtgb::EntityId _entityId, std::t
 	entityComponents_[_entityId].insert(_componentTypeIndex);
 }
 
-void mtgb::ComponentRegistry::RegisterComponentKey(std::string_view _key, std::type_index _typeIndex)
+void mtgb::ComponentRegistry::RegisterComponentKey(const std::string& _key, std::type_index _typeIndex)
 {
 	componentNameToTypeMap_.emplace(_key, _typeIndex);
 }

@@ -5,6 +5,7 @@
 #include "Matrix4x4.h"
 #include "IShader.h"
 #include "Texture2D.h"
+#include "StringComparators.h"
 #include <unordered_map>
 #include <fbxsdk.h>
 #include <wrl/client.h>
@@ -119,14 +120,14 @@ namespace mtgb
 		/// <param name="_boneName">名前</param>
 		/// <param name="_pPosition">座標の参照渡し</param>
 		/// <returns>ボーンの取得に成功した true / false</returns>
-		bool TryGetBonePosition(const std::string& _boneName, Vector3* _pPosition);
+		bool TryGetBonePosition(std::string_view _boneName, Vector3* _pPosition);
 		/// <summary>
 		/// 試しにボーンのアニメーション中の座標を取得する
 		/// </summary>
 		/// <param name="_boneName">名前</param>
 		/// <param name="_pPosition">座標の参照渡し</param>
 		/// <returns>ボーンの取得に成功した true / false</returns>
-		bool TryGetBonePositionAtNow(const std::string& _boneName, Vector3* _pPosition);
+		bool TryGetBonePositionAtNow(std::string_view _boneName, Vector3* _pPosition);
 
 		/// <summary>
 		/// Fbxのスキンを取得
@@ -187,10 +188,11 @@ namespace mtgb
 		FbxCluster** ppCluster_; // クラスタ情報 (関節ごとに関連つけられた頂点情報)
 		FbxTime currentTime_;	 // 現在設定されているアニメーションの時間
 
-		int boneCount_;										  // FBX に含まれている関節の数
-		std::vector<Bone> bones_;							  // 各関節の情報配列
-		std::unordered_map<std::string, Bone*> boneNamePair_; // 関節名とのペア
-		Vertex* pVertexes_;									  // 頂点情報
+		int boneCount_;			  // FBX に含まれている関節の数
+		std::vector<Bone> bones_; // 各関節の情報配列
+		std::unordered_map<std::string, Bone*, TransparentStringHash, TransparentStringEq>
+			boneNamePair_;	// 関節名とのペア
+		Vertex* pVertexes_; // 頂点情報
 
 		DWORD** ppIndexData_; // インデックス情報
 

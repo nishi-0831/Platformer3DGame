@@ -39,7 +39,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_key"></param>
 		/// <param name="_typeIndex"></param>
-		void RegisterComponentKey(std::string_view _key, std::type_index _typeIndex);
+		void RegisterComponentKey(const std::string& _key, std::type_index _typeIndex);
 		/// <summary>
 		/// Componentに対応するComponentPoolの型情報を登録する
 		/// </summary>

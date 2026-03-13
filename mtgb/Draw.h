@@ -112,7 +112,7 @@ namespace mtgb
 		/// <param name="_alignment">テキストの配置（省略時は設定中の配置）</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
 		static void ImmediateTextW(
-			const std::wstring& _text,
+			std::wstring_view _text,
 			Vector2F _topLeft,
 			int _size				  = currentDefaultFontSize_,
 			TextAlignment _alignment  = currentDefaultTextAlignment_,
@@ -129,7 +129,7 @@ namespace mtgb
 		/// <param name="_alignment">テキストの配置（省略時は設定中の配置）</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
 		static void ImmediateTextW(
-			const std::wstring& _text,
+			std::wstring_view _text,
 			RectF _rect,
 			int _size				  = currentDefaultFontSize_,
 			TextAlignment _alignment  = currentDefaultTextAlignment_,
@@ -146,7 +146,7 @@ namespace mtgb
 		/// <param name="_alignment">テキストの配置（省略時は設定中の配置）</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
 		static void ImmediateText(
-			const std::string& _text,
+			std::string_view _text,
 			Vector2F _topLeft,
 			int _size				  = currentDefaultFontSize_,
 			TextAlignment _alignment  = currentDefaultTextAlignment_,
@@ -163,7 +163,7 @@ namespace mtgb
 		/// <param name="_alignment">テキストの配置（省略時は設定中の配置）</param>
 		/// <param name="_uiParams">UIとして描画する際の設定</param>
 		static void ImmediateText(
-			const std::string& _text,
+			std::string_view _text,
 			RectF _rect,
 			int _size				  = currentDefaultFontSize_,
 			TextAlignment _alignment  = currentDefaultTextAlignment_,

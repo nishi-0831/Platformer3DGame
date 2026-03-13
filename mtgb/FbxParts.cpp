@@ -14,10 +14,9 @@
 
 namespace
 {
-	Vector4 lightDir { 0, 1, 1, 0 };
+	mtgb::Vector4 lightDir { 0, 1, 1, 0 };
 }
 
-// FbxParts コンストラクタの初期化リストを拡張して、全メンバー変数を初期化
 mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
 	: hasSkinnedMesh_ { false }
 	, vertexCount_ { 0 }
@@ -46,14 +45,10 @@ mtgb::FbxParts::FbxParts(FbxNode* _parent, double _unitScaleFactor)
 	massert(pMesh_ != nullptr && "FbxParts: pMesh_ is null");
 }
 
-mtgb::FbxParts::~FbxParts()
-{
-}
+mtgb::FbxParts::~FbxParts() {}
 
 void mtgb::FbxParts::Initialize()
 {
-	// MEMO: テクスチャUVが異なる頂点を分割&複製 → UV情報と頂点情報の一致調整
-	// pMesh_->SplitPoints(FbxLayerElement::eTextureDiffuse);
 	// 各情報の個数を取得
 	vertexCount_		= pMesh_->GetControlPointsCount(); // 頂点の数
 	polygonCount_		= pMesh_->GetPolygonCount();	   // ポリゴンの数
@@ -192,7 +187,7 @@ void mtgb::FbxParts::DrawMeshAnimation(const Transform& _transform, FbxTime _tim
 	Draw(_transform);
 }
 
-bool mtgb::FbxParts::TryGetBonePosition(const std::string& _boneName, Vector3* _pPosition)
+bool mtgb::FbxParts::TryGetBonePosition(std::string_view _boneName, Vector3* _pPosition)
 {
 	for (int i = 0; i < boneCount_; i++)
 	{
@@ -213,7 +208,7 @@ bool mtgb::FbxParts::TryGetBonePosition(const std::string& _boneName, Vector3* _
 	return false;
 }
 
-bool mtgb::FbxParts::TryGetBonePositionAtNow(const std::string& _boneName, Vector3* _pPosition)
+bool mtgb::FbxParts::TryGetBonePositionAtNow(std::string_view _boneName, Vector3* _pPosition)
 {
 	auto itr { boneNamePair_.find(_boneName) };
 	if (itr != boneNamePair_.end()) // end じゃないなら見つかった

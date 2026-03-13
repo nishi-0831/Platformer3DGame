@@ -129,7 +129,7 @@ void mtgb::FbxModel::Release()
 	}
 }
 
-mtgb::Vector3 mtgb::FbxModel::GetBonePosition(const std::string& _boneName)
+mtgb::Vector3 mtgb::FbxModel::GetBonePosition(std::string_view _boneName)
 {
 	Vector3 position_ = Vector3(0, 0, 0);
 	for (int i = 0; i < pParts_.size(); i++)
@@ -140,7 +140,7 @@ mtgb::Vector3 mtgb::FbxModel::GetBonePosition(const std::string& _boneName)
 	return position_;
 }
 
-mtgb::Vector3 mtgb::FbxModel::GetAnimBonePosition(const std::string& _boneName)
+mtgb::Vector3 mtgb::FbxModel::GetAnimBonePosition(std::string_view _boneName)
 {
 	Vector3 position_ = Vector3(0, 0, 0);
 	for (int i = 0; i < pParts_.size(); i++)

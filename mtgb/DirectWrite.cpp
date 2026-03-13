@@ -248,13 +248,13 @@ void mtgb::DirectWrite::Draw(ComPtr<IDWriteTextLayout> _textLayout, float _x, fl
 	Game::System<Direct2D>().pDefRenderTarget_->EndDraw();
 }
 
-void mtgb::DirectWrite::ImmediateDraw(const std::wstring& _text, float _x, float _y)
+void mtgb::DirectWrite::ImmediateDraw(std::wstring_view _text, float _x, float _y)
 {
 	ImmediateDraw(_text, pTextFormat_, pixelFontMetrics_, _x, _y);
 }
 
 void mtgb::DirectWrite::ImmediateDraw(
-	const std::wstring& _text,
+	std::wstring_view _text,
 	ComPtr<IDWriteTextFormat> _format,
 	const PixelFontMetrics& _pixelFontMetrics,
 	float _x,
@@ -266,7 +266,7 @@ void mtgb::DirectWrite::ImmediateDraw(
 	Game::System<Direct2D>().pDefRenderTarget_->BeginDraw();
 
 	Game::System<Direct2D>().pDefRenderTarget_->DrawText(
-		_text.c_str(),
+		_text.data(),
 		static_cast<uint32_t>(_text.length()),
 		_format.Get(),
 		D2D1::RectF(
@@ -282,7 +282,7 @@ void mtgb::DirectWrite::ImmediateDraw(
 }
 
 void mtgb::DirectWrite::ImmediateDraw(
-	const std::wstring& _text,
+	std::wstring_view _text,
 	ComPtr<IDWriteTextFormat> _format,
 	const PixelFontMetrics& _pixelFontMetrics,
 	float _x,

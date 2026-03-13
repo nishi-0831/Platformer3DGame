@@ -106,11 +106,11 @@ namespace mtgb
 		/// <param name="text">描画するテキスト</param>
 		/// <param name="x">テキストの左端</param>
 		/// <param name="y">テキストの上端</param>
-		void ImmediateDraw(const std::wstring& _text, float _x, float _y);
+		void ImmediateDraw(std::wstring_view _text, float _x, float _y);
 
 		// void ImmediateDraw(const std::string& text, float x, float y, int size);
 		void ImmediateDraw(
-			const std::wstring& _text,
+			std::wstring_view _text,
 			ComPtr<IDWriteTextFormat> _format,
 			const PixelFontMetrics& _pixelFontMetrics,
 			float _x,
@@ -120,7 +120,7 @@ namespace mtgb
 		);
 
 		void ImmediateDraw(
-			const std::wstring& _text,
+			std::wstring_view _text,
 			ComPtr<IDWriteTextFormat> _format,
 			const PixelFontMetrics& _pixelFontMetrics,
 			float _x,

@@ -60,8 +60,8 @@ namespace mtgb
 		template <typename T> static void FindGameObjects(std::vector<T*>* _pFoundGameObjects);
 
 		static GameObject* FindGameObject(GameObjectTag _tag);
-		static GameObject* FindGameObject(const std::string& _name);
-		static void FindGameObjects(const std::string& _name, std::vector<GameObject*>* _pFoundGameObjects);
+		static GameObject* FindGameObject(std::string_view _name);
+		static void FindGameObjects(std::string_view _name, std::vector<GameObject*>* _pFoundGameObjects);
 		static GameObject* FindGameObject(EntityId _entityId);
 		static void FindGameObjects(GameObjectTag _tag, std::vector<GameObject*>* _pFoundGameObjects);
 

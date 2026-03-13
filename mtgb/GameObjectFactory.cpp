@@ -5,7 +5,7 @@
 
 mtgb::GameObject* mtgb::GameObjectFactory::Create(std::string_view _typeName) const
 {
-	auto itr = creators_.find(std::string(_typeName));
+	auto itr = creators_.find(_typeName);
 	if (itr == creators_.end())
 		return nullptr;
 
@@ -13,7 +13,7 @@ mtgb::GameObject* mtgb::GameObjectFactory::Create(std::string_view _typeName) co
 	return gameObj;
 }
 
-void mtgb::GameObjectFactory::RegisterFactory(std::string_view _typeName, const CreateFunc& _creator)
+void mtgb::GameObjectFactory::RegisterFactory(const std::string& _typeName, const CreateFunc& _creator)
 {
-	creators_.emplace(std::string(_typeName), std::move(_creator));
+	creators_.emplace(_typeName, _creator);
 }
