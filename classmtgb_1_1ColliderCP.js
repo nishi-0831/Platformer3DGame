@@ -7,7 +7,7 @@ var classmtgb_1_1ColliderCP =
     [ "Deserialize", "classmtgb_1_1ColliderCP.html#ae94100391820ac4e8fae6e39706cf738", null ],
     [ "Draw", "classmtgb_1_1ColliderCP.html#ae488e4a30067a68576be38fa47bbf353", null ],
     [ "Get", "classmtgb_1_1ColliderCP.html#a3bbce3e830e89a68e4ae52ee655728b7", null ],
-    [ "Initialize", "classmtgb_1_1ColliderCP.html#a931c8676466391a960eb815e54b524da", null ],
+    [ "Initialize", "classmtgb_1_1ColliderCP.html#acbb23f2d6807f5ddd259567a67a1dc9a", null ],
     [ "IsHitAll", "classmtgb_1_1ColliderCP.html#ac350bcabc48cda29ce797380cc727243", null ],
     [ "RayCastHit", "classmtgb_1_1ColliderCP.html#adaff30b59f72e58050b1b3f10af75944", null ],
     [ "RayCastHitAll", "classmtgb_1_1ColliderCP.html#a44c1ce38039e2df6b0a16266f59dad91", null ],

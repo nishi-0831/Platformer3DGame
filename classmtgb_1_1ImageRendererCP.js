@@ -4,7 +4,7 @@ var classmtgb_1_1ImageRendererCP =
     [ "Copy", "classmtgb_1_1ImageRendererCP.html#a2d5f2c2667a77d695f478df7f674219a", null ],
     [ "Deserialize", "classmtgb_1_1ImageRendererCP.html#ae94100391820ac4e8fae6e39706cf738", null ],
     [ "Get", "classmtgb_1_1ImageRendererCP.html#a3bbce3e830e89a68e4ae52ee655728b7", null ],
-    [ "Initialize", "classmtgb_1_1ImageRendererCP.html#a3bb1f72bb7920d29aea699fb22bdce0a", null ],
+    [ "Initialize", "classmtgb_1_1ImageRendererCP.html#acbb23f2d6807f5ddd259567a67a1dc9a", null ],
     [ "RegisterComponent", "classmtgb_1_1ImageRendererCP.html#a228bc6bfb0fd1f8f1e1dd7df86dbd084", null ],
     [ "RegisterCurrentScene", "classmtgb_1_1ImageRendererCP.html#a4d2d02ef42687005a44d0fb93b353182", null ],
     [ "RegisterImGuiIfExists", "classmtgb_1_1ImageRendererCP.html#a4f9e8e9a7a14625c83206da315a9697b", null ],

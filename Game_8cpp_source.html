@@ -156,9 +156,9 @@ $(document).ready(function(){initNavTree('Game_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classmtgb_1_1Game.html#abdefeca2ccb6e6a93d268c1a62bd0b90">   57</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Game.html#abdefeca2ccb6e6a93d268c1a62bd0b90">mtgb::Game::RemoveEntityAllComponent</a>(<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; cpSystem : pInstance_-&gt;pComponentPools_)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classmtgb_1_1IComponentPool.html">IComponentPool</a>* cpSystem : pInstance_-&gt;pComponentPools_)</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        cpSystem-&gt;Remove(_entityId);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        cpSystem-&gt;<a class="code hl_function" href="classmtgb_1_1IComponentPool.html#aa4cc0a056bc934fffdad24730975ca72">Remove</a>(_entityId);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
