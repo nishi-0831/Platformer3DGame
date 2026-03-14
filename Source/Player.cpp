@@ -17,7 +17,7 @@ Player::Player()
 					 .SetPosition({ 0, 5, 10 })
 					 .SetTag(GameObjectTag::PLAYER)
 					 .Build())
-	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
+	, ImGuiShowable(ShowType::INSPECTOR, GetEntityId())
 	, IActor(GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pCollider_ { Component<Collider>() }

@@ -7,6 +7,7 @@ unsigned int PatrolChargerEnemy::generateCounter_ { 0 };
 
 PatrolChargerEnemy::PatrolChargerEnemy()
 	: IActor(GetEntityId())
+	, ImGuiShowable(GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pRigidBody_ { Component<RigidBody>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }

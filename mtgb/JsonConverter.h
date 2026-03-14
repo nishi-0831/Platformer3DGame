@@ -117,7 +117,6 @@ template <typename T> nlohmann::json JsonConverter::Serialize(const T& _value)
 
 template <typename T> void JsonConverter::Deserialize(T& _value, const nlohmann::json& _json)
 {
-	using json = nlohmann::json;
 	using Type = std::remove_pointer_t<std::remove_cvref_t<T>>;
 
 	if constexpr (is_builtin_type_v<Type>)

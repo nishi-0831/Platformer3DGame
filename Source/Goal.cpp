@@ -7,6 +7,7 @@ unsigned int Goal::generateCounter_ { 0 };
 
 Goal::Goal()
 	: GameObject()
+	, ImGuiShowable(ShowType::INSPECTOR, GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pCollider_ { Component<Collider>() }
 	, pRigidBody_ { Component<RigidBody>() }

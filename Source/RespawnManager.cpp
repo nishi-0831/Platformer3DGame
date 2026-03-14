@@ -5,6 +5,7 @@
 #include <format>
 RespawnManager::RespawnManager()
 	: GameObject()
+	, ImGuiShowable(GetEntityId())
 	, currentRespawnPointPriority_ { 0 }
 	, playerEntityId_ { INVALID_ENTITY }
 	, currentRespawnPointEntityId_ { INVALID_ENTITY }

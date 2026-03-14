@@ -19,7 +19,7 @@
 #include "ImGuiUtil.h"
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
-#include "inttypes.h"
+
 #include "../Source/MovingFloor.h"
 namespace
 {
@@ -33,7 +33,14 @@ void mtgb::MTImGui::Initialize()
 	Game::System<SceneSystem>().OnMove(
 		[]()
 		{
-			MTImGui::Instance().showableObjs_.clear();
+			auto& showableObjs = MTImGui::Instance().showableObjs_;
+			for (auto itr = showableObjs.begin(); itr != showableObjs.end(); itr++)
+			{
+				if ((*itr)->scope_ == ImGuiShowable::Scope::SCENE)
+				{
+					itr = showableObjs.erase(itr);
+				}
+			}
 		}
 	);
 
@@ -432,7 +439,11 @@ void mtgb::MTImGui::ExecuteShowQueue(ShowType _show)
 
 void mtgb::MTImGui::Register(ImGuiShowable* _obj)
 {
-	showableObjs_.push_back(_obj);
+	auto it = std::find(showableObjs_.begin(), showableObjs_.end(), _obj);
+	if (it == showableObjs_.end())
+	{
+		showableObjs_.push_back(_obj);
+	}
 }
 
 void mtgb::MTImGui::Unregister(ImGuiShowable* _obj)

@@ -29,7 +29,7 @@ namespace
 	const mtgb::Vector3 INIT_ANGLE { 0, 0, 0 };
 } // namespace
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
-	: ImGuiShowable { "EditorCamera", ShowType::EDITOR }
+	: ImGuiShowable { "EditorCamera", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL }
 	, hCamera_ { INVALID_ENTITY }
 	, rotateSensitivity_ { 1.0f }
 	, moveSpeed_ { 10.0f }

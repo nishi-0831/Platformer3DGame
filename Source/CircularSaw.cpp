@@ -73,6 +73,7 @@ void mtgb::CircularSaw::Start()
 
 mtgb::Saw::Saw()
 	: GameObject()
+	, ImGuiShowable(GetEntityId())
 	, IActor(GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }

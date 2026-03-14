@@ -114,7 +114,7 @@ void mtgb::ImGuizmoManipulator::Calculate()
 }
 
 mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
-	: ImGuiShowable("Manipulater", ShowType::SCENE_VIEW)
+	: ImGuiShowable("Manipulater", ShowType::SCENE_VIEW, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
 	, operation_ { ImGuizmo::TRANSLATE }
 	, mode_ { ImGuizmo::LOCAL }
 	, isUsing_ { false }
@@ -126,7 +126,10 @@ mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
 
 mtgb::ImGuizmoManipulator::~ImGuizmoManipulator() {}
 
-void mtgb::ImGuizmoManipulator::Initialize() {}
+void mtgb::ImGuizmoManipulator::Initialize()
+{
+	MTImGui::Instance().Register(this);
+}
 
 void mtgb::ImGuizmoManipulator::Update()
 {

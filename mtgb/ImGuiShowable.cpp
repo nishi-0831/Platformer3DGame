@@ -11,15 +11,10 @@ namespace
 mtgb::ImGuiShowable::ImGuiShowable(mtgb::EntityId _entityId)
 	: targetEntityId_ { _entityId }
 	, show_ { ShowType::INSPECTOR }
+	, scope_ { Scope::SCENE }
 {
 	MTImGui::Instance().Register(this);
 	displayName_ = "Default (" + std::to_string(defNameCount++) + ")";
-	/*if (defNameCount < UINT32_MAX) {
-		displayName_ = "Default (" + std::to_string(defNameCount++) + ")";
-	}
-	else {
-		displayName_ = "Default (Max)";
-	}*/
 }
 
 void mtgb::ImGuiShowable::ShowImGui() {}
@@ -31,10 +26,11 @@ mtgb::ImGuiShowable::ImGuiShowable(ShowType _showType, mtgb::EntityId _entityId)
 	MTImGui::Instance().Register(this);
 }
 
-mtgb::ImGuiShowable::ImGuiShowable(const std::string& _name, ShowType _showType, mtgb::EntityId _entityId)
+mtgb::ImGuiShowable::ImGuiShowable(const std::string& _name, ShowType _showType, mtgb::EntityId _entityId, Scope _scope)
 	: ImGuiShowable(_showType, _entityId)
 {
 	displayName_ = _name;
+	scope_		 = _scope;
 }
 
 mtgb::ImGuiShowable::~ImGuiShowable()

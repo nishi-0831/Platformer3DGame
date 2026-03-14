@@ -11,6 +11,7 @@ unsigned int MovingFloor::generateCounter_ { 0 };
 
 MovingFloor::MovingFloor()
 	: GameObject()
+	, ImGuiShowable(GetEntityId())
 	, groundedEntity_ { INVALID_ENTITY }
 	, pTransform_ { &Transform::Get(entityId_) }
 	, pMeshRenderer_ { &MeshRenderer::Get(entityId_) }

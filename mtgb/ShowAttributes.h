@@ -1,11 +1,7 @@
 
 #pragma once
 #include <refl-cpp/refl.hpp>
-#include "ImGui/imgui.h"
 #include "Vector3.h"
-
-#include "ShowFunc.h"
-#include "QuatToEuler.h"
 
 class Command;
 struct Vector3Show : refl::attr::usage::type
@@ -29,64 +25,4 @@ struct Vector4Show : refl::attr::usage::type
 struct MatrixShow : refl::attr::usage::type
 {
 	Command* operator()(DirectX::XMMATRIX* _mat, const char* _name) const;
-};
-
-template <typename T> struct Range : refl::attr::usage::member
-{
-	T Min;
-	T Max;
-
-	Range(T _min, T _max)
-		: Min(min)
-		, Max(max)
-	{
-	}
-
-	template <typename FieldType> void operator()(FieldType* _instance, const char* _name) const
-	{
-		ShowRange(instance, name, Min, Max);
-	}
-};
-
-template <typename T> struct ProxyFor : refl::attr::usage::type
-{
-	using TargetType = T;
-};
-
-template <typename T> void ShowRange(T* _instance, const char* _name, T _min, T _max)
-{
-	if constexpr (std::is_same_v<T, int>)
-	{
-		ImGui::SliderInt(name, instance, min, max);
-	}
-	else if constexpr (std::is_same_v<T, float>)
-	{
-		ImGui::SliderFloat(name, instance, min, max);
-	}
-	else
-	{
-		ImGui::Text("Unknown : %s", name);
-	}
-}
-
-struct DisplayName : refl::attr::usage::type
-{
-  public:
-	constexpr DisplayName(const char* _displayName) noexcept
-		: displayName { _displayName }
-	{
-	}
-
-	constexpr std::string_view operator()() const noexcept
-	{
-		return std::string_view(displayName);
-	}
-
-  private:
-	const char* displayName;
-};
-
-template <typename T> struct ReadOnly : refl::attr::usage::member
-{
-	template <typename FieldType> void operator()(FieldType* _instance, const char* _name) const {}
 };

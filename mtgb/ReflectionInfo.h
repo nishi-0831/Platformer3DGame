@@ -9,7 +9,7 @@
 #include "Interpolator.h"
 #include "Matrix4x4.h"
 // #include "TypeRegistryImpl.h"
-#include <string>
+#include "ShowFunc.h"
 using namespace mtgb;
 REGISTER_TYPE(Quaternion, ShowFunc(QuaternionShow {}))
 REGISTER_MEMBER_FUNC(X, property("x"))

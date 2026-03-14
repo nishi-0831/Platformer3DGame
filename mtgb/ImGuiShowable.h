@@ -2,14 +2,9 @@
 
 #include <string>
 
-#include "ISystem.h"
-#include <any>
-#include <unordered_map>
-#include <typeindex>
-#include "WindowContext.h"
 #include "ShowType.h"
 #include "Entity.h"
-#include <string_view>
+
 namespace mtgb
 {
 	/// <summary>
@@ -21,9 +16,18 @@ namespace mtgb
 		friend class MTImGui;
 
 	  public:
-		ImGuiShowable(EntityId _entityId = INVALID_ENTITY);
-		ImGuiShowable(ShowType _showType, EntityId _entityId = INVALID_ENTITY);
-		ImGuiShowable(const std::string& _name, ShowType _showType, EntityId _entityId = INVALID_ENTITY);
+		// ImGuiShowableの寿命
+		enum class Scope
+		{
+			// ゲームが終了する際に削除される
+			GLOBAL,
+			// シーンが遷移する際に削除される
+			SCENE
+		};
+
+		ImGuiShowable(EntityId _entityId);
+		ImGuiShowable(ShowType _showType, EntityId _entityId);
+		ImGuiShowable(const std::string& _name, ShowType _showType, EntityId _entityId, Scope _scope);
 		virtual ~ImGuiShowable();
 
 		/// <summary>
@@ -35,6 +39,7 @@ namespace mtgb
 		EntityId targetEntityId_; // Entityの場合はIdを渡すこと
 		std::string displayName_; // 表示される際の名前
 		ShowType show_;			  // 表示したいImGuiWindow
+		Scope scope_;			  // ImGuiShowableの寿命
 	};
 
 } // namespace mtgb

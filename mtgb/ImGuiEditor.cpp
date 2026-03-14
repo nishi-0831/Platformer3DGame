@@ -15,7 +15,7 @@
 #include "CommandHistoryManager.h"
 #include "MeshRenderer.h"
 mtgb::ImGuiEditor::ImGuiEditor()
-	: ImGuiShowable("ImGuiEditor", ShowType::EDITOR)
+	: ImGuiShowable("ImGuiEditor", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
 {
 
 	pManipulator_ = new ImGuizmoManipulator();

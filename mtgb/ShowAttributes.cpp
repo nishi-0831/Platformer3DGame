@@ -1,5 +1,9 @@
 #include "ShowAttributes.h"
+#include "ImGui/imgui.h"
+
 #include "ImGuiInputCommand.h"
+#include "QuatToEuler.h"
+
 Command* Vector3Show::operator()(mtgb::Vector3* _vec, const char* _name) const
 {
 	mtgb::Vector3 old = *_vec;
@@ -9,7 +13,7 @@ Command* Vector3Show::operator()(mtgb::Vector3* _vec, const char* _name) const
 	if (changed == false)
 		return nullptr;
 
-	return new ImGuiInputCommand<mtgb::Vector3>(_vec, old, *_vec, _name);
+	return new mtgb::ImGuiInputCommand<mtgb::Vector3>(_vec, old, *_vec, _name);
 }
 
 /// <summary>
