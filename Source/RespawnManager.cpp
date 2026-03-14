@@ -82,7 +82,7 @@ void RespawnPoint::Update() {}
 
 void RespawnPoint::ShowImGui()
 {
-	MTImGui::Instance().ShowComponents(GetEntityId());
+	MTImGui::ShowComponents(GetEntityId());
 	ImGui::Text("EntityId:%d", Entity::entityId_);
 }
 

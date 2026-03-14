@@ -70,7 +70,7 @@ void Goal::Draw() const {}
 
 void Goal::ShowImGui()
 {
-	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	MTImGui::ShowComponents(Entity::entityId_);
 	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 

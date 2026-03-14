@@ -33,7 +33,7 @@ void mtgb::Box3D::Draw() const {}
 
 void mtgb::Box3D::ShowImGui()
 {
-	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	MTImGui::ShowComponents(Entity::entityId_);
 	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 

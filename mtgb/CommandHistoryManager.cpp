@@ -20,7 +20,7 @@ void CommandHistoryManager::Initialize() {}
 
 void CommandHistoryManager::Update()
 {
-	MTImGui::Instance().DirectShow(
+	MTImGui::DirectShow(
 		[this]()
 		{
 			inner_->DrawImGuiStack();

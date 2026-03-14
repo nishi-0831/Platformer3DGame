@@ -1,6 +1,5 @@
-#include "TypeRegistry.h"
-#include "TypeRegistryImpl.h"
-#include "ReflectionInfo.h"
+#include "PropertyDisplayRegistry.h"
+#include "PropertyDisplayRegistryImpl.h"
 #include "Command.h"
 
 PropertyDisplayRegistry& PropertyDisplayRegistry::Instance()

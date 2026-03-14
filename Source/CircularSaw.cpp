@@ -104,7 +104,7 @@ void mtgb::Saw::Start() {}
 
 void mtgb::Saw::ShowImGui()
 {
-	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	MTImGui::ShowComponents(Entity::entityId_);
 }
 
 void mtgb::Saw::OnStomped(IActor* _pOther)

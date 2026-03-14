@@ -13,7 +13,7 @@ mtgb::ImGuiShowable::ImGuiShowable(mtgb::EntityId _entityId)
 	, show_ { ShowType::INSPECTOR }
 	, scope_ { Scope::SCENE }
 {
-	MTImGui::Instance().Register(this);
+	MTImGui::Register(this);
 	displayName_ = "Default (" + std::to_string(defNameCount++) + ")";
 }
 
@@ -23,7 +23,7 @@ mtgb::ImGuiShowable::ImGuiShowable(ShowType _showType, mtgb::EntityId _entityId)
 	: targetEntityId_ { _entityId }
 	, show_ { _showType }
 {
-	MTImGui::Instance().Register(this);
+	MTImGui::Register(this);
 }
 
 mtgb::ImGuiShowable::ImGuiShowable(const std::string& _name, ShowType _showType, mtgb::EntityId _entityId, Scope _scope)
@@ -35,5 +35,5 @@ mtgb::ImGuiShowable::ImGuiShowable(const std::string& _name, ShowType _showType,
 
 mtgb::ImGuiShowable::~ImGuiShowable()
 {
-	MTImGui::Instance().Unregister(this);
+	MTImGui::Unregister(this);
 }

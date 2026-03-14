@@ -6,7 +6,7 @@
 #include <functional>
 #include "ShowType.h"
 #include "ImGuiShowable.h"
-#include "TypeRegistry.h"
+#include "PropertyDisplayRegistry.h"
 #include <map>
 #include "cmtgb.h"
 #include "GameObject.h"
@@ -33,25 +33,19 @@ namespace mtgb
 	{
 
 	  public:
-		static MTImGui& Instance()
-		{
-			static MTImGui instance;
-			return instance;
-		}
-
-		void Initialize();
-		void Update();
+		static void Initialize();
+		static void Update();
 
 		/// <summary>
 		/// ImGuiウィンドウの表示、キュー内の表示関数の一括実行、ImGuiウィンドウのEnd()までを行う
 		/// </summary>
 		/// <param name="_showType"></param>
-		void ShowWindow(ShowType _showType);
+		static void ShowWindow(ShowType _showType);
 		/// <summary>
 		/// 表示キューを一括実行し、クリア
 		/// </summary>
 		/// <param name="show"></param>
-		void ExecuteShowQueue(ShowType _show);
+		static void ExecuteShowQueue(ShowType _show);
 
 		/// <summary>
 		/// 型を指定して表示キューに積む
@@ -62,19 +56,19 @@ namespace mtgb
 		/// <param name="name">表示対象の名前</param>
 		/// <param name="show">表示するImGuiWindow</param>
 		template <typename T>
-		void TypedShow(T* _target, const std::string& _name, ShowType _show = ShowType::INSPECTOR);
+		static void TypedShow(T* _target, const std::string& _name, ShowType _show = ShowType::INSPECTOR);
 		/// <summary>
 		/// ImGuiShowable*インスタンスを登録、毎回ShowImGuiを呼ぶ
 		/// ImGuiShowableは自動で登録される
 		/// </summary>
 		/// <param name="obj"></param>
-		void Register(ImGuiShowable* _obj);
+		static void Register(ImGuiShowable* _obj);
 		/// <summary>
 		/// 登録解除
 		/// デストラクタで呼ばれる
 		/// </summary>
 		/// <param name="_obj"></param>
-		void Unregister(ImGuiShowable* _obj);
+		static void Unregister(ImGuiShowable* _obj);
 
 		/// <summary>
 		/// コールバックを表示キューに直接積む
@@ -83,7 +77,7 @@ namespace mtgb
 		/// <param name="_show">表示場所</param>
 		template <typename Func>
 			requires std::is_invocable_v<Func>
-		void DirectShow(Func&& _func, const std::string& _name, ShowType _show);
+		static void DirectShow(Func&& _func, const std::string& _name, ShowType _show);
 
 		/// <summary>
 		/// <para> ImGuiWindowに線分を描画 </para>
@@ -91,7 +85,7 @@ namespace mtgb
 		/// <param name="_from">始点</param>
 		/// <param name="_to">終点</param>
 		/// <param name="_thickness">線の太さ</param>
-		void DrawLine(const Vector3& _from, const Vector3& _to, float _thickness);
+		static void DrawLine(const Vector3& _from, const Vector3& _to, float _thickness);
 
 		/// <summary>
 		/// <para> ImGuiWindowにベクトルを描画 </para>
@@ -100,7 +94,7 @@ namespace mtgb
 		/// <param name="_start">始点</param>
 		/// <param name="_vec">ベクトル</param>
 		/// <param name="_thickness"></param>
-		void DrawVec(const Vector3& _start, const Vector3& _vec, float _thickness);
+		static void DrawVec(const Vector3& _start, const Vector3& _vec, float _thickness);
 
 		/// <summary>
 		/// ImGuiWindowに円錐を描画
@@ -111,7 +105,7 @@ namespace mtgb
 		/// <param name="_distance"> 円錐の高さ </param>
 		/// <param name="_thickness"> 線の太さ </param>
 		/// <param name="_segments"> 円の分割数(多いほど滑らか) </param>
-		void DrawCone(
+		static void DrawCone(
 			const Vector3& _position,
 			const Vector3& _direction,
 			float _fovAngleDegree,
@@ -119,7 +113,7 @@ namespace mtgb
 			float _thickness = 1.0f,
 			int _segments	 = 16
 		);
-		EntityId GetSelectedEntityId();
+		static EntityId GetSelectedEntityId();
 		static const char* GetName(ShowType _showType)
 		{
 			if (_showType == ShowType::INSPECTOR)
@@ -141,16 +135,17 @@ namespace mtgb
 			return "None";
 		}
 
-		void SetWindowOpen(ShowType _showType, bool _flag);
-		void SetAllWindowOpen(bool _flag);
-		void ChangeWindowOpen(ShowType _showType);
-		void ChangeAllWindowOpen();
-		void ShowLog();
-		void ShowComponents(EntityId _entityId);
-		void SelectGameObject(EntityId _entityId);
-		template <typename T> void RegisterComponentViewer();
+		static void SetWindowOpen(ShowType _showType, bool _flag);
+		static void SetAllWindowOpen(bool _flag);
+		static void ChangeWindowOpen(ShowType _showType);
+		static void ChangeAllWindowOpen();
+		static void ShowLog();
+		static void ShowComponents(EntityId _entityId);
+		static void SelectGameObject(EntityId _entityId);
+		template <typename T> static void RegisterComponentViewer();
 
 	  private:
+		static MTImGui& Instance();
 		MTImGui();
 		MTImGui(const MTImGui& _other) = delete;
 		MTImGui(MTImGui&& _other)	   = delete;
@@ -197,18 +192,18 @@ namespace mtgb
 		if (_show == ShowType::SCENE_VIEW)
 		{
 			// SceneViewは名前不要
-			sceneViewShowList_.push(std::forward<Func>(_func));
+			Instance().sceneViewShowList_.push(std::forward<Func>(_func));
 		}
 		else
 		{
-			showQueues_[_show].emplace(_name, std::forward<Func>(_func));
+			Instance().showQueues_[_show].emplace(_name, std::forward<Func>(_func));
 		}
 	}
 	template <typename T> void mtgb::MTImGui::RegisterComponentViewer()
 	{
 		std::type_index typeIdx(typeid(T));
 
-		componentShowFuncs_.emplace(
+		Instance().componentShowFuncs_.emplace(
 			typeIdx,
 			[](EntityId _entityId)
 			{

@@ -32,7 +32,7 @@ void SeaPlane::Draw() const {}
 
 void SeaPlane::ShowImGui()
 {
-	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	MTImGui::ShowComponents(Entity::entityId_);
 	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 

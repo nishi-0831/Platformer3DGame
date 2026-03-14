@@ -1,11 +1,9 @@
 #pragma once
-#include "TypeRegistry.h"
+#include "PropertyDisplayRegistry.h"
 #include <refl-cpp/refl.hpp>
-#include <iostream>
 #include "ImGui/imgui.h"
-#include "WindowContext.h"
 #include "MTAssert.h"
-#include "MTStringUtility.h"
+
 #include "DefaultShow.h"
 #include "ShowAttributes.h"
 
@@ -128,7 +126,6 @@ template <typename T> void PropertyDisplayRegistry::RegisterType()
 		return nullptr;
 	};
 }
-
 
 // メンバの型がリフレクションされているかチェックし、ShowFunc属性があればそれを使用
 template <typename T>

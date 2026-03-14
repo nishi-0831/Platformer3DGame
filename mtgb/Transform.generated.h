@@ -89,7 +89,7 @@ using TransformMemento = mtgb::ComponentMemento<mtgb::Transform, TransformState>
 				PropertyDisplayRegistry::Instance().ShowProperty(&_target->rotate, "rotate");     \
 			}                                                                                     \
 		);                                                                                        \
-		MTImGui::Instance().RegisterComponentViewer<Transform>();                                 \
+		MTImGui::RegisterComponentViewer<Transform>();                                            \
 	}
 
 #pragma warning(push)

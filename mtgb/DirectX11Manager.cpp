@@ -29,7 +29,7 @@ void mtgb::DirectX11Manager::Initialize()
 
 void mtgb::DirectX11Manager::Update()
 {
-	MTImGui::Instance().DirectShow(
+	MTImGui::DirectShow(
 		[this]()
 		{
 			for (auto& desc : adaptersDesc_)

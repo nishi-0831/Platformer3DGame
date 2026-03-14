@@ -70,10 +70,10 @@ void mtgb::InputResource::Update()
 	pJoystickProxy_->UpdateFromInput(assignedJoystickGuid_);
 	pJoystickProxy_->UpdateInputData(pInputData_->joyStateCurrent_);
 
-	MTImGui::Instance().TypedShow<JoystickProxy>(pJoystickProxy_, name_ + ":Joystick", ShowType::SETTINGS);
+	MTImGui::TypedShow<JoystickProxy>(pJoystickProxy_, name_ + ":Joystick", ShowType::SETTINGS);
 
 	pMouseStateProxy_->UpdateInputData(pInputData_->mouseStateCurrent_);
-	MTImGui::Instance().TypedShow<MouseStateProxy>(pMouseStateProxy_, name_ + ":Mouse", ShowType::SETTINGS);
+	MTImGui::TypedShow<MouseStateProxy>(pMouseStateProxy_, name_ + ":Mouse", ShowType::SETTINGS);
 }
 
 void InputResource::SetResource()

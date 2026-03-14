@@ -19,7 +19,7 @@ mtgb::ScoreManager::~ScoreManager() {}
 
 void mtgb::ScoreManager::Update()
 {
-	MTImGui::Instance().DirectShow(
+	MTImGui::DirectShow(
 		[]()
 		{
 			ImGui::LabelText("Score", "%d", score_);

@@ -107,7 +107,7 @@ using ColliderMemento = mtgb::ComponentMemento<mtgb::Collider, ColliderState>;
 				PropertyDisplayRegistry::Instance().ShowProperty(&_target->extents_, "extents_");           \
 			}                                                                                               \
 		);                                                                                                  \
-		MTImGui::Instance().RegisterComponentViewer<Collider>();                                            \
+		MTImGui::RegisterComponentViewer<Collider>();                                                       \
 	}
 
 #pragma warning(push)

@@ -59,7 +59,7 @@ using ImageRendererMemento = mtgb::ComponentMemento<mtgb::ImageRenderer, ImageRe
 		registered = true;                                                                            \
                                                                                                       \
 		RegisterShowFuncHolder::Set<ImageRenderer>([](ImageRenderer* _target, const char* _name) {}); \
-		MTImGui::Instance().RegisterComponentViewer<ImageRenderer>();                                 \
+		MTImGui::RegisterComponentViewer<ImageRenderer>();                                            \
 	}
 
 #pragma warning(push)

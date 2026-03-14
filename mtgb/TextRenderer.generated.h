@@ -59,7 +59,7 @@ using TextRendererMemento = mtgb::ComponentMemento<mtgb::TextRenderer, TextRende
 		registered = true;                                                                          \
                                                                                                     \
 		RegisterShowFuncHolder::Set<TextRenderer>([](TextRenderer* _target, const char* _name) {}); \
-		MTImGui::Instance().RegisterComponentViewer<TextRenderer>();                                \
+		MTImGui::RegisterComponentViewer<TextRenderer>();                                           \
 	}
 
 #pragma warning(push)

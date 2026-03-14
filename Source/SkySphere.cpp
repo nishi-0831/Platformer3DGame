@@ -31,7 +31,7 @@ void mtgb::SkySphere::Draw() const {}
 
 void mtgb::SkySphere::ShowImGui()
 {
-	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	MTImGui::ShowComponents(Entity::entityId_);
 }
 
 void mtgb::SkySphere::Start() {}

@@ -54,7 +54,7 @@ void MovingFloor::Update()
 
 void MovingFloor::ShowImGui()
 {
-	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	MTImGui::ShowComponents(Entity::entityId_);
 	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 

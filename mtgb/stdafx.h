@@ -4,5 +4,5 @@
 #include "cmtgb.h"
 // #include "ShowAttributes.h"
 #include "ReflectionInfo.h"
-#include "TypeRegistryImpl.h"
+#include "PropertyDisplayRegistryImpl.h"
 #include <nlohmann/json.hpp>

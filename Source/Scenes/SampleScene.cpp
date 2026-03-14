@@ -23,7 +23,7 @@ void SampleScene::Initialize()
 
 	PropertyDisplayRegistry::Instance();
 	PropertyDisplayRegistry::Instance().Initialize();
-	mtgb::MTImGui::Instance().Initialize();
+	mtgb::MTImGui::Initialize();
 
 	Instantiate<GameOverManager>();
 	Instantiate<mtgb::SkySphere>();

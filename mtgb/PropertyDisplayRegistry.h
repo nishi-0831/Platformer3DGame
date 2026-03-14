@@ -9,21 +9,19 @@
 class Command;
 
 using ShowPropertyFunc = std::function<Command*(std::any, const char*)>;
-template<typename Func>
-concept ShowPropFuncCallable = std::is_convertible_v<Func,ShowPropertyFunc>;
+template <typename Func>
+concept ShowPropFuncCallable = std::is_convertible_v<Func, ShowPropertyFunc>;
 
 class PropertyDisplayRegistry
 {
   public:
-
 	template <typename T> void RegisterType();
-	template <typename T,ShowPropFuncCallable Func>
-	void RegisterFunc(Func&& _func);
+	template <typename T, ShowPropFuncCallable Func> void RegisterFunc(Func&& _func);
 
 	static PropertyDisplayRegistry& Instance();
 	// プログラム開始時に登録したい関数を登録
 	template <typename Func>
-	requires std::is_invocable_v<Func>
+		requires std::is_invocable_v<Func>
 	void ProvisionalRegister(std::type_index _typeIdx, Func&& _registerFunc);
 	void Initialize();
 	template <typename T> void ShowProperty(T* _instance, const char* _name);
@@ -31,8 +29,8 @@ class PropertyDisplayRegistry
 	void ShowProperty(std::type_index _typeIdx, std::any _instance, const char* _name);
 	bool IsRegisteredType(std::type_index _typeIdx);
 
-	template<typename Func>
-	requires std::is_invocable_v<Func, Command*>
+	template <typename Func>
+		requires std::is_invocable_v<Func, Command*>
 	void RegisterCommandListener(Func&& _commandListener);
 
   private:
@@ -83,12 +81,12 @@ template <typename T> void PropertyDisplayRegistry::ShowProperty(T* _instance, c
 
 template <typename Func>
 	requires std::is_invocable_v<Func, Command*>
-inline void PropertyDisplayRegistry::RegisterCommandListener(Func&& _commandListener) 
+inline void PropertyDisplayRegistry::RegisterCommandListener(Func&& _commandListener)
 {
 	commandListener_ = std::forward<Func>(_commandListener);
 }
 
-template <typename T, ShowPropFuncCallable Func> inline void PropertyDisplayRegistry::RegisterFunc(Func&& _func) 
+template <typename T, ShowPropFuncCallable Func> inline void PropertyDisplayRegistry::RegisterFunc(Func&& _func)
 {
 	using Type = std::remove_cvref_t<T>;
 	std::type_index typeIdx(typeid(Type));
@@ -102,8 +100,8 @@ namespace RegisterShowFuncHolder
 	/// </summary>
 	/// <typeparam name="Type">表示したい型</typeparam>
 	/// <param name="_func">表示したい型を使った表示関数</param>
-	template <typename Type,typename Func>
-	requires std::is_invocable_v<Func,Type*,const char*>
+	template <typename Type, typename Func>
+		requires std::is_invocable_v<Func, Type*, const char*>
 	void Set(Func&& _func)
 	{
 		// TODO : Setに渡した関数自体はCommandとして作られないという説明をするようコメントを更新

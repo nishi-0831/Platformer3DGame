@@ -12,7 +12,7 @@ void StageEditScene::Initialize()
 
 	PropertyDisplayRegistry::Instance();
 	PropertyDisplayRegistry::Instance().Initialize();
-	MTImGui::Instance().Initialize();
+	MTImGui::Initialize();
 }
 
 void StageEditScene::Update() {}

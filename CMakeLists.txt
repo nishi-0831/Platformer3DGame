@@ -409,9 +409,9 @@ set(03mtgb__System__Debug__MTImGui__PropertyInspector
     "mtgb/ShowAttributes.h"
     "mtgb/ShowFunc.h"
     "mtgb/ShowType.h"
-    "mtgb/TypeRegistry.cpp"
-    "mtgb/TypeRegistry.h"
-    "mtgb/TypeRegistryImpl.h"
+    "mtgb/PropertyDisplayRegistry.cpp"
+    "mtgb/PropertyDisplayRegistry.h"
+    "mtgb/PropertyDisplayRegistryImpl.h"
 )
 source_group("03mtgb\\System\\Debug\\MTImGui\\PropertyInspector" FILES ${03mtgb__System__Debug__MTImGui__PropertyInspector})
 

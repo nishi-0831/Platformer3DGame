@@ -95,7 +95,7 @@ using InterpolatorMemento = mtgb::ComponentMemento<mtgb::Interpolator, Interpola
 				PropertyDisplayRegistry::Instance().ShowProperty(&_target->endPos_, "endPos_");     \
 			}                                                                                       \
 		);                                                                                          \
-		MTImGui::Instance().RegisterComponentViewer<Interpolator>();                                \
+		MTImGui::RegisterComponentViewer<Interpolator>();                                           \
 	}
 
 #pragma warning(push)

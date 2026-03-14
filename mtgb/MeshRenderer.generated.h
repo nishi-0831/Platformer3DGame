@@ -89,7 +89,7 @@ using MeshRendererMemento = mtgb::ComponentMemento<mtgb::MeshRenderer, MeshRende
 				PropertyDisplayRegistry::Instance().ShowProperty(&_target->shaderType, "shaderType");     \
 			}                                                                                             \
 		);                                                                                                \
-		MTImGui::Instance().RegisterComponentViewer<MeshRenderer>();                                      \
+		MTImGui::RegisterComponentViewer<MeshRenderer>();                                                 \
 	}
 
 #pragma warning(push)

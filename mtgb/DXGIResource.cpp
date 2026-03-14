@@ -74,7 +74,7 @@ void DXGIResource::SetResource()
 
 void mtgb::DXGIResource::Update()
 {
-	MTImGui::Instance().DirectShow(
+	MTImGui::DirectShow(
 		[this]
 		{
 			// モニター(DXGIOutput)の情報

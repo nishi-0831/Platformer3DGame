@@ -150,7 +150,7 @@ void mtgb::SphericalCamera::Update()
 
 	Mathf::SphericalCoord sphericalCoord = CameraCartesianToSpherical(pCameraTransform_->position);
 	// ImGui表示(デバッグ用)
-	MTImGui::Instance().DirectShow(
+	MTImGui::DirectShow(
 		[&, sphericalCoord]()
 		{
 			PropertyDisplayRegistry::Instance().ShowProperty(pCameraTransform_, "Transform");

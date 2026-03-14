@@ -77,7 +77,7 @@ using RigidBodyMemento = mtgb::ComponentMemento<mtgb::RigidBody, RigidBodyState>
 				PropertyDisplayRegistry::Instance().ShowProperty(&_target->isKinematic_, "isKinematic_"); \
 			}                                                                                             \
 		);                                                                                                \
-		MTImGui::Instance().RegisterComponentViewer<RigidBody>();                                         \
+		MTImGui::RegisterComponentViewer<RigidBody>();                                                    \
 	}
 
 #pragma warning(push)

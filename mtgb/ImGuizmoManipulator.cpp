@@ -128,7 +128,7 @@ mtgb::ImGuizmoManipulator::~ImGuizmoManipulator() {}
 
 void mtgb::ImGuizmoManipulator::Initialize()
 {
-	MTImGui::Instance().Register(this);
+	MTImGui::Register(this);
 }
 
 void mtgb::ImGuizmoManipulator::Update()

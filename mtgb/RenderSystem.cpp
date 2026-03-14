@@ -49,13 +49,13 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	imGui.BeginImGuizmoFrame();
 
 	// Inspector表示
-	MTImGui::Instance().ShowWindow(ShowType::INSPECTOR);
+	MTImGui::ShowWindow(ShowType::INSPECTOR);
 
 	// Settings表示
-	MTImGui::Instance().ShowWindow(ShowType::SETTINGS);
-	MTImGui::Instance().ShowWindow(ShowType::EDITOR);
+	MTImGui::ShowWindow(ShowType::SETTINGS);
+	MTImGui::ShowWindow(ShowType::EDITOR);
 	// ログ表示
-	MTImGui::Instance().ShowLog();
+	MTImGui::ShowLog();
 
 	// SceneView表示
 
@@ -66,7 +66,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	Game::System<ImGuiEditorCamera>().SetCamera();
 	DrawGameObjects(_scene, AllLayer());
 
-	MTImGui::Instance().ShowWindow(ShowType::SCENE_VIEW);
+	MTImGui::ShowWindow(ShowType::SCENE_VIEW);
 
 	imGui.EndFrame();
 	// DirectX11Draw::End();

@@ -37,7 +37,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	distance_	= 10.0f;
 	orbitSpeed_ = 1.0f;
 
-	windowName_ = MTImGui::Instance().GetName(ShowType::SCENE_VIEW);
+	windowName_ = MTImGui::GetName(ShowType::SCENE_VIEW);
 
 	// Dolly
 	sCameraOperation_

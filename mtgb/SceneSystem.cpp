@@ -56,7 +56,7 @@ void mtgb::SceneSystem::Update()
 
 	if (InputUtil::GetKeyDown(KeyCode::F1))
 	{
-		MTImGui::Instance().ChangeAllWindowOpen();
+		MTImGui::ChangeAllWindowOpen();
 	}
 
 	if (InputUtil::GetKeyDown(KeyCode::P))
@@ -81,7 +81,7 @@ void mtgb::SceneSystem::Update()
 		}
 		gameObject->Update();
 	}
-	MTImGui::Instance().Update();
+	MTImGui::Update();
 
 	// 描画処理
 	Game::System<RenderSystem>().Render(currentScene);
@@ -101,8 +101,6 @@ void mtgb::SceneSystem::Update()
 		}
 	}
 }
-
-
 
 void mtgb::SceneSystem::ExecutePendingCallbacks()
 {

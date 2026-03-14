@@ -264,7 +264,7 @@ void Player::Start()
 
 void Player::ShowImGui()
 {
-	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	MTImGui::ShowComponents(Entity::entityId_);
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
 }
 

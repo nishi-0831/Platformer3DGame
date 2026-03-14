@@ -29,11 +29,11 @@ namespace
 void mtgb::MTImGui::Initialize()
 {
 	buf.resize(BUF_SIZE);
-	SetupShowFunc();
+	Instance().SetupShowFunc();
 	Game::System<SceneSystem>().OnMove(
 		[]()
 		{
-			auto& showableObjs = MTImGui::Instance().showableObjs_;
+			auto& showableObjs = Instance().showableObjs_;
 			for (auto itr = showableObjs.begin(); itr != showableObjs.end(); itr++)
 			{
 				if ((*itr)->scope_ == ImGuiShowable::Scope::SCENE)
@@ -46,14 +46,14 @@ void mtgb::MTImGui::Initialize()
 
 	// ゲームオブジェクトが選択されたときに、それを表示対象とする
 	Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe(
-		[this](const GameObjectSelectedEvent& _handler)
+		[](const GameObjectSelectedEvent& _handler)
 		{
 			SelectGameObject(_handler.entityId);
 		},
 		EventScope::GLOBAL
 	);
 	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe(
-		[this](const GameObjectCreatedEvent& _event)
+		[](const GameObjectCreatedEvent& _event)
 		{
 			SelectGameObject(_event.entityId);
 		},
@@ -64,9 +64,9 @@ void mtgb::MTImGui::Initialize()
 void mtgb::MTImGui::Update()
 {
 
-	updatingImGuiShowable_ = true;
+	Instance().updatingImGuiShowable_ = true;
 
-	for (ImGuiShowable* obj : showableObjs_)
+	for (ImGuiShowable* obj : Instance().showableObjs_)
 	{
 		DirectShow(
 			[=]()
@@ -82,7 +82,7 @@ void mtgb::MTImGui::Update()
 		);
 	}
 
-	updatingImGuiShowable_ = false;
+	Instance().updatingImGuiShowable_ = false;
 
 	DirectShow(
 		[]()
@@ -103,22 +103,22 @@ void mtgb::MTImGui::Update()
 }
 void mtgb::MTImGui::SetWindowOpen(ShowType _showType, bool _flag)
 {
-	imguiWindowStates_[_showType].isOpen = _flag;
+	Instance().imguiWindowStates_[_showType].isOpen = _flag;
 }
 void mtgb::MTImGui::SetAllWindowOpen(bool _flag)
 {
-	for (auto& windowState : imguiWindowStates_)
+	for (auto& windowState : Instance().imguiWindowStates_)
 	{
 		windowState.second.isOpen = _flag;
 	}
 }
 void mtgb::MTImGui::ChangeWindowOpen(ShowType _showType)
 {
-	imguiWindowStates_[_showType].isOpen = !(imguiWindowStates_[_showType].isOpen);
+	Instance().imguiWindowStates_[_showType].isOpen = !(Instance().imguiWindowStates_[_showType].isOpen);
 }
 void mtgb::MTImGui::ChangeAllWindowOpen()
 {
-	for (auto& windowState : imguiWindowStates_)
+	for (auto& windowState : Instance().imguiWindowStates_)
 	{
 		windowState.second.isOpen = !(windowState.second.isOpen);
 	}
@@ -201,6 +201,11 @@ void mtgb::MTImGui::ShowLog()
 	}
 
 	imGui.End();
+}
+mtgb::MTImGui& mtgb::MTImGui::Instance()
+{
+	static MTImGui instance;
+	return instance;
 }
 mtgb::MTImGui::MTImGui() {}
 mtgb::MTImGui::~MTImGui()
@@ -346,7 +351,7 @@ void mtgb::MTImGui::ShowComponents(EntityId _entityId)
 
 	for (const auto& typeIdx : (*types).get())
 	{
-		componentShowFuncs_[typeIdx](_entityId);
+		Instance().componentShowFuncs_[typeIdx](_entityId);
 	}
 }
 void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
@@ -355,12 +360,12 @@ void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
 	if (selectedEntityId == INVALID_ENTITY)
 		return;
 
-	for (ImGuiShowable* obj : showableObjs_)
+	for (ImGuiShowable* obj : Instance().showableObjs_)
 	{
 		if (selectedEntityId == obj->targetEntityId_)
 		{
-			imguiWindowStates_[ShowType::INSPECTOR].selectedName = obj->displayName_;
-			imguiWindowStates_[ShowType::INSPECTOR].entityId	 = obj->targetEntityId_;
+			Instance().imguiWindowStates_[ShowType::INSPECTOR].selectedName = obj->displayName_;
+			Instance().imguiWindowStates_[ShowType::INSPECTOR].entityId		= obj->targetEntityId_;
 		}
 	}
 }
@@ -395,10 +400,10 @@ void mtgb::MTImGui::DrawLineImpl(const Vector3& _from, const Vector3& _to, float
 void mtgb::MTImGui::ShowWindow(ShowType _showType)
 {
 	ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();
-	auto& state			 = imguiWindowStates_[_showType];
+	auto& state			 = Instance().imguiWindowStates_[_showType];
 	if (!state.isOpen)
 	{
-		auto& queue = showQueues_[_showType];
+		auto& queue = Instance().showQueues_[_showType];
 		while (!queue.empty())
 		{
 			queue.pop();
@@ -425,48 +430,48 @@ void mtgb::MTImGui::ExecuteShowQueue(ShowType _show)
 {
 	if (_show == ShowType::SCENE_VIEW)
 	{
-		while (!sceneViewShowList_.empty())
+		while (Instance().sceneViewShowList_.empty() == false)
 		{
-			sceneViewShowList_.front()();
-			sceneViewShowList_.pop();
+			Instance().sceneViewShowList_.front()();
+			Instance().sceneViewShowList_.pop();
 		}
 	}
 	else
 	{
-		ShowListView(_show);
+		Instance().ShowListView(_show);
 	}
 }
 
 void mtgb::MTImGui::Register(ImGuiShowable* _obj)
 {
-	auto it = std::find(showableObjs_.begin(), showableObjs_.end(), _obj);
-	if (it == showableObjs_.end())
+	auto it = std::find(Instance().showableObjs_.begin(), Instance().showableObjs_.end(), _obj);
+	if (it == Instance().showableObjs_.end())
 	{
-		showableObjs_.push_back(_obj);
+		Instance().showableObjs_.push_back(_obj);
 	}
 }
 
 void mtgb::MTImGui::Unregister(ImGuiShowable* _obj)
 {
-	auto it = std::find(showableObjs_.begin(), showableObjs_.end(), _obj);
-	if (it != showableObjs_.end())
+	auto it = std::find(Instance().showableObjs_.begin(), Instance().showableObjs_.end(), _obj);
+	if (it != Instance().showableObjs_.end())
 	{
-		showableObjs_.erase(it);
+		Instance().showableObjs_.erase(it);
 	}
 }
 
 void mtgb::MTImGui::DrawLine(const Vector3& _from, const Vector3& _to, float _thickness)
 {
-	if (updatingImGuiShowable_)
+	if (Instance().updatingImGuiShowable_)
 	{
-		DrawLineImpl(_from, _to, _thickness);
+		Instance().DrawLineImpl(_from, _to, _thickness);
 	}
 	else
 	{
-		sceneViewShowList_.push(
-			[this, _from, _to, _thickness]()
+		Instance().sceneViewShowList_.push(
+			[_from, _to, _thickness]()
 			{
-				DrawLineImpl(_from, _to, _thickness);
+				Instance().DrawLineImpl(_from, _to, _thickness);
 			}
 		);
 	}
@@ -480,16 +485,16 @@ void mtgb::MTImGui::DrawLine(const Vector3& _from, const Vector3& _to, float _th
 /// <param name="_thickness">レイの太さ</param>
 void mtgb::MTImGui::DrawVec(const Vector3& _start, const Vector3& _vec, float _thickness)
 {
-	if (updatingImGuiShowable_)
+	if (Instance().updatingImGuiShowable_)
 	{
-		DrawRayImpl(_start, _vec, _thickness);
+		Instance().DrawRayImpl(_start, _vec, _thickness);
 	}
 	else
 	{
-		sceneViewShowList_.push(
-			[this, _start, _vec, _thickness]()
+		Instance().sceneViewShowList_.push(
+			[_start, _vec, _thickness]()
 			{
-				DrawRayImpl(_start, _vec, _thickness);
+				Instance().DrawRayImpl(_start, _vec, _thickness);
 			}
 		);
 	}
@@ -550,6 +555,6 @@ void mtgb::MTImGui::DrawCone(
 
 mtgb::EntityId mtgb::MTImGui::GetSelectedEntityId()
 {
-	EntityId id = imguiWindowStates_[ShowType::INSPECTOR].entityId;
+	EntityId id = Instance().imguiWindowStates_[ShowType::INSPECTOR].entityId;
 	return id;
 }

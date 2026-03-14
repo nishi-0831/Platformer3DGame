@@ -105,7 +105,7 @@ void PatrolChargerEnemy::ShowImGui()
 	{
 		ImGui::Text("STATE::RETURN_TO_PATROL");
 	}
-	MTImGui::Instance().ShowComponents(Entity::entityId_);
+	MTImGui::ShowComponents(Entity::entityId_);
 }
 
 void PatrolChargerEnemy::OnStomped(IActor* _pOther)

@@ -99,7 +99,7 @@ using {{ class_name }}Memento = mtgb::ComponentMemento<{{ fully_qualified_name }
 				PropertyDisplayRegistry::Instance().ShowProperty(&_target->{{ member.name }}, "{{ member.name }}"); \
 {{- end }}
 			}); \
-		MTImGui::Instance().RegisterComponentViewer<{{ class_name }}>(); \
+		MTImGui::RegisterComponentViewer<{{ class_name }}>(); \
 	}
 
 #pragma warning(push)
