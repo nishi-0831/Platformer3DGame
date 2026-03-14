@@ -30,13 +30,12 @@ var searchData=
   ['din_5f1_27',['din_1',['../classmux__using__with.html#aaedccad88ca9b207c86a561342fcbaa1',1,'mux_using_with']]],
   ['dir_5f_28',['dir_',['../structInterpolatorState.html#a780b4ae2928ae95868cd5ae1ada24510',1,'InterpolatorState::dir_()'],['../classmtgb_1_1Interpolator.html#a4d071516469c944b2c1b0d10f3b3c670',1,'mtgb::Interpolator::dir_()']]],
   ['directx11draw_29',['DirectX11Draw',['../classmtgb_1_1FbxParts.html#a2821cad5959223883d09220781ece047',1,'mtgb::FbxParts']]],
-  ['displayname_30',['displayName',['../structDisplayName.html#abb0dfae84018b1f41f21c15c9e470ebe',1,'DisplayName']]],
-  ['displayname_5f_31',['displayName_',['../classmtgb_1_1ImGuiShowable.html#a53eca55c2c3901c5713e857417100496',1,'mtgb::ImGuiShowable']]],
-  ['distance_5f_32',['distance_',['../classmtgb_1_1ICamera.html#a653a6ea58d0a0fa68ac1f761ef9cf73a',1,'mtgb::ICamera::distance_()'],['../classmtgb_1_1SphericalCamera.html#a91e9c2ec1c431b5ce5afeede20ecf1bc',1,'mtgb::SphericalCamera::distance_()'],['../classmtgb_1_1QuaternionCamera.html#afe1c3ca5cc39892ce80ce2c34a933bd3',1,'mtgb::QuaternionCamera::distance_()']]],
-  ['disty_5f_33',['distY_',['../classmtgb_1_1SphericalCamera.html#a088fbddfdbe3fe9804e0ae5b9c10b7c0',1,'mtgb::SphericalCamera']]],
-  ['divisions_34',['divisions',['../classmtgb_1_1TerrainReader.html#a630d977f8cb123fe90e5e466f5788fcc',1,'mtgb::TerrainReader']]],
-  ['do_5fprint_35',['do_print',['../namespacestrip__example.html#a9fff99ba5b5564a70fa48b9757ef9885',1,'strip_example']]],
-  ['drawfunction_36',['drawFunction',['../structmtgb_1_1UIDrawCommand.html#a7ce3f15b4ee369a2baf4279927ace22a',1,'mtgb::UIDrawCommand']]],
-  ['drawrect_5f_37',['drawRect_',['../classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331',1,'mtgb::ImageRenderer']]],
-  ['duration_5f_38',['duration_',['../structInterpolatorState.html#a27dcca48dfd149ecb47f8eef6d214d1b',1,'InterpolatorState::duration_()'],['../classmtgb_1_1Interpolator.html#a9f4985e5a9a6f0e8008b39e658b29ee5',1,'mtgb::Interpolator::duration_()'],['../classFadeOutScreen.html#ab85f4cb62675c99c687ba627fe0b8710',1,'FadeOutScreen::duration_()']]]
+  ['displayname_5f_30',['displayName_',['../classmtgb_1_1ImGuiShowable.html#a53eca55c2c3901c5713e857417100496',1,'mtgb::ImGuiShowable']]],
+  ['distance_5f_31',['distance_',['../classmtgb_1_1ICamera.html#a653a6ea58d0a0fa68ac1f761ef9cf73a',1,'mtgb::ICamera::distance_()'],['../classmtgb_1_1SphericalCamera.html#a91e9c2ec1c431b5ce5afeede20ecf1bc',1,'mtgb::SphericalCamera::distance_()'],['../classmtgb_1_1QuaternionCamera.html#afe1c3ca5cc39892ce80ce2c34a933bd3',1,'mtgb::QuaternionCamera::distance_()']]],
+  ['disty_5f_32',['distY_',['../classmtgb_1_1SphericalCamera.html#a088fbddfdbe3fe9804e0ae5b9c10b7c0',1,'mtgb::SphericalCamera']]],
+  ['divisions_33',['divisions',['../classmtgb_1_1TerrainReader.html#a630d977f8cb123fe90e5e466f5788fcc',1,'mtgb::TerrainReader']]],
+  ['do_5fprint_34',['do_print',['../namespacestrip__example.html#a9fff99ba5b5564a70fa48b9757ef9885',1,'strip_example']]],
+  ['drawfunction_35',['drawFunction',['../structmtgb_1_1UIDrawCommand.html#a7ce3f15b4ee369a2baf4279927ace22a',1,'mtgb::UIDrawCommand']]],
+  ['drawrect_5f_36',['drawRect_',['../classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331',1,'mtgb::ImageRenderer']]],
+  ['duration_5f_37',['duration_',['../structInterpolatorState.html#a27dcca48dfd149ecb47f8eef6d214d1b',1,'InterpolatorState::duration_()'],['../classmtgb_1_1Interpolator.html#a9f4985e5a9a6f0e8008b39e658b29ee5',1,'mtgb::Interpolator::duration_()'],['../classFadeOutScreen.html#ab85f4cb62675c99c687ba627fe0b8710',1,'FadeOutScreen::duration_()']]]
 ];

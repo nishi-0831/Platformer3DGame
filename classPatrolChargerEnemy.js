@@ -1,5 +1,9 @@
 var classPatrolChargerEnemy =
 [
+    [ "Scope", "classPatrolChargerEnemy.html#a6c5a5f9b24a3745750e50e1393530c7a", [
+      [ "GLOBAL", "classPatrolChargerEnemy.html#a6c5a5f9b24a3745750e50e1393530c7aa6eecfba72d12922ee1dead07a0ef3334", null ],
+      [ "SCENE", "classPatrolChargerEnemy.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698", null ]
+    ] ],
     [ "STATE", "classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498", [
       [ "PATROL", "classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498a5383e862b017e18e1087d61e9f2684d9", null ],
       [ "CHARGE", "classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498a0405a707a4790a264c10e6cacded18b3", null ],
@@ -71,6 +75,7 @@ var classPatrolChargerEnemy =
     [ "pTargetTransform_", "classPatrolChargerEnemy.html#a785b357cf7f4c03a78ecc829c0a217a5", null ],
     [ "pTransform_", "classPatrolChargerEnemy.html#afd37371f752111fede965aee5e4c3c61", null ],
     [ "returnToPatrolSpeed_", "classPatrolChargerEnemy.html#a919d4fd382b29450dd40fffa5d2a1f18", null ],
+    [ "scope_", "classPatrolChargerEnemy.html#a6cb2da3299bd0517b40f70baaac992ae", null ],
     [ "show_", "classPatrolChargerEnemy.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "state_", "classPatrolChargerEnemy.html#afdc25d4c9be2f93aee277719d0b52106", null ],
     [ "status_", "classPatrolChargerEnemy.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],

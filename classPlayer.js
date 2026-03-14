@@ -1,5 +1,9 @@
 var classPlayer =
 [
+    [ "Scope", "classPlayer.html#a6c5a5f9b24a3745750e50e1393530c7a", [
+      [ "GLOBAL", "classPlayer.html#a6c5a5f9b24a3745750e50e1393530c7aa6eecfba72d12922ee1dead07a0ef3334", null ],
+      [ "SCENE", "classPlayer.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698", null ]
+    ] ],
     [ "STATE", "classPlayer.html#ad93c54e92318d7c7abb43d424154f019", [
       [ "IDLE", "classPlayer.html#ad93c54e92318d7c7abb43d424154f019aa5daf7f2ebbba4975d61dab1c40188c7", null ],
       [ "RUN", "classPlayer.html#ad93c54e92318d7c7abb43d424154f019a855520d2a5b0b1a64b939e7e30889e2a", null ],
@@ -68,6 +72,7 @@ var classPlayer =
     [ "pNewCamera_", "classPlayer.html#afb831c230114ecb8e52bcae5a9378fb4", null ],
     [ "pRigidBody_", "classPlayer.html#ae8d3fd73cec8a39a14b118f21c0a2a7d", null ],
     [ "pTransform_", "classPlayer.html#a8af32a474c38d7640cf4e419a3c20de5", null ],
+    [ "scope_", "classPlayer.html#a6cb2da3299bd0517b40f70baaac992ae", null ],
     [ "show_", "classPlayer.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "state_", "classPlayer.html#a8d086ab892906df0ca3f36dbbb22901e", null ],
     [ "status_", "classPlayer.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],

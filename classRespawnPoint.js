@@ -1,5 +1,9 @@
 var classRespawnPoint =
 [
+    [ "Scope", "classRespawnPoint.html#a6c5a5f9b24a3745750e50e1393530c7a", [
+      [ "GLOBAL", "classRespawnPoint.html#a6c5a5f9b24a3745750e50e1393530c7aa6eecfba72d12922ee1dead07a0ef3334", null ],
+      [ "SCENE", "classRespawnPoint.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698", null ]
+    ] ],
     [ "RespawnPoint", "classRespawnPoint.html#acbe65dea7594cb811d19b11bbcbdd3f5", null ],
     [ "~RespawnPoint", "classRespawnPoint.html#ae86b6d2759a583bf273167f6b061d36f", null ],
     [ "Component", "classRespawnPoint.html#aec1d6bd2a9c2953d360201599fc31d4a", null ],
@@ -41,6 +45,7 @@ var classRespawnPoint =
     [ "pRigidBody_", "classRespawnPoint.html#a8aedd67f148bbd8b315190686dcbe8fc", null ],
     [ "priority_", "classRespawnPoint.html#a3452d25ed64cac6a51a44020da28c0f1", null ],
     [ "pTransform_", "classRespawnPoint.html#ae7d6817998a13ab86f1a8094de2ea2d8", null ],
+    [ "scope_", "classRespawnPoint.html#a6cb2da3299bd0517b40f70baaac992ae", null ],
     [ "show_", "classRespawnPoint.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "status_", "classRespawnPoint.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classRespawnPoint.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],

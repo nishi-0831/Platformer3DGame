@@ -10,5 +10,8 @@ var searchData=
   ['profileutlity_2eh_7',['ProfileUtlity.h',['../ProfileUtlity_8h.html',1,'']]],
   ['propertychangedevent_2ecpp_8',['PropertyChangedEvent.cpp',['../PropertyChangedEvent_8cpp.html',1,'']]],
   ['propertychangedevent_2eh_9',['PropertyChangedEvent.h',['../PropertyChangedEvent_8h.html',1,'']]],
-  ['pyexample_2epy_10',['pyexample.py',['../pyexample_8py.html',1,'']]]
+  ['propertydisplayregistry_2ecpp_10',['PropertyDisplayRegistry.cpp',['../PropertyDisplayRegistry_8cpp.html',1,'']]],
+  ['propertydisplayregistry_2eh_11',['PropertyDisplayRegistry.h',['../PropertyDisplayRegistry_8h.html',1,'']]],
+  ['propertydisplayregistryimpl_2eh_12',['PropertyDisplayRegistryImpl.h',['../PropertyDisplayRegistryImpl_8h.html',1,'']]],
+  ['pyexample_2epy_13',['pyexample.py',['../pyexample_8py.html',1,'']]]
 ];

@@ -246,32 +246,33 @@
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="classmtgb_1_1ImGuiShowable.html" target="_top" xlink:title="継承してShowImGuiをオーバライドして使う これを使わなくてもImGui表示はできるので、別の箇所に分離したいときなどにどうぞ">
-<polygon fill="white" stroke="#666666" points="373,-705 373,-894 541,-894 541,-705 373,-705"/>
-<text text-anchor="middle" x="457" y="-882" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::ImGuiShowable</text>
-<polyline fill="none" stroke="#666666" points="373,-875 541,-875 "/>
-<text text-anchor="start" x="381" y="-863" font-family="Helvetica,sans-Serif" font-size="10.00"># EntityId targetEntityId_</text>
-<text text-anchor="start" x="381" y="-852" font-family="Helvetica,sans-Serif" font-size="10.00"># std::string displayName_</text>
-<text text-anchor="start" x="381" y="-841" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowType show_</text>
-<polyline fill="none" stroke="#666666" points="373,-834 541,-834 "/>
-<text text-anchor="start" x="381" y="-822" font-family="Helvetica,sans-Serif" font-size="10.00">+ ImGuiShowable(EntityId</text>
-<text text-anchor="start" x="381" y="-811" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId=INVALID_ENTITY)</text>
-<text text-anchor="start" x="381" y="-800" font-family="Helvetica,sans-Serif" font-size="10.00">+ ImGuiShowable(ShowType</text>
-<text text-anchor="start" x="381" y="-789" font-family="Helvetica,sans-Serif" font-size="10.00"> _showType, EntityId </text>
-<text text-anchor="start" x="381" y="-778" font-family="Helvetica,sans-Serif" font-size="10.00">_entityId=INVALID_ENTITY)</text>
-<text text-anchor="start" x="381" y="-767" font-family="Helvetica,sans-Serif" font-size="10.00">+ ImGuiShowable(const</text>
-<text text-anchor="start" x="381" y="-756" font-family="Helvetica,sans-Serif" font-size="10.00"> std::string &amp;_name,</text>
-<text text-anchor="start" x="381" y="-745" font-family="Helvetica,sans-Serif" font-size="10.00"> ShowType _showType, EntityId</text>
-<text text-anchor="start" x="381" y="-734" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId=INVALID_ENTITY)</text>
-<text text-anchor="start" x="381" y="-723" font-family="Helvetica,sans-Serif" font-size="10.00">+ virtual ~ImGuiShowable()</text>
-<text text-anchor="start" x="381" y="-712" font-family="Helvetica,sans-Serif" font-size="10.00">+ virtual void ShowImGui()</text>
+<polygon fill="white" stroke="#666666" points="373,-699.5 373,-899.5 541,-899.5 541,-699.5 373,-699.5"/>
+<text text-anchor="middle" x="457" y="-887.5" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::ImGuiShowable</text>
+<polyline fill="none" stroke="#666666" points="373,-880.5 541,-880.5 "/>
+<text text-anchor="start" x="381" y="-868.5" font-family="Helvetica,sans-Serif" font-size="10.00"># EntityId targetEntityId_</text>
+<text text-anchor="start" x="381" y="-857.5" font-family="Helvetica,sans-Serif" font-size="10.00"># std::string displayName_</text>
+<text text-anchor="start" x="381" y="-846.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowType show_</text>
+<text text-anchor="start" x="381" y="-835.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Scope scope_</text>
+<polyline fill="none" stroke="#666666" points="373,-828.5 541,-828.5 "/>
+<text text-anchor="start" x="381" y="-816.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ImGuiShowable(EntityId</text>
+<text text-anchor="start" x="381" y="-805.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
+<text text-anchor="start" x="381" y="-794.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ImGuiShowable(ShowType</text>
+<text text-anchor="start" x="381" y="-783.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _showType, EntityId </text>
+<text text-anchor="start" x="381" y="-772.5" font-family="Helvetica,sans-Serif" font-size="10.00">_entityId)</text>
+<text text-anchor="start" x="381" y="-761.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ImGuiShowable(const</text>
+<text text-anchor="start" x="381" y="-750.5" font-family="Helvetica,sans-Serif" font-size="10.00"> std::string &amp;_name,</text>
+<text text-anchor="start" x="381" y="-739.5" font-family="Helvetica,sans-Serif" font-size="10.00"> ShowType _showType, EntityId</text>
+<text text-anchor="start" x="381" y="-728.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId, Scope _scope)</text>
+<text text-anchor="start" x="381" y="-717.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ virtual ~ImGuiShowable()</text>
+<text text-anchor="start" x="381" y="-706.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ virtual void ShowImGui()</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node1 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#63b8ff" d="M476.54,-694.96C490.75,-635.41 513.78,-560.79 549,-501 593.1,-426.15 661.55,-355.77 717.44,-305.23"/>
-<polygon fill="none" stroke="#63b8ff" points="473.12,-694.23 474.25,-704.76 479.93,-695.82 473.12,-694.23"/>
+<path fill="none" stroke="#63b8ff" d="M477.91,-689.29C492.21,-630.72 514.89,-558.9 549,-501 593.1,-426.15 661.55,-355.77 717.44,-305.23"/>
+<polygon fill="none" stroke="#63b8ff" points="474.43,-688.77 475.51,-699.31 481.24,-690.4 474.43,-688.77"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">

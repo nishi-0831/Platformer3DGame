@@ -156,51 +156,50 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 
 <p class="definition"> <a class="el" href="JsonConverter_8h_source.html">JsonConverter.h</a> の <a class="el" href="JsonConverter_8h_source.html#l00118">118</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  119</span>{</div>
-<div class="line"><span class="lineno">  120</span>    <span class="keyword">using </span>json = nlohmann::json;</div>
-<div class="line"><span class="lineno">  121</span>    <span class="keyword">using </span>Type = std::remove_pointer_t&lt;std::remove_cvref_t&lt;T&gt;&gt;;</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (is_builtin_type_v&lt;Type&gt;)</div>
-<div class="line"><span class="lineno">  124</span>    {</div>
-<div class="line"><span class="lineno">  125</span>        <span class="comment">// 組み込み型</span></div>
-<div class="line"><span class="lineno">  126</span>        _json.get_to(_value);</div>
-<div class="line"><span class="lineno">  127</span>    }</div>
-<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (detail::HasFromJson&lt;Type&gt;)</div>
-<div class="line"><span class="lineno">  129</span>    {</div>
-<div class="line"><span class="lineno">  130</span>        _json.get_to(_value);</div>
-<div class="line"><span class="lineno">  131</span>    }</div>
-<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (refl::is_reflectable&lt;Type&gt;())</div>
-<div class="line"><span class="lineno">  133</span>    {</div>
-<div class="line"><span class="lineno">  134</span>        <span class="keyword">constexpr</span> <span class="keyword">auto</span> type    = refl::reflect&lt;Type&gt;();</div>
-<div class="line"><span class="lineno">  135</span>        <span class="keyword">constexpr</span> <span class="keyword">auto</span> members = type.members;</div>
-<div class="line"><span class="lineno">  136</span>        refl::util::for_each(</div>
-<div class="line"><span class="lineno">  137</span>            members,</div>
-<div class="line"><span class="lineno">  138</span>            [&amp;](<span class="keyword">auto</span> _member)</div>
-<div class="line"><span class="lineno">  139</span>            {</div>
-<div class="line"><span class="lineno">  140</span>                std::string key = _member.name.c_str();</div>
-<div class="line"><span class="lineno">  141</span>                <span class="keywordflow">if</span> (_json.contains(key) == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">  142</span>                    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span>                <span class="keywordflow">if</span> constexpr (refl::is_reflectable&lt;<span class="keyword">decltype</span>(_member(_value))&gt;())</div>
-<div class="line"><span class="lineno">  145</span>                {</div>
-<div class="line"><span class="lineno">  146</span>                    <span class="keyword">auto</span>&amp; memberValue = _member(_value);</div>
-<div class="line"><span class="lineno">  147</span>                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="JsonConverter_8h.html#a04575c976738e1d678529e43d18fb4b6">is_builtin_type_v</a>&lt;<span class="keyword">decltype</span>(memberValue)&gt;)</div>
-<div class="line"><span class="lineno">  148</span>                    {</div>
-<div class="line"><span class="lineno">  149</span>                        _json.at(key).get_to(memberValue);</div>
-<div class="line"><span class="lineno">  150</span>                    }</div>
-<div class="line"><span class="lineno">  151</span>                    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  152</span>                    {</div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>                        <a class="code hl_function" href="namespaceJsonConverter.html#aa29b36af259d0ad83a4f17f5a8ecec6e">Deserialize</a>(memberValue, _json.at(key));</div>
-<div class="line"><span class="lineno">  155</span>                    }</div>
-<div class="line"><span class="lineno">  156</span>                }</div>
-<div class="line"><span class="lineno">  157</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (refl::trait::is_field_v&lt;<span class="keyword">decltype</span>(_member)&gt;)</div>
-<div class="line"><span class="lineno">  158</span>                {</div>
-<div class="line"><span class="lineno">  159</span>                    _json.at(key).get_to(_member(_value));</div>
-<div class="line"><span class="lineno">  160</span>                }</div>
-<div class="line"><span class="lineno">  161</span>            }</div>
-<div class="line"><span class="lineno">  162</span>        );</div>
-<div class="line"><span class="lineno">  163</span>    }</div>
-<div class="line"><span class="lineno">  164</span>}</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keyword">using </span>Type = std::remove_pointer_t&lt;std::remove_cvref_t&lt;T&gt;&gt;;</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (is_builtin_type_v&lt;Type&gt;)</div>
+<div class="line"><span class="lineno">  123</span>    {</div>
+<div class="line"><span class="lineno">  124</span>        <span class="comment">// 組み込み型</span></div>
+<div class="line"><span class="lineno">  125</span>        _json.get_to(_value);</div>
+<div class="line"><span class="lineno">  126</span>    }</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (detail::HasFromJson&lt;Type&gt;)</div>
+<div class="line"><span class="lineno">  128</span>    {</div>
+<div class="line"><span class="lineno">  129</span>        _json.get_to(_value);</div>
+<div class="line"><span class="lineno">  130</span>    }</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (refl::is_reflectable&lt;Type&gt;())</div>
+<div class="line"><span class="lineno">  132</span>    {</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keyword">constexpr</span> <span class="keyword">auto</span> type    = refl::reflect&lt;Type&gt;();</div>
+<div class="line"><span class="lineno">  134</span>        <span class="keyword">constexpr</span> <span class="keyword">auto</span> members = type.members;</div>
+<div class="line"><span class="lineno">  135</span>        refl::util::for_each(</div>
+<div class="line"><span class="lineno">  136</span>            members,</div>
+<div class="line"><span class="lineno">  137</span>            [&amp;](<span class="keyword">auto</span> _member)</div>
+<div class="line"><span class="lineno">  138</span>            {</div>
+<div class="line"><span class="lineno">  139</span>                std::string key = _member.name.c_str();</div>
+<div class="line"><span class="lineno">  140</span>                <span class="keywordflow">if</span> (_json.contains(key) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  141</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>                <span class="keywordflow">if</span> constexpr (refl::is_reflectable&lt;<span class="keyword">decltype</span>(_member(_value))&gt;())</div>
+<div class="line"><span class="lineno">  144</span>                {</div>
+<div class="line"><span class="lineno">  145</span>                    <span class="keyword">auto</span>&amp; memberValue = _member(_value);</div>
+<div class="line"><span class="lineno">  146</span>                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="JsonConverter_8h.html#a04575c976738e1d678529e43d18fb4b6">is_builtin_type_v</a>&lt;<span class="keyword">decltype</span>(memberValue)&gt;)</div>
+<div class="line"><span class="lineno">  147</span>                    {</div>
+<div class="line"><span class="lineno">  148</span>                        _json.at(key).get_to(memberValue);</div>
+<div class="line"><span class="lineno">  149</span>                    }</div>
+<div class="line"><span class="lineno">  150</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  151</span>                    {</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>                        <a class="code hl_function" href="namespaceJsonConverter.html#aa29b36af259d0ad83a4f17f5a8ecec6e">Deserialize</a>(memberValue, _json.at(key));</div>
+<div class="line"><span class="lineno">  154</span>                    }</div>
+<div class="line"><span class="lineno">  155</span>                }</div>
+<div class="line"><span class="lineno">  156</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (refl::trait::is_field_v&lt;<span class="keyword">decltype</span>(_member)&gt;)</div>
+<div class="line"><span class="lineno">  157</span>                {</div>
+<div class="line"><span class="lineno">  158</span>                    _json.at(key).get_to(_member(_value));</div>
+<div class="line"><span class="lineno">  159</span>                }</div>
+<div class="line"><span class="lineno">  160</span>            }</div>
+<div class="line"><span class="lineno">  161</span>        );</div>
+<div class="line"><span class="lineno">  162</span>    }</div>
+<div class="line"><span class="lineno">  163</span>}</div>
 <div class="ttc" id="aJsonConverter_8h_html_a04575c976738e1d678529e43d18fb4b6"><div class="ttname"><a href="JsonConverter_8h.html#a04575c976738e1d678529e43d18fb4b6">is_builtin_type_v</a></div><div class="ttdeci">constexpr bool is_builtin_type_v</div><div class="ttdef"><b>Definition:</b> <a href="JsonConverter_8h_source.html#l00010">JsonConverter.h:10</a></div></div>
 <div class="ttc" id="anamespaceJsonConverter_html_aa29b36af259d0ad83a4f17f5a8ecec6e"><div class="ttname"><a href="namespaceJsonConverter.html#aa29b36af259d0ad83a4f17f5a8ecec6e">JsonConverter::Deserialize</a></div><div class="ttdeci">void Deserialize(T &amp;_value, const nlohmann::json &amp;_json)</div><div class="ttdef"><b>Definition:</b> <a href="JsonConverter_8h_source.html#l00118">JsonConverter.h:118</a></div></div>
 </div><!-- fragment -->
@@ -256,13 +255,13 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="JsonConverter_8h_source.html">JsonConverter.h</a> の <a class="el" href="JsonConverter_8h_source.html#l00166">166</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  167</span>{</div>
-<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">if</span> (_json.contains(_key))</div>
-<div class="line"><span class="lineno">  169</span>    {</div>
-<div class="line"><span class="lineno">  170</span>        <a class="code hl_function" href="namespaceJsonConverter.html#aa29b36af259d0ad83a4f17f5a8ecec6e">Deserialize</a>(_value, _json.at(_key));</div>
-<div class="line"><span class="lineno">  171</span>    }</div>
-<div class="line"><span class="lineno">  172</span>}</div>
+<p class="definition"> <a class="el" href="JsonConverter_8h_source.html">JsonConverter.h</a> の <a class="el" href="JsonConverter_8h_source.html#l00165">165</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  166</span>{</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">if</span> (_json.contains(_key))</div>
+<div class="line"><span class="lineno">  168</span>    {</div>
+<div class="line"><span class="lineno">  169</span>        <a class="code hl_function" href="namespaceJsonConverter.html#aa29b36af259d0ad83a4f17f5a8ecec6e">Deserialize</a>(_value, _json.at(_key));</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
+<div class="line"><span class="lineno">  171</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="JsonConverter_8h_source.html#l00118">Deserialize()</a>.</p>
 <div class="dynheader">

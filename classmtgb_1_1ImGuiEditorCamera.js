@@ -1,5 +1,9 @@
 var classmtgb_1_1ImGuiEditorCamera =
 [
+    [ "Scope", "classmtgb_1_1ImGuiEditorCamera.html#a6c5a5f9b24a3745750e50e1393530c7a", [
+      [ "GLOBAL", "classmtgb_1_1ImGuiEditorCamera.html#a6c5a5f9b24a3745750e50e1393530c7aa6eecfba72d12922ee1dead07a0ef3334", null ],
+      [ "SCENE", "classmtgb_1_1ImGuiEditorCamera.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698", null ]
+    ] ],
     [ "ImGuiEditorCamera", "classmtgb_1_1ImGuiEditorCamera.html#ae593d5e8b81e1fe8d6efc3ddb8ecb9a2", null ],
     [ "~ImGuiEditorCamera", "classmtgb_1_1ImGuiEditorCamera.html#abeef7249545743f01f641fcf1216ac79", null ],
     [ "CreateCamera", "classmtgb_1_1ImGuiEditorCamera.html#a10d58d2fe183f3d12a7274bfcb01c9aa", null ],
@@ -35,6 +39,7 @@ var classmtgb_1_1ImGuiEditorCamera =
     [ "pTargetTransform_", "classmtgb_1_1ImGuiEditorCamera.html#ab15b752a01d7d6cc7d0af20e57ad8cf0", null ],
     [ "rotateSensitivity_", "classmtgb_1_1ImGuiEditorCamera.html#a4cc558e81c1cc2334baf16f529a78b8e", null ],
     [ "sCameraOperation_", "classmtgb_1_1ImGuiEditorCamera.html#a95de1629b5d552bd0f2930961676bee6", null ],
+    [ "scope_", "classmtgb_1_1ImGuiEditorCamera.html#a6cb2da3299bd0517b40f70baaac992ae", null ],
     [ "show_", "classmtgb_1_1ImGuiEditorCamera.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "targetEntityId_", "classmtgb_1_1ImGuiEditorCamera.html#a04e42ed23c57183524dc34a01aa2a138", null ],
     [ "windowName_", "classmtgb_1_1ImGuiEditorCamera.html#ae47540e8207e26b9f72a6d3c471b60d0", null ]

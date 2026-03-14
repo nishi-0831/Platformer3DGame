@@ -16,7 +16,7 @@ var classmtgb_1_1MTImGui =
     [ "GetName", "classmtgb_1_1MTImGui.html#abbaf598c1d8788179eedebb776f1e494", null ],
     [ "GetSelectedEntityId", "classmtgb_1_1MTImGui.html#abd864abb308f33ed4f1a9a04c18450cf", null ],
     [ "Initialize", "classmtgb_1_1MTImGui.html#a9d99d144b1fc6bbaacf6044db9ef8eba", null ],
-    [ "Instance", "classmtgb_1_1MTImGui.html#a42f348d0cd5bb7d3b7d2428543df1749", null ],
+    [ "Instance", "classmtgb_1_1MTImGui.html#ab60c71a9e09571b2115bc86789b1282c", null ],
     [ "Register", "classmtgb_1_1MTImGui.html#a75eecfae4bb42029b2fb21ac621af7c1", null ],
     [ "RegisterComponentViewer", "classmtgb_1_1MTImGui.html#af5b5a6853c9d8c4fcf0b7c6c3d2233f2", null ],
     [ "SelectGameObject", "classmtgb_1_1MTImGui.html#a2afdafecc58adb6a1b5b428cba6b3120", null ],

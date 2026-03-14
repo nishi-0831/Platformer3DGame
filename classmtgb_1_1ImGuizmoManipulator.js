@@ -1,5 +1,9 @@
 var classmtgb_1_1ImGuizmoManipulator =
 [
+    [ "Scope", "classmtgb_1_1ImGuizmoManipulator.html#a6c5a5f9b24a3745750e50e1393530c7a", [
+      [ "GLOBAL", "classmtgb_1_1ImGuizmoManipulator.html#a6c5a5f9b24a3745750e50e1393530c7aa6eecfba72d12922ee1dead07a0ef3334", null ],
+      [ "SCENE", "classmtgb_1_1ImGuizmoManipulator.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698", null ]
+    ] ],
     [ "ImGuizmoManipulator", "classmtgb_1_1ImGuizmoManipulator.html#a9aaaf0ab3da54673ef7e47b583f6ba9b", null ],
     [ "~ImGuizmoManipulator", "classmtgb_1_1ImGuizmoManipulator.html#a2ffb69b22a94ab6c30e87e7843a963b8", null ],
     [ "Calculate", "classmtgb_1_1ImGuizmoManipulator.html#a57fa1b87897a2364f93e4e1d2af2195e", null ],
@@ -24,6 +28,7 @@ var classmtgb_1_1ImGuizmoManipulator =
     [ "projMatrix4x4_", "classmtgb_1_1ImGuizmoManipulator.html#a8f194de1a4e43e6066273eab1ed53127", null ],
     [ "pTargetPrevTransformMemento_", "classmtgb_1_1ImGuizmoManipulator.html#aa50bcc2b8f6013c4e955ba355c5449f8", null ],
     [ "pTargetTransform_", "classmtgb_1_1ImGuizmoManipulator.html#a1feeed5bea3d1a88831718bbade8e368", null ],
+    [ "scope_", "classmtgb_1_1ImGuizmoManipulator.html#a6cb2da3299bd0517b40f70baaac992ae", null ],
     [ "show_", "classmtgb_1_1ImGuizmoManipulator.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "targetEntityId_", "classmtgb_1_1ImGuizmoManipulator.html#a04e42ed23c57183524dc34a01aa2a138", null ],
     [ "viewMat_", "classmtgb_1_1ImGuizmoManipulator.html#a1d7f620562ed2dc566fe7e4a82513ed7", null ],

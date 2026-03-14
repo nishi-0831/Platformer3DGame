@@ -1,5 +1,9 @@
 var classmtgb_1_1SkySphere =
 [
+    [ "Scope", "classmtgb_1_1SkySphere.html#a6c5a5f9b24a3745750e50e1393530c7a", [
+      [ "GLOBAL", "classmtgb_1_1SkySphere.html#a6c5a5f9b24a3745750e50e1393530c7aa6eecfba72d12922ee1dead07a0ef3334", null ],
+      [ "SCENE", "classmtgb_1_1SkySphere.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698", null ]
+    ] ],
     [ "SkySphere", "classmtgb_1_1SkySphere.html#a2f95f53aa440ec60bf5fe9b8e2884fa6", null ],
     [ "~SkySphere", "classmtgb_1_1SkySphere.html#af1ae4c4fb9b78bc3b4d5611e9a058dbc", null ],
     [ "Component", "classmtgb_1_1SkySphere.html#aec1d6bd2a9c2953d360201599fc31d4a", null ],
@@ -38,6 +42,7 @@ var classmtgb_1_1SkySphere =
     [ "pMeshRenderer_", "classmtgb_1_1SkySphere.html#af14b6d8e4bddc1f96fc68aa16ffbddf5", null ],
     [ "pTransform_", "classmtgb_1_1SkySphere.html#adb6c34a4c8510d61f650135ad14bc7e7", null ],
     [ "rotateAngleSec_", "classmtgb_1_1SkySphere.html#a42a8209bbf948d2f1ea1f7769f75ab97", null ],
+    [ "scope_", "classmtgb_1_1SkySphere.html#a6cb2da3299bd0517b40f70baaac992ae", null ],
     [ "show_", "classmtgb_1_1SkySphere.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "sphereScale_", "classmtgb_1_1SkySphere.html#a28985909fdbfc44aa7dea8d7ad0f6ffd", null ],
     [ "status_", "classmtgb_1_1SkySphere.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],

@@ -25,8 +25,5 @@ var searchData=
   ['transform_2egenerated_2eh_22',['Transform.generated.h',['../Transform_8generated_8h.html',1,'']]],
   ['transform_2eh_23',['Transform.h',['../Transform_8h.html',1,'']]],
   ['transformcp_2ecpp_24',['TransformCP.cpp',['../TransformCP_8cpp.html',1,'']]],
-  ['transformcp_2eh_25',['TransformCP.h',['../TransformCP_8h.html',1,'']]],
-  ['typeregistry_2ecpp_26',['TypeRegistry.cpp',['../TypeRegistry_8cpp.html',1,'']]],
-  ['typeregistry_2eh_27',['TypeRegistry.h',['../TypeRegistry_8h.html',1,'']]],
-  ['typeregistryimpl_2eh_28',['TypeRegistryImpl.h',['../TypeRegistryImpl_8h.html',1,'']]]
+  ['transformcp_2eh_25',['TransformCP.h',['../TransformCP_8h.html',1,'']]]
 ];

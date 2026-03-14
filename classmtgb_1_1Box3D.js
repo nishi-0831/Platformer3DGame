@@ -1,5 +1,9 @@
 var classmtgb_1_1Box3D =
 [
+    [ "Scope", "classmtgb_1_1Box3D.html#a6c5a5f9b24a3745750e50e1393530c7a", [
+      [ "GLOBAL", "classmtgb_1_1Box3D.html#a6c5a5f9b24a3745750e50e1393530c7aa6eecfba72d12922ee1dead07a0ef3334", null ],
+      [ "SCENE", "classmtgb_1_1Box3D.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698", null ]
+    ] ],
     [ "Box3D", "classmtgb_1_1Box3D.html#a0d73b760d88adeba97539f1d94eacb20", null ],
     [ "~Box3D", "classmtgb_1_1Box3D.html#a0a175dbe66a9e2caeeb34bac08c4dcde", null ],
     [ "Component", "classmtgb_1_1Box3D.html#aec1d6bd2a9c2953d360201599fc31d4a", null ],
@@ -39,6 +43,7 @@ var classmtgb_1_1Box3D =
     [ "pCollider_", "classmtgb_1_1Box3D.html#abca6052f524a8d77c2ca00236de45d46", null ],
     [ "pMeshRenderer_", "classmtgb_1_1Box3D.html#a632a5f431dece5925682ea635866c338", null ],
     [ "pTransform_", "classmtgb_1_1Box3D.html#aacf40a576e1af3cd9be550d772cbbf08", null ],
+    [ "scope_", "classmtgb_1_1Box3D.html#a6cb2da3299bd0517b40f70baaac992ae", null ],
     [ "show_", "classmtgb_1_1Box3D.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "status_", "classmtgb_1_1Box3D.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classmtgb_1_1Box3D.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],

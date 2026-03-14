@@ -308,10 +308,6 @@ var hierarchy =
     [ "mtgb::layout_box_size_order", "structmtgb_1_1layout__box__size__order.html", null ],
     [ "mtgb::LogEntry", "structmtgb_1_1LogEntry.html", null ],
     [ "mtgb::FbxParts::Material", "structmtgb_1_1FbxParts_1_1Material.html", null ],
-    [ "refl::attr::usage::member", null, [
-      [ "Range< T >", "structRange.html", null ],
-      [ "ReadOnly< T >", "structReadOnly.html", null ]
-    ] ],
     [ "Memgrp_Test", "classMemgrp__Test.html", null ],
     [ "mtbin::MemoryStream", "classmtbin_1_1MemoryStream.html", null ],
     [ "MeshRendererState", "structMeshRendererState.html", null ],
@@ -376,9 +372,7 @@ var hierarchy =
     [ "mtgb::TransparentStringEq", "structmtgb_1_1TransparentStringEq.html", null ],
     [ "mtgb::TransparentStringHash", "structmtgb_1_1TransparentStringHash.html", null ],
     [ "refl::attr::usage::type", null, [
-      [ "DisplayName", "structDisplayName.html", null ],
       [ "MatrixShow", "structMatrixShow.html", null ],
-      [ "ProxyFor< T >", "structProxyFor.html", null ],
       [ "QuaternionShow", "structQuaternionShow.html", null ],
       [ "ShowFunc< Func >", "structShowFunc.html", null ],
       [ "Vector3Show", "structVector3Show.html", null ],

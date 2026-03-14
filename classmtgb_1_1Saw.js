@@ -1,5 +1,9 @@
 var classmtgb_1_1Saw =
 [
+    [ "Scope", "classmtgb_1_1Saw.html#a6c5a5f9b24a3745750e50e1393530c7a", [
+      [ "GLOBAL", "classmtgb_1_1Saw.html#a6c5a5f9b24a3745750e50e1393530c7aa6eecfba72d12922ee1dead07a0ef3334", null ],
+      [ "SCENE", "classmtgb_1_1Saw.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698", null ]
+    ] ],
     [ "Saw", "classmtgb_1_1Saw.html#af5725c4d787f792f1bf140f95dcd5d0f", null ],
     [ "~Saw", "classmtgb_1_1Saw.html#aee8eaf94e74ffdfba6763b035a3d059f", null ],
     [ "Component", "classmtgb_1_1Saw.html#aec1d6bd2a9c2953d360201599fc31d4a", null ],
@@ -46,6 +50,7 @@ var classmtgb_1_1Saw =
     [ "pTransform_", "classmtgb_1_1Saw.html#afed5c29dfebb91029f53bf1bfe96b704", null ],
     [ "radius_", "classmtgb_1_1Saw.html#a5b8c0b4d0b92be4817dfca08672128e1", null ],
     [ "rotateAngleSec_", "classmtgb_1_1Saw.html#a693791e517abc5e395b73e0f9ac8174a", null ],
+    [ "scope_", "classmtgb_1_1Saw.html#a6cb2da3299bd0517b40f70baaac992ae", null ],
     [ "show_", "classmtgb_1_1Saw.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "status_", "classmtgb_1_1Saw.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classmtgb_1_1Saw.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],

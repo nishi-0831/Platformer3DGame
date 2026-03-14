@@ -1,5 +1,9 @@
 var classRespawnManager =
 [
+    [ "Scope", "classRespawnManager.html#a6c5a5f9b24a3745750e50e1393530c7a", [
+      [ "GLOBAL", "classRespawnManager.html#a6c5a5f9b24a3745750e50e1393530c7aa6eecfba72d12922ee1dead07a0ef3334", null ],
+      [ "SCENE", "classRespawnManager.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698", null ]
+    ] ],
     [ "RespawnManager", "classRespawnManager.html#a0a596661cc1e8d169f9cd777b589b33f", null ],
     [ "~RespawnManager", "classRespawnManager.html#ad0ccc22640fb996f133b857d0db5075f", null ],
     [ "Component", "classRespawnManager.html#aec1d6bd2a9c2953d360201599fc31d4a", null ],
@@ -38,6 +42,7 @@ var classRespawnManager =
     [ "layerFlag_", "classRespawnManager.html#af889133148e81bfcd2341b8573e5abc6", null ],
     [ "name_", "classRespawnManager.html#ac4f79d210ae0d1388e203d1d1b93ae6c", null ],
     [ "playerEntityId_", "classRespawnManager.html#a4ceb9fa47d166357c5c64d4e69a104df", null ],
+    [ "scope_", "classRespawnManager.html#a6cb2da3299bd0517b40f70baaac992ae", null ],
     [ "show_", "classRespawnManager.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "status_", "classRespawnManager.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classRespawnManager.html#a1b20d5f0ca02075a66c6913af78c48c6", null ],

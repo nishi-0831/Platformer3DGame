@@ -123,7 +123,7 @@ Vector4Show 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="ShowAttributes_8h_source.html">ShowAttributes.h</a> の <a class="el" href="ShowAttributes_8h_source.html#l00021">21</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="ShowAttributes_8h_source.html">ShowAttributes.h</a> の <a class="el" href="ShowAttributes_8h_source.html#l00017">17</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="a2239a9d0fac86052952c281989298647" name="a2239a9d0fac86052952c281989298647"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2239a9d0fac86052952c281989298647">&#9670;&#160;</a></span>operator()()</h2>
@@ -151,23 +151,23 @@ Vector4Show 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ShowAttributes_8cpp_source.html">ShowAttributes.cpp</a> の <a class="el" href="ShowAttributes_8cpp_source.html#l00030">30</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
-<div class="line"><span class="lineno">   32</span>    DirectX::XMVECTOR old = *_vec;</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>    DirectX::XMFLOAT4 tmp;</div>
-<div class="line"><span class="lineno">   35</span>    DirectX::XMStoreFloat4(&amp;tmp, *_vec);</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordtype">bool</span> changed = ImGui::InputFloat4(_name, &amp;tmp.x, <span class="stringliteral">&quot;%.3f&quot;</span>, 0);</div>
+<p class="definition"> <a class="el" href="ShowAttributes_8cpp_source.html">ShowAttributes.cpp</a> の <a class="el" href="ShowAttributes_8cpp_source.html#l00034">34</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
+<div class="line"><span class="lineno">   36</span>    DirectX::XMVECTOR old = *_vec;</div>
 <div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (changed)</div>
-<div class="line"><span class="lineno">   39</span>    {</div>
-<div class="line"><span class="lineno">   40</span>        <span class="comment">// 変化があれば再度 XMVECTOR に読み込んで格納</span></div>
-<div class="line"><span class="lineno">   41</span>        *_vec = DirectX::XMLoadFloat4(&amp;tmp);</div>
-<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1ImGuiInputCommand.html">mtgb::ImGuiInputCommand&lt;DirectX::XMVECTOR&gt;</a>(_vec, old, *_vec, _name);</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   46</span>}</div>
+<div class="line"><span class="lineno">   38</span>    DirectX::XMFLOAT4 tmp;</div>
+<div class="line"><span class="lineno">   39</span>    DirectX::XMStoreFloat4(&amp;tmp, *_vec);</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">bool</span> changed = ImGui::InputFloat4(_name, &amp;tmp.x, <span class="stringliteral">&quot;%.3f&quot;</span>, 0);</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> (changed)</div>
+<div class="line"><span class="lineno">   43</span>    {</div>
+<div class="line"><span class="lineno">   44</span>        <span class="comment">// 変化があれば再度 XMVECTOR に読み込んで格納</span></div>
+<div class="line"><span class="lineno">   45</span>        *_vec = DirectX::XMLoadFloat4(&amp;tmp);</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1ImGuiInputCommand.html">mtgb::ImGuiInputCommand&lt;DirectX::XMVECTOR&gt;</a>(_vec, old, *_vec, _name);</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   50</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiInputCommand_html"><div class="ttname"><a href="classmtgb_1_1ImGuiInputCommand.html">mtgb::ImGuiInputCommand</a></div><div class="ttdef"><b>Definition:</b> <a href="ImGuiInputCommand_8h_source.html#l00008">ImGuiInputCommand.h:9</a></div></div>
 </div><!-- fragment -->
 </div>

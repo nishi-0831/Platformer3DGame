@@ -1,5 +1,9 @@
 var classmtgb_1_1ImGuiEditor =
 [
+    [ "Scope", "classmtgb_1_1ImGuiEditor.html#a6c5a5f9b24a3745750e50e1393530c7a", [
+      [ "GLOBAL", "classmtgb_1_1ImGuiEditor.html#a6c5a5f9b24a3745750e50e1393530c7aa6eecfba72d12922ee1dead07a0ef3334", null ],
+      [ "SCENE", "classmtgb_1_1ImGuiEditor.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698", null ]
+    ] ],
     [ "ImGuiEditor", "classmtgb_1_1ImGuiEditor.html#a9ae66a9f1e3177a1998d59d45588c03b", null ],
     [ "~ImGuiEditor", "classmtgb_1_1ImGuiEditor.html#a175e94a52582414db85f4032a1e9c59e", null ],
     [ "AddComponent", "classmtgb_1_1ImGuiEditor.html#a8ba991cbd39a23f178c43c2390572cd0", null ],
@@ -15,6 +19,7 @@ var classmtgb_1_1ImGuiEditor =
     [ "defMementos_", "classmtgb_1_1ImGuiEditor.html#a95453cc3a8bedbad66fee787de86fa87", null ],
     [ "displayName_", "classmtgb_1_1ImGuiEditor.html#a53eca55c2c3901c5713e857417100496", null ],
     [ "pManipulator_", "classmtgb_1_1ImGuiEditor.html#a61eb96ea761c9c2d2e1ed91aeca08305", null ],
+    [ "scope_", "classmtgb_1_1ImGuiEditor.html#a6cb2da3299bd0517b40f70baaac992ae", null ],
     [ "show_", "classmtgb_1_1ImGuiEditor.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4", null ],
     [ "targetEntityId_", "classmtgb_1_1ImGuiEditor.html#a04e42ed23c57183524dc34a01aa2a138", null ]
 ];

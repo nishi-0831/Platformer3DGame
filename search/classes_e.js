@@ -12,6 +12,5 @@ var searchData=
   ['profileint_9',['ProfileInt',['../structmtgb_1_1ProfileInt.html',1,'mtgb']]],
   ['propertychangecommand_10',['PropertyChangeCommand',['../classmtgb_1_1PropertyChangeCommand.html',1,'mtgb']]],
   ['propertydisplayregistry_11',['PropertyDisplayRegistry',['../classPropertyDisplayRegistry.html',1,'']]],
-  ['proxyfor_12',['ProxyFor',['../structProxyFor.html',1,'']]],
-  ['pyclass_13',['PyClass',['../classdocstring_1_1PyClass.html',1,'docstring.PyClass'],['../classpyexample_1_1PyClass.html',1,'pyexample.PyClass']]]
+  ['pyclass_12',['PyClass',['../classdocstring_1_1PyClass.html',1,'docstring.PyClass'],['../classpyexample_1_1PyClass.html',1,'pyexample.PyClass']]]
 ];
