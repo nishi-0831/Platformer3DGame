@@ -6,7 +6,7 @@
 #include "../Source/ScoreViewer.h"
 #include "../Source/ResultScene.h"
 #include "../Source/SkySphere.h"
-#include "../Source/MovingFloor.h"
+
 #include "../Source/GameOverManager.h"
 #include "../Source/RespawnManager.h"
 
@@ -19,22 +19,22 @@ SampleScene::~SampleScene() {}
 
 void SampleScene::Initialize()
 {
-	Game::System<ImGuiEditorCamera>().CreateCamera();
+	mtgb::Game::System<ImGuiEditorCamera>().CreateCamera();
 
 	PropertyDisplayRegistry::Instance();
 	PropertyDisplayRegistry::Instance().Initialize();
-	MTImGui::Instance().Initialize();
+	mtgb::MTImGui::Instance().Initialize();
 
 	Instantiate<GameOverManager>();
-	Instantiate<SkySphere>();
+	Instantiate<mtgb::SkySphere>();
 	Instantiate<RespawnManager>();
-	std::optional<nlohmann::json> json = Game::System<StageManger>().GetStageJson(stageID_);
+	std::optional<nlohmann::json> json = mtgb::Game::System<StageManger>().GetStageJson(stageID_);
 	if (json.has_value())
 	{
-		GameObjectGenerator::GenerateFromJson(json);
+		mtgb::GameObjectGenerator::GenerateFromJson(json);
 		// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる
 		// TODO: マジックナンバーを修正
-		Time::WaitFrame(2);
+		mtgb::Time::WaitFrame(2);
 	}
 	else
 	{
@@ -44,9 +44,9 @@ void SampleScene::Initialize()
 
 void SampleScene::Update()
 {
-	if (InputUtil::GetKeyDown(KeyCode::ESCAPE))
+	if (mtgb::InputUtil::GetKeyDown(KeyCode::ESCAPE))
 	{
-		Game::Exit();
+		mtgb::Game::System<SceneSystem>().Move<ResultScene>();
 	}
 }
 

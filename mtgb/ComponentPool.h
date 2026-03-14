@@ -29,7 +29,7 @@ namespace mtgb
 		ComponentPool();
 		virtual ~ComponentPool();
 
-		void Initialize() override;
+		void Initialize() override final;
 		virtual void Start() {};
 		virtual void Update() override {}
 

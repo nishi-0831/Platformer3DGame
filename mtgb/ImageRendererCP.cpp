@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "ImageRendererCP.h"
 
-void mtgb::ImageRendererCP::Initialize() {}
-
 void mtgb::ImageRendererCP::Update() {}
 
 void mtgb::ImageRendererCP::RenderAll() const

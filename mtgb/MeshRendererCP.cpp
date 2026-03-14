@@ -1,5 +1,4 @@
 #include "MeshRendererCP.h"
-void mtgb::MeshRendererCP::Initialize() {}
 
 void mtgb::MeshRendererCP::Update() {}
 

@@ -12,7 +12,6 @@ namespace mtgb
 	class ImageRendererCP : public IRenderableCP, public ComponentPool<ImageRenderer, ImageRendererCP>
 	{
 	  public:
-		void Initialize();
 		void Update() override;
 		void RenderAll() const override;
 		void RenderLayer(GameObjectLayerFlag _layerFlag) const override;

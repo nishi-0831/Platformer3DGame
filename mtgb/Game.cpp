@@ -56,7 +56,7 @@ mtgb::IComponentPool* mtgb::Game::GetCP(std::type_index _typeIndex)
 
 void mtgb::Game::RemoveEntityAllComponent(EntityId _entityId)
 {
-	for (auto&& cpSystem : pInstance_->pComponentPools_)
+	for (IComponentPool* cpSystem : pInstance_->pComponentPools_)
 	{
 		cpSystem->Remove(_entityId);
 	}
