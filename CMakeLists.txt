@@ -19,6 +19,10 @@ if(NOT ("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64"
     message(FATAL_ERROR "${CMAKE_VS_PLATFORM_NAME} arch is not supported!")
 endif()
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_VS_PLATFORM_NAME})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_VS_PLATFORM_NAME}/Debug)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_VS_PLATFORM_NAME}/Release)
+
 ################################################################################
 # Global configuration types
 ################################################################################
@@ -63,14 +67,6 @@ if(MSVC)
     set(CMAKE_STATIC_LINKER_FLAGS_RELEASE "${CMAKE_STATIC_LINKER_FLAGS}")
 endif()
 
-################################################################################
-# Nuget packages function stub.
-################################################################################
-function(use_package TARGET PACKAGE VERSION)
-message(WARNING "No implementation of use_package. Create yours. "
-                    "Package \"${PACKAGE}\" with version \"${VERSION}\" "
-                    "for target \"${TARGET}\" is ignored!")
-endfunction()
 
 ################################################################################
 # Common utils
@@ -1025,6 +1021,19 @@ set(GENERATE_SOURCE_CODE_COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools
     COMMAND ${GENERATE_SOURCE_CODE_COMMAND} --force
     USES_TERMINAL
  )
+
+ if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+     set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG})
+elseif("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
+     set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE})
+endif()
+
+ add_custom_target(synchronize_assets
+    COMMAND powershell -NoProfile -ExecutionPolicy Bypass -File "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/CopyAssets.ps1>"
+            -AssetsDirectory "${CMAKE_CURRENT_SOURCE_DIR}" -OutputDirectory "${OUTPUT_DIRECTORY}"
+    USES_TERMINAL
+ )
+ add_dependencies(${PROJECT_NAME} synchronize_assets)
 
  include("${CMAKE_CURRENT_SOURCE_DIR}/CMake/RunClangTidy.cmake")
  include("${CMAKE_CURRENT_SOURCE_DIR}/CMake/GeneratePch.cmake")
