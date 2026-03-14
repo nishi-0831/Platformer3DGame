@@ -5,7 +5,6 @@
 #include "IncludingInput.h"
 #include "JoystickProxy.h"
 #include "MTImGui.h"
-#include "Debug.h"
 using namespace mtgb;
 
 mtgb::InputResource::InputResource(WindowContext _windowContext)
@@ -66,15 +65,8 @@ mtgb::InputResource::InputResource(WindowContext _windowContext)
 	Game::System<Input>().EnumJoystick();
 }
 
-mtgb::InputResource::~InputResource()
-{
-	Release();
-}
-
 void mtgb::InputResource::Update()
 {
-	Input& input = Game::System<Input>();
-
 	pJoystickProxy_->UpdateFromInput(assignedJoystickGuid_);
 	pJoystickProxy_->UpdateInputData(pInputData_->joyStateCurrent_);
 

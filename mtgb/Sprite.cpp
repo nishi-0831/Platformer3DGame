@@ -12,7 +12,7 @@ mtgb::Sprite::~Sprite() {}
 void mtgb::Sprite::Load(const std::wstring& _fileName)
 {
 	fileName_ = _fileName;
-	texture2D_.Load({ _fileName });
+	texture2D_.Load(_fileName);
 }
 
 void mtgb::Sprite::Draw(const RectF& _draw, const float _rotationZ, const RectF& _cut, const Color& _color)
@@ -205,28 +205,8 @@ void mtgb::Sprite::Draw(
 				_pCameraTransform->GenerateWorldRotationMatrix(&_pCB->g_matrixCameraRotation);
 				_pCB->g_matrixCameraTranslate = XMMatrixTranspose(_pCB->g_matrixCameraRotation);
 			}
-			Matrix4x4 test = _pCB->g_matrixCameraTranslate;
-
-#pragma region TODO: 計算見直し必要
 			// スクリーンサイズを一度だけ取得
 			static const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
-
-			// 数学座標と描画座標のy軸差異解消
-			/*RectInt cartesianBox{ _draw };
-			cartesianBox.y = SCREEN_SIZE.y - cartesianBox.y;
-			cartesianBox.height *= -1;*/
-
-			/*const Vector2Int VIEW_BEGIN{ cartesianBox.GetBegin() };
-			const Vector2Int VIEW_END{ cartesianBox.GetEnd() };*/
-
-			// 表示するサイズに合わせる
-			/*Matrix4x4 scalingBox = XMMatrixScaling(
-				std::abs(VIEW_END.x - VIEW_BEGIN.x) * 2.0f,
-				std::abs(VIEW_END.y - VIEW_BEGIN.y) * 2.0f,
-				1.0f);*/
-
-			// 表示するボックスの位置を移動する
-			// DirectX::XMMatrixTranslationFromVector(_pTransform->position_);
 
 			// ボックスの座標変換
 			Matrix4x4 boxTranslate {};
@@ -235,12 +215,6 @@ void mtgb::Sprite::Draw(
 			//// 画像サイズに合わせる
 			Matrix4x4 scalingBox =
 				XMMatrixScaling(static_cast<float>(_imageSize.x), static_cast<float>(_imageSize.y), 1.0f);
-
-			// オフセット - 画面中心は(0, 0) 左下は(-1, -1)
-			/*Matrix4x4 offsetView
-			{
-				XMMatrixTranslation(-1.0f, -1.0f, 0.0f)
-			};*/
 
 			// 画面に合わせる
 			Matrix4x4 scalingView = XMMatrixScaling(1.0f / (SCREEN_SIZE.x * 1), 1.0f / (SCREEN_SIZE.y * 1), 1.0f);
@@ -251,11 +225,8 @@ void mtgb::Sprite::Draw(
 
 			_pTransform->GenerateWorldRotationMatrix(&_pCB->g_matrixWorldRotation);
 			_pCB->g_matrixWorldRotation = XMMatrixTranspose(_pCB->g_matrixWorldRotation);
-#pragma endregion
 
-#pragma region UV計算
 			_pCB->g_matrixTexture = XMMatrixIdentity();
-#pragma endregion
 		},
 		[&, this](ID3D11DeviceContext* _pDC)
 		{

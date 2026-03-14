@@ -306,10 +306,6 @@ namespace mtgb
 			fs::path filepath(filePath_);
 			effectRef_ = Effekseer::Effect::Create(_manager, filepath.u16string().c_str());
 		}
-		EffectTerm t = effectRef_->CalculateTerm();
-		t.TermMax;
-		t.TermMin;
-		int32_t i = t.TermMax;
 	}
 
 	std::string EffectData::GetFilePath() const

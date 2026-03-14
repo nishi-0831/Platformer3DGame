@@ -39,7 +39,7 @@ Command* Vector4Show::operator()(DirectX::XMVECTOR* _vec, const char* _name) con
 	{
 		// 変化があれば再度 XMVECTOR に読み込んで格納
 		*_vec = DirectX::XMLoadFloat4(&tmp);
-		return new ImGuiInputCommand<DirectX::XMVECTOR>(_vec, old, *_vec, _name);
+		return new mtgb::ImGuiInputCommand<DirectX::XMVECTOR>(_vec, old, *_vec, _name);
 	}
 
 	return nullptr;
@@ -47,8 +47,6 @@ Command* Vector4Show::operator()(DirectX::XMVECTOR* _vec, const char* _name) con
 
 Command* MatrixShow::operator()(DirectX::XMMATRIX* _mat, const char* _name) const
 {
-	DirectX::XMMATRIX old = *_mat;
-
 	Vector4Show xShow;
 	xShow(&_mat->r[0], "x");
 	Vector4Show yShow;

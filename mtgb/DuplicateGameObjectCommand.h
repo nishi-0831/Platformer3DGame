@@ -13,10 +13,7 @@ namespace mtgb
 		using CreateFunc = std::function<GameObject*()>;
 		template <typename Func>
 			requires std::is_invocable_r_v<GameObject*, Func>
-		DuplicateGameObjectCommand(
-			Func&& _createFunc,
-			EntityId _srcEntityId
-		);
+		DuplicateGameObjectCommand(Func&& _createFunc, EntityId _srcEntityId);
 		~DuplicateGameObjectCommand();
 		// Command を介して継承されました
 		void Execute() override;
@@ -40,13 +37,10 @@ namespace mtgb
 	};
 	template <typename Func>
 		requires std::is_invocable_r_v<GameObject*, Func>
-	inline DuplicateGameObjectCommand::DuplicateGameObjectCommand(
-		Func&& _createFunc,
-		EntityId _srcEntityId
-	)
-		: notSaveMementos_ {true}
+	inline DuplicateGameObjectCommand::DuplicateGameObjectCommand(Func&& _createFunc, EntityId _srcEntityId)
+		: notSaveMementos_ { true }
+		, srcEntityId_ { _srcEntityId }
 		, createFunc_ { std::forward<Func>(_createFunc) }
-		, srcEntityId_ {_srcEntityId}
 	{
 		GameObject* src = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(srcEntityId_);
 		if (src == nullptr)

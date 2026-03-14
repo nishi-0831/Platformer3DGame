@@ -168,7 +168,6 @@ namespace mtgb
 		std::map<ShowType, ShowQueue> showQueues_;
 		std::map<ShowType, ImGuiWindowState> imguiWindowStates_; // ShowTypeごとのウィンドウの状態
 
-
 		std::unordered_map<std::type_index, std::function<void(EntityId)>> componentShowFuncs_;
 		std::queue<std::function<void()>> sceneViewShowList_;
 
@@ -211,7 +210,7 @@ namespace mtgb
 
 		componentShowFuncs_.emplace(
 			typeIdx,
-			[this](EntityId _entityId)
+			[](EntityId _entityId)
 			{
 				GameObject* obj	 = mtgb::GameObject::FindGameObject(_entityId);
 				std::string name = obj->GetName() + ":Components";

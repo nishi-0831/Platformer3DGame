@@ -23,7 +23,6 @@ namespace mtgb
 
 		ImageRenderer();
 		ImageRenderer(EntityId _entityId);
-		ImageRenderer& operator=(const ImageRenderer& _other) = default;
 
 		// IRenderable を介して継承されました
 		void Render() const override;

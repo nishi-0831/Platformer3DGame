@@ -12,7 +12,7 @@ namespace mtgb
 	class MeshRendererCP : public IRenderableCP, public ComponentPool<MeshRenderer, MeshRendererCP>
 	{
 	  public:
-		void Initialize();
+		void Initialize() override;
 		void Update() override;
 		void RenderAll() const override;
 		void RenderLayer(GameObjectLayerFlag _layerFlag) const override;

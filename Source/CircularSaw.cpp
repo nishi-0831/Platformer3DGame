@@ -9,10 +9,8 @@ mtgb::CircularSaw::CircularSaw()
 	, pTransform_ { Component<Transform>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
 	, pCollider_ { Component<Collider>() }
-	, sawRadius_ { 2.5f }
 	, sawOffset_ { 5.0f }
 	, rotateAngleSec_ { 45.0f }
-	, rotateAngleSecSaw_ { 360.0f }
 {
 	pTransform_->position.z = -5.0f;
 

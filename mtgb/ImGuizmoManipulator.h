@@ -38,13 +38,9 @@ namespace mtgb
 		void DrawTransformGuizmo();
 		void Calculate();
 
-		std::size_t hGameObjSelectionEvent;
-
 		Transform* pTargetTransform_;
 		ImGuizmo::OPERATION operation_;
 		ImGuizmo::MODE mode_;
-		Transform* pCameraTransform_;
-		uintptr_t currId_;
 
 		float worldMat_[16], viewMat_[16], projMat_[16];
 		Matrix4x4 worldMatrix4x4, viewMatrix4x4_, projMatrix4x4_;

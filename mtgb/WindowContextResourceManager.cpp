@@ -5,10 +5,7 @@ mtgb::WindowContextResourceManager::WindowContextResourceManager()
 {
 }
 
-mtgb::WindowContextResourceManager::~WindowContextResourceManager()
-{
-	Release();
-}
+mtgb::WindowContextResourceManager::~WindowContextResourceManager() {}
 
 void mtgb::WindowContextResourceManager::Initialize() {}
 
@@ -33,7 +30,7 @@ void mtgb::WindowContextResourceManager::CreateResource(WindowContext _windowCon
 	ResourceCollection& newCollection = it->second;
 
 	// リソースの登録順に作成される
-	for (const std::type_index& typeIdx : insertionOrder_)
+	for (std::type_index typeIdx : insertionOrder_)
 	{
 		auto itr = factoryMap_.find(typeIdx);
 		assert(itr != factoryMap_.end() && "指定されたtype_indexのファクトリ関数が見つかりません");
@@ -74,7 +71,7 @@ void mtgb::WindowContextResourceManager::OnResizeAll(WindowContext _windowContex
 	}
 
 	// リソース登録時と同じ順番で、サイズ変更後の処理を行う
-	for (const std::type_index& typeIdx : insertionOrder_)
+	for (std::type_index typeIdx : insertionOrder_)
 	{
 		resourceCollection[typeIdx]->OnResize(_width, _height);
 	}

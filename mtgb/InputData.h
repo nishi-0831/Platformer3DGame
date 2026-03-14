@@ -54,10 +54,10 @@ namespace mtgb
 		);
 		static float GetTrigger(PadAxisCode _padCode, WindowContext _context = mtgb::WindowContext::FIRST);
 		static float GetAxis(Axis _axis, StickType _stickType, WindowContext _context = mtgb::WindowContext::FIRST);
-		static const Vector2F GetAxis(StickType _stickType, WindowContext _context = mtgb::WindowContext::FIRST);
+		static Vector2F GetAxis(StickType _stickType, WindowContext _context = mtgb::WindowContext::FIRST);
 
-		static const Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::FIRST);
-		static const Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::FIRST);
+		static Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::FIRST);
+		static Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::FIRST);
 
 	  private:								   // Utilities
 		static const size_t KEY_COUNT { 256 }; // キーの数
@@ -162,11 +162,6 @@ namespace mtgb
 		std::array<_XINPUT_STATE, GAME_PAD_COUNT> gamePadStateCurrent_;	 // ゲームパッドの状態現在
 		std::array<_XINPUT_STATE, GAME_PAD_COUNT> gamePadStatePrevious_; // ゲームパッドの状態前回
 		std::map<PadIDState, int> activeGamePadID;						 // 有効なコントローラのID(0~3が入る)
-		int gamePadID;													 // コンテキストに割り当てられたコントローラのID
-
-	  public:
-		// InputData();
-		//~InputData();
 	};
 
 } // namespace mtgb

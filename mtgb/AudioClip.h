@@ -48,15 +48,13 @@ namespace mtgb
 		/// WAV読み込み
 		/// </summary>
 		/// <param name="_ms">WAVのメモリストリーム</param>
-		/// <param name="_first4"> 最初の4バイトの識別子</param>
-		void LoadWave(mtbin::MemoryStream& _ms, const byte* _first4);
+		void LoadWave(mtbin::MemoryStream& _ms);
 
 		/// <summary>
 		/// mp3読み込み
 		/// </summary>
 		/// <param name="_ms">mp3のメモリストリーム</param>
-		/// <param name="_first4">最初の4バイトの識別子</param>
-		void LoadMp3(mtbin::MemoryStream& _ms, const byte* _first4);
+		void LoadMp3(mtbin::MemoryStream& _ms);
 		WaveData* pWaveData_; // Waveファイルのデータ
 		IXAudio2SourceVoice* pSourceVoice_;
 	};

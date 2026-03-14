@@ -24,20 +24,19 @@ namespace mtgb
 
 		TextRenderer();
 		TextRenderer(EntityId _entityId);
-		TextRenderer& operator=(const TextRenderer& _other);
 		void Render() const override;
 
 		bool CanRender() const override;
 
 		GameObjectLayerFlag GetLayer() const override
 		{
-			return params.layerFlag;
+			return params_.layerFlag;
 		}
 
 		TextAlignment alignment;
-		std::string text;
-		RectF rect;
-		int fontSize;
-		UIParams params;
+		std::string text_;
+		RectF rect_;
+		int fontSize_;
+		UIParams params_;
 	};
 } // namespace mtgb

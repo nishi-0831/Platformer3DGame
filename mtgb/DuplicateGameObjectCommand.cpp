@@ -44,7 +44,7 @@ void mtgb::DuplicateGameObjectCommand::Redo()
 {
 	Game::System<EntityManager>().DecrementCounter();
 
-	GameObject* dest = createFunc_();
+	createFunc_();
 
 	for (IComponentMemento* memento : mementos_)
 	{

@@ -61,7 +61,6 @@ std::u8string mtgb::SubStrBegin(const std::u8string& _string, const int _count)
 	};
 
 	int charaCount {}; // utf8の文字数カウント
-	int byteCount {};  // 1文字を構成するバイト数カウント
 	int byteIndex {};
 
 	static auto isMatchByteSize { [](const uint8_t _byte, const uint8_t _idByte, const uint8_t _byteMask) -> bool

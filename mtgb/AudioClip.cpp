@@ -69,12 +69,12 @@ void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms, ComPtr<IXAudio2> _pXAudio2)
 		// WAVよみこみ
 
 		_ms.Seek(0);
-		LoadWave(_ms, header);
+		LoadWave(_ms);
 	}
 	else if (CompareId<3>(header, "ID3") || (header[0] == 0xFF && (header[1] % 0xE0) == 0xE0))
 	{
 		_ms.Seek(0);
-		LoadMp3(_ms, header);
+		LoadMp3(_ms);
 	}
 	else
 	{
@@ -84,7 +84,7 @@ void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms, ComPtr<IXAudio2> _pXAudio2)
 	_pXAudio2->CreateSourceVoice(&pSourceVoice_, &pWaveData_->waveFormat);
 }
 
-void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
+void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms)
 {
 	// チャンク識別子は 4 byte
 	static const size_t ID_SIZE { 4 };
@@ -147,7 +147,7 @@ void mtgb::AudioClip::LoadWave(mtbin::MemoryStream& _ms, const byte* _first4)
 	_ms.Read(pWaveData_->pBuffer, header.size, header.size);
 }
 
-void mtgb::AudioClip::LoadMp3(mtbin::MemoryStream& _ms, const byte* _first4)
+void mtgb::AudioClip::LoadMp3(mtbin::MemoryStream& _ms)
 {
 	// MemoryStreamからmp3データを読み込む
 	size_t size	   = _ms.GetLength();

@@ -82,7 +82,7 @@ namespace mtgb
 		/// </summary>
 		void Initialize() override;
 
-		void CreateFontFormatData(const std::wstring& _fileName, int _fontSize, FontFormatData** _ppFontFormatData);
+		void CreateFontFormatData(std::wstring_view _fileName, int _fontSize, FontFormatData** _ppFontFormatData);
 		/// <summary>
 		/// 更新処理
 		/// </summary>

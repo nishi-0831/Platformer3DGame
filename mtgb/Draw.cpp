@@ -35,8 +35,6 @@ void mtgb::Draw::CheckSetShader(ShaderType _default)
 void mtgb::Draw::Box(const Vector2Int& _begin, const Vector2Int& _end, Color _color, const UIParams& _uiParams)
 {
 	CheckSetShader(ShaderType::FIGURE);
-	const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
-
 	Box(RectInt::FromLine(_begin, _end), _color, _uiParams);
 }
 
@@ -46,9 +44,6 @@ void mtgb::Draw::Box(const RectInt& _rect, Color _color, const UIParams& _uiPara
 							 [=]()
 							 {
 								 CheckSetShader(ShaderType::FIGURE);
-
-								 const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
-
 								 Game::System<Draw>().pFigure_->Draw(RectF { _rect.point, _rect.size }, _color);
 							 } });
 }
@@ -68,9 +63,6 @@ void mtgb::Draw::Image(
 		  {
 			  CheckSetShader(ShaderType::SPRITE2_D);
 			  Sprite* pSprite { Game::System<mtgb::Image>().GetSprite(_hImage) };
-
-			  const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
-
 			  pSprite->Draw(RectF { _draw.point, _draw.size }, _rotationZ, RectF { _cut.point, _cut.size }, _color);
 		  } }
 	);
@@ -264,7 +256,6 @@ void mtgb::Draw::SeaUVScroll(const Transform& _transform)
 mtgb::Draw::Draw()
 	: pFbxModel_ { nullptr }
 	, pFigure_ { nullptr }
-	, pGround_ { nullptr }
 	, pSeaPlane_ { nullptr }
 {
 }
@@ -273,7 +264,6 @@ mtgb::Draw::~Draw()
 {
 	SAFE_DELETE(pFigure_);
 	SAFE_RELEASE(pFbxModel_);
-	SAFE_DELETE(pGround_);
 	SAFE_DELETE(pSeaPlane_);
 }
 
@@ -281,14 +271,6 @@ void mtgb::Draw::Initialize()
 {
 	pFigure_ = new Figure {};
 	pFigure_->Initialize();
-	/*
-
-	pFbxModel_ = new FbxModel{};
-	pFbxModel_->Load("Model/GroundPlane.fbx");
-	FbxParts* pParts{ pFbxModel_->GetFbxParts(0) };
-
-	pGround_ = new Ground{ pParts->GetNode() };
-	pGround_->Initialize();*/
 	pSeaPlane_ = new PlaneUVScroll();
 	pSeaPlane_->Initialize();
 	pSeaPlane_->LoadTexture(L"Image/sea.png");

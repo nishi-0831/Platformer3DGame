@@ -5,30 +5,16 @@ mtgb::TextRenderer::TextRenderer() {}
 mtgb::TextRenderer::TextRenderer(EntityId _entityId)
 	: IComponent(_entityId)
 	, alignment { TextAlignment::BOTTOM_LEFT }
-	, text { "" }
-	, rect { 0, 0, 0, 0 }
-	, fontSize { 24 }
-	, params { .depth = 0, .layerFlag = AllLayer() }
+	, text_ { "" }
+	, rect_ { 0, 0, 0, 0 }
+	, fontSize_ { 24 }
+	, params_ { .depth = 0, .layerFlag = AllLayer() }
 {
 }
-TextRenderer& mtgb::TextRenderer::operator=(const TextRenderer& _other)
-{
-	if (this == &_other)
-	{
-		return *this;
-	}
-	this->alignment = _other.alignment;
-	this->text		= _other.text;
-	this->rect		= _other.rect;
-	this->fontSize	= _other.fontSize;
-	this->params	= _other.params;
 
-	OnPostRestore();
-	return *this;
-}
 void mtgb::TextRenderer::Render() const
 {
-	Draw::ImmediateText(text, rect, fontSize, alignment, params);
+	Draw::ImmediateText(text_, rect_, fontSize_, alignment, params_);
 }
 
 bool mtgb::TextRenderer::CanRender() const

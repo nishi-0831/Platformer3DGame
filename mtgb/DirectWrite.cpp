@@ -16,21 +16,16 @@
 
 namespace
 {
-	std::string sampleText		  = "Hello,World!";
-	const int DEFAULT_FONT_SIZE	  = 72;
-	const wchar_t* fontFamilyName = L"Noto Sans JP";
+	constexpr wchar_t* fontFamilyName = L"Noto Sans JP";
 } // namespace
 
 ComPtr<IDWriteFactory> mtgb::DirectWrite::pDWriteFactory_ { nullptr };
 ComPtr<IDWriteTextFormat> mtgb::DirectWrite::pTextFormat_ { nullptr };
-// IDWriteTextLayout* mtgb::DirectWrite::pTextLayout_{ nullptr };
 ComPtr<IDWriteFontCollection> mtgb::DirectWrite::pFontCollection_ { nullptr };
 ComPtr<IDWriteFontFamily> mtgb::DirectWrite::pFontFamily_ { nullptr };
 ComPtr<IDWriteFont> mtgb::DirectWrite::pDWriteFont_ { nullptr };
 DWRITE_FONT_METRICS mtgb::DirectWrite::fontMetrics_ {};
 mtgb::PixelFontMetrics mtgb::DirectWrite::pixelFontMetrics_;
-// int mtgb::DirectWrite::currentDefaultFontSize_{ DEFAULT_FONT_SIZE };
-// static std::wstring StrToWStr(const std::string& str);
 
 mtgb::FontFormatData::FontFormatData(int _size, IDWriteTextFormat* _fmt, const PixelFontMetrics& _metrics)
 	: fontSize(_size)
@@ -81,7 +76,7 @@ void mtgb::DirectWrite::Initialize()
 }
 
 void mtgb::DirectWrite::CreateFontFormatData(
-	const std::wstring& _fileName,
+	std::wstring_view _fileName,
 	int _fontSize,
 	FontFormatData** _ppFontFormatData
 )
@@ -89,20 +84,22 @@ void mtgb::DirectWrite::CreateFontFormatData(
 	IDWriteFontCollection* fontCollection = nullptr;
 	// フォントコレクション取得
 	HRESULT hResult = pDWriteFactory_->GetSystemFontCollection(&fontCollection);
+	massert(SUCCEEDED(hResult) && "GetSystemFontCollectionに失敗 @DirectWrite::CreateFontFormatData");
+
 	pFontCollection_.Attach(fontCollection);
 
 	UINT32 index;
 	BOOL exists;
-	hResult = pFontCollection_->FindFamilyName(_fileName.c_str(), &index, &exists);
+	hResult = pFontCollection_->FindFamilyName(_fileName.data(), &index, &exists);
 
-	massert(SUCCEEDED(hResult) && "FindFamilyNameに失敗 @DirectWrite::FindFamilyName");
+	massert(SUCCEEDED(hResult) && "FindFamilyNameに失敗 @DirectWrite::CreateFontFormatData");
 
 	// ファミリーからIDWriteFontFamilyを取得
 	IDWriteFontFamily* fontFamily = nullptr;
 	hResult						  = pFontCollection_->GetFontFamily(index, &fontFamily);
 	pFontFamily_.Attach(fontFamily);
 
-	massert(SUCCEEDED(hResult) && "GetFontFamilyに失敗 @DirectWrite::GetFontFamily");
+	massert(SUCCEEDED(hResult) && "GetFontFamilyに失敗 @DirectWrite::CreateFontFormatData");
 
 	// IDWriteFontを取得
 	IDWriteFont* font = nullptr;
@@ -113,7 +110,7 @@ void mtgb::DirectWrite::CreateFontFormatData(
 		  &font
 	  );
 	pDWriteFont_.Attach(font);
-	massert(SUCCEEDED(hResult) && "GetFirstMatchingFontに失敗 @DirectWrite::Initialize");
+	massert(SUCCEEDED(hResult) && "GetFirstMatchingFontに失敗 @DirectWrite::CreateFontFormatData");
 
 	// フォントのメトリクス取得
 	pDWriteFont_->GetMetrics(&fontMetrics_);

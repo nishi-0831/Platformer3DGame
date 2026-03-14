@@ -199,12 +199,12 @@ namespace mtgb
 		/// <summary>
 		/// システムの初期化をする
 		/// </summary>
-		static void InitializeSystems(const std::list<ISystem*>& _uninitialized);
+		static void InitializeSystems();
 
 		/// <summary>
 		/// システムの解放処理をする
 		/// </summary>
-		static void ReleaseSystems(const std::list<ISystem*>& _runnings);
+		static void ReleaseSystems();
 
 		/// <summary>
 		/// ゲームサイクルのループを開始
@@ -292,13 +292,13 @@ namespace mtgb
 			  } }
 		);
 		// 各システムの初期化
-		pInstance_->InitializeSystems(systems);
+		pInstance_->InitializeSystems();
 
 		// ゲームサイクル開始
 		pInstance_->RunLoopGameCycle();
 
 		// 解放処理
-		pInstance_->ReleaseSystems(systems);
+		pInstance_->ReleaseSystems();
 		systems.clear();
 
 		// インスタンスの解放

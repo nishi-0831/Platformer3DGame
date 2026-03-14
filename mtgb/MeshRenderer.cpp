@@ -29,17 +29,6 @@ mtgb::MeshRenderer::MeshRenderer(EntityId _entityId)
 	meshFileName.resize(BUFFER_SIZE);
 }
 
-mtgb::MeshRenderer& mtgb::MeshRenderer::operator=(const MeshRenderer& _other)
-{
-	meshFileName = _other.meshFileName;
-	meshHandle	 = _other.meshHandle;
-	layer		 = _other.layer;
-	shaderType	 = _other.shaderType;
-	frame_		 = _other.frame_;
-
-	return *this;
-}
-
 void mtgb::MeshRenderer::OnChangeMeshFileName()
 {
 	meshHandle = Fbx::Load(meshFileName);

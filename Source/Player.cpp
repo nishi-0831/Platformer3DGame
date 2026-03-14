@@ -7,9 +7,8 @@
 #include <algorithm>
 namespace
 {
-	float speed							 = 5.0f;
-	float jumpHeight					 = 5.0f;
-	const unsigned int TAKE_DAMGE_AMOUNT = 1;
+	float speed		 = 5.0f;
+	float jumpHeight = 5.0f;
 } // namespace
 
 Player::Player()

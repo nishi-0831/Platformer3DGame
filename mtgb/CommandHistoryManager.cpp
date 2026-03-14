@@ -9,9 +9,9 @@ CommandHistoryManager::CommandHistoryManager()
 {
 }
 
-mtgb::CommandHistoryManager::~CommandHistoryManager() 
+mtgb::CommandHistoryManager::~CommandHistoryManager()
 {
-	ClearAllStack();
+	inner_->ClearAllStack();
 	SAFE_DELETE(pGroupCommand_);
 	SAFE_DELETE(inner_);
 }
@@ -46,7 +46,7 @@ void CommandHistoryManager::EndGroupCommand()
 		return;
 	inner_->ExecuteCommand(pGroupCommand_);
 	pGroupCommand_ = nullptr;
-	isGrouping_ = false;
+	isGrouping_	   = false;
 }
 
 void CommandHistoryManager::ExecuteCommand(Command* _command)

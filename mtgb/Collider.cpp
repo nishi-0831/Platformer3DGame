@@ -72,9 +72,6 @@ void mtgb::Collider::UpdateBoundingData()
 		case ColliderType::TYPE_OBB :
 			UpdateBoundingBox();
 			break;
-		case ColliderType::TYPE_CAPSULE :
-			// TODO: カプセル初期化
-			break;
 	}
 }
 
@@ -225,10 +222,6 @@ bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const
 		// 距離が双方の球の半径よりも小さければ当たっている
 		return (distance <= hitDistance);
 	}
-	else if (colliderType_ == ColliderType::TYPE_CAPSULE)
-	{
-		// TODO: カプセルと球の当たり判定
-	}
 
 	return false;
 }
@@ -329,8 +322,6 @@ float mtgb::Collider::GetRadius() const
 
 void mtgb::Collider::Push(const Collider& _other)
 {
-	std::optional<DirectX::BoundingBox> aabb;
-	std::optional<DirectX::BoundingSphere> sphere;
 	std::optional<Intersection::IntersectInfo> info = std::nullopt;
 
 	EntityId sphereTypeEntityId = INVALID_ENTITY;
@@ -391,7 +382,6 @@ void mtgb::Collider::OnPostRestore()
 	switch (colliderType_)
 	{
 		case ColliderType::TYPE_SPHERE :
-		case ColliderType::TYPE_CAPSULE :
 			SetRadius(radius_);
 			break;
 		case ColliderType::TYPE_AABB :
@@ -419,8 +409,6 @@ void mtgb::Collider::Draw() const
 			copyTransform.scale *= Vector3::One() * computeSphere_.Radius;
 			copyTransform.Compute();
 			Draw::FBXModel(hSphereModel_, copyTransform, 0, ShaderType::DEBUG3_D);
-			break;
-		case ColliderType::TYPE_CAPSULE :
 			break;
 		case ColliderType::TYPE_AABB :
 

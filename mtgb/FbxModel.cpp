@@ -75,7 +75,6 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	_splitpath_s(_fileName.c_str(), nullptr, 0, directory, MAX_PATH, nullptr, 0, nullptr, 0);
 	SetCurrentDirectory(directory);
 
-	int animStackCount_ = pFbxScene_->GetSrcObjectCount<FbxAnimStack>();
 	int meshCount { pFbxScene_->GetSrcObjectCount<FbxMesh>() };
 	for (int i = 0; i < meshCount; i++)
 	{
@@ -179,7 +178,7 @@ void mtgb::FbxModel::CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _pPartsL
 	}
 }
 
-std::optional<FbxAnimationController> mtgb::FbxModel::GetAnimationController()
+std::optional<mtgb::FbxAnimationController> mtgb::FbxModel::GetAnimationController()
 {
 	return FbxAnimationController(pFbxScene_, fileName_);
 }

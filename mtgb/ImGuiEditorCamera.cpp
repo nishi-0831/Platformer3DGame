@@ -27,14 +27,12 @@ const char* ShowState(mtgb::CameraOperation _cameraOperation);
 namespace
 {
 	const mtgb::Vector3 INIT_ANGLE { 0, 0, 0 };
-	// 球面座標系の基準方向を正面(+z方向)とするためのオフセット
-	constexpr float SPHERICAL_COORDINATE_FRONT_OFFSET_DEG = 90.0f;
 } // namespace
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	: ImGuiShowable { "EditorCamera", ShowType::EDITOR }
-	, moveSpeed_ { 10.0f }
-	, rotateSensitivity_ { 1.0f }
 	, hCamera_ { INVALID_ENTITY }
+	, rotateSensitivity_ { 1.0f }
+	, moveSpeed_ { 10.0f }
 {
 	distance_	= 10.0f;
 	orbitSpeed_ = 1.0f;

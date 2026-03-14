@@ -23,8 +23,7 @@ namespace mtgb
 		}
 		void Redo() override
 		{
-			using PoolType = typename T::Pool;
-			T& component   = T::Get(pMemento_->GetEntityId());
+			T& component = T::Get(pMemento_->GetEntityId());
 			component.RestoreFromMemento(*pMemento_);
 		}
 		std::string Name() const override

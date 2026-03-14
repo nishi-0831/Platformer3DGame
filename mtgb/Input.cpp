@@ -16,9 +16,7 @@
 namespace
 {
 	static const size_t KEY_BUFFER_SIZE { 256 };
-	LONG min = -1000;
-	LONG max = 1000;
-	LONG xMin { min }, xMax { max }, yMin { min }, yMax { max };
+
 	float acquireInterval = 10.0f;
 
 	const DWORD VENDOR_ID_DUAL_SHOCK { 0x54c };
@@ -97,33 +95,16 @@ void mtgb::Input::Initialize()
 
 void mtgb::Input::Update()
 {
-	static HRESULT hResult {};
-
-#pragma region キーボード
 	UpdateKeyDevice();
-#pragma endregion
 
-#pragma region マウス
 	UpdateMouseDevice();
-#pragma endregion
 
-#pragma region ジョイスティック
-
-	/*if (pJoystickDevice_ == nullptr)
-	{
-		return;
-	}*/
 	UpdateJoystickDevice();
 
-#pragma endregion
 	if (InputUtil::GetKeyDown(KeyCode::P))
 	{
 		EnumJoystick();
 	}
-
-#pragma region ゲームパッド
-	// UpdateGamePadDevice();
-#pragma endregion
 }
 
 void mtgb::Input::UpdateKeyDevice()
@@ -131,9 +112,6 @@ void mtgb::Input::UpdateKeyDevice()
 	static HRESULT hResult {};
 	// キーボード操作の許可ゲット
 	hResult = pKeyDevice_->Acquire();
-
-	// massert(SUCCEEDED(hResult)  // キーボード操作の許可取得に成功
-	//	&& "キーボード操作の許可取得に失敗 @Input::Update");
 
 	if (FAILED(hResult))
 	{
@@ -145,7 +123,6 @@ void mtgb::Input::UpdateKeyDevice()
 	pInputData_->keyStatePrevious_ = pInputData_->keyStateCurrent_;
 	pKeyDevice_->GetDeviceState(KEY_BUFFER_SIZE, keyBuffer);
 
-	// TODO: forで回すのはコスパよくない
 	for (int i = 0; i < KEY_BUFFER_SIZE; i++)
 	{
 		pInputData_->keyStateCurrent_[i] = keyBuffer[i];
@@ -504,8 +481,7 @@ ControllerType mtgb::Input::GetControllerTypeByVendor(ComPtr<IDirectInputDevice8
 		return ControllerType::UNKNOWN;
 
 	// ベンダーID
-	DWORD vendorId	= HIWORD(deviceInstance.guidProduct.Data1);
-	DWORD productId = LOWORD(deviceInstance.guidProduct.Data1);
+	DWORD vendorId = HIWORD(deviceInstance.guidProduct.Data1);
 
 	if (vendorId == VENDOR_ID_DUAL_SHOCK)
 	{

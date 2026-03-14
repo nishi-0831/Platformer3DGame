@@ -9,10 +9,7 @@
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/ordered_index.hpp>
 #include <boost/multi_index/random_access_index.hpp>
-#include <boost/multi_index/identity.hpp>
 #include <boost/multi_index/member.hpp>
-#include <boost/multi_index/hashed_index.hpp>
-#include <boost/multi_index/mem_fun.hpp>
 #include <boost/multi_index/composite_key.hpp>
 
 using namespace boost::multi_index;
@@ -79,7 +76,7 @@ namespace mtgb
 		void Initialize() override;
 		void Update() override;
 
-		void Release();
+		void Release() override;
 
 		/// <summary>
 		/// <para> テキストを読み込んでそのハンドルを返す </para>

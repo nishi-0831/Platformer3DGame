@@ -21,7 +21,7 @@ mtgb::ImGuiEditor::ImGuiEditor()
 	pManipulator_ = new ImGuizmoManipulator();
 
 	PropertyDisplayRegistry::Instance().RegisterCommandListener(
-		[this](Command* _command)
+		[](Command* _command)
 		{
 			Game::System<CommandHistoryManager>().ExecuteCommand(_command);
 		}

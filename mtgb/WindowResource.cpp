@@ -75,17 +75,6 @@ LRESULT WindowResource::HandleWindowMessage(HWND _hWnd, UINT _msg, WPARAM _wPara
 			return S_OK;
 		case WM_SIZE : // ウィンドウサイズが変わった
 		{
-			if (this && _wParam != SIZE_MINIMIZED)
-			{
-				if (!isInitialized_)
-				{
-					// まだ初期化されていないならスキップする
-					return S_OK;
-				}
-
-				UINT width	= LOWORD(_lParam);
-				UINT height = HIWORD(_lParam);
-			}
 			return S_OK;
 		}
 
@@ -93,7 +82,6 @@ LRESULT WindowResource::HandleWindowMessage(HWND _hWnd, UINT _msg, WPARAM _wPara
 			break;
 	}
 
-	// NOTE: これが抜けているとウィンドウ表示されないし、エラーは出ないしで苦労する(した)
 	return DefWindowProc(_hWnd, _msg, _wParam, _lParam);
 }
 
@@ -126,7 +114,7 @@ void WindowResource::SetResource() {}
 
 mtgb::WindowResource::~WindowResource()
 {
-	Release();
+	DestroyWindow(hWnd_);
 }
 
 void mtgb::WindowResource::MarkInitialized()

@@ -27,7 +27,6 @@ namespace mtgb
 
 		MeshRenderer();
 		MeshRenderer(EntityId _entityId);
-		MeshRenderer& operator=(const MeshRenderer& _other);
 		/// <summary>
 		/// メッシュハンドルを設定
 		/// </summary>

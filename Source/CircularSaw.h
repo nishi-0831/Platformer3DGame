@@ -50,10 +50,8 @@ namespace mtgb
 		MeshRenderer* pPillarMeshRenderer_;
 
 		Saw* pSaw_;
-		float sawRadius_;
 		float sawOffset_;
 		float rotateAngleSec_;
-		float rotateAngleSecSaw_;
 		static unsigned int generateCounter_;
 	};
 

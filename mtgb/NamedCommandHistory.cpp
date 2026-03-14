@@ -13,9 +13,14 @@ namespace mtgb
 	{
 	}
 
-	NamedCommandHistory::~NamedCommandHistory() 
+	NamedCommandHistory::~NamedCommandHistory()
 	{
-		ClearAllStack();
+		if (inner_ == nullptr)
+			return;
+		inner_->ClearAllStack();
+		commandHistoryNames_.clear();
+		undoNames_.clear();
+		redoNames_.clear();
 		SAFE_DELETE(inner_);
 	}
 

@@ -25,32 +25,6 @@ mtgb::Transform::Transform(EntityId _entityId)
 
 mtgb::Transform::~Transform() {}
 
-mtgb::Transform& mtgb::Transform::operator=(const Transform& _other)
-{
-	if (&_other == this)
-	{
-		return *this;
-	}
-
-	this->parent   = _other.parent;
-	this->position = _other.position;
-	this->scale	   = _other.scale;
-	this->rotate   = _other.rotate;
-
-	this->matrixTranslate_	= _other.matrixTranslate_;
-	this->matrixRotate_		= _other.matrixRotate_;
-	this->matrixScale_		= _other.matrixScale_;
-	this->matrixWorld_		= _other.matrixWorld_;
-	this->matrixWorldRot_	= _other.matrixWorldRot_;
-	this->matrixLocal_		= _other.matrixLocal_;
-	this->prevParentMatrix_ = _other.prevParentMatrix_;
-	this->localPosition_	= _other.localPosition_;
-	this->localRotate_		= _other.localRotate_;
-	this->localScale_		= _other.localScale_;
-
-	return *this;
-}
-
 void mtgb::Transform::Compute()
 {
 	using DirectX::XMConvertToRadians;

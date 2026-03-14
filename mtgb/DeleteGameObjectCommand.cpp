@@ -11,7 +11,6 @@ mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
 	, name_ { " Unknown" }
 	, layerFlag_ { AllLayer() }
 	, tag_ { GameObjectTag::UNTAGGED }
-	, isNotCalledStart_ { false }
 	, typeName_ { "Unknown" }
 {
 	if (_pGameObj == nullptr)

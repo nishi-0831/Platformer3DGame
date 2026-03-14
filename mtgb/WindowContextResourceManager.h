@@ -1,6 +1,6 @@
 #pragma once
 #include <functional>
-#include <map>
+#include <unordered_map>
 #include <cassert>
 #include <vector>
 #include <typeinfo>
@@ -24,9 +24,9 @@ namespace mtgb
 		// 現在のウィンドウ
 		WindowContext currentContext_;
 		// ウィンドウごとのリソース群
-		std::map<WindowContext, ResourceCollection> collectionMap_;
+		std::unordered_map<WindowContext, ResourceCollection> collectionMap_;
 		// リソースごとの生成関数
-		std::map<std::type_index, std::function<WindowContextResource*(WindowContext)>> factoryMap_;
+		std::unordered_map<std::type_index, std::function<WindowContextResource*(WindowContext)>> factoryMap_;
 
 		std::vector<std::type_index> insertionOrder_;
 		template <typename ResourceT> void RegisterFactory();

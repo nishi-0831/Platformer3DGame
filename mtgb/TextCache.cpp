@@ -177,7 +177,7 @@ TextLayoutData* mtgb::TextCache::GetTextLayoutData(int _handle)
 	return *it;
 }
 
-FontFormatData* mtgb::TextCache::GetOrCreateTextFormat(int _size)
+mtgb::FontFormatData* mtgb::TextCache::GetOrCreateTextFormat(int _size)
 {
 	auto& size_index = fontFormatData_->get<font_size_order>();
 	auto it			 = size_index.find(_size);

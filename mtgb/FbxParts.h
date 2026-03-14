@@ -199,7 +199,6 @@ namespace mtgb
 		std::vector<ComPtr<ID3D11Buffer>> ppIndexBuffer_;
 		ComPtr<ID3D11Buffer> pBoneConstantBuffer_;
 
-		// BoneMatrices boneMatrices_; //ボーン変換用行列
 		double unitScaleFactor_;	  // スケール単位係数
 		float fbxToWorldScaleFactor_; // FBXからワールドのスケールに変換する係数
 	};

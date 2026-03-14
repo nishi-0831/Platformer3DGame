@@ -1,5 +1,5 @@
 #pragma once
-#include <map>
+#include <unordered_map>
 #include <vector>
 #include <typeindex>
 
@@ -13,7 +13,7 @@ namespace mtgb
 	/// </summary>
 	struct ResourceCollection
 	{
-		std::map<std::type_index, WindowContextResource*> resourceCollection_; // リソース群
+		std::unordered_map<std::type_index, WindowContextResource*> resourceCollection_; // リソース群
 		ResourceCollection() = default;
 		~ResourceCollection();
 

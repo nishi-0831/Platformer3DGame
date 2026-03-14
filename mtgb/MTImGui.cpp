@@ -160,7 +160,6 @@ void mtgb::MTImGui::ShowLog()
 
 	static int selectedLog = -1;
 	int idx				   = 0;
-	int displayIdx		   = 0;
 
 	for (const mtgb::LogEntry& log : logs)
 	{
@@ -178,7 +177,6 @@ void mtgb::MTImGui::ShowLog()
 			selectedLog = idx;
 		}
 		++idx;
-		++displayIdx;
 	}
 
 	// ログの詳細表示
@@ -197,9 +195,7 @@ void mtgb::MTImGui::ShowLog()
 
 	imGui.End();
 }
-mtgb::MTImGui::MTImGui()
-{
-}
+mtgb::MTImGui::MTImGui() {}
 mtgb::MTImGui::~MTImGui()
 {
 	for (auto& queue : showQueues_)
@@ -233,7 +229,10 @@ void mtgb::MTImGui::SetupShowFunc()
 		{
 			for (auto& target : _target->GetDetectedTargets())
 			{
-				PropertyDisplayRegistry::Instance().ShowProperty(&target, "RectContains:" + target.entityId);
+				PropertyDisplayRegistry::Instance().ShowProperty(
+					&target,
+					std::format("RectContains:{}", target.entityId).c_str()
+				);
 			}
 		}
 	);
@@ -454,7 +453,7 @@ void mtgb::MTImGui::DrawLine(const Vector3& _from, const Vector3& _to, float _th
 	else
 	{
 		sceneViewShowList_.push(
-			[=]()
+			[this, _from, _to, _thickness]()
 			{
 				DrawLineImpl(_from, _to, _thickness);
 			}
@@ -477,7 +476,7 @@ void mtgb::MTImGui::DrawVec(const Vector3& _start, const Vector3& _vec, float _t
 	else
 	{
 		sceneViewShowList_.push(
-			[=]()
+			[this, _start, _vec, _thickness]()
 			{
 				DrawRayImpl(_start, _vec, _thickness);
 			}

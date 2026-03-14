@@ -20,6 +20,7 @@ void mtgb::ResourceCollection::Release()
 {
 	for (auto& [type, resource] : resourceCollection_)
 	{
+		resource->Release();
 		SAFE_DELETE(resource);
 	}
 	resourceCollection_.clear();

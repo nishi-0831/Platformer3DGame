@@ -7,12 +7,6 @@
 #include "ImGui/imgui_impl_dx11.h"
 #include "Screen.h"
 #include "ImGuiUtil.h"
-namespace
-{
-	float titleBarHeight;
-	const unsigned long long NULLID	 = 0;
-	const char* WINDOWNAME_GAME_VIEW = "Game View";
-} // namespace
 
 mtgb::ImGuiRenderer::ImGuiRenderer()
 	: pRenderTargetView_ { nullptr }
@@ -170,23 +164,12 @@ void mtgb::ImGuiRenderer::ResetComPtrs()
 	pTexture_.Reset();
 }
 
-void mtgb::ImGuiRenderer::OnResize(UINT width, UINT height)
+void mtgb::ImGuiRenderer::OnResize(UINT _width, UINT _height)
 {
 	CreateD3DResources();
 	// ウィンドウサイズを更新
-	/*winWidth_ = width;
-	winHeight_ = height;*/
-
 	// GameView の矩形情報をリセット
 	gameViewRectValid_ = false;
-
-	// ImGuiのディスプレイサイズを更新
-	/*ImGuiIO& io = ImGui::GetIO();
-	io.DisplaySize = ImVec2(static_cast<float>(width), static_cast<float>(height));*/
-
-	// ImGuiのリソースを再作成する必要がある場合
-	// ImGui_ImplDX11_InvalidateDeviceObjects();
-	// ImGui_ImplDX11_CreateDeviceObjects();
 }
 
 void mtgb::ImGuiRenderer::CreateD3DResources()

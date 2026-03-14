@@ -131,7 +131,7 @@ std::span<mtgb::IRenderableCP*> mtgb::Game::GetRenderableCPs()
 	return { pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size() };
 }
 
-void mtgb::Game::InitializeSystems(const std::list<ISystem*>& _uninitialized)
+void mtgb::Game::InitializeSystems()
 {
 	for (auto itr = pInstance_->registerOrder_.begin(); itr != pInstance_->registerOrder_.end(); itr++)
 	{
@@ -139,7 +139,7 @@ void mtgb::Game::InitializeSystems(const std::list<ISystem*>& _uninitialized)
 	}
 }
 
-void mtgb::Game::ReleaseSystems(const std::list<ISystem*>& _runnings)
+void mtgb::Game::ReleaseSystems()
 {
 	for (auto itr = pInstance_->registerOrder_.rbegin(); itr != pInstance_->registerOrder_.rend(); itr++)
 	{

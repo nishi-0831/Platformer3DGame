@@ -25,10 +25,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 	uintptr_t ptrId = reinterpret_cast<uintptr_t>(pTargetTransform_);
 	ImGui::PushID(&ptrId);
 
-	ImVec2 pos		   = ImGui::GetWindowPos();
-	float windowWidth  = (float)ImGui::GetWindowWidth();
-	float windowHeight = (float)ImGui::GetWindowHeight();
-
+	ImVec2 pos = ImGui::GetWindowPos();
 	// ギズモ表示
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
@@ -219,9 +216,8 @@ void mtgb::ImGuizmoManipulator::UpdateManpulator()
 		if (pTargetPrevTransformMemento_ == nullptr || pTargetTransform_ == nullptr)
 			return;
 
-		TransformMemento* memento = pTargetTransform_->SaveToMemento();
-		GuizmoManipulateCommand* cmd =
-			new GuizmoManipulateCommand(pTargetPrevTransformMemento_, memento);
+		TransformMemento* memento	 = pTargetTransform_->SaveToMemento();
+		GuizmoManipulateCommand* cmd = new GuizmoManipulateCommand(pTargetPrevTransformMemento_, memento);
 		Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 
 		// メモリの解放はコマンドが行うと断定して、ポインタを空にする

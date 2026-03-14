@@ -32,7 +32,9 @@ mtgb::Direct3DResource::Direct3DResource(WindowContext _windowContext)
 
 mtgb::Direct3DResource::~Direct3DResource()
 {
-	Release();
+	pDepthStencil_.Reset();
+	pDepthStencilView_.Reset();
+	pRenderTargetView_.Reset();
 }
 
 void mtgb::Direct3DResource::SetResource()

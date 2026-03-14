@@ -1,17 +1,10 @@
 #pragma once
 #include "WindowContextResource.h"
 #include "WindowContextResourceManager.h"
-#include "MTAssert.h"
-#include "Game.h"
-#include "ISystem.h"
 #include "Input.h"
 #include "WindowContext.h"
-#include <map>
-#include <typeindex>
 #include "JoystickProxy.h"
 #include "MouseStateProxy.h"
-#include "Timer.h"
-#include "InputConfig.h"
 #include <string>
 #pragma comment(lib, "dxguid.lib")
 #pragma comment(lib, "dInput8.lib")
@@ -26,7 +19,6 @@ namespace mtgb
 	{
 	  public:
 		explicit InputResource(WindowContext _windowContext);
-		~InputResource();
 
 		void Update() override;
 		void SetResource() override;

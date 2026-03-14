@@ -195,7 +195,6 @@ namespace mtgb
 	  private:
 		FbxModel* pFbxModel_;
 		Figure* pFigure_;
-		Ground* pGround_;
 		PlaneUVScroll* pSeaPlane_;
 
 		static int currentDefaultFontSize_;

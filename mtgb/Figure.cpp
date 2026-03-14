@@ -32,7 +32,6 @@ void mtgb::Figure::Draw(const RectF& _rect, Color _color)
 		{
 			_pCB->g_color		= _color.ToVector4Norm();
 			_pCB->g_worldMatrix = XMMatrixIdentity();
-#pragma region TODO: 計算見直し必要
 			// スクリーンサイズを取得
 			const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
@@ -66,7 +65,6 @@ void mtgb::Figure::Draw(const RectF& _rect, Color _color)
 
 			// 最終的な行列
 			Matrix4x4 world { scalingBox * scalingView * moveBox * offsetView };
-#pragma endregion
 
 			// MEMO: CPU -> 行優先, GPU -> 列優先
 			//  REF: https://qiita.com/niusounds/items/65099654673f5df3be9b

@@ -20,7 +20,6 @@ namespace mtgb
 	{
 	  public:
 		explicit DXGIResource(WindowContext _windowContext);
-		~DXGIResource();
 
 		void SetResource() override;
 		void Update() override;

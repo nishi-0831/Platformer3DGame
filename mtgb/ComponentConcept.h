@@ -12,9 +12,9 @@ namespace mtgb
 
 	// SaveToMemento関数が実装されている
 	template <typename T>
-	concept HasSaveToMementoMethod = requires(T t) {
+	concept HasSaveToMementoMethod = requires(T _t) {
 		// SaveToMementoという名前の関数を呼び出すことができる
-		{ t.SaveToMemento() };
+		{ _t.SaveToMemento() };
 		// 戻り値の型はIComponentMementoを継承している
 	} && std::derived_from<std::remove_pointer_t<decltype(std::declval<T>().SaveToMemento())>, IComponentMemento>;
 

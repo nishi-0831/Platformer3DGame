@@ -51,7 +51,7 @@ namespace mtgb
 		void RenderSceneView();
 		void UpdateGameViewRect();
 		void End();
-		void Release();
+		void Release() override;
 
 		/// <summary>
 		///

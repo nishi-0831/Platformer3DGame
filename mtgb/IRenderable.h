@@ -3,7 +3,7 @@
 namespace mtgb
 {
 	/// <summary>
-	/// 謠冗判蜃ｦ逅・未騾｣縺ｮ繧､繝ｳ繧ｿ繝ｼ繝輔ぉ繝ｼ繧ｹ縺ｮ繧ｳ繝ｳ繝昴・繝阪Φ繝医・繝ｼ繝ｫ
+	/// 描画処理関連のコンポーネントプールのインターフェース
 	/// </summary>
 	class IRenderableCP
 	{
@@ -11,33 +11,33 @@ namespace mtgb
 		virtual ~IRenderableCP() = default;
 
 		/// <summary>
-		/// 蜈ｨ縺ｦ謠冗判
+		/// 全て描画
 		/// </summary>
 		virtual void RenderAll() const = 0;
 		/// <summary>
-		/// 迚ｹ螳壹・繝ｬ繧､繝､繝ｼ繧呈緒逕ｻ
+		/// 特定のレイヤーを描画
 		/// </summary>
 		virtual void RenderLayer(GameObjectLayerFlag _layerFlag) const = 0;
 	};
 
 	/// <summary>
-	/// 謠冗判蜃ｦ逅・未騾｣縺ｮ繧､繝ｳ繧ｿ繝ｼ繝輔ぉ繝ｼ繧ｹ
+	/// 描画処理関連のインターフェース
 	/// </summary>
 	class IRenderable
 	{
 	  public:
 		virtual ~IRenderable() = default;
 		/// <summary>
-		/// 謠冗判繧定｡後≧
+		/// 描画を行う
 		/// </summary>
 		virtual void Render() const = 0;
 		/// <summary>
-		/// 謠冗判縺悟庄閭ｽ縺句凄縺・
+		/// 描画が可能か否か
 		/// </summary>
-		/// <returns> 蜿ｯ閭ｽ縺ｪ繧液rue</returns>
+		/// <returns> 可能ならtrue</returns>
 		virtual bool CanRender() const = 0;
 		/// <summary>
-		/// 繝ｬ繧､繝､繝ｼ繧定ｿ斐☆
+		/// レイヤーを返す
 		/// </summary>
 		/// <returns></returns>
 		virtual GameObjectLayerFlag GetLayer() const = 0;

@@ -24,7 +24,6 @@ namespace mtgb
 		Transform();
 		Transform(EntityId _entityId);
 		~Transform();
-		Transform& operator=(const Transform& _other);
 
 		/// <summary>
 		/// 計算する

@@ -67,11 +67,6 @@ mtgb::DXGIResource::DXGIResource(WindowContext _windowContext)
 	dx11Manager.CreateDXGISurface(pSwapChain1_.Get(), pDXGISurface_.ReleaseAndGetAddressOf());
 }
 
-mtgb::DXGIResource::~DXGIResource()
-{
-	Release();
-}
-
 void DXGIResource::SetResource()
 {
 	Game::System<DirectX11Manager>().ChangeSwapChain(pSwapChain1_);

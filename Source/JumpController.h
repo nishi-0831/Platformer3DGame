@@ -34,7 +34,5 @@ class JumpController
 	bool isHolding_;
 	// ボタンを押下していた時間
 	float holdTime_;
-	// 最大押下時間。この時間以上押下しても高度は高くならない
-	float maxHoldTime_;
 	float onStartJumpVelocity_;
 };

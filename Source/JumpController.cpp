@@ -8,7 +8,6 @@ JumpController::JumpController(EntityId _targetId)
 	, isHolding_ { false }
 	, holdTime_ { 0.0f }
 	, onStartJumpVelocity_ { 0.0f }
-	, maxHoldTime_ { 0.5f }
 {
 }
 

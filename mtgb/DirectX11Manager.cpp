@@ -60,10 +60,6 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 {
 	HRESULT hResult {};
 
-	STARTUPINFO startupInfo {};
-	GetStartupInfo(&startupInfo);
-	int nCmdShow = startupInfo.wShowWindow;
-
 	D3D_FEATURE_LEVEL level {};
 
 	massert(SUCCEEDED(hResult) && "QueryInterfaceに失敗 @DirectX11Manager::InitializeCommonResources");
@@ -106,7 +102,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 		_uuidof(IDXGIDevice1),
 		(void**)DirectX11Draw::pDXGIDevice_.ReleaseAndGetAddressOf()
 	);
-
+	massert(SUCCEEDED(hResult) && "QueryInterfaceに失敗 @DirectX11Manager::InitializeCommonResources");
 	InitializeShaderBundle(); // シェーダバンドルの初期化
 
 	const D3D11_SAMPLER_DESC SAMPLER_DESC {
@@ -883,7 +879,6 @@ void mtgb::DirectX11Manager::CompileShader(
 	HLSLInclude hlslInclude {};
 	HRESULT hResult {};
 
-#pragma region 頂点シェーダ
 	// 項点シェーダのインタフェース
 	ID3DBlob* pCompileVS { nullptr };
 
@@ -916,9 +911,7 @@ void mtgb::DirectX11Manager::CompileShader(
 		SUCCEEDED(hResult) // 頂点シェーダの作成に成功
 		&& "頂点シェーダの作成に失敗 @DirectX11Manager::CompileShader"
 	);
-#pragma endregion
 
-#pragma region ピクセルシェーダ
 	// ピクセルシェーダのインタフェース
 	ID3DBlob* pCompilePS { nullptr };
 
@@ -952,9 +945,7 @@ void mtgb::DirectX11Manager::CompileShader(
 		SUCCEEDED(hResult) // ピクセルシェーダの作成に成功
 		&& "ピクセルシェーダの作成に失敗 @DirectX11Manager::CompileShader"
 	);
-#pragma endregion
 
-#pragma region 頂点レイアウト
 	// 頂点レイアウトを作成し、指定タイプのバンドルに格納する
 	hResult = DirectX11Draw::pDevice_->CreateInputLayout(
 		_pHLSLLayout,					// 入力データ型配列
@@ -968,9 +959,7 @@ void mtgb::DirectX11Manager::CompileShader(
 		SUCCEEDED(hResult) // 頂点レイアウトの作成に成功
 		&& "頂点レイアウトの作成に失敗 @DirectX11Manager::CompileShader"
 	);
-#pragma endregion
 
-#pragma region ラスタライザ
 	// ラスタライザを作成し、指定タイプのバンドルに格納する
 	DirectX11Draw::pDevice_->CreateRasterizerState(
 		_pRasterizerDesc, // ラスタライザの設定
@@ -981,7 +970,6 @@ void mtgb::DirectX11Manager::CompileShader(
 		SUCCEEDED(hResult) // ラスタライザの作成に成功
 		&& "ラスタライザの作成に失敗 @DirectX11Manager::CompileShader"
 	);
-#pragma endregion
 
 	// 解放していく
 	SAFE_RELEASE(pCompileVS);

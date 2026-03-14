@@ -54,10 +54,10 @@ unsigned int RespawnPoint::generateCounter_ { 0 };
 RespawnPoint::RespawnPoint()
 	: GameObject()
 	, ImGuiShowable(GetEntityId())
+	, priority_ { 0 }
 	, pTransform_ { Component<Transform>() }
 	, pCollider_ { Component<Collider>() }
 	, pRigidBody_ { Component<RigidBody>() }
-	, priority_ { 0 }
 {
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(RespawnPoint));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);

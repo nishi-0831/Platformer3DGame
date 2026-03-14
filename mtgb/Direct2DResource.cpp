@@ -43,8 +43,7 @@ void mtgb::Direct2DResource::OnResize(UINT _width, UINT _height)
 	Release();
 
 	// DXGI,Direct3Dのリソースを取得
-	DXGIResource& dxgiResource	  = Game::System<WindowContextResourceManager>().Get<DXGIResource>(windowContext_);
-	Direct3DResource& d3dResource = Game::System<WindowContextResourceManager>().Get<Direct3DResource>(windowContext_);
+	DXGIResource& dxgiResource = Game::System<WindowContextResourceManager>().Get<DXGIResource>(windowContext_);
 
 	// Direct2DのComオブジェクト作成に使う
 	Direct2D& direct2D = Game::System<Direct2D>();

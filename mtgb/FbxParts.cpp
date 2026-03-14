@@ -109,8 +109,6 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 	// シェーダのコンスタントバッファーに各種データを渡す
 	for (DWORD i = 0; i < materialCount_; i++)
 	{
-		UINT stride { sizeof(int) };
-		UINT offset { 0 };
 		DirectX11Draw::pContext_->IASetIndexBuffer(ppIndexBuffer_[i].Get(), DXGI_FORMAT_R32_UINT, 0);
 
 		// パラメータの受け渡し
@@ -159,8 +157,6 @@ void mtgb::FbxParts::Draw(const Transform& _transform)
 		}
 		else
 		{
-			// テクスチャがない場合でもデフォルトサンプラーを設定
-			ID3D11SamplerState* pDefaultSampler = nullptr;
 			DirectX11Draw::pContext_->PSSetSamplers(0, 1, DirectX11Draw::pDefaultSamplerState_.GetAddressOf());
 
 			ID3D11ShaderResourceView* pNullSRV = nullptr;
@@ -742,17 +738,6 @@ void mtgb::FbxParts::InitializeSkelton()
 void mtgb::FbxParts::SetBoneMatrix()
 {
 	using namespace DirectX;
-
-	// 座標系変換行列を事前に準備
-	XMFLOAT4X4 mirrorMatFloat {};
-	XMStoreFloat4x4(&mirrorMatFloat, XMMatrixIdentity());
-	mirrorMatFloat._11 *= -1.0f;
-	// mirrorMatFloat._33 *= -1.0f;
-
-	XMMATRIX mMirror = XMLoadFloat4x4(&mirrorMatFloat);
-
-	// スケール係数の行列
-	XMMATRIX scaleMatrix = XMMatrixScaling(fbxToWorldScaleFactor_, fbxToWorldScaleFactor_, fbxToWorldScaleFactor_);
 
 	BoneMatrices boneMatrices_;
 	for (int i = 0; i < boneCount_; i++)

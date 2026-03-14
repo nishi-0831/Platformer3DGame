@@ -266,18 +266,17 @@ float mtgb::InputUtil::GetAxis(Axis _axis, StickType _stickType, WindowContext _
 	return input.config_.ApplyDeadZone(value);
 }
 
-const mtgb::Vector2F mtgb::InputUtil::GetAxis(StickType _stickType, WindowContext _context)
+mtgb::Vector2F mtgb::InputUtil::GetAxis(StickType _stickType, WindowContext _context)
 {
-	const InputData& input = GetInput(_context);
 	return Vector2F { GetAxis(Axis::X, _stickType, _context), GetAxis(Axis::Y, _stickType, _context) };
 }
 
-const mtgb::Vector2Int mtgb::InputUtil::GetMousePosition(WindowContext _context)
+mtgb::Vector2Int mtgb::InputUtil::GetMousePosition(WindowContext _context)
 {
 	return InputUtil::GetInput(_context).mousePosition_;
 }
 
-const mtgb::Vector3 mtgb::InputUtil::GetMouseMove(WindowContext _context)
+mtgb::Vector3 mtgb::InputUtil::GetMouseMove(WindowContext _context)
 {
 	return mtgb::Vector3 {
 		static_cast<float>(InputUtil::GetInput(_context).mouseStateCurrent_.lX),

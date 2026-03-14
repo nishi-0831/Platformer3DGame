@@ -15,10 +15,7 @@ namespace mtgb
 	class DeleteGameObjectCommand : public Command
 	{
 	  public:
-		DeleteGameObjectCommand(
-			GameObject* _pGameObj,
-			const GameObjectFactory& _gameObjectFactory
-		);
+		DeleteGameObjectCommand(GameObject* _pGameObj, const GameObjectFactory& _gameObjectFactory);
 		// Command を介して継承されました
 		void Execute() override;
 		void Undo() override;
@@ -31,7 +28,6 @@ namespace mtgb
 		std::string name_;
 		GameObjectLayerFlag layerFlag_;
 		GameObjectTag tag_;
-		bool isNotCalledStart_;
 
 		std::string typeName_;
 		std::vector<IComponentMemento*> mementos_;
